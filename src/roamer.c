@@ -96,11 +96,11 @@ static void CreateInitialRoamerMon(bool16 createLatios)
     ROAMER->ivs = GetMonData(&gEnemyParty[0], MON_DATA_IVS);
     ROAMER->personality = GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY);
     ROAMER->hp = GetMonData(&gEnemyParty[0], MON_DATA_MAX_HP);
-    ROAMER->cool = GetMonData(&gEnemyParty[0], MON_DATA_COOL);
-    ROAMER->beauty = GetMonData(&gEnemyParty[0], MON_DATA_BEAUTY);
-    ROAMER->cute = GetMonData(&gEnemyParty[0], MON_DATA_CUTE);
-    ROAMER->smart = GetMonData(&gEnemyParty[0], MON_DATA_SMART);
-    ROAMER->tough = GetMonData(&gEnemyParty[0], MON_DATA_TOUGH);
+    // ROAMER->cool = GetMonData(&gEnemyParty[0], MON_DATA_COOL);
+    // ROAMER->beauty = GetMonData(&gEnemyParty[0], MON_DATA_BEAUTY);
+    // ROAMER->cute = GetMonData(&gEnemyParty[0], MON_DATA_CUTE);
+    // ROAMER->smart = GetMonData(&gEnemyParty[0], MON_DATA_SMART);
+    // ROAMER->tough = GetMonData(&gEnemyParty[0], MON_DATA_TOUGH);
     sRoamerLocation[MAP_GRP] = ROAMER_MAP_GROUP;
     sRoamerLocation[MAP_NUM] = sRoamerLocations[Random() % NUM_LOCATION_SETS][0];
 }
@@ -200,11 +200,11 @@ void CreateRoamerMonInstance(void)
     CreateMonWithIVsPersonality(mon, ROAMER->species, ROAMER->level, ROAMER->ivs, ROAMER->personality);
     SetMonData(mon, MON_DATA_STATUS, &status);
     SetMonData(mon, MON_DATA_HP, &ROAMER->hp);
-    SetMonData(mon, MON_DATA_COOL, &ROAMER->cool);
-    SetMonData(mon, MON_DATA_BEAUTY, &ROAMER->beauty);
-    SetMonData(mon, MON_DATA_CUTE, &ROAMER->cute);
-    SetMonData(mon, MON_DATA_SMART, &ROAMER->smart);
-    SetMonData(mon, MON_DATA_TOUGH, &ROAMER->tough);
+    // SetMonData(mon, MON_DATA_COOL, &ROAMER->cool);
+    // SetMonData(mon, MON_DATA_BEAUTY, &ROAMER->beauty);
+    // SetMonData(mon, MON_DATA_CUTE, &ROAMER->cute);
+    // SetMonData(mon, MON_DATA_SMART, &ROAMER->smart);
+    // SetMonData(mon, MON_DATA_TOUGH, &ROAMER->tough);
 }
 
 bool8 TryStartRoamerEncounter(void)

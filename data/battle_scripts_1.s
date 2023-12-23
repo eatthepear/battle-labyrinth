@@ -9001,6 +9001,10 @@ BattleScript_ActionSelectionItemsCantBeUsed::
 	printselectionstring STRINGID_ITEMSCANTBEUSEDNOW
 	endselectionscript
 
+BattleScript_ActionSelectionPreviewCantBeUsed::
+	printselectionstring STRINGID_PKMNTRANSFERREDSOMEONESPC
+	endselectionscript
+
 BattleScript_FlushMessageBox::
 	flushtextbox
 	return

@@ -130,17 +130,17 @@ void SubtractMoneyFromVar0x8005(void)
 
 void PrintMoneyAmountInMoneyBox(u8 windowId, int amount, u8 speed)
 {
-    PrintMoneyAmount(windowId, 38, 1, amount, speed);
+    PrintMoneyAmount(windowId, 32, 1, amount, speed);
 }
 
 void PrintMoneyAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)
 {
-    u8 *txtPtr;
+    u8 *txtPtr = gStringVar4;
     s32 strLength;
 
-    ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_LEFT_ALIGN, 6);
+    ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_LEFT_ALIGN, 7);
 
-    strLength = 6 - StringLength(gStringVar1);
+    strLength = 7 - StringLength(gStringVar1);
     txtPtr = gStringVar4;
 
     while (strLength-- > 0)

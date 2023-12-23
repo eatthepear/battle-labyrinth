@@ -28,6 +28,8 @@ extern const u8 SafariZone_EventScript_RetirePrompt[];
 extern const u8 SafariZone_EventScript_OutOfBallsMidBattle[];
 extern const u8 SafariZone_EventScript_OutOfBalls[];
 
+extern const u8 Zone_EventScript_RetirePrompt[];
+
 EWRAM_DATA u8 gNumSafariBalls = 0;
 EWRAM_DATA static u16 sSafariZoneStepCounter = 0;
 EWRAM_DATA static u8 sSafariZoneCaughtMons = 0;
@@ -92,6 +94,11 @@ bool8 SafariZoneTakeStep(void)
 void SafariZoneRetirePrompt(void)
 {
     ScriptContext_SetupScript(SafariZone_EventScript_RetirePrompt);
+}
+
+void ZoneRetirePrompt(void)
+{
+    ScriptContext_SetupScript(Zone_EventScript_RetirePrompt);
 }
 
 void CB2_EndSafariBattle(void)
@@ -202,26 +209,26 @@ struct Pokeblock *SafariZoneGetActivePokeblock(void)
 
 void SafariZoneActivatePokeblockFeeder(u8 pkblId)
 {
-    s16 x, y;
-    u8 i;
+    // s16 x, y;
+    // u8 i;
 
-    for (i = 0; i < NUM_POKEBLOCK_FEEDERS; i++)
-    {
-        // Find free entry in sPokeblockFeeders
-        if (sPokeblockFeeders[i].mapNum == 0
-         && sPokeblockFeeders[i].x == 0
-         && sPokeblockFeeders[i].y == 0)
-        {
-            // Initialize Pokeblock feeder
-            GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
-            sPokeblockFeeders[i].mapNum = gSaveBlock1Ptr->location.mapNum;
-            sPokeblockFeeders[i].pokeblock = gSaveBlock1Ptr->pokeblocks[pkblId];
-            sPokeblockFeeders[i].stepCounter = 100;
-            sPokeblockFeeders[i].x = x;
-            sPokeblockFeeders[i].y = y;
-            break;
-        }
-    }
+    // for (i = 0; i < NUM_POKEBLOCK_FEEDERS; i++)
+    // {
+    //     // Find free entry in sPokeblockFeeders
+    //     if (sPokeblockFeeders[i].mapNum == 0
+    //      && sPokeblockFeeders[i].x == 0
+    //      && sPokeblockFeeders[i].y == 0)
+    //     {
+    //         // Initialize Pokeblock feeder
+    //         GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+    //         sPokeblockFeeders[i].mapNum = gSaveBlock1Ptr->location.mapNum;
+    //         sPokeblockFeeders[i].pokeblock = gSaveBlock1Ptr->pokeblocks[pkblId];
+    //         sPokeblockFeeders[i].stepCounter = 100;
+    //         sPokeblockFeeders[i].x = x;
+    //         sPokeblockFeeders[i].y = y;
+    //         break;
+    //     }
+    // }
 }
 
 static void DecrementFeederStepCounters(void)

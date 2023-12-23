@@ -322,6 +322,9 @@
 #define METATILE_Mauville_MirageTower_TileE   0x3DD
 #define METATILE_Mauville_MirageTower_TileF   0x3E3
 
+// gTileset_Marsh
+#define METATILE_Marsh_CalmWater  0x20C
+
 // gTileset_MauvilleGym
 #define METATILE_MauvilleGym_FloorTile        0x21A
 #define METATILE_MauvilleGym_GreenBeamH1_Off  0x230
@@ -717,6 +720,14 @@
 // gTileset_Slateport
 #define METATILE_Slateport_Door             0x2DC
 #define METATILE_Slateport_Door_BattleTent  0x393
+
+// gTileset_Snowy
+#define METATILE_Snowy_TallGrass  0x21D
+
+// gTileset_SootopolisGym
+#define METATILE_SootopolisGym_Ice_Broken   0x206
+#define METATILE_SootopolisGym_Ice_Cracked  0x20E
+#define METATILE_SootopolisGym_Stairs       0x207
 
 // gTileset_Sootopolis
 #define METATILE_Sootopolis_Door             0x21E

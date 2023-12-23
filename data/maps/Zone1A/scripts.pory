@@ -1,0 +1,240 @@
+mapscripts Zone1A_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE1A_POTION)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE1A_QUICK_CLAW)) {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+	}
+}
+
+movement Zone1A_Corey_WalkLeft {
+	walk_left * 4
+}
+
+movement Zone1A_Corey_WalkRight {
+	walk_right * 4
+}
+
+script Zone1A_EventScript_TriggerLeviathanBottom {
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement(0)
+	applymovement(1, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(1, Common_Movement_WalkDown)
+	waitmovement(0)
+	applymovement(1, Zone1A_Corey_WalkLeft)
+	waitmovement(0)
+	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		goto(Zone1A_EventScript_LeviathanBattle)
+	} else {
+		msgbox(Zone1A_Text_Leviathan1Wait)
+		applymovement(1, Common_Movement_WalkUp)
+		waitmovement(0)
+		applymovement(1, Zone1A_Corey_WalkRight)
+		waitmovement(0)
+		applymovement(1, Common_Movement_FaceLeft)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+	}
+}
+
+script Zone1A_EventScript_TriggerLeviathanMiddle {
+	lockall
+	applymovement(1, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(1, Zone1A_Corey_WalkLeft)
+	waitmovement(0)
+	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		goto(Zone1A_EventScript_LeviathanBattle)
+	} else {
+		msgbox(Zone1A_Text_Leviathan1Wait)
+		applymovement(1, Zone1A_Corey_WalkRight)
+		waitmovement(0)
+		applymovement(1, Common_Movement_FaceLeft)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+	}
+}
+
+script Zone1A_EventScript_TriggerLeviathanTop {
+	lockall
+	applymovement(1, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(1, Common_Movement_WalkUp)
+	waitmovement(0)
+	applymovement(1, Zone1A_Corey_WalkLeft)
+	waitmovement(0)
+	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		goto(Zone1A_EventScript_LeviathanBattle)
+	} else {
+		msgbox(Zone1A_Text_Leviathan1Wait)
+		applymovement(1, Common_Movement_WalkDown)
+		waitmovement(0)
+		applymovement(1, Zone1A_Corey_WalkRight)
+		waitmovement(0)
+		applymovement(1, Common_Movement_FaceLeft)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+	}
+}
+
+script Zone1A_EventScript_LeviathanBattle {
+	fadeoutbgm(1)
+	setvar(VAR_ZONE_1_STATE, 1)
+	msgbox(Zone1A_Text_Leviathan1Intro2)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+    	setvar(VAR_MUGSHOT_ID, MUGSHOT_COREY)
+		trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_BRUTAL, Zone1A_Text_Leviathan1Defeat)
+	} else {
+		setvar(VAR_MUGSHOT_ID, MUGSHOT_COREY)
+		trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1, Zone1A_Text_Leviathan1Defeat)
+	}
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: I thought if I gave my Skwovet an Oran Berry, I would be able to win. Oran Berries really are the best!\p Here, let me share some with you and your Pokémon!"), MSGBOX_DEFAULT)
+	giveitem(ITEM_ORAN_BERRY, 10)
+	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Well, anyways, I've gotta run now.\pBye bye!"))
+	closemessage
+	fadescreenswapbuffers(FADE_TO_BLACK)
+	removeobject(1)
+	setflag(FLAG_BEAT_LEVIATHAN_1)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+	release
+	end
+}
+
+text Zone1A_Text_Leviathan1Intro {
+	format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Hi! My name's Corey.\n"
+		   "I'm the resident Leviathan around here.\p"
+		   "If you want to go forward, you'll have to beat me!\p"
+		   "So, are you ready for our battle?")
+}
+
+text Zone1A_Text_Leviathan1Wait {
+	format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Okay. You just let me know when you're ready.")
+}
+
+text Zone1A_Text_Leviathan1Intro2 {
+	format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Aww, yeah!\n"
+		   "This battle is gonna be awesome!")
+}
+
+text Zone1A_Text_Leviathan1Defeat {
+	format("Drats! Even the Oran Berry wasn't enough!")
+}
+
+script Zone1A_EventScript_ItemPotion {
+	lock
+	if (flag(FLAG_ITEM_ZONE1A_POTION)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE1A_POTION)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_POTION, 1)
+	release
+	end
+}
+
+script Zone1A_EventScript_ItemQuickClaw {
+	lock
+	if (flag(FLAG_ITEM_ZONE1A_QUICK_CLAW)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE1A_QUICK_CLAW)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_QUICK_CLAW, 1)
+	release
+	end
+}
+
+script Zone1A_EventScript_PorygonSign {
+	msgbox(format("Every Zone has its own challenges.\nIn order to reach the Sanctuary and clear a Zone, you must find {COLOR RED}Porygon{COLOR DARK_GRAY}."), MSGBOX_DEFAULT)
+	showmonpic(SPECIES_PORYGON, 10, 3)
+	setseenmon(SPECIES_PORYGON)
+	waitbuttonpress
+	hidemonpic
+	release
+	end
+}
+
+raw `
+Zone1A_EventScript_Nina::
+	trainerbattle_single TRAINER_PBL_NINA, Zone1A_Text_NinaIntro, Zone1A_Text_NinaDefeat
+	msgbox Zone1A_Text_NinaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone1A_Text_NinaIntro:
+	.string "Hey, you! Let's battle!$"
+
+Zone1A_Text_NinaDefeat:
+	.string "Aww… Come on!$"
+
+Zone1A_Text_NinaPostBattle:
+	.string "I always lose…$"
+
+Zone1A_EventScript_Mariam::
+	trainerbattle_single TRAINER_PBL_MARIAM, Zone1A_Text_MariamIntro, Zone1A_Text_MariamDefeat
+	msgbox Zone1A_Text_MariamPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone1A_Text_MariamIntro:
+	.string "Be careful, I'm tough!$"
+
+Zone1A_Text_MariamDefeat:
+	.string "Sheesh!$"
+
+Zone1A_Text_MariamPostBattle:
+	.string "Maybe I need more Pokémon.$"
+
+Zone1A_EventScript_Oscar::
+	trainerbattle_single TRAINER_PBL_OSCAR, Zone1A_Text_OscarIntro, Zone1A_Text_OscarDefeat
+	msgbox Zone1A_Text_OscarPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone1A_Text_OscarIntro:
+	.string "Fear my might!$"
+
+Zone1A_Text_OscarDefeat:
+	.string "Beaten! Disgrace!$"
+
+Zone1A_Text_OscarPostBattle:
+	.string "I must reclaim my honor…$"
+
+Zone1A_EventScript_Sign::
+	msgbox Zone1A_Text_Sign, MSGBOX_SIGN
+	end
+
+Zone1A_Text_Sign:
+	.string "Trainer Tips!\p"
+	.string "Press {R_BUTTON} to enable\n"
+	.string "or disable Auto Run.$"
+`

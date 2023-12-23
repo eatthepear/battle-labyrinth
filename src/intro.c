@@ -26,6 +26,8 @@
 #include "expansion_intro.h"
 #include "constants/rgb.h"
 #include "constants/battle_anim.h"
+#include "event_data.h"
+#include "constants/region_map_sections.h"
 
 /*
     The intro is grouped into the following scenes
@@ -105,8 +107,6 @@ static void SpriteCB_GroudonRocks(struct Sprite *);
 static void SpriteCB_KyogreBubbles(struct Sprite *sprite);
 static void SpriteCB_Lightning(struct Sprite *sprite);
 static void SpriteCB_RayquazaOrb(struct Sprite *sprite);
-
-static void MainCB2_EndIntro(void);
 
 extern const struct CompressedSpriteSheet gBattleAnimPicTable[];
 extern const struct CompressedSpritePalette gBattleAnimPaletteTable[];
@@ -1024,6 +1024,16 @@ static const struct SpritePalette sSpritePalette_RayquazaOrb[] =
     {},
 };
 
+static void UNUSED VBlankCB_PretIntro()
+{
+    LoadOam();
+    ProcessSpriteCopyRequests();
+    TransferPlttBuffer();
+    ScanlineEffect_InitHBlankDmaTransfer();
+    RunTasks();
+    AnimateSprites();
+    BuildOamBuffer();
+}
 
 static void VBlankCB_Intro(void)
 {
@@ -1045,7 +1055,7 @@ void MainCB2_Intro(void)
         gIntroFrameCounter++;
 }
 
-static void MainCB2_EndIntro(void)
+void MainCB2_EndIntro(void)
 {
     if (!UpdatePaletteFade())
         SetMainCallback2(CB2_InitTitleScreen);
@@ -1159,6 +1169,10 @@ void CB2_InitCopyrightScreenAfterBootup(void)
             Sav2_ClearSetDefault();
         SetPokemonCryStereo(gSaveBlock2Ptr->optionsSound);
         InitHeap(gHeap, HEAP_SIZE);
+        if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
+            NuzlockeFlagSet(GLOBAL_NUZLOCKE_SWITCH);
+        else
+            NuzlockeFlagClear(GLOBAL_NUZLOCKE_SWITCH);
     }
 }
 

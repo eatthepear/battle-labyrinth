@@ -32,6 +32,8 @@ static void VCountIntr(void);
 static void SerialIntr(void);
 static void IntrDummy(void);
 
+extern void CB2_FlashNotDetectedScreen(void);
+
 // Defined in the linker script so that the test build can override it.
 extern void gInitialMainCB2(void);
 
@@ -114,7 +116,7 @@ void AgbMain()
     gSoftResetDisabled = FALSE;
 
     if (gFlashMemoryPresent != TRUE)
-        SetMainCallback2(NULL);
+        SetMainCallback2(CB2_FlashNotDetectedScreen);
 
     gLinkTransferringData = FALSE;
 
@@ -216,26 +218,13 @@ void StartTimer1(void)
 
 void SeedRngAndSetTrainerId(void)
 {
-    u32 val;
-
-    if (HQ_RANDOM)
-    {
-        REG_TM1CNT_H = 0;
-        REG_TM2CNT_H = 0;
-        val = ((u32)REG_TM2CNT_L) << 16;
-        val |= REG_TM1CNT_L;
-        SeedRng(val);
-        sTrainerId = Random();
-    }
-    else
-    {
-        // Do it exactly like it was originally done, including not stopping
-        // the timer beforehand.
-        val = REG_TM1CNT_L;
-        SeedRng((u16)val);
-        REG_TM1CNT_H = 0;
-        sTrainerId = val;
-    }
+    u32 seed = RtcGetMinuteCount();
+    u16 val = RtcGetMinuteCount();
+    seed = (seed >> 16) ^ (seed & 0xFFFF);
+    SeedRng(seed);
+    SeedRng(val);
+    REG_TM1CNT_H = 0;
+    sTrainerId = val;
 }
 
 u16 GetGeneratedTrainerIdLower(void)

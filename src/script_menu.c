@@ -138,6 +138,84 @@ bool8 ScriptMenu_MultichoiceWithDefault(u8 left, u8 top, u8 multichoiceId, bool8
         return TRUE;
     }
 }
+static void MultichoiceDynamicEventDebug_OnInit(struct DynamicListMenuEventArgs *eventArgs)
+{
+    DebugPrintf("OnInit: %d", eventArgs->windowId);
+}
+
+static void MultichoiceDynamicEventDebug_OnSelectionChanged(struct DynamicListMenuEventArgs *eventArgs)
+{
+    DebugPrintf("OnSelectionChanged: %d", eventArgs->selectedItem);
+}
+
+static void MultichoiceDynamicEventDebug_OnDestroy(struct DynamicListMenuEventArgs *eventArgs)
+{
+    DebugPrintf("OnDestroy: %d", eventArgs->windowId);
+}
+
+#define sAuxWindowId sDynamicMenuEventScratchPad[0]
+#define sItemSpriteId sDynamicMenuEventScratchPad[1]
+#define TAG_CB_ITEM_ICON 3000
+
+static void MultichoiceDynamicEventShowItem_OnInit(struct DynamicListMenuEventArgs *eventArgs)
+{
+    struct WindowTemplate *template = &gWindows[eventArgs->windowId].window;
+    u32 baseBlock = template->baseBlock + template->width * template->height;
+    struct WindowTemplate auxTemplate = CreateWindowTemplate(0, template->tilemapLeft + template->width + 2, template->tilemapTop, 4, 4, 15, baseBlock);
+    u32 auxWindowId = AddWindow(&auxTemplate);
+    SetStandardWindowBorderStyle(auxWindowId, FALSE);
+    FillWindowPixelBuffer(auxWindowId, 0x11);
+    CopyWindowToVram(auxWindowId, COPYWIN_FULL);
+    sAuxWindowId = auxWindowId;
+    sItemSpriteId = MAX_SPRITES;
+}
+
+static void MultichoiceDynamicEventShowItem_OnSelectionChanged(struct DynamicListMenuEventArgs *eventArgs)
+{
+    struct WindowTemplate *template = &gWindows[eventArgs->windowId].window;
+    u32 x = template->tilemapLeft * 8 + template->width * 8 + 36;
+    u32 y = template->tilemapTop * 8 + 20;
+
+    if (sItemSpriteId != MAX_SPRITES)
+    {
+        FreeSpriteTilesByTag(TAG_CB_ITEM_ICON);
+        FreeSpritePaletteByTag(TAG_CB_ITEM_ICON);
+        DestroySprite(&gSprites[sItemSpriteId]);
+    }
+
+    sItemSpriteId = AddItemIconSprite(TAG_CB_ITEM_ICON, TAG_CB_ITEM_ICON, eventArgs->selectedItem);
+    gSprites[sItemSpriteId].oam.priority = 0;
+    gSprites[sItemSpriteId].x = x;
+    gSprites[sItemSpriteId].y = y;
+}
+
+static void MultichoiceDynamicEventShowItem_OnDestroy(struct DynamicListMenuEventArgs *eventArgs)
+{
+    ClearStdWindowAndFrame(sAuxWindowId, TRUE);
+    RemoveWindow(sAuxWindowId);
+
+    if (sItemSpriteId != MAX_SPRITES)
+    {
+        FreeSpriteTilesByTag(TAG_CB_ITEM_ICON);
+        FreeSpritePaletteByTag(TAG_CB_ITEM_ICON);
+        DestroySprite(&gSprites[sItemSpriteId]);
+    }
+}
+
+#undef sAuxWindowId
+#undef sItemSpriteId
+#undef TAG_CB_ITEM_ICON
+
+static void FreeListMenuItems(struct ListMenuItem *items, u32 count)
+{
+    u32 i;
+    for (i = 0; i < count; ++i)
+    {
+        // All items were dynamically allocated, so items[i].name is not actually constant.
+        Free((void *)items[i].name);
+    }
+    Free(items);
+}
 
 static void MultichoiceDynamicEventDebug_OnInit(struct DynamicListMenuEventArgs *eventArgs)
 {
@@ -405,7 +483,7 @@ static void DrawMultichoiceMenuDynamic(u8 left, u8 top, u8 argc, struct ListMenu
         template.firstX = (newWidth / 2) * 8 + 12 + (left) * 8;
         template.firstY = top * 8 + 5;
         template.secondX = template.firstX;
-        template.secondY = top * 8 + windowHeight * 8 + 12;
+        template.secondY = windowHeight * 8 + 12;
         template.fullyUpThreshold = 0;
         template.fullyDownThreshold = argc - maxBeforeScroll;
         template.firstArrowType = SCROLL_ARROW_UP;
@@ -487,16 +565,16 @@ static void Task_HandleScrollingMultichoiceInput(u8 taskId)
 {
     bool32 done = FALSE;
     s32 input = ListMenu_ProcessInput(gTasks[taskId].data[0]);
-    
+
     switch (input)
     {
     case LIST_HEADER:
     case LIST_NOTHING_CHOSEN:
         break;
     case LIST_CANCEL:
-        if (!gTasks[taskId].data[1])
+        if (gTasks[taskId].data[1])
         {
-            gSpecialVar_Result = MULTI_B_PRESSED;
+            gSpecialVar_Result = 0x7F;
             done = TRUE;
         }
         break;

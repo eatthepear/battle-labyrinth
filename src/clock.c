@@ -92,10 +92,10 @@ static void FormChangeTimeUpdate()
     }
 }
 
-static void ReturnFromStartWallClock(void)
+void ReturnFromStartWallClock(void)
 {
     InitTimeBasedEvents();
-    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+    //SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
 }
 
 void StartWallClock(void)

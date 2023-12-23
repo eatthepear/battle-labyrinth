@@ -1,0 +1,557 @@
+script EventScript_Headbutt {
+	lockall
+	msgbox("There's a sweet aroma in the air…\nWould you like to shake the tree?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		closemessage
+		releaseall
+		end
+	}
+	msgbox(format("{PLAYER} shook the tree!"), MSGBOX_DEFAULT)
+	closemessage
+	setvar(VAR_0x8004, 1)
+	setvar(VAR_0x8005, 1)
+	setvar(VAR_0x8006, 8)
+	setvar(VAR_0x8007, 5)
+	special(ShakeCamera)
+	playse(SE_M_BIND)
+	waitstate
+	waitse
+	special(HeadbuttWildEncounter)
+	if (var(VAR_RESULT) == TRUE) {
+		waitstate
+	} elif ((flag(FLAG_SETTINGS_BRUTAL) == FALSE) && (flag(FLAG_SETTINGS_RED_THUMB) == FALSE)) {
+		random(100)
+		switch(var(VAR_RESULT)) {
+			case 0:
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+			case 7:
+			case 8:
+			case 9:
+			case 10:
+			case 11:
+			case 12:
+			case 13:
+			case 14:
+			case 15:
+			case 16:
+			case 17:
+			case 18:
+			case 19:
+			case 20:
+			case 21:
+			case 22:
+			case 23:
+			case 24:
+				msgbox(format("A Berry fell from the tree!"))
+				finditem(ITEM_ORAN_BERRY, 1)
+			case 25:
+			case 26:
+			case 27:
+			case 28:
+				if (var(VAR_ZONE) > 8) {
+					msgbox(format("A Berry fell from the tree!"))
+					finditem(ITEM_SITRUS_BERRY, 1)
+				}
+			case 29:
+			case 30:
+			case 31:
+			case 32:
+				if (var(VAR_ZONE) > 5) {
+					msgbox(format("A Berry fell from the tree!"))
+					finditem(ITEM_CHERI_BERRY, 1)
+				}
+			case 33:
+			case 34:
+			case 35:
+			case 36:
+				if (var(VAR_ZONE) > 5) {
+					msgbox(format("A Berry fell from the tree!"))
+					finditem(ITEM_CHESTO_BERRY, 1)
+				}
+			case 37:
+			case 38:
+			case 39:
+			case 40:
+				if (var(VAR_ZONE) > 5) {
+					msgbox(format("A Berry fell from the tree!"))
+					finditem(ITEM_PECHA_BERRY, 1)
+				}
+			case 41:
+			case 42:
+			case 43:
+			case 44:
+				if (var(VAR_ZONE) > 5) {
+					msgbox(format("A Berry fell from the tree!"))
+					finditem(ITEM_ASPEAR_BERRY, 1)
+				}
+			case 45:
+			case 46:
+			case 47:
+			case 48:
+				if (var(VAR_ZONE) > 5) {
+					msgbox(format("A Berry fell from the tree!"))
+					finditem(ITEM_PERSIM_BERRY, 1)
+				}
+			case 49:
+				if (var(VAR_ZONE) > 20) {
+					msgbox(format("A Berry fell from the tree!"))
+					finditem(ITEM_LUM_BERRY, 1)
+				}
+		}
+	}
+	releaseall
+	end
+}
+
+script EventScript_CutTree {
+	lockall
+	checkitem(ITEM_MACHETE, 1)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(Text_CantCut, MSGBOX_DEFAULT)
+		releaseall
+		end
+	}
+	msgbox(Text_WantToCut, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		closemessage
+		releaseall
+		end
+	}
+	setitemarg(ITEM_MACHETE)
+	dofieldeffect(FLDEFF_USE_CUT_ON_TREE)
+	waitstate
+	applymovement(VAR_LAST_TALKED, Movement_CutTreeDown)
+	waitmovement(0)
+	removeobject(VAR_LAST_TALKED)
+	releaseall
+}
+
+
+script EventScript_RockSmash {
+	lockall
+	checkitem(ITEM_SLEDGEHAMMER, 1)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(Text_CantSmash, MSGBOX_DEFAULT)
+		releaseall
+		end
+	}
+	msgbox(Text_WantToSmash, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		releaseall
+		end
+	}
+	setitemarg(ITEM_SLEDGEHAMMER)
+	dofieldeffect(FLDEFF_USE_ROCK_SMASH)
+	waitstate
+	applymovement(VAR_LAST_TALKED, Movement_SmashRock)
+	waitmovement(0)
+	removeobject(VAR_LAST_TALKED)
+	special(RockSmashWildEncounter)
+	if (var(VAR_RESULT) == TRUE) {
+		waitstate
+		releaseall
+		end
+	}
+	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_RED_THUMB) == true)) {
+		releaseall
+		end
+	}
+	random(100)
+	switch(var(VAR_RESULT)) {
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+		case 12:
+		case 13:
+		case 14:
+		case 15:
+		case 16:
+		case 17:
+		case 18:
+		case 19:
+		case 20:
+		case 21:
+			finditem(ITEM_RED_SHARD, 1)
+		case 22:
+		case 23:
+		case 24:
+		case 25:
+		case 26:
+		case 27:
+		case 28:
+		case 29:
+		case 30:
+		case 31:
+		case 32:
+		case 33:
+		case 34:
+		case 35:
+		case 36:
+			if (var(VAR_ZONE) > 8) {
+				finditem(ITEM_BLUE_SHARD, 1)
+			}
+		case 37:
+		case 38:
+		case 39:
+		case 40:
+		case 41:
+		case 42:
+		case 43:
+		case 44:
+		case 45:
+		case 46:
+			if (var(VAR_ZONE) > 10) {
+				finditem(ITEM_YELLOW_SHARD, 1)
+			}
+		case 47:
+		case 48:
+		case 49:
+		case 50:
+		case 51:
+			if (var(VAR_ZONE) > 25) {
+				finditem(ITEM_GREEN_SHARD, 1)
+			}
+		case 52:
+			finditem(ITEM_NORMAL_GEM, 1)
+		case 53:
+			finditem(ITEM_FIRE_GEM, 1)
+		case 54:
+			finditem(ITEM_WATER_GEM, 1)
+		case 55:
+			finditem(ITEM_ELECTRIC_GEM, 1)
+		case 56:
+			finditem(ITEM_GRASS_GEM, 1)
+		case 57:
+			finditem(ITEM_ICE_GEM, 1)
+		case 58:
+			finditem(ITEM_FIGHTING_GEM, 1)
+		case 59:
+			finditem(ITEM_POISON_GEM, 1)
+		case 60:
+			finditem(ITEM_GROUND_GEM, 1)
+		case 61:
+			finditem(ITEM_FLYING_GEM, 1)
+		case 62:
+			finditem(ITEM_PSYCHIC_GEM, 1)
+		case 63:
+			finditem(ITEM_BUG_GEM, 1)
+		case 64:
+			finditem(ITEM_ROCK_GEM, 1)
+		case 65:
+			finditem(ITEM_GHOST_GEM, 1)
+		case 66:
+			finditem(ITEM_DRAGON_GEM, 1)
+		case 67:
+			finditem(ITEM_DARK_GEM, 1)
+		case 68:
+			finditem(ITEM_STEEL_GEM, 1)
+		case 69:
+			finditem(ITEM_FAIRY_GEM, 1)
+	}
+	releaseall
+	end
+
+}
+
+script EventScript_UseDive {
+	lockall
+	checkitem(ITEM_DIVING_GEAR, 1)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox("The sea is deep here.", MSGBOX_DEFAULT)
+		releaseall
+		end
+	}
+	msgbox("The sea is deep here.\nUse the Diving Gear?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		releaseall
+		end
+	}
+	setitemarg(ITEM_DIVING_GEAR)
+	setfieldeffectargument(1, 1)
+	dofieldeffect(FLDEFF_USE_DIVE)
+	releaseall
+	end
+}
+
+script EventScript_UseDiveUnderwater {
+	lockall
+	checkitem(ITEM_DIVING_GEAR, 1)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox("Light is filtering down from above.\nYou may be able to surface…", MSGBOX_DEFAULT)
+		releaseall
+		end
+	}
+	msgbox("Light is filtering down from above.\nWould you like to surface?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		releaseall
+		end
+	}
+	setitemarg(ITEM_DIVING_GEAR)
+	setfieldeffectargument(1, 1)
+	dofieldeffect(FLDEFF_USE_DIVE)
+	releaseall
+	end
+}
+
+raw `
+@ Use rock smash from party menu
+EventScript_UseRockSmash::
+	lockall
+	releaseall
+	end
+
+Movement_SmashRock: @ 829082B
+	rock_smash_break
+	step_end
+
+Text_WantToSmash:
+	.string "This rock appears to be breakable.\n"
+	.string "Use the Sledgehammer to smash it?$"
+
+Text_CantSmash:
+	.string "It's a rugged rock.$"
+
+Movement_CutTreeDown:
+	cut_tree
+	step_end
+
+Text_WantToCut:
+	.string "This shrub is blocking the way.\n"
+	.string "Use the Machete to remove it?$"
+
+Text_MonUsedFieldMove:
+	.string "{STR_VAR_1} used {STR_VAR_2}!$"
+
+Text_CantCut:
+	.string "This shrub is blocking the way.$"
+
+EventScript_StrengthBoulder::
+	lockall
+	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_CheckActivatedBoulder
+	checkpartymove MOVE_STRENGTH
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantStrength
+	setfieldeffectargument 0, VAR_RESULT
+	msgbox Text_WantToStrength, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelStrength
+	closemessage
+	dofieldeffect FLDEFF_USE_STRENGTH
+	waitstate
+	goto EventScript_ActivateStrength
+	end
+
+EventScript_UseStrength::
+	lockall
+	dofieldeffect FLDEFF_USE_STRENGTH
+	waitstate
+	goto EventScript_ActivateStrength
+	end
+
+EventScript_ActivateStrength::
+	setflag FLAG_SYS_USE_STRENGTH
+	msgbox Text_MonUsedStrength, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventScript_CantStrength::
+	msgbox Text_CantStrength, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventScript_CheckActivatedBoulder::
+	msgbox Text_StrengthActivated, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventScript_CancelStrength::
+	closemessage
+	releaseall
+	end
+
+Text_WantToStrength:
+	.string "It's a big boulder, but a POKéMON\n"
+	.string "may be able to push it aside.\p"
+	.string "Would you like to use STRENGTH?$"
+
+Text_MonUsedStrength:
+	.string "{STR_VAR_1} used STRENGTH!\p"
+	.string "{STR_VAR_1}'s STRENGTH made it\n"
+	.string "possible to move boulders around!$"
+
+Text_CantStrength:
+	.string "It's a big boulder.$"
+
+Text_StrengthActivated:
+	.string "STRENGTH made it possible to move\n"
+	.string "boulders around.$"
+
+EventScript_UseWaterfall::
+	lockall
+	checkpartymove MOVE_WATERFALL
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantWaterfall
+	bufferpartymonnick STR_VAR_1, VAR_RESULT
+	setfieldeffectargument 0, VAR_RESULT
+	msgbox Text_WantToWaterfall, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
+	msgbox Text_MonUsedWaterfall, MSGBOX_DEFAULT
+    call FollowerIntoPlayerScript
+    callnative HideFollower
+	dofieldeffect FLDEFF_USE_WATERFALL
+    callnative FollowMe_WarpSetEnd
+	goto EventScript_EndWaterfall
+
+EventScript_CannotUseWaterfall::
+	lockall
+
+EventScript_CantWaterfall::
+	msgbox Text_CantWaterfall, MSGBOX_DEFAULT
+
+EventScript_EndWaterfall::
+	releaseall
+	end
+
+Text_CantWaterfall:
+	.string "A wall of water is crashing down with\n"
+	.string "a mighty roar.$"
+
+Text_WantToWaterfall:
+	.string "It's a large waterfall.\n"
+	.string "Would you like to use WATERFALL?$"
+
+Text_MonUsedWaterfall:
+	.string "{STR_VAR_1} used WATERFALL.$"
+
+EventScript_FailSweetScent::
+	msgbox Text_FailSweetScent, MSGBOX_SIGN
+	end
+
+Text_FailSweetScent:
+	.string "Looks like there's nothing here…$"
+
+EventScript_DisableAutoRun::
+	msgbox AutoRunDisabled MSGBOX_SIGN
+	end
+
+AutoRunDisabled:
+	.string "Auto Run {COLOR RED}Disabled{COLOR DARK_GRAY}.$"
+    
+EventScript_EnableAutoRun::
+	msgbox AutoRunEnabled MSGBOX_SIGN
+	end
+
+AutoRunEnabled:
+	.string "Auto Run {COLOR GREEN}Enabled{COLOR DARK_GRAY}.$"
+	
+EventScript_UseRockClimb::
+	lockall
+	checkpartymove MOVE_ROCK_CLIMB
+	compare VAR_RESULT, PARTY_SIZE
+	goto_if_eq EventScript_CantRockClimb
+	bufferpartymonnick 0, VAR_RESULT
+	setfieldeffectargument 0, VAR_RESULT
+	msgbox Text_WantToRockClimb, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq EventScript_EndRockClimb
+	msgbox Text_MonUsedRockClimb, MSGBOX_DEFAULT
+	closemessage
+	dofieldeffect FLDEFF_USE_ROCK_CLIMB
+	waitstate
+	goto EventScript_EndRockClimb
+	
+EventScript_CantRockClimb::
+	msgbox Text_CantRockClimb, MSGBOX_DEFAULT
+	
+EventScript_EndRockClimb::
+	releaseall
+	end
+	
+Text_WantToRockClimb:
+    .string "The cliff is steep.\n"
+    .string "Would you like to use Rock Climb?$"
+    
+Text_MonUsedRockClimb:
+    .string "{STR_VAR_1} used Rock Climb!$"
+    
+Text_CantRockClimb:
+    .string "The cliff is steep.\n"
+    .string "A Pokémon may be able to climb it.$"
+
+FollowerPositionFixScript::
+	setvar 0x8000 0x0
+	callnative FollowerTrainerSightingPositionFix
+	compare VAR_RESULT 0xFFFF
+	goto_if_eq FollowerPositionFixScriptReturn
+	call WalkCall
+	setvar 0x8000 0x1
+	callnative FollowerTrainerSightingPositionFix
+FollowerPositionFixScriptReturn:
+	return
+    
+FollowerIntoPlayerScript::
+	setvar 0x8000 0x0
+	callnative FollowerIntoPlayer
+	compare VAR_RESULT 0xFFFF
+	goto_if_eq FollowerPositionFixScriptReturn
+	setvar 0x8005 0xFE  @ follower
+	call WalkCall
+	setvar 0x8000 0x1
+	callnative FollowerIntoPlayer
+	return
+    
+WalkCall:
+	compare VAR_RESULT 0x0
+	call_if_eq WalkDownCall
+	compare VAR_RESULT 0x1
+	call_if_eq WalkUpCall
+	compare VAR_RESULT 0x2
+	call_if_eq WalkLeftCall
+	compare VAR_RESULT 0x3
+	call_if_eq WalkRightCall
+	waitmovement 0x8005
+	return
+	
+WalkDownCall:
+	applymovement 0x8005 WalkDown
+	return
+
+WalkUpCall:
+	applymovement 0x8005 WalkUp
+	return
+
+WalkLeftCall:
+	applymovement 0x8005 WalkLeft
+	return
+
+WalkRightCall:
+	applymovement 0x8005 WalkRight
+	return
+    
+WalkDown:
+    walk_down
+    step_end 
+
+WalkUp:
+    walk_up
+    step_end
+
+WalkLeft:
+    walk_left
+    step_end
+
+WalkRight:
+    walk_right
+    step_end
+`

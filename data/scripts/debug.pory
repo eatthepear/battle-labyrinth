@@ -1,0 +1,598 @@
+raw `
+.if DEBUG_OVERWORLD_MENU == TRUE
+Debug_MessageEnd:
+	waitmessage
+	waitbuttonpress
+	releaseall
+	end
+
+Debug_ShowFieldMessageStringVar4::
+	special ShowFieldMessageStringVar4
+	goto Debug_MessageEnd
+
+Debug_FlagsNotSetOverworldConfigMessage::
+	message Debug_FlagsNotSetOverworldConfigMessage_Text
+	goto Debug_MessageEnd
+
+Debug_FlagsNotSetOverworldConfigMessage_Text:
+	.string "Feature unavailable!\n"
+	.string "Please define a usable flag in:\l"
+	.string "'include/config/overworld.h'!$"
+
+Debug_FlagsNotSetBattleConfigMessage::
+	message Debug_FlagsNotSetBattleConfigMessage_Text
+	goto Debug_MessageEnd
+
+Debug_FlagsNotSetBattleConfigMessage_Text:
+	.string "Feature unavailable!\n"
+	.string "Please define a usable flag in:\l"
+	.string "'include/config/battle.h'!$"
+
+Debug_BoxFilledMessage::
+	message Debug_BoxFilledMessage_Text
+	goto Debug_MessageEnd
+
+Debug_BoxFilledMessage_Text:
+	.string "Storage boxes filled!$"
+
+Debug_EventScript_Script_1::
+	end
+
+Debug_EventScript_Script_2::
+	end
+
+Debug_EventScript_Script_3::
+	end
+
+Debug_EventScript_Script_4::
+	end
+
+Debug_EventScript_Script_5::
+	end
+
+Debug_EventScript_Script_6::
+	end
+
+Debug_EventScript_Script_7::
+	end
+
+Debug_EventScript_Script_8::
+	end
+
+Debug_CheckSaveBlock::
+	callnative CheckSaveBlock1Size
+	msgbox Debug_SaveBlock1Size, MSGBOX_DEFAULT
+	callnative CheckSaveBlock2Size
+	msgbox Debug_SaveBlock2Size, MSGBOX_DEFAULT
+	callnative CheckPokemonStorageSize
+	msgbox Debug_PokemonStorageSize, MSGBOX_DEFAULT
+	release
+	end
+
+Debug_SaveBlock1Size::
+	.string "SaveBlock1 size: {STR_VAR_1}b/{STR_VAR_2}b.\n"
+	.string "Free space: {STR_VAR_3}b.$"
+
+Debug_SaveBlock2Size::
+	.string "SaveBlock2 size: {STR_VAR_1}b/{STR_VAR_2}b.\n"
+	.string "Free space: {STR_VAR_3}b.$"
+
+Debug_PokemonStorageSize::
+	.string "{PKMN}Storage size: {STR_VAR_1}b/{STR_VAR_2}b.\n"
+	.string "Free space: {STR_VAR_3}b.$"
+
+Debug_CheckROMSpace::
+	callnative CheckROMSize
+	msgbox Debug_ROMSize, MSGBOX_DEFAULT
+	release
+	end
+
+Debug_ROMSize::
+	.string "ROM size: {STR_VAR_1}MB/32MB.\n"
+	.string "Free space: {STR_VAR_2}MB.$"
+
+Debug_HatchAnEgg::
+	lockall
+	getpartysize
+	goto_if_eq VAR_RESULT, 0, Debug_HatchAnEgg_NoPokemon
+	special ChoosePartyMon
+	waitstate
+	goto_if_ge VAR_0x8004, PARTY_SIZE, Debug_HatchAnEgg_End
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	goto_if_ne VAR_RESULT, SPECIES_EGG, DebugScript_HatchAnEgg_CantForceHatch
+	special EggHatch
+	waitstate
+Debug_HatchAnEgg_End::
+	releaseall
+	end
+
+Debug_HatchAnEgg_NoPokemon::
+	msgbox DebugScript_HatchAnEgg_Text_EmptyParty, MSGBOX_DEFAULT
+	releaseall
+	end
+
+DebugScript_HatchAnEgg_CantForceHatch::
+	msgbox DebugScript_HatchAnEgg_Text_NotAnEgg, MSGBOX_DEFAULT
+	releaseall
+	end
+
+DebugScript_HatchAnEgg_Text_EmptyParty::
+	.string "You have no Pokémon nor Eggs.$"
+
+DebugScript_HatchAnEgg_Text_NotAnEgg::
+	.string "That's not a Pokémon Egg.$"
+
+DebugScript_ZeroDaycareMons::
+	msgbox DebugText_DaycareNoPokemon, MSGBOX_DEFAULT
+	releaseall
+	end
+
+DebugScript_OneDaycareMons::
+	msgbox DebugText_DaycareOnePokemon, MSGBOX_DEFAULT
+	releaseall
+	end
+
+DebugScript_DaycareMonsNotCompatible::
+	msgbox DebugText_DaycarePokemonNotCompatible, MSGBOX_DEFAULT
+	releaseall
+	end
+
+DebugText_DaycareNoPokemon:
+	.string "You have no Pokémon at Daycare.$"
+
+DebugText_DaycareOnePokemon:
+	.string "You have only one Pokémon at Daycare.$"
+
+DebugText_DaycarePokemonNotCompatible:
+	.string "Your Pokémon at Daycare can't\nhave babies together!$"
+
+Debug_ShowExpansionVersion::
+	callnative BufferExpansionVersion
+	msgbox Debug_ExpansionVersion, MSGBOX_DEFAULT
+	release
+	end
+
+Debug_ExpansionVersion:
+	.string "pokeemerald-expansion {STR_VAR_1}$"
+
+.endif
+
+Debug_FlagsAndVarNotSetBattleConfigMessage::
+	lockall
+	message Debug_FlagsAndVarNotSetBattleConfigMessage_Text
+	waitmessage
+	waitbuttonpress
+	releaseall
+	end
+
+Debug_FlagsAndVarNotSetBattleConfigMessage_Text:
+	.string "Feature unavailable! Please define a\n"
+	.string "usable flag and a usable var in:\l"
+	.string "'include/config/battle.h'!$"
+
+`
+
+script Debug_CheatStart {
+	lockall
+	additem(ITEM_RARE_CANDY, 100)
+	additem(ITEM_RARE_CANDY, 100)
+	additem(ITEM_RARE_CANDY, 100)
+	additem(ITEM_RARE_CANDY, 100)
+	additem(ITEM_RARE_CANDY, 100)
+	additem(ITEM_RARE_CANDY, 100)
+	// random(24)
+	// switch (var(VAR_RESULT)) {
+	// 	case 0:
+	// 		setvar(VAR_TEMP_0, SPECIES_BULBASAUR)
+	// 	case 1:
+	// 		setvar(VAR_TEMP_0, SPECIES_CHARMANDER)
+	// 	case 2:
+	// 		setvar(VAR_TEMP_0, SPECIES_SQUIRTLE)
+	// 	case 3:
+	// 		setvar(VAR_TEMP_0, SPECIES_CHIKORITA)
+	// 	case 4:
+	// 		setvar(VAR_TEMP_0, SPECIES_QUILAVA)
+	// 	case 5:
+	// 		setvar(VAR_TEMP_0, SPECIES_TOTODILE)
+	// 	case 6:
+	// 		setvar(VAR_TEMP_0, SPECIES_TREECKO)
+	// 	case 7:
+	// 		setvar(VAR_TEMP_0, SPECIES_TORCHIC)
+	// 	case 8:
+	// 		setvar(VAR_TEMP_0, SPECIES_MUDKIP)
+	// 	case 9:
+	// 		setvar(VAR_TEMP_0, SPECIES_TURTWIG)
+	// 	case 10:
+	// 		setvar(VAR_TEMP_0, SPECIES_CHIMCHAR)
+	// 	case 11:
+	// 		setvar(VAR_TEMP_0, SPECIES_PIPLUP)
+	// 	case 12:
+	// 		setvar(VAR_TEMP_0, SPECIES_SNIVY)
+	// 	case 13:
+	// 		setvar(VAR_TEMP_0, SPECIES_TEPIG)
+	// 	case 14:
+	// 		setvar(VAR_TEMP_0, SPECIES_OSHAWOTT)
+	// 	case 15:
+	// 		setvar(VAR_TEMP_0, SPECIES_CHESPIN)
+	// 	case 16:
+	// 		setvar(VAR_TEMP_0, SPECIES_FENNEKIN)
+	// 	case 17:
+	// 		setvar(VAR_TEMP_0, SPECIES_FROAKIE)
+	// 	case 18:
+	// 		setvar(VAR_TEMP_0, SPECIES_ROWLET)
+	// 	case 19:
+	// 		setvar(VAR_TEMP_0, SPECIES_LITTEN)
+	// 	case 20:
+	// 		setvar(VAR_TEMP_0, SPECIES_POPPLIO)
+	// 	case 21:
+	// 		setvar(VAR_TEMP_0, SPECIES_GROOKEY)
+	// 	case 22:
+	// 		setvar(VAR_TEMP_0, SPECIES_SCORBUNNY)
+	// 	case 23:
+	// 		setvar(VAR_TEMP_0, SPECIES_SOBBLE)
+	// }
+	// givemon(VAR_TEMP_0, 5, ITEM_NONE)
+	givemon(SPECIES_EEVEE, 5, ITEM_NONE)
+	setflag(FLAG_ZONE0B_RECEIVED_EEVEE)
+	random(20)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, SPECIES_AZURILL)
+		case 1:
+			setvar(VAR_TEMP_0, SPECIES_AZURILL)
+		case 2:
+			setvar(VAR_TEMP_0, SPECIES_BIDOOF)
+		case 3:
+			setvar(VAR_TEMP_0, SPECIES_BIDOOF)
+		case 4:
+			setvar(VAR_TEMP_0, SPECIES_BUDEW)
+		case 5:
+			setvar(VAR_TEMP_0, SPECIES_BUDEW)
+		case 6:
+			setvar(VAR_TEMP_0, SPECIES_BUNEARY)
+		case 7:
+			setvar(VAR_TEMP_0, SPECIES_BUNEARY)
+		case 8:
+			setvar(VAR_TEMP_0, SPECIES_FLETCHLING)
+		case 9:
+			setvar(VAR_TEMP_0, SPECIES_FLETCHLING)
+		case 10:
+			setvar(VAR_TEMP_0, SPECIES_MAREEP)
+		case 11:
+			setvar(VAR_TEMP_0, SPECIES_MAREEP)
+		case 12:
+			setvar(VAR_TEMP_0, SPECIES_PIDGEY)
+		case 13:
+			setvar(VAR_TEMP_0, SPECIES_PIDGEY)
+		case 14:
+			setvar(VAR_TEMP_0, SPECIES_PSYDUCK)
+		case 15:
+			setvar(VAR_TEMP_0, SPECIES_PSYDUCK)
+		case 16:
+			setvar(VAR_TEMP_0, SPECIES_SHINX)
+		case 17:
+			setvar(VAR_TEMP_0, SPECIES_SHINX)
+		case 18:
+			setvar(VAR_TEMP_0, SPECIES_ZIGZAGOON_GALARIAN)
+		case 19:
+			setvar(VAR_TEMP_0, SPECIES_ZIGZAGOON_GALARIAN)
+	}
+	givemon(VAR_TEMP_0, 4, ITEM_NONE)
+	bufferspeciesname(0, VAR_TEMP_0)
+	msgbox(gText_ObtainedDebugMon)
+	random(20)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, SPECIES_LILLIPUP)
+		case 1:
+			setvar(VAR_TEMP_0, SPECIES_LILLIPUP)
+		case 2:
+			setvar(VAR_TEMP_0, SPECIES_PHANPY)
+		case 3:
+			setvar(VAR_TEMP_0, SPECIES_PHANPY)
+		case 4:
+			setvar(VAR_TEMP_0, SPECIES_POOCHYENA)
+		case 5:
+			setvar(VAR_TEMP_0, SPECIES_POOCHYENA)
+		case 6:
+			setvar(VAR_TEMP_0, SPECIES_RATTATA)
+		case 7:
+			setvar(VAR_TEMP_0, SPECIES_RATTATA)
+		case 8:
+			setvar(VAR_TEMP_0, SPECIES_SENTRET)
+		case 9:
+			setvar(VAR_TEMP_0, SPECIES_SENTRET)
+		case 10:
+			setvar(VAR_TEMP_0, SPECIES_SPEAROW)
+		case 11:
+			setvar(VAR_TEMP_0, SPECIES_SPEAROW)
+		case 12:
+			setvar(VAR_TEMP_0, SPECIES_TEDDIURSA)
+		case 13:
+			setvar(VAR_TEMP_0, SPECIES_TEDDIURSA)
+		case 14:
+			setvar(VAR_TEMP_0, SPECIES_WOOLOO)
+		case 15:
+			setvar(VAR_TEMP_0, SPECIES_WOOLOO)
+		case 16:
+			setvar(VAR_TEMP_0, SPECIES_YAMPER)
+		case 17:
+			setvar(VAR_TEMP_0, SPECIES_YAMPER)
+		case 18:
+			setvar(VAR_TEMP_0, SPECIES_NIDORAN_F)
+		case 19:
+			setvar(VAR_TEMP_0, SPECIES_NIDORAN_M)
+	}
+	givemon(VAR_TEMP_0, 4, ITEM_NONE)
+	bufferspeciesname(0, VAR_TEMP_0)
+	msgbox(gText_ObtainedDebugMon)
+	random(20)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, SPECIES_BONSLY)
+		case 1:
+			setvar(VAR_TEMP_0, SPECIES_BONSLY)
+		case 2:
+			setvar(VAR_TEMP_0, SPECIES_HOOTHOOT)
+		case 3:
+			setvar(VAR_TEMP_0, SPECIES_HOOTHOOT)
+		case 4:
+			setvar(VAR_TEMP_0, SPECIES_MANKEY)
+		case 5:
+			setvar(VAR_TEMP_0, SPECIES_MANKEY)
+		case 6:
+			setvar(VAR_TEMP_0, SPECIES_PANCHAM)
+		case 7:
+			setvar(VAR_TEMP_0, SPECIES_PANCHAM)
+		case 8:
+			setvar(VAR_TEMP_0, SPECIES_PICHU)
+		case 9:
+			setvar(VAR_TEMP_0, SPECIES_PICHU)
+		case 10:
+			setvar(VAR_TEMP_0, SPECIES_PIKIPEK)
+		case 11:
+			setvar(VAR_TEMP_0, SPECIES_PIKIPEK)
+		case 12:
+			setvar(VAR_TEMP_0, SPECIES_SEEDOT)
+		case 13:
+			setvar(VAR_TEMP_0, SPECIES_SEEDOT)
+		case 14:
+			setvar(VAR_TEMP_0, SPECIES_SKWOVET)
+		case 15:
+			setvar(VAR_TEMP_0, SPECIES_SKWOVET)
+		case 16:
+			setvar(VAR_TEMP_0, SPECIES_STUNKY)
+		case 17:
+			setvar(VAR_TEMP_0, SPECIES_STUNKY)
+		case 18:
+			setvar(VAR_TEMP_0, SPECIES_VOLTORB_HISUIAN)
+		case 19:
+			setvar(VAR_TEMP_0, SPECIES_VOLTORB_HISUIAN)
+	}
+	givemon(VAR_TEMP_0, 6, ITEM_NONE)
+	bufferspeciesname(0, VAR_TEMP_0)
+	msgbox(gText_ObtainedDebugMon)
+	msgbox("Would you like a water encounter?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		random(4)
+		switch (var(VAR_RESULT)) {
+			case 0:
+				setvar(VAR_TEMP_0, SPECIES_CHEWTLE)
+			case 1:
+				setvar(VAR_TEMP_0, SPECIES_DEWPIDER)
+			case 2:
+				setvar(VAR_TEMP_0, SPECIES_SURSKIT)
+			case 3:
+				setvar(VAR_TEMP_0, SPECIES_WISHIWASHI)
+		}
+	} else {
+		random(20)
+		switch (var(VAR_RESULT)) {
+			case 0:
+				setvar(VAR_TEMP_0, SPECIES_BUIZEL)
+			case 1:
+				setvar(VAR_TEMP_0, SPECIES_BUIZEL)
+			case 2:
+				setvar(VAR_TEMP_0, SPECIES_CRABRAWLER)
+			case 3:
+				setvar(VAR_TEMP_0, SPECIES_CRABRAWLER)
+			case 4:
+				setvar(VAR_TEMP_0, SPECIES_EKANS)
+			case 5:
+				setvar(VAR_TEMP_0, SPECIES_EKANS)
+			case 6:
+				setvar(VAR_TEMP_0, SPECIES_GLAMEOW)
+			case 7:
+				setvar(VAR_TEMP_0, SPECIES_GLAMEOW)
+			case 8:
+				setvar(VAR_TEMP_0, SPECIES_LITLEO)
+			case 9:
+				setvar(VAR_TEMP_0, SPECIES_LITLEO)
+			case 10:
+				setvar(VAR_TEMP_0, SPECIES_LOTAD)
+			case 11:
+				setvar(VAR_TEMP_0, SPECIES_LOTAD)
+			case 12:
+				setvar(VAR_TEMP_0, SPECIES_MEDITITE)
+			case 13:
+				setvar(VAR_TEMP_0, SPECIES_MEDITITE)
+			case 14:
+				setvar(VAR_TEMP_0, SPECIES_ROCKRUFF)
+			case 15:
+				setvar(VAR_TEMP_0, SPECIES_ROCKRUFF)
+			case 16:
+				setvar(VAR_TEMP_0, SPECIES_VULPIX)
+			case 17:
+				setvar(VAR_TEMP_0, SPECIES_VULPIX)
+			case 18:
+				setvar(VAR_TEMP_0, SPECIES_WOOPER)
+			case 19:
+				setvar(VAR_TEMP_0, SPECIES_WOOPER)
+		}
+	}
+	givemon(VAR_TEMP_0, 8, ITEM_NONE)
+	bufferspeciesname(0, VAR_TEMP_0)
+	msgbox(gText_ObtainedDebugMon)
+	msgbox("Would you like a golden tree encounter?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		random(4)
+		switch (var(VAR_RESULT)) {
+			case 0:
+				setvar(VAR_TEMP_0, SPECIES_PETILIL)
+			case 1:
+				setvar(VAR_TEMP_0, SPECIES_COTTONEE)
+			case 2:
+				setvar(VAR_TEMP_0, SPECIES_CATERPIE)
+			case 3:
+				setvar(VAR_TEMP_0, SPECIES_WEEDLE)
+		}
+		givemon(VAR_TEMP_0, 8, ITEM_NONE)
+
+	} else {
+		random(20)
+		switch (var(VAR_RESULT)) {
+			case 0:
+				setvar(VAR_TEMP_0, SPECIES_HOUNDOUR)
+			case 1:
+				setvar(VAR_TEMP_0, SPECIES_HOUNDOUR)
+			case 2:
+				setvar(VAR_TEMP_0, SPECIES_MORELULL)
+			case 3:
+				setvar(VAR_TEMP_0, SPECIES_MORELULL)
+			case 4:
+				setvar(VAR_TEMP_0, SPECIES_PHANTUMP)
+			case 5:
+				setvar(VAR_TEMP_0, SPECIES_PHANTUMP)
+			case 6:
+				setvar(VAR_TEMP_0, SPECIES_PONYTA_GALARIAN)
+			case 7:
+				setvar(VAR_TEMP_0, SPECIES_PONYTA_GALARIAN)
+			case 8:
+				setvar(VAR_TEMP_0, SPECIES_HATENNA)
+			case 9:
+				setvar(VAR_TEMP_0, SPECIES_HATENNA)
+			case 10:
+				setvar(VAR_TEMP_0, SPECIES_IMPIDIMP)
+			case 11:
+				setvar(VAR_TEMP_0, SPECIES_IMPIDIMP)
+			case 12:
+				setvar(VAR_TEMP_0, SPECIES_GOTHITA)
+			case 13:
+				setvar(VAR_TEMP_0, SPECIES_GOTHITA)
+			case 14:
+				setvar(VAR_TEMP_0, SPECIES_SOLOSIS)
+			case 15:
+				setvar(VAR_TEMP_0, SPECIES_SOLOSIS)
+			case 16:
+				setvar(VAR_TEMP_0, SPECIES_SPRITZEE)
+			case 17:
+				setvar(VAR_TEMP_0, SPECIES_SPRITZEE)
+			case 18:
+				setvar(VAR_TEMP_0, SPECIES_SWIRLIX)
+			case 19:
+				setvar(VAR_TEMP_0, SPECIES_SWIRLIX)
+		}
+		givemon(VAR_TEMP_0, 10, ITEM_NONE)
+	}
+	bufferspeciesname(0, VAR_TEMP_0)
+	msgbox(gText_ObtainedDebugMon)
+	msgbox("Choose an Eevee evolution.", MSGBOX_DEFAULT)
+	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Vaporeon", "Jolteon", "Flareon", "Espeon", "Umbreon", "Leafeon", "Glaceon", "Sylveon")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			additem(ITEM_WATER_GEM)
+		case 1:
+			additem(ITEM_ELECTRIC_GEM)
+		case 2:
+			additem(ITEM_FIRE_GEM)
+		case 3:
+			additem(ITEM_PSYCHIC_GEM)
+		case 4:
+			additem(ITEM_DARK_GEM)
+		case 5:
+			additem(ITEM_GRASS_GEM)
+		case 6:
+			additem(ITEM_ICE_GEM)
+	}
+	setflag(FLAG_ZONE4A_RECEIVED_GEM)
+	random(18)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, SPECIES_ABRA)
+		case 1:
+			setvar(VAR_TEMP_0, SPECIES_ABRA)
+		case 2:
+			setvar(VAR_TEMP_0, SPECIES_GROWLITHE)
+		case 3:
+			setvar(VAR_TEMP_0, SPECIES_GROWLITHE)
+		case 4:
+			setvar(VAR_TEMP_0, SPECIES_MAGNEMITE)
+		case 5:
+			setvar(VAR_TEMP_0, SPECIES_MAGNEMITE)
+		case 6:
+			setvar(VAR_TEMP_0, SPECIES_RALTS)
+		case 7:
+			setvar(VAR_TEMP_0, SPECIES_RALTS)
+		case 8:
+			setvar(VAR_TEMP_0, SPECIES_ROOKIDEE)
+		case 9:
+			setvar(VAR_TEMP_0, SPECIES_ROOKIDEE)
+		case 10:
+			setvar(VAR_TEMP_0, SPECIES_SNUBBULL)
+		case 11:
+			setvar(VAR_TEMP_0, SPECIES_SNUBBULL)
+		case 12:
+			setvar(VAR_TEMP_0, SPECIES_STARLY)
+		case 13:
+			setvar(VAR_TEMP_0, SPECIES_STARLY)
+		case 14:
+			setvar(VAR_TEMP_0, SPECIES_STUFFUL)
+		case 15:
+			setvar(VAR_TEMP_0, SPECIES_STUFFUL)
+		case 16:
+			setvar(VAR_TEMP_0, SPECIES_TAILLOW)
+		case 17:
+			setvar(VAR_TEMP_0, SPECIES_TAILLOW)
+	}
+	givemon(VAR_TEMP_0, 12, ITEM_NONE)
+	bufferspeciesname(0, VAR_TEMP_0)
+	msgbox(gText_ObtainedDebugMon)
+	setvar(VAR_ZONE, 5)
+	additem(ITEM_REPEL)
+	setflag(FLAG_TIM_INTRO)
+	additem(ITEM_EXP_SHARE)
+	additem(ITEM_SILK_SCARF)
+	additem(ITEM_GOOD_ROD)
+	additem(ITEM_HEAL_BALL, 7)
+	removeitem(ITEM_POKE_BALL, 10)
+	removemoney(1000)
+	additem(ITEM_TM02)
+	additem(ITEM_BURN_HEAL)
+	additem(ITEM_AWAKENING)
+	additem(ITEM_MUSCLE_BAND)
+	additem(ITEM_WISE_GLASSES)
+	additem(ITEM_SUPER_POTION, 2)
+	additem(ITEM_PARALYZE_HEAL, 2)
+	additem(ITEM_ANTIDOTE, 2)
+	additem(ITEM_TM03)
+	additem(ITEM_TM04)
+	additem(ITEM_QUICK_BALL)
+	setflag(FLAG_SETTINGS_FULL_SURVEIL)
+	setflag(FLAG_SYS_DEXNAV_GET)
+	setflag(FLAG_JOY_INTRO)
+	setflag(FLAG_MAX_INTRO)
+	setflag(FLAG_TIM_INTRO)
+	setflag(FLAG_VARRICK_INTRO)
+	setflag(FLAG_LELOUCH_INTRO)
+	setvar(VAR_ZONE_0_STATE, 3)
+	additem(ITEM_TM21)
+	callnative(DisableBattleAnimationSetting)
+    warp(MAP_ZONE5SANCTUARY, 255, 22, 7)
+	waitstate
+	release
+	end
+}
+
+text gText_ObtainedDebugMon {
+	format("Obtained {STR_VAR_1}!")
+}

@@ -39,7 +39,7 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "constants/rgb.h"
-#include "level_caps.h"
+#include "event_data.h"
 
 static void PlayerBufferExecCompleted(u32 battler);
 static void PlayerHandleLoadMonSprite(u32 battler);
@@ -75,6 +75,7 @@ static void PlayerHandleLinkStandbyMsg(u32 battler);
 static void PlayerHandleResetActionMoveSelection(u32 battler);
 static void PlayerHandleEndLinkBattle(u32 battler);
 static void PlayerHandleBattleDebug(u32 battler);
+static void MoveSelectionDisplaySplitIcon(u32 battler);
 
 static void PlayerBufferRunCommand(u32 battler);
 static void HandleInputChooseTarget(u32 battler);
@@ -158,8 +159,8 @@ static void (*const sPlayerBufferCommands[CONTROLLER_CMDS_COUNT])(u32 battler) =
     [CONTROLLER_TERMINATOR_NOP]           = BtlController_TerminatorNop
 };
 
-static EWRAM_DATA bool8 sAckBallUseBtn = FALSE;
-static EWRAM_DATA bool8 sBallSwapped = FALSE;
+static EWRAM_DATA bool8 UNUSED sAckBallUseBtn = FALSE;
+static EWRAM_DATA bool8 UNUSED sBallSwapped = FALSE;
 
 void SetControllerToPlayer(u32 battler)
 {
@@ -202,7 +203,7 @@ static void CompleteOnBattlerSpritePosX_0(u32 battler)
         PlayerBufferExecCompleted(battler);
 }
 
-static u16 GetPrevBall(u16 ballId)
+static u16 UNUSED GetPrevBall(u16 ballId)
 {
     u16 ballPrev;
     s32 i, j;
@@ -227,7 +228,7 @@ static u16 GetPrevBall(u16 ballId)
     return gBagPockets[BALLS_POCKET].itemSlots[i].itemId;
 }
 
-static u32 GetNextBall(u32 ballId)
+static u16 UNUSED GetNextBall(u16 ballId)
 {
     u32 ballNext = ITEM_NONE;
     s32 i;
@@ -331,7 +332,14 @@ static void HandleInputChooseAction(u32 battler)
             BtlController_EmitTwoReturnValues(battler, BUFFER_B, B_ACTION_SWITCH, 0);
             break;
         case 3: // Bottom right
-            BtlController_EmitTwoReturnValues(battler, BUFFER_B, B_ACTION_RUN, 0);
+            if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+            {
+                BtlController_EmitTwoReturnValues(battler, BUFFER_B, B_ACTION_VIEW_ENEMY_PARTY, 0);
+            }
+            else
+            {
+                BtlController_EmitTwoReturnValues(battler, BUFFER_B, B_ACTION_RUN, 0);
+            }
             break;
         }
         PlayerBufferExecCompleted(battler);
@@ -408,7 +416,7 @@ static void HandleInputChooseAction(u32 battler)
         SwapHpBarsWithHpText();
     }
 #if DEBUG_BATTLE_MENU == TRUE
-    else if (JOY_NEW(SELECT_BUTTON))
+    else if (JOY_NEW(SELECT_BUTTON) && FlagGet(FLAG_IS_DEBUGGING_SAVEFILE))
     {
         BtlController_EmitTwoReturnValues(battler, BUFFER_B, B_ACTION_DEBUG, 0);
         PlayerBufferExecCompleted(battler);
@@ -1752,11 +1760,28 @@ static void MoveSelectionDisplayMoveType(u32 battler)
         else
             type = gMovesInfo[MOVE_IVY_CUDGEL].type;
     }
+    else if (moveInfo->moves[gMoveSelectionCursor[battler]] == MOVE_HIDDEN_POWER)
+    {
+        u8 typeBits  = ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_HP_IV) & 1) << 0)
+                     | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_ATK_IV) & 1) << 1)
+                     | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_DEF_IV) & 1) << 2)
+                     | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_SPEED_IV) & 1) << 3)
+                     | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_SPATK_IV) & 1) << 4)
+                     | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_SPDEF_IV) & 1) << 5);
+
+        type = (15 * typeBits) / 63 + 1;
+        if (type >= TYPE_MYSTERY)
+            type++;
+        type |= 0xC0;
+        type = type & 0x3F;
+    }
     else
         type = gMovesInfo[moveInfo->moves[gMoveSelectionCursor[battler]]].type;
 
     StringCopy(txtPtr, gTypesInfo[type].name);
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_TYPE);
+
+    MoveSelectionDisplaySplitIcon(battler);
 }
 
 void MoveSelectionCreateCursorAt(u8 cursorPosition, u8 baseTileNum)
@@ -1994,7 +2019,14 @@ static void PlayerHandleChooseAction(u32 battler)
 
     gBattlerControllerFuncs[battler] = HandleChooseActionAfterDma3;
     BattleTv_ClearExplosionFaintCause();
-    BattlePutTextOnWindow(gText_BattleMenu, B_WIN_ACTION_MENU);
+    if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+    {
+        BattlePutTextOnWindow(gText_TrainerBattleMenu, B_WIN_ACTION_MENU);
+    }
+    else
+    {
+        BattlePutTextOnWindow(gText_BattleMenu, B_WIN_ACTION_MENU);
+    }
 
     for (i = 0; i < 4; i++)
         ActionSelectionDestroyCursorAt(i);
@@ -2318,4 +2350,18 @@ static void PlayerHandleBattleDebug(u32 battler)
     BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
     SetMainCallback2(CB2_BattleDebugMenu);
     gBattlerControllerFuncs[battler] = Controller_WaitForDebug;
+}
+
+static void MoveSelectionDisplaySplitIcon(u32 battler){
+	static const u16 sSplitIcons_Pal[] = INCBIN_U16("graphics/interface/split_icons_battle.gbapal");
+	static const u8 sSplitIcons_Gfx[] = INCBIN_U8("graphics/interface/split_icons_battle.4bpp");
+	struct ChooseMoveStruct *moveInfo;
+	int icon;
+
+	moveInfo = (struct ChooseMoveStruct*)(&gBattleResources->bufferA[battler][4]);
+	icon = GetBattleMoveSplit(moveInfo->moves[gMoveSelectionCursor[battler]]);
+	LoadPalette(sSplitIcons_Pal, 10 * 0x10, 0x20);
+	BlitBitmapToWindow(B_WIN_DUMMY, sSplitIcons_Gfx + 0x80 * icon, 0, 0, 16, 16);
+	PutWindowTilemap(B_WIN_DUMMY);
+	CopyWindowToVram(B_WIN_DUMMY, 3);
 }

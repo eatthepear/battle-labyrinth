@@ -142,6 +142,19 @@ static u8 GetMachBikeTransition(u8 *dirTraveling)
 {
     // if the dir updated before this function, get the relevent new direction to check later.
     u8 direction = GetPlayerMovementDirection();
+    
+    // fix direction when moving on sideways stairs
+    switch (direction)
+    {
+    case DIR_SOUTHWEST:
+    case DIR_NORTHWEST:
+        direction = DIR_WEST;
+        break;
+    case DIR_SOUTHEAST:
+    case DIR_NORTHEAST:
+        direction = DIR_EAST;
+        break;
+    }
 
     // is the player standing still?
     if (*dirTraveling == 0)
@@ -233,7 +246,9 @@ static void MachBikeTransition_TrySpeedUp(u8 direction)
         }
         else
         {
-            // we did not hit anything that can slow us down, so perform the advancement callback depending on the bikeFrameCounter and try to increase the mach bike's speed.
+            if (ObjectMovingOnRockStairs(playerObjEvent, direction) && gPlayerAvatar.bikeFrameCounter > 1)
+                gPlayerAvatar.bikeFrameCounter--;
+            
             sMachBikeSpeedCallbacks[gPlayerAvatar.bikeFrameCounter](direction);
             gPlayerAvatar.bikeSpeed = gPlayerAvatar.bikeFrameCounter + (gPlayerAvatar.bikeFrameCounter >> 1); // same as dividing by 2, but compiler is insistent on >> 1
             if (gPlayerAvatar.bikeFrameCounter < 2) // do not go faster than the last element in the mach bike array
@@ -563,7 +578,10 @@ static void AcroBikeTransition_Moving(u8 direction)
     }
     else
     {
-        PlayerRideWaterCurrent(direction);
+        if (ObjectMovingOnRockStairs(playerObjEvent, direction))
+            PlayerWalkFast(direction);
+        else
+            PlayerRideWaterCurrent(direction);
     }
 }
 
@@ -890,7 +908,7 @@ static u8 GetBikeCollisionAt(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 d
 
 bool8 RS_IsRunningDisallowed(u8 tile)
 {
-    if (IsRunningDisallowedByMetatile(tile) != FALSE || gMapHeader.mapType == MAP_TYPE_INDOOR)
+    if (IsRunningDisallowedByMetatile(tile) != FALSE)
         return TRUE;
     else
         return FALSE;
@@ -982,8 +1000,22 @@ void GetOnOffBike(u8 transitionFlags)
     else
     {
         SetPlayerAvatarTransitionFlags(transitionFlags);
-        Overworld_SetSavedMusic(MUS_CYCLING);
-        Overworld_ChangeMusicTo(MUS_CYCLING);
+        if (!((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25A)) 
+        || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25B)) 
+        || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25C) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25C)) 
+        || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25D) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25D)) 
+        || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25E) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25E)) 
+        || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25F)) 
+        || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25G) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25G)) 
+        || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25H) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25H)) 
+        || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25I) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25I)) 
+        || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25J) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25J)) 
+        || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25K) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25K)) 
+        || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25L) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25L))))
+        {
+            Overworld_SetSavedMusic(MUS_CYCLING);
+            Overworld_ChangeMusicTo(MUS_CYCLING);
+        }
     }
 }
 

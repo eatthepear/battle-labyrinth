@@ -1,7 +1,7 @@
 #ifndef GUARD_POKEMON_STORAGE_SYSTEM_H
 #define GUARD_POKEMON_STORAGE_SYSTEM_H
 
-#define TOTAL_BOXES_COUNT       14
+#define TOTAL_BOXES_COUNT       18
 #define IN_BOX_ROWS             5 // Number of rows, 6 Pokémon per row
 #define IN_BOX_COLUMNS          6 // Number of columns, 5 Pokémon per column
 #define IN_BOX_COUNT            (IN_BOX_ROWS * IN_BOX_COLUMNS)
@@ -73,6 +73,7 @@ void SetWaldaWallpaperColors(u16 color1, u16 color2);
 u8 *GetWaldaPhrasePtr(void);
 void SetWaldaPhrase(const u8 *src);
 bool32 IsWaldaPhraseEmpty(void);
+void PurgeMonOrBoxMon(u8 boxId, u8 position);
 
 void EnterPokeStorage(u8 boxOption);
 

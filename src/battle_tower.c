@@ -210,7 +210,7 @@ const u8 gTowerFemaleFacilityClasses[20] =
     FACILITY_CLASS_LASS
 };
 
-const u8 gTowerMaleTrainerGfxIds[30] =
+const u16 gTowerMaleTrainerGfxIds[30] =
 {
     OBJ_EVENT_GFX_HIKER,
     OBJ_EVENT_GFX_TUBER_M,
@@ -244,7 +244,7 @@ const u8 gTowerMaleTrainerGfxIds[30] =
     OBJ_EVENT_GFX_HIKER
 };
 
-const u8 gTowerFemaleTrainerGfxIds[20] =
+const u16 gTowerFemaleTrainerGfxIds[20] =
 {
     OBJ_EVENT_GFX_WOMAN_2,
     OBJ_EVENT_GFX_TUBER_F,
@@ -1230,11 +1230,11 @@ void SetEReaderTrainerGfxId(void)
     SetBattleFacilityTrainerGfxId(TRAINER_EREADER, 0);
 }
 
-u8 GetBattleFacilityTrainerGfxId(u16 trainerId)
+u16 GetBattleFacilityTrainerGfxId(u16 trainerId)
 {
     u32 i;
     u8 facilityClass;
-    u8 trainerObjectGfxId;
+    u16 trainerObjectGfxId;
 
     SetFacilityPtrsGetLevel();
 #if FREE_BATTLE_TOWER_E_READER == FALSE
@@ -1565,7 +1565,7 @@ void GetFrontierTrainerName(u8 *dst, u16 trainerId)
     dst[i] = EOS;
 }
 
-static bool8 IsFrontierTrainerFemale(u16 trainerId)
+static bool8 UNUSED IsFrontierTrainerFemale(u16 trainerId)
 {
     u32 i;
     u8 facilityClass;
@@ -1994,13 +1994,13 @@ static void HandleSpecialTrainerBattleEnd(void)
     case SPECIAL_BATTLE_EREADER:
         CopyEReaderTrainerFarewellMessage();
         break;
-    case SPECIAL_BATTLE_MULTI:
+    /*case SPECIAL_BATTLE_MULTI:
         for (i = 0; i < 3; i++)
         {
             if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES))
                 gSaveBlock1Ptr->playerParty[i] = gPlayerParty[i];
         }
-        break;
+        break;*/
     }
 
     SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
@@ -2157,8 +2157,6 @@ void DoSpecialTrainerBattle(void)
         else
             BattleTransition_StartOnField(GetTrainerBattleTransition());
 
-        if (gSpecialVar_0x8005 & MULTI_BATTLE_CHOOSE_MONS) // Skip mons restoring(done in the script)
-            gBattleScripting.specialTrainerBattleType = 0xFF;
         break;
     }
 }
@@ -2202,12 +2200,12 @@ static void SaveBattleTowerRecord(void)
     StringCopy_PlayerName(playerRecord->name, gSaveBlock2Ptr->playerName);
     playerRecord->winStreak = GetCurrentBattleTowerWinStreak(lvlMode, battleMode);
 
-    for (i = 0; i < EASY_CHAT_BATTLE_WORDS_COUNT; i++)
-    {
-        playerRecord->greeting[i] = gSaveBlock1Ptr->easyChatBattleStart[i];
-        playerRecord->speechWon[i] = gSaveBlock1Ptr->easyChatBattleWon[i];
-        playerRecord->speechLost[i] = gSaveBlock1Ptr->easyChatBattleLost[i];
-    }
+    // for (i = 0; i < EASY_CHAT_BATTLE_WORDS_COUNT; i++)
+    // {
+    //     playerRecord->greeting[i] = gSaveBlock1Ptr->easyChatBattleStart[i];
+    //     playerRecord->speechWon[i] = gSaveBlock1Ptr->easyChatBattleWon[i];
+    //     playerRecord->speechLost[i] = gSaveBlock1Ptr->easyChatBattleLost[i];
+    // }
 
     for (i = 0; i < MAX_FRONTIER_PARTY_SIZE; i++)
     {
@@ -2809,10 +2807,10 @@ static void AwardBattleTowerRibbons(void)
     u8 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
     u8 monCount = GetMonCountForBattleMode(battleMode);
 
-    if (lvlMode != FRONTIER_LVL_50)
-        ribbonType = MON_DATA_VICTORY_RIBBON;
-    else
-        ribbonType = MON_DATA_WINNING_RIBBON;
+    // if (lvlMode != FRONTIER_LVL_50)
+    //     ribbonType = MON_DATA_VICTORY_RIBBON;
+    // else
+    //     ribbonType = MON_DATA_WINNING_RIBBON;
 
     gSpecialVar_Result = FALSE;
 
@@ -2855,40 +2853,38 @@ static void AwardBattleTowerRibbons(void)
 // trainer with the player's current data.
 static void UNUSED FillEReaderTrainerWithPlayerData(void)
 {
-#if FREE_BATTLE_TOWER_E_READER == FALSE
-    struct BattleTowerEReaderTrainer *ereaderTrainer = &gSaveBlock2Ptr->frontier.ereaderTrainer;
-    s32 i, j;
+    // struct BattleTowerEReaderTrainer *ereaderTrainer = &gSaveBlock2Ptr->frontier.ereaderTrainer;
+    // s32 i, j;
 
-    if (gSaveBlock2Ptr->playerGender != MALE)
-    {
-        ereaderTrainer->facilityClass = gTowerFemaleFacilityClasses[(gSaveBlock2Ptr->playerTrainerId[0] + gSaveBlock2Ptr->playerTrainerId[1]
-                                                        + gSaveBlock2Ptr->playerTrainerId[2] + gSaveBlock2Ptr->playerTrainerId[3]) % ARRAY_COUNT(gTowerFemaleFacilityClasses)];
-    }
-    else
-    {
-        ereaderTrainer->facilityClass = gTowerMaleFacilityClasses[(gSaveBlock2Ptr->playerTrainerId[0] + gSaveBlock2Ptr->playerTrainerId[1]
-                                                        + gSaveBlock2Ptr->playerTrainerId[2] + gSaveBlock2Ptr->playerTrainerId[3]) % ARRAY_COUNT(gTowerMaleFacilityClasses)];
-    }
+    // if (gSaveBlock2Ptr->playerGender != MALE)
+    // {
+    //     ereaderTrainer->facilityClass = gTowerFemaleFacilityClasses[(gSaveBlock2Ptr->playerTrainerId[0] + gSaveBlock2Ptr->playerTrainerId[1]
+    //                                                     + gSaveBlock2Ptr->playerTrainerId[2] + gSaveBlock2Ptr->playerTrainerId[3]) % ARRAY_COUNT(gTowerFemaleFacilityClasses)];
+    // }
+    // else
+    // {
+    //     ereaderTrainer->facilityClass = gTowerMaleFacilityClasses[(gSaveBlock2Ptr->playerTrainerId[0] + gSaveBlock2Ptr->playerTrainerId[1]
+    //                                                     + gSaveBlock2Ptr->playerTrainerId[2] + gSaveBlock2Ptr->playerTrainerId[3]) % ARRAY_COUNT(gTowerMaleFacilityClasses)];
+    // }
 
-    CopyTrainerId(ereaderTrainer->trainerId, gSaveBlock2Ptr->playerTrainerId);
-    StringCopy_PlayerName(ereaderTrainer->name, gSaveBlock2Ptr->playerName);
+    // CopyTrainerId(ereaderTrainer->trainerId, gSaveBlock2Ptr->playerTrainerId);
+    // StringCopy_PlayerName(ereaderTrainer->name, gSaveBlock2Ptr->playerName);
 
-    ereaderTrainer->winStreak = 1;
+    // ereaderTrainer->winStreak = 1;
 
-    j = 7;
-    for (i = 0; i < EASY_CHAT_BATTLE_WORDS_COUNT; i++)
-    {
-        ereaderTrainer->greeting[i] = gSaveBlock1Ptr->easyChatBattleStart[i];
-        ereaderTrainer->farewellPlayerLost[i] = j;
-        ereaderTrainer->farewellPlayerWon[i] = j + 6;
-        j++;
-    }
+    // j = 7;
+    // for (i = 0; i < EASY_CHAT_BATTLE_WORDS_COUNT; i++)
+    // {
+    //     ereaderTrainer->greeting[i] = gSaveBlock1Ptr->easyChatBattleStart[i];
+    //     ereaderTrainer->farewellPlayerLost[i] = j;
+    //     ereaderTrainer->farewellPlayerWon[i] = j + 6;
+    //     j++;
+    // }
 
-    for (i = 0; i < (int)ARRAY_COUNT(ereaderTrainer->party); i++)
-        ConvertPokemonToBattleTowerPokemon(&gPlayerParty[i], &ereaderTrainer->party[i]);
+    // for (i = 0; i < (int)ARRAY_COUNT(ereaderTrainer->party); i++)
+    //     ConvertPokemonToBattleTowerPokemon(&gPlayerParty[i], &ereaderTrainer->party[i]);
 
-    SetEReaderTrainerChecksum(ereaderTrainer);
-#endif //FREE_BATTLE_TOWER_E_READER
+    // SetEReaderTrainerChecksum(ereaderTrainer);
 }
 
 u8 GetEreaderTrainerFrontSpriteId(void)
@@ -2958,8 +2954,7 @@ void ValidateEReaderTrainer(void)
 #endif //FREE_BATTLE_TOWER_E_READER
 }
 
-#if FREE_BATTLE_TOWER_E_READER == FALSE
-static void SetEReaderTrainerChecksum(struct BattleTowerEReaderTrainer *ereaderTrainer)
+static void UNUSED SetEReaderTrainerChecksum(struct BattleTowerEReaderTrainer *ereaderTrainer)
 {
     s32 i;
 
@@ -3013,25 +3008,57 @@ void TryHideBattleTowerReporter(void)
 
 static void FillPartnerParty(u16 trainerId)
 {
-    s32 i, j, k;
-    u32 firstIdPart = 0, secondIdPart = 0, thirdIdPart = 0;
-    u32 ivs, level, personality;
-    u32 friendship;
+    u8 fixedIV;
+    u8 ability, gender;
+    s32 i, j;
+    u32 ivs, level;
     u16 monId;
     u32 otID;
+    u32 status;
     u8 trainerName[(PLAYER_NAME_LENGTH * 3) + 1];
-    s32 ball = -1;
     SetFacilityPtrsGetLevel();
 
     if (trainerId > TRAINER_PARTNER(PARTNER_NONE))
     {
+        for (i = 0; i < MULTI_PARTY_SIZE; i++)
+        {
+            do
+            {
+                j = Random32();
+            } while (IsShinyOtIdPersonality(STEVEN_OTID, j) || sStevenMons[i].nature != GetNatureFromPersonality(j));
+            CreateMon(&gPlayerParty[MULTI_PARTY_SIZE + i],
+                      sStevenMons[i].species,
+                      sStevenMons[i].level,
+                      sStevenMons[i].fixedIV,
+                      TRUE,
+                      #ifdef BUGFIX
+                      j,
+                      #else
+                      i, // BUG: personality was stored in the 'j' variable. As a result, Steven's pokemon do not have the intended natures.
+                      #endif
+                      OT_ID_PRESET, STEVEN_OTID);
+            for (j = 0; j < PARTY_SIZE; j++)
+                SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_HP_EV + j, &sStevenMons[i].evs[j]);
+            for (j = 0; j < MAX_MON_MOVES; j++)
+                SetMonMoveSlot(&gPlayerParty[MULTI_PARTY_SIZE + i], sStevenMons[i].moves[j], j);
+            SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_STEVEN].trainerName);
+            // j = MALE;
+            // SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
+            CalculateMonStats(&gPlayerParty[MULTI_PARTY_SIZE + i]);
+        }
+    }
+    else if (trainerId >= TRAINER_CUSTOM_PARTNER)
+    {
+        otID = Random32();
+
         for (i = 0; i < 3; i++)
             ZeroMonData(&gPlayerParty[i + 3]);
 
         for (i = 0; i < 3 && i < gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].partySize; i++)
         {
-            const struct TrainerMon *partyData = gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].party;
-            const u8 *partnerName = gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerName;
+            const struct TrainerMon *partyData = gTrainers[trainerId - TRAINER_CUSTOM_PARTNER].party;
+
+            gender = ((Random() % 2) ? MON_MALE : MON_FEMALE);
 
             for (k = 0; partnerName[k] != EOS && k < 3; k++)
             {
@@ -3058,54 +3085,100 @@ static void FillPartnerParty(u16 trainerId)
 
             personality = Random32();
             if (partyData[i].gender == TRAINER_MON_MALE)
-                personality = (personality & 0xFFFFFF00) | GeneratePersonalityForGender(MON_MALE, partyData[i].species);
+                gender = MON_MALE;
             else if (partyData[i].gender == TRAINER_MON_FEMALE)
-                personality = (personality & 0xFFFFFF00) | GeneratePersonalityForGender(MON_FEMALE, partyData[i].species);
-            ModifyPersonalityForNature(&personality, partyData[i].nature);
-            CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, 0, TRUE, personality, OT_ID_PRESET, otID);
-            j = partyData[i].isShiny;
-            SetMonData(&gPlayerParty[i + 3], MON_DATA_IS_SHINY, &j);
-            SetMonData(&gPlayerParty[i + 3], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
-            CustomTrainerPartyAssignMoves(&gPlayerParty[i + 3], &partyData[i]);
+                gender = MON_FEMALE;
+            else if (partyData[i].gender == TRAINER_MON_GENDERLESS)
+                gender = MON_GENDERLESS;
 
-            SetMonData(&gPlayerParty[i + 3], MON_DATA_IVS, &(partyData[i].iv));
-            if (partyData[i].ev != NULL)
+            if (partyData[i].nature > 0)
+                CreateMonWithGenderNatureLetter(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, fixedIV, gender, partyData[i].nature, 0, partyData[i].shiny ? OT_ID_SHINY : OT_ID_RANDOM_NO_SHINY);
+            else
             {
-                SetMonData(&gPlayerParty[i + 3], MON_DATA_HP_EV, &(partyData[i].ev[0]));
-                SetMonData(&gPlayerParty[i + 3], MON_DATA_ATK_EV, &(partyData[i].ev[1]));
-                SetMonData(&gPlayerParty[i + 3], MON_DATA_DEF_EV, &(partyData[i].ev[2]));
-                SetMonData(&gPlayerParty[i + 3], MON_DATA_SPATK_EV, &(partyData[i].ev[3]));
-                SetMonData(&gPlayerParty[i + 3], MON_DATA_SPDEF_EV, &(partyData[i].ev[4]));
-                SetMonData(&gPlayerParty[i + 3], MON_DATA_SPEED_EV, &(partyData[i].ev[5]));
+                CreateMonWithGenderNatureLetter(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, fixedIV, gender, NATURE_SERIOUS, 0, partyData[i].shiny ? OT_ID_SHINY : OT_ID_RANDOM_NO_SHINY);
             }
-            if (partyData[i].ability != ABILITY_NONE)
+
+            if (partyData[i].status > 0)
             {
-                const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[partyData[i].species];
-                u32 maxAbilities = ARRAY_COUNT(speciesInfo->abilities);
-                for (j = 0; j < maxAbilities; j++)
+                if (partyData[i].status == TRAINER_MON_BURNED)
+                    status = STATUS1_BURN;
+                else if (partyData[i].status == TRAINER_MON_POISONED)
+                    status = STATUS1_POISON;
+                else if (partyData[i].status == TRAINER_MON_PARALYZED)
+                    status = STATUS1_PARALYSIS;
+                SetMonData(&gPlayerParty[i + 3], MON_DATA_STATUS, &status);
+            }
+
+            if (partyData[i].nickname[0] != '\0')
+                SetMonData(&gPlayerParty[i + 3], MON_DATA_NICKNAME, &partyData[i].nickname);
+
+            if (partyData[i].ability > 0)
+            {
+                ability = partyData[i].ability;
+
+                if (partyData[i].ability == ABILITY_SLOT_1)
+                    ability = 0;
+
+                SetMonData(&gPlayerParty[i + 3], MON_DATA_ABILITY_NUM, &ability);
+            }
+            else
+            {
+                ability = 0;
+                SetMonData(&gPlayerParty[i + 3], MON_DATA_ABILITY_NUM, &ability);
+            }
+
+            if (partyData[i].heldItem > 0)
+                SetMonData(&gPlayerParty[i + 3], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
+
+            if (partyData[i].moves[0] != '\0')
+            {
+                for (j = 0; j < MAX_MON_MOVES; j++)
                 {
-                    if (speciesInfo->abilities[j] == partyData[i].ability)
-                        break;
+                    SetMonData(&gPlayerParty[i + 3], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
+                    SetMonData(&gPlayerParty[i + 3], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
+                    SetMonData(&gPlayerParty[i + 3], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
+                    SetMonData(&gPlayerParty[i + 3], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
                 }
-                if (j < maxAbilities)
-                    SetMonData(&gPlayerParty[i + 3], MON_DATA_ABILITY_NUM, &j);
             }
-            SetMonData(&gPlayerParty[i + 3], MON_DATA_FRIENDSHIP, &(partyData[i].friendship));
-            if (partyData[i].ball != ITEM_NONE)
+
+            if (partyData[i].iv > 0)
             {
-                ball = partyData[i].ball;
-                SetMonData(&gPlayerParty[i + 3], MON_DATA_POKEBALL, &ball);
+                for (j = 0; j < NUM_STATS; j++)
+                {
+                    SetMonData(&gPlayerParty[i + 3], MON_DATA_HP_IV + j, &fixedIV);
+                }
             }
-            if (partyData[i].nickname != NULL)
+            else if (partyData[i].iv == WORST_IVS)
             {
-                SetMonData(&gPlayerParty[i + 3], MON_DATA_NICKNAME, partyData[i].nickname);
+                fixedIV = 0;
+
+                for (j = 0; j < NUM_STATS; j++)
+                {
+                    SetMonData(&gPlayerParty[i + 3], MON_DATA_HP_IV + j, &fixedIV);
+                }
+            }
+            else
+            {
+                for (j = 0; j < NUM_STATS; j++)
+                {
+                    SetMonData(&gPlayerParty[i + 3], MON_DATA_HP_IV + j, &partyData[i].ivs[j]);
+                }
+            }
+
+            for (j = 0; j < NUM_STATS; j++)
+            {
+                SetMonData(&gPlayerParty[i + 3], MON_DATA_HP_EV + j, &partyData[i].evs[j]);
+
             }
             CalculateMonStats(&gPlayerParty[i + 3]);
 
+            if (partyData[i].ball > 0)
+                SetMonData(&gPlayerParty[i + 3], MON_DATA_POKEBALL, &partyData[i].ball);
+
             StringCopy(trainerName, gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerName);
             SetMonData(&gPlayerParty[i + 3], MON_DATA_OT_NAME, trainerName);
-            j = gBattlePartners[SanitizeTrainerId(trainerId - TRAINER_PARTNER(PARTNER_NONE))].encounterMusic_gender >> 7;
-            SetMonData(&gPlayerParty[i + 3], MON_DATA_OT_GENDER, &j);
+            CalculateMonStats(&gPlayerParty[i + 3]);
+            
         }
     }
     else if (trainerId == TRAINER_EREADER)
@@ -3128,20 +3201,17 @@ static void FillPartnerParty(u16 trainerId)
                                                  ivs,
                                                  gFacilityTrainerMons[monId].evSpread,
                                                  otID);
-            friendship = MAX_FRIENDSHIP;
             for (j = 0; j < MAX_MON_MOVES; j++)
             {
                 SetMonMoveSlot(&gPlayerParty[MULTI_PARTY_SIZE + i], gFacilityTrainerMons[monId].moves[j], j);
-                if (gMovesInfo[gFacilityTrainerMons[monId].moves[j]].effect == EFFECT_FRUSTRATION)
-                    friendship = 0;
             }
-            SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_FRIENDSHIP, &friendship);
+            // SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_FRIENDSHIP, &friendship);
             SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_HELD_ITEM, &gBattleFrontierHeldItems[gFacilityTrainerMons[monId].itemTableId]);
             for (j = 0; j < PLAYER_NAME_LENGTH + 1; j++)
                 trainerName[j] = gFacilityTrainers[trainerId].trainerName[j];
             SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, &trainerName);
-            j = IsFrontierTrainerFemale(trainerId);
-            SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
+            // j = IsFrontierTrainerFemale(trainerId);
+            // SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
         }
     }
     else if (trainerId < TRAINER_RECORD_MIXING_APPRENTICE)
@@ -3167,8 +3237,8 @@ static void FillPartnerParty(u16 trainerId)
             }
             CreateBattleTowerMon_HandleLevel(&gPlayerParty[MULTI_PARTY_SIZE + i], &monData, TRUE);
             SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, trainerName);
-            j = IsFrontierTrainerFemale(trainerId + TRAINER_RECORD_MIXING_FRIEND);
-            SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
+            // j = IsFrontierTrainerFemale(trainerId + TRAINER_RECORD_MIXING_FRIEND);
+            // SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
         }
     }
     else
@@ -3177,8 +3247,8 @@ static void FillPartnerParty(u16 trainerId)
         for (i = 0; i < FRONTIER_MULTI_PARTY_SIZE; i++)
         {
             CreateApprenticeMon(&gPlayerParty[MULTI_PARTY_SIZE + i], &gSaveBlock2Ptr->apprentices[trainerId], gSaveBlock2Ptr->frontier.trainerIds[18 + i]);
-            j = IsFrontierTrainerFemale(trainerId + TRAINER_RECORD_MIXING_APPRENTICE);
-            SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
+            // j = IsFrontierTrainerFemale(trainerId + TRAINER_RECORD_MIXING_APPRENTICE);
+            // SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
         }
     }
 }
@@ -3580,9 +3650,9 @@ static void FillTentTrainerParty_(u16 trainerId, u8 firstMonId, u8 monCount)
     }
 }
 
-u8 FacilityClassToGraphicsId(u8 facilityClass)
+u16 FacilityClassToGraphicsId(u8 facilityClass)
 {
-    u8 trainerObjectGfxId;
+    u16 trainerObjectGfxId;
     u8 i;
 
     // Search male classes.

@@ -125,9 +125,10 @@ static const struct WindowTemplate UNUSED sBerryPowderWindowTemplates[] =
     },
 };
 
-static u32 DecryptBerryPowder(u32 *powder)
+static u32 UNUSED DecryptBerryPowder(u32 *powder)
 {
-    return *powder ^ gSaveBlock2Ptr->encryptionKey;
+    return 0;
+    // return *powder ^ gSaveBlock2Ptr->encryptionKey;
 }
 
 void SetBerryPowder(u32 *powder, u32 amount)
@@ -137,68 +138,70 @@ void SetBerryPowder(u32 *powder, u32 amount)
 
 void ApplyNewEncryptionKeyToBerryPowder(u32 encryptionKey)
 {
-    u32 *powder = &gSaveBlock2Ptr->berryCrush.berryPowderAmount;
-    ApplyNewEncryptionKeyToWord(powder, encryptionKey);
+    // u32 *powder = &gSaveBlock2Ptr->berryCrush.berryPowderAmount;
+    // ApplyNewEncryptionKeyToWord(powder, encryptionKey);
 }
 
-static bool8 HasEnoughBerryPowder_(u32 cost)
+static bool8 UNUSED HasEnoughBerryPowder_(u32 cost)
 {
-    u32 *powder = &gSaveBlock2Ptr->berryCrush.berryPowderAmount;
-    if (DecryptBerryPowder(powder) < cost)
-        return FALSE;
-    else
-        return TRUE;
+    // u32 *powder = &gSaveBlock2Ptr->berryCrush.berryPowderAmount;
+    // if (DecryptBerryPowder(powder) < cost)
+    //     return FALSE;
+    // else
+    return TRUE;
 }
 
-bool8 HasEnoughBerryPowder(void)
+bool8 UNUSED HasEnoughBerryPowder(void)
 {
-    u32 *powder = &gSaveBlock2Ptr->berryCrush.berryPowderAmount;
-    if (DecryptBerryPowder(powder) < gSpecialVar_0x8004)
-        return FALSE;
-    else
-        return TRUE;
+    // u32 *powder = &gSaveBlock2Ptr->berryCrush.berryPowderAmount;
+    // if (DecryptBerryPowder(powder) < gSpecialVar_0x8004)
+    //     return FALSE;
+    // else
+    return TRUE;
 }
 
 bool8 GiveBerryPowder(u32 amountToAdd)
 {
-    u32 *powder = &gSaveBlock2Ptr->berryCrush.berryPowderAmount;
-    u32 amount = DecryptBerryPowder(powder) + amountToAdd;
-    if (amount > MAX_BERRY_POWDER)
-    {
-        SetBerryPowder(powder, MAX_BERRY_POWDER);
-        return FALSE;
-    }
-    else
-    {
-        SetBerryPowder(powder, amount);
-        return TRUE;
-    }
+    // u32 *powder = &gSaveBlock2Ptr->berryCrush.berryPowderAmount;
+    // u32 amount = DecryptBerryPowder(powder) + amountToAdd;
+    // if (amount > MAX_BERRY_POWDER)
+    // {
+    //     SetBerryPowder(powder, MAX_BERRY_POWDER);
+    //     return FALSE;
+    // }
+    // else
+    // {
+    //     SetBerryPowder(powder, amount);
+    //     return TRUE;
+    // }
+    return TRUE;
 }
 
 static bool8 UNUSED TakeBerryPowder_(u32 cost)
 {
-    u32 *powder = &gSaveBlock2Ptr->berryCrush.berryPowderAmount;
-    if (!HasEnoughBerryPowder_(cost))
-        return FALSE;
+    // u32 *powder = &gSaveBlock2Ptr->berryCrush.berryPowderAmount;
+    // if (!HasEnoughBerryPowder_(cost))
+    //     return FALSE;
 
-    SetBerryPowder(powder, DecryptBerryPowder(powder) - cost);
+    // SetBerryPowder(powder, DecryptBerryPowder(powder) - cost);
     return TRUE;
 }
 
 bool8 TakeBerryPowder(void)
 {
-    u32 *powder = &gSaveBlock2Ptr->berryCrush.berryPowderAmount;
-    if (!HasEnoughBerryPowder_(gSpecialVar_0x8004))
-        return FALSE;
+    // u32 *powder = &gSaveBlock2Ptr->berryCrush.berryPowderAmount;
+    // if (!HasEnoughBerryPowder_(gSpecialVar_0x8004))
+    //     return FALSE;
 
-    SetBerryPowder(powder, DecryptBerryPowder(powder) - gSpecialVar_0x8004);
+    // SetBerryPowder(powder, DecryptBerryPowder(powder) - gSpecialVar_0x8004);
     return TRUE;
 }
 
 u32 GetBerryPowder(void)
 {
-    u32 *powder = &gSaveBlock2Ptr->berryCrush.berryPowderAmount;
-    return DecryptBerryPowder(powder);
+    // u32 *powder = &gSaveBlock2Ptr->berryCrush.berryPowderAmount;
+    // return GetBerryPowder();
+    return 0;
 }
 
 static void PrintBerryPowderAmount(u8 windowId, int amount, u8 x, u8 y, u8 speed)

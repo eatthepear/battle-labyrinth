@@ -240,6 +240,38 @@
 #define OBJ_EVENT_GFX_LINK_RS_MAY                236
 #define OBJ_EVENT_GFX_LUGIA                      237
 #define OBJ_EVENT_GFX_HOOH                       238
+#define OBJ_EVENT_GFX_COLRESS                    239
+#define OBJ_EVENT_GFX_RANGER_M                   240
+#define OBJ_EVENT_GFX_RANGER_F                   241
+#define OBJ_EVENT_GFX_REGIDRAGO                  242
+#define OBJ_EVENT_GFX_REGIELEKI                  243
+#define OBJ_EVENT_GFX_BUG_MANIAC                 244
+#define OBJ_EVENT_GFX_SCHOOL_KID_F               245
+#define OBJ_EVENT_GFX_FAIRY_TALE_GIRL            246
+#define OBJ_EVENT_GFX_SOCIALITE                  247
+#define OBJ_EVENT_GFX_ITEM_CHEST                 248
+#define OBJ_EVENT_GFX_ITEM_CHEST_OPEN            249
+#define OBJ_EVENT_GFX_TM_CHEST                   250
+#define OBJ_EVENT_GFX_TM_CHEST_OPEN              251
+#define OBJ_EVENT_GFX_AROMA_LADY                 252
+#define OBJ_EVENT_GFX_BACKPACKER_F               253
+#define OBJ_EVENT_GFX_BIRD_KEEPER                254
+#define OBJ_EVENT_GFX_WORKER                     255
+#define OBJ_EVENT_GFX_ICE_WORKER                 256
+#define OBJ_EVENT_GFX_ROUGHNECK                  257
+#define OBJ_EVENT_GFX_PORYGON                    258
+#define OBJ_EVENT_GFX_SHINY_PORYGON              259
+#define OBJ_EVENT_GFX_SWIMMER_F_WALKING          260
+#define OBJ_EVENT_GFX_MIRAGE                     261
+#define OBJ_EVENT_GFX_BREEDER_M                  262
+#define OBJ_EVENT_GFX_BREEDER_F                  263
+#define OBJ_EVENT_GFX_RUIN_MANIAC                264
+#define OBJ_EVENT_GFX_GUITARIST                  265
+#define OBJ_EVENT_GFX_COLLECTOR                  266
+#define OBJ_EVENT_GFX_KINDLER                    267
+#define OBJ_EVENT_GFX_PSYCHIC_F                  268
+#define OBJ_EVENT_GFX_DRAGON_TAMER               269
+#define OBJ_EVENT_GFX_COWGIRL                    270
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
@@ -250,7 +282,7 @@
 // object graphics that can be removed. If more graphics are needed, anything that
 // stores graphics ids will need to be increased in size. See wiki entry below:
 // https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion
-#define NUM_OBJ_EVENT_GFX                        239
+#define NUM_OBJ_EVENT_GFX                        271
 
 
 // These are dynamic object gfx ids.
@@ -292,6 +324,7 @@
 #define OBJ_KIND_CLONE  255 // Exclusive to FRLG
 
 // Special object event local ids
+#define OBJ_EVENT_ID_FOLLOWER 0xFE
 #define OBJ_EVENT_ID_PLAYER 0xFF
 #define OBJ_EVENT_ID_CAMERA 0x7F
 

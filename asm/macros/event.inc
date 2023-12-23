@@ -1393,7 +1393,7 @@
 	@ The specified id can be used to refer to the sprite again later with turnvobject.
 	.macro createvobject graphicsId:req, id:req, x:req, y:req, elevation=3, direction=DIR_SOUTH
 	.byte 0xaa
-	.byte \graphicsId
+	.2byte \graphicsId
 	.byte \id
 	.2byte \x
 	.2byte \y
@@ -1964,7 +1964,7 @@
 	NO  = 0
 
 	@ Buffers the given text and calls the relevant standard message script (see gStdScripts).
-	.macro msgbox text:req, type=MSGBOX_DEFAULT
+	.macro msgbox text:req, type=MSGBOX_AUTOCLOSE
 	loadword 0, \text
 	callstd \type
 	.endm
@@ -2104,71 +2104,121 @@
 	trainerbattle_no_intro \trainer2, NULL
 	.endm
 
-	@ Sets VAR_RESULT to TRUE if stat can be hyper trained, or to
-	@ FALSE otherwise.
-	.macro canhypertrain stat:req, slot:req
-	callnative CanHyperTrain
-	.byte \stat
-	.2byte \slot
+    @ sets an NPC up to follow the player
+    .macro setfollower localId:req, flags:req
+    .byte 0xe3
+    .byte \localId
+    .2byte \flags
+    .endm
+    
+    @ remove the following NPC (assumes there will only ever be one)
+    .macro destroyfollower
+    .byte 0xe4
+    .endm
+    
+    @ makes the player and follower face one another
+    .macro facefollower
+    .byte 0xe5
+    .endm
+    
+    @ checks if you have a follower. returns the result to VAR_RESULT
+    .macro checkfollower
+    .byte 0xe6
+    .endm
+
+	.macro _dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req argv:vararg
+	.byte 0xe7
+	.2byte \left
+	.2byte \top
+	.byte \ignoreBPress
+	.byte \maxBeforeScroll
+	.byte \shouldSort
+	.2byte \initialSelected
+	.byte \callbacks
+	.byte (.Ldynmultichoice_\@_2 - .Ldynmultichoice_\@_1) / 4
+.Ldynmultichoice_\@_1:
+	.4byte \argv
+.Ldynmultichoice_\@_2:
 	.endm
 
-	@ Hyper Trains a stat.
-	.macro hypertrain stat:req, slot:req
-	callnative HyperTrain
-	.byte \stat
-	.2byte \slot
+	@ Displays a multichoice box from which the user can choose a selection, and blocks script execution until a selection is made.
+	@ Lists of options are provided in argv.
+	@ If ignoreBPress is set to a non-zero value, then the user will not be allowed to back out of the multichoice with the B button.
+	.macro dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, initialSelected:req, callbacks:req argv:vararg
+	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, FALSE, \initialSelected, \callbacks, \argv
 	.endm
 
-	@ Sets VAR_RESULT to TRUE if the Pokemon has the Gigantamax Factor,
-	@ or to FALSE otherwise.
-	.macro hasgigantamaxfactor slot:req
-	callnative HasGigantamaxFactor
-	.2byte \slot
+	.macro dynmultipush name:req, id:req
+	.byte 0xe8
+	.4byte \name
+	.2byte \id
 	.endm
 
-	@ Toggles the Gigantamax Factor for a Pokemon.
-	@ Fails for Melmetal (vanilla behavior).
-	@ Sets VAR_RESULT to TRUE if it succeeds, and FALSE otherwise.
-	.macro togglegigantamaxfactor slot:req
-	callnative ToggleGigantamaxFactor
-	.2byte \slot
+	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
+	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
 	.endm
 
-	@ Sets VAR_RESULT to one of the arguments (via setorcopyvar).
-	.macro randomelement element:req, elements:vararg
-	.set _randomelement_n, 0
-	.irp el, \element, \elements
-	.set _randomelement_n, _randomelement_n + 1
-	.endr
-		random _randomelement_n
+	@ Checks if it is a blocked Pokemon under Species Clause
+    @ The result is stored in VAR_RESULT
+    .macro checkspeciesclause species:req
+    setvar VAR_TEMP_0, \species
+    specialvar VAR_RESULT, CheckSpeciesClause
+    .endm
 
-	.set _randomelement_n, 0
-	.irp el, \element, \elements
-		goto_if_ne VAR_RESULT, _randomelement_n, 1f
-		setorcopyvar VAR_RESULT, \el
-		goto 2f
-	1:
-	.set _randomelement_n, _randomelement_n + 1
-	.endr
-	2:
+	@ Opens the bag in the specified pocket and lets the Player choose an item.
+	@ This item can be used for scripting purposes and it's stored in VAR_ITEM_ID.
+	.macro chooseitem pocket:req
+	setvar VAR_TEMP_1, \pocket
+	fadescreen FADE_TO_BLACK
+	special ChooseItemFromBag
+	waitstate
 	.endm
 
-	@ Sets VAR_RESULT to TRUE with probability 'percent', and FALSE
-	@ with probability '100% - percent'.
-	.macro randompercentage percent:req
-		random 100
-		goto_if_lt VAR_RESULT, \percent, 1f
-		setvar VAR_RESULT, FALSE
-		goto 2f
-	1:
-		setvar VAR_RESULT, TRUE
-	2:
+	@ Calls a script if the Player's Pokedex has seen the specified Pokemon.
+	.macro call_if_mon_seen species:req, script:req
+	setvar VAR_TEMP_1, \species
+	specialvar VAR_RESULT, GetSeenMon
+	compare VAR_RESULT, TRUE
+	call_if TRUE, \script
 	.endm
 
-	@ Inflicts \status1 to the Pokémon in \slot.
-	@ If \slot is greater or equal than PARTY_SIZE, the status is inflicted on each of the Player's Pokémon.
-	.macro setstatus1 status1:req, slot:req
-	callnative Script_SetStatus1
-	.2byte \status1
-	.2byte \slot
+	@ Calls a script if the Player's Pokedex has recorded the data of the specified Pokemon.
+	.macro call_if_mon_caught species:req, script:req
+	setvar VAR_TEMP_1, \species
+	specialvar VAR_RESULT, GetCaughtMon
+	compare VAR_RESULT, TRUE
+	call_if TRUE, \script
+	.endm
+
+	@ Jumps to a script if the Player's Pokedex has seen the specified Pokemon.
+	.macro goto_if_mon_seen species:req, script:req
+	setvar VAR_TEMP_1, \species
+	specialvar VAR_RESULT, GetSeenMon
+	compare VAR_RESULT, TRUE
+	goto_if TRUE, \script
+	.endm
+
+	@ Jumps to a script if the Player's Pokedex has recorded the data of the specified Pokemon.
+	.macro goto_if_mon_caught species:req, script:req
+	setvar VAR_TEMP_1, \species
+	specialvar VAR_RESULT, GetCaughtMon
+	compare VAR_RESULT, TRUE
+	goto_if TRUE, \script
+	.endm
+
+	@ Sets the Pokédex Seen flag of the specified Pokemon
+	.macro setseenmon species:req
+	setvar VAR_TEMP_1, \species
+	special SetSeenMon
+	.endm
+
+	@ Sets the Pokédex Caught flag of the specified Pokemon
+	.macro setcaughtmon species:req
+	setvar VAR_TEMP_1, \species
+	special SetCaughtMon
+	.endm
+
+	.macro setitemarg id:req
+	setvar VAR_0x8000, \id,
+	callnative ScrCmd_SetItemArg
 	.endm
