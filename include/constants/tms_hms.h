@@ -2,24 +2,74 @@
 #define GUARD_CONSTANTS_TMS_HMS_H
 
 #define FOREACH_TM(F) \
+    F(PROTECT) \
+    F(HIDDEN_POWER) \
+    F(AERIAL_ACE) \
+    F(BUG_BITE) \
+    F(ELECTROWEB) \
+    F(SNARL) \
+    F(DRAINING_KISS) \
+    F(WATER_PULSE) \
+    F(POWER_UP_PUNCH) \
+    F(CHARGE_BEAM) \
+    F(FLAME_CHARGE) \
+    F(ROCK_TOMB) \
+    F(THIEF) \
+    F(RETALIATE) \
+    F(BULLET_SEED) \
+    F(STEEL_WING) \
+    F(HONE_CLAWS) \
+    F(IRON_DEFENSE) \
+    F(AMNESIA) \
+    F(SCORCHING_SANDS) \
+    F(TELEPORT) \
+    F(COVET) \
+    F(PLUCK) \
+    F(LOW_SWEEP) \
+    F(BULLDOZE) \
+    F(FREEZE_DRY) \
+    F(SLUDGE_BOMB) \
+    F(FACADE) \
+    F(BRICK_BREAK) \
+    F(SEED_BOMB) \
+    F(AURORA_VEIL) \
+    F(X_SCISSOR) \
+    F(RAIN_DANCE) \
+    F(DRAGON_TAIL) \
+    F(SANDSTORM) \
+    F(PSYSHOCK) \
+    F(HIGH_HORSEPOWER) \
+    F(ROCK_SLIDE) \
+    F(RETURN) \
+    F(ACID) \
+    F(VINE_WHIP) \
+    F(BUBBLE) \
+    F(POISON_STING) \
+    F(SCRATCH) \
+    F(TAIL_WHIP) \
+    F(KARATE_CHOP) \
+    F(POUND) \
+    F(EMBER) \
+    F(BITE) \
+    F(CONFUSION) \
     F(FOCUS_PUNCH) \
     F(DRAGON_CLAW) \
-    F(WATER_PULSE) \
+    F(WATER_GUN) \
     F(CALM_MIND) \
     F(ROAR) \
     F(TOXIC) \
     F(HAIL) \
     F(BULK_UP) \
-    F(BULLET_SEED) \
-    F(HIDDEN_POWER) \
+    F(LEECH_SEED) \
+    F(CURSE) \
     F(SUNNY_DAY) \
     F(TAUNT) \
     F(ICE_BEAM) \
     F(BLIZZARD) \
     F(HYPER_BEAM) \
     F(LIGHT_SCREEN) \
-    F(PROTECT) \
-    F(RAIN_DANCE) \
+    F(LICK) \
+    F(STRING_SHOT) \
     F(GIGA_DRAIN) \
     F(SAFEGUARD) \
     F(FRUSTRATION) \
@@ -28,27 +78,27 @@
     F(THUNDERBOLT) \
     F(THUNDER) \
     F(EARTHQUAKE) \
-    F(RETURN) \
+    F(DEFENSE_CURL) \
     F(DIG) \
     F(PSYCHIC) \
     F(SHADOW_BALL) \
-    F(BRICK_BREAK) \
+    F(STOCKPILE) \
     F(DOUBLE_TEAM) \
     F(REFLECT) \
     F(SHOCK_WAVE) \
     F(FLAMETHROWER) \
-    F(SLUDGE_BOMB) \
-    F(SANDSTORM) \
+    F(ROCK_THROW) \
+    F(LEAFAGE) \
     F(FIRE_BLAST) \
-    F(ROCK_TOMB) \
-    F(AERIAL_ACE) \
+    F(GROWL) \
+    F(TACKLE) \
     F(TORMENT) \
-    F(FACADE) \
+    F(CONSTRICT) \
     F(SECRET_POWER) \
     F(REST) \
     F(ATTRACT) \
-    F(THIEF) \
-    F(STEEL_WING) \
+    F(BIND) \
+    F(ABSORB) \
     F(SKILL_SWAP) \
     F(SNATCH) \
     F(OVERHEAT)

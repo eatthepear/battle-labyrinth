@@ -3,6 +3,7 @@
 
 extern bool8 gBikeCyclingChallenge;
 extern u8 gBikeCollisions;
+extern u16 gScrollableMultichoice_ScrollOffset;
 
 u8 GetLeadMonIndex(void);
 u8 IsDestinationBoxFull(void);
@@ -32,5 +33,12 @@ void ResetFanClub(void);
 bool8 ShouldShowBoxWasFullMessage(void);
 void SetPCBoxToSendMon(u8 boxId);
 void PreparePartyForSkyBattle(void);
+void ReverseHiddenItemFlags(void);
+u16 GetNumTrainersRemaining(void);
+u16 GetCurrentLevelCap(void);
+u16 GetNumItemsRemaining(void);
+void NewGameSetup(void);
+bool8 CheckSpeciesClause(void);
+void ChooseItemFromBag(void);
 
 #endif // GUARD_FIELD_SPECIALS_H

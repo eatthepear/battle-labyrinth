@@ -24,6 +24,10 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "constants/rgb.h"
+#include "data.h"
+#include "event_data.h"
+#include "constants/battle_transition.h"
+#include "constants/vars.h"
 
 #define PALTAG_UNUSED_MUGSHOT 0x100A
 
@@ -112,6 +116,7 @@ static void Task_Phoebe(u8);
 static void Task_Glacia(u8);
 static void Task_Drake(u8);
 static void Task_Champion(u8);
+static void Task_Mugshot(u8);
 static void Task_Aqua(u8);
 static void Task_Magma(u8);
 static void Task_Regice(u8);
@@ -388,6 +393,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_FRONTIER_CIRCLES_CROSS_IN_SEQ] = Task_FrontierCirclesCrossInSeq,
     [B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL_IN_SEQ] = Task_FrontierCirclesAsymmetricSpiralInSeq,
     [B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL_IN_SEQ] = Task_FrontierCirclesSymmetricSpiralInSeq,
+    [B_TRANSITION_MUGSHOT] = Task_Mugshot,
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -548,6 +554,30 @@ static const u8 sMugshotsTrainerPicIDsTable[MUGSHOTS_COUNT] =
     [MUGSHOT_GLACIA]   = TRAINER_PIC_ELITE_FOUR_GLACIA,
     [MUGSHOT_DRAKE]    = TRAINER_PIC_ELITE_FOUR_DRAKE,
     [MUGSHOT_CHAMPION] = TRAINER_PIC_CHAMPION_WALLACE,
+    [MUGSHOT_REMI] = TRAINER_PIC_FISHERMAN,
+    [MUGSHOT_DECLAN] = TRAINER_PIC_BUG_MANIAC,
+    [MUGSHOT_RITA] = TRAINER_PIC_LADY,
+    [MUGSHOT_MIRAGE] = TRAINER_PIC_DOME_ACE_TUCKER,
+    [MUGSHOT_ADAMINA] = TRAINER_PIC_LASS,
+    [MUGSHOT_JAKE] = TRAINER_PIC_GUITARIST,
+    [MUGSHOT_KAIZEN1] = TRAINER_PIC_BLACK_BELT,
+    [MUGSHOT_KAIZEN2] = TRAINER_PIC_PSYCHIC_M,
+    [MUGSHOT_SOPHIA] = TRAINER_PIC_TUBER_F,
+    [MUGSHOT_ODYSSEUS] = TRAINER_PIC_SAILOR,
+    [MUGSHOT_JULIE] = TRAINER_PIC_PICNICKER,
+    [MUGSHOT_PAM_AND_CAM] = TRAINER_PIC_YOUNG_COUPLE,
+    [MUGSHOT_MIRAGES] = TRAINER_PIC_MIRAGES,
+    [MUGSHOT_COREY] = TRAINER_PIC_SCHOOL_KID_M,
+    [MUGSHOT_JOEY] = TRAINER_PIC_YOUNGSTER,
+    [MUGSHOT_PHILLIPA] = TRAINER_PIC_SCHOOL_KID_F,
+    [MUGSHOT_MIA] = TRAINER_PIC_FAIRY_TALE_GIRL,
+    [MUGSHOT_BETTY] = TRAINER_PIC_SOCIALITE,
+    [MUGSHOT_MINA] = TRAINER_PIC_TUBER_F,
+    [MUGSHOT_NEWTON] = TRAINER_PIC_SCIENTIST,
+    [MUGSHOT_JENNY] = TRAINER_PIC_BACKPACKER_F,
+    [MUGSHOT_MIGUEL] = TRAINER_PIC_POKEMON_RANGER_M,
+    [MUGSHOT_LILY] = TRAINER_PIC_AROMA_LADY,
+    [MUGSHOT_ZOE_AND_ELI] = TRAINER_PIC_SIS_AND_BRO,
 };
 static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
 {
@@ -556,6 +586,30 @@ static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
     [MUGSHOT_GLACIA] =   {0x1B0, 0x1B0},
     [MUGSHOT_DRAKE] =    {0x1A0, 0x1A0},
     [MUGSHOT_CHAMPION] = {0x188, 0x188},
+    [MUGSHOT_REMI] = {0x200, 0x200},
+    [MUGSHOT_DECLAN] = {0x200, 0x200},
+    [MUGSHOT_RITA] = {0x200, 0x200},
+    [MUGSHOT_MIRAGE] = {0x200, 0x200},
+    [MUGSHOT_ADAMINA] = {0x200, 0x200},
+    [MUGSHOT_JAKE] = {0x200, 0x200},
+    [MUGSHOT_KAIZEN1] = {0x200, 0x200},
+    [MUGSHOT_KAIZEN2] = {0x200, 0x200},
+    [MUGSHOT_SOPHIA] = {0x200, 0x200},
+    [MUGSHOT_ODYSSEUS] = {0x200, 0x200},
+    [MUGSHOT_JULIE] = {0x200, 0x200},
+    [MUGSHOT_PAM_AND_CAM] = {0x200, 0x200},
+    [MUGSHOT_MIRAGES] = {0x200, 0x200},
+    [MUGSHOT_COREY] = {0x200, 0x200},
+    [MUGSHOT_JOEY] = {0x200, 0x200},
+    [MUGSHOT_PHILLIPA] = {0x200, 0x200},
+    [MUGSHOT_MIA] = {0x200, 0x200},
+    [MUGSHOT_BETTY] = {0x200, 0x200},
+    [MUGSHOT_MINA] = {0x200, 0x200},
+    [MUGSHOT_NEWTON] = {0x200, 0x200},
+    [MUGSHOT_JENNY] = {0x200, 0x200},
+    [MUGSHOT_MIGUEL] = {0x200, 0x200},
+    [MUGSHOT_LILY] = {0x200, 0x200},
+    [MUGSHOT_ZOE_AND_ELI] = {0x200, 0x200},
 };
 static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
 {
@@ -564,6 +618,30 @@ static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
     [MUGSHOT_GLACIA] =   {-4,  4},
     [MUGSHOT_DRAKE] =    { 0,  5},
     [MUGSHOT_CHAMPION] = {-8,  7},
+    [MUGSHOT_REMI] = {0,     0},
+    [MUGSHOT_DECLAN] = {0,     0},
+    [MUGSHOT_RITA] = {0,     0},
+    [MUGSHOT_MIRAGE] = {0,     0},
+    [MUGSHOT_ADAMINA] = {0,     0},
+    [MUGSHOT_JAKE] = {0,     0},
+    [MUGSHOT_KAIZEN1] = {0,     0},
+    [MUGSHOT_KAIZEN2] = {0,     0},
+    [MUGSHOT_SOPHIA] = {0,     0},
+    [MUGSHOT_ODYSSEUS] = {0,     0},
+    [MUGSHOT_JULIE] = {0,     0},
+    [MUGSHOT_PAM_AND_CAM] = {0,     0},
+    [MUGSHOT_MIRAGES] = {0,     0},
+    [MUGSHOT_COREY] = {0,     0},
+    [MUGSHOT_JOEY] = {0,     0},
+    [MUGSHOT_PHILLIPA] = {0,     0},
+    [MUGSHOT_MIA] = {0,     0},
+    [MUGSHOT_BETTY] = {0,     0},
+    [MUGSHOT_MINA] = {0,     0},
+    [MUGSHOT_NEWTON] = {0,     0},
+    [MUGSHOT_JENNY] = {0,     0},
+    [MUGSHOT_MIGUEL] = {0,     0},
+    [MUGSHOT_LILY] = {0,     0},
+    [MUGSHOT_ZOE_AND_ELI] = {0,     0},
 };
 
 static const TransitionSpriteCallback sMugshotTrainerPicFuncs[] =
@@ -900,7 +978,32 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =
     [MUGSHOT_PHOEBE] = sMugshotPal_Phoebe,
     [MUGSHOT_GLACIA] = sMugshotPal_Glacia,
     [MUGSHOT_DRAKE] = sMugshotPal_Drake,
-    [MUGSHOT_CHAMPION] = sMugshotPal_Champion
+    [MUGSHOT_CHAMPION] = sMugshotPal_Champion,
+    [MUGSHOT_REMI] = sMugshotPal_Glacia,
+    [MUGSHOT_DECLAN] = sMugshotPal_Glacia,
+    [MUGSHOT_RITA] = sMugshotPal_Glacia,
+    [MUGSHOT_MIRAGE] = sMugshotPal_Drake,
+    [MUGSHOT_ADAMINA] = sMugshotPal_Glacia,
+    [MUGSHOT_JAKE] = sMugshotPal_Glacia,
+    [MUGSHOT_KAIZEN1] = sMugshotPal_Glacia,
+    [MUGSHOT_KAIZEN2] = sMugshotPal_Glacia,
+    [MUGSHOT_SOPHIA] = sMugshotPal_Glacia,
+    [MUGSHOT_ODYSSEUS] = sMugshotPal_Glacia,
+    [MUGSHOT_JULIE] = sMugshotPal_Glacia,
+    [MUGSHOT_PAM_AND_CAM] = sMugshotPal_Glacia,
+    [MUGSHOT_MIRAGES] = sMugshotPal_Drake,
+    [MUGSHOT_COREY] = sMugshotPal_Glacia,
+    [MUGSHOT_JOEY] = sMugshotPal_Glacia,
+    [MUGSHOT_PHILLIPA] = sMugshotPal_Glacia,
+    [MUGSHOT_MIA] = sMugshotPal_Glacia,
+    [MUGSHOT_BETTY] = sMugshotPal_Glacia,
+    [MUGSHOT_MINA] = sMugshotPal_Glacia,
+    [MUGSHOT_NEWTON] = sMugshotPal_Glacia,
+    [MUGSHOT_JENNY] = sMugshotPal_Glacia,
+    [MUGSHOT_MIGUEL] = sMugshotPal_Glacia,
+    [MUGSHOT_LILY] = sMugshotPal_Glacia,
+    [MUGSHOT_ZOE_AND_ELI] = sMugshotPal_Glacia,
+    
 };
 
 static const u16 *const sPlayerMugshotsPals[GENDER_COUNT] =
@@ -2251,6 +2354,13 @@ static void VBlankCB_Wave(void)
 #define tOpponentSpriteId   data[13]
 #define tPlayerSpriteId     data[14]
 #define tMugshotId          data[15]
+
+
+static void Task_Mugshot(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = VarGet(VAR_MUGSHOT_ID);
+    DoMugshotTransition(taskId);
+}
 
 // Sprite data for trainer sprites in mugshots
 #define sState       data[0]

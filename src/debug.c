@@ -63,6 +63,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/species.h"
+#include "field_specials.h"
 #include "constants/weather.h"
 #include "save.h"
 
@@ -1761,61 +1762,62 @@ static void DebugAction_Util_Warp_Warp(u8 taskId)
 
 static void DebugAction_Util_Warp_SelectMapGroup(u8 taskId)
 {
-    if (JOY_NEW(DPAD_ANY))
-    {
-        PlaySE(SE_SELECT);
-        if (JOY_NEW(DPAD_UP))
-        {
-            gTasks[taskId].tInput += sPowersOfTen[gTasks[taskId].tDigit];
-            if (gTasks[taskId].tInput > LAST_MAP_GROUP)
-                gTasks[taskId].tInput = LAST_MAP_GROUP;
-        }
-        if (JOY_NEW(DPAD_DOWN))
-        {
-            gTasks[taskId].tInput -= sPowersOfTen[gTasks[taskId].tDigit];
-            if (gTasks[taskId].tInput < 0)
-                gTasks[taskId].tInput = 0;
-        }
-        if (JOY_NEW(DPAD_LEFT))
-        {
-            if (gTasks[taskId].tDigit > 0)
-                gTasks[taskId].tDigit -= 1;
-        }
-        if (JOY_NEW(DPAD_RIGHT))
-        {
-            if (gTasks[taskId].tDigit < 2)
-                gTasks[taskId].tDigit += 1;
-        }
+    // if (JOY_NEW(DPAD_ANY))
+    // {
+    //     PlaySE(SE_SELECT);
+    //     if (JOY_NEW(DPAD_UP))
+    //     {
+    //         gTasks[taskId].tInput += sPowersOfTen[gTasks[taskId].tDigit];
+    //         if (gTasks[taskId].tInput > LAST_MAP_GROUP)
+    //             gTasks[taskId].tInput = LAST_MAP_GROUP;
+    //     }
+    //     if (JOY_NEW(DPAD_DOWN))
+    //     {
+    //         gTasks[taskId].tInput -= sPowersOfTen[gTasks[taskId].tDigit];
+    //         if (gTasks[taskId].tInput < 0)
+    //             gTasks[taskId].tInput = 0;
+    //     }
+    //     if (JOY_NEW(DPAD_LEFT))
+    //     {
+    //         if (gTasks[taskId].tDigit > 0)
+    //             gTasks[taskId].tDigit -= 1;
+    //     }
+    //     if (JOY_NEW(DPAD_RIGHT))
+    //     {
+    //         if (gTasks[taskId].tDigit < 2)
+    //             gTasks[taskId].tDigit += 1;
+    //     }
 
-        ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, 3);
-        ConvertIntToDecimalStringN(gStringVar2, LAST_MAP_GROUP, STR_CONV_MODE_LEADING_ZEROS, 3);
-        StringExpandPlaceholders(gStringVar1, sDebugText_Util_WarpToMap_SelMax);
-        StringCopy(gStringVar3, gText_DigitIndicator[gTasks[taskId].tDigit]);
-        StringExpandPlaceholders(gStringVar4, sDebugText_Util_WarpToMap_SelectMapGroup);
-        AddTextPrinterParameterized(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 1, 1, 0, NULL);
-    }
+    //     ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, 3);
+    //     ConvertIntToDecimalStringN(gStringVar2, LAST_MAP_GROUP, STR_CONV_MODE_LEADING_ZEROS, 3);
+    //     StringExpandPlaceholders(gStringVar1, sDebugText_Util_WarpToMap_SelMax);
+    //     StringCopy(gStringVar3, gText_DigitIndicator[gTasks[taskId].tDigit]);
+    //     StringExpandPlaceholders(gStringVar4, sDebugText_Util_WarpToMap_SelectMapGroup);
+    //     AddTextPrinterParameterized(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 1, 1, 0, NULL);
+    // }
 
-    if (JOY_NEW(A_BUTTON))
-    {
-        gTasks[taskId].tMapGroup = gTasks[taskId].tInput;
-        gTasks[taskId].tInput = 0;
-        gTasks[taskId].tDigit = 0;
+    // if (JOY_NEW(A_BUTTON))
+    // {
+        // gTasks[taskId].tMapGroup = gTasks[taskId].tInput;
+    gTasks[taskId].tMapGroup = 27;
+    gTasks[taskId].tInput = 0;
+    gTasks[taskId].tDigit = 0;
 
-        ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, (MAP_GROUP_COUNT[gTasks[taskId].tMapGroup] - 1 >= 100) ? 3 : 2);
-        ConvertIntToDecimalStringN(gStringVar2, MAP_GROUP_COUNT[gTasks[taskId].tMapGroup] - 1, STR_CONV_MODE_LEADING_ZEROS, (MAP_GROUP_COUNT[gTasks[taskId].tMapGroup] - 1 >= 100) ? 3 : 2);
-        StringExpandPlaceholders(gStringVar1, sDebugText_Util_WarpToMap_SelMax);
-        GetMapName(gStringVar2, Overworld_GetMapHeaderByGroupAndId(gTasks[taskId].tMapGroup, gTasks[taskId].tInput)->regionMapSectionId, 0);
-        StringCopy(gStringVar3, gText_DigitIndicator[gTasks[taskId].tDigit]);
-        StringExpandPlaceholders(gStringVar4, sDebugText_Util_WarpToMap_SelectMap);
-        AddTextPrinterParameterized(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 1, 1, 0, NULL);
+    ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, (MAP_GROUP_COUNT[gTasks[taskId].tMapGroup] - 1 >= 100) ? 3 : 2);
+    ConvertIntToDecimalStringN(gStringVar2, MAP_GROUP_COUNT[gTasks[taskId].tMapGroup] - 1, STR_CONV_MODE_LEADING_ZEROS, (MAP_GROUP_COUNT[gTasks[taskId].tMapGroup] - 1 >= 100) ? 3 : 2);
+    StringExpandPlaceholders(gStringVar1, sDebugText_Util_WarpToMap_SelMax);
+    GetMapName(gStringVar2, Overworld_GetMapHeaderByGroupAndId(gTasks[taskId].tMapGroup, gTasks[taskId].tInput)->regionMapSectionId, 0);
+    StringCopy(gStringVar3, gText_DigitIndicator[gTasks[taskId].tDigit]);
+    StringExpandPlaceholders(gStringVar4, sDebugText_Util_WarpToMap_SelectMap);
+    AddTextPrinterParameterized(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 1, 1, 0, NULL);
 
-        gTasks[taskId].func = DebugAction_Util_Warp_SelectMap;
-    }
-    else if (JOY_NEW(B_BUTTON))
-    {
-        PlaySE(SE_SELECT);
-        DebugAction_DestroyExtraWindow(taskId);
-    }
+    gTasks[taskId].func = DebugAction_Util_Warp_SelectMap;
+    // }
+    // else if (JOY_NEW(B_BUTTON))
+    // {
+    //     PlaySE(SE_SELECT);
+    //     DebugAction_DestroyExtraWindow(taskId);
+    // }
 }
 
 static void DebugAction_Util_Warp_SelectMap(u8 taskId)
@@ -2488,12 +2490,23 @@ static void DebugAction_FlagsVars_SetValue(u8 taskId)
 
 static void DebugAction_FlagsVars_PokedexFlags_All(u8 taskId)
 {
-    u16 i;
-    for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+    // u16 i;
+    // for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+    // {
+    //     GetSetPokedexFlag(i + 1, FLAG_SET_CAUGHT);
+    //     GetSetPokedexFlag(i + 1, FLAG_SET_SEEN);
+    // }
+    // Debug_DestroyMenu(taskId);
+    // ScriptContext_Enable();
+    if (FlagGet(FLAG_SETTINGS_BRUTAL))
     {
-        GetSetPokedexFlag(i + 1, FLAG_SET_CAUGHT);
-        GetSetPokedexFlag(i + 1, FLAG_SET_SEEN);
+        FlagClear(FLAG_SETTINGS_BRUTAL);
+        PlaySE(SE_PC_OFF);
+    } else {
+        FlagSet(FLAG_SETTINGS_BRUTAL);
+        PlaySE(SE_PC_LOGIN);
     }
+    ReverseHiddenItemFlags();
     Debug_DestroyMenu_Full(taskId);
     ScriptContext_Enable();
 }
@@ -2537,34 +2550,64 @@ static void DebugAction_FlagsVars_PokedexFlags_Reset(u8 taskId)
 
 static void DebugAction_FlagsVars_SwitchDex(u8 taskId)
 {
-    if (FlagGet(FLAG_SYS_POKEDEX_GET))
+    // if(FlagGet(FLAG_SYS_POKEDEX_GET))
+    // {
+    //     FlagClear(FLAG_SYS_POKEDEX_GET);
+    //     PlaySE(SE_PC_OFF);
+    // }else{
+    //     FlagSet(FLAG_SYS_POKEDEX_GET);
+    //     PlaySE(SE_PC_LOGIN);
+    // }
+    if(FlagGet(FLAG_SETTINGS_NUZLOCKE))
+    {
+        FlagClear(FLAG_SETTINGS_NUZLOCKE);
+        GlobalNuzlockeClear();
         PlaySE(SE_PC_OFF);
-    else
+    }else{
+        FlagSet(FLAG_SETTINGS_NUZLOCKE);
+        GlobalNuzlockeSet();
         PlaySE(SE_PC_LOGIN);
-    FlagToggle(FLAG_SYS_POKEDEX_GET);
+    }
 }
 
 static void DebugAction_FlagsVars_SwitchNatDex(u8 taskId)
 {
-    if (IsNationalPokedexEnabled())
+    // if(IsNationalPokedexEnabled())
+    // {
+    //     DisableNationalPokedex();
+    //     PlaySE(SE_PC_OFF);
+    // }else{
+    //     EnableNationalPokedex();
+    //     PlaySE(SE_PC_LOGIN);
+    // }
+    if(FlagGet(FLAG_SETTINGS_RANDOMIZER))
     {
-        DisableNationalPokedex();
+        FlagClear(FLAG_SETTINGS_RANDOMIZER);
         PlaySE(SE_PC_OFF);
-    }
-    else
-    {
-        EnableNationalPokedex();
+    }else{
+        FlagSet(FLAG_SETTINGS_RANDOMIZER);
         PlaySE(SE_PC_LOGIN);
     }
 }
 
 static void DebugAction_FlagsVars_SwitchPokeNav(u8 taskId)
 {
-    if (FlagGet(FLAG_SYS_POKENAV_GET))
-        PlaySE(SE_PC_OFF);
-    else
-        PlaySE(SE_PC_LOGIN);
-    FlagToggle(FLAG_SYS_POKENAV_GET);
+    u16 i;
+    for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+    {
+        GetSetPokedexFlag(i + 1, FLAG_SET_CAUGHT);
+        GetSetPokedexFlag(i + 1, FLAG_SET_SEEN);
+    }
+    Debug_DestroyMenu(taskId);
+    ScriptContext_Enable();
+    // if(FlagGet(FLAG_SYS_POKENAV_GET))
+    // {
+    //     FlagClear(FLAG_SYS_POKENAV_GET);
+    //     PlaySE(SE_PC_OFF);
+    // }else{
+    //     FlagSet(FLAG_SYS_POKENAV_GET);
+    //     PlaySE(SE_PC_LOGIN);
+    // }
 }
 
 static void DebugAction_FlagsVars_SwitchMatchCall(u8 taskId)
@@ -2585,87 +2628,116 @@ static void DebugAction_FlagsVars_SwitchMatchCall(u8 taskId)
 
 static void DebugAction_FlagsVars_RunningShoes(u8 taskId)
 {
-    if (FlagGet(FLAG_SYS_B_DASH))
-        PlaySE(SE_PC_OFF);
-    else
-        PlaySE(SE_PC_LOGIN);
-    FlagToggle(FLAG_SYS_B_DASH);
+    // if (FlagGet(FLAG_SYS_B_DASH))
+    //     PlaySE(SE_PC_OFF);
+    // else
+    //     PlaySE(SE_PC_LOGIN);
+    // FlagToggle(FLAG_SYS_B_DASH);
+    u16 wildMusic = Random() % 5;
+    u16 trainerMusic = Random() % 6;
+    u16 leviathanMusic = Random() % 5;
+    VarSet(VAR_WILD_MUSIC, wildMusic);
+    VarSet(VAR_TRAINER_MUSIC, trainerMusic);
+    VarSet(VAR_LEVIATHAN_MUSIC, leviathanMusic);
 }
 
 static void DebugAction_FlagsVars_ToggleFlyFlags(u8 taskId)
 {
-    if (FlagGet(FLAG_LANDMARK_BATTLE_FRONTIER))
+    if(FlagGet(FLAG_SETTINGS_FULL_SURVEIL))
     {
+        FlagClear(FLAG_SETTINGS_FULL_SURVEIL);
         PlaySE(SE_PC_OFF);
-        FlagClear(FLAG_VISITED_LITTLEROOT_TOWN);
-        FlagClear(FLAG_VISITED_OLDALE_TOWN);
-        FlagClear(FLAG_VISITED_DEWFORD_TOWN);
-        FlagClear(FLAG_VISITED_LAVARIDGE_TOWN);
-        FlagClear(FLAG_VISITED_FALLARBOR_TOWN);
-        FlagClear(FLAG_VISITED_VERDANTURF_TOWN);
-        FlagClear(FLAG_VISITED_PACIFIDLOG_TOWN);
-        FlagClear(FLAG_VISITED_PETALBURG_CITY);
-        FlagClear(FLAG_VISITED_SLATEPORT_CITY);
-        FlagClear(FLAG_VISITED_MAUVILLE_CITY);
-        FlagClear(FLAG_VISITED_RUSTBORO_CITY);
-        FlagClear(FLAG_VISITED_FORTREE_CITY);
-        FlagClear(FLAG_VISITED_LILYCOVE_CITY);
-        FlagClear(FLAG_VISITED_MOSSDEEP_CITY);
-        FlagClear(FLAG_VISITED_SOOTOPOLIS_CITY);
-        FlagClear(FLAG_VISITED_EVER_GRANDE_CITY);
-        FlagClear(FLAG_LANDMARK_POKEMON_LEAGUE);
-        FlagClear(FLAG_LANDMARK_BATTLE_FRONTIER);
-    }
-    else
-    {
+    }else{
+        FlagSet(FLAG_SETTINGS_FULL_SURVEIL);
         PlaySE(SE_PC_LOGIN);
-        FlagSet(FLAG_VISITED_LITTLEROOT_TOWN);
-        FlagSet(FLAG_VISITED_OLDALE_TOWN);
-        FlagSet(FLAG_VISITED_DEWFORD_TOWN);
-        FlagSet(FLAG_VISITED_LAVARIDGE_TOWN);
-        FlagSet(FLAG_VISITED_FALLARBOR_TOWN);
-        FlagSet(FLAG_VISITED_VERDANTURF_TOWN);
-        FlagSet(FLAG_VISITED_PACIFIDLOG_TOWN);
-        FlagSet(FLAG_VISITED_PETALBURG_CITY);
-        FlagSet(FLAG_VISITED_SLATEPORT_CITY);
-        FlagSet(FLAG_VISITED_MAUVILLE_CITY);
-        FlagSet(FLAG_VISITED_RUSTBORO_CITY);
-        FlagSet(FLAG_VISITED_FORTREE_CITY);
-        FlagSet(FLAG_VISITED_LILYCOVE_CITY);
-        FlagSet(FLAG_VISITED_MOSSDEEP_CITY);
-        FlagSet(FLAG_VISITED_SOOTOPOLIS_CITY);
-        FlagSet(FLAG_VISITED_EVER_GRANDE_CITY);
-        FlagSet(FLAG_LANDMARK_POKEMON_LEAGUE);
-        FlagSet(FLAG_LANDMARK_BATTLE_FRONTIER);
     }
+    // if (FlagGet(FLAG_LANDMARK_BATTLE_FRONTIER))
+    // {
+    //     PlaySE(SE_PC_OFF);
+    //     FlagClear(FLAG_VISITED_LITTLEROOT_TOWN);
+    //     FlagClear(FLAG_VISITED_OLDALE_TOWN);
+    //     FlagClear(FLAG_VISITED_DEWFORD_TOWN);
+    //     FlagClear(FLAG_VISITED_LAVARIDGE_TOWN);
+    //     FlagClear(FLAG_VISITED_FALLARBOR_TOWN);
+    //     FlagClear(FLAG_VISITED_VERDANTURF_TOWN);
+    //     FlagClear(FLAG_VISITED_PACIFIDLOG_TOWN);
+    //     FlagClear(FLAG_VISITED_PETALBURG_CITY);
+    //     FlagClear(FLAG_VISITED_SLATEPORT_CITY);
+    //     FlagClear(FLAG_VISITED_MAUVILLE_CITY);
+    //     FlagClear(FLAG_VISITED_RUSTBORO_CITY);
+    //     FlagClear(FLAG_VISITED_FORTREE_CITY);
+    //     FlagClear(FLAG_VISITED_LILYCOVE_CITY);
+    //     FlagClear(FLAG_VISITED_MOSSDEEP_CITY);
+    //     FlagClear(FLAG_VISITED_SOOTOPOLIS_CITY);
+    //     FlagClear(FLAG_VISITED_EVER_GRANDE_CITY);
+    //     FlagClear(FLAG_LANDMARK_POKEMON_LEAGUE);
+    //     FlagClear(FLAG_LANDMARK_BATTLE_FRONTIER);
+    // }
+    // else
+    // {
+    //     PlaySE(SE_PC_LOGIN);
+    //     FlagSet(FLAG_VISITED_LITTLEROOT_TOWN);
+    //     FlagSet(FLAG_VISITED_OLDALE_TOWN);
+    //     FlagSet(FLAG_VISITED_DEWFORD_TOWN);
+    //     FlagSet(FLAG_VISITED_LAVARIDGE_TOWN);
+    //     FlagSet(FLAG_VISITED_FALLARBOR_TOWN);
+    //     FlagSet(FLAG_VISITED_VERDANTURF_TOWN);
+    //     FlagSet(FLAG_VISITED_PACIFIDLOG_TOWN);
+    //     FlagSet(FLAG_VISITED_PETALBURG_CITY);
+    //     FlagSet(FLAG_VISITED_SLATEPORT_CITY);
+    //     FlagSet(FLAG_VISITED_MAUVILLE_CITY);
+    //     FlagSet(FLAG_VISITED_RUSTBORO_CITY);
+    //     FlagSet(FLAG_VISITED_FORTREE_CITY);
+    //     FlagSet(FLAG_VISITED_LILYCOVE_CITY);
+    //     FlagSet(FLAG_VISITED_MOSSDEEP_CITY);
+    //     FlagSet(FLAG_VISITED_SOOTOPOLIS_CITY);
+    //     FlagSet(FLAG_VISITED_EVER_GRANDE_CITY);
+    //     FlagSet(FLAG_LANDMARK_POKEMON_LEAGUE);
+    //     FlagSet(FLAG_LANDMARK_BATTLE_FRONTIER);
+    // }
 }
 
 static void DebugAction_FlagsVars_ToggleBadgeFlags(u8 taskId)
 {
-    if (FlagGet(FLAG_BADGE08_GET))
-    {
-        PlaySE(SE_PC_OFF);
-        FlagClear(FLAG_BADGE01_GET);
-        FlagClear(FLAG_BADGE02_GET);
-        FlagClear(FLAG_BADGE03_GET);
-        FlagClear(FLAG_BADGE04_GET);
-        FlagClear(FLAG_BADGE05_GET);
-        FlagClear(FLAG_BADGE06_GET);
-        FlagClear(FLAG_BADGE07_GET);
-        FlagClear(FLAG_BADGE08_GET);
-    }
-    else
-    {
-        PlaySE(SE_PC_LOGIN);
-        FlagSet(FLAG_BADGE01_GET);
-        FlagSet(FLAG_BADGE02_GET);
-        FlagSet(FLAG_BADGE03_GET);
-        FlagSet(FLAG_BADGE04_GET);
-        FlagSet(FLAG_BADGE05_GET);
-        FlagSet(FLAG_BADGE06_GET);
-        FlagSet(FLAG_BADGE07_GET);
-        FlagSet(FLAG_BADGE08_GET);
-    }
+    // Sound effect
+    PlaySE(SE_PC_LOGIN);
+    FlagToggle(FLAG_BEAT_LEVIATHAN_1);
+    FlagToggle(FLAG_BEAT_LEVIATHAN_2);
+    FlagToggle(FLAG_BEAT_LEVIATHAN_3);
+    FlagToggle(FLAG_BEAT_LEVIATHAN_4);
+    FlagToggle(FLAG_BEAT_LEVIATHAN_5);
+    FlagToggle(FLAG_BEAT_LEVIATHAN_6);
+    FlagToggle(FLAG_BEAT_LEVIATHAN_7);
+    FlagToggle(FLAG_BEAT_LEVIATHAN_8);
+    FlagToggle(FLAG_BEAT_LEVIATHAN_9);
+    FlagToggle(FLAG_BEAT_LEVIATHAN_10);
+    FlagToggle(FLAG_BEAT_LEVIATHAN_11);
+    FlagToggle(FLAG_BEAT_LEVIATHAN_12);
+    FlagToggle(FLAG_BEAT_LEVIATHAN_13);
+    // if (FlagGet(FLAG_BADGE08_GET))
+    // {
+    //     PlaySE(SE_PC_OFF);
+    //     FlagClear(FLAG_BADGE01_GET);
+    //     FlagClear(FLAG_BADGE02_GET);
+    //     FlagClear(FLAG_BADGE03_GET);
+    //     FlagClear(FLAG_BADGE04_GET);
+    //     FlagClear(FLAG_BADGE05_GET);
+    //     FlagClear(FLAG_BADGE06_GET);
+    //     FlagClear(FLAG_BADGE07_GET);
+    //     FlagClear(FLAG_BADGE08_GET);
+    // }
+    // else
+    // {
+    //     PlaySE(SE_PC_LOGIN);
+    //     FlagSet(FLAG_BADGE01_GET);
+    //     FlagSet(FLAG_BADGE02_GET);
+    //     FlagSet(FLAG_BADGE03_GET);
+    //     FlagSet(FLAG_BADGE04_GET);
+    //     FlagSet(FLAG_BADGE05_GET);
+    //     FlagSet(FLAG_BADGE06_GET);
+    //     FlagSet(FLAG_BADGE07_GET);
+    //     FlagSet(FLAG_BADGE08_GET);
+    // }
 }
 
 static void DebugAction_FlagsVars_ToggleFrontierPass(u8 taskId)
@@ -2735,11 +2807,14 @@ static void DebugAction_FlagsVars_CatchingOnOff(u8 taskId)
 #if B_FLAG_NO_CATCHING == 0
     Debug_DestroyMenu_Full_Script(taskId, Debug_FlagsNotSetBattleConfigMessage);
 #else
-    if (FlagGet(B_FLAG_NO_CATCHING))
+    if (FlagGet(FLAG_SYS_FORCE_DOUBLE_WILD))
+    {
+        FlagClear(FLAG_SYS_FORCE_DOUBLE_WILD);
         PlaySE(SE_PC_OFF);
-    else
+    } else {
+        FlagSet(FLAG_SYS_FORCE_DOUBLE_WILD);
         PlaySE(SE_PC_LOGIN);
-    FlagToggle(B_FLAG_NO_CATCHING);
+    }
 #endif
 }
 
@@ -2923,9 +2998,8 @@ static void DebugAction_Give_AllTMs(u8 taskId)
 {
     u16 i;
     PlayFanfare(MUS_OBTAIN_TMHM);
-    for (i = ITEM_TM01; i <= ITEM_HM08; i++)
-    {
-        if (ItemIdToBattleMoveId(i) != MOVE_NONE && !CheckBagHasItem(i, 1))
+    for (i = ITEM_TM01; i <= ITEM_TM100; i++) {
+        if(!CheckBagHasItem(i, 1))
             AddBagItem(i, 1);
     }
 
@@ -3676,7 +3750,7 @@ static void DebugAction_Give_Pokemon_ComplexCreateMon(u8 taskId) //https://githu
 
     // give player the mon
     SetMonData(&mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
-    SetMonData(&mon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
+    // SetMonData(&mon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
     for (i = 0; i < PARTY_SIZE; i++)
     {
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_NONE)
@@ -3827,7 +3901,7 @@ static void DebugAction_Fill_PocketItems(u8 taskId)
 
     for (itemId = 1; itemId < ITEMS_COUNT; itemId++)
     {
-        if (ItemId_GetPocket(itemId) == POCKET_ITEMS && CheckBagHasSpace(itemId, MAX_BAG_ITEM_CAPACITY))
+        if (ItemId_GetPocket(itemId) == POCKET_TREASURES && CheckBagHasSpace(itemId, MAX_BAG_ITEM_CAPACITY))
             AddBagItem(itemId, MAX_BAG_ITEM_CAPACITY);
     }
 }

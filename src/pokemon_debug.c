@@ -355,7 +355,7 @@ const u8 gBattleBackgroundTerrainNames[][26] =
 {
     [BATTLE_TERRAIN_GRASS]      = _("NORMAL - GRASS           "),
     [BATTLE_TERRAIN_LONG_GRASS] = _("NORMAL - LONG GRASS      "),
-    [BATTLE_TERRAIN_SAND]       = _("NORMAL - SAND            "),
+    [BATTLE_TERRAIN_BEACH]      = _("NORMAL - BEACH           "),
     [BATTLE_TERRAIN_UNDERWATER] = _("NORMAL - UNDERWATER      "),
     [BATTLE_TERRAIN_WATER]      = _("NORMAL - WATER           "),
     [BATTLE_TERRAIN_POND]       = _("NORMAL - POND            "),
@@ -363,6 +363,10 @@ const u8 gBattleBackgroundTerrainNames[][26] =
     [BATTLE_TERRAIN_CAVE]       = _("NORMAL - CAVE            "),
     [BATTLE_TERRAIN_BUILDING]   = _("NORMAL - BUILDING        "),
     [BATTLE_TERRAIN_PLAIN]      = _("NORMAL - PLAIN           "),
+    [BATTLE_TERRAIN_DESERT]     = _("NORMAL - DESERT          "),
+    [BATTLE_TERRAIN_FOREST]     = _("NORMAL - FOREST          "),
+    [BATTLE_TERRAIN_BRIDGE]     = _("NORMAL - BRIDGE          "),
+    [BATTLE_TERRAIN_SNOW]       = _("NORMAL - SNOW            "),
 };
 //Function declarations
 static void PrintDigitChars(struct PokemonDebugMenu *data);

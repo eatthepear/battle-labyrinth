@@ -93,8 +93,8 @@ static const u8 sBindDescription[] = _(
     "for "BINDING_TURNS" turns.");
 
 static const u8 sSlamDescription[] = _(
-    "Slams the foe with a long\n"
-    "tail, vine, etc.");
+    "Slams with a long tail,\n"
+    "vine, etc. Never misses.");
 
 static const u8 sVineWhipDescription[] = _(
     "Strikes the foe with\n"
@@ -718,7 +718,7 @@ static const u8 sSnoreDescription[] = _(
 
 static const u8 sCurseDescription[] = _(
     "A move that functions\n"
-    "differently for GHOSTS.");
+    "differently for Ghosts.");
 
 static const u8 sFlailDescription[] = _(
     "Inflicts more damage when\n"
@@ -885,8 +885,8 @@ static const u8 sHealBellDescription[] = _(
     "all status abnormalities.");
 
 static const u8 sReturnDescription[] = _(
-    "An attack that increases\n"
-    "in power with friendship.");
+    "A strong attack that can\n"
+    "be learned by many.");
 
 static const u8 sPresentDescription[] = _(
     "A gift in the form of a\n"
@@ -1150,7 +1150,7 @@ static const u8 sRevengeDescription[] = _(
 
 static const u8 sBrickBreakDescription[] = _(
     "Destroys barriers such as\n"
-    "REFLECT and causes damage.");
+    "Reflect and causes damage.");
 
 static const u8 sYawnDescription[] = _(
     "Lulls the foe into yawning,\n"
@@ -1645,8 +1645,8 @@ static const u8 sAirSlashDescription[] = _(
     "air. May cause flinching.");
 
 static const u8 sXScissorDescription[] = _(
-    "Slashes the foe with crossed\n"
-    "scythes, claws, etc.");
+    "Cross slashes the foe.\n"
+    "High critical-hit ratio.");
 
 static const u8 sBugBuzzDescription[] = _(
     "A damaging sound wave that\n"
@@ -1950,7 +1950,7 @@ static const u8 sSoakDescription[] = _(
 
 static const u8 sFlameChargeDescription[] = _(
     "Attacks in a cloak of\n"
-    "flames. Raises Speed.");
+    "flames. May raise Speed.");
 
 static const u8 sCoilDescription[] = _(
     "Coils up to raise Attack\n"
@@ -2278,7 +2278,7 @@ static const u8 sFlowerShieldDescription[] = _(
 
 static const u8 sGrassyTerrainDescription[] = _(
     "The ground turns to grass\n"
-    "for 5 turns. Restores HP.");
+    "for 5 turns.");
 
 static const u8 sMistyTerrainDescription[] = _(
     "Covers the ground with mist\n"

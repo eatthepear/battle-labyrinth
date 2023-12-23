@@ -4329,7 +4329,7 @@ static bool32 RecvPacket_MemberStateToMember(struct PokemonJump_Player *player, 
 
 static struct PokemonJumpRecords *GetPokeJumpRecords(void)
 {
-    return &gSaveBlock2Ptr->pokeJump;
+    return NULL;
 }
 
 void ResetPokemonJumpRecords(void)

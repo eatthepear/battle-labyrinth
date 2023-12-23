@@ -1433,52 +1433,52 @@ static void ShowPyramidResultsWindow(void)
 // Link contest records. Why is it in this file?
 static void ShowLinkContestResultsWindow(void)
 {
-    const u8 *str;
-    s32 i, j;
-    s32 x;
+    // const u8 *str;
+    // s32 i, j;
+    // s32 x;
 
-    gRecordsWindowId = AddWindow(&sLinkContestResultsWindowTemplate);
-    DrawStdWindowFrame(gRecordsWindowId, FALSE);
-    FillWindowPixelBuffer(gRecordsWindowId, PIXEL_FILL(1));
+    // gRecordsWindowId = AddWindow(&sLinkContestResultsWindowTemplate);
+    // DrawStdWindowFrame(gRecordsWindowId, FALSE);
+    // FillWindowPixelBuffer(gRecordsWindowId, PIXEL_FILL(1));
 
-    StringExpandPlaceholders(gStringVar4, gText_LinkContestResults);
-    x = GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, 208);
-    AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gStringVar4, x, 1, TEXT_SKIP_DRAW, NULL);
+    // StringExpandPlaceholders(gStringVar4, gText_LinkContestResults);
+    // x = GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, 208);
+    // AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gStringVar4, x, 1, TEXT_SKIP_DRAW, NULL);
 
-    str = gText_1st;
-    x = GetStringRightAlignXOffset(FONT_NORMAL, str, 38) + 50;
-    AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, str, x, 25, TEXT_SKIP_DRAW, NULL);
+    // str = gText_1st;
+    // x = GetStringRightAlignXOffset(FONT_NORMAL, str, 38) + 50;
+    // AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, str, x, 25, TEXT_SKIP_DRAW, NULL);
 
-    str = gText_2nd;
-    x = GetStringRightAlignXOffset(FONT_NORMAL, str, 38) + 88;
-    AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, str, x, 25, TEXT_SKIP_DRAW, NULL);
+    // str = gText_2nd;
+    // x = GetStringRightAlignXOffset(FONT_NORMAL, str, 38) + 88;
+    // AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, str, x, 25, TEXT_SKIP_DRAW, NULL);
 
-    str = gText_3rd;
-    x = GetStringRightAlignXOffset(FONT_NORMAL, str, 38) + 126;
-    AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, str, x, 25, TEXT_SKIP_DRAW, NULL);
+    // str = gText_3rd;
+    // x = GetStringRightAlignXOffset(FONT_NORMAL, str, 38) + 126;
+    // AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, str, x, 25, TEXT_SKIP_DRAW, NULL);
 
-    str = gText_4th;
-    x = GetStringRightAlignXOffset(FONT_NORMAL, str, 38) + 164;
-    AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, str, x, 25, TEXT_SKIP_DRAW, NULL);
+    // str = gText_4th;
+    // x = GetStringRightAlignXOffset(FONT_NORMAL, str, 38) + 164;
+    // AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, str, x, 25, TEXT_SKIP_DRAW, NULL);
 
-    x = 6;
-    AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gText_Cool, x, 41, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gText_Beauty, x, 57, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gText_Cute, x, 73, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gText_Smart, x, 89, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gText_Tough, x, 105, TEXT_SKIP_DRAW, NULL);
+    // x = 6;
+    // AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gText_Cool, x, 41, TEXT_SKIP_DRAW, NULL);
+    // AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gText_Beauty, x, 57, TEXT_SKIP_DRAW, NULL);
+    // AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gText_Cute, x, 73, TEXT_SKIP_DRAW, NULL);
+    // AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gText_Smart, x, 89, TEXT_SKIP_DRAW, NULL);
+    // AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gText_Tough, x, 105, TEXT_SKIP_DRAW, NULL);
 
-    for (i = 0; i < CONTEST_CATEGORIES_COUNT; i++)
-    {
-        for (j = 0; j < CONTESTANT_COUNT; j++)
-        {
-            ConvertIntToDecimalStringN(gStringVar4, gSaveBlock2Ptr->contestLinkResults[i][j], STR_CONV_MODE_RIGHT_ALIGN, 4);
-            AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gStringVar4, (j * 38) + 64, (i * 16) + 41, TEXT_SKIP_DRAW, NULL);
-        }
-    }
+    // for (i = 0; i < CONTEST_CATEGORIES_COUNT; i++)
+    // {
+    //     for (j = 0; j < CONTESTANT_COUNT; j++)
+    //     {
+    //         ConvertIntToDecimalStringN(gStringVar4, gSaveBlock2Ptr->contestLinkResults[i][j], STR_CONV_MODE_RIGHT_ALIGN, 4);
+    //         AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gStringVar4, (j * 38) + 64, (i * 16) + 41, TEXT_SKIP_DRAW, NULL);
+    //     }
+    // }
 
-    PutWindowTilemap(gRecordsWindowId);
-    CopyWindowToVram(gRecordsWindowId, COPYWIN_FULL);
+    // PutWindowTilemap(gRecordsWindowId);
+    // CopyWindowToVram(gRecordsWindowId, COPYWIN_FULL);
 }
 
 static void CheckPutFrontierTVShowOnAir(void)
@@ -2217,8 +2217,8 @@ static void Fill1PRecords(struct RankingHall1P *dst, s32 hallFacilityId, s32 lvl
     struct PlayerHallRecords *playerHallRecords = AllocZeroed(sizeof(struct PlayerHallRecords));
     GetPlayerHallRecords(playerHallRecords);
 
-    for (i = 0; i < HALL_RECORDS_COUNT; i++)
-        record1P[i] = gSaveBlock2Ptr->hallRecords1P[hallFacilityId][lvlMode][i];
+    // for (i = 0; i < HALL_RECORDS_COUNT; i++)
+    //     record1P[i] = gSaveBlock2Ptr->hallRecords1P[hallFacilityId][lvlMode][i];
 
     record1P[HALL_RECORDS_COUNT] = playerHallRecords->onePlayer[hallFacilityId][lvlMode];
 
@@ -2251,8 +2251,8 @@ static void Fill2PRecords(struct RankingHall2P *dst, s32 lvlMode)
     struct PlayerHallRecords *playerHallRecords = AllocZeroed(sizeof(struct PlayerHallRecords));
     GetPlayerHallRecords(playerHallRecords);
 
-    for (i = 0; i < HALL_RECORDS_COUNT; i++)
-        record2P[i] = gSaveBlock2Ptr->hallRecords2P[lvlMode][i];
+    // for (i = 0; i < HALL_RECORDS_COUNT; i++)
+    //     record2P[i] = gSaveBlock2Ptr->hallRecords2P[lvlMode][i];
 
     record2P[HALL_RECORDS_COUNT] = playerHallRecords->twoPlayers[lvlMode];
 
@@ -2325,40 +2325,40 @@ void ScrollRankingHallRecordsWindow(void)
 
 void ClearRankingHallRecords(void)
 {
-    s32 i, j, k;
+//     s32 i, j, k;
 
-    // UB: Passing 0 as a pointer instead of a pointer holding a value of 0.
-#ifdef UBFIX
-    u8 emptyId[TRAINER_ID_LENGTH] = {0};
-    #define ZERO emptyId
-#else
-    #define ZERO 0
-#endif
+//     // UB: Passing 0 as a pointer instead of a pointer holding a value of 0.
+// #ifdef UBFIX
+//     u8 emptyId[TRAINER_ID_LENGTH] = {0};
+//     #define ZERO emptyId
+// #else
+//     #define ZERO 0
+// #endif
 
-    for (i = 0; i < HALL_FACILITIES_COUNT; i++)
-    {
-        for (j = 0; j < FRONTIER_LVL_MODE_COUNT; j++)
-        {
-            for (k = 0; k < HALL_RECORDS_COUNT; k++)
-            {
-                CopyTrainerId(gSaveBlock2Ptr->hallRecords1P[i][j][k].id, ZERO);
-                gSaveBlock2Ptr->hallRecords1P[i][j][k].name[0] = EOS;
-                gSaveBlock2Ptr->hallRecords1P[i][j][k].winStreak = 0;
-            }
-        }
-    }
+    // for (i = 0; i < HALL_FACILITIES_COUNT; i++)
+    // {
+    //     for (j = 0; j < FRONTIER_LVL_MODE_COUNT; j++)
+    //     {
+    //         for (k = 0; k < HALL_RECORDS_COUNT; k++)
+    //         {
+    //             CopyTrainerId(gSaveBlock2Ptr->hallRecords1P[i][j][k].id, ZERO);
+    //             gSaveBlock2Ptr->hallRecords1P[i][j][k].name[0] = EOS;
+    //             gSaveBlock2Ptr->hallRecords1P[i][j][k].winStreak = 0;
+    //         }
+    //     }
+    // }
 
-    for (j = 0; j < FRONTIER_LVL_MODE_COUNT; j++)
-    {
-        for (k = 0; k < HALL_RECORDS_COUNT; k++)
-        {
-            CopyTrainerId(gSaveBlock2Ptr->hallRecords2P[j][k].id1, ZERO);
-            CopyTrainerId(gSaveBlock2Ptr->hallRecords2P[j][k].id2, ZERO);
-            gSaveBlock2Ptr->hallRecords2P[j][k].name1[0] = EOS;
-            gSaveBlock2Ptr->hallRecords2P[j][k].name2[0] = EOS;
-            gSaveBlock2Ptr->hallRecords2P[j][k].winStreak = 0;
-        }
-    }
+    // for (j = 0; j < FRONTIER_LVL_MODE_COUNT; j++)
+    // {
+    //     for (k = 0; k < HALL_RECORDS_COUNT; k++)
+    //     {
+    //         CopyTrainerId(gSaveBlock2Ptr->hallRecords2P[j][k].id1, ZERO);
+    //         CopyTrainerId(gSaveBlock2Ptr->hallRecords2P[j][k].id2, ZERO);
+    //         gSaveBlock2Ptr->hallRecords2P[j][k].name1[0] = EOS;
+    //         gSaveBlock2Ptr->hallRecords2P[j][k].name2[0] = EOS;
+    //         gSaveBlock2Ptr->hallRecords2P[j][k].winStreak = 0;
+    //     }
+    // }
 }
 
 void SaveGameFrontier(void)

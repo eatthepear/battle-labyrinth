@@ -1,6 +1,7 @@
 #include "global.h"
 #include "event_data.h"
 #include "pokedex.h"
+#include "constants/region_map_sections.h"
 
 #define SPECIAL_FLAGS_SIZE  (NUM_SPECIAL_FLAGS / 8)  // 8 flags per byte
 #define TEMP_FLAGS_SIZE     (NUM_TEMP_FLAGS / 8)
@@ -28,6 +29,7 @@ EWRAM_DATA u16 gSpecialVar_Unused_0x8014 = 0;
 EWRAM_DATA static u8 sSpecialFlags[SPECIAL_FLAGS_SIZE] = {0};
 
 extern u16 *const gSpecialVars[];
+extern u8 NuzlockeLUT[];
 
 void InitEventData(void)
 {
@@ -44,7 +46,6 @@ void ClearTempFieldEventData(void)
     FlagClear(FLAG_SYS_ENC_DOWN_ITEM);
     FlagClear(FLAG_SYS_USE_STRENGTH);
     FlagClear(FLAG_SYS_CTRL_OBJ_DELETE);
-    FlagClear(FLAG_NURSE_UNION_ROOM_REMINDER);
 }
 
 void ClearDailyFlags(void)
@@ -66,7 +67,7 @@ void EnableNationalPokedex(void)
     gSaveBlock2Ptr->pokedex.nationalMagic = 0xDA;
     *nationalDexVar = 0x302;
     FlagSet(FLAG_SYS_NATIONAL_DEX);
-    gSaveBlock2Ptr->pokedex.mode = DEX_MODE_NATIONAL;
+    gSaveBlock2Ptr->pokedex.mode = DEX_MODE_HOENN;
     gSaveBlock2Ptr->pokedex.order = 0;
     ResetPokedexScrollPositions();
 }
@@ -143,19 +144,17 @@ void ClearMysteryGiftVars(void)
 
 void DisableResetRTC(void)
 {
-    VarSet(VAR_RESET_RTC_ENABLE, 0);
     FlagClear(FLAG_SYS_RESET_RTC_ENABLE);
 }
 
 void EnableResetRTC(void)
 {
-    VarSet(VAR_RESET_RTC_ENABLE, 0x920);
     FlagSet(FLAG_SYS_RESET_RTC_ENABLE);
 }
 
 bool32 CanResetRTC(void)
 {
-    if (FlagGet(FLAG_SYS_RESET_RTC_ENABLE) && VarGet(VAR_RESET_RTC_ENABLE) == 0x920)
+    if (FlagGet(FLAG_SYS_RESET_RTC_ENABLE))
         return TRUE;
     else
         return FALSE;
@@ -196,7 +195,7 @@ bool8 VarSet(u16 id, u16 value)
     return TRUE;
 }
 
-u8 VarGetObjectEventGraphicsId(u8 id)
+u16 VarGetObjectEventGraphicsId(u8 id)
 {
     return VarGet(VAR_OBJ_GFX_ID_0 + id);
 }
@@ -246,4 +245,46 @@ bool8 FlagGet(u16 id)
         return FALSE;
 
     return TRUE;
+}
+
+u8 NuzlockeFlagSet(u16 mapsec)
+{
+    u8 id = NuzlockeLUT[mapsec];
+    u8 * ptr = &gSaveBlock1Ptr->NuzlockeEncounterFlags[id / 8];
+    if (ptr)
+        * ptr |= 1 << (id & 7);
+    return 0;
+}
+
+u8 NuzlockeFlagClear(u16 mapsec)
+{
+    u8 id = NuzlockeLUT[mapsec];
+    u8 * ptr = &gSaveBlock1Ptr->NuzlockeEncounterFlags[id / 8];
+    if (ptr)
+        * ptr &= ~(1 << (id & 7));
+    return 0;
+}
+
+u8 NuzlockeFlagGet(u16 mapsec)
+{
+    u8 id = NuzlockeLUT[mapsec];
+    u8 * ptr = &gSaveBlock1Ptr->NuzlockeEncounterFlags[id / 8];
+    
+    if (!ptr)
+        return 0;
+    
+    if (!(((*ptr) >> (id & 7)) & 1))
+        return 0;
+    
+    return 1;
+}
+
+void GlobalNuzlockeSet(void)
+{
+    NuzlockeFlagSet(GLOBAL_NUZLOCKE_SWITCH);
+}
+
+void GlobalNuzlockeClear(void)
+{
+    NuzlockeFlagClear(GLOBAL_NUZLOCKE_SWITCH);
 }

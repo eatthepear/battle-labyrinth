@@ -25,6 +25,12 @@ struct MultiPartnerMenuPokemon
     /*0x1D*/ u8 language;
 };
 
+struct TrainerBall
+{
+    u8 classId;
+    u8 Ball; // make this a u16 if needed
+};
+
 // defines for the 'DoBounceEffect' function
 #define BOUNCE_MON          0x0
 #define BOUNCE_HEALTHBOX    0x1

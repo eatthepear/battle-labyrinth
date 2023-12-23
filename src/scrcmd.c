@@ -30,6 +30,7 @@
 #include "mystery_event_script.h"
 #include "palette.h"
 #include "party_menu.h"
+#include "pokemon.h"
 #include "pokemon_storage_system.h"
 #include "random.h"
 #include "overworld.h"
@@ -48,7 +49,10 @@
 #include "trainer_see.h"
 #include "tv.h"
 #include "window.h"
+#include "list_menu.h"
+#include "malloc.h"
 #include "constants/event_objects.h"
+#include "follow_me.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(struct ScriptContext *ctx);
@@ -69,6 +73,7 @@ extern const u8 *gStdScripts[];
 extern const u8 *gStdScripts_End[];
 
 static void CloseBrailleWindow(void);
+static void DynamicMultichoiceSortList(struct ListMenuItem *items, u32 count);
 
 // This is defined in here so the optimizer can't see its value when compiling
 // script.c.
@@ -1177,7 +1182,7 @@ bool8 ScrCmd_setobjectmovementtype(struct ScriptContext *ctx)
 
 bool8 ScrCmd_createvobject(struct ScriptContext *ctx)
 {
-    u8 graphicsId = ScriptReadByte(ctx);
+    u16 graphicsId = ScriptReadHalfword(ctx);
     u8 virtualObjId = ScriptReadByte(ctx);
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u32 y = VarGet(ScriptReadHalfword(ctx));
@@ -1349,6 +1354,101 @@ bool8 ScrCmd_yesnobox(struct ScriptContext *ctx)
     {
         return FALSE;
     }
+}
+
+static void DynamicMultichoiceSortList(struct ListMenuItem *items, u32 count)
+{
+    u32 i,j;
+    struct ListMenuItem tmp;
+    for (i = 0; i < count - 1; ++i)
+    {
+        for (j = 0; j < count - i - 1; ++j)
+        {
+            if (items[j].id > items[j+1].id)
+            {
+                tmp = items[j];
+                items[j] = items[j+1];
+                items[j+1] = tmp;
+            }
+        }
+    }
+}
+
+#define DYN_MULTICHOICE_DEFAULT_MAX_BEFORE_SCROLL 6
+
+bool8 ScrCmd_dynmultichoice(struct ScriptContext *ctx)
+{
+    u32 i;
+    u32 left = VarGet(ScriptReadHalfword(ctx));
+    u32 top = VarGet(ScriptReadHalfword(ctx));
+    bool32 ignoreBPress = ScriptReadByte(ctx);
+    u32 maxBeforeScroll = ScriptReadByte(ctx);
+    bool32 shouldSort = ScriptReadByte(ctx);
+    u32 initialSelected = VarGet(ScriptReadHalfword(ctx));
+    u32 callbackSet = ScriptReadByte(ctx);
+    u32 initialRow = 0;
+    // Read vararg
+    u32 argc = ScriptReadByte(ctx);
+    struct ListMenuItem *items;
+
+    if (argc == 0)
+        return TRUE;
+
+    if (maxBeforeScroll == 0xFF)
+        maxBeforeScroll = DYN_MULTICHOICE_DEFAULT_MAX_BEFORE_SCROLL;
+
+    if ((const u8*) ScriptPeekWord(ctx) != NULL)
+    {
+        items = AllocZeroed(sizeof(struct ListMenuItem) * argc);
+        for (i = 0; i < argc; ++i)
+        {
+            u8 *nameBuffer = Alloc(100);
+            const u8 *arg = (const u8 *) ScriptReadWord(ctx);
+            StringExpandPlaceholders(nameBuffer, arg);
+            items[i].name = nameBuffer;
+            items[i].id = i;
+            if (i == initialSelected)
+                initialRow = i;
+        }
+    }
+    else
+    {
+        argc = MultichoiceDynamic_StackSize();
+        items = AllocZeroed(sizeof(struct ListMenuItem) * argc);
+        for (i = 0; i < argc; ++i)
+        {
+            struct ListMenuItem *currentItem = MultichoiceDynamic_PeekElementAt(i);
+            items[i] = *currentItem;
+            if (currentItem->id == initialSelected)
+                initialRow = i;
+        }
+        if (shouldSort)
+            DynamicMultichoiceSortList(items, argc);
+        MultichoiceDynamic_DestroyStack();
+    }
+
+    if (ScriptMenu_MultichoiceDynamic(left, top, argc, items, ignoreBPress, maxBeforeScroll, initialRow, callbackSet))
+    {
+        ScriptContext_Stop();
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+bool8 ScrCmd_dynmultipush(struct ScriptContext *ctx)
+{
+    u8 *nameBuffer = Alloc(100);
+    const u8 *name = (const u8*) ScriptReadWord(ctx);
+    u32 id = VarGet(ScriptReadHalfword(ctx));
+    struct ListMenuItem item;
+    StringExpandPlaceholders(nameBuffer, name);
+    item.name = nameBuffer;
+    item.id = id;
+    MultichoiceDynamic_PushElement(item);
+    return TRUE;
 }
 
 bool8 ScrCmd_multichoice(struct ScriptContext *ctx)
@@ -1688,6 +1788,12 @@ bool8 ScrCmd_givemon(struct ScriptContext *ctx)
     u32 unkParam2 = ScriptReadWord(ctx);
     u8 unkParam3 = ScriptReadByte(ctx);
 
+    if (FlagGet(FLAG_SETTINGS_RANDOMIZER) == TRUE)
+    {
+        if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
+            FlagSet(FLAG_SHOULD_CHECK_SPECIES_CLAUSE);
+        species = GetRandomSpecies(level);
+    }
     gSpecialVar_Result = ScriptGiveMon(species, level, item, unkParam1, unkParam2, unkParam3);
     return FALSE;
 }
@@ -1747,7 +1853,16 @@ bool8 ScrCmd_removemoney(struct ScriptContext *ctx)
     u8 ignore = ScriptReadByte(ctx);
 
     if (!ignore)
-        RemoveMoney(&gSaveBlock1Ptr->money, amount);
+    {
+        if (amount == 0) {
+            RemoveMoney(&gSaveBlock1Ptr->money, VarGet(VAR_TRAINER_MONEY));
+            VarSet(VAR_TRAINER_MONEY, 0);
+            RemoveMoney(&gSaveBlock1Ptr->money, GetMoney(&gSaveBlock1Ptr->money) / 2);
+        }
+        else {
+            RemoveMoney(&gSaveBlock1Ptr->money, amount);
+        }
+    }
     return FALSE;
 }
 
@@ -2228,18 +2343,18 @@ bool8 ScrCmd_lockfortrainer(struct ScriptContext *ctx)
 // This command will set a Pokémon's modernFatefulEncounter bit; there is no similar command to clear it.
 bool8 ScrCmd_setmonmodernfatefulencounter(struct ScriptContext *ctx)
 {
-    bool8 isModernFatefulEncounter = TRUE;
-    u16 partyIndex = VarGet(ScriptReadHalfword(ctx));
+    // bool8 isModernFatefulEncounter = TRUE;
+    // u16 partyIndex = VarGet(ScriptReadHalfword(ctx));
 
-    SetMonData(&gPlayerParty[partyIndex], MON_DATA_MODERN_FATEFUL_ENCOUNTER, &isModernFatefulEncounter);
+    // SetMonData(&gPlayerParty[partyIndex], MON_DATA_MODERN_FATEFUL_ENCOUNTER, &isModernFatefulEncounter);
     return FALSE;
 }
 
 bool8 ScrCmd_checkmonmodernfatefulencounter(struct ScriptContext *ctx)
 {
-    u16 partyIndex = VarGet(ScriptReadHalfword(ctx));
+    // u16 partyIndex = VarGet(ScriptReadHalfword(ctx));
 
-    gSpecialVar_Result = GetMonData(&gPlayerParty[partyIndex], MON_DATA_MODERN_FATEFUL_ENCOUNTER, NULL);
+    // gSpecialVar_Result = GetMonData(&gPlayerParty[partyIndex], MON_DATA_MODERN_FATEFUL_ENCOUNTER, NULL);
     return FALSE;
 }
 
@@ -2323,4 +2438,77 @@ bool8 ScrCmd_warpwhitefade(struct ScriptContext *ctx)
     DoWhiteFadeWarp();
     ResetInitialPlayerAvatarState();
     return TRUE;
+}
+
+void ScrCmd_SetItemArg(void)
+{
+    gSaveBlock1Ptr->itemArg = gSpecialVar_0x8000;
+}
+
+bool8 ScrCmd_givecustommon(struct ScriptContext *ctx)
+{
+    u16 species = ScriptReadHalfword(ctx);
+    u8 level = ScriptReadByte(ctx);
+    u16 item = ScriptReadHalfword(ctx);
+    u8 ball = ScriptReadByte(ctx);
+    u8 nature = ScriptReadByte(ctx);
+    u8 abilityNum = ScriptReadByte(ctx);
+    u8 hpEv = ScriptReadByte(ctx);
+    u8 atkEv = ScriptReadByte(ctx);
+    u8 defEv = ScriptReadByte(ctx);
+    u8 speedEv = ScriptReadByte(ctx);
+    u8 spAtkEv = ScriptReadByte(ctx);
+    u8 spDefEv = ScriptReadByte(ctx);
+    u8 hpIv = ScriptReadByte(ctx);
+    u8 atkIv = ScriptReadByte(ctx);
+    u8 defIv = ScriptReadByte(ctx);
+    u8 speedIv = ScriptReadByte(ctx);
+    u8 spAtkIv = ScriptReadByte(ctx);
+    u8 spDefIv = ScriptReadByte(ctx);
+    u16 move1 = ScriptReadHalfword(ctx);
+    u16 move2 = ScriptReadHalfword(ctx);
+    u16 move3 = ScriptReadHalfword(ctx);
+    u16 move4 = ScriptReadHalfword(ctx);
+    bool8 isShiny = ScriptReadByte(ctx);
+    
+    u8 evs[NUM_STATS] = {hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv};
+    u8 ivs[NUM_STATS] = {hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv};
+    u16 moves[4] = {move1, move2, move3, move4};
+    
+    if (FlagGet(FLAG_SETTINGS_RANDOMIZER) == TRUE)
+    {
+        if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
+            FlagSet(FLAG_SHOULD_CHECK_SPECIES_CLAUSE);
+        species = GetRandomSpecies(level);
+    }
+
+    gSpecialVar_Result = ScriptGiveCustomMon(species, level, item, ball, nature, abilityNum, evs, ivs, moves, isShiny);
+    return FALSE;
+}
+// follow me script commands
+bool8 ScrCmd_setfollower(struct ScriptContext *ctx)
+{
+    u8 localId = ScriptReadByte(ctx);
+    u16 flags = ScriptReadHalfword(ctx);
+    
+    SetUpFollowerSprite(localId, flags);
+    return FALSE;
+}
+
+bool8 ScrCmd_destroyfollower(struct ScriptContext *ctx)
+{
+    DestroyFollower();
+    return FALSE;
+}
+
+bool8 ScrCmd_facefollower(struct ScriptContext *ctx)
+{
+    PlayerFaceFollowerSprite();
+    return FALSE;
+}
+
+bool8 ScrCmd_checkfollower(struct ScriptContext *ctx)
+{
+    CheckPlayerHasFollower();
+    return FALSE;
 }

@@ -44,6 +44,7 @@
 #include "trainer_card.h"
 #include "window.h"
 #include "union_room.h"
+#include "dexnav.h"
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -59,12 +60,14 @@ enum
     MENU_ACTION_SAVE,
     MENU_ACTION_OPTION,
     MENU_ACTION_EXIT,
-    MENU_ACTION_RETIRE_SAFARI,
+    MENU_ACTION_RETURN_TO_ZONE_0,
     MENU_ACTION_PLAYER_LINK,
     MENU_ACTION_REST_FRONTIER,
     MENU_ACTION_RETIRE_FRONTIER,
     MENU_ACTION_PYRAMID_BAG,
     MENU_ACTION_DEBUG,
+    MENU_ACTION_RETIRE_ZONE,
+    MENU_ACTION_DEXNAV
 };
 
 // Save status
@@ -106,6 +109,8 @@ static bool8 StartMenuLinkModePlayerNameCallback(void);
 static bool8 StartMenuBattlePyramidRetireCallback(void);
 static bool8 StartMenuBattlePyramidBagCallback(void);
 static bool8 StartMenuDebugCallback(void);
+static bool8 StartMenuZoneRetireCallback(void);
+static bool8 StartMenuDexNavCallback(void);
 
 // Menu callbacks
 static bool8 SaveStartCallback(void);
@@ -186,20 +191,22 @@ static const u8 sText_MenuDebug[] = _("DEBUG");
 
 static const struct MenuAction sStartMenuItems[] =
 {
-    [MENU_ACTION_POKEDEX]         = {gText_MenuPokedex, {.u8_void = StartMenuPokedexCallback}},
-    [MENU_ACTION_POKEMON]         = {gText_MenuPokemon, {.u8_void = StartMenuPokemonCallback}},
-    [MENU_ACTION_BAG]             = {gText_MenuBag,     {.u8_void = StartMenuBagCallback}},
-    [MENU_ACTION_POKENAV]         = {gText_MenuPokenav, {.u8_void = StartMenuPokeNavCallback}},
-    [MENU_ACTION_PLAYER]          = {gText_MenuPlayer,  {.u8_void = StartMenuPlayerNameCallback}},
-    [MENU_ACTION_SAVE]            = {gText_MenuSave,    {.u8_void = StartMenuSaveCallback}},
-    [MENU_ACTION_OPTION]          = {gText_MenuOption,  {.u8_void = StartMenuOptionCallback}},
-    [MENU_ACTION_EXIT]            = {gText_MenuExit,    {.u8_void = StartMenuExitCallback}},
-    [MENU_ACTION_RETIRE_SAFARI]   = {gText_MenuRetire,  {.u8_void = StartMenuSafariZoneRetireCallback}},
-    [MENU_ACTION_PLAYER_LINK]     = {gText_MenuPlayer,  {.u8_void = StartMenuLinkModePlayerNameCallback}},
-    [MENU_ACTION_REST_FRONTIER]   = {gText_MenuRest,    {.u8_void = StartMenuSaveCallback}},
-    [MENU_ACTION_RETIRE_FRONTIER] = {gText_MenuRetire,  {.u8_void = StartMenuBattlePyramidRetireCallback}},
-    [MENU_ACTION_PYRAMID_BAG]     = {gText_MenuBag,     {.u8_void = StartMenuBattlePyramidBagCallback}},
-    [MENU_ACTION_DEBUG]           = {sText_MenuDebug,   {.u8_void = StartMenuDebugCallback}},
+    [MENU_ACTION_POKEDEX]          = {gText_MenuPokedex, {.u8_void = StartMenuPokedexCallback}},
+    [MENU_ACTION_POKEMON]          = {gText_MenuPokemon, {.u8_void = StartMenuPokemonCallback}},
+    [MENU_ACTION_BAG]              = {gText_MenuBag,     {.u8_void = StartMenuBagCallback}},
+    [MENU_ACTION_POKENAV]          = {gText_MenuPokenav, {.u8_void = StartMenuPokeNavCallback}},
+    [MENU_ACTION_PLAYER]           = {gText_MenuPlayer,  {.u8_void = StartMenuPlayerNameCallback}},
+    [MENU_ACTION_SAVE]             = {gText_MenuSave,    {.u8_void = StartMenuSaveCallback}},
+    [MENU_ACTION_OPTION]           = {gText_MenuOption,  {.u8_void = StartMenuOptionCallback}},
+    [MENU_ACTION_EXIT]             = {gText_MenuExit,    {.u8_void = StartMenuExitCallback}},
+    [MENU_ACTION_RETURN_TO_ZONE_0] = {gText_MenuReturn,  {.u8_void = StartMenuSafariZoneRetireCallback}},
+    [MENU_ACTION_PLAYER_LINK]      = {gText_MenuPlayer,  {.u8_void = StartMenuLinkModePlayerNameCallback}},
+    [MENU_ACTION_REST_FRONTIER]    = {gText_MenuRest,    {.u8_void = StartMenuSaveCallback}},
+    [MENU_ACTION_RETIRE_FRONTIER]  = {gText_MenuRetire,  {.u8_void = StartMenuBattlePyramidRetireCallback}},
+    [MENU_ACTION_PYRAMID_BAG]      = {gText_MenuBag,     {.u8_void = StartMenuBattlePyramidBagCallback}},
+    [MENU_ACTION_DEBUG]            = {sText_MenuDebug,   {.u8_void = StartMenuDebugCallback}},
+    [MENU_ACTION_RETIRE_ZONE]      = {gText_MenuRetire,  {.u8_void = StartMenuZoneRetireCallback}},
+    [MENU_ACTION_DEXNAV]           = {gText_MenuDexNav,  {.u8_void = StartMenuDexNavCallback}}
 };
 
 static const struct BgTemplate sBgTemplates_LinkBattleSave[] =
@@ -242,8 +249,9 @@ static const struct WindowTemplate sSaveInfoWindowTemplate = {
 // Local functions
 static void BuildStartMenuActions(void);
 static void AddStartMenuAction(u8 action);
-static void BuildNormalStartMenu(void);
-static void BuildDebugStartMenu(void);
+static void BuildSanctuaryStartMenu(void);
+static void BuildNewZoneStartMenu(void);
+static void BuildRevisitingZoneStartMenu(void);
 static void BuildSafariZoneStartMenu(void);
 static void BuildLinkModeStartMenu(void);
 static void BuildUnionRoomStartMenu(void);
@@ -272,13 +280,13 @@ static void CB2_SaveAfterLinkBattle(void);
 static void ShowSaveInfoWindow(void);
 static void RemoveSaveInfoWindow(void);
 static void HideStartMenuWindow(void);
+bool32 GetSafariZoneFlag(void);
 static void HideStartMenuDebug(void);
 
 void SetDexPokemonPokenavFlags(void) // unused
 {
     FlagSet(FLAG_SYS_POKEDEX_GET);
     FlagSet(FLAG_SYS_POKEMON_GET);
-    FlagSet(FLAG_SYS_POKENAV_GET);
 }
 
 static void BuildStartMenuActions(void)
@@ -309,12 +317,17 @@ static void BuildStartMenuActions(void)
     {
         BuildMultiPartnerRoomStartMenu();
     }
+    else if (FlagGet(FLAG_IN_NEW_ZONE))
+    {
+        BuildNewZoneStartMenu();
+    }
+    else if (FlagGet(FLAG_IS_REVISITING_ZONE))
+    {
+        BuildRevisitingZoneStartMenu();
+    }
     else
     {
-        if (DEBUG_OVERWORLD_MENU == TRUE && DEBUG_OVERWORLD_IN_MENU == TRUE)
-            BuildDebugStartMenu();
-        else
-            BuildNormalStartMenu();
+        BuildSanctuaryStartMenu();
     }
 }
 
@@ -323,48 +336,95 @@ static void AddStartMenuAction(u8 action)
     AppendToList(sCurrentStartMenuActions, &sNumStartMenuActions, action);
 }
 
-static void BuildNormalStartMenu(void)
+static void BuildSanctuaryStartMenu(void)
 {
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
-    {
         AddStartMenuAction(MENU_ACTION_POKEDEX);
-    }
+
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
-    {
         AddStartMenuAction(MENU_ACTION_POKEMON);
-    }
-
-    AddStartMenuAction(MENU_ACTION_BAG);
-
-    if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
-    {
-        AddStartMenuAction(MENU_ACTION_POKENAV);
-    }
-
+    
+    if (FlagGet(FLAG_SYS_NO_BAG_START_MENU) == FALSE)
+        AddStartMenuAction(MENU_ACTION_BAG);
     AddStartMenuAction(MENU_ACTION_PLAYER);
+
+    if (FlagGet(FLAG_SYS_DEXNAV_GET))
+        AddStartMenuAction(MENU_ACTION_DEXNAV);
+        
+    // if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
+    // {
+    //     AddStartMenuAction(MENU_ACTION_POKENAV);
+    // }
     AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_OPTION);
-    AddStartMenuAction(MENU_ACTION_EXIT);
+
+    if (FlagGet(FLAG_IS_DEBUGGING_SAVEFILE) == TRUE)
+        AddStartMenuAction(MENU_ACTION_DEBUG);
+    else
+        AddStartMenuAction(MENU_ACTION_EXIT);
 }
 
-static void BuildDebugStartMenu(void)
+static void BuildNewZoneStartMenu(void)
 {
-    AddStartMenuAction(MENU_ACTION_DEBUG);
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEDEX);
+
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEMON);
-    AddStartMenuAction(MENU_ACTION_BAG);
-    if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
-        AddStartMenuAction(MENU_ACTION_POKENAV);
+    
+    if (FlagGet(FLAG_SYS_NO_BAG_START_MENU) == FALSE)
+        AddStartMenuAction(MENU_ACTION_BAG);
+    
     AddStartMenuAction(MENU_ACTION_PLAYER);
+
+    if (FlagGet(FLAG_SYS_DEXNAV_GET))
+        AddStartMenuAction(MENU_ACTION_DEXNAV);
+        
+
     AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_OPTION);
+
+    if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_WORKAHOLIC) == FALSE))
+        AddStartMenuAction(MENU_ACTION_RETIRE_ZONE);
+    if (FlagGet(FLAG_IS_DEBUGGING_SAVEFILE) == TRUE)
+        AddStartMenuAction(MENU_ACTION_DEBUG);
+    // else
+    //     AddStartMenuAction(MENU_ACTION_EXIT);
+}
+
+static void BuildRevisitingZoneStartMenu(void)
+{
+    
+    if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
+        AddStartMenuAction(MENU_ACTION_POKEDEX);
+
+    if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
+        AddStartMenuAction(MENU_ACTION_POKEMON);
+    
+    if (FlagGet(FLAG_SYS_NO_BAG_START_MENU) == FALSE)
+        AddStartMenuAction(MENU_ACTION_BAG);
+    AddStartMenuAction(MENU_ACTION_PLAYER);
+
+    if (FlagGet(FLAG_SYS_DEXNAV_GET))
+        AddStartMenuAction(MENU_ACTION_DEXNAV);
+    
+    // if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
+    // {
+    //     AddStartMenuAction(MENU_ACTION_POKENAV);
+    // }
+    AddStartMenuAction(MENU_ACTION_SAVE);
+    AddStartMenuAction(MENU_ACTION_OPTION);
+
+    AddStartMenuAction(MENU_ACTION_RETURN_TO_ZONE_0);
+    if (FlagGet(FLAG_IS_DEBUGGING_SAVEFILE) == TRUE)
+        AddStartMenuAction(MENU_ACTION_DEBUG);
+    // else
+    //     AddStartMenuAction(MENU_ACTION_EXIT);
 }
 
 static void BuildSafariZoneStartMenu(void)
 {
-    AddStartMenuAction(MENU_ACTION_RETIRE_SAFARI);
+    AddStartMenuAction(MENU_ACTION_RETURN_TO_ZONE_0);
     AddStartMenuAction(MENU_ACTION_POKEDEX);
     AddStartMenuAction(MENU_ACTION_POKEMON);
     AddStartMenuAction(MENU_ACTION_BAG);
@@ -378,10 +438,10 @@ static void BuildLinkModeStartMenu(void)
     AddStartMenuAction(MENU_ACTION_POKEMON);
     AddStartMenuAction(MENU_ACTION_BAG);
 
-    if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
-    {
-        AddStartMenuAction(MENU_ACTION_POKENAV);
-    }
+    // if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
+    // {
+    //     AddStartMenuAction(MENU_ACTION_POKENAV);
+    // }
 
     AddStartMenuAction(MENU_ACTION_PLAYER_LINK);
     AddStartMenuAction(MENU_ACTION_OPTION);
@@ -393,10 +453,10 @@ static void BuildUnionRoomStartMenu(void)
     AddStartMenuAction(MENU_ACTION_POKEMON);
     AddStartMenuAction(MENU_ACTION_BAG);
 
-    if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
-    {
-        AddStartMenuAction(MENU_ACTION_POKENAV);
-    }
+    // if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
+    // {
+    //     AddStartMenuAction(MENU_ACTION_POKENAV);
+    // }
 
     AddStartMenuAction(MENU_ACTION_PLAYER);
     AddStartMenuAction(MENU_ACTION_OPTION);
@@ -645,7 +705,8 @@ static bool8 HandleStartMenuInput(void)
             && gMenuCallback != StartMenuExitCallback
             && gMenuCallback != StartMenuDebugCallback
             && gMenuCallback != StartMenuSafariZoneRetireCallback
-            && gMenuCallback != StartMenuBattlePyramidRetireCallback)
+            && gMenuCallback != StartMenuBattlePyramidRetireCallback
+            && gMenuCallback != StartMenuZoneRetireCallback)
         {
            FadeScreen(FADE_TO_BLACK, 0);
         }
@@ -663,7 +724,7 @@ static bool8 HandleStartMenuInput(void)
     return FALSE;
 }
 
-static bool8 StartMenuPokedexCallback(void)
+bool8 StartMenuPokedexCallback(void)
 {
     if (!gPaletteFade.active)
     {
@@ -797,6 +858,15 @@ static bool8 StartMenuSafariZoneRetireCallback(void)
     RemoveExtraStartMenuWindows();
     HideStartMenu();
     SafariZoneRetirePrompt();
+
+    return TRUE;
+}
+
+static bool8 StartMenuZoneRetireCallback(void)
+{
+    RemoveExtraStartMenuWindows();
+    HideStartMenu();
+    ZoneRetirePrompt();
 
     return TRUE;
 }
@@ -1419,12 +1489,16 @@ static void ShowSaveInfoWindow(void)
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
 
-    if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
-    {
-        // Print pokedex count
-        yOffset += 16;
+    // Print pokedex count
+    yOffset += 16;
+    if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_INFINITE) == FALSE) && (FlagGet(FLAG_SETTINGS_NUZLOCKE) == FALSE) && (FlagGet(FLAG_SETTINGS_RANDOMIZER) == FALSE)) {
         AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL);
         BufferSaveMenuText(SAVE_MENU_CAUGHT, gStringVar4, color);
+        xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
+        AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
+    } else {
+        AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingMode, 0, yOffset, TEXT_SKIP_DRAW, NULL);
+        BufferSaveMenuText(SAVE_MENU_MODE, gStringVar4, color);
         xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
         AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
     }
@@ -1483,4 +1557,10 @@ void AppendToList(u8 *list, u8 *pos, u8 newEntry)
 {
     list[*pos] = newEntry;
     (*pos)++;
+}
+
+static bool8 StartMenuDexNavCallback(void)
+{
+    CreateTask(Task_OpenDexNavFromStartMenu, 0);
+    return TRUE;
 }

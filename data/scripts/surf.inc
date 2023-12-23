@@ -1,7 +1,8 @@
 EventScript_UseSurf::
-	checkpartymove MOVE_SURF
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_EndUseSurf
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
+	checkitem ITEM_SURFBOARD, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_EndUseSurf
+	setitemarg ITEM_SURFBOARD
 	setfieldeffectargument 0, VAR_RESULT
 	lockall
 	msgbox gText_WantToUseSurf, MSGBOX_YESNO

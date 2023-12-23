@@ -1316,7 +1316,7 @@ static bool8 SetupContestGraphics(u8 *stateVar)
         break;
     case 2:
         LZDecompressVram(gContestAudienceGfx, (void *)(BG_SCREEN_ADDR(4)));
-        DmaCopyLarge32(3, (void *)(BG_SCREEN_ADDR(4)), eUnzippedContestAudience_Gfx, 0x2000, 0x1000);
+        // DmaCopyLarge32(3, (void *)(BG_SCREEN_ADDR(4)), eUnzippedContestAudience_Gfx, 0x2000, 0x1000);
         break;
     case 3:
         CopyToBgTilemapBuffer(3, gContestAudienceTilemap, 0, 0);
@@ -1326,7 +1326,7 @@ static bool8 SetupContestGraphics(u8 *stateVar)
         CopyToBgTilemapBuffer(2, gContestInterfaceTilemap, 0, 0);
         CopyBgTilemapBufferToVram(2);
         // This is a bug, and copies random junk. savedJunk is never read.
-        DmaCopy32Defvars(3, gContestResources->contestBgTilemaps[2], eContestTempSave.savedJunk, sizeof(eContestTempSave.savedJunk));
+        // DmaCopy32Defvars(3, gContestResources->contestBgTilemaps[2], eContestTempSave.savedJunk, sizeof(eContestTempSave.savedJunk));
         break;
     case 5:
         LoadCompressedPalette(gContestInterfaceAudiencePalette, BG_PLTT_OFFSET, BG_PLTT_SIZE);
@@ -1334,7 +1334,7 @@ static bool8 SetupContestGraphics(u8 *stateVar)
         CpuCopy32(&gPlttBufferUnfaded[BG_PLTT_ID(5 + gContestPlayerMonIndex)], tempPalette2, PLTT_SIZE_4BPP);
         CpuCopy32(tempPalette2, &gPlttBufferUnfaded[BG_PLTT_ID(8)], PLTT_SIZE_4BPP);
         CpuCopy32(tempPalette1, &gPlttBufferUnfaded[BG_PLTT_ID(5 + gContestPlayerMonIndex)], PLTT_SIZE_4BPP);
-        DmaCopy32Defvars(3, gPlttBufferUnfaded, eContestTempSave.cachedWindowPalettes, sizeof(eContestTempSave.cachedWindowPalettes));
+        // DmaCopy32Defvars(3, gPlttBufferUnfaded, eContestTempSave.cachedWindowPalettes, sizeof(eContestTempSave.cachedWindowPalettes));
         LoadContestPalettes();
         break;
     case 6:
@@ -1469,30 +1469,30 @@ static void VBlankCB_Contest(void)
 
 static void Task_DisplayAppealNumberText(u8 taskId)
 {
-    if (gTasks[taskId].data[0] == 0)
-    {
-        gBattle_BG0_Y = 0;
-        gBattle_BG2_Y = 0;
-        ContestDebugDoPrint();
-        DmaCopy32Defvars(3, gPlttBufferUnfaded, eContestTempSave.cachedPlttBufferUnfaded, PLTT_SIZE);
-        ConvertIntToDecimalStringN(gStringVar1, eContest.appealNumber + 1, STR_CONV_MODE_LEFT_ALIGN, 1);
-        if (!Contest_IsMonsTurnDisabled(gContestPlayerMonIndex))
-            StringCopy(gDisplayedStringBattle, gText_AppealNumWhichMoveWillBePlayed);
-        else
-            StringCopy(gDisplayedStringBattle, gText_AppealNumButItCantParticipate);
-        ContestClearGeneralTextWindow();
-        StringExpandPlaceholders(gStringVar4, gDisplayedStringBattle);
-        Contest_StartTextPrinter(gStringVar4, TRUE);
-        gTasks[taskId].data[0]++;
-    }
-    else
-    {
-        if (!Contest_RunTextPrinters())
-        {
-            gTasks[taskId].data[0] = 0;
-            gTasks[taskId].func = Task_TryShowMoveSelectScreen;
-        }
-    }
+    // if (gTasks[taskId].data[0] == 0)
+    // {
+    //     gBattle_BG0_Y = 0;
+    //     gBattle_BG2_Y = 0;
+    //     ContestDebugDoPrint();
+    //     DmaCopy32Defvars(3, gPlttBufferUnfaded, eContestTempSave.cachedPlttBufferUnfaded, PLTT_SIZE);
+    //     ConvertIntToDecimalStringN(gStringVar1, eContest.appealNumber + 1, STR_CONV_MODE_LEFT_ALIGN, 1);
+    //     if (!Contest_IsMonsTurnDisabled(gContestPlayerMonIndex))
+    //         StringCopy(gDisplayedStringBattle, gText_AppealNumWhichMoveWillBePlayed);
+    //     else
+    //         StringCopy(gDisplayedStringBattle, gText_AppealNumButItCantParticipate);
+    //     ContestClearGeneralTextWindow();
+    //     StringExpandPlaceholders(gStringVar4, gDisplayedStringBattle);
+    //     Contest_StartTextPrinter(gStringVar4, TRUE);
+    //     gTasks[taskId].data[0]++;
+    // }
+    // else
+    // {
+    //     if (!Contest_RunTextPrinters())
+    //     {
+    //         gTasks[taskId].data[0] = 0;
+    //         gTasks[taskId].func = Task_TryShowMoveSelectScreen;
+    //     }
+    // }
 }
 
 static void Task_TryShowMoveSelectScreen(u8 taskId)
@@ -1658,29 +1658,29 @@ static void Task_EndCommunicateMoveSelections(u8 taskId)
 
 static void Task_HideMoveSelectScreen(u8 taskId)
 {
-    s32 i;
+    // s32 i;
 
-    ContestClearGeneralTextWindow();
-    gBattle_BG0_Y = 0;
-    gBattle_BG2_Y = 0;
-    SetBottomSliderHeartsInvisibility(FALSE);
+    // ContestClearGeneralTextWindow();
+    // gBattle_BG0_Y = 0;
+    // gBattle_BG2_Y = 0;
+    // SetBottomSliderHeartsInvisibility(FALSE);
 
-    for (i = 0; i < MAX_MON_MOVES; i++)
-    {
-        FillWindowPixelBuffer(MOVE_WINDOWS_START + i, PIXEL_FILL(0));
-        PutWindowTilemap(MOVE_WINDOWS_START + i);
-        CopyWindowToVram(MOVE_WINDOWS_START + i, COPYWIN_GFX);
-    }
-    Contest_SetBgCopyFlags(0);
-    // This seems to be a bug; it should have just copied PLTT_BUFFER_SIZE.
-    DmaCopy32Defvars(3, gPlttBufferFaded, eContestTempSave.cachedPlttBufferFaded, PLTT_SIZE);
-    LoadPalette(eContestTempSave.cachedPlttBufferUnfaded, 0, PLTT_SIZE);
-    gTasks[taskId].data[0] = 0;
-    gTasks[taskId].data[1] = 0;
-    gTasks[taskId].func = Task_HideApplauseMeterForAppealStart;
+    // for (i = 0; i < MAX_MON_MOVES; i++)
+    // {
+    //     FillWindowPixelBuffer(MOVE_WINDOWS_START + i, PIXEL_FILL(0));
+    //     PutWindowTilemap(MOVE_WINDOWS_START + i);
+    //     CopyWindowToVram(MOVE_WINDOWS_START + i, COPYWIN_GFX);
+    // }
+    // Contest_SetBgCopyFlags(0);
+    // // This seems to be a bug; it should have just copied PLTT_BUFFER_SIZE.
+    // DmaCopy32Defvars(3, gPlttBufferFaded, eContestTempSave.cachedPlttBufferFaded, PLTT_SIZE);
+    // LoadPalette(eContestTempSave.cachedPlttBufferUnfaded, 0, PLTT_SIZE);
+    // gTasks[taskId].data[0] = 0;
+    // gTasks[taskId].data[1] = 0;
+    // gTasks[taskId].func = Task_HideApplauseMeterForAppealStart;
 }
 
-static void Task_HideApplauseMeterForAppealStart(u8 taskId)
+static void UNUSED Task_HideApplauseMeterForAppealStart(u8 taskId)
 {
     if (++gTasks[taskId].data[0] > 2)
     {
@@ -2558,13 +2558,13 @@ static void Task_WaitForHeartSliders(u8 taskId)
 
 static void Task_RestorePlttBufferUnfaded(u8 taskId)
 {
-    DmaCopy32Defvars(3, eContestTempSave.cachedPlttBufferUnfaded, gPlttBufferUnfaded, PLTT_SIZE);
-    gTasks[taskId].data[0] = 0;
-    gTasks[taskId].data[1] = 2;
-    gTasks[taskId].func = Task_WaitPrintRoundResult;
+    // DmaCopy32Defvars(3, eContestTempSave.cachedPlttBufferUnfaded, gPlttBufferUnfaded, PLTT_SIZE);
+    // gTasks[taskId].data[0] = 0;
+    // gTasks[taskId].data[1] = 2;
+    // gTasks[taskId].func = Task_WaitPrintRoundResult;
 }
 
-static void Task_WaitPrintRoundResult(u8 taskId)
+static void UNUSED Task_WaitPrintRoundResult(u8 taskId)
 {
     if (++gTasks[taskId].data[0] > 2)
     {
@@ -2799,12 +2799,12 @@ void CreateContestMonFromParty(u8 partyIndex)
     }
     memcpy(gContestMons[gContestPlayerMonIndex].nickname, name, POKEMON_NAME_LENGTH + 1);
     StringCopy(gContestMons[gContestPlayerMonIndex].nickname, name);
-    gContestMons[gContestPlayerMonIndex].cool = GetMonData(&gPlayerParty[partyIndex], MON_DATA_COOL);
-    gContestMons[gContestPlayerMonIndex].beauty = GetMonData(&gPlayerParty[partyIndex], MON_DATA_BEAUTY);
-    gContestMons[gContestPlayerMonIndex].cute = GetMonData(&gPlayerParty[partyIndex], MON_DATA_CUTE);
-    gContestMons[gContestPlayerMonIndex].smart = GetMonData(&gPlayerParty[partyIndex], MON_DATA_SMART);
-    gContestMons[gContestPlayerMonIndex].tough = GetMonData(&gPlayerParty[partyIndex], MON_DATA_TOUGH);
-    gContestMons[gContestPlayerMonIndex].sheen = GetMonData(&gPlayerParty[partyIndex], MON_DATA_SHEEN);
+    // gContestMons[gContestPlayerMonIndex].cool = GetMonData(&gPlayerParty[partyIndex], MON_DATA_COOL);
+    // gContestMons[gContestPlayerMonIndex].beauty = GetMonData(&gPlayerParty[partyIndex], MON_DATA_BEAUTY);
+    // gContestMons[gContestPlayerMonIndex].cute = GetMonData(&gPlayerParty[partyIndex], MON_DATA_CUTE);
+    // gContestMons[gContestPlayerMonIndex].smart = GetMonData(&gPlayerParty[partyIndex], MON_DATA_SMART);
+    // gContestMons[gContestPlayerMonIndex].tough = GetMonData(&gPlayerParty[partyIndex], MON_DATA_TOUGH);
+    // gContestMons[gContestPlayerMonIndex].sheen = GetMonData(&gPlayerParty[partyIndex], MON_DATA_SHEEN);
     gContestMons[gContestPlayerMonIndex].moves[0] = GetMonData(&gPlayerParty[partyIndex], MON_DATA_MOVE1);
     gContestMons[gContestPlayerMonIndex].moves[1] = GetMonData(&gPlayerParty[partyIndex], MON_DATA_MOVE2);
     gContestMons[gContestPlayerMonIndex].moves[2] = GetMonData(&gPlayerParty[partyIndex], MON_DATA_MOVE3);
@@ -2960,26 +2960,26 @@ u8 GetContestEntryEligibility(struct Pokemon *pkmn)
         return CANT_ENTER_CONTEST_EGG;
     if (GetMonData(pkmn, MON_DATA_HP) == 0)
         return CANT_ENTER_CONTEST_FAINTED;
-    switch (gSpecialVar_ContestCategory)
-    {
-    case CONTEST_CATEGORY_COOL:
-        ribbon = GetMonData(pkmn, MON_DATA_COOL_RIBBON);
-        break;
-    case CONTEST_CATEGORY_BEAUTY:
-        ribbon = GetMonData(pkmn, MON_DATA_BEAUTY_RIBBON);
-        break;
-    case CONTEST_CATEGORY_CUTE:
-        ribbon = GetMonData(pkmn, MON_DATA_CUTE_RIBBON);
-        break;
-    case CONTEST_CATEGORY_SMART:
-        ribbon = GetMonData(pkmn, MON_DATA_SMART_RIBBON);
-        break;
-    case CONTEST_CATEGORY_TOUGH:
-        ribbon = GetMonData(pkmn, MON_DATA_TOUGH_RIBBON);
-        break;
-    default:
+    // switch (gSpecialVar_ContestCategory)
+    // {
+    // case CONTEST_CATEGORY_COOL:
+    //     ribbon = GetMonData(pkmn, MON_DATA_COOL_RIBBON);
+    //     break;
+    // case CONTEST_CATEGORY_BEAUTY:
+    //     ribbon = GetMonData(pkmn, MON_DATA_BEAUTY_RIBBON);
+    //     break;
+    // case CONTEST_CATEGORY_CUTE:
+    //     ribbon = GetMonData(pkmn, MON_DATA_CUTE_RIBBON);
+    //     break;
+    // case CONTEST_CATEGORY_SMART:
+    //     ribbon = GetMonData(pkmn, MON_DATA_SMART_RIBBON);
+    //     break;
+    // case CONTEST_CATEGORY_TOUGH:
+    //     ribbon = GetMonData(pkmn, MON_DATA_TOUGH_RIBBON);
+    //     break;
+    // default:
         return CANT_ENTER_CONTEST;
-    }
+    // }
 
     // Couldn't get this to match any other way.
     // Returns 2, 1, or 0 respectively if ribbon's rank is above, equal, or below
@@ -3624,13 +3624,13 @@ static void DetermineFinalStandings(void)
 
 void SaveLinkContestResults(void)
 {
-    if ((gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK))
-    {
-        gSaveBlock2Ptr->contestLinkResults[gSpecialVar_ContestCategory][gContestFinalStandings[gContestPlayerMonIndex]] =
-        ((gSaveBlock2Ptr->contestLinkResults[gSpecialVar_ContestCategory][gContestFinalStandings[gContestPlayerMonIndex]] + 1) > 9999) ? 9999 :
-        (gSaveBlock2Ptr->contestLinkResults[gSpecialVar_ContestCategory][gContestFinalStandings[gContestPlayerMonIndex]] + 1);
+    // if ((gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK))
+    // {
+    //     gSaveBlock2Ptr->contestLinkResults[gSpecialVar_ContestCategory][gContestFinalStandings[gContestPlayerMonIndex]] =
+    //     ((gSaveBlock2Ptr->contestLinkResults[gSpecialVar_ContestCategory][gContestFinalStandings[gContestPlayerMonIndex]] + 1) > 9999) ? 9999 :
+    //     (gSaveBlock2Ptr->contestLinkResults[gSpecialVar_ContestCategory][gContestFinalStandings[gContestPlayerMonIndex]] + 1);
 
-    }
+    // }
 }
 
 static bool8 DidContestantPlaceHigher(s32 a, s32 b, struct ContestFinalStandings *standings)
@@ -4052,21 +4052,21 @@ static void UpdateBlendTaskContestantsData(void)
 
 static void UpdateBlendTaskContestantData(u8 contestant)
 {
-    u32 palOffset1;
-    u32 palOffset2;
+    // u32 palOffset1;
+    // u32 palOffset2;
 
-    InitUnusedBlendTaskData(contestant);
+    // InitUnusedBlendTaskData(contestant);
 
-    palOffset1 = contestant + 5;
-    DmaCopy16Defvars(3,
-                     &gPlttBufferUnfaded[PLTT_ID(palOffset1) + 10],
-                     &gPlttBufferFaded[PLTT_ID(palOffset1) + 10],
-                     PLTT_SIZEOF(1));
-    palOffset2 = PLTT_ID(contestant + 5) + 12 + contestant;
-    DmaCopy16Defvars(3,
-                     &gPlttBufferUnfaded[palOffset2],
-                     &gPlttBufferFaded[palOffset2],
-                     PLTT_SIZEOF(1));
+    // palOffset1 = contestant + 5;
+    // DmaCopy16Defvars(3,
+    //                  &gPlttBufferUnfaded[PLTT_ID(palOffset1) + 10],
+    //                  &gPlttBufferFaded[PLTT_ID(palOffset1) + 10],
+    //                  PLTT_SIZEOF(1));
+    // palOffset2 = PLTT_ID(contestant + 5) + 12 + contestant;
+    // DmaCopy16Defvars(3,
+    //                  &gPlttBufferUnfaded[palOffset2],
+    //                  &gPlttBufferFaded[palOffset2],
+    //                  PLTT_SIZEOF(1));
 }
 
 // See comments on CreateUnusedBlendTask
@@ -5498,79 +5498,79 @@ static void Contest_SetBgCopyFlags(u32 flagIndex)
 
 void ResetContestLinkResults(void)
 {
-    s32 i;
-    s32 j;
+    // s32 i;
+    // s32 j;
 
-    for(i = 0; i < CONTEST_CATEGORIES_COUNT; i++)
-        for(j = 0; j < CONTESTANT_COUNT; j++)
-            gSaveBlock2Ptr->contestLinkResults[i][j] = 0;
+    // for(i = 0; i < CONTEST_CATEGORIES_COUNT; i++)
+    //     for(j = 0; j < CONTESTANT_COUNT; j++)
+    //         gSaveBlock2Ptr->contestLinkResults[i][j] = 0;
 }
 
 bool8 SaveContestWinner(u8 rank)
 {
-    s32 i;
-    u8 captionId = Random() % NUM_PAINTING_CAPTIONS;
+    // s32 i;
+    // u8 captionId = Random() % NUM_PAINTING_CAPTIONS;
 
-    // Get the index of the winner among the contestants
-    for (i = 0; i < CONTESTANT_COUNT - 1; i++)
-        if (gContestFinalStandings[i] == 0)
-            break;
+    // // Get the index of the winner among the contestants
+    // for (i = 0; i < CONTESTANT_COUNT - 1; i++)
+    //     if (gContestFinalStandings[i] == 0)
+    //         break;
 
-    // Exit if attempting to save a Pokémon other than the player's to the museum
-    if (rank == CONTEST_SAVE_FOR_MUSEUM && i != gContestPlayerMonIndex)
-        return FALSE;
+    // // Exit if attempting to save a Pokémon other than the player's to the museum
+    // if (rank == CONTEST_SAVE_FOR_MUSEUM && i != gContestPlayerMonIndex)
+    //     return FALSE;
 
-    // Adjust the random painting caption depending on the category
-    switch (gSpecialVar_ContestCategory)
-    {
-    case CONTEST_CATEGORY_COOL:
-        captionId += NUM_PAINTING_CAPTIONS * CONTEST_CATEGORY_COOL;
-        break;
-    case CONTEST_CATEGORY_BEAUTY:
-        captionId += NUM_PAINTING_CAPTIONS * CONTEST_CATEGORY_BEAUTY;
-        break;
-    case CONTEST_CATEGORY_CUTE:
-        captionId += NUM_PAINTING_CAPTIONS * CONTEST_CATEGORY_CUTE;
-        break;
-    case CONTEST_CATEGORY_SMART:
-        captionId += NUM_PAINTING_CAPTIONS * CONTEST_CATEGORY_SMART;
-        break;
-    case CONTEST_CATEGORY_TOUGH:
-        captionId += NUM_PAINTING_CAPTIONS * CONTEST_CATEGORY_TOUGH;
-        break;
-    }
+    // // Adjust the random painting caption depending on the category
+    // switch (gSpecialVar_ContestCategory)
+    // {
+    // case CONTEST_CATEGORY_COOL:
+    //     captionId += NUM_PAINTING_CAPTIONS * CONTEST_CATEGORY_COOL;
+    //     break;
+    // case CONTEST_CATEGORY_BEAUTY:
+    //     captionId += NUM_PAINTING_CAPTIONS * CONTEST_CATEGORY_BEAUTY;
+    //     break;
+    // case CONTEST_CATEGORY_CUTE:
+    //     captionId += NUM_PAINTING_CAPTIONS * CONTEST_CATEGORY_CUTE;
+    //     break;
+    // case CONTEST_CATEGORY_SMART:
+    //     captionId += NUM_PAINTING_CAPTIONS * CONTEST_CATEGORY_SMART;
+    //     break;
+    // case CONTEST_CATEGORY_TOUGH:
+    //     captionId += NUM_PAINTING_CAPTIONS * CONTEST_CATEGORY_TOUGH;
+    //     break;
+    // }
 
-    if (rank != CONTEST_SAVE_FOR_ARTIST)
-    {
-        // Save winner in the saveblock
-        // Used to save any winner for the Contest Hall or the Museum
-        // but excludes the temporary save used by the artist
-        u8 id = GetContestWinnerSaveIdx(rank, TRUE);
-        gSaveBlock1Ptr->contestWinners[id].personality = gContestMons[i].personality;
-        gSaveBlock1Ptr->contestWinners[id].species = gContestMons[i].species;
-        gSaveBlock1Ptr->contestWinners[id].trainerId = gContestMons[i].otId;
-        StringCopy(gSaveBlock1Ptr->contestWinners[id].monName, gContestMons[i].nickname);
-        StringCopy(gSaveBlock1Ptr->contestWinners[id].trainerName, gContestMons[i].trainerName);
-        if(gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK)
-            gSaveBlock1Ptr->contestWinners[id].contestRank = CONTEST_RANK_LINK;
-        else
-            gSaveBlock1Ptr->contestWinners[id].contestRank = gSpecialVar_ContestRank;
+    // if (rank != CONTEST_SAVE_FOR_ARTIST)
+    // {
+    //     // Save winner in the saveblock
+    //     // Used to save any winner for the Contest Hall or the Museum
+    //     // but excludes the temporary save used by the artist
+    //     u8 id = GetContestWinnerSaveIdx(rank, TRUE);
+    //     gSaveBlock1Ptr->contestWinners[id].personality = gContestMons[i].personality;
+    //     gSaveBlock1Ptr->contestWinners[id].species = gContestMons[i].species;
+    //     gSaveBlock1Ptr->contestWinners[id].trainerId = gContestMons[i].otId;
+    //     StringCopy(gSaveBlock1Ptr->contestWinners[id].monName, gContestMons[i].nickname);
+    //     StringCopy(gSaveBlock1Ptr->contestWinners[id].trainerName, gContestMons[i].trainerName);
+    //     if(gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK)
+    //         gSaveBlock1Ptr->contestWinners[id].contestRank = CONTEST_RANK_LINK;
+    //     else
+    //         gSaveBlock1Ptr->contestWinners[id].contestRank = gSpecialVar_ContestRank;
 
-        if (rank != CONTEST_SAVE_FOR_MUSEUM)
-            gSaveBlock1Ptr->contestWinners[id].contestCategory = gSpecialVar_ContestCategory;
-        else
-            gSaveBlock1Ptr->contestWinners[id].contestCategory = captionId;
-    }
-    else
-    {
-        // Set the most recent winner so the artist can show the player their painting
-        gCurContestWinner.personality = gContestMons[i].personality;
-        gCurContestWinner.trainerId = gContestMons[i].otId;
-        gCurContestWinner.species = gContestMons[i].species;
-        StringCopy(gCurContestWinner.monName, gContestMons[i].nickname);
-        StringCopy(gCurContestWinner.trainerName, gContestMons[i].trainerName);
-        gCurContestWinner.contestCategory = captionId;
-    }
+    //     if (rank != CONTEST_SAVE_FOR_MUSEUM)
+    //         gSaveBlock1Ptr->contestWinners[id].contestCategory = gSpecialVar_ContestCategory;
+    //     else
+    //         gSaveBlock1Ptr->contestWinners[id].contestCategory = captionId;
+    // }
+    // else
+    // {
+    //     // Set the most recent winner so the artist can show the player their painting
+    //     gCurContestWinner.personality = gContestMons[i].personality;
+    //     gCurContestWinner.trainerId = gContestMons[i].otId;
+    //     gCurContestWinner.species = gContestMons[i].species;
+    //     StringCopy(gCurContestWinner.monName, gContestMons[i].nickname);
+    //     StringCopy(gCurContestWinner.trainerName, gContestMons[i].trainerName);
+    //     gCurContestWinner.contestCategory = captionId;
+    // }
     return TRUE;
 }
 
@@ -5580,46 +5580,47 @@ bool8 SaveContestWinner(u8 rank)
 // If actually preparing to insert the winner into the saveblock, shift is TRUE
 u8 GetContestWinnerSaveIdx(u8 rank, bool8 shift)
 {
-    s32 i;
+//     s32 i;
 
-    switch (rank)
-    {
-    case CONTEST_RANK_NORMAL:
-    case CONTEST_RANK_SUPER:
-    case CONTEST_RANK_HYPER:
-    case CONTEST_RANK_MASTER:
-        if (shift)
-        {
-            for (i = NUM_CONTEST_HALL_WINNERS - 1; i > 0; i--)
-                memcpy(&gSaveBlock1Ptr->contestWinners[i], &gSaveBlock1Ptr->contestWinners[i - 1], sizeof(struct ContestWinner));
-        }
-        return CONTEST_WINNER_HALL_1 - 1;
-    default:
-//  case CONTEST_SAVE_FOR_MUSEUM:
-//  case CONTEST_SAVE_FOR_ARTIST:
-        switch (gSpecialVar_ContestCategory)
-        {
-        case CONTEST_CATEGORY_COOL:
-            return CONTEST_WINNER_MUSEUM_COOL - 1;
-        case CONTEST_CATEGORY_BEAUTY:
-            return CONTEST_WINNER_MUSEUM_BEAUTY - 1;
-        case CONTEST_CATEGORY_CUTE:
-            return CONTEST_WINNER_MUSEUM_CUTE - 1;
-        case CONTEST_CATEGORY_SMART:
-            return CONTEST_WINNER_MUSEUM_SMART - 1;
-        case CONTEST_CATEGORY_TOUGH:
-        default:
-            return CONTEST_WINNER_MUSEUM_TOUGH - 1;
-        }
-    }
+//     switch (rank)
+//     {
+//     case CONTEST_RANK_NORMAL:
+//     case CONTEST_RANK_SUPER:
+//     case CONTEST_RANK_HYPER:
+//     case CONTEST_RANK_MASTER:
+//         if (shift)
+//         {
+//             for (i = NUM_CONTEST_HALL_WINNERS - 1; i > 0; i--)
+//                 memcpy(&gSaveBlock1Ptr->contestWinners[i], &gSaveBlock1Ptr->contestWinners[i - 1], sizeof(struct ContestWinner));
+//         }
+//         return CONTEST_WINNER_HALL_1 - 1;
+//     default:
+// //  case CONTEST_SAVE_FOR_MUSEUM:
+// //  case CONTEST_SAVE_FOR_ARTIST:
+//         switch (gSpecialVar_ContestCategory)
+//         {
+//         case CONTEST_CATEGORY_COOL:
+//             return CONTEST_WINNER_MUSEUM_COOL - 1;
+//         case CONTEST_CATEGORY_BEAUTY:
+//             return CONTEST_WINNER_MUSEUM_BEAUTY - 1;
+//         case CONTEST_CATEGORY_CUTE:
+//             return CONTEST_WINNER_MUSEUM_CUTE - 1;
+//         case CONTEST_CATEGORY_SMART:
+//             return CONTEST_WINNER_MUSEUM_SMART - 1;
+//         case CONTEST_CATEGORY_TOUGH:
+//         default:
+//             return CONTEST_WINNER_MUSEUM_TOUGH - 1;
+//         }
+//     }
+    return 0;
 }
 
 void ClearContestWinnerPicsInContestHall(void)
 {
-    s32 i;
+    // s32 i;
 
-    for (i = 0; i < MUSEUM_CONTEST_WINNERS_START; i++)
-        gSaveBlock1Ptr->contestWinners[i] = gDefaultContestWinners[i];
+    // for (i = 0; i < MUSEUM_CONTEST_WINNERS_START; i++)
+    //     gSaveBlock1Ptr->contestWinners[i] = gDefaultContestWinners[i];
 }
 
 static void SetContestLiveUpdateFlags(u8 contestant)

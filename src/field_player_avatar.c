@@ -20,6 +20,7 @@
 #include "strings.h"
 #include "task.h"
 #include "tv.h"
+#include "follow_me.h"
 #include "wild_encounter.h"
 #include "constants/abilities.h"
 #include "constants/event_objects.h"
@@ -92,6 +93,8 @@ static bool8 PlayerAnimIsMultiFrameStationaryAndStateNotTurning(void);
 static bool8 PlayerIsAnimActive(void);
 static bool8 PlayerCheckIfAnimFinishedOrInactive(void);
 
+static void PlayerWalkSlow(u8 direction);
+static void PlayerRunSlow(u8 direction);
 static void PlayerRun(u8);
 static void PlayerNotOnBikeCollide(u8);
 static void PlayerNotOnBikeCollideWithFarawayIslandMew(u8);
@@ -232,7 +235,7 @@ static bool8 (*const sArrowWarpMetatileBehaviorChecks[])(u8) =
     [DIR_EAST - 1]  = MetatileBehavior_IsEastArrowWarp,
 };
 
-static const u8 sRivalAvatarGfxIds[][2] =
+static const u16 sRivalAvatarGfxIds[][2] =
 {
     [PLAYER_AVATAR_STATE_NORMAL]     = {OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL,     OBJ_EVENT_GFX_RIVAL_MAY_NORMAL},
     [PLAYER_AVATAR_STATE_MACH_BIKE]  = {OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE,  OBJ_EVENT_GFX_RIVAL_MAY_MACH_BIKE},
@@ -245,7 +248,7 @@ static const u8 sRivalAvatarGfxIds[][2] =
     [PLAYER_AVATAR_STATE_VSSEEKER]   = {OBJ_EVENT_GFX_RIVAL_BRENDAN_FIELD_MOVE, OBJ_EVENT_GFX_RIVAL_MAY_FIELD_MOVE},
 };
 
-static const u8 sPlayerAvatarGfxIds[][2] =
+static const u16 sPlayerAvatarGfxIds[][2] =
 {
     [PLAYER_AVATAR_STATE_NORMAL]     = {OBJ_EVENT_GFX_BRENDAN_NORMAL,     OBJ_EVENT_GFX_MAY_NORMAL},
     [PLAYER_AVATAR_STATE_MACH_BIKE]  = {OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,  OBJ_EVENT_GFX_MAY_MACH_BIKE},
@@ -258,19 +261,19 @@ static const u8 sPlayerAvatarGfxIds[][2] =
     [PLAYER_AVATAR_STATE_VSSEEKER]   = {OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE, OBJ_EVENT_GFX_MAY_FIELD_MOVE},
 };
 
-static const u8 sFRLGAvatarGfxIds[GENDER_COUNT] =
+static const u16 sFRLGAvatarGfxIds[GENDER_COUNT] =
 {
     [MALE]   = OBJ_EVENT_GFX_RED,
     [FEMALE] = OBJ_EVENT_GFX_LEAF
 };
 
-static const u8 sRSAvatarGfxIds[GENDER_COUNT] =
+static const u16 sRSAvatarGfxIds[GENDER_COUNT] =
 {
     [MALE]   = OBJ_EVENT_GFX_LINK_RS_BRENDAN,
     [FEMALE] = OBJ_EVENT_GFX_LINK_RS_MAY
 };
 
-static const u8 sPlayerAvatarGfxToStateFlag[GENDER_COUNT][5][2] =
+static const u16 sPlayerAvatarGfxToStateFlag[GENDER_COUNT][5][2] =
 {
     [MALE] =
     {
@@ -328,6 +331,21 @@ static u8 ObjectEventCB2_NoMovement2(void)
     return 0;
 }
 
+static void TryHidePlayerReflection(void)
+{
+    if (gObjectEvents[gPlayerAvatar.objectEventId].hasReflection) {
+        s16 x, y;
+        struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+        x = playerObjEvent->currentCoords.x;
+        y = playerObjEvent->currentCoords.y;
+        MoveCoords(DIR_SOUTH, &x, &y);
+        if (!MetatileBehavior_IsReflective(MapGridGetMetatileBehaviorAt(x, y)))
+            playerObjEvent->hideReflection = TRUE;
+        else 
+            playerObjEvent->hideReflection = FALSE;
+    }
+}
+
 void PlayerStep(u8 direction, u16 newKeys, u16 heldKeys)
 {
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
@@ -335,6 +353,7 @@ void PlayerStep(u8 direction, u16 newKeys, u16 heldKeys)
     HideShowWarpArrow(playerObjEvent);
     if (gPlayerAvatar.preventStep == FALSE)
     {
+        TryHidePlayerReflection();
         Bike_TryAcroBikeHistoryUpdate(newKeys, heldKeys);
         if (TryInterruptObjectEventSpecialAnim(playerObjEvent, direction) == 0)
         {
@@ -345,6 +364,8 @@ void PlayerStep(u8 direction, u16 newKeys, u16 heldKeys)
                 MovePlayerAvatarUsingKeypadInput(direction, newKeys, heldKeys);
                 PlayerAllowForcedMovementIfMovingSameDirection();
             }
+
+            TryHidePlayerReflection();
         }
     }
 }
@@ -629,23 +650,51 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
         }
     }
 
+    gPlayerAvatar.creeping = FALSE;
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
     {
-        // same speed as running
-        PlayerWalkFast(direction);
+        if (FlagGet(FLAG_SYS_DEXNAV_SEARCH) && (heldKeys & A_BUTTON))
+        {
+            gPlayerAvatar.creeping = TRUE;
+            PlayerWalkSlow(direction);
+        }
+        else
+        {
+            // speed 2 is fast, same speed as running
+            PlayerWalkFast(direction);
+        }
         return;
     }
 
-    if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON) && FlagGet(FLAG_SYS_B_DASH)
-     && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0)
+    if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON || gSaveBlock1Ptr->autoRun) && FlagGet(FLAG_SYS_B_DASH)
+     && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0 && !FollowerComingThroughDoor()
+     && !FlagGet(FLAG_SYS_DEXNAV_SEARCH))
     {
-        PlayerRun(direction);
-        gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
+        if (heldKeys & B_BUTTON && gSaveBlock1Ptr->autoRun == TRUE)
+        {
+            PlayerWalkNormal(direction);
+        }
+        else
+        {
+            if (ObjectMovingOnRockStairs(&gObjectEvents[gPlayerAvatar.objectEventId], direction))
+                PlayerRunSlow(direction);
+            else
+                PlayerRun(direction);
+            gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
+        }
         return;
+    }
+    else if (FlagGet(FLAG_SYS_DEXNAV_SEARCH) && (heldKeys & A_BUTTON))
+    {
+        gPlayerAvatar.creeping = TRUE;
+        PlayerWalkSlow(direction);
     }
     else
     {
-        PlayerWalkNormal(direction);
+        if (ObjectMovingOnRockStairs(&gObjectEvents[gPlayerAvatar.objectEventId], direction))
+            PlayerWalkSlow(direction);
+        else
+            PlayerWalkNormal(direction);
     }
 }
 
@@ -674,6 +723,7 @@ static u8 CheckForPlayerAvatarStaticCollision(u8 direction)
 u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 direction, u8 metatileBehavior)
 {
     u8 collision = GetCollisionAtCoords(objectEvent, x, y, direction);
+    
     if (collision == COLLISION_ELEVATION_MISMATCH && CanStopSurfing(x, y, direction))
         return COLLISION_STOP_SURFING;
 
@@ -691,6 +741,7 @@ u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u
             return COLLISION_ROTATING_GATE;
         CheckAcroBikeCollision(x, y, metatileBehavior, &collision);
     }
+    
     return collision;
 }
 
@@ -953,6 +1004,17 @@ void PlayerSetAnimId(u8 movementActionId, u8 copyableMovement)
     }
 }
 
+// slow
+static void PlayerWalkSlow(u8 direction)
+{
+    PlayerSetAnimId(GetWalkSlowMovementAction(direction), 2);
+}
+static void PlayerRunSlow(u8 direction)
+{
+    PlayerSetAnimId(GetPlayerRunSlowMovementAction(direction), 2);
+}
+
+// normal speed (1 speed)
 void PlayerWalkNormal(u8 direction)
 {
     PlayerSetAnimId(GetWalkNormalMovementAction(direction), COPY_MOVE_WALK);
@@ -1214,32 +1276,32 @@ void StopPlayerAvatar(void)
     }
 }
 
-u8 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
+u16 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
 {
     return sRivalAvatarGfxIds[state][gender];
 }
 
-u8 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
+u16 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
 {
     return sPlayerAvatarGfxIds[state][gender];
 }
 
-u8 GetFRLGAvatarGraphicsIdByGender(u8 gender)
+u16 GetFRLGAvatarGraphicsIdByGender(u8 gender)
 {
     return sFRLGAvatarGfxIds[gender];
 }
 
-u8 GetRSAvatarGraphicsIdByGender(u8 gender)
+u16 GetRSAvatarGraphicsIdByGender(u8 gender)
 {
     return sRSAvatarGfxIds[gender];
 }
 
-u8 GetPlayerAvatarGraphicsIdByStateId(u8 state)
+u16 GetPlayerAvatarGraphicsIdByStateId(u8 state)
 {
     return GetPlayerAvatarGraphicsIdByStateIdAndGender(state, gPlayerAvatar.gender);
 }
 
-u8 unref_GetRivalAvatarGenderByGraphicsId(u8 gfxId)
+u8 unref_GetRivalAvatarGenderByGraphicsId(u16 gfxId)
 {
     switch (gfxId)
     {
@@ -1257,7 +1319,7 @@ u8 unref_GetRivalAvatarGenderByGraphicsId(u8 gfxId)
     }
 }
 
-u8 GetPlayerAvatarGenderByGraphicsId(u8 gfxId)
+u8 GetPlayerAvatarGenderByGraphicsId(u16 gfxId)
 {
     switch (gfxId)
     {
@@ -1326,7 +1388,7 @@ void SetPlayerAvatarStateMask(u8 flags)
     gPlayerAvatar.flags |= flags;
 }
 
-static u8 GetPlayerAvatarStateTransitionByGraphicsId(u8 graphicsId, u8 gender)
+static u8 GetPlayerAvatarStateTransitionByGraphicsId(u16 graphicsId, u8 gender)
 {
     u8 i;
 
@@ -1338,7 +1400,7 @@ static u8 GetPlayerAvatarStateTransitionByGraphicsId(u8 graphicsId, u8 gender)
     return PLAYER_AVATAR_FLAG_ON_FOOT;
 }
 
-u8 GetPlayerAvatarGraphicsIdByCurrentState(void)
+u16 GetPlayerAvatarGraphicsIdByCurrentState(void)
 {
     u8 i;
     u8 flags = gPlayerAvatar.flags;
@@ -1351,7 +1413,7 @@ u8 GetPlayerAvatarGraphicsIdByCurrentState(void)
     return 0;
 }
 
-void SetPlayerAvatarExtraStateTransition(u8 graphicsId, u8 transitionFlag)
+void SetPlayerAvatarExtraStateTransition(u16 graphicsId, u8 transitionFlag)
 {
     u8 stateFlag = GetPlayerAvatarStateTransitionByGraphicsId(graphicsId, gPlayerAvatar.gender);
 
@@ -1388,7 +1450,8 @@ void InitPlayerAvatar(s16 x, s16 y, u8 direction, u8 gender)
     gPlayerAvatar.objectEventId = objectEventId;
     gPlayerAvatar.spriteId = objectEvent->spriteId;
     gPlayerAvatar.gender = gender;
-    SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_CONTROLLABLE | PLAYER_AVATAR_FLAG_ON_FOOT);
+    SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_CONTROLLABLE | PLAYER_AVATAR_FLAG_ON_FOOT);    
+    CreateFollowerAvatar();
 }
 
 void SetPlayerInvisibility(bool8 invisible)
@@ -1632,12 +1695,14 @@ static void CreateStopSurfingTask(u8 direction)
     LockPlayerFieldControls();
     Overworld_ClearSavedMusic();
     Overworld_ChangeMusicToDefault();
-    gPlayerAvatar.flags &= ~PLAYER_AVATAR_FLAG_SURFING;
+    gPlayerAvatar.flags ^= PLAYER_AVATAR_FLAG_SURFING;
     gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_ON_FOOT;
     gPlayerAvatar.preventStep = TRUE;
     taskId = CreateTask(Task_StopSurfingInit, 0xFF);
     gTasks[taskId].data[0] = direction;
     Task_StopSurfingInit(taskId);
+    
+    PrepareFollowerDismountSurf();
 }
 
 static void Task_StopSurfingInit(u8 taskId)
@@ -1788,33 +1853,23 @@ static bool8 Fishing_ShowDots(struct Task *task)
 
     AlignFishingAnimationFrames();
     task->tFrameCounter++;
-    if (JOY_NEW(A_BUTTON))
+    if (task->tFrameCounter >= 20)
     {
-        task->tStep = FISHING_NO_BITE;
-        if (task->tRoundsPlayed != 0)
-            task->tStep = FISHING_GOT_AWAY;
-        return TRUE;
-    }
-    else
-    {
-        if (task->tFrameCounter >= 20)
+        task->tFrameCounter = 0;
+        if (task->tNumDots >= task->tDotsRequired)
         {
-            task->tFrameCounter = 0;
-            if (task->tNumDots >= task->tDotsRequired)
-            {
+            task->tStep++;
+            if (task->tRoundsPlayed != 0)
                 task->tStep++;
-                if (task->tRoundsPlayed != 0)
-                    task->tStep++;
-                task->tRoundsPlayed++;
-            }
-            else
-            {
-                AddTextPrinterParameterized(0, FONT_NORMAL, dot, task->tNumDots * 8, 1, 0, NULL);
-                task->tNumDots++;
-            }
+            task->tRoundsPlayed++;
         }
-        return FALSE;
+        else
+        {
+            AddTextPrinterParameterized(0, FONT_NORMAL, dot, task->tNumDots * 8, 1, 0, NULL);
+            task->tNumDots++;
+        }
     }
+    return FALSE;
 }
 
 static bool8 Fishing_CheckForBite(struct Task *task)
@@ -1843,10 +1898,10 @@ static bool8 Fishing_CheckForBite(struct Task *task)
 
         if (!bite)
         {
-            if (Random() & 1)
-                task->tStep = FISHING_NO_BITE;
-            else
-                bite = TRUE;
+            // if (Random() & 1)
+            //     task->tStep = FISHING_NO_BITE;
+            // else
+            bite = TRUE;
         }
 
         if (bite == TRUE)
@@ -1857,10 +1912,7 @@ static bool8 Fishing_CheckForBite(struct Task *task)
 
 static bool8 Fishing_GotBite(struct Task *task)
 {
-    AlignFishingAnimationFrames();
-    AddTextPrinterParameterized(0, FONT_NORMAL, gText_OhABite, 0, 17, 0, NULL);
-    task->tStep++;
-    task->tFrameCounter = 0;
+    task->tStep += 3;
     return FALSE;
 }
 
@@ -2218,3 +2270,72 @@ static u8 TrySpinPlayerForWarp(struct ObjectEvent *object, s16 *delayTimer)
     *delayTimer = 0;
     return sSpinDirections[object->facingDirection];
 }
+
+//sideways stairs
+u8 GetRightSideStairsDirection(u8 direction)
+{
+    switch (direction)
+    {
+    case DIR_WEST:
+        return DIR_NORTHWEST;
+    case DIR_EAST:
+        return DIR_SOUTHEAST;
+    default:
+        if (direction > DIR_EAST)
+            direction -= DIR_EAST;
+        
+        return direction;
+    }           
+}
+
+u8 GetLeftSideStairsDirection(u8 direction)
+{
+    switch (direction)
+    {
+    case DIR_WEST:
+        return DIR_SOUTHWEST;
+    case DIR_EAST:
+        return DIR_NORTHEAST;
+    default:
+        if (direction > DIR_EAST)
+            direction -= DIR_EAST;
+        
+        return direction;
+    }
+}
+
+bool8 ObjectMovingOnRockStairs(struct ObjectEvent *objectEvent, u8 direction)
+{
+    #if SLOW_MOVEMENT_ON_STAIRS
+        s16 x = objectEvent->currentCoords.x;
+        s16 y = objectEvent->currentCoords.y;
+        
+        #if FOLLOW_ME_IMPLEMENTED
+            if (PlayerHasFollower() && (objectEvent->isPlayer || objectEvent->localId == GetFollowerLocalId()))
+                return FALSE;
+        #endif
+        
+        switch (direction)
+        {
+        case DIR_NORTH:
+            return MetatileBehavior_IsRockStairs(MapGridGetMetatileBehaviorAt(x,y));
+        case DIR_SOUTH:
+            MoveCoords(DIR_SOUTH, &x, &y);
+            return MetatileBehavior_IsRockStairs(MapGridGetMetatileBehaviorAt(x,y));
+        case DIR_WEST:
+        case DIR_EAST:
+        case DIR_NORTHEAST:
+        case DIR_NORTHWEST:
+        case DIR_SOUTHWEST:
+        case DIR_SOUTHEAST:
+            // directionOverwrite is only used for sideways stairs motion
+            if (objectEvent->directionOverwrite)
+                return TRUE;
+        default:
+            return FALSE;
+        }
+    #else
+        return FALSE;
+    #endif
+}
+

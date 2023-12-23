@@ -110,6 +110,16 @@
 #define TRAINER_PIC_LEAF                  90
 #define TRAINER_PIC_RS_BRENDAN            91
 #define TRAINER_PIC_RS_MAY                92
+#define TRAINER_PIC_SCIENTIST             93
+#define TRAINER_PIC_WAITER                94
+#define TRAINER_PIC_WAITRESS              95
+#define TRAINER_PIC_MIRAGES               96
+#define TRAINER_PIC_FAIRY_TALE_GIRL       97
+#define TRAINER_PIC_SOCIALITE             98
+#define TRAINER_PIC_BACKPACKER_F          99
+#define TRAINER_PIC_WORKER                100
+#define TRAINER_PIC_ICE_WORKER            101
+#define TRAINER_PIC_ROUGHNECK             102
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -286,7 +296,7 @@
 
 #define RS_FACILITY_CLASSES_COUNT               0x4D
 
-#define TRAINER_CLASS_PKMN_TRAINER_1 0x0  // Unused
+#define TRAINER_CLASS_LELOUCH        0x0  // Unused
 #define TRAINER_CLASS_PKMN_TRAINER_2 0x1  // Unused
 #define TRAINER_CLASS_HIKER          0x2
 #define TRAINER_CLASS_TEAM_AQUA      0x3
@@ -352,7 +362,17 @@
 #define TRAINER_CLASS_PIKE_QUEEN     0x3f
 #define TRAINER_CLASS_PYRAMID_KING   0x40
 #define TRAINER_CLASS_RS_PROTAG      0x41
-#define TRAINER_CLASS_COUNT          0x42
+#define TRAINER_CLASS_SCIENTIST      0x42
+#define TRAINER_CLASS_WAITER         0x43
+#define TRAINER_CLASS_WAITRESS       0x44
+#define TRAINER_CLASS_FAIRY_TALE_GIRL 0x45
+#define TRAINER_CLASS_SOCIALITE      0x46
+#define TRAINER_CLASS_BACKPACKER     0x47
+#define TRAINER_CLASS_WORKER         0x48
+#define TRAINER_CLASS_ROUGHNECK      0x49
+#define TRAINER_CLASS_MIRAGE         0x4a
+
+#define TRAINER_CLASS_COUNT          0x4b
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music
@@ -372,7 +392,23 @@
 #define F_TRAINER_FEMALE (1 << 7)
 
 // Trainer party defines
-#define TRAINER_MON_MALE    1
-#define TRAINER_MON_FEMALE  2
+#define TRAINER_MON_MALE       1
+#define TRAINER_MON_FEMALE     2
+#define TRAINER_MON_GENDERLESS 3
+
+// Set to buff up all trained pokemon that use .iv instead of .ivs
+#define TRAINER_IV_MODIFIER       11
+
+// Unused.
+#define F_TRAINER_PARTY_CUSTOM_MOVESET (1 << 0)
+#define F_TRAINER_PARTY_HELD_ITEM      (1 << 1)
+#define F_TRAINER_PARTY_CUSTOM_MON     (1 << 2)
+
+#define TRAINER_MON_FRIENDLY     1
+#define TRAINER_MON_UNFRIENDLY   2
+
+#define TRAINER_MON_BURNED     1
+#define TRAINER_MON_POISONED   2
+#define TRAINER_MON_PARALYZED  3
 
 #endif  // GUARD_TRAINERS_H

@@ -124,11 +124,11 @@ static u32 GetWildAiFlags(void)
         avgLevel = (GetMonData(&gEnemyParty[0], MON_DATA_LEVEL) + GetMonData(&gEnemyParty[1], MON_DATA_LEVEL)) / 2;
 
     flags |= AI_FLAG_CHECK_BAD_MOVE;
-    if (avgLevel >= 20)
+    if (avgLevel >= 5)
         flags |= AI_FLAG_CHECK_VIABILITY;
-    if (avgLevel >= 60)
+    if (avgLevel >= 30)
         flags |= AI_FLAG_PREFER_STRONGEST_MOVE;
-    if (avgLevel >= 80)
+    if (avgLevel >= 40)
         flags |= AI_FLAG_HP_AWARE;
 
 #if B_VAR_WILD_AI_FLAGS != 0
@@ -772,6 +772,9 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case AI_EFFECTIVENESS_x0_125:
         case AI_EFFECTIVENESS_x0_25:
             RETURN_SCORE_MINUS(10);
+            break;
+        case AI_EFFECTIVENESS_x0_5:
+            score -= 2;
             break;
         }
 
@@ -1631,6 +1634,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             if (aiData->abilities[battlerDef] == ABILITY_LEVITATE)
                 ADJUST_SCORE(-10);
             break;
+        case EFFECT_TELEPORT:
         case EFFECT_PARTING_SHOT:
             if (CountUsablePartyMons(battlerAtk) == 0)
                 ADJUST_SCORE(-10);
@@ -1666,9 +1670,6 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-12);
             else
                 ADJUST_SCORE(5);
-            break;
-        case EFFECT_TELEPORT:
-            ADJUST_SCORE(-10);
             break;
         case EFFECT_FAKE_OUT:
             if (!gDisableStructs[battlerAtk].isFirstTurn)
@@ -3279,6 +3280,7 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
     case EFFECT_ABSORB:
         if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT && effectiveness >= AI_EFFECTIVENESS_x1)
             ADJUST_SCORE(2);
+        break;
     case EFFECT_EXPLOSION:
     case EFFECT_MEMENTO:
         if (AI_THINKING_STRUCT->aiFlags & AI_FLAG_WILL_SUICIDE && gBattleMons[battlerDef].statStages[STAT_EVASION] < 7)
@@ -3696,8 +3698,8 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
         //todo - check z splash, z celebrate, z happy hour (lol)
         break;
     case EFFECT_TELEPORT:
-        if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || GetBattlerSide(battlerAtk) != B_SIDE_PLAYER)
-            break;
+        // if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || GetBattlerSide(battlerAtk) != B_SIDE_PLAYER)
+        //     break;
         //fallthrough
     case EFFECT_HIT_ESCAPE:
     case EFFECT_PARTING_SHOT:
@@ -4134,6 +4136,14 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
 
         IncreaseStatUpScore(battlerAtk, battlerDef, STAT_DEF, &score);
         IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPDEF, &score);
+        break;
+    case EFFECT_SPIT_UP:
+        if (gDisableStructs[battlerAtk].stockpileCounter >= 2)
+            ADJUST_SCORE(1);
+        break;
+    case EFFECT_ROLLOUT:
+        if (gBattleMons[battlerAtk].status2 & STATUS2_DEFENSE_CURL)
+            ADJUST_SCORE(1);
         break;
     case EFFECT_SWAGGER:
         if (HasMoveEffect(battlerAtk, EFFECT_FOUL_PLAY)
@@ -4854,6 +4864,13 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
     case EFFECT_REVIVAL_BLESSING:
         if (GetFirstFaintedPartyIndex(battlerAtk) != PARTY_SIZE)
             ADJUST_SCORE(2);
+        break;
+    case EFFECT_NO_RETREAT:
+        IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPEED, &score);
+        IncreaseStatUpScore(battlerAtk, battlerDef, STAT_ATK, &score);
+        IncreaseStatUpScore(battlerAtk, battlerDef, STAT_DEF, &score);
+        IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPATK, &score);
+        IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPDEF, &score);
         break;
     //case EFFECT_EXTREME_EVOBOOST: // TODO
         //break;

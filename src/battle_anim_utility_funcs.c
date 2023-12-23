@@ -117,7 +117,7 @@ void AnimTask_SetCamouflageBlend(u8 taskId)
     case BATTLE_TERRAIN_LONG_GRASS:
         gBattleAnimArgs[4] = RGB(0, 15, 2);
         break;
-    case BATTLE_TERRAIN_SAND:
+    case BATTLE_TERRAIN_BEACH:
         gBattleAnimArgs[4] = RGB(30, 24, 11);
         break;
     case BATTLE_TERRAIN_UNDERWATER:
@@ -137,6 +137,18 @@ void AnimTask_SetCamouflageBlend(u8 taskId)
         break;
     case BATTLE_TERRAIN_BUILDING:
         gBattleAnimArgs[4] = RGB_WHITE;
+        break;
+    case BATTLE_TERRAIN_DESERT:
+        gBattleAnimArgs[4] = RGB(31, 31, 31);
+        break;
+    case BATTLE_TERRAIN_FOREST:
+        gBattleAnimArgs[4] = RGB(31, 31, 31);
+        break;
+    case BATTLE_TERRAIN_BRIDGE:
+        gBattleAnimArgs[4] = RGB(31, 31, 31);
+        break;
+    case BATTLE_TERRAIN_SNOW:
+        gBattleAnimArgs[4] = RGB(31, 31, 31);
         break;
     case BATTLE_TERRAIN_PLAIN:
     default:

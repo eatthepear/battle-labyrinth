@@ -38,6 +38,7 @@
 #include "constants/metatile_behaviors.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "event_data.h"
 
 #define TAG_SCROLL_ARROW   2100
 #define TAG_ITEM_ICON_BASE 2110
@@ -97,7 +98,7 @@ struct ShopData
     u16 itemsShowed;
     u16 selectedRow;
     u16 scrollOffset;
-    u8 maxQuantity;
+    u16 maxQuantity;
     u8 scrollIndicatorsTaskId;
     u8 iconSlot;
     u8 itemSpriteIds[2];
@@ -626,7 +627,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
         {
             ConvertIntToDecimalStringN(
                 gStringVar1,
-                ItemId_GetPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT),
+                ItemId_GetPrice(itemId),
                 STR_CONV_MODE_LEFT_ALIGN,
                 5);
         }
@@ -639,7 +640,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
                 5);
         }
 
-        if (ItemId_GetImportance(itemId) && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)))
+        if ((ItemId_GetImportance(itemId) || ItemId_GetPocket(itemId) == POCKET_TM_HM) && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)))
             StringCopy(gStringVar4, gText_SoldOut);
         else
             StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
@@ -806,7 +807,7 @@ static void BuyMenuDrawMapBg(void)
         {
             metatile = MapGridGetMetatileIdAt(x + i, y + j);
             if (BuyMenuCheckForOverlapWithMenuBg(i, j) == TRUE)
-                metatileLayerType = MapGridGetMetatileLayerTypeAt(x + i, y + j);
+                metatileLayerType = METATILE_LAYER_TYPE_NORMAL;
             else
                 metatileLayerType = METATILE_LAYER_TYPE_COVERED;
 
@@ -818,25 +819,45 @@ static void BuyMenuDrawMapBg(void)
     }
 }
 
+static bool8 IsMetatileLayerEmpty(const u16 *src)
+{
+    u32 i = 0;
+    for(i = 0; i < 4; ++i)
+    {
+        if((src[i] & 0x3FF) != 0)
+            return FALSE;
+    }
+    return TRUE;
+}
+
 static void BuyMenuDrawMapMetatile(s16 x, s16 y, const u16 *src, u8 metatileLayerType)
 {
     u16 offset1 = x * 2;
     u16 offset2 = y * 64;
 
-    switch (metatileLayerType)
+    if(metatileLayerType == METATILE_LAYER_TYPE_NORMAL)
     {
-    case METATILE_LAYER_TYPE_NORMAL:
-        BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[3], offset1, offset2, src);
-        BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[1], offset1, offset2, src + 4);
-        break;
-    case METATILE_LAYER_TYPE_COVERED:
-        BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[2], offset1, offset2, src);
+        BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[2], offset1, offset2, src + 0);
         BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[3], offset1, offset2, src + 4);
-        break;
-    case METATILE_LAYER_TYPE_SPLIT:
-        BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[2], offset1, offset2, src);
-        BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[1], offset1, offset2, src + 4);
-        break;
+        BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[1], offset1, offset2, src + 8);
+    }
+    else
+    {
+        if(IsMetatileLayerEmpty(src))
+        {
+            BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[2], offset1, offset2, src + 4);
+            BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[3], offset1, offset2, src + 8);
+        }
+        else if(IsMetatileLayerEmpty(src + 4))
+        {
+            BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[2], offset1, offset2, src);
+            BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[3], offset1, offset2, src + 8);
+        }
+        else if(IsMetatileLayerEmpty(src + 8))
+        {
+            BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[2], offset1, offset2, src);
+            BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[3], offset1, offset2, src + 4);
+        }
     }
 }
 
@@ -988,11 +1009,13 @@ static void Task_BuyMenu(u8 taskId)
             BuyMenuPrintCursor(tListTaskId, COLORID_GRAY_CURSOR);
 
             if (sMartInfo.martType == MART_TYPE_NORMAL)
-                sShopData->totalCost = (ItemId_GetPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT));
+            {
+                sShopData->totalCost = ItemId_GetPrice(itemId);
+            }
             else
                 sShopData->totalCost = gDecorations[itemId].price;
 
-            if (ItemId_GetImportance(itemId) && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)))
+            if ((ItemId_GetImportance(itemId) || ItemId_GetPocket(itemId) == POCKET_TM_HM) && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)))
                 BuyMenuDisplayMessage(taskId, gText_ThatItemIsSoldOut, BuyMenuReturnToItemList);
             else if (!IsEnoughMoney(&gSaveBlock1Ptr->money, sShopData->totalCost))
             {
@@ -1013,8 +1036,11 @@ static void Task_BuyMenu(u8 taskId)
                     }
                     else if (ItemId_GetPocket(itemId) == POCKET_TM_HM)
                     {
-                        StringCopy(gStringVar2, gMoveNames[ItemIdToBattleMoveId(itemId)]);
-                        BuyMenuDisplayMessage(taskId, gText_Var1CertainlyHowMany2, Task_BuyHowManyDialogueInit);
+                        ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
+                        StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2);
+                        tItemCount = 1;
+                        sShopData->totalCost = ItemId_GetPrice(tItemId) * tItemCount;
+                        BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
                     }
                     else
                     {
@@ -1071,7 +1097,7 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
 
     if (AdjustQuantityAccordingToDPadInput(&tItemCount, sShopData->maxQuantity) == TRUE)
     {
-        sShopData->totalCost = (ItemId_GetPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
+        sShopData->totalCost = ItemId_GetPrice(tItemId) * tItemCount;
         BuyMenuPrintItemQuantityAndPrice(taskId);
     }
     else
@@ -1117,6 +1143,7 @@ static void BuyMenuTryMakePurchase(u8 taskId)
         if (AddBagItem(tItemId, tItemCount) == TRUE)
         {
             RecordItemPurchase(taskId);
+            RedrawListMenu(tListTaskId);
             BuyMenuDisplayMessage(taskId, gText_HereYouGoThankYou, BuyMenuSubtractMoney);
         }
         else
@@ -1164,6 +1191,8 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
         // Purchasing 10+ Poke Balls gets the player a Premier Ball
         if (tItemId == ITEM_POKE_BALL && tItemCount >= 10 && AddBagItem(ITEM_PREMIER_BALL, 1) == TRUE)
             BuyMenuDisplayMessage(taskId, gText_ThrowInPremierBall, BuyMenuReturnToItemList);
+        else if (VarGet(VAR_ZONE) > 20 && tItemId == ITEM_POTION && tItemCount > 9 && AddBagItem(ITEM_SUPER_POTION, 1) == TRUE)
+            BuyMenuDisplayMessage(taskId, gText_ThrowInSuperPotion, BuyMenuReturnToItemList);
         else
             BuyMenuReturnToItemList(taskId);
     }
@@ -1197,7 +1226,7 @@ static void BuyMenuPrintItemQuantityAndPrice(u8 taskId)
     s16 *data = gTasks[taskId].data;
 
     FillWindowPixelBuffer(WIN_QUANTITY_PRICE, PIXEL_FILL(1));
-    PrintMoneyAmount(WIN_QUANTITY_PRICE, 38, 1, sShopData->totalCost, TEXT_SKIP_DRAW);
+    PrintMoneyAmount(WIN_QUANTITY_PRICE, 32, 1, sShopData->totalCost, TEXT_SKIP_DRAW);
     ConvertIntToDecimalStringN(gStringVar1, tItemCount, STR_CONV_MODE_LEADING_ZEROS, BAG_ITEM_CAPACITY_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_xVar1);
     BuyMenuPrint(WIN_QUANTITY_PRICE, gStringVar4, 0, 1, 0, COLORID_NORMAL);

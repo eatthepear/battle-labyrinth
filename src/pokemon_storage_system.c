@@ -52,10 +52,10 @@
 
 // PC main menu options
 enum {
-    OPTION_WITHDRAW,
-    OPTION_DEPOSIT,
     OPTION_MOVE_MONS,
     OPTION_MOVE_ITEMS,
+    OPTION_WITHDRAW,
+    OPTION_DEPOSIT,
     OPTION_EXIT,
     OPTIONS_COUNT
 };
@@ -662,7 +662,7 @@ static void PlaceMon(void);
 static void RefreshDisplayMon(void);
 static void SetMovingMonData(u8, u8);
 static void SetPlacedMonData(u8, u8);
-static void PurgeMonOrBoxMon(u8, u8);
+void PurgeMonOrBoxMon(u8, u8);
 static void SetShiftedMonData(u8, u8);
 static bool8 TryStorePartyMonInBox(u8);
 static void ResetSelectionAfterDeposit(void);
@@ -1748,7 +1748,9 @@ void ResetPokemonStorageSystem(void)
         ConvertIntToDecimalStringN(dest, boxId + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
     }
 
-    for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
+    SetBoxWallpaper(0, WALLPAPER_BEACH);
+    SetBoxWallpaper(1, WALLPAPER_SKY);
+    for (boxId = 2; boxId < TOTAL_BOXES_COUNT; boxId++)
         SetBoxWallpaper(boxId, boxId % (MAX_DEFAULT_WALLPAPER + 1));
 
     ResetWaldaWallpaper();
@@ -6420,12 +6422,12 @@ static void SetPlacedMonData(u8 boxId, u8 position)
     }
     else
     {
-        BoxMonRestorePP(&sStorage->movingMon.box);
+        // BoxMonRestorePP(&sStorage->movingMon.box);
         SetBoxMonAt(boxId, position, &sStorage->movingMon.box);
     }
 }
 
-static void PurgeMonOrBoxMon(u8 boxId, u8 position)
+void PurgeMonOrBoxMon(u8 boxId, u8 position)
 {
     if (boxId == TOTAL_BOXES_COUNT)
         ZeroMonData(&gPlayerParty[position]);
@@ -6553,7 +6555,7 @@ struct
     {MAP_GROUP(EVER_GRANDE_CITY_POKEMON_LEAGUE_2F), MAP_NUM(EVER_GRANDE_CITY_POKEMON_LEAGUE_2F), MOVE_ROCK_SMASH},
 };
 
-static void GetRestrictedReleaseMoves(u16 *moves)
+static void UNUSED GetRestrictedReleaseMoves(u16 *moves)
 {
     s32 i;
 
@@ -6602,21 +6604,8 @@ static void InitCanReleaseMonVars(void)
         sStorage->releaseBoxPos = sCursorPosition;
     }
 
-    GetRestrictedReleaseMoves(sStorage->restrictedMoveList);
-    sStorage->restrictedReleaseMonMoves = GetMonData(&sStorage->tempMon, MON_DATA_KNOWN_MOVES, (u8 *)sStorage->restrictedMoveList);
-    if (sStorage->restrictedReleaseMonMoves != 0)
-    {
-        // Pokémon knows at least one restricted release move
-        // Need to check if another Pokémon has this move first
-        sStorage->releaseStatusResolved = FALSE;
-    }
-    else
-    {
-        // Pokémon knows no restricted moves, can be released
-        sStorage->releaseStatusResolved = TRUE;
-        sStorage->canReleaseMon = TRUE;
-    }
-
+    sStorage->releaseStatusResolved = TRUE;
+    sStorage->canReleaseMon = TRUE;
     sStorage->releaseCheckState = 0;
 }
 
@@ -6632,7 +6621,7 @@ static bool32 AtLeastThreeUsableMons(void)
             count++;
     }
 
-    if (count >= 3)
+    if (count >= 1)
         return TRUE;
 
     // Check PC for usable Pokémon
@@ -6642,7 +6631,7 @@ static bool32 AtLeastThreeUsableMons(void)
         {
             if (CheckBoxMonSanityAt(i, j))
             {
-                if (++count >= 3)
+                if (++count >= 1)
                     return TRUE;
             }
         }
@@ -6653,79 +6642,10 @@ static bool32 AtLeastThreeUsableMons(void)
 
 static s8 RunCanReleaseMon(void)
 {
-    u16 i;
-    u16 knownMoves;
+    // u16 i;
+    // u16 knownMoves;
 
-    if (sStorage->releaseStatusResolved)
-        return sStorage->canReleaseMon;
-
-    switch (sStorage->releaseCheckState)
-    {
-    case 0:
-        // Check party for other Pokémon that know any restricted
-        // moves the release Pokémon knows
-        for (i = 0; i < PARTY_SIZE; i++)
-        {
-            // Make sure party Pokémon isn't the one we're releasing first
-            if (sStorage->releaseBoxId != TOTAL_BOXES_COUNT || sStorage->releaseBoxPos != i)
-            {
-                knownMoves = GetMonData(&gPlayerParty[i], MON_DATA_KNOWN_MOVES, (u8 *)sStorage->restrictedMoveList);
-                sStorage->restrictedReleaseMonMoves &= ~(knownMoves);
-            }
-        }
-        if (sStorage->restrictedReleaseMonMoves == 0)
-        {
-            // No restricted moves on release Pokémon that
-            // aren't resolved by the party, it can be released.
-            sStorage->releaseStatusResolved = TRUE;
-            sStorage->canReleaseMon = TRUE;
-        }
-        else
-        {
-            // Release Pokémon has restricted moves not resolved by the party.
-            // Continue and check the PC next
-            sStorage->releaseCheckBoxId = 0;
-            sStorage->releaseCheckBoxPos = 0;
-            sStorage->releaseCheckState++;
-        }
-        break;
-    case 1:
-        // Check PC for other Pokémon that know any restricted
-        // moves the release Pokémon knows
-        for (i = 0; i < IN_BOX_COUNT; i++)
-        {
-            knownMoves = GetAndCopyBoxMonDataAt(sStorage->releaseCheckBoxId, sStorage->releaseCheckBoxPos, MON_DATA_KNOWN_MOVES, (u8 *)sStorage->restrictedMoveList);
-            if (knownMoves != 0 && !(sStorage->releaseBoxId == sStorage->releaseCheckBoxId
-                                  && sStorage->releaseBoxPos == sStorage->releaseCheckBoxPos))
-            {
-                // Found PC Pokémon with restricted move, clear move from list
-                sStorage->restrictedReleaseMonMoves &= ~(knownMoves);
-                if (sStorage->restrictedReleaseMonMoves == 0)
-                {
-                    // No restricted moves on release Pokémon that
-                    // aren't resolved, it can be released.
-                    sStorage->releaseStatusResolved = TRUE;
-                    sStorage->canReleaseMon = TRUE;
-                    break;
-                }
-            }
-            if (++sStorage->releaseCheckBoxPos >= IN_BOX_COUNT)
-            {
-                sStorage->releaseCheckBoxPos = 0;
-                if (++sStorage->releaseCheckBoxId >= TOTAL_BOXES_COUNT)
-                {
-                    // Checked every Pokémon in the PC, release Pokémon is
-                    // the sole owner of at least one restricted move.
-                    // It cannot be released.
-                    sStorage->releaseStatusResolved = TRUE;
-                    sStorage->canReleaseMon = FALSE;
-                }
-            }
-        }
-        break;
-    }
-
-    return -1;
+    return TRUE;
 }
 
 static void SaveMovingMon(void)
@@ -9746,70 +9666,76 @@ bool32 AnyStorageMonWithMove(u16 moveId)
 
 void ResetWaldaWallpaper(void)
 {
-    gSaveBlock1Ptr->waldaPhrase.iconId = 0;
-    gSaveBlock1Ptr->waldaPhrase.patternId = 0;
-    gSaveBlock1Ptr->waldaPhrase.patternUnlocked = FALSE;
-    gSaveBlock1Ptr->waldaPhrase.colors[0] = RGB(21, 25, 30);
-    gSaveBlock1Ptr->waldaPhrase.colors[1] = RGB(6, 12, 24);
-    gSaveBlock1Ptr->waldaPhrase.text[0] = EOS;
+    // gSaveBlock1Ptr->waldaPhrase.iconId = 0;
+    // gSaveBlock1Ptr->waldaPhrase.patternId = 0;
+    // gSaveBlock1Ptr->waldaPhrase.patternUnlocked = FALSE;
+    // gSaveBlock1Ptr->waldaPhrase.colors[0] = RGB(21, 25, 30);
+    // gSaveBlock1Ptr->waldaPhrase.colors[1] = RGB(6, 12, 24);
+    // gSaveBlock1Ptr->waldaPhrase.text[0] = EOS;
 }
 
 void SetWaldaWallpaperLockedOrUnlocked(bool32 unlocked)
 {
-    gSaveBlock1Ptr->waldaPhrase.patternUnlocked = unlocked;
+    // gSaveBlock1Ptr->waldaPhrase.patternUnlocked = unlocked;
 }
 
 bool32 IsWaldaWallpaperUnlocked(void)
 {
-    return gSaveBlock1Ptr->waldaPhrase.patternUnlocked;
+    // return gSaveBlock1Ptr->waldaPhrase.patternUnlocked;
+    return TRUE;
 }
 
 u32 GetWaldaWallpaperPatternId(void)
 {
-    return gSaveBlock1Ptr->waldaPhrase.patternId;
+    // return gSaveBlock1Ptr->waldaPhrase.patternId;
+    return 0;
 }
 
 void SetWaldaWallpaperPatternId(u8 id)
 {
-    if (id < ARRAY_COUNT(sWaldaWallpapers))
-        gSaveBlock1Ptr->waldaPhrase.patternId = id;
+    // if (id < ARRAY_COUNT(sWaldaWallpapers))
+    //     gSaveBlock1Ptr->waldaPhrase.patternId = id;
 }
 
 u32 GetWaldaWallpaperIconId(void)
 {
-    return gSaveBlock1Ptr->waldaPhrase.iconId;
+    // return gSaveBlock1Ptr->waldaPhrase.iconId;
+    return 0;
 }
 
 void SetWaldaWallpaperIconId(u8 id)
 {
-    if (id < ARRAY_COUNT(sWaldaWallpaperIcons))
-        gSaveBlock1Ptr->waldaPhrase.iconId = id;
+    // if (id < ARRAY_COUNT(sWaldaWallpaperIcons))
+    //     gSaveBlock1Ptr->waldaPhrase.iconId = id;
 }
 
 u16 *GetWaldaWallpaperColorsPtr(void)
 {
-    return gSaveBlock1Ptr->waldaPhrase.colors;
+    // return gSaveBlock1Ptr->waldaPhrase.colors;
+    return 0;
 }
 
 void SetWaldaWallpaperColors(u16 color1, u16 color2)
 {
-    gSaveBlock1Ptr->waldaPhrase.colors[0] = color1;
-    gSaveBlock1Ptr->waldaPhrase.colors[1] = color2;
+    // gSaveBlock1Ptr->waldaPhrase.colors[0] = color1;
+    // gSaveBlock1Ptr->waldaPhrase.colors[1] = color2;
 }
 
 u8 *GetWaldaPhrasePtr(void)
 {
-    return gSaveBlock1Ptr->waldaPhrase.text;
+    // return gSaveBlock1Ptr->waldaPhrase.text;
+    return 0;
 }
 
 void SetWaldaPhrase(const u8 *src)
 {
-    StringCopy(gSaveBlock1Ptr->waldaPhrase.text, src);
+    // StringCopy(gSaveBlock1Ptr->waldaPhrase.text, src);
 }
 
 bool32 IsWaldaPhraseEmpty(void)
 {
-    return (gSaveBlock1Ptr->waldaPhrase.text[0] == EOS);
+    // return (gSaveBlock1Ptr->waldaPhrase.text[0] == EOS);
+    return TRUE;
 }
 
 

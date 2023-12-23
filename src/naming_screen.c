@@ -38,7 +38,8 @@ enum {
     INPUT_DPAD_RIGHT,
     INPUT_A_BUTTON,
     INPUT_B_BUTTON,
-    INPUT_LR_BUTTON,
+    INPUT_L_BUTTON,
+    INPUT_R_BUTTON,
     INPUT_SELECT,
     INPUT_START,
 };
@@ -375,6 +376,7 @@ static u8 GetTextEntryPosition(void);
 static void DeleteTextCharacter(void);
 static bool8 AddTextCharacter(void);
 static void BufferCharacter(u8);
+static void ChangeCharacterCase(void);
 static void SaveInputText(void);
 static void LoadGfx(void);
 static void CreateHelperTasks(void);
@@ -672,7 +674,11 @@ static bool8 MainState_PressedOKButton(void)
     SetInputState(INPUT_STATE_DISABLED);
     SetCursorFlashing(FALSE);
     TryStartButtonFlash(BUTTON_COUNT, FALSE, TRUE);
-    if (sNamingScreen->templateNum == NAMING_SCREEN_CAUGHT_MON
+    
+    sNamingScreen->state = STATE_FADE_OUT;
+    return TRUE;
+    
+    /*if (sNamingScreen->templateNum == NAMING_SCREEN_CAUGHT_MON
         && CalculatePlayerPartyCount() >= PARTY_SIZE)
     {
         DisplaySentToPCMessage();
@@ -683,7 +689,7 @@ static bool8 MainState_PressedOKButton(void)
     {
         sNamingScreen->state = STATE_FADE_OUT;
         return TRUE;
-    }
+    }*/
 }
 
 static bool8 MainState_FadeOut(void)
@@ -707,7 +713,7 @@ static bool8 MainState_Exit(void)
     return FALSE;
 }
 
-static void DisplaySentToPCMessage(void)
+static void UNUSED DisplaySentToPCMessage(void)
 {
     u8 stringToDisplay = 0;
 
@@ -1462,6 +1468,11 @@ static bool8 HandleKeyboardEvent(void)
         DeleteTextCharacter();
         return FALSE;
     }
+    else if (input == INPUT_R_BUTTON)
+    {
+        ChangeCharacterCase();
+        return FALSE;
+    }
     else if (input == INPUT_START)
     {
         MoveCursorToOKButton();
@@ -1479,7 +1490,10 @@ static bool8 KeyboardKeyHandler_Character(u8 input)
     if (input == INPUT_A_BUTTON)
     {
         bool8 textFull = AddTextCharacter();
-
+        
+        if (sNamingScreen ->currentPage == KBPAGE_LETTERS_UPPER && GetTextEntryPosition() == 1)
+            MainState_StartPageSwap();
+        
         SquishCursor();
         if (textFull)
         {
@@ -1586,6 +1600,8 @@ static void Input_Enabled(struct Task *task)
         task->tKeyboardEvent = INPUT_A_BUTTON;
     else if (JOY_NEW(B_BUTTON))
         task->tKeyboardEvent = INPUT_B_BUTTON;
+    else if (JOY_NEW(R_BUTTON))
+        task->tKeyboardEvent = INPUT_R_BUTTON;
     else if (JOY_NEW(SELECT_BUTTON))
         task->tKeyboardEvent = INPUT_SELECT;
     else if (JOY_NEW(START_BUTTON))
@@ -2585,4 +2601,24 @@ static const struct SpritePalette sSpritePalettes[] =
     {}
 };
 
+static void ChangeCharacterCase(void)
+{
+    u8 index = GetPreviousTextCaretPosition();
+
+    if (sNamingScreen->textBuffer[index] >= CHAR_A && sNamingScreen->textBuffer[index] <= CHAR_Z)
+    {
+        sNamingScreen->textBuffer[index] = sNamingScreen->textBuffer[index] + 0x1A;
+    }
+    else if (sNamingScreen->textBuffer[index] >= CHAR_a && sNamingScreen->textBuffer[index] <= CHAR_z)
+    {
+        sNamingScreen->textBuffer[index] = sNamingScreen->textBuffer[index] - 0x1A;
+    }
+    else
+    {
+        sNamingScreen->textBuffer[index] = sNamingScreen->textBuffer[index];
+    }
+    DrawTextEntry();
+    CopyBgTilemapBufferToVram(3);
+    PlaySE(SE_SELECT);
+}
 

@@ -20,12 +20,18 @@ struct PartyMenu
     s16 learnMoveState;  // data2, used only as a learn move state
 };
 
+#define TMHM_COUNT 108
+extern const u16 gTMHMMoves[TMHM_COUNT];
+
 extern struct PartyMenu gPartyMenu;
 extern bool8 gPartyMenuUseExitCallback;
 extern u8 gSelectedMonPartyId;
 extern MainCallback gPostMenuFieldCallback;
 extern u8 gSelectedOrderFromParty[MAX_FRONTIER_PARTY_SIZE];
 extern u8 gBattlePartyCurrentOrder[PARTY_SIZE / 2];
+
+extern const struct SpriteSheet gSpriteSheet_HeldItem;
+extern const u16 gHeldItemPalette[];
 
 extern void (*gItemUseCB)(u8, TaskFunc);
 extern const struct SpriteTemplate gSpriteTemplate_StatusIcons;
@@ -100,5 +106,8 @@ void MoveDeleterForgetMove(void);
 void BufferMoveDeleterNicknameAndMove(void);
 void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
+void ChooseSendMonToPC(void);
+void DisplaySendMonToPCMessage(struct Pokemon* mon);
+void TryDoTrainingToSelectedMon(u8 taskId);
 
 #endif // GUARD_PARTY_MENU_H

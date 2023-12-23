@@ -1,0 +1,233 @@
+mapscripts Zone2B_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE2B_POTION_X2)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+	}
+}
+
+script Zone2B_EventScript_LeviathanBattle {
+	lock
+	faceplayer
+	if (flag(FLAG_BEAT_LEVIATHAN_2) == true) {
+		msgbox(format("{COLOR BLUE}Joey{COLOR DARK_GRAY}: Do I have to have more Pokémon in order to battle better?\pNo!\nI'm sticking with this one no matter what!"))
+		release
+		end
+	}
+	msgbox(Zone2B_Text_Leviathan2WantBattle, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(Zone2B_Text_Leviathan2DenyBattle)
+		release
+		end
+	}
+	fadeoutbgm(1)
+	msgbox(Zone2B_Text_Leviathan2Intro)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+    	setvar(VAR_MUGSHOT_ID, MUGSHOT_JOEY)
+		trainerbattle_no_intro(TRAINER_PBL_JOEY_LEVIATHAN_2_BRUTAL, Zone2B_Text_Leviathan2Defeat)
+	} else {
+		setvar(VAR_MUGSHOT_ID, MUGSHOT_JOEY)
+		trainerbattle_no_intro(TRAINER_PBL_JOEY_LEVIATHAN_2, Zone2B_Text_Leviathan2Defeat)
+	}
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	msgbox(format("{COLOR BLUE}Joey{COLOR DARK_GRAY}: Even after all that training, Rattata wasn't enough to get across the finish line.\pThat's all right though;\pI enjoyed our battle so much, I want to give you this!"), MSGBOX_DEFAULT)
+	giveitem(ITEM_SILK_SCARF, 1)
+	msgbox(format("{COLOR BLUE}Joey{COLOR DARK_GRAY}: Do I have to have more Pokémon in order to battle better?\pNo!\nI'm sticking with this one no matter what!"))
+	closemessage
+	setflag(FLAG_BEAT_LEVIATHAN_2)
+	release
+	end
+}
+
+text Zone2B_Text_Leviathan2WantBattle {
+	format("{COLOR BLUE}Joey{COLOR DARK_GRAY}: My Rattata is in the top percentage of Rattata! Want to see?")
+}
+
+text Zone2B_Text_Leviathan2Intro {
+	format("{COLOR BLUE}Joey{COLOR DARK_GRAY}: All right then, let's battle!")
+}
+
+text Zone2B_Text_Leviathan2DenyBattle {
+	format("{COLOR BLUE}Joey{COLOR DARK_GRAY}: Oh, all right…")
+}
+
+text Zone2B_Text_Leviathan2Defeat {
+	format("Ack! I lost again!\pDoggone it!")
+}
+
+script Zone2B_EventScript_BuyBug {
+	lock
+	faceplayer
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true && flag(FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG) == true) {
+		msgbox(format("Scram! I'm out of bugs for you to buy right now.\pCome back later."))
+		release
+		end
+	} else {
+		showmoneybox(0, 0, 0)
+		msgbox(format("Oh! You look like a Bug-type enthusiast.\pWould you care to buy a Bug-type Pokemon?\pI've got Grubbin, Sewaddle, Venipede, or Blipbug for only ¥1000!"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			closemessage
+			hidemoneybox
+			msgbox(format("Ugh. Fine."))
+		} else {
+			checkmoney(1000, 0)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox("You don't have enough money.")
+				hidemoneybox
+			} else {
+				specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+				if (var(VAR_TEMP_2) == PARTY_SIZE) {
+					msgbox(format("Your party is full. Clear a party slot, then come back."))
+					hidemoneybox
+					release
+					end
+				}
+				call(EventScript_NuzlockeVerifyGift)
+				removemoney(1000)
+				updatemoneybox
+				msgbox("Ehehehe, thank you…")
+				closemessage
+				hidemoneybox
+				if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+					if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
+						setvar(VAR_TEMP_1, SPECIES_BLIPBUG) // gets randomized anyways
+					} else {
+						setvar(VAR_TEMP_3, 0)
+						checkspeciesclause(SPECIES_BLIPBUG)
+						if (var(VAR_RESULT) == TRUE) {
+							addvar(VAR_TEMP_3, 1)
+						}
+						checkspeciesclause(SPECIES_GRUBBIN)
+						if (var(VAR_RESULT) == TRUE) {
+							addvar(VAR_TEMP_3, 1)
+						}
+						checkspeciesclause(SPECIES_SEWADDLE)
+						if (var(VAR_RESULT) == TRUE) {
+							addvar(VAR_TEMP_3, 1)
+						}
+						checkspeciesclause(SPECIES_VENIPEDE)
+						if (var(VAR_RESULT) == TRUE) {
+							addvar(VAR_TEMP_3, 1)
+						}
+						if (var(VAR_TEMP_3) == 4) {
+							msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
+							addmoney(1000)
+							release
+							end
+						}
+						while (var(VAR_TEMP_1) == 0) {
+							random(4)
+							switch (var(VAR_RESULT)) {
+								case 0:
+									checkspeciesclause(SPECIES_BLIPBUG)
+									if (var(VAR_RESULT) == TRUE) {
+										continue
+									}
+									setvar(VAR_TEMP_1, SPECIES_BLIPBUG)
+								case 1:
+									checkspeciesclause(SPECIES_GRUBBIN)
+									if (var(VAR_RESULT) == TRUE) {
+										continue
+									}
+									setvar(VAR_TEMP_1, SPECIES_GRUBBIN)
+								case 2:
+									checkspeciesclause(SPECIES_SEWADDLE)
+									if (var(VAR_RESULT) == TRUE) {
+										continue
+									}
+									setvar(VAR_TEMP_1, SPECIES_SEWADDLE)
+								case 3:
+									checkspeciesclause(SPECIES_VENIPEDE)
+									if (var(VAR_RESULT) == TRUE) {
+										continue
+									}
+									setvar(VAR_TEMP_1, SPECIES_VENIPEDE)
+							}
+						}
+					}
+					setflag(FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG)
+				} else {
+					msgbox(format("Choose which Bug you would like."), MSGBOX_DEFAULT)
+					dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Blipbug", "Grubbin", "Sewaddle", "Venipede")
+					switch (var(VAR_RESULT)) {
+						case 0:
+							setvar(VAR_TEMP_1, SPECIES_BLIPBUG)
+						case 1:
+							setvar(VAR_TEMP_1, SPECIES_GRUBBIN)
+						case 2:
+							setvar(VAR_TEMP_1, SPECIES_SEWADDLE)
+						case 3:
+							setvar(VAR_TEMP_1, SPECIES_VENIPEDE)
+					}
+				}
+				givemon(VAR_TEMP_1, 5, ITEM_NONE)
+				setmonmetlocation(VAR_TEMP_2, 251)
+				bufferspeciesname(0, VAR_TEMP_1)
+				msgbox("Here's your {STR_VAR_1}.")
+				playfanfare(MUS_OBTAIN_ITEM)
+				message(format("{PLAYER} received the {STR_VAR_1}!"))
+				waitmessage
+				waitfanfare
+				msgbox(format("Would you like to give a nickname to {STR_VAR_1}?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					call(Common_EventScript_GetGiftMonPartySlot)
+					call(Common_EventScript_NameReceivedPartyMon)
+				}
+				msgbox(format("Pleasure doing business with you."), MSGBOX_DEFAULT)
+			}
+		}
+	}
+	release
+	end
+}
+
+script Zone2B_EventScript_ItemPotion {
+	lock
+	if (flag(FLAG_ITEM_ZONE2B_POTION_X2)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE2B_POTION_X2)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_POTION, 2)
+	release
+	end
+}
+
+raw `
+Zone2B_EventScript_Harper::
+	trainerbattle_single TRAINER_PBL_HARPER, Zone2B_Text_HarperIntro, Zone2B_Text_HarperDefeat
+	msgbox Zone2B_Text_HarperPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone2B_Text_HarperIntro:
+	.string "Surprise! Battle time!$"
+
+Zone2B_Text_HarperDefeat:
+	.string "My spirit, crushed!$"
+
+Zone2B_Text_HarperPostBattle:
+	.string "I don't know if I can ever\n"
+	.string "come back from this loss…$"
+
+Zone2B_EventScript_Arthur::
+	trainerbattle_single TRAINER_PBL_ARTHUR, Zone2B_Text_ArthurIntro, Zone2B_Text_ArthurDefeat
+	msgbox Zone2B_Text_ArthurPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone2B_Text_ArthurIntro:
+	.string "Hey, you! Get out of my way!$"
+
+Zone2B_Text_ArthurDefeat:
+	.string "You're too strong!$"
+
+Zone2B_Text_ArthurPostBattle:
+	.string "Sorry about earlier.$"
+`

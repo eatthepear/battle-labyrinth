@@ -1,0 +1,15 @@
+mapscripts Zone3B_MapScripts {}
+
+script Zone3B_EventScript_Phillipa {
+    lock
+	msgbox(format("{COLOR BLUE}Phillipa{COLOR DARK_GRAY}: This food is so tasty!"))
+    release
+    end
+}
+
+script Zone3B_EventScript_Remi {
+    lock
+	msgbox(format("{COLOR BLUE}Remi{COLOR DARK_GRAY}: I'm glad you like the food, kiddo."))
+    release
+    end
+}

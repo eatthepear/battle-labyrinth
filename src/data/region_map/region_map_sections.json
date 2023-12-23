@@ -706,445 +706,440 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_PALLET_TOWN",
-      "name": "PALLET TOWN",
+      "map_section": "MAPSEC_ZONE_0",
+      "name": "Zone 0",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_VIRIDIAN_CITY",
-      "name": "VIRIDIAN CITY",
+      "map_section": "MAPSEC_ZONE_1",
+      "name": "Zone 1",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_PEWTER_CITY",
-      "name": "PEWTER CITY",
+      "map_section": "MAPSEC_ZONE_2",
+      "name": "Zone 2",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_CERULEAN_CITY",
-      "name": "CERULEAN CITY",
+      "map_section": "MAPSEC_ZONE_3",
+      "name": "Zone 3",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_LAVENDER_TOWN",
-      "name": "LAVENDER TOWN",
+      "map_section": "MAPSEC_ZONE_4",
+      "name": "Zone 4",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_VERMILION_CITY",
-      "name": "VERMILION CITY",
+      "map_section": "MAPSEC_ZONE_5",
+      "name": "Zone 5",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_CELADON_CITY",
-      "name": "CELADON CITY",
+      "map_section": "MAPSEC_ZONE_6",
+      "name": "Zone 6",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_FUCHSIA_CITY",
-      "name": "FUCHSIA CITY",
+      "map_section": "MAPSEC_ZONE_7",
+      "name": "Zone 7",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_CINNABAR_ISLAND",
-      "name": "CINNABAR ISLAND",
+      "map_section": "MAPSEC_ZONE_8",
+      "name": "Zone 8",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_INDIGO_PLATEAU",
-      "name": "INDIGO PLATEAU",
+      "map_section": "MAPSEC_ZONE_9",
+      "name": "Zone 9",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_SAFFRON_CITY",
-      "name": "SAFFRON CITY",
+      "map_section": "MAPSEC_ZONE_10",
+      "name": "Zone 10",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_4_POKECENTER",
-      "name": "ROUTE 4",
-      "name_clone": true,
+      "map_section": "MAPSEC_ZONE_11",
+      "name": "Zone 11",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_10_POKECENTER",
-      "name": "ROUTE 10",
-      "name_clone": true,
+      "map_section": "MAPSEC_ZONE_12",
+      "name": "Zone 12",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_1",
-      "name": "ROUTE 1",
+      "map_section": "MAPSEC_ZONE_13",
+      "name": "Zone 13",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_2",
-      "name": "ROUTE 2",
+      "map_section": "MAPSEC_ZONE_14",
+      "name": "Zone 14",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_3",
-      "name": "ROUTE 3",
+      "map_section": "MAPSEC_ZONE_15",
+      "name": "Zone 15",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_4",
-      "name": "ROUTE 4",
+      "map_section": "MAPSEC_ZONE_16",
+      "name": "Zone 16",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_5",
-      "name": "ROUTE 5",
+      "map_section": "MAPSEC_ZONE_17",
+      "name": "Zone 17",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_6",
-      "name": "ROUTE 6",
+      "map_section": "MAPSEC_ZONE_18",
+      "name": "Zone 18",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_7",
-      "name": "ROUTE 7",
+      "map_section": "MAPSEC_ZONE_19",
+      "name": "Zone 19",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_8",
-      "name": "ROUTE 8",
+      "map_section": "MAPSEC_ZONE_20",
+      "name": "Zone 20",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_9",
-      "name": "ROUTE 9",
+      "map_section": "MAPSEC_ZONE_21",
+      "name": "Zone 21",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_10",
-      "name": "ROUTE 10",
+      "map_section": "MAPSEC_ZONE_22",
+      "name": "Zone 22",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_11",
-      "name": "ROUTE 11",
+      "map_section": "MAPSEC_ZONE_23",
+      "name": "Zone 23",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_12",
-      "name": "ROUTE 12",
+      "map_section": "MAPSEC_ZONE_24",
+      "name": "Zone 24",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_13",
-      "name": "ROUTE 13",
+      "map_section": "MAPSEC_ZONE_25",
+      "name": "Zone 25",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_14",
-      "name": "ROUTE 14",
+      "map_section": "MAPSEC_ZONE_26",
+      "name": "Zone 26",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_15",
-      "name": "ROUTE 15",
+      "map_section": "MAPSEC_ZONE_27",
+      "name": "Zone 27",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_16",
-      "name": "ROUTE 16",
+      "map_section": "MAPSEC_ZONE_28",
+      "name": "Zone 28",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_17",
-      "name": "ROUTE 17",
+      "map_section": "MAPSEC_ZONE_29",
+      "name": "Zone 29",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_18",
-      "name": "ROUTE 18",
+      "map_section": "MAPSEC_ZONE_30",
+      "name": "Zone 30",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_19",
-      "name": "ROUTE 19",
+      "map_section": "MAPSEC_ZONE_31",
+      "name": "Zone 31",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_20",
-      "name": "ROUTE 20",
+      "map_section": "MAPSEC_ZONE_32",
+      "name": "Zone 32",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_21",
-      "name": "ROUTE 21",
+      "map_section": "MAPSEC_ZONE_33",
+      "name": "Zone 33",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_22",
-      "name": "ROUTE 22",
+      "map_section": "MAPSEC_ZONE_34",
+      "name": "Zone 34",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_23",
-      "name": "ROUTE 23",
+      "map_section": "MAPSEC_ZONE_35",
+      "name": "Zone 35",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_24",
-      "name": "ROUTE 24",
+      "map_section": "MAPSEC_ZONE_36",
+      "name": "Zone 36",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROUTE_25",
-      "name": "ROUTE 25",
+      "map_section": "MAPSEC_ZONE_37",
+      "name": "Zone 37",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_VIRIDIAN_FOREST",
-      "name": "VIRIDIAN FOREST",
+      "map_section": "MAPSEC_ZONE_38",
+      "name": "Zone 38",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_MT_MOON",
-      "name": "MT. MOON",
+      "map_section": "MAPSEC_ZONE_39",
+      "name": "Zone 39",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_S_S_ANNE",
-      "name": "S.S. ANNE",
+      "map_section": "MAPSEC_ZONE_40",
+      "name": "Zone 40",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_UNDERGROUND_PATH",
-      "name": "UNDERGROUND PATH",
+      "map_section": "MAPSEC_ZONE_41",
+      "name": "Zone 41",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_UNDERGROUND_PATH_2",
-      "name": "UNDERGROUND PATH",
-      "name_clone": true,
+      "map_section": "MAPSEC_ZONE_42",
+      "name": "Zone 42",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_DIGLETTS_CAVE",
-      "name": "DIGLETT'S CAVE",
+      "map_section": "MAPSEC_ZONE_43",
+      "name": "Zone 43",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_KANTO_VICTORY_ROAD",
-      "name": "VICTORY ROAD",
-      "name_clone": true,
+      "map_section": "MAPSEC_ZONE_44",
+      "name": "Zone 44",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROCKET_HIDEOUT",
-      "name": "ROCKET HIDEOUT",
+      "map_section": "MAPSEC_ZONE_45",
+      "name": "Zone 45",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_SILPH_CO",
-      "name": "SILPH CO.",
+      "map_section": "MAPSEC_ZONE_46",
+      "name": "Zone 46",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_POKEMON_MANSION",
-      "name": "POKéMON MANSION",
+      "map_section": "MAPSEC_ZONE_47",
+      "name": "Zone 47",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_KANTO_SAFARI_ZONE",
-      "name": "SAFARI ZONE",
-      "name_clone": true,
+      "map_section": "MAPSEC_ZONE_48",
+      "name": "Zone 48",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_POKEMON_LEAGUE",
-      "name": "POKéMON LEAGUE",
+      "map_section": "MAPSEC_ZONE_49",
+      "name": "Zone 49",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROCK_TUNNEL",
-      "name": "ROCK TUNNEL",
+      "map_section": "MAPSEC_ZONE_50",
+      "name": "Zone 50",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_SEAFOAM_ISLANDS",
-      "name": "SEAFOAM ISLANDS",
+      "map_section": "MAPSEC_ZONE_B1",
+      "name": "Zone B1",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_POKEMON_TOWER",
-      "name": "POKéMON TOWER",
+      "map_section": "MAPSEC_ZONE_B2",
+      "name": "Zone B2",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_CERULEAN_CAVE",
-      "name": "CERULEAN CAVE",
+      "map_section": "MAPSEC_ZONE_B3",
+      "name": "Zone B3",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_POWER_PLANT",
-      "name": "POWER PLANT",
+      "map_section": "MAPSEC_ZONE_B4",
+      "name": "Zone B4",
       "x": 0,
       "y": 0,
       "width": 1,

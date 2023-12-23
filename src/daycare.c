@@ -15,6 +15,7 @@
 #include "script.h"
 #include "strings.h"
 #include "task.h"
+#include "util.h"
 #include "window.h"
 #include "party_menu.h"
 #include "list_menu.h"
@@ -214,19 +215,19 @@ static void TransferEggMoves(void)
 
 static void StorePokemonInDaycare(struct Pokemon *mon, struct DaycareMon *daycareMon)
 {
-    if (MonHasMail(mon))
-    {
-        u8 mailId;
+    // if (MonHasMail(mon))
+    // {
+    //     u8 mailId;
 
-        StringCopy(daycareMon->mail.otName, gSaveBlock2Ptr->playerName);
-        GetMonNickname2(mon, daycareMon->mail.monName);
-        StripExtCtrlCodes(daycareMon->mail.monName);
-        daycareMon->mail.gameLanguage = GAME_LANGUAGE;
-        daycareMon->mail.monLanguage = GetMonData(mon, MON_DATA_LANGUAGE);
-        mailId = GetMonData(mon, MON_DATA_MAIL);
-        daycareMon->mail.message = gSaveBlock1Ptr->mail[mailId];
-        TakeMailFromMon(mon);
-    }
+    //     StringCopy(daycareMon->mail.otName, gSaveBlock2Ptr->playerName);
+    //     GetMonNickname2(mon, daycareMon->mail.monName);
+    //     StripExtCtrlCodes(daycareMon->mail.monName);
+    //     daycareMon->mail.gameLanguage = GAME_LANGUAGE;
+    //     daycareMon->mail.monLanguage = GetMonData(mon, MON_DATA_LANGUAGE);
+    //     mailId = GetMonData(mon, MON_DATA_MAIL);
+    //     daycareMon->mail.message = gSaveBlock1Ptr->mail[mailId];
+    //     TakeMailFromMon(mon);
+    // }
 
     daycareMon->mon = mon->box;
     BoxMonRestorePP(&daycareMon->mon);
@@ -261,10 +262,10 @@ static void ShiftDaycareSlots(struct DayCare *daycare)
         daycare->mons[0].mon = daycare->mons[1].mon;
         ZeroBoxMonData(&daycare->mons[1].mon);
 
-        daycare->mons[0].mail = daycare->mons[1].mail;
+        // daycare->mons[0].mail = daycare->mons[1].mail;
         daycare->mons[0].steps = daycare->mons[1].steps;
         daycare->mons[1].steps = 0;
-        ClearDaycareMonMail(&daycare->mons[1].mail);
+        // ClearDaycareMonMail(&daycare->mons[1].mail);
     }
 }
 
@@ -319,17 +320,28 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
 
     if (GetMonData(&pokemon, MON_DATA_LEVEL) != MAX_LEVEL)
     {
+        u8 level;
+        // u8 i;
+        // u8 cap;
+        
         experience = GetMonData(&pokemon, MON_DATA_EXP) + daycareMon->steps;
         SetMonData(&pokemon, MON_DATA_EXP, &experience);
+        level = GetLevelFromMonExp(&pokemon);
+        
+        if (level >= sLevelCaps[VarGet(VAR_ZONE)])
+        {
+            experience = GetBoxMonData(&daycareMon->mon, MON_DATA_EXP);
+        }
+        
         ApplyDaycareExperience(&pokemon);
     }
 
     gPlayerParty[PARTY_SIZE - 1] = pokemon;
-    if (daycareMon->mail.message.itemId)
-    {
-        GiveMailToMon(&gPlayerParty[PARTY_SIZE - 1], &daycareMon->mail.message);
-        ClearDaycareMonMail(&daycareMon->mail);
-    }
+    // if (daycareMon->mail.message.itemId)
+    // {
+    //     GiveMailToMon(&gPlayerParty[PARTY_SIZE - 1], &daycareMon->mail.message);
+    //     ClearDaycareMonMail(&daycareMon->mail);
+    // }
 
     ZeroBoxMonData(&daycareMon->mon);
     daycareMon->steps = 0;
@@ -353,9 +365,21 @@ u16 TakePokemonFromDaycare(void)
 static u8 GetLevelAfterDaycareSteps(struct BoxPokemon *mon, u32 steps)
 {
     struct BoxPokemon tempMon = *mon;
-
     u32 experience = GetBoxMonData(mon, MON_DATA_EXP) + steps;
-    SetBoxMonData(&tempMon, MON_DATA_EXP,  &experience);
+    // u8 i;
+    u8 level;
+    // u8 cap;
+    
+    // set experience now to be able to get levelAfter
+    SetBoxMonData(&tempMon, MON_DATA_EXP, &experience);
+    level = GetLevelFromBoxMonExp(&tempMon);
+    
+    if (level >= sLevelCaps[VarGet(VAR_ZONE)])
+    {
+        experience = GetBoxMonData(mon, MON_DATA_EXP);
+        SetBoxMonData(&tempMon, MON_DATA_EXP, &experience);
+    }
+    
     return GetLevelFromBoxMonExp(&tempMon);
 }
 
@@ -383,7 +407,7 @@ static u32 GetDaycareCostForSelectedMon(struct DaycareMon *daycareMon)
 
     u8 numLevelsGained = GetNumLevelsGainedFromSteps(daycareMon);
     GetBoxMonNickname(&daycareMon->mon, gStringVar1);
-    cost = 100 + 100 * numLevelsGained;
+    cost = 500 + 200 * numLevelsGained;
     ConvertIntToDecimalStringN(gStringVar2, cost, STR_CONV_MODE_LEFT_ALIGN, 5);
     return cost;
 }
@@ -412,23 +436,23 @@ u8 GetNumLevelsGainedFromDaycare(void)
     return 0;
 }
 
-static void ClearDaycareMonMail(struct DaycareMail *mail)
+static void UNUSED ClearDaycareMonMail(struct DaycareMail *mail)
 {
-    s32 i;
+    // s32 i;
 
-    for (i = 0; i < PLAYER_NAME_LENGTH + 1; i++)
-        mail->otName[i] = 0;
-    for (i = 0; i < POKEMON_NAME_LENGTH + 1; i++)
-        mail->monName[i] = 0;
+    // for (i = 0; i < PLAYER_NAME_LENGTH + 1; i++)
+    //     mail->otName[i] = 0;
+    // for (i = 0; i < POKEMON_NAME_LENGTH + 1; i++)
+    //     mail->monName[i] = 0;
 
-    ClearMail(&mail->message);
+    // ClearMail(&mail->message);
 }
 
 static void ClearDaycareMon(struct DaycareMon *daycareMon)
 {
     ZeroBoxMonData(&daycareMon->mon);
     daycareMon->steps = 0;
-    ClearDaycareMonMail(&daycareMon->mail);
+    // ClearDaycareMonMail(&daycareMon->mail);
 }
 
 static void UNUSED ClearAllDaycareData(struct DayCare *daycare)
@@ -741,7 +765,7 @@ static void InheritAbility(struct Pokemon *egg, struct BoxPokemon *father, struc
 
 // Counts the number of egg moves a pokemon learns and stores the moves in
 // the given array.
-static u8 GetEggMoves(struct Pokemon *pokemon, u16 *eggMoves)
+u8 GetEggMoves(struct Pokemon *pokemon, u16 *eggMoves)
 {
     u16 eggMoveIdx;
     u16 numEggMoves;

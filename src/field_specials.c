@@ -3,6 +3,7 @@
 #include "malloc.h"
 #include "battle.h"
 #include "battle_tower.h"
+#include "battle_setup.h"
 #include "cable_club.h"
 #include "data.h"
 #include "decoration.h"
@@ -29,6 +30,7 @@
 #include "menu.h"
 #include "overworld.h"
 #include "party_menu.h"
+#include "pokedex.h"
 #include "pokeblock.h"
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
@@ -67,6 +69,9 @@
 #include "constants/weather.h"
 #include "constants/metatile_labels.h"
 #include "palette.h"
+#include "pokedex.h"
+#include "item.h"
+#include "item_menu.h"
 #include "battle_util.h"
 
 #define TAG_ITEM_ICON 5500
@@ -87,7 +92,7 @@ static EWRAM_DATA u8 sTutorMoveAndElevatorWindowId = 0;
 static EWRAM_DATA u16 sLilycoveDeptStore_NeverRead = 0;
 static EWRAM_DATA u16 sLilycoveDeptStore_DefaultFloorChoice = 0;
 static EWRAM_DATA struct ListMenuItem *sScrollableMultichoice_ListMenuItem = NULL;
-static EWRAM_DATA u16 sScrollableMultichoice_ScrollOffset = 0;
+// static EWRAM_DATA u16 sScrollableMultichoice_ScrollOffset = 0; removed due to dynamic multichoice
 static EWRAM_DATA u16 sFrontierExchangeCorner_NeverRead = 0;
 static EWRAM_DATA u8 sScrollableMultichoice_ItemSpriteId = 0;
 static EWRAM_DATA u8 sBattlePointsWindowId = 0;
@@ -96,13 +101,14 @@ static EWRAM_DATA u8 sPCBoxToSendMon = 0;
 static EWRAM_DATA u32 sBattleTowerMultiBattleTypeFlags = 0;
 
 struct ListMenuTemplate gScrollableMultichoice_ListMenuTemplate;
+EWRAM_DATA u16 gScrollableMultichoice_ScrollOffset = 0;
 
 void TryLoseFansFromPlayTime(void);
 void SetPlayerGotFirstFans(void);
 u16 GetNumFansOfPlayerInTrainerFanClub(void);
 
 static void RecordCyclingRoadResults(u32, u8);
-static void LoadLinkPartnerObjectEventSpritePalette(u8, u8, u8);
+static void LoadLinkPartnerObjectEventSpritePalette(u16, u8, u8);
 static void Task_PetalburgGymSlideOpenRoomDoors(u8);
 static void PetalburgGymSetDoorMetatiles(u8, u16);
 static void Task_PCTurnOnEffect(u8);
@@ -140,6 +146,7 @@ static u8 DidPlayerGetFirstFans(void);
 static void SetInitialFansOfPlayer(void);
 static u16 PlayerGainRandomTrainerFan(void);
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
+u16 GetCaughtSpeciesCount(void);
 
 void Special_ShowDiploma(void)
 {
@@ -355,127 +362,132 @@ u8 GetSSTidalLocation(s8 *mapGroup, s8 *mapNum, s16 *x, s16 *y)
 
 bool32 ShouldDoWallyCall(void)
 {
-    if (FlagGet(FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_WALLY_CALL_STEP_COUNTER)) < 250)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
+    // if (FlagGet(FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL))
+    // {
+    //     switch (gMapHeader.mapType)
+    //     {
+    //     case MAP_TYPE_TOWN:
+    //     case MAP_TYPE_CITY:
+    //     case MAP_TYPE_ROUTE:
+    //     case MAP_TYPE_OCEAN_ROUTE:
+    //         if (++(*GetVarPointer(VAR_WALLY_CALL_STEP_COUNTER)) < 250)
+    //             return FALSE;
+    //         break;
+    //     default:
+    //         return FALSE;
+    //     }
+    // }
+    // else
+    // {
+    //     return FALSE;
+    // }
 
-    return TRUE;
+    // return TRUE;
+    return FALSE;
 }
 
 bool32 ShouldDoScottFortreeCall(void)
 {
-    if (FlagGet(FLAG_SCOTT_CALL_FORTREE_GYM))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_SCOTT_FORTREE_CALL_STEP_COUNTER)) < 10)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
+    // if (FlagGet(FLAG_SCOTT_CALL_FORTREE_GYM))
+    // {
+    //     switch (gMapHeader.mapType)
+    //     {
+    //     case MAP_TYPE_TOWN:
+    //     case MAP_TYPE_CITY:
+    //     case MAP_TYPE_ROUTE:
+    //     case MAP_TYPE_OCEAN_ROUTE:
+    //         if (++(*GetVarPointer(VAR_SCOTT_FORTREE_CALL_STEP_COUNTER)) < 10)
+    //             return FALSE;
+    //         break;
+    //     default:
+    //         return FALSE;
+    //     }
+    // }
+    // else
+    // {
+    //     return FALSE;
+    // }
 
-    return TRUE;
+    // return TRUE;
+    return FALSE;
 }
 
 bool32 ShouldDoScottBattleFrontierCall(void)
 {
-    if (FlagGet(FLAG_SCOTT_CALL_BATTLE_FRONTIER))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_SCOTT_BF_CALL_STEP_COUNTER)) < 10)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
+    // if (FlagGet(FLAG_SCOTT_CALL_BATTLE_FRONTIER))
+    // {
+    //     switch (gMapHeader.mapType)
+    //     {
+    //     case MAP_TYPE_TOWN:
+    //     case MAP_TYPE_CITY:
+    //     case MAP_TYPE_ROUTE:
+    //     case MAP_TYPE_OCEAN_ROUTE:
+    //         if (++(*GetVarPointer(VAR_SCOTT_BF_CALL_STEP_COUNTER)) < 10)
+    //             return FALSE;
+    //         break;
+    //     default:
+    //         return FALSE;
+    //     }
+    // }
+    // else
+    // {
+    //     return FALSE;
+    // }
 
-    return TRUE;
+    // return TRUE;
+    return FALSE;
 }
 
 bool32 ShouldDoRoxanneCall(void)
 {
-    if (FlagGet(FLAG_ENABLE_ROXANNE_FIRST_CALL))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_ROXANNE_CALL_STEP_COUNTER)) < 250)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
+    // if (FlagGet(FLAG_ENABLE_ROXANNE_FIRST_CALL))
+    // {
+    //     switch (gMapHeader.mapType)
+    //     {
+    //     case MAP_TYPE_TOWN:
+    //     case MAP_TYPE_CITY:
+    //     case MAP_TYPE_ROUTE:
+    //     case MAP_TYPE_OCEAN_ROUTE:
+    //         if (++(*GetVarPointer(VAR_ROXANNE_CALL_STEP_COUNTER)) < 250)
+    //             return FALSE;
+    //         break;
+    //     default:
+    //         return FALSE;
+    //     }
+    // }
+    // else
+    // {
+    //     return FALSE;
+    // }
 
-    return TRUE;
+    // return TRUE;
+    return FALSE;
 }
 
 bool32 ShouldDoRivalRayquazaCall(void)
 {
-    if (FlagGet(FLAG_DEFEATED_MAGMA_SPACE_CENTER))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER)) < 250)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
+    // if (FlagGet(FLAG_DEFEATED_MAGMA_SPACE_CENTER))
+    // {
+    //     switch (gMapHeader.mapType)
+    //     {
+    //     case MAP_TYPE_TOWN:
+    //     case MAP_TYPE_CITY:
+    //     case MAP_TYPE_ROUTE:
+    //     case MAP_TYPE_OCEAN_ROUTE:
+    //         if (++(*GetVarPointer(VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER)) < 250)
+    //             return FALSE;
+    //         break;
+    //     default:
+    //         return FALSE;
+    //     }
+    // }
+    // else
+    // {
+    //     return FALSE;
+    // }
 
-    return TRUE;
+    // return TRUE;
+    return FALSE;
 }
 
 u8 GetLinkPartnerNames(void)
@@ -514,7 +526,7 @@ void SpawnLinkPartnerObjectEvent(void)
     };
     u8 myLinkPlayerNumber;
     u8 playerFacingDirection;
-    u8 linkSpriteId;
+    u16 linkSpriteId;
     u8 i;
 
     myLinkPlayerNumber = GetMultiplayerId();
@@ -575,7 +587,7 @@ void SpawnLinkPartnerObjectEvent(void)
     }
 }
 
-static void LoadLinkPartnerObjectEventSpritePalette(u8 graphicsId, u8 localEventId, u8 paletteNum)
+static void LoadLinkPartnerObjectEventSpritePalette(u16 graphicsId, u8 localEventId, u8 paletteNum)
 {
     u8 adjustedPaletteNum;
     // Note: This temp var is necessary; paletteNum += 6 doesn't match.
@@ -832,49 +844,94 @@ static void PetalburgGymSetDoorMetatiles(u8 roomNumber, u16 metatileId)
         nDoors = 2;
         doorCoordsX[0] = 1;
         doorCoordsX[1] = 7;
-        doorCoordsY[0] = 104;
-        doorCoordsY[1] = 104;
+        doorCoordsY[0] = 195;
+        doorCoordsY[1] = 195;
         break;
     case 2:
         nDoors = 2;
         doorCoordsX[0] = 1;
         doorCoordsX[1] = 7;
-        doorCoordsY[0] = 78;
-        doorCoordsY[1] = 78;
+        doorCoordsY[0] = 182;
+        doorCoordsY[1] = 182;
         break;
     case 3:
+        nDoors = 2;
+        doorCoordsX[0] = 1;
+        doorCoordsX[1] = 7;
+        doorCoordsY[0] = 169;
+        doorCoordsY[1] = 169;
+        break;
+    case 4:
+        nDoors = 2;
+        doorCoordsX[0] = 1;
+        doorCoordsX[1] = 7;
+        doorCoordsY[0] = 156;
+        doorCoordsY[1] = 156;
+        break;
+    case 5:
+        nDoors = 2;
+        doorCoordsX[0] = 1;
+        doorCoordsX[1] = 7;
+        doorCoordsY[0] = 143;
+        doorCoordsY[1] = 143;
+        break;
+    case 6:
+        nDoors = 2;
+        doorCoordsX[0] = 1;
+        doorCoordsX[1] = 7;
+        doorCoordsY[0] = 130;
+        doorCoordsY[1] = 130;
+        break;
+    case 7:
+        nDoors = 1;
+        doorCoordsX[0] = 7;
+        doorCoordsY[0] = 117;
+        break;
+    case 8:
+        nDoors = 2;
+        doorCoordsX[0] = 1;
+        doorCoordsX[1] = 7;
+        doorCoordsY[0] = 104;
+        doorCoordsY[1] = 104;
+        break;
+    case 9:
         nDoors = 2;
         doorCoordsX[0] = 1;
         doorCoordsX[1] = 7;
         doorCoordsY[0] = 91;
         doorCoordsY[1] = 91;
         break;
-    case 4:
+    case 10:
+        nDoors = 1;
+        doorCoordsX[0] = 1;
+        doorCoordsY[0] = 78;
+        break;
+    case 11:
         nDoors = 1;
         doorCoordsX[0] = 7;
-        doorCoordsY[0] = 39;
+        doorCoordsY[0] = 65;
         break;
-    case 5:
+    case 12:
         nDoors = 2;
         doorCoordsX[0] = 1;
         doorCoordsX[1] = 7;
         doorCoordsY[0] = 52;
         doorCoordsY[1] = 52;
         break;
-    case 6:
+    case 13:
         nDoors = 1;
         doorCoordsX[0] = 1;
-        doorCoordsY[0] = 65;
+        doorCoordsY[0] = 39;
         break;
-    case 7:
+    case 14:
         nDoors = 1;
         doorCoordsX[0] = 7;
-        doorCoordsY[0] = 13;
+        doorCoordsY[0] = 26;
         break;
-    case 8:
+    case 15:
         nDoors = 1;
         doorCoordsX[0] = 1;
-        doorCoordsY[0] = 26;
+        doorCoordsY[0] = 13;
         break;
     }
     for (i = 0; i < nDoors; i++)
@@ -1181,58 +1238,80 @@ void EndLotteryCornerComputerEffect(void)
 
 void SetTrickHouseNuggetFlag(void)
 {
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET;
-    *specVar = flag;
-    FlagSet(flag);
+    // u16 *specVar = &gSpecialVar_0x8004;
 }
 
 void ResetTrickHouseNuggetFlag(void)
 {
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET;
-    *specVar = flag;
-    FlagClear(flag);
+    // u16 *specVar = &gSpecialVar_0x8004;
 }
 
 bool8 CheckLeadMonCool(void)
 {
-    if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_COOL) < 200)
-        return FALSE;
-
-    return TRUE;
+    if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_MET_LOCATION) == METLOC_FATEFUL_ENCOUNTER)
+        return TRUE;
+    return FALSE;
 }
 
 bool8 CheckLeadMonBeauty(void)
 {
-    if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_BEAUTY) < 200)
-        return FALSE;
+    // if (GetMonData(&gPlayerParty[GetLeadMonIndex(), MON_DATA_BEAUTY) < 200)
+    //     return FALSE;
+    u32 abilityNum = GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_ABILITY_NUM, NULL) ^ 1;
+    SetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_ABILITY_NUM, &abilityNum);
 
-    return TRUE;
+    return FALSE;
 }
 
 bool8 CheckLeadMonCute(void)
 {
-    if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_CUTE) < 200)
-        return FALSE;
+    // if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_CUTE) < 200)
+    //     return FALSE;
+    u16 ev = VarGet(VAR_TEMP_9);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV, &ev);
+    
+    ev = VarGet(VAR_TEMP_A);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_EV, &ev);
+    
+    ev = VarGet(VAR_TEMP_B);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_EV, &ev);
+    
+    ev = VarGet(VAR_TEMP_C);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_EV, &ev);
+    
+    ev = VarGet(VAR_TEMP_D);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_EV, &ev);
+    
+    ev = VarGet(VAR_TEMP_E);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_EV, &ev);
 
-    return TRUE;
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+
+    return FALSE;
 }
 
 bool8 CheckLeadMonSmart(void)
 {
-    if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SMART) < 200)
-        return FALSE;
+    // if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SMART) < 200)
+    //     return FALSE;
+    u16 nature = VarGet(VAR_TEMP_0);
+    SetMonData(&gPlayerParty[VarGet(VAR_TEMP_1)], MON_DATA_NATURE, &nature);
 
-    return TRUE;
+    CalculateMonStats(&gPlayerParty[VarGet(VAR_TEMP_1)]);
+
+    return FALSE;
 }
 
 bool8 CheckLeadMonTough(void)
 {
-    if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_TOUGH) < 200)
-        return FALSE;
+    // if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_TOUGH) < 200)
+    //     return FALSE;
+    u16 nature = NATURE_SERIOUS;
+    SetMonData(&gPlayerParty[VarGet(VAR_TEMP_1)], MON_DATA_NATURE, &nature);
 
-    return TRUE;
+    CalculateMonStats(&gPlayerParty[VarGet(VAR_TEMP_1)]);
+
+    return FALSE;
 }
 
 void IsGrassTypeInParty(void)
@@ -1296,103 +1375,84 @@ void BufferEReaderTrainerName(void)
 
 u16 GetSlotMachineId(void)
 {
-    static const u8 sSlotMachineRandomSeeds[SLOT_MACHINE_COUNT] = {12, 2, 4, 5, 1, 8, 7, 11, 3, 10, 9, 6};
-    static const u8 sSlotMachineIds[SLOT_MACHINE_COUNT] = {
-        SLOT_MACHINE_UNLUCKIEST,
-        SLOT_MACHINE_UNLUCKIER,
-        SLOT_MACHINE_UNLUCKIER,
-        SLOT_MACHINE_UNLUCKY,
-        SLOT_MACHINE_UNLUCKY,
-        SLOT_MACHINE_UNLUCKY,
-        SLOT_MACHINE_LUCKY,
-        SLOT_MACHINE_LUCKY,
-        SLOT_MACHINE_LUCKY,
-        SLOT_MACHINE_LUCKIER,
-        SLOT_MACHINE_LUCKIER,
-        SLOT_MACHINE_LUCKIEST
-    };
-    static const u8 sSlotMachineServiceDayIds[SLOT_MACHINE_COUNT] = {
-        SLOT_MACHINE_LUCKY,
-        SLOT_MACHINE_LUCKY,
-        SLOT_MACHINE_LUCKY,
-        SLOT_MACHINE_LUCKY,
-        SLOT_MACHINE_LUCKY,
-        SLOT_MACHINE_LUCKY,
-        SLOT_MACHINE_LUCKIER,
-        SLOT_MACHINE_LUCKIER,
-        SLOT_MACHINE_LUCKIER,
-        SLOT_MACHINE_LUCKIER,
-        SLOT_MACHINE_LUCKIEST,
-        SLOT_MACHINE_LUCKIEST
-    };
+    // static const u8 sSlotMachineRandomSeeds[SLOT_MACHINE_COUNT] = {12, 2, 4, 5, 1, 8, 7, 11, 3, 10, 9, 6};
+    // static const u8 sSlotMachineIds[SLOT_MACHINE_COUNT] = {
+    //     SLOT_MACHINE_UNLUCKIEST,
+    //     SLOT_MACHINE_UNLUCKIER,
+    //     SLOT_MACHINE_UNLUCKIER,
+    //     SLOT_MACHINE_UNLUCKY,
+    //     SLOT_MACHINE_UNLUCKY,
+    //     SLOT_MACHINE_UNLUCKY,
+    //     SLOT_MACHINE_LUCKY,
+    //     SLOT_MACHINE_LUCKY,
+    //     SLOT_MACHINE_LUCKY,
+    //     SLOT_MACHINE_LUCKIER,
+    //     SLOT_MACHINE_LUCKIER,
+    //     SLOT_MACHINE_LUCKIEST
+    // };
+    // static const u8 sSlotMachineServiceDayIds[SLOT_MACHINE_COUNT] = {
+    //     SLOT_MACHINE_LUCKY,
+    //     SLOT_MACHINE_LUCKY,
+    //     SLOT_MACHINE_LUCKY,
+    //     SLOT_MACHINE_LUCKY,
+    //     SLOT_MACHINE_LUCKY,
+    //     SLOT_MACHINE_LUCKY,
+    //     SLOT_MACHINE_LUCKIER,
+    //     SLOT_MACHINE_LUCKIER,
+    //     SLOT_MACHINE_LUCKIER,
+    //     SLOT_MACHINE_LUCKIER,
+    //     SLOT_MACHINE_LUCKIEST,
+    //     SLOT_MACHINE_LUCKIEST
+    // };
 
-    u32 rnd = gSaveBlock1Ptr->dewfordTrends[0].trendiness + gSaveBlock1Ptr->dewfordTrends[0].rand + sSlotMachineRandomSeeds[gSpecialVar_0x8004];
-    if (IsPokeNewsActive(POKENEWS_GAME_CORNER))
-        return sSlotMachineServiceDayIds[rnd % SLOT_MACHINE_COUNT];
+    // u32 rnd = gSaveBlock1Ptr->dewfordTrends[0].trendiness + gSaveBlock1Ptr->dewfordTrends[0].rand + sSlotMachineRandomSeeds[gSpecialVar_0x8004];
+    // if (IsPokeNewsActive(POKENEWS_GAME_CORNER))
+    //     return sSlotMachineServiceDayIds[rnd % SLOT_MACHINE_COUNT];
 
-    return sSlotMachineIds[rnd % SLOT_MACHINE_COUNT];
+    // return sSlotMachineIds[rnd % SLOT_MACHINE_COUNT];
+    return 0;
 }
 
 bool8 FoundAbandonedShipRoom1Key(void)
 {
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_1_KEY;
-    *specVar = flag;
-    if (!FlagGet(flag))
-        return FALSE;
-
+    // u16 *specVar = &gSpecialVar_0x8004;
     return TRUE;
 }
 
 bool8 FoundAbandonedShipRoom2Key(void)
 {
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_2_KEY;
-    *specVar = flag;
-    if (!FlagGet(flag))
-        return FALSE;
-
+    // u16 *specVar = &gSpecialVar_0x8004;
     return TRUE;
 }
 
 bool8 FoundAbandonedShipRoom4Key(void)
 {
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_4_KEY;
-    *specVar = flag;
-    if (!FlagGet(flag))
-        return FALSE;
-
+    // u16 *specVar = &gSpecialVar_0x8004;
     return TRUE;
 }
 
 bool8 FoundAbandonedShipRoom6Key(void)
 {
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_6_KEY;
-    *specVar = flag;
-    if (!FlagGet(flag))
-        return FALSE;
-
+    // u16 *specVar = &gSpecialVar_0x8004;
     return TRUE;
 }
 
 bool8 LeadMonHasEffortRibbon(void)
 {
-    return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_EFFORT_RIBBON, NULL);
+    return FALSE;
 }
 
 void GiveLeadMonEffortRibbon(void)
 {
-    bool8 ribbonSet;
-    struct Pokemon *leadMon;
-    IncrementGameStat(GAME_STAT_RECEIVED_RIBBONS);
-    FlagSet(FLAG_SYS_RIBBON_GET);
-    ribbonSet = TRUE;
-    leadMon = &gPlayerParty[GetLeadMonIndex()];
-    SetMonData(leadMon, MON_DATA_EFFORT_RIBBON, &ribbonSet);
-    if (GetRibbonCount(leadMon) > NUM_CUTIES_RIBBONS)
-        TryPutSpotTheCutiesOnAir(leadMon, MON_DATA_EFFORT_RIBBON);
+    // bool8 ribbonSet;
+    // struct Pokemon *leadMon;
+    // IncrementGameStat(GAME_STAT_RECEIVED_RIBBONS);
+    // FlagSet(FLAG_SYS_RIBBON_GET);
+    // ribbonSet = TRUE;
+    // leadMon = &gPlayerParty[GetLeadMonIndex()];
+    // SetMonData(leadMon, MON_DATA_EFFORT_RIBBON, &ribbonSet);
+    // if (GetRibbonCount(leadMon) > NUM_CUTIES_RIBBONS)
+    //     TryPutSpotTheCutiesOnAir(leadMon, MON_DATA_EFFORT_RIBBON);
 }
 
 bool8 Special_AreLeadMonEVsMaxedOut(void)
@@ -1484,7 +1544,7 @@ void ShakeCamera(void)
     gTasks[taskId].tDelay = gSpecialVar_0x8007;
     gTasks[taskId].tVerticalPan = gSpecialVar_0x8004;
     SetCameraPanningCallback(NULL);
-    PlaySE(SE_M_STRENGTH);
+    // PlaySE(SE_M_STRENGTH);
 }
 
 static void Task_ShakeCamera(u8 taskId)
@@ -1521,7 +1581,7 @@ static void StopCameraShake(u8 taskId)
 
 bool8 FoundBlackGlasses(void)
 {
-    return FlagGet(FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES);
+    return TRUE;
 }
 
 void SetRoute119Weather(void)
@@ -2561,7 +2621,7 @@ static void Task_ShowScrollableMultichoice(u8 taskId)
     struct Task *task = &gTasks[taskId];
 
     LockPlayerFieldControls();
-    sScrollableMultichoice_ScrollOffset = 0;
+    gScrollableMultichoice_ScrollOffset = 0;
     sScrollableMultichoice_ItemSpriteId = MAX_SPRITES;
     FillFrontierExchangeCornerWindowAndItemIcon(task->tScrollMultiId, 0);
     ShowBattleFrontierTutorWindow(task->tScrollMultiId, 0);
@@ -2635,7 +2695,7 @@ static void ScrollableMultichoice_MoveCursor(s32 itemIndex, bool8 onInit, struct
         u16 selection;
         struct Task *task = &gTasks[taskId];
         ListMenuGetScrollAndRow(task->tListTaskId, &selection, NULL);
-        sScrollableMultichoice_ScrollOffset = selection;
+        gScrollableMultichoice_ScrollOffset = selection;
         ListMenuGetCurrentItemArrayId(task->tListTaskId, &selection);
         HideFrontierExchangeCornerItemIcon(task->tScrollMultiId, sFrontierExchangeCorner_NeverRead);
         FillFrontierExchangeCornerWindowAndItemIcon(task->tScrollMultiId, selection);
@@ -2756,7 +2816,7 @@ static void ScrollableMultichoice_UpdateScrollArrows(u8 taskId)
         template.secondY = task->tHeight * 8 + 10;
         template.fullyUpThreshold = 0;
         template.fullyDownThreshold = task->tNumItems - task->tMaxItemsOnScreen;
-        task->tScrollArrowId = AddScrollIndicatorArrowPair(&template, &sScrollableMultichoice_ScrollOffset);
+        task->tScrollArrowId = AddScrollIndicatorArrowPair(&template, &gScrollableMultichoice_ScrollOffset);
     }
 }
 
@@ -3570,10 +3630,10 @@ bool32 IsTrainerRegistered(void)
 // Always returns FALSE
 bool32 ShouldDistributeEonTicket(void)
 {
-    if (!VarGet(VAR_DISTRIBUTE_EON_TICKET))
+    // if (!VarGet(VAR_DISTRIBUTE_EON_TICKET))
         return FALSE;
 
-    return TRUE;
+    // return TRUE;
 }
 
 #define tState data[0]
@@ -3821,8 +3881,8 @@ void GetBattlePyramidHint(void)
 // Used to avoid a potential softlock if the player respawns on Dewford with no way off
 void ResetHealLocationFromDewford(void)
 {
-    if (gSaveBlock1Ptr->lastHealLocation.mapGroup == MAP_GROUP(DEWFORD_TOWN) && gSaveBlock1Ptr->lastHealLocation.mapNum == MAP_NUM(DEWFORD_TOWN))
-        SetLastHealLocationWarp(HEAL_LOCATION_PETALBURG_CITY);
+    // if (gSaveBlock1Ptr->lastHealLocation.mapGroup == MAP_GROUP(DEWFORD_TOWN) && gSaveBlock1Ptr->lastHealLocation.mapNum == MAP_NUM(DEWFORD_TOWN))
+    //     SetLastHealLocationWarp(HEAL_LOCATION_PETALBURG_CITY);
 }
 
 bool8 InPokemonCenter(void)
@@ -4110,41 +4170,41 @@ static void SetInitialFansOfPlayer(void)
 
 void BufferFanClubTrainerName(void)
 {
-    u8 whichLinkTrainer = 0;
-    u8 whichNPCTrainer = 0;
-    switch (gSpecialVar_0x8004)
-    {
-    case FANCLUB_MEMBER1:
-        break;
-    case FANCLUB_MEMBER2:
-        break;
-    case FANCLUB_MEMBER3:
-        whichLinkTrainer = 0;
-        whichNPCTrainer = 3;
-        break;
-    case FANCLUB_MEMBER4:
-        whichLinkTrainer = 0;
-        whichNPCTrainer = 1;
-        break;
-    case FANCLUB_MEMBER5:
-        whichLinkTrainer = 1;
-        whichNPCTrainer = 0;
-        break;
-    case FANCLUB_MEMBER6:
-        whichLinkTrainer = 0;
-        whichNPCTrainer = 4;
-        break;
-    case FANCLUB_MEMBER7:
-        whichLinkTrainer = 1;
-        whichNPCTrainer = 5;
-        break;
-    case FANCLUB_MEMBER8:
-        break;
-    }
-    BufferFanClubTrainerName_(&gSaveBlock1Ptr->linkBattleRecords, whichLinkTrainer, whichNPCTrainer);
+    // u8 whichLinkTrainer = 0;
+    // u8 whichNPCTrainer = 0;
+    // switch (gSpecialVar_0x8004)
+    // {
+    // case FANCLUB_MEMBER1:
+    //     break;
+    // case FANCLUB_MEMBER2:
+    //     break;
+    // case FANCLUB_MEMBER3:
+    //     whichLinkTrainer = 0;
+    //     whichNPCTrainer = 3;
+    //     break;
+    // case FANCLUB_MEMBER4:
+    //     whichLinkTrainer = 0;
+    //     whichNPCTrainer = 1;
+    //     break;
+    // case FANCLUB_MEMBER5:
+    //     whichLinkTrainer = 1;
+    //     whichNPCTrainer = 0;
+    //     break;
+    // case FANCLUB_MEMBER6:
+    //     whichLinkTrainer = 0;
+    //     whichNPCTrainer = 4;
+    //     break;
+    // case FANCLUB_MEMBER7:
+    //     whichLinkTrainer = 1;
+    //     whichNPCTrainer = 5;
+    //     break;
+    // case FANCLUB_MEMBER8:
+    //     break;
+    // }
+    // BufferFanClubTrainerName_(&gSaveBlock1Ptr->linkBattleRecords, whichLinkTrainer, whichNPCTrainer);
 }
 
-static void BufferFanClubTrainerName_(struct LinkBattleRecords *linkRecords, u8 whichLinkTrainer, u8 whichNPCTrainer)
+static void UNUSED BufferFanClubTrainerName_(struct LinkBattleRecords *linkRecords, u8 whichLinkTrainer, u8 whichNPCTrainer)
 {
     struct LinkBattleRecord *record = &linkRecords->entries[whichLinkTrainer];
     if (record->name[0] == EOS)
@@ -4252,4 +4312,475 @@ void PreparePartyForSkyBattle(void)
     }
     VarSet(B_VAR_SKY_BATTLE,participatingPokemonSlot);
     CompactPartySlots();
+}
+
+u16 GetCaughtSpeciesCount(void)
+{
+    u16 count = 0;
+    u16 i;
+    
+    for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+    {
+        if (GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
+            count++;
+    }
+    return count;
+}
+
+bool8 GetSeenMon(void)
+{
+    return GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_GET_SEEN);
+}
+
+bool8 GetCaughtMon(void)
+{
+    return GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_GET_CAUGHT);
+}
+
+bool8 SetSeenMon(void)
+{
+    GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_SET_SEEN);
+    return FALSE;
+}
+
+bool8 SetCaughtMon(void)
+{
+    GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_SET_SEEN);
+    GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_SET_CAUGHT);
+    return FALSE;
+}
+
+void ReverseHiddenItemFlags(void)
+{
+    u16 flag;
+
+    if (FlagGet(FLAG_SETTINGS_BRUTAL) == TRUE)
+    {
+        for (flag = FLAG_HIDDEN_ITEM_ZONE2A_CHERI_BERRY; flag <= FLAG_UNUSED_0x2BB; flag++)
+        {
+            FlagSet(flag);
+        }
+    }
+    else
+    {
+        for (flag = FLAG_HIDDEN_ITEM_ZONE2A_CHERI_BERRY; flag <= FLAG_UNUSED_0x2BB; flag++)
+        {
+            FlagClear(flag);
+        }
+    }
+}
+
+u16 GetNumTrainersRemaining(void)
+{
+    u16 count = 0;
+    u16 zone;
+    if (FlagGet(FLAG_IN_NEW_ZONE))
+        zone = VarGet(VAR_ZONE);
+    else if (FlagGet(FLAG_IS_REVISITING_ZONE))
+        zone = VarGet(VAR_REVISITING_ZONE);
+    else
+        return 0; //In a Sanctuary, for no opponents msg
+    switch (zone)
+    {
+    case 1:
+        count += !HasTrainerBeenFought(TRAINER_PBL_NINA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_MARIAM);
+        count += !HasTrainerBeenFought(TRAINER_PBL_OSCAR);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_1);
+        break;
+    case 2:
+        count += !HasTrainerBeenFought(TRAINER_PBL_POLLY);
+        count += !HasTrainerBeenFought(TRAINER_PBL_JEREMIAH);
+        count += !HasTrainerBeenFought(TRAINER_PBL_HARPER);
+        count += !HasTrainerBeenFought(TRAINER_PBL_ARTHUR);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_2);
+        break;
+    case 3:
+        count += !HasTrainerBeenFought(TRAINER_PBL_JEMMA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_PATRICK);
+        count += !HasTrainerBeenFought(TRAINER_PBL_ANNABELLE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_BORIS);
+        count += !HasTrainerBeenFought(TRAINER_PBL_RICHARD);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_3);
+        break;
+    case 4:
+        count += !HasTrainerBeenFought(TRAINER_PBL_HERMAN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_RALPH);
+        count += !HasTrainerBeenFought(TRAINER_PBL_SANTIAGO);
+        count += !HasTrainerBeenFought(TRAINER_PBL_CHLOE_AND_KAYA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_FRED);
+        count += !HasTrainerBeenFought(TRAINER_PBL_LUCIA);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_4);
+        break;
+    case 5:
+        count += !HasTrainerBeenFought(TRAINER_PBL_ANNE_AND_JUNE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_GILBERT);
+        count += !HasTrainerBeenFought(TRAINER_PBL_REBECCA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_RYAN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_CAITLYN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_KENNETH);
+        count += !HasTrainerBeenFought(TRAINER_PBL_CLINTON);
+        count += 2 * !FlagGet(FLAG_BEAT_LEVIATHAN_5);
+        break;
+    case 6:
+        count += !HasTrainerBeenFought(TRAINER_PBL_ZACK);
+        count += !HasTrainerBeenFought(TRAINER_PBL_MELANIE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_CONSTANCE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_FRANK);
+        count += !HasTrainerBeenFought(TRAINER_PBL_DUDLEY);
+        count += !HasTrainerBeenFought(TRAINER_PBL_DAISY);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_6);
+        break;
+    case 7:
+    case 8:
+        count += !HasTrainerBeenFought(TRAINER_PBL_MILLIE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_JAMAL);
+        count += !HasTrainerBeenFought(TRAINER_PBL_PAIGE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_SETH);
+        count += !HasTrainerBeenFought(TRAINER_PBL_CONNIE);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_7);
+        count += !HasTrainerBeenFought(TRAINER_PBL_JIMMY);
+        count += !HasTrainerBeenFought(TRAINER_PBL_EMILIANO);
+        count += !HasTrainerBeenFought(TRAINER_PBL_KAREN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_JAYDEN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_NEIL);
+        count += !HasTrainerBeenFought(TRAINER_PBL_TAMARA);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_8);
+        break;
+    case 9:
+        count += !HasTrainerBeenFought(TRAINER_PBL_COOPER);
+        count += !HasTrainerBeenFought(TRAINER_PBL_CARMINE);
+        count += 5 * !HasTrainerBeenFought(TRAINER_PBL_ERICA);
+        break;
+    case 10:
+        count += !HasTrainerBeenFought(TRAINER_PBL_KYLE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_BELLE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_DEWEY);
+        count += !HasTrainerBeenFought(TRAINER_PBL_PEARLIE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_ERNEST);
+        count += !HasTrainerBeenFought(TRAINER_PBL_ALANA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_SUSAN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_CONRAD);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_9);
+        break;
+    case 11:
+        count += !HasTrainerBeenFought(TRAINER_PBL_JEANETTE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_EMMA_AND_LEO);
+        count += !HasTrainerBeenFought(TRAINER_PBL_JOEL);
+        count += !HasTrainerBeenFought(TRAINER_PBL_MARION);
+        count += !HasTrainerBeenFought(TRAINER_PBL_REGINA);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_10);
+        break;
+    case 12:
+        count += !HasTrainerBeenFought(TRAINER_PBL_ESSENCE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_DOLORES);
+        count += 2 * !HasTrainerBeenFought(TRAINER_PBL_JULIE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_TREVOR);
+        count += !HasTrainerBeenFought(TRAINER_PBL_FEDERICO);
+        count += !HasTrainerBeenFought(TRAINER_PBL_GENIE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_HILDA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_KINLEY);
+        break;
+    case 13:
+    case 14:
+        count += !HasTrainerBeenFought(TRAINER_PBL_VIOLET);
+        count += !HasTrainerBeenFought(TRAINER_PBL_WANDA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_AMBER_AND_KIM);
+        count += !HasTrainerBeenFought(TRAINER_PBL_JAN_AND_ERIN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_STEVE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_GOULD);
+        count += !HasTrainerBeenFought(TRAINER_PBL_MENDEL);
+        count += !HasTrainerBeenFought(TRAINER_PBL_DARWIN);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_11);
+        count += !HasTrainerBeenFought(TRAINER_PBL_BART);
+        count += !HasTrainerBeenFought(TRAINER_PBL_NIGEL);
+        count += !HasTrainerBeenFought(TRAINER_PBL_LOLA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_CHARLIE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_RANDOLPH);
+        count += !HasTrainerBeenFought(TRAINER_PBL_TODD);
+        count += !HasTrainerBeenFought(TRAINER_PBL_RUSSELL);
+        count += !HasTrainerBeenFought(TRAINER_PBL_OTIS);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_12);
+        break;
+    case 15:
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_13);
+        break;
+    case 16:
+        count += !HasTrainerBeenFought(TRAINER_PBL_IONA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_BERKE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_TANISHA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_ROBERT);
+        count += !HasTrainerBeenFought(TRAINER_PBL_CHRIS);
+        count += !HasTrainerBeenFought(TRAINER_PBL_ANGUS);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_14);
+        break;
+    case 17:
+        count += !HasTrainerBeenFought(TRAINER_PBL_AXLE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_RAFAEL);
+        count += !HasTrainerBeenFought(TRAINER_PBL_GEORGINA);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_15);
+        break;
+    case 18:
+    case 19:
+        count += !HasTrainerBeenFought(TRAINER_PBL_DORIS);
+        count += !HasTrainerBeenFought(TRAINER_PBL_HOMER);
+        count += !HasTrainerBeenFought(TRAINER_PBL_JOHN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_GLENN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_JAY);
+        count += !HasTrainerBeenFought(TRAINER_PBL_TYLER);
+        count += !HasTrainerBeenFought(TRAINER_PBL_TERRENCE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_MARTY);
+        count += !HasTrainerBeenFought(TRAINER_PBL_KARI);
+        count += !HasTrainerBeenFought(TRAINER_PBL_ABRAHAM);
+        count += !HasTrainerBeenFought(TRAINER_PBL_MELINDA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_EMILIO);
+        count += !HasTrainerBeenFought(TRAINER_PBL_REX);
+        count += !HasTrainerBeenFought(TRAINER_PBL_LOUIS);
+        count += !HasTrainerBeenFought(TRAINER_PBL_LEROY);
+        count += !HasTrainerBeenFought(TRAINER_PBL_ELTON);
+        count += !HasTrainerBeenFought(TRAINER_PBL_WILLIE);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_16);
+        count += 4 * !HasTrainerBeenFought(TRAINER_PBL_PIRATE_4);
+        break;
+    case 20:
+        count += !HasTrainerBeenFought(TRAINER_PBL_SHAWN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_FERNANDO);
+        count += !HasTrainerBeenFought(TRAINER_PBL_KANE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_KIRK);
+        count += !HasTrainerBeenFought(TRAINER_PBL_DALTON);
+        count += !HasTrainerBeenFought(TRAINER_PBL_LEE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_BLANCHE);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_17);
+        break;
+    default:
+        count = 0;
+        break;
+    }
+    return count;
+}
+
+u16 GetCurrentLevelCap(void)
+{
+    if (FlagGet(FLAG_IN_NEW_ZONE)) {
+        return sLevelCaps[VarGet(VAR_ZONE)];
+    } else {
+        return sLevelCaps[VarGet(VAR_ZONE) - 1];
+    }
+}
+
+u16 GetNumItemsRemaining(void)
+{
+    u16 count = 0;
+    u16 zone;
+    if (FlagGet(FLAG_IN_NEW_ZONE))
+        zone = VarGet(VAR_ZONE);
+    else if (FlagGet(FLAG_IS_REVISITING_ZONE))
+        zone = VarGet(VAR_REVISITING_ZONE);
+    else
+        return 0;
+    switch (zone)
+    {
+    case 1:
+        count += !FlagGet(FLAG_ITEM_ZONE1A_POTION);
+        count += !FlagGet(FLAG_ITEM_ZONE1A_QUICK_CLAW);
+        break;
+    case 2:
+        count += !FlagGet(FLAG_ITEM_ZONE2A_ANTIDOTE);
+        count += !FlagGet(FLAG_ITEM_ZONE2B_POTION_X2);
+        if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+        {
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE2A_CHERI_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE2B_CHESTO_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE2B_PECHA_BERRY);
+        }
+        break;
+    case 3:
+        count += !FlagGet(FLAG_ITEM_ZONE3A_HYPER_POTION);
+        count += !FlagGet(FLAG_ITEM_ZONE3A_PARALYZE_HEAL);
+        count += !FlagGet(FLAG_ITEM_ZONE3A_REPEL);
+        count += !FlagGet(FLAG_ITEM_ZONE3A_SUPER_POTION);
+        if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+        {
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE3A_CHERI_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE3A_PECHA_BERRY);
+        }
+        break;
+    case 4:
+        count += !FlagGet(FLAG_ITEM_ZONE4A_BURN_HEAL);
+        count += !FlagGet(FLAG_ITEM_ZONE4B_AWAKENING);
+        count += !FlagGet(FLAG_ITEM_ZONE4C_MUSCLE_BAND);
+        count += !FlagGet(FLAG_ITEM_ZONE4D_BEEDRILLITE);
+        count += !FlagGet(FLAG_ITEM_ZONE4D_WISE_GLASSES);
+        count += !FlagGet(FLAG_ITEM_ZONE4E_SUPER_POTION);
+        if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+        {
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE4A_ORAN_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE4A_PECHA_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE4C_CHESTO_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE4C_RAWST_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE4E_CHERI_BERRY);
+        }
+        break;
+    case 5:
+        count += !FlagGet(FLAG_ITEM_ZONE5A_QUICK_BALL);
+        count += !FlagGet(FLAG_ITEM_ZONE5A_TM03);
+        if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+        {
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE5A_ORAN_BERRY);
+        }
+        break;
+    case 6:
+        count += !FlagGet(FLAG_ITEM_ZONE6A_NEST_BALL);
+        count += !FlagGet(FLAG_ITEM_ZONE6A_NET_BALL);
+        count += !FlagGet(FLAG_ITEM_ZONE6A_TM07);
+        if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+        {
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE6A_CHESTO_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE6A_PERSIM_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE6A_RAWST_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE6A_RED_SHARD_1);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE6A_RED_SHARD_2);
+        }
+        break;
+    case 7:
+    case 8:
+        count += !FlagGet(FLAG_ITEM_ZONE7A_BLACK_BELT);
+        count += !FlagGet(FLAG_ITEM_ZONE7A_GREAT_BALL_X2);
+        count += !FlagGet(FLAG_ITEM_ZONE7A_POISON_BARB);
+        count += !FlagGet(FLAG_ITEM_ZONE7A_SHARP_BEAK);
+        count += !FlagGet(FLAG_ITEM_ZONE7A_SILVER_POWDER);
+        count += !FlagGet(FLAG_ITEM_ZONE7A_SUPER_POTION);
+        count += !FlagGet(FLAG_ITEM_ZONE7A_TWISTED_SPOON);
+        count += !FlagGet(FLAG_ITEM_ZONE8A_BLACK_GLASSES);
+        count += !FlagGet(FLAG_ITEM_ZONE8A_MAGNET);
+        count += !FlagGet(FLAG_ITEM_ZONE8A_SPELL_TAG);
+        count += !FlagGet(FLAG_ITEM_ZONE8B_DUSK_BALL);
+        count += !FlagGet(FLAG_ITEM_ZONE8B_HARD_STONE);
+        count += !FlagGet(FLAG_ITEM_ZONE8B_SUPER_POTION);
+        count += !FlagGet(FLAG_ITEM_ZONE8C_FULL_HEAL);
+        count += !FlagGet(FLAG_ITEM_ZONE8C_NEVER_MELT_ICE);
+        count += !FlagGet(FLAG_ITEM_ZONE8C_SUPER_REPEL);
+        if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+        {
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE7A_ASPEAR_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE7A_PERSIM_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE7A_RAWST_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE7A_SITRUS_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE8A_RED_SHARD);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE8B_RED_SHARD);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE8C_RED_SHARD);
+        }
+        break;
+    case 9:
+        count += !FlagGet(FLAG_ITEM_ZONE9A_BIG_ROOT);
+        count += !FlagGet(FLAG_ITEM_ZONE9A_MIRACLE_SEED);
+        count += !FlagGet(FLAG_ITEM_ZONE9A_TM13);
+        count += !FlagGet(FLAG_ITEM_ZONE9G_CHARCOAL);
+        if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+        {
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE9A_LEPPA_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE9A_SITRUS_BERRY);
+        }
+        break;
+    case 10:
+        count += !FlagGet(FLAG_ITEM_ZONE10A_DRAGON_FANG);
+        count += !FlagGet(FLAG_ITEM_ZONE10A_HEAVY_DUTY_BOOTS);
+        count += !FlagGet(FLAG_ITEM_ZONE10A_METAL_COAT);
+        count += !FlagGet(FLAG_ITEM_ZONE10A_SOFT_SAND);
+        count += !FlagGet(FLAG_ITEM_ZONE10A_SUN_STONE);
+        count += !FlagGet(FLAG_ITEM_ZONE10A_TM16);
+        count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_1);
+        count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_2);
+        count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_3);
+        if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+        {
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_RED_SHARD);
+        }
+        break;
+    case 11:
+        count += !FlagGet(FLAG_ITEM_ZONE11A_MOON_STONE);
+        count += !FlagGet(FLAG_ITEM_ZONE11A_TIMER_BALL);
+        count += !FlagGet(FLAG_ITEM_ZONE11A_TM22);
+        if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+        {
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE11A_CHERI_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE11A_PECHA_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE11A_RAWST_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE11A_SITRUS_BERRY);
+        }
+        break;
+    case 12:
+        count += !FlagGet(FLAG_ITEM_ZONE12A_FIRE_STONE);
+        count += !FlagGet(FLAG_ITEM_ZONE12A_MACHO_BRACE);
+        count += !FlagGet(FLAG_ITEM_ZONE12A_METRONOME);
+        count += !FlagGet(FLAG_ITEM_ZONE12A_THUNDER_STONE);
+        count += !FlagGet(FLAG_ITEM_ZONE12A_TM24);
+        if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+        {
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE12A_BLUE_SHARD);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE12A_LEPPA_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE12A_LUM_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE12A_RED_SHARD);
+        }
+        break;
+    case 13:
+    case 14:
+        count += !FlagGet(FLAG_ITEM_ZONE13A_LEAF_STONE);
+        count += !FlagGet(FLAG_ITEM_ZONE13A_SHINY_STONE);
+        count += !FlagGet(FLAG_ITEM_ZONE14A_FULL_HEAL);
+        count += !FlagGet(FLAG_ITEM_ZONE14B_HYPER_POTION);
+        count += !FlagGet(FLAG_ITEM_ZONE14C_DUSK_STONE);
+        if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+        {
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE13A_LUM_BERRY);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE14A_RED_SHARD);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE14B_BLUE_SHARD);
+            count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE14B_YELLOW_SHARD);
+        }
+        break;
+    case 15:
+        count += !FlagGet(FLAG_ITEM_ZONE15A_DAWN_STONE);
+        count += !FlagGet(FLAG_ITEM_ZONE15A_SNOWBALL_3);
+        count += !FlagGet(FLAG_ITEM_ZONE15A_GLALITITE);
+        count += !FlagGet(FLAG_ITEM_ZONE15A_ICE_STONE);
+        count += !FlagGet(FLAG_ITEM_ZONE15A_QUICK_BALL);
+        count += !FlagGet(FLAG_ITEM_ZONE15A_REVIVE);
+        count += !FlagGet(FLAG_ITEM_ZONE15A_TIMER_BALL);
+        count += !FlagGet(FLAG_ITEM_ZONE15A_TM26);
+        break;
+    default:
+        count = 0;
+        break;
+    }
+    return count;
+}
+
+void NewGameSetup(void)
+{
+    u8 metLocation = METLOC_FATEFUL_ENCOUNTER;
+    SetMonData(&gPlayerParty[0], MON_DATA_MET_LOCATION, &metLocation);
+    gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET;
+}
+
+bool8 CheckSpeciesClause(void)
+{
+    return IsCaptureBlockedBySpeciesClause(VarGet(VAR_TEMP_0));
+}
+
+void ChooseItemFromBag(void)
+{
+    switch (VarGet(VAR_TEMP_1))
+    {
+    case MEDICINE_POCKET:
+    case BATTLEITEMS_POCKET:
+    case CONSUMABLES_POCKET:
+    case BERRIES_POCKET:
+    case BALLS_POCKET:
+    case TMHM_POCKET:
+    case TREASURES_POCKET:
+    case KEYITEMS_POCKET:
+        GoToBagMenu(ITEMMENULOCATION_CHOOSE_ITEM, VarGet(VAR_TEMP_1), CB2_ReturnToFieldContinueScript);
+    default:
+        break;
+    }
 }

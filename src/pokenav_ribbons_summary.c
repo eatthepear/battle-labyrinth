@@ -427,59 +427,60 @@ static void GetMonSpeciesPersonalityOtId(u16 *species, u32 *personality, u32 *ot
 
 static u32 GetCurrMonRibbonCount(void)
 {
-    struct Pokenav_RibbonsSummaryList *list = GetSubstructPtr(POKENAV_SUBSTRUCT_RIBBONS_SUMMARY_LIST);
-    struct PokenavMonList *mons = list->monList;
-    struct PokenavMonListItem *monInfo = &mons->monData[mons->currIndex];
+    // struct Pokenav_RibbonsSummaryList *list = GetSubstructPtr(POKENAV_SUBSTRUCT_RIBBONS_SUMMARY_LIST);
+    // struct PokenavMonList *mons = list->monList;
+    // struct PokenavMonListItem *monInfo = &mons->monData[mons->currIndex];
 
-    if (monInfo->boxId == TOTAL_BOXES_COUNT)
-        return GetMonData(&gPlayerParty[monInfo->monId], MON_DATA_RIBBON_COUNT);
-    else
-        return GetBoxMonDataAt(monInfo->boxId, monInfo->monId, MON_DATA_RIBBON_COUNT);
+    // if (monInfo->boxId == TOTAL_BOXES_COUNT)
+    //     return GetMonData(&gPlayerParty[monInfo->monId], MON_DATA_RIBBON_COUNT);
+    // else
+    //     return GetBoxMonDataAt(monInfo->boxId, monInfo->monId, MON_DATA_RIBBON_COUNT);
+    return 0;
 }
 
 static void GetMonRibbons(struct Pokenav_RibbonsSummaryList *list)
 {
-    u32 ribbonFlags;
-    s32 i, j;
-    struct PokenavMonList *mons = list->monList;
-    struct PokenavMonListItem *monInfo = &mons->monData[mons->currIndex];
+    // u32 ribbonFlags;
+    // s32 i, j;
+    // struct PokenavMonList *mons = list->monList;
+    // struct PokenavMonListItem *monInfo = &mons->monData[mons->currIndex];
 
-    if (monInfo->boxId == TOTAL_BOXES_COUNT)
-        ribbonFlags = GetMonData(&gPlayerParty[monInfo->monId], MON_DATA_RIBBONS);
-    else
-        ribbonFlags = GetBoxMonDataAt(monInfo->boxId, monInfo->monId, MON_DATA_RIBBONS);
+    // if (monInfo->boxId == TOTAL_BOXES_COUNT)
+    //     ribbonFlags = GetMonData(&gPlayerParty[monInfo->monId], MON_DATA_RIBBONS);
+    // else
+    //     ribbonFlags = GetBoxMonDataAt(monInfo->boxId, monInfo->monId, MON_DATA_RIBBONS);
 
-    list->numNormalRibbons = 0;
-    list->numGiftRibbons = 0;
-    for (i = 0; i < ARRAY_COUNT(sRibbonData); i++)
-    {
-        // For all non-contest ribbons, numRibbons will be 1 if they have it, 0 if they don't
-        // For contest ribbons, numRibbons will be 0-4
-        s32 numRibbons = ((1 << sRibbonData[i].numBits) - 1) & ribbonFlags;
-        if (!sRibbonData[i].isGiftRibbon)
-        {
-            for (j = 0; j < numRibbons; j++)
-                list->ribbonIds[list->numNormalRibbons++] = sRibbonData[i].ribbonId + j;
-        }
-        else
-        {
-            for (j = 0; j < numRibbons; j++)
-                list->giftRibbonIds[list->numGiftRibbons++] = sRibbonData[i].ribbonId + j;
-        }
-        ribbonFlags >>= sRibbonData[i].numBits;
-    }
+    // list->numNormalRibbons = 0;
+    // list->numGiftRibbons = 0;
+    // for (i = 0; i < ARRAY_COUNT(sRibbonData); i++)
+    // {
+    //     // For all non-contest ribbons, numRibbons will be 1 if they have it, 0 if they don't
+    //     // For contest ribbons, numRibbons will be 0-4
+    //     s32 numRibbons = ((1 << sRibbonData[i].numBits) - 1) & ribbonFlags;
+    //     if (!sRibbonData[i].isGiftRibbon)
+    //     {
+    //         for (j = 0; j < numRibbons; j++)
+    //             list->ribbonIds[list->numNormalRibbons++] = sRibbonData[i].ribbonId + j;
+    //     }
+    //     else
+    //     {
+    //         for (j = 0; j < numRibbons; j++)
+    //             list->giftRibbonIds[list->numGiftRibbons++] = sRibbonData[i].ribbonId + j;
+    //     }
+    //     ribbonFlags >>= sRibbonData[i].numBits;
+    // }
 
-    if (list->numNormalRibbons != 0)
-    {
-        list->normalRibbonLastRowStart = ((list->numNormalRibbons - 1) / RIBBONS_PER_ROW) * RIBBONS_PER_ROW;
-        list->selectedPos = 0;
-    }
-    else
-    {
-        // There are no normal ribbons, move cursor to first gift ribbon
-        list->normalRibbonLastRowStart = 0;
-        list->selectedPos = GIFT_RIBBON_START_POS;
-    }
+    // if (list->numNormalRibbons != 0)
+    // {
+    //     list->normalRibbonLastRowStart = ((list->numNormalRibbons - 1) / RIBBONS_PER_ROW) * RIBBONS_PER_ROW;
+    //     list->selectedPos = 0;
+    // }
+    // else
+    // {
+    //     // There are no normal ribbons, move cursor to first gift ribbon
+    //     list->normalRibbonLastRowStart = 0;
+    //     list->selectedPos = GIFT_RIBBON_START_POS;
+    // }
 }
 
 static u32 *GetNormalRibbonIds(u32 *size)
@@ -832,10 +833,10 @@ static void PrintRibbonNameAndDescription(struct Pokenav_RibbonsSummaryMenu *men
         // ribbonId here is one of the 'gift' ribbon slots, used to read
         // its actual value from giftRibbons to determine which specific
         // gift ribbon it is
-        ribbonId = gSaveBlock1Ptr->giftRibbons[ribbonId - FIRST_GIFT_RIBBON];
+        // ribbonId = gSaveBlock1Ptr->giftRibbons[ribbonId - FIRST_GIFT_RIBBON];
 
-        // If 0, this gift ribbon slot is unoccupied
-        if (ribbonId == 0)
+        // // If 0, this gift ribbon slot is unoccupied
+        // if (ribbonId == 0)
             return;
 
         // Print gift ribbon name/description

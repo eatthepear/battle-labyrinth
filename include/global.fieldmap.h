@@ -66,21 +66,17 @@ struct BackupMapLayout
 struct ObjectEventTemplate
 {
     /*0x00*/ u8 localId;
-    /*0x01*/ u8 graphicsId;
-    /*0x02*/ u8 kind; // Always OBJ_KIND_NORMAL in Emerald.
-    /*0x03*/ //u8 padding1;
+    /*0x02*/ u16 graphicsId;
     /*0x04*/ s16 x;
     /*0x06*/ s16 y;
     /*0x08*/ u8 elevation;
     /*0x09*/ u8 movementType;
     /*0x0A*/ u16 movementRangeX:4;
              u16 movementRangeY:4;
-             //u16 padding2:8;
     /*0x0C*/ u16 trainerType;
     /*0x0E*/ u16 trainerRange_berryTreeId;
     /*0x10*/ const u8 *script;
     /*0x14*/ u16 flagId;
-    /*0x16*/ //u8 padding3[2];
 };
 
 struct WarpEvent
@@ -195,11 +191,10 @@ struct ObjectEvent
              u32 disableJumpLandingGroundEffect:1;
              u32 fixedPriority:1;
              u32 hideReflection:1;
-             //u32 padding:4;
-    /*0x04*/ u8 spriteId;
-    /*0x05*/ u8 graphicsId;
+             u32 isTreasureChestOpened:1;
+    /*0x04*/ u16 graphicsId;
     /*0x06*/ u8 movementType;
-    /*0x07*/ u8 trainerType;
+    /*0x07*/ u16 trainerType;
     /*0x08*/ u8 localId;
     /*0x09*/ u8 mapNum;
     /*0x0A*/ u8 mapGroup;
@@ -218,10 +213,11 @@ struct ObjectEvent
     /*0x1D*/ u8 trainerRange_berryTreeId;
     /*0x1E*/ u8 currentMetatileBehavior;
     /*0x1F*/ u8 previousMetatileBehavior;
-    /*0x20*/ u8 previousMovementDirection;
+    /*0x20*/ u8 previousMovementDirection:4;
+             u8 directionOverwrite:4;
     /*0x21*/ u8 directionSequenceIndex;
     /*0x22*/ u8 playerCopyableMovement; // COPY_MOVE_*
-    /*0x23*/ //u8 padding2;
+    /*0x23*/ u8 spriteId;
     /*size = 0x24*/
 };
 
@@ -266,6 +262,8 @@ enum {
 #define PLAYER_AVATAR_FLAG_FORCED_MOVE  (1 << 6)
 #define PLAYER_AVATAR_FLAG_DASH         (1 << 7)
 
+#define PLAYER_AVATAR_FLAG_BIKE        (PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE)
+
 enum
 {
     ACRO_BIKE_NORMAL,
@@ -293,6 +291,9 @@ enum
     COLLISION_ISOLATED_HORIZONTAL_RAIL,
     COLLISION_VERTICAL_RAIL,
     COLLISION_HORIZONTAL_RAIL,
+    //sideways_stairs
+    COLLISION_SIDEWAYS_STAIRS_TO_RIGHT,
+    COLLISION_SIDEWAYS_STAIRS_TO_LEFT
 };
 
 // player running states
@@ -318,7 +319,8 @@ struct PlayerAvatar
     /*0x02*/ u8 runningState; // this is a static running state. 00 is not moving, 01 is turn direction, 02 is moving.
     /*0x03*/ u8 tileTransitionState; // this is a transition running state: 00 is not moving, 01 is transition between tiles, 02 means you are on the frame in which you have centered on a tile but are about to keep moving, even if changing directions. 2 is also used for a ledge hop, since you are transitioning.
     /*0x04*/ u8 spriteId;
-    /*0x05*/ u8 objectEventId;
+    /*0x05*/ u8 objectEventId:7;
+             u8 creeping:1;
     /*0x06*/ bool8 preventStep;
     /*0x07*/ u8 gender;
     /*0x08*/ u8 acroBikeState; // 00 is normal, 01 is turning, 02 is standing wheelie, 03 is hopping wheelie

@@ -2,6 +2,7 @@
 #include "item_use.h"
 #include "battle.h"
 #include "battle_anim.h"
+#include "battle_setup.h"
 #include "battle_pyramid.h"
 #include "battle_pyramid_bag.h"
 #include "berry.h"
@@ -32,6 +33,7 @@
 #include "party_menu.h"
 #include "pokeblock.h"
 #include "pokemon.h"
+#include "region_map.h"
 #include "script.h"
 #include "sound.h"
 #include "strings.h"
@@ -39,6 +41,7 @@
 #include "task.h"
 #include "text.h"
 #include "vs_seeker.h"
+#include "follow_me.h"
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
 #include "constants/item_effects.h"
@@ -83,6 +86,9 @@ static bool32 CannotUseBagBattleItem(u16 itemId);
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
 
+EWRAM_DATA u8 IsCaptureBlockedByNuzlocke = 0;
+EWRAM_DATA u8 IsSpeciesClauseActive = 0;
+
 // Below is set TRUE by UseRegisteredKeyItemOnField
 #define tUsingRegisteredKeyItem  data[3]
 
@@ -103,6 +109,15 @@ static const struct YesNoFuncTable sUseTMHMYesNoFuncTable =
     .yesFunc = UseTMHM,
     .noFunc = CloseItemMessage,
 };
+
+
+static const u8 textCantThrowPokeBallNuzlocke[] = _("You have already used your encounter\nfor this Zone!{PAUSE_UNTIL_PRESS}");
+
+static const u8 textCantThrowPokeBallSpeciesClause[] = _("You have already caught a Pokémon\nin this evolution line!{PAUSE_UNTIL_PRESS}");
+
+static const u8 sText_BallsCannotBeUsed[] = _("A mysterious force is preventing\nPokéballs from being used now!{PAUSE_UNTIL_PRESS}");
+
+// .text
 
 #define tEnigmaBerryType data[4]
 static void SetUpItemUseCallback(u8 taskId)
@@ -238,11 +253,11 @@ void ItemUseOutOfBattle_Bike(u8 taskId)
     u8 behavior;
     PlayerGetDestCoords(&coordsX, &coordsY);
     behavior = MapGridGetMetatileBehaviorAt(coordsX, coordsY);
-    if (FlagGet(FLAG_SYS_CYCLING_ROAD) == TRUE || MetatileBehavior_IsVerticalRail(behavior) == TRUE || MetatileBehavior_IsHorizontalRail(behavior) == TRUE || MetatileBehavior_IsIsolatedVerticalRail(behavior) == TRUE || MetatileBehavior_IsIsolatedHorizontalRail(behavior) == TRUE)
+    if (MetatileBehavior_IsVerticalRail(behavior) == TRUE || MetatileBehavior_IsHorizontalRail(behavior) == TRUE || MetatileBehavior_IsIsolatedVerticalRail(behavior) == TRUE || MetatileBehavior_IsIsolatedHorizontalRail(behavior) == TRUE)
         DisplayCannotDismountBikeMessage(taskId, tUsingRegisteredKeyItem);
     else
     {
-        if (Overworld_IsBikingAllowed() == TRUE && IsBikingDisallowedByPlayer() == 0)
+        if (Overworld_IsBikingAllowed() == TRUE && IsBikingDisallowedByPlayer() == 0 && FollowerCanBike())
         {
             sItemUseOnFieldCB = ItemUseOnFieldCB_Bike;
             SetUpItemUseOnFieldCallback(taskId);
@@ -256,8 +271,10 @@ static void ItemUseOnFieldCB_Bike(u8 taskId)
 {
     if (ItemId_GetSecondaryId(gSpecialVar_ItemId) == MACH_BIKE)
         GetOnOffBike(PLAYER_AVATAR_FLAG_MACH_BIKE);
-    else // ACRO_BIKE
+    else
         GetOnOffBike(PLAYER_AVATAR_FLAG_ACRO_BIKE);
+    
+    FollowMe_HandleBike();
     ScriptUnfreezeObjectEvents();
     UnlockPlayerFieldControls();
     DestroyTask(taskId);
@@ -1028,6 +1045,8 @@ static void ItemUseOnFieldCB_EscapeRope(u8 taskId)
 
 bool8 CanUseDigOrEscapeRopeOnCurMap(void)
 {
+    if (!CheckFollowerFlag(FOLLOWER_FLAG_CAN_LEAVE_ROUTE))
+        return FALSE;
     if (gMapHeader.allowEscaping)
         return TRUE;
     else
@@ -1062,6 +1081,36 @@ static u32 GetBallThrowableState(void)
         return BALL_THROW_UNABLE_NO_ROOM;
     else if (B_SEMI_INVULNERABLE_CATCH >= GEN_4 && (gStatuses3[GetCatchingBattler()] & STATUS3_SEMI_INVULNERABLE))
         return BALL_THROW_UNABLE_SEMI_INVULNERABLE;
+    else if (NuzlockeFlagGet(GLOBAL_NUZLOCKE_SWITCH))
+    {
+        u8 battler;
+        if (IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)))
+        {
+            battler = 0;
+        }
+        else
+        {
+            battler = 1;
+        }
+        IsSpeciesClauseActive = IsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[battler], MON_DATA_SPECIES));
+        if (IsMonShiny(&gEnemyParty[battler]))
+        {
+            IsSpeciesClauseActive = 0;
+            IsCaptureBlockedByNuzlocke = 0;
+        }
+        else if (NuzlockeFlagGet(GetCurrentRegionMapSectionId()) == 0)
+            IsCaptureBlockedByNuzlocke = 0;
+        else
+            IsCaptureBlockedByNuzlocke = 1;
+        if (IsCaptureBlockedByNuzlocke == 1)
+        {
+            return BALL_THROW_UNABLE_NUZLOCKE_ALREADY_CAUGHT; // Already got Nuzlocke encounter
+        }
+        else if (IsSpeciesClauseActive == 1)
+        {
+            return BALL_THROW_UNABLE_NUZLOCKE_SPECIES_CLAUSE; // Nuzlocke Species Clause
+        }
+    }
     else if (FlagGet(B_FLAG_NO_CATCHING))
         return BALL_THROW_UNABLE_DISABLED_FLAG;
 
@@ -1099,6 +1148,15 @@ void ItemUseInBattle_PokeBall(u8 taskId)
             DisplayItemMessage(taskId, FONT_NORMAL, gText_BoxFull, CloseItemMessage);
         else
             DisplayItemMessageInBattlePyramid(taskId, gText_BoxFull, Task_CloseBattlePyramidBagMessage);
+        break;
+    case BALL_THROW_UNABLE_NUZLOCKE_ALREADY_CAUGHT: // Already got Nuzlocke encounter
+        DisplayCannotUseItemMessage(taskId, FALSE, textCantThrowPokeBallNuzlocke);
+        break;
+    case BALL_THROW_UNABLE_NUZLOCKE_SPECIES_CLAUSE: // Nuzlocke Species Clause
+        DisplayCannotUseItemMessage(taskId, FALSE, textCantThrowPokeBallSpeciesClause);
+        break;
+    case BALL_THROW_UNABLE_NO_CATCHING_FLAG: // Can't catch Pokemon
+        DisplayItemMessage(taskId, 1, sText_BallsCannotBeUsed, CloseItemMessage);
         break;
     case BALL_THROW_UNABLE_SEMI_INVULNERABLE:
         if (!InBattlePyramid())
@@ -1445,6 +1503,11 @@ void FieldUseFunc_VsSeeker(u8 taskId)
 void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId)
 {
     Task_CloseCantUseKeyItemMessage(taskId);
+}
+
+void ItemUseOutOfBattle_PlaceholderMint(u8 taskId)
+{
+    DisplayCannotUseItemMessage(taskId, FALSE, gText_PlaceholderMint);
 }
 
 #undef tUsingRegisteredKeyItem

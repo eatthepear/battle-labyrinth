@@ -1,0 +1,436 @@
+mapscripts Zone5A_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE5A_QUICK_BALL)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE5A_TM03)) {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TM_CHEST)
+		}
+	}
+}
+
+script Zone5A_EventScript_LeviathanBattle {
+	lockall
+	applymovement(1, Common_Movement_WalkDown)
+	waitmovement(0)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 31) {
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 30) {
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 29) {
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 28) {
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 27) {
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+		waitmovement(0)
+	}
+	setvar(VAR_TEMP_0, 0)
+	setvar(VAR_TEMP_1, 0)
+	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+		msgbox(format("{COLOR BLUE}Kevin{COLOR DARK_GRAY}: So… you beat all the Fearsome Foursome.\pWell then. Would you like to face our club in battle? You'll have to beat both of us in a row, and you won't be healed in between battles!"), MSGBOX_YESNO)
+	} else {
+		msgbox(format("{COLOR BLUE}Kevin{COLOR DARK_GRAY}: So… you beat all the Fearsome Foursome.\pWell then. Would you like to face our club in battle? You'll have to beat both of us in a row, and you'll be healed in between battles!"), MSGBOX_YESNO)
+	}
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("{COLOR BLUE}Kevin{COLOR DARK_GRAY}: Oh, I see how it is. Scared, huh?"))
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		waitmovement(0)
+		applymovement(1, Common_Movement_WalkUp)
+		waitmovement(0)
+		applymovement(1, Common_Movement_FaceDown)
+		waitmovement(0)
+		releaseall
+		end
+	}
+	msgbox(format("{COLOR BLUE}Kevin{COLOR DARK_GRAY}: Finally! My Bugs are writhing with excitement!"))
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_KEVIN, format("It can't be!"))
+	applymovement(1, Common_Movement_FaceRight)
+	waitmovement(0)
+	msgbox(format("{COLOR BLUE}Kevin{COLOR DARK_GRAY}: Declan, bro, he beat me!\pIt's your turn to show off the power of the Bug Enjoyers Club!"))
+	applymovement(2, Common_Movement_WalkLeft)
+	waitmovement(0)
+	applymovement(2, Common_Movement_WalkDown)
+	waitmovement(0)
+	applymovement(2, Common_Movement_WalkDown)
+	waitmovement(0)
+	applymovement(2, Common_Movement_FaceLeft)
+	waitmovement(0)
+	msgbox("{COLOR BLUE}Declan{COLOR DARK_GRAY}: …\n"
+		"…\l"
+		"I told you already, Kevin.\p"
+		"The club name has to be\n"
+		"The Bug Maniacs, not\l"
+		"The Bug Enjoyers.")
+	fadeoutbgm(1)
+	applymovement(2, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Huh? Oh!"))
+	applymovement(2, Common_Movement_WalkDown)
+	waitmovement(0)
+	applymovement(2, Common_Movement_FaceLeft)
+	waitmovement(0)
+	applymovement(1, Common_Movement_FaceDown)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement(0)
+	msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Want to join our club? The name: The Bug Maniacs!\p"
+		"…\n"
+		"…\l"
+		"You don't?!\p"
+		"You'll change your mind after I beat you with my fabulous Bug Pokémon!"))
+	if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_CHALLENGE) == false)) {	
+		special(HealPlayerParty)
+	}
+	setvar(VAR_MUGSHOT_ID, MUGSHOT_DECLAN)
+	trainerbattle_no_intro(TRAINER_PBL_DECLAN_LEVIATHAN_5, Zone5A_Text_Leviathan5Defeat)
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	applymovement(1, Common_Movement_WalkRight)
+	waitmovement(0)
+	applymovement(1, Common_Movement_FaceDown)
+	waitmovement(0)
+	msgbox(format("{COLOR BLUE}Kevin{COLOR DARK_GRAY}: Look, Declan, it's just a name.\pMaybe it doesn't have the right ring or something.\pBut at least let's train more together. Maybe we can beat this trainer next time."), MSGBOX_DEFAULT)
+	applymovement(2, Common_Movement_FaceUp)
+	waitmovement(0)
+	msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Fine. You're right, you're right."))
+	delay(64)
+	applymovement(2, Common_Movement_FaceLeft)
+	waitmovement(0)
+	msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Oh! Right. I forgot you're here.\p"
+		"…\n"
+		"…\l"
+		"…\l"
+		"A reward?\l"
+		"…\l"
+		"Look, I don't go around giving out sweet rewards to non-club members.\l"
+		"…\l"
+		"…\p"
+		"All right, fine. Take this TM and leave me alone!"))
+	giveitem(ITEM_TM04, 1)
+	closemessage
+	msgbox(format("{COLOR BLUE}Kevin{COLOR DARK_GRAY}: Sheesh. Harsh, much?"), MSGBOX_DEFAULT)
+	applymovement(2, Common_Movement_FaceUp)
+	waitmovement(0)
+	msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Oh, shut it. Let's just get out of here."))
+	fadescreenswapbuffers(FADE_TO_BLACK)
+	removeobject(1)
+	setflag(FLAG_BEAT_LEVIATHAN_5)
+	removeobject(2)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+	setvar(VAR_ZONE_5_STATE, 1)
+	release
+	end
+}
+
+text Zone5A_Text_Leviathan5Defeat {
+	format("But how?! My Bugs!")
+}
+
+script Zone5A_EventScript_BuyPikaClone {
+	lock
+	faceplayer
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true && flag(FLAG_ZONE5A_NUZLOCKE_BOUGHT_PIKACLONE) == true) {
+		msgbox(format("Sorry! I'm all out of Pikachu clones for sale right now."))
+		release
+		end
+	} else {
+		showmoneybox(0, 0, 0)
+		msgbox(format("You seem like the type that would like Pikachu!\pNow, I don't have Pikachu for sale, but I do have Pachirisu, Emolga, Dedenne, or Morpeko, each for only ¥3000!"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			closemessage
+			hidemoneybox
+			msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+		} else {
+			checkmoney(3000, 0)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox("You don't have enough money.")
+				hidemoneybox
+			} else {
+				specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+				if (var(VAR_TEMP_2) == PARTY_SIZE) {
+					msgbox(format("Your party is full. Clear a party slot, then come back."))
+					hidemoneybox
+					release
+					end
+				}
+				call(EventScript_NuzlockeVerifyGift)
+				removemoney(3000)
+				updatemoneybox
+				msgbox("I appreciate it!")
+				closemessage
+				hidemoneybox
+				if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+					if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
+						setvar(VAR_TEMP_1, SPECIES_DEDENNE) // gets randomized anyways
+					} else {
+						setvar(VAR_TEMP_3, 0)
+						checkspeciesclause(SPECIES_DEDENNE)
+						if (var(VAR_RESULT) == TRUE) {
+							addvar(VAR_TEMP_3, 1)
+						}
+						checkspeciesclause(SPECIES_EMOLGA)
+						if (var(VAR_RESULT) == TRUE) {
+							addvar(VAR_TEMP_3, 1)
+						}
+						checkspeciesclause(SPECIES_MORPEKO)
+						if (var(VAR_RESULT) == TRUE) {
+							addvar(VAR_TEMP_3, 1)
+						}
+						checkspeciesclause(SPECIES_PACHIRISU)
+						if (var(VAR_RESULT) == TRUE) {
+							addvar(VAR_TEMP_3, 1)
+						}
+						if (var(VAR_TEMP_3) == 4) {
+							msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
+							addmoney(3000)
+							release
+							end
+						}
+						while (var(VAR_TEMP_1) == 0) {
+							random(4)
+							switch (var(VAR_RESULT)) {
+								case 0:
+									checkspeciesclause(SPECIES_DEDENNE)
+									if (var(VAR_RESULT) == TRUE) {
+										continue
+									}
+									setvar(VAR_TEMP_1, SPECIES_DEDENNE)
+								case 1:
+									checkspeciesclause(SPECIES_EMOLGA)
+									if (var(VAR_RESULT) == TRUE) {
+										continue
+									}
+									setvar(VAR_TEMP_1, SPECIES_EMOLGA)
+								case 2:
+									checkspeciesclause(SPECIES_MORPEKO)
+									if (var(VAR_RESULT) == TRUE) {
+										continue
+									}
+									setvar(VAR_TEMP_1, SPECIES_MORPEKO)
+								case 3:
+									checkspeciesclause(SPECIES_PACHIRISU)
+									if (var(VAR_RESULT) == TRUE) {
+										continue
+									}
+									setvar(VAR_TEMP_1, SPECIES_PACHIRISU)
+							}
+						}
+					}
+					setflag(FLAG_ZONE5A_NUZLOCKE_BOUGHT_PIKACLONE)
+				} else {
+					msgbox(format("Choose which Pikachu clone you would like."), MSGBOX_DEFAULT)
+					dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Dedenne", "Emolga", "Morpeko", "Pachirisu")
+					switch (var(VAR_RESULT)) {
+						case 0:
+							setvar(VAR_TEMP_1, SPECIES_DEDENNE)
+						case 1:
+							setvar(VAR_TEMP_1, SPECIES_EMOLGA)
+						case 2:
+							setvar(VAR_TEMP_1, SPECIES_MORPEKO)
+						case 3:
+							setvar(VAR_TEMP_1, SPECIES_PACHIRISU)
+					}
+				}
+				givemon(VAR_TEMP_1, 10, ITEM_NONE)
+				setmonmetlocation(VAR_TEMP_2, 250)
+				bufferspeciesname(0, VAR_TEMP_1)
+				msgbox("Here's your {STR_VAR_1}.", MSGBOX_DEFAULT)
+				playfanfare(MUS_OBTAIN_ITEM)
+				message(format("{PLAYER} received the {STR_VAR_1}!"))
+				waitmessage
+				waitfanfare
+				msgbox(format("Would you like to give a nickname to {STR_VAR_1}?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					call(Common_EventScript_GetGiftMonPartySlot)
+					call(Common_EventScript_NameReceivedPartyMon)
+				}
+				msgbox(format("Take good care of your new Electric-type, small mammal-like Pokémon!"), MSGBOX_DEFAULT)
+			}
+		}
+	}
+	release
+	end
+}
+
+script Zone5A_EventScript_ItemQuickBall {
+	lock
+	if (flag(FLAG_ITEM_ZONE5A_QUICK_BALL)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE5A_QUICK_BALL)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_QUICK_BALL, 1)
+	release
+	end
+}
+
+script Zone5A_EventScript_ItemTM03 {
+	lock
+	if (flag(FLAG_ITEM_ZONE5A_TM03)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE5A_TM03)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_TM03)
+	release
+	end
+}
+
+raw `
+Zone5A_EventScript_AnneAndJune::
+	trainerbattle_double TRAINER_PBL_ANNE_AND_JUNE, Zone5A_Text_AnneAndJuneIntro, Zone5A_Text_AnneAndJuneDefeat, gText_NotEnoughMons
+	msgbox Zone5A_Text_AnneAndJunePostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Zone5A_Text_AnneAndJuneIntro:
+	.string "Anne: We're teammates!\p"
+	.string "June: No, I'm the Senior and\n"
+	.string "you're the Junior!$"
+
+Zone5A_Text_AnneAndJuneDefeat:
+	.string "Anne: I guess you were right…\p"
+	.string "June: We still lost though…$"
+
+Zone5A_Text_AnneAndJunePostBattle:
+	.string "Anne: Maybe we needed better…\p"
+	.string "June: Coordination?\p"
+	.string "Anne: Yeah, exactly that!$"
+
+Zone5A_EventScript_Gilbert::
+	trainerbattle_single TRAINER_PBL_GILBERT, Zone5A_Text_GilbertIntro, Zone5A_Text_GilbertDefeat
+	msgbox Zone5A_Text_GilbertPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone5A_Text_GilbertIntro:
+	.string "I've fished up a wild Trainer!$"
+
+Zone5A_Text_GilbertDefeat:
+	.string "You're too tough to take down!$"
+
+Zone5A_Text_GilbertPostBattle:
+	.string "I can't seem to catch a break!\p"
+	.string "Get it? Catch?$"
+
+Zone5A_EventScript_Clinton::
+	trainerbattle_single TRAINER_PBL_CLINTON, Zone5A_Text_ClintonIntro, Zone5A_Text_ClintonDefeat
+	msgbox Zone5A_Text_ClintonPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone5A_Text_ClintonIntro:
+	.string "Supposedly, item chests that are\n"
+	.string "tinted yellow hold special items.$"
+
+Zone5A_Text_ClintonDefeat:
+	.string "I don't bother checking them\n"
+	.string "though!$"
+
+Zone5A_Text_ClintonPostBattle:
+	.string "I can buy all the TMs I want!\n"
+	.string "I don't need any item chests!$"
+
+Zone5A_EventScript_Rebecca::
+	trainerbattle_single TRAINER_PBL_REBECCA, Zone5A_Text_RebeccaIntro, Zone5A_Text_RebeccaDefeat
+	msgbox Zone5A_Text_RebeccaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone5A_Text_RebeccaIntro:
+	.string "In order to pass, you have to beat\n"
+	.string "the Fearsome Foursome!$"
+
+Zone5A_Text_RebeccaDefeat:
+	.string "First of the Fearsome Foursome down!$"
+
+Zone5A_Text_RebeccaPostBattle:
+	.string "Defeat leaves me in disgrace…$"
+
+Zone5A_EventScript_Ryan::
+	trainerbattle_single TRAINER_PBL_RYAN, Zone5A_Text_RyanIntro, Zone5A_Text_RyanDefeat
+	msgbox Zone5A_Text_RyanPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone5A_Text_RyanIntro:
+	.string "The second of the Fearsome Foursome!\n"
+	.string "That's me!$"
+
+Zone5A_Text_RyanDefeat:
+	.string "Second of the Fearsome Foursome down!$"
+
+Zone5A_Text_RyanPostBattle:
+	.string "They say second is the best…$"
+
+Zone5A_EventScript_Sign::
+	msgbox Zone5A_Text_Sign, MSGBOX_SIGN
+	end
+
+Zone5A_EventScript_Caitlyn::
+	trainerbattle_single TRAINER_PBL_CAITLYN, Zone5A_Text_CaitlynIntro, Zone5A_Text_CaitlynDefeat
+	msgbox Zone5A_Text_CaitlynPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone5A_Text_CaitlynIntro:
+	.string "Fearsome Foursome, number three!\n"
+	.string "Be careful, I'm strong!$"
+
+Zone5A_Text_CaitlynDefeat:
+	.string "Third of the Fearsome Foursome down!$"
+
+Zone5A_Text_CaitlynPostBattle:
+	.string "There's only one left. Don't be afraid!$"
+
+Zone5A_EventScript_Kenneth::
+	trainerbattle_single TRAINER_PBL_KENNETH, Zone5A_Text_KennethIntro, Zone5A_Text_KennethDefeat
+	msgbox Zone5A_Text_KennethPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone5A_Text_KennethIntro:
+	.string "Heyo, it's me!\n"
+	.string "The last Fearsome Foursome!\p"
+	.string "Face me in battle!$"
+
+Zone5A_Text_KennethDefeat:
+	.string "You've bested the best of us!$"
+
+Zone5A_Text_KennethPostBattle:
+	.string "You're the bestest!$"
+`
+
+text Zone5A_Text_Sign {
+	format("Trainer Tips!\p"
+	"You can view the current level cap as well as the number of remaining foes and items in an area by looking at your Trainer Card.\p"
+	"This information changes accordingly based on which Zone you are in.")
+}

@@ -163,11 +163,11 @@ static const u16 sBgPalette[] = {RGB_BLACK, RGB_BLACK};
 
 void SetContestWinnerForPainting(int contestWinnerId)
 {
-    u8 *saveIdx = &gCurContestWinnerSaveIdx;
-    u8 *isForArtist = &gCurContestWinnerIsForArtist;
-    gCurContestWinner = gSaveBlock1Ptr->contestWinners[contestWinnerId - 1];
-    *saveIdx = contestWinnerId - 1;
-    *isForArtist = FALSE;
+    // u8 *saveIdx = &gCurContestWinnerSaveIdx;
+    // u8 *isForArtist = &gCurContestWinnerIsForArtist;
+    // gCurContestWinner = gSaveBlock1Ptr->contestWinners[contestWinnerId - 1];
+    // *saveIdx = contestWinnerId - 1;
+    // *isForArtist = FALSE;
 }
 
 void CB2_ContestPainting(void)
@@ -175,7 +175,7 @@ void CB2_ContestPainting(void)
     ShowContestPainting();
 }
 
-static void CB2_HoldContestPainting(void)
+static void UNUSED CB2_HoldContestPainting(void)
 {
     HoldContestPainting();
     RunTextPrinters();
@@ -194,44 +194,44 @@ static void CB2_QuitContestPainting(void)
 
 static void ShowContestPainting(void)
 {
-    switch (gMain.state)
-    {
-    case 0:
-        ScanlineEffect_Stop();
-        SetVBlankCallback(NULL);
-        AllocateMonSpritesGfx();
-        gContestPaintingWinner = &gCurContestWinner;
-        InitContestPaintingVars(TRUE);
-        InitContestPaintingBg();
-        gMain.state++;
-        break;
-    case 1:
-        ResetPaletteFade();
-        DmaFillLarge32(3, 0, (void *)VRAM, VRAM_SIZE, 0x1000);
-        ResetSpriteData();
-        gMain.state++;
-        break;
-    case 2:
-        SeedRng(gMain.vblankCounter1);
-        InitKeys();
-        InitContestPaintingWindow();
-        gMain.state++;
-        break;
-    case 3:
-        CreateContestPaintingPicture(gCurContestWinnerSaveIdx, gCurContestWinnerIsForArtist);
-        gMain.state++;
-        break;
-    case 4:
-        PrintContestPaintingCaption(gCurContestWinnerSaveIdx, gCurContestWinnerIsForArtist);
-        SetBackdropFromPalette(sBgPalette);
-        DmaClear32(3, PLTT, PLTT_SIZE);
-        BeginFastPaletteFade(2);
-        SetVBlankCallback(VBlankCB_ContestPainting);
-        sHoldState = 0;
-        SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_BG0_ON | DISPCNT_BG1_ON | DISPCNT_OBJ_ON);
-        SetMainCallback2(CB2_HoldContestPainting);
-        break;
-    }
+    // switch (gMain.state)
+    // {
+    // case 0:
+    //     ScanlineEffect_Stop();
+    //     SetVBlankCallback(NULL);
+    //     AllocateMonSpritesGfx();
+    //     gContestPaintingWinner = &gCurContestWinner;
+    //     InitContestPaintingVars(TRUE);
+    //     InitContestPaintingBg();
+    //     gMain.state++;
+    //     break;
+    // case 1:
+    //     ResetPaletteFade();
+    //     DmaFillLarge32(3, 0, (void *)VRAM, VRAM_SIZE, 0x1000);
+    //     ResetSpriteData();
+    //     gMain.state++;
+    //     break;
+    // case 2:
+    //     SeedRng(gMain.vblankCounter1);
+    //     InitKeys();
+    //     InitContestPaintingWindow();
+    //     gMain.state++;
+    //     break;
+    // case 3:
+    //     CreateContestPaintingPicture(gCurContestWinnerSaveIdx, gCurContestWinnerIsForArtist);
+    //     gMain.state++;
+    //     break;
+    // case 4:
+    //     PrintContestPaintingCaption(gCurContestWinnerSaveIdx, gCurContestWinnerIsForArtist);
+    //     SetBackdropFromPalette(sBgPalette);
+    //     DmaClear32(3, PLTT, PLTT_SIZE);
+    //     BeginFastPaletteFade(2);
+    //     SetVBlankCallback(VBlankCB_ContestPainting);
+    //     sHoldState = 0;
+    //     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_BG0_ON | DISPCNT_BG1_ON | DISPCNT_OBJ_ON);
+    //     SetMainCallback2(CB2_HoldContestPainting);
+    //     break;
+    // }
 }
 
 static void HoldContestPainting(void)
@@ -263,7 +263,7 @@ static void HoldContestPainting(void)
     }
 }
 
-static void InitContestPaintingWindow(void)
+static void UNUSED InitContestPaintingWindow(void)
 {
     ResetBgsAndClearDma3BusyFlags(0);
     InitBgsFromTemplates(0, sBgTemplates, ARRAY_COUNT(sBgTemplates));
@@ -278,7 +278,7 @@ static void InitContestPaintingWindow(void)
     ShowBg(1);
 }
 
-static void PrintContestPaintingCaption(u8 contestType, bool8 isForArtist)
+static void UNUSED PrintContestPaintingCaption(u8 contestType, bool8 isForArtist)
 {
     int x;
     u8 category;
@@ -311,7 +311,7 @@ static void PrintContestPaintingCaption(u8 contestType, bool8 isForArtist)
     CopyBgTilemapBufferToVram(1);
 }
 
-static void InitContestPaintingBg(void)
+static void UNUSED InitContestPaintingBg(void)
 {
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
     REG_IE |= INTR_FLAG_VBLANK;
@@ -322,7 +322,7 @@ static void InitContestPaintingBg(void)
     SetGpuReg(REG_OFFSET_BLDY, 0);
 }
 
-static void InitContestPaintingVars(bool8 reset)
+static void UNUSED InitContestPaintingVars(bool8 reset)
 {
     if (reset == FALSE)
     {
@@ -353,7 +353,7 @@ static void UpdateContestPaintingMosaicEffect(void)
     }
 }
 
-static void VBlankCB_ContestPainting(void)
+static void UNUSED VBlankCB_ContestPainting(void)
 {
     UpdateContestPaintingMosaicEffect();
     LoadOam();
@@ -587,7 +587,7 @@ static void DoContestPaintingImageProcessing(u8 imageEffect)
     LoadPalette(gContestPaintingMonPalette, OBJ_PLTT_ID(0), 16 * PLTT_SIZE_4BPP);
 }
 
-static void CreateContestPaintingPicture(u8 contestWinnerId, bool8 isForArtist)
+static void UNUSED CreateContestPaintingPicture(u8 contestWinnerId, bool8 isForArtist)
 {
     AllocPaintingResources();
     InitContestMonPixels(gContestPaintingWinner->species, FALSE);

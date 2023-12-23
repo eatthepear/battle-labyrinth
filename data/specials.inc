@@ -534,6 +534,7 @@ gSpecials::
 	def_special RemoveRecordsWindow
 	def_special CloseDeptStoreElevatorWindow
 	def_special TrySetBattleTowerLinkType
+	def_special GetCaughtSpeciesCount
 	def_special SetTotemBoost
 	def_special TrySpecialOverworldEvo
 	def_special GetNumberSprayStrength
@@ -542,3 +543,16 @@ gSpecials::
 	def_special TrySkyBattle
 	def_special VsSeekerResetObjectMovementAfterChargeComplete
 	def_special VsSeekerFreezeObjectsAfterChargeComplete
+	def_special HeadbuttWildEncounter
+	def_special GetSeenMon
+	def_special GetCaughtMon
+	def_special SetSeenMon
+	def_special SetCaughtMon
+	def_special ChoosePartyMonForTraining
+	def_special ReverseHiddenItemFlags
+	def_special GetNumTrainersRemaining
+	def_special GetCurrentLevelCap
+	def_special GetNumItemsRemaining
+	def_special NewGameSetup
+	def_special CheckSpeciesClause
+	def_special ChooseItemFromBag

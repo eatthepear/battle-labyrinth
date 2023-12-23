@@ -77,6 +77,28 @@ void ShuffleN(void *data, size_t n, size_t size)
     }
 }
 
+void ShuffleList(u16 *list, u16 count)
+{
+    u16 i;
+
+    for (i = (count - 1); i > 0; i--)
+    {
+        u16 j = Random() % (i + 1);
+        u16 arr = list[j];
+        list[j] = list[i];
+        list[i] = arr;
+    }
+}
+
+u16 RandRange(u16 min, u16 max)
+{    
+    if (min == max)
+        return min;
+    
+    max++;   // make inclusive
+    return (Random() % (max - min)) + min;
+}
+
 __attribute__((weak, alias("RandomUniformDefault")))
 u32 RandomUniform(enum RandomTag tag, u32 lo, u32 hi);
 

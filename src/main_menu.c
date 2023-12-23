@@ -240,9 +240,9 @@ static void Task_NewGameBirchSpeech_Cleanup(u8);
 static void SpriteCB_Null();
 static void Task_NewGameBirchSpeech_ReturnFromNamingScreenShowTextbox(u8);
 static void MainMenu_FormatSavegamePlayer(void);
-static void MainMenu_FormatSavegamePokedex(void);
+static void MainMenu_FormatSavegameZone(void);
 static void MainMenu_FormatSavegameTime(void);
-static void MainMenu_FormatSavegameBadges(void);
+static void MainMenu_FormatSavegamePokedex(void);
 static void NewGameBirchSpeech_CreateDialogueWindowBorder(u8, u8, u8, u8, u8, u8);
 
 // .rodata
@@ -1290,7 +1290,7 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     gTasks[taskId].tPlayerSpriteId = SPRITE_NONE;
     gTasks[taskId].data[3] = 0xFF;
     gTasks[taskId].tTimer = 0xD8;
-    PlayBGM(MUS_ROUTE122);
+    PlayBGM(MUS_HG_NEW_GAME);
     ShowBg(0);
     ShowBg(1);
 }
@@ -1374,7 +1374,7 @@ static void Task_NewGameBirchSpeechSub_InitPokeBall(u8 taskId)
     gSprites[spriteId].invisible = FALSE;
     gSprites[spriteId].data[0] = 0;
 
-    CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, SPECIES_LOTAD);
+    CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, SPECIES_PORYGON);
     gTasks[taskId].func = Task_NewGameBirchSpeechSub_WaitForLotad;
     gTasks[sBirchSpeechMainTaskId].tTimer = 0;
 }
@@ -1876,7 +1876,7 @@ static void SpriteCB_MovePlayerDownWhileShrinking(struct Sprite *sprite)
 
 static u8 NewGameBirchSpeech_CreateLotadSprite(u8 x, u8 y)
 {
-    return CreateMonPicSprite_Affine(SPECIES_LOTAD, SHINY_ODDS, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    return CreateMonPicSprite_Affine(SPECIES_PORYGON, SHINY_ODDS, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
 }
 
 static void AddBirchSpeechObjects(u8 taskId)
@@ -2109,9 +2109,11 @@ void NewGameBirchSpeech_SetDefaultPlayerName(u8 nameId)
     u8 i;
 
     if (gSaveBlock2Ptr->playerGender == MALE)
-        name = sMalePresetNames[nameId];
+        name = sMalePresetNames[0];
+        // name = sMalePresetNames[nameId];
     else
-        name = sFemalePresetNames[nameId];
+        name = sFemalePresetNames[0];
+        // name = sFemalePresetNames[nameId];
     for (i = 0; i < PLAYER_NAME_LENGTH; i++)
         gSaveBlock2Ptr->playerName[i] = name[i];
     gSaveBlock2Ptr->playerName[PLAYER_NAME_LENGTH] = EOS;
@@ -2131,9 +2133,9 @@ static void CreateMainMenuErrorWindow(const u8 *str)
 static void MainMenu_FormatSavegameText(void)
 {
     MainMenu_FormatSavegamePlayer();
-    MainMenu_FormatSavegamePokedex();
+    MainMenu_FormatSavegameZone();
     MainMenu_FormatSavegameTime();
-    MainMenu_FormatSavegameBadges();
+    MainMenu_FormatSavegamePokedex();
 }
 
 static void MainMenu_FormatSavegamePlayer(void)
@@ -2156,39 +2158,90 @@ static void MainMenu_FormatSavegameTime(void)
     AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 0xD0), 17, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
 }
 
+static void MainMenu_FormatSavegameZone(void)
+{
+    u8 str[0x20];
+    u16 whichZone;
+    
+    whichZone = VarGet(VAR_ZONE) - 1;
+
+    StringExpandPlaceholders(gStringVar4, gText_ContinueMenuZone);
+    AddTextPrinterParameterized3(2, FONT_NORMAL, 0, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+    ConvertIntToDecimalStringN(str, whichZone, STR_CONV_MODE_LEFT_ALIGN, 3);
+    AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 100), 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
+}
+
 static void MainMenu_FormatSavegamePokedex(void)
 {
     u8 str[0x20];
-    u16 dexCount;
-
-    if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
-    {
-        if (IsNationalPokedexEnabled())
-            dexCount = GetNationalPokedexCount(FLAG_GET_CAUGHT);
-        else
-            dexCount = GetHoennPokedexCount(FLAG_GET_CAUGHT);
-        StringExpandPlaceholders(gStringVar4, gText_ContinueMenuPokedex);
-        AddTextPrinterParameterized3(2, FONT_NORMAL, 0, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
-        ConvertIntToDecimalStringN(str, dexCount, STR_CONV_MODE_LEFT_ALIGN, 4);
-        AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 100), 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
+    u16 dexCount = 0;
+    if (FlagGet(FLAG_SETTINGS_BRUTAL) == TRUE) {
+        dexCount += 1;
+    } else if (FlagGet(FLAG_SETTINGS_INFINITE) == TRUE) {
+        dexCount += 2;
     }
-}
-
-static void MainMenu_FormatSavegameBadges(void)
-{
-    u8 str[0x20];
-    u8 badgeCount = 0;
-    u32 i;
-
-    for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
-    {
-        if (FlagGet(i))
-            badgeCount++;
+    if (FlagGet(FLAG_SETTINGS_NUZLOCKE) == TRUE) {
+        dexCount += 10;
     }
-    StringExpandPlaceholders(gStringVar4, gText_ContinueMenuBadges);
-    AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
-    ConvertIntToDecimalStringN(str, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 1);
-    AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 0xD0), 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
+    if (FlagGet(FLAG_SETTINGS_RANDOMIZER) == TRUE) {
+        dexCount += 100;
+    }
+    switch (dexCount) {
+        case 0:
+            if (IsNationalPokedexEnabled())
+                dexCount = GetNationalPokedexCount(FLAG_GET_CAUGHT);
+            else
+                dexCount = GetHoennPokedexCount(FLAG_GET_CAUGHT);
+            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuPokedex);
+            AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+            ConvertIntToDecimalStringN(str, dexCount, STR_CONV_MODE_LEFT_ALIGN, 3);
+            AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 0xD0), 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
+            break;
+        case 1:
+            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuBrutal);
+            AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+            break;
+        case 2:
+            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuInfinite);
+            AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+            break;
+        case 10:
+            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuNuzlocke);
+            AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+            break;
+        case 11:
+            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuBrutalNuzlocke);
+            AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+            break;
+        case 12:
+            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuInfiniteNuzlocke);
+            AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+            break;
+        case 100:
+            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuRandomizer);
+            AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+            break;
+        case 101:
+            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuBrutalRandomizer);
+            AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+            break;
+        case 102:
+            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuInfiniteRandomizer);
+            AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+            break;
+        case 110:
+            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuRandomlocke);
+            AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+            break;
+        case 111:
+            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuBrutalRandomlocke);
+            AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+            break;
+        case 112:
+            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuInfiniteRandomlocke);
+            AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+            break;
+    }
 }
 
 static void LoadMainMenuWindowFrameTiles(u8 bgId, u16 tileOffset)

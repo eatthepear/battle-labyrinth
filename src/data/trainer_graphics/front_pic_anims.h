@@ -370,6 +370,46 @@ static const union AnimCmd *const sAnims_RubySapphireMay[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_Scientist[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Waiter[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Waitress[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Mirages[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_FairyTaleGirl[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Socialite[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_BackpackerF[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Worker[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_IceWorker[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Roughneck[] ={
+    sAnim_GeneralFrame0,
+};
+
 const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 {
     [TRAINER_PIC_HIKER] = sAnims_Hiker,
@@ -465,4 +505,14 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_LEAF] = sAnims_Leaf,
     [TRAINER_PIC_RS_BRENDAN] = sAnims_RubySapphireBrendan,
     [TRAINER_PIC_RS_MAY] = sAnims_RubySapphireMay,
+    [TRAINER_PIC_SCIENTIST] = sAnims_Scientist,
+    [TRAINER_PIC_WAITER] = sAnims_Waiter,
+    [TRAINER_PIC_WAITRESS] = sAnims_Waitress,
+    [TRAINER_PIC_MIRAGES] = sAnims_Mirages,
+    [TRAINER_PIC_FAIRY_TALE_GIRL] = sAnims_FairyTaleGirl,
+    [TRAINER_PIC_SOCIALITE] = sAnims_Socialite,
+    [TRAINER_PIC_BACKPACKER_F] = sAnims_BackpackerF,
+    [TRAINER_PIC_WORKER] = sAnims_Worker,
+    [TRAINER_PIC_ICE_WORKER] = sAnims_IceWorker,
+    [TRAINER_PIC_ROUGHNECK] = sAnims_Roughneck,
 };

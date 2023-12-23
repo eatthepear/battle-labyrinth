@@ -5,6 +5,7 @@
 #include "util.h"
 #include "constants/event_objects.h"
 #include "constants/map_scripts.h"
+#include "trainer_see.h"
 
 #define RAM_SCRIPT_MAGIC 51
 
@@ -176,6 +177,15 @@ u32 ScriptReadWord(struct ScriptContext *ctx)
     u32 value1 = *(ctx->scriptPtr++);
     u32 value2 = *(ctx->scriptPtr++);
     u32 value3 = *(ctx->scriptPtr++);
+    return (((((value3 << 8) + value2) << 8) + value1) << 8) + value0;
+}
+
+u32 ScriptPeekWord(struct ScriptContext *ctx)
+{
+    u32 value0 = *(ctx->scriptPtr);
+    u32 value1 = *(ctx->scriptPtr + 1);
+    u32 value2 = *(ctx->scriptPtr + 2);
+    u32 value3 = *(ctx->scriptPtr + 3);
     return (((((value3 << 8) + value2) << 8) + value1) << 8) + value0;
 }
 
@@ -370,17 +380,18 @@ void TryRunOnWarpIntoMapScript(void)
 
 u32 CalculateRamScriptChecksum(void)
 {
-    return CalcCRC16WithTable((u8 *)(&gSaveBlock1Ptr->ramScript.data), sizeof(gSaveBlock1Ptr->ramScript.data));
+    // return CalcCRC16WithTable((u8 *)(&gSaveBlock1Ptr->ramScript.data), sizeof(gSaveBlock1Ptr->ramScript.data));
+    return 0;
 }
 
 void ClearRamScript(void)
 {
-    CpuFill32(0, &gSaveBlock1Ptr->ramScript, sizeof(struct RamScript));
+    //CpuFill32(0, &gSaveBlock1Ptr->ramScript, sizeof(struct RamScript));
 }
 
 bool8 InitRamScript(const u8 *script, u16 scriptSize, u8 mapGroup, u8 mapNum, u8 objectId)
 {
-    struct RamScriptData *scriptData = &gSaveBlock1Ptr->ramScript.data;
+    /*struct RamScriptData *scriptData = &gSaveBlock1Ptr->ramScript.data;
 
     ClearRamScript();
 
@@ -393,12 +404,13 @@ bool8 InitRamScript(const u8 *script, u16 scriptSize, u8 mapGroup, u8 mapNum, u8
     scriptData->objectId = objectId;
     memcpy(scriptData->script, script, scriptSize);
     gSaveBlock1Ptr->ramScript.checksum = CalculateRamScriptChecksum();
-    return TRUE;
+    return TRUE;*/
+    return FALSE;
 }
 
 const u8 *GetRamScript(u8 objectId, const u8 *script)
 {
-    struct RamScriptData *scriptData = &gSaveBlock1Ptr->ramScript.data;
+    /*struct RamScriptData *scriptData = &gSaveBlock1Ptr->ramScript.data;
     gRamScriptRetAddr = NULL;
     if (scriptData->magic != RAM_SCRIPT_MAGIC)
         return script;
@@ -417,14 +429,15 @@ const u8 *GetRamScript(u8 objectId, const u8 *script)
     {
         gRamScriptRetAddr = script;
         return scriptData->script;
-    }
+    }*/
+    return script;
 }
 
 #define NO_OBJECT OBJ_EVENT_ID_PLAYER
 
 bool32 ValidateSavedRamScript(void)
 {
-    struct RamScriptData *scriptData = &gSaveBlock1Ptr->ramScript.data;
+    /*struct RamScriptData *scriptData = &gSaveBlock1Ptr->ramScript.data;
     if (scriptData->magic != RAM_SCRIPT_MAGIC)
         return FALSE;
     if (scriptData->mapGroup != MAP_GROUP(UNDEFINED))
@@ -435,12 +448,13 @@ bool32 ValidateSavedRamScript(void)
         return FALSE;
     if (CalculateRamScriptChecksum() != gSaveBlock1Ptr->ramScript.checksum)
         return FALSE;
-    return TRUE;
+    return TRUE;*/
+    return FALSE;
 }
 
 u8 *GetSavedRamScriptIfValid(void)
 {
-    struct RamScriptData *scriptData = &gSaveBlock1Ptr->ramScript.data;
+    /*struct RamScriptData *scriptData = &gSaveBlock1Ptr->ramScript.data;
     if (!ValidateSavedWonderCard())
         return NULL;
     if (scriptData->magic != RAM_SCRIPT_MAGIC)
@@ -459,12 +473,27 @@ u8 *GetSavedRamScriptIfValid(void)
     else
     {
         return scriptData->script;
-    }
+    }*/
+    return NULL;
 }
 
 void InitRamScript_NoObjectEvent(u8 *script, u16 scriptSize)
 {
-    if (scriptSize > sizeof(gSaveBlock1Ptr->ramScript.data.script))
+    /*if (scriptSize > sizeof(gSaveBlock1Ptr->ramScript.data.script))
         scriptSize = sizeof(gSaveBlock1Ptr->ramScript.data.script);
-    InitRamScript(script, scriptSize, MAP_GROUP(UNDEFINED), MAP_NUM(UNDEFINED), NO_OBJECT);
+    InitRamScript(script, scriptSize, MAP_GROUP(UNDEFINED), MAP_NUM(UNDEFINED), NO_OBJECT);*/
 }
+
+bool8 LoadTrainerObjectScript(void)
+{
+    sGlobalScriptContext.scriptPtr = gApproachingTrainers[gNoOfApproachingTrainers - 1].trainerScriptPtr;
+    return TRUE;
+}
+
+u8* ReadWord(u8 index)
+{
+    struct ScriptContext *ctx = &sGlobalScriptContext;
+    
+    return (T1_READ_PTR(&ctx->data[index]));
+}
+

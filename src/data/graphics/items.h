@@ -1935,6 +1935,23 @@ const u32 gItemIconPalette_CardKey[] = INCBIN_U32("graphics/items/icon_palettes/
 
 const u32 gItemIcon_LiftKey[] = INCBIN_U32("graphics/items/icons/lift_key.4bpp.lz");
 
+const u32 gItemIcon_Sledgehammer[] = INCBIN_U32("graphics/items/icons/sledgehammer.4bpp.lz");
+const u32 gItemIconPalette_Sledgehammer[] = INCBIN_U32("graphics/items/icon_palettes/sledgehammer.gbapal.lz");
+
+const u32 gItemIcon_Machete[] = INCBIN_U32("graphics/items/icons/machete.4bpp.lz");
+const u32 gItemIconPalette_Machete[] = INCBIN_U32("graphics/items/icon_palettes/machete.gbapal.lz");
+
+const u32 gItemIcon_Flashlight[] = INCBIN_U32("graphics/items/icons/flashlight.4bpp.lz");
+const u32 gItemIconPalette_Flashlight[] = INCBIN_U32("graphics/items/icon_palettes/flashlight.gbapal.lz");
+
+const u32 gItemIcon_Surfboard[] = INCBIN_U32("graphics/items/icons/surfboard.4bpp.lz");
+const u32 gItemIconPalette_Surfboard[] = INCBIN_U32("graphics/items/icon_palettes/surfboard.gbapal.lz");
+
+const u32 gItemIcon_DivingGear[] = INCBIN_U32("graphics/items/icons/diving_gear.4bpp.lz");
+const u32 gItemIconPalette_DivingGear[] = INCBIN_U32("graphics/items/icon_palettes/diving_gear.gbapal.lz");
+
+
+
 const u32 gItemIcon_SilphScope[] = INCBIN_U32("graphics/items/icons/silph_scope.4bpp.lz");
 const u32 gItemIconPalette_SilphScope[] = INCBIN_U32("graphics/items/icon_palettes/silph_scope.gbapal.lz");
 

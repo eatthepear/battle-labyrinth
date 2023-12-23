@@ -15,6 +15,7 @@
 #include "pokemon.h"
 #include "random.h"
 #include "util.h"
+#include "event_data.h"
 #include "constants/abilities.h"
 #include "constants/item_effects.h"
 #include "constants/battle_move_effects.h"
@@ -859,6 +860,111 @@ static bool32 ShouldSwitchIfEncored(u32 battler)
 
     return FALSE;
 }
+static bool8 ShouldSwitchIfOnlyAttackingStatLowered(u32 battler)
+{
+    u8 opposingPosition;
+    u8 opposingBattler;
+    s32 i;
+    u16 move;
+
+    // Brutal mode only, only 50% chance of triggering
+    if (((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_CHALLENGE) == FALSE)) || (Random() % 2))
+        return FALSE;
+
+    if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
+        return FALSE;
+
+    opposingPosition = BATTLE_OPPOSITE(GetBattlerPosition(battler));
+
+    if (GetBattlerAbility(GetBattlerAtPosition(opposingPosition)) == ABILITY_UNAWARE)
+        return FALSE;
+
+    // Check if Pokemon has a super effective move.
+    for (opposingBattler = GetBattlerAtPosition(opposingPosition), i = 0; i < MAX_MON_MOVES; i++)
+    {
+        move = gBattleMons[battler].moves[i];
+        if (move != MOVE_NONE)
+        {
+            if (AI_GetTypeEffectiveness(move, battler, opposingBattler) >= UQ_4_12(2.0))
+                return FALSE;
+        }
+    }
+
+    // Check if Pokemon has all physical moves and lowered Attack by 2 or more stages
+    if (gBattleMons[battler].statStages[STAT_ATK] < DEFAULT_STAT_STAGE - 1)
+    {
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            move = gBattleMons[battler].moves[i];
+            if (move != MOVE_NONE)
+            {
+                if (IS_MOVE_SPECIAL(move) == TRUE)
+                    break;
+            }
+        }
+        if (i == MAX_MON_MOVES)
+            *(gBattleStruct->AI_monToSwitchIntoId + battler) = PARTY_SIZE;
+            BtlController_EmitTwoReturnValues(battler, BUFFER_B, B_ACTION_SWITCH, 0);
+            return TRUE;
+    }
+
+    // Check if Pokemon has all special moves and lowered Special Attack by 2 or more stages
+    if (gBattleMons[battler].statStages[STAT_SPATK] < DEFAULT_STAT_STAGE - 1)
+    {
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            move = gBattleMons[battler].moves[i];
+            if (move != MOVE_NONE)
+            {
+                if (IS_MOVE_PHYSICAL(move) == TRUE)
+                    break;
+            }
+        }
+        if (i == MAX_MON_MOVES)
+            *(gBattleStruct->AI_monToSwitchIntoId + battler) = PARTY_SIZE;
+            BtlController_EmitTwoReturnValues(battler, BUFFER_B, B_ACTION_SWITCH, 0);
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+static bool8 ShouldSwitchIfYawned(u32 battler)
+{
+    u8 opposingPosition;
+    u8 opposingBattler;
+    s32 i;
+    u16 move;
+
+    // Brutal mode only, only 50% chance of triggering
+    if (((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_CHALLENGE) == FALSE)) || (Random() % 2))
+        return FALSE;
+
+    if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
+        return FALSE;
+
+    opposingPosition = BATTLE_OPPOSITE(GetBattlerPosition(battler));
+
+    // Check if Pokemon has a super effective move.
+    for (opposingBattler = GetBattlerAtPosition(opposingPosition), i = 0; i < MAX_MON_MOVES; i++)
+    {
+        move = gBattleMons[battler].moves[i];
+        if (move != MOVE_NONE)
+        {
+            if (AI_GetTypeEffectiveness(move, battler, opposingBattler) >= UQ_4_12(2.0))
+                return FALSE;
+        }
+    }
+
+    if (gStatuses3[battler] & (STATUS3_YAWN))
+    {
+        *(gBattleStruct->AI_monToSwitchIntoId + battler) = PARTY_SIZE;
+        BtlController_EmitTwoReturnValues(battler, BUFFER_B, B_ACTION_SWITCH, 0);
+        return TRUE;
+    }
+
+    return FALSE;
+}
 
 // AI should switch if it's become setup fodder and has something better to switch to
 static bool8 AreAttackingStatsLowered(u32 battler)
@@ -1029,6 +1135,10 @@ bool32 ShouldSwitch(u32 battler)
     //Can prompt switch if AI has a pokemon in party that resists current opponent & has super effective move
     if (FindMonWithFlagsAndSuperEffective(battler, MOVE_RESULT_DOESNT_AFFECT_FOE, 2)
         || FindMonWithFlagsAndSuperEffective(battler, MOVE_RESULT_NOT_VERY_EFFECTIVE, 3))
+        return TRUE;
+    if (ShouldSwitchIfOnlyAttackingStatLowered(battler))
+        return TRUE;
+    if (ShouldSwitchIfYawned(battler))
         return TRUE;
 
     return FALSE;

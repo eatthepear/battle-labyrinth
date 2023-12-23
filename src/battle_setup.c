@@ -40,6 +40,7 @@
 #include "data.h"
 #include "vs_seeker.h"
 #include "item.h"
+#include "constants/region_map_sections.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_setup.h"
 #include "constants/game_stat.h"
@@ -48,6 +49,9 @@
 #include "constants/map_types.h"
 #include "constants/trainers.h"
 #include "constants/trainer_hill.h"
+#include "pokedex.h"
+#include "pokemon.h"
+#include "wild_encounter.h"
 #include "constants/weather.h"
 
 enum {
@@ -110,6 +114,7 @@ EWRAM_DATA static u8 *sTrainerABattleScriptRetAddr = NULL;
 EWRAM_DATA static u8 *sTrainerBBattleScriptRetAddr = NULL;
 EWRAM_DATA static bool8 sShouldCheckTrainerBScript = FALSE;
 EWRAM_DATA static u8 sNoOfPossibleTrainerRetScripts = 0;
+EWRAM_DATA u8 ShouldSkipEncounterNuzlocke = 0;
 
 // The first transition is used if the enemy pokemon are lower level than our pokemon.
 // Otherwise, the second transition is used.
@@ -261,69 +266,36 @@ static const struct TrainerBattleParameter sTrainerBContinueScriptBattleParams[]
 
 const struct RematchTrainer gRematchTable[REMATCH_TABLE_ENTRIES] =
 {
-    [REMATCH_ROSE] = REMATCH(TRAINER_ROSE_1, TRAINER_ROSE_2, TRAINER_ROSE_3, TRAINER_ROSE_4, TRAINER_ROSE_5, ROUTE118),
-    [REMATCH_ANDRES] = REMATCH(TRAINER_ANDRES_1, TRAINER_ANDRES_2, TRAINER_ANDRES_3, TRAINER_ANDRES_4, TRAINER_ANDRES_5, ROUTE105),
-    [REMATCH_DUSTY] = REMATCH(TRAINER_DUSTY_1, TRAINER_DUSTY_2, TRAINER_DUSTY_3, TRAINER_DUSTY_4, TRAINER_DUSTY_5, ROUTE111),
-    [REMATCH_LOLA] = REMATCH(TRAINER_LOLA_1, TRAINER_LOLA_2, TRAINER_LOLA_3, TRAINER_LOLA_4, TRAINER_LOLA_5, ROUTE109),
-    [REMATCH_RICKY] = REMATCH(TRAINER_RICKY_1, TRAINER_RICKY_2, TRAINER_RICKY_3, TRAINER_RICKY_4, TRAINER_RICKY_5, ROUTE109),
     [REMATCH_LILA_AND_ROY] = REMATCH(TRAINER_LILA_AND_ROY_1, TRAINER_LILA_AND_ROY_2, TRAINER_LILA_AND_ROY_3, TRAINER_LILA_AND_ROY_4, TRAINER_LILA_AND_ROY_5, ROUTE124),
     [REMATCH_CRISTIN] = REMATCH(TRAINER_CRISTIN_1, TRAINER_CRISTIN_2, TRAINER_CRISTIN_3, TRAINER_CRISTIN_4, TRAINER_CRISTIN_5, ROUTE121),
-    [REMATCH_BROOKE] = REMATCH(TRAINER_BROOKE_1, TRAINER_BROOKE_2, TRAINER_BROOKE_3, TRAINER_BROOKE_4, TRAINER_BROOKE_5, ROUTE111),
-    [REMATCH_WILTON] = REMATCH(TRAINER_WILTON_1, TRAINER_WILTON_2, TRAINER_WILTON_3, TRAINER_WILTON_4, TRAINER_WILTON_5, ROUTE111),
-    [REMATCH_VALERIE] = REMATCH(TRAINER_VALERIE_1, TRAINER_VALERIE_2, TRAINER_VALERIE_3, TRAINER_VALERIE_4, TRAINER_VALERIE_5, MT_PYRE_6F),
-    [REMATCH_CINDY] = REMATCH(TRAINER_CINDY_1, TRAINER_CINDY_3, TRAINER_CINDY_4, TRAINER_CINDY_5, TRAINER_CINDY_6, ROUTE104),
-    [REMATCH_THALIA] = REMATCH(TRAINER_THALIA_1, TRAINER_THALIA_2, TRAINER_THALIA_3, TRAINER_THALIA_4, TRAINER_THALIA_5, ABANDONED_SHIP_ROOMS_1F),
-    [REMATCH_JESSICA] = REMATCH(TRAINER_JESSICA_1, TRAINER_JESSICA_2, TRAINER_JESSICA_3, TRAINER_JESSICA_4, TRAINER_JESSICA_5, ROUTE121),
-    [REMATCH_WINSTON] = REMATCH(TRAINER_WINSTON_1, TRAINER_WINSTON_2, TRAINER_WINSTON_3, TRAINER_WINSTON_4, TRAINER_WINSTON_5, ROUTE104),
-    [REMATCH_STEVE] = REMATCH(TRAINER_STEVE_1, TRAINER_STEVE_2, TRAINER_STEVE_3, TRAINER_STEVE_4, TRAINER_STEVE_5, ROUTE114),
-    [REMATCH_TONY] = REMATCH(TRAINER_TONY_1, TRAINER_TONY_2, TRAINER_TONY_3, TRAINER_TONY_4, TRAINER_TONY_5, ROUTE107),
-    [REMATCH_NOB] = REMATCH(TRAINER_NOB_1, TRAINER_NOB_2, TRAINER_NOB_3, TRAINER_NOB_4, TRAINER_NOB_5, ROUTE115),
     [REMATCH_KOJI] = REMATCH(TRAINER_KOJI_1, TRAINER_KOJI_2, TRAINER_KOJI_3, TRAINER_KOJI_4, TRAINER_KOJI_5, ROUTE127),
-    [REMATCH_FERNANDO] = REMATCH(TRAINER_FERNANDO_1, TRAINER_FERNANDO_2, TRAINER_FERNANDO_3, TRAINER_FERNANDO_4, TRAINER_FERNANDO_5, ROUTE123),
-    [REMATCH_DALTON] = REMATCH(TRAINER_DALTON_1, TRAINER_DALTON_2, TRAINER_DALTON_3, TRAINER_DALTON_4, TRAINER_DALTON_5, ROUTE118),
-    [REMATCH_BERNIE] = REMATCH(TRAINER_BERNIE_1, TRAINER_BERNIE_2, TRAINER_BERNIE_3, TRAINER_BERNIE_4, TRAINER_BERNIE_5, ROUTE114),
-    [REMATCH_ETHAN] = REMATCH(TRAINER_ETHAN_1, TRAINER_ETHAN_2, TRAINER_ETHAN_3, TRAINER_ETHAN_4, TRAINER_ETHAN_5, JAGGED_PASS),
     [REMATCH_JOHN_AND_JAY] = REMATCH(TRAINER_JOHN_AND_JAY_1, TRAINER_JOHN_AND_JAY_2, TRAINER_JOHN_AND_JAY_3, TRAINER_JOHN_AND_JAY_4, TRAINER_JOHN_AND_JAY_5, METEOR_FALLS_1F_2R),
-    [REMATCH_JEFFREY] = REMATCH(TRAINER_JEFFREY_1, TRAINER_JEFFREY_2, TRAINER_JEFFREY_3, TRAINER_JEFFREY_4, TRAINER_JEFFREY_5, ROUTE120),
-    [REMATCH_CAMERON] = REMATCH(TRAINER_CAMERON_1, TRAINER_CAMERON_2, TRAINER_CAMERON_3, TRAINER_CAMERON_4, TRAINER_CAMERON_5, ROUTE123),
-    [REMATCH_JACKI] = REMATCH(TRAINER_JACKI_1, TRAINER_JACKI_2, TRAINER_JACKI_3, TRAINER_JACKI_4, TRAINER_JACKI_5, ROUTE123),
-    [REMATCH_WALTER] = REMATCH(TRAINER_WALTER_1, TRAINER_WALTER_2, TRAINER_WALTER_3, TRAINER_WALTER_4, TRAINER_WALTER_5, ROUTE121),
-    [REMATCH_KAREN] = REMATCH(TRAINER_KAREN_1, TRAINER_KAREN_2, TRAINER_KAREN_3, TRAINER_KAREN_4, TRAINER_KAREN_5, ROUTE116),
-    [REMATCH_JERRY] = REMATCH(TRAINER_JERRY_1, TRAINER_JERRY_2, TRAINER_JERRY_3, TRAINER_JERRY_4, TRAINER_JERRY_5, ROUTE116),
-    [REMATCH_ANNA_AND_MEG] = REMATCH(TRAINER_ANNA_AND_MEG_1, TRAINER_ANNA_AND_MEG_2, TRAINER_ANNA_AND_MEG_3, TRAINER_ANNA_AND_MEG_4, TRAINER_ANNA_AND_MEG_5, ROUTE117),
     [REMATCH_ISABEL] = REMATCH(TRAINER_ISABEL_1, TRAINER_ISABEL_2, TRAINER_ISABEL_3, TRAINER_ISABEL_4, TRAINER_ISABEL_5, ROUTE110),
-    [REMATCH_MIGUEL] = REMATCH(TRAINER_MIGUEL_1, TRAINER_MIGUEL_2, TRAINER_MIGUEL_3, TRAINER_MIGUEL_4, TRAINER_MIGUEL_5, ROUTE103),
     [REMATCH_TIMOTHY] = REMATCH(TRAINER_TIMOTHY_1, TRAINER_TIMOTHY_2, TRAINER_TIMOTHY_3, TRAINER_TIMOTHY_4, TRAINER_TIMOTHY_5, ROUTE115),
     [REMATCH_SHELBY] = REMATCH(TRAINER_SHELBY_1, TRAINER_SHELBY_2, TRAINER_SHELBY_3, TRAINER_SHELBY_4, TRAINER_SHELBY_5, MT_CHIMNEY),
     [REMATCH_CALVIN] = REMATCH(TRAINER_CALVIN_1, TRAINER_CALVIN_2, TRAINER_CALVIN_3, TRAINER_CALVIN_4, TRAINER_CALVIN_5, ROUTE102),
-    [REMATCH_ELLIOT] = REMATCH(TRAINER_ELLIOT_1, TRAINER_ELLIOT_2, TRAINER_ELLIOT_3, TRAINER_ELLIOT_4, TRAINER_ELLIOT_5, ROUTE106),
     [REMATCH_ISAIAH] = REMATCH(TRAINER_ISAIAH_1, TRAINER_ISAIAH_2, TRAINER_ISAIAH_3, TRAINER_ISAIAH_4, TRAINER_ISAIAH_5, ROUTE128),
     [REMATCH_MARIA] = REMATCH(TRAINER_MARIA_1, TRAINER_MARIA_2, TRAINER_MARIA_3, TRAINER_MARIA_4, TRAINER_MARIA_5, ROUTE117),
     [REMATCH_ABIGAIL] = REMATCH(TRAINER_ABIGAIL_1, TRAINER_ABIGAIL_2, TRAINER_ABIGAIL_3, TRAINER_ABIGAIL_4, TRAINER_ABIGAIL_5, ROUTE110),
     [REMATCH_DYLAN] = REMATCH(TRAINER_DYLAN_1, TRAINER_DYLAN_2, TRAINER_DYLAN_3, TRAINER_DYLAN_4, TRAINER_DYLAN_5, ROUTE117),
     [REMATCH_KATELYN] = REMATCH(TRAINER_KATELYN_1, TRAINER_KATELYN_2, TRAINER_KATELYN_3, TRAINER_KATELYN_4, TRAINER_KATELYN_5, ROUTE128),
     [REMATCH_BENJAMIN] = REMATCH(TRAINER_BENJAMIN_1, TRAINER_BENJAMIN_2, TRAINER_BENJAMIN_3, TRAINER_BENJAMIN_4, TRAINER_BENJAMIN_5, ROUTE110),
-    [REMATCH_PABLO] = REMATCH(TRAINER_PABLO_1, TRAINER_PABLO_2, TRAINER_PABLO_3, TRAINER_PABLO_4, TRAINER_PABLO_5, ROUTE126),
     [REMATCH_NICOLAS] = REMATCH(TRAINER_NICOLAS_1, TRAINER_NICOLAS_2, TRAINER_NICOLAS_3, TRAINER_NICOLAS_4, TRAINER_NICOLAS_5, METEOR_FALLS_1F_2R),
     [REMATCH_ROBERT] = REMATCH(TRAINER_ROBERT_1, TRAINER_ROBERT_2, TRAINER_ROBERT_3, TRAINER_ROBERT_4, TRAINER_ROBERT_5, ROUTE120),
     [REMATCH_LAO] = REMATCH(TRAINER_LAO_1, TRAINER_LAO_2, TRAINER_LAO_3, TRAINER_LAO_4, TRAINER_LAO_5, ROUTE113),
     [REMATCH_CYNDY] = REMATCH(TRAINER_CYNDY_1, TRAINER_CYNDY_2, TRAINER_CYNDY_3, TRAINER_CYNDY_4, TRAINER_CYNDY_5, ROUTE115),
     [REMATCH_MADELINE] = REMATCH(TRAINER_MADELINE_1, TRAINER_MADELINE_2, TRAINER_MADELINE_3, TRAINER_MADELINE_4, TRAINER_MADELINE_5, ROUTE113),
-    [REMATCH_JENNY] = REMATCH(TRAINER_JENNY_1, TRAINER_JENNY_2, TRAINER_JENNY_3, TRAINER_JENNY_4, TRAINER_JENNY_5, ROUTE124),
     [REMATCH_DIANA] = REMATCH(TRAINER_DIANA_1, TRAINER_DIANA_2, TRAINER_DIANA_3, TRAINER_DIANA_4, TRAINER_DIANA_5, JAGGED_PASS),
     [REMATCH_AMY_AND_LIV] = REMATCH(TRAINER_AMY_AND_LIV_1, TRAINER_AMY_AND_LIV_2, TRAINER_AMY_AND_LIV_4, TRAINER_AMY_AND_LIV_5, TRAINER_AMY_AND_LIV_6, ROUTE103),
     [REMATCH_ERNEST] = REMATCH(TRAINER_ERNEST_1, TRAINER_ERNEST_2, TRAINER_ERNEST_3, TRAINER_ERNEST_4, TRAINER_ERNEST_5, ROUTE125),
-    [REMATCH_CORY] = REMATCH(TRAINER_CORY_1, TRAINER_CORY_2, TRAINER_CORY_3, TRAINER_CORY_4, TRAINER_CORY_5, ROUTE108),
     [REMATCH_EDWIN] = REMATCH(TRAINER_EDWIN_1, TRAINER_EDWIN_2, TRAINER_EDWIN_3, TRAINER_EDWIN_4, TRAINER_EDWIN_5, ROUTE110),
     [REMATCH_LYDIA] = REMATCH(TRAINER_LYDIA_1, TRAINER_LYDIA_2, TRAINER_LYDIA_3, TRAINER_LYDIA_4, TRAINER_LYDIA_5, ROUTE117),
     [REMATCH_ISAAC] = REMATCH(TRAINER_ISAAC_1, TRAINER_ISAAC_2, TRAINER_ISAAC_3, TRAINER_ISAAC_4, TRAINER_ISAAC_5, ROUTE117),
-    [REMATCH_GABRIELLE] = REMATCH(TRAINER_GABRIELLE_1, TRAINER_GABRIELLE_2, TRAINER_GABRIELLE_3, TRAINER_GABRIELLE_4, TRAINER_GABRIELLE_5, MT_PYRE_3F),
     [REMATCH_CATHERINE] = REMATCH(TRAINER_CATHERINE_1, TRAINER_CATHERINE_2, TRAINER_CATHERINE_3, TRAINER_CATHERINE_4, TRAINER_CATHERINE_5, ROUTE119),
     [REMATCH_JACKSON] = REMATCH(TRAINER_JACKSON_1, TRAINER_JACKSON_2, TRAINER_JACKSON_3, TRAINER_JACKSON_4, TRAINER_JACKSON_5, ROUTE119),
     [REMATCH_HALEY] = REMATCH(TRAINER_HALEY_1, TRAINER_HALEY_2, TRAINER_HALEY_3, TRAINER_HALEY_4, TRAINER_HALEY_5, ROUTE104),
     [REMATCH_JAMES] = REMATCH(TRAINER_JAMES_1, TRAINER_JAMES_2, TRAINER_JAMES_3, TRAINER_JAMES_4, TRAINER_JAMES_5, PETALBURG_WOODS),
     [REMATCH_TRENT] = REMATCH(TRAINER_TRENT_1, TRAINER_TRENT_2, TRAINER_TRENT_3, TRAINER_TRENT_4, TRAINER_TRENT_5, ROUTE112),
-    [REMATCH_SAWYER] = REMATCH(TRAINER_SAWYER_1, TRAINER_SAWYER_2, TRAINER_SAWYER_3, TRAINER_SAWYER_4, TRAINER_SAWYER_5, MT_CHIMNEY),
     [REMATCH_KIRA_AND_DAN] = REMATCH(TRAINER_KIRA_AND_DAN_1, TRAINER_KIRA_AND_DAN_2, TRAINER_KIRA_AND_DAN_3, TRAINER_KIRA_AND_DAN_4, TRAINER_KIRA_AND_DAN_5, ABANDONED_SHIP_ROOMS2_1F),
     [REMATCH_WALLY_VR] = REMATCH(TRAINER_WALLY_VR_2, TRAINER_WALLY_VR_3, TRAINER_WALLY_VR_4, TRAINER_WALLY_VR_5, TRAINER_WALLY_VR_5, VICTORY_ROAD_1F),
     [REMATCH_ROXANNE] = REMATCH(TRAINER_ROXANNE_1, TRAINER_ROXANNE_2, TRAINER_ROXANNE_3, TRAINER_ROXANNE_4, TRAINER_ROXANNE_5, RUSTBORO_CITY),
@@ -341,10 +313,64 @@ const struct RematchTrainer gRematchTable[REMATCH_TABLE_ENTRIES] =
     [REMATCH_WALLACE] = REMATCH(TRAINER_WALLACE, TRAINER_WALLACE, TRAINER_WALLACE, TRAINER_WALLACE, TRAINER_WALLACE, EVER_GRANDE_CITY),
 };
 
-static const u16 sBadgeFlags[NUM_BADGES] =
+const u8 NuzlockeLUT[] =
 {
-    FLAG_BADGE01_GET, FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_BADGE04_GET,
-    FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_BADGE07_GET, FLAG_BADGE08_GET,
+    [MAPSEC_ZONE_0]  = 0x0,
+    [MAPSEC_ZONE_1]  = 0x1,
+    [MAPSEC_ZONE_2]  = 0x2,
+    [MAPSEC_ZONE_3]  = 0x3,
+    [MAPSEC_ZONE_4]  = 0x4,
+    [MAPSEC_ZONE_5]  = 0x5,
+    [MAPSEC_ZONE_6]  = 0x6,
+    [MAPSEC_ZONE_7]  = 0x7,
+    [MAPSEC_ZONE_8]  = 0x8,
+    [MAPSEC_ZONE_9]  = 0x9,
+    [MAPSEC_ZONE_10] = 0xA,
+    [MAPSEC_ZONE_11] = 0xB,
+    [MAPSEC_ZONE_12] = 0xC,
+    [MAPSEC_ZONE_13] = 0xD,
+    [MAPSEC_ZONE_14] = 0xE,
+    [MAPSEC_ZONE_15] = 0xF,
+    [MAPSEC_ZONE_16] = 0x10,
+    [MAPSEC_ZONE_17] = 0x11,
+    [MAPSEC_ZONE_18] = 0x12,
+    [MAPSEC_ZONE_19] = 0x13,
+    [MAPSEC_ZONE_20] = 0x14,
+    [MAPSEC_ZONE_21] = 0x15,
+    [MAPSEC_ZONE_22] = 0x16,
+    [MAPSEC_ZONE_23] = 0x17,
+    [MAPSEC_ZONE_24] = 0x18,
+    [MAPSEC_ZONE_25] = 0x19,
+    [MAPSEC_ZONE_26] = 0x1A,
+    [MAPSEC_ZONE_27] = 0x1B,
+    [MAPSEC_ZONE_28] = 0x1C,
+    [MAPSEC_ZONE_29] = 0x1D,
+    [MAPSEC_ZONE_30] = 0x1E,
+    [MAPSEC_ZONE_31] = 0x1F,
+    [MAPSEC_ZONE_32] = 0x20,
+    [MAPSEC_ZONE_33] = 0x21,
+    [MAPSEC_ZONE_34] = 0x22,
+    [MAPSEC_ZONE_35] = 0x23,
+    [MAPSEC_ZONE_36] = 0x24,
+    [MAPSEC_ZONE_37] = 0x25,
+    [MAPSEC_ZONE_38] = 0x26,
+    [MAPSEC_ZONE_39] = 0x27,
+    [MAPSEC_ZONE_40] = 0x28,
+    [MAPSEC_ZONE_41] = 0x29,
+    [MAPSEC_ZONE_42] = 0x2A,
+    [MAPSEC_ZONE_43] = 0x2B,
+    [MAPSEC_ZONE_44] = 0x2C,
+    [MAPSEC_ZONE_45] = 0x2D,
+    [MAPSEC_ZONE_46] = 0x2E,
+    [MAPSEC_ZONE_47] = 0x2F,
+    [MAPSEC_ZONE_48] = 0x30,
+    [MAPSEC_ZONE_49] = 0x31,
+    [MAPSEC_ZONE_50] = 0x32,
+    [MAPSEC_ZONE_B1] = 0x33,
+    [MAPSEC_ZONE_B2] = 0x34,
+    [MAPSEC_ZONE_B3] = 0x35,
+    [MAPSEC_ZONE_B4] = 0x36,
+    [GLOBAL_NUZLOCKE_SWITCH] = 0x47
 };
 
 #define tState data[0]
@@ -428,11 +454,22 @@ void BattleSetup_StartWildBattle(void)
     if (GetSafariZoneFlag())
         DoSafariBattle();
     else
+        if (NuzlockeFlagGet(GLOBAL_NUZLOCKE_SWITCH))
+        {
+            ShouldSkipEncounterNuzlocke = IsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES));
+        }
         DoStandardWildBattle(FALSE);
 }
 
 void BattleSetup_StartDoubleWildBattle(void)
 {
+    if (NuzlockeFlagGet(GLOBAL_NUZLOCKE_SWITCH))
+    {
+        ShouldSkipEncounterNuzlocke = IsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES)) && IsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[1], MON_DATA_SPECIES));
+        // if you can catch both, should be 0 & 0 = 0 - no skip
+        // if you can only catch one, should be 0 & 1 = 0 - no skip
+        // if you can't catch either, should be 1 & 1 = 1 - skip because you can't catch either
+    }
     DoStandardWildBattle(TRUE);
 }
 
@@ -483,6 +520,10 @@ void DoStandardWildBattle_Debug(void)
 
 void BattleSetup_StartRoamerBattle(void)
 {
+    if (NuzlockeFlagGet(GLOBAL_NUZLOCKE_SWITCH))
+    {
+        ShouldSkipEncounterNuzlocke = IsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES));
+    }
     LockPlayerFieldControls();
     FreezeObjectEvents();
     StopPlayerAvatar();
@@ -551,6 +592,10 @@ void StartWallyTutorialBattle(void)
 
 void BattleSetup_StartScriptedWildBattle(void)
 {
+    if (NuzlockeFlagGet(GLOBAL_NUZLOCKE_SWITCH))
+    {
+        ShouldSkipEncounterNuzlocke = IsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES));
+    }
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = 0;
@@ -734,12 +779,65 @@ u8 BattleSetup_GetTerrainId(void)
     PlayerGetDestCoords(&x, &y);
     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
 
+    //Note: POND refers to underground water (so it will be darker there). FOREST refers to a forest area (so it will be darker there)
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE2A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE2A)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE2B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE2B)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE4A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE4A)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE4B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE4B)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE4C) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE4C)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE4D) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE4D)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE4E) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE4E)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE11A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE11A))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE17A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE17A))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE23A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE23A)))
+    {
+        if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
+        {
+            return BATTLE_TERRAIN_WATER;
+        }
+        else
+        {
+            return BATTLE_TERRAIN_FOREST;
+        }
+    }
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE22A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE22A))
+        return BATTLE_TERRAIN_SNOW;
     if (MetatileBehavior_IsTallGrass(tileBehavior))
         return BATTLE_TERRAIN_GRASS;
     if (MetatileBehavior_IsLongGrass(tileBehavior))
         return BATTLE_TERRAIN_LONG_GRASS;
+    if (MetatileBehavior_IsPuddle(tileBehavior))
+        return BATTLE_TERRAIN_GRASS;
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE10A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE10A))
+        return BATTLE_TERRAIN_DESERT;
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE24A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE24A))
+    {
+        if (MetatileBehavior_IsMountain(tileBehavior))
+        {
+            return BATTLE_TERRAIN_MOUNTAIN;
+        }
+        else
+        {
+            return BATTLE_TERRAIN_DESERT;
+        }
+    }
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE19D) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE19D)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25A)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25B)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25C) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25C)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25D) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25D)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25E) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25E)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25F)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25G) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25G)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25I) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25I)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25J) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25J)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25K) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25K)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25L) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25L)))
+    {
+        return BATTLE_TERRAIN_CAVE;
+    }
     if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))
-        return BATTLE_TERRAIN_SAND;
+        return BATTLE_TERRAIN_BEACH;
 
     switch (gMapHeader.mapType)
     {
@@ -752,6 +850,8 @@ u8 BattleSetup_GetTerrainId(void)
             return BATTLE_TERRAIN_BUILDING;
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
             return BATTLE_TERRAIN_POND;
+        if (gIsFishingEncounter)
+            return BATTLE_TERRAIN_POND;
         return BATTLE_TERRAIN_CAVE;
     case MAP_TYPE_INDOOR:
     case MAP_TYPE_SECRET_BASE:
@@ -761,28 +861,33 @@ u8 BattleSetup_GetTerrainId(void)
     case MAP_TYPE_OCEAN_ROUTE:
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
             return BATTLE_TERRAIN_WATER;
-        return BATTLE_TERRAIN_PLAIN;
+        if (MetatileBehavior_IsGrassTerrain(tileBehavior))
+            return BATTLE_TERRAIN_GRASS;
+        return BATTLE_TERRAIN_BEACH;
     }
     if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior))
         return BATTLE_TERRAIN_WATER;
     if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
-        return BATTLE_TERRAIN_POND;
+        return BATTLE_TERRAIN_WATER;
     if (MetatileBehavior_IsMountain(tileBehavior))
         return BATTLE_TERRAIN_MOUNTAIN;
     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
     {
         // Is BRIDGE_TYPE_POND_*?
-        if (MetatileBehavior_GetBridgeType(tileBehavior) != BRIDGE_TYPE_OCEAN)
-            return BATTLE_TERRAIN_POND;
+        if (MetatileBehavior_GetBridgeType(tileBehavior))
+            return BATTLE_TERRAIN_WATER;
 
         if (MetatileBehavior_IsBridgeOverWater(tileBehavior) == TRUE)
             return BATTLE_TERRAIN_WATER;
     }
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE113) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE113))
-        return BATTLE_TERRAIN_SAND;
+    if (gIsFishingEncounter)
+        return BATTLE_TERRAIN_WATER;
+    if(MetatileBehavior_IsBridgeTerrain(tileBehavior))
+        return BATTLE_TERRAIN_BRIDGE;
     if (GetSavedWeather() == WEATHER_SANDSTORM)
-        return BATTLE_TERRAIN_SAND;
-
+        return BATTLE_TERRAIN_BEACH;
+    if (MetatileBehavior_IsGrassTerrain(tileBehavior))
+        return BATTLE_TERRAIN_GRASS;
     return BATTLE_TERRAIN_PLAIN;
 }
 
@@ -881,6 +986,8 @@ u8 GetTrainerBattleTransition(void)
     if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
         return B_TRANSITION_CHAMPION;
 
+    if (gTrainers[gTrainerBattleOpponent_A].hasCustomTransition)
+        return gTrainers[gTrainerBattleOpponent_A].transition;
     if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_ELITE_FOUR)
     {
         if (gTrainerBattleOpponent_A == TRAINER_SIDNEY)
@@ -972,6 +1079,8 @@ u8 GetSpecialBattleTransition(s32 id)
 
 void ChooseStarter(void)
 {
+    u16 randomSeed = (Random() % 8) + (Random() % 8) * 8+ (Random() % 8) * 64;
+    VarSet(VAR_RAND_STARTER_SEED, randomSeed);
     SetMainCallback2(CB2_ChooseStarter);
     gMain.savedCallback = CB2_GiveStarter;
 }
@@ -984,9 +1093,10 @@ static void CB2_GiveStarter(void)
     starterMon = GetStarterPokemon(gSpecialVar_Result);
     ScriptGiveMon(starterMon, 5, ITEM_NONE, 0, 0, 0);
     ResetTasks();
-    PlayBattleBGM();
+    // PlayBattleBGM();
     SetMainCallback2(CB2_StartFirstBattle);
-    BattleTransition_Start(B_TRANSITION_BLUR);
+    // BattleTransition_Start(B_TRANSITION_BLUR);
+    BeginNormalPaletteFade(PALETTES_ALL, -1, 0, 16, 0);
 }
 
 static void CB2_StartFirstBattle(void)
@@ -994,18 +1104,20 @@ static void CB2_StartFirstBattle(void)
     UpdatePaletteFade();
     RunTasks();
 
-    if (IsBattleTransitionDone() == TRUE)
+    // if (IsBattleTransitionDone() == TRUE)
+    if (!gPaletteFade.active)
     {
         gBattleTypeFlags = BATTLE_TYPE_FIRST_BATTLE;
         gMain.savedCallback = CB2_EndFirstBattle;
         FreeAllWindowBuffers();
-        SetMainCallback2(CB2_InitBattle);
-        RestartWildEncounterImmunitySteps();
-        ClearPoisonStepCounter();
-        IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
-        IncrementGameStat(GAME_STAT_WILD_BATTLES);
-        IncrementDailyWildBattles();
-        TryUpdateGymLeaderRematchFromWild();
+        // SetMainCallback2(CB2_InitBattle);
+        SetMainCallback2(CB2_EndFirstBattle);
+        // RestartWildEncounterImmunitySteps();
+        // ClearPoisonStepCounter();
+        // IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
+        // IncrementGameStat(GAME_STAT_WILD_BATTLES);
+        // IncrementDailyWildBattles();
+        // TryUpdateGymLeaderRematchFromWild();
     }
 }
 
@@ -1335,6 +1447,11 @@ void ClearTrainerFlag(u16 trainerId)
 
 void BattleSetup_StartTrainerBattle(void)
 {
+    if (FlagGet(FLAG_SHOULD_1V2))
+    {
+        gNoOfApproachingTrainers = 2;
+        FlagClear(FLAG_SHOULD_1V2);
+    }
     if (gNoOfApproachingTrainers == 2)
         gBattleTypeFlags = (BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_TRAINER);
     else
@@ -1681,14 +1798,15 @@ s32 TrainerIdToRematchTableId(const struct RematchTrainer *table, u16 trainerId)
 
 // Returns TRUE if the given trainer (by their entry in the rematch table) is not allowed to have rematches.
 // This applies to the Elite Four and Victory Road Wally (if he's not been defeated yet)
-static bool32 IsRematchForbidden(s32 rematchTableId)
+static bool32 UNUSED IsRematchForbidden(s32 rematchTableId)
 {
-    if (rematchTableId >= REMATCH_ELITE_FOUR_ENTRIES)
-        return TRUE;
-    else if (rematchTableId == REMATCH_WALLY_VR)
-        return !FlagGet(FLAG_DEFEATED_WALLY_VICTORY_ROAD);
-    else
-        return FALSE;
+    return TRUE;
+    // if (rematchTableId >= REMATCH_ELITE_FOUR_ENTRIES)
+    //     return TRUE;
+    // else if (rematchTableId == REMATCH_WALLY_VR)
+    //     return !FlagGet(FLAG_DEFEATED_WALLY_VICTORY_ROAD);
+    // else
+    //     return FALSE;
 }
 
 static void SetRematchIdForTrainer(const struct RematchTrainer *table, u32 tableId)
@@ -1705,10 +1823,10 @@ static void SetRematchIdForTrainer(const struct RematchTrainer *table, u32 table
             break;
     }
 
-    gSaveBlock1Ptr->trainerRematches[tableId] = i;
+    // gSaveBlock1Ptr->trainerRematches[tableId] = i;
 }
 
-static bool32 DoesCurrentMapMatchRematchTrainerMap(s32 i, const struct RematchTrainer *table, u16 mapGroup, u16 mapNum)
+static bool32 UNUSED DoesCurrentMapMatchRematchTrainerMap(s32 i, const struct RematchTrainer *table, u16 mapGroup, u16 mapNum)
 {
     return table[i].mapGroup == mapGroup && table[i].mapNum == mapNum;
 }
@@ -1718,30 +1836,30 @@ bool32 TrainerIsMatchCallRegistered(s32 i)
     return FlagGet(FLAG_MATCH_CALL_REGISTERED + i);
 }
 
-static bool32 UpdateRandomTrainerRematches(const struct RematchTrainer *table, u16 mapGroup, u16 mapNum)
+static bool32 UNUSED UpdateRandomTrainerRematches(const struct RematchTrainer *table, u16 mapGroup, u16 mapNum)
 {
-    s32 i;
+    // s32 i;
 
-    if (CheckBagHasItem(ITEM_VS_SEEKER, 1) && I_VS_SEEKER_CHARGING != 0)
-        return FALSE;
+    // if (CheckBagHasItem(ITEM_VS_SEEKER, 1) && I_VS_SEEKER_CHARGING != 0)
+    //     return FALSE;
 
-    for (i = 0; i <= REMATCH_SPECIAL_TRAINER_START; i++)
-    {
-        if (DoesCurrentMapMatchRematchTrainerMap(i,table,mapGroup,mapNum) && !IsRematchForbidden(i))
-            continue;
+    // for (i = 0; i <= REMATCH_SPECIAL_TRAINER_START; i++)
+    // {
+    //     if (DoesCurrentMapMatchRematchTrainerMap(i,table,mapGroup,mapNum) && !IsRematchForbidden(i))
+    //         continue;
 
-        if (gSaveBlock1Ptr->trainerRematches[i] != 0)
-        {
-            // Trainer already wants a rematch. Don't bother updating it.
-            return TRUE;
-        }
-        else if (TrainerIsMatchCallRegistered(i) && ((Random() % 100) <= 30))
-            // 31% chance of getting a rematch.
-        {
-            SetRematchIdForTrainer(table, i);
-            return TRUE;
-        }
-    }
+    //     if (gSaveBlock1Ptr->trainerRematches[i] != 0)
+    //     {
+    //         // Trainer already wants a rematch. Don't bother updating it.
+    //         return TRUE;
+    //     }
+    //     else if (TrainerIsMatchCallRegistered(i) && ((Random() % 100) <= 30))
+    //         // 31% chance of getting a rematch.
+    //     {
+    //         SetRematchIdForTrainer(table, i);
+    //         return TRUE;
+    //     }
+    // }
 
     return FALSE;
 }
@@ -1754,13 +1872,13 @@ void UpdateRematchIfDefeated(s32 rematchTableId)
 
 static bool32 DoesSomeoneWantRematchIn_(const struct RematchTrainer *table, u16 mapGroup, u16 mapNum)
 {
-    s32 i;
+    // s32 i;
 
-    for (i = 0; i < REMATCH_TABLE_ENTRIES; i++)
-    {
-        if (table[i].mapGroup == mapGroup && table[i].mapNum == mapNum && gSaveBlock1Ptr->trainerRematches[i] != 0)
-            return TRUE;
-    }
+    // for (i = 0; i < REMATCH_TABLE_ENTRIES; i++)
+    // {
+    //     if (table[i].mapGroup == mapGroup && table[i].mapNum == mapNum && gSaveBlock1Ptr->trainerRematches[i] != 0)
+    //         return TRUE;
+    // }
 
     return FALSE;
 }
@@ -1780,28 +1898,28 @@ static bool32 IsRematchTrainerIn_(const struct RematchTrainer *table, u16 mapGro
 
 static bool8 IsFirstTrainerIdReadyForRematch(const struct RematchTrainer *table, u16 firstBattleTrainerId)
 {
-    s32 tableId = FirstBattleTrainerIdToRematchTableId(table, firstBattleTrainerId);
+    // s32 tableId = FirstBattleTrainerIdToRematchTableId(table, firstBattleTrainerId);
 
-    if (tableId == -1)
-        return FALSE;
-    if (tableId >= MAX_REMATCH_ENTRIES)
-        return FALSE;
-    if (gSaveBlock1Ptr->trainerRematches[tableId] == 0)
-        return FALSE;
+    // if (tableId == -1)
+    //     return FALSE;
+    // if (tableId >= MAX_REMATCH_ENTRIES)
+    //     return FALSE;
+    // if (gSaveBlock1Ptr->trainerRematches[tableId] == 0)
+    //     return FALSE;
 
     return TRUE;
 }
 
 static bool8 IsTrainerReadyForRematch_(const struct RematchTrainer *table, u16 trainerId)
 {
-    s32 tableId = TrainerIdToRematchTableId(table, trainerId);
+    // s32 tableId = TrainerIdToRematchTableId(table, trainerId);
 
-    if (tableId == -1)
-        return FALSE;
-    if (tableId >= MAX_REMATCH_ENTRIES)
-        return FALSE;
-    if (gSaveBlock1Ptr->trainerRematches[tableId] == 0)
-        return FALSE;
+    // if (tableId == -1)
+    //     return FALSE;
+    // if (tableId >= MAX_REMATCH_ENTRIES)
+    //     return FALSE;
+    // if (gSaveBlock1Ptr->trainerRematches[tableId] == 0)
+    //     return FALSE;
 
     return TRUE;
 }
@@ -1850,10 +1968,10 @@ static u16 GetLastBeatenRematchTrainerIdFromTable(const struct RematchTrainer *t
 
 static void ClearTrainerWantRematchState(const struct RematchTrainer *table, u16 firstBattleTrainerId)
 {
-    s32 tableId = TrainerIdToRematchTableId(table, firstBattleTrainerId);
+    // s32 tableId = TrainerIdToRematchTableId(table, firstBattleTrainerId);
 
-    if (tableId != -1)
-        gSaveBlock1Ptr->trainerRematches[tableId] = 0;
+    // if (tableId != -1)
+    //     gSaveBlock1Ptr->trainerRematches[tableId] = 0;
 }
 
 static u32 GetTrainerMatchCallFlag(u32 trainerId)
@@ -1891,18 +2009,18 @@ static bool8 WasSecondRematchWon(const struct RematchTrainer *table, u16 firstBa
     return TRUE;
 }
 
-static bool32 HasAtLeastFiveBadges(void)
+static bool32 UNUSED HasAtLeastFiveBadges(void)
 {
-    s32 i, count;
+    // s32 i, count;
 
-    for (count = 0, i = 0; i < ARRAY_COUNT(sBadgeFlags); i++)
-    {
-        if (FlagGet(sBadgeFlags[i]) == TRUE)
-        {
-            if (++count >= 5)
-                return TRUE;
-        }
-    }
+    // for (count = 0, i = 0; i < ARRAY_COUNT(sBadgeFlags); i++)
+    // {
+    //     if (FlagGet(sBadgeFlags[i]) == TRUE)
+    //     {
+    //         if (++count >= 5)
+    //             return TRUE;
+    //     }
+    // }
 
     return FALSE;
 }
@@ -1911,29 +2029,30 @@ static bool32 HasAtLeastFiveBadges(void)
 
 void IncrementRematchStepCounter(void)
 {
-    if (HasAtLeastFiveBadges()
-        && (I_VS_SEEKER_CHARGING != 0)
-        && (!CheckBagHasItem(ITEM_VS_SEEKER, 1)))
-    {
-        if (gSaveBlock1Ptr->trainerRematchStepCounter >= STEP_COUNTER_MAX)
-            gSaveBlock1Ptr->trainerRematchStepCounter = STEP_COUNTER_MAX;
-        else
-            gSaveBlock1Ptr->trainerRematchStepCounter++;
-    }
+    // if (HasAtLeastFiveBadges()
+    //     && (I_VS_SEEKER_CHARGING != 0)
+    //     && (!CheckBagHasItem(ITEM_VS_SEEKER, 1)))
+    // {
+    //     if (gSaveBlock1Ptr->trainerRematchStepCounter >= STEP_COUNTER_MAX)
+    //         gSaveBlock1Ptr->trainerRematchStepCounter = STEP_COUNTER_MAX;
+    //     else
+    //         gSaveBlock1Ptr->trainerRematchStepCounter++;
+    // }
 }
 
-static bool32 IsRematchStepCounterMaxed(void)
+static bool32 UNUSED IsRematchStepCounterMaxed(void)
 {
-    if (HasAtLeastFiveBadges() && gSaveBlock1Ptr->trainerRematchStepCounter >= STEP_COUNTER_MAX)
-        return TRUE;
-    else
-        return FALSE;
+    // if (HasAtLeastFiveBadges() && gSaveBlock1Ptr->trainerRematchStepCounter >= STEP_COUNTER_MAX)
+    //     return TRUE;
+    // else
+    //     return FALSE;
+    return FALSE;
 }
 
 void TryUpdateRandomTrainerRematches(u16 mapGroup, u16 mapNum)
 {
-    if (IsRematchStepCounterMaxed() && UpdateRandomTrainerRematches(gRematchTable, mapGroup, mapNum) == TRUE)
-        gSaveBlock1Ptr->trainerRematchStepCounter = 0;
+    // if (IsRematchStepCounterMaxed() && UpdateRandomTrainerRematches(gRematchTable, mapGroup, mapNum) == TRUE)
+    //     gSaveBlock1Ptr->trainerRematchStepCounter = 0;
 }
 
 bool32 DoesSomeoneWantRematchIn(u16 mapGroup, u16 mapNum)
@@ -2012,4 +2131,24 @@ u16 CountBattledRematchTeams(u16 trainerId)
     }
 
     return i;
+}
+
+u8 IsCaptureBlockedBySpeciesClause(u16 species)
+{
+    u8 i;
+    if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
+        return TRUE;
+    
+    for (i = 0; i < EVOS_PER_LINE; i++)
+    {
+        u16 mon = gEvolutionLines[species][i];
+        if (mon != SPECIES_NONE)
+        {
+            if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(mon), FLAG_GET_CAUGHT))
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
 }

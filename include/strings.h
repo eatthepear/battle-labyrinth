@@ -48,11 +48,14 @@ extern const u8 gText_Cute2[];
 extern const u8 gText_Smart2[];
 extern const u8 gText_Tough2[];
 
-extern const u8 gText_Items[];
+extern const u8 gText_Treasures[];
 extern const u8 gText_Key_Items[];
 extern const u8 gText_Poke_Balls[];
 extern const u8 gText_TMs_Hms[];
 extern const u8 gText_Berries2[];
+extern const u8 gText_Medicine[];
+extern const u8 gText_BattleItems[];
+extern const u8 gText_Consumables[];
 
 extern const u8 gText_Single2[];
 extern const u8 gText_Double2[];
@@ -256,6 +259,8 @@ extern const u8 gText_MenuOption[];
 extern const u8 gText_MenuExit[];
 extern const u8 gText_MenuRetire[];
 extern const u8 gText_MenuRest[];
+extern const u8 gText_MenuReturn[];
+extern const u8 gText_MenuDexNav[];
 extern const u8 gText_Floor1[];
 extern const u8 gText_Floor2[];
 extern const u8 gText_Floor3[];
@@ -287,6 +292,7 @@ extern const u8 gText_SavingPlayer[];
 extern const u8 gText_SavingBadges[];
 extern const u8 gText_SavingPokedex[];
 extern const u8 gText_SavingTime[];
+extern const u8 gText_SavingMode[];
 
 // Battle pyramid menu texts
 extern const u8 gText_BattlePyramidConfirmRest[];
@@ -523,6 +529,7 @@ extern const u8 gText_SpDef[];
 extern const u8 gText_Speed[];
 extern const u8 gText_Dash[];
 extern const u8 gText_Plus[];
+extern const u8 gText_Nickname[];
 
 //pokedex text
 extern const u8 gText_CryOf[];
@@ -928,6 +935,7 @@ extern const u8 gText_Gabby[];
 extern const u8 gText_Anna[];
 
 extern const u8 gText_DadsAdvice[];
+extern const u8 gText_PlaceholderMint[];
 extern const u8 gText_CantDismountBike[];
 extern const u8 gText_ItemFinderNothing[];
 extern const u8 gText_ItemFinderNearby[];
@@ -976,9 +984,18 @@ extern const u8 gText_XNatureHatchedAtYZ[];
 extern const u8 gText_XNatureHatchedSomewhereAt[];
 extern const u8 gText_XNatureMetAtYZ[];
 extern const u8 gText_XNatureMetSomewhereAt[];
+extern const u8 gText_XNatureGivenAt[];
 extern const u8 gText_XNatureFatefulEncounter[];
 extern const u8 gText_XNatureProbablyMetAt[];
 extern const u8 gText_XNatureObtainedInTrade[];
+
+extern const u8 gText_XNatureBoughtBug[];
+extern const u8 gText_XNatureBoughtPikaClone[];
+extern const u8 gText_XNatureBoughtFarm[];
+extern const u8 gText_XNatureAdopted[];
+extern const u8 gText_XNatureRevived[];
+extern const u8 gText_XNatureBoughtRuin[];
+
 extern const u8 gText_EmptyString5[];
 extern const u8 gText_EggWillTakeALongTime[];
 extern const u8 gText_EggAboutToHatch[];
@@ -1024,6 +1041,7 @@ extern const u8 gText_ThankYouIllSendItHome[];
 extern const u8 gText_ThanksIllSendItHome[];
 extern const u8 gText_SpaceForVar1Full[];
 extern const u8 gText_ThrowInPremierBall[];
+extern const u8 gText_ThrowInSuperPotion[];
 extern const u8 gText_ShopBuy[];
 extern const u8 gText_ShopSell[];
 extern const u8 gText_ShopQuit[];
@@ -2556,6 +2574,18 @@ extern const u8 gText_PokedollarVar1[];
 extern const u8 gText_EmptyString6[];
 extern const u8 gText_TrainerCardPokedex[];
 extern const u8 gText_TrainerCardTime[];
+extern const u8 gText_TrainerCardMode[];
+extern const u8 gText_TrainerCardDefault[];
+extern const u8 gText_TrainerCardBrutal[];
+extern const u8 gText_TrainerCardInfinite[];
+extern const u8 gText_TrainerCardVanilla[];
+extern const u8 gText_TrainerCardRandomizer[];
+extern const u8 gText_TrainerCardNuzlocke[];
+extern const u8 gText_TrainerCardRandomlocke[];
+extern const u8 gText_TrainerCardZonesCompleted[];
+extern const u8 gText_TrainerCardLevelCap[];
+extern const u8 gText_TrainerCardOpponentsRemaining[];
+extern const u8 gText_TrainerCardItemsRemaining[];
 extern const u8 gText_Colon2[];
 extern const u8 gText_Var1sTrainerCard[];
 extern const u8 gText_HallOfFameDebut[];
@@ -3009,6 +3039,131 @@ extern const u8 gText_Toughness[];
 extern const u8 gText_Smartness[];
 extern const u8 gText_Cuteness[];
 extern const u8 gText_Beauty3[];
+
+//custom ones
+extern const u8 gText_Difficulty[];
+extern const u8 gText_Mode[];
+extern const u8 gText_Game[];
+extern const u8 gText_Music[];
+
+extern const u8 gText_MandatoryFoes[];
+extern const u8 gText_BattleDifficulty[];
+extern const u8 gText_InBattleItems[];
+extern const u8 gText_EVs[];
+extern const u8 gText_PPCosts[];
+extern const u8 gText_ExpAll[];
+extern const u8 gText_Farming[];
+extern const u8 gText_Grinding[];
+extern const u8 gText_HelperNPCs[];
+extern const u8 gText_HiddenItems[];
+extern const u8 gText_TMs[];
+extern const u8 gText_RetireZone[];
+extern const u8 gText_TrainerRewards[];
+extern const u8 gText_Surveil[];
+
+extern const u8 gText_WildBattle[];
+extern const u8 gText_TrainerBattle[];
+extern const u8 gText_LeviathanBattle[];
+extern const u8 gText_RSE[];
+extern const u8 gText_FRLG[];
+extern const u8 gText_DPPt[];
+extern const u8 gText_HGSSJohto[];
+extern const u8 gText_HGSSKanto[];
+extern const u8 gText_BW[];
+extern const u8 gText_Default[];
+extern const u8 gText_Brutal[];
+extern const u8 gText_Infinite[];
+extern const u8 gText_ContinueMenuZone[];
+extern const u8 gText_ContinueMenuRandomizer[];
+extern const u8 gText_ContinueMenuNuzlocke[];
+extern const u8 gText_ContinueMenuRandomlocke[];
+extern const u8 gText_ContinueMenuBrutal[];
+extern const u8 gText_ContinueMenuBrutalRandomizer[];
+extern const u8 gText_ContinueMenuBrutalNuzlocke[];
+extern const u8 gText_ContinueMenuBrutalRandomlocke[];
+extern const u8 gText_ContinueMenuInfinite[];
+extern const u8 gText_ContinueMenuInfiniteRandomizer[];
+extern const u8 gText_ContinueMenuInfiniteNuzlocke[];
+extern const u8 gText_ContinueMenuInfiniteRandomlocke[];
+extern const u8 gText_SaveMenuRandomizer[];
+extern const u8 gText_SaveMenuNuzlocke[];
+extern const u8 gText_SaveMenuRandomlocke[];
+extern const u8 gText_SaveMenuBrutal[];
+extern const u8 gText_SaveMenuBrutalRandomizer[];
+extern const u8 gText_SaveMenuBrutalNuzlocke[];
+extern const u8 gText_SaveMenuBrutalRandomlocke[];
+extern const u8 gText_SaveMenuInfinite[];
+extern const u8 gText_SaveMenuInfiniteRandomizer[];
+extern const u8 gText_SaveMenuInfiniteNuzlocke[];
+extern const u8 gText_SaveMenuInfiniteRandomlocke[];
+extern const u8 gText_NextZone[];
+extern const u8 gText_Settings[];
+extern const u8 gText_Documentation[];
+
+extern const u8 gText_TrainingService[];
+extern const u8 gText_MoveReminderService[];
+extern const u8 gText_MoveTutorService[];
+extern const u8 gText_OtherService[];
+
+extern const u8 gText_ExpTraining[];
+extern const u8 gText_EVTraining[];
+extern const u8 gText_Lelouch_HP[];
+extern const u8 gText_Lelouch_Attack[];
+extern const u8 gText_Lelouch_Defense[];
+extern const u8 gText_Lelouch_SpAtk[];
+extern const u8 gText_Lelouch_SpDef[];
+extern const u8 gText_Lelouch_Speed[];
+
+extern const u8 gText_Lelouch_252[];
+extern const u8 gText_Lelouch_200[];
+extern const u8 gText_Lelouch_100[];
+extern const u8 gText_Lelouch_4[];
+extern const u8 gText_Lelouch_0[];
+extern const u8 gText_Lelouch_31[];
+extern const u8 gText_Lelouch_30[];
+extern const u8 gText_Lelouch_1[];
+
+extern const u8 gText_LelouchShouldTrain[];
+extern const u8 gText_LelouchReachedLevelCap[];
+
+extern const u8 gText_AttackMints[];
+extern const u8 gText_DefenseMints[];
+extern const u8 gText_SpAttackMints[];
+extern const u8 gText_SpDefenseMints[];
+extern const u8 gText_SpeedMints[];
+extern const u8 gText_NeutralMints[];
+
+extern const u8 gText_OneFreshWater[];
+extern const u8 gText_TenFreshWater[];
+
+extern const u8 gText_Vaporeon[];
+extern const u8 gText_Jolteon[];
+extern const u8 gText_Flareon[];
+extern const u8 gText_Espeon[];
+extern const u8 gText_Umbreon[];
+extern const u8 gText_Leafeon[];
+extern const u8 gText_Glaceon[];
+extern const u8 gText_Sylveon[];
+
+extern const u8 gText_Grubbin[];
+extern const u8 gText_Sewaddle[];
+extern const u8 gText_Venipede[];
+extern const u8 gText_Blipbug[];
+
+extern const u8 gText_Pachirisu[];
+extern const u8 gText_Emolga[];
+extern const u8 gText_Dedenne[];
+extern const u8 gText_Morpeko[];
+
+extern const u8 gMenuText_Move[];
+extern const u8 gText_MoveItemWhere[];
+extern const u8 gText_XsYAnd[];
+extern const u8 gText_XsYWereSwapped[];
+
+extern const u8 gText_EnemyPreview[];
+
+extern const u8 gText_Common[];
+extern const u8 gText_Field[];
 
 // Berry Blender
 extern const u8 gText_SavingDontTurnOff2[];

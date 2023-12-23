@@ -569,6 +569,18 @@ void HandleAction_UseItem(void)
     gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
 }
 
+void HandleAction_SurveilEnemyParty(void)
+{
+    gBattlerAttacker = gBattlerTarget = gBattlerByTurnOrder[gCurrentTurnActionNumber];
+    gBattle_BG0_X = 0;
+    gBattle_BG0_Y = 0;
+    ClearVariousBattlerFlags(gBattlerAttacker);
+
+    gLastUsedItem = gBattleResources->bufferB[gBattlerAttacker][1] | (gBattleResources->bufferB[gBattlerAttacker][2] << 8);
+    gBattlescriptCurrInstr = gBattlescriptsForUsingItem[ItemId_GetBattleUsage(gLastUsedItem) - 1];
+    gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
+}
+
 bool32 TryRunFromBattle(u32 battler)
 {
     bool32 effect = FALSE;
@@ -3629,7 +3641,7 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
             gBattleStruct->atkCancellerTracker++;
             break;
         case CANCELLER_PARALYSED: // paralysis
-            if (!gBattleStruct->isAtkCancelerForCalledMove && (gBattleMons[gBattlerAttacker].status1 & STATUS1_PARALYSIS) && !RandomPercentage(RNG_PARALYSIS, 75))
+            if (!gBattleStruct->isAtkCancelerForCalledMove && (gBattleMons[gBattlerAttacker].status1 & STATUS1_PARALYSIS) && !RandomPercentage(RNG_PARALYSIS, 75) && (GetBattlerAbility(gBattlerAttacker) != ABILITY_QUICK_FEET))
             {
                 gProtectStructs[gBattlerAttacker].prlzImmobility = TRUE;
                 // This is removed in FRLG and Emerald for some reason
@@ -8148,25 +8160,26 @@ u8 IsMonDisobedient(void)
             return 0;
         if (B_OBEDIENCE_MECHANICS < GEN_8 && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
             return 0;
-        if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
-            return 0;
+        return 0;
+        // if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
+        //     return 0;
 
-        obedienceLevel = 10;
+        // obedienceLevel = 10;
 
-        if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
-            obedienceLevel = 20;
-        if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
-            obedienceLevel = 30;
-        if (FlagGet(FLAG_BADGE03_GET)) // Dynamo Badge
-            obedienceLevel = 40;
-        if (FlagGet(FLAG_BADGE04_GET)) // Heat Badge
-            obedienceLevel = 50;
-        if (FlagGet(FLAG_BADGE05_GET)) // Balance Badge
-            obedienceLevel = 60;
-        if (FlagGet(FLAG_BADGE06_GET)) // Feather Badge
-            obedienceLevel = 70;
-        if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
-            obedienceLevel = 80;
+        // if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
+        //     obedienceLevel = 20;
+        // if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
+        //     obedienceLevel = 30;
+        // if (FlagGet(FLAG_BADGE03_GET)) // Dynamo Badge
+        //     obedienceLevel = 40;
+        // if (FlagGet(FLAG_BADGE04_GET)) // Heat Badge
+        //     obedienceLevel = 50;
+        // if (FlagGet(FLAG_BADGE05_GET)) // Balance Badge
+        //     obedienceLevel = 60;
+        // if (FlagGet(FLAG_BADGE06_GET)) // Feather Badge
+        //     obedienceLevel = 70;
+        // if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
+        //     obedienceLevel = 80;
     }
 
     if (B_OBEDIENCE_MECHANICS >= GEN_8
@@ -9418,12 +9431,12 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
         break;
     }
 
-    // The offensive stats of a Player's Pokémon are boosted by x1.1 (+10%) if they have the 1st badge and 7th badges.
-    // Having the 1st badge boosts physical attack while having the 7th badge boosts special attack.
-    if (ShouldGetStatBadgeBoost(FLAG_BADGE01_GET, battlerAtk) && IS_MOVE_PHYSICAL(move))
-        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.1));
-    if (ShouldGetStatBadgeBoost(FLAG_BADGE07_GET, battlerAtk) && IS_MOVE_SPECIAL(move))
-        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.1));
+    // // The offensive stats of a Player's Pokémon are boosted by x1.1 (+10%) if they have the 1st badge and 7th badges.
+    // // Having the 1st badge boosts physical attack while having the 7th badge boosts special attack.
+    // if (ShouldGetStatBadgeBoost(FLAG_BADGE01_GET, battlerAtk) && IS_MOVE_PHYSICAL(move))
+    //     modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.1));
+    // if (ShouldGetStatBadgeBoost(FLAG_BADGE07_GET, battlerAtk) && IS_MOVE_SPECIAL(move))
+    //     modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.1));
 
     return uq4_12_multiply_by_int_half_down(modifier, atkStat);
 }
@@ -9589,10 +9602,10 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
 
     // The defensive stats of a Player's Pokémon are boosted by x1.1 (+10%) if they have the 5th badge and 7th badges.
     // Having the 5th badge boosts physical defense while having the 7th badge boosts special defense.
-    if (ShouldGetStatBadgeBoost(FLAG_BADGE05_GET, battlerDef) && IS_MOVE_PHYSICAL(move))
-        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.1));
-    if (ShouldGetStatBadgeBoost(FLAG_BADGE07_GET, battlerDef) && IS_MOVE_SPECIAL(move))
-        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.1));
+    // if (ShouldGetStatBadgeBoost(FLAG_BADGE05_GET, battlerDef) && IS_MOVE_PHYSICAL(move))
+    //     modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.1));
+    // if (ShouldGetStatBadgeBoost(FLAG_BADGE07_GET, battlerDef) && IS_MOVE_SPECIAL(move))
+    //     modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.1));
 
     return uq4_12_multiply_by_int_half_down(modifier, defStat);
 }
@@ -10279,7 +10292,7 @@ bool32 CanMegaEvolve(u32 battler)
         return FALSE;
 
     // Check if trainer already mega evolved a pokemon.
-    if (mega->alreadyEvolved[battlerPosition])
+    if (mega->alreadyEvolved[battlerPosition] && (GetBattlerSide(battler) == B_SIDE_PLAYER))
         return FALSE;
 
     // Cannot use z move and mega evolve on same turn
@@ -10288,7 +10301,8 @@ bool32 CanMegaEvolve(u32 battler)
 
     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE
      && IsPartnerMonFromSameTrainer(battler)
-     && (mega->alreadyEvolved[partnerPosition] || (mega->toEvolve & gBitTable[BATTLE_PARTNER(battler)])))
+     && ((mega->alreadyEvolved[partnerPosition] || (mega->toEvolve & gBitTable[BATTLE_PARTNER(battler)]))
+     && (GetBattlerSide(battler) == B_SIDE_PLAYER)))
         return FALSE;
 
     // Check if mon is currently held by Sky Drop
@@ -11245,7 +11259,7 @@ bool32 AreBattlersOfSameGender(u32 battler1, u32 battler2)
 
 u32 CalcSecondaryEffectChance(u32 battler, u8 secondaryEffectChance, u16 moveEffect)
 {
-    bool8 hasSereneGrace = (GetBattlerAbility(battler) == ABILITY_SERENE_GRACE);
+    bool8 hasSereneGrace = ((GetBattlerAbility(battler) == ABILITY_SERENE_GRACE) || (gBattleStruct->illusion[gBattlerAttacker].on));
     bool8 hasRainbow = (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_RAINBOW) != 0;
 
     if (hasRainbow && hasSereneGrace && moveEffect == EFFECT_FLINCH_HIT)

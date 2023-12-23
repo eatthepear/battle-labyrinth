@@ -35,6 +35,7 @@ void ItemUseOutOfBattle_Fusion(u8);
 void ItemUseOutOfBattle_Honey(u8);
 void ItemUseOutOfBattle_CannotUse(u8);
 void ItemUseOutOfBattle_ExpShare(u8);
+void ItemUseOutOfBattle_PlaceholderMint(u8);
 void ItemUseInBattle_BagMenu(u8 taskId);
 void ItemUseInBattle_PartyMenu(u8 taskId);
 void ItemUseInBattle_PartyMenuChooseMove(u8 taskId);
@@ -48,10 +49,15 @@ enum {
     BALL_THROW_UNABLE_TWO_MONS,
     BALL_THROW_UNABLE_NO_ROOM,
     BALL_THROW_UNABLE_SEMI_INVULNERABLE,
+    BALL_THROW_UNABLE_NUZLOCKE_ALREADY_CAUGHT,
+    BALL_THROW_UNABLE_NUZLOCKE_SPECIES_CLAUSE,
+    BALL_THROW_UNABLE_NO_CATCHING_FLAG,
     BALL_THROW_ABLE,
     BALL_THROW_UNABLE_DISABLED_FLAG,
 };
 
 bool32 CanThrowBall(void);
+extern u8 IsCaptureBlockedByNuzlocke;
+extern u8 IsSpeciesClauseActive;
 
 #endif // GUARD_ITEM_USE_H

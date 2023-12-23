@@ -407,6 +407,18 @@ void SpriteCB_TrainerSlideIn(struct Sprite *sprite)
     }
 }
 
+void SpriteCB_TrainerSpawn(struct Sprite *sprite)
+{
+    if (!(gIntroSlideFlags & 1))
+    {
+        sprite->x2 = 0;
+        if (sprite->y2 != 0)
+            sprite->callback = SpriteCB_TrainerSlideVertical;
+        else
+            sprite->callback = SpriteCallbackDummy;
+    }
+}
+
 // Slide up to 0 if necessary (used by multi battle intro)
 static void SpriteCB_TrainerSlideVertical(struct Sprite *sprite)
 {
@@ -1011,6 +1023,8 @@ void ClearBehindSubstituteBit(u8 battler)
 
 void HandleLowHpMusicChange(struct Pokemon *mon, u8 battler)
 {
+    return;
+
     u16 hp = GetMonData(mon, MON_DATA_HP);
     u16 maxHP = GetMonData(mon, MON_DATA_MAX_HP);
 
