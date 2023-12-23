@@ -22,6 +22,7 @@
 #include "graphics.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "sound_check_menu.h"
 
 enum {
     TAG_VERSION = 1000,
