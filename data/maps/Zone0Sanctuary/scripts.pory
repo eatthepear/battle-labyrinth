@@ -194,7 +194,7 @@ script Zone0Sanctuary_EventScript_Intro {
 		goto(Zone0Sanctuary_EventScript_EndIntro)
 	} else {
 		msgbox(format("As a new challenger, you will receive a starter Pokémon.\p"
-		"You may have your choice of any of the generation 1-8 starter Pokémon.\p"
+		"You may have your choice of any of the generation 1-9 starter Pokémon.\p"
 		"Choose carefully as these Pokémon are very rare."), MSGBOX_DEFAULT)
 		goto(Zone0Sanctuary_EventScript_HandleStarterSelectionDefault)
 	}
@@ -203,7 +203,7 @@ script Zone0Sanctuary_EventScript_Intro {
 script Zone0Sanctuary_EventScript_HandleStarterSelectionDefault {
 	hidemonpic
 	msgbox(format("Choose a starter Pokémon."), MSGBOX_DEFAULT)
-	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Bulbasaur", "Charmander", "Squirtle", "Chikorita", "Cyndaquil", "Totodile", "Treecko", "Torchic", "Mudkip", "Turtwig", "Chimchar", "Piplup", "Snivy", "Tepig", "Oshawott", "Chespin", "Fennekin", "Froakie", "Rowlet", "Litten", "Popplio", "Grookey", "Scorbunny", "Sobble", "Random")
+	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Bulbasaur", "Charmander", "Squirtle", "Chikorita", "Cyndaquil", "Totodile", "Treecko", "Torchic", "Mudkip", "Turtwig", "Chimchar", "Piplup", "Snivy", "Tepig", "Oshawott", "Chespin", "Fennekin", "Froakie", "Rowlet", "Litten", "Popplio", "Grookey", "Scorbunny", "Sobble", "Sprigatito", "Fuecoco", "Quaxly", "Random")
 	switch (var(VAR_RESULT)) {
 		case 0:
 			setvar(VAR_TEMP_3, SPECIES_BULBASAUR)
@@ -278,6 +278,15 @@ script Zone0Sanctuary_EventScript_HandleStarterSelectionDefault {
 			setvar(VAR_TEMP_3, SPECIES_SOBBLE)
 			setvar(VAR_STARTER_MON, 2)
 		case 24:
+			setvar(VAR_TEMP_3, SPECIES_SPRIGATITO)
+			setvar(VAR_STARTER_MON, 0)
+		case 25:
+			setvar(VAR_TEMP_3, SPECIES_FUECOCO)
+			setvar(VAR_STARTER_MON, 1)
+		case 26:
+			setvar(VAR_TEMP_3, SPECIES_QUAXLY)
+			setvar(VAR_STARTER_MON, 2)
+		case 27:
 			setvar(VAR_TEMP_3, 0)
 	}
 	if (var(VAR_TEMP_3) == 0) {
