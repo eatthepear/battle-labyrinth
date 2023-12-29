@@ -19,7 +19,7 @@ Zone14C_MapScripts_MAP_SCRIPT_ON_RESUME_1:
 
 Zone14C_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 10 "data/maps/Zone14C/scripts.pory"
-	setflashlevel 4
+	call EventScript_HandleFlashlight
 	return
 
 
