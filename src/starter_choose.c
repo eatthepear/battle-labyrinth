@@ -110,7 +110,7 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
     {8, 4},
 };
 
-static const u16 sStarterMonGrass[8] =
+static const u16 sStarterMonGrass[9] =
 {
     SPECIES_BULBASAUR,
     SPECIES_CHIKORITA,
@@ -120,9 +120,10 @@ static const u16 sStarterMonGrass[8] =
     SPECIES_CHESPIN,
     SPECIES_ROWLET,
     SPECIES_GROOKEY,
+    SPECIES_SPRIGATITO,
 };
 
-static const u16 sStarterMonFire[8] =
+static const u16 sStarterMonFire[9] =
 {
     SPECIES_CHARMANDER,
     SPECIES_CYNDAQUIL,
@@ -132,9 +133,10 @@ static const u16 sStarterMonFire[8] =
     SPECIES_FENNEKIN,
     SPECIES_LITTEN,
     SPECIES_SCORBUNNY,
+    SPECIES_FUECOCO,
 };
 
-static const u16 sStarterMonWater[8] =
+static const u16 sStarterMonWater[9] =
 {
     SPECIES_SQUIRTLE,
     SPECIES_TOTODILE,
@@ -144,6 +146,7 @@ static const u16 sStarterMonWater[8] =
     SPECIES_FROAKIE,
     SPECIES_POPPLIO,
     SPECIES_SOBBLE,
+    SPECIES_QUAXLY,
 };
 
 static const struct BgTemplate sBgTemplates[3] =
@@ -379,9 +382,9 @@ static const struct SpriteTemplate sSpriteTemplate_StarterCircle =
 // .text
 u16 GetStarterPokemon(u16 chosenStarterId)
 {
-    u16 grassIndex = VarGet(VAR_RAND_STARTER_SEED) % 8;
-    u16 fireIndex = ((VarGet(VAR_RAND_STARTER_SEED) % 64) - grassIndex) / 8;
-    u16 waterIndex = (VarGet(VAR_RAND_STARTER_SEED) - fireIndex * 8 - grassIndex) / 64;
+    u16 grassIndex = VarGet(VAR_RAND_STARTER_SEED) % 9;
+    u16 fireIndex = ((VarGet(VAR_RAND_STARTER_SEED) % 81) - grassIndex) / 9;
+    u16 waterIndex = (VarGet(VAR_RAND_STARTER_SEED) - fireIndex * 9 - grassIndex) / 81;
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
     switch (chosenStarterId)

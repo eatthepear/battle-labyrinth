@@ -1079,7 +1079,7 @@ u8 GetSpecialBattleTransition(s32 id)
 
 void ChooseStarter(void)
 {
-    u16 randomSeed = (Random() % 8) + (Random() % 8) * 8+ (Random() % 8) * 64;
+    u16 randomSeed = (Random() % 9) + (Random() % 9) * 9 + (Random() % 9) * 81;
     VarSet(VAR_RAND_STARTER_SEED, randomSeed);
     SetMainCallback2(CB2_ChooseStarter);
     gMain.savedCallback = CB2_GiveStarter;
