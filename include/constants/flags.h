@@ -115,7 +115,7 @@
 #define FLAG_ZONE_B1_PORYGON_4                            0x65
 #define FLAG_ZONE_B1_PORYGON_5                            0x66
 #define FLAG_RECEIVED_PORYGON                             0x67
-// #define FLAG_UNUSED_0x68                                  0x68
+#define FLAG_PBL_PENDING_DAYCARE_EGG                      0x68
 // #define FLAG_UNUSED_0x69                                  0x69
 // #define FLAG_UNUSED_0x6A                                  0x6A
 // #define FLAG_UNUSED_0x6B                                  0x6B

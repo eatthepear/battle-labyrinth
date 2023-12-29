@@ -41,7 +41,7 @@ Zone0A_OnTransition: @ 81F3983
 	end
 
 Zone0A_EventScript_TryMoveDayCareMan::
-	goto_if_unset FLAG_PENDING_DAYCARE_EGG, Zone0A_EventScript_StopMoveDayCareMan
+	goto_if_unset FLAG_PBL_PENDING_DAYCARE_EGG, Zone0A_EventScript_StopMoveDayCareMan
 	setobjectxyperm 1, 22, 9
 Zone0A_EventScript_StopMoveDayCareMan::
 	return
@@ -123,7 +123,7 @@ Zone0A_EventScript_DaycareEggWaiting:
 	compare VAR_RESULT, YES
 	goto_if_eq Zone0A_EventScript_DaycareAcceptEgg
 	msgbox Zone0A_Text_IllKeepIt, MSGBOX_DEFAULT
-	clearflag FLAG_PENDING_DAYCARE_EGG
+	clearflag FLAG_PBL_PENDING_DAYCARE_EGG
 	special RejectEggFromDayCare
 	release
 	end
@@ -143,7 +143,7 @@ Zone0A_EventScript_DaycareReceiveEgg:
 	waitbuttonpress
 	msgbox Zone0A_Text_TakeGoodCareOfIt, MSGBOX_DEFAULT
 	special GiveEggFromDaycare
-	clearflag FLAG_PENDING_DAYCARE_EGG
+	clearflag FLAG_PBL_PENDING_DAYCARE_EGG
 	release
 	end
 

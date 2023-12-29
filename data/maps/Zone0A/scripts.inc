@@ -83,7 +83,7 @@ Zone0A_OnTransition: @ 81F3983
 # 43 "data/maps/Zone0A/scripts.pory"
 Zone0A_EventScript_TryMoveDayCareMan::
 # 44 "data/maps/Zone0A/scripts.pory"
-	goto_if_unset FLAG_PENDING_DAYCARE_EGG, Zone0A_EventScript_StopMoveDayCareMan
+	goto_if_unset FLAG_PBL_PENDING_DAYCARE_EGG, Zone0A_EventScript_StopMoveDayCareMan
 # 45 "data/maps/Zone0A/scripts.pory"
 	setobjectxyperm 1, 22, 9
 # 46 "data/maps/Zone0A/scripts.pory"
@@ -247,7 +247,7 @@ Zone0A_EventScript_DaycareEggWaiting:
 # 125 "data/maps/Zone0A/scripts.pory"
 	msgbox Zone0A_Text_IllKeepIt, MSGBOX_DEFAULT
 # 126 "data/maps/Zone0A/scripts.pory"
-	clearflag FLAG_PENDING_DAYCARE_EGG
+	clearflag FLAG_PBL_PENDING_DAYCARE_EGG
 # 127 "data/maps/Zone0A/scripts.pory"
 	special RejectEggFromDayCare
 # 128 "data/maps/Zone0A/scripts.pory"
@@ -287,7 +287,7 @@ Zone0A_EventScript_DaycareReceiveEgg:
 # 145 "data/maps/Zone0A/scripts.pory"
 	special GiveEggFromDaycare
 # 146 "data/maps/Zone0A/scripts.pory"
-	clearflag FLAG_PENDING_DAYCARE_EGG
+	clearflag FLAG_PBL_PENDING_DAYCARE_EGG
 # 147 "data/maps/Zone0A/scripts.pory"
 	release
 # 148 "data/maps/Zone0A/scripts.pory"
