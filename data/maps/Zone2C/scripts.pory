@@ -1,0 +1,5 @@
+mapscripts Zone2C_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+		call(EventScript_HandleFlashlight)
+    }
+}

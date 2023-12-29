@@ -5200,6 +5200,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/Zone20B/border.bin",
       "blockdata_filepath": "data/layouts/Zone20B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE2C",
+      "name": "Zone2C_Layout",
+      "width": 56,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone2C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone2C/map.bin"
     }
   ]
 }

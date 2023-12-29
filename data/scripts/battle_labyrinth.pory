@@ -34,6 +34,16 @@ script EventScript_MoveCameraDown {
 	return
 }
 
+script EventScript_HandleFlashlight {
+	checkitem(ITEM_FLASHLIGHT)
+	if (var(VAR_RESULT) == TRUE) {
+		setflashlevel(2)
+	} else {
+		setflashlevel(6)
+	}
+	return
+}
+
 script EventScript_Shop_General {
 	lock
 	faceplayer

@@ -7,7 +7,7 @@ mapscripts Zone14C_MapScripts {
 		}
 	}
     MAP_SCRIPT_ON_TRANSITION {
-		setflashlevel(4)
+		call(EventScript_HandleFlashlight)
     }
 }
 
