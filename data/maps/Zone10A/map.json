@@ -243,6 +243,13 @@
       "elevation": 0,
       "dest_map": "MAP_ZONE10B",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 37,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE10C",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

@@ -5210,6 +5210,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Zone2C/border.bin",
       "blockdata_filepath": "data/layouts/Zone2C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE10C",
+      "name": "Zone10C_Layout",
+      "width": 17,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone10C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone10C/map.bin"
     }
   ]
 }
