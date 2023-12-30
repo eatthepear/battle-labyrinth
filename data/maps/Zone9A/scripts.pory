@@ -18,6 +18,14 @@ mapscripts Zone9A_MapScripts {
 	}
 }
 
+script Zone9A_EventScript_SetRegularGrass {
+	setvar(VAR_ZONE_9_STATE, 1)
+}
+
+script Zone9A_EventScript_SetThickGrass {
+	setvar(VAR_ZONE_9_STATE, 0)
+}
+
 script Zone9A_EventScript_HerbalSign {
 	msgbox(format("Herbal and Incense Shop"), MSGBOX_SIGN)
 	end
@@ -141,7 +149,6 @@ script Zone9A_EventScript_Ari {
 		removeobject(5)
 		clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 		setflag(FLAG_HIDE_ZONE9A_ARI_WINSTRATE)
-		setvar(VAR_ZONE_9_STATE, 1)
 		release
 		end
 	}

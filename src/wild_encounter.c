@@ -321,6 +321,16 @@ u16 GetCurrentMapWildMonHeaderId(void)
                 i += alteringCaveId;
             }
 
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE9A) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE9A))
+            {
+                u16 wildHeaderID = VarGet(VAR_ZONE_9_STATE);
+                if (wildHeaderID >= 2)
+                    wildHeaderID = 0;
+
+                i += wildHeaderID;
+            }
+
             return i;
         }
     }
