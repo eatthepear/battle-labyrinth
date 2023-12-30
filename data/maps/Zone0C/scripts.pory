@@ -272,6 +272,7 @@ script Zone0C_EventScript_WarpZone9 {
 	buffernumberstring(0, 9)
 	call(Zone0C_EventScript_VerifyDestination)
 	setvar(VAR_REVISITING_ZONE, 9)
+	setvar(VAR_ZONE_9_STATE, 0)
 	warpteleport(MAP_ZONE9A, 255, 18, 11)
 	waitstate
 }
