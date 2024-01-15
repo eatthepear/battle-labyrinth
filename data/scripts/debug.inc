@@ -757,7 +757,7 @@ Debug_CheatStart_138:
 # 589 "data/scripts/debug.pory"
 	callnative DisableBattleAnimationSetting
 # 590 "data/scripts/debug.pory"
-	warp MAP_ZONE5SANCTUARY, 255, 22, 7
+	warp MAP_ZONE5SANCTUARY, 255, 38, 11
 # 591 "data/scripts/debug.pory"
 	waitstate
 # 592 "data/scripts/debug.pory"

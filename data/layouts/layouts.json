@@ -4414,18 +4414,18 @@
     {
       "id": "LAYOUT_SANCTUARY",
       "name": "Sanctuary_Layout",
-      "width": 45,
-      "height": 25,
+      "width": 130,
+      "height": 55,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Sootopolis",
+      "secondary_tileset": "gTileset_Sanctuary",
       "border_filepath": "data/layouts/Sanctuary/border.bin",
       "blockdata_filepath": "data/layouts/Sanctuary/map.bin"
     },
     {
       "id": "LAYOUT_SHOPS",
       "name": "Shops_Layout",
-      "width": 23,
-      "height": 23,
+      "width": 50,
+      "height": 38,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/Shops/border.bin",

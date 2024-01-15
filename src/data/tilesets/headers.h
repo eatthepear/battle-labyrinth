@@ -869,3 +869,14 @@ const struct Tileset gTileset_JungleTemple =
     .metatileAttributes = gMetatileAttributes_JungleTemple,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Sanctuary =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sanctuary,
+    .palettes = gTilesetPalettes_Sanctuary,
+    .metatiles = gMetatiles_Sanctuary,
+    .metatileAttributes = gMetatileAttributes_Sanctuary,
+    .callback = NULL,
+};

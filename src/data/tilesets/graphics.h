@@ -1710,3 +1710,22 @@ const u16 gTilesetPalettes_JungleTemple[][16] =
 };
 
 const u32 gTilesetTiles_JungleTemple[] = INCBIN_U32("data/tilesets/secondary/jungletemple/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Sanctuary[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/sanctuary/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sanctuary/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sanctuary/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sanctuary/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sanctuary/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sanctuary/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sanctuary/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sanctuary/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sanctuary/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sanctuary/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sanctuary/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sanctuary/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sanctuary/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Sanctuary[] = INCBIN_U32("data/tilesets/secondary/sanctuary/tiles.4bpp.lz");

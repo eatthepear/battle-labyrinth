@@ -44,16 +44,90 @@ script EventScript_HandleFlashlight {
 	return
 }
 
-script EventScript_Shop_General {
+script EventScript_MedicineSign {
+	msgbox("Portentia's Potions\nCurated Medicines!", MSGBOX_SIGN)
+	end
+}
+
+script EventScript_PokeballSign {
+	msgbox("Tim's Pokéball Shop\nSponsored by Pokémart Inc.", MSGBOX_SIGN)
+	end
+}
+
+script EventScript_ConsumablesSign {
+	msgbox("Varrick's One Time Wonders\nBest for Single Use!", MSGBOX_SIGN)
+	end
+}
+
+script EventScript_BerriesSign {
+	msgbox("Gordon's Berries\nOnly the Berry best!", MSGBOX_SIGN)
+	end
+}
+
+script EventScript_BattleItemsSign {
+	msgbox("Alexander's Battle Shop\nA Curated Collection", MSGBOX_SIGN)
+	end
+}
+
+script EventScript_TMsSign {
+	msgbox("Julia's TM Shop\nTechnically the Best", MSGBOX_SIGN)
+	end
+}
+
+script EventScript_Shop_Portentia {
+	lock
+	faceplayer
+	if (flag(FLAG_PORTENTIA_INTRO) == false) {
+		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Hello, lovely. Care for a brew?\p{COLOR BLUE}Portentia{COLOR DARK_GRAY}: I am Portentia. I craft the finest medicines for your Pokémon."))
+		setflag(FLAG_PORTENTIA_INTRO)
+	}
+	if ((var(VAR_ZONE) > 20) && (flag(FLAG_PORTENTIA_SUPER_POTION_INTRO) == false)) {
+		msgbox(format("{COLOR BLUE}Portentia{COLOR DARK_GRAY}: It's good to see you again. I have a new discount option available in my shop.\pIf you buy 10 Potions, you will receive a free Super Potion.\pI hope that is a most compelling deal."))
+		setflag(FLAG_PORTENTIA_SUPER_POTION_INTRO)
+	}
+	message("{COLOR BLUE}Portentia{COLOR DARK_GRAY}: Welcome to my shop.\nCan I get you anything?")
+	waitmessage
+	switch (var(VAR_ZONE)) {
+		case 1:
+		case 2:
+		case 3:
+			pokemart(Shop_General_1to3)
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+			pokemart(Shop_General_4to8)
+		case 9:
+		case 10:
+		case 11:
+		case 12:
+			pokemart(Shop_General_9to12)
+		case 13:
+		case 15:
+			pokemart(Shop_General_13to15)
+		case 16:
+		case 17:
+		case 18:
+		case 20:
+		case 21:
+		case 22:
+		case 23:
+		case 24:
+		case 25:
+			pokemart(Shop_General_16to25)
+		case 26:
+			pokemart(Shop_General_26to30)
+	}
+	msgbox("{COLOR BLUE}Portentia{COLOR DARK_GRAY}: Travel safe.", MSGBOX_DEFAULT)
+	release
+}
+
+script EventScript_Shop_Tim {
 	lock
 	faceplayer
 	if (flag(FLAG_TIM_INTRO) == false) {
-		msgbox("{COLOR BLUE}???{COLOR DARK_GRAY}: New challenger, huh?\nThe name's Tim Johnson.\p{COLOR BLUE}Tim{COLOR DARK_GRAY}: I run this store, sponsored by\nPokémart Incorporated.\lYou can find all sorts of general\lsupplies for your travels.")
+		msgbox("{COLOR BLUE}???{COLOR DARK_GRAY}: Hey there!\nThe name's Tim Johnson.\p{COLOR BLUE}Tim{COLOR DARK_GRAY}: I run this store, sponsored by\nPokémart Incorporated.\lYou can find all variants of Pokéballs\lfor your travels.")
 		setflag(FLAG_TIM_INTRO)
-	}
-	if ((var(VAR_ZONE) > 20) && (flag(FLAG_TIM_SUPER_POTION_INTRO) == false)) {
-		msgbox(format("{COLOR BLUE}Tim{COLOR DARK_GRAY}: Hey! I just wanted to let you know about a new offer we have!\pI'm sure you've heard that if you buy 10 Poké Balls, you'll get a Premier Ball for free?\pWell, I've got a very similar offer for you.\pIf you buy 10 Potions, you'll get a free Super Potion!\pHow's that for a deal?\pAnyways…"))
-		setflag(FLAG_TIM_SUPER_POTION_INTRO)
 	}
 	message("{COLOR BLUE}Tim{COLOR DARK_GRAY}: Welcome to Tim's.\nCan I get you anything?")
 	waitmessage
@@ -223,7 +297,7 @@ mart Shop_General_26to30 {
 	ITEM_CARBOS
 }
 
-script EventScript_Shop_Unique_Varrick {
+script EventScript_Shop_Varrick {
 	lock
 	faceplayer
 	if (flag(FLAG_VARRICK_INTRO) == false) {
@@ -816,6 +890,24 @@ script EventScript_Shop_ZhuLiIntro {
 	msgbox("{COLOR BLUE}Zhu Li{COLOR DARK_GRAY}: Yes, sir.\pPleased to meet you, {PLAYER}. I'm-")
 	msgbox("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: Alright, we don't have all\nday, Zhu Li! Talk to her if you\lwant to buy consumable items, while\lI'll handle all of the held items!")
 	setvar(VAR_ZHULI_INTRO, 1)
+	setflag(FLAG_VARRICK_INTRO)
+	releaseall
+}
+
+script EventScript_Shop_Julia {
+	lockall
+	setflag(FLAG_VARRICK_INTRO)
+	releaseall
+}
+
+script EventScript_Shop_Alexander {
+	lockall
+	setflag(FLAG_VARRICK_INTRO)
+	releaseall
+}
+
+script EventScript_Shop_Gordon {
+	lockall
 	setflag(FLAG_VARRICK_INTRO)
 	releaseall
 }
@@ -1657,7 +1749,7 @@ script EventScript_WhenUReady {
 
 script EventScript_SanctuaryToZone0 {
 	lockall
-	warpteleport(MAP_ZONE0A, 255, 17, 10)
+	warpteleport(MAP_ZONE0C, 255, 2, 32)
 	waitstate
 }
 
@@ -2663,7 +2755,7 @@ script Zone_EventScript_RetirePrompt {
 			cleartrainerflag(TRAINER_PBL_OSCAR)
 			clearflag(FLAG_BEAT_LEVIATHAN_1)
 			setvar(VAR_ZONE_1_STATE, 0)
-			warpteleport(MAP_ZONE0SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE0SANCTUARY, 255, 38, 11)
 			waitstate
 		case 2:
 			cleartrainerflag(TRAINER_PBL_POLLY)
@@ -2672,7 +2764,7 @@ script Zone_EventScript_RetirePrompt {
 			cleartrainerflag(TRAINER_PBL_ARTHUR)
 			clearflag(FLAG_BEAT_LEVIATHAN_2)
 			setvar(VAR_ZONE_2_STATE, 0)
-			warpteleport(MAP_ZONE1SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE1SANCTUARY, 255, 38, 11)
 			waitstate
 		case 3:
 			cleartrainerflag(TRAINER_PBL_JEMMA)
@@ -2682,7 +2774,7 @@ script Zone_EventScript_RetirePrompt {
 			cleartrainerflag(TRAINER_PBL_RICHARD)
 			clearflag(FLAG_BEAT_LEVIATHAN_3)
 			setvar(VAR_ZONE_3_STATE, 0)
-			warpteleport(MAP_ZONE2SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE2SANCTUARY, 255, 38, 11)
 			waitstate
 		case 4:
 			cleartrainerflag(TRAINER_PBL_HERMAN)
@@ -2693,7 +2785,7 @@ script Zone_EventScript_RetirePrompt {
 			cleartrainerflag(TRAINER_PBL_LUCIA)
 			clearflag(FLAG_BEAT_LEVIATHAN_4)
 			setvar(VAR_ZONE_4_STATE, 0)
-			warpteleport(MAP_ZONE3SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE3SANCTUARY, 255, 38, 11)
 			waitstate
 		case 5:
 			cleartrainerflag(TRAINER_PBL_ANNE_AND_JUNE)
@@ -2705,7 +2797,7 @@ script Zone_EventScript_RetirePrompt {
 			cleartrainerflag(TRAINER_PBL_CLINTON)
 			clearflag(FLAG_BEAT_LEVIATHAN_5)
 			setvar(VAR_ZONE_5_STATE, 0)
-			warpteleport(MAP_ZONE4SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE4SANCTUARY, 255, 38, 11)
 			waitstate
 		case 6:
 			cleartrainerflag(TRAINER_PBL_ZACK)
@@ -2716,7 +2808,7 @@ script Zone_EventScript_RetirePrompt {
 			cleartrainerflag(TRAINER_PBL_DAISY)
 			clearflag(FLAG_BEAT_LEVIATHAN_6)
 			setvar(VAR_ZONE_6_STATE, 0)
-			warpteleport(MAP_ZONE5SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE5SANCTUARY, 255, 38, 11)
 			waitstate
 		case 7:
 			cleartrainerflag(TRAINER_PBL_MILLIE)
@@ -2734,13 +2826,13 @@ script Zone_EventScript_RetirePrompt {
 			clearflag(FLAG_BEAT_LEVIATHAN_8)
 			clearflag(FLAG_HIDE_ZONE8D_WALLY)
 			setvar(VAR_ZONE_8_STATE, 0)
-			warpteleport(MAP_ZONE6SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE6SANCTUARY, 255, 38, 11)
 			waitstate
 		case 9:
 			cleartrainerflag(TRAINER_PBL_COOPER)
 			cleartrainerflag(TRAINER_PBL_CARMINE)
 			clearflag(FLAG_HIDE_ZONE9A_ARI_WINSTRATE)
-			warpteleport(MAP_ZONE8SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE8SANCTUARY, 255, 38, 11)
 			waitstate
 		case 10:
 			cleartrainerflag(TRAINER_PBL_KYLE)
@@ -2752,7 +2844,7 @@ script Zone_EventScript_RetirePrompt {
 			cleartrainerflag(TRAINER_PBL_SUSAN)
 			cleartrainerflag(TRAINER_PBL_CONRAD)
 			clearflag(FLAG_BEAT_LEVIATHAN_9)
-			warpteleport(MAP_ZONE9SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE9SANCTUARY, 255, 38, 11)
 			waitstate
 		case 11:
 			cleartrainerflag(TRAINER_PBL_JEANETTE)
@@ -2761,7 +2853,7 @@ script Zone_EventScript_RetirePrompt {
 			cleartrainerflag(TRAINER_PBL_JOEL)
 			clearflag(FLAG_BEAT_LEVIATHAN_10)
 			setvar(VAR_ZONE_11_STATE, 0)
-			warpteleport(MAP_ZONE10SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE10SANCTUARY, 255, 38, 11)
 			waitstate
 		case 12:
 			cleartrainerflag(TRAINER_PBL_ESSENCE)
@@ -2774,7 +2866,7 @@ script Zone_EventScript_RetirePrompt {
 			cleartrainerflag(TRAINER_PBL_KINLEY)
 			clearflag(FLAG_HIDE_ZONE12A_CAMPER_PICNICKER)
 			setvar(VAR_ZONE_12_STATE, 0)
-			warpteleport(MAP_ZONE11SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE11SANCTUARY, 255, 38, 11)
 			waitstate
 		case 13:
 			cleartrainerflag(TRAINER_PBL_VIOLET)
@@ -2794,12 +2886,12 @@ script Zone_EventScript_RetirePrompt {
 			cleartrainerflag(TRAINER_PBL_OTIS)
 			clearflag(FLAG_BEAT_LEVIATHAN_11)
 			clearflag(FLAG_BEAT_LEVIATHAN_12)
-			warpteleport(MAP_ZONE12SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE12SANCTUARY, 255, 38, 11)
 			waitstate
 		case 15:
 			clearflag(FLAG_BEAT_LEVIATHAN_13)
 			setvar(VAR_ZONE_15_STATE, 0)
-			warpteleport(MAP_ZONE14SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE14SANCTUARY, 255, 38, 11)
 			waitstate
 		case 16:
         	cleartrainerflag(TRAINER_PBL_IONA)
@@ -2810,7 +2902,7 @@ script Zone_EventScript_RetirePrompt {
         	cleartrainerflag(TRAINER_PBL_ANGUS)
         	clearflag(FLAG_BEAT_LEVIATHAN_14)
 			setvar(VAR_ZONE_16_STATE, 0)
-			warpteleport(MAP_ZONE15SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE15SANCTUARY, 255, 38, 11)
 			waitstate
 		case 17:
         	cleartrainerflag(TRAINER_PBL_AXLE)
@@ -2818,7 +2910,7 @@ script Zone_EventScript_RetirePrompt {
         	cleartrainerflag(TRAINER_PBL_GEORGINA)
         	clearflag(FLAG_BEAT_LEVIATHAN_15)
 			setvar(VAR_ZONE_17_STATE, 0)
-			warpteleport(MAP_ZONE16SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE16SANCTUARY, 255, 38, 11)
 			waitstate
 		case 18:
         	cleartrainerflag(TRAINER_PBL_DORIS)
@@ -2844,7 +2936,7 @@ script Zone_EventScript_RetirePrompt {
 			clearflag(FLAG_HIDE_ZONE18A_ZOE)
 			clearflag(FLAG_HIDE_ZONE18A_ELI)
 			clearflag(FLAG_HIDE_ZONE18A_DOLL)
-			warpteleport(MAP_ZONE17SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE17SANCTUARY, 255, 38, 11)
 			waitstate
 		case 20:
         	cleartrainerflag(TRAINER_PBL_SHAWN)
@@ -2856,22 +2948,22 @@ script Zone_EventScript_RetirePrompt {
         	cleartrainerflag(TRAINER_PBL_BLANCHE)
         	clearflag(FLAG_BEAT_LEVIATHAN_17)
 			setvar(VAR_ZONE_20_STATE, 0)
-			warpteleport(MAP_ZONE20SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE20SANCTUARY, 255, 38, 11)
 			waitstate
 		case 21:
-			warpteleport(MAP_ZONE20SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE20SANCTUARY, 255, 38, 11)
 			waitstate
 		case 22:
-			warpteleport(MAP_ZONE21SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE21SANCTUARY, 255, 38, 11)
 			waitstate
 		case 23:
-			warpteleport(MAP_ZONE22SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE22SANCTUARY, 255, 38, 11)
 			waitstate
 		case 24:
-			warpteleport(MAP_ZONE23SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE23SANCTUARY, 255, 38, 11)
 			waitstate
 		case 26:
-			warpteleport(MAP_ZONE25SANCTUARY, 255, 22, 7)
+			warpteleport(MAP_ZONE25SANCTUARY, 255, 38, 11)
 			waitstate
 	}
 	releaseall
@@ -2912,60 +3004,60 @@ script EventScript_PorygonExit {
 		waitmoncry
 		switch (var(VAR_ZONE)) {
 			case 1:
-				warp(MAP_ZONE1SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE1SANCTUARY, 255, 38, 11)
 				waitstate
 			case 2:
-				warp(MAP_ZONE2SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE2SANCTUARY, 255, 38, 11)
 				waitstate
 			case 3:
 				setflag(FLAG_HIDE_ZONE3A_MAX)
-				warp(MAP_ZONE3SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE3SANCTUARY, 255, 38, 11)
 				waitstate
 			case 4:
-				warp(MAP_ZONE4SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE4SANCTUARY, 255, 38, 11)
 				waitstate
 			case 5:
-				warp(MAP_ZONE5SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE5SANCTUARY, 255, 38, 11)
 				waitstate
 			case 6:
 				setflag(FLAG_HIDE_ZONE6A_MAX)
-				warp(MAP_ZONE6SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE6SANCTUARY, 255, 38, 11)
 				waitstate
 			case 7:
 				setflag(FLAG_HIDE_ZONE7A_MAX)
 				setflag(FLAG_ZONE7B_HEAL_USED)
-				warp(MAP_ZONE8SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE8SANCTUARY, 255, 38, 11)
 				waitstate
 			case 9:
-				warp(MAP_ZONE9SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE9SANCTUARY, 255, 38, 11)
 				waitstate
 			case 10:
 				setflag(FLAG_HIDE_ZONE10A_MAX)
-				warp(MAP_ZONE10SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE10SANCTUARY, 255, 38, 11)
 				waitstate
 			case 11:
-				warp(MAP_ZONE11SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE11SANCTUARY, 255, 38, 11)
 				waitstate
 			case 12:
 				clearflag(FLAG_SYS_NO_BAG_START_MENU)
 				setflag(FLAG_HIDE_ZONE12A_NURSE)
-				warp(MAP_ZONE12SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE12SANCTUARY, 255, 38, 11)
 				waitstate
 			case 13:
-				warp(MAP_ZONE14SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE14SANCTUARY, 255, 38, 11)
 				waitstate
 			case 15:
-				warp(MAP_ZONE15SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE15SANCTUARY, 255, 38, 11)
 				waitstate
 			case 16:
-				warp(MAP_ZONE16SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE16SANCTUARY, 255, 38, 11)
 				waitstate
 			case 17:
-				warp(MAP_ZONE17SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE17SANCTUARY, 255, 38, 11)
 				waitstate
 			case 18:
 				setflag(FLAG_HIDE_ZONE18A_MAX)
-				warp(MAP_ZONE19SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE19SANCTUARY, 255, 38, 11)
 				waitstate
 			case 20:
 			case 21:
@@ -2973,7 +3065,7 @@ script EventScript_PorygonExit {
 			case 23:
 			case 24:
 			case 25:
-				warp(MAP_ZONE1SANCTUARY, 255, 22, 7)
+				warp(MAP_ZONE1SANCTUARY, 255, 38, 11)
 				waitstate
 		}
 	}
@@ -2984,21 +3076,5 @@ script EventScript_PorygonExit {
 raw `
 EventScript_ExitSign::
 	msgbox gText_ExitSign, MSGBOX_SIGN
-	end
-
-EventScript_GeneralSign::
-	msgbox gText_GeneralSign, MSGBOX_SIGN
-	end
-
-EventScript_UniqueSign::
-	msgbox gText_UniqueSign, MSGBOX_SIGN
-	end
-
-EventScript_ServicesSign::
-	msgbox gText_ServicesSign, MSGBOX_SIGN
-	end
-
-EventScript_HealingSign::
-	msgbox gText_HealingSign, MSGBOX_SIGN
 	end
 `
