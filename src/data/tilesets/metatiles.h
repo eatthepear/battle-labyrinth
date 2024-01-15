@@ -219,3 +219,6 @@ const u16 gMetatileAttributes_Marsh[] = INCBIN_U16("data/tilesets/secondary/mars
 
 const u16 gMetatiles_JungleTemple[] = INCBIN_U16("data/tilesets/secondary/jungletemple/metatiles.bin");
 const u16 gMetatileAttributes_JungleTemple[] = INCBIN_U16("data/tilesets/secondary/jungletemple/metatile_attributes.bin");
+
+const u16 gMetatiles_Sanctuary[] = INCBIN_U16("data/tilesets/secondary/sanctuary/metatiles.bin");
+const u16 gMetatileAttributes_Sanctuary[] = INCBIN_U16("data/tilesets/secondary/sanctuary/metatile_attributes.bin");
