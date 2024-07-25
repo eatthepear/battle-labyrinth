@@ -2106,57 +2106,25 @@
 
     @ sets an NPC up to follow the player
     .macro setfollower localId:req, flags:req
-    .byte 0xe3
+    .byte 0xe5
     .byte \localId
     .2byte \flags
     .endm
     
     @ remove the following NPC (assumes there will only ever be one)
     .macro destroyfollower
-    .byte 0xe4
+    .byte 0xe6
     .endm
     
     @ makes the player and follower face one another
     .macro facefollower
-    .byte 0xe5
+    .byte 0xe7
     .endm
     
     @ checks if you have a follower. returns the result to VAR_RESULT
     .macro checkfollower
-    .byte 0xe6
+    .byte 0xe8
     .endm
-
-	.macro _dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req argv:vararg
-	.byte 0xe7
-	.2byte \left
-	.2byte \top
-	.byte \ignoreBPress
-	.byte \maxBeforeScroll
-	.byte \shouldSort
-	.2byte \initialSelected
-	.byte \callbacks
-	.byte (.Ldynmultichoice_\@_2 - .Ldynmultichoice_\@_1) / 4
-.Ldynmultichoice_\@_1:
-	.4byte \argv
-.Ldynmultichoice_\@_2:
-	.endm
-
-	@ Displays a multichoice box from which the user can choose a selection, and blocks script execution until a selection is made.
-	@ Lists of options are provided in argv.
-	@ If ignoreBPress is set to a non-zero value, then the user will not be allowed to back out of the multichoice with the B button.
-	.macro dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, initialSelected:req, callbacks:req argv:vararg
-	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, FALSE, \initialSelected, \callbacks, \argv
-	.endm
-
-	.macro dynmultipush name:req, id:req
-	.byte 0xe8
-	.4byte \name
-	.2byte \id
-	.endm
-
-	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
-	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
-	.endm
 
 	@ Checks if it is a blocked Pokemon under Species Clause
     @ The result is stored in VAR_RESULT
@@ -2221,4 +2189,73 @@
 	.macro setitemarg id:req
 	setvar VAR_0x8000, \id,
 	callnative ScrCmd_SetItemArg
+	.endm
+
+	@ Sets VAR_RESULT to TRUE if stat can be hyper trained, or to
+	@ FALSE otherwise.
+	.macro canhypertrain stat:req, slot:req
+	callnative CanHyperTrain
+	.byte \stat
+	.2byte \slot
+	.endm
+
+	@ Hyper Trains a stat.
+	.macro hypertrain stat:req, slot:req
+	callnative HyperTrain
+	.byte \stat
+	.2byte \slot
+	.endm
+
+	@ Sets VAR_RESULT to TRUE if the Pokemon has the Gigantamax Factor,
+	@ or to FALSE otherwise.
+	.macro hasgigantamaxfactor slot:req
+	callnative HasGigantamaxFactor
+	.2byte \slot
+	.endm
+
+	@ Toggles the Gigantamax Factor for a Pokemon.
+	@ Fails for Melmetal (vanilla behavior).
+	@ Sets VAR_RESULT to TRUE if it succeeds, and FALSE otherwise.
+	.macro togglegigantamaxfactor slot:req
+	callnative ToggleGigantamaxFactor
+	.2byte \slot
+	.endm
+
+	@ Sets VAR_RESULT to one of the arguments (via setorcopyvar).
+	.macro randomelement element:req, elements:vararg
+	.set _randomelement_n, 0
+	.irp el, \element, \elements
+	.set _randomelement_n, _randomelement_n + 1
+	.endr
+		random _randomelement_n
+
+	.set _randomelement_n, 0
+	.irp el, \element, \elements
+		goto_if_ne VAR_RESULT, _randomelement_n, 1f
+		setorcopyvar VAR_RESULT, \el
+		goto 2f
+	1:
+	.set _randomelement_n, _randomelement_n + 1
+	.endr
+	2:
+	.endm
+
+	@ Sets VAR_RESULT to TRUE with probability 'percent', and FALSE
+	@ with probability '100% - percent'.
+	.macro randompercentage percent:req
+		random 100
+		goto_if_lt VAR_RESULT, \percent, 1f
+		setvar VAR_RESULT, FALSE
+		goto 2f
+	1:
+		setvar VAR_RESULT, TRUE
+	2:
+	.endm
+
+	@ Inflicts \status1 to the Pokémon in \slot.
+	@ If \slot is greater or equal than PARTY_SIZE, the status is inflicted on each of the Player's Pokémon.
+	.macro setstatus1 status1:req, slot:req
+	callnative Script_SetStatus1
+	.2byte \status1
+	.2byte \slot
 	.endm

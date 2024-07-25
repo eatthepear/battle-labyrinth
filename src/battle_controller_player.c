@@ -40,6 +40,7 @@
 #include "constants/trainers.h"
 #include "constants/rgb.h"
 #include "event_data.h"
+#include "level_caps.h"
 
 static void PlayerBufferExecCompleted(u32 battler);
 static void PlayerHandleLoadMonSprite(u32 battler);
@@ -228,7 +229,7 @@ static u16 UNUSED GetPrevBall(u16 ballId)
     return gBagPockets[BALLS_POCKET].itemSlots[i].itemId;
 }
 
-static u16 UNUSED GetNextBall(u16 ballId)
+static u32 GetNextBall(u32 ballId)
 {
     u32 ballNext = ITEM_NONE;
     s32 i;
@@ -2359,7 +2360,7 @@ static void MoveSelectionDisplaySplitIcon(u32 battler){
 	int icon;
 
 	moveInfo = (struct ChooseMoveStruct*)(&gBattleResources->bufferA[battler][4]);
-	icon = GetBattleMoveSplit(moveInfo->moves[gMoveSelectionCursor[battler]]);
+	icon = GetBattleMoveCategory(moveInfo->moves[gMoveSelectionCursor[battler]]);
 	LoadPalette(sSplitIcons_Pal, 10 * 0x10, 0x20);
 	BlitBitmapToWindow(B_WIN_DUMMY, sSplitIcons_Gfx + 0x80 * icon, 0, 0, 16, 16);
 	PutWindowTilemap(B_WIN_DUMMY);

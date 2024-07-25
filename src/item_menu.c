@@ -216,6 +216,7 @@ static void ConfirmToss(u8);
 static void CancelToss(u8);
 static void ConfirmSell(u8);
 static void CancelSell(u8);
+static void Task_FadeAndCloseBagMenuIfMulch(u8 taskId);
 //bag sort
 static void Task_LoadBagSortOptions(u8 taskId);
 static void ItemMenu_SortByName(u8 taskId);
@@ -377,7 +378,8 @@ static const TaskFunc sContextMenuFuncs[] = {
     [ITEMMENULOCATION_APPRENTICE] =             Task_ItemContext_Normal,
     [ITEMMENULOCATION_WALLY] =                  NULL,
     [ITEMMENULOCATION_PCBOX] =                  Task_ItemContext_GiveToPC,
-    [ITEMMENULOCATION_CHOOSE_ITEM] =            Task_FadeAndCloseBagMenu
+    [ITEMMENULOCATION_CHOOSE_ITEM] =            Task_FadeAndCloseBagMenu,
+    [ITEMMENULOCATION_BERRY_TREE_MULCH] =       Task_FadeAndCloseBagMenuIfMulch,
 };
 
 static const struct YesNoFuncTable sYesNoTossFunctions = {ConfirmToss, CancelToss};
@@ -606,7 +608,7 @@ void CB2_ChooseBerry(void)
 // Choosing mulch to use
 void CB2_ChooseMulch(void)
 {
-    GoToBagMenu(ITEMMENULOCATION_BERRY_TREE_MULCH, ITEMS_POCKET, CB2_ReturnToFieldContinueScript);
+    GoToBagMenu(ITEMMENULOCATION_BERRY_TREE_MULCH, POCKET_TREASURES, CB2_ReturnToFieldContinueScript);
 }
 
 // Choosing berry for Berry Blender or Berry Crush
@@ -660,9 +662,10 @@ void GoToBagMenu(u8 location, u8 pocket, void ( *exitCallback)())
             gBagPosition.exitCallback = exitCallback;
         if (pocket < POCKETS_COUNT)
             gBagPosition.pocket = pocket;
-        if (gBagPosition.location == ITEMMENULOCATION_CHOOSE_ITEM
-         || gBagPosition.location == ITEMMENULOCATION_BERRY_TREE
-         || gBagPosition.location == ITEMMENULOCATION_BERRY_BLENDER_CRUSH)
+        if (gBagPosition.location == ITEMMENULOCATION_CHOOSE_ITEM ||
+            gBagPosition.location == ITEMMENULOCATION_BERRY_TREE ||
+            gBagPosition.location == ITEMMENULOCATION_BERRY_BLENDER_CRUSH ||
+            gBagPosition.location == ITEMMENULOCATION_BERRY_TREE_MULCH)
             gBagMenu->pocketSwitchDisabled = TRUE;
         gBagMenu->newScreenCallback = NULL;
         gBagMenu->toSwapPos = NOT_SWAPPING;
@@ -2174,11 +2177,7 @@ static void Task_ItemContext_Sell(u8 taskId)
     }
 }
 
-#if I_SELL_VALUE_FRACTION >= GEN_9
 #define ITEM_SELL_FACTOR 5
-#else
-#define ITEM_SELL_FACTOR 2
-#endif
 
 static void DisplaySellItemPriceAndConfirm(u8 taskId)
 {

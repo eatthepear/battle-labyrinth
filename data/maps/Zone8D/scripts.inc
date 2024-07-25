@@ -200,7 +200,7 @@ Zone8D_EventScript_InitiateLeviathan8_8:
 	choose_mons
 # 136 "data/maps/Zone8D/scripts.pory"
 	compare VAR_RESULT, 0
-	goto_if_ne Zone8D_EventScript_InitiateLeviathan8_19
+	goto_if_ne Zone8D_EventScript_InitiateLeviathan8_16
 	goto Zone8D_EventScript_InitiateLeviathan8_8
 
 Zone8D_EventScript_InitiateLeviathan8_2:
@@ -239,31 +239,24 @@ Zone8D_EventScript_InitiateLeviathan8_3:
 Zone8D_EventScript_InitiateLeviathan8_7:
 # 140 "data/maps/Zone8D/scripts.pory"
 	setvar VAR_MUGSHOT_ID, MUGSHOT_MIRAGE
-# 141 "data/maps/Zone8D/scripts.pory"
-	goto_if_set FLAG_SETTINGS_BRUTAL, Zone8D_EventScript_InitiateLeviathan8_14
-# 141 "data/maps/Zone8D/scripts.pory"
-	goto_if_set FLAG_SETTINGS_CHALLENGE, Zone8D_EventScript_InitiateLeviathan8_14
-# 144 "data/maps/Zone8D/scripts.pory"
-	multi_2_vs_1 TRAINER_PBL_MIRAGE_LEVIATHAN_8, Zone8D_EventScript_InitiateLeviathan8_Text_6, TRAINER_PBL_WALLY_ZONE8D, TRAINER_BACK_PIC_WALLY
-Zone8D_EventScript_InitiateLeviathan8_13:
 # 146 "data/maps/Zone8D/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
 # 147 "data/maps/Zone8D/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_ne Zone8D_EventScript_InitiateLeviathan8_22
-Zone8D_EventScript_InitiateLeviathan8_21:
+	goto_if_ne Zone8D_EventScript_InitiateLeviathan8_14
+Zone8D_EventScript_InitiateLeviathan8_13:
 # 152 "data/maps/Zone8D/scripts.pory"
 	applymovement 3, Common_Movement_FaceLeft
 # 153 "data/maps/Zone8D/scripts.pory"
 	waitmovement 0
 # 154 "data/maps/Zone8D/scripts.pory"
-	msgbox Zone8D_EventScript_InitiateLeviathan8_Text_7, MSGBOX_DEFAULT
+	msgbox Zone8D_EventScript_InitiateLeviathan8_Text_6, MSGBOX_DEFAULT
 # 155 "data/maps/Zone8D/scripts.pory"
 	applymovement 2, Common_Movement_FaceRight
 # 156 "data/maps/Zone8D/scripts.pory"
 	waitmovement 0
 # 157 "data/maps/Zone8D/scripts.pory"
-	msgbox Zone8D_EventScript_InitiateLeviathan8_Text_8
+	msgbox Zone8D_EventScript_InitiateLeviathan8_Text_7
 # 158 "data/maps/Zone8D/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
 # 159 "data/maps/Zone8D/scripts.pory"
@@ -285,7 +278,7 @@ Zone8D_EventScript_InitiateLeviathan8_21:
 # 167 "data/maps/Zone8D/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
 # 168 "data/maps/Zone8D/scripts.pory"
-	msgbox Zone8D_EventScript_InitiateLeviathan8_Text_9
+	msgbox Zone8D_EventScript_InitiateLeviathan8_Text_8
 # 169 "data/maps/Zone8D/scripts.pory"
 	delay 32
 # 170 "data/maps/Zone8D/scripts.pory"
@@ -295,11 +288,11 @@ Zone8D_EventScript_InitiateLeviathan8_21:
 # 172 "data/maps/Zone8D/scripts.pory"
 	waitmovement 0
 # 173 "data/maps/Zone8D/scripts.pory"
-	msgbox Zone8D_EventScript_InitiateLeviathan8_Text_10, MSGBOX_DEFAULT
+	msgbox Zone8D_EventScript_InitiateLeviathan8_Text_9, MSGBOX_DEFAULT
 # 174 "data/maps/Zone8D/scripts.pory"
 	giveitem ITEM_EVIOLITE, 1
 # 175 "data/maps/Zone8D/scripts.pory"
-	msgbox Zone8D_EventScript_InitiateLeviathan8_Text_11, MSGBOX_DEFAULT
+	msgbox Zone8D_EventScript_InitiateLeviathan8_Text_10, MSGBOX_DEFAULT
 # 176 "data/maps/Zone8D/scripts.pory"
 	applymovement 4, Common_Movement_WalkUp
 # 177 "data/maps/Zone8D/scripts.pory"
@@ -323,7 +316,7 @@ Zone8D_EventScript_InitiateLeviathan8_21:
 # 186 "data/maps/Zone8D/scripts.pory"
 	waitmovement 0
 # 187 "data/maps/Zone8D/scripts.pory"
-	msgbox Zone8D_EventScript_InitiateLeviathan8_Text_12
+	msgbox Zone8D_EventScript_InitiateLeviathan8_Text_11
 # 188 "data/maps/Zone8D/scripts.pory"
 	delay 40
 # 189 "data/maps/Zone8D/scripts.pory"
@@ -372,21 +365,16 @@ Zone8D_EventScript_InitiateLeviathan8_10:
 	goto Zone8D_EventScript_InitiateLeviathan8_1
 
 Zone8D_EventScript_InitiateLeviathan8_14:
-# 142 "data/maps/Zone8D/scripts.pory"
-	multi_2_vs_1 TRAINER_PBL_MIRAGE_LEVIATHAN_8_BRUTAL, Zone8D_EventScript_InitiateLeviathan8_Text_6, TRAINER_PBL_WALLY_ZONE8D, TRAINER_BACK_PIC_WALLY
-	goto Zone8D_EventScript_InitiateLeviathan8_13
-
-Zone8D_EventScript_InitiateLeviathan8_19:
-	goto Zone8D_EventScript_InitiateLeviathan8_7
-
-Zone8D_EventScript_InitiateLeviathan8_22:
 # 148 "data/maps/Zone8D/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
 # 149 "data/maps/Zone8D/scripts.pory"
 	special SetCB2WhiteOut
 # 150 "data/maps/Zone8D/scripts.pory"
 	waitstate
-	goto Zone8D_EventScript_InitiateLeviathan8_21
+	goto Zone8D_EventScript_InitiateLeviathan8_13
+
+Zone8D_EventScript_InitiateLeviathan8_16:
+	goto Zone8D_EventScript_InitiateLeviathan8_7
 
 
 # 206 "data/maps/Zone8D/scripts.pory"
@@ -484,36 +472,32 @@ Zone8D_EventScript_InitiateLeviathan8_Text_5:
 	.string "{COLOR BLUE}???{COLOR DARK_GRAY}: At once.$"
 
 Zone8D_EventScript_InitiateLeviathan8_Text_6:
-# 142 "data/maps/Zone8D/scripts.pory"
-	.string "…$"
-
-Zone8D_EventScript_InitiateLeviathan8_Text_7:
 # 154 "data/maps/Zone8D/scripts.pory"
 	.string "{COLOR BLUE}???{COLOR DARK_GRAY}: I was defeated…$"
 
-Zone8D_EventScript_InitiateLeviathan8_Text_8:
+Zone8D_EventScript_InitiateLeviathan8_Text_7:
 # 157 "data/maps/Zone8D/scripts.pory"
 	.string "{COLOR BLUE}???{COLOR DARK_GRAY}: No matter. It's done.$"
 
-Zone8D_EventScript_InitiateLeviathan8_Text_9:
+Zone8D_EventScript_InitiateLeviathan8_Text_8:
 # 168 "data/maps/Zone8D/scripts.pory"
 	.string "{COLOR BLUE}Wally{COLOR DARK_GRAY}: Who were those p-people?\n"
 	.string "And what was with that Pokémon they\l"
 	.string "had with them?\p"
 	.string "That was a Shiny {COLOR BLUE}Porygon{COLOR DARK_GRAY}, w-wasn't it?$"
 
-Zone8D_EventScript_InitiateLeviathan8_Text_10:
+Zone8D_EventScript_InitiateLeviathan8_Text_9:
 # 173 "data/maps/Zone8D/scripts.pory"
 	.string "{COLOR BLUE}Wally{COLOR DARK_GRAY}: Um… anyways, thanks for your\n"
 	.string "help, {PLAYER}.\p"
 	.string "I um… I want you to have this.$"
 
-Zone8D_EventScript_InitiateLeviathan8_Text_11:
+Zone8D_EventScript_InitiateLeviathan8_Text_10:
 # 175 "data/maps/Zone8D/scripts.pory"
 	.string "{COLOR BLUE}Wally{COLOR DARK_GRAY}: It's not… the flashiest item, but\n"
 	.string "I'm sure it'll be useful.$"
 
-Zone8D_EventScript_InitiateLeviathan8_Text_12:
+Zone8D_EventScript_InitiateLeviathan8_Text_11:
 # 187 "data/maps/Zone8D/scripts.pory"
 	.string "{COLOR BLUE}Wally{COLOR DARK_GRAY}: I hope we meet again.\p"
 	.string "Goodbye, {PLAYER}.$"

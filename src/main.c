@@ -218,13 +218,26 @@ void StartTimer1(void)
 
 void SeedRngAndSetTrainerId(void)
 {
-    u32 seed = RtcGetMinuteCount();
-    u16 val = RtcGetMinuteCount();
-    seed = (seed >> 16) ^ (seed & 0xFFFF);
-    SeedRng(seed);
-    SeedRng(val);
-    REG_TM1CNT_H = 0;
-    sTrainerId = val;
+    u32 val;
+
+    if (HQ_RANDOM)
+    {
+        REG_TM1CNT_H = 0;
+        REG_TM2CNT_H = 0;
+        val = ((u32)REG_TM2CNT_L) << 16;
+        val |= REG_TM1CNT_L;
+        SeedRng(val);
+        sTrainerId = Random();
+    }
+    else
+    {
+        // Do it exactly like it was originally done, including not stopping
+        // the timer beforehand.
+        val = REG_TM1CNT_L;
+        SeedRng((u16)val);
+        REG_TM1CNT_H = 0;
+        sTrainerId = val;
+    }
 }
 
 u16 GetGeneratedTrainerIdLower(void)

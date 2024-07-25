@@ -102,6 +102,7 @@ const u8 gText_5MarksPokemon[] = _("????? Pokémon");
 const u8 gText_UnkHeight[] = _("{CLEAR_TO 0x0C}??'??”");
 const u8 gText_UnkHeightMetric[] = _("???.? m");
 const u8 gText_UnkWeight[] = _("????.? lbs.");
+const u8 gText_UnkWeightMetric[] = _("???.? kg.");
 const u8 gText_EmptyPkmnCategory[] = _("                       Pokémon"); // Unused
 const u8 gText_EmptyHeight[] = _("{CLEAR_TO 0x0C}    '    ”"); // Unused
 const u8 gText_EmptyWeight[] = _("        .   lbs."); // Unused
@@ -367,6 +368,7 @@ const u8 gText_SpaceForVar1Full[] = _("The space for {STR_VAR_1} is full.{PAUSE_
 const u8 gText_AnythingElseICanHelp[] = _("Is there anything else I can help\nyou with?");
 const u8 gText_CanIHelpWithAnythingElse[] = _("Can I help you with anything else?");
 const u8 gText_ThrowInPremierBall[] = _("I'll throw in a Premier Ball, too.{PAUSE_UNTIL_PRESS}");
+const u8 gText_ThrowInPremierBalls[] = _("I'll throw in {STR_VAR_1} Premier Balls, too.{PAUSE_UNTIL_PRESS}");
 const u8 gText_ThrowInSuperPotion[] = _("I'll throw in a Super Potion, too.{PAUSE_UNTIL_PRESS}");
 const u8 gText_CantBuyKeyItem[] = _("{STR_VAR_2}? Oh, no.\nI can't buy that.{PAUSE_UNTIL_PRESS}");
 const u8 gText_HowManyToSell[] = _("{STR_VAR_2}?\nHow many would you like to sell?");
@@ -1122,9 +1124,15 @@ const u8 gText_GamePlayCannotBeContinued[] = _("{COLOR RED}“Game play cannot b
 const u8 gText_CheckCompleted[] = _("Check completed.\nAttempting to save again.\nPlease wait.");
 const u8 gText_SaveCompleteGameCannotContinue[] = _("Save completed.\n{COLOR RED}“Game play cannot be continued.\nReturning to the title screen.”");
 const u8 gText_SaveCompletePressA[] = _("Save completed.\n{COLOR RED}“Please press the A Button.”");
-const u8 gText_Ferry[] = _("Ferry");
-const u8 gText_SecretBase[] = _("Secret Base");
-const u8 gText_Hideout[] = _("Hideout");
+#if (DECAP_ENABLED) && !(DECAP_MAP_NAMES)
+const u8 gText_Ferry[] = _C("FERRY");
+const u8 gText_SecretBase[] = _C("SECRET BASE");
+const u8 gText_Hideout[] = _C("HIDEOUT");
+#else
+const u8 gText_Ferry[] = _("FERRY");
+const u8 gText_SecretBase[] = _("SECRET BASE");
+const u8 gText_Hideout[] = _("HIDEOUT");
+#endif
 const u8 gText_ResetRTCConfirmCancel[] = _("Reset RTC?\nA: Confirm, B: Cancel");
 const u8 gText_PresentTime[] = _("Present time in game");
 const u8 gText_PreviousTime[] = _("Previous time in game");
@@ -1873,8 +1881,8 @@ const u8 gText_Berries[] = _("Berries");
 const u8 gText_ExpShareOn[] = _("The Exp. Share has been turned on.{PAUSE_UNTIL_PRESS}");
 const u8 gText_ExpShareOff[] = _("The Exp. Share has been turned off.{PAUSE_UNTIL_PRESS}");
 const u8 gText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all reset to zero!{PAUSE_UNTIL_PRESS}");
-
-
+const u8 gText_Fertilize[] = _("FERTILIZE");
+const u8 gText_PlantBerry[] = _("PLANT BERRY");
 
 //My stuff
 const u8 gText_Nickname[] = _("Nickname");

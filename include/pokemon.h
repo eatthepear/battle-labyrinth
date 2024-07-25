@@ -21,6 +21,11 @@ enum {
     MON_DATA_SANITY_IS_EGG,
     MON_DATA_OT_NAME,
     MON_DATA_MARKINGS,
+    MON_DATA_HP,
+    MON_DATA_IS_SHINY,
+    MON_DATA_HIDDEN_NATURE,
+    MON_DATA_HP_LOST,
+    MON_DATA_NICKNAME,
     MON_DATA_SPECIES,
     MON_DATA_HELD_ITEM,
     MON_DATA_MOVE1,
@@ -52,7 +57,7 @@ enum {
     MON_DATA_SPDEF_IV,
     MON_DATA_IS_EGG,
     MON_DATA_ABILITY_NUM,
-    MON_DATA_STATUS,
+    MON_DATA_OT_GENDER,
     MON_DATA_LEVEL,
     MON_DATA_MAX_HP,
     MON_DATA_ATK,
@@ -64,27 +69,44 @@ enum {
     MON_DATA_IVS,
     MON_DATA_KNOWN_MOVES,
     MON_DATA_STATUS2,
-    MON_DATA_HP2,
     MON_DATA_ATK2,
     MON_DATA_DEF2,
     MON_DATA_SPEED2,
     MON_DATA_SPATK2,
     MON_DATA_SPDEF2,
     MON_DATA_NATURE,
+    MON_DATA_HYPER_TRAINED_HP,
+    MON_DATA_HYPER_TRAINED_ATK,
+    MON_DATA_HYPER_TRAINED_DEF,
+    MON_DATA_HYPER_TRAINED_SPEED,
+    MON_DATA_HYPER_TRAINED_SPATK,
+    MON_DATA_HYPER_TRAINED_SPDEF,
+    MON_DATA_IS_SHADOW,
+    MON_DATA_DYNAMAX_LEVEL,
+    MON_DATA_GIGANTAMAX_FACTOR,
+    MON_DATA_TERA_TYPE,
+    MON_DATA_EVOLUTION_TRACKER,
 };
 
 struct BoxPokemon
 {
     u32 personality;
     u32 otId;
-    u8 nickname[POKEMON_NAME_LENGTH];
+    u8 nickname[min(10, POKEMON_NAME_LENGTH)];
     u8 language:3;
     u8 pokerus:5;
-
+    u8 hiddenNatureModifier:5; // 31 natures.
     u8 isBadEgg:1;
     u8 hasSpecies:1;
     u8 isEgg:1;
+    // u8 blockBoxRS:1; // Unused, but Pokémon Box Ruby & Sapphire will refuse to deposit a Pokémon with this flag set.
+    // u8 unused_13:4;
     u8 markings:4;
+    u8 compressedStatus:4;
+    // u16 checksum;
+    u16 hpLost:14; // 16383 HP.
+    u16 shinyModifier:1;
+    // u16 unused_1E:1;
 
     u8 otName[PLAYER_NAME_LENGTH];
     u8 metLocation;
@@ -95,7 +117,6 @@ struct BoxPokemon
 
     u32 experience:21;
     u32 status:3; // keeps track of major status conditions only
-    u16 hp;
     u8 ppBonuses;
     u8 friendship;
     u16 pokeball:7;
@@ -124,6 +145,7 @@ struct Pokemon
     u32 status;
     u8 level;
     u16 maxHP;
+    u16 hp;
     u16 attack;
     u16 defense;
     u16 speed;
@@ -662,7 +684,6 @@ bool32 SpeciesHasGenderDifferences(u16 species);
 bool32 TryFormChange(u32 monId, u32 side, u16 method);
 void TryToSetBattleFormChangeMoves(struct Pokemon *mon, u16 method);
 bool8 IsOverLevelLimit(u8 level);
-extern const u16 sLevelCaps[NUM_CAPS];
 
 u32 GetMonFriendshipScore(struct Pokemon *pokemon);
 u32 GetMonAffectionHearts(struct Pokemon *pokemon);

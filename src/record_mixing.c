@@ -97,7 +97,9 @@ static void UNUSED *sApprenticesSave;
 static void UNUSED *sBattleTowerSave_Duplicate;
 static u32 sRecordStructSize;
 static u8 sDaycareMailRandSum;
-static struct PlayerHallRecords UNUSED *sPartnerHallRecords[HALL_RECORDS_COUNT];
+#if FREE_RECORD_MIXING_HALL_RECORDS == FALSE
+static struct PlayerHallRecords *sPartnerHallRecords[HALL_RECORDS_COUNT];
+#endif //FREE_RECORD_MIXING_HALL_RECORDS
 
 static EWRAM_DATA struct RecordMixingDaycareMail UNUSED sRecordMixMail = {0};
 // static EWRAM_DATA union PlayerRecord *sReceivedRecords = NULL;
@@ -1338,13 +1340,14 @@ static void SaveHighestWinStreakRecords(struct RecordMixingHallRecords *mixHallR
 {
     // s32 i, j;
 
-    // for (i = 0; i < HALL_FACILITIES_COUNT; i++)
-    // {
-    //     for (j = 0; j < FRONTIER_LVL_MODE_COUNT; j++)
-    //         FillWinStreakRecords1P(gSaveBlock2Ptr->hallRecords1P[i][j], mixHallRecords->hallRecords1P[i][j]);
-    // }
-    // for (j = 0; j < FRONTIER_LVL_MODE_COUNT; j++)
-    //     FillWinStreakRecords2P(gSaveBlock2Ptr->hallRecords2P[j], mixHallRecords->hallRecords2P[j]);
+    for (i = 0; i < HALL_FACILITIES_COUNT; i++)
+    {
+        for (j = 0; j < FRONTIER_LVL_MODE_COUNT; j++)
+            FillWinStreakRecords1P(gSaveBlock2Ptr->hallRecords1P[i][j], mixHallRecords->hallRecords1P[i][j]);
+    }
+
+    for (j = 0; j < FRONTIER_LVL_MODE_COUNT; j++)
+        FillWinStreakRecords2P(gSaveBlock2Ptr->hallRecords2P[j], mixHallRecords->hallRecords2P[j]);
 }
 #endif //FREE_RECORD_MIXING_HALL_RECORDS
 

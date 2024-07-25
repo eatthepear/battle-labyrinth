@@ -224,7 +224,9 @@ static void UNUSED UpdateLinkBattleRecords(struct LinkBattleRecords *records, co
 
 void ClearPlayerLinkBattleRecords(void)
 {
+#if FREE_LINK_BATTLE_RECORDS == FALSE
     // ClearLinkBattleRecords(gSaveBlock1Ptr->linkBattleRecords.entries);
+#endif //FREE_LINK_BATTLE_RECORDS
 }
 
 #if FREE_LINK_BATTLE_RECORDS == FALSE
@@ -262,6 +264,7 @@ static void UNUSED UpdateTrainerCardWinsLosses(s32 battlerId)
 
 void UpdatePlayerLinkBattleRecords(s32 battlerId)
 {
+#if FREE_LINK_BATTLE_RECORDS == FALSE
     // if (InUnionRoom() != TRUE)
     // {
     //     UpdateTrainerCardWinsLosses(battlerId);
@@ -272,9 +275,11 @@ void UpdatePlayerLinkBattleRecords(s32 battlerId)
     //         gBattleOutcome,
     //         battlerId);
     // }
+#endif //FREE_LINK_BATTLE_RECORDS
 }
 
-static void UNUSED PrintLinkBattleWinsLossesDraws(struct LinkBattleRecord *records)
+#if FREE_LINK_BATTLE_RECORDS == FALSE
+static void PrintLinkBattleWinsLossesDraws(struct LinkBattleRecord *records)
 {
     s32 x;
 
@@ -319,7 +324,8 @@ static void UNUSED PrintLinkBattleRecord(struct LinkBattleRecord *record, u8 y, 
 
 void ShowLinkBattleRecords(void)
 {
-    // s32 i, x;
+#if FREE_LINK_BATTLE_RECORDS == FALSE
+    // s32 x, i;
 
     // gRecordsWindowId = AddWindow(&sLinkBattleRecordsWindow);
     // DrawStdWindowFrame(gRecordsWindowId, FALSE);
@@ -340,6 +346,7 @@ void ShowLinkBattleRecords(void)
 
     // PutWindowTilemap(gRecordsWindowId);
     // CopyWindowToVram(gRecordsWindowId, COPYWIN_FULL);
+#endif //FREE_LINK_BATTLE_RECORDS
 }
 
 void RemoveRecordsWindow(void)

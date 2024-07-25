@@ -727,11 +727,6 @@
 // gTileset_Snowy
 #define METATILE_Snowy_TallGrass  0x21D
 
-// gTileset_SootopolisGym
-#define METATILE_SootopolisGym_Ice_Broken   0x206
-#define METATILE_SootopolisGym_Ice_Cracked  0x20E
-#define METATILE_SootopolisGym_Stairs       0x207
-
 // gTileset_Sootopolis
 #define METATILE_Sootopolis_Door             0x21E
 #define METATILE_Sootopolis_Door_Closed      0x248

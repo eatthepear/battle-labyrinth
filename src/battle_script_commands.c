@@ -1802,11 +1802,14 @@ static void Cmd_ppreduce(void)
     if (gBattleControllerExecFlags)
         return;
 
+    if (gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS)
+        gHitMarker |= HITMARKER_NO_PPDEDUCT;
+    
     if ((FlagGet(FLAG_SETTINGS_BRUTAL) == TRUE) || (FlagGet(FLAG_SETTINGS_CHALLENGE) == TRUE))
     {
         if (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER)
         {
-            switch (gBattleMoves[gCurrentMove].effect)
+            switch (gMovesInfo[gCurrentMove].effect)
             {
             case EFFECT_RESTORE_HP:
             case EFFECT_SOFTBOILED:
@@ -1929,8 +1932,8 @@ s32 CalcCritChanceStageArgs(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
 {
     s32 critChance = 0;
 
-    if (gSideStatuses[battlerDef] & SIDE_STATUS_LUCKY_CHANT || gStatuses3[battlerAtk] & STATUS3_CANT_SCORE_A_CRIT
-       || abilityDef == ABILITY_BATTLE_ARMOR || abilityDef == ABILITY_SHELL_ARMOR || abilityDef == ABILITY_MAGMA_ARMOR)
+    if (gSideStatuses[battlerDef] & SIDE_STATUS_LUCKY_CHANT
+        || abilityDef == ABILITY_BATTLE_ARMOR || abilityDef == ABILITY_SHELL_ARMOR || abilityDef == ABILITY_MAGMA_ARMOR)
     {
         critChance = -1;
     }
@@ -7699,6 +7702,7 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     {
         scale = 2;
     }
+    u8 trainerMoney = 0;
 
     if (trainerId == TRAINER_SECRET_BASE)
     {
@@ -7706,25 +7710,18 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     }
     else
     {
-        const struct TrainerMon *party = gTrainers[trainerId].party;
-        lastMonLevel = party[gTrainers[trainerId].partySize - 1].lvl;
-
-        u8 classMultiplier;
-        for (; gTrainerMoneyTable[i].classId != 0xFF; i++)
-        {
-            if (gTrainerMoneyTable[i].classId == gTrainers[trainerId].trainerClass)
-                break;
-        }
-        classMultiplier = gTrainerMoneyTable[i].value;
-        if (gTrainers[trainerId].hasCustomTransition == TRUE)
-            classMultiplier = 20;
+        const struct TrainerMon *party = GetTrainerPartyFromId(trainerId);
+        if (party == NULL)
+            return 20;
+        lastMonLevel = party[GetTrainerPartySizeFromId(trainerId) - 1].lvl;
+        trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money;
 
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
-            moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * classMultiplier;
+            moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
         else if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
-            moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * 2 * classMultiplier;
+            moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * 2 * trainerMoney;
         else
-            moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * classMultiplier;
+            moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
     }
 
     return moneyReward;
@@ -14687,60 +14684,7 @@ static void Cmd_jumpifnotcurrentmoveargtype(void)
     if (!IS_BATTLER_OF_TYPE(battler, gMovesInfo[gCurrentMove].argument))
         gBattlescriptCurrInstr = failInstr;
     else
-    {
-        switch (gBattleTerrain)
-        {
-        case BATTLE_TERRAIN_GRASS:
-            moveEffect = (B_SECRET_POWER_EFFECT >= GEN_4 ? MOVE_EFFECT_SLEEP : MOVE_EFFECT_POISON);
-            break;
-        case BATTLE_TERRAIN_UNDERWATER:
-            moveEffect = (B_SECRET_POWER_EFFECT >= GEN_6 ? MOVE_EFFECT_ATK_MINUS_1 : MOVE_EFFECT_DEF_MINUS_1);
-            break;
-        case BATTLE_TERRAIN_POND:
-            moveEffect = (B_SECRET_POWER_EFFECT >= GEN_4 ? MOVE_EFFECT_ATK_MINUS_1 : MOVE_EFFECT_SPD_MINUS_1);
-            break;
-        case BATTLE_TERRAIN_MOUNTAIN:
-            if (B_SECRET_POWER_EFFECT >= GEN_5)
-                moveEffect = MOVE_EFFECT_ACC_MINUS_1;
-            else if (B_SECRET_POWER_EFFECT >= GEN_4)
-                moveEffect = MOVE_EFFECT_FLINCH;
-            else
-                moveEffect = MOVE_EFFECT_CONFUSION;
-            break;
-        case BATTLE_TERRAIN_PUDDLE:
-            moveEffect = (B_SECRET_POWER_EFFECT >= GEN_5 ? MOVE_EFFECT_SPD_MINUS_1 : MOVE_EFFECT_ACC_MINUS_1);
-            break;
-        case BATTLE_TERRAIN_LONG_GRASS:
-        case BATTLE_TERRAIN_FOREST:
-            moveEffect = MOVE_EFFECT_SLEEP;
-            break;
-        case BATTLE_TERRAIN_SAND:
-            moveEffect = MOVE_EFFECT_ACC_MINUS_1;
-            break;
-        case BATTLE_TERRAIN_WATER:
-            moveEffect = MOVE_EFFECT_ATK_MINUS_1;
-            break;
-        case BATTLE_TERRAIN_CAVE:
-        case BATTLE_TERRAIN_BURIAL_GROUND:
-        case BATTLE_TERRAIN_SPACE:
-            moveEffect = MOVE_EFFECT_FLINCH;
-            break;
-        case BATTLE_TERRAIN_SOARING:
-        case BATTLE_TERRAIN_SKY_PILLAR:
-        case BATTLE_TERRAIN_MARSH:
-        case BATTLE_TERRAIN_SWAMP:
-            moveEffect = MOVE_EFFECT_SPD_MINUS_1;
-            break;
-        case BATTLE_TERRAIN_SNOW:
-        case BATTLE_TERRAIN_ICE:
-            moveEffect = (B_USE_FROSTBITE == TRUE ? MOVE_EFFECT_FROSTBITE : MOVE_EFFECT_FREEZE);
-            break;
-        default:
-            moveEffect = MOVE_EFFECT_PARALYSIS;
-            break;
-        }
-    }
-    return moveEffect;
+        gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
 static void Cmd_pickup(void)

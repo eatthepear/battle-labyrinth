@@ -4,6 +4,8 @@
 #include "constants/opponents.h"
 #include "constants/battle_frontier_trainers.h"
 
+#include "constants/battle_partner.h"
+
 // Special Trainer Ids.
 //      0-299 are frontier trainers
 #define TRAINER_RECORD_MIXING_FRIEND        FRONTIER_TRAINERS_COUNT
@@ -118,6 +120,7 @@
 #define TRAINER_PIC_WORKER                100
 #define TRAINER_PIC_ICE_WORKER            101
 #define TRAINER_PIC_ROUGHNECK             102
+#define TRAINER_PIC_COUNT                 103
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -294,7 +297,7 @@
 
 #define RS_FACILITY_CLASSES_COUNT               0x4D
 
-#define TRAINER_CLASS_LELOUCH        0x0  // Unused
+#define TRAINER_CLASS_PKMN_TRAINER_1 0x0  // Unused
 #define TRAINER_CLASS_PKMN_TRAINER_2 0x1  // Unused
 #define TRAINER_CLASS_HIKER          0x2
 #define TRAINER_CLASS_TEAM_AQUA      0x3

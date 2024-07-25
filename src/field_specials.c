@@ -92,7 +92,6 @@ static EWRAM_DATA u8 sTutorMoveAndElevatorWindowId = 0;
 static EWRAM_DATA u16 sLilycoveDeptStore_NeverRead = 0;
 static EWRAM_DATA u16 sLilycoveDeptStore_DefaultFloorChoice = 0;
 static EWRAM_DATA struct ListMenuItem *sScrollableMultichoice_ListMenuItem = NULL;
-// static EWRAM_DATA u16 sScrollableMultichoice_ScrollOffset = 0; removed due to dynamic multichoice
 static EWRAM_DATA u16 sFrontierExchangeCorner_NeverRead = 0;
 static EWRAM_DATA u8 sScrollableMultichoice_ItemSpriteId = 0;
 static EWRAM_DATA u8 sBattlePointsWindowId = 0;
@@ -147,6 +146,9 @@ static void SetInitialFansOfPlayer(void);
 static u16 PlayerGainRandomTrainerFan(void);
 #if FREE_LINK_BATTLE_RECORDS == FALSE
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
+#else
+static void BufferFanClubTrainerName_(u8 whichLinkTrainer, u8 whichNPCTrainer);
+#endif //FREE_LINK_BATTLE_RECORDS
 u16 GetCaughtSpeciesCount(void);
 
 void Special_ShowDiploma(void)
@@ -4171,41 +4173,46 @@ static void SetInitialFansOfPlayer(void)
 
 void BufferFanClubTrainerName(void)
 {
-    // u8 whichLinkTrainer = 0;
-    // u8 whichNPCTrainer = 0;
-    // switch (gSpecialVar_0x8004)
-    // {
-    // case FANCLUB_MEMBER1:
-    //     break;
-    // case FANCLUB_MEMBER2:
-    //     break;
-    // case FANCLUB_MEMBER3:
-    //     whichLinkTrainer = 0;
-    //     whichNPCTrainer = 3;
-    //     break;
-    // case FANCLUB_MEMBER4:
-    //     whichLinkTrainer = 0;
-    //     whichNPCTrainer = 1;
-    //     break;
-    // case FANCLUB_MEMBER5:
-    //     whichLinkTrainer = 1;
-    //     whichNPCTrainer = 0;
-    //     break;
-    // case FANCLUB_MEMBER6:
-    //     whichLinkTrainer = 0;
-    //     whichNPCTrainer = 4;
-    //     break;
-    // case FANCLUB_MEMBER7:
-    //     whichLinkTrainer = 1;
-    //     whichNPCTrainer = 5;
-    //     break;
-    // case FANCLUB_MEMBER8:
-    //     break;
-    // }
-    // BufferFanClubTrainerName_(&gSaveBlock1Ptr->linkBattleRecords, whichLinkTrainer, whichNPCTrainer);
+    u8 whichLinkTrainer = 0;
+    u8 whichNPCTrainer = 0;
+    switch (gSpecialVar_0x8004)
+    {
+    case FANCLUB_MEMBER1:
+        break;
+    case FANCLUB_MEMBER2:
+        break;
+    case FANCLUB_MEMBER3:
+        whichLinkTrainer = 0;
+        whichNPCTrainer = 3;
+        break;
+    case FANCLUB_MEMBER4:
+        whichLinkTrainer = 0;
+        whichNPCTrainer = 1;
+        break;
+    case FANCLUB_MEMBER5:
+        whichLinkTrainer = 1;
+        whichNPCTrainer = 0;
+        break;
+    case FANCLUB_MEMBER6:
+        whichLinkTrainer = 0;
+        whichNPCTrainer = 4;
+        break;
+    case FANCLUB_MEMBER7:
+        whichLinkTrainer = 1;
+        whichNPCTrainer = 5;
+        break;
+    case FANCLUB_MEMBER8:
+        break;
+    }
+#if FREE_LINK_BATTLE_RECORDS == FALSE
+    BufferFanClubTrainerName_(&gSaveBlock1Ptr->linkBattleRecords, whichLinkTrainer, whichNPCTrainer);
+#else
+    BufferFanClubTrainerName_(whichLinkTrainer, whichNPCTrainer);
+#endif //FREE_LINK_BATTLE_RECORDS
 }
 
-static void UNUSED BufferFanClubTrainerName_(struct LinkBattleRecords *linkRecords, u8 whichLinkTrainer, u8 whichNPCTrainer)
+#if FREE_LINK_BATTLE_RECORDS == FALSE
+static void BufferFanClubTrainerName_(struct LinkBattleRecords *linkRecords, u8 whichLinkTrainer, u8 whichNPCTrainer)
 {
     struct LinkBattleRecord *record = &linkRecords->entries[whichLinkTrainer];
     if (record->name[0] == EOS)
@@ -4587,15 +4594,6 @@ u16 GetNumTrainersRemaining(void)
         break;
     }
     return count;
-}
-
-u16 GetCurrentLevelCap(void)
-{
-    if (FlagGet(FLAG_IN_NEW_ZONE)) {
-        return sLevelCaps[VarGet(VAR_ZONE)];
-    } else {
-        return sLevelCaps[VarGet(VAR_ZONE) - 1];
-    }
 }
 
 u16 GetNumItemsRemaining(void)

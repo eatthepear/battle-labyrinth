@@ -33,6 +33,7 @@
 #include "constants/trainers.h"
 #include "field_specials.h"
 #include "constants/union_room.h"
+#include "level_caps.h"
 
 enum {
     WIN_MSG,

@@ -3164,20 +3164,6 @@ static void DebugAction_Give_Item_SelectQuantity(u8 taskId)
 #undef tItemId
 #undef tSpriteId
 
-//TMs
-static void DebugAction_Give_AllTMs(u8 taskId)
-{
-    u16 i;
-    PlayFanfare(MUS_OBTAIN_TMHM);
-    for (i = ITEM_TM01; i <= ITEM_TM100; i++) {
-        if(!CheckBagHasItem(i, 1))
-            AddBagItem(i, 1);
-    }
-
-    Debug_DestroyMenu_Full(taskId);
-    ScriptContext_Enable();
-}
-
 //Pokemon
 static void ResetMonDataStruct(struct DebugMonData *sDebugMonData)
 {

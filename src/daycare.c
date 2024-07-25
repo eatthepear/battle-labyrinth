@@ -361,11 +361,6 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
         SetMonData(&pokemon, MON_DATA_EXP, &experience);
         level = GetLevelFromMonExp(&pokemon);
         
-        if (level >= sLevelCaps[VarGet(VAR_ZONE)])
-        {
-            experience = GetBoxMonData(&daycareMon->mon, MON_DATA_EXP);
-        }
-        
         ApplyDaycareExperience(&pokemon);
     }
 
@@ -406,12 +401,6 @@ static u8 GetLevelAfterDaycareSteps(struct BoxPokemon *mon, u32 steps)
     // set experience now to be able to get levelAfter
     SetBoxMonData(&tempMon, MON_DATA_EXP, &experience);
     level = GetLevelFromBoxMonExp(&tempMon);
-    
-    if (level >= sLevelCaps[VarGet(VAR_ZONE)])
-    {
-        experience = GetBoxMonData(mon, MON_DATA_EXP);
-        SetBoxMonData(&tempMon, MON_DATA_EXP, &experience);
-    }
     
     return GetLevelFromBoxMonExp(&tempMon);
 }

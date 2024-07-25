@@ -841,47 +841,6 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     // check non-user target
     if (!(moveTarget & MOVE_TARGET_USER))
     {
-        // handle negative checks on non-user target
-        // check powder moves
-        if (gBattleMoves[move].powderMove && !IsAffectedByPowder(battlerDef, aiData->abilities[battlerDef], aiData->holdEffects[battlerDef]))
-        {
-            RETURN_SCORE_MINUS(20);
-        }
-
-        // check ground immunities
-        if (moveType == TYPE_GROUND
-          && !IsBattlerGrounded(battlerDef)
-          && ((aiData->abilities[battlerDef] == ABILITY_LEVITATE
-          && DoesBattlerIgnoreAbilityChecks(aiData->abilities[battlerAtk], move))
-          || aiData->holdEffects[battlerDef] == HOLD_EFFECT_AIR_BALLOON
-          || (gStatuses3[battlerDef] & (STATUS3_MAGNET_RISE | STATUS3_TELEKINESIS)))
-          && move != MOVE_THOUSAND_ARROWS)
-        {
-            RETURN_SCORE_MINUS(20);
-        }
-
-        // check off screen
-        if (IsSemiInvulnerable(battlerDef, move) && moveEffect != EFFECT_SEMI_INVULNERABLE && AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == AI_IS_FASTER)
-            RETURN_SCORE_MINUS(20);    // if target off screen and we go first, don't use move
-
-        if (IsChargingMove(battlerAtk, moveEffect) && CanTargetFaintAi(battlerDef, battlerAtk))
-            RETURN_SCORE_MINUS(10);
-
-        // check if negates type
-        switch (effectiveness)
-        {
-        case AI_EFFECTIVENESS_x0:
-            RETURN_SCORE_MINUS(20);
-            break;
-        case AI_EFFECTIVENESS_x0_125:
-        case AI_EFFECTIVENESS_x0_25:
-            RETURN_SCORE_MINUS(10);
-            break;
-        case AI_EFFECTIVENESS_x0_5:
-            score -= 2;
-            break;
-        }
-
         // target ability checks
         if (!DoesBattlerIgnoreAbilityChecks(aiData->abilities[battlerAtk], move))
         {
@@ -1771,7 +1730,10 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             else
                 ADJUST_SCORE(GOOD_EFFECT);
             break;
-        case EFFECT_FAKE_OUT:
+        // case EFFECT_TELEPORT:
+        //     ADJUST_SCORE(-10);
+        //     break;
+        case EFFECT_FIRST_TURN_ONLY:
             if (!gDisableStructs[battlerAtk].isFirstTurn)
                 ADJUST_SCORE(-10);
             break;
@@ -3278,7 +3240,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         break;
     case EFFECT_ABSORB:
         if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT && effectiveness >= AI_EFFECTIVENESS_x1)
-            ADJUST_SCORE(2);
+            ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_EXPLOSION:
     case EFFECT_MEMENTO:
@@ -3589,7 +3551,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
     case EFFECT_DO_NOTHING:
         //todo - check z splash, z celebrate, z happy hour (lol)
         break;
-    case EFFECT_TELEPORT:
+    case EFFECT_TELEPORT: // Either remove or add better logic
         // if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || GetBattlerSide(battlerAtk) != B_SIDE_PLAYER)
         //     break;
         //fallthrough

@@ -2340,7 +2340,8 @@ void ScrollRankingHallRecordsWindow(void)
 
 void ClearRankingHallRecords(void)
 {
-//     s32 i, j, k;
+#if FREE_RECORD_MIXING_HALL_RECORDS == FALSE
+    // s32 i, j, k;
 
 //     // UB: Passing 0 as a pointer instead of a pointer holding a value of 0.
 // #ifdef UBFIX
@@ -2374,6 +2375,7 @@ void ClearRankingHallRecords(void)
     //         gSaveBlock2Ptr->hallRecords2P[j][k].winStreak = 0;
     //     }
     // }
+#endif //FREE_RECORD_MIXING_HALL_RECORDS
 }
 
 void SaveGameFrontier(void)

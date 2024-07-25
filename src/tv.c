@@ -1333,10 +1333,15 @@ void UNUSED PutFanClubSpecialOnTheAir(void)
     // StringCopy(show->fanClubSpecial.idolName, name);
     // StorePlayerIdInNormalShow(show);
     // show->fanClubSpecial.language = gGameLanguage;
+#if FREE_LINK_BATTLE_RECORDS == FALSE
     // if (show->fanClubSpecial.language == LANGUAGE_JAPANESE || gSaveBlock1Ptr->linkBattleRecords.languages[0] == LANGUAGE_JAPANESE)
     //     show->fanClubSpecial.idolNameLanguage = LANGUAGE_JAPANESE;
     // else
     //     show->fanClubSpecial.idolNameLanguage = gSaveBlock1Ptr->linkBattleRecords.languages[0];
+#else
+    // if (show->fanClubSpecial.language == LANGUAGE_JAPANESE)
+    //     show->fanClubSpecial.idolNameLanguage = LANGUAGE_JAPANESE;
+#endif //FREE_LINK_BATTLE_RECORDS
 }
 
 void UNUSED ContestLiveUpdates_Init(u8 round1Placing)
@@ -1952,7 +1957,6 @@ void UNUSED AlertTVThatPlayerPlayedRoulette(u16 nCoinsSpent)
 static void UNUSED SecretBaseVisit_CalculateDecorationData(TVShow *show)
 {
     // u8 i, j;
-    // u16 k;
     // u8 n;
     // u8 decoration;
 
@@ -1998,12 +2002,7 @@ static void UNUSED SecretBaseVisit_CalculateDecorationData(TVShow *show)
     //     break;
     // default:
     //     // More than 1 decoration, randomize the full list
-    //     for (k = 0; k < n * n; k++)
-    //     {
-    //         decoration = Random() % n;
-    //         j = Random() % n;
-    //         SWAP(sTV_DecorationsBuffer[decoration], sTV_DecorationsBuffer[j], i);
-    //     }
+    //     Shuffle(sTV_DecorationsBuffer, n, sizeof(sTV_DecorationsBuffer[0]));
 
     //     // Pick the first decorations in the randomized list to talk about on the show
     //     for (i = 0; i < show->secretBaseVisit.numDecorations; i++)
@@ -2316,8 +2315,10 @@ bool8 UNUSED ShouldHideFanClubInterviewer(void)
     // if (gSpecialVar_Result == TRUE)
     //     return TRUE;
 
-    // if (gSaveBlock1Ptr->linkBattleRecords.entries[0].name[0] == EOS)
-    //     return TRUE;
+#if FREE_LINK_BATTLE_RECORDS == FALSE
+    if (gSaveBlock1Ptr->linkBattleRecords.entries[0].name[0] == EOS)
+        return TRUE;
+#endif //FREE_LINK_BATTLE_RECORDS
 
     return FALSE;
 }
@@ -4346,7 +4347,7 @@ static void UNUSED DoTVShowBravoTrainerPokemonProfile(void)
     //     break;
     // case 6:
     //     StringCopy(gStringVar1, GetSpeciesName(show->bravoTrainer.species));
-    //     StringCopy(gStringVar2, gMoveNames[show->bravoTrainer.move]);
+    //     StringCopy(gStringVar2, GetMoveName(show->bravoTrainer.move));
     //     CopyEasyChatWord(gStringVar3, show->bravoTrainer.words[1]);
     //     sTVShowState = 7;
     //     break;
@@ -5176,7 +5177,7 @@ static void UNUSED DoTVShowPokemonContestLiveUpdates(void)
     //     break;
     // case CONTESTLIVE_STATE_USED_MOVE:
     //     StringCopy(gStringVar2, GetSpeciesName(show->contestLiveUpdates.winningSpecies));
-    //     StringCopy(gStringVar3, gMoveNames[show->contestLiveUpdates.move]);
+    //     StringCopy(gStringVar3, GetMoveName(show->contestLiveUpdates.move));
     //     sTVShowState = CONTESTLIVE_STATE_TALK_ABOUT_LOSER;
     //     break;
     // case CONTESTLIVE_STATE_TALK_ABOUT_LOSER:
@@ -5283,7 +5284,7 @@ static void UNUSED DoTVShowPokemonBattleUpdate(void)
     // case 2:
     //     TVShowConvertInternationalString(gStringVar1, show->battleUpdate.playerName, show->battleUpdate.language);
     //     StringCopy(gStringVar2, GetSpeciesName(show->battleUpdate.speciesPlayer));
-    //     StringCopy(gStringVar3, gMoveNames[show->battleUpdate.move]);
+    //     StringCopy(gStringVar3, GetMoveName(show->battleUpdate.move));
     //     sTVShowState = 3;
     //     break;
     // case 3:
@@ -5304,7 +5305,7 @@ static void UNUSED DoTVShowPokemonBattleUpdate(void)
     // case 6:
     //     TVShowConvertInternationalString(gStringVar1, show->battleUpdate.playerName, show->battleUpdate.language);
     //     StringCopy(gStringVar2, GetSpeciesName(show->battleUpdate.speciesPlayer));
-    //     StringCopy(gStringVar3, gMoveNames[show->battleUpdate.move]);
+    //     StringCopy(gStringVar3, GetMoveName(show->battleUpdate.move));
     //     sTVShowState = 7;
     //     break;
     // case 7:
@@ -5445,7 +5446,7 @@ void UNUSED DoTVShowInSearchOfTrainers(void)
     //     break;
     // case 3:
     //     StringCopy(gStringVar1, GetSpeciesName(gSaveBlock1Ptr->gabbyAndTyData.mon1));
-    //     StringCopy(gStringVar2, gMoveNames[gSaveBlock1Ptr->gabbyAndTyData.lastMove]);
+    //     StringCopy(gStringVar2, GetMoveName(gSaveBlock1Ptr->gabbyAndTyData.lastMove));
     //     StringCopy(gStringVar3, GetSpeciesName(gSaveBlock1Ptr->gabbyAndTyData.mon2));
     //     sTVShowState = 8;
     //     break;
@@ -5815,50 +5816,88 @@ static void UNUSED DoTVShowTrainerFanClubSpecial(void)
     // switch (state)
     // {
     // case 0:
-    //     TVShowConvertInternationalString(gStringVar1, show->fanClubSpecial.idolName, show->fanClubSpecial.idolNameLanguage);
-    //     TVShowConvertInternationalString(gStringVar2, show->fanClubSpecial.playerName, show->fanClubSpecial.language);
-    //     CopyEasyChatWord(gStringVar3, show->fanClubSpecial.words[0]);
-    //     if (show->fanClubSpecial.score >= 90)
+    //     if (show->breakingNews.outcome == 0)
     //         sTVShowState = 1;
-    //     else if (show->fanClubSpecial.score >= 70)
-    //         sTVShowState = 2;
-    //     else if (show->fanClubSpecial.score >= 30)
-    //         sTVShowState = 3;
     //     else
-    //         sTVShowState = 4;
+    //         sTVShowState = 5;
     //     break;
     // case 1:
-    //     TVShowConvertInternationalString(gStringVar1, show->fanClubSpecial.idolName, show->fanClubSpecial.idolNameLanguage);
-    //     TVShowConvertInternationalString(gStringVar2, show->fanClubSpecial.playerName, show->fanClubSpecial.language);
-    //     ConvertIntToDecimalString(2, show->fanClubSpecial.score);
-    //     sTVShowState = 5;
+    //     TVShowConvertInternationalString(gStringVar1, show->breakingNews.playerName, show->breakingNews.language);
+    //     StringCopy(gStringVar2, GetSpeciesName(show->breakingNews.lastOpponentSpecies));
+    //     GetMapName(gStringVar3, show->breakingNews.location, 0);
+    //     sTVShowState = 2;
     //     break;
     // case 2:
-    //     TVShowConvertInternationalString(gStringVar1, show->fanClubSpecial.idolName, show->fanClubSpecial.idolNameLanguage);
-    //     TVShowConvertInternationalString(gStringVar2, show->fanClubSpecial.playerName, show->fanClubSpecial.language);
-    //     ConvertIntToDecimalString(2, show->fanClubSpecial.score);
-    //     sTVShowState = 5;
+    //     TVShowConvertInternationalString(gStringVar1, show->breakingNews.playerName, show->breakingNews.language);
+    //     StringCopy(gStringVar2, GetSpeciesName(show->breakingNews.lastOpponentSpecies));
+    //     StringCopy(gStringVar3, GetSpeciesName(show->breakingNews.poke1Species));
+    //     sTVShowState = 3;
     //     break;
     // case 3:
-    //     TVShowConvertInternationalString(gStringVar1, show->fanClubSpecial.idolName, show->fanClubSpecial.idolNameLanguage);
-    //     TVShowConvertInternationalString(gStringVar2, show->fanClubSpecial.playerName, show->fanClubSpecial.language);
-    //     ConvertIntToDecimalString(2, show->fanClubSpecial.score);
-    //     sTVShowState = 5;
+    //     ConvertIntToDecimalString(0, show->breakingNews.balls);
+    //     StringCopy(gStringVar2, ItemId_GetName(show->breakingNews.caughtMonBall));
+    //     sTVShowState = 4;
     //     break;
     // case 4:
-    //     TVShowConvertInternationalString(gStringVar1, show->fanClubSpecial.idolName, show->fanClubSpecial.idolNameLanguage);
-    //     TVShowConvertInternationalString(gStringVar2, show->fanClubSpecial.playerName, show->fanClubSpecial.language);
-    //     ConvertIntToDecimalString(2, show->fanClubSpecial.score);
-    //     sTVShowState = 5;
+    //     TVShowConvertInternationalString(gStringVar1, show->breakingNews.playerName, show->breakingNews.language);
+    //     GetMapName(gStringVar2, show->breakingNews.location, 0);
+    //     TVShowDone();
     //     break;
     // case 5:
-    //     TVShowConvertInternationalString(gStringVar1, show->fanClubSpecial.idolName, show->fanClubSpecial.idolNameLanguage);
-    //     TVShowConvertInternationalString(gStringVar2, show->fanClubSpecial.playerName, show->fanClubSpecial.language);
-    //     CopyEasyChatWord(gStringVar3, show->fanClubSpecial.words[0]);
+    //     TVShowConvertInternationalString(gStringVar1, show->breakingNews.playerName, show->breakingNews.language);
+    //     StringCopy(gStringVar2, GetSpeciesName(show->breakingNews.lastOpponentSpecies));
+    //     GetMapName(gStringVar3, show->breakingNews.location, 0);
+    //     sTVShowState = 6;
+    //     break;
+    // case 6:
+    //     TVShowConvertInternationalString(gStringVar1, show->breakingNews.playerName, show->breakingNews.language);
+    //     StringCopy(gStringVar2, GetSpeciesName(show->breakingNews.lastOpponentSpecies));
+    //     StringCopy(gStringVar3, GetSpeciesName(show->breakingNews.poke1Species));
+    //     switch (show->breakingNews.outcome)
+    //     {
+    //     case 1:
+    //         if (show->breakingNews.lastUsedMove == MOVE_NONE)
+    //             sTVShowState = 12;
+    //         else
+    //             sTVShowState = 7;
+    //         break;
+    //     case 2:
+    //         sTVShowState = 9;
+    //         break;
+    //     case 3:
+    //         sTVShowState = 10;
+    //         break;
+    //     }
+    //     break;
+    // case 7:
+    //     StringCopy(gStringVar1, GetMoveName(show->breakingNews.lastUsedMove));
+    //     StringCopy(gStringVar2, GetSpeciesName(show->breakingNews.poke1Species));
+    //     sTVShowState = 8;
+    //     break;
+    // case 12:
+    //     TVShowConvertInternationalString(gStringVar1, show->breakingNews.playerName, show->breakingNews.language);
+    //     StringCopy(gStringVar2, GetSpeciesName(show->breakingNews.lastOpponentSpecies));
+    //     StringCopy(gStringVar3, GetSpeciesName(show->breakingNews.poke1Species));
+    //     sTVShowState = 8;
+    //     break;
+    // case 8:
+    //     TVShowConvertInternationalString(gStringVar1, show->breakingNews.playerName, show->breakingNews.language);
+    //     GetMapName(gStringVar2, show->breakingNews.location, 0);
+    //     sTVShowState = 11;
+    //     break;
+    // case 9:
+    // case 10:
+    //     TVShowConvertInternationalString(gStringVar1, show->breakingNews.playerName, show->breakingNews.language);
+    //     StringCopy(gStringVar2, GetSpeciesName(show->breakingNews.lastOpponentSpecies));
+    //     GetMapName(gStringVar3, show->breakingNews.location, 0);
+    //     sTVShowState = 11;
+    //     break;
+    // case 11:
+    //     TVShowConvertInternationalString(gStringVar1, show->breakingNews.playerName, show->breakingNews.language);
     //     TVShowDone();
     //     break;
     // }
-    // ShowFieldMessage(sTVTrainerFanClubSpecialTextGroup[state]);
+    // ShowFieldMessage(sTVBreakingNewsTextGroup[state]);
 }
 
 static void UNUSED DoTVShowTrainerFanClub(void)
@@ -5873,80 +5912,73 @@ static void UNUSED DoTVShowTrainerFanClub(void)
     // switch (state)
     // {
     // case 0:
-    //     TVShowConvertInternationalString(gStringVar1, show->trainerFanClub.playerName, show->trainerFanClub.language);
-    //     playerId = ((show->common.trainerIdHi << 8) + show->common.trainerIdLo);
-    //     switch (playerId % 10)
-    //     {
-    //     case 0:
-    //         sTVShowState = 1;
-    //         break;
-    //     case 1:
+    //     TVShowConvertInternationalString(gStringVar1, show->secretBaseVisit.playerName, show->secretBaseVisit.language);
+    //     if (show->secretBaseVisit.numDecorations == 0)
     //         sTVShowState = 2;
-    //         break;
-    //     case 2:
+    //     else
+    //         sTVShowState = 1;
+    //     break;
+    // case 1:
+    //     StringCopy(gStringVar2, gDecorations[show->secretBaseVisit.decorations[0]].name);
+    //     if (show->secretBaseVisit.numDecorations == 1)
+    //         sTVShowState = 4;
+    //     else
     //         sTVShowState = 3;
+    //     break;
+    // case 3:
+    //     StringCopy(gStringVar2, gDecorations[show->secretBaseVisit.decorations[1]].name);
+    //     switch (show->secretBaseVisit.numDecorations)
+    //     {
+    //     case 2:
+    //         sTVShowState = 7;
     //         break;
     //     case 3:
-    //         sTVShowState = 4;
+    //         sTVShowState = 6;
     //         break;
     //     case 4:
     //         sTVShowState = 5;
     //         break;
-    //     case 5:
-    //         sTVShowState = 6;
-    //         break;
-    //     case 6:
-    //         sTVShowState = 7;
-    //         break;
-    //     case 7:
-    //         sTVShowState = 8;
-    //         break;
-    //     case 8:
-    //         sTVShowState = 9;
-    //         break;
-    //     case 9:
-    //         sTVShowState = 10;
-    //         break;
     //     }
     //     break;
-    // case 1:
-    //     sTVShowState = 11;
-    //     break;
-    // case 2:
-    //     sTVShowState = 11;
-    //     break;
-    // case 3:
-    //     sTVShowState = 11;
-    //     break;
-    // case 4:
-    //     sTVShowState = 11;
-    //     break;
     // case 5:
-    //     sTVShowState = 11;
+    //     StringCopy(gStringVar2, gDecorations[show->secretBaseVisit.decorations[2]].name);
+    //     StringCopy(gStringVar3, gDecorations[show->secretBaseVisit.decorations[3]].name);
+    //     sTVShowState = 8;
     //     break;
     // case 6:
-    //     sTVShowState = 11;
+    //     StringCopy(gStringVar2, gDecorations[show->secretBaseVisit.decorations[2]].name);
+    //     sTVShowState = 8;
     //     break;
+    // case 2:
+    // case 4:
     // case 7:
-    //     sTVShowState = 11;
+    //     sTVShowState = 8;
     //     break;
     // case 8:
-    //     sTVShowState = 11;
+    //     TVShowConvertInternationalString(gStringVar1, show->secretBaseVisit.playerName, show->secretBaseVisit.language);
+    //     if (show->secretBaseVisit.avgLevel < 25)
+    //         sTVShowState = 12;
+    //     else if (show->secretBaseVisit.avgLevel < 50)
+    //         sTVShowState = 11;
+    //     else if (show->secretBaseVisit.avgLevel < 70)
+    //         sTVShowState = 10;
+    //     else
+    //         sTVShowState = 9;
     //     break;
     // case 9:
-    //     sTVShowState = 11;
-    //     break;
     // case 10:
-    //     sTVShowState = 11;
-    //     break;
     // case 11:
-    //     TVShowConvertInternationalString(gStringVar1, show->trainerFanClub.playerName, show->trainerFanClub.language);
-    //     CopyEasyChatWord(gStringVar2, show->trainerFanClub.words[0]);
-    //     CopyEasyChatWord(gStringVar3, show->trainerFanClub.words[1]);
+    // case 12:
+    //     TVShowConvertInternationalString(gStringVar1, show->secretBaseVisit.playerName, show->secretBaseVisit.language);
+    //     StringCopy(gStringVar2, GetSpeciesName(show->secretBaseVisit.species));
+    //     StringCopy(gStringVar3, GetMoveName(show->secretBaseVisit.move));
+    //     sTVShowState = 13;
+    //     break;
+    // case 13:
     //     TVShowDone();
     //     break;
     // }
-    // ShowFieldMessage(sTVTrainerFanClubTextGroup[state]);
+    // ShowFieldMessage(sTVSecretBaseVisitTextGroup[state]);
 }
 
 static void UNUSED DoTVShowSpotTheCuties(void)
@@ -6066,141 +6098,57 @@ static void UNUSED DoTVShowPokemonNewsBattleFrontier(void)
     // switch (state)
     // {
     // case 0:
-    //     switch (show->frontier.facilityAndMode)
+    //     TVShowConvertInternationalString(gStringVar1, show->battleSeminar.playerName, show->battleSeminar.language);
+    //     StringCopy(gStringVar2, GetSpeciesName(show->battleSeminar.species));
+    //     StringCopy(gStringVar3, GetSpeciesName(show->battleSeminar.foeSpecies));
+    //     sTVShowState = 1;
+    //     break;
+    // case 1:
+    //     TVShowConvertInternationalString(gStringVar1, show->battleSeminar.playerName, show->battleSeminar.language);
+    //     StringCopy(gStringVar2, GetSpeciesName(show->battleSeminar.foeSpecies));
+    //     StringCopy(gStringVar3, GetMoveName(show->battleSeminar.move));
+    //     sTVShowState = 2;
+    //     break;
+    // case 2:
+    //     StringCopy(gStringVar1, GetSpeciesName(show->battleSeminar.species));
+    //     switch (show->battleSeminar.nOtherMoves)
     //     {
     //     case 1:
-    //         sTVShowState = 1;
+    //         sTVShowState = 5;
     //         break;
     //     case 2:
-    //         sTVShowState = 2;
+    //         sTVShowState = 4;
     //         break;
     //     case 3:
     //         sTVShowState = 3;
     //         break;
-    //     case 4:
-    //         sTVShowState = 4;
-    //         break;
-    //     case 5:
-    //         sTVShowState = 5;
-    //         break;
-    //     case 6:
+    //     default:
     //         sTVShowState = 6;
-    //         break;
-    //     case 7:
-    //         sTVShowState = 7;
-    //         break;
-    //     case 8:
-    //         sTVShowState = 8;
-    //         break;
-    //     case 9:
-    //         sTVShowState = 9;
-    //         break;
-    //     case 10:
-    //         sTVShowState = 10;
-    //         break;
-    //     case 11:
-    //         sTVShowState = 11;
-    //         break;
-    //     case 12:
-    //         sTVShowState = 12;
-    //         break;
-    //     case 13:
-    //         sTVShowState = 13;
     //         break;
     //     }
     //     break;
-    // case 1:
-    //     TVShowConvertInternationalString(gStringVar1, show->frontier.playerName, show->frontier.language);
-    //     ConvertIntToDecimalString(1, show->frontier.winStreak);
-    //     sTVShowState = 14;
-    //     break;
-    // case 2:
-    //     TVShowConvertInternationalString(gStringVar1, show->frontier.playerName, show->frontier.language);
-    //     ConvertIntToDecimalString(1, show->frontier.winStreak);
-    //     sTVShowState = 16;
-    //     break;
     // case 3:
-    //     TVShowConvertInternationalString(gStringVar1, show->frontier.playerName, show->frontier.language);
-    //     ConvertIntToDecimalString(1, show->frontier.winStreak);
-    //     sTVShowState = 15;
+    //     StringCopy(gStringVar1, GetMoveName(show->battleSeminar.otherMoves[0]));
+    //     StringCopy(gStringVar2, GetMoveName(show->battleSeminar.otherMoves[1]));
+    //     StringCopy(gStringVar3, GetMoveName(show->battleSeminar.otherMoves[2]));
+    //     sTVShowState = 6;
     //     break;
     // case 4:
-    //     TVShowConvertInternationalString(gStringVar1, show->frontier.playerName, show->frontier.language);
-    //     ConvertIntToDecimalString(1, show->frontier.winStreak);
-    //     sTVShowState = 15;
+    //     StringCopy(gStringVar1, GetMoveName(show->battleSeminar.otherMoves[0]));
+    //     StringCopy(gStringVar2, GetMoveName(show->battleSeminar.otherMoves[1]));
+    //     sTVShowState = 6;
     //     break;
     // case 5:
-    //     TVShowConvertInternationalString(gStringVar1, show->frontier.playerName, show->frontier.language);
-    //     ConvertIntToDecimalString(1, show->frontier.winStreak);
-    //     sTVShowState = 14;
+    //     StringCopy(gStringVar2, GetMoveName(show->battleSeminar.otherMoves[0]));
+    //     sTVShowState = 6;
     //     break;
     // case 6:
-    //     TVShowConvertInternationalString(gStringVar1, show->frontier.playerName, show->frontier.language);
-    //     ConvertIntToDecimalString(1, show->frontier.winStreak);
-    //     sTVShowState = 14;
-    //     break;
-    // case 7:
-    //     TVShowConvertInternationalString(gStringVar1, show->frontier.playerName, show->frontier.language);
-    //     ConvertIntToDecimalString(1, show->frontier.winStreak);
-    //     sTVShowState = 14;
-    //     break;
-    // case 8:
-    //     TVShowConvertInternationalString(gStringVar1, show->frontier.playerName, show->frontier.language);
-    //     ConvertIntToDecimalString(1, show->frontier.winStreak);
-    //     sTVShowState = 14;
-    //     break;
-    // case 9:
-    //     TVShowConvertInternationalString(gStringVar1, show->frontier.playerName, show->frontier.language);
-    //     ConvertIntToDecimalString(1, show->frontier.winStreak);
-    //     sTVShowState = 14;
-    //     break;
-    // case 10:
-    //     TVShowConvertInternationalString(gStringVar1, show->frontier.playerName, show->frontier.language);
-    //     ConvertIntToDecimalString(1, show->frontier.winStreak);
-    //     sTVShowState = 14;
-    //     break;
-    // case 11:
-    //     TVShowConvertInternationalString(gStringVar1, show->frontier.playerName, show->frontier.language);
-    //     ConvertIntToDecimalString(1, show->frontier.winStreak);
-    //     sTVShowState = 14;
-    //     break;
-    // case 12:
-    //     TVShowConvertInternationalString(gStringVar1, show->frontier.playerName, show->frontier.language);
-    //     ConvertIntToDecimalString(1, show->frontier.winStreak);
-    //     sTVShowState = 14;
-    //     break;
-    // case 13:
-    //     TVShowConvertInternationalString(gStringVar1, show->frontier.playerName, show->frontier.language);
-    //     ConvertIntToDecimalString(1, show->frontier.winStreak);
-    //     sTVShowState = 14;
-    //     break;
-    // case 14:
-    //     StringCopy(gStringVar1, GetSpeciesName(show->frontier.species1));
-    //     StringCopy(gStringVar2, GetSpeciesName(show->frontier.species2));
-    //     StringCopy(gStringVar3, GetSpeciesName(show->frontier.species3));
-    //     sTVShowState = 18;
-    //     break;
-    // case 15:
-    //     StringCopy(gStringVar1, GetSpeciesName(show->frontier.species1));
-    //     StringCopy(gStringVar2, GetSpeciesName(show->frontier.species2));
-    //     sTVShowState = 18;
-    //     break;
-    // case 16:
-    //     StringCopy(gStringVar1, GetSpeciesName(show->frontier.species1));
-    //     StringCopy(gStringVar2, GetSpeciesName(show->frontier.species2));
-    //     StringCopy(gStringVar3, GetSpeciesName(show->frontier.species3));
-    //     sTVShowState = 17;
-    //     break;
-    // case 17:
-    //     StringCopy(gStringVar1, GetSpeciesName(show->frontier.species4));
-    //     sTVShowState = 18;
-    //     break;
-    // case 18:
-    //     TVShowConvertInternationalString(gStringVar1, show->frontier.playerName, show->frontier.language);
+    //     StringCopy(gStringVar1, GetMoveName(show->battleSeminar.betterMove));
+    //     StringCopy(gStringVar2, GetMoveName(show->battleSeminar.move));
     //     TVShowDone();
     //     break;
     // }
-    // ShowFieldMessage(sTVPokemonNewsBattleFrontierTextGroup[state]);
+    // ShowFieldMessage(sTVThePokemonBattleSeminarTextGroup[state]);
 }
 
 static void UNUSED DoTVShowWhatsNo1InHoennToday(void)
@@ -6283,7 +6231,7 @@ static void UNUSED DoTVShowWhatsNo1InHoennToday(void)
     // ShowFieldMessage(sTVWhatsNo1InHoennTodayTextGroup[state]);
 }
 
-u8 UNUSED SecretBaseSecrets_GetNumActionsTaken(TVShow *show)
+u8 SecretBaseSecrets_GetNumActionsTaken(TVShow *show)
 {
     u8 i;
     u8 flagsSet;

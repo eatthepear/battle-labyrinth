@@ -889,7 +889,6 @@ script EventScript_Shop_ZhuLiIntro {
 	msgbox("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: Zhu Li is my assistant!\pSilph gave me so many items to sell\nthat I practically begged them for\lsome extra help!\pZhu Li, introduce yourself!")
 	msgbox("{COLOR BLUE}Zhu Li{COLOR DARK_GRAY}: Yes, sir.\pPleased to meet you, {PLAYER}. I'm-")
 	msgbox("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: Alright, we don't have all\nday, Zhu Li! Talk to her if you\lwant to buy consumable items, while\lI'll handle all of the held items!")
-	setvar(VAR_ZHULI_INTRO, 1)
 	setflag(FLAG_VARRICK_INTRO)
 	releaseall
 }

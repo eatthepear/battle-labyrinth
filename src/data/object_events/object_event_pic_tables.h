@@ -1316,26 +1316,26 @@ static const struct SpriteFrameImage sPicTable_Anabel[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_Mirage[] = {
-    overworld_frame(gObjectEventPic_Mirage, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Mirage, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Mirage, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Mirage, 2, 4, 3),
-    overworld_frame(gObjectEventPic_Mirage, 2, 4, 4),
-    overworld_frame(gObjectEventPic_Mirage, 2, 4, 5),
-    overworld_frame(gObjectEventPic_Mirage, 2, 4, 6),
-    overworld_frame(gObjectEventPic_Mirage, 2, 4, 7),
-    overworld_frame(gObjectEventPic_Mirage, 2, 4, 8),
+    overworld_ascending_frames(gObjectEventPic_Mirage, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Mirage, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Mirage, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Mirage, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Mirage, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Mirage, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Mirage, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Mirage, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Mirage, 2, 4),
 };
 const struct SpriteFrameImage sPicTable_Colress[] = {
-    overworld_frame(gObjectEventPic_Colress, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Colress, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Colress, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Colress, 2, 4, 3),
-    overworld_frame(gObjectEventPic_Colress, 2, 4, 4),
-    overworld_frame(gObjectEventPic_Colress, 2, 4, 5),
-    overworld_frame(gObjectEventPic_Colress, 2, 4, 6),
-    overworld_frame(gObjectEventPic_Colress, 2, 4, 7),
-    overworld_frame(gObjectEventPic_Colress, 2, 4, 8),
+    overworld_ascending_frames(gObjectEventPic_Colress, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Colress, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Colress, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Colress, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Colress, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Colress, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Colress, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Colress, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_Colress, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_Spenser[] = {

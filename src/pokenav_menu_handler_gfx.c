@@ -365,15 +365,17 @@ static const struct ScanlineEffectParams sPokenavMainMenuScanlineEffectParams =
 
 static bool32 AreAnyTrainerRematchesNearby(void)
 {
-    // s32 i;
+#if FREE_MATCH_CALL == FALSE
+    s32 i;
 
-    // for (i = 0; i < REMATCH_TABLE_ENTRIES; i++)
-    // {
-    //     if (GetMatchTableMapSectionId(i) == gMapHeader.regionMapSectionId
-    //         && IsRematchEntryRegistered(i)
-    //         && gSaveBlock1Ptr->trainerRematches[i])
-    //         return TRUE;
-    // }
+    for (i = 0; i < REMATCH_TABLE_ENTRIES; i++)
+    {
+        if (GetMatchTableMapSectionId(i) == gMapHeader.regionMapSectionId
+            && IsRematchEntryRegistered(i)
+            && gSaveBlock1Ptr->trainerRematches[i])
+            return TRUE;
+    }
+#endif //FREE_MATCH_CALL
 
     return FALSE;
 }

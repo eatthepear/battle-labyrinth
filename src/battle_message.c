@@ -165,9 +165,9 @@ static const u8 sText_PkmnClamped[] = _("{B_ATK_NAME_WITH_PREFIX} Clamped\n{B_DE
 static const u8 sText_PkmnHurtBy[] = _("{B_ATK_NAME_WITH_PREFIX} is hurt\nby {B_BUFF1}!");
 static const u8 sText_PkmnFreedFrom[] = _("{B_ATK_NAME_WITH_PREFIX} was freed\nfrom {B_BUFF1}!");
 static const u8 sText_PkmnCrashed[] = _("{B_ATK_NAME_WITH_PREFIX} kept going\nand crashed!");
-const u8 gText_PkmnShroudedInMist[] = _("{B_ATK_PREFIX2} became\nshrouded in Mist!");
-static const u8 sText_PkmnProtectedByMist[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} is protected\nby Mist!");
-const u8 gText_PkmnGettingPumped[] = _("{B_ATK_NAME_WITH_PREFIX} is getting\npumped!");
+const u8 gText_PkmnShroudedInMist[] = _("{B_ATK_PREFIX2} became\nshrouded in mist!");
+static const u8 sText_PkmnProtectedByMist[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} is protected\nby mist!");
+const u8 gText_PkmnGettingPumped[] = _("{B_DEF_NAME_WITH_PREFIX} is getting\npumped!");
 static const u8 sText_PkmnHitWithRecoil[] = _("{B_ATK_NAME_WITH_PREFIX} is hit\nwith recoil!");
 static const u8 sText_PkmnProtectedItself2[] = _("{B_ATK_NAME_WITH_PREFIX} protected\nitself!");
 static const u8 sText_PkmnBuffetedBySandstorm[] = _("{B_ATK_NAME_WITH_PREFIX} is buffeted\nby the sandstorm!");
@@ -305,7 +305,7 @@ static const u8 sText_PkmnsXPreventsYLoss[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX}
 static const u8 sText_PkmnsXInfatuatedY[] = _("{B_DEF_NAME_WITH_PREFIX}'s {B_DEF_ABILITY}\ninfatuated {B_ATK_NAME_WITH_PREFIX}!");
 static const u8 sText_PkmnsXMadeYIneffective[] = _("{B_DEF_NAME_WITH_PREFIX}'s {B_DEF_ABILITY}\nmade {B_CURRENT_MOVE} ineffective!");
 static const u8 sText_PkmnsXCuredYProblem[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\ncured its {B_BUFF1} problem!");
-static const u8 sText_ItSuckedLiquidOoze[] = _("It sucked up the\nLiquid Ooze!");
+static const u8 sText_ItSuckedLiquidOoze[] = _("It sucked up the\nliquid ooze!");
 static const u8 sText_PkmnTransformed[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} transformed!");
 static const u8 sText_PkmnsXTookAttack[] = _("{B_DEF_NAME_WITH_PREFIX}'s {B_DEF_ABILITY}\ntook the attack!");
 const u8 gText_PkmnsXPreventsSwitching[] = _("{B_BUFF1}'s {B_LAST_ABILITY}\nprevents switching!\p");
@@ -2099,31 +2099,6 @@ const u8 gText_Draw[] = _("{HIGHLIGHT TRANSPARENT}Draw");
 static const u8 sText_SpaceIs[] = _(" is");
 static const u8 sText_ApostropheS[] = _("'s");
 
-// For displaying names of invalid moves.
-// This is large enough that the text for TYPE_ELECTRIC will exceed TEXT_BUFF_ARRAY_COUNT.
-static const u8 sATypeMove_Table[NUMBER_OF_MON_TYPES][17] =
-{
-    [TYPE_NORMAL]   = _("a Normal move"),
-    [TYPE_FIGHTING] = _("a Fighting move"),
-    [TYPE_FLYING]   = _("a Flying move"),
-    [TYPE_POISON]   = _("a Poison move"),
-    [TYPE_GROUND]   = _("a Ground move"),
-    [TYPE_ROCK]     = _("a Rock move"),
-    [TYPE_BUG]      = _("a Bug move"),
-    [TYPE_GHOST]    = _("a Ghost move"),
-    [TYPE_STEEL]    = _("a Steel move"),
-    [TYPE_MYSTERY]  = _("a ??? move"),
-    [TYPE_FIRE]     = _("a Fire move"),
-    [TYPE_WATER]    = _("a Water move"),
-    [TYPE_GRASS]    = _("a Grass move"),
-    [TYPE_ELECTRIC] = _("an Electric move"),
-    [TYPE_PSYCHIC]  = _("a Psychic move"),
-    [TYPE_ICE]      = _("an Ice move"),
-    [TYPE_DRAGON]   = _("a Dragon move"),
-    [TYPE_DARK]     = _("a Dark move"),
-    [TYPE_FAIRY]    = _("a Fairy move"),
-};
-
 const u8 gText_BattleTourney[] = _("BATTLE TOURNEY");
 static const u8 sText_Round1[] = _("Round 1");
 static const u8 sText_Round2[] = _("Round 2");
@@ -3234,13 +3209,13 @@ static const u8 *BattleStringGetOpponentClassByTrainerId(u16 trainerId)
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
         toCpy = gTrainerClasses[GetTrainerHillOpponentClass(trainerId)].name;
     else if (gBattleTypeFlags & BATTLE_TYPE_EREADER_TRAINER)
-        toCpy = gTrainerClassNames[GetEreaderTrainerClassId()];
+        toCpy = gTrainerClasses[GetEreaderTrainerClassId()].name;
     else if (gTrainers[trainerId].trainerPic == TRAINER_PIC_MIRAGES)
-        toCpy = gTrainerClassNames[TRAINER_CLASS_MIRAGE];
+        toCpy = gTrainerClasses[TRAINER_CLASS_MIRAGE].name;
     else if (gTrainers[trainerId].trainerPic == TRAINER_PIC_DOME_ACE_TUCKER)
-        toCpy = gTrainerClassNames[TRAINER_CLASS_MIRAGE];
+        toCpy = gTrainerClasses[TRAINER_CLASS_MIRAGE].name;
     else if (gTrainers[trainerId].hasCustomTransition == TRUE)
-        toCpy = gTrainerClassNames[TRAINER_CLASS_LEADER];
+        toCpy = gTrainerClasses[TRAINER_CLASS_LEADER].name;
     else
         toCpy = gTrainerClasses[GetTrainerClassFromId(trainerId)].name;
 

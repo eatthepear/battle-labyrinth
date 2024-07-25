@@ -64,13 +64,16 @@ struct TrainerMon
     u16 heldItem;
     u16 moves[MAX_MON_MOVES];
     u8 ball;
+    // u8 friendship;
+    u8 nature:5;
+    bool8 gender:2;
+    bool8 isShiny:1;
+    u8 dynamaxLevel:4;
     u16 ability:2;
     u16 status:2;
-    u16 gender:2;
-    u16 build:3;
-    u16 shiny:1;
-    u16 nature:5;
-    u16 unused:1;
+    bool8 gigantamaxFactor:1;
+    bool8 shouldDynamax:1;
+    bool8 shouldTerastal:1;
 };
 
 #define TRAINER_PARTY(partyArray) partyArray, .partySize = ARRAY_COUNT(partyArray)
@@ -85,11 +88,13 @@ struct Trainer
     /*0x12*/ u8 trainerPic;
     /*0x13*/ u8 trainerName[TRAINER_NAME_LENGTH + 1];
     /*0x1E*/ bool8 doubleBattle:1;
-    bool8 shouldShuffle:1;
-             u8 padding:6;
-    /*0x1F*/ u8 partySize:6;
-    u8 transition:7;
-    u8 hasCustomTransition:1;
+             bool8 mugshotEnabled:1;
+             u8 startingStatus:6;    // this trainer starts a battle with a given status. see include/constants/battle.h for values
+    /*0x1F*/ u8 mugshotColor;
+             u8 transition:7;
+             u8 hasCustomTransition:1;
+    /*0x20*/ u8 partySize:6;
+             bool8 shouldShuffle:1;
 };
 
 struct TrainerClass

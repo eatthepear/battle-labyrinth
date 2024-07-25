@@ -46,9 +46,9 @@ static void FaintFromFieldPoison(u8 partyIdx)
     struct Pokemon *pokemon = &gPlayerParty[partyIdx];
     u32 status = STATUS1_NONE;
 
-#if OW_POISON_DAMAGE < GEN_4
-    // AdjustFriendship(pokemon, FRIENDSHIP_EVENT_FAINT_FIELD_PSN);
-#endif
+    // if (OW_POISON_DAMAGE < GEN_4)
+    //     AdjustFriendship(pokemon, FRIENDSHIP_EVENT_FAINT_FIELD_PSN);
+
     SetMonData(pokemon, MON_DATA_STATUS, &status);
     GetMonData(pokemon, MON_DATA_NICKNAME, gStringVar1);
     StringGet_Nickname(gStringVar1);

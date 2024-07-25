@@ -5658,6 +5658,7 @@ bool8 SaveContestWinner(u8 rank)
     // {
     //     // Set the most recent winner so the artist can show the player their painting
     //     gCurContestWinner.personality = gContestMons[i].personality;
+    //     gCurContestWinner.isShiny = gContestMons[i].isShiny;
     //     gCurContestWinner.trainerId = gContestMons[i].otId;
     //     gCurContestWinner.species = gContestMons[i].species;
     //     StringCopy(gCurContestWinner.monName, gContestMons[i].nickname);

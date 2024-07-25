@@ -520,7 +520,6 @@ static void CB2_ChooseSendMonToPC(void);
 void TryItemHoldFormChange(struct Pokemon *mon);
 static void ShowMoveSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
-static bool32 CannotUsePartyBattleItem(u16 itemId, struct Pokemon* mon);
 static void Task_ChoosePartyMonForTraining(u8 taskId);
 static void CB2_ChoosePartyMonForTraining(void);
 static void DisplayShouldTrainMessage(struct Pokemon *mon, bool8 keepOpen);
@@ -2876,10 +2875,10 @@ static u8 DisplaySelectionWindow(u8 windowType)
     {
         const u8 *text;
         u8 fontColorsId = (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES) ? 4 : 3;
-        if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
-            text = gMovesInfo[sFieldMoves[sPartyMenuInternal->actions[i] - MENU_FIELD_MOVES]].name;
-        else
-            text = sCursorOptions[sPartyMenuInternal->actions[i]].text;
+        // if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
+        //     text = gMovesInfo[sFieldMoves[sPartyMenuInternal->actions[i] - MENU_FIELD_MOVES]].name;
+        // else
+        text = sCursorOptions[sPartyMenuInternal->actions[i]].text;
 
         AddTextPrinterParameterized4(sPartyMenuInternal->windowId[0], FONT_NORMAL, cursorDimension, (i * 16) + 1, letterSpacing, 0, sFontColorTable[fontColorsId], 0, text);
     }
@@ -5680,7 +5679,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     u8 holdEffectParam = ItemId_GetHoldEffectParam(*itemPtr);
 
     sInitialLevel = GetMonData(mon, MON_DATA_LEVEL);
-    if ((sInitialLevel != MAX_LEVEL) && !IsOverLevelLimit(sInitialLevel))
+    if (!(B_RARE_CANDY_CAP && sInitialLevel >= GetCurrentLevelCap()))
     {
         BufferMonStatsToTaskData(mon, arrayPtr);
         cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);

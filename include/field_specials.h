@@ -35,7 +35,6 @@ void SetPCBoxToSendMon(u8 boxId);
 void PreparePartyForSkyBattle(void);
 void ReverseHiddenItemFlags(void);
 u16 GetNumTrainersRemaining(void);
-u16 GetCurrentLevelCap(void);
 u16 GetNumItemsRemaining(void);
 void NewGameSetup(void);
 bool8 CheckSpeciesClause(void);

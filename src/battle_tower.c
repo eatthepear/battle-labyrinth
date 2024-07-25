@@ -2853,6 +2853,7 @@ static void AwardBattleTowerRibbons(void)
 // trainer with the player's current data.
 static void UNUSED FillEReaderTrainerWithPlayerData(void)
 {
+#if FREE_BATTLE_TOWER_E_READER == FALSE
     // struct BattleTowerEReaderTrainer *ereaderTrainer = &gSaveBlock2Ptr->frontier.ereaderTrainer;
     // s32 i, j;
 
@@ -2885,6 +2886,7 @@ static void UNUSED FillEReaderTrainerWithPlayerData(void)
     //     ConvertPokemonToBattleTowerPokemon(&gPlayerParty[i], &ereaderTrainer->party[i]);
 
     // SetEReaderTrainerChecksum(ereaderTrainer);
+#endif //FREE_BATTLE_TOWER_E_READER
 }
 
 u8 GetEreaderTrainerFrontSpriteId(void)
@@ -2954,7 +2956,8 @@ void ValidateEReaderTrainer(void)
 #endif //FREE_BATTLE_TOWER_E_READER
 }
 
-static void UNUSED SetEReaderTrainerChecksum(struct BattleTowerEReaderTrainer *ereaderTrainer)
+#if FREE_BATTLE_TOWER_E_READER == FALSE
+static void SetEReaderTrainerChecksum(struct BattleTowerEReaderTrainer *ereaderTrainer)
 {
     s32 i;
 
@@ -3020,83 +3023,53 @@ static void FillPartnerParty(u16 trainerId)
 
     if (trainerId > TRAINER_PARTNER(PARTNER_NONE))
     {
-        for (i = 0; i < MULTI_PARTY_SIZE; i++)
-        {
-            do
-            {
-                j = Random32();
-            } while (IsShinyOtIdPersonality(STEVEN_OTID, j) || sStevenMons[i].nature != GetNatureFromPersonality(j));
-            CreateMon(&gPlayerParty[MULTI_PARTY_SIZE + i],
-                      sStevenMons[i].species,
-                      sStevenMons[i].level,
-                      sStevenMons[i].fixedIV,
-                      TRUE,
-                      #ifdef BUGFIX
-                      j,
-                      #else
-                      i, // BUG: personality was stored in the 'j' variable. As a result, Steven's pokemon do not have the intended natures.
-                      #endif
-                      OT_ID_PRESET, STEVEN_OTID);
-            for (j = 0; j < PARTY_SIZE; j++)
-                SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_HP_EV + j, &sStevenMons[i].evs[j]);
-            for (j = 0; j < MAX_MON_MOVES; j++)
-                SetMonMoveSlot(&gPlayerParty[MULTI_PARTY_SIZE + i], sStevenMons[i].moves[j], j);
-            SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_STEVEN].trainerName);
-            // j = MALE;
-            // SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
-            CalculateMonStats(&gPlayerParty[MULTI_PARTY_SIZE + i]);
-        }
-    }
-    else if (trainerId >= TRAINER_CUSTOM_PARTNER)
-    {
-        otID = Random32();
-
         for (i = 0; i < 3; i++)
             ZeroMonData(&gPlayerParty[i + 3]);
 
         for (i = 0; i < 3 && i < gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].partySize; i++)
         {
-            const struct TrainerMon *partyData = gTrainers[trainerId - TRAINER_CUSTOM_PARTNER].party;
+            const struct TrainerMon *partyData = gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].party;
+            const u8 *partnerName = gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerName;
 
             gender = ((Random() % 2) ? MON_MALE : MON_FEMALE);
 
-            for (k = 0; partnerName[k] != EOS && k < 3; k++)
-            {
-                if (k == 0)
-                {
-                    firstIdPart = partnerName[k];
-                    secondIdPart = partnerName[k];
-                    thirdIdPart = partnerName[k];
-                }
-                else if (k == 1)
-                {
-                    secondIdPart = partnerName[k];
-                    thirdIdPart = partnerName[k];
-                }
-                else if (k == 2)
-                {
-                    thirdIdPart = partnerName[k];
-                }
-            }
-            if (trainerId == TRAINER_PARTNER(PARTNER_STEVEN))
-                otID = STEVEN_OTID;
-            else
-                otID = ((firstIdPart % 72) * 1000) + ((secondIdPart % 23) * 10) + (thirdIdPart % 37) % 65536;
+            // for (k = 0; partnerName[k] != EOS && k < 3; k++)
+            // {
+            //     if (k == 0)
+            //     {
+            //         firstIdPart = partnerName[k];
+            //         secondIdPart = partnerName[k];
+            //         thirdIdPart = partnerName[k];
+            //     }
+            //     else if (k == 1)
+            //     {
+            //         secondIdPart = partnerName[k];
+            //         thirdIdPart = partnerName[k];
+            //     }
+            //     else if (k == 2)
+            //     {
+            //         thirdIdPart = partnerName[k];
+            //     }
+            // }
+            otID = STEVEN_OTID;
+            // if (trainerId == TRAINER_PARTNER(PARTNER_STEVEN))
+            //     otID = STEVEN_OTID;
+            // else
+            //     otID = ((firstIdPart % 72) * 1000) + ((secondIdPart % 23) * 10) + (thirdIdPart % 37) % 65536;
 
-            personality = Random32();
             if (partyData[i].gender == TRAINER_MON_MALE)
                 gender = MON_MALE;
             else if (partyData[i].gender == TRAINER_MON_FEMALE)
                 gender = MON_FEMALE;
             else if (partyData[i].gender == TRAINER_MON_GENDERLESS)
                 gender = MON_GENDERLESS;
-
             if (partyData[i].nature > 0)
-                CreateMonWithGenderNatureLetter(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, fixedIV, gender, partyData[i].nature, 0, partyData[i].shiny ? OT_ID_SHINY : OT_ID_RANDOM_NO_SHINY);
+                CreateMonWithGenderNatureLetter(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, fixedIV, gender, partyData[i].nature, 0, partyData[i].isShiny ? OT_ID_SHINY : OT_ID_RANDOM_NO_SHINY);
             else
             {
-                CreateMonWithGenderNatureLetter(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, fixedIV, gender, NATURE_SERIOUS, 0, partyData[i].shiny ? OT_ID_SHINY : OT_ID_RANDOM_NO_SHINY);
+                CreateMonWithGenderNatureLetter(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, fixedIV, gender, NATURE_SERIOUS, 0, partyData[i].isShiny ? OT_ID_SHINY : OT_ID_RANDOM_NO_SHINY);
             }
+            // CustomTrainerPartyAssignMoves(&gPlayerParty[i + 3], &partyData[i]);
 
             if (partyData[i].status > 0)
             {
@@ -3108,6 +3081,16 @@ static void FillPartnerParty(u16 trainerId)
                     status = STATUS1_PARALYSIS;
                 SetMonData(&gPlayerParty[i + 3], MON_DATA_STATUS, &status);
             }
+
+            // if (partyData[i].ev != NULL)
+            // {
+            //     SetMonData(&gPlayerParty[i + 3], MON_DATA_HP_EV, &(partyData[i].ev[0]));
+            //     SetMonData(&gPlayerParty[i + 3], MON_DATA_ATK_EV, &(partyData[i].ev[1]));
+            //     SetMonData(&gPlayerParty[i + 3], MON_DATA_DEF_EV, &(partyData[i].ev[2]));
+            //     SetMonData(&gPlayerParty[i + 3], MON_DATA_SPATK_EV, &(partyData[i].ev[3]));
+            //     SetMonData(&gPlayerParty[i + 3], MON_DATA_SPDEF_EV, &(partyData[i].ev[4]));
+            //     SetMonData(&gPlayerParty[i + 3], MON_DATA_SPEED_EV, &(partyData[i].ev[5]));
+            // }
 
             if (partyData[i].nickname[0] != '\0')
                 SetMonData(&gPlayerParty[i + 3], MON_DATA_NICKNAME, &partyData[i].nickname);
@@ -3136,8 +3119,8 @@ static void FillPartnerParty(u16 trainerId)
                 {
                     SetMonData(&gPlayerParty[i + 3], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
                     SetMonData(&gPlayerParty[i + 3], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
-                    SetMonData(&gPlayerParty[i + 3], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
-                    SetMonData(&gPlayerParty[i + 3], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
+                    SetMonData(&gPlayerParty[i + 3], MON_DATA_PP1 + j, &gMovesInfo[partyData[i].moves[j]].pp);
+                    SetMonData(&gPlayerParty[i + 3], MON_DATA_PP1 + j, &gMovesInfo[partyData[i].moves[j]].pp);
                 }
             }
 
@@ -3178,7 +3161,6 @@ static void FillPartnerParty(u16 trainerId)
             StringCopy(trainerName, gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerName);
             SetMonData(&gPlayerParty[i + 3], MON_DATA_OT_NAME, trainerName);
             CalculateMonStats(&gPlayerParty[i + 3]);
-            
         }
     }
     else if (trainerId == TRAINER_EREADER)

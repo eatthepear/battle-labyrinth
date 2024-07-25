@@ -1760,6 +1760,62 @@ static const u16 sSpeciesToRandomize[] =
 };
 
 EWRAM_DATA static u16 sRandomSpecies[RANDOM_SPECIES_COUNT] = {0};
+// NOTE: Reordering this array will break compatibility with existing
+// saves.
+static const u32 sCompressedStatuses[] =
+{
+    STATUS1_NONE,
+    STATUS1_SLEEP_TURN(1),
+    STATUS1_SLEEP_TURN(2),
+    STATUS1_SLEEP_TURN(3),
+    STATUS1_SLEEP_TURN(4),
+    STATUS1_SLEEP_TURN(5),
+    STATUS1_POISON,
+    STATUS1_BURN,
+    STATUS1_FREEZE,
+    STATUS1_PARALYSIS,
+    STATUS1_TOXIC_POISON,
+    STATUS1_FROSTBITE,
+};
+
+// Attempt to detect situations where the BoxPokemon struct is unable to
+// contain all the values.
+// TODO: Is it possible to compute:
+// - The maximum experience.
+// - The maximum PP.
+// - The maximum HP.
+// - The maximum form countdown.
+STATIC_ASSERT(NUM_SPECIES < (1 << 11), PokemonSubstruct0_species_TooSmall);
+STATIC_ASSERT(NUMBER_OF_MON_TYPES + 1 <= (1 << 5), PokemonSubstruct0_teraType_TooSmall);
+STATIC_ASSERT(ITEMS_COUNT < (1 << 10), PokemonSubstruct0_heldItem_TooSmall);
+STATIC_ASSERT(MAX_LEVEL <= 100, PokemonSubstruct0_experience_PotentiallTooSmall); // Maximum of ~2 million exp.
+STATIC_ASSERT(LAST_BALL < (1 << 6), PokemonSubstruct0_pokeball_TooSmall);
+STATIC_ASSERT(MOVES_COUNT_ALL < (1 << 11), PokemonSubstruct1_moves_TooSmall);
+STATIC_ASSERT(ARRAY_COUNT(sCompressedStatuses) <= (1 << 4), PokemonSubstruct3_compressedStatus_TooSmall);
+STATIC_ASSERT(MAX_LEVEL < (1 << 7), PokemonSubstruct3_metLevel_TooSmall);
+STATIC_ASSERT(NUM_VERSIONS < (1 << 4), PokemonSubstruct3_metGame_TooSmall);
+STATIC_ASSERT(MAX_DYNAMAX_LEVEL < (1 << 4), PokemonSubstruct3_dynamaxLevel_TooSmall);
+STATIC_ASSERT(MAX_PER_STAT_IVS < (1 << 5), PokemonSubstruct3_ivs_TooSmall);
+STATIC_ASSERT(NUM_NATURES <= (1 << 5), BoxPokemon_hiddenNatureModifier_TooSmall);
+
+static u32 CompressStatus(u32 status)
+{
+    s32 i;
+    for (i = 0; i < ARRAY_COUNT(sCompressedStatuses); i++)
+    {
+        if (sCompressedStatuses[i] == status)
+            return i;
+    }
+    return 0; // STATUS1_NONE
+}
+
+static u32 UncompressStatus(u32 compressedStatus)
+{
+    if (compressedStatus < ARRAY_COUNT(sCompressedStatuses))
+        return sCompressedStatuses[compressedStatus];
+    else
+        return STATUS1_NONE;
+}
 
 void ZeroBoxMonData(struct BoxPokemon *boxMon)
 {
@@ -1870,7 +1926,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
                 if (!FlagGet(FLAG_SHINY_CREATION))
                     totalRerolls--;
             }
-            FlagClear(FLAG_SHINY_CREATION);
+            isShiny = GET_SHINY_VALUE(value, personality) < SHINY_ODDS;
         }
     }
 
@@ -1932,10 +1988,11 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
             SetBoxMonData(boxMon, MON_DATA_SPATK_IV, &iv);
             SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, &iv);
         }
-        else if (P_LEGENDARY_PERFECT_IVS >= GEN_6 
-         && ((gSpeciesInfo[species].isLegendary
+        else if (P_LEGENDARY_PERFECT_IVS >= GEN_6
+         && (gSpeciesInfo[species].isLegendary
           || gSpeciesInfo[species].isMythical
-          || gSpeciesInfo[species].isUltraBeast)
+          || gSpeciesInfo[species].isUltraBeast
+          || gSpeciesInfo[species].isTotem
           || FlagGet(FLAG_BOOSTED_IVS)))
         {
             iv = MAX_PER_STAT_IVS - (Random() % 2);
@@ -2565,61 +2622,18 @@ void BoxMonToMon(const struct BoxPokemon *src, struct Pokemon *dest)
     s32 newMaxHP;
     s32 n;
     u32 currentStatus;
+    u32 value = 0;
     // u8 pp[MAX_MON_MOVES];
     dest->box = *src;
-    currentStatus = GetMonData(mon, MON_DATA_STATUS2, NULL);
-    currentHP = GetMonData(mon, MON_DATA_HP2, NULL);
-    hpIV = GetMonData(mon, MON_DATA_HP_IV, NULL);
-    hpEV = GetMonData(mon, MON_DATA_HP_EV, NULL);
-    attackIV = GetMonData(mon, MON_DATA_ATK_IV, NULL);
-    attackEV = GetMonData(mon, MON_DATA_ATK_EV, NULL);
-    defenseIV = GetMonData(mon, MON_DATA_DEF_IV, NULL);
-    defenseEV = GetMonData(mon, MON_DATA_DEF_EV, NULL);
-    speedIV = GetMonData(mon, MON_DATA_SPEED_IV, NULL);
-    speedEV = GetMonData(mon, MON_DATA_SPEED_EV, NULL);
-    spAttackIV = GetMonData(mon, MON_DATA_SPATK_IV, NULL);
-    spAttackEV = GetMonData(mon, MON_DATA_SPATK_EV, NULL);
-    spDefenseIV = GetMonData(mon, MON_DATA_SPDEF_IV, NULL);
-    spDefenseEV = GetMonData(mon, MON_DATA_SPDEF_EV, NULL);
-    species = GetMonData(mon, MON_DATA_SPECIES, NULL);
-    level = GetLevelFromMonExp(mon);
-
-    SetMonData(mon, MON_DATA_LEVEL, &level);
-
-    n = 2 * gSpeciesInfo[species].baseHP + hpIV;
-    newMaxHP = (((n + hpEV / 4) * level) / 100) + level + 10;
-
-    SetMonData(mon, MON_DATA_MAX_HP, &newMaxHP);
-
-    CALC_STAT(baseAttack, attackIV, attackEV, STAT_ATK, MON_DATA_ATK)
-    CALC_STAT(baseDefense, defenseIV, defenseEV, STAT_DEF, MON_DATA_DEF)
-    CALC_STAT(baseSpeed, speedIV, speedEV, STAT_SPEED, MON_DATA_SPEED)
-    CALC_STAT(baseSpAttack, spAttackIV, spAttackEV, STAT_SPATK, MON_DATA_SPATK)
-    CALC_STAT(baseSpDefense, spDefenseIV, spDefenseEV, STAT_SPDEF, MON_DATA_SPDEF)
-
-    SetMonData(mon, MON_DATA_HP, &currentHP);
-    switch (currentStatus)
-    {
-    case AILMENT_PSN:
-        currentStatus = STATUS1_POISON;
-        break;
-    case AILMENT_PRZ:
-        currentStatus = STATUS1_PARALYSIS;
-        break;
-    case AILMENT_SLP:
-        currentStatus = STATUS1_SLEEP;
-        break;
-    case AILMENT_FRZ:
-        currentStatus = STATUS1_FREEZE;
-        break;
-    case AILMENT_BRN:
-        currentStatus = STATUS1_BURN;
-        break;
-    default:
-        currentStatus = 0;
-        break;
-    }
-    SetMonData(mon, MON_DATA_STATUS, &currentStatus);
+    dest->status = GetBoxMonData(&dest->box, MON_DATA_STATUS, NULL);
+    dest->hp = 0;
+    dest->maxHP = 0;
+    // value = MAIL_NONE;
+    // SetMonData(dest, MON_DATA_MAIL, &value);
+    value = GetBoxMonData(&dest->box, MON_DATA_HP_LOST);
+    CalculateMonStats(dest);
+    value = GetMonData(dest, MON_DATA_MAX_HP) - value;
+    SetMonData(dest, MON_DATA_HP, &value);
 }
 
 u8 GetLevelFromMonExp(struct Pokemon *mon)
@@ -3131,7 +3145,7 @@ u32 GetMonData3(struct Pokemon *mon, s32 field, u8 *data)
         ret = mon->level;
         break;
     case MON_DATA_HP:
-        ret = mon->box.hp;
+        ret = mon->hp;
         break;
     case MON_DATA_MAX_HP:
         ret = mon->maxHP;
@@ -3199,10 +3213,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
 {
     s32 i;
     u32 retVal = 0;
-    // struct PokemonSubstruct0 *substruct0 = NULL;
-    // struct PokemonSubstruct1 *substruct1 = NULL;
-    // struct PokemonSubstruct2 *substruct2 = NULL;
-    // struct PokemonSubstruct3 *substruct3 = NULL;
+    union EvolutionTracker evoTracker;
 
     // // Any field greater than MON_DATA_ENCRYPT_SEPARATOR is encrypted and must be treated as such
     // if (field > MON_DATA_ENCRYPT_SEPARATOR)
@@ -3410,9 +3421,6 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
     case MON_DATA_STATUS2:
         retVal = boxMon->status;
         break;
-    case MON_DATA_HP2:
-        retVal = boxMon->hp;
-        break;
     case MON_DATA_NATURE:
         retVal = boxMon->nature;
         break;
@@ -3440,15 +3448,17 @@ void SetMonData(struct Pokemon *mon, s32 field, const void *dataArg)
     {
     case MON_DATA_STATUS:
         SET32(mon->status);
-        mon->box.status = GetMonAilment(mon);
-        // SET32(mon->box.status);
+        SetBoxMonData(&mon->box, MON_DATA_STATUS, dataArg);
         break;
     case MON_DATA_LEVEL:
         SET8(mon->level);
         break;
     case MON_DATA_HP:
-        // SET16(mon->hp);
-        SET16(mon->box.hp);
+    {
+        u32 hpLost;
+        SET16(mon->hp);
+        hpLost = mon->maxHP - mon->hp;
+        SetBoxMonData(&mon->box, MON_DATA_HP_LOST, &hpLost);
         break;
     }
     case MON_DATA_HP_LOST:
@@ -7225,7 +7235,7 @@ void GiveRandomStarter(void)
 {
     u16 species;
     species = GetRandomSpecies(5);
-    gSpecialVar_Result = ScriptGiveMon(species, 5, ITEM_NONE, 0, 0, 0);
+    gSpecialVar_Result = ScriptGiveMon(species, 5, ITEM_NONE);
 }
 
 static void RemoveIVIndexFromList(u8 *ivs, u8 selectedIv)
@@ -7401,6 +7411,32 @@ void UpdateMonPersonality(struct BoxPokemon *boxMon, u32 personality)
     boxMon->personality = personality;
 }
 
+void HealPokemon(struct Pokemon *mon)
+{
+    u32 data;
+
+    data = GetMonData(mon, MON_DATA_MAX_HP);
+    SetMonData(mon, MON_DATA_HP, &data);
+
+    data = STATUS1_NONE;
+    SetMonData(mon, MON_DATA_STATUS, &data);
+
+    MonRestorePP(mon);
+}
+
+void HealBoxPokemon(struct BoxPokemon *boxMon)
+{
+    u32 data;
+
+    data = 0;
+    SetBoxMonData(boxMon, MON_DATA_HP_LOST, &data);
+
+    data = STATUS1_NONE;
+    SetBoxMonData(boxMon, MON_DATA_STATUS, &data);
+
+    BoxMonRestorePP(boxMon);
+}
+
 u16 GetCryIdBySpecies(u16 species)
 {
     species = SanitizeSpeciesId(species);
@@ -7428,24 +7464,13 @@ u16 GetSpeciesPreEvolution(u16 species)
     return SPECIES_NONE;
 }
 
-const u16 sLevelCaps[NUM_CAPS] = {
-    7,
-    7, 9, 11, 13, 15,
-    17, 20, 20, 21, 23,
-    24, 26, 30, 30, 30,
-    32, 33, 36, 36, 38,
-    39, 41, 43, 46, 46,
-    50, 50, 50, 50, 50,
-    50, 50, 50, 50, 50,
-    50, 50, 50, 50, 50,
-    50, 50, 50, 50, 50,
-    50, 50, 50, 50, 50,
-    100
-};
-
 bool8 IsOverLevelLimit(u8 level)
 {
     if (level >= GetCurrentLevelCap())
         return TRUE;
     return FALSE;
+}
+const u8 *GetMoveName(u16 moveId)
+{
+    return gMovesInfo[moveId].name;
 }

@@ -1392,7 +1392,7 @@ bool8 ScrCmd_dynmultichoice(struct ScriptContext *ctx)
     struct ListMenuItem *items;
 
     if (argc == 0)
-        return TRUE;
+        return FALSE;
 
     if (maxBeforeScroll == 0xFF)
         maxBeforeScroll = DYN_MULTICHOICE_DEFAULT_MAX_BEFORE_SCROLL;
@@ -1448,7 +1448,7 @@ bool8 ScrCmd_dynmultipush(struct ScriptContext *ctx)
     item.name = nameBuffer;
     item.id = id;
     MultichoiceDynamic_PushElement(item);
-    return TRUE;
+    return FALSE;
 }
 
 bool8 ScrCmd_multichoice(struct ScriptContext *ctx)
@@ -1776,25 +1776,6 @@ bool8 ScrCmd_bufferboxname(struct ScriptContext *ctx)
     u16 boxId = VarGet(ScriptReadHalfword(ctx));
 
     StringCopy(sScriptStringVars[stringVarIndex], GetBoxNamePtr(boxId));
-    return FALSE;
-}
-
-bool8 ScrCmd_givemon(struct ScriptContext *ctx)
-{
-    u16 species = VarGet(ScriptReadHalfword(ctx));
-    u8 level = ScriptReadByte(ctx);
-    u16 item = VarGet(ScriptReadHalfword(ctx));
-    u32 unkParam1 = ScriptReadWord(ctx);
-    u32 unkParam2 = ScriptReadWord(ctx);
-    u8 unkParam3 = ScriptReadByte(ctx);
-
-    if (FlagGet(FLAG_SETTINGS_RANDOMIZER) == TRUE)
-    {
-        if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
-            FlagSet(FLAG_SHOULD_CHECK_SPECIES_CLAUSE);
-        species = GetRandomSpecies(level);
-    }
-    gSpecialVar_Result = ScriptGiveMon(species, level, item, unkParam1, unkParam2, unkParam3);
     return FALSE;
 }
 
@@ -2445,46 +2426,6 @@ void ScrCmd_SetItemArg(void)
     gSaveBlock1Ptr->itemArg = gSpecialVar_0x8000;
 }
 
-bool8 ScrCmd_givecustommon(struct ScriptContext *ctx)
-{
-    u16 species = ScriptReadHalfword(ctx);
-    u8 level = ScriptReadByte(ctx);
-    u16 item = ScriptReadHalfword(ctx);
-    u8 ball = ScriptReadByte(ctx);
-    u8 nature = ScriptReadByte(ctx);
-    u8 abilityNum = ScriptReadByte(ctx);
-    u8 hpEv = ScriptReadByte(ctx);
-    u8 atkEv = ScriptReadByte(ctx);
-    u8 defEv = ScriptReadByte(ctx);
-    u8 speedEv = ScriptReadByte(ctx);
-    u8 spAtkEv = ScriptReadByte(ctx);
-    u8 spDefEv = ScriptReadByte(ctx);
-    u8 hpIv = ScriptReadByte(ctx);
-    u8 atkIv = ScriptReadByte(ctx);
-    u8 defIv = ScriptReadByte(ctx);
-    u8 speedIv = ScriptReadByte(ctx);
-    u8 spAtkIv = ScriptReadByte(ctx);
-    u8 spDefIv = ScriptReadByte(ctx);
-    u16 move1 = ScriptReadHalfword(ctx);
-    u16 move2 = ScriptReadHalfword(ctx);
-    u16 move3 = ScriptReadHalfword(ctx);
-    u16 move4 = ScriptReadHalfword(ctx);
-    bool8 isShiny = ScriptReadByte(ctx);
-    
-    u8 evs[NUM_STATS] = {hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv};
-    u8 ivs[NUM_STATS] = {hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv};
-    u16 moves[4] = {move1, move2, move3, move4};
-    
-    if (FlagGet(FLAG_SETTINGS_RANDOMIZER) == TRUE)
-    {
-        if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
-            FlagSet(FLAG_SHOULD_CHECK_SPECIES_CLAUSE);
-        species = GetRandomSpecies(level);
-    }
-
-    gSpecialVar_Result = ScriptGiveCustomMon(species, level, item, ball, nature, abilityNum, evs, ivs, moves, isShiny);
-    return FALSE;
-}
 // follow me script commands
 bool8 ScrCmd_setfollower(struct ScriptContext *ctx)
 {

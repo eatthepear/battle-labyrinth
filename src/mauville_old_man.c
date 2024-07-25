@@ -321,11 +321,7 @@ static void UNUSED InitGiddyTaleList(void)
     // // Shuffle question list
     // for (i = 0; i < GIDDY_MAX_QUESTIONS; i++)
     //     giddy->questionList[i] = i;
-    // for (i = 0; i < GIDDY_MAX_QUESTIONS; i++)
-    // {
-    //     var = Random() % (i + 1);
-    //     SWAP(giddy->questionList[i], giddy->questionList[var], temp);
-    // }
+    // Shuffle(giddy->questionList, GIDDY_MAX_QUESTIONS, sizeof(giddy->questionList[0]));
 
     // // Count total number of words in above word groups
     // totalWords = 0;

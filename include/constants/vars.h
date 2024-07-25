@@ -48,7 +48,7 @@
 
 //custom vars
 #define VAR_ZONE                             0x4020
-#define VAR_ZHULI_INTRO                      0x4021
+#define VAR_LEVEL_CAP                        0x4021
 #define VAR_RAND_STARTER_SEED                0x4022
 #define VAR_GENERIC                          0x4023
 #define VAR_ADVICE                           0x4024

@@ -521,20 +521,20 @@ static void AddSearchWindowText(u16 species, u8 proximity, u8 searchLevel, bool8
         // }
         // StringCopy(gStringVar1, gMoveNames[sDexNavSearchDataPtr->moves[0]]);
         
-        if (searchLevel > 2)
-        {            
-            // ability name
-            StringCopy(gStringVar1, gAbilityNames[GetAbilityBySpecies(species, sDexNavSearchDataPtr->abilityNum)]);
-            AddTextPrinterParameterized3(windowId, 0, WINDOW_COL_1 + 16, 12, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar1);
+        // if (searchLevel > 2)
+        // {            
+        //     // ability name
+        //     StringCopy(gStringVar1, gAbilityNames[GetAbilityBySpecies(species, sDexNavSearchDataPtr->abilityNum)]);
+        //     AddTextPrinterParameterized3(windowId, 0, WINDOW_COL_1 + 16, 12, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar1);
         
-            // item name
-            if (sDexNavSearchDataPtr->heldItem)
-            {
-                CopyItemName(sDexNavSearchDataPtr->heldItem, gStringVar1);
-                StringExpandPlaceholders(gStringVar4, sText_HeldItem);
-                AddTextPrinterParameterized3(windowId, 0, WINDOW_COL_0, 12, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
-            }
-        }
+        //     // item name
+        //     if (sDexNavSearchDataPtr->heldItem)
+        //     {
+        //         CopyItemName(sDexNavSearchDataPtr->heldItem, gStringVar1);
+        //         StringExpandPlaceholders(gStringVar4, sText_HeldItem);
+        //         AddTextPrinterParameterized3(windowId, 0, WINDOW_COL_0, 12, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
+        //     }
+        // }
     }
     
     //chain level - always present
@@ -2200,14 +2200,14 @@ static void PrintCurrentSpeciesInfo(void)
     }
     else if (GetSetPokedexFlag(dexNum, FLAG_GET_CAUGHT))
     {
-        #ifdef BATTLE_ENGINE
-        if (gSpeciesInfo[species].abilities[2] != ABILITY_NONE)
-            AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, HA_INFO_Y, sFontColor_Black, 0, gAbilityNames[gSpeciesInfo[species].abilities[2]]);
-        #else
-        if (gSpeciesInfo[species].abilityHidden != ABILITY_NONE)           
-            AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, HA_INFO_Y, sFontColor_Black, 0, gAbilityNames[gSpeciesInfo[species].abilityHidden]);
-        #endif
-        else
+        // #ifdef BATTLE_ENGINE
+        // if (gSpeciesInfo[species].abilities[2] != ABILITY_NONE)
+        //     AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, HA_INFO_Y, sFontColor_Black, 0, gAbilityNames[gSpeciesInfo[species].abilities[2]]);
+        // #else
+        // if (gSpeciesInfo[species].abilityHidden != ABILITY_NONE)           
+        //     AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, HA_INFO_Y, sFontColor_Black, 0, gAbilityNames[gSpeciesInfo[species].abilityHidden]);
+        // #endif
+        // else
             AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, HA_INFO_Y, sFontColor_Black, 0, gText_None);
     }
     else
