@@ -178,10 +178,14 @@ Common_Movement_Colress_WalkDown:
 	walk_down
 # 102 "data/scripts/movement.pory"
 	walk_down
+# 102 "data/scripts/movement.pory"
+	walk_down
 	step_end
 
 # 105 "data/scripts/movement.pory"
 Common_Movement_Colress_WalkUp:
+# 106 "data/scripts/movement.pory"
+	walk_up
 # 106 "data/scripts/movement.pory"
 	walk_up
 # 106 "data/scripts/movement.pory"

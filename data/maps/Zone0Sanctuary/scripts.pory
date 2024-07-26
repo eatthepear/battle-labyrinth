@@ -483,6 +483,7 @@ script Zone0Sanctuary_EventScript_EndIntro {
 	initclock(1, 1)
 	callnative(ReturnFromStartWallClock)
 	setvar(VAR_ZONE, 1)
+	setvar(VAR_LEVEL_CAP, 7)
 	buffernumberstring(0, VAR_ZONE)
 	msgbox(gText_Colress_WhenUReady)
 	applymovement(1, Common_Movement_Colress_WalkUp)

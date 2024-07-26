@@ -959,16 +959,18 @@ Zone0Sanctuary_EventScript_EndIntro_1:
 # 485 "data/maps/Zone0Sanctuary/scripts.pory"
 	setvar VAR_ZONE, 1
 # 486 "data/maps/Zone0Sanctuary/scripts.pory"
-	buffernumberstring 0, VAR_ZONE
+	setvar VAR_LEVEL_CAP, 7
 # 487 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox gText_Colress_WhenUReady
+	buffernumberstring 0, VAR_ZONE
 # 488 "data/maps/Zone0Sanctuary/scripts.pory"
-	applymovement 1, Common_Movement_Colress_WalkUp
+	msgbox gText_Colress_WhenUReady
 # 489 "data/maps/Zone0Sanctuary/scripts.pory"
-	waitmovement 1
+	applymovement 1, Common_Movement_Colress_WalkUp
 # 490 "data/maps/Zone0Sanctuary/scripts.pory"
-	setflag FLAG_IS_DEBUGGING_SAVEFILE
+	waitmovement 1
 # 491 "data/maps/Zone0Sanctuary/scripts.pory"
+	setflag FLAG_IS_DEBUGGING_SAVEFILE
+# 492 "data/maps/Zone0Sanctuary/scripts.pory"
 	releaseall
 	end
 
@@ -1128,67 +1130,65 @@ Zone0Sanctuary_EventScript_EndIntro_10:
 
 
 Zone0Sanctuary_EventScript_NextZone::
-# 496 "data/maps/Zone0Sanctuary/scripts.pory"
-	lock
 # 497 "data/maps/Zone0Sanctuary/scripts.pory"
-	faceplayer
+	lock
 # 498 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox gText_Colress_Greetings, MSGBOX_DEFAULT
+	faceplayer
 # 499 "data/maps/Zone0Sanctuary/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone0Sanctuary_EventScript_NextZone_Text_0, Zone0Sanctuary_EventScript_NextZone_Text_1, Zone0Sanctuary_EventScript_NextZone_Text_2, Zone0Sanctuary_EventScript_NextZone_Text_3
+	msgbox gText_Colress_Greetings, MSGBOX_DEFAULT
 # 500 "data/maps/Zone0Sanctuary/scripts.pory"
-	switch VAR_RESULT
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone0Sanctuary_EventScript_NextZone_Text_0, Zone0Sanctuary_EventScript_NextZone_Text_1, Zone0Sanctuary_EventScript_NextZone_Text_2, Zone0Sanctuary_EventScript_NextZone_Text_3
 # 501 "data/maps/Zone0Sanctuary/scripts.pory"
+	switch VAR_RESULT
+# 502 "data/maps/Zone0Sanctuary/scripts.pory"
 	case 0, Zone0Sanctuary_EventScript_NextZone_3
-# 509 "data/maps/Zone0Sanctuary/scripts.pory"
+# 510 "data/maps/Zone0Sanctuary/scripts.pory"
 	case 1, Zone0Sanctuary_EventScript_NextZone_4
-# 511 "data/maps/Zone0Sanctuary/scripts.pory"
+# 512 "data/maps/Zone0Sanctuary/scripts.pory"
 	case 2, Zone0Sanctuary_EventScript_NextZone_5
 Zone0Sanctuary_EventScript_NextZone_1:
-# 514 "data/maps/Zone0Sanctuary/scripts.pory"
+# 515 "data/maps/Zone0Sanctuary/scripts.pory"
 	goto EventScript_WhenUReady
 	return
 
 Zone0Sanctuary_EventScript_NextZone_3:
-# 502 "data/maps/Zone0Sanctuary/scripts.pory"
-	buffernumberstring 0, VAR_ZONE
 # 503 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox gText_Colress_SureReadyToLeave, MSGBOX_YESNO
+	buffernumberstring 0, VAR_ZONE
 # 504 "data/maps/Zone0Sanctuary/scripts.pory"
+	msgbox gText_Colress_SureReadyToLeave, MSGBOX_YESNO
+# 505 "data/maps/Zone0Sanctuary/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone0Sanctuary_EventScript_NextZone_6
 	goto Zone0Sanctuary_EventScript_NextZone_1
 
 Zone0Sanctuary_EventScript_NextZone_4:
-# 510 "data/maps/Zone0Sanctuary/scripts.pory"
+# 511 "data/maps/Zone0Sanctuary/scripts.pory"
 	goto EventScript_Settings
 	goto Zone0Sanctuary_EventScript_NextZone_1
 
 Zone0Sanctuary_EventScript_NextZone_5:
-# 512 "data/maps/Zone0Sanctuary/scripts.pory"
+# 513 "data/maps/Zone0Sanctuary/scripts.pory"
 	goto EventScript_Documentation
 	goto Zone0Sanctuary_EventScript_NextZone_1
 
 Zone0Sanctuary_EventScript_NextZone_6:
-# 505 "data/maps/Zone0Sanctuary/scripts.pory"
-	call EventScript_LeavingSetup
 # 506 "data/maps/Zone0Sanctuary/scripts.pory"
-	warp MAP_ZONE1A, 255, 16, 28
+	call EventScript_LeavingSetup
 # 507 "data/maps/Zone0Sanctuary/scripts.pory"
+	warp MAP_ZONE1A, 255, 16, 28
+# 508 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitstate
 	goto Zone0Sanctuary_EventScript_NextZone_1
 
 
-# 517 "data/maps/Zone0Sanctuary/scripts.pory"
-
 # 518 "data/maps/Zone0Sanctuary/scripts.pory"
-Zone0Sanctuary_Movement_Colress_FirstShop:
+
 # 519 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_left
+Zone0Sanctuary_Movement_Colress_FirstShop:
 # 520 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_down
-# 521 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
+# 521 "data/maps/Zone0Sanctuary/scripts.pory"
+	walk_down
 # 522 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 523 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1208,19 +1208,19 @@ Zone0Sanctuary_Movement_Colress_FirstShop:
 # 530 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 531 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_up
+	walk_left
 # 532 "data/maps/Zone0Sanctuary/scripts.pory"
-	step_end
+	face_up
 # 533 "data/maps/Zone0Sanctuary/scripts.pory"
-
+	step_end
 # 534 "data/maps/Zone0Sanctuary/scripts.pory"
-Zone0Sanctuary_Movement_Player_FirstShop:
+
 # 535 "data/maps/Zone0Sanctuary/scripts.pory"
-	delay_16
+Zone0Sanctuary_Movement_Player_FirstShop:
 # 536 "data/maps/Zone0Sanctuary/scripts.pory"
 	delay_16
 # 537 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_left
+	delay_16
 # 538 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 539 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1240,25 +1240,25 @@ Zone0Sanctuary_Movement_Player_FirstShop:
 # 546 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 547 "data/maps/Zone0Sanctuary/scripts.pory"
-	delay_16
+	walk_left
 # 548 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_up
+	delay_16
 # 549 "data/maps/Zone0Sanctuary/scripts.pory"
-	step_end
+	face_up
 # 550 "data/maps/Zone0Sanctuary/scripts.pory"
-
+	step_end
 # 551 "data/maps/Zone0Sanctuary/scripts.pory"
-Zone0Sanctuary_Movement_Colress_SecondShop:
+
 # 552 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_up
+Zone0Sanctuary_Movement_Colress_SecondShop:
 # 553 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_right
+	walk_up
 # 554 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 555 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_down
-# 556 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
+# 556 "data/maps/Zone0Sanctuary/scripts.pory"
+	walk_down
 # 557 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 558 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1298,27 +1298,27 @@ Zone0Sanctuary_Movement_Colress_SecondShop:
 # 575 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 576 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_up
+	walk_right
 # 577 "data/maps/Zone0Sanctuary/scripts.pory"
-	step_end
-# 578 "data/maps/Zone0Sanctuary/scripts.pory"
-
-# 579 "data/maps/Zone0Sanctuary/scripts.pory"
-Zone0Sanctuary_Movement_Player_SecondShop:
-# 580 "data/maps/Zone0Sanctuary/scripts.pory"
 	face_up
+# 578 "data/maps/Zone0Sanctuary/scripts.pory"
+	step_end
+# 579 "data/maps/Zone0Sanctuary/scripts.pory"
+
+# 580 "data/maps/Zone0Sanctuary/scripts.pory"
+Zone0Sanctuary_Movement_Player_SecondShop:
 # 581 "data/maps/Zone0Sanctuary/scripts.pory"
-	delay_16
+	face_up
 # 582 "data/maps/Zone0Sanctuary/scripts.pory"
 	delay_16
 # 583 "data/maps/Zone0Sanctuary/scripts.pory"
 	delay_16
 # 584 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_right
-# 585 "data/maps/Zone0Sanctuary/scripts.pory"
 	delay_16
+# 585 "data/maps/Zone0Sanctuary/scripts.pory"
+	face_right
 # 586 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_right
+	delay_16
 # 587 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 588 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1358,31 +1358,31 @@ Zone0Sanctuary_Movement_Player_SecondShop:
 # 605 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 606 "data/maps/Zone0Sanctuary/scripts.pory"
-	delay_16
+	walk_right
 # 607 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_up
+	delay_16
 # 608 "data/maps/Zone0Sanctuary/scripts.pory"
-	step_end
+	face_up
 # 609 "data/maps/Zone0Sanctuary/scripts.pory"
-
+	step_end
 # 610 "data/maps/Zone0Sanctuary/scripts.pory"
-Zone0Sanctuary_Movement_Colress_ThirdShop:
+
 # 611 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_up
+Zone0Sanctuary_Movement_Colress_ThirdShop:
 # 612 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_left
+	walk_up
 # 613 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 614 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_down
-# 615 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
+# 615 "data/maps/Zone0Sanctuary/scripts.pory"
+	walk_down
 # 616 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 617 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 618 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_down
+	walk_left
 # 619 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_down
 # 620 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1396,7 +1396,7 @@ Zone0Sanctuary_Movement_Colress_ThirdShop:
 # 624 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_down
 # 625 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_right
+	walk_down
 # 626 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 627 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1404,27 +1404,27 @@ Zone0Sanctuary_Movement_Colress_ThirdShop:
 # 628 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 629 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_up
+	walk_right
 # 630 "data/maps/Zone0Sanctuary/scripts.pory"
-	step_end
-# 631 "data/maps/Zone0Sanctuary/scripts.pory"
-
-# 632 "data/maps/Zone0Sanctuary/scripts.pory"
-Zone0Sanctuary_Movement_Player_ThirdShop:
-# 633 "data/maps/Zone0Sanctuary/scripts.pory"
 	face_up
+# 631 "data/maps/Zone0Sanctuary/scripts.pory"
+	step_end
+# 632 "data/maps/Zone0Sanctuary/scripts.pory"
+
+# 633 "data/maps/Zone0Sanctuary/scripts.pory"
+Zone0Sanctuary_Movement_Player_ThirdShop:
 # 634 "data/maps/Zone0Sanctuary/scripts.pory"
-	delay_16
+	face_up
 # 635 "data/maps/Zone0Sanctuary/scripts.pory"
 	delay_16
 # 636 "data/maps/Zone0Sanctuary/scripts.pory"
 	delay_16
 # 637 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_left
-# 638 "data/maps/Zone0Sanctuary/scripts.pory"
 	delay_16
+# 638 "data/maps/Zone0Sanctuary/scripts.pory"
+	face_left
 # 639 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_left
+	delay_16
 # 640 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 641 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1432,7 +1432,7 @@ Zone0Sanctuary_Movement_Player_ThirdShop:
 # 642 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 643 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_down
+	walk_left
 # 644 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_down
 # 645 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1446,25 +1446,25 @@ Zone0Sanctuary_Movement_Player_ThirdShop:
 # 649 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_down
 # 650 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_right
+	walk_down
 # 651 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 652 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 653 "data/maps/Zone0Sanctuary/scripts.pory"
-	delay_16
+	walk_right
 # 654 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_up
+	delay_16
 # 655 "data/maps/Zone0Sanctuary/scripts.pory"
-	step_end
+	face_up
 # 656 "data/maps/Zone0Sanctuary/scripts.pory"
-
+	step_end
 # 657 "data/maps/Zone0Sanctuary/scripts.pory"
-Zone0Sanctuary_Movement_Colress_FourthShop:
+
 # 658 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_up
+Zone0Sanctuary_Movement_Colress_FourthShop:
 # 659 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_left
+	walk_up
 # 660 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 661 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1472,7 +1472,7 @@ Zone0Sanctuary_Movement_Colress_FourthShop:
 # 662 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 663 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_up
+	walk_left
 # 664 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_up
 # 665 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1484,7 +1484,7 @@ Zone0Sanctuary_Movement_Colress_FourthShop:
 # 668 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_up
 # 669 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_left
+	walk_up
 # 670 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 671 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1508,7 +1508,7 @@ Zone0Sanctuary_Movement_Colress_FourthShop:
 # 680 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 681 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_down
+	walk_left
 # 682 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_down
 # 683 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1522,7 +1522,7 @@ Zone0Sanctuary_Movement_Colress_FourthShop:
 # 687 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_down
 # 688 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_left
+	walk_down
 # 689 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 690 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1530,29 +1530,29 @@ Zone0Sanctuary_Movement_Colress_FourthShop:
 # 691 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 692 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_up
+	walk_left
 # 693 "data/maps/Zone0Sanctuary/scripts.pory"
-	step_end
-# 694 "data/maps/Zone0Sanctuary/scripts.pory"
-
-# 695 "data/maps/Zone0Sanctuary/scripts.pory"
-Zone0Sanctuary_Movement_Player_FourthShop:
-# 696 "data/maps/Zone0Sanctuary/scripts.pory"
 	face_up
+# 694 "data/maps/Zone0Sanctuary/scripts.pory"
+	step_end
+# 695 "data/maps/Zone0Sanctuary/scripts.pory"
+
+# 696 "data/maps/Zone0Sanctuary/scripts.pory"
+Zone0Sanctuary_Movement_Player_FourthShop:
 # 697 "data/maps/Zone0Sanctuary/scripts.pory"
-	delay_16
+	face_up
 # 698 "data/maps/Zone0Sanctuary/scripts.pory"
 	delay_16
 # 699 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_up
+	delay_16
 # 700 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_left
+	walk_up
 # 701 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 702 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 703 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_up
+	walk_left
 # 704 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_up
 # 705 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1564,7 +1564,7 @@ Zone0Sanctuary_Movement_Player_FourthShop:
 # 708 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_up
 # 709 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_left
+	walk_up
 # 710 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 711 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1588,7 +1588,7 @@ Zone0Sanctuary_Movement_Player_FourthShop:
 # 720 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 721 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_down
+	walk_left
 # 722 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_down
 # 723 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1602,33 +1602,33 @@ Zone0Sanctuary_Movement_Player_FourthShop:
 # 727 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_down
 # 728 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_left
+	walk_down
 # 729 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 730 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 731 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_up
+	walk_left
 # 732 "data/maps/Zone0Sanctuary/scripts.pory"
-	step_end
+	face_up
 # 733 "data/maps/Zone0Sanctuary/scripts.pory"
-
+	step_end
 # 734 "data/maps/Zone0Sanctuary/scripts.pory"
-Zone0Sanctuary_Movement_Colress_ToWarp:
+
 # 735 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_up
+Zone0Sanctuary_Movement_Colress_ToWarp:
 # 736 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_right
+	walk_up
 # 737 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 738 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_down
-# 739 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
+# 739 "data/maps/Zone0Sanctuary/scripts.pory"
+	walk_down
 # 740 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 741 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_down
+	walk_right
 # 742 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_down
 # 743 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1636,7 +1636,7 @@ Zone0Sanctuary_Movement_Colress_ToWarp:
 # 744 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_down
 # 745 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_right
+	walk_down
 # 746 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 747 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1650,33 +1650,33 @@ Zone0Sanctuary_Movement_Colress_ToWarp:
 # 751 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 752 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_up
+	walk_right
 # 753 "data/maps/Zone0Sanctuary/scripts.pory"
-	step_end
+	face_up
 # 754 "data/maps/Zone0Sanctuary/scripts.pory"
-
+	step_end
 # 755 "data/maps/Zone0Sanctuary/scripts.pory"
-Zone0Sanctuary_Movement_Player_ToWarp:
+
 # 756 "data/maps/Zone0Sanctuary/scripts.pory"
-	delay_16
+Zone0Sanctuary_Movement_Player_ToWarp:
 # 757 "data/maps/Zone0Sanctuary/scripts.pory"
 	delay_16
 # 758 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_up
+	delay_16
 # 759 "data/maps/Zone0Sanctuary/scripts.pory"
-	delay_16
+	face_up
 # 760 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_right
-# 761 "data/maps/Zone0Sanctuary/scripts.pory"
 	delay_16
+# 761 "data/maps/Zone0Sanctuary/scripts.pory"
+	face_right
 # 762 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_right
+	delay_16
 # 763 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 764 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 765 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_down
+	walk_right
 # 766 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_down
 # 767 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1684,7 +1684,7 @@ Zone0Sanctuary_Movement_Player_ToWarp:
 # 768 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_down
 # 769 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_right
+	walk_down
 # 770 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 771 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1696,15 +1696,15 @@ Zone0Sanctuary_Movement_Player_ToWarp:
 # 774 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 775 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_up
-# 776 "data/maps/Zone0Sanctuary/scripts.pory"
-	step_end
-# 777 "data/maps/Zone0Sanctuary/scripts.pory"
-
-# 778 "data/maps/Zone0Sanctuary/scripts.pory"
-Zone0Sanctuary_Movement_Colress_BackMid:
-# 779 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
+# 776 "data/maps/Zone0Sanctuary/scripts.pory"
+	face_up
+# 777 "data/maps/Zone0Sanctuary/scripts.pory"
+	step_end
+# 778 "data/maps/Zone0Sanctuary/scripts.pory"
+
+# 779 "data/maps/Zone0Sanctuary/scripts.pory"
+Zone0Sanctuary_Movement_Colress_BackMid:
 # 780 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 781 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1712,7 +1712,7 @@ Zone0Sanctuary_Movement_Colress_BackMid:
 # 782 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 783 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_up
+	walk_right
 # 784 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_up
 # 785 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1734,7 +1734,7 @@ Zone0Sanctuary_Movement_Colress_BackMid:
 # 793 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_up
 # 794 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_left
+	walk_up
 # 795 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 796 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1744,17 +1744,17 @@ Zone0Sanctuary_Movement_Colress_BackMid:
 # 798 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 799 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_up
+	walk_left
 # 800 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_down
+	walk_up
 # 801 "data/maps/Zone0Sanctuary/scripts.pory"
-	step_end
+	face_down
 # 802 "data/maps/Zone0Sanctuary/scripts.pory"
-
+	step_end
 # 803 "data/maps/Zone0Sanctuary/scripts.pory"
-Zone0Sanctuary_Movement_Player_BackMid:
+
 # 804 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_right
+Zone0Sanctuary_Movement_Player_BackMid:
 # 805 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 806 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1764,7 +1764,7 @@ Zone0Sanctuary_Movement_Player_BackMid:
 # 808 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_right
 # 809 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_up
+	walk_right
 # 810 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_up
 # 811 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1786,7 +1786,7 @@ Zone0Sanctuary_Movement_Player_BackMid:
 # 819 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_up
 # 820 "data/maps/Zone0Sanctuary/scripts.pory"
-	walk_left
+	walk_up
 # 821 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 822 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -1796,8 +1796,10 @@ Zone0Sanctuary_Movement_Player_BackMid:
 # 824 "data/maps/Zone0Sanctuary/scripts.pory"
 	walk_left
 # 825 "data/maps/Zone0Sanctuary/scripts.pory"
-	face_up
+	walk_left
 # 826 "data/maps/Zone0Sanctuary/scripts.pory"
+	face_up
+# 827 "data/maps/Zone0Sanctuary/scripts.pory"
 	step_end
 
 Zone0Sanctuary_EventScript_Intro_Text_0:
@@ -2114,17 +2116,17 @@ Zone0Sanctuary_EventScript_EndIntro_Text_5:
 	.string "Received the {COLOR RED}Pokédex{COLOR DARK_GRAY}!$"
 
 Zone0Sanctuary_EventScript_NextZone_Text_0:
-# 499 "data/maps/Zone0Sanctuary/scripts.pory"
+# 500 "data/maps/Zone0Sanctuary/scripts.pory"
 	.string "Next Zone$"
 
 Zone0Sanctuary_EventScript_NextZone_Text_1:
-# 499 "data/maps/Zone0Sanctuary/scripts.pory"
+# 500 "data/maps/Zone0Sanctuary/scripts.pory"
 	.string "Settings$"
 
 Zone0Sanctuary_EventScript_NextZone_Text_2:
-# 499 "data/maps/Zone0Sanctuary/scripts.pory"
+# 500 "data/maps/Zone0Sanctuary/scripts.pory"
 	.string "Documentation$"
 
 Zone0Sanctuary_EventScript_NextZone_Text_3:
-# 499 "data/maps/Zone0Sanctuary/scripts.pory"
+# 500 "data/maps/Zone0Sanctuary/scripts.pory"
 	.string "Exit$"

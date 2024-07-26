@@ -99,10 +99,10 @@ movement Common_Movement_WalkUp2 {
 }
 
 movement Common_Movement_Colress_WalkDown {
-	walk_down * 2
+	walk_down * 3
 }
 
 movement Common_Movement_Colress_WalkUp {
-	walk_up * 2
+	walk_up * 3
 	face_down
 }

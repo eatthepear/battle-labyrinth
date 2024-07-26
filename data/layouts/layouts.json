@@ -4414,7 +4414,7 @@
     {
       "id": "LAYOUT_SANCTUARY",
       "name": "Sanctuary_Layout",
-      "width": 130,
+      "width": 77,
       "height": 55,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Sanctuary",
