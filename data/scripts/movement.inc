@@ -173,9 +173,7 @@ Common_Movement_WalkUp2:
 	step_end
 
 # 101 "data/scripts/movement.pory"
-Common_Movement_Colress_WalkDown:
-# 102 "data/scripts/movement.pory"
-	walk_down
+Common_Movement_WalkDown2:
 # 102 "data/scripts/movement.pory"
 	walk_down
 # 102 "data/scripts/movement.pory"
@@ -183,13 +181,43 @@ Common_Movement_Colress_WalkDown:
 	step_end
 
 # 105 "data/scripts/movement.pory"
+Common_Movement_WalkUp3:
+# 106 "data/scripts/movement.pory"
+	walk_up
+# 106 "data/scripts/movement.pory"
+	walk_up
+# 106 "data/scripts/movement.pory"
+	walk_up
+	step_end
+
+# 109 "data/scripts/movement.pory"
+Common_Movement_WalkDown3:
+# 110 "data/scripts/movement.pory"
+	walk_down
+# 110 "data/scripts/movement.pory"
+	walk_down
+# 110 "data/scripts/movement.pory"
+	walk_down
+	step_end
+
+# 113 "data/scripts/movement.pory"
+Common_Movement_Colress_WalkDown:
+# 114 "data/scripts/movement.pory"
+	walk_down
+# 114 "data/scripts/movement.pory"
+	walk_down
+# 114 "data/scripts/movement.pory"
+	walk_down
+	step_end
+
+# 117 "data/scripts/movement.pory"
 Common_Movement_Colress_WalkUp:
-# 106 "data/scripts/movement.pory"
+# 118 "data/scripts/movement.pory"
 	walk_up
-# 106 "data/scripts/movement.pory"
+# 118 "data/scripts/movement.pory"
 	walk_up
-# 106 "data/scripts/movement.pory"
+# 118 "data/scripts/movement.pory"
 	walk_up
-# 107 "data/scripts/movement.pory"
+# 119 "data/scripts/movement.pory"
 	face_down
 	step_end

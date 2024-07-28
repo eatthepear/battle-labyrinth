@@ -98,6 +98,18 @@ movement Common_Movement_WalkUp2 {
 	walk_up * 2
 }
 
+movement Common_Movement_WalkDown2 {
+	walk_down * 2
+}
+
+movement Common_Movement_WalkUp3 {
+	walk_up * 3
+}
+
+movement Common_Movement_WalkDown3 {
+	walk_down * 3
+}
+
 movement Common_Movement_Colress_WalkDown {
 	walk_down * 3
 }

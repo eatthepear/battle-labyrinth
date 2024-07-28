@@ -18,34 +18,33 @@ script Zone0Sanctuary_EventScript_Intro {
 	waitse
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
 	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Ah. You've arrived."))
-	applymovement(1, Common_Movement_Colress_WalkDown)
+	applymovement(1, Common_Movement_WalkDown3)
 	call(EventScript_MoveCameraDown)
 	waitmovement(0)
 	msgbox("Welcome to the\n{COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY}.\pI am your guide for braving the\nchallenges ahead.\pWould you like to listen to the tutorial?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
-		setvar(VAR_TEMP_0, 1)
+		setvar(VAR_TEMP_0, 1) // VAR_TEMP_0: 1 means yes tutorial
 		msgbox(format("The Pokémon Battle Labyrinth is comprised of many {COLOR RED}Zones{COLOR DARK_GRAY} you must traverse.\p"
 		"In these Zones, you might encounter wild Pokémon, great treasures, tough trainers, and more.\p"
 		"Each Zone typically contains a {COLOR RED}Leviathan{COLOR DARK_GRAY}, a boss that yields great rewards if defeated.\p"
 		"At the end of each Zone and before the next Zone begins, you will find a {COLOR RED}Sanctuary{COLOR DARK_GRAY}, like this one, with shops to purchase supplies, heal your Pokémon, and other benefits.\p"
 		"Once you enter a new Zone, you will not be able to access a Sanctuary until you exit that Zone.\p"
 		"In order to win, you must progress through all Zones without losing a battle."))
-		delay(96)
+		delay(16)
 	}
 	setflag(FLAG_SETTINGS_EXP_ALL)
 	msgbox(format("Pokémon Battle Labyrinth has many settings that are customizable, including {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode,\l{COLOR RED}Randomizer{COLOR DARK_GRAY} mode, and difficulty options.\pWould you like to modify these settings now from the default?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
-		setvar(VAR_TEMP_9, 1) // VAR_TEMP_9 being set to 1 means we do the settings thing
+		setvar(VAR_TEMP_1, 1) // VAR_TEMP_1: 1 means dealing w/ settings menu, 2 means done w/ it
 		msgbox(format("Note that some settings cannot be adjusted once the challenge has started.\pIf you're looking to play the hardest game mode, {COLOR RED}Brutal{COLOR DARK_GRAY} automatically enables most of the difficulty settings.\pOtherwise, information about each individual setting can be found by selecting it."), MSGBOX_DEFAULT)
-		while (var(VAR_TEMP_4) == 0) {
+		while (var(VAR_TEMP_1) == 1) {
 			call(EventScript_Settings)
 			msgbox(format("Are you sure you are done selecting your settings?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				setvar(VAR_TEMP_4, 1) // VAR_TEMP_4 being set to 1 means we finished looking at settings
+				setvar(VAR_TEMP_1, 0)
 			}
 		}
 		msgbox(format("Settings saved!"), MSGBOX_DEFAULT)
-		setvar(VAR_TEMP_9, 0)
 	}
 	delay(16)
 	if (var(VAR_TEMP_0) == 1) {
@@ -54,106 +53,80 @@ script Zone0Sanctuary_EventScript_Intro {
 		applymovement(OBJ_EVENT_ID_PLAYER, Zone0Sanctuary_Movement_Player_FirstShop)
 		waitmovement(0)
 		special(SpawnCameraObject)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkLeft)
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The top left shop is {COLOR RED}Tim's General Purpose Shop{COLOR DARK_GRAY}.\p"
 		"Healing supplies, basic Pokéballs, and other common items are sold here."))
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkRight)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
 		applymovement(1, Zone0Sanctuary_Movement_Colress_SecondShop)
 		applymovement(OBJ_EVENT_ID_PLAYER, Zone0Sanctuary_Movement_Player_SecondShop)
 		waitmovement(0)
 		special(SpawnCameraObject)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkRight)
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The top right shop is {COLOR RED}Silph Unique Item Shop{COLOR DARK_GRAY}.\p"
 		"They sell a variety of held items and single use items such as Pokéball variations, evolution items, Berries, and so on."))
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkLeft)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
 		applymovement(1, Zone0Sanctuary_Movement_Colress_ThirdShop)
 		applymovement(OBJ_EVENT_ID_PLAYER, Zone0Sanctuary_Movement_Player_ThirdShop)
 		waitmovement(0)
 		special(SpawnCameraObject)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkRight)
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The bottom right shop is {COLOR RED}Joy's Healing Shop{COLOR DARK_GRAY}.\p"
 		"At the low cost of ¥1000, they will heal your entire party."))
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkLeft)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
 		applymovement(1, Zone0Sanctuary_Movement_Colress_FourthShop)
 		applymovement(OBJ_EVENT_ID_PLAYER, Zone0Sanctuary_Movement_Player_FourthShop)
 		waitmovement(0)
 		special(SpawnCameraObject)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkLeft)
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The bottom left shop is {COLOR RED}Lelouch's Special Services Shop{COLOR DARK_GRAY}.\p"
 		"They offer a range of Pokémon services, but only to customers who can pay the right price."))
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkRight)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
-		applymovement(1, Zone0Sanctuary_Movement_Colress_ToWarp)
-		applymovement(OBJ_EVENT_ID_PLAYER, Zone0Sanctuary_Movement_Player_ToWarp)
+		applymovement(1, Zone0Sanctuary_Movement_Colress_FifthShop)
+		applymovement(OBJ_EVENT_ID_PLAYER, Zone0Sanctuary_Movement_Player_FifthShop)
 		waitmovement(0)
 		special(SpawnCameraObject)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The top left shop is {COLOR RED}Tim's General Purpose Shop{COLOR DARK_GRAY}.\p"
+		"Healing supplies, basic Pokéballs, and other common items are sold here."))
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
+		special(RemoveCameraObject)
+		applymovement(1, Zone0Sanctuary_Movement_Colress_SixthShop)
+		applymovement(OBJ_EVENT_ID_PLAYER, Zone0Sanctuary_Movement_Player_SixthShop)
 		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
+		special(SpawnCameraObject)
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The top left shop is {COLOR RED}Tim's General Purpose Shop{COLOR DARK_GRAY}.\p"
+		"Healing supplies, basic Pokéballs, and other common items are sold here."))
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
+		special(RemoveCameraObject)
+		applymovement(1, Zone0Sanctuary_Movement_Colress_ToPokemonCenter)
+		applymovement(OBJ_EVENT_ID_PLAYER, Zone0Sanctuary_Movement_Player_ToPokemonCenter)
+		waitmovement(0)
+		special(SpawnCameraObject)
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkRight)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: In addition, you have access to {COLOR RED}Zone 0{COLOR DARK_GRAY}.\pIf you would like to enter {COLOR RED}Zone 0{COLOR DARK_GRAY}, you can access it from any Sanctuary using this warp."))
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
+		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkLeft)
 		waitmovement(0)
 		special(RemoveCameraObject)
 		applymovement(1, Zone0Sanctuary_Movement_Colress_BackMid)
@@ -186,7 +159,8 @@ script Zone0Sanctuary_EventScript_Intro {
 		"Choose carefully as these Pokémon are very rare."))
 		special(ChooseStarter)
 		waitstate
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: How about a nickname for this wonderful Pokémon?"), MSGBOX_YESNO)
+		bufferleadmonspeciesname(0)
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: How about a nickname for your {STR_VAR_1}?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
 			setvar(VAR_0x8004, 0)
 			call(Common_EventScript_NameReceivedPartyMon)
@@ -385,7 +359,8 @@ script Zone0Sanctuary_EventScript_HandleStarterSelectionDefault {
 	message(format("{PLAYER} received the {STR_VAR_1}!"))
 	waitmessage
 	waitfanfare
-	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: How about a nickname for this wonderful Pokémon?"), MSGBOX_YESNO)
+	bufferleadmonspeciesname(0)
+	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: How about a nickname for your {STR_VAR_1}?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		setvar(VAR_0x8004, 0)
 		call(Common_EventScript_NameReceivedPartyMon)
@@ -395,9 +370,8 @@ script Zone0Sanctuary_EventScript_HandleStarterSelectionDefault {
 
 script Zone0Sanctuary_EventScript_EndIntro {
 	if (var(VAR_TEMP_0) == 1) {
-		msgbox(format("Excellent choice.\p"
-		"You can also re-nickname your Pokémon from the party menu."))
-		delay(96)
+		msgbox(format("Excellent choice.\p""You can also re-nickname your Pokémon from the party menu."))
+		delay(16)
 		if (flag(FLAG_SETTINGS_INFINITE)) {
 			msgbox(format("Because you are playing on the infinite difficulty, here are the items you'd need.\pYou can get more by speaking to me about your difficulty setting."), MSGBOX_DEFAULT)
 			additem(ITEM_FULL_RESTORE, 100)
@@ -497,7 +471,7 @@ script Zone0Sanctuary_EventScript_NextZone {
 	lock
 	faceplayer
 	msgbox(gText_Colress_Greetings, MSGBOX_DEFAULT)
-	dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
 	switch (var(VAR_RESULT)) {
 		case 0:
 			buffernumberstring(0, VAR_ZONE)
@@ -515,314 +489,131 @@ script Zone0Sanctuary_EventScript_NextZone {
 	goto(EventScript_WhenUReady)
 }
 
-raw `
-Zone0Sanctuary_Movement_Colress_FirstShop:
+movement Zone0Sanctuary_Movement_Colress_FirstShop {
 	walk_left
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
+	walk_down * 6
+	walk_left * 15
 	face_up
-	step_end
+}
 
-Zone0Sanctuary_Movement_Player_FirstShop:
-	delay_16
-	delay_16
+movement Zone0Sanctuary_Movement_Player_FirstShop {
+	delay_16 * 2
 	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	delay_16
+	walk_down * 5
+	walk_left * 14
 	face_up
-	step_end
+}
 
-Zone0Sanctuary_Movement_Colress_SecondShop:
-	walk_up
-	walk_right
-	walk_right
+movement Zone0Sanctuary_Movement_Colress_SecondShop {
 	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
+	walk_right * 16
+	walk_up
+	walk_right * 16
 	face_up
-	step_end
+}
 
-Zone0Sanctuary_Movement_Player_SecondShop:
+movement Zone0Sanctuary_Movement_Player_SecondShop {
+	delay_16 * 2
+	walk_down
+	walk_right * 15
+	walk_up
+	walk_right * 15
 	face_up
-	delay_16
-	delay_16
-	delay_16
-	face_right
-	delay_16
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	delay_16
-	face_up
-	step_end
+}
 
-Zone0Sanctuary_Movement_Colress_ThirdShop:
-	walk_up
-	walk_left
-	walk_left
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
+movement Zone0Sanctuary_Movement_Colress_ThirdShop {
+	walk_right * 3
+	walk_down * 15
+	walk_left * 8
 	face_up
-	step_end
+}
 
-Zone0Sanctuary_Movement_Player_ThirdShop:
+movement Zone0Sanctuary_Movement_Player_ThirdShop {
+	walk_right * 4
+	walk_down * 15
+	walk_left * 7
 	face_up
-	delay_16
-	delay_16
-	delay_16
-	face_left
-	delay_16
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	delay_16
-	face_up
-	step_end
+}
 
-Zone0Sanctuary_Movement_Colress_FourthShop:
-	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
+movement Zone0Sanctuary_Movement_Colress_FourthShop {
+	walk_left * 2
+	walk_down * 10
+	walk_right * 13
 	face_up
-	step_end
+}
 
-Zone0Sanctuary_Movement_Player_FourthShop:
+movement Zone0Sanctuary_Movement_Player_FourthShop {
+	walk_left * 3
+	walk_down * 10
+	walk_right * 12
 	face_up
-	delay_16
-	delay_16
-	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	face_up
-	step_end
+}
 
-Zone0Sanctuary_Movement_Colress_ToWarp:
-	walk_up
-	walk_right
-	walk_right
+movement Zone0Sanctuary_Movement_Colress_FifthShop {
 	walk_down
-	walk_right
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
+	walk_left * 13
+	walk_up * 11
+	walk_left * 21
 	face_up
-	step_end
+}
 
-Zone0Sanctuary_Movement_Player_ToWarp:
-	delay_16
-	delay_16
+movement Zone0Sanctuary_Movement_Player_FifthShop {
+	delay_16 * 2
+	walk_down
+	walk_left * 12
+	walk_up * 11
+	walk_left * 20
 	face_up
-	delay_16
-	face_right
-	delay_16
-	walk_right
-	walk_right
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	face_up
-	step_end
+}
 
-Zone0Sanctuary_Movement_Colress_BackMid:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_up
+movement Zone0Sanctuary_Movement_Colress_SixthShop {
+	walk_down
+	walk_right * 3
+	walk_down * 9
+	walk_left * 13
+	face_up
+}
+
+movement Zone0Sanctuary_Movement_Player_SixthShop {
+	delay_16 * 2
+	walk_down
+	walk_right * 2
+	walk_down * 9
+	walk_left * 12
+	face_up
+}
+
+movement Zone0Sanctuary_Movement_Colress_ToPokemonCenter {
+	walk_down
+	walk_right * 13
+	walk_up * 3
+	walk_right * 9
+	face_up
+}
+
+movement Zone0Sanctuary_Movement_Player_ToPokemonCenter {
+	delay_16 * 2
+	walk_down
+	walk_right * 12
+	walk_up * 3
+	walk_right * 8
+	face_up
+}
+
+movement Zone0Sanctuary_Movement_Colress_BackMid {
+	walk_down
+	walk_left * 8
+	walk_up * 8
+	walk_right * 8
+	walk_up * 22
 	face_down
-	step_end
+}
 
-Zone0Sanctuary_Movement_Player_BackMid:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	face_up
-	step_end
-`
+movement Zone0Sanctuary_Movement_Player_BackMid {
+	delay_16 * 2
+	walk_down
+	walk_left * 7
+	walk_up * 8
+	walk_right * 8
+	walk_up * 21
+}

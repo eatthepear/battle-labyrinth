@@ -8,7 +8,7 @@ script EventScript_EnterSanctuary {
 	waitmovement(0)
 	waitse
 	call(EventScript_MoveCameraDown)
-	applymovement(1, Common_Movement_Colress_WalkDown)
+	applymovement(1, Common_Movement_WalkDown3)
 	waitmovement(0)
 	playfanfare(MUS_OBTAIN_BADGE)
 	return
@@ -16,11 +16,7 @@ script EventScript_EnterSanctuary {
 
 script EventScript_MoveCameraUp {
 	special(SpawnCameraObject)
-	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-	waitmovement(0)
-	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-	waitmovement(0)
-	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
+	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp3)
 	waitmovement(0)
 	special(RemoveCameraObject)
 	return
@@ -28,11 +24,7 @@ script EventScript_MoveCameraUp {
 
 script EventScript_MoveCameraDown {
 	special(SpawnCameraObject)
-	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
-	waitmovement(0)
-	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
-	waitmovement(0)
-	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
+	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown3)
 	waitmovement(0)
 	special(RemoveCameraObject)
 	return
@@ -69,12 +61,12 @@ script EventScript_BerriesSign {
 }
 
 script EventScript_BattleItemsSign {
-	msgbox("Alexander's Battle Shop\nA Curated Collection", MSGBOX_SIGN)
+	msgbox("Alexander's Battle Shop\nA Curated Collection!", MSGBOX_SIGN)
 	end
 }
 
 script EventScript_TMsSign {
-	msgbox("Julia's TM Shop\nTechnically the Best", MSGBOX_SIGN)
+	msgbox("Julia's TM Shop\nTechnically the Best!", MSGBOX_SIGN)
 	end
 }
 
@@ -95,20 +87,16 @@ script EventScript_Shop_Portentia {
 		case 1:
 		case 2:
 		case 3:
-			pokemart(Shop_General_1to3)
 		case 4:
 		case 5:
 		case 6:
 		case 7:
-			pokemart(Shop_General_4to8)
 		case 9:
 		case 10:
 		case 11:
 		case 12:
-			pokemart(Shop_General_9to12)
 		case 13:
 		case 15:
-			pokemart(Shop_General_13to15)
 		case 16:
 		case 17:
 		case 18:
@@ -118,7 +106,6 @@ script EventScript_Shop_Portentia {
 		case 23:
 		case 24:
 		case 25:
-			pokemart(Shop_General_16to25)
 		case 26:
 			pokemart(Shop_General_26to30)
 	}
@@ -139,20 +126,16 @@ script EventScript_Shop_Tim {
 		case 1:
 		case 2:
 		case 3:
-			pokemart(Shop_General_1to3)
 		case 4:
 		case 5:
 		case 6:
 		case 7:
-			pokemart(Shop_General_4to8)
 		case 9:
 		case 10:
 		case 11:
 		case 12:
-			pokemart(Shop_General_9to12)
 		case 13:
 		case 15:
-			pokemart(Shop_General_13to15)
 		case 16:
 		case 17:
 		case 18:
@@ -162,109 +145,11 @@ script EventScript_Shop_Tim {
 		case 23:
 		case 24:
 		case 25:
-			pokemart(Shop_General_16to25)
 		case 26:
 			pokemart(Shop_General_26to30)
 	}
 	msgbox("{COLOR BLUE}Tim{COLOR DARK_GRAY}: Have a nice day.", MSGBOX_DEFAULT)
 	release
-}
-
-mart Shop_General_1to3 {
-	ITEM_POKE_BALL
-	ITEM_POTION
-	ITEM_ANTIDOTE
-	ITEM_PARALYZE_HEAL
-}
-
-mart Shop_General_4to8 {
-	ITEM_POKE_BALL
-	ITEM_GREAT_BALL
-	ITEM_POTION
-	ITEM_SUPER_POTION
-	ITEM_ANTIDOTE
-	ITEM_PARALYZE_HEAL
-	ITEM_AWAKENING
-	ITEM_BURN_HEAL
-	ITEM_ICE_HEAL
-	ITEM_REPEL
-}
-
-mart Shop_General_9to12 {
-	ITEM_POKE_BALL
-	ITEM_GREAT_BALL
-	ITEM_POTION
-	ITEM_SUPER_POTION
-	ITEM_REVIVE
-	ITEM_ANTIDOTE
-	ITEM_PARALYZE_HEAL
-	ITEM_AWAKENING
-	ITEM_BURN_HEAL
-	ITEM_ICE_HEAL
-	ITEM_ETHER
-	ITEM_REPEL
-	ITEM_SUPER_REPEL
-	ITEM_X_ATTACK
-	ITEM_X_DEFENSE
-	ITEM_X_SP_ATK
-	ITEM_X_SP_DEF
-	ITEM_X_SPEED
-	ITEM_X_ACCURACY
-	ITEM_DIRE_HIT
-	ITEM_GUARD_SPEC
-}
-
-mart Shop_General_13to15 {
-	ITEM_POKE_BALL
-	ITEM_GREAT_BALL
-	ITEM_ULTRA_BALL
-	ITEM_POTION
-	ITEM_SUPER_POTION
-	ITEM_HYPER_POTION
-	ITEM_ANTIDOTE
-	ITEM_PARALYZE_HEAL
-	ITEM_AWAKENING
-	ITEM_BURN_HEAL
-	ITEM_ICE_HEAL
-	ITEM_FULL_HEAL
-	ITEM_ETHER
-	ITEM_REPEL
-	ITEM_SUPER_REPEL
-	ITEM_X_ATTACK
-	ITEM_X_DEFENSE
-	ITEM_X_SP_ATK
-	ITEM_X_SP_DEF
-	ITEM_X_SPEED
-	ITEM_X_ACCURACY
-	ITEM_DIRE_HIT
-	ITEM_GUARD_SPEC
-}
-
-mart Shop_General_16to25 {
-	ITEM_POKE_BALL
-	ITEM_GREAT_BALL
-	ITEM_ULTRA_BALL
-	ITEM_POTION
-	ITEM_SUPER_POTION
-	ITEM_HYPER_POTION
-	ITEM_REVIVE
-	ITEM_ANTIDOTE
-	ITEM_PARALYZE_HEAL
-	ITEM_AWAKENING
-	ITEM_BURN_HEAL
-	ITEM_ICE_HEAL
-	ITEM_FULL_HEAL
-	ITEM_ETHER
-	ITEM_REPEL
-	ITEM_SUPER_REPEL
-	ITEM_X_ATTACK
-	ITEM_X_DEFENSE
-	ITEM_X_SP_ATK
-	ITEM_X_SP_DEF
-	ITEM_X_SPEED
-	ITEM_X_ACCURACY
-	ITEM_DIRE_HIT
-	ITEM_GUARD_SPEC
 }
 
 mart Shop_General_26to30 {
@@ -1805,22 +1690,22 @@ script EventScript_Settings {
 		waitmessage
 		if (flag(FLAG_SETTINGS_BRUTAL) == true) {
 			dynmultipush("{COLOR RED}Brutal", 0)
-		} elif (var(VAR_TEMP_9) == 1) {
+		} elif (var(VAR_TEMP_1) == 1) {
 			dynmultipush("Brutal", 0)
 		}
 		if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
 			dynmultipush("{COLOR RED}Nuzlocke", 1)
-		} elif (var(VAR_TEMP_9) == 1) {
+		} elif (var(VAR_TEMP_1) == 1) {
 			dynmultipush("Nuzlocke", 1)
 		}
 		if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
 			dynmultipush("{COLOR RED}Randomizer", 2)
-		} elif (var(VAR_TEMP_9) == 1) {
+		} elif (var(VAR_TEMP_1) == 1) {
 			dynmultipush("Randomizer", 2)
 		}
 		if (flag(FLAG_SETTINGS_INFINITE) == true) {
 			dynmultipush("{COLOR RED}Infinite", 3)
-		} elif (var(VAR_TEMP_9) == 1) {
+		} elif (var(VAR_TEMP_1) == 1) {
 			dynmultipush("Infinite", 3)
 		}
 		if (flag(FLAG_SETTINGS_FULL_SURVEIL) == true) {
@@ -1925,7 +1810,7 @@ script EventScript_Settings {
 				}
 			case 1:
 				msgbox(gText_Colress_NuzlockeExplained, MSGBOX_DEFAULT)
-				if (var(VAR_TEMP_9) == 0) {
+				if (var(VAR_TEMP_1) == 0) {
 					buffernumberstring(0, VAR_NUZLOCKE_DEATHS)
 					msgbox(gText_Colress_NumDeathsNuzlocke, MSGBOX_DEFAULT)
 				}
@@ -1958,7 +1843,7 @@ script EventScript_Settings {
 			case 2:
 				msgbox(gText_Colress_RandomizerExplanation, MSGBOX_DEFAULT)
 				if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
-					if (var(VAR_TEMP_9) == 0) {
+					if (var(VAR_TEMP_1) == 0) {
 						msgbox(format("You cannot turn off {COLOR RED}Randomizer{COLOR DARK_GRAY} mode once set."), MSGBOX_DEFAULT)
 					} else {
 						msgbox(format("Would you like to turn off {COLOR RED}Randomizer{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
@@ -1987,7 +1872,7 @@ script EventScript_Settings {
 			case 3:
 				msgbox(gText_Colress_InfiniteExplained, MSGBOX_DEFAULT)
 				if (flag(FLAG_SETTINGS_INFINITE) == true) {
-					if (var(VAR_TEMP_9) == 0) {
+					if (var(VAR_TEMP_1) == 0) {
 						msgbox(format("You cannot turn off {COLOR RED}Infinite{COLOR DARK_GRAY} mode once set."), MSGBOX_DEFAULT)
 						msgbox(format("Would you like to restock your supply of Full Restores, Max Elixirs, and Max Repels?"), MSGBOX_YESNO)
 						if (var(VAR_RESULT) == YES) {
@@ -2370,7 +2255,7 @@ script EventScript_Settings {
 				}
 			case 18:
 			case MULTI_B_PRESSED:
-				if (var(VAR_TEMP_9) == 1) {
+				if (var(VAR_TEMP_1) == 1) {
 					return
 				} else {
 					goto(EventScript_WhenUReady)
