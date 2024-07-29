@@ -66,7 +66,12 @@ script EventScript_BattleItemsSign {
 }
 
 script EventScript_TMsSign {
-	msgbox("Julia's TM Shop\nTechnically the Best!", MSGBOX_SIGN)
+	msgbox("Julia's TM Shop\nTechnically the greatest!", MSGBOX_SIGN)
+	end
+}
+
+script EventScript_RecoverySign {
+	msgbox("Joy's Recovery Shop\nWe pay our workers a living wage!", MSGBOX_SIGN)
 	end
 }
 
@@ -74,19 +79,20 @@ script EventScript_Shop_Portentia {
 	lock
 	faceplayer
 	if (flag(FLAG_PORTENTIA_INTRO) == false) {
-		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Hello, lovely. Care for a brew?\p{COLOR BLUE}Portentia{COLOR DARK_GRAY}: I am Portentia. I craft the finest medicines for your Pokémon."))
+		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Hello, lovely. Your name is… {PLAYER}?\pI see! Well then, {PLAYER}, would you care to try some of my special brews?\pAhem! I realize I should introduce myself.\p{COLOR BLUE}Portentia{COLOR DARK_GRAY}: I am Portentia, and I craft the finest medicines for your Pokémon.\pMy skills are unparalleled and my prices can't be beat."), MSGBOX_DEFAULT)
 		setflag(FLAG_PORTENTIA_INTRO)
 	}
 	if ((var(VAR_ZONE) > 20) && (flag(FLAG_PORTENTIA_SUPER_POTION_INTRO) == false)) {
-		msgbox(format("{COLOR BLUE}Portentia{COLOR DARK_GRAY}: It's good to see you again. I have a new discount option available in my shop.\pIf you buy 10 Potions, you will receive a free Super Potion.\pI hope that is a most compelling deal."))
+		msgbox(format("{COLOR BLUE}Portentia{COLOR DARK_GRAY}: It's good to see you again. I have a new discount option available in my shop.\pIf you buy 10 Potions, you will receive a free Super Potion.\pI hope that is a most compelling deal."), MSGBOX_DEFAULT)
 		setflag(FLAG_PORTENTIA_SUPER_POTION_INTRO)
 	}
-	message("{COLOR BLUE}Portentia{COLOR DARK_GRAY}: Welcome to my shop.\nCan I get you anything?")
+	message(format("{COLOR BLUE}Portentia{COLOR DARK_GRAY}: Welcome, {PLAYER}. What are you looking for?"))
 	waitmessage
 	switch (var(VAR_ZONE)) {
 		case 1:
 		case 2:
 		case 3:
+			pokemart(Shop_Medicine_1)
 		case 4:
 		case 5:
 		case 6:
@@ -113,19 +119,26 @@ script EventScript_Shop_Portentia {
 	release
 }
 
+mart Shop_Medicine_1 {
+	ITEM_POTION
+	ITEM_ANTIDOTE
+	ITEM_PARALYZE_HEAL
+}
+
 script EventScript_Shop_Tim {
 	lock
 	faceplayer
 	if (flag(FLAG_TIM_INTRO) == false) {
-		msgbox("{COLOR BLUE}???{COLOR DARK_GRAY}: Hey there!\nThe name's Tim Johnson.\p{COLOR BLUE}Tim{COLOR DARK_GRAY}: I run this store, sponsored by\nPokémart Incorporated.\lYou can find all variants of Pokéballs\lfor your travels.")
+		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Hey there! The name's Tim Johnson.\p{COLOR BLUE}Tim{COLOR DARK_GRAY}: I run this store, sponsored by Pokémart Incorporated.\pYou can find all variants of Pokéballs for your travels."), MSGBOX_DEFAULT)
 		setflag(FLAG_TIM_INTRO)
 	}
-	message("{COLOR BLUE}Tim{COLOR DARK_GRAY}: Welcome to Tim's.\nCan I get you anything?")
+	message(format("{COLOR BLUE}Tim{COLOR DARK_GRAY}: Welcome to Tim's. Can I get you anything?"))
 	waitmessage
 	switch (var(VAR_ZONE)) {
 		case 1:
 		case 2:
 		case 3:
+			pokemart(Shop_Pokeballs_1)
 		case 4:
 		case 5:
 		case 6:
@@ -148,8 +161,13 @@ script EventScript_Shop_Tim {
 		case 26:
 			pokemart(Shop_General_26to30)
 	}
-	msgbox("{COLOR BLUE}Tim{COLOR DARK_GRAY}: Have a nice day.", MSGBOX_DEFAULT)
+	msgbox("{COLOR BLUE}Tim{COLOR DARK_GRAY}: Have a nice day!", MSGBOX_DEFAULT)
 	release
+}
+
+mart Shop_Pokeballs_1 {
+	ITEM_POKE_BALL
+	ITEM_HEAL_BALL
 }
 
 mart Shop_General_26to30 {
@@ -190,29 +208,20 @@ script EventScript_Shop_Varrick {
 	lock
 	faceplayer
 	if (flag(FLAG_VARRICK_INTRO) == false) {
-		msgbox("{COLOR BLUE}???{COLOR DARK_GRAY}: Wowza! Yeetastic! Blamo!\p"
-				"My name is Varrick,\n"
-				"entrepreneur extraordinaire!\p"
-				"{COLOR BLUE}Varrick{COLOR DARK_GRAY}: I pitched this idea to\n"
-				"Silph a couple years back,\l"
-				"and now it's become a reality!\p"
-				"All the random items you can't find\n"
-				"in the world, you'll find here!\p"
-				"Fantastic evolution stones!\p"
-				"Countless Pokéball variations!\p"
-				"Delicious Berries!\p"
-				"The greatest held item collection\n"
-				"you've never seen!\p"
-				"Please, enjoy my shop!")
+		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Wowza! Yeetastic! Blamo!\p"
+				"My name is Varrick, entrepreneur extraordinaire!\p"
+				"{COLOR BLUE}Varrick{COLOR DARK_GRAY}: I pitched this idea a couple years back, and now it's become a reality!\p"
+				"All the single-use, consumable items in the world, now purchasable at a great bargain!\p"
+				"Please, enjoy my shop!"), MSGBOX_DEFAULT)
 		setflag(FLAG_VARRICK_INTRO)
 	}
-	message("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: Greetings and salutations!\nWelcome to Silph Unique Item Store!")
+	message(format("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: Salutations! Welcome to Varrick's One Time Wonders!"))
 	waitmessage
 	switch (var(VAR_ZONE)) {
 		case 1:
 		case 2:
 		case 3:
-			pokemart(Shop_Unique_Varrick_1to3)
+			pokemart(Shop_Consumables_1)
 		case 4:
 		case 5:
 			pokemart(Shop_Unique_Varrick_4to5)
@@ -246,13 +255,12 @@ script EventScript_Shop_Varrick {
 				pokemart(Shop_Unique_Varrick_26to30)
 			}
 	}
-	msgbox("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: A big thank you from Silph!", MSGBOX_DEFAULT)
+	msgbox("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: A big thank you from me!", MSGBOX_DEFAULT)
 	release
 }
 
-
-mart Shop_Unique_Varrick_1to3 {
-	ITEM_HEAL_BALL
+mart Shop_Consumables_1 {
+	ITEM_REPEL
 }
 
 mart Shop_Unique_Varrick_4to5 {
@@ -559,253 +567,188 @@ mart Shop_Unique_Varrick_26to30_Brutal {
 	ITEM_METAL_COAT
 }
 
-script EventScript_Shop_Unique_ZhuLi {
+script EventScript_Shop_Gordon {
 	lock
 	faceplayer
-	message("{COLOR BLUE}Zhu Li{COLOR DARK_GRAY}: Welcome to Silph Unique\nItem Store. Care to buy anything?")
+	if (flag(FLAG_GORDON_INTRO) == false) {
+		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Hi there! I'm Gordon.\p"
+				"I sell delicious berries for your Pokémon.\p"
+				"They smell and taste amazing, and they're healthy too!"), MSGBOX_DEFAULT)
+		setflag(FLAG_GORDON_INTRO)
+	}
+	message(format("{COLOR BLUE}Gordon{COLOR DARK_GRAY}: Greetings! Want to get some Berries for your Pokémon?"))
 	waitmessage
 	switch (var(VAR_ZONE)) {
+		case 1:
+		case 2:
+		case 3:
+			pokemart(Shop_Berries_1)
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 9:
+		case 10:
 		case 11:
 		case 12:
 		case 13:
 		case 15:
-			pokemart(Shop_Unique_ZhuLi_11to15)
 		case 16:
 		case 17:
 		case 18:
 		case 20:
-			pokemart(Shop_Unique_ZhuLi_16to20)
 		case 21:
 		case 22:
 		case 23:
-			pokemart(Shop_Unique_ZhuLi_21to23)
 		case 24:
 		case 25:
 		case 26:
-			pokemart(Shop_Unique_ZhuLi_24to30)
+			pokemart(Shop_Consumables_1)
 	}
-	msgbox("{COLOR BLUE}Zhu Li{COLOR DARK_GRAY}: We thank you for your\nbusiness, loyal customer.", MSGBOX_DEFAULT)
+	msgbox("{COLOR BLUE}Gordon{COLOR DARK_GRAY}: Eat well, and stay healthy!", MSGBOX_DEFAULT)
 	release
 }
 
-mart Shop_Unique_ZhuLi_11to15 {
-	ITEM_SITRUS_BERRY
+mart Shop_Berries_1 {
 	ITEM_ORAN_BERRY
-	ITEM_CHERI_BERRY
-	ITEM_CHESTO_BERRY
-	ITEM_PECHA_BERRY
-	ITEM_RAWST_BERRY
-	ITEM_ASPEAR_BERRY
-	ITEM_PERSIM_BERRY
-	ITEM_HEAL_BALL
-	ITEM_NET_BALL
-	ITEM_DIVE_BALL
-	ITEM_NEST_BALL
-	ITEM_REPEAT_BALL
-	ITEM_NORMAL_GEM
-	ITEM_FIRE_GEM
-	ITEM_WATER_GEM
-	ITEM_ELECTRIC_GEM
-	ITEM_GRASS_GEM
-	ITEM_ICE_GEM
-	ITEM_FIGHTING_GEM
-	ITEM_POISON_GEM
-	ITEM_GROUND_GEM
-	ITEM_FLYING_GEM
-	ITEM_PSYCHIC_GEM
-	ITEM_BUG_GEM
-	ITEM_ROCK_GEM
-	ITEM_GHOST_GEM
-	ITEM_DRAGON_GEM
-	ITEM_DARK_GEM
-	ITEM_STEEL_GEM
-	ITEM_FAIRY_GEM
-}
-
-mart Shop_Unique_ZhuLi_16to20 {
-	ITEM_SITRUS_BERRY
-	ITEM_ORAN_BERRY
-	ITEM_CHERI_BERRY
-	ITEM_CHESTO_BERRY
-	ITEM_PECHA_BERRY
-	ITEM_RAWST_BERRY
-	ITEM_ASPEAR_BERRY
-	ITEM_PERSIM_BERRY
-	ITEM_HEAL_BALL
-	ITEM_NET_BALL
-	ITEM_DIVE_BALL
-	ITEM_NEST_BALL
-	ITEM_REPEAT_BALL
-	ITEM_WATER_STONE
-	ITEM_THUNDER_STONE
-	ITEM_FIRE_STONE
-	ITEM_SUN_STONE
-	ITEM_MOON_STONE
-	ITEM_LEAF_STONE
-	ITEM_ICE_STONE
-	ITEM_SHINY_STONE
-	ITEM_DUSK_STONE
-	ITEM_DAWN_STONE
-	ITEM_WHIPPED_DREAM
-	ITEM_SACHET
-	ITEM_SWEET_APPLE
-	ITEM_TART_APPLE
-	ITEM_STRAWBERRY_SWEET
-	ITEM_LOVE_SWEET
-	ITEM_BERRY_SWEET
-	ITEM_CLOVER_SWEET
-	ITEM_FLOWER_SWEET
-	ITEM_STAR_SWEET
-	ITEM_RIBBON_SWEET
-	ITEM_NORMAL_GEM
-	ITEM_FIRE_GEM
-	ITEM_WATER_GEM
-	ITEM_ELECTRIC_GEM
-	ITEM_GRASS_GEM
-	ITEM_ICE_GEM
-	ITEM_FIGHTING_GEM
-	ITEM_POISON_GEM
-	ITEM_GROUND_GEM
-	ITEM_FLYING_GEM
-	ITEM_PSYCHIC_GEM
-	ITEM_BUG_GEM
-	ITEM_ROCK_GEM
-	ITEM_GHOST_GEM
-	ITEM_DRAGON_GEM
-	ITEM_DARK_GEM
-	ITEM_STEEL_GEM
-	ITEM_FAIRY_GEM
-}
-
-mart Shop_Unique_ZhuLi_21to23 {
-	ITEM_HEAL_BALL
-	ITEM_NET_BALL
-	ITEM_DIVE_BALL
-	ITEM_NEST_BALL
-	ITEM_REPEAT_BALL
-	ITEM_WATER_STONE
-	ITEM_THUNDER_STONE
-	ITEM_FIRE_STONE
-	ITEM_SUN_STONE
-	ITEM_MOON_STONE
-	ITEM_LEAF_STONE
-	ITEM_ICE_STONE
-	ITEM_SHINY_STONE
-	ITEM_DUSK_STONE
-	ITEM_DAWN_STONE
-	ITEM_OVAL_STONE
-	ITEM_PRISM_SCALE
-	ITEM_DEEP_SEA_SCALE
-	ITEM_DEEP_SEA_TOOTH
-	ITEM_KINGS_ROCK
-	ITEM_GALARICA_CUFF
-	ITEM_GALARICA_WREATH
-	ITEM_CRACKED_POT
-	ITEM_UPGRADE
-	ITEM_WHIPPED_DREAM
-	ITEM_TART_APPLE
-	ITEM_SWEET_APPLE
-	ITEM_RED_NECTAR
-	ITEM_YELLOW_NECTAR
-	ITEM_PINK_NECTAR
-	ITEM_PURPLE_NECTAR
-}
-
-mart Shop_Unique_ZhuLi_24to30 {
-	ITEM_HEAL_BALL
-	ITEM_NET_BALL
-	ITEM_DIVE_BALL
-	ITEM_NEST_BALL
-	ITEM_REPEAT_BALL
-	ITEM_WATER_STONE
-	ITEM_THUNDER_STONE
-	ITEM_FIRE_STONE
-	ITEM_SUN_STONE
-	ITEM_MOON_STONE
-	ITEM_LEAF_STONE
-	ITEM_ICE_STONE
-	ITEM_SHINY_STONE
-	ITEM_DUSK_STONE
-	ITEM_DAWN_STONE
-	ITEM_OVAL_STONE
-	ITEM_PROTECTOR
-	ITEM_DRAGON_SCALE
-	ITEM_ELECTIRIZER
-	ITEM_MAGMARIZER
-	ITEM_REAPER_CLOTH
-	ITEM_RAZOR_FANG
-	ITEM_RAZOR_CLAW
-	ITEM_DUBIOUS_DISC
-	ITEM_PRISM_SCALE
-	ITEM_DEEP_SEA_SCALE
-	ITEM_DEEP_SEA_TOOTH
-	ITEM_KINGS_ROCK
-	ITEM_GALARICA_CUFF
-	ITEM_GALARICA_WREATH
-	ITEM_CRACKED_POT
-	ITEM_UPGRADE
-	ITEM_WHIPPED_DREAM
-	ITEM_TART_APPLE
-	ITEM_SWEET_APPLE
-	ITEM_RED_NECTAR
-	ITEM_YELLOW_NECTAR
-	ITEM_PINK_NECTAR
-	ITEM_PURPLE_NECTAR
-}
-
-script EventScript_Shop_ZhuLiIntro {
-	lockall
-	applymovement(2, Common_Movement_ExclamationMark)
-	applymovement(5, Common_Movement_ExclamationMark)
-	playse(SE_PIN)
-	waitmovement(0)
-	waitse
-	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
-	if (var(VAR_TEMP_0) == 20) {
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
-		waitmovement(0)
-	}
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
-	waitmovement(0)
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
-	waitmovement(0)
-	msgbox("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: Fantastic! You've arrived!\nZhu Li, do the thing!")
-	msgbox("{COLOR BLUE}Zhu Li{COLOR DARK_GRAY}: Yes, sir.")
-	playse(SE_APPLAUSE)
-	waitse
-	msgbox("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: Zhu Li is my assistant!\pSilph gave me so many items to sell\nthat I practically begged them for\lsome extra help!\pZhu Li, introduce yourself!")
-	msgbox("{COLOR BLUE}Zhu Li{COLOR DARK_GRAY}: Yes, sir.\pPleased to meet you, {PLAYER}. I'm-")
-	msgbox("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: Alright, we don't have all\nday, Zhu Li! Talk to her if you\lwant to buy consumable items, while\lI'll handle all of the held items!")
-	setflag(FLAG_VARRICK_INTRO)
-	releaseall
-}
-
-script EventScript_Shop_Julia {
-	lockall
-	setflag(FLAG_VARRICK_INTRO)
-	releaseall
 }
 
 script EventScript_Shop_Alexander {
-	lockall
-	setflag(FLAG_VARRICK_INTRO)
-	releaseall
+	lock
+	faceplayer
+	if (flag(FLAG_ALEXANDER_INTRO) == false) {
+		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: I am Alexander.\p"
+				"My passion is battle.\p"
+				"In particular, the items that Pokémon hold can be instrumental for victory.\p"
+				"I hope that you, too, share in my passion."), MSGBOX_DEFAULT)
+		setflag(FLAG_ALEXANDER_INTRO)
+	}
+	message(format("{COLOR BLUE}Alexander{COLOR DARK_GRAY}: The right item can turn the tide of battle. What do you need?"))
+	waitmessage
+	switch (var(VAR_ZONE)) {
+		case 1:
+		case 2:
+		case 3:
+			pokemart(Shop_Battle_1)
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 9:
+		case 10:
+		case 11:
+		case 12:
+		case 13:
+		case 15:
+		case 16:
+		case 17:
+		case 18:
+		case 20:
+		case 21:
+		case 22:
+		case 23:
+		case 24:
+		case 25:
+		case 26:
+			pokemart(Shop_Consumables_1)
+	}
+	msgbox(format("{COLOR BLUE}Alexander{COLOR DARK_GRAY}: May you always play around the crit."), MSGBOX_DEFAULT)
+	release
 }
 
-script EventScript_Shop_Gordon {
-	lockall
-	setflag(FLAG_VARRICK_INTRO)
-	releaseall
+mart Shop_Battle_1 {
+	ITEM_SILK_SCARF
+}
+
+script EventScript_Shop_Julia {
+	lock
+	faceplayer
+	if (flag(FLAG_JULIA_INTRO) == false) {
+		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Good morning, good afternoon, good evening, and goodnight!\p"
+				"Wherever you are in the world, I am your humble shopkeeper, Julia.\p"
+				"I sell TMs to teach to your treasured Pokémon!\p"
+				"I know they run a pretty penny, but they're worth the cost!"), MSGBOX_DEFAULT)
+		setflag(FLAG_JULIA_INTRO)
+	}
+	message("{COLOR BLUE}Julia{COLOR DARK_GRAY}: Nice to see you! How's it going?")
+	waitmessage
+	switch (var(VAR_ZONE)) {
+		case 1:
+		case 2:
+		case 3:
+			pokemart(Shop_TMs_1)
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 9:
+		case 10:
+		case 11:
+		case 12:
+		case 13:
+		case 15:
+		case 16:
+		case 17:
+		case 18:
+		case 20:
+		case 21:
+		case 22:
+		case 23:
+		case 24:
+		case 25:
+		case 26:
+			pokemart(Shop_Consumables_1)
+	}
+	msgbox("{COLOR BLUE}Julia{COLOR DARK_GRAY}: Best of luck out there!", MSGBOX_DEFAULT)
+	release
+}
+
+mart Shop_TMs_1 {
+	ITEM_TM01
+}
+
+script EventScript_Shop_Joy {
+	lock
+	faceplayer
+	if (flag(FLAG_JOY_INTRO) == false) {
+		setflag(FLAG_JOY_INTRO)
+		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Welcome to the Pokémon… Ugh. Never mind.\p{COLOR BLUE}???{COLOR DARK_GRAY}: My name is Joy. Just Joy.\p{COLOR BLUE}Joy{COLOR DARK_GRAY}: I used to work at the Pokémon Center, but they gave terrible pay.\pSo now, this shop, Joy's Recovery Shop, is my own!"), MSGBOX_DEFAULT)
+	}
+	msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Welcome to Joy's Recovery Shop.\pWe heal your entire party for a\nflat ¥1000 fee.", MSGBOX_DEFAULT)
+	showmoneybox(0, 0, 0)
+	msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Should I heal your Pokémon?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		closemessage
+		hidemoneybox
+	} else {
+		checkmoney(1000, 0)
+		if (var(VAR_RESULT) == FALSE) {
+			msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: You don't have enough money.")
+			hidemoneybox
+		} else {
+			removemoney(1000, 0)
+			updatemoneybox
+			msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: That will be ¥1000, thank you…")
+			fadescreenswapbuffers(FADE_TO_BLACK)
+			playfanfare(MUS_HEAL)
+			waitfanfare
+			special(HealPlayerParty)
+			fadescreenswapbuffers(FADE_FROM_BLACK)
+			msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Your party has been restored.", MSGBOX_DEFAULT)
+			hidemoneybox
+		}
+	}
+	msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: See you next time.")
+	release
+	end
 }
 
 script EventScript_Shop_Lelouch {
 	lock
 	faceplayer
 	if (flag(FLAG_LELOUCH_INTRO) == false) {
-		msgbox("{COLOR BLUE}???{COLOR DARK_GRAY}: You… What is your name?\p{COLOR BLUE}???{COLOR DARK_GRAY}: {PLAYER}? Now that's a name…\nI haven't heard in…")
-		delay(96)
+		msgbox("{COLOR BLUE}???{COLOR DARK_GRAY}: You… What is your name?\p{COLOR BLUE}???{COLOR DARK_GRAY}: {PLAYER}? Curious…\nThat's a funny name…")
+		delay(16)
 		msgbox("{COLOR BLUE}???{COLOR DARK_GRAY}: You may call me Lelouch.\p{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: I provide a variety of\nservices to improve one's Pokémon.", MSGBOX_DEFAULT)
 		setflag(FLAG_LELOUCH_INTRO)
 	}
@@ -1463,42 +1406,6 @@ script EventScript_Shop_Lelouch_Other {
 
 text gText_Lelouch_ChangedNature {
 	format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: I've changed your {STR_VAR_1}'s nature to the requested nature.")
-}
-
-script EventScript_Shop_Joy {
-	lock
-	faceplayer
-	if (flag(FLAG_JOY_INTRO) == false) {
-		setflag(FLAG_JOY_INTRO)
-		msgbox("{COLOR BLUE}???{COLOR DARK_GRAY}: Welcome to the Pokémon…\nUgh. Never mind.\p{COLOR BLUE}???{COLOR DARK_GRAY}: My name is Joy. Just Joy.\p{COLOR BLUE}Joy{COLOR DARK_GRAY}: I used to work at the\nPokémon Center, but they gave\lterrible pay.\pSo I've started my own shop,\nJoy's Healing Shop!", MSGBOX_DEFAULT)
-	}
-	msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Welcome to Joy's Healing Shop.\pWe heal your entire party for a\nflat ¥1000 fee.", MSGBOX_DEFAULT)
-	showmoneybox(0, 0, 0)
-	msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Should I heal your Pokémon?", MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		closemessage
-		hidemoneybox
-	} else {
-		checkmoney(1000, 0)
-		if (var(VAR_RESULT) == FALSE) {
-			msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: You don't have enough money.")
-			hidemoneybox
-		} else {
-			removemoney(1000, 0)
-			updatemoneybox
-			msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: That will be ¥1000, thank you…")
-			fadescreenswapbuffers(FADE_TO_BLACK)
-			playfanfare(MUS_HEAL)
-			waitfanfare
-			special(HealPlayerParty)
-			fadescreenswapbuffers(FADE_FROM_BLACK)
-			msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Your party has been restored.", MSGBOX_DEFAULT)
-			hidemoneybox
-		}
-	}
-	msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: See you next time.")
-	release
-	end
 }
 
 script EventScript_MandatoryCheck {

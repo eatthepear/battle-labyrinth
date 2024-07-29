@@ -68,7 +68,7 @@ Zone0Sanctuary_EventScript_Intro_14:
 # 156 "data/maps/Zone0Sanctuary/scripts.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, Zone0Sanctuary_EventScript_Intro_19
 # 170 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_18, MSGBOX_DEFAULT
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_20, MSGBOX_DEFAULT
 # 173 "data/maps/Zone0Sanctuary/scripts.pory"
 	goto Zone0Sanctuary_EventScript_HandleStarterSelectionDefault
 	return
@@ -191,7 +191,7 @@ Zone0Sanctuary_EventScript_Intro_8:
 # 101 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitmovement 0
 # 102 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_8
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_12
 # 104 "data/maps/Zone0Sanctuary/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2
 # 105 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -211,7 +211,7 @@ Zone0Sanctuary_EventScript_Intro_8:
 # 112 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitmovement 0
 # 113 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_8
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_13
 # 115 "data/maps/Zone0Sanctuary/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2
 # 116 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -235,7 +235,7 @@ Zone0Sanctuary_EventScript_Intro_8:
 # 125 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitmovement 0
 # 126 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_12
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_14
 # 127 "data/maps/Zone0Sanctuary/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2
 # 128 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -253,9 +253,9 @@ Zone0Sanctuary_EventScript_Intro_8:
 # 134 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitmovement 0
 # 135 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_13
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_15
 # 139 "data/maps/Zone0Sanctuary/scripts.pory"
-	delay 96
+	delay 16
 	goto Zone0Sanctuary_EventScript_Intro_7
 
 Zone0Sanctuary_EventScript_Intro_12:
@@ -270,7 +270,7 @@ Zone0Sanctuary_EventScript_Intro_12:
 
 Zone0Sanctuary_EventScript_Intro_15:
 # 142 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_14
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_16
 # 143 "data/maps/Zone0Sanctuary/scripts.pory"
 	callnative GiveRandomStarter
 # 144 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -278,13 +278,13 @@ Zone0Sanctuary_EventScript_Intro_15:
 # 145 "data/maps/Zone0Sanctuary/scripts.pory"
 	bufferleadmonspeciesname 0
 # 146 "data/maps/Zone0Sanctuary/scripts.pory"
-	message Zone0Sanctuary_EventScript_Intro_Text_15
+	message Zone0Sanctuary_EventScript_Intro_Text_17
 # 147 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitmessage
 # 148 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitfanfare
 # 149 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_16, MSGBOX_YESNO
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_18, MSGBOX_YESNO
 # 150 "data/maps/Zone0Sanctuary/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone0Sanctuary_EventScript_Intro_23
@@ -300,7 +300,7 @@ Zone0Sanctuary_EventScript_Intro_17:
 
 Zone0Sanctuary_EventScript_Intro_19:
 # 157 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_17
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_19
 # 160 "data/maps/Zone0Sanctuary/scripts.pory"
 	special ChooseStarter
 # 161 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -308,7 +308,7 @@ Zone0Sanctuary_EventScript_Intro_19:
 # 162 "data/maps/Zone0Sanctuary/scripts.pory"
 	bufferleadmonspeciesname 0
 # 163 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_16, MSGBOX_YESNO
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_18, MSGBOX_YESNO
 # 164 "data/maps/Zone0Sanctuary/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone0Sanctuary_EventScript_Intro_26
@@ -423,7 +423,7 @@ Zone0Sanctuary_EventScript_HandleStarterSelectionDefault_34:
 # 358 "data/maps/Zone0Sanctuary/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 359 "data/maps/Zone0Sanctuary/scripts.pory"
-	message Zone0Sanctuary_EventScript_Intro_Text_15
+	message Zone0Sanctuary_EventScript_Intro_Text_17
 # 360 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitmessage
 # 361 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -431,7 +431,7 @@ Zone0Sanctuary_EventScript_HandleStarterSelectionDefault_34:
 # 362 "data/maps/Zone0Sanctuary/scripts.pory"
 	bufferleadmonspeciesname 0
 # 363 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_16, MSGBOX_YESNO
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_18, MSGBOX_YESNO
 # 364 "data/maps/Zone0Sanctuary/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone0Sanctuary_EventScript_HandleStarterSelectionDefault_63
@@ -2298,44 +2298,60 @@ Zone0Sanctuary_EventScript_Intro_Text_7:
 
 Zone0Sanctuary_EventScript_Intro_Text_8:
 # 58 "data/maps/Zone0Sanctuary/scripts.pory"
-	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: The top left shop is {COLOR RED}Tim's\n"
-	.string "General Purpose Shop{COLOR DARK_GRAY}.\p"
-	.string "Healing supplies, basic Pokéballs, and\n"
-	.string "other common items are sold here.$"
+	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Portentia's\n"
+	.string "Potions{COLOR DARK_GRAY}.\p"
+	.string "Healing supplies, such as Potions or\n"
+	.string "other curative measures, can be found\l"
+	.string "here.$"
 
 Zone0Sanctuary_EventScript_Intro_Text_9:
 # 69 "data/maps/Zone0Sanctuary/scripts.pory"
-	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: The top right shop is {COLOR RED}Silph\n"
-	.string "Unique Item Shop{COLOR DARK_GRAY}.\p"
-	.string "They sell a variety of held items and\n"
-	.string "single use items such as Pokéball\l"
-	.string "variations, evolution items, Berries,\l"
-	.string "and so on.$"
+	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Tim's Pokéball\n"
+	.string "Shop{COLOR DARK_GRAY}.\p"
+	.string "They have a variety of Pokéballs to\n"
+	.string "buy.$"
 
 Zone0Sanctuary_EventScript_Intro_Text_10:
 # 80 "data/maps/Zone0Sanctuary/scripts.pory"
-	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: The bottom right shop is {COLOR RED}Joy's\n"
-	.string "Healing Shop{COLOR DARK_GRAY}.\p"
-	.string "At the low cost of ¥1000, they will heal\n"
-	.string "your entire party.$"
+	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Gordon's Berries{COLOR DARK_GRAY}.\p"
+	.string "Gordon is a legendary chef who curates\n"
+	.string "a selection of Berries for Pokémon.$"
 
 Zone0Sanctuary_EventScript_Intro_Text_11:
 # 91 "data/maps/Zone0Sanctuary/scripts.pory"
-	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: The bottom left shop is\n"
-	.string "{COLOR RED}Lelouch's Special Services Shop{COLOR DARK_GRAY}.\p"
-	.string "They offer a range of Pokémon services,\n"
-	.string "but only to customers who can pay the\l"
-	.string "right price.$"
+	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Julia's TM Shop{COLOR DARK_GRAY}.\p"
+	.string "Technical machines can be bought\n"
+	.string "aplenty here.$"
 
 Zone0Sanctuary_EventScript_Intro_Text_12:
-# 126 "data/maps/Zone0Sanctuary/scripts.pory"
-	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: In addition, you have access\n"
-	.string "to {COLOR RED}Zone 0{COLOR DARK_GRAY}.\p"
-	.string "If you would like to enter {COLOR RED}Zone 0{COLOR DARK_GRAY}, you\n"
-	.string "can access it from any Sanctuary using\l"
-	.string "this warp.$"
+# 102 "data/maps/Zone0Sanctuary/scripts.pory"
+	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Varrick's One Time\n"
+	.string "Wonders{COLOR DARK_GRAY}.\p"
+	.string "Many single-use items, such as\n"
+	.string "Evolutionary stones, are sold here.$"
 
 Zone0Sanctuary_EventScript_Intro_Text_13:
+# 113 "data/maps/Zone0Sanctuary/scripts.pory"
+	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Alexander's\n"
+	.string "Battle Shop{COLOR DARK_GRAY}.\p"
+	.string "He sells items that are primarily used\n"
+	.string "for battle.$"
+
+Zone0Sanctuary_EventScript_Intro_Text_14:
+# 126 "data/maps/Zone0Sanctuary/scripts.pory"
+	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: This is the {COLOR RED}Pokémon Center{COLOR DARK_GRAY},\n"
+	.string "though don't let Joy catch you saying\l"
+	.string "that.\p"
+	.string "Your Pokémon can be healed at a flat\n"
+	.string "fee.\p"
+	.string "In addition, inside you might find other\n"
+	.string "challengers of the Pokémon Battle\l"
+	.string "Labyrinth who might give you advice or\l"
+	.string "otherwise help you.\p"
+	.string "You can also access {COLOR RED}Zone 0{COLOR DARK_GRAY} on the left\n"
+	.string "inside.$"
+
+Zone0Sanctuary_EventScript_Intro_Text_15:
 # 135 "data/maps/Zone0Sanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Our tour has finished.\p"
 	.string "These shops will be available at every\n"
@@ -2346,22 +2362,22 @@ Zone0Sanctuary_EventScript_Intro_Text_13:
 	.string "up on any supplies before entering the\l"
 	.string "next Zone.$"
 
-Zone0Sanctuary_EventScript_Intro_Text_14:
+Zone0Sanctuary_EventScript_Intro_Text_16:
 # 142 "data/maps/Zone0Sanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Because the {COLOR RED}Randomizer{COLOR DARK_GRAY} is on,\n"
 	.string "you get a random starter.$"
 
-Zone0Sanctuary_EventScript_Intro_Text_15:
+Zone0Sanctuary_EventScript_Intro_Text_17:
 # 146 "data/maps/Zone0Sanctuary/scripts.pory"
 	.string "{PLAYER} received the\n"
 	.string "{STR_VAR_1}!$"
 
-Zone0Sanctuary_EventScript_Intro_Text_16:
+Zone0Sanctuary_EventScript_Intro_Text_18:
 # 149 "data/maps/Zone0Sanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: How about a nickname for your\n"
 	.string "{STR_VAR_1}?$"
 
-Zone0Sanctuary_EventScript_Intro_Text_17:
+Zone0Sanctuary_EventScript_Intro_Text_19:
 # 157 "data/maps/Zone0Sanctuary/scripts.pory"
 	.string "As a new challenger, you will receive a\n"
 	.string "starter Pokémon.\p"
@@ -2371,7 +2387,7 @@ Zone0Sanctuary_EventScript_Intro_Text_17:
 	.string "Choose carefully as these Pokémon are\n"
 	.string "very rare.$"
 
-Zone0Sanctuary_EventScript_Intro_Text_18:
+Zone0Sanctuary_EventScript_Intro_Text_20:
 # 170 "data/maps/Zone0Sanctuary/scripts.pory"
 	.string "As a new challenger, you will receive a\n"
 	.string "starter Pokémon.\p"

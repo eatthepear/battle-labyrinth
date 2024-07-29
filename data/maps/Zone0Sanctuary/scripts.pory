@@ -55,8 +55,8 @@ script Zone0Sanctuary_EventScript_Intro {
 		special(SpawnCameraObject)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The top left shop is {COLOR RED}Tim's General Purpose Shop{COLOR DARK_GRAY}.\p"
-		"Healing supplies, basic Pokéballs, and other common items are sold here."))
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Portentia's Potions{COLOR DARK_GRAY}.\p"
+		"Healing supplies, such as Potions or other curative measures, can be found here."))
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
@@ -66,8 +66,8 @@ script Zone0Sanctuary_EventScript_Intro {
 		special(SpawnCameraObject)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The top right shop is {COLOR RED}Silph Unique Item Shop{COLOR DARK_GRAY}.\p"
-		"They sell a variety of held items and single use items such as Pokéball variations, evolution items, Berries, and so on."))
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Tim's Pokéball Shop{COLOR DARK_GRAY}.\p"
+		"They have a variety of Pokéballs to buy."))
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
@@ -77,8 +77,8 @@ script Zone0Sanctuary_EventScript_Intro {
 		special(SpawnCameraObject)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The bottom right shop is {COLOR RED}Joy's Healing Shop{COLOR DARK_GRAY}.\p"
-		"At the low cost of ¥1000, they will heal your entire party."))
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Gordon's Berries{COLOR DARK_GRAY}.\p"
+		"Gordon is a legendary chef who curates a selection of Berries for Pokémon."))
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
@@ -88,8 +88,8 @@ script Zone0Sanctuary_EventScript_Intro {
 		special(SpawnCameraObject)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The bottom left shop is {COLOR RED}Lelouch's Special Services Shop{COLOR DARK_GRAY}.\p"
-		"They offer a range of Pokémon services, but only to customers who can pay the right price."))
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Julia's TM Shop{COLOR DARK_GRAY}.\p"
+		"Technical machines can be bought aplenty here."))
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
@@ -99,8 +99,8 @@ script Zone0Sanctuary_EventScript_Intro {
 		special(SpawnCameraObject)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The top left shop is {COLOR RED}Tim's General Purpose Shop{COLOR DARK_GRAY}.\p"
-		"Healing supplies, basic Pokéballs, and other common items are sold here."))
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Varrick's One Time Wonders{COLOR DARK_GRAY}.\p"
+		"Many single-use items, such as Evolutionary stones, are sold here."))
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
@@ -110,8 +110,8 @@ script Zone0Sanctuary_EventScript_Intro {
 		special(SpawnCameraObject)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The top left shop is {COLOR RED}Tim's General Purpose Shop{COLOR DARK_GRAY}.\p"
-		"Healing supplies, basic Pokéballs, and other common items are sold here."))
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Alexander's Battle Shop{COLOR DARK_GRAY}.\p"
+		"He sells items that are primarily used for battle."))
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
@@ -123,7 +123,7 @@ script Zone0Sanctuary_EventScript_Intro {
 		waitmovement(0)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: In addition, you have access to {COLOR RED}Zone 0{COLOR DARK_GRAY}.\pIf you would like to enter {COLOR RED}Zone 0{COLOR DARK_GRAY}, you can access it from any Sanctuary using this warp."))
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This is the {COLOR RED}Pokémon Center{COLOR DARK_GRAY}, though don't let Joy catch you saying that.\pYour Pokémon can be healed at a flat fee.\pIn addition, inside you might find other challengers of the Pokémon Battle Labyrinth who might give you advice or otherwise help you.\pYou can also access {COLOR RED}Zone 0{COLOR DARK_GRAY} on the left inside."))
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkLeft)
@@ -136,7 +136,7 @@ script Zone0Sanctuary_EventScript_Intro {
 		"These shops will be available at every Sanctuary.\p"
 		"As you progress through more Zones, more items and services will unlock.\p"
 		"Also, it is highly recommended you stock up on any supplies before entering the next Zone."))
-		delay(96)
+		delay(16)
 	}
 	if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Because the {COLOR RED}Randomizer{COLOR DARK_GRAY} is on, you get a random starter."))

@@ -43,10 +43,10 @@
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
 // Custom Flags Scripts
-#define FLAG_PORTENTIA_INTRO                                    0x20
-#define FLAG_TIM_INTRO                                0x21
+#define FLAG_PORTENTIA_INTRO                              0x20
+#define FLAG_TIM_INTRO                                    0x21
 #define FLAG_VARRICK_INTRO                                0x22
-#define FLAG_GORDON_INTRO                                    0x23
+#define FLAG_GORDON_INTRO                                 0x23
 #define FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES                 0x24
 #define FLAG_ZONE0B_RECEIVED_EEVEE                        0x25
 #define FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG                   0x26
@@ -116,10 +116,10 @@
 #define FLAG_ZONE_B1_PORYGON_5                            0x66
 #define FLAG_RECEIVED_PORYGON                             0x67
 #define FLAG_PBL_PENDING_DAYCARE_EGG                      0x68
-#define FLAG_ALEXANDER_INTRO                                  0x69
+#define FLAG_ALEXANDER_INTRO                              0x69
 #define FLAG_JULIA_INTRO                                  0x6A
-#define FLAG_JOY_INTRO                                  0x6B
-#define FLAG_LELOUCH_INTRO                                  0x6C
+#define FLAG_JOY_INTRO                                    0x6B
+#define FLAG_LELOUCH_INTRO                                0x6C
 // #define FLAG_UNUSED_0x6D                                  0x6D
 // #define FLAG_UNUSED_0x6E                                  0x6E
 // #define FLAG_UNUSED_0x6F                                  0x6F

@@ -172,6 +172,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "EventScript_TMsSign"
+    },
+    {
+      "type": "sign",
+      "x": 40,
+      "y": 38,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "EventScript_RecoverySign"
     }
   ]
 }
