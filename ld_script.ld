@@ -363,6 +363,7 @@ SECTIONS {
         src/sound_check_menu.o(.text);
         src/dexnav.o(.text);
         src/follow_me.o(.text);
+        src/ui_startmenu_full.o(.text);
     } > ROM =0
 
     script_data :
@@ -733,6 +734,7 @@ SECTIONS {
         src/sound_check_menu.o(.rodata);
         src/dexnav.o(.rodata);
         src/follow_me.o(.rodata);
+        src/ui_startmenu_full.o(.rodata);
     } > ROM =0
 
     song_data :
