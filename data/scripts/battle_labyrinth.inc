@@ -2846,15 +2846,15 @@ EventScript_LeavingSetup::
 # 1498 "data/scripts/battle_labyrinth.pory"
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 # 1499 "data/scripts/battle_labyrinth.pory"
-	compare VAR_TEMP_0, 21
+	compare VAR_TEMP_0, 37
 	goto_if_eq EventScript_LeavingSetup_2
 EventScript_LeavingSetup_1:
 # 1506 "data/scripts/battle_labyrinth.pory"
-	compare VAR_TEMP_0, 22
+	compare VAR_TEMP_0, 38
 	goto_if_eq EventScript_LeavingSetup_5
 EventScript_LeavingSetup_4:
 # 1513 "data/scripts/battle_labyrinth.pory"
-	compare VAR_TEMP_0, 23
+	compare VAR_TEMP_0, 39
 	goto_if_eq EventScript_LeavingSetup_8
 EventScript_LeavingSetup_7:
 # 1520 "data/scripts/battle_labyrinth.pory"
