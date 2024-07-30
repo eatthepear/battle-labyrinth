@@ -45,12 +45,6 @@ gText_Colress_UnlockedWarp:
 	.string "you have unlocked a special warp in\l"
 	.string "Zone 0.$"
 
-gText_Version:
-	.string "This is version 1.3.1 of the\n"
-	.string "Pokémon Battle Labyrinth.\p"
-	.string "Make sure you're playing the\n"
-	.string "most up to date version!$"
-
 gText_GeneralSign:
 	.string "Tim's General Purpose Shop\n"
 	.string "Sponsored by Pokémart Inc.$"

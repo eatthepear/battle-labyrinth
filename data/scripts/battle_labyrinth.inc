@@ -2988,7 +2988,7 @@ EventScript_SanctuaryToZone0_2:
 
 EventScript_Documentation::
 # 1563 "data/scripts/battle_labyrinth.pory"
-	msgbox gText_Version
+	msgbox EventScript_Documentation_Text_0
 # 1564 "data/scripts/battle_labyrinth.pory"
 	goto EventScript_WhenUReady
 	return
@@ -6681,6 +6681,13 @@ EventScript_LeavingSetup_Text_0:
 EventScript_SanctuaryToZone0_Text_0:
 # 1549 "data/scripts/battle_labyrinth.pory"
 	.string "Go to Zone 0?$"
+
+EventScript_Documentation_Text_0:
+# 1563 "data/scripts/battle_labyrinth.pory"
+	.string "This is version 1.4.0 of the Pokémon\n"
+	.string "Battle Labyrinth.\p"
+	.string "Make sure you're playing the most up to\n"
+	.string "date version!$"
 
 EventScript_Settings_Text_0:
 # 1607 "data/scripts/battle_labyrinth.pory"

@@ -1560,7 +1560,7 @@ script EventScript_SanctuaryToZone0 {
 }
 
 script EventScript_Documentation {
-	msgbox(gText_Version)
+	msgbox(format("This is version 1.4.0 of the Pokémon Battle Labyrinth.\pMake sure you're playing the most up to date version!$"))
 	goto(EventScript_WhenUReady)
 }
 
