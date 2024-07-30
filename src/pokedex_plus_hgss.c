@@ -4014,7 +4014,7 @@ static void Task_ExitInfoScreen(u8 taskId)
 //*        Area screen               *
 //*                                  *
 //************************************
-static void Task_LoadAreaScreen(u8 taskId)
+static UNUSED void Task_LoadAreaScreen(u8 taskId)
 {
     switch (gMain.state)
     {
@@ -5920,7 +5920,7 @@ static void Task_SwitchScreensFromStatsScreen(u8 taskId)
         case 1:
             FreeAllWindowBuffers();
             InitWindows(sInfoScreen_WindowTemplates);
-            gTasks[taskId].func = Task_LoadAreaScreen;
+            gTasks[taskId].func = Task_LoadInfoScreen;
             break;
         case 2:
             gTasks[taskId].func = Task_LoadCryScreen;
