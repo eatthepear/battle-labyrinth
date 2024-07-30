@@ -334,7 +334,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Flying"),
         .generic = _("a FLYING move"),
-        .palette = 14,
+        .palette = 13,
         .zMove = MOVE_SUPERSONIC_SKYSTRIKE,
         .maxMove = MOVE_MAX_AIRSTREAM,
         //.enhanceItem = ITEM_SHARP_BEAK,
@@ -350,7 +350,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Poison"),
         .generic = _("a POISON move"),
-        .palette = 14,
+        .palette = 13,
         .zMove = MOVE_ACID_DOWNPOUR,
         .maxMove = MOVE_MAX_OOZE,
         //.enhanceItem = ITEM_POISON_BARB,
@@ -398,7 +398,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Bug"),
         .generic = _("a BUG move"),
-        .palette = 15,
+        .palette = 14,
         .zMove = MOVE_SAVAGE_SPIN_OUT,
         .maxMove = MOVE_MAX_FLUTTERBY,
         //.enhanceItem = ITEM_SILVER_POWDER,
@@ -430,7 +430,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Steel"),
         .generic = _("a STEEL move"),
-        .palette = 13,
+        .palette = 14,
         .zMove = MOVE_CORKSCREW_CRASH,
         .maxMove = MOVE_MAX_STEELSPIKE,
         //.enhanceItem = ITEM_METAL_COAT,
@@ -446,13 +446,13 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("???"),
         .generic = _("a ??? move"),
-        .palette = 15,
+        .palette = 14,
     },
     [TYPE_FIRE] =
     {
         .name = _("Fire"),
         .generic = _("a FIRE move"),
-        .palette = 13,
+        .palette = 14,
         .zMove = MOVE_INFERNO_OVERDRIVE,
         .maxMove = MOVE_MAX_FLARE,
         //.enhanceItem = ITEM_CHARCOAL,
@@ -484,7 +484,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Grass"),
         .generic = _("a GRASS move"),
-        .palette = 15,
+        .palette = 14,
         .zMove = MOVE_BLOOM_DOOM,
         .maxMove = MOVE_MAX_OVERGROWTH,
         //.enhanceItem = ITEM_MIRACLE_SEED,
@@ -500,7 +500,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Electr"),
         .generic = _("an ELECTRIC move"),
-        .palette = 13,
+        .palette = 15,
         .zMove = MOVE_GIGAVOLT_HAVOC,
         .maxMove = MOVE_MAX_LIGHTNING,
         //.enhanceItem = ITEM_MAGNET,
@@ -516,7 +516,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Psychc"),
         .generic = _("a PSYCHIC move"),
-        .palette = 14,
+        .palette = 15,
         .zMove = MOVE_SHATTERED_PSYCHE,
         .maxMove = MOVE_MAX_MINDSTORM,
         //.enhanceItem = ITEM_TWISTED_SPOON,
@@ -532,7 +532,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Ice"),
         .generic = _("an ICE move"),
-        .palette = 14,
+        .palette = 15,
         .zMove = MOVE_SUBZERO_SLAMMER,
         .maxMove = MOVE_MAX_HAILSTORM,
         //.enhanceItem = ITEM_NEVER_MELT_ICE,
@@ -564,7 +564,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Dark"),
         .generic = _("a DARK move"),
-        .palette = 13,
+        .palette = 15,
         .zMove = MOVE_BLACK_HOLE_ECLIPSE,
         .maxMove = MOVE_MAX_DARKNESS,
         //.enhanceItem = ITEM_BLACK_GLASSES,
@@ -580,7 +580,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Fairy"),
         .generic = _("a FAIRY move"),
-        .palette = 14,
+        .palette = 15,
         .zMove = MOVE_TWINKLE_TACKLE,
         .maxMove = MOVE_MAX_STARFALL,
         //.enhanceItem = ITEM_FAIRY_FEATHER,
