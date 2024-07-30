@@ -29,6 +29,13 @@ static const struct BgTemplate sPartyMenuBgTemplates[] =
     },
 };
 
+enum
+{
+    PARTY_BOX_LEFT_COLUMN,
+    PARTY_BOX_RIGHT_COLUMN,
+    PARTY_BOX_EQUAL_COLUMN //Custom party menu
+};
+
 static const struct PartyMenuBoxInfoRects sPartyBoxInfoRects[] =
 {
     [PARTY_BOX_LEFT_COLUMN] =
@@ -67,10 +74,10 @@ static const struct PartyMenuBoxInfoRects sPartyBoxInfoRects[] =
             33,  2, 40, 13, // Nickname
              3, 25, 32,  8, // Level 85,  1, 32,  8,
            100,  1,  8,  8, // Gender 79,  1,  8,  8, 
-            48, 23, 24,  8, // HP
-            63, 23, 24,  8, // Max HP
+            48, 25, 24,  8, // HP
+            63, 25, 24,  8, // Max HP
             48, 18, 56,  3  // HP bar
-        },
+        }, 
         33, 13, 64, 16      // Description text (e.g. NO USE)
     },//
 };
@@ -83,12 +90,12 @@ static const u8 sPartyMenuSpriteCoords[PARTY_LAYOUT_COUNT][PARTY_SIZE][4 * 2] =
 {
     [PARTY_LAYOUT_SINGLE] =
     {
-        { 24,  14,  38,  33, 104,  31,  24,  18},
-        {136,  22, 150,  41, 216,  39, 136,  26},
-        { 24,  54,  38,  73, 104,  71,  24,  58},
-        {136,  62, 150,  81, 216,  79, 136,  66},
-        { 24,  94,  38, 113, 104, 111,  24,  98},
-        {136, 102, 150, 121, 216, 119, 136, 106},
+        { 24,  14,  38,  33, 105,  33,  24,  18},
+        {136,  22, 150,  41, 217,  41, 136,  26},
+        { 24,  54,  38,  73, 105,  73,  24,  58},
+        {136,  62, 150,  81, 217,  81, 136,  66},
+        { 24,  94,  38, 113, 105, 113,  24,  98},
+        {136, 102, 150, 121, 217, 121, 136, 106},
     },
     [PARTY_LAYOUT_DOUBLE] =
     {
@@ -473,7 +480,7 @@ static const struct WindowTemplate sCancelButtonWindowTemplate =
     .width = 6,
     .height = 2,
     .paletteNum = 3,
-    .baseBlock = 0x207, //0x1C7,  //Custom party menu
+    .baseBlock = 0x207,
 };
 static const struct WindowTemplate sCancelButtonWindowTemplate_equal =
 {
@@ -494,7 +501,7 @@ static const struct WindowTemplate sMultiCancelButtonWindowTemplate =
     .width = 6,
     .height = 2,
     .paletteNum = 3,
-    .baseBlock = 0x1C7,
+    .baseBlock = 0x207,
 };
 static const struct WindowTemplate sMultiCancelButtonWindowTemplate_equal =
 {
@@ -732,6 +739,11 @@ static const u8 sEqualEmptySlotTileNums[] = {21, 22, 22, 22, 22, 22, 22, 22, 22,
                                              30,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 31,
                                              30,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 31,
                                              37, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38, 39};
+
+static const u8 sEmptySlotTileNums[] = {21, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 23,
+                                        30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 31,
+                                        37, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38, 39};
+
 //
 // Palette offsets
 static const u8 sGenderPalOffsets[] = {11, 12};
