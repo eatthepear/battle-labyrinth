@@ -141,6 +141,14 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
             input->checkStandardWildEncounter = TRUE;
     }
 
+#if DEBUG_OVERWORLD_MENU == TRUE && DEBUG_OVERWORLD_IN_MENU == FALSE
+    if ((heldKeys & DEBUG_OVERWORLD_HELD_KEYS) && input->DEBUG_OVERWORLD_TRIGGER_EVENT)
+    {
+        input->input_field_1_2 = TRUE;
+        input->DEBUG_OVERWORLD_TRIGGER_EVENT = FALSE;
+    }
+#endif
+
     SetDirectionFromHeldKeys(heldKeys);
     input->dpadDirection = sCurrentDirection;
 }
@@ -233,6 +241,16 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
 
     if (input->pressedLButton && TryStartDexnavSearch())
         return TRUE;
+
+#if DEBUG_OVERWORLD_MENU == TRUE && DEBUG_OVERWORLD_IN_MENU == FALSE
+    if (input->input_field_1_2)
+    {
+        PlaySE(SE_WIN_OPEN);
+        FreezeObjectEvents();
+        Debug_ShowMainMenu();
+        return TRUE;
+    }
+#endif
 
     return FALSE;
 }
