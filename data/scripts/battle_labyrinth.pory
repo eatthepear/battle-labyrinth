@@ -1544,8 +1544,19 @@ script EventScript_WhenUReady {
 
 script EventScript_SanctuaryToZone0 {
 	lockall
-	warpteleport(MAP_ZONE0C, 255, 2, 32)
-	waitstate
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	waitmovement(0)
+	msgbox(format("Go to Zone 0?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		closemessage
+		warpdoor(MAP_ZONE0A, 255, 17, 10)
+		waitstate
+	} else {
+		closemessage
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		waitmovement(0)
+	}
+	releaseall
 }
 
 script EventScript_Documentation {
