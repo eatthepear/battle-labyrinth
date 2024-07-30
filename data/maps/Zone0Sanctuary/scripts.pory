@@ -454,6 +454,8 @@ script Zone0Sanctuary_EventScript_EndIntro {
 	setflag(FLAG_SYS_POKEDEX_GET)
 	special(SetUnlockedPokedexFlags)
 	special(NewGameSetup)
+	setflag(FLAG_SYS_NATIONAL_DEX)
+	special(EnableNationalPokedex)
 	initclock(1, 1)
 	callnative(ReturnFromStartWallClock)
 	setvar(VAR_ZONE, 1)
