@@ -47,6 +47,7 @@
 #include "link.h"
 #include "frontier_pass.h"
 #include "start_menu.h"
+#include "money.h"
 
 /*
     Full Screen Start Menu
@@ -221,9 +222,9 @@ static const u16 sHP_Pal[] = INCBIN_U16("graphics/ui_startmenu_full/hpbar_pal.gb
 static const u16 sHP_PalAlt[] = INCBIN_U16("graphics/ui_startmenu_full/hpbar_pal_alt.gbapal");
 
 // greyed buttons
-static const u32 sGreyMenuButtonMap_Gfx[] = INCBIN_U32("graphics/ui_startmenu_full/map_dark_sprite.4bpp.lz");
+static const u32 sGreyMenuButtonMap_Gfx[] = INCBIN_U32("graphics/ui_startmenu_full/map_dark_sprite.4bpp.lz"); // DEXNAV
 static const u32 sGreyMenuButtonDex_Gfx[] = INCBIN_U32("graphics/ui_startmenu_full/dex_dark_sprite.4bpp.lz");
-static const u32 sGreyMenuButtonParty_Gfx[] = INCBIN_U32("graphics/ui_startmenu_full/party_dark_sprite.4bpp.lz");
+static const u32 sGreyMenuButtonParty_Gfx[] = INCBIN_U32("graphics/ui_startmenu_full/party_dark_sprite.4bpp.lz"); // PC
 static const u16 sGreyMenuButton_Pal[] = INCBIN_U16("graphics/ui_startmenu_full/menu_dark.gbapal");
 
 
@@ -787,15 +788,15 @@ static void CreateGreyedMenuBoxes()
         StartSpriteAnim(&gSprites[sStartMenuDataPtr->greyMenuBoxIds[0]], 0);
     }
     
-    if(!FlagGet(FLAG_SYS_POKEMON_GET))
+    if(VarGet(VAR_ZONE) < 26) // PC
     {
         if (sStartMenuDataPtr->greyMenuBoxIds[1] == SPRITE_NONE)
-            sStartMenuDataPtr->greyMenuBoxIds[1] = CreateSprite(&sSpriteTemplate_GreyMenuButtonParty, CURSOR_RIGHT_COL_X, CURSOR_TOP_ROW_Y, 1);
+            sStartMenuDataPtr->greyMenuBoxIds[1] = CreateSprite(&sSpriteTemplate_GreyMenuButtonParty, CURSOR_RIGHT_COL_X, CURSOR_MID_ROW_Y, 1);
         gSprites[sStartMenuDataPtr->greyMenuBoxIds[1]].invisible = FALSE;
         StartSpriteAnim(&gSprites[sStartMenuDataPtr->greyMenuBoxIds[1]], 0);
     }
 
-    if(!FlagGet(FLAG_SYS_POKENAV_GET))
+    if(!FlagGet(FLAG_SYS_DEXNAV_GET)) // DEXNAV
     {
         if (sStartMenuDataPtr->greyMenuBoxIds[2] == SPRITE_NONE)
             sStartMenuDataPtr->greyMenuBoxIds[2] = CreateSprite(&sSpriteTemplate_GreyMenuButtonMap, CURSOR_LEFT_COL_X, CURSOR_BTM_ROW_Y, 1);
@@ -1255,6 +1256,7 @@ static void PrintMapNameAndTime(void) //this code is ripped froom different part
     u16 dayOfWeek;
     s32 width;
     u32 y, totalWidth;
+    u32 money;
 
     FillWindowPixelBuffer(WINDOW_TOP_BAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
 
@@ -1266,70 +1268,77 @@ static void PrintMapNameAndTime(void) //this code is ripped froom different part
     mapDisplayHeader[2] = TEXT_COLOR_TRANSPARENT;
     AddTextPrinterParameterized(WINDOW_TOP_BAR, FONT_NARROW, mapDisplayHeader, x + 152, 1, TEXT_SKIP_DRAW, NULL); // Print Map Name
 
-    RtcCalcLocalTime();
-
-    hours = gLocalTime.hours;
-
-#if (FLAG_CLOCK_MODE != 0)
-    if (FlagGet(FLAG_CLOCK_MODE)) // true: 12-hours, false: 24-hours
-    {
-        if (gLocalTime.hours < 12)
-        {
-            hours = (gLocalTime.hours == 0) ? 12 : gLocalTime.hours;
-            suffix = sText_AM;
-        }
-        else if (gLocalTime.hours == 12)
-        {
-            hours = 12;
-            if (suffix == sText_AM)
-                suffix = sText_PM;
-        }
-        else
-        {
-            hours = gLocalTime.hours - 12;
-            suffix = sText_PM;
-        }
-    }
-#endif
-
-    minutes = gLocalTime.minutes;
-    dayOfWeek = gLocalTime.days % 7;
-    if (hours > 999)
-        hours = 999;
-    if (minutes > 59)
-        minutes = 59;
-    width = GetStringWidth(FONT_NORMAL, gText_Colon2, 0);
+    money = GetMoney(&gSaveBlock1Ptr->money);
     x = 64;
     y = 1;
 
-    if(dayOfWeek == 2) // adjust x position if dayofweek Thurs/Tues because the words are longer
-        x += 8;
-    if(dayOfWeek == 4)
-        x += 12;
+    ConvertIntToDecimalStringN(gStringVar1, money, STR_CONV_MODE_LEFT_ALIGN, 7);
+    StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
+    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, 10, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4); //print dayof week
+//     RtcCalcLocalTime();
 
-    totalWidth = width + 30;
-    x -= totalWidth;
+//     hours = gLocalTime.hours;
 
-    str = sDayOfWeekStrings[dayOfWeek];
+// #if (FLAG_CLOCK_MODE != 0)
+//     if (FlagGet(FLAG_CLOCK_MODE)) // true: 12-hours, false: 24-hours
+//     {
+//         if (gLocalTime.hours < 12)
+//         {
+//             hours = (gLocalTime.hours == 0) ? 12 : gLocalTime.hours;
+//             suffix = sText_AM;
+//         }
+//         else if (gLocalTime.hours == 12)
+//         {
+//             hours = 12;
+//             if (suffix == sText_AM)
+//                 suffix = sText_PM;
+//         }
+//         else
+//         {
+//             hours = gLocalTime.hours - 12;
+//             suffix = sText_PM;
+//         }
+//     }
+// #endif
 
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, 10, y, sTimeTextColors, TEXT_SKIP_DRAW, str); //print dayof week
-    ConvertIntToDecimalStringN(gStringVar4, hours, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4); //these three print the time, you can put the colon to only print half the time to flash it if you want
-    x += 18;
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gText_Colon2);
-    x += width;
-    ConvertIntToDecimalStringN(gStringVar4, minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
+//     minutes = gLocalTime.minutes;
+//     dayOfWeek = gLocalTime.days % 7;
+//     if (hours > 999)
+//         hours = 999;
+//     if (minutes > 59)
+//         minutes = 59;
+//     width = GetStringWidth(FONT_NORMAL, gText_Colon2, 0);
+//     x = 64;
+//     y = 1;
 
-#if (FLAG_CLOCK_MODE != 0)
-    if (suffix != NULL)
-    {
-        width = GetStringWidth(FONT_NORMAL, gStringVar4, 0) + 3; // CHAR_SPACE is 3 pixels wide
-        x += width;
-        StringExpandPlaceholders(gStringVar4, suffix);
-        AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
-    }
-#endif
+//     if(dayOfWeek == 2) // adjust x position if dayofweek Thurs/Tues because the words are longer
+//         x += 8;
+//     if(dayOfWeek == 4)
+//         x += 12;
+
+//     totalWidth = width + 30;
+//     x -= totalWidth;
+
+//     str = sDayOfWeekStrings[dayOfWeek];
+
+//     AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, 10, y, sTimeTextColors, TEXT_SKIP_DRAW, str); //print dayof week
+//     ConvertIntToDecimalStringN(gStringVar4, hours, STR_CONV_MODE_RIGHT_ALIGN, 3);
+//     AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4); //these three print the time, you can put the colon to only print half the time to flash it if you want
+//     x += 18;
+//     AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gText_Colon2);
+//     x += width;
+//     ConvertIntToDecimalStringN(gStringVar4, minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+//     AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
+
+// #if (FLAG_CLOCK_MODE != 0)
+//     if (suffix != NULL)
+//     {
+//         width = GetStringWidth(FONT_NORMAL, gStringVar4, 0) + 3; // CHAR_SPACE is 3 pixels wide
+//         x += width;
+//         StringExpandPlaceholders(gStringVar4, suffix);
+//         AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
+//     }
+// #endif
 
     PutWindowTilemap(WINDOW_TOP_BAR);
     CopyWindowToVram(WINDOW_TOP_BAR, COPYWIN_FULL);
@@ -1525,7 +1534,7 @@ static void Task_StartMenuFullMain(u8 taskId)
                 }
                 break;
             case START_MENU_MAP:
-                if(FlagGet(FLAG_SYS_POKENAV_GET))
+                if(FlagGet(FLAG_SYS_DEXNAV_GET)) // DEXNAV
                 {
                     PlaySE(SE_SELECT);
                     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
@@ -1536,9 +1545,16 @@ static void Task_StartMenuFullMain(u8 taskId)
                 }
                 break;
             case START_MENU_CARD:
-                PlaySE(SE_SELECT);
-                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-                gTasks[taskId].func = Task_OpenTrainerCardFromStartMenu;
+                if(VarGet(VAR_ZONE) > 25) // PC
+                {
+                    PlaySE(SE_SELECT);
+                    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+                    gTasks[taskId].func = Task_OpenTrainerCardFromStartMenu;
+                    break;
+                }
+                else{
+                    PlaySE(SE_BOO);
+                }
                 break;
             case START_MENU_OPTIONS:
                 PlaySE(SE_SELECT);
