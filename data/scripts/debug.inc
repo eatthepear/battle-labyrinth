@@ -745,1174 +745,1194 @@ Debug_EventScript_InflictStatus1_Text_Frostbite:
 # 373 "data/scripts/debug.pory"
 
 # 374 "data/scripts/debug.pory"
+Debug_EventScript_EWRAMCounters::
+# 375 "data/scripts/debug.pory"
+	callnative CheckEWRAMCounters
+# 376 "data/scripts/debug.pory"
+	msgbox Debug_EventScript_EWRAMCounters_Text, MSGBOX_DEFAULT
+# 377 "data/scripts/debug.pory"
+	release
+# 378 "data/scripts/debug.pory"
+	end
+# 379 "data/scripts/debug.pory"
+
+# 380 "data/scripts/debug.pory"
+Debug_EventScript_EWRAMCounters_Text::
+# 381 "data/scripts/debug.pory"
+	.string "Follower Steps: {STR_VAR_1}.\n"
+# 382 "data/scripts/debug.pory"
+	.string "Fishing Chain: {STR_VAR_2}.$"
+# 383 "data/scripts/debug.pory"
+
+# 384 "data/scripts/debug.pory"
 .endif
 
 Debug_CheatStart::
-# 378 "data/scripts/debug.pory"
+# 388 "data/scripts/debug.pory"
 	lockall
-# 379 "data/scripts/debug.pory"
+# 389 "data/scripts/debug.pory"
 	additem ITEM_RARE_CANDY, 100
-# 380 "data/scripts/debug.pory"
+# 390 "data/scripts/debug.pory"
 	additem ITEM_RARE_CANDY, 100
-# 381 "data/scripts/debug.pory"
+# 391 "data/scripts/debug.pory"
 	additem ITEM_RARE_CANDY, 100
-# 382 "data/scripts/debug.pory"
+# 392 "data/scripts/debug.pory"
 	additem ITEM_RARE_CANDY, 100
-# 383 "data/scripts/debug.pory"
+# 393 "data/scripts/debug.pory"
 	additem ITEM_RARE_CANDY, 100
-# 384 "data/scripts/debug.pory"
+# 394 "data/scripts/debug.pory"
 	additem ITEM_RARE_CANDY, 100
-# 437 "data/scripts/debug.pory"
-	givemon SPECIES_EEVEE, 5, ITEM_NONE
-# 438 "data/scripts/debug.pory"
-	setflag FLAG_ZONE0B_RECEIVED_EEVEE
-# 439 "data/scripts/debug.pory"
-	random 20
-# 440 "data/scripts/debug.pory"
-	switch VAR_RESULT
-# 441 "data/scripts/debug.pory"
-	case 0, Debug_CheatStart_3
-# 443 "data/scripts/debug.pory"
-	case 1, Debug_CheatStart_4
-# 445 "data/scripts/debug.pory"
-	case 2, Debug_CheatStart_5
 # 447 "data/scripts/debug.pory"
-	case 3, Debug_CheatStart_6
+	givemon SPECIES_EEVEE, 5, ITEM_NONE
+# 448 "data/scripts/debug.pory"
+	setflag FLAG_ZONE0B_RECEIVED_EEVEE
 # 449 "data/scripts/debug.pory"
-	case 4, Debug_CheatStart_7
+	random 20
+# 450 "data/scripts/debug.pory"
+	switch VAR_RESULT
 # 451 "data/scripts/debug.pory"
-	case 5, Debug_CheatStart_8
+	case 0, Debug_CheatStart_3
 # 453 "data/scripts/debug.pory"
-	case 6, Debug_CheatStart_9
+	case 1, Debug_CheatStart_4
 # 455 "data/scripts/debug.pory"
-	case 7, Debug_CheatStart_10
+	case 2, Debug_CheatStart_5
 # 457 "data/scripts/debug.pory"
-	case 8, Debug_CheatStart_11
+	case 3, Debug_CheatStart_6
 # 459 "data/scripts/debug.pory"
-	case 9, Debug_CheatStart_12
+	case 4, Debug_CheatStart_7
 # 461 "data/scripts/debug.pory"
-	case 10, Debug_CheatStart_13
+	case 5, Debug_CheatStart_8
 # 463 "data/scripts/debug.pory"
-	case 11, Debug_CheatStart_14
+	case 6, Debug_CheatStart_9
 # 465 "data/scripts/debug.pory"
-	case 12, Debug_CheatStart_15
+	case 7, Debug_CheatStart_10
 # 467 "data/scripts/debug.pory"
-	case 13, Debug_CheatStart_16
+	case 8, Debug_CheatStart_11
 # 469 "data/scripts/debug.pory"
-	case 14, Debug_CheatStart_17
+	case 9, Debug_CheatStart_12
 # 471 "data/scripts/debug.pory"
-	case 15, Debug_CheatStart_18
+	case 10, Debug_CheatStart_13
 # 473 "data/scripts/debug.pory"
-	case 16, Debug_CheatStart_19
+	case 11, Debug_CheatStart_14
 # 475 "data/scripts/debug.pory"
-	case 17, Debug_CheatStart_20
+	case 12, Debug_CheatStart_15
 # 477 "data/scripts/debug.pory"
-	case 18, Debug_CheatStart_21
+	case 13, Debug_CheatStart_16
 # 479 "data/scripts/debug.pory"
+	case 14, Debug_CheatStart_17
+# 481 "data/scripts/debug.pory"
+	case 15, Debug_CheatStart_18
+# 483 "data/scripts/debug.pory"
+	case 16, Debug_CheatStart_19
+# 485 "data/scripts/debug.pory"
+	case 17, Debug_CheatStart_20
+# 487 "data/scripts/debug.pory"
+	case 18, Debug_CheatStart_21
+# 489 "data/scripts/debug.pory"
 	case 19, Debug_CheatStart_22
 Debug_CheatStart_1:
-# 482 "data/scripts/debug.pory"
+# 492 "data/scripts/debug.pory"
 	givemon VAR_TEMP_0, 4, ITEM_NONE
-# 483 "data/scripts/debug.pory"
-	bufferspeciesname 0, VAR_TEMP_0
-# 484 "data/scripts/debug.pory"
-	msgbox gText_ObtainedDebugMon
-# 485 "data/scripts/debug.pory"
-	random 20
-# 486 "data/scripts/debug.pory"
-	switch VAR_RESULT
-# 487 "data/scripts/debug.pory"
-	case 0, Debug_CheatStart_25
-# 489 "data/scripts/debug.pory"
-	case 1, Debug_CheatStart_26
-# 491 "data/scripts/debug.pory"
-	case 2, Debug_CheatStart_27
 # 493 "data/scripts/debug.pory"
-	case 3, Debug_CheatStart_28
+	bufferspeciesname 0, VAR_TEMP_0
+# 494 "data/scripts/debug.pory"
+	msgbox gText_ObtainedDebugMon
 # 495 "data/scripts/debug.pory"
-	case 4, Debug_CheatStart_29
+	random 20
+# 496 "data/scripts/debug.pory"
+	switch VAR_RESULT
 # 497 "data/scripts/debug.pory"
-	case 5, Debug_CheatStart_30
+	case 0, Debug_CheatStart_25
 # 499 "data/scripts/debug.pory"
-	case 6, Debug_CheatStart_31
+	case 1, Debug_CheatStart_26
 # 501 "data/scripts/debug.pory"
-	case 7, Debug_CheatStart_32
+	case 2, Debug_CheatStart_27
 # 503 "data/scripts/debug.pory"
-	case 8, Debug_CheatStart_33
+	case 3, Debug_CheatStart_28
 # 505 "data/scripts/debug.pory"
-	case 9, Debug_CheatStart_34
+	case 4, Debug_CheatStart_29
 # 507 "data/scripts/debug.pory"
-	case 10, Debug_CheatStart_35
+	case 5, Debug_CheatStart_30
 # 509 "data/scripts/debug.pory"
-	case 11, Debug_CheatStart_36
+	case 6, Debug_CheatStart_31
 # 511 "data/scripts/debug.pory"
-	case 12, Debug_CheatStart_37
+	case 7, Debug_CheatStart_32
 # 513 "data/scripts/debug.pory"
-	case 13, Debug_CheatStart_38
+	case 8, Debug_CheatStart_33
 # 515 "data/scripts/debug.pory"
-	case 14, Debug_CheatStart_39
+	case 9, Debug_CheatStart_34
 # 517 "data/scripts/debug.pory"
-	case 15, Debug_CheatStart_40
+	case 10, Debug_CheatStart_35
 # 519 "data/scripts/debug.pory"
-	case 16, Debug_CheatStart_41
+	case 11, Debug_CheatStart_36
 # 521 "data/scripts/debug.pory"
-	case 17, Debug_CheatStart_42
+	case 12, Debug_CheatStart_37
 # 523 "data/scripts/debug.pory"
-	case 18, Debug_CheatStart_43
+	case 13, Debug_CheatStart_38
 # 525 "data/scripts/debug.pory"
+	case 14, Debug_CheatStart_39
+# 527 "data/scripts/debug.pory"
+	case 15, Debug_CheatStart_40
+# 529 "data/scripts/debug.pory"
+	case 16, Debug_CheatStart_41
+# 531 "data/scripts/debug.pory"
+	case 17, Debug_CheatStart_42
+# 533 "data/scripts/debug.pory"
+	case 18, Debug_CheatStart_43
+# 535 "data/scripts/debug.pory"
 	case 19, Debug_CheatStart_44
 Debug_CheatStart_23:
-# 528 "data/scripts/debug.pory"
+# 538 "data/scripts/debug.pory"
 	givemon VAR_TEMP_0, 4, ITEM_NONE
-# 529 "data/scripts/debug.pory"
-	bufferspeciesname 0, VAR_TEMP_0
-# 530 "data/scripts/debug.pory"
-	msgbox gText_ObtainedDebugMon
-# 531 "data/scripts/debug.pory"
-	random 20
-# 532 "data/scripts/debug.pory"
-	switch VAR_RESULT
-# 533 "data/scripts/debug.pory"
-	case 0, Debug_CheatStart_47
-# 535 "data/scripts/debug.pory"
-	case 1, Debug_CheatStart_48
-# 537 "data/scripts/debug.pory"
-	case 2, Debug_CheatStart_49
 # 539 "data/scripts/debug.pory"
-	case 3, Debug_CheatStart_50
+	bufferspeciesname 0, VAR_TEMP_0
+# 540 "data/scripts/debug.pory"
+	msgbox gText_ObtainedDebugMon
 # 541 "data/scripts/debug.pory"
-	case 4, Debug_CheatStart_51
+	random 20
+# 542 "data/scripts/debug.pory"
+	switch VAR_RESULT
 # 543 "data/scripts/debug.pory"
-	case 5, Debug_CheatStart_52
+	case 0, Debug_CheatStart_47
 # 545 "data/scripts/debug.pory"
-	case 6, Debug_CheatStart_53
+	case 1, Debug_CheatStart_48
 # 547 "data/scripts/debug.pory"
-	case 7, Debug_CheatStart_54
+	case 2, Debug_CheatStart_49
 # 549 "data/scripts/debug.pory"
-	case 8, Debug_CheatStart_55
+	case 3, Debug_CheatStart_50
 # 551 "data/scripts/debug.pory"
-	case 9, Debug_CheatStart_56
+	case 4, Debug_CheatStart_51
 # 553 "data/scripts/debug.pory"
-	case 10, Debug_CheatStart_57
+	case 5, Debug_CheatStart_52
 # 555 "data/scripts/debug.pory"
-	case 11, Debug_CheatStart_58
+	case 6, Debug_CheatStart_53
 # 557 "data/scripts/debug.pory"
-	case 12, Debug_CheatStart_59
+	case 7, Debug_CheatStart_54
 # 559 "data/scripts/debug.pory"
-	case 13, Debug_CheatStart_60
+	case 8, Debug_CheatStart_55
 # 561 "data/scripts/debug.pory"
-	case 14, Debug_CheatStart_61
+	case 9, Debug_CheatStart_56
 # 563 "data/scripts/debug.pory"
-	case 15, Debug_CheatStart_62
+	case 10, Debug_CheatStart_57
 # 565 "data/scripts/debug.pory"
-	case 16, Debug_CheatStart_63
+	case 11, Debug_CheatStart_58
 # 567 "data/scripts/debug.pory"
-	case 17, Debug_CheatStart_64
+	case 12, Debug_CheatStart_59
 # 569 "data/scripts/debug.pory"
-	case 18, Debug_CheatStart_65
+	case 13, Debug_CheatStart_60
 # 571 "data/scripts/debug.pory"
+	case 14, Debug_CheatStart_61
+# 573 "data/scripts/debug.pory"
+	case 15, Debug_CheatStart_62
+# 575 "data/scripts/debug.pory"
+	case 16, Debug_CheatStart_63
+# 577 "data/scripts/debug.pory"
+	case 17, Debug_CheatStart_64
+# 579 "data/scripts/debug.pory"
+	case 18, Debug_CheatStart_65
+# 581 "data/scripts/debug.pory"
 	case 19, Debug_CheatStart_66
 Debug_CheatStart_45:
-# 574 "data/scripts/debug.pory"
+# 584 "data/scripts/debug.pory"
 	givemon VAR_TEMP_0, 6, ITEM_NONE
-# 575 "data/scripts/debug.pory"
+# 585 "data/scripts/debug.pory"
 	bufferspeciesname 0, VAR_TEMP_0
-# 576 "data/scripts/debug.pory"
+# 586 "data/scripts/debug.pory"
 	msgbox gText_ObtainedDebugMon
-# 577 "data/scripts/debug.pory"
+# 587 "data/scripts/debug.pory"
 	msgbox Debug_CheatStart_Text_0, MSGBOX_YESNO
-# 578 "data/scripts/debug.pory"
+# 588 "data/scripts/debug.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Debug_CheatStart_68
-# 591 "data/scripts/debug.pory"
-	random 20
-# 592 "data/scripts/debug.pory"
-	switch VAR_RESULT
-# 593 "data/scripts/debug.pory"
-	case 0, Debug_CheatStart_81
-# 595 "data/scripts/debug.pory"
-	case 1, Debug_CheatStart_82
-# 597 "data/scripts/debug.pory"
-	case 2, Debug_CheatStart_83
-# 599 "data/scripts/debug.pory"
-	case 3, Debug_CheatStart_84
 # 601 "data/scripts/debug.pory"
-	case 4, Debug_CheatStart_85
+	random 20
+# 602 "data/scripts/debug.pory"
+	switch VAR_RESULT
 # 603 "data/scripts/debug.pory"
-	case 5, Debug_CheatStart_86
+	case 0, Debug_CheatStart_81
 # 605 "data/scripts/debug.pory"
-	case 6, Debug_CheatStart_87
+	case 1, Debug_CheatStart_82
 # 607 "data/scripts/debug.pory"
-	case 7, Debug_CheatStart_88
+	case 2, Debug_CheatStart_83
 # 609 "data/scripts/debug.pory"
-	case 8, Debug_CheatStart_89
+	case 3, Debug_CheatStart_84
 # 611 "data/scripts/debug.pory"
-	case 9, Debug_CheatStart_90
+	case 4, Debug_CheatStart_85
 # 613 "data/scripts/debug.pory"
-	case 10, Debug_CheatStart_91
+	case 5, Debug_CheatStart_86
 # 615 "data/scripts/debug.pory"
-	case 11, Debug_CheatStart_92
+	case 6, Debug_CheatStart_87
 # 617 "data/scripts/debug.pory"
-	case 12, Debug_CheatStart_93
+	case 7, Debug_CheatStart_88
 # 619 "data/scripts/debug.pory"
-	case 13, Debug_CheatStart_94
+	case 8, Debug_CheatStart_89
 # 621 "data/scripts/debug.pory"
-	case 14, Debug_CheatStart_95
+	case 9, Debug_CheatStart_90
 # 623 "data/scripts/debug.pory"
-	case 15, Debug_CheatStart_96
+	case 10, Debug_CheatStart_91
 # 625 "data/scripts/debug.pory"
-	case 16, Debug_CheatStart_97
+	case 11, Debug_CheatStart_92
 # 627 "data/scripts/debug.pory"
-	case 17, Debug_CheatStart_98
+	case 12, Debug_CheatStart_93
 # 629 "data/scripts/debug.pory"
-	case 18, Debug_CheatStart_99
+	case 13, Debug_CheatStart_94
 # 631 "data/scripts/debug.pory"
+	case 14, Debug_CheatStart_95
+# 633 "data/scripts/debug.pory"
+	case 15, Debug_CheatStart_96
+# 635 "data/scripts/debug.pory"
+	case 16, Debug_CheatStart_97
+# 637 "data/scripts/debug.pory"
+	case 17, Debug_CheatStart_98
+# 639 "data/scripts/debug.pory"
+	case 18, Debug_CheatStart_99
+# 641 "data/scripts/debug.pory"
 	case 19, Debug_CheatStart_100
 Debug_CheatStart_67:
-# 635 "data/scripts/debug.pory"
+# 645 "data/scripts/debug.pory"
 	givemon VAR_TEMP_0, 8, ITEM_NONE
-# 636 "data/scripts/debug.pory"
+# 646 "data/scripts/debug.pory"
 	bufferspeciesname 0, VAR_TEMP_0
-# 637 "data/scripts/debug.pory"
+# 647 "data/scripts/debug.pory"
 	msgbox gText_ObtainedDebugMon
-# 638 "data/scripts/debug.pory"
+# 648 "data/scripts/debug.pory"
 	msgbox Debug_CheatStart_Text_1, MSGBOX_YESNO
-# 639 "data/scripts/debug.pory"
+# 649 "data/scripts/debug.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Debug_CheatStart_72
-# 654 "data/scripts/debug.pory"
-	random 20
-# 655 "data/scripts/debug.pory"
-	switch VAR_RESULT
-# 656 "data/scripts/debug.pory"
-	case 0, Debug_CheatStart_118
-# 658 "data/scripts/debug.pory"
-	case 1, Debug_CheatStart_119
-# 660 "data/scripts/debug.pory"
-	case 2, Debug_CheatStart_120
-# 662 "data/scripts/debug.pory"
-	case 3, Debug_CheatStart_121
 # 664 "data/scripts/debug.pory"
-	case 4, Debug_CheatStart_122
+	random 20
+# 665 "data/scripts/debug.pory"
+	switch VAR_RESULT
 # 666 "data/scripts/debug.pory"
-	case 5, Debug_CheatStart_123
+	case 0, Debug_CheatStart_118
 # 668 "data/scripts/debug.pory"
-	case 6, Debug_CheatStart_124
+	case 1, Debug_CheatStart_119
 # 670 "data/scripts/debug.pory"
-	case 7, Debug_CheatStart_125
+	case 2, Debug_CheatStart_120
 # 672 "data/scripts/debug.pory"
-	case 8, Debug_CheatStart_126
+	case 3, Debug_CheatStart_121
 # 674 "data/scripts/debug.pory"
-	case 9, Debug_CheatStart_127
+	case 4, Debug_CheatStart_122
 # 676 "data/scripts/debug.pory"
-	case 10, Debug_CheatStart_128
+	case 5, Debug_CheatStart_123
 # 678 "data/scripts/debug.pory"
-	case 11, Debug_CheatStart_129
+	case 6, Debug_CheatStart_124
 # 680 "data/scripts/debug.pory"
-	case 12, Debug_CheatStart_130
+	case 7, Debug_CheatStart_125
 # 682 "data/scripts/debug.pory"
-	case 13, Debug_CheatStart_131
+	case 8, Debug_CheatStart_126
 # 684 "data/scripts/debug.pory"
-	case 14, Debug_CheatStart_132
+	case 9, Debug_CheatStart_127
 # 686 "data/scripts/debug.pory"
-	case 15, Debug_CheatStart_133
+	case 10, Debug_CheatStart_128
 # 688 "data/scripts/debug.pory"
-	case 16, Debug_CheatStart_134
+	case 11, Debug_CheatStart_129
 # 690 "data/scripts/debug.pory"
-	case 17, Debug_CheatStart_135
+	case 12, Debug_CheatStart_130
 # 692 "data/scripts/debug.pory"
-	case 18, Debug_CheatStart_136
+	case 13, Debug_CheatStart_131
 # 694 "data/scripts/debug.pory"
+	case 14, Debug_CheatStart_132
+# 696 "data/scripts/debug.pory"
+	case 15, Debug_CheatStart_133
+# 698 "data/scripts/debug.pory"
+	case 16, Debug_CheatStart_134
+# 700 "data/scripts/debug.pory"
+	case 17, Debug_CheatStart_135
+# 702 "data/scripts/debug.pory"
+	case 18, Debug_CheatStart_136
+# 704 "data/scripts/debug.pory"
 	case 19, Debug_CheatStart_137
 Debug_CheatStart_116:
-# 697 "data/scripts/debug.pory"
+# 707 "data/scripts/debug.pory"
 	givemon VAR_TEMP_0, 10, ITEM_NONE
 Debug_CheatStart_71:
-# 699 "data/scripts/debug.pory"
+# 709 "data/scripts/debug.pory"
 	bufferspeciesname 0, VAR_TEMP_0
-# 700 "data/scripts/debug.pory"
-	msgbox gText_ObtainedDebugMon
-# 701 "data/scripts/debug.pory"
-	msgbox Debug_CheatStart_Text_2, MSGBOX_DEFAULT
-# 702 "data/scripts/debug.pory"
-	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_Text_3, Debug_CheatStart_Text_4, Debug_CheatStart_Text_5, Debug_CheatStart_Text_6, Debug_CheatStart_Text_7, Debug_CheatStart_Text_8, Debug_CheatStart_Text_9, Debug_CheatStart_Text_10
-# 703 "data/scripts/debug.pory"
-	switch VAR_RESULT
-# 704 "data/scripts/debug.pory"
-	case 0, Debug_CheatStart_103
-# 706 "data/scripts/debug.pory"
-	case 1, Debug_CheatStart_104
-# 708 "data/scripts/debug.pory"
-	case 2, Debug_CheatStart_105
 # 710 "data/scripts/debug.pory"
-	case 3, Debug_CheatStart_106
+	msgbox gText_ObtainedDebugMon
+# 711 "data/scripts/debug.pory"
+	msgbox Debug_CheatStart_Text_2, MSGBOX_DEFAULT
 # 712 "data/scripts/debug.pory"
-	case 4, Debug_CheatStart_107
+	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_Text_3, Debug_CheatStart_Text_4, Debug_CheatStart_Text_5, Debug_CheatStart_Text_6, Debug_CheatStart_Text_7, Debug_CheatStart_Text_8, Debug_CheatStart_Text_9, Debug_CheatStart_Text_10
+# 713 "data/scripts/debug.pory"
+	switch VAR_RESULT
 # 714 "data/scripts/debug.pory"
-	case 5, Debug_CheatStart_108
+	case 0, Debug_CheatStart_103
 # 716 "data/scripts/debug.pory"
+	case 1, Debug_CheatStart_104
+# 718 "data/scripts/debug.pory"
+	case 2, Debug_CheatStart_105
+# 720 "data/scripts/debug.pory"
+	case 3, Debug_CheatStart_106
+# 722 "data/scripts/debug.pory"
+	case 4, Debug_CheatStart_107
+# 724 "data/scripts/debug.pory"
+	case 5, Debug_CheatStart_108
+# 726 "data/scripts/debug.pory"
 	case 6, Debug_CheatStart_109
 Debug_CheatStart_101:
-# 719 "data/scripts/debug.pory"
+# 729 "data/scripts/debug.pory"
 	setflag FLAG_ZONE4A_RECEIVED_GEM
-# 720 "data/scripts/debug.pory"
-	random 18
-# 721 "data/scripts/debug.pory"
-	switch VAR_RESULT
-# 722 "data/scripts/debug.pory"
-	case 0, Debug_CheatStart_140
-# 724 "data/scripts/debug.pory"
-	case 1, Debug_CheatStart_141
-# 726 "data/scripts/debug.pory"
-	case 2, Debug_CheatStart_142
-# 728 "data/scripts/debug.pory"
-	case 3, Debug_CheatStart_143
 # 730 "data/scripts/debug.pory"
-	case 4, Debug_CheatStart_144
+	random 18
+# 731 "data/scripts/debug.pory"
+	switch VAR_RESULT
 # 732 "data/scripts/debug.pory"
-	case 5, Debug_CheatStart_145
+	case 0, Debug_CheatStart_140
 # 734 "data/scripts/debug.pory"
-	case 6, Debug_CheatStart_146
+	case 1, Debug_CheatStart_141
 # 736 "data/scripts/debug.pory"
-	case 7, Debug_CheatStart_147
+	case 2, Debug_CheatStart_142
 # 738 "data/scripts/debug.pory"
-	case 8, Debug_CheatStart_148
+	case 3, Debug_CheatStart_143
 # 740 "data/scripts/debug.pory"
-	case 9, Debug_CheatStart_149
+	case 4, Debug_CheatStart_144
 # 742 "data/scripts/debug.pory"
-	case 10, Debug_CheatStart_150
+	case 5, Debug_CheatStart_145
 # 744 "data/scripts/debug.pory"
-	case 11, Debug_CheatStart_151
+	case 6, Debug_CheatStart_146
 # 746 "data/scripts/debug.pory"
-	case 12, Debug_CheatStart_152
+	case 7, Debug_CheatStart_147
 # 748 "data/scripts/debug.pory"
-	case 13, Debug_CheatStart_153
+	case 8, Debug_CheatStart_148
 # 750 "data/scripts/debug.pory"
-	case 14, Debug_CheatStart_154
+	case 9, Debug_CheatStart_149
 # 752 "data/scripts/debug.pory"
-	case 15, Debug_CheatStart_155
+	case 10, Debug_CheatStart_150
 # 754 "data/scripts/debug.pory"
-	case 16, Debug_CheatStart_156
+	case 11, Debug_CheatStart_151
 # 756 "data/scripts/debug.pory"
+	case 12, Debug_CheatStart_152
+# 758 "data/scripts/debug.pory"
+	case 13, Debug_CheatStart_153
+# 760 "data/scripts/debug.pory"
+	case 14, Debug_CheatStart_154
+# 762 "data/scripts/debug.pory"
+	case 15, Debug_CheatStart_155
+# 764 "data/scripts/debug.pory"
+	case 16, Debug_CheatStart_156
+# 766 "data/scripts/debug.pory"
 	case 17, Debug_CheatStart_157
 Debug_CheatStart_138:
-# 759 "data/scripts/debug.pory"
-	givemon VAR_TEMP_0, 12, ITEM_NONE
-# 760 "data/scripts/debug.pory"
-	bufferspeciesname 0, VAR_TEMP_0
-# 761 "data/scripts/debug.pory"
-	msgbox gText_ObtainedDebugMon
-# 762 "data/scripts/debug.pory"
-	setvar VAR_ZONE, 5
-# 763 "data/scripts/debug.pory"
-	additem ITEM_REPEL
-# 764 "data/scripts/debug.pory"
-	setflag FLAG_TIM_INTRO
-# 765 "data/scripts/debug.pory"
-	additem ITEM_EXP_SHARE
-# 766 "data/scripts/debug.pory"
-	additem ITEM_SILK_SCARF
-# 767 "data/scripts/debug.pory"
-	additem ITEM_GOOD_ROD
-# 768 "data/scripts/debug.pory"
-	additem ITEM_HEAL_BALL, 7
 # 769 "data/scripts/debug.pory"
-	removeitem ITEM_POKE_BALL, 10
+	givemon VAR_TEMP_0, 12, ITEM_NONE
 # 770 "data/scripts/debug.pory"
-	removemoney 1000
+	bufferspeciesname 0, VAR_TEMP_0
 # 771 "data/scripts/debug.pory"
-	additem ITEM_TM02
+	msgbox gText_ObtainedDebugMon
 # 772 "data/scripts/debug.pory"
-	additem ITEM_BURN_HEAL
+	setvar VAR_ZONE, 5
 # 773 "data/scripts/debug.pory"
-	additem ITEM_AWAKENING
+	additem ITEM_REPEL
 # 774 "data/scripts/debug.pory"
-	additem ITEM_MUSCLE_BAND
-# 775 "data/scripts/debug.pory"
-	additem ITEM_WISE_GLASSES
-# 776 "data/scripts/debug.pory"
-	additem ITEM_SUPER_POTION, 2
-# 777 "data/scripts/debug.pory"
-	additem ITEM_PARALYZE_HEAL, 2
-# 778 "data/scripts/debug.pory"
-	additem ITEM_ANTIDOTE, 2
-# 779 "data/scripts/debug.pory"
-	additem ITEM_TM03
-# 780 "data/scripts/debug.pory"
-	additem ITEM_TM04
-# 781 "data/scripts/debug.pory"
-	additem ITEM_QUICK_BALL
-# 782 "data/scripts/debug.pory"
-	setflag FLAG_SETTINGS_FULL_SURVEIL
-# 783 "data/scripts/debug.pory"
-	setflag FLAG_SYS_DEXNAV_GET
-# 784 "data/scripts/debug.pory"
-	setflag FLAG_JOY_INTRO
-# 785 "data/scripts/debug.pory"
-	setflag FLAG_MAX_INTRO
-# 786 "data/scripts/debug.pory"
 	setflag FLAG_TIM_INTRO
+# 775 "data/scripts/debug.pory"
+	additem ITEM_EXP_SHARE
+# 776 "data/scripts/debug.pory"
+	additem ITEM_SILK_SCARF
+# 777 "data/scripts/debug.pory"
+	additem ITEM_GOOD_ROD
+# 778 "data/scripts/debug.pory"
+	additem ITEM_HEAL_BALL, 7
+# 779 "data/scripts/debug.pory"
+	removeitem ITEM_POKE_BALL, 10
+# 780 "data/scripts/debug.pory"
+	removemoney 1000
+# 781 "data/scripts/debug.pory"
+	additem ITEM_TM02
+# 782 "data/scripts/debug.pory"
+	additem ITEM_BURN_HEAL
+# 783 "data/scripts/debug.pory"
+	additem ITEM_AWAKENING
+# 784 "data/scripts/debug.pory"
+	additem ITEM_MUSCLE_BAND
+# 785 "data/scripts/debug.pory"
+	additem ITEM_WISE_GLASSES
+# 786 "data/scripts/debug.pory"
+	additem ITEM_SUPER_POTION, 2
 # 787 "data/scripts/debug.pory"
-	setflag FLAG_VARRICK_INTRO
+	additem ITEM_PARALYZE_HEAL, 2
 # 788 "data/scripts/debug.pory"
-	setflag FLAG_LELOUCH_INTRO
+	additem ITEM_ANTIDOTE, 2
 # 789 "data/scripts/debug.pory"
-	setvar VAR_ZONE_0_STATE, 3
+	additem ITEM_TM03
 # 790 "data/scripts/debug.pory"
-	additem ITEM_TM21
+	additem ITEM_TM04
 # 791 "data/scripts/debug.pory"
-	callnative DisableBattleAnimationSetting
+	additem ITEM_QUICK_BALL
 # 792 "data/scripts/debug.pory"
-	warp MAP_ZONE5SANCTUARY, 255, 38, 11
+	setflag FLAG_SETTINGS_FULL_SURVEIL
 # 793 "data/scripts/debug.pory"
-	waitstate
+	setflag FLAG_SYS_DEXNAV_GET
 # 794 "data/scripts/debug.pory"
+	setflag FLAG_JOY_INTRO
+# 795 "data/scripts/debug.pory"
+	setflag FLAG_MAX_INTRO
+# 796 "data/scripts/debug.pory"
+	setflag FLAG_TIM_INTRO
+# 797 "data/scripts/debug.pory"
+	setflag FLAG_VARRICK_INTRO
+# 798 "data/scripts/debug.pory"
+	setflag FLAG_LELOUCH_INTRO
+# 799 "data/scripts/debug.pory"
+	setvar VAR_ZONE_0_STATE, 3
+# 800 "data/scripts/debug.pory"
+	additem ITEM_TM21
+# 801 "data/scripts/debug.pory"
+	callnative DisableBattleAnimationSetting
+# 802 "data/scripts/debug.pory"
+	warp MAP_ZONE5SANCTUARY, 255, 38, 11
+# 803 "data/scripts/debug.pory"
+	waitstate
+# 804 "data/scripts/debug.pory"
 	release
 	end
 
 Debug_CheatStart_3:
-# 442 "data/scripts/debug.pory"
+# 452 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_AZURILL
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_4:
-# 444 "data/scripts/debug.pory"
+# 454 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_AZURILL
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_5:
-# 446 "data/scripts/debug.pory"
+# 456 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_BIDOOF
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_6:
-# 448 "data/scripts/debug.pory"
+# 458 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_BIDOOF
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_7:
-# 450 "data/scripts/debug.pory"
+# 460 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_BUDEW
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_8:
-# 452 "data/scripts/debug.pory"
+# 462 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_BUDEW
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_9:
-# 454 "data/scripts/debug.pory"
+# 464 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_BUNEARY
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_10:
-# 456 "data/scripts/debug.pory"
+# 466 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_BUNEARY
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_11:
-# 458 "data/scripts/debug.pory"
+# 468 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_FLETCHLING
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_12:
-# 460 "data/scripts/debug.pory"
+# 470 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_FLETCHLING
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_13:
-# 462 "data/scripts/debug.pory"
+# 472 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_MAREEP
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_14:
-# 464 "data/scripts/debug.pory"
+# 474 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_MAREEP
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_15:
-# 466 "data/scripts/debug.pory"
+# 476 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PIDGEY
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_16:
-# 468 "data/scripts/debug.pory"
+# 478 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PIDGEY
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_17:
-# 470 "data/scripts/debug.pory"
+# 480 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PSYDUCK
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_18:
-# 472 "data/scripts/debug.pory"
+# 482 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PSYDUCK
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_19:
-# 474 "data/scripts/debug.pory"
+# 484 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SHINX
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_20:
-# 476 "data/scripts/debug.pory"
+# 486 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SHINX
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_21:
-# 478 "data/scripts/debug.pory"
+# 488 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_ZIGZAGOON_GALARIAN
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_22:
-# 480 "data/scripts/debug.pory"
+# 490 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_ZIGZAGOON_GALARIAN
 	goto Debug_CheatStart_1
 
 Debug_CheatStart_25:
-# 488 "data/scripts/debug.pory"
+# 498 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_LILLIPUP
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_26:
-# 490 "data/scripts/debug.pory"
+# 500 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_LILLIPUP
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_27:
-# 492 "data/scripts/debug.pory"
+# 502 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PHANPY
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_28:
-# 494 "data/scripts/debug.pory"
+# 504 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PHANPY
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_29:
-# 496 "data/scripts/debug.pory"
+# 506 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_POOCHYENA
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_30:
-# 498 "data/scripts/debug.pory"
+# 508 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_POOCHYENA
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_31:
-# 500 "data/scripts/debug.pory"
+# 510 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_RATTATA
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_32:
-# 502 "data/scripts/debug.pory"
+# 512 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_RATTATA
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_33:
-# 504 "data/scripts/debug.pory"
+# 514 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SENTRET
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_34:
-# 506 "data/scripts/debug.pory"
+# 516 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SENTRET
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_35:
-# 508 "data/scripts/debug.pory"
+# 518 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SPEAROW
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_36:
-# 510 "data/scripts/debug.pory"
+# 520 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SPEAROW
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_37:
-# 512 "data/scripts/debug.pory"
+# 522 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_TEDDIURSA
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_38:
-# 514 "data/scripts/debug.pory"
+# 524 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_TEDDIURSA
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_39:
-# 516 "data/scripts/debug.pory"
+# 526 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_WOOLOO
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_40:
-# 518 "data/scripts/debug.pory"
+# 528 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_WOOLOO
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_41:
-# 520 "data/scripts/debug.pory"
+# 530 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_YAMPER
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_42:
-# 522 "data/scripts/debug.pory"
+# 532 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_YAMPER
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_43:
-# 524 "data/scripts/debug.pory"
+# 534 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_NIDORAN_F
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_44:
-# 526 "data/scripts/debug.pory"
+# 536 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_NIDORAN_M
 	goto Debug_CheatStart_23
 
 Debug_CheatStart_47:
-# 534 "data/scripts/debug.pory"
+# 544 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_BONSLY
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_48:
-# 536 "data/scripts/debug.pory"
+# 546 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_BONSLY
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_49:
-# 538 "data/scripts/debug.pory"
+# 548 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_HOOTHOOT
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_50:
-# 540 "data/scripts/debug.pory"
+# 550 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_HOOTHOOT
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_51:
-# 542 "data/scripts/debug.pory"
+# 552 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_MANKEY
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_52:
-# 544 "data/scripts/debug.pory"
+# 554 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_MANKEY
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_53:
-# 546 "data/scripts/debug.pory"
+# 556 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PANCHAM
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_54:
-# 548 "data/scripts/debug.pory"
+# 558 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PANCHAM
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_55:
-# 550 "data/scripts/debug.pory"
+# 560 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PICHU
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_56:
-# 552 "data/scripts/debug.pory"
+# 562 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PICHU
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_57:
-# 554 "data/scripts/debug.pory"
+# 564 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PIKIPEK
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_58:
-# 556 "data/scripts/debug.pory"
+# 566 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PIKIPEK
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_59:
-# 558 "data/scripts/debug.pory"
+# 568 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SEEDOT
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_60:
-# 560 "data/scripts/debug.pory"
+# 570 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SEEDOT
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_61:
-# 562 "data/scripts/debug.pory"
+# 572 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SKWOVET
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_62:
-# 564 "data/scripts/debug.pory"
+# 574 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SKWOVET
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_63:
-# 566 "data/scripts/debug.pory"
+# 576 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_STUNKY
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_64:
-# 568 "data/scripts/debug.pory"
+# 578 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_STUNKY
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_65:
-# 570 "data/scripts/debug.pory"
+# 580 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_VOLTORB_HISUIAN
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_66:
-# 572 "data/scripts/debug.pory"
+# 582 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_VOLTORB_HISUIAN
 	goto Debug_CheatStart_45
 
 Debug_CheatStart_68:
-# 579 "data/scripts/debug.pory"
+# 589 "data/scripts/debug.pory"
 	random 4
-# 580 "data/scripts/debug.pory"
+# 590 "data/scripts/debug.pory"
 	switch VAR_RESULT
-# 581 "data/scripts/debug.pory"
+# 591 "data/scripts/debug.pory"
 	case 0, Debug_CheatStart_76
-# 583 "data/scripts/debug.pory"
+# 593 "data/scripts/debug.pory"
 	case 1, Debug_CheatStart_77
-# 585 "data/scripts/debug.pory"
+# 595 "data/scripts/debug.pory"
 	case 2, Debug_CheatStart_78
-# 587 "data/scripts/debug.pory"
+# 597 "data/scripts/debug.pory"
 	case 3, Debug_CheatStart_79
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_72:
-# 640 "data/scripts/debug.pory"
+# 650 "data/scripts/debug.pory"
 	random 4
-# 641 "data/scripts/debug.pory"
+# 651 "data/scripts/debug.pory"
 	switch VAR_RESULT
-# 642 "data/scripts/debug.pory"
+# 652 "data/scripts/debug.pory"
 	case 0, Debug_CheatStart_112
-# 644 "data/scripts/debug.pory"
+# 654 "data/scripts/debug.pory"
 	case 1, Debug_CheatStart_113
-# 646 "data/scripts/debug.pory"
+# 656 "data/scripts/debug.pory"
 	case 2, Debug_CheatStart_114
-# 648 "data/scripts/debug.pory"
+# 658 "data/scripts/debug.pory"
 	case 3, Debug_CheatStart_115
 Debug_CheatStart_110:
-# 651 "data/scripts/debug.pory"
+# 661 "data/scripts/debug.pory"
 	givemon VAR_TEMP_0, 8, ITEM_NONE
 	goto Debug_CheatStart_71
 
 Debug_CheatStart_76:
-# 582 "data/scripts/debug.pory"
+# 592 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_CHEWTLE
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_77:
-# 584 "data/scripts/debug.pory"
+# 594 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_DEWPIDER
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_78:
-# 586 "data/scripts/debug.pory"
+# 596 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SURSKIT
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_79:
-# 588 "data/scripts/debug.pory"
+# 598 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_WISHIWASHI
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_81:
-# 594 "data/scripts/debug.pory"
+# 604 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_BUIZEL
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_82:
-# 596 "data/scripts/debug.pory"
+# 606 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_BUIZEL
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_83:
-# 598 "data/scripts/debug.pory"
+# 608 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_CRABRAWLER
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_84:
-# 600 "data/scripts/debug.pory"
+# 610 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_CRABRAWLER
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_85:
-# 602 "data/scripts/debug.pory"
+# 612 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_EKANS
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_86:
-# 604 "data/scripts/debug.pory"
+# 614 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_EKANS
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_87:
-# 606 "data/scripts/debug.pory"
+# 616 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_GLAMEOW
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_88:
-# 608 "data/scripts/debug.pory"
+# 618 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_GLAMEOW
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_89:
-# 610 "data/scripts/debug.pory"
+# 620 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_LITLEO
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_90:
-# 612 "data/scripts/debug.pory"
+# 622 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_LITLEO
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_91:
-# 614 "data/scripts/debug.pory"
+# 624 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_LOTAD
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_92:
-# 616 "data/scripts/debug.pory"
+# 626 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_LOTAD
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_93:
-# 618 "data/scripts/debug.pory"
+# 628 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_MEDITITE
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_94:
-# 620 "data/scripts/debug.pory"
+# 630 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_MEDITITE
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_95:
-# 622 "data/scripts/debug.pory"
+# 632 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_ROCKRUFF
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_96:
-# 624 "data/scripts/debug.pory"
+# 634 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_ROCKRUFF
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_97:
-# 626 "data/scripts/debug.pory"
+# 636 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_VULPIX
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_98:
-# 628 "data/scripts/debug.pory"
+# 638 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_VULPIX
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_99:
-# 630 "data/scripts/debug.pory"
+# 640 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_WOOPER
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_100:
-# 632 "data/scripts/debug.pory"
+# 642 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_WOOPER
 	goto Debug_CheatStart_67
 
 Debug_CheatStart_103:
-# 705 "data/scripts/debug.pory"
+# 715 "data/scripts/debug.pory"
 	additem ITEM_WATER_GEM
 	goto Debug_CheatStart_101
 
 Debug_CheatStart_104:
-# 707 "data/scripts/debug.pory"
+# 717 "data/scripts/debug.pory"
 	additem ITEM_ELECTRIC_GEM
 	goto Debug_CheatStart_101
 
 Debug_CheatStart_105:
-# 709 "data/scripts/debug.pory"
+# 719 "data/scripts/debug.pory"
 	additem ITEM_FIRE_GEM
 	goto Debug_CheatStart_101
 
 Debug_CheatStart_106:
-# 711 "data/scripts/debug.pory"
+# 721 "data/scripts/debug.pory"
 	additem ITEM_PSYCHIC_GEM
 	goto Debug_CheatStart_101
 
 Debug_CheatStart_107:
-# 713 "data/scripts/debug.pory"
+# 723 "data/scripts/debug.pory"
 	additem ITEM_DARK_GEM
 	goto Debug_CheatStart_101
 
 Debug_CheatStart_108:
-# 715 "data/scripts/debug.pory"
+# 725 "data/scripts/debug.pory"
 	additem ITEM_GRASS_GEM
 	goto Debug_CheatStart_101
 
 Debug_CheatStart_109:
-# 717 "data/scripts/debug.pory"
+# 727 "data/scripts/debug.pory"
 	additem ITEM_ICE_GEM
 	goto Debug_CheatStart_101
 
 Debug_CheatStart_112:
-# 643 "data/scripts/debug.pory"
+# 653 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PETILIL
 	goto Debug_CheatStart_110
 
 Debug_CheatStart_113:
-# 645 "data/scripts/debug.pory"
+# 655 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_COTTONEE
 	goto Debug_CheatStart_110
 
 Debug_CheatStart_114:
-# 647 "data/scripts/debug.pory"
+# 657 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_CATERPIE
 	goto Debug_CheatStart_110
 
 Debug_CheatStart_115:
-# 649 "data/scripts/debug.pory"
+# 659 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_WEEDLE
 	goto Debug_CheatStart_110
 
 Debug_CheatStart_118:
-# 657 "data/scripts/debug.pory"
+# 667 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_HOUNDOUR
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_119:
-# 659 "data/scripts/debug.pory"
+# 669 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_HOUNDOUR
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_120:
-# 661 "data/scripts/debug.pory"
+# 671 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_MORELULL
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_121:
-# 663 "data/scripts/debug.pory"
+# 673 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_MORELULL
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_122:
-# 665 "data/scripts/debug.pory"
+# 675 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PHANTUMP
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_123:
-# 667 "data/scripts/debug.pory"
+# 677 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PHANTUMP
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_124:
-# 669 "data/scripts/debug.pory"
+# 679 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PONYTA_GALARIAN
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_125:
-# 671 "data/scripts/debug.pory"
+# 681 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_PONYTA_GALARIAN
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_126:
-# 673 "data/scripts/debug.pory"
+# 683 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_HATENNA
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_127:
-# 675 "data/scripts/debug.pory"
+# 685 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_HATENNA
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_128:
-# 677 "data/scripts/debug.pory"
+# 687 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_IMPIDIMP
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_129:
-# 679 "data/scripts/debug.pory"
+# 689 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_IMPIDIMP
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_130:
-# 681 "data/scripts/debug.pory"
+# 691 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_GOTHITA
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_131:
-# 683 "data/scripts/debug.pory"
+# 693 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_GOTHITA
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_132:
-# 685 "data/scripts/debug.pory"
+# 695 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SOLOSIS
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_133:
-# 687 "data/scripts/debug.pory"
+# 697 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SOLOSIS
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_134:
-# 689 "data/scripts/debug.pory"
+# 699 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SPRITZEE
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_135:
-# 691 "data/scripts/debug.pory"
+# 701 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SPRITZEE
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_136:
-# 693 "data/scripts/debug.pory"
+# 703 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SWIRLIX
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_137:
-# 695 "data/scripts/debug.pory"
+# 705 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SWIRLIX
 	goto Debug_CheatStart_116
 
 Debug_CheatStart_140:
-# 723 "data/scripts/debug.pory"
+# 733 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_ABRA
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_141:
-# 725 "data/scripts/debug.pory"
+# 735 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_ABRA
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_142:
-# 727 "data/scripts/debug.pory"
+# 737 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_GROWLITHE
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_143:
-# 729 "data/scripts/debug.pory"
+# 739 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_GROWLITHE
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_144:
-# 731 "data/scripts/debug.pory"
+# 741 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_MAGNEMITE
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_145:
-# 733 "data/scripts/debug.pory"
+# 743 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_MAGNEMITE
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_146:
-# 735 "data/scripts/debug.pory"
+# 745 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_RALTS
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_147:
-# 737 "data/scripts/debug.pory"
+# 747 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_RALTS
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_148:
-# 739 "data/scripts/debug.pory"
+# 749 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_ROOKIDEE
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_149:
-# 741 "data/scripts/debug.pory"
+# 751 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_ROOKIDEE
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_150:
-# 743 "data/scripts/debug.pory"
+# 753 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SNUBBULL
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_151:
-# 745 "data/scripts/debug.pory"
+# 755 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_SNUBBULL
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_152:
-# 747 "data/scripts/debug.pory"
+# 757 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_STARLY
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_153:
-# 749 "data/scripts/debug.pory"
+# 759 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_STARLY
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_154:
-# 751 "data/scripts/debug.pory"
+# 761 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_STUFFUL
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_155:
-# 753 "data/scripts/debug.pory"
+# 763 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_STUFFUL
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_156:
-# 755 "data/scripts/debug.pory"
+# 765 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_TAILLOW
 	goto Debug_CheatStart_138
 
 Debug_CheatStart_157:
-# 757 "data/scripts/debug.pory"
+# 767 "data/scripts/debug.pory"
 	setvar VAR_TEMP_0, SPECIES_TAILLOW
 	goto Debug_CheatStart_138
 
 
 Debug_CheatStart_Text_0:
-# 577 "data/scripts/debug.pory"
+# 587 "data/scripts/debug.pory"
 	.string "Would you like a water encounter?$"
 
 Debug_CheatStart_Text_1:
-# 638 "data/scripts/debug.pory"
+# 648 "data/scripts/debug.pory"
 	.string "Would you like a golden tree encounter?$"
 
 Debug_CheatStart_Text_2:
-# 701 "data/scripts/debug.pory"
+# 711 "data/scripts/debug.pory"
 	.string "Choose an Eevee evolution.$"
 
 Debug_CheatStart_Text_3:
-# 702 "data/scripts/debug.pory"
+# 712 "data/scripts/debug.pory"
 	.string "Vaporeon$"
 
 Debug_CheatStart_Text_4:
-# 702 "data/scripts/debug.pory"
+# 712 "data/scripts/debug.pory"
 	.string "Jolteon$"
 
 Debug_CheatStart_Text_5:
-# 702 "data/scripts/debug.pory"
+# 712 "data/scripts/debug.pory"
 	.string "Flareon$"
 
 Debug_CheatStart_Text_6:
-# 702 "data/scripts/debug.pory"
+# 712 "data/scripts/debug.pory"
 	.string "Espeon$"
 
 Debug_CheatStart_Text_7:
-# 702 "data/scripts/debug.pory"
+# 712 "data/scripts/debug.pory"
 	.string "Umbreon$"
 
 Debug_CheatStart_Text_8:
-# 702 "data/scripts/debug.pory"
+# 712 "data/scripts/debug.pory"
 	.string "Leafeon$"
 
 Debug_CheatStart_Text_9:
-# 702 "data/scripts/debug.pory"
+# 712 "data/scripts/debug.pory"
 	.string "Glaceon$"
 
 Debug_CheatStart_Text_10:
-# 702 "data/scripts/debug.pory"
+# 712 "data/scripts/debug.pory"
 	.string "Sylveon$"
 
 gText_ObtainedDebugMon::
-# 798 "data/scripts/debug.pory"
+# 808 "data/scripts/debug.pory"
 	.string "Obtained {STR_VAR_1}!$"

@@ -4,7 +4,6 @@
 #include "battle_transition.h"
 #include "data.h"
 #include "graphics.h"
-#include "battle_transition.h"
 #include "constants/abilities.h"
 #include "constants/items.h"
 #include "constants/moves.h"
@@ -227,4 +226,10 @@ const union AnimCmd *const sAnims_Trainer[] ={
 };
 
 #include "data/trainer_parties.h"
+
+const struct Trainer gTrainers[] =
+{
 #include "data/trainers.h"
+};
+
+#include "data/text/follower_messages.h"

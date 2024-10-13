@@ -534,8 +534,6 @@ gSpecials::
 	def_special RemoveRecordsWindow
 	def_special CloseDeptStoreElevatorWindow
 	def_special TrySetBattleTowerLinkType
-	def_special GetCaughtSpeciesCount
-	def_special SetTotemBoost
 	def_special TrySpecialOverworldEvo
 	def_special GetNumberSprayStrength
 	def_special GetSprayId
@@ -567,3 +565,4 @@ gSpecials::
 	def_special NewGameSetup
 	def_special CheckSpeciesClause
 	def_special ChooseItemFromBag
+	def_special GetCaughtSpeciesCount

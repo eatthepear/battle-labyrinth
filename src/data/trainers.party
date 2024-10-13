@@ -1,0 +1,3475 @@
+=== TRAINER_NONE ===
+Name:
+Class: Pkmn Trainer 1
+Pic: Hiker
+Gender: Male
+Music: Male
+Double Battle: No
+
+=== TRAINER_PBL_NINA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MARIAM ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_OSCAR ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_COREY_LEVIATHAN_1 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_COREY_LEVIATHAN_1_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_POLLY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JEREMIAH ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_HARPER ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ARTHUR ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JOEY_LEVIATHAN_2 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JOEY_LEVIATHAN_2_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JEMMA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_PATRICK ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ANNABELLE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_BORIS ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_RICHARD ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_PHILLIPA_LEVIATHAN_3 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_PHILLIPA_LEVIATHAN_3_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_HERMAN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_RALPH ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_SANTIAGO ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_CHLOE_AND_KAYA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_FRED ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_LUCIA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_RITA_LEVIATHAN_4 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_RITA_LEVIATHAN_4_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ANNE_AND_JUNE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_GILBERT ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_CLINTON ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_REBECCA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_RYAN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_CAITLYN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_KENNETH ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_KEVIN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_DECLAN_LEVIATHAN_5 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ZACK ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MELANIE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_CONSTANCE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_FRANK ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_DUDLEY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_DAISY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MINA_LEVIATHAN_6 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MILLIE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JAMAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_PAIGE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_SETH ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_CONNIE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_BETTY_LEVIATHAN_7 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_BETTY_LEVIATHAN_7_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JIMMY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_EMILIANO ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_KAREN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JAYDEN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_NEIL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_TAMARA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MIRAGE_LEVIATHAN_8 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MIRAGE_LEVIATHAN_8_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_WALLY_ZONE8D ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_COOPER ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_CARMINE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ARI ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_BERTHA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_CASSANDRA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_DOMINIC ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ERICA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_KYLE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_BELLE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_DEWEY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_PEARLIE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ERNEST ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ALANA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_SUSAN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_CONRAD ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ADAMINA_LEVIATHAN_9 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ADAMINA_LEVIATHAN_9_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JEANETTE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_EMMA_AND_LEO ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JOEL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MARION ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_REGINA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_NEWTON_LEVIATHAN_10 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_NEWTON_LEVIATHAN_10_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ESSENCE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_DOLORES ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JULIE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ROMULUS ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_TREVOR ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_FEDERICO ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_GENIE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_HILDA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_KINLEY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_VIOLET ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_WANDA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_AMBER_AND_KIM ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JAN_AND_ERIN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_STEVE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_GOULD ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MENDEL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_DARWIN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JENNY_LEVIATHAN_11 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JENNY_LEVIATHAN_11_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_BART ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_NIGEL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_LOLA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_CHARLIE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_RANDOLPH ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_TODD ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_RUSSELL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_OTIS ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MIGUEL_LEVIATHAN_12 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MIGUEL_LEVIATHAN_12_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MIRAGE_LEVIATHAN_13 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MIRAGE_LEVIATHAN_13_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_IONA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_BERKE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_TANISHA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ROBERT ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_CHRIS ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ANGUS ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_LILY_LEVIATHAN_14 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_LILY_LEVIATHAN_14_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_AXLE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_RAFAEL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_GEORGINA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MIA_LEVIATHAN_15 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MIA_LEVIATHAN_15_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_DORIS ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_HOMER ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JOHN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_GLENN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JAY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_TYLER ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_TERRENCE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MARTY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_KARI ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ABRAHAM ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MELINDA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_EMILIO ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_REX ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_LOUIS ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_LEROY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ELTON ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_WILLIE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_PIRATE_1 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_PIRATE_2 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_PIRATE_3 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_PIRATE_4 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_SHAWN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_FERNANDO ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_KANE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_KIRK ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_DALTON ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_LEE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_BLANCHE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_TROY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ABED ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_TROY_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ABED_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MIRAGE_LEVIATHAN_17 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MIRAGE_LEVIATHAN_17_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ANITA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_DESIREE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_HOWARD ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ELOISE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ALLY_AND_EMMY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_AMIR ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_GETHIN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_BERNARD ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ELLIE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_RUSTY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_CODY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_LEWIS ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_CORNELIUS ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_INEZ_AND_EMMA ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_HELEN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_WESLEY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ALFREDO ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_IAN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_AUDREY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_LEVIATHAN13 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_EDGARDO ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JEAN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ROSE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_JENNIFER ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MATTHEW ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_KERRY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_ANNIE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_CHRISTI ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_SPENCER ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_HAYWOOD ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_MONROE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_DAVID ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_DOMINIK ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_DOUGLAS ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_NADINE ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_SANDY ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_SHELDON ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_LEVIATHAN14 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_LEVIATHAN12_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_LEVIATHAN13_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_LEVIATHAN14_BRUTAL ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+=== TRAINER_PBL_LEVIATHAN12 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw

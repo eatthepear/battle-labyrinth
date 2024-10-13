@@ -79,6 +79,7 @@ static bool8 TryStartWarpEventScript(struct MapPosition *, u16);
 static bool8 TryStartMiscWalkingScripts(u16);
 static bool8 TryStartStepCountScript(u16);
 static void UpdateFriendshipStepCounter(void);
+static void UpdateFollowerStepCounter(void);
 #if OW_POISON_DAMAGE < GEN_5
 static bool8 UpdatePoisonStepCounter(void);
 #endif // OW_POISON_DAMAGE
@@ -142,7 +143,7 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
     }
 
 #if DEBUG_OVERWORLD_MENU == TRUE && DEBUG_OVERWORLD_IN_MENU == FALSE
-    if ((heldKeys & DEBUG_OVERWORLD_HELD_KEYS) && input->DEBUG_OVERWORLD_TRIGGER_EVENT)
+    if ((heldKeys & DEBUG_OVERWORLD_HELD_KEYS) && input->DEBUG_OVERWORLD_TRIGGER_EVENT && FlagGet(FLAG_IS_DEBUGGING_SAVEFILE))
     {
         input->input_field_1_2 = TRUE;
         input->DEBUG_OVERWORLD_TRIGGER_EVENT = FALSE;
@@ -651,6 +652,7 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
     IncrementRematchStepCounter();
     UpdateFriendshipStepCounter();
     UpdateFarawayIslandStepCounter();
+    UpdateFollowerStepCounter();
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_FORCED_MOVE) && !MetatileBehavior_IsForcedMovementTile(metatileBehavior))
     {
@@ -742,6 +744,12 @@ static void UpdateFriendshipStepCounter(void)
             mon++;
         }
     }
+}
+
+static void UpdateFollowerStepCounter(void)
+{
+    if (gPlayerPartyCount > 0 && gFollowerSteps < (u16)-1)
+        gFollowerSteps++;
 }
 
 void ClearPoisonStepCounter(void)
@@ -994,6 +1002,16 @@ static s8 GetWarpEventAtPosition(struct MapHeader *mapHeader, u16 x, u16 y, u8 e
     return WARP_ID_NONE;
 }
 
+static bool32 ShouldTriggerScriptRun(const struct CoordEvent *coordEvent)
+{
+    u16 *varPtr = GetVarPointer(coordEvent->trigger);
+    // Treat non Vars as flags
+    if (varPtr == NULL)
+        return (FlagGet(coordEvent->trigger) == coordEvent->index);
+    else
+        return (*varPtr == coordEvent->index);
+}
+
 static const u8 *TryRunCoordEventScript(const struct CoordEvent *coordEvent)
 {
     if (coordEvent != NULL)
@@ -1008,7 +1026,7 @@ static const u8 *TryRunCoordEventScript(const struct CoordEvent *coordEvent)
             RunScriptImmediately(coordEvent->script);
             return NULL;
         }
-        if (VarGet(coordEvent->trigger) == (u8)coordEvent->index)
+        if (ShouldTriggerScriptRun(coordEvent))
             return coordEvent->script;
     }
     return NULL;

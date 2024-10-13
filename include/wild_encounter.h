@@ -31,6 +31,7 @@ struct WildPokemonHeader
 extern const struct WildPokemonHeader gWildMonHeaders[];
 extern bool8 gIsFishingEncounter;
 extern bool8 gIsSurfingEncounter;
+extern u8 gChainFishingDexNavStreak;
 
 void DisableWildEncounters(bool8 disabled);
 u8 PickWildMonNature(void);
@@ -43,6 +44,7 @@ u16 GetLocalWaterMon(void);
 bool8 UpdateRepelCounter(void);
 bool8 TryDoDoubleWildBattle(void);
 bool8 StandardWildEncounter_Debug(void);
+u32 CalculateChainFishingShinyRolls(void);
 void CreateWildMon(u16 species, u8 level);
 u16 GetCurrentMapWildMonHeaderId(void);
 

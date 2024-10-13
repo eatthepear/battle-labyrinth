@@ -1,3 +1,9 @@
+raw `
+@ Starting from here, these movements are considered
+@ 'safe' (won't put follower into a Pokeball)
+Common_Movement_FollowerSafeStart::
+`
+
 movement Common_Movement_QuestionMark {
 	emote_question_mark
 }
@@ -66,18 +72,6 @@ movement Common_Movement_WalkInPlaceRight {
 	walk_in_place_right
 }
 
-movement Common_Movement_WalkUp6 {
-	walk_up * 6
-}
-
-movement Common_Movement_WalkUp4 {
-	walk_up * 4
-}
-
-movement Common_Movement_Delay32 {
-	delay_16 * 2
-}
-
 movement Common_Movement_WalkUp {
 	walk_up
 }
@@ -92,6 +86,24 @@ movement Common_Movement_WalkLeft {
 
 movement Common_Movement_WalkRight {
 	walk_right
+}
+
+raw `
+@ End of follower-safe movements
+Common_Movement_FollowerSafeEnd::
+	step_end
+`
+
+movement Common_Movement_WalkUp6 {
+	walk_up * 6
+}
+
+movement Common_Movement_WalkUp4 {
+	walk_up * 4
+}
+
+movement Common_Movement_Delay32 {
+	delay_16 * 2
 }
 
 movement Common_Movement_WalkUp2 {

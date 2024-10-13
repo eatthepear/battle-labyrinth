@@ -52,7 +52,7 @@
 #define VAR_RAND_STARTER_SEED                0x4022
 #define VAR_GENERIC                          0x4023
 #define VAR_ADVICE                           0x4024
-#define VAR_WILD_MUSIC                       0x4025 
+#define VAR_WILD_MUSIC                       0x4025
 #define VAR_TRAINER_MUSIC                    0x4026
 #define VAR_LEVIATHAN_MUSIC                  0x4027
 #define VAR_MON_TO_PC                        0x4028

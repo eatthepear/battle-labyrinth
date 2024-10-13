@@ -393,23 +393,15 @@
 #define F_TRAINER_FEMALE (1 << 7)
 
 // Trainer party defines
-#define TRAINER_MON_MALE       1
-#define TRAINER_MON_FEMALE     2
-#define TRAINER_MON_GENDERLESS 3
-
-// Set to buff up all trained pokemon that use .iv instead of .ivs
-#define TRAINER_IV_MODIFIER       11
-
-// Unused.
-#define F_TRAINER_PARTY_CUSTOM_MOVESET (1 << 0)
-#define F_TRAINER_PARTY_HELD_ITEM      (1 << 1)
-#define F_TRAINER_PARTY_CUSTOM_MON     (1 << 2)
-
-#define TRAINER_MON_FRIENDLY     1
-#define TRAINER_MON_UNFRIENDLY   2
+#define TRAINER_MON_MALE          1
+#define TRAINER_MON_FEMALE        2
+#define TRAINER_MON_GENDERLESS    3
+#define TRAINER_MON_RANDOM_GENDER 4
 
 #define TRAINER_MON_BURNED     1
 #define TRAINER_MON_POISONED   2
 #define TRAINER_MON_PARALYZED  3
+#define TRAINER_MON_SLEEP      4
+#define TRAINER_MON_FROSTBITE  5
 
 #endif  // GUARD_TRAINERS_H
