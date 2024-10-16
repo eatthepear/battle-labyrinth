@@ -3564,7 +3564,8 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         break;
     }
     case MON_DATA_MARKINGS:
-        retVal = boxMon->markings;
+        retVal = 0;
+        // retVal = boxMon->markings;
         break;
     case MON_DATA_SPECIES:
         retVal = boxMon->isBadEgg ? SPECIES_EGG : boxMon->species;
@@ -3697,16 +3698,18 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         retVal = boxMon->hiddenNatureModifier;
         break;
     case MON_DATA_EVOLUTION_TRACKER:
-        evoTracker.asField.a = boxMon->evolutionTracker1;
-        evoTracker.asField.b = boxMon->evolutionTracker2;
-        evoTracker.asField.unused = 0;
-        retVal = evoTracker.value;
+        retVal = 0;
+        // evoTracker.asField.a = boxMon->evolutionTracker1;
+        // evoTracker.asField.b = boxMon->evolutionTracker2;
+        // evoTracker.asField.unused = 0;
+        // retVal = evoTracker.value;
         break;
     case MON_DATA_IS_SHADOW:
         retVal = boxMon->isShadow;
         break;
     case MON_DATA_DYNAMAX_LEVEL:
-        retVal = boxMon->dynamaxLevel;
+        retVal = 0;
+        // retVal = boxMon->dynamaxLevel;
         break;
     case MON_DATA_GIGANTAMAX_FACTOR:
         retVal = boxMon->gigantamaxFactor;
@@ -3725,6 +3728,28 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         {
             retVal = boxMon->teraType;
         }
+        break;
+     case MON_DATA_STATUS:
+        retVal = boxMon->status;
+        break;
+    case MON_DATA_HP_LOST:
+        retVal = boxMon->hpLost;
+        break;
+    case MON_DATA_IS_SHINY:
+    {
+        u32 shinyValue = GET_SHINY_VALUE(boxMon->otId, boxMon->personality);
+        retVal = (shinyValue < SHINY_ODDS) ^ boxMon->shinyModifier;
+        break;
+    }
+    case MON_DATA_HIDDEN_NATURE:
+    {
+        u32 nature = GetNatureFromPersonality(boxMon->personality);
+        retVal = nature ^ boxMon->hiddenNatureModifier;
+        break;
+    }
+    case MON_DATA_DAYS_SINCE_FORM_CHANGE:
+        retVal = 0;
+        // retVal = boxMon->daysSinceFormChange;
         break;
     default:
         break;
@@ -3849,7 +3874,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         break;
     }
     case MON_DATA_MARKINGS:
-        SET8(boxMon->markings);
+        // SET8(boxMon->markings);
         break;
     case MON_DATA_SPECIES:
     {
@@ -3979,7 +4004,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         SET8(boxMon->isShadow);
         break;
     case MON_DATA_DYNAMAX_LEVEL:
-        SET8(boxMon->dynamaxLevel);
+        // SET8(boxMon->dynamaxLevel);
         break;
     case MON_DATA_GIGANTAMAX_FACTOR:
         SET8(boxMon->gigantamaxFactor);
@@ -3993,12 +4018,30 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
     }
     case MON_DATA_EVOLUTION_TRACKER:
     {
-        union EvolutionTracker evoTracker;
-        u32 evoTrackerValue;
-        SET32(evoTrackerValue);
-        evoTracker.value = evoTrackerValue;
-        boxMon->evolutionTracker1 = evoTracker.asField.a;
-        boxMon->evolutionTracker2 = evoTracker.asField.b;
+        // union EvolutionTracker evoTracker;
+        // u32 evoTrackerValue;
+        // SET32(evoTrackerValue);
+        // evoTracker.value = evoTrackerValue;
+        // boxMon->evolutionTracker1 = evoTracker.asField.a;
+        // boxMon->evolutionTracker2 = evoTracker.asField.b;
+        break;
+    }
+    case MON_DATA_STATUS:
+    {
+        u32 status;
+        SET32(status);
+        boxMon->status = status;
+        break;
+    }
+    case MON_DATA_HP_LOST:
+        SET16(boxMon->hpLost);
+        break;
+    case MON_DATA_IS_SHINY:
+    {
+        u32 shinyValue = GET_SHINY_VALUE(boxMon->otId, boxMon->personality);
+        bool32 isShiny;
+        SET8(isShiny);
+        boxMon->shinyModifier = (shinyValue < SHINY_ODDS) ^ isShiny;
         break;
     }
     case MON_DATA_HIDDEN_NATURE:
@@ -4010,7 +4053,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         break;
     }
     case MON_DATA_DAYS_SINCE_FORM_CHANGE:
-        SET8(boxMon->daysSinceFormChange);
+        // SET8(boxMon->daysSinceFormChange);
         break;
     default:
         break;
