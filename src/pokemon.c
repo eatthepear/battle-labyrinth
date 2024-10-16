@@ -2153,6 +2153,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     u8 availableIVs[NUM_STATS];
     u8 selectedIvs[LEGENDARY_PERFECT_IV_COUNT];
     bool32 isShiny;
+    u16 potentialTeraType;
 
     ZeroBoxMonData(boxMon);
 
@@ -2329,6 +2330,12 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     }
     value = GetNatureFromPersonality(personality);
     SetBoxMonData(boxMon, MON_DATA_NATURE, &value);
+
+    potentialTeraType = TYPE_NONE;
+    while (potentialTeraType == TYPE_NONE || potentialTeraType == TYPE_MYSTERY || potentialTeraType >= TYPE_STELLAR) {
+        potentialTeraType = Random() % (NUMBER_OF_MON_TYPES);
+    }
+    SetBoxMonData(boxMon, MON_DATA_TERA_TYPE, &potentialTeraType);
 
     GiveBoxMonInitialMoveset(boxMon);
 }
