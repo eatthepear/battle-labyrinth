@@ -3905,26 +3905,40 @@ static void BufferMonTrainerMemo(void)
             DynamicPlaceholderTextUtil_SetPlaceholderPtr(4, metLocationString);
         }
 
-        text = gText_XNature;
-
-        if (DoesMonOTMatchOwner() == TRUE)
-        {
-            if (sum->metLevel == 0)
-                text = (!locationFound) ? gText_XNatureHatchedSomewhereAt : gText_XNatureHatchedAtYZ;
-            else
-                text = (!locationFound) ? gText_XNatureMetSomewhereAt : gText_XNatureMetAtYZ;
-        }
-        else if (sum->metLocation == METLOC_FATEFUL_ENCOUNTER)
-        {
-            text = gText_XNatureFatefulEncounter;
-        }
-        else if (sum->metLocation != METLOC_IN_GAME_TRADE && DidMonComeFromGBAGames())
-        {
-            text = (!locationFound) ? gText_XNatureObtainedInTrade : gText_XNatureProbablyMetAt;
-        }
+        if (sum->metLevel == 0)
+            text = (sum->metLocation >= MAPSEC_NONE) ? gText_XNatureHatchedSomewhereAt : gText_XNatureHatchedAtYZ;
         else
         {
-            text = gText_XNatureObtainedInTrade;
+            switch (sum->metLocation)
+            {
+            case METLOC_FATEFUL_ENCOUNTER:
+                text = gText_XNatureMetSomewhereAt;
+                break;
+            case METLOC_DAYCARE_GIVEAWAY:
+                text = gText_XNatureGivenAt;
+                break;
+            case METLOC_BOUGHT_BUG:
+                text = gText_XNatureBoughtBug;
+                break;
+            case METLOC_BOUGHT_PIKA_CLONE:
+                text = gText_XNatureBoughtPikaClone;
+                break;
+            case METLOC_BOUGHT_FARM:
+                text = gText_XNatureBoughtFarm;
+                break;
+            case METLOC_ADOPTED:
+                text = gText_XNatureAdopted;
+                break;
+            case METLOC_REVIVED_FOSSIL:
+                text = gText_XNatureRevived;
+                break;
+            case METLOC_BOUGHT_RUIN:
+                text = gText_XNatureBoughtRuin;
+                break;
+            default:
+                text = gText_XNatureMetAtYZ;
+                break;
+            }
         }
 
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, text);
