@@ -1,0 +1,9 @@
+mapscripts Zone9B_MapScripts {}
+
+script Zone9B_EventScript_Woman {
+	lock
+	faceplayer
+	msgbox(format("In the Sinnoh region, where I'm from, we give Gracidea flowers as a gesture of gratitude."))
+	release
+	end
+}

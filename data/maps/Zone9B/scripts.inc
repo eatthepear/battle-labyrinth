@@ -1,14 +1,21 @@
 Zone9B_MapScripts::
 	.byte 0
 
+
 Zone9B_EventScript_Woman::
+# 4 "data/maps/Zone9B/scripts.pory"
 	lock
+# 5 "data/maps/Zone9B/scripts.pory"
 	faceplayer
-	msgbox Zone9B_Text_Woman, MSGBOX_AUTOCLOSE
+# 6 "data/maps/Zone9B/scripts.pory"
+	msgbox Zone9B_EventScript_Woman_Text_0
+# 7 "data/maps/Zone9B/scripts.pory"
 	release
 	end
 
-Zone9B_Text_Woman:
-	.string "In the Sinnoh region, where I'm\n"
-	.string "from, we give Gracidea flowers as a\l"
-	.string "gesture of gratitude.$"
+
+Zone9B_EventScript_Woman_Text_0:
+# 6 "data/maps/Zone9B/scripts.pory"
+	.string "In the Sinnoh region, where I'm from, we\n"
+	.string "give Gracidea flowers as a gesture of\l"
+	.string "gratitude.$"
