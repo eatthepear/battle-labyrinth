@@ -436,8 +436,8 @@ static const u8 sButtons_Gfx[][4 * TILE_SIZE_4BPP] = {
 #if BW_SUMMARY_BW_TYPE_ICONS == TRUE
 static const u32 sMoveTypes_Gfx_BW[]                        = INCBIN_U32("graphics/types_bw/move_types_bw.4bpp.lz");
 static const u32 sMoveTypes_Pal_BW[]                        = INCBIN_U32("graphics/types_bw/move_types_bw.gbapal.lz");
+static const u32 sTeraTypes_Gfx_BW[]                           = INCBIN_U32("graphics/types_bw/tera/tera_types_bw.4bpp.lz");
 #endif
-static const u32 sTeraTypes_Gfx[]                           = INCBIN_U32("graphics/types_bw/tera/tera_types_bw.4bpp.lz");
 static const u32 sSummaryMoveSelect_Gfx_BW[]                = INCBIN_U32("graphics/summary_screen/bw/move_select.4bpp.lz");
 static const u32 sSummaryMoveSelect_Pal_BW[]                = INCBIN_U32("graphics/summary_screen/bw/move_select.gbapal.lz");
 static const u16 sMarkings_Pal_BW[]                         = INCBIN_U16("graphics/summary_screen/bw/markings.gbapal");
@@ -1374,7 +1374,11 @@ static const struct OamData sOamData_TeraType =
 
 static const struct CompressedSpriteSheet sSpriteSheet_TeraType =
 {
-    .data = sTeraTypes_Gfx,
+#if BW_SUMMARY_BW_TYPE_ICONS == TRUE
+    .data = sTeraTypes_Gfx_BW,
+#else
+    .data = gTeraTypes_Gfx,
+#endif
     .size = NUMBER_OF_MON_TYPES * (16 * 16),
     .tag = TAG_TERA_TYPE
 };
