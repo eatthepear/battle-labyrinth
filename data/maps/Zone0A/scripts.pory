@@ -1,3 +1,35 @@
+script Zone0A_EventScript_Intro {
+	lockall
+	call(EventScript_MoveCameraUp)
+	applymovement(1, Common_Movement_ExclamationMark)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	call(EventScript_MoveCameraDown)
+	applymovement(1, Common_Movement_WalkDown2)
+	waitmovement(0)
+	msgbox(format("Hello, {PLAYER}.\nI'm the Day-Care Man.\pWelcome to my home.\pThere are no trainers here, and no challenges to face. Everything is meant to help you on your journey.\pAs a welcome gift, I'd like you to have this."), MSGBOX_DEFAULT)
+	giveitem(ITEM_WAILMER_PAIL)
+	if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_RED_THUMB)) {
+		msgbox(format("I've been trying to farm some Berries in the Berry fields here.\pThe soil is getting too hard to farm any more though, plus with the wild Pokémon that eat the Berries, it's impossible to grow more.\pFeel free to pick any Berries I may have left."))
+	} else {
+		msgbox(format("I've been trying to farm some Berries in the Berry fields here.\pYou should give it a try, though beware wild Pokémon that might be nibbling on your Berries.\pFeel free to pick any Berries I might have missed."))
+	}
+	applymovement(1, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	msgbox(format("Oh, yes!\pWe are running a special gift Pokémon promotion at the Pokémon Day-Care.\pSpeak to my daughter inside for more details."))
+	applymovement(1, Common_Movement_WalkUp2)
+	waitmovement(0)
+	applymovement(1, Common_Movement_FaceDown)
+	waitmovement(0)
+	setvar(VAR_ZONE_0_STATE, 1)
+	releaseall
+	end
+}
+
 script Zone0A_EventScript_Porygon {
     lockall
     fadeoutbgm(1)
@@ -45,60 +77,6 @@ Zone0A_EventScript_TryMoveDayCareMan::
 	setobjectxyperm 1, 22, 9
 Zone0A_EventScript_StopMoveDayCareMan::
 	return
-
-Zone0A_EventScript_Intro:
-	lockall
-	call EventScript_MoveCameraUp
-	applymovement 1, Common_Movement_ExclamationMark
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
-	playse SE_PIN
-	waitmovement 0
-	waitse
-	call EventScript_MoveCameraDown
-	applymovement 1, Common_Movement_WalkDown
-	waitmovement 0
-	applymovement 1, Common_Movement_WalkDown
-	waitmovement 0
-	msgbox Zone0A_Text_Intro, MSGBOX_DEFAULT
-	giveitem ITEM_WAILMER_PAIL
-	applymovement 1, Common_Movement_ExclamationMark
-	playse SE_PIN
-	waitmovement 0
-	waitse
-	msgbox Zone0A_Text_End, MSGBOX_AUTOCLOSE
-	applymovement 1, Common_Movement_WalkUp
-	waitmovement 0
-	applymovement 1, Common_Movement_WalkUp
-	waitmovement 0
-	applymovement 1, Common_Movement_FaceDown
-	waitmovement 0
-	goto_if_eq VAR_ZONE_B1_STATE, 1, Zone0A_EventScript_SetZoneB1
-	setvar VAR_ZONE_0_STATE, 1
-	releaseall
-	end
-
-Zone0A_EventScript_SetZoneB1:
-	setvar VAR_ZONE_0_STATE, 2
-	releaseall
-	end
-
-Zone0A_Text_Intro:
-	.string "Hello, {PLAYER}.\n"
-	.string "I'm the Day-Care Man.\p"
-	.string "Welcome to my home.\p"
-	.string "There are no trainers here, no\n"
-	.string "challenges to face. Everything is\l"
-	.string "meant to help you on your journey.\p"
-	.string "As a welcome gift, I'd like you to\n"
-	.string "have this.$"
-
-Zone0A_Text_End:
-	.string "Oh, yes!\p"
-	.string "We are running a special gift\n"
-	.string "Pokémon promotion at the\l"
-	.string "Pokémon Day-Care.\p"
-	.string "Speak to my daughter inside for\n"
-	.string "more details.$"
 
 Zone0A_EventScript_DaycareMan::
 	lock
@@ -216,7 +194,7 @@ Zone0A_EventScript_TPISign::
 
 Zone0A_Text_DayCareSign:
 	.string "Pokémon Day Care\n"
-	.string "8 Generations and counting!$"
+	.string "9 Generations and counting!$"
 
 Zone0A_Text_TPISign:
 	.string "Teleport Institute\n"
