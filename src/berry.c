@@ -2241,6 +2241,8 @@ bool8 ObjectEventInteractionBerryHasPests(void)
     species = GetBerryPestSpecies(gSaveBlock1Ptr->berryTrees[GetObjectEventBerryTreeId(gSelectedObjectEvent)].berry);
     if (species == SPECIES_NONE)
         return FALSE;
+    if (FlagGet(FLAG_SETTINGS_RANDOMIZER))
+        species = GetRandomSpecies(3);
     CreateScriptedWildMon(species, 3, ITEM_NONE);
     gSaveBlock1Ptr->berryTrees[GetObjectEventBerryTreeId(gSelectedObjectEvent)].pests = FALSE;
     return TRUE;
