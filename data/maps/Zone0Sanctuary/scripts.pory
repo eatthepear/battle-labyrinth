@@ -176,90 +176,63 @@ script Zone0Sanctuary_EventScript_Intro {
 
 script Zone0Sanctuary_EventScript_HandleStarterSelectionDefault {
 	hidemonpic
-	msgbox(format("Choose a starter Pokémon."), MSGBOX_DEFAULT)
+	message(format("Choose a starter Pokémon."))
 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Bulbasaur", "Charmander", "Squirtle", "Chikorita", "Cyndaquil", "Totodile", "Treecko", "Torchic", "Mudkip", "Turtwig", "Chimchar", "Piplup", "Snivy", "Tepig", "Oshawott", "Chespin", "Fennekin", "Froakie", "Rowlet", "Litten", "Popplio", "Grookey", "Scorbunny", "Sobble", "Sprigatito", "Fuecoco", "Quaxly", "Random")
 	switch (var(VAR_RESULT)) {
 		case 0:
 			setvar(VAR_TEMP_3, SPECIES_BULBASAUR)
-			setvar(VAR_STARTER_MON, 0)
 		case 1:
 			setvar(VAR_TEMP_3, SPECIES_CHARMANDER)
-			setvar(VAR_STARTER_MON, 1)
 		case 2:
 			setvar(VAR_TEMP_3, SPECIES_SQUIRTLE)
-			setvar(VAR_STARTER_MON, 2)
 		case 3:
 			setvar(VAR_TEMP_3, SPECIES_CHIKORITA)
-			setvar(VAR_STARTER_MON, 0)
 		case 4:
 			setvar(VAR_TEMP_3, SPECIES_CYNDAQUIL)
-			setvar(VAR_STARTER_MON, 1)
 		case 5:
 			setvar(VAR_TEMP_3, SPECIES_TOTODILE)
-			setvar(VAR_STARTER_MON, 2)
 		case 6:
 			setvar(VAR_TEMP_3, SPECIES_TREECKO)
-			setvar(VAR_STARTER_MON, 0)
 		case 7:
 			setvar(VAR_TEMP_3, SPECIES_TORCHIC)
-			setvar(VAR_STARTER_MON, 1)
 		case 8:
 			setvar(VAR_TEMP_3, SPECIES_MUDKIP)
-			setvar(VAR_STARTER_MON, 2)
 		case 9:
 			setvar(VAR_TEMP_3, SPECIES_TURTWIG)
-			setvar(VAR_STARTER_MON, 0)
 		case 10:
 			setvar(VAR_TEMP_3, SPECIES_CHIMCHAR)
-			setvar(VAR_STARTER_MON, 1)
 		case 11:
 			setvar(VAR_TEMP_3, SPECIES_PIPLUP)
-			setvar(VAR_STARTER_MON, 2)
 		case 12:
 			setvar(VAR_TEMP_3, SPECIES_SNIVY)
-			setvar(VAR_STARTER_MON, 0)
 		case 13:
 			setvar(VAR_TEMP_3, SPECIES_TEPIG)
-			setvar(VAR_STARTER_MON, 1)
 		case 14:
 			setvar(VAR_TEMP_3, SPECIES_OSHAWOTT)
-			setvar(VAR_STARTER_MON, 2)
 		case 15:
 			setvar(VAR_TEMP_3, SPECIES_CHESPIN)
-			setvar(VAR_STARTER_MON, 0)
 		case 16:
 			setvar(VAR_TEMP_3, SPECIES_FENNEKIN)
-			setvar(VAR_STARTER_MON, 1)
 		case 17:
 			setvar(VAR_TEMP_3, SPECIES_FROAKIE)
-			setvar(VAR_STARTER_MON, 2)
 		case 18:
 			setvar(VAR_TEMP_3, SPECIES_ROWLET)
-			setvar(VAR_STARTER_MON, 0)
 		case 19:
 			setvar(VAR_TEMP_3, SPECIES_LITTEN)
-			setvar(VAR_STARTER_MON, 1)
 		case 20:
 			setvar(VAR_TEMP_3, SPECIES_POPPLIO)
-			setvar(VAR_STARTER_MON, 2)
 		case 21:
 			setvar(VAR_TEMP_3, SPECIES_GROOKEY)
-			setvar(VAR_STARTER_MON, 0)
 		case 22:
 			setvar(VAR_TEMP_3, SPECIES_SCORBUNNY)
-			setvar(VAR_STARTER_MON, 1)
 		case 23:
 			setvar(VAR_TEMP_3, SPECIES_SOBBLE)
-			setvar(VAR_STARTER_MON, 2)
 		case 24:
 			setvar(VAR_TEMP_3, SPECIES_SPRIGATITO)
-			setvar(VAR_STARTER_MON, 0)
 		case 25:
 			setvar(VAR_TEMP_3, SPECIES_FUECOCO)
-			setvar(VAR_STARTER_MON, 1)
 		case 26:
 			setvar(VAR_TEMP_3, SPECIES_QUAXLY)
-			setvar(VAR_STARTER_MON, 2)
 		case 27:
 			setvar(VAR_TEMP_3, 0)
 	}
@@ -273,84 +246,61 @@ script Zone0Sanctuary_EventScript_HandleStarterSelectionDefault {
 		switch (var(VAR_RESULT)) {
 			case 0:
 				setvar(VAR_TEMP_3, SPECIES_BULBASAUR)
-				setvar(VAR_STARTER_MON, 0)
 			case 1:
 				setvar(VAR_TEMP_3, SPECIES_CHARMANDER)
-				setvar(VAR_STARTER_MON, 1)
 			case 2:
 				setvar(VAR_TEMP_3, SPECIES_SQUIRTLE)
-				setvar(VAR_STARTER_MON, 2)
 			case 3:
 				setvar(VAR_TEMP_3, SPECIES_CHIKORITA)
-				setvar(VAR_STARTER_MON, 0)
 			case 4:
 				setvar(VAR_TEMP_3, SPECIES_CYNDAQUIL)
-				setvar(VAR_STARTER_MON, 1)
 			case 5:
 				setvar(VAR_TEMP_3, SPECIES_TOTODILE)
-				setvar(VAR_STARTER_MON, 2)
 			case 6:
 				setvar(VAR_TEMP_3, SPECIES_TREECKO)
-				setvar(VAR_STARTER_MON, 0)
 			case 7:
 				setvar(VAR_TEMP_3, SPECIES_TORCHIC)
-				setvar(VAR_STARTER_MON, 1)
 			case 8:
 				setvar(VAR_TEMP_3, SPECIES_MUDKIP)
-				setvar(VAR_STARTER_MON, 2)
 			case 9:
 				setvar(VAR_TEMP_3, SPECIES_TURTWIG)
-				setvar(VAR_STARTER_MON, 0)
 			case 10:
 				setvar(VAR_TEMP_3, SPECIES_CHIMCHAR)
-				setvar(VAR_STARTER_MON, 1)
 			case 11:
 				setvar(VAR_TEMP_3, SPECIES_PIPLUP)
-				setvar(VAR_STARTER_MON, 2)
 			case 12:
 				setvar(VAR_TEMP_3, SPECIES_SNIVY)
-				setvar(VAR_STARTER_MON, 0)
 			case 13:
 				setvar(VAR_TEMP_3, SPECIES_TEPIG)
-				setvar(VAR_STARTER_MON, 1)
 			case 14:
 				setvar(VAR_TEMP_3, SPECIES_OSHAWOTT)
-				setvar(VAR_STARTER_MON, 2)
 			case 15:
 				setvar(VAR_TEMP_3, SPECIES_CHESPIN)
-				setvar(VAR_STARTER_MON, 0)
 			case 16:
 				setvar(VAR_TEMP_3, SPECIES_FENNEKIN)
-				setvar(VAR_STARTER_MON, 1)
 			case 17:
 				setvar(VAR_TEMP_3, SPECIES_FROAKIE)
-				setvar(VAR_STARTER_MON, 2)
 			case 18:
 				setvar(VAR_TEMP_3, SPECIES_ROWLET)
-				setvar(VAR_STARTER_MON, 0)
 			case 19:
 				setvar(VAR_TEMP_3, SPECIES_LITTEN)
-				setvar(VAR_STARTER_MON, 1)
 			case 20:
 				setvar(VAR_TEMP_3, SPECIES_POPPLIO)
-				setvar(VAR_STARTER_MON, 2)
 			case 21:
 				setvar(VAR_TEMP_3, SPECIES_GROOKEY)
-				setvar(VAR_STARTER_MON, 0)
 			case 22:
 				setvar(VAR_TEMP_3, SPECIES_SCORBUNNY)
-				setvar(VAR_STARTER_MON, 1)
 			case 23:
 				setvar(VAR_TEMP_3, SPECIES_SOBBLE)
-				setvar(VAR_STARTER_MON, 2)
 		}
 	}
 	bufferspeciesname(0, VAR_TEMP_3)
 	showmonpic(VAR_TEMP_3, 10, 3)
 	playmoncry(VAR_TEMP_3, 0)
-	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you want {STR_VAR_1}?"), MSGBOX_YESNO)
+	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: You want {STR_VAR_1}?"), MSGBOX_YESNO)
 	waitmoncry
 	if (var(VAR_RESULT) == NO) {
+		setvar(VAR_TEMP_3, 0)
 		goto(Zone0Sanctuary_EventScript_HandleStarterSelectionDefault)
 	}
 	givemon(VAR_TEMP_3, 5, ITEM_NONE)
@@ -373,7 +323,7 @@ script Zone0Sanctuary_EventScript_EndIntro {
 		msgbox(format("Excellent choice.\p""You can also re-nickname your Pokémon from the party menu."))
 		delay(16)
 		if (flag(FLAG_SETTINGS_INFINITE)) {
-			msgbox(format("Because you are playing on the infinite difficulty, here are the items you'd need.\pYou can get more by speaking to me about your difficulty setting."), MSGBOX_DEFAULT)
+			msgbox(format("Because you are playing on {COLOR RED}Infinite{COLOR DARK_GRAY} mode, here are the items you'd need.\pYou can get more by asking me about {COLOR RED}Infinite{COLOR DARK_GRAY} mode again."), MSGBOX_DEFAULT)
 			additem(ITEM_FULL_RESTORE, 100)
 			additem(ITEM_FULL_RESTORE, 100)
 			additem(ITEM_FULL_RESTORE, 100)
@@ -407,7 +357,7 @@ script Zone0Sanctuary_EventScript_EndIntro {
 		} else {
 			msgbox(format("I also have a beginner's kit with items and cash to get you started."), MSGBOX_DEFAULT)
 			giveitem(ITEM_POKE_BALL, 15)
-			giveitem(ITEM_POTION, 10)
+			giveitem(ITEM_POTION, 5)
 			playfanfare(MUS_OBTAIN_ITEM)
 			msgbox(format("Received ¥5000!"), MSGBOX_DEFAULT)
 			waitfanfare
@@ -447,7 +397,7 @@ script Zone0Sanctuary_EventScript_EndIntro {
 			additem(ITEM_MAX_REPEL, 100)
 			additem(ITEM_MAX_REPEL, 100)
 		} else {
-			additem(ITEM_POTION, 10)
+			additem(ITEM_POTION, 5)
 		}
 		additem(ITEM_POKE_BALL, 15)
 	}
@@ -464,7 +414,7 @@ script Zone0Sanctuary_EventScript_EndIntro {
 	msgbox(gText_Colress_WhenUReady)
 	applymovement(1, Common_Movement_Colress_WalkUp)
 	waitmovement(1)
-	setflag(FLAG_IS_DEBUGGING_SAVEFILE)
+	setflag(FLAG_IS_DEBUGGING_SAVEFILE) // to remove for release
 	releaseall
 	end
 }

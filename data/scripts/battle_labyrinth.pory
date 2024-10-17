@@ -808,7 +808,7 @@ script EventScript_Shop_Lelouch_Training {
 		dynmultipush("EV Training", 1)
 	}
 	dynmultipush("Exit", 2)
-	dynmultistack(0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+	dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 	switch(var(VAR_RESULT)) {
 		case 0:
 			msgbox(gText_Lelouch_Exp, MSGBOX_YESNO)
@@ -1693,7 +1693,7 @@ script EventScript_Settings {
 			dynmultipush("Workaholic", 17)
 		}
 		dynmultipush("Exit", 18)
-		dynmultistack(21, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+		dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
 				msgbox(gText_Colress_BrutalExplained, MSGBOX_DEFAULT)

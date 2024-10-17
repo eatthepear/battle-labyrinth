@@ -1561,7 +1561,7 @@ EventScript_Shop_Lelouch_Training_4:
 # 810 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Shop_Lelouch_Text_9, 2
 # 811 "data/scripts/battle_labyrinth.pory"
-	dynmultistack 0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 # 812 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
 # 813 "data/scripts/battle_labyrinth.pory"
@@ -3116,7 +3116,7 @@ EventScript_Settings_91:
 # 1695 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Shop_Lelouch_Text_9, 18
 # 1696 "data/scripts/battle_labyrinth.pory"
-	dynmultistack 21, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	dynmultistack 21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 # 1697 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
 # 1698 "data/scripts/battle_labyrinth.pory"
