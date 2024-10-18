@@ -2602,8 +2602,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
          && (gSpeciesInfo[species].isLegendary
           || gSpeciesInfo[species].isMythical
           || gSpeciesInfo[species].isUltraBeast
-          || gSpeciesInfo[species].isTotem
-          || FlagGet(FLAG_BOOSTED_IVS)))
+          || gSpeciesInfo[species].isTotem))
         {
             iv = MAX_PER_STAT_IVS - (Random() % 2);
             // Initialize a list of IV indices.

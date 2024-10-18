@@ -4377,14 +4377,14 @@ void ReverseHiddenItemFlags(void)
 
     if (FlagGet(FLAG_SETTINGS_BRUTAL) == TRUE)
     {
-        for (flag = FLAG_HIDDEN_ITEM_ZONE2A_CHERI_BERRY; flag <= FLAG_UNUSED_0x2BB; flag++)
+        for (flag = FLAG_HIDDEN_ITEM_ZONE2A_CHERI_BERRY; flag <= FLAG_HIDDEN_ITEM_END; flag++)
         {
             FlagSet(flag);
         }
     }
     else
     {
-        for (flag = FLAG_HIDDEN_ITEM_ZONE2A_CHERI_BERRY; flag <= FLAG_UNUSED_0x2BB; flag++)
+        for (flag = FLAG_HIDDEN_ITEM_ZONE2A_CHERI_BERRY; flag <= FLAG_HIDDEN_ITEM_END; flag++)
         {
             FlagClear(flag);
         }
