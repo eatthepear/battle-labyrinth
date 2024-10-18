@@ -48,6 +48,7 @@
 #include "frontier_pass.h"
 #include "start_menu.h"
 #include "money.h"
+#include "dexnav.h"
 
 /*
     Full Screen Start Menu
@@ -113,6 +114,7 @@ static void Task_StartMenuFullMain(u8 taskId);
 static u32 GetHPEggCyclePercent(u32 partyIndex);
 static void PrintMapNameAndTime(void);
 static void CursorCallback(struct Sprite *sprite);
+static bool8 StartMenuPCCallback(void);
 
 //==========CONST=DATA==========//
 static const struct BgTemplate sStartMenuBgTemplates[] =
@@ -788,7 +790,7 @@ static void CreateGreyedMenuBoxes()
         StartSpriteAnim(&gSprites[sStartMenuDataPtr->greyMenuBoxIds[0]], 0);
     }
     
-    if(VarGet(VAR_ZONE) < 26) // PC
+    if(!FlagGet(FLAG_SYS_START_MENU_PC_GET) || (FlagGet(FLAG_ZONE_PC_USED) && FlagGet(FLAG_IN_NEW_ZONE))) // PC
     {
         if (sStartMenuDataPtr->greyMenuBoxIds[1] == SPRITE_NONE)
             sStartMenuDataPtr->greyMenuBoxIds[1] = CreateSprite(&sSpriteTemplate_GreyMenuButtonParty, CURSOR_RIGHT_COL_X, CURSOR_MID_ROW_Y, 1);
@@ -1218,6 +1220,21 @@ static void PrintSaveConfirmToWindow()
     CopyWindowToVram(WINDOW_BOTTOM_BAR, COPYWIN_FULL);
 }
 
+static const u8 sText_ConfirmUsePC[] = _("Use PC? Won't have access until later.");
+static void PrintPCUseConfirmToWindow()
+{
+    const u8 *str = sText_ConfirmUsePC;
+    u8 sConfirmTextColors[] = {TEXT_COLOR_TRANSPARENT, 2, 3};
+    u8 x = 24;
+    u8 y = 0;
+    
+    FillWindowPixelBuffer(WINDOW_BOTTOM_BAR, PIXEL_FILL(5));
+    BlitBitmapToWindow(WINDOW_BOTTOM_BAR, sA_ButtonGfx, 12, 5, 8, 8);
+    AddTextPrinterParameterized4(WINDOW_BOTTOM_BAR, 1, x, y, 0, 0, sConfirmTextColors, 0xFF, str);
+    PutWindowTilemap(WINDOW_BOTTOM_BAR);
+    CopyWindowToVram(WINDOW_BOTTOM_BAR, COPYWIN_FULL);
+}
+
 
 //
 //  Print Time, Location, Day of Week and Time Indicator
@@ -1388,15 +1405,10 @@ void Task_OpenTrainerCardFromStartMenu(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
-        DmaClearLarge16(3, (void *)VRAM, VRAM_SIZE, 0x1000) // cleared vram because for some reason I was having issues with this
         StartMenuFull_FreeResources();
         PlayRainStoppingSoundEffect();
         CleanupOverworldWindowsAndTilemaps();
-
-        if (FlagGet(FLAG_SYS_FRONTIER_PASS))
-            ShowFrontierPass(CB2_ReturnToFullScreenStartMenu);
-        else
-            ShowPlayerTrainerCard(CB2_ReturnToFullScreenStartMenu);
+        EnterPokeStorage(0);
     }
 }
 
@@ -1407,7 +1419,7 @@ void Task_OpenPokenavStartMenu(u8 taskId)
         StartMenuFull_FreeResources();
 		PlayRainStoppingSoundEffect();
 		CleanupOverworldWindowsAndTilemaps();
-        SetMainCallback2(CB2_InitPokeNav);
+        CreateTask(Task_OpenDexNavFromStartMenu, 0);
     }
 }
 
@@ -1466,6 +1478,32 @@ void Task_HandleSaveConfirmation(u8 taskId)
     gTasks[taskId].sFrameToSecondTimer++;
 }
 
+void Task_HandlePCUseConfirmation(u8 taskId)
+{
+    if(JOY_NEW(A_BUTTON)) //confirm and leave
+    {
+        FlagSet(FLAG_ZONE_PC_USED);
+        PlaySE(SE_SELECT);
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        gTasks[taskId].func = Task_OpenTrainerCardFromStartMenu;
+        return;
+    }
+    if(JOY_NEW(B_BUTTON)) // back to normal Menu Control
+    {
+        PlaySE(SE_SELECT);
+        FillWindowPixelBuffer(WINDOW_BOTTOM_BAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+        PutWindowTilemap(WINDOW_BOTTOM_BAR);
+        CopyWindowToVram(WINDOW_BOTTOM_BAR, COPYWIN_FULL);
+        gTasks[taskId].func = Task_StartMenuFullMain;
+        return;
+    }
+    if(gTasks[taskId].sFrameToSecondTimer >= 60) // every 60 frames update the time
+    {
+        PrintMapNameAndTime();
+        gTasks[taskId].sFrameToSecondTimer = 0;
+    }
+    gTasks[taskId].sFrameToSecondTimer++;
+}
 
 
 //
@@ -1545,12 +1583,21 @@ static void Task_StartMenuFullMain(u8 taskId)
                 }
                 break;
             case START_MENU_CARD:
-                if(VarGet(VAR_ZONE) > 25) // PC
+                if(FlagGet(FLAG_SYS_START_MENU_PC_GET)) // PC
                 {
-                    PlaySE(SE_SELECT);
-                    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-                    gTasks[taskId].func = Task_OpenTrainerCardFromStartMenu;
-                    break;
+                    if (FlagGet(FLAG_IN_NEW_ZONE)) {
+                        if (!FlagGet(FLAG_ZONE_PC_USED)) {
+                            PrintPCUseConfirmToWindow();
+                            gTasks[taskId].func = Task_HandlePCUseConfirmation;
+                        } else {
+                            PlaySE(SE_BOO);
+                        }
+                    } else {
+                        PlaySE(SE_SELECT);
+                        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+                        gTasks[taskId].func = Task_OpenTrainerCardFromStartMenu;
+                        break;
+                    }
                 }
                 else{
                     PlaySE(SE_BOO);

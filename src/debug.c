@@ -2782,8 +2782,6 @@ static void DebugAction_FlagsVars_SwitchPokeNav(u8 taskId)
         GetSetPokedexFlag(i + 1, FLAG_SET_CAUGHT);
         GetSetPokedexFlag(i + 1, FLAG_SET_SEEN);
     }
-    Debug_DestroyMenu(taskId);
-    ScriptContext_Enable();
     // if(FlagGet(FLAG_SYS_POKENAV_GET))
     // {
     //     FlagClear(FLAG_SYS_POKENAV_GET);

@@ -243,6 +243,9 @@
 #define FLAG_SETTINGS_INDEPENDENT                   0x1DE
 #define FLAG_SETTINGS_WORKAHOLIC                    0x1DF
 
+#define FLAG_USE_PC_MACHINE                         0x1E0
+#define FLAG_ZONE_PC_USED                           0x1E1
+
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x1F4
 // Custom
@@ -1938,7 +1941,7 @@
 #define FLAG_SYS_POKEMON_GET                         (SYSTEM_FLAGS + 0x0) // FLAG_0x860
 #define FLAG_SYS_POKEDEX_GET                         (SYSTEM_FLAGS + 0x1)
 #define FLAG_SYS_POKENAV_GET                         (SYSTEM_FLAGS + 0x2)
-#define FLAG_UNUSED_0x863                            (SYSTEM_FLAGS + 0x3) // Unused Flag
+#define FLAG_SYS_START_MENU_PC_GET                   (SYSTEM_FLAGS + 0x3) // Unused Flag
 #define FLAG_SYS_GAME_CLEAR                          (SYSTEM_FLAGS + 0x4)
 #define FLAG_SYS_CHAT_USED                           (SYSTEM_FLAGS + 0x5)
 #define FLAG_UNLOCKED_TRENDY_SAYINGS                 (SYSTEM_FLAGS + 0x6)

@@ -1676,14 +1676,22 @@ static void FieldTask_ReturnToPcMenu(void)
 {
     u8 taskId;
     MainCallback vblankCb = gMain.vblankCallback;
-
-    SetVBlankCallback(NULL);
-    taskId = CreateTask(Task_PCMainMenu, 80);
-    gTasks[taskId].tState = 0;
-    gTasks[taskId].tSelectedOption = sPreviousBoxOption;
-    Task_PCMainMenu(taskId);
-    SetVBlankCallback(vblankCb);
-    FadeInFromBlack();
+    if (FlagGet(FLAG_USE_PC_MACHINE))
+	{
+        SetVBlankCallback(NULL);
+        taskId = CreateTask(Task_PCMainMenu, 80);
+        gTasks[taskId].tState = 0;
+        gTasks[taskId].tSelectedOption = sPreviousBoxOption;
+        Task_PCMainMenu(taskId);
+        SetVBlankCallback(vblankCb);
+        FadeInFromBlack();
+	}
+	else {
+		UnlockPlayerFieldControls();
+		ScriptContext_Enable();
+		SetVBlankCallback(CB2_ReturnToField);
+		FadeInFromBlack();
+	}
 }
 
 #undef tState
