@@ -1053,7 +1053,6 @@ struct SaveBlock1
                u8 dexNavChain;
                u8 gDexNavSearchLevel;
                u16 itemArg;
-               bool8 autoRun;
     // /*0x271C*/ u8 playerRoomDecorations[DECOR_MAX_PLAYERS_HOUSE];
     // /*0x2728*/ u8 playerRoomDecorationPositions[DECOR_MAX_PLAYERS_HOUSE];
     // /*0x2734*/ u8 decorationDesks[10];

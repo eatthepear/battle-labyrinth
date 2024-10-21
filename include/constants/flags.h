@@ -189,6 +189,7 @@
 #define FLAG_ZONE_PC_USED                           0xE8
 #define FLAG_USED_TERA                              0xE9
 #define FLAG_PBL_PENDING_DAYCARE_EGG                0xEA
+#define FLAG_AUTORUN_TOGGLE                         0xEB
 
 // Custom Flags Scripts
 #define FLAG_PORTENTIA_INTRO                              0x100
