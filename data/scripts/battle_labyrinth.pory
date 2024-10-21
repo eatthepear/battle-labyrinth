@@ -1567,7 +1567,7 @@ script EventScript_Documentation {
 
 text gText_Colress_BrutalExplained {
 	format("{COLOR RED}Brutal{COLOR DARK_GRAY} mode enables the following difficulty changes:\p"
-	"{COLOR RED}Challenge{COLOR DARK_GRAY},\n{COLOR RED}Gauntlet{COLOR DARK_GRAY},\l{COLOR RED}Antidoctor{COLOR DARK_GRAY},\l{COLOR RED}Clumsy{COLOR DARK_GRAY},\l{COLOR RED}Effortless{COLOR DARK_GRAY},\l{COLOR RED}Red Thumb{COLOR DARK_GRAY},\l{COLOR RED}Lazy{COLOR DARK_GRAY},\l{COLOR RED}Single-Use{COLOR DARK_GRAY},\l{COLOR RED}Poor{COLOR DARK_GRAY},\l{COLOR RED}Independent{COLOR DARK_GRAY},\land {COLOR RED}Workaholic{COLOR DARK_GRAY}.\p"
+	"{COLOR RED}Challenge{COLOR DARK_GRAY},\n{COLOR RED}Gauntlet{COLOR DARK_GRAY},\l{COLOR RED}Antidoctor{COLOR DARK_GRAY},\l{COLOR RED}Clumsy{COLOR DARK_GRAY},\l{COLOR RED}Effortless{COLOR DARK_GRAY},\l{COLOR RED}Red Thumb{COLOR DARK_GRAY},\l{COLOR RED}Lazy{COLOR DARK_GRAY},\l{COLOR RED}Single-Use{COLOR DARK_GRAY},\l{COLOR RED}Poor{COLOR DARK_GRAY},\land {COLOR RED}Independent{COLOR DARK_GRAY}.\p"
 	"{COLOR RED}Brutal{COLOR DARK_GRAY} mode can only be enabled at the beginning of the game, but can be disabled at any point.\p"
 	"It is not recommended to play on {COLOR RED}Brutal{COLOR DARK_GRAY} mode unless you are familiar with {COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY} already.")
 }
@@ -1688,12 +1688,7 @@ script EventScript_Settings {
 		} else {
 			dynmultipush("Independent", 16)
 		}
-		if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_WORKAHOLIC) == true)) {
-			dynmultipush("{COLOR RED}Workaholic", 17)
-		} else {
-			dynmultipush("Workaholic", 17)
-		}
-		dynmultipush("Exit", 18)
+		dynmultipush("Exit", 17)
 		dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
@@ -2148,31 +2143,6 @@ script EventScript_Settings {
 				}
 				// msgbox(format("Hidden items can be disabled to limit the supply of available items.\pThis is recommended to be used alongside the disabling farming setting."), MSGBOX_DEFAULT)
 			case 17:
-				msgbox(format("Retiring from a Zone allows one to return to the Sanctuary, at the cost of half of their money as well as losing all progress made thus far in the Zone.\pThe {COLOR RED}Workaholic{COLOR DARK_GRAY} setting prevents players from using this option."), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_WORKAHOLIC) || flag(FLAG_SETTINGS_BRUTAL)) {
-					msgbox(format("The {COLOR RED}Workaholic{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
-					if (flag(FLAG_SETTINGS_BRUTAL) == false) {
-						msgbox(format("Would you like to turn the {COLOR RED}Workaholic{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_OFF)
-							msgbox("{COLOR RED}Workaholic{COLOR DARK_GRAY} setting turned off.", MSGBOX_DEFAULT)
-							waitse
-							clearflag(FLAG_SETTINGS_WORKAHOLIC)
-						}
-					} else {
-						msgbox(gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT)
-					}
-				} else {
-					msgbox(format("The {COLOR RED}Workaholic{COLOR DARK_GRAY} setting is currently off."), MSGBOX_DEFAULT)
-					msgbox(format("Would you like to turn the {COLOR RED}Workaholic{COLOR DARK_GRAY} setting on?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						playse(SE_PC_ON)
-						msgbox("{COLOR RED}Workaholic{COLOR DARK_GRAY} setting turned on.", MSGBOX_DEFAULT)
-						waitse
-						setflag(FLAG_SETTINGS_WORKAHOLIC)
-					}
-				}
-			case 18:
 			case MULTI_B_PRESSED:
 				if (var(VAR_TEMP_1) == 1) {
 					return

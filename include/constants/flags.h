@@ -156,7 +156,6 @@
 #define FLAG_SETTINGS_SINGLE_USE                    0xAD
 #define FLAG_SETTINGS_POOR                          0xAE
 #define FLAG_SETTINGS_INDEPENDENT                   0xAF
-#define FLAG_SETTINGS_WORKAHOLIC                    0xB1
 
 // Debug Flags
 #define FLAG_IS_DEBUGGING_SAVEFILE                  0xB5
