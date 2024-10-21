@@ -114,7 +114,6 @@ static void Task_StartMenuFullMain(u8 taskId);
 static u32 GetHPEggCyclePercent(u32 partyIndex);
 static void PrintMapNameAndTime(void);
 static void CursorCallback(struct Sprite *sprite);
-static bool8 StartMenuPCCallback(void);
 
 //==========CONST=DATA==========//
 static const struct BgTemplate sStartMenuBgTemplates[] =

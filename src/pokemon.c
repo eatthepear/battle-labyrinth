@@ -2476,7 +2476,6 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     u8 availableIVs[NUM_STATS];
     u8 selectedIvs[LEGENDARY_PERFECT_IV_COUNT];
     bool32 isShiny;
-    u16 potentialTeraType;
 
     ZeroBoxMonData(boxMon);
 
@@ -2542,6 +2541,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     SetBoxMonData(boxMon, MON_DATA_PERSONALITY, &personality);
     SetBoxMonData(boxMon, MON_DATA_OT_ID, &value);
 
+    SetBoxMonData(boxMon, MON_DATA_IS_SHINY, &isShiny);
     StringCopy(speciesName, GetSpeciesName(species));
     SetBoxMonData(boxMon, MON_DATA_NICKNAME, speciesName);
     SetBoxMonData(boxMon, MON_DATA_LANGUAGE, &gGameLanguage);
@@ -3212,27 +3212,7 @@ void CalculateMonStats(struct Pokemon *mon)
 
 void BoxMonToMon(const struct BoxPokemon *src, struct Pokemon *dest)
 {
-    struct Pokemon *mon = dest;
-    s32 currentHP;
-    s32 hpIV;
-    s32 hpEV;
-    s32 attackIV;
-    s32 attackEV;
-    s32 defenseIV;
-    s32 defenseEV;
-    s32 speedIV;
-    s32 speedEV;
-    s32 spAttackIV;
-    s32 spAttackEV;
-    s32 spDefenseIV;
-    s32 spDefenseEV;
-    u16 species;
-    s32 level;
-    s32 newMaxHP;
-    s32 n;
-    u32 currentStatus;
     u32 value = 0;
-    // u8 pp[MAX_MON_MOVES];
     dest->box = *src;
     dest->status = GetBoxMonData(&dest->box, MON_DATA_STATUS, NULL);
     dest->hp = 0;
@@ -3799,7 +3779,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
 {
     s32 i;
     u32 retVal = 0;
-    union EvolutionTracker evoTracker;
+    // union EvolutionTracker evoTracker;
 
     // // Any field greater than MON_DATA_ENCRYPT_SEPARATOR is encrypted and must be treated as such
     // if (field > MON_DATA_ENCRYPT_SEPARATOR)

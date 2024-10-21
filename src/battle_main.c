@@ -1928,7 +1928,6 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     u8 monsCount;
     u8 trainerName[(PLAYER_NAME_LENGTH * 3) + 1];
     u16 randomizedIndices[PARTY_SIZE];
-    u16 ball;
 
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER

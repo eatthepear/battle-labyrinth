@@ -767,7 +767,6 @@ static void CreatePartyMonIcons()
     u8 i = 0;
     s16 x = ICON_BOX_1_START_X;
     s16 y = ICON_BOX_1_START_Y;
-    struct Pokemon *mon;
     LoadMonIconPalettes();
     for(i = 0; i < gPlayerPartyCount; i++)
     {   
@@ -836,8 +835,7 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     const u8 colors[3] = {0,  2,  3}; 
     u8 mapDisplayHeader[24];
     u8 *withoutPrefixPtr, *playTimePtr;
-    u16 dexCount = 0; u8 badgeCount = 0;
-    u32 i = 0;
+    u16 dexCount = 0;
     u32 money;
 
     FillWindowPixelBuffer(WINDOW_HEADER, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
