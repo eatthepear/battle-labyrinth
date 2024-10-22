@@ -13,6 +13,334 @@ mapscripts Zone1A_MapScripts {
 	}
 }
 
+script Zone1A_EventScript_GiveFWG {
+	lock
+	faceplayer
+	msgbox(format("Hello! You look like a new trainer.\pDo you know about Pokémon type matchups?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Type matchups are one of the most important parts of Pokémon battles!\pThe most basic type matchup is Grass beats Water, Water beats Fire, and Fire beats Grass.\pIt can be very important to have a diversity of types on your team."), MSGBOX_DEFAULT)
+	} else {
+		msgbox(format("Oh! Then I'm sure you could see the benefits of having a diversity of types on your team."), MSGBOX_DEFAULT)
+	}
+	msgbox(format("I'm offering trainers a Grass, Water, or Fire type Pokémon to help supplement their teams. Interested?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(Zone1A_Text_FWG_ComeBack)
+		release
+		end
+	}
+	message(format("Do you want a Grass, Water, or Fire type?"))
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Fire", "Water", "Exit")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_4, 0)
+		case 1:
+			setvar(VAR_TEMP_4, 1)
+		case 2:
+			setvar(VAR_TEMP_4, 2)
+		case 3:
+		case MULTI_B_PRESSED:
+			msgbox(Zone1A_Text_FWG_ComeBack)
+			release
+			end
+	}
+	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		msgbox(format("Your party is full. Clear a party slot, then come back."))
+		release
+		end
+	}
+	call(EventScript_NuzlockeVerifyGift)
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+		if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
+			setvar(VAR_TEMP_1, SPECIES_BULBASAUR) // gets randomized anyways
+		} else {
+			if (var(VAR_TEMP_4) == 0) {
+				setvar(VAR_TEMP_3, 0)
+				checkspeciesclause(SPECIES_PANSAGE)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_CACNEA)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_SUNKERN)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_SMOLIV)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_BOUNSWEET)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				if (var(VAR_TEMP_3) == 5) {
+					msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
+					release
+					end
+				}
+				setvar(VAR_TEMP_1, 0)
+				while (var(VAR_TEMP_1) == 0) {
+					random(5)
+					switch (var(VAR_RESULT)) {
+						case 0:
+							checkspeciesclause(SPECIES_PANSAGE)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_PANSAGE)
+						case 1:
+							checkspeciesclause(SPECIES_CACNEA)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_CACNEA)
+						case 2:
+							checkspeciesclause(SPECIES_SUNKERN)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_SUNKERN)
+						case 3:
+							checkspeciesclause(SPECIES_SMOLIV)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_SMOLIV)
+						case 4:
+							checkspeciesclause(SPECIES_BOUNSWEET)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_BOUNSWEET)
+					}
+				}
+			} elif (var(VAR_TEMP_4) == 1) {
+				setvar(VAR_TEMP_3, 0)
+				checkspeciesclause(SPECIES_PANSEAR)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_SLUGMA)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_SALANDIT)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_VULPIX)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_SIZZLIPEDE)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				if (var(VAR_TEMP_3) == 5) {
+					msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
+					release
+					end
+				}
+				setvar(VAR_TEMP_1, 0)
+				while (var(VAR_TEMP_1) == 0) {
+					random(5)
+					switch (var(VAR_RESULT)) {
+						case 0:
+							checkspeciesclause(SPECIES_PANSEAR)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_PANSEAR)
+						case 1:
+							checkspeciesclause(SPECIES_SLUGMA)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_SLUGMA)
+						case 2:
+							checkspeciesclause(SPECIES_SALANDIT)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_SALANDIT)
+						case 3:
+							checkspeciesclause(SPECIES_VULPIX)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_VULPIX)
+						case 4:
+							checkspeciesclause(SPECIES_SIZZLIPEDE)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_SIZZLIPEDE)
+					}
+				}
+			} elif (var(VAR_TEMP_4) == 2) {
+				setvar(VAR_TEMP_3, 0)
+				checkspeciesclause(SPECIES_PANPOUR)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_WIGLETT)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_FINNEON)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_SEEL)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_GOLDEEN)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				if (var(VAR_TEMP_3) == 5) {
+					msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
+					release
+					end
+				}
+				setvar(VAR_TEMP_1, 0)
+				while (var(VAR_TEMP_1) == 0) {
+					random(5)
+					switch (var(VAR_RESULT)) {
+						case 0:
+							checkspeciesclause(SPECIES_PANPOUR)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_PANPOUR)
+						case 1:
+							checkspeciesclause(SPECIES_WIGLETT)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_WIGLETT)
+						case 2:
+							checkspeciesclause(SPECIES_FINNEON)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_FINNEON)
+						case 3:
+							checkspeciesclause(SPECIES_SEEL)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_SEEL)
+						case 4:
+							checkspeciesclause(SPECIES_GOLDEEN)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_GOLDEEN)
+					}
+				}
+			}
+		}
+	} else {
+		message(format("Choose which Pokémon you would like."))
+		if (var(VAR_TEMP_4) == 0) {
+			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Pansage", "Cacnea", "Sunkern", "Smoliv", "Bounsweet", "Exit")
+			switch (var(VAR_RESULT)) {
+				case 0:
+					setvar(VAR_TEMP_1, SPECIES_PANSAGE)
+				case 1:
+					setvar(VAR_TEMP_1, SPECIES_CACNEA)
+				case 2:
+					setvar(VAR_TEMP_1, SPECIES_SUNKERN)
+				case 3:
+					setvar(VAR_TEMP_1, SPECIES_SMOLIV)
+				case 4:
+					setvar(VAR_TEMP_1, SPECIES_BOUNSWEET)
+				case 5:
+				case MULTI_B_PRESSED:
+					msgbox(Zone1A_Text_FWG_ComeBack)
+					release
+					end
+			}
+		} elif (var(VAR_TEMP_4) == 1) {
+			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Pansear", "Slugma", "Salandit", "Vulpix", "Sizzlipede", "Exit")
+			switch (var(VAR_RESULT)) {
+				case 0:
+					setvar(VAR_TEMP_1, SPECIES_PANSEAR)
+				case 1:
+					setvar(VAR_TEMP_1, SPECIES_SLUGMA)
+				case 2:
+					setvar(VAR_TEMP_1, SPECIES_SALANDIT)
+				case 3:
+					setvar(VAR_TEMP_1, SPECIES_VULPIX)
+				case 4:
+					setvar(VAR_TEMP_1, SPECIES_SIZZLIPEDE)
+				case 5:
+				case MULTI_B_PRESSED:
+					msgbox(Zone1A_Text_FWG_ComeBack)
+					release
+					end
+			}
+		} elif (var(VAR_TEMP_4) == 2) {
+			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Panpour", "Wiglett", "Finneon", "Seel", "Goldeen", "Exit")
+			switch (var(VAR_RESULT)) {
+				case 0:
+					setvar(VAR_TEMP_1, SPECIES_PANPOUR)
+				case 1:
+					setvar(VAR_TEMP_1, SPECIES_WIGLETT)
+				case 2:
+					setvar(VAR_TEMP_1, SPECIES_FINNEON)
+				case 3:
+					setvar(VAR_TEMP_1, SPECIES_SEEL)
+				case 4:
+					setvar(VAR_TEMP_1, SPECIES_GOLDEEN)
+				case 5:
+				case MULTI_B_PRESSED:
+					msgbox(Zone1A_Text_FWG_ComeBack)
+					release
+					end
+			}
+		}
+		bufferspeciesname(0, VAR_TEMP_1)
+		msgbox(format("Are you sure you want {STR_VAR_1}?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			msgbox(Zone1A_Text_FWG_ComeBack)
+			release
+			end
+		}
+	}
+	givemon(VAR_TEMP_1, 5, ITEM_NONE)
+	setmonmetlocation(VAR_TEMP_2, 245)
+	bufferspeciesname(0, VAR_TEMP_1)
+	msgbox("Here's your {STR_VAR_1}.", MSGBOX_DEFAULT)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(format("{PLAYER} received the {STR_VAR_1}!"))
+	waitmessage
+	waitfanfare
+	msgbox(format("Would you like to give a nickname to {STR_VAR_1}?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call(Common_EventScript_GetGiftMonPartySlot)
+		call(Common_EventScript_NameReceivedPartyMon)
+	}
+	faceplayer
+	msgbox(format("Good luck on the rest of your journey!"), MSGBOX_DEFAULT)
+	closemessage
+	fadescreenswapbuffers(FADE_TO_BLACK)
+	removeobject(8)
+	setflag(FLAG_RECEIVED_FWG)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+	release
+	end
+}
+
+text Zone1A_Text_FWG_ComeBack {
+	format("Come back if you change your mind!")
+}
+
 movement Zone1A_Corey_WalkLeft {
 	walk_left * 4
 }

@@ -306,7 +306,7 @@ Zone5A_EventScript_BuyPikaClone_3:
 	compare VAR_TEMP_2, PARTY_SIZE
 	goto_if_eq Zone5A_EventScript_BuyPikaClone_14
 # 180 "data/maps/Zone5A/scripts.pory"
-	call EventScript_NuzlockeVerifyGift
+	call EventScript_NuzlockeVerifyBuy
 # 181 "data/maps/Zone5A/scripts.pory"
 	removemoney 3000
 # 182 "data/maps/Zone5A/scripts.pory"

@@ -169,7 +169,7 @@ Zone11A_EventScript_BuyRuin_3:
 	compare VAR_TEMP_2, PARTY_SIZE
 	goto_if_eq Zone11A_EventScript_BuyRuin_14
 # 112 "data/maps/Zone11A/scripts.pory"
-	call EventScript_NuzlockeVerifyGift
+	call EventScript_NuzlockeVerifyBuy
 # 113 "data/maps/Zone11A/scripts.pory"
 	removemoney 4000
 # 114 "data/maps/Zone11A/scripts.pory"

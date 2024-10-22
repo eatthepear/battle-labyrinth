@@ -107,7 +107,7 @@ Zone2B_EventScript_BuyBug_3:
 	compare VAR_TEMP_2, PARTY_SIZE
 	goto_if_eq Zone2B_EventScript_BuyBug_14
 # 88 "data/maps/Zone2B/scripts.pory"
-	call EventScript_NuzlockeVerifyGift
+	call EventScript_NuzlockeVerifyBuy
 # 89 "data/maps/Zone2B/scripts.pory"
 	removemoney 1000
 # 90 "data/maps/Zone2B/scripts.pory"

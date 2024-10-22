@@ -28,7 +28,7 @@ Zone9E_EventScript_BuyFarmAnimal_3:
 	compare VAR_TEMP_2, PARTY_SIZE
 	goto_if_eq Zone9E_EventScript_BuyFarmAnimal_14
 # 30 "data/maps/Zone9E/scripts.pory"
-	call EventScript_NuzlockeVerifyGift
+	call EventScript_NuzlockeVerifyBuy
 # 31 "data/maps/Zone9E/scripts.pory"
 	removemoney 5000
 # 32 "data/maps/Zone9E/scripts.pory"

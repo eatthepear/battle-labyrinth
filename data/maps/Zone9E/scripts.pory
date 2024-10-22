@@ -27,7 +27,7 @@ script Zone9E_EventScript_BuyFarmAnimal {
 					release
 					end
 				}
-				call(EventScript_NuzlockeVerifyGift)
+				call(EventScript_NuzlockeVerifyBuy)
 				removemoney(5000)
 				updatemoneybox
 				msgbox("Thanks for supporting us farm folk.", MSGBOX_DEFAULT)

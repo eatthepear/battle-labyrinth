@@ -85,7 +85,7 @@ script Zone2B_EventScript_BuyBug {
 					release
 					end
 				}
-				call(EventScript_NuzlockeVerifyGift)
+				call(EventScript_NuzlockeVerifyBuy)
 				removemoney(1000)
 				updatemoneybox
 				msgbox("Ehehehe, thank you…")

@@ -3935,6 +3935,9 @@ static void BufferMonTrainerMemo(void)
             case METLOC_BOUGHT_RUIN:
                 text = gText_XNatureBoughtRuin;
                 break;
+            case METLOC_GIVE_FWG:
+                text = gText_XNatureFWG;
+                break;
             default:
                 text = gText_XNatureMetAtYZ;
                 break;

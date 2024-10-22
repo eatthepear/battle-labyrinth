@@ -5756,21 +5756,21 @@ Zone_EventScript_RetirePrompt_27:
 	goto Zone_EventScript_RetirePrompt_4
 
 
-EventScript_NuzlockeVerifyGift::
+EventScript_NuzlockeVerifyBuy::
 # 2759 "data/scripts/battle_labyrinth.pory"
-	goto_if_set FLAG_SETTINGS_NUZLOCKE, EventScript_NuzlockeVerifyGift_2
-EventScript_NuzlockeVerifyGift_1:
+	goto_if_set FLAG_SETTINGS_NUZLOCKE, EventScript_NuzlockeVerifyBuy_2
+EventScript_NuzlockeVerifyBuy_1:
 	return
 
-EventScript_NuzlockeVerifyGift_2:
+EventScript_NuzlockeVerifyBuy_2:
 # 2760 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_NuzlockeVerifyGift_Text_0, MSGBOX_YESNO
+	msgbox EventScript_NuzlockeVerifyBuy_Text_0, MSGBOX_YESNO
 # 2761 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, NO
-	goto_if_eq EventScript_NuzlockeVerifyGift_4
-	goto EventScript_NuzlockeVerifyGift_1
+	goto_if_eq EventScript_NuzlockeVerifyBuy_4
+	goto EventScript_NuzlockeVerifyBuy_1
 
-EventScript_NuzlockeVerifyGift_4:
+EventScript_NuzlockeVerifyBuy_4:
 # 2762 "data/scripts/battle_labyrinth.pory"
 	hidemoneybox
 # 2763 "data/scripts/battle_labyrinth.pory"
@@ -5778,230 +5778,250 @@ EventScript_NuzlockeVerifyGift_4:
 	end
 
 
-EventScript_PorygonExit::
+EventScript_NuzlockeVerifyGift::
 # 2771 "data/scripts/battle_labyrinth.pory"
-	lock
+	goto_if_set FLAG_SETTINGS_NUZLOCKE, EventScript_NuzlockeVerifyGift_2
+EventScript_NuzlockeVerifyGift_1:
+	return
+
+EventScript_NuzlockeVerifyGift_2:
 # 2772 "data/scripts/battle_labyrinth.pory"
-	faceplayer
+	msgbox EventScript_NuzlockeVerifyBuy_Text_0, MSGBOX_YESNO
 # 2773 "data/scripts/battle_labyrinth.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq EventScript_NuzlockeVerifyGift_4
+	goto EventScript_NuzlockeVerifyGift_1
+
+EventScript_NuzlockeVerifyGift_4:
+# 2774 "data/scripts/battle_labyrinth.pory"
+	release
+	end
+
+
+EventScript_PorygonExit::
+# 2782 "data/scripts/battle_labyrinth.pory"
+	lock
+# 2783 "data/scripts/battle_labyrinth.pory"
+	faceplayer
+# 2784 "data/scripts/battle_labyrinth.pory"
 	compare VAR_REVISITING_ZONE, 0
 	goto_if_ne EventScript_PorygonExit_2
 EventScript_PorygonExit_1:
-# 2776 "data/scripts/battle_labyrinth.pory"
+# 2787 "data/scripts/battle_labyrinth.pory"
 	call EventScript_MandatoryCheck
-# 2777 "data/scripts/battle_labyrinth.pory"
+# 2788 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_PorygonExit_Text_0, MSGBOX_YESNO
-# 2778 "data/scripts/battle_labyrinth.pory"
+# 2789 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_PorygonExit_5
 EventScript_PorygonExit_4:
-# 2849 "data/scripts/battle_labyrinth.pory"
+# 2860 "data/scripts/battle_labyrinth.pory"
 	release
 	end
 
 EventScript_PorygonExit_2:
-# 2774 "data/scripts/battle_labyrinth.pory"
+# 2785 "data/scripts/battle_labyrinth.pory"
 	goto EventScript_WarpZone0
 	goto EventScript_PorygonExit_1
 
 EventScript_PorygonExit_5:
-# 2779 "data/scripts/battle_labyrinth.pory"
+# 2790 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 2780 "data/scripts/battle_labyrinth.pory"
+# 2791 "data/scripts/battle_labyrinth.pory"
 	playmoncry SPECIES_PORYGON, 0
-# 2781 "data/scripts/battle_labyrinth.pory"
+# 2792 "data/scripts/battle_labyrinth.pory"
 	waitmoncry
-# 2782 "data/scripts/battle_labyrinth.pory"
-	switch VAR_ZONE
-# 2783 "data/scripts/battle_labyrinth.pory"
-	case 1, EventScript_PorygonExit_8
-# 2786 "data/scripts/battle_labyrinth.pory"
-	case 2, EventScript_PorygonExit_9
-# 2789 "data/scripts/battle_labyrinth.pory"
-	case 3, EventScript_PorygonExit_10
 # 2793 "data/scripts/battle_labyrinth.pory"
+	switch VAR_ZONE
+# 2794 "data/scripts/battle_labyrinth.pory"
+	case 1, EventScript_PorygonExit_8
+# 2797 "data/scripts/battle_labyrinth.pory"
+	case 2, EventScript_PorygonExit_9
+# 2800 "data/scripts/battle_labyrinth.pory"
+	case 3, EventScript_PorygonExit_10
+# 2804 "data/scripts/battle_labyrinth.pory"
 	case 4, EventScript_PorygonExit_11
-# 2796 "data/scripts/battle_labyrinth.pory"
+# 2807 "data/scripts/battle_labyrinth.pory"
 	case 5, EventScript_PorygonExit_12
-# 2799 "data/scripts/battle_labyrinth.pory"
+# 2810 "data/scripts/battle_labyrinth.pory"
 	case 6, EventScript_PorygonExit_13
-# 2803 "data/scripts/battle_labyrinth.pory"
+# 2814 "data/scripts/battle_labyrinth.pory"
 	case 7, EventScript_PorygonExit_14
-# 2808 "data/scripts/battle_labyrinth.pory"
+# 2819 "data/scripts/battle_labyrinth.pory"
 	case 9, EventScript_PorygonExit_15
-# 2811 "data/scripts/battle_labyrinth.pory"
+# 2822 "data/scripts/battle_labyrinth.pory"
 	case 10, EventScript_PorygonExit_16
-# 2815 "data/scripts/battle_labyrinth.pory"
-	case 11, EventScript_PorygonExit_17
-# 2818 "data/scripts/battle_labyrinth.pory"
-	case 12, EventScript_PorygonExit_18
-# 2823 "data/scripts/battle_labyrinth.pory"
-	case 13, EventScript_PorygonExit_19
 # 2826 "data/scripts/battle_labyrinth.pory"
-	case 15, EventScript_PorygonExit_20
+	case 11, EventScript_PorygonExit_17
 # 2829 "data/scripts/battle_labyrinth.pory"
-	case 16, EventScript_PorygonExit_21
-# 2832 "data/scripts/battle_labyrinth.pory"
-	case 17, EventScript_PorygonExit_22
-# 2835 "data/scripts/battle_labyrinth.pory"
-	case 18, EventScript_PorygonExit_23
-# 2839 "data/scripts/battle_labyrinth.pory"
-	case 20, EventScript_PorygonExit_24
+	case 12, EventScript_PorygonExit_18
+# 2834 "data/scripts/battle_labyrinth.pory"
+	case 13, EventScript_PorygonExit_19
+# 2837 "data/scripts/battle_labyrinth.pory"
+	case 15, EventScript_PorygonExit_20
 # 2840 "data/scripts/battle_labyrinth.pory"
-	case 21, EventScript_PorygonExit_24
-# 2841 "data/scripts/battle_labyrinth.pory"
-	case 22, EventScript_PorygonExit_24
-# 2842 "data/scripts/battle_labyrinth.pory"
-	case 23, EventScript_PorygonExit_24
+	case 16, EventScript_PorygonExit_21
 # 2843 "data/scripts/battle_labyrinth.pory"
+	case 17, EventScript_PorygonExit_22
+# 2846 "data/scripts/battle_labyrinth.pory"
+	case 18, EventScript_PorygonExit_23
+# 2850 "data/scripts/battle_labyrinth.pory"
+	case 20, EventScript_PorygonExit_24
+# 2851 "data/scripts/battle_labyrinth.pory"
+	case 21, EventScript_PorygonExit_24
+# 2852 "data/scripts/battle_labyrinth.pory"
+	case 22, EventScript_PorygonExit_24
+# 2853 "data/scripts/battle_labyrinth.pory"
+	case 23, EventScript_PorygonExit_24
+# 2854 "data/scripts/battle_labyrinth.pory"
 	case 24, EventScript_PorygonExit_24
-# 2844 "data/scripts/battle_labyrinth.pory"
+# 2855 "data/scripts/battle_labyrinth.pory"
 	case 25, EventScript_PorygonExit_24
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_8:
-# 2784 "data/scripts/battle_labyrinth.pory"
+# 2795 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE1SANCTUARY, 255, 38, 11
-# 2785 "data/scripts/battle_labyrinth.pory"
+# 2796 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_9:
-# 2787 "data/scripts/battle_labyrinth.pory"
+# 2798 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE2SANCTUARY, 255, 38, 11
-# 2788 "data/scripts/battle_labyrinth.pory"
+# 2799 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_10:
-# 2790 "data/scripts/battle_labyrinth.pory"
+# 2801 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_HIDE_ZONE3A_MAX
-# 2791 "data/scripts/battle_labyrinth.pory"
+# 2802 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE3SANCTUARY, 255, 38, 11
-# 2792 "data/scripts/battle_labyrinth.pory"
+# 2803 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_11:
-# 2794 "data/scripts/battle_labyrinth.pory"
+# 2805 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE4SANCTUARY, 255, 38, 11
-# 2795 "data/scripts/battle_labyrinth.pory"
+# 2806 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_12:
-# 2797 "data/scripts/battle_labyrinth.pory"
+# 2808 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE5SANCTUARY, 255, 38, 11
-# 2798 "data/scripts/battle_labyrinth.pory"
+# 2809 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_13:
-# 2800 "data/scripts/battle_labyrinth.pory"
+# 2811 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_HIDE_ZONE6A_MAX
-# 2801 "data/scripts/battle_labyrinth.pory"
+# 2812 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE6SANCTUARY, 255, 38, 11
-# 2802 "data/scripts/battle_labyrinth.pory"
+# 2813 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_14:
-# 2804 "data/scripts/battle_labyrinth.pory"
+# 2815 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_HIDE_ZONE7A_MAX
-# 2805 "data/scripts/battle_labyrinth.pory"
+# 2816 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_ZONE7B_HEAL_USED
-# 2806 "data/scripts/battle_labyrinth.pory"
+# 2817 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE8SANCTUARY, 255, 38, 11
-# 2807 "data/scripts/battle_labyrinth.pory"
+# 2818 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_15:
-# 2809 "data/scripts/battle_labyrinth.pory"
+# 2820 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE9SANCTUARY, 255, 38, 11
-# 2810 "data/scripts/battle_labyrinth.pory"
+# 2821 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_16:
-# 2812 "data/scripts/battle_labyrinth.pory"
+# 2823 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_HIDE_ZONE10A_MAX
-# 2813 "data/scripts/battle_labyrinth.pory"
-	warp MAP_ZONE10SANCTUARY, 255, 38, 11
-# 2814 "data/scripts/battle_labyrinth.pory"
-	waitstate
-	goto EventScript_PorygonExit_4
-
-EventScript_PorygonExit_17:
-# 2816 "data/scripts/battle_labyrinth.pory"
-	warp MAP_ZONE11SANCTUARY, 255, 38, 11
-# 2817 "data/scripts/battle_labyrinth.pory"
-	waitstate
-	goto EventScript_PorygonExit_4
-
-EventScript_PorygonExit_18:
-# 2819 "data/scripts/battle_labyrinth.pory"
-	clearflag FLAG_SYS_NO_BAG_START_MENU
-# 2820 "data/scripts/battle_labyrinth.pory"
-	setflag FLAG_HIDE_ZONE12A_NURSE
-# 2821 "data/scripts/battle_labyrinth.pory"
-	warp MAP_ZONE12SANCTUARY, 255, 38, 11
-# 2822 "data/scripts/battle_labyrinth.pory"
-	waitstate
-	goto EventScript_PorygonExit_4
-
-EventScript_PorygonExit_19:
 # 2824 "data/scripts/battle_labyrinth.pory"
-	warp MAP_ZONE14SANCTUARY, 255, 38, 11
+	warp MAP_ZONE10SANCTUARY, 255, 38, 11
 # 2825 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
-EventScript_PorygonExit_20:
+EventScript_PorygonExit_17:
 # 2827 "data/scripts/battle_labyrinth.pory"
-	warp MAP_ZONE15SANCTUARY, 255, 38, 11
+	warp MAP_ZONE11SANCTUARY, 255, 38, 11
 # 2828 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
-EventScript_PorygonExit_21:
+EventScript_PorygonExit_18:
 # 2830 "data/scripts/battle_labyrinth.pory"
-	warp MAP_ZONE16SANCTUARY, 255, 38, 11
+	clearflag FLAG_SYS_NO_BAG_START_MENU
 # 2831 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_HIDE_ZONE12A_NURSE
+# 2832 "data/scripts/battle_labyrinth.pory"
+	warp MAP_ZONE12SANCTUARY, 255, 38, 11
+# 2833 "data/scripts/battle_labyrinth.pory"
+	waitstate
+	goto EventScript_PorygonExit_4
+
+EventScript_PorygonExit_19:
+# 2835 "data/scripts/battle_labyrinth.pory"
+	warp MAP_ZONE14SANCTUARY, 255, 38, 11
+# 2836 "data/scripts/battle_labyrinth.pory"
+	waitstate
+	goto EventScript_PorygonExit_4
+
+EventScript_PorygonExit_20:
+# 2838 "data/scripts/battle_labyrinth.pory"
+	warp MAP_ZONE15SANCTUARY, 255, 38, 11
+# 2839 "data/scripts/battle_labyrinth.pory"
+	waitstate
+	goto EventScript_PorygonExit_4
+
+EventScript_PorygonExit_21:
+# 2841 "data/scripts/battle_labyrinth.pory"
+	warp MAP_ZONE16SANCTUARY, 255, 38, 11
+# 2842 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_22:
-# 2833 "data/scripts/battle_labyrinth.pory"
+# 2844 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE17SANCTUARY, 255, 38, 11
-# 2834 "data/scripts/battle_labyrinth.pory"
+# 2845 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_23:
-# 2836 "data/scripts/battle_labyrinth.pory"
+# 2847 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_HIDE_ZONE18A_MAX
-# 2837 "data/scripts/battle_labyrinth.pory"
+# 2848 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE19SANCTUARY, 255, 38, 11
-# 2838 "data/scripts/battle_labyrinth.pory"
+# 2849 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_24:
-# 2845 "data/scripts/battle_labyrinth.pory"
+# 2856 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE1SANCTUARY, 255, 38, 11
-# 2846 "data/scripts/battle_labyrinth.pory"
+# 2857 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 
-# 2853 "data/scripts/battle_labyrinth.pory"
+# 2864 "data/scripts/battle_labyrinth.pory"
 
-# 2854 "data/scripts/battle_labyrinth.pory"
+# 2865 "data/scripts/battle_labyrinth.pory"
 EventScript_ExitSign::
-# 2855 "data/scripts/battle_labyrinth.pory"
+# 2866 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_ExitSign, MSGBOX_SIGN
-# 2856 "data/scripts/battle_labyrinth.pory"
+# 2867 "data/scripts/battle_labyrinth.pory"
 	end
 
 EventScript_MedicineSign_Text_0:
@@ -7423,14 +7443,14 @@ Zone_EventScript_RetirePrompt_Text_1:
 # 2527 "data/scripts/battle_labyrinth.pory"
 	.string "Warping now…$"
 
-EventScript_NuzlockeVerifyGift_Text_0:
+EventScript_NuzlockeVerifyBuy_Text_0:
 # 2760 "data/scripts/battle_labyrinth.pory"
 	.string "On Nuzlocke mode, you will randomly\n"
 	.string "receive one of the possible Pokémon.\p"
 	.string "Is this ok?$"
 
 EventScript_PorygonExit_Text_0:
-# 2777 "data/scripts/battle_labyrinth.pory"
+# 2788 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR GREEN}Proceed to the Sanctuary?$"
 
 gText_Lelouch_NotEnoughColor::

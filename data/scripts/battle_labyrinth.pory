@@ -2755,11 +2755,22 @@ text gText_MultipleOpponentsRemaining {
 	"{COLOR RED}There are still {STR_VAR_1} opponents\nremaining in the area."
 }
 
-script EventScript_NuzlockeVerifyGift {
+script EventScript_NuzlockeVerifyBuy {
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
 		msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon.\pIs this ok?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
+			release
+			end
+		}
+	}
+	return
+}
+
+script EventScript_NuzlockeVerifyGift {
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+		msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon.\pIs this ok?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
 			release
 			end
 		}

@@ -267,6 +267,7 @@
 #define FLAG_ZONE_B1_PORYGON_4                            0x145
 #define FLAG_ZONE_B1_PORYGON_5                            0x146
 #define FLAG_RECEIVED_PORYGON                             0x147
+#define FLAG_RECEIVED_FWG                                 0x148
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x200
