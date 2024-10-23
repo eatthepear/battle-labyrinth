@@ -2217,29 +2217,29 @@ Zone0Sanctuary_EventScript_Intro_Text_9:
 
 Zone0Sanctuary_EventScript_Intro_Text_10:
 # 80 "data/maps/Zone0Sanctuary/scripts.pory"
-	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Gordon's Berries{COLOR DARK_GRAY}.\p"
-	.string "Gordon is a legendary chef who curates\n"
-	.string "a selection of Berries for Pokémon.$"
+	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Julia's Berries{COLOR DARK_GRAY}.\p"
+	.string "Julia is a legendary chef who curates a\n"
+	.string "selection of Berries for Pokémon.$"
 
 Zone0Sanctuary_EventScript_Intro_Text_11:
 # 91 "data/maps/Zone0Sanctuary/scripts.pory"
-	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Julia's TM Shop{COLOR DARK_GRAY}.\p"
-	.string "Technical machines can be bought\n"
-	.string "aplenty here.$"
+	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Marie's Egg\n"
+	.string "Delivery Service{COLOR DARK_GRAY}.\p"
+	.string "Marie helps match Pokémon eggs with\n"
+	.string "new owners.$"
 
 Zone0Sanctuary_EventScript_Intro_Text_12:
 # 102 "data/maps/Zone0Sanctuary/scripts.pory"
-	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Varrick's One Time\n"
-	.string "Wonders{COLOR DARK_GRAY}.\p"
-	.string "Many single-use items, such as\n"
-	.string "Evolutionary stones, are sold here.$"
+	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Varrick's\n"
+	.string "Extravagant Emporium{COLOR DARK_GRAY}.\p"
+	.string "A huge variety of items are sold here.$"
 
 Zone0Sanctuary_EventScript_Intro_Text_13:
 # 113 "data/maps/Zone0Sanctuary/scripts.pory"
-	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Alexander's\n"
-	.string "Battle Shop{COLOR DARK_GRAY}.\p"
-	.string "He sells items that are primarily used\n"
-	.string "for battle.$"
+	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Lelouch's\n"
+	.string "Services Shop{COLOR DARK_GRAY}.\p"
+	.string "He only sees customers who can pay his\n"
+	.string "price.$"
 
 Zone0Sanctuary_EventScript_Intro_Text_14:
 # 126 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -2252,7 +2252,9 @@ Zone0Sanctuary_EventScript_Intro_Text_14:
 	.string "challengers of the Pokémon Battle\l"
 	.string "Labyrinth who might give you advice or\l"
 	.string "otherwise help you.\p"
-	.string "You can also access {COLOR RED}Zone 0{COLOR DARK_GRAY} on the left\n"
+	.string "Note the building has a back entrance\n"
+	.string "for ease of access.\p"
+	.string "You can also access {COLOR RED}Zone 0{COLOR DARK_GRAY} on the right\n"
 	.string "inside.$"
 
 Zone0Sanctuary_EventScript_Intro_Text_15:

@@ -119,6 +119,13 @@
       "elevation": 0,
       "dest_map": "MAP_ZONE0SHOPS",
       "dest_warp_id": "12"
+    },
+    {
+      "x": 38,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE0SHOPS",
+      "dest_warp_id": "14"
     }
   ],
   "coord_events": [
@@ -147,7 +154,7 @@
       "y": 29,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "EventScript_ConsumablesSign"
+      "script": "EventScript_ItemsSign"
     },
     {
       "type": "sign",
@@ -163,7 +170,7 @@
       "y": 39,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "EventScript_BattleItemsSign"
+      "script": "EventScript_ServicesSign"
     },
     {
       "type": "sign",
@@ -171,7 +178,7 @@
       "y": 39,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "EventScript_TMsSign"
+      "script": "EventScript_EggsSign"
     },
     {
       "type": "sign",

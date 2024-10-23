@@ -4424,7 +4424,7 @@
     {
       "id": "LAYOUT_SHOPS",
       "name": "Shops_Layout",
-      "width": 50,
+      "width": 51,
       "height": 38,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonCenter",
