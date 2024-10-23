@@ -247,7 +247,7 @@
             ]
           },
           "headbutt_mons": {
-            "encounter_rate": 10,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 4,
@@ -529,7 +529,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 7,
@@ -1039,7 +1039,7 @@
             ]
           },
           "headbutt_mons": {
-            "encounter_rate": 10,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 8,
@@ -1287,7 +1287,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 13,
@@ -1421,7 +1421,7 @@
             ]
           },
           "headbutt_mons": {
-            "encounter_rate": 10,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 15,
@@ -2293,7 +2293,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 22,
@@ -2427,7 +2427,7 @@
             ]
           },
           "headbutt_mons": {
-            "encounter_rate": 10,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 24,
@@ -2709,7 +2709,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 25,
@@ -2877,7 +2877,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 28,
@@ -3075,7 +3075,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 31,
@@ -3431,7 +3431,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 36,
@@ -3629,7 +3629,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 40,

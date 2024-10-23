@@ -490,14 +490,12 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
         break;
     }
 
-    DebugPrintf("wildMonIndex is %d", wildMonIndex);
     level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, area);
     if (flags & WILD_CHECK_REPEL && !IsWildLevelAllowedByRepel(level))
         return FALSE;
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
         return FALSE;
 
-    DebugPrintf("Making wild mon");
     CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
     return TRUE;
 }
@@ -543,12 +541,10 @@ static bool8 EncounterOddsCheck(u16 encounterRate)
 {
     if (Random() % MAX_ENCOUNTER_RATE < encounterRate)
     {
-        DebugPrintf("succeeded encounter odds check");
         return TRUE;
     }
     else
     {
-        DebugPrintf("failed encounter odds check");
         return FALSE;
     }
 }
@@ -590,7 +586,6 @@ static bool8 WildEncounterCheck(u32 encounterRate, bool8 ignoreAbility)
     }
     if (encounterRate > MAX_ENCOUNTER_RATE)
         encounterRate = MAX_ENCOUNTER_RATE;
-    DebugPrintf("encounter rate 2 = %d.", encounterRate);
     return EncounterOddsCheck(encounterRate);
 }
 
@@ -1155,7 +1150,6 @@ void HeadbuttWildEncounter(void)
     if (headerId != HEADER_NONE)
     {
         const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].headbuttMonsInfo;
-        DebugPrintf("encounter rate = %d.", wildPokemonInfo->encounterRate);
 
         if (wildPokemonInfo == NULL)
         {
@@ -1164,7 +1158,6 @@ void HeadbuttWildEncounter(void)
         else if (WildEncounterCheck(wildPokemonInfo->encounterRate, 1) == TRUE
          && TryGenerateWildMon(wildPokemonInfo, WILD_AREA_HEADBUTT, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
         {
-            DebugPrintf("starting wild battle");
             BattleSetup_StartWildBattle();
             gSpecialVar_Result = TRUE;
         }
