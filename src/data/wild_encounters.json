@@ -93,7 +93,7 @@
           "map": "MAP_ZONE0A",
           "base_label": "gZone0A",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 3,
@@ -187,7 +187,7 @@
           "map": "MAP_ZONE1A",
           "base_label": "gZone1",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 4,
@@ -247,7 +247,7 @@
             ]
           },
           "headbutt_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 4,
@@ -311,7 +311,7 @@
           "map": "MAP_ZONE2A",
           "base_label": "gZone2A",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 5,
@@ -375,7 +375,7 @@
           "map": "MAP_ZONE2B",
           "base_label": "gZone2B",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 5,
@@ -439,7 +439,7 @@
           "map": "MAP_ZONE3A",
           "base_label": "gZone3A",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 7,
@@ -499,7 +499,7 @@
             ]
           },
           "water_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 7,
@@ -529,7 +529,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 30,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 7,
@@ -569,7 +569,7 @@
             ]
           },
           "hidden_mons": {
-            "encounter_rate": 1,
+            "encounter_rate": 0,
             "mons": [
               {
                 "min_level": 7,
@@ -603,7 +603,7 @@
           "map": "MAP_ZONE4A",
           "base_label": "gZone4A",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 9,
@@ -697,7 +697,7 @@
           "map": "MAP_ZONE4B",
           "base_label": "gZone4B",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 9,
@@ -791,7 +791,7 @@
           "map": "MAP_ZONE4C",
           "base_label": "gZone4C",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 9,
@@ -885,7 +885,7 @@
           "map": "MAP_ZONE4D",
           "base_label": "gZone4D",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 9,
@@ -979,7 +979,7 @@
           "map": "MAP_ZONE4E",
           "base_label": "gZone4E",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 9,
@@ -1039,7 +1039,7 @@
             ]
           },
           "headbutt_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 8,
@@ -1103,7 +1103,7 @@
           "map": "MAP_ZONE5A",
           "base_label": "gZone5A",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 11,
@@ -1197,7 +1197,7 @@
           "map": "MAP_ZONE6A",
           "base_label": "gZone6A",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 13,
@@ -1257,7 +1257,7 @@
             ]
           },
           "water_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 13,
@@ -1287,7 +1287,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 30,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 13,
@@ -1327,7 +1327,7 @@
             ]
           },
           "hidden_mons": {
-            "encounter_rate": 1,
+            "encounter_rate": 0,
             "mons": [
               {
                 "min_level": 13,
@@ -1361,7 +1361,7 @@
           "map": "MAP_ZONE7A",
           "base_label": "gZone7A",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 15,
@@ -1421,7 +1421,7 @@
             ]
           },
           "headbutt_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 15,
@@ -1485,7 +1485,7 @@
           "map": "MAP_ZONE8A",
           "base_label": "gZone8A",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 16,
@@ -1545,7 +1545,7 @@
             ]
           },
           "rock_smash_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 16,
@@ -1609,7 +1609,7 @@
           "map": "MAP_ZONE8B",
           "base_label": "gZone8B",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 16,
@@ -1669,7 +1669,7 @@
             ]
           },
           "rock_smash_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 16,
@@ -1733,7 +1733,7 @@
           "map": "MAP_ZONE8C",
           "base_label": "gZone8C",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 16,
@@ -1793,7 +1793,7 @@
             ]
           },
           "rock_smash_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 16,
@@ -1857,7 +1857,7 @@
           "map": "MAP_ZONE9A",
           "base_label": "gZone9AThickGrass",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 18,
@@ -1951,7 +1951,7 @@
           "map": "MAP_ZONE9A",
           "base_label": "gZone9ANormalGrass",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 18,
@@ -2045,7 +2045,7 @@
           "map": "MAP_ZONE10A",
           "base_label": "gZone10A",
           "land_mons": {
-            "encounter_rate": 10,
+            "encounter_rate": 5,
             "mons": [
               {
                 "min_level": 19,
@@ -2109,7 +2109,7 @@
           "map": "MAP_ZONE11A",
           "base_label": "gZone11A",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 21,
@@ -2203,7 +2203,7 @@
           "map": "MAP_ZONE12A",
           "base_label": "gZone12A",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 22,
@@ -2263,7 +2263,7 @@
             ]
           },
           "water_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 22,
@@ -2293,7 +2293,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 30,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 22,
@@ -2367,7 +2367,7 @@
           "map": "MAP_ZONE13A",
           "base_label": "gZone13A",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 24,
@@ -2427,7 +2427,7 @@
             ]
           },
           "headbutt_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 24,
@@ -2491,7 +2491,7 @@
           "map": "MAP_ZONE14A",
           "base_label": "gZone14A",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 25,
@@ -2555,7 +2555,7 @@
           "map": "MAP_ZONE14B",
           "base_label": "gZone14B",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 25,
@@ -2619,7 +2619,7 @@
           "map": "MAP_ZONE14C",
           "base_label": "gZone14C",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 25,
@@ -2679,7 +2679,7 @@
             ]
           },
           "water_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 25,
@@ -2709,7 +2709,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 30,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 25,
@@ -2753,7 +2753,7 @@
           "map": "MAP_ZONE15A",
           "base_label": "gZone15A",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 27,
@@ -2847,7 +2847,7 @@
           "map": "MAP_ZONE16A",
           "base_label": "gZone16A",
           "water_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 28,
@@ -2877,7 +2877,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 30,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 28,
@@ -2921,7 +2921,7 @@
           "map": "MAP_ZONE17A",
           "base_label": "gZone17A",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 30,
@@ -2985,7 +2985,7 @@
           "map": "MAP_ZONE18A",
           "base_label": "gZone18A",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 31,
@@ -3045,7 +3045,7 @@
             ]
           },
           "water_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 31,
@@ -3075,7 +3075,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 30,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 31,
@@ -3119,7 +3119,7 @@
           "map": "MAP_ZONE19A",
           "base_label": "gZone19A",
           "water_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 33,
@@ -3149,7 +3149,7 @@
             ]
           },
           "hidden_mons": {
-            "encounter_rate": 1,
+            "encounter_rate": 0,
             "mons": [
               {
                 "min_level": 33,
@@ -3183,7 +3183,7 @@
           "map": "MAP_ZONE19B",
           "base_label": "gZone19B",
           "water_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 33,
@@ -3213,7 +3213,7 @@
             ]
           },
           "hidden_mons": {
-            "encounter_rate": 1,
+            "encounter_rate": 0,
             "mons": [
               {
                 "min_level": 33,
@@ -3247,7 +3247,7 @@
           "map": "MAP_ZONE20A",
           "base_label": "gZone20A",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 35,
@@ -3341,7 +3341,7 @@
           "map": "MAP_ZONE21A",
           "base_label": "gZone21A",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 36,
@@ -3401,7 +3401,7 @@
             ]
           },
           "water_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 36,
@@ -3431,7 +3431,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 30,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 36,
@@ -3475,7 +3475,7 @@
           "map": "MAP_ZONE22A",
           "base_label": "gZone22A",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 38,
@@ -3539,7 +3539,7 @@
           "map": "MAP_ZONE23A",
           "base_label": "gZone23A",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 40,
@@ -3599,7 +3599,7 @@
             ]
           },
           "water_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 40,
@@ -3629,7 +3629,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 30,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 40,
@@ -3669,7 +3669,7 @@
             ]
           },
           "hidden_mons": {
-            "encounter_rate": 1,
+            "encounter_rate": 0,
             "mons": [
               {
                 "min_level": 40,
@@ -3703,7 +3703,7 @@
           "map": "MAP_ZONE24A",
           "base_label": "gZone24A",
           "land_mons": {
-            "encounter_rate": 10,
+            "encounter_rate": 5,
             "mons": [
               {
                 "min_level": 42,
@@ -3797,7 +3797,7 @@
           "map": "MAP_ZONE25A",
           "base_label": "gZone25A",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 43,
@@ -3891,7 +3891,7 @@
           "map": "MAP_ZONE25B",
           "base_label": "gZone25B",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 43,
@@ -3985,7 +3985,7 @@
           "map": "MAP_ZONE25C",
           "base_label": "gZone25C",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 43,
@@ -4079,7 +4079,7 @@
           "map": "MAP_ZONE25D",
           "base_label": "gZone25D",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 43,
@@ -4173,7 +4173,7 @@
           "map": "MAP_ZONE25E",
           "base_label": "gZone25E",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 43,
@@ -4267,7 +4267,7 @@
           "map": "MAP_ZONE25F",
           "base_label": "gZone25F",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 43,
@@ -4361,7 +4361,7 @@
           "map": "MAP_ZONE25G",
           "base_label": "gZone25G",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 43,
@@ -4455,7 +4455,7 @@
           "map": "MAP_ZONE25H",
           "base_label": "gZone25H",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 43,
@@ -4549,7 +4549,7 @@
           "map": "MAP_ZONE25I",
           "base_label": "gZone25I",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 43,
@@ -4643,7 +4643,7 @@
           "map": "MAP_ZONE25J",
           "base_label": "gZone25J",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 43,
@@ -4737,7 +4737,7 @@
           "map": "MAP_ZONE25K",
           "base_label": "gZone25K",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 43,
@@ -4831,7 +4831,7 @@
           "map": "MAP_ZONE_B1",
           "base_label": "gZoneB1",
           "land_mons": {
-            "encounter_rate": 5,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 40,
@@ -4895,7 +4895,7 @@
           "map": "MAP_ZONE26A",
           "base_label": "gZone26A",
           "land_mons": {
-            "encounter_rate": 5,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 40,
@@ -4964,7 +4964,7 @@
         {
           "base_label": "gBattlePyramid_1",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "max_level": 5,
@@ -5032,7 +5032,7 @@
         {
           "base_label": "gBattlePyramid_2",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "max_level": 5,
@@ -5100,7 +5100,7 @@
         {
           "base_label": "gBattlePyramid_3",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "max_level": 5,
@@ -5168,7 +5168,7 @@
         {
           "base_label": "gBattlePyramid_4",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "max_level": 5,
@@ -5236,7 +5236,7 @@
         {
           "base_label": "gBattlePyramid_5",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "max_level": 5,
@@ -5304,7 +5304,7 @@
         {
           "base_label": "gBattlePyramid_6",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "max_level": 5,
@@ -5372,7 +5372,7 @@
         {
           "base_label": "gBattlePyramid_7",
           "land_mons": {
-            "encounter_rate": 8,
+            "encounter_rate": 2,
             "mons": [
               {
                 "max_level": 5,
