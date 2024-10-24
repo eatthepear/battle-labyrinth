@@ -1998,26 +1998,9 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                     status = STATUS1_FROSTBITE;
                 SetMonData(&party[i], MON_DATA_STATUS, &status);
             }
+            SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[k].heldItem);
 
-            if (partyData[k].ability > 0)
-                ability = partyData[k].ability;
-            else
-                ability = 0;
-            SetMonData(&party[i], MON_DATA_ABILITY_NUM, &ability);
-
-            if (partyData[k].heldItem > 0)
-                SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[k].heldItem);
-
-            if (partyData[k].moves[0] != '\0')
-            {
-                for (j = 0; j < MAX_MON_MOVES; j++)
-                {
-                    SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[k].moves[j]);
-                    SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[k].moves[j]);
-                    SetMonData(&party[i], MON_DATA_PP1 + j, &gMovesInfo[partyData[k].moves[j]].pp);
-                    SetMonData(&party[i], MON_DATA_PP1 + j, &gMovesInfo[partyData[k].moves[j]].pp);
-                }
-            }
+            CustomTrainerPartyAssignMoves(&party[i], &partyData[k]);
 
             if (partyData[k].ivs[0] > 0)
             {
@@ -2028,6 +2011,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 SetMonData(&party[i], MON_DATA_SPDEF_IV, &(partyData[k].ivs[4]));
                 SetMonData(&party[i], MON_DATA_SPEED_IV, &(partyData[k].ivs[5]));
             }
+
             if (partyData[k].evs[0] > 0)
             {
                 SetMonData(&party[i], MON_DATA_HP_EV, &(partyData[k].evs[0]));
@@ -2038,7 +2022,25 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 SetMonData(&party[i], MON_DATA_SPEED_EV, &(partyData[k].evs[5]));
             }
 
-            if (partyData[k].ball != ITEM_NONE)
+            if (partyData[k].ability != ABILITY_NONE)
+            {
+                const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[partyData[k].species];
+                u32 maxAbilities = ARRAY_COUNT(speciesInfo->abilities);
+                for (ability = 0; ability < maxAbilities; ++ability)
+                {
+                    if (speciesInfo->abilities[ability] == partyData[k].ability)
+                        break;
+                }
+                if (ability >= maxAbilities)
+                    ability = 0;
+            }
+            SetMonData(&party[i], MON_DATA_ABILITY_NUM, &ability);
+
+            if (partyData[k].heldItem > 0)
+                SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[k].heldItem);
+
+
+            if (partyData[i].ball != ITEM_NONE)
             {
                 ball = partyData[k].ball;
                 SetMonData(&party[i], MON_DATA_POKEBALL, &ball);
