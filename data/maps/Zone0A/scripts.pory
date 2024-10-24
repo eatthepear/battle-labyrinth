@@ -1,77 +1,193 @@
+mapscripts Zone0A_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ZONE_0_STATE, 0: Zone0A_EventScript_Intro
+		VAR_ZONE_0_STATE, 2: Zone0A_EventScript_MoveDown
+	]
+    MAP_SCRIPT_ON_TRANSITION {
+		call(Zone0A_EventScript_TryMoveDayCareMan)
+		call(Zone0A_EventScript_TryMoveBerryGirl)
+    }
+}
+
+script Zone0A_EventScript_TryMoveBerryGirl {
+	if (var(VAR_ZONE_0_STATE) == 0) {
+		setobjectxyperm(14, 40, 9)
+	}
+}
+
 script Zone0A_EventScript_Intro {
 	lockall
-	call(EventScript_MoveCameraUp)
-	applymovement(1, Common_Movement_ExclamationMark)
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	applymovement(14, Common_Movement_FaceLeft)
+	waitmovement(0)
+	applymovement(14, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	call(EventScript_MoveCameraDown)
-	applymovement(1, Common_Movement_WalkDown2)
+	applymovement(14, Common_Movement_WalkLeft2)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
-	msgbox(format("Hello, {PLAYER}.\nI'm the Day-Care Man.\pWelcome to my home.\pThere are no trainers here, and no challenges to face. Everything is meant to help you on your journey.\pAs a welcome gift, I'd like you to have this."), MSGBOX_DEFAULT)
+	msgbox(format("Hello, {PLAYER}.\pWelcome to my home.\pThere are no trainers here, and no challenges to face. Everything is meant to help you on your journey.\pAs a welcome gift, I'd like you to have this."), MSGBOX_DEFAULT)
 	giveitem(ITEM_WAILMER_PAIL)
 	if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_RED_THUMB)) {
-		msgbox(format("I've been trying to farm some Berries in the Berry fields here.\pThe soil is getting too hard to farm any more though, plus with the wild Pokémon that eat the Berries, it's impossible to grow more.\pFeel free to pick any Berries I may have left."))
+		msgbox(format("I'm the caretaker of the berry fields here.\pThe soil is getting too hard to farm any more though, plus with the wild Pokémon that eat the Berries, it's impossible to grow more.\pFeel free to pick any Berries I may have left."))
 	} else {
-		msgbox(format("I've been trying to farm some Berries in the Berry fields here.\pYou should give it a try, though beware wild Pokémon that might be nibbling on your Berries.\pFeel free to pick any Berries I might have missed."))
+		msgbox(format("I'm the caretaker of the berry fields here.\pYou should try growing some berries yourself, though beware wild Pokémon that might be nibbling on your Berries.\pFeel free to pick any Berries I may have left."))
 	}
-	applymovement(1, Common_Movement_ExclamationMark)
+	applymovement(14, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	msgbox(format("Oh, yes!\pWe are running a special gift Pokémon promotion at the Pokémon Day-Care.\pSpeak to my daughter inside for more details."))
-	applymovement(1, Common_Movement_WalkUp2)
+	msgbox(format("Oh, right! I just remembered something.\pI've heard the Pokémon Day-Care nearby is having a special gift Pokémon promotion.\pIt might be worth a look."))
+	applymovement(14, Common_Movement_WalkRight6)
 	waitmovement(0)
-	applymovement(1, Common_Movement_FaceDown)
+	applymovement(14, Common_Movement_WalkRight)
+	waitmovement(0)
+	setobjectxyperm(14, 53, 7)
+	setobjectxy(14, 53, 7)
+	setvar(VAR_ZONE_0_STATE, 1)
+	releaseall
+	end
+}
+
+script Zone0A_EventScript_BerryGirl {
+	lock
+	faceplayer
+	msgbox(format("Hello, {PLAYER}.\pHope you are doing well."))
+	release
+	end
+}
+
+script Zone0A_EventScript_MoveDown {
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
 	waitmovement(0)
 	setvar(VAR_ZONE_0_STATE, 1)
 	releaseall
 	end
 }
 
-script Zone0A_EventScript_Porygon {
-    lockall
-    fadeoutbgm(1)
-	delay(64)
-	message("Beeeouuuuuu zeedeeboo!")
-    playmoncry(SPECIES_PORYGON, 2)
-	delay(40)
-	waitmoncry
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-	playse(SE_PIN)
-	waitmovement(0)
-	waitse
-	closemessage
-	delay(40)
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
-	waitmovement(0)
-	delay(40)
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
-	waitmovement(0)
-	delay(40)
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
-	waitmovement(0)
-    msgbox(format("There seemed to be a Pokémon's cry, but it's gone now."))
-    setvar(VAR_ZONE_0_STATE, 2)
-    fadeinbgm(1)
-    releaseall
+script Zone0A_EventScript_Exit {
+	lockall
+	message(format("Where do you want to go to?"))
+	waitmessage
+	dynmultipush("Sanctuary", 0)
+	if (var(VAR_ZONE) > 1) {
+		dynmultipush("Zone 1", 1)
+	}
+	dynmultipush("Exit", 51)
+	dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			closemessage
+			setvar(VAR_ZONE_0_STATE, 2)
+			switch (var(VAR_ZONE)) {
+				case 1:
+					warpdoor(MAP_ZONE0SHOPS, 255, 46, 1)
+					waitstate
+				case 2:
+					warpdoor(MAP_ZONE1SHOPS, 255, 46, 1)
+					waitstate
+				case 3:
+					warp(MAP_ZONE2SHOPS, 255, 46, 1)
+					waitstate
+				case 4:
+					warp(MAP_ZONE3SHOPS, 255, 46, 1)
+					waitstate
+				case 5:
+					warp(MAP_ZONE4SHOPS, 255, 46, 1)
+					waitstate
+				case 6:
+					warp(MAP_ZONE5SHOPS, 255, 46, 1)
+					waitstate
+				case 7:
+					warp(MAP_ZONE6SHOPS, 255, 46, 1)
+					waitstate
+				case 9:
+					warp(MAP_ZONE8SHOPS, 255, 46, 1)
+					waitstate
+				case 10:
+					warp(MAP_ZONE9SHOPS, 255, 46, 1)
+					waitstate
+				case 11:
+					warp(MAP_ZONE10SHOPS, 255, 46, 1)
+					waitstate
+				case 12:
+					warp(MAP_ZONE11SHOPS, 255, 46, 1)
+					waitstate
+				case 13:
+					warp(MAP_ZONE12SHOPS, 255, 46, 1)
+					waitstate
+				case 15:
+					warp(MAP_ZONE14SHOPS, 255, 46, 1)
+					waitstate
+				case 16:
+					warp(MAP_ZONE15SHOPS, 255, 46, 1)
+					waitstate
+				case 17:
+					warp(MAP_ZONE16SHOPS, 255, 46, 1)
+					waitstate
+				case 18:
+					warp(MAP_ZONE17SHOPS, 255, 46, 1)
+					waitstate
+				case 20:
+					warp(MAP_ZONE20SHOPS, 255, 46, 1)
+					waitstate
+				case 21:
+					warp(MAP_ZONE20SHOPS, 255, 46, 1)
+					waitstate
+				case 22:
+					warp(MAP_ZONE21SHOPS, 255, 46, 1)
+					waitstate
+				case 23:
+					warp(MAP_ZONE22SHOPS, 255, 46, 1)
+					waitstate
+				case 24:
+					warp(MAP_ZONE23SHOPS, 255, 46, 1)
+					waitstate
+				case 26:
+					warp(MAP_ZONE25SHOPS, 255, 46, 1)
+					waitstate
+			}
+		case 51:
+		case MULTI_B_PRESSED:
+			closemessage
+			applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+			waitmovement(0)
+	}
+	releaseall
+	end
 }
 
+// script Zone0A_EventScript_Porygon {
+//     lockall
+//     fadeoutbgm(1)
+// 	delay(64)
+// 	message("Beeeouuuuuu zeedeeboo!")
+//     playmoncry(SPECIES_PORYGON, 2)
+// 	delay(40)
+// 	waitmoncry
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+// 	playse(SE_PIN)
+// 	waitmovement(0)
+// 	waitse
+// 	closemessage
+// 	delay(40)
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+// 	waitmovement(0)
+// 	delay(40)
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+// 	waitmovement(0)
+// 	delay(40)
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+// 	waitmovement(0)
+//     msgbox(format("There seemed to be a Pokémon's cry, but it's gone now."))
+//     setvar(VAR_ZONE_0_STATE, 2)
+//     fadeinbgm(1)
+//     releaseall
+// }
+
 raw `
-Zone0A_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, Zone0A_OnFrame
-	map_script MAP_SCRIPT_ON_TRANSITION, Zone0A_OnTransition
-	.byte 0
-
-Zone0A_OnFrame:
-	map_script_2 VAR_ZONE_0_STATE, 0, Zone0A_EventScript_Intro
-	.2byte 0
-
-Zone0A_OnTransition: @ 81F3983
-	call Zone0A_EventScript_TryMoveDayCareMan
-	end
-
 Zone0A_EventScript_TryMoveDayCareMan::
 	goto_if_unset FLAG_PBL_PENDING_DAYCARE_EGG, Zone0A_EventScript_StopMoveDayCareMan
 	setobjectxyperm 1, 22, 9

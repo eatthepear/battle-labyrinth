@@ -94,13 +94,6 @@ Common_Movement_FollowerSafeEnd::
 	step_end
 `
 
-movement Common_Movement_WalkUp6 {
-	walk_up * 6
-}
-
-movement Common_Movement_WalkUp4 {
-	walk_up * 4
-}
 
 movement Common_Movement_Delay32 {
 	delay_16 * 2
@@ -114,12 +107,76 @@ movement Common_Movement_WalkDown2 {
 	walk_down * 2
 }
 
+movement Common_Movement_WalkLeft2 {
+	walk_left * 2
+}
+
+movement Common_Movement_WalkRight2 {
+	walk_right * 2
+}
+
 movement Common_Movement_WalkUp3 {
 	walk_up * 3
 }
 
 movement Common_Movement_WalkDown3 {
 	walk_down * 3
+}
+
+movement Common_Movement_WalkLeft3 {
+	walk_left * 3
+}
+
+movement Common_Movement_WalkRight3 {
+	walk_right * 3
+}
+
+movement Common_Movement_WalkUp4 {
+	walk_up * 4
+}
+
+movement Common_Movement_WalkDown4 {
+	walk_down * 4
+}
+
+movement Common_Movement_WalkLeft4 {
+	walk_left * 4
+}
+
+movement Common_Movement_WalkRight4 {
+	walk_right * 4
+}
+
+movement Common_Movement_WalkUp5 {
+	walk_up * 5
+}
+
+movement Common_Movement_WalkDown5 {
+	walk_down * 5
+}
+
+movement Common_Movement_WalkLeft5 {
+	walk_left * 5
+}
+
+movement Common_Movement_WalkRight5 {
+	walk_right * 5
+}
+
+movement Common_Movement_WalkUp6 {
+	walk_up * 6
+}
+
+movement Common_Movement_WalkDown6 {
+	walk_down * 6
+}
+
+movement Common_Movement_WalkLeft6 {
+	walk_left * 6
+}
+
+movement Common_Movement_WalkRight6 {
+	walk_right * 6
 }
 
 movement Common_Movement_Colress_WalkDown {
