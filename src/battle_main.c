@@ -1948,7 +1948,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             monsCount = trainer->partySize;
         }
 
-        if (trainer->shouldShuffle == TRUE)
+        if (trainer->randomLead == TRUE)
         {
             for (i = 0; i < monsCount; i++)
             {
@@ -1965,7 +1965,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u8 ability = 0;
             u8 gender = 0;
 
-            if (trainer->shouldShuffle == TRUE)
+            if (trainer->randomLead == TRUE)
                 k = randomizedIndices[i];
             else
                 k = i;
@@ -1977,8 +1977,6 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                     gender = MON_MALE;
                 else if (partyData[k].gender == TRAINER_MON_FEMALE)
                     gender = MON_FEMALE;
-                else if (partyData[k].gender == TRAINER_MON_GENDERLESS)
-                    gender = MON_GENDERLESS;
             }
 
             if (partyData[k].nature > 0)

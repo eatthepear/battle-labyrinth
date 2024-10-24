@@ -3260,7 +3260,7 @@ static const u8 *BattleStringGetOpponentClassByTrainerId(u16 trainerId)
         toCpy = gTrainerClasses[TRAINER_CLASS_MIRAGE].name;
     else if (gTrainers[trainerId].trainerPic == TRAINER_PIC_DOME_ACE_TUCKER)
         toCpy = gTrainerClasses[TRAINER_CLASS_MIRAGE].name;
-    else if (gTrainers[trainerId].hasCustomTransition == TRUE)
+    else if (gTrainers[trainerId].mugshotEnabled == TRUE)
         toCpy = gTrainerClasses[TRAINER_CLASS_LEADER].name;
     else
         toCpy = gTrainerClasses[GetTrainerClassFromId(trainerId)].name;

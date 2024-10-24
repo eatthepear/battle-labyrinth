@@ -3014,8 +3014,6 @@ static void FillPartnerParty(u16 trainerId)
                     gender = MON_MALE;
                 else if (partyData[i].gender == TRAINER_MON_FEMALE)
                     gender = MON_FEMALE;
-                else if (partyData[i].gender == TRAINER_MON_GENDERLESS)
-                    gender = MON_GENDERLESS;
             }
 
             if (partyData[i].nature > 0)

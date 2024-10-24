@@ -6823,7 +6823,7 @@ u16 GetBattleBGM(void)
             if (FlagGet(FLAG_FORCE_BATTLE_ANIM_ON)) {
                 return MUS_VS_RIVAL;
             }
-            if (gTrainers[gTrainerBattleOpponent_A].hasCustomTransition == TRUE) {
+            if (gTrainers[gTrainerBattleOpponent_A].mugshotEnabled == TRUE) {
                 switch (VarGet(VAR_LEVIATHAN_MUSIC))
                 {
                 case 1:

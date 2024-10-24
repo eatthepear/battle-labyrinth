@@ -61,15 +61,16 @@ struct TrainerMon
     u16 moves[4];
     u16 species;
     u16 heldItem;
-    u16 ability:2;
+    u16 ability;
     u8 lvl;
     u8 ball;
     u8 nature:5;
-    bool8 gender:3;
+    bool8 gender:2;
+    bool8 isShiny:1;
     u8 teraType:5;
     bool8 gigantamaxFactor:1;
     u8 shouldUseDynamax:1;
-    bool8 isShiny:1;
+    u8 padding1:1;
     u8 dynamaxLevel:4;
     u16 status:2;
 };
@@ -89,10 +90,8 @@ struct Trainer
              bool8 mugshotEnabled:1;
              u8 startingStatus:6;    // this trainer starts a battle with a given status. see include/constants/battle.h for values
     /*0x1F*/ u8 mugshotColor;
-             u8 transition:7;
-             u8 hasCustomTransition:1;
     /*0x20*/ u8 partySize:6;
-             bool8 shouldShuffle:1;
+             bool8 randomLead:1;
 };
 
 struct TrainerClass
