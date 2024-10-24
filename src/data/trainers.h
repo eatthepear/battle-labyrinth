@@ -42,14 +42,14 @@
         {
             {
 #line 16
-            .species = SPECIES_METANG,
+            .species = SPECIES_BULBASAUR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 20
             .evs = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
 #line 19
             .ivs = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 18
-            .lvl = 42,
+            .lvl = 5,
 #line 17
             .nature = NATURE_BRAVE,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
