@@ -2091,7 +2091,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
     DebugPrintf("Creating NPC Trainer party, trainter number %d", trainerNum);
     u32 totalExp = 0;
-    for (u32 i = 0; i < 4; i++) {
+    for (u32 i = 1; i < 4; i++) {
         totalExp += CalculateExperienceFromTrainer(i);
     }
     DebugPrintf("Total exp overall is %d", totalExp);

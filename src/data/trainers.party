@@ -102,143 +102,117 @@ Pic: School Kid F
 Music: Girl
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
-Mugshot: Purple
 Random Lead: Yes
 
-Bulbasaur
-Ability: Chlorophyll  
-Brave Nature
-Level: 2
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-Tera Type: Fire
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Poochyena
+Level: 5
+Ability: Run Away
 
-Charmander
-Ability: Blaze  
-Brave Nature
-Level: 2
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-Tera Type: Fire
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Yamper
+Level: 5
+Ability: Ball Fetch
 
-Squirtle
-Brave Nature
-Level: 2
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-Tera Type: Fire
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-Chikorita
-Brave Nature
-Level: 2
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-Tera Type: Fire
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-Cyndaquil
-Ability: Flash Fire  
-Brave Nature
-Level: 2
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-Tera Type: Fire
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-Totodile
-Brave Nature
-Level: 2
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-Tera Type: Fire
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Lillipup
+Level: 5
+Ability: Vital Spirit
 
 === TRAINER_PBL_MARIAM ===
 Name: Mariam
 Class: Lass
 Pic: Lass
 Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Abra
-Brave Nature
-Level: 1
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Reflect
-- Metal Claw
+Rattata
+Level: 5
+Ability: Run Away
+
+Pidove
+Level: 5
+Ability: Big Pecks
+
+Cherubi
+Level: 5
+Ability: Chlorophyll
 
 === TRAINER_PBL_OSCAR ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Oscar
+Class: Youngster
+Pic: Youngster
 Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Zigzagoon
+Level: 5
+Ability: Gluttony
+
+Psyduck
+Level: 5
+Ability: Damp
+
+Starly
+Level: 5
+Ability: Keen Eye
 
 === TRAINER_PBL_COREY_LEVIATHAN_1 ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Corey
+Class: School Kid
+Pic: School Kid M
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Mugshot: Purple
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Pansage
+Level: 7
+Ability: Gluttony
+- Leafage
+- Scratch
+
+Pansear
+Level: 7
+Ability: Gluttony
+- Ember
+- Scratch
+
+Panpour
+Level: 7
+Ability: Gluttony
+- Water Gun
+- Scratch
 
 === TRAINER_PBL_COREY_LEVIATHAN_1_BRUTAL ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Corey
+Class: School Kid
+Pic: School Kid M
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Mugshot: Purple
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Pansage
+Level: 7
+Ability: Overgrow
+- Leafage
+- Scratch
+
+Pansear
+Level: 7
+Ability: Blaze
+- Ember
+- Scratch
+
+Panpour
+Level: 7
+Ability: Torrent
+- Water Gun
+- Scratch
 
 === TRAINER_PBL_POLLY ===
 Name: STEVEN
