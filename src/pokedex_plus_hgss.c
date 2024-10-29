@@ -5063,11 +5063,11 @@ static bool8 CalculateMoves(void)
     u16 species = NationalPokedexNumToSpeciesHGSS(sPokedexListItem->dexNum);
     const u16 *teachableLearnset = GetSpeciesTeachableLearnset(species);
 
-    u16 statsMovesEgg[EGG_MOVES_ARRAY_COUNT] = {0};
+    // u16 statsMovesEgg[EGG_MOVES_ARRAY_COUNT] = {0};
     u16 statsMovesLevelUp[MAX_LEVEL_UP_MOVES] = {0};
     u16 move;
 
-    u8 numEggMoves = 0;
+    // u8 numEggMoves = 0;
     u8 numLevelUpMoves = 0;
     u8 numTMHMMoves = 0;
     u8 numTutorMoves = 0;
@@ -5079,15 +5079,15 @@ static bool8 CalculateMoves(void)
         species = GetFormSpeciesId(species, 0);
 
     //Calculate amount of Egg and LevelUp moves
-    numEggMoves = GetEggMovesBySpecies(species, statsMovesEgg);
+    // numEggMoves = GetEggMovesBySpecies(species, statsMovesEgg);
     numLevelUpMoves = GetLevelUpMovesBySpecies(species, statsMovesLevelUp);
 
     //Egg moves
-    for (i=0; i < numEggMoves; i++)
-    {
-        sStatsMoves[movesTotal] = statsMovesEgg[i];
-        movesTotal++;
-    }
+    // for (i=0; i < numEggMoves; i++)
+    // {
+    //     sStatsMoves[movesTotal] = statsMovesEgg[i];
+    //     movesTotal++;
+    // }
 
     //Level up moves
     for (i=0; i < numLevelUpMoves; i++)
@@ -5131,7 +5131,7 @@ static bool8 CalculateMoves(void)
         }
     }
 
-    sPokedexView->numEggMoves = numEggMoves;
+    sPokedexView->numEggMoves = 0;
     sPokedexView->numLevelUpMoves = numLevelUpMoves;
     sPokedexView->numTMHMMoves = numTMHMMoves;
     sPokedexView->numTutorMoves = numTutorMoves;
