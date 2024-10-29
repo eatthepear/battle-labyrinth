@@ -14823,7 +14823,7 @@ static void Cmd_pickup(void)
     u16 species, heldItem, ability;
     u8 lvlDivBy10;
 
-    if (!InBattlePike()) // No items in Battle Pike.
+    if (!InBattlePike() && !(FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_RED_THUMB))) // No items in Battle Pike.
     {
         bool32 isInPyramid = InBattlePyramid_();
         for (i = 0; i < PARTY_SIZE; i++)
