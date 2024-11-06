@@ -2103,8 +2103,8 @@ script EventScript_Settings {
 script EventScript_MusicMenu {
 	while {
 		fadedefaultbgm
-		msgbox("Please select a music setting.", MSGBOX_DEFAULT)
-		dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Wild Battle", "Trainer Battle", "Leviathan Battle", "Back")
+		message("Please select a music setting.")
+		dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Wild Battle", "Trainer Battle", "Leviathan Battle", "Back")
 		switch (var(VAR_RESULT)) {
 			case 0:
 				setvar(VAR_TEMP_0, 1)
@@ -2112,24 +2112,24 @@ script EventScript_MusicMenu {
 					switch (var(VAR_WILD_MUSIC)) {
 						case 0:
 							playbgm(MUS_VS_WILD, FALSE)
-							msgbox("The Wild Pokémon music is\ncurrently set to RSE.", MSGBOX_DEFAULT)
+							message("The Wild Pokémon music is\ncurrently set to RSE.")
 						case 1:
 							playbgm(MUS_RG_VS_WILD, FALSE)
-							msgbox("The Wild Pokémon music is\ncurrently set to FRLG.", MSGBOX_DEFAULT)
+							message("The Wild Pokémon music is\ncurrently set to FRLG.")
 						case 2:
 							playbgm(MUS_DP_VS_WILD, FALSE)
-							msgbox("The Wild Pokémon music is\ncurrently set to DPPt.", MSGBOX_DEFAULT)
+							message("The Wild Pokémon music is\ncurrently set to DPPt.")
 						case 3:
 							playbgm(MUS_HG_VS_WILD, FALSE)
-							msgbox("The Wild Pokémon music is\ncurrently set to HGSS (Johto).", MSGBOX_DEFAULT)
+							message("The Wild Pokémon music is\ncurrently set to HGSS (Johto).")
 						case 4:
 							playbgm(MUS_HG_VS_WILD_KANTO, FALSE)
-							msgbox("The Wild Pokémon music is\ncurrently set to HGSS (Kanto).", MSGBOX_DEFAULT)
+							message("The Wild Pokémon music is\ncurrently set to HGSS (Kanto).")
 						case 5:
 							// playbgm(MUS_BW_SEQ_BGM_VS_NORAPOKE, FALSE)
-							msgbox("The Wild Pokémon music is\ncurrently set to BW.", MSGBOX_DEFAULT)
+							message("The Wild Pokémon music is\ncurrently set to BW.")
 					}
-					dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "RSE", "FRLG", "DPPt", "HGSS Johto", "HGSS Kanto", "BW")
+					dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "RSE", "FRLG", "DPPt", "HGSS Johto", "HGSS Kanto", "BW")
 					switch (var(VAR_RESULT)) {
 						case 0:
 							setvar(VAR_WILD_MUSIC, 0)
@@ -2143,7 +2143,7 @@ script EventScript_MusicMenu {
 							setvar(VAR_WILD_MUSIC, 4)
 						case 5:
 							// setvar(VAR_WILD_MUSIC, 5)
-							msgbox("The BW Wild Pokémon music is not\nfinished.")
+							msgbox("The BW Wild Pokémon music is not\nfinished.", MSGBOX_DEFAULT)
 						case MULTI_B_PRESSED:
 							setvar(VAR_TEMP_0, 0)
 					}
@@ -2154,24 +2154,24 @@ script EventScript_MusicMenu {
 					switch (var(VAR_TRAINER_MUSIC)) {
 						case 0:
 							playbgm(MUS_VS_TRAINER, FALSE)
-							msgbox("The Trainer music is\ncurrently set to RSE.", MSGBOX_DEFAULT)
+							message("The Trainer music is\ncurrently set to RSE.")
 						case 1:
 							playbgm(MUS_RG_VS_TRAINER, FALSE)
-							msgbox("The Trainer music is\ncurrently set to FRLG.", MSGBOX_DEFAULT)
+							message("The Trainer music is\ncurrently set to FRLG.")
 						case 2:
 							playbgm(MUS_DP_VS_TRAINER, FALSE)
-							msgbox("The Trainer music is\ncurrently set to DPPt.", MSGBOX_DEFAULT)
+							message("The Trainer music is\ncurrently set to DPPt.")
 						case 3:
 							playbgm(MUS_HG_VS_TRAINER, FALSE)
-							msgbox("The Trainer music is\ncurrently set to HGSS (Johto).", MSGBOX_DEFAULT)
+							message("The Trainer music is\ncurrently set to HGSS (Johto).")
 						case 4:
 							playbgm(MUS_HG_VS_TRAINER_KANTO, FALSE)
-							msgbox("The Trainer music is\ncurrently set to HGSS (Kanto).", MSGBOX_DEFAULT)
+							message("The Trainer music is\ncurrently set to HGSS (Kanto).")
 						case 5:
 							// playbgm(MUS_BW_SEQ_BGM_VS_TRAINER, FALSE)
-							msgbox("The Trainer music is\ncurrently set to BW.", MSGBOX_DEFAULT)
+							message("The Trainer music is\ncurrently set to BW.")
 					}
-					dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "RSE", "FRLG", "DPPt", "HGSS Johto", "HGSS Kanto", "BW")
+					dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "RSE", "FRLG", "DPPt", "HGSS Johto", "HGSS Kanto", "BW")
 					switch (var(VAR_RESULT)) {
 						case 0:
 							setvar(VAR_TRAINER_MUSIC, 0)
@@ -2185,7 +2185,7 @@ script EventScript_MusicMenu {
 							setvar(VAR_TRAINER_MUSIC, 4)
 						case 5:
 							// setvar(VAR_TRAINER_MUSIC, 5)
-							msgbox("The BW Trainer music is not\nfinished.")
+							msgbox("The BW Trainer music is not\nfinished.", MSGBOX_DEFAULT)
 						case MULTI_B_PRESSED:
 							setvar(VAR_TEMP_0, 0)
 					}
@@ -2196,24 +2196,24 @@ script EventScript_MusicMenu {
 					switch (var(VAR_LEVIATHAN_MUSIC)) {
 						case 0:
 							playbgm(MUS_VS_GYM_LEADER, FALSE)
-							msgbox("The Leviathan music is\ncurrently set to RSE.", MSGBOX_DEFAULT)
+							message("The Leviathan music is\ncurrently set to RSE.")
 						case 1:
 							playbgm(MUS_RG_VS_GYM_LEADER, FALSE)
-							msgbox("The Leviathan music is\ncurrently set to FRLG.", MSGBOX_DEFAULT)
+							message("The Leviathan music is\ncurrently set to FRLG.")
 						case 2:
 							playbgm(MUS_DP_VS_GYM_LEADER, FALSE)
-							msgbox("The Leviathan music is\ncurrently set to DPPt.", MSGBOX_DEFAULT)
+							message("The Leviathan music is\ncurrently set to DPPt.")
 						case 3:
 							playbgm(MUS_HG_VS_GYM_LEADER, FALSE)
-							msgbox("The Leviathan music is\ncurrently set to HGSS (Johto).", MSGBOX_DEFAULT)
+							message("The Leviathan music is\ncurrently set to HGSS (Johto).")
 						case 4:
 							playbgm(MUS_HG_VS_GYM_LEADER_KANTO, FALSE)
-							msgbox("The Leviathan music is\ncurrently set to HGSS (Kanto).", MSGBOX_DEFAULT)
+							message("The Leviathan music is\ncurrently set to HGSS (Kanto).")
 						case 5:
 							// playbgm(MUS_BW_SEQ_BGM_VS_GYMLEADER, FALSE)
-							msgbox("The Leviathan music is\ncurrently set to BW.", MSGBOX_DEFAULT)
+							message("The Leviathan music is\ncurrently set to BW.")
 					}
-					dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "RSE", "FRLG", "DPPt", "HGSS Johto", "HGSS Kanto", "BW")
+					dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "RSE", "FRLG", "DPPt", "HGSS Johto", "HGSS Kanto", "BW")
 					switch (var(VAR_RESULT)) {
 						case 0:
 							setvar(VAR_LEVIATHAN_MUSIC, 0)
@@ -2227,7 +2227,7 @@ script EventScript_MusicMenu {
 							setvar(VAR_LEVIATHAN_MUSIC, 4)
 						case 5:
 							// setvar(VAR_LEVIATHAN_MUSIC, 5)
-							msgbox("The BW Leviathan music is not\nfinished.")
+							msgbox("The BW Leviathan music is not\nfinished.", MSGBOX_DEFAULT)
 						case MULTI_B_PRESSED:
 							setvar(VAR_TEMP_0, 0)
 					}

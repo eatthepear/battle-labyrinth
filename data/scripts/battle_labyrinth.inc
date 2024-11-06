@@ -4092,9 +4092,9 @@ EventScript_MusicMenu_1:
 # 2105 "data/scripts/battle_labyrinth.pory"
 	fadedefaultbgm
 # 2106 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_0, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_0
 # 2107 "data/scripts/battle_labyrinth.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_MusicMenu_Text_1, EventScript_MusicMenu_Text_2, EventScript_MusicMenu_Text_3, EventScript_MusicMenu_Text_4
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_MusicMenu_Text_1, EventScript_MusicMenu_Text_2, EventScript_MusicMenu_Text_3, EventScript_MusicMenu_Text_4
 # 2108 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
 # 2109 "data/scripts/battle_labyrinth.pory"
@@ -4156,7 +4156,7 @@ EventScript_MusicMenu_9:
 	case 5, EventScript_MusicMenu_24
 EventScript_MusicMenu_17:
 # 2132 "data/scripts/battle_labyrinth.pory"
-	dynmultichoice 0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_MusicMenu_Text_11, EventScript_MusicMenu_Text_12, EventScript_MusicMenu_Text_13, EventScript_MusicMenu_Text_14, EventScript_MusicMenu_Text_15, EventScript_MusicMenu_Text_16
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_MusicMenu_Text_11, EventScript_MusicMenu_Text_12, EventScript_MusicMenu_Text_13, EventScript_MusicMenu_Text_14, EventScript_MusicMenu_Text_15, EventScript_MusicMenu_Text_16
 # 2133 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
 # 2134 "data/scripts/battle_labyrinth.pory"
@@ -4192,7 +4192,7 @@ EventScript_MusicMenu_12:
 	case 5, EventScript_MusicMenu_32
 EventScript_MusicMenu_25:
 # 2174 "data/scripts/battle_labyrinth.pory"
-	dynmultichoice 0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_MusicMenu_Text_11, EventScript_MusicMenu_Text_12, EventScript_MusicMenu_Text_13, EventScript_MusicMenu_Text_14, EventScript_MusicMenu_Text_15, EventScript_MusicMenu_Text_16
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_MusicMenu_Text_11, EventScript_MusicMenu_Text_12, EventScript_MusicMenu_Text_13, EventScript_MusicMenu_Text_14, EventScript_MusicMenu_Text_15, EventScript_MusicMenu_Text_16
 # 2175 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
 # 2176 "data/scripts/battle_labyrinth.pory"
@@ -4228,7 +4228,7 @@ EventScript_MusicMenu_15:
 	case 5, EventScript_MusicMenu_40
 EventScript_MusicMenu_33:
 # 2216 "data/scripts/battle_labyrinth.pory"
-	dynmultichoice 0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_MusicMenu_Text_11, EventScript_MusicMenu_Text_12, EventScript_MusicMenu_Text_13, EventScript_MusicMenu_Text_14, EventScript_MusicMenu_Text_15, EventScript_MusicMenu_Text_16
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_MusicMenu_Text_11, EventScript_MusicMenu_Text_12, EventScript_MusicMenu_Text_13, EventScript_MusicMenu_Text_14, EventScript_MusicMenu_Text_15, EventScript_MusicMenu_Text_16
 # 2217 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
 # 2218 "data/scripts/battle_labyrinth.pory"
@@ -4251,120 +4251,120 @@ EventScript_MusicMenu_19:
 # 2114 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_VS_WILD, FALSE
 # 2115 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_5, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_5
 	goto EventScript_MusicMenu_17
 
 EventScript_MusicMenu_20:
 # 2117 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_RG_VS_WILD, FALSE
 # 2118 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_6, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_6
 	goto EventScript_MusicMenu_17
 
 EventScript_MusicMenu_21:
 # 2120 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_DP_VS_WILD, FALSE
 # 2121 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_7, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_7
 	goto EventScript_MusicMenu_17
 
 EventScript_MusicMenu_22:
 # 2123 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_HG_VS_WILD, FALSE
 # 2124 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_8, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_8
 	goto EventScript_MusicMenu_17
 
 EventScript_MusicMenu_23:
 # 2126 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_HG_VS_WILD_KANTO, FALSE
 # 2127 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_9, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_9
 	goto EventScript_MusicMenu_17
 
 EventScript_MusicMenu_24:
 # 2130 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_10, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_10
 	goto EventScript_MusicMenu_17
 
 EventScript_MusicMenu_27:
 # 2156 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_VS_TRAINER, FALSE
 # 2157 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_18, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_18
 	goto EventScript_MusicMenu_25
 
 EventScript_MusicMenu_28:
 # 2159 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_RG_VS_TRAINER, FALSE
 # 2160 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_19, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_19
 	goto EventScript_MusicMenu_25
 
 EventScript_MusicMenu_29:
 # 2162 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_DP_VS_TRAINER, FALSE
 # 2163 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_20, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_20
 	goto EventScript_MusicMenu_25
 
 EventScript_MusicMenu_30:
 # 2165 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_HG_VS_TRAINER, FALSE
 # 2166 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_21, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_21
 	goto EventScript_MusicMenu_25
 
 EventScript_MusicMenu_31:
 # 2168 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_HG_VS_TRAINER_KANTO, FALSE
 # 2169 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_22, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_22
 	goto EventScript_MusicMenu_25
 
 EventScript_MusicMenu_32:
 # 2172 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_23, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_23
 	goto EventScript_MusicMenu_25
 
 EventScript_MusicMenu_35:
 # 2198 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_VS_GYM_LEADER, FALSE
 # 2199 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_25, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_25
 	goto EventScript_MusicMenu_33
 
 EventScript_MusicMenu_36:
 # 2201 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_RG_VS_GYM_LEADER, FALSE
 # 2202 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_26, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_26
 	goto EventScript_MusicMenu_33
 
 EventScript_MusicMenu_37:
 # 2204 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_DP_VS_GYM_LEADER, FALSE
 # 2205 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_27, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_27
 	goto EventScript_MusicMenu_33
 
 EventScript_MusicMenu_38:
 # 2207 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_HG_VS_GYM_LEADER, FALSE
 # 2208 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_28, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_28
 	goto EventScript_MusicMenu_33
 
 EventScript_MusicMenu_39:
 # 2210 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_HG_VS_GYM_LEADER_KANTO, FALSE
 # 2211 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_29, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_29
 	goto EventScript_MusicMenu_33
 
 EventScript_MusicMenu_40:
 # 2214 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_30, MSGBOX_DEFAULT
+	message EventScript_MusicMenu_Text_30
 	goto EventScript_MusicMenu_33
 
 EventScript_MusicMenu_42:
@@ -4394,7 +4394,7 @@ EventScript_MusicMenu_46:
 
 EventScript_MusicMenu_47:
 # 2146 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_17
+	msgbox EventScript_MusicMenu_Text_17, MSGBOX_DEFAULT
 	goto EventScript_MusicMenu_8
 
 EventScript_MusicMenu_48:
@@ -4429,7 +4429,7 @@ EventScript_MusicMenu_54:
 
 EventScript_MusicMenu_55:
 # 2188 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_24
+	msgbox EventScript_MusicMenu_Text_24, MSGBOX_DEFAULT
 	goto EventScript_MusicMenu_11
 
 EventScript_MusicMenu_56:
@@ -4464,7 +4464,7 @@ EventScript_MusicMenu_62:
 
 EventScript_MusicMenu_63:
 # 2230 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_MusicMenu_Text_31
+	msgbox EventScript_MusicMenu_Text_31, MSGBOX_DEFAULT
 	goto EventScript_MusicMenu_14
 
 EventScript_MusicMenu_64:
