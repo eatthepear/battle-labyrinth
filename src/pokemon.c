@@ -7702,28 +7702,6 @@ u8 *MonSpritesGfxManager_GetSpritePtr(u8 managerId, u8 spriteNum)
 void DeletePartyMon(u8 position)
 {
     PurgeMonOrBoxMon(TOTAL_BOXES_COUNT, position);
-}
-
-void DeleteFaintedPartyPokemon(void)
-{
-    u8 i;
-    struct Pokemon *pokemon;
-    u32 monItem;
-    
-    for (i = 0; i < PARTY_SIZE; i++)
-    {
-        pokemon = &gPlayerParty[i];
-        monItem = GetMonData(pokemon, MON_DATA_HELD_ITEM, NULL);
-        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES, NULL) && !GetMonData(pokemon, MON_DATA_IS_EGG, NULL))
-            {
-                if (GetMonData(pokemon, MON_DATA_HP, NULL) == 0)
-                {
-                    if (monItem != ITEM_NONE)
-                        AddBagItem(monItem, 1);
-                    DeletePartyMon(i);
-                }
-            }
-    }
     CompactPartySlots();
 }
 

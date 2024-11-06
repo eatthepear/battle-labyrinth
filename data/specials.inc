@@ -566,3 +566,4 @@ gSpecials::
 	def_special CheckSpeciesClause
 	def_special ChooseItemFromBag
 	def_special GetCaughtSpeciesCount
+	def_special SendChosenMonToPC
