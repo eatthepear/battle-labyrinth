@@ -414,43 +414,6 @@
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
 #define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1124
-#define OBJ_EVENT_PAL_TAG_COLRESS                 0x1125
-#define OBJ_EVENT_PAL_TAG_MIRAGE                  0x1126
-#define OBJ_EVENT_PAL_TAG_RANGER                  0x1127
-#define OBJ_EVENT_PAL_TAG_REGIDRAGO               0x1128
-#define OBJ_EVENT_PAL_TAG_REGIELEKI               0x1129
-#define OBJ_EVENT_PAL_TAG_BUG_MANIAC              0x112A
-#define OBJ_EVENT_PAL_TAG_BREEDER                 0x112B
-#define OBJ_EVENT_PAL_TAG_RUIN_MANIAC             0x112C
-#define OBJ_EVENT_PAL_TAG_GUITARIST               0x112D
-#define OBJ_EVENT_PAL_TAG_COLLECTOR               0x112E
-#define OBJ_EVENT_PAL_TAG_KINDLER                 0x112F
-#define OBJ_EVENT_PAL_TAG_RUNNING_TRIATHLETE_F    0x1130
-#define OBJ_EVENT_PAL_TAG_PSYCHIC_F               0x1131
-#define OBJ_EVENT_PAL_TAG_DRAGON_TAMER            0x1132
-#define OBJ_EVENT_PAL_TAG_COWGIRL                 0x1133
-#define OBJ_EVENT_PAL_TAG_SCHOOL_KID_M            0x1134
-#define OBJ_EVENT_PAL_TAG_SCHOOL_KID_F            0x1135
-#define OBJ_EVENT_PAL_TAG_FAIRY_TALE_GIRL         0x1136
-#define OBJ_EVENT_PAL_TAG_SOCIALITE               0x1137
-#define OBJ_EVENT_PAL_TAG_LADY                    0x1138
-#define OBJ_EVENT_PAL_TAG_ITEM_CHEST              0x1139
-#define OBJ_EVENT_PAL_TAG_TM_CHEST                0x113A
-#define OBJ_EVENT_PAL_TAG_AROMA_LADY              0x113B
-#define OBJ_EVENT_PAL_TAG_BACKPACKER_F            0x113C
-#define OBJ_EVENT_PAL_TAG_POKEMANIAC              0x113D
-#define OBJ_EVENT_PAL_TAG_BIRD_KEEPER             0x113E
-#define OBJ_EVENT_PAL_TAG_PARASOL_LADY            0x113F
-#define OBJ_EVENT_PAL_TAG_BEAUTY                  0x1140
-#define OBJ_EVENT_PAL_TAG_MAN_4                   0x1141
-#define OBJ_EVENT_PAL_TAG_WOMAN_4                 0x1142
-#define OBJ_EVENT_PAL_TAG_WORKER                  0x1143
-#define OBJ_EVENT_PAL_TAG_ICE_WORKER              0x1144
-#define OBJ_EVENT_PAL_TAG_ROUGHNECK               0x1145
-#define OBJ_EVENT_PAL_TAG_PORYGON                 0x1146
-#define OBJ_EVENT_PAL_TAG_SHINY_PORYGON           0x1147
-#define OBJ_EVENT_PAL_TAG_SWIMMER_F_WALKING       0x1148
-#define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
@@ -487,6 +450,43 @@
 // Gen VIII
 #define OBJ_EVENT_PAL_TAG_BALL_STRANGE            0x116A
 #endif //OW_FOLLOWERS_POKEBALLS
+
+#define OBJ_EVENT_PAL_TAG_COLRESS                 0x7125
+#define OBJ_EVENT_PAL_TAG_MIRAGE                  0x7126
+#define OBJ_EVENT_PAL_TAG_RANGER                  0x7127
+#define OBJ_EVENT_PAL_TAG_REGIDRAGO               0x7128
+#define OBJ_EVENT_PAL_TAG_REGIELEKI               0x7129
+#define OBJ_EVENT_PAL_TAG_BUG_MANIAC              0x712A
+#define OBJ_EVENT_PAL_TAG_BREEDER                 0x712B
+#define OBJ_EVENT_PAL_TAG_RUIN_MANIAC             0x712C
+#define OBJ_EVENT_PAL_TAG_GUITARIST               0x712D
+#define OBJ_EVENT_PAL_TAG_COLLECTOR               0x712E
+#define OBJ_EVENT_PAL_TAG_KINDLER                 0x712F
+#define OBJ_EVENT_PAL_TAG_RUNNING_TRIATHLETE_F    0x7130
+#define OBJ_EVENT_PAL_TAG_PSYCHIC_F               0x7131
+#define OBJ_EVENT_PAL_TAG_DRAGON_TAMER            0x7132
+#define OBJ_EVENT_PAL_TAG_COWGIRL                 0x7133
+#define OBJ_EVENT_PAL_TAG_SCHOOL_KID_M            0x7134
+#define OBJ_EVENT_PAL_TAG_SCHOOL_KID_F            0x7135
+#define OBJ_EVENT_PAL_TAG_FAIRY_TALE_GIRL         0x7136
+#define OBJ_EVENT_PAL_TAG_SOCIALITE               0x7137
+#define OBJ_EVENT_PAL_TAG_LADY                    0x7138
+#define OBJ_EVENT_PAL_TAG_ITEM_CHEST              0x7139
+#define OBJ_EVENT_PAL_TAG_TM_CHEST                0x713A
+#define OBJ_EVENT_PAL_TAG_AROMA_LADY              0x713B
+#define OBJ_EVENT_PAL_TAG_BACKPACKER_F            0x713C
+#define OBJ_EVENT_PAL_TAG_POKEMANIAC              0x713D
+#define OBJ_EVENT_PAL_TAG_BIRD_KEEPER             0x713E
+#define OBJ_EVENT_PAL_TAG_PARASOL_LADY            0x713F
+#define OBJ_EVENT_PAL_TAG_BEAUTY                  0x7140
+#define OBJ_EVENT_PAL_TAG_MAN_4                   0x7141
+#define OBJ_EVENT_PAL_TAG_WOMAN_4                 0x7142
+#define OBJ_EVENT_PAL_TAG_WORKER                  0x7143
+#define OBJ_EVENT_PAL_TAG_ICE_WORKER              0x7144
+#define OBJ_EVENT_PAL_TAG_ROUGHNECK               0x7145
+#define OBJ_EVENT_PAL_TAG_PORYGON                 0x7146
+#define OBJ_EVENT_PAL_TAG_SHINY_PORYGON           0x7147
+#define OBJ_EVENT_PAL_TAG_SWIMMER_F_WALKING       0x7148
 // Used as a placeholder follower graphic
 #define OBJ_EVENT_PAL_TAG_SUBSTITUTE              0x7611
 #define OBJ_EVENT_PAL_TAG_EMOTES                  0x8002
