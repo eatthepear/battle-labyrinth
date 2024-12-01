@@ -156,23 +156,23 @@ Zone8A_Text_JimmyPostBattle:
 # 87 "data/maps/Zone8A/scripts.pory"
 
 # 88 "data/maps/Zone8A/scripts.pory"
-Zone8A_EventScript_Emiliano::
+Zone8A_EventScript_Beckham::
 # 89 "data/maps/Zone8A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_EMILIANO, Zone8A_Text_EmilianoIntro, Zone8A_Text_EmilianoDefeat
+	trainerbattle_single TRAINER_PBL_BECKHAM, Zone8A_Text_BeckhamIntro, Zone8A_Text_BeckhamDefeat
 # 90 "data/maps/Zone8A/scripts.pory"
-	msgbox Zone8A_Text_EmilianoPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Zone8A_Text_BeckhamPostBattle, MSGBOX_AUTOCLOSE
 # 91 "data/maps/Zone8A/scripts.pory"
 	end
 # 92 "data/maps/Zone8A/scripts.pory"
 
 # 93 "data/maps/Zone8A/scripts.pory"
-Zone8A_Text_EmilianoIntro:
+Zone8A_Text_BeckhamIntro:
 # 94 "data/maps/Zone8A/scripts.pory"
 	.string "I'm so hungry…$"
 # 95 "data/maps/Zone8A/scripts.pory"
 
 # 96 "data/maps/Zone8A/scripts.pory"
-Zone8A_Text_EmilianoDefeat:
+Zone8A_Text_BeckhamDefeat:
 # 97 "data/maps/Zone8A/scripts.pory"
 	.string "It's because I keep thinking about\n"
 # 98 "data/maps/Zone8A/scripts.pory"
@@ -180,6 +180,36 @@ Zone8A_Text_EmilianoDefeat:
 # 99 "data/maps/Zone8A/scripts.pory"
 
 # 100 "data/maps/Zone8A/scripts.pory"
-Zone8A_Text_EmilianoPostBattle:
+Zone8A_Text_BeckhamPostBattle:
 # 101 "data/maps/Zone8A/scripts.pory"
+	.string "Mmm… Pancakes…$"
+# 102 "data/maps/Zone8A/scripts.pory"
+
+# 103 "data/maps/Zone8A/scripts.pory"
+Zone8A_EventScript_Emiliano::
+# 104 "data/maps/Zone8A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_EMILIANO, Zone8A_Text_EmilianoIntro, Zone8A_Text_EmilianoDefeat
+# 105 "data/maps/Zone8A/scripts.pory"
+	msgbox Zone8A_Text_EmilianoPostBattle, MSGBOX_AUTOCLOSE
+# 106 "data/maps/Zone8A/scripts.pory"
+	end
+# 107 "data/maps/Zone8A/scripts.pory"
+
+# 108 "data/maps/Zone8A/scripts.pory"
+Zone8A_Text_EmilianoIntro:
+# 109 "data/maps/Zone8A/scripts.pory"
+	.string "I'm so hungry…$"
+# 110 "data/maps/Zone8A/scripts.pory"
+
+# 111 "data/maps/Zone8A/scripts.pory"
+Zone8A_Text_EmilianoDefeat:
+# 112 "data/maps/Zone8A/scripts.pory"
+	.string "It's because I keep thinking about\n"
+# 113 "data/maps/Zone8A/scripts.pory"
+	.string "pancakes!$"
+# 114 "data/maps/Zone8A/scripts.pory"
+
+# 115 "data/maps/Zone8A/scripts.pory"
+Zone8A_Text_EmilianoPostBattle:
+# 116 "data/maps/Zone8A/scripts.pory"
 	.string "Mmm… Pancakes…$"

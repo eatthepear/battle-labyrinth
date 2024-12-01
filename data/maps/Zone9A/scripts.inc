@@ -505,7 +505,7 @@ Zone9A_EventScript_Sign::
 # 256 "data/maps/Zone9A/scripts.pory"
 Zone9A_Text_Sign:
 # 257 "data/maps/Zone9A/scripts.pory"
-	.string "Trainer Tips!\p"
+	.string "Trainer Tips\p"
 # 258 "data/maps/Zone9A/scripts.pory"
 	.string "While you are on the Pokémon stats\n"
 # 259 "data/maps/Zone9A/scripts.pory"

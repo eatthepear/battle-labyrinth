@@ -49,70 +49,72 @@ Zone22Sanctuary_EventScript_NextZone::
 # 28 "data/maps/Zone22Sanctuary/scripts.pory"
 	faceplayer
 # 29 "data/maps/Zone22Sanctuary/scripts.pory"
-	msgbox gText_Colress_Greetings, MSGBOX_DEFAULT
+	message gText_Colress_Greetings
 # 30 "data/maps/Zone22Sanctuary/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone22Sanctuary_EventScript_NextZone_Text_0, Zone22Sanctuary_EventScript_NextZone_Text_1, Zone22Sanctuary_EventScript_NextZone_Text_2, Zone22Sanctuary_EventScript_NextZone_Text_3
+	waitmessage
 # 31 "data/maps/Zone22Sanctuary/scripts.pory"
-	switch VAR_RESULT
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone22Sanctuary_EventScript_NextZone_Text_0, Zone22Sanctuary_EventScript_NextZone_Text_1, Zone22Sanctuary_EventScript_NextZone_Text_2, Zone22Sanctuary_EventScript_NextZone_Text_3
 # 32 "data/maps/Zone22Sanctuary/scripts.pory"
+	switch VAR_RESULT
+# 33 "data/maps/Zone22Sanctuary/scripts.pory"
 	case 0, Zone22Sanctuary_EventScript_NextZone_3
-# 41 "data/maps/Zone22Sanctuary/scripts.pory"
+# 42 "data/maps/Zone22Sanctuary/scripts.pory"
 	case 1, Zone22Sanctuary_EventScript_NextZone_4
-# 43 "data/maps/Zone22Sanctuary/scripts.pory"
+# 44 "data/maps/Zone22Sanctuary/scripts.pory"
 	case 2, Zone22Sanctuary_EventScript_NextZone_5
 Zone22Sanctuary_EventScript_NextZone_1:
-# 46 "data/maps/Zone22Sanctuary/scripts.pory"
+# 47 "data/maps/Zone22Sanctuary/scripts.pory"
 	goto EventScript_WhenUReady
 	return
 
 Zone22Sanctuary_EventScript_NextZone_3:
-# 33 "data/maps/Zone22Sanctuary/scripts.pory"
-	buffernumberstring 0, VAR_ZONE
 # 34 "data/maps/Zone22Sanctuary/scripts.pory"
-	msgbox gText_Colress_SureReadyToLeave, MSGBOX_YESNO
+	buffernumberstring 0, VAR_ZONE
 # 35 "data/maps/Zone22Sanctuary/scripts.pory"
+	msgbox gText_Colress_SureReadyToLeave, MSGBOX_YESNO
+# 36 "data/maps/Zone22Sanctuary/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone22Sanctuary_EventScript_NextZone_6
 	goto Zone22Sanctuary_EventScript_NextZone_1
 
 Zone22Sanctuary_EventScript_NextZone_4:
-# 42 "data/maps/Zone22Sanctuary/scripts.pory"
+# 43 "data/maps/Zone22Sanctuary/scripts.pory"
 	goto EventScript_Settings
 	goto Zone22Sanctuary_EventScript_NextZone_1
 
 Zone22Sanctuary_EventScript_NextZone_5:
-# 44 "data/maps/Zone22Sanctuary/scripts.pory"
+# 45 "data/maps/Zone22Sanctuary/scripts.pory"
 	goto EventScript_Documentation
 	goto Zone22Sanctuary_EventScript_NextZone_1
 
 Zone22Sanctuary_EventScript_NextZone_6:
-# 36 "data/maps/Zone22Sanctuary/scripts.pory"
-	call EventScript_LeavingSetup
 # 37 "data/maps/Zone22Sanctuary/scripts.pory"
-	setflag FLAG_HIDE_CAM_AND_PAM
+	call EventScript_LeavingSetup
 # 38 "data/maps/Zone22Sanctuary/scripts.pory"
-	warp MAP_ZONE23A, 255, 9, 1
+	setflag FLAG_HIDE_CAM_AND_PAM
 # 39 "data/maps/Zone22Sanctuary/scripts.pory"
+	warp MAP_ZONE23A, 255, 9, 1
+# 40 "data/maps/Zone22Sanctuary/scripts.pory"
 	waitstate
 	goto Zone22Sanctuary_EventScript_NextZone_1
 
 
 Zone22Sanctuary_EventScript_NextZone_Text_0:
-# 30 "data/maps/Zone22Sanctuary/scripts.pory"
+# 31 "data/maps/Zone22Sanctuary/scripts.pory"
 	.string "Next Zone$"
 
 Zone22Sanctuary_EventScript_NextZone_Text_1:
-# 30 "data/maps/Zone22Sanctuary/scripts.pory"
+# 31 "data/maps/Zone22Sanctuary/scripts.pory"
 	.string "Settings$"
 
 Zone22Sanctuary_EventScript_NextZone_Text_2:
-# 30 "data/maps/Zone22Sanctuary/scripts.pory"
+# 31 "data/maps/Zone22Sanctuary/scripts.pory"
 	.string "Documentation$"
 
 Zone22Sanctuary_EventScript_NextZone_Text_3:
-# 30 "data/maps/Zone22Sanctuary/scripts.pory"
+# 31 "data/maps/Zone22Sanctuary/scripts.pory"
 	.string "Exit$"
 
 Zone22Sanctuary_Text_Reward::
-# 49 "data/maps/Zone22Sanctuary/scripts.pory"
+# 50 "data/maps/Zone22Sanctuary/scripts.pory"
 	.string "The Assault Vest!$"

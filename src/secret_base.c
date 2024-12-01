@@ -350,7 +350,7 @@ void ToggleSecretBaseEntranceMetatile(void)
     }
 }
 
-static u8 GetNameLength(const u8 *secretBaseOwnerName)
+static UNUSED u8 GetNameLength(const u8 *secretBaseOwnerName)
 {
     u8 i;
     for (i = 0; i < PLAYER_NAME_LENGTH; i++)
@@ -409,7 +409,7 @@ void SetOccupiedSecretBaseEntranceMetatiles(struct MapEvents const *events)
     // }
 }
 
-static void SetSecretBaseWarpDestination(void)
+static UNUSED void SetSecretBaseWarpDestination(void)
 {
     s8 secretBaseGroup = SECRET_BASE_ID_TO_GROUP(sCurSecretBaseId);
     SetWarpDestinationToMapWarp(MAP_GROUP(SECRET_BASE_RED_CAVE1), GET_BASE_MAP_NUM(secretBaseGroup), GET_BASE_WARP_ID(secretBaseGroup));
@@ -711,7 +711,7 @@ static void Task_WarpOutOfSecretBase(u8 taskId)
     }
 }
 
-static void WarpOutOfSecretBase(void)
+static UNUSED void WarpOutOfSecretBase(void)
 {
     CreateTask(Task_WarpOutOfSecretBase, 0);
     FadeScreen(FADE_TO_BLACK, 0);
@@ -756,7 +756,7 @@ static bool8 IsSecretBaseRegistered(u8 secretBaseIdx)
     return FALSE;
 }
 
-static u8 GetAverageEVs(struct Pokemon *pokemon)
+static UNUSED u8 GetAverageEVs(struct Pokemon *pokemon)
 {
     u16 evTotal;
     evTotal  = GetMonData(pokemon, MON_DATA_HP_EV);
@@ -821,7 +821,7 @@ void MoveOutOfSecretBase(void)
     ClearAndLeaveSecretBase();
 }
 
-static void ClosePlayerSecretBaseEntrance(void)
+static UNUSED void ClosePlayerSecretBaseEntrance(void)
 {
     // u16 i;
     // u16 j;
@@ -1334,7 +1334,7 @@ void SecretBasePerStepCallback(u8 taskId)
 #undef tPlayerY
 #undef tFldEff
 
-static void SaveSecretBase(u8 secretBaseIdx, struct SecretBase *secretBase, u32 version, u32 language)
+static UNUSED void SaveSecretBase(u8 secretBaseIdx, struct SecretBase *secretBase, u32 version, u32 language)
 {
     // int stringLength;
     // u8 *name;
@@ -1394,7 +1394,7 @@ static bool8 SecretBasesBelongToSamePlayer(struct SecretBase *secretBase1, struc
     return FALSE;
 }
 
-static s16 GetSecretBaseIndexFromId(u8 secretBaseId)
+static UNUSED s16 GetSecretBaseIndexFromId(u8 secretBaseId)
 {
     // s16 i;
     // for (i = 0; i < SECRET_BASES_COUNT; i++)
@@ -1406,7 +1406,7 @@ static s16 GetSecretBaseIndexFromId(u8 secretBaseId)
     return -1;
 }
 
-static u8 FindAvailableSecretBaseIndex(void)
+static UNUSED u8 FindAvailableSecretBaseIndex(void)
 {
     // s16 i;
     // for (i = 1; i < SECRET_BASES_COUNT; i++)
@@ -1418,7 +1418,7 @@ static u8 FindAvailableSecretBaseIndex(void)
     return 0;
 }
 
-static u8 FindUnregisteredSecretBaseIndex(void)
+static UNUSED u8 FindUnregisteredSecretBaseIndex(void)
 {
     // s16 i;
     // for (i = 1; i < SECRET_BASES_COUNT; i++)
@@ -1484,7 +1484,7 @@ static u8 TrySaveFriendsSecretBase(struct SecretBase *secretBase, u32 version, u
 
 // Moves the registered secret bases to the beginning of the array, so that
 // they won't be forgotten during record mixing.
-static void SortSecretBasesByRegistryStatus(void)
+static UNUSED void SortSecretBasesByRegistryStatus(void)
 {
     // u8 i;
     // u8 j;
@@ -1507,7 +1507,7 @@ static void SortSecretBasesByRegistryStatus(void)
 
 // Used to save a record mixing friends' bases other than their own
 // registryStatus is so registered bases can be attempted first
-static void TrySaveFriendsSecretBases(struct SecretBaseRecordMixer *mixer, u8 registryStatus)
+static UNUSED void TrySaveFriendsSecretBases(struct SecretBaseRecordMixer *mixer, u8 registryStatus)
 {
     u16 i;
     for (i = 1; i < SECRET_BASES_COUNT; i++)
@@ -1547,7 +1547,7 @@ static bool8 SecretBaseBelongsToPlayer(struct SecretBase *secretBase)
 #define DELETED_BASE_B  (1 << 1)
 #define DELETED_BASE_C  (1 << 2)
 
-static void DeleteFirstOldBaseFromPlayerInRecordMixingFriendsRecords(struct SecretBase *basesA, struct SecretBase *basesB, struct SecretBase *basesC)
+static UNUSED void DeleteFirstOldBaseFromPlayerInRecordMixingFriendsRecords(struct SecretBase *basesA, struct SecretBase *basesB, struct SecretBase *basesC)
 {
     u8 i;
     u8 sbFlags = 0;
@@ -1625,7 +1625,7 @@ static bool8 ClearDuplicateOwnedSecretBase(struct SecretBase *secretBase, struct
     return FALSE;
 }
 
-static void ClearDuplicateOwnedSecretBases(struct SecretBase *playersBases, struct SecretBase *friendsBasesA, struct SecretBase *friendsBasesB, struct SecretBase *friendsBasesC)
+static UNUSED void ClearDuplicateOwnedSecretBases(struct SecretBase *playersBases, struct SecretBase *friendsBasesA, struct SecretBase *friendsBasesB, struct SecretBase *friendsBasesC)
 {
     u8 i;
 
@@ -1682,7 +1682,7 @@ static void TrySaveRegisteredDuplicate(struct SecretBase *base, u32 version, u32
     }
 }
 
-static void TrySaveRegisteredDuplicates(struct SecretBaseRecordMixer *mixers)
+static UNUSED void TrySaveRegisteredDuplicates(struct SecretBaseRecordMixer *mixers)
 {
     u16 i;
 
@@ -1694,7 +1694,7 @@ static void TrySaveRegisteredDuplicates(struct SecretBaseRecordMixer *mixers)
     }
 }
 
-static void SaveRecordMixBases(struct SecretBaseRecordMixer *mixers)
+static UNUSED void SaveRecordMixBases(struct SecretBaseRecordMixer *mixers)
 {
     // DeleteFirstOldBaseFromPlayerInRecordMixingFriendsRecords(mixers[0].secretBases, mixers[1].secretBases, mixers[2].secretBases);
     // ClearDuplicateOwnedSecretBases(gSaveBlock1Ptr->secretBases, mixers[0].secretBases, mixers[1].secretBases, mixers[2].secretBases);

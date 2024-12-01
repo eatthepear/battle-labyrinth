@@ -49,94 +49,96 @@ Zone17Sanctuary_EventScript_NextZone::
 # 27 "data/maps/Zone17Sanctuary/scripts.pory"
 	faceplayer
 # 28 "data/maps/Zone17Sanctuary/scripts.pory"
-	msgbox gText_Colress_Greetings, MSGBOX_DEFAULT
+	message gText_Colress_Greetings
 # 29 "data/maps/Zone17Sanctuary/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone17Sanctuary_EventScript_NextZone_Text_0, Zone17Sanctuary_EventScript_NextZone_Text_1, Zone17Sanctuary_EventScript_NextZone_Text_2, Zone17Sanctuary_EventScript_NextZone_Text_3
+	waitmessage
 # 30 "data/maps/Zone17Sanctuary/scripts.pory"
-	switch VAR_RESULT
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone17Sanctuary_EventScript_NextZone_Text_0, Zone17Sanctuary_EventScript_NextZone_Text_1, Zone17Sanctuary_EventScript_NextZone_Text_2, Zone17Sanctuary_EventScript_NextZone_Text_3
 # 31 "data/maps/Zone17Sanctuary/scripts.pory"
+	switch VAR_RESULT
+# 32 "data/maps/Zone17Sanctuary/scripts.pory"
 	case 0, Zone17Sanctuary_EventScript_NextZone_3
-# 43 "data/maps/Zone17Sanctuary/scripts.pory"
+# 44 "data/maps/Zone17Sanctuary/scripts.pory"
 	case 1, Zone17Sanctuary_EventScript_NextZone_4
-# 45 "data/maps/Zone17Sanctuary/scripts.pory"
+# 46 "data/maps/Zone17Sanctuary/scripts.pory"
 	case 2, Zone17Sanctuary_EventScript_NextZone_5
 Zone17Sanctuary_EventScript_NextZone_1:
-# 48 "data/maps/Zone17Sanctuary/scripts.pory"
+# 49 "data/maps/Zone17Sanctuary/scripts.pory"
 	goto EventScript_WhenUReady
 	return
 
 Zone17Sanctuary_EventScript_NextZone_3:
-# 32 "data/maps/Zone17Sanctuary/scripts.pory"
-	msgbox Zone17Sanctuary_Text_Colress_ReadyToLeave, MSGBOX_YESNO
 # 33 "data/maps/Zone17Sanctuary/scripts.pory"
+	msgbox Zone17Sanctuary_Text_Colress_ReadyToLeave, MSGBOX_YESNO
+# 34 "data/maps/Zone17Sanctuary/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone17Sanctuary_EventScript_NextZone_6
 	goto Zone17Sanctuary_EventScript_NextZone_1
 
 Zone17Sanctuary_EventScript_NextZone_4:
-# 44 "data/maps/Zone17Sanctuary/scripts.pory"
+# 45 "data/maps/Zone17Sanctuary/scripts.pory"
 	goto EventScript_Settings
 	goto Zone17Sanctuary_EventScript_NextZone_1
 
 Zone17Sanctuary_EventScript_NextZone_5:
-# 46 "data/maps/Zone17Sanctuary/scripts.pory"
+# 47 "data/maps/Zone17Sanctuary/scripts.pory"
 	goto EventScript_Documentation
 	goto Zone17Sanctuary_EventScript_NextZone_1
 
 Zone17Sanctuary_EventScript_NextZone_6:
-# 34 "data/maps/Zone17Sanctuary/scripts.pory"
-	call EventScript_LeavingSetup
 # 35 "data/maps/Zone17Sanctuary/scripts.pory"
-	setflag FLAG_HIDE_ZONE18A_PIRATES
+	call EventScript_LeavingSetup
 # 36 "data/maps/Zone17Sanctuary/scripts.pory"
-	setflag FLAG_HIDE_ZONE18A_ELI
+	setflag FLAG_HIDE_ZONE18A_PIRATES
 # 37 "data/maps/Zone17Sanctuary/scripts.pory"
-	setflag FLAG_HIDE_ZONE18A_ZOE
+	setflag FLAG_HIDE_ZONE18A_ELI
 # 38 "data/maps/Zone17Sanctuary/scripts.pory"
-	setflag FLAG_HIDE_ZONE18A_BOAT
+	setflag FLAG_HIDE_ZONE18A_ZOE
 # 39 "data/maps/Zone17Sanctuary/scripts.pory"
-	setflag FLAG_HIDE_ZONE18A_PORYGON
+	setflag FLAG_HIDE_ZONE18A_BOAT
 # 40 "data/maps/Zone17Sanctuary/scripts.pory"
-	warp MAP_ZONE18A, 255, 28, 19
+	setflag FLAG_HIDE_ZONE18A_PORYGON
 # 41 "data/maps/Zone17Sanctuary/scripts.pory"
+	warp MAP_ZONE18A, 255, 28, 19
+# 42 "data/maps/Zone17Sanctuary/scripts.pory"
 	waitstate
 	goto Zone17Sanctuary_EventScript_NextZone_1
 
 
 Zone17Sanctuary_EventScript_NextZone_Text_0:
-# 29 "data/maps/Zone17Sanctuary/scripts.pory"
+# 30 "data/maps/Zone17Sanctuary/scripts.pory"
 	.string "Next Zone$"
 
 Zone17Sanctuary_EventScript_NextZone_Text_1:
-# 29 "data/maps/Zone17Sanctuary/scripts.pory"
+# 30 "data/maps/Zone17Sanctuary/scripts.pory"
 	.string "Settings$"
 
 Zone17Sanctuary_EventScript_NextZone_Text_2:
-# 29 "data/maps/Zone17Sanctuary/scripts.pory"
+# 30 "data/maps/Zone17Sanctuary/scripts.pory"
 	.string "Documentation$"
 
 Zone17Sanctuary_EventScript_NextZone_Text_3:
-# 29 "data/maps/Zone17Sanctuary/scripts.pory"
+# 30 "data/maps/Zone17Sanctuary/scripts.pory"
 	.string "Exit$"
 
 Zone17Sanctuary_Text_Reward::
-# 51 "data/maps/Zone17Sanctuary/scripts.pory"
+# 52 "data/maps/Zone17Sanctuary/scripts.pory"
 	.string "TM30 - Shadow Claw!$"
 
 Zone17Sanctuary_Text_Colress_Explain::
-# 55 "data/maps/Zone17Sanctuary/scripts.pory"
+# 56 "data/maps/Zone17Sanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones, {COLOR RED}Zone 18{COLOR DARK_GRAY}\n"
 	.string "and {COLOR RED}Zone 19{COLOR DARK_GRAY}, are combined.\p"
 	.string "You will not be able to access a\n"
 	.string "Sanctuary in between the Zones.$"
 
 Zone17Sanctuary_Text_Colress_WhenUReady::
-# 60 "data/maps/Zone17Sanctuary/scripts.pory"
+# 61 "data/maps/Zone17Sanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter\n"
 	.string "{COLOR RED}Zone 18{COLOR DARK_GRAY} and {COLOR RED}Zone 19{COLOR DARK_GRAY}, speak to me.$"
 
 Zone17Sanctuary_Text_Colress_ReadyToLeave::
-# 64 "data/maps/Zone17Sanctuary/scripts.pory"
+# 65 "data/maps/Zone17Sanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you ready to leave?\n"
 	.string "You will be entering\l"
 	.string "{COLOR RED}Zone 18{COLOR DARK_GRAY} and {COLOR RED}Zone 19{COLOR DARK_GRAY}.$"

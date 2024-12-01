@@ -49,80 +49,82 @@ Zone26Sanctuary_EventScript_NextZone::
 # 28 "data/maps/Zone26Sanctuary/scripts.pory"
 	faceplayer
 # 29 "data/maps/Zone26Sanctuary/scripts.pory"
-	msgbox gText_Colress_Greetings, MSGBOX_DEFAULT
+	message gText_Colress_Greetings
 # 30 "data/maps/Zone26Sanctuary/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone26Sanctuary_EventScript_NextZone_Text_0, Zone26Sanctuary_EventScript_NextZone_Text_1, Zone26Sanctuary_EventScript_NextZone_Text_2, Zone26Sanctuary_EventScript_NextZone_Text_3
+	waitmessage
 # 31 "data/maps/Zone26Sanctuary/scripts.pory"
-	switch VAR_RESULT
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone26Sanctuary_EventScript_NextZone_Text_0, Zone26Sanctuary_EventScript_NextZone_Text_1, Zone26Sanctuary_EventScript_NextZone_Text_2, Zone26Sanctuary_EventScript_NextZone_Text_3
 # 32 "data/maps/Zone26Sanctuary/scripts.pory"
+	switch VAR_RESULT
+# 33 "data/maps/Zone26Sanctuary/scripts.pory"
 	case 0, Zone26Sanctuary_EventScript_NextZone_3
-# 40 "data/maps/Zone26Sanctuary/scripts.pory"
+# 41 "data/maps/Zone26Sanctuary/scripts.pory"
 	case 1, Zone26Sanctuary_EventScript_NextZone_4
-# 42 "data/maps/Zone26Sanctuary/scripts.pory"
+# 43 "data/maps/Zone26Sanctuary/scripts.pory"
 	case 2, Zone26Sanctuary_EventScript_NextZone_5
 Zone26Sanctuary_EventScript_NextZone_1:
-# 45 "data/maps/Zone26Sanctuary/scripts.pory"
+# 46 "data/maps/Zone26Sanctuary/scripts.pory"
 	goto EventScript_WhenUReady
 	return
 
 Zone26Sanctuary_EventScript_NextZone_3:
-# 33 "data/maps/Zone26Sanctuary/scripts.pory"
-	buffernumberstring 0, VAR_ZONE
 # 34 "data/maps/Zone26Sanctuary/scripts.pory"
-	msgbox Zone26Sanctuary_Text_Colress_ReadyToLeave, MSGBOX_YESNO
+	buffernumberstring 0, VAR_ZONE
 # 35 "data/maps/Zone26Sanctuary/scripts.pory"
+	msgbox Zone26Sanctuary_Text_Colress_ReadyToLeave, MSGBOX_YESNO
+# 36 "data/maps/Zone26Sanctuary/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone26Sanctuary_EventScript_NextZone_6
 	goto Zone26Sanctuary_EventScript_NextZone_1
 
 Zone26Sanctuary_EventScript_NextZone_4:
-# 41 "data/maps/Zone26Sanctuary/scripts.pory"
+# 42 "data/maps/Zone26Sanctuary/scripts.pory"
 	goto EventScript_Settings
 	goto Zone26Sanctuary_EventScript_NextZone_1
 
 Zone26Sanctuary_EventScript_NextZone_5:
-# 43 "data/maps/Zone26Sanctuary/scripts.pory"
+# 44 "data/maps/Zone26Sanctuary/scripts.pory"
 	goto EventScript_Documentation
 	goto Zone26Sanctuary_EventScript_NextZone_1
 
 Zone26Sanctuary_EventScript_NextZone_6:
-# 36 "data/maps/Zone26Sanctuary/scripts.pory"
-	call EventScript_LeavingSetup
 # 37 "data/maps/Zone26Sanctuary/scripts.pory"
-	warp MAP_ZONE24A, 255, 31, 26
+	call EventScript_LeavingSetup
 # 38 "data/maps/Zone26Sanctuary/scripts.pory"
+	warp MAP_ZONE24A, 255, 31, 26
+# 39 "data/maps/Zone26Sanctuary/scripts.pory"
 	waitstate
 	goto Zone26Sanctuary_EventScript_NextZone_1
 
 
 Zone26Sanctuary_EventScript_NextZone_Text_0:
-# 30 "data/maps/Zone26Sanctuary/scripts.pory"
+# 31 "data/maps/Zone26Sanctuary/scripts.pory"
 	.string "Next Zone$"
 
 Zone26Sanctuary_EventScript_NextZone_Text_1:
-# 30 "data/maps/Zone26Sanctuary/scripts.pory"
+# 31 "data/maps/Zone26Sanctuary/scripts.pory"
 	.string "Settings$"
 
 Zone26Sanctuary_EventScript_NextZone_Text_2:
-# 30 "data/maps/Zone26Sanctuary/scripts.pory"
+# 31 "data/maps/Zone26Sanctuary/scripts.pory"
 	.string "Documentation$"
 
 Zone26Sanctuary_EventScript_NextZone_Text_3:
-# 30 "data/maps/Zone26Sanctuary/scripts.pory"
+# 31 "data/maps/Zone26Sanctuary/scripts.pory"
 	.string "Exit$"
 
 Zone26Sanctuary_Text_Reward::
-# 48 "data/maps/Zone26Sanctuary/scripts.pory"
+# 49 "data/maps/Zone26Sanctuary/scripts.pory"
 	.string "The Cleanse Tag!$"
 
 Zone26Sanctuary_Text_Colress_ReadyToLeave::
-# 52 "data/maps/Zone26Sanctuary/scripts.pory"
+# 53 "data/maps/Zone26Sanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you ready to leave?\nYou will be entering\l{COLOR RED}Zone 27{COLOR DARK_GRAY} and {COLOR RED}Zone 28{COLOR DARK_GRAY}.$"
 
 Zone26Sanctuary_Text_Colress_Explain::
-# 56 "data/maps/Zone26Sanctuary/scripts.pory"
+# 57 "data/maps/Zone26Sanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones,\n{COLOR RED}Zone 27{COLOR DARK_GRAY} and {COLOR RED}Zone 28{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a\nSanctuary in between the Zones.$"
 
 Zone26Sanctuary_Text_Colress_WhenUReady::
-# 60 "data/maps/Zone26Sanctuary/scripts.pory"
+# 61 "data/maps/Zone26Sanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to\nenter {COLOR RED}Zone 27{COLOR DARK_GRAY} and {COLOR RED}Zone 28{COLOR DARK_GRAY}, speak to me.$"

@@ -14,23 +14,17 @@ script Zone5Sanctuary_EventScript_Intro {
 	msgbox(gText_RewardClear, MSGBOX_DEFAULT)
 	msgbox(Zone5Sanctuary_Text_Reward, MSGBOX_DEFAULT)
 	giveitem(ITEM_RED_SHARD, 5)
-	msgbox(gText_Colress_Unlocked, MSGBOX_DEFAULT)
+	msgbox(gText_Colress_Upgraded, MSGBOX_DEFAULT)
 	playfanfare(MUS_OBTAIN_ITEM)
-	msgbox(gText_Colress_UnlockedUnique, MSGBOX_DEFAULT)
+	msgbox(gText_Colress_UpgradedPokeball, MSGBOX_DEFAULT)
 	waitfanfare
 	playfanfare(MUS_OBTAIN_ITEM)
-	msgbox(gText_Colress_UnlockedServices, MSGBOX_DEFAULT)
+	msgbox(gText_Colress_UpgradedEggs, MSGBOX_DEFAULT)
+	waitfanfare
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox(gText_Colress_UpgradedServices, MSGBOX_DEFAULT)
 	waitfanfare
 	setvar(VAR_ZONE, 6)
-	if (var(VAR_ZONE_0_STATE) == 0) {
-		applymovement(1, Common_Movement_ExclamationMark)
-		playse(SE_PIN)
-		waitmovement(0)
-		waitse
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: It seems you haven't entered Zone 0 yet.\pZone 0 holds many useful areas that are helpful to challengers.\pYou can typically access it using the warp pad in a Sanctuary, but just this once I will warp you there myself."))
-		warpteleport(MAP_ZONE0A, 255, 17, 10)
-		waitstate
-	}
 	buffernumberstring(0, VAR_ZONE)
 	msgbox(gText_Colress_WhenUReady)
 	applymovement(1, Common_Movement_Colress_WalkUp)
@@ -41,8 +35,9 @@ script Zone5Sanctuary_EventScript_Intro {
 script Zone5Sanctuary_EventScript_NextZone {
 	lock
 	faceplayer
-	msgbox(gText_Colress_Greetings, MSGBOX_DEFAULT)
-	dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
+	message(gText_Colress_Greetings)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
 	switch (var(VAR_RESULT)) {
 		case 0:
 			buffernumberstring(0, VAR_ZONE)

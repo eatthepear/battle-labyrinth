@@ -31,16 +31,6 @@ script EventScript_MoveCameraDown {
 	return
 }
 
-script EventScript_HandleFlashlight {
-	checkitem(ITEM_FLASHLIGHT)
-	if (var(VAR_RESULT) == TRUE) {
-		setflashlevel(2)
-	} else {
-		setflashlevel(6)
-	}
-	return
-}
-
 script EventScript_MedicineSign {
 	msgbox("Portentia's Potions\nCurated Medicines!", MSGBOX_SIGN)
 	end
@@ -76,10 +66,6 @@ script EventScript_RecoverySign {
 	end
 }
 
-script EventScript_BattleItemsSign {
-	msgbox("Alexander's Battle Shop\nA Curated Collection!", MSGBOX_SIGN)
-	end
-}
 script EventScript_ConsumablesSign {
 	msgbox("Varrick's Items\nA Fine Collection!", MSGBOX_SIGN)
 	end
@@ -110,9 +96,11 @@ script EventScript_Shop_Portentia {
 		case 4:
 		case 5:
 		case 6:
+			pokemart(Shop_Medicine_2)
 		case 7:
 		case 9:
 		case 10:
+			pokemart(Shop_Medicine_3)
 		case 11:
 		case 12:
 		case 13:
@@ -139,6 +127,26 @@ mart Shop_Medicine_1 {
 	ITEM_PARALYZE_HEAL
 }
 
+mart Shop_Medicine_2 {
+	ITEM_POTION
+	ITEM_ANTIDOTE
+	ITEM_PARALYZE_HEAL
+	ITEM_AWAKENING
+	ITEM_BURN_HEAL
+	ITEM_ICE_HEAL
+}
+
+mart Shop_Medicine_3 {
+	ITEM_POTION
+	ITEM_SUPER_POTION
+	ITEM_REVIVE
+	ITEM_ANTIDOTE
+	ITEM_PARALYZE_HEAL
+	ITEM_AWAKENING
+	ITEM_BURN_HEAL
+	ITEM_ICE_HEAL
+}
+
 script EventScript_Shop_Tim {
 	lock
 	faceplayer
@@ -155,10 +163,12 @@ script EventScript_Shop_Tim {
 			pokemart(Shop_Pokeballs_1)
 		case 4:
 		case 5:
+			pokemart(Shop_Pokeballs_2)
 		case 6:
 		case 7:
 		case 9:
 		case 10:
+			pokemart(Shop_Pokeballs_3)
 		case 11:
 		case 12:
 		case 13:
@@ -181,7 +191,19 @@ script EventScript_Shop_Tim {
 
 mart Shop_Pokeballs_1 {
 	ITEM_POKE_BALL
+}
+
+mart Shop_Pokeballs_2 {
+	ITEM_POKE_BALL
 	ITEM_HEAL_BALL
+}
+
+mart Shop_Pokeballs_3 {
+	ITEM_POKE_BALL
+	ITEM_GREAT_BALL
+	ITEM_HEAL_BALL
+	ITEM_NEST_BALL
+	ITEM_NET_BALL
 }
 
 script EventScript_Shop_Varrick {
@@ -206,16 +228,15 @@ script EventScript_Shop_Varrick {
 		case 1:
 		case 2:
 		case 3:
-			pokemart(Shop_Consumables_1)
+			pokemart(Shop_Items_1)
 		case 4:
 		case 5:
-			pokemart(Shop_Unique_Varrick_4to5)
 		case 6:
+			pokemart(Shop_Items_2)
 		case 7:
-			pokemart(Shop_Unique_Varrick_6to8)
 		case 9:
 		case 10:
-			pokemart(Shop_Unique_Varrick_9to10)
+			pokemart(Shop_Items_3)
 		case 11:
 		case 12:
 		case 13:
@@ -244,7 +265,24 @@ script EventScript_Shop_Varrick {
 	release
 }
 
-mart Shop_Consumables_1 {
+mart Shop_Items_1 {
+	ITEM_REPEL
+}
+
+mart Shop_Items_2 {
+	ITEM_MUSCLE_BAND
+	ITEM_WISE_GLASSES
+	ITEM_REPEL
+}
+
+mart Shop_Items_3 {
+	ITEM_MUSCLE_BAND
+	ITEM_WISE_GLASSES
+	ITEM_SILK_SCARF
+	ITEM_MIRACLE_SEED
+	ITEM_SILVER_POWDER
+	ITEM_POISON_BARB
+	ITEM_TWISTED_SPOON
 	ITEM_REPEL
 }
 
@@ -572,6 +610,7 @@ script EventScript_Shop_Julia {
 		case 5:
 		case 6:
 		case 7:
+			pokemart(Shop_Berries_2)
 		case 9:
 		case 10:
 		case 11:
@@ -598,6 +637,16 @@ mart Shop_Berries_1 {
 	ITEM_ORAN_BERRY
 }
 
+mart Shop_Berries_2 {
+	ITEM_ORAN_BERRY
+	ITEM_CHERI_BERRY
+	ITEM_CHESTO_BERRY
+	ITEM_PECHA_BERRY
+	ITEM_RAWST_BERRY
+	ITEM_ASPEAR_BERRY
+	ITEM_PERSIM_BERRY
+}
+
 script EventScript_Shop_Marie {
 	lock
 	faceplayer
@@ -609,36 +658,153 @@ script EventScript_Shop_Marie {
 				"Maybe you'll be able to make your next friend here!"), MSGBOX_DEFAULT)
 		setflag(FLAG_MARIE_INTRO)
 	}
-	msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: I actually don't have any eggs at the moment.\pCome back again another time!"), MSGBOX_DEFAULT)
-	// message(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Hi. Are you ready to meet your next friend?"))
-	// waitmessage
-	// switch (var(VAR_ZONE)) {
-	// 	case 1:
-	// 	case 2:
-	// 	case 3:
-	// 	case 4:
-	// 	case 5:
-	// 	case 6:
-	// 	case 7:
-	// 	case 9:
-	// 	case 10:
-	// 	case 11:
-	// 	case 12:
-	// 	case 13:
-	// 	case 15:
-	// 	case 16:
-	// 	case 17:
-	// 	case 18:
-	// 	case 20:
-	// 	case 21:
-	// 	case 22:
-	// 	case 23:
-	// 	case 24:
-	// 	case 25:
-	// 	case 26:
-	// }
+	call(EventScript_Shop_Marie_MainMenu)
 	msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Au revoir!"))
 	release
+}
+
+script EventScript_Shop_Marie_MainMenu {
+	message(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Hi. Are you ready to meet your next friend?"))
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Available Eggs", "Info", "Exit")
+	switch(var(VAR_RESULT)) {
+		case 0:
+			if (flag(FLAG_SETTINGS_NUZLOCKE) && flag(FLAG_MARIE_NUZLOCKE_RECEIVED))
+			{
+				msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: You've already received an Egg from our services. On Nuzlocke mode, you can only get one Egg."))
+				return
+			}
+			if (var(VAR_ZONE) <= 5) {
+				msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: I actually don't have any eggs at the moment.\pCome back again another time!"), MSGBOX_DEFAULT)
+				return
+			}
+			message(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Which tier would you like?"))
+			waitmessage
+			if (var(VAR_ZONE) > 5) {
+				dynmultipush("Tier 1 - ¥1000", 0)
+			}
+			dynmultipush("Back", 9)
+			dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+			switch (var(VAR_RESULT)) {
+				case 0:
+					showmoneybox(0, 0, 0)
+					msgbox(format("For an egg in Tier 1, that will be ¥1000."), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						call(EventScript_Shop_Marie_Tier1Egg)
+					}
+					return
+				case 9:
+				case MULTI_B_PRESSED:
+					call(EventScript_Shop_Marie_MainMenu)
+			}
+		case 1:
+			msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Here at Marie's Egg Delivery Service, we pair trainers with Pokémon Eggs.\pYou can choose from a series of tiers, each one being more expensive but having more rare Pokémon available.\pYou won't know what Pokémon you have until it hatches, but we do our best to make sure repeat customers don't end up with the same Pokémon twice."), MSGBOX_DEFAULT)
+			if (flag(FLAG_SETTINGS_NUZLOCKE)) {
+				msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: On Nuzlocke mode, you can only obtain one Egg in total."), MSGBOX_DEFAULT)
+			}
+			call(EventScript_Shop_Marie_MainMenu)
+	}
+}
+
+script EventScript_Shop_Marie_Tier1Egg {
+	checkmoney(1000, 0)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox("{COLOR BLUE}Marie{COLOR DARK_GRAY}: You don't have enough money.")
+		hidemoneybox
+		return
+	}
+	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
+		hidemoneybox
+		special(ChoosePartyMon)
+		waitstate
+		faceplayer
+		showmoneybox(0, 0, 0)
+		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+			hidemoneybox
+			return
+		}
+		specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
+		bufferspeciesname(2, VAR_TEMP_3)
+		copyvar(VAR_TEMP_3, VAR_0x8004) // used in SendChosenMonToPC
+		msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			return
+		}
+	}
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+		setflag(FLAG_MARIE_NUZLOCKE_RECEIVED)
+	}
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		special(SendChosenMonToPC)
+		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
+	}
+	removemoney(1000)
+	updatemoneybox
+	msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Thank you very much…"), MSGBOX_DEFAULT)
+	hidemoneybox
+	if (var(VAR_MARIE_TIER_1) == 0 || var(VAR_MARIE_TIER_1) > 20) {
+		random(20)
+		copyvar(VAR_MARIE_TIER_1, VAR_RESULT)
+		addvar(VAR_MARIE_TIER_1, 1)
+	} else {
+		if (var(VAR_MARIE_TIER_1) == 0) {
+			setvar(VAR_MARIE_TIER_1, 20)
+		} else {
+			subvar(VAR_MARIE_TIER_1, 1)
+		}
+	}
+	switch (var(VAR_MARIE_TIER_1)) {
+		case 1:
+			setvar(VAR_TEMP_1, SPECIES_BURMY)
+		case 2:
+			setvar(VAR_TEMP_1, SPECIES_BLIPBUG)
+		case 3:
+			setvar(VAR_TEMP_1, SPECIES_SCATTERBUG)
+		case 4:
+			setvar(VAR_TEMP_1, SPECIES_COMBEE)
+		case 5:
+			setvar(VAR_TEMP_1, SPECIES_WURMPLE)
+		case 6:
+			setvar(VAR_TEMP_1, SPECIES_PANSAGE)
+		case 7:
+			setvar(VAR_TEMP_1, SPECIES_CACNEA)
+		case 8:
+			setvar(VAR_TEMP_1, SPECIES_SUNKERN)
+		case 9:
+			setvar(VAR_TEMP_1, SPECIES_SMOLIV)
+		case 10:
+			setvar(VAR_TEMP_1, SPECIES_BOUNSWEET)
+		case 11:
+			setvar(VAR_TEMP_1, SPECIES_PANSEAR)
+		case 12:
+			setvar(VAR_TEMP_1, SPECIES_SLUGMA)
+		case 13:
+			setvar(VAR_TEMP_1, SPECIES_SALANDIT)
+		case 14:
+			setvar(VAR_TEMP_1, SPECIES_VULPIX)
+		case 15:
+			setvar(VAR_TEMP_1, SPECIES_SIZZLIPEDE)
+		case 16:
+			setvar(VAR_TEMP_1, SPECIES_PANPOUR)
+		case 17:
+			setvar(VAR_TEMP_1, SPECIES_BARBOACH)
+		case 18:
+			setvar(VAR_TEMP_1, SPECIES_FINNEON)
+		case 19:
+			setvar(VAR_TEMP_1, SPECIES_SEEL)
+		case 20:
+			setvar(VAR_TEMP_1, SPECIES_GOLDEEN)
+	}
+	giveegg(VAR_TEMP_1)
+	setmonmetlocation(VAR_TEMP_2, 244)
+	msgbox("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Here's your Egg.", MSGBOX_DEFAULT)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(format("{PLAYER} received the Egg!"))
+	waitmessage
+	waitfanfare
 }
 
 script EventScript_Shop_Lelouch {
@@ -656,29 +822,28 @@ script EventScript_Shop_Lelouch {
 		end
 	}
 	if (flag(FLAG_LELOUCH_SHARDS_INTRO) == false) {
-		msgbox("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: I sense…\n"
+		msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: I sense…\n"
 				"The aura of Shards.\p"
 				"There are four types of Shards:\n"
 				"Red, Blue, Yellow, and Green,\l"
 				"ranked by least to most rare.\p"
-				"Each can be exchanged for a certain\n"
-				"type of service I provide.\p"
+				"Each can be exchanged for a certain type of service I provide.\p"
 				"Pokémon training costs Red Shards.\p"
-				"Move Relearning costs Blue Shards.\p"
-				"Move Tutoring costs Yellow Shards.\p"
+				"Move Relearning and Move Tutoring cost Blue Shards.\p"
+				"Pokémon improvements such as Nature, Ability, and IV changing cost Yellow Shards.\p"
 				"Other services cost Green Shards.\p"
-				"I hope they serve you well…", MSGBOX_DEFAULT)
+				"I hope they serve you well…"), MSGBOX_DEFAULT)
 		setflag(FLAG_LELOUCH_SHARDS_INTRO)
 	}
 	msgbox("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: For the right price…\nWelcome to Lelouch's Special Services.", MSGBOX_DEFAULT)
-	dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Training - Red", "Move Reminder - Blue", "Move Tutor - Yellow", "Other - Green", "Exit")
+	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Training - Red", "Moves - Blue", "Improvement - Yellow", "Other - Green", "Exit")
 	switch (var(VAR_RESULT)) {
 		case 0:
 			call(EventScript_Shop_Lelouch_Training)
 		case 1:
-			call(EventScript_Shop_Lelouch_MoveReminder)
+			call(EventScript_Shop_Lelouch_Moves)
 		case 2:
-			call(EventScript_Shop_Lelouch_MoveTutor)
+			call(EventScript_Shop_Lelouch_Improvement)
 		case 3:
 			call(EventScript_Shop_Lelouch_Other)
 	}
@@ -738,7 +903,7 @@ script EventScript_Shop_Lelouch_Training {
 						specialvar(VAR_TEMP_0, ScriptGetPartyMonSpecies)
 						bufferspeciesname(0, VAR_TEMP_0)
 						msgbox(gText_Lelouch_ChooseHPEV, MSGBOX_DEFAULT)
-						dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
+						dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
 						switch(var(VAR_RESULT)) {
 							case 0:
 								setvar(VAR_TEMP_9, 252)
@@ -759,7 +924,7 @@ script EventScript_Shop_Lelouch_Training {
 								return
 						}
 						msgbox(gText_Lelouch_ChooseAttackEV, MSGBOX_DEFAULT)
-						dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
+						dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
 						switch(var(VAR_RESULT)) {
 							case 0:
 								setvar(VAR_TEMP_A, 252)
@@ -780,7 +945,7 @@ script EventScript_Shop_Lelouch_Training {
 								return
 						}
 						msgbox(gText_Lelouch_ChooseDefenseEV, MSGBOX_DEFAULT)
-						dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
+						dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
 						switch(var(VAR_RESULT)) {
 							case 0:
 								setvar(VAR_TEMP_B, 252)
@@ -801,7 +966,7 @@ script EventScript_Shop_Lelouch_Training {
 								return
 						}
 						msgbox(gText_Lelouch_ChooseSpecialAttackEV, MSGBOX_DEFAULT)
-						dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
+						dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
 						switch(var(VAR_RESULT)) {
 							case 0:
 								setvar(VAR_TEMP_C, 252)
@@ -822,7 +987,7 @@ script EventScript_Shop_Lelouch_Training {
 								return
 						}
 						msgbox(gText_Lelouch_ChooseSpecialDefenseEV, MSGBOX_DEFAULT)
-						dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
+						dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
 						switch(var(VAR_RESULT)) {
 							case 0:
 								setvar(VAR_TEMP_D, 252)
@@ -843,7 +1008,7 @@ script EventScript_Shop_Lelouch_Training {
 								return
 						}
 						msgbox(gText_Lelouch_ChooseSpeedEV, MSGBOX_DEFAULT)
-						dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
+						dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
 						switch(var(VAR_RESULT)) {
 							case 0:
 								setvar(VAR_TEMP_E, 252)
@@ -928,13 +1093,26 @@ text gText_Lelouch_ChangedEVs {
 	format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: I've changed your {STR_VAR_1}'s EVs to your requested values.")
 }
 
-script EventScript_Shop_Lelouch_MoveReminder {
+script EventScript_Shop_Lelouch_Moves {
 	checkitem(ITEM_BLUE_SHARD, 1)
 	if (var(VAR_RESULT) == FALSE) {
 		msgbox(gText_Lelouch_NotEnoughColor)
 		return
 	}
-	msgbox(gText_Lelouch_CostsBlueShards, MSGBOX_YESNO)
+	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Move Tutor", "Move Reminder", "Exit")
+	switch(var(VAR_RESULT)) {
+		case 0:
+			call(EventScript_Shop_Lelouch_MoveReminder)
+		case 1:
+			call(EventScript_Shop_Lelouch_MoveTutor)
+		case 2:
+		case MULTI_B_PRESSED:
+			return
+	}
+}
+
+script EventScript_Shop_Lelouch_MoveReminder {
+	msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Move Reminder services cost one Blue Shard.\pWould you like me to teach a forgotten move to your Pokémon?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		return
 	}
@@ -967,14 +1145,18 @@ script EventScript_Shop_Lelouch_MoveReminder {
 	return
 }
 
-script EventScript_Shop_Lelouch_MoveTutor {
+script EventScript_Shop_Lelouch_Improvement {
 	checkitem(ITEM_YELLOW_SHARD, 1)
 	if (var(VAR_RESULT) == FALSE) {
 		msgbox(gText_Lelouch_NotEnoughColor)
 		return
 	}
+	msgbox("Filler text for EventScript_Shop_Lelouch_Improvement")
+}
+
+script EventScript_Shop_Lelouch_MoveTutor {
 	while {
-		msgbox(gText_Lelouch_CostsYellowShards, MSGBOX_DEFAULT)
+		msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Move Tutor services cost Blue Shards. Which move would you like to tutor?"), MSGBOX_DEFAULT)
 		if (var(VAR_ZONE) > 10) {
 			dynmultipush("Icy Wind", 1)
 			dynmultipush("Grass Knot", 2)
@@ -1012,7 +1194,7 @@ script EventScript_Shop_Lelouch_MoveTutor {
 		// 	dynmultipush("", 0)
 		// }
 		dynmultipush("Exit", 50)
-		dynmultistack(0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 1:
 				setvar(VAR_TEMP_0, MOVE_ICY_WIND)
@@ -1133,8 +1315,8 @@ script EventScript_Shop_Lelouch_MoveTutor {
 		if (var(VAR_RESULT) == 0) {
 			continue
 		}
-		msgbox(gText_Lelouch_PayYellow1, MSGBOX_DEFAULT)
-		removeitem(ITEM_YELLOW_SHARD)
+		msgbox(gText_Lelouch_PayBlue, MSGBOX_DEFAULT)
+		removeitem(ITEM_BLUE_SHARD)
 		return
 	}
 
@@ -1160,7 +1342,7 @@ script EventScript_Shop_Lelouch_Other {
 			bufferspeciesname(0, VAR_TEMP_1)
 			copyvar(VAR_TEMP_1, VAR_0x8004)
 			msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Which nature would you like your {STR_VAR_1} to have?"), MSGBOX_DEFAULT)
-			dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Lonely", "Adamant", "Naughty", "Brave", "Bold", "Impish", "Lax", "Relaxed", "Modest", "Mild", "Rash", "Quiet", "Calm", "Gentle", "Careful", "Sassy", "Timid", "Hasty", "Jolly", "Naive", "Serious")
+			dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Lonely", "Adamant", "Naughty", "Brave", "Bold", "Impish", "Lax", "Relaxed", "Modest", "Mild", "Rash", "Quiet", "Calm", "Gentle", "Careful", "Sassy", "Timid", "Hasty", "Jolly", "Naive", "Serious")
 			switch (var(VAR_RESULT)) {
 				case 0:
 					setvar(VAR_TEMP_0, 1)
@@ -1465,6 +1647,52 @@ script EventScript_LeavingSetup {
 	}
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
 	waitmovement(0)
+	switch(var(VAR_ZONE)) {
+		case 1:
+			setvar(VAR_LEVEL_CAP, 7)
+		case 2:
+			setvar(VAR_LEVEL_CAP, 9)
+		case 3:
+			setvar(VAR_LEVEL_CAP, 11)
+		case 4:
+			setvar(VAR_LEVEL_CAP, 13)
+		case 5:
+			setvar(VAR_LEVEL_CAP, 15)
+		case 6:
+			setvar(VAR_LEVEL_CAP, 17)
+		case 7:
+			setvar(VAR_LEVEL_CAP, 20)
+		case 9:
+			setvar(VAR_LEVEL_CAP, 21)
+		case 10:
+			setvar(VAR_LEVEL_CAP, 23)
+		case 11:
+			setvar(VAR_LEVEL_CAP, 24)
+		case 12:
+			setvar(VAR_LEVEL_CAP, 26)
+		case 13:
+			setvar(VAR_LEVEL_CAP, 30)
+		case 15:
+			setvar(VAR_LEVEL_CAP, 32)
+		case 16:
+			setvar(VAR_LEVEL_CAP, 33)
+		case 17:
+			setvar(VAR_LEVEL_CAP, 34)
+		case 18:
+			setvar(VAR_LEVEL_CAP, 37)
+		case 20:
+			setvar(VAR_LEVEL_CAP, 39)
+		case 21:
+			setvar(VAR_LEVEL_CAP, 41)
+		case 22:
+			setvar(VAR_LEVEL_CAP, 43)
+		case 23:
+			setvar(VAR_LEVEL_CAP, 45)
+		case 24:
+			setvar(VAR_LEVEL_CAP, 48)
+		case 26:
+			setvar(VAR_LEVEL_CAP, 49)
+	}
 	return
 }
 
@@ -1506,13 +1734,12 @@ script EventScript_SanctuaryToZone0 {
 }
 
 script EventScript_Documentation {
-	msgbox(format("This is version 1.4.0 of the Pokémon Battle Labyrinth.\pMake sure you're playing the most up to date version!$"))
+	msgbox(format("This is version 1.4.0 of the Pokémon Battle Labyrinth.\pMake sure you're playing the most up to date version!$"), MSGBOX_DEFAULT)
 	goto(EventScript_WhenUReady)
 }
 
 text gText_Colress_BrutalExplained {
-	format("{COLOR RED}Brutal{COLOR DARK_GRAY} mode enables the following difficulty changes:\p"
-	"{COLOR RED}Challenge{COLOR DARK_GRAY},\n{COLOR RED}Gauntlet{COLOR DARK_GRAY},\l{COLOR RED}Antidoctor{COLOR DARK_GRAY},\l{COLOR RED}Clumsy{COLOR DARK_GRAY},\l{COLOR RED}Effortless{COLOR DARK_GRAY},\l{COLOR RED}Red Thumb{COLOR DARK_GRAY},\l{COLOR RED}Lazy{COLOR DARK_GRAY},\l{COLOR RED}Single-Use{COLOR DARK_GRAY},\l{COLOR RED}Poor{COLOR DARK_GRAY},\land {COLOR RED}Independent{COLOR DARK_GRAY}.\p"
+	format("{COLOR RED}Brutal{COLOR DARK_GRAY} mode enables all of the increased difficulty modes at the same time.\p"
 	"{COLOR RED}Brutal{COLOR DARK_GRAY} mode can only be enabled at the beginning of the game, but can be disabled at any point.\p"
 	"It is not recommended to play on {COLOR RED}Brutal{COLOR DARK_GRAY} mode unless you are familiar with {COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY} already.")
 }
@@ -1609,10 +1836,10 @@ script EventScript_Settings {
 		} else {
 			dynmultipush("Red Thumb", 12)
 		}
-		if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_LAZY) == true)) {
-			dynmultipush("{COLOR RED}Lazy", 13)
+		if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_ANTIGRIND) == true)) {
+			dynmultipush("{COLOR RED}Antigrind", 13)
 		} else {
-			dynmultipush("Lazy", 13)
+			dynmultipush("Antigrind", 13)
 		}
 		if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_SINGLE_USE) == true)) {
 			dynmultipush("{COLOR RED}Single-Use", 14)
@@ -1989,28 +2216,28 @@ script EventScript_Settings {
 					}
 				}
 			case 13:
-				msgbox(format("In most Pokémon games, players can 'grind' experience by defeating wild Pokémon.\pThe {COLOR RED}Lazy{COLOR DARK_GRAY} setting prevents players from grinding by disabling experience gain from wild Pokémon."), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_LAZY) || flag(FLAG_SETTINGS_BRUTAL)) {
-					msgbox(format("The {COLOR RED}Lazy{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
+				msgbox(format("In most Pokémon games, players can 'grind' experience by defeating wild Pokémon.\pThe {COLOR RED}Antigrind{COLOR DARK_GRAY} setting prevents players from grinding by disabling experience gain from wild Pokémon."), MSGBOX_DEFAULT)
+				if (flag(FLAG_SETTINGS_ANTIGRIND) || flag(FLAG_SETTINGS_BRUTAL)) {
+					msgbox(format("The {COLOR RED}Antigrind{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
 					if (flag(FLAG_SETTINGS_BRUTAL) == false) {
-						msgbox(format("Would you like to turn the {COLOR RED}Lazy{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
+						msgbox(format("Would you like to turn the {COLOR RED}Antigrind{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
 						if (var(VAR_RESULT) == YES) {
 							playse(SE_PC_OFF)
-							msgbox("{COLOR RED}Lazy{COLOR DARK_GRAY} setting turned off.", MSGBOX_DEFAULT)
+							msgbox("{COLOR RED}Antigrind{COLOR DARK_GRAY} setting turned off.", MSGBOX_DEFAULT)
 							waitse
-							clearflag(FLAG_SETTINGS_LAZY)
+							clearflag(FLAG_SETTINGS_ANTIGRIND)
 						}
 					} else {
 						msgbox(gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT)
 					}
 				} else {
-					msgbox(format("The {COLOR RED}Lazy{COLOR DARK_GRAY} setting is currently off."), MSGBOX_DEFAULT)
-					msgbox(format("Would you like to turn the {COLOR RED}Lazy{COLOR DARK_GRAY} setting on?"), MSGBOX_YESNO)
+					msgbox(format("The {COLOR RED}Antigrind{COLOR DARK_GRAY} setting is currently off."), MSGBOX_DEFAULT)
+					msgbox(format("Would you like to turn the {COLOR RED}Antigrind{COLOR DARK_GRAY} setting on?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						playse(SE_PC_ON)
-						msgbox("{COLOR RED}Lazy{COLOR DARK_GRAY} setting turned on.", MSGBOX_DEFAULT)
+						msgbox("{COLOR RED}Antigrind{COLOR DARK_GRAY} setting turned on.", MSGBOX_DEFAULT)
 						waitse
-						setflag(FLAG_SETTINGS_LAZY)
+						setflag(FLAG_SETTINGS_ANTIGRIND)
 					}
 				}
 			case 14:
@@ -2244,212 +2471,8 @@ script EventScript_WarpZone0 {
 	playmoncry(SPECIES_PORYGON, 0)
 	waitmoncry
 	clearflag(FLAG_IS_REVISITING_ZONE)
-	switch(var(VAR_REVISITING_ZONE)) {
-		case 1:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 15, 32)
-			waitstate
-		case 2:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 19, 32)
-			waitstate
-		case 3:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 23, 32)
-			waitstate
-		case 4:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 27, 32)
-			waitstate
-		case 5:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 31, 32)
-			waitstate
-		case 6:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 35, 32)
-			waitstate
-		case 7:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 39, 32)
-			waitstate
-		case 8:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 43, 32)
-			waitstate
-		case 9:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 47, 32)
-			waitstate
-		case 10:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 51, 32)
-			waitstate
-		case 11:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 15, 25)
-			waitstate
-		case 12:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 19, 25)
-			waitstate
-		case 13:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 23, 25)
-			waitstate
-		case 14:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 27, 25)
-			waitstate
-		case 15:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 31, 25)
-			waitstate
-		case 16:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 35, 25)
-			waitstate
-		case 17:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 39, 25)
-			waitstate
-		case 18:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 43, 25)
-			waitstate
-		case 19:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 47, 25)
-			waitstate
-		case 20:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 51, 25)
-			waitstate
-		case 21:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 15, 18)
-			waitstate
-		case 22:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 19, 18)
-			waitstate
-		case 23:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 23, 18)
-			waitstate
-		case 24:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 27, 18)
-			waitstate
-		case 25:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 31, 18)
-			waitstate
-		case 26:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 35, 18)
-			waitstate
-		case 27:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 39, 18)
-			waitstate
-		case 28:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 43, 18)
-			waitstate
-		case 29:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 47, 18)
-			waitstate
-		case 30:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 51, 18)
-			waitstate
-		case 31:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 15, 11)
-			waitstate
-		case 32:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 19, 11)
-			waitstate
-		case 33:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 23, 11)
-			waitstate
-		case 34:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 27, 11)
-			waitstate
-		case 35:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 31, 11)
-			waitstate
-		case 36:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 35, 11)
-			waitstate
-		case 37:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 39, 11)
-			waitstate
-		case 38:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 43, 11)
-			waitstate
-		case 39:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 47, 11)
-			waitstate
-		case 40:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 51, 11)
-			waitstate
-		case 41:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 15, 4)
-			waitstate
-		case 42:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 19, 4)
-			waitstate
-		case 43:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 23, 4)
-			waitstate
-		case 44:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 27, 4)
-			waitstate
-		case 45:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 31, 4)
-			waitstate
-		case 46:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 35, 4)
-			waitstate
-		case 47:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 39, 4)
-			waitstate
-		case 48:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 43, 4)
-			waitstate
-		case 49:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 47, 4)
-			waitstate
-		case 50:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 51, 4)
-			waitstate
-		case 51:
-			setvar(VAR_REVISITING_ZONE, 0)
-			warpteleport(MAP_ZONE0C, 255, 2, 25)
-			waitstate
-	}
+	setvar(VAR_REVISITING_ZONE, 0)
+	warp(MAP_ZONE0A, 1, 255, 255)
 	releaseall
 	end
 }
@@ -2458,241 +2481,241 @@ text gText_ItemChestIsEmpty {
 	format("The item chest is empty.")
 }
 
-script Zone_EventScript_RetirePrompt {
-	lockall
-	showmoneybox(0, 0, 0)
-	msgbox(format("Would you like to retire your attempt at this Zone?\pYou will lose all your progress so far and any money you received from trainers, as well as half of your remaining money.\pAre you sure you want to return to the Sanctuary?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		closemessage
-		hidemoneybox
-		releaseall
-		end
-	}
-	clearflag(FLAG_IN_NEW_ZONE)
-	removemoney(0)
-	updatemoneybox
-	msgbox(format("Warping now…"))
-	switch (var(VAR_ZONE)) {
-		case 1:
-			cleartrainerflag(TRAINER_PBL_NINA)
-			cleartrainerflag(TRAINER_PBL_MARIAM)
-			cleartrainerflag(TRAINER_PBL_OSCAR)
-			clearflag(FLAG_BEAT_LEVIATHAN_1)
-			setvar(VAR_ZONE_1_STATE, 0)
-			warpteleport(MAP_ZONE0SANCTUARY, 255, 38, 11)
-			waitstate
-		case 2:
-			cleartrainerflag(TRAINER_PBL_POLLY)
-			cleartrainerflag(TRAINER_PBL_JEREMIAH)
-			cleartrainerflag(TRAINER_PBL_HARPER)
-			cleartrainerflag(TRAINER_PBL_ARTHUR)
-			clearflag(FLAG_BEAT_LEVIATHAN_2)
-			setvar(VAR_ZONE_2_STATE, 0)
-			warpteleport(MAP_ZONE1SANCTUARY, 255, 38, 11)
-			waitstate
-		case 3:
-			cleartrainerflag(TRAINER_PBL_JEMMA)
-			cleartrainerflag(TRAINER_PBL_PATRICK)
-			cleartrainerflag(TRAINER_PBL_BORIS)
-			cleartrainerflag(TRAINER_PBL_ANNABELLE)
-			cleartrainerflag(TRAINER_PBL_RICHARD)
-			clearflag(FLAG_BEAT_LEVIATHAN_3)
-			setvar(VAR_ZONE_3_STATE, 0)
-			warpteleport(MAP_ZONE2SANCTUARY, 255, 38, 11)
-			waitstate
-		case 4:
-			cleartrainerflag(TRAINER_PBL_HERMAN)
-			cleartrainerflag(TRAINER_PBL_RALPH)
-			cleartrainerflag(TRAINER_PBL_SANTIAGO)
-			cleartrainerflag(TRAINER_PBL_CHLOE_AND_KAYA)
-			cleartrainerflag(TRAINER_PBL_FRED)
-			cleartrainerflag(TRAINER_PBL_LUCIA)
-			clearflag(FLAG_BEAT_LEVIATHAN_4)
-			setvar(VAR_ZONE_4_STATE, 0)
-			warpteleport(MAP_ZONE3SANCTUARY, 255, 38, 11)
-			waitstate
-		case 5:
-			cleartrainerflag(TRAINER_PBL_ANNE_AND_JUNE)
-			cleartrainerflag(TRAINER_PBL_GILBERT)
-			cleartrainerflag(TRAINER_PBL_REBECCA)
-			cleartrainerflag(TRAINER_PBL_RYAN)
-			cleartrainerflag(TRAINER_PBL_CAITLYN)
-			cleartrainerflag(TRAINER_PBL_KENNETH)
-			cleartrainerflag(TRAINER_PBL_CLINTON)
-			clearflag(FLAG_BEAT_LEVIATHAN_5)
-			setvar(VAR_ZONE_5_STATE, 0)
-			warpteleport(MAP_ZONE4SANCTUARY, 255, 38, 11)
-			waitstate
-		case 6:
-			cleartrainerflag(TRAINER_PBL_ZACK)
-			cleartrainerflag(TRAINER_PBL_MELANIE)
-			cleartrainerflag(TRAINER_PBL_CONSTANCE)
-			cleartrainerflag(TRAINER_PBL_FRANK)
-			cleartrainerflag(TRAINER_PBL_DUDLEY)
-			cleartrainerflag(TRAINER_PBL_DAISY)
-			clearflag(FLAG_BEAT_LEVIATHAN_6)
-			setvar(VAR_ZONE_6_STATE, 0)
-			warpteleport(MAP_ZONE5SANCTUARY, 255, 38, 11)
-			waitstate
-		case 7:
-			cleartrainerflag(TRAINER_PBL_MILLIE)
-			cleartrainerflag(TRAINER_PBL_PAIGE)
-			cleartrainerflag(TRAINER_PBL_SETH)
-			cleartrainerflag(TRAINER_PBL_JAMAL)
-			cleartrainerflag(TRAINER_PBL_CONNIE)
-			clearflag(FLAG_BEAT_LEVIATHAN_7)
-			cleartrainerflag(TRAINER_PBL_JIMMY)
-			cleartrainerflag(TRAINER_PBL_EMILIANO)
-			cleartrainerflag(TRAINER_PBL_KAREN)
-			cleartrainerflag(TRAINER_PBL_JAYDEN)
-			cleartrainerflag(TRAINER_PBL_NEIL)
-			cleartrainerflag(TRAINER_PBL_TAMARA)
-			clearflag(FLAG_BEAT_LEVIATHAN_8)
-			clearflag(FLAG_HIDE_ZONE8D_WALLY)
-			setvar(VAR_ZONE_8_STATE, 0)
-			warpteleport(MAP_ZONE6SANCTUARY, 255, 38, 11)
-			waitstate
-		case 9:
-			cleartrainerflag(TRAINER_PBL_COOPER)
-			cleartrainerflag(TRAINER_PBL_CARMINE)
-			clearflag(FLAG_HIDE_ZONE9A_ARI_WINSTRATE)
-			warpteleport(MAP_ZONE8SANCTUARY, 255, 38, 11)
-			waitstate
-		case 10:
-			cleartrainerflag(TRAINER_PBL_KYLE)
-			cleartrainerflag(TRAINER_PBL_BELLE)
-			cleartrainerflag(TRAINER_PBL_DEWEY)
-			cleartrainerflag(TRAINER_PBL_PEARLIE)
-			cleartrainerflag(TRAINER_PBL_ERNEST)
-			cleartrainerflag(TRAINER_PBL_ALANA)
-			cleartrainerflag(TRAINER_PBL_SUSAN)
-			cleartrainerflag(TRAINER_PBL_CONRAD)
-			clearflag(FLAG_BEAT_LEVIATHAN_9)
-			warpteleport(MAP_ZONE9SANCTUARY, 255, 38, 11)
-			waitstate
-		case 11:
-			cleartrainerflag(TRAINER_PBL_JEANETTE)
-			cleartrainerflag(TRAINER_PBL_EMMA_AND_LEO)
-			cleartrainerflag(TRAINER_PBL_REGINA)
-			cleartrainerflag(TRAINER_PBL_JOEL)
-			clearflag(FLAG_BEAT_LEVIATHAN_10)
-			setvar(VAR_ZONE_11_STATE, 0)
-			warpteleport(MAP_ZONE10SANCTUARY, 255, 38, 11)
-			waitstate
-		case 12:
-			cleartrainerflag(TRAINER_PBL_ESSENCE)
-			cleartrainerflag(TRAINER_PBL_DOLORES)
-			cleartrainerflag(TRAINER_PBL_TREVOR)
-			cleartrainerflag(TRAINER_PBL_RANDOLPH)
-			cleartrainerflag(TRAINER_PBL_FEDERICO)
-			cleartrainerflag(TRAINER_PBL_GENIE)
-			cleartrainerflag(TRAINER_PBL_HILDA)
-			cleartrainerflag(TRAINER_PBL_KINLEY)
-			clearflag(FLAG_HIDE_ZONE12A_CAMPER_PICNICKER)
-			setvar(VAR_ZONE_12_STATE, 0)
-			warpteleport(MAP_ZONE11SANCTUARY, 255, 38, 11)
-			waitstate
-		case 13:
-			cleartrainerflag(TRAINER_PBL_VIOLET)
-			cleartrainerflag(TRAINER_PBL_WANDA)
-			cleartrainerflag(TRAINER_PBL_AMBER_AND_KIM)
-			cleartrainerflag(TRAINER_PBL_JAN_AND_ERIN)
-			cleartrainerflag(TRAINER_PBL_STEVE)
-			cleartrainerflag(TRAINER_PBL_GOULD)
-			cleartrainerflag(TRAINER_PBL_MENDEL)
-			cleartrainerflag(TRAINER_PBL_DARWIN)
-			cleartrainerflag(TRAINER_PBL_BART)
-			cleartrainerflag(TRAINER_PBL_NIGEL)
-			cleartrainerflag(TRAINER_PBL_LOLA)
-			cleartrainerflag(TRAINER_PBL_CHARLIE)
-			cleartrainerflag(TRAINER_PBL_TODD)
-			cleartrainerflag(TRAINER_PBL_RUSSELL)
-			cleartrainerflag(TRAINER_PBL_OTIS)
-			clearflag(FLAG_BEAT_LEVIATHAN_11)
-			clearflag(FLAG_BEAT_LEVIATHAN_12)
-			warpteleport(MAP_ZONE12SANCTUARY, 255, 38, 11)
-			waitstate
-		case 15:
-			clearflag(FLAG_BEAT_LEVIATHAN_13)
-			setvar(VAR_ZONE_15_STATE, 0)
-			warpteleport(MAP_ZONE14SANCTUARY, 255, 38, 11)
-			waitstate
-		case 16:
-        	cleartrainerflag(TRAINER_PBL_IONA)
-        	cleartrainerflag(TRAINER_PBL_BERKE)
-        	cleartrainerflag(TRAINER_PBL_TANISHA)
-        	cleartrainerflag(TRAINER_PBL_ROBERT)
-        	cleartrainerflag(TRAINER_PBL_CHRIS)
-        	cleartrainerflag(TRAINER_PBL_ANGUS)
-        	clearflag(FLAG_BEAT_LEVIATHAN_14)
-			setvar(VAR_ZONE_16_STATE, 0)
-			warpteleport(MAP_ZONE15SANCTUARY, 255, 38, 11)
-			waitstate
-		case 17:
-        	cleartrainerflag(TRAINER_PBL_AXLE)
-        	cleartrainerflag(TRAINER_PBL_RAFAEL)
-        	cleartrainerflag(TRAINER_PBL_GEORGINA)
-        	clearflag(FLAG_BEAT_LEVIATHAN_15)
-			setvar(VAR_ZONE_17_STATE, 0)
-			warpteleport(MAP_ZONE16SANCTUARY, 255, 38, 11)
-			waitstate
-		case 18:
-        	cleartrainerflag(TRAINER_PBL_DORIS)
-        	cleartrainerflag(TRAINER_PBL_HOMER)
-        	cleartrainerflag(TRAINER_PBL_JOHN)
-        	cleartrainerflag(TRAINER_PBL_GLENN)
-        	cleartrainerflag(TRAINER_PBL_JAY)
-        	cleartrainerflag(TRAINER_PBL_TYLER)
-        	cleartrainerflag(TRAINER_PBL_TERRENCE)
-        	cleartrainerflag(TRAINER_PBL_MARTY)
-        	cleartrainerflag(TRAINER_PBL_KARI)
-        	cleartrainerflag(TRAINER_PBL_ABRAHAM)
-        	cleartrainerflag(TRAINER_PBL_MELINDA)
-        	cleartrainerflag(TRAINER_PBL_EMILIO)
-        	cleartrainerflag(TRAINER_PBL_REX)
-        	cleartrainerflag(TRAINER_PBL_LOUIS)
-        	cleartrainerflag(TRAINER_PBL_LEROY)
-        	cleartrainerflag(TRAINER_PBL_ELTON)
-        	cleartrainerflag(TRAINER_PBL_WILLIE)
-        	clearflag(FLAG_BEAT_LEVIATHAN_16)
-			setvar(VAR_ZONE_18_STATE, 0)
-			setvar(VAR_ZONE_19_STATE, 0)
-			clearflag(FLAG_HIDE_ZONE18A_ZOE)
-			clearflag(FLAG_HIDE_ZONE18A_ELI)
-			clearflag(FLAG_HIDE_ZONE18A_DOLL)
-			warpteleport(MAP_ZONE17SANCTUARY, 255, 38, 11)
-			waitstate
-		case 20:
-        	cleartrainerflag(TRAINER_PBL_SHAWN)
-        	cleartrainerflag(TRAINER_PBL_FERNANDO)
-        	cleartrainerflag(TRAINER_PBL_KANE)
-        	cleartrainerflag(TRAINER_PBL_KIRK)
-        	cleartrainerflag(TRAINER_PBL_DALTON)
-        	cleartrainerflag(TRAINER_PBL_LEE)
-        	cleartrainerflag(TRAINER_PBL_BLANCHE)
-        	clearflag(FLAG_BEAT_LEVIATHAN_17)
-			setvar(VAR_ZONE_20_STATE, 0)
-			warpteleport(MAP_ZONE20SANCTUARY, 255, 38, 11)
-			waitstate
-		case 21:
-			warpteleport(MAP_ZONE20SANCTUARY, 255, 38, 11)
-			waitstate
-		case 22:
-			warpteleport(MAP_ZONE21SANCTUARY, 255, 38, 11)
-			waitstate
-		case 23:
-			warpteleport(MAP_ZONE22SANCTUARY, 255, 38, 11)
-			waitstate
-		case 24:
-			warpteleport(MAP_ZONE23SANCTUARY, 255, 38, 11)
-			waitstate
-		case 26:
-			warpteleport(MAP_ZONE25SANCTUARY, 255, 38, 11)
-			waitstate
-	}
-	releaseall
-	end
-}
+// script Zone_EventScript_RetirePrompt {
+// 	lockall
+// 	showmoneybox(0, 0, 0)
+// 	msgbox(format("Would you like to retire your attempt at this Zone?\pYou will lose all your progress so far and any money you received from trainers, as well as half of your remaining money.\pAre you sure you want to return to the Sanctuary?"), MSGBOX_YESNO)
+// 	if (var(VAR_RESULT) == NO) {
+// 		closemessage
+// 		hidemoneybox
+// 		releaseall
+// 		end
+// 	}
+// 	clearflag(FLAG_IN_NEW_ZONE)
+// 	removemoney(0)
+// 	updatemoneybox
+// 	msgbox(format("Warping now…"))
+// 	switch (var(VAR_ZONE)) {
+// 		case 1:
+// 			cleartrainerflag(TRAINER_PBL_NINA)
+// 			cleartrainerflag(TRAINER_PBL_MARIAM)
+// 			cleartrainerflag(TRAINER_PBL_OSCAR)
+// 			clearflag(FLAG_BEAT_LEVIATHAN_1)
+// 			setvar(VAR_ZONE_1_STATE, 0)
+// 			warpteleport(MAP_ZONE0SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 2:
+// 			cleartrainerflag(TRAINER_PBL_POLLY)
+// 			cleartrainerflag(TRAINER_PBL_JEREMIAH)
+// 			cleartrainerflag(TRAINER_PBL_HARPER)
+// 			cleartrainerflag(TRAINER_PBL_ARTHUR)
+// 			clearflag(FLAG_BEAT_LEVIATHAN_2)
+// 			setvar(VAR_ZONE_2_STATE, 0)
+// 			warpteleport(MAP_ZONE1SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 3:
+// 			cleartrainerflag(TRAINER_PBL_JEMMA)
+// 			cleartrainerflag(TRAINER_PBL_PATRICK)
+// 			cleartrainerflag(TRAINER_PBL_BORIS)
+// 			cleartrainerflag(TRAINER_PBL_ANNABELLE)
+// 			cleartrainerflag(TRAINER_PBL_RICHARD)
+// 			clearflag(FLAG_BEAT_LEVIATHAN_3)
+// 			setvar(VAR_ZONE_3_STATE, 0)
+// 			warpteleport(MAP_ZONE2SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 4:
+// 			cleartrainerflag(TRAINER_PBL_HERMAN)
+// 			cleartrainerflag(TRAINER_PBL_RALPH)
+// 			cleartrainerflag(TRAINER_PBL_SANTIAGO)
+// 			cleartrainerflag(TRAINER_PBL_CHLOE_AND_KAYA)
+// 			cleartrainerflag(TRAINER_PBL_FRED)
+// 			cleartrainerflag(TRAINER_PBL_LUCIA)
+// 			clearflag(FLAG_BEAT_LEVIATHAN_4)
+// 			setvar(VAR_ZONE_4_STATE, 0)
+// 			warpteleport(MAP_ZONE3SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 5:
+// 			cleartrainerflag(TRAINER_PBL_ANNE_AND_JUNE)
+// 			cleartrainerflag(TRAINER_PBL_GILBERT)
+// 			cleartrainerflag(TRAINER_PBL_REBECCA)
+// 			cleartrainerflag(TRAINER_PBL_RYAN)
+// 			cleartrainerflag(TRAINER_PBL_CAITLYN)
+// 			cleartrainerflag(TRAINER_PBL_KENNETH)
+// 			cleartrainerflag(TRAINER_PBL_CLINTON)
+// 			clearflag(FLAG_BEAT_LEVIATHAN_5)
+// 			setvar(VAR_ZONE_5_STATE, 0)
+// 			warpteleport(MAP_ZONE4SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 6:
+// 			cleartrainerflag(TRAINER_PBL_ZACK)
+// 			cleartrainerflag(TRAINER_PBL_MELANIE)
+// 			cleartrainerflag(TRAINER_PBL_CONSTANCE)
+// 			cleartrainerflag(TRAINER_PBL_FRANK)
+// 			cleartrainerflag(TRAINER_PBL_DUDLEY)
+// 			cleartrainerflag(TRAINER_PBL_DAISY)
+// 			clearflag(FLAG_BEAT_LEVIATHAN_6)
+// 			setvar(VAR_ZONE_6_STATE, 0)
+// 			warpteleport(MAP_ZONE5SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 7:
+// 			cleartrainerflag(TRAINER_PBL_MILLIE)
+// 			cleartrainerflag(TRAINER_PBL_PAIGE)
+// 			cleartrainerflag(TRAINER_PBL_SETH)
+// 			cleartrainerflag(TRAINER_PBL_JAMAL)
+// 			cleartrainerflag(TRAINER_PBL_CONNIE)
+// 			clearflag(FLAG_BEAT_LEVIATHAN_7)
+// 			cleartrainerflag(TRAINER_PBL_JIMMY)
+// 			cleartrainerflag(TRAINER_PBL_EMILIANO)
+// 			cleartrainerflag(TRAINER_PBL_KAREN)
+// 			cleartrainerflag(TRAINER_PBL_JAYDEN)
+// 			cleartrainerflag(TRAINER_PBL_NEIL)
+// 			cleartrainerflag(TRAINER_PBL_TAMARA)
+// 			clearflag(FLAG_BEAT_LEVIATHAN_8)
+// 			clearflag(FLAG_HIDE_ZONE8D_WALLY)
+// 			setvar(VAR_ZONE_8_STATE, 0)
+// 			warpteleport(MAP_ZONE6SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 9:
+// 			cleartrainerflag(TRAINER_PBL_COOPER)
+// 			cleartrainerflag(TRAINER_PBL_CARMINE)
+// 			clearflag(FLAG_HIDE_ZONE9A_ARI_WINSTRATE)
+// 			warpteleport(MAP_ZONE8SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 10:
+// 			cleartrainerflag(TRAINER_PBL_KYLE)
+// 			cleartrainerflag(TRAINER_PBL_BELLE)
+// 			cleartrainerflag(TRAINER_PBL_DEWEY)
+// 			cleartrainerflag(TRAINER_PBL_PEARLIE)
+// 			cleartrainerflag(TRAINER_PBL_ERNEST)
+// 			cleartrainerflag(TRAINER_PBL_ALANA)
+// 			cleartrainerflag(TRAINER_PBL_SUSAN)
+// 			cleartrainerflag(TRAINER_PBL_CONRAD)
+// 			clearflag(FLAG_BEAT_LEVIATHAN_9)
+// 			warpteleport(MAP_ZONE9SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 11:
+// 			cleartrainerflag(TRAINER_PBL_JEANETTE)
+// 			cleartrainerflag(TRAINER_PBL_EMMA_AND_LEO)
+// 			cleartrainerflag(TRAINER_PBL_REGINA)
+// 			cleartrainerflag(TRAINER_PBL_JOEL)
+// 			clearflag(FLAG_BEAT_LEVIATHAN_10)
+// 			setvar(VAR_ZONE_11_STATE, 0)
+// 			warpteleport(MAP_ZONE10SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 12:
+// 			cleartrainerflag(TRAINER_PBL_ESSENCE)
+// 			cleartrainerflag(TRAINER_PBL_DOLORES)
+// 			cleartrainerflag(TRAINER_PBL_TREVOR)
+// 			cleartrainerflag(TRAINER_PBL_RANDOLPH)
+// 			cleartrainerflag(TRAINER_PBL_FEDERICO)
+// 			cleartrainerflag(TRAINER_PBL_GENIE)
+// 			cleartrainerflag(TRAINER_PBL_HILDA)
+// 			cleartrainerflag(TRAINER_PBL_KINLEY)
+// 			clearflag(FLAG_HIDE_ZONE12A_CAMPER_PICNICKER)
+// 			setvar(VAR_ZONE_12_STATE, 0)
+// 			warpteleport(MAP_ZONE11SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 13:
+// 			cleartrainerflag(TRAINER_PBL_VIOLET)
+// 			cleartrainerflag(TRAINER_PBL_WANDA)
+// 			cleartrainerflag(TRAINER_PBL_AMBER_AND_KIM)
+// 			cleartrainerflag(TRAINER_PBL_JAN_AND_ERIN)
+// 			cleartrainerflag(TRAINER_PBL_STEVE)
+// 			cleartrainerflag(TRAINER_PBL_GOULD)
+// 			cleartrainerflag(TRAINER_PBL_MENDEL)
+// 			cleartrainerflag(TRAINER_PBL_DARWIN)
+// 			cleartrainerflag(TRAINER_PBL_BART)
+// 			cleartrainerflag(TRAINER_PBL_NIGEL)
+// 			cleartrainerflag(TRAINER_PBL_LOLA)
+// 			cleartrainerflag(TRAINER_PBL_CHARLIE)
+// 			cleartrainerflag(TRAINER_PBL_TODD)
+// 			cleartrainerflag(TRAINER_PBL_RUSSELL)
+// 			cleartrainerflag(TRAINER_PBL_OTIS)
+// 			clearflag(FLAG_BEAT_LEVIATHAN_11)
+// 			clearflag(FLAG_BEAT_LEVIATHAN_12)
+// 			warpteleport(MAP_ZONE12SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 15:
+// 			clearflag(FLAG_BEAT_LEVIATHAN_13)
+// 			setvar(VAR_ZONE_15_STATE, 0)
+// 			warpteleport(MAP_ZONE14SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 16:
+//         	cleartrainerflag(TRAINER_PBL_IONA)
+//         	cleartrainerflag(TRAINER_PBL_BERKE)
+//         	cleartrainerflag(TRAINER_PBL_TANISHA)
+//         	cleartrainerflag(TRAINER_PBL_ROBERT)
+//         	cleartrainerflag(TRAINER_PBL_CHRIS)
+//         	cleartrainerflag(TRAINER_PBL_ANGUS)
+//         	clearflag(FLAG_BEAT_LEVIATHAN_14)
+// 			setvar(VAR_ZONE_16_STATE, 0)
+// 			warpteleport(MAP_ZONE15SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 17:
+//         	cleartrainerflag(TRAINER_PBL_AXLE)
+//         	cleartrainerflag(TRAINER_PBL_RAFAEL)
+//         	cleartrainerflag(TRAINER_PBL_GEORGINA)
+//         	clearflag(FLAG_BEAT_LEVIATHAN_15)
+// 			setvar(VAR_ZONE_17_STATE, 0)
+// 			warpteleport(MAP_ZONE16SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 18:
+//         	cleartrainerflag(TRAINER_PBL_DORIS)
+//         	cleartrainerflag(TRAINER_PBL_HOMER)
+//         	cleartrainerflag(TRAINER_PBL_JOHN)
+//         	cleartrainerflag(TRAINER_PBL_GLENN)
+//         	cleartrainerflag(TRAINER_PBL_JAY)
+//         	cleartrainerflag(TRAINER_PBL_TYLER)
+//         	cleartrainerflag(TRAINER_PBL_TERRENCE)
+//         	cleartrainerflag(TRAINER_PBL_MARTY)
+//         	cleartrainerflag(TRAINER_PBL_KARI)
+//         	cleartrainerflag(TRAINER_PBL_ABRAHAM)
+//         	cleartrainerflag(TRAINER_PBL_MELINDA)
+//         	cleartrainerflag(TRAINER_PBL_EMILIO)
+//         	cleartrainerflag(TRAINER_PBL_REX)
+//         	cleartrainerflag(TRAINER_PBL_LOUIS)
+//         	cleartrainerflag(TRAINER_PBL_LEROY)
+//         	cleartrainerflag(TRAINER_PBL_ELTON)
+//         	cleartrainerflag(TRAINER_PBL_WILLIE)
+//         	clearflag(FLAG_BEAT_LEVIATHAN_16)
+// 			setvar(VAR_ZONE_18_STATE, 0)
+// 			setvar(VAR_ZONE_19_STATE, 0)
+// 			clearflag(FLAG_HIDE_ZONE18A_ZOE)
+// 			clearflag(FLAG_HIDE_ZONE18A_ELI)
+// 			clearflag(FLAG_HIDE_ZONE18A_DOLL)
+// 			warpteleport(MAP_ZONE17SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 20:
+//         	cleartrainerflag(TRAINER_PBL_SHAWN)
+//         	cleartrainerflag(TRAINER_PBL_FERNANDO)
+//         	cleartrainerflag(TRAINER_PBL_KANE)
+//         	cleartrainerflag(TRAINER_PBL_KIRK)
+//         	cleartrainerflag(TRAINER_PBL_DALTON)
+//         	cleartrainerflag(TRAINER_PBL_LEE)
+//         	cleartrainerflag(TRAINER_PBL_BLANCHE)
+//         	clearflag(FLAG_BEAT_LEVIATHAN_17)
+// 			setvar(VAR_ZONE_20_STATE, 0)
+// 			warpteleport(MAP_ZONE20SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 21:
+// 			warpteleport(MAP_ZONE20SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 22:
+// 			warpteleport(MAP_ZONE21SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 23:
+// 			warpteleport(MAP_ZONE22SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 24:
+// 			warpteleport(MAP_ZONE23SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 		case 26:
+// 			warpteleport(MAP_ZONE25SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 	}
+// 	releaseall
+// 	end
+// }
 
 text gText_OneOpponentRemaining {
 	format("{COLOR RED}There is 1 opponent remaining in this area.")

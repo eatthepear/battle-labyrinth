@@ -104,6 +104,9 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .palette = 13,
         .zMove = MOVE_SUPERSONIC_SKYSTRIKE,
         .maxMove = MOVE_MAX_AIRSTREAM,
+        .teraTypeRGBValue = RGB(31, 26, 7),
+        .damageCategory = DAMAGE_CATEGORY_PHYSICAL,
+        .paletteTMHM = gItemIconPalette_FlyingTMHM,
         //.enhanceItem = ITEM_SHARP_BEAK,
         //.berry = ITEM_COBA_BERRY,
         //.gem = ITEM_FLYING_GEM,
@@ -232,6 +235,8 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .name = _("???"),
         .generic = _("a ??? move"),
         .palette = 14,
+        .teraTypeRGBValue = RGB_WHITE,
+        .damageCategory = DAMAGE_CATEGORY_SPECIAL,
     },
     [TYPE_FIRE] =
     {
@@ -404,13 +409,6 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         //.teraShard = ITEM_FAIRY_TERA_SHARD,
         //.arceusForm = SPECIES_ARCEUS_FAIRY,
     },
-    /*
-    [TYPE_STELLAR] =
-    {
-        .name = _("Stellar"),
-        .teraShard = ITEM_STELLAR_TERA_SHARD,
-    },
-    */
     [TYPE_STELLAR] =
     {
         .name = HANDLE_EXPANDED_TYPE_NAME("Stellr", "Stellar"),

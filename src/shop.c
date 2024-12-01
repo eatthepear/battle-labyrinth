@@ -784,7 +784,7 @@ static void BuyMenuDrawGraphics(void)
     ScheduleBgCopyTilemapToVram(3);
 }
 
-static void BuyMenuDrawMapGraphics(void)
+static UNUSED void BuyMenuDrawMapGraphics(void)
 {
     BuyMenuCollectObjectEventData();
     BuyMenuDrawObjectEvents();
@@ -968,7 +968,7 @@ static bool8 BuyMenuCheckIfObjectEventOverlapsMenuBg(s16 *object)
         return FALSE;
 }
 
-static void BuyMenuCopyMenuBgToBg1TilemapBuffer(void)
+static UNUSED void BuyMenuCopyMenuBgToBg1TilemapBuffer(void)
 {
     s16 i;
     u16 *dest = sShopData->tilemapBuffers[1];

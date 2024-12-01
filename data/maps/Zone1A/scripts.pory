@@ -22,13 +22,13 @@ script Zone1A_EventScript_GiveFWG {
 	} else {
 		msgbox(format("Oh! Then I'm sure you could see the benefits of having a diversity of types on your team."), MSGBOX_DEFAULT)
 	}
-	msgbox(format("I'm offering trainers a Grass, Water, or Fire type Pokémon to help supplement their teams. Interested?"), MSGBOX_YESNO)
+	msgbox(format("I'm offering trainers a Grass, Fire, or Water type Pokémon to help supplement their teams. Interested?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		msgbox(Zone1A_Text_FWG_ComeBack)
 		release
 		end
 	}
-	message(format("Do you want a Grass, Water, or Fire type?"))
+	message(format("Do you want a Grass, Fire, or Water type?"))
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Fire", "Water", "Exit")
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -43,18 +43,17 @@ script Zone1A_EventScript_GiveFWG {
 			release
 			end
 	}
-	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
-	if (var(VAR_TEMP_2) == PARTY_SIZE) {
-		msgbox(format("Your party is full. Clear a party slot, then come back."))
-		release
-		end
-	}
-	call(EventScript_NuzlockeVerifyGift)
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
 		if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
 			setvar(VAR_TEMP_1, SPECIES_BULBASAUR) // gets randomized anyways
 		} else {
 			if (var(VAR_TEMP_4) == 0) {
+				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pansage, Cacnea, Sunkern, Smoliv, or Bounsweet.\pIs this ok?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == NO) {
+					msgbox(Zone1A_Text_FWG_ComeBack)
+					release
+					end
+				}
 				setvar(VAR_TEMP_3, 0)
 				checkspeciesclause(SPECIES_PANSAGE)
 				if (var(VAR_RESULT) == TRUE) {
@@ -118,6 +117,12 @@ script Zone1A_EventScript_GiveFWG {
 					}
 				}
 			} elif (var(VAR_TEMP_4) == 1) {
+				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pansear, Slugma, Salandit, Vulpix, or Sizzlipede.\pIs this ok?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == NO) {
+					msgbox(Zone1A_Text_FWG_ComeBack)
+					release
+					end
+				}
 				setvar(VAR_TEMP_3, 0)
 				checkspeciesclause(SPECIES_PANSEAR)
 				if (var(VAR_RESULT) == TRUE) {
@@ -181,12 +186,18 @@ script Zone1A_EventScript_GiveFWG {
 					}
 				}
 			} elif (var(VAR_TEMP_4) == 2) {
+				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Panpour, Barboach, Finneon, Seel, or Goldeen.\pIs this ok?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == NO) {
+					msgbox(Zone1A_Text_FWG_ComeBack)
+					release
+					end
+				}
 				setvar(VAR_TEMP_3, 0)
 				checkspeciesclause(SPECIES_PANPOUR)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_WIGLETT)
+				checkspeciesclause(SPECIES_BARBOACH)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
@@ -218,11 +229,11 @@ script Zone1A_EventScript_GiveFWG {
 							}
 							setvar(VAR_TEMP_1, SPECIES_PANPOUR)
 						case 1:
-							checkspeciesclause(SPECIES_WIGLETT)
+							checkspeciesclause(SPECIES_BARBOACH)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
-							setvar(VAR_TEMP_1, SPECIES_WIGLETT)
+							setvar(VAR_TEMP_1, SPECIES_BARBOACH)
 						case 2:
 							checkspeciesclause(SPECIES_FINNEON)
 							if (var(VAR_RESULT) == TRUE) {
@@ -286,12 +297,12 @@ script Zone1A_EventScript_GiveFWG {
 					end
 			}
 		} elif (var(VAR_TEMP_4) == 2) {
-			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Panpour", "Wiglett", "Finneon", "Seel", "Goldeen", "Exit")
+			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Panpour", "Barboach", "Finneon", "Seel", "Goldeen", "Exit")
 			switch (var(VAR_RESULT)) {
 				case 0:
 					setvar(VAR_TEMP_1, SPECIES_PANPOUR)
 				case 1:
-					setvar(VAR_TEMP_1, SPECIES_WIGLETT)
+					setvar(VAR_TEMP_1, SPECIES_BARBOACH)
 				case 2:
 					setvar(VAR_TEMP_1, SPECIES_FINNEON)
 				case 3:
@@ -313,6 +324,29 @@ script Zone1A_EventScript_GiveFWG {
 			end
 		}
 	}
+	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
+		special(ChoosePartyMon)
+		waitstate
+		faceplayer
+		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+			msgbox(Zone1A_Text_FWG_ComeBack)
+			release
+			end
+		}
+		specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
+		bufferspeciesname(2, VAR_TEMP_3)
+		copyvar(VAR_TEMP_3, VAR_0x8004) // used in SendChosenMonToPC
+		msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			msgbox(Zone1A_Text_FWG_ComeBack)
+			release
+			end
+		}
+		special(SendChosenMonToPC)
+		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
+	}
 	givemon(VAR_TEMP_1, 5, ITEM_NONE)
 	setmonmetlocation(VAR_TEMP_2, 245)
 	bufferspeciesname(0, VAR_TEMP_1)
@@ -331,7 +365,7 @@ script Zone1A_EventScript_GiveFWG {
 	closemessage
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(8)
-	setflag(FLAG_RECEIVED_FWG)
+	setflag(FLAG_ZONE1A_RECEIVED_FWG)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	release
 	end
@@ -431,15 +465,13 @@ script Zone1A_EventScript_LeviathanBattle {
 	msgbox(Zone1A_Text_Leviathan1Intro2)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-    	setvar(VAR_MUGSHOT_ID, MUGSHOT_COREY)
 		trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_BRUTAL, Zone1A_Text_Leviathan1Defeat)
 	} else {
-		setvar(VAR_MUGSHOT_ID, MUGSHOT_COREY)
 		trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1, Zone1A_Text_Leviathan1Defeat)
 	}
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: I thought if I gave my Skwovet an Oran Berry, I would be able to win. Oran Berries really are the best!\p Here, let me share some with you and your Pokémon!"), MSGBOX_DEFAULT)
-	giveitem(ITEM_ORAN_BERRY, 10)
+	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this Exp. Share! It's useful for training up Pokémon."), MSGBOX_DEFAULT)
+	giveitem(ITEM_EXP_SHARE)
 	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Well, anyways, I've gotta run now.\pBye bye!"))
 	closemessage
 	fadescreenswapbuffers(FADE_TO_BLACK)
@@ -467,7 +499,7 @@ text Zone1A_Text_Leviathan1Intro2 {
 }
 
 text Zone1A_Text_Leviathan1Defeat {
-	format("Drats! Even the Oran Berry wasn't enough!")
+	format("Drats! My Fire-Water-Grass core wasn't enough!")
 }
 
 script Zone1A_EventScript_ItemPotion {
@@ -505,12 +537,22 @@ script Zone1A_EventScript_ItemQuickClaw {
 }
 
 script Zone1A_EventScript_PorygonSign {
-	msgbox(format("Every Zone has its own challenges.\nIn order to reach the Sanctuary and clear a Zone, you must find {COLOR RED}Porygon{COLOR DARK_GRAY}."), MSGBOX_DEFAULT)
+	msgbox(format("Trainer Tips\pEvery Zone has its own challenges.\nIn order to reach the Sanctuary and clear a Zone, you must find {COLOR RED}Porygon{COLOR DARK_GRAY}."), MSGBOX_DEFAULT)
 	showmonpic(SPECIES_PORYGON, 10, 3)
 	setseenmon(SPECIES_PORYGON)
 	waitbuttonpress
 	hidemonpic
 	release
+	end
+}
+
+script Zone1A_EventScript_Sign_GoldenTree {
+	msgbox(format("Trainer Tips\pShaking a Golden Tree might drop berries, though occasionally you'll disturb the wild Pokémon living in the tree!"), MSGBOX_SIGN)
+	end
+}
+
+script Zone1A_EventScript_Sign_RunningShoes {
+	msgbox(format("Trainer Tips\pPress {R_BUTTON} to enable or disable Auto Run."), MSGBOX_SIGN)
 	end
 }
 
@@ -556,13 +598,4 @@ Zone1A_Text_OscarDefeat:
 
 Zone1A_Text_OscarPostBattle:
 	.string "I must reclaim my honor…$"
-
-Zone1A_EventScript_Sign::
-	msgbox Zone1A_Text_Sign, MSGBOX_SIGN
-	end
-
-Zone1A_Text_Sign:
-	.string "Trainer Tips!\p"
-	.string "Press {R_BUTTON} to enable\n"
-	.string "or disable Auto Run.$"
 `

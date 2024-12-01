@@ -25,7 +25,8 @@ script Zone17Sanctuary_EventScript_Intro {
 script Zone17Sanctuary_EventScript_NextZone {
 	lock
 	faceplayer
-	msgbox(gText_Colress_Greetings, MSGBOX_DEFAULT)
+	message(gText_Colress_Greetings)
+	waitmessage
 	dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
 	switch (var(VAR_RESULT)) {
 		case 0:

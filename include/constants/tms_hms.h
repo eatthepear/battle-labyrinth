@@ -13,6 +13,7 @@
     F(POWER_UP_PUNCH) \
     F(CHARGE_BEAM) \
     F(FLAME_CHARGE) \
+    F(TRAILBLAZE) \
     F(ROCK_TOMB) \
     F(THIEF) \
     F(RETALIATE) \
@@ -98,7 +99,6 @@
     F(REST) \
     F(ATTRACT) \
     F(BIND) \
-    F(ABSORB) \
     F(SKILL_SWAP) \
     F(SNATCH) \
     F(OVERHEAT)

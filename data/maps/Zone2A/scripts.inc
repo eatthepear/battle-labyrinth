@@ -45,83 +45,104 @@ Zone2A_EventScript_ItemAntidote_2:
 	end
 
 
-# 28 "data/maps/Zone2A/scripts.pory"
-
+Zone2A_EventScript_CautionSign::
 # 29 "data/maps/Zone2A/scripts.pory"
-Zone2A_EventScript_Polly::
-# 30 "data/maps/Zone2A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_POLLY, Zone2A_Text_PollyIntro, Zone2A_Text_PollyDefeat
-# 31 "data/maps/Zone2A/scripts.pory"
-	msgbox Zone2A_Text_PollyPostBattle, MSGBOX_AUTOCLOSE
-# 32 "data/maps/Zone2A/scripts.pory"
+	msgbox Zone2A_EventScript_CautionSign_Text_0, MSGBOX_SIGN
 	end
-# 33 "data/maps/Zone2A/scripts.pory"
 
+
+Zone2A_EventScript_ExpShareSign::
 # 34 "data/maps/Zone2A/scripts.pory"
-Zone2A_Text_PollyIntro:
-# 35 "data/maps/Zone2A/scripts.pory"
-	.string "Don't you just love magic?$"
-# 36 "data/maps/Zone2A/scripts.pory"
+	msgbox Zone2A_EventScript_ExpShareSign_Text_0, MSGBOX_SIGN
+	end
 
-# 37 "data/maps/Zone2A/scripts.pory"
-Zone2A_Text_PollyDefeat:
-# 38 "data/maps/Zone2A/scripts.pory"
-	.string "Absolutely magical!$"
+
+Zone2A_EventScript_Polly::
 # 39 "data/maps/Zone2A/scripts.pory"
-
+	trainerbattle_single TRAINER_PBL_POLLY, Zone2A_EventScript_Polly_Text_0, Zone2A_EventScript_Polly_Text_1
 # 40 "data/maps/Zone2A/scripts.pory"
-Zone2A_Text_PollyPostBattle:
-# 41 "data/maps/Zone2A/scripts.pory"
-	.string "I'm glad I live in as magical a\n"
-# 42 "data/maps/Zone2A/scripts.pory"
-	.string "world as this one!$"
-# 43 "data/maps/Zone2A/scripts.pory"
+	msgbox Zone2A_EventScript_Polly_Text_2, MSGBOX_AUTOCLOSE
+	end
+
 
 # 44 "data/maps/Zone2A/scripts.pory"
-Zone2A_EventScript_Jeremiah::
+
 # 45 "data/maps/Zone2A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_JEREMIAH, Zone2A_Text_JeremiahIntro, Zone2A_Text_JeremiahDefeat
+Zone2A_EventScript_Jeremiah::
 # 46 "data/maps/Zone2A/scripts.pory"
-	msgbox Zone2A_Text_JeremiahPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_PBL_JEREMIAH, Zone2A_Text_JeremiahIntro, Zone2A_Text_JeremiahDefeat
 # 47 "data/maps/Zone2A/scripts.pory"
-	end
+	msgbox Zone2A_Text_JeremiahPostBattle, MSGBOX_AUTOCLOSE
 # 48 "data/maps/Zone2A/scripts.pory"
-
-# 49 "data/maps/Zone2A/scripts.pory"
-Zone2A_Text_JeremiahIntro:
-# 50 "data/maps/Zone2A/scripts.pory"
-	.string "The more legs, the better!$"
-# 51 "data/maps/Zone2A/scripts.pory"
-
-# 52 "data/maps/Zone2A/scripts.pory"
-Zone2A_Text_JeremiahDefeat:
-# 53 "data/maps/Zone2A/scripts.pory"
-	.string "Oh… Come on!$"
-# 54 "data/maps/Zone2A/scripts.pory"
-
-# 55 "data/maps/Zone2A/scripts.pory"
-Zone2A_Text_JeremiahPostBattle:
-# 56 "data/maps/Zone2A/scripts.pory"
-	.string "Just wait till my Bugs are all evolved!$"
-# 57 "data/maps/Zone2A/scripts.pory"
-
-# 58 "data/maps/Zone2A/scripts.pory"
-Zone2A_EventScript_Sign::
-# 59 "data/maps/Zone2A/scripts.pory"
-	msgbox Zone2A_Text_Sign, MSGBOX_SIGN
-# 60 "data/maps/Zone2A/scripts.pory"
 	end
-# 61 "data/maps/Zone2A/scripts.pory"
+# 49 "data/maps/Zone2A/scripts.pory"
 
+# 50 "data/maps/Zone2A/scripts.pory"
+Zone2A_Text_JeremiahIntro:
+# 51 "data/maps/Zone2A/scripts.pory"
+	.string "The more legs, the better!$"
+# 52 "data/maps/Zone2A/scripts.pory"
+
+# 53 "data/maps/Zone2A/scripts.pory"
+Zone2A_Text_JeremiahDefeat:
+# 54 "data/maps/Zone2A/scripts.pory"
+	.string "Oh… Come on!$"
+# 55 "data/maps/Zone2A/scripts.pory"
+
+# 56 "data/maps/Zone2A/scripts.pory"
+Zone2A_Text_JeremiahPostBattle:
+# 57 "data/maps/Zone2A/scripts.pory"
+	.string "Just wait till my Bugs are all evolved!$"
+# 58 "data/maps/Zone2A/scripts.pory"
+
+# 59 "data/maps/Zone2A/scripts.pory"
+Zone2A_EventScript_Sign::
+# 60 "data/maps/Zone2A/scripts.pory"
+	msgbox Zone2A_Text_Sign, MSGBOX_SIGN
+# 61 "data/maps/Zone2A/scripts.pory"
+	end
 # 62 "data/maps/Zone2A/scripts.pory"
-Zone2A_Text_Sign:
+
 # 63 "data/maps/Zone2A/scripts.pory"
-	.string "Trainer Tips!\p"
+Zone2A_Text_Sign:
 # 64 "data/maps/Zone2A/scripts.pory"
-	.string "You may find hidden items by\n"
+	.string "Trainer Tips\p"
 # 65 "data/maps/Zone2A/scripts.pory"
-	.string "checking certain tiles with {A_BUTTON}.\p"
+	.string "You may find hidden items by\n"
 # 66 "data/maps/Zone2A/scripts.pory"
-	.string "However, you won't find many hidden\n"
+	.string "checking certain tiles with {A_BUTTON}.\p"
 # 67 "data/maps/Zone2A/scripts.pory"
+	.string "However, you won't find any hidden\n"
+# 68 "data/maps/Zone2A/scripts.pory"
 	.string "items on Brutal difficulty.$"
+
+Zone2A_EventScript_CautionSign_Text_0:
+# 29 "data/maps/Zone2A/scripts.pory"
+	.string "Caution!\p"
+	.string "Diglett have been found living inside\n"
+	.string "the tunnel.\p"
+	.string "Repels recommended!$"
+
+Zone2A_EventScript_ExpShareSign_Text_0:
+# 34 "data/maps/Zone2A/scripts.pory"
+	.string "Trainer Tips\p"
+	.string "The Exp. All only gives Pokémon who\n"
+	.string "didn't participate in battle 25%\l"
+	.string "experience.\p"
+	.string "If you want to train up a particular\n"
+	.string "Pokémon, you can give them the held\l"
+	.string "item Exp. Share so they get full\l"
+	.string "experience!$"
+
+Zone2A_EventScript_Polly_Text_0:
+# 39 "data/maps/Zone2A/scripts.pory"
+	.string "I've heard there's a tunnel nearby with\n"
+	.string "some cool Pokémon living in it!$"
+
+Zone2A_EventScript_Polly_Text_1:
+# 39 "data/maps/Zone2A/scripts.pory"
+	.string "At this rate, I'll never find it!$"
+
+Zone2A_EventScript_Polly_Text_2:
+# 40 "data/maps/Zone2A/scripts.pory"
+	.string "I'm sure it's here somewhere…$"

@@ -63,6 +63,8 @@
 #define VAR_NUM_TRAINERS_REMAINING           0x402D
 #define VAR_DEXNAV_SPECIES                   0x402E // Registered dexnav species
 #define VAR_DEXNAV_STEP_COUNTER              0x402F // steps for finding hidden pokemon
+#define VAR_MARIE_TIER_1                     0x4031
+#define VAR_MARIE_TIER_2                     0x4032
 
 //state vars
 #define VAR_ZONE_0_STATE                     0x4040

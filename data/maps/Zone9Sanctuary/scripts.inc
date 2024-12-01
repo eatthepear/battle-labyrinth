@@ -49,68 +49,70 @@ Zone9Sanctuary_EventScript_NextZone::
 # 27 "data/maps/Zone9Sanctuary/scripts.pory"
 	faceplayer
 # 28 "data/maps/Zone9Sanctuary/scripts.pory"
-	msgbox gText_Colress_Greetings, MSGBOX_DEFAULT
+	message gText_Colress_Greetings
 # 29 "data/maps/Zone9Sanctuary/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone9Sanctuary_EventScript_NextZone_Text_0, Zone9Sanctuary_EventScript_NextZone_Text_1, Zone9Sanctuary_EventScript_NextZone_Text_2, Zone9Sanctuary_EventScript_NextZone_Text_3
+	waitmessage
 # 30 "data/maps/Zone9Sanctuary/scripts.pory"
-	switch VAR_RESULT
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone9Sanctuary_EventScript_NextZone_Text_0, Zone9Sanctuary_EventScript_NextZone_Text_1, Zone9Sanctuary_EventScript_NextZone_Text_2, Zone9Sanctuary_EventScript_NextZone_Text_3
 # 31 "data/maps/Zone9Sanctuary/scripts.pory"
+	switch VAR_RESULT
+# 32 "data/maps/Zone9Sanctuary/scripts.pory"
 	case 0, Zone9Sanctuary_EventScript_NextZone_3
-# 39 "data/maps/Zone9Sanctuary/scripts.pory"
+# 40 "data/maps/Zone9Sanctuary/scripts.pory"
 	case 1, Zone9Sanctuary_EventScript_NextZone_4
-# 41 "data/maps/Zone9Sanctuary/scripts.pory"
+# 42 "data/maps/Zone9Sanctuary/scripts.pory"
 	case 2, Zone9Sanctuary_EventScript_NextZone_5
 Zone9Sanctuary_EventScript_NextZone_1:
-# 44 "data/maps/Zone9Sanctuary/scripts.pory"
+# 45 "data/maps/Zone9Sanctuary/scripts.pory"
 	goto EventScript_WhenUReady
 	return
 
 Zone9Sanctuary_EventScript_NextZone_3:
-# 32 "data/maps/Zone9Sanctuary/scripts.pory"
-	buffernumberstring 0, VAR_ZONE
 # 33 "data/maps/Zone9Sanctuary/scripts.pory"
-	msgbox gText_Colress_SureReadyToLeave, MSGBOX_YESNO
+	buffernumberstring 0, VAR_ZONE
 # 34 "data/maps/Zone9Sanctuary/scripts.pory"
+	msgbox gText_Colress_SureReadyToLeave, MSGBOX_YESNO
+# 35 "data/maps/Zone9Sanctuary/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone9Sanctuary_EventScript_NextZone_6
 	goto Zone9Sanctuary_EventScript_NextZone_1
 
 Zone9Sanctuary_EventScript_NextZone_4:
-# 40 "data/maps/Zone9Sanctuary/scripts.pory"
+# 41 "data/maps/Zone9Sanctuary/scripts.pory"
 	goto EventScript_Settings
 	goto Zone9Sanctuary_EventScript_NextZone_1
 
 Zone9Sanctuary_EventScript_NextZone_5:
-# 42 "data/maps/Zone9Sanctuary/scripts.pory"
+# 43 "data/maps/Zone9Sanctuary/scripts.pory"
 	goto EventScript_Documentation
 	goto Zone9Sanctuary_EventScript_NextZone_1
 
 Zone9Sanctuary_EventScript_NextZone_6:
-# 35 "data/maps/Zone9Sanctuary/scripts.pory"
-	call EventScript_LeavingSetup
 # 36 "data/maps/Zone9Sanctuary/scripts.pory"
-	warp MAP_ZONE10A, 255, 42, 51
+	call EventScript_LeavingSetup
 # 37 "data/maps/Zone9Sanctuary/scripts.pory"
+	warp MAP_ZONE10A, 255, 42, 51
+# 38 "data/maps/Zone9Sanctuary/scripts.pory"
 	waitstate
 	goto Zone9Sanctuary_EventScript_NextZone_1
 
 
 Zone9Sanctuary_EventScript_NextZone_Text_0:
-# 29 "data/maps/Zone9Sanctuary/scripts.pory"
+# 30 "data/maps/Zone9Sanctuary/scripts.pory"
 	.string "Next Zone$"
 
 Zone9Sanctuary_EventScript_NextZone_Text_1:
-# 29 "data/maps/Zone9Sanctuary/scripts.pory"
+# 30 "data/maps/Zone9Sanctuary/scripts.pory"
 	.string "Settings$"
 
 Zone9Sanctuary_EventScript_NextZone_Text_2:
-# 29 "data/maps/Zone9Sanctuary/scripts.pory"
+# 30 "data/maps/Zone9Sanctuary/scripts.pory"
 	.string "Documentation$"
 
 Zone9Sanctuary_EventScript_NextZone_Text_3:
-# 29 "data/maps/Zone9Sanctuary/scripts.pory"
+# 30 "data/maps/Zone9Sanctuary/scripts.pory"
 	.string "Exit$"
 
 Zone9Sanctuary_Text_Reward::
-# 47 "data/maps/Zone9Sanctuary/scripts.pory"
+# 48 "data/maps/Zone9Sanctuary/scripts.pory"
 	.string "TM15 - Bullet Seed!$"

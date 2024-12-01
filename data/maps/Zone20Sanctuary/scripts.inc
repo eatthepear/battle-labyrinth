@@ -29,17 +29,17 @@ Zone20Sanctuary_EventScript_Intro::
 # 16 "data/maps/Zone20Sanctuary/scripts.pory"
 	giveitem ITEM_TM27
 # 17 "data/maps/Zone20Sanctuary/scripts.pory"
-	msgbox gText_Colress_Unlocked, MSGBOX_DEFAULT
+	msgbox gText_Colress_Upgraded, MSGBOX_DEFAULT
 # 18 "data/maps/Zone20Sanctuary/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 19 "data/maps/Zone20Sanctuary/scripts.pory"
-	msgbox gText_Colress_UnlockedUnique, MSGBOX_DEFAULT
+	msgbox gText_Colress_UpgradedUnique, MSGBOX_DEFAULT
 # 20 "data/maps/Zone20Sanctuary/scripts.pory"
 	waitfanfare
 # 21 "data/maps/Zone20Sanctuary/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 22 "data/maps/Zone20Sanctuary/scripts.pory"
-	msgbox gText_Colress_UnlockedServices, MSGBOX_DEFAULT
+	msgbox gText_Colress_UpgradedServices, MSGBOX_DEFAULT
 # 23 "data/maps/Zone20Sanctuary/scripts.pory"
 	waitfanfare
 # 24 "data/maps/Zone20Sanctuary/scripts.pory"
@@ -63,68 +63,70 @@ Zone20Sanctuary_EventScript_NextZone::
 # 35 "data/maps/Zone20Sanctuary/scripts.pory"
 	faceplayer
 # 36 "data/maps/Zone20Sanctuary/scripts.pory"
-	msgbox gText_Colress_Greetings, MSGBOX_DEFAULT
+	message gText_Colress_Greetings
 # 37 "data/maps/Zone20Sanctuary/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone20Sanctuary_EventScript_NextZone_Text_0, Zone20Sanctuary_EventScript_NextZone_Text_1, Zone20Sanctuary_EventScript_NextZone_Text_2, Zone20Sanctuary_EventScript_NextZone_Text_3
+	waitmessage
 # 38 "data/maps/Zone20Sanctuary/scripts.pory"
-	switch VAR_RESULT
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone20Sanctuary_EventScript_NextZone_Text_0, Zone20Sanctuary_EventScript_NextZone_Text_1, Zone20Sanctuary_EventScript_NextZone_Text_2, Zone20Sanctuary_EventScript_NextZone_Text_3
 # 39 "data/maps/Zone20Sanctuary/scripts.pory"
+	switch VAR_RESULT
+# 40 "data/maps/Zone20Sanctuary/scripts.pory"
 	case 0, Zone20Sanctuary_EventScript_NextZone_3
-# 47 "data/maps/Zone20Sanctuary/scripts.pory"
+# 48 "data/maps/Zone20Sanctuary/scripts.pory"
 	case 1, Zone20Sanctuary_EventScript_NextZone_4
-# 49 "data/maps/Zone20Sanctuary/scripts.pory"
+# 50 "data/maps/Zone20Sanctuary/scripts.pory"
 	case 2, Zone20Sanctuary_EventScript_NextZone_5
 Zone20Sanctuary_EventScript_NextZone_1:
-# 52 "data/maps/Zone20Sanctuary/scripts.pory"
+# 53 "data/maps/Zone20Sanctuary/scripts.pory"
 	goto EventScript_WhenUReady
 	return
 
 Zone20Sanctuary_EventScript_NextZone_3:
-# 40 "data/maps/Zone20Sanctuary/scripts.pory"
-	buffernumberstring 0, VAR_ZONE
 # 41 "data/maps/Zone20Sanctuary/scripts.pory"
-	msgbox gText_Colress_SureReadyToLeave, MSGBOX_YESNO
+	buffernumberstring 0, VAR_ZONE
 # 42 "data/maps/Zone20Sanctuary/scripts.pory"
+	msgbox gText_Colress_SureReadyToLeave, MSGBOX_YESNO
+# 43 "data/maps/Zone20Sanctuary/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone20Sanctuary_EventScript_NextZone_6
 	goto Zone20Sanctuary_EventScript_NextZone_1
 
 Zone20Sanctuary_EventScript_NextZone_4:
-# 48 "data/maps/Zone20Sanctuary/scripts.pory"
+# 49 "data/maps/Zone20Sanctuary/scripts.pory"
 	goto EventScript_Settings
 	goto Zone20Sanctuary_EventScript_NextZone_1
 
 Zone20Sanctuary_EventScript_NextZone_5:
-# 50 "data/maps/Zone20Sanctuary/scripts.pory"
+# 51 "data/maps/Zone20Sanctuary/scripts.pory"
 	goto EventScript_Documentation
 	goto Zone20Sanctuary_EventScript_NextZone_1
 
 Zone20Sanctuary_EventScript_NextZone_6:
-# 43 "data/maps/Zone20Sanctuary/scripts.pory"
-	call EventScript_LeavingSetup
 # 44 "data/maps/Zone20Sanctuary/scripts.pory"
-	warp MAP_ZONE21A, 255, 38, 100
+	call EventScript_LeavingSetup
 # 45 "data/maps/Zone20Sanctuary/scripts.pory"
+	warp MAP_ZONE21A, 255, 38, 100
+# 46 "data/maps/Zone20Sanctuary/scripts.pory"
 	waitstate
 	goto Zone20Sanctuary_EventScript_NextZone_1
 
 
 Zone20Sanctuary_EventScript_NextZone_Text_0:
-# 37 "data/maps/Zone20Sanctuary/scripts.pory"
+# 38 "data/maps/Zone20Sanctuary/scripts.pory"
 	.string "Next Zone$"
 
 Zone20Sanctuary_EventScript_NextZone_Text_1:
-# 37 "data/maps/Zone20Sanctuary/scripts.pory"
+# 38 "data/maps/Zone20Sanctuary/scripts.pory"
 	.string "Settings$"
 
 Zone20Sanctuary_EventScript_NextZone_Text_2:
-# 37 "data/maps/Zone20Sanctuary/scripts.pory"
+# 38 "data/maps/Zone20Sanctuary/scripts.pory"
 	.string "Documentation$"
 
 Zone20Sanctuary_EventScript_NextZone_Text_3:
-# 37 "data/maps/Zone20Sanctuary/scripts.pory"
+# 38 "data/maps/Zone20Sanctuary/scripts.pory"
 	.string "Exit$"
 
 Zone20Sanctuary_Text_Reward::
-# 55 "data/maps/Zone20Sanctuary/scripts.pory"
+# 56 "data/maps/Zone20Sanctuary/scripts.pory"
 	.string "TM27 - Sludge Bomb!$"

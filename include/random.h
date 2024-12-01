@@ -112,7 +112,6 @@ void Shuffle8(void *data, size_t n);
 void Shuffle16(void *data, size_t n);
 void Shuffle32(void *data, size_t n);
 void ShuffleN(void *data, size_t n, size_t size);
-void ShuffleList(u16 *list, u16 count);
 u16 RandRange(u16 min, u16 max);
 
 static inline void Shuffle(void *data, size_t n, size_t size)

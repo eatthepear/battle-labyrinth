@@ -526,36 +526,104 @@ Zone7A_Text_ConniePostBattle:
 # 280 "data/maps/Zone7A/scripts.pory"
 
 # 281 "data/maps/Zone7A/scripts.pory"
-Zone7A_EventScript_HealSign::
+Zone7A_EventScript_Peter::
 # 282 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_Text_HealSign, MSGBOX_SIGN
+	trainerbattle_single TRAINER_PBL_PETER, Zone7A_Text_PeterIntro, Zone7A_Text_PeterDefeat
 # 283 "data/maps/Zone7A/scripts.pory"
-	end
+	msgbox Zone7A_Text_PeterPostBattle, MSGBOX_AUTOCLOSE
 # 284 "data/maps/Zone7A/scripts.pory"
-
-# 285 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_HealSign:
-# 286 "data/maps/Zone7A/scripts.pory"
-	.string "A stop for weary travelers.$"
-# 287 "data/maps/Zone7A/scripts.pory"
-
-# 288 "data/maps/Zone7A/scripts.pory"
-Zone7A_EventScript_Sign::
-# 289 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_Text_Sign, MSGBOX_SIGN
-# 290 "data/maps/Zone7A/scripts.pory"
 	end
-# 291 "data/maps/Zone7A/scripts.pory"
+# 285 "data/maps/Zone7A/scripts.pory"
 
+# 286 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_PeterIntro:
+# 287 "data/maps/Zone7A/scripts.pory"
+	.string "Another traveler!\n"
+# 288 "data/maps/Zone7A/scripts.pory"
+	.string "Tropius, it's time for battle!$"
+# 289 "data/maps/Zone7A/scripts.pory"
+
+# 290 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_PeterDefeat:
+# 291 "data/maps/Zone7A/scripts.pory"
+	.string "It's hard winning with only one\n"
 # 292 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_Sign:
+	.string "Pokémon!$"
 # 293 "data/maps/Zone7A/scripts.pory"
-	.string "Trainer Tips!\p"
+
 # 294 "data/maps/Zone7A/scripts.pory"
-	.string "Due to rising costs, the Pokémon\n"
+Zone7A_Text_PeterPostBattle:
 # 295 "data/maps/Zone7A/scripts.pory"
-	.string "Storage System does not heal your\l"
+	.string "Backpacking is all about packing\n"
 # 296 "data/maps/Zone7A/scripts.pory"
+	.string "light!$"
+# 297 "data/maps/Zone7A/scripts.pory"
+
+# 298 "data/maps/Zone7A/scripts.pory"
+Zone7A_EventScript_Whitaker::
+# 299 "data/maps/Zone7A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_WHITAKER, Zone7A_Text_WhitakerIntro, Zone7A_Text_WhitakerDefeat
+# 300 "data/maps/Zone7A/scripts.pory"
+	msgbox Zone7A_Text_WhitakerPostBattle, MSGBOX_AUTOCLOSE
+# 301 "data/maps/Zone7A/scripts.pory"
+	end
+# 302 "data/maps/Zone7A/scripts.pory"
+
+# 303 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_WhitakerIntro:
+# 304 "data/maps/Zone7A/scripts.pory"
+	.string "Another traveler!\n"
+# 305 "data/maps/Zone7A/scripts.pory"
+	.string "Tropius, it's time for battle!$"
+# 306 "data/maps/Zone7A/scripts.pory"
+
+# 307 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_WhitakerDefeat:
+# 308 "data/maps/Zone7A/scripts.pory"
+	.string "It's hard winning with only one\n"
+# 309 "data/maps/Zone7A/scripts.pory"
+	.string "Pokémon!$"
+# 310 "data/maps/Zone7A/scripts.pory"
+
+# 311 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_WhitakerPostBattle:
+# 312 "data/maps/Zone7A/scripts.pory"
+	.string "Backpacking is all about packing\n"
+# 313 "data/maps/Zone7A/scripts.pory"
+	.string "light!$"
+# 314 "data/maps/Zone7A/scripts.pory"
+
+# 315 "data/maps/Zone7A/scripts.pory"
+Zone7A_EventScript_HealSign::
+# 316 "data/maps/Zone7A/scripts.pory"
+	msgbox Zone7A_Text_HealSign, MSGBOX_SIGN
+# 317 "data/maps/Zone7A/scripts.pory"
+	end
+# 318 "data/maps/Zone7A/scripts.pory"
+
+# 319 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_HealSign:
+# 320 "data/maps/Zone7A/scripts.pory"
+	.string "A stop for weary travelers.$"
+# 321 "data/maps/Zone7A/scripts.pory"
+
+# 322 "data/maps/Zone7A/scripts.pory"
+Zone7A_EventScript_Sign::
+# 323 "data/maps/Zone7A/scripts.pory"
+	msgbox Zone7A_Text_Sign, MSGBOX_SIGN
+# 324 "data/maps/Zone7A/scripts.pory"
+	end
+# 325 "data/maps/Zone7A/scripts.pory"
+
+# 326 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_Sign:
+# 327 "data/maps/Zone7A/scripts.pory"
+	.string "Trainer Tips\p"
+# 328 "data/maps/Zone7A/scripts.pory"
+	.string "Due to rising costs, the Pokémon\n"
+# 329 "data/maps/Zone7A/scripts.pory"
+	.string "Storage System does not heal your\l"
+# 330 "data/maps/Zone7A/scripts.pory"
 	.string "Pokémon.$"
 
 Zone7A_EventScript_Beauty_Text_0:

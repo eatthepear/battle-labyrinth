@@ -349,7 +349,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     TRAINER_CLASS(PSYCHIC, "Psychic", 8),
     TRAINER_CLASS(GENTLEMAN, "Gentleman", 20, ITEM_LUXURY_BALL),
     TRAINER_CLASS(ELITE_FOUR, "Elite Four", 25, ITEM_ULTRA_BALL),
-    TRAINER_CLASS(LEADER, "Leader", 25),
+    TRAINER_CLASS(LEADER, "Leviathan", 25),
     TRAINER_CLASS(SCHOOL_KID, "School Kid"),
     TRAINER_CLASS(SR_AND_JR, "Sr. and Jr.", 4),
     TRAINER_CLASS(WINSTRATE, "Winstrate", 10),
@@ -1924,7 +1924,7 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags)
 {
     u8 fixedIV = 0;
-    s32 i, j, k;
+    s32 i, k;
     u8 monsCount;
     u8 trainerName[(PLAYER_NAME_LENGTH * 3) + 1];
     u16 randomizedIndices[PARTY_SIZE];
@@ -1954,7 +1954,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             {
                 randomizedIndices[i] = i;
             }
-            ShuffleList(randomizedIndices, monsCount);
+            Shuffle16(randomizedIndices, monsCount);
         }
 
         for (i = 0; i < monsCount; i++)
@@ -2089,9 +2089,12 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 {
     u8 retVal;
 
-    DebugPrintf("Creating NPC Trainer party, trainter number %d", trainerNum);
+    DebugPrintf("Creating NPC Trainer party, trainer number %d", trainerNum);
     u32 totalExp = 0;
-    for (u32 i = 1; i < 4; i++) {
+    for (u32 i = TRAINER_PBL_MILLIE; i <= TRAINER_PBL_WHITAKER; i++) {
+        totalExp += CalculateExperienceFromTrainer(i);
+    }
+    for (u32 i = TRAINER_PBL_JIMMY; i <= TRAINER_PBL_TAMARA; i++) {
         totalExp += CalculateExperienceFromTrainer(i);
     }
     DebugPrintf("Total exp overall is %d", totalExp);

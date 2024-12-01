@@ -4524,20 +4524,20 @@
     {
       "id": "LAYOUT_ZONE5A",
       "name": "Zone5A_Layout",
-      "width": 60,
-      "height": 40,
+      "width": 97,
+      "height": 33,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Fallarbor",
+      "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Zone5A/border.bin",
       "blockdata_filepath": "data/layouts/Zone5A/map.bin"
     },
     {
       "id": "LAYOUT_ZONE5B",
       "name": "Zone5B_Layout",
-      "width": 15,
-      "height": 15,
+      "width": 97,
+      "height": 33,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Zone5B/border.bin",
       "blockdata_filepath": "data/layouts/Zone5B/map.bin"
     },

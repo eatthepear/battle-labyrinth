@@ -622,7 +622,7 @@ static void CreatePartyMonIcons()
     u8 i = 0;
     s16 x = ICON_BOX_1_START_X;
     s16 y = ICON_BOX_1_START_Y;
-    struct Pokemon *mon;
+    // struct Pokemon *mon;
     LoadMonIconPalettes();
     for(i = 0; i < gPlayerPartyCount; i++)
     {   
@@ -722,7 +722,7 @@ static u32 GetHPEggCyclePercent(u32 partyIndex)
     if (!GetMonData(mon, MON_DATA_IS_EGG))
         return ((GetMonData(mon, MON_DATA_HP)) * 100 / (GetMonData(mon,MON_DATA_MAX_HP)));
     else
-        return ((GetMonData(mon, MON_DATA_FRIENDSHIP)) * 100 / (gSpeciesInfo[GetMonData(mon,MON_DATA_SPECIES)].eggCycles));
+        return 0;
 }
 
 #define HP_BAR_X_START  0
@@ -904,7 +904,7 @@ static void DestroyStatusSprites()
 // These next few functions are from the Ghoulslash UI Shell, they are the basic functions to init a brand new UI
 void Task_OpenStartMenuFullScreen(u8 taskId)
 {
-    s16 *data = gTasks[taskId].data;
+    // s16 *data = gTasks[taskId].data;
     if (!gPaletteFade.active)
     {
         CleanupOverworldWindowsAndTilemaps();
@@ -1264,14 +1264,15 @@ static void PrintMapNameAndTime(void) //this code is ripped froom different part
     u8 mapDisplayHeader[24];
     u8 *withoutPrefixPtr;
     u8 x;
-    const u8 *str, *suffix = NULL;
+    // const u8 *str, *suffix = NULL;
     u8 sTimeTextColors[] = {TEXT_COLOR_TRANSPARENT, 2, 3};
 
-    u16 hours;
-    u16 minutes;
-    u16 dayOfWeek;
-    s32 width;
-    u32 y, totalWidth;
+    // u16 hours;
+    // u16 minutes;
+    // u16 dayOfWeek;
+    // s32 width;
+    u32 y;
+    // u32 y, totalWidth;
     u32 money;
 
     FillWindowPixelBuffer(WINDOW_TOP_BAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));

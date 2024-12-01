@@ -29,11 +29,11 @@ Zone23Sanctuary_EventScript_Intro::
 # 16 "data/maps/Zone23Sanctuary/scripts.pory"
 	giveitem ITEM_TM33
 # 17 "data/maps/Zone23Sanctuary/scripts.pory"
-	msgbox gText_Colress_Unlocked, MSGBOX_DEFAULT
+	msgbox gText_Colress_Upgraded, MSGBOX_DEFAULT
 # 18 "data/maps/Zone23Sanctuary/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 19 "data/maps/Zone23Sanctuary/scripts.pory"
-	msgbox gText_Colress_UnlockedUnique, MSGBOX_DEFAULT
+	msgbox gText_Colress_UpgradedUnique, MSGBOX_DEFAULT
 # 20 "data/maps/Zone23Sanctuary/scripts.pory"
 	waitfanfare
 # 21 "data/maps/Zone23Sanctuary/scripts.pory"
@@ -59,82 +59,84 @@ Zone23Sanctuary_EventScript_NextZone::
 # 33 "data/maps/Zone23Sanctuary/scripts.pory"
 	faceplayer
 # 34 "data/maps/Zone23Sanctuary/scripts.pory"
-	msgbox gText_Colress_Greetings, MSGBOX_DEFAULT
+	message gText_Colress_Greetings
 # 35 "data/maps/Zone23Sanctuary/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone23Sanctuary_EventScript_NextZone_Text_0, Zone23Sanctuary_EventScript_NextZone_Text_1, Zone23Sanctuary_EventScript_NextZone_Text_2, Zone23Sanctuary_EventScript_NextZone_Text_3
+	waitmessage
 # 36 "data/maps/Zone23Sanctuary/scripts.pory"
-	switch VAR_RESULT
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone23Sanctuary_EventScript_NextZone_Text_0, Zone23Sanctuary_EventScript_NextZone_Text_1, Zone23Sanctuary_EventScript_NextZone_Text_2, Zone23Sanctuary_EventScript_NextZone_Text_3
 # 37 "data/maps/Zone23Sanctuary/scripts.pory"
+	switch VAR_RESULT
+# 38 "data/maps/Zone23Sanctuary/scripts.pory"
 	case 0, Zone23Sanctuary_EventScript_NextZone_3
-# 46 "data/maps/Zone23Sanctuary/scripts.pory"
+# 47 "data/maps/Zone23Sanctuary/scripts.pory"
 	case 1, Zone23Sanctuary_EventScript_NextZone_4
-# 48 "data/maps/Zone23Sanctuary/scripts.pory"
+# 49 "data/maps/Zone23Sanctuary/scripts.pory"
 	case 2, Zone23Sanctuary_EventScript_NextZone_5
 Zone23Sanctuary_EventScript_NextZone_1:
-# 51 "data/maps/Zone23Sanctuary/scripts.pory"
+# 52 "data/maps/Zone23Sanctuary/scripts.pory"
 	goto EventScript_WhenUReady
 	return
 
 Zone23Sanctuary_EventScript_NextZone_3:
-# 38 "data/maps/Zone23Sanctuary/scripts.pory"
-	buffernumberstring 0, VAR_ZONE
 # 39 "data/maps/Zone23Sanctuary/scripts.pory"
-	msgbox Zone23Sanctuary_Text_Colress_ReadyToLeave, MSGBOX_YESNO
+	buffernumberstring 0, VAR_ZONE
 # 40 "data/maps/Zone23Sanctuary/scripts.pory"
+	msgbox Zone23Sanctuary_Text_Colress_ReadyToLeave, MSGBOX_YESNO
+# 41 "data/maps/Zone23Sanctuary/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone23Sanctuary_EventScript_NextZone_6
 	goto Zone23Sanctuary_EventScript_NextZone_1
 
 Zone23Sanctuary_EventScript_NextZone_4:
-# 47 "data/maps/Zone23Sanctuary/scripts.pory"
+# 48 "data/maps/Zone23Sanctuary/scripts.pory"
 	goto EventScript_Settings
 	goto Zone23Sanctuary_EventScript_NextZone_1
 
 Zone23Sanctuary_EventScript_NextZone_5:
-# 49 "data/maps/Zone23Sanctuary/scripts.pory"
+# 50 "data/maps/Zone23Sanctuary/scripts.pory"
 	goto EventScript_Documentation
 	goto Zone23Sanctuary_EventScript_NextZone_1
 
 Zone23Sanctuary_EventScript_NextZone_6:
-# 41 "data/maps/Zone23Sanctuary/scripts.pory"
-	call EventScript_LeavingSetup
 # 42 "data/maps/Zone23Sanctuary/scripts.pory"
-	setflag FLAG_HIDE_ZONE25L_COLRESS
+	call EventScript_LeavingSetup
 # 43 "data/maps/Zone23Sanctuary/scripts.pory"
-	warp MAP_ZONE24A, 255, 31, 23
+	setflag FLAG_HIDE_ZONE25L_COLRESS
 # 44 "data/maps/Zone23Sanctuary/scripts.pory"
+	warp MAP_ZONE24A, 255, 31, 23
+# 45 "data/maps/Zone23Sanctuary/scripts.pory"
 	waitstate
 	goto Zone23Sanctuary_EventScript_NextZone_1
 
 
 Zone23Sanctuary_EventScript_NextZone_Text_0:
-# 35 "data/maps/Zone23Sanctuary/scripts.pory"
+# 36 "data/maps/Zone23Sanctuary/scripts.pory"
 	.string "Next Zone$"
 
 Zone23Sanctuary_EventScript_NextZone_Text_1:
-# 35 "data/maps/Zone23Sanctuary/scripts.pory"
+# 36 "data/maps/Zone23Sanctuary/scripts.pory"
 	.string "Settings$"
 
 Zone23Sanctuary_EventScript_NextZone_Text_2:
-# 35 "data/maps/Zone23Sanctuary/scripts.pory"
+# 36 "data/maps/Zone23Sanctuary/scripts.pory"
 	.string "Documentation$"
 
 Zone23Sanctuary_EventScript_NextZone_Text_3:
-# 35 "data/maps/Zone23Sanctuary/scripts.pory"
+# 36 "data/maps/Zone23Sanctuary/scripts.pory"
 	.string "Exit$"
 
 Zone23Sanctuary_Text_Reward::
-# 54 "data/maps/Zone23Sanctuary/scripts.pory"
+# 55 "data/maps/Zone23Sanctuary/scripts.pory"
 	.string "TM33 - Rain Dance!$"
 
 Zone23Sanctuary_Text_Colress_Explain::
-# 58 "data/maps/Zone23Sanctuary/scripts.pory"
+# 59 "data/maps/Zone23Sanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones,\n{COLOR RED}Zone 24{COLOR DARK_GRAY} and {COLOR RED}Zone 25{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a\nSanctuary in between the Zones.$"
 
 Zone23Sanctuary_Text_Colress_WhenUReady::
-# 62 "data/maps/Zone23Sanctuary/scripts.pory"
+# 63 "data/maps/Zone23Sanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to\nenter {COLOR RED}Zone 24{COLOR DARK_GRAY} and {COLOR RED}Zone 25{COLOR DARK_GRAY}, speak to me.$"
 
 Zone23Sanctuary_Text_Colress_ReadyToLeave::
-# 66 "data/maps/Zone23Sanctuary/scripts.pory"
+# 67 "data/maps/Zone23Sanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you ready to leave?\nYou will be entering\l{COLOR RED}Zone 24{COLOR DARK_GRAY} and {COLOR RED}Zone 25{COLOR DARK_GRAY}.$"

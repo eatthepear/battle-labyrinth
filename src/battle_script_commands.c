@@ -1787,16 +1787,8 @@ static void Cmd_ppreduce(void)
         {
             switch (gMovesInfo[gCurrentMove].effect)
             {
-            case EFFECT_RESTORE_HP:
-            case EFFECT_SOFTBOILED:
-            case EFFECT_ROOST:
-            case EFFECT_SHORE_UP:
-            case EFFECT_WISH:
-            case EFFECT_LEECH_SEED:
             case EFFECT_PROTECT:
             case EFFECT_SUBSTITUTE:
-            case EFFECT_JUNGLE_HEALING:
-            case EFFECT_HEAL_PULSE:
                 ppToDeduct = 2; // divide PP by 2
                 break;
             case EFFECT_ATTACK_UP:
@@ -1808,11 +1800,9 @@ static void Cmd_ppreduce(void)
             case EFFECT_DEFENSE_UP:
             case EFFECT_COSMIC_POWER:
             case EFFECT_AROMATIC_MIST:
-            case EFFECT_SLEEP:
             case EFFECT_CHARGE:
                 ppToDeduct = 5; // divide PP by 5
                 break;
-            case EFFECT_REST:
             case EFFECT_MINIMIZE:
             case EFFECT_ACUPRESSURE:
             case EFFECT_ATTACK_ACCURACY_UP:
@@ -3256,7 +3246,8 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 {
                     u16 payday = gPaydayMoney;
                     u16 moveTarget = GetBattlerMoveTargetType(gBattlerAttacker, gCurrentMove);
-                    gPaydayMoney += (gBattleMons[gBattlerAttacker].level * 5);
+                    if (!((FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_RED_THUMB)) && !(gBattleTypeFlags & BATTLE_TYPE_TRAINER)))
+                        gPaydayMoney += (gBattleMons[gBattlerAttacker].level * 5);
                     if (payday > gPaydayMoney)
                         gPaydayMoney = 0xFFFF;
 
@@ -4253,7 +4244,7 @@ static bool32 BattleTypeAllowsExp(void)
 {
     if (RECORDED_WILD_BATTLE)
         return TRUE;
-    else if (!(gBattleTypeFlags & (BATTLE_TYPE_TRAINER)) && (FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_LAZY)))
+    else if (!(gBattleTypeFlags & (BATTLE_TYPE_TRAINER)) && (FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_ANTIGRIND)))
         return FALSE;
     else if (gBattleTypeFlags &
               ( BATTLE_TYPE_LINK
@@ -4380,7 +4371,7 @@ static void Cmd_getexp(void)
             else
             {
                 *exp = calculatedExp;
-                gBattleStruct->expShareExpValue = calculatedExp / 2;
+                gBattleStruct->expShareExpValue = calculatedExp / 4;
                 if (gBattleStruct->expShareExpValue == 0)
                     gBattleStruct->expShareExpValue = 1;
             }
@@ -4435,7 +4426,11 @@ static void Cmd_getexp(void)
                     else
                         gBattleMoveDamage = 0;
 
-                    if ((holdEffect == HOLD_EFFECT_EXP_SHARE || IsGen6ExpShareEnabled())
+                    if (holdEffect == HOLD_EFFECT_EXP_SHARE && (B_SPLIT_EXP < GEN_6 || gBattleMoveDamage == 0))
+                    {
+                        gBattleMoveDamage += GetSoftLevelCapExpValue(gPlayerParty[*expMonId].level, gBattleStruct->expValue);
+                    }
+                    else if ((IsGen6ExpShareEnabled())
                         && (B_SPLIT_EXP < GEN_6 || gBattleMoveDamage == 0)) // only give exp share bonus in later gens if the mon wasn't sent out
                     {
                         gBattleMoveDamage += GetSoftLevelCapExpValue(gPlayerParty[*expMonId].level, gBattleStruct->expShareExpValue);;
@@ -7785,6 +7780,8 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
             return 20;
         lastMonLevel = party[GetTrainerPartySizeFromId(trainerId) - 1].lvl;
         trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money;
+        if (FlagGet(FLAG_FORCE_BATTLE_ANIM_ON)) // Fighting a boss
+            trainerMoney = 25;
 
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
             moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;

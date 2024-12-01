@@ -51,80 +51,82 @@ Zone11Sanctuary_EventScript_NextZone::
 # 33 "data/maps/Zone11Sanctuary/scripts.pory"
 	faceplayer
 # 34 "data/maps/Zone11Sanctuary/scripts.pory"
-	msgbox gText_Colress_Greetings, MSGBOX_DEFAULT
+	message gText_Colress_Greetings
 # 35 "data/maps/Zone11Sanctuary/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone11Sanctuary_EventScript_NextZone_Text_0, Zone11Sanctuary_EventScript_NextZone_Text_1, Zone11Sanctuary_EventScript_NextZone_Text_2, Zone11Sanctuary_EventScript_NextZone_Text_3
+	waitmessage
 # 36 "data/maps/Zone11Sanctuary/scripts.pory"
-	switch VAR_RESULT
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone11Sanctuary_EventScript_NextZone_Text_0, Zone11Sanctuary_EventScript_NextZone_Text_1, Zone11Sanctuary_EventScript_NextZone_Text_2, Zone11Sanctuary_EventScript_NextZone_Text_3
 # 37 "data/maps/Zone11Sanctuary/scripts.pory"
+	switch VAR_RESULT
+# 38 "data/maps/Zone11Sanctuary/scripts.pory"
 	case 0, Zone11Sanctuary_EventScript_NextZone_3
-# 50 "data/maps/Zone11Sanctuary/scripts.pory"
+# 51 "data/maps/Zone11Sanctuary/scripts.pory"
 	case 1, Zone11Sanctuary_EventScript_NextZone_4
-# 52 "data/maps/Zone11Sanctuary/scripts.pory"
+# 53 "data/maps/Zone11Sanctuary/scripts.pory"
 	case 2, Zone11Sanctuary_EventScript_NextZone_5
 Zone11Sanctuary_EventScript_NextZone_1:
-# 55 "data/maps/Zone11Sanctuary/scripts.pory"
+# 56 "data/maps/Zone11Sanctuary/scripts.pory"
 	goto EventScript_WhenUReady
 	return
 
 Zone11Sanctuary_EventScript_NextZone_3:
-# 38 "data/maps/Zone11Sanctuary/scripts.pory"
-	msgbox Zone11Sanctuary_Text_NoBagAccessInNextZone, MSGBOX_DEFAULT
 # 39 "data/maps/Zone11Sanctuary/scripts.pory"
-	buffernumberstring 0, VAR_ZONE
+	msgbox Zone11Sanctuary_Text_NoBagAccessInNextZone, MSGBOX_DEFAULT
 # 40 "data/maps/Zone11Sanctuary/scripts.pory"
-	msgbox gText_Colress_SureReadyToLeave, MSGBOX_YESNO
+	buffernumberstring 0, VAR_ZONE
 # 41 "data/maps/Zone11Sanctuary/scripts.pory"
+	msgbox gText_Colress_SureReadyToLeave, MSGBOX_YESNO
+# 42 "data/maps/Zone11Sanctuary/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone11Sanctuary_EventScript_NextZone_6
 	goto Zone11Sanctuary_EventScript_NextZone_1
 
 Zone11Sanctuary_EventScript_NextZone_4:
-# 51 "data/maps/Zone11Sanctuary/scripts.pory"
+# 52 "data/maps/Zone11Sanctuary/scripts.pory"
 	goto EventScript_Settings
 	goto Zone11Sanctuary_EventScript_NextZone_1
 
 Zone11Sanctuary_EventScript_NextZone_5:
-# 53 "data/maps/Zone11Sanctuary/scripts.pory"
+# 54 "data/maps/Zone11Sanctuary/scripts.pory"
 	goto EventScript_Documentation
 	goto Zone11Sanctuary_EventScript_NextZone_1
 
 Zone11Sanctuary_EventScript_NextZone_6:
-# 42 "data/maps/Zone11Sanctuary/scripts.pory"
-	call EventScript_LeavingSetup
 # 43 "data/maps/Zone11Sanctuary/scripts.pory"
+	call EventScript_LeavingSetup
+# 44 "data/maps/Zone11Sanctuary/scripts.pory"
 	setflag FLAG_SYS_NO_BAG_START_MENU
-# 44 "data/maps/Zone11Sanctuary/scripts.pory"
+# 45 "data/maps/Zone11Sanctuary/scripts.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, Zone11Sanctuary_EventScript_NextZone_9
-# 44 "data/maps/Zone11Sanctuary/scripts.pory"
+# 45 "data/maps/Zone11Sanctuary/scripts.pory"
 	goto_if_set FLAG_SETTINGS_INDEPENDENT, Zone11Sanctuary_EventScript_NextZone_9
 Zone11Sanctuary_EventScript_NextZone_8:
-# 47 "data/maps/Zone11Sanctuary/scripts.pory"
-	warp MAP_ZONE12A, 255, 9, 17
 # 48 "data/maps/Zone11Sanctuary/scripts.pory"
+	warp MAP_ZONE12A, 255, 9, 17
+# 49 "data/maps/Zone11Sanctuary/scripts.pory"
 	waitstate
 	goto Zone11Sanctuary_EventScript_NextZone_1
 
 Zone11Sanctuary_EventScript_NextZone_9:
-# 45 "data/maps/Zone11Sanctuary/scripts.pory"
+# 46 "data/maps/Zone11Sanctuary/scripts.pory"
 	setflag FLAG_HIDE_ZONE12A_NURSE
 	goto Zone11Sanctuary_EventScript_NextZone_8
 
 
 Zone11Sanctuary_EventScript_NextZone_Text_0:
-# 35 "data/maps/Zone11Sanctuary/scripts.pory"
+# 36 "data/maps/Zone11Sanctuary/scripts.pory"
 	.string "Next Zone$"
 
 Zone11Sanctuary_EventScript_NextZone_Text_1:
-# 35 "data/maps/Zone11Sanctuary/scripts.pory"
+# 36 "data/maps/Zone11Sanctuary/scripts.pory"
 	.string "Settings$"
 
 Zone11Sanctuary_EventScript_NextZone_Text_2:
-# 35 "data/maps/Zone11Sanctuary/scripts.pory"
+# 36 "data/maps/Zone11Sanctuary/scripts.pory"
 	.string "Documentation$"
 
 Zone11Sanctuary_EventScript_NextZone_Text_3:
-# 35 "data/maps/Zone11Sanctuary/scripts.pory"
+# 36 "data/maps/Zone11Sanctuary/scripts.pory"
 	.string "Exit$"
 
 Zone11Sanctuary_Text_NoBagAccessInNextZone::
@@ -135,5 +137,5 @@ Zone11Sanctuary_Text_NoBagAccessInNextZone::
 	.string "your Bag outside of battle.$"
 
 Zone11Sanctuary_Text_Reward::
-# 58 "data/maps/Zone11Sanctuary/scripts.pory"
+# 59 "data/maps/Zone11Sanctuary/scripts.pory"
 	.string "TM23 - Pluck!$"

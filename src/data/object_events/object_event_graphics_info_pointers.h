@@ -527,7 +527,6 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LUGIA] =                    &gObjectEventGraphicsInfo_Lugia,
     [OBJ_EVENT_GFX_HOOH] =                     &gObjectEventGraphicsInfo_HoOh,
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
-    [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_ITEM_CHEST] =               &gObjectEventGraphicsInfo_ItemChest,
     [OBJ_EVENT_GFX_ITEM_CHEST_OPEN] =          &gObjectEventGraphicsInfo_ItemChestOpen,
     [OBJ_EVENT_GFX_TM_CHEST] =                 &gObjectEventGraphicsInfo_TMChest,
@@ -538,6 +537,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_REGIDRAGO] =                &gObjectEventGraphicsInfo_Regidrago,
     [OBJ_EVENT_GFX_REGIELEKI] =                &gObjectEventGraphicsInfo_Regieleki,
     [OBJ_EVENT_GFX_BUG_MANIAC] =               &gObjectEventGraphicsInfo_BugManiac,
+    [OBJ_EVENT_GFX_SCHOOL_KID_F] =             &gObjectEventGraphicsInfo_SchoolKidF,
     [OBJ_EVENT_GFX_FAIRY_TALE_GIRL] =          &gObjectEventGraphicsInfo_FairyTaleGirl,
     [OBJ_EVENT_GFX_SOCIALITE] =                &gObjectEventGraphicsInfo_Socialite,
     [OBJ_EVENT_GFX_AROMA_LADY] =               &gObjectEventGraphicsInfo_AromaLady,
@@ -556,10 +556,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_GUITARIST] =                &gObjectEventGraphicsInfo_Guitarist,
     [OBJ_EVENT_GFX_COLLECTOR] =                &gObjectEventGraphicsInfo_Collector,
     [OBJ_EVENT_GFX_KINDLER] =                  &gObjectEventGraphicsInfo_Kindler,
-    [OBJ_EVENT_GFX_COWGIRL] =                  &gObjectEventGraphicsInfo_Cowgirl,
     [OBJ_EVENT_GFX_PSYCHIC_F] =                &gObjectEventGraphicsInfo_PsychicF,
     [OBJ_EVENT_GFX_DRAGON_TAMER] =             &gObjectEventGraphicsInfo_DragonTamer,
-    [OBJ_EVENT_GFX_SCHOOL_KID_F] =             &gObjectEventGraphicsInfo_SchoolKidF,
+    [OBJ_EVENT_GFX_COWGIRL] =                  &gObjectEventGraphicsInfo_Cowgirl,
+    [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

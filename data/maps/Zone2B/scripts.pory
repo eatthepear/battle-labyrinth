@@ -12,7 +12,7 @@ script Zone2B_EventScript_LeviathanBattle {
 	lock
 	faceplayer
 	if (flag(FLAG_BEAT_LEVIATHAN_2) == true) {
-		msgbox(format("{COLOR BLUE}Joey{COLOR DARK_GRAY}: Do I have to have more Pokémon in order to battle better?\pNo!\nI'm sticking with this one no matter what!"))
+	msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: If you're looking for more Berries, I've heard you can either grow them yourself, or find a nice Golden Tree to shake them from.\pThose trees have Pokémon though; that's where I found some of my partner Pokémon!"))
 		release
 		end
 	}
@@ -26,16 +26,18 @@ script Zone2B_EventScript_LeviathanBattle {
 	msgbox(Zone2B_Text_Leviathan2Intro)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-    	setvar(VAR_MUGSHOT_ID, MUGSHOT_JOEY)
-		trainerbattle_no_intro(TRAINER_PBL_JOEY_LEVIATHAN_2_BRUTAL, Zone2B_Text_Leviathan2Defeat)
+		trainerbattle_no_intro(TRAINER_PBL_SHAUN_LEVIATHAN_2_BRUTAL, Zone2B_Text_Leviathan2Defeat)
 	} else {
-		setvar(VAR_MUGSHOT_ID, MUGSHOT_JOEY)
-		trainerbattle_no_intro(TRAINER_PBL_JOEY_LEVIATHAN_2, Zone2B_Text_Leviathan2Defeat)
+		trainerbattle_no_intro(TRAINER_PBL_SHAUN_LEVIATHAN_2, Zone2B_Text_Leviathan2Defeat)
 	}
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Joey{COLOR DARK_GRAY}: Even after all that training, Rattata wasn't enough to get across the finish line.\pThat's all right though;\pI enjoyed our battle so much, I want to give you this!"), MSGBOX_DEFAULT)
-	giveitem(ITEM_SILK_SCARF, 1)
-	msgbox(format("{COLOR BLUE}Joey{COLOR DARK_GRAY}: Do I have to have more Pokémon in order to battle better?\pNo!\nI'm sticking with this one no matter what!"))
+	msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though;\pI enjoyed our battle so much, I want to give you some extra Berries!"), MSGBOX_DEFAULT)
+	giveitem(ITEM_ORAN_BERRY, 5)
+	giveitem(ITEM_CHERI_BERRY, 2)
+	giveitem(ITEM_PECHA_BERRY, 2)
+	giveitem(ITEM_RAWST_BERRY, 2)
+	giveitem(ITEM_CHESTO_BERRY, 2)
+	msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: If you're looking for more Berries, I've heard you can either grow them yourself, or find a nice Golden Tree to shake them from.\pThose trees have Pokémon though; that's where I found some of my partner Pokémon!"))
 	closemessage
 	setflag(FLAG_BEAT_LEVIATHAN_2)
 	release
@@ -43,15 +45,15 @@ script Zone2B_EventScript_LeviathanBattle {
 }
 
 text Zone2B_Text_Leviathan2WantBattle {
-	format("{COLOR BLUE}Joey{COLOR DARK_GRAY}: My Rattata is in the top percentage of Rattata! Want to see?")
+	format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: My Pokémon love to eat, just like me! Want to see?")
 }
 
 text Zone2B_Text_Leviathan2Intro {
-	format("{COLOR BLUE}Joey{COLOR DARK_GRAY}: All right then, let's battle!")
+	format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: All right then, let's battle!")
 }
 
 text Zone2B_Text_Leviathan2DenyBattle {
-	format("{COLOR BLUE}Joey{COLOR DARK_GRAY}: Oh, all right…")
+	format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: Oh, all right…")
 }
 
 text Zone2B_Text_Leviathan2Defeat {
@@ -61,125 +63,260 @@ text Zone2B_Text_Leviathan2Defeat {
 script Zone2B_EventScript_BuyBug {
 	lock
 	faceplayer
+	if (!defeated(TRAINER_PBL_JOSH)) {
+		msgbox(format("Oh! You look like a Bug-type enthusiast.\pBug-type Pokémon sure are great.\pI can show you some Bugs, if you like?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			msgbox(format("You don't want any? Fine. More for me."))
+			release
+			end
+		}
+		msgbox(format("I'll show you some great Bug-type Pokémon!"), MSGBOX_AUTOCLOSE)
+		trainerbattle_no_intro(TRAINER_PBL_JOSH, format("They were great, weren't they?"))
+		msgbox(format("Hey, tell you what.\pI'm actually selling some Bug-type Pokémon!"), MSGBOX_DEFAULT)
+	}
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == true && flag(FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG) == true) {
 		msgbox(format("Scram! I'm out of bugs for you to buy right now.\pCome back later."))
 		release
 		end
-	} else {
-		showmoneybox(0, 0, 0)
-		msgbox(format("Oh! You look like a Bug-type enthusiast.\pWould you care to buy a Bug-type Pokemon?\pI've got Grubbin, Sewaddle, Venipede, or Blipbug for only ¥1000!"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			closemessage
-			hidemoneybox
-			msgbox(format("Ugh. Fine."))
-		} else {
-			checkmoney(1000, 0)
-			if (var(VAR_RESULT) == FALSE) {
-				msgbox("You don't have enough money.")
+	}
+	showmoneybox(0, 0, 0)
+	msgbox(format("Would you care to buy a Bug-type Pokémon?\pI've got quite the great selection for only ¥500!"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		hidemoneybox
+		msgbox(format("You don't want any? Fine. More for me."))
+		release
+		end
+	}
+	checkmoney(500, 0)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox("You don't have enough money.")
+		hidemoneybox
+		release
+		end
+	}
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+		if (flag(FLAG_SETTINGS_RANDOMIZER) == false) {
+			setvar(VAR_TEMP_3, 0) // counter for species clause
+			checkspeciesclause(SPECIES_SEWADDLE)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_SPINARAK)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_LEDYBA)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_VENIPEDE)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_NINCADA)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_CATERPIE)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_WEEDLE)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_TAROUNTULA)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_KRICKETOT)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_PARAS)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			if (var(VAR_TEMP_3) == 10) {
+				msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
 				hidemoneybox
-			} else {
-				specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
-				if (var(VAR_TEMP_2) == PARTY_SIZE) {
-					msgbox(format("Your party is full. Clear a party slot, then come back."))
-					hidemoneybox
-					release
-					end
-				}
-				call(EventScript_NuzlockeVerifyBuy)
-				removemoney(1000)
-				updatemoneybox
-				msgbox("Ehehehe, thank you…")
-				closemessage
+				release
+				end
+			}
+			msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Sewaddle, Spinarak, Ledyba, Venipede, Nincada, Caterpie, Weedle, Tarountula, Kricketot, or Paras.\pIs this ok?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO) {
 				hidemoneybox
-				if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
-					if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
-						setvar(VAR_TEMP_1, SPECIES_BLIPBUG) // gets randomized anyways
-					} else {
-						setvar(VAR_TEMP_3, 0)
-						checkspeciesclause(SPECIES_BLIPBUG)
-						if (var(VAR_RESULT) == TRUE) {
-							addvar(VAR_TEMP_3, 1)
-						}
-						checkspeciesclause(SPECIES_GRUBBIN)
-						if (var(VAR_RESULT) == TRUE) {
-							addvar(VAR_TEMP_3, 1)
-						}
+				msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+				release
+				end
+			}
+			setvar(VAR_TEMP_1, 0)
+			while (var(VAR_TEMP_1) == 0) {
+				random(10)
+				switch (var(VAR_RESULT)) {
+					case 0:
 						checkspeciesclause(SPECIES_SEWADDLE)
 						if (var(VAR_RESULT) == TRUE) {
-							addvar(VAR_TEMP_3, 1)
+							continue
 						}
+						setvar(VAR_TEMP_1, SPECIES_SEWADDLE)
+					case 1:
+						checkspeciesclause(SPECIES_SPINARAK)
+						if (var(VAR_RESULT) == TRUE) {
+							continue
+						}
+						setvar(VAR_TEMP_1, SPECIES_SPINARAK)
+					case 2:
+						checkspeciesclause(SPECIES_LEDYBA)
+						if (var(VAR_RESULT) == TRUE) {
+							continue
+						}
+						setvar(VAR_TEMP_1, SPECIES_LEDYBA)
+					case 3:
 						checkspeciesclause(SPECIES_VENIPEDE)
 						if (var(VAR_RESULT) == TRUE) {
-							addvar(VAR_TEMP_3, 1)
+							continue
 						}
-						if (var(VAR_TEMP_3) == 4) {
-							msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
-							addmoney(1000)
-							release
-							end
+						setvar(VAR_TEMP_1, SPECIES_VENIPEDE)
+					case 4:
+						checkspeciesclause(SPECIES_NINCADA)
+						if (var(VAR_RESULT) == TRUE) {
+							continue
 						}
-						while (var(VAR_TEMP_1) == 0) {
-							random(4)
-							switch (var(VAR_RESULT)) {
-								case 0:
-									checkspeciesclause(SPECIES_BLIPBUG)
-									if (var(VAR_RESULT) == TRUE) {
-										continue
-									}
-									setvar(VAR_TEMP_1, SPECIES_BLIPBUG)
-								case 1:
-									checkspeciesclause(SPECIES_GRUBBIN)
-									if (var(VAR_RESULT) == TRUE) {
-										continue
-									}
-									setvar(VAR_TEMP_1, SPECIES_GRUBBIN)
-								case 2:
-									checkspeciesclause(SPECIES_SEWADDLE)
-									if (var(VAR_RESULT) == TRUE) {
-										continue
-									}
-									setvar(VAR_TEMP_1, SPECIES_SEWADDLE)
-								case 3:
-									checkspeciesclause(SPECIES_VENIPEDE)
-									if (var(VAR_RESULT) == TRUE) {
-										continue
-									}
-									setvar(VAR_TEMP_1, SPECIES_VENIPEDE)
-							}
+						setvar(VAR_TEMP_1, SPECIES_NINCADA)
+					case 5:
+						checkspeciesclause(SPECIES_CATERPIE)
+						if (var(VAR_RESULT) == TRUE) {
+							continue
 						}
-					}
-					setflag(FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG)
-				} else {
-					msgbox(format("Choose which Bug you would like."), MSGBOX_DEFAULT)
-					dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Blipbug", "Grubbin", "Sewaddle", "Venipede")
-					switch (var(VAR_RESULT)) {
-						case 0:
-							setvar(VAR_TEMP_1, SPECIES_BLIPBUG)
-						case 1:
-							setvar(VAR_TEMP_1, SPECIES_GRUBBIN)
-						case 2:
-							setvar(VAR_TEMP_1, SPECIES_SEWADDLE)
-						case 3:
-							setvar(VAR_TEMP_1, SPECIES_VENIPEDE)
-					}
+						setvar(VAR_TEMP_1, SPECIES_CATERPIE)
+					case 6:
+						checkspeciesclause(SPECIES_WEEDLE)
+						if (var(VAR_RESULT) == TRUE) {
+							continue
+						}
+						setvar(VAR_TEMP_1, SPECIES_WEEDLE)
+					case 7:
+						checkspeciesclause(SPECIES_TAROUNTULA)
+						if (var(VAR_RESULT) == TRUE) {
+							continue
+						}
+						setvar(VAR_TEMP_1, SPECIES_TAROUNTULA)
+					case 8:
+						checkspeciesclause(SPECIES_KRICKETOT)
+						if (var(VAR_RESULT) == TRUE) {
+							continue
+						}
+						setvar(VAR_TEMP_1, SPECIES_KRICKETOT)
+					case 9:
+						checkspeciesclause(SPECIES_PARAS)
+						if (var(VAR_RESULT) == TRUE) {
+							continue
+						}
+						setvar(VAR_TEMP_1, SPECIES_PARAS)
 				}
-				givemon(VAR_TEMP_1, 5, ITEM_NONE)
-				setmonmetlocation(VAR_TEMP_2, 251)
-				bufferspeciesname(0, VAR_TEMP_1)
-				msgbox("Here's your {STR_VAR_1}.")
-				playfanfare(MUS_OBTAIN_ITEM)
-				message(format("{PLAYER} received the {STR_VAR_1}!"))
-				waitmessage
-				waitfanfare
-				msgbox(format("Would you like to give a nickname to {STR_VAR_1}?"), MSGBOX_YESNO)
-				if (var(VAR_RESULT) == YES) {
-					call(Common_EventScript_GetGiftMonPartySlot)
-					call(Common_EventScript_NameReceivedPartyMon)
-				}
-				msgbox(format("Pleasure doing business with you."), MSGBOX_DEFAULT)
 			}
+		} else {
+			setvar(VAR_TEMP_1, SPECIES_SEWADDLE) // gets randomized anyways
+		}
+	} else {
+		message(format("Choose which Bug you would like."))
+		dynmultichoice(400, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Sewaddle", "Spinarak", "Ledyba", "Venipede", "Nincada", "Caterpie", "Weedle", "Tarountula", "Kricketot", "Paras")
+		switch (var(VAR_RESULT)) {
+			case 0:
+				setvar(VAR_TEMP_1, SPECIES_SEWADDLE)
+			case 1:
+				setvar(VAR_TEMP_1, SPECIES_SPINARAK)
+			case 2:
+				setvar(VAR_TEMP_1, SPECIES_LEDYBA)
+			case 3:
+				setvar(VAR_TEMP_1, SPECIES_VENIPEDE)
+			case 4:
+				setvar(VAR_TEMP_1, SPECIES_NINCADA)
+			case 5:
+				setvar(VAR_TEMP_1, SPECIES_CATERPIE)
+			case 6:
+				setvar(VAR_TEMP_1, SPECIES_WEEDLE)
+			case 7:
+				setvar(VAR_TEMP_1, SPECIES_TAROUNTULA)
+			case 8:
+				setvar(VAR_TEMP_1, SPECIES_KRICKETOT)
+			case 9:
+				setvar(VAR_TEMP_1, SPECIES_PARAS)
+			case MULTI_B_PRESSED:
+				closemessage
+				hidemoneybox
+				msgbox(format("You don't want any? Fine. More for me."))
+				release
+				end
 		}
 	}
+	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
+		hidemoneybox
+		special(ChoosePartyMon)
+		waitstate
+		faceplayer
+		showmoneybox(0, 0, 0)
+		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+			hidemoneybox
+			msgbox(format("You don't want any? Fine. More for me."))
+			release
+			end
+		}
+		specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
+		bufferspeciesname(2, VAR_TEMP_3)
+		copyvar(VAR_TEMP_3, VAR_0x8004) // used in SendChosenMonToPC
+		msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			msgbox(format("You don't want any? Fine. More for me."))
+			release
+			end
+		}
+	}
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+		msgbox(format("Just to confirm…\pYou're sure you want to buy a Bug for ¥500?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			msgbox(format("You don't want any? Fine. More for me."))
+			release
+			end
+		}
+		setflag(FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG)
+	} else {
+		bufferspeciesname(0, VAR_TEMP_1)
+		msgbox(format("Just to confirm…\pYou're sure you want to buy {STR_VAR_1} for ¥500?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			msgbox(format("You don't want any? Fine. More for me."))
+			release
+			end
+		}
+	}
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		special(SendChosenMonToPC)
+		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
+	}
+	removemoney(500)
+	updatemoneybox
+	msgbox(format("Ehehehe, thank you…"), MSGBOX_DEFAULT)
+	hidemoneybox
+	givemon(VAR_TEMP_1, 6, ITEM_NONE)
+	setmonmetlocation(VAR_TEMP_2, 251)
+	bufferspeciesname(0, VAR_TEMP_1)
+	msgbox("Here's your {STR_VAR_1}.", MSGBOX_DEFAULT)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(format("{PLAYER} received the {STR_VAR_1}!"))
+	waitmessage
+	waitfanfare
+	msgbox(format("Would you like to give a nickname to {STR_VAR_1}?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call(Common_EventScript_GetGiftMonPartySlot)
+		call(Common_EventScript_NameReceivedPartyMon)
+	}
+	msgbox(format("Pleasure doing business with you."), MSGBOX_DEFAULT)
 	release
 	end
 }
@@ -198,6 +335,21 @@ script Zone2B_EventScript_ItemPotion {
 	addobject(VAR_LAST_TALKED)
 	finditem(ITEM_POTION, 2)
 	release
+	end
+}
+
+script Zone2B_EventScript_CautionSign {
+	msgbox(format("Caution!\pDiglett have been found living inside the tunnel.\pRepels recommended!"), MSGBOX_SIGN)
+	end
+}
+
+script Zone2B_EventScript_PartySelectSign {
+	msgbox(format("Trainer Tips\pYou can switch the order of your party around in your party menu faster by pressing {SELECT_BUTTON}."), MSGBOX_SIGN)
+	end
+}
+
+script Zone2B_EventScript_OptionalLeviathan {
+	msgbox(format("Trainer Tips\pIn some Zones, Leviathans are optional to battle, but may give good rewards when defeated!"), MSGBOX_SIGN)
 	end
 }
 

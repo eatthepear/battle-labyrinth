@@ -25,6 +25,13 @@ script Zone4B_EventScript_ItemAwakening {
 	end
 }
 
+
+script Zone4B_EventScript_Callie {
+	trainerbattle_single(TRAINER_PBL_CALLIE, format("Do you like doggos as much as I do?"), format("My poor doggos!"))
+	msgbox(format("As much as I love dogs, I also kind of like cats."))
+	end
+}
+
 raw `
 Zone4B_EventScript_Ralph::
 	trainerbattle_single TRAINER_PBL_RALPH, Zone4B_Text_RalphIntro, Zone4B_Text_RalphDefeat
@@ -39,7 +46,7 @@ Zone4B_Text_RalphDefeat:
 	.string "You don't know either? Oof!$"
 
 Zone4B_Text_RalphPostBattle:
-	.string "I guess the more important question is\n"
+	.string "I guess the more important question is,\n"
 	.string "where am I going?$"
 
 Zone4B_EventScript_Sign::
@@ -47,9 +54,8 @@ Zone4B_EventScript_Sign::
 	end
 
 Zone4B_Text_Sign:
-	.string "Trainer Tips!\p"
+	.string "Trainer Tips\p"
 	.string "You can see detailed information\n"
 	.string "about a Pokémon species in its\l"
 	.string "Pokédex entry after capturing it.$"
-
 `

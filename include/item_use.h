@@ -47,6 +47,7 @@ u8 CheckIfItemIsTMHMOrEvolutionStone(u16 itemId);
 void FieldUseFunc_VsSeeker(u8 taskId);
 void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId);
 void DisplayDadsAdviceCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField);
+void ItemUseOutOfBattle_InfiniteRepel(u8 taskId);
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,
@@ -54,6 +55,7 @@ enum {
     BALL_THROW_UNABLE_SEMI_INVULNERABLE,
     BALL_THROW_UNABLE_NUZLOCKE_ALREADY_CAUGHT,
     BALL_THROW_UNABLE_NUZLOCKE_SPECIES_CLAUSE,
+    BALL_THROW_UNABLE_NUZLOCKE_NO_DEXNAV,
     BALL_THROW_UNABLE_NO_CATCHING_FLAG,
     BALL_THROW_ABLE,
     BALL_THROW_UNABLE_DISABLED_FLAG,

@@ -821,6 +821,9 @@ u8 BattleSetup_GetTerrainId(void)
     }
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE22A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE22A))
         return BATTLE_TERRAIN_SNOW;
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE5A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE5A)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE5B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE5B)))
+        return BATTLE_TERRAIN_GRASS;
     if (MetatileBehavior_IsTallGrass(tileBehavior))
         return BATTLE_TERRAIN_GRASS;
     if (MetatileBehavior_IsLongGrass(tileBehavior))

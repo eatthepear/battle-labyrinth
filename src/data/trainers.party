@@ -105,16 +105,29 @@ Double Battle: No
 Random Lead: Yes
 
 Poochyena
-Level: 5
 Ability: Run Away
+Level: 4
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Leer
+- Sand Attack
 
-Yamper
-Level: 5
-Ability: Ball Fetch
+Fletchling
+Ability: Big Pecks
+Level: 4
+Calm Nature
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Growl
 
-Lillipup
-Level: 5
-Ability: Vital Spirit
+Skitty
+Ability: Normalize
+Level: 4
+Bold Nature
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Tail Whip
+- Growl
 
 === TRAINER_PBL_MARIAM ===
 Name: Mariam
@@ -125,17 +138,31 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
 Random Lead: Yes
 
-Rattata
+Zigzagoon
+Ability: Gluttony
 Level: 5
-Ability: Run Away
+Calm Nature
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Growl
+- Sand Attack
 
 Pidove
-Level: 5
 Ability: Big Pecks
-
-Cherubi
 Level: 5
+Timid Nature
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Quick Attack
+- Growl
+- Leer
+
+Sunkern
 Ability: Chlorophyll
+Level: 5
+Careful Nature
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Absorb
 
 === TRAINER_PBL_OSCAR ===
 Name: Oscar
@@ -146,17 +173,32 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
 Random Lead: Yes
 
-Zigzagoon
+Rattata
+Ability: Guts
 Level: 5
-Ability: Gluttony
+Bold Nature
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Tail Whip
+- Focus Energy
 
 Psyduck
-Level: 5
 Ability: Damp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Scratch
+- Tail Whip
+- Refresh
+- Water Gun
 
 Starly
-Level: 5
 Ability: Keen Eye
+Level: 5
+Calm Nature
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Growl
+- Quick Attack
 
 === TRAINER_PBL_COREY_LEVIATHAN_1 ===
 Name: Corey
@@ -166,23 +208,25 @@ Music: Girl
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
 Mugshot: Purple
-Random Lead: Yes
 
 Pansage
-Level: 7
 Ability: Gluttony
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leafage
 - Scratch
 
 Pansear
-Level: 7
 Ability: Gluttony
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
 - Scratch
 
 Panpour
-Level: 7
 Ability: Gluttony
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
 
@@ -194,875 +238,2063 @@ Music: Girl
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
 Mugshot: Purple
-Random Lead: Yes
 
 Pansage
-Level: 7
 Ability: Overgrow
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leafage
 - Scratch
 
 Pansear
-Level: 7
 Ability: Blaze
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
 - Scratch
 
 Panpour
-Level: 7
 Ability: Torrent
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
 
 === TRAINER_PBL_POLLY ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Polly
+Class: School Kid
+Pic: School Kid F
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Sentret
+Ability: Keen Eye
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Scratch
+- Growl
+- Quick Attack
+
+Seedot
+Ability: Early Bird
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Harden
+- Astonish
+- Bide
+- Absorb
+
+Nidoran F
+Ability: Poison Point
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Scratch
+- Tail Whip
+- Poison Sting
+- Disable
 
 === TRAINER_PBL_JEREMIAH ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Jeremiah
+Class: Bug Catcher
+Pic: Bug Catcher
 Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Caterpie
+Ability: Shield Dust
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- String Shot
+- Bug Bite
+
+Weedle
+Ability: Shield Dust
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Poison Sting
+- String Shot
+- Bug Bite
+
+Wurmple
+Ability: Shield Dust
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- String Shot
+- Poison Sting
+- Bug Bite
+
+Scatterbug
+Ability: Shield Dust
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- String Shot
+- Struggle Bug
+- Stun Spore
+
+=== TRAINER_PBL_JOSH ===
+Name: Josh
+Class: Bug Catcher
+Pic: Bug Catcher
+Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
+
+Blipbug
+Ability: Swarm
+Level: 7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Struggle Bug
+
+Kricketot
+Ability: Shed Skin
+Level: 7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Growl
+- Struggle Bug
+- Bide
+
+Spinarak
+Ability: Swarm
+Level: 7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Poison Sting
+- String Shot
+- Night Shade
+- Bug Bite
+
+Nincada
+Ability: Compound Eyes
+Level: 7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Sand Attack
+- Harden
+- False Swipe
+- Fury Swipes
 
 === TRAINER_PBL_HARPER ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Harper
+Class: Lass
+Pic: Lass
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Whismur
+Ability: Rattled
+Level: 7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Astonish
+- Pound
+- Supersonic
+- Echoed Voice
+
+Hoothoot
+Ability: Insomnia
+Level: 7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Growl
+- Peck
+- Confusion
+
+Mareep
+Ability: Static
+Level: 7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Growl
+- Charge
+- Thunder Shock
 
 === TRAINER_PBL_ARTHUR ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Arthur
+Class: School Kid
+Pic: School Kid M
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
+
+Yungoos
+Ability: Strong Jaw
+Level: 7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Sand Attack
+- Leer
+- Mud-Slap
+
+Pikipek
+Ability: Skill Link
+Level: 7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Peck
+- Growl
+- Echoed Voice
+
+Nidoran M
+Ability: Poison Point
+Level: 7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Peck
+- Focus Energy
+- Poison Sting
+- Disable
+
+=== TRAINER_PBL_SHAUN_LEVIATHAN_2 ===
+Name: Shaun
+Class: Youngster
+Pic: Youngster
 Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Mugshot: Purple
 
-Metang
-Brave Nature
-Level: 42
+Bunnelby @ Oran Berry
+Ability: Cheek Pouch
+Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Double Slap
+- Leer
+- Defense Curl
+- Odor Sleuth
 
-=== TRAINER_PBL_JOEY_LEVIATHAN_2 ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Patrat @ Oran Berry
+Ability: Cheek Pouch
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tackle
+- Bite
+- Bide
+- Tearful Look
+
+Skwovet @ Oran Berry
+Ability: Cheek Pouch
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tackle
+- Stuff Cheeks
+- Tail Whip
+- Defense Curl
+
+=== TRAINER_PBL_SHAUN_LEVIATHAN_2_BRUTAL ===
+Name: Shaun
+Class: Youngster
+Pic: Youngster
 Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Mugshot: Purple
 
-Metang
-Brave Nature
-Level: 42
+Bunnelby @ Oran Berry
+Ability: Cheek Pouch
+Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Double Slap
+- Leer
+- Defense Curl
+- Odor Sleuth
 
-=== TRAINER_PBL_JOEY_LEVIATHAN_2_BRUTAL ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
+Patrat @ Oran Berry
+Ability: Cheek Pouch
+Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Tackle
+- Bite
+- Bide
+- Tearful Look
+
+Skwovet @ Oran Berry
+Ability: Cheek Pouch
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tackle
+- Stuff Cheeks
+- Tail Whip
+- Defense Curl
+
+Lechonk @ Oran Berry
+Ability: Thick Fat
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tackle
+- Disarming Voice
+- Stuff Cheeks
+- Yawn
 
 === TRAINER_PBL_JEMMA ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Jemma
+Class: Lass
+Pic: Lass
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Budew
+Ability: Poison Point
+Level: 8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Absorb
+- Worry Seed
+- Life Dew
+- Stun Spore
+
+Pidgey
+Ability: Keen Eye
+Level: 8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Sand Attack
+- Gust
+- Quick Attack
+
+Diglett
+Ability: Sand Force
+Level: 8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Scratch
+- Sand Attack
+- Growl
+- Astonish
 
 === TRAINER_PBL_PATRICK ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Patrick
+Class: Bug Catcher
+Pic: Bug Catcher
 Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Kakuna
+Ability: Shed Skin
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Harden
+- Tackle
+
+Metapod
+Ability: Shed Skin
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Harden
+- Tackle
+
+Cascoon
+Ability: Shed Skin
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Harden
+- Tackle
+
+Silcoon
+Ability: Shed Skin
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Harden
+- Tackle
 
 === TRAINER_PBL_ANNABELLE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Annabelle
+Class: Lady
+Pic: Lady
+Music: Female
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Meowth
+Ability: Technician
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Growl
+- Scratch
+- Feint
+- Fake Out
+
+Gossifleur
+Ability: Cotton Down
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Leafage
+- Grass Whistle
+- Rapid Spin
+- Razor Leaf
+
+Azurill
+Ability: Huge Power
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Soak
+- Refresh
+- Charm
+- Bubble
+
+Shinx
+Ability: Intimidate
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Leer
+- Charge
+- Thunder Shock
+- Baby Doll-Eyes
 
 === TRAINER_PBL_BORIS ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Boris
+Class: Youngster
+Pic: Youngster
 Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Lotad
+Ability: Swift Swim
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Absorb
+- Bubble
+- Mist
+- Astonish
+
+Buneary
+Ability: Limber
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Defense Curl
+- Quick Attack
+- Baby-Doll Eyes
+- Fake Out
+
+Maschiff
+Ability: Intimidate
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Lick
+- Snarl
+- Scary Face
+- Bite
 
 === TRAINER_PBL_RICHARD ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Richard
+Class: Rich Boy
+Pic: Rich Boy
+Music: Rich
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Wooloo
+Ability: Fluffy
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Growl
+- Defense Curl
+- Copycat
+
+Pichu
+Ability: Static
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Thunder Shock
+- Sweet Kiss
+- Fake Out
+- Charm
+
+Smoliv
+Ability: Early Bird
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Absorb
+- Helping Hand
+- Leech Seed
+
+Ducklett
+Ability: Big Pecks
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Aqua Ring
+- Gust
+- Aqua Jet
+- Feather Dance
 
 === TRAINER_PBL_PHILLIPA_LEVIATHAN_3 ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Phillipa
+Class: School Kid
+Pic: School Kid F
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Mugshot: Purple
 
-Metang
-Brave Nature
-Level: 42
+Bidoof
+Ability: Unaware
+Level: 9
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Rollout
+
+Sandshrew
+Ability: Sand Rush
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rollout
+
+Marill @ Oran Berry
+Ability: Huge Power
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rollout
 
 === TRAINER_PBL_PHILLIPA_LEVIATHAN_3_BRUTAL ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Phillipa
+Class: School Kid
+Pic: School Kid F
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Mugshot: Purple
 
-Metang
-Brave Nature
-Level: 42
+Bidoof
+Ability: Unaware
+Level: 9
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Rollout
+- Defense Curl
+
+Sandshrew
+Ability: Sand Rush
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rollout
+- Defense Curl
+
+Marill @ Oran Berry
+Ability: Huge Power
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rollout
+- Defense Curl
+
+Cherubi @ Oran Berry
+Ability: Chlorophyll
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rollout
+- Defense Curl
 
 === TRAINER_PBL_HERMAN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Herman
+Class: School Kid
+Pic: School Kid M
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Vulpix
+Ability: Flash Fire
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Ember
+- Baby-Doll Eyes
+- Disable
+- Quick Attack
+
+Bounsweet
+Ability: Oblivious
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Absorb
+- Grass Whistle
+- Rapid Spin
+- Razor Leaf
+
+Espurr
+Ability: Own Tempo
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Fake Out
+- Tickle
+- Confusion
+- Disarming Voice
 
 === TRAINER_PBL_RALPH ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Ralph
+Class: Youngster
+Pic: Youngster
 Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Munna
+Ability: Synchronize
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Psywave
+- Lucky Chant
+- Hypnosis
+- Imprison
+
+Purrloin
+Ability: Limber
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Fake Out
+- Sand Attack
+- Fury Swipes
+- Feint Attack
+
+Ekans
+Ability: Intimidate
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Glare
+- Bite
+- Acid
+- Disable
+
+=== TRAINER_PBL_CALLIE ===
+Name: Callie
+Class: Lass
+Pic: Lass
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
+
+Lillipup
+Ability: Pickup
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Helping Hand
+- Bite
+- Yawn
+
+Fidough
+Ability: Own Tempo
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tail Whip
+- Bite
+- Yawn
+- Covet
+
+Yamper
+Ability: Ball Fetch
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Nuzzle
+- Spark
+- Charge
+- Bite
 
 === TRAINER_PBL_SANTIAGO ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Santiago
+Class: Bug Catcher
+Pic: Bug Catcher
 Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Burmy
+Ability: Shed Skin
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- String Shot
+- Bug Bite
+
+Ledyba
+Ability: Swarm
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Swift
+- Comet Punch
+- Bug Bite
+- Roost
+
+Paras
+Ability: Effect Spore
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Poison Powder
+- Absorb
+- Bug Bite
+- Leech Seed
+
+Spewpa
+Ability: Shed Skin
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Harden
+- Tackle
 
 === TRAINER_PBL_CHLOE_AND_KAYA ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Chloe&Kaya
+Class: Twins
+Pic: Twins
+Music: Twins
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Cottonee
+Ability: Prankster
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Fairy Wind
+- Razor Leaf
+- Stun Spore
+- Poison Powder
+
+Petilil
+Ability: Own Tempo
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Absorb
+- Helping Hand
+- Stun Spore
+- Leech Seed
 
 === TRAINER_PBL_FRED ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Fred
+Class: Camper
+Pic: Camper
 Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Chingling
+Ability: Levitate
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Astonish
+- Confusion
+- Disable
+- Yawn
+
+Wooper
+Ability: Water Absorb
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Water Gun
+- Mud Shot
+- Yawn
+- Slam
+
+Slugma
+Ability: Flame Body
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Ember
+- Yawn
+- Rock Throw
+- Clear Smog
+
+Pancham
+Ability: Iron Fist
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Seismic Toss
+- Comet Punch
+- Karate Chop
+- Taunt
 
 === TRAINER_PBL_LUCIA ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Lucia
+Class: Fairy Tale Girl
+Pic: Fairy Tale Girl
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
+Igglybuff
+Ability: Competitive
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Sweet Kiss
+- Disarming Voice
+- Disable
+- Charm
+
+Spritzee
+Ability: Healer
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Fairy Wind
+- Sweet Kiss
+- Refresh
+- Disarming Voice
+
+Swirlix
+Ability: Sweet Veil
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Fairy Wind
+- Yawn
+- Cotton Spore
+- Round
+
+Mime Jr.
+Ability: Soundproof
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Teeter Dance
+- Double Slap
+- Confusion
+- Fake Out
+
+=== TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4 ===
+Name: Ella&Bella
+Class: Sr And Jr
+Pic: Sr And Jr
+Music: Twins
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: Yes
+Mugshot: Purple
+
+Nickit
+Ability: Unburden
+Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Snarl
+- Growl
 
-=== TRAINER_PBL_RITA_LEVIATHAN_4 ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
+Litleo
+Ability: Unnerve
+Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Incinerate
+- Growl
 
-=== TRAINER_PBL_RITA_LEVIATHAN_4_BRUTAL ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
+Steenee @ Oran Berry
+Ability: Oblivious
+Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Razor Leaf
+- Grass Whistle
+
+Jigglypuff @ Oran Berry
+Ability: Friend Guard
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Swift
+- Disarming Voice
+
+=== TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4_BRUTAL ===
+Name: Ella&Bella
+Class: Sr And Jr
+Pic: Sr And Jr
+Music: Twins
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: Yes
+Mugshot: Purple
+
+Nickit
+Ability: Stakeout
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Snarl
+- Quick Attack
+- Growl
+
+Litleo
+Ability: Unnerve
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Incinerate
+- Echoed Voice
+- Growl
+
+Steenee @ Oran Berry
+Ability: Oblivious
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Leaf
+- Rapid Spin
+- Grass Whistle
+
+Jigglypuff @ Oran Berry
+Ability: Friend Guard
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Swift
+- Disarming Voice
+- Sing
 
 === TRAINER_PBL_ANNE_AND_JUNE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Anne&June
+Class: Sr And Jr
+Pic: Sr And Jr
+Music: Twins
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Gothita
+Ability: Telepathy
+Level: 12
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Confusion
+- Double Slap
+- Fake Out
+- Tickle
 
-=== TRAINER_PBL_GILBERT ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Solosis
+Ability: Magic Guard
+Level: 12
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Confusion
+- Night Shade
+- Rollout
+- Recover
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+=== TRAINER_PBL_NOVA_AND_CORA ===
+Name: Nova&Cora
+Class: Twins
+Pic: Twins
+Music: Twins
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: Yes
+
+Pumpkaboo
+Ability: Flare Boost
+Level: 12
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Razor Leaf
+- Leech Seed
+- Disable
+- Shadow Sneak
+
+Phantump
+Ability: Natural Cure
+Level: 12
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Branch Poke
+- Leech Seed
+- Disable
+- Feint Attack
 
 === TRAINER_PBL_CLINTON ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Clinton
+Class: Rich Boy
+Pic: Rich Boy
+Music: Rich
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Stufful
+Ability: Fluffy
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Brutal Swing
+- Bide
+- Force Palm
+- Stomp
+
+Rockruff
+Ability: Vital Spirit
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Double Team
+- Rock Throw
+- Bite
+- Roar
+
+Ralts
+Ability: Trace
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Confusion
+- Shadow Sneak
+- Teleport
+- Magical Leaf
+
+Pawmi
+Ability: Static
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Thunder Shock
+- Bite
+- Fake Out
+- Sweet Kiss
 
 === TRAINER_PBL_REBECCA ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Rebecca
+Class: Pokefan
+Pic: Pokefan F
+Music: Twins
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Electrike
+Ability: Static
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Quick Attack
+- Spark
+- Bite
+- Swift
+
+Cacnea
+Level: 13
+Ability: Water Absorb
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Leech Seed
+- Disable
+- Magical Leaf
+- Feint Attack
+
+Stunky
+Ability: Aftermath
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Screech
+- Poison Gas
+- Bite
+- Acid Spray
+
+Surskit
+Ability: Swift Swim
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Mud Shot
+- Mind Reader
+- Bug Bite
+- Bubble Beam
 
 === TRAINER_PBL_RYAN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Ryan
+Class: Pokefan
+Pic: Pokefan M
+Music: Twins
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Crabrawler
+Ability: Hyper Cutter
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Rock Smash
+- Bubble
+- Leer
+- Dizzy Punch
+
+Hatenna
+Ability: Healer
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Play Nice
+- Life Dew
+- Disarming Voice
+- Psybeam
+
+Deerling
+Ability: Serene Grace
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Charm
+- Leech Seed
+- Feint Attack
+- Double Kick
+
+Houndour
+Ability: Flash Fire
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Torment
+- Rage
+- Bite
+- Fire Fang
 
 === TRAINER_PBL_CAITLYN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Caitlyn
+Class: Picnicker
+Pic: Picnicker
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Snubbull
+Ability: Intimidate
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bite
+- Rage
+- Fake Tears
+- Covet
+
+Seel
+Ability: Thick Fat
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Ice Shard
+- Fake Out
+- Headbutt
+- Water Gun
+
+Ponyta
+Ability: Flame Body
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Ember
+- Quick Attack
+- Double Kick
+- Fire Spin
+
+Gulpin
+Ability: Cud Chew
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Mud Slap
+- Acid Spray
+- Stuff Cheeks
+- Sludge
 
 === TRAINER_PBL_KENNETH ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Kenneth
+Class: Camper
+Pic: Camper
 Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Phanpy
+Ability: Sturdy
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Flail
+- Rollout
+- Slam
+- Bulldoze
+
+Impidimp
+Ability: Pickpocket
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Confide
+- Flatter
+- Fake Out
+- Assurance
+
+Rookidee
+Ability: Big Pecks
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Power Trip
+- Fury Attack
+- Rock Smash
+- Pluck
+
+Glameow
+Ability: Limber
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Charm
+- Quick Attack
+- Feint Attack
+- Fake Out
 
 === TRAINER_PBL_KEVIN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Kevin
+Class: Bug Catcher
+Pic: Bug Catcher
 Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Grubbin
+Ability: Swarm
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- String Shot
+- Vise Grip
+- Bug Bite
+- Bite
+
+Sewaddle
+Ability: Swarm
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Razor Leaf
+- Bug Bite
+- Synthesis
+- Flail
+
+Tarountula
+Ability: Insomnia
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Assurance
+- Bug Bite
+- Feint
+- Block
+
+Sizzlipede
+Ability: Flash Fire
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Defense Curl
+- Bug Bite
+- Rollout
+- Bite
 
 === TRAINER_PBL_DECLAN_LEVIATHAN_5 ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Declan
+Class: Pkmn Breeder
+Pic: Pokemon Breeder M
 Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Mugshot: Purple
 
-Metang
-Brave Nature
-Level: 42
+Trubbish
+Ability: Aftermath
+Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Sludge
+- Acid Spray
+- Poison Gas
+- Double Slap
 
-=== TRAINER_PBL_ZACK ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Drowzee
+Ability: Insomnia
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Confusion
+- Wake-Up Slap
+- Hypnosis
+- Headbutt
+
+Bonsly
+Ability: Sturdy
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Throw
+- Low Kick
+- Feint Attack
+- Tearful Look
+
+Blitzle
+Ability: Sap Sipper
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shock Wave
+- Thunder Wave
+- Stomp
+- Quick Attack
+
+Dunsparce @ Eviolite
+Ability: Serene Grace
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Headbutt
+- Ancient Power
+- Glare
+- Astonish
+
+=== TRAINER_PBL_DECLAN_LEVIATHAN_5_BRUTAL ===
+Name: Declan
+Class: Pkmn Breeder
+Pic: Pokemon Breeder M
 Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Mugshot: Purple
 
-Metang
-Brave Nature
-Level: 42
+Trubbish @ Eviolite
+Ability: Aftermath
+Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Sludge
+- Acid Spray
+- Poison Gas
+- Double Slap
+
+Drowzee @ Eviolite
+Ability: Bad Dreams
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Confusion
+- Wake-Up Slap
+- Hypnosis
+- Headbutt
+
+Bonsly @ Eviolite
+Ability: Sturdy
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Throw
+- Low Kick
+- Feint Attack
+- Tearful Look
+
+Blitzle @ Eviolite
+Ability: Sap Sipper
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shock Wave
+- Thunder Wave
+- Stomp
+- Quick Attack
+
+Dunsparce @ Eviolite
+Ability: Serene Grace
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Headbutt
+- Ancient Power
+- Glare
+- Astonish
+
+=== TRAINER_PBL_GILBERT ===
+Name: Gilbert
+Class: Fisherman
+Pic: Fisherman
+Music: Hiker
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
+
+Magikarp
+Ability: Swift Swim
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Splash
+- Tackle
+- Flail
+
+Finneon
+Ability: Storm Drain
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Sweet Kiss
+- Tickle
+- Water Pulse
+- Tailwind
+
+Shellos
+Ability: Storm Drain
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Ancient Power
+- Yawn
+- Water Pulse
+- Hidden Power
+/* Hidden Power Fighting */
+
+Chewtle
+Ability: Strong Jaw
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Water Gun
+- Bite
+- Headbutt
+- Gastro Acid
 
 === TRAINER_PBL_MELANIE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Melanie
+Class: Lass
+Pic: Lass
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Cutiefly
+Ability: Shield Dust
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Aromatherapy
+- Struggle Bug
+- Stun Spore
+- Switcheroo
+
+Growlithe
+Ability: Intimidate
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bite
+- Helping Hand
+- Double Kick
+- Flame Wheel
+
+Slowpoke Galarian
+Ability: Own Tempo
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Acid
+- Yawn
+- Disable
+- Confusion
 
 === TRAINER_PBL_CONSTANCE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Constance
+Class: Lady
+Pic: Lady
+Music: Female
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Minccino
+Ability: Technician
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Helping Hand
+- Double Slap
+- Tickle
+- Swift
+
+Hoppip
+Ability: Leaf Guard
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Sleep Powder
+- Mega Drain
+- Helping Hand
+- Worry Seed
+
+Makuhita
+Ability: Guts
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Fake Out
+- Force Palm
+- Bullet Punch
+- Smelling Salts
+
+Spoink
+Ability: Thick Fat
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Confuse Ray
+- Payback
+- Psybeam
+- Trick
 
 === TRAINER_PBL_FRANK ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Frank
+Class: Youngster
+Pic: Youngster
 Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Flabebe
+Ability: Flower Veil
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tearful Look
+- Lucky Chant
+- Synthesis
+- Razor Leaf
+
+Skiddo
+Ability: Grass Pelt
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Rollout
+- Leech Seed
+- Razor Leaf
+- Bulldoze
+
+Venipede
+Ability: Poison Point
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bug Bite
+- Bite
+- Twineedle
+- Screech
 
 === TRAINER_PBL_DUDLEY ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Dudley
+Class: Bird Keeper
+Pic: Bird Keeper
+Music: Cool
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Wingull
+Ability: Keen Eye
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Twister
+- Aqua Ring
+- Wing Attack
+- Water Pulse
+
+Taillow
+Ability: Scrappy
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Focus Energy
+- Wing Attack
+- Double Team
+- Rage
+
+Wattrel
+Ability: Wind Power
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Thunder Shock
+- Uproar
+- Feather Dance
+- Pluck
+
+Farfetch'd
+Ability: Super Luck
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Fury Attack
+- Aerial Ace
+- Quick Attack
+- Feather Dance
 
 === TRAINER_PBL_DAISY ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Daisy
+Class: Pkmn Breeder
+Pic: Pokemon Breeder F
+Music: Female
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
+Smeargle
+Ability: Technician
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Sketch
+
+Applin
+Ability: Ripen
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Astonish
+- Withdraw
+- Defense Curl
+- Rollout
+
+Milcery
+Ability: Sweet Veil
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Baby-Doll Eyes
+- Charm
+- Sweet Kiss
+- Draining Kiss
+
+Abra
+Ability: Synchronize
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Teleport
+
+Cleffa
+Ability: Magic Guard
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Disarming Voice
+- Charm
+- Encore
+- Wish
+
+Tyrogue
+Ability: Guts
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Mach Punch
+- Rapid Spin
+- Counter
+- Vacuum Wave
+
+=== TRAINER_PBL_VIC_AND_DELL ===
+Name: Vic&Dell
+Class: Twins
+Pic: Twins
+Music: Twins
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: Yes
+
+Plusle
+Ability: Plus
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Thunder Wave
+- Spark
+- Charm
+- Electro Ball
+
+Minun
+Ability: Minus
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Thunder Wave
+- Spark
+- Charm
+- Electro Ball
+
+=== TRAINER_PBL_MINA ===
+Name: Nina
+Class: Tuber F
+Pic: Tuber F
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+
+Wiglett @ Oran Berry
+Ability: Gooey
+Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Aqua Jet
+- Water Pulse
+- Slam
+- Mud Slap
 
-=== TRAINER_PBL_MINA_LEVIATHAN_6 ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
+Barboach @ Oran Berry
+Ability: Hydration
+Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Magnitude
+- Water Pulse
+- Mud Bomb
+- Rest
+
+Goldeen @ Oran Berry
+Ability: Swift Swim
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Horn Attack
+- Peck
+- Aqua Ring
+
+Corsola @ Oran Berry
+Ability: Regenerator
+Level: 17
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Horn Attack
+- Peck
+- Aqua Ring
+
+=== TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6 ===
+Name: Zack&Coby
+Class: Sis And Bro
+Pic: Sis And Bro
+Music: Swimmer
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: Yes
+Mugshot: Purple
+
+Luvdisc @ Oran Berry
+Ability: Swift Swim
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Draining Kiss
+
+Lumineon @ Oran Berry
+Ability: Swift Swim
+Level: 17
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Tailwind
+
+=== TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_BRUTAL ===
+Name: Zack&Coby
+Class: Sis And Bro
+Pic: Sis And Bro
+Music: Swimmer
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: Yes
+Mugshot: Purple
+
+Luvdisc @ Oran Berry
+Ability: Swift Swim
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Draining Kiss
+- Heal Pulse
+- Sweet Kiss
+
+Lumineon @ Oran Berry
+Ability: Swift Swim
+Level: 17
+IVs: 31 HP / 31 Atk / 31 Def / 30 SpA / 30 SpD / 31 Spe
+- Water Pulse
+- Tailwind
+- Gust
+- Hidden Power
+/* Hidden Power Ground */
 
 === TRAINER_PBL_MILLIE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Millie
+Class: Battle Girl
+Pic: Battle Girl
+Music: Intense
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Mienfoo
+Level: 17
+
+Mankey
+Level: 17
+
+Scraggy
+Level: 17
+
+Timburr
+Level: 17
 
 === TRAINER_PBL_JAMAL ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Jamal
+Class: Camper
+Pic: Camper
 Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Numel
+Level: 17
+
+Zubat
+Level: 17
+
+Fomantis
+Level: 17
+
+Buizel
+Level: 17
 
 === TRAINER_PBL_PAIGE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Paige
+Class: Aroma Lady
+Pic: Aroma Lady
+Music: Female
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Combee
+Level: 17
+
+Exeggcute
+Level: 17
+
+Oddish
+Level: 17
+
+Bellsprout
+Level: 17
 
 === TRAINER_PBL_SETH ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Seth
+Class: Rich Boy
+Pic: Rich Boy
+Music: Rich
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Slakoth
+Level: 17
+
+Pachirisu
+Level: 17
+
+Aipom
+Level: 17
+
+Shroodle
+Level: 17
 
 === TRAINER_PBL_CONNIE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Connie
+Class: Lass
+Pic: Lass
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Voltorb
+Level: 17
+
+Dewpider
+Level: 17
+
+=== TRAINER_PBL_PETER ===
+Name: Peter
+Class: Youngster
+Pic: Youngster
+Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
+
+Teddiursa
+Level: 17
+
+Shroomish
+Level: 17
+
+=== TRAINER_PBL_WHITAKER ===
+Name: Whitaker
+Class: Bird Keeper
+Pic: Bird Keeper
+Music: Cool
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
+
+Spearow
+Ability: Sniper
+Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Fury Attack
+- Quick Attack
+- Wing Attack
+- Pursuit
+
+Natu
+Level: 17
+
+Flittle
+Level: 17
+
+Doduo
+Level: 17
 
 === TRAINER_PBL_BETTY_LEVIATHAN_7 ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Betty
+Class: Lady
+Pic: Lady
+Music: Female
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
+Klawf @ Sitrus Berry
+Ability: Anger Shell
+Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Aqua Jet
+- Water Pulse
+- Slam
+- Mud Slap
+
+Dedenne @ Sitrus Berry
+Ability: Cheek Pouch
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aqua Jet
+- Water Pulse
+- Slam
+- Mud Slap
 
 === TRAINER_PBL_BETTY_LEVIATHAN_7_BRUTAL ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Betty
+Class: Lady
+Pic: Lady
+Music: Female
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
+Klawf @ Sitrus Berry
+Ability: Anger Shell
+Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Aqua Jet
+- Water Pulse
+- Slam
+- Mud Slap
+
+Dedenne @ Sitrus Berry
+Ability: Cheek Pouch
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aqua Jet
+- Water Pulse
+- Slam
+- Mud Slap
+
+Drampa @ Sitrus Berry
+Ability: Berserk
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aqua Jet
+- Water Pulse
+- Slam
+- Mud Slap
 
 === TRAINER_PBL_JIMMY ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Jimmy
+Class: Collector
+Pic: Collector
+Music: Suspicious
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Noibat
+Level: 17
+
+Feebas
+Level: 17
+
+Beldum
+Level: 17
+
+Gible
+Level: 17
 
 === TRAINER_PBL_EMILIANO ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Emiliano
+Class: Hiker
+Pic: Hiker
+Music: Hiker
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Cubone
+Level: 17
+
+Roggenrola
+Level: 17
+
+Nosepass
+Level: 17
+
+Machop
+Level: 17
+
+=== TRAINER_PBL_BECKHAM ===
+Name: Beckham
+Class: Pokemaniac
+Pic: Pokemaniac
+Music: Suspicious
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
+
+Axew
+Level: 17
+
+Bergmite
+Level: 17
+
+Helioptile
+Level: 17
+
+Lickitung
+Level: 17
 
 === TRAINER_PBL_KAREN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Karen
+Class: Backpacker
+Pic: Backpacker F
+Music: Hiker
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Spinda
+Level: 17
 
 === TRAINER_PBL_JAYDEN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Jayden
+Class: Hiker
+Pic: Hiker
+Music: Hiker
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Geodude
+Level: 17
+
+Rolycoly
+Level: 17
+
+Nacli
+Level: 17
+
+Mudbray
+Level: 17
 
 === TRAINER_PBL_NEIL ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Neil
+Class: Ruin Maniac
+Pic: Ruin Maniac
+Music: Hiker
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Rellor
+Level: 17
+
+Baltoy
+Level: 17
+
+Yamask
+Level: 17
+
+Klink
+Level: 17
 
 === TRAINER_PBL_TAMARA ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Tamara
+Class: Picnicker
+Pic: Picnicker
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: Yes
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Salandit
+Level: 17
+
+Woobat
+Level: 17
+
+Cufant
+Level: 17
+
+Morelull
+Level: 17
 
 === TRAINER_PBL_MIRAGE_LEVIATHAN_8 ===
 Name: STEVEN
@@ -1071,15 +2303,50 @@ Pic: Steven
 Gender: Male
 Music: Male
 
-Metang
-Brave Nature
-Level: 42
+Grimer @ Poison Barb
+Ability: Poison Touch
+Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Sludge
+- Acid Spray
+- Shadow Sneak
+- Power-Up Punch
+
+Drifloon @ Sharp Beak
+Ability: Aftermath
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hex
+- Air Cutter
+- Clear Smog
+- Defog
+
+Croagunk @ Sitrus Berry
+Ability: Poison Touch
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Venoshock
+- Vacuum Wave
+- Fake Out
+- Feint Attack
+
+Mightyena @ Sitrus Berry
+Ability: Strong Jaw
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Howl
+- Ice Fang
+- Thunder Fang
+
+Throh @ Black Belt
+Ability: Guts
+Level: 20
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Revenge
+- Seismic Toss
+- Power-Up Punch
+- Rock Tomb
 
 === TRAINER_PBL_MIRAGE_LEVIATHAN_8_BRUTAL ===
 Name: STEVEN

@@ -5,6 +5,11 @@ mapscripts Zone4C_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
+		if (flag(FLAG_ITEM_ZONE4C_TWISTED_SPOON)) {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
 	}
 }
 
@@ -22,6 +27,28 @@ script Zone4C_EventScript_ItemMuscleBand {
 	addobject(VAR_LAST_TALKED)
 	finditem(ITEM_MUSCLE_BAND, 1)
 	release
+	end
+}
+
+script Zone4C_EventScript_ItemTwistedSpoon {
+	lock
+	if (flag(FLAG_ITEM_ZONE4C_TWISTED_SPOON)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE4C_TWISTED_SPOON)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_TWISTED_SPOON, 1)
+	release
+	end
+}
+
+script Zone4C_EventScript_Sign {
+	msgbox(format("Trainer Tips\pStarting from now, there is a 20% chance to encounter wild Pokémon in a Double Battle."), MSGBOX_SIGN)
 	end
 }
 
@@ -59,14 +86,4 @@ Zone4C_Text_ChloeandKayaDefeat:
 Zone4C_Text_ChloeandKayaPostBattle:
 	.string "Chloe: Twin power!\p"
 	.string "Kaya: Twin power!$"
-
-Zone4C_EventScript_Sign::
-	msgbox Zone4C_Text_Sign, MSGBOX_SIGN
-	end
-
-Zone4C_Text_Sign:
-	.string "Trainer Tips!\p"
-	.string "There is a 20% chance to encounter\n"
-	.string "wild Pokémon in a Double Battle.$"
-
 `

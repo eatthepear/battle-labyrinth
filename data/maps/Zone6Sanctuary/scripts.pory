@@ -14,6 +14,13 @@ script Zone6Sanctuary_EventScript_Intro {
 	msgbox(gText_RewardClear, MSGBOX_DEFAULT)
 	msgbox(Zone6Sanctuary_Text_Reward, MSGBOX_DEFAULT)
 	giveitem(ITEM_SLEDGEHAMMER)
+	msgbox(gText_Colress_Upgraded, MSGBOX_DEFAULT)
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox(gText_Colress_UpgradedPotions, MSGBOX_DEFAULT)
+	waitfanfare
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox(gText_Colress_UpgradedItems, MSGBOX_DEFAULT)
+	waitfanfare
 	setvar(VAR_ZONE, 7)
 	msgbox(Zone6Sanctuary_Text_Colress_Explain, MSGBOX_DEFAULT)
 	msgbox(Zone6Sanctuary_Text_Colress_WhenUReady)
@@ -25,8 +32,9 @@ script Zone6Sanctuary_EventScript_Intro {
 script Zone6Sanctuary_EventScript_NextZone {
 	lock
 	faceplayer
-	msgbox(gText_Colress_Greetings, MSGBOX_DEFAULT)
-	dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
+	message(gText_Colress_Greetings)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
 	switch (var(VAR_RESULT)) {
 		case 0:
 			msgbox(Zone6Sanctuary_Text_Colress_ReadyToLeave, MSGBOX_YESNO)

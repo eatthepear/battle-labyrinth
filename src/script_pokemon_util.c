@@ -38,7 +38,7 @@ void HealPlayerParty(void)
     u32 i;
     for (i = 0; i < gPlayerPartyCount; i++)
         HealPokemon(&gPlayerParty[i]);
-    if (OW_PC_HEAL >= GEN_8)
+    if (OW_PC_HEAL >= GEN_8 && FlagGet(FLAG_JOY_UPGRADED))
         HealPlayerBoxes();
 
     // Recharge Tera Orb, if possible.
@@ -566,5 +566,31 @@ void Script_SetStatus1(struct ScriptContext *ctx)
     else
     {
         SetMonData(&gPlayerParty[slot], MON_DATA_STATUS, &status1);
+    }
+}
+
+void Script_TrySetStatus1(struct ScriptContext *ctx)
+{
+    u32 status1 = VarGet(ScriptReadHalfword(ctx));
+    u32 slot = VarGet(ScriptReadHalfword(ctx));
+
+    if (slot >= PARTY_SIZE)
+    {
+        u16 species;
+
+        for (slot = 0; slot < PARTY_SIZE; slot++)
+        {
+            species = GetMonData(&gPlayerParty[slot], MON_DATA_SPECIES);
+            if (species != SPECIES_NONE
+             && species != SPECIES_EGG
+             && GetMonData(&gPlayerParty[slot], MON_DATA_HP) != 0
+             && GetMonData(&gPlayerParty[slot], MON_DATA_STATUS) == 0)
+                SetMonData(&gPlayerParty[slot], MON_DATA_STATUS, &status1);
+        }
+    }
+    else
+    {
+        if (GetMonData(&gPlayerParty[slot], MON_DATA_STATUS) == 0)
+            SetMonData(&gPlayerParty[slot], MON_DATA_STATUS, &status1);
     }
 }

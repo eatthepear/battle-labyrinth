@@ -14,12 +14,12 @@ script Zone20Sanctuary_EventScript_Intro {
 	msgbox(gText_RewardClear, MSGBOX_DEFAULT)
 	msgbox(Zone20Sanctuary_Text_Reward, MSGBOX_DEFAULT)
 	giveitem(ITEM_TM27)
-    msgbox(gText_Colress_Unlocked, MSGBOX_DEFAULT)
+    msgbox(gText_Colress_Upgraded, MSGBOX_DEFAULT)
 	playfanfare(MUS_OBTAIN_ITEM)
-	msgbox(gText_Colress_UnlockedUnique, MSGBOX_DEFAULT)
+	msgbox(gText_Colress_UpgradedUnique, MSGBOX_DEFAULT)
 	waitfanfare
 	playfanfare(MUS_OBTAIN_ITEM)
-	msgbox(gText_Colress_UnlockedServices, MSGBOX_DEFAULT)
+	msgbox(gText_Colress_UpgradedServices, MSGBOX_DEFAULT)
 	waitfanfare
 	setvar(VAR_ZONE, 21)
 	buffernumberstring(0, VAR_ZONE)
@@ -33,7 +33,8 @@ script Zone20Sanctuary_EventScript_Intro {
 script Zone20Sanctuary_EventScript_NextZone {
 	lock
 	faceplayer
-	msgbox(gText_Colress_Greetings, MSGBOX_DEFAULT)
+	message(gText_Colress_Greetings)
+	waitmessage
 	dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
 	switch (var(VAR_RESULT)) {
 		case 0:

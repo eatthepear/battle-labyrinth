@@ -998,6 +998,7 @@ extern const u8 gText_XNatureAdopted[];
 extern const u8 gText_XNatureRevived[];
 extern const u8 gText_XNatureBoughtRuin[];
 extern const u8 gText_XNatureFWG[];
+extern const u8 gText_XNatureHatchedFromMarieEggs[];
 
 extern const u8 gText_EmptyString5[];
 extern const u8 gText_EggWillTakeALongTime[];
@@ -1009,6 +1010,7 @@ extern const u8 gText_PeculiarEggTrade[];
 extern const u8 gText_EggFromTraveler[];
 extern const u8 gText_EggFromHotSprings[];
 extern const u8 gText_OddEggFoundByCouple[];
+extern const u8 gText_PeculiarEggMarieEggs[];
 extern const u8 gText_None[];
 extern const u8 gText_RibbonsVar1[];
 extern const u8 gText_OneDash[];
@@ -3147,8 +3149,8 @@ extern const u8 gText_XsYWereSwapped[];
 
 extern const u8 gText_EnemyPreview[];
 
-extern const u8 gText_Common[];
-extern const u8 gText_Field[];
+extern const u8 gText_InfiniteRepelOn[];
+extern const u8 gText_InfiniteRepelOff[];
 
 // Berry Blender
 extern const u8 gText_SavingDontTurnOff2[];

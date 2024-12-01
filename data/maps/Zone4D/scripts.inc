@@ -161,7 +161,7 @@ Zone4D_EventScript_Sign::
 # 87 "data/maps/Zone4D/scripts.pory"
 Zone4D_Text_Sign:
 # 88 "data/maps/Zone4D/scripts.pory"
-	.string "Trainer Tips!\p"
+	.string "Trainer Tips\p"
 # 89 "data/maps/Zone4D/scripts.pory"
 	.string "Some areas require backtracking\n"
 # 90 "data/maps/Zone4D/scripts.pory"

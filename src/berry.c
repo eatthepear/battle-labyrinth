@@ -2417,7 +2417,7 @@ static u16 GetBerryPestSpecies(u8 berryId)
             return SPECIES_BURMY;
             break;
         case 1:
-            return SPECIES_LEDYBA;
+            return SPECIES_BLIPBUG;
             break;
         case 2:
             return SPECIES_SCATTERBUG;

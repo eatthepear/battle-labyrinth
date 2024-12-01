@@ -36,23 +36,23 @@ Zone8Sanctuary_EventScript_Intro_1:
 # 24 "data/maps/Zone8Sanctuary/scripts.pory"
 	setvar VAR_ZONE, 9
 # 25 "data/maps/Zone8Sanctuary/scripts.pory"
-	msgbox gText_Colress_Unlocked, MSGBOX_DEFAULT
+	msgbox gText_Colress_Upgraded, MSGBOX_DEFAULT
 # 26 "data/maps/Zone8Sanctuary/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 27 "data/maps/Zone8Sanctuary/scripts.pory"
-	msgbox gText_Colress_UnlockedGeneral, MSGBOX_DEFAULT
+	msgbox gText_Colress_UpgradedGeneral, MSGBOX_DEFAULT
 # 28 "data/maps/Zone8Sanctuary/scripts.pory"
 	waitfanfare
 # 29 "data/maps/Zone8Sanctuary/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 30 "data/maps/Zone8Sanctuary/scripts.pory"
-	msgbox gText_Colress_UnlockedUnique, MSGBOX_DEFAULT
+	msgbox gText_Colress_UpgradedUnique, MSGBOX_DEFAULT
 # 31 "data/maps/Zone8Sanctuary/scripts.pory"
 	waitfanfare
 # 32 "data/maps/Zone8Sanctuary/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 33 "data/maps/Zone8Sanctuary/scripts.pory"
-	msgbox gText_Colress_UnlockedServices, MSGBOX_DEFAULT
+	msgbox gText_Colress_UpgradedServices, MSGBOX_DEFAULT
 # 34 "data/maps/Zone8Sanctuary/scripts.pory"
 	waitfanfare
 # 35 "data/maps/Zone8Sanctuary/scripts.pory"
@@ -83,58 +83,60 @@ Zone8Sanctuary_EventScript_NextZone::
 # 44 "data/maps/Zone8Sanctuary/scripts.pory"
 	faceplayer
 # 45 "data/maps/Zone8Sanctuary/scripts.pory"
-	msgbox gText_Colress_Greetings, MSGBOX_DEFAULT
+	message gText_Colress_Greetings
 # 46 "data/maps/Zone8Sanctuary/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone8Sanctuary_EventScript_NextZone_Text_0, Zone8Sanctuary_EventScript_NextZone_Text_1, Zone8Sanctuary_EventScript_NextZone_Text_2, Zone8Sanctuary_EventScript_NextZone_Text_3
+	waitmessage
 # 47 "data/maps/Zone8Sanctuary/scripts.pory"
-	switch VAR_RESULT
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone8Sanctuary_EventScript_NextZone_Text_0, Zone8Sanctuary_EventScript_NextZone_Text_1, Zone8Sanctuary_EventScript_NextZone_Text_2, Zone8Sanctuary_EventScript_NextZone_Text_3
 # 48 "data/maps/Zone8Sanctuary/scripts.pory"
+	switch VAR_RESULT
+# 49 "data/maps/Zone8Sanctuary/scripts.pory"
 	case 0, Zone8Sanctuary_EventScript_NextZone_3
-# 61 "data/maps/Zone8Sanctuary/scripts.pory"
+# 62 "data/maps/Zone8Sanctuary/scripts.pory"
 	case 1, Zone8Sanctuary_EventScript_NextZone_4
-# 63 "data/maps/Zone8Sanctuary/scripts.pory"
+# 64 "data/maps/Zone8Sanctuary/scripts.pory"
 	case 2, Zone8Sanctuary_EventScript_NextZone_5
 Zone8Sanctuary_EventScript_NextZone_1:
-# 66 "data/maps/Zone8Sanctuary/scripts.pory"
+# 67 "data/maps/Zone8Sanctuary/scripts.pory"
 	goto EventScript_WhenUReady
 	return
 
 Zone8Sanctuary_EventScript_NextZone_3:
-# 49 "data/maps/Zone8Sanctuary/scripts.pory"
-	buffernumberstring 0, VAR_ZONE
 # 50 "data/maps/Zone8Sanctuary/scripts.pory"
-	msgbox gText_Colress_SureReadyToLeave, MSGBOX_YESNO
+	buffernumberstring 0, VAR_ZONE
 # 51 "data/maps/Zone8Sanctuary/scripts.pory"
+	msgbox gText_Colress_SureReadyToLeave, MSGBOX_YESNO
+# 52 "data/maps/Zone8Sanctuary/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone8Sanctuary_EventScript_NextZone_6
 	goto Zone8Sanctuary_EventScript_NextZone_1
 
 Zone8Sanctuary_EventScript_NextZone_4:
-# 62 "data/maps/Zone8Sanctuary/scripts.pory"
+# 63 "data/maps/Zone8Sanctuary/scripts.pory"
 	goto EventScript_Settings
 	goto Zone8Sanctuary_EventScript_NextZone_1
 
 Zone8Sanctuary_EventScript_NextZone_5:
-# 64 "data/maps/Zone8Sanctuary/scripts.pory"
+# 65 "data/maps/Zone8Sanctuary/scripts.pory"
 	goto EventScript_Documentation
 	goto Zone8Sanctuary_EventScript_NextZone_1
 
 Zone8Sanctuary_EventScript_NextZone_6:
-# 52 "data/maps/Zone8Sanctuary/scripts.pory"
-	call EventScript_LeavingSetup
 # 53 "data/maps/Zone8Sanctuary/scripts.pory"
-	setflag FLAG_HIDE_ZONE9A_BERTHA_WINSTRATE
+	call EventScript_LeavingSetup
 # 54 "data/maps/Zone8Sanctuary/scripts.pory"
-	setflag FLAG_HIDE_ZONE9A_CASSANDRA_WINSTRATE
+	setflag FLAG_HIDE_ZONE9A_BERTHA_WINSTRATE
 # 55 "data/maps/Zone8Sanctuary/scripts.pory"
-	setflag FLAG_HIDE_ZONE9A_DOMINIC_WINSTRATE
+	setflag FLAG_HIDE_ZONE9A_CASSANDRA_WINSTRATE
 # 56 "data/maps/Zone8Sanctuary/scripts.pory"
-	setflag FLAG_HIDE_ZONE9A_ERICA_WINSTRATE
+	setflag FLAG_HIDE_ZONE9A_DOMINIC_WINSTRATE
 # 57 "data/maps/Zone8Sanctuary/scripts.pory"
-	setvar VAR_ZONE_9_STATE, 0
+	setflag FLAG_HIDE_ZONE9A_ERICA_WINSTRATE
 # 58 "data/maps/Zone8Sanctuary/scripts.pory"
-	warp MAP_ZONE9A, 255, 41, 22
+	setvar VAR_ZONE_9_STATE, 0
 # 59 "data/maps/Zone8Sanctuary/scripts.pory"
+	warp MAP_ZONE9A, 255, 41, 22
+# 60 "data/maps/Zone8Sanctuary/scripts.pory"
 	waitstate
 	goto Zone8Sanctuary_EventScript_NextZone_1
 
@@ -144,38 +146,38 @@ Zone8Sanctuary_EventScript_Intro_Text_0:
 	.string "Red Shards and Blue Shards!$"
 
 Zone8Sanctuary_EventScript_NextZone_Text_0:
-# 46 "data/maps/Zone8Sanctuary/scripts.pory"
+# 47 "data/maps/Zone8Sanctuary/scripts.pory"
 	.string "Next Zone$"
 
 Zone8Sanctuary_EventScript_NextZone_Text_1:
-# 46 "data/maps/Zone8Sanctuary/scripts.pory"
+# 47 "data/maps/Zone8Sanctuary/scripts.pory"
 	.string "Settings$"
 
 Zone8Sanctuary_EventScript_NextZone_Text_2:
-# 46 "data/maps/Zone8Sanctuary/scripts.pory"
+# 47 "data/maps/Zone8Sanctuary/scripts.pory"
 	.string "Documentation$"
 
 Zone8Sanctuary_EventScript_NextZone_Text_3:
-# 46 "data/maps/Zone8Sanctuary/scripts.pory"
+# 47 "data/maps/Zone8Sanctuary/scripts.pory"
 	.string "Exit$"
 
 Zone8Sanctuary_Text_Colress_ReachedZone::
-# 69 "data/maps/Zone8Sanctuary/scripts.pory"
+# 70 "data/maps/Zone8Sanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Congratulations.\n"
 	.string "You have cleared {COLOR RED}Zone 7{COLOR DARK_GRAY} and {COLOR RED}Zone 8{COLOR DARK_GRAY}.$"
 
 Zone8Sanctuary_Text_RewardClear7::
-# 74 "data/maps/Zone8Sanctuary/scripts.pory"
+# 75 "data/maps/Zone8Sanctuary/scripts.pory"
 	.string "Your reward for clearing {COLOR RED}Zone 7{COLOR DARK_GRAY} is…$"
 
 Zone8Sanctuary_Text_7Reward::
-# 78 "data/maps/Zone8Sanctuary/scripts.pory"
+# 79 "data/maps/Zone8Sanctuary/scripts.pory"
 	.string "3 Blue Shards!$"
 
 Zone8Sanctuary_Text_RewardClear8::
-# 82 "data/maps/Zone8Sanctuary/scripts.pory"
+# 83 "data/maps/Zone8Sanctuary/scripts.pory"
 	.string "Your reward for clearing {COLOR RED}Zone 8{COLOR DARK_GRAY} is…$"
 
 Zone8Sanctuary_Text_8Reward::
-# 86 "data/maps/Zone8Sanctuary/scripts.pory"
+# 87 "data/maps/Zone8Sanctuary/scripts.pory"
 	.string "TM12 - Rock Tomb!$"

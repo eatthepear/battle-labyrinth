@@ -23,7 +23,7 @@ script Zone0Sanctuary_EventScript_Intro {
 	waitmovement(0)
 	msgbox("Welcome to the\n{COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY}.\pI am your guide for braving the\nchallenges ahead.\pWould you like to listen to the tutorial?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
-		setvar(VAR_TEMP_0, 1) // VAR_TEMP_0: 1 means yes tutorial
+		setvar(VAR_TEMP_5, 1) // VAR_TEMP_5: 1 means yes tutorial
 		msgbox(format("The Pokémon Battle Labyrinth is comprised of many {COLOR RED}Zones{COLOR DARK_GRAY} you must traverse.\p"
 		"In these Zones, you might encounter wild Pokémon, great treasures, tough trainers, and more.\p"
 		"Each Zone typically contains a {COLOR RED}Leviathan{COLOR DARK_GRAY}, a boss that yields great rewards if defeated.\p"
@@ -47,7 +47,7 @@ script Zone0Sanctuary_EventScript_Intro {
 		msgbox(format("Settings saved!"), MSGBOX_DEFAULT)
 	}
 	delay(16)
-	if (var(VAR_TEMP_0) == 1) {
+	if (var(VAR_TEMP_5) == 1) {
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Allow me to show you each of the shops."))
 		applymovement(1, Zone0Sanctuary_Movement_Colress_FirstShop)
 		applymovement(OBJ_EVENT_ID_PLAYER, Zone0Sanctuary_Movement_Player_FirstShop)
@@ -319,7 +319,7 @@ script Zone0Sanctuary_EventScript_HandleStarterSelectionDefault {
 }
 
 script Zone0Sanctuary_EventScript_EndIntro {
-	if (var(VAR_TEMP_0) == 1) {
+	if (var(VAR_TEMP_5) == 1) {
 		msgbox(format("Excellent choice.\p""You can also re-nickname your Pokémon from the party menu."))
 		delay(16)
 		if (flag(FLAG_SETTINGS_INFINITE)) {
@@ -357,7 +357,7 @@ script Zone0Sanctuary_EventScript_EndIntro {
 		} else {
 			msgbox(format("I also have a beginner's kit with items and cash to get you started."), MSGBOX_DEFAULT)
 			giveitem(ITEM_POKE_BALL, 15)
-			giveitem(ITEM_POTION, 5)
+			giveitem(ITEM_POTION, 10)
 			playfanfare(MUS_OBTAIN_ITEM)
 			msgbox(format("Received ¥5000!"), MSGBOX_DEFAULT)
 			waitfanfare
@@ -397,7 +397,7 @@ script Zone0Sanctuary_EventScript_EndIntro {
 			additem(ITEM_MAX_REPEL, 100)
 			additem(ITEM_MAX_REPEL, 100)
 		} else {
-			additem(ITEM_POTION, 5)
+			additem(ITEM_POTION, 10)
 		}
 		additem(ITEM_POKE_BALL, 15)
 	}
@@ -409,7 +409,6 @@ script Zone0Sanctuary_EventScript_EndIntro {
 	initclock(1, 1)
 	callnative(ReturnFromStartWallClock)
 	setvar(VAR_ZONE, 1)
-	setvar(VAR_LEVEL_CAP, 7)
 	buffernumberstring(0, VAR_ZONE)
 	msgbox(gText_Colress_WhenUReady)
 	applymovement(1, Common_Movement_Colress_WalkUp)
@@ -422,7 +421,8 @@ script Zone0Sanctuary_EventScript_EndIntro {
 script Zone0Sanctuary_EventScript_NextZone {
 	lock
 	faceplayer
-	msgbox(gText_Colress_Greetings, MSGBOX_DEFAULT)
+	message(gText_Colress_Greetings)
+	waitmessage
 	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
 	switch (var(VAR_RESULT)) {
 		case 0:

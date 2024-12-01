@@ -626,7 +626,7 @@ void CB2_InitTitleScreen(void)
     {
         u8 taskId = CreateTask(Task_TitleScreenPhase1, 0);
 
-        gTasks[taskId].tCounter = 496;
+        gTasks[taskId].tCounter = 256;
         gTasks[taskId].tSkipToNext = FALSE;
         gTasks[taskId].tPointless = -16;
         gTasks[taskId].tBg2Y = -32;
@@ -663,7 +663,7 @@ void CB2_InitTitleScreen(void)
                                     | DISPCNT_OBJ_ON
                                     | DISPCNT_WIN0_ON
                                     | DISPCNT_OBJWIN_ON);
-        m4aSongNumStart(MUS_PL_TITLE);
+        m4aSongNumStart(MUS_PL_VS_FRONTIER_BRAIN);
         gMain.state = 5;
         break;
     case 5:

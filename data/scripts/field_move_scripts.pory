@@ -1,3 +1,13 @@
+script EventScript_HandleFlashlight {
+	checkitem(ITEM_FLASHLIGHT)
+	if (var(VAR_RESULT) == TRUE) {
+		setflashlevel(2)
+	} else {
+		setflashlevel(6)
+	}
+	return
+}
+
 script EventScript_Headbutt {
 	lockall
 	msgbox("There's a sweet aroma in the air…\nWould you like to shake the tree?", MSGBOX_YESNO)

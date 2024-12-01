@@ -45,55 +45,76 @@ Zone4B_EventScript_ItemAwakening_2:
 	end
 
 
-# 28 "data/maps/Zone4B/scripts.pory"
-
-# 29 "data/maps/Zone4B/scripts.pory"
-Zone4B_EventScript_Ralph::
+Zone4B_EventScript_Callie::
 # 30 "data/maps/Zone4B/scripts.pory"
-	trainerbattle_single TRAINER_PBL_RALPH, Zone4B_Text_RalphIntro, Zone4B_Text_RalphDefeat
+	trainerbattle_single TRAINER_PBL_CALLIE, Zone4B_EventScript_Callie_Text_0, Zone4B_EventScript_Callie_Text_1
 # 31 "data/maps/Zone4B/scripts.pory"
-	msgbox Zone4B_Text_RalphPostBattle, MSGBOX_AUTOCLOSE
-# 32 "data/maps/Zone4B/scripts.pory"
+	msgbox Zone4B_EventScript_Callie_Text_2
 	end
-# 33 "data/maps/Zone4B/scripts.pory"
 
-# 34 "data/maps/Zone4B/scripts.pory"
-Zone4B_Text_RalphIntro:
+
 # 35 "data/maps/Zone4B/scripts.pory"
-	.string "Ugh, where am I? Maybe you'll\n"
-# 36 "data/maps/Zone4B/scripts.pory"
-	.string "tell me if I beat you!$"
-# 37 "data/maps/Zone4B/scripts.pory"
 
+# 36 "data/maps/Zone4B/scripts.pory"
+Zone4B_EventScript_Ralph::
+# 37 "data/maps/Zone4B/scripts.pory"
+	trainerbattle_single TRAINER_PBL_RALPH, Zone4B_Text_RalphIntro, Zone4B_Text_RalphDefeat
 # 38 "data/maps/Zone4B/scripts.pory"
-Zone4B_Text_RalphDefeat:
+	msgbox Zone4B_Text_RalphPostBattle, MSGBOX_AUTOCLOSE
 # 39 "data/maps/Zone4B/scripts.pory"
-	.string "You don't know either? Oof!$"
+	end
 # 40 "data/maps/Zone4B/scripts.pory"
 
 # 41 "data/maps/Zone4B/scripts.pory"
-Zone4B_Text_RalphPostBattle:
+Zone4B_Text_RalphIntro:
 # 42 "data/maps/Zone4B/scripts.pory"
-	.string "I guess the more important question is\n"
+	.string "Ugh, where am I? Maybe you'll\n"
 # 43 "data/maps/Zone4B/scripts.pory"
-	.string "where am I going?$"
+	.string "tell me if I beat you!$"
 # 44 "data/maps/Zone4B/scripts.pory"
 
 # 45 "data/maps/Zone4B/scripts.pory"
-Zone4B_EventScript_Sign::
+Zone4B_Text_RalphDefeat:
 # 46 "data/maps/Zone4B/scripts.pory"
-	msgbox Zone4B_Text_Sign, MSGBOX_SIGN
+	.string "You don't know either? Oof!$"
 # 47 "data/maps/Zone4B/scripts.pory"
-	end
-# 48 "data/maps/Zone4B/scripts.pory"
 
+# 48 "data/maps/Zone4B/scripts.pory"
+Zone4B_Text_RalphPostBattle:
 # 49 "data/maps/Zone4B/scripts.pory"
-Zone4B_Text_Sign:
+	.string "I guess the more important question is,\n"
 # 50 "data/maps/Zone4B/scripts.pory"
-	.string "Trainer Tips!\p"
+	.string "where am I going?$"
 # 51 "data/maps/Zone4B/scripts.pory"
-	.string "You can see detailed information\n"
+
 # 52 "data/maps/Zone4B/scripts.pory"
-	.string "about a Pokémon species in its\l"
+Zone4B_EventScript_Sign::
 # 53 "data/maps/Zone4B/scripts.pory"
+	msgbox Zone4B_Text_Sign, MSGBOX_SIGN
+# 54 "data/maps/Zone4B/scripts.pory"
+	end
+# 55 "data/maps/Zone4B/scripts.pory"
+
+# 56 "data/maps/Zone4B/scripts.pory"
+Zone4B_Text_Sign:
+# 57 "data/maps/Zone4B/scripts.pory"
+	.string "Trainer Tips\p"
+# 58 "data/maps/Zone4B/scripts.pory"
+	.string "You can see detailed information\n"
+# 59 "data/maps/Zone4B/scripts.pory"
+	.string "about a Pokémon species in its\l"
+# 60 "data/maps/Zone4B/scripts.pory"
 	.string "Pokédex entry after capturing it.$"
+
+Zone4B_EventScript_Callie_Text_0:
+# 30 "data/maps/Zone4B/scripts.pory"
+	.string "Do you like doggos as much as I do?$"
+
+Zone4B_EventScript_Callie_Text_1:
+# 30 "data/maps/Zone4B/scripts.pory"
+	.string "My poor doggos!$"
+
+Zone4B_EventScript_Callie_Text_2:
+# 31 "data/maps/Zone4B/scripts.pory"
+	.string "As much as I love dogs, I also kind of\n"
+	.string "like cats.$"

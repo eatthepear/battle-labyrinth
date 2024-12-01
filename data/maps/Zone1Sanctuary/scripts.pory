@@ -13,7 +13,7 @@ script Zone1Sanctuary_EventScript_Intro {
 	buffernumberstring(0, VAR_ZONE)
 	msgbox(gText_RewardClear, MSGBOX_DEFAULT)
 	msgbox(Zone1Sanctuary_Text_Reward, MSGBOX_DEFAULT)
-	giveitem(ITEM_EXP_SHARE)
+	giveitem(ITEM_INFINITE_REPEL)
 	setvar(VAR_ZONE, 2)
 	buffernumberstring(0, VAR_ZONE)
 	msgbox(gText_Colress_WhenUReady)
@@ -26,8 +26,9 @@ script Zone1Sanctuary_EventScript_Intro {
 script Zone1Sanctuary_EventScript_NextZone {
 	lock
 	faceplayer
-	msgbox(gText_Colress_Greetings, MSGBOX_DEFAULT)
-	dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
+	message(gText_Colress_Greetings)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
 	switch (var(VAR_RESULT)) {
 		case 0:
 			buffernumberstring(0, VAR_ZONE)
@@ -46,5 +47,5 @@ script Zone1Sanctuary_EventScript_NextZone {
 }
 
 text Zone1Sanctuary_Text_Reward {
-	format("The Experience Share!")
+	format("The Infinite Repellent!")
 }

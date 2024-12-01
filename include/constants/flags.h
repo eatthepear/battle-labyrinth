@@ -152,7 +152,7 @@
 #define FLAG_SETTINGS_CLUMSY                        0xA9
 #define FLAG_SETTINGS_EFFORTLESS                    0xAA
 #define FLAG_SETTINGS_RED_THUMB                     0xAB
-#define FLAG_SETTINGS_LAZY                          0xAC
+#define FLAG_SETTINGS_ANTIGRIND                     0xAC
 #define FLAG_SETTINGS_SINGLE_USE                    0xAD
 #define FLAG_SETTINGS_POOR                          0xAE
 #define FLAG_SETTINGS_INDEPENDENT                   0xAF
@@ -200,14 +200,14 @@
 #define FLAG_JOY_INTRO                                    0x106
 #define FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES                 0x107
 #define FLAG_ZONE0B_RECEIVED_EEVEE                        0x108
-#define FLAG_RECEIVED_FWG                                 0x109
+#define FLAG_ZONE1A_RECEIVED_FWG                          0x109
 #define FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG                   0x10A
 #define FLAG_MAX_INTRO                                    0x10B
 #define FLAG_HIDE_ZONE3A_MAX                              0x10C
 #define FLAG_HIDE_ZONE3A_REMI                             0x10D
 #define FLAG_HIDE_ZONE3A_PHILLIPA                         0x10E
 #define FLAG_ZONE4A_RECEIVED_GEM                          0x10F
-#define FLAG_ZONE5A_NUZLOCKE_BOUGHT_PIKACLONE             0x110
+#define FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE             0x110
 #define FLAG_HIDE_ZONE5B_SHINY_PORYGON                    0x111
 #define FLAG_LELOUCH_SHARDS_INTRO                         0x112
 #define FLAG_HIDE_ZONE6A_MAX                              0x113
@@ -267,6 +267,8 @@
 #define FLAG_ZONE_B1_PORYGON_4                            0x149
 #define FLAG_ZONE_B1_PORYGON_5                            0x14A
 #define FLAG_RECEIVED_PORYGON                             0x14B
+#define FLAG_JOY_UPGRADED                                 0x14C
+#define FLAG_MARIE_NUZLOCKE_RECEIVED                      0x14D
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x200
@@ -371,11 +373,11 @@
 #define FLAG_HIDDEN_ITEM_ZONE24A_RED_SHARD_6                 (FLAG_HIDDEN_ITEMS_START + 0x63)
 #define FLAG_HIDDEN_ITEM_ZONE24A_BLUE_SHARD                  (FLAG_HIDDEN_ITEMS_START + 0x64)
 #define FLAG_HIDDEN_ITEM_ZONE24A_YELLOW_SHARD                (FLAG_HIDDEN_ITEMS_START + 0x65)
-#define FLAG_HIDDEN_ITEM_NEXT55       (FLAG_HIDDEN_ITEMS_START + 0x66)
-#define FLAG_HIDDEN_ITEM_NEXT66       (FLAG_HIDDEN_ITEMS_START + 0x67)
-#define FLAG_HIDDEN_ITEM_NEXT88       (FLAG_HIDDEN_ITEMS_START + 0x68)
-#define FLAG_HIDDEN_ITEM_NEXT99       (FLAG_HIDDEN_ITEMS_START + 0x69)
-#define FLAG_HIDDEN_ITEM_NEXT23       (FLAG_HIDDEN_ITEMS_START + 0x6A)
+#define FLAG_HIDDEN_ITEM_ZONE5A_PECHA_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x66)
+#define FLAG_HIDDEN_ITEM_ZONE5A_CHESTO_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x67)
+#define FLAG_HIDDEN_ITEM_ZONE5B_ORAN_BERRY                   (FLAG_HIDDEN_ITEMS_START + 0x68)
+#define FLAG_HIDDEN_ITEM_ZONE5B_RAWST_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x69)
+#define FLAG_HIDDEN_ITEM_ZONE5B_CHERI_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x6A)
 #define FLAG_HIDDEN_ITEM_NEXT24       (FLAG_HIDDEN_ITEMS_START + 0x6B)
 #define FLAG_HIDDEN_ITEM_NEXT25       (FLAG_HIDDEN_ITEMS_START + 0x6C)
 #define FLAG_HIDDEN_ITEM_NEXT26       (FLAG_HIDDEN_ITEMS_START + 0x6D)
@@ -388,21 +390,32 @@
 #define FLAG_ITEM_ZONE1A_QUICK_CLAW                                 0x301
 #define FLAG_ITEM_ZONE2A_ANTIDOTE                                   0x302
 #define FLAG_ITEM_ZONE2B_POTION_X2                                  0x303
+#define FLAG_ITEM_ZONE2C_SILK_SCARF                                 0x370
 #define FLAG_ITEM_ZONE3A_SUPER_POTION                               0x304
-#define FLAG_ITEM_ZONE3A_REPEL                                      0x305
+#define FLAG_ITEM_ZONE3A_POTION_X2                                  0x305
 #define FLAG_ITEM_ZONE3A_PARALYZE_HEAL                              0x306
 #define FLAG_ITEM_ZONE3A_HYPER_POTION                               0x307
+#define FLAG_ITEM_ZONE4A_SILVER_POWDER                              0x377
 #define FLAG_ITEM_ZONE4A_BURN_HEAL                                  0x308
 #define FLAG_ITEM_ZONE4B_AWAKENING                                  0x309
 #define FLAG_ITEM_ZONE4C_MUSCLE_BAND                                0x30A
+#define FLAG_ITEM_ZONE4C_TWISTED_SPOON                              0x379
 #define FLAG_ITEM_ZONE4D_WISE_GLASSES                               0x30B
 #define FLAG_ITEM_ZONE4D_BEEDRILLITE                                0x30C
 #define FLAG_ITEM_ZONE4E_SUPER_POTION                               0x30D
+#define FLAG_ITEM_ZONE4E_POISON_BARB                                0x378
 #define FLAG_ITEM_ZONE5A_QUICK_BALL                                 0x30E
-#define FLAG_ITEM_ZONE5A_TM03                                       0x30F
+#define FLAG_ITEM_ZONE5A_TM04                                       0x30F
+#define FLAG_ITEM_ZONE5A_MOON_STONE                                 0x371
+#define FLAG_ITEM_ZONE5A_MIRACLE_SEED                               0x37A
+#define FLAG_ITEM_ZONE5B_TM03                                       0x372
+#define FLAG_ITEM_ZONE5B_POTION_X2                                  0x373
+#define FLAG_ITEM_ZONE5B_GEMS                                       0x374
+#define FLAG_ITEM_ZONE5B_SUN_STONE                                  0x375
 #define FLAG_ITEM_ZONE6A_TM07                                       0x310
 #define FLAG_ITEM_ZONE6A_NET_BALL                                   0x311
 #define FLAG_ITEM_ZONE6A_NEST_BALL                                  0x312
+#define FLAG_ITEM_ZONE6A_GEMS                                       0x376
 #define FLAG_ITEM_ZONE7A_SHARP_BEAK                                 0x313
 #define FLAG_ITEM_ZONE7A_TWISTED_SPOON                              0x314
 #define FLAG_ITEM_ZONE7A_POISON_BARB                                0x315
@@ -1707,7 +1720,7 @@
 #define FLAG_SYS_POKEMON_GET                         (SYSTEM_FLAGS + 0x0) // FLAG_0x860
 #define FLAG_SYS_POKEDEX_GET                         (SYSTEM_FLAGS + 0x1)
 #define FLAG_SYS_POKENAV_GET                         (SYSTEM_FLAGS + 0x2)
-#define FLAG_SYS_START_MENU_PC_GET                   (SYSTEM_FLAGS + 0x3) // Unused Flag
+#define FLAG_SYS_START_MENU_PC_GET                   (SYSTEM_FLAGS + 0x3)
 #define FLAG_SYS_GAME_CLEAR                          (SYSTEM_FLAGS + 0x4)
 #define FLAG_SYS_CHAT_USED                           (SYSTEM_FLAGS + 0x5)
 #define FLAG_UNLOCKED_TRENDY_SAYINGS                 (SYSTEM_FLAGS + 0x6)

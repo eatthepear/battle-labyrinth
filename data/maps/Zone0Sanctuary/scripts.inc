@@ -59,7 +59,7 @@ Zone0Sanctuary_EventScript_Intro_4:
 # 49 "data/maps/Zone0Sanctuary/scripts.pory"
 	delay 16
 # 50 "data/maps/Zone0Sanctuary/scripts.pory"
-	compare VAR_TEMP_0, 1
+	compare VAR_TEMP_5, 1
 	goto_if_eq Zone0Sanctuary_EventScript_Intro_8
 Zone0Sanctuary_EventScript_Intro_7:
 # 141 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -75,7 +75,7 @@ Zone0Sanctuary_EventScript_Intro_14:
 
 Zone0Sanctuary_EventScript_Intro_2:
 # 26 "data/maps/Zone0Sanctuary/scripts.pory"
-	setvar VAR_TEMP_0, 1
+	setvar VAR_TEMP_5, 1
 # 27 "data/maps/Zone0Sanctuary/scripts.pory"
 	msgbox Zone0Sanctuary_EventScript_Intro_Text_2
 # 33 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -782,12 +782,12 @@ Zone0Sanctuary_EventScript_HandleStarterSelectionDefault_63:
 
 Zone0Sanctuary_EventScript_EndIntro::
 # 322 "data/maps/Zone0Sanctuary/scripts.pory"
-	compare VAR_TEMP_0, 1
+	compare VAR_TEMP_5, 1
 	goto_if_eq Zone0Sanctuary_EventScript_EndIntro_2
 # 371 "data/maps/Zone0Sanctuary/scripts.pory"
 	goto_if_set FLAG_SETTINGS_INFINITE, Zone0Sanctuary_EventScript_EndIntro_10
 # 400 "data/maps/Zone0Sanctuary/scripts.pory"
-	additem ITEM_POTION, 5
+	additem ITEM_POTION, 10
 Zone0Sanctuary_EventScript_EndIntro_9:
 # 402 "data/maps/Zone0Sanctuary/scripts.pory"
 	additem ITEM_POKE_BALL, 15
@@ -809,18 +809,16 @@ Zone0Sanctuary_EventScript_EndIntro_1:
 # 411 "data/maps/Zone0Sanctuary/scripts.pory"
 	setvar VAR_ZONE, 1
 # 412 "data/maps/Zone0Sanctuary/scripts.pory"
-	setvar VAR_LEVEL_CAP, 7
-# 413 "data/maps/Zone0Sanctuary/scripts.pory"
 	buffernumberstring 0, VAR_ZONE
-# 414 "data/maps/Zone0Sanctuary/scripts.pory"
+# 413 "data/maps/Zone0Sanctuary/scripts.pory"
 	msgbox gText_Colress_WhenUReady
-# 415 "data/maps/Zone0Sanctuary/scripts.pory"
+# 414 "data/maps/Zone0Sanctuary/scripts.pory"
 	applymovement 1, Common_Movement_Colress_WalkUp
-# 416 "data/maps/Zone0Sanctuary/scripts.pory"
+# 415 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitmovement 1
-# 417 "data/maps/Zone0Sanctuary/scripts.pory"
+# 416 "data/maps/Zone0Sanctuary/scripts.pory"
 	setflag FLAG_IS_DEBUGGING_SAVEFILE
-# 418 "data/maps/Zone0Sanctuary/scripts.pory"
+# 417 "data/maps/Zone0Sanctuary/scripts.pory"
 	releaseall
 	end
 
@@ -836,7 +834,7 @@ Zone0Sanctuary_EventScript_EndIntro_2:
 # 359 "data/maps/Zone0Sanctuary/scripts.pory"
 	giveitem ITEM_POKE_BALL, 15
 # 360 "data/maps/Zone0Sanctuary/scripts.pory"
-	giveitem ITEM_POTION, 5
+	giveitem ITEM_POTION, 10
 # 361 "data/maps/Zone0Sanctuary/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 362 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -980,12 +978,14 @@ Zone0Sanctuary_EventScript_EndIntro_10:
 
 
 Zone0Sanctuary_EventScript_NextZone::
-# 423 "data/maps/Zone0Sanctuary/scripts.pory"
+# 422 "data/maps/Zone0Sanctuary/scripts.pory"
 	lock
-# 424 "data/maps/Zone0Sanctuary/scripts.pory"
+# 423 "data/maps/Zone0Sanctuary/scripts.pory"
 	faceplayer
+# 424 "data/maps/Zone0Sanctuary/scripts.pory"
+	message gText_Colress_Greetings
 # 425 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox gText_Colress_Greetings, MSGBOX_DEFAULT
+	waitmessage
 # 426 "data/maps/Zone0Sanctuary/scripts.pory"
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone0Sanctuary_EventScript_NextZone_Text_0, Zone0Sanctuary_EventScript_NextZone_Text_1, Zone0Sanctuary_EventScript_NextZone_Text_2, Zone0Sanctuary_EventScript_NextZone_Text_3
 # 427 "data/maps/Zone0Sanctuary/scripts.pory"

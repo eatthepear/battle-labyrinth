@@ -17,6 +17,9 @@ script Zone2Sanctuary_EventScript_Intro {
 	playfanfare(MUS_OBTAIN_ITEM)
 	msgbox("{PLAYER} received the {COLOR RED}DexNav{COLOR DARK_GRAY}!", MSGBOX_DEFAULT)
 	waitfanfare
+	if (flag(FLAG_SETTINGS_NUZLOCKE)) {
+		msgbox(format("Note that on Nuzlocke mode, DexNav encounters are unable to be caught."), MSGBOX_DEFAULT)
+	}
 	setvar(VAR_ZONE, 3)
 	buffernumberstring(0, VAR_ZONE)
 	msgbox(gText_Colress_WhenUReady)
@@ -28,8 +31,9 @@ script Zone2Sanctuary_EventScript_Intro {
 script Zone2Sanctuary_EventScript_NextZone {
 	lock
 	faceplayer
-	msgbox(gText_Colress_Greetings, MSGBOX_DEFAULT)
-	dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
+	message(gText_Colress_Greetings)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
 	switch (var(VAR_RESULT)) {
 		case 0:
 			buffernumberstring(0, VAR_ZONE)

@@ -62,71 +62,70 @@ Zone1A_EventScript_GiveFWG_1:
 	case MULTI_B_PRESSED, Zone1A_EventScript_GiveFWG_13
 Zone1A_EventScript_GiveFWG_8:
 # 46 "data/maps/Zone1A/scripts.pory"
-	specialvar VAR_TEMP_2, CalculatePlayerPartyCount
-# 47 "data/maps/Zone1A/scripts.pory"
-	compare VAR_TEMP_2, PARTY_SIZE
-	goto_if_eq Zone1A_EventScript_GiveFWG_15
-# 52 "data/maps/Zone1A/scripts.pory"
-	call EventScript_NuzlockeVerifyGift
-# 53 "data/maps/Zone1A/scripts.pory"
-	goto_if_set FLAG_SETTINGS_NUZLOCKE, Zone1A_EventScript_GiveFWG_18
-# 249 "data/maps/Zone1A/scripts.pory"
-	message Zone1A_EventScript_GiveFWG_Text_11
-# 250 "data/maps/Zone1A/scripts.pory"
+	goto_if_set FLAG_SETTINGS_NUZLOCKE, Zone1A_EventScript_GiveFWG_15
+# 260 "data/maps/Zone1A/scripts.pory"
+	message Zone1A_EventScript_GiveFWG_Text_13
+# 261 "data/maps/Zone1A/scripts.pory"
 	compare VAR_TEMP_4, 0
-	goto_if_eq Zone1A_EventScript_GiveFWG_28
-# 269 "data/maps/Zone1A/scripts.pory"
+	goto_if_eq Zone1A_EventScript_GiveFWG_25
+# 280 "data/maps/Zone1A/scripts.pory"
 	compare VAR_TEMP_4, 1
-	goto_if_eq Zone1A_EventScript_GiveFWG_29
-# 288 "data/maps/Zone1A/scripts.pory"
+	goto_if_eq Zone1A_EventScript_GiveFWG_26
+# 299 "data/maps/Zone1A/scripts.pory"
 	compare VAR_TEMP_4, 2
-	goto_if_eq Zone1A_EventScript_GiveFWG_30
-Zone1A_EventScript_GiveFWG_27:
-# 308 "data/maps/Zone1A/scripts.pory"
-	bufferspeciesname 0, VAR_TEMP_1
-# 309 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_EventScript_GiveFWG_Text_27, MSGBOX_YESNO
-# 310 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, NO
-	goto_if_eq Zone1A_EventScript_GiveFWG_40
-Zone1A_EventScript_GiveFWG_17:
-# 316 "data/maps/Zone1A/scripts.pory"
-	givemon VAR_TEMP_1, 5, ITEM_NONE
-# 317 "data/maps/Zone1A/scripts.pory"
-	setmonmetlocation VAR_TEMP_2, 245
-# 318 "data/maps/Zone1A/scripts.pory"
-	bufferspeciesname 0, VAR_TEMP_1
+	goto_if_eq Zone1A_EventScript_GiveFWG_27
+Zone1A_EventScript_GiveFWG_24:
 # 319 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_EventScript_GiveFWG_Text_28, MSGBOX_DEFAULT
+	bufferspeciesname 0, VAR_TEMP_1
 # 320 "data/maps/Zone1A/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	msgbox Zone1A_EventScript_GiveFWG_Text_29, MSGBOX_YESNO
 # 321 "data/maps/Zone1A/scripts.pory"
-	message Zone1A_EventScript_GiveFWG_Text_29
-# 322 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq Zone1A_EventScript_GiveFWG_43
+Zone1A_EventScript_GiveFWG_14:
+# 327 "data/maps/Zone1A/scripts.pory"
+	specialvar VAR_TEMP_2, CalculatePlayerPartyCount
+# 328 "data/maps/Zone1A/scripts.pory"
+	compare VAR_TEMP_2, PARTY_SIZE
+	goto_if_eq Zone1A_EventScript_GiveFWG_19
+Zone1A_EventScript_GiveFWG_18:
+# 350 "data/maps/Zone1A/scripts.pory"
+	givemon VAR_TEMP_1, 5, ITEM_NONE
+# 351 "data/maps/Zone1A/scripts.pory"
+	setmonmetlocation VAR_TEMP_2, 245
+# 352 "data/maps/Zone1A/scripts.pory"
+	bufferspeciesname 0, VAR_TEMP_1
+# 353 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_GiveFWG_Text_32, MSGBOX_DEFAULT
+# 354 "data/maps/Zone1A/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 355 "data/maps/Zone1A/scripts.pory"
+	message Zone1A_EventScript_GiveFWG_Text_33
+# 356 "data/maps/Zone1A/scripts.pory"
 	waitmessage
-# 323 "data/maps/Zone1A/scripts.pory"
+# 357 "data/maps/Zone1A/scripts.pory"
 	waitfanfare
-# 324 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_EventScript_GiveFWG_Text_30, MSGBOX_YESNO
-# 325 "data/maps/Zone1A/scripts.pory"
+# 358 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_GiveFWG_Text_34, MSGBOX_YESNO
+# 359 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq Zone1A_EventScript_GiveFWG_22
-Zone1A_EventScript_GiveFWG_21:
-# 329 "data/maps/Zone1A/scripts.pory"
+	goto_if_eq Zone1A_EventScript_GiveFWG_32
+Zone1A_EventScript_GiveFWG_31:
+# 363 "data/maps/Zone1A/scripts.pory"
 	faceplayer
-# 330 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_EventScript_GiveFWG_Text_31, MSGBOX_DEFAULT
-# 331 "data/maps/Zone1A/scripts.pory"
+# 364 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_GiveFWG_Text_35, MSGBOX_DEFAULT
+# 365 "data/maps/Zone1A/scripts.pory"
 	closemessage
-# 332 "data/maps/Zone1A/scripts.pory"
+# 366 "data/maps/Zone1A/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 333 "data/maps/Zone1A/scripts.pory"
+# 367 "data/maps/Zone1A/scripts.pory"
 	removeobject 8
-# 334 "data/maps/Zone1A/scripts.pory"
-	setflag FLAG_RECEIVED_FWG
-# 335 "data/maps/Zone1A/scripts.pory"
+# 368 "data/maps/Zone1A/scripts.pory"
+	setflag FLAG_ZONE1A_RECEIVED_FWG
+# 369 "data/maps/Zone1A/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 336 "data/maps/Zone1A/scripts.pory"
+# 370 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
@@ -165,1073 +164,1135 @@ Zone1A_EventScript_GiveFWG_13:
 	end
 
 Zone1A_EventScript_GiveFWG_15:
+# 47 "data/maps/Zone1A/scripts.pory"
+	goto_if_set FLAG_SETTINGS_RANDOMIZER, Zone1A_EventScript_GiveFWG_21
+# 50 "data/maps/Zone1A/scripts.pory"
+	compare VAR_TEMP_4, 0
+	goto_if_eq Zone1A_EventScript_GiveFWG_37
+# 119 "data/maps/Zone1A/scripts.pory"
+	compare VAR_TEMP_4, 1
+	goto_if_eq Zone1A_EventScript_GiveFWG_38
+# 188 "data/maps/Zone1A/scripts.pory"
+	compare VAR_TEMP_4, 2
+	goto_if_eq Zone1A_EventScript_GiveFWG_39
+	goto Zone1A_EventScript_GiveFWG_14
+
+Zone1A_EventScript_GiveFWG_19:
+# 329 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_GiveFWG_Text_30, MSGBOX_AUTOCLOSE
+# 330 "data/maps/Zone1A/scripts.pory"
+	special ChoosePartyMon
+# 331 "data/maps/Zone1A/scripts.pory"
+	waitstate
+# 332 "data/maps/Zone1A/scripts.pory"
+	faceplayer
+# 333 "data/maps/Zone1A/scripts.pory"
+	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
+	goto_if_eq Zone1A_EventScript_GiveFWG_35
+# 338 "data/maps/Zone1A/scripts.pory"
+	specialvar VAR_TEMP_3, ScriptGetPartyMonSpecies
+# 339 "data/maps/Zone1A/scripts.pory"
+	bufferspeciesname 2, VAR_TEMP_3
+# 340 "data/maps/Zone1A/scripts.pory"
+	copyvar VAR_TEMP_3, VAR_0x8004
+# 341 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_GiveFWG_Text_31, MSGBOX_YESNO
+# 342 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq Zone1A_EventScript_GiveFWG_67
+# 347 "data/maps/Zone1A/scripts.pory"
+	special SendChosenMonToPC
+# 348 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_2, 5
+	goto Zone1A_EventScript_GiveFWG_18
+
+Zone1A_EventScript_GiveFWG_21:
 # 48 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_EventScript_GiveFWG_Text_9
-# 49 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_BULBASAUR
+	goto Zone1A_EventScript_GiveFWG_14
+
+Zone1A_EventScript_GiveFWG_25:
+# 262 "data/maps/Zone1A/scripts.pory"
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, Zone1A_EventScript_GiveFWG_Text_14, Zone1A_EventScript_GiveFWG_Text_15, Zone1A_EventScript_GiveFWG_Text_16, Zone1A_EventScript_GiveFWG_Text_17, Zone1A_EventScript_GiveFWG_Text_18, Zone1A_EventScript_GiveFWG_Text_8
+# 263 "data/maps/Zone1A/scripts.pory"
+	switch VAR_RESULT
+# 264 "data/maps/Zone1A/scripts.pory"
+	case 0, Zone1A_EventScript_GiveFWG_46
+# 266 "data/maps/Zone1A/scripts.pory"
+	case 1, Zone1A_EventScript_GiveFWG_47
+# 268 "data/maps/Zone1A/scripts.pory"
+	case 2, Zone1A_EventScript_GiveFWG_48
+# 270 "data/maps/Zone1A/scripts.pory"
+	case 3, Zone1A_EventScript_GiveFWG_49
+# 272 "data/maps/Zone1A/scripts.pory"
+	case 4, Zone1A_EventScript_GiveFWG_50
+# 274 "data/maps/Zone1A/scripts.pory"
+	case 5, Zone1A_EventScript_GiveFWG_51
+# 275 "data/maps/Zone1A/scripts.pory"
+	case MULTI_B_PRESSED, Zone1A_EventScript_GiveFWG_51
+	goto Zone1A_EventScript_GiveFWG_24
+
+Zone1A_EventScript_GiveFWG_26:
+# 281 "data/maps/Zone1A/scripts.pory"
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, Zone1A_EventScript_GiveFWG_Text_19, Zone1A_EventScript_GiveFWG_Text_20, Zone1A_EventScript_GiveFWG_Text_21, Zone1A_EventScript_GiveFWG_Text_22, Zone1A_EventScript_GiveFWG_Text_23, Zone1A_EventScript_GiveFWG_Text_8
+# 282 "data/maps/Zone1A/scripts.pory"
+	switch VAR_RESULT
+# 283 "data/maps/Zone1A/scripts.pory"
+	case 0, Zone1A_EventScript_GiveFWG_53
+# 285 "data/maps/Zone1A/scripts.pory"
+	case 1, Zone1A_EventScript_GiveFWG_54
+# 287 "data/maps/Zone1A/scripts.pory"
+	case 2, Zone1A_EventScript_GiveFWG_55
+# 289 "data/maps/Zone1A/scripts.pory"
+	case 3, Zone1A_EventScript_GiveFWG_56
+# 291 "data/maps/Zone1A/scripts.pory"
+	case 4, Zone1A_EventScript_GiveFWG_57
+# 293 "data/maps/Zone1A/scripts.pory"
+	case 5, Zone1A_EventScript_GiveFWG_58
+# 294 "data/maps/Zone1A/scripts.pory"
+	case MULTI_B_PRESSED, Zone1A_EventScript_GiveFWG_58
+	goto Zone1A_EventScript_GiveFWG_24
+
+Zone1A_EventScript_GiveFWG_27:
+# 300 "data/maps/Zone1A/scripts.pory"
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, Zone1A_EventScript_GiveFWG_Text_24, Zone1A_EventScript_GiveFWG_Text_25, Zone1A_EventScript_GiveFWG_Text_26, Zone1A_EventScript_GiveFWG_Text_27, Zone1A_EventScript_GiveFWG_Text_28, Zone1A_EventScript_GiveFWG_Text_8
+# 301 "data/maps/Zone1A/scripts.pory"
+	switch VAR_RESULT
+# 302 "data/maps/Zone1A/scripts.pory"
+	case 0, Zone1A_EventScript_GiveFWG_60
+# 304 "data/maps/Zone1A/scripts.pory"
+	case 1, Zone1A_EventScript_GiveFWG_61
+# 306 "data/maps/Zone1A/scripts.pory"
+	case 2, Zone1A_EventScript_GiveFWG_62
+# 308 "data/maps/Zone1A/scripts.pory"
+	case 3, Zone1A_EventScript_GiveFWG_63
+# 310 "data/maps/Zone1A/scripts.pory"
+	case 4, Zone1A_EventScript_GiveFWG_64
+# 312 "data/maps/Zone1A/scripts.pory"
+	case 5, Zone1A_EventScript_GiveFWG_65
+# 313 "data/maps/Zone1A/scripts.pory"
+	case MULTI_B_PRESSED, Zone1A_EventScript_GiveFWG_65
+	goto Zone1A_EventScript_GiveFWG_24
+
+Zone1A_EventScript_GiveFWG_32:
+# 360 "data/maps/Zone1A/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 361 "data/maps/Zone1A/scripts.pory"
+	call Common_EventScript_NameReceivedPartyMon
+	goto Zone1A_EventScript_GiveFWG_31
+
+Zone1A_EventScript_GiveFWG_35:
+# 334 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_Text_FWG_ComeBack
+# 335 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
-Zone1A_EventScript_GiveFWG_18:
-# 54 "data/maps/Zone1A/scripts.pory"
-	goto_if_set FLAG_SETTINGS_RANDOMIZER, Zone1A_EventScript_GiveFWG_24
-# 57 "data/maps/Zone1A/scripts.pory"
-	compare VAR_TEMP_4, 0
-	goto_if_eq Zone1A_EventScript_GiveFWG_34
-# 120 "data/maps/Zone1A/scripts.pory"
-	compare VAR_TEMP_4, 1
-	goto_if_eq Zone1A_EventScript_GiveFWG_35
-# 183 "data/maps/Zone1A/scripts.pory"
-	compare VAR_TEMP_4, 2
-	goto_if_eq Zone1A_EventScript_GiveFWG_36
-	goto Zone1A_EventScript_GiveFWG_17
-
-Zone1A_EventScript_GiveFWG_22:
-# 326 "data/maps/Zone1A/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
-# 327 "data/maps/Zone1A/scripts.pory"
-	call Common_EventScript_NameReceivedPartyMon
-	goto Zone1A_EventScript_GiveFWG_21
-
-Zone1A_EventScript_GiveFWG_24:
-# 55 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_BULBASAUR
-	goto Zone1A_EventScript_GiveFWG_17
-
-Zone1A_EventScript_GiveFWG_28:
-# 251 "data/maps/Zone1A/scripts.pory"
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, Zone1A_EventScript_GiveFWG_Text_12, Zone1A_EventScript_GiveFWG_Text_13, Zone1A_EventScript_GiveFWG_Text_14, Zone1A_EventScript_GiveFWG_Text_15, Zone1A_EventScript_GiveFWG_Text_16, Zone1A_EventScript_GiveFWG_Text_8
-# 252 "data/maps/Zone1A/scripts.pory"
-	switch VAR_RESULT
-# 253 "data/maps/Zone1A/scripts.pory"
-	case 0, Zone1A_EventScript_GiveFWG_43
-# 255 "data/maps/Zone1A/scripts.pory"
-	case 1, Zone1A_EventScript_GiveFWG_44
-# 257 "data/maps/Zone1A/scripts.pory"
-	case 2, Zone1A_EventScript_GiveFWG_45
-# 259 "data/maps/Zone1A/scripts.pory"
-	case 3, Zone1A_EventScript_GiveFWG_46
-# 261 "data/maps/Zone1A/scripts.pory"
-	case 4, Zone1A_EventScript_GiveFWG_47
-# 263 "data/maps/Zone1A/scripts.pory"
-	case 5, Zone1A_EventScript_GiveFWG_48
-# 264 "data/maps/Zone1A/scripts.pory"
-	case MULTI_B_PRESSED, Zone1A_EventScript_GiveFWG_48
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_29:
-# 270 "data/maps/Zone1A/scripts.pory"
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, Zone1A_EventScript_GiveFWG_Text_17, Zone1A_EventScript_GiveFWG_Text_18, Zone1A_EventScript_GiveFWG_Text_19, Zone1A_EventScript_GiveFWG_Text_20, Zone1A_EventScript_GiveFWG_Text_21, Zone1A_EventScript_GiveFWG_Text_8
-# 271 "data/maps/Zone1A/scripts.pory"
-	switch VAR_RESULT
-# 272 "data/maps/Zone1A/scripts.pory"
-	case 0, Zone1A_EventScript_GiveFWG_50
-# 274 "data/maps/Zone1A/scripts.pory"
-	case 1, Zone1A_EventScript_GiveFWG_51
-# 276 "data/maps/Zone1A/scripts.pory"
-	case 2, Zone1A_EventScript_GiveFWG_52
-# 278 "data/maps/Zone1A/scripts.pory"
-	case 3, Zone1A_EventScript_GiveFWG_53
-# 280 "data/maps/Zone1A/scripts.pory"
-	case 4, Zone1A_EventScript_GiveFWG_54
-# 282 "data/maps/Zone1A/scripts.pory"
-	case 5, Zone1A_EventScript_GiveFWG_55
-# 283 "data/maps/Zone1A/scripts.pory"
-	case MULTI_B_PRESSED, Zone1A_EventScript_GiveFWG_55
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_30:
-# 289 "data/maps/Zone1A/scripts.pory"
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, Zone1A_EventScript_GiveFWG_Text_22, Zone1A_EventScript_GiveFWG_Text_23, Zone1A_EventScript_GiveFWG_Text_24, Zone1A_EventScript_GiveFWG_Text_25, Zone1A_EventScript_GiveFWG_Text_26, Zone1A_EventScript_GiveFWG_Text_8
-# 290 "data/maps/Zone1A/scripts.pory"
-	switch VAR_RESULT
-# 291 "data/maps/Zone1A/scripts.pory"
-	case 0, Zone1A_EventScript_GiveFWG_57
-# 293 "data/maps/Zone1A/scripts.pory"
-	case 1, Zone1A_EventScript_GiveFWG_58
-# 295 "data/maps/Zone1A/scripts.pory"
-	case 2, Zone1A_EventScript_GiveFWG_59
-# 297 "data/maps/Zone1A/scripts.pory"
-	case 3, Zone1A_EventScript_GiveFWG_60
-# 299 "data/maps/Zone1A/scripts.pory"
-	case 4, Zone1A_EventScript_GiveFWG_61
-# 301 "data/maps/Zone1A/scripts.pory"
-	case 5, Zone1A_EventScript_GiveFWG_62
-# 302 "data/maps/Zone1A/scripts.pory"
-	case MULTI_B_PRESSED, Zone1A_EventScript_GiveFWG_62
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_34:
-# 58 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_3, 0
-# 59 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_PANSAGE
-# 60 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_64
-Zone1A_EventScript_GiveFWG_63:
-# 63 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_CACNEA
-# 64 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_73
-Zone1A_EventScript_GiveFWG_72:
-# 67 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SUNKERN
-# 68 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_82
-Zone1A_EventScript_GiveFWG_81:
-# 71 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SMOLIV
-# 72 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_91
-Zone1A_EventScript_GiveFWG_90:
-# 75 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_BOUNSWEET
-# 76 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_100
-Zone1A_EventScript_GiveFWG_99:
-# 79 "data/maps/Zone1A/scripts.pory"
-	compare VAR_TEMP_3, 5
-	goto_if_eq Zone1A_EventScript_GiveFWG_109
-# 84 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, 0
-Zone1A_EventScript_GiveFWG_117:
-# 85 "data/maps/Zone1A/scripts.pory"
-	compare VAR_TEMP_1, 0
-	goto_if_eq Zone1A_EventScript_GiveFWG_118
-	goto Zone1A_EventScript_GiveFWG_17
-
-Zone1A_EventScript_GiveFWG_35:
-# 121 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_3, 0
-# 122 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_PANSEAR
-# 123 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_67
-Zone1A_EventScript_GiveFWG_66:
-# 126 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SLUGMA
-# 127 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_76
-Zone1A_EventScript_GiveFWG_75:
-# 130 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SALANDIT
-# 131 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_85
-Zone1A_EventScript_GiveFWG_84:
-# 134 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_VULPIX
-# 135 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_94
-Zone1A_EventScript_GiveFWG_93:
-# 138 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SIZZLIPEDE
-# 139 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_103
-Zone1A_EventScript_GiveFWG_102:
-# 142 "data/maps/Zone1A/scripts.pory"
-	compare VAR_TEMP_3, 5
-	goto_if_eq Zone1A_EventScript_GiveFWG_112
-# 147 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, 0
-Zone1A_EventScript_GiveFWG_120:
-# 148 "data/maps/Zone1A/scripts.pory"
-	compare VAR_TEMP_1, 0
-	goto_if_eq Zone1A_EventScript_GiveFWG_121
-	goto Zone1A_EventScript_GiveFWG_17
-
-Zone1A_EventScript_GiveFWG_36:
-# 184 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_3, 0
-# 185 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_PANPOUR
-# 186 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
+Zone1A_EventScript_GiveFWG_37:
+# 51 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_GiveFWG_Text_9, MSGBOX_YESNO
+# 52 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, NO
 	goto_if_eq Zone1A_EventScript_GiveFWG_70
-Zone1A_EventScript_GiveFWG_69:
-# 189 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_WIGLETT
-# 190 "data/maps/Zone1A/scripts.pory"
+# 57 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_3, 0
+# 58 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_PANSAGE
+# 59 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone1A_EventScript_GiveFWG_79
 Zone1A_EventScript_GiveFWG_78:
-# 193 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_FINNEON
-# 194 "data/maps/Zone1A/scripts.pory"
+# 62 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_CACNEA
+# 63 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone1A_EventScript_GiveFWG_88
 Zone1A_EventScript_GiveFWG_87:
-# 197 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SEEL
-# 198 "data/maps/Zone1A/scripts.pory"
+# 66 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_SUNKERN
+# 67 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone1A_EventScript_GiveFWG_97
 Zone1A_EventScript_GiveFWG_96:
-# 201 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_GOLDEEN
-# 202 "data/maps/Zone1A/scripts.pory"
+# 70 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_SMOLIV
+# 71 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone1A_EventScript_GiveFWG_106
 Zone1A_EventScript_GiveFWG_105:
-# 205 "data/maps/Zone1A/scripts.pory"
-	compare VAR_TEMP_3, 5
+# 74 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_BOUNSWEET
+# 75 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
 	goto_if_eq Zone1A_EventScript_GiveFWG_115
-# 210 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, 0
-Zone1A_EventScript_GiveFWG_123:
-# 211 "data/maps/Zone1A/scripts.pory"
-	compare VAR_TEMP_1, 0
+Zone1A_EventScript_GiveFWG_114:
+# 78 "data/maps/Zone1A/scripts.pory"
+	compare VAR_TEMP_3, 5
 	goto_if_eq Zone1A_EventScript_GiveFWG_124
-	goto Zone1A_EventScript_GiveFWG_17
+# 83 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, 0
+Zone1A_EventScript_GiveFWG_132:
+# 84 "data/maps/Zone1A/scripts.pory"
+	compare VAR_TEMP_1, 0
+	goto_if_eq Zone1A_EventScript_GiveFWG_133
+	goto Zone1A_EventScript_GiveFWG_14
 
-Zone1A_EventScript_GiveFWG_40:
-# 311 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_FWG_ComeBack
-# 312 "data/maps/Zone1A/scripts.pory"
-	release
-	end
+Zone1A_EventScript_GiveFWG_38:
+# 120 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_GiveFWG_Text_11, MSGBOX_YESNO
+# 121 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq Zone1A_EventScript_GiveFWG_73
+# 126 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_3, 0
+# 127 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_PANSEAR
+# 128 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_82
+Zone1A_EventScript_GiveFWG_81:
+# 131 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_SLUGMA
+# 132 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_91
+Zone1A_EventScript_GiveFWG_90:
+# 135 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_SALANDIT
+# 136 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_100
+Zone1A_EventScript_GiveFWG_99:
+# 139 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_VULPIX
+# 140 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_109
+Zone1A_EventScript_GiveFWG_108:
+# 143 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_SIZZLIPEDE
+# 144 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_118
+Zone1A_EventScript_GiveFWG_117:
+# 147 "data/maps/Zone1A/scripts.pory"
+	compare VAR_TEMP_3, 5
+	goto_if_eq Zone1A_EventScript_GiveFWG_127
+# 152 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, 0
+Zone1A_EventScript_GiveFWG_135:
+# 153 "data/maps/Zone1A/scripts.pory"
+	compare VAR_TEMP_1, 0
+	goto_if_eq Zone1A_EventScript_GiveFWG_136
+	goto Zone1A_EventScript_GiveFWG_14
+
+Zone1A_EventScript_GiveFWG_39:
+# 189 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_GiveFWG_Text_12, MSGBOX_YESNO
+# 190 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq Zone1A_EventScript_GiveFWG_76
+# 195 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_3, 0
+# 196 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_PANPOUR
+# 197 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_85
+Zone1A_EventScript_GiveFWG_84:
+# 200 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_BARBOACH
+# 201 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_94
+Zone1A_EventScript_GiveFWG_93:
+# 204 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_FINNEON
+# 205 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_103
+Zone1A_EventScript_GiveFWG_102:
+# 208 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_SEEL
+# 209 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_112
+Zone1A_EventScript_GiveFWG_111:
+# 212 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_GOLDEEN
+# 213 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_121
+Zone1A_EventScript_GiveFWG_120:
+# 216 "data/maps/Zone1A/scripts.pory"
+	compare VAR_TEMP_3, 5
+	goto_if_eq Zone1A_EventScript_GiveFWG_130
+# 221 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, 0
+Zone1A_EventScript_GiveFWG_138:
+# 222 "data/maps/Zone1A/scripts.pory"
+	compare VAR_TEMP_1, 0
+	goto_if_eq Zone1A_EventScript_GiveFWG_139
+	goto Zone1A_EventScript_GiveFWG_14
 
 Zone1A_EventScript_GiveFWG_43:
-# 254 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_PANSAGE
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_44:
-# 256 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_CACNEA
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_45:
-# 258 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SUNKERN
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_46:
-# 260 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SMOLIV
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_47:
-# 262 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_BOUNSWEET
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_48:
-# 265 "data/maps/Zone1A/scripts.pory"
+# 322 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_Text_FWG_ComeBack
-# 266 "data/maps/Zone1A/scripts.pory"
+# 323 "data/maps/Zone1A/scripts.pory"
 	release
 	end
+
+Zone1A_EventScript_GiveFWG_46:
+# 265 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_PANSAGE
+	goto Zone1A_EventScript_GiveFWG_24
+
+Zone1A_EventScript_GiveFWG_47:
+# 267 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_CACNEA
+	goto Zone1A_EventScript_GiveFWG_24
+
+Zone1A_EventScript_GiveFWG_48:
+# 269 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_SUNKERN
+	goto Zone1A_EventScript_GiveFWG_24
+
+Zone1A_EventScript_GiveFWG_49:
+# 271 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_SMOLIV
+	goto Zone1A_EventScript_GiveFWG_24
 
 Zone1A_EventScript_GiveFWG_50:
 # 273 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_PANSEAR
-	goto Zone1A_EventScript_GiveFWG_27
+	setvar VAR_TEMP_1, SPECIES_BOUNSWEET
+	goto Zone1A_EventScript_GiveFWG_24
 
 Zone1A_EventScript_GiveFWG_51:
-# 275 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SLUGMA
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_52:
-# 277 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SALANDIT
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_53:
-# 279 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_VULPIX
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_54:
-# 281 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SIZZLIPEDE
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_55:
-# 284 "data/maps/Zone1A/scripts.pory"
+# 276 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_Text_FWG_ComeBack
-# 285 "data/maps/Zone1A/scripts.pory"
+# 277 "data/maps/Zone1A/scripts.pory"
 	release
 	end
+
+Zone1A_EventScript_GiveFWG_53:
+# 284 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_PANSEAR
+	goto Zone1A_EventScript_GiveFWG_24
+
+Zone1A_EventScript_GiveFWG_54:
+# 286 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_SLUGMA
+	goto Zone1A_EventScript_GiveFWG_24
+
+Zone1A_EventScript_GiveFWG_55:
+# 288 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_SALANDIT
+	goto Zone1A_EventScript_GiveFWG_24
+
+Zone1A_EventScript_GiveFWG_56:
+# 290 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_VULPIX
+	goto Zone1A_EventScript_GiveFWG_24
 
 Zone1A_EventScript_GiveFWG_57:
 # 292 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_PANPOUR
-	goto Zone1A_EventScript_GiveFWG_27
+	setvar VAR_TEMP_1, SPECIES_SIZZLIPEDE
+	goto Zone1A_EventScript_GiveFWG_24
 
 Zone1A_EventScript_GiveFWG_58:
-# 294 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_WIGLETT
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_59:
-# 296 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_FINNEON
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_60:
-# 298 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SEEL
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_61:
-# 300 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_GOLDEEN
-	goto Zone1A_EventScript_GiveFWG_27
-
-Zone1A_EventScript_GiveFWG_62:
-# 303 "data/maps/Zone1A/scripts.pory"
+# 295 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_Text_FWG_ComeBack
-# 304 "data/maps/Zone1A/scripts.pory"
+# 296 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
+Zone1A_EventScript_GiveFWG_60:
+# 303 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_PANPOUR
+	goto Zone1A_EventScript_GiveFWG_24
+
+Zone1A_EventScript_GiveFWG_61:
+# 305 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_BARBOACH
+	goto Zone1A_EventScript_GiveFWG_24
+
+Zone1A_EventScript_GiveFWG_62:
+# 307 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_FINNEON
+	goto Zone1A_EventScript_GiveFWG_24
+
+Zone1A_EventScript_GiveFWG_63:
+# 309 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_SEEL
+	goto Zone1A_EventScript_GiveFWG_24
+
 Zone1A_EventScript_GiveFWG_64:
-# 61 "data/maps/Zone1A/scripts.pory"
-	addvar VAR_TEMP_3, 1
-	goto Zone1A_EventScript_GiveFWG_63
+# 311 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_GOLDEEN
+	goto Zone1A_EventScript_GiveFWG_24
+
+Zone1A_EventScript_GiveFWG_65:
+# 314 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_Text_FWG_ComeBack
+# 315 "data/maps/Zone1A/scripts.pory"
+	release
+	end
 
 Zone1A_EventScript_GiveFWG_67:
-# 124 "data/maps/Zone1A/scripts.pory"
-	addvar VAR_TEMP_3, 1
-	goto Zone1A_EventScript_GiveFWG_66
+# 343 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_Text_FWG_ComeBack
+# 344 "data/maps/Zone1A/scripts.pory"
+	release
+	end
 
 Zone1A_EventScript_GiveFWG_70:
-# 187 "data/maps/Zone1A/scripts.pory"
-	addvar VAR_TEMP_3, 1
-	goto Zone1A_EventScript_GiveFWG_69
+# 53 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_Text_FWG_ComeBack
+# 54 "data/maps/Zone1A/scripts.pory"
+	release
+	end
 
 Zone1A_EventScript_GiveFWG_73:
-# 65 "data/maps/Zone1A/scripts.pory"
-	addvar VAR_TEMP_3, 1
-	goto Zone1A_EventScript_GiveFWG_72
+# 122 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_Text_FWG_ComeBack
+# 123 "data/maps/Zone1A/scripts.pory"
+	release
+	end
 
 Zone1A_EventScript_GiveFWG_76:
-# 128 "data/maps/Zone1A/scripts.pory"
-	addvar VAR_TEMP_3, 1
-	goto Zone1A_EventScript_GiveFWG_75
+# 191 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_Text_FWG_ComeBack
+# 192 "data/maps/Zone1A/scripts.pory"
+	release
+	end
 
 Zone1A_EventScript_GiveFWG_79:
-# 191 "data/maps/Zone1A/scripts.pory"
+# 60 "data/maps/Zone1A/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone1A_EventScript_GiveFWG_78
 
 Zone1A_EventScript_GiveFWG_82:
-# 69 "data/maps/Zone1A/scripts.pory"
+# 129 "data/maps/Zone1A/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone1A_EventScript_GiveFWG_81
 
 Zone1A_EventScript_GiveFWG_85:
-# 132 "data/maps/Zone1A/scripts.pory"
+# 198 "data/maps/Zone1A/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone1A_EventScript_GiveFWG_84
 
 Zone1A_EventScript_GiveFWG_88:
-# 195 "data/maps/Zone1A/scripts.pory"
+# 64 "data/maps/Zone1A/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone1A_EventScript_GiveFWG_87
 
 Zone1A_EventScript_GiveFWG_91:
-# 73 "data/maps/Zone1A/scripts.pory"
+# 133 "data/maps/Zone1A/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone1A_EventScript_GiveFWG_90
 
 Zone1A_EventScript_GiveFWG_94:
-# 136 "data/maps/Zone1A/scripts.pory"
+# 202 "data/maps/Zone1A/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone1A_EventScript_GiveFWG_93
 
 Zone1A_EventScript_GiveFWG_97:
-# 199 "data/maps/Zone1A/scripts.pory"
+# 68 "data/maps/Zone1A/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone1A_EventScript_GiveFWG_96
 
 Zone1A_EventScript_GiveFWG_100:
-# 77 "data/maps/Zone1A/scripts.pory"
+# 137 "data/maps/Zone1A/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone1A_EventScript_GiveFWG_99
 
 Zone1A_EventScript_GiveFWG_103:
-# 140 "data/maps/Zone1A/scripts.pory"
+# 206 "data/maps/Zone1A/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone1A_EventScript_GiveFWG_102
 
 Zone1A_EventScript_GiveFWG_106:
-# 203 "data/maps/Zone1A/scripts.pory"
+# 72 "data/maps/Zone1A/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone1A_EventScript_GiveFWG_105
 
 Zone1A_EventScript_GiveFWG_109:
-# 80 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_EventScript_GiveFWG_Text_10
-# 81 "data/maps/Zone1A/scripts.pory"
-	release
-	end
+# 141 "data/maps/Zone1A/scripts.pory"
+	addvar VAR_TEMP_3, 1
+	goto Zone1A_EventScript_GiveFWG_108
 
 Zone1A_EventScript_GiveFWG_112:
-# 143 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_EventScript_GiveFWG_Text_10
-# 144 "data/maps/Zone1A/scripts.pory"
-	release
-	end
+# 210 "data/maps/Zone1A/scripts.pory"
+	addvar VAR_TEMP_3, 1
+	goto Zone1A_EventScript_GiveFWG_111
 
 Zone1A_EventScript_GiveFWG_115:
-# 206 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_EventScript_GiveFWG_Text_10
-# 207 "data/maps/Zone1A/scripts.pory"
-	release
-	end
+# 76 "data/maps/Zone1A/scripts.pory"
+	addvar VAR_TEMP_3, 1
+	goto Zone1A_EventScript_GiveFWG_114
 
 Zone1A_EventScript_GiveFWG_118:
-# 86 "data/maps/Zone1A/scripts.pory"
-	random 5
-# 87 "data/maps/Zone1A/scripts.pory"
-	switch VAR_RESULT
-# 88 "data/maps/Zone1A/scripts.pory"
-	case 0, Zone1A_EventScript_GiveFWG_127
-# 94 "data/maps/Zone1A/scripts.pory"
-	case 1, Zone1A_EventScript_GiveFWG_128
-# 100 "data/maps/Zone1A/scripts.pory"
-	case 2, Zone1A_EventScript_GiveFWG_129
-# 106 "data/maps/Zone1A/scripts.pory"
-	case 3, Zone1A_EventScript_GiveFWG_130
-# 112 "data/maps/Zone1A/scripts.pory"
-	case 4, Zone1A_EventScript_GiveFWG_131
+# 145 "data/maps/Zone1A/scripts.pory"
+	addvar VAR_TEMP_3, 1
 	goto Zone1A_EventScript_GiveFWG_117
 
 Zone1A_EventScript_GiveFWG_121:
-# 149 "data/maps/Zone1A/scripts.pory"
-	random 5
-# 150 "data/maps/Zone1A/scripts.pory"
-	switch VAR_RESULT
-# 151 "data/maps/Zone1A/scripts.pory"
-	case 0, Zone1A_EventScript_GiveFWG_133
-# 157 "data/maps/Zone1A/scripts.pory"
-	case 1, Zone1A_EventScript_GiveFWG_134
-# 163 "data/maps/Zone1A/scripts.pory"
-	case 2, Zone1A_EventScript_GiveFWG_135
-# 169 "data/maps/Zone1A/scripts.pory"
-	case 3, Zone1A_EventScript_GiveFWG_136
-# 175 "data/maps/Zone1A/scripts.pory"
-	case 4, Zone1A_EventScript_GiveFWG_137
+# 214 "data/maps/Zone1A/scripts.pory"
+	addvar VAR_TEMP_3, 1
 	goto Zone1A_EventScript_GiveFWG_120
 
 Zone1A_EventScript_GiveFWG_124:
-# 212 "data/maps/Zone1A/scripts.pory"
-	random 5
-# 213 "data/maps/Zone1A/scripts.pory"
-	switch VAR_RESULT
-# 214 "data/maps/Zone1A/scripts.pory"
-	case 0, Zone1A_EventScript_GiveFWG_139
-# 220 "data/maps/Zone1A/scripts.pory"
-	case 1, Zone1A_EventScript_GiveFWG_140
-# 226 "data/maps/Zone1A/scripts.pory"
-	case 2, Zone1A_EventScript_GiveFWG_141
-# 232 "data/maps/Zone1A/scripts.pory"
-	case 3, Zone1A_EventScript_GiveFWG_142
-# 238 "data/maps/Zone1A/scripts.pory"
-	case 4, Zone1A_EventScript_GiveFWG_143
-	goto Zone1A_EventScript_GiveFWG_123
+# 79 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_GiveFWG_Text_10
+# 80 "data/maps/Zone1A/scripts.pory"
+	release
+	end
 
 Zone1A_EventScript_GiveFWG_127:
-# 89 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_PANSAGE
-# 90 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_145
-# 93 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_PANSAGE
-	goto Zone1A_EventScript_GiveFWG_117
-
-Zone1A_EventScript_GiveFWG_128:
-# 95 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_CACNEA
-# 96 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_148
-# 99 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_CACNEA
-	goto Zone1A_EventScript_GiveFWG_117
-
-Zone1A_EventScript_GiveFWG_129:
-# 101 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SUNKERN
-# 102 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_151
-# 105 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SUNKERN
-	goto Zone1A_EventScript_GiveFWG_117
+# 148 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_GiveFWG_Text_10
+# 149 "data/maps/Zone1A/scripts.pory"
+	release
+	end
 
 Zone1A_EventScript_GiveFWG_130:
-# 107 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SMOLIV
-# 108 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_154
-# 111 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SMOLIV
-	goto Zone1A_EventScript_GiveFWG_117
-
-Zone1A_EventScript_GiveFWG_131:
-# 113 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_BOUNSWEET
-# 114 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_157
-# 117 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_BOUNSWEET
-	goto Zone1A_EventScript_GiveFWG_117
+# 217 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_GiveFWG_Text_10
+# 218 "data/maps/Zone1A/scripts.pory"
+	release
+	end
 
 Zone1A_EventScript_GiveFWG_133:
-# 152 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_PANSEAR
-# 153 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_160
-# 156 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_PANSEAR
-	goto Zone1A_EventScript_GiveFWG_120
-
-Zone1A_EventScript_GiveFWG_134:
-# 158 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SLUGMA
-# 159 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_163
-# 162 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SLUGMA
-	goto Zone1A_EventScript_GiveFWG_120
-
-Zone1A_EventScript_GiveFWG_135:
-# 164 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SALANDIT
-# 165 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_166
-# 168 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SALANDIT
-	goto Zone1A_EventScript_GiveFWG_120
+# 85 "data/maps/Zone1A/scripts.pory"
+	random 5
+# 86 "data/maps/Zone1A/scripts.pory"
+	switch VAR_RESULT
+# 87 "data/maps/Zone1A/scripts.pory"
+	case 0, Zone1A_EventScript_GiveFWG_142
+# 93 "data/maps/Zone1A/scripts.pory"
+	case 1, Zone1A_EventScript_GiveFWG_143
+# 99 "data/maps/Zone1A/scripts.pory"
+	case 2, Zone1A_EventScript_GiveFWG_144
+# 105 "data/maps/Zone1A/scripts.pory"
+	case 3, Zone1A_EventScript_GiveFWG_145
+# 111 "data/maps/Zone1A/scripts.pory"
+	case 4, Zone1A_EventScript_GiveFWG_146
+	goto Zone1A_EventScript_GiveFWG_132
 
 Zone1A_EventScript_GiveFWG_136:
-# 170 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_VULPIX
-# 171 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_169
+# 154 "data/maps/Zone1A/scripts.pory"
+	random 5
+# 155 "data/maps/Zone1A/scripts.pory"
+	switch VAR_RESULT
+# 156 "data/maps/Zone1A/scripts.pory"
+	case 0, Zone1A_EventScript_GiveFWG_148
+# 162 "data/maps/Zone1A/scripts.pory"
+	case 1, Zone1A_EventScript_GiveFWG_149
+# 168 "data/maps/Zone1A/scripts.pory"
+	case 2, Zone1A_EventScript_GiveFWG_150
 # 174 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_VULPIX
-	goto Zone1A_EventScript_GiveFWG_120
-
-Zone1A_EventScript_GiveFWG_137:
-# 176 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SIZZLIPEDE
-# 177 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_172
+	case 3, Zone1A_EventScript_GiveFWG_151
 # 180 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SIZZLIPEDE
-	goto Zone1A_EventScript_GiveFWG_120
+	case 4, Zone1A_EventScript_GiveFWG_152
+	goto Zone1A_EventScript_GiveFWG_135
 
 Zone1A_EventScript_GiveFWG_139:
-# 215 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_PANPOUR
-# 216 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_175
-# 219 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_PANPOUR
-	goto Zone1A_EventScript_GiveFWG_123
-
-Zone1A_EventScript_GiveFWG_140:
-# 221 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_WIGLETT
-# 222 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_178
+# 223 "data/maps/Zone1A/scripts.pory"
+	random 5
+# 224 "data/maps/Zone1A/scripts.pory"
+	switch VAR_RESULT
 # 225 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_WIGLETT
-	goto Zone1A_EventScript_GiveFWG_123
-
-Zone1A_EventScript_GiveFWG_141:
-# 227 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_FINNEON
-# 228 "data/maps/Zone1A/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_181
+	case 0, Zone1A_EventScript_GiveFWG_154
 # 231 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_FINNEON
-	goto Zone1A_EventScript_GiveFWG_123
+	case 1, Zone1A_EventScript_GiveFWG_155
+# 237 "data/maps/Zone1A/scripts.pory"
+	case 2, Zone1A_EventScript_GiveFWG_156
+# 243 "data/maps/Zone1A/scripts.pory"
+	case 3, Zone1A_EventScript_GiveFWG_157
+# 249 "data/maps/Zone1A/scripts.pory"
+	case 4, Zone1A_EventScript_GiveFWG_158
+	goto Zone1A_EventScript_GiveFWG_138
 
 Zone1A_EventScript_GiveFWG_142:
-# 233 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SEEL
-# 234 "data/maps/Zone1A/scripts.pory"
+# 88 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_PANSAGE
+# 89 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_184
-# 237 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SEEL
-	goto Zone1A_EventScript_GiveFWG_123
+	goto_if_eq Zone1A_EventScript_GiveFWG_160
+# 92 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_PANSAGE
+	goto Zone1A_EventScript_GiveFWG_132
 
 Zone1A_EventScript_GiveFWG_143:
-# 239 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_GOLDEEN
-# 240 "data/maps/Zone1A/scripts.pory"
+# 94 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_CACNEA
+# 95 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
-	goto_if_eq Zone1A_EventScript_GiveFWG_187
-# 243 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_GOLDEEN
-	goto Zone1A_EventScript_GiveFWG_123
+	goto_if_eq Zone1A_EventScript_GiveFWG_163
+# 98 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_CACNEA
+	goto Zone1A_EventScript_GiveFWG_132
+
+Zone1A_EventScript_GiveFWG_144:
+# 100 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_SUNKERN
+# 101 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_166
+# 104 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_SUNKERN
+	goto Zone1A_EventScript_GiveFWG_132
 
 Zone1A_EventScript_GiveFWG_145:
-	goto Zone1A_EventScript_GiveFWG_117
+# 106 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_SMOLIV
+# 107 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_169
+# 110 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_SMOLIV
+	goto Zone1A_EventScript_GiveFWG_132
+
+Zone1A_EventScript_GiveFWG_146:
+# 112 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_BOUNSWEET
+# 113 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_172
+# 116 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_BOUNSWEET
+	goto Zone1A_EventScript_GiveFWG_132
 
 Zone1A_EventScript_GiveFWG_148:
-	goto Zone1A_EventScript_GiveFWG_117
+# 157 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_PANSEAR
+# 158 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_175
+# 161 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_PANSEAR
+	goto Zone1A_EventScript_GiveFWG_135
+
+Zone1A_EventScript_GiveFWG_149:
+# 163 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_SLUGMA
+# 164 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_178
+# 167 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_SLUGMA
+	goto Zone1A_EventScript_GiveFWG_135
+
+Zone1A_EventScript_GiveFWG_150:
+# 169 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_SALANDIT
+# 170 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_181
+# 173 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_SALANDIT
+	goto Zone1A_EventScript_GiveFWG_135
 
 Zone1A_EventScript_GiveFWG_151:
-	goto Zone1A_EventScript_GiveFWG_117
+# 175 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_VULPIX
+# 176 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_184
+# 179 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_VULPIX
+	goto Zone1A_EventScript_GiveFWG_135
+
+Zone1A_EventScript_GiveFWG_152:
+# 181 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_SIZZLIPEDE
+# 182 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_187
+# 185 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_SIZZLIPEDE
+	goto Zone1A_EventScript_GiveFWG_135
 
 Zone1A_EventScript_GiveFWG_154:
-	goto Zone1A_EventScript_GiveFWG_117
+# 226 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_PANPOUR
+# 227 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_190
+# 230 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_PANPOUR
+	goto Zone1A_EventScript_GiveFWG_138
+
+Zone1A_EventScript_GiveFWG_155:
+# 232 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_BARBOACH
+# 233 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_193
+# 236 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_BARBOACH
+	goto Zone1A_EventScript_GiveFWG_138
+
+Zone1A_EventScript_GiveFWG_156:
+# 238 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_FINNEON
+# 239 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_196
+# 242 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_FINNEON
+	goto Zone1A_EventScript_GiveFWG_138
 
 Zone1A_EventScript_GiveFWG_157:
-	goto Zone1A_EventScript_GiveFWG_117
+# 244 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_SEEL
+# 245 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_199
+# 248 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_SEEL
+	goto Zone1A_EventScript_GiveFWG_138
+
+Zone1A_EventScript_GiveFWG_158:
+# 250 "data/maps/Zone1A/scripts.pory"
+	checkspeciesclause SPECIES_GOLDEEN
+# 251 "data/maps/Zone1A/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone1A_EventScript_GiveFWG_202
+# 254 "data/maps/Zone1A/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_GOLDEEN
+	goto Zone1A_EventScript_GiveFWG_138
 
 Zone1A_EventScript_GiveFWG_160:
-	goto Zone1A_EventScript_GiveFWG_120
+	goto Zone1A_EventScript_GiveFWG_132
 
 Zone1A_EventScript_GiveFWG_163:
-	goto Zone1A_EventScript_GiveFWG_120
+	goto Zone1A_EventScript_GiveFWG_132
 
 Zone1A_EventScript_GiveFWG_166:
-	goto Zone1A_EventScript_GiveFWG_120
+	goto Zone1A_EventScript_GiveFWG_132
 
 Zone1A_EventScript_GiveFWG_169:
-	goto Zone1A_EventScript_GiveFWG_120
+	goto Zone1A_EventScript_GiveFWG_132
 
 Zone1A_EventScript_GiveFWG_172:
-	goto Zone1A_EventScript_GiveFWG_120
+	goto Zone1A_EventScript_GiveFWG_132
 
 Zone1A_EventScript_GiveFWG_175:
-	goto Zone1A_EventScript_GiveFWG_123
+	goto Zone1A_EventScript_GiveFWG_135
 
 Zone1A_EventScript_GiveFWG_178:
-	goto Zone1A_EventScript_GiveFWG_123
+	goto Zone1A_EventScript_GiveFWG_135
 
 Zone1A_EventScript_GiveFWG_181:
-	goto Zone1A_EventScript_GiveFWG_123
+	goto Zone1A_EventScript_GiveFWG_135
 
 Zone1A_EventScript_GiveFWG_184:
-	goto Zone1A_EventScript_GiveFWG_123
+	goto Zone1A_EventScript_GiveFWG_135
 
 Zone1A_EventScript_GiveFWG_187:
-	goto Zone1A_EventScript_GiveFWG_123
+	goto Zone1A_EventScript_GiveFWG_135
+
+Zone1A_EventScript_GiveFWG_190:
+	goto Zone1A_EventScript_GiveFWG_138
+
+Zone1A_EventScript_GiveFWG_193:
+	goto Zone1A_EventScript_GiveFWG_138
+
+Zone1A_EventScript_GiveFWG_196:
+	goto Zone1A_EventScript_GiveFWG_138
+
+Zone1A_EventScript_GiveFWG_199:
+	goto Zone1A_EventScript_GiveFWG_138
+
+Zone1A_EventScript_GiveFWG_202:
+	goto Zone1A_EventScript_GiveFWG_138
 
 
-# 344 "data/maps/Zone1A/scripts.pory"
+# 378 "data/maps/Zone1A/scripts.pory"
 Zone1A_Corey_WalkLeft:
-# 345 "data/maps/Zone1A/scripts.pory"
+# 379 "data/maps/Zone1A/scripts.pory"
 	walk_left
-# 345 "data/maps/Zone1A/scripts.pory"
+# 379 "data/maps/Zone1A/scripts.pory"
 	walk_left
-# 345 "data/maps/Zone1A/scripts.pory"
+# 379 "data/maps/Zone1A/scripts.pory"
 	walk_left
-# 345 "data/maps/Zone1A/scripts.pory"
+# 379 "data/maps/Zone1A/scripts.pory"
 	walk_left
 	step_end
 
-# 348 "data/maps/Zone1A/scripts.pory"
+# 382 "data/maps/Zone1A/scripts.pory"
 Zone1A_Corey_WalkRight:
-# 349 "data/maps/Zone1A/scripts.pory"
+# 383 "data/maps/Zone1A/scripts.pory"
 	walk_right
-# 349 "data/maps/Zone1A/scripts.pory"
+# 383 "data/maps/Zone1A/scripts.pory"
 	walk_right
-# 349 "data/maps/Zone1A/scripts.pory"
+# 383 "data/maps/Zone1A/scripts.pory"
 	walk_right
-# 349 "data/maps/Zone1A/scripts.pory"
+# 383 "data/maps/Zone1A/scripts.pory"
 	walk_right
 	step_end
 
 Zone1A_EventScript_TriggerLeviathanBottom::
-# 353 "data/maps/Zone1A/scripts.pory"
+# 387 "data/maps/Zone1A/scripts.pory"
 	lockall
-# 354 "data/maps/Zone1A/scripts.pory"
+# 388 "data/maps/Zone1A/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
-# 355 "data/maps/Zone1A/scripts.pory"
+# 389 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 356 "data/maps/Zone1A/scripts.pory"
+# 390 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Common_Movement_ExclamationMark
-# 357 "data/maps/Zone1A/scripts.pory"
+# 391 "data/maps/Zone1A/scripts.pory"
 	playse SE_PIN
-# 358 "data/maps/Zone1A/scripts.pory"
+# 392 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 359 "data/maps/Zone1A/scripts.pory"
+# 393 "data/maps/Zone1A/scripts.pory"
 	waitse
-# 360 "data/maps/Zone1A/scripts.pory"
+# 394 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Common_Movement_WalkDown
-# 361 "data/maps/Zone1A/scripts.pory"
+# 395 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 362 "data/maps/Zone1A/scripts.pory"
+# 396 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Zone1A_Corey_WalkLeft
-# 363 "data/maps/Zone1A/scripts.pory"
+# 397 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 364 "data/maps/Zone1A/scripts.pory"
+# 398 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO
-# 365 "data/maps/Zone1A/scripts.pory"
+# 399 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone1A_EventScript_TriggerLeviathanBottom_1
-# 368 "data/maps/Zone1A/scripts.pory"
+# 402 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_Text_Leviathan1Wait
-# 369 "data/maps/Zone1A/scripts.pory"
+# 403 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Common_Movement_WalkUp
-# 370 "data/maps/Zone1A/scripts.pory"
+# 404 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 371 "data/maps/Zone1A/scripts.pory"
+# 405 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Zone1A_Corey_WalkRight
-# 372 "data/maps/Zone1A/scripts.pory"
+# 406 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 373 "data/maps/Zone1A/scripts.pory"
+# 407 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Common_Movement_FaceLeft
-# 374 "data/maps/Zone1A/scripts.pory"
+# 408 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 375 "data/maps/Zone1A/scripts.pory"
+# 409 "data/maps/Zone1A/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
-# 376 "data/maps/Zone1A/scripts.pory"
+# 410 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
 	return
 
 Zone1A_EventScript_TriggerLeviathanBottom_1:
-# 366 "data/maps/Zone1A/scripts.pory"
+# 400 "data/maps/Zone1A/scripts.pory"
 	goto Zone1A_EventScript_LeviathanBattle
 	return
 
 
 Zone1A_EventScript_TriggerLeviathanMiddle::
-# 381 "data/maps/Zone1A/scripts.pory"
+# 415 "data/maps/Zone1A/scripts.pory"
 	lockall
-# 382 "data/maps/Zone1A/scripts.pory"
+# 416 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Common_Movement_ExclamationMark
-# 383 "data/maps/Zone1A/scripts.pory"
+# 417 "data/maps/Zone1A/scripts.pory"
 	playse SE_PIN
-# 384 "data/maps/Zone1A/scripts.pory"
+# 418 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 385 "data/maps/Zone1A/scripts.pory"
+# 419 "data/maps/Zone1A/scripts.pory"
 	waitse
-# 386 "data/maps/Zone1A/scripts.pory"
+# 420 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Zone1A_Corey_WalkLeft
-# 387 "data/maps/Zone1A/scripts.pory"
+# 421 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 388 "data/maps/Zone1A/scripts.pory"
+# 422 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO
-# 389 "data/maps/Zone1A/scripts.pory"
+# 423 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone1A_EventScript_TriggerLeviathanMiddle_1
-# 392 "data/maps/Zone1A/scripts.pory"
+# 426 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_Text_Leviathan1Wait
-# 393 "data/maps/Zone1A/scripts.pory"
+# 427 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Zone1A_Corey_WalkRight
-# 394 "data/maps/Zone1A/scripts.pory"
+# 428 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 395 "data/maps/Zone1A/scripts.pory"
+# 429 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Common_Movement_FaceLeft
-# 396 "data/maps/Zone1A/scripts.pory"
+# 430 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 397 "data/maps/Zone1A/scripts.pory"
+# 431 "data/maps/Zone1A/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
-# 398 "data/maps/Zone1A/scripts.pory"
+# 432 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
 	return
 
 Zone1A_EventScript_TriggerLeviathanMiddle_1:
-# 390 "data/maps/Zone1A/scripts.pory"
+# 424 "data/maps/Zone1A/scripts.pory"
 	goto Zone1A_EventScript_LeviathanBattle
 	return
 
 
 Zone1A_EventScript_TriggerLeviathanTop::
-# 403 "data/maps/Zone1A/scripts.pory"
+# 437 "data/maps/Zone1A/scripts.pory"
 	lockall
-# 404 "data/maps/Zone1A/scripts.pory"
+# 438 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Common_Movement_ExclamationMark
-# 405 "data/maps/Zone1A/scripts.pory"
+# 439 "data/maps/Zone1A/scripts.pory"
 	playse SE_PIN
-# 406 "data/maps/Zone1A/scripts.pory"
+# 440 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 407 "data/maps/Zone1A/scripts.pory"
+# 441 "data/maps/Zone1A/scripts.pory"
 	waitse
-# 408 "data/maps/Zone1A/scripts.pory"
+# 442 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Common_Movement_WalkUp
-# 409 "data/maps/Zone1A/scripts.pory"
+# 443 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 410 "data/maps/Zone1A/scripts.pory"
+# 444 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Zone1A_Corey_WalkLeft
-# 411 "data/maps/Zone1A/scripts.pory"
+# 445 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 412 "data/maps/Zone1A/scripts.pory"
+# 446 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO
-# 413 "data/maps/Zone1A/scripts.pory"
+# 447 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone1A_EventScript_TriggerLeviathanTop_1
-# 416 "data/maps/Zone1A/scripts.pory"
+# 450 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_Text_Leviathan1Wait
-# 417 "data/maps/Zone1A/scripts.pory"
+# 451 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Common_Movement_WalkDown
-# 418 "data/maps/Zone1A/scripts.pory"
+# 452 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 419 "data/maps/Zone1A/scripts.pory"
+# 453 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Zone1A_Corey_WalkRight
-# 420 "data/maps/Zone1A/scripts.pory"
+# 454 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 421 "data/maps/Zone1A/scripts.pory"
+# 455 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Common_Movement_FaceLeft
-# 422 "data/maps/Zone1A/scripts.pory"
+# 456 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
-# 423 "data/maps/Zone1A/scripts.pory"
+# 457 "data/maps/Zone1A/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
-# 424 "data/maps/Zone1A/scripts.pory"
+# 458 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
 	return
 
 Zone1A_EventScript_TriggerLeviathanTop_1:
-# 414 "data/maps/Zone1A/scripts.pory"
+# 448 "data/maps/Zone1A/scripts.pory"
 	goto Zone1A_EventScript_LeviathanBattle
 	return
 
 
 Zone1A_EventScript_LeviathanBattle::
-# 429 "data/maps/Zone1A/scripts.pory"
+# 463 "data/maps/Zone1A/scripts.pory"
 	fadeoutbgm 1
-# 430 "data/maps/Zone1A/scripts.pory"
+# 464 "data/maps/Zone1A/scripts.pory"
 	setvar VAR_ZONE_1_STATE, 1
-# 431 "data/maps/Zone1A/scripts.pory"
+# 465 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_Text_Leviathan1Intro2
-# 432 "data/maps/Zone1A/scripts.pory"
+# 466 "data/maps/Zone1A/scripts.pory"
 	setflag FLAG_FORCE_BATTLE_ANIM_ON
-# 433 "data/maps/Zone1A/scripts.pory"
+# 467 "data/maps/Zone1A/scripts.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, Zone1A_EventScript_LeviathanBattle_2
-# 433 "data/maps/Zone1A/scripts.pory"
+# 467 "data/maps/Zone1A/scripts.pory"
 	goto_if_set FLAG_SETTINGS_CHALLENGE, Zone1A_EventScript_LeviathanBattle_2
-# 437 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_MUGSHOT_ID, MUGSHOT_COREY
-# 438 "data/maps/Zone1A/scripts.pory"
+# 470 "data/maps/Zone1A/scripts.pory"
 	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1, Zone1A_Text_Leviathan1Defeat
 Zone1A_EventScript_LeviathanBattle_1:
-# 440 "data/maps/Zone1A/scripts.pory"
+# 472 "data/maps/Zone1A/scripts.pory"
 	clearflag FLAG_FORCE_BATTLE_ANIM_ON
-# 441 "data/maps/Zone1A/scripts.pory"
+# 473 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_EventScript_LeviathanBattle_Text_0, MSGBOX_DEFAULT
-# 442 "data/maps/Zone1A/scripts.pory"
-	giveitem ITEM_ORAN_BERRY, 10
-# 443 "data/maps/Zone1A/scripts.pory"
+# 474 "data/maps/Zone1A/scripts.pory"
+	giveitem ITEM_EXP_SHARE
+# 475 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_EventScript_LeviathanBattle_Text_1
-# 444 "data/maps/Zone1A/scripts.pory"
+# 476 "data/maps/Zone1A/scripts.pory"
 	closemessage
-# 445 "data/maps/Zone1A/scripts.pory"
+# 477 "data/maps/Zone1A/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 446 "data/maps/Zone1A/scripts.pory"
+# 478 "data/maps/Zone1A/scripts.pory"
 	removeobject 1
-# 447 "data/maps/Zone1A/scripts.pory"
+# 479 "data/maps/Zone1A/scripts.pory"
 	setflag FLAG_BEAT_LEVIATHAN_1
-# 448 "data/maps/Zone1A/scripts.pory"
+# 480 "data/maps/Zone1A/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 449 "data/maps/Zone1A/scripts.pory"
+# 481 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
 Zone1A_EventScript_LeviathanBattle_2:
-# 434 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_MUGSHOT_ID, MUGSHOT_COREY
-# 435 "data/maps/Zone1A/scripts.pory"
+# 468 "data/maps/Zone1A/scripts.pory"
 	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1_BRUTAL, Zone1A_Text_Leviathan1Defeat
 	goto Zone1A_EventScript_LeviathanBattle_1
 
 
 Zone1A_EventScript_ItemPotion::
-# 474 "data/maps/Zone1A/scripts.pory"
+# 506 "data/maps/Zone1A/scripts.pory"
 	lock
-# 475 "data/maps/Zone1A/scripts.pory"
+# 507 "data/maps/Zone1A/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE1A_POTION, Zone1A_EventScript_ItemPotion_2
-# 480 "data/maps/Zone1A/scripts.pory"
+# 512 "data/maps/Zone1A/scripts.pory"
 	waitse
-# 481 "data/maps/Zone1A/scripts.pory"
+# 513 "data/maps/Zone1A/scripts.pory"
 	removeobject VAR_LAST_TALKED
-# 482 "data/maps/Zone1A/scripts.pory"
+# 514 "data/maps/Zone1A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 483 "data/maps/Zone1A/scripts.pory"
+# 515 "data/maps/Zone1A/scripts.pory"
 	setflag FLAG_ITEM_ZONE1A_POTION
-# 484 "data/maps/Zone1A/scripts.pory"
+# 516 "data/maps/Zone1A/scripts.pory"
 	addobject VAR_LAST_TALKED
-# 485 "data/maps/Zone1A/scripts.pory"
+# 517 "data/maps/Zone1A/scripts.pory"
 	finditem ITEM_POTION, 1
-# 486 "data/maps/Zone1A/scripts.pory"
+# 518 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
 Zone1A_EventScript_ItemPotion_2:
-# 476 "data/maps/Zone1A/scripts.pory"
+# 508 "data/maps/Zone1A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 477 "data/maps/Zone1A/scripts.pory"
+# 509 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
 
 Zone1A_EventScript_ItemQuickClaw::
-# 491 "data/maps/Zone1A/scripts.pory"
+# 523 "data/maps/Zone1A/scripts.pory"
 	lock
-# 492 "data/maps/Zone1A/scripts.pory"
+# 524 "data/maps/Zone1A/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE1A_QUICK_CLAW, Zone1A_EventScript_ItemQuickClaw_2
-# 497 "data/maps/Zone1A/scripts.pory"
+# 529 "data/maps/Zone1A/scripts.pory"
 	waitse
-# 498 "data/maps/Zone1A/scripts.pory"
+# 530 "data/maps/Zone1A/scripts.pory"
 	removeobject VAR_LAST_TALKED
-# 499 "data/maps/Zone1A/scripts.pory"
+# 531 "data/maps/Zone1A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 500 "data/maps/Zone1A/scripts.pory"
+# 532 "data/maps/Zone1A/scripts.pory"
 	setflag FLAG_ITEM_ZONE1A_QUICK_CLAW
-# 501 "data/maps/Zone1A/scripts.pory"
+# 533 "data/maps/Zone1A/scripts.pory"
 	addobject VAR_LAST_TALKED
-# 502 "data/maps/Zone1A/scripts.pory"
+# 534 "data/maps/Zone1A/scripts.pory"
 	finditem ITEM_QUICK_CLAW, 1
-# 503 "data/maps/Zone1A/scripts.pory"
+# 535 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
 Zone1A_EventScript_ItemQuickClaw_2:
-# 493 "data/maps/Zone1A/scripts.pory"
+# 525 "data/maps/Zone1A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 494 "data/maps/Zone1A/scripts.pory"
+# 526 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
 
 Zone1A_EventScript_PorygonSign::
-# 508 "data/maps/Zone1A/scripts.pory"
+# 540 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_EventScript_PorygonSign_Text_0, MSGBOX_DEFAULT
-# 509 "data/maps/Zone1A/scripts.pory"
+# 541 "data/maps/Zone1A/scripts.pory"
 	showmonpic SPECIES_PORYGON, 10, 3
-# 510 "data/maps/Zone1A/scripts.pory"
+# 542 "data/maps/Zone1A/scripts.pory"
 	setseenmon SPECIES_PORYGON
-# 511 "data/maps/Zone1A/scripts.pory"
+# 543 "data/maps/Zone1A/scripts.pory"
 	waitbuttonpress
-# 512 "data/maps/Zone1A/scripts.pory"
+# 544 "data/maps/Zone1A/scripts.pory"
 	hidemonpic
-# 513 "data/maps/Zone1A/scripts.pory"
+# 545 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
 
-# 517 "data/maps/Zone1A/scripts.pory"
-
-# 518 "data/maps/Zone1A/scripts.pory"
-Zone1A_EventScript_Nina::
-# 519 "data/maps/Zone1A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_NINA, Zone1A_Text_NinaIntro, Zone1A_Text_NinaDefeat
-# 520 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_NinaPostBattle, MSGBOX_AUTOCLOSE
-# 521 "data/maps/Zone1A/scripts.pory"
-	end
-# 522 "data/maps/Zone1A/scripts.pory"
-
-# 523 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_NinaIntro:
-# 524 "data/maps/Zone1A/scripts.pory"
-	.string "Hey, you! Let's battle!$"
-# 525 "data/maps/Zone1A/scripts.pory"
-
-# 526 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_NinaDefeat:
-# 527 "data/maps/Zone1A/scripts.pory"
-	.string "Aww… Come on!$"
-# 528 "data/maps/Zone1A/scripts.pory"
-
-# 529 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_NinaPostBattle:
-# 530 "data/maps/Zone1A/scripts.pory"
-	.string "I always lose…$"
-# 531 "data/maps/Zone1A/scripts.pory"
-
-# 532 "data/maps/Zone1A/scripts.pory"
-Zone1A_EventScript_Mariam::
-# 533 "data/maps/Zone1A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_MARIAM, Zone1A_Text_MariamIntro, Zone1A_Text_MariamDefeat
-# 534 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_MariamPostBattle, MSGBOX_AUTOCLOSE
-# 535 "data/maps/Zone1A/scripts.pory"
-	end
-# 536 "data/maps/Zone1A/scripts.pory"
-
-# 537 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_MariamIntro:
-# 538 "data/maps/Zone1A/scripts.pory"
-	.string "Be careful, I'm tough!$"
-# 539 "data/maps/Zone1A/scripts.pory"
-
-# 540 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_MariamDefeat:
-# 541 "data/maps/Zone1A/scripts.pory"
-	.string "Sheesh!$"
-# 542 "data/maps/Zone1A/scripts.pory"
-
-# 543 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_MariamPostBattle:
-# 544 "data/maps/Zone1A/scripts.pory"
-	.string "Maybe I need more Pokémon.$"
-# 545 "data/maps/Zone1A/scripts.pory"
-
-# 546 "data/maps/Zone1A/scripts.pory"
-Zone1A_EventScript_Oscar::
-# 547 "data/maps/Zone1A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_OSCAR, Zone1A_Text_OscarIntro, Zone1A_Text_OscarDefeat
-# 548 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_OscarPostBattle, MSGBOX_AUTOCLOSE
-# 549 "data/maps/Zone1A/scripts.pory"
-	end
+Zone1A_EventScript_Sign_GoldenTree::
 # 550 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_Sign_GoldenTree_Text_0, MSGBOX_SIGN
+	end
 
-# 551 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_OscarIntro:
-# 552 "data/maps/Zone1A/scripts.pory"
-	.string "Fear my might!$"
-# 553 "data/maps/Zone1A/scripts.pory"
 
-# 554 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_OscarDefeat:
+Zone1A_EventScript_Sign_RunningShoes::
 # 555 "data/maps/Zone1A/scripts.pory"
-	.string "Beaten! Disgrace!$"
-# 556 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_Sign_RunningShoes_Text_0, MSGBOX_SIGN
+	end
 
-# 557 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_OscarPostBattle:
-# 558 "data/maps/Zone1A/scripts.pory"
-	.string "I must reclaim my honor…$"
+
 # 559 "data/maps/Zone1A/scripts.pory"
 
 # 560 "data/maps/Zone1A/scripts.pory"
-Zone1A_EventScript_Sign::
+Zone1A_EventScript_Nina::
 # 561 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_Sign, MSGBOX_SIGN
+	trainerbattle_single TRAINER_PBL_NINA, Zone1A_Text_NinaIntro, Zone1A_Text_NinaDefeat
 # 562 "data/maps/Zone1A/scripts.pory"
-	end
+	msgbox Zone1A_Text_NinaPostBattle, MSGBOX_AUTOCLOSE
 # 563 "data/maps/Zone1A/scripts.pory"
-
+	end
 # 564 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_Sign:
+
 # 565 "data/maps/Zone1A/scripts.pory"
-	.string "Trainer Tips!\p"
+Zone1A_Text_NinaIntro:
 # 566 "data/maps/Zone1A/scripts.pory"
-	.string "Press {R_BUTTON} to enable\n"
+	.string "Hey, you! Let's battle!$"
 # 567 "data/maps/Zone1A/scripts.pory"
-	.string "or disable Auto Run.$"
+
+# 568 "data/maps/Zone1A/scripts.pory"
+Zone1A_Text_NinaDefeat:
+# 569 "data/maps/Zone1A/scripts.pory"
+	.string "Aww… Come on!$"
+# 570 "data/maps/Zone1A/scripts.pory"
+
+# 571 "data/maps/Zone1A/scripts.pory"
+Zone1A_Text_NinaPostBattle:
+# 572 "data/maps/Zone1A/scripts.pory"
+	.string "I always lose…$"
+# 573 "data/maps/Zone1A/scripts.pory"
+
+# 574 "data/maps/Zone1A/scripts.pory"
+Zone1A_EventScript_Mariam::
+# 575 "data/maps/Zone1A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_MARIAM, Zone1A_Text_MariamIntro, Zone1A_Text_MariamDefeat
+# 576 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_Text_MariamPostBattle, MSGBOX_AUTOCLOSE
+# 577 "data/maps/Zone1A/scripts.pory"
+	end
+# 578 "data/maps/Zone1A/scripts.pory"
+
+# 579 "data/maps/Zone1A/scripts.pory"
+Zone1A_Text_MariamIntro:
+# 580 "data/maps/Zone1A/scripts.pory"
+	.string "Be careful, I'm tough!$"
+# 581 "data/maps/Zone1A/scripts.pory"
+
+# 582 "data/maps/Zone1A/scripts.pory"
+Zone1A_Text_MariamDefeat:
+# 583 "data/maps/Zone1A/scripts.pory"
+	.string "Sheesh!$"
+# 584 "data/maps/Zone1A/scripts.pory"
+
+# 585 "data/maps/Zone1A/scripts.pory"
+Zone1A_Text_MariamPostBattle:
+# 586 "data/maps/Zone1A/scripts.pory"
+	.string "Maybe I need more Pokémon.$"
+# 587 "data/maps/Zone1A/scripts.pory"
+
+# 588 "data/maps/Zone1A/scripts.pory"
+Zone1A_EventScript_Oscar::
+# 589 "data/maps/Zone1A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_OSCAR, Zone1A_Text_OscarIntro, Zone1A_Text_OscarDefeat
+# 590 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_Text_OscarPostBattle, MSGBOX_AUTOCLOSE
+# 591 "data/maps/Zone1A/scripts.pory"
+	end
+# 592 "data/maps/Zone1A/scripts.pory"
+
+# 593 "data/maps/Zone1A/scripts.pory"
+Zone1A_Text_OscarIntro:
+# 594 "data/maps/Zone1A/scripts.pory"
+	.string "Fear my might!$"
+# 595 "data/maps/Zone1A/scripts.pory"
+
+# 596 "data/maps/Zone1A/scripts.pory"
+Zone1A_Text_OscarDefeat:
+# 597 "data/maps/Zone1A/scripts.pory"
+	.string "Beaten! Disgrace!$"
+# 598 "data/maps/Zone1A/scripts.pory"
+
+# 599 "data/maps/Zone1A/scripts.pory"
+Zone1A_Text_OscarPostBattle:
+# 600 "data/maps/Zone1A/scripts.pory"
+	.string "I must reclaim my honor…$"
 
 Zone1A_EventScript_GiveFWG_Text_0:
 # 19 "data/maps/Zone1A/scripts.pory"
@@ -1257,13 +1318,13 @@ Zone1A_EventScript_GiveFWG_Text_2:
 
 Zone1A_EventScript_GiveFWG_Text_3:
 # 25 "data/maps/Zone1A/scripts.pory"
-	.string "I'm offering trainers a Grass, Water, or\n"
-	.string "Fire type Pokémon to help supplement\l"
+	.string "I'm offering trainers a Grass, Fire, or\n"
+	.string "Water type Pokémon to help supplement\l"
 	.string "their teams. Interested?$"
 
 Zone1A_EventScript_GiveFWG_Text_4:
 # 31 "data/maps/Zone1A/scripts.pory"
-	.string "Do you want a Grass, Water, or Fire\n"
+	.string "Do you want a Grass, Fire, or Water\n"
 	.string "type?$"
 
 Zone1A_EventScript_GiveFWG_Text_5:
@@ -1283,128 +1344,173 @@ Zone1A_EventScript_GiveFWG_Text_8:
 	.string "Exit$"
 
 Zone1A_EventScript_GiveFWG_Text_9:
-# 48 "data/maps/Zone1A/scripts.pory"
-	.string "Your party is full. Clear a party slot,\n"
-	.string "then come back.$"
+# 51 "data/maps/Zone1A/scripts.pory"
+	.string "On Nuzlocke mode, you will randomly\n"
+	.string "receive one of the possible Pokémon:\l"
+	.string "Pansage, Cacnea, Sunkern, Smoliv, or\l"
+	.string "Bounsweet.\p"
+	.string "Is this ok?$"
 
 Zone1A_EventScript_GiveFWG_Text_10:
-# 80 "data/maps/Zone1A/scripts.pory"
+# 79 "data/maps/Zone1A/scripts.pory"
 	.string "Unfortunately, you have already\n"
 	.string "obtained a Pokémon in each of these\l"
 	.string "evolution lines.$"
 
 Zone1A_EventScript_GiveFWG_Text_11:
-# 249 "data/maps/Zone1A/scripts.pory"
-	.string "Choose which Pokémon you would like.$"
+# 120 "data/maps/Zone1A/scripts.pory"
+	.string "On Nuzlocke mode, you will randomly\n"
+	.string "receive one of the possible Pokémon:\l"
+	.string "Pansear, Slugma, Salandit, Vulpix, or\l"
+	.string "Sizzlipede.\p"
+	.string "Is this ok?$"
 
 Zone1A_EventScript_GiveFWG_Text_12:
-# 251 "data/maps/Zone1A/scripts.pory"
-	.string "Pansage$"
+# 189 "data/maps/Zone1A/scripts.pory"
+	.string "On Nuzlocke mode, you will randomly\n"
+	.string "receive one of the possible Pokémon:\l"
+	.string "Panpour, Barboach, Finneon, Seel, or\l"
+	.string "Goldeen.\p"
+	.string "Is this ok?$"
 
 Zone1A_EventScript_GiveFWG_Text_13:
-# 251 "data/maps/Zone1A/scripts.pory"
-	.string "Cacnea$"
+# 260 "data/maps/Zone1A/scripts.pory"
+	.string "Choose which Pokémon you would like.$"
 
 Zone1A_EventScript_GiveFWG_Text_14:
-# 251 "data/maps/Zone1A/scripts.pory"
-	.string "Sunkern$"
+# 262 "data/maps/Zone1A/scripts.pory"
+	.string "Pansage$"
 
 Zone1A_EventScript_GiveFWG_Text_15:
-# 251 "data/maps/Zone1A/scripts.pory"
-	.string "Smoliv$"
+# 262 "data/maps/Zone1A/scripts.pory"
+	.string "Cacnea$"
 
 Zone1A_EventScript_GiveFWG_Text_16:
-# 251 "data/maps/Zone1A/scripts.pory"
-	.string "Bounsweet$"
+# 262 "data/maps/Zone1A/scripts.pory"
+	.string "Sunkern$"
 
 Zone1A_EventScript_GiveFWG_Text_17:
-# 270 "data/maps/Zone1A/scripts.pory"
-	.string "Pansear$"
+# 262 "data/maps/Zone1A/scripts.pory"
+	.string "Smoliv$"
 
 Zone1A_EventScript_GiveFWG_Text_18:
-# 270 "data/maps/Zone1A/scripts.pory"
-	.string "Slugma$"
+# 262 "data/maps/Zone1A/scripts.pory"
+	.string "Bounsweet$"
 
 Zone1A_EventScript_GiveFWG_Text_19:
-# 270 "data/maps/Zone1A/scripts.pory"
-	.string "Salandit$"
+# 281 "data/maps/Zone1A/scripts.pory"
+	.string "Pansear$"
 
 Zone1A_EventScript_GiveFWG_Text_20:
-# 270 "data/maps/Zone1A/scripts.pory"
-	.string "Vulpix$"
+# 281 "data/maps/Zone1A/scripts.pory"
+	.string "Slugma$"
 
 Zone1A_EventScript_GiveFWG_Text_21:
-# 270 "data/maps/Zone1A/scripts.pory"
-	.string "Sizzlipede$"
+# 281 "data/maps/Zone1A/scripts.pory"
+	.string "Salandit$"
 
 Zone1A_EventScript_GiveFWG_Text_22:
-# 289 "data/maps/Zone1A/scripts.pory"
-	.string "Panpour$"
+# 281 "data/maps/Zone1A/scripts.pory"
+	.string "Vulpix$"
 
 Zone1A_EventScript_GiveFWG_Text_23:
-# 289 "data/maps/Zone1A/scripts.pory"
-	.string "Wiglett$"
+# 281 "data/maps/Zone1A/scripts.pory"
+	.string "Sizzlipede$"
 
 Zone1A_EventScript_GiveFWG_Text_24:
-# 289 "data/maps/Zone1A/scripts.pory"
-	.string "Finneon$"
+# 300 "data/maps/Zone1A/scripts.pory"
+	.string "Panpour$"
 
 Zone1A_EventScript_GiveFWG_Text_25:
-# 289 "data/maps/Zone1A/scripts.pory"
-	.string "Seel$"
+# 300 "data/maps/Zone1A/scripts.pory"
+	.string "Barboach$"
 
 Zone1A_EventScript_GiveFWG_Text_26:
-# 289 "data/maps/Zone1A/scripts.pory"
-	.string "Goldeen$"
+# 300 "data/maps/Zone1A/scripts.pory"
+	.string "Finneon$"
 
 Zone1A_EventScript_GiveFWG_Text_27:
-# 309 "data/maps/Zone1A/scripts.pory"
-	.string "Are you sure you want {STR_VAR_1}?$"
+# 300 "data/maps/Zone1A/scripts.pory"
+	.string "Seel$"
 
 Zone1A_EventScript_GiveFWG_Text_28:
-# 319 "data/maps/Zone1A/scripts.pory"
-	.string "Here's your {STR_VAR_1}.$"
+# 300 "data/maps/Zone1A/scripts.pory"
+	.string "Goldeen$"
 
 Zone1A_EventScript_GiveFWG_Text_29:
-# 321 "data/maps/Zone1A/scripts.pory"
+# 320 "data/maps/Zone1A/scripts.pory"
+	.string "Are you sure you want {STR_VAR_1}?$"
+
+Zone1A_EventScript_GiveFWG_Text_30:
+# 329 "data/maps/Zone1A/scripts.pory"
+	.string "Your party is full. Choose a Pokémon to\n"
+	.string "send to the PC.$"
+
+Zone1A_EventScript_GiveFWG_Text_31:
+# 341 "data/maps/Zone1A/scripts.pory"
+	.string "Are you sure you want to send your\n"
+	.string "{STR_VAR_3} to the PC?$"
+
+Zone1A_EventScript_GiveFWG_Text_32:
+# 353 "data/maps/Zone1A/scripts.pory"
+	.string "Here's your {STR_VAR_1}.$"
+
+Zone1A_EventScript_GiveFWG_Text_33:
+# 355 "data/maps/Zone1A/scripts.pory"
 	.string "{PLAYER} received the\n"
 	.string "{STR_VAR_1}!$"
 
-Zone1A_EventScript_GiveFWG_Text_30:
-# 324 "data/maps/Zone1A/scripts.pory"
+Zone1A_EventScript_GiveFWG_Text_34:
+# 358 "data/maps/Zone1A/scripts.pory"
 	.string "Would you like to give a nickname to\n"
 	.string "{STR_VAR_1}?$"
 
-Zone1A_EventScript_GiveFWG_Text_31:
-# 330 "data/maps/Zone1A/scripts.pory"
+Zone1A_EventScript_GiveFWG_Text_35:
+# 364 "data/maps/Zone1A/scripts.pory"
 	.string "Good luck on the rest of your journey!$"
 
 Zone1A_EventScript_LeviathanBattle_Text_0:
-# 441 "data/maps/Zone1A/scripts.pory"
-	.string "{COLOR BLUE}Corey{COLOR DARK_GRAY}: I thought if I gave my Skwovet\n"
-	.string "an Oran Berry, I would be able to win.\l"
-	.string "Oran Berries really are the best!\p"
-	.string "Here, let me share some with you and\n"
-	.string "your Pokémon!$"
+# 473 "data/maps/Zone1A/scripts.pory"
+	.string "{COLOR BLUE}Corey{COLOR DARK_GRAY}: I thought if I had a variety of\n"
+	.string "types, I would be able to win.\p"
+	.string "I guess there's more to battling than\n"
+	.string "just having different Pokémon!\p"
+	.string "As a reward for beating me, take this\n"
+	.string "Exp. Share! It's useful for training up\l"
+	.string "Pokémon.$"
 
 Zone1A_EventScript_LeviathanBattle_Text_1:
-# 443 "data/maps/Zone1A/scripts.pory"
+# 475 "data/maps/Zone1A/scripts.pory"
 	.string "{COLOR BLUE}Corey{COLOR DARK_GRAY}: Well, anyways, I've gotta run\n"
 	.string "now.\p"
 	.string "Bye bye!$"
 
 Zone1A_EventScript_PorygonSign_Text_0:
-# 508 "data/maps/Zone1A/scripts.pory"
+# 540 "data/maps/Zone1A/scripts.pory"
+	.string "Trainer Tips\p"
 	.string "Every Zone has its own challenges.\n"
 	.string "In order to reach the Sanctuary and\l"
 	.string "clear a Zone, you must find {COLOR RED}Porygon{COLOR DARK_GRAY}.$"
 
+Zone1A_EventScript_Sign_GoldenTree_Text_0:
+# 550 "data/maps/Zone1A/scripts.pory"
+	.string "Trainer Tips\p"
+	.string "Shaking a Golden Tree might drop\n"
+	.string "berries, though occasionally you'll\l"
+	.string "disturb the wild Pokémon living in the\l"
+	.string "tree!$"
+
+Zone1A_EventScript_Sign_RunningShoes_Text_0:
+# 555 "data/maps/Zone1A/scripts.pory"
+	.string "Trainer Tips\p"
+	.string "Press {R_BUTTON} to enable or disable Auto Run.$"
+
 Zone1A_Text_FWG_ComeBack::
-# 340 "data/maps/Zone1A/scripts.pory"
+# 374 "data/maps/Zone1A/scripts.pory"
 	.string "Come back if you change your mind!$"
 
 Zone1A_Text_Leviathan1Intro::
-# 453 "data/maps/Zone1A/scripts.pory"
+# 485 "data/maps/Zone1A/scripts.pory"
 	.string "{COLOR BLUE}Corey{COLOR DARK_GRAY}: Hi! My name's Corey.\n"
 	.string "I'm the resident Leviathan around here.\p"
 	.string "If you want to go forward, you'll have\n"
@@ -1412,16 +1518,16 @@ Zone1A_Text_Leviathan1Intro::
 	.string "So, are you ready for our battle?$"
 
 Zone1A_Text_Leviathan1Wait::
-# 460 "data/maps/Zone1A/scripts.pory"
+# 492 "data/maps/Zone1A/scripts.pory"
 	.string "{COLOR BLUE}Corey{COLOR DARK_GRAY}: Okay. You just let me know when\n"
 	.string "you're ready.$"
 
 Zone1A_Text_Leviathan1Intro2::
-# 464 "data/maps/Zone1A/scripts.pory"
+# 496 "data/maps/Zone1A/scripts.pory"
 	.string "{COLOR BLUE}Corey{COLOR DARK_GRAY}: Aww, yeah!\n"
 	.string "This battle is gonna be awesome!$"
 
 Zone1A_Text_Leviathan1Defeat::
-# 469 "data/maps/Zone1A/scripts.pory"
-	.string "Drats! Even the Oran Berry wasn't\n"
+# 501 "data/maps/Zone1A/scripts.pory"
+	.string "Drats! My Fire-Water-Grass core wasn't\n"
 	.string "enough!$"

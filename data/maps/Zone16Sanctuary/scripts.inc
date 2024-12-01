@@ -51,74 +51,76 @@ Zone16Sanctuary_EventScript_NextZone::
 # 29 "data/maps/Zone16Sanctuary/scripts.pory"
 	faceplayer
 # 30 "data/maps/Zone16Sanctuary/scripts.pory"
-	msgbox gText_Colress_Greetings, MSGBOX_DEFAULT
+	message gText_Colress_Greetings
 # 31 "data/maps/Zone16Sanctuary/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone16Sanctuary_EventScript_NextZone_Text_0, Zone16Sanctuary_EventScript_NextZone_Text_1, Zone16Sanctuary_EventScript_NextZone_Text_2, Zone16Sanctuary_EventScript_NextZone_Text_3
+	waitmessage
 # 32 "data/maps/Zone16Sanctuary/scripts.pory"
-	switch VAR_RESULT
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone16Sanctuary_EventScript_NextZone_Text_0, Zone16Sanctuary_EventScript_NextZone_Text_1, Zone16Sanctuary_EventScript_NextZone_Text_2, Zone16Sanctuary_EventScript_NextZone_Text_3
 # 33 "data/maps/Zone16Sanctuary/scripts.pory"
+	switch VAR_RESULT
+# 34 "data/maps/Zone16Sanctuary/scripts.pory"
 	case 0, Zone16Sanctuary_EventScript_NextZone_3
-# 44 "data/maps/Zone16Sanctuary/scripts.pory"
+# 45 "data/maps/Zone16Sanctuary/scripts.pory"
 	case 1, Zone16Sanctuary_EventScript_NextZone_4
-# 46 "data/maps/Zone16Sanctuary/scripts.pory"
+# 47 "data/maps/Zone16Sanctuary/scripts.pory"
 	case 2, Zone16Sanctuary_EventScript_NextZone_5
 Zone16Sanctuary_EventScript_NextZone_1:
-# 49 "data/maps/Zone16Sanctuary/scripts.pory"
+# 50 "data/maps/Zone16Sanctuary/scripts.pory"
 	goto EventScript_WhenUReady
 	return
 
 Zone16Sanctuary_EventScript_NextZone_3:
-# 34 "data/maps/Zone16Sanctuary/scripts.pory"
-	buffernumberstring 0, VAR_ZONE
 # 35 "data/maps/Zone16Sanctuary/scripts.pory"
-	msgbox gText_Colress_SureReadyToLeave, MSGBOX_YESNO
+	buffernumberstring 0, VAR_ZONE
 # 36 "data/maps/Zone16Sanctuary/scripts.pory"
+	msgbox gText_Colress_SureReadyToLeave, MSGBOX_YESNO
+# 37 "data/maps/Zone16Sanctuary/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone16Sanctuary_EventScript_NextZone_6
 	goto Zone16Sanctuary_EventScript_NextZone_1
 
 Zone16Sanctuary_EventScript_NextZone_4:
-# 45 "data/maps/Zone16Sanctuary/scripts.pory"
+# 46 "data/maps/Zone16Sanctuary/scripts.pory"
 	goto EventScript_Settings
 	goto Zone16Sanctuary_EventScript_NextZone_1
 
 Zone16Sanctuary_EventScript_NextZone_5:
-# 47 "data/maps/Zone16Sanctuary/scripts.pory"
+# 48 "data/maps/Zone16Sanctuary/scripts.pory"
 	goto EventScript_Documentation
 	goto Zone16Sanctuary_EventScript_NextZone_1
 
 Zone16Sanctuary_EventScript_NextZone_6:
-# 37 "data/maps/Zone16Sanctuary/scripts.pory"
-	call EventScript_LeavingSetup
 # 38 "data/maps/Zone16Sanctuary/scripts.pory"
-	setflag FLAG_HIDE_ZONE17A_HEX_MANIAC
+	call EventScript_LeavingSetup
 # 39 "data/maps/Zone16Sanctuary/scripts.pory"
-	setflag FLAG_HIDE_ZONE17A_PORYGON
+	setflag FLAG_HIDE_ZONE17A_HEX_MANIAC
 # 40 "data/maps/Zone16Sanctuary/scripts.pory"
-	setflag FLAG_BEAT_LEVIATHAN_15
+	setflag FLAG_HIDE_ZONE17A_PORYGON
 # 41 "data/maps/Zone16Sanctuary/scripts.pory"
-	warp MAP_ZONE17A, 255, 13, 38
+	setflag FLAG_BEAT_LEVIATHAN_15
 # 42 "data/maps/Zone16Sanctuary/scripts.pory"
+	warp MAP_ZONE17A, 255, 13, 38
+# 43 "data/maps/Zone16Sanctuary/scripts.pory"
 	waitstate
 	goto Zone16Sanctuary_EventScript_NextZone_1
 
 
 Zone16Sanctuary_EventScript_NextZone_Text_0:
-# 31 "data/maps/Zone16Sanctuary/scripts.pory"
+# 32 "data/maps/Zone16Sanctuary/scripts.pory"
 	.string "Next Zone$"
 
 Zone16Sanctuary_EventScript_NextZone_Text_1:
-# 31 "data/maps/Zone16Sanctuary/scripts.pory"
+# 32 "data/maps/Zone16Sanctuary/scripts.pory"
 	.string "Settings$"
 
 Zone16Sanctuary_EventScript_NextZone_Text_2:
-# 31 "data/maps/Zone16Sanctuary/scripts.pory"
+# 32 "data/maps/Zone16Sanctuary/scripts.pory"
 	.string "Documentation$"
 
 Zone16Sanctuary_EventScript_NextZone_Text_3:
-# 31 "data/maps/Zone16Sanctuary/scripts.pory"
+# 32 "data/maps/Zone16Sanctuary/scripts.pory"
 	.string "Exit$"
 
 Zone16Sanctuary_Text_Reward::
-# 52 "data/maps/Zone16Sanctuary/scripts.pory"
+# 53 "data/maps/Zone16Sanctuary/scripts.pory"
 	.string "3 Absorb Bulbs and 3 Luminous Mosses!$"

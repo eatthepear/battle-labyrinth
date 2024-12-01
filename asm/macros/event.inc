@@ -2336,6 +2336,12 @@
 	.2byte \slot
 	.endm
 
+	.macro trysetstatus1 status1:req, slot:req
+	callnative Script_TrySetStatus1
+	.2byte \status1
+	.2byte \slot
+	.endm
+
 	@ Sets VAR_RESULT to the Pokémon in \slot's Tera Type
 	.macro checkteratype slot:req
 	callnative CheckTeraType

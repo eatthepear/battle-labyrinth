@@ -42,6 +42,7 @@
 #include "text.h"
 #include "vs_seeker.h"
 #include "follow_me.h"
+#include "dexnav.h"
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
 #include "constants/item_effects.h"
@@ -109,15 +110,6 @@ static const struct YesNoFuncTable sUseTMHMYesNoFuncTable =
     .yesFunc = UseTMHM,
     .noFunc = CloseItemMessage,
 };
-
-
-static const u8 textCantThrowPokeBallNuzlocke[] = _("You have already used your encounter\nfor this Zone!{PAUSE_UNTIL_PRESS}");
-
-static const u8 textCantThrowPokeBallSpeciesClause[] = _("You have already caught a Pokémon\nin this evolution line!{PAUSE_UNTIL_PRESS}");
-
-static const u8 sText_BallsCannotBeUsed[] = _("A mysterious force is preventing\nPokéballs from being used now!{PAUSE_UNTIL_PRESS}");
-
-// .text
 
 #define tEnigmaBerryType data[4]
 static void SetUpItemUseCallback(u8 taskId)
@@ -1104,14 +1096,12 @@ static u32 GetBallThrowableState(void)
     else if (NuzlockeFlagGet(GLOBAL_NUZLOCKE_SWITCH))
     {
         u8 battler;
+        u8 IsCaptureBlockedByDexnav = 0;
         if (IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)))
-        {
             battler = 0;
-        }
         else
-        {
             battler = 1;
-        }
+
         IsSpeciesClauseActive = IsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[battler], MON_DATA_SPECIES));
         if (IsMonShiny(&gEnemyParty[battler]))
         {
@@ -1119,7 +1109,11 @@ static u32 GetBallThrowableState(void)
             IsCaptureBlockedByNuzlocke = 0;
         }
         else if (NuzlockeFlagGet(GetCurrentRegionMapSectionId()) == 0)
+        {
             IsCaptureBlockedByNuzlocke = 0;
+            if (gDexnavBattle)
+                IsCaptureBlockedByDexnav = 1;
+        }
         else
             IsCaptureBlockedByNuzlocke = 1;
         if (IsCaptureBlockedByNuzlocke == 1)
@@ -1129,6 +1123,10 @@ static u32 GetBallThrowableState(void)
         else if (IsSpeciesClauseActive == 1)
         {
             return BALL_THROW_UNABLE_NUZLOCKE_SPECIES_CLAUSE; // Nuzlocke Species Clause
+        }
+        else if (IsCaptureBlockedByDexnav == 1)
+        {
+            return BALL_THROW_UNABLE_NUZLOCKE_NO_DEXNAV; // Nuzlocke disallows Dexnav
         }
     }
     else if (FlagGet(B_FLAG_NO_CATCHING))
@@ -1144,7 +1142,12 @@ bool32 CanThrowBall(void)
 
 static const u8 sText_CantThrowPokeBall_TwoMons[] = _("Cannot throw a ball!\nThere are two Pokémon out there!\p");
 static const u8 sText_CantThrowPokeBall_SemiInvulnerable[] = _("Cannot throw a ball!\nThere's no Pokémon in sight!\p");
-static const u8 sText_CantThrowPokeBall_Disabled[] = _("POKé BALLS cannot be used\nright now!\p");
+static const u8 sText_CantThrowPokeBall_Disabled[] = _("Poké Balls cannot be used\nright now!\p");
+static const u8 textCantThrowPokeBallNuzlocke[] = _("You have already used your encounter\nfor this Zone!{PAUSE_UNTIL_PRESS}");
+static const u8 textCantThrowPokeBallSpeciesClause[] = _("You have already caught a Pokémon\nin this evolution line!{PAUSE_UNTIL_PRESS}");
+static const u8 textCantThrowPokeBallNuzlockeDexnav[] = _("You can't catch a Pokémon found\nthrough the Dexnav!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_BallsCannotBeUsed[] = _("A mysterious force is preventing\nPokéballs from being used now!{PAUSE_UNTIL_PRESS}");
+
 void ItemUseInBattle_PokeBall(u8 taskId)
 {
     switch (GetBallThrowableState())
@@ -1168,15 +1171,6 @@ void ItemUseInBattle_PokeBall(u8 taskId)
             DisplayItemMessage(taskId, FONT_NORMAL, gText_BoxFull, CloseItemMessage);
         else
             DisplayItemMessageInBattlePyramid(taskId, gText_BoxFull, Task_CloseBattlePyramidBagMessage);
-        break;
-    case BALL_THROW_UNABLE_NUZLOCKE_ALREADY_CAUGHT: // Already got Nuzlocke encounter
-        DisplayCannotUseItemMessage(taskId, FALSE, textCantThrowPokeBallNuzlocke);
-        break;
-    case BALL_THROW_UNABLE_NUZLOCKE_SPECIES_CLAUSE: // Nuzlocke Species Clause
-        DisplayCannotUseItemMessage(taskId, FALSE, textCantThrowPokeBallSpeciesClause);
-        break;
-    case BALL_THROW_UNABLE_NO_CATCHING_FLAG: // Can't catch Pokemon
-        DisplayItemMessage(taskId, 1, sText_BallsCannotBeUsed, CloseItemMessage);
         break;
     case BALL_THROW_UNABLE_SEMI_INVULNERABLE:
         if (!InBattlePyramid())
@@ -1271,6 +1265,22 @@ bool32 CannotUseItemsInBattle(u16 itemId, struct Pokemon *mon)
             break;
         case BALL_THROW_UNABLE_DISABLED_FLAG:
             failStr = sText_CantThrowPokeBall_Disabled;
+            cannotUse = TRUE;
+            break;
+        case BALL_THROW_UNABLE_NUZLOCKE_ALREADY_CAUGHT: // Already got Nuzlocke encounter
+            failStr = textCantThrowPokeBallNuzlocke;
+            cannotUse = TRUE;
+            break;
+        case BALL_THROW_UNABLE_NUZLOCKE_SPECIES_CLAUSE: // Nuzlocke Species Clause
+            failStr = textCantThrowPokeBallSpeciesClause;
+            cannotUse = TRUE;
+            break;
+        case BALL_THROW_UNABLE_NUZLOCKE_NO_DEXNAV: // Nuzlocke prevents Pokemon from Dexnav
+            failStr = textCantThrowPokeBallNuzlockeDexnav;
+            cannotUse = TRUE;
+            break;
+        case BALL_THROW_UNABLE_NO_CATCHING_FLAG: // Can't catch Pokemon
+            failStr = sText_BallsCannotBeUsed;
             cannotUse = TRUE;
             break;
         }
@@ -1555,6 +1565,33 @@ void FieldUseFunc_VsSeeker(u8 taskId)
 void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId)
 {
     Task_CloseCantUseKeyItemMessage(taskId);
+}
+
+void ItemUseOutOfBattle_InfiniteRepel(u8 taskId)
+{
+    bool8 infiniteRepelOn = FlagGet(OW_FLAG_NO_ENCOUNTER);
+    if (!infiniteRepelOn)
+    {
+        FlagToggle(OW_FLAG_NO_ENCOUNTER);
+        PlaySE(SE_REPEL);
+        if(gTasks[taskId].tUsingRegisteredKeyItem){
+            DisplayItemMessageOnField(taskId, gText_InfiniteRepelOn, Task_CloseCantUseKeyItemMessage);
+        }
+        else{
+            DisplayItemMessage(taskId, 1, gText_InfiniteRepelOn, CloseItemMessage);
+        }
+    }
+    else
+    {
+        FlagToggle(OW_FLAG_NO_ENCOUNTER);
+        PlaySE(SE_PC_OFF);
+        if (gTasks[taskId].tUsingRegisteredKeyItem){
+            DisplayItemMessageOnField(taskId, gText_InfiniteRepelOff, Task_CloseCantUseKeyItemMessage);
+        }
+        else{
+            DisplayItemMessage(taskId, 1, gText_InfiniteRepelOff, CloseItemMessage);
+        }
+    }
 }
 
 #undef tUsingRegisteredKeyItem

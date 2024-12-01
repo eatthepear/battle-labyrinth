@@ -2338,10 +2338,10 @@ static void DebugAction_Util_Player_Id(u8 taskId)
 
 static void DebugAction_Util_CheatStart(u8 taskId)
 {
-    if (!FlagGet(FLAG_SYS_CLOCK_SET))
-        RtcInitLocalTimeOffset(0, 0);
+    // if (!FlagGet(FLAG_SYS_CLOCK_SET))
+    //     RtcInitLocalTimeOffset(0, 0);
 
-    InitTimeBasedEvents();
+    // InitTimeBasedEvents();
     Debug_DestroyMenu_Full_Script(taskId, Debug_CheatStart);
 }
 

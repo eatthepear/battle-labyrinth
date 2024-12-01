@@ -2397,7 +2397,7 @@ STATIC_ASSERT(MAX_DYNAMAX_LEVEL < (1 << 4), PokemonSubstruct3_dynamaxLevel_TooSm
 STATIC_ASSERT(MAX_PER_STAT_IVS < (1 << 5), PokemonSubstruct3_ivs_TooSmall);
 STATIC_ASSERT(NUM_NATURES <= (1 << 5), BoxPokemon_hiddenNatureModifier_TooSmall);
 
-static u32 CompressStatus(u32 status)
+static u32 UNUSED CompressStatus(u32 status)
 {
     s32 i;
     for (i = 0; i < ARRAY_COUNT(sCompressedStatuses); i++)
@@ -2408,7 +2408,7 @@ static u32 CompressStatus(u32 status)
     return 0; // STATUS1_NONE
 }
 
-static u32 UncompressStatus(u32 compressedStatus)
+static u32 UNUSED UncompressStatus(u32 compressedStatus)
 {
     if (compressedStatus < ARRAY_COUNT(sCompressedStatuses))
         return sCompressedStatuses[compressedStatus];
@@ -6821,9 +6821,6 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
         default:
-            if (FlagGet(FLAG_FORCE_BATTLE_ANIM_ON)) {
-                return MUS_VS_RIVAL;
-            }
             if (gTrainers[gTrainerBattleOpponent_A].mugshotEnabled == TRUE) {
                 switch (VarGet(VAR_LEVIATHAN_MUSIC))
                 {
@@ -7915,7 +7912,7 @@ u16 GetRandomSpecies(u8 wildMonLevel)
     u16 i;
 
     memcpy(sRandomSpecies, sSpeciesToRandomize, sizeof(sSpeciesToRandomize));
-    ShuffleList(sRandomSpecies, RANDOM_SPECIES_COUNT);
+    Shuffle16(sRandomSpecies, RANDOM_SPECIES_COUNT);
 
     // sRandomSpecies only contains the base form Pokemon
     species = sRandomSpecies[0];
@@ -7925,7 +7922,7 @@ u16 GetRandomSpecies(u8 wildMonLevel)
         while (IsCaptureBlockedBySpeciesClause(species))
         {
             memcpy(sRandomSpecies, sSpeciesToRandomize, sizeof(sSpeciesToRandomize));
-            ShuffleList(sRandomSpecies, RANDOM_SPECIES_COUNT);
+            Shuffle16(sRandomSpecies, RANDOM_SPECIES_COUNT);
 
             // sRandomSpecies only contains the base form Pokemon
             species = sRandomSpecies[0];
@@ -8150,6 +8147,11 @@ void HealPokemon(struct Pokemon *mon)
 {
     u32 data;
 
+    if (FlagGet(FLAG_SETTINGS_NUZLOCKE) && GetMonData(mon, MON_DATA_HP) == 0)
+    {
+        return;
+    }
+
     data = GetMonData(mon, MON_DATA_MAX_HP);
     SetMonData(mon, MON_DATA_HP, &data);
 
@@ -8162,6 +8164,11 @@ void HealPokemon(struct Pokemon *mon)
 void HealBoxPokemon(struct BoxPokemon *boxMon)
 {
     u32 data;
+
+    if (FlagGet(FLAG_SETTINGS_NUZLOCKE) && GetBoxMonData(boxMon, MON_DATA_HP) == GetBoxMonData(boxMon, MON_DATA_MAX_HP))
+    {
+        return;
+    }
 
     data = 0;
     SetBoxMonData(boxMon, MON_DATA_HP_LOST, &data);

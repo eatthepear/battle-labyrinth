@@ -278,6 +278,40 @@ Zone7A_Text_ConniePostBattle:
 	.string "Backpacking is all about packing\n"
 	.string "light!$"
 
+Zone7A_EventScript_Peter::
+	trainerbattle_single TRAINER_PBL_PETER, Zone7A_Text_PeterIntro, Zone7A_Text_PeterDefeat
+	msgbox Zone7A_Text_PeterPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone7A_Text_PeterIntro:
+	.string "Another traveler!\n"
+	.string "Tropius, it's time for battle!$"
+
+Zone7A_Text_PeterDefeat:
+	.string "It's hard winning with only one\n"
+	.string "Pokémon!$"
+
+Zone7A_Text_PeterPostBattle:
+	.string "Backpacking is all about packing\n"
+	.string "light!$"
+
+Zone7A_EventScript_Whitaker::
+	trainerbattle_single TRAINER_PBL_WHITAKER, Zone7A_Text_WhitakerIntro, Zone7A_Text_WhitakerDefeat
+	msgbox Zone7A_Text_WhitakerPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone7A_Text_WhitakerIntro:
+	.string "Another traveler!\n"
+	.string "Tropius, it's time for battle!$"
+
+Zone7A_Text_WhitakerDefeat:
+	.string "It's hard winning with only one\n"
+	.string "Pokémon!$"
+
+Zone7A_Text_WhitakerPostBattle:
+	.string "Backpacking is all about packing\n"
+	.string "light!$"
+
 Zone7A_EventScript_HealSign::
 	msgbox Zone7A_Text_HealSign, MSGBOX_SIGN
 	end
@@ -290,7 +324,7 @@ Zone7A_EventScript_Sign::
 	end
 
 Zone7A_Text_Sign:
-	.string "Trainer Tips!\p"
+	.string "Trainer Tips\p"
 	.string "Due to rising costs, the Pokémon\n"
 	.string "Storage System does not heal your\l"
 	.string "Pokémon.$"

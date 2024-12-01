@@ -4005,8 +4005,8 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         }
         break;
     case EFFECT_CHARGE:
-        if (HasDamagingMoveOfType(battlerAtk, TYPE_ELECTRIC))
-            ADJUST_SCORE(DECENT_EFFECT);
+        // if (HasDamagingMoveOfType(battlerAtk, TYPE_ELECTRIC))
+        //     ADJUST_SCORE(DECENT_EFFECT);
         if (B_CHARGE_SPDEF_RAISE >= GEN_5)
             ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPDEF));
         break;

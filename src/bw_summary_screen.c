@@ -3906,7 +3906,12 @@ static void BufferMonTrainerMemo(void)
         }
 
         if (sum->metLevel == 0)
-            text = (sum->metLocation >= MAPSEC_NONE) ? gText_XNatureHatchedSomewhereAt : gText_XNatureHatchedAtYZ;
+        {
+            if (sum->metLocation == METLOC_MARIE_EGG)
+                text = gText_XNatureHatchedFromMarieEggs;
+            else
+                text = (sum->metLocation >= MAPSEC_NONE) ? gText_XNatureHatchedSomewhereAt : gText_XNatureHatchedAtYZ;
+        }
         else
         {
             switch (sum->metLocation)
@@ -3972,7 +3977,7 @@ static void GetMetLevelString(u8 *output)
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(3, output);
 }
 
-static bool8 DoesMonOTMatchOwner(void)
+static UNUSED bool8 DoesMonOTMatchOwner(void)
 {
     struct PokeSummary *sum = &sMonSummaryScreen->summary;
     u32 trainerId;
@@ -3998,7 +4003,7 @@ static bool8 DoesMonOTMatchOwner(void)
         return TRUE;
 }
 
-static bool8 DidMonComeFromGBAGames(void)
+static bool8 UNUSED DidMonComeFromGBAGames(void)
 {
     struct PokeSummary *sum = &sMonSummaryScreen->summary;
     if (sum->metGame > 0 && sum->metGame <= VERSION_LEAF_GREEN)
@@ -4006,7 +4011,7 @@ static bool8 DidMonComeFromGBAGames(void)
     return FALSE;
 }
 
-static bool8 DidMonComeFromRSE(void)
+static bool8 UNUSED DidMonComeFromRSE(void)
 {
     struct PokeSummary *sum = &sMonSummaryScreen->summary;
     if (sum->metGame > 0 && sum->metGame <= VERSION_EMERALD)
@@ -4039,18 +4044,18 @@ static void PrintEggOTID(void)
 static void PrintEggState(void)
 {
     const u8 *text;
-    struct PokeSummary *sum = &sMonSummaryScreen->summary;
+    // struct PokeSummary *sum = &sMonSummaryScreen->summary;
 
-    if (sMonSummaryScreen->summary.sanity == TRUE)
-        text = gText_EggWillTakeALongTime;
-    else if (sum->friendship <= 5)
-        text = gText_EggAboutToHatch;
-    else if (sum->friendship <= 10)
-        text = gText_EggWillHatchSoon;
-    else if (sum->friendship <= 40)
-        text = gText_EggWillTakeSomeTime;
-    else
-        text = gText_EggWillTakeALongTime;
+    // if (sMonSummaryScreen->summary.sanity == TRUE)
+    //     text = gText_EggWillTakeALongTime;
+    // else if (sum->friendship <= 5)
+    text = gText_EggAboutToHatch;
+    // else if (sum->friendship <= 10)
+    //     text = gText_EggWillHatchSoon;
+    // else if (sum->friendship <= 40)
+    //     text = gText_EggWillTakeSomeTime;
+    // else
+    //     text = gText_EggWillTakeALongTime;
 
     PrintTextOnWindow_BW_Font(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO), text, 16, 4, 0, 0);
 }
@@ -4062,10 +4067,12 @@ static void PrintEggMemo(void)
 
     if (sMonSummaryScreen->summary.sanity != 1)
     {
-        if (sum->metLocation == METLOC_FATEFUL_ENCOUNTER)
-            text = gText_PeculiarEggNicePlace;
-        else if (DidMonComeFromGBAGames() == FALSE || DoesMonOTMatchOwner() == FALSE)
-            text = gText_PeculiarEggTrade;
+        // if (sum->metLocation == METLOC_FATEFUL_ENCOUNTER)
+        //     text = gText_PeculiarEggNicePlace;
+        // else if (DidMonComeFromGBAGames() == FALSE || DoesMonOTMatchOwner() == FALSE)
+        //     text = gText_PeculiarEggTrade;
+        if (sum->metLocation == METLOC_MARIE_EGG)
+            text = gText_PeculiarEggMarieEggs;
         else if (sum->metLocation == METLOC_SPECIAL_EGG)
             text = (DidMonComeFromRSE() == TRUE) ? gText_EggFromHotSprings : gText_EggFromTraveler;
         else
