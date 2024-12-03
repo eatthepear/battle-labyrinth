@@ -1606,6 +1606,7 @@ mart Zone7A_Shop_TMShop {
 	ITEM_TM09
 	ITEM_TM10
 	ITEM_TM11
+	ITEM_TM12
 }
 
 mart Zone10A_Shop_TMShop {

@@ -10532,7 +10532,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_BULLET_SEED,
+        .secondaryId = MOVE_POWER_UP_PUNCH,
     },
 
     [ITEM_TM_CHARGE_BEAM] =
@@ -10547,7 +10547,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_HIDDEN_POWER,
+        .secondaryId = MOVE_CHARGE_BEAM,
     },
 
     [ITEM_TM_FLAME_CHARGE] =
@@ -10562,13 +10562,13 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_SUNNY_DAY,
+        .secondaryId = MOVE_FLAME_CHARGE,
     },
 
     [ITEM_TM_TRAILBLAZE] =
     {
         .name = _("TM12"),
-        .price = 10000,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "The user attacks\n"
             "suddenly, raising\n"
