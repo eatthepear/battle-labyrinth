@@ -1873,7 +1873,7 @@ static bool32 Fishing_ShowDots(struct Task *task)
 
     AlignFishingAnimationFrames();
     task->tFrameCounter++;
-    if (task->tFrameCounter >= 20)
+    if (JOY_NEW(A_BUTTON))
     {
         if (!DoesFishingMinigameAllowCancel())
             return FALSE;
@@ -1901,8 +1901,8 @@ static bool32 Fishing_ShowDots(struct Task *task)
                 task->tNumDots++;
             }
         }
+        return FALSE;
     }
-    return FALSE;
 }
 
 static bool32 Fishing_CheckForBite(struct Task *task)
