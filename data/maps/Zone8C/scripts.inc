@@ -15,7 +15,7 @@ Zone8C_MapScripts_MAP_SCRIPT_ON_RESUME_1:
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST
 Zone8C_MapScripts_MAP_SCRIPT_ON_RESUME_5:
 # 13 "data/maps/Zone8C/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8C_SUPER_REPEL, Zone8C_MapScripts_MAP_SCRIPT_ON_RESUME_9
+	goto_if_set FLAG_ITEM_ZONE8C_SUPER_POTION, Zone8C_MapScripts_MAP_SCRIPT_ON_RESUME_9
 # 16 "data/maps/Zone8C/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST
 	return
@@ -94,11 +94,11 @@ Zone8C_EventScript_ItemFullHeal_2:
 	end
 
 
-Zone8C_EventScript_ItemSuperRepel::
+Zone8C_EventScript_ItemSuperPotion::
 # 56 "data/maps/Zone8C/scripts.pory"
 	lock
 # 57 "data/maps/Zone8C/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8C_SUPER_REPEL, Zone8C_EventScript_ItemSuperRepel_2
+	goto_if_set FLAG_ITEM_ZONE8C_SUPER_POTION, Zone8C_EventScript_ItemSuperPotion_2
 # 62 "data/maps/Zone8C/scripts.pory"
 	waitse
 # 63 "data/maps/Zone8C/scripts.pory"
@@ -106,16 +106,16 @@ Zone8C_EventScript_ItemSuperRepel::
 # 64 "data/maps/Zone8C/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 65 "data/maps/Zone8C/scripts.pory"
-	setflag FLAG_ITEM_ZONE8C_SUPER_REPEL
+	setflag FLAG_ITEM_ZONE8C_SUPER_POTION
 # 66 "data/maps/Zone8C/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 67 "data/maps/Zone8C/scripts.pory"
-	finditem ITEM_SUPER_REPEL, 1
+	finditem ITEM_SUPER_POTION, 1
 # 68 "data/maps/Zone8C/scripts.pory"
 	release
 	end
 
-Zone8C_EventScript_ItemSuperRepel_2:
+Zone8C_EventScript_ItemSuperPotion_2:
 # 58 "data/maps/Zone8C/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 59 "data/maps/Zone8C/scripts.pory"

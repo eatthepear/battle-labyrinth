@@ -10,12 +10,12 @@ Zone8A_MapScripts_MAP_SCRIPT_ON_RESUME:
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST
 Zone8A_MapScripts_MAP_SCRIPT_ON_RESUME_1:
 # 8 "data/maps/Zone8A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8A_SPELL_TAG, Zone8A_MapScripts_MAP_SCRIPT_ON_RESUME_6
+	goto_if_set FLAG_ITEM_ZONE8A_POTION_X2, Zone8A_MapScripts_MAP_SCRIPT_ON_RESUME_6
 # 11 "data/maps/Zone8A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST
 Zone8A_MapScripts_MAP_SCRIPT_ON_RESUME_5:
 # 13 "data/maps/Zone8A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8A_BLACK_GLASSES, Zone8A_MapScripts_MAP_SCRIPT_ON_RESUME_9
+	goto_if_set FLAG_ITEM_ZONE8A_GREAT_BALL, Zone8A_MapScripts_MAP_SCRIPT_ON_RESUME_9
 # 16 "data/maps/Zone8A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST
 	return
@@ -65,11 +65,11 @@ Zone8A_EventScript_ItemMagnet_2:
 	end
 
 
-Zone8A_EventScript_ItemSpellTag::
+Zone8A_EventScript_ItemPotion2::
 # 39 "data/maps/Zone8A/scripts.pory"
 	lock
 # 40 "data/maps/Zone8A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8A_SPELL_TAG, Zone8A_EventScript_ItemSpellTag_2
+	goto_if_set FLAG_ITEM_ZONE8A_POTION_X2, Zone8A_EventScript_ItemPotion2_2
 # 45 "data/maps/Zone8A/scripts.pory"
 	waitse
 # 46 "data/maps/Zone8A/scripts.pory"
@@ -77,16 +77,16 @@ Zone8A_EventScript_ItemSpellTag::
 # 47 "data/maps/Zone8A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 48 "data/maps/Zone8A/scripts.pory"
-	setflag FLAG_ITEM_ZONE8A_SPELL_TAG
+	setflag FLAG_ITEM_ZONE8A_POTION_X2
 # 49 "data/maps/Zone8A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 50 "data/maps/Zone8A/scripts.pory"
-	finditem ITEM_SPELL_TAG, 1
+	finditem ITEM_POTION, 2
 # 51 "data/maps/Zone8A/scripts.pory"
 	release
 	end
 
-Zone8A_EventScript_ItemSpellTag_2:
+Zone8A_EventScript_ItemPotion2_2:
 # 41 "data/maps/Zone8A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 42 "data/maps/Zone8A/scripts.pory"
@@ -94,11 +94,11 @@ Zone8A_EventScript_ItemSpellTag_2:
 	end
 
 
-Zone8A_EventScript_ItemBlackGlasses::
+Zone8A_EventScript_ItemGreatBall::
 # 56 "data/maps/Zone8A/scripts.pory"
 	lock
 # 57 "data/maps/Zone8A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8A_BLACK_GLASSES, Zone8A_EventScript_ItemBlackGlasses_2
+	goto_if_set FLAG_ITEM_ZONE8A_GREAT_BALL, Zone8A_EventScript_ItemGreatBall_2
 # 62 "data/maps/Zone8A/scripts.pory"
 	waitse
 # 63 "data/maps/Zone8A/scripts.pory"
@@ -106,16 +106,16 @@ Zone8A_EventScript_ItemBlackGlasses::
 # 64 "data/maps/Zone8A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 65 "data/maps/Zone8A/scripts.pory"
-	setflag FLAG_ITEM_ZONE8A_BLACK_GLASSES
+	setflag FLAG_ITEM_ZONE8A_GREAT_BALL
 # 66 "data/maps/Zone8A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 67 "data/maps/Zone8A/scripts.pory"
-	finditem ITEM_BLACK_GLASSES, 1
+	finditem ITEM_GREAT_BALL, 1
 # 68 "data/maps/Zone8A/scripts.pory"
 	release
 	end
 
-Zone8A_EventScript_ItemBlackGlasses_2:
+Zone8A_EventScript_ItemGreatBall_2:
 # 58 "data/maps/Zone8A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 59 "data/maps/Zone8A/scripts.pory"

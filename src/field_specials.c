@@ -4666,21 +4666,21 @@ u16 GetNumItemsRemaining(void)
     // case 7:
     // case 8:
     //     count += !FlagGet(FLAG_ITEM_ZONE7A_BLACK_BELT);
-    //     count += !FlagGet(FLAG_ITEM_ZONE7A_GREAT_BALL_X2);
-    //     count += !FlagGet(FLAG_ITEM_ZONE7A_POISON_BARB);
+    //     count += !FlagGet(FLAG_ITEM_ZONE7A_GREAT_BALL);
+    //     count += !FlagGet(FLAG_ITEM_ZONE7A_GEMS);
     //     count += !FlagGet(FLAG_ITEM_ZONE7A_SHARP_BEAK);
-    //     count += !FlagGet(FLAG_ITEM_ZONE7A_SILVER_POWDER);
+    //     count += !FlagGet(FLAG_ITEM_ZONE7A_BERRY_JUICE);
     //     count += !FlagGet(FLAG_ITEM_ZONE7A_SUPER_POTION);
-    //     count += !FlagGet(FLAG_ITEM_ZONE7A_TWISTED_SPOON);
-    //     count += !FlagGet(FLAG_ITEM_ZONE8A_BLACK_GLASSES);
+    //     count += !FlagGet(FLAG_ITEM_ZONE7A_POTION_X2);
+    //     count += !FlagGet(FLAG_ITEM_ZONE8A_GREAT_BALL);
     //     count += !FlagGet(FLAG_ITEM_ZONE8A_MAGNET);
-    //     count += !FlagGet(FLAG_ITEM_ZONE8A_SPELL_TAG);
+    //     count += !FlagGet(FLAG_ITEM_ZONE8A_POTION_X2);
     //     count += !FlagGet(FLAG_ITEM_ZONE8B_DUSK_BALL);
     //     count += !FlagGet(FLAG_ITEM_ZONE8B_HARD_STONE);
     //     count += !FlagGet(FLAG_ITEM_ZONE8B_SUPER_POTION);
     //     count += !FlagGet(FLAG_ITEM_ZONE8C_FULL_HEAL);
     //     count += !FlagGet(FLAG_ITEM_ZONE8C_NEVER_MELT_ICE);
-    //     count += !FlagGet(FLAG_ITEM_ZONE8C_SUPER_REPEL);
+    //     count += !FlagGet(FLAG_ITEM_ZONE8C_SUPER_POTION);
     //     if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
     //     {
     //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE7A_ASPEAR_BERRY);
