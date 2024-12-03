@@ -2296,12 +2296,14 @@ Level: 17
 Morelull
 Level: 17
 
-=== TRAINER_PBL_MIRAGE_LEVIATHAN_8 ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+=== TRAINER_PBL_ALISTAIR_LEVIATHAN_8 ===
+Name: Alistair
+Class: Roughneck
+Pic: Roughneck
+Music: Suspicious
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Mugshot: Purple
 
 Grimer @ Poison Barb
 Ability: Poison Touch
@@ -2328,7 +2330,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Venoshock
 - Vacuum Wave
 - Fake Out
-- Feint Attack
+- Thief
 
 Mightyena @ Sitrus Berry
 Ability: Strong Jaw
@@ -2336,8 +2338,8 @@ Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bite
 - Howl
-- Ice Fang
-- Thunder Fang
+- Headbutt
+- Trailblaze
 
 Throh @ Black Belt
 Ability: Guts
@@ -2348,39 +2350,68 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Power-Up Punch
 - Rock Tomb
 
-=== TRAINER_PBL_MIRAGE_LEVIATHAN_8_BRUTAL ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+=== TRAINER_PBL_ALISTAIR_LEVIATHAN_8_BRUTAL ===
+Name: Alistair
+Class: Roughneck
+Pic: Roughneck
+Music: Suspicious
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Mugshot: Purple
 
-Metang
-Brave Nature
-Level: 42
+Grimer @ Poison Barb
+Ability: Poison Touch
+Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Sludge
+- Acid Spray
+- Shadow Sneak
+- Power-Up Punch
 
-=== TRAINER_PBL_WALLY_ZONE8D ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
+Drifloon @ Sharp Beak
+Ability: Aftermath
+Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Hex
+- Air Cutter
+- Clear Smog
+- Defog
+
+Croagunk @ Sitrus Berry
+Ability: Poison Touch
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Venoshock
+- Vacuum Wave
+- Fake Out
+- Thief
+
+Mightyena @ Sitrus Berry
+Ability: Strong Jaw
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Howl
+- Headbutt
+- Trailblaze
+
+Throh @ Black Belt
+Ability: Guts
+Level: 20
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Revenge
+- Seismic Toss
+- Power-Up Punch
+- Rock Tomb
+
+Seviper @ Sitrus Berry
+Ability: Merciless
+Level: 20
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Venoshock
+- Poison Fang
+- Thief
+- Glare
 
 === TRAINER_PBL_COOPER ===
 Name: STEVEN

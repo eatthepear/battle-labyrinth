@@ -430,6 +430,14 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(LEAF, Leaf),
     TRAINER_SPRITE(RS_BRENDAN, RubySapphireBrendan),
     TRAINER_SPRITE(RS_MAY, RubySapphireMay),
+    TRAINER_SPRITE(WAITER, Waiter),
+    TRAINER_SPRITE(WAITRESS, Waitress),
+    TRAINER_SPRITE(FAIRY_TALE_GIRL, FairyTaleGirl),
+    TRAINER_SPRITE(SOCIALITE, Socialite),
+    TRAINER_SPRITE(BACKPACKER_F, BackpackerF),
+    TRAINER_SPRITE(WORKER, Worker),
+    TRAINER_SPRITE(ICE_WORKER, IceWorker),
+    TRAINER_SPRITE(ROUGHNECK, Roughneck),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =
