@@ -5195,7 +5195,7 @@
             },
             {
 #line 2197
-            .species = SPECIES_NOSEPASS,
+            .species = SPECIES_CUFANT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2199
             .ivs = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -5497,7 +5497,7 @@
             },
             {
 #line 2293
-            .species = SPECIES_CUFANT,
+            .species = SPECIES_CHARCADET,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2295
             .ivs = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
