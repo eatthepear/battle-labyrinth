@@ -597,71 +597,7 @@
               {
                 "min_level": 9,
                 "max_level": 10,
-                "species": "SPECIES_PONYTA_GALARIAN"
-              },
-              {
-                "min_level": 9,
-                "max_level": 10,
-                "species": "SPECIES_CHINGLING"
-              },
-              {
-                "min_level": 9,
-                "max_level": 10,
-                "species": "SPECIES_DROWZEE"
-              },
-              {
-                "min_level": 9,
-                "max_level": 10,
-                "species": "SPECIES_MIME_JR"
-              },
-              {
-                "min_level": 9,
-                "max_level": 10,
-                "species": "SPECIES_ESPURR"
-              },
-              {
-                "min_level": 9,
-                "max_level": 10,
-                "species": "SPECIES_MUNNA"
-              },
-              {
-                "min_level": 9,
-                "max_level": 10,
-                "species": "SPECIES_SPINDA"
-              },
-              {
-                "min_level": 9,
-                "max_level": 10,
-                "species": "SPECIES_FARFETCHD"
-              }
-            ]
-          }
-        },
-        {
-          "map": "MAP_ZONE4B",
-          "base_label": "gZone4B",
-          "land_mons": {
-            "encounter_rate": 10,
-            "mons": [
-              {
-                "min_level": 9,
-                "max_level": 10,
-                "species": "SPECIES_NICKIT"
-              },
-              {
-                "min_level": 9,
-                "max_level": 10,
-                "species": "SPECIES_GRUBBIN"
-              },
-              {
-                "min_level": 9,
-                "max_level": 10,
-                "species": "SPECIES_HOUNDOUR"
-              },
-              {
-                "min_level": 9,
-                "max_level": 10,
-                "species": "SPECIES_PONYTA_GALARIAN"
+                "species": "SPECIES_PHANTUMP"
               },
               {
                 "min_level": 9,
@@ -702,8 +638,8 @@
           }
         },
         {
-          "map": "MAP_ZONE4C",
-          "base_label": "gZone4C",
+          "map": "MAP_ZONE4B",
+          "base_label": "gZone4B",
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
@@ -725,7 +661,7 @@
               {
                 "min_level": 9,
                 "max_level": 10,
-                "species": "SPECIES_PONYTA_GALARIAN"
+                "species": "SPECIES_PHANTUMP"
               },
               {
                 "min_level": 9,
@@ -755,12 +691,76 @@
               {
                 "min_level": 9,
                 "max_level": 10,
-                "species": "SPECIES_PUMPKABOO"
+                "species": "SPECIES_SPINDA"
+              },
+              {
+                "min_level": 9,
+                "max_level": 10,
+                "species": "SPECIES_FARFETCHD"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ZONE4C",
+          "base_label": "gZone4C",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 9,
+                "max_level": 10,
+                "species": "SPECIES_NICKIT"
+              },
+              {
+                "min_level": 9,
+                "max_level": 10,
+                "species": "SPECIES_GRUBBIN"
+              },
+              {
+                "min_level": 9,
+                "max_level": 10,
+                "species": "SPECIES_HOUNDOUR"
               },
               {
                 "min_level": 9,
                 "max_level": 10,
                 "species": "SPECIES_PHANTUMP"
+              },
+              {
+                "min_level": 9,
+                "max_level": 10,
+                "species": "SPECIES_CHINGLING"
+              },
+              {
+                "min_level": 9,
+                "max_level": 10,
+                "species": "SPECIES_DROWZEE"
+              },
+              {
+                "min_level": 9,
+                "max_level": 10,
+                "species": "SPECIES_MIME_JR"
+              },
+              {
+                "min_level": 9,
+                "max_level": 10,
+                "species": "SPECIES_ESPURR"
+              },
+              {
+                "min_level": 9,
+                "max_level": 10,
+                "species": "SPECIES_MUNNA"
+              },
+              {
+                "min_level": 9,
+                "max_level": 10,
+                "species": "SPECIES_SPRITZEE"
+              },
+              {
+                "min_level": 9,
+                "max_level": 10,
+                "species": "SPECIES_SWIRLIX"
               }
             ]
           }
@@ -789,7 +789,7 @@
               {
                 "min_level": 9,
                 "max_level": 10,
-                "species": "SPECIES_PONYTA_GALARIAN"
+                "species": "SPECIES_PHANTUMP"
               },
               {
                 "min_level": 9,
@@ -853,7 +853,7 @@
               {
                 "min_level": 9,
                 "max_level": 10,
-                "species": "SPECIES_PONYTA_GALARIAN"
+                "species": "SPECIES_PHANTUMP"
               },
               {
                 "min_level": 9,
@@ -883,12 +883,12 @@
               {
                 "min_level": 9,
                 "max_level": 10,
-                "species": "SPECIES_SPRITZEE"
+                "species": "SPECIES_PONYTA_GALARIAN"
               },
               {
                 "min_level": 9,
                 "max_level": 10,
-                "species": "SPECIES_SWIRLIX"
+                "species": "SPECIES_PONYTA_GALARIAN"
               }
             ]
           }
@@ -1095,7 +1095,7 @@
               {
                 "min_level": 13,
                 "max_level": 14,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_KRABBY"
               },
               {
                 "min_level": 13,
@@ -1125,7 +1125,7 @@
               {
                 "min_level": 13,
                 "max_level": 14,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_KRABBY"
               },
               {
                 "min_level": 13,

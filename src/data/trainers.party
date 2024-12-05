@@ -1173,23 +1173,23 @@ Music: Twins
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: Yes
 
-Pumpkaboo
-Ability: Flare Boost
+Hatenna
+Ability: Healer
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Razor Leaf
-- Leech Seed
-- Disable
-- Shadow Sneak
+- Play Nice
+- Life Dew
+- Disarming Voice
+- Psybeam
 
-Phantump
-Ability: Natural Cure
+Impidimp
+Ability: Pickpocket
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Branch Poke
-- Leech Seed
-- Disable
-- Feint Attack
+- Confide
+- Flatter
+- Fake Out
+- Assurance
 
 === TRAINER_PBL_CLINTON ===
 Name: Clinton
@@ -1299,14 +1299,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Leer
 - Dizzy Punch
 
-Hatenna
-Ability: Healer
+Venipede
+Ability: Poison Point
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Play Nice
-- Life Dew
-- Disarming Voice
-- Psybeam
+- Screech
+- Bug Bite
+- Bite
+- Twineedle
 
 Deerling
 Ability: Serene Grace
@@ -1389,14 +1389,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Slam
 - Bulldoze
 
-Impidimp
-Ability: Pickpocket
+Phantump
+Ability: Natural Cure
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Confide
-- Flatter
-- Fake Out
-- Assurance
+- Branch Poke
+- Leech Seed
+- Disable
+- Feint Attack
 
 Rookidee
 Ability: Big Pecks
@@ -1595,15 +1595,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Water Pulse
 - Tailwind
 
-Shellos
-Ability: Storm Drain
+Krabby
+Ability: Hyper Cutter
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Ancient Power
-- Yawn
-- Water Pulse
-- Hidden Power
-/* Hidden Power Fighting */
+- Mud Shot
+- Stomp
+- Bubble Beam
+- Slam
 
 Chewtle
 Ability: Strong Jaw
@@ -1722,14 +1721,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Razor Leaf
 - Bulldoze
 
-Venipede
-Ability: Poison Point
+Pachirisu
+Ability: Volt Absorb
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bug Bite
-- Bite
-- Twineedle
-- Screech
+- Thunder Shock
+- Flatter
+- Spark
+- Swift
 
 === TRAINER_PBL_DUDLEY ===
 Name: Dudley
@@ -1993,7 +1992,7 @@ Level: 17
 Fomantis
 Level: 17
 
-Buizel
+Shellos
 Level: 17
 
 === TRAINER_PBL_PAIGE ===
@@ -2029,7 +2028,7 @@ Random Lead: Yes
 Tympole
 Level: 17
 
-Pachirisu
+Mudbray
 Level: 17
 
 Aipom
@@ -2251,7 +2250,7 @@ Level: 17
 Nacli
 Level: 17
 
-Mudbray
+Shuckle
 Level: 17
 
 === TRAINER_PBL_NEIL ===
