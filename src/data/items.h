@@ -2993,9 +2993,10 @@ const struct Item gItemsInfo[] =
             "An ornament that\n"
             "depicts a Pokémon\n"
             "from Alola."),
-        .pocket = POCKET_TREASURES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .pocket = POCKET_CONSUMABLES,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
         .iconPic = gItemIcon_StrangeSouvenir,
         .iconPalette = gItemIconPalette_StrangeSouvenir,
@@ -14023,12 +14024,14 @@ const struct Item gItemsInfo[] =
     {
         .name = HANDLE_EXPANDED_ITEM_NAME("JublifeMuffin", "Jubilife Muffin"),
         .price = 250,
-        .description = sFullHealDesc,
-        .pocket = POCKET_MEDICINE,
+        .description = COMPOUND_STRING(
+            "A tasty muffin\n"
+            "that's loved by\n"
+            "certain Pokémon."),
+        .pocket = POCKET_CONSUMABLES,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
-        .effect = gItemEffect_FullHeal,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
         .iconPic = gItemIcon_JubilifeMuffin,
         .iconPalette = gItemIconPalette_JubilifeMuffin,

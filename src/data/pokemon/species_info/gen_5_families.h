@@ -560,7 +560,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sDewottLevelUpLearnset,
         .teachableLearnset = sDewottTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SAMUROTT},
-                                {EVO_ITEM, ITEM_WATER_STONE, SPECIES_SAMUROTT_HISUIAN}),
+                                {EVO_ITEM, ITEM_JUBILIFE_MUFFIN, SPECIES_SAMUROTT_HISUIAN}),
     },
 
     [SPECIES_SAMUROTT] =
@@ -3640,7 +3640,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sPetililTeachableLearnset,
         .eggMoveLearnset = sPetililEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_LILLIGANT},
-                                {EVO_ITEM, ITEM_LEAF_STONE, SPECIES_LILLIGANT_HISUIAN}),
+                                {EVO_ITEM, ITEM_JUBILIFE_MUFFIN, SPECIES_LILLIGANT_HISUIAN}),
     },
 
     [SPECIES_LILLIGANT] =
@@ -3965,8 +3965,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sBasculinWhiteStripedLevelUpLearnset,
         .teachableLearnset = sBasculinWhiteStripedTeachableLearnset,
         .formSpeciesIdTable = sBasculinFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_ITEM_MALE, ITEM_DUSK_STONE, SPECIES_BASCULEGION_MALE},
-                                {EVO_ITEM_FEMALE, ITEM_DUSK_STONE, SPECIES_BASCULEGION_FEMALE}),
+        .evolutions = EVOLUTION({EVO_ITEM_MALE, ITEM_JUBILIFE_MUFFIN, SPECIES_BASCULEGION_MALE},
+                                {EVO_ITEM_FEMALE, ITEM_JUBILIFE_MUFFIN, SPECIES_BASCULEGION_FEMALE}),
     },
 
     [SPECIES_BASCULEGION_MALE] =
@@ -10052,7 +10052,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sRuffletLevelUpLearnset,
         .teachableLearnset = sRuffletTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_BRAVIARY},
-                                {EVO_MOVE, MOVE_AIR_SLASH, SPECIES_BRAVIARY_HISUIAN}),
+                                {EVO_ITEM, ITEM_JUBILIFE_MUFFIN, SPECIES_BRAVIARY_HISUIAN}),
     },
 
     [SPECIES_BRAVIARY] =
