@@ -269,6 +269,8 @@
 #define FLAG_RECEIVED_PORYGON                             0x14B
 #define FLAG_JOY_UPGRADED                                 0x14C
 #define FLAG_MARIE_NUZLOCKE_RECEIVED                      0x14D
+#define FLAG_ZONE5A_RECEIVED_PINK_SCARF                   0x14E
+#define FLAG_ZONE5A_RECEIVED_SURPRISE_MULCH               0x14F
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x200
@@ -406,12 +408,12 @@
 #define FLAG_ITEM_ZONE4E_POISON_BARB                                0x378
 #define FLAG_ITEM_ZONE5A_QUICK_BALL                                 0x30E
 #define FLAG_ITEM_ZONE5A_TM04                                       0x30F
-#define FLAG_ITEM_ZONE5A_MOON_STONE                                 0x371
+#define FLAG_ITEM_ZONE5A_LAX_MINT                                   0x371
 #define FLAG_ITEM_ZONE5A_MIRACLE_SEED                               0x37A
 #define FLAG_ITEM_ZONE5B_TM03                                       0x372
 #define FLAG_ITEM_ZONE5B_POTION_X2                                  0x373
 #define FLAG_ITEM_ZONE5B_GEMS                                       0x374
-#define FLAG_ITEM_ZONE5B_SUN_STONE                                  0x375
+#define FLAG_ITEM_ZONE5B_GENTLE_MINT                                0x375
 #define FLAG_ITEM_ZONE6A_TM07                                       0x310
 #define FLAG_ITEM_ZONE6A_NET_BALL                                   0x311
 #define FLAG_ITEM_ZONE6A_NEST_BALL                                  0x312
@@ -419,7 +421,7 @@
 #define FLAG_ITEM_ZONE7A_SHARP_BEAK                                 0x313
 #define FLAG_ITEM_ZONE7A_POTION_X2                                  0x314
 #define FLAG_ITEM_ZONE7A_GEMS                                       0x315
-#define FLAG_ITEM_ZONE7A_BERRY_JUICE                                0x316
+#define FLAG_ITEM_ZONE7A_SERIOUS_MINT                               0x316
 #define FLAG_ITEM_ZONE7A_BLACK_BELT                                 0x317
 #define FLAG_ITEM_ZONE7A_SUPER_POTION                               0x318
 #define FLAG_ITEM_ZONE7A_GREAT_BALL                                 0x319

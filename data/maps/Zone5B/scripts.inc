@@ -20,7 +20,7 @@ Zone5B_MapScripts_MAP_SCRIPT_ON_RESUME_5:
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST
 Zone5B_MapScripts_MAP_SCRIPT_ON_RESUME_9:
 # 18 "data/maps/Zone5B/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE5B_SUN_STONE, Zone5B_MapScripts_MAP_SCRIPT_ON_RESUME_13
+	goto_if_set FLAG_ITEM_ZONE5B_GENTLE_MINT, Zone5B_MapScripts_MAP_SCRIPT_ON_RESUME_13
 # 21 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST
 	return
@@ -756,11 +756,11 @@ Zone5B_EventScript_ItemGems_2:
 	end
 
 
-Zone5B_EventScript_ItemSunStone::
+Zone5B_EventScript_GentleMint::
 # 354 "data/maps/Zone5B/scripts.pory"
 	lock
 # 355 "data/maps/Zone5B/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE5B_SUN_STONE, Zone5B_EventScript_ItemSunStone_2
+	goto_if_set FLAG_ITEM_ZONE5B_GENTLE_MINT, Zone5B_EventScript_GentleMint_2
 # 360 "data/maps/Zone5B/scripts.pory"
 	waitse
 # 361 "data/maps/Zone5B/scripts.pory"
@@ -768,7 +768,7 @@ Zone5B_EventScript_ItemSunStone::
 # 362 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 363 "data/maps/Zone5B/scripts.pory"
-	setflag FLAG_ITEM_ZONE5B_SUN_STONE
+	setflag FLAG_ITEM_ZONE5B_GENTLE_MINT
 # 364 "data/maps/Zone5B/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 365 "data/maps/Zone5B/scripts.pory"
@@ -777,7 +777,7 @@ Zone5B_EventScript_ItemSunStone::
 	release
 	end
 
-Zone5B_EventScript_ItemSunStone_2:
+Zone5B_EventScript_GentleMint_2:
 # 356 "data/maps/Zone5B/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 357 "data/maps/Zone5B/scripts.pory"

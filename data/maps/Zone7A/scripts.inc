@@ -20,7 +20,7 @@ Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_5:
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST
 Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_9:
 # 18 "data/maps/Zone7A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE7A_BERRY_JUICE, Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_14
+	goto_if_set FLAG_ITEM_ZONE7A_SERIOUS_MINT, Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_14
 # 21 "data/maps/Zone7A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST
 Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_13:
@@ -253,11 +253,11 @@ Zone7A_EventScript_ItemGems_2:
 	end
 
 
-Zone7A_EventScript_ItemBerryJuice::
+Zone7A_EventScript_ItemSeriousMint::
 # 136 "data/maps/Zone7A/scripts.pory"
 	lock
 # 137 "data/maps/Zone7A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE7A_BERRY_JUICE, Zone7A_EventScript_ItemBerryJuice_2
+	goto_if_set FLAG_ITEM_ZONE7A_SERIOUS_MINT, Zone7A_EventScript_ItemSeriousMint_2
 # 142 "data/maps/Zone7A/scripts.pory"
 	waitse
 # 143 "data/maps/Zone7A/scripts.pory"
@@ -265,16 +265,16 @@ Zone7A_EventScript_ItemBerryJuice::
 # 144 "data/maps/Zone7A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 145 "data/maps/Zone7A/scripts.pory"
-	setflag FLAG_ITEM_ZONE7A_BERRY_JUICE
+	setflag FLAG_ITEM_ZONE7A_SERIOUS_MINT
 # 146 "data/maps/Zone7A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 147 "data/maps/Zone7A/scripts.pory"
-	finditem ITEM_BERRY_JUICE, 1
+	finditem ITEM_SERIOUS_MINT, 1
 # 148 "data/maps/Zone7A/scripts.pory"
 	release
 	end
 
-Zone7A_EventScript_ItemBerryJuice_2:
+Zone7A_EventScript_ItemSeriousMint_2:
 # 138 "data/maps/Zone7A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 139 "data/maps/Zone7A/scripts.pory"
