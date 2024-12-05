@@ -852,7 +852,7 @@ Debug_CheatStart_23:
 # 799 "data/scripts/debug.pory"
 	setflag FLAG_JOY_INTRO
 # 800 "data/scripts/debug.pory"
-	setvar VAR_ZONE_0_STATE, 3
+	setvar VAR_ZONE_0_STATE, 2
 # 801 "data/scripts/debug.pory"
 	additem ITEM_ORAN_BERRY, 4
 # 802 "data/scripts/debug.pory"
@@ -864,20 +864,22 @@ Debug_CheatStart_23:
 # 805 "data/scripts/debug.pory"
 	additem ITEM_ANTIDOTE, 2
 # 806 "data/scripts/debug.pory"
-	callnative DisableBattleAnimationSetting
+	additem ITEM_WAILMER_PAIL
 # 807 "data/scripts/debug.pory"
-	random 5
+	callnative DisableBattleAnimationSetting
 # 808 "data/scripts/debug.pory"
-	copyvar VAR_WILD_MUSIC, VAR_RESULT
+	random 5
 # 809 "data/scripts/debug.pory"
-	random 5
+	copyvar VAR_WILD_MUSIC, VAR_RESULT
 # 810 "data/scripts/debug.pory"
-	copyvar VAR_TRAINER_MUSIC, VAR_RESULT
-# 811 "data/scripts/debug.pory"
 	random 5
+# 811 "data/scripts/debug.pory"
+	copyvar VAR_TRAINER_MUSIC, VAR_RESULT
 # 812 "data/scripts/debug.pory"
+	random 5
+# 813 "data/scripts/debug.pory"
 	copyvar VAR_LEVIATHAN_MUSIC, VAR_RESULT
-# 815 "data/scripts/debug.pory"
+# 816 "data/scripts/debug.pory"
 	release
 	end
 
@@ -988,5 +990,5 @@ Debug_CheatStart_24:
 
 
 gText_ObtainedDebugMon::
-# 819 "data/scripts/debug.pory"
+# 820 "data/scripts/debug.pory"
 	.string "Obtained {STR_VAR_1}!$"
