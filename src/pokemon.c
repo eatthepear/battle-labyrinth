@@ -4047,8 +4047,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
     }
     case MON_DATA_HIDDEN_NATURE:
     {
-        u32 nature = GetNatureFromPersonality(boxMon->personality);
-        retVal = nature ^ boxMon->hiddenNatureModifier;
+        retVal = boxMon->nature;
+        // u32 nature = GetNatureFromPersonality(boxMon->personality);
+        // retVal = nature ^ boxMon->hiddenNatureModifier;
         break;
     }
     case MON_DATA_DAYS_SINCE_FORM_CHANGE:
@@ -4349,10 +4350,11 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
     }
     case MON_DATA_HIDDEN_NATURE:
     {
-        u32 nature = GetNatureFromPersonality(boxMon->personality);
-        u32 hiddenNature;
-        SET8(hiddenNature);
-        boxMon->hiddenNatureModifier = nature ^ hiddenNature;
+        SET8(boxMon->nature);
+        // u32 nature = GetNatureFromPersonality(boxMon->personality);
+        // u32 hiddenNature;
+        // SET8(hiddenNature);
+        // boxMon->hiddenNatureModifier = nature ^ hiddenNature;
         break;
     }
     case MON_DATA_DAYS_SINCE_FORM_CHANGE:

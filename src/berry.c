@@ -2291,8 +2291,8 @@ bool8 PlayerHasMulch(void)
         return TRUE;
     if (CheckBagHasItem(ITEM_RICH_MULCH, 1))
         return TRUE;
-    if (CheckBagHasItem(ITEM_SURPRISE_MULCH, 1))
-        return TRUE;
+    // if (CheckBagHasItem(ITEM_SURPRISE_MULCH, 1))
+    //     return TRUE;
     if (CheckBagHasItem(ITEM_BOOST_MULCH, 1))
         return TRUE;
     if (CheckBagHasItem(ITEM_AMAZE_MULCH, 1))

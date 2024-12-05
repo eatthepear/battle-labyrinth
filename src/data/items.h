@@ -3382,15 +3382,18 @@ const struct Item gItemsInfo[] =
 #if OW_BERRY_MULCH_USAGE == TRUE
         .description = COMPOUND_STRING(
             "A fertilizer that\n"
-            "ups the chance of\n"
-            "Berry mutations."),
+            "loved by a certain\n"
+            "Pokémon."),
 #else
-        .description = sGenericMulchDesc,
+        .description = COMPOUND_STRING(
+            "A fertilizer that\n"
+            "loved by a certain\n"
+            "Pokémon."),
 #endif
-        .pocket = POCKET_TREASURES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = ITEM_TO_MULCH(ITEM_SURPRISE_MULCH),
+        .pocket = POCKET_CONSUMABLES,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
         .iconPic = gItemIcon_Mulch,
         .iconPalette = gItemIconPalette_SurpriseMulch,
@@ -7366,14 +7369,15 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Pink Scarf"),
         .pluralName = _("Pink Scarves"),
-        .price = 100,
+        .price = 2000,
         .description = COMPOUND_STRING(
-            "A hold item that\n"
-            "raises Cute in\n"
-            "Contests."),
-        .pocket = POCKET_BATTLE_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+            "A cute scarf\n"
+            "loved by a certain\n"
+            "Pokémon."),
+        .pocket = POCKET_CONSUMABLES,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 10,
         .iconPic = gItemIcon_Scarf,
         .iconPalette = gItemIconPalette_PinkScarf,
