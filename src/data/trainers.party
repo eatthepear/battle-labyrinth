@@ -1272,14 +1272,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
 - Acid Spray
 
-Surskit
-Ability: Swift Swim
+Slowpoke
+Ability: Own Tempo
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Mud Shot
-- Mind Reader
-- Bug Bite
-- Bubble Beam
+- Water Gun
+- Yawn
+- Disable
+- Confusion
 
 === TRAINER_PBL_RYAN ===
 Name: Ryan
@@ -1641,14 +1641,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Double Kick
 - Flame Wheel
 
-Slowpoke Galarian
-Ability: Own Tempo
+Slakoth
+Ability: Truant
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Acid
-- Yawn
-- Disable
-- Confusion
+- Snore
+- Slash
+- Feint Attack
+- Slack Off
 
 === TRAINER_PBL_CONSTANCE ===
 Name: Constance
@@ -2026,7 +2026,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
 Random Lead: Yes
 
-Slakoth
+Tympole
 Level: 17
 
 Pachirisu
@@ -2290,7 +2290,7 @@ Level: 17
 Woobat
 Level: 17
 
-Charcadet
+Surskit
 Level: 17
 
 Morelull

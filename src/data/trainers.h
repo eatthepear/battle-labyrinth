@@ -2888,22 +2888,22 @@
             },
             {
 #line 1275
-            .species = SPECIES_SURSKIT,
+            .species = SPECIES_SLOWPOKE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1278
             .ivs = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 1276
-            .ability = ABILITY_SWIFT_SWIM,
+            .ability = ABILITY_OWN_TEMPO,
 #line 1277
             .lvl = 13,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 1279
-                MOVE_MUD_SHOT,
-                MOVE_MIND_READER,
-                MOVE_BUG_BITE,
-                MOVE_BUBBLE_BEAM,
+                MOVE_WATER_GUN,
+                MOVE_YAWN,
+                MOVE_DISABLE,
+                MOVE_CONFUSION,
             },
             },
         },
@@ -3745,22 +3745,22 @@
             },
             {
 #line 1644
-            .species = SPECIES_SLOWPOKE_GALARIAN,
+            .species = SPECIES_SLAKOTH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1647
             .ivs = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 1645
-            .ability = ABILITY_OWN_TEMPO,
+            .ability = ABILITY_TRUANT,
 #line 1646
             .lvl = 15,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 1648
-                MOVE_ACID,
-                MOVE_YAWN,
-                MOVE_DISABLE,
-                MOVE_CONFUSION,
+                MOVE_SNORE,
+                MOVE_SLASH,
+                MOVE_FEINT_ATTACK,
+                MOVE_SLACK_OFF,
             },
             },
         },
@@ -4717,7 +4717,7 @@
         {
             {
 #line 2029
-            .species = SPECIES_SLAKOTH,
+            .species = SPECIES_TYMPOLE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2031
             .ivs = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -5497,7 +5497,7 @@
             },
             {
 #line 2293
-            .species = SPECIES_CHARCADET,
+            .species = SPECIES_SURSKIT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2295
             .ivs = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
