@@ -4778,7 +4778,7 @@
 #line 2045
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
 #line 2047
-        .randomLead = TRUE,
+        .randomLead = FALSE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -4823,7 +4823,7 @@
 #line 2060
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
 #line 2062
-        .randomLead = TRUE,
+        .randomLead = FALSE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -4944,7 +4944,8 @@
 #line 2102
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
 #line 2104
-        .randomLead = TRUE,
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_PURPLE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -4964,10 +4965,10 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2110
-                MOVE_AQUA_JET,
-                MOVE_WATER_PULSE,
-                MOVE_SLAM,
-                MOVE_MUD_SLAP,
+                MOVE_ROCK_TOMB,
+                MOVE_METAL_CLAW,
+                MOVE_ROCK_SMASH,
+                MOVE_ROCK_THROW,
             },
             },
             {
@@ -4986,10 +4987,10 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2119
-                MOVE_AQUA_JET,
-                MOVE_WATER_PULSE,
-                MOVE_SLAM,
-                MOVE_MUD_SLAP,
+                MOVE_PARABOLIC_CHARGE,
+                MOVE_DRAINING_KISS,
+                MOVE_NUZZLE,
+                MOVE_CHARGE_BEAM,
             },
             },
         },
@@ -5007,11 +5008,12 @@
 #line 2128
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 2130
-        .doubleBattle = FALSE,
+        .doubleBattle = TRUE,
 #line 2129
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
 #line 2131
-        .randomLead = TRUE,
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_PURPLE,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -5031,10 +5033,10 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2137
-                MOVE_AQUA_JET,
-                MOVE_WATER_PULSE,
-                MOVE_SLAM,
-                MOVE_MUD_SLAP,
+                MOVE_ROCK_TOMB,
+                MOVE_METAL_CLAW,
+                MOVE_ROCK_SMASH,
+                MOVE_ROCK_THROW,
             },
             },
             {
@@ -5053,10 +5055,10 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2146
-                MOVE_AQUA_JET,
-                MOVE_WATER_PULSE,
-                MOVE_SLAM,
-                MOVE_MUD_SLAP,
+                MOVE_PARABOLIC_CHARGE,
+                MOVE_DRAINING_KISS,
+                MOVE_NUZZLE,
+                MOVE_CHARGE_BEAM,
             },
             },
             {
@@ -5075,10 +5077,10 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2155
-                MOVE_AQUA_JET,
-                MOVE_WATER_PULSE,
-                MOVE_SLAM,
-                MOVE_MUD_SLAP,
+                MOVE_DRAGON_BREATH,
+                MOVE_GLARE,
+                MOVE_NATURAL_GIFT,
+                MOVE_SWIFT,
             },
             },
         },
@@ -5096,7 +5098,7 @@
 #line 2164
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 2166
-        .doubleBattle = FALSE,
+        .doubleBattle = TRUE,
 #line 2165
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
 #line 2167
