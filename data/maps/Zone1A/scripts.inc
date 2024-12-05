@@ -1092,206 +1092,260 @@ Zone1A_EventScript_LeviathanBattle::
 	goto_if_set FLAG_SETTINGS_BRUTAL, Zone1A_EventScript_LeviathanBattle_2
 # 467 "data/maps/Zone1A/scripts.pory"
 	goto_if_set FLAG_SETTINGS_CHALLENGE, Zone1A_EventScript_LeviathanBattle_2
-# 470 "data/maps/Zone1A/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1, Zone1A_Text_Leviathan1Defeat
-Zone1A_EventScript_LeviathanBattle_1:
-# 472 "data/maps/Zone1A/scripts.pory"
-	clearflag FLAG_FORCE_BATTLE_ANIM_ON
-# 473 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_EventScript_LeviathanBattle_Text_0, MSGBOX_DEFAULT
-# 474 "data/maps/Zone1A/scripts.pory"
-	giveitem ITEM_EXP_SHARE
-# 475 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_EventScript_LeviathanBattle_Text_1
-# 476 "data/maps/Zone1A/scripts.pory"
-	closemessage
 # 477 "data/maps/Zone1A/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	switch VAR_STARTER_MON
 # 478 "data/maps/Zone1A/scripts.pory"
-	removeobject 1
-# 479 "data/maps/Zone1A/scripts.pory"
-	setflag FLAG_BEAT_LEVIATHAN_1
+	case 0, Zone1A_EventScript_LeviathanBattle_12
 # 480 "data/maps/Zone1A/scripts.pory"
+	case 1, Zone1A_EventScript_LeviathanBattle_13
+# 482 "data/maps/Zone1A/scripts.pory"
+	case 2, Zone1A_EventScript_LeviathanBattle_14
+Zone1A_EventScript_LeviathanBattle_1:
+# 486 "data/maps/Zone1A/scripts.pory"
+	settrainerflag TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER
+# 487 "data/maps/Zone1A/scripts.pory"
+	settrainerflag TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_BRUTAL
+# 488 "data/maps/Zone1A/scripts.pory"
+	settrainerflag TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER
+# 489 "data/maps/Zone1A/scripts.pory"
+	settrainerflag TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_BRUTAL
+# 490 "data/maps/Zone1A/scripts.pory"
+	settrainerflag TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER
+# 491 "data/maps/Zone1A/scripts.pory"
+	settrainerflag TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_BRUTAL
+# 492 "data/maps/Zone1A/scripts.pory"
+	clearflag FLAG_FORCE_BATTLE_ANIM_ON
+# 493 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_LeviathanBattle_Text_0, MSGBOX_DEFAULT
+# 494 "data/maps/Zone1A/scripts.pory"
+	giveitem ITEM_EXP_SHARE
+# 495 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_LeviathanBattle_Text_1
+# 496 "data/maps/Zone1A/scripts.pory"
+	closemessage
+# 497 "data/maps/Zone1A/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 498 "data/maps/Zone1A/scripts.pory"
+	removeobject 1
+# 499 "data/maps/Zone1A/scripts.pory"
+	setflag FLAG_BEAT_LEVIATHAN_1
+# 500 "data/maps/Zone1A/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 481 "data/maps/Zone1A/scripts.pory"
+# 501 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
 Zone1A_EventScript_LeviathanBattle_2:
 # 468 "data/maps/Zone1A/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1_BRUTAL, Zone1A_Text_Leviathan1Defeat
+	switch VAR_STARTER_MON
+# 469 "data/maps/Zone1A/scripts.pory"
+	case 0, Zone1A_EventScript_LeviathanBattle_8
+# 471 "data/maps/Zone1A/scripts.pory"
+	case 1, Zone1A_EventScript_LeviathanBattle_9
+# 473 "data/maps/Zone1A/scripts.pory"
+	case 2, Zone1A_EventScript_LeviathanBattle_10
+	goto Zone1A_EventScript_LeviathanBattle_1
+
+Zone1A_EventScript_LeviathanBattle_8:
+# 470 "data/maps/Zone1A/scripts.pory"
+	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_BRUTAL, Zone1A_Text_Leviathan1Defeat
+	goto Zone1A_EventScript_LeviathanBattle_1
+
+Zone1A_EventScript_LeviathanBattle_9:
+# 472 "data/maps/Zone1A/scripts.pory"
+	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_BRUTAL, Zone1A_Text_Leviathan1Defeat
+	goto Zone1A_EventScript_LeviathanBattle_1
+
+Zone1A_EventScript_LeviathanBattle_10:
+# 474 "data/maps/Zone1A/scripts.pory"
+	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_BRUTAL, Zone1A_Text_Leviathan1Defeat
+	goto Zone1A_EventScript_LeviathanBattle_1
+
+Zone1A_EventScript_LeviathanBattle_12:
+# 479 "data/maps/Zone1A/scripts.pory"
+	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER, Zone1A_Text_Leviathan1Defeat
+	goto Zone1A_EventScript_LeviathanBattle_1
+
+Zone1A_EventScript_LeviathanBattle_13:
+# 481 "data/maps/Zone1A/scripts.pory"
+	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER, Zone1A_Text_Leviathan1Defeat
+	goto Zone1A_EventScript_LeviathanBattle_1
+
+Zone1A_EventScript_LeviathanBattle_14:
+# 483 "data/maps/Zone1A/scripts.pory"
+	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER, Zone1A_Text_Leviathan1Defeat
 	goto Zone1A_EventScript_LeviathanBattle_1
 
 
 Zone1A_EventScript_ItemPotion::
-# 506 "data/maps/Zone1A/scripts.pory"
+# 526 "data/maps/Zone1A/scripts.pory"
 	lock
-# 507 "data/maps/Zone1A/scripts.pory"
+# 527 "data/maps/Zone1A/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE1A_POTION, Zone1A_EventScript_ItemPotion_2
-# 512 "data/maps/Zone1A/scripts.pory"
+# 532 "data/maps/Zone1A/scripts.pory"
 	waitse
-# 513 "data/maps/Zone1A/scripts.pory"
+# 533 "data/maps/Zone1A/scripts.pory"
 	removeobject VAR_LAST_TALKED
-# 514 "data/maps/Zone1A/scripts.pory"
+# 534 "data/maps/Zone1A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 515 "data/maps/Zone1A/scripts.pory"
+# 535 "data/maps/Zone1A/scripts.pory"
 	setflag FLAG_ITEM_ZONE1A_POTION
-# 516 "data/maps/Zone1A/scripts.pory"
+# 536 "data/maps/Zone1A/scripts.pory"
 	addobject VAR_LAST_TALKED
-# 517 "data/maps/Zone1A/scripts.pory"
+# 537 "data/maps/Zone1A/scripts.pory"
 	finditem ITEM_POTION, 1
-# 518 "data/maps/Zone1A/scripts.pory"
+# 538 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
 Zone1A_EventScript_ItemPotion_2:
-# 508 "data/maps/Zone1A/scripts.pory"
+# 528 "data/maps/Zone1A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 509 "data/maps/Zone1A/scripts.pory"
+# 529 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
 
 Zone1A_EventScript_ItemQuickClaw::
-# 523 "data/maps/Zone1A/scripts.pory"
+# 543 "data/maps/Zone1A/scripts.pory"
 	lock
-# 524 "data/maps/Zone1A/scripts.pory"
+# 544 "data/maps/Zone1A/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE1A_QUICK_CLAW, Zone1A_EventScript_ItemQuickClaw_2
-# 529 "data/maps/Zone1A/scripts.pory"
+# 549 "data/maps/Zone1A/scripts.pory"
 	waitse
-# 530 "data/maps/Zone1A/scripts.pory"
+# 550 "data/maps/Zone1A/scripts.pory"
 	removeobject VAR_LAST_TALKED
-# 531 "data/maps/Zone1A/scripts.pory"
+# 551 "data/maps/Zone1A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 532 "data/maps/Zone1A/scripts.pory"
+# 552 "data/maps/Zone1A/scripts.pory"
 	setflag FLAG_ITEM_ZONE1A_QUICK_CLAW
-# 533 "data/maps/Zone1A/scripts.pory"
+# 553 "data/maps/Zone1A/scripts.pory"
 	addobject VAR_LAST_TALKED
-# 534 "data/maps/Zone1A/scripts.pory"
+# 554 "data/maps/Zone1A/scripts.pory"
 	finditem ITEM_QUICK_CLAW, 1
-# 535 "data/maps/Zone1A/scripts.pory"
+# 555 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
 Zone1A_EventScript_ItemQuickClaw_2:
-# 525 "data/maps/Zone1A/scripts.pory"
+# 545 "data/maps/Zone1A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 526 "data/maps/Zone1A/scripts.pory"
+# 546 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
 
 Zone1A_EventScript_PorygonSign::
-# 540 "data/maps/Zone1A/scripts.pory"
+# 560 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_EventScript_PorygonSign_Text_0, MSGBOX_DEFAULT
-# 541 "data/maps/Zone1A/scripts.pory"
+# 561 "data/maps/Zone1A/scripts.pory"
 	showmonpic SPECIES_PORYGON, 10, 3
-# 542 "data/maps/Zone1A/scripts.pory"
+# 562 "data/maps/Zone1A/scripts.pory"
 	setseenmon SPECIES_PORYGON
-# 543 "data/maps/Zone1A/scripts.pory"
+# 563 "data/maps/Zone1A/scripts.pory"
 	waitbuttonpress
-# 544 "data/maps/Zone1A/scripts.pory"
+# 564 "data/maps/Zone1A/scripts.pory"
 	hidemonpic
-# 545 "data/maps/Zone1A/scripts.pory"
+# 565 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
 
 Zone1A_EventScript_Sign_GoldenTree::
-# 550 "data/maps/Zone1A/scripts.pory"
+# 570 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_EventScript_Sign_GoldenTree_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone1A_EventScript_Sign_RunningShoes::
-# 555 "data/maps/Zone1A/scripts.pory"
+# 575 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_EventScript_Sign_RunningShoes_Text_0, MSGBOX_SIGN
 	end
 
 
-# 559 "data/maps/Zone1A/scripts.pory"
-
-# 560 "data/maps/Zone1A/scripts.pory"
-Zone1A_EventScript_Nina::
-# 561 "data/maps/Zone1A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_NINA, Zone1A_Text_NinaIntro, Zone1A_Text_NinaDefeat
-# 562 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_NinaPostBattle, MSGBOX_AUTOCLOSE
-# 563 "data/maps/Zone1A/scripts.pory"
-	end
-# 564 "data/maps/Zone1A/scripts.pory"
-
-# 565 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_NinaIntro:
-# 566 "data/maps/Zone1A/scripts.pory"
-	.string "Hey, you! Let's battle!$"
-# 567 "data/maps/Zone1A/scripts.pory"
-
-# 568 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_NinaDefeat:
-# 569 "data/maps/Zone1A/scripts.pory"
-	.string "Aww… Come on!$"
-# 570 "data/maps/Zone1A/scripts.pory"
-
-# 571 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_NinaPostBattle:
-# 572 "data/maps/Zone1A/scripts.pory"
-	.string "I always lose…$"
-# 573 "data/maps/Zone1A/scripts.pory"
-
-# 574 "data/maps/Zone1A/scripts.pory"
-Zone1A_EventScript_Mariam::
-# 575 "data/maps/Zone1A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_MARIAM, Zone1A_Text_MariamIntro, Zone1A_Text_MariamDefeat
-# 576 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_MariamPostBattle, MSGBOX_AUTOCLOSE
-# 577 "data/maps/Zone1A/scripts.pory"
-	end
-# 578 "data/maps/Zone1A/scripts.pory"
-
 # 579 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_MariamIntro:
-# 580 "data/maps/Zone1A/scripts.pory"
-	.string "Be careful, I'm tough!$"
-# 581 "data/maps/Zone1A/scripts.pory"
 
+# 580 "data/maps/Zone1A/scripts.pory"
+Zone1A_EventScript_Nina::
+# 581 "data/maps/Zone1A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_NINA, Zone1A_Text_NinaIntro, Zone1A_Text_NinaDefeat
 # 582 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_MariamDefeat:
+	msgbox Zone1A_Text_NinaPostBattle, MSGBOX_AUTOCLOSE
 # 583 "data/maps/Zone1A/scripts.pory"
-	.string "Sheesh!$"
+	end
 # 584 "data/maps/Zone1A/scripts.pory"
 
 # 585 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_MariamPostBattle:
+Zone1A_Text_NinaIntro:
 # 586 "data/maps/Zone1A/scripts.pory"
-	.string "Maybe I need more Pokémon.$"
+	.string "Hey, you! Let's battle!$"
 # 587 "data/maps/Zone1A/scripts.pory"
 
 # 588 "data/maps/Zone1A/scripts.pory"
-Zone1A_EventScript_Oscar::
+Zone1A_Text_NinaDefeat:
 # 589 "data/maps/Zone1A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_OSCAR, Zone1A_Text_OscarIntro, Zone1A_Text_OscarDefeat
+	.string "Aww… Come on!$"
 # 590 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_OscarPostBattle, MSGBOX_AUTOCLOSE
+
 # 591 "data/maps/Zone1A/scripts.pory"
-	end
+Zone1A_Text_NinaPostBattle:
 # 592 "data/maps/Zone1A/scripts.pory"
-
+	.string "I always lose…$"
 # 593 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_OscarIntro:
-# 594 "data/maps/Zone1A/scripts.pory"
-	.string "Fear my might!$"
-# 595 "data/maps/Zone1A/scripts.pory"
 
+# 594 "data/maps/Zone1A/scripts.pory"
+Zone1A_EventScript_Mariam::
+# 595 "data/maps/Zone1A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_MARIAM, Zone1A_Text_MariamIntro, Zone1A_Text_MariamDefeat
 # 596 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_OscarDefeat:
+	msgbox Zone1A_Text_MariamPostBattle, MSGBOX_AUTOCLOSE
 # 597 "data/maps/Zone1A/scripts.pory"
-	.string "Beaten! Disgrace!$"
+	end
 # 598 "data/maps/Zone1A/scripts.pory"
 
 # 599 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_OscarPostBattle:
+Zone1A_Text_MariamIntro:
 # 600 "data/maps/Zone1A/scripts.pory"
+	.string "Be careful, I'm tough!$"
+# 601 "data/maps/Zone1A/scripts.pory"
+
+# 602 "data/maps/Zone1A/scripts.pory"
+Zone1A_Text_MariamDefeat:
+# 603 "data/maps/Zone1A/scripts.pory"
+	.string "Sheesh!$"
+# 604 "data/maps/Zone1A/scripts.pory"
+
+# 605 "data/maps/Zone1A/scripts.pory"
+Zone1A_Text_MariamPostBattle:
+# 606 "data/maps/Zone1A/scripts.pory"
+	.string "Maybe I need more Pokémon.$"
+# 607 "data/maps/Zone1A/scripts.pory"
+
+# 608 "data/maps/Zone1A/scripts.pory"
+Zone1A_EventScript_Oscar::
+# 609 "data/maps/Zone1A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_OSCAR, Zone1A_Text_OscarIntro, Zone1A_Text_OscarDefeat
+# 610 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_Text_OscarPostBattle, MSGBOX_AUTOCLOSE
+# 611 "data/maps/Zone1A/scripts.pory"
+	end
+# 612 "data/maps/Zone1A/scripts.pory"
+
+# 613 "data/maps/Zone1A/scripts.pory"
+Zone1A_Text_OscarIntro:
+# 614 "data/maps/Zone1A/scripts.pory"
+	.string "Fear my might!$"
+# 615 "data/maps/Zone1A/scripts.pory"
+
+# 616 "data/maps/Zone1A/scripts.pory"
+Zone1A_Text_OscarDefeat:
+# 617 "data/maps/Zone1A/scripts.pory"
+	.string "Beaten! Disgrace!$"
+# 618 "data/maps/Zone1A/scripts.pory"
+
+# 619 "data/maps/Zone1A/scripts.pory"
+Zone1A_Text_OscarPostBattle:
+# 620 "data/maps/Zone1A/scripts.pory"
 	.string "I must reclaim my honor…$"
 
 Zone1A_EventScript_GiveFWG_Text_0:
@@ -1470,7 +1524,7 @@ Zone1A_EventScript_GiveFWG_Text_35:
 	.string "Good luck on the rest of your journey!$"
 
 Zone1A_EventScript_LeviathanBattle_Text_0:
-# 473 "data/maps/Zone1A/scripts.pory"
+# 493 "data/maps/Zone1A/scripts.pory"
 	.string "{COLOR BLUE}Corey{COLOR DARK_GRAY}: I thought if I had a variety of\n"
 	.string "types, I would be able to win.\p"
 	.string "I guess there's more to battling than\n"
@@ -1480,20 +1534,20 @@ Zone1A_EventScript_LeviathanBattle_Text_0:
 	.string "Pokémon.$"
 
 Zone1A_EventScript_LeviathanBattle_Text_1:
-# 475 "data/maps/Zone1A/scripts.pory"
+# 495 "data/maps/Zone1A/scripts.pory"
 	.string "{COLOR BLUE}Corey{COLOR DARK_GRAY}: Well, anyways, I've gotta run\n"
 	.string "now.\p"
 	.string "Bye bye!$"
 
 Zone1A_EventScript_PorygonSign_Text_0:
-# 540 "data/maps/Zone1A/scripts.pory"
+# 560 "data/maps/Zone1A/scripts.pory"
 	.string "Trainer Tips\p"
 	.string "Every Zone has its own challenges.\n"
 	.string "In order to reach the Sanctuary and\l"
 	.string "clear a Zone, you must find {COLOR RED}Porygon{COLOR DARK_GRAY}.$"
 
 Zone1A_EventScript_Sign_GoldenTree_Text_0:
-# 550 "data/maps/Zone1A/scripts.pory"
+# 570 "data/maps/Zone1A/scripts.pory"
 	.string "Trainer Tips\p"
 	.string "Shaking a Golden Tree might drop\n"
 	.string "berries, though occasionally you'll\l"
@@ -1501,7 +1555,7 @@ Zone1A_EventScript_Sign_GoldenTree_Text_0:
 	.string "tree!$"
 
 Zone1A_EventScript_Sign_RunningShoes_Text_0:
-# 555 "data/maps/Zone1A/scripts.pory"
+# 575 "data/maps/Zone1A/scripts.pory"
 	.string "Trainer Tips\p"
 	.string "Press {R_BUTTON} to enable or disable Auto Run.$"
 
@@ -1510,7 +1564,7 @@ Zone1A_Text_FWG_ComeBack::
 	.string "Come back if you change your mind!$"
 
 Zone1A_Text_Leviathan1Intro::
-# 485 "data/maps/Zone1A/scripts.pory"
+# 505 "data/maps/Zone1A/scripts.pory"
 	.string "{COLOR BLUE}Corey{COLOR DARK_GRAY}: Hi! My name's Corey.\n"
 	.string "I'm the resident Leviathan around here.\p"
 	.string "If you want to go forward, you'll have\n"
@@ -1518,16 +1572,16 @@ Zone1A_Text_Leviathan1Intro::
 	.string "So, are you ready for our battle?$"
 
 Zone1A_Text_Leviathan1Wait::
-# 492 "data/maps/Zone1A/scripts.pory"
+# 512 "data/maps/Zone1A/scripts.pory"
 	.string "{COLOR BLUE}Corey{COLOR DARK_GRAY}: Okay. You just let me know when\n"
 	.string "you're ready.$"
 
 Zone1A_Text_Leviathan1Intro2::
-# 496 "data/maps/Zone1A/scripts.pory"
+# 516 "data/maps/Zone1A/scripts.pory"
 	.string "{COLOR BLUE}Corey{COLOR DARK_GRAY}: Aww, yeah!\n"
 	.string "This battle is gonna be awesome!$"
 
 Zone1A_Text_Leviathan1Defeat::
-# 501 "data/maps/Zone1A/scripts.pory"
+# 521 "data/maps/Zone1A/scripts.pory"
 	.string "Drats! My Fire-Water-Grass core wasn't\n"
 	.string "enough!$"

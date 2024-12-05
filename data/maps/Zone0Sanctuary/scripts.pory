@@ -303,6 +303,38 @@ script Zone0Sanctuary_EventScript_HandleStarterSelectionDefault {
 		setvar(VAR_TEMP_3, 0)
 		goto(Zone0Sanctuary_EventScript_HandleStarterSelectionDefault)
 	}
+	switch(var(VAR_TEMP_3)) {
+		case SPECIES_BULBASAUR:
+		case SPECIES_CHIKORITA:
+		case SPECIES_TREECKO:
+		case SPECIES_TURTWIG:
+		case SPECIES_SNIVY:
+		case SPECIES_CHESPIN:
+		case SPECIES_ROWLET:
+		case SPECIES_GROOKEY:
+		case SPECIES_SPRIGATITO:
+			setvar(VAR_STARTER_MON, 0)
+		case SPECIES_CHARMANDER:
+		case SPECIES_CYNDAQUIL:
+		case SPECIES_TORCHIC:
+		case SPECIES_CHIMCHAR:
+		case SPECIES_TEPIG:
+		case SPECIES_FENNEKIN:
+		case SPECIES_LITTEN:
+		case SPECIES_SCORBUNNY:
+		case SPECIES_FUECOCO:
+			setvar(VAR_STARTER_MON, 1)
+		case SPECIES_SQUIRTLE:
+		case SPECIES_TOTODILE:
+		case SPECIES_MUDKIP:
+		case SPECIES_PIPLUP:
+		case SPECIES_OSHAWOTT:
+		case SPECIES_FROAKIE:
+		case SPECIES_POPPLIO:
+		case SPECIES_SOBBLE:
+		case SPECIES_QUAXLY:
+			setvar(VAR_STARTER_MON, 2)
+	}
 	givemon(VAR_TEMP_3, 5, ITEM_NONE)
 	hidemonpic
 	playfanfare(MUS_OBTAIN_ITEM)

@@ -58,13 +58,14 @@
 #define VAR_MON_TO_PC                        0x4028
 #define VAR_REVISITING_ZONE                  0x4029
 #define VAR_TRAINER_MONEY                    0x402A
-#define VAR_MUGSHOT_ID                       0x402B
 #define VAR_NUZLOCKE_DEATHS                  0x402C
 #define VAR_NUM_TRAINERS_REMAINING           0x402D
 #define VAR_DEXNAV_SPECIES                   0x402E // Registered dexnav species
 #define VAR_DEXNAV_STEP_COUNTER              0x402F // steps for finding hidden pokemon
 #define VAR_MARIE_TIER_1                     0x4031
 #define VAR_MARIE_TIER_2                     0x4032
+
+#define VAR_MUGSHOT_ID                       VARS_END
 
 //state vars
 #define VAR_ZONE_0_STATE                     0x4040
@@ -128,7 +129,7 @@
 #define VAR_RECYCLE_GOODS                                VARS_END
 #define VAR_REPEL_STEP_COUNT                             0x4030
 #define VAR_ICE_STEP_COUNT                               VARS_END
-#define VAR_STARTER_MON                                  VARS_END // 0=Treecko, 1=Torchic, 2=Mudkip
+#define VAR_STARTER_MON                                  0x402B // 0=Grass, 1=Fire, 2=Water
 #define VAR_MIRAGE_RND_H                                 VARS_END
 #define VAR_MIRAGE_RND_L                                 VARS_END
 #define VAR_SECRET_BASE_MAP                              VARS_END

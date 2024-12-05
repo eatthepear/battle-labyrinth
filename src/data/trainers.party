@@ -112,13 +112,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Leer
 - Sand Attack
 
-Fletchling
-Ability: Big Pecks
+Pidove
+Ability: Super Luck
 Level: 4
-Calm Nature
+Timid Nature
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
+- Quick Attack
 - Growl
+- Leer
 
 Skitty
 Ability: Normalize
@@ -147,14 +148,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Growl
 - Sand Attack
 
-Pidove
+Fletchling
 Ability: Big Pecks
 Level: 5
-Timid Nature
+Calm Nature
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Quick Attack
+- Tackle
 - Growl
-- Leer
+- Peck
 
 Sunkern
 Ability: Chlorophyll
@@ -200,18 +201,26 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Growl
 - Quick Attack
 
-=== TRAINER_PBL_COREY_LEVIATHAN_1 ===
+=== TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER ===
 Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
+Random Lead: No
 Mugshot: Purple
+
+Panpour
+Ability: Gluttony
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Gun
+- Scratch
 
 Pansage
 Ability: Gluttony
-Level: 7
+Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leafage
 - Scratch
@@ -223,25 +232,26 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
 - Scratch
 
-Panpour
-Ability: Gluttony
-Level: 7
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Gun
-- Scratch
-
-=== TRAINER_PBL_COREY_LEVIATHAN_1_BRUTAL ===
+=== TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_BRUTAL ===
 Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
+Random Lead: No
 Mugshot: Purple
+
+Panpour
+Ability: Torrent
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Gun
+- Scratch
 
 Pansage
 Ability: Overgrow
-Level: 7
+Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leafage
 - Scratch
@@ -253,11 +263,128 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
 - Scratch
 
+=== TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER ===
+Name: Corey
+Class: School Kid
+Pic: School Kid M
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: No
+Mugshot: Purple
+
+Pansage
+Ability: Gluttony
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leafage
+- Scratch
+
+Pansear
+Ability: Gluttony
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Scratch
+
+Panpour
+Ability: Gluttony
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Gun
+- Scratch
+
+=== TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_BRUTAL ===
+Name: Corey
+Class: School Kid
+Pic: School Kid M
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: No
+Mugshot: Purple
+
+Pansage
+Ability: Overgrow
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leafage
+- Scratch
+
+Pansear
+Ability: Blaze
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Scratch
+
 Panpour
 Ability: Torrent
 Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
+- Scratch
+
+=== TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER ===
+Name: Corey
+Class: School Kid
+Pic: School Kid M
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: No
+Mugshot: Purple
+
+Pansear
+Ability: Gluttony
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Scratch
+
+Panpour
+Ability: Gluttony
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Gun
+- Scratch
+
+Pansage
+Ability: Gluttony
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leafage
+- Scratch
+
+=== TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_BRUTAL ===
+Name: Corey
+Class: School Kid
+Pic: School Kid M
+Music: Girl
+AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: No
+Random Lead: No
+Mugshot: Purple
+
+Pansear
+Ability: Blaze
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Scratch
+
+Panpour
+Ability: Torrent
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Gun
+- Scratch
+
+Pansage
+Ability: Overgrow
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leafage
 - Scratch
 
 === TRAINER_PBL_POLLY ===
@@ -458,6 +585,7 @@ Pic: Youngster
 Music: Male
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
+Random Lead: No
 Mugshot: Purple
 
 Bunnelby @ Oran Berry
@@ -494,6 +622,7 @@ Pic: Youngster
 Music: Male
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
+Random Lead: No
 Mugshot: Purple
 
 Bunnelby @ Oran Berry
@@ -618,10 +747,9 @@ Meowth
 Ability: Technician
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Growl
 - Scratch
+- Growl
 - Feint
-- Fake Out
 
 Gossifleur
 Ability: Cotton Down
@@ -648,7 +776,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Leer
 - Charge
 - Thunder Shock
-- Baby Doll-Eyes
+- Quick Attack
 
 === TRAINER_PBL_BORIS ===
 Name: Boris
@@ -675,7 +803,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Defense Curl
 - Quick Attack
 - Baby-Doll Eyes
-- Fake Out
+- Copycat
 
 Maschiff
 Ability: Intimidate
@@ -738,6 +866,7 @@ Pic: School Kid F
 Music: Girl
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
+Random Lead: No
 Mugshot: Purple
 
 Bidoof
@@ -765,6 +894,7 @@ Pic: School Kid F
 Music: Girl
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
+Random Lead: No
 Mugshot: Purple
 
 Bidoof
@@ -840,14 +970,14 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
 Random Lead: Yes
 
-Munna
-Ability: Synchronize
+Chingling
+Ability: Levitate
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Psywave
-- Lucky Chant
-- Hypnosis
-- Imprison
+- Astonish
+- Confusion
+- Disable
+- Yawn
 
 Purrloin
 Ability: Limber
@@ -858,14 +988,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Fury Swipes
 - Feint Attack
 
-Ekans
-Ability: Intimidate
+Wooper
+Ability: Water Absorb
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Glare
-- Bite
-- Acid
-- Disable
+- Water Gun
+- Mud Shot
+- Yawn
+- Slam
 
 === TRAINER_PBL_CALLIE ===
 Name: Callie
@@ -980,23 +1110,23 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
 Random Lead: Yes
 
-Chingling
-Ability: Levitate
+Munna
+Ability: Synchronize
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Astonish
-- Confusion
-- Disable
-- Yawn
+- Psywave
+- Lucky Chant
+- Hypnosis
+- Imprison
 
-Wooper
-Ability: Water Absorb
+Ekans
+Ability: Intimidate
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Water Gun
-- Mud Shot
-- Yawn
-- Slam
+- Glare
+- Bite
+- Acid
+- Disable
 
 Slugma
 Ability: Flame Body
@@ -1068,6 +1198,7 @@ Pic: Sr And Jr
 Music: Twins
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: Yes
+Random Lead: No
 Mugshot: Purple
 
 Nickit
@@ -1105,6 +1236,7 @@ Pic: Sr And Jr
 Music: Twins
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: Yes
+Random Lead: No
 Mugshot: Purple
 
 Nickit
@@ -1468,6 +1600,7 @@ Pic: Pokemon Breeder M
 Music: Male
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
+Random Lead: No
 Mugshot: Purple
 
 Trubbish
@@ -1522,6 +1655,7 @@ Pic: Pokemon Breeder M
 Music: Male
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
+Random Lead: No
 Mugshot: Purple
 
 Trubbish @ Eviolite
@@ -1596,7 +1730,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tailwind
 
 Krabby
-Ability: Hyper Cutter
+Ability: Sheer Force
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Mud Shot
@@ -1865,6 +1999,7 @@ Pic: Tuber F
 Music: Girl
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
+Random Lead: No
 
 Wiglett @ Oran Berry
 Ability: Gooey
@@ -1909,6 +2044,7 @@ Pic: Sis And Bro
 Music: Swimmer
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: Yes
+Random Lead: No
 Mugshot: Purple
 
 Luvdisc @ Oran Berry
@@ -1932,6 +2068,7 @@ Pic: Sis And Bro
 Music: Swimmer
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: Yes
+Random Lead: No
 Mugshot: Purple
 
 Luvdisc @ Oran Berry
@@ -2100,7 +2237,8 @@ Class: Lady
 Pic: Lady
 Music: Female
 AI: Check Bad Move / Try To Faint / Check Viability
-Double Battle: No
+Double Battle: Yes
+Random Lead: No
 Mugshot: Purple
 
 Klawf @ Sitrus Berry
@@ -2128,6 +2266,7 @@ Pic: Lady
 Music: Female
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: Yes
+Random Lead: No
 Mugshot: Purple
 
 Klawf @ Sitrus Berry
@@ -2163,7 +2302,7 @@ Class: Collector
 Pic: Collector
 Music: Suspicious
 AI: Check Bad Move / Try To Faint / Check Viability
-Double Battle: Yes
+Double Battle: No
 Random Lead: Yes
 
 Noibat
@@ -2302,6 +2441,7 @@ Pic: Roughneck
 Music: Suspicious
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
+Random Lead: No
 Mugshot: Purple
 
 Grimer @ Poison Barb
@@ -2356,6 +2496,7 @@ Pic: Roughneck
 Music: Suspicious
 AI: Check Bad Move / Try To Faint / Check Viability
 Double Battle: No
+Random Lead: No
 Mugshot: Purple
 
 Grimer @ Poison Barb

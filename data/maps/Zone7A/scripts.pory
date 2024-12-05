@@ -127,7 +127,7 @@ script Zone7A_EventScript_ItemGems {
 	addobject(VAR_LAST_TALKED)
 	finditem(ITEM_ROCK_GEM)
 	finditem(ITEM_FIGHTING_GEM)
-	finditem(ITEM_STEEL_GEM)
+	finditem(ITEM_PSYCHIC_GEM)
 	release
 	end
 }

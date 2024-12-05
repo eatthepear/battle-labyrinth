@@ -240,7 +240,7 @@ Zone7A_EventScript_ItemGems::
 # 129 "data/maps/Zone7A/scripts.pory"
 	finditem ITEM_FIGHTING_GEM
 # 130 "data/maps/Zone7A/scripts.pory"
-	finditem ITEM_STEEL_GEM
+	finditem ITEM_PSYCHIC_GEM
 # 131 "data/maps/Zone7A/scripts.pory"
 	release
 	end
