@@ -127,7 +127,7 @@ script Zone3A_EventScript_TriggerLeviathan {
 
 text Zone3A_Text_Leviathan3Intro {
 	format("{COLOR BLUE}Phillipa{COLOR DARK_GRAY}: You! How dare you intrude on my home!\p"
-	"I am {COLOR BLUE}Leviathan Phillipa{COLOR DARK_GRAY}, all powerful!")
+	"I am Phillipa, the all powerful!")
 }
 
 text Zone3A_Text_Leviathan3Defeat {

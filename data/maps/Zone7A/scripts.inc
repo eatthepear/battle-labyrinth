@@ -408,7 +408,7 @@ Zone7A_Text_MillieDefeat:
 # 223 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_MilliePostBattle:
 # 224 "data/maps/Zone7A/scripts.pory"
-	.string "It's a good spot for camping, too!$"
+	.string "It's a good spot for resting too!$"
 # 225 "data/maps/Zone7A/scripts.pory"
 
 # 226 "data/maps/Zone7A/scripts.pory"
@@ -514,106 +514,92 @@ Zone7A_EventScript_Connie::
 # 276 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_ConnieIntro:
 # 277 "data/maps/Zone7A/scripts.pory"
-	.string "Another traveler!\n"
+	.string "You've been double teamed!$"
 # 278 "data/maps/Zone7A/scripts.pory"
-	.string "Tropius, it's time for battle!$"
+
 # 279 "data/maps/Zone7A/scripts.pory"
-
-# 280 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_ConnieDefeat:
+# 280 "data/maps/Zone7A/scripts.pory"
+	.string "Shoot! My bad!$"
 # 281 "data/maps/Zone7A/scripts.pory"
-	.string "It's hard winning with only one\n"
+
 # 282 "data/maps/Zone7A/scripts.pory"
-	.string "Pokémon!$"
-# 283 "data/maps/Zone7A/scripts.pory"
-
-# 284 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_ConniePostBattle:
-# 285 "data/maps/Zone7A/scripts.pory"
-	.string "Backpacking is all about packing\n"
-# 286 "data/maps/Zone7A/scripts.pory"
-	.string "light!$"
-# 287 "data/maps/Zone7A/scripts.pory"
+# 283 "data/maps/Zone7A/scripts.pory"
+	.string "We're working on our strategy!$"
+# 284 "data/maps/Zone7A/scripts.pory"
 
-# 288 "data/maps/Zone7A/scripts.pory"
+# 285 "data/maps/Zone7A/scripts.pory"
 Zone7A_EventScript_Peter::
-# 289 "data/maps/Zone7A/scripts.pory"
+# 286 "data/maps/Zone7A/scripts.pory"
 	trainerbattle_single TRAINER_PBL_PETER, Zone7A_Text_PeterIntro, Zone7A_Text_PeterDefeat
-# 290 "data/maps/Zone7A/scripts.pory"
+# 287 "data/maps/Zone7A/scripts.pory"
 	msgbox Zone7A_Text_PeterPostBattle, MSGBOX_AUTOCLOSE
-# 291 "data/maps/Zone7A/scripts.pory"
+# 288 "data/maps/Zone7A/scripts.pory"
 	end
+# 289 "data/maps/Zone7A/scripts.pory"
+
+# 290 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_PeterIntro:
+# 291 "data/maps/Zone7A/scripts.pory"
+	.string "Together we're unstoppable!$"
 # 292 "data/maps/Zone7A/scripts.pory"
 
 # 293 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_PeterIntro:
-# 294 "data/maps/Zone7A/scripts.pory"
-	.string "Another traveler!\n"
-# 295 "data/maps/Zone7A/scripts.pory"
-	.string "Tropius, it's time for battle!$"
-# 296 "data/maps/Zone7A/scripts.pory"
-
-# 297 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_PeterDefeat:
-# 298 "data/maps/Zone7A/scripts.pory"
-	.string "It's hard winning with only one\n"
-# 299 "data/maps/Zone7A/scripts.pory"
-	.string "Pokémon!$"
-# 300 "data/maps/Zone7A/scripts.pory"
+# 294 "data/maps/Zone7A/scripts.pory"
+	.string "Darn! My mistake!$"
+# 295 "data/maps/Zone7A/scripts.pory"
 
-# 301 "data/maps/Zone7A/scripts.pory"
+# 296 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_PeterPostBattle:
-# 302 "data/maps/Zone7A/scripts.pory"
-	.string "Backpacking is all about packing\n"
-# 303 "data/maps/Zone7A/scripts.pory"
-	.string "light!$"
-# 304 "data/maps/Zone7A/scripts.pory"
+# 297 "data/maps/Zone7A/scripts.pory"
+	.string "We're trying our best!$"
+# 298 "data/maps/Zone7A/scripts.pory"
 
-# 305 "data/maps/Zone7A/scripts.pory"
+# 299 "data/maps/Zone7A/scripts.pory"
 Zone7A_EventScript_Whitaker::
-# 306 "data/maps/Zone7A/scripts.pory"
+# 300 "data/maps/Zone7A/scripts.pory"
 	trainerbattle_single TRAINER_PBL_WHITAKER, Zone7A_Text_WhitakerIntro, Zone7A_Text_WhitakerDefeat
-# 307 "data/maps/Zone7A/scripts.pory"
+# 301 "data/maps/Zone7A/scripts.pory"
 	msgbox Zone7A_Text_WhitakerPostBattle, MSGBOX_AUTOCLOSE
-# 308 "data/maps/Zone7A/scripts.pory"
+# 302 "data/maps/Zone7A/scripts.pory"
 	end
-# 309 "data/maps/Zone7A/scripts.pory"
+# 303 "data/maps/Zone7A/scripts.pory"
 
-# 310 "data/maps/Zone7A/scripts.pory"
+# 304 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_WhitakerIntro:
-# 311 "data/maps/Zone7A/scripts.pory"
-	.string "Another traveler!\n"
-# 312 "data/maps/Zone7A/scripts.pory"
-	.string "Tropius, it's time for battle!$"
-# 313 "data/maps/Zone7A/scripts.pory"
+# 305 "data/maps/Zone7A/scripts.pory"
+	.string "Can you feel the breeze?\n"
+# 306 "data/maps/Zone7A/scripts.pory"
+	.string "My birds have never been stronger!$"
+# 307 "data/maps/Zone7A/scripts.pory"
 
-# 314 "data/maps/Zone7A/scripts.pory"
+# 308 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_WhitakerDefeat:
-# 315 "data/maps/Zone7A/scripts.pory"
-	.string "It's hard winning with only one\n"
-# 316 "data/maps/Zone7A/scripts.pory"
-	.string "Pokémon!$"
-# 317 "data/maps/Zone7A/scripts.pory"
+# 309 "data/maps/Zone7A/scripts.pory"
+	.string "Um… Rematch?$"
+# 310 "data/maps/Zone7A/scripts.pory"
 
-# 318 "data/maps/Zone7A/scripts.pory"
+# 311 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_WhitakerPostBattle:
-# 319 "data/maps/Zone7A/scripts.pory"
-	.string "Backpacking is all about packing\n"
-# 320 "data/maps/Zone7A/scripts.pory"
-	.string "light!$"
-# 321 "data/maps/Zone7A/scripts.pory"
+# 312 "data/maps/Zone7A/scripts.pory"
+	.string "My birds need some time to sleep\n"
+# 313 "data/maps/Zone7A/scripts.pory"
+	.string "in their nests!$"
+# 314 "data/maps/Zone7A/scripts.pory"
 
-# 322 "data/maps/Zone7A/scripts.pory"
+# 315 "data/maps/Zone7A/scripts.pory"
 Zone7A_EventScript_HealSign::
-# 323 "data/maps/Zone7A/scripts.pory"
+# 316 "data/maps/Zone7A/scripts.pory"
 	msgbox Zone7A_Text_HealSign, MSGBOX_SIGN
-# 324 "data/maps/Zone7A/scripts.pory"
+# 317 "data/maps/Zone7A/scripts.pory"
 	end
-# 325 "data/maps/Zone7A/scripts.pory"
+# 318 "data/maps/Zone7A/scripts.pory"
 
-# 326 "data/maps/Zone7A/scripts.pory"
+# 319 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_HealSign:
-# 327 "data/maps/Zone7A/scripts.pory"
+# 320 "data/maps/Zone7A/scripts.pory"
 	.string "A stop for weary travelers.$"
 
 Zone7A_EventScript_Beauty_Text_0:

@@ -91,14 +91,15 @@ Zone8A_EventScript_Beckham::
 	end
 
 Zone8A_Text_BeckhamIntro:
-	.string "I'm so hungry…$"
+	.string "What's your favorite monster movie?$"
 
 Zone8A_Text_BeckhamDefeat:
-	.string "It's because I keep thinking about\n"
-	.string "pancakes!$"
+	.string "My favorite is Godzilla?$"
 
 Zone8A_Text_BeckhamPostBattle:
-	.string "Mmm… Pancakes…$"
+	.string "Which one is my favorite?\n"
+	.string "That's a good question…\l"
+	.string "I'll have to think about it!$"
 
 Zone8A_EventScript_Emiliano::
 	trainerbattle_single TRAINER_PBL_EMILIANO, Zone8A_Text_EmilianoIntro, Zone8A_Text_EmilianoDefeat

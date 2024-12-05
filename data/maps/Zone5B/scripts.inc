@@ -772,7 +772,7 @@ Zone5B_EventScript_GentleMint::
 # 364 "data/maps/Zone5B/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 365 "data/maps/Zone5B/scripts.pory"
-	finditem ITEM_SUN_STONE
+	finditem ITEM_GENTLE_MINT
 # 366 "data/maps/Zone5B/scripts.pory"
 	release
 	end
@@ -1043,8 +1043,8 @@ Zone5B_Text_Leviathan5Intro::
 # 77 "data/maps/Zone5B/scripts.pory"
 	.string "{COLOR BLUE}Declan{COLOR DARK_GRAY}: Not so fast! I'm training my\n"
 	.string "Pokémon around here!\p"
-	.string "You'll have to face {COLOR BLUE}Leviathan Declan{COLOR DARK_GRAY} to\n"
-	.string "get past here!\p"
+	.string "You'll have to face our combined might\n"
+	.string "to get past!\p"
 	.string "This is where your journey forward\n"
 	.string "stops!$"
 

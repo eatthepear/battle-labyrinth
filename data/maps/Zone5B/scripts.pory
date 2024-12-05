@@ -75,7 +75,7 @@ movement Zone5B_Declan_Movement_WalkDown {
 }
 
 text Zone5B_Text_Leviathan5Intro {
-	format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Not so fast! I'm training my Pokémon around here!\pYou'll have to face {COLOR BLUE}Leviathan Declan{COLOR DARK_GRAY} to get past here!\pThis is where your journey forward stops!")
+	format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Not so fast! I'm training my Pokémon around here!\pYou'll have to face our combined might to get past!\pThis is where your journey forward stops!")
 }
 
 text Zone5B_Text_Leviathan5Defeat {

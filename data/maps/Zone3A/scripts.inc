@@ -684,7 +684,7 @@ Zone3A_Text_Leviathan3Intro::
 # 128 "data/maps/Zone3A/scripts.pory"
 	.string "{COLOR BLUE}Phillipa{COLOR DARK_GRAY}: You! How dare you intrude on\n"
 	.string "my home!\p"
-	.string "I am {COLOR BLUE}Leviathan Phillipa{COLOR DARK_GRAY}, all powerful!$"
+	.string "I am Phillipa, the all powerful!$"
 
 Zone3A_Text_Leviathan3Defeat::
 # 133 "data/maps/Zone3A/scripts.pory"
