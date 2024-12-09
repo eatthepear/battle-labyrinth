@@ -241,12 +241,48 @@
 #define OBJ_EVENT_GFX_LUGIA                      237
 #define OBJ_EVENT_GFX_HOOH                       238
 #define OBJ_EVENT_GFX_POKE_BALL                  239
-#define OBJ_EVENT_GFX_OW_MON                     240
+
+// Custom
+#define OBJ_EVENT_GFX_ITEM_CHEST                 250
+#define OBJ_EVENT_GFX_ITEM_CHEST_OPEN            251
+#define OBJ_EVENT_GFX_TM_CHEST                   252
+#define OBJ_EVENT_GFX_TM_CHEST_OPEN              253
+
+#define OBJ_EVENT_GFX_COLRESS                    254
+#define OBJ_EVENT_GFX_RANGER_M                   255
+#define OBJ_EVENT_GFX_RANGER_F                   256
+#define OBJ_EVENT_GFX_BUG_MANIAC                 257
+#define OBJ_EVENT_GFX_SCHOOL_KID_F               258
+#define OBJ_EVENT_GFX_FAIRY_TALE_GIRL            259
+#define OBJ_EVENT_GFX_SOCIALITE                  260
+#define OBJ_EVENT_GFX_AROMA_LADY                 261
+#define OBJ_EVENT_GFX_BACKPACKER_F               262
+#define OBJ_EVENT_GFX_BIRD_KEEPER                263
+#define OBJ_EVENT_GFX_WORKER                     264
+#define OBJ_EVENT_GFX_ICE_WORKER                 265
+#define OBJ_EVENT_GFX_ROUGHNECK                  266
+#define OBJ_EVENT_GFX_SWIMMER_F_WALKING          267
+#define OBJ_EVENT_GFX_BREEDER_M                  268
+#define OBJ_EVENT_GFX_BREEDER_F                  269
+#define OBJ_EVENT_GFX_RUIN_MANIAC                270
+#define OBJ_EVENT_GFX_GUITARIST                  271
+#define OBJ_EVENT_GFX_COLLECTOR                  272
+#define OBJ_EVENT_GFX_KINDLER                    273
+#define OBJ_EVENT_GFX_PSYCHIC_F                  274
+#define OBJ_EVENT_GFX_DRAGON_TAMER               275
+#define OBJ_EVENT_GFX_COWGIRL                    276
+#define OBJ_EVENT_GFX_YOUNG_MAN                  277
+#define OBJ_EVENT_GFX_YOUNG_WOMAN                278
+#define OBJ_EVENT_GFX_POKEMANIAC                 279
+#define OBJ_EVENT_GFX_LADY                       280
+#define OBJ_EVENT_GFX_PARASOL_LADY               281
+
+#define OBJ_EVENT_GFX_OW_MON                     399
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        241
+#define NUM_OBJ_EVENT_GFX                        401
 
 
 // These are dynamic object gfx ids.
@@ -425,6 +461,43 @@
 // Not a real OW palette tag; used for the white flash applied to followers
 #define OBJ_EVENT_PAL_TAG_WHITE                   (OBJ_EVENT_PAL_TAG_NONE - 1)
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
+
+// Custom
+#define OBJ_EVENT_PAL_TAG_ITEM_CHEST              0x7250
+#define OBJ_EVENT_PAL_TAG_TM_CHEST                0x7251
+
+#define OBJ_EVENT_PAL_TAG_COLRESS                 0x7260
+#define OBJ_EVENT_PAL_TAG_RANGER                  0x7261
+
+#define OBJ_EVENT_PAL_TAG_BUG_MANIAC              0x7262
+#define OBJ_EVENT_PAL_TAG_SCHOOL_KID_F            0x7263
+#define OBJ_EVENT_PAL_TAG_FAIRY_TALE_GIRL         0x7264
+#define OBJ_EVENT_PAL_TAG_SOCIALITE               0x7265
+#define OBJ_EVENT_PAL_TAG_AROMA_LADY              0x7266
+#define OBJ_EVENT_PAL_TAG_BACKPACKER_F            0x7267
+#define OBJ_EVENT_PAL_TAG_BIRD_KEEPER             0x7268
+#define OBJ_EVENT_PAL_TAG_WORKER                  0x7269
+#define OBJ_EVENT_PAL_TAG_ICE_WORKER              0x726A
+#define OBJ_EVENT_PAL_TAG_ROUGHNECK               0x726B
+#define OBJ_EVENT_PAL_TAG_SWIMMER_F_WALKING       0x726C
+#define OBJ_EVENT_PAL_TAG_BREEDER                 0x726D
+
+#define OBJ_EVENT_PAL_TAG_RUIN_MANIAC             0x726E
+#define OBJ_EVENT_PAL_TAG_GUITARIST               0x726F
+#define OBJ_EVENT_PAL_TAG_COLLECTOR               0x7270
+#define OBJ_EVENT_PAL_TAG_KINDLER                 0x7271
+#define OBJ_EVENT_PAL_TAG_PSYCHIC_F               0x7272
+#define OBJ_EVENT_PAL_TAG_DRAGON_TAMER            0x7273
+#define OBJ_EVENT_PAL_TAG_COWGIRL                 0x7274
+#define OBJ_EVENT_PAL_TAG_YOUNG_MAN               0x7275
+#define OBJ_EVENT_PAL_TAG_YOUNG_WOMAN             0x7276
+#define OBJ_EVENT_PAL_TAG_POKEMANIAC              0x7277
+#define OBJ_EVENT_PAL_TAG_LADY                    0x7278
+#define OBJ_EVENT_PAL_TAG_PARASOL_LADY            0x7279
+
+#define OBJ_EVENT_PAL_TAG_RUNNING_TRIATHLETE_F    0x7401
+#define OBJ_EVENT_PAL_TAG_SCHOOL_KID_M            0x7402
+#define OBJ_EVENT_PAL_TAG_BEAUTY                  0x7403
 
 // This + localId is used as the tileTag
 // for compressed graphicsInfos
