@@ -292,6 +292,34 @@ const u8 gTrainerBackPic_Steven[] = INCBIN_U8("graphics/trainers/back_pics/steve
 const u32 gTrainerBackPicPalette_Red[] = INCBIN_U32("graphics/trainers/back_pics/red.gbapal.lz");
 const u32 gTrainerBackPicPalette_Leaf[] = INCBIN_U32("graphics/trainers/back_pics/leaf.gbapal.lz");
 
+// Custom
+const u32 gTrainerFrontPic_Scientist[] = INCBIN_U32("graphics/trainers/front_pics/Scientist_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Scientist[] = INCBIN_U32("graphics/trainers/palettes/Scientist.gbapal.lz");
+
+const u32 gTrainerFrontPic_Waiter[] = INCBIN_U32("graphics/trainers/front_pics/Waiter_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Waiter[] = INCBIN_U32("graphics/trainers/palettes/Waiter.gbapal.lz");
+
+const u32 gTrainerFrontPic_Waitress[] = INCBIN_U32("graphics/trainers/front_pics/Waitress_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Waitress[] = INCBIN_U32("graphics/trainers/palettes/Waitress.gbapal.lz");
+
+const u32 gTrainerFrontPic_FairyTaleGirl[] = INCBIN_U32("graphics/trainers/front_pics/fairy_tale_girl_front_pic.4bpp.lz");
+const u32 gTrainerPalette_FairyTaleGirl[] = INCBIN_U32("graphics/trainers/palettes/fairy_tale_girl.gbapal.lz");
+
+const u32 gTrainerFrontPic_Socialite[] = INCBIN_U32("graphics/trainers/front_pics/socialite_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Socialite[] = INCBIN_U32("graphics/trainers/palettes/socialite.gbapal.lz");
+
+const u32 gTrainerFrontPic_BackpackerF[] = INCBIN_U32("graphics/trainers/front_pics/backpacker_f_front_pic.4bpp.lz");
+const u32 gTrainerPalette_BackpackerF[] = INCBIN_U32("graphics/trainers/palettes/backpacker_f.gbapal.lz");
+
+const u32 gTrainerFrontPic_Worker[] = INCBIN_U32("graphics/trainers/front_pics/worker_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Worker[] = INCBIN_U32("graphics/trainers/palettes/worker.gbapal.lz");
+
+const u32 gTrainerFrontPic_IceWorker[] = INCBIN_U32("graphics/trainers/front_pics/ice_worker_front_pic.4bpp.lz");
+const u32 gTrainerPalette_IceWorker[] = INCBIN_U32("graphics/trainers/palettes/ice_worker.gbapal.lz");
+
+const u32 gTrainerFrontPic_Roughneck[] = INCBIN_U32("graphics/trainers/front_pics/roughneck_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Roughneck[] = INCBIN_U32("graphics/trainers/palettes/roughneck.gbapal.lz");
+
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
 // gTrainerFrontPic/gTrainerPalette pointers, (e.g "gTrainerFrontPic_Hiker" and "gTrainerPalette_Hiker").
@@ -401,6 +429,15 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_LEAF, gTrainerFrontPic_Leaf, gTrainerPalette_Leaf),
     TRAINER_SPRITE(TRAINER_PIC_RS_BRENDAN, gTrainerFrontPic_RubySapphireBrendan, gTrainerPalette_RubySapphireBrendan),
     TRAINER_SPRITE(TRAINER_PIC_RS_MAY, gTrainerFrontPic_RubySapphireMay, gTrainerPalette_RubySapphireMay),
+    TRAINER_SPRITE(TRAINER_PIC_SCIENTIST, gTrainerFrontPic_Scientist, gTrainerPalette_Scientist),
+    TRAINER_SPRITE(TRAINER_PIC_WAITER, gTrainerFrontPic_Waiter, gTrainerPalette_Waiter),
+    TRAINER_SPRITE(TRAINER_PIC_WAITRESS, gTrainerFrontPic_Waitress, gTrainerPalette_Waitress),
+    TRAINER_SPRITE(TRAINER_PIC_FAIRY_TALE_GIRL, gTrainerFrontPic_FairyTaleGirl, gTrainerPalette_FairyTaleGirl),
+    TRAINER_SPRITE(TRAINER_PIC_SOCIALITE, gTrainerFrontPic_Socialite, gTrainerPalette_Socialite),
+    TRAINER_SPRITE(TRAINER_PIC_BACKPACKER_F, gTrainerFrontPic_BackpackerF, gTrainerPalette_BackpackerF),
+    TRAINER_SPRITE(TRAINER_PIC_WORKER, gTrainerFrontPic_Worker, gTrainerPalette_Worker),
+    TRAINER_SPRITE(TRAINER_PIC_ICE_WORKER, gTrainerFrontPic_IceWorker, gTrainerPalette_IceWorker),
+    TRAINER_SPRITE(TRAINER_PIC_ROUGHNECK, gTrainerFrontPic_Roughneck, gTrainerPalette_Roughneck),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =
