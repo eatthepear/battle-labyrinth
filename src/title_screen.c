@@ -629,7 +629,7 @@ void CB2_InitTitleScreen(void)
         break;
     }
     case 3:
-        BeginNormalPaletteFade(PALETTES_ALL, 1, 16, 0, RGB_WHITEALPHA);
+        BeginNormalPaletteFade(PALETTES_ALL, 1, 16, 0, RGB_BLACK);
         SetVBlankCallback(VBlankCB);
         gMain.state = 4;
         break;
