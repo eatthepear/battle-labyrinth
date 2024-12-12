@@ -401,6 +401,7 @@ static void (* const sTurnActionsFuncsTable[])(void) =
     [B_ACTION_FINISHED]               = HandleAction_ActionFinished,
     [B_ACTION_NOTHING_FAINTED]        = HandleAction_NothingIsFainted,
     [B_ACTION_THROW_BALL]             = HandleAction_ThrowBall,
+    [B_ACTION_VIEW_ENEMY_PARTY]       = HandleAction_SurveilEnemyParty,
 };
 
 static void (* const sEndTurnFuncsTable[])(void) =
@@ -4415,6 +4416,29 @@ static void HandleTurnActionSelectionState(void)
                         MarkBattlerForControllerExec(battler);
                     }
                     break;
+                case B_ACTION_VIEW_ENEMY_PARTY:
+                    if (FlagGet(FLAG_DISABLE_PREVIEW)) {
+                        RecordedBattle_ClearBattlerAction(battler, 1);
+                        gSelectionBattleScripts[battler] = BattleScript_ActionSelectionPreviewCantBeUsed;
+                        gBattleCommunication[battler] = STATE_SELECTION_SCRIPT;
+                        *(gBattleStruct->selectionScriptFinished + battler) = FALSE;
+                        *(gBattleStruct->stateIdAfterSelScript + battler) = STATE_BEFORE_ACTION_CHOSEN;
+                        return;
+                    }
+                    else
+                    {
+                        for (i = 0; i < PARTY_SIZE; i++)
+                        {
+                            gPlayerPartyTemp[i] = gPlayerParty[i];
+                            gPlayerParty[i] = gEnemyParty[i];
+                        }
+
+                        enemyPartyPreview = TRUE;
+
+                        BtlController_EmitChoosePokemon(battler, BUFFER_A, PARTY_ACTION_CHOOSE_MON, PARTY_SIZE, ABILITY_NONE, gBattleStruct->battlerPartyOrders[battler+1]);
+                        MarkBattlerForControllerExec(battler);
+                    }
+                    break;
                 case B_ACTION_SWITCH:
                     *(gBattleStruct->battlerPartyIndexes + battler) = gBattlerPartyIndexes[battler];
                     if (gBattleTypeFlags & BATTLE_TYPE_ARENA
@@ -4612,6 +4636,11 @@ static void HandleTurnActionSelectionState(void)
                             gBattleStruct->throwingPokeBall = TRUE;
                         gBattleCommunication[battler]++;
                     }
+                    break;
+                case B_ACTION_VIEW_ENEMY_PARTY:
+                    enemyPartyPreview = FALSE;
+                    gBattleCommunication[battler] = STATE_BEFORE_ACTION_CHOSEN;
+                    RecordedBattle_ClearBattlerAction(battler, 1);
                     break;
                 case B_ACTION_SWITCH:
                     if (gBattleResources->bufferB[battler][1] == PARTY_SIZE)
