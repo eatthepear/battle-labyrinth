@@ -125,6 +125,7 @@ enum {
     ACTIONS_TAKEITEM_TOSS,
     ACTIONS_ROTOM_CATALOG,
     ACTIONS_ZYGARDE_CUBE,
+    ACTIONS_CANCEL_ONLY,
 };
 
 // In CursorCb_FieldMove, field moves <= FIELD_MOVE_WATERFALL are assumed to line up with the badge flags.
@@ -2763,7 +2764,9 @@ void DisplayPartyMenuStdMessage(u32 stringId)
 
         if (stringId == PARTY_MSG_CHOOSE_MON)
         {
-            if (sPartyMenuInternal->chooseHalf)
+            if (enemyPartyPreview)
+                stringId = PARTY_MSG_ENEMY_PREVIEW;
+            else if (sPartyMenuInternal->chooseHalf)
                 stringId = PARTY_MSG_CHOOSE_MON_AND_CONFIRM;
             else if (!ShouldUseChooseMonText())
                 stringId = PARTY_MSG_CHOOSE_MON_OR_CANCEL;
@@ -2934,7 +2937,18 @@ static u8 GetPartyMenuActionsType(struct Pokemon *mon)
             actionType = ACTIONS_NONE; // actions populated by SetPartyMonFieldSelectionActions
         break;
     case PARTY_MENU_TYPE_IN_BATTLE:
-        actionType = GetPartyMenuActionsTypeInBattle(mon);
+        if (!enemyPartyPreview)
+        {
+            actionType = GetPartyMenuActionsTypeInBattle(mon);
+        }
+        else if (FlagGet(FLAG_SETTINGS_FULL_SURVEIL))
+        {
+            actionType = ACTIONS_SUMMARY_ONLY;
+        }
+        else
+        {
+            actionType = ACTIONS_CANCEL_ONLY;
+        }
         break;
     case PARTY_MENU_TYPE_CHOOSE_HALF:
         switch (GetPartySlotEntryStatus(gPartyMenu.slotId))

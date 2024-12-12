@@ -170,6 +170,7 @@ void HandleAction_UseMove(void);
 void HandleAction_Switch(void);
 void HandleAction_UseItem(void);
 bool32 TryRunFromBattle(u32 battler);
+void HandleAction_SurveilEnemyParty(void);
 void HandleAction_Run(void);
 void HandleAction_WatchesCarefully(void);
 void HandleAction_SafariZoneBallThrow(void);
