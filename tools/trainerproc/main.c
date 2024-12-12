@@ -123,6 +123,9 @@ struct Trainer
 
     struct String starting_status;
     int starting_status_line;
+
+    bool random_lead;
+    int random_lead_line;
 };
 
 static bool is_empty_string(struct String s)
@@ -1195,9 +1198,17 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
             trainer->starting_status_line = value.location.line;
             trainer->starting_status = token_string(&value);
         }
+        else if (is_literal_token(&key, "Random Lead"))
+        {
+            if (trainer->random_lead_line)
+                any_error = !set_show_parse_error(p, key.location, "duplicate 'Random Lead'");
+            trainer->random_lead_line = value.location.line;
+            if (!token_bool(p, &value, &trainer->random_lead))
+                any_error = !show_parse_error(p);
+        }
         else
         {
-            any_error = !set_show_parse_error(p, key.location, "expected one of 'Name', 'Class', 'Pic', 'Gender', 'Music', 'Items', 'Double Battle', or 'AI'");
+            any_error = !set_show_parse_error(p, key.location, "expected one of 'Name', 'Class', 'Pic', 'Gender', 'Music', 'Items', 'Double Battle', 'AI', or 'Random Lead'");
         }
     }
     if (!trainer->pic_line)
@@ -1716,6 +1727,14 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
             fprintf(f, "#line %d\n", trainer->starting_status_line);
             fprintf(f, "        .startingStatus = ");
             fprint_constant(f, "STARTING_STATUS", trainer->starting_status);
+            fprintf(f, ",\n");
+        }
+
+        if (trainer->random_lead_line)
+        {
+            fprintf(f, "#line %d\n", trainer->random_lead_line);
+            fprintf(f, "        .randomLead = ");
+            fprint_bool(f, trainer->random_lead);
             fprintf(f, ",\n");
         }
 
