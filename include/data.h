@@ -48,7 +48,7 @@ struct TrainerBacksprite
 #define MON_COORDS_SIZE(width, height) (DIV_ROUND_UP(width, 8) << 4 | DIV_ROUND_UP(height, 8))
 #define GET_MON_COORDS_WIDTH(size) ((size >> 4) * 8)
 #define GET_MON_COORDS_HEIGHT(size) ((size & 0xF) * 8)
-#define TRAINER_PARTY_IVS(hp, atk, def, speed, spatk, spdef) (hp | (atk << 5) | (def << 10) | (speed << 15) | (spatk << 20) | (spdef << 25))
+#define TRAINER_PARTY_IVS(hp, atk, def, speed, spatk, spdef) ((const u8[6]){hp,atk,def,spatk,spdef,speed})
 #define TRAINER_PARTY_EVS(hp, atk, def, speed, spatk, spdef) ((const u8[6]){hp,atk,def,spatk,spdef,speed})
 
 // Shared by both trainer and frontier mons
@@ -57,7 +57,7 @@ struct TrainerMon
 {
     const u8 *nickname;
     const u8 *ev;
-    u32 iv;
+    const u8 *iv;
     u16 moves[4];
     u16 species;
     u16 heldItem;
@@ -73,7 +73,8 @@ struct TrainerMon
     u8 shouldUseDynamax:1;
     u8 padding1:1;
     u8 dynamaxLevel:4;
-    u8 padding2:4;
+    u16 status:2;
+    u8 padding2:2;
 };
 
 #define TRAINER_PARTY(partyArray) partyArray, .partySize = ARRAY_COUNT(partyArray)
@@ -91,7 +92,8 @@ struct Trainer
              bool8 mugshotEnabled:1;
              u8 startingStatus:6;    // this trainer starts a battle with a given status. see include/constants/battle.h for values
     /*0x1F*/ u8 mugshotColor;
-    /*0x20*/ u8 partySize;
+    /*0x20*/ u8 partySize:7;
+             bool8 randomLead:1;
 };
 
 struct TrainerClass
