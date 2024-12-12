@@ -7983,6 +7983,8 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
         lastMonLevel = party[GetTrainerPartySizeFromId(trainerId) - 1].lvl;
         numMons = GetTrainerPartySizeFromId(trainerId);
         trainerMoney = (gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 2) * numMons;
+        if (gTrainers[trainerId].mugshotEnabled == TRUE)
+            trainerMoney = 5 * numMons;
         // trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 5;
 
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
