@@ -818,6 +818,7 @@ static void PrintCurrentMonRibbonCount(struct Pokenav_RibbonsSummaryMenu *menu)
 
 static void PrintRibbonNameAndDescription(struct Pokenav_RibbonsSummaryMenu *menu)
 {
+#if FREE_OTHER_PBL == FALSE
     s32 i;
     u32 ribbonId = GetRibbonId();
     u8 color[] = {TEXT_COLOR_RED, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY};
@@ -847,6 +848,7 @@ static void PrintRibbonNameAndDescription(struct Pokenav_RibbonsSummaryMenu *men
     }
 
     CopyWindowToVram(menu->ribbonCountWindowId, COPYWIN_GFX);
+#endif //FREE_OTHER_PBL
 }
 
 static const struct WindowTemplate sRibbonSummaryMonNameWindowTemplate =

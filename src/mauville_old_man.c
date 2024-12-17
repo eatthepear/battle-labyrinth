@@ -33,7 +33,7 @@ static u8 sSelectedStory;
 
 COMMON_DATA struct BardSong gBardSong = {0};
 
-static EWRAM_DATA u16 sUnusedPitchTableIndex = 0;
+static UNUSED EWRAM_DATA u16 sUnusedPitchTableIndex = 0;
 static EWRAM_DATA struct MauvilleManStoryteller * sStorytellerPtr = NULL;
 static EWRAM_DATA u8 sStorytellerWindowId = 0;
 
@@ -73,6 +73,7 @@ static const u8 *const sGiddyQuestions[GIDDY_MAX_QUESTIONS] = {
 
 static void SetupBard(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i;
     struct MauvilleManBard *bard = &gSaveBlock1Ptr->oldMan.bard;
 
@@ -81,15 +82,18 @@ static void SetupBard(void)
     bard->language = gGameLanguage;
     for (i = 0; i < NUM_BARD_SONG_WORDS; i++)
         bard->songLyrics[i] = sDefaultBardSongLyrics[i];
+#endif //FREE_OTHER_PBL
 }
 
 static void SetupHipster(void)
 {
+#if FREE_OTHER_PBL == FALSE
     struct MauvilleManHipster *hipster = &gSaveBlock1Ptr->oldMan.hipster;
 
     hipster->id = MAUVILLE_MAN_HIPSTER;
     hipster->taughtWord = FALSE;
     hipster->language = gGameLanguage;
+#endif //FREE_OTHER_PBL
 }
 
 static void SetupStoryteller(void)
@@ -99,11 +103,13 @@ static void SetupStoryteller(void)
 
 static void SetupGiddy(void)
 {
+#if FREE_OTHER_PBL == FALSE
     struct MauvilleManGiddy *giddy = &gSaveBlock1Ptr->oldMan.giddy;
 
     giddy->id = MAUVILLE_MAN_GIDDY;
     giddy->taleCounter = 0;
     giddy->language = gGameLanguage;
+#endif //FREE_OTHER_PBL
 }
 
 static void SetupTrader(void)
@@ -140,7 +146,10 @@ void SetMauvilleOldMan(void)
 
 u8 GetCurrentMauvilleOldMan(void)
 {
+#if FREE_OTHER_PBL == FALSE
     return gSaveBlock1Ptr->oldMan.common.id;
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 void Script_GetCurrentMauvilleMan(void)
@@ -150,11 +159,14 @@ void Script_GetCurrentMauvilleMan(void)
 
 void HasBardSongBeenChanged(void)
 {
+#if FREE_OTHER_PBL == FALSE
     gSpecialVar_Result = (&gSaveBlock1Ptr->oldMan.bard)->hasChangedSong;
+#endif //FREE_OTHER_PBL
 }
 
 void SaveBardSongLyrics(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i;
     struct MauvilleManBard *bard = &gSaveBlock1Ptr->oldMan.bard;
 
@@ -167,14 +179,16 @@ void SaveBardSongLyrics(void)
         bard->songLyrics[i] = bard->newSongLyrics[i];
 
     bard->hasChangedSong = TRUE;
+#endif //FREE_OTHER_PBL
 }
 
 // Copies lyrics into gStringVar4.
 // gSpecialVar_0x8004 is used in these functions to indicate which song should be played.
 // If it's set to 0 the Bard's current song should be played, otherwise the new user-provided song should be played.
 // Its set in the scripts right before 'PlayBardSong' is called.
-static void PrepareSongText(void)
+static UNUSED void PrepareSongText(void)
 {
+#if FREE_OTHER_PBL == FALSE
     struct MauvilleManBard *bard = &gSaveBlock1Ptr->oldMan.bard;
     u16 * lyrics = !gSpecialVar_0x8004 ? bard->songLyrics : bard->newSongLyrics;
     u8 *wordEnd = gStringVar4;
@@ -230,6 +244,7 @@ static void PrepareSongText(void)
             *(wordEnd++) = EXT_CTRL_CODE_FILL_WINDOW;
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 void PlayBardSong(void)
@@ -240,12 +255,16 @@ void PlayBardSong(void)
 
 void HasHipsterTaughtWord(void)
 {
+#if FREE_OTHER_PBL == FALSE
     gSpecialVar_Result = (&gSaveBlock1Ptr->oldMan.hipster)->taughtWord;
+#endif //FREE_OTHER_PBL
 }
 
 void SetHipsterTaughtWord(void)
 {
+#if FREE_OTHER_PBL == FALSE
     (&gSaveBlock1Ptr->oldMan.hipster)->taughtWord = TRUE;
+#endif //FREE_OTHER_PBL
 }
 
 void HipsterTryTeachWord(void)
@@ -266,6 +285,7 @@ void HipsterTryTeachWord(void)
 
 void GiddyShouldTellAnotherTale(void)
 {
+#if FREE_OTHER_PBL == FALSE
     struct MauvilleManGiddy *giddy = &gSaveBlock1Ptr->oldMan.giddy;
 
     if (giddy->taleCounter == GIDDY_MAX_TALES)
@@ -277,10 +297,12 @@ void GiddyShouldTellAnotherTale(void)
     {
         gSpecialVar_Result = TRUE;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void GenerateGiddyLine(void)
 {
+#if FREE_OTHER_PBL == FALSE
     struct MauvilleManGiddy *giddy = &gSaveBlock1Ptr->oldMan.giddy;
 
     if (giddy->taleCounter == 0)
@@ -312,10 +334,12 @@ void GenerateGiddyLine(void)
         giddy->taleCounter++;
 
     gSpecialVar_Result = TRUE;
+#endif //FREE_OTHER_PBL
 }
 
-static void InitGiddyTaleList(void)
+static UNUSED void InitGiddyTaleList(void)
 {
+#if FREE_OTHER_PBL == FALSE
     struct MauvilleManGiddy *giddy = &gSaveBlock1Ptr->oldMan.giddy;
     u16 wordGroupsAndCount[][2] = {
         {EC_GROUP_POKEMON,   0},
@@ -371,15 +395,20 @@ static void InitGiddyTaleList(void)
             giddy->randomWords[i] = GetRandomEasyChatWordFromUnlockedGroup(wordGroupsAndCount[var][0]);
         }
     }
+#endif //FREE_OTHER_PBL
 }
 static void ResetBardFlag(void)
 {
+#if FREE_OTHER_PBL == FALSE
     (&gSaveBlock1Ptr->oldMan.bard)->hasChangedSong = FALSE;
+#endif //FREE_OTHER_PBL
 }
 
 static void ResetHipsterFlag(void)
 {
+#if FREE_OTHER_PBL == FALSE
     (&gSaveBlock1Ptr->oldMan.hipster)->taughtWord = FALSE;
+#endif //FREE_OTHER_PBL
 }
 
 static void ResetTraderFlag(void)
@@ -445,7 +474,7 @@ static void StartBardSong(bool8 useNewSongLyrics)
     gTasks[taskId].tUseNewSongLyrics = useNewSongLyrics;
 }
 
-static void EnableTextPrinters(void)
+static UNUSED void EnableTextPrinters(void)
 {
     gDisableTextPrinters = FALSE;
 }
@@ -455,7 +484,7 @@ static void DisableTextPrinters(struct TextPrinterTemplate * printer, u16 render
     gDisableTextPrinters = TRUE;
 }
 
-static void DrawSongTextWindow(const u8 *str)
+static UNUSED void DrawSongTextWindow(const u8 *str)
 {
     DrawDialogueFrame(0, FALSE);
     AddTextPrinterParameterized(0, FONT_NORMAL, str, 0, 1, 1, DisableTextPrinters);
@@ -475,8 +504,9 @@ enum {
 };
 
 // Sing one frame of the bard's song. 'task' is a pointer to Task_BardSong, which handles changing the states in here.
-static void BardSing(struct Task *task, struct BardSong *song)
+static UNUSED void BardSing(struct Task *task, struct BardSong *song)
 {
+#if FREE_OTHER_PBL == FALSE
     switch (task->tState)
     {
     case BARD_STATE_INIT:
@@ -595,10 +625,12 @@ static void BardSing(struct Task *task, struct BardSong *song)
         // Non-singing states.
         break;
     }
+#endif //FREE_OTHER_PBL
 }
 
 static void Task_BardSong(u8 taskId)
 {
+#if FREE_OTHER_PBL == FALSE
     struct Task *task = &gTasks[taskId];
 
     BardSing(task, &gBardSong);
@@ -737,6 +769,7 @@ static void Task_BardSong(u8 taskId)
         break;
     }
     RunTextPrintersAndIsPrinter0Active();
+#endif //FREE_OTHER_PBL
 }
 
 void SetMauvilleOldManObjEventGfx(void)
@@ -1196,6 +1229,7 @@ static const u32 sUnused = 8;
 
 static void StorytellerSetup(void)
 {
+#if FREE_OTHER_PBL == FALSE
     s32 i;
     sStorytellerPtr = &gSaveBlock1Ptr->oldMan.storyteller;
 
@@ -1206,14 +1240,17 @@ static void StorytellerSetup(void)
         sStorytellerPtr->gameStatIDs[i] = 0;
         sStorytellerPtr->trainerNames[0][i] = EOS;  // Maybe they meant storyteller->trainerNames[i][0] instead?
     }
+#endif //FREE_OTHER_PBL
 }
 
 static void Storyteller_ResetFlag(void)
 {
+#if FREE_OTHER_PBL == FALSE
     sStorytellerPtr = &gSaveBlock1Ptr->oldMan.storyteller;
 
     sStorytellerPtr->id = MAUVILLE_MAN_STORYTELLER;
     sStorytellerPtr->alreadyRecorded = FALSE;
+#endif //FREE_OTHER_PBL
 }
 
 static u32 StorytellerGetGameStat(u8 stat)
@@ -1279,7 +1316,7 @@ static void StorytellerSetRecordedTrainerStat(u32 trainer, u32 val)
     ptr[3] = val >> 24;
 }
 
-static bool32 HasTrainerStatIncreased(u32 trainer)
+static UNUSED bool32 HasTrainerStatIncreased(u32 trainer)
 {
     if (StorytellerGetGameStat(sStorytellerPtr->gameStatIDs[trainer]) > StorytellerGetRecordedTrainerStat(trainer))
         return TRUE;
@@ -1313,7 +1350,7 @@ static void StorytellerRecordNewStat(u32 player, u32 stat)
     sStorytellerPtr->language[player] = gGameLanguage;
 }
 
-static bool8 StorytellerInitializeRandomStat(void)
+static UNUSED bool8 StorytellerInitializeRandomStat(void)
 {
     u8 storyIds[sNumStories];
     s32 i, j;
@@ -1426,13 +1463,17 @@ void Script_StorytellerDisplayStory(void)
 
 u8 StorytellerGetFreeStorySlot(void)
 {
+#if FREE_OTHER_PBL == FALSE
     sStorytellerPtr = &gSaveBlock1Ptr->oldMan.storyteller;
     return GetFreeStorySlot();
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 // Returns TRUE if stat has increased
 bool8 StorytellerUpdateStat(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 stat;
     sStorytellerPtr = &gSaveBlock1Ptr->oldMan.storyteller;
     stat = sStorytellerPtr->gameStatIDs[sSelectedStory];
@@ -1443,20 +1484,28 @@ bool8 StorytellerUpdateStat(void)
         return TRUE;
     }
     return FALSE;
+#endif //FREE_OTHER_PBL
+    return FALSE;
 }
 
 bool8 HasStorytellerAlreadyRecorded(void)
 {
+#if FREE_OTHER_PBL == FALSE
     sStorytellerPtr = &gSaveBlock1Ptr->oldMan.storyteller;
 
     if (sStorytellerPtr->alreadyRecorded == FALSE)
         return FALSE;
     else
         return TRUE;
+#endif //FREE_OTHER_PBL
+    return FALSE;
 }
 
 bool8 Script_StorytellerInitializeRandomStat(void)
 {
+#if FREE_OTHER_PBL == FALSE
     sStorytellerPtr = &gSaveBlock1Ptr->oldMan.storyteller;
     return StorytellerInitializeRandomStat();
+#endif //FREE_OTHER_PBL
+    return FALSE;
 }

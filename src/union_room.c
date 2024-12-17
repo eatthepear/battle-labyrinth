@@ -1493,7 +1493,9 @@ static void Task_StartUnionRoomTrade(u8 taskId)
         }
         break;
     case 2:
+#if FREE_OTHER_PBL == FALSE
         memcpy(gBlockSendBuffer, gSaveBlock1Ptr->mail, sizeof(struct Mail) * PARTY_SIZE + 4);
+#endif //FREE_OTHER_PBL
         if (SendBlock(0, gBlockSendBuffer, sizeof(struct Mail) * PARTY_SIZE + 4))
             gTasks[taskId].data[0]++;
         break;

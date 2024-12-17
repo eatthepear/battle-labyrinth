@@ -204,6 +204,7 @@ void CompareLotadSize(void)
 
 void GiveGiftRibbonToParty(u8 index, u8 ribbonId)
 {
+#if FREE_OTHER_PBL == FALSE
     s32 i;
     bool32 gotRibbon = FALSE;
     u8 data = 1;
@@ -226,4 +227,5 @@ void GiveGiftRibbonToParty(u8 index, u8 ribbonId)
         if (gotRibbon)
             FlagSet(FLAG_SYS_RIBBON_GET);
     }
+#endif //FREE_OTHER_PBL
 }

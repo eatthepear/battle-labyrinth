@@ -100,8 +100,9 @@ void SetMysteryEventScriptStatus(u32 status)
     sMysteryEventScriptContext.mStatus = status;
 }
 
-static int CalcRecordMixingGiftChecksum(void)
+static UNUSED int CalcRecordMixingGiftChecksum(void)
 {
+#if FREE_OTHER_PBL == FALSE
     unsigned int i;
     int sum = 0;
     u8 *data = (u8 *)(&gSaveBlock1Ptr->recordMixingGift.data);
@@ -110,10 +111,13 @@ static int CalcRecordMixingGiftChecksum(void)
         sum += data[i];
 
     return sum;
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
-static bool32 IsRecordMixingGiftValid(void)
+static UNUSED bool32 IsRecordMixingGiftValid(void)
 {
+#if FREE_OTHER_PBL == FALSE
     struct RecordMixingGiftData *data = &gSaveBlock1Ptr->recordMixingGift.data;
     int checksum = CalcRecordMixingGiftChecksum();
 
@@ -125,15 +129,20 @@ static bool32 IsRecordMixingGiftValid(void)
         return FALSE;
     else
         return TRUE;
+#endif //FREE_OTHER_PBL
+    return FALSE;
 }
 
-static void ClearRecordMixingGift(void)
+static UNUSED void ClearRecordMixingGift(void)
 {
+#if FREE_OTHER_PBL == FALSE
     CpuFill16(0, &gSaveBlock1Ptr->recordMixingGift, sizeof(gSaveBlock1Ptr->recordMixingGift));
+#endif //FREE_OTHER_PBL
 }
 
 static void SetRecordMixingGift(u8 unk, u8 quantity, u16 itemId)
 {
+#if FREE_OTHER_PBL == FALSE
     if (!unk || !quantity || !itemId)
     {
         ClearRecordMixingGift();
@@ -145,10 +154,12 @@ static void SetRecordMixingGift(u8 unk, u8 quantity, u16 itemId)
         gSaveBlock1Ptr->recordMixingGift.data.itemId = itemId;
         gSaveBlock1Ptr->recordMixingGift.checksum = CalcRecordMixingGiftChecksum();
     }
+#endif //FREE_OTHER_PBL
 }
 
-u16 GetRecordMixingGift(void)
+UNUSED u16 GetRecordMixingGift(void)
 {
+#if FREE_OTHER_PBL == FALSE
     struct RecordMixingGiftData *data = &gSaveBlock1Ptr->recordMixingGift.data;
 
     if (!IsRecordMixingGiftValid())
@@ -167,6 +178,8 @@ u16 GetRecordMixingGift(void)
 
         return itemId;
     }
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 bool8 MEScrCmd_end(struct ScriptContext *ctx)

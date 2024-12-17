@@ -3605,6 +3605,7 @@ static void Task_WriteMailToGiveMonAfterText(u8 taskId)
 
 static void CB2_WriteMailToGiveMon(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 mail = GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_MAIL);
 
     DoEasyChatScreen(
@@ -3612,9 +3613,10 @@ static void CB2_WriteMailToGiveMon(void)
         gSaveBlock1Ptr->mail[mail].words,
         CB2_ReturnToPartyMenuFromWritingMail,
         EASY_CHAT_PERSON_DISPLAY_NONE);
+#endif //FREE_OTHER_PBL
 }
 
-static void CB2_ReturnToPartyMenuFromWritingMail(void)
+static UNUSED void CB2_ReturnToPartyMenuFromWritingMail(void)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     u16 item = GetMonData(mon, MON_DATA_HELD_ITEM);
@@ -3783,10 +3785,12 @@ static void CursorCb_Read(u8 taskId)
 
 static void CB2_ReadHeldMail(void)
 {
+#if FREE_OTHER_PBL == FALSE
     ReadMail(&gSaveBlock1Ptr->mail[GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_MAIL)], CB2_ReturnToPartyMenuFromReadingMail, TRUE);
+#endif //FREE_OTHER_PBL
 }
 
-static void CB2_ReturnToPartyMenuFromReadingMail(void)
+static UNUSED void CB2_ReturnToPartyMenuFromReadingMail(void)
 {
     gPaletteFade.bufferTransferDisabled = TRUE;
     InitPartyMenu(gPartyMenu.menuType, KEEP_PARTY_LAYOUT, gPartyMenu.action, TRUE, PARTY_MSG_DO_WHAT_WITH_MON, Task_TryCreateSelectionWindow, gPartyMenu.exitCallback);
@@ -4134,6 +4138,7 @@ static void CursorCb_FieldMove(u8 taskId)
             case FIELD_MOVE_SOFT_BOILED:
                 ChooseMonForSoftboiled(taskId);
                 break;
+#if FREE_OTHER_PBL == FALSE
             case FIELD_MOVE_TELEPORT:
                 mapHeader = Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->lastHealLocation.mapGroup, gSaveBlock1Ptr->lastHealLocation.mapNum);
                 GetMapNameGeneric(gStringVar1, mapHeader->regionMapSectionId);
@@ -4141,6 +4146,7 @@ static void CursorCb_FieldMove(u8 taskId)
                 DisplayFieldMoveExitAreaMessage(taskId);
                 sPartyMenuInternal->data[0] = fieldMove;
                 break;
+#endif //FREE_OTHER_PBL
             case FIELD_MOVE_DIG:
                 mapHeader = Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->escapeWarp.mapGroup, gSaveBlock1Ptr->escapeWarp.mapNum);
                 GetMapNameGeneric(gStringVar1, mapHeader->regionMapSectionId);
@@ -6978,6 +6984,7 @@ static void Task_UpdateHeldItemSpriteAndClosePartyMenu(u8 taskId)
 
 static void CB2_WriteMailToGiveMonFromBag(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 mail;
 
     GiveItemToMon(&gPlayerParty[gPartyMenu.slotId], gPartyMenu.bagItem);
@@ -6987,9 +6994,10 @@ static void CB2_WriteMailToGiveMonFromBag(void)
         gSaveBlock1Ptr->mail[mail].words,
         CB2_ReturnToPartyOrBagMenuFromWritingMail,
         EASY_CHAT_PERSON_DISPLAY_NONE);
+#endif //FREE_OTHER_PBL
 }
 
-static void CB2_ReturnToPartyOrBagMenuFromWritingMail(void)
+static UNUSED void CB2_ReturnToPartyOrBagMenuFromWritingMail(void)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     u16 item = GetMonData(mon, MON_DATA_HELD_ITEM);
@@ -7100,6 +7108,7 @@ void ChooseMonToGiveMailFromMailbox(void)
 
 static void TryGiveMailToSelectedMon(u8 taskId)
 {
+#if FREE_OTHER_PBL == FALSE
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     struct Mail *mail;
 
@@ -7117,6 +7126,7 @@ static void TryGiveMailToSelectedMon(u8 taskId)
     }
     ScheduleBgCopyTilemapToVram(2);
     gTasks[taskId].func = Task_UpdateHeldItemSpriteAndClosePartyMenu;
+#endif //FREE_OTHER_PBL
 }
 
 void InitChooseHalfPartyForBattle(u8 unused)

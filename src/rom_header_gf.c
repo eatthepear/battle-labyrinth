@@ -149,8 +149,10 @@ static const struct GFRomHeader sGFRomHeader = {
     .playerGenderOffset = offsetof(struct SaveBlock2, playerGender),
     .frontierStatusOffset = offsetof(struct SaveBlock2, frontier.challengeStatus),
     .frontierStatusOffset2 = offsetof(struct SaveBlock2, frontier.challengeStatus),
+#if FREE_OTHER_PBL == FALSE
     .externalEventFlagsOffset = offsetof(struct SaveBlock1, externalEventFlags),
     .externalEventDataOffset = offsetof(struct SaveBlock1, externalEventData),
+#endif //FREE_OTHER_PBL
     .unk18 = 0x00000000,
     .speciesInfo = gSpeciesInfo,
     //.abilityNames = gAbilityNames, //handled in gAbilitiesInfo
@@ -162,14 +164,18 @@ static const struct GFRomHeader sGFRomHeader = {
     .gcnLinkFlagsOffset = offsetof(struct SaveBlock2, gcnLinkFlags),
     .gameClearFlag = FLAG_SYS_GAME_CLEAR,
     .ribbonFlag = FLAG_SYS_RIBBON_GET,
+#if FREE_OTHER_PBL == FALSE
     .bagCountItems = BAG_ITEMS_COUNT,
+#endif //FREE_OTHER_PBL
     .bagCountKeyItems = BAG_KEYITEMS_COUNT,
     .bagCountPokeballs = BAG_POKEBALLS_COUNT,
     .bagCountTMHMs = BAG_TMHM_COUNT,
     .bagCountBerries = BAG_BERRIES_COUNT,
     .pcItemsCount = PC_ITEMS_COUNT,
     .pcItemsOffset = offsetof(struct SaveBlock1, pcItems),
+#if FREE_OTHER_PBL == FALSE
     .giftRibbonsOffset = offsetof(struct SaveBlock1, giftRibbons),
+#endif //FREE_OTHER_PBL
 #if FREE_ENIGMA_BERRY == FALSE
     .enigmaBerryOffset = offsetof(struct SaveBlock1, enigmaBerry),
     .enigmaBerrySize = sizeof(struct EnigmaBerry),

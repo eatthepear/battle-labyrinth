@@ -246,6 +246,7 @@ static void TransferEggMoves(void)
 
 static void StorePokemonInDaycare(struct Pokemon *mon, struct DaycareMon *daycareMon)
 {
+#if FREE_OTHER_PBL == FALSE
     if (MonHasMail(mon))
     {
         u8 mailId;
@@ -259,6 +260,7 @@ static void StorePokemonInDaycare(struct Pokemon *mon, struct DaycareMon *daycar
         daycareMon->mail.message = gSaveBlock1Ptr->mail[mailId];
         TakeMailFromMon(mon);
     }
+#endif //FREE_OTHER_PBL
 
     daycareMon->mon = mon->box;
     daycareMon->steps = 0;
@@ -292,10 +294,14 @@ static void ShiftDaycareSlots(struct DayCare *daycare)
         daycare->mons[0].mon = daycare->mons[1].mon;
         ZeroBoxMonData(&daycare->mons[1].mon);
 
+#if FREE_OTHER_PBL == FALSE
         daycare->mons[0].mail = daycare->mons[1].mail;
+#endif //FREE_OTHER_PBL
         daycare->mons[0].steps = daycare->mons[1].steps;
         daycare->mons[1].steps = 0;
+#if FREE_OTHER_PBL == FALSE
         ClearDaycareMonMail(&daycare->mons[1].mail);
+#endif //FREE_OTHER_PBL
     }
 }
 
@@ -356,11 +362,13 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
     }
 
     gPlayerParty[PARTY_SIZE - 1] = pokemon;
+#if FREE_OTHER_PBL == FALSE
     if (daycareMon->mail.message.itemId)
     {
         GiveMailToMon(&gPlayerParty[PARTY_SIZE - 1], &daycareMon->mail.message);
         ClearDaycareMonMail(&daycareMon->mail);
     }
+#endif //FREE_OTHER_PBL
 
     ZeroBoxMonData(&daycareMon->mon);
     daycareMon->steps = 0;
@@ -445,7 +453,7 @@ u8 GetNumLevelsGainedFromDaycare(void)
     return 0;
 }
 
-static void ClearDaycareMonMail(struct DaycareMail *mail)
+static UNUSED void ClearDaycareMonMail(struct DaycareMail *mail)
 {
     s32 i;
 
@@ -461,7 +469,9 @@ static void ClearDaycareMon(struct DaycareMon *daycareMon)
 {
     ZeroBoxMonData(&daycareMon->mon);
     daycareMon->steps = 0;
+#if FREE_OTHER_PBL == FALSE
     ClearDaycareMonMail(&daycareMon->mail);
+#endif //FREE_OTHER_PBL
 }
 
 static void UNUSED ClearAllDaycareData(struct DayCare *daycare)

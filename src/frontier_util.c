@@ -1480,6 +1480,7 @@ static void ShowPyramidResultsWindow(void)
 // Link contest records. Why is it in this file?
 static void ShowLinkContestResultsWindow(void)
 {
+#if FREE_OTHER_PBL == FALSE
     const u8 *str;
     s32 i, j;
     s32 x;
@@ -1526,6 +1527,7 @@ static void ShowLinkContestResultsWindow(void)
 
     PutWindowTilemap(gRecordsWindowId);
     CopyWindowToVram(gRecordsWindowId, COPYWIN_FULL);
+#endif //FREE_OTHER_PBL
 }
 
 static void CheckPutFrontierTVShowOnAir(void)

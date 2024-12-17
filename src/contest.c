@@ -3732,6 +3732,7 @@ static void DetermineFinalStandings(void)
 
 void SaveLinkContestResults(void)
 {
+#if FREE_OTHER_PBL == FALSE
     if ((gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK))
     {
         gSaveBlock2Ptr->contestLinkResults[gSpecialVar_ContestCategory][gContestFinalStandings[gContestPlayerMonIndex]] =
@@ -3739,6 +3740,7 @@ void SaveLinkContestResults(void)
         (gSaveBlock2Ptr->contestLinkResults[gSpecialVar_ContestCategory][gContestFinalStandings[gContestPlayerMonIndex]] + 1);
 
     }
+#endif //FREE_OTHER_PBL
 }
 
 static bool8 DidContestantPlaceHigher(s32 a, s32 b, struct ContestFinalStandings *standings)
@@ -5607,16 +5609,19 @@ static void Contest_SetBgCopyFlags(u32 flagIndex)
 
 void ResetContestLinkResults(void)
 {
+#if FREE_OTHER_PBL == FALSE
     s32 i;
     s32 j;
 
     for(i = 0; i < CONTEST_CATEGORIES_COUNT; i++)
         for(j = 0; j < CONTESTANT_COUNT; j++)
             gSaveBlock2Ptr->contestLinkResults[i][j] = 0;
+#endif //FREE_OTHER_PBL
 }
 
 bool8 SaveContestWinner(u8 rank)
 {
+#if FREE_OTHER_PBL == FALSE
     s32 i;
     u8 captionId = Random() % NUM_PAINTING_CAPTIONS;
 
@@ -5681,6 +5686,7 @@ bool8 SaveContestWinner(u8 rank)
         StringCopy(gCurContestWinner.trainerName, gContestMons[i].trainerName);
         gCurContestWinner.contestCategory = captionId;
     }
+#endif //FREE_OTHER_PBL
     return TRUE;
 }
 
@@ -5690,6 +5696,7 @@ bool8 SaveContestWinner(u8 rank)
 // If actually preparing to insert the winner into the saveblock, shift is TRUE
 u8 GetContestWinnerSaveIdx(u8 rank, bool8 shift)
 {
+#if FREE_OTHER_PBL == FALSE
     s32 i;
 
     switch (rank)
@@ -5722,14 +5729,18 @@ u8 GetContestWinnerSaveIdx(u8 rank, bool8 shift)
             return CONTEST_WINNER_MUSEUM_TOUGH - 1;
         }
     }
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 void ClearContestWinnerPicsInContestHall(void)
 {
+#if FREE_OTHER_PBL == FALSE
     s32 i;
 
     for (i = 0; i < MUSEUM_CONTEST_WINNERS_START; i++)
         gSaveBlock1Ptr->contestWinners[i] = gDefaultContestWinners[i];
+#endif //FREE_OTHER_PBL
 }
 
 static void SetContestLiveUpdateFlags(u8 contestant)

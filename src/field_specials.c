@@ -1312,6 +1312,7 @@ void BufferEReaderTrainerName(void)
 
 u16 GetSlotMachineId(void)
 {
+#if FREE_OTHER_PBL == FALSE
     static const u8 sSlotMachineRandomSeeds[SLOT_MACHINE_COUNT] = {12, 2, 4, 5, 1, 8, 7, 11, 3, 10, 9, 6};
     static const u8 sSlotMachineIds[SLOT_MACHINE_COUNT] = {
         SLOT_MACHINE_UNLUCKIEST,
@@ -1347,6 +1348,8 @@ u16 GetSlotMachineId(void)
         return sSlotMachineServiceDayIds[rnd % SLOT_MACHINE_COUNT];
 
     return sSlotMachineIds[rnd % SLOT_MACHINE_COUNT];
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 bool8 FoundAbandonedShipRoom1Key(void)
@@ -3813,8 +3816,10 @@ void GetBattlePyramidHint(void)
 // Used to avoid a potential softlock if the player respawns on Dewford with no way off
 void ResetHealLocationFromDewford(void)
 {
+#if FREE_OTHER_PBL == FALSE
     if (gSaveBlock1Ptr->lastHealLocation.mapGroup == MAP_GROUP(DEWFORD_TOWN) && gSaveBlock1Ptr->lastHealLocation.mapNum == MAP_NUM(DEWFORD_TOWN))
         SetLastHealLocationWarp(HEAL_LOCATION_PETALBURG_CITY);
+#endif //FREE_OTHER_PBL
 }
 
 bool8 InPokemonCenter(void)

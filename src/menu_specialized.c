@@ -243,6 +243,7 @@ static u8 UNUSED MailboxMenu_GetWindowId(u8 windowIdx)
 
 static void MailboxMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 buffer[30];
     u16 length;
 
@@ -255,6 +256,7 @@ static void MailboxMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
     if (length < PLAYER_NAME_LENGTH - 1)
         ConvertInternationalString(buffer, LANGUAGE_JAPANESE);
     AddTextPrinterParameterized4(windowId, FONT_NORMAL, 8, y, 0, 0, sPlayerNameTextColors, TEXT_SKIP_DRAW, buffer);
+#endif //FREE_OTHER_PBL
 }
 
 u8 MailboxMenu_CreateList(struct PlayerPCItemPageStruct *page)
