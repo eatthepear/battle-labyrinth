@@ -10,10 +10,12 @@
 
 void ClearAllMail(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
 
     for (i = 0; i < MAIL_COUNT; i++)
         ClearMail(&gSaveBlock1Ptr->mail[i]);
+#endif //FREE_OTHER_PBL
 }
 
 void ClearMail(struct Mail *mail)
@@ -44,6 +46,7 @@ bool8 MonHasMail(struct Pokemon *mon)
 
 u8 GiveMailToMonByItemId(struct Pokemon *mon, u16 itemId)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 heldItem[2];
     u8 id, i;
     u16 species;
@@ -76,6 +79,7 @@ u8 GiveMailToMonByItemId(struct Pokemon *mon, u16 itemId)
             return id;
         }
     }
+#endif //FREE_OTHER_PBL
 
     return MAIL_NONE;
 }
@@ -110,6 +114,7 @@ u16 MailSpeciesToSpecies(u16 mailSpecies, u16 *buffer)
 
 u8 GiveMailToMon(struct Pokemon *mon, struct Mail *mail)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 heldItem[2];
     u16 itemId = mail->itemId;
     u8 mailId = GiveMailToMonByItemId(mon, itemId);
@@ -127,6 +132,8 @@ u8 GiveMailToMon(struct Pokemon *mon, struct Mail *mail)
     SetMonData(mon, MON_DATA_HELD_ITEM, heldItem);
 
     return mailId;
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 static bool32 UNUSED DummyMailFunc(void)
@@ -136,6 +143,7 @@ static bool32 UNUSED DummyMailFunc(void)
 
 void TakeMailFromMon(struct Pokemon *mon)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 heldItem[2];
     u8 mailId;
 
@@ -149,15 +157,19 @@ void TakeMailFromMon(struct Pokemon *mon)
         SetMonData(mon, MON_DATA_MAIL, &mailId);
         SetMonData(mon, MON_DATA_HELD_ITEM, heldItem);
     }
+#endif //FREE_OTHER_PBL
 }
 
 void ClearMailItemId(u8 mailId)
 {
+#if FREE_OTHER_PBL == FALSE
     gSaveBlock1Ptr->mail[mailId].itemId = ITEM_NONE;
+#endif //FREE_OTHER_PBL
 }
 
 u8 TakeMailFromMonAndSave(struct Pokemon *mon)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
     u8 newHeldItem[2];
     u8 newMailId;
@@ -179,6 +191,7 @@ u8 TakeMailFromMonAndSave(struct Pokemon *mon)
     }
 
     // No space to save mail
+#endif //FREE_OTHER_PBL
     return MAIL_NONE;
 }
 

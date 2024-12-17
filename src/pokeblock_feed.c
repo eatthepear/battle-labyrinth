@@ -723,9 +723,11 @@ static void HandleInitWindows(void)
 
 static void SetPokeblockSpritePal(u8 pokeblockCaseId)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 colorId = GetPokeblockData(&gSaveBlock1Ptr->pokeblocks[pokeblockCaseId], PBLOCK_COLOR);
     sPokeblockSpritePal.data = sPokeblocksPals[colorId - 1];
     sPokeblockSpritePal.tag = TAG_POKEBLOCK;
+#endif //FREE_OTHER_PBL
 }
 
 // defines for task data fields
@@ -780,7 +782,7 @@ static void LaunchPokeblockFeedTask(void)
     gTasks[taskId].tHorizontalThrow = TRUE;
 }
 
-static void Task_WaitForAtePokeblockMessage(u8 taskId)
+static UNUSED void Task_WaitForAtePokeblockMessage(u8 taskId)
 {
     if (RunTextPrintersRetIsActive(0) != TRUE)
         gTasks[taskId].func = Task_FadeOutPokeblockFeed;
@@ -788,6 +790,7 @@ static void Task_WaitForAtePokeblockMessage(u8 taskId)
 
 static void Task_PrintAtePokeblockMessage(u8 taskId)
 {
+#if FREE_OTHER_PBL == FALSE
     struct Pokemon *mon = &gPlayerParty[gPokeblockMonId];
     struct Pokeblock *pokeblock = &gSaveBlock1Ptr->pokeblocks[gSpecialVar_ItemId];
 
@@ -805,6 +808,7 @@ static void Task_PrintAtePokeblockMessage(u8 taskId)
     gTextFlags.canABSpeedUpPrint = TRUE;
     AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, GetPlayerTextSpeedDelay(), NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
     gTasks[taskId].func = Task_WaitForAtePokeblockMessage;
+#endif //FREE_OTHER_PBL
 }
 
 static void Task_ExitPokeblockFeed(u8 taskId)

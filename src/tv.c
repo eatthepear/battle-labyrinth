@@ -72,7 +72,7 @@ COMMON_DATA struct {
     u16 move;
 } sTV_SecretBaseVisitMonsTemp[10] = {0};
 
-static u8 sTVShowMixingNumPlayers;
+static UNUSED u8 sTVShowMixingNumPlayers;
 static u8 sTVShowNewsMixingNumPlayers;
 static s8 sTVShowMixingCurSlot;
 
@@ -80,9 +80,9 @@ static EWRAM_DATA u16 sPokemonAnglerSpecies = 0;
 static EWRAM_DATA u16 sPokemonAnglerAttemptCounters = 0;
 static EWRAM_DATA u16 sFindThatGamerCoinsSpent = 0;
 static EWRAM_DATA u8 sFindThatGamerWhichGame = SLOT_MACHINE;
-static EWRAM_DATA ALIGNED(4) u8 sRecordMixingPartnersWithoutShowsToShare = 0;
+static UNUSED EWRAM_DATA ALIGNED(4) u8 sRecordMixingPartnersWithoutShowsToShare = 0;
 static EWRAM_DATA ALIGNED(4) u8 sTVShowState = 0;
-static EWRAM_DATA u8 sTVSecretBaseSecretsRandomValues[3] = {};
+static UNUSED EWRAM_DATA u8 sTVSecretBaseSecretsRandomValues[3] = {};
 
 static void ClearPokeNews(void);
 static u8 GetTVGroupByShowId(u8);
@@ -759,6 +759,7 @@ static const u8 sTVSecretBaseSecretsActions[NUM_SECRET_BASE_FLAGS] =
 
 void ClearTVShowData(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i, j;
 
     for (i = 0; i < ARRAY_COUNT(gSaveBlock1Ptr->tvShows); i++)
@@ -769,10 +770,12 @@ void ClearTVShowData(void)
             gSaveBlock1Ptr->tvShows[i].commonInit.data[j] = 0;
     }
     ClearPokeNews();
+#endif //FREE_OTHER_PBL
 }
 
 u8 GetRandomActiveShowIdx(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
     u8 j;
     u8 selIdx;
@@ -806,11 +809,13 @@ u8 GetRandomActiveShowIdx(void)
             j--;
 
     } while (j != selIdx);
+#endif //FREE_OTHER_PBL
     return 0xFF;
 }
 
 u8 FindAnyTVShowOnTheAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 slot = GetRandomActiveShowIdx();
     if (slot == 0xFF)
         return 0xFF;
@@ -820,6 +825,8 @@ u8 FindAnyTVShowOnTheAir(void)
         return FindFirstActiveTVShowThatIsNotAMassOutbreak();
 
     return slot;
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 void UpdateTVScreensOnMap(int width, int height)
@@ -880,11 +887,15 @@ void TurnOnTVScreen(void)
 // gSpecialVar_0x8004 here is set from GetRandomActiveShowIdx in EventScript_TryDoTVShow
 u8 GetSelectedTVShow(void)
 {
+#if FREE_OTHER_PBL == FALSE
     return gSaveBlock1Ptr->tvShows[gSpecialVar_0x8004].common.kind;
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
-static u8 FindFirstActiveTVShowThatIsNotAMassOutbreak(void)
+static UNUSED u8 FindFirstActiveTVShowThatIsNotAMassOutbreak(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
 
     for (i = 0; i < ARRAY_COUNT(gSaveBlock1Ptr->tvShows) - 1; i++)
@@ -894,11 +905,13 @@ static u8 FindFirstActiveTVShowThatIsNotAMassOutbreak(void)
          && gSaveBlock1Ptr->tvShows[i].common.active == TRUE)
             return i;
     }
+#endif //FREE_OTHER_PBL
     return 0xFF;
 }
 
 u8 GetNextActiveShowIfMassOutbreak(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *tvShow;
 
     tvShow = &gSaveBlock1Ptr->tvShows[gSpecialVar_0x8004];
@@ -906,12 +919,15 @@ u8 GetNextActiveShowIfMassOutbreak(void)
         return FindFirstActiveTVShowThatIsNotAMassOutbreak();
 
     return gSpecialVar_0x8004;
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 // IN SEARCH OF TRAINERS
 
 void ResetGabbyAndTy(void)
 {
+#if FREE_OTHER_PBL == FALSE
     gSaveBlock1Ptr->gabbyAndTyData.mon1 = SPECIES_NONE;
     gSaveBlock1Ptr->gabbyAndTyData.mon2 = SPECIES_NONE;
     gSaveBlock1Ptr->gabbyAndTyData.lastMove = MOVE_NONE;
@@ -929,10 +945,12 @@ void ResetGabbyAndTy(void)
     gSaveBlock1Ptr->gabbyAndTyData.valB_4 = 0;
     gSaveBlock1Ptr->gabbyAndTyData.mapnum = 0;
     gSaveBlock1Ptr->gabbyAndTyData.battleNum = 0;
+#endif //FREE_OTHER_PBL
 }
 
 void GabbyAndTyBeforeInterview(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
 
     gSaveBlock1Ptr->gabbyAndTyData.mon1 = gBattleResults.playerMon1Species;
@@ -965,10 +983,12 @@ void GabbyAndTyBeforeInterview(void)
     TakeGabbyAndTyOffTheAir();
     if (gSaveBlock1Ptr->gabbyAndTyData.lastMove == MOVE_NONE)
         FlagSet(FLAG_TEMP_SKIP_GABBY_INTERVIEW);
+#endif //FREE_OTHER_PBL
 }
 
 void GabbyAndTyAfterInterview(void)
 {
+#if FREE_OTHER_PBL == FALSE
     gSaveBlock1Ptr->gabbyAndTyData.battleTookMoreThanOneTurn2 = gSaveBlock1Ptr->gabbyAndTyData.battleTookMoreThanOneTurn;
     gSaveBlock1Ptr->gabbyAndTyData.playerLostAMon2 = gSaveBlock1Ptr->gabbyAndTyData.playerLostAMon;
     gSaveBlock1Ptr->gabbyAndTyData.playerUsedHealingItem2 = gSaveBlock1Ptr->gabbyAndTyData.playerUsedHealingItem;
@@ -976,39 +996,51 @@ void GabbyAndTyAfterInterview(void)
     gSaveBlock1Ptr->gabbyAndTyData.onAir = TRUE;
     gSaveBlock1Ptr->gabbyAndTyData.mapnum = gMapHeader.regionMapSectionId;
     IncrementGameStat(GAME_STAT_GOT_INTERVIEWED);
+#endif //FREE_OTHER_PBL
 }
 
-static void TakeGabbyAndTyOffTheAir(void)
+static UNUSED void TakeGabbyAndTyOffTheAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     gSaveBlock1Ptr->gabbyAndTyData.onAir = FALSE;
+#endif //FREE_OTHER_PBL
 }
 
 u8 GabbyAndTyGetBattleNum(void)
 {
+#if FREE_OTHER_PBL == FALSE
     if (gSaveBlock1Ptr->gabbyAndTyData.battleNum > 5)
         return (gSaveBlock1Ptr->gabbyAndTyData.battleNum % 3) + 6;
 
     return gSaveBlock1Ptr->gabbyAndTyData.battleNum;
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 bool8 IsGabbyAndTyShowOnTheAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     return gSaveBlock1Ptr->gabbyAndTyData.onAir;
+#endif //FREE_OTHER_PBL
+    return FALSE;
 }
 
 bool8 GabbyAndTyGetLastQuote(void)
 {
+#if FREE_OTHER_PBL == FALSE
     if (gSaveBlock1Ptr->gabbyAndTyData.quote[0] == EC_EMPTY_WORD)
     {
         return FALSE;
     }
     CopyEasyChatWord(gStringVar1, gSaveBlock1Ptr->gabbyAndTyData.quote[0]);
     gSaveBlock1Ptr->gabbyAndTyData.quote[0] = -1;
+#endif //FREE_OTHER_PBL
     return TRUE;
 }
 
 u8 GabbyAndTyGetLastBattleTrivia(void)
 {
+#if FREE_OTHER_PBL == FALSE
     if (!gSaveBlock1Ptr->gabbyAndTyData.battleTookMoreThanOneTurn2)
         return 1;
 
@@ -1021,6 +1053,7 @@ u8 GabbyAndTyGetLastBattleTrivia(void)
     if (gSaveBlock1Ptr->gabbyAndTyData.playerLostAMon2)
         return 4;
 
+#endif //FREE_OTHER_PBL
     return 0;
 }
 
@@ -1092,6 +1125,7 @@ void InterviewAfter(void)
 
 void TryPutPokemonTodayOnAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
     u16 ballsUsed;
     TVShow *show;
@@ -1143,12 +1177,14 @@ void TryPutPokemonTodayOnAir(void)
             }
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 // Show is initialized in last slot and updated there until it's
 // either triggered or deleted at the end of the day by ResolveWorldOfMastersShow
-static void InitWorldOfMastersShowAttempt(void)
+static UNUSED void InitWorldOfMastersShowAttempt(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show = &gSaveBlock1Ptr->tvShows[LAST_TVSHOW_IDX];
     if (show->common.kind != TVSHOW_WORLD_OF_MASTERS)
     {
@@ -1160,10 +1196,12 @@ static void InitWorldOfMastersShowAttempt(void)
     show->worldOfMasters.caughtPoke = gBattleResults.caughtMonSpecies;
     show->worldOfMasters.species = gBattleResults.playerMon1Species;
     show->worldOfMasters.location = gMapHeader.regionMapSectionId;
+#endif //FREE_OTHER_PBL
 }
 
-static void TryPutPokemonTodayFailedOnTheAir(void)
+static UNUSED void TryPutPokemonTodayFailedOnTheAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 ballsUsed;
     u8 i;
     TVShow *show;
@@ -1194,9 +1232,10 @@ static void TryPutPokemonTodayFailedOnTheAir(void)
             }
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
-static void StorePlayerIdInRecordMixShow(TVShow *show)
+static UNUSED void StorePlayerIdInRecordMixShow(TVShow *show)
 {
     u32 id = GetPlayerIDAsU32();
     show->common.srcTrainerId2Lo = id;
@@ -1207,7 +1246,7 @@ static void StorePlayerIdInRecordMixShow(TVShow *show)
     show->common.trainerIdHi = id >> 8;
 }
 
-static void StorePlayerIdInNormalShow(TVShow *show)
+static UNUSED void StorePlayerIdInNormalShow(TVShow *show)
 {
     u32 id = GetPlayerIDAsU32();
     show->common.srcTrainerIdLo = id;
@@ -1218,6 +1257,7 @@ static void StorePlayerIdInNormalShow(TVShow *show)
 
 static void InterviewAfter_ContestLiveUpdates(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     TVShow *show2;
 
@@ -1242,10 +1282,12 @@ static void InterviewAfter_ContestLiveUpdates(void)
         show2->contestLiveUpdates.losingTrainerLanguage = show->contestLiveUpdates.losingTrainerLanguage;
         DeleteTVShowInArrayByIdx(gSaveBlock1Ptr->tvShows, LAST_TVSHOW_IDX);
     }
+#endif //FREE_OTHER_PBL
 }
 
 void PutBattleUpdateOnTheAir(u8 opponentLinkPlayerId, u16 move, u16 speciesPlayer, u16 speciesOpponent)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 name[32];
 
@@ -1281,10 +1323,12 @@ void PutBattleUpdateOnTheAir(u8 opponentLinkPlayerId, u16 move, u16 speciesPlaye
                 show->battleUpdate.linkOpponentLanguage = gLinkPlayers[opponentLinkPlayerId].language;
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 bool8 Put3CheersForPokeblocksOnTheAir(const u8 *partnersName, u8 flavor, u8 color, u8 sheen, u8 language)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 name[32];
 
@@ -1312,11 +1356,13 @@ bool8 Put3CheersForPokeblocksOnTheAir(const u8 *partnersName, u8 flavor, u8 colo
         show->threeCheers.worstBlenderLanguage = LANGUAGE_JAPANESE;
     else
         show->threeCheers.worstBlenderLanguage = language;
+#endif //FREE_OTHER_PBL
     return TRUE;
 }
 
 void PutFanClubSpecialOnTheAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 name[32];
     u32 id;
@@ -1343,10 +1389,12 @@ void PutFanClubSpecialOnTheAir(void)
     if (show->fanClubSpecial.language == LANGUAGE_JAPANESE)
         show->fanClubSpecial.idolNameLanguage = LANGUAGE_JAPANESE;
 #endif //FREE_LINK_BATTLE_RECORDS
+#endif //FREE_OTHER_PBL
 }
 
 void ContestLiveUpdates_Init(u8 round1Placing)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
 
     DeleteTVShowInArrayByIdx(gSaveBlock1Ptr->tvShows, LAST_TVSHOW_IDX);
@@ -1357,34 +1405,42 @@ void ContestLiveUpdates_Init(u8 round1Placing)
         show->contestLiveUpdates.round1Placing = round1Placing;
         show->contestLiveUpdates.kind = TVSHOW_CONTEST_LIVE_UPDATES;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void ContestLiveUpdates_SetRound2Placing(u8 round2Placing)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show = &gSaveBlock1Ptr->tvShows[LAST_TVSHOW_IDX];
     sCurTVShowSlot = FindFirstEmptyNormalTVShowSlot(gSaveBlock1Ptr->tvShows);
     if (sCurTVShowSlot != -1)
         show->contestLiveUpdates.round2Placing = round2Placing;
+#endif //FREE_OTHER_PBL
 }
 
 void ContestLiveUpdates_SetWinnerAppealFlag(u8 flag)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show = &gSaveBlock1Ptr->tvShows[LAST_TVSHOW_IDX];
     sCurTVShowSlot = FindFirstEmptyNormalTVShowSlot(gSaveBlock1Ptr->tvShows);
     if (sCurTVShowSlot != -1)
         show->contestLiveUpdates.winnerAppealFlag = flag;
+#endif //FREE_OTHER_PBL
 }
 
 void ContestLiveUpdates_SetWinnerMoveUsed(u16 move)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show = &gSaveBlock1Ptr->tvShows[LAST_TVSHOW_IDX];
     sCurTVShowSlot = FindFirstEmptyNormalTVShowSlot(gSaveBlock1Ptr->tvShows);
     if (sCurTVShowSlot != -1)
         show->contestLiveUpdates.move = move;
+#endif //FREE_OTHER_PBL
 }
 
 void ContestLiveUpdates_SetLoserData(u8 flag, u8 loser)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show = &gSaveBlock1Ptr->tvShows[LAST_TVSHOW_IDX];
     sCurTVShowSlot = FindFirstEmptyNormalTVShowSlot(gSaveBlock1Ptr->tvShows);
     if (sCurTVShowSlot != -1)
@@ -1401,10 +1457,12 @@ void ContestLiveUpdates_SetLoserData(u8 flag, u8 loser)
         else
             show->contestLiveUpdates.losingTrainerLanguage = gLinkPlayers[loser].language;
     }
+#endif //FREE_OTHER_PBL
 }
 
 static void InterviewAfter_BravoTrainerPokemonProfile(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     TVShow *show2;
 
@@ -1430,10 +1488,12 @@ static void InterviewAfter_BravoTrainerPokemonProfile(void)
             show2->bravoTrainer.pokemonNameLanguage = show->bravoTrainer.pokemonNameLanguage;
         DeleteTVShowInArrayByIdx(gSaveBlock1Ptr->tvShows, LAST_TVSHOW_IDX);
     }
+#endif //FREE_OTHER_PBL
 }
 
 void BravoTrainerPokemonProfile_BeforeInterview1(u16 move)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show = &gSaveBlock1Ptr->tvShows[LAST_TVSHOW_IDX];
     InterviewBefore_BravoTrainerPkmnProfile();
     sCurTVShowSlot = FindFirstEmptyNormalTVShowSlot(gSaveBlock1Ptr->tvShows);
@@ -1443,10 +1503,12 @@ void BravoTrainerPokemonProfile_BeforeInterview1(u16 move)
         show->bravoTrainer.move = move;
         show->bravoTrainer.kind = TVSHOW_BRAVO_TRAINER_POKEMON_PROFILE;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void BravoTrainerPokemonProfile_BeforeInterview2(u8 contestStandingPlace)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show = &gSaveBlock1Ptr->tvShows[LAST_TVSHOW_IDX];
     sCurTVShowSlot = FindFirstEmptyNormalTVShowSlot(gSaveBlock1Ptr->tvShows);
     if (sCurTVShowSlot != -1)
@@ -1459,10 +1521,12 @@ void BravoTrainerPokemonProfile_BeforeInterview2(u8 contestStandingPlace)
         StripExtCtrlCodes(show->bravoTrainer.pokemonNickname);
         show->bravoTrainer.pokemonNameLanguage = GetMonData(&gPlayerParty[gContestMonPartyIndex], MON_DATA_LANGUAGE);
     }
+#endif //FREE_OTHER_PBL
 }
 
 static void InterviewAfter_BravoTrainerBattleTowerProfile(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show = &gSaveBlock1Ptr->tvShows[sCurTVShowSlot];
     show->bravoTrainerTower.kind = TVSHOW_BRAVO_TRAINER_BATTLE_TOWER_PROFILE;
     show->bravoTrainerTower.active = TRUE;
@@ -1483,10 +1547,12 @@ static void InterviewAfter_BravoTrainerBattleTowerProfile(void)
         show->bravoTrainerTower.opponentLanguage = LANGUAGE_JAPANESE;
     else
         show->bravoTrainerTower.opponentLanguage = gSaveBlock2Ptr->frontier.towerInterview.opponentLanguage;
+#endif //FREE_OTHER_PBL
 }
 
 void TryPutSmartShopperOnAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 i;
 
@@ -1516,10 +1582,12 @@ void TryPutSmartShopperOnAir(void)
             }
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 void PutNameRaterShowOnTheAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
 
     InterviewBefore_NameRater();
@@ -1543,10 +1611,12 @@ void PutNameRaterShowOnTheAir(void)
             show->nameRaterShow.pokemonNameLanguage = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_LANGUAGE);
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 void StartMassOutbreak(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show = &gSaveBlock1Ptr->tvShows[gSpecialVar_0x8004];
     gSaveBlock1Ptr->outbreakPokemonSpecies = show->massOutbreak.species;
     gSaveBlock1Ptr->outbreakLocationMapNum = show->massOutbreak.locationMapNum;
@@ -1561,10 +1631,12 @@ void StartMassOutbreak(void)
     gSaveBlock1Ptr->outbreakUnused3 = show->massOutbreak.unused3;
     gSaveBlock1Ptr->outbreakPokemonProbability = show->massOutbreak.probability;
     gSaveBlock1Ptr->outbreakDaysLeft = 2;
+#endif //FREE_OTHER_PBL
 }
 
 void PutLilycoveContestLadyShowOnTheAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
 
     Script_FindFirstEmptyNormalTVShowSlot();
@@ -1580,10 +1652,12 @@ void PutLilycoveContestLadyShowOnTheAir(void)
         show->contestLady.pokeblockState = GetContestLadyPokeblockState();
         StorePlayerIdInNormalShow(show);
     }
+#endif //FREE_OTHER_PBL
 }
 
 static void InterviewAfter_FanClubLetter(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show = &gSaveBlock1Ptr->tvShows[sCurTVShowSlot];
     show->fanclubLetter.kind = TVSHOW_FAN_CLUB_LETTER;
     show->fanclubLetter.active = TRUE;
@@ -1591,10 +1665,12 @@ static void InterviewAfter_FanClubLetter(void)
     show->fanclubLetter.species = GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL);
     StorePlayerIdInNormalShow(show);
     show->fanclubLetter.language = gGameLanguage;
+#endif //FREE_OTHER_PBL
 }
 
 static void InterviewAfter_RecentHappenings(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show = &gSaveBlock1Ptr->tvShows[sCurTVShowSlot];
     show->recentHappenings.kind = TVSHOW_RECENT_HAPPENINGS;
     show->recentHappenings.active = TRUE;
@@ -1602,10 +1678,12 @@ static void InterviewAfter_RecentHappenings(void)
     show->recentHappenings.species = SPECIES_NONE;
     StorePlayerIdInNormalShow(show);
     show->recentHappenings.language = gGameLanguage;
+#endif //FREE_OTHER_PBL
 }
 
 static void InterviewAfter_PkmnFanClubOpinions(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show = &gSaveBlock1Ptr->tvShows[sCurTVShowSlot];
     show->fanclubOpinions.kind = TVSHOW_PKMN_FAN_CLUB_OPINIONS;
     show->fanclubOpinions.active = TRUE;
@@ -1621,10 +1699,12 @@ static void InterviewAfter_PkmnFanClubOpinions(void)
         show->fanclubOpinions.pokemonNameLanguage = LANGUAGE_JAPANESE;
     else
         show->fanclubOpinions.pokemonNameLanguage = GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_LANGUAGE);
+#endif //FREE_OTHER_PBL
 }
 
-static void TryStartRandomMassOutbreak(void)
+static UNUSED void TryStartRandomMassOutbreak(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
     u16 outbreakIdx;
     TVShow *show;
@@ -1665,10 +1745,12 @@ static void TryStartRandomMassOutbreak(void)
             }
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 void EndMassOutbreak(void)
 {
+#if FREE_OTHER_PBL == FALSE
     gSaveBlock1Ptr->outbreakPokemonSpecies = SPECIES_NONE;
     gSaveBlock1Ptr->outbreakLocationMapNum = 0;
     gSaveBlock1Ptr->outbreakLocationMapGroup = 0;
@@ -1682,6 +1764,7 @@ void EndMassOutbreak(void)
     gSaveBlock1Ptr->outbreakUnused3 = 0;
     gSaveBlock1Ptr->outbreakPokemonProbability = 0;
     gSaveBlock1Ptr->outbreakDaysLeft = 0;
+#endif //FREE_OTHER_PBL
 }
 
 void UpdateTVShowsPerDay(u16 days)
@@ -1695,6 +1778,7 @@ void UpdateTVShowsPerDay(u16 days)
 
 static void UpdateMassOutbreakTimeLeft(u16 days)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
     TVShow *show;
 
@@ -1714,14 +1798,17 @@ static void UpdateMassOutbreakTimeLeft(u16 days)
             }
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 static void TryEndMassOutbreak(u16 days)
 {
+#if FREE_OTHER_PBL == FALSE
     if (gSaveBlock1Ptr->outbreakDaysLeft <= days)
         EndMassOutbreak();
     else
         gSaveBlock1Ptr->outbreakDaysLeft -= days;
+#endif //FREE_OTHER_PBL
 }
 
 void RecordFishingAttemptForTV(bool8 caughtFish)
@@ -1748,6 +1835,7 @@ void RecordFishingAttemptForTV(bool8 caughtFish)
 
 static void TryPutFishingAdviceOnAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
 
     sCurTVShowSlot = FindFirstEmptyRecordMixTVShowSlot(gSaveBlock1Ptr->tvShows);
@@ -1763,6 +1851,7 @@ static void TryPutFishingAdviceOnAir(void)
         StorePlayerIdInRecordMixShow(show);
         show->pokemonAngler.language = gGameLanguage;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void SetPokemonAnglerSpecies(u16 species)
@@ -1776,6 +1865,7 @@ void SetPokemonAnglerSpecies(u16 species)
 // Either way the temporary version of the show in the last slot is deleted.
 static void ResolveWorldOfMastersShow(u16 days)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show = &gSaveBlock1Ptr->tvShows[LAST_TVSHOW_IDX];
     if (show->worldOfMasters.kind == TVSHOW_WORLD_OF_MASTERS)
     {
@@ -1784,10 +1874,12 @@ static void ResolveWorldOfMastersShow(u16 days)
 
         DeleteTVShowInArrayByIdx(gSaveBlock1Ptr->tvShows, LAST_TVSHOW_IDX);
     }
+#endif //FREE_OTHER_PBL
 }
 
-static void TryPutWorldOfMastersOnAir(void)
+static UNUSED void TryPutWorldOfMastersOnAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     TVShow *show2;
 
@@ -1811,10 +1903,12 @@ static void TryPutWorldOfMastersOnAir(void)
             DeleteTVShowInArrayByIdx(gSaveBlock1Ptr->tvShows, LAST_TVSHOW_IDX);
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 void TryPutTodaysRivalTrainerOnAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u32 i;
     u8 nBadges;
@@ -1853,10 +1947,12 @@ void TryPutTodaysRivalTrainerOnAir(void)
         StorePlayerIdInRecordMixShow(show);
         show->rivalTrainer.language = gGameLanguage;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void TryPutTrendWatcherOnAir(const u16 *words)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
 
     sCurTVShowSlot = FindFirstEmptyRecordMixTVShowSlot(gSaveBlock1Ptr->tvShows);
@@ -1872,10 +1968,12 @@ void TryPutTrendWatcherOnAir(const u16 *words)
         StorePlayerIdInRecordMixShow(show);
         show->trendWatcher.language = gGameLanguage;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void TryPutTreasureInvestigatorsOnAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
 
     sCurTVShowSlot = FindFirstEmptyRecordMixTVShowSlot(gSaveBlock1Ptr->tvShows);
@@ -1891,10 +1989,12 @@ void TryPutTreasureInvestigatorsOnAir(void)
         StorePlayerIdInRecordMixShow(show);
         show->treasureInvestigators.language = gGameLanguage;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void TryPutFindThatGamerOnAir(u16 nCoinsPaidOut)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     bool8 flag;
     u16 nCoinsWon;
@@ -1944,6 +2044,7 @@ void TryPutFindThatGamerOnAir(u16 nCoinsPaidOut)
         StorePlayerIdInRecordMixShow(show);
         show->findThatGamer.language = gGameLanguage;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void AlertTVThatPlayerPlayedSlotMachine(u16 nCoinsSpent)
@@ -1958,8 +2059,9 @@ void AlertTVThatPlayerPlayedRoulette(u16 nCoinsSpent)
     sFindThatGamerCoinsSpent = nCoinsSpent;
 }
 
-static void SecretBaseVisit_CalculateDecorationData(TVShow *show)
+static UNUSED void SecretBaseVisit_CalculateDecorationData(TVShow *show)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i, j;
     u8 n;
     u8 decoration;
@@ -2013,9 +2115,10 @@ static void SecretBaseVisit_CalculateDecorationData(TVShow *show)
             show->secretBaseVisit.decorations[i] = sTV_DecorationsBuffer[i];
         break;
     }
+#endif //FREE_OTHER_PBL
 }
 
-static void SecretBaseVisit_CalculatePartyData(TVShow *show)
+static UNUSED void SecretBaseVisit_CalculatePartyData(TVShow *show)
 {
     u8 i;
     u16 move;
@@ -2075,6 +2178,7 @@ static void SecretBaseVisit_CalculatePartyData(TVShow *show)
 
 void TryPutSecretBaseVisitOnAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
 
     IsRecordMixShowAlreadySpawned(TVSHOW_SECRET_BASE_VISIT, TRUE); // Delete old version of show
@@ -2090,10 +2194,12 @@ void TryPutSecretBaseVisitOnAir(void)
         StorePlayerIdInRecordMixShow(show);
         show->secretBaseVisit.language = gGameLanguage;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void TryPutBreakingNewsOnAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 i;
     u16 balls;
@@ -2149,10 +2255,12 @@ void TryPutBreakingNewsOnAir(void)
         StorePlayerIdInRecordMixShow(show);
         show->breakingNews.language = gGameLanguage;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void TryPutLotteryWinnerReportOnAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
 
     sCurTVShowSlot = FindFirstEmptyRecordMixTVShowSlot(gSaveBlock1Ptr->tvShows);
@@ -2167,10 +2275,12 @@ void TryPutLotteryWinnerReportOnAir(void)
         StorePlayerIdInRecordMixShow(show);
         show->lottoWinner.language = gGameLanguage;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void TryPutBattleSeminarOnAir(u16 foeSpecies, u16 species, u8 moveIdx, const u16 *movePtr, u16 betterMove)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 i;
     u8 j;
@@ -2198,10 +2308,12 @@ void TryPutBattleSeminarOnAir(u16 foeSpecies, u16 species, u8 moveIdx, const u16
         StorePlayerIdInRecordMixShow(show);
         show->battleSeminar.language = gGameLanguage;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void TryPutSafariFanClubOnAir(u8 monsCaught, u8 pokeblocksUsed)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
 
     sCurTVShowSlot = FindFirstEmptyRecordMixTVShowSlot(gSaveBlock1Ptr->tvShows);
@@ -2216,10 +2328,12 @@ void TryPutSafariFanClubOnAir(u8 monsCaught, u8 pokeblocksUsed)
         StorePlayerIdInRecordMixShow(show);
         show->safariFanClub.language = gGameLanguage;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void TryPutSpotTheCutiesOnAir(struct Pokemon *pokemon, u8 ribbonMonDataIdx)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
 
     sCurTVShowSlot = FindFirstEmptyRecordMixTVShowSlot(gSaveBlock1Ptr->tvShows);
@@ -2240,6 +2354,7 @@ void TryPutSpotTheCutiesOnAir(struct Pokemon *pokemon, u8 ribbonMonDataIdx)
         else
             show->cuties.pokemonNameLanguage = GetMonData(pokemon, MON_DATA_LANGUAGE);
     }
+#endif //FREE_OTHER_PBL
 }
 
 u8 GetRibbonCount(struct Pokemon *pokemon)
@@ -2267,7 +2382,7 @@ u8 GetRibbonCount(struct Pokemon *pokemon)
     return nRibbons;
 }
 
-static u8 MonDataIdxToRibbon(u8 monDataIdx)
+static UNUSED u8 MonDataIdxToRibbon(u8 monDataIdx)
 {
     if (monDataIdx == MON_DATA_CHAMPION_RIBBON) return CHAMPION_RIBBON;
     if (monDataIdx == MON_DATA_COOL_RIBBON)     return COOL_RIBBON_NORMAL;
@@ -2291,6 +2406,7 @@ static u8 MonDataIdxToRibbon(u8 monDataIdx)
 
 void TryPutTrainerFanClubOnAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
 
     sCurTVShowSlot = FindFirstEmptyRecordMixTVShowSlot(gSaveBlock1Ptr->tvShows);
@@ -2305,10 +2421,12 @@ void TryPutTrainerFanClubOnAir(void)
         StorePlayerIdInRecordMixShow(show);
         show->trainerFanClub.language = gGameLanguage;
     }
+#endif //FREE_OTHER_PBL
 }
 
 bool8 ShouldHideFanClubInterviewer(void)
 {
+#if FREE_OTHER_PBL == FALSE
     sCurTVShowSlot = FindFirstEmptyNormalTVShowSlot(gSaveBlock1Ptr->tvShows);
     if (sCurTVShowSlot == -1)
         return TRUE;
@@ -2322,11 +2440,13 @@ bool8 ShouldHideFanClubInterviewer(void)
         return TRUE;
 #endif //FREE_LINK_BATTLE_RECORDS
 
+#endif //FREE_OTHER_PBL
     return FALSE;
 }
 
 bool8 ShouldAirFrontierTVShow(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u32 playerId;
     u8 showIdx;
     TVShow *shows;
@@ -2349,11 +2469,13 @@ bool8 ShouldAirFrontierTVShow(void)
     if (sCurTVShowSlot == -1)
         return FALSE;
 
+#endif //FREE_OTHER_PBL
     return TRUE;
 }
 
 void TryPutFrontierTVShowOnAir(u16 winStreak, u8 facilityAndMode)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
 
     sCurTVShowSlot = FindFirstEmptyRecordMixTVShowSlot(gSaveBlock1Ptr->tvShows);
@@ -2399,10 +2521,12 @@ void TryPutFrontierTVShowOnAir(u16 winStreak, u8 facilityAndMode)
         StorePlayerIdInRecordMixShow(show);
         show->frontier.language = gGameLanguage;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void TryPutSecretBaseSecretsOnAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 strbuf[32];
 
@@ -2430,6 +2554,7 @@ void TryPutSecretBaseSecretsOnAir(void)
                 show->secretBaseSecrets.baseOwnersNameLanguage = gSaveBlock1Ptr->secretBases[VarGet(VAR_CURRENT_SECRET_BASE)].language;
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 // Check var thresholds required to trigger the Number One show
@@ -2453,6 +2578,7 @@ static void ResolveNumberOneShow(u16 days)
 
 static void TryPutNumberOneOnAir(u8 actionIdx)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
 
     IsRecordMixShowAlreadySpawned(TVSHOW_NUMBER_ONE, TRUE); // Delete old version of show
@@ -2468,6 +2594,7 @@ static void TryPutNumberOneOnAir(u8 actionIdx)
         StorePlayerIdInRecordMixShow(show);
         show->numberOne.language = gGameLanguage;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void IncrementDailySlotsUses(void)
@@ -2507,8 +2634,9 @@ void IncrementDailyBattlePoints(u16 delta)
 
 // PokeNews
 
-static void TryPutRandomPokeNewsOnAir(void)
+static UNUSED void TryPutRandomPokeNewsOnAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     if (FlagGet(FLAG_SYS_GAME_CLEAR))
     {
         sCurTVShowSlot = GetFirstEmptyPokeNewsSlot(gSaveBlock1Ptr->pokeNews);
@@ -2523,6 +2651,7 @@ static void TryPutRandomPokeNewsOnAir(void)
             }
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 static s8 GetFirstEmptyPokeNewsSlot(PokeNews *pokeNews)
@@ -2537,7 +2666,7 @@ static s8 GetFirstEmptyPokeNewsSlot(PokeNews *pokeNews)
     return -1;
 }
 
-static void ClearPokeNews(void)
+static UNUSED void ClearPokeNews(void)
 {
     u8 i;
 
@@ -2547,13 +2676,16 @@ static void ClearPokeNews(void)
 
 static void ClearPokeNewsBySlot(u8 i)
 {
+#if FREE_OTHER_PBL == FALSE
     gSaveBlock1Ptr->pokeNews[i].kind = POKENEWS_NONE;
     gSaveBlock1Ptr->pokeNews[i].state = POKENEWS_STATE_INACTIVE;
     gSaveBlock1Ptr->pokeNews[i].dayCountdown = 0;
+#endif //FREE_OTHER_PBL
 }
 
-static void CompactPokeNews(void)
+static UNUSED void CompactPokeNews(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
     u8 j;
 
@@ -2572,10 +2704,12 @@ static void CompactPokeNews(void)
             }
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 static u8 FindAnyPokeNewsOnTheAir(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
 
     for (i = 0; i < POKE_NEWS_COUNT; i++)
@@ -2585,11 +2719,13 @@ static u8 FindAnyPokeNewsOnTheAir(void)
          && gSaveBlock1Ptr->pokeNews[i].dayCountdown < POKENEWS_COUNTDOWN - 1)
             return i;
     }
+#endif //FREE_OTHER_PBL
     return 0xFF;
 }
 
 void DoPokeNews(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i = FindAnyPokeNewsOnTheAir();
     if (i == 0xFF)
     {
@@ -2619,10 +2755,12 @@ void DoPokeNews(void)
         }
         gSpecialVar_Result = TRUE;
     }
+#endif //FREE_OTHER_PBL
 }
 
 bool8 IsPokeNewsActive(u8 newsKind)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
 
     if (newsKind == POKENEWS_NONE)
@@ -2638,6 +2776,7 @@ bool8 IsPokeNewsActive(u8 newsKind)
             return FALSE;
         }
     }
+#endif //FREE_OTHER_PBL
     return FALSE;
 }
 
@@ -2645,7 +2784,7 @@ bool8 IsPokeNewsActive(u8 newsKind)
 // For POKENEWS_SLATEPORT / POKENEWS_LILYCOVE, only apply the effect if
 // the player is talking to the Energy Guru / at the Dept Store Rooftop.
 // For any other type of PokeNews this is always TRUE.
-static bool8 ShouldApplyPokeNewsEffect(u8 newsKind)
+static UNUSED bool8 ShouldApplyPokeNewsEffect(u8 newsKind)
 {
     switch (newsKind)
     {
@@ -2664,8 +2803,9 @@ static bool8 ShouldApplyPokeNewsEffect(u8 newsKind)
     return TRUE;
 }
 
-static bool8 IsAddingPokeNewsDisallowed(u8 newsKind)
+static UNUSED bool8 IsAddingPokeNewsDisallowed(u8 newsKind)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
     if (newsKind == POKENEWS_NONE)
         return TRUE;
@@ -2676,11 +2816,13 @@ static bool8 IsAddingPokeNewsDisallowed(u8 newsKind)
         if (gSaveBlock1Ptr->pokeNews[i].kind == newsKind)
             return TRUE;
     }
+#endif //FREE_OTHER_PBL
     return FALSE;
 }
 
 static void UpdatePokeNewsCountdown(u16 days)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
 
     for (i = 0; i < POKE_NEWS_COUNT; i++)
@@ -2703,6 +2845,7 @@ static void UpdatePokeNewsCountdown(u16 days)
         }
     }
     CompactPokeNews();
+#endif //FREE_OTHER_PBL
 }
 
 void CopyContestRankToStringVar(u8 varIdx, u8 rank)
@@ -2748,8 +2891,10 @@ void CopyContestCategoryToStringVar(u8 varIdx, u8 category)
 
 void SetContestCategoryStringVarForInterview(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show = &gSaveBlock1Ptr->tvShows[gSpecialVar_0x8004];
     CopyContestCategoryToStringVar(1, show->bravoTrainer.contestCategory);
+#endif //FREE_OTHER_PBL
 }
 
 void ConvertIntToDecimalString(u8 varIdx, int value)
@@ -2770,7 +2915,7 @@ size_t CountDigits(int value)
     return count;
 }
 
-static void SmartShopper_BufferPurchaseTotal(u8 varIdx, TVShow *show)
+static UNUSED void SmartShopper_BufferPurchaseTotal(u8 varIdx, TVShow *show)
 {
     u8 i;
     int price = 0;
@@ -2786,8 +2931,9 @@ static void SmartShopper_BufferPurchaseTotal(u8 varIdx, TVShow *show)
         ConvertIntToDecimalString(varIdx, price);
 }
 
-static bool8 IsRecordMixShowAlreadySpawned(u8 kind, bool8 delete)
+static UNUSED bool8 IsRecordMixShowAlreadySpawned(u8 kind, bool8 delete)
 {
+#if FREE_OTHER_PBL == FALSE
     u32 playerId;
     TVShow *shows;
     u8 i;
@@ -2808,11 +2954,13 @@ static bool8 IsRecordMixShowAlreadySpawned(u8 kind, bool8 delete)
             return TRUE;
         }
     }
+#endif //FREE_OTHER_PBL
     return FALSE;
 }
 
-static void SortPurchasesByQuantity(void)
+static UNUSED void SortPurchasesByQuantity(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i, j;
 
     for (i = 0; i < SMARTSHOPPER_NUM_ITEMS - 1; i++)
@@ -2830,10 +2978,12 @@ static void SortPurchasesByQuantity(void)
             }
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 static void TryReplaceOldTVShowOfKind(u8 kind)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
     for (i = 0; i < NUM_NORMAL_TVSHOW_SLOTS; i++)
     {
@@ -2857,6 +3007,7 @@ static void TryReplaceOldTVShowOfKind(u8 kind)
 
     // Old TV show doesn't exist, just get new slot
     Script_FindFirstEmptyNormalTVShowSlot();
+#endif //FREE_OTHER_PBL
 }
 
 void InterviewBefore(void)
@@ -2899,6 +3050,7 @@ void InterviewBefore(void)
 
 static void InterviewBefore_FanClubLetter(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TryReplaceOldTVShowOfKind(TVSHOW_FAN_CLUB_LETTER);
     if (!gSpecialVar_Result)
     {
@@ -2906,20 +3058,24 @@ static void InterviewBefore_FanClubLetter(void)
         InitializeEasyChatWordArray(gSaveBlock1Ptr->tvShows[sCurTVShowSlot].fanclubLetter.words,
                         ARRAY_COUNT(gSaveBlock1Ptr->tvShows[sCurTVShowSlot].fanclubLetter.words));
     }
+#endif //FREE_OTHER_PBL
 }
 
 static void InterviewBefore_RecentHappenings(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TryReplaceOldTVShowOfKind(TVSHOW_RECENT_HAPPENINGS);
     if (!gSpecialVar_Result)
     {
         InitializeEasyChatWordArray(gSaveBlock1Ptr->tvShows[sCurTVShowSlot].recentHappenings.words,
                         ARRAY_COUNT(gSaveBlock1Ptr->tvShows[sCurTVShowSlot].recentHappenings.words));
     }
+#endif //FREE_OTHER_PBL
 }
 
 static void InterviewBefore_PkmnFanClubOpinions(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TryReplaceOldTVShowOfKind(TVSHOW_PKMN_FAN_CLUB_OPINIONS);
     if (!gSpecialVar_Result)
     {
@@ -2929,6 +3085,7 @@ static void InterviewBefore_PkmnFanClubOpinions(void)
         InitializeEasyChatWordArray(gSaveBlock1Ptr->tvShows[sCurTVShowSlot].fanclubOpinions.words,
                         ARRAY_COUNT(gSaveBlock1Ptr->tvShows[sCurTVShowSlot].fanclubOpinions.words));
     }
+#endif //FREE_OTHER_PBL
 }
 
 static void InterviewBefore_Dummy(void)
@@ -2943,10 +3100,12 @@ static void InterviewBefore_NameRater(void)
 
 static void InterviewBefore_BravoTrainerPkmnProfile(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TryReplaceOldTVShowOfKind(TVSHOW_BRAVO_TRAINER_POKEMON_PROFILE);
     if (!gSpecialVar_Result)
         InitializeEasyChatWordArray(gSaveBlock1Ptr->tvShows[sCurTVShowSlot].bravoTrainer.words,
                         ARRAY_COUNT(gSaveBlock1Ptr->tvShows[sCurTVShowSlot].bravoTrainer.words));
+#endif //FREE_OTHER_PBL
 }
 
 static void InterviewBefore_ContestLiveUpdates(void)
@@ -2961,18 +3120,22 @@ static void InterviewBefore_3CheersForPokeblocks(void)
 
 static void InterviewBefore_BravoTrainerBTProfile(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TryReplaceOldTVShowOfKind(TVSHOW_BRAVO_TRAINER_BATTLE_TOWER_PROFILE);
     if (!gSpecialVar_Result)
         InitializeEasyChatWordArray(gSaveBlock1Ptr->tvShows[sCurTVShowSlot].bravoTrainerTower.words,
                         ARRAY_COUNT(gSaveBlock1Ptr->tvShows[sCurTVShowSlot].bravoTrainerTower.words));
+#endif //FREE_OTHER_PBL
 }
 
 static void InterviewBefore_FanClubSpecial(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TryReplaceOldTVShowOfKind(TVSHOW_FAN_CLUB_SPECIAL);
     if (!gSpecialVar_Result)
         InitializeEasyChatWordArray(gSaveBlock1Ptr->tvShows[sCurTVShowSlot].fanClubSpecial.words,
                         ARRAY_COUNT(gSaveBlock1Ptr->tvShows[sCurTVShowSlot].fanClubSpecial.words));
+#endif //FREE_OTHER_PBL
 }
 
 static bool8 IsPartyMonNicknamedOrNotEnglish(u8 monIdx)
@@ -3004,7 +3167,7 @@ static void DeleteTVShowInArrayByIdx(TVShow *shows, u8 idx)
         shows[idx].commonInit.data[i] = 0;
 }
 
-static void CompactTVShowArray(TVShow *shows)
+static UNUSED void CompactTVShowArray(TVShow *shows)
 {
     u8 i;
     u8 j;
@@ -3044,7 +3207,7 @@ static void CompactTVShowArray(TVShow *shows)
     }
 }
 
-static u16 GetRandomDifferentSpeciesAndNameSeenByPlayer(u8 varIdx, u16 excludedSpecies)
+static UNUSED u16 GetRandomDifferentSpeciesAndNameSeenByPlayer(u8 varIdx, u16 excludedSpecies)
 {
     u16 species = GetRandomDifferentSpeciesSeenByPlayer(excludedSpecies);
     StringCopy(gTVStringVarPtrs[varIdx], GetSpeciesName(species));
@@ -3073,17 +3236,19 @@ static u16 GetRandomDifferentSpeciesSeenByPlayer(u16 excludedSpecies)
     return species;
 }
 
-static void Script_FindFirstEmptyNormalTVShowSlot(void)
+static UNUSED void Script_FindFirstEmptyNormalTVShowSlot(void)
 {
+#if FREE_OTHER_PBL == FALSE
     sCurTVShowSlot = FindFirstEmptyNormalTVShowSlot(gSaveBlock1Ptr->tvShows);
     gSpecialVar_0x8006 = sCurTVShowSlot;
     if (sCurTVShowSlot == -1)
         gSpecialVar_Result = TRUE;  // Failed to find empty slot
     else
         gSpecialVar_Result = FALSE; // Found empty slot
+#endif //FREE_OTHER_PBL
 }
 
-static s8 FindFirstEmptyNormalTVShowSlot(TVShow *shows)
+static UNUSED s8 FindFirstEmptyNormalTVShowSlot(TVShow *shows)
 {
     u8 i;
 
@@ -3095,7 +3260,7 @@ static s8 FindFirstEmptyNormalTVShowSlot(TVShow *shows)
     return -1;
 }
 
-static s8 FindFirstEmptyRecordMixTVShowSlot(TVShow *shows)
+static UNUSED s8 FindFirstEmptyRecordMixTVShowSlot(TVShow *shows)
 {
     s8 i;
 
@@ -3107,7 +3272,7 @@ static s8 FindFirstEmptyRecordMixTVShowSlot(TVShow *shows)
     return -1;
 }
 
-static bool8 BernoulliTrial(u16 ratio)
+static UNUSED bool8 BernoulliTrial(u16 ratio)
 {
     if (Random() <= ratio)
         return FALSE;
@@ -3117,7 +3282,7 @@ static bool8 BernoulliTrial(u16 ratio)
 
 // For TVSHOW_FAN_CLUB_LETTER / TVSHOW_RECENT_HAPPENINGS
 // Both are assumed to have the same struct layout
-static void GetRandomWordFromShow(TVShow *show)
+static UNUSED void GetRandomWordFromShow(TVShow *show)
 {
     u8 i;
 
@@ -3136,7 +3301,7 @@ static void GetRandomWordFromShow(TVShow *show)
     CopyEasyChatWord(gStringVar3, show->fanclubLetter.words[i]);
 }
 
-static u8 GetRandomNameRaterStateFromName(TVShow *show)
+static UNUSED u8 GetRandomNameRaterStateFromName(TVShow *show)
 {
     u8 i;
     u16 nameSum;
@@ -3152,7 +3317,7 @@ static u8 GetRandomNameRaterStateFromName(TVShow *show)
     return nameSum & 7;
 }
 
-static void GetNicknameSubstring(u8 varIdx, u8 whichPosition, u8 charParam, u16 whichString, u16 species, TVShow *show)
+static UNUSED void GetNicknameSubstring(u8 varIdx, u8 whichPosition, u8 charParam, u16 whichString, u16 species, TVShow *show)
 {
     u8 buff[16];
     u8 i;
@@ -3235,6 +3400,7 @@ static void GetNicknameSubstring(u8 varIdx, u8 whichPosition, u8 charParam, u16 
 // Unused script special
 bool8 IsTVShowAlreadyInQueue(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
 
     for (i = 0; i < NUM_NORMAL_TVSHOW_SLOTS; i++)
@@ -3242,6 +3408,7 @@ bool8 IsTVShowAlreadyInQueue(void)
         if (gSaveBlock1Ptr->tvShows[i].common.kind == gSpecialVar_0x8004)
             return TRUE;
     }
+#endif //FREE_OTHER_PBL
     return FALSE;
 }
 
@@ -3302,7 +3469,7 @@ void IsMonOTIDNotPlayers(void)
         gSpecialVar_Result = TRUE;
 }
 
-static u8 GetTVGroupByShowId(u8 kind)
+static UNUSED u8 GetTVGroupByShowId(u8 kind)
 {
     if (kind == TVSHOW_OFF_AIR)
         return TVGROUP_NONE;
@@ -3416,6 +3583,7 @@ void HideBattleTowerReporter(void)
 
 void ReceiveTvShowsData(void *src, u32 size, u8 playersLinkId)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
     u16 version;
     TVShow (*rmBuffer2)[MAX_LINK_PLAYERS][TV_SHOWS_COUNT];
@@ -3461,10 +3629,12 @@ void ReceiveTvShowsData(void *src, u32 size, u8 playersLinkId)
         DeactivateGameCompleteShowsIfNotUnlocked();
         Free(rmBuffer2);
     }
+#endif //FREE_OTHER_PBL
 }
 
-static void SetMixedTVShows(TVShow player1[TV_SHOWS_COUNT], TVShow player2[TV_SHOWS_COUNT], TVShow player3[TV_SHOWS_COUNT], TVShow player4[TV_SHOWS_COUNT])
+static UNUSED void SetMixedTVShows(TVShow player1[TV_SHOWS_COUNT], TVShow player2[TV_SHOWS_COUNT], TVShow player3[TV_SHOWS_COUNT], TVShow player4[TV_SHOWS_COUNT])
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
     u8 j;
     TVShow **tvShows[MAX_LINK_PLAYERS];
@@ -3502,10 +3672,12 @@ static void SetMixedTVShows(TVShow player1[TV_SHOWS_COUNT], TVShow player2[TV_SH
             }
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
-static bool8 TryMixTVShow(TVShow *dest[TV_SHOWS_COUNT], TVShow *src[TV_SHOWS_COUNT], u8 idx)
+static UNUSED bool8 TryMixTVShow(TVShow *dest[TV_SHOWS_COUNT], TVShow *src[TV_SHOWS_COUNT], u8 idx)
 {
+#if FREE_OTHER_PBL == FALSE
     bool8 success;
     u8 type;
     TVShow *tv1 = *dest;
@@ -3532,10 +3704,11 @@ static bool8 TryMixTVShow(TVShow *dest[TV_SHOWS_COUNT], TVShow *src[TV_SHOWS_COU
         DeleteTVShowInArrayByIdx(tv2, sTVShowMixingCurSlot);
         return TRUE;
     }
+#endif //FREE_OTHER_PBL
     return FALSE;
 }
 
-static bool8 TryMixNormalTVShow(TVShow *dest, TVShow *src, u8 idx)
+static UNUSED bool8 TryMixNormalTVShow(TVShow *dest, TVShow *src, u8 idx)
 {
     u32 linkTrainerId = GetLinkPlayerTrainerId(idx);
 
@@ -3552,7 +3725,7 @@ static bool8 TryMixNormalTVShow(TVShow *dest, TVShow *src, u8 idx)
     return TRUE;
 }
 
-static bool8 TryMixRecordMixTVShow(TVShow *dest, TVShow *src, u8 idx)
+static UNUSED bool8 TryMixRecordMixTVShow(TVShow *dest, TVShow *src, u8 idx)
 {
     u32 linkTrainerId = GetLinkPlayerTrainerId(idx);
 
@@ -3573,7 +3746,7 @@ static bool8 TryMixRecordMixTVShow(TVShow *dest, TVShow *src, u8 idx)
     return TRUE;
 }
 
-static bool8 TryMixOutbreakTVShow(TVShow *dest, TVShow *src, u8 idx)
+static UNUSED bool8 TryMixOutbreakTVShow(TVShow *dest, TVShow *src, u8 idx)
 {
     u32 linkTrainerId = GetLinkPlayerTrainerId(idx);
 
@@ -3591,7 +3764,7 @@ static bool8 TryMixOutbreakTVShow(TVShow *dest, TVShow *src, u8 idx)
     return TRUE;
 }
 
-static s8 FindInactiveShowInArray(TVShow *tvShows)
+static UNUSED s8 FindInactiveShowInArray(TVShow *tvShows)
 {
     u8 i;
 
@@ -3604,8 +3777,9 @@ static s8 FindInactiveShowInArray(TVShow *tvShows)
     return -1;
 }
 
-static void DeactivateShowsWithUnseenSpecies(void)
+static UNUSED void DeactivateShowsWithUnseenSpecies(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i;
     u16 species;
 
@@ -3746,21 +3920,27 @@ static void DeactivateShowsWithUnseenSpecies(void)
             break;
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
-static void DeactivateShow(u8 showIdx)
+static UNUSED void DeactivateShow(u8 showIdx)
 {
+#if FREE_OTHER_PBL == FALSE
     gSaveBlock1Ptr->tvShows[showIdx].common.active = FALSE;
+#endif //FREE_OTHER_PBL
 }
 
-static void DeactivateShowIfNotSeenSpecies(u16 species, u8 showIdx)
+static UNUSED void DeactivateShowIfNotSeenSpecies(u16 species, u8 showIdx)
 {
+#if FREE_OTHER_PBL == FALSE
     if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN))
         gSaveBlock1Ptr->tvShows[showIdx].common.active = FALSE;
+#endif //FREE_OTHER_PBL
 }
 
-static void DeactivateGameCompleteShowsIfNotUnlocked(void)
+static UNUSED void DeactivateGameCompleteShowsIfNotUnlocked(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i;
 
     if (FlagGet(FLAG_SYS_GAME_CLEAR) != TRUE)
@@ -3773,10 +3953,12 @@ static void DeactivateGameCompleteShowsIfNotUnlocked(void)
                 gSaveBlock1Ptr->tvShows[i].common.active = FALSE;
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 void DeactivateAllNormalTVShows(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
 
     for (i = 0; i < NUM_NORMAL_TVSHOW_SLOTS; i++)
@@ -3784,11 +3966,13 @@ void DeactivateAllNormalTVShows(void)
         if (GetTVGroupByShowId(gSaveBlock1Ptr->tvShows[i].common.kind) == TVGROUP_NORMAL)
             gSaveBlock1Ptr->tvShows[i].common.active = FALSE;
     }
+#endif //FREE_OTHER_PBL
 }
 
 // Ensures a minimum of 5 empty record mixed show slots
-static void DeleteExcessMixedShows(void)
+static UNUSED void DeleteExcessMixedShows(void)
 {
+#if FREE_OTHER_PBL == FALSE
     s8 i;
     s8 numEmptyMixSlots = 0;
     for (i = NUM_NORMAL_TVSHOW_SLOTS; i < LAST_TVSHOW_IDX; i++)
@@ -3798,10 +3982,12 @@ static void DeleteExcessMixedShows(void)
     }
     for (i = 0; i < NUM_NORMAL_TVSHOW_SLOTS - numEmptyMixSlots; i++)
         DeleteTVShowInArrayByIdx(gSaveBlock1Ptr->tvShows, i + NUM_NORMAL_TVSHOW_SLOTS);
+#endif //FREE_OTHER_PBL
 }
 
 void ReceivePokeNewsData(void *src, u32 size, u8 playersLinkId)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
     PokeNews (*rmBuffer2)[MAX_LINK_PLAYERS][POKE_NEWS_COUNT];
     PokeNews (*rmBuffer)[MAX_LINK_PLAYERS][POKE_NEWS_COUNT];
@@ -3834,9 +4020,10 @@ void ReceivePokeNewsData(void *src, u32 size, u8 playersLinkId)
         ClearPokeNewsIfGameNotComplete();
         Free(rmBuffer2);
     }
+#endif //FREE_OTHER_PBL
 }
 
-static void SetMixedPokeNews(PokeNews player1[POKE_NEWS_COUNT], PokeNews player2[POKE_NEWS_COUNT], PokeNews player3[POKE_NEWS_COUNT], PokeNews player4[POKE_NEWS_COUNT])
+static UNUSED void SetMixedPokeNews(PokeNews player1[POKE_NEWS_COUNT], PokeNews player2[POKE_NEWS_COUNT], PokeNews player3[POKE_NEWS_COUNT], PokeNews player4[POKE_NEWS_COUNT])
 {
     u8 i, j, k;
     PokeNews **pokeNews[MAX_LINK_PLAYERS];
@@ -3898,8 +4085,9 @@ static s8 GetPokeNewsSlotIfActive(PokeNews *pokeNews, u8 idx)
     return idx;
 }
 
-static void ClearInvalidPokeNews(void)
+static UNUSED void ClearInvalidPokeNews(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
 
     for (i = 0; i < POKE_NEWS_COUNT; i++)
@@ -3908,10 +4096,12 @@ static void ClearInvalidPokeNews(void)
             ClearPokeNewsBySlot(i);
     }
     CompactPokeNews();
+#endif //FREE_OTHER_PBL
 }
 
-static void ClearPokeNewsIfGameNotComplete(void)
+static UNUSED void ClearPokeNewsIfGameNotComplete(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
 
     if (FlagGet(FLAG_SYS_GAME_CLEAR) != TRUE)
@@ -3919,6 +4109,7 @@ static void ClearPokeNewsIfGameNotComplete(void)
         for (i = 0; i < POKE_NEWS_COUNT; i++)
             gSaveBlock1Ptr->pokeNews[i].state = POKENEWS_STATE_INACTIVE;
     }
+#endif //FREE_OTHER_PBL
 }
 
 #define SetStrLanguage(strptr, langptr, langfix) \
@@ -4012,7 +4203,7 @@ void SanitizeTVShowsForRuby(TVShow *shows)
     }
 }
 
-static void TranslateRubyShows(TVShow *shows)
+static UNUSED void TranslateRubyShows(TVShow *shows)
 {
     TVShow *curShow;
 
@@ -4033,7 +4224,7 @@ static u8 GetStringLanguage(u8 *str)
     return IsStringJapanese(str) ? LANGUAGE_JAPANESE : GAME_LANGUAGE;
 }
 
-static void TranslateJapaneseEmeraldShows(TVShow *shows)
+static UNUSED void TranslateJapaneseEmeraldShows(TVShow *shows)
 {
     TVShow *curShow;
 
@@ -4165,6 +4356,7 @@ void SanitizeTVShowLocationsForRuby(TVShow *shows)
 // gSpecialVar_0x8004 here is set from GetRandomActiveShowIdx in EventScript_TryDoTVShow
 void DoTVShow(void)
 {
+#if FREE_OTHER_PBL == FALSE
     if (gSaveBlock1Ptr->tvShows[gSpecialVar_0x8004].common.active)
     {
         switch (gSaveBlock1Ptr->tvShows[gSpecialVar_0x8004].common.kind)
@@ -4267,10 +4459,12 @@ void DoTVShow(void)
             break;
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowBravoTrainerPokemonProfile(void)
+static UNUSED void DoTVShowBravoTrainerPokemonProfile(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -4339,13 +4533,15 @@ static void DoTVShowBravoTrainerPokemonProfile(void)
         break;
     }
     ShowFieldMessage(sTVBravoTrainerTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
 // This is the TV show triggered by accepting the reporter's interview in the lobby of Battle Tower.
 // The reporter had asked the player if they were satisfied or not with the challenge, and then asked
 // for a one word Easy Chat description of their feelings about the challenge.
-static void DoTVShowBravoTrainerBattleTower(void)
+static UNUSED void DoTVShowBravoTrainerBattleTower(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -4437,10 +4633,12 @@ static void DoTVShowBravoTrainerBattleTower(void)
         break;
     }
     ShowFieldMessage(sTVBravoTrainerBattleTowerTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowTodaysSmartShopper(void)
+static UNUSED void DoTVShowTodaysSmartShopper(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -4533,10 +4731,12 @@ static void DoTVShowTodaysSmartShopper(void)
         break;
     }
     ShowFieldMessage(sTVTodaysSmartShopperTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowTheNameRaterShow(void)
+static UNUSED void DoTVShowTheNameRaterShow(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -4619,10 +4819,12 @@ static void DoTVShowTheNameRaterShow(void)
         break;
     }
     ShowFieldMessage(sTVNameRaterTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowPokemonTodaySuccessfulCapture(void)
+static UNUSED void DoTVShowPokemonTodaySuccessfulCapture(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -4689,10 +4891,12 @@ static void DoTVShowPokemonTodaySuccessfulCapture(void)
         break;
     }
     ShowFieldMessage(sTVPokemonTodaySuccessfulTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowPokemonTodayFailedCapture(void)
+static UNUSED void DoTVShowPokemonTodayFailedCapture(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -4734,10 +4938,12 @@ static void DoTVShowPokemonTodayFailedCapture(void)
         break;
     }
     ShowFieldMessage(sTVPokemonTodayFailedTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowPokemonFanClubLetter(void)
+static UNUSED void DoTVShowPokemonFanClubLetter(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
     u16 rval;
@@ -4788,10 +4994,12 @@ static void DoTVShowPokemonFanClubLetter(void)
         return;
     }
     ShowFieldMessage(sTVFanClubTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowRecentHappenings(void)
+static UNUSED void DoTVShowRecentHappenings(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -4823,10 +5031,12 @@ static void DoTVShowRecentHappenings(void)
         return;
     }
     ShowFieldMessage(sTVRecentHappeninssTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowPokemonFanClubOpinions(void)
+static UNUSED void DoTVShowPokemonFanClubOpinions(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -4856,15 +5066,17 @@ static void DoTVShowPokemonFanClubOpinions(void)
         break;
     }
     ShowFieldMessage(sTVFanClubOpinionsTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowDummiedOut(void)
+static UNUSED void DoTVShowDummiedOut(void)
 {
 
 }
 
-static void DoTVShowPokemonNewsMassOutbreak(void)
+static UNUSED void DoTVShowPokemonNewsMassOutbreak(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
 
     show = &gSaveBlock1Ptr->tvShows[gSpecialVar_0x8004];
@@ -4873,6 +5085,7 @@ static void DoTVShowPokemonNewsMassOutbreak(void)
     TVShowDone();
     StartMassOutbreak();
     ShowFieldMessage(sTVMassOutbreakTextGroup[sTVShowState]);
+#endif //FREE_OTHER_PBL
 }
 
 // TV Show that plays after a Link Contest.
@@ -4881,8 +5094,9 @@ static void DoTVShowPokemonNewsMassOutbreak(void)
 // Each state buffers any needed data for a message to print from sTVContestLiveUpdatesTextGroup
 // Many cases in this function are identical, and its size can be reduced a good deal by collapsing them
 // Can't get this to match while collapsing them though
-static void DoTVShowPokemonContestLiveUpdates(void)
+static UNUSED void DoTVShowPokemonContestLiveUpdates(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -5221,10 +5435,12 @@ static void DoTVShowPokemonContestLiveUpdates(void)
         break;
     }
     ShowFieldMessage(sTVContestLiveUpdatesTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowPokemonBattleUpdate(void)
+static UNUSED void DoTVShowPokemonBattleUpdate(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -5293,10 +5509,12 @@ static void DoTVShowPokemonBattleUpdate(void)
         break;
     }
     ShowFieldMessage(sTVPokemonBattleUpdateTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShow3CheersForPokeblocks(void)
+static UNUSED void DoTVShow3CheersForPokeblocks(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -5390,10 +5608,12 @@ static void DoTVShow3CheersForPokeblocks(void)
         break;
     }
     ShowFieldMessage(sTV3CheersForPokeblocksTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
 void DoTVShowInSearchOfTrainers(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 state;
 
     gSpecialVar_Result = FALSE;
@@ -5444,10 +5664,12 @@ void DoTVShowInSearchOfTrainers(void)
         break;
     }
     ShowFieldMessage(sTVInSearchOfTrainersTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowPokemonAngler(void)
+static UNUSED void DoTVShowPokemonAngler(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -5474,10 +5696,12 @@ static void DoTVShowPokemonAngler(void)
         break;
     }
     ShowFieldMessage(sTVPokemonAnglerTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowTheWorldOfMasters(void)
+static UNUSED void DoTVShowTheWorldOfMasters(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -5504,10 +5728,12 @@ static void DoTVShowTheWorldOfMasters(void)
         break;
     }
     ShowFieldMessage(sTVWorldOfMastersTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowTodaysRivalTrainer(void)
+static UNUSED void DoTVShowTodaysRivalTrainer(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -5623,10 +5849,12 @@ static void DoTVShowTodaysRivalTrainer(void)
         TVShowDone();
     }
     ShowFieldMessage(sTVTodaysRivalTrainerTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowDewfordTrendWatcherNetwork(void)
+static UNUSED void DoTVShowDewfordTrendWatcherNetwork(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -5671,10 +5899,12 @@ static void DoTVShowDewfordTrendWatcherNetwork(void)
         TVShowDone();
     }
     ShowFieldMessage(sTVDewfordTrendWatcherNetworkTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowHoennTreasureInvestigators(void)
+static UNUSED void DoTVShowHoennTreasureInvestigators(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -5717,10 +5947,12 @@ static void DoTVShowHoennTreasureInvestigators(void)
         break;
     }
     ShowFieldMessage(sTVHoennTreasureInvestisatorsTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowFindThatGamer(void)
+static UNUSED void DoTVShowFindThatGamer(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -5787,10 +6019,12 @@ static void DoTVShowFindThatGamer(void)
         break;
     }
     ShowFieldMessage(sTVFindThatGamerTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowBreakingNewsTV(void)
+static UNUSED void DoTVShowBreakingNewsTV(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -5882,10 +6116,12 @@ static void DoTVShowBreakingNewsTV(void)
         break;
     }
     ShowFieldMessage(sTVBreakingNewsTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowSecretBaseVisit(void)
+static UNUSED void DoTVShowSecretBaseVisit(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -5962,10 +6198,12 @@ static void DoTVShowSecretBaseVisit(void)
         break;
     }
     ShowFieldMessage(sTVSecretBaseVisitTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowPokemonLotteryWinnerFlashReport(void)
+static UNUSED void DoTVShowPokemonLotteryWinnerFlashReport(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -5984,10 +6222,12 @@ static void DoTVShowPokemonLotteryWinnerFlashReport(void)
     StringCopy(gStringVar3, ItemId_GetName(show->lottoWinner.item));
     TVShowDone();
     ShowFieldMessage(sTVPokemonLotteryWinnerFlashReportTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowThePokemonBattleSeminar(void)
+static UNUSED void DoTVShowThePokemonBattleSeminar(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -6048,10 +6288,12 @@ static void DoTVShowThePokemonBattleSeminar(void)
         break;
     }
     ShowFieldMessage(sTVThePokemonBattleSeminarTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowTrainerFanClubSpecial(void)
+static UNUSED void DoTVShowTrainerFanClubSpecial(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -6105,10 +6347,12 @@ static void DoTVShowTrainerFanClubSpecial(void)
         break;
     }
     ShowFieldMessage(sTVTrainerFanClubSpecialTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowTrainerFanClub(void)
+static UNUSED void DoTVShowTrainerFanClub(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
     u32 playerId;
@@ -6193,10 +6437,12 @@ static void DoTVShowTrainerFanClub(void)
         break;
     }
     ShowFieldMessage(sTVTrainerFanClubTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowSpotTheCuties(void)
+static UNUSED void DoTVShowSpotTheCuties(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -6299,10 +6545,12 @@ static void DoTVShowSpotTheCuties(void)
         TVShowDone();
     }
     ShowFieldMessage(sTVCutiesTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowPokemonNewsBattleFrontier(void)
+static UNUSED void DoTVShowPokemonNewsBattleFrontier(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -6447,10 +6695,12 @@ static void DoTVShowPokemonNewsBattleFrontier(void)
         break;
     }
     ShowFieldMessage(sTVPokemonNewsBattleFrontierTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowWhatsNo1InHoennToday(void)
+static UNUSED void DoTVShowWhatsNo1InHoennToday(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -6527,6 +6777,7 @@ static void DoTVShowWhatsNo1InHoennToday(void)
         break;
     }
     ShowFieldMessage(sTVWhatsNo1InHoennTodayTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
 u8 SecretBaseSecrets_GetNumActionsTaken(TVShow *show)
@@ -6542,7 +6793,7 @@ u8 SecretBaseSecrets_GetNumActionsTaken(TVShow *show)
     return flagsSet;
 }
 
-static u8 SecretBaseSecrets_GetStateByFlagNumber(TVShow *show, u8 flagId)
+static UNUSED u8 SecretBaseSecrets_GetStateByFlagNumber(TVShow *show, u8 flagId)
 {
     u8 i;
     u8 flagsSet;
@@ -6560,8 +6811,9 @@ static u8 SecretBaseSecrets_GetStateByFlagNumber(TVShow *show, u8 flagId)
     return 0;
 }
 
-static void DoTVShowSecretBaseSecrets(void)
+static UNUSED void DoTVShowSecretBaseSecrets(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
     u8 numActions;
@@ -6680,10 +6932,12 @@ static void DoTVShowSecretBaseSecrets(void)
         break;
     }
     ShowFieldMessage(sTVSecretBaseSecretsTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void DoTVShowSafariFanClub(void)
+static UNUSED void DoTVShowSafariFanClub(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -6750,11 +7004,13 @@ static void DoTVShowSafariFanClub(void)
         break;
     }
     ShowFieldMessage(sTVSafariFanClubTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
 // This show is a version of Contest Live Updates for the Lilycove Contest Lady
-static void DoTVShowLilycoveContestLady(void)
+static UNUSED void DoTVShowLilycoveContestLady(void)
 {
+#if FREE_OTHER_PBL == FALSE
     TVShow *show;
     u8 state;
 
@@ -6781,13 +7037,16 @@ static void DoTVShowLilycoveContestLady(void)
         break;
     }
     ShowFieldMessage(sTVLilycoveContestLadyTextGroup[state]);
+#endif //FREE_OTHER_PBL
 }
 
-static void TVShowDone(void)
+static UNUSED void TVShowDone(void)
 {
+#if FREE_OTHER_PBL == FALSE
     gSpecialVar_Result = TRUE;
     sTVShowState = 0;
     gSaveBlock1Ptr->tvShows[gSpecialVar_0x8004].common.active = FALSE;
+#endif //FREE_OTHER_PBL
 }
 
 void ResetTVShowState(void)

@@ -33,6 +33,7 @@ static const u8 sDefaultTraderDecorations[NUM_TRADER_ITEMS] =
 
 void TraderSetup(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
     struct MauvilleOldManTrader *trader = &gSaveBlock1Ptr->oldMan.trader;
 
@@ -45,18 +46,22 @@ void TraderSetup(void)
         trader->decorations[i] = sDefaultTraderDecorations[i];
         trader->language[i] = GAME_LANGUAGE;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void Trader_ResetFlag(void)
 {
+#if FREE_OTHER_PBL == FALSE
     struct MauvilleOldManTrader *trader = &gSaveBlock1Ptr->oldMan.trader;
     trader->alreadyTraded = FALSE;
+#endif //FREE_OTHER_PBL
 }
 
 #define tWindowId data[3]
 
 void CreateAvailableDecorationsMenu(u8 taskId)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
     s16 * data = gTasks[taskId].data;
     struct MauvilleOldManTrader *trader = &gSaveBlock1Ptr->oldMan.trader;
@@ -94,6 +99,7 @@ void CreateAvailableDecorationsMenu(u8 taskId)
     AddTextPrinterParameterized(tWindowId, FONT_NORMAL, gText_Exit, 8, 16 * i + 1, TEXT_SKIP_DRAW, NULL);
     InitMenuInUpperLeftCornerNormal(tWindowId, NUM_TRADER_ITEMS + 1, 0);
     ScheduleBgCopyTilemapToVram(0);
+#endif //FREE_OTHER_PBL
 }
 
 void Task_BufferDecorSelectionAndCloseWindow(u8 taskId, u8 decorationId)
@@ -114,6 +120,7 @@ void Task_BufferDecorSelectionAndCloseWindow(u8 taskId, u8 decorationId)
 
 void Task_HandleGetDecorationMenuInput(u8 taskId)
 {
+#if FREE_OTHER_PBL == FALSE
     struct MauvilleOldManTrader *trader = &gSaveBlock1Ptr->oldMan.trader;
     s8 input = Menu_ProcessInput();
 
@@ -134,12 +141,15 @@ void Task_HandleGetDecorationMenuInput(u8 taskId)
             Task_BufferDecorSelectionAndCloseWindow(taskId, trader->decorations[input]);
             break;
     }
+#endif //FREE_OTHER_PBL
 }
 
 void GetTraderTradedFlag(void)
 {
+#if FREE_OTHER_PBL == FALSE
     struct MauvilleOldManTrader *trader = &gSaveBlock1Ptr->oldMan.trader;
     gSpecialVar_Result = trader->alreadyTraded;
+#endif //FREE_OTHER_PBL
 }
 
 void DoesPlayerHaveNoDecorations(void)
@@ -198,6 +208,7 @@ void ExitTraderMenu(u8 taskId)
 
 void TraderDoDecorationTrade(void)
 {
+#if FREE_OTHER_PBL == FALSE
     struct MauvilleOldManTrader *trader = &gSaveBlock1Ptr->oldMan.trader;
 
     DecorationRemove(gSpecialVar_0x8006);
@@ -206,6 +217,7 @@ void TraderDoDecorationTrade(void)
     trader->decorations[gSpecialVar_0x8005] = gSpecialVar_0x8006;
     trader->language[gSpecialVar_0x8005] = GAME_LANGUAGE;
     trader->alreadyTraded = TRUE;
+#endif //FREE_OTHER_PBL
 }
 
 void TraderMenuGetDecoration(void)

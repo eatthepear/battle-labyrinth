@@ -229,9 +229,11 @@ static void ClearSecretBase(struct SecretBase *secretBase)
 
 void ClearSecretBases(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i;
     for (i = 0; i < SECRET_BASES_COUNT; i++)
         ClearSecretBase(&gSaveBlock1Ptr->secretBases[i]);
+#endif //FREE_OTHER_PBL
 }
 
 static void SetCurSecretBaseId(void)
@@ -241,6 +243,7 @@ static void SetCurSecretBaseId(void)
 
 void TrySetCurSecretBaseIndex(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i;
 
     gSpecialVar_Result = FALSE;
@@ -253,15 +256,18 @@ void TrySetCurSecretBaseIndex(void)
             break;
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 void CheckPlayerHasSecretBase(void)
 {
+#if FREE_OTHER_PBL == FALSE
     // The player's secret base is always the first in the array.
     if (gSaveBlock1Ptr->secretBases[0].secretBaseId)
         gSpecialVar_Result = TRUE;
     else
         gSpecialVar_Result = FALSE;
+#endif //FREE_OTHER_PBL
 }
 
 static u8 GetSecretBaseTypeInFrontOfPlayer_(void)
@@ -350,7 +356,7 @@ void ToggleSecretBaseEntranceMetatile(void)
     }
 }
 
-static u8 GetNameLength(const u8 *secretBaseOwnerName)
+static UNUSED u8 GetNameLength(const u8 *secretBaseOwnerName)
 {
     u8 i;
     for (i = 0; i < PLAYER_NAME_LENGTH; i++)
@@ -364,6 +370,7 @@ static u8 GetNameLength(const u8 *secretBaseOwnerName)
 
 void SetPlayerSecretBase(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i;
 
     gSaveBlock1Ptr->secretBases[0].secretBaseId = sCurSecretBaseId;
@@ -375,11 +382,13 @@ void SetPlayerSecretBase(void)
     gSaveBlock1Ptr->secretBases[0].gender = gSaveBlock2Ptr->playerGender;
     gSaveBlock1Ptr->secretBases[0].language = GAME_LANGUAGE;
     VarSet(VAR_SECRET_BASE_MAP, gMapHeader.regionMapSectionId);
+#endif //FREE_OTHER_PBL
 }
 
 // Set the 'open' entrance metatile for any occupied secret base on this map
 void SetOccupiedSecretBaseEntranceMetatiles(struct MapEvents const *events)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 bgId;
     u16 i, j;
 
@@ -407,9 +416,10 @@ void SetOccupiedSecretBaseEntranceMetatiles(struct MapEvents const *events)
             }
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
-static void SetSecretBaseWarpDestination(void)
+static UNUSED void SetSecretBaseWarpDestination(void)
 {
     s8 secretBaseGroup = SECRET_BASE_ID_TO_GROUP(sCurSecretBaseId);
     SetWarpDestinationToMapWarp(MAP_GROUP(SECRET_BASE_RED_CAVE1), GET_BASE_MAP_NUM(secretBaseGroup), GET_BASE_WARP_ID(secretBaseGroup));
@@ -419,6 +429,7 @@ static void SetSecretBaseWarpDestination(void)
 
 static void Task_EnterSecretBase(u8 taskId)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 secretBaseIdx;
 
     switch (gTasks[taskId].tState)
@@ -439,6 +450,7 @@ static void Task_EnterSecretBase(u8 taskId)
         DestroyTask(taskId);
         break;
     }
+#endif //FREE_OTHER_PBL
 }
 
 #undef tState
@@ -518,6 +530,7 @@ bool8 CurMapIsSecretBase(void)
 
 void InitSecretBaseAppearance(bool8 hidePC)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 secretBaseIdx;
     s16 x, y = 0;
     u8 *decorations;
@@ -547,10 +560,12 @@ void InitSecretBaseAppearance(bool8 hidePC)
             MapGridSetMetatileIdAt(x + MAP_OFFSET, y + MAP_OFFSET, METATILE_SecretBase_Ground | MAPGRID_COLLISION_MASK);
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 void InitSecretBaseDecorationSprites(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
     u8 *decorations;
     u8 *decorationPositions;
@@ -630,6 +645,7 @@ void InitSecretBaseDecorationSprites(void)
             }
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 void HideSecretBaseDecorationSprites(void)
@@ -711,7 +727,7 @@ static void Task_WarpOutOfSecretBase(u8 taskId)
     }
 }
 
-static void WarpOutOfSecretBase(void)
+static UNUSED void WarpOutOfSecretBase(void)
 {
     CreateTask(Task_WarpOutOfSecretBase, 0);
     FadeScreen(FADE_TO_BLACK, 0);
@@ -719,17 +735,22 @@ static void WarpOutOfSecretBase(void)
 
 void IsCurSecretBaseOwnedByAnotherPlayer(void)
 {
+#if FREE_OTHER_PBL == FALSE
     if (gSaveBlock1Ptr->secretBases[0].secretBaseId != sCurSecretBaseId)
         gSpecialVar_Result = TRUE;
     else
         gSpecialVar_Result = FALSE;
+#endif //FREE_OTHER_PBL
 }
 
 static u8 *GetSecretBaseName(u8 *dest, u8 secretBaseIdx)
 {
+#if FREE_OTHER_PBL == FALSE
     *StringCopyN(dest, gSaveBlock1Ptr->secretBases[secretBaseIdx].trainerName, GetNameLength(gSaveBlock1Ptr->secretBases[secretBaseIdx].trainerName)) = EOS;
     ConvertInternationalString(dest, gSaveBlock1Ptr->secretBases[secretBaseIdx].language);
     return StringAppend(dest, gText_ApostropheSBase);
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 u8 *GetSecretBaseMapName(u8 *dest)
@@ -739,6 +760,7 @@ u8 *GetSecretBaseMapName(u8 *dest)
 
 void CopyCurSecretBaseOwnerName_StrVar1(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 secretBaseIdx;
     const u8 *name;
 
@@ -746,17 +768,20 @@ void CopyCurSecretBaseOwnerName_StrVar1(void)
     name = gSaveBlock1Ptr->secretBases[secretBaseIdx].trainerName;
     *StringCopyN(gStringVar1, name, GetNameLength(name)) = EOS;
     ConvertInternationalString(gStringVar1, gSaveBlock1Ptr->secretBases[secretBaseIdx].language);
+#endif //FREE_OTHER_PBL
 }
 
 static bool8 IsSecretBaseRegistered(u8 secretBaseIdx)
 {
+#if FREE_OTHER_PBL == FALSE
     if (gSaveBlock1Ptr->secretBases[secretBaseIdx].registryStatus)
         return TRUE;
+#endif //FREE_OTHER_PBL
 
     return FALSE;
 }
 
-static u8 GetAverageEVs(struct Pokemon *pokemon)
+static UNUSED u8 GetAverageEVs(struct Pokemon *pokemon)
 {
     u16 evTotal;
     evTotal  = GetMonData(pokemon, MON_DATA_HP_EV);
@@ -770,6 +795,7 @@ static u8 GetAverageEVs(struct Pokemon *pokemon)
 
 void SetPlayerSecretBaseParty(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i;
     u16 moveIdx;
     u16 partyId;
@@ -805,14 +831,17 @@ void SetPlayerSecretBaseParty(void)
             }
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 void ClearAndLeaveSecretBase(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 temp = gSaveBlock1Ptr->secretBases[0].numSecretBasesReceived;
     ClearSecretBase(&gSaveBlock1Ptr->secretBases[0]);
     gSaveBlock1Ptr->secretBases[0].numSecretBasesReceived = temp;
     WarpOutOfSecretBase();
+#endif //FREE_OTHER_PBL
 }
 
 void MoveOutOfSecretBase(void)
@@ -821,8 +850,9 @@ void MoveOutOfSecretBase(void)
     ClearAndLeaveSecretBase();
 }
 
-static void ClosePlayerSecretBaseEntrance(void)
+static UNUSED void ClosePlayerSecretBaseEntrance(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i;
     u16 j;
     s16 metatileId;
@@ -849,12 +879,14 @@ static void ClosePlayerSecretBaseEntrance(void)
             break;
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 // When the player moves to a new secret base by interacting with a new secret base
 // entrance in the overworld.
 void MoveOutOfSecretBaseFromOutside(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 temp;
 
     ClosePlayerSecretBaseEntrance();
@@ -862,6 +894,7 @@ void MoveOutOfSecretBaseFromOutside(void)
     temp = gSaveBlock1Ptr->secretBases[0].numSecretBasesReceived;
     ClearSecretBase(&gSaveBlock1Ptr->secretBases[0]);
     gSaveBlock1Ptr->secretBases[0].numSecretBasesReceived = temp;
+#endif //FREE_OTHER_PBL
 }
 
 static u8 GetNumRegisteredSecretBases(void)
@@ -889,8 +922,10 @@ void GetCurSecretBaseRegistrationValidity(void)
 
 void ToggleCurSecretBaseRegistry(void)
 {
+#if FREE_OTHER_PBL == FALSE
     gSaveBlock1Ptr->secretBases[VarGet(VAR_CURRENT_SECRET_BASE)].registryStatus ^= 1;
     FlagSet(FLAG_SECRET_BASE_REGISTRY_ENABLED);
+#endif //FREE_OTHER_PBL
 }
 
 void ShowSecretBaseDecorationMenu(void)
@@ -1074,6 +1109,7 @@ static void ShowRegistryMenuDeleteYesNo(u8 taskId)
 
 void DeleteRegistry_Yes_Callback(u8 taskId)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 *data = (u16*) gTasks[taskId].data;
     ClearDialogWindowAndFrame(0, FALSE);
     DestroyListMenuTask(tListTaskId, &tScrollOffset, &tSelectedRow);
@@ -1082,6 +1118,7 @@ void DeleteRegistry_Yes_Callback(u8 taskId)
     SetCursorWithinListBounds(&tScrollOffset, &tSelectedRow, tMaxShownItems, tNumBases);
     FinalizeRegistryMenu(taskId);
     gTasks[taskId].func = HandleRegistryMenuInput;
+#endif //FREE_OTHER_PBL
 }
 
 static void DeleteRegistry_Yes(u8 taskId)
@@ -1131,8 +1168,11 @@ static void GoToSecretBasePCRegisterMenu(u8 taskId)
 
 static u8 GetSecretBaseOwnerType(u8 secretBaseIdx)
 {
+#if FREE_OTHER_PBL == FALSE
     return (gSaveBlock1Ptr->secretBases[secretBaseIdx].trainerId[0] % 5)
          + (gSaveBlock1Ptr->secretBases[secretBaseIdx].gender * 5);
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 const u8 *GetSecretBaseTrainerLoseText(void)
@@ -1169,11 +1209,14 @@ void PrepSecretBaseBattleFlags(void)
 
 void SetBattledOwnerFromResult(void)
 {
+#if FREE_OTHER_PBL == FALSE
     gSaveBlock1Ptr->secretBases[VarGet(VAR_CURRENT_SECRET_BASE)].battledOwnerToday = gSpecialVar_Result;
+#endif //FREE_OTHER_PBL
 }
 
 void GetSecretBaseOwnerAndState(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 secretBaseIdx;
     u8 i;
 
@@ -1187,6 +1230,7 @@ void GetSecretBaseOwnerAndState(void)
     }
     gSpecialVar_0x8004 = GetSecretBaseOwnerType(secretBaseIdx);
     gSpecialVar_Result = gSaveBlock1Ptr->secretBases[secretBaseIdx].battledOwnerToday;
+#endif //FREE_OTHER_PBL
 }
 
 #define tStepCb  data[0] // See Task_RunPerStepCallback
@@ -1333,8 +1377,9 @@ void SecretBasePerStepCallback(u8 taskId)
 #undef tPlayerY
 #undef tFldEff
 
-static void SaveSecretBase(u8 secretBaseIdx, struct SecretBase *secretBase, u32 version, u32 language)
+static UNUSED void SaveSecretBase(u8 secretBaseIdx, struct SecretBase *secretBase, u32 version, u32 language)
 {
+#if FREE_OTHER_PBL == FALSE
     int stringLength;
     u8 *name;
 
@@ -1355,6 +1400,7 @@ static void SaveSecretBase(u8 secretBaseIdx, struct SecretBase *secretBase, u32 
         if (stringLength > 5)
             gSaveBlock1Ptr->secretBases[secretBaseIdx].language = GAME_LANGUAGE;
     }
+#endif //FREE_OTHER_PBL
 }
 
 static bool8 SecretBasesHaveSameTrainerId(struct SecretBase *secretBase1, struct SecretBase *secretBase2)
@@ -1393,44 +1439,51 @@ static bool8 SecretBasesBelongToSamePlayer(struct SecretBase *secretBase1, struc
     return FALSE;
 }
 
-static s16 GetSecretBaseIndexFromId(u8 secretBaseId)
+static UNUSED s16 GetSecretBaseIndexFromId(u8 secretBaseId)
 {
+#if FREE_OTHER_PBL == FALSE
     s16 i;
     for (i = 0; i < SECRET_BASES_COUNT; i++)
     {
         if (gSaveBlock1Ptr->secretBases[i].secretBaseId == secretBaseId)
             return i;
     }
+#endif //FREE_OTHER_PBL
 
     return -1;
 }
 
-static u8 FindAvailableSecretBaseIndex(void)
+static UNUSED u8 FindAvailableSecretBaseIndex(void)
 {
+#if FREE_OTHER_PBL == FALSE
     s16 i;
     for (i = 1; i < SECRET_BASES_COUNT; i++)
     {
         if (gSaveBlock1Ptr->secretBases[i].secretBaseId == 0)
             return i;
     }
+#endif //FREE_OTHER_PBL
 
     return 0;
 }
 
-static u8 FindUnregisteredSecretBaseIndex(void)
+static UNUSED u8 FindUnregisteredSecretBaseIndex(void)
 {
+#if FREE_OTHER_PBL == FALSE
     s16 i;
     for (i = 1; i < SECRET_BASES_COUNT; i++)
     {
         if (gSaveBlock1Ptr->secretBases[i].registryStatus == UNREGISTERED && gSaveBlock1Ptr->secretBases[i].toRegister == FALSE)
             return i;
     }
+#endif //FREE_OTHER_PBL
 
     return 0;
 }
 
 static u8 TrySaveFriendsSecretBase(struct SecretBase *secretBase, u32 version, u32 language)
 {
+#if FREE_OTHER_PBL == FALSE
     s16 index;
 
     // Secret base has no location
@@ -1473,6 +1526,7 @@ static u8 TrySaveFriendsSecretBase(struct SecretBase *secretBase, u32 version, u
             }
         }
     }
+#endif //FREE_OTHER_PBL
 
     // Unable to save. Either...
     // - This was the player's base
@@ -1483,8 +1537,9 @@ static u8 TrySaveFriendsSecretBase(struct SecretBase *secretBase, u32 version, u
 
 // Moves the registered secret bases to the beginning of the array, so that
 // they won't be forgotten during record mixing.
-static void SortSecretBasesByRegistryStatus(void)
+static UNUSED void SortSecretBasesByRegistryStatus(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 i;
     u8 j;
     struct SecretBase *secretBases;
@@ -1502,11 +1557,12 @@ static void SortSecretBasesByRegistryStatus(void)
             }
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 // Used to save a record mixing friends' bases other than their own
 // registryStatus is so registered bases can be attempted first
-static void TrySaveFriendsSecretBases(struct SecretBaseRecordMixer *mixer, u8 registryStatus)
+static UNUSED void TrySaveFriendsSecretBases(struct SecretBaseRecordMixer *mixer, u8 registryStatus)
 {
     u16 i;
     for (i = 1; i < SECRET_BASES_COUNT; i++)
@@ -1546,7 +1602,7 @@ static bool8 SecretBaseBelongsToPlayer(struct SecretBase *secretBase)
 #define DELETED_BASE_B  (1 << 1)
 #define DELETED_BASE_C  (1 << 2)
 
-static void DeleteFirstOldBaseFromPlayerInRecordMixingFriendsRecords(struct SecretBase *basesA, struct SecretBase *basesB, struct SecretBase *basesC)
+static UNUSED void DeleteFirstOldBaseFromPlayerInRecordMixingFriendsRecords(struct SecretBase *basesA, struct SecretBase *basesB, struct SecretBase *basesC)
 {
     u8 i;
     u8 sbFlags = 0;
@@ -1592,7 +1648,7 @@ static void DeleteFirstOldBaseFromPlayerInRecordMixingFriendsRecords(struct Secr
 #undef DELETED_BASE_C
 
 // returns TRUE if secretBase was deleted, FALSE otherwise
-static bool8 ClearDuplicateOwnedSecretBase(struct SecretBase *secretBase, struct SecretBase *secretBases, u8 idx)
+static UNUSED bool8 ClearDuplicateOwnedSecretBase(struct SecretBase *secretBase, struct SecretBase *secretBases, u8 idx)
 {
     u8 i;
 
@@ -1624,7 +1680,7 @@ static bool8 ClearDuplicateOwnedSecretBase(struct SecretBase *secretBase, struct
     return FALSE;
 }
 
-static void ClearDuplicateOwnedSecretBases(struct SecretBase *playersBases, struct SecretBase *friendsBasesA, struct SecretBase *friendsBasesB, struct SecretBase *friendsBasesC)
+static UNUSED void ClearDuplicateOwnedSecretBases(struct SecretBase *playersBases, struct SecretBase *friendsBasesA, struct SecretBase *friendsBasesB, struct SecretBase *friendsBasesC)
 {
     u8 i;
 
@@ -1681,7 +1737,7 @@ static void TrySaveRegisteredDuplicate(struct SecretBase *base, u32 version, u32
     }
 }
 
-static void TrySaveRegisteredDuplicates(struct SecretBaseRecordMixer *mixers)
+static UNUSED void TrySaveRegisteredDuplicates(struct SecretBaseRecordMixer *mixers)
 {
     u16 i;
 
@@ -1693,8 +1749,9 @@ static void TrySaveRegisteredDuplicates(struct SecretBaseRecordMixer *mixers)
     }
 }
 
-static void SaveRecordMixBases(struct SecretBaseRecordMixer *mixers)
+static UNUSED void SaveRecordMixBases(struct SecretBaseRecordMixer *mixers)
 {
+#if FREE_OTHER_PBL == FALSE
     DeleteFirstOldBaseFromPlayerInRecordMixingFriendsRecords(mixers[0].secretBases, mixers[1].secretBases, mixers[2].secretBases);
     ClearDuplicateOwnedSecretBases(gSaveBlock1Ptr->secretBases, mixers[0].secretBases, mixers[1].secretBases, mixers[2].secretBases);
 
@@ -1715,6 +1772,7 @@ static void SaveRecordMixBases(struct SecretBaseRecordMixer *mixers)
     TrySaveFriendsSecretBases(&mixers[0], UNREGISTERED);
     TrySaveFriendsSecretBases(&mixers[1], UNREGISTERED);
     TrySaveFriendsSecretBases(&mixers[2], UNREGISTERED);
+#endif //FREE_OTHER_PBL
 }
 
 #define INIT_SECRET_BASE_RECORD_MIXER(linkId1, linkId2, linkId3)        \
@@ -1730,6 +1788,7 @@ static void SaveRecordMixBases(struct SecretBaseRecordMixer *mixers)
 
 void ReceiveSecretBasesData(void *secretBases, size_t recordSize, u8 linkIdx)
 {
+#if FREE_OTHER_PBL == FALSE
     struct SecretBaseRecordMixer mixers[3];
     u16 i;
 
@@ -1792,6 +1851,7 @@ void ReceiveSecretBasesData(void *secretBases, size_t recordSize, u8 linkIdx)
             gSaveBlock1Ptr->secretBases[0].numSecretBasesReceived++;
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 void ClearJapaneseSecretBases(struct SecretBase *bases)

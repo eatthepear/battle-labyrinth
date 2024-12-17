@@ -668,6 +668,7 @@ static void ItemStorage_EraseMainMenu(u8 taskId)
 
 static u8 GetMailboxMailCount(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 mailInPC, i;
 
     // Count mail in PC (by first skipping over mail in party)
@@ -676,10 +677,13 @@ static u8 GetMailboxMailCount(void)
             mailInPC++;
 
     return mailInPC;
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 static void Mailbox_CompactMailList(void)
 {
+#if FREE_OTHER_PBL == FALSE
     struct Mail temp;
     u8 i, j;
 
@@ -691,6 +695,7 @@ static void Mailbox_CompactMailList(void)
                 SWAP(gSaveBlock1Ptr->mail[i], gSaveBlock1Ptr->mail[j], temp);
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 static void Mailbox_DrawMailboxMenu(u8 taskId)
@@ -737,10 +742,12 @@ static void Mailbox_ProcessInput(u8 taskId)
 
 static void Mailbox_PrintWhatToDoWithPlayerMailText(u8 taskId)
 {
+#if FREE_OTHER_PBL == FALSE
     StringCopy(gStringVar1, gSaveBlock1Ptr->mail[gPlayerPCItemPageInfo.itemsAbove + PARTY_SIZE + gPlayerPCItemPageInfo.cursorPos].playerName);
     ConvertInternationalPlayerNameStripChar(gStringVar1, CHAR_SPACE);
     StringExpandPlaceholders(gStringVar4, gText_WhatToDoWithVar1sMail);
     DisplayItemMessageOnField(taskId, gStringVar4, Mailbox_PrintMailOptions);
+#endif //FREE_OTHER_PBL
 }
 
 static void Mailbox_ReturnToPlayerPC(u8 taskId)
@@ -755,7 +762,7 @@ static void Mailbox_ReturnToPlayerPC(u8 taskId)
     ReshowPlayerPC(taskId);
 }
 
-static void Mailbox_PrintMailOptions(u8 taskId)
+static UNUSED void Mailbox_PrintMailOptions(u8 taskId)
 {
     u8 windowId = MailboxMenu_AddWindow(MAILBOXWIN_OPTIONS);
     PrintMenuTable(windowId, ARRAY_COUNT(gMailboxMailOptions), gMailboxMailOptions);
@@ -791,6 +798,7 @@ static void Mailbox_DoMailRead(u8 taskId)
 
 static void Mailbox_FadeAndReadMail(u8 taskId)
 {
+#if FREE_OTHER_PBL == FALSE
     if (!gPaletteFade.active)
     {
         MailboxMenu_Free();
@@ -798,9 +806,10 @@ static void Mailbox_FadeAndReadMail(u8 taskId)
         ReadMail(&gSaveBlock1Ptr->mail[gPlayerPCItemPageInfo.itemsAbove + PARTY_SIZE + gPlayerPCItemPageInfo.cursorPos], Mailbox_ReturnToFieldFromReadMail, TRUE);
         DestroyTask(taskId);
     }
+#endif //FREE_OTHER_PBL
 }
 
-static void Mailbox_ReturnToFieldFromReadMail(void)
+static UNUSED void Mailbox_ReturnToFieldFromReadMail(void)
 {
     gFieldCallback = Mailbox_ReshowAfterMail;
     SetMainCallback2(CB2_ReturnToField);
@@ -856,6 +865,7 @@ static void Mailbox_HandleConfirmMoveToBag(u8 taskId)
 
 static void Mailbox_DoMailMoveToBag(u8 taskId)
 {
+#if FREE_OTHER_PBL == FALSE
     struct Mail *mail = &gSaveBlock1Ptr->mail[gPlayerPCItemPageInfo.itemsAbove + PARTY_SIZE + gPlayerPCItemPageInfo.cursorPos];
     if (!AddBagItem(mail->itemId, 1))
     {
@@ -871,6 +881,7 @@ static void Mailbox_DoMailMoveToBag(u8 taskId)
             gPlayerPCItemPageInfo.itemsAbove--;
         SetPlayerPCListCount(taskId);
     }
+#endif //FREE_OTHER_PBL
 }
 
 static void Mailbox_CancelMoveToBag(u8 taskId)
