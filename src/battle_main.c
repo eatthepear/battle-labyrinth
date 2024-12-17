@@ -1930,6 +1930,7 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
 
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags)
 {
+    u32 personalityValue;
     s32 i, j;
     u8 monsCount;
     u16 randomizedIndices[PARTY_SIZE];
@@ -1964,10 +1965,12 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
         for (i = 0; i < monsCount; i++)
         {
             s32 ball = -1;
+            u32 personalityHash = GeneratePartyHash(trainer, i);
             const struct TrainerMon *partyData = trainer->party;
+            u32 otIdType = OT_ID_RANDOM_NO_SHINY;
+            u32 fixedOtId = 0;
             u32 ability = 0;
             u32 status = 0;
-            u8 gender = 0;
             u8 nature;
 
             if (trainer->randomLead == TRUE)
@@ -1975,14 +1978,15 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             else
                 j = i;
 
-            gender = ((Random() % 2) ? MON_MALE : MON_FEMALE);
-            if (partyData[j].gender > 0)
-            {
-                if (partyData[j].gender == TRAINER_MON_MALE)
-                    gender = MON_MALE;
-                else if (partyData[j].gender == TRAINER_MON_FEMALE)
-                    gender = MON_FEMALE;
-            }
+            personalityValue = 0x80;
+
+            personalityValue += personalityHash << 8;
+            if (partyData[j].gender == TRAINER_MON_MALE)
+                personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_MALE, partyData[j].species);
+            else if (partyData[j].gender == TRAINER_MON_FEMALE)
+                personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_FEMALE, partyData[j].species);
+            else if (partyData[j].gender == TRAINER_MON_RANDOM_GENDER)
+                personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(Random() & 1 ? MON_MALE : MON_FEMALE, partyData[j].species);
 
             if (partyData[j].nature > 0)
                 nature = partyData[j].nature;
@@ -2008,25 +2012,14 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 }
             }
 
-            CreateMonWithGenderNatureLetter(&party[i], partyData[j].species, partyData[j].lvl, 0, gender, nature, 0);
-
-            if (partyData[j].status > 0)
+            ModifyPersonalityForNature(&personalityValue, nature);
+            if (partyData[j].isShiny)
             {
-                if (partyData[j].status == TRAINER_MON_BURNED)
-                    status = STATUS1_BURN;
-                else if (partyData[j].status == TRAINER_MON_POISONED)
-                    status = STATUS1_POISON;
-                else if (partyData[j].status == TRAINER_MON_PARALYZED)
-                    status = STATUS1_PARALYSIS;
-                else if (partyData[j].status == TRAINER_MON_SLEEP)
-                    status = STATUS1_SLEEP;
-                else if (partyData[j].status == TRAINER_MON_FROSTBITE)
-                    status = STATUS1_FROSTBITE;
-                SetMonData(&party[i], MON_DATA_STATUS, &status);
+                otIdType = OT_ID_PRESET;
+                fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-
+            CreateMon(&party[i], partyData[j].species, partyData[j].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[j].heldItem);
-
             CustomTrainerPartyAssignMoves(&party[i], &partyData[j]);
 
             if (partyData[j].ev != NULL)
@@ -2093,7 +2086,21 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 u32 data = partyData[j].teraType;
                 SetMonData(&party[i], MON_DATA_TERA_TYPE, &data);
             }
-            CalculateMonStats(&party[j]);
+            if (partyData[j].status > 0)
+            {
+                if (partyData[j].status == TRAINER_MON_BURNED)
+                    status = STATUS1_BURN;
+                else if (partyData[j].status == TRAINER_MON_POISONED)
+                    status = STATUS1_POISON;
+                else if (partyData[j].status == TRAINER_MON_PARALYZED)
+                    status = STATUS1_PARALYSIS;
+                else if (partyData[j].status == TRAINER_MON_SLEEP)
+                    status = STATUS1_SLEEP;
+                else if (partyData[j].status == TRAINER_MON_FROSTBITE)
+                    status = STATUS1_FROSTBITE;
+                SetMonData(&party[i], MON_DATA_STATUS, &status);
+            }
+            CalculateMonStats(&party[i]);
 
             if (B_TRAINER_CLASS_POKE_BALLS >= GEN_7 && ball == -1)
             {
