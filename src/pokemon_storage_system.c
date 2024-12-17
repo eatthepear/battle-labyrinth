@@ -9798,70 +9798,100 @@ bool32 AnyStorageMonWithMove(u16 moveId)
 
 void ResetWaldaWallpaper(void)
 {
+#if FREE_OTHER_PBL == FALSE
     gSaveBlock1Ptr->waldaPhrase.iconId = 0;
     gSaveBlock1Ptr->waldaPhrase.patternId = 0;
     gSaveBlock1Ptr->waldaPhrase.patternUnlocked = FALSE;
     gSaveBlock1Ptr->waldaPhrase.colors[0] = RGB(21, 25, 30);
     gSaveBlock1Ptr->waldaPhrase.colors[1] = RGB(6, 12, 24);
     gSaveBlock1Ptr->waldaPhrase.text[0] = EOS;
+#endif //FREE_OTHER_PBL
 }
 
 void SetWaldaWallpaperLockedOrUnlocked(bool32 unlocked)
 {
+#if FREE_OTHER_PBL == FALSE
     gSaveBlock1Ptr->waldaPhrase.patternUnlocked = unlocked;
+#endif //FREE_OTHER_PBL
 }
 
 bool32 IsWaldaWallpaperUnlocked(void)
 {
+#if FREE_OTHER_PBL == FALSE
     return gSaveBlock1Ptr->waldaPhrase.patternUnlocked;
+#endif //FREE_OTHER_PBL
+    return TRUE;
 }
 
 u32 GetWaldaWallpaperPatternId(void)
 {
+#if FREE_OTHER_PBL == FALSE
     return gSaveBlock1Ptr->waldaPhrase.patternId;
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 void SetWaldaWallpaperPatternId(u8 id)
 {
+#if FREE_OTHER_PBL == FALSE
     if (id < ARRAY_COUNT(sWaldaWallpapers))
         gSaveBlock1Ptr->waldaPhrase.patternId = id;
+#endif //FREE_OTHER_PBL
 }
 
 u32 GetWaldaWallpaperIconId(void)
 {
+#if FREE_OTHER_PBL == FALSE
     return gSaveBlock1Ptr->waldaPhrase.iconId;
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 void SetWaldaWallpaperIconId(u8 id)
 {
+#if FREE_OTHER_PBL == FALSE
     if (id < ARRAY_COUNT(sWaldaWallpaperIcons))
         gSaveBlock1Ptr->waldaPhrase.iconId = id;
+#endif //FREE_OTHER_PBL
 }
 
 u16 *GetWaldaWallpaperColorsPtr(void)
 {
+#if FREE_OTHER_PBL == FALSE
     return gSaveBlock1Ptr->waldaPhrase.colors;
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 void SetWaldaWallpaperColors(u16 color1, u16 color2)
 {
+#if FREE_OTHER_PBL == FALSE
     gSaveBlock1Ptr->waldaPhrase.colors[0] = color1;
     gSaveBlock1Ptr->waldaPhrase.colors[1] = color2;
+#endif //FREE_OTHER_PBL
 }
 
 u8 *GetWaldaPhrasePtr(void)
 {
+#if FREE_OTHER_PBL == FALSE
     return gSaveBlock1Ptr->waldaPhrase.text;
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 void SetWaldaPhrase(const u8 *src)
 {
+#if FREE_OTHER_PBL == FALSE
     StringCopy(gSaveBlock1Ptr->waldaPhrase.text, src);
+#endif //FREE_OTHER_PBL
 }
 
 bool32 IsWaldaPhraseEmpty(void)
 {
+#if FREE_OTHER_PBL == FALSE
     return (gSaveBlock1Ptr->waldaPhrase.text[0] == EOS);
+#endif //FREE_OTHER_PBL
+    return TRUE;
 }
 
 

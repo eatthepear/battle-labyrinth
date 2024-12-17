@@ -3431,8 +3431,10 @@ static void SpriteCB_PlayerArrow(struct Sprite *sprite)
 
 static void TryUpdateBerryBlenderRecord(void)
 {
+#if FREE_OTHER_PBL == FALSE
     if (gSaveBlock1Ptr->berryBlenderRecords[sBerryBlender->numPlayers - 2] < sBerryBlender->maxRPM)
         gSaveBlock1Ptr->berryBlenderRecords[sBerryBlender->numPlayers - 2] = sBerryBlender->maxRPM;
+#endif //FREE_OTHER_PBL
 }
 
 static bool8 PrintBlendingResults(void)
@@ -3737,6 +3739,7 @@ static bool8 PrintBlendingRanking(void)
 
 void ShowBerryBlenderRecordWindow(void)
 {
+#if FREE_OTHER_PBL == FALSE
     s32 i;
     s32 xPos, yPos;
     struct WindowTemplate winTemplate;
@@ -3769,6 +3772,7 @@ void ShowBerryBlenderRecordWindow(void)
 
     PutWindowTilemap(gRecordsWindowId);
     CopyWindowToVram(gRecordsWindowId, COPYWIN_FULL);
+#endif //FREE_OTHER_PBL
 }
 
 static void Task_PlayPokeblockFanfare(u8 taskId)

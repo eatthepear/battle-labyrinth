@@ -219,11 +219,15 @@ struct Pokedex
 {
     /*0x00*/ u8 order;
     /*0x01*/ u8 mode;
+#if FREE_OTHER_PBL == FALSE
     /*0x02*/ u8 nationalMagic; // must equal 0xDA in order to have National mode
     /*0x03*/ u8 unknown2;
+#endif //FREE_OTHER_PBL
     /*0x04*/ u32 unownPersonality; // set when you first see Unown
     /*0x08*/ u32 spindaPersonality; // set when you first see Spinda
+#if FREE_OTHER_PBL == FALSE
     /*0x0C*/ u32 unknown3;
+#endif //FREE_OTHER_PBL
 #if FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK2 == FALSE
     /*0x10*/ u8 filler[0x68]; // Previously Dex Flags, feel free to remove.
 #endif //FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK2
@@ -544,23 +548,31 @@ struct SaveBlock2
              //u16 padding1:4;
              //u16 padding2;
     /*0x18*/ struct Pokedex pokedex;
+#if FREE_OTHER_PBL == FALSE
     /*0x90*/ u8 filler_90[0x8];
+#endif //FREE_OTHER_PBL
     /*0x98*/ struct Time localTimeOffset;
     /*0xA0*/ struct Time lastBerryTreeUpdate;
     /*0xA8*/ u32 gcnLinkFlags; // Read by Pokémon Colosseum/XD
     /*0xAC*/ u32 encryptionKey;
     /*0xB0*/ struct PlayersApprentice playerApprentice;
     /*0xDC*/ struct Apprentice apprentices[APPRENTICE_COUNT];
+#if FREE_OTHER_PBL == FALSE
     /*0x1EC*/ struct BerryCrush berryCrush;
+#endif //FREE_OTHER_PBL
 #if FREE_POKEMON_JUMP == FALSE
     /*0x1FC*/ struct PokemonJumpRecords pokeJump;
 #endif //FREE_POKEMON_JUMP
+#if FREE_OTHER_PBL == FALSE
     /*0x20C*/ struct BerryPickingResults berryPick;
+#endif //FREE_OTHER_PBL
 #if FREE_RECORD_MIXING_HALL_RECORDS == FALSE
     /*0x21C*/ struct RankingHall1P hallRecords1P[HALL_FACILITIES_COUNT][FRONTIER_LVL_MODE_COUNT][HALL_RECORDS_COUNT]; // From record mixing.
     /*0x57C*/ struct RankingHall2P hallRecords2P[FRONTIER_LVL_MODE_COUNT][HALL_RECORDS_COUNT]; // From record mixing.
 #endif //FREE_RECORD_MIXING_HALL_RECORDS
+#if FREE_OTHER_PBL == FALSE
     /*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
+#endif //FREE_OTHER_PBL
     /*0x64C*/ struct BattleFrontier frontier;
 }; // sizeof=0xF2C
 
@@ -807,7 +819,9 @@ struct DaycareMail
 struct DaycareMon
 {
     struct BoxPokemon mon;
+#if FREE_OTHER_PBL == FALSE
     struct DaycareMail mail;
+#endif //FREE_OTHER_PBL
     u32 steps;
 };
 
@@ -1011,7 +1025,9 @@ struct SaveBlock1
     /*0x04*/ struct WarpData location;
     /*0x0C*/ struct WarpData continueGameWarp;
     /*0x14*/ struct WarpData dynamicWarp;
+#if FREE_OTHER_PBL == FALSE
     /*0x1C*/ struct WarpData lastHealLocation; // used by white-out and teleport
+#endif //FREE_OTHER_PBL
     /*0x24*/ struct WarpData escapeWarp; // used by Dig and Escape Rope
     /*0x2C*/ u16 savedMusic;
     /*0x2E*/ u8 weather;
@@ -1027,28 +1043,43 @@ struct SaveBlock1
     /*0x494*/ u16 coins;
     /*0x496*/ u16 registeredItem; // registered for use with SELECT button
     /*0x498*/ struct ItemSlot pcItems[PC_ITEMS_COUNT];
+              struct ItemSlot bagPocket_Medicine[BAG_MEDICINE_COUNT];
+              struct ItemSlot bagPocket_BattleItems[BAG_BATTLEITEMS_COUNT];
+              struct ItemSlot bagPocket_Consumables[BAG_CONSUMABLES_COUNT];
+#if FREE_OTHER_PBL == FALSE
     /*0x560*/ struct ItemSlot bagPocket_Items[BAG_ITEMS_COUNT];
     /*0x5D8*/ struct ItemSlot bagPocket_KeyItems[BAG_KEYITEMS_COUNT];
     /*0x650*/ struct ItemSlot bagPocket_PokeBalls[BAG_POKEBALLS_COUNT];
     /*0x690*/ struct ItemSlot bagPocket_TMHM[BAG_TMHM_COUNT];
+#endif //FREE_OTHER_PBL
     /*0x790*/ struct ItemSlot bagPocket_Berries[BAG_BERRIES_COUNT];
+#if FREE_OTHER_PBL == FALSE
     /*0x848*/ struct Pokeblock pokeblocks[POKEBLOCKS_COUNT];
+#endif //FREE_OTHER_PBL
 #if FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1 == FALSE
     /*0x988*/ u8 filler1[0x34]; // Previously Dex Flags, feel free to remove.
 #endif //FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1
+#if FREE_OTHER_PBL == FALSE
     /*0x9BC*/ u16 berryBlenderRecords[3];
     /*0x9C2*/ u8 unused_9C2[6];
+#endif //FREE_OTHER_PBL
 #if FREE_MATCH_CALL == FALSE
     /*0x9C8*/ u16 trainerRematchStepCounter;
     /*0x9CA*/ u8 trainerRematches[MAX_REMATCH_ENTRIES];
 #endif //FREE_MATCH_CALL
     /*0xA2E*/ //u8 padding3[2];
+              u8 bagPocket_TMHMOwnedFlags[20]; //allow for a total of 160 TMs/HMs
+    /*0x650*/ struct ItemSlot bagPocket_PokeBalls[BAG_POKEBALLS_COUNT];
+    /*0x560*/ struct ItemSlot bagPocket_Treasures[BAG_TREASURES_COUNT];
+    /*0x5D8*/ struct ItemSlot bagPocket_KeyItems[BAG_KEYITEMS_COUNT];
     /*0xA30*/ struct ObjectEvent objectEvents[OBJECT_EVENTS_COUNT];
     /*0xC70*/ struct ObjectEventTemplate objectEventTemplates[OBJECT_EVENT_TEMPLATES_COUNT];
     /*0x1270*/ u8 flags[NUM_FLAG_BYTES];
     /*0x139C*/ u16 vars[VARS_COUNT];
     /*0x159C*/ u32 gameStats[NUM_GAME_STATS];
     /*0x169C*/ struct BerryTree berryTrees[BERRY_TREES_COUNT];
+               u8 NuzlockeEncounterFlags[10];
+#if FREE_OTHER_PBL == FALSE
     /*0x1A9C*/ struct SecretBase secretBases[SECRET_BASES_COUNT];
     /*0x271C*/ u8 playerRoomDecorations[DECOR_MAX_PLAYERS_HOUSE];
     /*0x2728*/ u8 playerRoomDecorationPositions[DECOR_MAX_PLAYERS_HOUSE];
@@ -1084,13 +1115,16 @@ struct SaveBlock1
     /*0x2E28*/ OldMan oldMan;
     /*0x2e64*/ struct DewfordTrend dewfordTrends[SAVED_TRENDS_COUNT];
     /*0x2e90*/ struct ContestWinner contestWinners[NUM_CONTEST_WINNERS]; // see CONTEST_WINNER_*
+#endif //FREE_OTHER_PBL
     /*0x3030*/ struct DayCare daycare;
 #if FREE_LINK_BATTLE_RECORDS == FALSE
     /*0x3150*/ struct LinkBattleRecords linkBattleRecords;
 #endif //FREE_LINK_BATTLE_RECORDS
+#if FREE_OTHER_PBL == FALSE
     /*0x31A8*/ u8 giftRibbons[GIFT_RIBBONS_COUNT];
     /*0x31B3*/ struct ExternalEventData externalEventData;
     /*0x31C7*/ struct ExternalEventFlags externalEventFlags;
+#endif //FREE_OTHER_PBL
     /*0x31DC*/ struct Roamer roamer[ROAMER_COUNT];
 #if FREE_ENIGMA_BERRY == FALSE
     /*0x31F8*/ struct EnigmaBerry enigmaBerry;
@@ -1106,16 +1140,22 @@ struct SaveBlock1
 #if FREE_MYSTERY_EVENT_BUFFERS == FALSE
     /*0x3???*/ struct RamScript ramScript;
 #endif //FREE_MYSTERY_EVENT_BUFFERS
+#if FREE_OTHER_PBL == FALSE
     /*0x3???*/ struct RecordMixingGift recordMixingGift;
     /*0x3???*/ LilycoveLady lilycoveLady;
     /*0x3???*/ struct TrainerNameRecord trainerNameRecords[20];
+#endif //FREE_OTHER_PBL
 #if FREE_UNION_ROOM_CHAT == FALSE
     /*0x3???*/ u8 registeredTexts[UNION_ROOM_KB_ROW_COUNT][21];
 #endif //FREE_UNION_ROOM_CHAT
 #if FREE_TRAINER_HILL == FALSE
     /*0x3???*/ struct TrainerHillSave trainerHill;
 #endif //FREE_TRAINER_HILL
+#if FREE_OTHER_PBL == FALSE
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
+#endif //FREE_OTHER_PBL
+#if FREE_OTHER_PBL == FALSE
+#endif //FREE_OTHER_PBL
     // sizeof: 0x3???
 };
 

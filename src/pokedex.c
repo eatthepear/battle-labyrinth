@@ -1522,11 +1522,15 @@ void ResetPokedex(void)
     gUnusedPokedexU8 = 0;
     gSaveBlock2Ptr->pokedex.mode = DEX_MODE_HOENN;
     gSaveBlock2Ptr->pokedex.order = 0;
+#if FREE_OTHER_PBL == FALSE
     gSaveBlock2Ptr->pokedex.nationalMagic = 0;
     gSaveBlock2Ptr->pokedex.unknown2 = 0;
+#endif //FREE_OTHER_PBL
     gSaveBlock2Ptr->pokedex.unownPersonality = 0;
     gSaveBlock2Ptr->pokedex.spindaPersonality = 0;
+#if FREE_OTHER_PBL == FALSE
     gSaveBlock2Ptr->pokedex.unknown3 = 0;
+#endif //FREE_OTHER_PBL
     DisableNationalPokedex();
     for (i = 0; i < NUM_DEX_FLAG_BYTES; i++)
     {

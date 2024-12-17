@@ -70,6 +70,7 @@ static s16 GetSavedTrendIndex(struct DewfordTrend *, struct DewfordTrend *, u16)
 
 void InitDewfordTrend(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i;
 
     for (i = 0; i < SAVED_TRENDS_COUNT; i++)
@@ -85,10 +86,12 @@ void InitDewfordTrend(void)
         SeedTrendRng(&(gSaveBlock1Ptr->dewfordTrends[i]));
     }
     SortTrends(gSaveBlock1Ptr->dewfordTrends, SAVED_TRENDS_COUNT, SORT_MODE_NORMAL);
+#endif //FREE_OTHER_PBL
 }
 
 void UpdateDewfordTrendPerDay(u16 days)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i;
 
     if (days != 0)
@@ -142,6 +145,7 @@ void UpdateDewfordTrendPerDay(u16 days)
         }
         SortTrends(gSaveBlock1Ptr->dewfordTrends, SAVED_TRENDS_COUNT, SORT_MODE_NORMAL);
     }
+#endif //FREE_OTHER_PBL
 }
 
 // Returns TRUE if the current trendy phrase was successfully changed to the given phrase
@@ -150,6 +154,7 @@ void UpdateDewfordTrendPerDay(u16 days)
 // phrase is always saved in gSaveBlock1Ptr->dewfordTrends
 bool8 TrySetTrendyPhrase(u16 *phrase)
 {
+#if FREE_OTHER_PBL == FALSE
     struct DewfordTrend trend = {0};
     u16 i;
 
@@ -202,11 +207,12 @@ bool8 TrySetTrendyPhrase(u16 *phrase)
         gSaveBlock1Ptr->dewfordTrends[SAVED_TRENDS_COUNT - 1] = trend;
         TryPutTrendWatcherOnAir(phrase);
     }
+#endif //FREE_OTHER_PBL
     return FALSE;
 }
 
 
-static void SortTrends(struct DewfordTrend *trends, u16 numTrends, u8 mode)
+static UNUSED void SortTrends(struct DewfordTrend *trends, u16 numTrends, u8 mode)
 {
     u16 i;
     for (i = 0; i < numTrends; i++)
@@ -228,6 +234,7 @@ static void SortTrends(struct DewfordTrend *trends, u16 numTrends, u8 mode)
 
 void ReceiveDewfordTrendData(struct DewfordTrend *linkedTrends, size_t size, u8 unused)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i, j, numTrends, players;
     struct DewfordTrend *linkedTrendsBuffer, *savedTrendsBuffer, *src, *dst, *temp;
 
@@ -285,18 +292,22 @@ void ReceiveDewfordTrendData(struct DewfordTrend *linkedTrends, size_t size, u8 
 
     Free(linkedTrendsBuffer);
     Free(savedTrendsBuffer);
+#endif //FREE_OTHER_PBL
 }
 
 void BufferTrendyPhraseString(void)
 {
+#if FREE_OTHER_PBL == FALSE
     struct DewfordTrend *trend = &gSaveBlock1Ptr->dewfordTrends[gSpecialVar_0x8004];
     ConvertEasyChatWordsToString(gStringVar1, trend->words, 2, 1);
+#endif //FREE_OTHER_PBL
 }
 
 // Returns TRUE if the current trendy phrase is "boring", FALSE otherwise
 // This only influences the comment of an NPC inside the Dewford Town Hall
 void IsTrendyPhraseBoring(void)
 {
+#if FREE_OTHER_PBL == FALSE
     bool16 result = FALSE;
 
     do
@@ -311,6 +322,7 @@ void IsTrendyPhraseBoring(void)
     } while (0);
 
     gSpecialVar_Result = result;
+#endif //FREE_OTHER_PBL
 }
 
 // A painting hangs on the wall of the Dewford Hall
@@ -319,7 +331,9 @@ void IsTrendyPhraseBoring(void)
 // See DewfordTown_Hall_EventScript_Painting
 void GetDewfordHallPaintingNameIndex(void)
 {
+#if FREE_OTHER_PBL == FALSE
     gSpecialVar_Result = (gSaveBlock1Ptr->dewfordTrends[0].words[0] + gSaveBlock1Ptr->dewfordTrends[0].words[1]) & 7;
+#endif //FREE_OTHER_PBL
 }
 
 // Returns TRUE if a > b (a is "trendier" than b), FALSE if a < b (b is "trendier" than a)
@@ -366,7 +380,7 @@ static bool8 CompareTrends(struct DewfordTrend *a, struct DewfordTrend *b, u8 mo
     return Random() & 1;
 }
 
-static void SeedTrendRng(struct DewfordTrend *trend)
+static UNUSED void SeedTrendRng(struct DewfordTrend *trend)
 {
     u16 rand;
 
@@ -382,8 +396,9 @@ static void SeedTrendRng(struct DewfordTrend *trend)
     trend->rand = Random();
 }
 
-static bool8 IsPhraseInSavedTrends(u16 *phrase)
+static UNUSED bool8 IsPhraseInSavedTrends(u16 *phrase)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i;
 
     for (i = 0; i < SAVED_TRENDS_COUNT; i++)
@@ -391,6 +406,7 @@ static bool8 IsPhraseInSavedTrends(u16 *phrase)
         if (IsEasyChatPairEqual(phrase, gSaveBlock1Ptr->dewfordTrends[i].words))
             return TRUE;
     }
+#endif //FREE_OTHER_PBL
     return FALSE;
 }
 
@@ -406,7 +422,7 @@ static bool8 IsEasyChatPairEqual(u16 *words1, u16 *words2)
     return TRUE;
 }
 
-static s16 GetSavedTrendIndex(struct DewfordTrend *savedTrends, struct DewfordTrend *trend, u16 numSaved)
+static UNUSED s16 GetSavedTrendIndex(struct DewfordTrend *savedTrends, struct DewfordTrend *trend, u16 numSaved)
 {
     s16 i;
     for (i = 0; i < numSaved; i++)

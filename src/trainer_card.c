@@ -695,7 +695,9 @@ static u8 GetRubyTrainerStars(struct TrainerCard *trainerCard)
 static void SetPlayerCardData(struct TrainerCard *trainerCard, u8 cardType)
 {
     u32 playTime;
+#if FREE_OTHER_PBL == FALSE
     u8 i;
+#endif //FREE_OTHER_PBL
 
     trainerCard->gender = gSaveBlock2Ptr->playerGender;
     trainerCard->playTimeHours = gSaveBlock2Ptr->playTimeHours;
@@ -728,8 +730,10 @@ static void SetPlayerCardData(struct TrainerCard *trainerCard, u8 cardType)
 
     trainerCard->money = GetMoney(&gSaveBlock1Ptr->money);
 
+#if FREE_OTHER_PBL == FALSE
     for (i = 0; i < TRAINER_CARD_PROFILE_LENGTH; i++)
         trainerCard->easyChatProfile[i] = gSaveBlock1Ptr->easyChatProfile[i];
+#endif //FREE_OTHER_PBL
 
     StringCopy(trainerCard->playerName, gSaveBlock2Ptr->playerName);
 

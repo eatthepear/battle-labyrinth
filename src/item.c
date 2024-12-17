@@ -28,6 +28,8 @@ static bool32 DoesItemHavePluralName(u16);
 
 EWRAM_DATA struct BagPocket gBagPockets[POCKETS_COUNT] = {0};
 
+EWRAM_DATA struct ItemSlot gTmHmItemSlots[BAG_TMHM_COUNT] = {0};
+
 #include "data/pokemon/item_effects.h"
 #include "data/items.h"
 
@@ -66,10 +68,27 @@ void ApplyNewEncryptionKeyToBagItems_(u32 newKey) // really GF?
     ApplyNewEncryptionKeyToBagItems(newKey);
 }
 
+void DeserializeTmHmItemSlots(void)
+{
+    int i;
+
+    for (i = 0; i < BAG_TMHM_COUNT; ++i)
+    {
+        gTmHmItemSlots[i].itemId = 0;
+        SetBagItemQuantity(&(gTmHmItemSlots[i].quantity), 0);
+    }
+    for (i = 0; i < TMHM_COUNT; ++i)
+    {
+        u8 bit = i % 8;
+        if (gSaveBlock1Ptr->bagPocket_TMHMOwnedFlags[i / 8] & (1<<bit))
+            AddBagItem(i + ITEM_TM01, 1);
+    }
+}
+
 void SetBagItemsPointers(void)
 {
-    gBagPockets[ITEMS_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_Items;
-    gBagPockets[ITEMS_POCKET].capacity = BAG_ITEMS_COUNT;
+    gBagPockets[TREASURES_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_Treasures;
+    gBagPockets[TREASURES_POCKET].capacity = BAG_TREASURES_COUNT;
 
     gBagPockets[KEYITEMS_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_KeyItems;
     gBagPockets[KEYITEMS_POCKET].capacity = BAG_KEYITEMS_COUNT;
@@ -77,11 +96,20 @@ void SetBagItemsPointers(void)
     gBagPockets[BALLS_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_PokeBalls;
     gBagPockets[BALLS_POCKET].capacity = BAG_POKEBALLS_COUNT;
 
-    gBagPockets[TMHM_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_TMHM;
+    gBagPockets[TMHM_POCKET].itemSlots = &gTmHmItemSlots[0];
     gBagPockets[TMHM_POCKET].capacity = BAG_TMHM_COUNT;
 
     gBagPockets[BERRIES_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_Berries;
     gBagPockets[BERRIES_POCKET].capacity = BAG_BERRIES_COUNT;
+
+    gBagPockets[MEDICINE_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_Medicine;
+    gBagPockets[MEDICINE_POCKET].capacity = BAG_MEDICINE_COUNT;
+
+    gBagPockets[BATTLEITEMS_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_BattleItems;
+    gBagPockets[BATTLEITEMS_POCKET].capacity = BAG_BATTLEITEMS_COUNT;
+
+    gBagPockets[CONSUMABLES_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_Consumables;
+    gBagPockets[CONSUMABLES_POCKET].capacity = BAG_CONSUMABLES_COUNT;
 }
 
 u8 *CopyItemName(u16 itemId, u8 *dst)
@@ -214,6 +242,18 @@ u32 GetFreeSpaceForItemInBag(u16 itemId)
     return spaceForItem;
 }
 
+static void SetTmHmOwned(u16 itemId)
+{
+    u8* flagByte = &gSaveBlock1Ptr->bagPocket_TMHMOwnedFlags[(itemId - ITEM_TM01) / 8];
+    *flagByte = (*flagByte) | (1 << ((itemId - ITEM_TM01) % 8));
+}
+
+static void SetTmHmUnowned(u16 itemId)
+{
+    u8* flagByte = &gSaveBlock1Ptr->bagPocket_TMHMOwnedFlags[(itemId - ITEM_TM01) / 8];
+    *flagByte = (*flagByte) & ~(1 << ((itemId - ITEM_TM01) % 8));
+}
+
 bool8 AddBagItem(u16 itemId, u16 count)
 {
     u8 i;
@@ -297,6 +337,8 @@ bool8 AddBagItem(u16 itemId, u16 count)
                     {
                         // created a new slot and added quantity
                         SetBagItemQuantity(&newItems[i].quantity, count);
+                        if (pocket == TMHM_POCKET)
+                            SetTmHmOwned(itemId);
                         count = 0;
                         break;
                     }
@@ -373,6 +415,8 @@ bool8 RemoveBagItem(u16 itemId, u16 count)
                 itemPocket->itemSlots[var].itemId = ITEM_NONE;
 
             if (count == 0)
+                if (pocket == TMHM_POCKET)
+                    SetTmHmUnowned(itemId);
                 return TRUE;
         }
 
@@ -396,9 +440,13 @@ bool8 RemoveBagItem(u16 itemId, u16 count)
                     itemPocket->itemSlots[i].itemId = ITEM_NONE;
 
                 if (count == 0)
+                    if (pocket == TMHM_POCKET)
+                        SetTmHmUnowned(itemId);
                     return TRUE;
             }
         }
+        if (pocket == TMHM_POCKET)
+            SetTmHmUnowned(itemId);
         return TRUE;
     }
 }

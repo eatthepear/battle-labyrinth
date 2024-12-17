@@ -399,6 +399,7 @@ void ScriptHatchMon(void)
 
 static bool8 _CheckDaycareMonReceivedMail(struct DayCare *daycare, u8 daycareId)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 nickname[max(32, POKEMON_NAME_BUFFER_SIZE)];
     struct DaycareMon *daycareMon = &daycare->mons[daycareId];
 
@@ -412,6 +413,7 @@ static bool8 _CheckDaycareMonReceivedMail(struct DayCare *daycare, u8 daycareId)
         TVShowConvertInternationalString(gStringVar3, daycareMon->mail.monName, daycareMon->mail.monLanguage);
         return TRUE;
     }
+#endif //FREE_OTHER_PBL
     return FALSE;
 }
 

@@ -1474,7 +1474,7 @@ static u16 GetRematchTrainerLocation(int matchCallId)
     return mapHeader->regionMapSectionId;
 }
 
-static u32 GetNumRematchTrainersFought(void)
+static UNUSED u32 GetNumRematchTrainersFought(void)
 {
     u32 i, count;
     for (i = 0, count = 0; i < REMATCH_SPECIAL_TRAINER_START; i++)
@@ -1489,7 +1489,7 @@ static u32 GetNumRematchTrainersFought(void)
 // Look through the rematch table for trainers that have been defeated once before.
 // Return the index into the rematch table of the nth defeated trainer,
 // or REMATCH_TABLE_ENTRIES if fewer than n rematch trainers have been defeated.
-static u32 GetNthRematchTrainerFought(int n)
+static UNUSED u32 GetNthRematchTrainerFought(int n)
 {
     u32 i, count;
 
@@ -1851,7 +1851,7 @@ static const u16 sBadgeFlags[NUM_BADGES] =
     FLAG_BADGE08_GET,
 };
 
-static int GetNumOwnedBadges(void)
+static UNUSED int GetNumOwnedBadges(void)
 {
     u32 i;
 
@@ -1867,6 +1867,7 @@ static int GetNumOwnedBadges(void)
 // Whether or not a trainer calling the player from a different route should request a battle
 static bool32 ShouldTrainerRequestBattle(int matchCallId)
 {
+#if FREE_OTHER_PBL == FALSE
     int dayCount;
     int otId;
     u16 dewfordRand;
@@ -1889,6 +1890,7 @@ static bool32 ShouldTrainerRequestBattle(int matchCallId)
         if (GetNthRematchTrainerFought(n) == matchCallId)
             return TRUE;
     }
+#endif //FREE_OTHER_PBL
 
     return FALSE;
 }

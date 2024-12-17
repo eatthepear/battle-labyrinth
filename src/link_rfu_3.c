@@ -885,13 +885,13 @@ void UpdateWirelessStatusIndicatorSprite(void)
 #undef sTileStart
 #undef sValidator
 
-static void CopyTrainerRecord(struct TrainerNameRecord *dest, u32 trainerId, const u8 *name)
+static UNUSED void CopyTrainerRecord(struct TrainerNameRecord *dest, u32 trainerId, const u8 *name)
 {
     dest->trainerId = trainerId;
     StringCopy(dest->trainerName, name);
 }
 
-static bool32 NameIsNotEmpty(const u8 *name)
+static UNUSED bool32 NameIsNotEmpty(const u8 *name)
 {
     s32 i;
 
@@ -906,6 +906,7 @@ static bool32 NameIsNotEmpty(const u8 *name)
 // Save the currently connected players into the trainer records, shifting all previous records down.
 void SaveLinkTrainerNames(void)
 {
+#if FREE_OTHER_PBL == FALSE
     if (gWirelessCommType != 0)
     {
         s32 i;
@@ -956,10 +957,12 @@ void SaveLinkTrainerNames(void)
         memcpy(gSaveBlock1Ptr->trainerNameRecords, newRecords, sizeof(gSaveBlock1Ptr->trainerNameRecords));
         Free(newRecords);
     }
+#endif //FREE_OTHER_PBL
 }
 
 bool32 PlayerHasMetTrainerBefore(u16 id, u8 *name)
 {
+#if FREE_OTHER_PBL == FALSE
     s32 i;
 
     for (i = 0; i < (int)ARRAY_COUNT(gSaveBlock1Ptr->trainerNameRecords); i++)
@@ -970,11 +973,13 @@ bool32 PlayerHasMetTrainerBefore(u16 id, u8 *name)
         if (!NameIsNotEmpty(gSaveBlock1Ptr->trainerNameRecords[i].trainerName))
             return FALSE;
     }
+#endif //FREE_OTHER_PBL
     return FALSE;
 }
 
 void WipeTrainerNameRecords(void)
 {
+#if FREE_OTHER_PBL == FALSE
     s32 i;
 
     for (i = 0; i < (int)ARRAY_COUNT(gSaveBlock1Ptr->trainerNameRecords); i++)
@@ -982,4 +987,5 @@ void WipeTrainerNameRecords(void)
         gSaveBlock1Ptr->trainerNameRecords[i].trainerId = 0;
         CpuFill16(0, gSaveBlock1Ptr->trainerNameRecords[i].trainerName, PLAYER_NAME_LENGTH + 1);
     }
+#endif //FREE_OTHER_PBL
 }

@@ -90,18 +90,18 @@ static TVShow *sTvShowsSave;
 static PokeNews *sPokeNewsSave;
 static OldMan *sOldManSave;
 static struct DewfordTrend *sDewfordTrendsSave;
-static struct RecordMixingDaycareMail *sRecordMixMailSave;
+static UNUSED struct RecordMixingDaycareMail *sRecordMixMailSave;
 static void *sBattleTowerSave;
 static LilycoveLady *sLilycoveLadySave;
 static void *sApprenticesSave;
-static void *sBattleTowerSave_Duplicate;
+static UNUSED void *sBattleTowerSave_Duplicate;
 static u32 sRecordStructSize;
 static u8 sDaycareMailRandSum;
 #if FREE_RECORD_MIXING_HALL_RECORDS == FALSE
 static struct PlayerHallRecords *sPartnerHallRecords[HALL_RECORDS_COUNT];
 #endif //FREE_RECORD_MIXING_HALL_RECORDS
 
-static EWRAM_DATA struct RecordMixingDaycareMail sRecordMixMail = {0};
+static UNUSED EWRAM_DATA struct RecordMixingDaycareMail sRecordMixMail = {0};
 static EWRAM_DATA union PlayerRecord *sReceivedRecords = NULL;
 static EWRAM_DATA union PlayerRecord *sSentRecord = NULL;
 
@@ -173,6 +173,7 @@ void RecordMixingPlayerSpotTriggered(void)
 // these variables were const in R/S, but had to become changeable because of saveblocks changing RAM position
 static void SetSrcLookupPointers(void)
 {
+#if FREE_OTHER_PBL == FALSE
     sSecretBasesSave = gSaveBlock1Ptr->secretBases;
     sTvShowsSave = gSaveBlock1Ptr->tvShows;
     sPokeNewsSave = gSaveBlock1Ptr->pokeNews;
@@ -183,6 +184,7 @@ static void SetSrcLookupPointers(void)
     sLilycoveLadySave = &gSaveBlock1Ptr->lilycoveLady;
     sApprenticesSave = gSaveBlock2Ptr->apprentices;
     sBattleTowerSave_Duplicate = &gSaveBlock2Ptr->frontier.towerPlayer;
+#endif //FREE_OTHER_PBL
 }
 
 static void PrepareUnknownExchangePacket(struct PlayerRecordRS *dest)
@@ -711,7 +713,7 @@ static void ReceiveLilycoveLadyData(LilycoveLady *records, size_t recordSize, u8
     }
 }
 
-static u8 GetDaycareMailItemId(struct DaycareMail *mail)
+static UNUSED u8 GetDaycareMailItemId(struct DaycareMail *mail)
 {
     return mail->message.itemId;
 }
@@ -723,7 +725,7 @@ enum {
     DAYCARE_SLOT,
 };
 
-static void SwapDaycareMail(struct RecordMixingDaycareMail *records, size_t recordSize, u8 (*idxs)[2], u8 playerSlot1, u8 playerSlot2)
+static UNUSED void SwapDaycareMail(struct RecordMixingDaycareMail *records, size_t recordSize, u8 (*idxs)[2], u8 playerSlot1, u8 playerSlot2)
 {
     struct DaycareMail temp;
     struct RecordMixingDaycareMail *mixMail1, *mixMail2;
@@ -754,13 +756,14 @@ static void CalculateDaycareMailRandSum(const u8 *src)
     sDaycareMailRandSum = sum;
 }
 
-static u8 GetDaycareMailRandSum(void)
+static UNUSED u8 GetDaycareMailRandSum(void)
 {
     return sDaycareMailRandSum;
 }
 
 static void ReceiveDaycareMailData(struct RecordMixingDaycareMail *records, size_t recordSize, u8 multiplayerId, TVShow *shows)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i, j;
     u8 linkPlayerCount;
     u8 tableId;
@@ -959,6 +962,7 @@ static void ReceiveDaycareMailData(struct RecordMixingDaycareMail *records, size
     memcpy(&gSaveBlock1Ptr->daycare.mons[0].mail, &mixMail->mail[0], sizeof(struct DaycareMail));
     memcpy(&gSaveBlock1Ptr->daycare.mons[1].mail, &mixMail->mail[1], sizeof(struct DaycareMail));
     SeedRng(oldSeed);
+#endif //FREE_OTHER_PBL
 }
 
 
@@ -1366,10 +1370,12 @@ static void ReceiveRankingHallRecords(struct PlayerHallRecords *records, size_t 
 
 static void GetRecordMixingDaycareMail(struct RecordMixingDaycareMail *dst)
 {
+#if FREE_OTHER_PBL == FALSE
     sRecordMixMail.mail[0] = gSaveBlock1Ptr->daycare.mons[0].mail;
     sRecordMixMail.mail[1] = gSaveBlock1Ptr->daycare.mons[1].mail;
     InitDaycareMailRecordMixing(&gSaveBlock1Ptr->daycare, &sRecordMixMail);
     *dst = *sRecordMixMailSave;
+#endif //FREE_OTHER_PBL
 }
 
 static void SanitizeDaycareMailForRuby(struct RecordMixingDaycareMail *src)

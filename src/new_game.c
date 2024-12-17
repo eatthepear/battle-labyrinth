@@ -108,6 +108,7 @@ static void ClearPokedexFlags(void)
 
 void ClearAllContestWinnerPics(void)
 {
+#if FREE_OTHER_PBL == FALSE
     s32 i;
 
     ClearContestWinnerPicsInContestHall();
@@ -115,6 +116,7 @@ void ClearAllContestWinnerPics(void)
     // Clear Museum paintings
     for (i = MUSEUM_CONTEST_WINNERS_START; i < NUM_CONTEST_WINNERS; i++)
         gSaveBlock1Ptr->contestWinners[i] = sContestWinnerPicDummy;
+#endif //FREE_OTHER_PBL
 }
 
 static void ClearFrontierRecord(void)
@@ -210,10 +212,12 @@ void NewGameInitData(void)
 
 static void ResetMiniGamesRecords(void)
 {
+#if FREE_OTHER_PBL == FALSE
     CpuFill16(0, &gSaveBlock2Ptr->berryCrush, sizeof(struct BerryCrush));
     SetBerryPowder(&gSaveBlock2Ptr->berryCrush.berryPowderAmount, 0);
     ResetPokemonJumpRecords();
     CpuFill16(0, &gSaveBlock2Ptr->berryPick, sizeof(struct BerryPickingResults));
+#endif //FREE_OTHER_PBL
 }
 
 static void ResetItemFlags(void)

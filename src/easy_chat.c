@@ -1455,6 +1455,7 @@ static void ExitEasyChatScreen(MainCallback callback)
 
 void ShowEasyChatScreen(void)
 {
+#if FREE_OTHER_PBL == FALSE
     int i;
     u16 *words;
     struct MauvilleManBard *bard;
@@ -1545,10 +1546,12 @@ void ShowEasyChatScreen(void)
 
     CleanupOverworldWindowsAndTilemaps();
     DoEasyChatScreen(gSpecialVar_0x8004, words, CB2_ReturnToFieldContinueScript, displayedPersonType);
+#endif //FREE_OTHER_PBL
 }
 
 static void CB2_QuizLadyQuestion(void)
 {
+#if FREE_OTHER_PBL == FALSE
     LilycoveLady *lilycoveLady;
 
     UpdatePaletteFade();
@@ -1568,6 +1571,7 @@ static void CB2_QuizLadyQuestion(void)
         return;
     }
     gMain.state ++;
+#endif //FREE_OTHER_PBL
 }
 
 void QuizLadyShowQuizQuestion(void)
@@ -1603,35 +1607,43 @@ static void EnterQuizLadyScreen(u16 funcId)
 
 static void DoQuizAnswerEasyChatScreen(void)
 {
+#if FREE_OTHER_PBL == FALSE
     DoEasyChatScreen(
         EASY_CHAT_TYPE_QUIZ_ANSWER,
         &gSaveBlock1Ptr->lilycoveLady.quiz.playerAnswer,
         CB2_ReturnToFieldContinueScript,
         EASY_CHAT_PERSON_DISPLAY_NONE);
+#endif //FREE_OTHER_PBL
 }
 
 static void DoQuizQuestionEasyChatScreen(void)
 {
+#if FREE_OTHER_PBL == FALSE
     DoEasyChatScreen(EASY_CHAT_TYPE_QUIZ_QUESTION,
         gSaveBlock1Ptr->lilycoveLady.quiz.question,
         CB2_ReturnToFieldContinueScript,
         EASY_CHAT_PERSON_DISPLAY_NONE);
+#endif //FREE_OTHER_PBL
 }
 
 static void DoQuizSetAnswerEasyChatScreen(void)
 {
+#if FREE_OTHER_PBL == FALSE
     DoEasyChatScreen(EASY_CHAT_TYPE_QUIZ_SET_ANSWER,
         &gSaveBlock1Ptr->lilycoveLady.quiz.correctAnswer,
         CB2_ReturnToFieldContinueScript,
         EASY_CHAT_PERSON_DISPLAY_NONE);
+#endif //FREE_OTHER_PBL
 }
 
 static void DoQuizSetQuestionEasyChatScreen(void)
 {
+#if FREE_OTHER_PBL == FALSE
     DoEasyChatScreen(EASY_CHAT_TYPE_QUIZ_SET_QUESTION,
         gSaveBlock1Ptr->lilycoveLady.quiz.question,
         CB2_ReturnToFieldContinueScript,
         EASY_CHAT_PERSON_DISPLAY_NONE);
+#endif //FREE_OTHER_PBL
 }
 
 static bool8 InitEasyChatScreenStruct(u8 type, u16 *words, u8 displayedPersonType)
@@ -2893,6 +2905,7 @@ static bool32 IsCurrentPhraseFull(void)
 
 static int IsQuizQuestionEmpty(void)
 {
+#if FREE_OTHER_PBL == FALSE
     int i;
     struct SaveBlock1 *saveBlock1;
 
@@ -2905,22 +2918,27 @@ static int IsQuizQuestionEmpty(void)
         if (saveBlock1->lilycoveLady.quiz.question[i] != EC_EMPTY_WORD)
             return FALSE;
     }
+#endif //FREE_OTHER_PBL
 
     return TRUE;
 }
 
 static int IsQuizAnswerEmpty(void)
 {
+#if FREE_OTHER_PBL == FALSE
     struct LilycoveLadyQuiz *quiz;
     if (sEasyChatScreen->type == EASY_CHAT_TYPE_QUIZ_SET_ANSWER)
         return IsCurrentPhraseEmpty();
 
     quiz = &gSaveBlock1Ptr->lilycoveLady.quiz;
     return quiz->correctAnswer == EC_EMPTY_WORD ? TRUE : FALSE;
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 static void GetQuizTitle(u8 *dst)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 name[32];
     struct SaveBlock1 *saveBlock1 = gSaveBlock1Ptr;
     DynamicPlaceholderTextUtil_Reset();
@@ -2938,6 +2956,7 @@ static void GetQuizTitle(u8 *dst)
 
     // "<author>'s Quiz"
     DynamicPlaceholderTextUtil_ExpandPlaceholders(dst, gText_F700sQuiz);
+#endif //FREE_OTHER_PBL
 }
 
 static void BufferCurrentPhraseToStringVar2(void)
@@ -5333,7 +5352,7 @@ static u16 GetEasyChatWordStringLength(u16 easyChatWord)
     }
 }
 
-static bool8 CanPhraseFitInXRowsYCols(const u16 *easyChatWords, u8 numRows, u8 numColumns, u16 maxLength)
+static UNUSED bool8 CanPhraseFitInXRowsYCols(const u16 *easyChatWords, u8 numRows, u8 numColumns, u16 maxLength)
 {
     u8 i, j;
 
@@ -5377,6 +5396,7 @@ u16 GetRandomEasyChatWordFromUnlockedGroup(u16 groupId)
 
 void ShowEasyChatProfile(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 *easyChatWords;
     int columns, rows;
     switch (gSpecialVar_0x8004)
@@ -5415,6 +5435,7 @@ void ShowEasyChatProfile(void)
 
     ConvertEasyChatWordsToString(gStringVar4, easyChatWords, columns, rows);
     ShowFieldAutoScrollMessage(gStringVar4);
+#endif //FREE_OTHER_PBL
 }
 
 // The phrase that a man in Dewford Hall suggests has a "deep link" to the current trendy phrase
@@ -5444,19 +5465,24 @@ void BufferDeepLinkPhrase(void)
 */
 static bool8 IsTrendySayingUnlocked(u8 wordIndex)
 {
+#if FREE_OTHER_PBL == FALSE
     int byteOffset = wordIndex / 8;
     int shift = wordIndex % 8;
     return (gSaveBlock1Ptr->unlockedTrendySayings[byteOffset] >> shift) & 1;
+#endif //FREE_OTHER_PBL
+    return FALSE;
 }
 
 void UnlockTrendySaying(u8 wordIndex)
 {
+#if FREE_OTHER_PBL == FALSE
     if (wordIndex < NUM_TRENDY_SAYINGS)
     {
         int byteOffset = wordIndex / 8;
         int shift = wordIndex % 8;
         gSaveBlock1Ptr->unlockedTrendySayings[byteOffset] |= 1 << shift;
     }
+#endif //FREE_OTHER_PBL
 }
 
 static u8 GetNumTrendySayingsUnlocked(void)
@@ -5561,6 +5587,7 @@ static u16 GetRandomUnlockedEasyChatPokemon(void)
 
 void InitEasyChatPhrases(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i, j;
 
     for (i = 0; i < ARRAY_COUNT(sDefaultProfileWords); i++)
@@ -5592,6 +5619,7 @@ void InitEasyChatPhrases(void)
     for (i = 0; i < ARRAY_COUNT(gSaveBlock1Ptr->unlockedTrendySayings); i++)
         gSaveBlock1Ptr->unlockedTrendySayings[i] = 0;
 #endif
+#endif //FREE_OTHER_PBL
 }
 
 static bool8 InitEasyChatScreenWordData(void)

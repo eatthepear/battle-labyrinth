@@ -2619,7 +2619,7 @@ static void SetRandomPrize(void)
         sGame->berryResults[i][BERRY_PRIZE] = sPrizeBerryIds[prizeSet][prizeIdx];
 }
 
-static u32 GetBerriesPicked(u8 playerId)
+static UNUSED u32 GetBerriesPicked(u8 playerId)
 {
     u32 sum = sGame->berryResults[playerId][BERRY_BLUE]
             + sGame->berryResults[playerId][BERRY_GREEN]
@@ -2629,6 +2629,7 @@ static u32 GetBerriesPicked(u8 playerId)
 
 static void TryUpdateRecords(void)
 {
+#if FREE_OTHER_PBL == FALSE
     u32 berriesPicked = Min(GetBerriesPicked(sGame->multiplayerId), MAX_BERRIES); // Min here is redundant
     u32 score = Min(GetScore(sGame->multiplayerId), MAX_SCORE);
 
@@ -2638,6 +2639,7 @@ static void TryUpdateRecords(void)
         gSaveBlock2Ptr->berryPick.berriesPicked = berriesPicked;
     if (gSaveBlock2Ptr->berryPick.berriesPickedInRow < sGame->maxBerriesPickedInRow)
         gSaveBlock2Ptr->berryPick.berriesPickedInRow = sGame->maxBerriesPickedInRow;
+#endif //FREE_OTHER_PBL
 }
 
 // Enqueue the given state, and dequeue and return
@@ -3005,6 +3007,7 @@ static void Task_ShowDodrioBerryPickingRecords(u8 taskId)
 
 static void PrintRecordsText(u8 windowId, s32 width)
 {
+#if FREE_OTHER_PBL == FALSE
     s32 i, x, numWidth;
     s32 recordNums[NUM_RECORD_TYPES];
     recordNums[0] = gSaveBlock2Ptr->berryPick.berriesPicked;
@@ -3024,6 +3027,7 @@ static void PrintRecordsText(u8 windowId, s32 width)
         AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar1, x, sRecordNumYCoords[i][0], TEXT_SKIP_DRAW, NULL);
     }
     PutWindowTilemap(windowId);
+#endif //FREE_OTHER_PBL
 }
 
 // Debug functions?

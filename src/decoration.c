@@ -514,6 +514,7 @@ static const struct YesNoFuncTable sTossDecorationYesNoFunctions =
 
 void InitDecorationContextItems(void)
 {
+#if FREE_OTHER_PBL == FALSE
     if (sCurDecorationCategory < DECORCAT_COUNT)
         gCurDecorationItems = gDecorationInventories[sCurDecorationCategory].items;
 
@@ -528,6 +529,7 @@ void InitDecorationContextItems(void)
         sDecorationContext.items = gSaveBlock1Ptr->playerRoomDecorations;
         sDecorationContext.pos = gSaveBlock1Ptr->playerRoomDecorationPositions;
     }
+#endif //FREE_OTHER_PBL
 }
 
 static u8 AddDecorationWindow(u8 windowIndex)
@@ -580,22 +582,26 @@ static void InitDecorationActionsWindow(void)
 
 void DoSecretBaseDecorationMenu(u8 taskId)
 {
+#if FREE_OTHER_PBL == FALSE
     InitDecorationActionsWindow();
     sDecorationContext.items = gSaveBlock1Ptr->secretBases[0].decorations;
     sDecorationContext.pos = gSaveBlock1Ptr->secretBases[0].decorationPositions;
     sDecorationContext.size = DECOR_MAX_SECRET_BASE;
     sDecorationContext.isPlayerRoom = FALSE;
     gTasks[taskId].func = HandleDecorationActionsMenuInput;
+#endif //FREE_OTHER_PBL
 }
 
 void DoPlayerRoomDecorationMenu(u8 taskId)
 {
+#if FREE_OTHER_PBL == FALSE
     InitDecorationActionsWindow();
     sDecorationContext.items = gSaveBlock1Ptr->playerRoomDecorations;
     sDecorationContext.pos = gSaveBlock1Ptr->playerRoomDecorationPositions;
     sDecorationContext.size = DECOR_MAX_PLAYERS_HOUSE;
     sDecorationContext.isPlayerRoom = TRUE;
     gTasks[taskId].func = HandleDecorationActionsMenuInput;
+#endif //FREE_OTHER_PBL
 }
 
 static void HandleDecorationActionsMenuInput(u8 taskId)
@@ -1069,6 +1075,7 @@ static bool8 IsDecorationIndexInPlayersRoom(u8 idx)
 
 static void IdentifyOwnedDecorationsCurrentlyInUseInternal(u8 taskId)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 i, j, k;
     u16 count;
 
@@ -1118,6 +1125,7 @@ static void IdentifyOwnedDecorationsCurrentlyInUseInternal(u8 taskId)
             }
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 static void IdentifyOwnedDecorationsCurrentlyInUse(u8 taskId)

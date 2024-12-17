@@ -2179,12 +2179,14 @@ static void SaveBattleTowerRecord(void)
     StringCopy_PlayerName(playerRecord->name, gSaveBlock2Ptr->playerName);
     playerRecord->winStreak = GetCurrentBattleTowerWinStreak(lvlMode, battleMode);
 
+#if FREE_OTHER_PBL == FALSE
     for (i = 0; i < EASY_CHAT_BATTLE_WORDS_COUNT; i++)
     {
         playerRecord->greeting[i] = gSaveBlock1Ptr->easyChatBattleStart[i];
         playerRecord->speechWon[i] = gSaveBlock1Ptr->easyChatBattleWon[i];
         playerRecord->speechLost[i] = gSaveBlock1Ptr->easyChatBattleLost[i];
     }
+#endif //FREE_OTHER_PBL
 
     for (i = 0; i < MAX_FRONTIER_PARTY_SIZE; i++)
     {

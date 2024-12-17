@@ -2319,6 +2319,7 @@ void BufferContestTrainerAndMonNames(void)
 // Unused
 void DoesContestCategoryHaveMuseumPainting(void)
 {
+#if FREE_OTHER_PBL == FALSE
     int contestWinner;
     switch (gSpecialVar_ContestCategory)
     {
@@ -2344,6 +2345,7 @@ void DoesContestCategoryHaveMuseumPainting(void)
         gSpecialVar_0x8004 = FALSE;
     else
         gSpecialVar_0x8004 = TRUE;
+#endif //FREE_OTHER_PBL
 }
 
 void SaveMuseumContestPainting(void)
@@ -2367,6 +2369,7 @@ void ShouldReadyContestArtist(void)
 
 u8 CountPlayerMuseumPaintings(void)
 {
+#if FREE_OTHER_PBL == FALSE
     int i;
     u8 count = 0;
 
@@ -2377,6 +2380,8 @@ u8 CountPlayerMuseumPaintings(void)
     }
 
     return count;
+#endif //FREE_OTHER_PBL
+    return 0;
 }
 
 // Unused

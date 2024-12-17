@@ -37,6 +37,7 @@ struct BagPocket
 
 extern const struct Item gItemsInfo[];
 extern struct BagPocket gBagPockets[];
+extern struct ItemSlot gTmHmItemSlots[BAG_TMHM_COUNT];
 
 void ApplyNewEncryptionKeyToBagItems(u32 newKey);
 void ApplyNewEncryptionKeyToBagItems_(u32 newKey);
@@ -105,5 +106,6 @@ enum
 };
 #undef ENUM_TM
 #undef ENUM_HM
+void DeserializeTmHmItemSlots(void);
 
 #endif // GUARD_ITEM_H

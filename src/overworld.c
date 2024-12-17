@@ -699,24 +699,31 @@ void SetWarpDestinationToHealLocation(u8 healLocationId)
 
 static bool32 IsFRLGWhiteout(void)
 {
+#if FREE_OTHER_PBL == FALSE
     if (!OW_FRLG_WHITEOUT)
         return FALSE;
     return GetHealNpcLocalId(GetHealLocationIndexByWarpData(&gSaveBlock1Ptr->lastHealLocation)) > 0;
+#endif //FREE_OTHER_PBL
+    return FALSE;
 }
 
 void SetWarpDestinationToLastHealLocation(void)
 {
+#if FREE_OTHER_PBL == FALSE
     if (IsFRLGWhiteout())
         SetWhiteoutRespawnWarpAndHealerNPC(&sWarpDestination);
     else
         sWarpDestination = gSaveBlock1Ptr->lastHealLocation;
+#endif //FREE_OTHER_PBL
 }
 
 void SetLastHealLocationWarp(u8 healLocationId)
 {
+#if FREE_OTHER_PBL == FALSE
     const struct HealLocation *healLocation = GetHealLocation(healLocationId);
     if (healLocation)
         SetWarpData(&gSaveBlock1Ptr->lastHealLocation, healLocation->group, healLocation->map, WARP_ID_NONE, healLocation->x, healLocation->y);
+#endif //FREE_OTHER_PBL
 }
 
 void UpdateEscapeWarp(s16 x, s16 y)

@@ -40,11 +40,13 @@ void AllocateBattleResources(void)
     gBattleAnimBgTileBuffer = AllocZeroed(0x2000);
     gBattleAnimBgTilemapBuffer = AllocZeroed(0x1000);
 
+#if FREE_OTHER_PBL == FALSE
     if (gBattleTypeFlags & BATTLE_TYPE_SECRET_BASE)
     {
         u16 currSecretBaseId = VarGet(VAR_CURRENT_SECRET_BASE);
         CreateSecretBaseEnemyParty(&gSaveBlock1Ptr->secretBases[currSecretBaseId]);
     }
+#endif //FREE_OTHER_PBL
 }
 
 void FreeBattleResources(void)

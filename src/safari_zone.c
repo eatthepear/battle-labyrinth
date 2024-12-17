@@ -202,6 +202,7 @@ struct Pokeblock *SafariZoneGetActivePokeblock(void)
 
 void SafariZoneActivatePokeblockFeeder(u8 pkblId)
 {
+#if FREE_OTHER_PBL == FALSE
     s16 x, y;
     u8 i;
 
@@ -222,6 +223,7 @@ void SafariZoneActivatePokeblockFeeder(u8 pkblId)
             break;
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 static void DecrementFeederStepCounters(void)
