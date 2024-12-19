@@ -3008,9 +3008,10 @@ const struct Item gItemsInfo[] =
             "An ornament that\n"
             "depicts a Pokémon\n"
             "from Alola."),
-        .pocket = POCKET_TREASURES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .pocket = POCKET_CONSUMABLES,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
         .iconPic = gItemIcon_StrangeSouvenir,
         .iconPalette = gItemIconPalette_StrangeSouvenir,
@@ -3397,15 +3398,18 @@ const struct Item gItemsInfo[] =
 #if OW_BERRY_MULCH_USAGE == TRUE
         .description = COMPOUND_STRING(
             "A fertilizer that\n"
-            "ups the chance of\n"
-            "Berry mutations."),
+            "loved by a certain\n"
+            "Pokémon."),
 #else
-        .description = sGenericMulchDesc,
+        .description = COMPOUND_STRING(
+            "A fertilizer that\n"
+            "loved by a certain\n"
+            "Pokémon."),
 #endif
-        .pocket = POCKET_TREASURES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = ITEM_TO_MULCH(ITEM_SURPRISE_MULCH),
+        .pocket = POCKET_CONSUMABLES,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
         .iconPic = gItemIcon_Mulch,
         .iconPalette = gItemIconPalette_SurpriseMulch,
@@ -6080,8 +6084,9 @@ const struct Item gItemsInfo[] =
             "power of Fire\n"
             "Type moves."),
         .pocket = POCKET_CONSUMABLES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = EVO_HELD_ITEM_TYPE,
+        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .secondaryId = TYPE_FIRE,
         .iconPic = gItemIcon_FireGem,
         .iconPalette = gItemIconPalette_FireGem,
@@ -6098,8 +6103,9 @@ const struct Item gItemsInfo[] =
             "power of Water\n"
             "Type moves."),
         .pocket = POCKET_CONSUMABLES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = EVO_HELD_ITEM_TYPE,
+        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .secondaryId = TYPE_WATER,
         .iconPic = gItemIcon_WaterGem,
         .iconPalette = gItemIconPalette_WaterGem,
@@ -6116,8 +6122,9 @@ const struct Item gItemsInfo[] =
             "power of Electric\n"
             "Type moves."),
         .pocket = POCKET_CONSUMABLES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = EVO_HELD_ITEM_TYPE,
+        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .secondaryId = TYPE_ELECTRIC,
         .iconPic = gItemIcon_ElectricGem,
         .iconPalette = gItemIconPalette_ElectricGem,
@@ -6134,8 +6141,9 @@ const struct Item gItemsInfo[] =
             "power of Grass\n"
             "Type moves."),
         .pocket = POCKET_CONSUMABLES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = EVO_HELD_ITEM_TYPE,
+        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .secondaryId = TYPE_GRASS,
         .iconPic = gItemIcon_GrassGem,
         .iconPalette = gItemIconPalette_GrassGem,
@@ -6152,8 +6160,9 @@ const struct Item gItemsInfo[] =
             "power of Ice\n"
             "Type moves."),
         .pocket = POCKET_CONSUMABLES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = EVO_HELD_ITEM_TYPE,
+        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .secondaryId = TYPE_ICE,
         .iconPic = gItemIcon_IceGem,
         .iconPalette = gItemIconPalette_IceGem,
@@ -6242,8 +6251,9 @@ const struct Item gItemsInfo[] =
             "power of Psychic\n"
             "Type moves."),
         .pocket = POCKET_CONSUMABLES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = EVO_HELD_ITEM_TYPE,
+        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .secondaryId = TYPE_PSYCHIC,
         .iconPic = gItemIcon_PsychicGem,
         .iconPalette = gItemIconPalette_PsychicGem,
@@ -6332,8 +6342,9 @@ const struct Item gItemsInfo[] =
             "power of Dark\n"
             "Type moves."),
         .pocket = POCKET_CONSUMABLES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = EVO_HELD_ITEM_TYPE,
+        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .secondaryId = TYPE_DARK,
         .iconPic = gItemIcon_DarkGem,
         .iconPalette = gItemIconPalette_DarkGem,
@@ -6368,8 +6379,9 @@ const struct Item gItemsInfo[] =
             "power of Fairy\n"
             "Type moves."),
         .pocket = POCKET_CONSUMABLES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = EVO_HELD_ITEM_TYPE,
+        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .secondaryId = TYPE_FAIRY,
         .iconPic = gItemIcon_FairyGem,
         .iconPalette = gItemIconPalette_FairyGem,
@@ -7032,12 +7044,13 @@ const struct Item gItemsInfo[] =
         .price = (I_PRICE >= GEN_7) ? 1000 : 10,
         .holdEffect = HOLD_EFFECT_LUCKY_PUNCH,
         .description = COMPOUND_STRING(
-            "A hold item that\n"
-            "raises Chansey's\n"
-            "critical-hit rate."),
-        .pocket = POCKET_BATTLE_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+            "A funky punching\n"
+            "glove loved by a\n"
+            "certain Pokémon."),
+        .pocket = POCKET_CONSUMABLES,
+        .type = EVO_HELD_ITEM_TYPE,
+        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 40,
         .iconPic = gItemIcon_LuckyPunch,
         .iconPalette = gItemIconPalette_LuckyPunch,
@@ -7374,12 +7387,13 @@ const struct Item gItemsInfo[] =
         .pluralName = _("Pink Scarves"),
         .price = 100,
         .description = COMPOUND_STRING(
-            "A hold item that\n"
-            "raises Cute in\n"
-            "Contests."),
-        .pocket = POCKET_BATTLE_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+            "A cute scarf\n"
+            "loved by a certain\n"
+            "Pokémon."),
+        .pocket = POCKET_CONSUMABLES,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 10,
         .iconPic = gItemIcon_Scarf,
         .iconPalette = gItemIconPalette_PinkScarf,
@@ -8226,8 +8240,8 @@ const struct Item gItemsInfo[] =
                 "from battles."),
         #endif
         .pocket = POCKET_BATTLE_ITEMS,
-        .type = ITEM_USE_FIELD,
-        .fieldUseFunc = ItemUseOutOfBattle_ExpShare,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
         .iconPic = gItemIcon_ExpShare,
         .iconPalette = gItemIconPalette_ExpShare,
@@ -13877,12 +13891,14 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Jubilife Muffin"),
         .price = 250,
-        .description = sFullHealDesc,
-        .pocket = POCKET_MEDICINE,
+        .description = COMPOUND_STRING(
+            "A tasty muffin\n"
+            "that's loved by\n"
+            "certain Pokémon."),
+        .pocket = POCKET_CONSUMABLES,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
-        .effect = gItemEffect_FullHeal,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
         .iconPic = gItemIcon_JubilifeMuffin,
         .iconPalette = gItemIconPalette_JubilifeMuffin,
