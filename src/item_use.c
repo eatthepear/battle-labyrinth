@@ -45,6 +45,8 @@
 #include "constants/items.h"
 #include "constants/songs.h"
 #include "constants/map_types.h"
+#include "battle_setup.h"
+#include "dexnav.h"
 
 static void SetUpItemUseCallback(u8);
 static void FieldCB_UseItemOnField(void);
@@ -82,6 +84,9 @@ static bool32 IsValidLocationForVsSeeker(void);
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
+
+EWRAM_DATA u8 IsCaptureBlockedByNuzlocke = 0;
+EWRAM_DATA u8 IsSpeciesClauseActive = 0;
 
 // Below is set TRUE by UseRegisteredKeyItemOnField
 #define tUsingRegisteredKeyItem  data[3]
@@ -1094,6 +1099,42 @@ static u32 GetBallThrowableState(void)
         return BALL_THROW_UNABLE_SEMI_INVULNERABLE;
     else if (FlagGet(B_FLAG_NO_CATCHING))
         return BALL_THROW_UNABLE_DISABLED_FLAG;
+    else if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
+    {
+        u8 battler;
+        u8 IsCaptureBlockedByDexnav = 0;
+        if (IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)))
+            battler = 0;
+        else
+            battler = 1;
+
+        IsSpeciesClauseActive = IsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[battler], MON_DATA_SPECIES));
+        if (IsMonShiny(&gEnemyParty[battler]))
+        {
+            IsSpeciesClauseActive = 0;
+            IsCaptureBlockedByNuzlocke = 0;
+        }
+        else if (NuzlockeFlagGet(GetCurrentRegionMapSectionId()) == 0)
+        {
+            IsCaptureBlockedByNuzlocke = 0;
+            if (gDexnavBattle)
+                IsCaptureBlockedByDexnav = 1;
+        }
+        else
+            IsCaptureBlockedByNuzlocke = 1;
+        if (IsCaptureBlockedByNuzlocke == 1)
+        {
+            return BALL_THROW_UNABLE_NUZLOCKE_ALREADY_CAUGHT; // Already got Nuzlocke encounter
+        }
+        else if (IsSpeciesClauseActive == 1)
+        {
+            return BALL_THROW_UNABLE_NUZLOCKE_SPECIES_CLAUSE; // Nuzlocke Species Clause
+        }
+        else if (IsCaptureBlockedByDexnav == 1)
+        {
+            return BALL_THROW_UNABLE_NUZLOCKE_NO_DEXNAV; // Nuzlocke disallows Dexnav
+        }
+    }
 
     return BALL_THROW_ABLE;
 }
@@ -1106,6 +1147,9 @@ bool32 CanThrowBall(void)
 static const u8 sText_CantThrowPokeBall_TwoMons[] = _("Cannot throw a ball!\nThere are two Pokémon out there!\p");
 static const u8 sText_CantThrowPokeBall_SemiInvulnerable[] = _("Cannot throw a ball!\nThere's no Pokémon in sight!\p");
 static const u8 sText_CantThrowPokeBall_Disabled[] = _("POKé BALLS cannot be used\nright now!\p");
+static const u8 sTextCantThrowPokeBallNuzlocke[] = _("You have already used your encounter\nfor this Zone!{PAUSE_UNTIL_PRESS}");
+static const u8 sTextCantThrowPokeBallSpeciesClause[] = _("You have already caught a Pokémon\nin this evolution line!{PAUSE_UNTIL_PRESS}");
+static const u8 sTextCantThrowPokeBallNuzlockeDexnav[] = _("You can't catch a Pokémon found\nthrough the Dexnav!{PAUSE_UNTIL_PRESS}");
 void ItemUseInBattle_PokeBall(u8 taskId)
 {
     switch (GetBallThrowableState())
@@ -1223,6 +1267,18 @@ bool32 CannotUseItemsInBattle(u16 itemId, struct Pokemon *mon)
             break;
         case BALL_THROW_UNABLE_DISABLED_FLAG:
             failStr = sText_CantThrowPokeBall_Disabled;
+            cannotUse = TRUE;
+            break;
+        case BALL_THROW_UNABLE_NUZLOCKE_ALREADY_CAUGHT: // Already got Nuzlocke encounter
+            failStr = sTextCantThrowPokeBallNuzlocke;
+            cannotUse = TRUE;
+            break;
+        case BALL_THROW_UNABLE_NUZLOCKE_SPECIES_CLAUSE: // Nuzlocke Species Clause
+            failStr = sTextCantThrowPokeBallSpeciesClause;
+            cannotUse = TRUE;
+            break;
+        case BALL_THROW_UNABLE_NUZLOCKE_NO_DEXNAV: // Nuzlocke prevents Pokemon from Dexnav
+            failStr = sTextCantThrowPokeBallNuzlockeDexnav;
             cannotUse = TRUE;
             break;
         }

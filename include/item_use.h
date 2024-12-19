@@ -56,9 +56,14 @@ enum {
     BALL_THROW_UNABLE_SEMI_INVULNERABLE,
     BALL_THROW_ABLE,
     BALL_THROW_UNABLE_DISABLED_FLAG,
+    BALL_THROW_UNABLE_NUZLOCKE_ALREADY_CAUGHT,
+    BALL_THROW_UNABLE_NUZLOCKE_SPECIES_CLAUSE,
+    BALL_THROW_UNABLE_NUZLOCKE_NO_DEXNAV,
 };
 
 bool32 CanThrowBall(void);
 bool32 CannotUseItemsInBattle(u16 itemId, struct Pokemon *mon);
+extern u8 IsCaptureBlockedByNuzlocke;
+extern u8 IsSpeciesClauseActive;
 
 #endif // GUARD_ITEM_USE_H
