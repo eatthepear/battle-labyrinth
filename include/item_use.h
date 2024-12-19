@@ -49,6 +49,12 @@ void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId);
 void DisplayDadsAdviceCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField);
 void ItemUseOutOfBattle_PokeFlute(u8 taskId);
 void ItemUseOutOfBattle_TownMap(u8 taskId);
+void ItemUseOutOfBattle_Surfboard(u8);
+void ItemUseOutOfBattle_Machete(u8);
+void ItemUseOutOfBattle_Sledgehammer(u8);
+void ItemUseOutOfBattle_DivingSuit(u8);
+void ItemUseOutOfBattle_Flashlight(u8);
+void ItemUseOutOfBattle_PowerGlove(u8);
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,

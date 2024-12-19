@@ -1924,22 +1924,23 @@ const u32 gItemIconPalette_MagmaEmblem[] = INCBIN_U32("graphics/items/icon_palet
 const u32 gItemIcon_ContestPass[] = INCBIN_U32("graphics/items/icons/contest_pass.4bpp.lz");
 const u32 gItemIconPalette_ContestPass[] = INCBIN_U32("graphics/items/icon_palettes/contest_pass.gbapal.lz");
 
-const u32 gItemIcon_Parcel[] = INCBIN_U32("graphics/items/icons/parcel.4bpp.lz");
-const u32 gItemIconPalette_Parcel[] = INCBIN_U32("graphics/items/icon_palettes/parcel.gbapal.lz");
+const u32 gItemIcon_Surfboard[] = INCBIN_U32("graphics/items/icons/surfboard.4bpp.lz");
+const u32 gItemIconPalette_Surfboard[] = INCBIN_U32("graphics/items/icon_palettes/surfboard.gbapal.lz");
 
-const u32 gItemIcon_SecretKey[] = INCBIN_U32("graphics/items/icons/secret_key.4bpp.lz");
-const u32 gItemIconPalette_SecretKey[] = INCBIN_U32("graphics/items/icon_palettes/secret_key.gbapal.lz");
+const u32 gItemIcon_Machete[] = INCBIN_U32("graphics/items/icons/machete.4bpp.lz");
+const u32 gItemIconPalette_Machete[] = INCBIN_U32("graphics/items/icon_palettes/machete.gbapal.lz");
 
-const u32 gItemIcon_BikeVoucher[] = INCBIN_U32("graphics/items/icons/bike_voucher.4bpp.lz");
-const u32 gItemIconPalette_BikeVoucher[] = INCBIN_U32("graphics/items/icon_palettes/bike_voucher.gbapal.lz");
+const u32 gItemIcon_Sledgehammer[] = INCBIN_U32("graphics/items/icons/sledgehammer.4bpp.lz");
+const u32 gItemIconPalette_Sledgehammer[] = INCBIN_U32("graphics/items/icon_palettes/sledgehammer.gbapal.lz");
 
-const u32 gItemIcon_GoldTeeth[] = INCBIN_U32("graphics/items/icons/gold_teeth.4bpp.lz");
-const u32 gItemIconPalette_GoldTeeth[] = INCBIN_U32("graphics/items/icon_palettes/gold_teeth.gbapal.lz");
+const u32 gItemIcon_DivingSuit[] = INCBIN_U32("graphics/items/icons/diving_gear.4bpp.lz");
+const u32 gItemIconPalette_DivingSuit[] = INCBIN_U32("graphics/items/icon_palettes/diving_gear.gbapal.lz");
 
-const u32 gItemIcon_CardKey[] = INCBIN_U32("graphics/items/icons/card_key.4bpp.lz");
-const u32 gItemIconPalette_CardKey[] = INCBIN_U32("graphics/items/icon_palettes/card_key.gbapal.lz");
+const u32 gItemIcon_Flashlight[] = INCBIN_U32("graphics/items/icons/flashlight.4bpp.lz");
+const u32 gItemIconPalette_Flashlight[] = INCBIN_U32("graphics/items/icon_palettes/flashlight.gbapal.lz");
 
-const u32 gItemIcon_LiftKey[] = INCBIN_U32("graphics/items/icons/lift_key.4bpp.lz");
+const u32 gItemIcon_PowerGlove[] = INCBIN_U32("graphics/items/icons/gold_teeth.4bpp.lz");
+const u32 gItemIconPalette_PowerGlove[] = INCBIN_U32("graphics/items/icon_palettes/gold_teeth.gbapal.lz");
 
 const u32 gItemIcon_SilphScope[] = INCBIN_U32("graphics/items/icons/silph_scope.4bpp.lz");
 const u32 gItemIconPalette_SilphScope[] = INCBIN_U32("graphics/items/icon_palettes/silph_scope.gbapal.lz");
