@@ -48,6 +48,7 @@
 #include "frontier_pass.h"
 #include "start_menu.h"
 #include "money.h"
+#include "dexnav.h"
 
 /*
     Full Screen Start Menu
@@ -1418,7 +1419,7 @@ void Task_OpenPokenavStartMenu(u8 taskId)
         StartMenuFull_FreeResources();
 		PlayRainStoppingSoundEffect();
 		CleanupOverworldWindowsAndTilemaps();
-        SetMainCallback2(CB2_InitPokeNav);
+        CreateTask(Task_OpenDexNavFromStartMenu, 0);
     }
 }
 

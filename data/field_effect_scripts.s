@@ -79,6 +79,10 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_TracksSlither             @ FLDEFF_TRACKS_SLITHER
 	.4byte gFieldEffectScript_TracksBug                 @ FLDEFF_TRACKS_BUG
 	.4byte gFieldEffectScript_TracksSpot                @ FLDEFF_TRACKS_SPOT
+	.4byte gFieldEffectScript_ShakingGrass              @ FLDEFF_SHAKING_GRASS
+	.4byte gFieldEffectScript_ShakingGrass2             @ FLDEFF_SHAKING_LONG_GRASS
+	.4byte gFieldEffectScript_SandHole                  @ FLDEFF_SAND_HOLE
+	.4byte gFieldEffectScript_CaveDust 					@ FLDEFF_CAVE_DUST
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -374,3 +378,19 @@ gFieldEffectScript_TracksSpot::
 gFieldEffectScript_TracksSlither::
 	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_TracksSlither
 	field_eff_end
+
+gFieldEffectScript_ShakingGrass::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_ShakingGrass
+	field_eff_end
+
+gFieldEffectScript_ShakingGrass2::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_ShakingGrass2
+	field_eff_end
+
+gFieldEffectScript_SandHole::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_SandHole
+	field_eff_end
+
+gFieldEffectScript_CaveDust::
+    field_eff_loadfadedpal_callnative gSpritePalette_CaveDust FldEff_CaveDust
+    field_eff_end
