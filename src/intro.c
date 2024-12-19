@@ -106,8 +106,6 @@ static void SpriteCB_KyogreBubbles(struct Sprite *sprite);
 static void SpriteCB_Lightning(struct Sprite *sprite);
 static void SpriteCB_RayquazaOrb(struct Sprite *sprite);
 
-static void MainCB2_EndIntro(void);
-
 extern const struct CompressedSpriteSheet gBattleAnimPicTable[];
 extern const struct CompressedSpritePalette gBattleAnimPaletteTable[];
 extern const struct SpriteTemplate gAncientPowerRockSpriteTemplate;
@@ -1052,7 +1050,7 @@ void MainCB2_Intro(void)
         gIntroFrameCounter++;
 }
 
-static void MainCB2_EndIntro(void)
+void MainCB2_EndIntro(void)
 {
     if (!UpdatePaletteFade())
         SetMainCallback2(CB2_InitTitleScreen);

@@ -493,15 +493,15 @@ static void SpriteCB_PokemonLogoShine(struct Sprite *sprite)
 
             backgroundColor = _RGB(sprite->sBgColor, sprite->sBgColor, sprite->sBgColor);
 
-            // Flash the background green for 4 frames of movement.
-            // Otherwise use the updating color.
-            if (sprite->x == DISPLAY_WIDTH / 2 + (3 * SHINE_SPEED)
-             || sprite->x == DISPLAY_WIDTH / 2 + (4 * SHINE_SPEED)
-             || sprite->x == DISPLAY_WIDTH / 2 + (5 * SHINE_SPEED)
-             || sprite->x == DISPLAY_WIDTH / 2 + (6 * SHINE_SPEED))
-                gPlttBufferFaded[0] = RGB(24, 31, 12);
-            else
-                gPlttBufferFaded[0] = backgroundColor;
+            // // Flash the background green for 4 frames of movement.
+            // // Otherwise use the updating color.
+            // if (sprite->x == DISPLAY_WIDTH / 2 + (3 * SHINE_SPEED)
+            //  || sprite->x == DISPLAY_WIDTH / 2 + (4 * SHINE_SPEED)
+            //  || sprite->x == DISPLAY_WIDTH / 2 + (5 * SHINE_SPEED)
+            //  || sprite->x == DISPLAY_WIDTH / 2 + (6 * SHINE_SPEED))
+            //     gPlttBufferFaded[0] = RGB(24, 31, 12);
+            // else
+            gPlttBufferFaded[0] = backgroundColor;
         }
 
         sprite->x += SHINE_SPEED;
@@ -603,8 +603,8 @@ void CB2_InitTitleScreen(void)
         LZ77UnCompVram(sTitleScreenRayquazaGfx, (void *)(BG_CHAR_ADDR(2)));
         LZ77UnCompVram(sTitleScreenRayquazaTilemap, (void *)(BG_SCREEN_ADDR(26)));
         // bg1
-        LZ77UnCompVram(sTitleScreenCloudsGfx, (void *)(BG_CHAR_ADDR(3)));
-        LZ77UnCompVram(gTitleScreenCloudsTilemap, (void *)(BG_SCREEN_ADDR(27)));
+        // LZ77UnCompVram(sTitleScreenCloudsGfx, (void *)(BG_CHAR_ADDR(3)));
+        // LZ77UnCompVram(gTitleScreenCloudsTilemap, (void *)(BG_SCREEN_ADDR(27)));
         ScanlineEffect_Stop();
         ResetTasks();
         ResetSpriteData();
@@ -629,7 +629,7 @@ void CB2_InitTitleScreen(void)
         break;
     }
     case 3:
-        BeginNormalPaletteFade(PALETTES_ALL, 1, 16, 0, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, 1, 16, 0, RGB_WHITEALPHA);
         SetVBlankCallback(VBlankCB);
         gMain.state = 4;
         break;
@@ -658,7 +658,7 @@ void CB2_InitTitleScreen(void)
                                     | DISPCNT_OBJ_ON
                                     | DISPCNT_WIN0_ON
                                     | DISPCNT_OBJWIN_ON);
-        m4aSongNumStart(MUS_TITLE);
+        m4aSongNumStart(MUS_PL_VS_FRONTIER_BRAIN);
         gMain.state = 5;
         break;
     case 5:
@@ -693,7 +693,13 @@ static void Task_TitleScreenPhase1(u8 taskId)
     if (gTasks[taskId].tCounter != 0)
     {
         u16 frameNum = gTasks[taskId].tCounter;
-        if (frameNum == 176)
+        if (frameNum == 416)
+            StartPokemonLogoShine(SHINE_MODE_SINGLE);
+        if (frameNum == 304)
+            StartPokemonLogoShine(SHINE_MODE_SINGLE);
+        else if (frameNum == 192)
+            StartPokemonLogoShine(SHINE_MODE_DOUBLE);
+        else if (frameNum == 128)
             StartPokemonLogoShine(SHINE_MODE_DOUBLE);
         else if (frameNum == 64)
             StartPokemonLogoShine(SHINE_MODE_SINGLE);
@@ -782,7 +788,7 @@ static void Task_TitleScreenPhase3(u8 taskId)
     if (JOY_NEW(A_BUTTON) || JOY_NEW(START_BUTTON))
     {
         FadeOutBGM(4);
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITEALPHA);
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         SetMainCallback2(CB2_GoToMainMenu);
     }
     else if (JOY_HELD(CLEAR_SAVE_BUTTON_COMBO) == CLEAR_SAVE_BUTTON_COMBO)
@@ -806,13 +812,13 @@ static void Task_TitleScreenPhase3(u8 taskId)
     {
         SetGpuReg(REG_OFFSET_BG2Y_L, 0);
         SetGpuReg(REG_OFFSET_BG2Y_H, 0);
-        if (++gTasks[taskId].tCounter & 1)
-        {
-            gTasks[taskId].tBg1Y++;
-            gBattle_BG1_Y = gTasks[taskId].tBg1Y / 2;
-            gBattle_BG1_X = 0;
-        }
-        UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
+        // if (++gTasks[taskId].tCounter & 1)
+        // {
+        //     gTasks[taskId].tBg1Y++;
+        //     gBattle_BG1_Y = gTasks[taskId].tBg1Y / 2;
+        //     gBattle_BG1_X = 0;
+        // }
+        // UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
         if ((gMPlayInfo_BGM.status & 0xFFFF) == 0)
         {
             BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITEALPHA);
@@ -854,7 +860,7 @@ static void CB2_GoToBerryFixScreen(void)
     }
 }
 
-static void UpdateLegendaryMarkingColor(u8 frameNum)
+static UNUSED void UpdateLegendaryMarkingColor(u8 frameNum)
 {
     if ((frameNum % 4) == 0) // Change color every 4th frame
     {
