@@ -2318,8 +2318,8 @@ bool8 PlayerHasMulch(void)
         return TRUE;
     if (CheckBagHasItem(ITEM_RICH_MULCH, 1))
         return TRUE;
-    if (CheckBagHasItem(ITEM_SURPRISE_MULCH, 1))
-        return TRUE;
+    // if (CheckBagHasItem(ITEM_SURPRISE_MULCH, 1))
+    //     return TRUE;
     if (CheckBagHasItem(ITEM_BOOST_MULCH, 1))
         return TRUE;
     if (CheckBagHasItem(ITEM_AMAZE_MULCH, 1))
@@ -2384,7 +2384,7 @@ static u8 TryForMutation(u8 berryTreeId, u8 berry)
         {
             x2 = gObjectEvents[j].currentCoords.x;
             y2 = gObjectEvents[j].currentCoords.y;
-            if (Random() % 100 < (OW_BERRY_MUTATION_CHANCE * (mulch == ITEM_TO_MULCH(ITEM_SURPRISE_MULCH) || mulch == ITEM_TO_MULCH(ITEM_AMAZE_MULCH))) && (
+            if (Random() % 100 < (OW_BERRY_MUTATION_CHANCE * (mulch == ITEM_TO_MULCH(ITEM_AMAZE_MULCH))) && (
                 (x1 == x2 && y1 == y2 - 1) ||
                 (x1 == x2 && y1 == y2 + 1) ||
                 (x1 == x2 - 1 && y1 == y2) ||

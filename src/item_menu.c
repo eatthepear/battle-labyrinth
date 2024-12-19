@@ -1091,7 +1091,7 @@ static void Task_FadeAndCloseBagMenuIfMulch(u8 taskId)
         gSpecialVar_ItemId == ITEM_STABLE_MULCH ||
         gSpecialVar_ItemId == ITEM_GOOEY_MULCH ||
         gSpecialVar_ItemId == ITEM_RICH_MULCH ||
-        gSpecialVar_ItemId == ITEM_SURPRISE_MULCH ||
+        // gSpecialVar_ItemId == ITEM_SURPRISE_MULCH ||
         gSpecialVar_ItemId == ITEM_BOOST_MULCH ||
         gSpecialVar_ItemId == ITEM_AMAZE_MULCH)
     {
