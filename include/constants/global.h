@@ -179,4 +179,6 @@
 #include "config/test.h"
 #endif
 
+#define USE_DEXNAV_SEARCH_LEVELS FALSE
+
 #endif // GUARD_CONSTANTS_GLOBAL_H

@@ -13,6 +13,7 @@
 #include "battle_z_move.h"
 #include "bw_summary_screen.h"
 #include "data.h"
+#include "dexnav.h"
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "evolution_scene.h"
