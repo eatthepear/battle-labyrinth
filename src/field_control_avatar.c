@@ -531,24 +531,24 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
 
 static const u8 *GetInteractedWaterScript(struct MapPosition *unused1, u8 metatileBehavior, u8 direction)
 {
-    if (FlagGet(FLAG_BADGE05_GET) == TRUE && PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
-        return EventScript_UseSurf;
+    if (IsPlayerFacingSurfableFishableWater() == TRUE)
+        return EventScript_UseSurf_PBL;
 
     if (MetatileBehavior_IsWaterfall(metatileBehavior) == TRUE)
     {
-        if (FlagGet(FLAG_BADGE08_GET) == TRUE && IsPlayerSurfingNorth() == TRUE)
-            return EventScript_UseWaterfall;
+        if (FlagGet(FLAG_SYS_ENABLE_WATERFALL) == TRUE && IsPlayerSurfingNorth() == TRUE)
+            return EventScript_UseWaterfall_PBL;
         else
-            return EventScript_CannotUseWaterfall;
+            return EventScript_CannotUseWaterfall_PBL;
     }
     return NULL;
 }
 
 static bool32 TrySetupDiveDownScript(void)
 {
-    if (FlagGet(FLAG_BADGE07_GET) && TrySetDiveWarp() == 2)
+    if (TrySetDiveWarp() == 2)
     {
-        ScriptContext_SetupScript(EventScript_UseDive);
+        ScriptContext_SetupScript(EventScript_DiveSpot_PBL);
         return TRUE;
     }
     return FALSE;
@@ -556,9 +556,9 @@ static bool32 TrySetupDiveDownScript(void)
 
 static bool32 TrySetupDiveEmergeScript(void)
 {
-    if (FlagGet(FLAG_BADGE07_GET) && gMapHeader.mapType == MAP_TYPE_UNDERWATER && TrySetDiveWarp() == 1)
+    if (gMapHeader.mapType == MAP_TYPE_UNDERWATER && TrySetDiveWarp() == 1)
     {
-        ScriptContext_SetupScript(EventScript_UseDiveUnderwater);
+        ScriptContext_SetupScript(EventScript_UseDiveUnderwater_PBL);
         return TRUE;
     }
     return FALSE;
