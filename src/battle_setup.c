@@ -40,6 +40,7 @@
 #include "data.h"
 #include "vs_seeker.h"
 #include "item.h"
+#include "pokedex.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_setup.h"
 #include "constants/game_stat.h"
@@ -112,6 +113,7 @@ EWRAM_DATA static u8 *sTrainerABattleScriptRetAddr = NULL;
 EWRAM_DATA static u8 *sTrainerBBattleScriptRetAddr = NULL;
 EWRAM_DATA static bool8 sShouldCheckTrainerBScript = FALSE;
 EWRAM_DATA static u8 sNoOfPossibleTrainerRetScripts = 0;
+EWRAM_DATA bool8 ShouldSkipEncounterNuzlocke = 0;
 
 // The first transition is used if the enemy Pokémon are lower level than our Pokémon.
 // Otherwise, the second transition is used.
@@ -360,6 +362,65 @@ const struct RematchTrainer gRematchTable[REMATCH_TABLE_ENTRIES] =
     [REMATCH_WALLACE] = REMATCH(TRAINER_WALLACE, TRAINER_WALLACE, TRAINER_WALLACE, TRAINER_WALLACE, TRAINER_WALLACE, EVER_GRANDE_CITY),
 };
 
+const u8 NuzlockeLUT[] =
+{
+    [MAPSEC_ZONE_0]  = 0x0,
+    [MAPSEC_ZONE_1]  = 0x1,
+    [MAPSEC_ZONE_2]  = 0x2,
+    [MAPSEC_ZONE_3]  = 0x3,
+    [MAPSEC_ZONE_4]  = 0x4,
+    [MAPSEC_ZONE_5]  = 0x5,
+    [MAPSEC_ZONE_6]  = 0x6,
+    [MAPSEC_ZONE_7]  = 0x7,
+    [MAPSEC_ZONE_8]  = 0x8,
+    [MAPSEC_ZONE_9]  = 0x9,
+    [MAPSEC_ZONE_10] = 0xA,
+    [MAPSEC_ZONE_11] = 0xB,
+    [MAPSEC_ZONE_12] = 0xC,
+    [MAPSEC_ZONE_13] = 0xD,
+    [MAPSEC_ZONE_14] = 0xE,
+    [MAPSEC_ZONE_15] = 0xF,
+    [MAPSEC_ZONE_16] = 0x10,
+    [MAPSEC_ZONE_17] = 0x11,
+    [MAPSEC_ZONE_18] = 0x12,
+    [MAPSEC_ZONE_19] = 0x13,
+    [MAPSEC_ZONE_20] = 0x14,
+    [MAPSEC_ZONE_21] = 0x15,
+    [MAPSEC_ZONE_22] = 0x16,
+    [MAPSEC_ZONE_23] = 0x17,
+    [MAPSEC_ZONE_24] = 0x18,
+    [MAPSEC_ZONE_25] = 0x19,
+    [MAPSEC_ZONE_26] = 0x1A,
+    [MAPSEC_ZONE_27] = 0x1B,
+    [MAPSEC_ZONE_28] = 0x1C,
+    [MAPSEC_ZONE_29] = 0x1D,
+    [MAPSEC_ZONE_30] = 0x1E,
+    [MAPSEC_ZONE_31] = 0x1F,
+    [MAPSEC_ZONE_32] = 0x20,
+    [MAPSEC_ZONE_33] = 0x21,
+    [MAPSEC_ZONE_34] = 0x22,
+    [MAPSEC_ZONE_35] = 0x23,
+    [MAPSEC_ZONE_36] = 0x24,
+    [MAPSEC_ZONE_37] = 0x25,
+    [MAPSEC_ZONE_38] = 0x26,
+    [MAPSEC_ZONE_39] = 0x27,
+    [MAPSEC_ZONE_40] = 0x28,
+    [MAPSEC_ZONE_41] = 0x29,
+    [MAPSEC_ZONE_42] = 0x2A,
+    [MAPSEC_ZONE_43] = 0x2B,
+    [MAPSEC_ZONE_44] = 0x2C,
+    [MAPSEC_ZONE_45] = 0x2D,
+    [MAPSEC_ZONE_46] = 0x2E,
+    [MAPSEC_ZONE_47] = 0x2F,
+    [MAPSEC_ZONE_48] = 0x30,
+    [MAPSEC_ZONE_49] = 0x31,
+    [MAPSEC_ZONE_50] = 0x32,
+    [MAPSEC_ZONE_B1] = 0x33,
+    [MAPSEC_ZONE_B2] = 0x34,
+    [MAPSEC_ZONE_B3] = 0x35,
+    [MAPSEC_ZONE_B4] = 0x36,
+};
+
 static const u16 sBadgeFlags[NUM_BADGES] =
 {
     FLAG_BADGE01_GET, FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_BADGE04_GET,
@@ -447,11 +508,22 @@ void BattleSetup_StartWildBattle(void)
     if (GetSafariZoneFlag())
         DoSafariBattle();
     else
+        if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
+        {
+            ShouldSkipEncounterNuzlocke = IsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES));
+        }
         DoStandardWildBattle(FALSE);
 }
 
 void BattleSetup_StartDoubleWildBattle(void)
 {
+    if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
+    {
+        ShouldSkipEncounterNuzlocke = IsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES)) && IsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[1], MON_DATA_SPECIES));
+        // if you can catch both, should be 0 & 0 = 0 - no skip
+        // if you can only catch one, should be 0 & 1 = 0 - no skip
+        // if you can't catch either, should be 1 & 1 = 1 - skip because you can't catch either
+    }
     DoStandardWildBattle(TRUE);
 }
 
@@ -502,6 +574,10 @@ void DoStandardWildBattle_Debug(void)
 
 void BattleSetup_StartRoamerBattle(void)
 {
+    if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
+    {
+        ShouldSkipEncounterNuzlocke = IsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES));
+    }
     LockPlayerFieldControls();
     FreezeObjectEvents();
     StopPlayerAvatar();
@@ -570,6 +646,10 @@ void StartWallyTutorialBattle(void)
 
 void BattleSetup_StartScriptedWildBattle(void)
 {
+    if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
+    {
+        ShouldSkipEncounterNuzlocke = IsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES));
+    }
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = 0;
@@ -2045,4 +2125,24 @@ u16 CountBattledRematchTeams(u16 trainerId)
     }
 
     return i;
+}
+
+bool8 IsCaptureBlockedBySpeciesClause(u16 species)
+{
+    u8 i;
+    if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
+        return TRUE;
+    
+    for (i = 0; i < EVOS_PER_LINE; i++)
+    {
+        u16 mon = gEvolutionLines[species][i];
+        if (mon != SPECIES_NONE)
+        {
+            if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(mon), FLAG_GET_CAUGHT))
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
 }

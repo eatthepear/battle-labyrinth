@@ -4245,6 +4245,8 @@ static void Cmd_dofaintanimation(void)
     if (gBattleControllerExecFlags == 0)
     {
         u32 battler = GetBattlerForBattleScript(cmd->battler);
+        if (FlagGet(FLAG_SETTINGS_NUZLOCKE) && !BattlerHasAi(battler))
+            VarSet(VAR_NUZLOCKE_DEATHS, VarGet(VAR_NUZLOCKE_DEATHS) + 1);
         BtlController_EmitFaintAnimation(battler, BUFFER_A);
         MarkBattlerForControllerExec(battler);
         gBattlescriptCurrInstr = cmd->nextInstr;
