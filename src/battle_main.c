@@ -5938,6 +5938,12 @@ bool32 TrySetAteType(u32 move, u32 battlerAtk, u32 attackerAbility)
     case ABILITY_GALVANIZE:
         ateType = TYPE_ELECTRIC;
         break;
+    case ABILITY_LIQUID_VOICE:
+        if (gMovesInfo[move].soundMove)
+            ateType = TYPE_WATER;
+        else
+            ateType = TYPE_NONE;
+        break;
     default:
         ateType = TYPE_NONE;
         break;

@@ -2377,6 +2377,7 @@ u8 DoBattlerEndTurnEffects(void)
                   && ability != ABILITY_SNOW_CLOAK
                   && ability != ABILITY_OVERCOAT
                   && ability != ABILITY_ICE_BODY
+                  && ability != ABILITY_SLUSH_RUSH
                   && !(gStatuses3[battler] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
                   && GetBattlerHoldEffect(battler, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES)
             {
@@ -3516,7 +3517,8 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
             if (!gBattleStruct->isAtkCancelerForCalledMove
              && gBattleMons[gBattlerAttacker].status1 & STATUS1_PARALYSIS
              && !(B_MAGIC_GUARD == GEN_4 && GetBattlerAbility(gBattlerAttacker) == ABILITY_MAGIC_GUARD)
-             && !RandomPercentage(RNG_PARALYSIS, 75))
+             && !RandomPercentage(RNG_PARALYSIS, 75)
+             && (GetBattlerAbility(gBattlerAttacker) != ABILITY_QUICK_FEET))
             {
                 gProtectStructs[gBattlerAttacker].prlzImmobility = TRUE;
                 // This is removed in FRLG and Emerald for some reason
@@ -9418,6 +9420,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     case ABILITY_SUPREME_OVERLORD:
         modifier = uq4_12_multiply(modifier, GetSupremeOverlordModifier(battlerAtk));
         break;
+    case ABILITY_LIQUID_VOICE:
+        if (gMovesInfo[move].soundMove)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+        break;
     }
 
     // field abilities
@@ -10087,7 +10093,8 @@ static inline uq4_12_t GetBurnOrFrostBiteModifier(struct DamageCalculationData *
     if (gBattleMons[battlerAtk].status1 & STATUS1_BURN
         && IS_MOVE_PHYSICAL(move)
         && (B_BURN_FACADE_DMG < GEN_6 || gMovesInfo[move].effect != EFFECT_FACADE)
-        && abilityAtk != ABILITY_GUTS)
+        && abilityAtk != ABILITY_GUTS
+        && abilityAtk != ABILITY_FLARE_BOOST)
         return UQ_4_12(0.5);
     if (gBattleMons[battlerAtk].status1 & STATUS1_FROSTBITE
         && IS_MOVE_SPECIAL(move)
@@ -11762,10 +11769,7 @@ u8 GetBattlerGender(u32 battler)
 
 bool32 AreBattlersOfOppositeGender(u32 battler1, u32 battler2)
 {
-    u8 gender1 = GetBattlerGender(battler1);
-    u8 gender2 = GetBattlerGender(battler2);
-
-    return (gender1 != MON_GENDERLESS && gender2 != MON_GENDERLESS && gender1 != gender2);
+    return TRUE;
 }
 
 bool32 AreBattlersOfSameGender(u32 battler1, u32 battler2)
