@@ -1594,3 +1594,6 @@ const u8 gText_Rename[] = _("RENAME");
 
 // Custom
 const u8 gText_EnemyPreview[] = _("Revealed enemy party!");
+
+const u8 gText_InfiniteRepelOn[] = _("The Infinite Repel is now {COLOR RED}on{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
+const u8 gText_InfiniteRepelOff[] = _("The Infinite Repel is now {COLOR RED}off{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
