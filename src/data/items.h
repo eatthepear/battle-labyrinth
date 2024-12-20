@@ -12912,20 +12912,20 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_PowerGlove,
     },
 
-    [ITEM_SILPH_SCOPE] =
+    [ITEM_INFINITE_REPEL] =
     {
-        .name = _("Silph Scope"),
+        .name = _("Infinite Repellent"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Silph Co's scope\n"
-            "makes unseeable\n"
-            "POKéMON visible."),
+            "While active,\n"
+            "repels all wild\n"
+            "Pokémon."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_SilphScope,
-        .iconPalette = gItemIconPalette_SilphScope,
+        .fieldUseFunc = ItemUseOutOfBattle_InfiniteRepel,
+        .iconPic = gItemIcon_Repel,
+        .iconPalette = gItemIconPalette_MaxRepel,
     },
 
     [ITEM_TRI_PASS] =

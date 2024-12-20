@@ -55,6 +55,7 @@ void ItemUseOutOfBattle_Sledgehammer(u8);
 void ItemUseOutOfBattle_DivingSuit(u8);
 void ItemUseOutOfBattle_Flashlight(u8);
 void ItemUseOutOfBattle_PowerGlove(u8);
+void ItemUseOutOfBattle_InfiniteRepel(u8 taskId);
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,
