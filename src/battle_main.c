@@ -5925,6 +5925,12 @@ bool32 TrySetAteType(u32 move, u32 battlerAtk, u32 attackerAbility)
     case ABILITY_GALVANIZE:
         ateType = TYPE_ELECTRIC;
         break;
+    case ABILITY_LIQUID_VOICE:
+        if (gMovesInfo[move].soundMove)
+            ateType = TYPE_WATER;
+        else
+            ateType = TYPE_NONE;
+        break;
     default:
         ateType = TYPE_NONE;
         break;
@@ -6146,10 +6152,6 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, u8 *ateBoost)
         if (gMain.inBattle && ateBoost != NULL && GetActiveGimmick(battler) != GIMMICK_DYNAMAX)
             *ateBoost = TRUE;
         return TYPE_NORMAL;
-    }
-    else if (gMovesInfo[move].soundMove && ability == ABILITY_LIQUID_VOICE)
-    {
-        return TYPE_WATER;
     }
     else if (moveEffect == EFFECT_AURA_WHEEL && species == SPECIES_MORPEKO_HANGRY)
     {
