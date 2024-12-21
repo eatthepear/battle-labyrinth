@@ -1682,13 +1682,20 @@ static void FieldTask_ReturnToPcMenu(void)
     u8 taskId;
     MainCallback vblankCb = gMain.vblankCallback;
 
-    SetVBlankCallback(NULL);
-    taskId = CreateTask(Task_PCMainMenu, 80);
-    gTasks[taskId].tState = 0;
-    gTasks[taskId].tSelectedOption = sPreviousBoxOption;
-    Task_PCMainMenu(taskId);
-    SetVBlankCallback(vblankCb);
-    FadeInFromBlack();
+    if (FlagGet(FLAG_USE_PC_MACHINE)) {
+        SetVBlankCallback(NULL);
+        taskId = CreateTask(Task_PCMainMenu, 80);
+        gTasks[taskId].tState = 0;
+        gTasks[taskId].tSelectedOption = sPreviousBoxOption;
+        Task_PCMainMenu(taskId);
+        SetVBlankCallback(vblankCb);
+        FadeInFromBlack();
+    } else {
+        UnlockPlayerFieldControls();
+        ScriptContext_Enable();
+        SetVBlankCallback(CB2_ReturnToField);
+        FadeInFromBlack();
+    }
 }
 
 #undef tState
@@ -1764,7 +1771,9 @@ void ResetPokemonStorageSystem(void)
         ConvertIntToDecimalStringN(dest, boxId + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
     }
 
-    for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
+    SetBoxWallpaper(0, WALLPAPER_BEACH);
+    SetBoxWallpaper(1, WALLPAPER_SKY);
+    for (boxId = 2; boxId < TOTAL_BOXES_COUNT; boxId++)
         SetBoxWallpaper(boxId, boxId % (MAX_DEFAULT_WALLPAPER + 1));
 
     ResetWaldaWallpaper();

@@ -207,3 +207,18 @@ const u16 gMetatileAttributes_MysteryEventsHouse[] = INCBIN_U16("data/tilesets/s
 
 const u16 gMetatiles_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatiles.bin");
 const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatile_attributes.bin");
+
+const u16 gMetatiles_Snowy[] = INCBIN_U16("data/tilesets/secondary/snowy/metatiles.bin");
+const u16 gMetatileAttributes_Snowy[] = INCBIN_U16("data/tilesets/secondary/snowy/metatile_attributes.bin");
+
+const u16 gMetatiles_Jungle[] = INCBIN_U16("data/tilesets/secondary/jungle/metatiles.bin");
+const u16 gMetatileAttributes_Jungle[] = INCBIN_U16("data/tilesets/secondary/jungle/metatile_attributes.bin");
+
+const u16 gMetatiles_Marsh[] = INCBIN_U16("data/tilesets/secondary/marsh/metatiles.bin");
+const u16 gMetatileAttributes_Marsh[] = INCBIN_U16("data/tilesets/secondary/marsh/metatile_attributes.bin");
+
+const u16 gMetatiles_JungleTemple[] = INCBIN_U16("data/tilesets/secondary/jungletemple/metatiles.bin");
+const u16 gMetatileAttributes_JungleTemple[] = INCBIN_U16("data/tilesets/secondary/jungletemple/metatile_attributes.bin");
+
+const u16 gMetatiles_Sanctuary[] = INCBIN_U16("data/tilesets/secondary/sanctuary/metatiles.bin");
+const u16 gMetatileAttributes_Sanctuary[] = INCBIN_U16("data/tilesets/secondary/sanctuary/metatile_attributes.bin");

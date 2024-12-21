@@ -296,6 +296,9 @@
 #define METATILE_LilycoveMuseum_Painting4_Left   0x262
 #define METATILE_LilycoveMuseum_Painting4_Right  0x263
 
+// gTileset_Marsh
+#define METATILE_Marsh_CalmWater  0x20C
+
 // gTileset_Mauville
 #define METATILE_Mauville_DeepSand_BottomMid  0x259
 #define METATILE_Mauville_DeepSand_Center     0x251
@@ -434,6 +437,9 @@
 // gTileset_Rustboro
 #define METATILE_Rustboro_Door_Gray  0x21F
 #define METATILE_Rustboro_Door_Tan   0x22F
+
+// gTileset_Sanctuary
+#define METATILE_Sanctuary_Door  0x362
 
 // gTileset_SecretBase
 #define METATILE_SecretBase_AttractMat_BottomLeft       0x313
@@ -717,6 +723,9 @@
 // gTileset_Slateport
 #define METATILE_Slateport_Door             0x2DC
 #define METATILE_Slateport_Door_BattleTent  0x393
+
+// gTileset_Snowy
+#define METATILE_Snowy_TallGrass  0x21D
 
 // gTileset_Sootopolis
 #define METATILE_Sootopolis_Door             0x21E

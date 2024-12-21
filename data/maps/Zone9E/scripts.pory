@@ -1,0 +1,128 @@
+mapscripts Zone9E_MapScripts {}
+
+script Zone9E_EventScript_BuyFarmAnimal {
+	lock
+	faceplayer
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true && flag(FLAG_ZONE9E_NUZLOCKE_BOUGHT_FARM_ANIMAL) == true) {
+		msgbox(format("Sorry, honey. The rest of these Pokémon aren't for sale anymore."))
+		release
+		end
+	} else {
+		showmoneybox(0, 0, 0)
+		msgbox(format("Howdy! There ain't many farms 'round these parts, so I have an offer for you.\pI'll give you a Miltank, Tauros, or Indeedee, for only ¥5000!"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			closemessage
+			hidemoneybox
+			msgbox(format("Well, aren't you a downer."))
+		} else {
+			checkmoney(5000, 0)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox("You don't have enough money.")
+				hidemoneybox
+			} else {
+				specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+				if (var(VAR_TEMP_2) == PARTY_SIZE) {
+					msgbox(format("Your party is full. Clear a party slot, then come back."))
+					hidemoneybox
+					release
+					end
+				}
+				call(EventScript_NuzlockeVerifyBuy)
+				removemoney(5000)
+				updatemoneybox
+				msgbox("Thanks for supporting us farm folk.", MSGBOX_DEFAULT)
+				closemessage
+				hidemoneybox
+				if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+					if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
+						setvar(VAR_TEMP_1, SPECIES_MILTANK) // gets randomized anyways
+					} else {
+						setvar(VAR_TEMP_3, 0)
+						checkspeciesclause(SPECIES_MILTANK)
+						if (var(VAR_RESULT) == TRUE) {
+							addvar(VAR_TEMP_3, 1)
+						}
+						checkspeciesclause(SPECIES_TAUROS)
+						if (var(VAR_RESULT) == TRUE) {
+							addvar(VAR_TEMP_3, 1)
+						}
+						checkspeciesclause(SPECIES_INDEEDEE_F)
+						if (var(VAR_RESULT) == TRUE) {
+							addvar(VAR_TEMP_3, 1)
+						}
+						checkspeciesclause(SPECIES_INDEEDEE)
+						if (var(VAR_RESULT) == TRUE) {
+							addvar(VAR_TEMP_3, 1)
+						}
+						if (var(VAR_TEMP_3) == 4) {
+							msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
+							addmoney(3000)
+							release
+							end
+						}
+						while (var(VAR_TEMP_1) == 0) {
+							random(4)
+							switch (var(VAR_RESULT)) {
+								case 0:
+									checkspeciesclause(SPECIES_MILTANK)
+									if (var(VAR_RESULT) == TRUE) {
+										continue
+									}
+									setvar(VAR_TEMP_1, SPECIES_MILTANK)
+								case 1:
+									checkspeciesclause(SPECIES_TAUROS)
+									if (var(VAR_RESULT) == TRUE) {
+										continue
+									}
+									setvar(VAR_TEMP_1, SPECIES_TAUROS)
+								case 2:
+									checkspeciesclause(SPECIES_INDEEDEE_F)
+									if (var(VAR_RESULT) == TRUE) {
+										continue
+									}
+									setvar(VAR_TEMP_1, SPECIES_INDEEDEE_F)
+								case 3:
+									checkspeciesclause(SPECIES_INDEEDEE)
+									if (var(VAR_RESULT) == TRUE) {
+										continue
+									}
+									setvar(VAR_TEMP_1, SPECIES_INDEEDEE)
+							}
+						}
+					}
+					setflag(FLAG_ZONE9E_NUZLOCKE_BOUGHT_FARM_ANIMAL)
+				} else {
+					msgbox(format("Choose which of these you would like."), MSGBOX_DEFAULT)
+					dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Miltank", "Tauros", "Indeedee-F", "Indeedee-M")
+					switch (var(VAR_RESULT)) {
+						case 0:
+							setvar(VAR_TEMP_1, SPECIES_MILTANK)
+						case 1:
+							setvar(VAR_TEMP_1, SPECIES_TAUROS)
+						case 2:
+							setvar(VAR_TEMP_1, SPECIES_INDEEDEE_F)
+						case 3:
+							setvar(VAR_TEMP_1, SPECIES_INDEEDEE)
+					}
+				}
+				givemon(VAR_TEMP_1, 20, ITEM_NONE)
+				setmonmetlocation(VAR_TEMP_2, 249)
+				bufferspeciesname(0, VAR_TEMP_1)
+				msgbox("Here's your {STR_VAR_1}.", MSGBOX_DEFAULT)
+				playfanfare(MUS_OBTAIN_ITEM)
+				message(format("{PLAYER} received the {STR_VAR_1}!"))
+				waitmessage
+				waitfanfare
+				msgbox(format("Would you like to give a nickname to {STR_VAR_1}?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					call(Common_EventScript_GetGiftMonPartySlot)
+					call(Common_EventScript_NameReceivedPartyMon)
+				}
+				msgbox(format("Take care of {STR_VAR_1} as well as it takes care of you!"), MSGBOX_DEFAULT)
+			}
+		}
+	}
+	release
+	end
+}
+
