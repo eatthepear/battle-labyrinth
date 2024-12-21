@@ -1,0 +1,972 @@
+{
+  "id": "MAP_ZONE18B",
+  "name": "Zone18B",
+  "layout": "LAYOUT_ZONE18B",
+  "music": "MUS_DP_GYM",
+  "region_map_section": "MAPSEC_ZONE_18",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_GYM",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TUBER_M",
+      "x": 4,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_EliZoe",
+      "flag": "FLAG_HIDE_ZONE18B_ELI"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_WALKING",
+      "x": 5,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_EliZoe",
+      "flag": "FLAG_HIDE_ZONE18B_ZOE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_KINDLER",
+      "x": 4,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_Willie",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GUITARIST",
+      "x": 4,
+      "y": 29,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_Elton",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
+      "x": 4,
+      "y": 42,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_Leroy",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RUIN_MANIAC",
+      "x": 4,
+      "y": 55,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_Louis",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BUG_MANIAC",
+      "x": 4,
+      "y": 68,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_Rex",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 4,
+      "y": 81,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_Emilio",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FAIRY_TALE_GIRL",
+      "x": 4,
+      "y": 94,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_Melinda",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DRAGON_TAMER",
+      "x": 4,
+      "y": 107,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_Abraham",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "x": 4,
+      "y": 120,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_Kari",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+      "x": 4,
+      "y": 133,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_Marty",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BIRD_KEEPER",
+      "x": 4,
+      "y": 146,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_Terrence",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ROUGHNECK",
+      "x": 4,
+      "y": 159,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_Tyler",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ICE_WORKER",
+      "x": 4,
+      "y": 172,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_Jay",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WORKER",
+      "x": 4,
+      "y": 185,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_Glenn",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
+      "x": 4,
+      "y": 198,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone18B_EventScript_John",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 202,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18A",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 202,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18A",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 1,
+      "y": 196,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 7,
+      "y": 196,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 6,
+      "y": 189,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 7,
+      "y": 189,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 1,
+      "y": 176,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 2,
+      "y": 176,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 1,
+      "y": 183,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "13"
+    },
+    {
+      "x": 7,
+      "y": 183,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "14"
+    },
+    {
+      "x": 1,
+      "y": 170,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "17"
+    },
+    {
+      "x": 7,
+      "y": 170,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "18"
+    },
+    {
+      "x": 6,
+      "y": 163,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 7,
+      "y": 163,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 1,
+      "y": 150,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 2,
+      "y": 150,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 6,
+      "y": 150,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 7,
+      "y": 150,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 1,
+      "y": 137,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 2,
+      "y": 137,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 1,
+      "y": 157,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "27"
+    },
+    {
+      "x": 7,
+      "y": 157,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "28"
+    },
+    {
+      "x": 1,
+      "y": 144,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "31"
+    },
+    {
+      "x": 7,
+      "y": 144,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "32"
+    },
+    {
+      "x": 1,
+      "y": 131,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "35"
+    },
+    {
+      "x": 7,
+      "y": 131,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "36"
+    },
+    {
+      "x": 6,
+      "y": 124,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "20"
+    },
+    {
+      "x": 7,
+      "y": 124,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "20"
+    },
+    {
+      "x": 1,
+      "y": 111,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "21"
+    },
+    {
+      "x": 2,
+      "y": 111,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "21"
+    },
+    {
+      "x": 6,
+      "y": 111,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "22"
+    },
+    {
+      "x": 7,
+      "y": 111,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "22"
+    },
+    {
+      "x": 1,
+      "y": 98,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "23"
+    },
+    {
+      "x": 2,
+      "y": 98,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "23"
+    },
+    {
+      "x": 6,
+      "y": 98,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "24"
+    },
+    {
+      "x": 7,
+      "y": 98,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "24"
+    },
+    {
+      "x": 1,
+      "y": 85,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "25"
+    },
+    {
+      "x": 2,
+      "y": 85,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "25"
+    },
+    {
+      "x": 7,
+      "y": 118,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "44"
+    },
+    {
+      "x": 1,
+      "y": 105,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "47"
+    },
+    {
+      "x": 7,
+      "y": 105,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "48"
+    },
+    {
+      "x": 1,
+      "y": 92,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "50"
+    },
+    {
+      "x": 7,
+      "y": 92,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "52"
+    },
+    {
+      "x": 1,
+      "y": 79,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "54"
+    },
+    {
+      "x": 1,
+      "y": 72,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "38"
+    },
+    {
+      "x": 2,
+      "y": 72,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "38"
+    },
+    {
+      "x": 6,
+      "y": 72,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "39"
+    },
+    {
+      "x": 7,
+      "y": 72,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "39"
+    },
+    {
+      "x": 1,
+      "y": 59,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "40"
+    },
+    {
+      "x": 2,
+      "y": 59,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "40"
+    },
+    {
+      "x": 7,
+      "y": 59,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "41"
+    },
+    {
+      "x": 6,
+      "y": 59,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "41"
+    },
+    {
+      "x": 1,
+      "y": 46,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "42"
+    },
+    {
+      "x": 2,
+      "y": 46,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "42"
+    },
+    {
+      "x": 7,
+      "y": 46,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "43"
+    },
+    {
+      "x": 6,
+      "y": 46,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "43"
+    },
+    {
+      "x": 7,
+      "y": 66,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "60"
+    },
+    {
+      "x": 1,
+      "y": 53,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "63"
+    },
+    {
+      "x": 7,
+      "y": 53,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "64"
+    },
+    {
+      "x": 1,
+      "y": 40,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "67"
+    },
+    {
+      "x": 1,
+      "y": 33,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "56"
+    },
+    {
+      "x": 2,
+      "y": 33,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "56"
+    },
+    {
+      "x": 6,
+      "y": 33,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "57"
+    },
+    {
+      "x": 7,
+      "y": 33,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "57"
+    },
+    {
+      "x": 1,
+      "y": 20,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "58"
+    },
+    {
+      "x": 2,
+      "y": 20,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "58"
+    },
+    {
+      "x": 6,
+      "y": 20,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "59"
+    },
+    {
+      "x": 7,
+      "y": 20,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "59"
+    },
+    {
+      "x": 7,
+      "y": 27,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "71"
+    },
+    {
+      "x": 1,
+      "y": 14,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "72"
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "68"
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "68"
+    },
+    {
+      "x": 7,
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "69"
+    },
+    {
+      "x": 6,
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_ZONE18B",
+      "dest_warp_id": "69"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 196,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_RockRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 196,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_IceRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 183,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_DarkRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 183,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_LeftFlyingRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 170,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_RightFlyingRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 170,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_PsychicRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 157,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_FightingRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 157,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_LeftDragonRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 144,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_RightDragonRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 144,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_LeftFairyRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 131,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_RightFairyRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 131,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_GroundRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 118,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_LeftBugRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 105,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_RightBugRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 105,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_LeftSteelRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 92,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_RightSteelRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 92,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_LeftPoisonRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 79,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_RightPoisonRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 66,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_LeftElectricRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 53,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_RightElectricRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 53,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_LeftFireRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 40,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_RightFireRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 27,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_LeftLeviathanRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone18B_EventScript_RightLeviathanRoomDoor"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 201,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Zone18B_EventScript_Statue"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 201,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Zone18B_EventScript_Statue"
+    }
+  ]
+}

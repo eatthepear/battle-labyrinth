@@ -23,6 +23,8 @@ BerryTree_EventScript_Sparkling::
 BerryTree_EventScript_CheckSoil::
 	lock
 	faceplayer
+    goto_if_set FLAG_SETTINGS_BRUTAL, BerryTree_EventScript_BadSoil
+    goto_if_set FLAG_SETTINGS_RED_THUMB, BerryTree_EventScript_BadSoil
 	specialvar VAR_RESULT, PlayerHasBerries
 	goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_WantToPlant
 	specialvar VAR_RESULT, PlayerHasMulch
@@ -32,6 +34,14 @@ BerryTree_EventScript_CheckSoil::
 	waitbuttonpress
 	release
 	end
+
+BerryTree_EventScript_BadSoil::
+       msgbox BerryTree_Text_BadSoil, MSGBOX_AUTOCLOSE
+       release
+       end
+
+BerryTree_Text_BadSoil:
+       .string "The soil is too hard for Berries.$"
 
 BerryTree_EventScript_WantToPlant::
 	specialvar VAR_RESULT, PlayerHasMulch
@@ -261,7 +271,7 @@ BerryTree_Text_ItsSoftLoamySoil:
 
 BerryTree_Text_WantToPlant:
 	.string "It's soft, loamy soil.\n"
-	.string "Want to plant a BERRY?$"
+	.string "Want to plant a Berry?$"
 
 BerryTree_Text_PlantedOneBerry:
 	.string "{PLAYER} planted one {STR_VAR_1} in\n"
@@ -321,12 +331,12 @@ BerryTree_Text_PickedTheBerry:
 
 BerryTree_Text_PutAwayBerry:
 	.string "{PLAYER} put away the {STR_VAR_1}\n"
-	.string "in the BAG's BERRIES POCKET.\p"
+	.string "in the Bag's Berries Pocket.\p"
 	.string "The soil returned to its soft and\n"
 	.string "loamy state.$"
 
 BerryTree_Text_BerryPocketFull:
-	.string "The BAG's BERRIES POCKET is full.\p"
+	.string "The Bag's Berries Pocket is full.\p"
 	.string "The {STR_VAR_1} couldn't be taken.$"
 
 BerryTree_Text_BerryLeftUnpicked:
@@ -335,7 +345,7 @@ BerryTree_Text_BerryLeftUnpicked:
 
 BerryTree_Text_WantToWater:
 	.string "Want to water the {STR_VAR_1} with the\n"
-	.string "WAILMER PAIL?$"
+	.string "Wailmer Pail?$"
 
 BerryTree_Text_WateredTheBerry:
 	.string "{PLAYER} watered the {STR_VAR_1}.$"

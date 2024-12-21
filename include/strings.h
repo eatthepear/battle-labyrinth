@@ -2737,4 +2737,22 @@ extern const u8 gText_LelouchReachedLevelCap[];
 extern const u8 gText_InfiniteRepelOn[];
 extern const u8 gText_InfiniteRepelOff[];
 
+extern const u8 gText_SavingZone[];
+extern const u8 gText_SaveMenuRandomizer[];
+extern const u8 gText_SaveMenuNuzlocke[];
+extern const u8 gText_SaveMenuRandomlocke[];
+extern const u8 gText_SaveMenuBrutal[];
+extern const u8 gText_SaveMenuBrutalRandomizer[];
+extern const u8 gText_SaveMenuBrutalNuzlocke[];
+extern const u8 gText_SaveMenuBrutalRandomlocke[];
+extern const u8 gText_SaveMenuInfinite[];
+extern const u8 gText_SaveMenuInfiniteRandomizer[];
+extern const u8 gText_SaveMenuInfiniteNuzlocke[];
+extern const u8 gText_SaveMenuInfiniteRandomlocke[];
+
+extern const u8 gMenuText_Move[];
+extern const u8 gText_MoveItemWhere[];
+extern const u8 gText_XsYAnd[];
+extern const u8 gText_XsYWereSwapped[];
+
 #endif // GUARD_STRINGS_H

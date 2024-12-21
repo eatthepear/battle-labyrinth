@@ -1,0 +1,118 @@
+mapscripts Zone8A_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE8A_MAGNET)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE8A_POTION_X2)) {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE8A_GREAT_BALL)) {
+			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+	}
+}
+
+script Zone8A_EventScript_ItemMagnet {
+	lock
+	if (flag(FLAG_ITEM_ZONE8A_MAGNET)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE8A_MAGNET)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_MAGNET, 1)
+	release
+	end
+}
+
+script Zone8A_EventScript_ItemPotion2 {
+	lock
+	if (flag(FLAG_ITEM_ZONE8A_POTION_X2)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE8A_POTION_X2)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_POTION, 2)
+	release
+	end
+}
+
+script Zone8A_EventScript_ItemGreatBall {
+	lock
+	if (flag(FLAG_ITEM_ZONE8A_GREAT_BALL)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE8A_GREAT_BALL)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_GREAT_BALL, 1)
+	release
+	end
+}
+
+raw `
+Zone8A_EventScript_Jimmy::
+	trainerbattle_single TRAINER_PBL_JIMMY, Zone8A_Text_JimmyIntro, Zone8A_Text_JimmyDefeat
+	msgbox Zone8A_Text_JimmyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone8A_Text_JimmyIntro:
+	.string "Rare Pokémon… Do you have them?$"
+
+Zone8A_Text_JimmyDefeat:
+	.string "You do! You do have rare Pokémon!$"
+
+Zone8A_Text_JimmyPostBattle:
+	.string "I want to collect all the rare\n"
+	.string "Pokémon in the world!$"
+
+Zone8A_EventScript_Beckham::
+	trainerbattle_single TRAINER_PBL_BECKHAM, Zone8A_Text_BeckhamIntro, Zone8A_Text_BeckhamDefeat
+	msgbox Zone8A_Text_BeckhamPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone8A_Text_BeckhamIntro:
+	.string "What's your favorite monster movie?$"
+
+Zone8A_Text_BeckhamDefeat:
+	.string "My favorite is Godzilla?$"
+
+Zone8A_Text_BeckhamPostBattle:
+	.string "Which one is my favorite?\n"
+	.string "That's a good question…\l"
+	.string "I'll have to think about it!$"
+
+Zone8A_EventScript_Emiliano::
+	trainerbattle_single TRAINER_PBL_EMILIANO, Zone8A_Text_EmilianoIntro, Zone8A_Text_EmilianoDefeat
+	msgbox Zone8A_Text_EmilianoPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone8A_Text_EmilianoIntro:
+	.string "I'm so hungry…$"
+
+Zone8A_Text_EmilianoDefeat:
+	.string "It's because I keep thinking about\n"
+	.string "pancakes!$"
+
+Zone8A_Text_EmilianoPostBattle:
+	.string "Mmm… Pancakes…$"
+`

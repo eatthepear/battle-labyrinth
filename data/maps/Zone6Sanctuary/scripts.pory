@@ -1,0 +1,71 @@
+mapscripts Zone6Sanctuary_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ZONE, 6: Zone6Sanctuary_EventScript_Intro
+	]
+}
+
+script Zone6Sanctuary_EventScript_Intro {
+    lockall
+	call(EventScript_EnterSanctuary)
+	buffernumberstring(0, VAR_ZONE)
+	msgbox(gText_Colress_ReachedZone, MSGBOX_DEFAULT)
+	waitfanfare
+	buffernumberstring(0, VAR_ZONE)
+	msgbox(gText_RewardClear, MSGBOX_DEFAULT)
+	msgbox(Zone6Sanctuary_Text_Reward, MSGBOX_DEFAULT)
+	giveitem(ITEM_SLEDGEHAMMER)
+	msgbox(gText_Colress_Upgraded, MSGBOX_DEFAULT)
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox(gText_Colress_UpgradedPotions, MSGBOX_DEFAULT)
+	waitfanfare
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox(gText_Colress_UpgradedItems, MSGBOX_DEFAULT)
+	waitfanfare
+	setvar(VAR_ZONE, 7)
+	msgbox(Zone6Sanctuary_Text_Colress_Explain, MSGBOX_DEFAULT)
+	msgbox(Zone6Sanctuary_Text_Colress_WhenUReady)
+	applymovement(1, Common_Movement_Colress_WalkUp)
+	waitmovement(0)
+	releaseall
+}
+
+script Zone6Sanctuary_EventScript_NextZone {
+	lock
+	faceplayer
+	message(gText_Colress_Greetings)
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			msgbox(Zone6Sanctuary_Text_Colress_ReadyToLeave, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call(EventScript_LeavingSetup)
+				warp(MAP_ZONE7A, 255, 10, 33)
+				waitstate
+			}
+		case 1:
+			goto(EventScript_Settings)
+		case 2:
+			goto(EventScript_Documentation)
+	}
+	goto(EventScript_WhenUReady)
+}
+
+text Zone6Sanctuary_Text_Reward {
+	format("The Sledgehammer!")
+}
+
+text Zone6Sanctuary_Text_Colress_Explain {
+	format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones, {COLOR RED}Zone 7{COLOR DARK_GRAY} and {COLOR RED}Zone 8{COLOR DARK_GRAY}, are combined.\p"
+	"You will not be able to access a Sanctuary in between the Zones.")
+}
+
+text Zone6Sanctuary_Text_Colress_WhenUReady {
+	format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR RED}Zone 7{COLOR DARK_GRAY} and {COLOR RED}Zone 8{COLOR DARK_GRAY}, speak to me.")
+}
+
+text Zone6Sanctuary_Text_Colress_ReadyToLeave {
+	"{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you ready to leave?\n"
+	"You will be entering\l"
+	"{COLOR RED}Zone 7{COLOR DARK_GRAY} and {COLOR RED}Zone 8{COLOR DARK_GRAY}.$"
+}

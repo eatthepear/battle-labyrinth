@@ -1,0 +1,359 @@
+mapscripts Zone6A_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE6A_NET_BALL)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE6A_GEMS)) {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE6A_NEST_BALL)) {
+			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE6A_TM07)) {
+			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_TM_CHEST)
+		}
+	}
+}
+
+script Zone6A_EventScript_LeviathanBattle {
+	lockall
+	applymovement(1, Common_Movement_FaceDown)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	waitmovement(0)
+	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Woah!\pYou're trying to sneak past me to get to my family's treasures?\pNo can do!\pYou really want to be taught a lesson?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: That's what I thought!"))
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		applymovement(1, Common_Movement_FaceLeft)
+		waitmovement(0)
+		release
+		end
+	}
+	fadeoutbgm(1)
+	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Who do you think you are?"), MSGBOX_DEFAULT)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+		setweather(WEATHER_RAIN)
+		doweather
+		msgbox("It suddenly began to rain!")
+	}
+	closemessage
+	trainerbattle_no_intro(TRAINER_PBL_MINA, "Rain, rain, go away…")
+	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Uh, sorry I was so angry at you.\pI didn't mean to… You're just passing by. Sorry!"), MSGBOX_AUTOCLOSE)
+	applymovement(2, Common_Movement_ExclamationMark)
+	applymovement(3, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	delay(16)
+	applymovement(1, Zone6A_Movement_Mina_MoveOutOfWay)
+	applymovement(2, Zone6A_Movement_Coby_WalkUp)
+	applymovement(3, Zone6A_Movement_Zack_WalkUp)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement(0)
+	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Hey! You're messing with my little sister!\pI'll teach you a lesson!"), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: No one messes with our family!\pLet's show 'em, sis!"), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Wait! It isn't their fault!"), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: Combined family attack!"))
+	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+		trainerbattle_no_intro(TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_BRUTAL, Zone6A_Text_Leviathan6Defeat)
+		resetweather
+		doweather
+	} else {
+		trainerbattle_no_intro(TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6, Zone6A_Text_Leviathan6Defeat)
+	}
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Whew! You're a tough nut to crack. But we'll crush you for messing with our family!"), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Wait! Just listen!"), MSGBOX_DEFAULT)
+	applymovement(2, Common_Movement_ExclamationMark)
+	applymovement(3, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	delay(16)
+	applymovement(2, Common_Movement_FaceRight)
+	applymovement(3, Common_Movement_FaceRight)
+	waitmovement(0)
+	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: Shouldn't we go after this person, Mina? They're after the treasure!"), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: I've been trying to tell you, they've just been trying to pass through!"), MSGBOX_DEFAULT)
+	applymovement(2, Common_Movement_ExclamationMark)
+	applymovement(3, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	delay(16)
+	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Oh. Uh…"), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: This is awkward."), MSGBOX_DEFAULT)
+	applymovement(2, Common_Movement_FaceLeft)
+	applymovement(3, Common_Movement_FaceLeft)
+	waitmovement(0)
+	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: We're, um…"), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: We're very sorry for antagonizing you. Please take this gift as compensation."), MSGBOX_DEFAULT)
+	giveitem(ITEM_TM08)
+	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: C'mon, guys, this isn't enough. We were so mean to them…"), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: Maybe we can share the treasure?\pWe got most of it out of the sand already anyways."), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Good idea.\pYou can have what's left of the treasure. We've already gotten our fair share."), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: We're really sorry, again. We didn't mean to be so mean."), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Well, you live and you learn."))
+	setflag(FLAG_BEAT_LEVIATHAN_6)
+	setvar(VAR_ZONE_6_STATE, 1)
+	applymovement(2, Zone6A_Movement_Coby_WalkDown)
+	applymovement(3, Zone6A_Movement_Zack_WalkDown)
+	waitmovement(0)
+	release
+	end
+}
+
+movement Zone6A_Movement_Mina_MoveOutOfWay {
+	walk_right * 2
+	face_left
+}
+
+movement Zone6A_Movement_Coby_WalkUp {
+	walk_up * 3
+	face_left
+}
+
+movement Zone6A_Movement_Zack_WalkUp {
+	walk_left
+	walk_up * 2
+	face_left
+}
+
+movement Zone6A_Movement_Coby_WalkDown {
+	walk_down * 3
+}
+
+movement Zone6A_Movement_Zack_WalkDown {
+	walk_down * 2
+	walk_right
+	face_down
+}
+
+text Zone6A_Text_Leviathan6Defeat {
+	"Our family loses together!"
+}
+
+script Zone6A_EventScript_Mina {
+	lock
+	faceplayer
+	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: I'm here guarding some of the treasures our family dug up!"))
+	release
+	end
+}
+
+script Zone6A_EventScript_Coby {
+	lock
+	faceplayer
+	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: I'm in charge of my younger siblings, though they get on my temper sometimes!"))
+	release
+	end
+}
+
+script Zone6A_EventScript_Zack {
+	lock
+	faceplayer
+	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: The tubing life is really sweet!"))
+	release
+	end
+}
+
+script Zone6A_EventScript_ItemNetBall {
+	lock
+	if (flag(FLAG_ITEM_ZONE6A_NET_BALL)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE6A_NET_BALL)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_NET_BALL, 1)
+	release
+	end
+}
+
+script Zone6A_EventScript_ItemGems {
+	lock
+	if (flag(FLAG_ITEM_ZONE6A_GEMS)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE6A_GEMS)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_WATER_GEM)
+	finditem(ITEM_FLYING_GEM)
+	finditem(ITEM_ICE_GEM)
+	release
+	end
+}
+
+script Zone6A_EventScript_ItemNestBall {
+	lock
+	if (flag(FLAG_ITEM_ZONE6A_NEST_BALL)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE6A_NEST_BALL)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_NEST_BALL, 1)
+	release
+	end
+}
+
+script Zone6A_EventScript_ItemTM07 {
+	lock
+	if (flag(FLAG_ITEM_ZONE6A_TM07)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE6A_TM07)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_TM07)
+	release
+	end
+}
+
+raw `
+
+Zone6A_EventScript_Gilbert::
+	trainerbattle_single TRAINER_PBL_GILBERT, Zone6A_Text_GilbertIntro, Zone6A_Text_GilbertDefeat
+	msgbox Zone6A_Text_GilbertPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone6A_Text_GilbertIntro:
+	.string "You made me miss my catch!$"
+
+Zone6A_Text_GilbertDefeat:
+	.string "Argh, there was no catch!\n"
+	.string "I'm just frustrated!$"
+
+Zone6A_Text_GilbertPostBattle:
+	.string "Sorry for taking out my fishing\n"
+	.string "frustration out on you.$"
+
+Zone6A_EventScript_Melanie::
+	trainerbattle_single TRAINER_PBL_MELANIE, Zone6A_Text_MelanieIntro, Zone6A_Text_MelanieDefeat
+	msgbox Zone6A_Text_MelaniePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone6A_Text_MelanieIntro:
+	.string "Watch where you're going!$"
+
+Zone6A_Text_MelanieDefeat:
+	.string "Sorry I yelled at you…$"
+
+Zone6A_Text_MelaniePostBattle:
+	.string "I also need to be careful about\n"
+	.string "where I'm going.$"
+
+Zone6A_EventScript_Constance::
+	trainerbattle_single TRAINER_PBL_CONSTANCE, Zone6A_Text_ConstanceIntro, Zone6A_Text_ConstanceDefeat
+	msgbox Zone6A_Text_ConstancePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone6A_Text_ConstanceIntro:
+	.string "Want to join my picnic?$"
+
+Zone6A_Text_ConstanceDefeat:
+	.string "Oops, I forgot to pack food!$"
+
+Zone6A_Text_ConstancePostBattle:
+	.string "I can look for some Berries or\n"
+	.string "something…$"
+
+Zone6A_EventScript_Frank::
+	trainerbattle_single TRAINER_PBL_FRANK, Zone6A_Text_FrankIntro, Zone6A_Text_FrankDefeat
+	msgbox Zone6A_Text_FrankPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone6A_Text_FrankIntro:
+	.string "The beach is full of surprises!$"
+
+Zone6A_Text_FrankDefeat:
+	.string "This time, I was surprised by you!$"
+
+Zone6A_Text_FrankPostBattle:
+	.string "Your skills are astounding!$"
+
+Zone6A_EventScript_Dudley::
+	trainerbattle_single TRAINER_PBL_DUDLEY, Zone6A_Text_DudleyIntro, Zone6A_Text_DudleyDefeat
+	msgbox Zone6A_Text_DudleyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone6A_Text_DudleyIntro:
+	.string "Birds of a feather flock together!$"
+
+Zone6A_Text_DudleyDefeat:
+	.string "This bird has been sent crashing\n"
+	.string "down!$"
+
+Zone6A_Text_DudleyPostBattle:
+	.string "Oh, how the mighty have fallen!$"
+
+Zone6A_EventScript_Daisy::
+	trainerbattle_single TRAINER_PBL_DAISY, Zone6A_Text_DaisyIntro, Zone6A_Text_DaisyDefeat
+	msgbox Zone6A_Text_DaisyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone6A_Text_DaisyIntro:
+	.string "These Pokémon are just so cute!$"
+
+Zone6A_Text_DaisyDefeat:
+	.string "They're not too great in battle,\n"
+	.string "though.$"
+
+Zone6A_Text_DaisyPostBattle:
+	.string "I guess these little ones need more\n"
+	.string "time to get stronger and evolve!$"
+
+Zone6A_EventScript_VicandDell::
+	trainerbattle_double TRAINER_PBL_VIC_AND_DELL, Zone6A_Text_VicandDellIntro, Zone6A_Text_VicandDellDefeat, gText_NotEnoughMons
+	msgbox Zone6A_Text_VicandDellPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Zone6A_Text_VicandDellIntro:
+	.string "Vic: We're strong!\p"
+	.string "Dell: We work together!$"
+
+Zone6A_Text_VicandDellDefeat:
+	.string "Dell: Aww!\p"
+	.string "Vic: Aww!$"
+
+Zone6A_Text_VicandDellPostBattle:
+	.string "Vic: Losing has its pluses!\p"
+	.string "Dell: And its minuses!$"
+
+Zone6A_EventScript_Sign::
+	msgbox Zone6A_Text_Sign, MSGBOX_SIGN
+	end
+
+Zone6A_Text_Sign:
+	.string "Trainer Tips\p"
+	.string "You can sort items in the Bag\n"
+	.string "using {START_BUTTON}.$"
+`

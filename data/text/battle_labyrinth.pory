@@ -1,0 +1,139 @@
+text gText_Colress_EndofDemo {
+	format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This is the end of the demo. Our engineers are still working on the remainder of the {COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY}. Please save your game using the in game save so you might be able to transfer your save file to the next version when it comes out.")
+}
+
+text gText_Colress_ReachedZone {
+	format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Congratulations.\nYou have cleared {COLOR RED}Zone {STR_VAR_1}{COLOR DARK_GRAY}.")
+}
+
+text gText_RewardClear {
+	format("Your reward for clearing\n{COLOR RED}Zone {STR_VAR_1}{COLOR DARK_GRAY} is…")
+}
+
+text gText_Colress_WhenUReady {
+	format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR RED}Zone {STR_VAR_1}{COLOR DARK_GRAY}, come speak to me.")
+}
+
+text gText_Colress_Greetings {
+	format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Greetings, {PLAYER}.\pWhat can I help you with?")
+}
+
+text gText_Colress_SureReadyToLeave {
+	format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR RED}Zone {STR_VAR_1}{COLOR DARK_GRAY}.")
+}
+
+text gText_Colress_Upgraded {
+	format("Because of your progress, the following shops are upgraded:")
+}
+
+text gText_Colress_UpgradedPokeball {
+	format("{COLOR RED}Tim's Pokéball Shop{COLOR DARK_GRAY}!")
+}
+
+text gText_Colress_UpgradedPotions {
+	format("{COLOR RED}Portentia's Potions{COLOR DARK_GRAY}!")
+}
+
+text gText_Colress_UpgradedItems {
+	format("{COLOR RED}Varrick's Extravagant Emporium{COLOR DARK_GRAY}!")
+}
+
+text gText_Colress_UpgradedBerries {
+	format("{COLOR RED}Julia's Berries{COLOR DARK_GRAY}!")
+}
+
+text gText_Colress_UpgradedEggs {
+	format("{COLOR RED}Marie's Egg Delivery Service{COLOR DARK_GRAY}!")
+}
+
+text gText_Colress_UpgradedServices {
+	format("{COLOR RED}Lelouch's Services Shop{COLOR DARK_GRAY}!")
+}
+
+text gText_Colress_UpgradedRecovery {
+	format("{COLOR RED}Joy's Center of Restoration{COLOR DARK_GRAY}!")
+}
+
+//TODO - remove
+text gText_Colress_UpgradedGeneral {
+	format("{COLOR RED}Tim's Pokéball Shop{COLOR DARK_GRAY}!")
+}
+
+//TODO - remove
+text gText_Colress_UpgradedUnique {
+	format("{COLOR RED}Tim's Pokéball Shop{COLOR DARK_GRAY}!")
+}
+
+raw `
+
+gText_Colress_UpgradedWarp:
+	.string "Because of your progress,\n"
+	.string "you have unlocked a special warp in\l"
+	.string "Zone 0.$"
+
+gText_Lelouch_ExpTrainingFinished:
+	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: The training session has\n"
+	.string "finished.\p"
+	.string "Your Pokémon has grown stronger.$"
+
+gText_Lelouch_DidNotTrain:
+	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: If you do want to\n"
+	.string "train your Pokémon, I'll be here.$"
+
+gText_Lelouch_Exp:
+	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: With Experience Training,\n"
+	.string "you can train one Pokémon to any\l"
+	.string "level up to the level cap,\l"
+	.string "at the cost of one Red Shard.\p"
+	.string "Would you like to start an\n"
+	.string "Experience Training session?$"
+
+gText_Lelouch_PayRed:
+	.string "{PLAYER} handed over 1 Red Shard.$"
+
+gText_Lelouch_ChooseTraining:
+	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Choose which training\n"
+	.string "regiment you would like.$"
+
+gText_Lelouch_CostsBlueShards:
+	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Move Reminder services\n"
+	.string "cost one Blue Shard.\p"
+	.string "Would you like me to teach a\n"
+	.string "forgotten move to your Pokémon?$"
+
+gText_Lelouch_PayBlue:
+	.string "{PLAYER} handed over 1 Blue Shard.$"
+
+gText_Lelouch_CostsYellowShards:
+	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Move Tutor services cost\n"
+	.string "Yellow Shards. Which move would you\l"
+	.string "like to tutor?$"
+
+gText_Lelouch_PayYellow1:
+	.string "{PLAYER} handed over 1 Yellow Shard.$"
+
+gText_Lelouch_CostsGreenShards:
+	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: I can craft special items\n"
+	.string "as well as upgrade your items\l"
+	.string "in exchange for Green Shards.\l"
+	.string "What would you like?$"
+
+gText_Lelouch_PayGreen:
+	.string "{PLAYER} handed over 1 Green Shard.$"
+
+gText_HealingSign:
+	.string "Joy's Healing Shop\n"
+	.string "Health care costs money!$"
+
+gText_ExitSign:
+	.string "This is the exit!$"
+
+gText_NotEnoughMons:
+	.string "You need at least two Pokémon to\n"
+	.string "initiate a Double Battle.$"
+
+gText_PleasePick3Mons:
+	.string "Please select three Pokémon to\n"
+	.string "participate in the tag battle.$"
+
+`

@@ -690,6 +690,7 @@ EventScript_SetBrineyLocation_Route109::
 	.include "data/scripts/obtain_item.inc"
 	.include "data/scripts/record_mix.inc"
 	.include "data/scripts/pc.inc"
+	.include "data/scripts/battle_labyrinth.inc"
 
 @ scripts/notices.inc? signs.inc? See comment about text/notices.inc
 Common_EventScript_ShowPokemartSign::
@@ -875,6 +876,7 @@ Common_EventScript_PlayerHandedOverTheItem::
 	.include "data/text/pkmn_center_nurse.inc"
 	.include "data/text/mart_clerk.inc"
 	.include "data/text/obtain_item.inc"
+	.include "data/text/battle_labyrinth.inc"
 
 @ The below and surf.inc could be split into some text/notices.inc
 gText_PokemartSign::
@@ -886,9 +888,7 @@ gText_PokemonCenterSign::
 	.string "POKéMON CENTER$"
 
 gText_MomOrDadMightLikeThisProgram::
-	.string "{STR_VAR_1} might like this program.\n"
-	.string "… … … … … … … … … … … … … … … …\p"
-	.string "Better get going!$"
+	.string "There's nothing on the TV…$"
 
 gText_WhichFloorWouldYouLike::
 	.string "Welcome to LILYCOVE DEPARTMENT STORE.\p"
@@ -899,8 +899,8 @@ gText_SandstormIsVicious::
 	.string "It's impossible to keep going.$"
 
 gText_SelectWithoutRegisteredItem::
-	.string "An item in the BAG can be\n"
-	.string "registered to SELECT for easy use.$"
+	.string "An item in the Bag can be\n"
+	.string "registered to {SELECT_BUTTON} for easy use.$"
 
 gText_PokemonTrainerSchoolEmail::
 	.string "There's an e-mail from POKéMON TRAINER\n"
@@ -923,7 +923,7 @@ gText_UnusedNicknameReceivedPokemon::
 
 gText_PlayerWhitedOut::
 	.string "{PLAYER} is out of usable\n"
-	.string "POKéMON!\p{PLAYER} whited out!$"
+	.string "Pokémon!\p{PLAYER} whited out!$"
 
 gText_FirstShouldRestoreMonsHealth::
 	.string "First, you should restore your\n"
@@ -981,12 +981,12 @@ gText_ComeBackWithSecretPower::
 	.string "you good stuff in secrecy.$"
 
 gText_PokerusExplanation::
-	.string "Your POKéMON may be infected with\n"
-	.string "POKéRUS.\p"
-	.string "Little is known about the POKéRUS\n"
+	.string "Your Pokémon may be infected with\n"
+	.string "Pokérus.\p"
+	.string "Little is known about the Pokérus\n"
 	.string "except that they are microscopic life-\l"
-	.string "forms that attach to POKéMON.\p"
-	.string "While infected, POKéMON are said to\n"
+	.string "forms that attach to Pokémon.\p"
+	.string "While infected, Pokémon are said to\n"
 	.string "grow exceptionally well.$"
 
 	.include "data/text/surf.inc"
@@ -1153,3 +1153,253 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
+
+	.include "data/maps/Zone0Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone0Shops/scripts.inc"
+
+	.include "data/maps/Zone1A/scripts.inc"
+
+	.include "data/maps/Zone1Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone1Shops/scripts.inc"
+
+	.include "data/maps/Zone2A/scripts.inc"
+
+	.include "data/maps/Zone2B/scripts.inc"
+
+	.include "data/maps/Zone2C/scripts.inc"
+
+	.include "data/maps/Zone2Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone2Shops/scripts.inc"
+
+	.include "data/maps/Zone3A/scripts.inc"
+
+	.include "data/maps/Zone3Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone3Shops/scripts.inc"
+
+	.include "data/maps/Zone4A/scripts.inc"
+
+	.include "data/maps/Zone4B/scripts.inc"
+
+	.include "data/maps/Zone4C/scripts.inc"
+
+	.include "data/maps/Zone4D/scripts.inc"
+
+	.include "data/maps/Zone4E/scripts.inc"
+
+	.include "data/maps/Zone4Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone4Shops/scripts.inc"
+
+	.include "data/maps/Zone5A/scripts.inc"
+
+	.include "data/maps/Zone5B/scripts.inc"
+
+	.include "data/maps/Zone5Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone5Shops/scripts.inc"
+
+	.include "data/maps/Zone6A/scripts.inc"
+
+	.include "data/maps/Zone6Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone6Shops/scripts.inc"
+
+	.include "data/maps/Zone7A/scripts.inc"
+
+	.include "data/maps/Zone8A/scripts.inc"
+
+	.include "data/maps/Zone8B/scripts.inc"
+
+	.include "data/maps/Zone8C/scripts.inc"
+
+	.include "data/maps/Zone8D/scripts.inc"
+
+	.include "data/maps/Zone7B/scripts.inc"
+
+	.include "data/maps/Zone8Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone8Shops/scripts.inc"
+
+	.include "data/maps/Zone9A/scripts.inc"
+
+	.include "data/maps/Zone9B/scripts.inc"
+
+	.include "data/maps/Zone9C/scripts.inc"
+
+	.include "data/maps/Zone9D/scripts.inc"
+
+	.include "data/maps/Zone9E/scripts.inc"
+
+	.include "data/maps/Zone9F/scripts.inc"
+
+	.include "data/maps/Zone9G/scripts.inc"
+
+	.include "data/maps/Zone9Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone9Shops/scripts.inc"
+
+	.include "data/maps/Zone10A/scripts.inc"
+
+	.include "data/maps/Zone10B/scripts.inc"
+
+	.include "data/maps/Zone10Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone10Shops/scripts.inc"
+
+	.include "data/maps/Zone0A/scripts.inc"
+
+	.include "data/maps/Zone0B/scripts.inc"
+
+	.include "data/maps/Zone0C/scripts.inc"
+
+	.include "data/maps/Zone11A/scripts.inc"
+
+	.include "data/maps/Zone11Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone11Shops/scripts.inc"
+
+	.include "data/maps/Zone12A/scripts.inc"
+
+	.include "data/maps/Zone12Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone12Shops/scripts.inc"
+
+	.include "data/maps/Zone13A/scripts.inc"
+
+	.include "data/maps/Zone13B/scripts.inc"
+
+	.include "data/maps/Zone13C/scripts.inc"
+
+	.include "data/maps/Zone14A/scripts.inc"
+
+	.include "data/maps/Zone14B/scripts.inc"
+
+	.include "data/maps/Zone14C/scripts.inc"
+
+	.include "data/maps/Zone14Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone14Shops/scripts.inc"
+
+	.include "data/maps/Zone15A/scripts.inc"
+
+	.include "data/maps/Zone15B/scripts.inc"
+
+	.include "data/maps/Zone15Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone15Shops/scripts.inc"
+
+	.include "data/maps/Zone16A/scripts.inc"
+
+	.include "data/maps/Zone16Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone16Shops/scripts.inc"
+
+	.include "data/maps/Zone17A/scripts.inc"
+
+	.include "data/maps/Zone17Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone17Shops/scripts.inc"
+
+	.include "data/maps/Zone18A/scripts.inc"
+
+	.include "data/maps/Zone18B/scripts.inc"
+
+	.include "data/maps/Zone19A/scripts.inc"
+
+	.include "data/maps/Zone19B/scripts.inc"
+
+	.include "data/maps/Zone19C/scripts.inc"
+
+	.include "data/maps/Zone19D/scripts.inc"
+
+	.include "data/maps/Zone19Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone19Shops/scripts.inc"
+
+	.include "data/maps/Zone20A/scripts.inc"
+
+	.include "data/maps/Zone20Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone20Shops/scripts.inc"
+
+	.include "data/maps/Zone21A/scripts.inc"
+
+	.include "data/maps/Zone21B/scripts.inc"
+
+	.include "data/maps/Zone21C/scripts.inc"
+
+	.include "data/maps/Zone21D/scripts.inc"
+
+	.include "data/maps/Zone21Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone21Shops/scripts.inc"
+
+	.include "data/maps/Zone22A/scripts.inc"
+
+	.include "data/maps/Zone22Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone22Shops/scripts.inc"
+
+	.include "data/maps/Zone23A/scripts.inc"
+
+	.include "data/maps/Zone23Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone23Shops/scripts.inc"
+
+	.include "data/maps/Zone24A/scripts.inc"
+
+	.include "data/maps/Zone24B/scripts.inc"
+
+	.include "data/maps/Zone25A/scripts.inc"
+
+	.include "data/maps/Zone25B/scripts.inc"
+
+	.include "data/maps/Zone25C/scripts.inc"
+
+	.include "data/maps/Zone25D/scripts.inc"
+
+	.include "data/maps/Zone25E/scripts.inc"
+
+	.include "data/maps/Zone25F/scripts.inc"
+
+	.include "data/maps/Zone25G/scripts.inc"
+
+	.include "data/maps/Zone25H/scripts.inc"
+
+	.include "data/maps/Zone25I/scripts.inc"
+
+	.include "data/maps/Zone25J/scripts.inc"
+
+	.include "data/maps/Zone25K/scripts.inc"
+
+	.include "data/maps/Zone25L/scripts.inc"
+
+	.include "data/maps/Zone25Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone25Shops/scripts.inc"
+
+	.include "data/maps/ZoneB1/scripts.inc"
+
+	.include "data/maps/Zone26A/scripts.inc"
+
+	.include "data/maps/Zone26B/scripts.inc"
+
+	.include "data/maps/Zone26Sanctuary/scripts.inc"
+
+	.include "data/maps/Zone26Shops/scripts.inc"
+
+	.include "data/maps/Zone27A/scripts.inc"
+
+	.include "data/maps/Zone28A/scripts.inc"
+
+	.include "data/maps/Zone3B/scripts.inc"
+
+	.include "data/maps/Zone9H/scripts.inc"
+
+	.include "data/maps/Zone20B/scripts.inc"
+
+	.include "data/maps/Zone10C/scripts.inc"
