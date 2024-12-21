@@ -71,6 +71,7 @@
 #include "palette.h"
 #include "battle_util.h"
 #include "battle_setup.h"
+#include "item_menu.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -4345,4 +4346,22 @@ void UseBlankMessageToCancelPokemonPic(void)
 bool8 CheckSpeciesClause(void)
 {
     return IsCaptureBlockedBySpeciesClause(VarGet(VAR_TEMP_0));
+}
+
+void ChooseItemFromBag(void)
+{
+    switch (VarGet(VAR_TEMP_1))
+    {
+    case MEDICINE_POCKET:
+    case BATTLEITEMS_POCKET:
+    case CONSUMABLES_POCKET:
+    case BERRIES_POCKET:
+    case BALLS_POCKET:
+    case TMHM_POCKET:
+    case TREASURES_POCKET:
+    case KEYITEMS_POCKET:
+        GoToBagMenu(ITEMMENULOCATION_CHOOSE_ITEM, VarGet(VAR_TEMP_1), CB2_ReturnToFieldContinueScript);
+    default:
+        break;
+    }
 }
