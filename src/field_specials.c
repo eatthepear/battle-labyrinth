@@ -72,6 +72,7 @@
 #include "battle_util.h"
 #include "battle_setup.h"
 #include "item_menu.h"
+#include "item.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -4364,4 +4365,18 @@ void ChooseItemFromBag(void)
     default:
         break;
     }
+}
+
+bool8 SendChosenMonToPC(void)
+{
+    struct Pokemon *pokemon = &gPlayerParty[VarGet(VAR_TEMP_3)];
+    u32 monItem = GetMonData(pokemon, MON_DATA_HELD_ITEM, NULL);
+    if (monItem != ITEM_NONE)
+        AddBagItem(monItem, 1);
+    monItem = 0;
+    SetMonData(pokemon, MON_DATA_HELD_ITEM, &monItem);
+
+    CopyMonToPC(pokemon);
+    DeletePartyMon(VarGet(VAR_TEMP_3));
+    return FALSE;
 }
