@@ -106,5 +106,7 @@ void BufferMoveDeleterNicknameAndMove(void);
 void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
 void TryDoTrainingToSelectedMon(u8 taskId);
+void ChooseSendMonToPC(void);
+void DisplaySendMonToPCMessage(struct Pokemon* mon);
 
 #endif // GUARD_PARTY_MENU_H

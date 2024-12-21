@@ -37,6 +37,7 @@
 #include "random.h"
 #include "recorded_battle.h"
 #include "rtc.h"
+#include "script_pokemon_util.h"
 #include "sound.h"
 #include "string_util.h"
 #include "strings.h"
@@ -7328,4 +7329,10 @@ u32 CheckDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler)
     if (moveType != TYPE_NONE)
         return moveType;
     return gMovesInfo[move].type;
+}
+
+void DeletePartyMon(u8 position)
+{
+    PurgeMonOrBoxMon(TOTAL_BOXES_COUNT, position);
+    CompactPartySlots();
 }
