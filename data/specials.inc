@@ -557,3 +557,4 @@ gSpecials::
 	def_special CheckSpeciesClause
 	def_special ChooseItemFromBag
 	def_special ChoosePartyMonForTraining
+	def_special SendChosenMonToPC
