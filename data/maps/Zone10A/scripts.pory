@@ -1,0 +1,364 @@
+mapscripts Zone10A_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE10A_SUN_STONE)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE10A_SOFT_SAND)) {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE10A_DRAGON_FANG)) {
+			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE10A_METAL_COAT)) {
+			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE10A_TM16)) {
+			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE10A_HEAVY_DUTY_BOOTS)) {
+			setvar(VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+	}
+}
+
+script Zone10A_EventScript_Adamina {
+	lock
+	faceplayer
+	if (var(VAR_ZONE_10_STATE) == 0) {
+		msgbox(Zone10A_Text_NoChance)
+		setvar(VAR_ZONE_10_STATE, 1)
+	}
+	msgbox(Zone10A_Text_Explain)
+	if ((flag(FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_1) == false) ||
+	(flag(FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_2) == false) ||
+	(flag(FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_3) == false)) {
+		release
+		end
+	}
+	fadeoutbgm(1)
+	msgbox(Zone10A_Text_FoundEm)
+	delay(96)
+	msgbox(Zone10A_Text_CrushYou)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+		trainerbattle_no_intro(TRAINER_PBL_ADAMINA_LEVIATHAN_9_BRUTAL, Zone10A_Text_Leviathan9Defeat)
+	} else {
+		trainerbattle_no_intro(TRAINER_PBL_ADAMINA_LEVIATHAN_9, Zone10A_Text_Leviathan9Defeat)
+	}
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	msgbox(Zone10A_Text_HeadInside)
+	applymovement(6, Common_Movement_FaceUp)
+	waitmovement(0)
+	opendoor(47, 27)
+	waitdooranim
+	applymovement(6, Common_Movement_WalkUp)
+	waitmovement(0)
+	removeobject(VAR_LAST_TALKED)
+	setflag(FLAG_BEAT_LEVIATHAN_9)
+	closedoor(47, 27)
+	waitdooranim
+	release
+	end
+}
+
+text Zone10A_Text_NoChance {
+	"{COLOR BLUE}Adamina{COLOR DARK_GRAY}: Nope.\n"
+	"No chance you're getting in.\p"
+	"Zero.\n"
+	"Zip.\l"
+	"Zilch.\l"
+	"…\l"
+	"…\l"
+	"…\l"
+	"Fine."
+}
+
+text Zone10A_Text_Explain {
+	"If you really want to get in,\n"
+	"you have to earn your place.\p"
+	"In the desert, there are 3 hidden\n"
+	"Yellow Shards.\p"
+	"Find them and bring them to me.\n"
+	"Then we'll see."
+}
+
+text Zone10A_Text_FoundEm {
+	"{COLOR BLUE}Adamina{COLOR DARK_GRAY}: Oh, wow, you actually\n"
+	"found them? What a surprise."
+}
+
+text Zone10A_Text_CrushYou {
+	"{COLOR BLUE}Adamina{COLOR DARK_GRAY}: Oh, were you expecting me\n"
+	"to let you in just because you\l"
+	"found some scraps? No way.\p"
+	"You'll have to beat me in a battle\n"
+	"to earn my respect!\l"
+	"I'm gonna crush you!$"
+}
+
+text Zone10A_Text_Leviathan9Defeat {
+	"Adamina: Fine. A win is a win."
+}
+
+text Zone10A_Text_HeadInside {
+	"{COLOR BLUE}Adamina{COLOR DARK_GRAY}: Go on, head inside.\n"
+	"I've got nothing for you.$"
+}
+
+script Zone10A_EventScript_SunStone {
+	lock
+	if (flag(FLAG_ITEM_ZONE10A_SUN_STONE)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE10A_SUN_STONE)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_SUN_STONE, 1)
+	release
+	end
+}
+
+script Zone10A_EventScript_SoftSand {
+	lock
+	if (flag(FLAG_ITEM_ZONE10A_SOFT_SAND)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE10A_SOFT_SAND)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_SOFT_SAND, 1)
+	release
+	end
+}
+
+script Zone10A_EventScript_DragonFang {
+	lock
+	if (flag(FLAG_ITEM_ZONE10A_DRAGON_FANG)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE10A_DRAGON_FANG)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_DRAGON_FANG, 1)
+	release
+	end
+}
+
+script Zone10A_EventScript_MetalCoat {
+	lock
+	if (flag(FLAG_ITEM_ZONE10A_METAL_COAT)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE10A_METAL_COAT)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_METAL_COAT, 1)
+	release
+	end
+}
+
+script Zone10A_EventScript_TM16 {
+	lock
+	if (flag(FLAG_ITEM_ZONE10A_TM16)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE10A_TM16)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_TM16, 1)
+	release
+	end
+}
+
+script Zone10A_EventScript_HeavyDutyBoots {
+	lock
+	if (flag(FLAG_ITEM_ZONE10A_HEAVY_DUTY_BOOTS)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE10A_HEAVY_DUTY_BOOTS)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_HEAVY_DUTY_BOOTS, 1)
+	release
+	end
+}
+
+script Zone10A_EventScript_Ranger {
+	lock
+	faceplayer
+	if (flag(FLAG_ZONE10A_RECEIVED_SAFETY_GOGGLES) == false) {
+		msgbox(format("Excuse me! I'm a member of the Pokémon Ranger Corps, working to protect both people and Pokémon.\pIt's not safe to be out in the sandstorm for long periods of time, so take this!"), MSGBOX_DEFAULT)
+		giveitem(ITEM_SAFETY_GOGGLES)
+		setflag(FLAG_ZONE10A_RECEIVED_SAFETY_GOGGLES)
+	}
+	msgbox(format("Remember kids, safety first!"))
+	release
+	end
+}
+
+raw `
+Zone10A_EventScript_Kyle::
+	trainerbattle_single TRAINER_PBL_KYLE, Zone10A_Text_KyleIntro, Zone10A_Text_KyleDefeat
+	msgbox Zone10A_Text_KylePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone10A_Text_KyleIntro:
+	.string "I daydream a lot. It's a bad habit!$"
+
+Zone10A_Text_KyleDefeat:
+	.string "I dream of one day winning…$"
+
+Zone10A_Text_KylePostBattle:
+	.string "I'll be a champion some day,\n"
+	.string "just you wait!$"
+
+Zone10A_EventScript_Belle::
+	trainerbattle_single TRAINER_PBL_BELLE, Zone10A_Text_BelleIntro, Zone10A_Text_BelleDefeat
+	msgbox Zone10A_Text_BellePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone10A_Text_BelleIntro:
+	.string "Pfft!$"
+
+Zone10A_Text_BelleDefeat:
+	.string "Sorry, I didn't mean to be rude!$"
+
+Zone10A_Text_BellePostBattle:
+	.string "Some sand flew into my mouth so I\n"
+	.string "had to get it out!$"
+
+Zone10A_EventScript_Dewey::
+	trainerbattle_single TRAINER_PBL_DEWEY, Zone10A_Text_DeweyIntro, Zone10A_Text_DeweyDefeat
+	msgbox Zone10A_Text_DeweyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone10A_Text_DeweyIntro:
+	.string "My party is so worn down…\n"
+	.string "Maybe they'll be reenergized after\l"
+	.string "battle!$"
+
+Zone10A_Text_DeweyDefeat:
+	.string "Hmm…\n"
+	.string "I don't think they gained any energy…$"
+
+Zone10A_Text_DeweyPostBattle:
+	.string "Maybe I need to rest instead.$"
+
+Zone10A_EventScript_Pearlie::
+	trainerbattle_single TRAINER_PBL_PEARLIE, Zone10A_Text_PearlieIntro, Zone10A_Text_PearlieDefeat
+	msgbox Zone10A_Text_PearliePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone10A_Text_PearlieIntro:
+	.string "Sand keeps getting in my lunch,\n"
+	.string "so I'll take out my frustration on you!$"
+
+Zone10A_Text_PearlieDefeat:
+	.string "Ugh! Now there's sand everywhere!$"
+
+Zone10A_Text_PearliePostBattle:
+	.string "I don't like sand.\n"
+	.string "It's coarse and rough and irritating and\l"
+	.string "it gets everywhere.$"
+
+Zone10A_EventScript_Ernest::
+	trainerbattle_single TRAINER_PBL_ERNEST, Zone10A_Text_ErnestIntro, Zone10A_Text_ErnestDefeat
+	msgbox Zone10A_Text_ErnestPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone10A_Text_ErnestIntro:
+	.string "I came prepared the wrath of the\n"
+	.string "desert!$"
+
+Zone10A_Text_ErnestDefeat:
+	.string "But I was not prepared for you!$"
+
+Zone10A_Text_ErnestPostBattle:
+	.string "Preparations are important, be it\n"
+	.string "for hiking or battling!$"
+
+Zone10A_EventScript_Alana::
+	trainerbattle_single TRAINER_PBL_ALANA, Zone10A_Text_AlanaIntro, Zone10A_Text_AlanaDefeat
+	msgbox Zone10A_Text_AlanaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone10A_Text_AlanaIntro:
+	.string "Conrad told me to come here for our date,\n"
+	.string "but he's nowhere to be found!$"
+
+Zone10A_Text_AlanaDefeat:
+	.string "I wonder if I got stood up…$"
+
+Zone10A_Text_AlanaPostBattle:
+	.string "No way, a woman like me getting stood up?\n"
+	.string "He probably just got lost.$"
+
+Zone10A_EventScript_Susan::
+	trainerbattle_single TRAINER_PBL_SUSAN, Zone10A_Text_SusanIntro, Zone10A_Text_SusanDefeat
+	msgbox Zone10A_Text_SusanPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone10A_Text_SusanIntro:
+	.string "ARGH! YOU STUPID, LITTLE… ARGH!$"
+
+Zone10A_Text_SusanDefeat:
+	.string "UGH!$"
+
+Zone10A_Text_SusanPostBattle:
+	.string "Crunch, crunch, crunch…\n"
+	.string "…\p"
+	.string "Sorry about earlier.\n"
+	.string "I was feeling a little bit hangry.$"
+
+Zone10A_EventScript_Conrad::
+	trainerbattle_single TRAINER_PBL_CONRAD, Zone10A_Text_ConradIntro, Zone10A_Text_ConradDefeat
+	msgbox Zone10A_Text_ConradPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone10A_Text_ConradIntro:
+	.string "I'm looking for my date.\n"
+	.string "Have you seen her?$"
+
+Zone10A_Text_ConradDefeat:
+	.string "She probably thinks I stood her up…$"
+
+Zone10A_Text_ConradPostBattle:
+	.string "Not a great first impression,\n"
+	.string "if I'm being honest.$"
+`

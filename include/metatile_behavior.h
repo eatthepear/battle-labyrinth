@@ -23,6 +23,7 @@ bool8 MetatileBehavior_IsIce(u8);
 bool8 MetatileBehavior_IsWarpDoor(u8);
 bool8 MetatileBehavior_IsDoor(u8);
 bool8 MetatileBehavior_IsEscalator(u8);
+bool8 MetatileBehavior_IsGrassTerrain(u8);
 bool8 MetatileBehavior_IsLadder(u8);
 bool8 MetatileBehavior_IsNonAnimDoor(u8);
 bool8 MetatileBehavior_IsDeepSouthWarp(u8);
@@ -35,6 +36,7 @@ bool8 MetatileBehavior_IsArrowWarp(u8);
 bool8 MetatileBehavior_IsForcedMovementTile(u8);
 bool8 MetatileBehavior_IsIce_2(u8);
 bool8 MetatileBehavior_IsTrickHouseSlipperyFloor(u8);
+bool8 MetatileBehavior_IsBridgeTerrain(u8);
 bool8 MetatileBehavior_IsWalkNorth(u8);
 bool8 MetatileBehavior_IsWalkSouth(u8);
 bool8 MetatileBehavior_IsWalkWest(u8);
@@ -165,5 +167,6 @@ bool8 MetatileBehavior_IsSidewaysStairsRightSideBottom(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSidewaysStairsLeftSideBottom(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSidewaysStairsRightSideAny(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSidewaysStairsLeftSideAny(u8 metatileBehavior);
+bool8 MetatileBehavior_IsHeadbuttTree(u8);
 
 #endif // GUARD_METATILE_BEHAVIOR_H

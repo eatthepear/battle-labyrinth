@@ -1,0 +1,261 @@
+mapscripts Zone9A_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE9A_BIG_ROOT)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE9A_MIRACLE_SEED)) {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE9A_TM13)) {
+			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_TM_CHEST)
+		}
+	}
+}
+
+script Zone9A_EventScript_SetRegularGrass {
+	setvar(VAR_ZONE_9_STATE, 1)
+}
+
+script Zone9A_EventScript_SetThickGrass {
+	setvar(VAR_ZONE_9_STATE, 0)
+}
+
+script Zone9A_EventScript_HerbalSign {
+	msgbox(format("Herbal and Incense Shop"), MSGBOX_SIGN)
+	end
+}
+
+script Zone9A_EventScript_Man {
+	lock
+	faceplayer
+	msgbox(format("Hey there, champ!\pIn our modest village, there is a family of strong Trainers.\pWhy don't you go spar with them?"))
+	release
+	end
+}
+
+script Zone9A_EventScript_Ari {
+	lock
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 17) {
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 19) {
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+		waitmovement(0)
+	}
+	faceplayer
+	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+		msgbox("{COLOR BLUE}Ari{COLOR DARK_GRAY}: Howzit goin?\pOh, you're a traveler!\nYou might be strong enough…\pI bet you can't defeat the five\nmembers of my family in a row,\lwithout being healed in between\lbattles.\pWhat do you say to my little wager?", MSGBOX_YESNO)
+	} else {
+		msgbox("{COLOR BLUE}Ari{COLOR DARK_GRAY}: Howzit goin?\pOh, you're a traveler!\nYou might be strong enough…\pI bet you can't defeat the five\nmembers of my family in a row.\pYou'll be fully healed in between\nbattles.\pWhat do you say to my little wager?", MSGBOX_YESNO)
+	}
+	if (var(VAR_RESULT) == NO) {
+		msgbox("Ah, so you're a chicken. Well, if\nyou change your mind, I'll be here.", MSGBOX_DEFAULT)
+		release
+		end
+	} else {
+		msgbox(format("Alright, well, best of luck!"), MSGBOX_DEFAULT)
+		setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+		trainerbattle_no_intro(TRAINER_PBL_ARI, "What!? How!?\nYou're tougher than I thought!")
+		if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_CHALLENGE) == false)) {	
+			special(HealPlayerParty)
+		}
+		applymovement(1, Common_Movement_WalkInPlaceFasterUp)
+		waitmovement(0)
+		msgbox("{COLOR BLUE}Ari{COLOR DARK_GRAY}: Hey, everyone!\nI've found a pretty strong Trainer!", MSGBOX_DEFAULT)
+		closemessage
+		applymovement(1, Zone9A_Movement_WinstrateEnterHouse)
+		waitmovement(0)
+		removeobject(1)
+		applymovement(OBJ_EVENT_ID_PLAYER, Zone9A_Movement_WaitForNextWinstrate)
+		waitmovement(0)
+		addobject(2)
+		applymovement(2, Common_Movement_WalkDown)
+		waitmovement(0)
+		msgbox("{COLOR BLUE}Bertha{COLOR DARK_GRAY}: You beat my brother?\nUgh. Such a brat.\pLet's just get this over with.", MSGBOX_DEFAULT)
+		trainerbattle_no_intro(TRAINER_PBL_BERTHA, "Sigh…\nI thought this would happen…")
+		if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_CHALLENGE) == false)) {	
+			special(HealPlayerParty)
+		}
+		applymovement(2, Common_Movement_WalkInPlaceFasterUp)
+		waitmovement(0)
+		msgbox("{COLOR BLUE}Bertha{COLOR DARK_GRAY}: Mom! It's your turn!", MSGBOX_DEFAULT)
+		closemessage
+		applymovement(2, Zone9A_Movement_WinstrateEnterHouse)
+		waitmovement(0)
+		removeobject(2)
+		applymovement(OBJ_EVENT_ID_PLAYER, Zone9A_Movement_WaitForNextWinstrate)
+		waitmovement(0)
+		addobject(3)
+		applymovement(3, Common_Movement_WalkDown)
+		waitmovement(0)
+		msgbox("{COLOR BLUE}Cassandra{COLOR DARK_GRAY}: Oh! I am so excited!\pFinally, a challenger who got past\nboth of my children!\pIt's Momma's time to shine!", MSGBOX_DEFAULT)
+		trainerbattle_no_intro(TRAINER_PBL_CASSANDRA, "It was you who shined instead!")
+		if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_CHALLENGE) == false)) {	
+			special(HealPlayerParty)
+		}
+		applymovement(3, Common_Movement_WalkInPlaceFasterUp)
+		waitmovement(0)
+		msgbox("{COLOR BLUE}Cassandra{COLOR DARK_GRAY}: It's all you, baby!", MSGBOX_DEFAULT)
+		closemessage
+		applymovement(3, Zone9A_Movement_WinstrateEnterHouse)
+		waitmovement(0)
+		removeobject(3)
+		applymovement(OBJ_EVENT_ID_PLAYER, Zone9A_Movement_WaitForNextWinstrate)
+		waitmovement(0)
+		addobject(4)
+		applymovement(4, Common_Movement_WalkDown)
+		waitmovement(0)
+		msgbox("{COLOR BLUE}Dominic{COLOR DARK_GRAY}: Guess what time it is?\nIt's time to take out the trash!", MSGBOX_DEFAULT)
+		trainerbattle_no_intro(TRAINER_PBL_DOMINIC, "Sorry, sorry!\nI didn't realize you were so strong!")
+		if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_CHALLENGE) == false)) {	
+			special(HealPlayerParty)
+		}
+		msgbox("{COLOR BLUE}Dominic{COLOR DARK_GRAY}: Kids!\nWake your grandma up!", MSGBOX_DEFAULT)
+		closemessage
+		applymovement(4, Common_Movement_WalkInPlaceFasterUp)
+		waitmovement(0)
+		applymovement(4, Zone9A_Movement_WinstrateEnterHouse)
+		waitmovement(0)
+		removeobject(4)
+		applymovement(OBJ_EVENT_ID_PLAYER, Zone9A_Movement_WaitForNextWinstrate)
+		waitmovement(0)
+		addobject(5)
+		applymovement(5, Common_Movement_WalkDown)
+		waitmovement(0)
+		msgbox(format("{COLOR BLUE}Erica{COLOR DARK_GRAY}: Who dares disturb me from my slumber?"))
+		trainerbattle_no_intro(TRAINER_PBL_ERICA, Zone9A_Text_EricaDefeat)
+		msgbox("{COLOR BLUE}Erica{COLOR DARK_GRAY}: Good, good.\pWell done, young one.\pHere is a little reward for you\ncompleting my family's trial.")
+		giveitem(ITEM_TM14)
+		closemessage
+		applymovement(5, Common_Movement_WalkInPlaceFasterUp)
+		waitmovement(0)
+		applymovement(5, Zone9A_Movement_WinstrateEnterHouse)
+		waitmovement(0)
+		removeobject(5)
+		clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+		setflag(FLAG_HIDE_ZONE9A_ARI_WINSTRATE)
+		release
+		end
+	}
+}
+
+movement Zone9A_Movement_WinstrateEnterHouse {
+	walk_in_place_faster_up
+	walk_up
+}
+
+movement Zone9A_Movement_WaitForNextWinstrate {
+	delay_16 * 3
+}
+
+text Zone9A_Text_EricaDefeat {
+	"Oh… You are the one…"
+}
+
+script Zone9A_EventScript_ItemBigRoot {
+	lock
+	if (flag(FLAG_ITEM_ZONE9A_BIG_ROOT)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE9A_BIG_ROOT)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_BIG_ROOT, 1)
+	release
+	end
+}
+
+script Zone9A_EventScript_ItemMiracleSeed {
+	lock
+	if (flag(FLAG_ITEM_ZONE9A_MIRACLE_SEED)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE9A_MIRACLE_SEED)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_MIRACLE_SEED, 1)
+	release
+	end
+}
+
+script Zone9A_EventScript_ItemTM13 {
+	lock
+	if (flag(FLAG_ITEM_ZONE9A_TM13)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE9A_TM13)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_TM13, 1)
+	release
+	end
+}
+
+raw `
+Zone9A_EventScript_Cooper::
+       trainerbattle_single TRAINER_PBL_COOPER, Zone9A_Text_CooperIntro, Zone9A_Text_CooperDefeat
+       msgbox Zone9A_Text_CooperPostBattle, MSGBOX_AUTOCLOSE
+       end
+
+Zone9A_Text_CooperIntro:
+	.string "Bet you didn't expect me!$"
+
+Zone9A_Text_CooperDefeat:
+	.string "I didn't expect you, either!$"
+
+Zone9A_Text_CooperPostBattle:
+	.string "I just pop out occasionally in\n"
+	.string "case someone is there.$"
+
+Zone9A_EventScript_Carmine::
+       trainerbattle_single TRAINER_PBL_CARMINE, Zone9A_Text_CarmineIntro, Zone9A_Text_CarmineDefeat
+       msgbox Zone9A_Text_CarminePostBattle, MSGBOX_AUTOCLOSE
+       end
+
+Zone9A_Text_CarmineIntro:
+	.string "Whew, it's hot in the jungle!$"
+
+Zone9A_Text_CarmineDefeat:
+	.string "I think the humidity is the worst\n"
+	.string "part!$"
+
+Zone9A_Text_CarminePostBattle:
+	.string "I hope there's AC in the village.$"
+
+Zone9A_EventScript_Sign::
+	msgbox Zone9A_Text_Sign, MSGBOX_SIGN
+	end
+
+Zone9A_Text_Sign:
+	.string "Trainer Tips\p"
+	.string "While you are on the Pokémon stats\n"
+	.string "screen, you can press {A_BUTTON} to switch\l"
+	.string "between stats, IVs, or EVs.$"
+`

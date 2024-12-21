@@ -11,7 +11,7 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_NORMAL]                             = TILE_FLAG_UNUSED,
     [MB_TALL_GRASS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_LONG_GRASS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_UNUSED_05]                          = TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_GRASS_TERRAIN]                      = TILE_FLAG_UNUSED,
     [MB_DEEP_SAND]                          = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_SHORT_GRASS]                        = TILE_FLAG_UNUSED,
     [MB_CAVE]                               = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
@@ -45,6 +45,8 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_LAVARIDGE_GYM_B1F_WARP]             = TILE_FLAG_UNUSED,
     [MB_SEAWEED_NO_SURFACING]               = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_REFLECTION_UNDER_BRIDGE]            = TILE_FLAG_UNUSED,
+    [MB_SNOW]                               = TILE_FLAG_UNUSED,
+    [MB_HEADBUTT]                           = TILE_FLAG_UNUSED,
     [MB_IMPASSABLE_EAST]                    = TILE_FLAG_UNUSED,
     [MB_IMPASSABLE_WEST]                    = TILE_FLAG_UNUSED,
     [MB_IMPASSABLE_NORTH]                   = TILE_FLAG_UNUSED,
@@ -251,9 +253,9 @@ bool8 MetatileBehavior_IsEscalator(u8 metatileBehavior)
         return FALSE;
 }
 
-bool8 Unref_MetatileBehavior_IsUnused04(u8 metatileBehavior)
+bool8 MetatileBehavior_IsGrassTerrain(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_UNUSED_04)
+    if (metatileBehavior == MB_GRASS_TERRAIN)
         return TRUE;
     else
         return FALSE;
@@ -374,9 +376,9 @@ bool8 MetatileBehavior_IsTrickHouseSlipperyFloor(u8 metatileBehavior)
         return FALSE;
 }
 
-bool8 Unref_MetatileBehavior_IsUnused05(u8 metatileBehavior)
+bool8 MetatileBehavior_IsBridgeTerrain(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_UNUSED_05)
+    if (metatileBehavior == MB_BRIDGE_TERRAIN)
         return TRUE;
     else
         return FALSE;
@@ -769,7 +771,7 @@ bool8 MetatileBehavior_IsAshGrass(u8 metatileBehavior)
 bool8 MetatileBehavior_IsFootprints(u8 metatileBehavior)
 {
     // MB_FOOTPRINTS is not used by any metatiles.
-    if (metatileBehavior == MB_FOOTPRINTS)
+    if (metatileBehavior == MB_FOOTPRINTS || metatileBehavior == MB_SNOW)
         return TRUE;
     else
         return FALSE;
@@ -1538,6 +1540,14 @@ bool8 MetatileBehavior_IsSidewaysStairsLeftSideAny(u8 metatileBehavior)
 bool8 MetatileBehavior_IsRockStairs(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_ROCK_STAIRS)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsHeadbuttTree(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_HEADBUTT)
         return TRUE;
     else
         return FALSE;

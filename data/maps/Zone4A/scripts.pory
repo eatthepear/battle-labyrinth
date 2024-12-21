@@ -1,0 +1,180 @@
+mapscripts Zone4A_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE4A_BURN_HEAL)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE4A_SILVER_POWDER)) {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+	}
+}
+
+script Zone4A_EventScript_PoisonTree {
+	lock
+	bufferleadmonspeciesname(STR_VAR_1)
+	msgbox(format("This strange looking tree has potentially dangerous looking sap flowing out of it.\pDo you want to have your {STR_VAR_1} touch it?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		trysetstatus(STATUS1_POISON, 0)
+		msgbox(format("Your {STR_VAR_1} touched the strange sap and was exposed to the poison!"))
+	} else {
+		msgbox(format("Better to be safe than sorry."))
+	}
+	release
+}
+
+// script Zone4A_EventScript_Breeder {
+// 	lock
+// 	faceplayer
+// 	if (flag(FLAG_ZONE0B_RECEIVED_EEVEE) == false) {
+// 		msgbox(format("Hello, {PLAYER}!\nI work at the Pokémon Day-Care.\pThere's a special Eevee giveaway at the Day-Care, so go check that out!"))
+// 		release
+// 		end
+// 	}
+// 	msgbox(format("Hello, {PLAYER}!\nI work at the Pokémon Day-Care.\pWe've been studying how Eevee evolves differently based on which elemental Gem it holds when it levels up."), MSGBOX_DEFAULT)
+// 	while (var(VAR_TEMP_0) != 1) {
+// 		msgbox(format("What's your favorite evolution of Eevee?"), MSGBOX_DEFAULT)
+// 		dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Vaporeon", "Jolteon", "Flareon", "Espeon", "Umbreon", "Leafeon", "Glaceon", "Sylveon")
+// 		switch (var(VAR_RESULT)) {
+// 			case 0:
+// 				msgbox(format("Oh, so you like Vaporeon?"), MSGBOX_YESNO)
+// 				if (var(VAR_RESULT) == YES) {
+// 					msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+// 					giveitem(ITEM_WATER_GEM)
+// 					setvar(VAR_TEMP_0, 1)
+// 				}
+// 			case 1:
+// 				msgbox(format("Oh, so you like Jolteon?"), MSGBOX_YESNO)
+// 				if (var(VAR_RESULT) == YES) {
+// 					msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+// 					giveitem(ITEM_ELECTRIC_GEM)
+// 					setvar(VAR_TEMP_0, 1)
+// 				}
+// 			case 2:
+// 				msgbox(format("Oh, so you like Flareon?"), MSGBOX_YESNO)
+// 				if (var(VAR_RESULT) == YES) {
+// 					msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+// 					giveitem(ITEM_FIRE_GEM)
+// 					setvar(VAR_TEMP_0, 1)
+// 				}
+// 			case 3:
+// 				msgbox(format("Oh, so you like Espeon?"), MSGBOX_YESNO)
+// 				if (var(VAR_RESULT) == YES) {
+// 					msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+// 					giveitem(ITEM_PSYCHIC_GEM)
+// 					setvar(VAR_TEMP_0, 1)
+// 				}
+// 			case 4:
+// 				msgbox(format("Oh, so you like Umbreon?"), MSGBOX_YESNO)
+// 				if (var(VAR_RESULT) == YES) {
+// 					msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+// 					giveitem(ITEM_DARK_GEM)
+// 					setvar(VAR_TEMP_0, 1)
+// 				}
+// 			case 5:
+// 				msgbox(format("Oh, so you like Leafeon?"), MSGBOX_YESNO)
+// 				if (var(VAR_RESULT) == YES) {
+// 					msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+// 					giveitem(ITEM_GRASS_GEM)
+// 					setvar(VAR_TEMP_0, 1)
+// 				}
+// 			case 6:
+// 				msgbox(format("Oh, so you like Glaceon?"), MSGBOX_YESNO)
+// 				if (var(VAR_RESULT) == YES) {
+// 					msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+// 					giveitem(ITEM_ICE_GEM)
+// 					setvar(VAR_TEMP_0, 1)
+// 				}
+// 			case 7:
+// 				if (flag(FLAG_SETTINGS_BRUTAL) == true) {
+// 					msgbox(format("Unfortunately, I ran out of Fairy Gems to give out.\pYou'll have to find a way to evolve your Eevee into Sylveon elsewhere."), MSGBOX_DEFAULT)
+// 				} else {
+// 					msgbox(format("Oh, so you like Sylveon?"), MSGBOX_YESNO)
+// 					if (var(VAR_RESULT) == YES) {
+// 						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+// 						giveitem(ITEM_FAIRY_GEM)
+// 						setvar(VAR_TEMP_0, 1)
+// 					}
+// 				}
+// 		}
+// 	}
+// 	msgbox(format("I hope you can put that Gem to good use."), MSGBOX_DEFAULT)
+// 	if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_RED_THUMB) == false)) {
+// 		msgbox(format("If you want to evolve your Eevee into a different evolution, you can always find Gems by smashing rocks with a Sledgehammer!"), MSGBOX_DEFAULT)
+// 	}
+// 	delay(16)
+// 	msgbox(format("Well, I'm off to help other trainers.\pSee you!"), MSGBOX_DEFAULT)
+// 	fadescreenswapbuffers(FADE_TO_BLACK)
+// 	removeobject(3)
+// 	setflag(FLAG_ZONE4A_RECEIVED_GEM)
+// 	fadescreenswapbuffers(FADE_FROM_BLACK)
+// 	release
+// }
+
+// text Zone4A_Text_HereGem {
+// 	format("Then I suppose this would be of good use to you!")
+// } 
+
+script Zone4A_EventScript_ItemBurnHeal {
+	lock
+	if (flag(FLAG_ITEM_ZONE4A_BURN_HEAL)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE4A_BURN_HEAL)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_BURN_HEAL, 1)
+	release
+	end
+}
+
+script Zone4A_EventScript_ItemSilverPowder {
+	lock
+	if (flag(FLAG_ITEM_ZONE4A_SILVER_POWDER)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE4A_SILVER_POWDER)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_SILVER_POWDER, 1)
+	release
+	end
+}
+
+raw `
+Zone4A_EventScript_Sign::
+	msgbox Zone4A_Text_Sign, MSGBOX_SIGN
+	end
+
+Zone4A_Text_Sign:
+	.string "These woods are enchanted…\n"
+	.string "Don't get lost!$"
+
+Zone4A_EventScript_Herman::
+	trainerbattle_single TRAINER_PBL_HERMAN, Zone4A_Text_HermanIntro, Zone4A_Text_HermanDefeat
+	msgbox Zone4A_Text_HermanPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone4A_Text_HermanIntro:
+	.string "I keep going through this exit,\n"
+	.string "'cause it might lead somewhere!$"
+
+Zone4A_Text_HermanDefeat:
+	.string "But I keep getting back here!$"
+
+Zone4A_Text_HermanPostBattle:
+	.string "Try something else?\n"
+	.string "No, I'm sure this is the right way!$"
+
+`

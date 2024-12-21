@@ -4410,6 +4410,816 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_SANCTUARY",
+      "name": "Sanctuary_Layout",
+      "width": 77,
+      "height": 55,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Sanctuary",
+      "border_filepath": "data/layouts/Sanctuary/border.bin",
+      "blockdata_filepath": "data/layouts/Sanctuary/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHOPS",
+      "name": "Shops_Layout",
+      "width": 51,
+      "height": 38,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/Shops/border.bin",
+      "blockdata_filepath": "data/layouts/Shops/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE1A",
+      "name": "Zone1A_Layout",
+      "width": 20,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Unused1",
+      "border_filepath": "data/layouts/Zone1A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone1A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE2A",
+      "name": "Zone2A_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Unused1",
+      "border_filepath": "data/layouts/Zone2A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone2A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE2B",
+      "name": "Zone2B_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Unused1",
+      "border_filepath": "data/layouts/Zone2B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone2B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE3A",
+      "name": "Zone3A_Layout",
+      "width": 40,
+      "height": 35,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Zone3A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone3A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE4A",
+      "name": "Zone4A_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Zone4A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone4A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE4B",
+      "name": "Zone4B_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Zone4B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone4B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE4C",
+      "name": "Zone4C_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Zone4C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone4C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE4D",
+      "name": "Zone4D_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Zone4D/border.bin",
+      "blockdata_filepath": "data/layouts/Zone4D/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE4E",
+      "name": "Zone4E_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Zone4E/border.bin",
+      "blockdata_filepath": "data/layouts/Zone4E/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE5A",
+      "name": "Zone5A_Layout",
+      "width": 97,
+      "height": 33,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Zone5A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone5A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE5B",
+      "name": "Zone5B_Layout",
+      "width": 97,
+      "height": 33,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Zone5B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone5B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE6A",
+      "name": "Zone6A_Layout",
+      "width": 65,
+      "height": 39,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/Zone6A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone6A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE7A",
+      "name": "Zone7A_Layout",
+      "width": 80,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Zone7A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone7A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE8A",
+      "name": "Zone8A_Layout",
+      "width": 43,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone8A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone8A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE8B",
+      "name": "Zone8B_Layout",
+      "width": 48,
+      "height": 38,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone8B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone8B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE8C",
+      "name": "Zone8C_Layout",
+      "width": 43,
+      "height": 28,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone8C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone8C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE8D",
+      "name": "Zone8D_Layout",
+      "width": 15,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone8D/border.bin",
+      "blockdata_filepath": "data/layouts/Zone8D/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE7B",
+      "name": "Zone7B_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/Zone7B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone7B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE9A",
+      "name": "Zone9A_Layout",
+      "width": 52,
+      "height": 29,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Zone9A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone9A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE9B",
+      "name": "Zone9B_Layout",
+      "width": 8,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Zone9B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone9B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE9C",
+      "name": "Zone9C_Layout",
+      "width": 8,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Zone9C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone9C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE9D",
+      "name": "Zone9D_Layout",
+      "width": 8,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Zone9D/border.bin",
+      "blockdata_filepath": "data/layouts/Zone9D/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE9E",
+      "name": "Zone9E_Layout",
+      "width": 8,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Zone9E/border.bin",
+      "blockdata_filepath": "data/layouts/Zone9E/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE9F",
+      "name": "Zone9F_Layout",
+      "width": 8,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Zone9F/border.bin",
+      "blockdata_filepath": "data/layouts/Zone9F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE9G",
+      "name": "Zone9G_Layout",
+      "width": 8,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Zone9G/border.bin",
+      "blockdata_filepath": "data/layouts/Zone9G/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE10A",
+      "name": "Zone10A_Layout",
+      "width": 60,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/Zone10A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone10A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE10B",
+      "name": "Zone10B_Layout",
+      "width": 12,
+      "height": 17,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Zone10B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone10B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE0A",
+      "name": "Zone0A_Layout",
+      "width": 66,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/Zone0A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone0A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE0B",
+      "name": "Zone0B_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonDayCare",
+      "border_filepath": "data/layouts/Zone0B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone0B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE0C",
+      "name": "Zone0C_Layout",
+      "width": 54,
+      "height": 38,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Zone0C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone0C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE11A",
+      "name": "Zone11A_Layout",
+      "width": 50,
+      "height": 62,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Zone11A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone11A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE12A",
+      "name": "Zone12A_Layout",
+      "width": 50,
+      "height": 53,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Zone12A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone12A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE13A",
+      "name": "Zone13A_Layout",
+      "width": 46,
+      "height": 41,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/Zone13A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone13A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE13B",
+      "name": "Zone13B_Layout",
+      "width": 27,
+      "height": 21,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/Zone13B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone13B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE13C",
+      "name": "Zone13C_Layout",
+      "width": 22,
+      "height": 19,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/Zone13C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone13C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE14A",
+      "name": "Zone14A_Layout",
+      "width": 30,
+      "height": 35,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone14A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone14A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE14B",
+      "name": "Zone14B_Layout",
+      "width": 40,
+      "height": 34,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone14B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone14B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE14C",
+      "name": "Zone14C_Layout",
+      "width": 30,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone14C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone14C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE15A",
+      "name": "Zone15A_Layout",
+      "width": 82,
+      "height": 61,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone15A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone15A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE15B",
+      "name": "Zone15B_Layout",
+      "width": 80,
+      "height": 80,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone15B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone15B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE16A",
+      "name": "Zone16A_Layout",
+      "width": 80,
+      "height": 47,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/Zone16A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone16A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE17A",
+      "name": "Zone17A_Layout",
+      "width": 32,
+      "height": 49,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Zone17A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone17A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE18A",
+      "name": "Zone18A_Layout",
+      "width": 56,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/Zone18A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone18A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE18B",
+      "name": "Zone18B_Layout",
+      "width": 9,
+      "height": 203,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PetalburgGym",
+      "border_filepath": "data/layouts/Zone18B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone18B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE19A",
+      "name": "Zone19A_Layout",
+      "width": 56,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Zone19A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone19A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE19B",
+      "name": "Zone19B_Layout",
+      "width": 50,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Zone19B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone19B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE19C",
+      "name": "Zone19C_Layout",
+      "width": 19,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Zone19C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone19C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE19D",
+      "name": "Zone19D_Layout",
+      "width": 19,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone19D/border.bin",
+      "blockdata_filepath": "data/layouts/Zone19D/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE20A",
+      "name": "Zone20A_Layout",
+      "width": 49,
+      "height": 83,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/Zone20A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone20A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE21A",
+      "name": "Zone21A_Layout",
+      "width": 65,
+      "height": 106,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/Zone21A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone21A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE21B",
+      "name": "Zone21B_Layout",
+      "width": 14,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone21B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone21B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE21C",
+      "name": "Zone21C_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/Zone21C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone21C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE21D",
+      "name": "Zone21D_Layout",
+      "width": 30,
+      "height": 31,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone21D/border.bin",
+      "blockdata_filepath": "data/layouts/Zone21D/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE22A",
+      "name": "Zone22A_Layout",
+      "width": 67,
+      "height": 62,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Snowy",
+      "border_filepath": "data/layouts/Zone22A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone22A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE23A",
+      "name": "Zone23A_Layout",
+      "width": 76,
+      "height": 70,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Marsh",
+      "border_filepath": "data/layouts/Zone23A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone23A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE24A",
+      "name": "Zone24A_Layout",
+      "width": 90,
+      "height": 80,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/Zone24A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone24A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE24B",
+      "name": "Zone24B_Layout",
+      "width": 9,
+      "height": 9,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone24B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone24B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE25A",
+      "name": "Zone25A_Layout",
+      "width": 21,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/Zone25A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone25A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE25B",
+      "name": "Zone25B_Layout",
+      "width": 21,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/Zone25B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone25B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE25C",
+      "name": "Zone25C_Layout",
+      "width": 13,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/Zone25C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone25C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE25D",
+      "name": "Zone25D_Layout",
+      "width": 21,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/Zone25D/border.bin",
+      "blockdata_filepath": "data/layouts/Zone25D/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE25E",
+      "name": "Zone25E_Layout",
+      "width": 21,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/Zone25E/border.bin",
+      "blockdata_filepath": "data/layouts/Zone25E/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE25F",
+      "name": "Zone25F_Layout",
+      "width": 21,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/Zone25F/border.bin",
+      "blockdata_filepath": "data/layouts/Zone25F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE25G",
+      "name": "Zone25G_Layout",
+      "width": 21,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/Zone25G/border.bin",
+      "blockdata_filepath": "data/layouts/Zone25G/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE25H",
+      "name": "Zone25H_Layout",
+      "width": 21,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/Zone25H/border.bin",
+      "blockdata_filepath": "data/layouts/Zone25H/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE25I",
+      "name": "Zone25I_Layout",
+      "width": 21,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/Zone25I/border.bin",
+      "blockdata_filepath": "data/layouts/Zone25I/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE25J",
+      "name": "Zone25J_Layout",
+      "width": 21,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/Zone25J/border.bin",
+      "blockdata_filepath": "data/layouts/Zone25J/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE25K",
+      "name": "Zone25K_Layout",
+      "width": 21,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/Zone25K/border.bin",
+      "blockdata_filepath": "data/layouts/Zone25K/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE25L",
+      "name": "Zone25L_Layout",
+      "width": 15,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/Zone25L/border.bin",
+      "blockdata_filepath": "data/layouts/Zone25L/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE_B1",
+      "name": "ZoneB1_Layout",
+      "width": 30,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Contest",
+      "border_filepath": "data/layouts/ZoneB1/border.bin",
+      "blockdata_filepath": "data/layouts/ZoneB1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE26A",
+      "name": "Zone26A_Layout",
+      "width": 27,
+      "height": 33,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/Zone26A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone26A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE26B",
+      "name": "Zone26B_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/Zone26B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone26B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE27A",
+      "name": "Zone27A_Layout",
+      "width": 98,
+      "height": 56,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Jungle",
+      "border_filepath": "data/layouts/Zone27A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone27A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE28A",
+      "name": "Zone28A_Layout",
+      "width": 50,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_JungleTemple",
+      "border_filepath": "data/layouts/Zone28A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone28A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE3B",
+      "name": "Zone3B_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Zone3B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone3B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE9H",
+      "name": "Zone9H_Layout",
+      "width": 8,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Zone9H/border.bin",
+      "blockdata_filepath": "data/layouts/Zone9H/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE20B",
+      "name": "Zone20B_Layout",
+      "width": 25,
+      "height": 25,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/Zone20B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone20B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE2C",
+      "name": "Zone2C_Layout",
+      "width": 56,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone2C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone2C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE10C",
+      "name": "Zone10C_Layout",
+      "width": 17,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Zone10C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone10C/map.bin"
     }
   ]
 }

@@ -1,0 +1,321 @@
+mapscripts Zone7A_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE7A_SHARP_BEAK)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE7A_POTION_X2)) {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE7A_GEMS)) {
+			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE7A_SERIOUS_MINT)) {
+			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE7A_BLACK_BELT)) {
+			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE7A_SUPER_POTION)) {
+			setvar(VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE7A_GREAT_BALL)) {
+			setvar(VAR_OBJ_GFX_ID_6, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_6, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+	}
+}
+
+
+script Zone7A_EventScript_Beauty {
+	lock
+	faceplayer
+	if (flag(FLAG_ZONE7A_RECEIVED_WHIPPED_DREAM) && flag(FLAG_ZONE7A_RECEIVED_SACHET)) {
+		msgbox(format("I already gave you all the evolution items I have!"))
+		release
+		end
+	}
+	msgbox(format("Beautiful, Fairy-type Pokémon…\pI'll give you the corresponding evolution item if you show me a Swirlix or a Spritzee."), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		special(ChoosePartyMon)
+		waitstate
+		if (var(VAR_RESULT) != 255) {
+			specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+			switch(var(VAR_RESULT)) {
+				case SPECIES_SWIRLIX:
+					if (flag(FLAG_ZONE7A_RECEIVED_WHIPPED_DREAM) == false) {
+						msgbox(format("That Pokémon is absolutely stunning… Take this, as promised."))
+						giveitem(ITEM_WHIPPED_DREAM)
+						setflag(FLAG_ZONE7A_RECEIVED_WHIPPED_DREAM)
+					} else {
+						msgbox(format("I already gave you all the Swirlix evolution items I have!"))
+					}
+				case SPECIES_SPRITZEE:
+					if (flag(FLAG_ZONE7A_RECEIVED_SACHET) == false) {
+						msgbox(format("That Pokémon is absolutely stunning… Take this, as promised."))
+						giveitem(ITEM_SACHET)
+						setflag(FLAG_ZONE7A_RECEIVED_SACHET)
+					} else {
+						msgbox(format("I already gave you all the Spritzee evolution items I have!"))
+					}
+				default:
+					msgbox(format("That's not a Swirlix nor a Spritzee!"))
+			}
+		}
+	}
+	release
+	end
+}
+
+script Zone7A_EventScript_ItemSharpBeak {
+	lock
+	if (flag(FLAG_ITEM_ZONE7A_SHARP_BEAK)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE7A_SHARP_BEAK)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_SHARP_BEAK, 1)
+	release
+	end
+}
+
+script Zone7A_EventScript_ItemPotion2 {
+	lock
+	if (flag(FLAG_ITEM_ZONE7A_POTION_X2)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE7A_POTION_X2)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_POTION, 2)
+	release
+	end
+}
+
+script Zone7A_EventScript_ItemGems {
+	lock
+	if (flag(FLAG_ITEM_ZONE7A_GEMS)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE7A_GEMS)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_ROCK_GEM)
+	finditem(ITEM_FIGHTING_GEM)
+	finditem(ITEM_PSYCHIC_GEM)
+	release
+	end
+}
+
+script Zone7A_EventScript_ItemSeriousMint {
+	lock
+	if (flag(FLAG_ITEM_ZONE7A_SERIOUS_MINT)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE7A_SERIOUS_MINT)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_SERIOUS_MINT, 1)
+	release
+	end
+}
+
+script Zone7A_EventScript_ItemBlackBelt {
+	lock
+	if (flag(FLAG_ITEM_ZONE7A_BLACK_BELT)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE7A_BLACK_BELT)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_BLACK_BELT, 1)
+	release
+	end
+}
+
+script Zone7A_EventScript_ItemSuperPotion {
+	lock
+	if (flag(FLAG_ITEM_ZONE7A_SUPER_POTION)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE7A_SUPER_POTION)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_SUPER_POTION, 1)
+	release
+	end
+}
+
+script Zone7A_EventScript_ItemGreatBall {
+	lock
+	if (flag(FLAG_ITEM_ZONE7A_GREAT_BALL)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_6, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE7A_GREAT_BALL)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_GREAT_BALL, 1)
+	release
+	end
+}
+
+script Zone7A_EventScript_Sign {
+	msgbox(format("Trainer Tips\pYou can change the music you hear in battle by speaking to Colress!"), MSGBOX_SIGN)
+	end
+}
+
+raw `
+
+Zone7A_EventScript_Millie::
+	trainerbattle_single TRAINER_PBL_MILLIE, Zone7A_Text_MillieIntro, Zone7A_Text_MillieDefeat
+	msgbox Zone7A_Text_MilliePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone7A_Text_MillieIntro:
+	.string "At the base of this mountain,\n"
+	.string "is a perfect spot for battle!$"
+
+Zone7A_Text_MillieDefeat:
+	.string "This spot is now tainted, by\n"
+	.string "my defeat!$"
+
+Zone7A_Text_MilliePostBattle:
+	.string "It's a good spot for resting too!$"
+
+Zone7A_EventScript_Jamal::
+	trainerbattle_single TRAINER_PBL_JAMAL, Zone7A_Text_JamalIntro, Zone7A_Text_JamalDefeat
+	msgbox Zone7A_Text_JamalPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone7A_Text_JamalIntro:
+	.string "Valleys like these are simply,\n"
+	.string "succintly, superb!$"
+
+Zone7A_Text_JamalDefeat:
+	.string "I don't like this valley anymore!$"
+
+Zone7A_Text_JamalPostBattle:
+	.string "How can I like a place that I've\n"
+	.string "lost at?$"
+
+Zone7A_EventScript_Paige::
+	trainerbattle_single TRAINER_PBL_PAIGE, Zone7A_Text_PaigeIntro, Zone7A_Text_PaigeDefeat
+	msgbox Zone7A_Text_PaigePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone7A_Text_PaigeIntro:
+	.string "My son ran up the steps so fast!$"
+
+Zone7A_Text_PaigeDefeat:
+	.string "I just can't keep up!$"
+
+Zone7A_Text_PaigePostBattle:
+	.string "Maybe I'll rest in the rest house…$"
+
+Zone7A_EventScript_Seth::
+	trainerbattle_single TRAINER_PBL_SETH, Zone7A_Text_SethIntro, Zone7A_Text_SethDefeat
+	msgbox Zone7A_Text_SethPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone7A_Text_SethIntro:
+	.string "Momma! You're too slow!$"
+
+Zone7A_Text_SethDefeat:
+	.string "I wasn't fast enough!$"
+
+Zone7A_Text_SethPostBattle:
+	.string "I'm all out of energy…\n"
+	.string "Snack time!$"
+
+Zone7A_EventScript_Connie::
+	trainerbattle_single TRAINER_PBL_CONNIE, Zone7A_Text_ConnieIntro, Zone7A_Text_ConnieDefeat
+	msgbox Zone7A_Text_ConniePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone7A_Text_ConnieIntro:
+	.string "You've been double teamed!$"
+
+Zone7A_Text_ConnieDefeat:
+	.string "Shoot! My bad!$"
+
+Zone7A_Text_ConniePostBattle:
+	.string "We're working on our strategy!$"
+
+Zone7A_EventScript_Peter::
+	trainerbattle_single TRAINER_PBL_PETER, Zone7A_Text_PeterIntro, Zone7A_Text_PeterDefeat
+	msgbox Zone7A_Text_PeterPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone7A_Text_PeterIntro:
+	.string "Together we're unstoppable!$"
+
+Zone7A_Text_PeterDefeat:
+	.string "Darn! My mistake!$"
+
+Zone7A_Text_PeterPostBattle:
+	.string "We're trying our best!$"
+
+Zone7A_EventScript_Whitaker::
+	trainerbattle_single TRAINER_PBL_WHITAKER, Zone7A_Text_WhitakerIntro, Zone7A_Text_WhitakerDefeat
+	msgbox Zone7A_Text_WhitakerPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone7A_Text_WhitakerIntro:
+	.string "Can you feel the breeze?\n"
+	.string "My birds have never been stronger!$"
+
+Zone7A_Text_WhitakerDefeat:
+	.string "Um… Rematch?$"
+
+Zone7A_Text_WhitakerPostBattle:
+	.string "My birds need some time to sleep\n"
+	.string "in their nests!$"
+
+Zone7A_EventScript_HealSign::
+	msgbox Zone7A_Text_HealSign, MSGBOX_SIGN
+	end
+
+Zone7A_Text_HealSign:
+	.string "A stop for weary travelers.$"
+`

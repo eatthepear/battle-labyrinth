@@ -1,0 +1,226 @@
+mapscripts Zone13C_MapScripts {}
+
+script Zone13C_EventScript_LeviathanBattle {
+	lock
+	faceplayer
+	if (flag(FLAG_BEAT_LEVIATHAN_11) == true) {
+		msgbox(Zone13C_Text_Jenny_PostBattle)
+		closemessage
+		release
+		end
+	}
+	msgbox(Zone13C_Text_Leviathan11WantBattle, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: Nervous about facing me?"))
+		release
+		end
+	}
+	fadeoutbgm(1)
+	msgbox(format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: My battle style is quite ferocious, despite me having only one Pokémon!"), MSGBOX_DEFAULT)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+		trainerbattle_no_intro(TRAINER_PBL_JENNY_LEVIATHAN_11_BRUTAL, Zone13C_Text_Leviathan11Defeat)
+	} else {
+		trainerbattle_no_intro(TRAINER_PBL_JENNY_LEVIATHAN_11, Zone13C_Text_Leviathan11Defeat)
+	}
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	msgbox(format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: Here, I want you to have this item.\pIt'll stop your Pokémon's stats from being lowered, but it's only single use."), MSGBOX_DEFAULT)
+	giveitem(ITEM_WHITE_HERB)
+	msgbox(Zone13C_Text_Jenny_PostBattle)
+	closemessage
+	setflag(FLAG_BEAT_LEVIATHAN_11)
+	release
+	end
+}
+
+text Zone13C_Text_Leviathan11WantBattle {
+	format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: Ah, it's so nice to finally have a resting spot from all my traveling.\pWhat do you want?\pA battle?")
+}
+
+text Zone13C_Text_Leviathan11Defeat {
+	"You did great, Gyarados!"
+}
+
+text Zone13C_Text_Jenny_PostBattle {
+	format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: I guess traveling lightly comes with downsides, too.\pI sometimes wish I could bring more Pokémon on my travels with me.")
+}
+
+script Zone13C_EventScript_Fossil_Scientist {
+	lock
+	faceplayer
+	if (flag(FLAG_SETTINGS_BRUTAL) == true) {
+		msgbox("Sorry, I just ran out of fossils.")
+		release
+		end
+	}
+	if ((flag(FLAG_ZONE13C_NUZLOCKE_FOSSIL_RECEIVED) == true) || (flag(FLAG_SETTINGS_RED_THUMB) == true)) {
+		goto(Zone13C_EventScript_Fossil_NuzlockeReceived)
+	}
+	if (flag(FLAG_DAILY_FOSSIL_RECEIVED) == true) {
+		goto(Zone13C_EventScript_Fossil_VanillaReceived)
+	}
+	applymovement(3, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	msgbox("You get a Fossil!\nYou get a Fossil!\lEverybody gets a Fossil!")
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+		setflag(FLAG_ZONE13C_NUZLOCKE_FOSSIL_RECEIVED)
+	}
+	setflag(FLAG_DAILY_FOSSIL_RECEIVED)
+	random(9)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			giveitem(ITEM_DOME_FOSSIL)
+		case 1:
+			giveitem(ITEM_HELIX_FOSSIL)
+		case 2:
+			giveitem(ITEM_OLD_AMBER)
+		case 3:
+			giveitem(ITEM_ROOT_FOSSIL)
+		case 4:
+			giveitem(ITEM_CLAW_FOSSIL)
+		case 5:
+			giveitem(ITEM_COVER_FOSSIL)
+		case 6:
+			giveitem(ITEM_PLUME_FOSSIL)
+		case 7:
+			giveitem(ITEM_JAW_FOSSIL)
+		case 8:
+			giveitem(ITEM_SAIL_FOSSIL)
+	}
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+		goto(Zone13C_EventScript_Fossil_NuzlockeReceived)
+	} else {
+		goto(Zone13C_EventScript_Fossil_VanillaReceived)
+	}
+	end
+}
+
+script Zone13C_EventScript_Fossil_VanillaReceived {
+	msgbox("Hope you enjoy your Fossil!\nCome back tomorrow for another!")
+	release
+	end
+}
+
+script Zone13C_EventScript_Fossil_NuzlockeReceived {
+	msgbox("Hope you enjoy your Fossil!")
+	release
+	end
+}
+
+script Zone13C_EventScript_Scientist4 {
+	lock
+	faceplayer
+	if (flag(FLAG_ZONE13C_RECEIVED_ZOOM_LENS) == false) {
+		msgbox(format("Sometimes you just need a little bit more accuracy for your moves. That's where the Zoom Lens comes in!"))
+		giveitem(ITEM_ZOOM_LENS)
+		setflag(FLAG_ZONE13C_RECEIVED_ZOOM_LENS)
+	}
+	msgbox(format("The Zoom Lens boosts accuracy by 20%, but only against opponents that have already moved that turn."))
+	release
+	end
+}
+
+script Zone13C_EventScript_Cook {
+	lock
+	faceplayer
+	if (flag(FLAG_ZONE13C_RECEIVED_APPLES) && flag(FLAG_ZONE13C_RECEIVED_SWEETS)) {
+		msgbox(format("I already gave you all the evolution items I have!"))
+		release
+		end
+	}
+	msgbox(format("I just love Pokémon that evolve via food items!\pShow me an Applin or a Milcery, and I'll give you the corresponding evolution items!"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		special(ChoosePartyMon)
+		waitstate
+		if (var(VAR_RESULT) != 255) {
+			specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+			switch(var(VAR_RESULT)) {
+				case SPECIES_APPLIN:
+					if (flag(FLAG_ZONE13C_RECEIVED_APPLES) == false) {
+						msgbox(format("That's an Applin all right! Well, here you go!"))
+						giveitem(ITEM_SWEET_APPLE)
+						giveitem(ITEM_TART_APPLE)
+						setflag(FLAG_ZONE13C_RECEIVED_APPLES)
+					} else {
+						msgbox(format("I already gave you all the Applin evolution items I have!"))
+					}
+				case SPECIES_MILCERY:
+					if (flag(FLAG_ZONE13C_RECEIVED_SWEETS) == false) {
+						msgbox(format("That's a Milcery all right! Well, here you go!"))
+						giveitem(ITEM_STRAWBERRY_SWEET)
+						giveitem(ITEM_LOVE_SWEET)
+						giveitem(ITEM_BERRY_SWEET)
+						giveitem(ITEM_CLOVER_SWEET)
+						giveitem(ITEM_FLOWER_SWEET)
+						giveitem(ITEM_STAR_SWEET)
+						giveitem(ITEM_RIBBON_SWEET)
+						setflag(FLAG_ZONE13C_RECEIVED_SWEETS)
+					} else {
+						msgbox(format("I already gave you all the Milcery evolution items I have!"))
+					}
+				default:
+					msgbox(format("That's not an Applin nor a Milcery!"))
+			}
+		}
+	}
+	release
+	end
+}
+
+raw `
+
+Zone13C_EventScript_Darwin::
+	trainerbattle_single TRAINER_PBL_DARWIN, Zone13C_Text_DarwinIntro, Zone13C_Text_DarwinDefeat
+	msgbox Zone13C_Text_DarwinPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone13C_Text_DarwinIntro:
+	.string "I've been doing research on\n"
+	.string "branched evolutions!$"
+
+Zone13C_Text_DarwinDefeat:
+	.string "Even some starters have branched\n"
+	.string "evolution!$"
+
+Zone13C_Text_DarwinPostBattle:
+	.string "According to my research:\p"
+	.string "Quilava evolves into Hisuian\n"
+	.string "Typhlosion with a Fire Stone,\p"
+	.string "Dewott evolves into Hisuian\n"
+	.string "Samurott with a Water Stone,\p"
+	.string "and Dartrix evolves into Hisuian\n"
+	.string "Decidueye when leveled up holding a\l"
+	.string "Ring Target.$"
+
+Zone13C_EventScript_Scientist1::
+	lock
+	msgbox Zone13C_Text_Scientist1, MSGBOX_SIGN
+	release
+	end
+
+Zone13C_Text_Scientist1:
+	.string "He's so focused on his work,\n"
+	.string "he doesn't even notice you.$"
+
+Zone13C_EventScript_Scientist2::
+	lock
+	faceplayer
+	msgbox Zone13C_Text_Scientist2_WhyMale, MSGBOX_AUTOCLOSE
+	delay 48
+	msgbox Zone13C_Text_Scientist2_GenderRoles, MSGBOX_AUTOCLOSE
+	release
+	end
+
+Zone13C_Text_Scientist2_WhyMale:
+	.string "Why are all the scientists male,\n"
+	.string "you ask?$"
+
+Zone13C_Text_Scientist2_GenderRoles:
+	.string "Um... Game Freak existed a while\n"
+	.string "ago and helped perpetuate\l"
+	.string "traditional gender roles in\l"
+	.string "society?\p"
+	.string "Never mind. Google it.$"
+`

@@ -582,6 +582,7 @@ extern const u8 EventScript_UseDive_PBL[];
 extern const u8 EventScript_UseDiveUnderwater_PBL[];
 extern const u8 EventScript_DiveSpot_PBL[];
 extern const u8 EventScript_DiveUnderwater_PBL[];
+extern const u8 EventScript_ShakeTree[];
 extern const u8 EventScript_FallDownHole[];
 extern const u8 EventScript_FieldPoison[];
 extern const u8 EventScript_EggHatch[];

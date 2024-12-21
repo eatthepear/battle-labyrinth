@@ -1,0 +1,536 @@
+mapscripts Zone5B_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE5B_TM03)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE5B_POTION_X2)) {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE5B_GEMS)) {
+			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE5B_GENTLE_MINT)) {
+			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+	}
+	// MAP_SCRIPT_ON_FRAME_TABLE [
+	// 	VAR_ZONE_5_STATE, 1: Zone5B_EventScript_Intro
+	// ]
+}
+
+script Zone5B_EventScript_LeviathanBattle {
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement(0)
+	applymovement(1, Zone5B_Declan_Movement_WalkDown)
+	waitmovement(0)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 28) {
+		applymovement(1, Common_Movement_WalkDown)
+		waitmovement(0)
+		applymovement(1, Common_Movement_FaceLeft)
+		waitmovement(0)
+	}
+	setvar(VAR_TEMP_0, 0)
+	setvar(VAR_TEMP_1, 0)
+	fadeoutbgm(1)
+	msgbox(Zone5B_Text_Leviathan5Intro)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+		trainerbattle_no_intro(TRAINER_PBL_DECLAN_LEVIATHAN_5_BRUTAL, Zone5B_Text_Leviathan5Defeat)
+	} else {
+		trainerbattle_no_intro(TRAINER_PBL_DECLAN_LEVIATHAN_5, Zone5B_Text_Leviathan5Defeat)
+	}
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Argh, how did you manage to beat me?\pWell, I guess I'm supposed to give you a reward now."), MSGBOX_DEFAULT)
+	giveitem(ITEM_EVIOLITE, 1)
+	msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: The Eviolite boosts the defenses of Pokémon that can still evolve.\pNow then. You can pass through, but don't get in the way of my training again!"), MSGBOX_AUTOCLOSE)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 28) {
+		applymovement(1, Common_Movement_WalkUp)
+		waitmovement(0)
+	}
+	setvar(VAR_TEMP_0, 0)
+	setvar(VAR_TEMP_1, 0)
+	applymovement(1, Zone5B_Declan_Movement_WalkUp)
+	waitmovement(0)
+	removeobject(1)
+	setflag(FLAG_BEAT_LEVIATHAN_5)
+	setvar(VAR_ZONE_5_STATE, 1)
+	release
+	end
+}
+
+movement Zone5B_Declan_Movement_WalkDown {
+	walk_down * 6
+	walk_left * 2
+}
+
+text Zone5B_Text_Leviathan5Intro {
+	format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Not so fast! I'm training my Pokémon around here!\pYou'll have to face our combined might to get past!\pThis is where your journey forward stops!")
+}
+
+text Zone5B_Text_Leviathan5Defeat {
+	format("How!? My Pokémon were so bulky with their Eviolites!")
+}
+
+movement Zone5B_Declan_Movement_WalkUp {
+	walk_right * 2
+	walk_up * 6
+}
+
+script Zone5B_EventScript_BuyPikaClone {
+	lock
+	faceplayer
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true && flag(FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE) == true) {
+		msgbox(format("Sorry! I'm all out of Pikachu clones for sale right now."))
+		release
+		end
+	}
+	showmoneybox(0, 0, 0)
+	msgbox(format("You seem like the type that would like Pikachu!\pNow, I don't have Pikachu for sale, but I do have some very similar Pokémon, each for only ¥1000!"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		hidemoneybox
+		msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+		release
+		end
+	}
+	checkmoney(1000, 0)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox("You don't have enough money.")
+		hidemoneybox
+		release
+		end
+	}
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+		if (flag(FLAG_SETTINGS_RANDOMIZER) == false) {
+			setvar(VAR_TEMP_3, 0) // counter for species clause
+			checkspeciesclause(SPECIES_PACHIRISU)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_DEDENNE)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_MORPEKO)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_PLUSLE)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_MINUN)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_CATERPIE)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_WEEDLE)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_TAROUNTULA)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_KRICKETOT)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkspeciesclause(SPECIES_PARAS)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			if (var(VAR_TEMP_3) == 10) {
+				msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
+				hidemoneybox
+				release
+				end
+			}
+			msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pachirisu, Dedenne, Morpeko, Plusle, or Minun.\pIs this ok?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO) {
+				hidemoneybox
+				msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+				release
+				end
+			}
+			setvar(VAR_TEMP_1, 0)
+			while (var(VAR_TEMP_1) == 0) {
+				random(5)
+				switch (var(VAR_RESULT)) {
+					case 0:
+						checkspeciesclause(SPECIES_PACHIRISU)
+						if (var(VAR_RESULT) == TRUE) {
+							continue
+						}
+						setvar(VAR_TEMP_1, SPECIES_PACHIRISU)
+					case 1:
+						checkspeciesclause(SPECIES_DEDENNE)
+						if (var(VAR_RESULT) == TRUE) {
+							continue
+						}
+						setvar(VAR_TEMP_1, SPECIES_DEDENNE)
+					case 2:
+						checkspeciesclause(SPECIES_MORPEKO)
+						if (var(VAR_RESULT) == TRUE) {
+							continue
+						}
+						setvar(VAR_TEMP_1, SPECIES_MORPEKO)
+					case 3:
+						checkspeciesclause(SPECIES_PLUSLE)
+						if (var(VAR_RESULT) == TRUE) {
+							continue
+						}
+						setvar(VAR_TEMP_1, SPECIES_PLUSLE)
+					case 4:
+						checkspeciesclause(SPECIES_MINUN)
+						if (var(VAR_RESULT) == TRUE) {
+							continue
+						}
+						setvar(VAR_TEMP_1, SPECIES_MINUN)
+				}
+			}
+		} else {
+			setvar(VAR_TEMP_1, SPECIES_PACHIRISU) // gets randomized anyways
+		}
+	} else {
+		message(format("Choose which Electric-type you would like."))
+		dynmultichoice(400, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Pachirisu", "Dedenne", "Morpeko", "Plusle", "Minun")
+		switch (var(VAR_RESULT)) {
+			case 0:
+				setvar(VAR_TEMP_1, SPECIES_PACHIRISU)
+			case 1:
+				setvar(VAR_TEMP_1, SPECIES_DEDENNE)
+			case 2:
+				setvar(VAR_TEMP_1, SPECIES_MORPEKO)
+			case 3:
+				setvar(VAR_TEMP_1, SPECIES_PLUSLE)
+			case 4:
+				setvar(VAR_TEMP_1, SPECIES_MINUN)
+			case MULTI_B_PRESSED:
+				closemessage
+				hidemoneybox
+				msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+				release
+				end
+		}
+	}
+	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
+		hidemoneybox
+		special(ChoosePartyMon)
+		waitstate
+		faceplayer
+		showmoneybox(0, 0, 0)
+		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+			hidemoneybox
+			msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+			release
+			end
+		}
+		specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
+		bufferspeciesname(2, VAR_TEMP_3)
+		copyvar(VAR_TEMP_3, VAR_0x8004) // used in SendChosenMonToPC
+		msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+			release
+			end
+		}
+	}
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+		msgbox(format("Just to confirm…\pYou're sure you want to buy a Pikachu clone for ¥1000?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+			release
+			end
+		}
+		setflag(FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE)
+	} else {
+		bufferspeciesname(0, VAR_TEMP_1)
+		msgbox(format("Just to confirm…\pYou're sure you want to buy {STR_VAR_1} for ¥1000?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+			release
+			end
+		}
+	}
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		special(SendChosenMonToPC)
+		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
+	}
+	removemoney(1000)
+	updatemoneybox
+	msgbox(format("I appreciate it!"), MSGBOX_DEFAULT)
+	hidemoneybox
+	givemon(VAR_TEMP_1, 12, ITEM_NONE)
+	setmonmetlocation(VAR_TEMP_2, 250)
+	bufferspeciesname(0, VAR_TEMP_1)
+	msgbox("Here's your {STR_VAR_1}.", MSGBOX_DEFAULT)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(format("{PLAYER} received the {STR_VAR_1}!"))
+	waitmessage
+	waitfanfare
+	msgbox(format("Would you like to give a nickname to {STR_VAR_1}?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call(Common_EventScript_GetGiftMonPartySlot)
+		call(Common_EventScript_NameReceivedPartyMon)
+	}
+	msgbox(format("Take good care of your new Electric-type, small mammal-like Pokémon!"), MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Zone5B_EventScript_ItemTM03 {
+	lock
+	if (flag(FLAG_ITEM_ZONE5B_TM03)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE5B_TM03)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_TM03)
+	release
+	end
+}
+
+script Zone5B_EventScript_Item2Potion {
+	lock
+	if (flag(FLAG_ITEM_ZONE5B_POTION_X2)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE5B_POTION_X2)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_POTION, 2)
+	release
+	end
+}
+
+script Zone5B_EventScript_ItemGems {
+	lock
+	if (flag(FLAG_ITEM_ZONE5B_GEMS)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE5B_GEMS)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_NORMAL_GEM)
+	finditem(ITEM_BUG_GEM)
+	finditem(ITEM_GRASS_GEM)
+	release
+	end
+}
+
+script Zone5B_EventScript_GentleMint {
+	lock
+	if (flag(FLAG_ITEM_ZONE5B_GENTLE_MINT)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE5B_GENTLE_MINT)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_GENTLE_MINT)
+	release
+	end
+}
+
+raw `
+Zone5B_EventScript_NovaandCora::
+	trainerbattle_double TRAINER_PBL_NOVA_AND_CORA, Zone5B_Text_NovaandCoraIntro, Zone5B_Text_NovaandCoraDefeat, gText_NotEnoughMons
+	msgbox Zone5B_Text_NovaandCoraPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Zone5B_Text_NovaandCoraIntro:
+	.string "Nova: This grass is so tall!\p"
+	.string "Cora: It's going up my nose!$"
+
+Zone5B_Text_NovaandCoraDefeat:
+	.string "Nova: Achoo!\p"
+	.string "Cora: Achoo!$"
+
+Zone5B_Text_NovaandCoraPostBattle:
+	.string "Nova: Being twins means-\p"
+	.string "Cora: Sharing allergies!$"
+
+Zone5B_EventScript_Clinton::
+	trainerbattle_single TRAINER_PBL_CLINTON, Zone5B_Text_ClintonIntro, Zone5B_Text_ClintonDefeat
+	msgbox Zone5B_Text_ClintonPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone5B_Text_ClintonIntro:
+	.string "Supposedly, item chests that are\n"
+	.string "tinted yellow hold special items.$"
+
+Zone5B_Text_ClintonDefeat:
+	.string "I don't bother checking them\n"
+	.string "though!$"
+
+Zone5B_Text_ClintonPostBattle:
+	.string "I can buy all the TMs I want!\n"
+	.string "I don't need any item chests!$"
+
+Zone5B_EventScript_Ryan::
+	trainerbattle_single TRAINER_PBL_RYAN, Zone5B_Text_RyanIntro, Zone5B_Text_RyanDefeat
+	msgbox Zone5B_Text_RyanPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone5B_Text_RyanIntro:
+	.string "Where am I?\n"
+	.string "Ah! A wild Pokémon!$"
+
+Zone5B_Text_RyanDefeat:
+	.string "Sorry! I thought you were a\n"
+	.string "Pokémon!$"
+
+Zone5B_Text_RyanPostBattle:
+	.string "This grass is just too tall to see!$"
+
+Zone5B_EventScript_Kenneth::
+	trainerbattle_single TRAINER_PBL_KENNETH, Zone5B_Text_KennethIntro, Zone5B_Text_KennethDefeat
+	msgbox Zone5B_Text_KennethPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone5B_Text_KennethIntro:
+	.string "I'm running back and forth! Huzzah!$"
+
+Zone5B_Text_KennethDefeat:
+	.string "Whew! I'm all out of steam!$"
+
+Zone5B_Text_KennethPostBattle:
+	.string "I gotta keep running!$"
+`
+
+// script Zone5B_EventScript_Intro {
+//     lockall
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+// 	waitmovement(0)
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+// 	waitmovement(0)
+// 	special(SpawnCameraObject)
+// 	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
+// 	waitmovement(0)
+// 	special(RemoveCameraObject)
+// 	applymovement(2, Common_Movement_ExclamationMark)
+// 	playse(SE_PIN)
+// 	waitmovement(0)
+// 	waitse
+//     playmoncry(SPECIES_PORYGON, 2)
+// 	applymovement(2, Zone5B_Porygon_AnimateDown)
+// 	waitmovement(0)
+// 	waitmoncry
+// 	special(SpawnCameraObject)
+// 	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
+// 	applymovement(2, Common_Movement_WalkDown)
+// 	waitmovement(0)
+// 	special(RemoveCameraObject)
+// 	applymovement(2, Common_Movement_WalkDown)
+// 	waitmovement(0)
+//     msgbox(format("This {COLOR BLUE}Porygon{COLOR DARK_GRAY} is a strange color…\pIt almost seems… familiar?"))
+//     playmoncry(SPECIES_PORYGON, 2)
+// 	applymovement(2, Zone5B_Porygon_AnimateDown)
+// 	waitmovement(0)
+// 	waitmoncry
+// 	applymovement(2, Common_Movement_WalkLeft)
+// 	waitmovement(0)
+// 	applymovement(2, Common_Movement_WalkDown)
+// 	waitmovement(0)
+// 	applymovement(2, Common_Movement_FaceRight)
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+// 	waitmovement(0)
+// 	applymovement(2, Zone5B_Porygon_AnimateRight)
+// 	waitmovement(0)
+// 	applymovement(2, Common_Movement_WalkUp)
+// 	waitmovement(0)
+// 	applymovement(2, Common_Movement_WalkRight)
+// 	waitmovement(0)
+// 	applymovement(2, Common_Movement_FaceDown)
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+// 	waitmovement(0)
+// 	applymovement(2, Zone5B_Porygon_AnimateDown)
+// 	waitmovement(0)
+// 	applymovement(2, Common_Movement_WalkRight)
+// 	waitmovement(0)
+// 	applymovement(2, Common_Movement_WalkDown)
+// 	waitmovement(0)
+// 	applymovement(2, Common_Movement_FaceLeft)
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+// 	waitmovement(0)
+// 	applymovement(2, Zone5B_Porygon_AnimateLeft)
+// 	waitmovement(0)
+// 	applymovement(2, Common_Movement_WalkUp)
+// 	waitmovement(0)
+// 	applymovement(2, Common_Movement_WalkLeft)
+// 	waitmovement(0)
+// 	applymovement(2, Common_Movement_FaceDown)
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+// 	waitmovement(0)
+// 	applymovement(2, Zone5B_Porygon_AnimateDown)
+// 	waitmovement(0)
+//     msgbox(format("The {COLOR BLUE}Porygon{COLOR DARK_GRAY} looks confused…"))
+//     playmoncry(SPECIES_PORYGON, 2)
+// 	delay(40)
+// 	waitmoncry
+// 	applymovement(2, Zone5B_Porygon_AnimateDown)
+// 	waitmovement(0)
+// 	applymovement(2, Zone5B_Porygon_AnimateDown)
+// 	waitmovement(0)
+// 	applymovement(2, Common_Movement_WalkUp)
+// 	waitmovement(0)
+// 	applymovement(2, Common_Movement_WalkUp)
+// 	waitmovement(0)
+//     removeobject(2)
+//     setflag(FLAG_HIDE_ZONE5B_SHINY_PORYGON)
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+// 	playse(SE_PIN)
+// 	waitmovement(0)
+// 	waitse
+//     msgbox(format("The strange-colored {COLOR BLUE}Porygon{COLOR DARK_GRAY} disappeared!"))
+// 	setvar(VAR_ZONE_5_STATE, 2)
+// 	releaseall
+// }
+
+// movement Zone5B_Porygon_AnimateRight {
+// 	walk_in_place_slow_right * 2
+// }
+
+// movement Zone5B_Porygon_AnimateDown {
+// 	walk_in_place_slow_down * 2
+// }
+
+// movement Zone5B_Porygon_AnimateLeft {
+// 	walk_in_place_slow_left * 2
+// }

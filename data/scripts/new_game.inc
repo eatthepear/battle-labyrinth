@@ -110,6 +110,10 @@ EventScript_ResetAllBerries::
 
 	@ Mirage Island
 	setberrytree BERRY_TREE_ROUTE_130_LIECHI, ITEM_TO_BERRY(ITEM_LIECHI_BERRY), BERRY_STAGE_BERRIES
+
+	@ Zone 0A (overrides all others)
+    setberrytree 0, ITEM_TO_BERRY(ITEM_ORAN_BERRY), BERRY_STAGE_FLOWERING
+    setberrytree 1, ITEM_TO_BERRY(ITEM_ORAN_BERRY), BERRY_STAGE_BERRIES
 	return
 
 EventScript_ResetAllMapFlags::

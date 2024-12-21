@@ -1,0 +1,28 @@
+mapscripts Zone9D_MapScripts {}
+
+script Zone9D_EventScript_Man {
+	lock
+	faceplayer
+	if (!flag(FLAG_ZONE9D_RECEIVED_MYSTIC_WATER)) {
+		msgbox(format("Hello, traveler. Will you take some time to listen to this poor man's story?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			msgbox(format("When I was seventeen years old, I was lost in the desert.\pI was sure I would die of thirst or hunger, but I was saved by a beautiful girl riding a Ponyta.\p"
+			"She would go on to become my wife and mother of my daughter, as well as my best friend.\pLast year, she passed away after battling cancer for several months.\pNow, when I look around my home, I feel sad and empty without her."))
+			delay(96)
+			msgbox(format("Thank you for listening to me. Your kindness inspires me to give you this."))
+			giveitem(ITEM_MYSTIC_WATER)
+			setflag(FLAG_ZONE9D_RECEIVED_MYSTIC_WATER)
+		}
+	}
+	msgbox(format("Farewell."))
+	release
+	end
+}
+
+script Zone9D_EventScript_Girl {
+	lock
+	faceplayer
+	msgbox(format("Before Momma left, she gave me a special necklace.\pShe called the stone inside a Mega Stone.\pI wonder what it does."))
+	release
+	end
+}

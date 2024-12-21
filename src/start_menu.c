@@ -1469,10 +1469,10 @@ static void ShowSaveInfoWindow(void)
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     PrintPlayerNameOnWindow(sSaveInfoWindowId, gStringVar4, xOffset, yOffset);
 
-    // Print badge count
+    // Print zones completed count
     yOffset += 16;
-    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingBadges, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    BufferSaveMenuText(SAVE_MENU_BADGES, gStringVar4, color);
+    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingZone, 0, yOffset, TEXT_SKIP_DRAW, NULL);
+    BufferSaveMenuText(SAVE_MENU_ZONE, gStringVar4, color);
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
 
@@ -1480,7 +1480,8 @@ static void ShowSaveInfoWindow(void)
     {
         // Print Pokédex count
         yOffset += 16;
-        AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL);
+        if (!(FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_INFINITE) || FlagGet(FLAG_SETTINGS_NUZLOCKE) || FlagGet(FLAG_SETTINGS_RANDOMIZER) == TRUE))
+            AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL);
         BufferSaveMenuText(SAVE_MENU_CAUGHT, gStringVar4, color);
         xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
         AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);

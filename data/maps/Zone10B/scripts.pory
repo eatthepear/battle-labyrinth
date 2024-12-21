@@ -1,0 +1,380 @@
+mapscripts Zone10B_MapScripts {}
+
+script Zone10B_EventScript_Adamina {
+	lock
+	faceplayer
+	goto(Zone10B_EventScript_AdaminaStuff)
+}
+
+script Zone10B_EventScript_Porygon {
+	lock
+	if (var(VAR_ZONE_10_STATE) == 2) {
+		goto(EventScript_PorygonExit)
+	}
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 7) {
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+	}
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	waitmovement(0)
+	goto(Zone10B_EventScript_AdaminaStuff)
+}
+
+script Zone10B_EventScript_AdaminaStuff {
+	if (var(VAR_ZONE_10_STATE) == 2) {
+		msgbox(format("{COLOR BLUE}Adamina{COLOR DARK_GRAY}: You'll find some people here are looking to trade or provide service in exchange for goods.\pPerhaps they'll be helpful in your travels."))
+		release
+		end
+	}
+	msgbox("{COLOR BLUE}Adamina{COLOR DARK_GRAY}: You…\n…\pLook.\nI said some harsh words earlier.\lConsider this part of my apology.")
+	giveitem(ITEM_TM20)
+	msgbox("{COLOR BLUE}Adamina{COLOR DARK_GRAY}: This is my tavern.\nIt's my safe space.\pAll the people from around here\ngather for shelter from the\lsandstorm.\pI just… feel defensive around\noutsiders. Because it feels like\lfamily here, you know?", MSGBOX_DEFAULT)
+	delay(96)
+	msgbox("{COLOR BLUE}Adamina{COLOR DARK_GRAY}: Tell you what, you can\nstay as long as you like to chat\lwith the people here.\pIt's kind of nice to just spend time\nwith other people, isn't it?")
+	setvar(VAR_ZONE_10_STATE, 2)
+	release
+}
+
+script Zone10B_EventScript_SideQuestLuckyEgg {
+	lock
+	faceplayer
+	if (flag(FLAG_ZONE10B_RECEIVED_LUCKY_EGG) == false) {
+		msgbox("You know what would make a\nCollector like me happy? Meeting\lsomeone who has caught 50 different\lspecies of Pokémon. Now, that\lperson is someone I'd like to meet!")
+		specialvar(VAR_RESULT, GetCaughtSpeciesCount)
+		if (var(VAR_RESULT) > 49) {
+			msgbox("Whoah, you've caught 50 species of\nPokémon? That's amazing.\pI aspire to be like you. Here, I\nwant you to have this.")
+			setflag(FLAG_ZONE10B_RECEIVED_LUCKY_EGG)
+			giveitem(ITEM_LUCKY_EGG, 1)
+		} else {
+			applymovement(3, Common_Movement_FaceRight)
+			waitmovement(0)
+			release
+			end
+		}
+	}
+	msgbox("Maybe I can catch 50 species of\nPokémon someday too.")
+	applymovement(3, Common_Movement_FaceRight)
+	waitmovement(0)
+	release
+}
+
+script Zone10B_EventScript_SideQuestTeleport {
+	lock
+	faceplayer
+	if (flag(FLAG_ZONE10B_RECEIVED_TM21) == false) {
+		msgbox("Greetings, young one. In my\npossession, I hold a useful TM for\lyour Pokémon, but only if you have\lproven yourself in battle.\pYou must have defeated all\nTrainers available thus far.")
+		if (!defeated(TRAINER_PBL_JEREMIAH) ||
+			!defeated(TRAINER_PBL_HARPER) ||
+			!defeated(TRAINER_PBL_ARTHUR) ||
+			!flag(FLAG_BEAT_LEVIATHAN_2) ||
+			!defeated(TRAINER_PBL_PATRICK) ||
+			!defeated(TRAINER_PBL_RICHARD) ||
+			!defeated(TRAINER_PBL_ANNABELLE) ||
+			!defeated(TRAINER_PBL_HERMAN) ||
+			!defeated(TRAINER_PBL_RALPH) ||
+			!defeated(TRAINER_PBL_SANTIAGO) ||
+			!defeated(TRAINER_PBL_CHLOE_AND_KAYA) ||
+			!defeated(TRAINER_PBL_LUCIA) ||
+			!defeated(TRAINER_PBL_FRED) ||
+			!defeated(TRAINER_PBL_ANNE_AND_JUNE) ||
+			!defeated(TRAINER_PBL_GILBERT) ||
+			!defeated(TRAINER_PBL_MELANIE) ||
+			!defeated(TRAINER_PBL_CONSTANCE) ||
+			!defeated(TRAINER_PBL_FRANK) ||
+			!defeated(TRAINER_PBL_DUDLEY) ||
+			!defeated(TRAINER_PBL_DAISY) ||
+			!flag(FLAG_BEAT_LEVIATHAN_6) ||
+			!defeated(TRAINER_PBL_MILLIE) ||
+			!defeated(TRAINER_PBL_JAMAL) ||
+			!defeated(TRAINER_PBL_PAIGE) ||
+			!defeated(TRAINER_PBL_SETH) ||
+			!defeated(TRAINER_PBL_CONNIE) ||
+			!defeated(TRAINER_PBL_JIMMY) ||
+			!defeated(TRAINER_PBL_EMILIANO) ||
+			!defeated(TRAINER_PBL_KAREN) ||
+			!defeated(TRAINER_PBL_JAYDEN) ||
+			!defeated(TRAINER_PBL_NEIL) ||
+			!defeated(TRAINER_PBL_TAMARA) ||
+			!defeated(TRAINER_PBL_COOPER) ||
+			!defeated(TRAINER_PBL_CARMINE) ||
+			!defeated(TRAINER_PBL_KYLE) ||
+			!defeated(TRAINER_PBL_BELLE) ||
+			!defeated(TRAINER_PBL_DEWEY) ||
+			!defeated(TRAINER_PBL_PEARLIE) ||
+			!defeated(TRAINER_PBL_ERNEST) ||
+			!defeated(TRAINER_PBL_ALANA) ||
+			!defeated(TRAINER_PBL_SUSAN) ||
+			!defeated(TRAINER_PBL_CONRAD)) {
+			msgbox("You still have trainers to defeat.")
+			applymovement(4, Common_Movement_FaceLeft)
+			waitmovement(0)
+			release
+			end
+		} else {
+			setflag(FLAG_ZONE10B_RECEIVED_TM21)
+			msgbox("Impressive, young one. I see you\nhave defeated all those trainers.\pHere is the TM21 - Teleport.$")
+			giveitem(ITEM_TM21)
+		}
+	}
+	msgbox("The move Teleport can help you\neasily bring in frail Pokémon\lwithout risking big damage.")
+	applymovement(4, Common_Movement_FaceLeft)
+	waitmovement(0)
+	release
+	end
+}
+
+script Zone10B_EventScript_BerryExchange {
+	lock
+	faceplayer
+	msgbox("Listen, you know how some berries\ncan treat status conditions?\pWell, I'm looking to start a Berry\nfarm. If you have 10 of each of\lthose Berries, I'll trade them\lfor 5 Revives. How about it?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		checkitem(ITEM_CHERI_BERRY, 10)
+		if (var(VAR_RESULT) == TRUE) {
+			checkitem(ITEM_CHESTO_BERRY, 10)
+			if (var(VAR_RESULT) == TRUE) {
+				checkitem(ITEM_PECHA_BERRY, 10)
+				if (var(VAR_RESULT) == TRUE) {
+					checkitem(ITEM_RAWST_BERRY, 10)
+					if (var(VAR_RESULT) == TRUE) {
+						checkitem(ITEM_ASPEAR_BERRY, 10)
+						if (var(VAR_RESULT) == TRUE) {
+							removeitem(ITEM_CHERI_BERRY, 10)
+							removeitem(ITEM_CHESTO_BERRY, 10)
+							removeitem(ITEM_PECHA_BERRY, 10)
+							removeitem(ITEM_RAWST_BERRY, 10)
+							removeitem(ITEM_ASPEAR_BERRY, 10)
+							msgbox("Alright…{PAUSE_UNTIL_PRESS} Here we go…{PAUSE_UNTIL_PRESS}\nAnd bam! 5 Revives!")
+							giveitem(ITEM_REVIVE, 5)
+							msgbox("Thank you.\nI'll be seeing you around!")
+							fadescreenswapbuffers(FADE_TO_BLACK)
+							setflag(FLAG_HIDE_ZONE10B_BERRYMAN)
+							removeobject(5)
+							fadescreenswapbuffers(FADE_FROM_BLACK)
+						} else {
+							msgbox("It looks like you don't have enough\nAspear Berries.")
+						}
+					} else {
+						msgbox("It looks like you don't have enough\nRawst Berries.")
+					}
+				} else {
+					msgbox("It looks like you don't have enough\nPecha Berries.")
+				}
+			} else {
+				msgbox("It looks like you don't have enough\nChesto Berries.")
+			}
+		} else {
+			msgbox("It looks like you don't have enough\nCheri Berries.")
+		}
+	} else {
+		msgbox("Aw, that's too bad.\nIt's a good offer though!$")	
+	}
+	applymovement(5, Common_Movement_FaceLeft)
+	waitmovement(0)
+	release
+	end
+
+}
+
+script Zone10B_EventScript_FossilScientist {
+	lock
+	faceplayer
+	msgbox(format("Oh. Another traveler looking to employ my fossil reviving services, eh?\pSo, how about it? Do you have a fossil you'd like to revive?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		goto(Zone10B_EventScript_FossilDone)
+	}
+	msgbox(format("Which fossil would you like me to revive?"))
+	chooseitem(TREASURES_POCKET)
+	switch (var(VAR_ITEM_ID)) {
+		case ITEM_HELIX_FOSSIL:
+			bufferspeciesname(1, SPECIES_OMANYTE)
+			call(Zone10B_EventScript_CommonFossilIntro)
+			givemon(SPECIES_OMANYTE, 20, ITEM_NONE)
+			setvar(VAR_TEMP_1, SPECIES_OMANYTE)
+			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
+			goto(Zone10B_EventScript_SendFossilMonParty)
+		case ITEM_DOME_FOSSIL:
+			bufferspeciesname(1, SPECIES_KABUTO)
+			call(Zone10B_EventScript_CommonFossilIntro)
+			givemon(SPECIES_KABUTO, 20, ITEM_NONE)
+			setvar(VAR_TEMP_1, SPECIES_KABUTO)
+			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
+			goto(Zone10B_EventScript_SendFossilMonParty)
+		case ITEM_OLD_AMBER:
+			bufferspeciesname(1, SPECIES_AERODACTYL)
+			call(Zone10B_EventScript_CommonFossilIntro)
+			givemon(SPECIES_AERODACTYL, 20, ITEM_NONE)
+			setvar(VAR_TEMP_1, SPECIES_AERODACTYL)
+			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
+			goto(Zone10B_EventScript_SendFossilMonParty)
+		case ITEM_ROOT_FOSSIL:
+			bufferspeciesname(1, SPECIES_LILEEP)
+			call(Zone10B_EventScript_CommonFossilIntro)
+			givemon(SPECIES_LILEEP, 20, ITEM_NONE)
+			setvar(VAR_TEMP_1, SPECIES_LILEEP)
+			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
+			goto(Zone10B_EventScript_SendFossilMonParty)
+		case ITEM_CLAW_FOSSIL:
+			bufferspeciesname(1, SPECIES_ANORITH)
+			call(Zone10B_EventScript_CommonFossilIntro)
+			givemon(SPECIES_ANORITH, 20, ITEM_NONE)
+			setvar(VAR_TEMP_1, SPECIES_ANORITH)
+			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
+			goto(Zone10B_EventScript_SendFossilMonParty)
+		case ITEM_ARMOR_FOSSIL:
+			bufferspeciesname(1, SPECIES_SHIELDON)
+			call(Zone10B_EventScript_CommonFossilIntro)
+			givemon(SPECIES_SHIELDON, 20, ITEM_NONE)
+			setvar(VAR_TEMP_1, SPECIES_SHIELDON)
+			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
+			goto(Zone10B_EventScript_SendFossilMonParty)
+		case ITEM_SKULL_FOSSIL:
+			bufferspeciesname(1, SPECIES_CRANIDOS)
+			call(Zone10B_EventScript_CommonFossilIntro)
+			givemon(SPECIES_CRANIDOS, 20, ITEM_NONE)
+			setvar(VAR_TEMP_1, SPECIES_CRANIDOS)
+			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
+			goto(Zone10B_EventScript_SendFossilMonParty)
+		case ITEM_COVER_FOSSIL:
+			bufferspeciesname(1, SPECIES_TIRTOUGA)
+			call(Zone10B_EventScript_CommonFossilIntro)
+			givemon(SPECIES_TIRTOUGA, 20, ITEM_NONE)
+			setvar(VAR_TEMP_1, SPECIES_TIRTOUGA)
+			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
+			goto(Zone10B_EventScript_SendFossilMonParty)
+		case ITEM_PLUME_FOSSIL:
+			bufferspeciesname(1, SPECIES_ARCHEN)
+			call(Zone10B_EventScript_CommonFossilIntro)
+			givemon(SPECIES_ARCHEN, 20, ITEM_NONE)
+			setvar(VAR_TEMP_1, SPECIES_ARCHEN)
+			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
+			goto(Zone10B_EventScript_SendFossilMonParty)
+		case ITEM_JAW_FOSSIL:
+			bufferspeciesname(1, SPECIES_TYRUNT)
+			call(Zone10B_EventScript_CommonFossilIntro)
+			givemon(SPECIES_TYRUNT, 20, ITEM_NONE)
+			setvar(VAR_TEMP_1, SPECIES_TYRUNT)
+			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
+			goto(Zone10B_EventScript_SendFossilMonParty)
+		case ITEM_SAIL_FOSSIL:
+			bufferspeciesname(1, SPECIES_AMAURA)
+			call(Zone10B_EventScript_CommonFossilIntro)
+			givemon(SPECIES_AMAURA, 20, ITEM_NONE)
+			setvar(VAR_TEMP_1, SPECIES_AMAURA)
+			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
+			goto(Zone10B_EventScript_SendFossilMonParty)
+		default:
+			msgbox(format("That ain't no fossil! Kids these days!"))
+			applymovement(6, Common_Movement_FaceLeft)
+			waitmovement(0)
+			release
+			end
+	}
+	goto(Zone10B_EventScript_FossilDone)
+}
+
+script Zone10B_EventScript_SendFossilMonParty {
+	msgbox(format("Would you like to give a nickname to {STR_VAR_1}?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call(Common_EventScript_GetGiftMonPartySlot)
+		call(Common_EventScript_NameReceivedPartyMon)
+	}
+	setmonmetlocation(VAR_TEMP_2, 247)
+	goto(Zone10B_EventScript_FossilDone)
+}
+
+script Zone10B_EventScript_ReceivedFossilMonFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message("Received the Fossil Pokémon\n{STR_VAR_2}!")
+	waitmessage
+	waitfanfare
+	return
+}
+
+script Zone10B_EventScript_CommonFossilIntro {
+	bufferitemname(0, VAR_ITEM_ID)
+	msgbox("You want me to turn that\n{STR_VAR_1} back into a Pokémon?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		goto(Zone10B_EventScript_FossilDone)
+	}
+	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		msgbox(format("Your party is full. Clear a party slot, then come back."))
+		applymovement(6, Common_Movement_FaceLeft)
+		waitmovement(0)
+		release
+		end
+	}
+	removeitem(VAR_ITEM_ID)
+	msgbox("Alright. Gimme a moment…")
+	applymovement(6, Common_Movement_FaceLeft)
+	waitmovement(0)
+	delay(192)
+	faceplayer
+	msgbox("There. Here's your Pokémon.")
+	return
+}
+
+script Zone10B_EventScript_FossilDone {
+	msgbox("Ok, back to my drink.")
+	applymovement(6, Common_Movement_FaceLeft)
+	waitmovement(0)
+	release
+	end
+}
+
+script Zone10B_EventScript_WaterMerchant {
+	lock
+	faceplayer
+	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_INDEPENDENT) == true)) {
+		msgbox(format("In the desert, it's supply and demand. And the demand is water.\pThe Fresh Water I usually sell is in such high demand that I am out of stock."))
+		release
+		end
+	}
+	showmoneybox(0, 0, 0)
+	msgbox("In the desert, it's supply and\ndemand. And the demand is water.\p¥200 for Fresh Water.\nRestores 30 HP each.", MSGBOX_DEFAULT)
+	dynmultichoice(0, 12, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "One Fresh Water - ¥200", "Ten Fresh Water - ¥2000", "Exit")
+	switch(var(VAR_RESULT)) {
+	case 0:
+		checkmoney(200, 0)
+		if (var(VAR_RESULT) == FALSE) {
+			goto(Zone10B_EventScript_WaterNotEnough)
+		} else {
+			removemoney(200, 0)
+			updatemoneybox
+			msgbox("Here you go.")
+			giveitem(ITEM_FRESH_WATER, 1)
+			hidemoneybox
+			release
+			end
+		}
+	case 1:
+		checkmoney(2000, 0)
+		if (var(VAR_RESULT) == FALSE) {
+			goto(Zone10B_EventScript_WaterNotEnough)
+		} else {
+			removemoney(2000, 0)
+			updatemoneybox
+			msgbox("Here you go.")
+			giveitem(ITEM_FRESH_WATER, 10)
+			hidemoneybox
+			release
+			end
+		}
+	}
+	closemessage
+	hidemoneybox
+	msgbox("Ah, fine.")
+	release
+}
+
+script Zone10B_EventScript_WaterNotEnough {
+	msgbox("You don't have enough money.")
+	hidemoneybox
+	releaseall
+	end
+}

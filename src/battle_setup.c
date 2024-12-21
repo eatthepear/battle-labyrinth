@@ -1057,6 +1057,8 @@ u8 GetSpecialBattleTransition(s32 id)
 
 void ChooseStarter(void)
 {
+    u16 randomSeed = (Random() % 9) + (Random() % 9) * 9 + (Random() % 9) * 81;
+    VarSet(VAR_RAND_STARTER_SEED, randomSeed);
     SetMainCallback2(CB2_ChooseStarter);
     gMain.savedCallback = CB2_GiveStarter;
 }
@@ -1069,9 +1071,8 @@ static void CB2_GiveStarter(void)
     starterMon = GetStarterPokemon(gSpecialVar_Result);
     ScriptGiveMon(starterMon, 5, ITEM_NONE);
     ResetTasks();
-    PlayBattleBGM();
     SetMainCallback2(CB2_StartFirstBattle);
-    BattleTransition_Start(B_TRANSITION_BLUR);
+    BeginNormalPaletteFade(PALETTES_ALL, -1, 0, 16, 0);
 }
 
 static void CB2_StartFirstBattle(void)
@@ -1079,12 +1080,12 @@ static void CB2_StartFirstBattle(void)
     UpdatePaletteFade();
     RunTasks();
 
-    if (IsBattleTransitionDone() == TRUE)
+    if (!gPaletteFade.active)
     {
         gBattleTypeFlags = BATTLE_TYPE_FIRST_BATTLE;
         gMain.savedCallback = CB2_EndFirstBattle;
         FreeAllWindowBuffers();
-        SetMainCallback2(CB2_InitBattle);
+        SetMainCallback2(CB2_EndFirstBattle);
         RestartWildEncounterImmunitySteps();
         ClearPoisonStepCounter();
         IncrementGameStat(GAME_STAT_TOTAL_BATTLES);

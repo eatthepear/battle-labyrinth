@@ -1,0 +1,621 @@
+mapscripts Zone1A_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE1A_POTION)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE1A_QUICK_CLAW)) {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+	}
+}
+
+script Zone1A_EventScript_GiveFWG {
+	lock
+	faceplayer
+	msgbox(format("Hello! You look like a new trainer.\pDo you know about Pokémon type matchups?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Type matchups are one of the most important parts of Pokémon battles!\pThe most basic type matchup is Grass beats Water, Water beats Fire, and Fire beats Grass.\pIt can be very important to have a diversity of types on your team."), MSGBOX_DEFAULT)
+	} else {
+		msgbox(format("Oh! Then I'm sure you could see the benefits of having a diversity of types on your team."), MSGBOX_DEFAULT)
+	}
+	msgbox(format("I'm offering trainers a Grass, Fire, or Water type Pokémon to help supplement their teams. Interested?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(Zone1A_Text_FWG_ComeBack)
+		release
+		end
+	}
+	message(format("Do you want a Grass, Fire, or Water type?"))
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Fire", "Water", "Exit")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_4, 0)
+		case 1:
+			setvar(VAR_TEMP_4, 1)
+		case 2:
+			setvar(VAR_TEMP_4, 2)
+		case 3:
+		case MULTI_B_PRESSED:
+			msgbox(Zone1A_Text_FWG_ComeBack)
+			release
+			end
+	}
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+		if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
+			setvar(VAR_TEMP_1, SPECIES_BULBASAUR) // gets randomized anyways
+		} else {
+			if (var(VAR_TEMP_4) == 0) {
+				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pansage, Cacnea, Sunkern, Smoliv, or Bounsweet.\pIs this ok?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == NO) {
+					msgbox(Zone1A_Text_FWG_ComeBack)
+					release
+					end
+				}
+				setvar(VAR_TEMP_3, 0)
+				checkspeciesclause(SPECIES_PANSAGE)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_CACNEA)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_SUNKERN)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_SMOLIV)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_BOUNSWEET)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				if (var(VAR_TEMP_3) == 5) {
+					msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
+					release
+					end
+				}
+				setvar(VAR_TEMP_1, 0)
+				while (var(VAR_TEMP_1) == 0) {
+					random(5)
+					switch (var(VAR_RESULT)) {
+						case 0:
+							checkspeciesclause(SPECIES_PANSAGE)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_PANSAGE)
+						case 1:
+							checkspeciesclause(SPECIES_CACNEA)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_CACNEA)
+						case 2:
+							checkspeciesclause(SPECIES_SUNKERN)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_SUNKERN)
+						case 3:
+							checkspeciesclause(SPECIES_SMOLIV)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_SMOLIV)
+						case 4:
+							checkspeciesclause(SPECIES_BOUNSWEET)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_BOUNSWEET)
+					}
+				}
+			} elif (var(VAR_TEMP_4) == 1) {
+				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pansear, Slugma, Salandit, Vulpix, or Sizzlipede.\pIs this ok?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == NO) {
+					msgbox(Zone1A_Text_FWG_ComeBack)
+					release
+					end
+				}
+				setvar(VAR_TEMP_3, 0)
+				checkspeciesclause(SPECIES_PANSEAR)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_SLUGMA)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_SALANDIT)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_VULPIX)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_SIZZLIPEDE)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				if (var(VAR_TEMP_3) == 5) {
+					msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
+					release
+					end
+				}
+				setvar(VAR_TEMP_1, 0)
+				while (var(VAR_TEMP_1) == 0) {
+					random(5)
+					switch (var(VAR_RESULT)) {
+						case 0:
+							checkspeciesclause(SPECIES_PANSEAR)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_PANSEAR)
+						case 1:
+							checkspeciesclause(SPECIES_SLUGMA)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_SLUGMA)
+						case 2:
+							checkspeciesclause(SPECIES_SALANDIT)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_SALANDIT)
+						case 3:
+							checkspeciesclause(SPECIES_VULPIX)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_VULPIX)
+						case 4:
+							checkspeciesclause(SPECIES_SIZZLIPEDE)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_SIZZLIPEDE)
+					}
+				}
+			} elif (var(VAR_TEMP_4) == 2) {
+				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Panpour, Barboach, Finneon, Seel, or Goldeen.\pIs this ok?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == NO) {
+					msgbox(Zone1A_Text_FWG_ComeBack)
+					release
+					end
+				}
+				setvar(VAR_TEMP_3, 0)
+				checkspeciesclause(SPECIES_PANPOUR)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_BARBOACH)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_FINNEON)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_SEEL)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				checkspeciesclause(SPECIES_GOLDEEN)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				if (var(VAR_TEMP_3) == 5) {
+					msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
+					release
+					end
+				}
+				setvar(VAR_TEMP_1, 0)
+				while (var(VAR_TEMP_1) == 0) {
+					random(5)
+					switch (var(VAR_RESULT)) {
+						case 0:
+							checkspeciesclause(SPECIES_PANPOUR)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_PANPOUR)
+						case 1:
+							checkspeciesclause(SPECIES_BARBOACH)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_BARBOACH)
+						case 2:
+							checkspeciesclause(SPECIES_FINNEON)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_FINNEON)
+						case 3:
+							checkspeciesclause(SPECIES_SEEL)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_SEEL)
+						case 4:
+							checkspeciesclause(SPECIES_GOLDEEN)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_GOLDEEN)
+					}
+				}
+			}
+		}
+	} else {
+		message(format("Choose which Pokémon you would like."))
+		if (var(VAR_TEMP_4) == 0) {
+			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Pansage", "Cacnea", "Sunkern", "Smoliv", "Bounsweet", "Exit")
+			switch (var(VAR_RESULT)) {
+				case 0:
+					setvar(VAR_TEMP_1, SPECIES_PANSAGE)
+				case 1:
+					setvar(VAR_TEMP_1, SPECIES_CACNEA)
+				case 2:
+					setvar(VAR_TEMP_1, SPECIES_SUNKERN)
+				case 3:
+					setvar(VAR_TEMP_1, SPECIES_SMOLIV)
+				case 4:
+					setvar(VAR_TEMP_1, SPECIES_BOUNSWEET)
+				case 5:
+				case MULTI_B_PRESSED:
+					msgbox(Zone1A_Text_FWG_ComeBack)
+					release
+					end
+			}
+		} elif (var(VAR_TEMP_4) == 1) {
+			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Pansear", "Slugma", "Salandit", "Vulpix", "Sizzlipede", "Exit")
+			switch (var(VAR_RESULT)) {
+				case 0:
+					setvar(VAR_TEMP_1, SPECIES_PANSEAR)
+				case 1:
+					setvar(VAR_TEMP_1, SPECIES_SLUGMA)
+				case 2:
+					setvar(VAR_TEMP_1, SPECIES_SALANDIT)
+				case 3:
+					setvar(VAR_TEMP_1, SPECIES_VULPIX)
+				case 4:
+					setvar(VAR_TEMP_1, SPECIES_SIZZLIPEDE)
+				case 5:
+				case MULTI_B_PRESSED:
+					msgbox(Zone1A_Text_FWG_ComeBack)
+					release
+					end
+			}
+		} elif (var(VAR_TEMP_4) == 2) {
+			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Panpour", "Barboach", "Finneon", "Seel", "Goldeen", "Exit")
+			switch (var(VAR_RESULT)) {
+				case 0:
+					setvar(VAR_TEMP_1, SPECIES_PANPOUR)
+				case 1:
+					setvar(VAR_TEMP_1, SPECIES_BARBOACH)
+				case 2:
+					setvar(VAR_TEMP_1, SPECIES_FINNEON)
+				case 3:
+					setvar(VAR_TEMP_1, SPECIES_SEEL)
+				case 4:
+					setvar(VAR_TEMP_1, SPECIES_GOLDEEN)
+				case 5:
+				case MULTI_B_PRESSED:
+					msgbox(Zone1A_Text_FWG_ComeBack)
+					release
+					end
+			}
+		}
+		bufferspeciesname(0, VAR_TEMP_1)
+		msgbox(format("Are you sure you want {STR_VAR_1}?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			msgbox(Zone1A_Text_FWG_ComeBack)
+			release
+			end
+		}
+	}
+	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
+		special(ChoosePartyMon)
+		waitstate
+		faceplayer
+		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+			msgbox(Zone1A_Text_FWG_ComeBack)
+			release
+			end
+		}
+		specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
+		bufferspeciesname(2, VAR_TEMP_3)
+		copyvar(VAR_TEMP_3, VAR_0x8004) // used in SendChosenMonToPC
+		msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			msgbox(Zone1A_Text_FWG_ComeBack)
+			release
+			end
+		}
+		special(SendChosenMonToPC)
+		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
+	}
+	givemon(VAR_TEMP_1, 5, ITEM_NONE)
+	setmonmetlocation(VAR_TEMP_2, 245)
+	bufferspeciesname(0, VAR_TEMP_1)
+	msgbox("Here's your {STR_VAR_1}.", MSGBOX_DEFAULT)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(format("{PLAYER} received the {STR_VAR_1}!"))
+	waitmessage
+	waitfanfare
+	msgbox(format("Would you like to give a nickname to {STR_VAR_1}?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call(Common_EventScript_GetGiftMonPartySlot)
+		call(Common_EventScript_NameReceivedPartyMon)
+	}
+	faceplayer
+	msgbox(format("Good luck on the rest of your journey!"), MSGBOX_DEFAULT)
+	closemessage
+	fadescreenswapbuffers(FADE_TO_BLACK)
+	removeobject(8)
+	setflag(FLAG_ZONE1A_RECEIVED_FWG)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+	release
+	end
+}
+
+text Zone1A_Text_FWG_ComeBack {
+	format("Come back if you change your mind!")
+}
+
+movement Zone1A_Corey_WalkLeft {
+	walk_left * 4
+}
+
+movement Zone1A_Corey_WalkRight {
+	walk_right * 4
+}
+
+script Zone1A_EventScript_TriggerLeviathanBottom {
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement(0)
+	applymovement(1, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(1, Common_Movement_WalkDown)
+	waitmovement(0)
+	applymovement(1, Zone1A_Corey_WalkLeft)
+	waitmovement(0)
+	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		goto(Zone1A_EventScript_LeviathanBattle)
+	} else {
+		msgbox(Zone1A_Text_Leviathan1Wait)
+		applymovement(1, Common_Movement_WalkUp)
+		waitmovement(0)
+		applymovement(1, Zone1A_Corey_WalkRight)
+		waitmovement(0)
+		applymovement(1, Common_Movement_FaceLeft)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+	}
+}
+
+script Zone1A_EventScript_TriggerLeviathanMiddle {
+	lockall
+	applymovement(1, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(1, Zone1A_Corey_WalkLeft)
+	waitmovement(0)
+	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		goto(Zone1A_EventScript_LeviathanBattle)
+	} else {
+		msgbox(Zone1A_Text_Leviathan1Wait)
+		applymovement(1, Zone1A_Corey_WalkRight)
+		waitmovement(0)
+		applymovement(1, Common_Movement_FaceLeft)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+	}
+}
+
+script Zone1A_EventScript_TriggerLeviathanTop {
+	lockall
+	applymovement(1, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(1, Common_Movement_WalkUp)
+	waitmovement(0)
+	applymovement(1, Zone1A_Corey_WalkLeft)
+	waitmovement(0)
+	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		goto(Zone1A_EventScript_LeviathanBattle)
+	} else {
+		msgbox(Zone1A_Text_Leviathan1Wait)
+		applymovement(1, Common_Movement_WalkDown)
+		waitmovement(0)
+		applymovement(1, Zone1A_Corey_WalkRight)
+		waitmovement(0)
+		applymovement(1, Common_Movement_FaceLeft)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+	}
+}
+
+script Zone1A_EventScript_LeviathanBattle {
+	fadeoutbgm(1)
+	setvar(VAR_ZONE_1_STATE, 1)
+	msgbox(Zone1A_Text_Leviathan1Intro2)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+		switch (var(VAR_STARTER_MON)) {
+			case 0:
+				trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_BRUTAL, Zone1A_Text_Leviathan1Defeat)
+			case 1:
+				trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_BRUTAL, Zone1A_Text_Leviathan1Defeat)
+			case 2:
+				trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_BRUTAL, Zone1A_Text_Leviathan1Defeat)
+		}
+	} else {
+		switch (var(VAR_STARTER_MON)) {
+			case 0:
+				trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER, Zone1A_Text_Leviathan1Defeat)
+			case 1:
+				trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER, Zone1A_Text_Leviathan1Defeat)
+			case 2:
+				trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER, Zone1A_Text_Leviathan1Defeat)
+		}
+	}
+	settrainerflag(TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER)
+	settrainerflag(TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_BRUTAL)
+	settrainerflag(TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER)
+	settrainerflag(TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_BRUTAL)
+	settrainerflag(TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER)
+	settrainerflag(TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_BRUTAL)
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this Exp. Share! It's useful for training up Pokémon."), MSGBOX_DEFAULT)
+	giveitem(ITEM_EXP_SHARE)
+	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Well, anyways, I've gotta run now.\pBye bye!"))
+	closemessage
+	fadescreenswapbuffers(FADE_TO_BLACK)
+	removeobject(1)
+	setflag(FLAG_BEAT_LEVIATHAN_1)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+	release
+	end
+}
+
+text Zone1A_Text_Leviathan1Intro {
+	format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Hi! My name's Corey.\n"
+		   "I'm the resident Leviathan around here.\p"
+		   "If you want to go forward, you'll have to beat me!\p"
+		   "So, are you ready for our battle?")
+}
+
+text Zone1A_Text_Leviathan1Wait {
+	format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Okay. You just let me know when you're ready.")
+}
+
+text Zone1A_Text_Leviathan1Intro2 {
+	format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Aww, yeah!\n"
+		   "This battle is gonna be awesome!")
+}
+
+text Zone1A_Text_Leviathan1Defeat {
+	format("Drats! My Fire-Water-Grass core wasn't enough!")
+}
+
+script Zone1A_EventScript_ItemPotion {
+	lock
+	if (flag(FLAG_ITEM_ZONE1A_POTION)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE1A_POTION)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_POTION, 1)
+	release
+	end
+}
+
+script Zone1A_EventScript_ItemQuickClaw {
+	lock
+	if (flag(FLAG_ITEM_ZONE1A_QUICK_CLAW)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE1A_QUICK_CLAW)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_QUICK_CLAW, 1)
+	release
+	end
+}
+
+script Zone1A_EventScript_PorygonSign {
+	msgbox(format("Trainer Tips\pEvery Zone has its own challenges.\nIn order to reach the Sanctuary and clear a Zone, you must find {COLOR RED}Porygon{COLOR DARK_GRAY}."), MSGBOX_DEFAULT)
+	showmonpic(SPECIES_PORYGON, 10, 3)
+	setseenmon(SPECIES_PORYGON)
+	waitbuttonpress
+	hidemonpic
+	release
+	end
+}
+
+script Zone1A_EventScript_Sign_GoldenTree {
+	msgbox(format("Trainer Tips\pShaking a Golden Tree might drop berries, though occasionally you'll disturb the wild Pokémon living in the tree!"), MSGBOX_SIGN)
+	end
+}
+
+script Zone1A_EventScript_Sign_RunningShoes {
+	msgbox(format("Trainer Tips\pPress {R_BUTTON} to enable or disable Auto Run."), MSGBOX_SIGN)
+	end
+}
+
+raw `
+Zone1A_EventScript_Nina::
+	trainerbattle_single TRAINER_PBL_NINA, Zone1A_Text_NinaIntro, Zone1A_Text_NinaDefeat
+	msgbox Zone1A_Text_NinaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone1A_Text_NinaIntro:
+	.string "Hey, you! Let's battle!$"
+
+Zone1A_Text_NinaDefeat:
+	.string "Aww… Come on!$"
+
+Zone1A_Text_NinaPostBattle:
+	.string "I always lose…$"
+
+Zone1A_EventScript_Mariam::
+	trainerbattle_single TRAINER_PBL_MARIAM, Zone1A_Text_MariamIntro, Zone1A_Text_MariamDefeat
+	msgbox Zone1A_Text_MariamPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone1A_Text_MariamIntro:
+	.string "Be careful, I'm tough!$"
+
+Zone1A_Text_MariamDefeat:
+	.string "Sheesh!$"
+
+Zone1A_Text_MariamPostBattle:
+	.string "Maybe I need more Pokémon.$"
+
+Zone1A_EventScript_Oscar::
+	trainerbattle_single TRAINER_PBL_OSCAR, Zone1A_Text_OscarIntro, Zone1A_Text_OscarDefeat
+	msgbox Zone1A_Text_OscarPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone1A_Text_OscarIntro:
+	.string "Fear my might!$"
+
+Zone1A_Text_OscarDefeat:
+	.string "Beaten! Disgrace!$"
+
+Zone1A_Text_OscarPostBattle:
+	.string "I must reclaim my honor…$"
+`

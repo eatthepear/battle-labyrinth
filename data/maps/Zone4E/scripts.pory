@@ -1,0 +1,95 @@
+mapscripts Zone4E_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE4E_SUPER_POTION)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE4E_POISON_BARB)) {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+	}
+}
+
+script Zone4E_EventScript_LeviathanBattle {
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement(0)
+	applymovement(3, Common_Movement_WalkRight2)
+	applymovement(4, Common_Movement_WalkRight2)
+	waitmovement(0)
+	fadeoutbgm(1)
+	msgbox(Zone4E_Text_Leviathan4Intro)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+		trainerbattle_no_intro(TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4_BRUTAL, Zone4E_Text_Leviathan4Defeat)
+	} else {
+		trainerbattle_no_intro(TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4, Zone4E_Text_Leviathan4Defeat)
+	}
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	msgbox(format("{COLOR BLUE}Ella{COLOR DARK_GRAY}: Wargh! Not only are we lost in the wood…\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: We could've won that battle, you misunderstood!\p{COLOR BLUE}Ella{COLOR DARK_GRAY}: I guess our teamwork could be improved…\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: Yeah… Oh right, here's a thing for those approved!"), MSGBOX_DEFAULT)
+	giveitem(ITEM_TM02)
+	msgbox(format("{COLOR BLUE}Ella{COLOR DARK_GRAY}: That rhyme barely worked!\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: Oh, don't be irked!"))
+	closemessage
+	fadescreenswapbuffers(FADE_TO_BLACK)
+	removeobject(3)
+	removeobject(4)
+	setflag(FLAG_BEAT_LEVIATHAN_4)
+	setvar(VAR_ZONE_4_STATE, 1)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+	releaseall
+	end
+}
+
+text Zone4E_Text_Leviathan4Intro {
+	format("{COLOR BLUE}Ella{COLOR DARK_GRAY}: Watch out!\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: Don't fear!\p{COLOR BLUE}Ella{COLOR DARK_GRAY}: The dynamic duo of Ella & Bella…\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: Will always persevere!\p{COLOR BLUE}Ella & Bella{COLOR DARK_GRAY}: It's time to battle it out, victory is near!")
+}
+
+text Zone4E_Text_Leviathan4Defeat {
+	format("We lost!")
+}
+
+script Zone4E_EventScript_ItemSuperPotion {
+	lock
+	if (flag(FLAG_ITEM_ZONE4E_SUPER_POTION)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE4E_SUPER_POTION)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_SUPER_POTION, 1)
+	release
+	end
+}
+
+script Zone4E_EventScript_ItemPoisonBarb {
+	lock
+	if (flag(FLAG_ITEM_ZONE4E_POISON_BARB)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE4E_POISON_BARB)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_POISON_BARB, 1)
+	release
+	end
+}
+
+script Zone4E_EventScript_Sign {
+	msgbox(Zone4E_Text_Sign, MSGBOX_SIGN)
+	end
+}
+
+text Zone4E_Text_Sign {
+	format("Trainer Tips\pThe Pokémon you encounter in different areas of the same zone may have slight differences!")
+}

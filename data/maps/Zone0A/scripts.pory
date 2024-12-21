@@ -1,0 +1,358 @@
+mapscripts Zone0A_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ZONE_0_STATE, 0: Zone0A_EventScript_Intro
+		VAR_ZONE_0_STATE, 2: Zone0A_EventScript_MoveDown
+	]
+    MAP_SCRIPT_ON_TRANSITION {
+		call(Zone0A_EventScript_TryMoveDayCareMan)
+		call(Zone0A_EventScript_TryMoveBerryGirl)
+    }
+}
+
+script Zone0A_EventScript_TryMoveBerryGirl {
+	if (var(VAR_ZONE_0_STATE) == 0) {
+		setobjectxyperm(14, 40, 9)
+	}
+}
+
+script Zone0A_EventScript_Intro {
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	applymovement(14, Common_Movement_FaceLeft)
+	waitmovement(0)
+	applymovement(14, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(14, Common_Movement_WalkLeft2)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement(0)
+	msgbox(format("Hello, {PLAYER}.\pWelcome to my home.\pThere are no trainers here, and no challenges to face. Everything is meant to help you on your journey.\pAs a welcome gift, I'd like you to have this."), MSGBOX_DEFAULT)
+	giveitem(ITEM_WAILMER_PAIL)
+	if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_RED_THUMB)) {
+		msgbox(format("I'm the caretaker of the berry fields here.\pThe soil is getting too hard to farm any more though, plus with the wild Pokémon that eat the Berries, it's impossible to grow more.\pFeel free to pick any Berries I may have left."))
+	} else {
+		msgbox(format("I'm the caretaker of the berry fields here.\pYou should try growing some berries yourself, though beware wild Pokémon that might be nibbling on your Berries.\pFeel free to pick any Berries I may have left."))
+	}
+	applymovement(14, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	msgbox(format("Oh, right! I just remembered something.\pI've heard the Pokémon Day-Care nearby is having a special gift Pokémon promotion.\pIt might be worth a look."))
+	applymovement(14, Common_Movement_WalkRight6)
+	waitmovement(0)
+	applymovement(14, Common_Movement_WalkRight)
+	waitmovement(0)
+	setobjectxyperm(14, 53, 7)
+	setobjectxy(14, 53, 7)
+	setvar(VAR_ZONE_0_STATE, 1)
+	releaseall
+	end
+}
+
+script Zone0A_EventScript_BerryGirl {
+	lock
+	faceplayer
+	msgbox(format("Hello, {PLAYER}.\pHope you are doing well."))
+	release
+	end
+}
+
+script Zone0A_EventScript_MoveDown {
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	waitmovement(0)
+	setvar(VAR_ZONE_0_STATE, 1)
+	releaseall
+	end
+}
+
+script Zone0A_EventScript_Exit {
+	lockall
+	message(format("Where do you want to go to?"))
+	waitmessage
+	dynmultipush("Sanctuary", 0)
+	if (var(VAR_ZONE) > 1) {
+		dynmultipush("Zone 1", 1)
+	}
+	if (var(VAR_ZONE) > 2) {
+		dynmultipush("Zone 2", 2)
+	}
+	if (var(VAR_ZONE) > 3) {
+		dynmultipush("Zone 3", 3)
+	}
+	if (var(VAR_ZONE) > 4) {
+		dynmultipush("Zone 4", 4)
+	}
+	if (var(VAR_ZONE) > 5) {
+		dynmultipush("Zone 5", 5)
+	}
+	if (var(VAR_ZONE) > 6) {
+		dynmultipush("Zone 6", 6)
+	}
+	dynmultipush("Exit", 51)
+	dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			closemessage
+			setvar(VAR_ZONE_0_STATE, 2)
+			switch (var(VAR_ZONE)) {
+				case 1:
+					warpdoor(MAP_ZONE0SHOPS, 255, 46, 1)
+					waitstate
+				case 2:
+					warpdoor(MAP_ZONE1SHOPS, 255, 46, 1)
+					waitstate
+				case 3:
+					warpdoor(MAP_ZONE2SHOPS, 255, 46, 1)
+					waitstate
+				case 4:
+					warpdoor(MAP_ZONE3SHOPS, 255, 46, 1)
+					waitstate
+				case 5:
+					warpdoor(MAP_ZONE4SHOPS, 255, 46, 1)
+					waitstate
+				case 6:
+					warpdoor(MAP_ZONE5SHOPS, 255, 46, 1)
+					waitstate
+				case 7:
+					warpdoor(MAP_ZONE6SHOPS, 255, 46, 1)
+					waitstate
+				case 9:
+					warpdoor(MAP_ZONE8SHOPS, 255, 46, 1)
+					waitstate
+				case 10:
+					warpdoor(MAP_ZONE9SHOPS, 255, 46, 1)
+					waitstate
+				case 11:
+					warpdoor(MAP_ZONE10SHOPS, 255, 46, 1)
+					waitstate
+				case 12:
+					warpdoor(MAP_ZONE11SHOPS, 255, 46, 1)
+					waitstate
+				case 13:
+					warpdoor(MAP_ZONE12SHOPS, 255, 46, 1)
+					waitstate
+				case 15:
+					warpdoor(MAP_ZONE14SHOPS, 255, 46, 1)
+					waitstate
+				case 16:
+					warpdoor(MAP_ZONE15SHOPS, 255, 46, 1)
+					waitstate
+				case 17:
+					warpdoor(MAP_ZONE16SHOPS, 255, 46, 1)
+					waitstate
+				case 18:
+					warpdoor(MAP_ZONE17SHOPS, 255, 46, 1)
+					waitstate
+				case 20:
+					warpdoor(MAP_ZONE20SHOPS, 255, 46, 1)
+					waitstate
+				case 21:
+					warpdoor(MAP_ZONE20SHOPS, 255, 46, 1)
+					waitstate
+				case 22:
+					warpdoor(MAP_ZONE21SHOPS, 255, 46, 1)
+					waitstate
+				case 23:
+					warpdoor(MAP_ZONE22SHOPS, 255, 46, 1)
+					waitstate
+				case 24:
+					warpdoor(MAP_ZONE23SHOPS, 255, 46, 1)
+					waitstate
+				case 26:
+					warpdoor(MAP_ZONE25SHOPS, 255, 46, 1)
+					waitstate
+			}
+		case 1:
+			setvar(VAR_REVISITING_ZONE, 1)
+			warp(MAP_ZONE1A, 255, 16, 28)
+			waitstate
+		case 2:
+			setvar(VAR_REVISITING_ZONE, 2)
+			warp(MAP_ZONE2A, 255, 4, 3)
+			waitstate
+		case 3:
+			setvar(VAR_REVISITING_ZONE, 3)
+			warp(MAP_ZONE3A, 255, 38, 25)
+			waitstate
+		case 4:
+			setvar(VAR_REVISITING_ZONE, 4)
+			warp(MAP_ZONE4A, 255, 6, 4)
+			waitstate
+		case 5:
+			setvar(VAR_REVISITING_ZONE, 5)
+			warp(MAP_ZONE5A, 255, 3, 1)
+			waitstate
+		case 6:
+			setvar(VAR_REVISITING_ZONE, 6)
+			warp(MAP_ZONE6A, 255, 51, 22)
+			waitstate
+		case 51:
+		case MULTI_B_PRESSED:
+			closemessage
+			applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+			waitmovement(0)
+
+	}
+	releaseall
+	end
+}
+
+// script Zone0A_EventScript_Porygon {
+//     lockall
+//     fadeoutbgm(1)
+// 	delay(64)
+// 	message("Beeeouuuuuu zeedeeboo!")
+//     playmoncry(SPECIES_PORYGON, 2)
+// 	delay(40)
+// 	waitmoncry
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+// 	playse(SE_PIN)
+// 	waitmovement(0)
+// 	waitse
+// 	closemessage
+// 	delay(40)
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+// 	waitmovement(0)
+// 	delay(40)
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+// 	waitmovement(0)
+// 	delay(40)
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+// 	waitmovement(0)
+//     msgbox(format("There seemed to be a Pokémon's cry, but it's gone now."))
+//     setvar(VAR_ZONE_0_STATE, 2)
+//     fadeinbgm(1)
+//     releaseall
+// }
+
+raw `
+Zone0A_EventScript_TryMoveDayCareMan::
+	goto_if_unset FLAG_PBL_PENDING_DAYCARE_EGG, Zone0A_EventScript_StopMoveDayCareMan
+	setobjectxyperm 1, 22, 9
+Zone0A_EventScript_StopMoveDayCareMan::
+	return
+
+Zone0A_EventScript_DaycareMan::
+	lock
+	faceplayer
+	special GetDaycareMonNicknames
+	specialvar VAR_RESULT, GetDaycareState
+	compare VAR_RESULT, DAYCARE_EGG_WAITING
+	goto_if_eq Zone0A_EventScript_DaycareEggWaiting
+	compare VAR_RESULT, DAYCARE_ONE_MON
+	goto_if_eq Zone0A_EventScript_CheckOnOneMon
+	compare VAR_RESULT, DAYCARE_TWO_MONS
+	goto_if_eq Zone0A_EventScript_CheckOnTwoMons
+	msgbox Zone0A_Text_SeeWifeIfYoudLikeMeToRaiseMon, MSGBOX_DEFAULT
+	release
+	end
+
+Zone0A_EventScript_DaycareEggWaiting:
+	msgbox Zone0A_Text_DoYouWantEgg, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Zone0A_EventScript_DaycareAcceptEgg
+	msgbox Zone0A_Text_IWillKeepDoYouWantIt, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Zone0A_EventScript_DaycareAcceptEgg
+	msgbox Zone0A_Text_IllKeepIt, MSGBOX_DEFAULT
+	clearflag FLAG_PBL_PENDING_DAYCARE_EGG
+	special RejectEggFromDayCare
+	release
+	end
+
+Zone0A_EventScript_DaycareAcceptEgg:
+	specialvar VAR_RESULT, CalculatePlayerPartyCount
+	compare VAR_RESULT, PARTY_SIZE
+	goto_if_ne Zone0A_EventScript_DaycareReceiveEgg
+	msgbox Zone0A_Text_YouHaveNoRoomForIt, MSGBOX_DEFAULT
+	release
+	end
+
+Zone0A_EventScript_DaycareReceiveEgg:
+	message Zone0A_Text_ReceivedEgg
+	playfanfare MUS_LEVEL_UP
+	waitfanfare
+	waitbuttonpress
+	msgbox Zone0A_Text_TakeGoodCareOfIt, MSGBOX_DEFAULT
+	special GiveEggFromDaycare
+	clearflag FLAG_PBL_PENDING_DAYCARE_EGG
+	release
+	end
+
+Zone0A_EventScript_CheckOnOneMon:
+	special GetDaycareMonNicknames
+	msgbox Zone0A_Text_YourMonIsDoingFine, MSGBOX_DEFAULT
+	release
+	end
+
+Zone0A_EventScript_CheckOnTwoMons:
+	special GetDaycareMonNicknames
+	msgbox Zone0A_Text_YourMonsAreDoingFine, MSGBOX_DEFAULT
+	special SetDaycareCompatibilityString
+	special ShowFieldMessageStringVar4
+	waitmessage
+	waitbuttonpress
+	release
+	end
+
+Zone0A_Text_SeeWifeIfYoudLikeMeToRaiseMon:
+	.string "I'm the Day-Care Man.\p"
+	.string "I help take care of the precious\n"
+	.string "Pokémon of Trainers.\p"
+	.string "If you'd like me to raise your Pokémon,\n"
+	.string "have a word with my wife.$"
+
+Zone0A_Text_DoYouWantEgg:
+	.string "Ah, it's you!\p"
+	.string "We were raising your Pokémon,\n"
+	.string "and my goodness, were we surprised!\p"
+	.string "Your Pokémon had an Egg!\p"
+	.string "We don't know how it got there,\n"
+	.string "but your Pokémon had it.\p"
+	.string "You do want it, yes?$"
+
+Zone0A_Text_YourMonIsDoingFine:
+	.string "Ah, it's you! Good to see you.\n"
+	.string "Your {STR_VAR_1}'s doing fine.$"
+
+Zone0A_Text_IllKeepIt:
+	.string "Well then, I'll keep it.\n"
+	.string "Thanks!$"
+
+Zone0A_Text_YouHaveNoRoomForIt:
+	.string "You have no room for it…\n"
+	.string "Come back when you've made room.$"
+
+Zone0A_Text_ReceivedEgg:
+	.string "{PLAYER} received the Egg from\n"
+	.string "the Day-Care Man.$"
+
+Zone0A_Text_TakeGoodCareOfIt:
+	.string "Take good care of it.$"
+
+Zone0A_Text_YourMonsAreDoingFine:
+	.string "Ah, it's you! Your {STR_VAR_1} and\n"
+	.string "{STR_VAR_2} are doing fine.$"
+
+Zone0A_Text_IWillKeepDoYouWantIt:
+	.string "I really will keep it.\n"
+	.string "You do want this, yes?$"
+
+Zone0A_EventScript_DayCareSign::
+	msgbox Zone0A_Text_DayCareSign, MSGBOX_SIGN
+	end
+
+Zone0A_EventScript_TPISign::
+	msgbox Zone0A_Text_TPISign, MSGBOX_SIGN
+	end
+
+Zone0A_Text_DayCareSign:
+	.string "Pokémon Day Care\n"
+	.string "9 Generations and counting!$"
+
+Zone0A_Text_TPISign:
+	.string "Teleport Institute\n"
+	.string "Getting around, easy peasy.$"
+`

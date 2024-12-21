@@ -1,0 +1,41 @@
+mapscripts Zone9F_MapScripts {}
+
+script Zone9F_EventScript_Ari {
+	lock
+	faceplayer
+	msgbox(format("{COLOR BLUE}Ari{COLOR DARK_GRAY}: I miss my cousin Victoria. She lives in the Hoenn region."))
+	release
+	end
+}
+
+script Zone9F_EventScript_Bertha {
+	lock
+	faceplayer
+	msgbox(format("{COLOR BLUE}Bertha{COLOR DARK_GRAY}: Why did Mom buy this house? It's so small for the five of us…"))
+	release
+	end
+}
+
+script Zone9F_EventScript_Cassandra {
+	lock
+	faceplayer
+	msgbox(format("{COLOR BLUE}Cassandra{COLOR DARK_GRAY}: All my kids do is complain, complain, then complain some more."))
+	release
+	end
+}
+
+script Zone9F_EventScript_Dominic {
+	lock
+	faceplayer
+	msgbox(format("{COLOR BLUE}Dominic{COLOR DARK_GRAY}: I wonder what's for dinner…"))
+	release
+	end
+}
+
+script Zone9F_EventScript_Erica {
+	lock
+	faceplayer
+	msgbox(format("{COLOR BLUE}Erica{COLOR DARK_GRAY}: May your travels be safe."))
+	release
+	end
+}
