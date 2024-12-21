@@ -4380,3 +4380,16 @@ bool8 SendChosenMonToPC(void)
     DeletePartyMon(VarGet(VAR_TEMP_3));
     return FALSE;
 }
+
+u16 GetCaughtSpeciesCount(void)
+{
+    u16 count = 0;
+    u16 i;
+    
+    for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+    {
+        if (GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
+            count++;
+    }
+    return count;
+}
