@@ -558,3 +558,4 @@ gSpecials::
 	def_special ChooseItemFromBag
 	def_special ChoosePartyMonForTraining
 	def_special SendChosenMonToPC
+	def_special HeadbuttWildEncounter
