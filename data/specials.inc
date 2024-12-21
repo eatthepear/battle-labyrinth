@@ -556,3 +556,4 @@ gSpecials::
 	def_special UseBlankMessageToCancelPokemonPic
 	def_special CheckSpeciesClause
 	def_special ChooseItemFromBag
+	def_special ChoosePartyMonForTraining
