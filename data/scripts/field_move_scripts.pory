@@ -233,6 +233,14 @@ script EventScript_UseSurf_PBL {
 	end
 }
 
+script EventScript_DisableAutoRun {
+	msgbox(format("Auto Run {COLOR RED}Disabled{COLOR DARK_GRAY}."), MSGBOX_SIGN)
+}
+    
+script EventScript_EnableAutoRun {
+	msgbox(format("Auto Run {COLOR GREEN}Enabled{COLOR DARK_GRAY}."), MSGBOX_SIGN)
+}
+
 raw `
 @ Interact with cuttable tree
 EventScript_CutTree::
