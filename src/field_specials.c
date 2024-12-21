@@ -70,6 +70,7 @@
 #include "constants/metatile_labels.h"
 #include "palette.h"
 #include "battle_util.h"
+#include "battle_setup.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -4339,4 +4340,9 @@ void UseBlankMessageToCancelPokemonPic(void)
     u8 t = EOS;
     AddTextPrinterParameterized(0, FONT_NORMAL, &t, 0, 1, 0, NULL);
     ScriptMenu_HidePokemonPic();
+}
+
+bool8 CheckSpeciesClause(void)
+{
+    return IsCaptureBlockedBySpeciesClause(VarGet(VAR_TEMP_0));
 }
