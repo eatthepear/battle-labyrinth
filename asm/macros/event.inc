@@ -2452,3 +2452,9 @@
 	special ChooseItemFromBag
 	waitstate
 	.endm
+
+	.macro trysetstatus status1:req, slot:req
+	callnative Script_TrySetStatus
+	.2byte \status1
+	.2byte \slot
+	.endm
