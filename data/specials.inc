@@ -555,3 +555,4 @@ gSpecials::
 	def_special Script_GetChosenMonDefensiveIVs
 	def_special UseBlankMessageToCancelPokemonPic
 	def_special CheckSpeciesClause
+	def_special ChooseItemFromBag
