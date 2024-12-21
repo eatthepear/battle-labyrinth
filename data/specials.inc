@@ -559,3 +559,4 @@ gSpecials::
 	def_special ChoosePartyMonForTraining
 	def_special SendChosenMonToPC
 	def_special HeadbuttWildEncounter
+	def_special GetCaughtSpeciesCount
