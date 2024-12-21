@@ -446,8 +446,12 @@
 #define BATTLE_TERRAIN_DISTORTION_WORLD 19
 #define BATTLE_TERRAIN_SPACE            20
 #define BATTLE_TERRAIN_ULTRA_SPACE      21
+#define BATTLE_TERRAIN_BEACH            22
+#define BATTLE_TERRAIN_DESERT           23
+#define BATTLE_TERRAIN_FOREST           24
+#define BATTLE_TERRAIN_BRIDGE           25
 
-#define BATTLE_TERRAIN_COUNT            22
+#define BATTLE_TERRAIN_COUNT            26
 
 #define B_WAIT_TIME_LONG        (B_WAIT_TIME_MULTIPLIER * 4)
 #define B_WAIT_TIME_MED         (B_WAIT_TIME_MULTIPLIER * 3)
