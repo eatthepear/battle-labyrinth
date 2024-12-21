@@ -1153,3 +1153,17 @@ void HeadbuttWildEncounter(void)
         gSpecialVar_Result = FALSE;
     }
 }
+
+bool8 BerryTreeWildEncounter(void)
+{
+    u16 headerId = GetCurrentMapWildMonHeaderId();
+
+    if (headerId != HEADER_NONE)
+    {
+        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].specialMonsInfo;
+
+        return TryGenerateWildMon(wildPokemonInfo, WILD_AREA_SPECIAL, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE);
+    } else {
+        return FALSE;
+    }
+}

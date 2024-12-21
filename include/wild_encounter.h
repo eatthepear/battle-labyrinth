@@ -47,5 +47,6 @@ u32 CalculateChainFishingShinyRolls(void);
 
 void CreateWildMon(u16 species, u8 level);
 u16 GetCurrentMapWildMonHeaderId(void);
+bool8 BerryTreeWildEncounter(void);
 
 #endif // GUARD_WILD_ENCOUNTER_H

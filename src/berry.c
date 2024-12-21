@@ -14,6 +14,7 @@
 #include "text.h"
 #include "constants/event_object_movement.h"
 #include "constants/items.h"
+#include "wild_encounter.h"
 
 static u16 BerryTypeToItemId(u16 berry);
 static u8 BerryTreeGetNumStagesWatered(struct BerryTree *tree);
@@ -1971,7 +1972,10 @@ void PlantBerryTree(u8 id, u8 berry, u8 stage, bool8 allowGrowth)
     // Stop growth, to keep tree at this stage until the player has seen it
     // allowGrowth is always true for berry trees the player has planted
     if (!allowGrowth)
+    {
         tree->stopGrowth = TRUE;
+        tree->pests = TRUE;
+    }
 
     SetTreeMutations(id, berry);
 }
@@ -2264,13 +2268,12 @@ bool8 ObjectEventInteractionBerryHasWeed(void)
 
 bool8 ObjectEventInteractionBerryHasPests(void)
 {
-    u16 species;
+    bool8 foundSpecies;
     if (!OW_BERRY_PESTS || !gSaveBlock1Ptr->berryTrees[GetObjectEventBerryTreeId(gSelectedObjectEvent)].pests)
         return FALSE;
-    species = GetBerryPestSpecies(gSaveBlock1Ptr->berryTrees[GetObjectEventBerryTreeId(gSelectedObjectEvent)].berry);
-    if (species == SPECIES_NONE)
+    foundSpecies = BerryTreeWildEncounter();
+    if (!foundSpecies)
         return FALSE;
-    CreateScriptedWildMon(species, 14 + Random() % 3, ITEM_NONE);
     gSaveBlock1Ptr->berryTrees[GetObjectEventBerryTreeId(gSelectedObjectEvent)].pests = FALSE;
     return TRUE;
 }
@@ -2437,7 +2440,7 @@ static void SetTreeMutations(u8 id, u8 berry)
 #endif
 }
 
-static u16 GetBerryPestSpecies(u8 berryId)
+static UNUSED u16 GetBerryPestSpecies(u8 berryId)
 {
 #if OW_BERRY_PESTS == TRUE
     const struct Berry *berry = GetBerryInfo(berryId);
