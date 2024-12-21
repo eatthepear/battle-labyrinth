@@ -355,6 +355,7 @@ static const TaskFunc sContextMenuFuncs[] = {
     [ITEMMENULOCATION_WALLY] =                  NULL,
     [ITEMMENULOCATION_PCBOX] =                  Task_ItemContext_GiveToPC,
     [ITEMMENULOCATION_BERRY_TREE_MULCH] =       Task_FadeAndCloseBagMenuIfMulch,
+    [ITEMMENULOCATION_CHOOSE_ITEM] =            Task_FadeAndCloseBagMenu,
 };
 
 static const struct YesNoFuncTable sYesNoTossFunctions = {ConfirmToss, CancelToss};
