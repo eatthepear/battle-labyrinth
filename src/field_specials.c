@@ -4393,3 +4393,374 @@ u16 GetCaughtSpeciesCount(void)
     }
     return count;
 }
+
+u16 GetNumTrainersRemaining(void)
+{
+    u16 count = 0;
+    u16 trainer = 0;
+    u16 zone;
+    if (FlagGet(FLAG_IN_NEW_ZONE))
+        zone = VarGet(VAR_ZONE);
+    else if (FlagGet(FLAG_IS_REVISITING_ZONE))
+        zone = VarGet(VAR_REVISITING_ZONE);
+    else
+        return 0; //In a Sanctuary, for no opponents msg
+    switch (zone)
+    {
+    case 1:
+        for (trainer = TRAINER_PBL_NINA; trainer <= TRAINER_PBL_OSCAR; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_1);
+        break;
+    case 2:
+        for (trainer = TRAINER_PBL_POLLY; trainer <= TRAINER_PBL_ARTHUR; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_2);
+        break;
+    case 3:
+        for (trainer = TRAINER_PBL_JEMMA; trainer <= TRAINER_PBL_RICHARD; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_3);
+        break;
+    case 4:
+        for (trainer = TRAINER_PBL_HERMAN; trainer <= TRAINER_PBL_LUCIA; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_4);
+        break;
+    case 5:
+        for (trainer = TRAINER_PBL_ANNE_AND_JUNE; trainer <= TRAINER_PBL_KEVIN; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_5);
+        break;
+    case 6:
+        for (trainer = TRAINER_PBL_GILBERT; trainer <= TRAINER_PBL_VIC_AND_DELL; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_5);
+        break;
+    case 7:
+    case 8:
+        count += !HasTrainerBeenFought(TRAINER_PBL_MILLIE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_JAMAL);
+        count += !HasTrainerBeenFought(TRAINER_PBL_PAIGE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_SETH);
+        count += !HasTrainerBeenFought(TRAINER_PBL_CONNIE);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_7);
+        count += !HasTrainerBeenFought(TRAINER_PBL_JIMMY);
+        count += !HasTrainerBeenFought(TRAINER_PBL_EMILIANO);
+        count += !HasTrainerBeenFought(TRAINER_PBL_KAREN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_JAYDEN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_NEIL);
+        count += !HasTrainerBeenFought(TRAINER_PBL_TAMARA);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_8);
+        break;
+    case 9:
+        count += !HasTrainerBeenFought(TRAINER_PBL_COOPER);
+        count += !HasTrainerBeenFought(TRAINER_PBL_CARMINE);
+        count += 5 * !HasTrainerBeenFought(TRAINER_PBL_ERICA);
+        break;
+    case 10:
+        count += !HasTrainerBeenFought(TRAINER_PBL_KYLE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_BELLE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_DEWEY);
+        count += !HasTrainerBeenFought(TRAINER_PBL_PEARLIE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_ERNEST);
+        count += !HasTrainerBeenFought(TRAINER_PBL_ALANA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_SUSAN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_CONRAD);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_9);
+        break;
+    case 11:
+        count += !HasTrainerBeenFought(TRAINER_PBL_JEANETTE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_EMMA_AND_LEO);
+        count += !HasTrainerBeenFought(TRAINER_PBL_JOEL);
+        count += !HasTrainerBeenFought(TRAINER_PBL_MARION);
+        count += !HasTrainerBeenFought(TRAINER_PBL_REGINA);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_10);
+        break;
+    case 12:
+        count += !HasTrainerBeenFought(TRAINER_PBL_ESSENCE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_DOLORES);
+        count += 2 * !HasTrainerBeenFought(TRAINER_PBL_JULIE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_TREVOR);
+        count += !HasTrainerBeenFought(TRAINER_PBL_FEDERICO);
+        count += !HasTrainerBeenFought(TRAINER_PBL_GENIE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_HILDA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_KINLEY);
+        break;
+    case 13:
+    case 14:
+        count += !HasTrainerBeenFought(TRAINER_PBL_VIOLET);
+        count += !HasTrainerBeenFought(TRAINER_PBL_WANDA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_AMBER_AND_KIM);
+        count += !HasTrainerBeenFought(TRAINER_PBL_JAN_AND_ERIN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_STEVE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_GOULD);
+        count += !HasTrainerBeenFought(TRAINER_PBL_MENDEL);
+        count += !HasTrainerBeenFought(TRAINER_PBL_DARWIN);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_11);
+        count += !HasTrainerBeenFought(TRAINER_PBL_BART);
+        count += !HasTrainerBeenFought(TRAINER_PBL_NIGEL);
+        count += !HasTrainerBeenFought(TRAINER_PBL_LOLA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_CHARLIE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_RANDOLPH);
+        count += !HasTrainerBeenFought(TRAINER_PBL_TODD);
+        count += !HasTrainerBeenFought(TRAINER_PBL_RUSSELL);
+        count += !HasTrainerBeenFought(TRAINER_PBL_OTIS);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_12);
+        break;
+    case 15:
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_13);
+        break;
+    case 16:
+        count += !HasTrainerBeenFought(TRAINER_PBL_IONA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_BERKE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_TANISHA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_ROBERT);
+        count += !HasTrainerBeenFought(TRAINER_PBL_CHRIS);
+        count += !HasTrainerBeenFought(TRAINER_PBL_ANGUS);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_14);
+        break;
+    case 17:
+        count += !HasTrainerBeenFought(TRAINER_PBL_AXLE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_RAFAEL);
+        count += !HasTrainerBeenFought(TRAINER_PBL_GEORGINA);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_15);
+        break;
+    case 18:
+    case 19:
+        count += !HasTrainerBeenFought(TRAINER_PBL_DORIS);
+        count += !HasTrainerBeenFought(TRAINER_PBL_HOMER);
+        count += !HasTrainerBeenFought(TRAINER_PBL_JOHN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_GLENN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_JAY);
+        count += !HasTrainerBeenFought(TRAINER_PBL_TYLER);
+        count += !HasTrainerBeenFought(TRAINER_PBL_TERRENCE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_MARTY);
+        count += !HasTrainerBeenFought(TRAINER_PBL_KARI);
+        count += !HasTrainerBeenFought(TRAINER_PBL_ABRAHAM);
+        count += !HasTrainerBeenFought(TRAINER_PBL_MELINDA);
+        count += !HasTrainerBeenFought(TRAINER_PBL_EMILIO);
+        count += !HasTrainerBeenFought(TRAINER_PBL_REX);
+        count += !HasTrainerBeenFought(TRAINER_PBL_LOUIS);
+        count += !HasTrainerBeenFought(TRAINER_PBL_LEROY);
+        count += !HasTrainerBeenFought(TRAINER_PBL_ELTON);
+        count += !HasTrainerBeenFought(TRAINER_PBL_WILLIE);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_16);
+        count += 4 * !HasTrainerBeenFought(TRAINER_PBL_PIRATE_4);
+        break;
+    case 20:
+        count += !HasTrainerBeenFought(TRAINER_PBL_SHAWN);
+        count += !HasTrainerBeenFought(TRAINER_PBL_FERNANDO);
+        count += !HasTrainerBeenFought(TRAINER_PBL_KANE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_KIRK);
+        count += !HasTrainerBeenFought(TRAINER_PBL_DALTON);
+        count += !HasTrainerBeenFought(TRAINER_PBL_LEE);
+        count += !HasTrainerBeenFought(TRAINER_PBL_BLANCHE);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_17);
+        break;
+    default:
+        count = 0;
+        break;
+    }
+    return count;
+}
+
+u16 GetNumItemsRemaining(void)
+{
+    u16 count = 0;
+    // TODO: This can use the same logic as GetNumTrainersRemaining
+    // u16 zone;
+    // if (FlagGet(FLAG_IN_NEW_ZONE))
+    //     zone = VarGet(VAR_ZONE);
+    // else if (FlagGet(FLAG_IS_REVISITING_ZONE))
+    //     zone = VarGet(VAR_REVISITING_ZONE);
+    // else
+    //     return 0;
+    // switch (zone)
+    // {
+    // case 1:
+    //     count += !FlagGet(FLAG_ITEM_ZONE1A_POTION);
+    //     count += !FlagGet(FLAG_ITEM_ZONE1A_QUICK_CLAW);
+    //     break;
+    // case 2:
+    //     count += !FlagGet(FLAG_ITEM_ZONE2A_ANTIDOTE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE2B_POTION_X2);
+    //     if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+    //     {
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE2A_CHERI_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE2B_CHESTO_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE2B_PECHA_BERRY);
+    //     }
+    //     break;
+    // case 3:
+    //     count += !FlagGet(FLAG_ITEM_ZONE3A_HYPER_POTION);
+    //     count += !FlagGet(FLAG_ITEM_ZONE3A_PARALYZE_HEAL);
+    //     count += !FlagGet(FLAG_ITEM_ZONE3A_POTION_X2);
+    //     count += !FlagGet(FLAG_ITEM_ZONE3A_SUPER_POTION);
+    //     if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+    //     {
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE3A_CHERI_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE3A_PECHA_BERRY);
+    //     }
+    //     break;
+    // case 4:
+    //     count += !FlagGet(FLAG_ITEM_ZONE4A_BURN_HEAL);
+    //     count += !FlagGet(FLAG_ITEM_ZONE4B_AWAKENING);
+    //     count += !FlagGet(FLAG_ITEM_ZONE4C_MUSCLE_BAND);
+    //     count += !FlagGet(FLAG_ITEM_ZONE4D_BEEDRILLITE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE4D_WISE_GLASSES);
+    //     count += !FlagGet(FLAG_ITEM_ZONE4E_SUPER_POTION);
+    //     if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+    //     {
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE4A_ORAN_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE4A_PECHA_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE4C_CHESTO_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE4C_RAWST_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE4E_CHERI_BERRY);
+    //     }
+    //     break;
+    // case 5:
+    //     count += !FlagGet(FLAG_ITEM_ZONE5A_QUICK_BALL);
+    //     count += !FlagGet(FLAG_ITEM_ZONE5A_TM03);
+    //     if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+    //     {
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE5A_ORAN_BERRY);
+    //     }
+    //     break;
+    // case 6:
+    //     count += !FlagGet(FLAG_ITEM_ZONE6A_NEST_BALL);
+    //     count += !FlagGet(FLAG_ITEM_ZONE6A_NET_BALL);
+    //     count += !FlagGet(FLAG_ITEM_ZONE6A_TM07);
+    //     if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+    //     {
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE6A_CHESTO_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE6A_PERSIM_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE6A_RAWST_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE6A_RED_SHARD_1);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE6A_RED_SHARD_2);
+    //     }
+    //     break;
+    // case 7:
+    // case 8:
+    //     count += !FlagGet(FLAG_ITEM_ZONE7A_BLACK_BELT);
+    //     count += !FlagGet(FLAG_ITEM_ZONE7A_GREAT_BALL);
+    //     count += !FlagGet(FLAG_ITEM_ZONE7A_GEMS);
+    //     count += !FlagGet(FLAG_ITEM_ZONE7A_SHARP_BEAK);
+    //     count += !FlagGet(FLAG_ITEM_ZONE7A_BERRY_JUICE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE7A_SUPER_POTION);
+    //     count += !FlagGet(FLAG_ITEM_ZONE7A_POTION_X2);
+    //     count += !FlagGet(FLAG_ITEM_ZONE8A_GREAT_BALL);
+    //     count += !FlagGet(FLAG_ITEM_ZONE8A_MAGNET);
+    //     count += !FlagGet(FLAG_ITEM_ZONE8A_POTION_X2);
+    //     count += !FlagGet(FLAG_ITEM_ZONE8B_DUSK_BALL);
+    //     count += !FlagGet(FLAG_ITEM_ZONE8B_HARD_STONE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE8B_SUPER_POTION);
+    //     count += !FlagGet(FLAG_ITEM_ZONE8C_FULL_HEAL);
+    //     count += !FlagGet(FLAG_ITEM_ZONE8C_NEVER_MELT_ICE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE8C_SUPER_POTION);
+    //     if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+    //     {
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE7A_ASPEAR_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE7A_PERSIM_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE7A_RAWST_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE7A_SITRUS_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE8A_RED_SHARD);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE8B_RED_SHARD);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE8C_RED_SHARD);
+    //     }
+    //     break;
+    // case 9:
+    //     count += !FlagGet(FLAG_ITEM_ZONE9A_BIG_ROOT);
+    //     count += !FlagGet(FLAG_ITEM_ZONE9A_MIRACLE_SEED);
+    //     count += !FlagGet(FLAG_ITEM_ZONE9A_TM13);
+    //     count += !FlagGet(FLAG_ITEM_ZONE9G_CHARCOAL);
+    //     if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+    //     {
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE9A_LEPPA_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE9A_SITRUS_BERRY);
+    //     }
+    //     break;
+    // case 10:
+    //     count += !FlagGet(FLAG_ITEM_ZONE10A_DRAGON_FANG);
+    //     count += !FlagGet(FLAG_ITEM_ZONE10A_HEAVY_DUTY_BOOTS);
+    //     count += !FlagGet(FLAG_ITEM_ZONE10A_METAL_COAT);
+    //     count += !FlagGet(FLAG_ITEM_ZONE10A_SOFT_SAND);
+    //     count += !FlagGet(FLAG_ITEM_ZONE10A_SUN_STONE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE10A_TM16);
+    //     count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_1);
+    //     count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_2);
+    //     count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_3);
+    //     if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+    //     {
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_RED_SHARD);
+    //     }
+    //     break;
+    // case 11:
+    //     count += !FlagGet(FLAG_ITEM_ZONE11A_MOON_STONE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE11A_TIMER_BALL);
+    //     count += !FlagGet(FLAG_ITEM_ZONE11A_TM22);
+    //     if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+    //     {
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE11A_CHERI_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE11A_PECHA_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE11A_RAWST_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE11A_SITRUS_BERRY);
+    //     }
+    //     break;
+    // case 12:
+    //     count += !FlagGet(FLAG_ITEM_ZONE12A_FIRE_STONE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE12A_MACHO_BRACE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE12A_METRONOME);
+    //     count += !FlagGet(FLAG_ITEM_ZONE12A_THUNDER_STONE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE12A_TM24);
+    //     if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+    //     {
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE12A_BLUE_SHARD);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE12A_LEPPA_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE12A_LUM_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE12A_RED_SHARD);
+    //     }
+    //     break;
+    // case 13:
+    // case 14:
+    //     count += !FlagGet(FLAG_ITEM_ZONE13A_LEAF_STONE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE13A_SHINY_STONE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE14A_FULL_HEAL);
+    //     count += !FlagGet(FLAG_ITEM_ZONE14B_HYPER_POTION);
+    //     count += !FlagGet(FLAG_ITEM_ZONE14C_DUSK_STONE);
+    //     if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_RED_THUMB) == FALSE))
+    //     {
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE13A_LUM_BERRY);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE14A_RED_SHARD);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE14B_BLUE_SHARD);
+    //         count += !FlagGet(FLAG_HIDDEN_ITEM_ZONE14B_YELLOW_SHARD);
+    //     }
+    //     break;
+    // case 15:
+    //     count += !FlagGet(FLAG_ITEM_ZONE15A_DAWN_STONE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE15A_SNOWBALL_3);
+    //     count += !FlagGet(FLAG_ITEM_ZONE15A_GLALITITE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE15A_ICE_STONE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE15A_QUICK_BALL);
+    //     count += !FlagGet(FLAG_ITEM_ZONE15A_REVIVE);
+    //     count += !FlagGet(FLAG_ITEM_ZONE15A_TIMER_BALL);
+    //     count += !FlagGet(FLAG_ITEM_ZONE15A_TM26);
+    //     break;
+    // default:
+    //     count = 0;
+    //     break;
+    // }
+    return count;
+}

@@ -560,3 +560,5 @@ gSpecials::
 	def_special SendChosenMonToPC
 	def_special HeadbuttWildEncounter
 	def_special GetCaughtSpeciesCount
+	def_special GetNumTrainersRemaining
+	def_special GetNumItemsRemaining
