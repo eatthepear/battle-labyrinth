@@ -50,6 +50,8 @@
 #include "constants/trainers.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "constants/region_map_sections.h"
+#include "wild_encounter.h"
 
 enum {
     TRANSITION_TYPE_NORMAL,
@@ -833,12 +835,58 @@ u8 BattleSetup_GetTerrainId(void)
     PlayerGetDestCoords(&x, &y);
     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
 
+    //Note: POND refers to underground water (so it will be darker there). FOREST refers to a forest area (so it will be darker there)
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE2A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE2A)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE2B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE2B)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE4A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE4A)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE4B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE4B)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE4C) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE4C)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE4D) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE4D)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE4E) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE4E)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE11A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE11A))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE17A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE17A))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE23A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE23A)))
+    {
+        if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
+            return BATTLE_TERRAIN_WATER;
+        else
+            return BATTLE_TERRAIN_FOREST;
+    }
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE22A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE22A))
+        return BATTLE_TERRAIN_SNOW;
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE5A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE5A)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE5B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE5B)))
+        return BATTLE_TERRAIN_GRASS;
     if (MetatileBehavior_IsTallGrass(tileBehavior))
         return BATTLE_TERRAIN_GRASS;
     if (MetatileBehavior_IsLongGrass(tileBehavior))
         return BATTLE_TERRAIN_LONG_GRASS;
+    if (MetatileBehavior_IsPuddle(tileBehavior))
+        return BATTLE_TERRAIN_GRASS;
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE10A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE10A))
+        return BATTLE_TERRAIN_DESERT;
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE24A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE24A))
+    {
+        if (MetatileBehavior_IsMountain(tileBehavior))
+            return BATTLE_TERRAIN_MOUNTAIN;
+        else
+            return BATTLE_TERRAIN_DESERT;
+    }
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE19D) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE19D)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25A)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25B)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25C) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25C)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25D) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25D)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25E) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25E)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25F)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25G) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25G)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25I) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25I)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25J) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25J)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25K) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25K)) 
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ZONE25L) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ZONE25L)))
+        return BATTLE_TERRAIN_CAVE;
     if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))
-        return BATTLE_TERRAIN_SAND;
+        return BATTLE_TERRAIN_BEACH;
 
     switch (gMapHeader.mapType)
     {
@@ -851,6 +899,8 @@ u8 BattleSetup_GetTerrainId(void)
             return BATTLE_TERRAIN_BUILDING;
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
             return BATTLE_TERRAIN_POND;
+        if (gIsFishingEncounter)
+            return BATTLE_TERRAIN_POND;
         return BATTLE_TERRAIN_CAVE;
     case MAP_TYPE_INDOOR:
     case MAP_TYPE_SECRET_BASE:
@@ -860,28 +910,33 @@ u8 BattleSetup_GetTerrainId(void)
     case MAP_TYPE_OCEAN_ROUTE:
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
             return BATTLE_TERRAIN_WATER;
-        return BATTLE_TERRAIN_PLAIN;
+        if (MetatileBehavior_IsGrassTerrain(tileBehavior))
+            return BATTLE_TERRAIN_GRASS;
+        return BATTLE_TERRAIN_BEACH;
     }
     if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior))
         return BATTLE_TERRAIN_WATER;
     if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
-        return BATTLE_TERRAIN_POND;
+        return BATTLE_TERRAIN_WATER;
     if (MetatileBehavior_IsMountain(tileBehavior))
         return BATTLE_TERRAIN_MOUNTAIN;
     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
     {
         // Is BRIDGE_TYPE_POND_*?
-        if (MetatileBehavior_GetBridgeType(tileBehavior) != BRIDGE_TYPE_OCEAN)
-            return BATTLE_TERRAIN_POND;
+        if (MetatileBehavior_GetBridgeType(tileBehavior))
+            return BATTLE_TERRAIN_WATER;
 
         if (MetatileBehavior_IsBridgeOverWater(tileBehavior) == TRUE)
             return BATTLE_TERRAIN_WATER;
     }
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE113) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE113))
-        return BATTLE_TERRAIN_SAND;
+    if (gIsFishingEncounter)
+        return BATTLE_TERRAIN_WATER;
+    if(MetatileBehavior_IsBridgeTerrain(tileBehavior))
+        return BATTLE_TERRAIN_BRIDGE;
     if (GetSavedWeather() == WEATHER_SANDSTORM)
-        return BATTLE_TERRAIN_SAND;
-
+        return BATTLE_TERRAIN_BEACH;
+    if (MetatileBehavior_IsGrassTerrain(tileBehavior))
+        return BATTLE_TERRAIN_GRASS;
     return BATTLE_TERRAIN_PLAIN;
 }
 
