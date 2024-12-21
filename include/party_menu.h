@@ -105,5 +105,6 @@ void MoveDeleterForgetMove(void);
 void BufferMoveDeleterNicknameAndMove(void);
 void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
+void TryDoTrainingToSelectedMon(u8 taskId);
 
 #endif // GUARD_PARTY_MENU_H

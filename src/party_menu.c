@@ -500,6 +500,13 @@ static void CursorCb_ChangeAbility(u8);
 void TryItemHoldFormChange(struct Pokemon *mon);
 static void ShowMoveSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
+static void Task_ChoosePartyMonForTraining(u8 taskId);
+static void CB2_ChoosePartyMonForTraining(void);
+static void DisplayShouldTrainMessage(struct Pokemon *mon, bool8 keepOpen);
+static void DisplayReachedLevelCapMessage(struct Pokemon *mon, bool8 keepOpen);
+static void Task_WaitForTextTrainingEvolution(u8 taskId);
+static void Task_DoTrainingToSelectedMonYesNo(u8 taskId);
+static void Task_HandleTrainingYesNoInput(u8 taskId);
 
 // static const data
 #include "data/party_menu.h"
@@ -5363,7 +5370,10 @@ static void Task_LearnNextMoveOrClosePartyMenu(u8 taskId)
         {
             if (gPartyMenu.learnMoveState == 2) // never occurs
                 gSpecialVar_Result = TRUE;
-            Task_ClosePartyMenu(taskId);
+            if (FlagGet(FLAG_DOING_TRAINING) == TRUE)
+                TryDoTrainingToSelectedMon(taskId);
+            else
+                Task_ClosePartyMenu(taskId);
         }
     }
 }
@@ -5447,14 +5457,29 @@ static void Task_PartyMenuReplaceMove(u8 taskId)
 {
     struct Pokemon *mon;
     u16 move;
+    u8 oldPP;
 
     if (IsPartyMenuTextPrinterActive() != TRUE)
     {
-        mon = &gPlayerParty[gPartyMenu.slotId];
-        RemoveMonPPBonus(mon, GetMoveSlotToReplace());
-        move = gPartyMenu.data1;
-        SetMonMoveSlot(mon, move, GetMoveSlotToReplace());
-        Task_LearnedMove(taskId);
+        if (FlagGet(FLAG_DOING_TRAINING) == FALSE) // This should be the case for TMs only. Makes it so you don't infinitely heal PP from TMs.
+        {
+            mon = &gPlayerParty[gPartyMenu.slotId];
+            RemoveMonPPBonus(mon, GetMoveSlotToReplace());
+            oldPP = GetMonData(mon, MON_DATA_PP1 + GetMoveSlotToReplace(), NULL);
+            move = gPartyMenu.data1;
+            SetMonMoveSlot(mon, move, GetMoveSlotToReplace());
+            if (GetMonData(mon, MON_DATA_PP1 + GetMoveSlotToReplace(), NULL) > oldPP)
+                SetMonData(mon, MON_DATA_PP1 + GetMoveSlotToReplace(), &oldPP);
+            Task_LearnedMove(taskId);
+        }
+        else
+        {
+            mon = &gPlayerParty[gPartyMenu.slotId];
+            RemoveMonPPBonus(mon, GetMoveSlotToReplace());
+            move = gPartyMenu.data1;
+            SetMonMoveSlot(mon, move, GetMoveSlotToReplace());
+            Task_LearnedMove(taskId);
+        }
     }
 }
 
@@ -5657,17 +5682,21 @@ static void Task_DisplayLevelUpStatsPg2(u8 taskId)
 
 static void DisplayLevelUpStatsPg1(u8 taskId)
 {
-    u16 *arrayPtr = (u16*) sPartyMenuInternal->data;
+    if (FlagGet(FLAG_DOING_TRAINING) == FALSE) {
+        u16 *arrayPtr = (u16*) sPartyMenuInternal->data;
 
-    arrayPtr[12] = CreateLevelUpStatsWindow();
-    DrawLevelUpWindowPg1(arrayPtr[12], arrayPtr, &arrayPtr[6], TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY);
-    CopyWindowToVram(arrayPtr[12], COPYWIN_GFX);
-    ScheduleBgCopyTilemapToVram(2);
+        arrayPtr[12] = CreateLevelUpStatsWindow();
+        DrawLevelUpWindowPg1(arrayPtr[12], arrayPtr, &arrayPtr[6], TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY);
+        CopyWindowToVram(arrayPtr[12], COPYWIN_GFX);
+        ScheduleBgCopyTilemapToVram(2);
+    }
 }
 
 static void DisplayLevelUpStatsPg2(u8 taskId)
 {
     u16 *arrayPtr = (u16*) sPartyMenuInternal->data;
+    if (FlagGet(FLAG_DOING_TRAINING) == TRUE)
+        arrayPtr[12] = CreateLevelUpStatsWindow();
 
     DrawLevelUpWindowPg2(arrayPtr[12], &arrayPtr[6], TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY);
     CopyWindowToVram(arrayPtr[12], COPYWIN_GFX);
@@ -5752,29 +5781,33 @@ static void PartyMenuTryEvolution(u8 taskId)
     sInitialLevel = 0;
     sFinalLevel = 0;
 
-    targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL);
-    if (targetSpecies == SPECIES_NONE)
-    {
-        targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_CANT_STOP, ITEM_NONE, NULL);
-        evoModeNormal = FALSE;
-    }
+    if (FlagGet(FLAG_DOING_TRAINING) == TRUE) {
+        TryDoTrainingToSelectedMon(taskId);
+    } else {
+        targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL);
+        if (targetSpecies == SPECIES_NONE)
+        {
+            targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_CANT_STOP, ITEM_NONE, NULL);
+            evoModeNormal = FALSE;
+        }
 
-    if (targetSpecies != SPECIES_NONE)
-    {
-        FreePartyPointers();
-        if (ItemId_GetFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_RareCandy && gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
-            gCB2_AfterEvolution = CB2_ReturnToPartyMenuUsingRareCandy;
+        if (targetSpecies != SPECIES_NONE)
+        {
+            FreePartyPointers();
+            if (ItemId_GetFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_RareCandy && gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
+                gCB2_AfterEvolution = CB2_ReturnToPartyMenuUsingRareCandy;
+            else
+                gCB2_AfterEvolution = gPartyMenu.exitCallback;
+            BeginEvolutionScene(mon, targetSpecies, evoModeNormal, gPartyMenu.slotId);
+            DestroyTask(taskId);
+        }
         else
-            gCB2_AfterEvolution = gPartyMenu.exitCallback;
-        BeginEvolutionScene(mon, targetSpecies, evoModeNormal, gPartyMenu.slotId);
-        DestroyTask(taskId);
-    }
-    else
-    {
-        if (gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
-            gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
-        else
-            gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+        {
+            if (gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
+                gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+            else
+                gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+        }
     }
 }
 
@@ -7889,5 +7922,137 @@ void CursorCb_MoveItem(u8 taskId)
         // return to the main party menu
         ScheduleBgCopyTilemapToVram(2);
         gTasks[taskId].func = Task_UpdateHeldItemSprite;
+    }
+}
+
+// Used as a script special
+void ChoosePartyMonForTraining(void)
+{
+    LockPlayerFieldControls();
+    FadeScreen(FADE_TO_BLACK, 0);
+    CreateTask(Task_ChoosePartyMonForTraining, 10);
+}
+
+static void Task_ChoosePartyMonForTraining(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_TRAINING, TRUE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ChoosePartyMonForTraining);
+        DestroyTask(taskId);
+    }
+}
+
+static void CB2_ChoosePartyMonForTraining(void)
+{
+    gFieldCallback2 = CB2_FadeFromPartyMenu;
+    SetMainCallback2(CB2_ReturnToField);
+}
+
+static void DisplayShouldTrainMessage(struct Pokemon *mon, bool8 keepOpen)
+{
+    GetMonNickname(mon, gStringVar1);
+    StringExpandPlaceholders(gStringVar4, gText_LelouchShouldTrain);
+    DisplayPartyMenuMessage(gStringVar4, keepOpen);
+    ScheduleBgCopyTilemapToVram(2);
+}
+
+static void DisplayReachedLevelCapMessage(struct Pokemon *mon, bool8 keepOpen)
+{
+    GetMonNickname(mon, gStringVar1);
+    StringExpandPlaceholders(gStringVar4, gText_LelouchReachedLevelCap);
+    DisplayPartyMenuMessage(gStringVar4, keepOpen);
+    ScheduleBgCopyTilemapToVram(2);
+}
+
+void TryDoTrainingToSelectedMon(u8 taskId)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u32 currentLevel = GetMonData(mon, MON_DATA_LEVEL);
+
+    if (!gPaletteFade.active)
+    {
+        if ((currentLevel != MAX_LEVEL) && GetCurrentLevelCap() < currentLevel)
+        {
+            DisplayShouldTrainMessage(&gPlayerParty[gPartyMenu.slotId], TRUE);
+            gTasks[taskId].func = Task_DoTrainingToSelectedMonYesNo;
+        }
+        else
+        {
+            if (FlagGet(FLAG_DOING_TRAINING) == TRUE)
+            {
+                gSpecialVar_0x8004 = 1;
+                FlagClear(FLAG_DOING_TRAINING);
+            }
+            else
+            {
+                gSpecialVar_0x8004 = 2;
+            }
+            DisplayReachedLevelCapMessage(&gPlayerParty[gPartyMenu.slotId], TRUE);
+            gTasks[taskId].func = Task_WaitForTextTrainingEvolution;
+            PartyMenuTryEvolution(taskId);
+        }
+    }
+}
+
+static void Task_WaitForTextTrainingEvolution(u8 taskId)
+{
+    if (IsPartyMenuTextPrinterActive() != TRUE)
+    {
+        PartyMenuTryEvolution(taskId);
+    }
+}
+
+static void Task_DoTrainingToSelectedMonYesNo(u8 taskId)
+{
+    if (IsPartyMenuTextPrinterActive() != TRUE)
+    {
+        PartyMenuDisplayYesNoMenu();
+        gTasks[taskId].func = Task_HandleTrainingYesNoInput;
+    }
+}
+
+static void Task_HandleTrainingYesNoInput(u8 taskId)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u32 nextLevelExperience;
+    struct PartyMenuInternal *ptr = sPartyMenuInternal;
+    s16 *arrayPtr = ptr->data;
+    sInitialLevel = GetMonData(mon, MON_DATA_LEVEL);
+    switch (Menu_ProcessInputNoWrapClearOnChoose())
+    {
+    case 0: // Yes
+        nextLevelExperience = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][GetMonData(mon, MON_DATA_LEVEL, NULL) + 1];
+        SetMonData(mon, MON_DATA_EXP, &nextLevelExperience);
+        CalculateMonStats(mon);
+        sFinalLevel = GetMonData(mon, MON_DATA_LEVEL, NULL);
+        BufferMonStatsToTaskData(mon, arrayPtr);
+        BufferMonStatsToTaskData(mon, &ptr->data[NUM_STATS]);
+        gPartyMenuUseExitCallback = TRUE;
+        PlayFanfareByFanfareNum(FANFARE_LEVEL_UP);
+        UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
+        GetMonNickname(mon, gStringVar1);
+        ConvertIntToDecimalStringN(gStringVar2, GetMonData(mon, MON_DATA_LEVEL), STR_CONV_MODE_LEFT_ALIGN, 3);
+        StringExpandPlaceholders(gStringVar4, gText_PkmnElevatedToLvVar2);
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        FlagSet(FLAG_DOING_TRAINING);
+        gTasks[taskId].func = Task_DisplayLevelUpStatsPg1;
+        break;
+    case MENU_B_PRESSED:
+        PlaySE(SE_SELECT);
+        // fallthrough
+    case 1: // No
+        if (FlagGet(FLAG_DOING_TRAINING) == TRUE)
+        {
+            gSpecialVar_0x8004 = 1;
+            FlagClear(FLAG_DOING_TRAINING);
+        }
+        else
+        {
+            gSpecialVar_0x8004 = 2;
+        }
+        PartyMenuTryEvolution(taskId);
+        break;
     }
 }

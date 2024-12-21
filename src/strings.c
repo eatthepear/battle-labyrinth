@@ -1597,3 +1597,6 @@ const u8 gText_EnemyPreview[] = _("Revealed enemy party!");
 
 const u8 gText_InfiniteRepelOn[] = _("The Infinite Repel is now {COLOR RED}on{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
 const u8 gText_InfiniteRepelOff[] = _("The Infinite Repel is now {COLOR RED}off{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
+
+const u8 gText_LelouchShouldTrain[] = _("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Would you like me to\nincrease {STR_VAR_1}'s level by 1?");
+const u8 gText_LelouchReachedLevelCap[] = _("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: {STR_VAR_1} has reached\nthe level cap.{PAUSE_UNTIL_PRESS}");
