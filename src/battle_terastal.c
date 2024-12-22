@@ -84,6 +84,10 @@ bool32 CanTerastallize(u32 battler)
         return FALSE;
     }
 
+    // Makes it so wild Pokemon can't terastilize. Catches edge case of wild double battles
+    if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+        return FALSE;
+
     // Check if Trainer has already Terastallized.
     if (HasTrainerUsedGimmick(battler, GIMMICK_TERA))
         return FALSE;
