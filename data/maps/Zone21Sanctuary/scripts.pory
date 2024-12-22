@@ -16,7 +16,7 @@ script Zone21Sanctuary_EventScript_Intro {
 	giveitem(ITEM_TM30)
 	setvar(VAR_ZONE, 22)
 	buffernumberstring(0, VAR_ZONE)
-	msgbox(gText_Colress_WhenUReady)
+	msgbox(gText_Colress_WhenUReady, MSGBOX_AUTOCLOSE)
 	applymovement(1, Common_Movement_Colress_WalkUp)
 	waitmovement(0)
 	releaseall

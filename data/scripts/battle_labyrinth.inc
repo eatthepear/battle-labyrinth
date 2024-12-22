@@ -3173,7 +3173,7 @@ EventScript_LeavingSetup::
 # 1625 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_IN_NEW_ZONE
 # 1626 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_LeavingSetup_Text_0
+	msgbox EventScript_LeavingSetup_Text_0, MSGBOX_AUTOCLOSE
 # 1627 "data/scripts/battle_labyrinth.pory"
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 # 1628 "data/scripts/battle_labyrinth.pory"
@@ -6375,7 +6375,8 @@ EventScript_Max_Text_3:
 
 EventScript_LeavingSetup_Text_0:
 # 1626 "data/scripts/battle_labyrinth.pory"
-	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Bring out the strength of you\nand your Pokémon!$"
+	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Bring out the strength of you\n"
+	.string "and your Pokémon!$"
 
 EventScript_SanctuaryToZone0_Text_0:
 # 1724 "data/scripts/battle_labyrinth.pory"

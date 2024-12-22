@@ -17,7 +17,7 @@ script Zone0Sanctuary_EventScript_Intro {
 	waitmovement(0)
 	waitse
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
-	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Ah. You've arrived."))
+	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Ah. You've arrived."), MSGBOX_AUTOCLOSE)
 	applymovement(1, Common_Movement_WalkDown3)
 	call(EventScript_MoveCameraDown)
 	waitmovement(0)
@@ -29,7 +29,7 @@ script Zone0Sanctuary_EventScript_Intro {
 		"Each Zone typically contains a {COLOR RED}Leviathan{COLOR DARK_GRAY}, a boss that yields great rewards if defeated.\p"
 		"At the end of each Zone and before the next Zone begins, you will find a {COLOR RED}Sanctuary{COLOR DARK_GRAY}, like this one, with shops to purchase supplies, heal your Pokémon, and other benefits.\p"
 		"Once you enter a new Zone, you will not be able to access a Sanctuary until you exit that Zone.\p"
-		"In order to win, you must progress through all Zones without losing a battle."))
+		"In order to win, you must progress through all Zones without losing a battle."), MSGBOX_AUTOCLOSE)
 		delay(16)
 	}
 	setflag(FLAG_SETTINGS_EXP_ALL)
@@ -48,7 +48,7 @@ script Zone0Sanctuary_EventScript_Intro {
 	}
 	delay(16)
 	if (var(VAR_TEMP_5) == 1) {
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Allow me to show you each of the shops."))
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Allow me to show you each of the shops."), MSGBOX_AUTOCLOSE)
 		applymovement(1, Zone0Sanctuary_Movement_Colress_FirstShop)
 		applymovement(OBJ_EVENT_ID_PLAYER, Zone0Sanctuary_Movement_Player_FirstShop)
 		waitmovement(0)
@@ -56,7 +56,7 @@ script Zone0Sanctuary_EventScript_Intro {
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Portentia's Potions{COLOR DARK_GRAY}.\p"
-		"Healing supplies, such as Potions or other curative measures, can be found here."))
+		"Healing supplies, such as Potions or other curative measures, can be found here."), MSGBOX_AUTOCLOSE)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
@@ -67,7 +67,7 @@ script Zone0Sanctuary_EventScript_Intro {
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Tim's Pokéball Shop{COLOR DARK_GRAY}.\p"
-		"They have a variety of Pokéballs to buy."))
+		"They have a variety of Pokéballs to buy."), MSGBOX_AUTOCLOSE)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
@@ -78,7 +78,7 @@ script Zone0Sanctuary_EventScript_Intro {
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Julia's Berries{COLOR DARK_GRAY}.\p"
-		"Julia is a legendary chef who curates a selection of Berries for Pokémon."))
+		"Julia is a legendary chef who curates a selection of Berries for Pokémon."), MSGBOX_AUTOCLOSE)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
@@ -89,7 +89,7 @@ script Zone0Sanctuary_EventScript_Intro {
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Marie's Egg Delivery Service{COLOR DARK_GRAY}.\p"
-		"Marie helps match Pokémon eggs with new owners."))
+		"Marie helps match Pokémon eggs with new owners."), MSGBOX_AUTOCLOSE)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
@@ -100,7 +100,7 @@ script Zone0Sanctuary_EventScript_Intro {
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Varrick's Extravagant Emporium{COLOR DARK_GRAY}.\p"
-		"A huge variety of items are sold here."))
+		"A huge variety of items are sold here."), MSGBOX_AUTOCLOSE)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
@@ -111,7 +111,7 @@ script Zone0Sanctuary_EventScript_Intro {
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Lelouch's Services Shop{COLOR DARK_GRAY}.\p"
-		"He only sees customers who can pay his price."))
+		"He only sees customers who can pay his price."), MSGBOX_AUTOCLOSE)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		special(RemoveCameraObject)
@@ -123,7 +123,7 @@ script Zone0Sanctuary_EventScript_Intro {
 		waitmovement(0)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This is the {COLOR RED}Pokémon Center{COLOR DARK_GRAY}, though don't let Joy catch you saying that.\pYour Pokémon can be healed at a flat fee.\pIn addition, inside you might find people with advice or aid for you.\pNote the building has a back entrance for ease of access.\pYou can also access {COLOR RED}Zone 0{COLOR DARK_GRAY} on the right inside."))
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This is the {COLOR RED}Pokémon Center{COLOR DARK_GRAY}, though don't let Joy catch you saying that.\pYour Pokémon can be healed at a flat fee.\pIn addition, inside you might find people with advice or aid for you.\pNote the building has a back entrance for ease of access.\pYou can also access {COLOR RED}Zone 0{COLOR DARK_GRAY} on the right inside."), MSGBOX_AUTOCLOSE)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 		waitmovement(0)
 		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkLeft)
@@ -135,7 +135,7 @@ script Zone0Sanctuary_EventScript_Intro {
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Our tour has finished.\p"
 		"These shops will be available at every Sanctuary.\p"
 		"As you progress through more Zones, more items and services will unlock.\p"
-		"Also, it is highly recommended you stock up on any supplies before entering the next Zone."))
+		"Also, it is highly recommended you stock up on any supplies before entering the next Zone."), MSGBOX_AUTOCLOSE)
 		delay(16)
 	}
 	if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
@@ -169,7 +169,7 @@ script Zone0Sanctuary_EventScript_Intro {
 	} else {
 		msgbox(format("As a new challenger, you will receive a starter Pokémon.\p"
 		"You may have your choice of any of the generation 1-9 starter Pokémon.\p"
-		"Choose carefully as these Pokémon are very rare."), MSGBOX_DEFAULT)
+		"Choose carefully as these Pokémon are very rare."))
 		goto(Zone0Sanctuary_EventScript_HandleStarterSelectionDefault)
 	}
 }
@@ -442,7 +442,7 @@ script Zone0Sanctuary_EventScript_EndIntro {
 	callnative(InitTimeBasedEvents)
 	setvar(VAR_ZONE, 1)
 	buffernumberstring(0, VAR_ZONE)
-	msgbox(gText_Colress_WhenUReady)
+	msgbox(gText_Colress_WhenUReady, MSGBOX_AUTOCLOSE)
 	applymovement(1, Common_Movement_Colress_WalkUp)
 	waitmovement(1)
 	setflag(FLAG_IS_DEBUGGING_SAVEFILE) // to remove for release
