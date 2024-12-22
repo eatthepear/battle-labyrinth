@@ -1767,6 +1767,66 @@ static void Cmd_ppreduce(void)
     if (gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS)
         gHitMarker |= HITMARKER_NO_PPDEDUCT;
 
+    if ((FlagGet(FLAG_SETTINGS_BRUTAL) == TRUE) || (FlagGet(FLAG_SETTINGS_CHALLENGE) == TRUE))
+    {
+        if (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER)
+        {
+            switch (gMovesInfo[gCurrentMove].effect)
+            {
+            case EFFECT_PROTECT:
+            case EFFECT_SUBSTITUTE:
+                ppToDeduct = 2; // divide PP by 2
+                break;
+            case EFFECT_ATTACK_UP:
+            case EFFECT_NO_RETREAT:
+            case EFFECT_CLANGOROUS_SOUL:
+            case EFFECT_SHIFT_GEAR:
+            case EFFECT_CURSE:
+            case EFFECT_FLOWER_SHIELD:
+            case EFFECT_DEFENSE_UP:
+            case EFFECT_COSMIC_POWER:
+            case EFFECT_AROMATIC_MIST:
+            case EFFECT_CHARGE:
+                ppToDeduct = 5; // divide PP by 5
+                break;
+            case EFFECT_MINIMIZE:
+            case EFFECT_ACUPRESSURE:
+            case EFFECT_ATTACK_ACCURACY_UP:
+            case EFFECT_ATTACK_SPATK_UP:
+            case EFFECT_DEFENSE_UP_3:
+            case EFFECT_STOCKPILE:
+            case EFFECT_BELLY_DRUM:
+                ppToDeduct = 10; // divide PP by 10
+                break;
+            case EFFECT_DEFENSE_UP_2:
+            case EFFECT_SPECIAL_DEFENSE_UP_2:
+                ppToDeduct = 15; // divide PP by 10
+                break;
+            case EFFECT_SHELL_SMASH:
+            case EFFECT_EVASION_UP:
+            case EFFECT_BULK_UP:
+            case EFFECT_CALM_MIND:
+            case EFFECT_SPEED_UP_2:
+            case EFFECT_GROWTH:
+            case EFFECT_AUTOTOMIZE:
+            case EFFECT_COIL:
+                ppToDeduct = 20; // divide PP by 20
+                break;
+            case EFFECT_DRAGON_DANCE:
+            case EFFECT_QUIVER_DANCE:
+            case EFFECT_ATTACK_UP_2:
+            case EFFECT_SPECIAL_ATTACK_UP_2:
+            case EFFECT_SPECIAL_ATTACK_UP_3:
+                ppToDeduct = 25; // divide PP by 25
+                break;
+            }
+        }
+        else
+        {
+            ppToDeduct = 0;
+        }
+    }
+
     if (moveTarget == MOVE_TARGET_BOTH
         || moveTarget == MOVE_TARGET_FOES_AND_ALLY
         || moveTarget == MOVE_TARGET_ALL_BATTLERS
@@ -3326,7 +3386,8 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 {
                     u16 payday = gPaydayMoney;
                     u16 moveTarget = GetBattlerMoveTargetType(gBattlerAttacker, gCurrentMove);
-                    gPaydayMoney += (gBattleMons[gBattlerAttacker].level * 5);
+                    if (!((FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_RED_THUMB)) && !(gBattleTypeFlags & BATTLE_TYPE_TRAINER)))
+                        gPaydayMoney += (gBattleMons[gBattlerAttacker].level * 5);
                     if (payday > gPaydayMoney)
                         gPaydayMoney = 0xFFFF;
 
@@ -4433,6 +4494,8 @@ static bool32 BattleTypeAllowsExp(void)
 {
     if (RECORDED_WILD_BATTLE)
         return TRUE;
+    else if (!(gBattleTypeFlags & (BATTLE_TYPE_TRAINER)) && (FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_ANTIGRIND)))
+        return FALSE;
     else if (gBattleTypeFlags &
               ( BATTLE_TYPE_LINK
               | BATTLE_TYPE_RECORDED_LINK
@@ -4587,7 +4650,10 @@ static void Cmd_getexp(void)
                 gBattleScripting.getexpState = 5;
                 gBattleMoveDamage = 0; // used for exp
                 if (B_MAX_LEVEL_EV_GAINS >= GEN_5)
-                    MonGainEVs(&gPlayerParty[*expMonId], gBattleMons[gBattlerFainted].species);
+                    if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_EFFORTLESS) == FALSE))
+                    {
+                        MonGainEVs(&gPlayerParty[*expMonId], gBattleMons[gBattlerFainted].species);
+                    }
             }
             else
             {
@@ -4674,7 +4740,8 @@ static void Cmd_getexp(void)
                         gBattleStruct->teamGotExpMsgPrinted = TRUE;
                     }
 
-                    MonGainEVs(&gPlayerParty[*expMonId], gBattleMons[gBattlerFainted].species);
+                    if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_EFFORTLESS) == FALSE))
+                        MonGainEVs(&gPlayerParty[*expMonId], gBattleMons[gBattlerFainted].species);
                 }
                 gBattleScripting.getexpState++;
             }
@@ -7976,6 +8043,9 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     u32 moneyReward;
     u8 trainerMoney = 0;
     u8 numMons = 0;
+    u32 scale = 4;
+    if ((FlagGet(FLAG_SETTINGS_BRUTAL)) || FlagGet(FLAG_SETTINGS_POOR))
+        scale = 2;
 
     if (trainerId == TRAINER_SECRET_BASE)
     {
@@ -7994,11 +8064,11 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
         // trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 5;
 
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
+            moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
         else if (IsDoubleBattle())
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * 2 * trainerMoney;
+            moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * 2 * trainerMoney;
         else
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
+            moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
     }
 
     return moneyReward;
@@ -14838,7 +14908,7 @@ static void Cmd_pickup(void)
     u16 species, heldItem, ability;
     u8 lvlDivBy10;
 
-    if (!InBattlePike()) // No items in Battle Pike.
+    if (!InBattlePike() && !((FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_RED_THUMB)) && !(gBattleTypeFlags & BATTLE_TYPE_TRAINER))) // No items in Battle Pike.
     {
         bool32 isInPyramid = InBattlePyramid_();
         for (i = 0; i < PARTY_SIZE; i++)
