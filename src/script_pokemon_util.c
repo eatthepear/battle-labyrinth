@@ -325,6 +325,8 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
     u32 i;
     u8 genderRatio = gSpeciesInfo[species].genderRatio;
     u16 targetSpecies;
+    if (FlagGet(FLAG_SETTINGS_RANDOMIZER) == TRUE)
+        species = GetRandomSpecies(level);
 
     // check whether to use a specific nature or a random one
     if (nature >= NUM_NATURES)
