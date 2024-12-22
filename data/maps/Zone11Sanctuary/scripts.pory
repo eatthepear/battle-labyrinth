@@ -17,7 +17,7 @@ script Zone11Sanctuary_EventScript_Intro {
 	setvar(VAR_ZONE, 12)
 	msgbox(Zone11Sanctuary_Text_NoBagAccessInNextZone, MSGBOX_DEFAULT)
 	buffernumberstring(0, VAR_ZONE)
-	msgbox(gText_Colress_WhenUReady)
+	msgbox(gText_Colress_WhenUReady, MSGBOX_AUTOCLOSE)
 	applymovement(1, Common_Movement_Colress_WalkUp)
 	waitmovement(0)
 	releaseall

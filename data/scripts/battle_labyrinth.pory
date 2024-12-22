@@ -1623,7 +1623,7 @@ mart Zone18A_Shop_TMShop {
 
 script EventScript_LeavingSetup {
 	setflag(FLAG_IN_NEW_ZONE)
-	msgbox("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Bring out the strength of you\nand your Pokémon!")
+	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Bring out the strength of you and your Pokémon!"), MSGBOX_AUTOCLOSE)
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_0) == 37) {
 		applymovement(1, Common_Movement_WalkRight)

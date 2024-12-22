@@ -24,7 +24,7 @@ script Zone10Sanctuary_EventScript_Intro {
 	waitfanfare
 	setvar(VAR_ZONE, 11)
 	buffernumberstring(0, VAR_ZONE)
-	msgbox(gText_Colress_WhenUReady)
+	msgbox(gText_Colress_WhenUReady, MSGBOX_AUTOCLOSE)
 	applymovement(1, Common_Movement_Colress_WalkUp)
 	waitmovement(0)
 	releaseall

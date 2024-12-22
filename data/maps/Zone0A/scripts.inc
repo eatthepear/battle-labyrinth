@@ -75,7 +75,7 @@ Zone0A_EventScript_Intro_1:
 # 40 "data/maps/Zone0A/scripts.pory"
 	waitse
 # 41 "data/maps/Zone0A/scripts.pory"
-	msgbox Zone0A_EventScript_Intro_Text_3
+	msgbox Zone0A_EventScript_Intro_Text_3, MSGBOX_AUTOCLOSE
 # 42 "data/maps/Zone0A/scripts.pory"
 	applymovement 14, Common_Movement_WalkRight6
 # 43 "data/maps/Zone0A/scripts.pory"

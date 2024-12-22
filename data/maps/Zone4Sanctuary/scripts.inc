@@ -41,7 +41,7 @@ Zone4Sanctuary_EventScript_Intro::
 # 22 "data/maps/Zone4Sanctuary/scripts.pory"
 	buffernumberstring 0, VAR_ZONE
 # 23 "data/maps/Zone4Sanctuary/scripts.pory"
-	msgbox gText_Colress_WhenUReady
+	msgbox gText_Colress_WhenUReady, MSGBOX_AUTOCLOSE
 # 24 "data/maps/Zone4Sanctuary/scripts.pory"
 	applymovement 1, Common_Movement_Colress_WalkUp
 # 25 "data/maps/Zone4Sanctuary/scripts.pory"
