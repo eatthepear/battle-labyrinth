@@ -15539,6 +15539,10 @@ static void Cmd_handleballthrow(void)
             {
                 shakes = maxShakes;
             }
+            else if (VarGet(VAR_ZONE) < 2) // instant capture before completing zone 1
+            {
+                shakes = maxShakes;
+            }
             else
             {
                 odds = Sqrt(Sqrt(16711680 / odds));
