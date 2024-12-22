@@ -20,7 +20,7 @@ script Zone4Sanctuary_EventScript_Intro {
 	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Note that if you are in a Zone, you can only use the Portable PC once before reaching the Sanctuary."), MSGBOX_DEFAULT)
 	setvar(VAR_ZONE, 5)
 	buffernumberstring(0, VAR_ZONE)
-	msgbox(gText_Colress_WhenUReady)
+	msgbox(gText_Colress_WhenUReady, MSGBOX_AUTOCLOSE)
 	applymovement(1, Common_Movement_Colress_WalkUp)
 	waitmovement(0)
 	releaseall

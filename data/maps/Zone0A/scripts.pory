@@ -38,7 +38,7 @@ script Zone0A_EventScript_Intro {
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	msgbox(format("Oh, right! I just remembered something.\pI've heard the Pokémon Day-Care nearby is having a special gift Pokémon promotion.\pIt might be worth a look."))
+	msgbox(format("Oh, right! I just remembered something.\pI've heard the Pokémon Day-Care nearby is having a special gift Pokémon promotion.\pIt might be worth a look."), MSGBOX_AUTOCLOSE)
 	applymovement(14, Common_Movement_WalkRight6)
 	waitmovement(0)
 	applymovement(14, Common_Movement_WalkRight)

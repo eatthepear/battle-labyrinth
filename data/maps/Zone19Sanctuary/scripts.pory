@@ -18,7 +18,7 @@ script Zone19Sanctuary_EventScript_Intro {
 	closemessage
 	setvar(VAR_ZONE, 20)
 	buffernumberstring(0, VAR_ZONE)
-	msgbox(gText_Colress_WhenUReady)
+	msgbox(gText_Colress_WhenUReady, MSGBOX_AUTOCLOSE)
 	applymovement(1, Common_Movement_Colress_WalkUp)
 	waitmovement(0)
 	releaseall

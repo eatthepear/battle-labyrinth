@@ -35,7 +35,7 @@ Zone0Sanctuary_EventScript_Intro::
 # 19 "data/maps/Zone0Sanctuary/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 # 20 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_0
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_0, MSGBOX_AUTOCLOSE
 # 21 "data/maps/Zone0Sanctuary/scripts.pory"
 	applymovement 1, Common_Movement_WalkDown3
 # 22 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -68,7 +68,7 @@ Zone0Sanctuary_EventScript_Intro_14:
 # 156 "data/maps/Zone0Sanctuary/scripts.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, Zone0Sanctuary_EventScript_Intro_19
 # 170 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_20, MSGBOX_DEFAULT
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_20
 # 173 "data/maps/Zone0Sanctuary/scripts.pory"
 	goto Zone0Sanctuary_EventScript_HandleStarterSelectionDefault
 	return
@@ -77,7 +77,7 @@ Zone0Sanctuary_EventScript_Intro_2:
 # 26 "data/maps/Zone0Sanctuary/scripts.pory"
 	setvar VAR_TEMP_5, 1
 # 27 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_2
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_2, MSGBOX_AUTOCLOSE
 # 33 "data/maps/Zone0Sanctuary/scripts.pory"
 	delay 16
 	goto Zone0Sanctuary_EventScript_Intro_1
@@ -97,7 +97,7 @@ Zone0Sanctuary_EventScript_Intro_11:
 
 Zone0Sanctuary_EventScript_Intro_8:
 # 51 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_7
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_7, MSGBOX_AUTOCLOSE
 # 52 "data/maps/Zone0Sanctuary/scripts.pory"
 	applymovement 1, Zone0Sanctuary_Movement_Colress_FirstShop
 # 53 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -111,7 +111,7 @@ Zone0Sanctuary_EventScript_Intro_8:
 # 57 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitmovement 0
 # 58 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_8
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_8, MSGBOX_AUTOCLOSE
 # 60 "data/maps/Zone0Sanctuary/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2
 # 61 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -131,7 +131,7 @@ Zone0Sanctuary_EventScript_Intro_8:
 # 68 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitmovement 0
 # 69 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_9
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_9, MSGBOX_AUTOCLOSE
 # 71 "data/maps/Zone0Sanctuary/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2
 # 72 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -151,7 +151,7 @@ Zone0Sanctuary_EventScript_Intro_8:
 # 79 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitmovement 0
 # 80 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_10
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_10, MSGBOX_AUTOCLOSE
 # 82 "data/maps/Zone0Sanctuary/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2
 # 83 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -171,7 +171,7 @@ Zone0Sanctuary_EventScript_Intro_8:
 # 90 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitmovement 0
 # 91 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_11
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_11, MSGBOX_AUTOCLOSE
 # 93 "data/maps/Zone0Sanctuary/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2
 # 94 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -191,7 +191,7 @@ Zone0Sanctuary_EventScript_Intro_8:
 # 101 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitmovement 0
 # 102 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_12
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_12, MSGBOX_AUTOCLOSE
 # 104 "data/maps/Zone0Sanctuary/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2
 # 105 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -211,7 +211,7 @@ Zone0Sanctuary_EventScript_Intro_8:
 # 112 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitmovement 0
 # 113 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_13
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_13, MSGBOX_AUTOCLOSE
 # 115 "data/maps/Zone0Sanctuary/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2
 # 116 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -235,7 +235,7 @@ Zone0Sanctuary_EventScript_Intro_8:
 # 125 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitmovement 0
 # 126 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_14
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_14, MSGBOX_AUTOCLOSE
 # 127 "data/maps/Zone0Sanctuary/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2
 # 128 "data/maps/Zone0Sanctuary/scripts.pory"
@@ -253,7 +253,7 @@ Zone0Sanctuary_EventScript_Intro_8:
 # 134 "data/maps/Zone0Sanctuary/scripts.pory"
 	waitmovement 0
 # 135 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox Zone0Sanctuary_EventScript_Intro_Text_15
+	msgbox Zone0Sanctuary_EventScript_Intro_Text_15, MSGBOX_AUTOCLOSE
 # 139 "data/maps/Zone0Sanctuary/scripts.pory"
 	delay 16
 	goto Zone0Sanctuary_EventScript_Intro_7
@@ -883,7 +883,7 @@ Zone0Sanctuary_EventScript_EndIntro_1:
 # 444 "data/maps/Zone0Sanctuary/scripts.pory"
 	buffernumberstring 0, VAR_ZONE
 # 445 "data/maps/Zone0Sanctuary/scripts.pory"
-	msgbox gText_Colress_WhenUReady
+	msgbox gText_Colress_WhenUReady, MSGBOX_AUTOCLOSE
 # 446 "data/maps/Zone0Sanctuary/scripts.pory"
 	applymovement 1, Common_Movement_Colress_WalkUp
 # 447 "data/maps/Zone0Sanctuary/scripts.pory"

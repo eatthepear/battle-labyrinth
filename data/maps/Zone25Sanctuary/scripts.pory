@@ -30,7 +30,7 @@ script Zone25Sanctuary_EventScript_Intro {
 	setvar(VAR_ZONE, 26)
 	setvar(VAR_ZONE_B1_STATE, 1)
 	buffernumberstring(0, VAR_ZONE)
-	msgbox(gText_Colress_WhenUReady)
+	msgbox(gText_Colress_WhenUReady, MSGBOX_AUTOCLOSE)
 	applymovement(1, Common_Movement_Colress_WalkUp)
 	waitmovement(0)
 	releaseall
