@@ -4156,6 +4156,9 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
 
                         if (evChange > 0) // Increasing EV (HP or Atk)
                         {
+                            if (FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_EFFORTLESS))
+                                return TRUE;
+
                             // Check if the total EV limit is reached
                             if (evCount >= maxAllowedEVs)
                                 return TRUE;
@@ -4350,6 +4353,9 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         evChange = temp2;
                         if (evChange > 0) // Increasing EV
                         {
+                            if (FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_EFFORTLESS))
+                                return TRUE;
+
                             // Check if the total EV limit is reached
                             if (evCount >= maxAllowedEVs)
                                 return TRUE;
@@ -6354,6 +6360,9 @@ static inline bool32 CanFirstMonBoostHeldItemRarity(void)
 
 void SetWildMonHeldItem(void)
 {
+    if ((FlagGet(FLAG_SETTINGS_BRUTAL)) || FlagGet(FLAG_SETTINGS_RED_THUMB))
+        return;
+
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_TRAINER | BATTLE_TYPE_PYRAMID | BATTLE_TYPE_PIKE)))
     {
         u16 rnd;
@@ -8263,7 +8272,7 @@ u16 GetRandomSpecies(u8 wildMonLevel)
     // sRandomSpecies only contains the base form Pokemon
     species = sRandomSpecies[0];
 
-    if (FlagGet(FLAG_SHOULD_CHECK_SPECIES_CLAUSE))
+    if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
     {
         while (IsCaptureBlockedBySpeciesClause(species))
         {
@@ -8273,7 +8282,6 @@ u16 GetRandomSpecies(u8 wildMonLevel)
             // sRandomSpecies only contains the base form Pokemon
             species = sRandomSpecies[0];
         }
-        FlagClear(FLAG_SHOULD_CHECK_SPECIES_CLAUSE);
     }
 
     const struct Evolution *evolutions = GetSpeciesEvolutions(species);

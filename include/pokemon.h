@@ -823,6 +823,7 @@ void TrySetDayLimitToFormChange(struct Pokemon *mon);
 u32 CheckDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler);
 uq4_12_t GetDynamaxLevelHPMultiplier(u32 dynamaxLevel, bool32 inverseMultiplier);
 void DeletePartyMon(u8 position);
+u16 GetRandomSpecies(u8 wildMonLevel);
 void GiveRandomStarter(void);
 
 #endif // GUARD_POKEMON_H

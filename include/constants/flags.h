@@ -184,7 +184,7 @@
 #define FLAG_IN_NEW_ZONE                            0xE1
 #define FLAG_DOING_TRAINING                         0xE2
 #define FLAG_SYS_DEXNAV_SEARCH                      0xE3
-#define FLAG_SHOULD_CHECK_SPECIES_CLAUSE            0xE4
+#define FLAG_SHOULD_CHECK_SPECIES_CLAUSE            0xE4 // unused
 #define FLAG_USE_PC_MACHINE                         0xE5
 #define FLAG_ZONE_PC_USED                           0xE6
 #define FLAG_USED_TERA                              0xE7
