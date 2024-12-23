@@ -145,7 +145,7 @@
 #define FLAG_SETTINGS_NUZLOCKE                      0xA1
 #define FLAG_SETTINGS_RANDOMIZER                    0xA2
 #define FLAG_SETTINGS_INFINITE                      0xA3
-#define FLAG_SETTINGS_FULL_SURVEIL                  0xA4
+#define FLAG_SETTINGS_FULL_INFO                     0xA4
 #define FLAG_SETTINGS_EXP_ALL                       0xA5
 #define FLAG_SETTINGS_CHALLENGE                     0xA6
 #define FLAG_SETTINGS_GAUNTLET                      0xA7

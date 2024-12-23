@@ -14,6 +14,7 @@ script Zone2Sanctuary_EventScript_Intro {
 	msgbox(gText_RewardClear, MSGBOX_DEFAULT)
 	msgbox(Zone2Sanctuary_Text_Reward, MSGBOX_DEFAULT)
 	setflag(FLAG_SYS_DEXNAV_GET)
+	setflag(FLAG_SYS_DETECTOR_MODE)
 	playfanfare(MUS_OBTAIN_ITEM)
 	msgbox("{PLAYER} received the {COLOR RED}DexNav{COLOR DARK_GRAY}!", MSGBOX_DEFAULT)
 	waitfanfare
