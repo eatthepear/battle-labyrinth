@@ -573,7 +573,7 @@ script Zone1A_EventScript_Sign_GoldenTree {
 }
 
 script Zone1A_EventScript_Sign_RunningShoes {
-	msgbox(format("Trainer Tips\pPress {R_BUTTON} to enable or disable Auto Run."), MSGBOX_SIGN)
+	msgbox(format("Trainer Tips\pPress {L_BUTTON} to enable or disable Auto Run."), MSGBOX_SIGN)
 	end
 }
 
