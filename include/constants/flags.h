@@ -391,8 +391,8 @@
 // Custom Flags Items
 #define FLAG_ITEM_ZONE1A_RANDOM_1                                   0x300
 #define FLAG_ITEM_ZONE1A_QUICK_CLAW                                 0x301
-#define FLAG_ITEM_ZONE2A_ANTIDOTE                                   0x302
-#define FLAG_ITEM_ZONE2B_POTION_X2                                  0x303
+#define FLAG_ITEM_ZONE2A_RANDOM_1                                   0x302
+#define FLAG_ITEM_ZONE2B_RANDOM_1                                   0x303
 #define FLAG_ITEM_ZONE2C_SILK_SCARF                                 0x370
 #define FLAG_ITEM_ZONE3A_SUPER_POTION                               0x304
 #define FLAG_ITEM_ZONE3A_POTION_X2                                  0x305
