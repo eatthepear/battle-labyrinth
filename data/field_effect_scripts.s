@@ -83,6 +83,7 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_ShakingGrass2             @ FLDEFF_SHAKING_LONG_GRASS
 	.4byte gFieldEffectScript_SandHole                  @ FLDEFF_SAND_HOLE
 	.4byte gFieldEffectScript_CaveDust 					@ FLDEFF_CAVE_DUST
+	.4byte gFieldEffectScript_SnowFootprints			@ FLDEFF_SNOW_FOOTPRINTS
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -394,3 +395,7 @@ gFieldEffectScript_SandHole::
 gFieldEffectScript_CaveDust::
     field_eff_loadfadedpal_callnative gSpritePalette_CaveDust FldEff_CaveDust
     field_eff_end
+
+gFieldEffectScript_SnowFootprints::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_SnowFootprints
+	field_eff_end
