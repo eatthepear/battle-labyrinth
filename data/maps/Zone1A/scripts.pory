@@ -24,7 +24,7 @@ script Zone1A_EventScript_GiveFWG {
 	}
 	msgbox(format("I'm offering trainers a Grass, Fire, or Water type Pokémon to help supplement their teams. Interested?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(Zone1A_Text_FWG_ComeBack)
+		msgbox(Zone1A_Text_FWG_ComeBack, MSGBOX_AUTOCLOSE)
 		release
 		end
 	}
@@ -39,7 +39,7 @@ script Zone1A_EventScript_GiveFWG {
 			setvar(VAR_TEMP_4, 2)
 		case 3:
 		case MULTI_B_PRESSED:
-			msgbox(Zone1A_Text_FWG_ComeBack)
+			msgbox(Zone1A_Text_FWG_ComeBack, MSGBOX_AUTOCLOSE)
 			release
 			end
 	}
@@ -76,7 +76,7 @@ script Zone1A_EventScript_GiveFWG {
 					addvar(VAR_TEMP_3, 1)
 				}
 				if (var(VAR_TEMP_3) == 5) {
-					msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
+					msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."), MSGBOX_AUTOCLOSE)
 					release
 					end
 				}
@@ -145,7 +145,7 @@ script Zone1A_EventScript_GiveFWG {
 					addvar(VAR_TEMP_3, 1)
 				}
 				if (var(VAR_TEMP_3) == 5) {
-					msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
+					msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."), MSGBOX_AUTOCLOSE)
 					release
 					end
 				}
@@ -214,7 +214,7 @@ script Zone1A_EventScript_GiveFWG {
 					addvar(VAR_TEMP_3, 1)
 				}
 				if (var(VAR_TEMP_3) == 5) {
-					msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
+					msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."), MSGBOX_AUTOCLOSE)
 					release
 					end
 				}
@@ -398,17 +398,17 @@ script Zone1A_EventScript_TriggerLeviathanBottom {
 	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		goto(Zone1A_EventScript_LeviathanBattle)
-	} else {
-		msgbox(Zone1A_Text_Leviathan1Wait)
-		applymovement(1, Common_Movement_WalkUp)
-		waitmovement(0)
-		applymovement(1, Zone1A_Corey_WalkRight)
-		waitmovement(0)
-		applymovement(1, Common_Movement_FaceLeft)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
-		waitmovement(0)
 	}
+	msgbox(Zone1A_Text_Leviathan1Wait, MSGBOX_AUTOCLOSE)
+	applymovement(1, Common_Movement_WalkUp)
+	waitmovement(0)
+	applymovement(1, Zone1A_Corey_WalkRight)
+	waitmovement(0)
+	applymovement(1, Common_Movement_FaceLeft)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement(0)
+	releaseall
 }
 
 script Zone1A_EventScript_TriggerLeviathanMiddle {
@@ -422,15 +422,15 @@ script Zone1A_EventScript_TriggerLeviathanMiddle {
 	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		goto(Zone1A_EventScript_LeviathanBattle)
-	} else {
-		msgbox(Zone1A_Text_Leviathan1Wait)
-		applymovement(1, Zone1A_Corey_WalkRight)
-		waitmovement(0)
-		applymovement(1, Common_Movement_FaceLeft)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
-		waitmovement(0)
 	}
+	msgbox(Zone1A_Text_Leviathan1Wait, MSGBOX_AUTOCLOSE)
+	applymovement(1, Zone1A_Corey_WalkRight)
+	waitmovement(0)
+	applymovement(1, Common_Movement_FaceLeft)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement(0)
+	releaseall
 }
 
 script Zone1A_EventScript_TriggerLeviathanTop {
@@ -446,17 +446,17 @@ script Zone1A_EventScript_TriggerLeviathanTop {
 	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		goto(Zone1A_EventScript_LeviathanBattle)
-	} else {
-		msgbox(Zone1A_Text_Leviathan1Wait)
-		applymovement(1, Common_Movement_WalkDown)
-		waitmovement(0)
-		applymovement(1, Zone1A_Corey_WalkRight)
-		waitmovement(0)
-		applymovement(1, Common_Movement_FaceLeft)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
-		waitmovement(0)
 	}
+	msgbox(Zone1A_Text_Leviathan1Wait, MSGBOX_AUTOCLOSE)
+	applymovement(1, Common_Movement_WalkDown)
+	waitmovement(0)
+	applymovement(1, Zone1A_Corey_WalkRight)
+	waitmovement(0)
+	applymovement(1, Common_Movement_FaceLeft)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement(0)
+	releaseall
 }
 
 script Zone1A_EventScript_LeviathanBattle {
@@ -492,7 +492,7 @@ script Zone1A_EventScript_LeviathanBattle {
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this Exp. Share! It's useful for training up Pokémon."), MSGBOX_DEFAULT)
 	giveitem(ITEM_EXP_SHARE)
-	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Well, anyways, I've gotta run now.\pBye bye!"))
+	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Well, anyways, I've gotta run now.\pBye bye!"), MSGBOX_AUTOCLOSE)
 	closemessage
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(1)
