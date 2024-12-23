@@ -77,7 +77,7 @@ Name: Testing
 Class: Champion
 Pic: School Kid F
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Mugshot: Purple
 Random Lead: Yes
@@ -100,7 +100,7 @@ Name: Nina
 Class: School Kid
 Pic: School Kid F
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -135,7 +135,7 @@ Name: Mariam
 Class: Lass
 Pic: Lass
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -170,7 +170,7 @@ Name: Oscar
 Class: Youngster
 Pic: Youngster
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -206,7 +206,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -237,7 +237,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -268,7 +268,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -299,7 +299,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -330,7 +330,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -361,7 +361,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -392,7 +392,7 @@ Name: Polly
 Class: School Kid
 Pic: School Kid F
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -427,7 +427,7 @@ Name: Jeremiah
 Class: Bug Catcher
 Pic: Bug Catcher
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -470,7 +470,7 @@ Name: Josh
 Class: Bug Catcher
 Pic: Bug Catcher
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -512,7 +512,7 @@ Name: Harper
 Class: Lass
 Pic: Lass
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -548,7 +548,7 @@ Name: Arthur
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -583,7 +583,7 @@ Name: Shaun
 Class: Youngster
 Pic: Youngster
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -620,7 +620,7 @@ Name: Shaun
 Class: Youngster
 Pic: Youngster
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -666,7 +666,7 @@ Name: Jemma
 Class: Lass
 Pic: Lass
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -702,7 +702,7 @@ Name: Patrick
 Class: Bug Catcher
 Pic: Bug Catcher
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -739,7 +739,7 @@ Name: Annabelle
 Class: Lady
 Pic: Lady
 Music: Female
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -783,7 +783,7 @@ Name: Boris
 Class: Youngster
 Pic: Youngster
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -819,7 +819,7 @@ Name: Richard
 Class: Rich Boy
 Pic: Rich Boy
 Music: Rich
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -864,7 +864,7 @@ Name: Phillipa
 Class: School Kid
 Pic: School Kid F
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -892,7 +892,7 @@ Name: Phillipa
 Class: School Kid
 Pic: School Kid F
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -930,7 +930,7 @@ Name: Herman
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -966,7 +966,7 @@ Name: Ralph
 Class: Youngster
 Pic: Youngster
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1002,7 +1002,7 @@ Name: Callie
 Class: Lass
 Pic: Lass
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1038,7 +1038,7 @@ Name: Santiago
 Class: Bug Catcher
 Pic: Bug Catcher
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1080,7 +1080,7 @@ Name: Chloe&Kaya
 Class: Twins
 Pic: Twins
 Music: Twins
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
 
 Cottonee
@@ -1106,7 +1106,7 @@ Name: Fred
 Class: Camper
 Pic: Camper
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1151,7 +1151,7 @@ Name: Lucia
 Class: Fairy Tale Girl
 Pic: Fairy Tale Girl
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1196,7 +1196,7 @@ Name: Ella&Bella
 Class: Sr And Jr
 Pic: Sr And Jr
 Music: Twins
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
 Random Lead: No
 Mugshot: Purple
@@ -1234,7 +1234,7 @@ Name: Ella&Bella
 Class: Sr And Jr
 Pic: Sr And Jr
 Music: Twins
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_SMART_TRAINER
 Double Battle: Yes
 Random Lead: No
 Mugshot: Purple
@@ -1276,7 +1276,7 @@ Name: Anne&June
 Class: Sr And Jr
 Pic: Sr And Jr
 Music: Twins
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
 
 Gothita
@@ -1302,7 +1302,7 @@ Name: Nova&Cora
 Class: Twins
 Pic: Twins
 Music: Twins
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
 
 Hatenna
@@ -1328,7 +1328,7 @@ Name: Clinton
 Class: Rich Boy
 Pic: Rich Boy
 Music: Rich
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1373,7 +1373,7 @@ Name: Rebecca
 Class: Pokefan
 Pic: Pokefan F
 Music: Twins
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1418,7 +1418,7 @@ Name: Ryan
 Class: Pokefan
 Pic: Pokefan M
 Music: Twins
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1463,7 +1463,7 @@ Name: Caitlyn
 Class: Picnicker
 Pic: Picnicker
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1508,7 +1508,7 @@ Name: Kenneth
 Class: Camper
 Pic: Camper
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1553,7 +1553,7 @@ Name: Kevin
 Class: Bug Catcher
 Pic: Bug Catcher
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1598,7 +1598,7 @@ Name: Declan
 Class: Pkmn Breeder
 Pic: Pokemon Breeder M
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -1653,7 +1653,7 @@ Name: Declan
 Class: Pkmn Breeder
 Pic: Pokemon Breeder M
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -1708,7 +1708,7 @@ Name: Gilbert
 Class: Fisherman
 Pic: Fisherman
 Music: Hiker
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1752,7 +1752,7 @@ Name: Melanie
 Class: Lass
 Pic: Lass
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1788,7 +1788,7 @@ Name: Constance
 Class: Lady
 Pic: Lady
 Music: Female
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1833,7 +1833,7 @@ Name: Frank
 Class: Youngster
 Pic: Youngster
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1869,7 +1869,7 @@ Name: Dudley
 Class: Bird Keeper
 Pic: Bird Keeper
 Music: Cool
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1914,7 +1914,7 @@ Name: Daisy
 Class: Pkmn Breeder
 Pic: Pokemon Breeder F
 Music: Female
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -1971,7 +1971,7 @@ Name: Vic&Dell
 Class: Twins
 Pic: Twins
 Music: Twins
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
 
 Plusle
@@ -1997,7 +1997,7 @@ Name: Nina
 Class: Tuber F
 Pic: Tuber F
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 
@@ -2042,7 +2042,7 @@ Name: Zack&Coby
 Class: Sis And Bro
 Pic: Sis And Bro
 Music: Swimmer
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
 Random Lead: No
 Mugshot: Purple
@@ -2066,7 +2066,7 @@ Name: Zack&Coby
 Class: Sis And Bro
 Pic: Sis And Bro
 Music: Swimmer
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_SMART_TRAINER
 Double Battle: Yes
 Random Lead: No
 Mugshot: Purple
@@ -2095,7 +2095,7 @@ Name: Millie
 Class: Battle Girl
 Pic: Battle Girl
 Music: Intense
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -2116,7 +2116,7 @@ Name: Jamal
 Class: Camper
 Pic: Camper
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -2137,7 +2137,7 @@ Name: Paige
 Class: Aroma Lady
 Pic: Aroma Lady
 Music: Female
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -2158,7 +2158,7 @@ Name: Seth
 Class: Rich Boy
 Pic: Rich Boy
 Music: Rich
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -2179,7 +2179,7 @@ Name: Connie
 Class: Lass
 Pic: Lass
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 
@@ -2194,7 +2194,7 @@ Name: Peter
 Class: Youngster
 Pic: Youngster
 Music: Male
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 
@@ -2209,7 +2209,7 @@ Name: Whitaker
 Class: Bird Keeper
 Pic: Bird Keeper
 Music: Cool
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -2236,7 +2236,7 @@ Name: Betty
 Class: Lady
 Pic: Lady
 Music: Female
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
 Random Lead: No
 Mugshot: Purple
@@ -2264,7 +2264,7 @@ Name: Betty
 Class: Lady
 Pic: Lady
 Music: Female
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_SMART_TRAINER
 Double Battle: Yes
 Random Lead: No
 Mugshot: Purple
@@ -2301,7 +2301,7 @@ Name: Jimmy
 Class: Collector
 Pic: Collector
 Music: Suspicious
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -2322,7 +2322,7 @@ Name: Emiliano
 Class: Hiker
 Pic: Hiker
 Music: Hiker
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -2343,7 +2343,7 @@ Name: Beckham
 Class: Pokemaniac
 Pic: Pokemaniac
 Music: Suspicious
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -2364,7 +2364,7 @@ Name: Karen
 Class: Backpacker
 Pic: Backpacker F
 Music: Hiker
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -2376,7 +2376,7 @@ Name: Jayden
 Class: Hiker
 Pic: Hiker
 Music: Hiker
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -2397,7 +2397,7 @@ Name: Neil
 Class: Ruin Maniac
 Pic: Ruin Maniac
 Music: Hiker
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -2418,7 +2418,7 @@ Name: Tamara
 Class: Picnicker
 Pic: Picnicker
 Music: Girl
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
@@ -2439,7 +2439,7 @@ Name: Alistair
 Class: Roughneck
 Pic: Roughneck
 Music: Suspicious
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -2494,7 +2494,7 @@ Name: Alistair
 Class: Roughneck
 Pic: Roughneck
 Music: Suspicious
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
