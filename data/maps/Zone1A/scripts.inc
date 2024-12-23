@@ -1559,7 +1559,7 @@ Zone1A_EventScript_Sign_GoldenTree_Text_0:
 Zone1A_EventScript_Sign_RunningShoes_Text_0:
 # 576 "data/maps/Zone1A/scripts.pory"
 	.string "Trainer Tips\p"
-	.string "Press {R_BUTTON} to enable or disable Auto Run.$"
+	.string "Press {L_BUTTON} to enable or disable Auto Run.$"
 
 Zone1A_Text_FWG_ComeBack::
 # 374 "data/maps/Zone1A/scripts.pory"
