@@ -389,7 +389,7 @@
 #define FLAG_HIDDEN_ITEM_END                                    (FLAG_HIDDEN_ITEMS_START + 0xFF)
 
 // Custom Flags Items
-#define FLAG_ITEM_ZONE1A_POTION                                     0x300
+#define FLAG_ITEM_ZONE1A_RANDOM_1                                   0x300
 #define FLAG_ITEM_ZONE1A_QUICK_CLAW                                 0x301
 #define FLAG_ITEM_ZONE2A_ANTIDOTE                                   0x302
 #define FLAG_ITEM_ZONE2B_POTION_X2                                  0x303

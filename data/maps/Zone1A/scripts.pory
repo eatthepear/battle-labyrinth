@@ -1,6 +1,6 @@
 mapscripts Zone1A_MapScripts {
 	MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_ITEM_ZONE1A_POTION)) {
+		if (flag(FLAG_ITEM_ZONE1A_RANDOM_1)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -522,9 +522,9 @@ text Zone1A_Text_Leviathan1Defeat {
 	format("Drats! My Fire-Water-Grass core wasn't enough!")
 }
 
-script Zone1A_EventScript_ItemPotion {
+script Zone1A_EventScript_ItemRandom1 {
 	lock
-	if (flag(FLAG_ITEM_ZONE1A_POTION)) {
+	if (flag(FLAG_ITEM_ZONE1A_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -532,9 +532,10 @@ script Zone1A_EventScript_ItemPotion {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE1A_POTION)
+	setflag(FLAG_ITEM_ZONE1A_RANDOM_1)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_POTION, 1)
+	specialvar(VAR_TEMP_1, RandomItemChest)
+	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
