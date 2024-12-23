@@ -41,6 +41,11 @@ script Zone2A_EventScript_Polly {
 	end
 }
 
+script  Zone2A_EventScript_Sign {
+	msgbox(format("Trainer Tips\pYou may find hidden items by checking certain tiles with {A_BUTTON}.\pHowever, you won't find any hidden items on Brutal or Independent."), MSGBOX_SIGN)
+	end
+}
+
 raw `
 Zone2A_EventScript_Jeremiah::
 	trainerbattle_single TRAINER_PBL_JEREMIAH, Zone2A_Text_JeremiahIntro, Zone2A_Text_JeremiahDefeat
@@ -56,14 +61,4 @@ Zone2A_Text_JeremiahDefeat:
 Zone2A_Text_JeremiahPostBattle:
 	.string "Just wait till my Bugs are all evolved!$"
 
-Zone2A_EventScript_Sign::
-	msgbox Zone2A_Text_Sign, MSGBOX_SIGN
-	end
-
-Zone2A_Text_Sign:
-	.string "Trainer Tips\p"
-	.string "You may find hidden items by\n"
-	.string "checking certain tiles with {A_BUTTON}.\p"
-	.string "However, you won't find any hidden\n"
-	.string "items on Brutal difficulty.$"
 `

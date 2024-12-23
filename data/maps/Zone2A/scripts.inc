@@ -65,56 +65,40 @@ Zone2A_EventScript_Polly::
 	end
 
 
-# 44 "data/maps/Zone2A/scripts.pory"
-
+Zone2A_EventScript_Sign::
 # 45 "data/maps/Zone2A/scripts.pory"
-Zone2A_EventScript_Jeremiah::
-# 46 "data/maps/Zone2A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_JEREMIAH, Zone2A_Text_JeremiahIntro, Zone2A_Text_JeremiahDefeat
-# 47 "data/maps/Zone2A/scripts.pory"
-	msgbox Zone2A_Text_JeremiahPostBattle, MSGBOX_AUTOCLOSE
-# 48 "data/maps/Zone2A/scripts.pory"
+	msgbox Zone2A_EventScript_Sign_Text_0, MSGBOX_SIGN
 	end
+
+
 # 49 "data/maps/Zone2A/scripts.pory"
 
 # 50 "data/maps/Zone2A/scripts.pory"
-Zone2A_Text_JeremiahIntro:
+Zone2A_EventScript_Jeremiah::
 # 51 "data/maps/Zone2A/scripts.pory"
-	.string "The more legs, the better!$"
+	trainerbattle_single TRAINER_PBL_JEREMIAH, Zone2A_Text_JeremiahIntro, Zone2A_Text_JeremiahDefeat
 # 52 "data/maps/Zone2A/scripts.pory"
-
+	msgbox Zone2A_Text_JeremiahPostBattle, MSGBOX_AUTOCLOSE
 # 53 "data/maps/Zone2A/scripts.pory"
-Zone2A_Text_JeremiahDefeat:
-# 54 "data/maps/Zone2A/scripts.pory"
-	.string "Oh… Come on!$"
-# 55 "data/maps/Zone2A/scripts.pory"
-
-# 56 "data/maps/Zone2A/scripts.pory"
-Zone2A_Text_JeremiahPostBattle:
-# 57 "data/maps/Zone2A/scripts.pory"
-	.string "Just wait till my Bugs are all evolved!$"
-# 58 "data/maps/Zone2A/scripts.pory"
-
-# 59 "data/maps/Zone2A/scripts.pory"
-Zone2A_EventScript_Sign::
-# 60 "data/maps/Zone2A/scripts.pory"
-	msgbox Zone2A_Text_Sign, MSGBOX_SIGN
-# 61 "data/maps/Zone2A/scripts.pory"
 	end
-# 62 "data/maps/Zone2A/scripts.pory"
+# 54 "data/maps/Zone2A/scripts.pory"
 
-# 63 "data/maps/Zone2A/scripts.pory"
-Zone2A_Text_Sign:
-# 64 "data/maps/Zone2A/scripts.pory"
-	.string "Trainer Tips\p"
-# 65 "data/maps/Zone2A/scripts.pory"
-	.string "You may find hidden items by\n"
-# 66 "data/maps/Zone2A/scripts.pory"
-	.string "checking certain tiles with {A_BUTTON}.\p"
-# 67 "data/maps/Zone2A/scripts.pory"
-	.string "However, you won't find any hidden\n"
-# 68 "data/maps/Zone2A/scripts.pory"
-	.string "items on Brutal difficulty.$"
+# 55 "data/maps/Zone2A/scripts.pory"
+Zone2A_Text_JeremiahIntro:
+# 56 "data/maps/Zone2A/scripts.pory"
+	.string "The more legs, the better!$"
+# 57 "data/maps/Zone2A/scripts.pory"
+
+# 58 "data/maps/Zone2A/scripts.pory"
+Zone2A_Text_JeremiahDefeat:
+# 59 "data/maps/Zone2A/scripts.pory"
+	.string "Oh… Come on!$"
+# 60 "data/maps/Zone2A/scripts.pory"
+
+# 61 "data/maps/Zone2A/scripts.pory"
+Zone2A_Text_JeremiahPostBattle:
+# 62 "data/maps/Zone2A/scripts.pory"
+	.string "Just wait till my Bugs are all evolved!$"
 
 Zone2A_EventScript_CautionSign_Text_0:
 # 29 "data/maps/Zone2A/scripts.pory"
@@ -146,3 +130,11 @@ Zone2A_EventScript_Polly_Text_1:
 Zone2A_EventScript_Polly_Text_2:
 # 40 "data/maps/Zone2A/scripts.pory"
 	.string "I'm sure it's here somewhere…$"
+
+Zone2A_EventScript_Sign_Text_0:
+# 45 "data/maps/Zone2A/scripts.pory"
+	.string "Trainer Tips\p"
+	.string "You may find hidden items by checking\n"
+	.string "certain tiles with {A_BUTTON}.\p"
+	.string "However, you won't find any hidden\n"
+	.string "items on Brutal or Independent.$"
