@@ -37,6 +37,7 @@ script Zone2B_EventScript_LeviathanBattle {
 	giveitem(ITEM_PECHA_BERRY, 2)
 	giveitem(ITEM_RAWST_BERRY, 2)
 	giveitem(ITEM_CHESTO_BERRY, 2)
+	giveitem(ITEM_ASPEAR_BERRY, 2)
 	msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: If you're looking for more Berries, I've heard you can either grow them yourself, or find a nice Golden Tree to shake them from.\pThose trees have Pokémon though; that's where I found some of my partner Pokémon!"))
 	closemessage
 	setflag(FLAG_BEAT_LEVIATHAN_2)
