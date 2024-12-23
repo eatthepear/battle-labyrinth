@@ -5,6 +5,12 @@ extern bool8 gBikeCyclingChallenge;
 extern u8 gBikeCollisions;
 extern u16 gScrollableMultichoice_ScrollOffset;
 
+struct ItemChest
+{
+    u16 itemId;
+    u8 percentage[50];
+};
+
 u8 GetLeadMonIndex(void);
 u8 IsDestinationBoxFull(void);
 u16 GetPCBoxToSendMon(void);

@@ -562,3 +562,4 @@ gSpecials::
 	def_special GetCaughtSpeciesCount
 	def_special GetNumTrainersRemaining
 	def_special GetNumItemsRemaining
+	def_special RandomItemChest
