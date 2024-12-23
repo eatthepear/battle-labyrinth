@@ -23,7 +23,7 @@
 #line 81
         .doubleBattle = FALSE,
 #line 80
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 82
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -79,7 +79,7 @@
 #line 104
         .doubleBattle = FALSE,
 #line 103
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 105
         .randomLead = TRUE,
         .partySize = 3,
@@ -161,7 +161,7 @@
 #line 139
         .doubleBattle = FALSE,
 #line 138
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 140
         .randomLead = TRUE,
         .partySize = 3,
@@ -243,7 +243,7 @@
 #line 174
         .doubleBattle = FALSE,
 #line 173
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 175
         .randomLead = TRUE,
         .partySize = 3,
@@ -326,7 +326,7 @@
 #line 210
         .doubleBattle = FALSE,
 #line 209
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 212
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -406,7 +406,7 @@
 #line 241
         .doubleBattle = FALSE,
 #line 240
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
 #line 243
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -486,7 +486,7 @@
 #line 272
         .doubleBattle = FALSE,
 #line 271
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 274
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -566,7 +566,7 @@
 #line 303
         .doubleBattle = FALSE,
 #line 302
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
 #line 305
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -646,7 +646,7 @@
 #line 334
         .doubleBattle = FALSE,
 #line 333
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 336
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -726,7 +726,7 @@
 #line 365
         .doubleBattle = FALSE,
 #line 364
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
 #line 367
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -806,7 +806,7 @@
 #line 396
         .doubleBattle = FALSE,
 #line 395
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 397
         .randomLead = TRUE,
         .partySize = 3,
@@ -888,7 +888,7 @@
 #line 431
         .doubleBattle = FALSE,
 #line 430
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 432
         .randomLead = TRUE,
         .partySize = 4,
@@ -989,7 +989,7 @@
 #line 474
         .doubleBattle = FALSE,
 #line 473
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 475
         .randomLead = TRUE,
         .partySize = 4,
@@ -1089,7 +1089,7 @@
 #line 516
         .doubleBattle = FALSE,
 #line 515
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 517
         .randomLead = TRUE,
         .partySize = 3,
@@ -1172,7 +1172,7 @@
 #line 552
         .doubleBattle = FALSE,
 #line 551
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 553
         .randomLead = TRUE,
         .partySize = 3,
@@ -1254,7 +1254,7 @@
 #line 587
         .doubleBattle = FALSE,
 #line 586
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 589
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -1346,7 +1346,7 @@
 #line 624
         .doubleBattle = FALSE,
 #line 623
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
 #line 626
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -1460,7 +1460,7 @@
 #line 670
         .doubleBattle = FALSE,
 #line 669
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 671
         .randomLead = TRUE,
         .partySize = 3,
@@ -1543,7 +1543,7 @@
 #line 706
         .doubleBattle = FALSE,
 #line 705
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 707
         .randomLead = TRUE,
         .partySize = 4,
@@ -1638,7 +1638,7 @@
 #line 743
         .doubleBattle = FALSE,
 #line 742
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 744
         .randomLead = TRUE,
         .partySize = 4,
@@ -1740,7 +1740,7 @@
 #line 787
         .doubleBattle = FALSE,
 #line 786
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 788
         .randomLead = TRUE,
         .partySize = 3,
@@ -1823,7 +1823,7 @@
 #line 823
         .doubleBattle = FALSE,
 #line 822
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 824
         .randomLead = TRUE,
         .partySize = 4,
@@ -1926,7 +1926,7 @@
 #line 868
         .doubleBattle = FALSE,
 #line 867
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 870
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -2005,7 +2005,7 @@
 #line 896
         .doubleBattle = FALSE,
 #line 895
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
 #line 898
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -2107,7 +2107,7 @@
 #line 934
         .doubleBattle = FALSE,
 #line 933
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 935
         .randomLead = TRUE,
         .partySize = 3,
@@ -2190,7 +2190,7 @@
 #line 970
         .doubleBattle = FALSE,
 #line 969
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 971
         .randomLead = TRUE,
         .partySize = 3,
@@ -2273,7 +2273,7 @@
 #line 1006
         .doubleBattle = FALSE,
 #line 1005
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1007
         .randomLead = TRUE,
         .partySize = 3,
@@ -2356,7 +2356,7 @@
 #line 1042
         .doubleBattle = FALSE,
 #line 1041
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1043
         .randomLead = TRUE,
         .partySize = 4,
@@ -2456,7 +2456,7 @@
 #line 1084
         .doubleBattle = TRUE,
 #line 1083
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2517,7 +2517,7 @@
 #line 1110
         .doubleBattle = FALSE,
 #line 1109
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1111
         .randomLead = TRUE,
         .partySize = 4,
@@ -2620,7 +2620,7 @@
 #line 1155
         .doubleBattle = FALSE,
 #line 1154
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1156
         .randomLead = TRUE,
         .partySize = 4,
@@ -2723,7 +2723,7 @@
 #line 1200
         .doubleBattle = TRUE,
 #line 1199
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1202
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -2825,7 +2825,7 @@
 #line 1238
         .doubleBattle = TRUE,
 #line 1237
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
 #line 1240
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -2931,7 +2931,7 @@
 #line 1280
         .doubleBattle = TRUE,
 #line 1279
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2992,7 +2992,7 @@
 #line 1306
         .doubleBattle = TRUE,
 #line 1305
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -3053,7 +3053,7 @@
 #line 1332
         .doubleBattle = FALSE,
 #line 1331
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1333
         .randomLead = TRUE,
         .partySize = 4,
@@ -3156,7 +3156,7 @@
 #line 1377
         .doubleBattle = FALSE,
 #line 1376
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1378
         .randomLead = TRUE,
         .partySize = 4,
@@ -3259,7 +3259,7 @@
 #line 1422
         .doubleBattle = FALSE,
 #line 1421
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1423
         .randomLead = TRUE,
         .partySize = 4,
@@ -3362,7 +3362,7 @@
 #line 1467
         .doubleBattle = FALSE,
 #line 1466
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1468
         .randomLead = TRUE,
         .partySize = 4,
@@ -3465,7 +3465,7 @@
 #line 1512
         .doubleBattle = FALSE,
 #line 1511
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1513
         .randomLead = TRUE,
         .partySize = 4,
@@ -3568,7 +3568,7 @@
 #line 1557
         .doubleBattle = FALSE,
 #line 1556
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1558
         .randomLead = TRUE,
         .partySize = 4,
@@ -3671,7 +3671,7 @@
 #line 1602
         .doubleBattle = FALSE,
 #line 1601
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1604
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -3799,7 +3799,7 @@
 #line 1657
         .doubleBattle = FALSE,
 #line 1656
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
 #line 1659
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -3935,7 +3935,7 @@
 #line 1712
         .doubleBattle = FALSE,
 #line 1711
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1713
         .randomLead = TRUE,
         .partySize = 4,
@@ -4037,7 +4037,7 @@
 #line 1756
         .doubleBattle = FALSE,
 #line 1755
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1757
         .randomLead = TRUE,
         .partySize = 3,
@@ -4120,7 +4120,7 @@
 #line 1792
         .doubleBattle = FALSE,
 #line 1791
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1793
         .randomLead = TRUE,
         .partySize = 4,
@@ -4223,7 +4223,7 @@
 #line 1837
         .doubleBattle = FALSE,
 #line 1836
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1838
         .randomLead = TRUE,
         .partySize = 3,
@@ -4306,7 +4306,7 @@
 #line 1873
         .doubleBattle = FALSE,
 #line 1872
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1874
         .randomLead = TRUE,
         .partySize = 4,
@@ -4409,7 +4409,7 @@
 #line 1918
         .doubleBattle = FALSE,
 #line 1917
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 1919
         .randomLead = TRUE,
         .partySize = 6,
@@ -4546,7 +4546,7 @@
 #line 1975
         .doubleBattle = TRUE,
 #line 1974
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -4607,7 +4607,7 @@
 #line 2001
         .doubleBattle = FALSE,
 #line 2000
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2002
         .randomLead = FALSE,
         .partySize = 4,
@@ -4718,7 +4718,7 @@
 #line 2046
         .doubleBattle = TRUE,
 #line 2045
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2048
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -4784,7 +4784,7 @@
 #line 2070
         .doubleBattle = TRUE,
 #line 2069
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
 #line 2072
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -4854,7 +4854,7 @@
 #line 2099
         .doubleBattle = FALSE,
 #line 2098
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2100
         .randomLead = TRUE,
         .partySize = 4,
@@ -4921,7 +4921,7 @@
 #line 2120
         .doubleBattle = FALSE,
 #line 2119
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2121
         .randomLead = TRUE,
         .partySize = 4,
@@ -4988,7 +4988,7 @@
 #line 2141
         .doubleBattle = FALSE,
 #line 2140
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2142
         .randomLead = TRUE,
         .partySize = 4,
@@ -5055,7 +5055,7 @@
 #line 2162
         .doubleBattle = FALSE,
 #line 2161
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2163
         .randomLead = TRUE,
         .partySize = 4,
@@ -5122,7 +5122,7 @@
 #line 2183
         .doubleBattle = FALSE,
 #line 2182
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2184
         .randomLead = FALSE,
         .partySize = 2,
@@ -5167,7 +5167,7 @@
 #line 2198
         .doubleBattle = FALSE,
 #line 2197
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2199
         .randomLead = FALSE,
         .partySize = 2,
@@ -5212,7 +5212,7 @@
 #line 2213
         .doubleBattle = FALSE,
 #line 2212
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2214
         .randomLead = TRUE,
         .partySize = 4,
@@ -5288,7 +5288,7 @@
 #line 2240
         .doubleBattle = TRUE,
 #line 2239
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2242
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -5358,7 +5358,7 @@
 #line 2268
         .doubleBattle = TRUE,
 #line 2267
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
 #line 2270
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -5450,7 +5450,7 @@
 #line 2305
         .doubleBattle = FALSE,
 #line 2304
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2306
         .randomLead = TRUE,
         .partySize = 4,
@@ -5517,7 +5517,7 @@
 #line 2326
         .doubleBattle = FALSE,
 #line 2325
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2327
         .randomLead = TRUE,
         .partySize = 4,
@@ -5584,7 +5584,7 @@
 #line 2347
         .doubleBattle = FALSE,
 #line 2346
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2348
         .randomLead = TRUE,
         .partySize = 4,
@@ -5651,7 +5651,7 @@
 #line 2368
         .doubleBattle = FALSE,
 #line 2367
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2369
         .randomLead = TRUE,
         .partySize = 1,
@@ -5685,7 +5685,7 @@
 #line 2380
         .doubleBattle = FALSE,
 #line 2379
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2381
         .randomLead = TRUE,
         .partySize = 4,
@@ -5752,7 +5752,7 @@
 #line 2401
         .doubleBattle = FALSE,
 #line 2400
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2402
         .randomLead = TRUE,
         .partySize = 4,
@@ -5819,7 +5819,7 @@
 #line 2422
         .doubleBattle = FALSE,
 #line 2421
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2423
         .randomLead = TRUE,
         .partySize = 4,
@@ -5886,7 +5886,7 @@
 #line 2443
         .doubleBattle = FALSE,
 #line 2442
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2445
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
@@ -6022,7 +6022,7 @@
 #line 2498
         .doubleBattle = FALSE,
 #line 2497
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
 #line 2500
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
