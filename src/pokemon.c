@@ -6044,7 +6044,39 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
         default:
-            return MUS_VS_TRAINER;
+            if (gTrainers[gTrainerBattleOpponent_A].mugshotEnabled == TRUE) {
+                switch (VarGet(VAR_LEVIATHAN_MUSIC))
+                {
+                case 1:
+                    return MUS_RG_VS_GYM_LEADER;
+                case 2:
+                    return MUS_DP_VS_GYM_LEADER;
+                case 3:
+                    return MUS_HG_VS_GYM_LEADER;
+                case 4:
+                    return MUS_HG_VS_GYM_LEADER_KANTO;
+                case 5:
+                    return MUS_VS_FRONTIER_BRAIN; // BW music not implemented yet
+                default:
+                    return MUS_VS_GYM_LEADER;
+                }
+            } else {
+                switch (VarGet(VAR_TRAINER_MUSIC))
+                {
+                case 1:
+                    return MUS_RG_VS_TRAINER;
+                case 2:
+                    return MUS_DP_VS_TRAINER;
+                case 3:
+                    return MUS_HG_VS_TRAINER;
+                case 4:
+                    return MUS_HG_VS_TRAINER;
+                case 5:
+                    return MUS_VS_FRONTIER_BRAIN; // BW music not implemented yet
+                default:
+                    return MUS_VS_TRAINER;
+                }
+            }
         }
     }
     else
@@ -6147,7 +6179,21 @@ u16 GetBattleBGM(void)
         case SPECIES_ARCEUS_FAIRY:
             return MUS_DP_VS_ARCEUS;
         default:
-            return MUS_VS_WILD;
+            switch (VarGet(VAR_WILD_MUSIC))
+            {
+            case 1:
+                return MUS_RG_VS_WILD;
+            case 2:
+                return MUS_DP_VS_WILD;
+            case 3:
+                return MUS_HG_VS_WILD;
+            case 4:
+                return MUS_HG_VS_WILD_KANTO;
+            case 5:
+                return MUS_VS_FRONTIER_BRAIN; // BW music not implemented yet
+            default:
+                return MUS_VS_WILD;
+            }
         }
     }
 }
