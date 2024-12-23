@@ -1,4 +1,7 @@
 mapscripts Zone14C_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+		call(EventScript_HandleFlashlight)
+    }
 	MAP_SCRIPT_ON_RESUME {
 		if (flag(FLAG_ITEM_ZONE14C_DUSK_STONE)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
@@ -6,9 +9,6 @@ mapscripts Zone14C_MapScripts {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
 	}
-    // MAP_SCRIPT_ON_TRANSITION {
-	// 	call(EventScript_HandleFlashlight)
-    // }
 }
 
 script Zone14C_EventScript_DuskStone {

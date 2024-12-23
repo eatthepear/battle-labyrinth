@@ -2944,3 +2944,12 @@ script EventScript_ShakeTree {
 	releaseall
 	end
 }
+
+script EventScript_HandleFlashlight {
+	if (checkitem(ITEM_FLASHLIGHT) == TRUE) {
+		setflashlevel(2)
+	} else {
+		setflashlevel(6)
+	}
+	return
+}

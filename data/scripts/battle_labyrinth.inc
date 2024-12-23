@@ -5694,6 +5694,22 @@ EventScript_ShakeTree_32:
 	goto EventScript_ShakeTree_4
 
 
+EventScript_HandleFlashlight::
+	checkitem ITEM_FLASHLIGHT
+# 0 "data/scripts/battle_labyrinth.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq EventScript_HandleFlashlight_2
+# 2952 "data/scripts/battle_labyrinth.pory"
+	setflashlevel 6
+EventScript_HandleFlashlight_1:
+	return
+
+EventScript_HandleFlashlight_2:
+# 2950 "data/scripts/battle_labyrinth.pory"
+	setflashlevel 2
+	goto EventScript_HandleFlashlight_1
+
+
 EventScript_MedicineSign_Text_0:
 # 35 "data/scripts/battle_labyrinth.pory"
 	.string "Portentia's Potions\nCurated Medicines!$"

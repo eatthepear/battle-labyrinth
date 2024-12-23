@@ -1,7 +1,7 @@
 mapscripts Zone2C_MapScripts {
-	// MAP_SCRIPT_ON_TRANSITION {
-	// 	call(EventScript_HandleFlashlight)
-	// }
+	MAP_SCRIPT_ON_TRANSITION {
+		call(EventScript_HandleFlashlight)
+	}
 	MAP_SCRIPT_ON_RESUME {
 		if (flag(FLAG_ITEM_ZONE2C_SILK_SCARF)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
