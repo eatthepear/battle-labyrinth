@@ -136,7 +136,7 @@ Zone1A_EventScript_GiveFWG_2:
 
 Zone1A_EventScript_GiveFWG_6:
 # 27 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_FWG_ComeBack
+	msgbox Zone1A_Text_FWG_ComeBack, MSGBOX_AUTOCLOSE
 # 28 "data/maps/Zone1A/scripts.pory"
 	release
 	end
@@ -158,7 +158,7 @@ Zone1A_EventScript_GiveFWG_12:
 
 Zone1A_EventScript_GiveFWG_13:
 # 42 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_FWG_ComeBack
+	msgbox Zone1A_Text_FWG_ComeBack, MSGBOX_AUTOCLOSE
 # 43 "data/maps/Zone1A/scripts.pory"
 	release
 	end
@@ -643,21 +643,21 @@ Zone1A_EventScript_GiveFWG_121:
 
 Zone1A_EventScript_GiveFWG_124:
 # 79 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_EventScript_GiveFWG_Text_10
+	msgbox Zone1A_EventScript_GiveFWG_Text_10, MSGBOX_AUTOCLOSE
 # 80 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
 Zone1A_EventScript_GiveFWG_127:
 # 148 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_EventScript_GiveFWG_Text_10
+	msgbox Zone1A_EventScript_GiveFWG_Text_10, MSGBOX_AUTOCLOSE
 # 149 "data/maps/Zone1A/scripts.pory"
 	release
 	end
 
 Zone1A_EventScript_GiveFWG_130:
 # 217 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_EventScript_GiveFWG_Text_10
+	msgbox Zone1A_EventScript_GiveFWG_Text_10, MSGBOX_AUTOCLOSE
 # 218 "data/maps/Zone1A/scripts.pory"
 	release
 	end
@@ -960,9 +960,10 @@ Zone1A_EventScript_TriggerLeviathanBottom::
 	msgbox Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO
 # 399 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq Zone1A_EventScript_TriggerLeviathanBottom_1
+	goto_if_eq Zone1A_EventScript_TriggerLeviathanBottom_2
+Zone1A_EventScript_TriggerLeviathanBottom_1:
 # 402 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_Leviathan1Wait
+	msgbox Zone1A_Text_Leviathan1Wait, MSGBOX_AUTOCLOSE
 # 403 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Common_Movement_WalkUp
 # 404 "data/maps/Zone1A/scripts.pory"
@@ -979,12 +980,14 @@ Zone1A_EventScript_TriggerLeviathanBottom::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
 # 410 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
+# 411 "data/maps/Zone1A/scripts.pory"
+	releaseall
 	return
 
-Zone1A_EventScript_TriggerLeviathanBottom_1:
+Zone1A_EventScript_TriggerLeviathanBottom_2:
 # 400 "data/maps/Zone1A/scripts.pory"
 	goto Zone1A_EventScript_LeviathanBattle
-	return
+	goto Zone1A_EventScript_TriggerLeviathanBottom_1
 
 
 Zone1A_EventScript_TriggerLeviathanMiddle::
@@ -1006,9 +1009,10 @@ Zone1A_EventScript_TriggerLeviathanMiddle::
 	msgbox Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO
 # 423 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq Zone1A_EventScript_TriggerLeviathanMiddle_1
+	goto_if_eq Zone1A_EventScript_TriggerLeviathanMiddle_2
+Zone1A_EventScript_TriggerLeviathanMiddle_1:
 # 426 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_Leviathan1Wait
+	msgbox Zone1A_Text_Leviathan1Wait, MSGBOX_AUTOCLOSE
 # 427 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Zone1A_Corey_WalkRight
 # 428 "data/maps/Zone1A/scripts.pory"
@@ -1021,12 +1025,14 @@ Zone1A_EventScript_TriggerLeviathanMiddle::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
 # 432 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
+# 433 "data/maps/Zone1A/scripts.pory"
+	releaseall
 	return
 
-Zone1A_EventScript_TriggerLeviathanMiddle_1:
+Zone1A_EventScript_TriggerLeviathanMiddle_2:
 # 424 "data/maps/Zone1A/scripts.pory"
 	goto Zone1A_EventScript_LeviathanBattle
-	return
+	goto Zone1A_EventScript_TriggerLeviathanMiddle_1
 
 
 Zone1A_EventScript_TriggerLeviathanTop::
@@ -1052,9 +1058,10 @@ Zone1A_EventScript_TriggerLeviathanTop::
 	msgbox Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO
 # 447 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq Zone1A_EventScript_TriggerLeviathanTop_1
+	goto_if_eq Zone1A_EventScript_TriggerLeviathanTop_2
+Zone1A_EventScript_TriggerLeviathanTop_1:
 # 450 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_Leviathan1Wait
+	msgbox Zone1A_Text_Leviathan1Wait, MSGBOX_AUTOCLOSE
 # 451 "data/maps/Zone1A/scripts.pory"
 	applymovement 1, Common_Movement_WalkDown
 # 452 "data/maps/Zone1A/scripts.pory"
@@ -1071,12 +1078,14 @@ Zone1A_EventScript_TriggerLeviathanTop::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
 # 458 "data/maps/Zone1A/scripts.pory"
 	waitmovement 0
+# 459 "data/maps/Zone1A/scripts.pory"
+	releaseall
 	return
 
-Zone1A_EventScript_TriggerLeviathanTop_1:
+Zone1A_EventScript_TriggerLeviathanTop_2:
 # 448 "data/maps/Zone1A/scripts.pory"
 	goto Zone1A_EventScript_LeviathanBattle
-	return
+	goto Zone1A_EventScript_TriggerLeviathanTop_1
 
 
 Zone1A_EventScript_LeviathanBattle::
@@ -1120,7 +1129,7 @@ Zone1A_EventScript_LeviathanBattle_1:
 # 494 "data/maps/Zone1A/scripts.pory"
 	giveitem ITEM_EXP_SHARE
 # 495 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_EventScript_LeviathanBattle_Text_1
+	msgbox Zone1A_EventScript_LeviathanBattle_Text_1, MSGBOX_AUTOCLOSE
 # 496 "data/maps/Zone1A/scripts.pory"
 	closemessage
 # 497 "data/maps/Zone1A/scripts.pory"
