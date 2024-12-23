@@ -1796,10 +1796,10 @@ script EventScript_Settings {
 		} elif (var(VAR_TEMP_1) == 1) {
 			dynmultipush("Infinite", 3)
 		}
-		if (flag(FLAG_SETTINGS_FULL_SURVEIL) == true) {
-			dynmultipush("{COLOR RED}Full Surveil", 4)
+		if (flag(FLAG_SETTINGS_FULL_INFO) == true) {
+			dynmultipush("{COLOR RED}Full Info", 4)
 		} else {
-			dynmultipush("Full Surveil", 4)
+			dynmultipush("Full Info", 4)
 		}
 		if (flag(FLAG_SETTINGS_EXP_ALL) == true) {
 			dynmultipush("{COLOR RED}Exp. All", 5)
@@ -2019,22 +2019,32 @@ script EventScript_Settings {
 					}
 				}
 			case 4:
-				msgbox(format("In trainer battles, you can {COLOR RED}Surveil{COLOR DARK_GRAY} the opposing party to gain more information."), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_FULL_SURVEIL) == true) {
-					msgbox(format("{COLOR RED}Surveil{COLOR DARK_GRAY} currently fully reveals all information about the opposing party.\pWould you like to decrease the amount of information it reveals?"), MSGBOX_YESNO)
+				msgbox(format("The {COLOR RED}Full Info{COLOR DARK_GRAY} setting enables you to see more information that is not visible otherwise, such as full info about enemy Pokémon through the {COLOR RED}Surveil{COLOR DARK_GRAY} option in battle, or the {COLOR RED}DexNav{COLOR DARK_GRAY} to see potential encounterable Pokémon."), MSGBOX_DEFAULT)
+				if (flag(FLAG_SETTINGS_FULL_INFO) == true) {
+					msgbox(format("The {COLOR RED}Full Info{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
+					msgbox(format("Would you like to turn the {COLOR RED}Full Info{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						playse(SE_PC_OFF)
-						msgbox(format("Lowered the power of {COLOR RED}Surveil{COLOR DARK_GRAY}.\pYou will only be able to view the opposing team's Pokémon and their health."), MSGBOX_DEFAULT)
+						msgbox("{COLOR RED}Full Info{COLOR DARK_GRAY} setting turned off.", MSGBOX_DEFAULT)
 						waitse
-						clearflag(FLAG_SETTINGS_FULL_SURVEIL)
+						clearflag(FLAG_SETTINGS_FULL_INFO)
+						if (var(VAR_ZONE) < 3) {
+							clearflag(FLAG_SYS_DEXNAV_GET)
+							clearflag(FLAG_SYS_DETECTOR_MODE)
+						}
 					}
 				} else {
-					msgbox(format("{COLOR RED}Surveil{COLOR DARK_GRAY} currently reveals only the opposing team's Pokémon and their health.\pWould you like to increase the amount of information it reveals?"), MSGBOX_YESNO)
+					msgbox(format("The {COLOR RED}Full Info{COLOR DARK_GRAY} setting is currently off."), MSGBOX_DEFAULT)
+					msgbox(format("Would you like to turn the {COLOR RED}Full Info{COLOR DARK_GRAY} setting on?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						playse(SE_PC_ON)
-						msgbox(format("Increased the power of {COLOR RED}Surveil{COLOR DARK_GRAY}.\pYou will be able to fully view all information about the opposing party."), MSGBOX_DEFAULT)
+						msgbox("{COLOR RED}Full Info{COLOR DARK_GRAY} setting turned on.", MSGBOX_DEFAULT)
 						waitse
-						setflag(FLAG_SETTINGS_FULL_SURVEIL)
+						setflag(FLAG_SETTINGS_FULL_INFO)
+						if (var(VAR_ZONE) < 3) {
+							setflag(FLAG_SYS_DEXNAV_GET)
+							setflag(FLAG_SYS_DETECTOR_MODE)
+						}
 					}
 				}
 			case 5:
