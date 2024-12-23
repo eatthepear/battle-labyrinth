@@ -2968,7 +2968,7 @@ static u8 GetPartyMenuActionsType(struct Pokemon *mon)
         {
             actionType = GetPartyMenuActionsTypeInBattle(mon);
         }
-        else if (FlagGet(FLAG_SETTINGS_FULL_SURVEIL))
+        else if (FlagGet(FLAG_SETTINGS_FULL_INFO))
         {
             actionType = ACTIONS_SUMMARY_ONLY;
         }
