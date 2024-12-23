@@ -2570,7 +2570,7 @@ static void PrintBattlerOnAbilityPopUp(u8 battlerId, u8 spriteId1, u8 spriteId2)
                         (void*)(OBJ_VRAM0) + (gSprites[spriteId2].oam.tileNum * 32),
                         5, 12,
                         0,
-                        2, 7, 1);
+                        6, 1, 2);
 }
 
 static void PrintAbilityOnAbilityPopUp(u32 ability, u8 spriteId1, u8 spriteId2)
@@ -2581,7 +2581,7 @@ static void PrintAbilityOnAbilityPopUp(u32 ability, u8 spriteId1, u8 spriteId2)
                         (void*)(OBJ_VRAM0) + (gSprites[spriteId2].oam.tileNum * 32) + 256,
                         5, 12,
                         4,
-                        7, 9, 1);
+                        5, 1, 2);
 }
 
 #define PIXEL_COORDS_TO_OFFSET(x, y)(            \
@@ -2933,12 +2933,12 @@ static const struct SpriteSheet sSpriteSheet_MoveInfoWindow =
 
 #define LAST_USED_BALL_X_F    14
 #define LAST_USED_BALL_X_0    -14
-#define LAST_USED_BALL_Y      ((IsDoubleBattle()) ? 78 : 68)
+#define LAST_USED_BALL_Y      ((IsDoubleBattle()) ? 93 : 83)
 #define LAST_USED_BALL_Y_BNC  ((IsDoubleBattle()) ? 76 : 66)
 
 #define LAST_BALL_WIN_X_F       (LAST_USED_BALL_X_F - 0)
 #define LAST_BALL_WIN_X_0       (LAST_USED_BALL_X_0 - 0)
-#define LAST_USED_WIN_Y         (LAST_USED_BALL_Y - 8)
+#define LAST_USED_WIN_Y         (LAST_USED_BALL_Y - 9)
 
 #define sHide  data[0]
 #define sTimer  data[1]
