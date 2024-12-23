@@ -406,6 +406,7 @@ static const u8 sText_NextLv[]                              = _("NEXT LV.");
 static const u8 sText_RentalPkmn[]                          = _("RENTAL POKéMON");
 static const u8 sText_None[]                                = _("NONE");
 #endif
+static const u8 sText_Dashes[]                       = _("-----");
 
 // bg gfx
 const u32 sSummaryScreen_Gfx_BW[]                           = INCBIN_U32("graphics/summary_screen/bw/tiles.4bpp.lz");
@@ -3824,11 +3825,19 @@ static void PrintMonOTName(void)
     int windowId;
     if (InBattleFactory() != TRUE && InSlateportBattleTent() != TRUE)
     {
-        windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_OT_OTID_ITEM);
-        if (sMonSummaryScreen->summary.OTGender == 0)
-            PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, 12, 4, 0, 5);
+        if (enemyPartyPreview)
+        {
+            StringCopy(gStringVar1, sText_Dashes);
+            PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_OT_OTID_ITEM), gStringVar1, 12, 4, 0, 0);
+        }
         else
-            PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, 12, 4, 0, 6);
+        {
+            windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_OT_OTID_ITEM);
+            if (sMonSummaryScreen->summary.OTGender == 0)
+                PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, 12, 4, 0, 5);
+            else
+                PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, 12, 4, 0, 6);
+        }
     }
     else
     {
