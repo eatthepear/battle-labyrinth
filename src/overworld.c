@@ -367,13 +367,7 @@ static void (*const sMovementStatusHandler[])(struct LinkPlayerObjectEvent *, st
 // code
 void DoWhiteOut(void)
 {
-    RunScriptImmediately(EventScript_WhiteOut);
-    if (B_WHITEOUT_MONEY == GEN_3)
-        SetMoney(&gSaveBlock1Ptr->money, GetMoney(&gSaveBlock1Ptr->money) / 2);
-    HealPlayerParty();
-    Overworld_ResetStateAfterWhiteOut();
-    SetWarpDestinationToLastHealLocation();
-    WarpIntoMap();
+    DoSoftReset();
 }
 
 void Overworld_ResetStateAfterFly(void)
@@ -433,7 +427,7 @@ void Overworld_ResetBattleFlagsAndVars(void)
 }
 #endif
 
-static void Overworld_ResetStateAfterWhiteOut(void)
+static UNUSED void Overworld_ResetStateAfterWhiteOut(void)
 {
     ResetInitialPlayerAvatarState();
     FlagClear(FLAG_SYS_CYCLING_ROAD);
