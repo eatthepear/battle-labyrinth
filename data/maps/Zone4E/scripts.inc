@@ -5,7 +5,7 @@ Zone4E_MapScripts::
 
 Zone4E_MapScripts_MAP_SCRIPT_ON_RESUME:
 # 3 "data/maps/Zone4E/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE4E_SUPER_POTION, Zone4E_MapScripts_MAP_SCRIPT_ON_RESUME_2
+	goto_if_set FLAG_ITEM_ZONE4E_RANDOM_1, Zone4E_MapScripts_MAP_SCRIPT_ON_RESUME_2
 # 6 "data/maps/Zone4E/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST
 Zone4E_MapScripts_MAP_SCRIPT_ON_RESUME_1:
@@ -84,11 +84,11 @@ Zone4E_EventScript_LeviathanBattle_2:
 	goto Zone4E_EventScript_LeviathanBattle_1
 
 
-Zone4E_EventScript_ItemSuperPotion::
+Zone4E_EventScript_ItemRandom1::
 # 55 "data/maps/Zone4E/scripts.pory"
 	lock
 # 56 "data/maps/Zone4E/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE4E_SUPER_POTION, Zone4E_EventScript_ItemSuperPotion_2
+	goto_if_set FLAG_ITEM_ZONE4E_RANDOM_1, Zone4E_EventScript_ItemRandom1_2
 # 61 "data/maps/Zone4E/scripts.pory"
 	waitse
 # 62 "data/maps/Zone4E/scripts.pory"
@@ -96,16 +96,18 @@ Zone4E_EventScript_ItemSuperPotion::
 # 63 "data/maps/Zone4E/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 64 "data/maps/Zone4E/scripts.pory"
-	setflag FLAG_ITEM_ZONE4E_SUPER_POTION
+	setflag FLAG_ITEM_ZONE4E_RANDOM_1
 # 65 "data/maps/Zone4E/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 66 "data/maps/Zone4E/scripts.pory"
-	finditem ITEM_SUPER_POTION, 1
+	specialvar VAR_TEMP_1, RandomItemChest
 # 67 "data/maps/Zone4E/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 68 "data/maps/Zone4E/scripts.pory"
 	release
 	end
 
-Zone4E_EventScript_ItemSuperPotion_2:
+Zone4E_EventScript_ItemRandom1_2:
 # 57 "data/maps/Zone4E/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 58 "data/maps/Zone4E/scripts.pory"
@@ -114,36 +116,36 @@ Zone4E_EventScript_ItemSuperPotion_2:
 
 
 Zone4E_EventScript_ItemPoisonBarb::
-# 72 "data/maps/Zone4E/scripts.pory"
-	lock
 # 73 "data/maps/Zone4E/scripts.pory"
+	lock
+# 74 "data/maps/Zone4E/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE4E_POISON_BARB, Zone4E_EventScript_ItemPoisonBarb_2
-# 78 "data/maps/Zone4E/scripts.pory"
-	waitse
 # 79 "data/maps/Zone4E/scripts.pory"
-	removeobject VAR_LAST_TALKED
+	waitse
 # 80 "data/maps/Zone4E/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
+	removeobject VAR_LAST_TALKED
 # 81 "data/maps/Zone4E/scripts.pory"
-	setflag FLAG_ITEM_ZONE4E_POISON_BARB
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 82 "data/maps/Zone4E/scripts.pory"
-	addobject VAR_LAST_TALKED
+	setflag FLAG_ITEM_ZONE4E_POISON_BARB
 # 83 "data/maps/Zone4E/scripts.pory"
-	finditem ITEM_POISON_BARB, 1
+	addobject VAR_LAST_TALKED
 # 84 "data/maps/Zone4E/scripts.pory"
+	finditem ITEM_POISON_BARB, 1
+# 85 "data/maps/Zone4E/scripts.pory"
 	release
 	end
 
 Zone4E_EventScript_ItemPoisonBarb_2:
-# 74 "data/maps/Zone4E/scripts.pory"
-	msgbox gText_ItemChestIsEmpty
 # 75 "data/maps/Zone4E/scripts.pory"
+	msgbox gText_ItemChestIsEmpty
+# 76 "data/maps/Zone4E/scripts.pory"
 	release
 	end
 
 
 Zone4E_EventScript_Sign::
-# 89 "data/maps/Zone4E/scripts.pory"
+# 90 "data/maps/Zone4E/scripts.pory"
 	msgbox Zone4E_Text_Sign, MSGBOX_SIGN
 	end
 
@@ -178,7 +180,7 @@ Zone4E_Text_Leviathan4Defeat::
 	.string "We lost!$"
 
 Zone4E_Text_Sign::
-# 93 "data/maps/Zone4E/scripts.pory"
+# 94 "data/maps/Zone4E/scripts.pory"
 	.string "Trainer Tips\p"
 	.string "The Pokémon you encounter in different\n"
 	.string "areas of the same zone may have slight\l"

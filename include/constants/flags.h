@@ -402,13 +402,13 @@
 #define FLAG_ITEM_ZONE3A_RANDOM_3                                   0x306
 #define FLAG_ITEM_ZONE3A_HYPER_POTION                               0x307
 #define FLAG_ITEM_ZONE4A_SILVER_POWDER                              0x377
-#define FLAG_ITEM_ZONE4A_BURN_HEAL                                  0x308
-#define FLAG_ITEM_ZONE4B_AWAKENING                                  0x309
+#define FLAG_ITEM_ZONE4A_RANDOM_1                                   0x308
+#define FLAG_ITEM_ZONE4B_RANDOM_1                                   0x309
 #define FLAG_ITEM_ZONE4C_MUSCLE_BAND                                0x30A
 #define FLAG_ITEM_ZONE4C_TWISTED_SPOON                              0x379
 #define FLAG_ITEM_ZONE4D_WISE_GLASSES                               0x30B
 #define FLAG_ITEM_ZONE4D_BEEDRILLITE                                0x30C
-#define FLAG_ITEM_ZONE4E_SUPER_POTION                               0x30D
+#define FLAG_ITEM_ZONE4E_RANDOM_1                                   0x30D
 #define FLAG_ITEM_ZONE4E_POISON_BARB                                0x378
 #define FLAG_ITEM_ZONE5A_QUICK_BALL                                 0x30E
 #define FLAG_ITEM_ZONE5A_TM04                                       0x30F
