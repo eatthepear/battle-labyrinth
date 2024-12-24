@@ -1578,8 +1578,8 @@ script EventScript_Max {
 	message(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: Hi {PLAYER}! Long time no see!\pWelcome to my TM shop!"))
 	waitmessage
 	switch(var(VAR_ZONE)) {
-		case 3:
-			pokemart(Zone3A_Shop_TMShop)
+		case 2:
+			pokemart(Zone2A_Shop_TMShop)
 		case 6:
 			pokemart(Zone6A_Shop_TMShop)
 		case 7:
@@ -1589,12 +1589,12 @@ script EventScript_Max {
 		case 18:
 			pokemart(Zone18A_Shop_TMShop)
 	}
-	msgbox(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: Goodbye!"))
+	msgbox(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: Goodbye!"), MSGBOX_AUTOCLOSE)
 	release
 }
 
-mart Zone3A_Shop_TMShop {
-	ITEM_TM01
+mart Zone2A_Shop_TMShop {
+	ITEM_TM_PROTECT
 }
 
 mart Zone6A_Shop_TMShop {
@@ -2775,7 +2775,7 @@ script EventScript_PorygonExit {
 				warp(MAP_ZONE2SANCTUARY, 255, 38, 11)
 				waitstate
 			case 3:
-				setflag(FLAG_HIDE_ZONE3A_MAX)
+				setflag(FLAG_HIDE_ZONE2A_MAX)
 				warp(MAP_ZONE3SANCTUARY, 255, 38, 11)
 				waitstate
 			case 4:

@@ -3067,7 +3067,7 @@ EventScript_Max_1:
 # 1580 "data/scripts/battle_labyrinth.pory"
 	switch VAR_ZONE
 # 1581 "data/scripts/battle_labyrinth.pory"
-	case 3, EventScript_Max_6
+	case 2, EventScript_Max_6
 # 1583 "data/scripts/battle_labyrinth.pory"
 	case 6, EventScript_Max_7
 # 1585 "data/scripts/battle_labyrinth.pory"
@@ -3078,7 +3078,7 @@ EventScript_Max_1:
 	case 18, EventScript_Max_10
 EventScript_Max_4:
 # 1592 "data/scripts/battle_labyrinth.pory"
-	msgbox EventScript_Max_Text_3
+	msgbox EventScript_Max_Text_3, MSGBOX_AUTOCLOSE
 # 1593 "data/scripts/battle_labyrinth.pory"
 	release
 	return
@@ -3094,7 +3094,7 @@ EventScript_Max_2:
 
 EventScript_Max_6:
 # 1582 "data/scripts/battle_labyrinth.pory"
-	pokemart Zone3A_Shop_TMShop
+	pokemart Zone2A_Shop_TMShop
 	goto EventScript_Max_4
 
 EventScript_Max_7:
@@ -3120,9 +3120,9 @@ EventScript_Max_10:
 
 	.align 2
 # 1596 "data/scripts/battle_labyrinth.pory"
-Zone3A_Shop_TMShop:
+Zone2A_Shop_TMShop:
 # 1597 "data/scripts/battle_labyrinth.pory"
-	.2byte ITEM_TM01
+	.2byte ITEM_TM_PROTECT
 	.2byte ITEM_NONE
 
 	.align 2
@@ -5320,7 +5320,7 @@ EventScript_PorygonExit_9:
 
 EventScript_PorygonExit_10:
 # 2778 "data/scripts/battle_labyrinth.pory"
-	setflag FLAG_HIDE_ZONE3A_MAX
+	setflag FLAG_HIDE_ZONE2A_MAX
 # 2779 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE3SANCTUARY, 255, 38, 11
 # 2780 "data/scripts/battle_labyrinth.pory"
