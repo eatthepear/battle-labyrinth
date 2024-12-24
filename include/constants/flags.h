@@ -272,6 +272,8 @@
 #define FLAG_MARIE_NUZLOCKE_RECEIVED                      0x14D
 #define FLAG_ZONE5A_RECEIVED_PINK_SCARF                   0x14E
 #define FLAG_ZONE5A_RECEIVED_SURPRISE_MULCH               0x14F
+#define FLAG_ZONE3B_TRADED_RATTATA_ALOLA                  0x150
+#define FLAG_ZONE3B_TRADED_ZIGZAGOON_GALAR                0x151
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x200
