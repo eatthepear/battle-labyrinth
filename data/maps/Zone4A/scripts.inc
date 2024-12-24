@@ -5,7 +5,7 @@ Zone4A_MapScripts::
 
 Zone4A_MapScripts_MAP_SCRIPT_ON_RESUME:
 # 3 "data/maps/Zone4A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE4A_BURN_HEAL, Zone4A_MapScripts_MAP_SCRIPT_ON_RESUME_2
+	goto_if_set FLAG_ITEM_ZONE4A_RANDOM_1, Zone4A_MapScripts_MAP_SCRIPT_ON_RESUME_2
 # 6 "data/maps/Zone4A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST
 Zone4A_MapScripts_MAP_SCRIPT_ON_RESUME_1:
@@ -51,11 +51,11 @@ Zone4A_EventScript_PoisonTree_2:
 	goto Zone4A_EventScript_PoisonTree_1
 
 
-Zone4A_EventScript_ItemBurnHeal::
+Zone4A_EventScript_ItemRandom1::
 # 122 "data/maps/Zone4A/scripts.pory"
 	lock
 # 123 "data/maps/Zone4A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE4A_BURN_HEAL, Zone4A_EventScript_ItemBurnHeal_2
+	goto_if_set FLAG_ITEM_ZONE4A_RANDOM_1, Zone4A_EventScript_ItemRandom1_2
 # 128 "data/maps/Zone4A/scripts.pory"
 	waitse
 # 129 "data/maps/Zone4A/scripts.pory"
@@ -63,16 +63,18 @@ Zone4A_EventScript_ItemBurnHeal::
 # 130 "data/maps/Zone4A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 131 "data/maps/Zone4A/scripts.pory"
-	setflag FLAG_ITEM_ZONE4A_BURN_HEAL
+	setflag FLAG_ITEM_ZONE4A_RANDOM_1
 # 132 "data/maps/Zone4A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 133 "data/maps/Zone4A/scripts.pory"
-	finditem ITEM_BURN_HEAL, 1
+	specialvar VAR_TEMP_1, RandomItemChest
 # 134 "data/maps/Zone4A/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 135 "data/maps/Zone4A/scripts.pory"
 	release
 	end
 
-Zone4A_EventScript_ItemBurnHeal_2:
+Zone4A_EventScript_ItemRandom1_2:
 # 124 "data/maps/Zone4A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 125 "data/maps/Zone4A/scripts.pory"
@@ -81,81 +83,81 @@ Zone4A_EventScript_ItemBurnHeal_2:
 
 
 Zone4A_EventScript_ItemSilverPowder::
-# 139 "data/maps/Zone4A/scripts.pory"
-	lock
 # 140 "data/maps/Zone4A/scripts.pory"
+	lock
+# 141 "data/maps/Zone4A/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE4A_SILVER_POWDER, Zone4A_EventScript_ItemSilverPowder_2
-# 145 "data/maps/Zone4A/scripts.pory"
-	waitse
 # 146 "data/maps/Zone4A/scripts.pory"
-	removeobject VAR_LAST_TALKED
+	waitse
 # 147 "data/maps/Zone4A/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
+	removeobject VAR_LAST_TALKED
 # 148 "data/maps/Zone4A/scripts.pory"
-	setflag FLAG_ITEM_ZONE4A_SILVER_POWDER
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 149 "data/maps/Zone4A/scripts.pory"
-	addobject VAR_LAST_TALKED
+	setflag FLAG_ITEM_ZONE4A_SILVER_POWDER
 # 150 "data/maps/Zone4A/scripts.pory"
-	finditem ITEM_SILVER_POWDER, 1
+	addobject VAR_LAST_TALKED
 # 151 "data/maps/Zone4A/scripts.pory"
+	finditem ITEM_SILVER_POWDER, 1
+# 152 "data/maps/Zone4A/scripts.pory"
 	release
 	end
 
 Zone4A_EventScript_ItemSilverPowder_2:
-# 141 "data/maps/Zone4A/scripts.pory"
-	msgbox gText_ItemChestIsEmpty
 # 142 "data/maps/Zone4A/scripts.pory"
+	msgbox gText_ItemChestIsEmpty
+# 143 "data/maps/Zone4A/scripts.pory"
 	release
 	end
 
 
-# 155 "data/maps/Zone4A/scripts.pory"
-
 # 156 "data/maps/Zone4A/scripts.pory"
-Zone4A_EventScript_Sign::
+
 # 157 "data/maps/Zone4A/scripts.pory"
-	msgbox Zone4A_Text_Sign, MSGBOX_SIGN
+Zone4A_EventScript_Sign::
 # 158 "data/maps/Zone4A/scripts.pory"
-	end
+	msgbox Zone4A_Text_Sign, MSGBOX_SIGN
 # 159 "data/maps/Zone4A/scripts.pory"
-
-# 160 "data/maps/Zone4A/scripts.pory"
-Zone4A_Text_Sign:
-# 161 "data/maps/Zone4A/scripts.pory"
-	.string "These woods are enchanted…\n"
-# 162 "data/maps/Zone4A/scripts.pory"
-	.string "Don't get lost!$"
-# 163 "data/maps/Zone4A/scripts.pory"
-
-# 164 "data/maps/Zone4A/scripts.pory"
-Zone4A_EventScript_Herman::
-# 165 "data/maps/Zone4A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_HERMAN, Zone4A_Text_HermanIntro, Zone4A_Text_HermanDefeat
-# 166 "data/maps/Zone4A/scripts.pory"
-	msgbox Zone4A_Text_HermanPostBattle, MSGBOX_AUTOCLOSE
-# 167 "data/maps/Zone4A/scripts.pory"
 	end
+# 160 "data/maps/Zone4A/scripts.pory"
+
+# 161 "data/maps/Zone4A/scripts.pory"
+Zone4A_Text_Sign:
+# 162 "data/maps/Zone4A/scripts.pory"
+	.string "These woods are enchanted…\n"
+# 163 "data/maps/Zone4A/scripts.pory"
+	.string "Don't get lost!$"
+# 164 "data/maps/Zone4A/scripts.pory"
+
+# 165 "data/maps/Zone4A/scripts.pory"
+Zone4A_EventScript_Herman::
+# 166 "data/maps/Zone4A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_HERMAN, Zone4A_Text_HermanIntro, Zone4A_Text_HermanDefeat
+# 167 "data/maps/Zone4A/scripts.pory"
+	msgbox Zone4A_Text_HermanPostBattle, MSGBOX_AUTOCLOSE
 # 168 "data/maps/Zone4A/scripts.pory"
-
+	end
 # 169 "data/maps/Zone4A/scripts.pory"
-Zone4A_Text_HermanIntro:
+
 # 170 "data/maps/Zone4A/scripts.pory"
-	.string "I keep going through this exit,\n"
+Zone4A_Text_HermanIntro:
 # 171 "data/maps/Zone4A/scripts.pory"
-	.string "'cause it might lead somewhere!$"
+	.string "I keep going through this exit,\n"
 # 172 "data/maps/Zone4A/scripts.pory"
-
+	.string "'cause it might lead somewhere!$"
 # 173 "data/maps/Zone4A/scripts.pory"
-Zone4A_Text_HermanDefeat:
-# 174 "data/maps/Zone4A/scripts.pory"
-	.string "But I keep getting back here!$"
-# 175 "data/maps/Zone4A/scripts.pory"
 
+# 174 "data/maps/Zone4A/scripts.pory"
+Zone4A_Text_HermanDefeat:
+# 175 "data/maps/Zone4A/scripts.pory"
+	.string "But I keep getting back here!$"
 # 176 "data/maps/Zone4A/scripts.pory"
-Zone4A_Text_HermanPostBattle:
+
 # 177 "data/maps/Zone4A/scripts.pory"
-	.string "Try something else?\n"
+Zone4A_Text_HermanPostBattle:
 # 178 "data/maps/Zone4A/scripts.pory"
+	.string "Try something else?\n"
+# 179 "data/maps/Zone4A/scripts.pory"
 	.string "No, I'm sure this is the right way!$"
 
 Zone4A_EventScript_PoisonTree_Text_0:
