@@ -684,7 +684,7 @@ Zone3A_EventScript_Surveil_Text_0:
 	.string "the opponent's team.\p"
 	.string "If you want to see full team\n"
 	.string "information, you can turn on the Full\l"
-	.string "Surveil setting by speaking to Colress.$"
+	.string "Info setting by speaking to Colress.$"
 
 Zone3A_Text_Leviathan3Intro::
 # 128 "data/maps/Zone3A/scripts.pory"
