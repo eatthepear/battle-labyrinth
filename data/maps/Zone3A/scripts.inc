@@ -5,17 +5,17 @@ Zone3A_MapScripts::
 
 Zone3A_MapScripts_MAP_SCRIPT_ON_RESUME:
 # 3 "data/maps/Zone3A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE3A_SUPER_POTION, Zone3A_MapScripts_MAP_SCRIPT_ON_RESUME_2
+	goto_if_set FLAG_ITEM_ZONE3A_RANDOM_1, Zone3A_MapScripts_MAP_SCRIPT_ON_RESUME_2
 # 6 "data/maps/Zone3A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST
 Zone3A_MapScripts_MAP_SCRIPT_ON_RESUME_1:
 # 8 "data/maps/Zone3A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE3A_POTION_X2, Zone3A_MapScripts_MAP_SCRIPT_ON_RESUME_6
+	goto_if_set FLAG_ITEM_ZONE3A_RANDOM_2, Zone3A_MapScripts_MAP_SCRIPT_ON_RESUME_6
 # 11 "data/maps/Zone3A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST
 Zone3A_MapScripts_MAP_SCRIPT_ON_RESUME_5:
 # 13 "data/maps/Zone3A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE3A_PARALYZE_HEAL, Zone3A_MapScripts_MAP_SCRIPT_ON_RESUME_10
+	goto_if_set FLAG_ITEM_ZONE3A_RANDOM_3, Zone3A_MapScripts_MAP_SCRIPT_ON_RESUME_10
 # 16 "data/maps/Zone3A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST
 Zone3A_MapScripts_MAP_SCRIPT_ON_RESUME_9:
@@ -330,11 +330,11 @@ Zone3A_Movement_Remi_WalkBackToPhillipa:
 	face_left
 	step_end
 
-Zone3A_EventScript_ItemSuperPotion::
+Zone3A_EventScript_ItemRandom1::
 # 170 "data/maps/Zone3A/scripts.pory"
 	lock
 # 171 "data/maps/Zone3A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE3A_SUPER_POTION, Zone3A_EventScript_ItemSuperPotion_2
+	goto_if_set FLAG_ITEM_ZONE3A_RANDOM_1, Zone3A_EventScript_ItemRandom1_2
 # 176 "data/maps/Zone3A/scripts.pory"
 	waitse
 # 177 "data/maps/Zone3A/scripts.pory"
@@ -342,16 +342,18 @@ Zone3A_EventScript_ItemSuperPotion::
 # 178 "data/maps/Zone3A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 179 "data/maps/Zone3A/scripts.pory"
-	setflag FLAG_ITEM_ZONE3A_SUPER_POTION
+	setflag FLAG_ITEM_ZONE3A_RANDOM_1
 # 180 "data/maps/Zone3A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 181 "data/maps/Zone3A/scripts.pory"
-	finditem ITEM_SUPER_POTION, 1
+	specialvar VAR_TEMP_1, RandomItemChest
 # 182 "data/maps/Zone3A/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 183 "data/maps/Zone3A/scripts.pory"
 	release
 	end
 
-Zone3A_EventScript_ItemSuperPotion_2:
+Zone3A_EventScript_ItemRandom1_2:
 # 172 "data/maps/Zone3A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 173 "data/maps/Zone3A/scripts.pory"
@@ -359,246 +361,250 @@ Zone3A_EventScript_ItemSuperPotion_2:
 	end
 
 
-Zone3A_EventScript_Item2Potion::
-# 187 "data/maps/Zone3A/scripts.pory"
-	lock
+Zone3A_EventScript_ItemRandom2::
 # 188 "data/maps/Zone3A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE3A_POTION_X2, Zone3A_EventScript_Item2Potion_2
-# 193 "data/maps/Zone3A/scripts.pory"
-	waitse
-# 194 "data/maps/Zone3A/scripts.pory"
-	removeobject VAR_LAST_TALKED
-# 195 "data/maps/Zone3A/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 196 "data/maps/Zone3A/scripts.pory"
-	setflag FLAG_ITEM_ZONE3A_POTION_X2
-# 197 "data/maps/Zone3A/scripts.pory"
-	addobject VAR_LAST_TALKED
-# 198 "data/maps/Zone3A/scripts.pory"
-	finditem ITEM_POTION, 2
-# 199 "data/maps/Zone3A/scripts.pory"
-	release
-	end
-
-Zone3A_EventScript_Item2Potion_2:
-# 189 "data/maps/Zone3A/scripts.pory"
-	msgbox gText_ItemChestIsEmpty
-# 190 "data/maps/Zone3A/scripts.pory"
-	release
-	end
-
-
-Zone3A_EventScript_ItemParalyzeHeal::
-# 204 "data/maps/Zone3A/scripts.pory"
 	lock
-# 205 "data/maps/Zone3A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE3A_PARALYZE_HEAL, Zone3A_EventScript_ItemParalyzeHeal_2
-# 210 "data/maps/Zone3A/scripts.pory"
+# 189 "data/maps/Zone3A/scripts.pory"
+	goto_if_set FLAG_ITEM_ZONE3A_RANDOM_2, Zone3A_EventScript_ItemRandom2_2
+# 194 "data/maps/Zone3A/scripts.pory"
 	waitse
-# 211 "data/maps/Zone3A/scripts.pory"
+# 195 "data/maps/Zone3A/scripts.pory"
 	removeobject VAR_LAST_TALKED
-# 212 "data/maps/Zone3A/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 213 "data/maps/Zone3A/scripts.pory"
-	setflag FLAG_ITEM_ZONE3A_PARALYZE_HEAL
-# 214 "data/maps/Zone3A/scripts.pory"
+# 196 "data/maps/Zone3A/scripts.pory"
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
+# 197 "data/maps/Zone3A/scripts.pory"
+	setflag FLAG_ITEM_ZONE3A_RANDOM_2
+# 198 "data/maps/Zone3A/scripts.pory"
 	addobject VAR_LAST_TALKED
-# 215 "data/maps/Zone3A/scripts.pory"
-	finditem ITEM_PARALYZE_HEAL, 1
-# 216 "data/maps/Zone3A/scripts.pory"
+# 199 "data/maps/Zone3A/scripts.pory"
+	specialvar VAR_TEMP_1, RandomItemChest
+# 200 "data/maps/Zone3A/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 201 "data/maps/Zone3A/scripts.pory"
 	release
 	end
 
-Zone3A_EventScript_ItemParalyzeHeal_2:
-# 206 "data/maps/Zone3A/scripts.pory"
+Zone3A_EventScript_ItemRandom2_2:
+# 190 "data/maps/Zone3A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
+# 191 "data/maps/Zone3A/scripts.pory"
+	release
+	end
+
+
+Zone3A_EventScript_ItemRandom3::
+# 206 "data/maps/Zone3A/scripts.pory"
+	lock
 # 207 "data/maps/Zone3A/scripts.pory"
+	goto_if_set FLAG_ITEM_ZONE3A_RANDOM_3, Zone3A_EventScript_ItemRandom3_2
+# 212 "data/maps/Zone3A/scripts.pory"
+	waitse
+# 213 "data/maps/Zone3A/scripts.pory"
+	removeobject VAR_LAST_TALKED
+# 214 "data/maps/Zone3A/scripts.pory"
+	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
+# 215 "data/maps/Zone3A/scripts.pory"
+	setflag FLAG_ITEM_ZONE3A_RANDOM_3
+# 216 "data/maps/Zone3A/scripts.pory"
+	addobject VAR_LAST_TALKED
+# 217 "data/maps/Zone3A/scripts.pory"
+	specialvar VAR_TEMP_1, RandomItemChest
+# 218 "data/maps/Zone3A/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 219 "data/maps/Zone3A/scripts.pory"
+	release
+	end
+
+Zone3A_EventScript_ItemRandom3_2:
+# 208 "data/maps/Zone3A/scripts.pory"
+	msgbox gText_ItemChestIsEmpty
+# 209 "data/maps/Zone3A/scripts.pory"
 	release
 	end
 
 
 Zone3A_EventScript_ItemHyperPotion::
-# 221 "data/maps/Zone3A/scripts.pory"
+# 224 "data/maps/Zone3A/scripts.pory"
 	lock
-# 222 "data/maps/Zone3A/scripts.pory"
+# 225 "data/maps/Zone3A/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE3A_HYPER_POTION, Zone3A_EventScript_ItemHyperPotion_2
-# 227 "data/maps/Zone3A/scripts.pory"
-	waitse
-# 228 "data/maps/Zone3A/scripts.pory"
-	removeobject VAR_LAST_TALKED
-# 229 "data/maps/Zone3A/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 230 "data/maps/Zone3A/scripts.pory"
-	setflag FLAG_ITEM_ZONE3A_HYPER_POTION
+	waitse
 # 231 "data/maps/Zone3A/scripts.pory"
-	addobject VAR_LAST_TALKED
+	removeobject VAR_LAST_TALKED
 # 232 "data/maps/Zone3A/scripts.pory"
-	finditem ITEM_HYPER_POTION, 1
+	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 233 "data/maps/Zone3A/scripts.pory"
+	setflag FLAG_ITEM_ZONE3A_HYPER_POTION
+# 234 "data/maps/Zone3A/scripts.pory"
+	addobject VAR_LAST_TALKED
+# 235 "data/maps/Zone3A/scripts.pory"
+	finditem ITEM_HYPER_POTION, 1
+# 236 "data/maps/Zone3A/scripts.pory"
 	release
 	end
 
 Zone3A_EventScript_ItemHyperPotion_2:
-# 223 "data/maps/Zone3A/scripts.pory"
+# 226 "data/maps/Zone3A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 224 "data/maps/Zone3A/scripts.pory"
+# 227 "data/maps/Zone3A/scripts.pory"
 	release
 	end
 
 
 Zone3A_EventScript_Surveil::
-# 238 "data/maps/Zone3A/scripts.pory"
+# 241 "data/maps/Zone3A/scripts.pory"
 	msgbox Zone3A_EventScript_Surveil_Text_0, MSGBOX_SIGN
 	end
 
 
-# 242 "data/maps/Zone3A/scripts.pory"
-
-# 243 "data/maps/Zone3A/scripts.pory"
-
-# 244 "data/maps/Zone3A/scripts.pory"
-Zone3A_EventScript_Patrick::
 # 245 "data/maps/Zone3A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_PATRICK, Zone3A_Text_PatrickIntro, Zone3A_Text_PatrickDefeat
+
 # 246 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_Text_PatrickPostBattle, MSGBOX_AUTOCLOSE
+
 # 247 "data/maps/Zone3A/scripts.pory"
-	end
+Zone3A_EventScript_Patrick::
 # 248 "data/maps/Zone3A/scripts.pory"
-
+	trainerbattle_single TRAINER_PBL_PATRICK, Zone3A_Text_PatrickIntro, Zone3A_Text_PatrickDefeat
 # 249 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_PatrickIntro:
+	msgbox Zone3A_Text_PatrickPostBattle, MSGBOX_AUTOCLOSE
 # 250 "data/maps/Zone3A/scripts.pory"
-	.string "My friends call me the free Exp guy,\n"
+	end
 # 251 "data/maps/Zone3A/scripts.pory"
-	.string "but I'll prove them wrong!$"
-# 252 "data/maps/Zone3A/scripts.pory"
 
+# 252 "data/maps/Zone3A/scripts.pory"
+Zone3A_Text_PatrickIntro:
 # 253 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_PatrickDefeat:
+	.string "My friends call me the free Exp guy,\n"
 # 254 "data/maps/Zone3A/scripts.pory"
-	.string "Oops, guess not…$"
+	.string "but I'll prove them wrong!$"
 # 255 "data/maps/Zone3A/scripts.pory"
 
 # 256 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_PatrickPostBattle:
+Zone3A_Text_PatrickDefeat:
 # 257 "data/maps/Zone3A/scripts.pory"
-	.string "I guess I am the free Exp guy…$"
+	.string "Oops, guess not…$"
 # 258 "data/maps/Zone3A/scripts.pory"
 
 # 259 "data/maps/Zone3A/scripts.pory"
-Zone3A_EventScript_Jemma::
+Zone3A_Text_PatrickPostBattle:
 # 260 "data/maps/Zone3A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_JEMMA, Zone3A_Text_JemmaIntro, Zone3A_Text_JemmaDefeat
+	.string "I guess I am the free Exp guy…$"
 # 261 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_Text_JemmaPostBattle, MSGBOX_AUTOCLOSE
-# 262 "data/maps/Zone3A/scripts.pory"
-	end
-# 263 "data/maps/Zone3A/scripts.pory"
 
+# 262 "data/maps/Zone3A/scripts.pory"
+Zone3A_EventScript_Jemma::
+# 263 "data/maps/Zone3A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_JEMMA, Zone3A_Text_JemmaIntro, Zone3A_Text_JemmaDefeat
 # 264 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_JemmaIntro:
+	msgbox Zone3A_Text_JemmaPostBattle, MSGBOX_AUTOCLOSE
 # 265 "data/maps/Zone3A/scripts.pory"
-	.string "Hey! You have to pay to cross!$"
+	end
 # 266 "data/maps/Zone3A/scripts.pory"
 
 # 267 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_JemmaDefeat:
+Zone3A_Text_JemmaIntro:
 # 268 "data/maps/Zone3A/scripts.pory"
-	.string "Uh… You can go for free!$"
+	.string "Hey! You have to pay to cross!$"
 # 269 "data/maps/Zone3A/scripts.pory"
 
 # 270 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_JemmaPostBattle:
+Zone3A_Text_JemmaDefeat:
 # 271 "data/maps/Zone3A/scripts.pory"
-	.string "I was scamming people so well too…$"
+	.string "Uh… You can go for free!$"
 # 272 "data/maps/Zone3A/scripts.pory"
 
 # 273 "data/maps/Zone3A/scripts.pory"
-Zone3A_EventScript_Annabelle::
+Zone3A_Text_JemmaPostBattle:
 # 274 "data/maps/Zone3A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_ANNABELLE, Zone3A_Text_AnnabelleIntro, Zone3A_Text_AnnabelleDefeat
+	.string "I was scamming people so well too…$"
 # 275 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_Text_AnnabellePostBattle, MSGBOX_AUTOCLOSE
-# 276 "data/maps/Zone3A/scripts.pory"
-	end
-# 277 "data/maps/Zone3A/scripts.pory"
 
+# 276 "data/maps/Zone3A/scripts.pory"
+Zone3A_EventScript_Annabelle::
+# 277 "data/maps/Zone3A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_ANNABELLE, Zone3A_Text_AnnabelleIntro, Zone3A_Text_AnnabelleDefeat
 # 278 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_AnnabelleIntro:
+	msgbox Zone3A_Text_AnnabellePostBattle, MSGBOX_AUTOCLOSE
 # 279 "data/maps/Zone3A/scripts.pory"
-	.string "I wonder what day it is…$"
+	end
 # 280 "data/maps/Zone3A/scripts.pory"
 
 # 281 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_AnnabelleDefeat:
+Zone3A_Text_AnnabelleIntro:
 # 282 "data/maps/Zone3A/scripts.pory"
-	.string "Apparently it's defeat day!$"
+	.string "I wonder what day it is…$"
 # 283 "data/maps/Zone3A/scripts.pory"
 
 # 284 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_AnnabellePostBattle:
+Zone3A_Text_AnnabelleDefeat:
 # 285 "data/maps/Zone3A/scripts.pory"
-	.string "Tomorrow will be another day.$"
+	.string "Apparently it's defeat day!$"
 # 286 "data/maps/Zone3A/scripts.pory"
 
 # 287 "data/maps/Zone3A/scripts.pory"
-Zone3A_EventScript_Boris::
+Zone3A_Text_AnnabellePostBattle:
 # 288 "data/maps/Zone3A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_BORIS, Zone3A_Text_BorisIntro, Zone3A_Text_BorisDefeat
+	.string "Tomorrow will be another day.$"
 # 289 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_Text_BorisPostBattle, MSGBOX_AUTOCLOSE
-# 290 "data/maps/Zone3A/scripts.pory"
-	end
-# 291 "data/maps/Zone3A/scripts.pory"
 
+# 290 "data/maps/Zone3A/scripts.pory"
+Zone3A_EventScript_Boris::
+# 291 "data/maps/Zone3A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_BORIS, Zone3A_Text_BorisIntro, Zone3A_Text_BorisDefeat
 # 292 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_BorisIntro:
+	msgbox Zone3A_Text_BorisPostBattle, MSGBOX_AUTOCLOSE
 # 293 "data/maps/Zone3A/scripts.pory"
-	.string "Never give up, never surrender!$"
+	end
 # 294 "data/maps/Zone3A/scripts.pory"
 
 # 295 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_BorisDefeat:
+Zone3A_Text_BorisIntro:
 # 296 "data/maps/Zone3A/scripts.pory"
-	.string "I surrender!$"
+	.string "Never give up, never surrender!$"
 # 297 "data/maps/Zone3A/scripts.pory"
 
 # 298 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_BorisPostBattle:
+Zone3A_Text_BorisDefeat:
 # 299 "data/maps/Zone3A/scripts.pory"
-	.string "I'm a hypocrite, I know.$"
+	.string "I surrender!$"
 # 300 "data/maps/Zone3A/scripts.pory"
 
 # 301 "data/maps/Zone3A/scripts.pory"
-Zone3A_EventScript_Richard::
+Zone3A_Text_BorisPostBattle:
 # 302 "data/maps/Zone3A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_RICHARD, Zone3A_Text_RichardIntro, Zone3A_Text_RichardDefeat
+	.string "I'm a hypocrite, I know.$"
 # 303 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_Text_RichardPostBattle, MSGBOX_AUTOCLOSE
+
 # 304 "data/maps/Zone3A/scripts.pory"
-	end
+Zone3A_EventScript_Richard::
 # 305 "data/maps/Zone3A/scripts.pory"
-
+	trainerbattle_single TRAINER_PBL_RICHARD, Zone3A_Text_RichardIntro, Zone3A_Text_RichardDefeat
 # 306 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_RichardIntro:
+	msgbox Zone3A_Text_RichardPostBattle, MSGBOX_AUTOCLOSE
 # 307 "data/maps/Zone3A/scripts.pory"
-	.string "I have far too much money to deal\n"
+	end
 # 308 "data/maps/Zone3A/scripts.pory"
-	.string "with the likes of you!$"
-# 309 "data/maps/Zone3A/scripts.pory"
 
+# 309 "data/maps/Zone3A/scripts.pory"
+Zone3A_Text_RichardIntro:
 # 310 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_RichardDefeat:
+	.string "I have far too much money to deal\n"
 # 311 "data/maps/Zone3A/scripts.pory"
-	.string "Agh! My money!$"
+	.string "with the likes of you!$"
 # 312 "data/maps/Zone3A/scripts.pory"
 
 # 313 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_RichardPostBattle:
+Zone3A_Text_RichardDefeat:
 # 314 "data/maps/Zone3A/scripts.pory"
-	.string "Do you think I can buy humility\n"
+	.string "Agh! My money!$"
 # 315 "data/maps/Zone3A/scripts.pory"
+
+# 316 "data/maps/Zone3A/scripts.pory"
+Zone3A_Text_RichardPostBattle:
+# 317 "data/maps/Zone3A/scripts.pory"
+	.string "Do you think I can buy humility\n"
+# 318 "data/maps/Zone3A/scripts.pory"
 	.string "with my money?$"
 
 Zone3A_EventScript_TriggerLeviathan_Text_0:
@@ -672,7 +678,7 @@ Zone3A_EventScript_TriggerLeviathan_Text_14:
 	.string "{COLOR BLUE}Phillipa{COLOR DARK_GRAY}: Food!$"
 
 Zone3A_EventScript_Surveil_Text_0:
-# 238 "data/maps/Zone3A/scripts.pory"
+# 241 "data/maps/Zone3A/scripts.pory"
 	.string "Trainer Tips\p"
 	.string "In battle, you can use Surveil to see\n"
 	.string "the opponent's team.\p"

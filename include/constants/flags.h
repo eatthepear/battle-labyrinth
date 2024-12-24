@@ -397,9 +397,9 @@
 #define FLAG_ITEM_ZONE2B_RANDOM_1                                   0x303
 #define FLAG_ITEM_ZONE2B_TM_BUG_BITE                                0x37B
 #define FLAG_ITEM_ZONE2C_SILK_SCARF                                 0x370
-#define FLAG_ITEM_ZONE3A_SUPER_POTION                               0x304
-#define FLAG_ITEM_ZONE3A_POTION_X2                                  0x305
-#define FLAG_ITEM_ZONE3A_PARALYZE_HEAL                              0x306
+#define FLAG_ITEM_ZONE3A_RANDOM_1                                   0x304
+#define FLAG_ITEM_ZONE3A_RANDOM_2                                   0x305
+#define FLAG_ITEM_ZONE3A_RANDOM_3                                   0x306
 #define FLAG_ITEM_ZONE3A_HYPER_POTION                               0x307
 #define FLAG_ITEM_ZONE4A_SILVER_POWDER                              0x377
 #define FLAG_ITEM_ZONE4A_BURN_HEAL                                  0x308
