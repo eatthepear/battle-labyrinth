@@ -2,27 +2,27 @@
 #define GUARD_CONSTANTS_TMS_HMS_H
 
 #define FOREACH_TM(F) \
-    F(FOCUS_PUNCH) \
+    F(WEATHER_BALL) \
     F(DRAGON_CLAW) \
-    F(WATER_PULSE) \
+    F(PSYSHOCK) \
     F(CALM_MIND) \
-    F(ROAR) \
+    F(BUG_BITE) \
     F(TOXIC) \
     F(HAIL) \
     F(BULK_UP) \
-    F(BULLET_SEED) \
+    F(TRAILBLAZE) \
     F(HIDDEN_POWER) \
     F(SUNNY_DAY) \
     F(TAUNT) \
     F(ICE_BEAM) \
     F(BLIZZARD) \
-    F(HYPER_BEAM) \
+    F(COVET) \
     F(LIGHT_SCREEN) \
     F(PROTECT) \
     F(RAIN_DANCE) \
     F(GIGA_DRAIN) \
-    F(SAFEGUARD) \
-    F(FRUSTRATION) \
+    F(HYPER_VOICE) \
+    F(IRON_DEFENSE) \
     F(SOLAR_BEAM) \
     F(IRON_TAIL) \
     F(THUNDERBOLT) \
@@ -33,25 +33,75 @@
     F(PSYCHIC) \
     F(SHADOW_BALL) \
     F(BRICK_BREAK) \
-    F(DOUBLE_TEAM) \
+    F(FLIP_TURN) \
     F(REFLECT) \
-    F(SHOCK_WAVE) \
+    F(SLUDGE_WAVE) \
     F(FLAMETHROWER) \
     F(SLUDGE_BOMB) \
     F(SANDSTORM) \
     F(FIRE_BLAST) \
     F(ROCK_TOMB) \
-    F(AERIAL_ACE) \
-    F(TORMENT) \
+    F(PLUCK) \
+    F(LEECH_LIFE) \
     F(FACADE) \
-    F(SECRET_POWER) \
+    F(FLAME_CHARGE) \
     F(REST) \
-    F(ATTRACT) \
+    F(RETALIATE) \
     F(THIEF) \
     F(STEEL_WING) \
     F(SKILL_SWAP) \
-    F(SNATCH) \
-    F(OVERHEAT)
+    F(DRAINING_KISS) \
+    F(OVERHEAT) \
+    F(ROOST) \
+    F(FOCUS_BLAST) \
+    F(ENERGY_BALL) \
+    F(SCORCHING_SANDS) \
+    F(SCALD) \
+    F(AGILITY) \
+    F(CHARGE_BEAM) \
+    F(AMNESIA) \
+    F(DRAGON_PULSE) \
+    F(DRAIN_PUNCH) \
+    F(WILL_O_WISP) \
+    F(ACROBATICS) \
+    F(NASTY_PLOT) \
+    F(EXPLOSION) \
+    F(SHADOW_CLAW) \
+    F(AURA_SPHERE) \
+    F(SMART_STRIKE) \
+    F(TELEPORT) \
+    F(ROCK_POLISH) \
+    F(AURORA_VEIL) \
+    F(STONE_EDGE) \
+    F(VOLT_SWITCH) \
+    F(THUNDER_WAVE) \
+    F(GYRO_BALL) \
+    F(SWORDS_DANCE) \
+    F(FLY) \
+    F(SOLAR_BLADE) \
+    F(BULLDOZE) \
+    F(TRIPLE_AXEL) \
+    F(ROCK_SLIDE) \
+    F(X_SCISSOR) \
+    F(DRAGON_TAIL) \
+    F(BODY_PRESS) \
+    F(POISON_JAB) \
+    F(HURRICANE) \
+    F(GRASS_KNOT) \
+    F(DIVE) \
+    F(SLEEP_TALK) \
+    F(U_TURN) \
+    F(SUBSTITUTE) \
+    F(FLASH_CANNON) \
+    F(TRICK_ROOM) \
+    F(WILD_CHARGE) \
+    F(SURF) \
+    F(SNARL) \
+    F(POWER_UP_PUNCH) \
+    F(DARK_PULSE) \
+    F(WATERFALL) \
+    F(DAZZLING_GLEAM) \
+    F(TERA_BLAST)
 
 #define FOREACH_HM(F) \
     F(CUT) \
