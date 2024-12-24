@@ -437,7 +437,6 @@ Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
 - String Shot
-- Bug Bite
 
 Weedle
 Ability: Shield Dust
@@ -445,7 +444,6 @@ Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Poison Sting
 - String Shot
-- Bug Bite
 
 Wurmple
 Ability: Shield Dust
@@ -454,7 +452,6 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
 - String Shot
 - Poison Sting
-- Bug Bite
 
 Scatterbug
 Ability: Shield Dust
@@ -463,7 +460,6 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
 - String Shot
 - Struggle Bug
-- Stun Spore
 
 === TRAINER_PBL_JOSH ===
 Name: Josh
@@ -493,10 +489,10 @@ Spinarak
 Ability: Swarm
 Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Spider Web
 - Poison Sting
 - String Shot
 - Night Shade
-- Bug Bite
 
 Nincada
 Ability: Compound Eyes
