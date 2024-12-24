@@ -1047,6 +1047,38 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = FEMALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_SKITTY
+    },
+    [INGAME_TRADE_RATTATA_ALOLA] =
+    {
+        .nickname = _("Ratters"),
+        .species = SPECIES_RATTATA_ALOLA,
+        .ivs = {29, 28, 9, 28, 12, 14},
+        .abilityNum = 0,
+        .otId = 38726,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = -1,
+        .otName = _("Joey"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_RATTATA
+    },
+    [INGAME_TRADE_ZIGZAGOON_GALAR] =
+    {
+        .nickname = _("Zaggers"),
+        .species = SPECIES_ZIGZAGOON_GALAR,
+        .ivs = {13, 19, 25, 12, 0, 7},
+        .abilityNum = 0,
+        .otId = 73996,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_NONE,
+        .mailNum = -1,
+        .otName = _("Calvin"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_ZIGZAGOON
     }
 };
 
