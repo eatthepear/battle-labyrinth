@@ -204,7 +204,7 @@
 #define FLAG_ZONE1A_RECEIVED_FWG                          0x109
 #define FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG                   0x10A
 #define FLAG_MAX_INTRO                                    0x10B
-#define FLAG_HIDE_ZONE3A_MAX                              0x10C
+#define FLAG_HIDE_ZONE2A_MAX                              0x10C
 #define FLAG_HIDE_ZONE3A_REMI                             0x10D
 #define FLAG_HIDE_ZONE3A_PHILLIPA                         0x10E
 #define FLAG_ZONE4A_RECEIVED_GEM                          0x10F
