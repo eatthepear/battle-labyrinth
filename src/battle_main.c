@@ -349,7 +349,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_POKEFAN] = { _("Pokéfan"), 2 },
     [TRAINER_CLASS_YOUNGSTER] = { _("Youngster"), 1 },
     [TRAINER_CLASS_CHAMPION] = { _("Champion"), 10 },
-    [TRAINER_CLASS_FISHERMAN] = { _("Fisherman"), B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_DIVE : BALL_LURE },
+    [TRAINER_CLASS_FISHERMAN] = { _("Fisherman"), 2, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_DIVE : BALL_LURE },
     [TRAINER_CLASS_TRIATHLETE] = { _("Triathlete"), 2 },
     [TRAINER_CLASS_DRAGON_TAMER] = { _("Dragon Tamer"), 2 },
     [TRAINER_CLASS_NINJA_BOY] = { _("Ninja Boy"), 2 },
