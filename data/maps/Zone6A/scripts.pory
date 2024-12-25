@@ -261,14 +261,18 @@ Zone6A_EventScript_Melanie::
 	end
 
 Zone6A_Text_MelanieIntro:
-	.string "Watch where you're going!$"
+	.string "Hey, have you ever ridden a horse\n"
+	.string "before?$"
 
 Zone6A_Text_MelanieDefeat:
-	.string "Sorry I yelled at you…$"
+	.string "You should try horseback riding\n"
+	.string "sometime!$"
 
 Zone6A_Text_MelaniePostBattle:
-	.string "I also need to be careful about\n"
-	.string "where I'm going.$"
+	.string "Now that I think about it,\n"
+	.string "what even is a horse?\p"
+	.string "I mean, we call them horse Pokémon,\n"
+	.string "but like, what is a horse?$"
 
 Zone6A_EventScript_Constance::
 	trainerbattle_single TRAINER_PBL_CONSTANCE, Zone6A_Text_ConstanceIntro, Zone6A_Text_ConstanceDefeat
