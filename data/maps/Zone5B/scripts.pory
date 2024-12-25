@@ -305,6 +305,86 @@ script Zone5B_EventScript_BuyPikaClone {
 	end
 }
 
+script Zone5B_EventScript_NeverMissTutor {
+	lock
+	faceplayer
+	showmoneybox(0, 0, 0)
+	if (flag(FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS) == TRUE) {
+		msgbox(format("Hey there! Ever been stuck because the opposing Pokémon is too hard to hit? Well, I specialize in teaching certain moves that always hit, no matter how evasive the foe is!\pFor the low price of ¥1000, I could teach one of your Pokémon one of these moves. Deal?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			msgbox(format("Evasion is really tough to deal with; come back if you need!"))
+			release
+			end
+		}
+	} else {
+		msgbox(format("Hey there! Ever been stuck because the opposing Pokémon is too hard to hit? Well, I specialize in teaching certain moves that always hit, no matter how evasive the foe is!\pFor the low price of ¥1000, I could teach one of your Pokémon one of these moves. Tell you what, the first time I do this, it'll be free! Deal?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			msgbox(format("Evasion is really tough to deal with; come back if you need!"))
+			release
+			end
+		}
+	}
+	if (flag(FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS) == TRUE) {
+		checkmoney(1000, 0)
+		if (var(VAR_RESULT) == FALSE) {
+			msgbox("Hate to break it to you, but you don't have enough money.")
+			hidemoneybox
+			release
+			end
+		}
+	}
+	message(format("What move should I teach?"))
+	waitmessage
+	dynmultichoice(21, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Swift", "Aerial Ace", "Magical Leaf", "Shock Wave", "Exit")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, MOVE_SWIFT)
+			setvar(VAR_0x8005, MOVE_SWIFT)
+		case 1:
+			setvar(VAR_TEMP_0, MOVE_AERIAL_ACE)
+			setvar(VAR_0x8005, MOVE_AERIAL_ACE)
+		case 2:
+			setvar(VAR_TEMP_0, MOVE_MAGICAL_LEAF)
+			setvar(VAR_0x8005, MOVE_MAGICAL_LEAF)
+		case 3:
+			setvar(VAR_TEMP_0, MOVE_SHOCK_WAVE)
+			setvar(VAR_0x8005, MOVE_SHOCK_WAVE)
+		case 4:
+		case MULTI_B_PRESSED:
+			msgbox(format("Evasion is really tough to deal with; come back if you need!"))
+			hidemoneybox
+			release
+			end
+	}
+	buffermovename(0, VAR_TEMP_0)
+	msgbox("Which Pokémon should learn\n{STR_VAR_1}?", MSGBOX_DEFAULT)
+	special(ChooseMonForMoveTutor)
+	waitstate
+	lock
+	faceplayer
+	if (var(VAR_RESULT) == 0) {
+		msgbox(format("Evasion is really tough to deal with; come back if you need!"))
+		hidemoneybox
+		release
+		end
+	}
+	showmoneybox(0, 0, 0)
+	msgbox(format("There! It's done. Use that move well!"), MSGBOX_DEFAULT)
+	if (flag(FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS) == FALSE) {
+		setflag(FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS)
+	} else {
+		removemoney(1000)
+		updatemoneybox
+		msgbox(format("{PLAYER} paid ¥1000."), MSGBOX_DEFAULT)
+		msgbox(format("Evasion is really tough to deal with; come back if you need!"))
+	}
+	hidemoneybox
+	release
+	end
+}
+
 script Zone5B_EventScript_ItemRandom1 {
 	lock
 	if (flag(FLAG_ITEM_ZONE5B_RANDOM_1)) {
