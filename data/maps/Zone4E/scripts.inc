@@ -84,68 +84,182 @@ Zone4E_EventScript_LeviathanBattle_2:
 	goto Zone4E_EventScript_LeviathanBattle_1
 
 
-Zone4E_EventScript_ItemRandom1::
-# 55 "data/maps/Zone4E/scripts.pory"
-	lock
+Zone4E_EventScript_StruggleBugTutor::
 # 56 "data/maps/Zone4E/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE4E_RANDOM_1, Zone4E_EventScript_ItemRandom1_2
-# 61 "data/maps/Zone4E/scripts.pory"
-	waitse
-# 62 "data/maps/Zone4E/scripts.pory"
-	removeobject VAR_LAST_TALKED
-# 63 "data/maps/Zone4E/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 64 "data/maps/Zone4E/scripts.pory"
-	setflag FLAG_ITEM_ZONE4E_RANDOM_1
-# 65 "data/maps/Zone4E/scripts.pory"
-	addobject VAR_LAST_TALKED
-# 66 "data/maps/Zone4E/scripts.pory"
-	specialvar VAR_TEMP_1, RandomItemChest
-# 67 "data/maps/Zone4E/scripts.pory"
-	finditem VAR_TEMP_1, VAR_TEMP_0
+	lock
+# 57 "data/maps/Zone4E/scripts.pory"
+	faceplayer
+# 58 "data/maps/Zone4E/scripts.pory"
+	showmoneybox 0, 0, 0
+# 59 "data/maps/Zone4E/scripts.pory"
+	goto_if_set FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG, Zone4E_EventScript_StruggleBugTutor_2
 # 68 "data/maps/Zone4E/scripts.pory"
+	msgbox Zone4E_EventScript_StruggleBugTutor_Text_2, MSGBOX_YESNO
+# 69 "data/maps/Zone4E/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq Zone4E_EventScript_StruggleBugTutor_10
+Zone4E_EventScript_StruggleBugTutor_1:
+# 76 "data/maps/Zone4E/scripts.pory"
+	goto_if_set FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG, Zone4E_EventScript_StruggleBugTutor_6
+Zone4E_EventScript_StruggleBugTutor_5:
+# 85 "data/maps/Zone4E/scripts.pory"
+	setvar VAR_TEMP_0, MOVE_STRUGGLE_BUG
+# 86 "data/maps/Zone4E/scripts.pory"
+	setvar VAR_0x8005, MOVE_STRUGGLE_BUG
+# 87 "data/maps/Zone4E/scripts.pory"
+	buffermovename 0, VAR_TEMP_0
+# 88 "data/maps/Zone4E/scripts.pory"
+	msgbox Zone4E_EventScript_StruggleBugTutor_Text_4, MSGBOX_DEFAULT
+# 89 "data/maps/Zone4E/scripts.pory"
+	special ChooseMonForMoveTutor
+# 90 "data/maps/Zone4E/scripts.pory"
+	waitstate
+# 91 "data/maps/Zone4E/scripts.pory"
+	lock
+# 92 "data/maps/Zone4E/scripts.pory"
+	faceplayer
+# 93 "data/maps/Zone4E/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq Zone4E_EventScript_StruggleBugTutor_13
+# 98 "data/maps/Zone4E/scripts.pory"
+	showmoneybox 0, 0, 0
+# 99 "data/maps/Zone4E/scripts.pory"
+	msgbox Zone4E_EventScript_StruggleBugTutor_Text_5, MSGBOX_DEFAULT
+# 100 "data/maps/Zone4E/scripts.pory"
+	goto_if_unset FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG, Zone4E_EventScript_StruggleBugTutor_18
+# 103 "data/maps/Zone4E/scripts.pory"
+	removemoney 500
+# 104 "data/maps/Zone4E/scripts.pory"
+	updatemoneybox
+# 105 "data/maps/Zone4E/scripts.pory"
+	msgbox Zone4E_EventScript_StruggleBugTutor_Text_6, MSGBOX_DEFAULT
+# 106 "data/maps/Zone4E/scripts.pory"
+	msgbox Zone4E_EventScript_StruggleBugTutor_Text_1
+Zone4E_EventScript_StruggleBugTutor_17:
+# 108 "data/maps/Zone4E/scripts.pory"
+	hidemoneybox
+# 109 "data/maps/Zone4E/scripts.pory"
+	release
+	end
+
+Zone4E_EventScript_StruggleBugTutor_2:
+# 60 "data/maps/Zone4E/scripts.pory"
+	msgbox Zone4E_EventScript_StruggleBugTutor_Text_0, MSGBOX_YESNO
+# 61 "data/maps/Zone4E/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq Zone4E_EventScript_StruggleBugTutor_8
+	goto Zone4E_EventScript_StruggleBugTutor_1
+
+Zone4E_EventScript_StruggleBugTutor_6:
+# 77 "data/maps/Zone4E/scripts.pory"
+	checkmoney 500, 0
+# 78 "data/maps/Zone4E/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Zone4E_EventScript_StruggleBugTutor_15
+	goto Zone4E_EventScript_StruggleBugTutor_5
+
+Zone4E_EventScript_StruggleBugTutor_8:
+# 62 "data/maps/Zone4E/scripts.pory"
+	hidemoneybox
+# 63 "data/maps/Zone4E/scripts.pory"
+	msgbox Zone4E_EventScript_StruggleBugTutor_Text_1
+# 64 "data/maps/Zone4E/scripts.pory"
+	release
+	end
+
+Zone4E_EventScript_StruggleBugTutor_10:
+# 70 "data/maps/Zone4E/scripts.pory"
+	hidemoneybox
+# 71 "data/maps/Zone4E/scripts.pory"
+	msgbox Zone4E_EventScript_StruggleBugTutor_Text_1
+# 72 "data/maps/Zone4E/scripts.pory"
+	release
+	end
+
+Zone4E_EventScript_StruggleBugTutor_13:
+# 94 "data/maps/Zone4E/scripts.pory"
+	msgbox Zone4E_EventScript_StruggleBugTutor_Text_1
+# 95 "data/maps/Zone4E/scripts.pory"
+	release
+	end
+
+Zone4E_EventScript_StruggleBugTutor_15:
+# 79 "data/maps/Zone4E/scripts.pory"
+	msgbox Zone4E_EventScript_StruggleBugTutor_Text_3
+# 80 "data/maps/Zone4E/scripts.pory"
+	hidemoneybox
+# 81 "data/maps/Zone4E/scripts.pory"
+	release
+	end
+
+Zone4E_EventScript_StruggleBugTutor_18:
+# 101 "data/maps/Zone4E/scripts.pory"
+	setflag FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG
+	goto Zone4E_EventScript_StruggleBugTutor_17
+
+
+Zone4E_EventScript_ItemRandom1::
+# 114 "data/maps/Zone4E/scripts.pory"
+	lock
+# 115 "data/maps/Zone4E/scripts.pory"
+	goto_if_set FLAG_ITEM_ZONE4E_RANDOM_1, Zone4E_EventScript_ItemRandom1_2
+# 120 "data/maps/Zone4E/scripts.pory"
+	waitse
+# 121 "data/maps/Zone4E/scripts.pory"
+	removeobject VAR_LAST_TALKED
+# 122 "data/maps/Zone4E/scripts.pory"
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
+# 123 "data/maps/Zone4E/scripts.pory"
+	setflag FLAG_ITEM_ZONE4E_RANDOM_1
+# 124 "data/maps/Zone4E/scripts.pory"
+	addobject VAR_LAST_TALKED
+# 125 "data/maps/Zone4E/scripts.pory"
+	specialvar VAR_TEMP_1, RandomItemChest
+# 126 "data/maps/Zone4E/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 127 "data/maps/Zone4E/scripts.pory"
 	release
 	end
 
 Zone4E_EventScript_ItemRandom1_2:
-# 57 "data/maps/Zone4E/scripts.pory"
+# 116 "data/maps/Zone4E/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 58 "data/maps/Zone4E/scripts.pory"
+# 117 "data/maps/Zone4E/scripts.pory"
 	release
 	end
 
 
 Zone4E_EventScript_ItemPoisonBarb::
-# 73 "data/maps/Zone4E/scripts.pory"
+# 132 "data/maps/Zone4E/scripts.pory"
 	lock
-# 74 "data/maps/Zone4E/scripts.pory"
+# 133 "data/maps/Zone4E/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE4E_POISON_BARB, Zone4E_EventScript_ItemPoisonBarb_2
-# 79 "data/maps/Zone4E/scripts.pory"
+# 138 "data/maps/Zone4E/scripts.pory"
 	waitse
-# 80 "data/maps/Zone4E/scripts.pory"
+# 139 "data/maps/Zone4E/scripts.pory"
 	removeobject VAR_LAST_TALKED
-# 81 "data/maps/Zone4E/scripts.pory"
+# 140 "data/maps/Zone4E/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 82 "data/maps/Zone4E/scripts.pory"
+# 141 "data/maps/Zone4E/scripts.pory"
 	setflag FLAG_ITEM_ZONE4E_POISON_BARB
-# 83 "data/maps/Zone4E/scripts.pory"
+# 142 "data/maps/Zone4E/scripts.pory"
 	addobject VAR_LAST_TALKED
-# 84 "data/maps/Zone4E/scripts.pory"
+# 143 "data/maps/Zone4E/scripts.pory"
 	finditem ITEM_POISON_BARB, 1
-# 85 "data/maps/Zone4E/scripts.pory"
+# 144 "data/maps/Zone4E/scripts.pory"
 	release
 	end
 
 Zone4E_EventScript_ItemPoisonBarb_2:
-# 75 "data/maps/Zone4E/scripts.pory"
+# 134 "data/maps/Zone4E/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 76 "data/maps/Zone4E/scripts.pory"
+# 135 "data/maps/Zone4E/scripts.pory"
 	release
 	end
 
 
 Zone4E_EventScript_Sign::
-# 90 "data/maps/Zone4E/scripts.pory"
+# 149 "data/maps/Zone4E/scripts.pory"
 	msgbox Zone4E_Text_Sign, MSGBOX_SIGN
 	end
 
@@ -169,6 +283,47 @@ Zone4E_EventScript_LeviathanBattle_Text_1:
 	.string "{COLOR BLUE}Ella{COLOR DARK_GRAY}: That rhyme barely worked!\p"
 	.string "{COLOR BLUE}Bella{COLOR DARK_GRAY}: Oh, don't be irked!$"
 
+Zone4E_EventScript_StruggleBugTutor_Text_0:
+# 60 "data/maps/Zone4E/scripts.pory"
+	.string "Hey! You made it to the end. I bet it was\n"
+	.string "a struggle getting here, right?\p"
+	.string "You know what's not a struggle? The\n"
+	.string "move Struggle Bug!\p"
+	.string "I can teach Struggle Bug to one of your\n"
+	.string "Pokémon for the low price of ¥500. How\l"
+	.string "about it?$"
+
+Zone4E_EventScript_StruggleBugTutor_Text_1:
+# 63 "data/maps/Zone4E/scripts.pory"
+	.string "Okay, come back again.$"
+
+Zone4E_EventScript_StruggleBugTutor_Text_2:
+# 68 "data/maps/Zone4E/scripts.pory"
+	.string "Hey! You made it to the end. I bet it was\n"
+	.string "a struggle getting here, right?\p"
+	.string "You know what's not a struggle? The\n"
+	.string "move Struggle Bug!\p"
+	.string "I can teach Struggle Bug to one of your\n"
+	.string "Pokémon. First time is free, while\l"
+	.string "subsequent times cost ¥500! How about\l"
+	.string "it?$"
+
+Zone4E_EventScript_StruggleBugTutor_Text_3:
+# 79 "data/maps/Zone4E/scripts.pory"
+	.string "Hate to break it to you, but you don't have enough money.$"
+
+Zone4E_EventScript_StruggleBugTutor_Text_4:
+# 88 "data/maps/Zone4E/scripts.pory"
+	.string "Which Pokémon should learn\n{STR_VAR_1}?$"
+
+Zone4E_EventScript_StruggleBugTutor_Text_5:
+# 99 "data/maps/Zone4E/scripts.pory"
+	.string "There! It's done. Use that move well!$"
+
+Zone4E_EventScript_StruggleBugTutor_Text_6:
+# 105 "data/maps/Zone4E/scripts.pory"
+	.string "{PLAYER} paid ¥500.$"
+
 Zone4E_Text_Leviathan4Intro::
 # 46 "data/maps/Zone4E/scripts.pory"
 	.string "{COLOR BLUE}Ella{COLOR DARK_GRAY}: Watch out!\p"
@@ -183,7 +338,7 @@ Zone4E_Text_Leviathan4Defeat::
 	.string "We lost!$"
 
 Zone4E_Text_Sign::
-# 94 "data/maps/Zone4E/scripts.pory"
+# 153 "data/maps/Zone4E/scripts.pory"
 	.string "Trainer Tips\p"
 	.string "The Pokémon you encounter in different\n"
 	.string "areas of the same zone may have slight\l"
