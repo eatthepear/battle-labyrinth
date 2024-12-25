@@ -2629,7 +2629,7 @@
 #line 1157
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 1155
-            .ability = ABILITY_COMPETITIVE,
+            .ability = ABILITY_CUTE_CHARM,
 #line 1156
             .lvl = 11,
             .nature = NATURE_HARDY,
@@ -4492,7 +4492,7 @@
 #line 1950
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 1948
-            .ability = ABILITY_MAGIC_GUARD,
+            .ability = ABILITY_CUTE_CHARM,
 #line 1949
             .lvl = 15,
             .nature = NATURE_HARDY,
