@@ -93,7 +93,7 @@ Zone2B_EventScript_LeviathanBattle_5:
 
 Zone2B_EventScript_LeviathanBattle_8:
 # 34 "data/maps/Zone2B/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_SHAUN_LEVIATHAN_2_BRUTAL, Zone2B_Text_Leviathan2Defeat
+	trainerbattle_no_intro TRAINER_PBL_SHAUN_LEVIATHAN_2_CHALLENGE, Zone2B_Text_Leviathan2Defeat
 	goto Zone2B_EventScript_LeviathanBattle_7
 
 

@@ -218,7 +218,7 @@ Zone6A_EventScript_LeviathanBattle_5:
 
 Zone6A_EventScript_LeviathanBattle_10:
 # 68 "data/maps/Zone6A/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_BRUTAL, Zone6A_Text_Leviathan6Defeat
+	trainerbattle_no_intro TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_CHALLENGE, Zone6A_Text_Leviathan6Defeat
 # 69 "data/maps/Zone6A/scripts.pory"
 	resetweather
 # 70 "data/maps/Zone6A/scripts.pory"

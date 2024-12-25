@@ -1113,15 +1113,15 @@ Zone1A_EventScript_LeviathanBattle_1:
 # 486 "data/maps/Zone1A/scripts.pory"
 	settrainerflag TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER
 # 487 "data/maps/Zone1A/scripts.pory"
-	settrainerflag TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_BRUTAL
+	settrainerflag TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_CHALLENGE
 # 488 "data/maps/Zone1A/scripts.pory"
 	settrainerflag TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER
 # 489 "data/maps/Zone1A/scripts.pory"
-	settrainerflag TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_BRUTAL
+	settrainerflag TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_CHALLENGE
 # 490 "data/maps/Zone1A/scripts.pory"
 	settrainerflag TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER
 # 491 "data/maps/Zone1A/scripts.pory"
-	settrainerflag TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_BRUTAL
+	settrainerflag TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_CHALLENGE
 # 492 "data/maps/Zone1A/scripts.pory"
 	clearflag FLAG_FORCE_BATTLE_ANIM_ON
 # 493 "data/maps/Zone1A/scripts.pory"
@@ -1157,17 +1157,17 @@ Zone1A_EventScript_LeviathanBattle_2:
 
 Zone1A_EventScript_LeviathanBattle_8:
 # 470 "data/maps/Zone1A/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_BRUTAL, Zone1A_Text_Leviathan1Defeat
+	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_CHALLENGE, Zone1A_Text_Leviathan1Defeat
 	goto Zone1A_EventScript_LeviathanBattle_1
 
 Zone1A_EventScript_LeviathanBattle_9:
 # 472 "data/maps/Zone1A/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_BRUTAL, Zone1A_Text_Leviathan1Defeat
+	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_CHALLENGE, Zone1A_Text_Leviathan1Defeat
 	goto Zone1A_EventScript_LeviathanBattle_1
 
 Zone1A_EventScript_LeviathanBattle_10:
 # 474 "data/maps/Zone1A/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_BRUTAL, Zone1A_Text_Leviathan1Defeat
+	trainerbattle_no_intro TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_CHALLENGE, Zone1A_Text_Leviathan1Defeat
 	goto Zone1A_EventScript_LeviathanBattle_1
 
 Zone1A_EventScript_LeviathanBattle_12:

@@ -244,7 +244,7 @@ Zone3A_EventScript_TriggerLeviathan_2:
 
 Zone3A_EventScript_TriggerLeviathan_5:
 # 58 "data/maps/Zone3A/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_PHILLIPA_LEVIATHAN_3_BRUTAL, Zone3A_Text_Leviathan3Defeat
+	trainerbattle_no_intro TRAINER_PBL_PHILLIPA_LEVIATHAN_3_CHALLENGE, Zone3A_Text_Leviathan3Defeat
 	goto Zone3A_EventScript_TriggerLeviathan_4
 
 
