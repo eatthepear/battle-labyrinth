@@ -110,6 +110,8 @@ script Zone7A_EventScript_FangsTutor {
 			end
 		}
 	}
+	message(format("What move should I teach?"))
+	waitmessage
 	dynmultichoice(21, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Thunder Fang", "Fire Fang", "Ice Fang", "Exit")
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -124,6 +126,7 @@ script Zone7A_EventScript_FangsTutor {
 		case 3:
 		case MULTI_B_PRESSED:
 			msgbox(format("You just let me know if you need me."))
+			hidemoneybox
 			release
 			end
 	}
