@@ -275,7 +275,7 @@ script Zone3A_EventScript_ChillingWaterTutor {
 	setvar(VAR_TEMP_0, MOVE_CHILLING_WATER)
 	setvar(VAR_0x8005, MOVE_CHILLING_WATER)
 	buffermovename(0, VAR_TEMP_0)
-	msgbox("Which Pokemon should learn\n{STR_VAR_1}?", MSGBOX_DEFAULT)
+	msgbox("Which Pokémon should learn\n{STR_VAR_1}?", MSGBOX_DEFAULT)
 	special(ChooseMonForMoveTutor)
 	waitstate
 	lock

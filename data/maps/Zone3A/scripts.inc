@@ -831,7 +831,7 @@ Zone3A_EventScript_ChillingWaterTutor_Text_3:
 
 Zone3A_EventScript_ChillingWaterTutor_Text_4:
 # 278 "data/maps/Zone3A/scripts.pory"
-	.string "Which Pokemon should learn\n{STR_VAR_1}?$"
+	.string "Which Pokémon should learn\n{STR_VAR_1}?$"
 
 Zone3A_EventScript_ChillingWaterTutor_Text_5:
 # 289 "data/maps/Zone3A/scripts.pory"
