@@ -51,7 +51,7 @@ Zone4B_EventScript_Callie::
 # 31 "data/maps/Zone4B/scripts.pory"
 	trainerbattle_single TRAINER_PBL_CALLIE, Zone4B_EventScript_Callie_Text_0, Zone4B_EventScript_Callie_Text_1
 # 32 "data/maps/Zone4B/scripts.pory"
-	msgbox Zone4B_EventScript_Callie_Text_2
+	msgbox Zone4B_EventScript_Callie_Text_2, MSGBOX_AUTOCLOSE
 	end
 
 
