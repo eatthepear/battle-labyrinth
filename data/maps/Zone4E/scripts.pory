@@ -24,7 +24,7 @@ script Zone4E_EventScript_LeviathanBattle {
 	msgbox(Zone4E_Text_Leviathan4Intro)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		trainerbattle_no_intro(TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4_BRUTAL, Zone4E_Text_Leviathan4Defeat)
+		trainerbattle_no_intro(TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4_CHALLENGE, Zone4E_Text_Leviathan4Defeat)
 	} else {
 		trainerbattle_no_intro(TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4, Zone4E_Text_Leviathan4Defeat)
 	}

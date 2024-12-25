@@ -101,7 +101,7 @@ Zone8D_EventScript_LeviathanBattle_5:
 
 Zone8D_EventScript_LeviathanBattle_11:
 # 30 "data/maps/Zone8D/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_ALISTAIR_LEVIATHAN_8_BRUTAL, Zone8D_Text_Leviathan8Defeat
+	trainerbattle_no_intro TRAINER_PBL_ALISTAIR_LEVIATHAN_8_CHALLENGE, Zone8D_Text_Leviathan8Defeat
 	goto Zone8D_EventScript_LeviathanBattle_10
 
 
