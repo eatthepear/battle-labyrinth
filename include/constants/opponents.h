@@ -44,8 +44,8 @@
 #define TRAINER_PBL_CAITLYN                      	38
 #define TRAINER_PBL_KENNETH                       	39
 #define TRAINER_PBL_KEVIN                        	40
-#define TRAINER_PBL_DECLAN_LEVIATHAN_5            	41
-#define TRAINER_PBL_DECLAN_LEVIATHAN_5_BRUTAL     	42
+#define TRAINER_PBL_MARIA_LEVIATHAN_5            	41
+#define TRAINER_PBL_MARIA_LEVIATHAN_5_BRUTAL     	42
 #define TRAINER_PBL_GILBERT                      	43
 #define TRAINER_PBL_MELANIE                      	44
 #define TRAINER_PBL_CONSTANCE                    	45

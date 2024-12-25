@@ -61,7 +61,7 @@ Zone5B_EventScript_LeviathanBattle::
 # 40 "data/maps/Zone5B/scripts.pory"
 	closemessage
 # 41 "data/maps/Zone5B/scripts.pory"
-	applymovement 1, Zone5B_Declan_Movement_WalkDown
+	applymovement 1, Zone5B_Maria_Movement_WalkDown
 # 42 "data/maps/Zone5B/scripts.pory"
 	waitmovement 0
 # 43 "data/maps/Zone5B/scripts.pory"
@@ -85,7 +85,7 @@ Zone5B_EventScript_LeviathanBattle_4:
 # 55 "data/maps/Zone5B/scripts.pory"
 	goto_if_set FLAG_SETTINGS_CHALLENGE, Zone5B_EventScript_LeviathanBattle_8
 # 58 "data/maps/Zone5B/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_DECLAN_LEVIATHAN_5, Zone5B_Text_Leviathan5Defeat
+	trainerbattle_no_intro TRAINER_PBL_MARIA_LEVIATHAN_5, Zone5B_Text_Leviathan5Defeat
 Zone5B_EventScript_LeviathanBattle_7:
 # 60 "data/maps/Zone5B/scripts.pory"
 	clearflag FLAG_FORCE_BATTLE_ANIM_ON
@@ -106,7 +106,7 @@ Zone5B_EventScript_LeviathanBattle_13:
 # 70 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_1, 0
 # 71 "data/maps/Zone5B/scripts.pory"
-	applymovement 1, Zone5B_Declan_Movement_WalkUp
+	applymovement 1, Zone5B_Maria_Movement_WalkUp
 # 72 "data/maps/Zone5B/scripts.pory"
 	waitmovement 0
 # 73 "data/maps/Zone5B/scripts.pory"
@@ -141,7 +141,7 @@ Zone5B_EventScript_LeviathanBattle_5:
 
 Zone5B_EventScript_LeviathanBattle_8:
 # 56 "data/maps/Zone5B/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_DECLAN_LEVIATHAN_5_BRUTAL, Zone5B_Text_Leviathan5Defeat
+	trainerbattle_no_intro TRAINER_PBL_MARIA_LEVIATHAN_5_BRUTAL, Zone5B_Text_Leviathan5Defeat
 	goto Zone5B_EventScript_LeviathanBattle_7
 
 Zone5B_EventScript_LeviathanBattle_14:
@@ -153,7 +153,7 @@ Zone5B_EventScript_LeviathanBattle_14:
 
 
 # 80 "data/maps/Zone5B/scripts.pory"
-Zone5B_Declan_Movement_WalkDown:
+Zone5B_Maria_Movement_WalkDown:
 # 81 "data/maps/Zone5B/scripts.pory"
 	walk_down
 # 81 "data/maps/Zone5B/scripts.pory"
@@ -173,7 +173,7 @@ Zone5B_Declan_Movement_WalkDown:
 	step_end
 
 # 93 "data/maps/Zone5B/scripts.pory"
-Zone5B_Declan_Movement_WalkUp:
+Zone5B_Maria_Movement_WalkUp:
 # 94 "data/maps/Zone5B/scripts.pory"
 	walk_right
 # 94 "data/maps/Zone5B/scripts.pory"
@@ -945,14 +945,14 @@ Zone5B_EventScript_LeviathanBattle_Text_0:
 
 Zone5B_EventScript_LeviathanBattle_Text_1:
 # 61 "data/maps/Zone5B/scripts.pory"
-	.string "{COLOR BLUE}Declan{COLOR DARK_GRAY}: Argh, how did you manage to\n"
-	.string "beat me?\p"
+	.string "{COLOR BLUE}Maria{COLOR DARK_GRAY}: Argh, how did you manage to beat\n"
+	.string "me?\p"
 	.string "Well, I guess I'm supposed to give you a\n"
 	.string "reward now.$"
 
 Zone5B_EventScript_LeviathanBattle_Text_2:
 # 63 "data/maps/Zone5B/scripts.pory"
-	.string "{COLOR BLUE}Declan{COLOR DARK_GRAY}: The Eviolite boosts the\n"
+	.string "{COLOR BLUE}Maria{COLOR DARK_GRAY}: The Eviolite boosts the\n"
 	.string "defenses of Pokémon that can still\l"
 	.string "evolve.\p"
 	.string "Now then. You can pass through, but\n"
@@ -1068,7 +1068,7 @@ Zone5B_EventScript_BuyPikaClone_Text_20:
 
 Zone5B_Text_Leviathan5Intro::
 # 85 "data/maps/Zone5B/scripts.pory"
-	.string "{COLOR BLUE}Declan{COLOR DARK_GRAY}: Not so fast! I'm training my\n"
+	.string "{COLOR BLUE}Maria{COLOR DARK_GRAY}: Not so fast! I'm training my\n"
 	.string "Pokémon around here!\p"
 	.string "You'll have to face our combined might\n"
 	.string "to get past!\p"
