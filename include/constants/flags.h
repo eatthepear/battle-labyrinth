@@ -277,6 +277,7 @@
 #define FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER      0x152
 #define FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG        0x153
 #define FLAG_ZONE7A_MOVE_TUTOR_TAUGHT_FANG                0x154
+#define FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS          0x155
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x200
