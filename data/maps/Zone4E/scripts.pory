@@ -30,8 +30,8 @@ script Zone4E_EventScript_LeviathanBattle {
 	}
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Ella{COLOR DARK_GRAY}: Wargh! Not only are we lost in the wood…\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: We could've won that battle, you misunderstood!\p{COLOR BLUE}Ella{COLOR DARK_GRAY}: I guess our teamwork could be improved…\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: Yeah… Oh right, here's a thing for those approved!"), MSGBOX_DEFAULT)
-	giveitem(ITEM_TM02)
-	msgbox(format("{COLOR BLUE}Ella{COLOR DARK_GRAY}: That rhyme barely worked!\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: Oh, don't be irked!"))
+	giveitem(ITEM_TM_SNARL)
+	msgbox(format("{COLOR BLUE}Ella{COLOR DARK_GRAY}: This TM can help in double battles!\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: Shush, you're annoying them with your prattles!\p{COLOR BLUE}Ella{COLOR DARK_GRAY}: That rhyme barely worked!\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: Oh, don't be irked!"))
 	closemessage
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(3)

@@ -57,7 +57,7 @@ Zone4E_EventScript_LeviathanBattle_1:
 # 32 "data/maps/Zone4E/scripts.pory"
 	msgbox Zone4E_EventScript_LeviathanBattle_Text_0, MSGBOX_DEFAULT
 # 33 "data/maps/Zone4E/scripts.pory"
-	giveitem ITEM_TM02
+	giveitem ITEM_TM_SNARL
 # 34 "data/maps/Zone4E/scripts.pory"
 	msgbox Zone4E_EventScript_LeviathanBattle_Text_1
 # 35 "data/maps/Zone4E/scripts.pory"
@@ -163,6 +163,9 @@ Zone4E_EventScript_LeviathanBattle_Text_0:
 
 Zone4E_EventScript_LeviathanBattle_Text_1:
 # 34 "data/maps/Zone4E/scripts.pory"
+	.string "{COLOR BLUE}Ella{COLOR DARK_GRAY}: This TM can help in double battles!\p"
+	.string "{COLOR BLUE}Bella{COLOR DARK_GRAY}: Shush, you're annoying them with\n"
+	.string "your prattles!\p"
 	.string "{COLOR BLUE}Ella{COLOR DARK_GRAY}: That rhyme barely worked!\p"
 	.string "{COLOR BLUE}Bella{COLOR DARK_GRAY}: Oh, don't be irked!$"
 
