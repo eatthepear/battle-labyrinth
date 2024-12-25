@@ -392,7 +392,7 @@
         },
     },
 #line 235
-    [TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_BRUTAL] =
+    [TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_CHALLENGE] =
     {
 #line 236
         .trainerName = _("Corey"),
@@ -552,7 +552,7 @@
         },
     },
 #line 297
-    [TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_BRUTAL] =
+    [TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_CHALLENGE] =
     {
 #line 298
         .trainerName = _("Corey"),
@@ -712,7 +712,7 @@
         },
     },
 #line 359
-    [TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_BRUTAL] =
+    [TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_CHALLENGE] =
     {
 #line 360
         .trainerName = _("Corey"),
@@ -1326,7 +1326,7 @@
         },
     },
 #line 612
-    [TRAINER_PBL_SHAUN_LEVIATHAN_2_BRUTAL] =
+    [TRAINER_PBL_SHAUN_LEVIATHAN_2_CHALLENGE] =
     {
 #line 613
         .trainerName = _("Shaun"),
@@ -1985,7 +1985,7 @@
         },
     },
 #line 884
-    [TRAINER_PBL_PHILLIPA_LEVIATHAN_3_BRUTAL] =
+    [TRAINER_PBL_PHILLIPA_LEVIATHAN_3_CHALLENGE] =
     {
 #line 885
         .trainerName = _("Phillipa"),
@@ -2805,7 +2805,7 @@
         },
     },
 #line 1226
-    [TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4_BRUTAL] =
+    [TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4_CHALLENGE] =
     {
 #line 1227
         .trainerName = _("Ella&Bella"),
@@ -4636,7 +4636,7 @@
         },
     },
 #line 2004
-    [TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_BRUTAL] =
+    [TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_CHALLENGE] =
     {
 #line 2005
         .trainerName = _("Zack&Coby"),
@@ -5256,7 +5256,7 @@
         },
     },
 #line 2248
-    [TRAINER_PBL_BETTY_LEVIATHAN_7_BRUTAL] =
+    [TRAINER_PBL_BETTY_LEVIATHAN_7_CHALLENGE] =
     {
 #line 2249
         .trainerName = _("Betty"),
@@ -5970,7 +5970,7 @@
         },
     },
 #line 2528
-    [TRAINER_PBL_ALISTAIR_LEVIATHAN_8_BRUTAL] =
+    [TRAINER_PBL_ALISTAIR_LEVIATHAN_8_CHALLENGE] =
     {
 #line 2529
         .trainerName = _("Alistair"),

@@ -55,7 +55,7 @@ script Zone3A_EventScript_TriggerLeviathan {
 	msgbox(Zone3A_Text_Leviathan3Intro)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		trainerbattle_no_intro(TRAINER_PBL_PHILLIPA_LEVIATHAN_3_BRUTAL, Zone3A_Text_Leviathan3Defeat)
+		trainerbattle_no_intro(TRAINER_PBL_PHILLIPA_LEVIATHAN_3_CHALLENGE, Zone3A_Text_Leviathan3Defeat)
 	} else {
 		trainerbattle_no_intro(TRAINER_PBL_PHILLIPA_LEVIATHAN_3, Zone3A_Text_Leviathan3Defeat)
 	}

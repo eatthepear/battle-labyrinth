@@ -80,7 +80,7 @@ Zone4E_EventScript_LeviathanBattle_1:
 
 Zone4E_EventScript_LeviathanBattle_2:
 # 27 "data/maps/Zone4E/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4_BRUTAL, Zone4E_Text_Leviathan4Defeat
+	trainerbattle_no_intro TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4_CHALLENGE, Zone4E_Text_Leviathan4Defeat
 	goto Zone4E_EventScript_LeviathanBattle_1
 
 

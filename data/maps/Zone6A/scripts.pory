@@ -65,7 +65,7 @@ script Zone6A_EventScript_LeviathanBattle {
 	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Wait! It isn't their fault!"), MSGBOX_DEFAULT)
 	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: Combined family attack!"))
 	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		trainerbattle_no_intro(TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_BRUTAL, Zone6A_Text_Leviathan6Defeat)
+		trainerbattle_no_intro(TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_CHALLENGE, Zone6A_Text_Leviathan6Defeat)
 		resetweather
 		doweather
 	} else {

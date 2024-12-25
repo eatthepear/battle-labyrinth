@@ -59,7 +59,7 @@ Zone7B_EventScript_LeviathanBattle_5:
 
 Zone7B_EventScript_LeviathanBattle_8:
 # 21 "data/maps/Zone7B/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_BETTY_LEVIATHAN_7_BRUTAL, Zone7B_Text_Leviathan7Defeat
+	trainerbattle_no_intro TRAINER_PBL_BETTY_LEVIATHAN_7_CHALLENGE, Zone7B_Text_Leviathan7Defeat
 	goto Zone7B_EventScript_LeviathanBattle_7
 
 

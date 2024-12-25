@@ -232,7 +232,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
 - Scratch
 
-=== TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_BRUTAL ===
+=== TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_CHALLENGE ===
 Name: Corey
 Class: School Kid
 Pic: School Kid M
@@ -294,7 +294,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
 
-=== TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_BRUTAL ===
+=== TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_CHALLENGE ===
 Name: Corey
 Class: School Kid
 Pic: School Kid M
@@ -356,7 +356,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leafage
 - Scratch
 
-=== TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_BRUTAL ===
+=== TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_CHALLENGE ===
 Name: Corey
 Class: School Kid
 Pic: School Kid M
@@ -609,7 +609,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tail Whip
 - Defense Curl
 
-=== TRAINER_PBL_SHAUN_LEVIATHAN_2_BRUTAL ===
+=== TRAINER_PBL_SHAUN_LEVIATHAN_2_CHALLENGE ===
 Name: Shaun
 Class: Youngster
 Pic: Youngster
@@ -881,7 +881,7 @@ Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rollout
 
-=== TRAINER_PBL_PHILLIPA_LEVIATHAN_3_BRUTAL ===
+=== TRAINER_PBL_PHILLIPA_LEVIATHAN_3_CHALLENGE ===
 Name: Phillipa
 Class: School Kid
 Pic: School Kid F
@@ -1223,7 +1223,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Swift
 - Disarming Voice
 
-=== TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4_BRUTAL ===
+=== TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4_CHALLENGE ===
 Name: Ella&Bella
 Class: Sr And Jr
 Pic: Sr And Jr
@@ -2001,7 +2001,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pulse
 - Tailwind
 
-=== TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_BRUTAL ===
+=== TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_CHALLENGE ===
 Name: Zack&Coby
 Class: Sis And Bro
 Pic: Sis And Bro
@@ -2245,7 +2245,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Nuzzle
 - Charge Beam
 
-=== TRAINER_PBL_BETTY_LEVIATHAN_7_BRUTAL ===
+=== TRAINER_PBL_BETTY_LEVIATHAN_7_CHALLENGE ===
 Name: Betty
 Class: Lady
 Pic: Lady
@@ -2525,7 +2525,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Power-Up Punch
 - Rock Tomb
 
-=== TRAINER_PBL_ALISTAIR_LEVIATHAN_8_BRUTAL ===
+=== TRAINER_PBL_ALISTAIR_LEVIATHAN_8_CHALLENGE ===
 Name: Alistair
 Class: Roughneck
 Pic: Roughneck

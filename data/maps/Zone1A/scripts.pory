@@ -467,11 +467,11 @@ script Zone1A_EventScript_LeviathanBattle {
 	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
 		switch (var(VAR_STARTER_MON)) {
 			case 0:
-				trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_BRUTAL, Zone1A_Text_Leviathan1Defeat)
+				trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_CHALLENGE, Zone1A_Text_Leviathan1Defeat)
 			case 1:
-				trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_BRUTAL, Zone1A_Text_Leviathan1Defeat)
+				trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_CHALLENGE, Zone1A_Text_Leviathan1Defeat)
 			case 2:
-				trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_BRUTAL, Zone1A_Text_Leviathan1Defeat)
+				trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_CHALLENGE, Zone1A_Text_Leviathan1Defeat)
 		}
 	} else {
 		switch (var(VAR_STARTER_MON)) {
@@ -484,11 +484,11 @@ script Zone1A_EventScript_LeviathanBattle {
 		}
 	}
 	settrainerflag(TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER)
-	settrainerflag(TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_BRUTAL)
+	settrainerflag(TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_CHALLENGE)
 	settrainerflag(TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER)
-	settrainerflag(TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_BRUTAL)
+	settrainerflag(TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_CHALLENGE)
 	settrainerflag(TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER)
-	settrainerflag(TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_BRUTAL)
+	settrainerflag(TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_CHALLENGE)
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this Exp. Share! It's useful for training up Pokémon."), MSGBOX_DEFAULT)
 	giveitem(ITEM_EXP_SHARE)
