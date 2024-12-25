@@ -15,7 +15,7 @@ mapscripts Zone6A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE6A_TM07)) {
+		if (flag(FLAG_ITEM_ZONE6A_TM_DRAINING_KISS)) {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_TM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_TM_CHEST)
@@ -220,9 +220,9 @@ script Zone6A_EventScript_ItemNestBall {
 	end
 }
 
-script Zone6A_EventScript_ItemTM07 {
+script Zone6A_EventScript_ItemTMDrainingKiss {
 	lock
-	if (flag(FLAG_ITEM_ZONE6A_TM07)) {
+	if (flag(FLAG_ITEM_ZONE6A_TM_DRAINING_KISS)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -230,9 +230,9 @@ script Zone6A_EventScript_ItemTM07 {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_TM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE6A_TM07)
+	setflag(FLAG_ITEM_ZONE6A_TM_DRAINING_KISS)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_TM07)
+	finditem(ITEM_TM_DRAINING_KISS)
 	release
 	end
 }
