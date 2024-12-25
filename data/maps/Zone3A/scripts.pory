@@ -245,16 +245,32 @@ script Zone3A_EventScript_Surveil {
 script Zone3A_EventScript_ChillingWaterTutor {
 	lock
 	faceplayer
-	msgbox(format("Ho there, trainer!\pAre your Water Pokémon interested in learning a new technique? I call it: Chilling Water!\pI can teach one of your Pokémon Chilling Water for the low price of a single Oran Berry. Interested?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Good day to you!"))
-		release
-		end
+	showmoneybox(0, 0, 0)
+	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER) == TRUE) {
+		msgbox(format("Ho there, trainer!\pAre your Water Pokémon interested in learning a new technique? I call it: Chilling Water!\pI can teach one of your Pokémon Chilling Water for the low price of ¥500. Interested?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			msgbox(format("Good day to you!"))
+			release
+			end
+		}
+	} else {
+		msgbox(format("Ho there, trainer!\pAre your Water Pokémon interested in learning a new technique? I call it: Chilling Water!\pI can teach one of your Pokémon Chilling Water. First time is free, while subsequent times cost ¥500! Interested?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			msgbox(format("Good day to you!"))
+			release
+			end
+		}
 	}
-	if (checkitem(ITEM_ORAN_BERRY) == FALSE) {
-		msgbox(format("Hate to break it to you, but you don't have an Oran Berry to spare."))
-		release
-		end
+	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER) == TRUE) {
+		checkmoney(500, 0)
+		if (var(VAR_RESULT) == FALSE) {
+			msgbox("Hate to break it to you, but you don't have enough money.")
+			hidemoneybox
+			release
+			end
+		}
 	}
 	setvar(VAR_TEMP_0, MOVE_CHILLING_WATER)
 	setvar(VAR_0x8005, MOVE_CHILLING_WATER)
@@ -269,9 +285,17 @@ script Zone3A_EventScript_ChillingWaterTutor {
 		release
 		end
 	}
+	showmoneybox(0, 0, 0)
 	msgbox(format("There! It's done. Use that move well!"), MSGBOX_DEFAULT)
-	removeitem(ITEM_ORAN_BERRY)
-	msgbox(format("{PLAYER} handed over one Oran Berry."), MSGBOX_DEFAULT)
+	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER) == FALSE) {
+		setflag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER)
+	} else {
+		removemoney(500)
+		updatemoneybox
+		msgbox(format("{PLAYER} paid ¥500."), MSGBOX_DEFAULT)
+		msgbox(format("Good day to you!"))
+	}
+	hidemoneybox
 	release
 	end
 }

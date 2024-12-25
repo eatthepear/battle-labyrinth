@@ -274,6 +274,7 @@
 #define FLAG_ZONE5A_RECEIVED_SURPRISE_MULCH               0x14F
 #define FLAG_ZONE3B_TRADED_RATTATA_ALOLA                  0x150
 #define FLAG_ZONE3B_TRADED_ZIGZAGOON_GALAR                0x151
+#define FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER      0x152
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x200
