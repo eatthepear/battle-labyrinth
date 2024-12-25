@@ -1532,6 +1532,14 @@ static void HandleChooseMonSelection(u8 taskId, s8 *slotPtr)
             }
             break;
         }
+        case PARTY_ACTION_TRAINING:
+            if (IsSelectedMonNotEgg((u8*)slotPtr))
+            {
+                PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+                TryDoTrainingToSelectedMon(taskId);
+                // gItemUseCB(taskId, Task_ClosePartyMenuAfterText);
+            }
+            break;
         default:
         case PARTY_ACTION_ABILITY_PREVENTS:
         case PARTY_ACTION_SWITCHING:
@@ -7973,10 +7981,12 @@ void TryDoTrainingToSelectedMon(u8 taskId)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     u32 currentLevel = GetMonData(mon, MON_DATA_LEVEL);
+    DebugPrintf("currentLevel: %d", currentLevel);
 
     if (!gPaletteFade.active)
     {
-        if ((currentLevel != MAX_LEVEL) && GetCurrentLevelCap() < currentLevel)
+        DebugPrintf("GetCurrentLevelCap(): %d", GetCurrentLevelCap());
+        if ((currentLevel != MAX_LEVEL) && GetCurrentLevelCap() > currentLevel)
         {
             DisplayShouldTrainMessage(&gPlayerParty[gPartyMenu.slotId], TRUE);
             gTasks[taskId].func = Task_DoTrainingToSelectedMonYesNo;
