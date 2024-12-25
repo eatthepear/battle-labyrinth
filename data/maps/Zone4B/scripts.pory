@@ -29,7 +29,7 @@ script Zone4B_EventScript_ItemRandom1 {
 
 script Zone4B_EventScript_Callie {
 	trainerbattle_single(TRAINER_PBL_CALLIE, format("Do you like doggos as much as I do?"), format("My poor doggos!"))
-	msgbox(format("As much as I love dogs, I also kind of like cats."))
+	msgbox(format("As much as I love dogs, I also kind of like cats."), MSGBOX_AUTOCLOSE)
 	end
 }
 
