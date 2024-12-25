@@ -411,11 +411,11 @@
 #define FLAG_ITEM_ZONE4E_RANDOM_1                                   0x30D
 #define FLAG_ITEM_ZONE4E_POISON_BARB                                0x378
 #define FLAG_ITEM_ZONE5A_QUICK_BALL                                 0x30E
-#define FLAG_ITEM_ZONE5A_TM04                                       0x30F
+#define FLAG_ITEM_ZONE5A_RANDOM_1                                   0x30F
 #define FLAG_ITEM_ZONE5A_LAX_MINT                                   0x371
 #define FLAG_ITEM_ZONE5A_MIRACLE_SEED                               0x37A
-#define FLAG_ITEM_ZONE5B_TM03                                       0x372
-#define FLAG_ITEM_ZONE5B_POTION_X2                                  0x373
+#define FLAG_ITEM_ZONE5B_RANDOM_1                                   0x372
+#define FLAG_ITEM_ZONE5B_RANDOM_2                                   0x373
 #define FLAG_ITEM_ZONE5B_GEMS                                       0x374
 #define FLAG_ITEM_ZONE5B_GENTLE_MINT                                0x375
 #define FLAG_ITEM_ZONE6A_TM07                                       0x310

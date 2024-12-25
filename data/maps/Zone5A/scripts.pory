@@ -5,10 +5,10 @@ mapscripts Zone5A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE5A_TM04)) {
-			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+		if (flag(FLAG_ITEM_ZONE5A_RANDOM_1)) {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
-			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TM_CHEST)
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
 		if (flag(FLAG_ITEM_ZONE5A_LAX_MINT)) {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
@@ -80,19 +80,20 @@ script Zone5A_EventScript_Breeder {
 	end
 }
 
-script Zone5A_EventScript_ItemTM04 {
+script Zone5A_EventScript_ItemRandom1 {
 	lock
-	if (flag(FLAG_ITEM_ZONE5A_TM04)) {
+	if (flag(FLAG_ITEM_ZONE5A_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
 	}
 	waitse
 	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5A_TM04)
+	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE5A_RANDOM_1)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_TM04)
+	specialvar(VAR_TEMP_1, RandomItemChest)
+	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
