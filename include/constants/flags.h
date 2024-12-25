@@ -414,6 +414,7 @@
 #define FLAG_ITEM_ZONE5A_RANDOM_1                                   0x30F
 #define FLAG_ITEM_ZONE5A_LAX_MINT                                   0x371
 #define FLAG_ITEM_ZONE5A_MIRACLE_SEED                               0x37A
+#define FLAG_ITEM_ZONE5A_RANDOM_2                                   0x37C
 #define FLAG_ITEM_ZONE5B_RANDOM_1                                   0x372
 #define FLAG_ITEM_ZONE5B_RANDOM_2                                   0x373
 #define FLAG_ITEM_ZONE5B_GEMS                                       0x374
