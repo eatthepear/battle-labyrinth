@@ -275,6 +275,7 @@
 #define FLAG_ZONE3B_TRADED_RATTATA_ALOLA                  0x150
 #define FLAG_ZONE3B_TRADED_ZIGZAGOON_GALAR                0x151
 #define FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER      0x152
+#define FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG        0x153
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x200
