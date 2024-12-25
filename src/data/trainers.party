@@ -2485,7 +2485,7 @@ Ability: Poison Touch
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sludge
-- Acid Spray
+- Poison Gas
 - Shadow Sneak
 - Power-Up Punch
 
@@ -2498,7 +2498,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Clear Smog
 - Defog
 
-Croagunk @ Sitrus Berry
+Croagunk @ Normal Gem
 Ability: Poison Touch
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -2509,21 +2509,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Mightyena @ Sitrus Berry
 Ability: Strong Jaw
-Level: 19
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bite
-- Howl
-- Headbutt
-- Trailblaze
-
-Throh @ Black Belt
-Ability: Guts
 Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Revenge
-- Seismic Toss
-- Power-Up Punch
-- Rock Tomb
+- Bite
+- Thunder Fang
+- Fire Fang
+- Ice Fang
 
 === TRAINER_PBL_ALISTAIR_LEVIATHAN_8_CHALLENGE ===
 Name: Alistair
@@ -2540,7 +2531,7 @@ Ability: Poison Touch
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sludge
-- Acid Spray
+- Poison Gas
 - Shadow Sneak
 - Power-Up Punch
 
@@ -2553,7 +2544,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Clear Smog
 - Defog
 
-Croagunk @ Sitrus Berry
+Croagunk @ Normal Gem
 Ability: Poison Touch
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -2564,12 +2555,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Mightyena @ Sitrus Berry
 Ability: Strong Jaw
-Level: 19
+Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bite
-- Howl
-- Headbutt
-- Trailblaze
+- Thunder Fang
+- Fire Fang
+- Ice Fang
 
 Throh @ Black Belt
 Ability: Guts
@@ -2579,15 +2570,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Seismic Toss
 - Power-Up Punch
 - Rock Tomb
-
-Seviper @ Sitrus Berry
-Ability: Merciless
-Level: 20
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Venoshock
-- Poison Fang
-- Thief
-- Glare
 
 === TRAINER_PBL_COOPER ===
 Name: STEVEN
