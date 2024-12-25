@@ -38,7 +38,7 @@ script Zone5B_EventScript_LeviathanBattle {
 		end
 	}
 	closemessage
-	applymovement(1, Zone5B_Declan_Movement_WalkDown)
+	applymovement(1, Zone5B_Maria_Movement_WalkDown)
 	waitmovement(0)
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 28) {
@@ -53,14 +53,14 @@ script Zone5B_EventScript_LeviathanBattle {
 	msgbox(Zone5B_Text_Leviathan5Intro)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		trainerbattle_no_intro(TRAINER_PBL_DECLAN_LEVIATHAN_5_BRUTAL, Zone5B_Text_Leviathan5Defeat)
+		trainerbattle_no_intro(TRAINER_PBL_MARIA_LEVIATHAN_5_BRUTAL, Zone5B_Text_Leviathan5Defeat)
 	} else {
-		trainerbattle_no_intro(TRAINER_PBL_DECLAN_LEVIATHAN_5, Zone5B_Text_Leviathan5Defeat)
+		trainerbattle_no_intro(TRAINER_PBL_MARIA_LEVIATHAN_5, Zone5B_Text_Leviathan5Defeat)
 	}
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Argh, how did you manage to beat me?\pWell, I guess I'm supposed to give you a reward now."), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Maria{COLOR DARK_GRAY}: Argh, how did you manage to beat me?\pWell, I guess I'm supposed to give you a reward now."), MSGBOX_DEFAULT)
 	giveitem(ITEM_EVIOLITE, 1)
-	msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: The Eviolite boosts the defenses of Pokémon that can still evolve.\pNow then. You can pass through, but don't get in the way of my training again!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("{COLOR BLUE}Maria{COLOR DARK_GRAY}: The Eviolite boosts the defenses of Pokémon that can still evolve.\pNow then. You can pass through, but don't get in the way of my training again!"), MSGBOX_AUTOCLOSE)
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 28) {
 		applymovement(1, Common_Movement_WalkUp)
@@ -68,7 +68,7 @@ script Zone5B_EventScript_LeviathanBattle {
 	}
 	setvar(VAR_TEMP_0, 0)
 	setvar(VAR_TEMP_1, 0)
-	applymovement(1, Zone5B_Declan_Movement_WalkUp)
+	applymovement(1, Zone5B_Maria_Movement_WalkUp)
 	waitmovement(0)
 	removeobject(1)
 	setflag(FLAG_BEAT_LEVIATHAN_5)
@@ -77,20 +77,20 @@ script Zone5B_EventScript_LeviathanBattle {
 	end
 }
 
-movement Zone5B_Declan_Movement_WalkDown {
+movement Zone5B_Maria_Movement_WalkDown {
 	walk_down * 6
 	walk_left * 2
 }
 
 text Zone5B_Text_Leviathan5Intro {
-	format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Not so fast! I'm training my Pokémon around here!\pYou'll have to face our combined might to get past!\pThis is where your journey forward stops!")
+	format("{COLOR BLUE}Maria{COLOR DARK_GRAY}: Not so fast! I'm training my Pokémon around here!\pYou'll have to face our combined might to get past!\pThis is where your journey forward stops!")
 }
 
 text Zone5B_Text_Leviathan5Defeat {
 	format("How!? My Pokémon were so bulky with their Eviolites!")
 }
 
-movement Zone5B_Declan_Movement_WalkUp {
+movement Zone5B_Maria_Movement_WalkUp {
 	walk_right * 2
 	walk_up * 6
 }
