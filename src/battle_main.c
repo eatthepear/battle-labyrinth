@@ -1933,9 +1933,8 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags)
 {
     u32 personalityValue;
-    s32 i, j;
+    s32 i, j, leadIndex;
     u8 monsCount;
-    u16 randomizedIndices[PARTY_SIZE];
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL)))
@@ -1955,14 +1954,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             monsCount = trainer->partySize;
         }
 
-        if (trainer->randomLead == TRUE)
-        {
-            for (i = 0; i < monsCount; i++)
-            {
-                randomizedIndices[i] = i;
-            }
-            Shuffle16(randomizedIndices, monsCount);
-        }
+        leadIndex = Random32() % monsCount; // new lead index
 
         for (i = 0; i < monsCount; i++)
         {
@@ -1975,10 +1967,18 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u32 status = 0;
             u8 nature;
 
+            j = i;
             if (trainer->randomLead == TRUE)
-                j = randomizedIndices[i];
-            else
-                j = i;
+            {
+                if (i == 0)
+                {
+                    j = leadIndex;
+                }
+                else if (i == leadIndex)
+                {
+                    j = 0;
+                }
+            }
 
             personalityValue = 0x80;
 
