@@ -20,7 +20,7 @@ Zone6A_MapScripts_MAP_SCRIPT_ON_RESUME_5:
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST
 Zone6A_MapScripts_MAP_SCRIPT_ON_RESUME_9:
 # 18 "data/maps/Zone6A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE6A_TM07, Zone6A_MapScripts_MAP_SCRIPT_ON_RESUME_13
+	goto_if_set FLAG_ITEM_ZONE6A_TM_DRAINING_KISS, Zone6A_MapScripts_MAP_SCRIPT_ON_RESUME_13
 # 21 "data/maps/Zone6A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_TM_CHEST
 	return
@@ -411,11 +411,11 @@ Zone6A_EventScript_ItemNestBall_2:
 	end
 
 
-Zone6A_EventScript_ItemTM07::
+Zone6A_EventScript_ItemTMDrainingKiss::
 # 224 "data/maps/Zone6A/scripts.pory"
 	lock
 # 225 "data/maps/Zone6A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE6A_TM07, Zone6A_EventScript_ItemTM07_2
+	goto_if_set FLAG_ITEM_ZONE6A_TM_DRAINING_KISS, Zone6A_EventScript_ItemTMDrainingKiss_2
 # 230 "data/maps/Zone6A/scripts.pory"
 	waitse
 # 231 "data/maps/Zone6A/scripts.pory"
@@ -423,16 +423,16 @@ Zone6A_EventScript_ItemTM07::
 # 232 "data/maps/Zone6A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_TM_CHEST_OPEN
 # 233 "data/maps/Zone6A/scripts.pory"
-	setflag FLAG_ITEM_ZONE6A_TM07
+	setflag FLAG_ITEM_ZONE6A_TM_DRAINING_KISS
 # 234 "data/maps/Zone6A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 235 "data/maps/Zone6A/scripts.pory"
-	finditem ITEM_TM07
+	finditem ITEM_TM_DRAINING_KISS
 # 236 "data/maps/Zone6A/scripts.pory"
 	release
 	end
 
-Zone6A_EventScript_ItemTM07_2:
+Zone6A_EventScript_ItemTMDrainingKiss_2:
 # 226 "data/maps/Zone6A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 227 "data/maps/Zone6A/scripts.pory"
