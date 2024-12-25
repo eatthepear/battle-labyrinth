@@ -134,7 +134,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone5B_EventScript_ItemTM03",
+      "script": "Zone5B_EventScript_ItemRandom1",
       "flag": "0"
     },
     {
@@ -147,7 +147,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone5B_EventScript_Item2Potion",
+      "script": "Zone5B_EventScript_ItemRandom2",
       "flag": "0"
     },
     {
