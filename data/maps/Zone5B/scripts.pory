@@ -1,11 +1,11 @@
 mapscripts Zone5B_MapScripts {
 	MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_ITEM_ZONE5B_TM03)) {
-			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+		if (flag(FLAG_ITEM_ZONE5B_RANDOM_1)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
-			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST)
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE5B_POTION_X2)) {
+		if (flag(FLAG_ITEM_ZONE5B_RANDOM_2)) {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -297,26 +297,27 @@ script Zone5B_EventScript_BuyPikaClone {
 	end
 }
 
-script Zone5B_EventScript_ItemTM03 {
+script Zone5B_EventScript_ItemRandom1 {
 	lock
-	if (flag(FLAG_ITEM_ZONE5B_TM03)) {
+	if (flag(FLAG_ITEM_ZONE5B_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
 	}
 	waitse
 	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5B_TM03)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE5B_RANDOM_1)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_TM03)
+	specialvar(VAR_TEMP_1, RandomItemChest)
+	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
 
-script Zone5B_EventScript_Item2Potion {
+script Zone5B_EventScript_ItemRandom2 {
 	lock
-	if (flag(FLAG_ITEM_ZONE5B_POTION_X2)) {
+	if (flag(FLAG_ITEM_ZONE5B_RANDOM_2)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -324,9 +325,10 @@ script Zone5B_EventScript_Item2Potion {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5B_POTION_X2)
+	setflag(FLAG_ITEM_ZONE5B_RANDOM_2)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_POTION, 2)
+	specialvar(VAR_TEMP_1, RandomItemChest)
+	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
