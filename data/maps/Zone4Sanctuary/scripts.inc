@@ -133,4 +133,4 @@ Zone4Sanctuary_EventScript_NextZone_Text_3:
 
 Zone4Sanctuary_Text_Reward::
 # 53 "data/maps/Zone4Sanctuary/scripts.pory"
-	.string "The {COLOR RED}Portable PC!{COLOR DARK_GRAY}$"
+	.string "The {COLOR RED}Portable PC{COLOR DARK_GRAY}!$"
