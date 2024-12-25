@@ -148,14 +148,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Growl
 - Sand Attack
 
-Fletchling
-Ability: Big Pecks
+Purrloin
+Ability: Limber
 Level: 5
-Calm Nature
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
+- Scratch
 - Growl
-- Peck
+- Sand Attack
+- Yawn
 
 Sunkern
 Ability: Chlorophyll
@@ -485,23 +485,21 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Struggle Bug
 - Bide
 
-Spinarak
-Ability: Swarm
+Burmy
+Ability: Shed Skin
 Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Spider Web
-- Poison Sting
+- Tackle
 - String Shot
-- Night Shade
 
-Nincada
-Ability: Compound Eyes
+Tarountula
+Ability: Insomnia
 Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sand Attack
-- Harden
-- False Swipe
-- Fury Swipes
+- Tackle
+- String Shot
+- Struggle Bug
+- Assurance
 
 === TRAINER_PBL_HARPER ===
 Name: Harper
@@ -530,14 +528,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Peck
 - Confusion
 
-Mareep
-Ability: Static
+Diglett
+Ability: Sand Force
 Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
+- Scratch
+- Sand Attack
 - Growl
-- Charge
-- Thunder Shock
+- Astonish
 
 === TRAINER_PBL_ARTHUR ===
 Name: Arthur
@@ -666,14 +664,14 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Budew
-Ability: Poison Point
+Bounsweet
+Ability: Oblivious
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Play Nice
+- Aromatic Mist
 - Absorb
-- Worry Seed
-- Life Dew
-- Stun Spore
+- Grass Whistle
 
 Pidgey
 Ability: Keen Eye
@@ -684,14 +682,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Gust
 - Quick Attack
 
-Diglett
-Ability: Sand Force
+Mareep
+Ability: Static
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Scratch
-- Sand Attack
 - Growl
-- Astonish
+- Charge
+- Thunder Shock
+- Cotton Spore
 
 === TRAINER_PBL_PATRICK ===
 Name: Patrick
@@ -747,14 +745,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Growl
 - Feint
 
-Gossifleur
-Ability: Cotton Down
+Budew
+Ability: Poison Point
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Leafage
-- Grass Whistle
-- Rapid Spin
-- Razor Leaf
+- Absorb
+- Worry Seed
+- Life Dew
+- Stun Spore
 
 Azurill
 Ability: Huge Power
@@ -765,14 +763,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Charm
 - Bubble
 
-Shinx
-Ability: Intimidate
+Chingling
+Ability: Levitate
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Leer
-- Charge
-- Thunder Shock
-- Quick Attack
+- Growl
+- Astonish
+- Confusion
+- Disable
 
 === TRAINER_PBL_BORIS ===
 Name: Boris
@@ -792,23 +790,23 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Mist
 - Astonish
 
-Buneary
-Ability: Limber
+Fletchling
+Ability: Big Pecks
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Defense Curl
+- Growl
+- Peck
 - Quick Attack
-- Baby-Doll Eyes
-- Copycat
+- Ember
 
-Maschiff
-Ability: Intimidate
+Yamper
+Ability: Ball Fetch
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Lick
-- Snarl
-- Scary Face
-- Bite
+- Sand Attack
+- Nuzzle
+- Spark
+- Charge
 
 === TRAINER_PBL_RICHARD ===
 Name: Richard
@@ -846,14 +844,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Helping Hand
 - Leech Seed
 
-Ducklett
-Ability: Big Pecks
+Igglybuff
+Ability: Cute Charm
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Aqua Ring
-- Gust
-- Aqua Jet
-- Feather Dance
+- Echoed Voice
+- Sweet Kiss
+- Disarming Voice
+- Disable
 
 === TRAINER_PBL_PHILLIPA_LEVIATHAN_3 ===
 Name: Phillipa
@@ -914,12 +912,11 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rollout
 - Defense Curl
 
-Cherubi @ Oran Berry
-Ability: Chlorophyll
+Voltorb @ Oran Berry
+Ability: Aftermath
 Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rollout
-- Defense Curl
 
 === TRAINER_PBL_HERMAN ===
 Name: Herman
@@ -930,32 +927,32 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Vulpix
-Ability: Flash Fire
+Buneary
+Ability: Limber
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Ember
-- Baby-Doll Eyes
-- Disable
 - Quick Attack
+- Baby-Doll Eyes
+- Copycat
+- Fake Out
 
-Bounsweet
-Ability: Oblivious
+Ducklett
+Ability: Big Pecks
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Gust
+- Aqua Jet
+- Feather Dance
+- Wing Attack
+
+Cherubi
+Ability: Chlorophyll
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Absorb
+- Leech Seed
+- Rollout
 - Grass Whistle
-- Rapid Spin
-- Razor Leaf
-
-Espurr
-Ability: Own Tempo
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Fake Out
-- Tickle
-- Confusion
-- Disarming Voice
 
 === TRAINER_PBL_RALPH ===
 Name: Ralph
@@ -966,23 +963,23 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Chingling
-Ability: Levitate
+Shinx
+Ability: Intimidate
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Astonish
-- Confusion
-- Disable
-- Yawn
+- Charge
+- Thunder Shock
+- Quick Attack
+- Bite
 
-Purrloin
-Ability: Limber
+Houndour
+Ability: Flash Fire
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Fake Out
-- Sand Attack
-- Fury Swipes
-- Feint Attack
+- Ember
+- Smog
+- Torment
+- Bite
 
 Wooper
 Ability: Water Absorb
@@ -1020,13 +1017,13 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Yawn
 - Covet
 
-Yamper
-Ability: Ball Fetch
+Maschiff
+Ability: Intimidate
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Nuzzle
-- Spark
-- Charge
+- Lick
+- Snarl
+- Scary Face
 - Bite
 
 === TRAINER_PBL_SANTIAGO ===
@@ -1038,13 +1035,14 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Burmy
-Ability: Shed Skin
+Spinarak
+Ability: Swarm
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
 - String Shot
-- Bug Bite
+- Night Shade
+- Infestation
+- Disable
 
 Ledyba
 Ability: Swarm
@@ -1106,14 +1104,14 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Munna
-Ability: Synchronize
+Gossifleur
+Ability: Cotton Down
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Psywave
-- Lucky Chant
-- Hypnosis
-- Imprison
+- Grass Whistle
+- Rapid Spin
+- Razor Leaf
+- Leech Seed
 
 Ekans
 Ability: Intimidate
@@ -1124,14 +1122,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Acid
 - Disable
 
-Slugma
-Ability: Flame Body
+Bonsly
+Ability: Sturdy
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Ember
-- Yawn
+- Tearful Look
 - Rock Throw
-- Clear Smog
+- Low Kick
+- Block
 
 Pancham
 Ability: Iron Fist
@@ -1151,14 +1149,14 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Igglybuff
-Ability: Cute Charm
+Morelull
+Ability: Effect Spore
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sweet Kiss
-- Disarming Voice
-- Disable
-- Charm
+- Absorb
+- Astonish
+- Confuse Ray
+- Ingrain
 
 Spritzee
 Ability: Healer
@@ -1275,6 +1273,24 @@ Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
 
+Stunky
+Ability: Aftermath
+Level: 12
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Smog
+- Screech
+- Poison Gas
+- Bite
+
+Glameow
+Ability: Limber
+Level: 12
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Charm
+- Quick Attack
+- Feint Attack
+- Fake Out
+
 Gothita
 Ability: Telepathy
 Level: 12
@@ -1328,24 +1344,6 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Stufful
-Ability: Fluffy
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Brutal Swing
-- Bide
-- Force Palm
-- Stomp
-
-Rockruff
-Ability: Vital Spirit
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Double Team
-- Rock Throw
-- Bite
-- Roar
-
 Ralts
 Ability: Trace
 Level: 13
@@ -1355,14 +1353,32 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Teleport
 - Magical Leaf
 
-Pawmi
-Ability: Static
+Cacnea
+Ability: Water Absorb
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Thunder Shock
-- Bite
+- Leech Seed
+- Disable
+- Magical Leaf
+- Feint Attack
+
+Slugma
+Ability: Flame Body
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Yawn
+- Rock Throw
+- Clear Smog
+- Incinerate
+
+Seel
+Ability: Thick Fat
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Ice Shard
 - Fake Out
-- Sweet Kiss
+- Headbutt
+- Water Gun
 
 === TRAINER_PBL_REBECCA ===
 Name: Rebecca
@@ -1373,50 +1389,23 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Electrike
-Ability: Static
+Vulpix
+Ability: Flash Fire
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Baby-Doll Eyes
+- Disable
 - Quick Attack
-- Spark
-- Bite
-- Swift
+- Incinerate
 
-Cacnea
+Skiddo
+Ability: Grass Pelt
 Level: 13
-Ability: Water Absorb
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Vine Whip
+- Rollout
 - Leech Seed
-- Disable
-- Magical Leaf
-- Feint Attack
-
-Stunky
-Ability: Aftermath
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Screech
-- Poison Gas
-- Bite
-- Acid Spray
-
-Slowpoke
-Ability: Own Tempo
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Water Gun
-- Yawn
-- Disable
-- Confusion
-
-=== TRAINER_PBL_RYAN ===
-Name: Ryan
-Class: Pokefan
-Pic: Pokefan M
-Music: Twins
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Random Lead: Yes
+- Razor Leaf
 
 Crabrawler
 Ability: Hyper Cutter
@@ -1427,14 +1416,32 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Leer
 - Dizzy Punch
 
-Venipede
-Ability: Poison Point
+Pawmi
+Ability: Static
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Screech
-- Bug Bite
+- Thunder Shock
 - Bite
-- Twineedle
+- Fake Out
+- Sweet Kiss
+
+=== TRAINER_PBL_RYAN ===
+Name: Ryan
+Class: Pokefan
+Pic: Pokefan M
+Music: Twins
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: Yes
+
+Sizzlipede
+Ability: Flash Fire
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Defense Curl
+- Bug Bite
+- Rollout
+- Bite
 
 Deerling
 Ability: Serene Grace
@@ -1445,14 +1452,23 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Feint Attack
 - Double Kick
 
-Houndour
-Ability: Flash Fire
+Stufful
+Ability: Fluffy
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Torment
-- Rage
+- Brutal Swing
+- Bide
+- Force Palm
+- Stomp
+
+Electrike
+Ability: Static
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Quick Attack
+- Spark
 - Bite
-- Fire Fang
+- Swift
 
 === TRAINER_PBL_CAITLYN ===
 Name: Caitlyn
@@ -1472,32 +1488,32 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Fake Tears
 - Covet
 
-Seel
-Ability: Thick Fat
+Pumpkaboo
+Ability: Pickup
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Ice Shard
-- Fake Out
-- Headbutt
-- Water Gun
+- Razor Leaf
+- Leech Seed
+- Disable
+- Shadow Sneak
 
-Ponyta
-Ability: Flame Body
+Trubbish
+Ability: Aftermath
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Ember
-- Quick Attack
-- Double Kick
-- Fire Spin
-
-Gulpin
-Ability: Cud Chew
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Mud Slap
-- Acid Spray
-- Stuff Cheeks
+- Double Slap
+- Rollout
 - Sludge
+- Take Down
+
+Espurr
+Ability: Own Tempo
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tickle
+- Confusion
+- Disarming Voice
+- Yawn
 
 === TRAINER_PBL_KENNETH ===
 Name: Kenneth
@@ -1526,23 +1542,23 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Disable
 - Feint Attack
 
-Rookidee
-Ability: Big Pecks
+Gulpin
+Ability: Cud Chew
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Power Trip
-- Fury Attack
-- Rock Smash
-- Pluck
+- Mud Slap
+- Acid Spray
+- Stuff Cheeks
+- Sludge
 
-Glameow
-Ability: Limber
+Munna
+Ability: Synchronize
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Charm
-- Quick Attack
-- Feint Attack
-- Fake Out
+- Lucky Chant
+- Hypnosis
+- Imprison
+- Psybeam
 
 === TRAINER_PBL_KEVIN ===
 Name: Kevin
@@ -1571,23 +1587,23 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Synthesis
 - Flail
 
-Tarountula
-Ability: Insomnia
+Nincada
+Ability: Compound Eyes
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Assurance
+- Fury Swipes
 - Bug Bite
-- Feint
-- Block
+- Mud Slap
+- Absorb
 
-Sizzlipede
-Ability: Flash Fire
+Venipede
+Ability: Poison Point
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Defense Curl
+- Screech
 - Bug Bite
-- Rollout
 - Bite
+- Twineedle
 
 === TRAINER_PBL_DECLAN_LEVIATHAN_5 ===
 Name: Declan
@@ -1598,42 +1614,6 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
-
-Trubbish
-Ability: Aftermath
-Level: 13
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sludge
-- Acid Spray
-- Poison Gas
-- Double Slap
-
-Drowzee
-Ability: Insomnia
-Level: 13
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Confusion
-- Wake-Up Slap
-- Hypnosis
-- Headbutt
-
-Bonsly
-Ability: Sturdy
-Level: 13
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rock Throw
-- Low Kick
-- Feint Attack
-- Tearful Look
-
-Blitzle
-Ability: Sap Sipper
-Level: 13
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shock Wave
-- Thunder Wave
-- Stomp
-- Quick Attack
 
 Dunsparce @ Eviolite
 Ability: Serene Grace
@@ -1653,42 +1633,6 @@ AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
-
-Trubbish @ Eviolite
-Ability: Aftermath
-Level: 13
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sludge
-- Acid Spray
-- Poison Gas
-- Double Slap
-
-Drowzee @ Eviolite
-Ability: Bad Dreams
-Level: 13
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Confusion
-- Wake-Up Slap
-- Hypnosis
-- Headbutt
-
-Bonsly @ Eviolite
-Ability: Sturdy
-Level: 13
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rock Throw
-- Low Kick
-- Feint Attack
-- Tearful Look
-
-Blitzle @ Eviolite
-Ability: Sap Sipper
-Level: 13
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shock Wave
-- Thunder Wave
-- Stomp
-- Quick Attack
 
 Dunsparce @ Eviolite
 Ability: Serene Grace
@@ -1752,32 +1696,32 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Cutiefly
-Ability: Shield Dust
+Blitzle
+Ability: Sap Sipper
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Aromatherapy
-- Struggle Bug
-- Stun Spore
-- Switcheroo
+- Thunder Wave
+- Shock Wave
+- Stomp
+- Charge
 
-Growlithe
-Ability: Intimidate
+Ponyta
+Ability: Flame Body
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bite
-- Helping Hand
+- Quick Attack
 - Double Kick
+- Fire Spin
 - Flame Wheel
 
-Slakoth
-Ability: Truant
+Mudbray
+Ability: Stamina
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Snore
-- Slash
-- Feint Attack
-- Slack Off
+- Smack Down
+- Bulldoze
+- Double Kick
+- Stomp
 
 === TRAINER_PBL_CONSTANCE ===
 Name: Constance
@@ -1842,23 +1786,23 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Synthesis
 - Razor Leaf
 
-Skiddo
-Ability: Grass Pelt
+Growlithe
+Ability: Intimidate
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Rollout
-- Leech Seed
-- Razor Leaf
-- Bulldoze
+- Bite
+- Helping Hand
+- Double Kick
+- Flame Wheel
 
-Pachirisu
-Ability: Volt Absorb
+Slakoth
+Ability: Truant
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Thunder Shock
-- Flatter
-- Spark
-- Swift
+- Snore
+- Slash
+- Feint Attack
+- Slack Off
 
 === TRAINER_PBL_DUDLEY ===
 Name: Dudley
@@ -1896,14 +1840,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Feather Dance
 - Pluck
 
-Farfetch'd
-Ability: Super Luck
+Rookidee
+Ability: Big Pecks
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Power Trip
 - Fury Attack
-- Aerial Ace
-- Quick Attack
-- Feather Dance
+- Rock Smash
+- Pluck
 
 === TRAINER_PBL_DAISY ===
 Name: Daisy
@@ -2096,16 +2040,24 @@ Double Battle: No
 Random Lead: Yes
 
 Mienfoo
+Ability: Inner Focus
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Mankey
+Ability: Vital Spirit
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Scraggy
+Meditite
+Ability: Pure Power
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Timburr
+Ability: Iron Fist
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_JAMAL ===
 Name: Jamal
@@ -2117,16 +2069,24 @@ Double Battle: No
 Random Lead: Yes
 
 Numel
+Ability: Oblivious
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Zubat
+Ability: Inner Focus
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Fomantis
+Ability: Leaf Guard
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Shellos
+Buizel
+Ability: Water Veil
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_PAIGE ===
 Name: Paige
@@ -2138,16 +2098,24 @@ Double Battle: No
 Random Lead: Yes
 
 Combee
+Ability: Honey Gather
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Exeggcute
+Ability: Chlorophyll
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Oddish
+Shroomish
+Ability: Effect Spore
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Bellsprout
+Cutiefly
+Ability: Shield Dust
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_SETH ===
 Name: Seth
@@ -2158,17 +2126,25 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Tympole
+Pachirisu
+Ability: Prankster
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Mudbray
+Teddiursa
+Ability: Quick Feet
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Aipom
+Ability: Pickup
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Shroodle
+Ability: Unburden
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_CONNIE ===
 Name: Connie
@@ -2179,11 +2155,15 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 
-Voltorb
+Oddish
+Ability: Chlorophyll
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Dewpider
+Ability: Water Bubble
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_PETER ===
 Name: Peter
@@ -2194,11 +2174,15 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 
-Teddiursa
+Bellsprout
+Ability: Chlorophyll
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Shroomish
+Surskit
+Ability: Swift Swim
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_WHITAKER ===
 Name: Whitaker
@@ -2219,13 +2203,19 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Pursuit
 
 Natu
+Ability: Magic Bounce
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Flittle
+Ability: Anticipation
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Doduo
+Farfetch'd
+Ability: Super Luck
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_BETTY_LEVIATHAN_7 ===
 Name: Betty
@@ -2302,16 +2292,24 @@ Double Battle: No
 Random Lead: Yes
 
 Noibat
+Ability: Infiltrator
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Feebas
+Ability: Swift Swim
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Beldum
+Ability: Clear Body
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Gible
+Ability: Sand Veil
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_EMILIANO ===
 Name: Emiliano
@@ -2322,17 +2320,25 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Cubone
+Aron
+Ability: Sturdy
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Roggenrola
+Ability: Sturdy
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Cufant
+Ability: Sheer Force
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Machop
+Ability: No Guard
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_BECKHAM ===
 Name: Beckham
@@ -2343,17 +2349,25 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Axew
+Slowpoke
+Ability: Own Tempo
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Bergmite
+Salandit
+Ability: Corrosion
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Helioptile
+Cubone
+Ability: Battle Armor
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Lickitung
+Ability: Unaware
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_KAREN ===
 Name: Karen
@@ -2365,7 +2379,9 @@ Double Battle: No
 Random Lead: Yes
 
 Spinda
+Ability: Contrary
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_JAYDEN ===
 Name: Jayden
@@ -2377,16 +2393,24 @@ Double Battle: No
 Random Lead: Yes
 
 Geodude
+Ability: Sturdy
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Rolycoly
+Ability: Steam Engine
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Nacli
+Ability: Purifying Salt
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Shuckle
+Ability: Solid Rock
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_NEIL ===
 Name: Neil
@@ -2398,16 +2422,24 @@ Double Battle: No
 Random Lead: Yes
 
 Rellor
+Ability: Compound Eyes
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Baltoy
+Ability: Levitate
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Yamask
+Ability: Mummy
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Klink
+Ability: Plus
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_TAMARA ===
 Name: Tamara
@@ -2418,17 +2450,25 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Salandit
+Shellos
+Ability: Storm Drain
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Woobat
+Ability: Serene Grace
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Surskit
+Drowzee
+Ability: Insomnia
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Morelull
+Rockruff
+Ability: Vital Spirit
 Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_ALISTAIR_LEVIATHAN_8 ===
 Name: Alistair
