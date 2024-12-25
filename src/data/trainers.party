@@ -1993,14 +1993,14 @@ Luvdisc @ Oran Berry
 Ability: Swift Swim
 Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
+- Chilling Water
 - Draining Kiss
 
 Lumineon @ Oran Berry
 Ability: Swift Swim
 Level: 17
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
+- Chilling Water
 - Tailwind
 
 === TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_CHALLENGE ===
@@ -2017,18 +2017,16 @@ Luvdisc @ Oran Berry
 Ability: Swift Swim
 Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
+- Chilling Water
 - Draining Kiss
 - Heal Pulse
-- Sweet Kiss
 
 Lumineon @ Oran Berry
 Ability: Swift Swim
 Level: 17
 IVs: 31 HP / 31 Atk / 31 Def / 30 SpA / 30 SpD / 31 Spe
-- Water Pulse
+- Chilling Water
 - Tailwind
-- Gust
 - Hidden Power
 /* Hidden Power Ground */
 
