@@ -30,6 +30,14 @@ script Zone5B_EventScript_LeviathanBattle {
 	lockall
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
+	msgbox(format("It sounds like someone is running down towards you. Stay where you are?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+		releaseall
+		end
+	}
+	closemessage
 	applymovement(1, Zone5B_Declan_Movement_WalkDown)
 	waitmovement(0)
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
