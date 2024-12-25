@@ -1310,7 +1310,7 @@ script EventScript_Shop_Lelouch_MoveTutor {
 		if (var(VAR_RESULT) == NO) {
 			continue
 		}
-		msgbox("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Which Pokemon should learn\n{STR_VAR_1}?", MSGBOX_DEFAULT)
+		msgbox("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Which Pokémon should learn\n{STR_VAR_1}?", MSGBOX_DEFAULT)
 		call(MoveTutor_EventScript_OpenPartyMenu)
 		if (var(VAR_RESULT) == 0) {
 			continue

@@ -6120,7 +6120,7 @@ EventScript_Shop_Lelouch_MoveTutor_Text_11:
 
 EventScript_Shop_Lelouch_MoveTutor_Text_12:
 # 1313 "data/scripts/battle_labyrinth.pory"
-	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Which Pokemon should learn\n{STR_VAR_1}?$"
+	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Which Pokémon should learn\n{STR_VAR_1}?$"
 
 EventScript_Shop_Lelouch_Other_Text_0:
 # 1331 "data/scripts/battle_labyrinth.pory"
