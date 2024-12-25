@@ -420,7 +420,7 @@
 #define FLAG_ITEM_ZONE5B_RANDOM_2                                   0x373
 #define FLAG_ITEM_ZONE5B_GEMS                                       0x374
 #define FLAG_ITEM_ZONE5B_GENTLE_MINT                                0x375
-#define FLAG_ITEM_ZONE6A_TM07                                       0x310
+#define FLAG_ITEM_ZONE6A_TM_DRAINING_KISS                           0x310
 #define FLAG_ITEM_ZONE6A_NET_BALL                                   0x311
 #define FLAG_ITEM_ZONE6A_NEST_BALL                                  0x312
 #define FLAG_ITEM_ZONE6A_GEMS                                       0x376
