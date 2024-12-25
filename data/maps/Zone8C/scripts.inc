@@ -15,7 +15,7 @@ Zone8C_MapScripts_MAP_SCRIPT_ON_RESUME_1:
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST
 Zone8C_MapScripts_MAP_SCRIPT_ON_RESUME_5:
 # 13 "data/maps/Zone8C/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8C_SUPER_POTION, Zone8C_MapScripts_MAP_SCRIPT_ON_RESUME_9
+	goto_if_set FLAG_ITEM_ZONE8C_RANDOM_1, Zone8C_MapScripts_MAP_SCRIPT_ON_RESUME_9
 # 16 "data/maps/Zone8C/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST
 	return
@@ -94,11 +94,11 @@ Zone8C_EventScript_ItemFullHeal_2:
 	end
 
 
-Zone8C_EventScript_ItemSuperPotion::
+Zone8C_EventScript_ItemRandom1::
 # 56 "data/maps/Zone8C/scripts.pory"
 	lock
 # 57 "data/maps/Zone8C/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8C_SUPER_POTION, Zone8C_EventScript_ItemSuperPotion_2
+	goto_if_set FLAG_ITEM_ZONE8C_RANDOM_1, Zone8C_EventScript_ItemRandom1_2
 # 62 "data/maps/Zone8C/scripts.pory"
 	waitse
 # 63 "data/maps/Zone8C/scripts.pory"
@@ -106,16 +106,18 @@ Zone8C_EventScript_ItemSuperPotion::
 # 64 "data/maps/Zone8C/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 65 "data/maps/Zone8C/scripts.pory"
-	setflag FLAG_ITEM_ZONE8C_SUPER_POTION
+	setflag FLAG_ITEM_ZONE8C_RANDOM_1
 # 66 "data/maps/Zone8C/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 67 "data/maps/Zone8C/scripts.pory"
-	finditem ITEM_SUPER_POTION, 1
+	specialvar VAR_TEMP_1, RandomItemChest
 # 68 "data/maps/Zone8C/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 69 "data/maps/Zone8C/scripts.pory"
 	release
 	end
 
-Zone8C_EventScript_ItemSuperPotion_2:
+Zone8C_EventScript_ItemRandom1_2:
 # 58 "data/maps/Zone8C/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 59 "data/maps/Zone8C/scripts.pory"
@@ -123,63 +125,63 @@ Zone8C_EventScript_ItemSuperPotion_2:
 	end
 
 
-# 72 "data/maps/Zone8C/scripts.pory"
-
 # 73 "data/maps/Zone8C/scripts.pory"
-Zone8C_EventScript_Neil::
+
 # 74 "data/maps/Zone8C/scripts.pory"
-       trainerbattle_single TRAINER_PBL_NEIL, Zone8C_Text_NeilIntro, Zone8C_Text_NeilDefeat
+Zone8C_EventScript_Neil::
 # 75 "data/maps/Zone8C/scripts.pory"
-       msgbox Zone8C_Text_NeilPostBattle, MSGBOX_AUTOCLOSE
+       trainerbattle_single TRAINER_PBL_NEIL, Zone8C_Text_NeilIntro, Zone8C_Text_NeilDefeat
 # 76 "data/maps/Zone8C/scripts.pory"
-       end
+       msgbox Zone8C_Text_NeilPostBattle, MSGBOX_AUTOCLOSE
 # 77 "data/maps/Zone8C/scripts.pory"
-	   
-# 78 "data/maps/Zone8C/scripts.pory"
-Zone8C_Text_NeilIntro:
-# 79 "data/maps/Zone8C/scripts.pory"
-       .string "I'm looking for another path down…$"
-# 80 "data/maps/Zone8C/scripts.pory"
-
-# 81 "data/maps/Zone8C/scripts.pory"
-Zone8C_Text_NeilDefeat:
-# 82 "data/maps/Zone8C/scripts.pory"
-       .string "But all I found is you.$"
-# 83 "data/maps/Zone8C/scripts.pory"
-
-# 84 "data/maps/Zone8C/scripts.pory"
-Zone8C_Text_NeilPostBattle:
-# 85 "data/maps/Zone8C/scripts.pory"
-       .string "Maybe it's on the other side\n"
-# 86 "data/maps/Zone8C/scripts.pory"
-       .string "of the mountain?$"
-# 87 "data/maps/Zone8C/scripts.pory"
-
-# 88 "data/maps/Zone8C/scripts.pory"
-Zone8C_EventScript_Tamara::
-# 89 "data/maps/Zone8C/scripts.pory"
-       trainerbattle_single TRAINER_PBL_TAMARA, Zone8C_Text_TamaraIntro, Zone8C_Text_TamaraDefeat
-# 90 "data/maps/Zone8C/scripts.pory"
-       msgbox Zone8C_Text_TamaraPostBattle, MSGBOX_AUTOCLOSE
-# 91 "data/maps/Zone8C/scripts.pory"
        end
+# 78 "data/maps/Zone8C/scripts.pory"
+	   
+# 79 "data/maps/Zone8C/scripts.pory"
+Zone8C_Text_NeilIntro:
+# 80 "data/maps/Zone8C/scripts.pory"
+       .string "I'm looking for another path down…$"
+# 81 "data/maps/Zone8C/scripts.pory"
+
+# 82 "data/maps/Zone8C/scripts.pory"
+Zone8C_Text_NeilDefeat:
+# 83 "data/maps/Zone8C/scripts.pory"
+       .string "But all I found is you.$"
+# 84 "data/maps/Zone8C/scripts.pory"
+
+# 85 "data/maps/Zone8C/scripts.pory"
+Zone8C_Text_NeilPostBattle:
+# 86 "data/maps/Zone8C/scripts.pory"
+       .string "Maybe it's on the other side\n"
+# 87 "data/maps/Zone8C/scripts.pory"
+       .string "of the mountain?$"
+# 88 "data/maps/Zone8C/scripts.pory"
+
+# 89 "data/maps/Zone8C/scripts.pory"
+Zone8C_EventScript_Tamara::
+# 90 "data/maps/Zone8C/scripts.pory"
+       trainerbattle_single TRAINER_PBL_TAMARA, Zone8C_Text_TamaraIntro, Zone8C_Text_TamaraDefeat
+# 91 "data/maps/Zone8C/scripts.pory"
+       msgbox Zone8C_Text_TamaraPostBattle, MSGBOX_AUTOCLOSE
 # 92 "data/maps/Zone8C/scripts.pory"
-
+       end
 # 93 "data/maps/Zone8C/scripts.pory"
-Zone8C_Text_TamaraIntro:
+
 # 94 "data/maps/Zone8C/scripts.pory"
-	.string "If I win, you have to lead me out of here!$"
+Zone8C_Text_TamaraIntro:
 # 95 "data/maps/Zone8C/scripts.pory"
-
+	.string "If I win, you have to lead me out of here!$"
 # 96 "data/maps/Zone8C/scripts.pory"
-Zone8C_Text_TamaraDefeat:
-# 97 "data/maps/Zone8C/scripts.pory"
-	.string "Wahhhhh!!!$"
-# 98 "data/maps/Zone8C/scripts.pory"
 
+# 97 "data/maps/Zone8C/scripts.pory"
+Zone8C_Text_TamaraDefeat:
+# 98 "data/maps/Zone8C/scripts.pory"
+	.string "Wahhhhh!!!$"
 # 99 "data/maps/Zone8C/scripts.pory"
-Zone8C_Text_TamaraPostBattle:
+
 # 100 "data/maps/Zone8C/scripts.pory"
-	.string "It's my destiny to wander this cave\n"
+Zone8C_Text_TamaraPostBattle:
 # 101 "data/maps/Zone8C/scripts.pory"
+	.string "It's my destiny to wander this cave\n"
+# 102 "data/maps/Zone8C/scripts.pory"
 	.string "forever…$"

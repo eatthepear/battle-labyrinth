@@ -10,7 +10,7 @@ Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME:
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST
 Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_1:
 # 8 "data/maps/Zone7A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE7A_POTION_X2, Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_6
+	goto_if_set FLAG_ITEM_ZONE7A_RANDOM_1, Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_6
 # 11 "data/maps/Zone7A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST
 Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_5:
@@ -30,12 +30,12 @@ Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_13:
 	setvar VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST
 Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_17:
 # 28 "data/maps/Zone7A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE7A_SUPER_POTION, Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_22
+	goto_if_set FLAG_ITEM_ZONE7A_RANDOM_2, Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_22
 # 31 "data/maps/Zone7A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_ITEM_CHEST
 Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_21:
 # 33 "data/maps/Zone7A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE7A_GREAT_BALL, Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_25
+	goto_if_set FLAG_ITEM_ZONE7A_RANDOM_3, Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_25
 # 36 "data/maps/Zone7A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_6, OBJ_EVENT_GFX_ITEM_CHEST
 	return
@@ -352,11 +352,11 @@ Zone7A_EventScript_ItemSharpBeak_2:
 	end
 
 
-Zone7A_EventScript_ItemPotion2::
+Zone7A_EventScript_ItemRandom1::
 # 178 "data/maps/Zone7A/scripts.pory"
 	lock
 # 179 "data/maps/Zone7A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE7A_POTION_X2, Zone7A_EventScript_ItemPotion2_2
+	goto_if_set FLAG_ITEM_ZONE7A_RANDOM_1, Zone7A_EventScript_ItemRandom1_2
 # 184 "data/maps/Zone7A/scripts.pory"
 	waitse
 # 185 "data/maps/Zone7A/scripts.pory"
@@ -364,16 +364,18 @@ Zone7A_EventScript_ItemPotion2::
 # 186 "data/maps/Zone7A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 187 "data/maps/Zone7A/scripts.pory"
-	setflag FLAG_ITEM_ZONE7A_POTION_X2
+	setflag FLAG_ITEM_ZONE7A_RANDOM_1
 # 188 "data/maps/Zone7A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 189 "data/maps/Zone7A/scripts.pory"
-	finditem ITEM_POTION, 2
+	specialvar VAR_TEMP_1, RandomItemChest
 # 190 "data/maps/Zone7A/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 191 "data/maps/Zone7A/scripts.pory"
 	release
 	end
 
-Zone7A_EventScript_ItemPotion2_2:
+Zone7A_EventScript_ItemRandom1_2:
 # 180 "data/maps/Zone7A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 181 "data/maps/Zone7A/scripts.pory"
@@ -382,385 +384,391 @@ Zone7A_EventScript_ItemPotion2_2:
 
 
 Zone7A_EventScript_ItemGems::
-# 195 "data/maps/Zone7A/scripts.pory"
-	lock
 # 196 "data/maps/Zone7A/scripts.pory"
+	lock
+# 197 "data/maps/Zone7A/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE7A_GEMS, Zone7A_EventScript_ItemGems_2
-# 201 "data/maps/Zone7A/scripts.pory"
-	waitse
 # 202 "data/maps/Zone7A/scripts.pory"
-	removeobject VAR_LAST_TALKED
+	waitse
 # 203 "data/maps/Zone7A/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
+	removeobject VAR_LAST_TALKED
 # 204 "data/maps/Zone7A/scripts.pory"
-	setflag FLAG_ITEM_ZONE7A_GEMS
+	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 205 "data/maps/Zone7A/scripts.pory"
-	addobject VAR_LAST_TALKED
+	setflag FLAG_ITEM_ZONE7A_GEMS
 # 206 "data/maps/Zone7A/scripts.pory"
-	finditem ITEM_ROCK_GEM
+	addobject VAR_LAST_TALKED
 # 207 "data/maps/Zone7A/scripts.pory"
-	finditem ITEM_FIGHTING_GEM
+	finditem ITEM_ROCK_GEM
 # 208 "data/maps/Zone7A/scripts.pory"
-	finditem ITEM_PSYCHIC_GEM
+	finditem ITEM_FIGHTING_GEM
 # 209 "data/maps/Zone7A/scripts.pory"
+	finditem ITEM_PSYCHIC_GEM
+# 210 "data/maps/Zone7A/scripts.pory"
 	release
 	end
 
 Zone7A_EventScript_ItemGems_2:
-# 197 "data/maps/Zone7A/scripts.pory"
-	msgbox gText_ItemChestIsEmpty
 # 198 "data/maps/Zone7A/scripts.pory"
+	msgbox gText_ItemChestIsEmpty
+# 199 "data/maps/Zone7A/scripts.pory"
 	release
 	end
 
 
 Zone7A_EventScript_ItemSeriousMint::
-# 214 "data/maps/Zone7A/scripts.pory"
-	lock
 # 215 "data/maps/Zone7A/scripts.pory"
+	lock
+# 216 "data/maps/Zone7A/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE7A_SERIOUS_MINT, Zone7A_EventScript_ItemSeriousMint_2
-# 220 "data/maps/Zone7A/scripts.pory"
-	waitse
 # 221 "data/maps/Zone7A/scripts.pory"
-	removeobject VAR_LAST_TALKED
+	waitse
 # 222 "data/maps/Zone7A/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
+	removeobject VAR_LAST_TALKED
 # 223 "data/maps/Zone7A/scripts.pory"
-	setflag FLAG_ITEM_ZONE7A_SERIOUS_MINT
+	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 224 "data/maps/Zone7A/scripts.pory"
-	addobject VAR_LAST_TALKED
+	setflag FLAG_ITEM_ZONE7A_SERIOUS_MINT
 # 225 "data/maps/Zone7A/scripts.pory"
-	finditem ITEM_SERIOUS_MINT, 1
+	addobject VAR_LAST_TALKED
 # 226 "data/maps/Zone7A/scripts.pory"
+	specialvar VAR_TEMP_1, RandomItemChest
+# 227 "data/maps/Zone7A/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 228 "data/maps/Zone7A/scripts.pory"
 	release
 	end
 
 Zone7A_EventScript_ItemSeriousMint_2:
-# 216 "data/maps/Zone7A/scripts.pory"
-	msgbox gText_ItemChestIsEmpty
 # 217 "data/maps/Zone7A/scripts.pory"
+	msgbox gText_ItemChestIsEmpty
+# 218 "data/maps/Zone7A/scripts.pory"
 	release
 	end
 
 
 Zone7A_EventScript_ItemBlackBelt::
-# 231 "data/maps/Zone7A/scripts.pory"
+# 233 "data/maps/Zone7A/scripts.pory"
 	lock
-# 232 "data/maps/Zone7A/scripts.pory"
+# 234 "data/maps/Zone7A/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE7A_BLACK_BELT, Zone7A_EventScript_ItemBlackBelt_2
-# 237 "data/maps/Zone7A/scripts.pory"
-	waitse
-# 238 "data/maps/Zone7A/scripts.pory"
-	removeobject VAR_LAST_TALKED
 # 239 "data/maps/Zone7A/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
+	waitse
 # 240 "data/maps/Zone7A/scripts.pory"
-	setflag FLAG_ITEM_ZONE7A_BLACK_BELT
+	removeobject VAR_LAST_TALKED
 # 241 "data/maps/Zone7A/scripts.pory"
-	addobject VAR_LAST_TALKED
+	setvar VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 242 "data/maps/Zone7A/scripts.pory"
-	finditem ITEM_BLACK_BELT, 1
+	setflag FLAG_ITEM_ZONE7A_BLACK_BELT
 # 243 "data/maps/Zone7A/scripts.pory"
+	addobject VAR_LAST_TALKED
+# 244 "data/maps/Zone7A/scripts.pory"
+	finditem ITEM_BLACK_BELT, 1
+# 245 "data/maps/Zone7A/scripts.pory"
 	release
 	end
 
 Zone7A_EventScript_ItemBlackBelt_2:
-# 233 "data/maps/Zone7A/scripts.pory"
+# 235 "data/maps/Zone7A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 234 "data/maps/Zone7A/scripts.pory"
+# 236 "data/maps/Zone7A/scripts.pory"
 	release
 	end
 
 
-Zone7A_EventScript_ItemSuperPotion::
-# 248 "data/maps/Zone7A/scripts.pory"
-	lock
-# 249 "data/maps/Zone7A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE7A_SUPER_POTION, Zone7A_EventScript_ItemSuperPotion_2
-# 254 "data/maps/Zone7A/scripts.pory"
-	waitse
-# 255 "data/maps/Zone7A/scripts.pory"
-	removeobject VAR_LAST_TALKED
-# 256 "data/maps/Zone7A/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 257 "data/maps/Zone7A/scripts.pory"
-	setflag FLAG_ITEM_ZONE7A_SUPER_POTION
-# 258 "data/maps/Zone7A/scripts.pory"
-	addobject VAR_LAST_TALKED
-# 259 "data/maps/Zone7A/scripts.pory"
-	finditem ITEM_SUPER_POTION, 1
-# 260 "data/maps/Zone7A/scripts.pory"
-	release
-	end
-
-Zone7A_EventScript_ItemSuperPotion_2:
+Zone7A_EventScript_ItemRandom2::
 # 250 "data/maps/Zone7A/scripts.pory"
-	msgbox gText_ItemChestIsEmpty
-# 251 "data/maps/Zone7A/scripts.pory"
-	release
-	end
-
-
-Zone7A_EventScript_ItemGreatBall::
-# 265 "data/maps/Zone7A/scripts.pory"
 	lock
-# 266 "data/maps/Zone7A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE7A_GREAT_BALL, Zone7A_EventScript_ItemGreatBall_2
-# 271 "data/maps/Zone7A/scripts.pory"
+# 251 "data/maps/Zone7A/scripts.pory"
+	goto_if_set FLAG_ITEM_ZONE7A_RANDOM_2, Zone7A_EventScript_ItemRandom2_2
+# 256 "data/maps/Zone7A/scripts.pory"
 	waitse
-# 272 "data/maps/Zone7A/scripts.pory"
+# 257 "data/maps/Zone7A/scripts.pory"
 	removeobject VAR_LAST_TALKED
-# 273 "data/maps/Zone7A/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_6, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 274 "data/maps/Zone7A/scripts.pory"
-	setflag FLAG_ITEM_ZONE7A_GREAT_BALL
-# 275 "data/maps/Zone7A/scripts.pory"
+# 258 "data/maps/Zone7A/scripts.pory"
+	setvar VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
+# 259 "data/maps/Zone7A/scripts.pory"
+	setflag FLAG_ITEM_ZONE7A_RANDOM_2
+# 260 "data/maps/Zone7A/scripts.pory"
 	addobject VAR_LAST_TALKED
-# 276 "data/maps/Zone7A/scripts.pory"
-	finditem ITEM_GREAT_BALL, 1
-# 277 "data/maps/Zone7A/scripts.pory"
+# 261 "data/maps/Zone7A/scripts.pory"
+	specialvar VAR_TEMP_1, RandomItemChest
+# 262 "data/maps/Zone7A/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 263 "data/maps/Zone7A/scripts.pory"
 	release
 	end
 
-Zone7A_EventScript_ItemGreatBall_2:
-# 267 "data/maps/Zone7A/scripts.pory"
+Zone7A_EventScript_ItemRandom2_2:
+# 252 "data/maps/Zone7A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
+# 253 "data/maps/Zone7A/scripts.pory"
+	release
+	end
+
+
+Zone7A_EventScript_ItemRandom3::
 # 268 "data/maps/Zone7A/scripts.pory"
+	lock
+# 269 "data/maps/Zone7A/scripts.pory"
+	goto_if_set FLAG_ITEM_ZONE7A_RANDOM_3, Zone7A_EventScript_ItemRandom3_2
+# 274 "data/maps/Zone7A/scripts.pory"
+	waitse
+# 275 "data/maps/Zone7A/scripts.pory"
+	removeobject VAR_LAST_TALKED
+# 276 "data/maps/Zone7A/scripts.pory"
+	setvar VAR_OBJ_GFX_ID_6, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
+# 277 "data/maps/Zone7A/scripts.pory"
+	setflag FLAG_ITEM_ZONE7A_RANDOM_3
+# 278 "data/maps/Zone7A/scripts.pory"
+	addobject VAR_LAST_TALKED
+# 279 "data/maps/Zone7A/scripts.pory"
+	specialvar VAR_TEMP_1, RandomItemChest
+# 280 "data/maps/Zone7A/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 281 "data/maps/Zone7A/scripts.pory"
+	release
+	end
+
+Zone7A_EventScript_ItemRandom3_2:
+# 270 "data/maps/Zone7A/scripts.pory"
+	msgbox gText_ItemChestIsEmpty
+# 271 "data/maps/Zone7A/scripts.pory"
 	release
 	end
 
 
 Zone7A_EventScript_Sign::
-# 282 "data/maps/Zone7A/scripts.pory"
+# 286 "data/maps/Zone7A/scripts.pory"
 	msgbox Zone7A_EventScript_Sign_Text_0, MSGBOX_SIGN
 	end
 
 
-# 286 "data/maps/Zone7A/scripts.pory"
-
-# 287 "data/maps/Zone7A/scripts.pory"
-
-# 288 "data/maps/Zone7A/scripts.pory"
-Zone7A_EventScript_Millie::
-# 289 "data/maps/Zone7A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_MILLIE, Zone7A_Text_MillieIntro, Zone7A_Text_MillieDefeat
 # 290 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_Text_MilliePostBattle, MSGBOX_AUTOCLOSE
-# 291 "data/maps/Zone7A/scripts.pory"
-	end
-# 292 "data/maps/Zone7A/scripts.pory"
 
+# 291 "data/maps/Zone7A/scripts.pory"
+
+# 292 "data/maps/Zone7A/scripts.pory"
+Zone7A_EventScript_Millie::
 # 293 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_MillieIntro:
+	trainerbattle_single TRAINER_PBL_MILLIE, Zone7A_Text_MillieIntro, Zone7A_Text_MillieDefeat
 # 294 "data/maps/Zone7A/scripts.pory"
-	.string "At the base of this mountain,\n"
+	msgbox Zone7A_Text_MilliePostBattle, MSGBOX_AUTOCLOSE
 # 295 "data/maps/Zone7A/scripts.pory"
-	.string "is a perfect spot for battle!$"
+	end
 # 296 "data/maps/Zone7A/scripts.pory"
 
 # 297 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_MillieDefeat:
+Zone7A_Text_MillieIntro:
 # 298 "data/maps/Zone7A/scripts.pory"
-	.string "This spot is now tainted, by\n"
+	.string "At the base of this mountain,\n"
 # 299 "data/maps/Zone7A/scripts.pory"
-	.string "my defeat!$"
+	.string "is a perfect spot for battle!$"
 # 300 "data/maps/Zone7A/scripts.pory"
 
 # 301 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_MilliePostBattle:
+Zone7A_Text_MillieDefeat:
 # 302 "data/maps/Zone7A/scripts.pory"
-	.string "It's a good spot for resting too!$"
+	.string "This spot is now tainted, by\n"
 # 303 "data/maps/Zone7A/scripts.pory"
-
+	.string "my defeat!$"
 # 304 "data/maps/Zone7A/scripts.pory"
-Zone7A_EventScript_Jamal::
-# 305 "data/maps/Zone7A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_JAMAL, Zone7A_Text_JamalIntro, Zone7A_Text_JamalDefeat
-# 306 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_Text_JamalPostBattle, MSGBOX_AUTOCLOSE
-# 307 "data/maps/Zone7A/scripts.pory"
-	end
-# 308 "data/maps/Zone7A/scripts.pory"
 
+# 305 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_MilliePostBattle:
+# 306 "data/maps/Zone7A/scripts.pory"
+	.string "It's a good spot for resting too!$"
+# 307 "data/maps/Zone7A/scripts.pory"
+
+# 308 "data/maps/Zone7A/scripts.pory"
+Zone7A_EventScript_Jamal::
 # 309 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_JamalIntro:
+	trainerbattle_single TRAINER_PBL_JAMAL, Zone7A_Text_JamalIntro, Zone7A_Text_JamalDefeat
 # 310 "data/maps/Zone7A/scripts.pory"
-	.string "Valleys like these are simply,\n"
+	msgbox Zone7A_Text_JamalPostBattle, MSGBOX_AUTOCLOSE
 # 311 "data/maps/Zone7A/scripts.pory"
-	.string "succintly, superb!$"
+	end
 # 312 "data/maps/Zone7A/scripts.pory"
 
 # 313 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_JamalDefeat:
+Zone7A_Text_JamalIntro:
 # 314 "data/maps/Zone7A/scripts.pory"
-	.string "I don't like this valley anymore!$"
+	.string "Valleys like these are simply,\n"
 # 315 "data/maps/Zone7A/scripts.pory"
-
+	.string "succintly, superb!$"
 # 316 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_JamalPostBattle:
+
 # 317 "data/maps/Zone7A/scripts.pory"
-	.string "How can I like a place that I've\n"
+Zone7A_Text_JamalDefeat:
 # 318 "data/maps/Zone7A/scripts.pory"
-	.string "lost at?$"
+	.string "I don't like this valley anymore!$"
 # 319 "data/maps/Zone7A/scripts.pory"
 
 # 320 "data/maps/Zone7A/scripts.pory"
-Zone7A_EventScript_Paige::
+Zone7A_Text_JamalPostBattle:
 # 321 "data/maps/Zone7A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_PAIGE, Zone7A_Text_PaigeIntro, Zone7A_Text_PaigeDefeat
+	.string "How can I like a place that I've\n"
 # 322 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_Text_PaigePostBattle, MSGBOX_AUTOCLOSE
+	.string "lost at?$"
 # 323 "data/maps/Zone7A/scripts.pory"
-	end
+
 # 324 "data/maps/Zone7A/scripts.pory"
-
+Zone7A_EventScript_Paige::
 # 325 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_PaigeIntro:
+	trainerbattle_single TRAINER_PBL_PAIGE, Zone7A_Text_PaigeIntro, Zone7A_Text_PaigeDefeat
 # 326 "data/maps/Zone7A/scripts.pory"
-	.string "My son ran up the steps so fast!$"
+	msgbox Zone7A_Text_PaigePostBattle, MSGBOX_AUTOCLOSE
 # 327 "data/maps/Zone7A/scripts.pory"
-
-# 328 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_PaigeDefeat:
-# 329 "data/maps/Zone7A/scripts.pory"
-	.string "I just can't keep up!$"
-# 330 "data/maps/Zone7A/scripts.pory"
-
-# 331 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_PaigePostBattle:
-# 332 "data/maps/Zone7A/scripts.pory"
-	.string "Maybe I'll rest in the rest house…$"
-# 333 "data/maps/Zone7A/scripts.pory"
-
-# 334 "data/maps/Zone7A/scripts.pory"
-Zone7A_EventScript_Seth::
-# 335 "data/maps/Zone7A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_SETH, Zone7A_Text_SethIntro, Zone7A_Text_SethDefeat
-# 336 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_Text_SethPostBattle, MSGBOX_AUTOCLOSE
-# 337 "data/maps/Zone7A/scripts.pory"
 	end
+# 328 "data/maps/Zone7A/scripts.pory"
+
+# 329 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_PaigeIntro:
+# 330 "data/maps/Zone7A/scripts.pory"
+	.string "My son ran up the steps so fast!$"
+# 331 "data/maps/Zone7A/scripts.pory"
+
+# 332 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_PaigeDefeat:
+# 333 "data/maps/Zone7A/scripts.pory"
+	.string "I just can't keep up!$"
+# 334 "data/maps/Zone7A/scripts.pory"
+
+# 335 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_PaigePostBattle:
+# 336 "data/maps/Zone7A/scripts.pory"
+	.string "Maybe I'll rest in the rest house…$"
+# 337 "data/maps/Zone7A/scripts.pory"
+
 # 338 "data/maps/Zone7A/scripts.pory"
-
+Zone7A_EventScript_Seth::
 # 339 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_SethIntro:
+	trainerbattle_single TRAINER_PBL_SETH, Zone7A_Text_SethIntro, Zone7A_Text_SethDefeat
 # 340 "data/maps/Zone7A/scripts.pory"
-	.string "Momma! You're too slow!$"
+	msgbox Zone7A_Text_SethPostBattle, MSGBOX_AUTOCLOSE
 # 341 "data/maps/Zone7A/scripts.pory"
-
+	end
 # 342 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_SethDefeat:
-# 343 "data/maps/Zone7A/scripts.pory"
-	.string "I wasn't fast enough!$"
-# 344 "data/maps/Zone7A/scripts.pory"
 
+# 343 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_SethIntro:
+# 344 "data/maps/Zone7A/scripts.pory"
+	.string "Momma! You're too slow!$"
 # 345 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_SethPostBattle:
+
 # 346 "data/maps/Zone7A/scripts.pory"
-	.string "I'm all out of energy…\n"
+Zone7A_Text_SethDefeat:
 # 347 "data/maps/Zone7A/scripts.pory"
-	.string "Snack time!$"
+	.string "I wasn't fast enough!$"
 # 348 "data/maps/Zone7A/scripts.pory"
 
 # 349 "data/maps/Zone7A/scripts.pory"
-Zone7A_EventScript_Connie::
+Zone7A_Text_SethPostBattle:
 # 350 "data/maps/Zone7A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_CONNIE, Zone7A_Text_ConnieIntro, Zone7A_Text_ConnieDefeat
+	.string "I'm all out of energy…\n"
 # 351 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_Text_ConniePostBattle, MSGBOX_AUTOCLOSE
+	.string "Snack time!$"
 # 352 "data/maps/Zone7A/scripts.pory"
-	end
+
 # 353 "data/maps/Zone7A/scripts.pory"
-
+Zone7A_EventScript_Connie::
 # 354 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_ConnieIntro:
+	trainerbattle_single TRAINER_PBL_CONNIE, Zone7A_Text_ConnieIntro, Zone7A_Text_ConnieDefeat
 # 355 "data/maps/Zone7A/scripts.pory"
-	.string "You've been double teamed!$"
+	msgbox Zone7A_Text_ConniePostBattle, MSGBOX_AUTOCLOSE
 # 356 "data/maps/Zone7A/scripts.pory"
-
+	end
 # 357 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_ConnieDefeat:
+
 # 358 "data/maps/Zone7A/scripts.pory"
-	.string "Shoot! My bad!$"
+Zone7A_Text_ConnieIntro:
 # 359 "data/maps/Zone7A/scripts.pory"
-
+	.string "You've been double teamed!$"
 # 360 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_ConniePostBattle:
+
 # 361 "data/maps/Zone7A/scripts.pory"
-	.string "We're working on our strategy!$"
+Zone7A_Text_ConnieDefeat:
 # 362 "data/maps/Zone7A/scripts.pory"
-
+	.string "Shoot! My bad!$"
 # 363 "data/maps/Zone7A/scripts.pory"
-Zone7A_EventScript_Peter::
+
 # 364 "data/maps/Zone7A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_PETER, Zone7A_Text_PeterIntro, Zone7A_Text_PeterDefeat
+Zone7A_Text_ConniePostBattle:
 # 365 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_Text_PeterPostBattle, MSGBOX_AUTOCLOSE
+	.string "We're working on our strategy!$"
 # 366 "data/maps/Zone7A/scripts.pory"
-	end
+
 # 367 "data/maps/Zone7A/scripts.pory"
-
+Zone7A_EventScript_Peter::
 # 368 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_PeterIntro:
+	trainerbattle_single TRAINER_PBL_PETER, Zone7A_Text_PeterIntro, Zone7A_Text_PeterDefeat
 # 369 "data/maps/Zone7A/scripts.pory"
-	.string "Together we're unstoppable!$"
+	msgbox Zone7A_Text_PeterPostBattle, MSGBOX_AUTOCLOSE
 # 370 "data/maps/Zone7A/scripts.pory"
-
-# 371 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_PeterDefeat:
-# 372 "data/maps/Zone7A/scripts.pory"
-	.string "Darn! My mistake!$"
-# 373 "data/maps/Zone7A/scripts.pory"
-
-# 374 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_PeterPostBattle:
-# 375 "data/maps/Zone7A/scripts.pory"
-	.string "We're trying our best!$"
-# 376 "data/maps/Zone7A/scripts.pory"
-
-# 377 "data/maps/Zone7A/scripts.pory"
-Zone7A_EventScript_Whitaker::
-# 378 "data/maps/Zone7A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_WHITAKER, Zone7A_Text_WhitakerIntro, Zone7A_Text_WhitakerDefeat
-# 379 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_Text_WhitakerPostBattle, MSGBOX_AUTOCLOSE
-# 380 "data/maps/Zone7A/scripts.pory"
 	end
-# 381 "data/maps/Zone7A/scripts.pory"
+# 371 "data/maps/Zone7A/scripts.pory"
 
+# 372 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_PeterIntro:
+# 373 "data/maps/Zone7A/scripts.pory"
+	.string "Together we're unstoppable!$"
+# 374 "data/maps/Zone7A/scripts.pory"
+
+# 375 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_PeterDefeat:
+# 376 "data/maps/Zone7A/scripts.pory"
+	.string "Darn! My mistake!$"
+# 377 "data/maps/Zone7A/scripts.pory"
+
+# 378 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_PeterPostBattle:
+# 379 "data/maps/Zone7A/scripts.pory"
+	.string "We're trying our best!$"
+# 380 "data/maps/Zone7A/scripts.pory"
+
+# 381 "data/maps/Zone7A/scripts.pory"
+Zone7A_EventScript_Whitaker::
 # 382 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_WhitakerIntro:
+	trainerbattle_single TRAINER_PBL_WHITAKER, Zone7A_Text_WhitakerIntro, Zone7A_Text_WhitakerDefeat
 # 383 "data/maps/Zone7A/scripts.pory"
-	.string "Can you feel the breeze?\n"
+	msgbox Zone7A_Text_WhitakerPostBattle, MSGBOX_AUTOCLOSE
 # 384 "data/maps/Zone7A/scripts.pory"
-	.string "My birds have never been stronger!$"
+	end
 # 385 "data/maps/Zone7A/scripts.pory"
 
 # 386 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_WhitakerDefeat:
+Zone7A_Text_WhitakerIntro:
 # 387 "data/maps/Zone7A/scripts.pory"
-	.string "Um… Rematch?$"
+	.string "Can you feel the breeze?\n"
 # 388 "data/maps/Zone7A/scripts.pory"
-
+	.string "My birds have never been stronger!$"
 # 389 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_WhitakerPostBattle:
+
 # 390 "data/maps/Zone7A/scripts.pory"
-	.string "My birds need some time to sleep\n"
+Zone7A_Text_WhitakerDefeat:
 # 391 "data/maps/Zone7A/scripts.pory"
-	.string "in their nests!$"
+	.string "Um… Rematch?$"
 # 392 "data/maps/Zone7A/scripts.pory"
 
 # 393 "data/maps/Zone7A/scripts.pory"
-Zone7A_EventScript_HealSign::
+Zone7A_Text_WhitakerPostBattle:
 # 394 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_Text_HealSign, MSGBOX_SIGN
+	.string "My birds need some time to sleep\n"
 # 395 "data/maps/Zone7A/scripts.pory"
-	end
+	.string "in their nests!$"
 # 396 "data/maps/Zone7A/scripts.pory"
 
 # 397 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_HealSign:
+Zone7A_EventScript_HealSign::
 # 398 "data/maps/Zone7A/scripts.pory"
+	msgbox Zone7A_Text_HealSign, MSGBOX_SIGN
+# 399 "data/maps/Zone7A/scripts.pory"
+	end
+# 400 "data/maps/Zone7A/scripts.pory"
+
+# 401 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_HealSign:
+# 402 "data/maps/Zone7A/scripts.pory"
 	.string "A stop for weary travelers.$"
 
 Zone7A_EventScript_Beauty_Text_0:
@@ -860,7 +868,7 @@ Zone7A_EventScript_FangsTutor_Text_11:
 	.string "{PLAYER} paid ¥1000.$"
 
 Zone7A_EventScript_Sign_Text_0:
-# 282 "data/maps/Zone7A/scripts.pory"
+# 286 "data/maps/Zone7A/scripts.pory"
 	.string "Trainer Tips\p"
 	.string "You can change the music you hear in\n"
 	.string "battle by speaking to Colress!$"
