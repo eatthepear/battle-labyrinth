@@ -856,84 +856,86 @@ Zone5B_EventScript_Clinton::
 # 404 "data/maps/Zone5B/scripts.pory"
 Zone5B_Text_ClintonIntro:
 # 405 "data/maps/Zone5B/scripts.pory"
-	.string "Supposedly, item chests that are\n"
+	.string "I've had my Pokémon specially\n"
 # 406 "data/maps/Zone5B/scripts.pory"
-	.string "tinted yellow hold special items.$"
+	.string "imported from rare habitats!$"
 # 407 "data/maps/Zone5B/scripts.pory"
 
 # 408 "data/maps/Zone5B/scripts.pory"
 Zone5B_Text_ClintonDefeat:
 # 409 "data/maps/Zone5B/scripts.pory"
-	.string "I don't bother checking them\n"
+	.string "Um… I thought they were\n"
 # 410 "data/maps/Zone5B/scripts.pory"
-	.string "though!$"
+	.string "supposed to be strong!$"
 # 411 "data/maps/Zone5B/scripts.pory"
 
 # 412 "data/maps/Zone5B/scripts.pory"
 Zone5B_Text_ClintonPostBattle:
 # 413 "data/maps/Zone5B/scripts.pory"
-	.string "I can buy all the TMs I want!\n"
+	.string "I suppose just because a\n"
 # 414 "data/maps/Zone5B/scripts.pory"
-	.string "I don't need any item chests!$"
+	.string "Pokémon is rare, doesn't\l"
 # 415 "data/maps/Zone5B/scripts.pory"
-
+	.string "mean it's strong!$"
 # 416 "data/maps/Zone5B/scripts.pory"
-Zone5B_EventScript_Ryan::
+
 # 417 "data/maps/Zone5B/scripts.pory"
-	trainerbattle_single TRAINER_PBL_RYAN, Zone5B_Text_RyanIntro, Zone5B_Text_RyanDefeat
+Zone5B_EventScript_Ryan::
 # 418 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_Text_RyanPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_PBL_RYAN, Zone5B_Text_RyanIntro, Zone5B_Text_RyanDefeat
 # 419 "data/maps/Zone5B/scripts.pory"
-	end
+	msgbox Zone5B_Text_RyanPostBattle, MSGBOX_AUTOCLOSE
 # 420 "data/maps/Zone5B/scripts.pory"
-
-# 421 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_RyanIntro:
-# 422 "data/maps/Zone5B/scripts.pory"
-	.string "Where am I?\n"
-# 423 "data/maps/Zone5B/scripts.pory"
-	.string "Ah! A wild Pokémon!$"
-# 424 "data/maps/Zone5B/scripts.pory"
-
-# 425 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_RyanDefeat:
-# 426 "data/maps/Zone5B/scripts.pory"
-	.string "Sorry! I thought you were a\n"
-# 427 "data/maps/Zone5B/scripts.pory"
-	.string "Pokémon!$"
-# 428 "data/maps/Zone5B/scripts.pory"
-
-# 429 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_RyanPostBattle:
-# 430 "data/maps/Zone5B/scripts.pory"
-	.string "This grass is just too tall to see!$"
-# 431 "data/maps/Zone5B/scripts.pory"
-
-# 432 "data/maps/Zone5B/scripts.pory"
-Zone5B_EventScript_Kenneth::
-# 433 "data/maps/Zone5B/scripts.pory"
-	trainerbattle_single TRAINER_PBL_KENNETH, Zone5B_Text_KennethIntro, Zone5B_Text_KennethDefeat
-# 434 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_Text_KennethPostBattle, MSGBOX_AUTOCLOSE
-# 435 "data/maps/Zone5B/scripts.pory"
 	end
+# 421 "data/maps/Zone5B/scripts.pory"
+
+# 422 "data/maps/Zone5B/scripts.pory"
+Zone5B_Text_RyanIntro:
+# 423 "data/maps/Zone5B/scripts.pory"
+	.string "Where am I?\n"
+# 424 "data/maps/Zone5B/scripts.pory"
+	.string "Ah! A wild Pokémon!$"
+# 425 "data/maps/Zone5B/scripts.pory"
+
+# 426 "data/maps/Zone5B/scripts.pory"
+Zone5B_Text_RyanDefeat:
+# 427 "data/maps/Zone5B/scripts.pory"
+	.string "Sorry! I thought you were a\n"
+# 428 "data/maps/Zone5B/scripts.pory"
+	.string "Pokémon!$"
+# 429 "data/maps/Zone5B/scripts.pory"
+
+# 430 "data/maps/Zone5B/scripts.pory"
+Zone5B_Text_RyanPostBattle:
+# 431 "data/maps/Zone5B/scripts.pory"
+	.string "This grass is just too tall to see!$"
+# 432 "data/maps/Zone5B/scripts.pory"
+
+# 433 "data/maps/Zone5B/scripts.pory"
+Zone5B_EventScript_Kenneth::
+# 434 "data/maps/Zone5B/scripts.pory"
+	trainerbattle_single TRAINER_PBL_KENNETH, Zone5B_Text_KennethIntro, Zone5B_Text_KennethDefeat
+# 435 "data/maps/Zone5B/scripts.pory"
+	msgbox Zone5B_Text_KennethPostBattle, MSGBOX_AUTOCLOSE
 # 436 "data/maps/Zone5B/scripts.pory"
-
+	end
 # 437 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_KennethIntro:
+
 # 438 "data/maps/Zone5B/scripts.pory"
-	.string "I'm running back and forth! Huzzah!$"
+Zone5B_Text_KennethIntro:
 # 439 "data/maps/Zone5B/scripts.pory"
-
+	.string "I'm running back and forth! Huzzah!$"
 # 440 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_KennethDefeat:
-# 441 "data/maps/Zone5B/scripts.pory"
-	.string "Whew! I'm all out of steam!$"
-# 442 "data/maps/Zone5B/scripts.pory"
 
+# 441 "data/maps/Zone5B/scripts.pory"
+Zone5B_Text_KennethDefeat:
+# 442 "data/maps/Zone5B/scripts.pory"
+	.string "Whew! I'm all out of steam!$"
 # 443 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_KennethPostBattle:
+
 # 444 "data/maps/Zone5B/scripts.pory"
+Zone5B_Text_KennethPostBattle:
+# 445 "data/maps/Zone5B/scripts.pory"
 	.string "I gotta keep running!$"
 
 Zone5B_EventScript_LeviathanBattle_Text_0:

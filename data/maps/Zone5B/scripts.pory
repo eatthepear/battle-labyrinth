@@ -402,16 +402,17 @@ Zone5B_EventScript_Clinton::
 	end
 
 Zone5B_Text_ClintonIntro:
-	.string "Supposedly, item chests that are\n"
-	.string "tinted yellow hold special items.$"
+	.string "I've had my Pokémon specially\n"
+	.string "imported from rare habitats!$"
 
 Zone5B_Text_ClintonDefeat:
-	.string "I don't bother checking them\n"
-	.string "though!$"
+	.string "Um… I thought they were\n"
+	.string "supposed to be strong!$"
 
 Zone5B_Text_ClintonPostBattle:
-	.string "I can buy all the TMs I want!\n"
-	.string "I don't need any item chests!$"
+	.string "I suppose just because a\n"
+	.string "Pokémon is rare, doesn't\l"
+	.string "mean it's strong!$"
 
 Zone5B_EventScript_Ryan::
 	trainerbattle_single TRAINER_PBL_RYAN, Zone5B_Text_RyanIntro, Zone5B_Text_RyanDefeat
