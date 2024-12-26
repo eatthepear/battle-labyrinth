@@ -2050,7 +2050,6 @@ static void DexNavDrawHiddenIcons(void)
 
 void ResetDexNavSearch(void)
 {
-    VarSet(VAR_DEXNAV_STEP_COUNTER, 0); //reset hidden pokemon step counter
     if (FlagGet(FLAG_SYS_DEXNAV_SEARCH))
         EndDexNavSearch(FindTaskIdByFunc(Task_DexNavSearch));   //moving to new map ends dexnav search
 }
