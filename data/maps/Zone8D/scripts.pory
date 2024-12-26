@@ -33,7 +33,7 @@ script Zone8D_EventScript_LeviathanBattle {
 	}
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Alistair{COLOR DARK_GRAY}: Ugh. I can't believe I lost this one.\pI guess I owe you a little something for winning."), MSGBOX_DEFAULT)
-	giveitem(ITEM_TM13)
+	giveitem(ITEM_TM_THIEF)
 	msgbox(format("{COLOR BLUE}Alistair{COLOR DARK_GRAY}: It's a tough world out there. Watch your step."))
 	closemessage
 	fadescreenswapbuffers(FADE_TO_BLACK)

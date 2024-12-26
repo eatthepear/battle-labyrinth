@@ -52,7 +52,7 @@ Zone8D_EventScript_LeviathanBattle_10:
 # 35 "data/maps/Zone8D/scripts.pory"
 	msgbox Zone8D_EventScript_LeviathanBattle_Text_0, MSGBOX_DEFAULT
 # 36 "data/maps/Zone8D/scripts.pory"
-	giveitem ITEM_TM13
+	giveitem ITEM_TM_THIEF
 # 37 "data/maps/Zone8D/scripts.pory"
 	msgbox Zone8D_EventScript_LeviathanBattle_Text_1
 # 38 "data/maps/Zone8D/scripts.pory"
