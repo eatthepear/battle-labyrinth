@@ -22,6 +22,31 @@ script Zone8D_EventScript_LeviathanBattle {
 	}
 	applymovement(2, Common_Movement_WalkDown2)
 	waitmovement(0)
+	msgbox(format("{COLOR BLUE}Alistair{COLOR DARK_GRAY}: Well, well, well. You're almost out, but you have another challenge to face: me.\pReady to duke it out?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Well, if you're not ready, I respect it."), MSGBOX_AUTOCLOSE)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		waitmovement(0)
+		if (var(VAR_TEMP_0) == 3) {
+			applymovement(2, Common_Movement_WalkRight2)
+			waitmovement(0)
+		} elif (var(VAR_TEMP_0) == 4) {
+			applymovement(2, Common_Movement_WalkRight)
+			waitmovement(0)
+		} elif (var(VAR_TEMP_0) == 6) {
+			applymovement(2, Common_Movement_WalkLeft)
+			waitmovement(0)
+		} elif (var(VAR_TEMP_0) == 7) {
+			applymovement(2, Common_Movement_WalkLeft2)
+			waitmovement(0)
+		}
+		applymovement(2, Common_Movement_WalkUp2)
+		waitmovement(0)
+		applymovement(2, Common_Movement_FaceDown)
+		waitmovement(0)
+		releaseall
+		end
+	}
 	fadeoutbgm(1)
 	setvar(VAR_ZONE_1_STATE, 1)
 	msgbox(Zone8D_Text_Leviathan8Intro)
@@ -46,7 +71,7 @@ script Zone8D_EventScript_LeviathanBattle {
 }
 
 text Zone8D_Text_Leviathan8Intro {
-	format("{COLOR BLUE}Alistair{COLOR DARK_GRAY}: Well, well, well. You're almost out, but you have another challenge to face: me.\pReady or not, here I come.")
+	format("Right on!")
 }
 
 text Zone8D_Text_Leviathan8Defeat {
