@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
-      "x": 3,
+      "x": 4,
       "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -29,8 +29,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",
-      "x": 48,
-      "y": 2,
+      "x": 4,
+      "y": 32,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -42,7 +42,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NURSE",
-      "x": 43,
+      "x": 40,
       "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -51,19 +51,6 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_Shop_Joy",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_COOK",
-      "x": 18,
-      "y": 17,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_Shop_Gordon",
       "flag": "0"
     },
     {
@@ -81,7 +68,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
-      "x": 2,
+      "x": 3,
       "y": 2,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -95,7 +82,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TEALA",
       "x": 18,
-      "y": 32,
+      "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -106,8 +93,8 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BARD",
-      "x": 4,
+      "graphics_id": "OBJ_EVENT_GFX_UNION_ROOM_NURSE",
+      "x": 18,
       "y": 32,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -115,7 +102,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_Shop_Alexander",
+      "script": "EventScript_Shop_Marie",
       "flag": "0"
     }
   ],
@@ -124,106 +111,113 @@
       "x": 3,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0SANCTUARY",
+      "dest_map": "MAP_ZONE8SANCTUARY",
       "dest_warp_id": "0"
     },
     {
       "x": 4,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0SANCTUARY",
+      "dest_map": "MAP_ZONE8SANCTUARY",
       "dest_warp_id": "1"
     },
     {
       "x": 18,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0SANCTUARY",
+      "dest_map": "MAP_ZONE8SANCTUARY",
       "dest_warp_id": "2"
     },
     {
       "x": 19,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0SANCTUARY",
+      "dest_map": "MAP_ZONE8SANCTUARY",
       "dest_warp_id": "3"
     },
     {
       "x": 3,
       "y": 22,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0SANCTUARY",
+      "dest_map": "MAP_ZONE8SANCTUARY",
       "dest_warp_id": "4"
     },
     {
       "x": 4,
       "y": 22,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0SANCTUARY",
+      "dest_map": "MAP_ZONE8SANCTUARY",
       "dest_warp_id": "5"
     },
     {
       "x": 18,
       "y": 22,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0SANCTUARY",
+      "dest_map": "MAP_ZONE8SANCTUARY",
       "dest_warp_id": "6"
     },
     {
       "x": 19,
       "y": 22,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0SANCTUARY",
+      "dest_map": "MAP_ZONE8SANCTUARY",
       "dest_warp_id": "7"
     },
     {
       "x": 3,
       "y": 37,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0SANCTUARY",
+      "dest_map": "MAP_ZONE8SANCTUARY",
       "dest_warp_id": "8"
     },
     {
       "x": 4,
       "y": 37,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0SANCTUARY",
+      "dest_map": "MAP_ZONE8SANCTUARY",
       "dest_warp_id": "9"
     },
     {
       "x": 18,
       "y": 37,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0SANCTUARY",
+      "dest_map": "MAP_ZONE8SANCTUARY",
       "dest_warp_id": "10"
     },
     {
       "x": 19,
       "y": 37,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0SANCTUARY",
+      "dest_map": "MAP_ZONE8SANCTUARY",
       "dest_warp_id": "11"
     },
     {
-      "x": 42,
-      "y": 8,
+      "x": 39,
+      "y": 14,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0SANCTUARY",
+      "dest_map": "MAP_ZONE8SANCTUARY",
       "dest_warp_id": "12"
     },
     {
-      "x": 43,
-      "y": 8,
+      "x": 40,
+      "y": 14,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0SANCTUARY",
+      "dest_map": "MAP_ZONE8SANCTUARY",
       "dest_warp_id": "12"
     },
     {
-      "x": 38,
+      "x": 36,
       "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0SHOPS",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ZONE8SANCTUARY",
+      "dest_warp_id": "13"
+    },
+    {
+      "x": 46,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE0A",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
