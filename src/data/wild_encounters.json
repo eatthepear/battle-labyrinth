@@ -1554,7 +1554,7 @@
         },
         {
           "map": "MAP_ZONE9A",
-          "base_label": "gZone9AThickGrass",
+          "base_label": "gZone9A",
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
@@ -1576,7 +1576,7 @@
               {
                 "min_level": 18,
                 "max_level": 19,
-                "species": "SPECIES_SKORUPI"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 18,
@@ -1601,22 +1601,22 @@
               {
                 "min_level": 18,
                 "max_level": 19,
-                "species": "SPECIES_CUFANT"
-              },
-              {
-                "min_level": 18,
-                "max_level": 19,
-                "species": "SPECIES_CUFANT"
-              },
-              {
-                "min_level": 18,
-                "max_level": 19,
                 "species": "SPECIES_TROPIUS"
               },
               {
                 "min_level": 18,
                 "max_level": 19,
                 "species": "SPECIES_KOMALA"
+              },
+              {
+                "min_level": 18,
+                "max_level": 19,
+                "species": "SPECIES_PASSIMIAN"
+              },
+              {
+                "min_level": 18,
+                "max_level": 19,
+                "species": "SPECIES_ORANGURU"
               }
             ]
           },
@@ -1687,75 +1687,6 @@
                 "min_level": 5,
                 "max_level": 5,
                 "species": "SPECIES_NONE"
-              }
-            ]
-          }
-        },
-        {
-          "map": "MAP_ZONE9A",
-          "base_label": "gZone9ANormalGrass",
-          "land_mons": {
-            "encounter_rate": 10,
-            "mons": [
-              {
-                "min_level": 18,
-                "max_level": 19,
-                "species": "SPECIES_VENONAT"
-              },
-              {
-                "min_level": 18,
-                "max_level": 19,
-                "species": "SPECIES_SHROODLE"
-              },
-              {
-                "min_level": 18,
-                "max_level": 19,
-                "species": "SPECIES_CROAGUNK"
-              },
-              {
-                "min_level": 18,
-                "max_level": 19,
-                "species": "SPECIES_SKORUPI"
-              },
-              {
-                "min_level": 18,
-                "max_level": 19,
-                "species": "SPECIES_FOMANTIS"
-              },
-              {
-                "min_level": 18,
-                "max_level": 19,
-                "species": "SPECIES_ODDISH"
-              },
-              {
-                "min_level": 18,
-                "max_level": 19,
-                "species": "SPECIES_BELLSPROUT"
-              },
-              {
-                "min_level": 18,
-                "max_level": 19,
-                "species": "SPECIES_MANKEY"
-              },
-              {
-                "min_level": 18,
-                "max_level": 19,
-                "species": "SPECIES_CUFANT"
-              },
-              {
-                "min_level": 18,
-                "max_level": 19,
-                "species": "SPECIES_CUFANT"
-              },
-              {
-                "min_level": 18,
-                "max_level": 19,
-                "species": "SPECIES_ORANGURU"
-              },
-              {
-                "min_level": 18,
-                "max_level": 19,
-                "species": "SPECIES_PASSIMIAN"
               }
             ]
           }
