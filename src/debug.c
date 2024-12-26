@@ -418,6 +418,12 @@ static void DebugAction_FlagsVars_EncounterOnOff(u8 taskId);
 static void DebugAction_FlagsVars_TrainerSeeOnOff(u8 taskId);
 static void DebugAction_FlagsVars_BagUseOnOff(u8 taskId);
 static void DebugAction_FlagsVars_CatchingOnOff(u8 taskId);
+static void DebugAction_FlagsVars_BrutalOnOff(u8 taskId);
+static void DebugAction_FlagsVars_NuzlockeOnOff(u8 taskId);
+static void DebugAction_FlagsVars_RandomizerOnOff(u8 taskId);
+static void DebugAction_FlagsVars_InfiniteOnOff(u8 taskId);
+static void DebugAction_FlagsVars_FullInfoOnOff(u8 taskId);
+static void DebugAction_FlagsVars_ExpAllOnOff(u8 taskId);
 static void DebugAction_FlagsVars_RunningShoes(u8 taskId);
 
 static void Debug_InitializeBattle(u8 taskId);
@@ -583,6 +589,13 @@ static const u8 sDebugText_FlagsVars_SwitchEncounter[] =     _("Toggle {STR_VAR_
 static const u8 sDebugText_FlagsVars_SwitchTrainerSee[] =    _("Toggle {STR_VAR_1}Trainer See OFF");
 static const u8 sDebugText_FlagsVars_SwitchBagUse[] =        _("Toggle {STR_VAR_1}Bag Use OFF");
 static const u8 sDebugText_FlagsVars_SwitchCatching[] =      _("Toggle {STR_VAR_1}Catching OFF");
+static const u8 sDebugText_FlagsVars_SwitchBrutal[] =        _("Toggle {STR_VAR_1}Brutal OFF");
+static const u8 sDebugText_FlagsVars_SwitchNuzlocke[] =      _("Toggle {STR_VAR_1}Nuzlocke OFF");
+static const u8 sDebugText_FlagsVars_SwitchRandomizer[] =    _("Toggle {STR_VAR_1}Randomizer OFF");
+static const u8 sDebugText_FlagsVars_SwitchInfinite[] =      _("Toggle {STR_VAR_1}Infinite OFF");
+static const u8 sDebugText_FlagsVars_SwitchFullInfo[] =      _("Toggle {STR_VAR_1}FullInfo OFF");
+static const u8 sDebugText_FlagsVars_SwitchExpAll[] =        _("Toggle {STR_VAR_1}ExpAll OFF");
+
 // Battle
 static const u8 sDebugText_Battle_0_Wild[] =        _("Wild…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_Battle_0_WildDouble[] =  _("Wild Double…{CLEAR_TO 110}{RIGHT_ARROW}");
@@ -782,12 +795,12 @@ static const struct ListMenuItem sDebugMenu_Items_FlagsVars[] =
     [DEBUG_FLAGVAR_MENU_ITEM_DEXFLAGS_RESET]       = {sDebugText_FlagsVars_PokedexFlags_Reset, DEBUG_FLAGVAR_MENU_ITEM_DEXFLAGS_RESET},
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKEDEX]       = {sDebugText_FlagsVars_SwitchDex,          DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKEDEX},
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_NATDEX]        = {sDebugText_FlagsVars_SwitchNationalDex,  DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_NATDEX},
-    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKENAV]       = {sDebugText_FlagsVars_SwitchPokeNav,      DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKENAV},
-    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_MATCH_CALL]    = {sDebugText_FlagsVars_SwitchMatchCall,    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_MATCH_CALL},
-    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES]     = {sDebugText_FlagsVars_RunningShoes,       DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES},
-    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS]     = {sDebugText_FlagsVars_ToggleFlyFlags,     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS},
-    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL]    = {sDebugText_FlagsVars_ToggleAllBadges,    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL},
-    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS] = {sDebugText_FlagsVars_ToggleFrontierPass, DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS},
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKENAV]       = {sDebugText_FlagsVars_SwitchBrutal,       DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKENAV},
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_MATCH_CALL]    = {sDebugText_FlagsVars_SwitchNuzlocke,     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_MATCH_CALL},
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES]     = {sDebugText_FlagsVars_SwitchRandomizer,   DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES},
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS]     = {sDebugText_FlagsVars_SwitchInfinite,     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS},
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL]    = {sDebugText_FlagsVars_SwitchFullInfo,     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL},
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS] = {sDebugText_FlagsVars_SwitchExpAll,       DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS},
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_COLLISION]     = {sDebugText_FlagsVars_SwitchCollision,    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_COLLISION},
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_ENCOUNTER]     = {sDebugText_FlagsVars_SwitchEncounter,    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_ENCOUNTER},
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE]   = {sDebugText_FlagsVars_SwitchTrainerSee,   DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE},
@@ -953,12 +966,12 @@ static void (*const sDebugMenu_Actions_Flags[])(u8) =
     [DEBUG_FLAGVAR_MENU_ITEM_DEXFLAGS_RESET]       = DebugAction_FlagsVars_PokedexFlags_Reset,
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKEDEX]       = DebugAction_FlagsVars_SwitchDex,
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_NATDEX]        = DebugAction_FlagsVars_SwitchNatDex,
-    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKENAV]       = DebugAction_FlagsVars_SwitchPokeNav,
-    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_MATCH_CALL]    = DebugAction_FlagsVars_SwitchMatchCall,
-    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES]     = DebugAction_FlagsVars_RunningShoes,
-    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS]     = DebugAction_FlagsVars_ToggleFlyFlags,
-    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL]    = DebugAction_FlagsVars_ToggleBadgeFlags,
-    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS] = DebugAction_FlagsVars_ToggleFrontierPass,
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKENAV]       = DebugAction_FlagsVars_BrutalOnOff,
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_MATCH_CALL]    = DebugAction_FlagsVars_NuzlockeOnOff,
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES]     = DebugAction_FlagsVars_RandomizerOnOff,
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS]     = DebugAction_FlagsVars_InfiniteOnOff,
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL]    = DebugAction_FlagsVars_FullInfoOnOff,
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS] = DebugAction_FlagsVars_ExpAllOnOff,
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_COLLISION]     = DebugAction_FlagsVars_CollisionOnOff,
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_ENCOUNTER]     = DebugAction_FlagsVars_EncounterOnOff,
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE]   = DebugAction_FlagsVars_TrainerSeeOnOff,
@@ -1270,46 +1283,22 @@ static u8 Debug_CheckToggleFlags(u8 id)
             result = IsNationalPokedexEnabled();
             break;
         case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKENAV:
-            result = FlagGet(FLAG_SYS_POKENAV_GET);
+            result = FlagGet(FLAG_SETTINGS_BRUTAL);
             break;
         case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_MATCH_CALL:
-            result = FlagGet(FLAG_ADDED_MATCH_CALL_TO_POKENAV) && FlagGet(FLAG_HAS_MATCH_CALL);
+            result = FlagGet(FLAG_SETTINGS_NUZLOCKE);
             break;
         case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES:
-            result = FlagGet(FLAG_SYS_B_DASH);
+            result = FlagGet(FLAG_SETTINGS_RANDOMIZER);
             break;
         case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS:
-            result = FlagGet(FLAG_VISITED_LITTLEROOT_TOWN) &&
-                FlagGet(FLAG_VISITED_OLDALE_TOWN) &&
-                FlagGet(FLAG_VISITED_DEWFORD_TOWN) &&
-                FlagGet(FLAG_VISITED_LAVARIDGE_TOWN) &&
-                FlagGet(FLAG_VISITED_FALLARBOR_TOWN) &&
-                FlagGet(FLAG_VISITED_VERDANTURF_TOWN) &&
-                FlagGet(FLAG_VISITED_PACIFIDLOG_TOWN) &&
-                FlagGet(FLAG_VISITED_PETALBURG_CITY) &&
-                FlagGet(FLAG_VISITED_SLATEPORT_CITY) &&
-                FlagGet(FLAG_VISITED_MAUVILLE_CITY) &&
-                FlagGet(FLAG_VISITED_RUSTBORO_CITY) &&
-                FlagGet(FLAG_VISITED_FORTREE_CITY) &&
-                FlagGet(FLAG_VISITED_LILYCOVE_CITY) &&
-                FlagGet(FLAG_VISITED_MOSSDEEP_CITY) &&
-                FlagGet(FLAG_VISITED_SOOTOPOLIS_CITY) &&
-                FlagGet(FLAG_VISITED_EVER_GRANDE_CITY) &&
-                FlagGet(FLAG_LANDMARK_POKEMON_LEAGUE) &&
-                FlagGet(FLAG_LANDMARK_BATTLE_FRONTIER);
+            result = FlagGet(FLAG_SETTINGS_INFINITE);
             break;
         case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL:
-            result = FlagGet(FLAG_BADGE01_GET) &&
-                FlagGet(FLAG_BADGE02_GET) &&
-                FlagGet(FLAG_BADGE03_GET) &&
-                FlagGet(FLAG_BADGE04_GET) &&
-                FlagGet(FLAG_BADGE05_GET) &&
-                FlagGet(FLAG_BADGE06_GET) &&
-                FlagGet(FLAG_BADGE07_GET) &&
-                FlagGet(FLAG_BADGE08_GET);
+            result = FlagGet(FLAG_SETTINGS_FULL_INFO);
             break;
         case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS:
-            result = FlagGet(FLAG_SYS_FRONTIER_PASS);
+            result = FlagGet(FLAG_SETTINGS_EXP_ALL);
             break;
     #if OW_FLAG_NO_COLLISION != 0
         case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_COLLISION:
@@ -1390,6 +1379,7 @@ static void Debug_GenerateListMenuNames(u32 totalItems)
             {
                 flagResult = Debug_CheckToggleFlags(i);
                 name = sDebugMenu_Items_FlagsVars[i].name;
+                DebugPrintf("%d", name);
             }
             else if (sDebugMenuListData->listId == 1)
             {
@@ -1430,6 +1420,7 @@ static void Debug_RefreshListMenu(u8 taskId)
     {
         gMultiuseListMenuTemplate = sDebugMenu_ListTemplate_FlagsVars;
         totalItems = gMultiuseListMenuTemplate.totalItems;
+        DebugPrintf("%d", totalItems);
     }
     else if (sDebugMenuListData->listId == 1 && sDebugBattleData->submenu <= 1)
     {
@@ -1976,7 +1967,7 @@ static void DebugAction_Util_Warp_SelectMapGroup(u8 taskId)
 
     if (JOY_NEW(A_BUTTON))
     {
-        gTasks[taskId].tMapGroup = gTasks[taskId].tInput;
+        gTasks[taskId].tMapGroup = 27;
         gTasks[taskId].tInput = 0;
         gTasks[taskId].tDigit = 0;
 
@@ -2752,7 +2743,7 @@ static void DebugAction_FlagsVars_SwitchNatDex(u8 taskId)
     }
 }
 
-static void DebugAction_FlagsVars_SwitchPokeNav(u8 taskId)
+static UNUSED void DebugAction_FlagsVars_SwitchPokeNav(u8 taskId)
 {
     if (FlagGet(FLAG_SYS_POKENAV_GET))
         PlaySE(SE_PC_OFF);
@@ -2761,7 +2752,7 @@ static void DebugAction_FlagsVars_SwitchPokeNav(u8 taskId)
     FlagToggle(FLAG_SYS_POKENAV_GET);
 }
 
-static void DebugAction_FlagsVars_SwitchMatchCall(u8 taskId)
+static UNUSED void DebugAction_FlagsVars_SwitchMatchCall(u8 taskId)
 {
     if (FlagGet(FLAG_ADDED_MATCH_CALL_TO_POKENAV))
     {
@@ -2777,7 +2768,7 @@ static void DebugAction_FlagsVars_SwitchMatchCall(u8 taskId)
     }
 }
 
-static void DebugAction_FlagsVars_RunningShoes(u8 taskId)
+static UNUSED void DebugAction_FlagsVars_RunningShoes(u8 taskId)
 {
     if (FlagGet(FLAG_SYS_B_DASH))
         PlaySE(SE_PC_OFF);
@@ -2786,7 +2777,7 @@ static void DebugAction_FlagsVars_RunningShoes(u8 taskId)
     FlagToggle(FLAG_SYS_B_DASH);
 }
 
-static void DebugAction_FlagsVars_ToggleFlyFlags(u8 taskId)
+static UNUSED void DebugAction_FlagsVars_ToggleFlyFlags(u8 taskId)
 {
     if (FlagGet(FLAG_LANDMARK_BATTLE_FRONTIER))
     {
@@ -2834,7 +2825,7 @@ static void DebugAction_FlagsVars_ToggleFlyFlags(u8 taskId)
     }
 }
 
-static void DebugAction_FlagsVars_ToggleBadgeFlags(u8 taskId)
+static UNUSED void DebugAction_FlagsVars_ToggleBadgeFlags(u8 taskId)
 {
     if (FlagGet(FLAG_BADGE08_GET))
     {
@@ -2862,7 +2853,7 @@ static void DebugAction_FlagsVars_ToggleBadgeFlags(u8 taskId)
     }
 }
 
-static void DebugAction_FlagsVars_ToggleFrontierPass(u8 taskId)
+static UNUSED void DebugAction_FlagsVars_ToggleFrontierPass(u8 taskId)
 {
     // Sound effect
     if (FlagGet(FLAG_SYS_FRONTIER_PASS))
@@ -2935,6 +2926,60 @@ static void DebugAction_FlagsVars_CatchingOnOff(u8 taskId)
         PlaySE(SE_PC_LOGIN);
     FlagToggle(B_FLAG_NO_CATCHING);
 #endif
+}
+
+static void DebugAction_FlagsVars_BrutalOnOff(u8 taskId)
+{
+    if (FlagGet(FLAG_SETTINGS_BRUTAL))
+        PlaySE(SE_PC_OFF);
+    else
+        PlaySE(SE_PC_LOGIN);
+    FlagToggle(FLAG_SETTINGS_BRUTAL);
+}
+
+static void DebugAction_FlagsVars_NuzlockeOnOff(u8 taskId)
+{
+    if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
+        PlaySE(SE_PC_OFF);
+    else
+        PlaySE(SE_PC_LOGIN);
+    FlagToggle(FLAG_SETTINGS_NUZLOCKE);
+}
+
+static void DebugAction_FlagsVars_RandomizerOnOff(u8 taskId)
+{
+    if (FlagGet(FLAG_SETTINGS_RANDOMIZER))
+        PlaySE(SE_PC_OFF);
+    else
+        PlaySE(SE_PC_LOGIN);
+    FlagToggle(FLAG_SETTINGS_RANDOMIZER);
+}
+
+static void DebugAction_FlagsVars_InfiniteOnOff(u8 taskId)
+{
+    if (FlagGet(FLAG_SETTINGS_INFINITE))
+        PlaySE(SE_PC_OFF);
+    else
+        PlaySE(SE_PC_LOGIN);
+    FlagToggle(FLAG_SETTINGS_INFINITE);
+}
+
+static void DebugAction_FlagsVars_FullInfoOnOff(u8 taskId)
+{
+    if (FlagGet(FLAG_SETTINGS_FULL_INFO))
+        PlaySE(SE_PC_OFF);
+    else
+        PlaySE(SE_PC_LOGIN);
+    FlagToggle(FLAG_SETTINGS_FULL_INFO);
+}
+
+static void DebugAction_FlagsVars_ExpAllOnOff(u8 taskId)
+{
+    if (FlagGet(FLAG_SETTINGS_EXP_ALL))
+        PlaySE(SE_PC_OFF);
+    else
+        PlaySE(SE_PC_LOGIN);
+    FlagToggle(FLAG_SETTINGS_EXP_ALL);
 }
 
 // *******************************
