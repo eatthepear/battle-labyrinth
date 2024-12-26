@@ -1606,10 +1606,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Twineedle
 
 === TRAINER_PBL_MARIA_LEVIATHAN_5 ===
-Name: Declan
-Class: Pkmn Breeder
-Pic: Pokemon Breeder M
-Music: Male
+Name: Maria
+Class: Backpacker
+Pic: Backpacker F
+Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
@@ -2513,7 +2513,7 @@ Pic: Backpacker F
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
+Random Lead: No
 
 Spinda
 Ability: Contrary
@@ -2687,7 +2687,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Clear Smog
 - Defog
 
-Croagunk @ Normal Gem
+Croagunk @ Black Belt
 Ability: Poison Touch
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -2733,7 +2733,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Clear Smog
 - Defog
 
-Croagunk @ Normal Gem
+Croagunk @ Black Belt
 Ability: Poison Touch
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -2751,14 +2751,14 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Fang
 - Ice Fang
 
-Throh @ Black Belt
-Ability: Guts
+Girafarig @ Eviolite
+Ability: Sap Sipper
 Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Revenge
-- Seismic Toss
-- Power-Up Punch
-- Rock Tomb
+- Double Hit
+- Psybeam
+- Charge Beam
+- Trailblaze
 
 === TRAINER_PBL_COOPER ===
 Name: Cooper
@@ -2792,7 +2792,7 @@ Pic: Backpacker F
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
+Random Lead: No
 
 Emolga
 Level: 20
@@ -2884,7 +2884,7 @@ Name: Ari
 Class: Winstrate
 Pic: Camper
 Music: Male
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 
@@ -2897,7 +2897,7 @@ Name: Bertha
 Class: Winstrate
 Pic: Picnicker
 Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 
@@ -2910,7 +2910,7 @@ Name: Cassandra
 Class: Winstrate
 Pic: Pokefan F
 Music: Twins
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 
@@ -2923,7 +2923,7 @@ Name: Dominic
 Class: Winstrate
 Pic: Pokefan M
 Music: Twins
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 
@@ -2936,7 +2936,7 @@ Name: Erica
 Class: Winstrate
 Pic: Expert F
 Music: Intense
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 
