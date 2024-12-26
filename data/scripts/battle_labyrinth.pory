@@ -165,9 +165,10 @@ script EventScript_Shop_Tim {
 			pokemart(Shop_Pokeballs_2)
 		case 6:
 		case 7:
+			pokemart(Shop_Pokeballs_3)
 		case 9:
 		case 10:
-			pokemart(Shop_Pokeballs_3)
+			pokemart(Shop_Pokeballs_4)
 		case 11:
 		case 12:
 		case 13:
@@ -203,6 +204,16 @@ mart Shop_Pokeballs_3 {
 	ITEM_HEAL_BALL
 	ITEM_NEST_BALL
 	ITEM_NET_BALL
+}
+
+mart Shop_Pokeballs_4 {
+	ITEM_POKE_BALL
+	ITEM_GREAT_BALL
+	ITEM_HEAL_BALL
+	ITEM_NEST_BALL
+	ITEM_NET_BALL
+	ITEM_DIVE_BALL
+	ITEM_REPEAT_BALL
 }
 
 script EventScript_Shop_Varrick {
@@ -612,6 +623,7 @@ script EventScript_Shop_Julia {
 			pokemart(Shop_Berries_2)
 		case 9:
 		case 10:
+			pokemart(Shop_Berries_3)
 		case 11:
 		case 12:
 		case 13:
@@ -638,6 +650,17 @@ mart Shop_Berries_1 {
 
 mart Shop_Berries_2 {
 	ITEM_ORAN_BERRY
+	ITEM_CHERI_BERRY
+	ITEM_CHESTO_BERRY
+	ITEM_PECHA_BERRY
+	ITEM_RAWST_BERRY
+	ITEM_ASPEAR_BERRY
+	ITEM_PERSIM_BERRY
+}
+
+mart Shop_Berries_3 {
+	ITEM_ORAN_BERRY
+	ITEM_SITRUS_BERRY
 	ITEM_CHERI_BERRY
 	ITEM_CHESTO_BERRY
 	ITEM_PECHA_BERRY
