@@ -3694,14 +3694,19 @@
     [TRAINER_PBL_MARIA_LEVIATHAN_5] =
     {
 #line 1609
-        .trainerName = _("Declan"),
+        .trainerName = _("Maria"),
 #line 1610
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_BACKPACKER,
 #line 1611
+<<<<<<< HEAD
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
         .encounterMusic_gender =
+=======
+        .trainerPic = TRAINER_PIC_BACKPACKER_F,
+        .encounterMusic_gender = 
+>>>>>>> 8c04e7da07 ([PBL] trainer)
 #line 1612
-            TRAINER_ENCOUNTER_MUSIC_MALE,
+            TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 1614
         .doubleBattle = FALSE,
 #line 1613
@@ -5832,7 +5837,7 @@
 #line 2514
         .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2516
-        .randomLead = TRUE,
+        .randomLead = FALSE,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -6240,7 +6245,7 @@
             .species = SPECIES_CROAGUNK,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2690
-            .heldItem = ITEM_NORMAL_GEM,
+            .heldItem = ITEM_BLACK_BELT,
 #line 2693
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 2691
@@ -6354,7 +6359,7 @@
             .species = SPECIES_CROAGUNK,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2736
-            .heldItem = ITEM_NORMAL_GEM,
+            .heldItem = ITEM_BLACK_BELT,
 #line 2739
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 2737
@@ -6395,24 +6400,24 @@
             },
             {
 #line 2754
-            .species = SPECIES_THROH,
+            .species = SPECIES_GIRAFARIG,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2754
-            .heldItem = ITEM_BLACK_BELT,
+            .heldItem = ITEM_EVIOLITE,
 #line 2757
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 2755
-            .ability = ABILITY_GUTS,
+            .ability = ABILITY_SAP_SIPPER,
 #line 2756
             .lvl = 20,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2758
-                MOVE_REVENGE,
-                MOVE_SEISMIC_TOSS,
-                MOVE_POWER_UP_PUNCH,
-                MOVE_ROCK_TOMB,
+                MOVE_DOUBLE_HIT,
+                MOVE_PSYBEAM,
+                MOVE_CHARGE_BEAM,
+                MOVE_TRAILBLAZE,
             },
             },
         },
@@ -6501,7 +6506,7 @@
 #line 2793
         .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 2795
-        .randomLead = TRUE,
+        .randomLead = FALSE,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -6750,7 +6755,7 @@
 #line 2888
         .doubleBattle = FALSE,
 #line 2887
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
 #line 2889
         .randomLead = FALSE,
         .partySize = 1,
@@ -6784,7 +6789,7 @@
 #line 2901
         .doubleBattle = FALSE,
 #line 2900
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
 #line 2902
         .randomLead = FALSE,
         .partySize = 1,
@@ -6818,7 +6823,7 @@
 #line 2914
         .doubleBattle = FALSE,
 #line 2913
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
 #line 2915
         .randomLead = FALSE,
         .partySize = 1,
@@ -6852,7 +6857,7 @@
 #line 2927
         .doubleBattle = FALSE,
 #line 2926
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
 #line 2928
         .randomLead = FALSE,
         .partySize = 1,
@@ -6886,7 +6891,7 @@
 #line 2940
         .doubleBattle = FALSE,
 #line 2939
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
 #line 2941
         .randomLead = FALSE,
         .partySize = 2,
