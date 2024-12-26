@@ -127,6 +127,7 @@ static void SpriteCB_UnusedBattleInit_Main(struct Sprite *sprite);
 static u32 Crc32B (const u8 *data, u32 size);
 static u32 GeneratePartyHash(const struct Trainer *trainer, u32 i);
 static s32 Factorial(s32);
+static u32 CalculateExperienceFromTrainer(u32 trainerNum);
 
 EWRAM_DATA u16 gBattle_BG0_X = 0;
 EWRAM_DATA u16 gBattle_BG0_Y = 0;
@@ -2118,10 +2119,35 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
 {
     u8 retVal;
+
+    DebugPrintf("Creating NPC Trainer party, trainer number %d", trainerNum);
+    u32 totalExp = 0;
+    for (u32 i = TRAINER_NONE; i <= TRAINER_NONE; i++) {
+        totalExp += CalculateExperienceFromTrainer(i);
+    }
+    DebugPrintf("Total exp overall is %d", totalExp);
+
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
     retVal = CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(trainerNum), firstTrainer, gBattleTypeFlags);
     return retVal;
+}
+
+static u32 CalculateExperienceFromTrainer(u32 trainerNum) {
+    DebugPrintf("calcing exp from trainer number %d", trainerNum);
+    const struct Trainer *trainer = &gTrainers[trainerNum];
+    u8 monsCount = trainer->partySize;
+    u32 totalExp = 0;
+    for (u32 i = 0; i < monsCount; i++)
+    {
+        const struct TrainerMon *partyData = trainer->party;
+        
+        u32 calculatedExp = gSpeciesInfo[partyData[i].species].expYield * partyData[i].lvl / 7;
+        totalExp += calculatedExp;
+        DebugPrintf("calculated exp is %d", calculatedExp);
+    }
+    DebugPrintf("total exp is %d", totalExp);
+    return totalExp;
 }
 
 void CreateTrainerPartyForPlayer(void)
