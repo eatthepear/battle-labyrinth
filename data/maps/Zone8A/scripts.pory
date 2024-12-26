@@ -96,7 +96,8 @@ Zone8A_Text_BeckhamIntro:
 	.string "What's your favorite monster movie?$"
 
 Zone8A_Text_BeckhamDefeat:
-	.string "My favorite is Godzilla?$"
+	.string "I like the ones with lots of\n"
+	.string "destruction: all of them!$"
 
 Zone8A_Text_BeckhamPostBattle:
 	.string "Which one is my favorite?\n"
