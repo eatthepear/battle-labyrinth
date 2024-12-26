@@ -159,14 +159,14 @@
 #define FLAG_SETTINGS_INDEPENDENT                   0xAF
 
 // Debug Flags
-#define FLAG_IS_DEBUGGING_SAVEFILE                  0xB5
-#define FLAG_SYS_NO_COLLISION                       0xB6
-#define FLAG_SYS_NO_ENCOUNTER                       0xB7
-#define FLAG_SYS_NO_TRAINER_SEE                     0xB8
-#define FLAG_SYS_NO_BAG_USE_IN_BATTLE               0xB9
-#define FLAG_SYS_NO_CATCHING                        0xBA
-#define FLAG_SYS_FORCE_DOUBLE_WILD                  0xBB
-#define FLAG_SYS_SMART_WILD_AI_ON                   0xBC
+#define FLAG_IS_DEBUGGING_SAVEFILE                  0xB0
+#define FLAG_SYS_NO_COLLISION                       0xB1
+#define FLAG_SYS_NO_ENCOUNTER                       0xB2
+#define FLAG_SYS_NO_TRAINER_SEE                     0xB3
+#define FLAG_SYS_NO_BAG_USE_IN_BATTLE               0xB4
+#define FLAG_SYS_NO_CATCHING                        0xB5
+#define FLAG_SYS_FORCE_DOUBLE_WILD                  0xB6
+#define FLAG_SYS_SMART_WILD_AI_ON                   0xB7
 
 // Flags editable via script
 #define FLAG_FORCE_BATTLE_ANIM_ON                   0xC0
@@ -184,12 +184,11 @@
 #define FLAG_IN_NEW_ZONE                            0xE1
 #define FLAG_DOING_TRAINING                         0xE2
 #define FLAG_SYS_DEXNAV_SEARCH                      0xE3
-#define FLAG_SHOULD_CHECK_SPECIES_CLAUSE            0xE4 // unused
-#define FLAG_USE_PC_MACHINE                         0xE5
-#define FLAG_ZONE_PC_USED                           0xE6
-#define FLAG_USED_TERA                              0xE7
-#define FLAG_PBL_PENDING_DAYCARE_EGG                0xE8
-#define FLAG_AUTORUN_TOGGLE                         0xE9
+#define FLAG_USE_PC_MACHINE                         0xE4
+#define FLAG_ZONE_PC_USED                           0xE5
+#define FLAG_USED_TERA                              0xE6
+#define FLAG_PBL_PENDING_DAYCARE_EGG                0xE7
+#define FLAG_AUTORUN_TOGGLE                         0xE8
 
 // Custom Flags Scripts
 #define FLAG_PORTENTIA_INTRO                              0x100
@@ -199,327 +198,319 @@
 #define FLAG_LELOUCH_INTRO                                0x104
 #define FLAG_MARIE_INTRO                                  0x105
 #define FLAG_JOY_INTRO                                    0x106
-#define FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES                 0x107
-#define FLAG_ZONE0B_RECEIVED_EEVEE                        0x108
-#define FLAG_ZONE1A_RECEIVED_FWG                          0x109
-#define FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG                   0x10A
-#define FLAG_MAX_INTRO                                    0x10B
-#define FLAG_HIDE_ZONE2A_MAX                              0x10C
-#define FLAG_HIDE_ZONE3A_REMI                             0x10D
-#define FLAG_HIDE_ZONE3A_PHILLIPA                         0x10E
-#define FLAG_ZONE4A_RECEIVED_GEM                          0x10F
-#define FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE             0x110
-#define FLAG_HIDE_ZONE5B_SHINY_PORYGON                    0x111
-#define FLAG_LELOUCH_SHARDS_INTRO                         0x112
-#define FLAG_HIDE_ZONE6A_MAX                              0x113
-#define FLAG_ZONE7A_RECEIVED_WHIPPED_DREAM                0x114
-#define FLAG_ZONE7A_RECEIVED_SACHET                       0x115
-#define FLAG_HIDE_ZONE7A_MAX                              0x116
-#define FLAG_ZONE7B_HEAL_USED                             0x117
-#define FLAG_HIDE_ZONE8D_WALLY                            0x118
-#define FLAG_HIDE_ZONE9A_ARI_WINSTRATE                    0x119
-#define FLAG_HIDE_ZONE9A_BERTHA_WINSTRATE                 0x11A
-#define FLAG_HIDE_ZONE9A_CASSANDRA_WINSTRATE              0x11B
-#define FLAG_HIDE_ZONE9A_DOMINIC_WINSTRATE                0x11C
-#define FLAG_HIDE_ZONE9A_ERICA_WINSTRATE                  0x11D
-#define FLAG_ZONE9D_RECEIVED_MYSTIC_WATER                 0x11E
-#define FLAG_ZONE9E_NUZLOCKE_BOUGHT_FARM_ANIMAL           0x11F
-#define FLAG_ZONE10A_RECEIVED_SAFETY_GOGGLES              0x120
-#define FLAG_HIDE_ZONE10A_MAX                             0x121
-#define FLAG_ZONE10B_RECEIVED_TM21                        0x122
-#define FLAG_HIDE_ZONE10B_BERRYMAN                        0x123
-#define FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_1           0x124
-#define FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_2           0x125
-#define FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_3           0x126
-#define FLAG_ZONE10B_RECEIVED_LUCKY_EGG                   0x127
-#define FLAG_ZONE11A_NUZLOCKE_BOUGHT_RUIN                 0x128
-#define FLAG_HIDE_ZONE12A_CAMPER_PICNICKER                0x129
-#define FLAG_HIDE_ZONE12A_NURSE                           0x12A
-#define FLAG_ZONE13A_RECEIVED_UTILITY_UMBRELLA            0x12B
-#define FLAG_ZONE13B_RECEIVED_FLASHLIGHT                  0x12C
-#define FLAG_ZONE13C_NUZLOCKE_FOSSIL_RECEIVED             0x12D
-#define FLAG_ZONE13C_RECEIVED_ZOOM_LENS                   0x12E
-#define FLAG_ZONE13C_RECEIVED_APPLES                      0x12F
-#define FLAG_ZONE13C_RECEIVED_SWEETS                      0x130
-#define FLAG_HIDE_ZONE17A_HEX_MANIAC                      0x131
-#define FLAG_HIDE_ZONE17A_PORYGON                         0x132
-#define FLAG_HIDE_ZONE18A_PORYGON                         0x133
-#define FLAG_HIDE_ZONE18A_ZOE                             0x134
-#define FLAG_HIDE_ZONE18A_ELI                             0x135
-#define FLAG_HIDE_ZONE18A_DOLL                            0x136
-#define FLAG_HIDE_ZONE18A_PIRATES                         0x137
-#define FLAG_HIDE_ZONE18A_BOAT                            0x138
-#define FLAG_HIDE_ZONE18A_MAX                             0x139
-#define FLAG_HIDE_ZONE18B_ZOE                             0x13A
-#define FLAG_HIDE_ZONE18B_ELI                             0x13B
-#define FLAG_HIDE_ZONE19D_PIRATES                         0x13C
-#define FLAG_HIDE_ZONE20B_WORKERS                         0x13D
-#define FLAG_RECEIVED_ZONE21A_TM29                        0x13E
-#define FLAG_RECEIVED_ZONE21C_HAPPINY                     0x13F
-#define FLAG_HIDE_CAM_AND_PAM                             0x140
-#define FLAG_RECEIVED_ZONE23A_TM31                        0x141
-#define FLAG_RECEIVED_ZONE24A_TM34                        0x142
-#define FLAG_RECEIVED_ZONE24B_TM35                        0x143
-#define FLAG_HIDE_ZONE25L_COLRESS                         0x144
-#define FLAG_PORTENTIA_SUPER_POTION_INTRO                 0x145
-#define FLAG_ZONE_B1_PORYGON_1                            0x146
-#define FLAG_ZONE_B1_PORYGON_2                            0x147
-#define FLAG_ZONE_B1_PORYGON_3                            0x148
-#define FLAG_ZONE_B1_PORYGON_4                            0x149
-#define FLAG_ZONE_B1_PORYGON_5                            0x14A
-#define FLAG_RECEIVED_PORYGON                             0x14B
-#define FLAG_JOY_UPGRADED                                 0x14C
-#define FLAG_MARIE_NUZLOCKE_RECEIVED                      0x14D
-#define FLAG_ZONE5A_RECEIVED_PINK_SCARF                   0x14E
-#define FLAG_ZONE5A_RECEIVED_SURPRISE_MULCH               0x14F
-#define FLAG_ZONE3B_TRADED_RATTATA_ALOLA                  0x150
-#define FLAG_ZONE3B_TRADED_ZIGZAGOON_GALAR                0x151
-#define FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER      0x152
-#define FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG        0x153
-#define FLAG_ZONE7A_MOVE_TUTOR_TAUGHT_FANG                0x154
-#define FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS          0x155
+#define FLAG_LELOUCH_SHARDS_INTRO                         0x107
+#define FLAG_MARIE_NUZLOCKE_RECEIVED                      0x108
+#define FLAG_JOY_UPGRADED                                 0x109
+#define FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES                 0x10A
+#define FLAG_ZONE0B_RECEIVED_EEVEE                        0x10B
+#define FLAG_ZONE1A_RECEIVED_FWG                          0x10C
+#define FLAG_MAX_INTRO                                    0x10D
+#define FLAG_HIDE_ZONE2A_MAX                              0x10E
+#define FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG                   0x10F
+#define FLAG_HIDE_ZONE3A_REMI                             0x110
+#define FLAG_HIDE_ZONE3A_PHILLIPA                         0x111
+#define FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER      0x112
+#define FLAG_ZONE3B_TRADED_RATTATA_ALOLA                  0x113
+#define FLAG_ZONE3B_TRADED_ZIGZAGOON_GALAR                0x114
+#define FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG        0x115
+#define FLAG_ZONE5A_RECEIVED_PINK_SCARF                   0x116
+#define FLAG_ZONE5A_RECEIVED_SURPRISE_MULCH               0x117
+#define FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE             0x118
+#define FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS          0x119
+#define FLAG_HIDE_ZONE6A_MAX                              0x11A
+#define FLAG_ZONE7A_RECEIVED_WHIPPED_DREAM                0x11B
+#define FLAG_ZONE7A_RECEIVED_SACHET                       0x11C
+#define FLAG_ZONE7A_MOVE_TUTOR_TAUGHT_FANG                0x11D
+#define FLAG_ZONE7B_HEAL_USED                             0x11E
+#define FLAG_HIDE_ZONE9A_ARI_WINSTRATE                    0x11F
+#define FLAG_HIDE_ZONE9A_BERTHA_WINSTRATE                 0x120
+#define FLAG_HIDE_ZONE9A_CASSANDRA_WINSTRATE              0x121
+#define FLAG_HIDE_ZONE9A_DOMINIC_WINSTRATE                0x122
+#define FLAG_HIDE_ZONE9A_ERICA_WINSTRATE                  0x123
+#define FLAG_ZONE9D_RECEIVED_MYSTIC_WATER                 0x124
+#define FLAG_ZONE9E_NUZLOCKE_BOUGHT_FARM_ANIMAL           0x125
+#define FLAG_ZONE10A_RECEIVED_SAFETY_GOGGLES              0x126
+#define FLAG_HIDE_ZONE10A_MAX                             0x127
+#define FLAG_ZONE10B_RECEIVED_TM21                        0x128
+#define FLAG_HIDE_ZONE10B_BERRYMAN                        0x129
+#define FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_1           0x12A
+#define FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_2           0x12B
+#define FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_3           0x12C
+#define FLAG_ZONE10B_RECEIVED_LUCKY_EGG                   0x12D
+#define FLAG_ZONE11A_NUZLOCKE_BOUGHT_RUIN                 0x12E
+#define FLAG_HIDE_ZONE12A_CAMPER_PICNICKER                0x12F
+#define FLAG_HIDE_ZONE12A_NURSE                           0x130
+#define FLAG_ZONE13A_RECEIVED_UTILITY_UMBRELLA            0x131
+#define FLAG_ZONE13B_RECEIVED_FLASHLIGHT                  0x132
+#define FLAG_ZONE13C_NUZLOCKE_FOSSIL_RECEIVED             0x133
+#define FLAG_ZONE13C_RECEIVED_ZOOM_LENS                   0x134
+#define FLAG_ZONE13C_RECEIVED_APPLES                      0x135
+#define FLAG_ZONE13C_RECEIVED_SWEETS                      0x136
+#define FLAG_HIDE_ZONE17A_HEX_MANIAC                      0x137
+#define FLAG_HIDE_ZONE17A_PORYGON                         0x138
+#define FLAG_HIDE_ZONE18A_PORYGON                         0x139
+#define FLAG_HIDE_ZONE18A_ZOE                             0x13A
+#define FLAG_HIDE_ZONE18A_ELI                             0x13B
+#define FLAG_HIDE_ZONE18A_DOLL                            0x13C
+#define FLAG_HIDE_ZONE18A_PIRATES                         0x13D
+#define FLAG_HIDE_ZONE18A_BOAT                            0x13E
+#define FLAG_HIDE_ZONE18A_MAX                             0x13F
+#define FLAG_HIDE_ZONE18B_ZOE                             0x140
+#define FLAG_HIDE_ZONE18B_ELI                             0x141
+#define FLAG_HIDE_ZONE19D_PIRATES                         0x142
+#define FLAG_HIDE_ZONE20B_WORKERS                         0x143
+#define FLAG_RECEIVED_ZONE21A_TM29                        0x144
+#define FLAG_RECEIVED_ZONE21C_HAPPINY                     0x145
+#define FLAG_HIDE_CAM_AND_PAM                             0x146
+#define FLAG_RECEIVED_ZONE23A_TM31                        0x147
+#define FLAG_RECEIVED_ZONE24A_TM34                        0x148
+#define FLAG_RECEIVED_ZONE24B_TM35                        0x149
+#define FLAG_HIDE_ZONE25L_COLRESS                         0x14A
+#define FLAG_PORTENTIA_SUPER_POTION_INTRO                 0x14B
+#define FLAG_ZONE_B1_PORYGON_1                            0x14C
+#define FLAG_ZONE_B1_PORYGON_2                            0x14D
+#define FLAG_ZONE_B1_PORYGON_3                            0x14E
+#define FLAG_ZONE_B1_PORYGON_4                            0x14F
+#define FLAG_ZONE_B1_PORYGON_5                            0x150
+#define FLAG_RECEIVED_PORYGON                             0x151
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x200
 // Custom
-#define FLAG_HIDDEN_ITEM_ZONE2A_CHERI_BERRY	                 (FLAG_HIDDEN_ITEMS_START + 0x02)
-#define FLAG_HIDDEN_ITEM_ZONE2B_PECHA_BERRY	                 (FLAG_HIDDEN_ITEMS_START + 0x03)
-#define FLAG_HIDDEN_ITEM_ZONE2B_CHESTO_BERRY	             (FLAG_HIDDEN_ITEMS_START + 0x04)
-#define FLAG_HIDDEN_ITEM_ZONE3A_PECHA_BERRY	                 (FLAG_HIDDEN_ITEMS_START + 0x05)
-#define FLAG_HIDDEN_ITEM_ZONE3A_CHERI_BERRY	                 (FLAG_HIDDEN_ITEMS_START + 0x06)
-#define FLAG_HIDDEN_ITEM_ZONE4A_ORAN_BERRY  	             (FLAG_HIDDEN_ITEMS_START + 0x07)
-#define FLAG_HIDDEN_ITEM_ZONE4A_PECHA_BERRY	                 (FLAG_HIDDEN_ITEMS_START + 0x08)
-#define FLAG_HIDDEN_ITEM_ZONE4C_CHESTO_BERRY	             (FLAG_HIDDEN_ITEMS_START + 0x09)
-#define FLAG_HIDDEN_ITEM_ZONE4C_RAWST_BERRY	                 (FLAG_HIDDEN_ITEMS_START + 0x0A)
-#define FLAG_HIDDEN_ITEM_ZONE4E_CHERI_BERRY	                 (FLAG_HIDDEN_ITEMS_START + 0x0B)
-#define FLAG_HIDDEN_ITEM_ZONE5A_ORAN_BERRY	                 (FLAG_HIDDEN_ITEMS_START + 0x0C)
-#define FLAG_HIDDEN_ITEM_ZONE6A_RED_SHARD_1	                 (FLAG_HIDDEN_ITEMS_START + 0x0D)
-#define FLAG_HIDDEN_ITEM_ZONE6A_RED_SHARD_2	                 (FLAG_HIDDEN_ITEMS_START + 0x0E)
-#define FLAG_HIDDEN_ITEM_ZONE6A_RAWST_BERRY	                 (FLAG_HIDDEN_ITEMS_START + 0x0F)
-#define FLAG_HIDDEN_ITEM_ZONE6A_PERSIM_BERRY	             (FLAG_HIDDEN_ITEMS_START + 0x10)
-#define FLAG_HIDDEN_ITEM_ZONE6A_CHESTO_BERRY	             (FLAG_HIDDEN_ITEMS_START + 0x11)
-#define FLAG_HIDDEN_ITEM_ZONE7A_ASPEAR_BERRY	             (FLAG_HIDDEN_ITEMS_START + 0x12)
-#define FLAG_HIDDEN_ITEM_ZONE7A_PERSIM_BERRY	             (FLAG_HIDDEN_ITEMS_START + 0x13)
-#define FLAG_HIDDEN_ITEM_ZONE7A_RAWST_BERRY	                 (FLAG_HIDDEN_ITEMS_START + 0x14)
-#define FLAG_HIDDEN_ITEM_ZONE7A_SITRUS_BERRY	             (FLAG_HIDDEN_ITEMS_START + 0x15)
-#define FLAG_HIDDEN_ITEM_ZONE8A_RED_SHARD	                 (FLAG_HIDDEN_ITEMS_START + 0x16)
-#define FLAG_HIDDEN_ITEM_ZONE8B_RED_SHARD	                 (FLAG_HIDDEN_ITEMS_START + 0x17)
-#define FLAG_HIDDEN_ITEM_ZONE8C_RED_SHARD	                 (FLAG_HIDDEN_ITEMS_START + 0x18)
-#define FLAG_HIDDEN_ITEM_ZONE9A_LEPPA_BERRY	                 (FLAG_HIDDEN_ITEMS_START + 0x19)
-#define FLAG_HIDDEN_ITEM_ZONE9A_SITRUS_BERRY	             (FLAG_HIDDEN_ITEMS_START + 0x1A)
-#define FLAG_HIDDEN_ITEM_ZONE10A_RED_SHARD    	    	     (FLAG_HIDDEN_ITEMS_START + 0x1B)
-#define FLAG_HIDDEN_ITEM_ZONE11A_SITRUS_BERRY	     	     (FLAG_HIDDEN_ITEMS_START + 0x1C)
-#define FLAG_HIDDEN_ITEM_ZONE11A_CHERI_BERRY	      	     (FLAG_HIDDEN_ITEMS_START + 0x1D)
-#define FLAG_HIDDEN_ITEM_ZONE11A_RAWST_BERRY	             (FLAG_HIDDEN_ITEMS_START + 0x1E)
-#define FLAG_HIDDEN_ITEM_ZONE11A_PECHA_BERRY	             (FLAG_HIDDEN_ITEMS_START + 0x1F)
-#define FLAG_HIDDEN_ITEM_ZONE12A_LEPPA_BERRY	             (FLAG_HIDDEN_ITEMS_START + 0x20)
-#define FLAG_HIDDEN_ITEM_ZONE12A_LUM_BERRY	                 (FLAG_HIDDEN_ITEMS_START + 0x21)
-#define FLAG_HIDDEN_ITEM_ZONE12A_RED_SHARD	                 (FLAG_HIDDEN_ITEMS_START + 0x22)
-#define FLAG_HIDDEN_ITEM_ZONE12A_BLUE_SHARD	                 (FLAG_HIDDEN_ITEMS_START + 0x23)
-#define FLAG_HIDDEN_ITEM_ZONE13A_LUM_BERRY	                 (FLAG_HIDDEN_ITEMS_START + 0x24)
-#define FLAG_HIDDEN_ITEM_ZONE14A_RED_SHARD	                 (FLAG_HIDDEN_ITEMS_START + 0x25)
-#define FLAG_HIDDEN_ITEM_ZONE14B_BLUE_SHARD	                 (FLAG_HIDDEN_ITEMS_START + 0x26)
-#define FLAG_HIDDEN_ITEM_ZONE14B_YELLOW_SHARD	             (FLAG_HIDDEN_ITEMS_START + 0x27)
-#define FLAG_HIDDEN_ITEM_ZONE16A_RED_SHARD	                 (FLAG_HIDDEN_ITEMS_START + 0x28)
-#define FLAG_HIDDEN_ITEM_ZONE18A_SITRUS_BERRY	             (FLAG_HIDDEN_ITEMS_START + 0x29)
-#define FLAG_HIDDEN_ITEM_ZONE19B_BLUE_SHARD	                 (FLAG_HIDDEN_ITEMS_START + 0x2A)
-#define FLAG_HIDDEN_ITEM_ZONE19B_STARDUST	                 (FLAG_HIDDEN_ITEMS_START + 0x2B)
-#define FLAG_HIDDEN_ITEM_ZONE19B_PEARL	                     (FLAG_HIDDEN_ITEMS_START + 0x2C)
-#define FLAG_HIDDEN_ITEM_ZONE19B_YELLOW_SHARD	             (FLAG_HIDDEN_ITEMS_START + 0x2D)
-#define FLAG_HIDDEN_ITEM_ZONE19B_BIG_PEARL	                 (FLAG_HIDDEN_ITEMS_START + 0x2E)
-#define FLAG_HIDDEN_ITEM_ZONE19B_RED_SHARD	                 (FLAG_HIDDEN_ITEMS_START + 0x2F)
-#define FLAG_HIDDEN_ITEM_ZONE19B_STAR_PIECE	                 (FLAG_HIDDEN_ITEMS_START + 0x30)
-#define FLAG_HIDDEN_ITEM_ZONE20A_RED_SHARD1	                 (FLAG_HIDDEN_ITEMS_START + 0x31)
-#define FLAG_HIDDEN_ITEM_ZONE20A_RED_SHARD2                  (FLAG_HIDDEN_ITEMS_START + 0x32)
-#define FLAG_HIDDEN_ITEM_ZONE20A_RED_SHARD3                  (FLAG_HIDDEN_ITEMS_START + 0x33)
-#define FLAG_HIDDEN_ITEM_ZONE20A_BLUE_SHARD                  (FLAG_HIDDEN_ITEMS_START + 0x34)
-#define FLAG_HIDDEN_ITEM_ZONE20A_YELLOW_SHARD                (FLAG_HIDDEN_ITEMS_START + 0x35)
-#define FLAG_HIDDEN_ITEM_ZONE21A_RED_SHARD1	                 (FLAG_HIDDEN_ITEMS_START + 0x36)
-#define FLAG_HIDDEN_ITEM_ZONE21B_RED_SHARD	                 (FLAG_HIDDEN_ITEMS_START + 0x37)
-#define FLAG_HIDDEN_ITEM_ZONE21A_RED_SHARD2                  (FLAG_HIDDEN_ITEMS_START + 0x38)
-#define FLAG_HIDDEN_ITEM_ZONE21A_LUM_BERRY                   (FLAG_HIDDEN_ITEMS_START + 0x39)
-#define FLAG_HIDDEN_ITEM_ZONE21A_CHESTO_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x3A)
-#define FLAG_HIDDEN_ITEM_ZONE21A_SITRUS_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x3B)
-#define FLAG_HIDDEN_ITEM_ZONE21A_CHILAN_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x3C)
-#define FLAG_HIDDEN_ITEM_ZONE21A_OCCA_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x3D)
-#define FLAG_HIDDEN_ITEM_ZONE21A_PASSHO_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x3E)
-#define FLAG_HIDDEN_ITEM_ZONE21A_WACAN_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x3F)
-#define FLAG_HIDDEN_ITEM_ZONE21A_RINDO_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x40)
-#define FLAG_HIDDEN_ITEM_ZONE21A_YACHE_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x41)
-#define FLAG_HIDDEN_ITEM_ZONE21A_CHOPLE_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x42)
-#define FLAG_HIDDEN_ITEM_ZONE21A_KEBIA_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x43)
-#define FLAG_HIDDEN_ITEM_ZONE21A_SHUCA_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x44)
-#define FLAG_HIDDEN_ITEM_ZONE21A_COBA_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x45)
-#define FLAG_HIDDEN_ITEM_ZONE21A_PAYAPA_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x46)
-#define FLAG_HIDDEN_ITEM_ZONE21A_TANGA_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x47)
-#define FLAG_HIDDEN_ITEM_ZONE21A_CHARTI_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x48)
-#define FLAG_HIDDEN_ITEM_ZONE21A_KASIB_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x49)
-#define FLAG_HIDDEN_ITEM_ZONE21A_HABAN_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x4A)
-#define FLAG_HIDDEN_ITEM_ZONE21A_COLBUR_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x4B)
-#define FLAG_HIDDEN_ITEM_ZONE21A_BABIRI_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x4C)
-#define FLAG_HIDDEN_ITEM_ZONE21A_ROSELI_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x4D)
-#define FLAG_HIDDEN_ITEM_ZONE22A_SITRUS_BERRY_1              (FLAG_HIDDEN_ITEMS_START + 0x4E)
-#define FLAG_HIDDEN_ITEM_ZONE22A_SITRUS_BERRY_2              (FLAG_HIDDEN_ITEMS_START + 0x4F)
-#define FLAG_HIDDEN_ITEM_ZONE22A_ASPEAR_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x50)
-#define FLAG_HIDDEN_ITEM_ZONE22A_LUM_BERRY                   (FLAG_HIDDEN_ITEMS_START + 0x51)
-#define FLAG_HIDDEN_ITEM_ZONE22A_RED_SHARD_1                 (FLAG_HIDDEN_ITEMS_START + 0x52)
-#define FLAG_HIDDEN_ITEM_ZONE22A_RED_SHARD_2                 (FLAG_HIDDEN_ITEMS_START + 0x53)
-#define FLAG_HIDDEN_ITEM_ZONE22A_RED_SHARD_3                 (FLAG_HIDDEN_ITEMS_START + 0x54)
-#define FLAG_HIDDEN_ITEM_ZONE22A_RED_SHARD_4                 (FLAG_HIDDEN_ITEMS_START + 0x55)
-#define FLAG_HIDDEN_ITEM_ZONE22A_RED_SHARD_5                 (FLAG_HIDDEN_ITEMS_START + 0x56)
-#define FLAG_HIDDEN_ITEM_ZONE22A_RED_SHARD_6                 (FLAG_HIDDEN_ITEMS_START + 0x57)
-#define FLAG_HIDDEN_ITEM_ZONE23A_SITRUS_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x58)
-#define FLAG_HIDDEN_ITEM_ZONE23A_CHESTO_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x59)
-#define FLAG_HIDDEN_ITEM_ZONE23A_PERSIM_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x5A)
-#define FLAG_HIDDEN_ITEM_ZONE23A_LUM_BERRY                   (FLAG_HIDDEN_ITEMS_START + 0x5B)
-#define FLAG_HIDDEN_ITEM_ZONE23A_CHERI_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x5C)
-#define FLAG_HIDDEN_ITEM_ZONE23A_ASPEAR_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x5D)
-#define FLAG_HIDDEN_ITEM_ZONE24A_RED_SHARD_1                 (FLAG_HIDDEN_ITEMS_START + 0x5E)
-#define FLAG_HIDDEN_ITEM_ZONE24A_RED_SHARD_2                 (FLAG_HIDDEN_ITEMS_START + 0x5F)
-#define FLAG_HIDDEN_ITEM_ZONE24A_RED_SHARD_3                 (FLAG_HIDDEN_ITEMS_START + 0x60)
-#define FLAG_HIDDEN_ITEM_ZONE24A_RED_SHARD_4                 (FLAG_HIDDEN_ITEMS_START + 0x61)
-#define FLAG_HIDDEN_ITEM_ZONE24A_RED_SHARD_5                 (FLAG_HIDDEN_ITEMS_START + 0x62)
-#define FLAG_HIDDEN_ITEM_ZONE24A_RED_SHARD_6                 (FLAG_HIDDEN_ITEMS_START + 0x63)
-#define FLAG_HIDDEN_ITEM_ZONE24A_BLUE_SHARD                  (FLAG_HIDDEN_ITEMS_START + 0x64)
-#define FLAG_HIDDEN_ITEM_ZONE24A_YELLOW_SHARD                (FLAG_HIDDEN_ITEMS_START + 0x65)
-#define FLAG_HIDDEN_ITEM_ZONE5A_PECHA_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x66)
-#define FLAG_HIDDEN_ITEM_ZONE5A_CHESTO_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x67)
-#define FLAG_HIDDEN_ITEM_ZONE5B_ORAN_BERRY                   (FLAG_HIDDEN_ITEMS_START + 0x68)
-#define FLAG_HIDDEN_ITEM_ZONE5B_RAWST_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x69)
-#define FLAG_HIDDEN_ITEM_ZONE5B_CHERI_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x6A)
-#define FLAG_HIDDEN_ITEM_NEXT24       (FLAG_HIDDEN_ITEMS_START + 0x6B)
-#define FLAG_HIDDEN_ITEM_NEXT25       (FLAG_HIDDEN_ITEMS_START + 0x6C)
-#define FLAG_HIDDEN_ITEM_NEXT26       (FLAG_HIDDEN_ITEMS_START + 0x6D)
-#define FLAG_HIDDEN_ITEM_NEXT27       (FLAG_HIDDEN_ITEMS_START + 0x6E)
-#define FLAG_HIDDEN_ITEM_NEXT29       (FLAG_HIDDEN_ITEMS_START + 0x6F)
-#define FLAG_HIDDEN_ITEM_END                                    (FLAG_HIDDEN_ITEMS_START + 0xFF)
+#define FLAG_HIDDEN_ITEM_ZONE2A_CHERI_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x02)
+#define FLAG_HIDDEN_ITEM_ZONE2B_PECHA_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x03)
+#define FLAG_HIDDEN_ITEM_ZONE2B_CHESTO_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x04)
+#define FLAG_HIDDEN_ITEM_ZONE3A_PECHA_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x05)
+#define FLAG_HIDDEN_ITEM_ZONE3A_CHERI_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x06)
+#define FLAG_HIDDEN_ITEM_ZONE4A_ORAN_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x07)
+#define FLAG_HIDDEN_ITEM_ZONE4A_PECHA_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x08)
+#define FLAG_HIDDEN_ITEM_ZONE4C_CHESTO_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x09)
+#define FLAG_HIDDEN_ITEM_ZONE4C_RAWST_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x0A)
+#define FLAG_HIDDEN_ITEM_ZONE4E_CHERI_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x0B)
+#define FLAG_HIDDEN_ITEM_ZONE5A_ORAN_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x0C)
+#define FLAG_HIDDEN_ITEM_ZONE5A_PECHA_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x0D)
+#define FLAG_HIDDEN_ITEM_ZONE5A_CHESTO_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x0E)
+#define FLAG_HIDDEN_ITEM_ZONE5B_ORAN_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x0F)
+#define FLAG_HIDDEN_ITEM_ZONE5B_RAWST_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x10)
+#define FLAG_HIDDEN_ITEM_ZONE5B_CHERI_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x11)
+#define FLAG_HIDDEN_ITEM_ZONE6A_RED_SHARD_1                 (FLAG_HIDDEN_ITEMS_START + 0x12)
+#define FLAG_HIDDEN_ITEM_ZONE6A_RED_SHARD_2                 (FLAG_HIDDEN_ITEMS_START + 0x13)
+#define FLAG_HIDDEN_ITEM_ZONE6A_RAWST_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x14)
+#define FLAG_HIDDEN_ITEM_ZONE6A_PERSIM_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x15)
+#define FLAG_HIDDEN_ITEM_ZONE6A_CHESTO_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x16)
+#define FLAG_HIDDEN_ITEM_ZONE7A_ASPEAR_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x17)
+#define FLAG_HIDDEN_ITEM_ZONE7A_PERSIM_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x18)
+#define FLAG_HIDDEN_ITEM_ZONE7A_RAWST_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x19)
+#define FLAG_HIDDEN_ITEM_ZONE7A_SITRUS_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x1A)
+#define FLAG_HIDDEN_ITEM_ZONE8A_RED_SHARD                   (FLAG_HIDDEN_ITEMS_START + 0x1B)
+#define FLAG_HIDDEN_ITEM_ZONE8B_RED_SHARD                   (FLAG_HIDDEN_ITEMS_START + 0x1C)
+#define FLAG_HIDDEN_ITEM_ZONE8C_RED_SHARD                   (FLAG_HIDDEN_ITEMS_START + 0x1D)
+#define FLAG_HIDDEN_ITEM_ZONE9A_LEPPA_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x1E)
+#define FLAG_HIDDEN_ITEM_ZONE9A_SITRUS_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x1F)
+#define FLAG_HIDDEN_ITEM_ZONE10A_RED_SHARD                  (FLAG_HIDDEN_ITEMS_START + 0x20)
+#define FLAG_HIDDEN_ITEM_ZONE11A_SITRUS_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x21)
+#define FLAG_HIDDEN_ITEM_ZONE11A_CHERI_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x22)
+#define FLAG_HIDDEN_ITEM_ZONE11A_RAWST_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x23)
+#define FLAG_HIDDEN_ITEM_ZONE11A_PECHA_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x24)
+#define FLAG_HIDDEN_ITEM_ZONE12A_LEPPA_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x25)
+#define FLAG_HIDDEN_ITEM_ZONE12A_LUM_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x26)
+#define FLAG_HIDDEN_ITEM_ZONE12A_RED_SHARD                  (FLAG_HIDDEN_ITEMS_START + 0x27)
+#define FLAG_HIDDEN_ITEM_ZONE12A_BLUE_SHARD                 (FLAG_HIDDEN_ITEMS_START + 0x28)
+#define FLAG_HIDDEN_ITEM_ZONE13A_LUM_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x29)
+#define FLAG_HIDDEN_ITEM_ZONE14A_RED_SHARD                  (FLAG_HIDDEN_ITEMS_START + 0x2A)
+#define FLAG_HIDDEN_ITEM_ZONE14B_BLUE_SHARD                 (FLAG_HIDDEN_ITEMS_START + 0x2B)
+#define FLAG_HIDDEN_ITEM_ZONE14B_YELLOW_SHARD               (FLAG_HIDDEN_ITEMS_START + 0x2C)
+#define FLAG_HIDDEN_ITEM_ZONE16A_RED_SHARD                  (FLAG_HIDDEN_ITEMS_START + 0x2D)
+#define FLAG_HIDDEN_ITEM_ZONE18A_SITRUS_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x2E)
+#define FLAG_HIDDEN_ITEM_ZONE19B_BLUE_SHARD                 (FLAG_HIDDEN_ITEMS_START + 0x2F)
+#define FLAG_HIDDEN_ITEM_ZONE19B_STARDUST                   (FLAG_HIDDEN_ITEMS_START + 0x30)
+#define FLAG_HIDDEN_ITEM_ZONE19B_PEARL                      (FLAG_HIDDEN_ITEMS_START + 0x31)
+#define FLAG_HIDDEN_ITEM_ZONE19B_YELLOW_SHARD               (FLAG_HIDDEN_ITEMS_START + 0x32)
+#define FLAG_HIDDEN_ITEM_ZONE19B_BIG_PEARL                  (FLAG_HIDDEN_ITEMS_START + 0x33)
+#define FLAG_HIDDEN_ITEM_ZONE19B_RED_SHARD                  (FLAG_HIDDEN_ITEMS_START + 0x34)
+#define FLAG_HIDDEN_ITEM_ZONE19B_STAR_PIECE                 (FLAG_HIDDEN_ITEMS_START + 0x35)
+#define FLAG_HIDDEN_ITEM_ZONE20A_RED_SHARD1                 (FLAG_HIDDEN_ITEMS_START + 0x36)
+#define FLAG_HIDDEN_ITEM_ZONE20A_RED_SHARD2                 (FLAG_HIDDEN_ITEMS_START + 0x37)
+#define FLAG_HIDDEN_ITEM_ZONE20A_RED_SHARD3                 (FLAG_HIDDEN_ITEMS_START + 0x38)
+#define FLAG_HIDDEN_ITEM_ZONE20A_BLUE_SHARD                 (FLAG_HIDDEN_ITEMS_START + 0x39)
+#define FLAG_HIDDEN_ITEM_ZONE20A_YELLOW_SHARD               (FLAG_HIDDEN_ITEMS_START + 0x3A)
+#define FLAG_HIDDEN_ITEM_ZONE21A_RED_SHARD1                 (FLAG_HIDDEN_ITEMS_START + 0x3B)
+#define FLAG_HIDDEN_ITEM_ZONE21B_RED_SHARD                  (FLAG_HIDDEN_ITEMS_START + 0x3C)
+#define FLAG_HIDDEN_ITEM_ZONE21A_RED_SHARD2                 (FLAG_HIDDEN_ITEMS_START + 0x3D)
+#define FLAG_HIDDEN_ITEM_ZONE21A_LUM_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x3E)
+#define FLAG_HIDDEN_ITEM_ZONE21A_CHESTO_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x3F)
+#define FLAG_HIDDEN_ITEM_ZONE21A_SITRUS_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x40)
+#define FLAG_HIDDEN_ITEM_ZONE21A_CHILAN_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x41)
+#define FLAG_HIDDEN_ITEM_ZONE21A_OCCA_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x42)
+#define FLAG_HIDDEN_ITEM_ZONE21A_PASSHO_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x43)
+#define FLAG_HIDDEN_ITEM_ZONE21A_WACAN_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x44)
+#define FLAG_HIDDEN_ITEM_ZONE21A_RINDO_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x45)
+#define FLAG_HIDDEN_ITEM_ZONE21A_YACHE_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x46)
+#define FLAG_HIDDEN_ITEM_ZONE21A_CHOPLE_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x47)
+#define FLAG_HIDDEN_ITEM_ZONE21A_KEBIA_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x48)
+#define FLAG_HIDDEN_ITEM_ZONE21A_SHUCA_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x49)
+#define FLAG_HIDDEN_ITEM_ZONE21A_COBA_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x4A)
+#define FLAG_HIDDEN_ITEM_ZONE21A_PAYAPA_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x4B)
+#define FLAG_HIDDEN_ITEM_ZONE21A_TANGA_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x4C)
+#define FLAG_HIDDEN_ITEM_ZONE21A_CHARTI_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x4D)
+#define FLAG_HIDDEN_ITEM_ZONE21A_KASIB_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x4E)
+#define FLAG_HIDDEN_ITEM_ZONE21A_HABAN_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x4F)
+#define FLAG_HIDDEN_ITEM_ZONE21A_COLBUR_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x50)
+#define FLAG_HIDDEN_ITEM_ZONE21A_BABIRI_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x51)
+#define FLAG_HIDDEN_ITEM_ZONE21A_ROSELI_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x52)
+#define FLAG_HIDDEN_ITEM_ZONE22A_SITRUS_BERRY_1             (FLAG_HIDDEN_ITEMS_START + 0x53)
+#define FLAG_HIDDEN_ITEM_ZONE22A_SITRUS_BERRY_2             (FLAG_HIDDEN_ITEMS_START + 0x54)
+#define FLAG_HIDDEN_ITEM_ZONE22A_ASPEAR_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x55)
+#define FLAG_HIDDEN_ITEM_ZONE22A_LUM_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x56)
+#define FLAG_HIDDEN_ITEM_ZONE22A_RED_SHARD_1                (FLAG_HIDDEN_ITEMS_START + 0x57)
+#define FLAG_HIDDEN_ITEM_ZONE22A_RED_SHARD_2                (FLAG_HIDDEN_ITEMS_START + 0x58)
+#define FLAG_HIDDEN_ITEM_ZONE22A_RED_SHARD_3                (FLAG_HIDDEN_ITEMS_START + 0x59)
+#define FLAG_HIDDEN_ITEM_ZONE22A_RED_SHARD_4                (FLAG_HIDDEN_ITEMS_START + 0x5A)
+#define FLAG_HIDDEN_ITEM_ZONE22A_RED_SHARD_5                (FLAG_HIDDEN_ITEMS_START + 0x5B)
+#define FLAG_HIDDEN_ITEM_ZONE22A_RED_SHARD_6                (FLAG_HIDDEN_ITEMS_START + 0x5C)
+#define FLAG_HIDDEN_ITEM_ZONE23A_SITRUS_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x5D)
+#define FLAG_HIDDEN_ITEM_ZONE23A_CHESTO_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x5E)
+#define FLAG_HIDDEN_ITEM_ZONE23A_PERSIM_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x5F)
+#define FLAG_HIDDEN_ITEM_ZONE23A_LUM_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x60)
+#define FLAG_HIDDEN_ITEM_ZONE23A_CHERI_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x61)
+#define FLAG_HIDDEN_ITEM_ZONE23A_ASPEAR_BERRY               (FLAG_HIDDEN_ITEMS_START + 0x62)
+#define FLAG_HIDDEN_ITEM_ZONE24A_RED_SHARD_1                (FLAG_HIDDEN_ITEMS_START + 0x63)
+#define FLAG_HIDDEN_ITEM_ZONE24A_RED_SHARD_2                (FLAG_HIDDEN_ITEMS_START + 0x64)
+#define FLAG_HIDDEN_ITEM_ZONE24A_RED_SHARD_3                (FLAG_HIDDEN_ITEMS_START + 0x65)
+#define FLAG_HIDDEN_ITEM_ZONE24A_RED_SHARD_4                (FLAG_HIDDEN_ITEMS_START + 0x66)
+#define FLAG_HIDDEN_ITEM_ZONE24A_RED_SHARD_5                (FLAG_HIDDEN_ITEMS_START + 0x67)
+#define FLAG_HIDDEN_ITEM_ZONE24A_RED_SHARD_6                (FLAG_HIDDEN_ITEMS_START + 0x68)
+#define FLAG_HIDDEN_ITEM_ZONE24A_BLUE_SHARD                 (FLAG_HIDDEN_ITEMS_START + 0x69)
+#define FLAG_HIDDEN_ITEM_ZONE24A_YELLOW_SHARD               (FLAG_HIDDEN_ITEMS_START + 0x6A)
+
+#define FLAG_HIDDEN_ITEM_END                                (FLAG_HIDDEN_ITEMS_START + 0xFF)
 
 // Custom Flags Items
-#define FLAG_ITEM_ZONE1A_RANDOM_1                                   0x300
-#define FLAG_ITEM_ZONE1A_QUICK_CLAW                                 0x301
-#define FLAG_ITEM_ZONE2A_RANDOM_1                                   0x302
-#define FLAG_ITEM_ZONE2B_RANDOM_1                                   0x303
-#define FLAG_ITEM_ZONE2B_TM_BUG_BITE                                0x37B
-#define FLAG_ITEM_ZONE2C_SILK_SCARF                                 0x370
-#define FLAG_ITEM_ZONE3A_RANDOM_1                                   0x304
-#define FLAG_ITEM_ZONE3A_RANDOM_2                                   0x305
-#define FLAG_ITEM_ZONE3A_RANDOM_3                                   0x306
-#define FLAG_ITEM_ZONE3A_HYPER_POTION                               0x307
-#define FLAG_ITEM_ZONE4A_SILVER_POWDER                              0x377
-#define FLAG_ITEM_ZONE4A_RANDOM_1                                   0x308
-#define FLAG_ITEM_ZONE4B_RANDOM_1                                   0x309
-#define FLAG_ITEM_ZONE4C_MUSCLE_BAND                                0x30A
-#define FLAG_ITEM_ZONE4C_TWISTED_SPOON                              0x379
-#define FLAG_ITEM_ZONE4D_WISE_GLASSES                               0x30B
-#define FLAG_ITEM_ZONE4D_BEEDRILLITE                                0x30C
-#define FLAG_ITEM_ZONE4E_RANDOM_1                                   0x30D
-#define FLAG_ITEM_ZONE4E_POISON_BARB                                0x378
-#define FLAG_ITEM_ZONE5A_QUICK_BALL                                 0x30E
-#define FLAG_ITEM_ZONE5A_RANDOM_1                                   0x30F
-#define FLAG_ITEM_ZONE5A_LAX_MINT                                   0x371
-#define FLAG_ITEM_ZONE5A_MIRACLE_SEED                               0x37A
-#define FLAG_ITEM_ZONE5A_RANDOM_2                                   0x37C
-#define FLAG_ITEM_ZONE5B_RANDOM_1                                   0x372
-#define FLAG_ITEM_ZONE5B_RANDOM_2                                   0x373
-#define FLAG_ITEM_ZONE5B_GEMS                                       0x374
-#define FLAG_ITEM_ZONE5B_GENTLE_MINT                                0x375
-#define FLAG_ITEM_ZONE6A_TM_DRAINING_KISS                           0x310
-#define FLAG_ITEM_ZONE6A_NET_BALL                                   0x311
-#define FLAG_ITEM_ZONE6A_NEST_BALL                                  0x312
-#define FLAG_ITEM_ZONE6A_GEMS                                       0x376
-#define FLAG_ITEM_ZONE7A_SHARP_BEAK                                 0x313
-#define FLAG_ITEM_ZONE7A_RANDOM_1                                  0x314
-#define FLAG_ITEM_ZONE7A_GEMS                                       0x315
-#define FLAG_ITEM_ZONE7A_SERIOUS_MINT                               0x316
-#define FLAG_ITEM_ZONE7A_BLACK_BELT                                 0x317
-#define FLAG_ITEM_ZONE7A_RANDOM_2                                   0x318
-#define FLAG_ITEM_ZONE7A_RANDOM_3                                   0x319
-#define FLAG_ITEM_ZONE8A_MAGNET                                     0x31A
-#define FLAG_ITEM_ZONE8A_RANDOM_1                                   0x31B
-#define FLAG_ITEM_ZONE8A_RANDOM_2                                   0x31C
-#define FLAG_ITEM_ZONE8B_HARD_STONE                                 0x31D
-#define FLAG_ITEM_ZONE8B_DUSK_BALL                                  0x31E
-#define FLAG_ITEM_ZONE8B_RANDOM_1                                   0x31F
-#define FLAG_ITEM_ZONE8C_NEVER_MELT_ICE                             0x320
-#define FLAG_ITEM_ZONE8C_FULL_HEAL                                  0x321
-#define FLAG_ITEM_ZONE8C_RANDOM_1                                   0x322
-#define FLAG_ITEM_ZONE9A_MIRACLE_SEED                               0x323
-#define FLAG_ITEM_ZONE9A_BIG_ROOT                                   0x324
-#define FLAG_ITEM_ZONE9A_TM13                                       0x325
-#define FLAG_ITEM_ZONE9G_CHARCOAL                                   0x326
-#define FLAG_ITEM_ZONE10A_TM16                                      0x327
-#define FLAG_ITEM_ZONE10A_SUN_STONE                                 0x328
-#define FLAG_ITEM_ZONE10A_SOFT_SAND                                 0x329
-#define FLAG_ITEM_ZONE10A_DRAGON_FANG                               0x32A
-#define FLAG_ITEM_ZONE10A_METAL_COAT                                0x32B
-#define FLAG_ITEM_ZONE10A_HEAVY_DUTY_BOOTS                          0x32C
-#define FLAG_ITEM_ZONE11A_TM22                                      0x32D
-#define FLAG_ITEM_ZONE11A_MOON_STONE                                0x32E
-#define FLAG_ITEM_ZONE11A_TIMER_BALL                                0x32F
-#define FLAG_ITEM_ZONE12A_TM24                                      0x330
-#define FLAG_ITEM_ZONE12A_THUNDER_STONE                             0x331
-#define FLAG_ITEM_ZONE12A_FIRE_STONE                                0x332
-#define FLAG_ITEM_ZONE12A_MACHO_BRACE                               0x333
-#define FLAG_ITEM_ZONE12A_METRONOME                                 0x334
-#define FLAG_ITEM_ZONE13A_LEAF_STONE                                0x335
-#define FLAG_ITEM_ZONE13A_SHINY_STONE                               0x336
-#define FLAG_ITEM_ZONE14A_FULL_HEAL                                 0x337
-#define FLAG_ITEM_ZONE14B_HYPER_POTION                              0x338
-#define FLAG_ITEM_ZONE14C_DUSK_STONE                                0x339
-#define FLAG_ITEM_ZONE15A_SNOWBALL_3                                0x33A
-#define FLAG_ITEM_ZONE15A_TIMER_BALL                                0x33B
-#define FLAG_ITEM_ZONE15A_ICE_STONE                                 0x33C
-#define FLAG_ITEM_ZONE15A_QUICK_BALL                                0x33D
-#define FLAG_ITEM_ZONE15A_REVIVE                                    0x33E
-#define FLAG_ITEM_ZONE15A_DAWN_STONE                                0x33F
-#define FLAG_ITEM_ZONE15A_TM26                                      0x340
-#define FLAG_ITEM_ZONE15A_GLALITITE                                 0x341
-#define FLAG_ITEM_ZONE16A_TM27                                      0x342
-#define FLAG_ITEM_ZONE16A_WATER_STONE                               0x343
-#define FLAG_ITEM_ZONE16A_DIVE_BALL                                 0x344
-#define FLAG_ITEM_ZONE16A_TIMER_BALL                                0x345
-#define FLAG_ITEM_ZONE18A_SUPER_POTION_2                            0x346
-#define FLAG_ITEM_ZONE18A_SUPER_REPEL                               0x347
-#define FLAG_ITEM_ZONE20A_HYPER_POTION                              0x348
-#define FLAG_ITEM_ZONE20A_FULL_HEAL                                 0x349
-#define FLAG_ITEM_ZONE20A_CELL_BATTERY_3                            0x34A
-#define FLAG_ITEM_ZONE20A_ULTRA_BALL                                0x34B
-#define FLAG_ITEM_ZONE20A_REVIVE                                    0x34C
-#define FLAG_ITEM_ZONE20A_SUPER_REPEL                               0x34D
-#define FLAG_ITEM_ZONE21A_QUICK_BALL                                0x34E
-#define FLAG_ITEM_ZONE21A_ULTRA_BALL                                0x34F
-#define FLAG_ITEM_ZONE21A_HEAT_ROCK                                 0x350
-#define FLAG_ITEM_ZONE21A_SUPER_REPEL                               0x351
-#define FLAG_ITEM_ZONE21A_EVERSTONE                                 0x352
-#define FLAG_ITEM_ZONE21A_TM28                                      0x353
-#define FLAG_ITEM_ZONE21B_SABLENITE                                 0x354
-#define FLAG_ITEM_ZONE22A_ETHER                                     0x355
-#define FLAG_ITEM_ZONE22A_ICY_ROCK                                  0x356
-#define FLAG_ITEM_ZONE22A_METAL_COAT                                0x357
-#define FLAG_ITEM_ZONE22A_DESTINY_KNOT                              0x358
-#define FLAG_ITEM_ZONE22A_3000                                      0x359
-#define FLAG_ITEM_ZONE23A_LEAF_STONE                                0x35A
-#define FLAG_ITEM_ZONE23A_HYPER_POTION                              0x35B
-#define FLAG_ITEM_ZONE23A_SUPER_REPEL                               0x35C
-#define FLAG_ITEM_ZONE23A_QUICK_BALL                                0x35D
-#define FLAG_ITEM_ZONE23A_TIMER_BALL                                0x35E
-#define FLAG_ITEM_ZONE23A_DUSK_BALL                                 0x35F
-#define FLAG_ITEM_ZONE24A_FIRE_STONE                                0x360
-#define FLAG_ITEM_ZONE24A_SUN_STONE                                 0x361
-#define FLAG_ITEM_ZONE24A_DRAGON_FANG                               0x362
-#define FLAG_ITEM_ZONE24A_SMOOTH_ROCK                               0x363
-#define FLAG_ITEM_ZONE24A_ULTRA_BALL                                0x364
-#define FLAG_ITEM_ZONE24A_HYPER_POTION                              0x365
-#define FLAG_ITEM_ZONE25B_DUSK_BALL                                 0x366
-#define FLAG_ITEM_ZONE25C_TM36                                      0x367
-#define FLAG_ITEM_ZONE25E_FULL_HEAL                                 0x368
-#define FLAG_ITEM_ZONE25F_SHINY_STONE                               0x369
-#define FLAG_ITEM_ZONE25G_KINGS_ROCK                                0x36A
-#define FLAG_ITEM_ZONE25G_4000                                      0x36B
-#define FLAG_ITEM_ZONE25I_DAWN_STONE                                0x36C
-#define FLAG_ITEM_ZONE25J_DUSK_STONE                                0x36D
-#define FLAG_ITEM_ZONE25K_TM37                                      0x36E
-#define FLAG_ITEM_ZONE26A_BANETTITE                                 0x36F
+#define FLAG_ITEM_ZONE1A_RANDOM_1                  0x300
+#define FLAG_ITEM_ZONE1A_QUICK_CLAW                0x301
+#define FLAG_ITEM_ZONE2A_RANDOM_1                  0x302
+#define FLAG_ITEM_ZONE2B_RANDOM_1                  0x303
+#define FLAG_ITEM_ZONE2B_TM_BUG_BITE               0x304
+#define FLAG_ITEM_ZONE2C_SILK_SCARF                0x305
+#define FLAG_ITEM_ZONE3A_RANDOM_1                  0x306
+#define FLAG_ITEM_ZONE3A_RANDOM_2                  0x307
+#define FLAG_ITEM_ZONE3A_RANDOM_3                  0x308
+#define FLAG_ITEM_ZONE3A_HYPER_POTION              0x309
+#define FLAG_ITEM_ZONE4A_SILVER_POWDER             0x30A
+#define FLAG_ITEM_ZONE4A_RANDOM_1                  0x30B
+#define FLAG_ITEM_ZONE4B_RANDOM_1                  0x30C
+#define FLAG_ITEM_ZONE4C_MUSCLE_BAND               0x30D
+#define FLAG_ITEM_ZONE4C_TWISTED_SPOON             0x30E
+#define FLAG_ITEM_ZONE4D_WISE_GLASSES              0x30F
+#define FLAG_ITEM_ZONE4D_BEEDRILLITE               0x310
+#define FLAG_ITEM_ZONE4E_RANDOM_1                  0x311
+#define FLAG_ITEM_ZONE4E_POISON_BARB               0x312
+#define FLAG_ITEM_ZONE5A_QUICK_BALL                0x313
+#define FLAG_ITEM_ZONE5A_RANDOM_1                  0x314
+#define FLAG_ITEM_ZONE5A_LAX_MINT                  0x315
+#define FLAG_ITEM_ZONE5A_MIRACLE_SEED              0x316
+#define FLAG_ITEM_ZONE5A_RANDOM_2                  0x317
+#define FLAG_ITEM_ZONE5B_RANDOM_1                  0x318
+#define FLAG_ITEM_ZONE5B_RANDOM_2                  0x319
+#define FLAG_ITEM_ZONE5B_GEMS                      0x31A
+#define FLAG_ITEM_ZONE5B_GENTLE_MINT               0x31B
+#define FLAG_ITEM_ZONE6A_TM_DRAINING_KISS          0x31C
+#define FLAG_ITEM_ZONE6A_NET_BALL                  0x31D
+#define FLAG_ITEM_ZONE6A_NEST_BALL                 0x31E
+#define FLAG_ITEM_ZONE6A_GEMS                      0x31F
+#define FLAG_ITEM_ZONE7A_SHARP_BEAK                0x320
+#define FLAG_ITEM_ZONE7A_RANDOM_1                  0x321
+#define FLAG_ITEM_ZONE7A_GEMS                      0x322
+#define FLAG_ITEM_ZONE7A_SERIOUS_MINT              0x323
+#define FLAG_ITEM_ZONE7A_BLACK_BELT                0x324
+#define FLAG_ITEM_ZONE7A_RANDOM_2                  0x325
+#define FLAG_ITEM_ZONE7A_RANDOM_3                  0x326
+#define FLAG_ITEM_ZONE8A_MAGNET                    0x327
+#define FLAG_ITEM_ZONE8A_RANDOM_1                  0x328
+#define FLAG_ITEM_ZONE8A_RANDOM_2                  0x329
+#define FLAG_ITEM_ZONE8B_HARD_STONE                0x32A
+#define FLAG_ITEM_ZONE8B_DUSK_BALL                 0x32B
+#define FLAG_ITEM_ZONE8B_RANDOM_1                  0x32C
+#define FLAG_ITEM_ZONE8C_NEVER_MELT_ICE            0x32D
+#define FLAG_ITEM_ZONE8C_FULL_HEAL                 0x32E
+#define FLAG_ITEM_ZONE8C_RANDOM_1                  0x32F
+#define FLAG_ITEM_ZONE9A_MIRACLE_SEED              0x330
+#define FLAG_ITEM_ZONE9A_BIG_ROOT                  0x331
+#define FLAG_ITEM_ZONE9A_TM13                      0x332
+#define FLAG_ITEM_ZONE9G_CHARCOAL                  0x333
+#define FLAG_ITEM_ZONE10A_TM16                     0x334
+#define FLAG_ITEM_ZONE10A_SUN_STONE                0x335
+#define FLAG_ITEM_ZONE10A_SOFT_SAND                0x336
+#define FLAG_ITEM_ZONE10A_DRAGON_FANG              0x337
+#define FLAG_ITEM_ZONE10A_METAL_COAT               0x338
+#define FLAG_ITEM_ZONE10A_HEAVY_DUTY_BOOTS         0x339
+#define FLAG_ITEM_ZONE11A_TM22                     0x33A
+#define FLAG_ITEM_ZONE11A_MOON_STONE               0x33B
+#define FLAG_ITEM_ZONE11A_TIMER_BALL               0x33C
+#define FLAG_ITEM_ZONE12A_TM24                     0x33D
+#define FLAG_ITEM_ZONE12A_THUNDER_STONE            0x33E
+#define FLAG_ITEM_ZONE12A_FIRE_STONE               0x33F
+#define FLAG_ITEM_ZONE12A_MACHO_BRACE              0x340
+#define FLAG_ITEM_ZONE12A_METRONOME                0x341
+#define FLAG_ITEM_ZONE13A_LEAF_STONE               0x342
+#define FLAG_ITEM_ZONE13A_SHINY_STONE              0x343
+#define FLAG_ITEM_ZONE14A_FULL_HEAL                0x344
+#define FLAG_ITEM_ZONE14B_HYPER_POTION             0x345
+#define FLAG_ITEM_ZONE14C_DUSK_STONE               0x346
+#define FLAG_ITEM_ZONE15A_SNOWBALL_3               0x347
+#define FLAG_ITEM_ZONE15A_TIMER_BALL               0x348
+#define FLAG_ITEM_ZONE15A_ICE_STONE                0x349
+#define FLAG_ITEM_ZONE15A_QUICK_BALL               0x34A
+#define FLAG_ITEM_ZONE15A_REVIVE                   0x34B
+#define FLAG_ITEM_ZONE15A_DAWN_STONE               0x34C
+#define FLAG_ITEM_ZONE15A_TM26                     0x34D
+#define FLAG_ITEM_ZONE15A_GLALITITE                0x34E
+#define FLAG_ITEM_ZONE16A_TM27                     0x34F
+#define FLAG_ITEM_ZONE16A_WATER_STONE              0x350
+#define FLAG_ITEM_ZONE16A_DIVE_BALL                0x351
+#define FLAG_ITEM_ZONE16A_TIMER_BALL               0x352
+#define FLAG_ITEM_ZONE18A_SUPER_POTION_2           0x353
+#define FLAG_ITEM_ZONE18A_SUPER_REPEL              0x354
+#define FLAG_ITEM_ZONE20A_HYPER_POTION             0x355
+#define FLAG_ITEM_ZONE20A_FULL_HEAL                0x356
+#define FLAG_ITEM_ZONE20A_CELL_BATTERY_3           0x357
+#define FLAG_ITEM_ZONE20A_ULTRA_BALL               0x358
+#define FLAG_ITEM_ZONE20A_REVIVE                   0x359
+#define FLAG_ITEM_ZONE20A_SUPER_REPEL              0x35A
+#define FLAG_ITEM_ZONE21A_QUICK_BALL               0x35B
+#define FLAG_ITEM_ZONE21A_ULTRA_BALL               0x35C
+#define FLAG_ITEM_ZONE21A_HEAT_ROCK                0x35D
+#define FLAG_ITEM_ZONE21A_SUPER_REPEL              0x35E
+#define FLAG_ITEM_ZONE21A_EVERSTONE                0x35F
+#define FLAG_ITEM_ZONE21A_TM28                     0x360
+#define FLAG_ITEM_ZONE21B_SABLENITE                0x361
+#define FLAG_ITEM_ZONE22A_ETHER                    0x362
+#define FLAG_ITEM_ZONE22A_ICY_ROCK                 0x363
+#define FLAG_ITEM_ZONE22A_METAL_COAT               0x364
+#define FLAG_ITEM_ZONE22A_DESTINY_KNOT             0x365
+#define FLAG_ITEM_ZONE22A_3000                     0x366
+#define FLAG_ITEM_ZONE23A_LEAF_STONE               0x367
+#define FLAG_ITEM_ZONE23A_HYPER_POTION             0x368
+#define FLAG_ITEM_ZONE23A_SUPER_REPEL              0x369
+#define FLAG_ITEM_ZONE23A_QUICK_BALL               0x36A
+#define FLAG_ITEM_ZONE23A_TIMER_BALL               0x36B
+#define FLAG_ITEM_ZONE23A_DUSK_BALL                0x36C
+#define FLAG_ITEM_ZONE24A_FIRE_STONE               0x36D
+#define FLAG_ITEM_ZONE24A_SUN_STONE                0x36E
+#define FLAG_ITEM_ZONE24A_DRAGON_FANG              0x36F
+#define FLAG_ITEM_ZONE24A_SMOOTH_ROCK              0x370
+#define FLAG_ITEM_ZONE24A_ULTRA_BALL               0x371
+#define FLAG_ITEM_ZONE24A_HYPER_POTION             0x372
+#define FLAG_ITEM_ZONE25B_DUSK_BALL                0x373
+#define FLAG_ITEM_ZONE25C_TM36                     0x374
+#define FLAG_ITEM_ZONE25E_FULL_HEAL                0x375
+#define FLAG_ITEM_ZONE25F_SHINY_STONE              0x376
+#define FLAG_ITEM_ZONE25G_KINGS_ROCK               0x377
+#define FLAG_ITEM_ZONE25G_4000                     0x378
+#define FLAG_ITEM_ZONE25I_DAWN_STONE               0x379
+#define FLAG_ITEM_ZONE25J_DUSK_STONE               0x37A
+#define FLAG_ITEM_ZONE25K_TM37                     0x37B
+#define FLAG_ITEM_ZONE26A_BANETTITE                0x37C
 
 #define FLAG_UNUSED_0x020    0x4FA // Unused Flag
 #define FLAG_UNUSED_0x021    0x4FA // Unused Flag

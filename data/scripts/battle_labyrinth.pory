@@ -1,7 +1,6 @@
 script EventScript_EnterSanctuary {
 	clearflag(FLAG_IN_NEW_ZONE)
 	clearflag(FLAG_ZONE_PC_USED)
-	setvar(VAR_TRAINER_MONEY, 0)
 	call(EventScript_MoveCameraUp)
 	applymovement(1, Common_Movement_ExclamationMark)
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
@@ -2791,7 +2790,6 @@ script EventScript_PorygonExit {
 				warp(MAP_ZONE6SANCTUARY, 255, 38, 11)
 				waitstate
 			case 7:
-				setflag(FLAG_HIDE_ZONE7A_MAX)
 				setflag(FLAG_ZONE7B_HEAL_USED)
 				warp(MAP_ZONE8SANCTUARY, 255, 38, 11)
 				waitstate
