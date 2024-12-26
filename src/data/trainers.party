@@ -2043,21 +2043,37 @@ Mienfoo
 Ability: Inner Focus
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Fake Out
+- Force Palm
+- Me First
+- Vital Throw
 
 Mankey
 Ability: Vital Spirit
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Swagger
+- Retaliate
+- Karate Chop
+- Assurance
 
 Meditite
 Ability: Pure Power
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Feint
+- Secret Power
+- Force Palm
+- Psybeam
 
 Timburr
 Ability: Iron Fist
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Rock Throw
+- Wake-Up Slap
+- Chip Away
+- Mach Punch
 
 === TRAINER_PBL_JAMAL ===
 Name: Jamal
@@ -2072,21 +2088,37 @@ Numel
 Ability: Oblivious
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bulldoze
+- Yawn
+- Flame Wheel
+- Magnitude
 
 Zubat
 Ability: Inner Focus
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Poison Fang
+- Quick Guard
+- Wing Attack
+- Swift
 
 Fomantis
 Ability: Leaf Guard
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Worry Seed
+- Razor Leaf
+- Synthesis
+- Slash
 
 Buizel
 Ability: Water Veil
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bite
+- Aqua Jet
+- Sonic Boom
+- Pursuit
 
 === TRAINER_PBL_PAIGE ===
 Name: Paige
@@ -2101,21 +2133,37 @@ Combee
 Ability: Honey Gather
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Gust
+- Sweet Scent
+- Struggle Bug
+- Bug Bite
 
 Exeggcute
 Ability: Chlorophyll
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Confusion
+- Mega Drain
+- Poison Powder
+- Stun Spore
 
 Shroomish
 Ability: Effect Spore
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Headbutt
+- Mega Drain
+- Fake Tears
+- Leech Seed
 
 Cutiefly
 Ability: Shield Dust
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Struggle Bug
+- Stun Spore
+- Switcheroo
+- Draining Kiss
 
 === TRAINER_PBL_SETH ===
 Name: Seth
@@ -2130,21 +2178,37 @@ Pachirisu
 Ability: Prankster
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Flatter
+- Spark
+- Swift
+- Nuzzle
 
 Teddiursa
 Ability: Quick Feet
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Yawn
+- Covet
+- Metal Claw
+- Chip Away
 
 Aipom
 Ability: Pickup
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Fake Out
+- Astonish
+- Quick Guard
+- Slam
 
 Shroodle
 Ability: Unburden
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Switcheroo
+- Poison Fang
+- Super Fang
+- Flatter
 
 === TRAINER_PBL_CONNIE ===
 Name: Connie
@@ -2159,11 +2223,19 @@ Oddish
 Ability: Chlorophyll
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Leech Seed
+- Razor Leaf
+- Secret Power
+- Mega Drain
 
 Dewpider
 Ability: Water Bubble
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Aqua Ring
+- Spider Web
+- Bug Bite
+- Bubble Beam
 
 === TRAINER_PBL_PETER ===
 Name: Peter
@@ -2178,11 +2250,19 @@ Bellsprout
 Ability: Chlorophyll
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Clear Smog
+- Razor Leaf
+- Acid Spray
+- Magical Leaf
 
 Surskit
 Ability: Swift Swim
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Struggle Bug
+- Bubble Beam
+- Psybeam
+- Signal Beam
 
 === TRAINER_PBL_WHITAKER ===
 Name: Whitaker
@@ -2206,16 +2286,28 @@ Natu
 Ability: Magic Bounce
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Night Shade
+- Refresh
+- Air Cutter
+- Ominous Wind
 
 Flittle
-Ability: Anticipation
+Ability: Frisk
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Disarming Voice
+- Baby-Doll Eyes
+- Psybeam
+- Pluck
 
 Farfetch'd
 Ability: Super Luck
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Aerial Ace
+- Quick Attack
+- Feather Dance
+- Air Cutter
 
 === TRAINER_PBL_BETTY_LEVIATHAN_7 ===
 Name: Betty
@@ -2295,21 +2387,34 @@ Noibat
 Ability: Infiltrator
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Wing Attack
+- Double Team
+- Bite
+- Roost
 
 Feebas
 Ability: Swift Swim
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Splash
+- Tackle
+- Flail
 
 Beldum
 Ability: Clear Body
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Take Down
 
 Gible
 Ability: Sand Veil
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Metal Claw
+- Dragon Breath
+- Bite
+- Bulldoze
 
 === TRAINER_PBL_EMILIANO ===
 Name: Emiliano
@@ -2324,21 +2429,37 @@ Aron
 Ability: Sturdy
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Metal Claw
+- Rock Tomb
+- Metal Sound
+- Headbutt
 
 Roggenrola
 Ability: Sturdy
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Smack Down
+- Mud-Slap
+- Magnitude
+- Headbutt
 
 Cufant
 Ability: Sheer Force
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Rollout
+- Stomp
+- Bulldoze
+- Slam
 
 Machop
 Ability: No Guard
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Seismic Toss
+- Low Sweep
+- Strength
+- Vital Throw
 
 === TRAINER_PBL_BECKHAM ===
 Name: Beckham
@@ -2353,21 +2474,37 @@ Slowpoke
 Ability: Own Tempo
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Yawn
+- Disable
+- Confusion
+- Water Pulse
 
 Salandit
 Ability: Corrosion
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Mud-Slap
+- Fake Out
+- Poison Fang
+- Incinerate
 
 Cubone
 Ability: Battle Armor
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bone Club
+- Focus Energy
+- Double Kick
+- Bone Rush
 
 Lickitung
 Ability: Unaware
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Disable
+- Stomp
+- Wrap
+- Magnitude
 
 === TRAINER_PBL_KAREN ===
 Name: Karen
@@ -2382,6 +2519,10 @@ Spinda
 Ability: Contrary
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Smelling Salts
+- Feint Attack
+- Psybeam
+- Water Pulse
 
 === TRAINER_PBL_JAYDEN ===
 Name: Jayden
@@ -2396,21 +2537,37 @@ Geodude
 Ability: Sturdy
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Rollout
+- Magnitude
+- Smack Down
+- Bulldoze
 
 Rolycoly
 Ability: Steam Engine
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Smack Down
+- Rapid Spin
+- Mud-Slap
+- Incinerate
 
 Nacli
 Ability: Purifying Salt
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Mud Shot
+- Headbutt
+- Smack Down
+- Recover
 
 Shuckle
 Ability: Solid Rock
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Struggle Bug
+- Acid
+- Rock Throw
+- Bug Bite
 
 === TRAINER_PBL_NEIL ===
 Name: Neil
@@ -2425,21 +2582,37 @@ Rellor
 Ability: Compound Eyes
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Struggle Bug
+- Mud Shot
+- Bug Bite
+- Take Down
 
 Baltoy
 Ability: Levitate
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Rock Tomb
+- Rapid Spin
+- Ancient Power
+- Psybeam
 
 Yamask
 Ability: Mummy
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Imprison
+- Hex
+- Curse
+- Fake Tears
 
 Klink
 Ability: Plus
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Charge
+- Metal Sound
+- Screech
+- Mirror Shot
 
 === TRAINER_PBL_TAMARA ===
 Name: Tamara
@@ -2454,21 +2627,37 @@ Shellos
 Ability: Storm Drain
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Yawn
+- Water Pulse
+- Hidden Power
+- Sludge
 
 Woobat
 Ability: Serene Grace
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Heart Stamp
+- Flatter
+- Assurance
+- Air Cutter
 
 Drowzee
 Ability: Insomnia
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Poison Gas
+- Headbutt
+- Wake-Up Slap
+- Psybeam
 
 Rockruff
 Ability: Vital Spirit
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bite
+- Roar
+- Rock Tomb
+- Endeavor
 
 === TRAINER_PBL_ALISTAIR_LEVIATHAN_8 ===
 Name: Alistair
