@@ -211,6 +211,7 @@ struct SaveBlock3
 #if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_FIRST_TIME
     u8 itemFlags[ITEM_FLAGS_COUNT];
 #endif
+    u8 customFiller[1624];
 };
 
 extern struct SaveBlock3 *gSaveBlock3Ptr;
@@ -573,6 +574,7 @@ struct SaveBlock2
 #if FREE_OTHER_PBL == FALSE
     /*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
 #endif //FREE_OTHER_PBL
+               u8 customFiller[1508];
     /*0x64C*/ struct BattleFrontier frontier;
 }; // sizeof=0xF2C
 
@@ -1156,6 +1158,7 @@ struct SaveBlock1
 #endif //FREE_OTHER_PBL
 #if FREE_OTHER_PBL == FALSE
 #endif //FREE_OTHER_PBL
+               u8 customFiller[292];
     // sizeof: 0x3???
 };
 
