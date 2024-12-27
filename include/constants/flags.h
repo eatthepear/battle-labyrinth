@@ -434,9 +434,9 @@
 #define FLAG_ITEM_ZONE8C_NEVER_MELT_ICE            0x32D
 #define FLAG_ITEM_ZONE8C_FULL_HEAL                 0x32E
 #define FLAG_ITEM_ZONE8C_RANDOM_1                  0x32F
-#define FLAG_ITEM_ZONE9A_MIRACLE_SEED              0x330
+#define FLAG_ITEM_ZONE9A_RANDOM_1                  0x330
 #define FLAG_ITEM_ZONE9A_BIG_ROOT                  0x331
-#define FLAG_ITEM_ZONE9A_TM13                      0x332
+#define FLAG_ITEM_ZONE9A_TM_PLUCK                  0x332
 #define FLAG_ITEM_ZONE9G_CHARCOAL                  0x333
 #define FLAG_ITEM_ZONE10A_TM16                     0x334
 #define FLAG_ITEM_ZONE10A_SUN_STONE                0x335
