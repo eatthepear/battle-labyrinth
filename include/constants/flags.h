@@ -402,7 +402,7 @@
 #define FLAG_ITEM_ZONE4C_MUSCLE_BAND               0x30D
 #define FLAG_ITEM_ZONE4C_TWISTED_SPOON             0x30E
 #define FLAG_ITEM_ZONE4D_WISE_GLASSES              0x30F
-#define FLAG_ITEM_ZONE4D_BEEDRILLITE               0x310
+#define FLAG_ITEM_ZONE4D_TM_HIDDEN_POWER           0x310
 #define FLAG_ITEM_ZONE4E_RANDOM_1                  0x311
 #define FLAG_ITEM_ZONE4E_POISON_BARB               0x312
 #define FLAG_ITEM_ZONE5A_QUICK_BALL                0x313
