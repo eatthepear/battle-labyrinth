@@ -2956,6 +2956,12 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Spark
 - Charge Beam
 
+Unown
+Ability: Levitate
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Hidden Power
+
 Toxel
 Ability: Static
 Level: 20
@@ -2965,33 +2971,27 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Nuzzle
 - Tearful Look
 
-Swablu
-Ability: Natural Cure
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Round
-- Haze
-- Feather Dance
-- Dragon Breath
-
 === TRAINER_PBL_ARI ===
 Name: Ari
 Class: Winstrate
 Pic: Camper
 Music: Male
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 
 Tandemaus
+Ability: Pickup
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Tadbulb
+Ability: Static
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Doduo
+Ability: Run Away
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3000,11 +3000,12 @@ Name: Bertha
 Class: Winstrate
 Pic: Picnicker
 Music: Girl
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 
 Stunfisk
+Ability: Static
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3013,15 +3014,17 @@ Name: Cassandra
 Class: Winstrate
 Pic: Pokefan F
 Music: Twins
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 
-Squawkabilly
+Squawkabilly-Green
+Ability: Intimidate
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Chatot
+Ability: Punk Rock
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3030,11 +3033,12 @@ Name: Dominic
 Class: Winstrate
 Pic: Pokefan M
 Music: Twins
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 
 Carnivine
+Ability: Levitate
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3043,15 +3047,17 @@ Name: Erica
 Class: Winstrate
 Pic: Expert F
 Music: Intense
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 
 Throh
+Ability: Guts
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Sawk
+Ability: Sturdy
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3064,17 +3070,20 @@ AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 
-Tandemaus
+Tandemaus @ Oran Berry
+Ability: Pickup
 Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Tadbulb
+Tadbulb @ Oran Berry
+Ability: Static
 Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Doduo
+Doduo @ Oran Berry
+Ability: Run Away
 Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_BERTHA_CHALLENGE ===
 Name: Bertha
@@ -3085,9 +3094,10 @@ AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 
-Stunfisk
+Stunfisk @ Sitrus Berry
+Ability: Static
 Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_CASSANDRA_CHALLENGE ===
 Name: Cassandra
@@ -3098,13 +3108,15 @@ AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 
-Squawkabilly
+Squawkabilly-Green @ Sharp Beak
+Ability: Intimidate
 Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Chatot
+Chatot @ Sitrus Berry
+Ability: Punk Rock
 Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_DOMINIC_CHALLENGE ===
 Name: Dominic
@@ -3115,9 +3127,10 @@ AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 
-Carnivine
+Carnivine @ Sitrus Berry
+Ability: Levitate
 Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_ERICA_CHALLENGE ===
 Name: Erica
@@ -3128,13 +3141,15 @@ AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 
-Throh
+Throh @ Sitrus Berry
+Ability: Guts
 Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Sawk
+Sawk @ Sitrus Berry
+Ability: Sturdy
 Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_KYLE ===
 Name: STEVEN
