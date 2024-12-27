@@ -2982,18 +2982,21 @@ Random Lead: No
 
 Tandemaus
 Ability: Pickup
-Level: 20
+Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Super Fang
 
 Tadbulb
 Ability: Static
-Level: 20
+Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Parabolic Charge
 
 Doduo
 Ability: Run Away
-Level: 20
+Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Double Hit
 
 === TRAINER_PBL_BERTHA ===
 Name: Bertha
@@ -3006,8 +3009,10 @@ Random Lead: No
 
 Stunfisk
 Ability: Static
-Level: 20
+Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Mud Shot
+- Spark
 
 === TRAINER_PBL_CASSANDRA ===
 Name: Cassandra
@@ -3020,13 +3025,17 @@ Random Lead: No
 
 Squawkabilly-Green
 Ability: Intimidate
-Level: 20
+Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Aerial Ace
+- Quick Attack
 
 Chatot
 Ability: Punk Rock
-Level: 20
+Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Round
+- Sing
 
 === TRAINER_PBL_DOMINIC ===
 Name: Dominic
@@ -3039,8 +3048,10 @@ Random Lead: No
 
 Carnivine
 Ability: Levitate
-Level: 20
+Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Leaf Tornado
+- Leech Seed
 
 === TRAINER_PBL_ERICA ===
 Name: Erica
@@ -3055,11 +3066,15 @@ Throh
 Ability: Guts
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Retaliate
+- Revenge
 
 Sawk
 Ability: Sturdy
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Retaliate
+- Low Sweep
 
 === TRAINER_PBL_ARI_CHALLENGE ===
 Name: Ari
@@ -3072,18 +3087,27 @@ Random Lead: No
 
 Tandemaus @ Oran Berry
 Ability: Pickup
-Level: 20
+Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Double Hit
+- Super Fang
 
 Tadbulb @ Oran Berry
 Ability: Static
-Level: 20
+Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Parabolic Charge
+- Charge Beam
+- Chilling Water
 
 Doduo @ Oran Berry
 Ability: Run Away
-Level: 20
+Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Double Hit
+- Pluck
+- Quick Attack
+- Pursuit
 
 === TRAINER_PBL_BERTHA_CHALLENGE ===
 Name: Bertha
@@ -3096,8 +3120,12 @@ Random Lead: No
 
 Stunfisk @ Sitrus Berry
 Ability: Static
-Level: 20
+Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Spark
+- Mud Shot
+- Yawn
+- Rock Tomb
 
 === TRAINER_PBL_CASSANDRA_CHALLENGE ===
 Name: Cassandra
@@ -3110,13 +3138,21 @@ Random Lead: No
 
 Squawkabilly-Green @ Sharp Beak
 Ability: Intimidate
-Level: 20
+Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pluck
+- Thief
+- Quick Attack
+- Fury Attack
 
 Chatot @ Sitrus Berry
 Ability: Punk Rock
 Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Chatter
+- Round
+- Thief
+- Echoed Voice
 
 === TRAINER_PBL_DOMINIC_CHALLENGE ===
 Name: Dominic
@@ -3131,6 +3167,10 @@ Carnivine @ Sitrus Berry
 Ability: Levitate
 Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leaf Tornado
+- Leech Seed
+- Trailblaze
+- Synthesis
 
 === TRAINER_PBL_ERICA_CHALLENGE ===
 Name: Erica
@@ -3145,11 +3185,19 @@ Throh @ Sitrus Berry
 Ability: Guts
 Level: 21
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Retaliate
+- Revenge
+- Power-Up Punch
+- Rock Tomb
 
 Sawk @ Sitrus Berry
 Ability: Sturdy
 Level: 21
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Retaliate
+- Low Sweep
+- Power-Up Punch
+- Rock Tomb
 
 === TRAINER_PBL_KYLE ===
 Name: STEVEN
