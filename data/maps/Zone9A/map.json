@@ -249,24 +249,7 @@
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 19,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_ZONE_9_STATE",
-      "var_value": "1",
-      "script": "Zone9A_EventScript_SetThickGrass"
-    },
-    {
-      "type": "trigger",
-      "x": 4,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_ZONE_9_STATE",
-      "var_value": "0",
-      "script": "Zone9A_EventScript_SetRegularGrass"
-    }
+
   ],
   "bg_events": [
     {
