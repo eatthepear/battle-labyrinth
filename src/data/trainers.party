@@ -1622,7 +1622,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Headbutt
 - Ancient Power
 - Glare
-- Astonish
 
 === TRAINER_PBL_MARIA_LEVIATHAN_5_BRUTAL ===
 Name: Maria
@@ -1637,13 +1636,12 @@ Mugshot: Purple
 Dunsparce @ Eviolite
 Ability: Serene Grace
 Tera Type: Normal
-Naughty Nature
 Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Headbutt
 - Ancient Power
 - Glare
-- Astonish
+- Roost
 
 === TRAINER_PBL_GILBERT ===
 Name: Gilbert
