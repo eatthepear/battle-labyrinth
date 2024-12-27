@@ -3349,10 +3349,35 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_SUPER_POTION, 2)
 	additem(ITEM_MACHETE)
 	additem(ITEM_TM_HIDDEN_POWER)
+	// zone 9
+	message(format("Zone 9 options"))
+	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, 18) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 1:
+			setvar(VAR_TEMP_0, 18) // wild define gWildMonHeaders in src/data/wild_encounters.h
+			setflag(FLAG_TEMP_1) // special encounter
+		case MULTI_B_PRESSED:
+			closemessage
+			setvar(VAR_ZONE, 9)
+			setvar(VAR_LEVEL_CAP, 20)
+			warp(MAP_ZONE8SANCTUARY, 255, 38, 11)
+			waitstate
+			end
+	}
+	setvar(VAR_TEMP_1, 18) // level
+	call(Debug_CheatStart_PBL_GenerateMon)
+	// zone 9 items
+	additem(ITEM_BIG_ROOT)
+	additem(ITEM_TM_PLUCK)
+	additem(ITEM_MYSTIC_WATER)
+	additem(ITEM_CHARCOAL)
+	additem(ITEM_TM_RETALIATE)
 	// end
-	setvar(VAR_ZONE, 9)
-	setvar(VAR_LEVEL_CAP, 20)
-	warp(MAP_ZONE8SANCTUARY, 255, 38, 11)
+	setvar(VAR_ZONE, 10)
+	setvar(VAR_LEVEL_CAP, 21)
+	warp(MAP_ZONE9SANCTUARY, 255, 38, 11)
 	waitstate
 	closemessage
 }
