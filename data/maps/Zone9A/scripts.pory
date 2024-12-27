@@ -259,3 +259,21 @@ Zone9A_Text_Sign:
 	.string "screen, you can press {A_BUTTON} to switch\l"
 	.string "between stats, IVs, or EVs.$"
 `
+
+script Zone9A_EventScript_Jonathan {
+	trainerbattle_single(TRAINER_PBL_JONATHAN, format("Jungles like these are where Bugs thrive!"), format("I'm not thriving!"))
+	msgbox(format("Make sure to protect yourself from the elements!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone9A_EventScript_Calvin {
+	trainerbattle_single(TRAINER_PBL_CALVIN, format("This pond is filled with muck!"), format("The muck is where Pokémon live!"))
+	msgbox(format("Fishing in a jungle is a unique experience!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone9A_EventScript_Luis {
+	trainerbattle_single(TRAINER_PBL_LUIS, format("Whew! I am tired. If I beat you in a Pokémon battle, do you think you could watch the little ones for a while?"), format("At least now they're out of energy!"))
+	msgbox(format("Finally, I can take a short break!"), MSGBOX_AUTOCLOSE)
+	end
+}
