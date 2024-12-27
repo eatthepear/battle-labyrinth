@@ -13,7 +13,7 @@ script Zone9Sanctuary_EventScript_Intro {
 	buffernumberstring(0, VAR_ZONE)
 	msgbox(gText_RewardClear, MSGBOX_DEFAULT)
 	msgbox(Zone9Sanctuary_Text_Reward, MSGBOX_DEFAULT)
-	giveitem(ITEM_TM15)
+	giveitem(ITEM_TM_COVET)
 	setvar(VAR_ZONE, 10)
 	buffernumberstring(0, VAR_ZONE)
 	msgbox(gText_Colress_WhenUReady, MSGBOX_AUTOCLOSE)
@@ -27,7 +27,7 @@ script Zone9Sanctuary_EventScript_NextZone {
 	faceplayer
 	message(gText_Colress_Greetings)
 	waitmessage
-	dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
 	switch (var(VAR_RESULT)) {
 		case 0:
 			buffernumberstring(0, VAR_ZONE)
@@ -46,5 +46,5 @@ script Zone9Sanctuary_EventScript_NextZone {
 }
 
 text Zone9Sanctuary_Text_Reward {
-	format("TM15 - Bullet Seed!")
+	format("TM15 - Covet!")
 }
