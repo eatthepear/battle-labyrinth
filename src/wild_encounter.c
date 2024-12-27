@@ -1180,3 +1180,39 @@ bool8 BerryTreeWildEncounter(void)
         return FALSE;
     }
 }
+
+void DebugCheatStartGenerateMon(void)
+{
+    u16 zone = VarGet(VAR_TEMP_0);
+    bool8 specialEncounter = FlagGet(FLAG_TEMP_1);
+    bool32 useWater = TRUE;
+    u16 species;
+    const struct WildPokemonInfo *landMonsInfo;
+    const struct WildPokemonInfo *waterMonsInfo;
+    const struct WildPokemonInfo *specialMonsInfo;
+    landMonsInfo = gWildMonHeaders[zone].landMonsInfo;
+    waterMonsInfo = gWildMonHeaders[zone].waterMonsInfo;
+    specialMonsInfo = gWildMonHeaders[zone].specialMonsInfo;
+
+    if (waterMonsInfo == NULL)
+        useWater = FALSE;
+
+    if (!specialEncounter)
+    {
+        // Land Pokémon
+        species = landMonsInfo->wildPokemon[ChooseWildMonIndex_Land()].species;
+    }
+    else if (useWater)
+    {
+        // Water Pokémon
+        species = waterMonsInfo->wildPokemon[ChooseWildMonIndex_WaterRock()].species;
+    }
+    else
+    {
+        // Special Pokémon
+        species = specialMonsInfo->wildPokemon[ChooseWildMonIndex_Special()].species;
+    }
+
+    VarSet(VAR_TEMP_0, species);
+    FlagClear(FLAG_TEMP_1);
+}
