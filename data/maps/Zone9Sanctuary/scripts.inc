@@ -27,7 +27,7 @@ Zone9Sanctuary_EventScript_Intro::
 # 15 "data/maps/Zone9Sanctuary/scripts.pory"
 	msgbox Zone9Sanctuary_Text_Reward, MSGBOX_DEFAULT
 # 16 "data/maps/Zone9Sanctuary/scripts.pory"
-	giveitem ITEM_TM15
+	giveitem ITEM_TM_COVET
 # 17 "data/maps/Zone9Sanctuary/scripts.pory"
 	setvar VAR_ZONE, 10
 # 18 "data/maps/Zone9Sanctuary/scripts.pory"
@@ -53,7 +53,7 @@ Zone9Sanctuary_EventScript_NextZone::
 # 29 "data/maps/Zone9Sanctuary/scripts.pory"
 	waitmessage
 # 30 "data/maps/Zone9Sanctuary/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone9Sanctuary_EventScript_NextZone_Text_0, Zone9Sanctuary_EventScript_NextZone_Text_1, Zone9Sanctuary_EventScript_NextZone_Text_2, Zone9Sanctuary_EventScript_NextZone_Text_3
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone9Sanctuary_EventScript_NextZone_Text_0, Zone9Sanctuary_EventScript_NextZone_Text_1, Zone9Sanctuary_EventScript_NextZone_Text_2, Zone9Sanctuary_EventScript_NextZone_Text_3
 # 31 "data/maps/Zone9Sanctuary/scripts.pory"
 	switch VAR_RESULT
 # 32 "data/maps/Zone9Sanctuary/scripts.pory"
@@ -115,4 +115,4 @@ Zone9Sanctuary_EventScript_NextZone_Text_3:
 
 Zone9Sanctuary_Text_Reward::
 # 48 "data/maps/Zone9Sanctuary/scripts.pory"
-	.string "TM15 - Bullet Seed!$"
+	.string "TM15 - Covet!$"
