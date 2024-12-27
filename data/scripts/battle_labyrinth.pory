@@ -2976,3 +2976,379 @@ script EventScript_HandleFlashlight {
 	}
 	return
 }
+
+script Debug_CheatStart_PBL {
+	// music
+	random(5)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TRAINER_MUSIC, 0)
+		case 1:
+			setvar(VAR_TRAINER_MUSIC, 1)
+		case 2:
+			setvar(VAR_TRAINER_MUSIC, 2)
+		case 3:
+			setvar(VAR_TRAINER_MUSIC, 3)
+		case 4:
+			setvar(VAR_TRAINER_MUSIC, 4)
+	}
+	random(5)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_WILD_MUSIC, 0)
+		case 1:
+			setvar(VAR_WILD_MUSIC, 1)
+		case 2:
+			setvar(VAR_WILD_MUSIC, 2)
+		case 3:
+			setvar(VAR_WILD_MUSIC, 3)
+		case 4:
+			setvar(VAR_WILD_MUSIC, 4)
+	}
+	random(5)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_LEVIATHAN_MUSIC, 0)
+		case 1:
+			setvar(VAR_LEVIATHAN_MUSIC, 1)
+		case 2:
+			setvar(VAR_LEVIATHAN_MUSIC, 2)
+		case 3:
+			setvar(VAR_LEVIATHAN_MUSIC, 3)
+		case 4:
+			setvar(VAR_LEVIATHAN_MUSIC, 4)
+	}
+	additem(ITEM_RARE_CANDY, 900)
+	removemoney(2000)
+	additem(ITEM_POTION, 6)
+	additem(ITEM_PARALYZE_HEAL, 2)
+	additem(ITEM_ANTIDOTE, 2)
+	setvar(VAR_ZONE_0_STATE, 2)
+	setflag(FLAG_ZONE0B_RECEIVED_EEVEE)
+	givemon(SPECIES_EEVEE, 5, ITEM_NONE)
+	// zone 0 items
+	additem(ITEM_WAILMER_PAIL)
+	additem(ITEM_ORAN_BERRY, 2)
+	// zone 0
+	setvar(VAR_TEMP_0, 0) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	msgbox(format("Zone 0 grass?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		setflag(FLAG_TEMP_1) // special encounter
+	}
+	call(Debug_CheatStart_PBL_GenerateMon)
+	// zone 1
+	message(format("Zone 1 options"))
+	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Tree")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, 1) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 1:
+			setvar(VAR_TEMP_0, 1) // wild define gWildMonHeaders in src/data/wild_encounters.h
+			setflag(FLAG_TEMP_1) // special encounter
+		case MULTI_B_PRESSED:
+			closemessage
+			setvar(VAR_ZONE, 1)
+			setvar(VAR_LEVEL_CAP, 7)
+			warp(MAP_ZONE0SANCTUARY, 255, 38, 11)
+			waitstate
+			end
+	}
+	call(Debug_CheatStart_PBL_GenerateMon)
+	// zone 1 gwf
+	message(format("Zone 1 gwf"))
+	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Fire", "Water")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			random(5)
+			switch (var(VAR_RESULT)) {
+				case 0:
+					setvar(VAR_TEMP_0, SPECIES_PANSAGE)
+				case 1:
+					setvar(VAR_TEMP_0, SPECIES_CACNEA)
+				case 2:
+					setvar(VAR_TEMP_0, SPECIES_SUNKERN)
+				case 3:
+					setvar(VAR_TEMP_0, SPECIES_SMOLIV)
+				case 4:
+					setvar(VAR_TEMP_0, SPECIES_BOUNSWEET)
+			}
+		case 1:
+			random(5)
+			switch (var(VAR_RESULT)) {
+				case 0:
+					setvar(VAR_TEMP_0, SPECIES_PANSEAR)
+				case 1:
+					setvar(VAR_TEMP_0, SPECIES_SLUGMA)
+				case 2:
+					setvar(VAR_TEMP_0, SPECIES_SALANDIT)
+				case 3:
+					setvar(VAR_TEMP_0, SPECIES_VULPIX)
+				case 4:
+					setvar(VAR_TEMP_0, SPECIES_SIZZLIPEDE)
+			}
+		case 2:
+			random(5)
+			switch (var(VAR_RESULT)) {
+				case 0:
+					setvar(VAR_TEMP_0, SPECIES_PANPOUR)
+				case 1:
+					setvar(VAR_TEMP_0, SPECIES_BARBOACH)
+				case 2:
+					setvar(VAR_TEMP_0, SPECIES_FINNEON)
+				case 3:
+					setvar(VAR_TEMP_0, SPECIES_SEEL)
+				case 4:
+					setvar(VAR_TEMP_0, SPECIES_GOLDEEN)
+			}
+	}
+	call(Debug_CheatStart_PBL_GiveMon)
+	setflag(FLAG_ZONE1A_RECEIVED_FWG)
+	// zone 1 items
+	additem(ITEM_QUICK_CLAW)
+	additem(ITEM_EXP_SHARE)
+	additem(ITEM_INFINITE_REPEL)
+	// zone 2
+	message(format("Zone 2 options"))
+	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass A", "Tunnel", "Grass B")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, 2) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 1:
+			setvar(VAR_TEMP_0, 4) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 2:
+			setvar(VAR_TEMP_0, 3) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case MULTI_B_PRESSED:
+			closemessage
+			setvar(VAR_ZONE, 2)
+			setvar(VAR_LEVEL_CAP, 9)
+			warp(MAP_ZONE1SANCTUARY, 255, 38, 11)
+			waitstate
+			end
+	}
+	call(Debug_CheatStart_PBL_GenerateMon)
+	// zone 2 bug
+	random(10)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, SPECIES_SEWADDLE)
+		case 1:
+			setvar(VAR_TEMP_0, SPECIES_SPINARAK)
+		case 2:
+			setvar(VAR_TEMP_0, SPECIES_LEDYBA)
+		case 3:
+			setvar(VAR_TEMP_0, SPECIES_VENIPEDE)
+		case 4:
+			setvar(VAR_TEMP_0, SPECIES_NINCADA)
+		case 5:
+			setvar(VAR_TEMP_0, SPECIES_CATERPIE)
+		case 6:
+			setvar(VAR_TEMP_0, SPECIES_WEEDLE)
+		case 7:
+			setvar(VAR_TEMP_0, SPECIES_TAROUNTULA)
+		case 8:
+			setvar(VAR_TEMP_0, SPECIES_KRICKETOT)
+		case 9:
+			setvar(VAR_TEMP_0, SPECIES_PARAS)
+	}
+	call(Debug_CheatStart_PBL_GiveMon)
+	setflag(FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG)
+	// zone 2 items
+	additem(ITEM_SILK_SCARF)
+	additem(ITEM_TM_BUG_BITE)
+	additem(ITEM_ORAN_BERRY, 5)
+	additem(ITEM_CHERI_BERRY, 2)
+	additem(ITEM_CHESTO_BERRY, 2)
+	additem(ITEM_RAWST_BERRY, 2)
+	additem(ITEM_ASPEAR_BERRY, 2)
+	additem(ITEM_PECHA_BERRY, 2)
+	setflag(FLAG_SYS_DEXNAV_GET)
+	setflag(FLAG_SYS_DEXNAV_SEARCH)
+	// zone 3
+	message(format("Zone 3 options"))
+	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, 5) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 1:
+			setvar(VAR_TEMP_0, 5) // wild define gWildMonHeaders in src/data/wild_encounters.h
+			setflag(FLAG_TEMP_1) // special encounter
+		case MULTI_B_PRESSED:
+			closemessage
+			setvar(VAR_ZONE, 3)
+			setvar(VAR_LEVEL_CAP, 11)
+			warp(MAP_ZONE2SANCTUARY, 255, 38, 11)
+			waitstate
+			end
+	}
+	call(Debug_CheatStart_PBL_GenerateMon)
+	// zone 3 items
+	additem(ITEM_GOOD_ROD)
+	// zone 4
+	message(format("Zone 4 options"))
+	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "A", "B", "C", "D", "E")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, 6) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 1:
+			setvar(VAR_TEMP_0, 7) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 2:
+			setvar(VAR_TEMP_0, 8) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 3:
+			setvar(VAR_TEMP_0, 9) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 4:
+			setvar(VAR_TEMP_0, 10) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case MULTI_B_PRESSED:
+			closemessage
+			setvar(VAR_ZONE, 4)
+			setvar(VAR_LEVEL_CAP, 13)
+			warp(MAP_ZONE3SANCTUARY, 255, 38, 11)
+			waitstate
+			end
+	}
+	call(Debug_CheatStart_PBL_GenerateMon)
+	// zone 4 items
+	additem(ITEM_SILVER_POWDER)
+	additem(ITEM_MUSCLE_BAND)
+	additem(ITEM_WISE_GLASSES)
+	additem(ITEM_TWISTED_SPOON)
+	additem(ITEM_POISON_BARB)
+	additem(ITEM_TM_SNARL)
+	setflag(FLAG_SYS_START_MENU_PC_GET)
+	// zone 5
+	message(format("Zone 5 options"))
+	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Forest", "Grassland")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, 11) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 1:
+			setvar(VAR_TEMP_0, 12) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case MULTI_B_PRESSED:
+			closemessage
+			setvar(VAR_ZONE, 5)
+			setvar(VAR_LEVEL_CAP, 13)
+			warp(MAP_ZONE4SANCTUARY, 255, 38, 11)
+			waitstate
+			end
+	}
+	call(Debug_CheatStart_PBL_GenerateMon)
+	// zone 5 pika
+	random(5)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, SPECIES_PACHIRISU)
+		case 1:
+			setvar(VAR_TEMP_0, SPECIES_DEDENNE)
+		case 2:
+			setvar(VAR_TEMP_0, SPECIES_MORPEKO)
+		case 3:
+			setvar(VAR_TEMP_0, SPECIES_PLUSLE)
+		case 4:
+			setvar(VAR_TEMP_0, SPECIES_MINUN)
+	}
+	call(Debug_CheatStart_PBL_GiveMon)
+	setflag(FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE)
+	// zone 5 items
+	additem(ITEM_LAX_MINT)
+	additem(ITEM_QUICK_BALL)
+	additem(ITEM_MIRACLE_SEED)
+	additem(ITEM_NORMAL_GEM)
+	additem(ITEM_BUG_GEM)
+	additem(ITEM_GRASS_GEM)
+	additem(ITEM_GENTLE_MINT)
+	additem(ITEM_EVIOLITE)
+	additem(ITEM_RED_SHARD, 5)
+	// zone 6
+	message(format("Zone 6 options"))
+	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, 13) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 1:
+			setvar(VAR_TEMP_0, 13) // wild define gWildMonHeaders in src/data/wild_encounters.h
+			setflag(FLAG_TEMP_1) // special encounter
+		case MULTI_B_PRESSED:
+			closemessage
+			setvar(VAR_ZONE, 6)
+			setvar(VAR_LEVEL_CAP, 15)
+			warp(MAP_ZONE5SANCTUARY, 255, 38, 11)
+			waitstate
+			end
+	}
+	call(Debug_CheatStart_PBL_GenerateMon)
+	// zone 6 items
+	additem(ITEM_NEST_BALL)
+	additem(ITEM_NET_BALL)
+	additem(ITEM_TM_DRAINING_KISS)
+	additem(ITEM_WATER_GEM)
+	additem(ITEM_FLYING_GEM)
+	additem(ITEM_ICE_GEM)
+	additem(ITEM_SLEDGEHAMMER)
+	additem(ITEM_BURN_HEAL, 2)
+	additem(ITEM_AWAKENING, 2)
+	// zone 7
+	message(format("Zone 7 options"))
+	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Tree")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, 14) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 1:
+			setvar(VAR_TEMP_0, 14) // wild define gWildMonHeaders in src/data/wild_encounters.h
+			setflag(FLAG_TEMP_1) // special encounter
+		case MULTI_B_PRESSED:
+			closemessage
+			setvar(VAR_ZONE, 7)
+			setvar(VAR_LEVEL_CAP, 17)
+			warp(MAP_ZONE6SANCTUARY, 255, 38, 11)
+			waitstate
+			end
+	}
+	call(Debug_CheatStart_PBL_GenerateMon)
+	// zone 8
+	message(format("Zone 8 options"))
+	dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "A", "B", "C")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, 15) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 1:
+			setvar(VAR_TEMP_0, 16) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 2:
+			setvar(VAR_TEMP_0, 17) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	}
+	call(Debug_CheatStart_PBL_GenerateMon)
+	// zone 7 & 8 items
+	additem(ITEM_SHARP_BEAK)
+	additem(ITEM_ROCK_GEM)
+	additem(ITEM_FIGHTING_GEM)
+	additem(ITEM_PSYCHIC_GEM)
+	additem(ITEM_SERIOUS_MINT)
+	additem(ITEM_BLACK_BELT)
+	additem(ITEM_SITRUS_BERRY, 5)
+	additem(ITEM_MAGNET)
+	additem(ITEM_HARD_STONE)
+	additem(ITEM_DUSK_BALL)
+	additem(ITEM_NEVER_MELT_ICE)
+	additem(ITEM_FULL_HEAL)
+	additem(ITEM_TM_THIEF)
+	additem(ITEM_TM_ROCK_TOMB)
+	additem(ITEM_PARALYZE_HEAL, 2)
+	additem(ITEM_ANTIDOTE, 2)
+	additem(ITEM_GREAT_BALL)
+	additem(ITEM_POTION, 5)
+	// end
+	setvar(VAR_ZONE, 9)
+	setvar(VAR_LEVEL_CAP, 20)
+	warp(MAP_ZONE8SANCTUARY, 255, 38, 11)
+	waitstate
+	closemessage
+}
+
+script Debug_CheatStart_PBL_GenerateMon {
+	callnative(DebugCheatStartGenerateMon)
+	call(Debug_CheatStart_PBL_GiveMon)
+}
+
+script Debug_CheatStart_PBL_GiveMon {
+	givemon(VAR_TEMP_0, 3, ITEM_NONE)
+	bufferspeciesname(0, VAR_TEMP_0)
+	msgbox(format("Obtained {STR_VAR_1}!"))
+}
