@@ -2770,20 +2770,40 @@ Double Battle: No
 Random Lead: Yes
 
 Foongus
+Ability: Effect Spore
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Gastro Acid
+- Mega Drain
+- Synthesis
+- Clear Smog
 
 Skorupi
+Ability: Sniper
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Poison Fang
+- Bug Bite
+- Feint Attack
+- Hone Claws
 
 Koffing
+Ability: Levitate
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Sludge
+- Stockpile
+- Spit Up
+- Swallow
 
 Venonat
+Ability: Compound Eyes
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Struggle Bug
+- Poison Powder
+- Psybeam
+- Stun Spore
 
 === TRAINER_PBL_CARMINE ===
 Name: Carmine
@@ -2795,34 +2815,16 @@ Double Battle: No
 Random Lead: No
 
 Emolga
+Ability: Motor Drive
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Shock Wave
+- Charge Beam
+- Aerial Ace
+- Encore
 
 === TRAINER_PBL_JONATHAN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Nymble
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Pineco
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Shelmet
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Karrablast
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_CALVIN ===
-Name: Calvin
+Name: Jonathan
 Class: Bug Catcher
 Pic: Bug Catcher
 Music: Male
@@ -2830,21 +2832,86 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Arrokuda
+Nymble
+Ability: Swarm
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Double Kick
+- Screech
+- Bug Bite
+- Feint
+
+Pineco
+Ability: Sturdy
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bug Bite
+- Payback
+- Rapid Spin
+- Take Down
+
+Shelmet
+Ability: Shell Armor
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Mud Slap
+- Struggle Bug
+- Mega Drain
+- Recover
+
+Karrablast
+Ability: Swarm
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Feint Attack
+- Bug Bite
+- Slash
+- Recover
+
+=== TRAINER_PBL_CALVIN ===
+Name: Calvin
+Class: Fisherman
+Pic: Fisherman
+Music: Hiker
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: Yes
+
+Arrokuda
+Ability: Propeller Tail
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Aqua Jet
+- Bite
+- Focus Energy
+- Laser Focus
 
 Poliwag
+Ability: Water Absorb
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Mud Shot
+- Bubble Beam
+- Endeavor
+- Body Slam
 
 Remoraid
+Ability: Sniper
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Focus Energy
+- Bubble Beam
+- Psybeam
+- Aurora Beam
 
 Tympole
+Ability: Water Absorb
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Uproar
+- Bubble Beam
+- Mud Bomb
+- Aqua Ring
 
 === TRAINER_PBL_LUIS ===
 Name: Luis
@@ -2856,28 +2923,58 @@ Double Battle: No
 Random Lead: Yes
 
 Charcadet
+Ability: Flash Fire
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Night Shade
+- Incinerate
+- Will-O-Wisp
+- Flame Charge
 
 Capsakid
+Ability: Chlorophyll
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Leech Seed
+- Razor Leaf
+- Worry Seed
+- Headbutt
 
 Wimpod
+Ability: Wimp Out
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Struggle Bug
+- Sand Attack
+- Harden
+- Aqua Jet
 
 Tynamo
+Ability: Levitate
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Thunder Wave
+- Spark
+- Charge Beam
 
 Toxel
+Ability: Static
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Growl
+- Acid
+- Nuzzle
+- Tearful Look
 
 Swablu
+Ability: Natural Cure
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Round
+- Haze
+- Feather Dance
+- Dragon Breath
 
 === TRAINER_PBL_ARI ===
 Name: Ari

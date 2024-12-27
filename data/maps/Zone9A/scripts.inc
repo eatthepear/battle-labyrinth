@@ -513,6 +513,30 @@ Zone9A_Text_Sign:
 # 260 "data/maps/Zone9A/scripts.pory"
 	.string "between stats, IVs, or EVs.$"
 
+Zone9A_EventScript_Jonathan::
+# 264 "data/maps/Zone9A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_JONATHAN, Zone9A_EventScript_Jonathan_Text_0, Zone9A_EventScript_Jonathan_Text_1
+# 265 "data/maps/Zone9A/scripts.pory"
+	msgbox Zone9A_EventScript_Jonathan_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
+Zone9A_EventScript_Calvin::
+# 270 "data/maps/Zone9A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_CALVIN, Zone9A_EventScript_Calvin_Text_0, Zone9A_EventScript_Calvin_Text_1
+# 271 "data/maps/Zone9A/scripts.pory"
+	msgbox Zone9A_EventScript_Calvin_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
+Zone9A_EventScript_Luis::
+# 276 "data/maps/Zone9A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_LUIS, Zone9A_EventScript_Luis_Text_0, Zone9A_EventScript_Luis_Text_1
+# 277 "data/maps/Zone9A/scripts.pory"
+	msgbox Zone9A_EventScript_Luis_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
 Zone9A_EventScript_HerbalSign_Text_0:
 # 30 "data/maps/Zone9A/scripts.pory"
 	.string "Herbal and Incense Shop$"
@@ -592,6 +616,47 @@ Zone9A_EventScript_Ari_Text_15:
 Zone9A_EventScript_Ari_Text_16:
 # 142 "data/maps/Zone9A/scripts.pory"
 	.string "{COLOR BLUE}Erica{COLOR DARK_GRAY}: Good, good.\pWell done, young one.\pHere is a little reward for you\ncompleting my family's trial.$"
+
+Zone9A_EventScript_Jonathan_Text_0:
+# 264 "data/maps/Zone9A/scripts.pory"
+	.string "Jungles like these are where Bugs\n"
+	.string "thrive!$"
+
+Zone9A_EventScript_Jonathan_Text_1:
+# 264 "data/maps/Zone9A/scripts.pory"
+	.string "I'm not thriving!$"
+
+Zone9A_EventScript_Jonathan_Text_2:
+# 265 "data/maps/Zone9A/scripts.pory"
+	.string "Make sure to protect yourself from the\n"
+	.string "elements!$"
+
+Zone9A_EventScript_Calvin_Text_0:
+# 270 "data/maps/Zone9A/scripts.pory"
+	.string "This pond is filled with muck!$"
+
+Zone9A_EventScript_Calvin_Text_1:
+# 270 "data/maps/Zone9A/scripts.pory"
+	.string "The muck is where Pokémon live!$"
+
+Zone9A_EventScript_Calvin_Text_2:
+# 271 "data/maps/Zone9A/scripts.pory"
+	.string "Fishing in a jungle is a unique\n"
+	.string "experience!$"
+
+Zone9A_EventScript_Luis_Text_0:
+# 276 "data/maps/Zone9A/scripts.pory"
+	.string "Whew! I am tired. If I beat you in a\n"
+	.string "Pokémon battle, do you think you could\l"
+	.string "watch the little ones for a while?$"
+
+Zone9A_EventScript_Luis_Text_1:
+# 276 "data/maps/Zone9A/scripts.pory"
+	.string "At least now they're out of energy!$"
+
+Zone9A_EventScript_Luis_Text_2:
+# 277 "data/maps/Zone9A/scripts.pory"
+	.string "Finally, I can take a short break!$"
 
 Zone9A_Text_EricaDefeat::
 # 166 "data/maps/Zone9A/scripts.pory"
