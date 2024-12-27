@@ -10,9 +10,9 @@ Zone4D_MapScripts_MAP_SCRIPT_ON_RESUME:
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST
 Zone4D_MapScripts_MAP_SCRIPT_ON_RESUME_1:
 # 8 "data/maps/Zone4D/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE4D_BEEDRILLITE, Zone4D_MapScripts_MAP_SCRIPT_ON_RESUME_5
+	goto_if_set FLAG_ITEM_ZONE4D_TM_HIDDEN_POWER, Zone4D_MapScripts_MAP_SCRIPT_ON_RESUME_5
 # 11 "data/maps/Zone4D/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TM_CHEST
 	return
 
 Zone4D_MapScripts_MAP_SCRIPT_ON_RESUME_2:
@@ -22,7 +22,7 @@ Zone4D_MapScripts_MAP_SCRIPT_ON_RESUME_2:
 
 Zone4D_MapScripts_MAP_SCRIPT_ON_RESUME_5:
 # 9 "data/maps/Zone4D/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TM_CHEST_OPEN
 	return
 
 
@@ -55,28 +55,28 @@ Zone4D_EventScript_ItemWiseGlasses_2:
 	end
 
 
-Zone4D_EventScript_ItemBeedrillite::
+Zone4D_EventScript_ItemTMHiddenPower::
 # 34 "data/maps/Zone4D/scripts.pory"
 	lock
 # 35 "data/maps/Zone4D/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE4D_BEEDRILLITE, Zone4D_EventScript_ItemBeedrillite_2
+	goto_if_set FLAG_ITEM_ZONE4D_TM_HIDDEN_POWER, Zone4D_EventScript_ItemTMHiddenPower_2
 # 40 "data/maps/Zone4D/scripts.pory"
 	waitse
 # 41 "data/maps/Zone4D/scripts.pory"
 	removeobject VAR_LAST_TALKED
 # 42 "data/maps/Zone4D/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TM_CHEST_OPEN
 # 43 "data/maps/Zone4D/scripts.pory"
-	setflag FLAG_ITEM_ZONE4D_BEEDRILLITE
+	setflag FLAG_ITEM_ZONE4D_TM_HIDDEN_POWER
 # 44 "data/maps/Zone4D/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 45 "data/maps/Zone4D/scripts.pory"
-	finditem ITEM_BEEDRILLITE, 1
+	finditem ITEM_TM_HIDDEN_POWER
 # 46 "data/maps/Zone4D/scripts.pory"
 	release
 	end
 
-Zone4D_EventScript_ItemBeedrillite_2:
+Zone4D_EventScript_ItemTMHiddenPower_2:
 # 36 "data/maps/Zone4D/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 37 "data/maps/Zone4D/scripts.pory"
