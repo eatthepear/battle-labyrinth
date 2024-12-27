@@ -61,7 +61,7 @@ Zone13C_EventScript_LeviathanBattle_5:
 
 Zone13C_EventScript_LeviathanBattle_8:
 # 22 "data/maps/Zone13C/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_JENNY_LEVIATHAN_11_BRUTAL, Zone13C_Text_Leviathan11Defeat
+	trainerbattle_no_intro TRAINER_PBL_JENNY_LEVIATHAN_11_CHALLENGE, Zone13C_Text_Leviathan11Defeat
 	goto Zone13C_EventScript_LeviathanBattle_7
 
 

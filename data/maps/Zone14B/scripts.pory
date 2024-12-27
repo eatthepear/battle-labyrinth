@@ -18,7 +18,7 @@ script Zone14B_EventScript_LeviathanBattle {
 	msgbox(Zone14B_Text_Leviathan12Intro)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		trainerbattle_no_intro(TRAINER_PBL_MIGUEL_LEVIATHAN_12_BRUTAL, Zone14B_Text_Leviathan12Defeat)
+		trainerbattle_no_intro(TRAINER_PBL_MIGUEL_LEVIATHAN_12_CHALLENGE, Zone14B_Text_Leviathan12Defeat)
 	} else {
 		trainerbattle_no_intro(TRAINER_PBL_MIGUEL_LEVIATHAN_12, Zone14B_Text_Leviathan12Defeat)
 	}

@@ -53,7 +53,7 @@ script Zone5B_EventScript_LeviathanBattle {
 	msgbox(Zone5B_Text_Leviathan5Intro)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		trainerbattle_no_intro(TRAINER_PBL_MARIA_LEVIATHAN_5_BRUTAL, Zone5B_Text_Leviathan5Defeat)
+		trainerbattle_no_intro(TRAINER_PBL_MARIA_LEVIATHAN_5_CHALLENGE, Zone5B_Text_Leviathan5Defeat)
 	} else {
 		trainerbattle_no_intro(TRAINER_PBL_MARIA_LEVIATHAN_5, Zone5B_Text_Leviathan5Defeat)
 	}

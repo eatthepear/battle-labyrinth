@@ -1090,7 +1090,7 @@ script Zone18B_EventScript_LeviathanBattle {
 		setweather(WEATHER_RAIN)
 		doweather
 		msgbox("It suddenly began to rain!", MSGBOX_DEFAULT)
-		trainerbattle_no_intro(TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16_BRUTAL, Zone18B_Text_Leviathan16Defeat)
+		trainerbattle_no_intro(TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16_CHALLENGE, Zone18B_Text_Leviathan16Defeat)
 		resetweather
 		doweather
 	} else {

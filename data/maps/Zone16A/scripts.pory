@@ -42,7 +42,7 @@ script Zone16A_EventScript_LilyRight {
 	msgbox(Zone16A_Text_Leviathan14Intro2)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		trainerbattle_no_intro(TRAINER_PBL_LILY_LEVIATHAN_14_BRUTAL, Zone16A_Text_Leviathan14Defeat)
+		trainerbattle_no_intro(TRAINER_PBL_LILY_LEVIATHAN_14_CHALLENGE, Zone16A_Text_Leviathan14Defeat)
 	} else {
 		trainerbattle_no_intro(TRAINER_PBL_LILY_LEVIATHAN_14, Zone16A_Text_Leviathan14Defeat)
 	}
