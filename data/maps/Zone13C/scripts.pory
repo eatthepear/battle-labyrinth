@@ -19,7 +19,7 @@ script Zone13C_EventScript_LeviathanBattle {
 	msgbox(format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: My battle style is quite ferocious, despite me having only one Pokémon!"), MSGBOX_DEFAULT)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		trainerbattle_no_intro(TRAINER_PBL_JENNY_LEVIATHAN_11_BRUTAL, Zone13C_Text_Leviathan11Defeat)
+		trainerbattle_no_intro(TRAINER_PBL_JENNY_LEVIATHAN_11_CHALLENGE, Zone13C_Text_Leviathan11Defeat)
 	} else {
 		trainerbattle_no_intro(TRAINER_PBL_JENNY_LEVIATHAN_11, Zone13C_Text_Leviathan11Defeat)
 	}

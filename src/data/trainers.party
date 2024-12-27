@@ -1623,7 +1623,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ancient Power
 - Glare
 
-=== TRAINER_PBL_MARIA_LEVIATHAN_5_BRUTAL ===
+=== TRAINER_PBL_MARIA_LEVIATHAN_5_CHALLENGE ===
 Name: Maria
 Class: Backpacker
 Pic: Backpacker F
@@ -2983,7 +2983,15 @@ AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 
-Chatot
+Tandemaus
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Tadbulb
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Doduo
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2996,7 +3004,7 @@ AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 
-Morpeko
+Stunfisk
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3009,7 +3017,11 @@ AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 
-Carnivine
+Squawkabilly
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Chatot
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3022,11 +3034,92 @@ AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 
-Stunfisk-Galar
+Carnivine
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_ERICA ===
+Name: Erica
+Class: Winstrate
+Pic: Expert F
+Music: Intense
+AI: AI_FLAG_SMART_TRAINER
+Double Battle: No
+Random Lead: No
+
+Throh
+Level: 21
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Sawk
+Level: 21
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PBL_ARI_CHALLENGE ===
+Name: Ari
+Class: Winstrate
+Pic: Camper
+Music: Male
+AI: AI_FLAG_SMART_TRAINER
+Double Battle: No
+Random Lead: No
+
+Tandemaus
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Tadbulb
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Doduo
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PBL_BERTHA_CHALLENGE ===
+Name: Bertha
+Class: Winstrate
+Pic: Picnicker
+Music: Girl
+AI: AI_FLAG_SMART_TRAINER
+Double Battle: No
+Random Lead: No
+
+Stunfisk
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PBL_CASSANDRA_CHALLENGE ===
+Name: Cassandra
+Class: Winstrate
+Pic: Pokefan F
+Music: Twins
+AI: AI_FLAG_SMART_TRAINER
+Double Battle: No
+Random Lead: No
+
+Squawkabilly
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Chatot
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PBL_DOMINIC_CHALLENGE ===
+Name: Dominic
+Class: Winstrate
+Pic: Pokefan M
+Music: Twins
+AI: AI_FLAG_SMART_TRAINER
+Double Battle: No
+Random Lead: No
+
+Carnivine
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PBL_ERICA_CHALLENGE ===
 Name: Erica
 Class: Winstrate
 Pic: Expert F
@@ -3196,7 +3289,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_ADAMINA_LEVIATHAN_9_BRUTAL ===
+=== TRAINER_PBL_ADAMINA_LEVIATHAN_9_CHALLENGE ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -3315,7 +3408,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_NEWTON_LEVIATHAN_10_BRUTAL ===
+=== TRAINER_PBL_NEWTON_LEVIATHAN_10_CHALLENGE ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -3638,7 +3731,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_JENNY_LEVIATHAN_11_BRUTAL ===
+=== TRAINER_PBL_JENNY_LEVIATHAN_11_CHALLENGE ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -3808,7 +3901,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_MIGUEL_LEVIATHAN_12_BRUTAL ===
+=== TRAINER_PBL_MIGUEL_LEVIATHAN_12_CHALLENGE ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -3842,7 +3935,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_MIRAGE_LEVIATHAN_13_BRUTAL ===
+=== TRAINER_PBL_MIRAGE_LEVIATHAN_13_CHALLENGE ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -3978,7 +4071,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_LILY_LEVIATHAN_14_BRUTAL ===
+=== TRAINER_PBL_LILY_LEVIATHAN_14_CHALLENGE ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -4063,7 +4156,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_MIA_LEVIATHAN_15_BRUTAL ===
+=== TRAINER_PBL_MIA_LEVIATHAN_15_CHALLENGE ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -4386,7 +4479,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16_BRUTAL ===
+=== TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16_CHALLENGE ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -4675,7 +4768,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_MIRAGE_LEVIATHAN_17_BRUTAL ===
+=== TRAINER_PBL_MIRAGE_LEVIATHAN_17_CHALLENGE ===
 Name: STEVEN
 Class: Rival
 Pic: Steven

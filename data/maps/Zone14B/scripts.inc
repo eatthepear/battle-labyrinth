@@ -105,7 +105,7 @@ Zone14B_EventScript_LeviathanBattle_1:
 
 Zone14B_EventScript_LeviathanBattle_2:
 # 21 "data/maps/Zone14B/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_MIGUEL_LEVIATHAN_12_BRUTAL, Zone14B_Text_Leviathan12Defeat
+	trainerbattle_no_intro TRAINER_PBL_MIGUEL_LEVIATHAN_12_CHALLENGE, Zone14B_Text_Leviathan12Defeat
 	goto Zone14B_EventScript_LeviathanBattle_1
 
 

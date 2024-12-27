@@ -116,7 +116,7 @@ Zone16A_EventScript_LilyRight_1:
 
 Zone16A_EventScript_LilyRight_2:
 # 45 "data/maps/Zone16A/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_LILY_LEVIATHAN_14_BRUTAL, Zone16A_Text_Leviathan14Defeat
+	trainerbattle_no_intro TRAINER_PBL_LILY_LEVIATHAN_14_CHALLENGE, Zone16A_Text_Leviathan14Defeat
 	goto Zone16A_EventScript_LilyRight_1
 
 

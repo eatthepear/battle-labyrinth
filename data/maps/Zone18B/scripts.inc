@@ -2147,7 +2147,7 @@ Zone18B_EventScript_LeviathanBattle_2:
 # 1092 "data/maps/Zone18B/scripts.pory"
 	msgbox Zone18B_EventScript_LeviathanBattle_Text_4, MSGBOX_DEFAULT
 # 1093 "data/maps/Zone18B/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16_BRUTAL, Zone18B_Text_Leviathan16Defeat
+	trainerbattle_no_intro TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16_CHALLENGE, Zone18B_Text_Leviathan16Defeat
 # 1094 "data/maps/Zone18B/scripts.pory"
 	resetweather
 # 1095 "data/maps/Zone18B/scripts.pory"

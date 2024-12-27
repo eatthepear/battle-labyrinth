@@ -141,7 +141,7 @@ Zone5B_EventScript_LeviathanBattle_5:
 
 Zone5B_EventScript_LeviathanBattle_8:
 # 56 "data/maps/Zone5B/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_MARIA_LEVIATHAN_5_BRUTAL, Zone5B_Text_Leviathan5Defeat
+	trainerbattle_no_intro TRAINER_PBL_MARIA_LEVIATHAN_5_CHALLENGE, Zone5B_Text_Leviathan5Defeat
 	goto Zone5B_EventScript_LeviathanBattle_7
 
 Zone5B_EventScript_LeviathanBattle_14:
