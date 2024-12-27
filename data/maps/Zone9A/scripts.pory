@@ -58,7 +58,11 @@ script Zone9A_EventScript_Ari {
 	} else {
 		msgbox(format("Alright, well, best of luck!"), MSGBOX_DEFAULT)
 		setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-		trainerbattle_no_intro(TRAINER_PBL_ARI, format("What!? How!?\nYou're tougher than I thought!"))
+		if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_CHALLENGE)) {
+			trainerbattle_no_intro(TRAINER_PBL_ARI_CHALLENGE, format("What!? How!?\nYou're tougher than I thought!"))
+		} else {
+			trainerbattle_no_intro(TRAINER_PBL_ARI, format("What!? How!?\nYou're tougher than I thought!"))
+		}
 		applymovement(1, Common_Movement_WalkInPlaceFasterUp)
 		waitmovement(0)
 		msgbox("{COLOR BLUE}Ari{COLOR DARK_GRAY}: Hey, everyone!\nI've found a pretty strong Trainer!", MSGBOX_DEFAULT)
@@ -72,7 +76,11 @@ script Zone9A_EventScript_Ari {
 		applymovement(2, Common_Movement_WalkDown)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Bertha{COLOR DARK_GRAY}: You beat my brother? Ugh. Such a brat.\pLet's just get this over with."), MSGBOX_DEFAULT)
-		trainerbattle_no_intro(TRAINER_PBL_BERTHA, format("Sigh… I thought this would happen…"))
+		if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_CHALLENGE)) {
+			trainerbattle_no_intro(TRAINER_PBL_BERTHA_CHALLENGE, format("Sigh… I thought this would happen…"))
+		} else {
+			trainerbattle_no_intro(TRAINER_PBL_BERTHA, format("Sigh… I thought this would happen…"))
+		}
 		applymovement(2, Common_Movement_WalkInPlaceFasterUp)
 		waitmovement(0)
 		msgbox("{COLOR BLUE}Bertha{COLOR DARK_GRAY}: Mom! It's your turn!", MSGBOX_DEFAULT)
@@ -86,7 +94,11 @@ script Zone9A_EventScript_Ari {
 		applymovement(3, Common_Movement_WalkDown)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Cassandra{COLOR DARK_GRAY}: Oh! I am so excited!\pFinally, a challenger who got past both of my children!\pIt's Momma's time to shine!"), MSGBOX_DEFAULT)
-		trainerbattle_no_intro(TRAINER_PBL_CASSANDRA, format("It was you who shined instead!"))
+		if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_CHALLENGE)) {
+			trainerbattle_no_intro(TRAINER_PBL_CASSANDRA_CHALLENGE, format("It was you who shined instead!"))
+		} else {
+			trainerbattle_no_intro(TRAINER_PBL_CASSANDRA, format("It was you who shined instead!"))
+		}
 		applymovement(3, Common_Movement_WalkInPlaceFasterUp)
 		waitmovement(0)
 		msgbox("{COLOR BLUE}Cassandra{COLOR DARK_GRAY}: It's all you, baby!", MSGBOX_DEFAULT)
@@ -100,7 +112,11 @@ script Zone9A_EventScript_Ari {
 		applymovement(4, Common_Movement_WalkDown)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Dominic{COLOR DARK_GRAY}: Guess what time it is? It's time to take out the trash!"), MSGBOX_DEFAULT)
-		trainerbattle_no_intro(TRAINER_PBL_DOMINIC, format("Sorry, sorry! I didn't realize you were so strong!"))
+		if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_CHALLENGE)) {
+			trainerbattle_no_intro(TRAINER_PBL_DOMINIC_CHALLENGE, format("Sorry, sorry! I didn't realize you were so strong!"))
+		} else {
+			trainerbattle_no_intro(TRAINER_PBL_DOMINIC, format("Sorry, sorry! I didn't realize you were so strong!"))
+		}
 		msgbox(format("{COLOR BLUE}Dominic{COLOR DARK_GRAY}: Kids!\nWake your grandma up!"), MSGBOX_DEFAULT)
 		closemessage
 		applymovement(4, Common_Movement_WalkInPlaceFasterUp)
@@ -114,7 +130,11 @@ script Zone9A_EventScript_Ari {
 		applymovement(5, Common_Movement_WalkDown)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Erica{COLOR DARK_GRAY}: Who dares disturb me from my slumber?"))
-		trainerbattle_no_intro(TRAINER_PBL_ERICA, format("Very impressive."))
+		if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_CHALLENGE)) {
+			trainerbattle_no_intro(TRAINER_PBL_ERICA_CHALLENGE, format("Very impressive."))
+		} else {
+			trainerbattle_no_intro(TRAINER_PBL_ERICA, format("Very impressive."))
+		}
 		msgbox(format("{COLOR BLUE}Erica{COLOR DARK_GRAY}: Good, good.\pWell done, young one.\pHere is a little reward for completing my family's trial."))
 		giveitem(ITEM_TM_RETALIATE)
 		closemessage
