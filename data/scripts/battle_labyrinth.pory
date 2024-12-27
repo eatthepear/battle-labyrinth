@@ -3035,6 +3035,7 @@ script Debug_CheatStart_PBL {
 	if (var(VAR_RESULT) == NO) {
 		setflag(FLAG_TEMP_1) // special encounter
 	}
+	setvar(VAR_TEMP_1, 3) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
 	// zone 1
 	message(format("Zone 1 options"))
@@ -3101,6 +3102,7 @@ script Debug_CheatStart_PBL {
 					setvar(VAR_TEMP_0, SPECIES_GOLDEEN)
 			}
 	}
+	setvar(VAR_TEMP_1, 5) // level
 	call(Debug_CheatStart_PBL_GiveMon)
 	setflag(FLAG_ZONE1A_RECEIVED_FWG)
 	// zone 1 items
@@ -3125,6 +3127,7 @@ script Debug_CheatStart_PBL {
 			waitstate
 			end
 	}
+	setvar(VAR_TEMP_1, 5) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
 	// zone 2 bug
 	random(10)
@@ -3150,6 +3153,7 @@ script Debug_CheatStart_PBL {
 		case 9:
 			setvar(VAR_TEMP_0, SPECIES_PARAS)
 	}
+	setvar(VAR_TEMP_1, 6) // level
 	call(Debug_CheatStart_PBL_GiveMon)
 	setflag(FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG)
 	// zone 2 items
@@ -3180,6 +3184,7 @@ script Debug_CheatStart_PBL {
 			waitstate
 			end
 	}
+	setvar(VAR_TEMP_1, 7) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
 	// zone 3 items
 	additem(ITEM_GOOD_ROD)
@@ -3205,6 +3210,7 @@ script Debug_CheatStart_PBL {
 			waitstate
 			end
 	}
+	setvar(VAR_TEMP_1, 9) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
 	// zone 4 items
 	additem(ITEM_SILVER_POWDER)
@@ -3232,6 +3238,7 @@ script Debug_CheatStart_PBL {
 			waitstate
 			end
 	}
+	setvar(VAR_TEMP_1, 11) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
 	// zone 5 pika
 	random(5)
@@ -3247,6 +3254,7 @@ script Debug_CheatStart_PBL {
 		case 4:
 			setvar(VAR_TEMP_0, SPECIES_MINUN)
 	}
+	setvar(VAR_TEMP_1, 12) // level
 	call(Debug_CheatStart_PBL_GiveMon)
 	setflag(FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE)
 	// zone 5 items
@@ -3276,6 +3284,7 @@ script Debug_CheatStart_PBL {
 			waitstate
 			end
 	}
+	setvar(VAR_TEMP_1, 13) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
 	// zone 6 items
 	additem(ITEM_NEST_BALL)
@@ -3303,6 +3312,7 @@ script Debug_CheatStart_PBL {
 			waitstate
 			end
 	}
+	setvar(VAR_TEMP_1, 15) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
 	// zone 8
 	message(format("Zone 8 options"))
@@ -3315,6 +3325,7 @@ script Debug_CheatStart_PBL {
 		case 2:
 			setvar(VAR_TEMP_0, 17) // wild define gWildMonHeaders in src/data/wild_encounters.h
 	}
+	setvar(VAR_TEMP_1, 16) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
 	// zone 7 & 8 items
 	additem(ITEM_SHARP_BEAK)
@@ -3352,7 +3363,7 @@ script Debug_CheatStart_PBL_GenerateMon {
 }
 
 script Debug_CheatStart_PBL_GiveMon {
-	givemon(VAR_TEMP_0, 3, ITEM_NONE)
+	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
 	bufferspeciesname(0, VAR_TEMP_0)
 	msgbox(format("Obtained {STR_VAR_1}!"))
 }
