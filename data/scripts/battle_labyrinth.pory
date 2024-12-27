@@ -3214,6 +3214,8 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_POISON_BARB)
 	additem(ITEM_TM_SNARL)
 	setflag(FLAG_SYS_START_MENU_PC_GET)
+	additem(ITEM_BURN_HEAL, 2)
+	additem(ITEM_AWAKENING, 2)
 	// zone 5
 	message(format("Zone 5 options"))
 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Forest", "Grassland")
@@ -3283,8 +3285,7 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_FLYING_GEM)
 	additem(ITEM_ICE_GEM)
 	additem(ITEM_SLEDGEHAMMER)
-	additem(ITEM_BURN_HEAL, 2)
-	additem(ITEM_AWAKENING, 2)
+	additem(ITEM_SUPER_POTION, 1)
 	// zone 7
 	message(format("Zone 7 options"))
 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Tree")
@@ -3334,6 +3335,9 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_ANTIDOTE, 2)
 	additem(ITEM_GREAT_BALL)
 	additem(ITEM_POTION, 5)
+	additem(ITEM_SUPER_POTION, 2)
+	additem(ITEM_MACHETE)
+	additem(ITEM_TM_HIDDEN_POWER)
 	// end
 	setvar(VAR_ZONE, 9)
 	setvar(VAR_LEVEL_CAP, 20)
