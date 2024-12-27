@@ -211,7 +211,7 @@ script Zone17A_EventScript_InitiateLeviathanBattle {
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
 		setflag(FLAG_DISABLE_PREVIEW)
-		trainerbattle_no_intro(TRAINER_PBL_MIA_LEVIATHAN_15_BRUTAL, Zone15B_Text_Leviathan13Defeat)
+		trainerbattle_no_intro(TRAINER_PBL_MIA_LEVIATHAN_15_CHALLENGE, Zone15B_Text_Leviathan13Defeat)
 		clearflag(FLAG_DISABLE_PREVIEW)
 	} else {
 		trainerbattle_no_intro(TRAINER_PBL_MIA_LEVIATHAN_15, Zone15B_Text_Leviathan13Defeat)

@@ -125,7 +125,7 @@ Zone11A_EventScript_LeviathanIntro_2:
 
 Zone11A_EventScript_LeviathanIntro_6:
 # 51 "data/maps/Zone11A/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_NEWTON_LEVIATHAN_10_BRUTAL, Zone11A_Text_Leviathan10Defeat
+	trainerbattle_no_intro TRAINER_PBL_NEWTON_LEVIATHAN_10_CHALLENGE, Zone11A_Text_Leviathan10Defeat
 	goto Zone11A_EventScript_LeviathanIntro_5
 
 

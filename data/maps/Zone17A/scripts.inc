@@ -534,7 +534,7 @@ Zone17A_EventScript_InitiateLeviathanBattle_9:
 # 213 "data/maps/Zone17A/scripts.pory"
 	setflag FLAG_DISABLE_PREVIEW
 # 214 "data/maps/Zone17A/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_MIA_LEVIATHAN_15_BRUTAL, Zone15B_Text_Leviathan13Defeat
+	trainerbattle_no_intro TRAINER_PBL_MIA_LEVIATHAN_15_CHALLENGE, Zone15B_Text_Leviathan13Defeat
 # 215 "data/maps/Zone17A/scripts.pory"
 	clearflag FLAG_DISABLE_PREVIEW
 	goto Zone17A_EventScript_InitiateLeviathanBattle_8
