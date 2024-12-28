@@ -59,11 +59,11 @@ script Zone10A_EventScript_Adamina {
 	}
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(Zone10A_Text_HeadInside)
-	applymovement(6, Common_Movement_FaceUp)
+	applymovement(1, Common_Movement_FaceUp)
 	waitmovement(0)
 	opendoor(47, 27)
 	waitdooranim
-	applymovement(6, Common_Movement_WalkUp)
+	applymovement(1, Common_Movement_WalkUp)
 	waitmovement(0)
 	removeobject(VAR_LAST_TALKED)
 	setflag(FLAG_BEAT_LEVIATHAN_9)
@@ -219,7 +219,7 @@ script Zone10A_EventScript_HeavyDutyBoots {
 	end
 }
 
-script Zone10A_EventScript_Ranger {
+script Zone10A_EventScript_ParasolLady {
 	lock
 	faceplayer
 	if (flag(FLAG_ZONE10A_RECEIVED_SAFETY_GOGGLES) == false) {
@@ -232,133 +232,62 @@ script Zone10A_EventScript_Ranger {
 	end
 }
 
-raw `
-Zone10A_EventScript_Kyle::
-	trainerbattle_single TRAINER_PBL_KYLE, Zone10A_Text_KyleIntro, Zone10A_Text_KyleDefeat
-	msgbox Zone10A_Text_KylePostBattle, MSGBOX_AUTOCLOSE
+script Zone10A_EventScript_Alana {
+	trainerbattle_single(TRAINER_PBL_ALANA, format("Pfft!"), format("Sorry, I didn't mean to be rude!"))
+	msgbox(format("Some sand flew into my mouth so I had to get it out!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone10A_Text_KyleIntro:
-	.string "I daydream a lot. It's a bad habit!$"
-
-Zone10A_Text_KyleDefeat:
-	.string "I dream of one day winning…$"
-
-Zone10A_Text_KylePostBattle:
-	.string "I'll be a champion some day,\n"
-	.string "just you wait!$"
-
-Zone10A_EventScript_Belle::
-	trainerbattle_single TRAINER_PBL_BELLE, Zone10A_Text_BelleIntro, Zone10A_Text_BelleDefeat
-	msgbox Zone10A_Text_BellePostBattle, MSGBOX_AUTOCLOSE
+script Zone10A_EventScript_Jacob {
+	trainerbattle_single(TRAINER_PBL_JACOB, format("Even with a sandstorm, birds can still fly high!"), format("But sometimes it's better to land and rest!"))
+	msgbox(format("I should really go take a rest at the rest house."), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone10A_Text_BelleIntro:
-	.string "Pfft!$"
-
-Zone10A_Text_BelleDefeat:
-	.string "Sorry, I didn't mean to be rude!$"
-
-Zone10A_Text_BellePostBattle:
-	.string "Some sand flew into my mouth so I\n"
-	.string "had to get it out!$"
-
-Zone10A_EventScript_Dewey::
-	trainerbattle_single TRAINER_PBL_DEWEY, Zone10A_Text_DeweyIntro, Zone10A_Text_DeweyDefeat
-	msgbox Zone10A_Text_DeweyPostBattle, MSGBOX_AUTOCLOSE
+script Zone10A_EventScript_Dewey {
+	trainerbattle_single(TRAINER_PBL_DEWEY, format("I think there's an entrance to some ruins somewhere around here…"), format("No ruins in sight!"))
+	msgbox(format("My map says the ruins are to the north somewhere…"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone10A_Text_DeweyIntro:
-	.string "My party is so worn down…\n"
-	.string "Maybe they'll be reenergized after\l"
-	.string "battle!$"
-
-Zone10A_Text_DeweyDefeat:
-	.string "Hmm…\n"
-	.string "I don't think they gained any energy…$"
-
-Zone10A_Text_DeweyPostBattle:
-	.string "Maybe I need to rest instead.$"
-
-Zone10A_EventScript_Pearlie::
-	trainerbattle_single TRAINER_PBL_PEARLIE, Zone10A_Text_PearlieIntro, Zone10A_Text_PearlieDefeat
-	msgbox Zone10A_Text_PearliePostBattle, MSGBOX_AUTOCLOSE
+script Zone10A_EventScript_Ernest {
+	trainerbattle_single(TRAINER_PBL_ERNEST, format("I came prepared for the wrath of the desert!"), format("But I was not prepared for you!"))
+	msgbox(format("Preparations are important, be it for hiking or battling!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone10A_Text_PearlieIntro:
-	.string "Sand keeps getting in my lunch,\n"
-	.string "so I'll take out my frustration on you!$"
-
-Zone10A_Text_PearlieDefeat:
-	.string "Ugh! Now there's sand everywhere!$"
-
-Zone10A_Text_PearliePostBattle:
-	.string "I don't like sand.\n"
-	.string "It's coarse and rough and irritating and\l"
-	.string "it gets everywhere.$"
-
-Zone10A_EventScript_Ernest::
-	trainerbattle_single TRAINER_PBL_ERNEST, Zone10A_Text_ErnestIntro, Zone10A_Text_ErnestDefeat
-	msgbox Zone10A_Text_ErnestPostBattle, MSGBOX_AUTOCLOSE
+script Zone10A_EventScript_Kyle {
+	trainerbattle_single(TRAINER_PBL_KYLE, format("I daydream a lot. It's a bad habit!"), format("I dream of one day winning…"))
+	msgbox(format("I'll be a winner some day, just you wait!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone10A_Text_ErnestIntro:
-	.string "I came prepared the wrath of the\n"
-	.string "desert!$"
-
-Zone10A_Text_ErnestDefeat:
-	.string "But I was not prepared for you!$"
-
-Zone10A_Text_ErnestPostBattle:
-	.string "Preparations are important, be it\n"
-	.string "for hiking or battling!$"
-
-Zone10A_EventScript_Alana::
-	trainerbattle_single TRAINER_PBL_ALANA, Zone10A_Text_AlanaIntro, Zone10A_Text_AlanaDefeat
-	msgbox Zone10A_Text_AlanaPostBattle, MSGBOX_AUTOCLOSE
+script Zone10A_EventScript_Elias {
+	trainerbattle_single(TRAINER_PBL_ELIAS, format("Tell me, have you faced the power of Dragons?"), format("No! My Dragons!"))
+	msgbox(format("I must train them further!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone10A_Text_AlanaIntro:
-	.string "Conrad told me to come here for our date,\n"
-	.string "but he's nowhere to be found!$"
-
-Zone10A_Text_AlanaDefeat:
-	.string "I wonder if I got stood up…$"
-
-Zone10A_Text_AlanaPostBattle:
-	.string "No way, a woman like me getting stood up?\n"
-	.string "He probably just got lost.$"
-
-Zone10A_EventScript_Susan::
-	trainerbattle_single TRAINER_PBL_SUSAN, Zone10A_Text_SusanIntro, Zone10A_Text_SusanDefeat
-	msgbox Zone10A_Text_SusanPostBattle, MSGBOX_AUTOCLOSE
+script Zone10A_EventScript_Pearlie {
+	trainerbattle_single(TRAINER_PBL_PEARLIE, format("Backpacking together is safer!"), format("At least I have Susan!"))
+	msgbox(format("We really like backpacking together."), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone10A_Text_SusanIntro:
-	.string "ARGH! YOU STUPID, LITTLE… ARGH!$"
-
-Zone10A_Text_SusanDefeat:
-	.string "UGH!$"
-
-Zone10A_Text_SusanPostBattle:
-	.string "Crunch, crunch, crunch…\n"
-	.string "…\p"
-	.string "Sorry about earlier.\n"
-	.string "I was feeling a little bit hangry.$"
-
-Zone10A_EventScript_Conrad::
-	trainerbattle_single TRAINER_PBL_CONRAD, Zone10A_Text_ConradIntro, Zone10A_Text_ConradDefeat
-	msgbox Zone10A_Text_ConradPostBattle, MSGBOX_AUTOCLOSE
+script Zone10A_EventScript_Susan {
+	trainerbattle_single(TRAINER_PBL_SUSAN, format("Backpacking together makes us stronger!"), format("At least I have Pearlie!"))
+	msgbox(format("We really like backpacking together."), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone10A_Text_ConradIntro:
-	.string "I'm looking for my date.\n"
-	.string "Have you seen her?$"
+script Zone10A_EventScript_Conrad {
+	trainerbattle_single(TRAINER_PBL_CONRAD, format("Sand keeps getting in my lunch, so I'll take out my frustration on you!"), format("Ugh! Now there's sand everywhere!"))
+	msgbox(format("I don't like sand.\n It's coarse and rough and irritating and it gets everywhere."), MSGBOX_AUTOCLOSE)
+	end
+}
 
-Zone10A_Text_ConradDefeat:
-	.string "She probably thinks I stood her up…$"
-
-Zone10A_Text_ConradPostBattle:
-	.string "Not a great first impression,\n"
-	.string "if I'm being honest.$"
-`
+script Zone10A_EventScript_Brett {
+	trainerbattle_single(TRAINER_PBL_BRETT, format("My friend told me I could find an oasis in the desert, so I've come to fish!"), format("Uh… I'm realizing now she didn't mean a literal oasis."))
+	msgbox(format("There doesn't seem to be any water anywhere…\pMy friend gave me bad advice!"), MSGBOX_AUTOCLOSE)
+	end
+}
