@@ -8099,270 +8099,298 @@
     [TRAINER_PBL_ADAMINA_LEVIATHAN_9] =
     {
 #line 3429
-        .trainerName = _("STEVEN"),
+        .trainerName = _("Adamina"),
 #line 3430
-        .trainerClass = TRAINER_CLASS_RIVAL,
+        .trainerClass = TRAINER_CLASS_PKMN_RANGER,
 #line 3431
-        .trainerPic = TRAINER_PIC_STEVEN,
+        .trainerPic = TRAINER_PIC_POKEMON_RANGER_F,
         .encounterMusic_gender =
+#line 3432
+            TRAINER_ENCOUNTER_MUSIC_COOL,
+#line 3434
+        .doubleBattle = FALSE,
 #line 3433
-            TRAINER_ENCOUNTER_MUSIC_MALE,
-        .partySize = 1,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 3436
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_PURPLE,
+#line 3435
+        .randomLead = FALSE,
+        .partySize = 5,
         .party = (const struct TrainerMon[])
         {
             {
-#line 3435
-            .species = SPECIES_METANG,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-#line 3439
-            .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
 #line 3438
+            .species = SPECIES_DWEBBLE,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 3438
+            .heldItem = ITEM_SILVER_POWDER,
+#line 3441
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-#line 3437
-            .lvl = 42,
-#line 3436
-            .nature = NATURE_BRAVE,
+#line 3439
+            .ability = ABILITY_STURDY,
+#line 3440
+            .lvl = 21,
+            .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
-#line 3440
-                MOVE_LIGHT_SCREEN,
-                MOVE_PSYCHIC,
-                MOVE_REFLECT,
-                MOVE_METAL_CLAW,
+#line 3442
+                MOVE_STEALTH_ROCK,
+                MOVE_BUG_BITE,
+                MOVE_ROCK_TOMB,
+                MOVE_KNOCK_OFF,
             },
             },
-        },
-    },
-#line 3445
-    [TRAINER_PBL_ADAMINA_LEVIATHAN_9_CHALLENGE] =
-    {
-#line 3446
-        .trainerName = _("STEVEN"),
-#line 3447
-        .trainerClass = TRAINER_CLASS_RIVAL,
-#line 3448
-        .trainerPic = TRAINER_PIC_STEVEN,
-        .encounterMusic_gender =
-#line 3450
-            TRAINER_ENCOUNTER_MUSIC_MALE,
-        .partySize = 1,
-        .party = (const struct TrainerMon[])
-        {
             {
-#line 3452
-            .species = SPECIES_METANG,
+#line 3447
+            .species = SPECIES_KLAWF,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 3447
+            .heldItem = ITEM_HARD_STONE,
+#line 3450
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 3448
+            .ability = ABILITY_ANGER_SHELL,
+#line 3449
+            .lvl = 21,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 3451
+                MOVE_ROCK_TOMB,
+                MOVE_BULLDOZE,
+                MOVE_KNOCK_OFF,
+                MOVE_ROCK_SMASH,
+            },
+            },
+            {
+#line 3456
+            .species = SPECIES_WATCHOG,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3456
-            .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
-#line 3455
+            .heldItem = ITEM_SAFETY_GOGGLES,
+#line 3459
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-#line 3454
-            .lvl = 42,
-#line 3453
-            .nature = NATURE_BRAVE,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .moves = {
 #line 3457
-                MOVE_LIGHT_SCREEN,
-                MOVE_PSYCHIC,
-                MOVE_REFLECT,
-                MOVE_METAL_CLAW,
+            .ability = ABILITY_NO_GUARD,
+#line 3458
+            .lvl = 21,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 3460
+                MOVE_SLAM,
+                MOVE_HYPNOSIS,
+                MOVE_COVET,
+                MOVE_POWER_UP_PUNCH,
             },
             },
-        },
-    },
-#line 3462
-    [TRAINER_PBL_JEANETTE] =
-    {
-#line 3463
-        .trainerName = _("STEVEN"),
-#line 3464
-        .trainerClass = TRAINER_CLASS_RIVAL,
+            {
 #line 3465
-        .trainerPic = TRAINER_PIC_STEVEN,
-        .encounterMusic_gender =
+            .species = SPECIES_MARACTUS,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 3465
+            .heldItem = ITEM_MIRACLE_SEED,
+#line 3468
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 3466
+            .ability = ABILITY_SAND_RUSH,
 #line 3467
-            TRAINER_ENCOUNTER_MUSIC_MALE,
-        .partySize = 1,
-        .party = (const struct TrainerMon[])
-        {
-            {
+            .lvl = 21,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
 #line 3469
-            .species = SPECIES_METANG,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-#line 3473
-            .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
-#line 3472
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-#line 3471
-            .lvl = 42,
-#line 3470
-            .nature = NATURE_BRAVE,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .moves = {
+                MOVE_MEGA_DRAIN,
+                MOVE_PIN_MISSILE,
+                MOVE_BOUNCE,
+                MOVE_GROWTH,
+            },
+            },
+            {
 #line 3474
-                MOVE_LIGHT_SCREEN,
-                MOVE_PSYCHIC,
-                MOVE_REFLECT,
-                MOVE_METAL_CLAW,
+            .species = SPECIES_SANDSLASH,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 3474
+            .heldItem = ITEM_SITRUS_BERRY,
+#line 3477
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 3475
+            .ability = ABILITY_SAND_RUSH,
+#line 3476
+            .lvl = 23,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 3478
+                MOVE_BULLDOZE,
+                MOVE_ROCK_TOMB,
+                MOVE_AERIAL_ACE,
+                MOVE_COVET,
             },
             },
         },
     },
-#line 3479
-    [TRAINER_PBL_EMMA_AND_LEO] =
+#line 3483
+    [TRAINER_PBL_ADAMINA_LEVIATHAN_9_CHALLENGE] =
     {
-#line 3480
-        .trainerName = _("STEVEN"),
-#line 3481
-        .trainerClass = TRAINER_CLASS_RIVAL,
-#line 3482
-        .trainerPic = TRAINER_PIC_STEVEN,
-        .encounterMusic_gender =
 #line 3484
-            TRAINER_ENCOUNTER_MUSIC_MALE,
-        .partySize = 1,
-        .party = (const struct TrainerMon[])
-        {
-            {
+        .trainerName = _("Adamina"),
+#line 3485
+        .trainerClass = TRAINER_CLASS_PKMN_RANGER,
 #line 3486
-            .species = SPECIES_METANG,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-#line 3490
-            .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
-#line 3489
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-#line 3488
-            .lvl = 42,
-#line 3487
-            .nature = NATURE_BRAVE,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .moves = {
-#line 3491
-                MOVE_LIGHT_SCREEN,
-                MOVE_PSYCHIC,
-                MOVE_REFLECT,
-                MOVE_METAL_CLAW,
-            },
-            },
-        },
-    },
-#line 3496
-    [TRAINER_PBL_JOEL] =
-    {
-#line 3497
-        .trainerName = _("STEVEN"),
-#line 3498
-        .trainerClass = TRAINER_CLASS_RIVAL,
-#line 3499
-        .trainerPic = TRAINER_PIC_STEVEN,
+        .trainerPic = TRAINER_PIC_POKEMON_RANGER_F,
         .encounterMusic_gender =
-#line 3501
-            TRAINER_ENCOUNTER_MUSIC_MALE,
-        .partySize = 1,
+#line 3487
+            TRAINER_ENCOUNTER_MUSIC_COOL,
+#line 3489
+        .doubleBattle = FALSE,
+#line 3488
+        .aiFlags = AI_FLAG_SMART_TRAINER,
+#line 3491
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_PURPLE,
+#line 3490
+        .randomLead = FALSE,
+        .partySize = 6,
         .party = (const struct TrainerMon[])
         {
             {
-#line 3503
-            .species = SPECIES_METANG,
+#line 3493
+            .species = SPECIES_DWEBBLE,
             .gender = TRAINER_MON_RANDOM_GENDER,
-#line 3507
-            .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
-#line 3506
+#line 3493
+            .heldItem = ITEM_SILVER_POWDER,
+#line 3496
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-#line 3505
-            .lvl = 42,
-#line 3504
-            .nature = NATURE_BRAVE,
+#line 3494
+            .ability = ABILITY_STURDY,
+#line 3495
+            .lvl = 21,
+            .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
-#line 3508
-                MOVE_LIGHT_SCREEN,
-                MOVE_PSYCHIC,
-                MOVE_REFLECT,
-                MOVE_METAL_CLAW,
+#line 3497
+                MOVE_STEALTH_ROCK,
+                MOVE_BUG_BITE,
+                MOVE_ROCK_TOMB,
+                MOVE_KNOCK_OFF,
             },
             },
-        },
-    },
-#line 3513
-    [TRAINER_PBL_MARION] =
-    {
+            {
+#line 3502
+            .species = SPECIES_KLAWF,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 3502
+            .heldItem = ITEM_HARD_STONE,
+#line 3505
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 3503
+            .ability = ABILITY_ANGER_SHELL,
+#line 3504
+            .lvl = 21,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 3506
+                MOVE_ROCK_TOMB,
+                MOVE_BULLDOZE,
+                MOVE_KNOCK_OFF,
+                MOVE_ROCK_SMASH,
+            },
+            },
+            {
+#line 3511
+            .species = SPECIES_WATCHOG,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 3511
+            .heldItem = ITEM_SAFETY_GOGGLES,
 #line 3514
-        .trainerName = _("STEVEN"),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 3512
+            .ability = ABILITY_NO_GUARD,
+#line 3513
+            .lvl = 21,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
 #line 3515
-        .trainerClass = TRAINER_CLASS_RIVAL,
-#line 3516
-        .trainerPic = TRAINER_PIC_STEVEN,
-        .encounterMusic_gender =
-#line 3518
-            TRAINER_ENCOUNTER_MUSIC_MALE,
-        .partySize = 1,
-        .party = (const struct TrainerMon[])
-        {
+                MOVE_SLAM,
+                MOVE_HYPNOSIS,
+                MOVE_COVET,
+                MOVE_POWER_UP_PUNCH,
+            },
+            },
             {
 #line 3520
-            .species = SPECIES_METANG,
+            .species = SPECIES_MARACTUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
-#line 3524
-            .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
+#line 3520
+            .heldItem = ITEM_MIRACLE_SEED,
 #line 3523
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-#line 3522
-            .lvl = 42,
 #line 3521
-            .nature = NATURE_BRAVE,
+            .ability = ABILITY_SAND_RUSH,
+#line 3522
+            .lvl = 21,
+            .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
-#line 3525
-                MOVE_LIGHT_SCREEN,
-                MOVE_PSYCHIC,
-                MOVE_REFLECT,
-                MOVE_METAL_CLAW,
+#line 3524
+                MOVE_MEGA_DRAIN,
+                MOVE_PIN_MISSILE,
+                MOVE_BOUNCE,
+                MOVE_GROWTH,
             },
             },
-        },
-    },
-#line 3530
-    [TRAINER_PBL_REGINA] =
-    {
-#line 3531
-        .trainerName = _("STEVEN"),
-#line 3532
-        .trainerClass = TRAINER_CLASS_RIVAL,
-#line 3533
-        .trainerPic = TRAINER_PIC_STEVEN,
-        .encounterMusic_gender =
-#line 3535
-            TRAINER_ENCOUNTER_MUSIC_MALE,
-        .partySize = 1,
-        .party = (const struct TrainerMon[])
-        {
             {
-#line 3537
-            .species = SPECIES_METANG,
+#line 3529
+            .species = SPECIES_SANDSLASH,
             .gender = TRAINER_MON_RANDOM_GENDER,
+#line 3529
+            .heldItem = ITEM_SITRUS_BERRY,
+#line 3532
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 3530
+            .ability = ABILITY_SAND_RUSH,
+#line 3531
+            .lvl = 23,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 3533
+                MOVE_BULLDOZE,
+                MOVE_ROCK_TOMB,
+                MOVE_AERIAL_ACE,
+                MOVE_COVET,
+            },
+            },
+            {
+#line 3538
+            .species = SPECIES_SIGILYPH,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 3538
+            .heldItem = ITEM_SITRUS_BERRY,
 #line 3541
-            .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
-#line 3540
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 3539
-            .lvl = 42,
-#line 3538
-            .nature = NATURE_BRAVE,
+            .ability = ABILITY_MAGIC_GUARD,
+#line 3540
+            .lvl = 23,
+            .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 3542
-                MOVE_LIGHT_SCREEN,
-                MOVE_PSYCHIC,
-                MOVE_REFLECT,
-                MOVE_METAL_CLAW,
+                MOVE_PSYBEAM,
+                MOVE_AIR_CUTTER,
+                MOVE_ANCIENT_POWER,
+                MOVE_ROOST,
             },
             },
         },
     },
 #line 3547
-    [TRAINER_PBL_NEWTON_LEVIATHAN_10] =
+    [TRAINER_PBL_JEANETTE] =
     {
 #line 3548
         .trainerName = _("STEVEN"),
@@ -8400,7 +8428,7 @@
         },
     },
 #line 3564
-    [TRAINER_PBL_NEWTON_LEVIATHAN_10_CHALLENGE] =
+    [TRAINER_PBL_EMMA_AND_LEO] =
     {
 #line 3565
         .trainerName = _("STEVEN"),
@@ -8438,7 +8466,7 @@
         },
     },
 #line 3581
-    [TRAINER_PBL_ESSENCE] =
+    [TRAINER_PBL_JOEL] =
     {
 #line 3582
         .trainerName = _("STEVEN"),
@@ -8476,7 +8504,7 @@
         },
     },
 #line 3598
-    [TRAINER_PBL_DOLORES] =
+    [TRAINER_PBL_MARION] =
     {
 #line 3599
         .trainerName = _("STEVEN"),
@@ -8514,7 +8542,7 @@
         },
     },
 #line 3615
-    [TRAINER_PBL_JULIE] =
+    [TRAINER_PBL_REGINA] =
     {
 #line 3616
         .trainerName = _("STEVEN"),
@@ -8552,7 +8580,7 @@
         },
     },
 #line 3632
-    [TRAINER_PBL_ROMULUS] =
+    [TRAINER_PBL_NEWTON_LEVIATHAN_10] =
     {
 #line 3633
         .trainerName = _("STEVEN"),
@@ -8590,7 +8618,7 @@
         },
     },
 #line 3649
-    [TRAINER_PBL_TREVOR] =
+    [TRAINER_PBL_NEWTON_LEVIATHAN_10_CHALLENGE] =
     {
 #line 3650
         .trainerName = _("STEVEN"),
@@ -8628,7 +8656,7 @@
         },
     },
 #line 3666
-    [TRAINER_PBL_FEDERICO] =
+    [TRAINER_PBL_ESSENCE] =
     {
 #line 3667
         .trainerName = _("STEVEN"),
@@ -8666,7 +8694,7 @@
         },
     },
 #line 3683
-    [TRAINER_PBL_GENIE] =
+    [TRAINER_PBL_DOLORES] =
     {
 #line 3684
         .trainerName = _("STEVEN"),
@@ -8704,7 +8732,7 @@
         },
     },
 #line 3700
-    [TRAINER_PBL_HILDA] =
+    [TRAINER_PBL_JULIE] =
     {
 #line 3701
         .trainerName = _("STEVEN"),
@@ -8742,7 +8770,7 @@
         },
     },
 #line 3717
-    [TRAINER_PBL_KINLEY] =
+    [TRAINER_PBL_ROMULUS] =
     {
 #line 3718
         .trainerName = _("STEVEN"),
@@ -8780,7 +8808,7 @@
         },
     },
 #line 3734
-    [TRAINER_PBL_VIOLET] =
+    [TRAINER_PBL_TREVOR] =
     {
 #line 3735
         .trainerName = _("STEVEN"),
@@ -8818,7 +8846,7 @@
         },
     },
 #line 3751
-    [TRAINER_PBL_WANDA] =
+    [TRAINER_PBL_FEDERICO] =
     {
 #line 3752
         .trainerName = _("STEVEN"),
@@ -8856,7 +8884,7 @@
         },
     },
 #line 3768
-    [TRAINER_PBL_AMBER_AND_KIM] =
+    [TRAINER_PBL_GENIE] =
     {
 #line 3769
         .trainerName = _("STEVEN"),
@@ -8894,7 +8922,7 @@
         },
     },
 #line 3785
-    [TRAINER_PBL_JAN_AND_ERIN] =
+    [TRAINER_PBL_HILDA] =
     {
 #line 3786
         .trainerName = _("STEVEN"),
@@ -8932,7 +8960,7 @@
         },
     },
 #line 3802
-    [TRAINER_PBL_STEVE] =
+    [TRAINER_PBL_KINLEY] =
     {
 #line 3803
         .trainerName = _("STEVEN"),
@@ -8970,7 +8998,7 @@
         },
     },
 #line 3819
-    [TRAINER_PBL_GOULD] =
+    [TRAINER_PBL_VIOLET] =
     {
 #line 3820
         .trainerName = _("STEVEN"),
@@ -9008,7 +9036,7 @@
         },
     },
 #line 3836
-    [TRAINER_PBL_MENDEL] =
+    [TRAINER_PBL_WANDA] =
     {
 #line 3837
         .trainerName = _("STEVEN"),
@@ -9046,7 +9074,7 @@
         },
     },
 #line 3853
-    [TRAINER_PBL_DARWIN] =
+    [TRAINER_PBL_AMBER_AND_KIM] =
     {
 #line 3854
         .trainerName = _("STEVEN"),
@@ -9084,7 +9112,7 @@
         },
     },
 #line 3870
-    [TRAINER_PBL_JENNY_LEVIATHAN_11] =
+    [TRAINER_PBL_JAN_AND_ERIN] =
     {
 #line 3871
         .trainerName = _("STEVEN"),
@@ -9122,7 +9150,7 @@
         },
     },
 #line 3887
-    [TRAINER_PBL_JENNY_LEVIATHAN_11_CHALLENGE] =
+    [TRAINER_PBL_STEVE] =
     {
 #line 3888
         .trainerName = _("STEVEN"),
@@ -9160,7 +9188,7 @@
         },
     },
 #line 3904
-    [TRAINER_PBL_BART] =
+    [TRAINER_PBL_GOULD] =
     {
 #line 3905
         .trainerName = _("STEVEN"),
@@ -9198,7 +9226,7 @@
         },
     },
 #line 3921
-    [TRAINER_PBL_NIGEL] =
+    [TRAINER_PBL_MENDEL] =
     {
 #line 3922
         .trainerName = _("STEVEN"),
@@ -9236,7 +9264,7 @@
         },
     },
 #line 3938
-    [TRAINER_PBL_LOLA] =
+    [TRAINER_PBL_DARWIN] =
     {
 #line 3939
         .trainerName = _("STEVEN"),
@@ -9274,7 +9302,7 @@
         },
     },
 #line 3955
-    [TRAINER_PBL_CHARLIE] =
+    [TRAINER_PBL_JENNY_LEVIATHAN_11] =
     {
 #line 3956
         .trainerName = _("STEVEN"),
@@ -9312,7 +9340,7 @@
         },
     },
 #line 3972
-    [TRAINER_PBL_RANDOLPH] =
+    [TRAINER_PBL_JENNY_LEVIATHAN_11_CHALLENGE] =
     {
 #line 3973
         .trainerName = _("STEVEN"),
@@ -9350,7 +9378,7 @@
         },
     },
 #line 3989
-    [TRAINER_PBL_TODD] =
+    [TRAINER_PBL_BART] =
     {
 #line 3990
         .trainerName = _("STEVEN"),
@@ -9388,7 +9416,7 @@
         },
     },
 #line 4006
-    [TRAINER_PBL_RUSSELL] =
+    [TRAINER_PBL_NIGEL] =
     {
 #line 4007
         .trainerName = _("STEVEN"),
@@ -9426,7 +9454,7 @@
         },
     },
 #line 4023
-    [TRAINER_PBL_OTIS] =
+    [TRAINER_PBL_LOLA] =
     {
 #line 4024
         .trainerName = _("STEVEN"),
@@ -9464,7 +9492,7 @@
         },
     },
 #line 4040
-    [TRAINER_PBL_MIGUEL_LEVIATHAN_12] =
+    [TRAINER_PBL_CHARLIE] =
     {
 #line 4041
         .trainerName = _("STEVEN"),
@@ -9502,7 +9530,7 @@
         },
     },
 #line 4057
-    [TRAINER_PBL_MIGUEL_LEVIATHAN_12_CHALLENGE] =
+    [TRAINER_PBL_RANDOLPH] =
     {
 #line 4058
         .trainerName = _("STEVEN"),
@@ -9540,7 +9568,7 @@
         },
     },
 #line 4074
-    [TRAINER_PBL_MIRAGE_LEVIATHAN_13] =
+    [TRAINER_PBL_TODD] =
     {
 #line 4075
         .trainerName = _("STEVEN"),
@@ -9578,7 +9606,7 @@
         },
     },
 #line 4091
-    [TRAINER_PBL_MIRAGE_LEVIATHAN_13_CHALLENGE] =
+    [TRAINER_PBL_RUSSELL] =
     {
 #line 4092
         .trainerName = _("STEVEN"),
@@ -9616,7 +9644,7 @@
         },
     },
 #line 4108
-    [TRAINER_PBL_IONA] =
+    [TRAINER_PBL_OTIS] =
     {
 #line 4109
         .trainerName = _("STEVEN"),
@@ -9654,7 +9682,7 @@
         },
     },
 #line 4125
-    [TRAINER_PBL_BERKE] =
+    [TRAINER_PBL_MIGUEL_LEVIATHAN_12] =
     {
 #line 4126
         .trainerName = _("STEVEN"),
@@ -9692,7 +9720,7 @@
         },
     },
 #line 4142
-    [TRAINER_PBL_TANISHA] =
+    [TRAINER_PBL_MIGUEL_LEVIATHAN_12_CHALLENGE] =
     {
 #line 4143
         .trainerName = _("STEVEN"),
@@ -9730,7 +9758,7 @@
         },
     },
 #line 4159
-    [TRAINER_PBL_ROBERT] =
+    [TRAINER_PBL_MIRAGE_LEVIATHAN_13] =
     {
 #line 4160
         .trainerName = _("STEVEN"),
@@ -9768,7 +9796,7 @@
         },
     },
 #line 4176
-    [TRAINER_PBL_CHRIS] =
+    [TRAINER_PBL_MIRAGE_LEVIATHAN_13_CHALLENGE] =
     {
 #line 4177
         .trainerName = _("STEVEN"),
@@ -9806,7 +9834,7 @@
         },
     },
 #line 4193
-    [TRAINER_PBL_ANGUS] =
+    [TRAINER_PBL_IONA] =
     {
 #line 4194
         .trainerName = _("STEVEN"),
@@ -9844,7 +9872,7 @@
         },
     },
 #line 4210
-    [TRAINER_PBL_LILY_LEVIATHAN_14] =
+    [TRAINER_PBL_BERKE] =
     {
 #line 4211
         .trainerName = _("STEVEN"),
@@ -9882,7 +9910,7 @@
         },
     },
 #line 4227
-    [TRAINER_PBL_LILY_LEVIATHAN_14_CHALLENGE] =
+    [TRAINER_PBL_TANISHA] =
     {
 #line 4228
         .trainerName = _("STEVEN"),
@@ -9920,7 +9948,7 @@
         },
     },
 #line 4244
-    [TRAINER_PBL_AXLE] =
+    [TRAINER_PBL_ROBERT] =
     {
 #line 4245
         .trainerName = _("STEVEN"),
@@ -9958,7 +9986,7 @@
         },
     },
 #line 4261
-    [TRAINER_PBL_RAFAEL] =
+    [TRAINER_PBL_CHRIS] =
     {
 #line 4262
         .trainerName = _("STEVEN"),
@@ -9996,7 +10024,7 @@
         },
     },
 #line 4278
-    [TRAINER_PBL_GEORGINA] =
+    [TRAINER_PBL_ANGUS] =
     {
 #line 4279
         .trainerName = _("STEVEN"),
@@ -10034,7 +10062,7 @@
         },
     },
 #line 4295
-    [TRAINER_PBL_MIA_LEVIATHAN_15] =
+    [TRAINER_PBL_LILY_LEVIATHAN_14] =
     {
 #line 4296
         .trainerName = _("STEVEN"),
@@ -10072,7 +10100,7 @@
         },
     },
 #line 4312
-    [TRAINER_PBL_MIA_LEVIATHAN_15_CHALLENGE] =
+    [TRAINER_PBL_LILY_LEVIATHAN_14_CHALLENGE] =
     {
 #line 4313
         .trainerName = _("STEVEN"),
@@ -10110,7 +10138,7 @@
         },
     },
 #line 4329
-    [TRAINER_PBL_DORIS] =
+    [TRAINER_PBL_AXLE] =
     {
 #line 4330
         .trainerName = _("STEVEN"),
@@ -10148,7 +10176,7 @@
         },
     },
 #line 4346
-    [TRAINER_PBL_HOMER] =
+    [TRAINER_PBL_RAFAEL] =
     {
 #line 4347
         .trainerName = _("STEVEN"),
@@ -10186,7 +10214,7 @@
         },
     },
 #line 4363
-    [TRAINER_PBL_JOHN] =
+    [TRAINER_PBL_GEORGINA] =
     {
 #line 4364
         .trainerName = _("STEVEN"),
@@ -10224,7 +10252,7 @@
         },
     },
 #line 4380
-    [TRAINER_PBL_GLENN] =
+    [TRAINER_PBL_MIA_LEVIATHAN_15] =
     {
 #line 4381
         .trainerName = _("STEVEN"),
@@ -10262,7 +10290,7 @@
         },
     },
 #line 4397
-    [TRAINER_PBL_JAY] =
+    [TRAINER_PBL_MIA_LEVIATHAN_15_CHALLENGE] =
     {
 #line 4398
         .trainerName = _("STEVEN"),
@@ -10300,7 +10328,7 @@
         },
     },
 #line 4414
-    [TRAINER_PBL_TYLER] =
+    [TRAINER_PBL_DORIS] =
     {
 #line 4415
         .trainerName = _("STEVEN"),
@@ -10338,7 +10366,7 @@
         },
     },
 #line 4431
-    [TRAINER_PBL_TERRENCE] =
+    [TRAINER_PBL_HOMER] =
     {
 #line 4432
         .trainerName = _("STEVEN"),
@@ -10376,7 +10404,7 @@
         },
     },
 #line 4448
-    [TRAINER_PBL_MARTY] =
+    [TRAINER_PBL_JOHN] =
     {
 #line 4449
         .trainerName = _("STEVEN"),
@@ -10414,7 +10442,7 @@
         },
     },
 #line 4465
-    [TRAINER_PBL_KARI] =
+    [TRAINER_PBL_GLENN] =
     {
 #line 4466
         .trainerName = _("STEVEN"),
@@ -10452,7 +10480,7 @@
         },
     },
 #line 4482
-    [TRAINER_PBL_ABRAHAM] =
+    [TRAINER_PBL_JAY] =
     {
 #line 4483
         .trainerName = _("STEVEN"),
@@ -10490,7 +10518,7 @@
         },
     },
 #line 4499
-    [TRAINER_PBL_MELINDA] =
+    [TRAINER_PBL_TYLER] =
     {
 #line 4500
         .trainerName = _("STEVEN"),
@@ -10528,7 +10556,7 @@
         },
     },
 #line 4516
-    [TRAINER_PBL_EMILIO] =
+    [TRAINER_PBL_TERRENCE] =
     {
 #line 4517
         .trainerName = _("STEVEN"),
@@ -10566,7 +10594,7 @@
         },
     },
 #line 4533
-    [TRAINER_PBL_REX] =
+    [TRAINER_PBL_MARTY] =
     {
 #line 4534
         .trainerName = _("STEVEN"),
@@ -10604,7 +10632,7 @@
         },
     },
 #line 4550
-    [TRAINER_PBL_LOUIS] =
+    [TRAINER_PBL_KARI] =
     {
 #line 4551
         .trainerName = _("STEVEN"),
@@ -10642,7 +10670,7 @@
         },
     },
 #line 4567
-    [TRAINER_PBL_LEROY] =
+    [TRAINER_PBL_ABRAHAM] =
     {
 #line 4568
         .trainerName = _("STEVEN"),
@@ -10680,7 +10708,7 @@
         },
     },
 #line 4584
-    [TRAINER_PBL_ELTON] =
+    [TRAINER_PBL_MELINDA] =
     {
 #line 4585
         .trainerName = _("STEVEN"),
@@ -10718,7 +10746,7 @@
         },
     },
 #line 4601
-    [TRAINER_PBL_WILLIE] =
+    [TRAINER_PBL_EMILIO] =
     {
 #line 4602
         .trainerName = _("STEVEN"),
@@ -10756,7 +10784,7 @@
         },
     },
 #line 4618
-    [TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16] =
+    [TRAINER_PBL_REX] =
     {
 #line 4619
         .trainerName = _("STEVEN"),
@@ -10794,7 +10822,7 @@
         },
     },
 #line 4635
-    [TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16_CHALLENGE] =
+    [TRAINER_PBL_LOUIS] =
     {
 #line 4636
         .trainerName = _("STEVEN"),
@@ -10832,7 +10860,7 @@
         },
     },
 #line 4652
-    [TRAINER_PBL_PIRATE_1] =
+    [TRAINER_PBL_LEROY] =
     {
 #line 4653
         .trainerName = _("STEVEN"),
@@ -10870,7 +10898,7 @@
         },
     },
 #line 4669
-    [TRAINER_PBL_PIRATE_2] =
+    [TRAINER_PBL_ELTON] =
     {
 #line 4670
         .trainerName = _("STEVEN"),
@@ -10908,7 +10936,7 @@
         },
     },
 #line 4686
-    [TRAINER_PBL_PIRATE_3] =
+    [TRAINER_PBL_WILLIE] =
     {
 #line 4687
         .trainerName = _("STEVEN"),
@@ -10946,7 +10974,7 @@
         },
     },
 #line 4703
-    [TRAINER_PBL_PIRATE_4] =
+    [TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16] =
     {
 #line 4704
         .trainerName = _("STEVEN"),
@@ -10984,7 +11012,7 @@
         },
     },
 #line 4720
-    [TRAINER_PBL_SHAWN] =
+    [TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16_CHALLENGE] =
     {
 #line 4721
         .trainerName = _("STEVEN"),
@@ -11022,7 +11050,7 @@
         },
     },
 #line 4737
-    [TRAINER_PBL_FERNANDO] =
+    [TRAINER_PBL_PIRATE_1] =
     {
 #line 4738
         .trainerName = _("STEVEN"),
@@ -11060,7 +11088,7 @@
         },
     },
 #line 4754
-    [TRAINER_PBL_KANE] =
+    [TRAINER_PBL_PIRATE_2] =
     {
 #line 4755
         .trainerName = _("STEVEN"),
@@ -11098,7 +11126,7 @@
         },
     },
 #line 4771
-    [TRAINER_PBL_KIRK] =
+    [TRAINER_PBL_PIRATE_3] =
     {
 #line 4772
         .trainerName = _("STEVEN"),
@@ -11136,7 +11164,7 @@
         },
     },
 #line 4788
-    [TRAINER_PBL_DALTON] =
+    [TRAINER_PBL_PIRATE_4] =
     {
 #line 4789
         .trainerName = _("STEVEN"),
@@ -11174,7 +11202,7 @@
         },
     },
 #line 4805
-    [TRAINER_PBL_LEE] =
+    [TRAINER_PBL_SHAWN] =
     {
 #line 4806
         .trainerName = _("STEVEN"),
@@ -11212,7 +11240,7 @@
         },
     },
 #line 4822
-    [TRAINER_PBL_BLANCHE] =
+    [TRAINER_PBL_FERNANDO] =
     {
 #line 4823
         .trainerName = _("STEVEN"),
@@ -11250,7 +11278,7 @@
         },
     },
 #line 4839
-    [TRAINER_PBL_TROY] =
+    [TRAINER_PBL_KANE] =
     {
 #line 4840
         .trainerName = _("STEVEN"),
@@ -11288,7 +11316,7 @@
         },
     },
 #line 4856
-    [TRAINER_PBL_ABED] =
+    [TRAINER_PBL_KIRK] =
     {
 #line 4857
         .trainerName = _("STEVEN"),
@@ -11326,7 +11354,7 @@
         },
     },
 #line 4873
-    [TRAINER_PBL_TROY_BRUTAL] =
+    [TRAINER_PBL_DALTON] =
     {
 #line 4874
         .trainerName = _("STEVEN"),
@@ -11364,7 +11392,7 @@
         },
     },
 #line 4890
-    [TRAINER_PBL_ABED_BRUTAL] =
+    [TRAINER_PBL_LEE] =
     {
 #line 4891
         .trainerName = _("STEVEN"),
@@ -11402,7 +11430,7 @@
         },
     },
 #line 4907
-    [TRAINER_PBL_MIRAGE_LEVIATHAN_17] =
+    [TRAINER_PBL_BLANCHE] =
     {
 #line 4908
         .trainerName = _("STEVEN"),
@@ -11440,7 +11468,7 @@
         },
     },
 #line 4924
-    [TRAINER_PBL_MIRAGE_LEVIATHAN_17_CHALLENGE] =
+    [TRAINER_PBL_TROY] =
     {
 #line 4925
         .trainerName = _("STEVEN"),
@@ -11478,7 +11506,7 @@
         },
     },
 #line 4941
-    [TRAINER_PBL_ANITA] =
+    [TRAINER_PBL_ABED] =
     {
 #line 4942
         .trainerName = _("STEVEN"),
@@ -11516,7 +11544,7 @@
         },
     },
 #line 4958
-    [TRAINER_PBL_DESIREE] =
+    [TRAINER_PBL_TROY_BRUTAL] =
     {
 #line 4959
         .trainerName = _("STEVEN"),
@@ -11554,7 +11582,7 @@
         },
     },
 #line 4975
-    [TRAINER_PBL_HOWARD] =
+    [TRAINER_PBL_ABED_BRUTAL] =
     {
 #line 4976
         .trainerName = _("STEVEN"),
@@ -11592,7 +11620,7 @@
         },
     },
 #line 4992
-    [TRAINER_PBL_ELOISE] =
+    [TRAINER_PBL_MIRAGE_LEVIATHAN_17] =
     {
 #line 4993
         .trainerName = _("STEVEN"),
@@ -11630,7 +11658,7 @@
         },
     },
 #line 5009
-    [TRAINER_PBL_ALLY_AND_EMMY] =
+    [TRAINER_PBL_MIRAGE_LEVIATHAN_17_CHALLENGE] =
     {
 #line 5010
         .trainerName = _("STEVEN"),
@@ -11668,7 +11696,7 @@
         },
     },
 #line 5026
-    [TRAINER_PBL_AMIR] =
+    [TRAINER_PBL_ANITA] =
     {
 #line 5027
         .trainerName = _("STEVEN"),
@@ -11706,7 +11734,7 @@
         },
     },
 #line 5043
-    [TRAINER_PBL_GETHIN] =
+    [TRAINER_PBL_DESIREE] =
     {
 #line 5044
         .trainerName = _("STEVEN"),
@@ -11744,7 +11772,7 @@
         },
     },
 #line 5060
-    [TRAINER_PBL_BERNARD] =
+    [TRAINER_PBL_HOWARD] =
     {
 #line 5061
         .trainerName = _("STEVEN"),
@@ -11782,7 +11810,7 @@
         },
     },
 #line 5077
-    [TRAINER_PBL_ELLIE] =
+    [TRAINER_PBL_ELOISE] =
     {
 #line 5078
         .trainerName = _("STEVEN"),
@@ -11820,7 +11848,7 @@
         },
     },
 #line 5094
-    [TRAINER_PBL_RUSTY] =
+    [TRAINER_PBL_ALLY_AND_EMMY] =
     {
 #line 5095
         .trainerName = _("STEVEN"),
@@ -11858,7 +11886,7 @@
         },
     },
 #line 5111
-    [TRAINER_PBL_CODY] =
+    [TRAINER_PBL_AMIR] =
     {
 #line 5112
         .trainerName = _("STEVEN"),
@@ -11896,7 +11924,7 @@
         },
     },
 #line 5128
-    [TRAINER_PBL_LEWIS] =
+    [TRAINER_PBL_GETHIN] =
     {
 #line 5129
         .trainerName = _("STEVEN"),
@@ -11934,7 +11962,7 @@
         },
     },
 #line 5145
-    [TRAINER_PBL_CORNELIUS] =
+    [TRAINER_PBL_BERNARD] =
     {
 #line 5146
         .trainerName = _("STEVEN"),
@@ -11972,7 +12000,7 @@
         },
     },
 #line 5162
-    [TRAINER_PBL_INEZ_AND_EMMA] =
+    [TRAINER_PBL_ELLIE] =
     {
 #line 5163
         .trainerName = _("STEVEN"),
@@ -12010,7 +12038,7 @@
         },
     },
 #line 5179
-    [TRAINER_PBL_HELEN] =
+    [TRAINER_PBL_RUSTY] =
     {
 #line 5180
         .trainerName = _("STEVEN"),
@@ -12048,7 +12076,7 @@
         },
     },
 #line 5196
-    [TRAINER_PBL_WESLEY] =
+    [TRAINER_PBL_CODY] =
     {
 #line 5197
         .trainerName = _("STEVEN"),
@@ -12086,7 +12114,7 @@
         },
     },
 #line 5213
-    [TRAINER_PBL_ALFREDO] =
+    [TRAINER_PBL_LEWIS] =
     {
 #line 5214
         .trainerName = _("STEVEN"),
@@ -12124,7 +12152,7 @@
         },
     },
 #line 5230
-    [TRAINER_PBL_IAN] =
+    [TRAINER_PBL_CORNELIUS] =
     {
 #line 5231
         .trainerName = _("STEVEN"),
@@ -12162,7 +12190,7 @@
         },
     },
 #line 5247
-    [TRAINER_PBL_AUDREY] =
+    [TRAINER_PBL_INEZ_AND_EMMA] =
     {
 #line 5248
         .trainerName = _("STEVEN"),
@@ -12200,7 +12228,7 @@
         },
     },
 #line 5264
-    [TRAINER_PBL_LEVIATHAN13] =
+    [TRAINER_PBL_HELEN] =
     {
 #line 5265
         .trainerName = _("STEVEN"),
@@ -12238,7 +12266,7 @@
         },
     },
 #line 5281
-    [TRAINER_PBL_EDGARDO] =
+    [TRAINER_PBL_WESLEY] =
     {
 #line 5282
         .trainerName = _("STEVEN"),
@@ -12276,7 +12304,7 @@
         },
     },
 #line 5298
-    [TRAINER_PBL_JEAN] =
+    [TRAINER_PBL_ALFREDO] =
     {
 #line 5299
         .trainerName = _("STEVEN"),
@@ -12314,7 +12342,7 @@
         },
     },
 #line 5315
-    [TRAINER_PBL_ROSE] =
+    [TRAINER_PBL_IAN] =
     {
 #line 5316
         .trainerName = _("STEVEN"),
@@ -12352,7 +12380,7 @@
         },
     },
 #line 5332
-    [TRAINER_PBL_JENNIFER] =
+    [TRAINER_PBL_AUDREY] =
     {
 #line 5333
         .trainerName = _("STEVEN"),
@@ -12390,7 +12418,7 @@
         },
     },
 #line 5349
-    [TRAINER_PBL_MATTHEW] =
+    [TRAINER_PBL_LEVIATHAN13] =
     {
 #line 5350
         .trainerName = _("STEVEN"),
@@ -12428,7 +12456,7 @@
         },
     },
 #line 5366
-    [TRAINER_PBL_KERRY] =
+    [TRAINER_PBL_EDGARDO] =
     {
 #line 5367
         .trainerName = _("STEVEN"),
@@ -12466,7 +12494,7 @@
         },
     },
 #line 5383
-    [TRAINER_PBL_ANNIE] =
+    [TRAINER_PBL_JEAN] =
     {
 #line 5384
         .trainerName = _("STEVEN"),
@@ -12504,7 +12532,7 @@
         },
     },
 #line 5400
-    [TRAINER_PBL_CHRISTI] =
+    [TRAINER_PBL_ROSE] =
     {
 #line 5401
         .trainerName = _("STEVEN"),
@@ -12542,7 +12570,7 @@
         },
     },
 #line 5417
-    [TRAINER_PBL_SPENCER] =
+    [TRAINER_PBL_JENNIFER] =
     {
 #line 5418
         .trainerName = _("STEVEN"),
@@ -12580,7 +12608,7 @@
         },
     },
 #line 5434
-    [TRAINER_PBL_HAYWOOD] =
+    [TRAINER_PBL_MATTHEW] =
     {
 #line 5435
         .trainerName = _("STEVEN"),
@@ -12618,7 +12646,7 @@
         },
     },
 #line 5451
-    [TRAINER_PBL_MONROE] =
+    [TRAINER_PBL_KERRY] =
     {
 #line 5452
         .trainerName = _("STEVEN"),
@@ -12656,7 +12684,7 @@
         },
     },
 #line 5468
-    [TRAINER_PBL_DAVID] =
+    [TRAINER_PBL_ANNIE] =
     {
 #line 5469
         .trainerName = _("STEVEN"),
@@ -12694,7 +12722,7 @@
         },
     },
 #line 5485
-    [TRAINER_PBL_DOMINIK] =
+    [TRAINER_PBL_CHRISTI] =
     {
 #line 5486
         .trainerName = _("STEVEN"),
@@ -12732,7 +12760,7 @@
         },
     },
 #line 5502
-    [TRAINER_PBL_DOUGLAS] =
+    [TRAINER_PBL_SPENCER] =
     {
 #line 5503
         .trainerName = _("STEVEN"),
@@ -12770,7 +12798,7 @@
         },
     },
 #line 5519
-    [TRAINER_PBL_NADINE] =
+    [TRAINER_PBL_HAYWOOD] =
     {
 #line 5520
         .trainerName = _("STEVEN"),
@@ -12808,7 +12836,7 @@
         },
     },
 #line 5536
-    [TRAINER_PBL_SANDY] =
+    [TRAINER_PBL_MONROE] =
     {
 #line 5537
         .trainerName = _("STEVEN"),
@@ -12846,7 +12874,7 @@
         },
     },
 #line 5553
-    [TRAINER_PBL_SHELDON] =
+    [TRAINER_PBL_DAVID] =
     {
 #line 5554
         .trainerName = _("STEVEN"),
@@ -12884,7 +12912,7 @@
         },
     },
 #line 5570
-    [TRAINER_PBL_LEVIATHAN14] =
+    [TRAINER_PBL_DOMINIK] =
     {
 #line 5571
         .trainerName = _("STEVEN"),
@@ -12922,7 +12950,7 @@
         },
     },
 #line 5587
-    [TRAINER_PBL_LEVIATHAN12_BRUTAL] =
+    [TRAINER_PBL_DOUGLAS] =
     {
 #line 5588
         .trainerName = _("STEVEN"),
@@ -12960,7 +12988,7 @@
         },
     },
 #line 5604
-    [TRAINER_PBL_LEVIATHAN13_BRUTAL] =
+    [TRAINER_PBL_NADINE] =
     {
 #line 5605
         .trainerName = _("STEVEN"),
@@ -12998,7 +13026,7 @@
         },
     },
 #line 5621
-    [TRAINER_PBL_LEVIATHAN14_BRUTAL] =
+    [TRAINER_PBL_SANDY] =
     {
 #line 5622
         .trainerName = _("STEVEN"),
@@ -13036,7 +13064,7 @@
         },
     },
 #line 5638
-    [TRAINER_PBL_LEVIATHAN12] =
+    [TRAINER_PBL_SHELDON] =
     {
 #line 5639
         .trainerName = _("STEVEN"),
@@ -13065,6 +13093,196 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 5650
+                MOVE_LIGHT_SCREEN,
+                MOVE_PSYCHIC,
+                MOVE_REFLECT,
+                MOVE_METAL_CLAW,
+            },
+            },
+        },
+    },
+#line 5655
+    [TRAINER_PBL_LEVIATHAN14] =
+    {
+#line 5656
+        .trainerName = _("STEVEN"),
+#line 5657
+        .trainerClass = TRAINER_CLASS_RIVAL,
+#line 5658
+        .trainerPic = TRAINER_PIC_STEVEN,
+        .encounterMusic_gender =
+#line 5660
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 5662
+            .species = SPECIES_METANG,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 5666
+            .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
+#line 5665
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 5664
+            .lvl = 42,
+#line 5663
+            .nature = NATURE_BRAVE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 5667
+                MOVE_LIGHT_SCREEN,
+                MOVE_PSYCHIC,
+                MOVE_REFLECT,
+                MOVE_METAL_CLAW,
+            },
+            },
+        },
+    },
+#line 5672
+    [TRAINER_PBL_LEVIATHAN12_BRUTAL] =
+    {
+#line 5673
+        .trainerName = _("STEVEN"),
+#line 5674
+        .trainerClass = TRAINER_CLASS_RIVAL,
+#line 5675
+        .trainerPic = TRAINER_PIC_STEVEN,
+        .encounterMusic_gender =
+#line 5677
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 5679
+            .species = SPECIES_METANG,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 5683
+            .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
+#line 5682
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 5681
+            .lvl = 42,
+#line 5680
+            .nature = NATURE_BRAVE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 5684
+                MOVE_LIGHT_SCREEN,
+                MOVE_PSYCHIC,
+                MOVE_REFLECT,
+                MOVE_METAL_CLAW,
+            },
+            },
+        },
+    },
+#line 5689
+    [TRAINER_PBL_LEVIATHAN13_BRUTAL] =
+    {
+#line 5690
+        .trainerName = _("STEVEN"),
+#line 5691
+        .trainerClass = TRAINER_CLASS_RIVAL,
+#line 5692
+        .trainerPic = TRAINER_PIC_STEVEN,
+        .encounterMusic_gender =
+#line 5694
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 5696
+            .species = SPECIES_METANG,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 5700
+            .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
+#line 5699
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 5698
+            .lvl = 42,
+#line 5697
+            .nature = NATURE_BRAVE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 5701
+                MOVE_LIGHT_SCREEN,
+                MOVE_PSYCHIC,
+                MOVE_REFLECT,
+                MOVE_METAL_CLAW,
+            },
+            },
+        },
+    },
+#line 5706
+    [TRAINER_PBL_LEVIATHAN14_BRUTAL] =
+    {
+#line 5707
+        .trainerName = _("STEVEN"),
+#line 5708
+        .trainerClass = TRAINER_CLASS_RIVAL,
+#line 5709
+        .trainerPic = TRAINER_PIC_STEVEN,
+        .encounterMusic_gender =
+#line 5711
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 5713
+            .species = SPECIES_METANG,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 5717
+            .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
+#line 5716
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 5715
+            .lvl = 42,
+#line 5714
+            .nature = NATURE_BRAVE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 5718
+                MOVE_LIGHT_SCREEN,
+                MOVE_PSYCHIC,
+                MOVE_REFLECT,
+                MOVE_METAL_CLAW,
+            },
+            },
+        },
+    },
+#line 5723
+    [TRAINER_PBL_LEVIATHAN12] =
+    {
+#line 5724
+        .trainerName = _("STEVEN"),
+#line 5725
+        .trainerClass = TRAINER_CLASS_RIVAL,
+#line 5726
+        .trainerPic = TRAINER_PIC_STEVEN,
+        .encounterMusic_gender =
+#line 5728
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 5730
+            .species = SPECIES_METANG,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 5734
+            .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
+#line 5733
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 5732
+            .lvl = 42,
+#line 5731
+            .nature = NATURE_BRAVE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 5735
                 MOVE_LIGHT_SCREEN,
                 MOVE_PSYCHIC,
                 MOVE_REFLECT,
