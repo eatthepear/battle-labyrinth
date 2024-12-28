@@ -5371,24 +5371,24 @@
         {
             {
 #line 2320
-            .species = SPECIES_KLAWF,
+            .species = SPECIES_BEAUTIFLY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2320
             .heldItem = ITEM_SITRUS_BERRY,
 #line 2323
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 2321
-            .ability = ABILITY_ANGER_SHELL,
+            .ability = ABILITY_BERSERK,
 #line 2322
             .lvl = 19,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2324
-                MOVE_ROCK_TOMB,
-                MOVE_METAL_CLAW,
-                MOVE_ROCK_SMASH,
-                MOVE_ROCK_THROW,
+                MOVE_AIR_CUTTER,
+                MOVE_STRUGGLE_BUG,
+                MOVE_MEGA_DRAIN,
+                MOVE_STRING_SHOT,
             },
             },
             {
@@ -5407,7 +5407,7 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2333
-                MOVE_PARABOLIC_CHARGE,
+                MOVE_SHOCK_WAVE,
                 MOVE_DRAINING_KISS,
                 MOVE_NUZZLE,
                 MOVE_CHARGE_BEAM,
@@ -5441,24 +5441,24 @@
         {
             {
 #line 2348
-            .species = SPECIES_KLAWF,
+            .species = SPECIES_BEAUTIFLY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2348
             .heldItem = ITEM_SITRUS_BERRY,
 #line 2351
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 2349
-            .ability = ABILITY_ANGER_SHELL,
+            .ability = ABILITY_BERSERK,
 #line 2350
             .lvl = 19,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2352
-                MOVE_ROCK_TOMB,
-                MOVE_METAL_CLAW,
-                MOVE_ROCK_SMASH,
-                MOVE_ROCK_THROW,
+                MOVE_AIR_CUTTER,
+                MOVE_STRUGGLE_BUG,
+                MOVE_MEGA_DRAIN,
+                MOVE_STRING_SHOT,
             },
             },
             {
@@ -5477,7 +5477,7 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2361
-                MOVE_PARABOLIC_CHARGE,
+                MOVE_SHOCK_WAVE,
                 MOVE_DRAINING_KISS,
                 MOVE_NUZZLE,
                 MOVE_CHARGE_BEAM,
