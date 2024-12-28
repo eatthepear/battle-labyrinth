@@ -251,7 +251,7 @@ Zone10B_EventScript_SideQuestTeleport_2:
 	checktrainerflag TRAINER_PBL_KYLE
 	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
 # 106 "data/maps/Zone10B/scripts.pory"
-	checktrainerflag TRAINER_PBL_BELLE
+	checktrainerflag TRAINER_PBL_BRETT
 	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
 # 107 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_DEWEY
