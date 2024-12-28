@@ -32,7 +32,7 @@ script Zone10B_EventScript_AdaminaStuff {
 		end
 	}
 	msgbox("{COLOR BLUE}Adamina{COLOR DARK_GRAY}: You…\n…\pLook.\nI said some harsh words earlier.\lConsider this part of my apology.")
-	giveitem(ITEM_TM20)
+	giveitem(ITEM_TM_BULLDOZE)
 	msgbox("{COLOR BLUE}Adamina{COLOR DARK_GRAY}: This is my tavern.\nIt's my safe space.\pAll the people from around here\ngather for shelter from the\lsandstorm.\pI just… feel defensive around\noutsiders. Because it feels like\lfamily here, you know?", MSGBOX_DEFAULT)
 	delay(96)
 	msgbox("{COLOR BLUE}Adamina{COLOR DARK_GRAY}: Tell you what, you can\nstay as long as you like to chat\lwith the people here.\pIt's kind of nice to just spend time\nwith other people, isn't it?")
@@ -40,7 +40,7 @@ script Zone10B_EventScript_AdaminaStuff {
 	release
 }
 
-script Zone10B_EventScript_SideQuestLuckyEgg {
+script Zone10B_EventScript_SideQuestTMScorchingSands {
 	lock
 	faceplayer
 	if (flag(FLAG_ZONE10B_RECEIVED_LUCKY_EGG) == false) {
@@ -66,62 +66,97 @@ script Zone10B_EventScript_SideQuestLuckyEgg {
 script Zone10B_EventScript_SideQuestTeleport {
 	lock
 	faceplayer
-	if (flag(FLAG_ZONE10B_RECEIVED_TM21) == false) {
+	if (flag(FLAG_ZONE10B_RECEIVED_TM_SCORCHING_SANDS) == false) {
 		msgbox("Greetings, young one. In my\npossession, I hold a useful TM for\lyour Pokémon, but only if you have\lproven yourself in battle.\pYou must have defeated all\nTrainers available thus far.")
-		if (!defeated(TRAINER_PBL_JEREMIAH) ||
+		if (!defeated(TRAINER_PBL_NINA) ||
+			!defeated(TRAINER_PBL_MARIAM) ||
+			!defeated(TRAINER_PBL_OSCAR) ||
+			!flag(FLAG_BEAT_LEVIATHAN_1) ||
+			!defeated(TRAINER_PBL_POLLY) ||
+			!defeated(TRAINER_PBL_JEREMIAH) ||
+			!defeated(TRAINER_PBL_JOSH) ||
 			!defeated(TRAINER_PBL_HARPER) ||
 			!defeated(TRAINER_PBL_ARTHUR) ||
 			!flag(FLAG_BEAT_LEVIATHAN_2) ||
+			!defeated(TRAINER_PBL_JEMMA) ||
 			!defeated(TRAINER_PBL_PATRICK) ||
-			!defeated(TRAINER_PBL_RICHARD) ||
 			!defeated(TRAINER_PBL_ANNABELLE) ||
+			!defeated(TRAINER_PBL_BORIS) ||
+			!defeated(TRAINER_PBL_RICHARD) ||
+			!flag(FLAG_BEAT_LEVIATHAN_3) ||
 			!defeated(TRAINER_PBL_HERMAN) ||
 			!defeated(TRAINER_PBL_RALPH) ||
 			!defeated(TRAINER_PBL_SANTIAGO) ||
 			!defeated(TRAINER_PBL_CHLOE_AND_KAYA) ||
-			!defeated(TRAINER_PBL_LUCIA) ||
 			!defeated(TRAINER_PBL_FRED) ||
+			!defeated(TRAINER_PBL_LUCIA) ||
+			!flag(FLAG_BEAT_LEVIATHAN_4) ||
 			!defeated(TRAINER_PBL_ANNE_AND_JUNE) ||
+			!defeated(TRAINER_PBL_NOVA_AND_CORA) ||
+			!defeated(TRAINER_PBL_CLINTON) ||
+			!defeated(TRAINER_PBL_REBECCA) ||
+			!defeated(TRAINER_PBL_RYAN) ||
+			!defeated(TRAINER_PBL_CAITLYN) ||
+			!defeated(TRAINER_PBL_KENNETH) ||
+			!defeated(TRAINER_PBL_KEVIN) ||
+			!flag(FLAG_BEAT_LEVIATHAN_5) ||
 			!defeated(TRAINER_PBL_GILBERT) ||
 			!defeated(TRAINER_PBL_MELANIE) ||
 			!defeated(TRAINER_PBL_CONSTANCE) ||
 			!defeated(TRAINER_PBL_FRANK) ||
 			!defeated(TRAINER_PBL_DUDLEY) ||
 			!defeated(TRAINER_PBL_DAISY) ||
+			!defeated(TRAINER_PBL_VIC_AND_DELL) ||
+			!defeated(TRAINER_PBL_MINA) ||
 			!flag(FLAG_BEAT_LEVIATHAN_6) ||
 			!defeated(TRAINER_PBL_MILLIE) ||
 			!defeated(TRAINER_PBL_JAMAL) ||
 			!defeated(TRAINER_PBL_PAIGE) ||
 			!defeated(TRAINER_PBL_SETH) ||
 			!defeated(TRAINER_PBL_CONNIE) ||
+			!defeated(TRAINER_PBL_PETER) ||
+			!defeated(TRAINER_PBL_WHITAKER) ||
+			!flag(FLAG_BEAT_LEVIATHAN_7) ||
 			!defeated(TRAINER_PBL_JIMMY) ||
 			!defeated(TRAINER_PBL_EMILIANO) ||
+			!defeated(TRAINER_PBL_BECKHAM) ||
 			!defeated(TRAINER_PBL_KAREN) ||
 			!defeated(TRAINER_PBL_JAYDEN) ||
 			!defeated(TRAINER_PBL_NEIL) ||
 			!defeated(TRAINER_PBL_TAMARA) ||
+			!flag(FLAG_BEAT_LEVIATHAN_8) ||
 			!defeated(TRAINER_PBL_COOPER) ||
 			!defeated(TRAINER_PBL_CARMINE) ||
-			!defeated(TRAINER_PBL_KYLE) ||
-			!defeated(TRAINER_PBL_BRETT) ||
-			!defeated(TRAINER_PBL_DEWEY) ||
-			!defeated(TRAINER_PBL_PEARLIE) ||
-			!defeated(TRAINER_PBL_ERNEST) ||
+			!defeated(TRAINER_PBL_JONATHAN) ||
+			!defeated(TRAINER_PBL_CALVIN) ||
+			!defeated(TRAINER_PBL_LUIS) ||
+			(!defeated(TRAINER_PBL_ARI) && !defeated(TRAINER_PBL_ARI_CHALLENGE)) || 
+			(!defeated(TRAINER_PBL_BERTHA) && !defeated(TRAINER_PBL_BERTHA_CHALLENGE)) || 
+			(!defeated(TRAINER_PBL_CASSANDRA) && !defeated(TRAINER_PBL_CASSANDRA_CHALLENGE)) || 
+			(!defeated(TRAINER_PBL_DOMINIC) && !defeated(TRAINER_PBL_DOMINIC_CHALLENGE)) || 
+			(!defeated(TRAINER_PBL_ERICA) && !defeated(TRAINER_PBL_ERICA_CHALLENGE)) || 
 			!defeated(TRAINER_PBL_ALANA) ||
+			!defeated(TRAINER_PBL_JACOB) ||
+			!defeated(TRAINER_PBL_DEWEY) ||
+			!defeated(TRAINER_PBL_ERNEST) ||
+			!defeated(TRAINER_PBL_KYLE) ||
+			!defeated(TRAINER_PBL_ELIAS) ||
+			!defeated(TRAINER_PBL_PEARLIE) ||
 			!defeated(TRAINER_PBL_SUSAN) ||
-			!defeated(TRAINER_PBL_CONRAD)) {
+			!defeated(TRAINER_PBL_CONRAD) ||
+			!defeated(TRAINER_PBL_BRETT)) {
 			msgbox("You still have trainers to defeat.")
 			applymovement(4, Common_Movement_FaceLeft)
 			waitmovement(0)
 			release
 			end
 		} else {
-			setflag(FLAG_ZONE10B_RECEIVED_TM21)
-			msgbox("Impressive, young one. I see you\nhave defeated all those trainers.\pHere is the TM21 - Teleport.$")
-			giveitem(ITEM_TM21)
+			setflag(FLAG_ZONE10B_RECEIVED_TM_SCORCHING_SANDS)
+			msgbox(format("Impressive, young one. I see you have defeated all those trainers.\pHere is TM54 - Scorching Sands."))
+			giveitem(ITEM_TM_SCORCHING_SANDS)
 		}
 	}
-	msgbox("The move Teleport can help you\neasily bring in frail Pokémon\lwithout risking big damage.")
+	msgbox(format("The move Scorching Sands deals damage and can potentially burn an opponent.\pIt's quite the neat move."))
 	applymovement(4, Common_Movement_FaceLeft)
 	waitmovement(0)
 	release

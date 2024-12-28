@@ -40,7 +40,7 @@ script Zone10A_EventScript_Adamina {
 		msgbox(Zone10A_Text_NoChance)
 		setvar(VAR_ZONE_10_STATE, 1)
 	}
-	msgbox(Zone10A_Text_Explain)
+	msgbox(Zone10A_Text_Explain, MSGBOX_AUTOCLOSE)
 	if ((flag(FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_1) == false) ||
 	(flag(FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_2) == false) ||
 	(flag(FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_3) == false)) {
@@ -48,7 +48,7 @@ script Zone10A_EventScript_Adamina {
 		end
 	}
 	fadeoutbgm(1)
-	msgbox(Zone10A_Text_FoundEm)
+	msgbox(Zone10A_Text_FoundEm, MSGBOX_AUTOCLOSE)
 	delay(96)
 	msgbox(Zone10A_Text_CrushYou)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
@@ -58,7 +58,7 @@ script Zone10A_EventScript_Adamina {
 		trainerbattle_no_intro(TRAINER_PBL_ADAMINA_LEVIATHAN_9, Zone10A_Text_Leviathan9Defeat)
 	}
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(Zone10A_Text_HeadInside)
+	msgbox(Zone10A_Text_HeadInside, MSGBOX_AUTOCLOSE)
 	applymovement(1, Common_Movement_FaceUp)
 	waitmovement(0)
 	opendoor(47, 27)
@@ -223,7 +223,7 @@ script Zone10A_EventScript_ParasolLady {
 	lock
 	faceplayer
 	if (flag(FLAG_ZONE10A_RECEIVED_SAFETY_GOGGLES) == false) {
-		msgbox(format("Excuse me! I'm a member of the Pokémon Ranger Corps, working to protect both people and Pokémon.\pIt's not safe to be out in the sandstorm for long periods of time, so take this!"), MSGBOX_DEFAULT)
+		msgbox(format("Hey there! This sandstorm is fierce for those unprepared!\pIt's not safe to be out in the sandstorm for long periods of time, so take this!"), MSGBOX_DEFAULT)
 		giveitem(ITEM_SAFETY_GOGGLES)
 		setflag(FLAG_ZONE10A_RECEIVED_SAFETY_GOGGLES)
 	}
