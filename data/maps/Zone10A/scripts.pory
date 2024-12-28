@@ -1,6 +1,6 @@
 mapscripts Zone10A_MapScripts {
 	MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_ITEM_ZONE10A_SUN_STONE)) {
+		if (flag(FLAG_ITEM_ZONE10A_GEMS)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -10,17 +10,17 @@ mapscripts Zone10A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE10A_DRAGON_FANG)) {
+		if (flag(FLAG_ITEM_ZONE10A_RANDOM_1)) {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE10A_METAL_COAT)) {
+		if (flag(FLAG_ITEM_ZONE10A_BLACK_GLASSES)) {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE10A_TM16)) {
+		if (flag(FLAG_ITEM_ZONE10A_TM_STEEL_WING)) {
 			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST)
@@ -117,9 +117,9 @@ text Zone10A_Text_HeadInside {
 	"I've got nothing for you.$"
 }
 
-script Zone10A_EventScript_SunStone {
+script Zone10A_EventScript_ItemGems {
 	lock
-	if (flag(FLAG_ITEM_ZONE10A_SUN_STONE)) {
+	if (flag(FLAG_ITEM_ZONE10A_GEMS)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -127,9 +127,11 @@ script Zone10A_EventScript_SunStone {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE10A_SUN_STONE)
+	setflag(FLAG_ITEM_ZONE10A_GEMS)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_SUN_STONE, 1)
+	finditem(ITEM_FIRE_GEM)
+	finditem(ITEM_ELECTRIC_GEM)
+	finditem(ITEM_GROUND_GEM)
 	release
 	end
 }
@@ -151,9 +153,9 @@ script Zone10A_EventScript_SoftSand {
 	end
 }
 
-script Zone10A_EventScript_DragonFang {
+script Zone10A_EventScript_Random1 {
 	lock
-	if (flag(FLAG_ITEM_ZONE10A_DRAGON_FANG)) {
+	if (flag(FLAG_ITEM_ZONE10A_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -161,16 +163,17 @@ script Zone10A_EventScript_DragonFang {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE10A_DRAGON_FANG)
+	setflag(FLAG_ITEM_ZONE10A_RANDOM_1)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_DRAGON_FANG, 1)
+	specialvar(VAR_TEMP_1, RandomItemChest)
+	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
 
-script Zone10A_EventScript_MetalCoat {
+script Zone10A_EventScript_BlackGlasses {
 	lock
-	if (flag(FLAG_ITEM_ZONE10A_METAL_COAT)) {
+	if (flag(FLAG_ITEM_ZONE10A_BLACK_GLASSES)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -178,16 +181,16 @@ script Zone10A_EventScript_MetalCoat {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE10A_METAL_COAT)
+	setflag(FLAG_ITEM_ZONE10A_BLACK_GLASSES)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_METAL_COAT, 1)
+	finditem(ITEM_BLACK_GLASSES, 1)
 	release
 	end
 }
 
-script Zone10A_EventScript_TM16 {
+script Zone10A_EventScript_TMSteelWing {
 	lock
-	if (flag(FLAG_ITEM_ZONE10A_TM16)) {
+	if (flag(FLAG_ITEM_ZONE10A_TM_STEEL_WING)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -195,9 +198,9 @@ script Zone10A_EventScript_TM16 {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE10A_TM16)
+	setflag(FLAG_ITEM_ZONE10A_TM_STEEL_WING)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_TM16, 1)
+	finditem(ITEM_TM_STEEL_WING, 1)
 	release
 	end
 }
