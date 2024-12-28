@@ -76,7 +76,7 @@ Zone10A_EventScript_Adamina::
 	goto_if_eq Zone10A_EventScript_Adamina_2
 Zone10A_EventScript_Adamina_1:
 # 43 "data/maps/Zone10A/scripts.pory"
-	msgbox Zone10A_Text_Explain
+	msgbox Zone10A_Text_Explain, MSGBOX_AUTOCLOSE
 # 44 "data/maps/Zone10A/scripts.pory"
 	goto_if_unset FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_1, Zone10A_EventScript_Adamina_5
 # 45 "data/maps/Zone10A/scripts.pory"
@@ -86,7 +86,7 @@ Zone10A_EventScript_Adamina_1:
 # 50 "data/maps/Zone10A/scripts.pory"
 	fadeoutbgm 1
 # 51 "data/maps/Zone10A/scripts.pory"
-	msgbox Zone10A_Text_FoundEm
+	msgbox Zone10A_Text_FoundEm, MSGBOX_AUTOCLOSE
 # 52 "data/maps/Zone10A/scripts.pory"
 	delay 96
 # 53 "data/maps/Zone10A/scripts.pory"
@@ -103,7 +103,7 @@ Zone10A_EventScript_Adamina_11:
 # 60 "data/maps/Zone10A/scripts.pory"
 	clearflag FLAG_FORCE_BATTLE_ANIM_ON
 # 61 "data/maps/Zone10A/scripts.pory"
-	msgbox Zone10A_Text_HeadInside
+	msgbox Zone10A_Text_HeadInside, MSGBOX_AUTOCLOSE
 # 62 "data/maps/Zone10A/scripts.pory"
 	applymovement 1, Common_Movement_FaceUp
 # 63 "data/maps/Zone10A/scripts.pory"
@@ -426,9 +426,8 @@ Zone10A_EventScript_Brett::
 
 Zone10A_EventScript_ParasolLady_Text_0:
 # 226 "data/maps/Zone10A/scripts.pory"
-	.string "Excuse me! I'm a member of the Pokémon\n"
-	.string "Ranger Corps, working to protect both\l"
-	.string "people and Pokémon.\p"
+	.string "Hey there! This sandstorm is fierce for\n"
+	.string "those unprepared!\p"
 	.string "It's not safe to be out in the\n"
 	.string "sandstorm for long periods of time, so\l"
 	.string "take this!$"
