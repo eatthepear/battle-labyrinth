@@ -207,7 +207,7 @@ Zone0B_EventScript_EeveeGirl_49:
 
 Zone0B_EventScript_EeveeUnique::
 # 84 "data/maps/Zone0B/scripts.pory"
-	msgbox Zone0B_Text_EeveeUnique
+	msgbox Zone0B_EventScript_EeveeUnique_Text_0
 # 85 "data/maps/Zone0B/scripts.pory"
 	release
 	return
@@ -334,73 +334,73 @@ Zone0B_Text_EeveeGiveaway:
 # 152 "data/maps/Zone0B/scripts.pory"
 	.string "very own Eevee! What do you say?$"
 # 153 "data/maps/Zone0B/scripts.pory"
-
-# 154 "data/maps/Zone0B/scripts.pory"
-Zone0B_Text_EeveeUnique:
-# 155 "data/maps/Zone0B/scripts.pory"
-	.string "Eevee is quite a unique Pokémon.\n"
-# 156 "data/maps/Zone0B/scripts.pory"
-	.string "So many different evolutions!$"
-# 157 "data/maps/Zone0B/scripts.pory"
-
-# 158 "data/maps/Zone0B/scripts.pory"
 Zone0B_Text_NoThanks:
-# 159 "data/maps/Zone0B/scripts.pory"
+# 154 "data/maps/Zone0B/scripts.pory"
 	.string "No? Well, I'll be here anyways,\n"
-# 160 "data/maps/Zone0B/scripts.pory"
+# 155 "data/maps/Zone0B/scripts.pory"
 	.string "in case you change your mind.$"
-# 161 "data/maps/Zone0B/scripts.pory"
+# 156 "data/maps/Zone0B/scripts.pory"
 
-# 162 "data/maps/Zone0B/scripts.pory"
+# 157 "data/maps/Zone0B/scripts.pory"
 Zone0B_Text_SureThing:
-# 163 "data/maps/Zone0B/scripts.pory"
+# 158 "data/maps/Zone0B/scripts.pory"
 	.string "Sure thing! Here ya go!$"
-# 164 "data/maps/Zone0B/scripts.pory"
+# 159 "data/maps/Zone0B/scripts.pory"
 
-# 165 "data/maps/Zone0B/scripts.pory"
+# 160 "data/maps/Zone0B/scripts.pory"
 Zone0B_Text_HowBoutNickname:
-# 166 "data/maps/Zone0B/scripts.pory"
+# 161 "data/maps/Zone0B/scripts.pory"
 	.string "Would you like to give a nickname\n"
-# 167 "data/maps/Zone0B/scripts.pory"
+# 162 "data/maps/Zone0B/scripts.pory"
 	.string "to Eevee?$"
-# 168 "data/maps/Zone0B/scripts.pory"
+# 163 "data/maps/Zone0B/scripts.pory"
 
-# 169 "data/maps/Zone0B/scripts.pory"
+# 164 "data/maps/Zone0B/scripts.pory"
 Zone0B_Text_ReceivedEevee:
-# 170 "data/maps/Zone0B/scripts.pory"
+# 165 "data/maps/Zone0B/scripts.pory"
 	.string "Received Eevee!$"
-# 171 "data/maps/Zone0B/scripts.pory"
+# 166 "data/maps/Zone0B/scripts.pory"
 
-# 172 "data/maps/Zone0B/scripts.pory"
+# 167 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_EventScript_DaycareWoman::
-# 173 "data/maps/Zone0B/scripts.pory"
+# 168 "data/maps/Zone0B/scripts.pory"
 	lock
-# 174 "data/maps/Zone0B/scripts.pory"
+# 169 "data/maps/Zone0B/scripts.pory"
 	faceplayer
-# 175 "data/maps/Zone0B/scripts.pory"
+# 170 "data/maps/Zone0B/scripts.pory"
 	goto_if_set FLAG_SETTINGS_NUZLOCKE, Zone0B_PokemonDayCare_EventScript_Closed
-# 176 "data/maps/Zone0B/scripts.pory"
+# 171 "data/maps/Zone0B/scripts.pory"
 	specialvar VAR_RESULT, GetDaycareState
-# 177 "data/maps/Zone0B/scripts.pory"
+# 172 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, DAYCARE_EGG_WAITING
-# 178 "data/maps/Zone0B/scripts.pory"
+# 173 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_EggWaiting
-# 179 "data/maps/Zone0B/scripts.pory"
+# 174 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, DAYCARE_ONE_MON
-# 180 "data/maps/Zone0B/scripts.pory"
+# 175 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_OneMonInDaycare
-# 181 "data/maps/Zone0B/scripts.pory"
+# 176 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, DAYCARE_TWO_MONS
-# 182 "data/maps/Zone0B/scripts.pory"
+# 177 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_TwoMonsInDaycare
-# 183 "data/maps/Zone0B/scripts.pory"
+# 178 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_WouldYouLikeUsToRaiseAMon, MSGBOX_YESNO
-# 184 "data/maps/Zone0B/scripts.pory"
+# 179 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, YES
-# 185 "data/maps/Zone0B/scripts.pory"
+# 180 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_GiveMonToRaise
-# 186 "data/maps/Zone0B/scripts.pory"
+# 181 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_FineThenComeAgain, MSGBOX_DEFAULT
+# 182 "data/maps/Zone0B/scripts.pory"
+	release
+# 183 "data/maps/Zone0B/scripts.pory"
+	end
+# 184 "data/maps/Zone0B/scripts.pory"
+
+# 185 "data/maps/Zone0B/scripts.pory"
+Zone0B_PokemonDayCare_EventScript_Closed:
+# 186 "data/maps/Zone0B/scripts.pory"
+	msgbox Zone0B_PokemonDayCare_Text_Closed, MSGBOX_AUTOCLOSE
 # 187 "data/maps/Zone0B/scripts.pory"
 	release
 # 188 "data/maps/Zone0B/scripts.pory"
@@ -408,79 +408,79 @@ Zone0B_PokemonDayCare_EventScript_DaycareWoman::
 # 189 "data/maps/Zone0B/scripts.pory"
 
 # 190 "data/maps/Zone0B/scripts.pory"
-Zone0B_PokemonDayCare_EventScript_Closed:
-# 191 "data/maps/Zone0B/scripts.pory"
-	msgbox Zone0B_PokemonDayCare_Text_Closed, MSGBOX_AUTOCLOSE
-# 192 "data/maps/Zone0B/scripts.pory"
-	release
-# 193 "data/maps/Zone0B/scripts.pory"
-	end
-# 194 "data/maps/Zone0B/scripts.pory"
-
-# 195 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_Closed:
-# 196 "data/maps/Zone0B/scripts.pory"
+# 191 "data/maps/Zone0B/scripts.pory"
 	.string "Apologies, we have too many Pokémon\n"
-# 197 "data/maps/Zone0B/scripts.pory"
+# 192 "data/maps/Zone0B/scripts.pory"
 	.string "to take care of and not enough\l"
-# 198 "data/maps/Zone0B/scripts.pory"
+# 193 "data/maps/Zone0B/scripts.pory"
 	.string "space, so we will be unable to take\l"
-# 199 "data/maps/Zone0B/scripts.pory"
+# 194 "data/maps/Zone0B/scripts.pory"
 	.string "care of your Pokémon at this time.$"
-# 200 "data/maps/Zone0B/scripts.pory"
+# 195 "data/maps/Zone0B/scripts.pory"
 
-# 201 "data/maps/Zone0B/scripts.pory"
+# 196 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_EventScript_GiveMonToRaise:
-# 202 "data/maps/Zone0B/scripts.pory"
+# 197 "data/maps/Zone0B/scripts.pory"
 	specialvar VAR_RESULT, CountPartyNonEggMons
-# 203 "data/maps/Zone0B/scripts.pory"
+# 198 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, 1
-# 204 "data/maps/Zone0B/scripts.pory"
+# 199 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_OnlyOneMon
-# 205 "data/maps/Zone0B/scripts.pory"
+# 200 "data/maps/Zone0B/scripts.pory"
 	specialvar VAR_RESULT, CountPartyAliveNonEggMons
-# 206 "data/maps/Zone0B/scripts.pory"
+# 201 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, 2
-# 207 "data/maps/Zone0B/scripts.pory"
+# 202 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_OnlyTwoAliveMons
-# 208 "data/maps/Zone0B/scripts.pory"
+# 203 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_WhichMonShouldWeRaise, MSGBOX_DEFAULT
-# 209 "data/maps/Zone0B/scripts.pory"
+# 204 "data/maps/Zone0B/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 210 "data/maps/Zone0B/scripts.pory"
+# 205 "data/maps/Zone0B/scripts.pory"
 	special ChooseSendDaycareMon
-# 211 "data/maps/Zone0B/scripts.pory"
+# 206 "data/maps/Zone0B/scripts.pory"
 	waitstate
-# 212 "data/maps/Zone0B/scripts.pory"
+# 207 "data/maps/Zone0B/scripts.pory"
 	compare VAR_0x8004, 255
-# 213 "data/maps/Zone0B/scripts.pory"
+# 208 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_ComeAgain
-# 214 "data/maps/Zone0B/scripts.pory"
+# 209 "data/maps/Zone0B/scripts.pory"
 	specialvar VAR_RESULT, CountPartyAliveNonEggMons_IgnoreVar0x8004Slot
-# 215 "data/maps/Zone0B/scripts.pory"
+# 210 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, 0
-# 216 "data/maps/Zone0B/scripts.pory"
+# 211 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_OnlyOneAliveMon
-# 217 "data/maps/Zone0B/scripts.pory"
+# 212 "data/maps/Zone0B/scripts.pory"
 	specialvar VAR_0x8005, GetSelectedMonNicknameAndSpecies
-# 218 "data/maps/Zone0B/scripts.pory"
+# 213 "data/maps/Zone0B/scripts.pory"
 	waitse
-# 219 "data/maps/Zone0B/scripts.pory"
+# 214 "data/maps/Zone0B/scripts.pory"
 	playmoncry VAR_0x8005, 0
-# 220 "data/maps/Zone0B/scripts.pory"
+# 215 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_WellRaiseYourMon, MSGBOX_DEFAULT
-# 221 "data/maps/Zone0B/scripts.pory"
+# 216 "data/maps/Zone0B/scripts.pory"
 	waitmoncry
-# 222 "data/maps/Zone0B/scripts.pory"
+# 217 "data/maps/Zone0B/scripts.pory"
 	special StoreSelectedPokemonInDaycare
-# 223 "data/maps/Zone0B/scripts.pory"
+# 218 "data/maps/Zone0B/scripts.pory"
 	incrementgamestat GAME_STAT_USED_DAYCARE
-# 224 "data/maps/Zone0B/scripts.pory"
+# 219 "data/maps/Zone0B/scripts.pory"
 	specialvar VAR_RESULT, GetDaycareState
-# 225 "data/maps/Zone0B/scripts.pory"
+# 220 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, DAYCARE_ONE_MON
-# 226 "data/maps/Zone0B/scripts.pory"
+# 221 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_CanRaiseOneMore
+# 222 "data/maps/Zone0B/scripts.pory"
+	release
+# 223 "data/maps/Zone0B/scripts.pory"
+	end
+# 224 "data/maps/Zone0B/scripts.pory"
+
+# 225 "data/maps/Zone0B/scripts.pory"
+Zone0B_PokemonDayCare_EventScript_ComeAgain:
+# 226 "data/maps/Zone0B/scripts.pory"
+	msgbox Zone0B_PokemonDayCare_Text_ComeAgain, MSGBOX_DEFAULT
 # 227 "data/maps/Zone0B/scripts.pory"
 	release
 # 228 "data/maps/Zone0B/scripts.pory"
@@ -488,33 +488,33 @@ Zone0B_PokemonDayCare_EventScript_GiveMonToRaise:
 # 229 "data/maps/Zone0B/scripts.pory"
 
 # 230 "data/maps/Zone0B/scripts.pory"
-Zone0B_PokemonDayCare_EventScript_ComeAgain:
-# 231 "data/maps/Zone0B/scripts.pory"
-	msgbox Zone0B_PokemonDayCare_Text_ComeAgain, MSGBOX_DEFAULT
-# 232 "data/maps/Zone0B/scripts.pory"
-	release
-# 233 "data/maps/Zone0B/scripts.pory"
-	end
-# 234 "data/maps/Zone0B/scripts.pory"
-
-# 235 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_EventScript_CanRaiseOneMore:
-# 236 "data/maps/Zone0B/scripts.pory"
+# 231 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_WeCanRaiseOneMore, MSGBOX_YESNO
-# 237 "data/maps/Zone0B/scripts.pory"
+# 232 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, YES
-# 238 "data/maps/Zone0B/scripts.pory"
+# 233 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_GiveMonToRaise
-# 239 "data/maps/Zone0B/scripts.pory"
+# 234 "data/maps/Zone0B/scripts.pory"
 	goto Zone0B_PokemonDayCare_EventScript_ComeAgain
+# 235 "data/maps/Zone0B/scripts.pory"
+	end
+# 236 "data/maps/Zone0B/scripts.pory"
+
+# 237 "data/maps/Zone0B/scripts.pory"
+Zone0B_PokemonDayCare_EventScript_OnlyOneMon:
+# 238 "data/maps/Zone0B/scripts.pory"
+	msgbox Zone0B_PokemonDayCare_Text_YouHaveJustOneMon, MSGBOX_DEFAULT
+# 239 "data/maps/Zone0B/scripts.pory"
+	release
 # 240 "data/maps/Zone0B/scripts.pory"
 	end
 # 241 "data/maps/Zone0B/scripts.pory"
 
 # 242 "data/maps/Zone0B/scripts.pory"
-Zone0B_PokemonDayCare_EventScript_OnlyOneMon:
+Zone0B_PokemonDayCare_EventScript_OnlyOneAliveMon:
 # 243 "data/maps/Zone0B/scripts.pory"
-	msgbox Zone0B_PokemonDayCare_Text_YouHaveJustOneMon, MSGBOX_DEFAULT
+	msgbox Zone0B_PokemonDayCare_Text_WhatWillYouBattleWith, MSGBOX_DEFAULT
 # 244 "data/maps/Zone0B/scripts.pory"
 	release
 # 245 "data/maps/Zone0B/scripts.pory"
@@ -522,9 +522,9 @@ Zone0B_PokemonDayCare_EventScript_OnlyOneMon:
 # 246 "data/maps/Zone0B/scripts.pory"
 
 # 247 "data/maps/Zone0B/scripts.pory"
-Zone0B_PokemonDayCare_EventScript_OnlyOneAliveMon:
+Zone0B_PokemonDayCare_EventScript_OnlyTwoAliveMons:
 # 248 "data/maps/Zone0B/scripts.pory"
-	msgbox Zone0B_PokemonDayCare_Text_WhatWillYouBattleWith, MSGBOX_DEFAULT
+	msgbox Zone0B_PokemonDayCare_Text_YoullBeLeftWithJustOne, MSGBOX_DEFAULT
 # 249 "data/maps/Zone0B/scripts.pory"
 	release
 # 250 "data/maps/Zone0B/scripts.pory"
@@ -532,9 +532,9 @@ Zone0B_PokemonDayCare_EventScript_OnlyOneAliveMon:
 # 251 "data/maps/Zone0B/scripts.pory"
 
 # 252 "data/maps/Zone0B/scripts.pory"
-Zone0B_PokemonDayCare_EventScript_OnlyTwoAliveMons:
+Zone0B_PokemonDayCare_EventScript_EggWaiting:
 # 253 "data/maps/Zone0B/scripts.pory"
-	msgbox Zone0B_PokemonDayCare_Text_YoullBeLeftWithJustOne, MSGBOX_DEFAULT
+	msgbox Zone0B_PokemonDayCare_Text_HusbandWasLookingForYou, MSGBOX_DEFAULT
 # 254 "data/maps/Zone0B/scripts.pory"
 	release
 # 255 "data/maps/Zone0B/scripts.pory"
@@ -542,416 +542,406 @@ Zone0B_PokemonDayCare_EventScript_OnlyTwoAliveMons:
 # 256 "data/maps/Zone0B/scripts.pory"
 
 # 257 "data/maps/Zone0B/scripts.pory"
-Zone0B_PokemonDayCare_EventScript_EggWaiting:
-# 258 "data/maps/Zone0B/scripts.pory"
-	msgbox Zone0B_PokemonDayCare_Text_HusbandWasLookingForYou, MSGBOX_DEFAULT
-# 259 "data/maps/Zone0B/scripts.pory"
-	release
-# 260 "data/maps/Zone0B/scripts.pory"
-	end
-# 261 "data/maps/Zone0B/scripts.pory"
-
-# 262 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_EventScript_YourMonHasGrownXLevels:
-# 263 "data/maps/Zone0B/scripts.pory"
+# 258 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_YourMonHasGrownXLevels, MSGBOX_DEFAULT
-# 264 "data/maps/Zone0B/scripts.pory"
+# 259 "data/maps/Zone0B/scripts.pory"
 	return
-# 265 "data/maps/Zone0B/scripts.pory"
+# 260 "data/maps/Zone0B/scripts.pory"
 
-# 266 "data/maps/Zone0B/scripts.pory"
+# 261 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_EventScript_DisplayLevelsGained:
-# 267 "data/maps/Zone0B/scripts.pory"
+# 262 "data/maps/Zone0B/scripts.pory"
 	specialvar VAR_RESULT, GetNumLevelsGainedFromDaycare
-# 268 "data/maps/Zone0B/scripts.pory"
+# 263 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, 0
-# 269 "data/maps/Zone0B/scripts.pory"
+# 264 "data/maps/Zone0B/scripts.pory"
 	call_if_ne Zone0B_PokemonDayCare_EventScript_YourMonHasGrownXLevels
-# 270 "data/maps/Zone0B/scripts.pory"
+# 265 "data/maps/Zone0B/scripts.pory"
 	return
-# 271 "data/maps/Zone0B/scripts.pory"
+# 266 "data/maps/Zone0B/scripts.pory"
 
-# 272 "data/maps/Zone0B/scripts.pory"
+# 267 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_EventScript_OneMonInDaycare:
-# 273 "data/maps/Zone0B/scripts.pory"
+# 268 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_GoodToSeeYou, MSGBOX_DEFAULT
-# 274 "data/maps/Zone0B/scripts.pory"
+# 269 "data/maps/Zone0B/scripts.pory"
 	setvar VAR_0x8004, 0
-# 275 "data/maps/Zone0B/scripts.pory"
+# 270 "data/maps/Zone0B/scripts.pory"
 	call Zone0B_PokemonDayCare_EventScript_DisplayLevelsGained
-# 276 "data/maps/Zone0B/scripts.pory"
+# 271 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_WeCanRaiseOneMore, MSGBOX_YESNO
-# 277 "data/maps/Zone0B/scripts.pory"
+# 272 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, YES
-# 278 "data/maps/Zone0B/scripts.pory"
+# 273 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_GiveMonToRaise
-# 279 "data/maps/Zone0B/scripts.pory"
+# 274 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_TakeYourMonBack, MSGBOX_YESNO
+# 275 "data/maps/Zone0B/scripts.pory"
+	compare VAR_RESULT, YES
+# 276 "data/maps/Zone0B/scripts.pory"
+	goto_if_eq Zone0B_PokemonDayCare_EventScript_TryRetrieveMon
+# 277 "data/maps/Zone0B/scripts.pory"
+	goto Zone0B_PokemonDayCare_EventScript_ComeAgain
+# 278 "data/maps/Zone0B/scripts.pory"
+	end
+# 279 "data/maps/Zone0B/scripts.pory"
+
 # 280 "data/maps/Zone0B/scripts.pory"
-	compare VAR_RESULT, YES
-# 281 "data/maps/Zone0B/scripts.pory"
-	goto_if_eq Zone0B_PokemonDayCare_EventScript_TryRetrieveMon
-# 282 "data/maps/Zone0B/scripts.pory"
-	goto Zone0B_PokemonDayCare_EventScript_ComeAgain
-# 283 "data/maps/Zone0B/scripts.pory"
-	end
-# 284 "data/maps/Zone0B/scripts.pory"
-
-# 285 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_EventScript_TryRetrieveMon:
-# 286 "data/maps/Zone0B/scripts.pory"
+# 281 "data/maps/Zone0B/scripts.pory"
 	specialvar VAR_RESULT, CalculatePlayerPartyCount
-# 287 "data/maps/Zone0B/scripts.pory"
+# 282 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, PARTY_SIZE
-# 288 "data/maps/Zone0B/scripts.pory"
+# 283 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_NoRoom
-# 289 "data/maps/Zone0B/scripts.pory"
+# 284 "data/maps/Zone0B/scripts.pory"
 	specialvar VAR_RESULT, GetDaycareState
-# 290 "data/maps/Zone0B/scripts.pory"
+# 285 "data/maps/Zone0B/scripts.pory"
 	setvar VAR_0x8004, 0
-# 291 "data/maps/Zone0B/scripts.pory"
+# 286 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, DAYCARE_ONE_MON
-# 292 "data/maps/Zone0B/scripts.pory"
+# 287 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_CostPrompt
-# 293 "data/maps/Zone0B/scripts.pory"
+# 288 "data/maps/Zone0B/scripts.pory"
 	special ShowDaycareLevelMenu
-# 294 "data/maps/Zone0B/scripts.pory"
+# 289 "data/maps/Zone0B/scripts.pory"
 	waitstate
-# 295 "data/maps/Zone0B/scripts.pory"
+# 290 "data/maps/Zone0B/scripts.pory"
 	copyvar VAR_0x8004, VAR_RESULT
-# 296 "data/maps/Zone0B/scripts.pory"
+# 291 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, DAYCARE_EXITED_LEVEL_MENU
-# 297 "data/maps/Zone0B/scripts.pory"
+# 292 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_ComeAgain
-# 298 "data/maps/Zone0B/scripts.pory"
+# 293 "data/maps/Zone0B/scripts.pory"
 	goto Zone0B_PokemonDayCare_EventScript_CostPrompt
-# 299 "data/maps/Zone0B/scripts.pory"
+# 294 "data/maps/Zone0B/scripts.pory"
 	end
-# 300 "data/maps/Zone0B/scripts.pory"
+# 295 "data/maps/Zone0B/scripts.pory"
 
-# 301 "data/maps/Zone0B/scripts.pory"
+# 296 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_EventScript_CostPrompt:
-# 302 "data/maps/Zone0B/scripts.pory"
+# 297 "data/maps/Zone0B/scripts.pory"
 	special GetDaycareCost
-# 303 "data/maps/Zone0B/scripts.pory"
+# 298 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_ItWillCostX, MSGBOX_YESNO
-# 304 "data/maps/Zone0B/scripts.pory"
+# 299 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, YES
-# 305 "data/maps/Zone0B/scripts.pory"
+# 300 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_CheckEnoughMoney
-# 306 "data/maps/Zone0B/scripts.pory"
+# 301 "data/maps/Zone0B/scripts.pory"
 	goto Zone0B_PokemonDayCare_EventScript_ComeAgain
-# 307 "data/maps/Zone0B/scripts.pory"
+# 302 "data/maps/Zone0B/scripts.pory"
 	end
-# 308 "data/maps/Zone0B/scripts.pory"
+# 303 "data/maps/Zone0B/scripts.pory"
 
-# 309 "data/maps/Zone0B/scripts.pory"
+# 304 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_EventScript_CheckEnoughMoney:
-# 310 "data/maps/Zone0B/scripts.pory"
+# 305 "data/maps/Zone0B/scripts.pory"
 	specialvar VAR_RESULT, IsEnoughForCostInVar0x8005
-# 311 "data/maps/Zone0B/scripts.pory"
+# 306 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, 1
-# 312 "data/maps/Zone0B/scripts.pory"
+# 307 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_RetrieveMon
-# 313 "data/maps/Zone0B/scripts.pory"
+# 308 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_NotEnoughMoney, MSGBOX_DEFAULT
-# 314 "data/maps/Zone0B/scripts.pory"
+# 309 "data/maps/Zone0B/scripts.pory"
 	release
-# 315 "data/maps/Zone0B/scripts.pory"
+# 310 "data/maps/Zone0B/scripts.pory"
 	end
-# 316 "data/maps/Zone0B/scripts.pory"
+# 311 "data/maps/Zone0B/scripts.pory"
 
-# 317 "data/maps/Zone0B/scripts.pory"
+# 312 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_EventScript_RetrieveMon:
-# 318 "data/maps/Zone0B/scripts.pory"
+# 313 "data/maps/Zone0B/scripts.pory"
 	applymovement LOCALID_DAYCARE_LADY, Zone0B_PokemonDayCare_Movement_RetrieveDaycareMon
-# 319 "data/maps/Zone0B/scripts.pory"
+# 314 "data/maps/Zone0B/scripts.pory"
 	waitmovement 0
-# 320 "data/maps/Zone0B/scripts.pory"
+# 315 "data/maps/Zone0B/scripts.pory"
 	specialvar VAR_RESULT, TakePokemonFromDaycare
-# 321 "data/maps/Zone0B/scripts.pory"
+# 316 "data/maps/Zone0B/scripts.pory"
 	special SubtractMoneyFromVar0x8005
-# 322 "data/maps/Zone0B/scripts.pory"
+# 317 "data/maps/Zone0B/scripts.pory"
 	playse SE_SHOP
-# 323 "data/maps/Zone0B/scripts.pory"
+# 318 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_HeresYourMon, MSGBOX_DEFAULT
-# 324 "data/maps/Zone0B/scripts.pory"
+# 319 "data/maps/Zone0B/scripts.pory"
 	waitse
-# 325 "data/maps/Zone0B/scripts.pory"
+# 320 "data/maps/Zone0B/scripts.pory"
 	playmoncry VAR_RESULT, 0
-# 326 "data/maps/Zone0B/scripts.pory"
+# 321 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_TookBackMon, MSGBOX_DEFAULT
-# 327 "data/maps/Zone0B/scripts.pory"
+# 322 "data/maps/Zone0B/scripts.pory"
 	waitmoncry
-# 328 "data/maps/Zone0B/scripts.pory"
+# 323 "data/maps/Zone0B/scripts.pory"
 	specialvar VAR_RESULT, GetDaycareState
-# 329 "data/maps/Zone0B/scripts.pory"
+# 324 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, DAYCARE_ONE_MON
-# 330 "data/maps/Zone0B/scripts.pory"
+# 325 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_AskRetrieveOtherMon
-# 331 "data/maps/Zone0B/scripts.pory"
+# 326 "data/maps/Zone0B/scripts.pory"
 	goto Zone0B_PokemonDayCare_EventScript_ComeAgain
-# 332 "data/maps/Zone0B/scripts.pory"
+# 327 "data/maps/Zone0B/scripts.pory"
 	end
-# 333 "data/maps/Zone0B/scripts.pory"
+# 328 "data/maps/Zone0B/scripts.pory"
 
-# 334 "data/maps/Zone0B/scripts.pory"
+# 329 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_EventScript_AskRetrieveOtherMon:
-# 335 "data/maps/Zone0B/scripts.pory"
+# 330 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_TakeOtherOneBackToo, MSGBOX_YESNO
-# 336 "data/maps/Zone0B/scripts.pory"
+# 331 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, YES
-# 337 "data/maps/Zone0B/scripts.pory"
+# 332 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_TryRetrieveMon
-# 338 "data/maps/Zone0B/scripts.pory"
+# 333 "data/maps/Zone0B/scripts.pory"
 	goto Zone0B_PokemonDayCare_EventScript_ComeAgain
+# 334 "data/maps/Zone0B/scripts.pory"
+	end
+# 335 "data/maps/Zone0B/scripts.pory"
+
+# 336 "data/maps/Zone0B/scripts.pory"
+Zone0B_PokemonDayCare_EventScript_NoRoom:
+# 337 "data/maps/Zone0B/scripts.pory"
+	msgbox Zone0B_PokemonDayCare_Text_YourTeamIsFull, MSGBOX_DEFAULT
+# 338 "data/maps/Zone0B/scripts.pory"
+	release
 # 339 "data/maps/Zone0B/scripts.pory"
 	end
 # 340 "data/maps/Zone0B/scripts.pory"
 
 # 341 "data/maps/Zone0B/scripts.pory"
-Zone0B_PokemonDayCare_EventScript_NoRoom:
-# 342 "data/maps/Zone0B/scripts.pory"
-	msgbox Zone0B_PokemonDayCare_Text_YourTeamIsFull, MSGBOX_DEFAULT
-# 343 "data/maps/Zone0B/scripts.pory"
-	release
-# 344 "data/maps/Zone0B/scripts.pory"
-	end
-# 345 "data/maps/Zone0B/scripts.pory"
-
-# 346 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Movement_RetrieveDaycareMon:
-# 347 "data/maps/Zone0B/scripts.pory"
+# 342 "data/maps/Zone0B/scripts.pory"
 	delay_16
+# 343 "data/maps/Zone0B/scripts.pory"
+	delay_16
+# 344 "data/maps/Zone0B/scripts.pory"
+	face_left
+# 345 "data/maps/Zone0B/scripts.pory"
+	delay_16
+# 346 "data/maps/Zone0B/scripts.pory"
+	delay_16
+# 347 "data/maps/Zone0B/scripts.pory"
+	face_right
 # 348 "data/maps/Zone0B/scripts.pory"
 	delay_16
 # 349 "data/maps/Zone0B/scripts.pory"
-	face_left
+	delay_16
 # 350 "data/maps/Zone0B/scripts.pory"
-	delay_16
+	face_up
 # 351 "data/maps/Zone0B/scripts.pory"
-	delay_16
+	walk_slow_up
 # 352 "data/maps/Zone0B/scripts.pory"
-	face_right
+	set_invisible
 # 353 "data/maps/Zone0B/scripts.pory"
 	delay_16
 # 354 "data/maps/Zone0B/scripts.pory"
 	delay_16
 # 355 "data/maps/Zone0B/scripts.pory"
-	face_up
+	delay_16
 # 356 "data/maps/Zone0B/scripts.pory"
-	walk_slow_up
+	delay_16
 # 357 "data/maps/Zone0B/scripts.pory"
-	set_invisible
+	delay_16
 # 358 "data/maps/Zone0B/scripts.pory"
-	delay_16
-# 359 "data/maps/Zone0B/scripts.pory"
-	delay_16
-# 360 "data/maps/Zone0B/scripts.pory"
-	delay_16
-# 361 "data/maps/Zone0B/scripts.pory"
-	delay_16
-# 362 "data/maps/Zone0B/scripts.pory"
-	delay_16
-# 363 "data/maps/Zone0B/scripts.pory"
 	face_down
-# 364 "data/maps/Zone0B/scripts.pory"
+# 359 "data/maps/Zone0B/scripts.pory"
 	set_visible
-# 365 "data/maps/Zone0B/scripts.pory"
+# 360 "data/maps/Zone0B/scripts.pory"
 	walk_slow_down
-# 366 "data/maps/Zone0B/scripts.pory"
+# 361 "data/maps/Zone0B/scripts.pory"
 	step_end
-# 367 "data/maps/Zone0B/scripts.pory"
+# 362 "data/maps/Zone0B/scripts.pory"
 
-# 368 "data/maps/Zone0B/scripts.pory"
+# 363 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_EventScript_TwoMonsInDaycare:
-# 369 "data/maps/Zone0B/scripts.pory"
+# 364 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_GoodToSeeYou, MSGBOX_DEFAULT
-# 370 "data/maps/Zone0B/scripts.pory"
+# 365 "data/maps/Zone0B/scripts.pory"
 	setvar VAR_0x8004, 0
-# 371 "data/maps/Zone0B/scripts.pory"
+# 366 "data/maps/Zone0B/scripts.pory"
 	call Zone0B_PokemonDayCare_EventScript_DisplayLevelsGained
-# 372 "data/maps/Zone0B/scripts.pory"
+# 367 "data/maps/Zone0B/scripts.pory"
 	setvar VAR_0x8004, 1
-# 373 "data/maps/Zone0B/scripts.pory"
+# 368 "data/maps/Zone0B/scripts.pory"
 	call Zone0B_PokemonDayCare_EventScript_DisplayLevelsGained
-# 374 "data/maps/Zone0B/scripts.pory"
+# 369 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_TakeYourMonBack, MSGBOX_YESNO
-# 375 "data/maps/Zone0B/scripts.pory"
+# 370 "data/maps/Zone0B/scripts.pory"
 	compare VAR_RESULT, YES
-# 376 "data/maps/Zone0B/scripts.pory"
+# 371 "data/maps/Zone0B/scripts.pory"
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_TryRetrieveMon
-# 377 "data/maps/Zone0B/scripts.pory"
+# 372 "data/maps/Zone0B/scripts.pory"
 	msgbox Zone0B_PokemonDayCare_Text_ComeAgain, MSGBOX_DEFAULT
-# 378 "data/maps/Zone0B/scripts.pory"
+# 373 "data/maps/Zone0B/scripts.pory"
 	release
-# 379 "data/maps/Zone0B/scripts.pory"
+# 374 "data/maps/Zone0B/scripts.pory"
 	end
-# 380 "data/maps/Zone0B/scripts.pory"
+# 375 "data/maps/Zone0B/scripts.pory"
 
-# 381 "data/maps/Zone0B/scripts.pory"
+# 376 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_WouldYouLikeUsToRaiseAMon:
-# 382 "data/maps/Zone0B/scripts.pory"
+# 377 "data/maps/Zone0B/scripts.pory"
 	.string "I'm the Day-Care Lady.\p"
-# 383 "data/maps/Zone0B/scripts.pory"
+# 378 "data/maps/Zone0B/scripts.pory"
 	.string "We can raise a Pokémon for you\n"
-# 384 "data/maps/Zone0B/scripts.pory"
+# 379 "data/maps/Zone0B/scripts.pory"
 	.string "for a flat cost of ¥500,\l"
-# 385 "data/maps/Zone0B/scripts.pory"
+# 380 "data/maps/Zone0B/scripts.pory"
 	.string "plus ¥200 per level gained.\p"
-# 386 "data/maps/Zone0B/scripts.pory"
+# 381 "data/maps/Zone0B/scripts.pory"
 	.string "Would you like us to raise one?$"
-# 387 "data/maps/Zone0B/scripts.pory"
+# 382 "data/maps/Zone0B/scripts.pory"
 
-# 388 "data/maps/Zone0B/scripts.pory"
+# 383 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_WhichMonShouldWeRaise:
-# 389 "data/maps/Zone0B/scripts.pory"
+# 384 "data/maps/Zone0B/scripts.pory"
 	.string "Which Pokémon should we raise for\n"
-# 390 "data/maps/Zone0B/scripts.pory"
+# 385 "data/maps/Zone0B/scripts.pory"
 	.string "you?$"
+# 386 "data/maps/Zone0B/scripts.pory"
+
+# 387 "data/maps/Zone0B/scripts.pory"
+Zone0B_PokemonDayCare_Text_WellRaiseYourMon:
+# 388 "data/maps/Zone0B/scripts.pory"
+	.string "Fine, we'll raise your {STR_VAR_1}\n"
+# 389 "data/maps/Zone0B/scripts.pory"
+	.string "for a while.\p"
+# 390 "data/maps/Zone0B/scripts.pory"
+	.string "Come back for it later.$"
 # 391 "data/maps/Zone0B/scripts.pory"
 
 # 392 "data/maps/Zone0B/scripts.pory"
-Zone0B_PokemonDayCare_Text_WellRaiseYourMon:
-# 393 "data/maps/Zone0B/scripts.pory"
-	.string "Fine, we'll raise your {STR_VAR_1}\n"
-# 394 "data/maps/Zone0B/scripts.pory"
-	.string "for a while.\p"
-# 395 "data/maps/Zone0B/scripts.pory"
-	.string "Come back for it later.$"
-# 396 "data/maps/Zone0B/scripts.pory"
-
-# 397 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_WeCanRaiseOneMore:
-# 398 "data/maps/Zone0B/scripts.pory"
+# 393 "data/maps/Zone0B/scripts.pory"
 	.string "We can raise two of your Pokémon.\n"
-# 399 "data/maps/Zone0B/scripts.pory"
+# 394 "data/maps/Zone0B/scripts.pory"
 	.string "Would you like us to raise one more?$"
-# 400 "data/maps/Zone0B/scripts.pory"
+# 395 "data/maps/Zone0B/scripts.pory"
 
-# 401 "data/maps/Zone0B/scripts.pory"
+# 396 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_HusbandWasLookingForYou:
-# 402 "data/maps/Zone0B/scripts.pory"
+# 397 "data/maps/Zone0B/scripts.pory"
 	.string "My husband was looking for you.$"
-# 403 "data/maps/Zone0B/scripts.pory"
+# 398 "data/maps/Zone0B/scripts.pory"
 
-# 404 "data/maps/Zone0B/scripts.pory"
+# 399 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_FineThenComeAgain:
-# 405 "data/maps/Zone0B/scripts.pory"
+# 400 "data/maps/Zone0B/scripts.pory"
 	.string "Oh, fine, then.\n"
-# 406 "data/maps/Zone0B/scripts.pory"
+# 401 "data/maps/Zone0B/scripts.pory"
 	.string "Come again.$"
-# 407 "data/maps/Zone0B/scripts.pory"
+# 402 "data/maps/Zone0B/scripts.pory"
 
-# 408 "data/maps/Zone0B/scripts.pory"
+# 403 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_NotEnoughMoney:
-# 409 "data/maps/Zone0B/scripts.pory"
+# 404 "data/maps/Zone0B/scripts.pory"
 	.string "You don't have enough money…$"
-# 410 "data/maps/Zone0B/scripts.pory"
+# 405 "data/maps/Zone0B/scripts.pory"
 
-# 411 "data/maps/Zone0B/scripts.pory"
+# 406 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_TakeOtherOneBackToo:
-# 412 "data/maps/Zone0B/scripts.pory"
+# 407 "data/maps/Zone0B/scripts.pory"
 	.string "Will you take back the other one,\n"
-# 413 "data/maps/Zone0B/scripts.pory"
+# 408 "data/maps/Zone0B/scripts.pory"
 	.string "too?$"
-# 414 "data/maps/Zone0B/scripts.pory"
+# 409 "data/maps/Zone0B/scripts.pory"
 
-# 415 "data/maps/Zone0B/scripts.pory"
+# 410 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_ComeAgain:
-# 416 "data/maps/Zone0B/scripts.pory"
+# 411 "data/maps/Zone0B/scripts.pory"
 	.string "Fine.\n"
-# 417 "data/maps/Zone0B/scripts.pory"
+# 412 "data/maps/Zone0B/scripts.pory"
 	.string "Come again.$"
-# 418 "data/maps/Zone0B/scripts.pory"
+# 413 "data/maps/Zone0B/scripts.pory"
 
-# 419 "data/maps/Zone0B/scripts.pory"
+# 414 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_GoodToSeeYou:
-# 420 "data/maps/Zone0B/scripts.pory"
+# 415 "data/maps/Zone0B/scripts.pory"
 	.string "Ah, it's you! Good to see you.\n"
-# 421 "data/maps/Zone0B/scripts.pory"
+# 416 "data/maps/Zone0B/scripts.pory"
 	.string "Your Pokémon can only be doing good!$"
-# 422 "data/maps/Zone0B/scripts.pory"
+# 417 "data/maps/Zone0B/scripts.pory"
 
-# 423 "data/maps/Zone0B/scripts.pory"
+# 418 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_YourMonHasGrownXLevels:
-# 424 "data/maps/Zone0B/scripts.pory"
+# 419 "data/maps/Zone0B/scripts.pory"
 	.string "By level, your {STR_VAR_1} has\n"
-# 425 "data/maps/Zone0B/scripts.pory"
+# 420 "data/maps/Zone0B/scripts.pory"
 	.string "grown by {STR_VAR_2}.$"
-# 426 "data/maps/Zone0B/scripts.pory"
+# 421 "data/maps/Zone0B/scripts.pory"
 
-# 427 "data/maps/Zone0B/scripts.pory"
+# 422 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_YourTeamIsFull:
-# 428 "data/maps/Zone0B/scripts.pory"
+# 423 "data/maps/Zone0B/scripts.pory"
 	.string "Your Pokémon team is full.\n"
-# 429 "data/maps/Zone0B/scripts.pory"
+# 424 "data/maps/Zone0B/scripts.pory"
 	.string "Make room, then come see me.$"
-# 430 "data/maps/Zone0B/scripts.pory"
+# 425 "data/maps/Zone0B/scripts.pory"
 
-# 431 "data/maps/Zone0B/scripts.pory"
+# 426 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_ItWillCostX:
-# 432 "data/maps/Zone0B/scripts.pory"
+# 427 "data/maps/Zone0B/scripts.pory"
 	.string "If you want your {STR_VAR_1} back,\n"
-# 433 "data/maps/Zone0B/scripts.pory"
+# 428 "data/maps/Zone0B/scripts.pory"
 	.string "it will cost ¥{STR_VAR_2}.$"
-# 434 "data/maps/Zone0B/scripts.pory"
+# 429 "data/maps/Zone0B/scripts.pory"
 
-# 435 "data/maps/Zone0B/scripts.pory"
+# 430 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_HeresYourMon:
-# 436 "data/maps/Zone0B/scripts.pory"
+# 431 "data/maps/Zone0B/scripts.pory"
 	.string "Perfect!\n"
-# 437 "data/maps/Zone0B/scripts.pory"
+# 432 "data/maps/Zone0B/scripts.pory"
 	.string "Here's your Pokémon.$"
-# 438 "data/maps/Zone0B/scripts.pory"
+# 433 "data/maps/Zone0B/scripts.pory"
 
-# 439 "data/maps/Zone0B/scripts.pory"
+# 434 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_TookBackMon:
-# 440 "data/maps/Zone0B/scripts.pory"
+# 435 "data/maps/Zone0B/scripts.pory"
 	.string "{PLAYER} took back {STR_VAR_1} from\n"
-# 441 "data/maps/Zone0B/scripts.pory"
+# 436 "data/maps/Zone0B/scripts.pory"
 	.string "the Day-Care Lady.$"
+# 437 "data/maps/Zone0B/scripts.pory"
+
+# 438 "data/maps/Zone0B/scripts.pory"
+Zone0B_PokemonDayCare_Text_YouHaveJustOneMon:
+# 439 "data/maps/Zone0B/scripts.pory"
+	.string "Oh? But you have just one\n"
+# 440 "data/maps/Zone0B/scripts.pory"
+	.string "Pokémon.\p"
+# 441 "data/maps/Zone0B/scripts.pory"
+	.string "Come back another time.$"
 # 442 "data/maps/Zone0B/scripts.pory"
 
 # 443 "data/maps/Zone0B/scripts.pory"
-Zone0B_PokemonDayCare_Text_YouHaveJustOneMon:
-# 444 "data/maps/Zone0B/scripts.pory"
-	.string "Oh? But you have just one\n"
-# 445 "data/maps/Zone0B/scripts.pory"
-	.string "Pokémon.\p"
-# 446 "data/maps/Zone0B/scripts.pory"
-	.string "Come back another time.$"
-# 447 "data/maps/Zone0B/scripts.pory"
-
-# 448 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_TakeYourMonBack:
-# 449 "data/maps/Zone0B/scripts.pory"
+# 444 "data/maps/Zone0B/scripts.pory"
 	.string "Will you take your Pokémon back?$"
+# 445 "data/maps/Zone0B/scripts.pory"
+
+# 446 "data/maps/Zone0B/scripts.pory"
+Zone0B_PokemonDayCare_Text_WhatWillYouBattleWith:
+# 447 "data/maps/Zone0B/scripts.pory"
+	.string "If you leave me that Pokémon,\n"
+# 448 "data/maps/Zone0B/scripts.pory"
+	.string "what will you battle with?\p"
+# 449 "data/maps/Zone0B/scripts.pory"
+	.string "Come back another time.$"
 # 450 "data/maps/Zone0B/scripts.pory"
 
 # 451 "data/maps/Zone0B/scripts.pory"
-Zone0B_PokemonDayCare_Text_WhatWillYouBattleWith:
-# 452 "data/maps/Zone0B/scripts.pory"
-	.string "If you leave me that Pokémon,\n"
-# 453 "data/maps/Zone0B/scripts.pory"
-	.string "what will you battle with?\p"
-# 454 "data/maps/Zone0B/scripts.pory"
-	.string "Come back another time.$"
-# 455 "data/maps/Zone0B/scripts.pory"
-
-# 456 "data/maps/Zone0B/scripts.pory"
 Zone0B_PokemonDayCare_Text_YoullBeLeftWithJustOne:
-# 457 "data/maps/Zone0B/scripts.pory"
+# 452 "data/maps/Zone0B/scripts.pory"
 	.string "Huh?\n"
-# 458 "data/maps/Zone0B/scripts.pory"
+# 453 "data/maps/Zone0B/scripts.pory"
 	.string "Now, now.\p"
-# 459 "data/maps/Zone0B/scripts.pory"
+# 454 "data/maps/Zone0B/scripts.pory"
 	.string "If you leave that Pokémon with\n"
-# 460 "data/maps/Zone0B/scripts.pory"
+# 455 "data/maps/Zone0B/scripts.pory"
 	.string "me, you'll be left with just one.\p"
-# 461 "data/maps/Zone0B/scripts.pory"
+# 456 "data/maps/Zone0B/scripts.pory"
 	.string "You will be better off if you catch\n"
-# 462 "data/maps/Zone0B/scripts.pory"
+# 457 "data/maps/Zone0B/scripts.pory"
 	.string "some more, I dare say.$"
 
 Zone0B_EventScript_EeveeGirl_Text_0:
@@ -964,6 +954,15 @@ Zone0B_EventScript_EeveeGirl_Text_1:
 	.string "Unfortunately, you have already\n"
 	.string "obtained a Pokémon in Eevee's evolution\l"
 	.string "lines.$"
+
+Zone0B_EventScript_EeveeUnique_Text_0:
+# 84 "data/maps/Zone0B/scripts.pory"
+	.string "Eevee is quite a unique Pokémon.\p"
+	.string "It evolves through exposure to\n"
+	.string "different elemental sources; even a\l"
+	.string "fraction of elemental energy, such as\l"
+	.string "from a Gem, would be enough to evolve\l"
+	.string "it.$"
 
 Zone0B_EventScript_BreederM_Text_0:
 # 96 "data/maps/Zone0B/scripts.pory"
