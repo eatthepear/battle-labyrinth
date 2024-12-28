@@ -82,16 +82,16 @@ Zone10B_EventScript_AdaminaStuff_2:
 	end
 
 
-Zone10B_EventScript_SideQuestTMScorchingSands::
+Zone10B_EventScript_Collector::
 # 44 "data/maps/Zone10B/scripts.pory"
 	lock
 # 45 "data/maps/Zone10B/scripts.pory"
 	faceplayer
 # 46 "data/maps/Zone10B/scripts.pory"
-	goto_if_unset FLAG_ZONE10B_RECEIVED_LUCKY_EGG, Zone10B_EventScript_SideQuestTMScorchingSands_2
-Zone10B_EventScript_SideQuestTMScorchingSands_1:
+	goto_if_unset FLAG_ZONE10B_RECEIVED_LUCKY_EGG, Zone10B_EventScript_Collector_2
+Zone10B_EventScript_Collector_1:
 # 60 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_SideQuestTMScorchingSands_Text_2
+	msgbox Zone10B_EventScript_Collector_Text_2
 # 61 "data/maps/Zone10B/scripts.pory"
 	applymovement 3, Common_Movement_FaceRight
 # 62 "data/maps/Zone10B/scripts.pory"
@@ -100,14 +100,14 @@ Zone10B_EventScript_SideQuestTMScorchingSands_1:
 	release
 	return
 
-Zone10B_EventScript_SideQuestTMScorchingSands_2:
+Zone10B_EventScript_Collector_2:
 # 47 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_SideQuestTMScorchingSands_Text_0
+	msgbox Zone10B_EventScript_Collector_Text_0
 # 48 "data/maps/Zone10B/scripts.pory"
 	specialvar VAR_RESULT, GetCaughtSpeciesCount
 # 49 "data/maps/Zone10B/scripts.pory"
 	compare VAR_RESULT, 49
-	goto_if_gt Zone10B_EventScript_SideQuestTMScorchingSands_4
+	goto_if_gt Zone10B_EventScript_Collector_4
 # 54 "data/maps/Zone10B/scripts.pory"
 	applymovement 3, Common_Movement_FaceRight
 # 55 "data/maps/Zone10B/scripts.pory"
@@ -116,26 +116,26 @@ Zone10B_EventScript_SideQuestTMScorchingSands_2:
 	release
 	end
 
-Zone10B_EventScript_SideQuestTMScorchingSands_4:
+Zone10B_EventScript_Collector_4:
 # 50 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_SideQuestTMScorchingSands_Text_1
+	msgbox Zone10B_EventScript_Collector_Text_1
 # 51 "data/maps/Zone10B/scripts.pory"
 	setflag FLAG_ZONE10B_RECEIVED_LUCKY_EGG
 # 52 "data/maps/Zone10B/scripts.pory"
 	giveitem ITEM_LUCKY_EGG, 1
-	goto Zone10B_EventScript_SideQuestTMScorchingSands_1
+	goto Zone10B_EventScript_Collector_1
 
 
-Zone10B_EventScript_SideQuestTeleport::
+Zone10B_EventScript_BirdKeeper::
 # 67 "data/maps/Zone10B/scripts.pory"
 	lock
 # 68 "data/maps/Zone10B/scripts.pory"
 	faceplayer
 # 69 "data/maps/Zone10B/scripts.pory"
-	goto_if_unset FLAG_ZONE10B_RECEIVED_TM_SCORCHING_SANDS, Zone10B_EventScript_SideQuestTeleport_2
-Zone10B_EventScript_SideQuestTeleport_1:
+	goto_if_unset FLAG_ZONE10B_RECEIVED_TM_STEEL_WING, Zone10B_EventScript_BirdKeeper_2
+Zone10B_EventScript_BirdKeeper_1:
 # 159 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_SideQuestTeleport_Text_3
+	msgbox Zone10B_EventScript_BirdKeeper_Text_3
 # 160 "data/maps/Zone10B/scripts.pory"
 	applymovement 4, Common_Movement_FaceLeft
 # 161 "data/maps/Zone10B/scripts.pory"
@@ -144,248 +144,248 @@ Zone10B_EventScript_SideQuestTeleport_1:
 	release
 	end
 
-Zone10B_EventScript_SideQuestTeleport_2:
+Zone10B_EventScript_BirdKeeper_2:
 # 70 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_SideQuestTeleport_Text_0
+	msgbox Zone10B_EventScript_BirdKeeper_Text_0
 # 71 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_NINA
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 72 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_MARIAM
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 73 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_OSCAR
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 74 "data/maps/Zone10B/scripts.pory"
-	goto_if_unset FLAG_BEAT_LEVIATHAN_1, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if_unset FLAG_BEAT_LEVIATHAN_1, Zone10B_EventScript_BirdKeeper_4
 # 75 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_POLLY
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 76 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_JEREMIAH
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 77 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_JOSH
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 78 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_HARPER
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 79 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_ARTHUR
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 80 "data/maps/Zone10B/scripts.pory"
-	goto_if_unset FLAG_BEAT_LEVIATHAN_2, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if_unset FLAG_BEAT_LEVIATHAN_2, Zone10B_EventScript_BirdKeeper_4
 # 81 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_JEMMA
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 82 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_PATRICK
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 83 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_ANNABELLE
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 84 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_BORIS
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 85 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_RICHARD
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 86 "data/maps/Zone10B/scripts.pory"
-	goto_if_unset FLAG_BEAT_LEVIATHAN_3, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if_unset FLAG_BEAT_LEVIATHAN_3, Zone10B_EventScript_BirdKeeper_4
 # 87 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_HERMAN
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 88 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_RALPH
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 89 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_SANTIAGO
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 90 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_CHLOE_AND_KAYA
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 91 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_FRED
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 92 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_LUCIA
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 93 "data/maps/Zone10B/scripts.pory"
-	goto_if_unset FLAG_BEAT_LEVIATHAN_4, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if_unset FLAG_BEAT_LEVIATHAN_4, Zone10B_EventScript_BirdKeeper_4
 # 94 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_ANNE_AND_JUNE
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 95 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_NOVA_AND_CORA
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 96 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_CLINTON
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 97 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_REBECCA
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 98 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_RYAN
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 99 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_CAITLYN
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 100 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_KENNETH
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 101 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_KEVIN
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 102 "data/maps/Zone10B/scripts.pory"
-	goto_if_unset FLAG_BEAT_LEVIATHAN_5, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if_unset FLAG_BEAT_LEVIATHAN_5, Zone10B_EventScript_BirdKeeper_4
 # 103 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_GILBERT
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 104 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_MELANIE
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 105 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_CONSTANCE
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 106 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_FRANK
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 107 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_DUDLEY
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 108 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_DAISY
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 109 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_VIC_AND_DELL
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 110 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_MINA
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 111 "data/maps/Zone10B/scripts.pory"
-	goto_if_unset FLAG_BEAT_LEVIATHAN_6, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if_unset FLAG_BEAT_LEVIATHAN_6, Zone10B_EventScript_BirdKeeper_4
 # 112 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_MILLIE
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 113 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_JAMAL
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 114 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_PAIGE
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 115 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_SETH
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 116 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_CONNIE
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 117 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_PETER
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 118 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_WHITAKER
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 119 "data/maps/Zone10B/scripts.pory"
-	goto_if_unset FLAG_BEAT_LEVIATHAN_7, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if_unset FLAG_BEAT_LEVIATHAN_7, Zone10B_EventScript_BirdKeeper_4
 # 120 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_JIMMY
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 121 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_EMILIANO
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 122 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_BECKHAM
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 123 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_KAREN
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 124 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_JAYDEN
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 125 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_NEIL
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 126 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_TAMARA
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 127 "data/maps/Zone10B/scripts.pory"
-	goto_if_unset FLAG_BEAT_LEVIATHAN_8, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if_unset FLAG_BEAT_LEVIATHAN_8, Zone10B_EventScript_BirdKeeper_4
 # 128 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_COOPER
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 129 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_CARMINE
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 130 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_JONATHAN
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 131 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_CALVIN
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 132 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_LUIS
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 133 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_ARI
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_131
-Zone10B_EventScript_SideQuestTeleport_130:
+	goto_if 0, Zone10B_EventScript_BirdKeeper_131
+Zone10B_EventScript_BirdKeeper_130:
 # 134 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_BERTHA
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_135
-Zone10B_EventScript_SideQuestTeleport_134:
+	goto_if 0, Zone10B_EventScript_BirdKeeper_135
+Zone10B_EventScript_BirdKeeper_134:
 # 135 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_CASSANDRA
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_139
-Zone10B_EventScript_SideQuestTeleport_138:
+	goto_if 0, Zone10B_EventScript_BirdKeeper_139
+Zone10B_EventScript_BirdKeeper_138:
 # 136 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_DOMINIC
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_143
-Zone10B_EventScript_SideQuestTeleport_142:
+	goto_if 0, Zone10B_EventScript_BirdKeeper_143
+Zone10B_EventScript_BirdKeeper_142:
 # 137 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_ERICA
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_147
-Zone10B_EventScript_SideQuestTeleport_146:
+	goto_if 0, Zone10B_EventScript_BirdKeeper_147
+Zone10B_EventScript_BirdKeeper_146:
 # 138 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_ALANA
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 139 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_JACOB
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 140 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_DEWEY
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 141 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_ERNEST
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 142 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_KYLE
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 143 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_ELIAS
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 144 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_PEARLIE
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 145 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_SUSAN
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 146 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_CONRAD
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 147 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_BRETT
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
 # 154 "data/maps/Zone10B/scripts.pory"
-	setflag FLAG_ZONE10B_RECEIVED_TM_SCORCHING_SANDS
+	setflag FLAG_ZONE10B_RECEIVED_TM_STEEL_WING
 # 155 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_SideQuestTeleport_Text_2
+	msgbox Zone10B_EventScript_BirdKeeper_Text_2
 # 156 "data/maps/Zone10B/scripts.pory"
-	giveitem ITEM_TM_SCORCHING_SANDS
-	goto Zone10B_EventScript_SideQuestTeleport_1
+	giveitem ITEM_TM_STEEL_WING
+	goto Zone10B_EventScript_BirdKeeper_1
 
-Zone10B_EventScript_SideQuestTeleport_4:
+Zone10B_EventScript_BirdKeeper_4:
 # 148 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_SideQuestTeleport_Text_1
+	msgbox Zone10B_EventScript_BirdKeeper_Text_1
 # 149 "data/maps/Zone10B/scripts.pory"
 	applymovement 4, Common_Movement_FaceLeft
 # 150 "data/maps/Zone10B/scripts.pory"
@@ -394,35 +394,35 @@ Zone10B_EventScript_SideQuestTeleport_4:
 	release
 	end
 
-Zone10B_EventScript_SideQuestTeleport_131:
+Zone10B_EventScript_BirdKeeper_131:
 # 133 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_ARI_CHALLENGE
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
-	goto Zone10B_EventScript_SideQuestTeleport_130
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
+	goto Zone10B_EventScript_BirdKeeper_130
 
-Zone10B_EventScript_SideQuestTeleport_135:
+Zone10B_EventScript_BirdKeeper_135:
 # 134 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_BERTHA_CHALLENGE
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
-	goto Zone10B_EventScript_SideQuestTeleport_134
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
+	goto Zone10B_EventScript_BirdKeeper_134
 
-Zone10B_EventScript_SideQuestTeleport_139:
+Zone10B_EventScript_BirdKeeper_139:
 # 135 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_CASSANDRA_CHALLENGE
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
-	goto Zone10B_EventScript_SideQuestTeleport_138
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
+	goto Zone10B_EventScript_BirdKeeper_138
 
-Zone10B_EventScript_SideQuestTeleport_143:
+Zone10B_EventScript_BirdKeeper_143:
 # 136 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_DOMINIC_CHALLENGE
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
-	goto Zone10B_EventScript_SideQuestTeleport_142
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
+	goto Zone10B_EventScript_BirdKeeper_142
 
-Zone10B_EventScript_SideQuestTeleport_147:
+Zone10B_EventScript_BirdKeeper_147:
 # 137 "data/maps/Zone10B/scripts.pory"
 	checktrainerflag TRAINER_PBL_ERICA_CHALLENGE
-	goto_if 0, Zone10B_EventScript_SideQuestTeleport_4
-	goto Zone10B_EventScript_SideQuestTeleport_146
+	goto_if 0, Zone10B_EventScript_BirdKeeper_4
+	goto Zone10B_EventScript_BirdKeeper_146
 
 
 Zone10B_EventScript_BerryExchange::
@@ -961,37 +961,41 @@ Zone10B_EventScript_AdaminaStuff_Text_3:
 # 38 "data/maps/Zone10B/scripts.pory"
 	.string "{COLOR BLUE}Adamina{COLOR DARK_GRAY}: Tell you what, you can\nstay as long as you like to chat\lwith the people here.\pIt's kind of nice to just spend time\nwith other people, isn't it?$"
 
-Zone10B_EventScript_SideQuestTMScorchingSands_Text_0:
+Zone10B_EventScript_Collector_Text_0:
 # 47 "data/maps/Zone10B/scripts.pory"
 	.string "You know what would make a\nCollector like me happy? Meeting\lsomeone who has caught 50 different\lspecies of Pokémon. Now, that\lperson is someone I'd like to meet!$"
 
-Zone10B_EventScript_SideQuestTMScorchingSands_Text_1:
+Zone10B_EventScript_Collector_Text_1:
 # 50 "data/maps/Zone10B/scripts.pory"
 	.string "Whoah, you've caught 50 species of\nPokémon? That's amazing.\pI aspire to be like you. Here, I\nwant you to have this.$"
 
-Zone10B_EventScript_SideQuestTMScorchingSands_Text_2:
+Zone10B_EventScript_Collector_Text_2:
 # 60 "data/maps/Zone10B/scripts.pory"
 	.string "Maybe I can catch 50 species of\nPokémon someday too.$"
 
-Zone10B_EventScript_SideQuestTeleport_Text_0:
+Zone10B_EventScript_BirdKeeper_Text_0:
 # 70 "data/maps/Zone10B/scripts.pory"
-	.string "Greetings, young one. In my\npossession, I hold a useful TM for\lyour Pokémon, but only if you have\lproven yourself in battle.\pYou must have defeated all\nTrainers available thus far.$"
+	.string "Bird Pokémon sometimes can need some\n"
+	.string "coverage moves!\p"
+	.string "If you can show me you've beaten all\n"
+	.string "the trainers thus far, I'll reward you\l"
+	.string "with a special TM!$"
 
-Zone10B_EventScript_SideQuestTeleport_Text_1:
+Zone10B_EventScript_BirdKeeper_Text_1:
 # 148 "data/maps/Zone10B/scripts.pory"
 	.string "You still have trainers to defeat.$"
 
-Zone10B_EventScript_SideQuestTeleport_Text_2:
+Zone10B_EventScript_BirdKeeper_Text_2:
 # 155 "data/maps/Zone10B/scripts.pory"
-	.string "Impressive, young one. I see you have\n"
-	.string "defeated all those trainers.\p"
-	.string "Here is TM54 - Scorching Sands.$"
+	.string "Wow! You really did beat all those\n"
+	.string "trainers.\p"
+	.string "Here's the TM for Steel Wing!$"
 
-Zone10B_EventScript_SideQuestTeleport_Text_3:
+Zone10B_EventScript_BirdKeeper_Text_3:
 # 159 "data/maps/Zone10B/scripts.pory"
-	.string "The move Scorching Sands deals damage\n"
-	.string "and can potentially burn an opponent.\p"
-	.string "It's quite the neat move.$"
+	.string "The move Steel Wing can help Flying\n"
+	.string "Pokémon cover for their Rock weakness,\l"
+	.string "by giving Steel coverage to them!$"
 
 Zone10B_EventScript_BerryExchange_Text_0:
 # 169 "data/maps/Zone10B/scripts.pory"
