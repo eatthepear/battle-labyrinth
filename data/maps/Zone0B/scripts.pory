@@ -81,7 +81,7 @@ script Zone0B_EventScript_EeveeGirl {
 }
 
 script Zone0B_EventScript_EeveeUnique {
-	msgbox(Zone0B_Text_EeveeUnique)
+	msgbox(format("Eevee is quite a unique Pokémon.\pIt evolves through exposure to different elemental sources; even a fraction of elemental energy, such as from a Gem, would be enough to evolve it."))
 	release
 }
 
@@ -150,11 +150,6 @@ Zone0B_Text_EeveeGiveaway:
 	.string "Pokémon promotion!\p"
 	.string "If you'd like, you can have your\n"
 	.string "very own Eevee! What do you say?$"
-
-Zone0B_Text_EeveeUnique:
-	.string "Eevee is quite a unique Pokémon.\n"
-	.string "So many different evolutions!$"
-
 Zone0B_Text_NoThanks:
 	.string "No? Well, I'll be here anyways,\n"
 	.string "in case you change your mind.$"
