@@ -3426,38 +3426,123 @@ Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_ADAMINA_LEVIATHAN_9 ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Adamina
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: No
+Mugshot: Purple
 
-Metang
-Brave Nature
-Level: 42
+Dwebble @ Silver Powder
+Ability: Sturdy
+Level: 21
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Stealth Rock
+- Bug Bite
+- Rock Tomb
+- Knock Off
+
+Klawf @ Hard Stone
+Ability: Anger Shell
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Tomb
+- Bulldoze
+- Knock Off
+- Rock Smash
+
+Watchog @ Safety Goggles
+Ability: No Guard
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slam
+- Hypnosis
+- Covet
+- Power-Up Punch
+
+Maractus @ Miracle Seed
+Ability: Sand Rush
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Mega Drain
+- Pin-Missile
+- Bounce
+- Growth
+
+Sandslash @ Sitrus Berry
+Ability: Sand Rush
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bulldoze
+- Rock Tomb
+- Aerial Ace
+- Covet
 
 === TRAINER_PBL_ADAMINA_LEVIATHAN_9_CHALLENGE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Adamina
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Music: Cool
+AI: AI_FLAG_SMART_TRAINER
+Double Battle: No
+Random Lead: No
+Mugshot: Purple
 
-Metang
-Brave Nature
-Level: 42
+Dwebble @ Silver Powder
+Ability: Sturdy
+Level: 21
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Stealth Rock
+- Bug Bite
+- Rock Tomb
+- Knock Off
+
+Klawf @ Hard Stone
+Ability: Anger Shell
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Tomb
+- Bulldoze
+- Knock Off
+- Rock Smash
+
+Watchog @ Safety Goggles
+Ability: No Guard
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slam
+- Hypnosis
+- Covet
+- Power-Up Punch
+
+Maractus @ Miracle Seed
+Ability: Sand Rush
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Mega Drain
+- Pin-Missile
+- Bounce
+- Growth
+
+Sandslash @ Sitrus Berry
+Ability: Sand Rush
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bulldoze
+- Rock Tomb
+- Aerial Ace
+- Covet
+
+Sigilyph @ Sitrus Berry
+Ability: Magic Guard
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Air Cutter
+- Ancient Power
+- Roost
 
 === TRAINER_PBL_JEANETTE ===
 Name: STEVEN
