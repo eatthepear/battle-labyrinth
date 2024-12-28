@@ -25,7 +25,7 @@ Zone10A_MapScripts_MAP_SCRIPT_ON_RESUME_9:
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST
 Zone10A_MapScripts_MAP_SCRIPT_ON_RESUME_13:
 # 23 "data/maps/Zone10A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE10A_TM_STEEL_WING, Zone10A_MapScripts_MAP_SCRIPT_ON_RESUME_18
+	goto_if_set FLAG_ITEM_ZONE10A_TM_SCORCHING_SANDS, Zone10A_MapScripts_MAP_SCRIPT_ON_RESUME_18
 # 26 "data/maps/Zone10A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST
 Zone10A_MapScripts_MAP_SCRIPT_ON_RESUME_17:
@@ -268,11 +268,11 @@ Zone10A_EventScript_BlackGlasses_2:
 	end
 
 
-Zone10A_EventScript_TMSteelWing::
+Zone10A_EventScript_ItemTMScorchingSands::
 # 192 "data/maps/Zone10A/scripts.pory"
 	lock
 # 193 "data/maps/Zone10A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE10A_TM_STEEL_WING, Zone10A_EventScript_TMSteelWing_2
+	goto_if_set FLAG_ITEM_ZONE10A_TM_SCORCHING_SANDS, Zone10A_EventScript_ItemTMScorchingSands_2
 # 198 "data/maps/Zone10A/scripts.pory"
 	waitse
 # 199 "data/maps/Zone10A/scripts.pory"
@@ -280,16 +280,16 @@ Zone10A_EventScript_TMSteelWing::
 # 200 "data/maps/Zone10A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST_OPEN
 # 201 "data/maps/Zone10A/scripts.pory"
-	setflag FLAG_ITEM_ZONE10A_TM_STEEL_WING
+	setflag FLAG_ITEM_ZONE10A_TM_SCORCHING_SANDS
 # 202 "data/maps/Zone10A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 203 "data/maps/Zone10A/scripts.pory"
-	finditem ITEM_TM_STEEL_WING, 1
+	finditem ITEM_TM_SCORCHING_SANDS, 1
 # 204 "data/maps/Zone10A/scripts.pory"
 	release
 	end
 
-Zone10A_EventScript_TMSteelWing_2:
+Zone10A_EventScript_ItemTMScorchingSands_2:
 # 194 "data/maps/Zone10A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 195 "data/maps/Zone10A/scripts.pory"

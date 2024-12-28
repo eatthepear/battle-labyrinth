@@ -20,7 +20,7 @@ mapscripts Zone10A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE10A_TM_STEEL_WING)) {
+		if (flag(FLAG_ITEM_ZONE10A_TM_SCORCHING_SANDS)) {
 			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST)
@@ -188,9 +188,9 @@ script Zone10A_EventScript_BlackGlasses {
 	end
 }
 
-script Zone10A_EventScript_TMSteelWing {
+script Zone10A_EventScript_ItemTMScorchingSands {
 	lock
-	if (flag(FLAG_ITEM_ZONE10A_TM_STEEL_WING)) {
+	if (flag(FLAG_ITEM_ZONE10A_TM_SCORCHING_SANDS)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -198,9 +198,9 @@ script Zone10A_EventScript_TMSteelWing {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE10A_TM_STEEL_WING)
+	setflag(FLAG_ITEM_ZONE10A_TM_SCORCHING_SANDS)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_TM_STEEL_WING, 1)
+	finditem(ITEM_TM_SCORCHING_SANDS, 1)
 	release
 	end
 }

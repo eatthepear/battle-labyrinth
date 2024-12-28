@@ -40,7 +40,7 @@ script Zone10B_EventScript_AdaminaStuff {
 	release
 }
 
-script Zone10B_EventScript_SideQuestTMScorchingSands {
+script Zone10B_EventScript_Collector {
 	lock
 	faceplayer
 	if (flag(FLAG_ZONE10B_RECEIVED_LUCKY_EGG) == false) {
@@ -63,11 +63,11 @@ script Zone10B_EventScript_SideQuestTMScorchingSands {
 	release
 }
 
-script Zone10B_EventScript_SideQuestTeleport {
+script Zone10B_EventScript_BirdKeeper {
 	lock
 	faceplayer
-	if (flag(FLAG_ZONE10B_RECEIVED_TM_SCORCHING_SANDS) == false) {
-		msgbox("Greetings, young one. In my\npossession, I hold a useful TM for\lyour Pokémon, but only if you have\lproven yourself in battle.\pYou must have defeated all\nTrainers available thus far.")
+	if (flag(FLAG_ZONE10B_RECEIVED_TM_STEEL_WING) == false) {
+		msgbox(format("Bird Pokémon sometimes can need some coverage moves!\pIf you can show me you've beaten all the trainers thus far, I'll reward you with a special TM!"))
 		if (!defeated(TRAINER_PBL_NINA) ||
 			!defeated(TRAINER_PBL_MARIAM) ||
 			!defeated(TRAINER_PBL_OSCAR) ||
@@ -151,12 +151,12 @@ script Zone10B_EventScript_SideQuestTeleport {
 			release
 			end
 		} else {
-			setflag(FLAG_ZONE10B_RECEIVED_TM_SCORCHING_SANDS)
-			msgbox(format("Impressive, young one. I see you have defeated all those trainers.\pHere is TM54 - Scorching Sands."))
-			giveitem(ITEM_TM_SCORCHING_SANDS)
+			setflag(FLAG_ZONE10B_RECEIVED_TM_STEEL_WING)
+			msgbox(format("Wow! You really did beat all those trainers.\pHere's the TM for Steel Wing!"))
+			giveitem(ITEM_TM_STEEL_WING)
 		}
 	}
-	msgbox(format("The move Scorching Sands deals damage and can potentially burn an opponent.\pIt's quite the neat move."))
+	msgbox(format("The move Steel Wing can help Flying Pokémon cover for their Rock weakness, by giving Steel coverage to them!"))
 	applymovement(4, Common_Movement_FaceLeft)
 	waitmovement(0)
 	release
