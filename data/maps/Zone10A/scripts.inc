@@ -78,11 +78,11 @@ Zone10A_EventScript_Adamina_1:
 # 43 "data/maps/Zone10A/scripts.pory"
 	msgbox Zone10A_Text_Explain, MSGBOX_AUTOCLOSE
 # 44 "data/maps/Zone10A/scripts.pory"
-	goto_if_unset FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_1, Zone10A_EventScript_Adamina_5
+	goto_if_unset FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_1, Zone10A_EventScript_Adamina_5
 # 45 "data/maps/Zone10A/scripts.pory"
-	goto_if_unset FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_2, Zone10A_EventScript_Adamina_5
+	goto_if_unset FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_2, Zone10A_EventScript_Adamina_5
 # 46 "data/maps/Zone10A/scripts.pory"
-	goto_if_unset FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_3, Zone10A_EventScript_Adamina_5
+	goto_if_unset FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_3, Zone10A_EventScript_Adamina_5
 # 50 "data/maps/Zone10A/scripts.pory"
 	fadeoutbgm 1
 # 51 "data/maps/Zone10A/scripts.pory"
@@ -592,7 +592,7 @@ Zone10A_Text_Explain::
 	.string "If you really want to get in,\n"
 	.string "you have to earn your place.\p"
 	.string "In the desert, there are 3 hidden\n"
-	.string "Yellow Shards.\p"
+	.string "Blue Shards.\p"
 	.string "Find them and bring them to me.\n"
 	.string "Then we'll see.$"
 
