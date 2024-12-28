@@ -10,7 +10,7 @@ Zone9A_MapScripts_MAP_SCRIPT_ON_RESUME:
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST
 Zone9A_MapScripts_MAP_SCRIPT_ON_RESUME_1:
 # 8 "data/maps/Zone9A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE9A_RANDOM_1, Zone9A_MapScripts_MAP_SCRIPT_ON_RESUME_6
+	goto_if_set FLAG_ITEM_ZONE9A_GEMS, Zone9A_MapScripts_MAP_SCRIPT_ON_RESUME_6
 # 11 "data/maps/Zone9A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST
 Zone9A_MapScripts_MAP_SCRIPT_ON_RESUME_5:
@@ -350,11 +350,11 @@ Zone9A_EventScript_ItemBigRoot_2:
 	end
 
 
-Zone9A_EventScript_ItemRandom1::
+Zone9A_EventScript_ItemGems::
 # 180 "data/maps/Zone9A/scripts.pory"
 	lock
 # 181 "data/maps/Zone9A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE9A_RANDOM_1, Zone9A_EventScript_ItemRandom1_2
+	goto_if_set FLAG_ITEM_ZONE9A_GEMS, Zone9A_EventScript_ItemGems_2
 # 186 "data/maps/Zone9A/scripts.pory"
 	waitse
 # 187 "data/maps/Zone9A/scripts.pory"
@@ -362,18 +362,20 @@ Zone9A_EventScript_ItemRandom1::
 # 188 "data/maps/Zone9A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 189 "data/maps/Zone9A/scripts.pory"
-	setflag FLAG_ITEM_ZONE9A_RANDOM_1
+	setflag FLAG_ITEM_ZONE9A_GEMS
 # 190 "data/maps/Zone9A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 191 "data/maps/Zone9A/scripts.pory"
-	specialvar VAR_TEMP_1, RandomItemChest
+	finditem ITEM_POISON_GEM
 # 192 "data/maps/Zone9A/scripts.pory"
-	finditem VAR_TEMP_1, VAR_TEMP_0
+	finditem ITEM_STEEL_GEM
 # 193 "data/maps/Zone9A/scripts.pory"
+	finditem ITEM_DARK_GEM
+# 194 "data/maps/Zone9A/scripts.pory"
 	release
 	end
 
-Zone9A_EventScript_ItemRandom1_2:
+Zone9A_EventScript_ItemGems_2:
 # 182 "data/maps/Zone9A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 183 "data/maps/Zone9A/scripts.pory"
@@ -382,135 +384,135 @@ Zone9A_EventScript_ItemRandom1_2:
 
 
 Zone9A_EventScript_ItemTMPluck::
-# 198 "data/maps/Zone9A/scripts.pory"
-	lock
 # 199 "data/maps/Zone9A/scripts.pory"
+	lock
+# 200 "data/maps/Zone9A/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE9A_TM_PLUCK, Zone9A_EventScript_ItemTMPluck_2
-# 204 "data/maps/Zone9A/scripts.pory"
-	waitse
 # 205 "data/maps/Zone9A/scripts.pory"
-	removeobject VAR_LAST_TALKED
+	waitse
 # 206 "data/maps/Zone9A/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_TM_CHEST_OPEN
+	removeobject VAR_LAST_TALKED
 # 207 "data/maps/Zone9A/scripts.pory"
-	setflag FLAG_ITEM_ZONE9A_TM_PLUCK
+	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_TM_CHEST_OPEN
 # 208 "data/maps/Zone9A/scripts.pory"
-	addobject VAR_LAST_TALKED
+	setflag FLAG_ITEM_ZONE9A_TM_PLUCK
 # 209 "data/maps/Zone9A/scripts.pory"
-	finditem ITEM_TM_PLUCK, 1
+	addobject VAR_LAST_TALKED
 # 210 "data/maps/Zone9A/scripts.pory"
+	finditem ITEM_TM_PLUCK, 1
+# 211 "data/maps/Zone9A/scripts.pory"
 	release
 	end
 
 Zone9A_EventScript_ItemTMPluck_2:
-# 200 "data/maps/Zone9A/scripts.pory"
-	msgbox gText_ItemChestIsEmpty
 # 201 "data/maps/Zone9A/scripts.pory"
+	msgbox gText_ItemChestIsEmpty
+# 202 "data/maps/Zone9A/scripts.pory"
 	release
 	end
 
 
-# 214 "data/maps/Zone9A/scripts.pory"
-
 # 215 "data/maps/Zone9A/scripts.pory"
-Zone9A_EventScript_Cooper::
+
 # 216 "data/maps/Zone9A/scripts.pory"
-       trainerbattle_single TRAINER_PBL_COOPER, Zone9A_Text_CooperIntro, Zone9A_Text_CooperDefeat
+Zone9A_EventScript_Cooper::
 # 217 "data/maps/Zone9A/scripts.pory"
-       msgbox Zone9A_Text_CooperPostBattle, MSGBOX_AUTOCLOSE
+       trainerbattle_single TRAINER_PBL_COOPER, Zone9A_Text_CooperIntro, Zone9A_Text_CooperDefeat
 # 218 "data/maps/Zone9A/scripts.pory"
-       end
+       msgbox Zone9A_Text_CooperPostBattle, MSGBOX_AUTOCLOSE
 # 219 "data/maps/Zone9A/scripts.pory"
-
-# 220 "data/maps/Zone9A/scripts.pory"
-Zone9A_Text_CooperIntro:
-# 221 "data/maps/Zone9A/scripts.pory"
-	.string "Bet you didn't expect me!$"
-# 222 "data/maps/Zone9A/scripts.pory"
-
-# 223 "data/maps/Zone9A/scripts.pory"
-Zone9A_Text_CooperDefeat:
-# 224 "data/maps/Zone9A/scripts.pory"
-	.string "I didn't expect you, either!$"
-# 225 "data/maps/Zone9A/scripts.pory"
-
-# 226 "data/maps/Zone9A/scripts.pory"
-Zone9A_Text_CooperPostBattle:
-# 227 "data/maps/Zone9A/scripts.pory"
-	.string "I just pop out occasionally in\n"
-# 228 "data/maps/Zone9A/scripts.pory"
-	.string "case someone is there.$"
-# 229 "data/maps/Zone9A/scripts.pory"
-
-# 230 "data/maps/Zone9A/scripts.pory"
-Zone9A_EventScript_Carmine::
-# 231 "data/maps/Zone9A/scripts.pory"
-       trainerbattle_single TRAINER_PBL_CARMINE, Zone9A_Text_CarmineIntro, Zone9A_Text_CarmineDefeat
-# 232 "data/maps/Zone9A/scripts.pory"
-       msgbox Zone9A_Text_CarminePostBattle, MSGBOX_AUTOCLOSE
-# 233 "data/maps/Zone9A/scripts.pory"
        end
+# 220 "data/maps/Zone9A/scripts.pory"
+
+# 221 "data/maps/Zone9A/scripts.pory"
+Zone9A_Text_CooperIntro:
+# 222 "data/maps/Zone9A/scripts.pory"
+	.string "Bet you didn't expect me!$"
+# 223 "data/maps/Zone9A/scripts.pory"
+
+# 224 "data/maps/Zone9A/scripts.pory"
+Zone9A_Text_CooperDefeat:
+# 225 "data/maps/Zone9A/scripts.pory"
+	.string "I didn't expect you, either!$"
+# 226 "data/maps/Zone9A/scripts.pory"
+
+# 227 "data/maps/Zone9A/scripts.pory"
+Zone9A_Text_CooperPostBattle:
+# 228 "data/maps/Zone9A/scripts.pory"
+	.string "I just pop out occasionally in\n"
+# 229 "data/maps/Zone9A/scripts.pory"
+	.string "case someone is there.$"
+# 230 "data/maps/Zone9A/scripts.pory"
+
+# 231 "data/maps/Zone9A/scripts.pory"
+Zone9A_EventScript_Carmine::
+# 232 "data/maps/Zone9A/scripts.pory"
+       trainerbattle_single TRAINER_PBL_CARMINE, Zone9A_Text_CarmineIntro, Zone9A_Text_CarmineDefeat
+# 233 "data/maps/Zone9A/scripts.pory"
+       msgbox Zone9A_Text_CarminePostBattle, MSGBOX_AUTOCLOSE
 # 234 "data/maps/Zone9A/scripts.pory"
-
+       end
 # 235 "data/maps/Zone9A/scripts.pory"
-Zone9A_Text_CarmineIntro:
+
 # 236 "data/maps/Zone9A/scripts.pory"
-	.string "Whew, it's hot in the jungle!$"
+Zone9A_Text_CarmineIntro:
 # 237 "data/maps/Zone9A/scripts.pory"
-
+	.string "Whew, it's hot in the jungle!$"
 # 238 "data/maps/Zone9A/scripts.pory"
-Zone9A_Text_CarmineDefeat:
+
 # 239 "data/maps/Zone9A/scripts.pory"
-	.string "I think the humidity is the worst\n"
+Zone9A_Text_CarmineDefeat:
 # 240 "data/maps/Zone9A/scripts.pory"
-	.string "part!$"
+	.string "I think the humidity is the worst\n"
 # 241 "data/maps/Zone9A/scripts.pory"
-
+	.string "part!$"
 # 242 "data/maps/Zone9A/scripts.pory"
-Zone9A_Text_CarminePostBattle:
+
 # 243 "data/maps/Zone9A/scripts.pory"
-	.string "I hope there's AC in the village.$"
+Zone9A_Text_CarminePostBattle:
 # 244 "data/maps/Zone9A/scripts.pory"
-
+	.string "I hope there's AC in the village.$"
 # 245 "data/maps/Zone9A/scripts.pory"
-Zone9A_EventScript_Sign::
-# 246 "data/maps/Zone9A/scripts.pory"
-	msgbox Zone9A_Text_Sign, MSGBOX_SIGN
-# 247 "data/maps/Zone9A/scripts.pory"
-	end
-# 248 "data/maps/Zone9A/scripts.pory"
 
+# 246 "data/maps/Zone9A/scripts.pory"
+Zone9A_EventScript_Sign::
+# 247 "data/maps/Zone9A/scripts.pory"
+	msgbox Zone9A_Text_Sign, MSGBOX_SIGN
+# 248 "data/maps/Zone9A/scripts.pory"
+	end
 # 249 "data/maps/Zone9A/scripts.pory"
-Zone9A_Text_Sign:
+
 # 250 "data/maps/Zone9A/scripts.pory"
-	.string "Trainer Tips\p"
+Zone9A_Text_Sign:
 # 251 "data/maps/Zone9A/scripts.pory"
-	.string "While you are on the Pokémon stats\n"
+	.string "Trainer Tips\p"
 # 252 "data/maps/Zone9A/scripts.pory"
-	.string "screen, you can press {A_BUTTON} to switch\l"
+	.string "While you are on the Pokémon stats\n"
 # 253 "data/maps/Zone9A/scripts.pory"
+	.string "screen, you can press {A_BUTTON} to switch\l"
+# 254 "data/maps/Zone9A/scripts.pory"
 	.string "between stats, IVs, or EVs.$"
 
 Zone9A_EventScript_Jonathan::
-# 257 "data/maps/Zone9A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_JONATHAN, Zone9A_EventScript_Jonathan_Text_0, Zone9A_EventScript_Jonathan_Text_1
 # 258 "data/maps/Zone9A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_JONATHAN, Zone9A_EventScript_Jonathan_Text_0, Zone9A_EventScript_Jonathan_Text_1
+# 259 "data/maps/Zone9A/scripts.pory"
 	msgbox Zone9A_EventScript_Jonathan_Text_2, MSGBOX_AUTOCLOSE
 	end
 
 
 Zone9A_EventScript_Calvin::
-# 263 "data/maps/Zone9A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_CALVIN, Zone9A_EventScript_Calvin_Text_0, Zone9A_EventScript_Calvin_Text_1
 # 264 "data/maps/Zone9A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_CALVIN, Zone9A_EventScript_Calvin_Text_0, Zone9A_EventScript_Calvin_Text_1
+# 265 "data/maps/Zone9A/scripts.pory"
 	msgbox Zone9A_EventScript_Calvin_Text_2, MSGBOX_AUTOCLOSE
 	end
 
 
 Zone9A_EventScript_Luis::
-# 269 "data/maps/Zone9A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_LUIS, Zone9A_EventScript_Luis_Text_0, Zone9A_EventScript_Luis_Text_1
 # 270 "data/maps/Zone9A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_LUIS, Zone9A_EventScript_Luis_Text_0, Zone9A_EventScript_Luis_Text_1
+# 271 "data/maps/Zone9A/scripts.pory"
 	msgbox Zone9A_EventScript_Luis_Text_2, MSGBOX_AUTOCLOSE
 	end
 
@@ -614,42 +616,42 @@ Zone9A_EventScript_Ari_Text_16:
 	.string "my family's trial.$"
 
 Zone9A_EventScript_Jonathan_Text_0:
-# 257 "data/maps/Zone9A/scripts.pory"
+# 258 "data/maps/Zone9A/scripts.pory"
 	.string "Jungles like these are where Bugs\n"
 	.string "thrive!$"
 
 Zone9A_EventScript_Jonathan_Text_1:
-# 257 "data/maps/Zone9A/scripts.pory"
+# 258 "data/maps/Zone9A/scripts.pory"
 	.string "I'm not thriving!$"
 
 Zone9A_EventScript_Jonathan_Text_2:
-# 258 "data/maps/Zone9A/scripts.pory"
+# 259 "data/maps/Zone9A/scripts.pory"
 	.string "Make sure to protect yourself from the\n"
 	.string "elements!$"
 
 Zone9A_EventScript_Calvin_Text_0:
-# 263 "data/maps/Zone9A/scripts.pory"
+# 264 "data/maps/Zone9A/scripts.pory"
 	.string "This pond is filled with muck!$"
 
 Zone9A_EventScript_Calvin_Text_1:
-# 263 "data/maps/Zone9A/scripts.pory"
+# 264 "data/maps/Zone9A/scripts.pory"
 	.string "The muck is where Pokémon live!$"
 
 Zone9A_EventScript_Calvin_Text_2:
-# 264 "data/maps/Zone9A/scripts.pory"
+# 265 "data/maps/Zone9A/scripts.pory"
 	.string "Fishing in a jungle is a unique\n"
 	.string "experience!$"
 
 Zone9A_EventScript_Luis_Text_0:
-# 269 "data/maps/Zone9A/scripts.pory"
+# 270 "data/maps/Zone9A/scripts.pory"
 	.string "Whew! I am tired. If I beat you in a\n"
 	.string "Pokémon battle, do you think you could\l"
 	.string "watch the little ones for a while?$"
 
 Zone9A_EventScript_Luis_Text_1:
-# 269 "data/maps/Zone9A/scripts.pory"
+# 270 "data/maps/Zone9A/scripts.pory"
 	.string "At least now they're out of energy!$"
 
 Zone9A_EventScript_Luis_Text_2:
-# 270 "data/maps/Zone9A/scripts.pory"
+# 271 "data/maps/Zone9A/scripts.pory"
 	.string "Finally, I can take a short break!$"
