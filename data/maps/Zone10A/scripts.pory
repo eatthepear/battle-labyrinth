@@ -41,9 +41,9 @@ script Zone10A_EventScript_Adamina {
 		setvar(VAR_ZONE_10_STATE, 1)
 	}
 	msgbox(Zone10A_Text_Explain, MSGBOX_AUTOCLOSE)
-	if ((flag(FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_1) == false) ||
-	(flag(FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_2) == false) ||
-	(flag(FLAG_HIDDEN_ITEM_ZONE10A_YELLOW_SHARD_3) == false)) {
+	if ((flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_1) == false) ||
+	(flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_2) == false) ||
+	(flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_3) == false)) {
 		release
 		end
 	}
@@ -89,7 +89,7 @@ text Zone10A_Text_Explain {
 	"If you really want to get in,\n"
 	"you have to earn your place.\p"
 	"In the desert, there are 3 hidden\n"
-	"Yellow Shards.\p"
+	"Blue Shards.\p"
 	"Find them and bring them to me.\n"
 	"Then we'll see."
 }

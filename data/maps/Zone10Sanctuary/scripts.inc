@@ -61,7 +61,7 @@ Zone10Sanctuary_EventScript_Intro_2:
 # 19 "data/maps/Zone10Sanctuary/scripts.pory"
 	msgbox Zone10Sanctuary_EventScript_Intro_Text_0, MSGBOX_DEFAULT
 # 20 "data/maps/Zone10Sanctuary/scripts.pory"
-	giveitem ITEM_YELLOW_SHARD, 900
+	giveitem ITEM_BLUE_SHARD, 900
 	goto Zone10Sanctuary_EventScript_Intro_1
 
 
@@ -121,7 +121,7 @@ Zone10Sanctuary_EventScript_NextZone_6:
 
 Zone10Sanctuary_EventScript_Intro_Text_0:
 # 19 "data/maps/Zone10Sanctuary/scripts.pory"
-	.string "Because you're playing on Infinite, you also get Yellow Shards!$"
+	.string "Because you're playing on Infinite, you also get Blue Shards!$"
 
 Zone10Sanctuary_EventScript_Intro_Text_1:
 # 22 "data/maps/Zone10Sanctuary/scripts.pory"
