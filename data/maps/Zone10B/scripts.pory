@@ -103,7 +103,7 @@ script Zone10B_EventScript_SideQuestTeleport {
 			!defeated(TRAINER_PBL_COOPER) ||
 			!defeated(TRAINER_PBL_CARMINE) ||
 			!defeated(TRAINER_PBL_KYLE) ||
-			!defeated(TRAINER_PBL_BELLE) ||
+			!defeated(TRAINER_PBL_BRETT) ||
 			!defeated(TRAINER_PBL_DEWEY) ||
 			!defeated(TRAINER_PBL_PEARLIE) ||
 			!defeated(TRAINER_PBL_ERNEST) ||

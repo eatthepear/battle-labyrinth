@@ -105,7 +105,7 @@ Zone10A_EventScript_Adamina_11:
 # 61 "data/maps/Zone10A/scripts.pory"
 	msgbox Zone10A_Text_HeadInside
 # 62 "data/maps/Zone10A/scripts.pory"
-	applymovement 6, Common_Movement_FaceUp
+	applymovement 1, Common_Movement_FaceUp
 # 63 "data/maps/Zone10A/scripts.pory"
 	waitmovement 0
 # 64 "data/maps/Zone10A/scripts.pory"
@@ -113,7 +113,7 @@ Zone10A_EventScript_Adamina_11:
 # 65 "data/maps/Zone10A/scripts.pory"
 	waitdooranim
 # 66 "data/maps/Zone10A/scripts.pory"
-	applymovement 6, Common_Movement_WalkUp
+	applymovement 1, Common_Movement_WalkUp
 # 67 "data/maps/Zone10A/scripts.pory"
 	waitmovement 0
 # 68 "data/maps/Zone10A/scripts.pory"
@@ -320,290 +320,111 @@ Zone10A_EventScript_HeavyDutyBoots_2:
 	end
 
 
-Zone10A_EventScript_Ranger::
+Zone10A_EventScript_ParasolLady::
 # 223 "data/maps/Zone10A/scripts.pory"
 	lock
 # 224 "data/maps/Zone10A/scripts.pory"
 	faceplayer
 # 225 "data/maps/Zone10A/scripts.pory"
-	goto_if_unset FLAG_ZONE10A_RECEIVED_SAFETY_GOGGLES, Zone10A_EventScript_Ranger_2
-Zone10A_EventScript_Ranger_1:
+	goto_if_unset FLAG_ZONE10A_RECEIVED_SAFETY_GOGGLES, Zone10A_EventScript_ParasolLady_2
+Zone10A_EventScript_ParasolLady_1:
 # 230 "data/maps/Zone10A/scripts.pory"
-	msgbox Zone10A_EventScript_Ranger_Text_1
+	msgbox Zone10A_EventScript_ParasolLady_Text_1
 # 231 "data/maps/Zone10A/scripts.pory"
 	release
 	end
 
-Zone10A_EventScript_Ranger_2:
+Zone10A_EventScript_ParasolLady_2:
 # 226 "data/maps/Zone10A/scripts.pory"
-	msgbox Zone10A_EventScript_Ranger_Text_0, MSGBOX_DEFAULT
+	msgbox Zone10A_EventScript_ParasolLady_Text_0, MSGBOX_DEFAULT
 # 227 "data/maps/Zone10A/scripts.pory"
 	giveitem ITEM_SAFETY_GOGGLES
 # 228 "data/maps/Zone10A/scripts.pory"
 	setflag FLAG_ZONE10A_RECEIVED_SAFETY_GOGGLES
-	goto Zone10A_EventScript_Ranger_1
+	goto Zone10A_EventScript_ParasolLady_1
 
 
-# 235 "data/maps/Zone10A/scripts.pory"
-
-# 236 "data/maps/Zone10A/scripts.pory"
-Zone10A_EventScript_Kyle::
-# 237 "data/maps/Zone10A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_KYLE, Zone10A_Text_KyleIntro, Zone10A_Text_KyleDefeat
-# 238 "data/maps/Zone10A/scripts.pory"
-	msgbox Zone10A_Text_KylePostBattle, MSGBOX_AUTOCLOSE
-# 239 "data/maps/Zone10A/scripts.pory"
-	end
-# 240 "data/maps/Zone10A/scripts.pory"
-
-# 241 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_KyleIntro:
-# 242 "data/maps/Zone10A/scripts.pory"
-	.string "I daydream a lot. It's a bad habit!$"
-# 243 "data/maps/Zone10A/scripts.pory"
-
-# 244 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_KyleDefeat:
-# 245 "data/maps/Zone10A/scripts.pory"
-	.string "I dream of one day winning…$"
-# 246 "data/maps/Zone10A/scripts.pory"
-
-# 247 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_KylePostBattle:
-# 248 "data/maps/Zone10A/scripts.pory"
-	.string "I'll be a champion some day,\n"
-# 249 "data/maps/Zone10A/scripts.pory"
-	.string "just you wait!$"
-# 250 "data/maps/Zone10A/scripts.pory"
-
-# 251 "data/maps/Zone10A/scripts.pory"
-Zone10A_EventScript_Belle::
-# 252 "data/maps/Zone10A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_BELLE, Zone10A_Text_BelleIntro, Zone10A_Text_BelleDefeat
-# 253 "data/maps/Zone10A/scripts.pory"
-	msgbox Zone10A_Text_BellePostBattle, MSGBOX_AUTOCLOSE
-# 254 "data/maps/Zone10A/scripts.pory"
-	end
-# 255 "data/maps/Zone10A/scripts.pory"
-
-# 256 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_BelleIntro:
-# 257 "data/maps/Zone10A/scripts.pory"
-	.string "Pfft!$"
-# 258 "data/maps/Zone10A/scripts.pory"
-
-# 259 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_BelleDefeat:
-# 260 "data/maps/Zone10A/scripts.pory"
-	.string "Sorry, I didn't mean to be rude!$"
-# 261 "data/maps/Zone10A/scripts.pory"
-
-# 262 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_BellePostBattle:
-# 263 "data/maps/Zone10A/scripts.pory"
-	.string "Some sand flew into my mouth so I\n"
-# 264 "data/maps/Zone10A/scripts.pory"
-	.string "had to get it out!$"
-# 265 "data/maps/Zone10A/scripts.pory"
-
-# 266 "data/maps/Zone10A/scripts.pory"
-Zone10A_EventScript_Dewey::
-# 267 "data/maps/Zone10A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_DEWEY, Zone10A_Text_DeweyIntro, Zone10A_Text_DeweyDefeat
-# 268 "data/maps/Zone10A/scripts.pory"
-	msgbox Zone10A_Text_DeweyPostBattle, MSGBOX_AUTOCLOSE
-# 269 "data/maps/Zone10A/scripts.pory"
-	end
-# 270 "data/maps/Zone10A/scripts.pory"
-
-# 271 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_DeweyIntro:
-# 272 "data/maps/Zone10A/scripts.pory"
-	.string "My party is so worn down…\n"
-# 273 "data/maps/Zone10A/scripts.pory"
-	.string "Maybe they'll be reenergized after\l"
-# 274 "data/maps/Zone10A/scripts.pory"
-	.string "battle!$"
-# 275 "data/maps/Zone10A/scripts.pory"
-
-# 276 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_DeweyDefeat:
-# 277 "data/maps/Zone10A/scripts.pory"
-	.string "Hmm…\n"
-# 278 "data/maps/Zone10A/scripts.pory"
-	.string "I don't think they gained any energy…$"
-# 279 "data/maps/Zone10A/scripts.pory"
-
-# 280 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_DeweyPostBattle:
-# 281 "data/maps/Zone10A/scripts.pory"
-	.string "Maybe I need to rest instead.$"
-# 282 "data/maps/Zone10A/scripts.pory"
-
-# 283 "data/maps/Zone10A/scripts.pory"
-Zone10A_EventScript_Pearlie::
-# 284 "data/maps/Zone10A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_PEARLIE, Zone10A_Text_PearlieIntro, Zone10A_Text_PearlieDefeat
-# 285 "data/maps/Zone10A/scripts.pory"
-	msgbox Zone10A_Text_PearliePostBattle, MSGBOX_AUTOCLOSE
-# 286 "data/maps/Zone10A/scripts.pory"
-	end
-# 287 "data/maps/Zone10A/scripts.pory"
-
-# 288 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_PearlieIntro:
-# 289 "data/maps/Zone10A/scripts.pory"
-	.string "Sand keeps getting in my lunch,\n"
-# 290 "data/maps/Zone10A/scripts.pory"
-	.string "so I'll take out my frustration on you!$"
-# 291 "data/maps/Zone10A/scripts.pory"
-
-# 292 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_PearlieDefeat:
-# 293 "data/maps/Zone10A/scripts.pory"
-	.string "Ugh! Now there's sand everywhere!$"
-# 294 "data/maps/Zone10A/scripts.pory"
-
-# 295 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_PearliePostBattle:
-# 296 "data/maps/Zone10A/scripts.pory"
-	.string "I don't like sand.\n"
-# 297 "data/maps/Zone10A/scripts.pory"
-	.string "It's coarse and rough and irritating and\l"
-# 298 "data/maps/Zone10A/scripts.pory"
-	.string "it gets everywhere.$"
-# 299 "data/maps/Zone10A/scripts.pory"
-
-# 300 "data/maps/Zone10A/scripts.pory"
-Zone10A_EventScript_Ernest::
-# 301 "data/maps/Zone10A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_ERNEST, Zone10A_Text_ErnestIntro, Zone10A_Text_ErnestDefeat
-# 302 "data/maps/Zone10A/scripts.pory"
-	msgbox Zone10A_Text_ErnestPostBattle, MSGBOX_AUTOCLOSE
-# 303 "data/maps/Zone10A/scripts.pory"
-	end
-# 304 "data/maps/Zone10A/scripts.pory"
-
-# 305 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_ErnestIntro:
-# 306 "data/maps/Zone10A/scripts.pory"
-	.string "I came prepared the wrath of the\n"
-# 307 "data/maps/Zone10A/scripts.pory"
-	.string "desert!$"
-# 308 "data/maps/Zone10A/scripts.pory"
-
-# 309 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_ErnestDefeat:
-# 310 "data/maps/Zone10A/scripts.pory"
-	.string "But I was not prepared for you!$"
-# 311 "data/maps/Zone10A/scripts.pory"
-
-# 312 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_ErnestPostBattle:
-# 313 "data/maps/Zone10A/scripts.pory"
-	.string "Preparations are important, be it\n"
-# 314 "data/maps/Zone10A/scripts.pory"
-	.string "for hiking or battling!$"
-# 315 "data/maps/Zone10A/scripts.pory"
-
-# 316 "data/maps/Zone10A/scripts.pory"
 Zone10A_EventScript_Alana::
-# 317 "data/maps/Zone10A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_ALANA, Zone10A_Text_AlanaIntro, Zone10A_Text_AlanaDefeat
-# 318 "data/maps/Zone10A/scripts.pory"
-	msgbox Zone10A_Text_AlanaPostBattle, MSGBOX_AUTOCLOSE
-# 319 "data/maps/Zone10A/scripts.pory"
+# 236 "data/maps/Zone10A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_ALANA, Zone10A_EventScript_Alana_Text_0, Zone10A_EventScript_Alana_Text_1
+# 237 "data/maps/Zone10A/scripts.pory"
+	msgbox Zone10A_EventScript_Alana_Text_2, MSGBOX_AUTOCLOSE
 	end
-# 320 "data/maps/Zone10A/scripts.pory"
 
-# 321 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_AlanaIntro:
-# 322 "data/maps/Zone10A/scripts.pory"
-	.string "Conrad told me to come here for our date,\n"
-# 323 "data/maps/Zone10A/scripts.pory"
-	.string "but he's nowhere to be found!$"
-# 324 "data/maps/Zone10A/scripts.pory"
 
-# 325 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_AlanaDefeat:
-# 326 "data/maps/Zone10A/scripts.pory"
-	.string "I wonder if I got stood up…$"
-# 327 "data/maps/Zone10A/scripts.pory"
+Zone10A_EventScript_Jacob::
+# 242 "data/maps/Zone10A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_JACOB, Zone10A_EventScript_Jacob_Text_0, Zone10A_EventScript_Jacob_Text_1
+# 243 "data/maps/Zone10A/scripts.pory"
+	msgbox Zone10A_EventScript_Jacob_Text_2, MSGBOX_AUTOCLOSE
+	end
 
-# 328 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_AlanaPostBattle:
-# 329 "data/maps/Zone10A/scripts.pory"
-	.string "No way, a woman like me getting stood up?\n"
-# 330 "data/maps/Zone10A/scripts.pory"
-	.string "He probably just got lost.$"
-# 331 "data/maps/Zone10A/scripts.pory"
 
-# 332 "data/maps/Zone10A/scripts.pory"
+Zone10A_EventScript_Dewey::
+# 248 "data/maps/Zone10A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_DEWEY, Zone10A_EventScript_Dewey_Text_0, Zone10A_EventScript_Dewey_Text_1
+# 249 "data/maps/Zone10A/scripts.pory"
+	msgbox Zone10A_EventScript_Dewey_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
+Zone10A_EventScript_Ernest::
+# 254 "data/maps/Zone10A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_ERNEST, Zone10A_EventScript_Ernest_Text_0, Zone10A_EventScript_Ernest_Text_1
+# 255 "data/maps/Zone10A/scripts.pory"
+	msgbox Zone10A_EventScript_Ernest_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
+Zone10A_EventScript_Kyle::
+# 260 "data/maps/Zone10A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_KYLE, Zone10A_EventScript_Kyle_Text_0, Zone10A_EventScript_Kyle_Text_1
+# 261 "data/maps/Zone10A/scripts.pory"
+	msgbox Zone10A_EventScript_Kyle_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
+Zone10A_EventScript_Elias::
+# 266 "data/maps/Zone10A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_ELIAS, Zone10A_EventScript_Elias_Text_0, Zone10A_EventScript_Elias_Text_1
+# 267 "data/maps/Zone10A/scripts.pory"
+	msgbox Zone10A_EventScript_Elias_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
+Zone10A_EventScript_Pearlie::
+# 272 "data/maps/Zone10A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_PEARLIE, Zone10A_EventScript_Pearlie_Text_0, Zone10A_EventScript_Pearlie_Text_1
+# 273 "data/maps/Zone10A/scripts.pory"
+	msgbox Zone10A_EventScript_Pearlie_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
 Zone10A_EventScript_Susan::
-# 333 "data/maps/Zone10A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_SUSAN, Zone10A_Text_SusanIntro, Zone10A_Text_SusanDefeat
-# 334 "data/maps/Zone10A/scripts.pory"
-	msgbox Zone10A_Text_SusanPostBattle, MSGBOX_AUTOCLOSE
-# 335 "data/maps/Zone10A/scripts.pory"
+# 278 "data/maps/Zone10A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_SUSAN, Zone10A_EventScript_Susan_Text_0, Zone10A_EventScript_Susan_Text_1
+# 279 "data/maps/Zone10A/scripts.pory"
+	msgbox Zone10A_EventScript_Pearlie_Text_2, MSGBOX_AUTOCLOSE
 	end
-# 336 "data/maps/Zone10A/scripts.pory"
 
-# 337 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_SusanIntro:
-# 338 "data/maps/Zone10A/scripts.pory"
-	.string "ARGH! YOU STUPID, LITTLE… ARGH!$"
-# 339 "data/maps/Zone10A/scripts.pory"
 
-# 340 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_SusanDefeat:
-# 341 "data/maps/Zone10A/scripts.pory"
-	.string "UGH!$"
-# 342 "data/maps/Zone10A/scripts.pory"
-
-# 343 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_SusanPostBattle:
-# 344 "data/maps/Zone10A/scripts.pory"
-	.string "Crunch, crunch, crunch…\n"
-# 345 "data/maps/Zone10A/scripts.pory"
-	.string "…\p"
-# 346 "data/maps/Zone10A/scripts.pory"
-	.string "Sorry about earlier.\n"
-# 347 "data/maps/Zone10A/scripts.pory"
-	.string "I was feeling a little bit hangry.$"
-# 348 "data/maps/Zone10A/scripts.pory"
-
-# 349 "data/maps/Zone10A/scripts.pory"
 Zone10A_EventScript_Conrad::
-# 350 "data/maps/Zone10A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_CONRAD, Zone10A_Text_ConradIntro, Zone10A_Text_ConradDefeat
-# 351 "data/maps/Zone10A/scripts.pory"
-	msgbox Zone10A_Text_ConradPostBattle, MSGBOX_AUTOCLOSE
-# 352 "data/maps/Zone10A/scripts.pory"
+# 284 "data/maps/Zone10A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_CONRAD, Zone10A_EventScript_Conrad_Text_0, Zone10A_EventScript_Conrad_Text_1
+# 285 "data/maps/Zone10A/scripts.pory"
+	msgbox Zone10A_EventScript_Conrad_Text_2, MSGBOX_AUTOCLOSE
 	end
-# 353 "data/maps/Zone10A/scripts.pory"
 
-# 354 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_ConradIntro:
-# 355 "data/maps/Zone10A/scripts.pory"
-	.string "I'm looking for my date.\n"
-# 356 "data/maps/Zone10A/scripts.pory"
-	.string "Have you seen her?$"
-# 357 "data/maps/Zone10A/scripts.pory"
 
-# 358 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_ConradDefeat:
-# 359 "data/maps/Zone10A/scripts.pory"
-	.string "She probably thinks I stood her up…$"
-# 360 "data/maps/Zone10A/scripts.pory"
+Zone10A_EventScript_Brett::
+# 290 "data/maps/Zone10A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_BRETT, Zone10A_EventScript_Brett_Text_0, Zone10A_EventScript_Brett_Text_1
+# 291 "data/maps/Zone10A/scripts.pory"
+	msgbox Zone10A_EventScript_Brett_Text_2, MSGBOX_AUTOCLOSE
+	end
 
-# 361 "data/maps/Zone10A/scripts.pory"
-Zone10A_Text_ConradPostBattle:
-# 362 "data/maps/Zone10A/scripts.pory"
-	.string "Not a great first impression,\n"
-# 363 "data/maps/Zone10A/scripts.pory"
-	.string "if I'm being honest.$"
 
-Zone10A_EventScript_Ranger_Text_0:
+Zone10A_EventScript_ParasolLady_Text_0:
 # 226 "data/maps/Zone10A/scripts.pory"
 	.string "Excuse me! I'm a member of the Pokémon\n"
 	.string "Ranger Corps, working to protect both\l"
@@ -612,9 +433,142 @@ Zone10A_EventScript_Ranger_Text_0:
 	.string "sandstorm for long periods of time, so\l"
 	.string "take this!$"
 
-Zone10A_EventScript_Ranger_Text_1:
+Zone10A_EventScript_ParasolLady_Text_1:
 # 230 "data/maps/Zone10A/scripts.pory"
 	.string "Remember kids, safety first!$"
+
+Zone10A_EventScript_Alana_Text_0:
+# 236 "data/maps/Zone10A/scripts.pory"
+	.string "Pfft!$"
+
+Zone10A_EventScript_Alana_Text_1:
+# 236 "data/maps/Zone10A/scripts.pory"
+	.string "Sorry, I didn't mean to be rude!$"
+
+Zone10A_EventScript_Alana_Text_2:
+# 237 "data/maps/Zone10A/scripts.pory"
+	.string "Some sand flew into my mouth so I had\n"
+	.string "to get it out!$"
+
+Zone10A_EventScript_Jacob_Text_0:
+# 242 "data/maps/Zone10A/scripts.pory"
+	.string "Even with a sandstorm, birds can still\n"
+	.string "fly high!$"
+
+Zone10A_EventScript_Jacob_Text_1:
+# 242 "data/maps/Zone10A/scripts.pory"
+	.string "But sometimes it's better to land and\n"
+	.string "rest!$"
+
+Zone10A_EventScript_Jacob_Text_2:
+# 243 "data/maps/Zone10A/scripts.pory"
+	.string "I should really go take a rest at the\n"
+	.string "rest house.$"
+
+Zone10A_EventScript_Dewey_Text_0:
+# 248 "data/maps/Zone10A/scripts.pory"
+	.string "I think there's an entrance to some\n"
+	.string "ruins somewhere around here…$"
+
+Zone10A_EventScript_Dewey_Text_1:
+# 248 "data/maps/Zone10A/scripts.pory"
+	.string "No ruins in sight!$"
+
+Zone10A_EventScript_Dewey_Text_2:
+# 249 "data/maps/Zone10A/scripts.pory"
+	.string "My map says the ruins are to the north\n"
+	.string "somewhere…$"
+
+Zone10A_EventScript_Ernest_Text_0:
+# 254 "data/maps/Zone10A/scripts.pory"
+	.string "I came prepared for the wrath of the\n"
+	.string "desert!$"
+
+Zone10A_EventScript_Ernest_Text_1:
+# 254 "data/maps/Zone10A/scripts.pory"
+	.string "But I was not prepared for you!$"
+
+Zone10A_EventScript_Ernest_Text_2:
+# 255 "data/maps/Zone10A/scripts.pory"
+	.string "Preparations are important, be it for\n"
+	.string "hiking or battling!$"
+
+Zone10A_EventScript_Kyle_Text_0:
+# 260 "data/maps/Zone10A/scripts.pory"
+	.string "I daydream a lot. It's a bad habit!$"
+
+Zone10A_EventScript_Kyle_Text_1:
+# 260 "data/maps/Zone10A/scripts.pory"
+	.string "I dream of one day winning…$"
+
+Zone10A_EventScript_Kyle_Text_2:
+# 261 "data/maps/Zone10A/scripts.pory"
+	.string "I'll be a winner some day, just you wait!$"
+
+Zone10A_EventScript_Elias_Text_0:
+# 266 "data/maps/Zone10A/scripts.pory"
+	.string "Tell me, have you faced the power of\n"
+	.string "Dragons?$"
+
+Zone10A_EventScript_Elias_Text_1:
+# 266 "data/maps/Zone10A/scripts.pory"
+	.string "No! My Dragons!$"
+
+Zone10A_EventScript_Elias_Text_2:
+# 267 "data/maps/Zone10A/scripts.pory"
+	.string "I must train them further!$"
+
+Zone10A_EventScript_Pearlie_Text_0:
+# 272 "data/maps/Zone10A/scripts.pory"
+	.string "Backpacking together is safer!$"
+
+Zone10A_EventScript_Pearlie_Text_1:
+# 272 "data/maps/Zone10A/scripts.pory"
+	.string "At least I have Susan!$"
+
+Zone10A_EventScript_Pearlie_Text_2:
+# 273 "data/maps/Zone10A/scripts.pory"
+	.string "We really like backpacking together.$"
+
+Zone10A_EventScript_Susan_Text_0:
+# 278 "data/maps/Zone10A/scripts.pory"
+	.string "Backpacking together makes us\n"
+	.string "stronger!$"
+
+Zone10A_EventScript_Susan_Text_1:
+# 278 "data/maps/Zone10A/scripts.pory"
+	.string "At least I have Pearlie!$"
+
+Zone10A_EventScript_Conrad_Text_0:
+# 284 "data/maps/Zone10A/scripts.pory"
+	.string "Sand keeps getting in my lunch, so I'll\n"
+	.string "take out my frustration on you!$"
+
+Zone10A_EventScript_Conrad_Text_1:
+# 284 "data/maps/Zone10A/scripts.pory"
+	.string "Ugh! Now there's sand everywhere!$"
+
+Zone10A_EventScript_Conrad_Text_2:
+# 285 "data/maps/Zone10A/scripts.pory"
+	.string "I don't like sand.\n"
+	.string "It's coarse and rough and irritating\l"
+	.string "and it gets everywhere.$"
+
+Zone10A_EventScript_Brett_Text_0:
+# 290 "data/maps/Zone10A/scripts.pory"
+	.string "My friend told me I could find an oasis\n"
+	.string "in the desert, so I've come to fish!$"
+
+Zone10A_EventScript_Brett_Text_1:
+# 290 "data/maps/Zone10A/scripts.pory"
+	.string "Uh… I'm realizing now she didn't mean a\n"
+	.string "literal oasis.$"
+
+Zone10A_EventScript_Brett_Text_2:
+# 291 "data/maps/Zone10A/scripts.pory"
+	.string "There doesn't seem to be any water\n"
+	.string "anywhere…\p"
+	.string "My friend gave me bad advice!$"
 
 Zone10A_Text_NoChance::
 # 76 "data/maps/Zone10A/scripts.pory"
