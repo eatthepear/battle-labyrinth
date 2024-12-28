@@ -13,11 +13,13 @@ script Zone10Sanctuary_EventScript_Intro {
 	buffernumberstring(0, VAR_ZONE)
 	msgbox(gText_RewardClear, MSGBOX_DEFAULT)
 	msgbox(Zone10Sanctuary_Text_Reward, MSGBOX_DEFAULT)
-	giveitem(ITEM_MACHETE)
+	giveitem(ITEM_TERA_ORB)
+	setflag(FLAG_USED_TERA)
 	if (flag(FLAG_SETTINGS_INFINITE)) {
-		msgbox("You also get Yellow Shards!", MSGBOX_DEFAULT)
+		msgbox("Because you're playing on Infinite, you also get Yellow Shards!", MSGBOX_DEFAULT)
 		giveitem(ITEM_YELLOW_SHARD, 900)
 	}
+	msgbox(format("In battle, you can Terastilize your Pokémon now.\pPress {START_BUTTON} to Terastilize!\pAfter you use it, you'll have to go back to the Pokémon Center to recharge it."))
 	msgbox(gText_Colress_Upgraded, MSGBOX_DEFAULT)
 	playfanfare(MUS_OBTAIN_ITEM)
 	msgbox(gText_Colress_UpgradedServices, MSGBOX_DEFAULT)
@@ -36,7 +38,7 @@ script Zone10Sanctuary_EventScript_NextZone {
 	faceplayer
 	message(gText_Colress_Greetings)
 	waitmessage
-	dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
 	switch (var(VAR_RESULT)) {
 		case 0:
 			buffernumberstring(0, VAR_ZONE)
@@ -55,5 +57,5 @@ script Zone10Sanctuary_EventScript_NextZone {
 }
 
 text Zone10Sanctuary_Text_Reward {
-	format("The Machete!")
+	format("The Tera Orb!")
 }
