@@ -216,6 +216,7 @@
 #define MAPSEC_TRAINER_HILL                 0xD4
 #define MAPSEC_NONE                         0xD5
 
+#define METLOC_ZONE8A_GIFT                  0xF3
 #define METLOC_MARIE_EGG                    0xF4
 #define METLOC_GIVE_FWG                     0xF5
 #define METLOC_BOUGHT_RUIN                  0xF6
@@ -232,7 +233,5 @@
 #define KANTO_MAPSEC_START  MAPSEC_ZONE_0
 #define KANTO_MAPSEC_END    MAPSEC_SPECIAL_AREA
 #define KANTO_MAPSEC_COUNT (KANTO_MAPSEC_END - KANTO_MAPSEC_START + 1)
-
-#define GLOBAL_NUZLOCKE_SWITCH              0x100
 
 #endif //GUARD_REGIONMAPSEC_H
