@@ -11,6 +11,7 @@
 #define INGAME_TRADE_MEOWTH 3
 #define INGAME_TRADE_RATTATA_ALOLA 4
 #define INGAME_TRADE_ZIGZAGOON_GALAR 5
+#define INGAME_TRADE_DELIBIRD 6
 
 // Return values for CanTradeSelectedMon and CanSpinTradeMon
 #define CAN_TRADE_MON              0
