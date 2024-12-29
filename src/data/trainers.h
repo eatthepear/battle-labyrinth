@@ -7581,7 +7581,7 @@
         {
             {
 #line 3236
-            .species = SPECIES_VULLABY,
+            .species = SPECIES_RUFFLET,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3238
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -7592,7 +7592,7 @@
             },
             {
 #line 3240
-            .species = SPECIES_RUFFLET,
+            .species = SPECIES_SWABLU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3242
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -7603,7 +7603,7 @@
             },
             {
 #line 3244
-            .species = SPECIES_SWABLU,
+            .species = SPECIES_MURKROW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3246
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -7614,7 +7614,7 @@
             },
             {
 #line 3248
-            .species = SPECIES_MURKROW,
+            .species = SPECIES_DELIBIRD,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3250
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -8165,24 +8165,24 @@
             },
             {
 #line 3456
-            .species = SPECIES_WATCHOG,
+            .species = SPECIES_VULLABY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3456
-            .heldItem = ITEM_SAFETY_GOGGLES,
+            .heldItem = ITEM_BLACK_GLASSES,
 #line 3459
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 3457
-            .ability = ABILITY_NO_GUARD,
+            .ability = ABILITY_OVERCOAT,
 #line 3458
             .lvl = 21,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 3460
-                MOVE_SLAM,
-                MOVE_HYPNOSIS,
-                MOVE_COVET,
-                MOVE_POWER_UP_PUNCH,
+                MOVE_PLUCK,
+                MOVE_FEINT_ATTACK,
+                MOVE_ROOST,
+                MOVE_ROCK_TOMB,
             },
             },
             {
@@ -8301,24 +8301,24 @@
             },
             {
 #line 3511
-            .species = SPECIES_WATCHOG,
+            .species = SPECIES_VULLABY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3511
-            .heldItem = ITEM_SAFETY_GOGGLES,
+            .heldItem = ITEM_BLACK_GLASSES,
 #line 3514
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 3512
-            .ability = ABILITY_NO_GUARD,
+            .ability = ABILITY_OVERCOAT,
 #line 3513
             .lvl = 21,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 3515
-                MOVE_SLAM,
-                MOVE_HYPNOSIS,
-                MOVE_COVET,
-                MOVE_POWER_UP_PUNCH,
+                MOVE_PLUCK,
+                MOVE_FEINT_ATTACK,
+                MOVE_ROOST,
+                MOVE_ROCK_TOMB,
             },
             },
             {
