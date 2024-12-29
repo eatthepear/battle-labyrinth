@@ -3251,26 +3251,26 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_DEWEY ===
 Name: Dewey
-Class: Ruin Maniac
-Pic: Ruin Maniac
-Music: Hiker
+Class: Camper
+Pic: Camper
+Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Bronzor
+Joltik
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Golett
+Varoom
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Elgyem
+Trapinch
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Gimmighoul
+Toedscool
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 

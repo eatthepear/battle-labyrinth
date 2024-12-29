@@ -472,8 +472,8 @@ Zone10A_EventScript_Jacob_Text_2:
 
 Zone10A_EventScript_Dewey_Text_0:
 # 251 "data/maps/Zone10A/scripts.pory"
-	.string "I think there's an entrance to some\n"
-	.string "ruins somewhere around here…$"
+	.string "I'm looking to camp near some ruins!\n"
+	.string "There must be an entrance near!$"
 
 Zone10A_EventScript_Dewey_Text_1:
 # 251 "data/maps/Zone10A/scripts.pory"
@@ -482,7 +482,8 @@ Zone10A_EventScript_Dewey_Text_1:
 Zone10A_EventScript_Dewey_Text_2:
 # 252 "data/maps/Zone10A/scripts.pory"
 	.string "My map says the ruins are to the north\n"
-	.string "somewhere…$"
+	.string "somewhere… I'm not camping until I find\l"
+	.string "them!$"
 
 Zone10A_EventScript_Ernest_Text_0:
 # 257 "data/maps/Zone10A/scripts.pory"

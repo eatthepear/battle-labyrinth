@@ -248,8 +248,8 @@ script Zone10A_EventScript_Jacob {
 }
 
 script Zone10A_EventScript_Dewey {
-	trainerbattle_single(TRAINER_PBL_DEWEY, format("I think there's an entrance to some ruins somewhere around here…"), format("No ruins in sight!"))
-	msgbox(format("My map says the ruins are to the north somewhere…"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_DEWEY, format("I'm looking to camp near some ruins! There must be an entrance near!"), format("No ruins in sight!"))
+	msgbox(format("My map says the ruins are to the north somewhere… I'm not camping until I find them!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
