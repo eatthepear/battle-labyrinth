@@ -3910,6 +3910,9 @@ static void BufferMonTrainerMemo(void)
         {
             switch (sum->metLocation)
             {
+            case METLOC_IN_GAME_TRADE:
+                text = gText_XNatureObtainedInTrade;
+                break;
             case METLOC_FATEFUL_ENCOUNTER:
                 text = gText_XNatureMetSomewhereAt;
                 break;
