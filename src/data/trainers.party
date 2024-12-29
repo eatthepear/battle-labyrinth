@@ -3233,10 +3233,6 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Vullaby
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
 Rufflet
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
@@ -3246,6 +3242,10 @@ Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Murkrow
+Level: 21
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Delibird
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3453,14 +3453,14 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Knock Off
 - Rock Smash
 
-Watchog @ Safety Goggles
-Ability: No Guard
+Vullaby @ Black Glasses
+Ability: Overcoat
 Level: 21
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Slam
-- Hypnosis
-- Covet
-- Power-Up Punch
+- Pluck
+- Feint Attack
+- Roost
+- Rock Tomb
 
 Maractus @ Miracle Seed
 Ability: Sand Rush
@@ -3508,14 +3508,14 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Knock Off
 - Rock Smash
 
-Watchog @ Safety Goggles
-Ability: No Guard
+Vullaby @ Black Glasses
+Ability: Overcoat
 Level: 21
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Slam
-- Hypnosis
-- Covet
-- Power-Up Punch
+- Pluck
+- Feint Attack
+- Roost
+- Rock Tomb
 
 Maractus @ Miracle Seed
 Ability: Sand Rush
