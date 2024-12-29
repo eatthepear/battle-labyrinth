@@ -58,8 +58,6 @@
 #define VAR_STARTER_MON                      0x4028 // 0=Grass, 1=Fire, 2=Water
 #define VAR_NUM_TRAINERS_REMAINING           0x4029
 #define VAR_DEXNAV_SPECIES                   0x402A // Registered dexnav species
-#define VAR_MARIE_TIER_1                     0x402B
-#define VAR_MARIE_TIER_2                     0x402C
 
 // Tracker Vars (Don't manually set)
 #define VAR_REPEL_STEP_COUNT                 0x4040

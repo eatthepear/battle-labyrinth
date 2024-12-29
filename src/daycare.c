@@ -1078,7 +1078,6 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setHotSpringsLocation)
     u8 metLevel;
     enum PokeBall ball;
     u8 language;
-    u8 metLocation;
     u8 isEgg;
 
     CreateMon(mon, species, EGG_HATCH_LEVEL, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
@@ -1090,11 +1089,6 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setHotSpringsLocation)
     SetMonData(mon, MON_DATA_FRIENDSHIP, &gSpeciesInfo[species].eggCycles);
     SetMonData(mon, MON_DATA_MET_LEVEL, &metLevel);
     SetMonData(mon, MON_DATA_LANGUAGE, &language);
-    if (setHotSpringsLocation)
-    {
-        metLocation = METLOC_SPECIAL_EGG;
-        SetMonData(mon, MON_DATA_MET_LOCATION, &metLocation);
-    }
 
     isEgg = TRUE;
     SetMonData(mon, MON_DATA_IS_EGG, &isEgg);
@@ -1161,7 +1155,7 @@ static bool8 TryProduceOrHatchEgg(struct DayCare *daycare)
             if (GetMonData(&gPlayerParty[i], MON_DATA_SANITY_IS_BAD_EGG))
                 continue;
 
-            eggCycles = GetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP);
+            eggCycles = 0;
             if (eggCycles != 0)
             {
                 if (eggCycles >= toSub)

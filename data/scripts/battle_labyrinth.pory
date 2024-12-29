@@ -676,6 +676,7 @@ script EventScript_Shop_Marie {
 		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Hi. My name is Marie, and welcome to my shop.\p"
 				"You're probably wondering what this shop is even for.\p"
 				"Let me explain: lots of trainers leave extra eggs at the Daycare.\p"
+				"Some trainers mix up which egg has which species of Pokémon.\p"
 				"It's my job to help match these eggs with the right trainer.\p"
 				"Maybe you'll be able to make your next friend here!"), MSGBOX_DEFAULT)
 		setflag(FLAG_MARIE_INTRO)
@@ -688,7 +689,7 @@ script EventScript_Shop_Marie {
 script EventScript_Shop_Marie_MainMenu {
 	message(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Hi. Are you ready to meet your next friend?"))
 	waitmessage
-	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Available Eggs", "Info", "Exit")
+	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Eggs", "Info", "Exit")
 	switch(var(VAR_RESULT)) {
 		case 0:
 			if (flag(FLAG_SETTINGS_NUZLOCKE) && flag(FLAG_MARIE_NUZLOCKE_RECEIVED))
@@ -697,30 +698,64 @@ script EventScript_Shop_Marie_MainMenu {
 				return
 			}
 			if (var(VAR_ZONE) <= 5) {
-				msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: I actually don't have any eggs at the moment.\pCome back again another time!"), MSGBOX_DEFAULT)
+				msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: I actually don't have any Eggs at the moment.\pCome back again another time!"), MSGBOX_DEFAULT)
 				return
 			}
-			message(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Which tier would you like?"))
+			message(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Which type of Egg would you like?"))
 			waitmessage
 			if (var(VAR_ZONE) > 5) {
-				dynmultipush("Tier 1 - ¥1000", 0)
+				dynmultipush("Elemental Monkey - ¥1000", 0)
 			}
-			dynmultipush("Back", 9)
+			if (var(VAR_ZONE) > 10) {
+				dynmultipush("Baby Pokémon 1 - ¥3000", 1)
+			}
+			if (var(VAR_ZONE) > 25) {
+				dynmultipush("Baby Pokémon 2 - ¥10000", 2)
+			}
+			if (var(VAR_ZONE) > 30) {
+				dynmultipush("Kanto Starter - ¥10000", 3)
+				dynmultipush("Johto Starter - ¥10000", 4)
+				dynmultipush("Hoenn Starter - ¥10000", 5)
+				dynmultipush("Sinnoh Starter - ¥10000", 6)
+				dynmultipush("Unova Starter - ¥10000", 7)
+				dynmultipush("Kalos Starter - ¥10000", 8)
+				dynmultipush("Alola Starter - ¥10000", 9)
+				dynmultipush("Galar Starter - ¥10000", 10)
+				dynmultipush("Paldea Starter - ¥10000", 11)
+			}
+			dynmultipush("Back", 13)
 			dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 			switch (var(VAR_RESULT)) {
 				case 0:
-					showmoneybox(0, 0, 0)
-					msgbox(format("For an egg in Tier 1, that will be ¥1000."), MSGBOX_YESNO)
+					showmoneybox(0, 0)
+					msgbox(format("An egg that contains Pansage, Pansear, or Panpour will cost ¥1000."), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
-						call(EventScript_Shop_Marie_Tier1Egg)
+						call(EventScript_Shop_Marie_ElementalMonkeyEgg)
 					}
+					hidemoneybox
 					return
-				case 9:
+				case 1:
+					showmoneybox(0, 0)
+					msgbox(format("An egg that contains Smoochum, Elekid, or Magby will cost ¥3000."), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						call(EventScript_Shop_Marie_BabyPokemon1Egg)
+					}
+					hidemoneybox
+					return
+				case 2:
+					showmoneybox(0, 0)
+					msgbox(format("An egg that contains Happiny, Togepi, Munchlax, or Riolu will cost ¥10000."), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						call(EventScript_Shop_Marie_BabyPokemon2Egg)
+					}
+					hidemoneybox
+					return
+				case 13:
 				case MULTI_B_PRESSED:
 					call(EventScript_Shop_Marie_MainMenu)
 			}
 		case 1:
-			msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Here at Marie's Egg Delivery Service, we pair trainers with Pokémon Eggs.\pYou can choose from a series of tiers, each one being more expensive but having more rare Pokémon available.\pYou won't know what Pokémon you have until it hatches, but we do our best to make sure repeat customers don't end up with the same Pokémon twice."), MSGBOX_DEFAULT)
+			msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Here at Marie's Egg Delivery Service, we pair trainers with mixed up Pokémon Eggs.\pEach set of eggs contains a limited number of possible species of Pokémon.\pYou'll know the possibilities of what the egg will hatch into, but you won't know what Pokémon you have until it hatches."), MSGBOX_DEFAULT)
 			if (flag(FLAG_SETTINGS_NUZLOCKE)) {
 				msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: On Nuzlocke mode, you can only obtain one Egg in total."), MSGBOX_DEFAULT)
 			}
@@ -728,7 +763,7 @@ script EventScript_Shop_Marie_MainMenu {
 	}
 }
 
-script EventScript_Shop_Marie_Tier1Egg {
+script EventScript_Shop_Marie_ElementalMonkeyEgg {
 	checkmoney(1000, 0)
 	if (var(VAR_RESULT) == FALSE) {
 		msgbox("{COLOR BLUE}Marie{COLOR DARK_GRAY}: You don't have enough money.")
@@ -767,58 +802,130 @@ script EventScript_Shop_Marie_Tier1Egg {
 	updatemoneybox
 	msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Thank you very much…"), MSGBOX_DEFAULT)
 	hidemoneybox
-	if (var(VAR_MARIE_TIER_1) == 0 || var(VAR_MARIE_TIER_1) > 20) {
-		random(20)
-		copyvar(VAR_MARIE_TIER_1, VAR_RESULT)
-		addvar(VAR_MARIE_TIER_1, 1)
-	} else {
-		if (var(VAR_MARIE_TIER_1) == 0) {
-			setvar(VAR_MARIE_TIER_1, 20)
-		} else {
-			subvar(VAR_MARIE_TIER_1, 1)
+	random(3)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_1, SPECIES_PANSAGE)
+		case 1:
+			setvar(VAR_TEMP_1, SPECIES_PANSEAR)
+		case 2:
+			setvar(VAR_TEMP_1, SPECIES_PANPOUR)
+	}
+	giveegg(VAR_TEMP_1)
+	setmonmetlocation(VAR_TEMP_2, 244)
+	msgbox("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Here's your Egg.", MSGBOX_DEFAULT)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(format("{PLAYER} received the Egg!"))
+	waitmessage
+	waitfanfare
+}
+
+script EventScript_Shop_Marie_BabyPokemon1Egg {
+	checkmoney(3000, 0)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox("{COLOR BLUE}Marie{COLOR DARK_GRAY}: You don't have enough money.")
+		hidemoneybox
+		return
+	}
+	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
+		hidemoneybox
+		special(ChoosePartyMon)
+		waitstate
+		faceplayer
+		showmoneybox(0, 0, 0)
+		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+			hidemoneybox
+			return
+		}
+		specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
+		bufferspeciesname(2, VAR_TEMP_3)
+		copyvar(VAR_TEMP_3, VAR_0x8004) // used in SendChosenMonToPC
+		msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			return
 		}
 	}
-	switch (var(VAR_MARIE_TIER_1)) {
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+		setflag(FLAG_MARIE_NUZLOCKE_RECEIVED)
+	}
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		special(SendChosenMonToPC)
+		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
+	}
+	removemoney(3000)
+	updatemoneybox
+	msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Thank you very much…"), MSGBOX_DEFAULT)
+	hidemoneybox
+	random(3)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_1, SPECIES_SMOOCHUM)
 		case 1:
-			setvar(VAR_TEMP_1, SPECIES_BURMY)
+			setvar(VAR_TEMP_1, SPECIES_ELEKID)
 		case 2:
-			setvar(VAR_TEMP_1, SPECIES_BLIPBUG)
+			setvar(VAR_TEMP_1, SPECIES_MAGBY)
+	}
+	giveegg(VAR_TEMP_1)
+	setmonmetlocation(VAR_TEMP_2, 244)
+	msgbox("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Here's your Egg.", MSGBOX_DEFAULT)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(format("{PLAYER} received the Egg!"))
+	waitmessage
+	waitfanfare
+}
+
+script EventScript_Shop_Marie_BabyPokemon2Egg {
+	checkmoney(10000, 0)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox("{COLOR BLUE}Marie{COLOR DARK_GRAY}: You don't have enough money.")
+		hidemoneybox
+		return
+	}
+	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
+		hidemoneybox
+		special(ChoosePartyMon)
+		waitstate
+		faceplayer
+		showmoneybox(0, 0, 0)
+		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+			hidemoneybox
+			return
+		}
+		specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
+		bufferspeciesname(2, VAR_TEMP_3)
+		copyvar(VAR_TEMP_3, VAR_0x8004) // used in SendChosenMonToPC
+		msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			return
+		}
+	}
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+		setflag(FLAG_MARIE_NUZLOCKE_RECEIVED)
+	}
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		special(SendChosenMonToPC)
+		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
+	}
+	removemoney(10000)
+	updatemoneybox
+	msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Thank you very much…"), MSGBOX_DEFAULT)
+	hidemoneybox
+	random(4)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_1, SPECIES_HAPPINY)
+		case 1:
+			setvar(VAR_TEMP_1, SPECIES_TOGEPI)
+		case 2:
+			setvar(VAR_TEMP_1, SPECIES_MUNCHLAX)
 		case 3:
-			setvar(VAR_TEMP_1, SPECIES_SCATTERBUG)
-		case 4:
-			setvar(VAR_TEMP_1, SPECIES_COMBEE)
-		case 5:
-			setvar(VAR_TEMP_1, SPECIES_WURMPLE)
-		case 6:
-			setvar(VAR_TEMP_1, SPECIES_PANSAGE)
-		case 7:
-			setvar(VAR_TEMP_1, SPECIES_CACNEA)
-		case 8:
-			setvar(VAR_TEMP_1, SPECIES_SUNKERN)
-		case 9:
-			setvar(VAR_TEMP_1, SPECIES_SMOLIV)
-		case 10:
-			setvar(VAR_TEMP_1, SPECIES_BOUNSWEET)
-		case 11:
-			setvar(VAR_TEMP_1, SPECIES_PANSEAR)
-		case 12:
-			setvar(VAR_TEMP_1, SPECIES_SLUGMA)
-		case 13:
-			setvar(VAR_TEMP_1, SPECIES_SALANDIT)
-		case 14:
-			setvar(VAR_TEMP_1, SPECIES_VULPIX)
-		case 15:
-			setvar(VAR_TEMP_1, SPECIES_SIZZLIPEDE)
-		case 16:
-			setvar(VAR_TEMP_1, SPECIES_PANPOUR)
-		case 17:
-			setvar(VAR_TEMP_1, SPECIES_BARBOACH)
-		case 18:
-			setvar(VAR_TEMP_1, SPECIES_FINNEON)
-		case 19:
-			setvar(VAR_TEMP_1, SPECIES_SEEL)
-		case 20:
-			setvar(VAR_TEMP_1, SPECIES_GOLDEEN)
+			setvar(VAR_TEMP_1, SPECIES_RIOLU)
 	}
 	giveegg(VAR_TEMP_1)
 	setmonmetlocation(VAR_TEMP_2, 244)

@@ -318,6 +318,7 @@ static void CreateHatchedMon(struct Pokemon *egg, struct Pokemon *temp)
     u8 i, friendship, language, gameMet, markings, isModernFatefulEncounter;
     u16 moves[MAX_MON_MOVES];
     u32 ivs[NUM_STATS];
+    u32 metLocation = GetMonData(egg, MON_DATA_MET_LOCATION);
 
     species = GetMonData(egg, MON_DATA_SPECIES);
 
@@ -355,6 +356,7 @@ static void CreateHatchedMon(struct Pokemon *egg, struct Pokemon *temp)
     SetMonData(temp, MON_DATA_POKERUS, &pokerus);
     SetMonData(temp, MON_DATA_MODERN_FATEFUL_ENCOUNTER, &isModernFatefulEncounter);
     SetMonData(temp, MON_DATA_POKEBALL, &ball);
+    SetMonData(temp, MON_DATA_MET_LOCATION, &metLocation);
 
     *egg = *temp;
 }
@@ -365,7 +367,6 @@ static void AddHatchedMonToParty(u8 id)
     u16 species;
     u8 name[POKEMON_NAME_LENGTH + 1];
     u16 metLevel;
-    u8 metLocation;
     struct Pokemon *mon = &gPlayerParty[id];
 
     CreateHatchedMon(mon, &gEnemyParty[0]);
@@ -384,9 +385,6 @@ static void AddHatchedMonToParty(u8 id)
     // A met level of 0 is interpreted on the summary screen as "hatched at"
     metLevel = 0;
     SetMonData(mon, MON_DATA_MET_LEVEL, &metLevel);
-
-    metLocation = GetCurrentRegionMapSectionId();
-    SetMonData(mon, MON_DATA_MET_LOCATION, &metLocation);
 
     MonRestorePP(mon);
     CalculateMonStats(mon);
