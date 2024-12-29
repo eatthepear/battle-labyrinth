@@ -7631,12 +7631,12 @@
 #line 3253
         .trainerName = _("Dewey"),
 #line 3254
-        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
+        .trainerClass = TRAINER_CLASS_CAMPER,
 #line 3255
-        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
+        .trainerPic = TRAINER_PIC_CAMPER,
         .encounterMusic_gender =
 #line 3256
-            TRAINER_ENCOUNTER_MUSIC_HIKER,
+            TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 3258
         .doubleBattle = FALSE,
 #line 3257
@@ -7648,7 +7648,7 @@
         {
             {
 #line 3261
-            .species = SPECIES_BRONZOR,
+            .species = SPECIES_JOLTIK,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3263
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -7659,7 +7659,7 @@
             },
             {
 #line 3265
-            .species = SPECIES_GOLETT,
+            .species = SPECIES_VAROOM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3267
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -7670,7 +7670,7 @@
             },
             {
 #line 3269
-            .species = SPECIES_ELGYEM,
+            .species = SPECIES_TRAPINCH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3271
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -7681,7 +7681,7 @@
             },
             {
 #line 3273
-            .species = SPECIES_GIMMIGHOUL,
+            .species = SPECIES_TOEDSCOOL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3275
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
