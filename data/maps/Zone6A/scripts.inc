@@ -318,371 +318,452 @@ Zone6A_EventScript_Zack::
 	end
 
 
-Zone6A_EventScript_ItemNetBall::
+Zone6A_EventScript_TradeDelibird::
 # 170 "data/maps/Zone6A/scripts.pory"
 	lock
 # 171 "data/maps/Zone6A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE6A_NET_BALL, Zone6A_EventScript_ItemNetBall_2
-# 176 "data/maps/Zone6A/scripts.pory"
-	waitse
+	goto_if_set FLAG_ZONE6A_TRADED_DELIBIRD, Zone6A_EventScript_TradeDelibird_2
 # 177 "data/maps/Zone6A/scripts.pory"
-	removeobject VAR_LAST_TALKED
+	msgbox Zone6A_EventScript_TradeDelibird_Text_1
 # 178 "data/maps/Zone6A/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
+	applymovement 18, Common_Movement_ExclamationMark
 # 179 "data/maps/Zone6A/scripts.pory"
-	setflag FLAG_ITEM_ZONE6A_NET_BALL
+	playse SE_PIN
 # 180 "data/maps/Zone6A/scripts.pory"
-	addobject VAR_LAST_TALKED
+	waitmovement 0
 # 181 "data/maps/Zone6A/scripts.pory"
-	finditem ITEM_NET_BALL, 1
+	waitse
 # 182 "data/maps/Zone6A/scripts.pory"
+	faceplayer
+# 183 "data/maps/Zone6A/scripts.pory"
+	setvar VAR_0x8008, INGAME_TRADE_DELIBIRD
+# 184 "data/maps/Zone6A/scripts.pory"
+	copyvar VAR_0x8004, VAR_0x8008
+# 185 "data/maps/Zone6A/scripts.pory"
+	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
+# 186 "data/maps/Zone6A/scripts.pory"
+	copyvar VAR_0x8009, VAR_RESULT
+# 187 "data/maps/Zone6A/scripts.pory"
+	msgbox Zone6A_EventScript_TradeDelibird_Text_2, MSGBOX_YESNO
+# 188 "data/maps/Zone6A/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq Zone6A_EventScript_TradeDelibird_5
+# 193 "data/maps/Zone6A/scripts.pory"
+	special ChoosePartyMon
+# 194 "data/maps/Zone6A/scripts.pory"
+	waitstate
+# 195 "data/maps/Zone6A/scripts.pory"
+	copyvar VAR_0x800A, VAR_0x8004
+# 196 "data/maps/Zone6A/scripts.pory"
+	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
+	goto_if_eq Zone6A_EventScript_TradeDelibird_8
+# 201 "data/maps/Zone6A/scripts.pory"
+	copyvar VAR_0x8004, VAR_0x8008
+# 202 "data/maps/Zone6A/scripts.pory"
+	copyvar VAR_0x8005, VAR_0x800A
+# 203 "data/maps/Zone6A/scripts.pory"
+	special CreateInGameTradePokemon
+# 204 "data/maps/Zone6A/scripts.pory"
+	special DoInGameTradeScene
+# 205 "data/maps/Zone6A/scripts.pory"
+	waitstate
+# 206 "data/maps/Zone6A/scripts.pory"
+	msgbox Zone6A_EventScript_TradeDelibird_Text_4, MSGBOX_DEFAULT
+# 207 "data/maps/Zone6A/scripts.pory"
+	setflag FLAG_ZONE6A_TRADED_DELIBIRD
+# 208 "data/maps/Zone6A/scripts.pory"
+	release
+	end
+
+Zone6A_EventScript_TradeDelibird_2:
+# 172 "data/maps/Zone6A/scripts.pory"
+	faceplayer
+# 173 "data/maps/Zone6A/scripts.pory"
+	msgbox Zone6A_EventScript_TradeDelibird_Text_0
+# 174 "data/maps/Zone6A/scripts.pory"
+	release
+	end
+
+Zone6A_EventScript_TradeDelibird_5:
+# 189 "data/maps/Zone6A/scripts.pory"
+	msgbox Zone6A_EventScript_TradeDelibird_Text_3, MSGBOX_DEFAULT
+# 190 "data/maps/Zone6A/scripts.pory"
+	release
+	end
+
+Zone6A_EventScript_TradeDelibird_8:
+# 197 "data/maps/Zone6A/scripts.pory"
+	msgbox Zone6A_EventScript_TradeDelibird_Text_3, MSGBOX_DEFAULT
+# 198 "data/maps/Zone6A/scripts.pory"
+	release
+	end
+
+
+Zone6A_EventScript_ItemNetBall::
+# 213 "data/maps/Zone6A/scripts.pory"
+	lock
+# 214 "data/maps/Zone6A/scripts.pory"
+	goto_if_set FLAG_ITEM_ZONE6A_NET_BALL, Zone6A_EventScript_ItemNetBall_2
+# 219 "data/maps/Zone6A/scripts.pory"
+	waitse
+# 220 "data/maps/Zone6A/scripts.pory"
+	removeobject VAR_LAST_TALKED
+# 221 "data/maps/Zone6A/scripts.pory"
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
+# 222 "data/maps/Zone6A/scripts.pory"
+	setflag FLAG_ITEM_ZONE6A_NET_BALL
+# 223 "data/maps/Zone6A/scripts.pory"
+	addobject VAR_LAST_TALKED
+# 224 "data/maps/Zone6A/scripts.pory"
+	finditem ITEM_NET_BALL, 1
+# 225 "data/maps/Zone6A/scripts.pory"
 	release
 	end
 
 Zone6A_EventScript_ItemNetBall_2:
-# 172 "data/maps/Zone6A/scripts.pory"
+# 215 "data/maps/Zone6A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 173 "data/maps/Zone6A/scripts.pory"
+# 216 "data/maps/Zone6A/scripts.pory"
 	release
 	end
 
 
 Zone6A_EventScript_ItemGems::
-# 187 "data/maps/Zone6A/scripts.pory"
+# 230 "data/maps/Zone6A/scripts.pory"
 	lock
-# 188 "data/maps/Zone6A/scripts.pory"
+# 231 "data/maps/Zone6A/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE6A_GEMS, Zone6A_EventScript_ItemGems_2
-# 193 "data/maps/Zone6A/scripts.pory"
+# 236 "data/maps/Zone6A/scripts.pory"
 	waitse
-# 194 "data/maps/Zone6A/scripts.pory"
+# 237 "data/maps/Zone6A/scripts.pory"
 	removeobject VAR_LAST_TALKED
-# 195 "data/maps/Zone6A/scripts.pory"
+# 238 "data/maps/Zone6A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 196 "data/maps/Zone6A/scripts.pory"
+# 239 "data/maps/Zone6A/scripts.pory"
 	setflag FLAG_ITEM_ZONE6A_GEMS
-# 197 "data/maps/Zone6A/scripts.pory"
+# 240 "data/maps/Zone6A/scripts.pory"
 	addobject VAR_LAST_TALKED
-# 198 "data/maps/Zone6A/scripts.pory"
+# 241 "data/maps/Zone6A/scripts.pory"
 	finditem ITEM_WATER_GEM
-# 199 "data/maps/Zone6A/scripts.pory"
+# 242 "data/maps/Zone6A/scripts.pory"
 	finditem ITEM_FLYING_GEM
-# 200 "data/maps/Zone6A/scripts.pory"
+# 243 "data/maps/Zone6A/scripts.pory"
 	finditem ITEM_ICE_GEM
-# 201 "data/maps/Zone6A/scripts.pory"
+# 244 "data/maps/Zone6A/scripts.pory"
 	release
 	end
 
 Zone6A_EventScript_ItemGems_2:
-# 189 "data/maps/Zone6A/scripts.pory"
+# 232 "data/maps/Zone6A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 190 "data/maps/Zone6A/scripts.pory"
+# 233 "data/maps/Zone6A/scripts.pory"
 	release
 	end
 
 
 Zone6A_EventScript_ItemNestBall::
-# 206 "data/maps/Zone6A/scripts.pory"
+# 249 "data/maps/Zone6A/scripts.pory"
 	lock
-# 207 "data/maps/Zone6A/scripts.pory"
+# 250 "data/maps/Zone6A/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE6A_NEST_BALL, Zone6A_EventScript_ItemNestBall_2
-# 212 "data/maps/Zone6A/scripts.pory"
+# 255 "data/maps/Zone6A/scripts.pory"
 	waitse
-# 213 "data/maps/Zone6A/scripts.pory"
+# 256 "data/maps/Zone6A/scripts.pory"
 	removeobject VAR_LAST_TALKED
-# 214 "data/maps/Zone6A/scripts.pory"
+# 257 "data/maps/Zone6A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 215 "data/maps/Zone6A/scripts.pory"
+# 258 "data/maps/Zone6A/scripts.pory"
 	setflag FLAG_ITEM_ZONE6A_NEST_BALL
-# 216 "data/maps/Zone6A/scripts.pory"
+# 259 "data/maps/Zone6A/scripts.pory"
 	addobject VAR_LAST_TALKED
-# 217 "data/maps/Zone6A/scripts.pory"
+# 260 "data/maps/Zone6A/scripts.pory"
 	finditem ITEM_NEST_BALL, 1
-# 218 "data/maps/Zone6A/scripts.pory"
+# 261 "data/maps/Zone6A/scripts.pory"
 	release
 	end
 
 Zone6A_EventScript_ItemNestBall_2:
-# 208 "data/maps/Zone6A/scripts.pory"
+# 251 "data/maps/Zone6A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 209 "data/maps/Zone6A/scripts.pory"
+# 252 "data/maps/Zone6A/scripts.pory"
 	release
 	end
 
 
 Zone6A_EventScript_ItemTMDrainingKiss::
-# 223 "data/maps/Zone6A/scripts.pory"
+# 266 "data/maps/Zone6A/scripts.pory"
 	lock
-# 224 "data/maps/Zone6A/scripts.pory"
+# 267 "data/maps/Zone6A/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE6A_TM_DRAINING_KISS, Zone6A_EventScript_ItemTMDrainingKiss_2
-# 229 "data/maps/Zone6A/scripts.pory"
+# 272 "data/maps/Zone6A/scripts.pory"
 	waitse
-# 230 "data/maps/Zone6A/scripts.pory"
+# 273 "data/maps/Zone6A/scripts.pory"
 	removeobject VAR_LAST_TALKED
-# 231 "data/maps/Zone6A/scripts.pory"
+# 274 "data/maps/Zone6A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_TM_CHEST_OPEN
-# 232 "data/maps/Zone6A/scripts.pory"
+# 275 "data/maps/Zone6A/scripts.pory"
 	setflag FLAG_ITEM_ZONE6A_TM_DRAINING_KISS
-# 233 "data/maps/Zone6A/scripts.pory"
+# 276 "data/maps/Zone6A/scripts.pory"
 	addobject VAR_LAST_TALKED
-# 234 "data/maps/Zone6A/scripts.pory"
+# 277 "data/maps/Zone6A/scripts.pory"
 	finditem ITEM_TM_DRAINING_KISS
-# 235 "data/maps/Zone6A/scripts.pory"
+# 278 "data/maps/Zone6A/scripts.pory"
 	release
 	end
 
 Zone6A_EventScript_ItemTMDrainingKiss_2:
-# 225 "data/maps/Zone6A/scripts.pory"
+# 268 "data/maps/Zone6A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 226 "data/maps/Zone6A/scripts.pory"
+# 269 "data/maps/Zone6A/scripts.pory"
 	release
 	end
 
 
-# 239 "data/maps/Zone6A/scripts.pory"
-
-# 240 "data/maps/Zone6A/scripts.pory"
-
-# 241 "data/maps/Zone6A/scripts.pory"
-Zone6A_EventScript_Gilbert::
-# 242 "data/maps/Zone6A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_GILBERT, Zone6A_Text_GilbertIntro, Zone6A_Text_GilbertDefeat
-# 243 "data/maps/Zone6A/scripts.pory"
-	msgbox Zone6A_Text_GilbertPostBattle, MSGBOX_AUTOCLOSE
-# 244 "data/maps/Zone6A/scripts.pory"
-	end
-# 245 "data/maps/Zone6A/scripts.pory"
-
-# 246 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_GilbertIntro:
-# 247 "data/maps/Zone6A/scripts.pory"
-	.string "You made me miss my catch!$"
-# 248 "data/maps/Zone6A/scripts.pory"
-
-# 249 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_GilbertDefeat:
-# 250 "data/maps/Zone6A/scripts.pory"
-	.string "Argh, there was no catch!\n"
-# 251 "data/maps/Zone6A/scripts.pory"
-	.string "I'm just frustrated!$"
-# 252 "data/maps/Zone6A/scripts.pory"
-
-# 253 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_GilbertPostBattle:
-# 254 "data/maps/Zone6A/scripts.pory"
-	.string "Sorry for taking out my fishing\n"
-# 255 "data/maps/Zone6A/scripts.pory"
-	.string "frustration out on you.$"
-# 256 "data/maps/Zone6A/scripts.pory"
-
-# 257 "data/maps/Zone6A/scripts.pory"
-Zone6A_EventScript_Melanie::
-# 258 "data/maps/Zone6A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_MELANIE, Zone6A_Text_MelanieIntro, Zone6A_Text_MelanieDefeat
-# 259 "data/maps/Zone6A/scripts.pory"
-	msgbox Zone6A_Text_MelaniePostBattle, MSGBOX_AUTOCLOSE
-# 260 "data/maps/Zone6A/scripts.pory"
-	end
-# 261 "data/maps/Zone6A/scripts.pory"
-
-# 262 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_MelanieIntro:
-# 263 "data/maps/Zone6A/scripts.pory"
-	.string "Hey, have you ever ridden a horse\n"
-# 264 "data/maps/Zone6A/scripts.pory"
-	.string "before?$"
-# 265 "data/maps/Zone6A/scripts.pory"
-
-# 266 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_MelanieDefeat:
-# 267 "data/maps/Zone6A/scripts.pory"
-	.string "You should try horseback riding\n"
-# 268 "data/maps/Zone6A/scripts.pory"
-	.string "sometime!$"
-# 269 "data/maps/Zone6A/scripts.pory"
-
-# 270 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_MelaniePostBattle:
-# 271 "data/maps/Zone6A/scripts.pory"
-	.string "Now that I think about it,\n"
-# 272 "data/maps/Zone6A/scripts.pory"
-	.string "what even is a horse?\p"
-# 273 "data/maps/Zone6A/scripts.pory"
-	.string "I mean, we call them horse Pokémon,\n"
-# 274 "data/maps/Zone6A/scripts.pory"
-	.string "but like, what is a horse?$"
-# 275 "data/maps/Zone6A/scripts.pory"
-
-# 276 "data/maps/Zone6A/scripts.pory"
-Zone6A_EventScript_Constance::
-# 277 "data/maps/Zone6A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_CONSTANCE, Zone6A_Text_ConstanceIntro, Zone6A_Text_ConstanceDefeat
-# 278 "data/maps/Zone6A/scripts.pory"
-	msgbox Zone6A_Text_ConstancePostBattle, MSGBOX_AUTOCLOSE
-# 279 "data/maps/Zone6A/scripts.pory"
-	end
-# 280 "data/maps/Zone6A/scripts.pory"
-
-# 281 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_ConstanceIntro:
 # 282 "data/maps/Zone6A/scripts.pory"
-	.string "Want to join my picnic?$"
+
 # 283 "data/maps/Zone6A/scripts.pory"
 
 # 284 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_ConstanceDefeat:
+Zone6A_EventScript_Gilbert::
 # 285 "data/maps/Zone6A/scripts.pory"
-	.string "Oops, I forgot to pack food!$"
+	trainerbattle_single TRAINER_PBL_GILBERT, Zone6A_Text_GilbertIntro, Zone6A_Text_GilbertDefeat
 # 286 "data/maps/Zone6A/scripts.pory"
-
+	msgbox Zone6A_Text_GilbertPostBattle, MSGBOX_AUTOCLOSE
 # 287 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_ConstancePostBattle:
-# 288 "data/maps/Zone6A/scripts.pory"
-	.string "I can look for some Berries or\n"
-# 289 "data/maps/Zone6A/scripts.pory"
-	.string "something…$"
-# 290 "data/maps/Zone6A/scripts.pory"
-
-# 291 "data/maps/Zone6A/scripts.pory"
-Zone6A_EventScript_Frank::
-# 292 "data/maps/Zone6A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_FRANK, Zone6A_Text_FrankIntro, Zone6A_Text_FrankDefeat
-# 293 "data/maps/Zone6A/scripts.pory"
-	msgbox Zone6A_Text_FrankPostBattle, MSGBOX_AUTOCLOSE
-# 294 "data/maps/Zone6A/scripts.pory"
 	end
+# 288 "data/maps/Zone6A/scripts.pory"
+
+# 289 "data/maps/Zone6A/scripts.pory"
+Zone6A_Text_GilbertIntro:
+# 290 "data/maps/Zone6A/scripts.pory"
+	.string "You made me miss my catch!$"
+# 291 "data/maps/Zone6A/scripts.pory"
+
+# 292 "data/maps/Zone6A/scripts.pory"
+Zone6A_Text_GilbertDefeat:
+# 293 "data/maps/Zone6A/scripts.pory"
+	.string "Argh, there was no catch!\n"
+# 294 "data/maps/Zone6A/scripts.pory"
+	.string "I'm just frustrated!$"
 # 295 "data/maps/Zone6A/scripts.pory"
 
 # 296 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_FrankIntro:
+Zone6A_Text_GilbertPostBattle:
 # 297 "data/maps/Zone6A/scripts.pory"
-	.string "The beach is full of surprises!$"
+	.string "Sorry for taking out my fishing\n"
 # 298 "data/maps/Zone6A/scripts.pory"
-
+	.string "frustration out on you.$"
 # 299 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_FrankDefeat:
-# 300 "data/maps/Zone6A/scripts.pory"
-	.string "This time, I was surprised by you!$"
-# 301 "data/maps/Zone6A/scripts.pory"
 
+# 300 "data/maps/Zone6A/scripts.pory"
+Zone6A_EventScript_Melanie::
+# 301 "data/maps/Zone6A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_MELANIE, Zone6A_Text_MelanieIntro, Zone6A_Text_MelanieDefeat
 # 302 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_FrankPostBattle:
+	msgbox Zone6A_Text_MelaniePostBattle, MSGBOX_AUTOCLOSE
 # 303 "data/maps/Zone6A/scripts.pory"
-	.string "Your skills are astounding!$"
+	end
 # 304 "data/maps/Zone6A/scripts.pory"
 
 # 305 "data/maps/Zone6A/scripts.pory"
-Zone6A_EventScript_Dudley::
+Zone6A_Text_MelanieIntro:
 # 306 "data/maps/Zone6A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_DUDLEY, Zone6A_Text_DudleyIntro, Zone6A_Text_DudleyDefeat
+	.string "Hey, have you ever ridden a horse\n"
 # 307 "data/maps/Zone6A/scripts.pory"
-	msgbox Zone6A_Text_DudleyPostBattle, MSGBOX_AUTOCLOSE
+	.string "before?$"
 # 308 "data/maps/Zone6A/scripts.pory"
-	end
-# 309 "data/maps/Zone6A/scripts.pory"
 
+# 309 "data/maps/Zone6A/scripts.pory"
+Zone6A_Text_MelanieDefeat:
 # 310 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_DudleyIntro:
+	.string "You should try horseback riding\n"
 # 311 "data/maps/Zone6A/scripts.pory"
-	.string "Birds of a feather flock together!$"
+	.string "sometime!$"
 # 312 "data/maps/Zone6A/scripts.pory"
 
 # 313 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_DudleyDefeat:
+Zone6A_Text_MelaniePostBattle:
 # 314 "data/maps/Zone6A/scripts.pory"
-	.string "This bird has been sent crashing\n"
+	.string "Now that I think about it,\n"
 # 315 "data/maps/Zone6A/scripts.pory"
-	.string "down!$"
+	.string "what even is a horse?\p"
 # 316 "data/maps/Zone6A/scripts.pory"
-
+	.string "I mean, we call them horse Pokémon,\n"
 # 317 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_DudleyPostBattle:
+	.string "but like, what is a horse?$"
 # 318 "data/maps/Zone6A/scripts.pory"
-	.string "Oh, how the mighty have fallen!$"
+
 # 319 "data/maps/Zone6A/scripts.pory"
-
+Zone6A_EventScript_Constance::
 # 320 "data/maps/Zone6A/scripts.pory"
-Zone6A_EventScript_Daisy::
+	trainerbattle_single TRAINER_PBL_CONSTANCE, Zone6A_Text_ConstanceIntro, Zone6A_Text_ConstanceDefeat
 # 321 "data/maps/Zone6A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_DAISY, Zone6A_Text_DaisyIntro, Zone6A_Text_DaisyDefeat
+	msgbox Zone6A_Text_ConstancePostBattle, MSGBOX_AUTOCLOSE
 # 322 "data/maps/Zone6A/scripts.pory"
-	msgbox Zone6A_Text_DaisyPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 323 "data/maps/Zone6A/scripts.pory"
-	end
+
 # 324 "data/maps/Zone6A/scripts.pory"
-
+Zone6A_Text_ConstanceIntro:
 # 325 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_DaisyIntro:
+	.string "Want to join my picnic?$"
 # 326 "data/maps/Zone6A/scripts.pory"
-	.string "These Pokémon are just so cute!$"
+
 # 327 "data/maps/Zone6A/scripts.pory"
-
+Zone6A_Text_ConstanceDefeat:
 # 328 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_DaisyDefeat:
+	.string "Oops, I forgot to pack food!$"
 # 329 "data/maps/Zone6A/scripts.pory"
-	.string "They're not too great in battle,\n"
+
 # 330 "data/maps/Zone6A/scripts.pory"
-	.string "though.$"
+Zone6A_Text_ConstancePostBattle:
 # 331 "data/maps/Zone6A/scripts.pory"
-
+	.string "I can look for some Berries or\n"
 # 332 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_DaisyPostBattle:
+	.string "something…$"
 # 333 "data/maps/Zone6A/scripts.pory"
-	.string "I guess these little ones need more\n"
-# 334 "data/maps/Zone6A/scripts.pory"
-	.string "time to get stronger and evolve!$"
-# 335 "data/maps/Zone6A/scripts.pory"
 
+# 334 "data/maps/Zone6A/scripts.pory"
+Zone6A_EventScript_Frank::
+# 335 "data/maps/Zone6A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_FRANK, Zone6A_Text_FrankIntro, Zone6A_Text_FrankDefeat
 # 336 "data/maps/Zone6A/scripts.pory"
-Zone6A_EventScript_VicandDell::
+	msgbox Zone6A_Text_FrankPostBattle, MSGBOX_AUTOCLOSE
 # 337 "data/maps/Zone6A/scripts.pory"
-	trainerbattle_double TRAINER_PBL_VIC_AND_DELL, Zone6A_Text_VicandDellIntro, Zone6A_Text_VicandDellDefeat, gText_NotEnoughMons
-# 338 "data/maps/Zone6A/scripts.pory"
-	msgbox Zone6A_Text_VicandDellPostBattle, MSGBOX_DEFAULT
-# 339 "data/maps/Zone6A/scripts.pory"
-	release
-# 340 "data/maps/Zone6A/scripts.pory"
 	end
+# 338 "data/maps/Zone6A/scripts.pory"
+
+# 339 "data/maps/Zone6A/scripts.pory"
+Zone6A_Text_FrankIntro:
+# 340 "data/maps/Zone6A/scripts.pory"
+	.string "The beach is full of surprises!$"
 # 341 "data/maps/Zone6A/scripts.pory"
 
 # 342 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_VicandDellIntro:
+Zone6A_Text_FrankDefeat:
 # 343 "data/maps/Zone6A/scripts.pory"
-	.string "Vic: We're strong!\p"
+	.string "This time, I was surprised by you!$"
 # 344 "data/maps/Zone6A/scripts.pory"
-	.string "Dell: We work together!$"
+
 # 345 "data/maps/Zone6A/scripts.pory"
-
+Zone6A_Text_FrankPostBattle:
 # 346 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_VicandDellDefeat:
+	.string "Your skills are astounding!$"
 # 347 "data/maps/Zone6A/scripts.pory"
-	.string "Dell: Aww!\p"
+
 # 348 "data/maps/Zone6A/scripts.pory"
-	.string "Vic: Aww!$"
+Zone6A_EventScript_Dudley::
 # 349 "data/maps/Zone6A/scripts.pory"
-
+	trainerbattle_single TRAINER_PBL_DUDLEY, Zone6A_Text_DudleyIntro, Zone6A_Text_DudleyDefeat
 # 350 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_VicandDellPostBattle:
+	msgbox Zone6A_Text_DudleyPostBattle, MSGBOX_AUTOCLOSE
 # 351 "data/maps/Zone6A/scripts.pory"
-	.string "Vic: Losing has its pluses!\p"
-# 352 "data/maps/Zone6A/scripts.pory"
-	.string "Dell: And its minuses!$"
-# 353 "data/maps/Zone6A/scripts.pory"
-
-# 354 "data/maps/Zone6A/scripts.pory"
-Zone6A_EventScript_Sign::
-# 355 "data/maps/Zone6A/scripts.pory"
-	msgbox Zone6A_Text_Sign, MSGBOX_SIGN
-# 356 "data/maps/Zone6A/scripts.pory"
 	end
-# 357 "data/maps/Zone6A/scripts.pory"
+# 352 "data/maps/Zone6A/scripts.pory"
 
+# 353 "data/maps/Zone6A/scripts.pory"
+Zone6A_Text_DudleyIntro:
+# 354 "data/maps/Zone6A/scripts.pory"
+	.string "Birds of a feather flock together!$"
+# 355 "data/maps/Zone6A/scripts.pory"
+
+# 356 "data/maps/Zone6A/scripts.pory"
+Zone6A_Text_DudleyDefeat:
+# 357 "data/maps/Zone6A/scripts.pory"
+	.string "This bird has been sent crashing\n"
 # 358 "data/maps/Zone6A/scripts.pory"
-Zone6A_Text_Sign:
+	.string "down!$"
 # 359 "data/maps/Zone6A/scripts.pory"
-	.string "Trainer Tips\p"
+
 # 360 "data/maps/Zone6A/scripts.pory"
-	.string "You can sort items in the Bag\n"
+Zone6A_Text_DudleyPostBattle:
 # 361 "data/maps/Zone6A/scripts.pory"
+	.string "Oh, how the mighty have fallen!$"
+# 362 "data/maps/Zone6A/scripts.pory"
+
+# 363 "data/maps/Zone6A/scripts.pory"
+Zone6A_EventScript_Daisy::
+# 364 "data/maps/Zone6A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_DAISY, Zone6A_Text_DaisyIntro, Zone6A_Text_DaisyDefeat
+# 365 "data/maps/Zone6A/scripts.pory"
+	msgbox Zone6A_Text_DaisyPostBattle, MSGBOX_AUTOCLOSE
+# 366 "data/maps/Zone6A/scripts.pory"
+	end
+# 367 "data/maps/Zone6A/scripts.pory"
+
+# 368 "data/maps/Zone6A/scripts.pory"
+Zone6A_Text_DaisyIntro:
+# 369 "data/maps/Zone6A/scripts.pory"
+	.string "These Pokémon are just so cute!$"
+# 370 "data/maps/Zone6A/scripts.pory"
+
+# 371 "data/maps/Zone6A/scripts.pory"
+Zone6A_Text_DaisyDefeat:
+# 372 "data/maps/Zone6A/scripts.pory"
+	.string "They're not too great in battle,\n"
+# 373 "data/maps/Zone6A/scripts.pory"
+	.string "though.$"
+# 374 "data/maps/Zone6A/scripts.pory"
+
+# 375 "data/maps/Zone6A/scripts.pory"
+Zone6A_Text_DaisyPostBattle:
+# 376 "data/maps/Zone6A/scripts.pory"
+	.string "I guess these little ones need more\n"
+# 377 "data/maps/Zone6A/scripts.pory"
+	.string "time to get stronger and evolve!$"
+# 378 "data/maps/Zone6A/scripts.pory"
+
+# 379 "data/maps/Zone6A/scripts.pory"
+Zone6A_EventScript_VicandDell::
+# 380 "data/maps/Zone6A/scripts.pory"
+	trainerbattle_double TRAINER_PBL_VIC_AND_DELL, Zone6A_Text_VicandDellIntro, Zone6A_Text_VicandDellDefeat, gText_NotEnoughMons
+# 381 "data/maps/Zone6A/scripts.pory"
+	msgbox Zone6A_Text_VicandDellPostBattle, MSGBOX_DEFAULT
+# 382 "data/maps/Zone6A/scripts.pory"
+	release
+# 383 "data/maps/Zone6A/scripts.pory"
+	end
+# 384 "data/maps/Zone6A/scripts.pory"
+
+# 385 "data/maps/Zone6A/scripts.pory"
+Zone6A_Text_VicandDellIntro:
+# 386 "data/maps/Zone6A/scripts.pory"
+	.string "Vic: We're strong!\p"
+# 387 "data/maps/Zone6A/scripts.pory"
+	.string "Dell: We work together!$"
+# 388 "data/maps/Zone6A/scripts.pory"
+
+# 389 "data/maps/Zone6A/scripts.pory"
+Zone6A_Text_VicandDellDefeat:
+# 390 "data/maps/Zone6A/scripts.pory"
+	.string "Dell: Aww!\p"
+# 391 "data/maps/Zone6A/scripts.pory"
+	.string "Vic: Aww!$"
+# 392 "data/maps/Zone6A/scripts.pory"
+
+# 393 "data/maps/Zone6A/scripts.pory"
+Zone6A_Text_VicandDellPostBattle:
+# 394 "data/maps/Zone6A/scripts.pory"
+	.string "Vic: Losing has its pluses!\p"
+# 395 "data/maps/Zone6A/scripts.pory"
+	.string "Dell: And its minuses!$"
+# 396 "data/maps/Zone6A/scripts.pory"
+
+# 397 "data/maps/Zone6A/scripts.pory"
+Zone6A_EventScript_Sign::
+# 398 "data/maps/Zone6A/scripts.pory"
+	msgbox Zone6A_Text_Sign, MSGBOX_SIGN
+# 399 "data/maps/Zone6A/scripts.pory"
+	end
+# 400 "data/maps/Zone6A/scripts.pory"
+
+# 401 "data/maps/Zone6A/scripts.pory"
+Zone6A_Text_Sign:
+# 402 "data/maps/Zone6A/scripts.pory"
+	.string "Trainer Tips\p"
+# 403 "data/maps/Zone6A/scripts.pory"
+	.string "You can sort items in the Bag\n"
+# 404 "data/maps/Zone6A/scripts.pory"
 	.string "using {START_BUTTON}.$"
 
 Zone6A_EventScript_LeviathanBattle_Text_0:
@@ -814,6 +895,32 @@ Zone6A_EventScript_Coby_Text_0:
 Zone6A_EventScript_Zack_Text_0:
 # 164 "data/maps/Zone6A/scripts.pory"
 	.string "{COLOR BLUE}Zack{COLOR DARK_GRAY}: The tubing life is really sweet!$"
+
+Zone6A_EventScript_TradeDelibird_Text_0:
+# 173 "data/maps/Zone6A/scripts.pory"
+	.string "My Delibird is stronger than other\n"
+	.string "Delibird, but it still stinks!$"
+
+Zone6A_EventScript_TradeDelibird_Text_1:
+# 177 "data/maps/Zone6A/scripts.pory"
+	.string "Please, oh please, won't anyone trade me\n"
+	.string "a better Pokémon?$"
+
+Zone6A_EventScript_TradeDelibird_Text_2:
+# 187 "data/maps/Zone6A/scripts.pory"
+	.string "Please! You've got to trade me! I'll take\n"
+	.string "anything! {STR_VAR_2} is the worst\l"
+	.string "Pokémon ever!$"
+
+Zone6A_EventScript_TradeDelibird_Text_3:
+# 189 "data/maps/Zone6A/scripts.pory"
+	.string "Please! I can't win any battles with a\n"
+	.string "{STR_VAR_2}$"
+
+Zone6A_EventScript_TradeDelibird_Text_4:
+# 206 "data/maps/Zone6A/scripts.pory"
+	.string "Thank you! Now I've got a real Pokémon\n"
+	.string "to use!$"
 
 Zone6A_Text_Leviathan6Defeat::
 # 141 "data/maps/Zone6A/scripts.pory"

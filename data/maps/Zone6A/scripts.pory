@@ -166,6 +166,49 @@ script Zone6A_EventScript_Zack {
 	end
 }
 
+script Zone6A_EventScript_TradeDelibird {
+	lock
+	if (flag(FLAG_ZONE6A_TRADED_DELIBIRD)) {
+		faceplayer
+		msgbox(format("My Delibird is stronger than other Delibird, but it still stinks!"))
+		release
+		end
+	}
+	msgbox(format("Please, oh please, won't anyone trade me a better Pokémon?"))
+	applymovement(18, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	faceplayer
+	setvar(VAR_0x8008, INGAME_TRADE_DELIBIRD)
+	copyvar(VAR_0x8004, VAR_0x8008)
+	specialvar(VAR_RESULT, GetInGameTradeSpeciesInfo)
+	copyvar(VAR_0x8009, VAR_RESULT)
+	msgbox(format("Please! You've got to trade me! I'll take anything! {STR_VAR_2} is the worst Pokémon ever!"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Please! I can't win any battles with a {STR_VAR_2}"), MSGBOX_DEFAULT)
+		release
+		end
+	}
+	special(ChoosePartyMon)
+	waitstate
+	copyvar(VAR_0x800A, VAR_0x8004)
+	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+		msgbox(format("Please! I can't win any battles with a {STR_VAR_2}"), MSGBOX_DEFAULT)
+		release
+		end
+	}
+	copyvar(VAR_0x8004, VAR_0x8008)
+	copyvar(VAR_0x8005, VAR_0x800A)
+	special(CreateInGameTradePokemon)
+	special(DoInGameTradeScene)
+	waitstate
+	msgbox(format("Thank you! Now I've got a real Pokémon to use!"), MSGBOX_DEFAULT)
+	setflag(FLAG_ZONE6A_TRADED_DELIBIRD)
+	release
+	end
+}
+
 script Zone6A_EventScript_ItemNetBall {
 	lock
 	if (flag(FLAG_ITEM_ZONE6A_NET_BALL)) {
