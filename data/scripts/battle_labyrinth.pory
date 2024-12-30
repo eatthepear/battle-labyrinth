@@ -1622,30 +1622,53 @@ script EventScript_Shop_Joy {
 	faceplayer
 	if (flag(FLAG_JOY_INTRO) == false) {
 		setflag(FLAG_JOY_INTRO)
-		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Welcome to the Pokémon… Ugh. Never mind.\p{COLOR BLUE}???{COLOR DARK_GRAY}: My name is Joy. Just Joy.\p{COLOR BLUE}Joy{COLOR DARK_GRAY}: I used to work at the Pokémon Center, but they gave terrible pay.\pSo now, this shop, Joy's Recovery Shop, is my own!"), MSGBOX_DEFAULT)
+		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Welcome to the Pokémon… Ugh. Never mind.\p{COLOR BLUE}???{COLOR DARK_GRAY}: My name is Joy. Just Joy.\p{COLOR BLUE}Joy{COLOR DARK_GRAY}: I used to work at the Pokémon Center, but they gave terrible pay.\pSo now, this shop, Joy's Center of Restoration, is my own!"), MSGBOX_DEFAULT)
 	}
-	msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Welcome to Joy's Recovery Shop.\pWe heal your entire party for a\nflat ¥1000 fee.", MSGBOX_DEFAULT)
+	if (flag(FLAG_JOY_UPGRADED) == TRUE) {
+		msgbox(format("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Welcome to Joy's Center of Restoration.\pWe heal your entire party and PC for a flat ¥2000 fee."), MSGBOX_DEFAULT)
+	} else {
+		msgbox(format("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Welcome to Joy's Center of Restoration.\pWe heal your entire party for a flat ¥1000 fee."), MSGBOX_DEFAULT)
+	}
 	showmoneybox(0, 0, 0)
 	msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Should I heal your Pokémon?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		closemessage
 		hidemoneybox
 	} else {
-		checkmoney(1000, 0)
-		if (var(VAR_RESULT) == FALSE) {
-			msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: You don't have enough money.")
-			hidemoneybox
+		if (flag(FLAG_JOY_UPGRADED) == TRUE) {
+			checkmoney(2000, 0)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: You don't have enough money.")
+				hidemoneybox
+			} else {
+				removemoney(2000, 0)
+				updatemoneybox
+				msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: That will be ¥2000, thank you…")
+				fadescreenswapbuffers(FADE_TO_BLACK)
+				playfanfare(MUS_HEAL)
+				waitfanfare
+				special(HealPlayerParty)
+				fadescreenswapbuffers(FADE_FROM_BLACK)
+				msgbox(format("{COLOR BLUE}Joy{COLOR DARK_GRAY}: All of your Pokémon have been restored."), MSGBOX_DEFAULT)
+				hidemoneybox
+			}
 		} else {
-			removemoney(1000, 0)
-			updatemoneybox
-			msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: That will be ¥1000, thank you…")
-			fadescreenswapbuffers(FADE_TO_BLACK)
-			playfanfare(MUS_HEAL)
-			waitfanfare
-			special(HealPlayerParty)
-			fadescreenswapbuffers(FADE_FROM_BLACK)
-			msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Your party has been restored.", MSGBOX_DEFAULT)
-			hidemoneybox
+			checkmoney(1000, 0)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: You don't have enough money.")
+				hidemoneybox
+			} else {
+				removemoney(1000, 0)
+				updatemoneybox
+				msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: That will be ¥1000, thank you…")
+				fadescreenswapbuffers(FADE_TO_BLACK)
+				playfanfare(MUS_HEAL)
+				waitfanfare
+				special(HealPlayerParty)
+				fadescreenswapbuffers(FADE_FROM_BLACK)
+				msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Your party has been restored.", MSGBOX_DEFAULT)
+				hidemoneybox
+			}
 		}
 	}
 	msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: See you next time.")
