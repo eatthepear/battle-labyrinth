@@ -5010,7 +5010,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sSnomLevelUpLearnset,
         .teachableLearnset = sSnomTeachableLearnset,
         .eggMoveLearnset = sSnomEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_ICE_STONE, SPECIES_FROSMOTH}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_FROSMOTH}),
     },
 
     [SPECIES_FROSMOTH] =
