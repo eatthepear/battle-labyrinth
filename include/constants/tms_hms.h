@@ -104,14 +104,7 @@
     F(TERA_BLAST)
 
 #define FOREACH_HM(F) \
-    F(CUT) \
-    F(FLY) \
-    F(SURF) \
-    F(STRENGTH) \
-    F(FLASH) \
-    F(ROCK_SMASH) \
-    F(WATERFALL) \
-    F(DIVE)
+    F(NONE)
 
 #define FOREACH_TMHM(F) \
     FOREACH_TM(F) \
