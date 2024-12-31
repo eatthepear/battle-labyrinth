@@ -707,21 +707,24 @@ script EventScript_Shop_Marie_MainMenu {
 				dynmultipush("Elemental Monkey - ¥1000", 0)
 			}
 			if (var(VAR_ZONE) > 10) {
-				dynmultipush("Baby Pokémon 1 - ¥3000", 1)
+				dynmultipush("Regional Form - ¥3000", 1)
+			}
+			if (var(VAR_ZONE) > 10) {
+				dynmultipush("Baby Pokémon 1 - ¥3000", 2)
 			}
 			if (var(VAR_ZONE) > 25) {
-				dynmultipush("Baby Pokémon 2 - ¥10000", 2)
+				dynmultipush("Baby Pokémon 2 - ¥10000", 3)
 			}
 			if (var(VAR_ZONE) > 30) {
-				dynmultipush("Kanto Starter - ¥10000", 3)
-				dynmultipush("Johto Starter - ¥10000", 4)
-				dynmultipush("Hoenn Starter - ¥10000", 5)
-				dynmultipush("Sinnoh Starter - ¥10000", 6)
-				dynmultipush("Unova Starter - ¥10000", 7)
-				dynmultipush("Kalos Starter - ¥10000", 8)
-				dynmultipush("Alola Starter - ¥10000", 9)
-				dynmultipush("Galar Starter - ¥10000", 10)
-				dynmultipush("Paldea Starter - ¥10000", 11)
+				dynmultipush("Kanto Starter - ¥10000", 4)
+				dynmultipush("Johto Starter - ¥10000", 5)
+				dynmultipush("Hoenn Starter - ¥10000", 6)
+				dynmultipush("Sinnoh Starter - ¥10000", 7)
+				dynmultipush("Unova Starter - ¥10000", 8)
+				dynmultipush("Kalos Starter - ¥10000", 9)
+				dynmultipush("Alola Starter - ¥10000", 10)
+				dynmultipush("Galar Starter - ¥10000", 11)
+				dynmultipush("Paldea Starter - ¥10000", 12)
 			}
 			dynmultipush("Back", 13)
 			dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
@@ -736,13 +739,21 @@ script EventScript_Shop_Marie_MainMenu {
 					return
 				case 1:
 					showmoneybox(0, 0)
+					msgbox(format("An egg that contains Alolan Geodude, Galarian Zigzagoon, Galarian Slowpoke, or Hisuian Voltorb will cost ¥3000."), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						call(EventScript_Shop_Marie_RegionalFormEgg)
+					}
+					hidemoneybox
+					return
+				case 2:
+					showmoneybox(0, 0)
 					msgbox(format("An egg that contains Smoochum, Elekid, or Magby will cost ¥3000."), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						call(EventScript_Shop_Marie_BabyPokemon1Egg)
 					}
 					hidemoneybox
 					return
-				case 2:
+				case 3:
 					showmoneybox(0, 0)
 					msgbox(format("An egg that contains Happiny, Togepi, Munchlax, or Riolu will cost ¥10000."), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
@@ -810,6 +821,65 @@ script EventScript_Shop_Marie_ElementalMonkeyEgg {
 			setvar(VAR_TEMP_1, SPECIES_PANSEAR)
 		case 2:
 			setvar(VAR_TEMP_1, SPECIES_PANPOUR)
+	}
+	giveegg(VAR_TEMP_1)
+	setmonmetlocation(VAR_TEMP_2, 244)
+	msgbox("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Here's your Egg.", MSGBOX_DEFAULT)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(format("{PLAYER} received the Egg!"))
+	waitmessage
+	waitfanfare
+}
+
+script EventScript_Shop_Marie_RegionalFormEgg {
+	checkmoney(3000, 0)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox("{COLOR BLUE}Marie{COLOR DARK_GRAY}: You don't have enough money.")
+		hidemoneybox
+		return
+	}
+	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
+		hidemoneybox
+		special(ChoosePartyMon)
+		waitstate
+		faceplayer
+		showmoneybox(0, 0, 0)
+		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+			hidemoneybox
+			return
+		}
+		specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
+		bufferspeciesname(2, VAR_TEMP_3)
+		copyvar(VAR_TEMP_3, VAR_0x8004) // used in SendChosenMonToPC
+		msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			return
+		}
+	}
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+		setflag(FLAG_MARIE_NUZLOCKE_RECEIVED)
+	}
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		special(SendChosenMonToPC)
+		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
+	}
+	removemoney(3000)
+	updatemoneybox
+	msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Thank you very much…"), MSGBOX_DEFAULT)
+	hidemoneybox
+	random(4)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_1, SPECIES_GEODUDE_ALOLA)
+		case 1:
+			setvar(VAR_TEMP_1, SPECIES_ZIGZAGOON_GALAR)
+		case 2:
+			setvar(VAR_TEMP_1, SPECIES_SLOWPOKE_GALAR)
+		case 3:
+			setvar(VAR_TEMP_1, SPECIES_VOLTORB_HISUI)
 	}
 	giveegg(VAR_TEMP_1)
 	setmonmetlocation(VAR_TEMP_2, 244)
