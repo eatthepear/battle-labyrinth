@@ -15,7 +15,7 @@ script Zone7B_EventScript_LeviathanBattle {
 		end
 	}
 	fadeoutbgm(1)
-	msgbox(format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: I'll will show you how to behave in the prim and proper way!"), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: I will show you how to behave in the prim and proper way!"), MSGBOX_DEFAULT)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
 		trainerbattle_no_intro(TRAINER_PBL_BETTY_LEVIATHAN_7_CHALLENGE, Zone7B_Text_Leviathan7Defeat)

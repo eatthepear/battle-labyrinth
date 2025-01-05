@@ -1315,5 +1315,5 @@ Zone5B_Text_Leviathan5Intro::
 
 Zone5B_Text_Leviathan5Defeat::
 # 89 "data/maps/Zone5B/scripts.pory"
-	.string "How!? My Pokémon were so bulky with\n"
-	.string "their Eviolites!$"
+	.string "How!? My Pokémon was so bulky with its\n"
+	.string "Eviolite!$"

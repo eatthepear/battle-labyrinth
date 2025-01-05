@@ -165,8 +165,8 @@ Zone7B_EventScript_LeviathanBattle_Text_0:
 
 Zone7B_EventScript_LeviathanBattle_Text_1:
 # 18 "data/maps/Zone7B/scripts.pory"
-	.string "{COLOR BLUE}Betty{COLOR DARK_GRAY}: I'll will show you how to behave\n"
-	.string "in the prim and proper way!$"
+	.string "{COLOR BLUE}Betty{COLOR DARK_GRAY}: I will show you how to behave in\n"
+	.string "the prim and proper way!$"
 
 Zone7B_EventScript_LeviathanBattle_Text_2:
 # 26 "data/maps/Zone7B/scripts.pory"

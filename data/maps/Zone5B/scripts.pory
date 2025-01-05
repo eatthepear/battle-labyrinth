@@ -87,7 +87,7 @@ text Zone5B_Text_Leviathan5Intro {
 }
 
 text Zone5B_Text_Leviathan5Defeat {
-	format("How!? My Pokémon were so bulky with their Eviolites!")
+	format("How!? My Pokémon was so bulky with its Eviolite!")
 }
 
 movement Zone5B_Maria_Movement_WalkUp {
