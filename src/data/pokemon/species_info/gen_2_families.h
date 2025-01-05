@@ -2722,7 +2722,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sSunkernLevelUpLearnset,
         .teachableLearnset = sSunkernTeachableLearnset,
         .eggMoveLearnset = sSunkernEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_SUNFLORA}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SURPRISE_MULCH, SPECIES_SUNFLORA}),
     },
 
     [SPECIES_SUNFLORA] =
