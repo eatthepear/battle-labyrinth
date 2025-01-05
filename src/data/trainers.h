@@ -1273,10 +1273,10 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 589
-                MOVE_DOUBLE_SLAP,
+                MOVE_TACKLE,
                 MOVE_LEER,
                 MOVE_DEFENSE_CURL,
-                MOVE_ODOR_SLEUTH,
+                MOVE_MUD_SLAP,
             },
             },
             {
@@ -1365,10 +1365,10 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 626
-                MOVE_DOUBLE_SLAP,
+                MOVE_TACKLE,
                 MOVE_LEER,
                 MOVE_DEFENSE_CURL,
-                MOVE_ODOR_SLEUTH,
+                MOVE_MUD_SLAP,
             },
             },
             {
