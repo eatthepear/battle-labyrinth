@@ -3943,6 +3943,9 @@ static void BufferMonTrainerMemo(void)
             case METLOC_ZONE8A_GIFT:
                 text = gText_XNatureBlackBelt;
                 break;
+            case METLOC_ZONE4A_GIFT:
+                text = gText_XNatureScientist;
+                break;
             default:
                 text = gText_XNatureMetAtYZ;
                 break;

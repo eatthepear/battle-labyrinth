@@ -890,6 +890,7 @@ extern const u8 gText_XNatureBoughtRuin[];
 extern const u8 gText_XNatureFWG[];
 extern const u8 gText_XNatureHatchedFromMarieEggs[];
 extern const u8 gText_XNatureBlackBelt[];
+extern const u8 gText_XNatureScientist[];
 extern const u8 gText_EmptyString5[];
 extern const u8 gText_EggWillTakeALongTime[];
 extern const u8 gText_EggAboutToHatch[];
