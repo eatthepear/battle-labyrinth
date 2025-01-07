@@ -491,6 +491,7 @@ Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
 - String Shot
+- Protect
 
 Tarountula
 Ability: Insomnia
@@ -1066,6 +1067,7 @@ Spewpa
 Ability: Shed Skin
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Protect
 - Harden
 - Tackle
 
@@ -1602,7 +1604,7 @@ Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Screech
 - Bug Bite
-- Bite
+- Protect
 - Twineedle
 
 === TRAINER_PBL_MARIA_LEVIATHAN_5 ===
