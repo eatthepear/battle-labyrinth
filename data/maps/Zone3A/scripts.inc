@@ -454,271 +454,273 @@ Zone3A_EventScript_ItemHyperPotion_2:
 
 Zone3A_EventScript_Surveil::
 # 241 "data/maps/Zone3A/scripts.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_18
+# 242 "data/maps/Zone3A/scripts.pory"
 	msgbox Zone3A_EventScript_Surveil_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone3A_EventScript_ChillingWaterTutor::
-# 246 "data/maps/Zone3A/scripts.pory"
-	lock
 # 247 "data/maps/Zone3A/scripts.pory"
-	faceplayer
+	lock
 # 248 "data/maps/Zone3A/scripts.pory"
-	showmoneybox 0, 0, 0
+	faceplayer
 # 249 "data/maps/Zone3A/scripts.pory"
+	showmoneybox 0, 0, 0
+# 250 "data/maps/Zone3A/scripts.pory"
 	goto_if_set FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER, Zone3A_EventScript_ChillingWaterTutor_2
-# 258 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_2, MSGBOX_YESNO
 # 259 "data/maps/Zone3A/scripts.pory"
+	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_2, MSGBOX_YESNO
+# 260 "data/maps/Zone3A/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Zone3A_EventScript_ChillingWaterTutor_10
 Zone3A_EventScript_ChillingWaterTutor_1:
-# 266 "data/maps/Zone3A/scripts.pory"
+# 267 "data/maps/Zone3A/scripts.pory"
 	goto_if_set FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER, Zone3A_EventScript_ChillingWaterTutor_6
 Zone3A_EventScript_ChillingWaterTutor_5:
-# 275 "data/maps/Zone3A/scripts.pory"
-	setvar VAR_TEMP_0, MOVE_CHILLING_WATER
 # 276 "data/maps/Zone3A/scripts.pory"
-	setvar VAR_0x8005, MOVE_CHILLING_WATER
+	setvar VAR_TEMP_0, MOVE_CHILLING_WATER
 # 277 "data/maps/Zone3A/scripts.pory"
-	buffermovename 0, VAR_TEMP_0
+	setvar VAR_0x8005, MOVE_CHILLING_WATER
 # 278 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_4, MSGBOX_DEFAULT
+	buffermovename 0, VAR_TEMP_0
 # 279 "data/maps/Zone3A/scripts.pory"
-	special ChooseMonForMoveTutor
+	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_4, MSGBOX_DEFAULT
 # 280 "data/maps/Zone3A/scripts.pory"
-	waitstate
+	special ChooseMonForMoveTutor
 # 281 "data/maps/Zone3A/scripts.pory"
-	lock
+	waitstate
 # 282 "data/maps/Zone3A/scripts.pory"
-	faceplayer
+	lock
 # 283 "data/maps/Zone3A/scripts.pory"
+	faceplayer
+# 284 "data/maps/Zone3A/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Zone3A_EventScript_ChillingWaterTutor_13
-# 288 "data/maps/Zone3A/scripts.pory"
-	showmoneybox 0, 0, 0
 # 289 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_5, MSGBOX_DEFAULT
+	showmoneybox 0, 0, 0
 # 290 "data/maps/Zone3A/scripts.pory"
+	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_5, MSGBOX_DEFAULT
+# 291 "data/maps/Zone3A/scripts.pory"
 	goto_if_unset FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER, Zone3A_EventScript_ChillingWaterTutor_18
-# 293 "data/maps/Zone3A/scripts.pory"
-	removemoney 500
 # 294 "data/maps/Zone3A/scripts.pory"
-	updatemoneybox
+	removemoney 500
 # 295 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_6, MSGBOX_DEFAULT
+	updatemoneybox
 # 296 "data/maps/Zone3A/scripts.pory"
+	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_6, MSGBOX_DEFAULT
+# 297 "data/maps/Zone3A/scripts.pory"
 	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_1
 Zone3A_EventScript_ChillingWaterTutor_17:
-# 298 "data/maps/Zone3A/scripts.pory"
-	hidemoneybox
 # 299 "data/maps/Zone3A/scripts.pory"
+	hidemoneybox
+# 300 "data/maps/Zone3A/scripts.pory"
 	release
 	end
 
 Zone3A_EventScript_ChillingWaterTutor_2:
-# 250 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_0, MSGBOX_YESNO
 # 251 "data/maps/Zone3A/scripts.pory"
+	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_0, MSGBOX_YESNO
+# 252 "data/maps/Zone3A/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Zone3A_EventScript_ChillingWaterTutor_8
 	goto Zone3A_EventScript_ChillingWaterTutor_1
 
 Zone3A_EventScript_ChillingWaterTutor_6:
-# 267 "data/maps/Zone3A/scripts.pory"
-	checkmoney 500, 0
 # 268 "data/maps/Zone3A/scripts.pory"
+	checkmoney 500, 0
+# 269 "data/maps/Zone3A/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Zone3A_EventScript_ChillingWaterTutor_15
 	goto Zone3A_EventScript_ChillingWaterTutor_5
 
 Zone3A_EventScript_ChillingWaterTutor_8:
-# 252 "data/maps/Zone3A/scripts.pory"
-	hidemoneybox
 # 253 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_1
+	hidemoneybox
 # 254 "data/maps/Zone3A/scripts.pory"
+	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_1
+# 255 "data/maps/Zone3A/scripts.pory"
 	release
 	end
 
 Zone3A_EventScript_ChillingWaterTutor_10:
-# 260 "data/maps/Zone3A/scripts.pory"
-	hidemoneybox
 # 261 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_1
+	hidemoneybox
 # 262 "data/maps/Zone3A/scripts.pory"
+	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_1
+# 263 "data/maps/Zone3A/scripts.pory"
 	release
 	end
 
 Zone3A_EventScript_ChillingWaterTutor_13:
-# 284 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_1
 # 285 "data/maps/Zone3A/scripts.pory"
+	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_1
+# 286 "data/maps/Zone3A/scripts.pory"
 	release
 	end
 
 Zone3A_EventScript_ChillingWaterTutor_15:
-# 269 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_3
 # 270 "data/maps/Zone3A/scripts.pory"
-	hidemoneybox
+	msgbox Zone3A_EventScript_ChillingWaterTutor_Text_3
 # 271 "data/maps/Zone3A/scripts.pory"
+	hidemoneybox
+# 272 "data/maps/Zone3A/scripts.pory"
 	release
 	end
 
 Zone3A_EventScript_ChillingWaterTutor_18:
-# 291 "data/maps/Zone3A/scripts.pory"
+# 292 "data/maps/Zone3A/scripts.pory"
 	setflag FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER
 	goto Zone3A_EventScript_ChillingWaterTutor_17
 
 
-# 303 "data/maps/Zone3A/scripts.pory"
-
 # 304 "data/maps/Zone3A/scripts.pory"
 
 # 305 "data/maps/Zone3A/scripts.pory"
-Zone3A_EventScript_Patrick::
+
 # 306 "data/maps/Zone3A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_PATRICK, Zone3A_Text_PatrickIntro, Zone3A_Text_PatrickDefeat
+Zone3A_EventScript_Patrick::
 # 307 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_Text_PatrickPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_PBL_PATRICK, Zone3A_Text_PatrickIntro, Zone3A_Text_PatrickDefeat
 # 308 "data/maps/Zone3A/scripts.pory"
-	end
+	msgbox Zone3A_Text_PatrickPostBattle, MSGBOX_AUTOCLOSE
 # 309 "data/maps/Zone3A/scripts.pory"
-
+	end
 # 310 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_PatrickIntro:
+
 # 311 "data/maps/Zone3A/scripts.pory"
-	.string "My friends call me the free Exp guy,\n"
+Zone3A_Text_PatrickIntro:
 # 312 "data/maps/Zone3A/scripts.pory"
-	.string "but I'll prove them wrong!$"
+	.string "My friends call me the free Exp guy,\n"
 # 313 "data/maps/Zone3A/scripts.pory"
-
+	.string "but I'll prove them wrong!$"
 # 314 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_PatrickDefeat:
+
 # 315 "data/maps/Zone3A/scripts.pory"
-	.string "Oops, guess not…$"
+Zone3A_Text_PatrickDefeat:
 # 316 "data/maps/Zone3A/scripts.pory"
-
+	.string "Oops, guess not…$"
 # 317 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_PatrickPostBattle:
+
 # 318 "data/maps/Zone3A/scripts.pory"
-	.string "I guess I am the free Exp guy…$"
+Zone3A_Text_PatrickPostBattle:
 # 319 "data/maps/Zone3A/scripts.pory"
-
+	.string "I guess I am the free Exp guy…$"
 # 320 "data/maps/Zone3A/scripts.pory"
-Zone3A_EventScript_Jemma::
+
 # 321 "data/maps/Zone3A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_JEMMA, Zone3A_Text_JemmaIntro, Zone3A_Text_JemmaDefeat
+Zone3A_EventScript_Jemma::
 # 322 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_Text_JemmaPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_PBL_JEMMA, Zone3A_Text_JemmaIntro, Zone3A_Text_JemmaDefeat
 # 323 "data/maps/Zone3A/scripts.pory"
-	end
+	msgbox Zone3A_Text_JemmaPostBattle, MSGBOX_AUTOCLOSE
 # 324 "data/maps/Zone3A/scripts.pory"
-
+	end
 # 325 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_JemmaIntro:
+
 # 326 "data/maps/Zone3A/scripts.pory"
-	.string "Hey! You have to pay to cross!$"
+Zone3A_Text_JemmaIntro:
 # 327 "data/maps/Zone3A/scripts.pory"
-
+	.string "Hey! You have to pay to cross!$"
 # 328 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_JemmaDefeat:
+
 # 329 "data/maps/Zone3A/scripts.pory"
-	.string "Uh… You can go for free!$"
+Zone3A_Text_JemmaDefeat:
 # 330 "data/maps/Zone3A/scripts.pory"
-
+	.string "Uh… You can go for free!$"
 # 331 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_JemmaPostBattle:
+
 # 332 "data/maps/Zone3A/scripts.pory"
-	.string "I was scamming people so well too…$"
+Zone3A_Text_JemmaPostBattle:
 # 333 "data/maps/Zone3A/scripts.pory"
-
+	.string "I was scamming people so well too…$"
 # 334 "data/maps/Zone3A/scripts.pory"
-Zone3A_EventScript_Annabelle::
+
 # 335 "data/maps/Zone3A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_ANNABELLE, Zone3A_Text_AnnabelleIntro, Zone3A_Text_AnnabelleDefeat
+Zone3A_EventScript_Annabelle::
 # 336 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_Text_AnnabellePostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_PBL_ANNABELLE, Zone3A_Text_AnnabelleIntro, Zone3A_Text_AnnabelleDefeat
 # 337 "data/maps/Zone3A/scripts.pory"
-	end
+	msgbox Zone3A_Text_AnnabellePostBattle, MSGBOX_AUTOCLOSE
 # 338 "data/maps/Zone3A/scripts.pory"
-
+	end
 # 339 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_AnnabelleIntro:
+
 # 340 "data/maps/Zone3A/scripts.pory"
-	.string "I wonder what day it is…$"
+Zone3A_Text_AnnabelleIntro:
 # 341 "data/maps/Zone3A/scripts.pory"
-
+	.string "I wonder what day it is…$"
 # 342 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_AnnabelleDefeat:
+
 # 343 "data/maps/Zone3A/scripts.pory"
-	.string "Apparently it's defeat day!$"
+Zone3A_Text_AnnabelleDefeat:
 # 344 "data/maps/Zone3A/scripts.pory"
-
+	.string "Apparently it's defeat day!$"
 # 345 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_AnnabellePostBattle:
+
 # 346 "data/maps/Zone3A/scripts.pory"
-	.string "Tomorrow will be another day.$"
+Zone3A_Text_AnnabellePostBattle:
 # 347 "data/maps/Zone3A/scripts.pory"
-
+	.string "Tomorrow will be another day.$"
 # 348 "data/maps/Zone3A/scripts.pory"
-Zone3A_EventScript_Boris::
+
 # 349 "data/maps/Zone3A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_BORIS, Zone3A_Text_BorisIntro, Zone3A_Text_BorisDefeat
+Zone3A_EventScript_Boris::
 # 350 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_Text_BorisPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_PBL_BORIS, Zone3A_Text_BorisIntro, Zone3A_Text_BorisDefeat
 # 351 "data/maps/Zone3A/scripts.pory"
-	end
+	msgbox Zone3A_Text_BorisPostBattle, MSGBOX_AUTOCLOSE
 # 352 "data/maps/Zone3A/scripts.pory"
-
-# 353 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_BorisIntro:
-# 354 "data/maps/Zone3A/scripts.pory"
-	.string "Never give up, never surrender!$"
-# 355 "data/maps/Zone3A/scripts.pory"
-
-# 356 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_BorisDefeat:
-# 357 "data/maps/Zone3A/scripts.pory"
-	.string "I surrender!$"
-# 358 "data/maps/Zone3A/scripts.pory"
-
-# 359 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_BorisPostBattle:
-# 360 "data/maps/Zone3A/scripts.pory"
-	.string "I'm a hypocrite, I know.$"
-# 361 "data/maps/Zone3A/scripts.pory"
-
-# 362 "data/maps/Zone3A/scripts.pory"
-Zone3A_EventScript_Richard::
-# 363 "data/maps/Zone3A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_RICHARD, Zone3A_Text_RichardIntro, Zone3A_Text_RichardDefeat
-# 364 "data/maps/Zone3A/scripts.pory"
-	msgbox Zone3A_Text_RichardPostBattle, MSGBOX_AUTOCLOSE
-# 365 "data/maps/Zone3A/scripts.pory"
 	end
+# 353 "data/maps/Zone3A/scripts.pory"
+
+# 354 "data/maps/Zone3A/scripts.pory"
+Zone3A_Text_BorisIntro:
+# 355 "data/maps/Zone3A/scripts.pory"
+	.string "Never give up, never surrender!$"
+# 356 "data/maps/Zone3A/scripts.pory"
+
+# 357 "data/maps/Zone3A/scripts.pory"
+Zone3A_Text_BorisDefeat:
+# 358 "data/maps/Zone3A/scripts.pory"
+	.string "I surrender!$"
+# 359 "data/maps/Zone3A/scripts.pory"
+
+# 360 "data/maps/Zone3A/scripts.pory"
+Zone3A_Text_BorisPostBattle:
+# 361 "data/maps/Zone3A/scripts.pory"
+	.string "I'm a hypocrite, I know.$"
+# 362 "data/maps/Zone3A/scripts.pory"
+
+# 363 "data/maps/Zone3A/scripts.pory"
+Zone3A_EventScript_Richard::
+# 364 "data/maps/Zone3A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_RICHARD, Zone3A_Text_RichardIntro, Zone3A_Text_RichardDefeat
+# 365 "data/maps/Zone3A/scripts.pory"
+	msgbox Zone3A_Text_RichardPostBattle, MSGBOX_AUTOCLOSE
 # 366 "data/maps/Zone3A/scripts.pory"
-
+	end
 # 367 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_RichardIntro:
+
 # 368 "data/maps/Zone3A/scripts.pory"
-	.string "I have far too much money to deal\n"
+Zone3A_Text_RichardIntro:
 # 369 "data/maps/Zone3A/scripts.pory"
-	.string "with the likes of you!$"
+	.string "I have far too much money to deal\n"
 # 370 "data/maps/Zone3A/scripts.pory"
-
+	.string "with the likes of you!$"
 # 371 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_RichardDefeat:
-# 372 "data/maps/Zone3A/scripts.pory"
-	.string "Agh! My money!$"
-# 373 "data/maps/Zone3A/scripts.pory"
 
+# 372 "data/maps/Zone3A/scripts.pory"
+Zone3A_Text_RichardDefeat:
+# 373 "data/maps/Zone3A/scripts.pory"
+	.string "Agh! My money!$"
 # 374 "data/maps/Zone3A/scripts.pory"
-Zone3A_Text_RichardPostBattle:
+
 # 375 "data/maps/Zone3A/scripts.pory"
-	.string "Do you think I can buy humility\n"
+Zone3A_Text_RichardPostBattle:
 # 376 "data/maps/Zone3A/scripts.pory"
+	.string "Do you think I can buy humility\n"
+# 377 "data/maps/Zone3A/scripts.pory"
 	.string "with my money?$"
 
 Zone3A_EventScript_TriggerLeviathan_Text_0:
@@ -792,7 +794,7 @@ Zone3A_EventScript_TriggerLeviathan_Text_14:
 	.string "{COLOR BLUE}Phillipa{COLOR DARK_GRAY}: Food!$"
 
 Zone3A_EventScript_Surveil_Text_0:
-# 241 "data/maps/Zone3A/scripts.pory"
+# 242 "data/maps/Zone3A/scripts.pory"
 	.string "Trainer Tips\p"
 	.string "In battle, you can use Surveil to see\n"
 	.string "the opponent's team.\p"
@@ -801,7 +803,7 @@ Zone3A_EventScript_Surveil_Text_0:
 	.string "Info setting by speaking to Colress.$"
 
 Zone3A_EventScript_ChillingWaterTutor_Text_0:
-# 250 "data/maps/Zone3A/scripts.pory"
+# 251 "data/maps/Zone3A/scripts.pory"
 	.string "Ho there, trainer!\p"
 	.string "Are your Water Pokémon interested in\n"
 	.string "learning a new technique? I call it:\l"
@@ -811,11 +813,11 @@ Zone3A_EventScript_ChillingWaterTutor_Text_0:
 	.string "Interested?$"
 
 Zone3A_EventScript_ChillingWaterTutor_Text_1:
-# 253 "data/maps/Zone3A/scripts.pory"
+# 254 "data/maps/Zone3A/scripts.pory"
 	.string "Good day to you!$"
 
 Zone3A_EventScript_ChillingWaterTutor_Text_2:
-# 258 "data/maps/Zone3A/scripts.pory"
+# 259 "data/maps/Zone3A/scripts.pory"
 	.string "Ho there, trainer!\p"
 	.string "Are your Water Pokémon interested in\n"
 	.string "learning a new technique? I call it:\l"
@@ -826,19 +828,19 @@ Zone3A_EventScript_ChillingWaterTutor_Text_2:
 	.string "Interested?$"
 
 Zone3A_EventScript_ChillingWaterTutor_Text_3:
-# 269 "data/maps/Zone3A/scripts.pory"
+# 270 "data/maps/Zone3A/scripts.pory"
 	.string "Hate to break it to you, but you don't have enough money.$"
 
 Zone3A_EventScript_ChillingWaterTutor_Text_4:
-# 278 "data/maps/Zone3A/scripts.pory"
+# 279 "data/maps/Zone3A/scripts.pory"
 	.string "Which Pokémon should learn\n{STR_VAR_1}?$"
 
 Zone3A_EventScript_ChillingWaterTutor_Text_5:
-# 289 "data/maps/Zone3A/scripts.pory"
+# 290 "data/maps/Zone3A/scripts.pory"
 	.string "There! It's done. Use that move well!$"
 
 Zone3A_EventScript_ChillingWaterTutor_Text_6:
-# 295 "data/maps/Zone3A/scripts.pory"
+# 296 "data/maps/Zone3A/scripts.pory"
 	.string "{PLAYER} paid ¥500.$"
 
 Zone3A_Text_Leviathan3Intro::

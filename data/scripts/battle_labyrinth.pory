@@ -18,101 +18,101 @@ script EventScript_EnterSanctuary {
 script EventScript_CompletePBLSubquest {
 	switch(var(VAR_ZONE)) {
 		case 1:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_1)
+			completesubquest(QUEST_PBL, SUB_QUEST_1)
 		case 2:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_2)
+			completesubquest(QUEST_PBL, SUB_QUEST_2)
 		case 3:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_3)
+			completesubquest(QUEST_PBL, SUB_QUEST_3)
 		case 4:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_4)
+			completesubquest(QUEST_PBL, SUB_QUEST_4)
 		case 5:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_5)
+			completesubquest(QUEST_PBL, SUB_QUEST_5)
 		case 6:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_6)
+			completesubquest(QUEST_PBL, SUB_QUEST_6)
 		case 7:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_7)
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_8)
+			completesubquest(QUEST_PBL, SUB_QUEST_7)
+			completesubquest(QUEST_PBL, SUB_QUEST_8)
 		case 9:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_9)
+			completesubquest(QUEST_PBL, SUB_QUEST_9)
 		case 10:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_10)
+			completesubquest(QUEST_PBL, SUB_QUEST_10)
 		case 11:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_11)
+			completesubquest(QUEST_PBL, SUB_QUEST_11)
 		case 12:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_12)
+			completesubquest(QUEST_PBL, SUB_QUEST_12)
 		case 13:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_13)
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_14)
+			completesubquest(QUEST_PBL, SUB_QUEST_13)
+			completesubquest(QUEST_PBL, SUB_QUEST_14)
 		case 15:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_15)
+			completesubquest(QUEST_PBL, SUB_QUEST_15)
 		case 16:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_16)
+			completesubquest(QUEST_PBL, SUB_QUEST_16)
 		case 17:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_17)
+			completesubquest(QUEST_PBL, SUB_QUEST_17)
 		case 18:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_18)
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_19)
+			completesubquest(QUEST_PBL, SUB_QUEST_18)
+			completesubquest(QUEST_PBL, SUB_QUEST_19)
 		case 20:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_20)
+			completesubquest(QUEST_PBL, SUB_QUEST_20)
 		case 21:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_21)
+			completesubquest(QUEST_PBL, SUB_QUEST_21)
 		case 22:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_22)
+			completesubquest(QUEST_PBL, SUB_QUEST_22)
 		case 23:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_23)
+			completesubquest(QUEST_PBL, SUB_QUEST_23)
 		case 24:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_24)
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_25)
+			completesubquest(QUEST_PBL, SUB_QUEST_24)
+			completesubquest(QUEST_PBL, SUB_QUEST_25)
 		case 26:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_26)
+			completesubquest(QUEST_PBL, SUB_QUEST_26)
 		case 27:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_27)
+			completesubquest(QUEST_PBL, SUB_QUEST_27)
 		case 28:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_28)
+			completesubquest(QUEST_PBL, SUB_QUEST_28)
 		case 29:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_29)
+			completesubquest(QUEST_PBL, SUB_QUEST_29)
 		case 30:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_30)
+			completesubquest(QUEST_PBL, SUB_QUEST_30)
 		case 31:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_31)
+			completesubquest(QUEST_PBL, SUB_QUEST_31)
 		case 32:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_32)
+			completesubquest(QUEST_PBL, SUB_QUEST_32)
 		case 33:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_33)
+			completesubquest(QUEST_PBL, SUB_QUEST_33)
 		case 34:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_34)
+			completesubquest(QUEST_PBL, SUB_QUEST_34)
 		case 35:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_35)
+			completesubquest(QUEST_PBL, SUB_QUEST_35)
 		case 36:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_36)
+			completesubquest(QUEST_PBL, SUB_QUEST_36)
 		case 37:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_37)
+			completesubquest(QUEST_PBL, SUB_QUEST_37)
 		case 38:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_38)
+			completesubquest(QUEST_PBL, SUB_QUEST_38)
 		case 39:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_39)
+			completesubquest(QUEST_PBL, SUB_QUEST_39)
 		case 40:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_40)
+			completesubquest(QUEST_PBL, SUB_QUEST_40)
 		case 41:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_41)
+			completesubquest(QUEST_PBL, SUB_QUEST_41)
 		case 42:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_42)
+			completesubquest(QUEST_PBL, SUB_QUEST_42)
 		case 43:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_43)
+			completesubquest(QUEST_PBL, SUB_QUEST_43)
 		case 44:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_44)
+			completesubquest(QUEST_PBL, SUB_QUEST_44)
 		case 45:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_45)
+			completesubquest(QUEST_PBL, SUB_QUEST_45)
 		case 46:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_46)
+			completesubquest(QUEST_PBL, SUB_QUEST_46)
 		case 47:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_47)
+			completesubquest(QUEST_PBL, SUB_QUEST_47)
 		case 48:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_48)
+			completesubquest(QUEST_PBL, SUB_QUEST_48)
 		case 49:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_49)
+			completesubquest(QUEST_PBL, SUB_QUEST_49)
 		case 50:
-			completesubquest(QUEST_PBL, SUB_QUEST_PBL_50)
+			completesubquest(QUEST_PBL, SUB_QUEST_50)
 	}
 }
 
@@ -132,38 +132,45 @@ script EventScript_MoveCameraDown {
 	return
 }
 
+script EventScript_RecoverySign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_1)
+	msgbox("Joy's Center of Restoration\nA meeting place for everyone!", MSGBOX_SIGN)
+	end
+}
+
 script EventScript_MedicineSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_2)
 	msgbox("Portentia's Potions\nCurated Medicines!", MSGBOX_SIGN)
 	end
 }
 
 script EventScript_PokeballSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_3)
 	msgbox("Tim's Pokéball Shop\nSponsored by Pokémart Inc.", MSGBOX_SIGN)
 	end
 }
 
 script EventScript_ItemsSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_4)
 	msgbox("Varrick's Extravagant Emporium\nA Fine Collection!", MSGBOX_SIGN)
 	end
 }
 
 script EventScript_BerriesSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_5)
 	msgbox("Julia's Berries\nOnly the Berry best!", MSGBOX_SIGN)
 	end
 }
 
 script EventScript_EggsSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_6)
 	msgbox("Marie's Egg Delivery Service\nCome meet your next friend!", MSGBOX_SIGN)
 	end
 }
 
 script EventScript_ServicesSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_7)
 	msgbox("Lelouch's Services Shop\nAnything for the right price…", MSGBOX_SIGN)
-	end
-}
-
-script EventScript_RecoverySign {
-	msgbox("Joy's Center of Restoration\nA meeting place for everyone!", MSGBOX_SIGN)
 	end
 }
 
@@ -2799,6 +2806,19 @@ script EventScript_MusicMenu {
 	}
 }
 
+script EventScript_SignsQuestGirl {
+	lock
+	faceplayer
+	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_SIGNS)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(format("Hiya! I'm improving on my reading skills!\pYou should work on your reading skills too!\pIf you read all the signs in the Pokémon Battle Labyrinth, I'll give you a nice reward!"))
+		startquest(QUEST_SIGNS)
+	}
+	msgbox(format("Signs have lots of useful info about unique mechanics to the Pokémon Battle Labyrinth!\pYou can improve your reading skills while learning more about the challenges at hand!"))
+	release
+	end
+}
+
 script EventScript_WarpZone0 {
 	closemessage
 	playmoncry(SPECIES_PORYGON, 0)
@@ -3331,6 +3351,16 @@ script Debug_CheatStart_PBL {
 	// zone 0 items
 	additem(ITEM_WAILMER_PAIL)
 	additem(ITEM_ORAN_BERRY, 2)
+	startquest(QUEST_SIGNS)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_1)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_2)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_3)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_4)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_5)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_6)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_7)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_8)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_9)
 	// zone 0
 	setvar(VAR_TEMP_0, 0) // wild define gWildMonHeaders in src/data/wild_encounters.h
 	msgbox(format("Zone 0 grass?"), MSGBOX_YESNO)
@@ -3407,11 +3437,14 @@ script Debug_CheatStart_PBL {
 	setvar(VAR_TEMP_1, 5) // level
 	call(Debug_CheatStart_PBL_GiveMon)
 	setflag(FLAG_ZONE1A_RECEIVED_FWG)
-	completesubquest(QUEST_PBL, SUB_QUEST_PBL_1)
+	completesubquest(QUEST_PBL, SUB_QUEST_1)
 	// zone 1 items
 	additem(ITEM_QUICK_CLAW)
 	additem(ITEM_EXP_SHARE)
 	additem(ITEM_INFINITE_REPEL)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_10)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_11)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_12)
 	// zone 2
 	message(format("Zone 2 options"))
 	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass A", "Tunnel", "Grass B")
@@ -3459,7 +3492,7 @@ script Debug_CheatStart_PBL {
 	setvar(VAR_TEMP_1, 6) // level
 	call(Debug_CheatStart_PBL_GiveMon)
 	setflag(FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG)
-	completesubquest(QUEST_PBL, SUB_QUEST_PBL_2)
+	completesubquest(QUEST_PBL, SUB_QUEST_2)
 	// zone 2 items
 	additem(ITEM_SILK_SCARF)
 	additem(ITEM_TM_BUG_BITE)
@@ -3471,6 +3504,11 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_PECHA_BERRY, 2)
 	setflag(FLAG_SYS_DEXNAV_GET)
 	setflag(FLAG_SYS_DEXNAV_SEARCH)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_13)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_14)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_15)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_16)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_17)
 	// zone 3
 	message(format("Zone 3 options"))
 	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
@@ -3490,9 +3528,10 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 7) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, SUB_QUEST_PBL_3)
+	completesubquest(QUEST_PBL, SUB_QUEST_3)
 	// zone 3 items
 	additem(ITEM_GOOD_ROD)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_18)
 	// zone 4
 	message(format("Zone 4 options"))
 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "A", "B", "C", "D", "E")
@@ -3517,7 +3556,7 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 9) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, SUB_QUEST_PBL_4)
+	completesubquest(QUEST_PBL, SUB_QUEST_4)
 	// zone 4 items
 	additem(ITEM_SILVER_POWDER)
 	additem(ITEM_MUSCLE_BAND)
@@ -3528,6 +3567,11 @@ script Debug_CheatStart_PBL {
 	setflag(FLAG_SYS_START_MENU_PC_GET)
 	additem(ITEM_BURN_HEAL, 2)
 	additem(ITEM_AWAKENING, 2)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_19)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_20)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_21)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_22)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_23)
 	// zone 5
 	message(format("Zone 5 options"))
 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Forest", "Grassland")
@@ -3563,7 +3607,7 @@ script Debug_CheatStart_PBL {
 	setvar(VAR_TEMP_1, 12) // level
 	call(Debug_CheatStart_PBL_GiveMon)
 	setflag(FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE)
-	completesubquest(QUEST_PBL, SUB_QUEST_PBL_5)
+	completesubquest(QUEST_PBL, SUB_QUEST_5)
 	// zone 5 items
 	additem(ITEM_LAX_MINT)
 	additem(ITEM_QUICK_BALL)
@@ -3593,7 +3637,7 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 13) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, SUB_QUEST_PBL_6)
+	completesubquest(QUEST_PBL, SUB_QUEST_6)
 	// zone 6 items
 	additem(ITEM_NEST_BALL)
 	additem(ITEM_NET_BALL)
@@ -3603,6 +3647,7 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_ICE_GEM)
 	additem(ITEM_SLEDGEHAMMER)
 	additem(ITEM_SUPER_POTION, 1)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_24)
 	// zone 7
 	message(format("Zone 7 options"))
 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Tree")
@@ -3635,8 +3680,8 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 16) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, SUB_QUEST_PBL_7)
-	completesubquest(QUEST_PBL, SUB_QUEST_PBL_8)
+	completesubquest(QUEST_PBL, SUB_QUEST_7)
+	completesubquest(QUEST_PBL, SUB_QUEST_8)
 	// zone 7 & 8 items
 	additem(ITEM_SHARP_BEAK)
 	additem(ITEM_ROCK_GEM)
@@ -3659,6 +3704,8 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_SUPER_POTION, 2)
 	additem(ITEM_MACHETE)
 	additem(ITEM_TM_HIDDEN_POWER)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_25)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_26)
 	// zone 9
 	message(format("Zone 9 options"))
 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
@@ -3678,13 +3725,15 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 18) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, SUB_QUEST_PBL_9)
+	completesubquest(QUEST_PBL, SUB_QUEST_9)
 	// zone 9 items
 	additem(ITEM_BIG_ROOT)
 	additem(ITEM_TM_PLUCK)
 	additem(ITEM_MYSTIC_WATER)
 	additem(ITEM_CHARCOAL)
 	additem(ITEM_TM_RETALIATE)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_27)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_28)
 	// end
 	setvar(VAR_ZONE, 10)
 	setvar(VAR_LEVEL_CAP, 21)

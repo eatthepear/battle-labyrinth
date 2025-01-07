@@ -25,25 +25,27 @@ script Zone2A_EventScript_ItemRandom1 {
 	release
 	end
 }
-
-script Zone2A_EventScript_CautionSign {
-	msgbox(format("Caution!\pDiglett have been found living inside the tunnel.\pRepels recommended!"), MSGBOX_SIGN)
+script  Zone2A_EventScript_Sign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_13)
+	msgbox(format("Trainer Tips\pYou may find hidden items by checking certain tiles with {A_BUTTON}.\pHowever, you won't find any hidden items on Brutal or Independent."), MSGBOX_SIGN)
 	end
 }
 
 script Zone2A_EventScript_ExpShareSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_14)
 	msgbox(format("Trainer Tips\pThe Exp. All only gives Pokémon who didn't participate in battle 25% experience.\pIf you want to train up a particular Pokémon, you can give them the held item Exp. Share so they get full experience!"), MSGBOX_SIGN)
+	end
+}
+
+script Zone2A_EventScript_CautionSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_15)
+	msgbox(format("Caution!\pDiglett have been found living inside the tunnel.\pRepels recommended!"), MSGBOX_SIGN)
 	end
 }
 
 script Zone2A_EventScript_Polly {
 	trainerbattle_single(TRAINER_PBL_POLLY, format("I've heard there's a tunnel nearby with some cool Pokémon living in it!"), format("At this rate, I'll never find it!"))
 	msgbox(format("I'm sure it's here somewhere…"), MSGBOX_AUTOCLOSE)
-	end
-}
-
-script  Zone2A_EventScript_Sign {
-	msgbox(format("Trainer Tips\pYou may find hidden items by checking certain tiles with {A_BUTTON}.\pHowever, you won't find any hidden items on Brutal or Independent."), MSGBOX_SIGN)
 	end
 }
 

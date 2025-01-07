@@ -246,503 +246,1006 @@ static const u8 sText_AZ[] = _(" A-Z");
 #define sub_quest(i, n, d, m, s, st, t) {.id = i, .name = n, .desc = d, .map = m, .sprite = s, .spritetype = st, .type = t}
 static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 {	sub_quest(
-	      SUB_QUEST_PBL_1,
+	      SUB_QUEST_1,
 	      gText_SubQuest_Name_PBL1,
 	      gText_SubQuest_Desc_PBL1,
-	      gText_SubQuestMapZone1,
+	      gText_QuestMapZone1,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_2,
+	      SUB_QUEST_2,
 	      gText_SubQuest_Name_PBL2,
 	      gText_SubQuest_Desc_PBL2,
-	      gText_SubQuestMapZone2,
+	      gText_QuestMapZone2,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_3,
+	      SUB_QUEST_3,
 	      gText_SubQuest_Name_PBL3,
 	      gText_SubQuest_Desc_PBL3,
-	      gText_SubQuestMapZone3,
+	      gText_QuestMapZone3,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_4,
+	      SUB_QUEST_4,
 	      gText_SubQuest_Name_PBL4,
 	      gText_SubQuest_Desc_PBL4,
-	      gText_SubQuestMapZone4,
+	      gText_QuestMapZone4,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_5,
+	      SUB_QUEST_5,
 	      gText_SubQuest_Name_PBL5,
 	      gText_SubQuest_Desc_PBL5,
-	      gText_SubQuestMapZone5,
+	      gText_QuestMapZone5,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_6,
+	      SUB_QUEST_6,
 	      gText_SubQuest_Name_PBL6,
 	      gText_SubQuest_Desc_PBL6,
-	      gText_SubQuestMapZone6,
+	      gText_QuestMapZone6,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_7,
+	      SUB_QUEST_7,
 	      gText_SubQuest_Name_PBL7,
 	      gText_SubQuest_Desc_PBL7,
-	      gText_SubQuestMapZone7,
+	      gText_QuestMapZone7,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_8,
+	      SUB_QUEST_8,
 	      gText_SubQuest_Name_PBL8,
 	      gText_SubQuest_Desc_PBL8,
-	      gText_SubQuestMapZone8,
+	      gText_QuestMapZone8,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_9,
+	      SUB_QUEST_9,
 	      gText_SubQuest_Name_PBL9,
 	      gText_SubQuest_Desc_PBL9,
-	      gText_SubQuestMapZone9,
+	      gText_QuestMapZone9,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_10,
+	      SUB_QUEST_10,
 	      gText_SubQuest_Name_PBL10,
 	      gText_SubQuest_Desc_PBL10,
-	      gText_SubQuestMapZone10,
+	      gText_QuestMapZone10,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_11,
+	      SUB_QUEST_11,
 	      gText_SubQuest_Name_PBL11,
 	      gText_SubQuest_Desc_PBL11,
-	      gText_SubQuestMapZone11,
+	      gText_QuestMapZone11,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_12,
+	      SUB_QUEST_12,
 	      gText_SubQuest_Name_PBL12,
 	      gText_SubQuest_Desc_PBL12,
-	      gText_SubQuestMapZone12,
+	      gText_QuestMapZone12,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_13,
+	      SUB_QUEST_13,
 	      gText_SubQuest_Name_PBL13,
 	      gText_SubQuest_Desc_PBL13,
-	      gText_SubQuestMapZone13,
+	      gText_QuestMapZone13,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_14,
+	      SUB_QUEST_14,
 	      gText_SubQuest_Name_PBL14,
 	      gText_SubQuest_Desc_PBL14,
-	      gText_SubQuestMapZone14,
+	      gText_QuestMapZone14,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_15,
+	      SUB_QUEST_15,
 	      gText_SubQuest_Name_PBL15,
 	      gText_SubQuest_Desc_PBL15,
-	      gText_SubQuestMapZone15,
+	      gText_QuestMapZone15,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_16,
+	      SUB_QUEST_16,
 	      gText_SubQuest_Name_PBL16,
 	      gText_SubQuest_Desc_PBL16,
-	      gText_SubQuestMapZone16,
+	      gText_QuestMapZone16,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_17,
+	      SUB_QUEST_17,
 	      gText_SubQuest_Name_PBL17,
 	      gText_SubQuest_Desc_PBL17,
-	      gText_SubQuestMapZone17,
+	      gText_QuestMapZone17,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_18,
+	      SUB_QUEST_18,
 	      gText_SubQuest_Name_PBL18,
 	      gText_SubQuest_Desc_PBL18,
-	      gText_SubQuestMapZone18,
+	      gText_QuestMapZone18,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_19,
+	      SUB_QUEST_19,
 	      gText_SubQuest_Name_PBL19,
 	      gText_SubQuest_Desc_PBL19,
-	      gText_SubQuestMapZone19,
+	      gText_QuestMapZone19,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_20,
+	      SUB_QUEST_20,
 	      gText_SubQuest_Name_PBL20,
 	      gText_SubQuest_Desc_PBL20,
-	      gText_SubQuestMapZone20,
+	      gText_QuestMapZone20,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_21,
+	      SUB_QUEST_21,
 	      gText_SubQuest_Name_PBL21,
 	      gText_SubQuest_Desc_PBL21,
-	      gText_SubQuestMapZone21,
+	      gText_QuestMapZone21,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_22,
+	      SUB_QUEST_22,
 	      gText_SubQuest_Name_PBL22,
 	      gText_SubQuest_Desc_PBL22,
-	      gText_SubQuestMapZone22,
+	      gText_QuestMapZone22,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_23,
+	      SUB_QUEST_23,
 	      gText_SubQuest_Name_PBL23,
 	      gText_SubQuest_Desc_PBL23,
-	      gText_SubQuestMapZone23,
+	      gText_QuestMapZone23,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_24,
+	      SUB_QUEST_24,
 	      gText_SubQuest_Name_PBL24,
 	      gText_SubQuest_Desc_PBL24,
-	      gText_SubQuestMapZone24,
+	      gText_QuestMapZone24,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_25,
+	      SUB_QUEST_25,
 	      gText_SubQuest_Name_PBL25,
 	      gText_SubQuest_Desc_PBL25,
-	      gText_SubQuestMapZone25,
+	      gText_QuestMapZone25,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_26,
+	      SUB_QUEST_26,
 	      gText_SubQuest_Name_PBL26,
 	      gText_SubQuest_Desc_PBL26,
-	      gText_SubQuestMapZone26,
+	      gText_QuestMapZone26,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_27,
+	      SUB_QUEST_27,
 	      gText_SubQuest_Name_PBL27,
 	      gText_SubQuest_Desc_PBL27,
-	      gText_SubQuestMapZone27,
+	      gText_QuestMapZone27,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_28,
+	      SUB_QUEST_28,
 	      gText_SubQuest_Name_PBL28,
 	      gText_SubQuest_Desc_PBL28,
-	      gText_SubQuestMapZone28,
+	      gText_QuestMapZone28,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_29,
+	      SUB_QUEST_29,
 	      gText_SubQuest_Name_PBL29,
 	      gText_SubQuest_Desc_PBL29,
-	      gText_SubQuestMapZone29,
+	      gText_QuestMapZone29,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_30,
+	      SUB_QUEST_30,
 	      gText_SubQuest_Name_PBL30,
 	      gText_SubQuest_Desc_PBL30,
-	      gText_SubQuestMapZone30,
+	      gText_QuestMapZone30,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_31,
+	      SUB_QUEST_31,
 	      gText_SubQuest_Name_PBL31,
 	      gText_SubQuest_Desc_PBL31,
-	      gText_SubQuestMapZone31,
+	      gText_QuestMapZone31,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_32,
+	      SUB_QUEST_32,
 	      gText_SubQuest_Name_PBL32,
 	      gText_SubQuest_Desc_PBL32,
-	      gText_SubQuestMapZone32,
+	      gText_QuestMapZone32,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_33,
+	      SUB_QUEST_33,
 	      gText_SubQuest_Name_PBL33,
 	      gText_SubQuest_Desc_PBL33,
-	      gText_SubQuestMapZone33,
+	      gText_QuestMapZone33,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_34,
+	      SUB_QUEST_34,
 	      gText_SubQuest_Name_PBL34,
 	      gText_SubQuest_Desc_PBL34,
-	      gText_SubQuestMapZone34,
+	      gText_QuestMapZone34,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_35,
+	      SUB_QUEST_35,
 	      gText_SubQuest_Name_PBL35,
 	      gText_SubQuest_Desc_PBL35,
-	      gText_SubQuestMapZone35,
+	      gText_QuestMapZone35,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_36,
+	      SUB_QUEST_36,
 	      gText_SubQuest_Name_PBL36,
 	      gText_SubQuest_Desc_PBL36,
-	      gText_SubQuestMapZone36,
+	      gText_QuestMapZone36,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_37,
+	      SUB_QUEST_37,
 	      gText_SubQuest_Name_PBL37,
 	      gText_SubQuest_Desc_PBL37,
-	      gText_SubQuestMapZone37,
+	      gText_QuestMapZone37,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_38,
+	      SUB_QUEST_38,
 	      gText_SubQuest_Name_PBL38,
 	      gText_SubQuest_Desc_PBL38,
-	      gText_SubQuestMapZone38,
+	      gText_QuestMapZone38,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_39,
+	      SUB_QUEST_39,
 	      gText_SubQuest_Name_PBL39,
 	      gText_SubQuest_Desc_PBL39,
-	      gText_SubQuestMapZone39,
+	      gText_QuestMapZone39,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_40,
+	      SUB_QUEST_40,
 	      gText_SubQuest_Name_PBL40,
 	      gText_SubQuest_Desc_PBL40,
-	      gText_SubQuestMapZone40,
+	      gText_QuestMapZone40,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_41,
+	      SUB_QUEST_41,
 	      gText_SubQuest_Name_PBL41,
 	      gText_SubQuest_Desc_PBL41,
-	      gText_SubQuestMapZone41,
+	      gText_QuestMapZone41,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_42,
+	      SUB_QUEST_42,
 	      gText_SubQuest_Name_PBL42,
 	      gText_SubQuest_Desc_PBL42,
-	      gText_SubQuestMapZone42,
+	      gText_QuestMapZone42,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_43,
+	      SUB_QUEST_43,
 	      gText_SubQuest_Name_PBL43,
 	      gText_SubQuest_Desc_PBL43,
-	      gText_SubQuestMapZone43,
+	      gText_QuestMapZone43,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_44,
+	      SUB_QUEST_44,
 	      gText_SubQuest_Name_PBL44,
 	      gText_SubQuest_Desc_PBL44,
-	      gText_SubQuestMapZone44,
+	      gText_QuestMapZone44,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_45,
+	      SUB_QUEST_45,
 	      gText_SubQuest_Name_PBL45,
 	      gText_SubQuest_Desc_PBL45,
-	      gText_SubQuestMapZone45,
+	      gText_QuestMapZone45,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_46,
+	      SUB_QUEST_46,
 	      gText_SubQuest_Name_PBL46,
 	      gText_SubQuest_Desc_PBL46,
-	      gText_SubQuestMapZone46,
+	      gText_QuestMapZone46,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_47,
+	      SUB_QUEST_47,
 	      gText_SubQuest_Name_PBL47,
 	      gText_SubQuest_Desc_PBL47,
-	      gText_SubQuestMapZone47,
+	      gText_QuestMapZone47,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_48,
+	      SUB_QUEST_48,
 	      gText_SubQuest_Name_PBL48,
 	      gText_SubQuest_Desc_PBL48,
-	      gText_SubQuestMapZone48,
+	      gText_QuestMapZone48,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_49,
+	      SUB_QUEST_49,
 	      gText_SubQuest_Name_PBL49,
 	      gText_SubQuest_Desc_PBL49,
-	      gText_SubQuestMapZone49,
+	      gText_QuestMapZone49,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
 	),
 
 	sub_quest(
-	      SUB_QUEST_PBL_50,
+	      SUB_QUEST_50,
 	      gText_SubQuest_Name_PBL50,
 	      gText_SubQuest_Desc_PBL50,
-	      gText_SubQuestMapZone50,
+	      gText_QuestMapZone50,
 	      ITEM_NONE,
 	      ITEM,
 	      sText_Done
+	),
+};
+
+static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
+{
+	sub_quest(
+	      SUB_QUEST_1,
+	      gText_SubQuest_Name_Signs1,
+	      gText_SubQuest_Desc_SignsSanctuary,
+	      gText_QuestMapSanctuary,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_2,
+	      gText_SubQuest_Name_Signs2,
+	      gText_SubQuest_Desc_SignsSanctuary,
+	      gText_QuestMapSanctuary,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_3,
+	      gText_SubQuest_Name_Signs3,
+	      gText_SubQuest_Desc_SignsSanctuary,
+	      gText_QuestMapSanctuary,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_4,
+	      gText_SubQuest_Name_Signs4,
+	      gText_SubQuest_Desc_SignsSanctuary,
+	      gText_QuestMapSanctuary,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_5,
+	      gText_SubQuest_Name_Signs5,
+	      gText_SubQuest_Desc_SignsSanctuary,
+	      gText_QuestMapSanctuary,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_6,
+	      gText_SubQuest_Name_Signs6,
+	      gText_SubQuest_Desc_SignsSanctuary,
+	      gText_QuestMapSanctuary,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_7,
+	      gText_SubQuest_Name_Signs7,
+	      gText_SubQuest_Desc_SignsSanctuary,
+	      gText_QuestMapSanctuary,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_8,
+	      gText_SubQuest_Name_Signs8,
+	      gText_SubQuest_Desc_SignsZone0,
+	      gText_QuestMapZone0,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_9,
+	      gText_SubQuest_Name_Signs9,
+	      gText_SubQuest_Desc_SignsZone0,
+	      gText_QuestMapZone0,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_10,
+	      gText_SubQuest_Name_Signs10,
+	      gText_SubQuest_Desc_SignsZone1,
+	      gText_QuestMapZone1,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_11,
+	      gText_SubQuest_Name_Signs11,
+	      gText_SubQuest_Desc_SignsZone1,
+	      gText_QuestMapZone1,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_12,
+	      gText_SubQuest_Name_Signs12,
+	      gText_SubQuest_Desc_SignsZone1,
+	      gText_QuestMapZone1,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_13,
+	      gText_SubQuest_Name_Signs13,
+	      gText_SubQuest_Desc_SignsZone2,
+	      gText_QuestMapZone2,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_14,
+	      gText_SubQuest_Name_Signs14,
+	      gText_SubQuest_Desc_SignsZone2,
+	      gText_QuestMapZone2,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_15,
+	      gText_SubQuest_Name_Signs15,
+	      gText_SubQuest_Desc_SignsZone2,
+	      gText_QuestMapZone2,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_16,
+	      gText_SubQuest_Name_Signs16,
+	      gText_SubQuest_Desc_SignsZone2,
+	      gText_QuestMapZone2,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_17,
+	      gText_SubQuest_Name_Signs17,
+	      gText_SubQuest_Desc_SignsZone2,
+	      gText_QuestMapZone2,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_18,
+	      gText_SubQuest_Name_Signs18,
+	      gText_SubQuest_Desc_SignsZone3,
+	      gText_QuestMapZone3,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_19,
+	      gText_SubQuest_Name_Signs19,
+	      gText_SubQuest_Desc_SignsZone4,
+	      gText_QuestMapZone4,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_20,
+	      gText_SubQuest_Name_Signs20,
+	      gText_SubQuest_Desc_SignsZone4,
+	      gText_QuestMapZone4,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_21,
+	      gText_SubQuest_Name_Signs21,
+	      gText_SubQuest_Desc_SignsZone4,
+	      gText_QuestMapZone4,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_22,
+	      gText_SubQuest_Name_Signs22,
+	      gText_SubQuest_Desc_SignsZone4,
+	      gText_QuestMapZone4,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_23,
+	      gText_SubQuest_Name_Signs23,
+	      gText_SubQuest_Desc_SignsZone4,
+	      gText_QuestMapZone4,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_24,
+	      gText_SubQuest_Name_Signs24,
+	      gText_SubQuest_Desc_SignsZone6,
+	      gText_QuestMapZone6,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_25,
+	      gText_SubQuest_Name_Signs25,
+	      gText_SubQuest_Desc_SignsZone7,
+	      gText_QuestMapZone7,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_26,
+	      gText_SubQuest_Name_Signs26,
+	      gText_SubQuest_Desc_SignsZone7,
+	      gText_QuestMapZone7,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_27,
+	      gText_SubQuest_Name_Signs27,
+	      gText_SubQuest_Desc_SignsZone9,
+	      gText_QuestMapZone9,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_28,
+	      gText_SubQuest_Name_Signs28,
+	      gText_SubQuest_Desc_SignsZone9,
+	      gText_QuestMapZone9,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_29,
+	      gText_SubQuest_Name_Signs29,
+	      gText_SubQuest_Desc_PBL29,
+	      gText_QuestMapZone29,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_30,
+	      gText_SubQuest_Name_Signs30,
+	      gText_SubQuest_Desc_PBL30,
+	      gText_QuestMapZone30,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_31,
+	      gText_SubQuest_Name_Signs31,
+	      gText_SubQuest_Desc_PBL31,
+	      gText_QuestMapZone31,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_32,
+	      gText_SubQuest_Name_Signs32,
+	      gText_SubQuest_Desc_PBL32,
+	      gText_QuestMapZone32,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_33,
+	      gText_SubQuest_Name_Signs33,
+	      gText_SubQuest_Desc_PBL33,
+	      gText_QuestMapZone33,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_34,
+	      gText_SubQuest_Name_Signs34,
+	      gText_SubQuest_Desc_PBL34,
+	      gText_QuestMapZone34,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_35,
+	      gText_SubQuest_Name_Signs35,
+	      gText_SubQuest_Desc_PBL35,
+	      gText_QuestMapZone35,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_36,
+	      gText_SubQuest_Name_Signs36,
+	      gText_SubQuest_Desc_PBL36,
+	      gText_QuestMapZone36,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_37,
+	      gText_SubQuest_Name_Signs37,
+	      gText_SubQuest_Desc_PBL37,
+	      gText_QuestMapZone37,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_38,
+	      gText_SubQuest_Name_Signs38,
+	      gText_SubQuest_Desc_PBL38,
+	      gText_QuestMapZone38,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_39,
+	      gText_SubQuest_Name_Signs39,
+	      gText_SubQuest_Desc_PBL39,
+	      gText_QuestMapZone39,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_40,
+	      gText_SubQuest_Name_Signs40,
+	      gText_SubQuest_Desc_PBL40,
+	      gText_QuestMapZone40,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_41,
+	      gText_SubQuest_Name_Signs41,
+	      gText_SubQuest_Desc_PBL41,
+	      gText_QuestMapZone41,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_42,
+	      gText_SubQuest_Name_Signs42,
+	      gText_SubQuest_Desc_PBL42,
+	      gText_QuestMapZone42,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_43,
+	      gText_SubQuest_Name_Signs43,
+	      gText_SubQuest_Desc_PBL43,
+	      gText_QuestMapZone43,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_44,
+	      gText_SubQuest_Name_Signs44,
+	      gText_SubQuest_Desc_PBL44,
+	      gText_QuestMapZone44,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_45,
+	      gText_SubQuest_Name_Signs45,
+	      gText_SubQuest_Desc_PBL45,
+	      gText_QuestMapZone45,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_46,
+	      gText_SubQuest_Name_Signs46,
+	      gText_SubQuest_Desc_PBL46,
+	      gText_QuestMapZone46,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_47,
+	      gText_SubQuest_Name_Signs47,
+	      gText_SubQuest_Desc_PBL47,
+	      gText_QuestMapZone47,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_48,
+	      gText_SubQuest_Name_Signs48,
+	      gText_SubQuest_Desc_PBL48,
+	      gText_QuestMapZone48,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_49,
+	      gText_SubQuest_Name_Signs49,
+	      gText_SubQuest_Desc_PBL49,
+	      gText_QuestMapZone49,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
+	),
+
+	sub_quest(
+	      SUB_QUEST_50,
+	      gText_SubQuest_Name_Signs50,
+	      gText_SubQuest_Desc_PBL50,
+	      gText_QuestMapZone50,
+	      ITEM_WISE_GLASSES,
+	      ITEM,
+	      sText_Read
 	),
 };
 
@@ -760,17 +1263,27 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_PBL,
 	      gText_SideQuestDesc_PBL,
 	      gText_SideQuestDoneDesc_PBL,
-	      gText_SideQuestMapSanctuary,
+	      gText_QuestMapSanctuary,
 	      OBJ_EVENT_GFX_COLRESS,
 	      OBJECT,
 	      sSubQuestsPBL,
 	      QUEST_PBL_SUB_COUNT
 	),
 	side_quest(
+	      gText_SideQuestName_Signs,
+	      gText_SideQuestDesc_Signs,
+	      gText_SideQuestDoneDesc_Signs,
+	      gText_QuestMapSanctuary,
+	      OBJ_EVENT_GFX_SCHOOL_KID_F,
+	      OBJECT,
+	      sSubQuestsSigns,
+	      QUEST_SIGNS_SUB_COUNT
+	),
+	side_quest(
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -780,7 +1293,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -790,7 +1303,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -800,7 +1313,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -810,7 +1323,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -820,7 +1333,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -830,7 +1343,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -840,7 +1353,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -850,7 +1363,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -860,7 +1373,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -870,7 +1383,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -880,7 +1393,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -890,7 +1403,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -900,7 +1413,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -910,7 +1423,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -920,7 +1433,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -930,7 +1443,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -940,7 +1453,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -950,7 +1463,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -960,7 +1473,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -970,7 +1483,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -980,7 +1493,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -990,7 +1503,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1000,7 +1513,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1010,7 +1523,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1020,7 +1533,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1030,7 +1543,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1040,7 +1553,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1050,7 +1563,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1060,7 +1573,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1070,7 +1583,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1080,7 +1593,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1090,7 +1603,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1100,7 +1613,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1110,7 +1623,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1120,7 +1633,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1130,7 +1643,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1140,7 +1653,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1150,7 +1663,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1160,7 +1673,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1170,7 +1683,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1180,7 +1693,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1190,7 +1703,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1200,7 +1713,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1210,7 +1723,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1220,7 +1733,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1230,7 +1743,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1240,7 +1753,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1250,7 +1763,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1260,7 +1773,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1270,7 +1783,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1280,7 +1793,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1290,7 +1803,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1300,7 +1813,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1310,7 +1823,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1320,7 +1833,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1330,7 +1843,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1340,7 +1853,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1350,7 +1863,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1360,7 +1873,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1370,7 +1883,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,
@@ -1380,17 +1893,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_Filler,
 	      gText_SideQuestDesc_Filler,
 	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
-	      ITEM_NONE,
-	      ITEM,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_Filler,
-	      gText_SideQuestDesc_Filler,
-	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
+	      gText_QuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
 	      NULL,

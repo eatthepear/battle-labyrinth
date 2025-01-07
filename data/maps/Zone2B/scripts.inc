@@ -783,79 +783,85 @@ Zone2B_EventScript_ItemTMBugBite_2:
 
 Zone2B_EventScript_CautionSign::
 # 366 "data/maps/Zone2B/scripts.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_13
+# 367 "data/maps/Zone2B/scripts.pory"
 	msgbox Zone2B_EventScript_CautionSign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone2B_EventScript_PartySelectSign::
-# 371 "data/maps/Zone2B/scripts.pory"
+# 372 "data/maps/Zone2B/scripts.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_16
+# 373 "data/maps/Zone2B/scripts.pory"
 	msgbox Zone2B_EventScript_PartySelectSign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone2B_EventScript_OptionalLeviathan::
-# 376 "data/maps/Zone2B/scripts.pory"
+# 378 "data/maps/Zone2B/scripts.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_17
+# 379 "data/maps/Zone2B/scripts.pory"
 	msgbox Zone2B_EventScript_OptionalLeviathan_Text_0, MSGBOX_SIGN
 	end
 
 
-# 380 "data/maps/Zone2B/scripts.pory"
-
-# 381 "data/maps/Zone2B/scripts.pory"
-Zone2B_EventScript_Harper::
-# 382 "data/maps/Zone2B/scripts.pory"
-	trainerbattle_single TRAINER_PBL_HARPER, Zone2B_Text_HarperIntro, Zone2B_Text_HarperDefeat
 # 383 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_Text_HarperPostBattle, MSGBOX_AUTOCLOSE
-# 384 "data/maps/Zone2B/scripts.pory"
-	end
-# 385 "data/maps/Zone2B/scripts.pory"
 
+# 384 "data/maps/Zone2B/scripts.pory"
+Zone2B_EventScript_Harper::
+# 385 "data/maps/Zone2B/scripts.pory"
+	trainerbattle_single TRAINER_PBL_HARPER, Zone2B_Text_HarperIntro, Zone2B_Text_HarperDefeat
 # 386 "data/maps/Zone2B/scripts.pory"
-Zone2B_Text_HarperIntro:
+	msgbox Zone2B_Text_HarperPostBattle, MSGBOX_AUTOCLOSE
 # 387 "data/maps/Zone2B/scripts.pory"
-	.string "Surprise! Battle time!$"
+	end
 # 388 "data/maps/Zone2B/scripts.pory"
 
 # 389 "data/maps/Zone2B/scripts.pory"
-Zone2B_Text_HarperDefeat:
+Zone2B_Text_HarperIntro:
 # 390 "data/maps/Zone2B/scripts.pory"
-	.string "My spirit, crushed!$"
+	.string "Surprise! Battle time!$"
 # 391 "data/maps/Zone2B/scripts.pory"
 
 # 392 "data/maps/Zone2B/scripts.pory"
-Zone2B_Text_HarperPostBattle:
+Zone2B_Text_HarperDefeat:
 # 393 "data/maps/Zone2B/scripts.pory"
-	.string "I don't know if I can ever\n"
+	.string "My spirit, crushed!$"
 # 394 "data/maps/Zone2B/scripts.pory"
-	.string "come back from this loss…$"
+
 # 395 "data/maps/Zone2B/scripts.pory"
-
+Zone2B_Text_HarperPostBattle:
 # 396 "data/maps/Zone2B/scripts.pory"
-Zone2B_EventScript_Arthur::
+	.string "I don't know if I can ever\n"
 # 397 "data/maps/Zone2B/scripts.pory"
-	trainerbattle_single TRAINER_PBL_ARTHUR, Zone2B_Text_ArthurIntro, Zone2B_Text_ArthurDefeat
+	.string "come back from this loss…$"
 # 398 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_Text_ArthurPostBattle, MSGBOX_AUTOCLOSE
-# 399 "data/maps/Zone2B/scripts.pory"
-	end
-# 400 "data/maps/Zone2B/scripts.pory"
 
+# 399 "data/maps/Zone2B/scripts.pory"
+Zone2B_EventScript_Arthur::
+# 400 "data/maps/Zone2B/scripts.pory"
+	trainerbattle_single TRAINER_PBL_ARTHUR, Zone2B_Text_ArthurIntro, Zone2B_Text_ArthurDefeat
 # 401 "data/maps/Zone2B/scripts.pory"
-Zone2B_Text_ArthurIntro:
+	msgbox Zone2B_Text_ArthurPostBattle, MSGBOX_AUTOCLOSE
 # 402 "data/maps/Zone2B/scripts.pory"
-	.string "Hey, you! Get out of my way!$"
+	end
 # 403 "data/maps/Zone2B/scripts.pory"
 
 # 404 "data/maps/Zone2B/scripts.pory"
-Zone2B_Text_ArthurDefeat:
+Zone2B_Text_ArthurIntro:
 # 405 "data/maps/Zone2B/scripts.pory"
-	.string "You're too strong!$"
+	.string "Hey, you! Get out of my way!$"
 # 406 "data/maps/Zone2B/scripts.pory"
 
 # 407 "data/maps/Zone2B/scripts.pory"
-Zone2B_Text_ArthurPostBattle:
+Zone2B_Text_ArthurDefeat:
 # 408 "data/maps/Zone2B/scripts.pory"
+	.string "You're too strong!$"
+# 409 "data/maps/Zone2B/scripts.pory"
+
+# 410 "data/maps/Zone2B/scripts.pory"
+Zone2B_Text_ArthurPostBattle:
+# 411 "data/maps/Zone2B/scripts.pory"
 	.string "Sorry about earlier.$"
 
 Zone2B_EventScript_LeviathanBattle_Text_0:
@@ -1029,21 +1035,21 @@ Zone2B_EventScript_BuyBug_Text_30:
 	.string "Pleasure doing business with you.$"
 
 Zone2B_EventScript_CautionSign_Text_0:
-# 366 "data/maps/Zone2B/scripts.pory"
+# 367 "data/maps/Zone2B/scripts.pory"
 	.string "Caution!\p"
 	.string "Diglett have been found living inside\n"
 	.string "the tunnel.\p"
 	.string "Repels recommended!$"
 
 Zone2B_EventScript_PartySelectSign_Text_0:
-# 371 "data/maps/Zone2B/scripts.pory"
+# 373 "data/maps/Zone2B/scripts.pory"
 	.string "Trainer Tips\p"
 	.string "You can switch the order of your party\n"
 	.string "around in your party menu faster by\l"
 	.string "pressing {SELECT_BUTTON}.$"
 
 Zone2B_EventScript_OptionalLeviathan_Text_0:
-# 376 "data/maps/Zone2B/scripts.pory"
+# 379 "data/maps/Zone2B/scripts.pory"
 	.string "Trainer Tips\p"
 	.string "In some Zones, Leviathans are optional\n"
 	.string "to battle, but may give good rewards\l"

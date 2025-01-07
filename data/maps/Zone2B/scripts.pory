@@ -363,16 +363,19 @@ script Zone2B_EventScript_ItemTMBugBite {
 }
 
 script Zone2B_EventScript_CautionSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_13)
 	msgbox(format("Caution!\pDiglett have been found living inside the tunnel.\pRepels recommended!"), MSGBOX_SIGN)
 	end
 }
 
 script Zone2B_EventScript_PartySelectSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_16)
 	msgbox(format("Trainer Tips\pYou can switch the order of your party around in your party menu faster by pressing {SELECT_BUTTON}."), MSGBOX_SIGN)
 	end
 }
 
 script Zone2B_EventScript_OptionalLeviathan {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_17)
 	msgbox(format("Trainer Tips\pIn some Zones, Leviathans are optional to battle, but may give good rewards when defeated!"), MSGBOX_SIGN)
 	end
 }

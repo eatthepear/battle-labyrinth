@@ -1246,117 +1246,123 @@ Zone1A_EventScript_ItemQuickClaw_2:
 	end
 
 
-Zone1A_EventScript_PorygonSign::
-# 561 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_EventScript_PorygonSign_Text_0, MSGBOX_DEFAULT
-# 562 "data/maps/Zone1A/scripts.pory"
-	showmonpic SPECIES_PORYGON, 10, 3
-# 563 "data/maps/Zone1A/scripts.pory"
-	setseenmon SPECIES_PORYGON
-# 564 "data/maps/Zone1A/scripts.pory"
-	waitbuttonpress
-# 565 "data/maps/Zone1A/scripts.pory"
-	hidemonpic
-# 566 "data/maps/Zone1A/scripts.pory"
-	release
-	end
-
-
 Zone1A_EventScript_Sign_GoldenTree::
-# 571 "data/maps/Zone1A/scripts.pory"
+# 561 "data/maps/Zone1A/scripts.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_10
+# 562 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_EventScript_Sign_GoldenTree_Text_0, MSGBOX_SIGN
 	end
 
 
+Zone1A_EventScript_PorygonSign::
+# 567 "data/maps/Zone1A/scripts.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_11
+# 568 "data/maps/Zone1A/scripts.pory"
+	msgbox Zone1A_EventScript_PorygonSign_Text_0, MSGBOX_DEFAULT
+# 569 "data/maps/Zone1A/scripts.pory"
+	showmonpic SPECIES_PORYGON, 10, 3
+# 570 "data/maps/Zone1A/scripts.pory"
+	setseenmon SPECIES_PORYGON
+# 571 "data/maps/Zone1A/scripts.pory"
+	waitbuttonpress
+# 572 "data/maps/Zone1A/scripts.pory"
+	hidemonpic
+# 573 "data/maps/Zone1A/scripts.pory"
+	release
+	end
+
+
 Zone1A_EventScript_Sign_RunningShoes::
-# 576 "data/maps/Zone1A/scripts.pory"
+# 578 "data/maps/Zone1A/scripts.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_12
+# 579 "data/maps/Zone1A/scripts.pory"
 	msgbox Zone1A_EventScript_Sign_RunningShoes_Text_0, MSGBOX_SIGN
 	end
 
 
-# 580 "data/maps/Zone1A/scripts.pory"
-
-# 581 "data/maps/Zone1A/scripts.pory"
-Zone1A_EventScript_Nina::
-# 582 "data/maps/Zone1A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_NINA, Zone1A_Text_NinaIntro, Zone1A_Text_NinaDefeat
 # 583 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_NinaPostBattle, MSGBOX_AUTOCLOSE
-# 584 "data/maps/Zone1A/scripts.pory"
-	end
-# 585 "data/maps/Zone1A/scripts.pory"
 
+# 584 "data/maps/Zone1A/scripts.pory"
+Zone1A_EventScript_Nina::
+# 585 "data/maps/Zone1A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_NINA, Zone1A_Text_NinaIntro, Zone1A_Text_NinaDefeat
 # 586 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_NinaIntro:
+	msgbox Zone1A_Text_NinaPostBattle, MSGBOX_AUTOCLOSE
 # 587 "data/maps/Zone1A/scripts.pory"
-	.string "Hey, you! Let's battle!$"
+	end
 # 588 "data/maps/Zone1A/scripts.pory"
 
 # 589 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_NinaDefeat:
+Zone1A_Text_NinaIntro:
 # 590 "data/maps/Zone1A/scripts.pory"
-	.string "Aww… Come on!$"
+	.string "Hey, you! Let's battle!$"
 # 591 "data/maps/Zone1A/scripts.pory"
 
 # 592 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_NinaPostBattle:
+Zone1A_Text_NinaDefeat:
 # 593 "data/maps/Zone1A/scripts.pory"
-	.string "I always lose…$"
+	.string "Aww… Come on!$"
 # 594 "data/maps/Zone1A/scripts.pory"
 
 # 595 "data/maps/Zone1A/scripts.pory"
-Zone1A_EventScript_Mariam::
+Zone1A_Text_NinaPostBattle:
 # 596 "data/maps/Zone1A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_MARIAM, Zone1A_Text_MariamIntro, Zone1A_Text_MariamDefeat
+	.string "I always lose…$"
 # 597 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_MariamPostBattle, MSGBOX_AUTOCLOSE
-# 598 "data/maps/Zone1A/scripts.pory"
-	end
-# 599 "data/maps/Zone1A/scripts.pory"
 
+# 598 "data/maps/Zone1A/scripts.pory"
+Zone1A_EventScript_Mariam::
+# 599 "data/maps/Zone1A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_MARIAM, Zone1A_Text_MariamIntro, Zone1A_Text_MariamDefeat
 # 600 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_MariamIntro:
+	msgbox Zone1A_Text_MariamPostBattle, MSGBOX_AUTOCLOSE
 # 601 "data/maps/Zone1A/scripts.pory"
-	.string "Be careful, I'm tough!$"
+	end
 # 602 "data/maps/Zone1A/scripts.pory"
 
 # 603 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_MariamDefeat:
+Zone1A_Text_MariamIntro:
 # 604 "data/maps/Zone1A/scripts.pory"
-	.string "Sheesh!$"
+	.string "Be careful, I'm tough!$"
 # 605 "data/maps/Zone1A/scripts.pory"
 
 # 606 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_MariamPostBattle:
+Zone1A_Text_MariamDefeat:
 # 607 "data/maps/Zone1A/scripts.pory"
-	.string "Maybe I need more Pokémon.$"
+	.string "Sheesh!$"
 # 608 "data/maps/Zone1A/scripts.pory"
 
 # 609 "data/maps/Zone1A/scripts.pory"
-Zone1A_EventScript_Oscar::
+Zone1A_Text_MariamPostBattle:
 # 610 "data/maps/Zone1A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_OSCAR, Zone1A_Text_OscarIntro, Zone1A_Text_OscarDefeat
+	.string "Maybe I need more Pokémon.$"
 # 611 "data/maps/Zone1A/scripts.pory"
-	msgbox Zone1A_Text_OscarPostBattle, MSGBOX_AUTOCLOSE
-# 612 "data/maps/Zone1A/scripts.pory"
-	end
-# 613 "data/maps/Zone1A/scripts.pory"
 
+# 612 "data/maps/Zone1A/scripts.pory"
+Zone1A_EventScript_Oscar::
+# 613 "data/maps/Zone1A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_OSCAR, Zone1A_Text_OscarIntro, Zone1A_Text_OscarDefeat
 # 614 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_OscarIntro:
+	msgbox Zone1A_Text_OscarPostBattle, MSGBOX_AUTOCLOSE
 # 615 "data/maps/Zone1A/scripts.pory"
-	.string "Fear my might!$"
+	end
 # 616 "data/maps/Zone1A/scripts.pory"
 
 # 617 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_OscarDefeat:
+Zone1A_Text_OscarIntro:
 # 618 "data/maps/Zone1A/scripts.pory"
-	.string "Beaten! Disgrace!$"
+	.string "Fear my might!$"
 # 619 "data/maps/Zone1A/scripts.pory"
 
 # 620 "data/maps/Zone1A/scripts.pory"
-Zone1A_Text_OscarPostBattle:
+Zone1A_Text_OscarDefeat:
 # 621 "data/maps/Zone1A/scripts.pory"
+	.string "Beaten! Disgrace!$"
+# 622 "data/maps/Zone1A/scripts.pory"
+
+# 623 "data/maps/Zone1A/scripts.pory"
+Zone1A_Text_OscarPostBattle:
+# 624 "data/maps/Zone1A/scripts.pory"
 	.string "I must reclaim my honor…$"
 
 Zone1A_EventScript_GiveFWG_Text_0:
@@ -1550,23 +1556,23 @@ Zone1A_EventScript_LeviathanBattle_Text_1:
 	.string "now.\p"
 	.string "Bye bye!$"
 
-Zone1A_EventScript_PorygonSign_Text_0:
-# 561 "data/maps/Zone1A/scripts.pory"
-	.string "Trainer Tips\p"
-	.string "Every Zone has its own challenges.\n"
-	.string "In order to reach the Sanctuary and\l"
-	.string "clear a Zone, you must find {COLOR RED}Porygon{COLOR DARK_GRAY}.$"
-
 Zone1A_EventScript_Sign_GoldenTree_Text_0:
-# 571 "data/maps/Zone1A/scripts.pory"
+# 562 "data/maps/Zone1A/scripts.pory"
 	.string "Trainer Tips\p"
 	.string "Shaking a Golden Tree might drop\n"
 	.string "berries, though occasionally you'll\l"
 	.string "disturb the wild Pokémon living in the\l"
 	.string "tree!$"
 
+Zone1A_EventScript_PorygonSign_Text_0:
+# 568 "data/maps/Zone1A/scripts.pory"
+	.string "Trainer Tips\p"
+	.string "Every Zone has its own challenges.\n"
+	.string "In order to reach the Sanctuary and\l"
+	.string "clear a Zone, you must find {COLOR RED}Porygon{COLOR DARK_GRAY}.$"
+
 Zone1A_EventScript_Sign_RunningShoes_Text_0:
-# 576 "data/maps/Zone1A/scripts.pory"
+# 579 "data/maps/Zone1A/scripts.pory"
 	.string "Trainer Tips\p"
 	.string "Press {L_BUTTON} to enable or disable Auto Run.$"
 
