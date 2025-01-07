@@ -11,7 +11,109 @@ script EventScript_EnterSanctuary {
 	applymovement(1, Common_Movement_WalkDown3)
 	waitmovement(0)
 	playfanfare(MUS_OBTAIN_BADGE)
+	call(EventScript_CompletePBLSubquest)
 	return
+}
+
+script EventScript_CompletePBLSubquest {
+	switch(var(VAR_ZONE)) {
+		case 1:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_1)
+		case 2:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_2)
+		case 3:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_3)
+		case 4:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_4)
+		case 5:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_5)
+		case 6:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_6)
+		case 7:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_7)
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_8)
+		case 9:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_9)
+		case 10:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_10)
+		case 11:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_11)
+		case 12:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_12)
+		case 13:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_13)
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_14)
+		case 15:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_15)
+		case 16:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_16)
+		case 17:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_17)
+		case 18:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_18)
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_19)
+		case 20:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_20)
+		case 21:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_21)
+		case 22:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_22)
+		case 23:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_23)
+		case 24:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_24)
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_25)
+		case 26:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_26)
+		case 27:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_27)
+		case 28:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_28)
+		case 29:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_29)
+		case 30:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_30)
+		case 31:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_31)
+		case 32:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_32)
+		case 33:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_33)
+		case 34:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_34)
+		case 35:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_35)
+		case 36:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_36)
+		case 37:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_37)
+		case 38:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_38)
+		case 39:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_39)
+		case 40:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_40)
+		case 41:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_41)
+		case 42:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_42)
+		case 43:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_43)
+		case 44:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_44)
+		case 45:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_45)
+		case 46:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_46)
+		case 47:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_47)
+		case 48:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_48)
+		case 49:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_49)
+		case 50:
+			completesubquest(QUEST_PBL, SUB_QUEST_PBL_50)
+	}
 }
 
 script EventScript_MoveCameraUp {
@@ -3305,6 +3407,7 @@ script Debug_CheatStart_PBL {
 	setvar(VAR_TEMP_1, 5) // level
 	call(Debug_CheatStart_PBL_GiveMon)
 	setflag(FLAG_ZONE1A_RECEIVED_FWG)
+	completesubquest(QUEST_PBL, SUB_QUEST_PBL_1)
 	// zone 1 items
 	additem(ITEM_QUICK_CLAW)
 	additem(ITEM_EXP_SHARE)
@@ -3356,6 +3459,7 @@ script Debug_CheatStart_PBL {
 	setvar(VAR_TEMP_1, 6) // level
 	call(Debug_CheatStart_PBL_GiveMon)
 	setflag(FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG)
+	completesubquest(QUEST_PBL, SUB_QUEST_PBL_2)
 	// zone 2 items
 	additem(ITEM_SILK_SCARF)
 	additem(ITEM_TM_BUG_BITE)
@@ -3386,6 +3490,7 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 7) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
+	completesubquest(QUEST_PBL, SUB_QUEST_PBL_3)
 	// zone 3 items
 	additem(ITEM_GOOD_ROD)
 	// zone 4
@@ -3412,6 +3517,7 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 9) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
+	completesubquest(QUEST_PBL, SUB_QUEST_PBL_4)
 	// zone 4 items
 	additem(ITEM_SILVER_POWDER)
 	additem(ITEM_MUSCLE_BAND)
@@ -3457,6 +3563,7 @@ script Debug_CheatStart_PBL {
 	setvar(VAR_TEMP_1, 12) // level
 	call(Debug_CheatStart_PBL_GiveMon)
 	setflag(FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE)
+	completesubquest(QUEST_PBL, SUB_QUEST_PBL_5)
 	// zone 5 items
 	additem(ITEM_LAX_MINT)
 	additem(ITEM_QUICK_BALL)
@@ -3486,6 +3593,7 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 13) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
+	completesubquest(QUEST_PBL, SUB_QUEST_PBL_6)
 	// zone 6 items
 	additem(ITEM_NEST_BALL)
 	additem(ITEM_NET_BALL)
@@ -3527,6 +3635,8 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 16) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
+	completesubquest(QUEST_PBL, SUB_QUEST_PBL_7)
+	completesubquest(QUEST_PBL, SUB_QUEST_PBL_8)
 	// zone 7 & 8 items
 	additem(ITEM_SHARP_BEAK)
 	additem(ITEM_ROCK_GEM)
@@ -3568,6 +3678,7 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 18) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
+	completesubquest(QUEST_PBL, SUB_QUEST_PBL_9)
 	// zone 9 items
 	additem(ITEM_BIG_ROOT)
 	additem(ITEM_TM_PLUCK)

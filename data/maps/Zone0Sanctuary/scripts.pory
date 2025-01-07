@@ -32,6 +32,7 @@ script Zone0Sanctuary_EventScript_Intro {
 		"In order to win, you must progress through all Zones without losing a battle."), MSGBOX_AUTOCLOSE)
 		delay(16)
 	}
+	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_PBL)
 	setflag(FLAG_SETTINGS_EXP_ALL)
 	msgbox(format("Pokémon Battle Labyrinth has many settings that are customizable, including {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode,\l{COLOR RED}Randomizer{COLOR DARK_GRAY} mode, and difficulty options.\pWould you like to modify these settings now from the default?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
