@@ -216,6 +216,7 @@
 #define MAPSEC_TRAINER_HILL                 0xD4
 #define MAPSEC_NONE                         0xD5
 
+#define METLOC_ZONE4A_GIFT                  0xF2
 #define METLOC_ZONE8A_GIFT                  0xF3
 #define METLOC_MARIE_EGG                    0xF4
 #define METLOC_GIVE_FWG                     0xF5

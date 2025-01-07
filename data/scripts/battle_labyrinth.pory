@@ -3557,6 +3557,11 @@ script Debug_CheatStart_PBL {
 	setvar(VAR_TEMP_1, 9) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
 	completesubquest(QUEST_PBL, SUB_QUEST_4)
+	// zone 4 squawkabilly
+	setvar(VAR_TEMP_0, SPECIES_SQUAWKABILLY)
+	setvar(VAR_TEMP_1, 12) // level
+	call(Debug_CheatStart_PBL_GiveMon)
+	setflag(FLAG_ZONE4A_RECEIVED_SQUAWKABILLY)
 	// zone 4 items
 	additem(ITEM_SILVER_POWDER)
 	additem(ITEM_MUSCLE_BAND)
