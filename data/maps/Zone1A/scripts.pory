@@ -557,7 +557,14 @@ script Zone1A_EventScript_ItemQuickClaw {
 	end
 }
 
+script Zone1A_EventScript_Sign_GoldenTree {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_10)
+	msgbox(format("Trainer Tips\pShaking a Golden Tree might drop berries, though occasionally you'll disturb the wild Pokémon living in the tree!"), MSGBOX_SIGN)
+	end
+}
+
 script Zone1A_EventScript_PorygonSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_11)
 	msgbox(format("Trainer Tips\pEvery Zone has its own challenges.\nIn order to reach the Sanctuary and clear a Zone, you must find {COLOR RED}Porygon{COLOR DARK_GRAY}."), MSGBOX_DEFAULT)
 	showmonpic(SPECIES_PORYGON, 10, 3)
 	setseenmon(SPECIES_PORYGON)
@@ -567,12 +574,8 @@ script Zone1A_EventScript_PorygonSign {
 	end
 }
 
-script Zone1A_EventScript_Sign_GoldenTree {
-	msgbox(format("Trainer Tips\pShaking a Golden Tree might drop berries, though occasionally you'll disturb the wild Pokémon living in the tree!"), MSGBOX_SIGN)
-	end
-}
-
 script Zone1A_EventScript_Sign_RunningShoes {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_12)
 	msgbox(format("Trainer Tips\pPress {L_BUTTON} to enable or disable Auto Run."), MSGBOX_SIGN)
 	end
 }

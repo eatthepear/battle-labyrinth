@@ -279,6 +279,12 @@ script Zone6A_EventScript_ItemTMDrainingKiss {
 	end
 }
 
+script Zone6A_EventScript_Sign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_24)
+	msgbox(format("Trainer Tips\pYou can sort items in the Bag using {START_BUTTON}."), MSGBOX_SIGN)
+	end
+}
+
 raw `
 
 Zone6A_EventScript_Gilbert::
@@ -393,13 +399,4 @@ Zone6A_Text_VicandDellDefeat:
 Zone6A_Text_VicandDellPostBattle:
 	.string "Vic: Losing has its pluses!\p"
 	.string "Dell: And its minuses!$"
-
-Zone6A_EventScript_Sign::
-	msgbox Zone6A_Text_Sign, MSGBOX_SIGN
-	end
-
-Zone6A_Text_Sign:
-	.string "Trainer Tips\p"
-	.string "You can sort items in the Bag\n"
-	.string "using {START_BUTTON}.$"
 `

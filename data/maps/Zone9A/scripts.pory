@@ -18,11 +18,6 @@ mapscripts Zone9A_MapScripts {
 	}
 }
 
-script Zone9A_EventScript_HerbalSign {
-	msgbox(format("Herbal and Incense Shop"), MSGBOX_SIGN)
-	end
-}
-
 script Zone9A_EventScript_Man {
 	lock
 	faceplayer
@@ -212,6 +207,18 @@ script Zone9A_EventScript_ItemTMPluck {
 	end
 }
 
+script Zone9A_EventScript_Sign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_27)
+	msgbox(format("Trainer Tips\pWhile you are on the Pokémon stats screen, you can press {A_BUTTON} to switch between stats, IVs, or EVs."), MSGBOX_SIGN)
+	end
+}
+
+script Zone9A_EventScript_HerbalSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_28)
+	msgbox(format("Herbal and Incense Shop"), MSGBOX_SIGN)
+	end
+}
+
 raw `
 Zone9A_EventScript_Cooper::
        trainerbattle_single TRAINER_PBL_COOPER, Zone9A_Text_CooperIntro, Zone9A_Text_CooperDefeat
@@ -243,15 +250,6 @@ Zone9A_Text_CarmineDefeat:
 Zone9A_Text_CarminePostBattle:
 	.string "I hope there's AC in the village.$"
 
-Zone9A_EventScript_Sign::
-	msgbox Zone9A_Text_Sign, MSGBOX_SIGN
-	end
-
-Zone9A_Text_Sign:
-	.string "Trainer Tips\p"
-	.string "While you are on the Pokémon stats\n"
-	.string "screen, you can press {A_BUTTON} to switch\l"
-	.string "between stats, IVs, or EVs.$"
 `
 
 script Zone9A_EventScript_Jonathan {

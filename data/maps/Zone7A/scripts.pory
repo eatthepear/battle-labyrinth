@@ -283,7 +283,14 @@ script Zone7A_EventScript_ItemRandom3 {
 }
 
 script Zone7A_EventScript_Sign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_25)
 	msgbox(format("Trainer Tips\pYou can change the music you hear in battle by speaking to Colress!"), MSGBOX_SIGN)
+	end
+}
+
+script Zone7A_EventScript_HealSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_26)
+	msgbox(format("A stop for weary travelers."), MSGBOX_SIGN)
 	end
 }
 
@@ -393,11 +400,4 @@ Zone7A_Text_WhitakerDefeat:
 Zone7A_Text_WhitakerPostBattle:
 	.string "My birds need some time to sleep\n"
 	.string "in their nests!$"
-
-Zone7A_EventScript_HealSign::
-	msgbox Zone7A_Text_HealSign, MSGBOX_SIGN
-	end
-
-Zone7A_Text_HealSign:
-	.string "A stop for weary travelers.$"
 `

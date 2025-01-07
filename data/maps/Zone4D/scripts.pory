@@ -47,6 +47,12 @@ script Zone4D_EventScript_ItemTMHiddenPower {
 	end
 }
 
+script Zone4D_EventScript_Sign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_22)
+	msgbox(format("Trainer Tips\pSome areas require backtracking later on in order to access them."), MSGBOX_SIGN)
+	end
+}
+
 raw `
 
 Zone4D_EventScript_Lucia::
@@ -79,13 +85,4 @@ Zone4D_Text_FredDefeat:
 Zone4D_Text_FredPostBattle:
 	.string "Just keep swimming,\n"
 	.string "just keep swimming.$"
-
-Zone4D_EventScript_Sign::
-	msgbox Zone4D_Text_Sign, MSGBOX_SIGN
-	end
-
-Zone4D_Text_Sign:
-	.string "Trainer Tips\p"
-	.string "Some areas require backtracking\n"
-	.string "later on in order to access them.$"
 `

@@ -111,53 +111,45 @@ Zone4A_EventScript_ItemSilverPowder_2:
 	end
 
 
-# 156 "data/maps/Zone4A/scripts.pory"
-
-# 157 "data/maps/Zone4A/scripts.pory"
 Zone4A_EventScript_Sign::
+# 157 "data/maps/Zone4A/scripts.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_19
 # 158 "data/maps/Zone4A/scripts.pory"
-	msgbox Zone4A_Text_Sign, MSGBOX_SIGN
-# 159 "data/maps/Zone4A/scripts.pory"
+	msgbox Zone4A_EventScript_Sign_Text_0, MSGBOX_SIGN
 	end
-# 160 "data/maps/Zone4A/scripts.pory"
 
-# 161 "data/maps/Zone4A/scripts.pory"
-Zone4A_Text_Sign:
+
 # 162 "data/maps/Zone4A/scripts.pory"
-	.string "These woods are enchanted…\n"
+
 # 163 "data/maps/Zone4A/scripts.pory"
-	.string "Don't get lost!$"
-# 164 "data/maps/Zone4A/scripts.pory"
-
-# 165 "data/maps/Zone4A/scripts.pory"
 Zone4A_EventScript_Herman::
-# 166 "data/maps/Zone4A/scripts.pory"
+# 164 "data/maps/Zone4A/scripts.pory"
 	trainerbattle_single TRAINER_PBL_HERMAN, Zone4A_Text_HermanIntro, Zone4A_Text_HermanDefeat
-# 167 "data/maps/Zone4A/scripts.pory"
+# 165 "data/maps/Zone4A/scripts.pory"
 	msgbox Zone4A_Text_HermanPostBattle, MSGBOX_AUTOCLOSE
-# 168 "data/maps/Zone4A/scripts.pory"
+# 166 "data/maps/Zone4A/scripts.pory"
 	end
-# 169 "data/maps/Zone4A/scripts.pory"
+# 167 "data/maps/Zone4A/scripts.pory"
 
-# 170 "data/maps/Zone4A/scripts.pory"
+# 168 "data/maps/Zone4A/scripts.pory"
 Zone4A_Text_HermanIntro:
-# 171 "data/maps/Zone4A/scripts.pory"
+# 169 "data/maps/Zone4A/scripts.pory"
 	.string "I keep going through this exit,\n"
-# 172 "data/maps/Zone4A/scripts.pory"
+# 170 "data/maps/Zone4A/scripts.pory"
 	.string "'cause it might lead somewhere!$"
-# 173 "data/maps/Zone4A/scripts.pory"
+# 171 "data/maps/Zone4A/scripts.pory"
 
-# 174 "data/maps/Zone4A/scripts.pory"
+# 172 "data/maps/Zone4A/scripts.pory"
 Zone4A_Text_HermanDefeat:
-# 175 "data/maps/Zone4A/scripts.pory"
+# 173 "data/maps/Zone4A/scripts.pory"
 	.string "But I keep getting back here!$"
-# 176 "data/maps/Zone4A/scripts.pory"
+# 174 "data/maps/Zone4A/scripts.pory"
 
-# 177 "data/maps/Zone4A/scripts.pory"
+# 175 "data/maps/Zone4A/scripts.pory"
 Zone4A_Text_HermanPostBattle:
-# 178 "data/maps/Zone4A/scripts.pory"
+# 176 "data/maps/Zone4A/scripts.pory"
 	.string "Try something else?\n"
-# 179 "data/maps/Zone4A/scripts.pory"
+# 177 "data/maps/Zone4A/scripts.pory"
 	.string "No, I'm sure this is the right way!$"
 
 Zone4A_EventScript_PoisonTree_Text_0:
@@ -177,3 +169,8 @@ Zone4A_EventScript_PoisonTree_Text_1:
 Zone4A_EventScript_PoisonTree_Text_2:
 # 24 "data/maps/Zone4A/scripts.pory"
 	.string "Better to be safe than sorry.$"
+
+Zone4A_EventScript_Sign_Text_0:
+# 158 "data/maps/Zone4A/scripts.pory"
+	.string "These woods are enchanted…\n"
+	.string "Don't get lost!$"

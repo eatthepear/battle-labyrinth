@@ -146,10 +146,7 @@ script Zone4E_EventScript_ItemPoisonBarb {
 }
 
 script Zone4E_EventScript_Sign {
-	msgbox(Zone4E_Text_Sign, MSGBOX_SIGN)
+	completesubquest(QUEST_SIGNS, SUB_QUEST_23)
+	msgbox(format("Trainer Tips\pThe Pokémon you encounter in different areas of the same zone may have slight differences!"), MSGBOX_SIGN)
 	end
-}
-
-text Zone4E_Text_Sign {
-	format("Trainer Tips\pThe Pokémon you encounter in different areas of the same zone may have slight differences!")
 }
