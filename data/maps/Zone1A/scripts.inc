@@ -303,7 +303,7 @@ Zone1A_EventScript_GiveFWG_37:
 	goto_if_eq Zone1A_EventScript_GiveFWG_79
 Zone1A_EventScript_GiveFWG_78:
 # 62 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_CACNEA
+	checkspeciesclause SPECIES_HOPPIP
 # 63 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone1A_EventScript_GiveFWG_88
@@ -449,7 +449,7 @@ Zone1A_EventScript_GiveFWG_46:
 
 Zone1A_EventScript_GiveFWG_47:
 # 267 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_CACNEA
+	setvar VAR_TEMP_1, SPECIES_HOPPIP
 	goto Zone1A_EventScript_GiveFWG_24
 
 Zone1A_EventScript_GiveFWG_48:
@@ -725,12 +725,12 @@ Zone1A_EventScript_GiveFWG_142:
 
 Zone1A_EventScript_GiveFWG_143:
 # 94 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_CACNEA
+	checkspeciesclause SPECIES_HOPPIP
 # 95 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone1A_EventScript_GiveFWG_163
 # 98 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_CACNEA
+	setvar VAR_TEMP_1, SPECIES_HOPPIP
 	goto Zone1A_EventScript_GiveFWG_132
 
 Zone1A_EventScript_GiveFWG_144:
@@ -1412,7 +1412,7 @@ Zone1A_EventScript_GiveFWG_Text_9:
 # 51 "data/maps/Zone1A/scripts.pory"
 	.string "On Nuzlocke mode, you will randomly\n"
 	.string "receive one of the possible Pokémon:\l"
-	.string "Pansage, Cacnea, Sunkern, Smoliv, or\l"
+	.string "Pansage, Hoppip, Sunkern, Smoliv, or\l"
 	.string "Bounsweet.\p"
 	.string "Is this ok?$"
 
@@ -1448,7 +1448,7 @@ Zone1A_EventScript_GiveFWG_Text_14:
 
 Zone1A_EventScript_GiveFWG_Text_15:
 # 262 "data/maps/Zone1A/scripts.pory"
-	.string "Cacnea$"
+	.string "Hoppip$"
 
 Zone1A_EventScript_GiveFWG_Text_16:
 # 262 "data/maps/Zone1A/scripts.pory"

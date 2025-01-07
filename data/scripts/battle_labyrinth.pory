@@ -841,7 +841,7 @@ script EventScript_Shop_Marie_MainMenu {
 					return
 				case 1:
 					showmoneybox(0, 0)
-					msgbox(format("An egg that contains Alolan Geodude, Galarian Zigzagoon, Galarian Slowpoke, or Hisuian Voltorb will cost ¥3000."), MSGBOX_YESNO)
+					msgbox(format("An egg that contains Alolan Meowth, Galarian Zigzagoon, Hisuian Voltorb, or Paldean Wooper will cost ¥3000."), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						call(EventScript_Shop_Marie_RegionalFormEgg)
 					}
@@ -975,13 +975,13 @@ script EventScript_Shop_Marie_RegionalFormEgg {
 	random(4)
 	switch (var(VAR_RESULT)) {
 		case 0:
-			setvar(VAR_TEMP_1, SPECIES_GEODUDE_ALOLA)
+			setvar(VAR_TEMP_1, SPECIES_MEOWTH_ALOLA)
 		case 1:
 			setvar(VAR_TEMP_1, SPECIES_ZIGZAGOON_GALAR)
 		case 2:
-			setvar(VAR_TEMP_1, SPECIES_SLOWPOKE_GALAR)
-		case 3:
 			setvar(VAR_TEMP_1, SPECIES_VOLTORB_HISUI)
+		case 3:
+			setvar(VAR_TEMP_1, SPECIES_WOOPER_PALDEA)
 	}
 	giveegg(VAR_TEMP_1)
 	setmonmetlocation(VAR_TEMP_2, 244)
@@ -3367,7 +3367,7 @@ script Debug_CheatStart_PBL {
 				case 0:
 					setvar(VAR_TEMP_0, SPECIES_PANSAGE)
 				case 1:
-					setvar(VAR_TEMP_0, SPECIES_CACNEA)
+					setvar(VAR_TEMP_0, SPECIES_HOPPIP)
 				case 2:
 					setvar(VAR_TEMP_0, SPECIES_SUNKERN)
 				case 3:
