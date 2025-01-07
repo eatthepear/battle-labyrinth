@@ -475,12 +475,12 @@
               {
                 "min_level": 5,
                 "max_level": 6,
-                "species": "SPECIES_STUNFISK_GALAR"
+                "species": "SPECIES_WOOBAT"
               },
               {
                 "min_level": 5,
                 "max_level": 6,
-                "species": "SPECIES_DUNSPARCE"
+                "species": "SPECIES_WOOBAT"
               }
             ]
           }
@@ -1379,7 +1379,7 @@
               {
                 "min_level": 16,
                 "max_level": 17,
-                "species": "SPECIES_ARON"
+                "species": "SPECIES_DWEBBLE"
               },
               {
                 "min_level": 16,
@@ -1394,12 +1394,12 @@
               {
                 "min_level": 16,
                 "max_level": 17,
-                "species": "SPECIES_WOOBAT"
+                "species": "SPECIES_MAWILE"
               },
               {
                 "min_level": 16,
                 "max_level": 17,
-                "species": "SPECIES_WOOBAT"
+                "species": "SPECIES_SABLEYE"
               },
               {
                 "min_level": 16,
@@ -1448,7 +1448,7 @@
               {
                 "min_level": 16,
                 "max_level": 17,
-                "species": "SPECIES_ARON"
+                "species": "SPECIES_DWEBBLE"
               },
               {
                 "min_level": 16,
@@ -1463,12 +1463,12 @@
               {
                 "min_level": 16,
                 "max_level": 17,
-                "species": "SPECIES_WOOBAT"
+                "species": "SPECIES_MAWILE"
               },
               {
                 "min_level": 16,
                 "max_level": 17,
-                "species": "SPECIES_WOOBAT"
+                "species": "SPECIES_SABLEYE"
               },
               {
                 "min_level": 16,
@@ -1517,7 +1517,7 @@
               {
                 "min_level": 16,
                 "max_level": 17,
-                "species": "SPECIES_ARON"
+                "species": "SPECIES_DWEBBLE"
               },
               {
                 "min_level": 16,
@@ -1532,22 +1532,22 @@
               {
                 "min_level": 16,
                 "max_level": 17,
-                "species": "SPECIES_WOOBAT"
-              },
-              {
-                "min_level": 16,
-                "max_level": 17,
-                "species": "SPECIES_WOOBAT"
-              },
-              {
-                "min_level": 16,
-                "max_level": 17,
                 "species": "SPECIES_MAWILE"
               },
               {
                 "min_level": 16,
                 "max_level": 17,
                 "species": "SPECIES_SABLEYE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 17,
+                "species": "SPECIES_STUNFISK_GALAR"
+              },
+              {
+                "min_level": 16,
+                "max_level": 17,
+                "species": "SPECIES_DUNSPARCE"
               }
             ]
           }
@@ -1715,11 +1715,6 @@
               {
                 "min_level": 19,
                 "max_level": 20,
-                "species": "SPECIES_DWEBBLE"
-              },
-              {
-                "min_level": 19,
-                "max_level": 20,
                 "species": "SPECIES_SCRAGGY"
               },
               {
@@ -1745,7 +1740,12 @@
               {
                 "min_level": 19,
                 "max_level": 20,
-                "species": "SPECIES_BRAMBLIN"
+                "species": "SPECIES_CACNEA"
+              },
+              {
+                "min_level": 19,
+                "max_level": 20,
+                "species": "SPECIES_CACNEA"
               },
               {
                 "min_level": 19,
