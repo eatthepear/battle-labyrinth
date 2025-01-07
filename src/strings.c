@@ -1617,7 +1617,7 @@ const u8 gText_SaveMenuInfiniteRandomlocke[] =_("Infinite Randomlocke");
 
 //// side quest data
 //generic strings
-const u8 gText_QuestAnnounce[] = _("The quest '{STR_VAR_1}'\nis now {STR_VAR_2}.");
+const u8 gText_QuestAnnounce[] = _("The quest {COLOR RED}{STR_VAR_1}{COLOR DARK_GRAY}\nis now {COLOR GREEN}{STR_VAR_2}{COLOR DARK_GRAY}.");
 const u8 gText_QuestComplete[] =_("complete");
 const u8 gText_QuestActive[] =_("active");
 
