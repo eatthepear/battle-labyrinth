@@ -210,7 +210,7 @@
 #define FLAG_HIDE_ZONE3A_REMI                             0x110
 #define FLAG_HIDE_ZONE3A_PHILLIPA                         0x111
 #define FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER      0x112
-#define FLAG_ZONE3B_TRADED_RATTATA_ALOLA                  0x113
+#define FLAG_ZONE3B_TRADED_DELIBIRD                       0x113
 #define FLAG_ZONE3B_TRADED_ZIGZAGOON_GALAR                0x114
 #define FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG        0x115
 #define FLAG_ZONE5A_RECEIVED_PINK_SCARF                   0x116

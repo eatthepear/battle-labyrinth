@@ -9,26 +9,32 @@ script Zone3B_EventScript_Phillipa {
 
 script Zone3B_EventScript_Remi {
     lock
-	msgbox(format("{COLOR BLUE}Remi{COLOR DARK_GRAY}: I'm glad you like the food, kiddo.\pI wonder when your brothers will get hungry; they seem to be fighting again."))
+	msgbox(format("{COLOR BLUE}Remi{COLOR DARK_GRAY}: I'm glad you like the food, kiddo.\pI wonder when your brother will get hungry; he seems upset about his Pokémon again."))
     release
     end
 }
 
-script Zone3B_EventScript_TradeRattata {
+script Zone3B_EventScript_TradeDelibird {
 	lock
-	faceplayer
-	if (flag(FLAG_ZONE3B_TRADED_RATTATA_ALOLA)) {
-		msgbox(format("Please be good to my Ratters!"))
+	if (flag(FLAG_ZONE3B_TRADED_DELIBIRD)) {
+		faceplayer
+		msgbox(format("My Delibird is stronger than other Delibird, but it still stinks!"))
 		release
 		end
 	}
-	setvar(VAR_0x8008, INGAME_TRADE_RATTATA_ALOLA)
+	msgbox(format("Please, oh please, won't anyone trade me a better Pokémon?"))
+	applymovement(4, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	faceplayer
+	setvar(VAR_0x8008, INGAME_TRADE_DELIBIRD)
 	copyvar(VAR_0x8004, VAR_0x8008)
 	specialvar(VAR_RESULT, GetInGameTradeSpeciesInfo)
 	copyvar(VAR_0x8009, VAR_RESULT)
-	msgbox(format("Hey! Help me show my twin brother that Rattata is the superior Pokémon! Trade me a Kantonian {STR_VAR_2}, and I'll give you a really nice Alolan {STR_VAR_1} in exchange!"), MSGBOX_YESNO)
+	msgbox(format("Please! You've got to trade me! I'll take anything! {STR_VAR_2} is the worst Pokémon ever!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Aww, rats!"), MSGBOX_DEFAULT)
+		msgbox(format("Please! I can't win any battles with a {STR_VAR_2}"), MSGBOX_DEFAULT)
 		release
 		end
 	}
@@ -36,16 +42,7 @@ script Zone3B_EventScript_TradeRattata {
 	waitstate
 	copyvar(VAR_0x800A, VAR_0x8004)
 	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
-		msgbox(format("Aww, rats!"), MSGBOX_DEFAULT)
-		release
-		end
-	}
-	copyvar(VAR_0x8005, VAR_0x800A)
-	specialvar(VAR_RESULT, GetTradeSpecies)
-	copyvar(VAR_0x800B, VAR_RESULT)
-	if (var(VAR_RESULT) != VAR_0x8009) {
-		bufferspeciesname(STR_VAR_1, VAR_0x8009)
-		msgbox(format("Huh? That doesn't look anything like a {STR_VAR_1} to me."), MSGBOX_DEFAULT)
+		msgbox(format("Please! I can't win any battles with a {STR_VAR_2}"), MSGBOX_DEFAULT)
 		release
 		end
 	}
@@ -54,54 +51,54 @@ script Zone3B_EventScript_TradeRattata {
 	special(CreateInGameTradePokemon)
 	special(DoInGameTradeScene)
 	waitstate
-	msgbox(format("Please be good to my Ratters!"), MSGBOX_DEFAULT)
-	setflag(FLAG_ZONE3B_TRADED_RATTATA_ALOLA)
+	msgbox(format("Thank you! Now I've got a real Pokémon to use!"), MSGBOX_DEFAULT)
+	setflag(FLAG_ZONE3B_TRADED_DELIBIRD)
 	release
 	end
 }
 
-script Zone3B_EventScript_TradeZigzagoon {
-	lock
-	faceplayer
-	if (flag(FLAG_ZONE3B_TRADED_ZIGZAGOON_GALAR)) {
-		msgbox(format("Please be good to my Zaggers!"))
-		release
-		end
-	}
-	setvar(VAR_0x8008, INGAME_TRADE_ZIGZAGOON_GALAR)
-	copyvar(VAR_0x8004, VAR_0x8008)
-	specialvar(VAR_RESULT, GetInGameTradeSpeciesInfo)
-	copyvar(VAR_0x8009, VAR_RESULT)
-	msgbox(format("Hey! Help me show my twin brother that Zigzagoon is the superior Pokémon! Trade me a Kantonian {STR_VAR_2}, and I'll give you a really nice Galarian {STR_VAR_1} in exchange!"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Aww, you're a goon!"), MSGBOX_DEFAULT)
-		release
-		end
-	}
-	special(ChoosePartyMon)
-	waitstate
-	copyvar(VAR_0x800A, VAR_0x8004)
-	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
-		msgbox(format("Aww, you're a goon!"), MSGBOX_DEFAULT)
-		release
-		end
-	}
-	copyvar(VAR_0x8005, VAR_0x800A)
-	specialvar(VAR_RESULT, GetTradeSpecies)
-	copyvar(VAR_0x800B, VAR_RESULT)
-	if (var(VAR_RESULT) != VAR_0x8009) {
-		bufferspeciesname(STR_VAR_1, VAR_0x8009)
-		msgbox(format("Huh? That doesn't look anything like a {STR_VAR_1} to me."), MSGBOX_DEFAULT)
-		release
-		end
-	}
-	copyvar(VAR_0x8004, VAR_0x8008)
-	copyvar(VAR_0x8005, VAR_0x800A)
-	special(CreateInGameTradePokemon)
-	special(DoInGameTradeScene)
-	waitstate
-	msgbox(format("Please be good to my Zaggers!"), MSGBOX_DEFAULT)
-	setflag(FLAG_ZONE3B_TRADED_ZIGZAGOON_GALAR)
-	release
-	end
-}
+// script Zone3B_EventScript_TradeRattata {
+// 	lock
+// 	faceplayer
+// 	if (flag(FLAG_ZONE3B_TRADED_RATTATA_ALOLA)) {
+// 		msgbox(format("Please be good to my Ratters!"))
+// 		release
+// 		end
+// 	}
+// 	setvar(VAR_0x8008, INGAME_TRADE_RATTATA_ALOLA)
+// 	copyvar(VAR_0x8004, VAR_0x8008)
+// 	specialvar(VAR_RESULT, GetInGameTradeSpeciesInfo)
+// 	copyvar(VAR_0x8009, VAR_RESULT)
+// 	msgbox(format("Hey! Help me show my twin brother that Rattata is the superior Pokémon! Trade me a Kantonian {STR_VAR_2}, and I'll give you a really nice Alolan {STR_VAR_1} in exchange!"), MSGBOX_YESNO)
+// 	if (var(VAR_RESULT) == NO) {
+// 		msgbox(format("Aww, rats!"), MSGBOX_DEFAULT)
+// 		release
+// 		end
+// 	}
+// 	special(ChoosePartyMon)
+// 	waitstate
+// 	copyvar(VAR_0x800A, VAR_0x8004)
+// 	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+// 		msgbox(format("Aww, rats!"), MSGBOX_DEFAULT)
+// 		release
+// 		end
+// 	}
+// 	copyvar(VAR_0x8005, VAR_0x800A)
+// 	specialvar(VAR_RESULT, GetTradeSpecies)
+// 	copyvar(VAR_0x800B, VAR_RESULT)
+// 	if (var(VAR_RESULT) != VAR_0x8009) {
+// 		bufferspeciesname(STR_VAR_1, VAR_0x8009)
+// 		msgbox(format("Huh? That doesn't look anything like a {STR_VAR_1} to me."), MSGBOX_DEFAULT)
+// 		release
+// 		end
+// 	}
+// 	copyvar(VAR_0x8004, VAR_0x8008)
+// 	copyvar(VAR_0x8005, VAR_0x800A)
+// 	special(CreateInGameTradePokemon)
+// 	special(DoInGameTradeScene)
+// 	waitstate
+// 	msgbox(format("Please be good to my Ratters!"), MSGBOX_DEFAULT)
+// 	setflag(FLAG_ZONE3B_TRADED_RATTATA_ALOLA)
+// 	release
+// 	end
+// }
