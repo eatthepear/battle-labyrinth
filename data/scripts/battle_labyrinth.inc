@@ -2140,7 +2140,7 @@ EventScript_Shop_Marie_RegionalFormEgg_16:
 
 EventScript_Shop_Marie_RegionalFormEgg_20:
 # 978 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_TEMP_1, SPECIES_GEODUDE_ALOLA
+	setvar VAR_TEMP_1, SPECIES_MEOWTH_ALOLA
 	goto EventScript_Shop_Marie_RegionalFormEgg_18
 
 EventScript_Shop_Marie_RegionalFormEgg_21:
@@ -2150,12 +2150,12 @@ EventScript_Shop_Marie_RegionalFormEgg_21:
 
 EventScript_Shop_Marie_RegionalFormEgg_22:
 # 982 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_TEMP_1, SPECIES_SLOWPOKE_GALAR
+	setvar VAR_TEMP_1, SPECIES_VOLTORB_HISUI
 	goto EventScript_Shop_Marie_RegionalFormEgg_18
 
 EventScript_Shop_Marie_RegionalFormEgg_23:
 # 984 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_TEMP_1, SPECIES_VOLTORB_HISUI
+	setvar VAR_TEMP_1, SPECIES_WOOPER_PALDEA
 	goto EventScript_Shop_Marie_RegionalFormEgg_18
 
 
@@ -7173,7 +7173,7 @@ Debug_CheatStart_PBL_42:
 
 Debug_CheatStart_PBL_43:
 # 3370 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_TEMP_0, SPECIES_CACNEA
+	setvar VAR_TEMP_0, SPECIES_HOPPIP
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_44:
@@ -7749,9 +7749,9 @@ EventScript_Shop_Marie_MainMenu_Text_21:
 
 EventScript_Shop_Marie_MainMenu_Text_22:
 # 844 "data/scripts/battle_labyrinth.pory"
-	.string "An egg that contains Alolan Geodude,\n"
-	.string "Galarian Zigzagoon, Galarian Slowpoke,\l"
-	.string "or Hisuian Voltorb will cost ¥3000.$"
+	.string "An egg that contains Alolan Meowth,\n"
+	.string "Galarian Zigzagoon, Hisuian Voltorb, or\l"
+	.string "Paldean Wooper will cost ¥3000.$"
 
 EventScript_Shop_Marie_MainMenu_Text_23:
 # 852 "data/scripts/battle_labyrinth.pory"
