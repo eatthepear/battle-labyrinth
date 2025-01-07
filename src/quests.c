@@ -209,12 +209,12 @@ static const u32 sQuestMenuTilemap[] =
 
 //Strings used for the Quest Menu
 static const u8 sText_Empty[] = _("");
-static const u8 sText_AllHeader[] = _("All Missions");
-static const u8 sText_InactiveHeader[] = _("Inactive Missions");
-static const u8 sText_ActiveHeader[] = _("Active Missions");
+static const u8 sText_AllHeader[] = _("All Quests");
+static const u8 sText_InactiveHeader[] = _("Inactive Quests");
+static const u8 sText_ActiveHeader[] = _("Active Quests");
 static const u8 sText_RewardHeader[] = _("Reward Available");
 static const u8 sText_CompletedHeader[] =
-      _("Completed Missions");
+      _("Completed Quests");
 static const u8 sText_QuestNumberDisplay[] =
       _("{STR_VAR_1}/{STR_VAR_2}");
 static const u8 sText_Unk[] = _("??????");
@@ -229,6 +229,7 @@ static const u8 sText_ReturnRecieveReward[] =
       _("Return to {STR_VAR_2}\nto recieve your reward!");
 static const u8 sText_SubQuestButton[] = _(" {A_BUTTON}");
 static const u8 sText_Type[] = _("{R_BUTTON}Type");
+static const u8 sText_Done[] = _("Done");
 static const u8 sText_Caught[] = _("Caught");
 static const u8 sText_Found[] = _("Found");
 static const u8 sText_Read[] = _("Read");
@@ -243,106 +244,505 @@ static const u8 sText_AZ[] = _(" A-Z");
 
 //Declaration of subquest structures. Edits to subquests are made here.
 #define sub_quest(i, n, d, m, s, st, t) {.id = i, .name = n, .desc = d, .map = m, .sprite = s, .spritetype = st, .type = t}
-static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
-{
-	sub_quest(
-	      0,
-	      gText_SubQuest_Name_Filler,
-	      gText_SubQuest_Desc_Filler,
-	      gText_SideQuestMapFiller,
+static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
+{	sub_quest(
+	      SUB_QUEST_PBL_1,
+	      gText_SubQuest_Name_PBL1,
+	      gText_SubQuest_Desc_PBL1,
+	      gText_SubQuestMapZone1,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Found
+	      sText_Done
 	),
 
 	sub_quest(
-	      1,
-	      gText_SubQuest_Name_Filler,
-	      gText_SubQuest_Desc_Filler,
-	      gText_SideQuestMapFiller,
+	      SUB_QUEST_PBL_2,
+	      gText_SubQuest_Name_PBL2,
+	      gText_SubQuest_Desc_PBL2,
+	      gText_SubQuestMapZone2,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Found
+	      sText_Done
 	),
 
 	sub_quest(
-	      2,
-	      gText_SubQuest_Name_Filler,
-	      gText_SubQuest_Desc_Filler,
-	      gText_SideQuestMapFiller,
+	      SUB_QUEST_PBL_3,
+	      gText_SubQuest_Name_PBL3,
+	      gText_SubQuest_Desc_PBL3,
+	      gText_SubQuestMapZone3,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Found
+	      sText_Done
 	),
 
 	sub_quest(
-	      3,
-	      gText_SubQuest_Name_Filler,
-	      gText_SubQuest_Desc_Filler,
-	      gText_SideQuestMapFiller,
+	      SUB_QUEST_PBL_4,
+	      gText_SubQuest_Name_PBL4,
+	      gText_SubQuest_Desc_PBL4,
+	      gText_SubQuestMapZone4,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Found
+	      sText_Done
 	),
 
 	sub_quest(
-	      4,
-	      gText_SubQuest_Name_Filler,
-	      gText_SubQuest_Desc_Filler,
-	      gText_SideQuestMapFiller,
+	      SUB_QUEST_PBL_5,
+	      gText_SubQuest_Name_PBL5,
+	      gText_SubQuest_Desc_PBL5,
+	      gText_SubQuestMapZone5,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Found
+	      sText_Done
 	),
 
 	sub_quest(
-	      5,
-	      gText_SubQuest_Name_Filler,
-	      gText_SubQuest_Desc_Filler,
-	      gText_SideQuestMapFiller,
+	      SUB_QUEST_PBL_6,
+	      gText_SubQuest_Name_PBL6,
+	      gText_SubQuest_Desc_PBL6,
+	      gText_SubQuestMapZone6,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Found
+	      sText_Done
 	),
 
 	sub_quest(
-	      6,
-	      gText_SubQuest_Name_Filler,
-	      gText_SubQuest_Desc_Filler,
-	      gText_SideQuestMapFiller,
+	      SUB_QUEST_PBL_7,
+	      gText_SubQuest_Name_PBL7,
+	      gText_SubQuest_Desc_PBL7,
+	      gText_SubQuestMapZone7,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Found
+	      sText_Done
 	),
 
 	sub_quest(
-	      7,
-	      gText_SubQuest_Name_Filler,
-	      gText_SubQuest_Desc_Filler,
-	      gText_SideQuestMapFiller,
+	      SUB_QUEST_PBL_8,
+	      gText_SubQuest_Name_PBL8,
+	      gText_SubQuest_Desc_PBL8,
+	      gText_SubQuestMapZone8,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Found
+	      sText_Done
 	),
 
 	sub_quest(
-	      8,
-	      gText_SubQuest_Name_Filler,
-	      gText_SubQuest_Desc_Filler,
-	      gText_SideQuestMapFiller,
+	      SUB_QUEST_PBL_9,
+	      gText_SubQuest_Name_PBL9,
+	      gText_SubQuest_Desc_PBL9,
+	      gText_SubQuestMapZone9,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Found
+	      sText_Done
 	),
 
 	sub_quest(
-	      9,
-	      gText_SubQuest_Name_Filler,
-	      gText_SubQuest_Desc_Filler,
-	      gText_SideQuestMapFiller,
+	      SUB_QUEST_PBL_10,
+	      gText_SubQuest_Name_PBL10,
+	      gText_SubQuest_Desc_PBL10,
+	      gText_SubQuestMapZone10,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Found
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_11,
+	      gText_SubQuest_Name_PBL11,
+	      gText_SubQuest_Desc_PBL11,
+	      gText_SubQuestMapZone11,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_12,
+	      gText_SubQuest_Name_PBL12,
+	      gText_SubQuest_Desc_PBL12,
+	      gText_SubQuestMapZone12,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_13,
+	      gText_SubQuest_Name_PBL13,
+	      gText_SubQuest_Desc_PBL13,
+	      gText_SubQuestMapZone13,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_14,
+	      gText_SubQuest_Name_PBL14,
+	      gText_SubQuest_Desc_PBL14,
+	      gText_SubQuestMapZone14,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_15,
+	      gText_SubQuest_Name_PBL15,
+	      gText_SubQuest_Desc_PBL15,
+	      gText_SubQuestMapZone15,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_16,
+	      gText_SubQuest_Name_PBL16,
+	      gText_SubQuest_Desc_PBL16,
+	      gText_SubQuestMapZone16,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_17,
+	      gText_SubQuest_Name_PBL17,
+	      gText_SubQuest_Desc_PBL17,
+	      gText_SubQuestMapZone17,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_18,
+	      gText_SubQuest_Name_PBL18,
+	      gText_SubQuest_Desc_PBL18,
+	      gText_SubQuestMapZone18,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_19,
+	      gText_SubQuest_Name_PBL19,
+	      gText_SubQuest_Desc_PBL19,
+	      gText_SubQuestMapZone19,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_20,
+	      gText_SubQuest_Name_PBL20,
+	      gText_SubQuest_Desc_PBL20,
+	      gText_SubQuestMapZone20,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_21,
+	      gText_SubQuest_Name_PBL21,
+	      gText_SubQuest_Desc_PBL21,
+	      gText_SubQuestMapZone21,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_22,
+	      gText_SubQuest_Name_PBL22,
+	      gText_SubQuest_Desc_PBL22,
+	      gText_SubQuestMapZone22,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_23,
+	      gText_SubQuest_Name_PBL23,
+	      gText_SubQuest_Desc_PBL23,
+	      gText_SubQuestMapZone23,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_24,
+	      gText_SubQuest_Name_PBL24,
+	      gText_SubQuest_Desc_PBL24,
+	      gText_SubQuestMapZone24,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_25,
+	      gText_SubQuest_Name_PBL25,
+	      gText_SubQuest_Desc_PBL25,
+	      gText_SubQuestMapZone25,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_26,
+	      gText_SubQuest_Name_PBL26,
+	      gText_SubQuest_Desc_PBL26,
+	      gText_SubQuestMapZone26,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_27,
+	      gText_SubQuest_Name_PBL27,
+	      gText_SubQuest_Desc_PBL27,
+	      gText_SubQuestMapZone27,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_28,
+	      gText_SubQuest_Name_PBL28,
+	      gText_SubQuest_Desc_PBL28,
+	      gText_SubQuestMapZone28,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_29,
+	      gText_SubQuest_Name_PBL29,
+	      gText_SubQuest_Desc_PBL29,
+	      gText_SubQuestMapZone29,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_30,
+	      gText_SubQuest_Name_PBL30,
+	      gText_SubQuest_Desc_PBL30,
+	      gText_SubQuestMapZone30,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_31,
+	      gText_SubQuest_Name_PBL31,
+	      gText_SubQuest_Desc_PBL31,
+	      gText_SubQuestMapZone31,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_32,
+	      gText_SubQuest_Name_PBL32,
+	      gText_SubQuest_Desc_PBL32,
+	      gText_SubQuestMapZone32,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_33,
+	      gText_SubQuest_Name_PBL33,
+	      gText_SubQuest_Desc_PBL33,
+	      gText_SubQuestMapZone33,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_34,
+	      gText_SubQuest_Name_PBL34,
+	      gText_SubQuest_Desc_PBL34,
+	      gText_SubQuestMapZone34,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_35,
+	      gText_SubQuest_Name_PBL35,
+	      gText_SubQuest_Desc_PBL35,
+	      gText_SubQuestMapZone35,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_36,
+	      gText_SubQuest_Name_PBL36,
+	      gText_SubQuest_Desc_PBL36,
+	      gText_SubQuestMapZone36,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_37,
+	      gText_SubQuest_Name_PBL37,
+	      gText_SubQuest_Desc_PBL37,
+	      gText_SubQuestMapZone37,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_38,
+	      gText_SubQuest_Name_PBL38,
+	      gText_SubQuest_Desc_PBL38,
+	      gText_SubQuestMapZone38,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_39,
+	      gText_SubQuest_Name_PBL39,
+	      gText_SubQuest_Desc_PBL39,
+	      gText_SubQuestMapZone39,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_40,
+	      gText_SubQuest_Name_PBL40,
+	      gText_SubQuest_Desc_PBL40,
+	      gText_SubQuestMapZone40,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_41,
+	      gText_SubQuest_Name_PBL41,
+	      gText_SubQuest_Desc_PBL41,
+	      gText_SubQuestMapZone41,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_42,
+	      gText_SubQuest_Name_PBL42,
+	      gText_SubQuest_Desc_PBL42,
+	      gText_SubQuestMapZone42,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_43,
+	      gText_SubQuest_Name_PBL43,
+	      gText_SubQuest_Desc_PBL43,
+	      gText_SubQuestMapZone43,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_44,
+	      gText_SubQuest_Name_PBL44,
+	      gText_SubQuest_Desc_PBL44,
+	      gText_SubQuestMapZone44,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_45,
+	      gText_SubQuest_Name_PBL45,
+	      gText_SubQuest_Desc_PBL45,
+	      gText_SubQuestMapZone45,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_46,
+	      gText_SubQuest_Name_PBL46,
+	      gText_SubQuest_Desc_PBL46,
+	      gText_SubQuestMapZone46,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_47,
+	      gText_SubQuest_Name_PBL47,
+	      gText_SubQuest_Desc_PBL47,
+	      gText_SubQuestMapZone47,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_48,
+	      gText_SubQuest_Name_PBL48,
+	      gText_SubQuest_Desc_PBL48,
+	      gText_SubQuestMapZone48,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_49,
+	      gText_SubQuest_Name_PBL49,
+	      gText_SubQuest_Desc_PBL49,
+	      gText_SubQuestMapZone49,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
+	),
+
+	sub_quest(
+	      SUB_QUEST_PBL_50,
+	      gText_SubQuest_Name_PBL50,
+	      gText_SubQuest_Desc_PBL50,
+	      gText_SubQuestMapZone50,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
 	),
 };
 
@@ -357,14 +757,14 @@ static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
 	side_quest(
-	      gText_SideQuestName_Filler,
-	      gText_SideQuestDesc_Filler,
-	      gText_SideQuestDoneDesc_Filler,
-	      gText_SideQuestMapFiller,
-	      ITEM_NONE,
-	      ITEM,
-	      NULL,
-	      0
+	      gText_SideQuestName_PBL,
+	      gText_SideQuestDesc_PBL,
+	      gText_SideQuestDoneDesc_PBL,
+	      gText_SideQuestMapSanctuary,
+	      OBJ_EVENT_GFX_COLRESS,
+	      OBJECT,
+	      sSubQuestsPBL,
+	      QUEST_PBL_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_Filler,
@@ -373,8 +773,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMapFiller,
 	      ITEM_NONE,
 	      ITEM,
-	      NULL, //sSubQuests1
-	      0 //QUEST_1_SUB_COUNT
+	      NULL,
+	      0
 	),
 	side_quest(
 	      gText_SideQuestName_Filler,
