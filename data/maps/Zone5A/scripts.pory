@@ -45,46 +45,6 @@ script Zone5A_EventScript_ItemQuickBall {
 	end
 }
 
-script Zone5A_EventScript_Breeder {
-	lock
-	faceplayer
-	if (flag(FLAG_ZONE5A_RECEIVED_PINK_SCARF) && flag(FLAG_ZONE5A_RECEIVED_SURPRISE_MULCH)) {
-		msgbox(format("I already gave you all the evolution items I have!"))
-		release
-		end
-	}
-	msgbox(format("I know some people think of them as weak Pokémon…\pBut Skitty and Sunkern are my favorites!\pI'll give you the corresponding evolution item if you show me a Skitty or a Sunkern."), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		special(ChoosePartyMon)
-		waitstate
-		if (var(VAR_RESULT) != PARTY_NOTHING_CHOSEN) {
-			specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
-			switch(var(VAR_RESULT)) {
-				case SPECIES_SKITTY:
-					if (flag(FLAG_ZONE5A_RECEIVED_PINK_SCARF) == false) {
-						msgbox(format("Aww… It's so cute!\pTake this evolution item!"))
-						giveitem(ITEM_PINK_SCARF)
-						setflag(FLAG_ZONE5A_RECEIVED_PINK_SCARF)
-					} else {
-						msgbox(format("I already gave you all the Skitty evolution items I have!"))
-					}
-				case SPECIES_SUNKERN:
-					if (flag(FLAG_ZONE5A_RECEIVED_SURPRISE_MULCH) == false) {
-						msgbox(format("Aww… It's so cute!\pTake this evolution item!"))
-						giveitem(ITEM_SURPRISE_MULCH)
-						setflag(FLAG_ZONE5A_RECEIVED_SURPRISE_MULCH)
-					} else {
-						msgbox(format("I already gave you all the Sunkern evolution items I have!"))
-					}
-				default:
-					msgbox(format("That's not a Skitty nor a Sunkern!"))
-			}
-		}
-	}
-	release
-	end
-}
-
 script Zone5A_EventScript_ItemRandom1 {
 	lock
 	if (flag(FLAG_ITEM_ZONE5A_RANDOM_1)) {
