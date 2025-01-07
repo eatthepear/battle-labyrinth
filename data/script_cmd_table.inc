@@ -244,6 +244,9 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_BUFFERITEMNAMEPLURAL          ScrCmd_bufferitemnameplural           @ 0xe2
 	script_cmd_table_entry SCR_OP_DYNMULTICHOICE                ScrCmd_dynmultichoice                 @ 0xe3
 	script_cmd_table_entry SCR_OP_DYNMULTIPUSH                  ScrCmd_dynmultipush                   @ 0xe4
+	script_cmd_table_entry SCR_OP_QUESTMENU                     ScrCmd_questmenu                      @ 0xe5
+	script_cmd_table_entry SCR_OP_SUBQUESTMENU                  ScrCmd_subquestmenu                   @ 0xe6
+	script_cmd_table_entry SCR_OP_RETURNQUESTSTATE              ScrCmd_returnqueststate               @ 0xe7
 
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 gScriptCmdTableEnd::

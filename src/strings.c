@@ -1614,3 +1614,26 @@ const u8 gText_SaveMenuInfinite[] =_("Infinite");
 const u8 gText_SaveMenuInfiniteRandomizer[] =_("Infinite Randomizer");
 const u8 gText_SaveMenuInfiniteNuzlocke[] =_("Infinite Nuzlocke");
 const u8 gText_SaveMenuInfiniteRandomlocke[] =_("Infinite Randomlocke");
+
+//// side quest data
+//generic strings
+const u8 gText_QuestAnnounce[] = _("The quest '{STR_VAR_1}'\nis now {STR_VAR_2}.");
+const u8 gText_QuestComplete[] =_("complete");
+const u8 gText_QuestActive[] =_("active");
+
+//names
+const u8 gText_SideQuestName_Filler[] = _("Filler Side Quest");
+
+//descriptions
+const u8 gText_SideQuestDesc_Filler[] = _("Filler Description");
+
+//completed quest description
+const u8 gText_SideQuestDoneDesc_Filler[] = _("Filler Completed Quest");
+
+//map
+const u8 gText_SideQuestMapFiller[] = _("???");
+
+//subquests
+const u8 gText_SubQuest_Name_Filler[] = _("Filler Part");
+
+const u8 gText_SubQuest_Desc_Filler[] = _("Filler Description Sub");
