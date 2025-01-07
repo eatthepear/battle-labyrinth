@@ -49,6 +49,8 @@
 #include "start_menu.h"
 #include "money.h"
 #include "dexnav.h"
+#include "quests.h"
+#include "constants/songs.h"
 
 /*
     Full Screen Start Menu
@@ -792,7 +794,7 @@ static void CreateGreyedMenuBoxes()
     if(!FlagGet(FLAG_SYS_START_MENU_PC_GET) || (FlagGet(FLAG_ZONE_PC_USED) && FlagGet(FLAG_IN_NEW_ZONE))) // PC
     {
         if (sStartMenuDataPtr->greyMenuBoxIds[1] == SPRITE_NONE)
-            sStartMenuDataPtr->greyMenuBoxIds[1] = CreateSprite(&sSpriteTemplate_GreyMenuButtonParty, CURSOR_RIGHT_COL_X, CURSOR_MID_ROW_Y, 1);
+            sStartMenuDataPtr->greyMenuBoxIds[1] = CreateSprite(&sSpriteTemplate_GreyMenuButtonParty, CURSOR_RIGHT_COL_X, CURSOR_BTM_ROW_Y, 1);
         gSprites[sStartMenuDataPtr->greyMenuBoxIds[1]].invisible = FALSE;
         StartSpriteAnim(&gSprites[sStartMenuDataPtr->greyMenuBoxIds[1]], 0);
     }
@@ -1446,6 +1448,16 @@ void Task_ReturnToFieldOnSave(u8 taskId)
     }
 }
 
+void Task_OpenQuestMenuStartMenu(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        StartMenuFull_FreeResources();
+        PlayRainStoppingSoundEffect();
+        CleanupOverworldWindowsAndTilemaps();
+        CreateTask(Task_QuestMenu_OpenFromStartMenu, 0);
+    }
+}
 
 //
 //  Handle save Confirmation and then Leave to Overworld for Saving 
@@ -1583,6 +1595,11 @@ static void Task_StartMenuFullMain(u8 taskId)
                 }
                 break;
             case START_MENU_CARD:
+                PlaySE(SE_SELECT);
+                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+                gTasks[taskId].func = Task_OpenQuestMenuStartMenu;
+                break;
+            case START_MENU_OPTIONS:
                 if(FlagGet(FLAG_SYS_START_MENU_PC_GET)) // PC
                 {
                     if (FlagGet(FLAG_IN_NEW_ZONE)) {
@@ -1602,11 +1619,6 @@ static void Task_StartMenuFullMain(u8 taskId)
                 else{
                     PlaySE(SE_BOO);
                 }
-                break;
-            case START_MENU_OPTIONS:
-                PlaySE(SE_SELECT);
-                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-                gTasks[taskId].func = Task_OpenOptionsMenuStartMenu;
                 break;
         }
     }

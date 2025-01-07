@@ -2756,4 +2756,27 @@ extern const u8 gText_MoveItemWhere[];
 extern const u8 gText_XsYAnd[];
 extern const u8 gText_XsYWereSwapped[];
 
+////side quests
+//generic strings
+extern const u8 gText_QuestAnnounce[];
+extern const u8 gText_QuestComplete[];
+extern const u8 gText_QuestActive[];
+
+//names
+extern const u8 gText_SideQuestName_Filler[];
+
+//descriptions
+extern const u8 gText_SideQuestDesc_Filler[];
+
+//completed quest description
+extern const u8 gText_SideQuestDoneDesc_Filler[];
+
+//map
+extern const u8 gText_SideQuestMapFiller[];
+
+//subquests
+extern const u8 gText_SubQuest_Name_Filler[];
+
+extern const u8 gText_SubQuest_Desc_Filler[];
+
 #endif // GUARD_STRINGS_H
