@@ -98,7 +98,7 @@ Zone10A_EventScript_Adamina_1:
 # 55 "data/maps/Zone10A/scripts.pory"
 	goto_if_set FLAG_SETTINGS_CHALLENGE, Zone10A_EventScript_Adamina_12
 # 58 "data/maps/Zone10A/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_ADAMINA_LEVIATHAN_9, Zone10A_Text_Leviathan9Defeat
+	trainerbattle_no_intro TRAINER_PBL_ADAMINA_LEVIATHAN_10, Zone10A_Text_Leviathan9Defeat
 Zone10A_EventScript_Adamina_11:
 # 60 "data/maps/Zone10A/scripts.pory"
 	clearflag FLAG_FORCE_BATTLE_ANIM_ON
@@ -142,7 +142,7 @@ Zone10A_EventScript_Adamina_5:
 
 Zone10A_EventScript_Adamina_12:
 # 56 "data/maps/Zone10A/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_ADAMINA_LEVIATHAN_9_CHALLENGE, Zone10A_Text_Leviathan9Defeat
+	trainerbattle_no_intro TRAINER_PBL_ADAMINA_LEVIATHAN_10_CHALLENGE, Zone10A_Text_Leviathan9Defeat
 	goto Zone10A_EventScript_Adamina_11
 
 

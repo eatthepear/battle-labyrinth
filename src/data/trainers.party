@@ -2209,6 +2209,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Super Fang
 - Flatter
 
+/* Fought in a double battle with Peter */
 === TRAINER_PBL_CONNIE ===
 Name: Connie
 Class: Lass
@@ -2236,6 +2237,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bug Bite
 - Bubble Beam
 
+/* Fought in a double battle with Connie */
 === TRAINER_PBL_PETER ===
 Name: Peter
 Class: Youngster
@@ -3027,13 +3029,6 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 
-Squawkabilly-Green
-Ability: Intimidate
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Aerial Ace
-- Quick Attack
-
 Chatot
 Ability: Punk Rock
 Level: 19
@@ -3139,15 +3134,6 @@ Music: Twins
 AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
-
-Squawkabilly-Green @ Sharp Beak
-Ability: Intimidate
-Level: 19
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Pluck
-- Thief
-- Quick Attack
-- Fury Attack
 
 Chatot @ Sitrus Berry
 Ability: Punk Rock
@@ -3439,7 +3425,7 @@ Corphish
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_PBL_ADAMINA_LEVIATHAN_9 ===
+=== TRAINER_PBL_ADAMINA_LEVIATHAN_10 ===
 Name: Adamina
 Class: Pkmn Ranger
 Pic: Pokemon Ranger F
@@ -3494,7 +3480,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Aerial Ace
 - Covet
 
-=== TRAINER_PBL_ADAMINA_LEVIATHAN_9_CHALLENGE ===
+=== TRAINER_PBL_ADAMINA_LEVIATHAN_10_CHALLENGE ===
 Name: Adamina
 Class: Pkmn Ranger
 Pic: Pokemon Ranger F
@@ -3675,46 +3661,277 @@ Bramblin
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_PBL_NEWTON_LEVIATHAN_10 ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+=== TRAINER_PBL_NEWTON_LEVIATHAN_11 ===
+Name: Newton
+Class: Scientist
+Pic: Scientist
+Music: Intense
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: Yes
+Random Lead: No
+Mugshot: Purple
 
-Metang
-Brave Nature
-Level: 42
+Clefairy
+Level: 23
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
 
-=== TRAINER_PBL_NEWTON_LEVIATHAN_10_CHALLENGE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
+Stantler
+Level: 23
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+
+Stonjourner
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Flapple
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_PBL_NEWTON_LEVIATHAN_11_CHALLENGE ===
+Name: Newton
+Class: Scientist
+Pic: Scientist
+Music: Intense
+AI: AI_FLAG_SMART_TRAINER
+Double Battle: Yes
+Random Lead: No
+Mugshot: Purple
+
+Clefairy
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Stantler
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Stonjourner
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Flapple
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_ESSENCE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Essence
+Class: Beauty
+Pic: Beauty
+Music: Female
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: Yes
+
+Clamperl
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Staryu
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pikachu
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Roselia
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PBL_DOLORES ===
+Name: Dolores
+Class: Parasol Lady
+Pic: Parasol Lady
+Music: Female
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: Yes
+
+Snover
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Vanillite
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Cubchoo
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Snorunt
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PBL_GENIE ===
+Name: Genie
+Class: Pokefan
+Pic: Pokefan F
+Music: Twins
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: Yes
+
+Magnemite
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Clauncher
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Glimmet
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pawmo
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PBL_ABIGAIL ===
+Name: Abigail
+Class: Parasol Lady
+Pic: Parasol Lady
+Music: Female
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: Yes
+
+Shellder
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Swinub
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Spheal
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Bergmite
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PBL_FEDERICO ===
+Name: Federico
+Class: Fisherman
+Pic: Fisherman
+Music: Hiker
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: Yes
+
+Clobbopus
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Wailmer
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Mareanie
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Mantyke
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+/* Fought in a double battle with Julie */
+=== TRAINER_PBL_ROMULUS ===
+Name: Romulus
+Class: Camper
+Pic: Camper
 Music: Male
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: No
+
+Ferroseed
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Luxio
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+/* Fought in a double battle with Romulus */
+=== TRAINER_PBL_JULIE ===
+Name: Julie
+Class: Picnicker
+Pic: Picnicker
+Music: Girl
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: No
+
+Pawniard
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Flaaffy
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PBL_HILDA ===
+Name: Julie
+Class: Swimmer F
+Pic: Swimmer F
+Music: Swimmer
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: Yes
+
+Carvanha
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Horsea
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Skrelp
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Tentacool
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PBL_KINLEY ===
+Name: Kinley
+Class: Collector
+Pic: Collector
+Music: Suspicious
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: Yes
+
+Frigibax
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Dreepy
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Deino
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Zorua
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PBL_TREVOR ===
+Name: Trevor
+Class: Pkmn Breeder
+Pic: Pokemon Breeder M
+Music: Male
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: Yes
 
 Togepi
 Level: 24
@@ -3740,189 +3957,94 @@ Magby
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_PBL_DOLORES ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+=== TRAINER_PBL_REID ===
+Name: Reid
+Class: Bug Catcher
+Pic: Bug Catcher
 Music: Male
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: No
 
-Snover
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Yanma
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Vanillite
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dottler
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Cubchoo
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Whirlipede
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Snorunt
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Swadloon
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-=== TRAINER_PBL_JULIE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+=== TRAINER_PBL_DECLAN_LEVIATHAN_12 ===
+Name: Declan
+Class: Bug Maniac
+Pic: Bug Maniac
+Music: Suspicious
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: No
+Mugshot: Purple
 
-Magnemite
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ariados
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Ferroseed
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ledian
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Pawniard
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Vespiquen
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Glimmet
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Rabsca
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-=== TRAINER_PBL_ROMULUS ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Lurantis
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Clauncher
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+=== TRAINER_PBL_DECLAN_LEVIATHAN_12_CHALLENGE ===
+Name: Declan
+Class: Bug Maniac
+Pic: Bug Maniac
+Music: Suspicious
+AI: AI_FLAG_SMART_TRAINER
+Double Battle: No
+Random Lead: No
+Mugshot: Purple
 
-Wailmer
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ariados
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Mareanie
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ledian
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-=== TRAINER_PBL_TREVOR ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Vespiquen
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Pikachu
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Rabsca
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Luxio
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lurantis
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Flaaffy
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Roselia
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Pawmo
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_FEDERICO ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Clamperl
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Clobbopus
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Mantyke
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Carvanha
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_GENIE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Shellder
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Swinub
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Spheal
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Bergmite
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_HILDA ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Staryu
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Horsea
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Skrelp
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Tentacool
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_KINLEY ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Frigibax
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Dreepy
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Deino
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Zorua
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lokix
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_VIOLET ===
 Name: STEVEN
