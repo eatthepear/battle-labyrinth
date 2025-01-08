@@ -433,7 +433,7 @@
 #define FLAG_ITEM_ZONE8B_HARD_STONE                0x32A
 #define FLAG_ITEM_ZONE8B_DUSK_BALL                 0x32B
 #define FLAG_ITEM_ZONE8B_RANDOM_1                  0x32C
-#define FLAG_ITEM_ZONE8C_NEVER_MELT_ICE            0x32D
+#define FLAG_ITEM_ZONE8C_RANDOM_2            0x32D
 #define FLAG_ITEM_ZONE8C_FULL_HEAL                 0x32E
 #define FLAG_ITEM_ZONE8C_RANDOM_1                  0x32F
 #define FLAG_ITEM_ZONE9A_GEMS                      0x330
