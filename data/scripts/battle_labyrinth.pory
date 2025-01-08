@@ -3698,7 +3698,6 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_MAGNET)
 	additem(ITEM_HARD_STONE)
 	additem(ITEM_DUSK_BALL)
-	additem(ITEM_NEVER_MELT_ICE)
 	additem(ITEM_FULL_HEAL)
 	additem(ITEM_TM_THIEF)
 	additem(ITEM_TM_ROCK_TOMB)
