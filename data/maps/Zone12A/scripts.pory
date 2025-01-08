@@ -28,83 +28,7 @@ mapscripts Zone12A_MapScripts {
 	}
 }
 
-script Zone12A_EventScript_StartGauntletBattleTop {
-	lockall
-	setobjectxyperm(1, 37, 13)
-	setobjectxyperm(2, 37, 14)
-	removeobject(1)
-	removeobject(2)
-	addobject(1)
-	addobject(2)
-	goto(Zone12A_EventScript_InitiateRomulusJulieBattles)
-}
-
-script Zone12A_EventScript_StartGauntletBattleBottom {
-	lockall
-	setobjectxyperm(1, 24, 27)
-	setobjectxyperm(2, 24, 28)
-	removeobject(1)
-	removeobject(2)
-	addobject(1)
-	addobject(2)
-	goto(Zone12A_EventScript_InitiateRomulusJulieBattles)
-}
-
-script Zone12A_EventScript_InitiateRomulusJulieBattles {
-	applymovement(1, Zone12A_Movement_Left)
-	applymovement(2, Zone12A_Movement_Left)
-	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Julie{COLOR DARK_GRAY}: Well, well well. Look what we have here!"), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Romulus{COLOR DARK_GRAY}: A trainer! Trying to cross the river!"), MSGBOX_DEFAULT)
-	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		msgbox(format("{COLOR BLUE}Julie{COLOR DARK_GRAY}: Trainer, would you like to face our trial? We'll battle you one after the other, and you won't be healed in between battles!"), MSGBOX_YESNO)
-	} else {
-		msgbox(format("{COLOR BLUE}Julie{COLOR DARK_GRAY}: Trainer, would you like to face our trial? We'll battle you one after the other, and you'll be healed in between battles!"), MSGBOX_YESNO)
-	}
-	if (var(VAR_RESULT) == NO) {
-		msgbox(format("{COLOR BLUE}Romulus{COLOR DARK_GRAY}: Oh! How cowardly."))
-		applymovement(1, Zone12A_Movement_Right)
-		applymovement(2, Zone12A_Movement_Right)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
-		waitmovement(0)
-		releaseall
-		end
-	}
-	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Romulus{COLOR DARK_GRAY}: Well then, I'm up first! Better hope luck is on your side!"))
-	trainerbattle_no_intro(TRAINER_PBL_ROMULUS, format("Romulus: The critical hits didn't come through!"))
-	if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_CHALLENGE) == false)) {
-		special(HealPlayerParty)
-	}
-	msgbox(format("{COLOR BLUE}Julie{COLOR DARK_GRAY}: Next up is me! I won't need any crits to beat you!"))
-	trainerbattle_no_intro(TRAINER_PBL_JULIE, format("Julie: You won even without landing a critical hit!"))
-	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Romulus{COLOR DARK_GRAY}: You got us! We'll let you cross the river, and heal your Pokémon to boot!"), MSGBOX_DEFAULT)
-	special(HealPlayerParty)
-	msgbox(format("{COLOR BLUE}Julie{COLOR DARK_GRAY}: We'll even give you this item, too!"), MSGBOX_DEFAULT)
-	giveitem(ITEM_SCOPE_LENS)
-	msgbox(format("{COLOR BLUE}Romulus{COLOR DARK_GRAY}: Au revoir!"))
-	applymovement(1, Zone12A_Movement_Right)
-	applymovement(2, Zone12A_Movement_Right)
-	waitmovement(0)
-	setflag(FLAG_HIDE_ZONE12A_CAMPER_PICNICKER)
-	removeobject(1)
-	removeobject(2)
-	setvar(VAR_ZONE_12_STATE, 1)
-	releaseall
-	end
-}
-
-movement Zone12A_Movement_Left {
-	walk_left * 7
-}
-
-movement Zone12A_Movement_Right {
-	walk_right * 7
-}
-
-script Zone12A_EventScript_BreederM {
+script Zone12A_EventScript_BreederF {
 	lock
 	faceplayer
 	showmoneybox(0, 0, 0)
@@ -153,38 +77,6 @@ script Zone12A_EventScript_BreederM {
 			}
 		}
 	}
-	release
-	end
-}
-
-script Zone12A_EventScript_Nurse {
-	lock
-	faceplayer
-	msgbox("Hey.\pI know you don't have access to your Bag, so…\pI'll heal your entire party for a\nflat ¥2000 fee.", MSGBOX_DEFAULT)
-	showmoneybox(0, 0, 0)
-	msgbox("Should I heal your Pokémon?", MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		closemessage
-		hidemoneybox
-	} else {
-		checkmoney(2000, 0)
-		if (var(VAR_RESULT) == FALSE) {
-			msgbox("You don't have enough money.")
-			hidemoneybox
-		} else {
-			removemoney(2000, 0)
-			updatemoneybox
-			msgbox("That will be ¥2000, thank you…")
-			fadescreenswapbuffers(FADE_TO_BLACK)
-			playfanfare(MUS_HEAL)
-			waitfanfare
-			special(HealPlayerParty)
-			fadescreenswapbuffers(FADE_FROM_BLACK)
-			msgbox("Your party has been restored.", MSGBOX_DEFAULT)
-			hidemoneybox
-		}
-	}
-	msgbox("See you next time.")
 	release
 	end
 }
@@ -274,8 +166,19 @@ script Zone12A_EventScript_Metronome {
 	end
 }
 
-raw `
+script Zone12A_EventScript_Romulus {
+	trainerbattle_single(TRAINER_PBL_ROMULUS, format("But soft, what light through yonder window breaks?\pIt is the east, and Julie is the sun."), format("I defy you, stars!"))
+	msgbox(format("With love's light wings did I o'erperch these walls,\pFor stony limits cannot hold love out."), MSGBOX_AUTOCLOSE)
+	end
+}
 
+script Zone12A_EventScript_Julie {
+	trainerbattle_single(TRAINER_PBL_JULIE, format("O Romulus, Romulus! Wherefore art thou Romulus?"), format("My only love sprung from my only hate,\pToo early seen unknown, and known too late!"))
+	msgbox(format("My bounty is as boundless as the sea,\pMy love as deep; the more I give to thee,\pThe more I have, for both are infinite."), MSGBOX_AUTOCLOSE)
+	end
+}
+
+raw `
 Zone12A_EventScript_Waterfall::
 	lockall
 	msgbox Zone12A_Text_DontGoDown, MSGBOX_AUTOCLOSE
@@ -322,20 +225,34 @@ Zone12A_Text_DoloresPostBattle:
 	.string "just as much as it affects our\l"
 	.string "lives, huh?$"
 
-Zone12A_EventScript_Trevor::
-	trainerbattle_single TRAINER_PBL_TREVOR, Zone12A_Text_TrevorIntro, Zone12A_Text_TrevorDefeat
-	msgbox Zone12A_Text_TrevorPostBattle, MSGBOX_AUTOCLOSE
+Zone12A_EventScript_Genie::
+	trainerbattle_single TRAINER_PBL_GENIE, Zone12A_Text_GenieIntro, Zone12A_Text_GenieDefeat
+	msgbox Zone12A_Text_GeniePostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Zone12A_Text_TrevorIntro:
-	.string "Attack, my bird Pokémon!$"
+Zone12A_Text_GenieIntro:
+	.string "Hi, I'm a fan!$"
 
-Zone12A_Text_TrevorDefeat:
-	.string "The shock of losing stings!$"
+Zone12A_Text_GenieDefeat:
+	.string "A fan of sneaking up on people!$"
 
-Zone12A_Text_TrevorPostBattle:
-	.string "We'll get them next time,\n"
-	.string "my feathered friends!$"
+Zone12A_Text_GeniePostBattle:
+	.string "Okay, I admit, it's a weird hobby.$"
+
+Zone12A_EventScript_Abigail::
+	trainerbattle_single TRAINER_PBL_ABIGAIL, Zone12A_Text_AbigailIntro, Zone12A_Text_AbigailDefeat
+	msgbox Zone12A_Text_AbigailPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone12A_Text_AbigailIntro:
+	.string "Leftover precipitation forms\n"
+	.string "into puddles!$"
+
+Zone12A_Text_AbigailDefeat:
+	.string "Make sure to wear rain boots!$"
+
+Zone12A_Text_AbigailPostBattle:
+	.string "Splashing around is fun!$"
 
 Zone12A_EventScript_Federico::
 	trainerbattle_single TRAINER_PBL_FEDERICO, Zone12A_Text_FedericoIntro, Zone12A_Text_FedericoDefeat
@@ -352,33 +269,21 @@ Zone12A_Text_FedericoDefeat:
 Zone12A_Text_FedericoPostBattle:
 	.string "Sounds like a catch, am I right?$"
 
-Zone12A_EventScript_Genie::
-	trainerbattle_single TRAINER_PBL_GENIE, Zone12A_Text_GenieIntro, Zone12A_Text_GenieDefeat
-	msgbox Zone12A_Text_GeniePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone12A_Text_GenieIntro:
-	.string "Running trains the mind and the soul!$"
-
-Zone12A_Text_GenieDefeat:
-	.string "But it does not train your Pokémon!$"
-
-Zone12A_Text_GeniePostBattle:
-	.string "Huff… I need a break…$"
-
 Zone12A_EventScript_Hilda::
 	trainerbattle_single TRAINER_PBL_HILDA, Zone12A_Text_HildaIntro, Zone12A_Text_HildaDefeat
 	msgbox Zone12A_Text_HildaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Zone12A_Text_HildaIntro:
-	.string "Hi, I'm a fan!$"
+	.string "After a swim, a quick run is what\n"
+	.string "I need to dry off!$"
 
 Zone12A_Text_HildaDefeat:
-	.string "A fan of sneaking up on people!$"
+	.string "I'm suddenly very tired!$"
 
 Zone12A_Text_HildaPostBattle:
-	.string "Okay, I admit, it's a weird hobby.$"
+	.string "Exercising without a break is\n"
+	.string "tough!$"
 
 Zone12A_EventScript_Kinley::
 	trainerbattle_single TRAINER_PBL_KINLEY, Zone12A_Text_KinleyIntro, Zone12A_Text_KinleyDefeat
@@ -386,13 +291,27 @@ Zone12A_EventScript_Kinley::
 	end
 
 Zone12A_Text_KinleyIntro:
-	.string "This grass is far too tall\n"
-	.string "for someone of my stature!$"
+	.string "I'm looking for rare Pokémon!$"
 
 Zone12A_Text_KinleyDefeat:
-	.string "I meant financial stature!\n"
-	.string "I'm not short!$"
+	.string "But I can barely see through the\n"
+	.string "grass!$"
 
 Zone12A_Text_KinleyPostBattle:
-	.string "Errr… Never mind.$"
+	.string "I won't give up my search!$"
+
+Zone12A_EventScript_Trevor::
+	trainerbattle_single TRAINER_PBL_TREVOR, Zone12A_Text_TrevorIntro, Zone12A_Text_TrevorDefeat
+	msgbox Zone12A_Text_TrevorPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone12A_Text_TrevorIntro:
+	.string "Go, my Baby Pokémon, go!$"
+
+Zone12A_Text_TrevorDefeat:
+	.string "Maybe they're a little weak to\n"
+	.string "battle.$"
+
+Zone12A_Text_TrevorPostBattle:
+	.string "I'll work on raising them more!$"
 `
