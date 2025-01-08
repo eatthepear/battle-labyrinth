@@ -4744,7 +4744,7 @@
     {
       "id": "LAYOUT_ZONE12A",
       "name": "Zone12A_Layout",
-      "width": 50,
+      "width": 70,
       "height": 53,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
