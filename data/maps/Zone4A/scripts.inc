@@ -308,45 +308,37 @@ Zone4A_EventScript_ItemSilverPowder_2:
 	end
 
 
-Zone4A_EventScript_Sign::
-# 254 "data/maps/Zone4A/scripts.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_19
-# 255 "data/maps/Zone4A/scripts.pory"
-	msgbox Zone4A_EventScript_Sign_Text_0, MSGBOX_SIGN
-	end
+# 253 "data/maps/Zone4A/scripts.pory"
 
+# 254 "data/maps/Zone4A/scripts.pory"
+Zone4A_EventScript_Herman::
+# 255 "data/maps/Zone4A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_HERMAN, Zone4A_Text_HermanIntro, Zone4A_Text_HermanDefeat
+# 256 "data/maps/Zone4A/scripts.pory"
+	msgbox Zone4A_Text_HermanPostBattle, MSGBOX_AUTOCLOSE
+# 257 "data/maps/Zone4A/scripts.pory"
+	end
+# 258 "data/maps/Zone4A/scripts.pory"
 
 # 259 "data/maps/Zone4A/scripts.pory"
-
-# 260 "data/maps/Zone4A/scripts.pory"
-Zone4A_EventScript_Herman::
-# 261 "data/maps/Zone4A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_HERMAN, Zone4A_Text_HermanIntro, Zone4A_Text_HermanDefeat
-# 262 "data/maps/Zone4A/scripts.pory"
-	msgbox Zone4A_Text_HermanPostBattle, MSGBOX_AUTOCLOSE
-# 263 "data/maps/Zone4A/scripts.pory"
-	end
-# 264 "data/maps/Zone4A/scripts.pory"
-
-# 265 "data/maps/Zone4A/scripts.pory"
 Zone4A_Text_HermanIntro:
-# 266 "data/maps/Zone4A/scripts.pory"
+# 260 "data/maps/Zone4A/scripts.pory"
 	.string "I keep going through this exit,\n"
-# 267 "data/maps/Zone4A/scripts.pory"
+# 261 "data/maps/Zone4A/scripts.pory"
 	.string "'cause it might lead somewhere!$"
-# 268 "data/maps/Zone4A/scripts.pory"
+# 262 "data/maps/Zone4A/scripts.pory"
 
-# 269 "data/maps/Zone4A/scripts.pory"
+# 263 "data/maps/Zone4A/scripts.pory"
 Zone4A_Text_HermanDefeat:
-# 270 "data/maps/Zone4A/scripts.pory"
+# 264 "data/maps/Zone4A/scripts.pory"
 	.string "But I keep getting back here!$"
-# 271 "data/maps/Zone4A/scripts.pory"
+# 265 "data/maps/Zone4A/scripts.pory"
 
-# 272 "data/maps/Zone4A/scripts.pory"
+# 266 "data/maps/Zone4A/scripts.pory"
 Zone4A_Text_HermanPostBattle:
-# 273 "data/maps/Zone4A/scripts.pory"
+# 267 "data/maps/Zone4A/scripts.pory"
 	.string "Try something else?\n"
-# 274 "data/maps/Zone4A/scripts.pory"
+# 268 "data/maps/Zone4A/scripts.pory"
 	.string "No, I'm sure this is the right way!$"
 
 Zone4A_EventScript_PoisonTree_Text_0:
@@ -431,11 +423,6 @@ Zone4A_EventScript_GiveSquawkabilly_Text_10:
 Zone4A_EventScript_GiveSquawkabilly_Text_11:
 # 116 "data/maps/Zone4A/scripts.pory"
 	.string "Thank you for contributing to science!$"
-
-Zone4A_EventScript_Sign_Text_0:
-# 255 "data/maps/Zone4A/scripts.pory"
-	.string "These woods are enchanted…\n"
-	.string "Don't get lost!$"
 
 Zone4A_Text_Squawkabilly_ComeBack::
 # 122 "data/maps/Zone4A/scripts.pory"

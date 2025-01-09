@@ -277,12 +277,6 @@ script Zone3A_EventScript_ItemHyperPotion {
 	end
 }
 
-script Zone3A_EventScript_Surveil {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_18)
-	msgbox(format("Trainer Tips\pIn battle, you can use Surveil to see the opponent's team.\pIf you want to see full team information, you can turn on the Full Info setting by speaking to Colress."), MSGBOX_SIGN)
-	end
-}
-
 script Zone3A_EventScript_ChillingWaterTutor {
 	lock
 	faceplayer

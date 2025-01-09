@@ -538,233 +538,217 @@ Zone7A_EventScript_ItemRandom3_2:
 	end
 
 
-Zone7A_EventScript_Sign::
+# 285 "data/maps/Zone7A/scripts.pory"
+
 # 286 "data/maps/Zone7A/scripts.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_25
+
 # 287 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_EventScript_Sign_Text_0, MSGBOX_SIGN
-	end
-
-
-Zone7A_EventScript_HealSign::
-# 292 "data/maps/Zone7A/scripts.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_26
-# 293 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_EventScript_HealSign_Text_0, MSGBOX_SIGN
-	end
-
-
-# 297 "data/maps/Zone7A/scripts.pory"
-
-# 298 "data/maps/Zone7A/scripts.pory"
-
-# 299 "data/maps/Zone7A/scripts.pory"
 Zone7A_EventScript_Millie::
-# 300 "data/maps/Zone7A/scripts.pory"
+# 288 "data/maps/Zone7A/scripts.pory"
 	trainerbattle_single TRAINER_PBL_MILLIE, Zone7A_Text_MillieIntro, Zone7A_Text_MillieDefeat
-# 301 "data/maps/Zone7A/scripts.pory"
+# 289 "data/maps/Zone7A/scripts.pory"
 	msgbox Zone7A_Text_MilliePostBattle, MSGBOX_AUTOCLOSE
-# 302 "data/maps/Zone7A/scripts.pory"
+# 290 "data/maps/Zone7A/scripts.pory"
 	end
-# 303 "data/maps/Zone7A/scripts.pory"
+# 291 "data/maps/Zone7A/scripts.pory"
 
-# 304 "data/maps/Zone7A/scripts.pory"
+# 292 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_MillieIntro:
-# 305 "data/maps/Zone7A/scripts.pory"
+# 293 "data/maps/Zone7A/scripts.pory"
 	.string "At the base of this mountain,\n"
-# 306 "data/maps/Zone7A/scripts.pory"
+# 294 "data/maps/Zone7A/scripts.pory"
 	.string "is a perfect spot for battle!$"
+# 295 "data/maps/Zone7A/scripts.pory"
+
+# 296 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_MillieDefeat:
+# 297 "data/maps/Zone7A/scripts.pory"
+	.string "This spot is now tainted, by\n"
+# 298 "data/maps/Zone7A/scripts.pory"
+	.string "my defeat!$"
+# 299 "data/maps/Zone7A/scripts.pory"
+
+# 300 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_MilliePostBattle:
+# 301 "data/maps/Zone7A/scripts.pory"
+	.string "It's a good spot for resting too!$"
+# 302 "data/maps/Zone7A/scripts.pory"
+
+# 303 "data/maps/Zone7A/scripts.pory"
+Zone7A_EventScript_Jamal::
+# 304 "data/maps/Zone7A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_JAMAL, Zone7A_Text_JamalIntro, Zone7A_Text_JamalDefeat
+# 305 "data/maps/Zone7A/scripts.pory"
+	msgbox Zone7A_Text_JamalPostBattle, MSGBOX_AUTOCLOSE
+# 306 "data/maps/Zone7A/scripts.pory"
+	end
 # 307 "data/maps/Zone7A/scripts.pory"
 
 # 308 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_MillieDefeat:
+Zone7A_Text_JamalIntro:
 # 309 "data/maps/Zone7A/scripts.pory"
-	.string "This spot is now tainted, by\n"
+	.string "Valleys like these are simply,\n"
 # 310 "data/maps/Zone7A/scripts.pory"
-	.string "my defeat!$"
+	.string "succintly, superb!$"
 # 311 "data/maps/Zone7A/scripts.pory"
 
 # 312 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_MilliePostBattle:
+Zone7A_Text_JamalDefeat:
 # 313 "data/maps/Zone7A/scripts.pory"
-	.string "It's a good spot for resting too!$"
+	.string "I don't like this valley anymore!$"
 # 314 "data/maps/Zone7A/scripts.pory"
 
 # 315 "data/maps/Zone7A/scripts.pory"
-Zone7A_EventScript_Jamal::
+Zone7A_Text_JamalPostBattle:
 # 316 "data/maps/Zone7A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_JAMAL, Zone7A_Text_JamalIntro, Zone7A_Text_JamalDefeat
+	.string "How can I like a place that I've\n"
 # 317 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_Text_JamalPostBattle, MSGBOX_AUTOCLOSE
+	.string "lost at?$"
 # 318 "data/maps/Zone7A/scripts.pory"
-	end
-# 319 "data/maps/Zone7A/scripts.pory"
 
+# 319 "data/maps/Zone7A/scripts.pory"
+Zone7A_EventScript_Paige::
 # 320 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_JamalIntro:
+	trainerbattle_single TRAINER_PBL_PAIGE, Zone7A_Text_PaigeIntro, Zone7A_Text_PaigeDefeat
 # 321 "data/maps/Zone7A/scripts.pory"
-	.string "Valleys like these are simply,\n"
+	msgbox Zone7A_Text_PaigePostBattle, MSGBOX_AUTOCLOSE
 # 322 "data/maps/Zone7A/scripts.pory"
-	.string "succintly, superb!$"
+	end
 # 323 "data/maps/Zone7A/scripts.pory"
 
 # 324 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_JamalDefeat:
+Zone7A_Text_PaigeIntro:
 # 325 "data/maps/Zone7A/scripts.pory"
-	.string "I don't like this valley anymore!$"
+	.string "My son ran up the steps so fast!$"
 # 326 "data/maps/Zone7A/scripts.pory"
 
 # 327 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_JamalPostBattle:
-# 328 "data/maps/Zone7A/scripts.pory"
-	.string "How can I like a place that I've\n"
-# 329 "data/maps/Zone7A/scripts.pory"
-	.string "lost at?$"
-# 330 "data/maps/Zone7A/scripts.pory"
-
-# 331 "data/maps/Zone7A/scripts.pory"
-Zone7A_EventScript_Paige::
-# 332 "data/maps/Zone7A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_PAIGE, Zone7A_Text_PaigeIntro, Zone7A_Text_PaigeDefeat
-# 333 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_Text_PaigePostBattle, MSGBOX_AUTOCLOSE
-# 334 "data/maps/Zone7A/scripts.pory"
-	end
-# 335 "data/maps/Zone7A/scripts.pory"
-
-# 336 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_PaigeIntro:
-# 337 "data/maps/Zone7A/scripts.pory"
-	.string "My son ran up the steps so fast!$"
-# 338 "data/maps/Zone7A/scripts.pory"
-
-# 339 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_PaigeDefeat:
-# 340 "data/maps/Zone7A/scripts.pory"
+# 328 "data/maps/Zone7A/scripts.pory"
 	.string "I just can't keep up!$"
-# 341 "data/maps/Zone7A/scripts.pory"
+# 329 "data/maps/Zone7A/scripts.pory"
 
-# 342 "data/maps/Zone7A/scripts.pory"
+# 330 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_PaigePostBattle:
-# 343 "data/maps/Zone7A/scripts.pory"
+# 331 "data/maps/Zone7A/scripts.pory"
 	.string "Maybe I'll rest in the rest house…$"
-# 344 "data/maps/Zone7A/scripts.pory"
+# 332 "data/maps/Zone7A/scripts.pory"
 
-# 345 "data/maps/Zone7A/scripts.pory"
+# 333 "data/maps/Zone7A/scripts.pory"
 Zone7A_EventScript_Seth::
-# 346 "data/maps/Zone7A/scripts.pory"
+# 334 "data/maps/Zone7A/scripts.pory"
 	trainerbattle_single TRAINER_PBL_SETH, Zone7A_Text_SethIntro, Zone7A_Text_SethDefeat
-# 347 "data/maps/Zone7A/scripts.pory"
+# 335 "data/maps/Zone7A/scripts.pory"
 	msgbox Zone7A_Text_SethPostBattle, MSGBOX_AUTOCLOSE
-# 348 "data/maps/Zone7A/scripts.pory"
+# 336 "data/maps/Zone7A/scripts.pory"
 	end
-# 349 "data/maps/Zone7A/scripts.pory"
+# 337 "data/maps/Zone7A/scripts.pory"
 
-# 350 "data/maps/Zone7A/scripts.pory"
+# 338 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_SethIntro:
-# 351 "data/maps/Zone7A/scripts.pory"
+# 339 "data/maps/Zone7A/scripts.pory"
 	.string "Momma! You're too slow!$"
+# 340 "data/maps/Zone7A/scripts.pory"
+
+# 341 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_SethDefeat:
+# 342 "data/maps/Zone7A/scripts.pory"
+	.string "I wasn't fast enough!$"
+# 343 "data/maps/Zone7A/scripts.pory"
+
+# 344 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_SethPostBattle:
+# 345 "data/maps/Zone7A/scripts.pory"
+	.string "I'm all out of energy…\n"
+# 346 "data/maps/Zone7A/scripts.pory"
+	.string "Snack time!$"
+# 347 "data/maps/Zone7A/scripts.pory"
+
+# 348 "data/maps/Zone7A/scripts.pory"
+Zone7A_EventScript_Connie::
+# 349 "data/maps/Zone7A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_CONNIE, Zone7A_Text_ConnieIntro, Zone7A_Text_ConnieDefeat
+# 350 "data/maps/Zone7A/scripts.pory"
+	msgbox Zone7A_Text_ConniePostBattle, MSGBOX_AUTOCLOSE
+# 351 "data/maps/Zone7A/scripts.pory"
+	end
 # 352 "data/maps/Zone7A/scripts.pory"
 
 # 353 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_SethDefeat:
+Zone7A_Text_ConnieIntro:
 # 354 "data/maps/Zone7A/scripts.pory"
-	.string "I wasn't fast enough!$"
+	.string "You've been double teamed!$"
 # 355 "data/maps/Zone7A/scripts.pory"
 
 # 356 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_SethPostBattle:
-# 357 "data/maps/Zone7A/scripts.pory"
-	.string "I'm all out of energy…\n"
-# 358 "data/maps/Zone7A/scripts.pory"
-	.string "Snack time!$"
-# 359 "data/maps/Zone7A/scripts.pory"
-
-# 360 "data/maps/Zone7A/scripts.pory"
-Zone7A_EventScript_Connie::
-# 361 "data/maps/Zone7A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_CONNIE, Zone7A_Text_ConnieIntro, Zone7A_Text_ConnieDefeat
-# 362 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_Text_ConniePostBattle, MSGBOX_AUTOCLOSE
-# 363 "data/maps/Zone7A/scripts.pory"
-	end
-# 364 "data/maps/Zone7A/scripts.pory"
-
-# 365 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_ConnieIntro:
-# 366 "data/maps/Zone7A/scripts.pory"
-	.string "You've been double teamed!$"
-# 367 "data/maps/Zone7A/scripts.pory"
-
-# 368 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_ConnieDefeat:
-# 369 "data/maps/Zone7A/scripts.pory"
+# 357 "data/maps/Zone7A/scripts.pory"
 	.string "Shoot! My bad!$"
-# 370 "data/maps/Zone7A/scripts.pory"
+# 358 "data/maps/Zone7A/scripts.pory"
 
-# 371 "data/maps/Zone7A/scripts.pory"
+# 359 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_ConniePostBattle:
-# 372 "data/maps/Zone7A/scripts.pory"
+# 360 "data/maps/Zone7A/scripts.pory"
 	.string "We're working on our strategy!$"
-# 373 "data/maps/Zone7A/scripts.pory"
+# 361 "data/maps/Zone7A/scripts.pory"
 
-# 374 "data/maps/Zone7A/scripts.pory"
+# 362 "data/maps/Zone7A/scripts.pory"
 Zone7A_EventScript_Peter::
-# 375 "data/maps/Zone7A/scripts.pory"
+# 363 "data/maps/Zone7A/scripts.pory"
 	trainerbattle_single TRAINER_PBL_PETER, Zone7A_Text_PeterIntro, Zone7A_Text_PeterDefeat
-# 376 "data/maps/Zone7A/scripts.pory"
+# 364 "data/maps/Zone7A/scripts.pory"
 	msgbox Zone7A_Text_PeterPostBattle, MSGBOX_AUTOCLOSE
-# 377 "data/maps/Zone7A/scripts.pory"
+# 365 "data/maps/Zone7A/scripts.pory"
 	end
-# 378 "data/maps/Zone7A/scripts.pory"
+# 366 "data/maps/Zone7A/scripts.pory"
 
-# 379 "data/maps/Zone7A/scripts.pory"
+# 367 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_PeterIntro:
-# 380 "data/maps/Zone7A/scripts.pory"
+# 368 "data/maps/Zone7A/scripts.pory"
 	.string "Together we're unstoppable!$"
-# 381 "data/maps/Zone7A/scripts.pory"
+# 369 "data/maps/Zone7A/scripts.pory"
 
-# 382 "data/maps/Zone7A/scripts.pory"
+# 370 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_PeterDefeat:
-# 383 "data/maps/Zone7A/scripts.pory"
+# 371 "data/maps/Zone7A/scripts.pory"
 	.string "Darn! My mistake!$"
+# 372 "data/maps/Zone7A/scripts.pory"
+
+# 373 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_PeterPostBattle:
+# 374 "data/maps/Zone7A/scripts.pory"
+	.string "We're trying our best!$"
+# 375 "data/maps/Zone7A/scripts.pory"
+
+# 376 "data/maps/Zone7A/scripts.pory"
+Zone7A_EventScript_Whitaker::
+# 377 "data/maps/Zone7A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_WHITAKER, Zone7A_Text_WhitakerIntro, Zone7A_Text_WhitakerDefeat
+# 378 "data/maps/Zone7A/scripts.pory"
+	msgbox Zone7A_Text_WhitakerPostBattle, MSGBOX_AUTOCLOSE
+# 379 "data/maps/Zone7A/scripts.pory"
+	end
+# 380 "data/maps/Zone7A/scripts.pory"
+
+# 381 "data/maps/Zone7A/scripts.pory"
+Zone7A_Text_WhitakerIntro:
+# 382 "data/maps/Zone7A/scripts.pory"
+	.string "Can you feel the breeze?\n"
+# 383 "data/maps/Zone7A/scripts.pory"
+	.string "My birds have never been stronger!$"
 # 384 "data/maps/Zone7A/scripts.pory"
 
 # 385 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_PeterPostBattle:
+Zone7A_Text_WhitakerDefeat:
 # 386 "data/maps/Zone7A/scripts.pory"
-	.string "We're trying our best!$"
+	.string "Um… Rematch?$"
 # 387 "data/maps/Zone7A/scripts.pory"
 
 # 388 "data/maps/Zone7A/scripts.pory"
-Zone7A_EventScript_Whitaker::
-# 389 "data/maps/Zone7A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_WHITAKER, Zone7A_Text_WhitakerIntro, Zone7A_Text_WhitakerDefeat
-# 390 "data/maps/Zone7A/scripts.pory"
-	msgbox Zone7A_Text_WhitakerPostBattle, MSGBOX_AUTOCLOSE
-# 391 "data/maps/Zone7A/scripts.pory"
-	end
-# 392 "data/maps/Zone7A/scripts.pory"
-
-# 393 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_WhitakerIntro:
-# 394 "data/maps/Zone7A/scripts.pory"
-	.string "Can you feel the breeze?\n"
-# 395 "data/maps/Zone7A/scripts.pory"
-	.string "My birds have never been stronger!$"
-# 396 "data/maps/Zone7A/scripts.pory"
-
-# 397 "data/maps/Zone7A/scripts.pory"
-Zone7A_Text_WhitakerDefeat:
-# 398 "data/maps/Zone7A/scripts.pory"
-	.string "Um… Rematch?$"
-# 399 "data/maps/Zone7A/scripts.pory"
-
-# 400 "data/maps/Zone7A/scripts.pory"
 Zone7A_Text_WhitakerPostBattle:
-# 401 "data/maps/Zone7A/scripts.pory"
+# 389 "data/maps/Zone7A/scripts.pory"
 	.string "My birds need some time to sleep\n"
-# 402 "data/maps/Zone7A/scripts.pory"
+# 390 "data/maps/Zone7A/scripts.pory"
 	.string "in their nests!$"
 
 Zone7A_EventScript_Beauty_Text_0:
@@ -862,13 +846,3 @@ Zone7A_EventScript_FangsTutor_Text_10:
 Zone7A_EventScript_FangsTutor_Text_11:
 # 152 "data/maps/Zone7A/scripts.pory"
 	.string "{PLAYER} paid ¥1000.$"
-
-Zone7A_EventScript_Sign_Text_0:
-# 287 "data/maps/Zone7A/scripts.pory"
-	.string "Trainer Tips\p"
-	.string "You can change the music you hear in\n"
-	.string "battle by speaking to Colress!$"
-
-Zone7A_EventScript_HealSign_Text_0:
-# 293 "data/maps/Zone7A/scripts.pory"
-	.string "A stop for weary travelers.$"

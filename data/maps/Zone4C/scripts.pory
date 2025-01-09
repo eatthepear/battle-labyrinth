@@ -47,12 +47,6 @@ script Zone4C_EventScript_ItemTwistedSpoon {
 	end
 }
 
-script Zone4C_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_21)
-	msgbox(format("Trainer Tips\pStarting from now, there is a 20% chance to encounter wild Pokémon in a Double Battle."), MSGBOX_SIGN)
-	end
-}
-
 raw `
 Zone4C_EventScript_Santiago::
 	trainerbattle_single TRAINER_PBL_SANTIAGO, Zone4C_Text_SantiagoIntro, Zone4C_Text_SantiagoDefeat

@@ -283,18 +283,6 @@ script Zone0A_EventScript_Exit {
 	end
 }
 
-script Zone0A_EventScript_TPISign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_8)
-	msgbox(format("Teleport Institute\nGetting around, easy peasy."), MSGBOX_SIGN)
-	end
-}
-
-script Zone0A_EventScript_DayCareSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_9)
-	msgbox(format("Pokémon Day Care\n9 Generations and counting!"), MSGBOX_SIGN)
-	end
-}
-
 // script Zone0A_EventScript_Porygon {
 //     lockall
 //     fadeoutbgm(1)

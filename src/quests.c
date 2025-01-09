@@ -2667,8 +2667,12 @@ static void AssignCancelNameAndId(u8 numRow)
 
 u8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest)
 {
-
-	u8 uniqueId = sSideQuests[quest].subquests[childQuest].id;
+	u8 uniqueId = 0;
+	u8 i;
+	for (i = 0; i < quest; i++) {
+		uniqueId += sSideQuests[quest].numSubquests;
+	}
+	uniqueId += childQuest;
 	u8  index = uniqueId / 8; //8 bits per byte
 	u8	bit = uniqueId % 8;
 	u8	mask = 1 << bit;
