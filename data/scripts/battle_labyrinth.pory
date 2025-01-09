@@ -3514,7 +3514,9 @@ script Debug_CheatStart_PBL {
 	// zone 0 items
 	additem(ITEM_WAILMER_PAIL)
 	additem(ITEM_ORAN_BERRY, 2)
-	startquest(QUEST_SIGNS)
+	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_SIGNS)
+	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_SAVES)
+	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_POKEDEX)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_1)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_2)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_3)
