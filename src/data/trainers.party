@@ -1355,14 +1355,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Teleport
 - Magical Leaf
 
-Cacnea
-Ability: Water Absorb
+Hoppip
+Ability: Leaf Guard
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Leech Seed
-- Disable
-- Magical Leaf
-- Feint Attack
+- Poison Powder
+- Sleep Powder
+- Mega Drain
+- Helping Hand
 
 Slugma
 Ability: Flame Body
@@ -1743,14 +1743,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tickle
 - Swift
 
-Hoppip
-Ability: Leaf Guard
+Rockruff
+Ability: Vital Spirit
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sleep Powder
-- Mega Drain
-- Helping Hand
-- Worry Seed
+- Rock Throw
+- Bite
+- Roar
+- Rock Tomb
 
 Makuhita
 Ability: Guts
@@ -2651,14 +2651,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Wake-Up Slap
 - Psybeam
 
-Rockruff
-Ability: Vital Spirit
+Joltik
+Ability: Unnerve
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bite
-- Roar
-- Rock Tomb
-- Endeavor
+- Poison Sting
+- Feint Attack
+- Struggle Bug
+- Electroweb
 
 === TRAINER_PBL_ALISTAIR_LEVIATHAN_8 ===
 Name: Alistair
@@ -3198,21 +3198,41 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Scraggy
+Tinkatink
+Ability: Mold Breaker
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Metal Claw
+- Covet
+- Sweet Kiss
+- Slam
 
 Helioptile
+Ability: Sand Veil
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Thunder Wave
+- Quick Attack
+- Razor Wind
+- Parabolic Charge
 
 Darumaka
+Ability: Hustle
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Incinerate
+- Flame Wheel
+- Headbutt
+- Fire Fang
 
-Varoom
+Toedscool
+Ability: Mycelium Might
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Stun Spore
+- Mega Drain
+- Leech Seed
+- Mud Shot
 
 === TRAINER_PBL_JACOB ===
 Name: Jacob
@@ -3224,20 +3244,40 @@ Double Battle: No
 Random Lead: Yes
 
 Rufflet
+Ability: Sheer Force
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Aerial Ace
+- Scary Face
+- Crush Claw
+- Sky Drop
 
 Swablu
+Ability: Natural Cure
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Round
+- Haze
+- Feather Dance
+- Dragon Breath
 
 Murkrow
+Ability: Super Luck
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Night Shade
+- Assurance
+- Air Cutter
+- Whirlwind
 
 Trumbeak
+Ability: Skill Link
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Fury Attack
+- Pluck
+- Roost
+- Screech
 
 === TRAINER_PBL_DEWEY ===
 Name: Dewey
@@ -3248,21 +3288,41 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Joltik
+Cacnea
+Ability: Water Absorb
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Pin Missile
+- Payback
+- Grass Whistle
+- Needle Arm
 
-Tinkatink
+Scraggy
+Ability: Intimidate
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Feint Attack
+- Brick Break
+- Torment
+- Swagger
 
 Trapinch
+Ability: Hyper Cutter
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Feint Attack
+- Bulldoze
+- Flail
+- Laser Focus
 
-Toedscool
+Dwebble
+Ability: Sturdy
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bug Bite
+- Slash
+- Knock Off
+- Rock Blast
 
 === TRAINER_PBL_ERNEST ===
 Name: Ernest
@@ -3274,8 +3334,13 @@ Double Battle: No
 Random Lead: Yes
 
 Drilbur
+Ability: Sand Force
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Fury Swipes
+- Metal Claw
+- Slash
+- Dig
 
 Cufant
 Ability: Sheer Force
@@ -3287,12 +3352,22 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Whirlwind
 
 Silicobra
+Ability: Shed Skin
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Sand Tomb
+- Headbutt
+- Bulldoze
+- Mud-Slap
 
 Sandygast
+Ability: Water Compaction
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Hypnosis
+- Mega Drain
+- Bulldoze
+- Ancient Power
 
 === TRAINER_PBL_KYLE ===
 Name: Kyle
@@ -3304,20 +3379,40 @@ Double Battle: No
 Random Lead: Yes
 
 Larvitar
+Ability: Guts
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Smack Down
+- Screech
+- Payback
+- Chip Away
 
 Riolu
+Ability: Steadfast
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Force Palm
+- Counter
+- Bullet Punch
+- Vacuum Wave
 
 Axew
+Ability: Mold Breaker
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Taunt
+- Breaking Swipe
+- Focus Energy
+- Slash
 
 Larvesta
+Ability: Flame Body
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Absorb
+- Flame Charge
+- Struggle Bug
+- Flame Wheel
 
 === TRAINER_PBL_ELIAS ===
 Name: Elias
@@ -3329,20 +3424,40 @@ Double Battle: No
 Random Lead: Yes
 
 Goomy
+Ability: Sap Sipper
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Dragon Breath
+- Flail
+- Water Pulse
+- Life Dew
 
 Bagon
+Ability: Rock Head
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Headbutt
+- Dragon Breath
+- Scary Face
+- Fire Fang
 
 Dratini
+Ability: Shed Skin
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Thunder Wave
+- Water Pulse
+- Dragon Breath
+- Slam
 
 Jangmo-o
+Ability: Soundproof
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Scary Face
+- Headbutt
+- Screech
+- Dragon Tail
 
 === TRAINER_PBL_PEARLIE ===
 Name: Pearlie
@@ -3354,8 +3469,13 @@ Double Battle: No
 Random Lead: No
 
 Passimian
+Ability: Receiver
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Feint
+- Vital Throw
+- Scary Face
+- Take Down
 
 === TRAINER_PBL_SUSAN ===
 Name: Susan
@@ -3367,8 +3487,13 @@ Double Battle: No
 Random Lead: No
 
 Oranguru
+Ability: Symbiosis
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Psych Up
+- Extrasensory
+- Instruct
+- After You
 
 === TRAINER_PBL_CONRAD ===
 Name: Ernest
@@ -3389,16 +3514,31 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Take Down
 
 Hippopotas
+Ability: Sand Force
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Sand Tomb
+- Dig
+- Take Down
+- Slack Off
 
 Sandile
+Ability: Intimidate
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Scary Face
+- Dig
+- Assurance
+- Rock Climb
 
 Rhyhorn
+Ability: Rock Head
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Horn Attack
+- Smack Down
+- Bulldoze
+- Take Down
 
 === TRAINER_PBL_BRETT ===
 Name: Brett
@@ -3409,23 +3549,43 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Finizen
+Tentacool
+Ability: Liquid Ooze
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Acid Spray
+- Tickle
+- Haze
+- Brine
 
 Chinchou
+Ability: Volt Absorb
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Confuse Ray
+- Bubble Beam
+- Thunder Wave
+- Shock Wave
 
 Binacle
+Ability: Tough Claws
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Fury Cutter
+- Ancient Power
+- Razor Shell
+- Slash
 
 Corphish
+Ability: Hyper Cutter
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Aqua Jet
+- Chip Away
+- Bubble Beam
+- Razor Shell
 
-=== TRAINER_PBL_ADAMINA_LEVIATHAN_10 ===
+=== TRAINER_PBL_ADAMINA_LEVIATHAN_9 ===
 Name: Adamina
 Class: Pkmn Ranger
 Pic: Pokemon Ranger F
@@ -3435,15 +3595,6 @@ Double Battle: No
 Random Lead: No
 Mugshot: Purple
 
-Dwebble @ Silver Powder
-Ability: Sturdy
-Level: 21
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Stealth Rock
-- Bug Bite
-- Rock Tomb
-- Knock Off
-
 Klawf @ Hard Stone
 Ability: Anger Shell
 Level: 21
@@ -3451,7 +3602,16 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Tomb
 - Bulldoze
 - Knock Off
-- Rock Smash
+- Stealth Rock
+
+Braixen @ Charcoal
+Ability: Magic Guard
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Incinerate
+- Psybeam
+- Shock Wave
+- Hypnosis
 
 Vullaby @ Black Glasses
 Ability: Overcoat
@@ -3480,7 +3640,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Aerial Ace
 - Covet
 
-=== TRAINER_PBL_ADAMINA_LEVIATHAN_10_CHALLENGE ===
+=== TRAINER_PBL_ADAMINA_LEVIATHAN_9_CHALLENGE ===
 Name: Adamina
 Class: Pkmn Ranger
 Pic: Pokemon Ranger F
@@ -3490,15 +3650,6 @@ Double Battle: No
 Random Lead: No
 Mugshot: Purple
 
-Dwebble @ Silver Powder
-Ability: Sturdy
-Level: 21
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Stealth Rock
-- Bug Bite
-- Rock Tomb
-- Knock Off
-
 Klawf @ Hard Stone
 Ability: Anger Shell
 Level: 21
@@ -3506,7 +3657,16 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Tomb
 - Bulldoze
 - Knock Off
-- Rock Smash
+- Stealth Rock
+
+Braixen @ Charcoal
+Ability: Magic Guard
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Incinerate
+- Psybeam
+- Shock Wave
+- Hypnosis
 
 Vullaby @ Black Glasses
 Ability: Overcoat
@@ -3554,20 +3714,40 @@ Double Battle: No
 Random Lead: Yes
 
 Gastly
+Ability: Levitate
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Clear Smog
+- Hex
+- Haze
+- Scary Face
 
 Frillish
+Ability: Cursed Body
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Whirlpool
+- Hex
+- Recover
 
 Honedge
+Ability: No Guard
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Shadow Sneak
+- Metal Sound
+- Retaliate
+- Night Slash
 
 Greavard
+Ability: Fluffy
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Shadow Sneak
+- Yawn
+- Headbutt
+- Dig
 
 === TRAINER_PBL_EMMA_AND_LEO ===
 Name: Emma&Leo
@@ -3579,12 +3759,40 @@ Double Battle: Yes
 Random Lead: No
 
 Volbeat
+Ability: Prankster
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Shock Wave
+- Encore
+- Moonlight
+- Signal Beam
 
 Illumise
+Ability: Prankster
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Covet
+- Encore
+- Moonlight
+- Signal Beam
+
+Nuzleaf
+Ability: Early Bird
+Level: 23
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Feint Attack
+- Defog
+- Mega Drain
+- Beat Up
+
+Lombre
+Ability: Rain Dish
+Level: 23
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Mega Drain
+- Tickle
+- Synthesis
 
 === TRAINER_PBL_JOEL ===
 Name: Joel
@@ -3596,20 +3804,40 @@ Double Battle: No
 Random Lead: Yes
 
 Bronzor
+Ability: Levitate
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Imprison
+- Feint Attack
+- Metal Sound
+- Extrasensory
 
 Golett
+Ability: Iron Fist
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Magnitude
+- Curse
+- Shadow Punch
+- Stomping Tantrum
 
 Poltchageist
+Ability: Hospitality
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Life Dew
+- Mega Drain
+- Hex
+- Foul Play
 
 Inkay
+Ability: Contrary
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Slash
+- Pluck
+- Psybeam
+- Switcheroo
 
 === TRAINER_PBL_MARION ===
 Name: Marion
@@ -3621,20 +3849,40 @@ Double Battle: No
 Random Lead: Yes
 
 Duskull
+Ability: Levitate
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Night Shade
+- Confuse Ray
+- Curse
+- Hex
 
 Sinistea
+Ability: Cursed Body
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Night Shade
+- Sucker Punch
+- Hex
+- Ally Switch
 
 Elgyem
+Ability: Synchronize
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Psybeam
+- Teleport
+- Cosmic Power
+- Recover
 
 Litwick
+Ability: Flame Body
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Imprison
+- Hex
+- Flame Burst
+- Will-O-Wisp
 
 === TRAINER_PBL_REGINA ===
 Name: Regina
@@ -3646,22 +3894,40 @@ Double Battle: No
 Random Lead: Yes
 
 Misdreavus
+Ability: Levitate
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Curse
+- Hex
+- Psybeam
+- Ominous Wind
 
 Shuppet
+Ability: Cursed Body
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Shadow Sneak
+- Snatch
+- Ominous Wind
+- Trick
 
 Gimmighoul
+Ability: Rattled
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Astonish
+- Tackle
 
 Bramblin
+Ability: Wind Rider
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Leech Seed
+- Shadow Sneak
+- Mega Drain
+- Hex
 
-=== TRAINER_PBL_NEWTON_LEVIATHAN_11 ===
+=== TRAINER_PBL_NEWTON_LEVIATHAN_10 ===
 Name: Newton
 Class: Scientist
 Pic: Scientist
@@ -3672,22 +3938,42 @@ Random Lead: No
 Mugshot: Purple
 
 Clefairy
+Ability: Friend Guard
 Level: 23
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Gravity
+- Draining Kiss
+- Moonlight
+- Chilling Water
 
 Stantler
+Ability: Intimidate
 Level: 23
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stomp
+- Double Kick
+- Hypnosis
+- Psyshield Bash
 
 Stonjourner
+Ability: Power Spot
 Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Gravity
+- Rock Tomb
+- Wide Guard
+- Mega Kick
 
-Flapple
+Flapple @ Sitrus Berry
+Ability: Hustle
 Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Grav Apple
+- Acrobatics
+- Roost
+- Dragon Claw
 
-=== TRAINER_PBL_NEWTON_LEVIATHAN_11_CHALLENGE ===
+=== TRAINER_PBL_NEWTON_LEVIATHAN_10_CHALLENGE ===
 Name: Newton
 Class: Scientist
 Pic: Scientist
@@ -3697,21 +3983,42 @@ Double Battle: Yes
 Random Lead: No
 Mugshot: Purple
 
-Clefairy
+Clefairy @ Eviolite
+Ability: Friend Guard
 Level: 23
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Gravity
+- Draining Kiss
+- Moonlight
+- Chilling Water
 
-Stantler
+Stantler @ Eviolite
+Ability: Intimidate
 Level: 23
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stomp
+- Double Kick
+- Hypnosis
+- Psyshield Bash
 
-Stonjourner
+Stonjourner @ Sitrus Berry
+Ability: Power Spot
 Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Gravity
+- Rock Tomb
+- Wide Guard
+- Mega Kick
 
-Flapple
+Flapple @ Sitrus Berry
+Ability: Hustle
+Tera Type: Dragon
 Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Grav Apple
+- Acrobatics
+- Roost
+- Dragon Claw
 
 === TRAINER_PBL_ESSENCE ===
 Name: Essence
@@ -3730,7 +4037,7 @@ Staryu
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Pikachu
+Spheal
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3766,7 +4073,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_PBL_GENIE ===
 Name: Genie
 Class: Pokefan
-Pic: Pokefan F
+Pic: Pokefan M
 Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
@@ -3776,11 +4083,7 @@ Magnemite
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Clauncher
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Glimmet
+Varoom
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3788,28 +4091,32 @@ Pawmo
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+Skiploom
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 === TRAINER_PBL_ABIGAIL ===
 Name: Abigail
-Class: Parasol Lady
-Pic: Parasol Lady
-Music: Female
+Class: Pokefan
+Pic: Pokefan F
+Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Shellder
+Glimmet
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Swinub
+Yanma
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Spheal
+Pikachu
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Bergmite
+Flaaffy
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3852,7 +4159,11 @@ Ferroseed
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Luxio
+Shellder
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Bergmite
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3870,12 +4181,16 @@ Pawniard
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Flaaffy
+Clauncher
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Swinub
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_HILDA ===
-Name: Julie
+Name: Hilda
 Class: Swimmer F
 Pic: Swimmer F
 Music: Swimmer
@@ -3895,32 +4210,7 @@ Skrelp
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacool
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_KINLEY ===
-Name: Kinley
-Class: Collector
-Pic: Collector
-Music: Suspicious
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Random Lead: Yes
-
-Frigibax
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Dreepy
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Deino
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Zorua
+Finizen
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3957,6 +4247,60 @@ Magby
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+=== TRAINER_PBL_RUFUS ===
+Name: Rufus
+Class: Collector
+Pic: Collector
+Music: Suspicious
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: Yes
+
+Frigibax
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Dreepy
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Deino
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Zorua
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PBL_KINLEY ===
+Name: Kinley
+Class: Gentleman
+Pic: Gentleman
+Music: Rich
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Random Lead: Yes
+
+Herdier
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Luxio
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Croconaw
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Raboot
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Floragato
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 === TRAINER_PBL_REID ===
 Name: Reid
 Class: Bug Catcher
@@ -3965,10 +4309,6 @@ Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
-
-Yanma
-Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Dottler
 Level: 25
@@ -3982,7 +4322,7 @@ Swadloon
 Level: 25
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-=== TRAINER_PBL_DECLAN_LEVIATHAN_12 ===
+=== TRAINER_PBL_DECLAN_LEVIATHAN_11 ===
 Name: Declan
 Class: Bug Maniac
 Pic: Bug Maniac
@@ -4000,10 +4340,6 @@ Ledian
 Level: 25
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Vespiquen
-Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
 Rabsca
 Level: 25
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -4012,7 +4348,7 @@ Lurantis
 Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-=== TRAINER_PBL_DECLAN_LEVIATHAN_12_CHALLENGE ===
+=== TRAINER_PBL_DECLAN_LEVIATHAN_11_CHALLENGE ===
 Name: Declan
 Class: Bug Maniac
 Pic: Bug Maniac
@@ -4027,10 +4363,6 @@ Level: 25
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Ledian
-Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Vespiquen
 Level: 25
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -4076,19 +4408,19 @@ Pic: Steven
 Gender: Male
 Music: Male
 
-Croconaw
+Tranquill
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Dolliv
+Poliwhirl
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Staravia
+Gloom
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Herdier
+Weepinbell
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4111,7 +4443,7 @@ Audino
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Skiploom
+Dolliv
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4122,11 +4454,19 @@ Pic: Steven
 Gender: Male
 Music: Male
 
-Furfrou
+Furfrou-Star-Trim
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Furfrou
+Furfrou-Heart-Trim
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Furfrou-Dandy-Trim
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Furfrou-Debutante-Trim
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4222,10 +4562,6 @@ Komala
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tropius
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
 Floette
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
@@ -4241,29 +4577,15 @@ Pic: Steven
 Gender: Male
 Music: Male
 
-Solrock
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Lunatone
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Togedemaru
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Wishiwashi
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Carbink
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Kecleon
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Metang
+Brave Nature
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 SpA
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
 
 === TRAINER_PBL_JENNY_LEVIATHAN_11_CHALLENGE ===
 Name: STEVEN
@@ -4289,15 +4611,21 @@ Pic: Steven
 Gender: Male
 Music: Male
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Solrock
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Lunatone
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Togedemaru
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Wishiwashi
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_NIGEL ===
 Name: STEVEN
@@ -4306,15 +4634,21 @@ Pic: Steven
 Gender: Male
 Music: Male
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Carkol
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Kecleon
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Carbink
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Boldore
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_LOLA ===
 Name: STEVEN
@@ -4323,15 +4657,25 @@ Pic: Steven
 Gender: Male
 Music: Male
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Corvisquire
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Kadabra
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Marshtomp
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Servine
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Monferno
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_CHARLIE ===
 Name: STEVEN
@@ -4340,15 +4684,25 @@ Pic: Steven
 Gender: Male
 Music: Male
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Pidgeotto
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pignite
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Quaxwell
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Loudred
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Grotle
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_RANDOLPH ===
 Name: STEVEN
@@ -4357,15 +4711,25 @@ Pic: Steven
 Gender: Male
 Music: Male
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Vigoroth
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Flaaffy
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Quilava
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Brionne
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Ivysaur
+Level: 26
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_TODD ===
 Name: STEVEN
