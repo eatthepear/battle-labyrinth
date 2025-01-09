@@ -79,7 +79,7 @@ Zone11A_EventScript_LeviathanIntro::
 # 50 "data/maps/Zone11A/scripts.pory"
 	goto_if_set FLAG_SETTINGS_CHALLENGE, Zone11A_EventScript_LeviathanIntro_6
 # 53 "data/maps/Zone11A/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_NEWTON_LEVIATHAN_11, Zone11A_Text_Leviathan10Defeat
+	trainerbattle_no_intro TRAINER_PBL_NEWTON_LEVIATHAN_10, Zone11A_Text_Leviathan10Defeat
 Zone11A_EventScript_LeviathanIntro_5:
 # 55 "data/maps/Zone11A/scripts.pory"
 	applymovement 6, Common_Movement_FaceLeft
@@ -125,7 +125,7 @@ Zone11A_EventScript_LeviathanIntro_2:
 
 Zone11A_EventScript_LeviathanIntro_6:
 # 51 "data/maps/Zone11A/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_NEWTON_LEVIATHAN_11_CHALLENGE, Zone11A_Text_Leviathan10Defeat
+	trainerbattle_no_intro TRAINER_PBL_NEWTON_LEVIATHAN_10_CHALLENGE, Zone11A_Text_Leviathan10Defeat
 	goto Zone11A_EventScript_LeviathanIntro_5
 
 

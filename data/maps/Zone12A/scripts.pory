@@ -245,11 +245,12 @@ Zone12A_EventScript_Abigail::
 	end
 
 Zone12A_Text_AbigailIntro:
-	.string "Leftover precipitation forms\n"
-	.string "into puddles!$"
+	.string "This puddle is not good for someone\n"
+	.string "without rain boots!$"
 
 Zone12A_Text_AbigailDefeat:
-	.string "Make sure to wear rain boots!$"
+	.string "But it's just too fun to splash\n"
+	.string "around!$"
 
 Zone12A_Text_AbigailPostBattle:
 	.string "Splashing around is fun!$"
@@ -285,21 +286,6 @@ Zone12A_Text_HildaPostBattle:
 	.string "Exercising without a break is\n"
 	.string "tough!$"
 
-Zone12A_EventScript_Kinley::
-	trainerbattle_single TRAINER_PBL_KINLEY, Zone12A_Text_KinleyIntro, Zone12A_Text_KinleyDefeat
-	msgbox Zone12A_Text_KinleyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone12A_Text_KinleyIntro:
-	.string "I'm looking for rare Pokémon!$"
-
-Zone12A_Text_KinleyDefeat:
-	.string "But I can barely see through the\n"
-	.string "grass!$"
-
-Zone12A_Text_KinleyPostBattle:
-	.string "I won't give up my search!$"
-
 Zone12A_EventScript_Trevor::
 	trainerbattle_single TRAINER_PBL_TREVOR, Zone12A_Text_TrevorIntro, Zone12A_Text_TrevorDefeat
 	msgbox Zone12A_Text_TrevorPostBattle, MSGBOX_AUTOCLOSE
@@ -314,4 +300,35 @@ Zone12A_Text_TrevorDefeat:
 
 Zone12A_Text_TrevorPostBattle:
 	.string "I'll work on raising them more!$"
+
+Zone12A_EventScript_Rufus::
+	trainerbattle_single TRAINER_PBL_RUFUS, Zone12A_Text_RufusIntro, Zone12A_Text_RufusDefeat
+	msgbox Zone12A_Text_RufusPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone12A_Text_RufusIntro:
+	.string "I'm looking for rare Pokémon!$"
+
+Zone12A_Text_RufusDefeat:
+	.string "But I can barely see through the\n"
+	.string "grass!$"
+
+Zone12A_Text_RufusPostBattle:
+	.string "I won't give up my search!$"
+
+Zone12A_EventScript_Kinley::
+	trainerbattle_single TRAINER_PBL_KINLEY, Zone12A_Text_KinleyIntro, Zone12A_Text_KinleyDefeat
+	msgbox Zone12A_Text_KinleyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Zone12A_Text_KinleyIntro:
+	.string "This grass is far too tall\n"
+	.string "for someone of my stature!$"
+
+Zone12A_Text_KinleyDefeat:
+	.string "I meant financial stature!\n"
+	.string "I'm not short!$"
+
+Zone12A_Text_KinleyPostBattle:
+	.string "Errr… Never mind.$"
 `

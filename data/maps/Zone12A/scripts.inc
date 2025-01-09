@@ -455,143 +455,177 @@ Zone12A_EventScript_Abigail::
 # 247 "data/maps/Zone12A/scripts.pory"
 Zone12A_Text_AbigailIntro:
 # 248 "data/maps/Zone12A/scripts.pory"
-	.string "Leftover precipitation forms\n"
+	.string "This puddle is not good for someone\n"
 # 249 "data/maps/Zone12A/scripts.pory"
-	.string "into puddles!$"
+	.string "without rain boots!$"
 # 250 "data/maps/Zone12A/scripts.pory"
 
 # 251 "data/maps/Zone12A/scripts.pory"
 Zone12A_Text_AbigailDefeat:
 # 252 "data/maps/Zone12A/scripts.pory"
-	.string "Make sure to wear rain boots!$"
+	.string "But it's just too fun to splash\n"
 # 253 "data/maps/Zone12A/scripts.pory"
-
+	.string "around!$"
 # 254 "data/maps/Zone12A/scripts.pory"
-Zone12A_Text_AbigailPostBattle:
+
 # 255 "data/maps/Zone12A/scripts.pory"
-	.string "Splashing around is fun!$"
+Zone12A_Text_AbigailPostBattle:
 # 256 "data/maps/Zone12A/scripts.pory"
-
+	.string "Splashing around is fun!$"
 # 257 "data/maps/Zone12A/scripts.pory"
-Zone12A_EventScript_Federico::
+
 # 258 "data/maps/Zone12A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_FEDERICO, Zone12A_Text_FedericoIntro, Zone12A_Text_FedericoDefeat
+Zone12A_EventScript_Federico::
 # 259 "data/maps/Zone12A/scripts.pory"
-	msgbox Zone12A_Text_FedericoPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_PBL_FEDERICO, Zone12A_Text_FedericoIntro, Zone12A_Text_FedericoDefeat
 # 260 "data/maps/Zone12A/scripts.pory"
-	end
+	msgbox Zone12A_Text_FedericoPostBattle, MSGBOX_AUTOCLOSE
 # 261 "data/maps/Zone12A/scripts.pory"
-
+	end
 # 262 "data/maps/Zone12A/scripts.pory"
-Zone12A_Text_FedericoIntro:
+
 # 263 "data/maps/Zone12A/scripts.pory"
-	.string "Argh… I wish I had a Surfboard…$"
+Zone12A_Text_FedericoIntro:
 # 264 "data/maps/Zone12A/scripts.pory"
-
+	.string "Argh… I wish I had a Surfboard…$"
 # 265 "data/maps/Zone12A/scripts.pory"
-Zone12A_Text_FedericoDefeat:
+
 # 266 "data/maps/Zone12A/scripts.pory"
-	.string "Then I could ride the waves,\n"
+Zone12A_Text_FedericoDefeat:
 # 267 "data/maps/Zone12A/scripts.pory"
-	.string "searching for bigger fish!$"
+	.string "Then I could ride the waves,\n"
 # 268 "data/maps/Zone12A/scripts.pory"
-
+	.string "searching for bigger fish!$"
 # 269 "data/maps/Zone12A/scripts.pory"
-Zone12A_Text_FedericoPostBattle:
+
 # 270 "data/maps/Zone12A/scripts.pory"
-	.string "Sounds like a catch, am I right?$"
+Zone12A_Text_FedericoPostBattle:
 # 271 "data/maps/Zone12A/scripts.pory"
-
+	.string "Sounds like a catch, am I right?$"
 # 272 "data/maps/Zone12A/scripts.pory"
-Zone12A_EventScript_Hilda::
+
 # 273 "data/maps/Zone12A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_HILDA, Zone12A_Text_HildaIntro, Zone12A_Text_HildaDefeat
+Zone12A_EventScript_Hilda::
 # 274 "data/maps/Zone12A/scripts.pory"
-	msgbox Zone12A_Text_HildaPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_PBL_HILDA, Zone12A_Text_HildaIntro, Zone12A_Text_HildaDefeat
 # 275 "data/maps/Zone12A/scripts.pory"
-	end
+	msgbox Zone12A_Text_HildaPostBattle, MSGBOX_AUTOCLOSE
 # 276 "data/maps/Zone12A/scripts.pory"
-
+	end
 # 277 "data/maps/Zone12A/scripts.pory"
-Zone12A_Text_HildaIntro:
+
 # 278 "data/maps/Zone12A/scripts.pory"
-	.string "After a swim, a quick run is what\n"
+Zone12A_Text_HildaIntro:
 # 279 "data/maps/Zone12A/scripts.pory"
-	.string "I need to dry off!$"
+	.string "After a swim, a quick run is what\n"
 # 280 "data/maps/Zone12A/scripts.pory"
-
+	.string "I need to dry off!$"
 # 281 "data/maps/Zone12A/scripts.pory"
-Zone12A_Text_HildaDefeat:
+
 # 282 "data/maps/Zone12A/scripts.pory"
-	.string "I'm suddenly very tired!$"
+Zone12A_Text_HildaDefeat:
 # 283 "data/maps/Zone12A/scripts.pory"
-
+	.string "I'm suddenly very tired!$"
 # 284 "data/maps/Zone12A/scripts.pory"
-Zone12A_Text_HildaPostBattle:
+
 # 285 "data/maps/Zone12A/scripts.pory"
-	.string "Exercising without a break is\n"
+Zone12A_Text_HildaPostBattle:
 # 286 "data/maps/Zone12A/scripts.pory"
-	.string "tough!$"
+	.string "Exercising without a break is\n"
 # 287 "data/maps/Zone12A/scripts.pory"
-
+	.string "tough!$"
 # 288 "data/maps/Zone12A/scripts.pory"
-Zone12A_EventScript_Kinley::
+
 # 289 "data/maps/Zone12A/scripts.pory"
-	trainerbattle_single TRAINER_PBL_KINLEY, Zone12A_Text_KinleyIntro, Zone12A_Text_KinleyDefeat
-# 290 "data/maps/Zone12A/scripts.pory"
-	msgbox Zone12A_Text_KinleyPostBattle, MSGBOX_AUTOCLOSE
-# 291 "data/maps/Zone12A/scripts.pory"
-	end
-# 292 "data/maps/Zone12A/scripts.pory"
-
-# 293 "data/maps/Zone12A/scripts.pory"
-Zone12A_Text_KinleyIntro:
-# 294 "data/maps/Zone12A/scripts.pory"
-	.string "I'm looking for rare Pokémon!$"
-# 295 "data/maps/Zone12A/scripts.pory"
-
-# 296 "data/maps/Zone12A/scripts.pory"
-Zone12A_Text_KinleyDefeat:
-# 297 "data/maps/Zone12A/scripts.pory"
-	.string "But I can barely see through the\n"
-# 298 "data/maps/Zone12A/scripts.pory"
-	.string "grass!$"
-# 299 "data/maps/Zone12A/scripts.pory"
-
-# 300 "data/maps/Zone12A/scripts.pory"
-Zone12A_Text_KinleyPostBattle:
-# 301 "data/maps/Zone12A/scripts.pory"
-	.string "I won't give up my search!$"
-# 302 "data/maps/Zone12A/scripts.pory"
-
-# 303 "data/maps/Zone12A/scripts.pory"
 Zone12A_EventScript_Trevor::
-# 304 "data/maps/Zone12A/scripts.pory"
+# 290 "data/maps/Zone12A/scripts.pory"
 	trainerbattle_single TRAINER_PBL_TREVOR, Zone12A_Text_TrevorIntro, Zone12A_Text_TrevorDefeat
-# 305 "data/maps/Zone12A/scripts.pory"
+# 291 "data/maps/Zone12A/scripts.pory"
 	msgbox Zone12A_Text_TrevorPostBattle, MSGBOX_AUTOCLOSE
-# 306 "data/maps/Zone12A/scripts.pory"
+# 292 "data/maps/Zone12A/scripts.pory"
 	end
-# 307 "data/maps/Zone12A/scripts.pory"
+# 293 "data/maps/Zone12A/scripts.pory"
 
-# 308 "data/maps/Zone12A/scripts.pory"
+# 294 "data/maps/Zone12A/scripts.pory"
 Zone12A_Text_TrevorIntro:
-# 309 "data/maps/Zone12A/scripts.pory"
+# 295 "data/maps/Zone12A/scripts.pory"
 	.string "Go, my Baby Pokémon, go!$"
-# 310 "data/maps/Zone12A/scripts.pory"
+# 296 "data/maps/Zone12A/scripts.pory"
 
-# 311 "data/maps/Zone12A/scripts.pory"
+# 297 "data/maps/Zone12A/scripts.pory"
 Zone12A_Text_TrevorDefeat:
-# 312 "data/maps/Zone12A/scripts.pory"
+# 298 "data/maps/Zone12A/scripts.pory"
 	.string "Maybe they're a little weak to\n"
-# 313 "data/maps/Zone12A/scripts.pory"
+# 299 "data/maps/Zone12A/scripts.pory"
 	.string "battle.$"
-# 314 "data/maps/Zone12A/scripts.pory"
+# 300 "data/maps/Zone12A/scripts.pory"
 
-# 315 "data/maps/Zone12A/scripts.pory"
+# 301 "data/maps/Zone12A/scripts.pory"
 Zone12A_Text_TrevorPostBattle:
-# 316 "data/maps/Zone12A/scripts.pory"
+# 302 "data/maps/Zone12A/scripts.pory"
 	.string "I'll work on raising them more!$"
+# 303 "data/maps/Zone12A/scripts.pory"
+
+# 304 "data/maps/Zone12A/scripts.pory"
+Zone12A_EventScript_Rufus::
+# 305 "data/maps/Zone12A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_RUFUS, Zone12A_Text_RufusIntro, Zone12A_Text_RufusDefeat
+# 306 "data/maps/Zone12A/scripts.pory"
+	msgbox Zone12A_Text_RufusPostBattle, MSGBOX_AUTOCLOSE
+# 307 "data/maps/Zone12A/scripts.pory"
+	end
+# 308 "data/maps/Zone12A/scripts.pory"
+
+# 309 "data/maps/Zone12A/scripts.pory"
+Zone12A_Text_RufusIntro:
+# 310 "data/maps/Zone12A/scripts.pory"
+	.string "I'm looking for rare Pokémon!$"
+# 311 "data/maps/Zone12A/scripts.pory"
+
+# 312 "data/maps/Zone12A/scripts.pory"
+Zone12A_Text_RufusDefeat:
+# 313 "data/maps/Zone12A/scripts.pory"
+	.string "But I can barely see through the\n"
+# 314 "data/maps/Zone12A/scripts.pory"
+	.string "grass!$"
+# 315 "data/maps/Zone12A/scripts.pory"
+
+# 316 "data/maps/Zone12A/scripts.pory"
+Zone12A_Text_RufusPostBattle:
+# 317 "data/maps/Zone12A/scripts.pory"
+	.string "I won't give up my search!$"
+# 318 "data/maps/Zone12A/scripts.pory"
+
+# 319 "data/maps/Zone12A/scripts.pory"
+Zone12A_EventScript_Kinley::
+# 320 "data/maps/Zone12A/scripts.pory"
+	trainerbattle_single TRAINER_PBL_KINLEY, Zone12A_Text_KinleyIntro, Zone12A_Text_KinleyDefeat
+# 321 "data/maps/Zone12A/scripts.pory"
+	msgbox Zone12A_Text_KinleyPostBattle, MSGBOX_AUTOCLOSE
+# 322 "data/maps/Zone12A/scripts.pory"
+	end
+# 323 "data/maps/Zone12A/scripts.pory"
+
+# 324 "data/maps/Zone12A/scripts.pory"
+Zone12A_Text_KinleyIntro:
+# 325 "data/maps/Zone12A/scripts.pory"
+	.string "This grass is far too tall\n"
+# 326 "data/maps/Zone12A/scripts.pory"
+	.string "for someone of my stature!$"
+# 327 "data/maps/Zone12A/scripts.pory"
+
+# 328 "data/maps/Zone12A/scripts.pory"
+Zone12A_Text_KinleyDefeat:
+# 329 "data/maps/Zone12A/scripts.pory"
+	.string "I meant financial stature!\n"
+# 330 "data/maps/Zone12A/scripts.pory"
+	.string "I'm not short!$"
+# 331 "data/maps/Zone12A/scripts.pory"
+
+# 332 "data/maps/Zone12A/scripts.pory"
+Zone12A_Text_KinleyPostBattle:
+# 333 "data/maps/Zone12A/scripts.pory"
+	.string "Errr… Never mind.$"
 
 Zone12A_EventScript_BreederF_Text_0:
 # 35 "data/maps/Zone12A/scripts.pory"
