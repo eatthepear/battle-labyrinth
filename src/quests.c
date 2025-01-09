@@ -143,6 +143,8 @@ static void PrintQuestLocation(s32 questId);
 static void GenerateQuestFlavorText(s32 questId);
 static void UpdateQuestFlavorText(s32 questId);
 static void PrintQuestFlavorText(s32 questId);
+static const u8 *GetQuestDesc(s32 questId);
+static const u8* GetSubquestFlavorText(s32 questId, s32 subquestId);
 
 static bool8 IsQuestUnlocked(s32 questId);
 static bool8 IsQuestActiveState(s32 questId);
@@ -1280,12 +1282,12 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      QUEST_SIGNS_SUB_COUNT
 	),
 	side_quest(
-	      gText_SideQuestName_Filler,
-	      gText_SideQuestDesc_Filler,
-	      gText_SideQuestDoneDesc_Filler,
-	      gText_QuestMapFiller,
-	      ITEM_NONE,
-	      ITEM,
+	      gText_SideQuestName_Saves,
+	      gText_SideQuestDesc_Saves,
+	      gText_SideQuestDoneDesc_Saves,
+	      gText_QuestMapSanctuary,
+	      OBJ_EVENT_GFX_GAMEBOY_KID,
+	      OBJECT,
 	      NULL,
 	      0
 	),
@@ -3086,22 +3088,14 @@ void GenerateQuestFlavorText(s32 questId)
 	}
 	else
 	{
-		if (IsSubquestCompletedState(questId) == TRUE)
-		{
-			StringCopy(gStringVar1,
-			           sSideQuests[sStateDataPtr->parentQuest].subquests[questId].desc);
-		}
-		else
-		{
-			StringCopy(gStringVar1, sText_Empty);
-		}
+		StringCopy(gStringVar1, GetSubquestFlavorText(sStateDataPtr->parentQuest, questId));
 	}
 
 	StringExpandPlaceholders(gStringVar3, gStringVar1);
 }
 void UpdateQuestFlavorText(s32 questId)
 {
-	StringCopy(gStringVar1, sSideQuests[questId].desc);
+	StringExpandPlaceholders(gStringVar1, GetQuestDesc(questId));
 }
 void PrintQuestFlavorText(s32 questId)
 {
@@ -3849,4 +3843,28 @@ void QuestMenu_ResetMenuSaveData(void)
 	       sizeof(gSaveBlock2Ptr->questData));
 	memset(&gSaveBlock2Ptr->subQuests, 0,
 	       sizeof(gSaveBlock2Ptr->subQuests));
+}
+
+static const u8 *GetQuestDesc(s32 questId)
+{
+    switch (questId) {
+        case QUEST_SAVES:
+			ConvertIntToDecimalStringN(gStringVar1, GetGameStat(GAME_STAT_SAVED_GAME), STR_CONV_MODE_LEFT_ALIGN, 2);
+			StringExpandPlaceholders(gStringVar4, gText_SideQuestDesc_Saves);
+            return gStringVar4;
+        default:
+            return sSideQuests[questId].desc;
+    }
+}
+
+static const u8* GetSubquestFlavorText(s32 questId, s32 subquestId)
+{
+	if (IsSubquestCompletedState(subquestId) == FALSE)
+	{
+		return sText_Empty;
+	}
+	switch (questId) {
+		default:
+			return sSideQuests[questId].subquests[subquestId].desc;
+	}
 }
