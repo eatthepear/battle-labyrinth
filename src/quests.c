@@ -33,6 +33,7 @@
 #include "constants/event_objects.h"
 #include "event_object_movement.h"
 #include "pokemon_icon.h"
+#include "pokedex.h"
 
 #include "random.h"
 
@@ -1292,12 +1293,12 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      0
 	),
 	side_quest(
-	      gText_SideQuestName_Filler,
-	      gText_SideQuestDesc_Filler,
-	      gText_SideQuestDoneDesc_Filler,
-	      gText_QuestMapFiller,
-	      ITEM_NONE,
-	      ITEM,
+	      gText_SideQuestName_Pokedex,
+	      gText_SideQuestDesc_Pokedex,
+	      gText_SideQuestDoneDesc_Pokedex,
+	      gText_QuestMapSanctuary,
+	      OBJ_EVENT_GFX_SCIENTIST_2,
+	      OBJECT,
 	      NULL,
 	      0
 	),
@@ -3855,6 +3856,10 @@ static const u8 *GetQuestDesc(s32 questId)
         case QUEST_SAVES:
 			ConvertIntToDecimalStringN(gStringVar1, GetGameStat(GAME_STAT_SAVED_GAME), STR_CONV_MODE_LEFT_ALIGN, 2);
 			StringExpandPlaceholders(gStringVar4, gText_SideQuestDesc_Saves);
+            return gStringVar4;
+        case QUEST_POKEDEX:
+			ConvertIntToDecimalStringN(gStringVar1, GetNationalPokedexCount(FLAG_GET_SEEN), STR_CONV_MODE_LEFT_ALIGN, 4);
+			StringExpandPlaceholders(gStringVar4, gText_SideQuestDesc_Pokedex);
             return gStringVar4;
         default:
             return sSideQuests[questId].desc;

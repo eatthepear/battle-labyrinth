@@ -2790,6 +2790,19 @@ script EventScript_SavesQuestBoy {
 	end
 }
 
+script EventScript_PokedexQuestScientist {
+	lock
+	faceplayer
+	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_POKEDEX)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(format("Kids these days are always neglecting filling their Pokédex!\pIf you can show me a Pokédex that's seen all the Pokémon in existence, I'll reward you!"))
+		startquest(QUEST_POKEDEX)
+	}
+	msgbox(format("Seeing all the Pokémon is tough enough.\pImagine capturing them all!"))
+	release
+	end
+}
+
 script EventScript_WarpZone0 {
 	closemessage
 	playmoncry(SPECIES_PORYGON, 0)
