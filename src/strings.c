@@ -1626,16 +1626,19 @@ const u8 gText_QuestActive[] =_("active");
 const u8 gText_SideQuestName_Filler[] = _("Filler Side Quest");
 const u8 gText_SideQuestName_PBL[] = _("Pokémon Battle Labyrinth");
 const u8 gText_SideQuestName_Signs[] = _("Learn to Read");
+const u8 gText_SideQuestName_Saves[] = _("Saving Progress");
 
 //descriptions
 const u8 gText_SideQuestDesc_Filler[] = _("Filler Description");
 const u8 gText_SideQuestDesc_PBL[] = _("Complete all 50 Zones without losing\na single battle!");
 const u8 gText_SideQuestDesc_Signs[] = _("Read all the signs in the game!");
+const u8 gText_SideQuestDesc_Saves[] = _("Save the game 50 times!\nSo far you've saved the game {STR_VAR_1} times!");
 
 //completed quest description
 const u8 gText_SideQuestDoneDesc_Filler[] = _("Filler Completed Quest");
 const u8 gText_SideQuestDoneDesc_PBL[] = _("You've completed all 50 Zones!");
 const u8 gText_SideQuestDoneDesc_Signs[] = _("You've read all the signs in the game!");
+const u8 gText_SideQuestDoneDesc_Saves[] = _("You've saved the game 50 times!");
 
 //map
 const u8 gText_QuestMapFiller[] = _("???");

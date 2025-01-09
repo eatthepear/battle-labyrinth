@@ -17,7 +17,7 @@
 // quest number defines
 #define QUEST_PBL        0
 #define QUEST_SIGNS      1
-#define QUEST_3          2
+#define QUEST_SAVES      2
 #define QUEST_4          3
 #define QUEST_5          4
 #define QUEST_6          5

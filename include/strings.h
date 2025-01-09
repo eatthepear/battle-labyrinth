@@ -2767,16 +2767,19 @@ extern const u8 gText_QuestActive[];
 extern const u8 gText_SideQuestName_Filler[];
 extern const u8 gText_SideQuestName_PBL[];
 extern const u8 gText_SideQuestName_Signs[];
+extern const u8 gText_SideQuestName_Saves[];
 
 //descriptions
 extern const u8 gText_SideQuestDesc_Filler[];
 extern const u8 gText_SideQuestDesc_PBL[];
 extern const u8 gText_SideQuestDesc_Signs[];
+extern const u8 gText_SideQuestDesc_Saves[];
 
 //completed quest description
 extern const u8 gText_SideQuestDoneDesc_Filler[];
 extern const u8 gText_SideQuestDoneDesc_PBL[];
 extern const u8 gText_SideQuestDoneDesc_Signs[];
+extern const u8 gText_SideQuestDoneDesc_Saves[];
 
 //map
 extern const u8 gText_QuestMapFiller[];
