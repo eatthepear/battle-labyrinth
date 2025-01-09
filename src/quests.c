@@ -3848,6 +3848,10 @@ void QuestMenu_ResetMenuSaveData(void)
 static const u8 *GetQuestDesc(s32 questId)
 {
     switch (questId) {
+		case QUEST_PBL:
+			ConvertIntToDecimalStringN(gStringVar1, VarGet(VAR_ZONE) - 1, STR_CONV_MODE_LEFT_ALIGN, 2);
+			StringExpandPlaceholders(gStringVar4, gText_SideQuestDesc_PBL);
+            return gStringVar4;
         case QUEST_SAVES:
 			ConvertIntToDecimalStringN(gStringVar1, GetGameStat(GAME_STAT_SAVED_GAME), STR_CONV_MODE_LEFT_ALIGN, 2);
 			StringExpandPlaceholders(gStringVar4, gText_SideQuestDesc_Saves);

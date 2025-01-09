@@ -1630,7 +1630,7 @@ const u8 gText_SideQuestName_Saves[] = _("Saving Progress");
 
 //descriptions
 const u8 gText_SideQuestDesc_Filler[] = _("Filler Description");
-const u8 gText_SideQuestDesc_PBL[] = _("Complete all 50 Zones without losing\na single battle!");
+const u8 gText_SideQuestDesc_PBL[] = _("Complete all 50 Zones without losing\na single battle!\nSo far you've completed {STR_VAR_1} Zones!");
 const u8 gText_SideQuestDesc_Signs[] = _("Read all the signs in the game!");
 const u8 gText_SideQuestDesc_Saves[] = _("Save the game 50 times!\nSo far you've saved the game {STR_VAR_1} times!");
 
