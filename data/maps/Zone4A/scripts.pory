@@ -250,12 +250,6 @@ script Zone4A_EventScript_ItemSilverPowder {
 	end
 }
 
-script Zone4A_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_19)
-	msgbox(format("These woods are enchanted…\nDon't get lost!"), MSGBOX_SIGN)
-	end
-}
-
 raw `
 Zone4A_EventScript_Herman::
 	trainerbattle_single TRAINER_PBL_HERMAN, Zone4A_Text_HermanIntro, Zone4A_Text_HermanDefeat

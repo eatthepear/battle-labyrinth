@@ -279,12 +279,6 @@ script Zone6A_EventScript_ItemTMDrainingKiss {
 	end
 }
 
-script Zone6A_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_24)
-	msgbox(format("Trainer Tips\pYou can sort items in the Bag using {START_BUTTON}."), MSGBOX_SIGN)
-	end
-}
-
 raw `
 
 Zone6A_EventScript_Gilbert::

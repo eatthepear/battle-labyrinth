@@ -84,81 +84,67 @@ Zone4D_EventScript_ItemTMHiddenPower_2:
 	end
 
 
-Zone4D_EventScript_Sign::
+# 50 "data/maps/Zone4D/scripts.pory"
+
 # 51 "data/maps/Zone4D/scripts.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_22
+
 # 52 "data/maps/Zone4D/scripts.pory"
-	msgbox Zone4D_EventScript_Sign_Text_0, MSGBOX_SIGN
+Zone4D_EventScript_Lucia::
+# 53 "data/maps/Zone4D/scripts.pory"
+	trainerbattle_single TRAINER_PBL_LUCIA, Zone4D_Text_LuciaIntro, Zone4D_Text_LuciaDefeat
+# 54 "data/maps/Zone4D/scripts.pory"
+	msgbox Zone4D_Text_LuciaPostBattle, MSGBOX_AUTOCLOSE
+# 55 "data/maps/Zone4D/scripts.pory"
 	end
-
-
 # 56 "data/maps/Zone4D/scripts.pory"
 
 # 57 "data/maps/Zone4D/scripts.pory"
-
+Zone4D_Text_LuciaIntro:
 # 58 "data/maps/Zone4D/scripts.pory"
-Zone4D_EventScript_Lucia::
+	.string "I think the exit is near here…$"
 # 59 "data/maps/Zone4D/scripts.pory"
-	trainerbattle_single TRAINER_PBL_LUCIA, Zone4D_Text_LuciaIntro, Zone4D_Text_LuciaDefeat
+
 # 60 "data/maps/Zone4D/scripts.pory"
-	msgbox Zone4D_Text_LuciaPostBattle, MSGBOX_AUTOCLOSE
+Zone4D_Text_LuciaDefeat:
 # 61 "data/maps/Zone4D/scripts.pory"
-	end
+	.string "Oh?$"
 # 62 "data/maps/Zone4D/scripts.pory"
 
 # 63 "data/maps/Zone4D/scripts.pory"
-Zone4D_Text_LuciaIntro:
+Zone4D_Text_LuciaPostBattle:
 # 64 "data/maps/Zone4D/scripts.pory"
-	.string "I think the exit is near here…$"
+	.string "I think I see the exit!$"
 # 65 "data/maps/Zone4D/scripts.pory"
 
 # 66 "data/maps/Zone4D/scripts.pory"
-Zone4D_Text_LuciaDefeat:
-# 67 "data/maps/Zone4D/scripts.pory"
-	.string "Oh?$"
-# 68 "data/maps/Zone4D/scripts.pory"
-
-# 69 "data/maps/Zone4D/scripts.pory"
-Zone4D_Text_LuciaPostBattle:
-# 70 "data/maps/Zone4D/scripts.pory"
-	.string "I think I see the exit!$"
-# 71 "data/maps/Zone4D/scripts.pory"
-
-# 72 "data/maps/Zone4D/scripts.pory"
 Zone4D_EventScript_Fred::
-# 73 "data/maps/Zone4D/scripts.pory"
+# 67 "data/maps/Zone4D/scripts.pory"
 	trainerbattle_single TRAINER_PBL_FRED, Zone4D_Text_FredIntro, Zone4D_Text_FredDefeat
-# 74 "data/maps/Zone4D/scripts.pory"
+# 68 "data/maps/Zone4D/scripts.pory"
 	msgbox Zone4D_Text_FredPostBattle, MSGBOX_AUTOCLOSE
-# 75 "data/maps/Zone4D/scripts.pory"
+# 69 "data/maps/Zone4D/scripts.pory"
 	end
-# 76 "data/maps/Zone4D/scripts.pory"
+# 70 "data/maps/Zone4D/scripts.pory"
 
-# 77 "data/maps/Zone4D/scripts.pory"
+# 71 "data/maps/Zone4D/scripts.pory"
 Zone4D_Text_FredIntro:
-# 78 "data/maps/Zone4D/scripts.pory"
+# 72 "data/maps/Zone4D/scripts.pory"
 	.string "The most important character\n"
-# 79 "data/maps/Zone4D/scripts.pory"
+# 73 "data/maps/Zone4D/scripts.pory"
 	.string "trait someone can have is to\l"
-# 80 "data/maps/Zone4D/scripts.pory"
+# 74 "data/maps/Zone4D/scripts.pory"
 	.string "have perseverance.$"
-# 81 "data/maps/Zone4D/scripts.pory"
+# 75 "data/maps/Zone4D/scripts.pory"
 
-# 82 "data/maps/Zone4D/scripts.pory"
+# 76 "data/maps/Zone4D/scripts.pory"
 Zone4D_Text_FredDefeat:
-# 83 "data/maps/Zone4D/scripts.pory"
+# 77 "data/maps/Zone4D/scripts.pory"
 	.string "I can make it through anything!$"
-# 84 "data/maps/Zone4D/scripts.pory"
+# 78 "data/maps/Zone4D/scripts.pory"
 
-# 85 "data/maps/Zone4D/scripts.pory"
+# 79 "data/maps/Zone4D/scripts.pory"
 Zone4D_Text_FredPostBattle:
-# 86 "data/maps/Zone4D/scripts.pory"
+# 80 "data/maps/Zone4D/scripts.pory"
 	.string "Just keep swimming,\n"
-# 87 "data/maps/Zone4D/scripts.pory"
+# 81 "data/maps/Zone4D/scripts.pory"
 	.string "just keep swimming.$"
-
-Zone4D_EventScript_Sign_Text_0:
-# 52 "data/maps/Zone4D/scripts.pory"
-	.string "Trainer Tips\p"
-	.string "Some areas require backtracking later\n"
-	.string "on in order to access them.$"

@@ -258,14 +258,6 @@ Zone4E_EventScript_ItemPoisonBarb_2:
 	end
 
 
-Zone4E_EventScript_Sign::
-# 149 "data/maps/Zone4E/scripts.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_23
-# 150 "data/maps/Zone4E/scripts.pory"
-	msgbox Zone4E_EventScript_Sign_Text_0, MSGBOX_SIGN
-	end
-
-
 Zone4E_EventScript_LeviathanBattle_Text_0:
 # 32 "data/maps/Zone4E/scripts.pory"
 	.string "{COLOR BLUE}Ella{COLOR DARK_GRAY}: Wargh! Not only are we lost in the\n"
@@ -325,13 +317,6 @@ Zone4E_EventScript_StruggleBugTutor_Text_5:
 Zone4E_EventScript_StruggleBugTutor_Text_6:
 # 105 "data/maps/Zone4E/scripts.pory"
 	.string "{PLAYER} paid ¥500.$"
-
-Zone4E_EventScript_Sign_Text_0:
-# 150 "data/maps/Zone4E/scripts.pory"
-	.string "Trainer Tips\p"
-	.string "The Pokémon you encounter in different\n"
-	.string "areas of the same zone may have slight\l"
-	.string "differences!$"
 
 Zone4E_Text_Leviathan4Intro::
 # 46 "data/maps/Zone4E/scripts.pory"

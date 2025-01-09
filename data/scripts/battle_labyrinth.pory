@@ -132,48 +132,6 @@ script EventScript_MoveCameraDown {
 	return
 }
 
-script EventScript_RecoverySign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_1)
-	msgbox("Joy's Center of Restoration\nA meeting place for everyone!", MSGBOX_SIGN)
-	end
-}
-
-script EventScript_MedicineSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_2)
-	msgbox("Portentia's Potions\nCurated Medicines!", MSGBOX_SIGN)
-	end
-}
-
-script EventScript_PokeballSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_3)
-	msgbox("Tim's Pokéball Shop\nSponsored by Pokémart Inc.", MSGBOX_SIGN)
-	end
-}
-
-script EventScript_ItemsSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_4)
-	msgbox("Varrick's Extravagant Emporium\nA Fine Collection!", MSGBOX_SIGN)
-	end
-}
-
-script EventScript_BerriesSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_5)
-	msgbox("Julia's Berries\nOnly the Berry best!", MSGBOX_SIGN)
-	end
-}
-
-script EventScript_EggsSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_6)
-	msgbox("Marie's Egg Delivery Service\nCome meet your next friend!", MSGBOX_SIGN)
-	end
-}
-
-script EventScript_ServicesSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_7)
-	msgbox("Lelouch's Services Shop\nAnything for the right price…", MSGBOX_SIGN)
-	end
-}
-
 script EventScript_ConsumablesSign {
 	msgbox("Varrick's Items\nA Fine Collection!", MSGBOX_SIGN)
 	end
@@ -3297,6 +3255,185 @@ script EventScript_HandleFlashlight {
 		setflashlevel(6)
 	}
 	return
+}
+
+script EventScript_RecoverySign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_1)
+	msgbox("Joy's Center of Restoration\nA meeting place for everyone!", MSGBOX_SIGN)
+	end
+}
+
+script EventScript_MedicineSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_2)
+	msgbox("Portentia's Potions\nCurated Medicines!", MSGBOX_SIGN)
+	end
+}
+
+script EventScript_PokeballSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_3)
+	msgbox("Tim's Pokéball Shop\nSponsored by Pokémart Inc.", MSGBOX_SIGN)
+	end
+}
+
+script EventScript_ItemsSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_4)
+	msgbox("Varrick's Extravagant Emporium\nA Fine Collection!", MSGBOX_SIGN)
+	end
+}
+
+script EventScript_BerriesSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_5)
+	msgbox("Julia's Berries\nOnly the Berry best!", MSGBOX_SIGN)
+	end
+}
+
+script EventScript_EggsSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_6)
+	msgbox("Marie's Egg Delivery Service\nCome meet your next friend!", MSGBOX_SIGN)
+	end
+}
+
+script EventScript_ServicesSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_7)
+	msgbox("Lelouch's Services Shop\nAnything for the right price…", MSGBOX_SIGN)
+	end
+}
+
+script Zone0A_EventScript_TPISign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_8)
+	msgbox(format("Teleport Institute\nGetting around, easy peasy."), MSGBOX_SIGN)
+	end
+}
+
+script Zone0A_EventScript_DayCareSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_9)
+	msgbox(format("Pokémon Day Care\n9 Generations and counting!"), MSGBOX_SIGN)
+	end
+}
+
+script Zone1A_EventScript_Sign_GoldenTree {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_10)
+	msgbox(format("Trainer Tips\pShaking a Golden Tree might drop berries, though occasionally you'll disturb the wild Pokémon living in the tree!"), MSGBOX_SIGN)
+	end
+}
+
+script Zone1A_EventScript_PorygonSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_11)
+	msgbox(format("Trainer Tips\pEvery Zone has its own challenges.\nIn order to reach the Sanctuary and clear a Zone, you must find {COLOR RED}Porygon{COLOR DARK_GRAY}."), MSGBOX_DEFAULT)
+	showmonpic(SPECIES_PORYGON, 10, 3)
+	setseenmon(SPECIES_PORYGON)
+	waitbuttonpress
+	hidemonpic
+	release
+	end
+}
+
+script Zone1A_EventScript_Sign_RunningShoes {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_12)
+	msgbox(format("Trainer Tips\pPress {L_BUTTON} to enable or disable Auto Run."), MSGBOX_SIGN)
+	end
+}
+
+script Zone2A_EventScript_Sign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_13)
+	msgbox(format("Trainer Tips\pYou may find hidden items by checking certain tiles with {A_BUTTON}.\pHowever, you won't find any hidden items on Brutal or Independent."), MSGBOX_SIGN)
+	end
+}
+
+script Zone2A_EventScript_ExpShareSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_14)
+	msgbox(format("Trainer Tips\pThe Exp. All only gives Pokémon who didn't participate in battle 25% experience.\pIf you want to train up a particular Pokémon, you can give them the held item Exp. Share so they get full experience!"), MSGBOX_SIGN)
+	end
+}
+
+script Zone2A_EventScript_CautionSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_15)
+	msgbox(format("Caution!\pDiglett have been found living inside the tunnel.\pRepels recommended!"), MSGBOX_SIGN)
+	end
+}
+
+script Zone2B_EventScript_CautionSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_13)
+	msgbox(format("Caution!\pDiglett have been found living inside the tunnel.\pRepels recommended!"), MSGBOX_SIGN)
+	end
+}
+
+script Zone2B_EventScript_PartySelectSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_16)
+	msgbox(format("Trainer Tips\pYou can switch the order of your party around in your party menu faster by pressing {SELECT_BUTTON}."), MSGBOX_SIGN)
+	end
+}
+
+script Zone2B_EventScript_OptionalLeviathan {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_17)
+	msgbox(format("Trainer Tips\pIn some Zones, Leviathans are optional to battle, but may give good rewards when defeated!"), MSGBOX_SIGN)
+	end
+}
+
+script Zone3A_EventScript_Surveil {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_18)
+	msgbox(format("Trainer Tips\pIn battle, you can use Surveil to see the opponent's team.\pIf you want to see full team information, you can turn on the Full Info setting by speaking to Colress."), MSGBOX_SIGN)
+	end
+}
+
+script Zone4A_EventScript_Sign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_19)
+	msgbox(format("These woods are enchanted…\nDon't get lost!"), MSGBOX_SIGN)
+	end
+}
+
+script Zone4B_EventScript_Sign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_20)
+	msgbox(format("Trainer Tips\pYou can see detailed information about a Pokémon species in its Pokédex entry after capturing it, such as what moves it learns or how to evolve it."), MSGBOX_SIGN)
+	end
+}
+
+script Zone4C_EventScript_Sign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_21)
+	msgbox(format("Trainer Tips\pStarting from now, there is a 20% chance to encounter wild Pokémon in a Double Battle."), MSGBOX_SIGN)
+	end
+}
+
+script Zone4D_EventScript_Sign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_22)
+	msgbox(format("Trainer Tips\pSome areas require backtracking later on in order to access them."), MSGBOX_SIGN)
+	end
+}
+
+script Zone4E_EventScript_Sign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_23)
+	msgbox(format("Trainer Tips\pThe Pokémon you encounter in different areas of the same zone may have slight differences!"), MSGBOX_SIGN)
+	end
+}
+
+script Zone6A_EventScript_Sign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_24)
+	msgbox(format("Trainer Tips\pYou can sort items in the Bag using {START_BUTTON}."), MSGBOX_SIGN)
+	end
+}
+
+script Zone7A_EventScript_Sign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_25)
+	msgbox(format("Trainer Tips\pYou can change the music you hear in battle by speaking to Colress!"), MSGBOX_SIGN)
+	end
+}
+
+script Zone7A_EventScript_HealSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_26)
+	msgbox(format("A stop for weary travelers."), MSGBOX_SIGN)
+	end
+}
+
+script Zone9A_EventScript_Sign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_27)
+	msgbox(format("Trainer Tips\pWhile you are on the Pokémon stats screen, you can press {A_BUTTON} to switch between stats, IVs, or EVs."), MSGBOX_SIGN)
+	end
+}
+
+script Zone9A_EventScript_HerbalSign {
+	completesubquest(QUEST_SIGNS, SUB_QUEST_28)
+	msgbox(format("Herbal and Incense Shop"), MSGBOX_SIGN)
+	end
 }
 
 script Debug_CheatStart_PBL {

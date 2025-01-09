@@ -33,12 +33,6 @@ script Zone4B_EventScript_Callie {
 	end
 }
 
-script Zone4B_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_20)
-	msgbox(format("Trainer Tips\pYou can see detailed information about a Pokémon species in its Pokédex entry after capturing it, such as what moves it learns or how to evolve it."), MSGBOX_SIGN)
-	end
-}
-
 raw `
 Zone4B_EventScript_Ralph::
 	trainerbattle_single TRAINER_PBL_RALPH, Zone4B_Text_RalphIntro, Zone4B_Text_RalphDefeat

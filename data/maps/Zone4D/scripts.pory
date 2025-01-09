@@ -47,12 +47,6 @@ script Zone4D_EventScript_ItemTMHiddenPower {
 	end
 }
 
-script Zone4D_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_22)
-	msgbox(format("Trainer Tips\pSome areas require backtracking later on in order to access them."), MSGBOX_SIGN)
-	end
-}
-
 raw `
 
 Zone4D_EventScript_Lucia::

@@ -84,86 +84,71 @@ Zone4C_EventScript_ItemTwistedSpoon_2:
 	end
 
 
-Zone4C_EventScript_Sign::
-# 51 "data/maps/Zone4C/scripts.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_21
-# 52 "data/maps/Zone4C/scripts.pory"
-	msgbox Zone4C_EventScript_Sign_Text_0, MSGBOX_SIGN
-	end
+# 50 "data/maps/Zone4C/scripts.pory"
 
+# 51 "data/maps/Zone4C/scripts.pory"
+Zone4C_EventScript_Santiago::
+# 52 "data/maps/Zone4C/scripts.pory"
+	trainerbattle_single TRAINER_PBL_SANTIAGO, Zone4C_Text_SantiagoIntro, Zone4C_Text_SantiagoDefeat
+# 53 "data/maps/Zone4C/scripts.pory"
+	msgbox Zone4C_Text_SantiagoPostBattle, MSGBOX_AUTOCLOSE
+# 54 "data/maps/Zone4C/scripts.pory"
+	end
+# 55 "data/maps/Zone4C/scripts.pory"
 
 # 56 "data/maps/Zone4C/scripts.pory"
-
-# 57 "data/maps/Zone4C/scripts.pory"
-Zone4C_EventScript_Santiago::
-# 58 "data/maps/Zone4C/scripts.pory"
-	trainerbattle_single TRAINER_PBL_SANTIAGO, Zone4C_Text_SantiagoIntro, Zone4C_Text_SantiagoDefeat
-# 59 "data/maps/Zone4C/scripts.pory"
-	msgbox Zone4C_Text_SantiagoPostBattle, MSGBOX_AUTOCLOSE
-# 60 "data/maps/Zone4C/scripts.pory"
-	end
-# 61 "data/maps/Zone4C/scripts.pory"
-
-# 62 "data/maps/Zone4C/scripts.pory"
 Zone4C_Text_SantiagoIntro:
-# 63 "data/maps/Zone4C/scripts.pory"
+# 57 "data/maps/Zone4C/scripts.pory"
 	.string "I've collected rare Bug Pokémon!\n"
-# 64 "data/maps/Zone4C/scripts.pory"
+# 58 "data/maps/Zone4C/scripts.pory"
 	.string "Here, let me show you!$"
-# 65 "data/maps/Zone4C/scripts.pory"
+# 59 "data/maps/Zone4C/scripts.pory"
 
-# 66 "data/maps/Zone4C/scripts.pory"
+# 60 "data/maps/Zone4C/scripts.pory"
 Zone4C_Text_SantiagoDefeat:
-# 67 "data/maps/Zone4C/scripts.pory"
+# 61 "data/maps/Zone4C/scripts.pory"
 	.string "Why are they so weak, though?$"
-# 68 "data/maps/Zone4C/scripts.pory"
+# 62 "data/maps/Zone4C/scripts.pory"
 
-# 69 "data/maps/Zone4C/scripts.pory"
+# 63 "data/maps/Zone4C/scripts.pory"
 Zone4C_Text_SantiagoPostBattle:
-# 70 "data/maps/Zone4C/scripts.pory"
+# 64 "data/maps/Zone4C/scripts.pory"
 	.string "I'll just work on evolving them.\n"
-# 71 "data/maps/Zone4C/scripts.pory"
+# 65 "data/maps/Zone4C/scripts.pory"
 	.string "Then I can finally win!$"
+# 66 "data/maps/Zone4C/scripts.pory"
+
+# 67 "data/maps/Zone4C/scripts.pory"
+Zone4C_EventScript_ChloeandKaya::
+# 68 "data/maps/Zone4C/scripts.pory"
+	trainerbattle_double TRAINER_PBL_CHLOE_AND_KAYA, Zone4C_Text_ChloeandKayaIntro, Zone4C_Text_ChloeandKayaDefeat, gText_NotEnoughMons
+# 69 "data/maps/Zone4C/scripts.pory"
+	msgbox Zone4C_Text_ChloeandKayaPostBattle, MSGBOX_DEFAULT
+# 70 "data/maps/Zone4C/scripts.pory"
+	release
+# 71 "data/maps/Zone4C/scripts.pory"
+	end
 # 72 "data/maps/Zone4C/scripts.pory"
 
 # 73 "data/maps/Zone4C/scripts.pory"
-Zone4C_EventScript_ChloeandKaya::
-# 74 "data/maps/Zone4C/scripts.pory"
-	trainerbattle_double TRAINER_PBL_CHLOE_AND_KAYA, Zone4C_Text_ChloeandKayaIntro, Zone4C_Text_ChloeandKayaDefeat, gText_NotEnoughMons
-# 75 "data/maps/Zone4C/scripts.pory"
-	msgbox Zone4C_Text_ChloeandKayaPostBattle, MSGBOX_DEFAULT
-# 76 "data/maps/Zone4C/scripts.pory"
-	release
-# 77 "data/maps/Zone4C/scripts.pory"
-	end
-# 78 "data/maps/Zone4C/scripts.pory"
-
-# 79 "data/maps/Zone4C/scripts.pory"
 Zone4C_Text_ChloeandKayaIntro:
-# 80 "data/maps/Zone4C/scripts.pory"
+# 74 "data/maps/Zone4C/scripts.pory"
 	.string "Chloe: Twin power!\p"
-# 81 "data/maps/Zone4C/scripts.pory"
+# 75 "data/maps/Zone4C/scripts.pory"
 	.string "Kaya: Activate!$"
-# 82 "data/maps/Zone4C/scripts.pory"
+# 76 "data/maps/Zone4C/scripts.pory"
 
-# 83 "data/maps/Zone4C/scripts.pory"
+# 77 "data/maps/Zone4C/scripts.pory"
 Zone4C_Text_ChloeandKayaDefeat:
-# 84 "data/maps/Zone4C/scripts.pory"
+# 78 "data/maps/Zone4C/scripts.pory"
 	.string "Kaya: Twin power!\p"
-# 85 "data/maps/Zone4C/scripts.pory"
+# 79 "data/maps/Zone4C/scripts.pory"
 	.string "Chloe: Defeated!$"
-# 86 "data/maps/Zone4C/scripts.pory"
+# 80 "data/maps/Zone4C/scripts.pory"
 
-# 87 "data/maps/Zone4C/scripts.pory"
+# 81 "data/maps/Zone4C/scripts.pory"
 Zone4C_Text_ChloeandKayaPostBattle:
-# 88 "data/maps/Zone4C/scripts.pory"
+# 82 "data/maps/Zone4C/scripts.pory"
 	.string "Chloe: Twin power!\p"
-# 89 "data/maps/Zone4C/scripts.pory"
+# 83 "data/maps/Zone4C/scripts.pory"
 	.string "Kaya: Twin power!$"
-
-Zone4C_EventScript_Sign_Text_0:
-# 52 "data/maps/Zone4C/scripts.pory"
-	.string "Trainer Tips\p"
-	.string "Starting from now, there is a 20%\n"
-	.string "chance to encounter wild Pokémon in a\l"
-	.string "Double Battle.$"
