@@ -396,6 +396,11 @@
               {
                 "min_level": 5,
                 "max_level": 6,
+                "species": "SPECIES_HOPPIP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
                 "species": "SPECIES_SUNKERN"
               },
               {
@@ -407,11 +412,6 @@
                 "min_level": 5,
                 "max_level": 6,
                 "species": "SPECIES_BOUNSWEET"
-              },
-              {
-                "min_level": 5,
-                "max_level": 6,
-                "species": "SPECIES_VULPIX"
               }
             ]
           }
