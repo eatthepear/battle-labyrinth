@@ -26,194 +26,117 @@ script Zone4A_EventScript_PoisonTree {
 	release
 }
 
-script Zone4A_EventScript_GiveSquawkabilly {
+script Zone4A_EventScript_Breeder {
 	lock
 	faceplayer
-	if (flag(FLAG_ZONE4A_RECEIVED_SQUAWKABILLY) == true) {
-		msgbox(format("How is the Squawkabilly? Is it good in battle?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == YES) {
-			msgbox(format("Very good! Keep up the training, and do come back to report on how the Squawkabilly is doing."))
-			release
-			end
-		} else {
-			msgbox(format("Oh, is that so? Keep up the training, and do come back to report on how the Squawkabilly is doing."))
-			release
-			end
+	if (flag(FLAG_ZONE4A_RECEIVED_GEM)) {
+		msgbox(format("If you want to evolve your Eevee into a different evolution, I've heard you can find the occasional gem in an item chests."))
+		if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_RED_THUMB) == false)) {
+			msgbox(format("You can also try to find Gems by smashing rocks with a Sledgehammer!"), MSGBOX_DEFAULT)
 		}
-	}
-	msgbox(format("Excuse me! Are you willing to take part in a study?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		msgbox(Zone4A_Text_Squawkabilly_ComeBack, MSGBOX_AUTOCLOSE)
 		release
 		end
 	}
-	msgbox(format("I'm interested in the different forms of Squawkabilly.\pI'm wondering if you would be willing to train a Squawkabilly and see how it fares in battle.\pWould you be interested in something like that?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		msgbox(Zone4A_Text_Squawkabilly_ComeBack, MSGBOX_AUTOCLOSE)
+	if (flag(FLAG_ZONE0B_RECEIVED_EEVEE) == false) {
+		msgbox(format("Hello, {PLAYER}!\nI work at the Pokémon Day-Care.\pThere's a special Eevee giveaway at the Day-Care, so go check that out!"))
 		release
 		end
 	}
-	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
-		if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
-			setvar(VAR_TEMP_1, SPECIES_BULBASAUR) // gets randomized anyways
-		} else {
-			checkspeciesclause(SPECIES_SQUAWKABILLY)
-			if (var(VAR_RESULT) == TRUE) {
-				msgbox(format("Unfortunately, you have already obtained a Squawkabilly."), MSGBOX_AUTOCLOSE)
-				release
-				end
+	msgbox(format("Hello, {PLAYER}!\nI work at the Pokémon Day-Care.\pWe've been studying how Eevee evolves differently based on which elemental Gem it is exposed to."), MSGBOX_DEFAULT)
+	if (flag(FLAG_SETTINGS_NUZLOCKE)) {
+		msgbox(format("Why don't you take this Gem!"))
+		random(8)
+		switch(var(VAR_RESULT)) {
+			case 0:
+				giveitem(ITEM_WATER_GEM)
+			case 1:
+				giveitem(ITEM_ELECTRIC_GEM)
+			case 2:
+				giveitem(ITEM_FIRE_GEM)
+			case 3:
+				giveitem(ITEM_PSYCHIC_GEM)
+			case 4:
+				giveitem(ITEM_DARK_GEM)
+			case 5:
+				giveitem(ITEM_GRASS_GEM)
+			case 6:
+				giveitem(ITEM_ICE_GEM)
+			case 7:
+				giveitem(ITEM_FAIRY_GEM)
+		}
+	} else {
+		setvar(VAR_TEMP_0, 0)
+		while (var(VAR_TEMP_0) != 1) {
+			msgbox(format("What's your favorite evolution of Eevee?"), MSGBOX_DEFAULT)
+			dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Vaporeon", "Jolteon", "Flareon", "Espeon", "Umbreon", "Leafeon", "Glaceon", "Sylveon")
+			switch (var(VAR_RESULT)) {
+				case 0:
+					msgbox(format("Oh, so you like Vaporeon?"), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+						giveitem(ITEM_WATER_GEM)
+						setvar(VAR_TEMP_0, 1)
+					}
+				case 1:
+					msgbox(format("Oh, so you like Jolteon?"), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+						giveitem(ITEM_ELECTRIC_GEM)
+						setvar(VAR_TEMP_0, 1)
+					}
+				case 2:
+					msgbox(format("Oh, so you like Flareon?"), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+						giveitem(ITEM_FIRE_GEM)
+						setvar(VAR_TEMP_0, 1)
+					}
+				case 3:
+					msgbox(format("Oh, so you like Espeon?"), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+						giveitem(ITEM_PSYCHIC_GEM)
+						setvar(VAR_TEMP_0, 1)
+					}
+				case 4:
+					msgbox(format("Oh, so you like Umbreon?"), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+						giveitem(ITEM_DARK_GEM)
+						setvar(VAR_TEMP_0, 1)
+					}
+				case 5:
+					msgbox(format("Oh, so you like Leafeon?"), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+						giveitem(ITEM_GRASS_GEM)
+						setvar(VAR_TEMP_0, 1)
+					}
+				case 6:
+					msgbox(format("Oh, so you like Glaceon?"), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+						giveitem(ITEM_ICE_GEM)
+						setvar(VAR_TEMP_0, 1)
+					}
+				case 7:
+					msgbox(format("Oh, so you like Sylveon?"), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
+						giveitem(ITEM_FAIRY_GEM)
+						setvar(VAR_TEMP_0, 1)
+					}
 			}
 		}
 	}
-	random(4)
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_TEMP_1, SPECIES_SQUAWKABILLY_GREEN)
-		case 1:
-			setvar(VAR_TEMP_1, SPECIES_SQUAWKABILLY_BLUE)
-		case 2:
-			setvar(VAR_TEMP_1, SPECIES_SQUAWKABILLY_YELLOW)
-		case 3:
-			setvar(VAR_TEMP_1, SPECIES_SQUAWKABILLY_WHITE)
-	}
-	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
-	if (var(VAR_TEMP_2) == PARTY_SIZE) {
-		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
-		special(ChoosePartyMon)
-		waitstate
-		faceplayer
-		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
-			msgbox(Zone4A_Text_Squawkabilly_ComeBack)
-			release
-			end
-		}
-		specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
-		bufferspeciesname(2, VAR_TEMP_3)
-		copyvar(VAR_TEMP_3, VAR_0x8004) // used in SendChosenMonToPC
-		msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			msgbox(Zone4A_Text_Squawkabilly_ComeBack)
-			release
-			end
-		}
-		special(SendChosenMonToPC)
-		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
-	}
-	givemon(VAR_TEMP_1, 12, ITEM_NONE)
-	setmonmetlocation(VAR_TEMP_2, 242)
-	bufferspeciesname(0, VAR_TEMP_1)
-	msgbox("Here's your {STR_VAR_1}.", MSGBOX_DEFAULT)
-	playfanfare(MUS_OBTAIN_ITEM)
-	message(format("{PLAYER} received the {STR_VAR_1}!"))
-	waitmessage
-	waitfanfare
-	msgbox(format("Would you like to give a nickname to {STR_VAR_1}?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		call(Common_EventScript_GetGiftMonPartySlot)
-		call(Common_EventScript_NameReceivedPartyMon)
-	}
-	faceplayer
-	msgbox(format("Thank you for contributing to science!"), MSGBOX_DEFAULT)
-	setflag(FLAG_ZONE4A_RECEIVED_SQUAWKABILLY)
+	msgbox(format("I hope you can put that Gem to good use!"), MSGBOX_DEFAULT)
+	setflag(FLAG_ZONE4A_RECEIVED_GEM)
 	release
-	end
 }
 
-text Zone4A_Text_Squawkabilly_ComeBack {
-	format("Come back if you change your mind!")
+text Zone4A_Text_HereGem {
+	format("Then I suppose this would be of good use to you!")
 }
-
-// script Zone4A_EventScript_Breeder {
-// 	lock
-// 	faceplayer
-// 	if (flag(FLAG_ZONE0B_RECEIVED_EEVEE) == false) {
-// 		msgbox(format("Hello, {PLAYER}!\nI work at the Pokémon Day-Care.\pThere's a special Eevee giveaway at the Day-Care, so go check that out!"))
-// 		release
-// 		end
-// 	}
-// 	msgbox(format("Hello, {PLAYER}!\nI work at the Pokémon Day-Care.\pWe've been studying how Eevee evolves differently based on which elemental Gem it holds when it levels up."), MSGBOX_DEFAULT)
-// 	while (var(VAR_TEMP_0) != 1) {
-// 		msgbox(format("What's your favorite evolution of Eevee?"), MSGBOX_DEFAULT)
-// 		dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Vaporeon", "Jolteon", "Flareon", "Espeon", "Umbreon", "Leafeon", "Glaceon", "Sylveon")
-// 		switch (var(VAR_RESULT)) {
-// 			case 0:
-// 				msgbox(format("Oh, so you like Vaporeon?"), MSGBOX_YESNO)
-// 				if (var(VAR_RESULT) == YES) {
-// 					msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-// 					giveitem(ITEM_WATER_GEM)
-// 					setvar(VAR_TEMP_0, 1)
-// 				}
-// 			case 1:
-// 				msgbox(format("Oh, so you like Jolteon?"), MSGBOX_YESNO)
-// 				if (var(VAR_RESULT) == YES) {
-// 					msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-// 					giveitem(ITEM_ELECTRIC_GEM)
-// 					setvar(VAR_TEMP_0, 1)
-// 				}
-// 			case 2:
-// 				msgbox(format("Oh, so you like Flareon?"), MSGBOX_YESNO)
-// 				if (var(VAR_RESULT) == YES) {
-// 					msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-// 					giveitem(ITEM_FIRE_GEM)
-// 					setvar(VAR_TEMP_0, 1)
-// 				}
-// 			case 3:
-// 				msgbox(format("Oh, so you like Espeon?"), MSGBOX_YESNO)
-// 				if (var(VAR_RESULT) == YES) {
-// 					msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-// 					giveitem(ITEM_PSYCHIC_GEM)
-// 					setvar(VAR_TEMP_0, 1)
-// 				}
-// 			case 4:
-// 				msgbox(format("Oh, so you like Umbreon?"), MSGBOX_YESNO)
-// 				if (var(VAR_RESULT) == YES) {
-// 					msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-// 					giveitem(ITEM_DARK_GEM)
-// 					setvar(VAR_TEMP_0, 1)
-// 				}
-// 			case 5:
-// 				msgbox(format("Oh, so you like Leafeon?"), MSGBOX_YESNO)
-// 				if (var(VAR_RESULT) == YES) {
-// 					msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-// 					giveitem(ITEM_GRASS_GEM)
-// 					setvar(VAR_TEMP_0, 1)
-// 				}
-// 			case 6:
-// 				msgbox(format("Oh, so you like Glaceon?"), MSGBOX_YESNO)
-// 				if (var(VAR_RESULT) == YES) {
-// 					msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-// 					giveitem(ITEM_ICE_GEM)
-// 					setvar(VAR_TEMP_0, 1)
-// 				}
-// 			case 7:
-// 				if (flag(FLAG_SETTINGS_BRUTAL) == true) {
-// 					msgbox(format("Unfortunately, I ran out of Fairy Gems to give out.\pYou'll have to find a way to evolve your Eevee into Sylveon elsewhere."), MSGBOX_DEFAULT)
-// 				} else {
-// 					msgbox(format("Oh, so you like Sylveon?"), MSGBOX_YESNO)
-// 					if (var(VAR_RESULT) == YES) {
-// 						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-// 						giveitem(ITEM_FAIRY_GEM)
-// 						setvar(VAR_TEMP_0, 1)
-// 					}
-// 				}
-// 		}
-// 	}
-// 	msgbox(format("I hope you can put that Gem to good use."), MSGBOX_DEFAULT)
-// 	if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_RED_THUMB) == false)) {
-// 		msgbox(format("If you want to evolve your Eevee into a different evolution, you can always find Gems by smashing rocks with a Sledgehammer!"), MSGBOX_DEFAULT)
-// 	}
-// 	delay(16)
-// 	msgbox(format("Well, I'm off to help other trainers.\pSee you!"), MSGBOX_DEFAULT)
-// 	fadescreenswapbuffers(FADE_TO_BLACK)
-// 	removeobject(3)
-// 	setflag(FLAG_ZONE4A_RECEIVED_GEM)
-// 	fadescreenswapbuffers(FADE_FROM_BLACK)
-// 	release
-// }
-
-// text Zone4A_Text_HereGem {
-// 	format("Then I suppose this would be of good use to you!")
-// } 
 
 script Zone4A_EventScript_ItemRandom1 {
 	lock

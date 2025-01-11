@@ -3722,11 +3722,27 @@ script Debug_CheatStart_PBL {
 	setvar(VAR_TEMP_1, 9) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
 	completesubquest(QUEST_PBL, SUB_QUEST_4)
-	// zone 4 squawkabilly
-	setvar(VAR_TEMP_0, SPECIES_SQUAWKABILLY)
-	setvar(VAR_TEMP_1, 12) // level
-	call(Debug_CheatStart_PBL_GiveMon)
-	setflag(FLAG_ZONE4A_RECEIVED_SQUAWKABILLY)
+	// zone 4 gem
+	random(8)
+	switch(var(VAR_RESULT)) {
+		case 0:
+			additem(ITEM_WATER_GEM)
+		case 1:
+			additem(ITEM_ELECTRIC_GEM)
+		case 2:
+			additem(ITEM_FIRE_GEM)
+		case 3:
+			additem(ITEM_PSYCHIC_GEM)
+		case 4:
+			additem(ITEM_DARK_GEM)
+		case 5:
+			additem(ITEM_GRASS_GEM)
+		case 6:
+			additem(ITEM_ICE_GEM)
+		case 7:
+			additem(ITEM_FAIRY_GEM)
+	}
+	setflag(FLAG_ZONE4A_RECEIVED_GEM)
 	// zone 4 items
 	additem(ITEM_SILVER_POWDER)
 	additem(ITEM_MUSCLE_BAND)
@@ -3903,6 +3919,11 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_TM_RETALIATE)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_27)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_28)
+	// zone 9 squawkabilly
+	setvar(VAR_TEMP_0, SPECIES_SQUAWKABILLY)
+	setvar(VAR_TEMP_1, 20) // level
+	call(Debug_CheatStart_PBL_GiveMon)
+	setflag(FLAG_ZONE9E_RECEIVED_SQUAWKABILLY)
 	// end
 	setvar(VAR_ZONE, 10)
 	setvar(VAR_LEVEL_CAP, 21)
