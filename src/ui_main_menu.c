@@ -829,18 +829,17 @@ static void DestroyMonIcons()
 //  Print The Text For Dex Num, Badges, Name, Playtime, Location
 //
 static const u8 sText_DexNum[] = _("Dex {STR_VAR_1}");
-static const u8 sText_Badges[] = _("Next Zone {STR_VAR_1}");
+static const u8 sText_Zone[] = _("Zone {RIGHT_ARROW} {STR_VAR_1}");
 static const u8 gText_ContinueMenuRandomizer[] =_("Randomizer");
 static const u8 gText_ContinueMenuNuzlocke[] =_("Nuzlocke");
 static const u8 gText_ContinueMenuInfinite[] =_("Infinite");
 static const u8 gText_ContinueMenuBrutal[] =_("Brutal");
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
-    const u8 colors[3] = {0,  2,  3}; 
+    const u8 colors[3] = {0,  2,  3};
     u8 mapDisplayHeader[24];
     u8 *withoutPrefixPtr, *playTimePtr;
     u16 dexCount = 0;
-    u32 money;
 
     FillWindowPixelBuffer(WINDOW_HEADER, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
     FillWindowPixelBuffer(WINDOW_MIDDLE, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
@@ -898,32 +897,9 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
             break;
     }
 
-    money = GetMoney(&gSaveBlock1Ptr->money);
-    ConvertIntToDecimalStringN(gStringVar1, money, STR_CONV_MODE_LEFT_ALIGN, 7);
-    StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
-    AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 8 + 8, 32 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
-
-    // // Print Dex Numbers if You Have It
-    // if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
-    // {
-    //     if (IsNationalPokedexEnabled())
-    //         dexCount = GetNationalPokedexCount(FLAG_GET_CAUGHT);
-    //     else
-    //         dexCount = GetHoennPokedexCount(FLAG_GET_CAUGHT);
-    //     ConvertIntToDecimalStringN(gStringVar1, dexCount, STR_CONV_MODE_RIGHT_ALIGN, 4);
-    //     StringExpandPlaceholders(gStringVar4, sText_DexNum);
-    //     AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 8 + 8, 16 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
-    // }
-
-    // // Print Badge Numbers if You Have Them
-    // for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
-    // {
-    //     if (FlagGet(i))
-    //         badgeCount++;
-    // } 
-    // ConvertIntToDecimalStringN(gStringVar1, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 1);
-    // StringExpandPlaceholders(gStringVar4, sText_Badges);
-    // AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 16, 32 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
+    ConvertIntToDecimalStringN(gStringVar1, VarGet(VAR_ZONE), STR_CONV_MODE_LEADING_ZEROS, 2);
+    StringExpandPlaceholders(gStringVar4, sText_Zone);
+    AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 16, 32 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
 
     // Print Player Name
     AddTextPrinterParameterized3(WINDOW_MIDDLE, FONT_NORMAL, 16, 2, colors, TEXT_SKIP_DRAW, gSaveBlock2Ptr->playerName);
