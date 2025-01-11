@@ -2,366 +2,268 @@ Zone9E_MapScripts::
 	.byte 0
 
 
-Zone9E_EventScript_BuyFarmAnimal::
+Zone9E_EventScript_GiveSquawkabilly::
 # 4 "data/maps/Zone9E/scripts.pory"
 	lock
 # 5 "data/maps/Zone9E/scripts.pory"
 	faceplayer
 # 6 "data/maps/Zone9E/scripts.pory"
-	goto_if_set FLAG_SETTINGS_NUZLOCKE, Zone9E_EventScript_BuyFarmAnimal_4
-Zone9E_EventScript_BuyFarmAnimal_3:
-# 11 "data/maps/Zone9E/scripts.pory"
-	showmoneybox 0, 0, 0
-# 12 "data/maps/Zone9E/scripts.pory"
-	msgbox Zone9E_EventScript_BuyFarmAnimal_Text_1, MSGBOX_YESNO
-# 13 "data/maps/Zone9E/scripts.pory"
-	compare VAR_RESULT, NO
-	goto_if_eq Zone9E_EventScript_BuyFarmAnimal_7
+	goto_if_set FLAG_ZONE9E_RECEIVED_SQUAWKABILLY, Zone9E_EventScript_GiveSquawkabilly_2
 # 18 "data/maps/Zone9E/scripts.pory"
-	checkmoney 5000, 0
+	msgbox Zone9E_EventScript_GiveSquawkabilly_Text_3, MSGBOX_YESNO
 # 19 "data/maps/Zone9E/scripts.pory"
-	compare VAR_RESULT, FALSE
-	goto_if_eq Zone9E_EventScript_BuyFarmAnimal_10
-# 23 "data/maps/Zone9E/scripts.pory"
-	specialvar VAR_TEMP_2, CalculatePlayerPartyCount
+	compare VAR_RESULT, NO
+	goto_if_eq Zone9E_EventScript_GiveSquawkabilly_5
 # 24 "data/maps/Zone9E/scripts.pory"
-	compare VAR_TEMP_2, PARTY_SIZE
-	goto_if_eq Zone9E_EventScript_BuyFarmAnimal_14
-# 30 "data/maps/Zone9E/scripts.pory"
-	call EventScript_NuzlockeVerifyBuy
-# 31 "data/maps/Zone9E/scripts.pory"
-	removemoney 5000
-# 32 "data/maps/Zone9E/scripts.pory"
-	updatemoneybox
-# 33 "data/maps/Zone9E/scripts.pory"
-	msgbox Zone9E_EventScript_BuyFarmAnimal_Text_5, MSGBOX_DEFAULT
-# 34 "data/maps/Zone9E/scripts.pory"
-	closemessage
-# 35 "data/maps/Zone9E/scripts.pory"
-	hidemoneybox
-# 36 "data/maps/Zone9E/scripts.pory"
-	goto_if_set FLAG_SETTINGS_NUZLOCKE, Zone9E_EventScript_BuyFarmAnimal_17
-# 95 "data/maps/Zone9E/scripts.pory"
-	msgbox Zone9E_EventScript_BuyFarmAnimal_Text_7, MSGBOX_DEFAULT
-# 96 "data/maps/Zone9E/scripts.pory"
-	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone9E_EventScript_BuyFarmAnimal_Text_8, Zone9E_EventScript_BuyFarmAnimal_Text_9, Zone9E_EventScript_BuyFarmAnimal_Text_10, Zone9E_EventScript_BuyFarmAnimal_Text_11
-# 97 "data/maps/Zone9E/scripts.pory"
-	switch VAR_RESULT
-# 98 "data/maps/Zone9E/scripts.pory"
-	case 0, Zone9E_EventScript_BuyFarmAnimal_28
-# 100 "data/maps/Zone9E/scripts.pory"
-	case 1, Zone9E_EventScript_BuyFarmAnimal_29
-# 102 "data/maps/Zone9E/scripts.pory"
-	case 2, Zone9E_EventScript_BuyFarmAnimal_30
-# 104 "data/maps/Zone9E/scripts.pory"
-	case 3, Zone9E_EventScript_BuyFarmAnimal_31
-Zone9E_EventScript_BuyFarmAnimal_16:
-# 108 "data/maps/Zone9E/scripts.pory"
-	givemon VAR_TEMP_1, 20, ITEM_NONE
-# 109 "data/maps/Zone9E/scripts.pory"
-	setmonmetlocation VAR_TEMP_2, 249
-# 110 "data/maps/Zone9E/scripts.pory"
-	bufferspeciesname 0, VAR_TEMP_1
-# 111 "data/maps/Zone9E/scripts.pory"
-	msgbox Zone9E_EventScript_BuyFarmAnimal_Text_12, MSGBOX_DEFAULT
-# 112 "data/maps/Zone9E/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 113 "data/maps/Zone9E/scripts.pory"
-	message Zone9E_EventScript_BuyFarmAnimal_Text_13
-# 114 "data/maps/Zone9E/scripts.pory"
-	waitmessage
-# 115 "data/maps/Zone9E/scripts.pory"
-	waitfanfare
-# 116 "data/maps/Zone9E/scripts.pory"
-	msgbox Zone9E_EventScript_BuyFarmAnimal_Text_14, MSGBOX_YESNO
-# 117 "data/maps/Zone9E/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq Zone9E_EventScript_BuyFarmAnimal_21
-Zone9E_EventScript_BuyFarmAnimal_20:
-# 121 "data/maps/Zone9E/scripts.pory"
-	msgbox Zone9E_EventScript_BuyFarmAnimal_Text_15, MSGBOX_DEFAULT
-Zone9E_EventScript_BuyFarmAnimal_1:
-# 125 "data/maps/Zone9E/scripts.pory"
-	release
-	end
-
-Zone9E_EventScript_BuyFarmAnimal_2:
-# 7 "data/maps/Zone9E/scripts.pory"
-	msgbox Zone9E_EventScript_BuyFarmAnimal_Text_0
-# 8 "data/maps/Zone9E/scripts.pory"
-	release
-	end
-
-Zone9E_EventScript_BuyFarmAnimal_4:
-# 6 "data/maps/Zone9E/scripts.pory"
-	goto_if_set FLAG_ZONE9E_NUZLOCKE_BOUGHT_FARM_ANIMAL, Zone9E_EventScript_BuyFarmAnimal_2
-	goto Zone9E_EventScript_BuyFarmAnimal_3
-
-Zone9E_EventScript_BuyFarmAnimal_7:
-# 14 "data/maps/Zone9E/scripts.pory"
-	closemessage
-# 15 "data/maps/Zone9E/scripts.pory"
-	hidemoneybox
-# 16 "data/maps/Zone9E/scripts.pory"
-	msgbox Zone9E_EventScript_BuyFarmAnimal_Text_2
-	goto Zone9E_EventScript_BuyFarmAnimal_1
-
-Zone9E_EventScript_BuyFarmAnimal_10:
-# 20 "data/maps/Zone9E/scripts.pory"
-	msgbox Zone9E_EventScript_BuyFarmAnimal_Text_3
-# 21 "data/maps/Zone9E/scripts.pory"
-	hidemoneybox
-	goto Zone9E_EventScript_BuyFarmAnimal_1
-
-Zone9E_EventScript_BuyFarmAnimal_14:
+	msgbox Zone9E_EventScript_GiveSquawkabilly_Text_4, MSGBOX_YESNO
 # 25 "data/maps/Zone9E/scripts.pory"
-	msgbox Zone9E_EventScript_BuyFarmAnimal_Text_4
+	compare VAR_RESULT, NO
+	goto_if_eq Zone9E_EventScript_GiveSquawkabilly_11
+# 30 "data/maps/Zone9E/scripts.pory"
+	goto_if_set FLAG_SETTINGS_NUZLOCKE, Zone9E_EventScript_GiveSquawkabilly_14
+Zone9E_EventScript_GiveSquawkabilly_13:
+# 42 "data/maps/Zone9E/scripts.pory"
+	random 4
+# 43 "data/maps/Zone9E/scripts.pory"
+	switch VAR_RESULT
+# 44 "data/maps/Zone9E/scripts.pory"
+	case 0, Zone9E_EventScript_GiveSquawkabilly_18
+# 46 "data/maps/Zone9E/scripts.pory"
+	case 1, Zone9E_EventScript_GiveSquawkabilly_19
+# 48 "data/maps/Zone9E/scripts.pory"
+	case 2, Zone9E_EventScript_GiveSquawkabilly_20
+# 50 "data/maps/Zone9E/scripts.pory"
+	case 3, Zone9E_EventScript_GiveSquawkabilly_21
+Zone9E_EventScript_GiveSquawkabilly_16:
+# 53 "data/maps/Zone9E/scripts.pory"
+	specialvar VAR_TEMP_2, CalculatePlayerPartyCount
+# 54 "data/maps/Zone9E/scripts.pory"
+	compare VAR_TEMP_2, PARTY_SIZE
+	goto_if_eq Zone9E_EventScript_GiveSquawkabilly_26
+Zone9E_EventScript_GiveSquawkabilly_25:
+# 76 "data/maps/Zone9E/scripts.pory"
+	givemon VAR_TEMP_1, 20, ITEM_NONE
+# 77 "data/maps/Zone9E/scripts.pory"
+	setmonmetlocation VAR_TEMP_2, 242
+# 78 "data/maps/Zone9E/scripts.pory"
+	bufferspeciesname 0, VAR_TEMP_1
+# 79 "data/maps/Zone9E/scripts.pory"
+	msgbox Zone9E_EventScript_GiveSquawkabilly_Text_8, MSGBOX_DEFAULT
+# 80 "data/maps/Zone9E/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 81 "data/maps/Zone9E/scripts.pory"
+	message Zone9E_EventScript_GiveSquawkabilly_Text_9
+# 82 "data/maps/Zone9E/scripts.pory"
+	waitmessage
+# 83 "data/maps/Zone9E/scripts.pory"
+	waitfanfare
+# 84 "data/maps/Zone9E/scripts.pory"
+	msgbox Zone9E_EventScript_GiveSquawkabilly_Text_10, MSGBOX_YESNO
+# 85 "data/maps/Zone9E/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Zone9E_EventScript_GiveSquawkabilly_31
+Zone9E_EventScript_GiveSquawkabilly_30:
+# 89 "data/maps/Zone9E/scripts.pory"
+	faceplayer
+# 90 "data/maps/Zone9E/scripts.pory"
+	msgbox Zone9E_EventScript_GiveSquawkabilly_Text_11, MSGBOX_DEFAULT
+# 91 "data/maps/Zone9E/scripts.pory"
+	setflag FLAG_ZONE9E_RECEIVED_SQUAWKABILLY
+# 92 "data/maps/Zone9E/scripts.pory"
+	release
+	end
+
+Zone9E_EventScript_GiveSquawkabilly_2:
+# 7 "data/maps/Zone9E/scripts.pory"
+	msgbox Zone9E_EventScript_GiveSquawkabilly_Text_0, MSGBOX_YESNO
+# 8 "data/maps/Zone9E/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Zone9E_EventScript_GiveSquawkabilly_7
+# 13 "data/maps/Zone9E/scripts.pory"
+	msgbox Zone9E_EventScript_GiveSquawkabilly_Text_2
+# 14 "data/maps/Zone9E/scripts.pory"
+	release
+	end
+
+Zone9E_EventScript_GiveSquawkabilly_5:
+# 20 "data/maps/Zone9E/scripts.pory"
+	msgbox Zone9E_Text_Squawkabilly_ComeBack, MSGBOX_AUTOCLOSE
+# 21 "data/maps/Zone9E/scripts.pory"
+	release
+	end
+
+Zone9E_EventScript_GiveSquawkabilly_7:
+# 9 "data/maps/Zone9E/scripts.pory"
+	msgbox Zone9E_EventScript_GiveSquawkabilly_Text_1
+# 10 "data/maps/Zone9E/scripts.pory"
+	release
+	end
+
+Zone9E_EventScript_GiveSquawkabilly_11:
 # 26 "data/maps/Zone9E/scripts.pory"
-	hidemoneybox
+	msgbox Zone9E_Text_Squawkabilly_ComeBack, MSGBOX_AUTOCLOSE
 # 27 "data/maps/Zone9E/scripts.pory"
 	release
 	end
 
-Zone9E_EventScript_BuyFarmAnimal_17:
-# 37 "data/maps/Zone9E/scripts.pory"
-	goto_if_set FLAG_SETTINGS_RANDOMIZER, Zone9E_EventScript_BuyFarmAnimal_24
-# 40 "data/maps/Zone9E/scripts.pory"
-	setvar VAR_TEMP_3, 0
-# 41 "data/maps/Zone9E/scripts.pory"
-	checkspeciesclause SPECIES_MILTANK
-# 42 "data/maps/Zone9E/scripts.pory"
+Zone9E_EventScript_GiveSquawkabilly_14:
+# 31 "data/maps/Zone9E/scripts.pory"
+	goto_if_set FLAG_SETTINGS_RANDOMIZER, Zone9E_EventScript_GiveSquawkabilly_22
+# 34 "data/maps/Zone9E/scripts.pory"
+	checkspeciesclause SPECIES_SQUAWKABILLY
+# 35 "data/maps/Zone9E/scripts.pory"
 	compare VAR_RESULT, TRUE
-	goto_if_eq Zone9E_EventScript_BuyFarmAnimal_33
-Zone9E_EventScript_BuyFarmAnimal_32:
+	goto_if_eq Zone9E_EventScript_GiveSquawkabilly_28
+	goto Zone9E_EventScript_GiveSquawkabilly_13
+
+Zone9E_EventScript_GiveSquawkabilly_18:
 # 45 "data/maps/Zone9E/scripts.pory"
-	checkspeciesclause SPECIES_TAUROS
-# 46 "data/maps/Zone9E/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone9E_EventScript_BuyFarmAnimal_36
-Zone9E_EventScript_BuyFarmAnimal_35:
-# 49 "data/maps/Zone9E/scripts.pory"
-	checkspeciesclause SPECIES_INDEEDEE_F
-# 50 "data/maps/Zone9E/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone9E_EventScript_BuyFarmAnimal_39
-Zone9E_EventScript_BuyFarmAnimal_38:
-# 53 "data/maps/Zone9E/scripts.pory"
-	checkspeciesclause SPECIES_INDEEDEE
-# 54 "data/maps/Zone9E/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone9E_EventScript_BuyFarmAnimal_42
-Zone9E_EventScript_BuyFarmAnimal_41:
-# 57 "data/maps/Zone9E/scripts.pory"
-	compare VAR_TEMP_3, 4
-	goto_if_eq Zone9E_EventScript_BuyFarmAnimal_45
-Zone9E_EventScript_BuyFarmAnimal_47:
-# 63 "data/maps/Zone9E/scripts.pory"
-	compare VAR_TEMP_1, 0
-	goto_if_eq Zone9E_EventScript_BuyFarmAnimal_48
-Zone9E_EventScript_BuyFarmAnimal_23:
-# 93 "data/maps/Zone9E/scripts.pory"
-	setflag FLAG_ZONE9E_NUZLOCKE_BOUGHT_FARM_ANIMAL
-	goto Zone9E_EventScript_BuyFarmAnimal_16
+	setvar VAR_TEMP_1, SPECIES_SQUAWKABILLY_GREEN
+	goto Zone9E_EventScript_GiveSquawkabilly_16
 
-Zone9E_EventScript_BuyFarmAnimal_21:
-# 118 "data/maps/Zone9E/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
-# 119 "data/maps/Zone9E/scripts.pory"
-	call Common_EventScript_NameReceivedPartyMon
-	goto Zone9E_EventScript_BuyFarmAnimal_20
-
-Zone9E_EventScript_BuyFarmAnimal_24:
-# 38 "data/maps/Zone9E/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_MILTANK
-	goto Zone9E_EventScript_BuyFarmAnimal_23
-
-Zone9E_EventScript_BuyFarmAnimal_28:
-# 99 "data/maps/Zone9E/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_MILTANK
-	goto Zone9E_EventScript_BuyFarmAnimal_16
-
-Zone9E_EventScript_BuyFarmAnimal_29:
-# 101 "data/maps/Zone9E/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_TAUROS
-	goto Zone9E_EventScript_BuyFarmAnimal_16
-
-Zone9E_EventScript_BuyFarmAnimal_30:
-# 103 "data/maps/Zone9E/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_INDEEDEE_F
-	goto Zone9E_EventScript_BuyFarmAnimal_16
-
-Zone9E_EventScript_BuyFarmAnimal_31:
-# 105 "data/maps/Zone9E/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_INDEEDEE
-	goto Zone9E_EventScript_BuyFarmAnimal_16
-
-Zone9E_EventScript_BuyFarmAnimal_33:
-# 43 "data/maps/Zone9E/scripts.pory"
-	addvar VAR_TEMP_3, 1
-	goto Zone9E_EventScript_BuyFarmAnimal_32
-
-Zone9E_EventScript_BuyFarmAnimal_36:
+Zone9E_EventScript_GiveSquawkabilly_19:
 # 47 "data/maps/Zone9E/scripts.pory"
-	addvar VAR_TEMP_3, 1
-	goto Zone9E_EventScript_BuyFarmAnimal_35
+	setvar VAR_TEMP_1, SPECIES_SQUAWKABILLY_BLUE
+	goto Zone9E_EventScript_GiveSquawkabilly_16
 
-Zone9E_EventScript_BuyFarmAnimal_39:
+Zone9E_EventScript_GiveSquawkabilly_20:
+# 49 "data/maps/Zone9E/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_SQUAWKABILLY_YELLOW
+	goto Zone9E_EventScript_GiveSquawkabilly_16
+
+Zone9E_EventScript_GiveSquawkabilly_21:
 # 51 "data/maps/Zone9E/scripts.pory"
-	addvar VAR_TEMP_3, 1
-	goto Zone9E_EventScript_BuyFarmAnimal_38
+	setvar VAR_TEMP_1, SPECIES_SQUAWKABILLY_WHITE
+	goto Zone9E_EventScript_GiveSquawkabilly_16
 
-Zone9E_EventScript_BuyFarmAnimal_42:
+Zone9E_EventScript_GiveSquawkabilly_22:
+# 32 "data/maps/Zone9E/scripts.pory"
+	setvar VAR_TEMP_1, SPECIES_BULBASAUR
+	goto Zone9E_EventScript_GiveSquawkabilly_13
+
+Zone9E_EventScript_GiveSquawkabilly_26:
 # 55 "data/maps/Zone9E/scripts.pory"
-	addvar VAR_TEMP_3, 1
-	goto Zone9E_EventScript_BuyFarmAnimal_41
-
-Zone9E_EventScript_BuyFarmAnimal_45:
+	msgbox Zone9E_EventScript_GiveSquawkabilly_Text_6, MSGBOX_AUTOCLOSE
+# 56 "data/maps/Zone9E/scripts.pory"
+	special ChoosePartyMon
+# 57 "data/maps/Zone9E/scripts.pory"
+	waitstate
 # 58 "data/maps/Zone9E/scripts.pory"
-	msgbox Zone9E_EventScript_BuyFarmAnimal_Text_6
+	faceplayer
 # 59 "data/maps/Zone9E/scripts.pory"
-	addmoney 3000
-# 60 "data/maps/Zone9E/scripts.pory"
+	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
+	goto_if_eq Zone9E_EventScript_GiveSquawkabilly_34
+# 64 "data/maps/Zone9E/scripts.pory"
+	specialvar VAR_TEMP_3, ScriptGetPartyMonSpecies
+# 65 "data/maps/Zone9E/scripts.pory"
+	bufferspeciesname 2, VAR_TEMP_3
+# 66 "data/maps/Zone9E/scripts.pory"
+	copyvar VAR_TEMP_3, VAR_0x8004
+# 67 "data/maps/Zone9E/scripts.pory"
+	msgbox Zone9E_EventScript_GiveSquawkabilly_Text_7, MSGBOX_YESNO
+# 68 "data/maps/Zone9E/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq Zone9E_EventScript_GiveSquawkabilly_37
+# 73 "data/maps/Zone9E/scripts.pory"
+	special SendChosenMonToPC
+# 74 "data/maps/Zone9E/scripts.pory"
+	setvar VAR_TEMP_2, 5
+	goto Zone9E_EventScript_GiveSquawkabilly_25
+
+Zone9E_EventScript_GiveSquawkabilly_28:
+# 36 "data/maps/Zone9E/scripts.pory"
+	msgbox Zone9E_EventScript_GiveSquawkabilly_Text_5, MSGBOX_AUTOCLOSE
+# 37 "data/maps/Zone9E/scripts.pory"
 	release
 	end
 
-Zone9E_EventScript_BuyFarmAnimal_48:
-# 64 "data/maps/Zone9E/scripts.pory"
-	random 4
-# 65 "data/maps/Zone9E/scripts.pory"
-	switch VAR_RESULT
-# 66 "data/maps/Zone9E/scripts.pory"
-	case 0, Zone9E_EventScript_BuyFarmAnimal_51
-# 72 "data/maps/Zone9E/scripts.pory"
-	case 1, Zone9E_EventScript_BuyFarmAnimal_52
-# 78 "data/maps/Zone9E/scripts.pory"
-	case 2, Zone9E_EventScript_BuyFarmAnimal_53
-# 84 "data/maps/Zone9E/scripts.pory"
-	case 3, Zone9E_EventScript_BuyFarmAnimal_54
-	goto Zone9E_EventScript_BuyFarmAnimal_47
-
-Zone9E_EventScript_BuyFarmAnimal_51:
-# 67 "data/maps/Zone9E/scripts.pory"
-	checkspeciesclause SPECIES_MILTANK
-# 68 "data/maps/Zone9E/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone9E_EventScript_BuyFarmAnimal_56
-# 71 "data/maps/Zone9E/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_MILTANK
-	goto Zone9E_EventScript_BuyFarmAnimal_47
-
-Zone9E_EventScript_BuyFarmAnimal_52:
-# 73 "data/maps/Zone9E/scripts.pory"
-	checkspeciesclause SPECIES_TAUROS
-# 74 "data/maps/Zone9E/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone9E_EventScript_BuyFarmAnimal_59
-# 77 "data/maps/Zone9E/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_TAUROS
-	goto Zone9E_EventScript_BuyFarmAnimal_47
-
-Zone9E_EventScript_BuyFarmAnimal_53:
-# 79 "data/maps/Zone9E/scripts.pory"
-	checkspeciesclause SPECIES_INDEEDEE_F
-# 80 "data/maps/Zone9E/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone9E_EventScript_BuyFarmAnimal_62
-# 83 "data/maps/Zone9E/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_INDEEDEE_F
-	goto Zone9E_EventScript_BuyFarmAnimal_47
-
-Zone9E_EventScript_BuyFarmAnimal_54:
-# 85 "data/maps/Zone9E/scripts.pory"
-	checkspeciesclause SPECIES_INDEEDEE
+Zone9E_EventScript_GiveSquawkabilly_31:
 # 86 "data/maps/Zone9E/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone9E_EventScript_BuyFarmAnimal_65
-# 89 "data/maps/Zone9E/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_INDEEDEE
-	goto Zone9E_EventScript_BuyFarmAnimal_47
+	call Common_EventScript_GetGiftMonPartySlot
+# 87 "data/maps/Zone9E/scripts.pory"
+	call Common_EventScript_NameReceivedPartyMon
+	goto Zone9E_EventScript_GiveSquawkabilly_30
 
-Zone9E_EventScript_BuyFarmAnimal_56:
-	goto Zone9E_EventScript_BuyFarmAnimal_47
+Zone9E_EventScript_GiveSquawkabilly_34:
+# 60 "data/maps/Zone9E/scripts.pory"
+	msgbox Zone9E_Text_Squawkabilly_ComeBack
+# 61 "data/maps/Zone9E/scripts.pory"
+	release
+	end
 
-Zone9E_EventScript_BuyFarmAnimal_59:
-	goto Zone9E_EventScript_BuyFarmAnimal_47
-
-Zone9E_EventScript_BuyFarmAnimal_62:
-	goto Zone9E_EventScript_BuyFarmAnimal_47
-
-Zone9E_EventScript_BuyFarmAnimal_65:
-	goto Zone9E_EventScript_BuyFarmAnimal_47
+Zone9E_EventScript_GiveSquawkabilly_37:
+# 69 "data/maps/Zone9E/scripts.pory"
+	msgbox Zone9E_Text_Squawkabilly_ComeBack
+# 70 "data/maps/Zone9E/scripts.pory"
+	release
+	end
 
 
-Zone9E_EventScript_BuyFarmAnimal_Text_0:
+Zone9E_EventScript_GiveSquawkabilly_Text_0:
 # 7 "data/maps/Zone9E/scripts.pory"
-	.string "Sorry, honey. The rest of these Pokémon\n"
-	.string "aren't for sale anymore.$"
+	.string "How is the Squawkabilly? Is it good in\n"
+	.string "battle?$"
 
-Zone9E_EventScript_BuyFarmAnimal_Text_1:
-# 12 "data/maps/Zone9E/scripts.pory"
-	.string "Howdy! There ain't many farms 'round\n"
-	.string "these parts, so I have an offer for you.\p"
-	.string "I'll give you a Miltank, Tauros, or\n"
-	.string "Indeedee, for only ¥5000!$"
+Zone9E_EventScript_GiveSquawkabilly_Text_1:
+# 9 "data/maps/Zone9E/scripts.pory"
+	.string "Very good! Keep up the training, and do\n"
+	.string "come back to report on how the\l"
+	.string "Squawkabilly is doing.$"
 
-Zone9E_EventScript_BuyFarmAnimal_Text_2:
-# 16 "data/maps/Zone9E/scripts.pory"
-	.string "Well, aren't you a downer.$"
+Zone9E_EventScript_GiveSquawkabilly_Text_2:
+# 13 "data/maps/Zone9E/scripts.pory"
+	.string "Oh, is that so? Keep up the training,\n"
+	.string "and do come back to report on how the\l"
+	.string "Squawkabilly is doing.$"
 
-Zone9E_EventScript_BuyFarmAnimal_Text_3:
-# 20 "data/maps/Zone9E/scripts.pory"
-	.string "You don't have enough money.$"
+Zone9E_EventScript_GiveSquawkabilly_Text_3:
+# 18 "data/maps/Zone9E/scripts.pory"
+	.string "Excuse me! Are you willing to take part\n"
+	.string "in a study?$"
 
-Zone9E_EventScript_BuyFarmAnimal_Text_4:
-# 25 "data/maps/Zone9E/scripts.pory"
-	.string "Your party is full. Clear a party slot,\n"
-	.string "then come back.$"
+Zone9E_EventScript_GiveSquawkabilly_Text_4:
+# 24 "data/maps/Zone9E/scripts.pory"
+	.string "I'm interested in the different forms\n"
+	.string "of Squawkabilly.\p"
+	.string "I'm wondering if you would be willing to\n"
+	.string "train a Squawkabilly and see how it\l"
+	.string "fares in battle.\p"
+	.string "Would you be interested in something\n"
+	.string "like that?$"
 
-Zone9E_EventScript_BuyFarmAnimal_Text_5:
-# 33 "data/maps/Zone9E/scripts.pory"
-	.string "Thanks for supporting us farm folk.$"
-
-Zone9E_EventScript_BuyFarmAnimal_Text_6:
-# 58 "data/maps/Zone9E/scripts.pory"
+Zone9E_EventScript_GiveSquawkabilly_Text_5:
+# 36 "data/maps/Zone9E/scripts.pory"
 	.string "Unfortunately, you have already\n"
-	.string "obtained a Pokémon in each of these\l"
-	.string "evolution lines.$"
+	.string "obtained a Squawkabilly.$"
 
-Zone9E_EventScript_BuyFarmAnimal_Text_7:
-# 95 "data/maps/Zone9E/scripts.pory"
-	.string "Choose which of these you would like.$"
+Zone9E_EventScript_GiveSquawkabilly_Text_6:
+# 55 "data/maps/Zone9E/scripts.pory"
+	.string "Your party is full. Choose a Pokémon to\n"
+	.string "send to the PC.$"
 
-Zone9E_EventScript_BuyFarmAnimal_Text_8:
-# 96 "data/maps/Zone9E/scripts.pory"
-	.string "Miltank$"
+Zone9E_EventScript_GiveSquawkabilly_Text_7:
+# 67 "data/maps/Zone9E/scripts.pory"
+	.string "Are you sure you want to send your\n"
+	.string "{STR_VAR_3} to the PC?$"
 
-Zone9E_EventScript_BuyFarmAnimal_Text_9:
-# 96 "data/maps/Zone9E/scripts.pory"
-	.string "Tauros$"
-
-Zone9E_EventScript_BuyFarmAnimal_Text_10:
-# 96 "data/maps/Zone9E/scripts.pory"
-	.string "Indeedee-F$"
-
-Zone9E_EventScript_BuyFarmAnimal_Text_11:
-# 96 "data/maps/Zone9E/scripts.pory"
-	.string "Indeedee-M$"
-
-Zone9E_EventScript_BuyFarmAnimal_Text_12:
-# 111 "data/maps/Zone9E/scripts.pory"
+Zone9E_EventScript_GiveSquawkabilly_Text_8:
+# 79 "data/maps/Zone9E/scripts.pory"
 	.string "Here's your {STR_VAR_1}.$"
 
-Zone9E_EventScript_BuyFarmAnimal_Text_13:
-# 113 "data/maps/Zone9E/scripts.pory"
+Zone9E_EventScript_GiveSquawkabilly_Text_9:
+# 81 "data/maps/Zone9E/scripts.pory"
 	.string "{PLAYER} received the\n"
 	.string "{STR_VAR_1}!$"
 
-Zone9E_EventScript_BuyFarmAnimal_Text_14:
-# 116 "data/maps/Zone9E/scripts.pory"
+Zone9E_EventScript_GiveSquawkabilly_Text_10:
+# 84 "data/maps/Zone9E/scripts.pory"
 	.string "Would you like to give a nickname to\n"
 	.string "{STR_VAR_1}?$"
 
-Zone9E_EventScript_BuyFarmAnimal_Text_15:
-# 121 "data/maps/Zone9E/scripts.pory"
-	.string "Take care of {STR_VAR_1} as well as\n"
-	.string "it takes care of you!$"
+Zone9E_EventScript_GiveSquawkabilly_Text_11:
+# 90 "data/maps/Zone9E/scripts.pory"
+	.string "Thank you for contributing to science!$"
+
+Zone9E_Text_Squawkabilly_ComeBack::
+# 96 "data/maps/Zone9E/scripts.pory"
+	.string "Come back if you change your mind!$"
