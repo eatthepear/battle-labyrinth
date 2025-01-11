@@ -2406,14 +2406,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
 - Take Down
 
-Gible
-Ability: Sand Veil
+Dratini
+Ability: Shed Skin
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Metal Claw
+- Haze
+- Thunder Wave
+- Water Pulse
 - Dragon Breath
-- Bite
-- Bulldoze
 
 === TRAINER_PBL_EMILIANO ===
 Name: Emiliano
@@ -3421,14 +3421,14 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: Yes
 
-Goomy
-Ability: Sap Sipper
+Deino
+Ability: Hustle
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Dragon Breath
-- Flail
-- Water Pulse
-- Life Dew
+- Bite
+- Headbutt
+- Screech
 
 Bagon
 Ability: Rock Head
@@ -3439,14 +3439,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Scary Face
 - Fire Fang
 
-Dratini
-Ability: Shed Skin
+Gible
+Ability: Sand Veil
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Thunder Wave
-- Water Pulse
-- Dragon Breath
-- Slam
+- Bite
+- Bulldoze
+- Take Down
+- Scary Face
 
 Jangmo-o
 Ability: Soundproof
@@ -4262,9 +4262,14 @@ Dreepy
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Deino
+Goomy
+Ability: Sap Sipper
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Flail
+- Water Pulse
+- Life Dew
+- Body Slam
 
 Zorua
 Level: 24
