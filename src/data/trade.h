@@ -1051,7 +1051,7 @@ static const struct InGameTrade sIngameTrades[] =
     [INGAME_TRADE_ROCKRUFF] =
     {
         .nickname = _("Charlie"),
-        .species = SPECIES_ROCKRUFF,
+        .species = SPECIES_ROCKRUFF_OWN_TEMPO,
         .ivs = {9, 26, 31, 13, 6, 11},
         .abilityNum = 1,
         .otId = 38726,
@@ -1063,22 +1063,6 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_PATRAT
-    },
-    [INGAME_TRADE_ROCKRUFF_OWN_TEMPO] =
-    {
-        .nickname = _("Charlie"),
-        .species = SPECIES_ROCKRUFF_OWN_TEMPO,
-        .ivs = {9, 26, 31, 13, 6, 11},
-        .abilityNum = 0,
-        .otId = 73996,
-        .conditions = {5, 5, 5, 30, 5},
-        .personality = 0x8B,
-        .heldItem = ITEM_BIG_MALASADA,
-        .mailNum = -1,
-        .otName = _("Travis"),
-        .otGender = MALE,
-        .sheen = 10,
-        .requestedSpecies = SPECIES_WATCHOG
     },
     [INGAME_TRADE_DELIBIRD] =
     {

@@ -76,21 +76,21 @@ Zone3B_EventScript_TradeRockruff::
 # 55 "data/maps/Zone3B/scripts.pory"
 	compare VAR_RESULT, VAR_0x8009
 	goto_if_ne Zone3B_EventScript_TradeRockruff_11
-# 77 "data/maps/Zone3B/scripts.pory"
+# 60 "data/maps/Zone3B/scripts.pory"
 	copyvar VAR_0x8004, VAR_0x8008
-# 78 "data/maps/Zone3B/scripts.pory"
+# 61 "data/maps/Zone3B/scripts.pory"
 	copyvar VAR_0x8005, VAR_0x800A
-# 79 "data/maps/Zone3B/scripts.pory"
+# 62 "data/maps/Zone3B/scripts.pory"
 	special CreateInGameTradePokemon
-# 80 "data/maps/Zone3B/scripts.pory"
+# 63 "data/maps/Zone3B/scripts.pory"
 	special DoInGameTradeScene
-# 81 "data/maps/Zone3B/scripts.pory"
+# 64 "data/maps/Zone3B/scripts.pory"
 	waitstate
-# 82 "data/maps/Zone3B/scripts.pory"
+# 65 "data/maps/Zone3B/scripts.pory"
 	msgbox Zone3B_EventScript_TradeRockruff_Text_5, MSGBOX_DEFAULT
-# 83 "data/maps/Zone3B/scripts.pory"
+# 66 "data/maps/Zone3B/scripts.pory"
 	setflag FLAG_ZONE3B_TRADED_ROCKRUFF
-# 84 "data/maps/Zone3B/scripts.pory"
+# 67 "data/maps/Zone3B/scripts.pory"
 	release
 	end
 
@@ -119,42 +119,8 @@ Zone3B_EventScript_TradeRockruff_8:
 
 Zone3B_EventScript_TradeRockruff_11:
 # 56 "data/maps/Zone3B/scripts.pory"
-	setvar VAR_0x8008, INGAME_TRADE_ROCKRUFF_OWN_TEMPO
-# 57 "data/maps/Zone3B/scripts.pory"
-	copyvar VAR_0x8004, VAR_0x8008
-# 58 "data/maps/Zone3B/scripts.pory"
-	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
-# 59 "data/maps/Zone3B/scripts.pory"
-	copyvar VAR_0x8005, VAR_0x800A
-# 60 "data/maps/Zone3B/scripts.pory"
-	specialvar VAR_RESULT, GetTradeSpecies
-# 61 "data/maps/Zone3B/scripts.pory"
-	copyvar VAR_0x800B, VAR_RESULT
-# 62 "data/maps/Zone3B/scripts.pory"
-	compare VAR_RESULT, SPECIES_WATCHOG
-	goto_if_ne Zone3B_EventScript_TradeRockruff_14
-# 67 "data/maps/Zone3B/scripts.pory"
-	copyvar VAR_0x8004, VAR_0x8008
-# 68 "data/maps/Zone3B/scripts.pory"
-	copyvar VAR_0x8005, VAR_0x800A
-# 69 "data/maps/Zone3B/scripts.pory"
-	special CreateInGameTradePokemon
-# 70 "data/maps/Zone3B/scripts.pory"
-	special DoInGameTradeScene
-# 71 "data/maps/Zone3B/scripts.pory"
-	waitstate
-# 72 "data/maps/Zone3B/scripts.pory"
-	msgbox Zone3B_EventScript_TradeRockruff_Text_5, MSGBOX_DEFAULT
-# 73 "data/maps/Zone3B/scripts.pory"
-	setflag FLAG_ZONE3B_TRADED_ROCKRUFF
-# 74 "data/maps/Zone3B/scripts.pory"
-	release
-	end
-
-Zone3B_EventScript_TradeRockruff_14:
-# 63 "data/maps/Zone3B/scripts.pory"
 	msgbox Zone3B_EventScript_TradeRockruff_Text_4, MSGBOX_DEFAULT
-# 64 "data/maps/Zone3B/scripts.pory"
+# 57 "data/maps/Zone3B/scripts.pory"
 	release
 	end
 
@@ -179,7 +145,7 @@ Zone3B_EventScript_TradeRockruff_Text_1:
 # 25 "data/maps/Zone3B/scripts.pory"
 	.string "Dear Arceus, please send someone who is\n"
 	.string "willing to trade their Patrat!\p"
-	.string "I really want my own Watchog!$"
+	.string "I really want my own Patrat!$"
 
 Zone3B_EventScript_TradeRockruff_Text_2:
 # 35 "data/maps/Zone3B/scripts.pory"
@@ -187,21 +153,19 @@ Zone3B_EventScript_TradeRockruff_Text_2:
 	.string "right?\p"
 	.string "Say, do you have a {STR_VAR_1}?\p"
 	.string "I'd be willing to part with my\n"
-	.string "{STR_VAR_2} for it!\p"
-	.string "Alternatively, better yet, if you have a\n"
-	.string "Watchog, that would be even better!$"
+	.string "{STR_VAR_2} for it!$"
 
 Zone3B_EventScript_TradeRockruff_Text_3:
 # 37 "data/maps/Zone3B/scripts.pory"
-	.string "If you ever bring a Patrat or Watchog,\n"
-	.string "please come trade with me!$"
+	.string "If you ever bring a Patrat, please come\n"
+	.string "trade with me!$"
 
 Zone3B_EventScript_TradeRockruff_Text_4:
-# 63 "data/maps/Zone3B/scripts.pory"
+# 56 "data/maps/Zone3B/scripts.pory"
 	.string "Huh? That doesn't look anything like a\n"
-	.string "Patrat or Watchog to me.$"
+	.string "Patrat to me.$"
 
 Zone3B_EventScript_TradeRockruff_Text_5:
-# 72 "data/maps/Zone3B/scripts.pory"
+# 65 "data/maps/Zone3B/scripts.pory"
 	.string "Wow! Thank you so much!\p"
 	.string "Take care of my Rockruff!$"
