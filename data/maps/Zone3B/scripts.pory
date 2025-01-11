@@ -22,7 +22,7 @@ script Zone3B_EventScript_TradeRockruff {
 		release
 		end
 	}
-	msgbox(format("Dear Arceus, please send someone who is willing to trade their Patrat!\pI really want my own Watchog!"))
+	msgbox(format("Dear Arceus, please send someone who is willing to trade their Patrat!\pI really want my own Patrat!"))
 	applymovement(4, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
@@ -32,9 +32,9 @@ script Zone3B_EventScript_TradeRockruff {
 	copyvar(VAR_0x8004, VAR_0x8008)
 	specialvar(VAR_RESULT, GetInGameTradeSpeciesInfo)
 	copyvar(VAR_0x8009, VAR_RESULT)
-	msgbox(format("Hey there! You beat my sister in battle, right?\pSay, do you have a {STR_VAR_1}?\pI'd be willing to part with my {STR_VAR_2} for it!\pAlternatively, better yet, if you have a Watchog, that would be even better!"), MSGBOX_YESNO)
+	msgbox(format("Hey there! You beat my sister in battle, right?\pSay, do you have a {STR_VAR_1}?\pI'd be willing to part with my {STR_VAR_2} for it!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("If you ever bring a Patrat or Watchog, please come trade with me!"), MSGBOX_DEFAULT)
+		msgbox(format("If you ever bring a Patrat, please come trade with me!"), MSGBOX_DEFAULT)
 		release
 		end
 	}
@@ -42,7 +42,7 @@ script Zone3B_EventScript_TradeRockruff {
 	waitstate
 	copyvar(VAR_0x800A, VAR_0x8004)
 	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
-		msgbox(format("If you ever bring a Patrat or Watchog, please come trade with me!"), MSGBOX_DEFAULT)
+		msgbox(format("If you ever bring a Patrat, please come trade with me!"), MSGBOX_DEFAULT)
 		release
 		end
 	}
@@ -53,24 +53,7 @@ script Zone3B_EventScript_TradeRockruff {
 	specialvar(VAR_RESULT, GetTradeSpecies)
 	copyvar(VAR_0x800B, VAR_RESULT)
 	if (var(VAR_RESULT) != VAR_0x8009) {
-		setvar(VAR_0x8008, INGAME_TRADE_ROCKRUFF_OWN_TEMPO)
-		copyvar(VAR_0x8004, VAR_0x8008)
-		specialvar(VAR_RESULT, GetInGameTradeSpeciesInfo)
-		copyvar(VAR_0x8005, VAR_0x800A)
-		specialvar(VAR_RESULT, GetTradeSpecies)
-		copyvar(VAR_0x800B, VAR_RESULT)
-		if (var(VAR_RESULT) != SPECIES_WATCHOG) {
-			msgbox(format("Huh? That doesn't look anything like a Patrat or Watchog to me."), MSGBOX_DEFAULT)
-			release
-			end
-		}
-		copyvar(VAR_0x8004, VAR_0x8008)
-		copyvar(VAR_0x8005, VAR_0x800A)
-		special(CreateInGameTradePokemon)
-		special(DoInGameTradeScene)
-		waitstate
-		msgbox(format("Wow! Thank you so much!\pTake care of my Rockruff!"), MSGBOX_DEFAULT)
-		setflag(FLAG_ZONE3B_TRADED_ROCKRUFF)
+		msgbox(format("Huh? That doesn't look anything like a Patrat to me."), MSGBOX_DEFAULT)
 		release
 		end
 	}

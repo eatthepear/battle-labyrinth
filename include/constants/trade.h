@@ -10,8 +10,7 @@
 #define INGAME_TRADE_HORSEA 2
 #define INGAME_TRADE_MEOWTH 3
 #define INGAME_TRADE_ROCKRUFF 4
-#define INGAME_TRADE_ROCKRUFF_OWN_TEMPO 5
-#define INGAME_TRADE_DELIBIRD 6
+#define INGAME_TRADE_DELIBIRD 5
 
 // Return values for CanTradeSelectedMon and CanSpinTradeMon
 #define CAN_TRADE_MON              0
