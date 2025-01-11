@@ -1114,6 +1114,14 @@
       "height": 1
     },
     {
+      "map_section": "MAPSEC_SANCTUARY",
+      "name": "Sanctuary",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
       "map_section": "MAPSEC_ZONE_B1",
       "name": "Zone B1",
       "x": 0,
@@ -1140,14 +1148,6 @@
     {
       "map_section": "MAPSEC_ZONE_B4",
       "name": "Zone B4",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "map_section": "MAPSEC_ONE_ISLAND",
-      "name": "ONE ISLAND",
       "x": 0,
       "y": 0,
       "width": 1,
