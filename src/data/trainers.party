@@ -638,6 +638,14 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bide
 - Tearful Look
 
+Lechonk @ Oran Berry
+Ability: Thick Fat
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tackle
+- Disarming Voice
+- Stuff Cheeks
+
 Skwovet @ Oran Berry
 Ability: Cheek Pouch
 Level: 9
@@ -646,15 +654,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Stuff Cheeks
 - Tail Whip
 - Defense Curl
-
-Lechonk @ Oran Berry
-Ability: Thick Fat
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Tackle
-- Disarming Voice
-- Stuff Cheeks
-- Yawn
 
 === TRAINER_PBL_JEMMA ===
 Name: Jemma
@@ -906,18 +905,18 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rollout
 - Defense Curl
 
+Voltorb @ Oran Berry
+Ability: Aftermath
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rollout
+
 Marill @ Oran Berry
 Ability: Huge Power
 Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rollout
 - Defense Curl
-
-Voltorb @ Oran Berry
-Ability: Aftermath
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
 
 === TRAINER_PBL_HERMAN ===
 Name: Herman
@@ -1617,13 +1616,13 @@ Double Battle: No
 Random Lead: No
 Mugshot: Purple
 
-Dunsparce @ Eviolite
-Ability: Serene Grace
+Girafarig @ Eviolite
+Ability: Early Bird
 Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Headbutt
-- Ancient Power
-- Glare
+- Psybeam
+- Stomp
+- Double Kick
 
 === TRAINER_PBL_MARIA_LEVIATHAN_5_CHALLENGE ===
 Name: Maria
@@ -1635,15 +1634,14 @@ Double Battle: No
 Random Lead: No
 Mugshot: Purple
 
-Dunsparce @ Eviolite
-Ability: Serene Grace
-Tera Type: Normal
-Level: 16
+Girafarig @ Eviolite
+Ability: Early Bird
+Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Headbutt
-- Ancient Power
-- Glare
-- Roost
+- Psybeam
+- Stomp
+- Double Kick
+- Rest
 
 === TRAINER_PBL_GILBERT ===
 Name: Gilbert
@@ -1899,13 +1897,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Encore
 - Wish
 
-Cetoddle
+Snom
+Ability: Ice Scales
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Echoed Voice
-- Yawn
-- Ice Shard
-- Entrainment
+- Struggle Bug
+- Powder Snow
+- Mirror Coat
+- Fairy Wind
 
 === TRAINER_PBL_VIC_AND_DELL ===
 Name: Vic&Dell
@@ -1942,28 +1941,28 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 
-Wiglett @ Oran Berry
+Wiglett
 Ability: Gooey
 Level: 16
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Aqua Jet
 - Water Pulse
 - Slam
 - Mud Slap
 
-Barboach @ Oran Berry
+Barboach
 Ability: Hydration
 Level: 16
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Magnitude
 - Water Pulse
 - Mud Bomb
 - Rest
 
-Goldeen @ Oran Berry
+Goldeen
 Ability: Swift Swim
 Level: 16
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Water Pulse
 - Horn Attack
 - Peck
@@ -1972,11 +1971,11 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Corsola @ Oran Berry
 Ability: Regenerator
 Level: 17
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Horn Attack
-- Peck
-- Aqua Ring
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Ancient Power
+- Spike Cannon
+- Refresh
 
 === TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6 ===
 Name: Zack&Coby
@@ -1992,15 +1991,16 @@ Luvdisc @ Oran Berry
 Ability: Swift Swim
 Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Chilling Water
+- Water Pulse
 - Draining Kiss
 
 Lumineon @ Oran Berry
-Ability: Swift Swim
+Ability: Storm Drain
 Level: 17
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 30 SpA / 30 SpD / 31 Spe
 - Chilling Water
-- Tailwind
+- Hidden Power
+/* Hidden Power Ground */
 
 === TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_CHALLENGE ===
 Name: Zack&Coby
@@ -2016,16 +2016,14 @@ Luvdisc @ Oran Berry
 Ability: Swift Swim
 Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Chilling Water
+- Surf
 - Draining Kiss
-- Heal Pulse
 
 Lumineon @ Oran Berry
-Ability: Swift Swim
+Ability: Storm Drain
 Level: 17
 IVs: 31 HP / 31 Atk / 31 Def / 30 SpA / 30 SpD / 31 Spe
-- Chilling Water
-- Tailwind
+- Surf
 - Hidden Power
 /* Hidden Power Ground */
 
@@ -2743,6 +2741,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
 - Thief
 
+Dunsparce @ Eviolite
+Ability: Serene Grace
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Headbutt
+- Bite
+- Glare
+- Roost
+
 Mightyena @ Sitrus Berry
 Ability: Strong Jaw
 Level: 20
@@ -2751,15 +2758,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder Fang
 - Fire Fang
 - Ice Fang
-
-Girafarig @ Eviolite
-Ability: Sap Sipper
-Level: 20
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Double Hit
-- Psybeam
-- Charge Beam
-- Trailblaze
 
 === TRAINER_PBL_COOPER ===
 Name: Cooper
@@ -2959,14 +2957,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Spark
 - Charge Beam
 
-Snom
-Ability: Ice Scales
+Cetoddle
+Ability: Thick Fat
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Struggle Bug
-- Powder Snow
-- Mirror Coat
-- Fairy Wind
+- Yawn
+- Ice Shard
+- Entrainment
+- Flail
 
 Toxel
 Ability: Static
@@ -3031,9 +3029,9 @@ Random Lead: No
 
 Chatot
 Ability: Punk Rock
-Level: 19
+Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Round
+- Chatter
 - Sing
 
 === TRAINER_PBL_DOMINIC ===
@@ -3047,7 +3045,7 @@ Random Lead: No
 
 Carnivine
 Ability: Levitate
-Level: 19
+Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Leaf Tornado
 - Leech Seed
@@ -3117,7 +3115,7 @@ AI: AI_FLAG_SMART_TRAINER
 Double Battle: No
 Random Lead: No
 
-Stunfisk @ Sitrus Berry
+Stunfisk @ Oran Berry
 Ability: Static
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -3597,7 +3595,7 @@ Mugshot: Purple
 
 Klawf @ Hard Stone
 Ability: Anger Shell
-Level: 21
+Level: 22
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Tomb
 - Bulldoze
@@ -3606,16 +3604,16 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Braixen @ Charcoal
 Ability: Magic Guard
-Level: 21
+Level: 22
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Incinerate
 - Psybeam
 - Shock Wave
-- Hypnosis
+- Will-O-Wisp
 
 Vullaby @ Black Glasses
 Ability: Overcoat
-Level: 21
+Level: 22
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Pluck
 - Feint Attack
@@ -3624,7 +3622,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Maractus @ Miracle Seed
 Ability: Sand Rush
-Level: 21
+Level: 22
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Mega Drain
 - Pin-Missile
@@ -3652,7 +3650,7 @@ Mugshot: Purple
 
 Klawf @ Hard Stone
 Ability: Anger Shell
-Level: 21
+Level: 22
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Tomb
 - Bulldoze
@@ -3661,16 +3659,16 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Braixen @ Charcoal
 Ability: Magic Guard
-Level: 21
+Level: 22
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Incinerate
 - Psybeam
 - Shock Wave
-- Hypnosis
+- Will-O-Wisp
 
 Vullaby @ Black Glasses
 Ability: Overcoat
-Level: 21
+Level: 22
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Pluck
 - Feint Attack
@@ -3679,12 +3677,21 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Maractus @ Miracle Seed
 Ability: Sand Rush
-Level: 21
+Level: 22
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Mega Drain
 - Pin-Missile
 - Bounce
 - Growth
+
+Sigilyph @ Sitrus Berry
+Ability: Magic Guard
+Level: 22
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Air Cutter
+- Ancient Power
+- Roost
 
 Sandslash @ Sitrus Berry
 Ability: Sand Rush
@@ -3694,15 +3701,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Tomb
 - Aerial Ace
 - Covet
-
-Sigilyph @ Sitrus Berry
-Ability: Magic Guard
-Level: 23
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psybeam
-- Air Cutter
-- Ancient Power
-- Roost
 
 === TRAINER_PBL_JEANETTE ===
 Name: Jeanette
