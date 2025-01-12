@@ -99,7 +99,7 @@ Zone4Sanctuary_EventScript_NextZone_6:
 # 41 "data/maps/Zone4Sanctuary/scripts.pory"
 	call EventScript_LeavingSetup
 # 42 "data/maps/Zone4Sanctuary/scripts.pory"
-	warp MAP_ZONE5A, 255, 3, 1
+	warp MAP_ZONE5A, 255, 3, 0
 # 43 "data/maps/Zone4Sanctuary/scripts.pory"
 	waitstate
 	goto Zone4Sanctuary_EventScript_NextZone_1
