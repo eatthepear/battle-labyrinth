@@ -533,7 +533,7 @@ Zone0A_EventScript_Exit_98:
 # 256 "data/maps/Zone0A/scripts.pory"
 	setvar VAR_REVISITING_ZONE, 5
 # 257 "data/maps/Zone0A/scripts.pory"
-	warp MAP_ZONE5A, 255, 3, 1
+	warp MAP_ZONE5A, 255, 3, 0
 # 258 "data/maps/Zone0A/scripts.pory"
 	waitstate
 	goto Zone0A_EventScript_Exit_91
