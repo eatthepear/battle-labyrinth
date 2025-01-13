@@ -891,13 +891,13 @@ Zone6A_EventScript_TradeDelibird_Text_1:
 Zone6A_EventScript_TradeDelibird_Text_2:
 # 187 "data/maps/Zone6A/scripts.pory"
 	.string "Please! You've got to trade me! I'll take\n"
-	.string "anything! {STR_VAR_2} is the worst\l"
-	.string "Pokémon ever!$"
+	.string "anything! Delibird is the worst Pokémon\l"
+	.string "ever!$"
 
 Zone6A_EventScript_TradeDelibird_Text_3:
 # 189 "data/maps/Zone6A/scripts.pory"
 	.string "Please! I can't win any battles with a\n"
-	.string "{STR_VAR_2}$"
+	.string "Delibird!$"
 
 Zone6A_EventScript_TradeDelibird_Text_4:
 # 206 "data/maps/Zone6A/scripts.pory"
