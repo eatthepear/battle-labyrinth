@@ -2318,23 +2318,23 @@ Double Battle: Yes
 Random Lead: No
 Mugshot: Purple
 
-Beautifly @ Sitrus Berry
-Ability: Berserk
-Level: 19
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Air Cutter
-- Struggle Bug
-- Mega Drain
-- String Shot
-
 Dedenne @ Sitrus Berry
-Ability: Cheek Pouch
+Ability: Plus
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shock Wave
 - Draining Kiss
 - Nuzzle
 - Charge Beam
+
+Drampa @ Sitrus Berry
+Ability: Cloud Nine
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Breath
+- Glare
+- Natural Gift
+- Swift
 
 === TRAINER_PBL_BETTY_LEVIATHAN_7_CHALLENGE ===
 Name: Betty
@@ -2345,15 +2345,6 @@ AI: AI_FLAG_SMART_TRAINER
 Double Battle: Yes
 Random Lead: No
 Mugshot: Purple
-
-Beautifly @ Sitrus Berry
-Ability: Berserk
-Level: 19
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Air Cutter
-- Struggle Bug
-- Mega Drain
-- String Shot
 
 Dedenne @ Sitrus Berry
 Ability: Cheek Pouch
