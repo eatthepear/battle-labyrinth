@@ -10735,7 +10735,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_IRON_DEFENSE] =
     {
         .name = _("TM21"),
-        .price = 1000,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Hardens the body's\n"
             "surface to sharply\n"
@@ -11260,7 +11260,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_AGILITY] =
     {
         .name = _("TM56"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Relaxes the body\n"
             "to sharply boost\n"
@@ -11290,7 +11290,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_AMNESIA] =
     {
         .name = _("TM58"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Empties the mind,\n"
             "sharply raising\n"

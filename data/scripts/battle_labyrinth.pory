@@ -1871,8 +1871,6 @@ script EventScript_Max {
 			pokemart(Zone2A_Shop_TMShop)
 		case 6:
 			pokemart(Zone6A_Shop_TMShop)
-		case 7:
-			pokemart(Zone7A_Shop_TMShop)
 		case 10:
 			pokemart(Zone10A_Shop_TMShop)
 		case 18:
@@ -1893,17 +1891,10 @@ mart Zone6A_Shop_TMShop {
 	ITEM_TM_POWER_UP_PUNCH
 }
 
-mart Zone7A_Shop_TMShop {
-	ITEM_TM09
-	ITEM_TM10
-	ITEM_TM11
-	ITEM_TM12
-}
-
 mart Zone10A_Shop_TMShop {
-	ITEM_TM17
-	ITEM_TM18
-	ITEM_TM19
+	ITEM_TM_IRON_DEFENSE
+	ITEM_TM_AGILITY
+	ITEM_TM_AMNESIA
 }
 
 mart Zone18A_Shop_TMShop {
