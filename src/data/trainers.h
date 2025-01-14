@@ -7563,7 +7563,7 @@
 #line 3239
                 MOVE_AERIAL_ACE,
                 MOVE_SCARY_FACE,
-                MOVE_CRUSH_CLAW,
+                MOVE_ROOST,
                 MOVE_SKY_DROP,
             },
             },
