@@ -237,7 +237,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -299,7 +299,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -361,7 +361,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -615,7 +615,7 @@ Name: Shaun
 Class: Youngster
 Pic: Youngster
 Music: Male
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -886,7 +886,7 @@ Name: Phillipa
 Class: School Kid
 Pic: School Kid F
 Music: Girl
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -1229,7 +1229,7 @@ Name: Ella&Bella
 Class: Sr And Jr
 Pic: Sr And Jr
 Music: Twins
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: Yes
 Random Lead: No
 Mugshot: Purple
@@ -1629,7 +1629,7 @@ Name: Maria
 Class: Backpacker
 Pic: Backpacker F
 Music: Hiker
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
@@ -1943,7 +1943,7 @@ Random Lead: No
 
 Wiglett
 Ability: Gooey
-Level: 16
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Aqua Jet
 - Water Pulse
@@ -1952,7 +1952,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Barboach
 Ability: Hydration
-Level: 16
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Magnitude
 - Water Pulse
@@ -1961,7 +1961,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Goldeen
 Ability: Swift Swim
-Level: 16
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Water Pulse
 - Horn Attack
@@ -1989,9 +1989,9 @@ Mugshot: Purple
 
 Luvdisc @ Oran Berry
 Ability: Swift Swim
-Level: 16
+Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
+- Chilling Water
 - Draining Kiss
 
 Lumineon @ Oran Berry
@@ -2007,16 +2007,16 @@ Name: Zack&Coby
 Class: Sis And Bro
 Pic: Sis And Bro
 Music: Swimmer
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: Yes
 Random Lead: No
 Mugshot: Purple
 
 Luvdisc @ Oran Berry
 Ability: Swift Swim
-Level: 16
+Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
+- Chilling Water
 - Draining Kiss
 
 Lumineon @ Oran Berry
@@ -2341,7 +2341,7 @@ Name: Betty
 Class: Lady
 Pic: Lady
 Music: Female
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: Yes
 Random Lead: No
 Mugshot: Purple
@@ -2661,28 +2661,28 @@ Mugshot: Purple
 
 Grimer @ Poison Barb
 Ability: Poison Touch
-Level: 19
+Level: 18
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sludge
+- Acid Spray
 - Poison Gas
 - Shadow Sneak
 - Power-Up Punch
 
 Drifloon @ Sharp Beak
 Ability: Aftermath
-Level: 19
+Level: 18
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hex
 - Air Cutter
 - Clear Smog
-- Defog
+- Focus Energy
 
 Croagunk @ Black Belt
 Ability: Poison Touch
-Level: 19
+Level: 18
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Venoshock
-- Vacuum Wave
+- Power-Up Punch
 - Fake Out
 - Thief
 
@@ -2700,41 +2700,41 @@ Name: Alistair
 Class: Roughneck
 Pic: Roughneck
 Music: Suspicious
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
 
 Grimer @ Poison Barb
 Ability: Poison Touch
-Level: 19
+Level: 18
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sludge
+- Acid Spray
 - Poison Gas
 - Shadow Sneak
 - Power-Up Punch
 
 Drifloon @ Sharp Beak
 Ability: Aftermath
-Level: 19
+Level: 18
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hex
 - Air Cutter
 - Clear Smog
-- Defog
+- Focus Energy
 
 Croagunk @ Black Belt
 Ability: Poison Touch
-Level: 19
+Level: 18
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Venoshock
-- Vacuum Wave
+- Power-Up Punch
 - Fake Out
 - Thief
 
 Dunsparce @ Eviolite
 Ability: Serene Grace
-Level: 19
+Level: 18
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Headbutt
 - Bite
@@ -3018,12 +3018,12 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Random Lead: No
 
-Chatot
-Ability: Punk Rock
+Squawkabilly-Blue
+Ability: Intimidate
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Chatter
-- Sing
+- Pluck
+- Quick Attack
 
 === TRAINER_PBL_DOMINIC ===
 Name: Dominic
@@ -3069,7 +3069,7 @@ Name: Ari
 Class: Winstrate
 Pic: Camper
 Music: Male
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: No
 Random Lead: No
 
@@ -3102,7 +3102,7 @@ Name: Bertha
 Class: Winstrate
 Pic: Picnicker
 Music: Girl
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: No
 Random Lead: No
 
@@ -3120,25 +3120,25 @@ Name: Cassandra
 Class: Winstrate
 Pic: Pokefan F
 Music: Twins
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: No
 Random Lead: No
 
-Chatot @ Sitrus Berry
-Ability: Punk Rock
+Squawkabilly-Blue @ Sitrus Berry
+Ability: Intimidate
 Level: 20
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Chatter
-- Round
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Pluck
+- Quick Attack
 - Thief
-- Echoed Voice
+- Taunt
 
 === TRAINER_PBL_DOMINIC_CHALLENGE ===
 Name: Dominic
 Class: Winstrate
 Pic: Pokefan M
 Music: Twins
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: No
 Random Lead: No
 
@@ -3156,18 +3156,9 @@ Name: Erica
 Class: Winstrate
 Pic: Expert F
 Music: Intense
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: No
 Random Lead: No
-
-Throh @ Sitrus Berry
-Ability: Guts
-Level: 21
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Retaliate
-- Revenge
-- Power-Up Punch
-- Rock Tomb
 
 Sawk @ Sitrus Berry
 Ability: Sturdy
@@ -3175,6 +3166,15 @@ Level: 21
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Retaliate
 - Low Sweep
+- Power-Up Punch
+- Rock Tomb
+
+Throh @ Sitrus Berry
+Ability: Guts
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Retaliate
+- Revenge
 - Power-Up Punch
 - Rock Tomb
 
@@ -3586,25 +3586,16 @@ Mugshot: Purple
 
 Klawf @ Hard Stone
 Ability: Anger Shell
-Level: 22
+Level: 21
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Tomb
 - Bulldoze
 - Knock Off
 - Stealth Rock
 
-Braixen @ Charcoal
-Ability: Magic Guard
-Level: 22
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Incinerate
-- Psybeam
-- Shock Wave
-- Will-O-Wisp
-
 Vullaby @ Black Glasses
 Ability: Overcoat
-Level: 22
+Level: 21
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Pluck
 - Feint Attack
@@ -3613,62 +3604,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Maractus @ Miracle Seed
 Ability: Sand Rush
-Level: 22
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Mega Drain
-- Pin-Missile
-- Bounce
-- Growth
-
-Sandslash @ Sitrus Berry
-Ability: Sand Rush
-Level: 23
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bulldoze
-- Rock Tomb
-- Aerial Ace
-- Covet
-
-=== TRAINER_PBL_ADAMINA_LEVIATHAN_9_CHALLENGE ===
-Name: Adamina
-Class: Pkmn Ranger
-Pic: Pokemon Ranger F
-Music: Cool
-AI: AI_FLAG_SMART_TRAINER
-Double Battle: No
-Random Lead: No
-Mugshot: Purple
-
-Klawf @ Hard Stone
-Ability: Anger Shell
-Level: 22
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rock Tomb
-- Bulldoze
-- Knock Off
-- Stealth Rock
-
-Braixen @ Charcoal
-Ability: Magic Guard
-Level: 22
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Incinerate
-- Psybeam
-- Shock Wave
-- Will-O-Wisp
-
-Vullaby @ Black Glasses
-Ability: Overcoat
-Level: 22
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Pluck
-- Feint Attack
-- Roost
-- Rock Tomb
-
-Maractus @ Miracle Seed
-Ability: Sand Rush
-Level: 22
+Level: 21
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Mega Drain
 - Pin-Missile
@@ -3677,21 +3613,67 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Sigilyph @ Sitrus Berry
 Ability: Magic Guard
-Level: 22
+Level: 23
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psybeam
 - Air Cutter
 - Ancient Power
 - Roost
 
-Sandslash @ Sitrus Berry
+=== TRAINER_PBL_ADAMINA_LEVIATHAN_9_CHALLENGE ===
+Name: Adamina
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Music: Cool
+AI: AI_FLAG_CHALLENGE
+Double Battle: No
+Random Lead: No
+Mugshot: Purple
+
+Klawf @ Hard Stone
+Ability: Anger Shell
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Tomb
+- Bulldoze
+- Knock Off
+- Stealth Rock
+
+Vullaby @ Black Glasses
+Ability: Overcoat
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pluck
+- Feint Attack
+- Roost
+- Rock Tomb
+
+Maractus @ Miracle Seed
 Ability: Sand Rush
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Mega Drain
+- Pin-Missile
+- Bounce
+- Growth
+
+Braixen @ Charcoal
+Ability: Magic Guard
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Incinerate
+- Psybeam
+- Shock Wave
+- Hypnosis
+
+Sigilyph @ Sitrus Berry
+Ability: Magic Guard
 Level: 23
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bulldoze
-- Rock Tomb
-- Aerial Ace
-- Covet
+- Psybeam
+- Air Cutter
+- Ancient Power
+- Roost
 
 === TRAINER_PBL_JEANETTE ===
 Name: Jeanette
@@ -3967,7 +3949,7 @@ Name: Newton
 Class: Scientist
 Pic: Scientist
 Music: Intense
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: Yes
 Random Lead: No
 Mugshot: Purple
@@ -4347,7 +4329,7 @@ Name: Declan
 Class: Bug Maniac
 Pic: Bug Maniac
 Music: Suspicious
-AI: AI_FLAG_SMART_TRAINER
+AI: AI_FLAG_CHALLENGE
 Double Battle: No
 Random Lead: No
 Mugshot: Purple
