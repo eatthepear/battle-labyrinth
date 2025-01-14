@@ -3829,15 +3829,13 @@ EventScript_Max_1:
 # 1872 "data/scripts/battle_labyrinth.pory"
 	case 6, EventScript_Max_7
 # 1874 "data/scripts/battle_labyrinth.pory"
-	case 7, EventScript_Max_8
+	case 10, EventScript_Max_8
 # 1876 "data/scripts/battle_labyrinth.pory"
-	case 10, EventScript_Max_9
-# 1878 "data/scripts/battle_labyrinth.pory"
-	case 18, EventScript_Max_10
+	case 18, EventScript_Max_9
 EventScript_Max_4:
-# 1881 "data/scripts/battle_labyrinth.pory"
+# 1879 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Max_Text_3, MSGBOX_AUTOCLOSE
-# 1882 "data/scripts/battle_labyrinth.pory"
+# 1880 "data/scripts/battle_labyrinth.pory"
 	release
 	return
 
@@ -3862,1048 +3860,1030 @@ EventScript_Max_7:
 
 EventScript_Max_8:
 # 1875 "data/scripts/battle_labyrinth.pory"
-	pokemart Zone7A_Shop_TMShop
+	pokemart Zone10A_Shop_TMShop
 	goto EventScript_Max_4
 
 EventScript_Max_9:
 # 1877 "data/scripts/battle_labyrinth.pory"
-	pokemart Zone10A_Shop_TMShop
-	goto EventScript_Max_4
-
-EventScript_Max_10:
-# 1879 "data/scripts/battle_labyrinth.pory"
 	pokemart Zone18A_Shop_TMShop
 	goto EventScript_Max_4
 
 
 	.align 2
-# 1885 "data/scripts/battle_labyrinth.pory"
+# 1883 "data/scripts/battle_labyrinth.pory"
 Zone2A_Shop_TMShop:
-# 1886 "data/scripts/battle_labyrinth.pory"
+# 1884 "data/scripts/battle_labyrinth.pory"
 	.2byte ITEM_TM_PROTECT
 	.2byte ITEM_NONE
 
 	.align 2
-# 1889 "data/scripts/battle_labyrinth.pory"
+# 1887 "data/scripts/battle_labyrinth.pory"
 Zone6A_Shop_TMShop:
-# 1890 "data/scripts/battle_labyrinth.pory"
+# 1888 "data/scripts/battle_labyrinth.pory"
 	.2byte ITEM_TM_TRAILBLAZE
-# 1891 "data/scripts/battle_labyrinth.pory"
+# 1889 "data/scripts/battle_labyrinth.pory"
 	.2byte ITEM_TM_FLAME_CHARGE
-# 1892 "data/scripts/battle_labyrinth.pory"
+# 1890 "data/scripts/battle_labyrinth.pory"
 	.2byte ITEM_TM_CHARGE_BEAM
-# 1893 "data/scripts/battle_labyrinth.pory"
+# 1891 "data/scripts/battle_labyrinth.pory"
 	.2byte ITEM_TM_POWER_UP_PUNCH
 	.2byte ITEM_NONE
 
 	.align 2
-# 1896 "data/scripts/battle_labyrinth.pory"
-Zone7A_Shop_TMShop:
-# 1897 "data/scripts/battle_labyrinth.pory"
-	.2byte ITEM_TM09
-# 1898 "data/scripts/battle_labyrinth.pory"
-	.2byte ITEM_TM10
-# 1899 "data/scripts/battle_labyrinth.pory"
-	.2byte ITEM_TM11
-# 1900 "data/scripts/battle_labyrinth.pory"
-	.2byte ITEM_TM12
-	.2byte ITEM_NONE
-
-	.align 2
-# 1903 "data/scripts/battle_labyrinth.pory"
+# 1894 "data/scripts/battle_labyrinth.pory"
 Zone10A_Shop_TMShop:
-# 1904 "data/scripts/battle_labyrinth.pory"
-	.2byte ITEM_TM17
-# 1905 "data/scripts/battle_labyrinth.pory"
-	.2byte ITEM_TM18
-# 1906 "data/scripts/battle_labyrinth.pory"
-	.2byte ITEM_TM19
+# 1895 "data/scripts/battle_labyrinth.pory"
+	.2byte ITEM_TM_IRON_DEFENSE
+# 1896 "data/scripts/battle_labyrinth.pory"
+	.2byte ITEM_TM_AGILITY
+# 1897 "data/scripts/battle_labyrinth.pory"
+	.2byte ITEM_TM_AMNESIA
 	.2byte ITEM_NONE
 
 	.align 2
-# 1909 "data/scripts/battle_labyrinth.pory"
+# 1900 "data/scripts/battle_labyrinth.pory"
 Zone18A_Shop_TMShop:
-# 1910 "data/scripts/battle_labyrinth.pory"
+# 1901 "data/scripts/battle_labyrinth.pory"
 	.2byte ITEM_TM31
-# 1911 "data/scripts/battle_labyrinth.pory"
+# 1902 "data/scripts/battle_labyrinth.pory"
 	.2byte ITEM_TM32
-# 1912 "data/scripts/battle_labyrinth.pory"
+# 1903 "data/scripts/battle_labyrinth.pory"
 	.2byte ITEM_TM33
 	.2byte ITEM_NONE
 
 EventScript_LeavingSetup::
-# 1916 "data/scripts/battle_labyrinth.pory"
+# 1907 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_IN_NEW_ZONE
-# 1917 "data/scripts/battle_labyrinth.pory"
+# 1908 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_LeavingSetup_Text_0, MSGBOX_AUTOCLOSE
-# 1918 "data/scripts/battle_labyrinth.pory"
+# 1909 "data/scripts/battle_labyrinth.pory"
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-# 1919 "data/scripts/battle_labyrinth.pory"
+# 1910 "data/scripts/battle_labyrinth.pory"
 	compare VAR_TEMP_0, 37
 	goto_if_eq EventScript_LeavingSetup_2
 EventScript_LeavingSetup_1:
-# 1926 "data/scripts/battle_labyrinth.pory"
+# 1917 "data/scripts/battle_labyrinth.pory"
 	compare VAR_TEMP_0, 38
 	goto_if_eq EventScript_LeavingSetup_5
 EventScript_LeavingSetup_4:
-# 1933 "data/scripts/battle_labyrinth.pory"
+# 1924 "data/scripts/battle_labyrinth.pory"
 	compare VAR_TEMP_0, 39
 	goto_if_eq EventScript_LeavingSetup_8
 EventScript_LeavingSetup_7:
-# 1940 "data/scripts/battle_labyrinth.pory"
+# 1931 "data/scripts/battle_labyrinth.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
-# 1941 "data/scripts/battle_labyrinth.pory"
+# 1932 "data/scripts/battle_labyrinth.pory"
 	waitmovement 0
-# 1942 "data/scripts/battle_labyrinth.pory"
+# 1933 "data/scripts/battle_labyrinth.pory"
 	switch VAR_ZONE
-# 1943 "data/scripts/battle_labyrinth.pory"
+# 1934 "data/scripts/battle_labyrinth.pory"
 	case 1, EventScript_LeavingSetup_12
-# 1945 "data/scripts/battle_labyrinth.pory"
+# 1936 "data/scripts/battle_labyrinth.pory"
 	case 2, EventScript_LeavingSetup_13
-# 1947 "data/scripts/battle_labyrinth.pory"
+# 1938 "data/scripts/battle_labyrinth.pory"
 	case 3, EventScript_LeavingSetup_14
-# 1949 "data/scripts/battle_labyrinth.pory"
+# 1940 "data/scripts/battle_labyrinth.pory"
 	case 4, EventScript_LeavingSetup_15
-# 1951 "data/scripts/battle_labyrinth.pory"
+# 1942 "data/scripts/battle_labyrinth.pory"
 	case 5, EventScript_LeavingSetup_16
-# 1953 "data/scripts/battle_labyrinth.pory"
+# 1944 "data/scripts/battle_labyrinth.pory"
 	case 6, EventScript_LeavingSetup_17
-# 1955 "data/scripts/battle_labyrinth.pory"
+# 1946 "data/scripts/battle_labyrinth.pory"
 	case 7, EventScript_LeavingSetup_18
-# 1957 "data/scripts/battle_labyrinth.pory"
+# 1948 "data/scripts/battle_labyrinth.pory"
 	case 9, EventScript_LeavingSetup_19
-# 1959 "data/scripts/battle_labyrinth.pory"
+# 1950 "data/scripts/battle_labyrinth.pory"
 	case 10, EventScript_LeavingSetup_20
-# 1961 "data/scripts/battle_labyrinth.pory"
+# 1952 "data/scripts/battle_labyrinth.pory"
 	case 11, EventScript_LeavingSetup_21
-# 1963 "data/scripts/battle_labyrinth.pory"
+# 1954 "data/scripts/battle_labyrinth.pory"
 	case 12, EventScript_LeavingSetup_22
-# 1965 "data/scripts/battle_labyrinth.pory"
+# 1956 "data/scripts/battle_labyrinth.pory"
 	case 13, EventScript_LeavingSetup_23
-# 1967 "data/scripts/battle_labyrinth.pory"
+# 1958 "data/scripts/battle_labyrinth.pory"
 	case 15, EventScript_LeavingSetup_24
-# 1969 "data/scripts/battle_labyrinth.pory"
+# 1960 "data/scripts/battle_labyrinth.pory"
 	case 16, EventScript_LeavingSetup_25
-# 1971 "data/scripts/battle_labyrinth.pory"
+# 1962 "data/scripts/battle_labyrinth.pory"
 	case 17, EventScript_LeavingSetup_26
-# 1973 "data/scripts/battle_labyrinth.pory"
+# 1964 "data/scripts/battle_labyrinth.pory"
 	case 18, EventScript_LeavingSetup_27
-# 1975 "data/scripts/battle_labyrinth.pory"
+# 1966 "data/scripts/battle_labyrinth.pory"
 	case 20, EventScript_LeavingSetup_28
-# 1977 "data/scripts/battle_labyrinth.pory"
+# 1968 "data/scripts/battle_labyrinth.pory"
 	case 21, EventScript_LeavingSetup_29
-# 1979 "data/scripts/battle_labyrinth.pory"
+# 1970 "data/scripts/battle_labyrinth.pory"
 	case 22, EventScript_LeavingSetup_30
-# 1981 "data/scripts/battle_labyrinth.pory"
+# 1972 "data/scripts/battle_labyrinth.pory"
 	case 23, EventScript_LeavingSetup_31
-# 1983 "data/scripts/battle_labyrinth.pory"
+# 1974 "data/scripts/battle_labyrinth.pory"
 	case 24, EventScript_LeavingSetup_32
-# 1985 "data/scripts/battle_labyrinth.pory"
+# 1976 "data/scripts/battle_labyrinth.pory"
 	case 26, EventScript_LeavingSetup_33
 EventScript_LeavingSetup_10:
 	return
 
 EventScript_LeavingSetup_2:
-# 1920 "data/scripts/battle_labyrinth.pory"
+# 1911 "data/scripts/battle_labyrinth.pory"
 	applymovement 1, Common_Movement_WalkRight
-# 1921 "data/scripts/battle_labyrinth.pory"
+# 1912 "data/scripts/battle_labyrinth.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
-# 1922 "data/scripts/battle_labyrinth.pory"
+# 1913 "data/scripts/battle_labyrinth.pory"
 	waitmovement 0
-# 1923 "data/scripts/battle_labyrinth.pory"
+# 1914 "data/scripts/battle_labyrinth.pory"
 	applymovement 1, Common_Movement_FaceLeft
-# 1924 "data/scripts/battle_labyrinth.pory"
+# 1915 "data/scripts/battle_labyrinth.pory"
 	waitmovement 0
 	goto EventScript_LeavingSetup_1
 
 EventScript_LeavingSetup_5:
-# 1927 "data/scripts/battle_labyrinth.pory"
+# 1918 "data/scripts/battle_labyrinth.pory"
 	applymovement 1, Common_Movement_WalkLeft
-# 1928 "data/scripts/battle_labyrinth.pory"
+# 1919 "data/scripts/battle_labyrinth.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
-# 1929 "data/scripts/battle_labyrinth.pory"
+# 1920 "data/scripts/battle_labyrinth.pory"
 	waitmovement 0
-# 1930 "data/scripts/battle_labyrinth.pory"
+# 1921 "data/scripts/battle_labyrinth.pory"
 	applymovement 1, Common_Movement_FaceRight
-# 1931 "data/scripts/battle_labyrinth.pory"
+# 1922 "data/scripts/battle_labyrinth.pory"
 	waitmovement 0
 	goto EventScript_LeavingSetup_4
 
 EventScript_LeavingSetup_8:
-# 1934 "data/scripts/battle_labyrinth.pory"
+# 1925 "data/scripts/battle_labyrinth.pory"
 	applymovement 1, Common_Movement_WalkLeft
-# 1935 "data/scripts/battle_labyrinth.pory"
+# 1926 "data/scripts/battle_labyrinth.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
-# 1936 "data/scripts/battle_labyrinth.pory"
+# 1927 "data/scripts/battle_labyrinth.pory"
 	waitmovement 0
-# 1937 "data/scripts/battle_labyrinth.pory"
+# 1928 "data/scripts/battle_labyrinth.pory"
 	applymovement 1, Common_Movement_FaceRight
-# 1938 "data/scripts/battle_labyrinth.pory"
+# 1929 "data/scripts/battle_labyrinth.pory"
 	waitmovement 0
 	goto EventScript_LeavingSetup_7
 
 EventScript_LeavingSetup_12:
-# 1944 "data/scripts/battle_labyrinth.pory"
+# 1935 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 7
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_13:
-# 1946 "data/scripts/battle_labyrinth.pory"
+# 1937 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 9
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_14:
-# 1948 "data/scripts/battle_labyrinth.pory"
+# 1939 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 11
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_15:
-# 1950 "data/scripts/battle_labyrinth.pory"
+# 1941 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 13
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_16:
-# 1952 "data/scripts/battle_labyrinth.pory"
+# 1943 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 15
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_17:
-# 1954 "data/scripts/battle_labyrinth.pory"
+# 1945 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 17
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_18:
-# 1956 "data/scripts/battle_labyrinth.pory"
+# 1947 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 20
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_19:
-# 1958 "data/scripts/battle_labyrinth.pory"
+# 1949 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 21
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_20:
-# 1960 "data/scripts/battle_labyrinth.pory"
+# 1951 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 23
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_21:
-# 1962 "data/scripts/battle_labyrinth.pory"
+# 1953 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 24
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_22:
-# 1964 "data/scripts/battle_labyrinth.pory"
+# 1955 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 26
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_23:
-# 1966 "data/scripts/battle_labyrinth.pory"
+# 1957 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 30
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_24:
-# 1968 "data/scripts/battle_labyrinth.pory"
+# 1959 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 32
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_25:
-# 1970 "data/scripts/battle_labyrinth.pory"
+# 1961 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 33
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_26:
-# 1972 "data/scripts/battle_labyrinth.pory"
+# 1963 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 34
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_27:
-# 1974 "data/scripts/battle_labyrinth.pory"
+# 1965 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 37
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_28:
-# 1976 "data/scripts/battle_labyrinth.pory"
+# 1967 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 39
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_29:
-# 1978 "data/scripts/battle_labyrinth.pory"
+# 1969 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 41
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_30:
-# 1980 "data/scripts/battle_labyrinth.pory"
+# 1971 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 43
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_31:
-# 1982 "data/scripts/battle_labyrinth.pory"
+# 1973 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 45
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_32:
-# 1984 "data/scripts/battle_labyrinth.pory"
+# 1975 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 48
 	goto EventScript_LeavingSetup_10
 
 EventScript_LeavingSetup_33:
-# 1986 "data/scripts/battle_labyrinth.pory"
+# 1977 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 49
 	goto EventScript_LeavingSetup_10
 
 
 EventScript_WhenUReady::
-# 1992 "data/scripts/battle_labyrinth.pory"
+# 1983 "data/scripts/battle_labyrinth.pory"
 	compare VAR_ZONE, 7
 	goto_if_eq EventScript_WhenUReady_1
-# 1995 "data/scripts/battle_labyrinth.pory"
+# 1986 "data/scripts/battle_labyrinth.pory"
 	compare VAR_ZONE, 13
 	goto_if_eq EventScript_WhenUReady_2
-# 1998 "data/scripts/battle_labyrinth.pory"
+# 1989 "data/scripts/battle_labyrinth.pory"
 	compare VAR_ZONE, 18
 	goto_if_eq EventScript_WhenUReady_3
-# 2001 "data/scripts/battle_labyrinth.pory"
+# 1992 "data/scripts/battle_labyrinth.pory"
 	compare VAR_ZONE, 24
 	goto_if_eq EventScript_WhenUReady_4
-# 2005 "data/scripts/battle_labyrinth.pory"
+# 1996 "data/scripts/battle_labyrinth.pory"
 	buffernumberstring 0, VAR_ZONE
-# 2006 "data/scripts/battle_labyrinth.pory"
+# 1997 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_WhenUReady, MSGBOX_AUTOCLOSE
-# 2007 "data/scripts/battle_labyrinth.pory"
+# 1998 "data/scripts/battle_labyrinth.pory"
 	release
 	return
 
 EventScript_WhenUReady_1:
-# 1993 "data/scripts/battle_labyrinth.pory"
+# 1984 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone6Sanctuary_Text_Colress_WhenUReady
-# 1994 "data/scripts/battle_labyrinth.pory"
+# 1985 "data/scripts/battle_labyrinth.pory"
 	release
 	return
 
 EventScript_WhenUReady_2:
-# 1996 "data/scripts/battle_labyrinth.pory"
+# 1987 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone12Sanctuary_Text_Colress_WhenUReady
-# 1997 "data/scripts/battle_labyrinth.pory"
+# 1988 "data/scripts/battle_labyrinth.pory"
 	release
 	return
 
 EventScript_WhenUReady_3:
-# 1999 "data/scripts/battle_labyrinth.pory"
+# 1990 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone17Sanctuary_Text_Colress_WhenUReady
-# 2000 "data/scripts/battle_labyrinth.pory"
+# 1991 "data/scripts/battle_labyrinth.pory"
 	release
 	return
 
 EventScript_WhenUReady_4:
-# 2002 "data/scripts/battle_labyrinth.pory"
+# 1993 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone23Sanctuary_Text_Colress_WhenUReady
-# 2003 "data/scripts/battle_labyrinth.pory"
+# 1994 "data/scripts/battle_labyrinth.pory"
 	release
 	return
 
 
 EventScript_SanctuaryToZone0::
-# 2012 "data/scripts/battle_labyrinth.pory"
+# 2003 "data/scripts/battle_labyrinth.pory"
 	lockall
-# 2013 "data/scripts/battle_labyrinth.pory"
+# 2004 "data/scripts/battle_labyrinth.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
-# 2014 "data/scripts/battle_labyrinth.pory"
+# 2005 "data/scripts/battle_labyrinth.pory"
 	waitmovement 0
-# 2015 "data/scripts/battle_labyrinth.pory"
+# 2006 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_SanctuaryToZone0_Text_0, MSGBOX_YESNO
-# 2016 "data/scripts/battle_labyrinth.pory"
+# 2007 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_SanctuaryToZone0_2
-# 2021 "data/scripts/battle_labyrinth.pory"
+# 2012 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 2022 "data/scripts/battle_labyrinth.pory"
+# 2013 "data/scripts/battle_labyrinth.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
-# 2023 "data/scripts/battle_labyrinth.pory"
+# 2014 "data/scripts/battle_labyrinth.pory"
 	waitmovement 0
 EventScript_SanctuaryToZone0_1:
-# 2025 "data/scripts/battle_labyrinth.pory"
+# 2016 "data/scripts/battle_labyrinth.pory"
 	releaseall
 	return
 
 EventScript_SanctuaryToZone0_2:
-# 2017 "data/scripts/battle_labyrinth.pory"
+# 2008 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 2018 "data/scripts/battle_labyrinth.pory"
+# 2009 "data/scripts/battle_labyrinth.pory"
 	warpdoor MAP_ZONE0A, 255, 17, 10
-# 2019 "data/scripts/battle_labyrinth.pory"
+# 2010 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_SanctuaryToZone0_1
 
 
 EventScript_Documentation::
-# 2029 "data/scripts/battle_labyrinth.pory"
+# 2020 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Documentation_Text_0, MSGBOX_DEFAULT
-# 2030 "data/scripts/battle_labyrinth.pory"
+# 2021 "data/scripts/battle_labyrinth.pory"
 	goto EventScript_WhenUReady
 	return
 
 
 EventScript_Settings::
 EventScript_Settings_1:
-# 2068 "data/scripts/battle_labyrinth.pory"
+# 2059 "data/scripts/battle_labyrinth.pory"
 	message EventScript_Settings_Text_0
-# 2069 "data/scripts/battle_labyrinth.pory"
+# 2060 "data/scripts/battle_labyrinth.pory"
 	waitmessage
-# 2070 "data/scripts/battle_labyrinth.pory"
+# 2061 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_4
-# 2072 "data/scripts/battle_labyrinth.pory"
+# 2063 "data/scripts/battle_labyrinth.pory"
 	compare VAR_TEMP_1, 1
 	goto_if_eq EventScript_Settings_5
 EventScript_Settings_3:
-# 2075 "data/scripts/battle_labyrinth.pory"
+# 2066 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_NUZLOCKE, EventScript_Settings_9
-# 2077 "data/scripts/battle_labyrinth.pory"
+# 2068 "data/scripts/battle_labyrinth.pory"
 	compare VAR_TEMP_1, 1
 	goto_if_eq EventScript_Settings_10
 EventScript_Settings_8:
-# 2080 "data/scripts/battle_labyrinth.pory"
+# 2071 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_RANDOMIZER, EventScript_Settings_14
-# 2082 "data/scripts/battle_labyrinth.pory"
+# 2073 "data/scripts/battle_labyrinth.pory"
 	compare VAR_TEMP_1, 1
 	goto_if_eq EventScript_Settings_15
 EventScript_Settings_13:
-# 2085 "data/scripts/battle_labyrinth.pory"
+# 2076 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_INFINITE, EventScript_Settings_19
-# 2087 "data/scripts/battle_labyrinth.pory"
+# 2078 "data/scripts/battle_labyrinth.pory"
 	compare VAR_TEMP_1, 1
 	goto_if_eq EventScript_Settings_20
 EventScript_Settings_18:
-# 2090 "data/scripts/battle_labyrinth.pory"
+# 2081 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_FULL_INFO, EventScript_Settings_24
-# 2093 "data/scripts/battle_labyrinth.pory"
+# 2084 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_10, 4
 EventScript_Settings_23:
-# 2095 "data/scripts/battle_labyrinth.pory"
+# 2086 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_EXP_ALL, EventScript_Settings_28
-# 2098 "data/scripts/battle_labyrinth.pory"
+# 2089 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_12, 5
 EventScript_Settings_27:
-# 2100 "data/scripts/battle_labyrinth.pory"
+# 2091 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_13, 6
-# 2101 "data/scripts/battle_labyrinth.pory"
+# 2092 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_32
-# 2101 "data/scripts/battle_labyrinth.pory"
+# 2092 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_CHALLENGE, EventScript_Settings_32
-# 2104 "data/scripts/battle_labyrinth.pory"
+# 2095 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_15, 7
 EventScript_Settings_31:
-# 2106 "data/scripts/battle_labyrinth.pory"
+# 2097 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_38
-# 2106 "data/scripts/battle_labyrinth.pory"
+# 2097 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_GAUNTLET, EventScript_Settings_38
-# 2109 "data/scripts/battle_labyrinth.pory"
+# 2100 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_17, 8
 EventScript_Settings_37:
-# 2111 "data/scripts/battle_labyrinth.pory"
+# 2102 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_44
-# 2111 "data/scripts/battle_labyrinth.pory"
+# 2102 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_ANTIDOCTOR, EventScript_Settings_44
-# 2114 "data/scripts/battle_labyrinth.pory"
+# 2105 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_19, 9
 EventScript_Settings_43:
-# 2116 "data/scripts/battle_labyrinth.pory"
+# 2107 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_50
-# 2116 "data/scripts/battle_labyrinth.pory"
+# 2107 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_CLUMSY, EventScript_Settings_50
-# 2119 "data/scripts/battle_labyrinth.pory"
+# 2110 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_21, 10
 EventScript_Settings_49:
-# 2121 "data/scripts/battle_labyrinth.pory"
+# 2112 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_56
-# 2121 "data/scripts/battle_labyrinth.pory"
+# 2112 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_EFFORTLESS, EventScript_Settings_56
-# 2124 "data/scripts/battle_labyrinth.pory"
+# 2115 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_23, 11
 EventScript_Settings_55:
-# 2126 "data/scripts/battle_labyrinth.pory"
+# 2117 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_62
-# 2126 "data/scripts/battle_labyrinth.pory"
+# 2117 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_RED_THUMB, EventScript_Settings_62
-# 2129 "data/scripts/battle_labyrinth.pory"
+# 2120 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_25, 12
 EventScript_Settings_61:
-# 2131 "data/scripts/battle_labyrinth.pory"
+# 2122 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_68
-# 2131 "data/scripts/battle_labyrinth.pory"
+# 2122 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_ANTIGRIND, EventScript_Settings_68
-# 2134 "data/scripts/battle_labyrinth.pory"
+# 2125 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_27, 13
 EventScript_Settings_67:
-# 2136 "data/scripts/battle_labyrinth.pory"
+# 2127 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_74
-# 2136 "data/scripts/battle_labyrinth.pory"
+# 2127 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_SINGLE_USE, EventScript_Settings_74
-# 2139 "data/scripts/battle_labyrinth.pory"
+# 2130 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_29, 14
 EventScript_Settings_73:
-# 2141 "data/scripts/battle_labyrinth.pory"
+# 2132 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_80
-# 2141 "data/scripts/battle_labyrinth.pory"
+# 2132 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_POOR, EventScript_Settings_80
-# 2144 "data/scripts/battle_labyrinth.pory"
+# 2135 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_31, 15
 EventScript_Settings_79:
-# 2146 "data/scripts/battle_labyrinth.pory"
+# 2137 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_86
-# 2146 "data/scripts/battle_labyrinth.pory"
+# 2137 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_INDEPENDENT, EventScript_Settings_86
-# 2149 "data/scripts/battle_labyrinth.pory"
+# 2140 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_33, 16
 EventScript_Settings_85:
-# 2151 "data/scripts/battle_labyrinth.pory"
+# 2142 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Shop_Marie_MainMenu_Text_3, 17
-# 2152 "data/scripts/battle_labyrinth.pory"
+# 2143 "data/scripts/battle_labyrinth.pory"
 	dynmultistack 21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
-# 2153 "data/scripts/battle_labyrinth.pory"
+# 2144 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 2154 "data/scripts/battle_labyrinth.pory"
+# 2145 "data/scripts/battle_labyrinth.pory"
 	case 0, EventScript_Settings_92
-# 2183 "data/scripts/battle_labyrinth.pory"
+# 2174 "data/scripts/battle_labyrinth.pory"
 	case 1, EventScript_Settings_93
-# 2219 "data/scripts/battle_labyrinth.pory"
+# 2210 "data/scripts/battle_labyrinth.pory"
 	case 2, EventScript_Settings_94
-# 2248 "data/scripts/battle_labyrinth.pory"
+# 2239 "data/scripts/battle_labyrinth.pory"
 	case 3, EventScript_Settings_95
-# 2312 "data/scripts/battle_labyrinth.pory"
+# 2303 "data/scripts/battle_labyrinth.pory"
 	case 4, EventScript_Settings_96
-# 2341 "data/scripts/battle_labyrinth.pory"
+# 2332 "data/scripts/battle_labyrinth.pory"
 	case 5, EventScript_Settings_97
-# 2360 "data/scripts/battle_labyrinth.pory"
+# 2351 "data/scripts/battle_labyrinth.pory"
 	case 6, EventScript_Settings_98
-# 2362 "data/scripts/battle_labyrinth.pory"
+# 2353 "data/scripts/battle_labyrinth.pory"
 	case 7, EventScript_Settings_99
-# 2387 "data/scripts/battle_labyrinth.pory"
+# 2378 "data/scripts/battle_labyrinth.pory"
 	case 8, EventScript_Settings_100
-# 2412 "data/scripts/battle_labyrinth.pory"
+# 2403 "data/scripts/battle_labyrinth.pory"
 	case 9, EventScript_Settings_101
-# 2437 "data/scripts/battle_labyrinth.pory"
+# 2428 "data/scripts/battle_labyrinth.pory"
 	case 10, EventScript_Settings_102
-# 2462 "data/scripts/battle_labyrinth.pory"
+# 2453 "data/scripts/battle_labyrinth.pory"
 	case 11, EventScript_Settings_103
-# 2487 "data/scripts/battle_labyrinth.pory"
+# 2478 "data/scripts/battle_labyrinth.pory"
 	case 12, EventScript_Settings_104
-# 2516 "data/scripts/battle_labyrinth.pory"
+# 2507 "data/scripts/battle_labyrinth.pory"
 	case 13, EventScript_Settings_105
-# 2541 "data/scripts/battle_labyrinth.pory"
+# 2532 "data/scripts/battle_labyrinth.pory"
 	case 14, EventScript_Settings_106
-# 2566 "data/scripts/battle_labyrinth.pory"
+# 2557 "data/scripts/battle_labyrinth.pory"
 	case 15, EventScript_Settings_107
-# 2591 "data/scripts/battle_labyrinth.pory"
+# 2582 "data/scripts/battle_labyrinth.pory"
 	case 16, EventScript_Settings_108
-# 2617 "data/scripts/battle_labyrinth.pory"
+# 2608 "data/scripts/battle_labyrinth.pory"
 	case 17, EventScript_Settings_109
-# 2618 "data/scripts/battle_labyrinth.pory"
+# 2609 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, EventScript_Settings_109
 	goto EventScript_Settings_1
 
 EventScript_Settings_4:
-# 2071 "data/scripts/battle_labyrinth.pory"
+# 2062 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_1, 0
 	goto EventScript_Settings_3
 
 EventScript_Settings_5:
-# 2073 "data/scripts/battle_labyrinth.pory"
+# 2064 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_2, 0
 	goto EventScript_Settings_3
 
 EventScript_Settings_9:
-# 2076 "data/scripts/battle_labyrinth.pory"
+# 2067 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_3, 1
 	goto EventScript_Settings_8
 
 EventScript_Settings_10:
-# 2078 "data/scripts/battle_labyrinth.pory"
+# 2069 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_4, 1
 	goto EventScript_Settings_8
 
 EventScript_Settings_14:
-# 2081 "data/scripts/battle_labyrinth.pory"
+# 2072 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_5, 2
 	goto EventScript_Settings_13
 
 EventScript_Settings_15:
-# 2083 "data/scripts/battle_labyrinth.pory"
+# 2074 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_6, 2
 	goto EventScript_Settings_13
 
 EventScript_Settings_19:
-# 2086 "data/scripts/battle_labyrinth.pory"
+# 2077 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_7, 3
 	goto EventScript_Settings_18
 
 EventScript_Settings_20:
-# 2088 "data/scripts/battle_labyrinth.pory"
+# 2079 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_8, 3
 	goto EventScript_Settings_18
 
 EventScript_Settings_24:
-# 2091 "data/scripts/battle_labyrinth.pory"
+# 2082 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_9, 4
 	goto EventScript_Settings_23
 
 EventScript_Settings_28:
-# 2096 "data/scripts/battle_labyrinth.pory"
+# 2087 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_11, 5
 	goto EventScript_Settings_27
 
 EventScript_Settings_32:
-# 2102 "data/scripts/battle_labyrinth.pory"
+# 2093 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_14, 7
 	goto EventScript_Settings_31
 
 EventScript_Settings_38:
-# 2107 "data/scripts/battle_labyrinth.pory"
+# 2098 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_16, 8
 	goto EventScript_Settings_37
 
 EventScript_Settings_44:
-# 2112 "data/scripts/battle_labyrinth.pory"
+# 2103 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_18, 9
 	goto EventScript_Settings_43
 
 EventScript_Settings_50:
-# 2117 "data/scripts/battle_labyrinth.pory"
+# 2108 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_20, 10
 	goto EventScript_Settings_49
 
 EventScript_Settings_56:
-# 2122 "data/scripts/battle_labyrinth.pory"
+# 2113 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_22, 11
 	goto EventScript_Settings_55
 
 EventScript_Settings_62:
-# 2127 "data/scripts/battle_labyrinth.pory"
+# 2118 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_24, 12
 	goto EventScript_Settings_61
 
 EventScript_Settings_68:
-# 2132 "data/scripts/battle_labyrinth.pory"
+# 2123 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_26, 13
 	goto EventScript_Settings_67
 
 EventScript_Settings_74:
-# 2137 "data/scripts/battle_labyrinth.pory"
+# 2128 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_28, 14
 	goto EventScript_Settings_73
 
 EventScript_Settings_80:
-# 2142 "data/scripts/battle_labyrinth.pory"
+# 2133 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_30, 15
 	goto EventScript_Settings_79
 
 EventScript_Settings_86:
-# 2147 "data/scripts/battle_labyrinth.pory"
+# 2138 "data/scripts/battle_labyrinth.pory"
 	dynmultipush EventScript_Settings_Text_32, 16
 	goto EventScript_Settings_85
 
 EventScript_Settings_92:
-# 2155 "data/scripts/battle_labyrinth.pory"
+# 2146 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_BrutalExplained, MSGBOX_DEFAULT
-# 2156 "data/scripts/battle_labyrinth.pory"
+# 2147 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_110
-# 2168 "data/scripts/battle_labyrinth.pory"
+# 2159 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_INFINITE, EventScript_Settings_183
-# 2171 "data/scripts/battle_labyrinth.pory"
+# 2162 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_37, MSGBOX_YESNO
-# 2172 "data/scripts/battle_labyrinth.pory"
+# 2163 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_266
 	goto EventScript_Settings_1
 
 EventScript_Settings_93:
-# 2184 "data/scripts/battle_labyrinth.pory"
+# 2175 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_NuzlockeExplained, MSGBOX_DEFAULT
-# 2185 "data/scripts/battle_labyrinth.pory"
+# 2176 "data/scripts/battle_labyrinth.pory"
 	compare VAR_TEMP_1, 0
 	goto_if_eq EventScript_Settings_114
 EventScript_Settings_113:
-# 2195 "data/scripts/battle_labyrinth.pory"
+# 2186 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_NUZLOCKE, EventScript_Settings_186
-# 2208 "data/scripts/battle_labyrinth.pory"
+# 2199 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_46, MSGBOX_YESNO
-# 2209 "data/scripts/battle_labyrinth.pory"
+# 2200 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_270
 	goto EventScript_Settings_1
 
 EventScript_Settings_94:
-# 2220 "data/scripts/battle_labyrinth.pory"
+# 2211 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_RandomizerExplanation, MSGBOX_DEFAULT
-# 2221 "data/scripts/battle_labyrinth.pory"
+# 2212 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_RANDOMIZER, EventScript_Settings_116
-# 2237 "data/scripts/battle_labyrinth.pory"
+# 2228 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_53, MSGBOX_YESNO
-# 2238 "data/scripts/battle_labyrinth.pory"
+# 2229 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_197
 	goto EventScript_Settings_1
 
 EventScript_Settings_95:
-# 2249 "data/scripts/battle_labyrinth.pory"
+# 2240 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_InfiniteExplained, MSGBOX_DEFAULT
-# 2250 "data/scripts/battle_labyrinth.pory"
+# 2241 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_INFINITE, EventScript_Settings_119
-# 2297 "data/scripts/battle_labyrinth.pory"
+# 2288 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_202
-# 2300 "data/scripts/battle_labyrinth.pory"
+# 2291 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_62, MSGBOX_YESNO
-# 2301 "data/scripts/battle_labyrinth.pory"
+# 2292 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_280
 	goto EventScript_Settings_1
 
 EventScript_Settings_96:
-# 2313 "data/scripts/battle_labyrinth.pory"
+# 2304 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_65, MSGBOX_DEFAULT
-# 2314 "data/scripts/battle_labyrinth.pory"
+# 2305 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_FULL_INFO, EventScript_Settings_122
-# 2328 "data/scripts/battle_labyrinth.pory"
+# 2319 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_69, MSGBOX_DEFAULT
-# 2329 "data/scripts/battle_labyrinth.pory"
+# 2320 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_70, MSGBOX_YESNO
-# 2330 "data/scripts/battle_labyrinth.pory"
+# 2321 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_207
 	goto EventScript_Settings_1
 
 EventScript_Settings_97:
-# 2342 "data/scripts/battle_labyrinth.pory"
+# 2333 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_72, MSGBOX_DEFAULT
-# 2343 "data/scripts/battle_labyrinth.pory"
+# 2334 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_EXP_ALL, EventScript_Settings_125
-# 2352 "data/scripts/battle_labyrinth.pory"
+# 2343 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_75, MSGBOX_YESNO
-# 2353 "data/scripts/battle_labyrinth.pory"
+# 2344 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_211
 	goto EventScript_Settings_1
 
 EventScript_Settings_98:
-# 2361 "data/scripts/battle_labyrinth.pory"
+# 2352 "data/scripts/battle_labyrinth.pory"
 	call EventScript_MusicMenu
 	goto EventScript_Settings_1
 
 EventScript_Settings_99:
-# 2363 "data/scripts/battle_labyrinth.pory"
+# 2354 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_77, MSGBOX_DEFAULT
-# 2364 "data/scripts/battle_labyrinth.pory"
+# 2355 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_CHALLENGE, EventScript_Settings_128
-# 2364 "data/scripts/battle_labyrinth.pory"
+# 2355 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_128
-# 2378 "data/scripts/battle_labyrinth.pory"
+# 2369 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_81, MSGBOX_DEFAULT
-# 2379 "data/scripts/battle_labyrinth.pory"
+# 2370 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_82, MSGBOX_YESNO
-# 2380 "data/scripts/battle_labyrinth.pory"
+# 2371 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_216
 	goto EventScript_Settings_1
 
 EventScript_Settings_100:
-# 2388 "data/scripts/battle_labyrinth.pory"
+# 2379 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_84, MSGBOX_DEFAULT
-# 2389 "data/scripts/battle_labyrinth.pory"
+# 2380 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_GAUNTLET, EventScript_Settings_133
-# 2389 "data/scripts/battle_labyrinth.pory"
+# 2380 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_133
-# 2403 "data/scripts/battle_labyrinth.pory"
+# 2394 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_88, MSGBOX_DEFAULT
-# 2404 "data/scripts/battle_labyrinth.pory"
+# 2395 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_89, MSGBOX_YESNO
-# 2405 "data/scripts/battle_labyrinth.pory"
+# 2396 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_221
 	goto EventScript_Settings_1
 
 EventScript_Settings_101:
-# 2413 "data/scripts/battle_labyrinth.pory"
+# 2404 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_91, MSGBOX_DEFAULT
-# 2414 "data/scripts/battle_labyrinth.pory"
+# 2405 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_ANTIDOCTOR, EventScript_Settings_138
-# 2414 "data/scripts/battle_labyrinth.pory"
+# 2405 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_138
-# 2428 "data/scripts/battle_labyrinth.pory"
+# 2419 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_95, MSGBOX_DEFAULT
-# 2429 "data/scripts/battle_labyrinth.pory"
+# 2420 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_96, MSGBOX_YESNO
-# 2430 "data/scripts/battle_labyrinth.pory"
+# 2421 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_226
 	goto EventScript_Settings_1
 
 EventScript_Settings_102:
-# 2438 "data/scripts/battle_labyrinth.pory"
+# 2429 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_98, MSGBOX_DEFAULT
-# 2439 "data/scripts/battle_labyrinth.pory"
+# 2430 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_CLUMSY, EventScript_Settings_143
-# 2439 "data/scripts/battle_labyrinth.pory"
+# 2430 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_143
-# 2453 "data/scripts/battle_labyrinth.pory"
+# 2444 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_102, MSGBOX_DEFAULT
-# 2454 "data/scripts/battle_labyrinth.pory"
+# 2445 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_103, MSGBOX_YESNO
-# 2455 "data/scripts/battle_labyrinth.pory"
+# 2446 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_231
 	goto EventScript_Settings_1
 
 EventScript_Settings_103:
-# 2463 "data/scripts/battle_labyrinth.pory"
+# 2454 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_105, MSGBOX_DEFAULT
-# 2464 "data/scripts/battle_labyrinth.pory"
+# 2455 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_EFFORTLESS, EventScript_Settings_148
-# 2464 "data/scripts/battle_labyrinth.pory"
+# 2455 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_148
-# 2478 "data/scripts/battle_labyrinth.pory"
+# 2469 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_109, MSGBOX_DEFAULT
-# 2479 "data/scripts/battle_labyrinth.pory"
+# 2470 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_110, MSGBOX_YESNO
-# 2480 "data/scripts/battle_labyrinth.pory"
+# 2471 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_236
 	goto EventScript_Settings_1
 
 EventScript_Settings_104:
-# 2488 "data/scripts/battle_labyrinth.pory"
+# 2479 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_112, MSGBOX_DEFAULT
-# 2489 "data/scripts/battle_labyrinth.pory"
+# 2480 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_RED_THUMB, EventScript_Settings_153
-# 2489 "data/scripts/battle_labyrinth.pory"
+# 2480 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_153
-# 2503 "data/scripts/battle_labyrinth.pory"
+# 2494 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_116, MSGBOX_DEFAULT
-# 2504 "data/scripts/battle_labyrinth.pory"
+# 2495 "data/scripts/battle_labyrinth.pory"
 	goto_if_unset FLAG_SETTINGS_INFINITE, EventScript_Settings_241
-# 2513 "data/scripts/battle_labyrinth.pory"
+# 2504 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_CannotChangeSettingInfinite, MSGBOX_DEFAULT
 	goto EventScript_Settings_1
 
 EventScript_Settings_105:
-# 2517 "data/scripts/battle_labyrinth.pory"
+# 2508 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_119, MSGBOX_DEFAULT
-# 2518 "data/scripts/battle_labyrinth.pory"
+# 2509 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_ANTIGRIND, EventScript_Settings_158
-# 2518 "data/scripts/battle_labyrinth.pory"
+# 2509 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_158
-# 2532 "data/scripts/battle_labyrinth.pory"
+# 2523 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_123, MSGBOX_DEFAULT
-# 2533 "data/scripts/battle_labyrinth.pory"
+# 2524 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_124, MSGBOX_YESNO
-# 2534 "data/scripts/battle_labyrinth.pory"
+# 2525 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_247
 	goto EventScript_Settings_1
 
 EventScript_Settings_106:
-# 2542 "data/scripts/battle_labyrinth.pory"
+# 2533 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_126, MSGBOX_DEFAULT
-# 2543 "data/scripts/battle_labyrinth.pory"
+# 2534 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_SINGLE_USE, EventScript_Settings_163
-# 2543 "data/scripts/battle_labyrinth.pory"
+# 2534 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_163
-# 2557 "data/scripts/battle_labyrinth.pory"
+# 2548 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_130, MSGBOX_DEFAULT
-# 2558 "data/scripts/battle_labyrinth.pory"
+# 2549 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_131, MSGBOX_YESNO
-# 2559 "data/scripts/battle_labyrinth.pory"
+# 2550 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_252
 	goto EventScript_Settings_1
 
 EventScript_Settings_107:
-# 2567 "data/scripts/battle_labyrinth.pory"
+# 2558 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_133, MSGBOX_DEFAULT
-# 2568 "data/scripts/battle_labyrinth.pory"
+# 2559 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_POOR, EventScript_Settings_168
-# 2568 "data/scripts/battle_labyrinth.pory"
+# 2559 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_168
-# 2582 "data/scripts/battle_labyrinth.pory"
+# 2573 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_137, MSGBOX_DEFAULT
-# 2583 "data/scripts/battle_labyrinth.pory"
+# 2574 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_138, MSGBOX_YESNO
-# 2584 "data/scripts/battle_labyrinth.pory"
+# 2575 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_257
 	goto EventScript_Settings_1
 
 EventScript_Settings_108:
-# 2592 "data/scripts/battle_labyrinth.pory"
+# 2583 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_140, MSGBOX_DEFAULT
-# 2593 "data/scripts/battle_labyrinth.pory"
+# 2584 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_INDEPENDENT, EventScript_Settings_173
-# 2593 "data/scripts/battle_labyrinth.pory"
+# 2584 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_Settings_173
-# 2607 "data/scripts/battle_labyrinth.pory"
+# 2598 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_144, MSGBOX_DEFAULT
-# 2608 "data/scripts/battle_labyrinth.pory"
+# 2599 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_145, MSGBOX_YESNO
-# 2609 "data/scripts/battle_labyrinth.pory"
+# 2600 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_262
 	goto EventScript_Settings_1
 
 EventScript_Settings_109:
-# 2619 "data/scripts/battle_labyrinth.pory"
+# 2610 "data/scripts/battle_labyrinth.pory"
 	compare VAR_TEMP_1, 1
 	goto_if_eq EventScript_Settings_178
-# 2622 "data/scripts/battle_labyrinth.pory"
+# 2613 "data/scripts/battle_labyrinth.pory"
 	goto EventScript_WhenUReady
 	goto EventScript_Settings_1
 
 EventScript_Settings_110:
-# 2157 "data/scripts/battle_labyrinth.pory"
+# 2148 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_34, MSGBOX_YESNO
-# 2158 "data/scripts/battle_labyrinth.pory"
+# 2149 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_181
 	goto EventScript_Settings_1
 
 EventScript_Settings_114:
-# 2186 "data/scripts/battle_labyrinth.pory"
+# 2177 "data/scripts/battle_labyrinth.pory"
 	compare VAR_NUZLOCKE_DEATHS, 0
 	goto_if_eq EventScript_Settings_189
-# 2188 "data/scripts/battle_labyrinth.pory"
+# 2179 "data/scripts/battle_labyrinth.pory"
 	compare VAR_NUZLOCKE_DEATHS, 1
 	goto_if_eq EventScript_Settings_190
-# 2191 "data/scripts/battle_labyrinth.pory"
+# 2182 "data/scripts/battle_labyrinth.pory"
 	buffernumberstring STR_VAR_1, VAR_NUZLOCKE_DEATHS
-# 2192 "data/scripts/battle_labyrinth.pory"
+# 2183 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_42, MSGBOX_DEFAULT
 	goto EventScript_Settings_113
 
 EventScript_Settings_116:
-# 2222 "data/scripts/battle_labyrinth.pory"
+# 2213 "data/scripts/battle_labyrinth.pory"
 	compare VAR_TEMP_1, 0
 	goto_if_eq EventScript_Settings_194
-# 2225 "data/scripts/battle_labyrinth.pory"
+# 2216 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_50, MSGBOX_YESNO
-# 2226 "data/scripts/battle_labyrinth.pory"
+# 2217 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_272
 	goto EventScript_Settings_1
 
 EventScript_Settings_119:
-# 2251 "data/scripts/battle_labyrinth.pory"
+# 2242 "data/scripts/battle_labyrinth.pory"
 	compare VAR_TEMP_1, 0
 	goto_if_eq EventScript_Settings_199
-# 2285 "data/scripts/battle_labyrinth.pory"
+# 2276 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_59, MSGBOX_YESNO
-# 2286 "data/scripts/battle_labyrinth.pory"
+# 2277 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_278
 	goto EventScript_Settings_1
 
 EventScript_Settings_122:
-# 2315 "data/scripts/battle_labyrinth.pory"
+# 2306 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_66, MSGBOX_DEFAULT
-# 2316 "data/scripts/battle_labyrinth.pory"
+# 2307 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_67, MSGBOX_YESNO
-# 2317 "data/scripts/battle_labyrinth.pory"
+# 2308 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_205
 	goto EventScript_Settings_1
 
 EventScript_Settings_125:
-# 2344 "data/scripts/battle_labyrinth.pory"
+# 2335 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_73, MSGBOX_YESNO
-# 2345 "data/scripts/battle_labyrinth.pory"
+# 2336 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_209
 	goto EventScript_Settings_1
 
 EventScript_Settings_128:
-# 2365 "data/scripts/battle_labyrinth.pory"
+# 2356 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_78, MSGBOX_DEFAULT
-# 2366 "data/scripts/battle_labyrinth.pory"
+# 2357 "data/scripts/battle_labyrinth.pory"
 	goto_if_unset FLAG_SETTINGS_BRUTAL, EventScript_Settings_213
-# 2375 "data/scripts/battle_labyrinth.pory"
+# 2366 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT
 	goto EventScript_Settings_1
 
 EventScript_Settings_133:
-# 2390 "data/scripts/battle_labyrinth.pory"
+# 2381 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_85, MSGBOX_DEFAULT
-# 2391 "data/scripts/battle_labyrinth.pory"
+# 2382 "data/scripts/battle_labyrinth.pory"
 	goto_if_unset FLAG_SETTINGS_BRUTAL, EventScript_Settings_218
-# 2400 "data/scripts/battle_labyrinth.pory"
+# 2391 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT
 	goto EventScript_Settings_1
 
 EventScript_Settings_138:
-# 2415 "data/scripts/battle_labyrinth.pory"
+# 2406 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_92, MSGBOX_DEFAULT
-# 2416 "data/scripts/battle_labyrinth.pory"
+# 2407 "data/scripts/battle_labyrinth.pory"
 	goto_if_unset FLAG_SETTINGS_BRUTAL, EventScript_Settings_223
-# 2425 "data/scripts/battle_labyrinth.pory"
+# 2416 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT
 	goto EventScript_Settings_1
 
 EventScript_Settings_143:
-# 2440 "data/scripts/battle_labyrinth.pory"
+# 2431 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_99, MSGBOX_DEFAULT
-# 2441 "data/scripts/battle_labyrinth.pory"
+# 2432 "data/scripts/battle_labyrinth.pory"
 	goto_if_unset FLAG_SETTINGS_BRUTAL, EventScript_Settings_228
-# 2450 "data/scripts/battle_labyrinth.pory"
+# 2441 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT
 	goto EventScript_Settings_1
 
 EventScript_Settings_148:
-# 2465 "data/scripts/battle_labyrinth.pory"
+# 2456 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_106, MSGBOX_DEFAULT
-# 2466 "data/scripts/battle_labyrinth.pory"
+# 2457 "data/scripts/battle_labyrinth.pory"
 	goto_if_unset FLAG_SETTINGS_BRUTAL, EventScript_Settings_233
-# 2475 "data/scripts/battle_labyrinth.pory"
+# 2466 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT
 	goto EventScript_Settings_1
 
 EventScript_Settings_153:
-# 2490 "data/scripts/battle_labyrinth.pory"
+# 2481 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_113, MSGBOX_DEFAULT
-# 2491 "data/scripts/battle_labyrinth.pory"
+# 2482 "data/scripts/battle_labyrinth.pory"
 	goto_if_unset FLAG_SETTINGS_BRUTAL, EventScript_Settings_238
-# 2500 "data/scripts/battle_labyrinth.pory"
+# 2491 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT
 	goto EventScript_Settings_1
 
 EventScript_Settings_158:
-# 2519 "data/scripts/battle_labyrinth.pory"
+# 2510 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_120, MSGBOX_DEFAULT
-# 2520 "data/scripts/battle_labyrinth.pory"
+# 2511 "data/scripts/battle_labyrinth.pory"
 	goto_if_unset FLAG_SETTINGS_BRUTAL, EventScript_Settings_244
-# 2529 "data/scripts/battle_labyrinth.pory"
+# 2520 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT
 	goto EventScript_Settings_1
 
 EventScript_Settings_163:
-# 2544 "data/scripts/battle_labyrinth.pory"
+# 2535 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_127, MSGBOX_DEFAULT
-# 2545 "data/scripts/battle_labyrinth.pory"
+# 2536 "data/scripts/battle_labyrinth.pory"
 	goto_if_unset FLAG_SETTINGS_BRUTAL, EventScript_Settings_249
-# 2554 "data/scripts/battle_labyrinth.pory"
+# 2545 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT
 	goto EventScript_Settings_1
 
 EventScript_Settings_168:
-# 2569 "data/scripts/battle_labyrinth.pory"
+# 2560 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_134, MSGBOX_DEFAULT
-# 2570 "data/scripts/battle_labyrinth.pory"
+# 2561 "data/scripts/battle_labyrinth.pory"
 	goto_if_unset FLAG_SETTINGS_BRUTAL, EventScript_Settings_254
-# 2579 "data/scripts/battle_labyrinth.pory"
+# 2570 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT
 	goto EventScript_Settings_1
 
 EventScript_Settings_173:
-# 2594 "data/scripts/battle_labyrinth.pory"
+# 2585 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_141, MSGBOX_DEFAULT
-# 2595 "data/scripts/battle_labyrinth.pory"
+# 2586 "data/scripts/battle_labyrinth.pory"
 	goto_if_unset FLAG_SETTINGS_BRUTAL, EventScript_Settings_259
-# 2604 "data/scripts/battle_labyrinth.pory"
+# 2595 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT
 	goto EventScript_Settings_1
 
@@ -4911,679 +4891,679 @@ EventScript_Settings_178:
 	return
 
 EventScript_Settings_181:
-# 2159 "data/scripts/battle_labyrinth.pory"
+# 2150 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_35, MSGBOX_YESNO
-# 2160 "data/scripts/battle_labyrinth.pory"
+# 2151 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_264
 	goto EventScript_Settings_1
 
 EventScript_Settings_183:
-# 2169 "data/scripts/battle_labyrinth.pory"
+# 2160 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_CannotChangeSettingInfinite, MSGBOX_DEFAULT
 	goto EventScript_Settings_1
 
 EventScript_Settings_186:
-# 2196 "data/scripts/battle_labyrinth.pory"
+# 2187 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_43, MSGBOX_YESNO
-# 2197 "data/scripts/battle_labyrinth.pory"
+# 2188 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_268
 	goto EventScript_Settings_1
 
 EventScript_Settings_189:
-# 2187 "data/scripts/battle_labyrinth.pory"
+# 2178 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_40, MSGBOX_DEFAULT
 	goto EventScript_Settings_113
 
 EventScript_Settings_190:
-# 2189 "data/scripts/battle_labyrinth.pory"
+# 2180 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_41, MSGBOX_DEFAULT
 	goto EventScript_Settings_113
 
 EventScript_Settings_194:
-# 2223 "data/scripts/battle_labyrinth.pory"
+# 2214 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_49, MSGBOX_DEFAULT
 	goto EventScript_Settings_1
 
 EventScript_Settings_197:
-# 2239 "data/scripts/battle_labyrinth.pory"
+# 2230 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_54, MSGBOX_YESNO
-# 2240 "data/scripts/battle_labyrinth.pory"
+# 2231 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_274
 	goto EventScript_Settings_1
 
 EventScript_Settings_199:
-# 2252 "data/scripts/battle_labyrinth.pory"
+# 2243 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_56, MSGBOX_DEFAULT
-# 2253 "data/scripts/battle_labyrinth.pory"
+# 2244 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_57, MSGBOX_YESNO
-# 2254 "data/scripts/battle_labyrinth.pory"
+# 2245 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_276
 	goto EventScript_Settings_1
 
 EventScript_Settings_202:
-# 2298 "data/scripts/battle_labyrinth.pory"
+# 2289 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT
 	goto EventScript_Settings_1
 
 EventScript_Settings_205:
-# 2318 "data/scripts/battle_labyrinth.pory"
+# 2309 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2319 "data/scripts/battle_labyrinth.pory"
+# 2310 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_68, MSGBOX_DEFAULT
-# 2320 "data/scripts/battle_labyrinth.pory"
+# 2311 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2321 "data/scripts/battle_labyrinth.pory"
+# 2312 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_FULL_INFO
-# 2322 "data/scripts/battle_labyrinth.pory"
+# 2313 "data/scripts/battle_labyrinth.pory"
 	compare VAR_ZONE, 3
 	goto_if_lt EventScript_Settings_282
 	goto EventScript_Settings_1
 
 EventScript_Settings_207:
-# 2331 "data/scripts/battle_labyrinth.pory"
+# 2322 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2332 "data/scripts/battle_labyrinth.pory"
+# 2323 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_71, MSGBOX_DEFAULT
-# 2333 "data/scripts/battle_labyrinth.pory"
+# 2324 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2334 "data/scripts/battle_labyrinth.pory"
+# 2325 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_FULL_INFO
-# 2335 "data/scripts/battle_labyrinth.pory"
+# 2326 "data/scripts/battle_labyrinth.pory"
 	compare VAR_ZONE, 3
 	goto_if_lt EventScript_Settings_284
 	goto EventScript_Settings_1
 
 EventScript_Settings_209:
-# 2346 "data/scripts/battle_labyrinth.pory"
+# 2337 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2347 "data/scripts/battle_labyrinth.pory"
+# 2338 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_74, MSGBOX_DEFAULT
-# 2348 "data/scripts/battle_labyrinth.pory"
+# 2339 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2349 "data/scripts/battle_labyrinth.pory"
+# 2340 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_EXP_ALL
 	goto EventScript_Settings_1
 
 EventScript_Settings_211:
-# 2354 "data/scripts/battle_labyrinth.pory"
+# 2345 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2355 "data/scripts/battle_labyrinth.pory"
+# 2346 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_76, MSGBOX_DEFAULT
-# 2356 "data/scripts/battle_labyrinth.pory"
+# 2347 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2357 "data/scripts/battle_labyrinth.pory"
+# 2348 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_EXP_ALL
 	goto EventScript_Settings_1
 
 EventScript_Settings_213:
-# 2367 "data/scripts/battle_labyrinth.pory"
+# 2358 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_79, MSGBOX_YESNO
-# 2368 "data/scripts/battle_labyrinth.pory"
+# 2359 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_286
 	goto EventScript_Settings_1
 
 EventScript_Settings_216:
-# 2381 "data/scripts/battle_labyrinth.pory"
+# 2372 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2382 "data/scripts/battle_labyrinth.pory"
+# 2373 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_83, MSGBOX_DEFAULT
-# 2383 "data/scripts/battle_labyrinth.pory"
+# 2374 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2384 "data/scripts/battle_labyrinth.pory"
+# 2375 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_CHALLENGE
 	goto EventScript_Settings_1
 
 EventScript_Settings_218:
-# 2392 "data/scripts/battle_labyrinth.pory"
+# 2383 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_86, MSGBOX_YESNO
-# 2393 "data/scripts/battle_labyrinth.pory"
+# 2384 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_288
 	goto EventScript_Settings_1
 
 EventScript_Settings_221:
-# 2406 "data/scripts/battle_labyrinth.pory"
+# 2397 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2407 "data/scripts/battle_labyrinth.pory"
+# 2398 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_90, MSGBOX_DEFAULT
-# 2408 "data/scripts/battle_labyrinth.pory"
+# 2399 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2409 "data/scripts/battle_labyrinth.pory"
+# 2400 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_GAUNTLET
 	goto EventScript_Settings_1
 
 EventScript_Settings_223:
-# 2417 "data/scripts/battle_labyrinth.pory"
+# 2408 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_93, MSGBOX_YESNO
-# 2418 "data/scripts/battle_labyrinth.pory"
+# 2409 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_290
 	goto EventScript_Settings_1
 
 EventScript_Settings_226:
-# 2431 "data/scripts/battle_labyrinth.pory"
+# 2422 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2432 "data/scripts/battle_labyrinth.pory"
+# 2423 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_97, MSGBOX_DEFAULT
-# 2433 "data/scripts/battle_labyrinth.pory"
+# 2424 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2434 "data/scripts/battle_labyrinth.pory"
+# 2425 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_ANTIDOCTOR
 	goto EventScript_Settings_1
 
 EventScript_Settings_228:
-# 2442 "data/scripts/battle_labyrinth.pory"
+# 2433 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_100, MSGBOX_YESNO
-# 2443 "data/scripts/battle_labyrinth.pory"
+# 2434 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_292
 	goto EventScript_Settings_1
 
 EventScript_Settings_231:
-# 2456 "data/scripts/battle_labyrinth.pory"
+# 2447 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2457 "data/scripts/battle_labyrinth.pory"
+# 2448 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_104, MSGBOX_DEFAULT
-# 2458 "data/scripts/battle_labyrinth.pory"
+# 2449 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2459 "data/scripts/battle_labyrinth.pory"
+# 2450 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_CLUMSY
 	goto EventScript_Settings_1
 
 EventScript_Settings_233:
-# 2467 "data/scripts/battle_labyrinth.pory"
+# 2458 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_107, MSGBOX_YESNO
-# 2468 "data/scripts/battle_labyrinth.pory"
+# 2459 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_294
 	goto EventScript_Settings_1
 
 EventScript_Settings_236:
-# 2481 "data/scripts/battle_labyrinth.pory"
+# 2472 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2482 "data/scripts/battle_labyrinth.pory"
+# 2473 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_111, MSGBOX_DEFAULT
-# 2483 "data/scripts/battle_labyrinth.pory"
+# 2474 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2484 "data/scripts/battle_labyrinth.pory"
+# 2475 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_EFFORTLESS
 	goto EventScript_Settings_1
 
 EventScript_Settings_238:
-# 2492 "data/scripts/battle_labyrinth.pory"
+# 2483 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_114, MSGBOX_YESNO
-# 2493 "data/scripts/battle_labyrinth.pory"
+# 2484 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_296
 	goto EventScript_Settings_1
 
 EventScript_Settings_241:
-# 2505 "data/scripts/battle_labyrinth.pory"
+# 2496 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_117, MSGBOX_YESNO
-# 2506 "data/scripts/battle_labyrinth.pory"
+# 2497 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_298
 	goto EventScript_Settings_1
 
 EventScript_Settings_244:
-# 2521 "data/scripts/battle_labyrinth.pory"
+# 2512 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_121, MSGBOX_YESNO
-# 2522 "data/scripts/battle_labyrinth.pory"
+# 2513 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_300
 	goto EventScript_Settings_1
 
 EventScript_Settings_247:
-# 2535 "data/scripts/battle_labyrinth.pory"
+# 2526 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2536 "data/scripts/battle_labyrinth.pory"
+# 2527 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_125, MSGBOX_DEFAULT
-# 2537 "data/scripts/battle_labyrinth.pory"
+# 2528 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2538 "data/scripts/battle_labyrinth.pory"
+# 2529 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_ANTIGRIND
 	goto EventScript_Settings_1
 
 EventScript_Settings_249:
-# 2546 "data/scripts/battle_labyrinth.pory"
+# 2537 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_128, MSGBOX_YESNO
-# 2547 "data/scripts/battle_labyrinth.pory"
+# 2538 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_302
 	goto EventScript_Settings_1
 
 EventScript_Settings_252:
-# 2560 "data/scripts/battle_labyrinth.pory"
+# 2551 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2561 "data/scripts/battle_labyrinth.pory"
+# 2552 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_132, MSGBOX_DEFAULT
-# 2562 "data/scripts/battle_labyrinth.pory"
+# 2553 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2563 "data/scripts/battle_labyrinth.pory"
+# 2554 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_SINGLE_USE
 	goto EventScript_Settings_1
 
 EventScript_Settings_254:
-# 2571 "data/scripts/battle_labyrinth.pory"
+# 2562 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_135, MSGBOX_YESNO
-# 2572 "data/scripts/battle_labyrinth.pory"
+# 2563 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_304
 	goto EventScript_Settings_1
 
 EventScript_Settings_257:
-# 2585 "data/scripts/battle_labyrinth.pory"
+# 2576 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2586 "data/scripts/battle_labyrinth.pory"
+# 2577 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_139, MSGBOX_DEFAULT
-# 2587 "data/scripts/battle_labyrinth.pory"
+# 2578 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2588 "data/scripts/battle_labyrinth.pory"
+# 2579 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_POOR
 	goto EventScript_Settings_1
 
 EventScript_Settings_259:
-# 2596 "data/scripts/battle_labyrinth.pory"
+# 2587 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_142, MSGBOX_YESNO
-# 2597 "data/scripts/battle_labyrinth.pory"
+# 2588 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_306
 	goto EventScript_Settings_1
 
 EventScript_Settings_262:
-# 2610 "data/scripts/battle_labyrinth.pory"
+# 2601 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2611 "data/scripts/battle_labyrinth.pory"
+# 2602 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_146, MSGBOX_DEFAULT
-# 2612 "data/scripts/battle_labyrinth.pory"
+# 2603 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2613 "data/scripts/battle_labyrinth.pory"
+# 2604 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_INDEPENDENT
 	goto EventScript_Settings_1
 
 EventScript_Settings_264:
-# 2161 "data/scripts/battle_labyrinth.pory"
+# 2152 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2162 "data/scripts/battle_labyrinth.pory"
+# 2153 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_36, MSGBOX_DEFAULT
-# 2163 "data/scripts/battle_labyrinth.pory"
+# 2154 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2164 "data/scripts/battle_labyrinth.pory"
+# 2155 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_BRUTAL
 	goto EventScript_Settings_1
 
 EventScript_Settings_266:
-# 2173 "data/scripts/battle_labyrinth.pory"
+# 2164 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_38, MSGBOX_YESNO
-# 2174 "data/scripts/battle_labyrinth.pory"
+# 2165 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_308
 	goto EventScript_Settings_1
 
 EventScript_Settings_268:
-# 2198 "data/scripts/battle_labyrinth.pory"
+# 2189 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_44, MSGBOX_YESNO
-# 2199 "data/scripts/battle_labyrinth.pory"
+# 2190 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_310
 	goto EventScript_Settings_1
 
 EventScript_Settings_270:
-# 2210 "data/scripts/battle_labyrinth.pory"
+# 2201 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_47, MSGBOX_YESNO
-# 2211 "data/scripts/battle_labyrinth.pory"
+# 2202 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_312
 	goto EventScript_Settings_1
 
 EventScript_Settings_272:
-# 2227 "data/scripts/battle_labyrinth.pory"
+# 2218 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_51, MSGBOX_YESNO
-# 2228 "data/scripts/battle_labyrinth.pory"
+# 2219 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_314
 	goto EventScript_Settings_1
 
 EventScript_Settings_274:
-# 2241 "data/scripts/battle_labyrinth.pory"
+# 2232 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2242 "data/scripts/battle_labyrinth.pory"
+# 2233 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_55, MSGBOX_DEFAULT
-# 2243 "data/scripts/battle_labyrinth.pory"
+# 2234 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2244 "data/scripts/battle_labyrinth.pory"
+# 2235 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_RANDOMIZER
 	goto EventScript_Settings_1
 
 EventScript_Settings_276:
+# 2246 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_FULL_RESTORE, 100
+# 2247 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_FULL_RESTORE, 100
+# 2248 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_FULL_RESTORE, 100
+# 2249 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_FULL_RESTORE, 100
+# 2250 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_FULL_RESTORE, 100
+# 2251 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_FULL_RESTORE, 100
+# 2252 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_FULL_RESTORE, 100
+# 2253 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_FULL_RESTORE, 100
+# 2254 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_FULL_RESTORE, 100
 # 2255 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_FULL_RESTORE, 100
+	additem ITEM_MAX_ELIXIR, 100
 # 2256 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_FULL_RESTORE, 100
+	additem ITEM_MAX_ELIXIR, 100
 # 2257 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_FULL_RESTORE, 100
+	additem ITEM_MAX_ELIXIR, 100
 # 2258 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_FULL_RESTORE, 100
+	additem ITEM_MAX_ELIXIR, 100
 # 2259 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_FULL_RESTORE, 100
+	additem ITEM_MAX_ELIXIR, 100
 # 2260 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_FULL_RESTORE, 100
+	additem ITEM_MAX_ELIXIR, 100
 # 2261 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_FULL_RESTORE, 100
+	additem ITEM_MAX_ELIXIR, 100
 # 2262 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_FULL_RESTORE, 100
+	additem ITEM_MAX_ELIXIR, 100
 # 2263 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_FULL_RESTORE, 100
+	additem ITEM_MAX_ELIXIR, 100
 # 2264 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_ELIXIR, 100
+	additem ITEM_MAX_REPEL, 100
 # 2265 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_ELIXIR, 100
+	additem ITEM_MAX_REPEL, 100
 # 2266 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_ELIXIR, 100
+	additem ITEM_MAX_REPEL, 100
 # 2267 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_ELIXIR, 100
+	additem ITEM_MAX_REPEL, 100
 # 2268 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_ELIXIR, 100
+	additem ITEM_MAX_REPEL, 100
 # 2269 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_ELIXIR, 100
+	additem ITEM_MAX_REPEL, 100
 # 2270 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_ELIXIR, 100
+	additem ITEM_MAX_REPEL, 100
 # 2271 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_ELIXIR, 100
+	additem ITEM_MAX_REPEL, 100
 # 2272 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_ELIXIR, 100
+	additem ITEM_MAX_REPEL, 100
 # 2273 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_REPEL, 100
-# 2274 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_REPEL, 100
-# 2275 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_REPEL, 100
-# 2276 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_REPEL, 100
-# 2277 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_REPEL, 100
-# 2278 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_REPEL, 100
-# 2279 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_REPEL, 100
-# 2280 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_REPEL, 100
-# 2281 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAX_REPEL, 100
-# 2282 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_58, MSGBOX_DEFAULT
 	goto EventScript_Settings_1
 
 EventScript_Settings_278:
-# 2287 "data/scripts/battle_labyrinth.pory"
+# 2278 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_60, MSGBOX_YESNO
-# 2288 "data/scripts/battle_labyrinth.pory"
+# 2279 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_316
 	goto EventScript_Settings_1
 
 EventScript_Settings_280:
-# 2302 "data/scripts/battle_labyrinth.pory"
+# 2293 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_63, MSGBOX_YESNO
-# 2303 "data/scripts/battle_labyrinth.pory"
+# 2294 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_Settings_318
 	goto EventScript_Settings_1
 
 EventScript_Settings_282:
-# 2323 "data/scripts/battle_labyrinth.pory"
+# 2314 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SYS_DEXNAV_GET
-# 2324 "data/scripts/battle_labyrinth.pory"
+# 2315 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SYS_DETECTOR_MODE
 	goto EventScript_Settings_1
 
 EventScript_Settings_284:
-# 2336 "data/scripts/battle_labyrinth.pory"
+# 2327 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SYS_DEXNAV_GET
-# 2337 "data/scripts/battle_labyrinth.pory"
+# 2328 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SYS_DETECTOR_MODE
 	goto EventScript_Settings_1
 
 EventScript_Settings_286:
-# 2369 "data/scripts/battle_labyrinth.pory"
+# 2360 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2370 "data/scripts/battle_labyrinth.pory"
+# 2361 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_80, MSGBOX_DEFAULT
-# 2371 "data/scripts/battle_labyrinth.pory"
+# 2362 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2372 "data/scripts/battle_labyrinth.pory"
+# 2363 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_CHALLENGE
 	goto EventScript_Settings_1
 
 EventScript_Settings_288:
-# 2394 "data/scripts/battle_labyrinth.pory"
+# 2385 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2395 "data/scripts/battle_labyrinth.pory"
+# 2386 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_87, MSGBOX_DEFAULT
-# 2396 "data/scripts/battle_labyrinth.pory"
+# 2387 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2397 "data/scripts/battle_labyrinth.pory"
+# 2388 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_GAUNTLET
 	goto EventScript_Settings_1
 
 EventScript_Settings_290:
-# 2419 "data/scripts/battle_labyrinth.pory"
+# 2410 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2420 "data/scripts/battle_labyrinth.pory"
+# 2411 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_94, MSGBOX_DEFAULT
-# 2421 "data/scripts/battle_labyrinth.pory"
+# 2412 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2422 "data/scripts/battle_labyrinth.pory"
+# 2413 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_ANTIDOCTOR
 	goto EventScript_Settings_1
 
 EventScript_Settings_292:
-# 2444 "data/scripts/battle_labyrinth.pory"
+# 2435 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2445 "data/scripts/battle_labyrinth.pory"
+# 2436 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_101, MSGBOX_DEFAULT
-# 2446 "data/scripts/battle_labyrinth.pory"
+# 2437 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2447 "data/scripts/battle_labyrinth.pory"
+# 2438 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_CLUMSY
 	goto EventScript_Settings_1
 
 EventScript_Settings_294:
-# 2469 "data/scripts/battle_labyrinth.pory"
+# 2460 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2470 "data/scripts/battle_labyrinth.pory"
+# 2461 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_108, MSGBOX_DEFAULT
-# 2471 "data/scripts/battle_labyrinth.pory"
+# 2462 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2472 "data/scripts/battle_labyrinth.pory"
+# 2463 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_EFFORTLESS
 	goto EventScript_Settings_1
 
 EventScript_Settings_296:
-# 2494 "data/scripts/battle_labyrinth.pory"
+# 2485 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2495 "data/scripts/battle_labyrinth.pory"
+# 2486 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_115, MSGBOX_DEFAULT
-# 2496 "data/scripts/battle_labyrinth.pory"
+# 2487 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2497 "data/scripts/battle_labyrinth.pory"
+# 2488 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_RED_THUMB
 	goto EventScript_Settings_1
 
 EventScript_Settings_298:
-# 2507 "data/scripts/battle_labyrinth.pory"
+# 2498 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2508 "data/scripts/battle_labyrinth.pory"
+# 2499 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_118, MSGBOX_DEFAULT
-# 2509 "data/scripts/battle_labyrinth.pory"
+# 2500 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2510 "data/scripts/battle_labyrinth.pory"
+# 2501 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_RED_THUMB
 	goto EventScript_Settings_1
 
 EventScript_Settings_300:
-# 2523 "data/scripts/battle_labyrinth.pory"
+# 2514 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2524 "data/scripts/battle_labyrinth.pory"
+# 2515 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_122, MSGBOX_DEFAULT
-# 2525 "data/scripts/battle_labyrinth.pory"
+# 2516 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2526 "data/scripts/battle_labyrinth.pory"
+# 2517 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_ANTIGRIND
 	goto EventScript_Settings_1
 
 EventScript_Settings_302:
-# 2548 "data/scripts/battle_labyrinth.pory"
+# 2539 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2549 "data/scripts/battle_labyrinth.pory"
+# 2540 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_129, MSGBOX_DEFAULT
-# 2550 "data/scripts/battle_labyrinth.pory"
+# 2541 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2551 "data/scripts/battle_labyrinth.pory"
+# 2542 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_SINGLE_USE
 	goto EventScript_Settings_1
 
 EventScript_Settings_304:
-# 2573 "data/scripts/battle_labyrinth.pory"
+# 2564 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2574 "data/scripts/battle_labyrinth.pory"
+# 2565 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_136, MSGBOX_DEFAULT
-# 2575 "data/scripts/battle_labyrinth.pory"
+# 2566 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2576 "data/scripts/battle_labyrinth.pory"
+# 2567 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_POOR
 	goto EventScript_Settings_1
 
 EventScript_Settings_306:
-# 2598 "data/scripts/battle_labyrinth.pory"
+# 2589 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2599 "data/scripts/battle_labyrinth.pory"
+# 2590 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_143, MSGBOX_DEFAULT
-# 2600 "data/scripts/battle_labyrinth.pory"
+# 2591 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2601 "data/scripts/battle_labyrinth.pory"
+# 2592 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_INDEPENDENT
 	goto EventScript_Settings_1
 
 EventScript_Settings_308:
-# 2175 "data/scripts/battle_labyrinth.pory"
+# 2166 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2176 "data/scripts/battle_labyrinth.pory"
+# 2167 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_39, MSGBOX_DEFAULT
-# 2177 "data/scripts/battle_labyrinth.pory"
+# 2168 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2178 "data/scripts/battle_labyrinth.pory"
+# 2169 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_BRUTAL
 	goto EventScript_Settings_1
 
 EventScript_Settings_310:
-# 2200 "data/scripts/battle_labyrinth.pory"
+# 2191 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2201 "data/scripts/battle_labyrinth.pory"
+# 2192 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_45, MSGBOX_DEFAULT
-# 2202 "data/scripts/battle_labyrinth.pory"
+# 2193 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2203 "data/scripts/battle_labyrinth.pory"
+# 2194 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_NUZLOCKE
-# 2204 "data/scripts/battle_labyrinth.pory"
+# 2195 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_ZONE13C_NUZLOCKE_FOSSIL_RECEIVED
 	goto EventScript_Settings_1
 
 EventScript_Settings_312:
-# 2212 "data/scripts/battle_labyrinth.pory"
+# 2203 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2213 "data/scripts/battle_labyrinth.pory"
+# 2204 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_48, MSGBOX_DEFAULT
-# 2214 "data/scripts/battle_labyrinth.pory"
+# 2205 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2215 "data/scripts/battle_labyrinth.pory"
+# 2206 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_NUZLOCKE
 	goto EventScript_Settings_1
 
 EventScript_Settings_314:
-# 2229 "data/scripts/battle_labyrinth.pory"
+# 2220 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2230 "data/scripts/battle_labyrinth.pory"
+# 2221 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_52, MSGBOX_DEFAULT
-# 2231 "data/scripts/battle_labyrinth.pory"
+# 2222 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2232 "data/scripts/battle_labyrinth.pory"
+# 2223 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_RANDOMIZER
 	goto EventScript_Settings_1
 
 EventScript_Settings_316:
-# 2289 "data/scripts/battle_labyrinth.pory"
+# 2280 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_OFF
-# 2290 "data/scripts/battle_labyrinth.pory"
+# 2281 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_61, MSGBOX_DEFAULT
-# 2291 "data/scripts/battle_labyrinth.pory"
+# 2282 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2292 "data/scripts/battle_labyrinth.pory"
+# 2283 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SETTINGS_INFINITE
 	goto EventScript_Settings_1
 
 EventScript_Settings_318:
-# 2304 "data/scripts/battle_labyrinth.pory"
+# 2295 "data/scripts/battle_labyrinth.pory"
 	playse SE_PC_ON
-# 2305 "data/scripts/battle_labyrinth.pory"
+# 2296 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_Settings_Text_64, MSGBOX_DEFAULT
-# 2306 "data/scripts/battle_labyrinth.pory"
+# 2297 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 2307 "data/scripts/battle_labyrinth.pory"
+# 2298 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SETTINGS_INFINITE
 	goto EventScript_Settings_1
 
 
 EventScript_MusicMenu::
 EventScript_MusicMenu_1:
-# 2630 "data/scripts/battle_labyrinth.pory"
+# 2621 "data/scripts/battle_labyrinth.pory"
 	fadedefaultbgm
-# 2631 "data/scripts/battle_labyrinth.pory"
+# 2622 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_0
-# 2632 "data/scripts/battle_labyrinth.pory"
+# 2623 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, EventScript_MusicMenu_Text_1, EventScript_MusicMenu_Text_2, EventScript_MusicMenu_Text_3, EventScript_Shop_Marie_MainMenu_Text_20
-# 2633 "data/scripts/battle_labyrinth.pory"
+# 2624 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 2634 "data/scripts/battle_labyrinth.pory"
+# 2625 "data/scripts/battle_labyrinth.pory"
 	case 0, EventScript_MusicMenu_4
-# 2676 "data/scripts/battle_labyrinth.pory"
+# 2667 "data/scripts/battle_labyrinth.pory"
 	case 1, EventScript_MusicMenu_5
-# 2718 "data/scripts/battle_labyrinth.pory"
+# 2709 "data/scripts/battle_labyrinth.pory"
 	case 2, EventScript_MusicMenu_6
-# 2760 "data/scripts/battle_labyrinth.pory"
+# 2751 "data/scripts/battle_labyrinth.pory"
 	case 3, EventScript_MusicMenu_7
-# 2761 "data/scripts/battle_labyrinth.pory"
+# 2752 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, EventScript_MusicMenu_7
 	goto EventScript_MusicMenu_1
 
 EventScript_MusicMenu_4:
-# 2635 "data/scripts/battle_labyrinth.pory"
+# 2626 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 1
 EventScript_MusicMenu_8:
-# 2636 "data/scripts/battle_labyrinth.pory"
+# 2627 "data/scripts/battle_labyrinth.pory"
 	compare VAR_TEMP_0, 1
 	goto_if_eq EventScript_MusicMenu_9
 	goto EventScript_MusicMenu_1
 
 EventScript_MusicMenu_5:
-# 2677 "data/scripts/battle_labyrinth.pory"
+# 2668 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 1
 EventScript_MusicMenu_11:
-# 2678 "data/scripts/battle_labyrinth.pory"
+# 2669 "data/scripts/battle_labyrinth.pory"
 	compare VAR_TEMP_0, 1
 	goto_if_eq EventScript_MusicMenu_12
 	goto EventScript_MusicMenu_1
 
 EventScript_MusicMenu_6:
-# 2719 "data/scripts/battle_labyrinth.pory"
+# 2710 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 1
 EventScript_MusicMenu_14:
-# 2720 "data/scripts/battle_labyrinth.pory"
+# 2711 "data/scripts/battle_labyrinth.pory"
 	compare VAR_TEMP_0, 1
 	goto_if_eq EventScript_MusicMenu_15
 	goto EventScript_MusicMenu_1
@@ -5592,939 +5572,939 @@ EventScript_MusicMenu_7:
 	return
 
 EventScript_MusicMenu_9:
-# 2637 "data/scripts/battle_labyrinth.pory"
+# 2628 "data/scripts/battle_labyrinth.pory"
 	switch VAR_WILD_MUSIC
-# 2638 "data/scripts/battle_labyrinth.pory"
+# 2629 "data/scripts/battle_labyrinth.pory"
 	case 0, EventScript_MusicMenu_19
-# 2641 "data/scripts/battle_labyrinth.pory"
+# 2632 "data/scripts/battle_labyrinth.pory"
 	case 1, EventScript_MusicMenu_20
-# 2644 "data/scripts/battle_labyrinth.pory"
+# 2635 "data/scripts/battle_labyrinth.pory"
 	case 2, EventScript_MusicMenu_21
-# 2647 "data/scripts/battle_labyrinth.pory"
+# 2638 "data/scripts/battle_labyrinth.pory"
 	case 3, EventScript_MusicMenu_22
-# 2650 "data/scripts/battle_labyrinth.pory"
+# 2641 "data/scripts/battle_labyrinth.pory"
 	case 4, EventScript_MusicMenu_23
-# 2653 "data/scripts/battle_labyrinth.pory"
+# 2644 "data/scripts/battle_labyrinth.pory"
 	case 5, EventScript_MusicMenu_24
 EventScript_MusicMenu_17:
-# 2657 "data/scripts/battle_labyrinth.pory"
+# 2648 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_MusicMenu_Text_10, EventScript_MusicMenu_Text_11, EventScript_MusicMenu_Text_12, EventScript_MusicMenu_Text_13, EventScript_MusicMenu_Text_14, EventScript_MusicMenu_Text_15
-# 2658 "data/scripts/battle_labyrinth.pory"
+# 2649 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 2659 "data/scripts/battle_labyrinth.pory"
+# 2650 "data/scripts/battle_labyrinth.pory"
 	case 0, EventScript_MusicMenu_42
-# 2661 "data/scripts/battle_labyrinth.pory"
+# 2652 "data/scripts/battle_labyrinth.pory"
 	case 1, EventScript_MusicMenu_43
-# 2663 "data/scripts/battle_labyrinth.pory"
+# 2654 "data/scripts/battle_labyrinth.pory"
 	case 2, EventScript_MusicMenu_44
-# 2665 "data/scripts/battle_labyrinth.pory"
+# 2656 "data/scripts/battle_labyrinth.pory"
 	case 3, EventScript_MusicMenu_45
-# 2667 "data/scripts/battle_labyrinth.pory"
+# 2658 "data/scripts/battle_labyrinth.pory"
 	case 4, EventScript_MusicMenu_46
-# 2669 "data/scripts/battle_labyrinth.pory"
+# 2660 "data/scripts/battle_labyrinth.pory"
 	case 5, EventScript_MusicMenu_47
-# 2672 "data/scripts/battle_labyrinth.pory"
+# 2663 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, EventScript_MusicMenu_48
 	goto EventScript_MusicMenu_8
 
 EventScript_MusicMenu_12:
-# 2679 "data/scripts/battle_labyrinth.pory"
+# 2670 "data/scripts/battle_labyrinth.pory"
 	switch VAR_TRAINER_MUSIC
-# 2680 "data/scripts/battle_labyrinth.pory"
+# 2671 "data/scripts/battle_labyrinth.pory"
 	case 0, EventScript_MusicMenu_27
-# 2683 "data/scripts/battle_labyrinth.pory"
+# 2674 "data/scripts/battle_labyrinth.pory"
 	case 1, EventScript_MusicMenu_28
-# 2686 "data/scripts/battle_labyrinth.pory"
+# 2677 "data/scripts/battle_labyrinth.pory"
 	case 2, EventScript_MusicMenu_29
-# 2689 "data/scripts/battle_labyrinth.pory"
+# 2680 "data/scripts/battle_labyrinth.pory"
 	case 3, EventScript_MusicMenu_30
-# 2692 "data/scripts/battle_labyrinth.pory"
+# 2683 "data/scripts/battle_labyrinth.pory"
 	case 4, EventScript_MusicMenu_31
-# 2695 "data/scripts/battle_labyrinth.pory"
+# 2686 "data/scripts/battle_labyrinth.pory"
 	case 5, EventScript_MusicMenu_32
 EventScript_MusicMenu_25:
-# 2699 "data/scripts/battle_labyrinth.pory"
+# 2690 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_MusicMenu_Text_10, EventScript_MusicMenu_Text_11, EventScript_MusicMenu_Text_12, EventScript_MusicMenu_Text_13, EventScript_MusicMenu_Text_14, EventScript_MusicMenu_Text_15
-# 2700 "data/scripts/battle_labyrinth.pory"
+# 2691 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 2701 "data/scripts/battle_labyrinth.pory"
+# 2692 "data/scripts/battle_labyrinth.pory"
 	case 0, EventScript_MusicMenu_50
-# 2703 "data/scripts/battle_labyrinth.pory"
+# 2694 "data/scripts/battle_labyrinth.pory"
 	case 1, EventScript_MusicMenu_51
-# 2705 "data/scripts/battle_labyrinth.pory"
+# 2696 "data/scripts/battle_labyrinth.pory"
 	case 2, EventScript_MusicMenu_52
-# 2707 "data/scripts/battle_labyrinth.pory"
+# 2698 "data/scripts/battle_labyrinth.pory"
 	case 3, EventScript_MusicMenu_53
-# 2709 "data/scripts/battle_labyrinth.pory"
+# 2700 "data/scripts/battle_labyrinth.pory"
 	case 4, EventScript_MusicMenu_54
-# 2711 "data/scripts/battle_labyrinth.pory"
+# 2702 "data/scripts/battle_labyrinth.pory"
 	case 5, EventScript_MusicMenu_55
-# 2714 "data/scripts/battle_labyrinth.pory"
+# 2705 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, EventScript_MusicMenu_56
 	goto EventScript_MusicMenu_11
 
 EventScript_MusicMenu_15:
-# 2721 "data/scripts/battle_labyrinth.pory"
+# 2712 "data/scripts/battle_labyrinth.pory"
 	switch VAR_LEVIATHAN_MUSIC
-# 2722 "data/scripts/battle_labyrinth.pory"
+# 2713 "data/scripts/battle_labyrinth.pory"
 	case 0, EventScript_MusicMenu_35
-# 2725 "data/scripts/battle_labyrinth.pory"
+# 2716 "data/scripts/battle_labyrinth.pory"
 	case 1, EventScript_MusicMenu_36
-# 2728 "data/scripts/battle_labyrinth.pory"
+# 2719 "data/scripts/battle_labyrinth.pory"
 	case 2, EventScript_MusicMenu_37
-# 2731 "data/scripts/battle_labyrinth.pory"
+# 2722 "data/scripts/battle_labyrinth.pory"
 	case 3, EventScript_MusicMenu_38
-# 2734 "data/scripts/battle_labyrinth.pory"
+# 2725 "data/scripts/battle_labyrinth.pory"
 	case 4, EventScript_MusicMenu_39
-# 2737 "data/scripts/battle_labyrinth.pory"
+# 2728 "data/scripts/battle_labyrinth.pory"
 	case 5, EventScript_MusicMenu_40
 EventScript_MusicMenu_33:
-# 2741 "data/scripts/battle_labyrinth.pory"
+# 2732 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_MusicMenu_Text_10, EventScript_MusicMenu_Text_11, EventScript_MusicMenu_Text_12, EventScript_MusicMenu_Text_13, EventScript_MusicMenu_Text_14, EventScript_MusicMenu_Text_15
-# 2742 "data/scripts/battle_labyrinth.pory"
+# 2733 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 2743 "data/scripts/battle_labyrinth.pory"
+# 2734 "data/scripts/battle_labyrinth.pory"
 	case 0, EventScript_MusicMenu_58
-# 2745 "data/scripts/battle_labyrinth.pory"
+# 2736 "data/scripts/battle_labyrinth.pory"
 	case 1, EventScript_MusicMenu_59
-# 2747 "data/scripts/battle_labyrinth.pory"
+# 2738 "data/scripts/battle_labyrinth.pory"
 	case 2, EventScript_MusicMenu_60
-# 2749 "data/scripts/battle_labyrinth.pory"
+# 2740 "data/scripts/battle_labyrinth.pory"
 	case 3, EventScript_MusicMenu_61
-# 2751 "data/scripts/battle_labyrinth.pory"
+# 2742 "data/scripts/battle_labyrinth.pory"
 	case 4, EventScript_MusicMenu_62
-# 2753 "data/scripts/battle_labyrinth.pory"
+# 2744 "data/scripts/battle_labyrinth.pory"
 	case 5, EventScript_MusicMenu_63
-# 2756 "data/scripts/battle_labyrinth.pory"
+# 2747 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, EventScript_MusicMenu_64
 	goto EventScript_MusicMenu_14
 
 EventScript_MusicMenu_19:
-# 2639 "data/scripts/battle_labyrinth.pory"
+# 2630 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_VS_WILD, FALSE
-# 2640 "data/scripts/battle_labyrinth.pory"
+# 2631 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_4
 	goto EventScript_MusicMenu_17
 
 EventScript_MusicMenu_20:
-# 2642 "data/scripts/battle_labyrinth.pory"
+# 2633 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_RG_VS_WILD, FALSE
-# 2643 "data/scripts/battle_labyrinth.pory"
+# 2634 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_5
 	goto EventScript_MusicMenu_17
 
 EventScript_MusicMenu_21:
-# 2645 "data/scripts/battle_labyrinth.pory"
+# 2636 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_DP_VS_WILD, FALSE
-# 2646 "data/scripts/battle_labyrinth.pory"
+# 2637 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_6
 	goto EventScript_MusicMenu_17
 
 EventScript_MusicMenu_22:
-# 2648 "data/scripts/battle_labyrinth.pory"
+# 2639 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_HG_VS_WILD, FALSE
-# 2649 "data/scripts/battle_labyrinth.pory"
+# 2640 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_7
 	goto EventScript_MusicMenu_17
 
 EventScript_MusicMenu_23:
-# 2651 "data/scripts/battle_labyrinth.pory"
+# 2642 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_HG_VS_WILD_KANTO, FALSE
-# 2652 "data/scripts/battle_labyrinth.pory"
+# 2643 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_8
 	goto EventScript_MusicMenu_17
 
 EventScript_MusicMenu_24:
-# 2655 "data/scripts/battle_labyrinth.pory"
+# 2646 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_9
 	goto EventScript_MusicMenu_17
 
 EventScript_MusicMenu_27:
-# 2681 "data/scripts/battle_labyrinth.pory"
+# 2672 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_VS_TRAINER, FALSE
-# 2682 "data/scripts/battle_labyrinth.pory"
+# 2673 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_17
 	goto EventScript_MusicMenu_25
 
 EventScript_MusicMenu_28:
-# 2684 "data/scripts/battle_labyrinth.pory"
+# 2675 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_RG_VS_TRAINER, FALSE
-# 2685 "data/scripts/battle_labyrinth.pory"
+# 2676 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_18
 	goto EventScript_MusicMenu_25
 
 EventScript_MusicMenu_29:
-# 2687 "data/scripts/battle_labyrinth.pory"
+# 2678 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_DP_VS_TRAINER, FALSE
-# 2688 "data/scripts/battle_labyrinth.pory"
+# 2679 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_19
 	goto EventScript_MusicMenu_25
 
 EventScript_MusicMenu_30:
-# 2690 "data/scripts/battle_labyrinth.pory"
+# 2681 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_HG_VS_TRAINER, FALSE
-# 2691 "data/scripts/battle_labyrinth.pory"
+# 2682 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_20
 	goto EventScript_MusicMenu_25
 
 EventScript_MusicMenu_31:
-# 2693 "data/scripts/battle_labyrinth.pory"
+# 2684 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_HG_VS_TRAINER_KANTO, FALSE
-# 2694 "data/scripts/battle_labyrinth.pory"
+# 2685 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_21
 	goto EventScript_MusicMenu_25
 
 EventScript_MusicMenu_32:
-# 2697 "data/scripts/battle_labyrinth.pory"
+# 2688 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_22
 	goto EventScript_MusicMenu_25
 
 EventScript_MusicMenu_35:
-# 2723 "data/scripts/battle_labyrinth.pory"
+# 2714 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_VS_GYM_LEADER, FALSE
-# 2724 "data/scripts/battle_labyrinth.pory"
+# 2715 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_24
 	goto EventScript_MusicMenu_33
 
 EventScript_MusicMenu_36:
-# 2726 "data/scripts/battle_labyrinth.pory"
+# 2717 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_RG_VS_GYM_LEADER, FALSE
-# 2727 "data/scripts/battle_labyrinth.pory"
+# 2718 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_25
 	goto EventScript_MusicMenu_33
 
 EventScript_MusicMenu_37:
-# 2729 "data/scripts/battle_labyrinth.pory"
+# 2720 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_DP_VS_GYM_LEADER, FALSE
-# 2730 "data/scripts/battle_labyrinth.pory"
+# 2721 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_26
 	goto EventScript_MusicMenu_33
 
 EventScript_MusicMenu_38:
-# 2732 "data/scripts/battle_labyrinth.pory"
+# 2723 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_HG_VS_GYM_LEADER, FALSE
-# 2733 "data/scripts/battle_labyrinth.pory"
+# 2724 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_27
 	goto EventScript_MusicMenu_33
 
 EventScript_MusicMenu_39:
-# 2735 "data/scripts/battle_labyrinth.pory"
+# 2726 "data/scripts/battle_labyrinth.pory"
 	playbgm MUS_HG_VS_GYM_LEADER_KANTO, FALSE
-# 2736 "data/scripts/battle_labyrinth.pory"
+# 2727 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_28
 	goto EventScript_MusicMenu_33
 
 EventScript_MusicMenu_40:
-# 2739 "data/scripts/battle_labyrinth.pory"
+# 2730 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_29
 	goto EventScript_MusicMenu_33
 
 EventScript_MusicMenu_42:
-# 2660 "data/scripts/battle_labyrinth.pory"
+# 2651 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_WILD_MUSIC, 0
 	goto EventScript_MusicMenu_8
 
 EventScript_MusicMenu_43:
-# 2662 "data/scripts/battle_labyrinth.pory"
+# 2653 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_WILD_MUSIC, 1
 	goto EventScript_MusicMenu_8
 
 EventScript_MusicMenu_44:
-# 2664 "data/scripts/battle_labyrinth.pory"
+# 2655 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_WILD_MUSIC, 2
 	goto EventScript_MusicMenu_8
 
 EventScript_MusicMenu_45:
-# 2666 "data/scripts/battle_labyrinth.pory"
+# 2657 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_WILD_MUSIC, 3
 	goto EventScript_MusicMenu_8
 
 EventScript_MusicMenu_46:
-# 2668 "data/scripts/battle_labyrinth.pory"
+# 2659 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_WILD_MUSIC, 4
 	goto EventScript_MusicMenu_8
 
 EventScript_MusicMenu_47:
-# 2671 "data/scripts/battle_labyrinth.pory"
+# 2662 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_MusicMenu_Text_16, MSGBOX_DEFAULT
 	goto EventScript_MusicMenu_8
 
 EventScript_MusicMenu_48:
-# 2673 "data/scripts/battle_labyrinth.pory"
+# 2664 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 0
 	goto EventScript_MusicMenu_8
 
 EventScript_MusicMenu_50:
-# 2702 "data/scripts/battle_labyrinth.pory"
+# 2693 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TRAINER_MUSIC, 0
 	goto EventScript_MusicMenu_11
 
 EventScript_MusicMenu_51:
-# 2704 "data/scripts/battle_labyrinth.pory"
+# 2695 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TRAINER_MUSIC, 1
 	goto EventScript_MusicMenu_11
 
 EventScript_MusicMenu_52:
-# 2706 "data/scripts/battle_labyrinth.pory"
+# 2697 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TRAINER_MUSIC, 2
 	goto EventScript_MusicMenu_11
 
 EventScript_MusicMenu_53:
-# 2708 "data/scripts/battle_labyrinth.pory"
+# 2699 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TRAINER_MUSIC, 3
 	goto EventScript_MusicMenu_11
 
 EventScript_MusicMenu_54:
-# 2710 "data/scripts/battle_labyrinth.pory"
+# 2701 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TRAINER_MUSIC, 4
 	goto EventScript_MusicMenu_11
 
 EventScript_MusicMenu_55:
-# 2713 "data/scripts/battle_labyrinth.pory"
+# 2704 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_MusicMenu_Text_23, MSGBOX_DEFAULT
 	goto EventScript_MusicMenu_11
 
 EventScript_MusicMenu_56:
-# 2715 "data/scripts/battle_labyrinth.pory"
+# 2706 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 0
 	goto EventScript_MusicMenu_11
 
 EventScript_MusicMenu_58:
-# 2744 "data/scripts/battle_labyrinth.pory"
+# 2735 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVIATHAN_MUSIC, 0
 	goto EventScript_MusicMenu_14
 
 EventScript_MusicMenu_59:
-# 2746 "data/scripts/battle_labyrinth.pory"
+# 2737 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVIATHAN_MUSIC, 1
 	goto EventScript_MusicMenu_14
 
 EventScript_MusicMenu_60:
-# 2748 "data/scripts/battle_labyrinth.pory"
+# 2739 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVIATHAN_MUSIC, 2
 	goto EventScript_MusicMenu_14
 
 EventScript_MusicMenu_61:
-# 2750 "data/scripts/battle_labyrinth.pory"
+# 2741 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVIATHAN_MUSIC, 3
 	goto EventScript_MusicMenu_14
 
 EventScript_MusicMenu_62:
-# 2752 "data/scripts/battle_labyrinth.pory"
+# 2743 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVIATHAN_MUSIC, 4
 	goto EventScript_MusicMenu_14
 
 EventScript_MusicMenu_63:
-# 2755 "data/scripts/battle_labyrinth.pory"
+# 2746 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_MusicMenu_Text_30, MSGBOX_DEFAULT
 	goto EventScript_MusicMenu_14
 
 EventScript_MusicMenu_64:
-# 2757 "data/scripts/battle_labyrinth.pory"
+# 2748 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 0
 	goto EventScript_MusicMenu_14
 
 
 EventScript_SignsQuestGirl::
-# 2768 "data/scripts/battle_labyrinth.pory"
+# 2759 "data/scripts/battle_labyrinth.pory"
 	lock
-# 2769 "data/scripts/battle_labyrinth.pory"
+# 2760 "data/scripts/battle_labyrinth.pory"
 	faceplayer
-# 2770 "data/scripts/battle_labyrinth.pory"
+# 2761 "data/scripts/battle_labyrinth.pory"
 	questmenu QUEST_MENU_CHECK_UNLOCKED, QUEST_SIGNS
-# 2771 "data/scripts/battle_labyrinth.pory"
+# 2762 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq EventScript_SignsQuestGirl_2
 EventScript_SignsQuestGirl_1:
-# 2775 "data/scripts/battle_labyrinth.pory"
+# 2766 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_SignsQuestGirl_Text_1
-# 2776 "data/scripts/battle_labyrinth.pory"
+# 2767 "data/scripts/battle_labyrinth.pory"
 	release
 	end
 
 EventScript_SignsQuestGirl_2:
-# 2772 "data/scripts/battle_labyrinth.pory"
+# 2763 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_SignsQuestGirl_Text_0
-# 2773 "data/scripts/battle_labyrinth.pory"
+# 2764 "data/scripts/battle_labyrinth.pory"
 	startquest QUEST_SIGNS
 	goto EventScript_SignsQuestGirl_1
 
 
 EventScript_SavesQuestBoy::
-# 2781 "data/scripts/battle_labyrinth.pory"
+# 2772 "data/scripts/battle_labyrinth.pory"
 	lock
-# 2782 "data/scripts/battle_labyrinth.pory"
+# 2773 "data/scripts/battle_labyrinth.pory"
 	faceplayer
-# 2783 "data/scripts/battle_labyrinth.pory"
+# 2774 "data/scripts/battle_labyrinth.pory"
 	questmenu QUEST_MENU_CHECK_UNLOCKED, QUEST_SAVES
-# 2784 "data/scripts/battle_labyrinth.pory"
+# 2775 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq EventScript_SavesQuestBoy_2
 EventScript_SavesQuestBoy_1:
-# 2788 "data/scripts/battle_labyrinth.pory"
+# 2779 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_SavesQuestBoy_Text_1
-# 2789 "data/scripts/battle_labyrinth.pory"
+# 2780 "data/scripts/battle_labyrinth.pory"
 	release
 	end
 
 EventScript_SavesQuestBoy_2:
-# 2785 "data/scripts/battle_labyrinth.pory"
+# 2776 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_SavesQuestBoy_Text_0
-# 2786 "data/scripts/battle_labyrinth.pory"
+# 2777 "data/scripts/battle_labyrinth.pory"
 	startquest QUEST_SAVES
 	goto EventScript_SavesQuestBoy_1
 
 
 EventScript_PokedexQuestScientist::
-# 2794 "data/scripts/battle_labyrinth.pory"
+# 2785 "data/scripts/battle_labyrinth.pory"
 	lock
-# 2795 "data/scripts/battle_labyrinth.pory"
+# 2786 "data/scripts/battle_labyrinth.pory"
 	faceplayer
-# 2796 "data/scripts/battle_labyrinth.pory"
+# 2787 "data/scripts/battle_labyrinth.pory"
 	questmenu QUEST_MENU_CHECK_UNLOCKED, QUEST_POKEDEX
-# 2797 "data/scripts/battle_labyrinth.pory"
+# 2788 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq EventScript_PokedexQuestScientist_2
 EventScript_PokedexQuestScientist_1:
-# 2801 "data/scripts/battle_labyrinth.pory"
+# 2792 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_PokedexQuestScientist_Text_1
-# 2802 "data/scripts/battle_labyrinth.pory"
+# 2793 "data/scripts/battle_labyrinth.pory"
 	release
 	end
 
 EventScript_PokedexQuestScientist_2:
-# 2798 "data/scripts/battle_labyrinth.pory"
+# 2789 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_PokedexQuestScientist_Text_0
-# 2799 "data/scripts/battle_labyrinth.pory"
+# 2790 "data/scripts/battle_labyrinth.pory"
 	startquest QUEST_POKEDEX
 	goto EventScript_PokedexQuestScientist_1
 
 
 EventScript_WarpZone0::
-# 2807 "data/scripts/battle_labyrinth.pory"
+# 2798 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 2808 "data/scripts/battle_labyrinth.pory"
+# 2799 "data/scripts/battle_labyrinth.pory"
 	playmoncry SPECIES_PORYGON, 0
-# 2809 "data/scripts/battle_labyrinth.pory"
+# 2800 "data/scripts/battle_labyrinth.pory"
 	waitmoncry
-# 2810 "data/scripts/battle_labyrinth.pory"
+# 2801 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_IS_REVISITING_ZONE
-# 2811 "data/scripts/battle_labyrinth.pory"
+# 2802 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_REVISITING_ZONE, 0
-# 2812 "data/scripts/battle_labyrinth.pory"
+# 2803 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE0A, 1, 255, 255
-# 2813 "data/scripts/battle_labyrinth.pory"
+# 2804 "data/scripts/battle_labyrinth.pory"
 	releaseall
 	end
 
 
 EventScript_NuzlockeVerifyBuy::
-# 3066 "data/scripts/battle_labyrinth.pory"
+# 3057 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_NUZLOCKE, EventScript_NuzlockeVerifyBuy_2
 EventScript_NuzlockeVerifyBuy_1:
 	return
 
 EventScript_NuzlockeVerifyBuy_2:
-# 3067 "data/scripts/battle_labyrinth.pory"
+# 3058 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_NuzlockeVerifyBuy_Text_0, MSGBOX_YESNO
-# 3068 "data/scripts/battle_labyrinth.pory"
+# 3059 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq EventScript_NuzlockeVerifyBuy_4
 	goto EventScript_NuzlockeVerifyBuy_1
 
 EventScript_NuzlockeVerifyBuy_4:
-# 3069 "data/scripts/battle_labyrinth.pory"
+# 3060 "data/scripts/battle_labyrinth.pory"
 	hidemoneybox
-# 3070 "data/scripts/battle_labyrinth.pory"
+# 3061 "data/scripts/battle_labyrinth.pory"
 	release
 	end
 
 
 EventScript_NuzlockeVerifyGift::
-# 3078 "data/scripts/battle_labyrinth.pory"
+# 3069 "data/scripts/battle_labyrinth.pory"
 	goto_if_set FLAG_SETTINGS_NUZLOCKE, EventScript_NuzlockeVerifyGift_2
 EventScript_NuzlockeVerifyGift_1:
 	return
 
 EventScript_NuzlockeVerifyGift_2:
-# 3079 "data/scripts/battle_labyrinth.pory"
+# 3070 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_NuzlockeVerifyBuy_Text_0, MSGBOX_YESNO
-# 3080 "data/scripts/battle_labyrinth.pory"
+# 3071 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq EventScript_NuzlockeVerifyGift_4
 	goto EventScript_NuzlockeVerifyGift_1
 
 EventScript_NuzlockeVerifyGift_4:
-# 3081 "data/scripts/battle_labyrinth.pory"
+# 3072 "data/scripts/battle_labyrinth.pory"
 	release
 	end
 
 
 EventScript_PorygonExit::
-# 3089 "data/scripts/battle_labyrinth.pory"
+# 3080 "data/scripts/battle_labyrinth.pory"
 	lock
-# 3090 "data/scripts/battle_labyrinth.pory"
+# 3081 "data/scripts/battle_labyrinth.pory"
 	faceplayer
-# 3091 "data/scripts/battle_labyrinth.pory"
+# 3082 "data/scripts/battle_labyrinth.pory"
 	compare VAR_REVISITING_ZONE, 0
 	goto_if_ne EventScript_PorygonExit_2
 EventScript_PorygonExit_1:
-# 3094 "data/scripts/battle_labyrinth.pory"
+# 3085 "data/scripts/battle_labyrinth.pory"
 	call EventScript_MandatoryCheck
-# 3095 "data/scripts/battle_labyrinth.pory"
+# 3086 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_PorygonExit_Text_0, MSGBOX_YESNO
-# 3096 "data/scripts/battle_labyrinth.pory"
+# 3087 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_PorygonExit_5
 EventScript_PorygonExit_4:
-# 3166 "data/scripts/battle_labyrinth.pory"
+# 3157 "data/scripts/battle_labyrinth.pory"
 	release
 	end
 
 EventScript_PorygonExit_2:
-# 3092 "data/scripts/battle_labyrinth.pory"
+# 3083 "data/scripts/battle_labyrinth.pory"
 	goto EventScript_WarpZone0
 	goto EventScript_PorygonExit_1
 
 EventScript_PorygonExit_5:
-# 3097 "data/scripts/battle_labyrinth.pory"
+# 3088 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3098 "data/scripts/battle_labyrinth.pory"
+# 3089 "data/scripts/battle_labyrinth.pory"
 	playmoncry SPECIES_PORYGON, 0
-# 3099 "data/scripts/battle_labyrinth.pory"
+# 3090 "data/scripts/battle_labyrinth.pory"
 	waitmoncry
-# 3100 "data/scripts/battle_labyrinth.pory"
+# 3091 "data/scripts/battle_labyrinth.pory"
 	switch VAR_ZONE
-# 3101 "data/scripts/battle_labyrinth.pory"
+# 3092 "data/scripts/battle_labyrinth.pory"
 	case 1, EventScript_PorygonExit_8
-# 3104 "data/scripts/battle_labyrinth.pory"
+# 3095 "data/scripts/battle_labyrinth.pory"
 	case 2, EventScript_PorygonExit_9
-# 3107 "data/scripts/battle_labyrinth.pory"
+# 3098 "data/scripts/battle_labyrinth.pory"
 	case 3, EventScript_PorygonExit_10
-# 3111 "data/scripts/battle_labyrinth.pory"
+# 3102 "data/scripts/battle_labyrinth.pory"
 	case 4, EventScript_PorygonExit_11
-# 3114 "data/scripts/battle_labyrinth.pory"
+# 3105 "data/scripts/battle_labyrinth.pory"
 	case 5, EventScript_PorygonExit_12
-# 3117 "data/scripts/battle_labyrinth.pory"
+# 3108 "data/scripts/battle_labyrinth.pory"
 	case 6, EventScript_PorygonExit_13
-# 3121 "data/scripts/battle_labyrinth.pory"
+# 3112 "data/scripts/battle_labyrinth.pory"
 	case 7, EventScript_PorygonExit_14
-# 3125 "data/scripts/battle_labyrinth.pory"
+# 3116 "data/scripts/battle_labyrinth.pory"
 	case 9, EventScript_PorygonExit_15
-# 3128 "data/scripts/battle_labyrinth.pory"
+# 3119 "data/scripts/battle_labyrinth.pory"
 	case 10, EventScript_PorygonExit_16
-# 3132 "data/scripts/battle_labyrinth.pory"
+# 3123 "data/scripts/battle_labyrinth.pory"
 	case 11, EventScript_PorygonExit_17
-# 3135 "data/scripts/battle_labyrinth.pory"
+# 3126 "data/scripts/battle_labyrinth.pory"
 	case 12, EventScript_PorygonExit_18
-# 3140 "data/scripts/battle_labyrinth.pory"
+# 3131 "data/scripts/battle_labyrinth.pory"
 	case 13, EventScript_PorygonExit_19
-# 3143 "data/scripts/battle_labyrinth.pory"
+# 3134 "data/scripts/battle_labyrinth.pory"
 	case 15, EventScript_PorygonExit_20
-# 3146 "data/scripts/battle_labyrinth.pory"
+# 3137 "data/scripts/battle_labyrinth.pory"
 	case 16, EventScript_PorygonExit_21
-# 3149 "data/scripts/battle_labyrinth.pory"
+# 3140 "data/scripts/battle_labyrinth.pory"
 	case 17, EventScript_PorygonExit_22
-# 3152 "data/scripts/battle_labyrinth.pory"
+# 3143 "data/scripts/battle_labyrinth.pory"
 	case 18, EventScript_PorygonExit_23
-# 3156 "data/scripts/battle_labyrinth.pory"
+# 3147 "data/scripts/battle_labyrinth.pory"
 	case 20, EventScript_PorygonExit_24
-# 3157 "data/scripts/battle_labyrinth.pory"
+# 3148 "data/scripts/battle_labyrinth.pory"
 	case 21, EventScript_PorygonExit_24
-# 3158 "data/scripts/battle_labyrinth.pory"
+# 3149 "data/scripts/battle_labyrinth.pory"
 	case 22, EventScript_PorygonExit_24
-# 3159 "data/scripts/battle_labyrinth.pory"
+# 3150 "data/scripts/battle_labyrinth.pory"
 	case 23, EventScript_PorygonExit_24
-# 3160 "data/scripts/battle_labyrinth.pory"
+# 3151 "data/scripts/battle_labyrinth.pory"
 	case 24, EventScript_PorygonExit_24
-# 3161 "data/scripts/battle_labyrinth.pory"
+# 3152 "data/scripts/battle_labyrinth.pory"
 	case 25, EventScript_PorygonExit_24
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_8:
-# 3102 "data/scripts/battle_labyrinth.pory"
+# 3093 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE1SANCTUARY, 255, 38, 11
-# 3103 "data/scripts/battle_labyrinth.pory"
+# 3094 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_9:
-# 3105 "data/scripts/battle_labyrinth.pory"
+# 3096 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE2SANCTUARY, 255, 38, 11
-# 3106 "data/scripts/battle_labyrinth.pory"
+# 3097 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_10:
-# 3108 "data/scripts/battle_labyrinth.pory"
+# 3099 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_HIDE_ZONE2A_MAX
-# 3109 "data/scripts/battle_labyrinth.pory"
+# 3100 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE3SANCTUARY, 255, 38, 11
-# 3110 "data/scripts/battle_labyrinth.pory"
+# 3101 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_11:
-# 3112 "data/scripts/battle_labyrinth.pory"
+# 3103 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE4SANCTUARY, 255, 38, 11
-# 3113 "data/scripts/battle_labyrinth.pory"
+# 3104 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_12:
-# 3115 "data/scripts/battle_labyrinth.pory"
+# 3106 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE5SANCTUARY, 255, 38, 11
-# 3116 "data/scripts/battle_labyrinth.pory"
+# 3107 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_13:
-# 3118 "data/scripts/battle_labyrinth.pory"
+# 3109 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_HIDE_ZONE6A_MAX
-# 3119 "data/scripts/battle_labyrinth.pory"
+# 3110 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE6SANCTUARY, 255, 38, 11
-# 3120 "data/scripts/battle_labyrinth.pory"
+# 3111 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_14:
-# 3122 "data/scripts/battle_labyrinth.pory"
+# 3113 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_ZONE7B_HEAL_USED
-# 3123 "data/scripts/battle_labyrinth.pory"
+# 3114 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE8SANCTUARY, 255, 38, 11
-# 3124 "data/scripts/battle_labyrinth.pory"
+# 3115 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_15:
-# 3126 "data/scripts/battle_labyrinth.pory"
+# 3117 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE9SANCTUARY, 255, 38, 11
-# 3127 "data/scripts/battle_labyrinth.pory"
+# 3118 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_16:
-# 3129 "data/scripts/battle_labyrinth.pory"
+# 3120 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_HIDE_ZONE10A_MAX
-# 3130 "data/scripts/battle_labyrinth.pory"
+# 3121 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE10SANCTUARY, 255, 38, 11
-# 3131 "data/scripts/battle_labyrinth.pory"
+# 3122 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_17:
-# 3133 "data/scripts/battle_labyrinth.pory"
+# 3124 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE11SANCTUARY, 255, 38, 11
-# 3134 "data/scripts/battle_labyrinth.pory"
+# 3125 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_18:
-# 3136 "data/scripts/battle_labyrinth.pory"
+# 3127 "data/scripts/battle_labyrinth.pory"
 	clearflag FLAG_SYS_NO_BAG_START_MENU
-# 3137 "data/scripts/battle_labyrinth.pory"
+# 3128 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_HIDE_ZONE12A_NURSE
-# 3138 "data/scripts/battle_labyrinth.pory"
+# 3129 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE12SANCTUARY, 255, 38, 11
-# 3139 "data/scripts/battle_labyrinth.pory"
+# 3130 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_19:
-# 3141 "data/scripts/battle_labyrinth.pory"
+# 3132 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE14SANCTUARY, 255, 38, 11
-# 3142 "data/scripts/battle_labyrinth.pory"
+# 3133 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_20:
-# 3144 "data/scripts/battle_labyrinth.pory"
+# 3135 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE15SANCTUARY, 255, 38, 11
-# 3145 "data/scripts/battle_labyrinth.pory"
+# 3136 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_21:
-# 3147 "data/scripts/battle_labyrinth.pory"
+# 3138 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE16SANCTUARY, 255, 38, 11
-# 3148 "data/scripts/battle_labyrinth.pory"
+# 3139 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_22:
-# 3150 "data/scripts/battle_labyrinth.pory"
+# 3141 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE17SANCTUARY, 255, 38, 11
-# 3151 "data/scripts/battle_labyrinth.pory"
+# 3142 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_23:
-# 3153 "data/scripts/battle_labyrinth.pory"
+# 3144 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_HIDE_ZONE18A_MAX
-# 3154 "data/scripts/battle_labyrinth.pory"
+# 3145 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE19SANCTUARY, 255, 38, 11
-# 3155 "data/scripts/battle_labyrinth.pory"
+# 3146 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 EventScript_PorygonExit_24:
-# 3162 "data/scripts/battle_labyrinth.pory"
+# 3153 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE1SANCTUARY, 255, 38, 11
-# 3163 "data/scripts/battle_labyrinth.pory"
+# 3154 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_PorygonExit_4
 
 
-# 3170 "data/scripts/battle_labyrinth.pory"
+# 3161 "data/scripts/battle_labyrinth.pory"
 
-# 3171 "data/scripts/battle_labyrinth.pory"
+# 3162 "data/scripts/battle_labyrinth.pory"
 EventScript_ExitSign::
-# 3172 "data/scripts/battle_labyrinth.pory"
+# 3163 "data/scripts/battle_labyrinth.pory"
 	msgbox gText_ExitSign, MSGBOX_SIGN
-# 3173 "data/scripts/battle_labyrinth.pory"
+# 3164 "data/scripts/battle_labyrinth.pory"
 	end
 
 EventScript_ShakeTree::
-# 3177 "data/scripts/battle_labyrinth.pory"
+# 3168 "data/scripts/battle_labyrinth.pory"
 	lockall
-# 3178 "data/scripts/battle_labyrinth.pory"
+# 3169 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_ShakeTree_Text_0, MSGBOX_YESNO
-# 3179 "data/scripts/battle_labyrinth.pory"
+# 3170 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq EventScript_ShakeTree_2
-# 3184 "data/scripts/battle_labyrinth.pory"
+# 3175 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_ShakeTree_Text_1, MSGBOX_DEFAULT
-# 3185 "data/scripts/battle_labyrinth.pory"
+# 3176 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3186 "data/scripts/battle_labyrinth.pory"
+# 3177 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_0x8004, 1
-# 3187 "data/scripts/battle_labyrinth.pory"
+# 3178 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_0x8005, 1
-# 3188 "data/scripts/battle_labyrinth.pory"
+# 3179 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_0x8006, 8
-# 3189 "data/scripts/battle_labyrinth.pory"
+# 3180 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_0x8007, 5
-# 3190 "data/scripts/battle_labyrinth.pory"
+# 3181 "data/scripts/battle_labyrinth.pory"
 	special ShakeCamera
-# 3191 "data/scripts/battle_labyrinth.pory"
+# 3182 "data/scripts/battle_labyrinth.pory"
 	playse SE_M_BIND
-# 3192 "data/scripts/battle_labyrinth.pory"
+# 3183 "data/scripts/battle_labyrinth.pory"
 	waitstate
-# 3193 "data/scripts/battle_labyrinth.pory"
+# 3184 "data/scripts/battle_labyrinth.pory"
 	waitse
-# 3194 "data/scripts/battle_labyrinth.pory"
+# 3185 "data/scripts/battle_labyrinth.pory"
 	special HeadbuttWildEncounter
-# 3195 "data/scripts/battle_labyrinth.pory"
+# 3186 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq EventScript_ShakeTree_5
-# 3197 "data/scripts/battle_labyrinth.pory"
+# 3188 "data/scripts/battle_labyrinth.pory"
 	goto_if_unset FLAG_SETTINGS_BRUTAL, EventScript_ShakeTree_7
 EventScript_ShakeTree_4:
-# 3273 "data/scripts/battle_labyrinth.pory"
+# 3264 "data/scripts/battle_labyrinth.pory"
 	releaseall
 	end
 
 EventScript_ShakeTree_2:
-# 3180 "data/scripts/battle_labyrinth.pory"
+# 3171 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3181 "data/scripts/battle_labyrinth.pory"
+# 3172 "data/scripts/battle_labyrinth.pory"
 	releaseall
 	end
 
 EventScript_ShakeTree_5:
-# 3196 "data/scripts/battle_labyrinth.pory"
+# 3187 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_6:
-# 3198 "data/scripts/battle_labyrinth.pory"
+# 3189 "data/scripts/battle_labyrinth.pory"
 	random 70
-# 3199 "data/scripts/battle_labyrinth.pory"
+# 3190 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3200 "data/scripts/battle_labyrinth.pory"
+# 3191 "data/scripts/battle_labyrinth.pory"
 	case 0, EventScript_ShakeTree_12
-# 3201 "data/scripts/battle_labyrinth.pory"
+# 3192 "data/scripts/battle_labyrinth.pory"
 	case 1, EventScript_ShakeTree_12
-# 3202 "data/scripts/battle_labyrinth.pory"
+# 3193 "data/scripts/battle_labyrinth.pory"
 	case 2, EventScript_ShakeTree_12
-# 3203 "data/scripts/battle_labyrinth.pory"
+# 3194 "data/scripts/battle_labyrinth.pory"
 	case 3, EventScript_ShakeTree_12
-# 3204 "data/scripts/battle_labyrinth.pory"
+# 3195 "data/scripts/battle_labyrinth.pory"
 	case 4, EventScript_ShakeTree_12
-# 3205 "data/scripts/battle_labyrinth.pory"
+# 3196 "data/scripts/battle_labyrinth.pory"
 	case 5, EventScript_ShakeTree_12
-# 3206 "data/scripts/battle_labyrinth.pory"
+# 3197 "data/scripts/battle_labyrinth.pory"
 	case 6, EventScript_ShakeTree_12
-# 3207 "data/scripts/battle_labyrinth.pory"
+# 3198 "data/scripts/battle_labyrinth.pory"
 	case 7, EventScript_ShakeTree_12
-# 3208 "data/scripts/battle_labyrinth.pory"
+# 3199 "data/scripts/battle_labyrinth.pory"
 	case 8, EventScript_ShakeTree_12
-# 3209 "data/scripts/battle_labyrinth.pory"
+# 3200 "data/scripts/battle_labyrinth.pory"
 	case 9, EventScript_ShakeTree_12
-# 3210 "data/scripts/battle_labyrinth.pory"
+# 3201 "data/scripts/battle_labyrinth.pory"
 	case 10, EventScript_ShakeTree_12
-# 3211 "data/scripts/battle_labyrinth.pory"
+# 3202 "data/scripts/battle_labyrinth.pory"
 	case 11, EventScript_ShakeTree_12
-# 3212 "data/scripts/battle_labyrinth.pory"
+# 3203 "data/scripts/battle_labyrinth.pory"
 	case 12, EventScript_ShakeTree_12
-# 3213 "data/scripts/battle_labyrinth.pory"
+# 3204 "data/scripts/battle_labyrinth.pory"
 	case 13, EventScript_ShakeTree_12
-# 3214 "data/scripts/battle_labyrinth.pory"
+# 3205 "data/scripts/battle_labyrinth.pory"
 	case 14, EventScript_ShakeTree_12
-# 3215 "data/scripts/battle_labyrinth.pory"
+# 3206 "data/scripts/battle_labyrinth.pory"
 	case 15, EventScript_ShakeTree_12
-# 3216 "data/scripts/battle_labyrinth.pory"
+# 3207 "data/scripts/battle_labyrinth.pory"
 	case 16, EventScript_ShakeTree_12
-# 3217 "data/scripts/battle_labyrinth.pory"
+# 3208 "data/scripts/battle_labyrinth.pory"
 	case 17, EventScript_ShakeTree_12
-# 3218 "data/scripts/battle_labyrinth.pory"
+# 3209 "data/scripts/battle_labyrinth.pory"
 	case 18, EventScript_ShakeTree_12
-# 3219 "data/scripts/battle_labyrinth.pory"
+# 3210 "data/scripts/battle_labyrinth.pory"
 	case 19, EventScript_ShakeTree_12
-# 3222 "data/scripts/battle_labyrinth.pory"
+# 3213 "data/scripts/battle_labyrinth.pory"
 	case 20, EventScript_ShakeTree_13
-# 3223 "data/scripts/battle_labyrinth.pory"
+# 3214 "data/scripts/battle_labyrinth.pory"
 	case 21, EventScript_ShakeTree_13
-# 3224 "data/scripts/battle_labyrinth.pory"
+# 3215 "data/scripts/battle_labyrinth.pory"
 	case 22, EventScript_ShakeTree_13
-# 3229 "data/scripts/battle_labyrinth.pory"
+# 3220 "data/scripts/battle_labyrinth.pory"
 	case 23, EventScript_ShakeTree_14
-# 3230 "data/scripts/battle_labyrinth.pory"
+# 3221 "data/scripts/battle_labyrinth.pory"
 	case 24, EventScript_ShakeTree_14
-# 3231 "data/scripts/battle_labyrinth.pory"
+# 3222 "data/scripts/battle_labyrinth.pory"
 	case 25, EventScript_ShakeTree_14
-# 3236 "data/scripts/battle_labyrinth.pory"
+# 3227 "data/scripts/battle_labyrinth.pory"
 	case 26, EventScript_ShakeTree_15
-# 3237 "data/scripts/battle_labyrinth.pory"
+# 3228 "data/scripts/battle_labyrinth.pory"
 	case 27, EventScript_ShakeTree_15
-# 3238 "data/scripts/battle_labyrinth.pory"
+# 3229 "data/scripts/battle_labyrinth.pory"
 	case 28, EventScript_ShakeTree_15
-# 3243 "data/scripts/battle_labyrinth.pory"
+# 3234 "data/scripts/battle_labyrinth.pory"
 	case 29, EventScript_ShakeTree_16
-# 3244 "data/scripts/battle_labyrinth.pory"
+# 3235 "data/scripts/battle_labyrinth.pory"
 	case 30, EventScript_ShakeTree_16
-# 3245 "data/scripts/battle_labyrinth.pory"
+# 3236 "data/scripts/battle_labyrinth.pory"
 	case 31, EventScript_ShakeTree_16
-# 3250 "data/scripts/battle_labyrinth.pory"
+# 3241 "data/scripts/battle_labyrinth.pory"
 	case 32, EventScript_ShakeTree_17
-# 3251 "data/scripts/battle_labyrinth.pory"
+# 3242 "data/scripts/battle_labyrinth.pory"
 	case 33, EventScript_ShakeTree_17
-# 3252 "data/scripts/battle_labyrinth.pory"
+# 3243 "data/scripts/battle_labyrinth.pory"
 	case 34, EventScript_ShakeTree_17
-# 3257 "data/scripts/battle_labyrinth.pory"
+# 3248 "data/scripts/battle_labyrinth.pory"
 	case 35, EventScript_ShakeTree_18
-# 3258 "data/scripts/battle_labyrinth.pory"
+# 3249 "data/scripts/battle_labyrinth.pory"
 	case 36, EventScript_ShakeTree_18
-# 3259 "data/scripts/battle_labyrinth.pory"
+# 3250 "data/scripts/battle_labyrinth.pory"
 	case 37, EventScript_ShakeTree_18
-# 3260 "data/scripts/battle_labyrinth.pory"
+# 3251 "data/scripts/battle_labyrinth.pory"
 	case 38, EventScript_ShakeTree_18
-# 3261 "data/scripts/battle_labyrinth.pory"
+# 3252 "data/scripts/battle_labyrinth.pory"
 	case 39, EventScript_ShakeTree_18
-# 3266 "data/scripts/battle_labyrinth.pory"
+# 3257 "data/scripts/battle_labyrinth.pory"
 	case 40, EventScript_ShakeTree_19
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_7:
-# 3197 "data/scripts/battle_labyrinth.pory"
+# 3188 "data/scripts/battle_labyrinth.pory"
 	goto_if_unset FLAG_SETTINGS_RED_THUMB, EventScript_ShakeTree_6
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_12:
-# 3220 "data/scripts/battle_labyrinth.pory"
+# 3211 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_ShakeTree_Text_2
-# 3221 "data/scripts/battle_labyrinth.pory"
+# 3212 "data/scripts/battle_labyrinth.pory"
 	finditem ITEM_ORAN_BERRY, 1
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_13:
-# 3225 "data/scripts/battle_labyrinth.pory"
+# 3216 "data/scripts/battle_labyrinth.pory"
 	compare VAR_ZONE, 2
 	goto_if_gt EventScript_ShakeTree_20
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_14:
-# 3232 "data/scripts/battle_labyrinth.pory"
+# 3223 "data/scripts/battle_labyrinth.pory"
 	compare VAR_ZONE, 2
 	goto_if_gt EventScript_ShakeTree_22
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_15:
-# 3239 "data/scripts/battle_labyrinth.pory"
+# 3230 "data/scripts/battle_labyrinth.pory"
 	compare VAR_ZONE, 2
 	goto_if_gt EventScript_ShakeTree_24
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_16:
-# 3246 "data/scripts/battle_labyrinth.pory"
+# 3237 "data/scripts/battle_labyrinth.pory"
 	compare VAR_ZONE, 2
 	goto_if_gt EventScript_ShakeTree_26
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_17:
-# 3253 "data/scripts/battle_labyrinth.pory"
+# 3244 "data/scripts/battle_labyrinth.pory"
 	compare VAR_ZONE, 2
 	goto_if_gt EventScript_ShakeTree_28
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_18:
-# 3262 "data/scripts/battle_labyrinth.pory"
+# 3253 "data/scripts/battle_labyrinth.pory"
 	compare VAR_ZONE, 8
 	goto_if_gt EventScript_ShakeTree_30
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_19:
-# 3267 "data/scripts/battle_labyrinth.pory"
+# 3258 "data/scripts/battle_labyrinth.pory"
 	compare VAR_ZONE, 20
 	goto_if_gt EventScript_ShakeTree_32
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_20:
-# 3226 "data/scripts/battle_labyrinth.pory"
+# 3217 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_ShakeTree_Text_2
-# 3227 "data/scripts/battle_labyrinth.pory"
+# 3218 "data/scripts/battle_labyrinth.pory"
 	finditem ITEM_CHERI_BERRY, 1
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_22:
-# 3233 "data/scripts/battle_labyrinth.pory"
+# 3224 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_ShakeTree_Text_2
-# 3234 "data/scripts/battle_labyrinth.pory"
+# 3225 "data/scripts/battle_labyrinth.pory"
 	finditem ITEM_CHESTO_BERRY, 1
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_24:
-# 3240 "data/scripts/battle_labyrinth.pory"
+# 3231 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_ShakeTree_Text_2
-# 3241 "data/scripts/battle_labyrinth.pory"
+# 3232 "data/scripts/battle_labyrinth.pory"
 	finditem ITEM_PECHA_BERRY, 1
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_26:
-# 3247 "data/scripts/battle_labyrinth.pory"
+# 3238 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_ShakeTree_Text_2
-# 3248 "data/scripts/battle_labyrinth.pory"
+# 3239 "data/scripts/battle_labyrinth.pory"
 	finditem ITEM_ASPEAR_BERRY, 1
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_28:
-# 3254 "data/scripts/battle_labyrinth.pory"
+# 3245 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_ShakeTree_Text_2
-# 3255 "data/scripts/battle_labyrinth.pory"
+# 3246 "data/scripts/battle_labyrinth.pory"
 	finditem ITEM_PERSIM_BERRY, 1
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_30:
-# 3263 "data/scripts/battle_labyrinth.pory"
+# 3254 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_ShakeTree_Text_2
-# 3264 "data/scripts/battle_labyrinth.pory"
+# 3255 "data/scripts/battle_labyrinth.pory"
 	finditem ITEM_SITRUS_BERRY, 1
 	goto EventScript_ShakeTree_4
 
 EventScript_ShakeTree_32:
-# 3268 "data/scripts/battle_labyrinth.pory"
+# 3259 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_ShakeTree_Text_2
-# 3269 "data/scripts/battle_labyrinth.pory"
+# 3260 "data/scripts/battle_labyrinth.pory"
 	finditem ITEM_LUM_BERRY, 1
 	goto EventScript_ShakeTree_4
 
@@ -6534,1385 +6514,1385 @@ EventScript_HandleFlashlight::
 # 0 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq EventScript_HandleFlashlight_2
-# 3281 "data/scripts/battle_labyrinth.pory"
+# 3272 "data/scripts/battle_labyrinth.pory"
 	setflashlevel 6
 EventScript_HandleFlashlight_1:
 	return
 
 EventScript_HandleFlashlight_2:
-# 3279 "data/scripts/battle_labyrinth.pory"
+# 3270 "data/scripts/battle_labyrinth.pory"
 	setflashlevel 2
 	goto EventScript_HandleFlashlight_1
 
 
 EventScript_RecoverySign::
-# 3287 "data/scripts/battle_labyrinth.pory"
+# 3278 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_1
-# 3288 "data/scripts/battle_labyrinth.pory"
+# 3279 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_RecoverySign_Text_0, MSGBOX_SIGN
 	end
 
 
 EventScript_MedicineSign::
-# 3293 "data/scripts/battle_labyrinth.pory"
+# 3284 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_2
-# 3294 "data/scripts/battle_labyrinth.pory"
+# 3285 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_MedicineSign_Text_0, MSGBOX_SIGN
 	end
 
 
 EventScript_PokeballSign::
-# 3299 "data/scripts/battle_labyrinth.pory"
+# 3290 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_3
-# 3300 "data/scripts/battle_labyrinth.pory"
+# 3291 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_PokeballSign_Text_0, MSGBOX_SIGN
 	end
 
 
 EventScript_ItemsSign::
-# 3305 "data/scripts/battle_labyrinth.pory"
+# 3296 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_4
-# 3306 "data/scripts/battle_labyrinth.pory"
+# 3297 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_ItemsSign_Text_0, MSGBOX_SIGN
 	end
 
 
 EventScript_BerriesSign::
-# 3311 "data/scripts/battle_labyrinth.pory"
+# 3302 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_5
-# 3312 "data/scripts/battle_labyrinth.pory"
+# 3303 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_BerriesSign_Text_0, MSGBOX_SIGN
 	end
 
 
 EventScript_EggsSign::
-# 3317 "data/scripts/battle_labyrinth.pory"
+# 3308 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_6
-# 3318 "data/scripts/battle_labyrinth.pory"
+# 3309 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_EggsSign_Text_0, MSGBOX_SIGN
 	end
 
 
 EventScript_ServicesSign::
-# 3323 "data/scripts/battle_labyrinth.pory"
+# 3314 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_7
-# 3324 "data/scripts/battle_labyrinth.pory"
+# 3315 "data/scripts/battle_labyrinth.pory"
 	msgbox EventScript_ServicesSign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone0A_EventScript_TPISign::
-# 3329 "data/scripts/battle_labyrinth.pory"
+# 3320 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_8
-# 3330 "data/scripts/battle_labyrinth.pory"
+# 3321 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone0A_EventScript_TPISign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone0A_EventScript_DayCareSign::
-# 3335 "data/scripts/battle_labyrinth.pory"
+# 3326 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_9
-# 3336 "data/scripts/battle_labyrinth.pory"
+# 3327 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone0A_EventScript_DayCareSign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone1A_EventScript_Sign_GoldenTree::
-# 3341 "data/scripts/battle_labyrinth.pory"
+# 3332 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_10
-# 3342 "data/scripts/battle_labyrinth.pory"
+# 3333 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone1A_EventScript_Sign_GoldenTree_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone1A_EventScript_PorygonSign::
-# 3347 "data/scripts/battle_labyrinth.pory"
+# 3338 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_11
-# 3348 "data/scripts/battle_labyrinth.pory"
+# 3339 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone1A_EventScript_PorygonSign_Text_0, MSGBOX_DEFAULT
-# 3349 "data/scripts/battle_labyrinth.pory"
+# 3340 "data/scripts/battle_labyrinth.pory"
 	showmonpic SPECIES_PORYGON, 10, 3
-# 3350 "data/scripts/battle_labyrinth.pory"
+# 3341 "data/scripts/battle_labyrinth.pory"
 	setseenmon SPECIES_PORYGON
-# 3351 "data/scripts/battle_labyrinth.pory"
+# 3342 "data/scripts/battle_labyrinth.pory"
 	waitbuttonpress
-# 3352 "data/scripts/battle_labyrinth.pory"
+# 3343 "data/scripts/battle_labyrinth.pory"
 	hidemonpic
-# 3353 "data/scripts/battle_labyrinth.pory"
+# 3344 "data/scripts/battle_labyrinth.pory"
 	release
 	end
 
 
 Zone1A_EventScript_Sign_RunningShoes::
-# 3358 "data/scripts/battle_labyrinth.pory"
+# 3349 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_12
-# 3359 "data/scripts/battle_labyrinth.pory"
+# 3350 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone1A_EventScript_Sign_RunningShoes_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone2A_EventScript_Sign::
-# 3364 "data/scripts/battle_labyrinth.pory"
+# 3355 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_13
-# 3365 "data/scripts/battle_labyrinth.pory"
+# 3356 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone2A_EventScript_Sign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone2A_EventScript_ExpShareSign::
-# 3370 "data/scripts/battle_labyrinth.pory"
+# 3361 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_14
-# 3371 "data/scripts/battle_labyrinth.pory"
+# 3362 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone2A_EventScript_ExpShareSign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone2A_EventScript_CautionSign::
-# 3376 "data/scripts/battle_labyrinth.pory"
+# 3367 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_15
-# 3377 "data/scripts/battle_labyrinth.pory"
+# 3368 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone2A_EventScript_CautionSign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone2B_EventScript_CautionSign::
-# 3382 "data/scripts/battle_labyrinth.pory"
+# 3373 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_13
-# 3383 "data/scripts/battle_labyrinth.pory"
+# 3374 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone2A_EventScript_CautionSign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone2B_EventScript_PartySelectSign::
-# 3388 "data/scripts/battle_labyrinth.pory"
+# 3379 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_16
-# 3389 "data/scripts/battle_labyrinth.pory"
+# 3380 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone2B_EventScript_PartySelectSign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone2B_EventScript_OptionalLeviathan::
-# 3394 "data/scripts/battle_labyrinth.pory"
+# 3385 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_17
-# 3395 "data/scripts/battle_labyrinth.pory"
+# 3386 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone2B_EventScript_OptionalLeviathan_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone3A_EventScript_Surveil::
-# 3400 "data/scripts/battle_labyrinth.pory"
+# 3391 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_18
-# 3401 "data/scripts/battle_labyrinth.pory"
+# 3392 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone3A_EventScript_Surveil_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone4A_EventScript_Sign::
-# 3406 "data/scripts/battle_labyrinth.pory"
+# 3397 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_19
-# 3407 "data/scripts/battle_labyrinth.pory"
+# 3398 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone4A_EventScript_Sign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone4B_EventScript_Sign::
-# 3412 "data/scripts/battle_labyrinth.pory"
+# 3403 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_20
-# 3413 "data/scripts/battle_labyrinth.pory"
+# 3404 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone4B_EventScript_Sign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone4C_EventScript_Sign::
-# 3418 "data/scripts/battle_labyrinth.pory"
+# 3409 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_21
-# 3419 "data/scripts/battle_labyrinth.pory"
+# 3410 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone4C_EventScript_Sign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone4D_EventScript_Sign::
-# 3424 "data/scripts/battle_labyrinth.pory"
+# 3415 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_22
-# 3425 "data/scripts/battle_labyrinth.pory"
+# 3416 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone4D_EventScript_Sign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone4E_EventScript_Sign::
-# 3430 "data/scripts/battle_labyrinth.pory"
+# 3421 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_23
-# 3431 "data/scripts/battle_labyrinth.pory"
+# 3422 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone4E_EventScript_Sign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone6A_EventScript_Sign::
-# 3436 "data/scripts/battle_labyrinth.pory"
+# 3427 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_24
-# 3437 "data/scripts/battle_labyrinth.pory"
+# 3428 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone6A_EventScript_Sign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone7A_EventScript_Sign::
-# 3442 "data/scripts/battle_labyrinth.pory"
+# 3433 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_25
-# 3443 "data/scripts/battle_labyrinth.pory"
+# 3434 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone7A_EventScript_Sign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone7A_EventScript_HealSign::
-# 3448 "data/scripts/battle_labyrinth.pory"
+# 3439 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_26
-# 3449 "data/scripts/battle_labyrinth.pory"
+# 3440 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone7A_EventScript_HealSign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone9A_EventScript_Sign::
-# 3454 "data/scripts/battle_labyrinth.pory"
+# 3445 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_27
-# 3455 "data/scripts/battle_labyrinth.pory"
+# 3446 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone9A_EventScript_Sign_Text_0, MSGBOX_SIGN
 	end
 
 
 Zone9A_EventScript_HerbalSign::
-# 3460 "data/scripts/battle_labyrinth.pory"
+# 3451 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_28
-# 3461 "data/scripts/battle_labyrinth.pory"
+# 3452 "data/scripts/battle_labyrinth.pory"
 	msgbox Zone9A_EventScript_HerbalSign_Text_0, MSGBOX_SIGN
 	end
 
 
 Debug_CheatStart_PBL::
-# 3467 "data/scripts/battle_labyrinth.pory"
+# 3458 "data/scripts/battle_labyrinth.pory"
 	random 5
-# 3468 "data/scripts/battle_labyrinth.pory"
+# 3459 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3469 "data/scripts/battle_labyrinth.pory"
+# 3460 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_3
-# 3471 "data/scripts/battle_labyrinth.pory"
+# 3462 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_4
-# 3473 "data/scripts/battle_labyrinth.pory"
+# 3464 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_5
-# 3475 "data/scripts/battle_labyrinth.pory"
+# 3466 "data/scripts/battle_labyrinth.pory"
 	case 3, Debug_CheatStart_PBL_6
-# 3477 "data/scripts/battle_labyrinth.pory"
+# 3468 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_7
 Debug_CheatStart_PBL_1:
-# 3480 "data/scripts/battle_labyrinth.pory"
+# 3471 "data/scripts/battle_labyrinth.pory"
 	random 5
-# 3481 "data/scripts/battle_labyrinth.pory"
+# 3472 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3482 "data/scripts/battle_labyrinth.pory"
+# 3473 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_10
-# 3484 "data/scripts/battle_labyrinth.pory"
+# 3475 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_11
-# 3486 "data/scripts/battle_labyrinth.pory"
+# 3477 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_12
-# 3488 "data/scripts/battle_labyrinth.pory"
+# 3479 "data/scripts/battle_labyrinth.pory"
 	case 3, Debug_CheatStart_PBL_13
-# 3490 "data/scripts/battle_labyrinth.pory"
+# 3481 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_14
 Debug_CheatStart_PBL_8:
-# 3493 "data/scripts/battle_labyrinth.pory"
+# 3484 "data/scripts/battle_labyrinth.pory"
 	random 5
-# 3494 "data/scripts/battle_labyrinth.pory"
+# 3485 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3495 "data/scripts/battle_labyrinth.pory"
+# 3486 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_17
-# 3497 "data/scripts/battle_labyrinth.pory"
+# 3488 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_18
-# 3499 "data/scripts/battle_labyrinth.pory"
+# 3490 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_19
-# 3501 "data/scripts/battle_labyrinth.pory"
+# 3492 "data/scripts/battle_labyrinth.pory"
 	case 3, Debug_CheatStart_PBL_20
-# 3503 "data/scripts/battle_labyrinth.pory"
+# 3494 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_21
 Debug_CheatStart_PBL_15:
-# 3506 "data/scripts/battle_labyrinth.pory"
+# 3497 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_RARE_CANDY, 900
-# 3507 "data/scripts/battle_labyrinth.pory"
+# 3498 "data/scripts/battle_labyrinth.pory"
 	removemoney 2000
-# 3508 "data/scripts/battle_labyrinth.pory"
+# 3499 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_POTION, 6
-# 3509 "data/scripts/battle_labyrinth.pory"
+# 3500 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_PARALYZE_HEAL, 2
-# 3510 "data/scripts/battle_labyrinth.pory"
+# 3501 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_ANTIDOTE, 2
-# 3511 "data/scripts/battle_labyrinth.pory"
+# 3502 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE_0_STATE, 2
-# 3512 "data/scripts/battle_labyrinth.pory"
+# 3503 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_ZONE0B_RECEIVED_EEVEE
-# 3513 "data/scripts/battle_labyrinth.pory"
+# 3504 "data/scripts/battle_labyrinth.pory"
 	givemon SPECIES_EEVEE, 5, ITEM_NONE
-# 3515 "data/scripts/battle_labyrinth.pory"
+# 3506 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_WAILMER_PAIL
-# 3516 "data/scripts/battle_labyrinth.pory"
+# 3507 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_ORAN_BERRY, 2
-# 3517 "data/scripts/battle_labyrinth.pory"
+# 3508 "data/scripts/battle_labyrinth.pory"
 	questmenu QUEST_MENU_SET_ACTIVE, QUEST_SIGNS
-# 3518 "data/scripts/battle_labyrinth.pory"
+# 3509 "data/scripts/battle_labyrinth.pory"
 	questmenu QUEST_MENU_SET_ACTIVE, QUEST_SAVES
-# 3519 "data/scripts/battle_labyrinth.pory"
+# 3510 "data/scripts/battle_labyrinth.pory"
 	questmenu QUEST_MENU_SET_ACTIVE, QUEST_POKEDEX
-# 3520 "data/scripts/battle_labyrinth.pory"
+# 3511 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_1
-# 3521 "data/scripts/battle_labyrinth.pory"
+# 3512 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_2
-# 3522 "data/scripts/battle_labyrinth.pory"
+# 3513 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_3
-# 3523 "data/scripts/battle_labyrinth.pory"
+# 3514 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_4
-# 3524 "data/scripts/battle_labyrinth.pory"
+# 3515 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_5
-# 3525 "data/scripts/battle_labyrinth.pory"
+# 3516 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_6
-# 3526 "data/scripts/battle_labyrinth.pory"
+# 3517 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_7
-# 3527 "data/scripts/battle_labyrinth.pory"
+# 3518 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_8
-# 3528 "data/scripts/battle_labyrinth.pory"
+# 3519 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_9
-# 3530 "data/scripts/battle_labyrinth.pory"
+# 3521 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 0
-# 3531 "data/scripts/battle_labyrinth.pory"
+# 3522 "data/scripts/battle_labyrinth.pory"
 	msgbox Debug_CheatStart_PBL_Text_0, MSGBOX_YESNO
-# 3532 "data/scripts/battle_labyrinth.pory"
+# 3523 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Debug_CheatStart_PBL_23
 Debug_CheatStart_PBL_22:
-# 3535 "data/scripts/battle_labyrinth.pory"
+# 3526 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 3
-# 3536 "data/scripts/battle_labyrinth.pory"
+# 3527 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GenerateMon
-# 3538 "data/scripts/battle_labyrinth.pory"
+# 3529 "data/scripts/battle_labyrinth.pory"
 	message Debug_CheatStart_PBL_Text_1
-# 3539 "data/scripts/battle_labyrinth.pory"
+# 3530 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_3
-# 3540 "data/scripts/battle_labyrinth.pory"
+# 3531 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3541 "data/scripts/battle_labyrinth.pory"
+# 3532 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_27
-# 3543 "data/scripts/battle_labyrinth.pory"
+# 3534 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_28
-# 3546 "data/scripts/battle_labyrinth.pory"
+# 3537 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, Debug_CheatStart_PBL_29
 Debug_CheatStart_PBL_25:
-# 3554 "data/scripts/battle_labyrinth.pory"
+# 3545 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GenerateMon
-# 3556 "data/scripts/battle_labyrinth.pory"
+# 3547 "data/scripts/battle_labyrinth.pory"
 	message Debug_CheatStart_PBL_Text_4
-# 3557 "data/scripts/battle_labyrinth.pory"
+# 3548 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_5, Debug_CheatStart_PBL_Text_6
-# 3558 "data/scripts/battle_labyrinth.pory"
+# 3549 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3559 "data/scripts/battle_labyrinth.pory"
+# 3550 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_32
-# 3573 "data/scripts/battle_labyrinth.pory"
+# 3564 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_33
-# 3587 "data/scripts/battle_labyrinth.pory"
+# 3578 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_34
 Debug_CheatStart_PBL_30:
-# 3602 "data/scripts/battle_labyrinth.pory"
+# 3593 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 5
-# 3603 "data/scripts/battle_labyrinth.pory"
+# 3594 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GiveMon
-# 3604 "data/scripts/battle_labyrinth.pory"
+# 3595 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_ZONE1A_RECEIVED_FWG
-# 3605 "data/scripts/battle_labyrinth.pory"
+# 3596 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_PBL, SUB_QUEST_1
-# 3607 "data/scripts/battle_labyrinth.pory"
+# 3598 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_QUICK_CLAW
-# 3608 "data/scripts/battle_labyrinth.pory"
+# 3599 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_EXP_SHARE
-# 3609 "data/scripts/battle_labyrinth.pory"
+# 3600 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_INFINITE_REPEL
-# 3610 "data/scripts/battle_labyrinth.pory"
+# 3601 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_10
-# 3611 "data/scripts/battle_labyrinth.pory"
+# 3602 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_11
-# 3612 "data/scripts/battle_labyrinth.pory"
+# 3603 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_12
-# 3614 "data/scripts/battle_labyrinth.pory"
+# 3605 "data/scripts/battle_labyrinth.pory"
 	message Debug_CheatStart_PBL_Text_7
-# 3615 "data/scripts/battle_labyrinth.pory"
+# 3606 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_8, Debug_CheatStart_PBL_Text_9, Debug_CheatStart_PBL_Text_10
-# 3616 "data/scripts/battle_labyrinth.pory"
+# 3607 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3617 "data/scripts/battle_labyrinth.pory"
+# 3608 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_37
-# 3619 "data/scripts/battle_labyrinth.pory"
+# 3610 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_38
-# 3621 "data/scripts/battle_labyrinth.pory"
+# 3612 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_39
-# 3623 "data/scripts/battle_labyrinth.pory"
+# 3614 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, Debug_CheatStart_PBL_40
 Debug_CheatStart_PBL_35:
-# 3631 "data/scripts/battle_labyrinth.pory"
+# 3622 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 5
-# 3632 "data/scripts/battle_labyrinth.pory"
+# 3623 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GenerateMon
-# 3634 "data/scripts/battle_labyrinth.pory"
+# 3625 "data/scripts/battle_labyrinth.pory"
 	random 10
-# 3635 "data/scripts/battle_labyrinth.pory"
+# 3626 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3636 "data/scripts/battle_labyrinth.pory"
+# 3627 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_61
-# 3638 "data/scripts/battle_labyrinth.pory"
+# 3629 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_62
-# 3640 "data/scripts/battle_labyrinth.pory"
+# 3631 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_63
-# 3642 "data/scripts/battle_labyrinth.pory"
+# 3633 "data/scripts/battle_labyrinth.pory"
 	case 3, Debug_CheatStart_PBL_64
-# 3644 "data/scripts/battle_labyrinth.pory"
+# 3635 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_65
-# 3646 "data/scripts/battle_labyrinth.pory"
+# 3637 "data/scripts/battle_labyrinth.pory"
 	case 5, Debug_CheatStart_PBL_66
-# 3648 "data/scripts/battle_labyrinth.pory"
+# 3639 "data/scripts/battle_labyrinth.pory"
 	case 6, Debug_CheatStart_PBL_67
-# 3650 "data/scripts/battle_labyrinth.pory"
+# 3641 "data/scripts/battle_labyrinth.pory"
 	case 7, Debug_CheatStart_PBL_68
-# 3652 "data/scripts/battle_labyrinth.pory"
+# 3643 "data/scripts/battle_labyrinth.pory"
 	case 8, Debug_CheatStart_PBL_69
-# 3654 "data/scripts/battle_labyrinth.pory"
+# 3645 "data/scripts/battle_labyrinth.pory"
 	case 9, Debug_CheatStart_PBL_70
 Debug_CheatStart_PBL_59:
-# 3657 "data/scripts/battle_labyrinth.pory"
+# 3648 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 6
-# 3658 "data/scripts/battle_labyrinth.pory"
+# 3649 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GiveMon
-# 3659 "data/scripts/battle_labyrinth.pory"
+# 3650 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG
-# 3660 "data/scripts/battle_labyrinth.pory"
+# 3651 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_PBL, SUB_QUEST_2
-# 3662 "data/scripts/battle_labyrinth.pory"
+# 3653 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_SILK_SCARF
-# 3663 "data/scripts/battle_labyrinth.pory"
+# 3654 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_TM_BUG_BITE
-# 3664 "data/scripts/battle_labyrinth.pory"
+# 3655 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_ORAN_BERRY, 5
-# 3665 "data/scripts/battle_labyrinth.pory"
+# 3656 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_CHERI_BERRY, 2
-# 3666 "data/scripts/battle_labyrinth.pory"
+# 3657 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_CHESTO_BERRY, 2
-# 3667 "data/scripts/battle_labyrinth.pory"
+# 3658 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_RAWST_BERRY, 2
-# 3668 "data/scripts/battle_labyrinth.pory"
+# 3659 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_ASPEAR_BERRY, 2
-# 3669 "data/scripts/battle_labyrinth.pory"
+# 3660 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_PECHA_BERRY, 2
-# 3670 "data/scripts/battle_labyrinth.pory"
+# 3661 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SYS_DEXNAV_GET
-# 3671 "data/scripts/battle_labyrinth.pory"
+# 3662 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SYS_DEXNAV_SEARCH
-# 3672 "data/scripts/battle_labyrinth.pory"
+# 3663 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_13
-# 3673 "data/scripts/battle_labyrinth.pory"
+# 3664 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_14
-# 3674 "data/scripts/battle_labyrinth.pory"
+# 3665 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_15
-# 3675 "data/scripts/battle_labyrinth.pory"
+# 3666 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_16
-# 3676 "data/scripts/battle_labyrinth.pory"
+# 3667 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_17
-# 3678 "data/scripts/battle_labyrinth.pory"
+# 3669 "data/scripts/battle_labyrinth.pory"
 	message Debug_CheatStart_PBL_Text_11
-# 3679 "data/scripts/battle_labyrinth.pory"
+# 3670 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_6
-# 3680 "data/scripts/battle_labyrinth.pory"
+# 3671 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3681 "data/scripts/battle_labyrinth.pory"
+# 3672 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_73
-# 3683 "data/scripts/battle_labyrinth.pory"
+# 3674 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_74
-# 3686 "data/scripts/battle_labyrinth.pory"
+# 3677 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, Debug_CheatStart_PBL_75
 Debug_CheatStart_PBL_71:
-# 3694 "data/scripts/battle_labyrinth.pory"
+# 3685 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 7
-# 3695 "data/scripts/battle_labyrinth.pory"
+# 3686 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GenerateMon
-# 3696 "data/scripts/battle_labyrinth.pory"
+# 3687 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_PBL, SUB_QUEST_3
-# 3698 "data/scripts/battle_labyrinth.pory"
+# 3689 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_GOOD_ROD
-# 3699 "data/scripts/battle_labyrinth.pory"
+# 3690 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_18
-# 3701 "data/scripts/battle_labyrinth.pory"
+# 3692 "data/scripts/battle_labyrinth.pory"
 	message Debug_CheatStart_PBL_Text_12
-# 3702 "data/scripts/battle_labyrinth.pory"
+# 3693 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_13, Debug_CheatStart_PBL_Text_14, Debug_CheatStart_PBL_Text_15, Debug_CheatStart_PBL_Text_16, Debug_CheatStart_PBL_Text_17
-# 3703 "data/scripts/battle_labyrinth.pory"
+# 3694 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3704 "data/scripts/battle_labyrinth.pory"
+# 3695 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_78
-# 3706 "data/scripts/battle_labyrinth.pory"
+# 3697 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_79
-# 3708 "data/scripts/battle_labyrinth.pory"
+# 3699 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_80
-# 3710 "data/scripts/battle_labyrinth.pory"
+# 3701 "data/scripts/battle_labyrinth.pory"
 	case 3, Debug_CheatStart_PBL_81
-# 3712 "data/scripts/battle_labyrinth.pory"
+# 3703 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_82
-# 3714 "data/scripts/battle_labyrinth.pory"
+# 3705 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, Debug_CheatStart_PBL_83
 Debug_CheatStart_PBL_76:
-# 3722 "data/scripts/battle_labyrinth.pory"
+# 3713 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 9
-# 3723 "data/scripts/battle_labyrinth.pory"
+# 3714 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GenerateMon
-# 3724 "data/scripts/battle_labyrinth.pory"
+# 3715 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_PBL, SUB_QUEST_4
-# 3726 "data/scripts/battle_labyrinth.pory"
+# 3717 "data/scripts/battle_labyrinth.pory"
 	random 8
-# 3727 "data/scripts/battle_labyrinth.pory"
+# 3718 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3728 "data/scripts/battle_labyrinth.pory"
+# 3719 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_86
-# 3730 "data/scripts/battle_labyrinth.pory"
+# 3721 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_87
-# 3732 "data/scripts/battle_labyrinth.pory"
+# 3723 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_88
-# 3734 "data/scripts/battle_labyrinth.pory"
+# 3725 "data/scripts/battle_labyrinth.pory"
 	case 3, Debug_CheatStart_PBL_89
-# 3736 "data/scripts/battle_labyrinth.pory"
+# 3727 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_90
-# 3738 "data/scripts/battle_labyrinth.pory"
+# 3729 "data/scripts/battle_labyrinth.pory"
 	case 5, Debug_CheatStart_PBL_91
-# 3740 "data/scripts/battle_labyrinth.pory"
+# 3731 "data/scripts/battle_labyrinth.pory"
 	case 6, Debug_CheatStart_PBL_92
-# 3742 "data/scripts/battle_labyrinth.pory"
+# 3733 "data/scripts/battle_labyrinth.pory"
 	case 7, Debug_CheatStart_PBL_93
 Debug_CheatStart_PBL_84:
-# 3745 "data/scripts/battle_labyrinth.pory"
+# 3736 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_ZONE4A_RECEIVED_GEM
-# 3747 "data/scripts/battle_labyrinth.pory"
+# 3738 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_SILVER_POWDER
-# 3748 "data/scripts/battle_labyrinth.pory"
+# 3739 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_MUSCLE_BAND
-# 3749 "data/scripts/battle_labyrinth.pory"
+# 3740 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_WISE_GLASSES
-# 3750 "data/scripts/battle_labyrinth.pory"
+# 3741 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_TWISTED_SPOON
-# 3751 "data/scripts/battle_labyrinth.pory"
+# 3742 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_POISON_BARB
-# 3752 "data/scripts/battle_labyrinth.pory"
+# 3743 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_TM_SNARL
-# 3753 "data/scripts/battle_labyrinth.pory"
+# 3744 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_SYS_START_MENU_PC_GET
-# 3754 "data/scripts/battle_labyrinth.pory"
+# 3745 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_BURN_HEAL, 2
-# 3755 "data/scripts/battle_labyrinth.pory"
+# 3746 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_AWAKENING, 2
-# 3756 "data/scripts/battle_labyrinth.pory"
+# 3747 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_19
-# 3757 "data/scripts/battle_labyrinth.pory"
+# 3748 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_20
-# 3758 "data/scripts/battle_labyrinth.pory"
+# 3749 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_21
-# 3759 "data/scripts/battle_labyrinth.pory"
+# 3750 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_22
-# 3760 "data/scripts/battle_labyrinth.pory"
+# 3751 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_23
-# 3762 "data/scripts/battle_labyrinth.pory"
+# 3753 "data/scripts/battle_labyrinth.pory"
 	message Debug_CheatStart_PBL_Text_18
-# 3763 "data/scripts/battle_labyrinth.pory"
+# 3754 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_19, Debug_CheatStart_PBL_Text_20
-# 3764 "data/scripts/battle_labyrinth.pory"
+# 3755 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3765 "data/scripts/battle_labyrinth.pory"
+# 3756 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_96
-# 3767 "data/scripts/battle_labyrinth.pory"
+# 3758 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_97
-# 3769 "data/scripts/battle_labyrinth.pory"
+# 3760 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, Debug_CheatStart_PBL_98
 Debug_CheatStart_PBL_94:
-# 3777 "data/scripts/battle_labyrinth.pory"
+# 3768 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 11
-# 3778 "data/scripts/battle_labyrinth.pory"
+# 3769 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GenerateMon
-# 3780 "data/scripts/battle_labyrinth.pory"
+# 3771 "data/scripts/battle_labyrinth.pory"
 	random 5
-# 3781 "data/scripts/battle_labyrinth.pory"
+# 3772 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3782 "data/scripts/battle_labyrinth.pory"
+# 3773 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_101
-# 3784 "data/scripts/battle_labyrinth.pory"
+# 3775 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_102
-# 3786 "data/scripts/battle_labyrinth.pory"
+# 3777 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_103
-# 3788 "data/scripts/battle_labyrinth.pory"
+# 3779 "data/scripts/battle_labyrinth.pory"
 	case 3, Debug_CheatStart_PBL_104
-# 3790 "data/scripts/battle_labyrinth.pory"
+# 3781 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_105
 Debug_CheatStart_PBL_99:
-# 3793 "data/scripts/battle_labyrinth.pory"
+# 3784 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 12
-# 3794 "data/scripts/battle_labyrinth.pory"
+# 3785 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GiveMon
-# 3795 "data/scripts/battle_labyrinth.pory"
+# 3786 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE
-# 3796 "data/scripts/battle_labyrinth.pory"
+# 3787 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_PBL, SUB_QUEST_5
-# 3798 "data/scripts/battle_labyrinth.pory"
+# 3789 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_LAX_MINT
-# 3799 "data/scripts/battle_labyrinth.pory"
+# 3790 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_QUICK_BALL
-# 3800 "data/scripts/battle_labyrinth.pory"
+# 3791 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_MIRACLE_SEED
-# 3801 "data/scripts/battle_labyrinth.pory"
+# 3792 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_NORMAL_GEM
-# 3802 "data/scripts/battle_labyrinth.pory"
+# 3793 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_BUG_GEM
-# 3803 "data/scripts/battle_labyrinth.pory"
+# 3794 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_GRASS_GEM
-# 3804 "data/scripts/battle_labyrinth.pory"
+# 3795 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_GENTLE_MINT
-# 3805 "data/scripts/battle_labyrinth.pory"
+# 3796 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_EVIOLITE
-# 3806 "data/scripts/battle_labyrinth.pory"
+# 3797 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_RED_SHARD, 5
-# 3808 "data/scripts/battle_labyrinth.pory"
+# 3799 "data/scripts/battle_labyrinth.pory"
 	message Debug_CheatStart_PBL_Text_21
-# 3809 "data/scripts/battle_labyrinth.pory"
+# 3800 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_6
-# 3810 "data/scripts/battle_labyrinth.pory"
+# 3801 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3811 "data/scripts/battle_labyrinth.pory"
+# 3802 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_108
-# 3813 "data/scripts/battle_labyrinth.pory"
+# 3804 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_109
-# 3816 "data/scripts/battle_labyrinth.pory"
+# 3807 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, Debug_CheatStart_PBL_110
 Debug_CheatStart_PBL_106:
-# 3824 "data/scripts/battle_labyrinth.pory"
+# 3815 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 13
-# 3825 "data/scripts/battle_labyrinth.pory"
+# 3816 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GenerateMon
-# 3826 "data/scripts/battle_labyrinth.pory"
+# 3817 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_PBL, SUB_QUEST_6
-# 3828 "data/scripts/battle_labyrinth.pory"
+# 3819 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_NEST_BALL
-# 3829 "data/scripts/battle_labyrinth.pory"
+# 3820 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_NET_BALL
-# 3830 "data/scripts/battle_labyrinth.pory"
+# 3821 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_TM_DRAINING_KISS
-# 3831 "data/scripts/battle_labyrinth.pory"
+# 3822 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_WATER_GEM
-# 3832 "data/scripts/battle_labyrinth.pory"
+# 3823 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_FLYING_GEM
-# 3833 "data/scripts/battle_labyrinth.pory"
+# 3824 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_ICE_GEM
-# 3834 "data/scripts/battle_labyrinth.pory"
+# 3825 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_SLEDGEHAMMER
-# 3835 "data/scripts/battle_labyrinth.pory"
+# 3826 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_SUPER_POTION, 1
-# 3836 "data/scripts/battle_labyrinth.pory"
+# 3827 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_24
-# 3838 "data/scripts/battle_labyrinth.pory"
+# 3829 "data/scripts/battle_labyrinth.pory"
 	message Debug_CheatStart_PBL_Text_22
-# 3839 "data/scripts/battle_labyrinth.pory"
+# 3830 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_3
-# 3840 "data/scripts/battle_labyrinth.pory"
+# 3831 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3841 "data/scripts/battle_labyrinth.pory"
+# 3832 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_113
-# 3843 "data/scripts/battle_labyrinth.pory"
+# 3834 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_114
-# 3846 "data/scripts/battle_labyrinth.pory"
+# 3837 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, Debug_CheatStart_PBL_115
 Debug_CheatStart_PBL_111:
-# 3854 "data/scripts/battle_labyrinth.pory"
+# 3845 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 15
-# 3855 "data/scripts/battle_labyrinth.pory"
+# 3846 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GenerateMon
-# 3857 "data/scripts/battle_labyrinth.pory"
+# 3848 "data/scripts/battle_labyrinth.pory"
 	message Debug_CheatStart_PBL_Text_23
-# 3858 "data/scripts/battle_labyrinth.pory"
+# 3849 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_13, Debug_CheatStart_PBL_Text_14, Debug_CheatStart_PBL_Text_15
-# 3859 "data/scripts/battle_labyrinth.pory"
+# 3850 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3860 "data/scripts/battle_labyrinth.pory"
+# 3851 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_118
-# 3862 "data/scripts/battle_labyrinth.pory"
+# 3853 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_119
-# 3864 "data/scripts/battle_labyrinth.pory"
+# 3855 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_120
 Debug_CheatStart_PBL_116:
-# 3867 "data/scripts/battle_labyrinth.pory"
+# 3858 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 16
-# 3868 "data/scripts/battle_labyrinth.pory"
+# 3859 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GenerateMon
-# 3869 "data/scripts/battle_labyrinth.pory"
+# 3860 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_PBL, SUB_QUEST_7
-# 3870 "data/scripts/battle_labyrinth.pory"
+# 3861 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_PBL, SUB_QUEST_8
-# 3872 "data/scripts/battle_labyrinth.pory"
+# 3863 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_SHARP_BEAK
-# 3873 "data/scripts/battle_labyrinth.pory"
+# 3864 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_ROCK_GEM
-# 3874 "data/scripts/battle_labyrinth.pory"
+# 3865 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_FIGHTING_GEM
-# 3875 "data/scripts/battle_labyrinth.pory"
+# 3866 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_PSYCHIC_GEM
-# 3876 "data/scripts/battle_labyrinth.pory"
+# 3867 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_SERIOUS_MINT
-# 3877 "data/scripts/battle_labyrinth.pory"
+# 3868 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_BLACK_BELT
-# 3878 "data/scripts/battle_labyrinth.pory"
+# 3869 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_SITRUS_BERRY, 5
-# 3879 "data/scripts/battle_labyrinth.pory"
+# 3870 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_MAGNET
-# 3880 "data/scripts/battle_labyrinth.pory"
+# 3871 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_HARD_STONE
-# 3881 "data/scripts/battle_labyrinth.pory"
+# 3872 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_DUSK_BALL
-# 3882 "data/scripts/battle_labyrinth.pory"
+# 3873 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_FULL_HEAL
-# 3883 "data/scripts/battle_labyrinth.pory"
+# 3874 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_TM_THIEF
-# 3884 "data/scripts/battle_labyrinth.pory"
+# 3875 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_TM_ROCK_TOMB
-# 3885 "data/scripts/battle_labyrinth.pory"
+# 3876 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_PARALYZE_HEAL, 2
-# 3886 "data/scripts/battle_labyrinth.pory"
+# 3877 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_ANTIDOTE, 2
-# 3887 "data/scripts/battle_labyrinth.pory"
+# 3878 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_GREAT_BALL
-# 3888 "data/scripts/battle_labyrinth.pory"
+# 3879 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_POTION, 5
-# 3889 "data/scripts/battle_labyrinth.pory"
+# 3880 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_SUPER_POTION, 2
-# 3890 "data/scripts/battle_labyrinth.pory"
+# 3881 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_MACHETE
-# 3891 "data/scripts/battle_labyrinth.pory"
+# 3882 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_TM_HIDDEN_POWER
-# 3892 "data/scripts/battle_labyrinth.pory"
+# 3883 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_25
-# 3893 "data/scripts/battle_labyrinth.pory"
+# 3884 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_26
-# 3895 "data/scripts/battle_labyrinth.pory"
+# 3886 "data/scripts/battle_labyrinth.pory"
 	message Debug_CheatStart_PBL_Text_24
-# 3896 "data/scripts/battle_labyrinth.pory"
+# 3887 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_6
-# 3897 "data/scripts/battle_labyrinth.pory"
+# 3888 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3898 "data/scripts/battle_labyrinth.pory"
+# 3889 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_123
-# 3900 "data/scripts/battle_labyrinth.pory"
+# 3891 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_124
-# 3903 "data/scripts/battle_labyrinth.pory"
+# 3894 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, Debug_CheatStart_PBL_125
 Debug_CheatStart_PBL_121:
-# 3911 "data/scripts/battle_labyrinth.pory"
+# 3902 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 18
-# 3912 "data/scripts/battle_labyrinth.pory"
+# 3903 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GenerateMon
-# 3913 "data/scripts/battle_labyrinth.pory"
+# 3904 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_PBL, SUB_QUEST_9
-# 3915 "data/scripts/battle_labyrinth.pory"
+# 3906 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_BIG_ROOT
-# 3916 "data/scripts/battle_labyrinth.pory"
+# 3907 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_TM_PLUCK
-# 3917 "data/scripts/battle_labyrinth.pory"
+# 3908 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_MYSTIC_WATER
-# 3918 "data/scripts/battle_labyrinth.pory"
+# 3909 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_CHARCOAL
-# 3919 "data/scripts/battle_labyrinth.pory"
+# 3910 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_TM_RETALIATE
-# 3920 "data/scripts/battle_labyrinth.pory"
+# 3911 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_27
-# 3921 "data/scripts/battle_labyrinth.pory"
+# 3912 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_28
-# 3923 "data/scripts/battle_labyrinth.pory"
+# 3914 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SQUAWKABILLY
-# 3924 "data/scripts/battle_labyrinth.pory"
+# 3915 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 20
-# 3925 "data/scripts/battle_labyrinth.pory"
+# 3916 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GiveMon
-# 3926 "data/scripts/battle_labyrinth.pory"
+# 3917 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_ZONE9E_RECEIVED_SQUAWKABILLY
-# 3928 "data/scripts/battle_labyrinth.pory"
+# 3919 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 10
-# 3929 "data/scripts/battle_labyrinth.pory"
+# 3920 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 21
-# 3930 "data/scripts/battle_labyrinth.pory"
+# 3921 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE9SANCTUARY, 255, 38, 11
-# 3931 "data/scripts/battle_labyrinth.pory"
+# 3922 "data/scripts/battle_labyrinth.pory"
 	waitstate
-# 3932 "data/scripts/battle_labyrinth.pory"
+# 3923 "data/scripts/battle_labyrinth.pory"
 	closemessage
 	return
 
 Debug_CheatStart_PBL_3:
-# 3470 "data/scripts/battle_labyrinth.pory"
+# 3461 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TRAINER_MUSIC, 0
 	goto Debug_CheatStart_PBL_1
 
 Debug_CheatStart_PBL_4:
-# 3472 "data/scripts/battle_labyrinth.pory"
+# 3463 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TRAINER_MUSIC, 1
 	goto Debug_CheatStart_PBL_1
 
 Debug_CheatStart_PBL_5:
-# 3474 "data/scripts/battle_labyrinth.pory"
+# 3465 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TRAINER_MUSIC, 2
 	goto Debug_CheatStart_PBL_1
 
 Debug_CheatStart_PBL_6:
-# 3476 "data/scripts/battle_labyrinth.pory"
+# 3467 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TRAINER_MUSIC, 3
 	goto Debug_CheatStart_PBL_1
 
 Debug_CheatStart_PBL_7:
-# 3478 "data/scripts/battle_labyrinth.pory"
+# 3469 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TRAINER_MUSIC, 4
 	goto Debug_CheatStart_PBL_1
 
 Debug_CheatStart_PBL_10:
-# 3483 "data/scripts/battle_labyrinth.pory"
+# 3474 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_WILD_MUSIC, 0
 	goto Debug_CheatStart_PBL_8
 
 Debug_CheatStart_PBL_11:
-# 3485 "data/scripts/battle_labyrinth.pory"
+# 3476 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_WILD_MUSIC, 1
 	goto Debug_CheatStart_PBL_8
 
 Debug_CheatStart_PBL_12:
-# 3487 "data/scripts/battle_labyrinth.pory"
+# 3478 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_WILD_MUSIC, 2
 	goto Debug_CheatStart_PBL_8
 
 Debug_CheatStart_PBL_13:
-# 3489 "data/scripts/battle_labyrinth.pory"
+# 3480 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_WILD_MUSIC, 3
 	goto Debug_CheatStart_PBL_8
 
 Debug_CheatStart_PBL_14:
-# 3491 "data/scripts/battle_labyrinth.pory"
+# 3482 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_WILD_MUSIC, 4
 	goto Debug_CheatStart_PBL_8
 
 Debug_CheatStart_PBL_17:
-# 3496 "data/scripts/battle_labyrinth.pory"
+# 3487 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVIATHAN_MUSIC, 0
 	goto Debug_CheatStart_PBL_15
 
 Debug_CheatStart_PBL_18:
-# 3498 "data/scripts/battle_labyrinth.pory"
+# 3489 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVIATHAN_MUSIC, 1
 	goto Debug_CheatStart_PBL_15
 
 Debug_CheatStart_PBL_19:
-# 3500 "data/scripts/battle_labyrinth.pory"
+# 3491 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVIATHAN_MUSIC, 2
 	goto Debug_CheatStart_PBL_15
 
 Debug_CheatStart_PBL_20:
-# 3502 "data/scripts/battle_labyrinth.pory"
+# 3493 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVIATHAN_MUSIC, 3
 	goto Debug_CheatStart_PBL_15
 
 Debug_CheatStart_PBL_21:
-# 3504 "data/scripts/battle_labyrinth.pory"
+# 3495 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVIATHAN_MUSIC, 4
 	goto Debug_CheatStart_PBL_15
 
 Debug_CheatStart_PBL_23:
-# 3533 "data/scripts/battle_labyrinth.pory"
+# 3524 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_TEMP_1
 	goto Debug_CheatStart_PBL_22
 
 Debug_CheatStart_PBL_27:
-# 3542 "data/scripts/battle_labyrinth.pory"
+# 3533 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 1
 	goto Debug_CheatStart_PBL_25
 
 Debug_CheatStart_PBL_28:
-# 3544 "data/scripts/battle_labyrinth.pory"
+# 3535 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 1
-# 3545 "data/scripts/battle_labyrinth.pory"
+# 3536 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_TEMP_1
 	goto Debug_CheatStart_PBL_25
 
 Debug_CheatStart_PBL_29:
-# 3547 "data/scripts/battle_labyrinth.pory"
+# 3538 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3548 "data/scripts/battle_labyrinth.pory"
+# 3539 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 1
-# 3549 "data/scripts/battle_labyrinth.pory"
+# 3540 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 7
-# 3550 "data/scripts/battle_labyrinth.pory"
+# 3541 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE0SANCTUARY, 255, 38, 11
-# 3551 "data/scripts/battle_labyrinth.pory"
+# 3542 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	end
 
 Debug_CheatStart_PBL_32:
-# 3560 "data/scripts/battle_labyrinth.pory"
+# 3551 "data/scripts/battle_labyrinth.pory"
 	random 5
-# 3561 "data/scripts/battle_labyrinth.pory"
+# 3552 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3562 "data/scripts/battle_labyrinth.pory"
+# 3553 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_42
-# 3564 "data/scripts/battle_labyrinth.pory"
+# 3555 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_43
-# 3566 "data/scripts/battle_labyrinth.pory"
+# 3557 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_44
-# 3568 "data/scripts/battle_labyrinth.pory"
+# 3559 "data/scripts/battle_labyrinth.pory"
 	case 3, Debug_CheatStart_PBL_45
-# 3570 "data/scripts/battle_labyrinth.pory"
+# 3561 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_46
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_33:
-# 3574 "data/scripts/battle_labyrinth.pory"
+# 3565 "data/scripts/battle_labyrinth.pory"
 	random 5
-# 3575 "data/scripts/battle_labyrinth.pory"
+# 3566 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3576 "data/scripts/battle_labyrinth.pory"
+# 3567 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_48
-# 3578 "data/scripts/battle_labyrinth.pory"
+# 3569 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_49
-# 3580 "data/scripts/battle_labyrinth.pory"
+# 3571 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_50
-# 3582 "data/scripts/battle_labyrinth.pory"
+# 3573 "data/scripts/battle_labyrinth.pory"
 	case 3, Debug_CheatStart_PBL_51
-# 3584 "data/scripts/battle_labyrinth.pory"
+# 3575 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_52
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_34:
-# 3588 "data/scripts/battle_labyrinth.pory"
+# 3579 "data/scripts/battle_labyrinth.pory"
 	random 5
-# 3589 "data/scripts/battle_labyrinth.pory"
+# 3580 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3590 "data/scripts/battle_labyrinth.pory"
+# 3581 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_54
-# 3592 "data/scripts/battle_labyrinth.pory"
+# 3583 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_55
-# 3594 "data/scripts/battle_labyrinth.pory"
+# 3585 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_56
-# 3596 "data/scripts/battle_labyrinth.pory"
+# 3587 "data/scripts/battle_labyrinth.pory"
 	case 3, Debug_CheatStart_PBL_57
-# 3598 "data/scripts/battle_labyrinth.pory"
+# 3589 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_58
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_37:
-# 3618 "data/scripts/battle_labyrinth.pory"
+# 3609 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 2
 	goto Debug_CheatStart_PBL_35
 
 Debug_CheatStart_PBL_38:
-# 3620 "data/scripts/battle_labyrinth.pory"
+# 3611 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 4
 	goto Debug_CheatStart_PBL_35
 
 Debug_CheatStart_PBL_39:
-# 3622 "data/scripts/battle_labyrinth.pory"
+# 3613 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 3
 	goto Debug_CheatStart_PBL_35
 
 Debug_CheatStart_PBL_40:
-# 3624 "data/scripts/battle_labyrinth.pory"
+# 3615 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3625 "data/scripts/battle_labyrinth.pory"
+# 3616 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 2
-# 3626 "data/scripts/battle_labyrinth.pory"
+# 3617 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 9
-# 3627 "data/scripts/battle_labyrinth.pory"
+# 3618 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE1SANCTUARY, 255, 38, 11
-# 3628 "data/scripts/battle_labyrinth.pory"
+# 3619 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	end
 
 Debug_CheatStart_PBL_42:
-# 3563 "data/scripts/battle_labyrinth.pory"
+# 3554 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_PANSAGE
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_43:
-# 3565 "data/scripts/battle_labyrinth.pory"
+# 3556 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_HOPPIP
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_44:
-# 3567 "data/scripts/battle_labyrinth.pory"
+# 3558 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SUNKERN
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_45:
-# 3569 "data/scripts/battle_labyrinth.pory"
+# 3560 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SMOLIV
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_46:
-# 3571 "data/scripts/battle_labyrinth.pory"
+# 3562 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_BOUNSWEET
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_48:
-# 3577 "data/scripts/battle_labyrinth.pory"
+# 3568 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_PANSEAR
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_49:
-# 3579 "data/scripts/battle_labyrinth.pory"
+# 3570 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SLUGMA
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_50:
-# 3581 "data/scripts/battle_labyrinth.pory"
+# 3572 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SALANDIT
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_51:
-# 3583 "data/scripts/battle_labyrinth.pory"
+# 3574 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_VULPIX
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_52:
-# 3585 "data/scripts/battle_labyrinth.pory"
+# 3576 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SIZZLIPEDE
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_54:
-# 3591 "data/scripts/battle_labyrinth.pory"
+# 3582 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_PANPOUR
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_55:
-# 3593 "data/scripts/battle_labyrinth.pory"
+# 3584 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_BARBOACH
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_56:
-# 3595 "data/scripts/battle_labyrinth.pory"
+# 3586 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_FINNEON
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_57:
-# 3597 "data/scripts/battle_labyrinth.pory"
+# 3588 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SEEL
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_58:
-# 3599 "data/scripts/battle_labyrinth.pory"
+# 3590 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_GOLDEEN
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_61:
-# 3637 "data/scripts/battle_labyrinth.pory"
+# 3628 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SEWADDLE
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_62:
-# 3639 "data/scripts/battle_labyrinth.pory"
+# 3630 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SPINARAK
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_63:
-# 3641 "data/scripts/battle_labyrinth.pory"
+# 3632 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_LEDYBA
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_64:
-# 3643 "data/scripts/battle_labyrinth.pory"
+# 3634 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_VENIPEDE
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_65:
-# 3645 "data/scripts/battle_labyrinth.pory"
+# 3636 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_NINCADA
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_66:
-# 3647 "data/scripts/battle_labyrinth.pory"
+# 3638 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_CATERPIE
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_67:
-# 3649 "data/scripts/battle_labyrinth.pory"
+# 3640 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_WEEDLE
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_68:
-# 3651 "data/scripts/battle_labyrinth.pory"
+# 3642 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_TAROUNTULA
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_69:
-# 3653 "data/scripts/battle_labyrinth.pory"
+# 3644 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_KRICKETOT
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_70:
-# 3655 "data/scripts/battle_labyrinth.pory"
+# 3646 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_PARAS
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_73:
-# 3682 "data/scripts/battle_labyrinth.pory"
+# 3673 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 5
 	goto Debug_CheatStart_PBL_71
 
 Debug_CheatStart_PBL_74:
-# 3684 "data/scripts/battle_labyrinth.pory"
+# 3675 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 5
-# 3685 "data/scripts/battle_labyrinth.pory"
+# 3676 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_TEMP_1
 	goto Debug_CheatStart_PBL_71
 
 Debug_CheatStart_PBL_75:
-# 3687 "data/scripts/battle_labyrinth.pory"
+# 3678 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3688 "data/scripts/battle_labyrinth.pory"
+# 3679 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 3
-# 3689 "data/scripts/battle_labyrinth.pory"
+# 3680 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 11
-# 3690 "data/scripts/battle_labyrinth.pory"
+# 3681 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE2SANCTUARY, 255, 38, 11
-# 3691 "data/scripts/battle_labyrinth.pory"
+# 3682 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	end
 
 Debug_CheatStart_PBL_78:
-# 3705 "data/scripts/battle_labyrinth.pory"
+# 3696 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 6
 	goto Debug_CheatStart_PBL_76
 
 Debug_CheatStart_PBL_79:
-# 3707 "data/scripts/battle_labyrinth.pory"
+# 3698 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 7
 	goto Debug_CheatStart_PBL_76
 
 Debug_CheatStart_PBL_80:
-# 3709 "data/scripts/battle_labyrinth.pory"
+# 3700 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 8
 	goto Debug_CheatStart_PBL_76
 
 Debug_CheatStart_PBL_81:
-# 3711 "data/scripts/battle_labyrinth.pory"
+# 3702 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 9
 	goto Debug_CheatStart_PBL_76
 
 Debug_CheatStart_PBL_82:
-# 3713 "data/scripts/battle_labyrinth.pory"
+# 3704 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 10
 	goto Debug_CheatStart_PBL_76
 
 Debug_CheatStart_PBL_83:
-# 3715 "data/scripts/battle_labyrinth.pory"
+# 3706 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3716 "data/scripts/battle_labyrinth.pory"
+# 3707 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 4
-# 3717 "data/scripts/battle_labyrinth.pory"
+# 3708 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 13
-# 3718 "data/scripts/battle_labyrinth.pory"
+# 3709 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE3SANCTUARY, 255, 38, 11
-# 3719 "data/scripts/battle_labyrinth.pory"
+# 3710 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	end
 
 Debug_CheatStart_PBL_86:
-# 3729 "data/scripts/battle_labyrinth.pory"
+# 3720 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_WATER_GEM
 	goto Debug_CheatStart_PBL_84
 
 Debug_CheatStart_PBL_87:
-# 3731 "data/scripts/battle_labyrinth.pory"
+# 3722 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_ELECTRIC_GEM
 	goto Debug_CheatStart_PBL_84
 
 Debug_CheatStart_PBL_88:
-# 3733 "data/scripts/battle_labyrinth.pory"
+# 3724 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_FIRE_GEM
 	goto Debug_CheatStart_PBL_84
 
 Debug_CheatStart_PBL_89:
-# 3735 "data/scripts/battle_labyrinth.pory"
+# 3726 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_PSYCHIC_GEM
 	goto Debug_CheatStart_PBL_84
 
 Debug_CheatStart_PBL_90:
-# 3737 "data/scripts/battle_labyrinth.pory"
+# 3728 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_DARK_GEM
 	goto Debug_CheatStart_PBL_84
 
 Debug_CheatStart_PBL_91:
-# 3739 "data/scripts/battle_labyrinth.pory"
+# 3730 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_GRASS_GEM
 	goto Debug_CheatStart_PBL_84
 
 Debug_CheatStart_PBL_92:
-# 3741 "data/scripts/battle_labyrinth.pory"
+# 3732 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_ICE_GEM
 	goto Debug_CheatStart_PBL_84
 
 Debug_CheatStart_PBL_93:
-# 3743 "data/scripts/battle_labyrinth.pory"
+# 3734 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_FAIRY_GEM
 	goto Debug_CheatStart_PBL_84
 
 Debug_CheatStart_PBL_96:
-# 3766 "data/scripts/battle_labyrinth.pory"
+# 3757 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 11
 	goto Debug_CheatStart_PBL_94
 
 Debug_CheatStart_PBL_97:
-# 3768 "data/scripts/battle_labyrinth.pory"
+# 3759 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 12
 	goto Debug_CheatStart_PBL_94
 
 Debug_CheatStart_PBL_98:
-# 3770 "data/scripts/battle_labyrinth.pory"
+# 3761 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3771 "data/scripts/battle_labyrinth.pory"
+# 3762 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 5
-# 3772 "data/scripts/battle_labyrinth.pory"
+# 3763 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 13
-# 3773 "data/scripts/battle_labyrinth.pory"
+# 3764 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE4SANCTUARY, 255, 38, 11
-# 3774 "data/scripts/battle_labyrinth.pory"
+# 3765 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	end
 
 Debug_CheatStart_PBL_101:
-# 3783 "data/scripts/battle_labyrinth.pory"
+# 3774 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_PACHIRISU
 	goto Debug_CheatStart_PBL_99
 
 Debug_CheatStart_PBL_102:
-# 3785 "data/scripts/battle_labyrinth.pory"
+# 3776 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_DEDENNE
 	goto Debug_CheatStart_PBL_99
 
 Debug_CheatStart_PBL_103:
-# 3787 "data/scripts/battle_labyrinth.pory"
+# 3778 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_MORPEKO
 	goto Debug_CheatStart_PBL_99
 
 Debug_CheatStart_PBL_104:
-# 3789 "data/scripts/battle_labyrinth.pory"
+# 3780 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_PLUSLE
 	goto Debug_CheatStart_PBL_99
 
 Debug_CheatStart_PBL_105:
-# 3791 "data/scripts/battle_labyrinth.pory"
+# 3782 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_MINUN
 	goto Debug_CheatStart_PBL_99
 
 Debug_CheatStart_PBL_108:
-# 3812 "data/scripts/battle_labyrinth.pory"
+# 3803 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 13
 	goto Debug_CheatStart_PBL_106
 
 Debug_CheatStart_PBL_109:
-# 3814 "data/scripts/battle_labyrinth.pory"
+# 3805 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 13
-# 3815 "data/scripts/battle_labyrinth.pory"
+# 3806 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_TEMP_1
 	goto Debug_CheatStart_PBL_106
 
 Debug_CheatStart_PBL_110:
-# 3817 "data/scripts/battle_labyrinth.pory"
+# 3808 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3818 "data/scripts/battle_labyrinth.pory"
+# 3809 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 6
-# 3819 "data/scripts/battle_labyrinth.pory"
+# 3810 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 15
-# 3820 "data/scripts/battle_labyrinth.pory"
+# 3811 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE5SANCTUARY, 255, 38, 11
-# 3821 "data/scripts/battle_labyrinth.pory"
+# 3812 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	end
 
 Debug_CheatStart_PBL_113:
-# 3842 "data/scripts/battle_labyrinth.pory"
+# 3833 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 14
 	goto Debug_CheatStart_PBL_111
 
 Debug_CheatStart_PBL_114:
-# 3844 "data/scripts/battle_labyrinth.pory"
+# 3835 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 14
-# 3845 "data/scripts/battle_labyrinth.pory"
+# 3836 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_TEMP_1
 	goto Debug_CheatStart_PBL_111
 
 Debug_CheatStart_PBL_115:
-# 3847 "data/scripts/battle_labyrinth.pory"
+# 3838 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3848 "data/scripts/battle_labyrinth.pory"
+# 3839 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 7
-# 3849 "data/scripts/battle_labyrinth.pory"
+# 3840 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 17
-# 3850 "data/scripts/battle_labyrinth.pory"
+# 3841 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE6SANCTUARY, 255, 38, 11
-# 3851 "data/scripts/battle_labyrinth.pory"
+# 3842 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	end
 
 Debug_CheatStart_PBL_118:
-# 3861 "data/scripts/battle_labyrinth.pory"
+# 3852 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 15
 	goto Debug_CheatStart_PBL_116
 
 Debug_CheatStart_PBL_119:
-# 3863 "data/scripts/battle_labyrinth.pory"
+# 3854 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 16
 	goto Debug_CheatStart_PBL_116
 
 Debug_CheatStart_PBL_120:
-# 3865 "data/scripts/battle_labyrinth.pory"
+# 3856 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 17
 	goto Debug_CheatStart_PBL_116
 
 Debug_CheatStart_PBL_123:
-# 3899 "data/scripts/battle_labyrinth.pory"
+# 3890 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 18
 	goto Debug_CheatStart_PBL_121
 
 Debug_CheatStart_PBL_124:
-# 3901 "data/scripts/battle_labyrinth.pory"
+# 3892 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 18
-# 3902 "data/scripts/battle_labyrinth.pory"
+# 3893 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_TEMP_1
 	goto Debug_CheatStart_PBL_121
 
 Debug_CheatStart_PBL_125:
-# 3904 "data/scripts/battle_labyrinth.pory"
+# 3895 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3905 "data/scripts/battle_labyrinth.pory"
+# 3896 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 9
-# 3906 "data/scripts/battle_labyrinth.pory"
+# 3897 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 20
-# 3907 "data/scripts/battle_labyrinth.pory"
+# 3898 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE8SANCTUARY, 255, 38, 11
-# 3908 "data/scripts/battle_labyrinth.pory"
+# 3899 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	end
 
 
 Debug_CheatStart_PBL_GenerateMon::
-# 3936 "data/scripts/battle_labyrinth.pory"
+# 3927 "data/scripts/battle_labyrinth.pory"
 	callnative DebugCheatStartGenerateMon
-# 3937 "data/scripts/battle_labyrinth.pory"
+# 3928 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GiveMon
 	return
 
 
 Debug_CheatStart_PBL_GiveMon::
-# 3941 "data/scripts/battle_labyrinth.pory"
+# 3932 "data/scripts/battle_labyrinth.pory"
 	givemon VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE
-# 3942 "data/scripts/battle_labyrinth.pory"
+# 3933 "data/scripts/battle_labyrinth.pory"
 	bufferspeciesname 0, VAR_TEMP_0
-# 3943 "data/scripts/battle_labyrinth.pory"
+# 3934 "data/scripts/battle_labyrinth.pory"
 	msgbox Debug_CheatStart_PBL_GiveMon_Text_0
 	return
 
@@ -8674,304 +8654,304 @@ EventScript_Max_Text_2:
 	.string "Welcome to my TM shop!$"
 
 EventScript_Max_Text_3:
-# 1881 "data/scripts/battle_labyrinth.pory"
+# 1879 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR BLUE}Max{COLOR DARK_GRAY}: Goodbye!$"
 
 EventScript_LeavingSetup_Text_0:
-# 1917 "data/scripts/battle_labyrinth.pory"
+# 1908 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Bring out the strength of you\n"
 	.string "and your Pokémon!$"
 
 EventScript_SanctuaryToZone0_Text_0:
-# 2015 "data/scripts/battle_labyrinth.pory"
+# 2006 "data/scripts/battle_labyrinth.pory"
 	.string "Go to Zone 0?$"
 
 EventScript_Documentation_Text_0:
-# 2029 "data/scripts/battle_labyrinth.pory"
+# 2020 "data/scripts/battle_labyrinth.pory"
 	.string "This is version 1.4.0 of the Pokémon\n"
 	.string "Battle Labyrinth.\p"
 	.string "Make sure you're playing the most up to\n"
 	.string "date version!$"
 
 EventScript_Settings_Text_0:
-# 2068 "data/scripts/battle_labyrinth.pory"
+# 2059 "data/scripts/battle_labyrinth.pory"
 	.string "Choose a setting to adjust.\n{COLOR RED}Red{COLOR DARK_GRAY} means enabled.$"
 
 EventScript_Settings_Text_1:
-# 2071 "data/scripts/battle_labyrinth.pory"
+# 2062 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Brutal$"
 
 EventScript_Settings_Text_2:
-# 2073 "data/scripts/battle_labyrinth.pory"
+# 2064 "data/scripts/battle_labyrinth.pory"
 	.string "Brutal$"
 
 EventScript_Settings_Text_3:
-# 2076 "data/scripts/battle_labyrinth.pory"
+# 2067 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Nuzlocke$"
 
 EventScript_Settings_Text_4:
-# 2078 "data/scripts/battle_labyrinth.pory"
+# 2069 "data/scripts/battle_labyrinth.pory"
 	.string "Nuzlocke$"
 
 EventScript_Settings_Text_5:
-# 2081 "data/scripts/battle_labyrinth.pory"
+# 2072 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Randomizer$"
 
 EventScript_Settings_Text_6:
-# 2083 "data/scripts/battle_labyrinth.pory"
+# 2074 "data/scripts/battle_labyrinth.pory"
 	.string "Randomizer$"
 
 EventScript_Settings_Text_7:
-# 2086 "data/scripts/battle_labyrinth.pory"
+# 2077 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Infinite$"
 
 EventScript_Settings_Text_8:
-# 2088 "data/scripts/battle_labyrinth.pory"
+# 2079 "data/scripts/battle_labyrinth.pory"
 	.string "Infinite$"
 
 EventScript_Settings_Text_9:
-# 2091 "data/scripts/battle_labyrinth.pory"
+# 2082 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Full Info$"
 
 EventScript_Settings_Text_10:
-# 2093 "data/scripts/battle_labyrinth.pory"
+# 2084 "data/scripts/battle_labyrinth.pory"
 	.string "Full Info$"
 
 EventScript_Settings_Text_11:
-# 2096 "data/scripts/battle_labyrinth.pory"
+# 2087 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Exp. All$"
 
 EventScript_Settings_Text_12:
-# 2098 "data/scripts/battle_labyrinth.pory"
+# 2089 "data/scripts/battle_labyrinth.pory"
 	.string "Exp. All$"
 
 EventScript_Settings_Text_13:
-# 2100 "data/scripts/battle_labyrinth.pory"
+# 2091 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Music$"
 
 EventScript_Settings_Text_14:
-# 2102 "data/scripts/battle_labyrinth.pory"
+# 2093 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Challenge$"
 
 EventScript_Settings_Text_15:
-# 2104 "data/scripts/battle_labyrinth.pory"
+# 2095 "data/scripts/battle_labyrinth.pory"
 	.string "Challenge$"
 
 EventScript_Settings_Text_16:
-# 2107 "data/scripts/battle_labyrinth.pory"
+# 2098 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Gauntlet$"
 
 EventScript_Settings_Text_17:
-# 2109 "data/scripts/battle_labyrinth.pory"
+# 2100 "data/scripts/battle_labyrinth.pory"
 	.string "Gauntlet$"
 
 EventScript_Settings_Text_18:
-# 2112 "data/scripts/battle_labyrinth.pory"
+# 2103 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Antidoctor$"
 
 EventScript_Settings_Text_19:
-# 2114 "data/scripts/battle_labyrinth.pory"
+# 2105 "data/scripts/battle_labyrinth.pory"
 	.string "Antidoctor$"
 
 EventScript_Settings_Text_20:
-# 2117 "data/scripts/battle_labyrinth.pory"
+# 2108 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Clumsy$"
 
 EventScript_Settings_Text_21:
-# 2119 "data/scripts/battle_labyrinth.pory"
+# 2110 "data/scripts/battle_labyrinth.pory"
 	.string "Clumsy$"
 
 EventScript_Settings_Text_22:
-# 2122 "data/scripts/battle_labyrinth.pory"
+# 2113 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Effortless$"
 
 EventScript_Settings_Text_23:
-# 2124 "data/scripts/battle_labyrinth.pory"
+# 2115 "data/scripts/battle_labyrinth.pory"
 	.string "Effortless$"
 
 EventScript_Settings_Text_24:
-# 2127 "data/scripts/battle_labyrinth.pory"
+# 2118 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Red Thumb$"
 
 EventScript_Settings_Text_25:
-# 2129 "data/scripts/battle_labyrinth.pory"
+# 2120 "data/scripts/battle_labyrinth.pory"
 	.string "Red Thumb$"
 
 EventScript_Settings_Text_26:
-# 2132 "data/scripts/battle_labyrinth.pory"
+# 2123 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Antigrind$"
 
 EventScript_Settings_Text_27:
-# 2134 "data/scripts/battle_labyrinth.pory"
+# 2125 "data/scripts/battle_labyrinth.pory"
 	.string "Antigrind$"
 
 EventScript_Settings_Text_28:
-# 2137 "data/scripts/battle_labyrinth.pory"
+# 2128 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Single-Use$"
 
 EventScript_Settings_Text_29:
-# 2139 "data/scripts/battle_labyrinth.pory"
+# 2130 "data/scripts/battle_labyrinth.pory"
 	.string "Single-Use$"
 
 EventScript_Settings_Text_30:
-# 2142 "data/scripts/battle_labyrinth.pory"
+# 2133 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Poor$"
 
 EventScript_Settings_Text_31:
-# 2144 "data/scripts/battle_labyrinth.pory"
+# 2135 "data/scripts/battle_labyrinth.pory"
 	.string "Poor$"
 
 EventScript_Settings_Text_32:
-# 2147 "data/scripts/battle_labyrinth.pory"
+# 2138 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Independent$"
 
 EventScript_Settings_Text_33:
-# 2149 "data/scripts/battle_labyrinth.pory"
+# 2140 "data/scripts/battle_labyrinth.pory"
 	.string "Independent$"
 
 EventScript_Settings_Text_34:
-# 2157 "data/scripts/battle_labyrinth.pory"
+# 2148 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn off {COLOR RED}Brutal{COLOR DARK_GRAY} mode?$"
 
 EventScript_Settings_Text_35:
-# 2159 "data/scripts/battle_labyrinth.pory"
+# 2150 "data/scripts/battle_labyrinth.pory"
 	.string "Are you sure you would like to turn off\n"
 	.string "{COLOR RED}Brutal{COLOR DARK_GRAY} mode?$"
 
 EventScript_Settings_Text_36:
-# 2162 "data/scripts/battle_labyrinth.pory"
+# 2153 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Brutal{COLOR DARK_GRAY} mode turned off.$"
 
 EventScript_Settings_Text_37:
-# 2171 "data/scripts/battle_labyrinth.pory"
+# 2162 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn on {COLOR RED}Brutal{COLOR DARK_GRAY} mode?$"
 
 EventScript_Settings_Text_38:
-# 2173 "data/scripts/battle_labyrinth.pory"
+# 2164 "data/scripts/battle_labyrinth.pory"
 	.string "Are you sure you would like to turn on\n"
 	.string "{COLOR RED}Brutal{COLOR DARK_GRAY} mode?$"
 
 EventScript_Settings_Text_39:
-# 2176 "data/scripts/battle_labyrinth.pory"
+# 2167 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Brutal{COLOR DARK_GRAY} mode turned on.$"
 
 EventScript_Settings_Text_40:
-# 2187 "data/scripts/battle_labyrinth.pory"
+# 2178 "data/scripts/battle_labyrinth.pory"
 	.string "So far there have been 0 deaths.$"
 
 EventScript_Settings_Text_41:
-# 2189 "data/scripts/battle_labyrinth.pory"
+# 2180 "data/scripts/battle_labyrinth.pory"
 	.string "So far there has been 1 death.$"
 
 EventScript_Settings_Text_42:
-# 2192 "data/scripts/battle_labyrinth.pory"
+# 2183 "data/scripts/battle_labyrinth.pory"
 	.string "So far there have been {STR_VAR_1} deaths.$"
 
 EventScript_Settings_Text_43:
-# 2196 "data/scripts/battle_labyrinth.pory"
+# 2187 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn off {COLOR RED}Nuzlocke{COLOR DARK_GRAY}\n"
 	.string "mode?$"
 
 EventScript_Settings_Text_44:
-# 2198 "data/scripts/battle_labyrinth.pory"
+# 2189 "data/scripts/battle_labyrinth.pory"
 	.string "Are you sure you would like to turn off\n"
 	.string "{COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode?$"
 
 EventScript_Settings_Text_45:
-# 2201 "data/scripts/battle_labyrinth.pory"
+# 2192 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode turned off.$"
 
 EventScript_Settings_Text_46:
-# 2208 "data/scripts/battle_labyrinth.pory"
+# 2199 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn on {COLOR RED}Nuzlocke{COLOR DARK_GRAY}\n"
 	.string "mode?$"
 
 EventScript_Settings_Text_47:
-# 2210 "data/scripts/battle_labyrinth.pory"
+# 2201 "data/scripts/battle_labyrinth.pory"
 	.string "Are you sure you would like to turn on\n"
 	.string "{COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode?$"
 
 EventScript_Settings_Text_48:
-# 2213 "data/scripts/battle_labyrinth.pory"
+# 2204 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode turned on.$"
 
 EventScript_Settings_Text_49:
-# 2223 "data/scripts/battle_labyrinth.pory"
+# 2214 "data/scripts/battle_labyrinth.pory"
 	.string "You cannot turn off {COLOR RED}Randomizer{COLOR DARK_GRAY} mode\n"
 	.string "once set.$"
 
 EventScript_Settings_Text_50:
-# 2225 "data/scripts/battle_labyrinth.pory"
+# 2216 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn off {COLOR RED}Randomizer{COLOR DARK_GRAY}\n"
 	.string "mode?$"
 
 EventScript_Settings_Text_51:
-# 2227 "data/scripts/battle_labyrinth.pory"
+# 2218 "data/scripts/battle_labyrinth.pory"
 	.string "Are you sure you would like to turn off\n"
 	.string "{COLOR RED}Randomizer{COLOR DARK_GRAY} mode?$"
 
 EventScript_Settings_Text_52:
-# 2230 "data/scripts/battle_labyrinth.pory"
+# 2221 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Randomizer{COLOR DARK_GRAY} mode turned off.$"
 
 EventScript_Settings_Text_53:
-# 2237 "data/scripts/battle_labyrinth.pory"
+# 2228 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn on {COLOR RED}Randomizer{COLOR DARK_GRAY}\n"
 	.string "mode?$"
 
 EventScript_Settings_Text_54:
-# 2239 "data/scripts/battle_labyrinth.pory"
+# 2230 "data/scripts/battle_labyrinth.pory"
 	.string "Are you sure you would like to turn on\n"
 	.string "{COLOR RED}Randomizer{COLOR DARK_GRAY} mode?$"
 
 EventScript_Settings_Text_55:
-# 2242 "data/scripts/battle_labyrinth.pory"
+# 2233 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Randomizer{COLOR DARK_GRAY} mode turned on.$"
 
 EventScript_Settings_Text_56:
-# 2252 "data/scripts/battle_labyrinth.pory"
+# 2243 "data/scripts/battle_labyrinth.pory"
 	.string "You cannot turn off {COLOR RED}Infinite{COLOR DARK_GRAY} mode once\n"
 	.string "set.$"
 
 EventScript_Settings_Text_57:
-# 2253 "data/scripts/battle_labyrinth.pory"
+# 2244 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to restock your supply\n"
 	.string "of Full Restores, Max Elixirs, and Max\l"
 	.string "Repels?$"
 
 EventScript_Settings_Text_58:
-# 2282 "data/scripts/battle_labyrinth.pory"
+# 2273 "data/scripts/battle_labyrinth.pory"
 	.string "Items restocked.$"
 
 EventScript_Settings_Text_59:
-# 2285 "data/scripts/battle_labyrinth.pory"
+# 2276 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn off {COLOR RED}Infinite{COLOR DARK_GRAY}\n"
 	.string "mode?$"
 
 EventScript_Settings_Text_60:
-# 2287 "data/scripts/battle_labyrinth.pory"
+# 2278 "data/scripts/battle_labyrinth.pory"
 	.string "Are you sure you would like to turn off\n"
 	.string "{COLOR RED}Infinite{COLOR DARK_GRAY} mode?$"
 
 EventScript_Settings_Text_61:
-# 2290 "data/scripts/battle_labyrinth.pory"
+# 2281 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Infinite{COLOR DARK_GRAY} mode turned off.$"
 
 EventScript_Settings_Text_62:
-# 2300 "data/scripts/battle_labyrinth.pory"
+# 2291 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn on {COLOR RED}Infinite{COLOR DARK_GRAY} mode?$"
 
 EventScript_Settings_Text_63:
-# 2302 "data/scripts/battle_labyrinth.pory"
+# 2293 "data/scripts/battle_labyrinth.pory"
 	.string "Are you sure you would like to turn on\n"
 	.string "{COLOR RED}Infinite{COLOR DARK_GRAY} mode?$"
 
 EventScript_Settings_Text_64:
-# 2305 "data/scripts/battle_labyrinth.pory"
+# 2296 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Infinite{COLOR DARK_GRAY} mode turned on.$"
 
 EventScript_Settings_Text_65:
-# 2313 "data/scripts/battle_labyrinth.pory"
+# 2304 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Full Info{COLOR DARK_GRAY} setting enables you to\n"
 	.string "see more information that is not visible\l"
 	.string "otherwise, such as full info about\l"
@@ -8980,33 +8960,33 @@ EventScript_Settings_Text_65:
 	.string "potential encounterable Pokémon.$"
 
 EventScript_Settings_Text_66:
-# 2315 "data/scripts/battle_labyrinth.pory"
+# 2306 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Full Info{COLOR DARK_GRAY} setting is currently on.$"
 
 EventScript_Settings_Text_67:
-# 2316 "data/scripts/battle_labyrinth.pory"
+# 2307 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Full Info{COLOR DARK_GRAY}\n"
 	.string "setting off?$"
 
 EventScript_Settings_Text_68:
-# 2319 "data/scripts/battle_labyrinth.pory"
+# 2310 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Full Info{COLOR DARK_GRAY} setting turned off.$"
 
 EventScript_Settings_Text_69:
-# 2328 "data/scripts/battle_labyrinth.pory"
+# 2319 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Full Info{COLOR DARK_GRAY} setting is currently off.$"
 
 EventScript_Settings_Text_70:
-# 2329 "data/scripts/battle_labyrinth.pory"
+# 2320 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Full Info{COLOR DARK_GRAY}\n"
 	.string "setting on?$"
 
 EventScript_Settings_Text_71:
-# 2332 "data/scripts/battle_labyrinth.pory"
+# 2323 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Full Info{COLOR DARK_GRAY} setting turned on.$"
 
 EventScript_Settings_Text_72:
-# 2342 "data/scripts/battle_labyrinth.pory"
+# 2333 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Exp. All{COLOR DARK_GRAY} setting, if turned on, gives\n"
 	.string "members of your party that don't\l"
 	.string "participate in battle 25% experience.\p"
@@ -9016,25 +8996,25 @@ EventScript_Settings_Text_72:
 	.string "choose.$"
 
 EventScript_Settings_Text_73:
-# 2344 "data/scripts/battle_labyrinth.pory"
+# 2335 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Exp. All{COLOR DARK_GRAY} is currently on. Would you\n"
 	.string "like to turn it off?$"
 
 EventScript_Settings_Text_74:
-# 2347 "data/scripts/battle_labyrinth.pory"
+# 2338 "data/scripts/battle_labyrinth.pory"
 	.string "Turned the {COLOR RED}Exp. All{COLOR DARK_GRAY} off.$"
 
 EventScript_Settings_Text_75:
-# 2352 "data/scripts/battle_labyrinth.pory"
+# 2343 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Exp. All{COLOR DARK_GRAY} is currently off. Would you\n"
 	.string "like to turn it on?$"
 
 EventScript_Settings_Text_76:
-# 2355 "data/scripts/battle_labyrinth.pory"
+# 2346 "data/scripts/battle_labyrinth.pory"
 	.string "Turned the {COLOR RED}Exp. All{COLOR DARK_GRAY} on.$"
 
 EventScript_Settings_Text_77:
-# 2363 "data/scripts/battle_labyrinth.pory"
+# 2354 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Challenge{COLOR DARK_GRAY} setting makes battles\n"
 	.string "more difficult.\p"
 	.string "Special trainers have harder fights and\n"
@@ -9043,64 +9023,64 @@ EventScript_Settings_Text_77:
 	.string "The AI cannot be PP stalled.$"
 
 EventScript_Settings_Text_78:
-# 2365 "data/scripts/battle_labyrinth.pory"
+# 2356 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Challenge{COLOR DARK_GRAY} setting is currently on.$"
 
 EventScript_Settings_Text_79:
-# 2367 "data/scripts/battle_labyrinth.pory"
+# 2358 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Challenge{COLOR DARK_GRAY}\n"
 	.string "setting off?$"
 
 EventScript_Settings_Text_80:
-# 2370 "data/scripts/battle_labyrinth.pory"
+# 2361 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Challenge{COLOR DARK_GRAY} setting turned off.$"
 
 EventScript_Settings_Text_81:
-# 2378 "data/scripts/battle_labyrinth.pory"
+# 2369 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Challenge{COLOR DARK_GRAY} setting is currently off.$"
 
 EventScript_Settings_Text_82:
-# 2379 "data/scripts/battle_labyrinth.pory"
+# 2370 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Challenge{COLOR DARK_GRAY}\n"
 	.string "setting on?$"
 
 EventScript_Settings_Text_83:
-# 2382 "data/scripts/battle_labyrinth.pory"
+# 2373 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Challenge{COLOR DARK_GRAY} setting turned on.$"
 
 EventScript_Settings_Text_84:
-# 2388 "data/scripts/battle_labyrinth.pory"
+# 2379 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Gauntlet{COLOR DARK_GRAY} setting makes all trainers\n"
 	.string "mandatory before leaving a Zone.$"
 
 EventScript_Settings_Text_85:
-# 2390 "data/scripts/battle_labyrinth.pory"
+# 2381 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Gauntlet{COLOR DARK_GRAY} setting is currently on.$"
 
 EventScript_Settings_Text_86:
-# 2392 "data/scripts/battle_labyrinth.pory"
+# 2383 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Gauntlet{COLOR DARK_GRAY}\n"
 	.string "setting off?$"
 
 EventScript_Settings_Text_87:
-# 2395 "data/scripts/battle_labyrinth.pory"
+# 2386 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Gauntlet{COLOR DARK_GRAY} setting turned off.$"
 
 EventScript_Settings_Text_88:
-# 2403 "data/scripts/battle_labyrinth.pory"
+# 2394 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Gauntlet{COLOR DARK_GRAY} setting is currently off.$"
 
 EventScript_Settings_Text_89:
-# 2404 "data/scripts/battle_labyrinth.pory"
+# 2395 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Gauntlet{COLOR DARK_GRAY}\n"
 	.string "setting on?$"
 
 EventScript_Settings_Text_90:
-# 2407 "data/scripts/battle_labyrinth.pory"
+# 2398 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Gauntlet{COLOR DARK_GRAY} setting turned on.$"
 
 EventScript_Settings_Text_91:
-# 2413 "data/scripts/battle_labyrinth.pory"
+# 2404 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Antidoctor{COLOR DARK_GRAY} setting prevents\n"
 	.string "in-battle items from being used during\l"
 	.string "trainer battles.\p"
@@ -9108,96 +9088,96 @@ EventScript_Settings_Text_91:
 	.string "opponents use any items.$"
 
 EventScript_Settings_Text_92:
-# 2415 "data/scripts/battle_labyrinth.pory"
+# 2406 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Antidoctor{COLOR DARK_GRAY} setting is currently on.$"
 
 EventScript_Settings_Text_93:
-# 2417 "data/scripts/battle_labyrinth.pory"
+# 2408 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Antidoctor{COLOR DARK_GRAY}\n"
 	.string "setting off?$"
 
 EventScript_Settings_Text_94:
-# 2420 "data/scripts/battle_labyrinth.pory"
+# 2411 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Antidoctor{COLOR DARK_GRAY} setting turned off.$"
 
 EventScript_Settings_Text_95:
-# 2428 "data/scripts/battle_labyrinth.pory"
+# 2419 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Antidoctor{COLOR DARK_GRAY} setting is currently\n"
 	.string "off.$"
 
 EventScript_Settings_Text_96:
-# 2429 "data/scripts/battle_labyrinth.pory"
+# 2420 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Antidoctor{COLOR DARK_GRAY}\n"
 	.string "setting on?$"
 
 EventScript_Settings_Text_97:
-# 2432 "data/scripts/battle_labyrinth.pory"
+# 2423 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Antidoctor{COLOR DARK_GRAY} setting turned on.$"
 
 EventScript_Settings_Text_98:
-# 2438 "data/scripts/battle_labyrinth.pory"
+# 2429 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Clumsy{COLOR DARK_GRAY} setting enforces Set mode.$"
 
 EventScript_Settings_Text_99:
-# 2440 "data/scripts/battle_labyrinth.pory"
+# 2431 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Clumsy{COLOR DARK_GRAY} setting is currently on.$"
 
 EventScript_Settings_Text_100:
-# 2442 "data/scripts/battle_labyrinth.pory"
+# 2433 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Clumsy{COLOR DARK_GRAY}\n"
 	.string "setting off?$"
 
 EventScript_Settings_Text_101:
-# 2445 "data/scripts/battle_labyrinth.pory"
+# 2436 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Clumsy{COLOR DARK_GRAY} setting turned off.$"
 
 EventScript_Settings_Text_102:
-# 2453 "data/scripts/battle_labyrinth.pory"
+# 2444 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Clumsy{COLOR DARK_GRAY} setting is currently off.$"
 
 EventScript_Settings_Text_103:
-# 2454 "data/scripts/battle_labyrinth.pory"
+# 2445 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Clumsy{COLOR DARK_GRAY}\n"
 	.string "setting on?$"
 
 EventScript_Settings_Text_104:
-# 2457 "data/scripts/battle_labyrinth.pory"
+# 2448 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Clumsy{COLOR DARK_GRAY} setting turned on.$"
 
 EventScript_Settings_Text_105:
-# 2463 "data/scripts/battle_labyrinth.pory"
+# 2454 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Effortless{COLOR DARK_GRAY} setting prevents\n"
 	.string "Pokémon from gaining EVs.$"
 
 EventScript_Settings_Text_106:
-# 2465 "data/scripts/battle_labyrinth.pory"
+# 2456 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Effortless{COLOR DARK_GRAY} setting is currently on.$"
 
 EventScript_Settings_Text_107:
-# 2467 "data/scripts/battle_labyrinth.pory"
+# 2458 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Effortless{COLOR DARK_GRAY}\n"
 	.string "setting off?$"
 
 EventScript_Settings_Text_108:
-# 2470 "data/scripts/battle_labyrinth.pory"
+# 2461 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Effortless{COLOR DARK_GRAY} setting turned off.$"
 
 EventScript_Settings_Text_109:
-# 2478 "data/scripts/battle_labyrinth.pory"
+# 2469 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Effortless{COLOR DARK_GRAY} setting is currently\n"
 	.string "off.$"
 
 EventScript_Settings_Text_110:
-# 2479 "data/scripts/battle_labyrinth.pory"
+# 2470 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Effortless{COLOR DARK_GRAY}\n"
 	.string "setting on?$"
 
 EventScript_Settings_Text_111:
-# 2482 "data/scripts/battle_labyrinth.pory"
+# 2473 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Effortless{COLOR DARK_GRAY} setting turned on.$"
 
 EventScript_Settings_Text_112:
-# 2488 "data/scripts/battle_labyrinth.pory"
+# 2479 "data/scripts/battle_labyrinth.pory"
 	.string "In most Pokémon games, players can\n"
 	.string "farm items and money by growing\l"
 	.string "Berries, Thief, and other means.\p"
@@ -9205,33 +9185,33 @@ EventScript_Settings_Text_112:
 	.string "ways of infinitely obtaining items.$"
 
 EventScript_Settings_Text_113:
-# 2490 "data/scripts/battle_labyrinth.pory"
+# 2481 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Red Thumb{COLOR DARK_GRAY} setting is currently on.$"
 
 EventScript_Settings_Text_114:
-# 2492 "data/scripts/battle_labyrinth.pory"
+# 2483 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Red Thumb{COLOR DARK_GRAY}\n"
 	.string "setting off?$"
 
 EventScript_Settings_Text_115:
-# 2495 "data/scripts/battle_labyrinth.pory"
+# 2486 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Red Thumb{COLOR DARK_GRAY} setting turned off.$"
 
 EventScript_Settings_Text_116:
-# 2503 "data/scripts/battle_labyrinth.pory"
+# 2494 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Red Thumb{COLOR DARK_GRAY} setting is currently off.$"
 
 EventScript_Settings_Text_117:
-# 2505 "data/scripts/battle_labyrinth.pory"
+# 2496 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Red Thumb{COLOR DARK_GRAY}\n"
 	.string "setting on?$"
 
 EventScript_Settings_Text_118:
-# 2508 "data/scripts/battle_labyrinth.pory"
+# 2499 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Red Thumb{COLOR DARK_GRAY} setting turned on.$"
 
 EventScript_Settings_Text_119:
-# 2517 "data/scripts/battle_labyrinth.pory"
+# 2508 "data/scripts/battle_labyrinth.pory"
 	.string "In most Pokémon games, players can\n"
 	.string "'grind' experience by defeating wild\l"
 	.string "Pokémon.\p"
@@ -9240,255 +9220,255 @@ EventScript_Settings_Text_119:
 	.string "gain from wild Pokémon.$"
 
 EventScript_Settings_Text_120:
-# 2519 "data/scripts/battle_labyrinth.pory"
+# 2510 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Antigrind{COLOR DARK_GRAY} setting is currently on.$"
 
 EventScript_Settings_Text_121:
-# 2521 "data/scripts/battle_labyrinth.pory"
+# 2512 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Antigrind{COLOR DARK_GRAY}\n"
 	.string "setting off?$"
 
 EventScript_Settings_Text_122:
-# 2524 "data/scripts/battle_labyrinth.pory"
+# 2515 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Antigrind{COLOR DARK_GRAY} setting turned off.$"
 
 EventScript_Settings_Text_123:
-# 2532 "data/scripts/battle_labyrinth.pory"
+# 2523 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Antigrind{COLOR DARK_GRAY} setting is currently off.$"
 
 EventScript_Settings_Text_124:
-# 2533 "data/scripts/battle_labyrinth.pory"
+# 2524 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Antigrind{COLOR DARK_GRAY}\n"
 	.string "setting on?$"
 
 EventScript_Settings_Text_125:
-# 2536 "data/scripts/battle_labyrinth.pory"
+# 2527 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Antigrind{COLOR DARK_GRAY} setting turned on.$"
 
 EventScript_Settings_Text_126:
-# 2542 "data/scripts/battle_labyrinth.pory"
+# 2533 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Single-Use{COLOR DARK_GRAY} setting makes all TMs\n"
 	.string "single-use.$"
 
 EventScript_Settings_Text_127:
-# 2544 "data/scripts/battle_labyrinth.pory"
+# 2535 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Single-Use{COLOR DARK_GRAY} setting is currently on.$"
 
 EventScript_Settings_Text_128:
-# 2546 "data/scripts/battle_labyrinth.pory"
+# 2537 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Single-Use{COLOR DARK_GRAY}\n"
 	.string "setting off?$"
 
 EventScript_Settings_Text_129:
-# 2549 "data/scripts/battle_labyrinth.pory"
+# 2540 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Single-Use{COLOR DARK_GRAY} setting turned off.$"
 
 EventScript_Settings_Text_130:
-# 2557 "data/scripts/battle_labyrinth.pory"
+# 2548 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Single-Use{COLOR DARK_GRAY} setting is currently\n"
 	.string "off.$"
 
 EventScript_Settings_Text_131:
-# 2558 "data/scripts/battle_labyrinth.pory"
+# 2549 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Single-Use{COLOR DARK_GRAY}\n"
 	.string "setting on?$"
 
 EventScript_Settings_Text_132:
-# 2561 "data/scripts/battle_labyrinth.pory"
+# 2552 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Single-Use{COLOR DARK_GRAY} setting turned on.$"
 
 EventScript_Settings_Text_133:
-# 2567 "data/scripts/battle_labyrinth.pory"
+# 2558 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Poor{COLOR DARK_GRAY} setting halves the reward\n"
 	.string "money from trainers.$"
 
 EventScript_Settings_Text_134:
-# 2569 "data/scripts/battle_labyrinth.pory"
+# 2560 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Poor{COLOR DARK_GRAY} setting is currently on.$"
 
 EventScript_Settings_Text_135:
-# 2571 "data/scripts/battle_labyrinth.pory"
+# 2562 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Poor{COLOR DARK_GRAY} setting\n"
 	.string "off?$"
 
 EventScript_Settings_Text_136:
-# 2574 "data/scripts/battle_labyrinth.pory"
+# 2565 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Poor{COLOR DARK_GRAY} setting turned off.$"
 
 EventScript_Settings_Text_137:
-# 2582 "data/scripts/battle_labyrinth.pory"
+# 2573 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Poor{COLOR DARK_GRAY} setting is currently off.$"
 
 EventScript_Settings_Text_138:
-# 2583 "data/scripts/battle_labyrinth.pory"
+# 2574 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Poor{COLOR DARK_GRAY} setting\n"
 	.string "on?$"
 
 EventScript_Settings_Text_139:
-# 2586 "data/scripts/battle_labyrinth.pory"
+# 2577 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Poor{COLOR DARK_GRAY} setting turned on.$"
 
 EventScript_Settings_Text_140:
-# 2592 "data/scripts/battle_labyrinth.pory"
+# 2583 "data/scripts/battle_labyrinth.pory"
 	.string "In many Zones, there are hidden items,\n"
 	.string "NPC shops, or free heals you can find.\p"
 	.string "The {COLOR RED}Independent{COLOR DARK_GRAY} setting disables many\n"
 	.string "of these free sources of help.$"
 
 EventScript_Settings_Text_141:
-# 2594 "data/scripts/battle_labyrinth.pory"
+# 2585 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Independent{COLOR DARK_GRAY} setting is currently\n"
 	.string "on.$"
 
 EventScript_Settings_Text_142:
-# 2596 "data/scripts/battle_labyrinth.pory"
+# 2587 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Independent{COLOR DARK_GRAY}\n"
 	.string "setting off?$"
 
 EventScript_Settings_Text_143:
-# 2599 "data/scripts/battle_labyrinth.pory"
+# 2590 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Independent{COLOR DARK_GRAY} setting turned off.$"
 
 EventScript_Settings_Text_144:
-# 2607 "data/scripts/battle_labyrinth.pory"
+# 2598 "data/scripts/battle_labyrinth.pory"
 	.string "The {COLOR RED}Independent{COLOR DARK_GRAY} setting is currently\n"
 	.string "off.$"
 
 EventScript_Settings_Text_145:
-# 2608 "data/scripts/battle_labyrinth.pory"
+# 2599 "data/scripts/battle_labyrinth.pory"
 	.string "Would you like to turn the {COLOR RED}Independent{COLOR DARK_GRAY}\n"
 	.string "setting on?$"
 
 EventScript_Settings_Text_146:
-# 2611 "data/scripts/battle_labyrinth.pory"
+# 2602 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Independent{COLOR DARK_GRAY} setting turned on.$"
 
 EventScript_MusicMenu_Text_0:
-# 2631 "data/scripts/battle_labyrinth.pory"
+# 2622 "data/scripts/battle_labyrinth.pory"
 	.string "Please select a music setting.$"
 
 EventScript_MusicMenu_Text_1:
-# 2632 "data/scripts/battle_labyrinth.pory"
+# 2623 "data/scripts/battle_labyrinth.pory"
 	.string "Wild Battle$"
 
 EventScript_MusicMenu_Text_2:
-# 2632 "data/scripts/battle_labyrinth.pory"
+# 2623 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Battle$"
 
 EventScript_MusicMenu_Text_3:
-# 2632 "data/scripts/battle_labyrinth.pory"
+# 2623 "data/scripts/battle_labyrinth.pory"
 	.string "Leviathan Battle$"
 
 EventScript_MusicMenu_Text_4:
-# 2640 "data/scripts/battle_labyrinth.pory"
+# 2631 "data/scripts/battle_labyrinth.pory"
 	.string "The Wild Pokémon music is\ncurrently set to RSE.$"
 
 EventScript_MusicMenu_Text_5:
-# 2643 "data/scripts/battle_labyrinth.pory"
+# 2634 "data/scripts/battle_labyrinth.pory"
 	.string "The Wild Pokémon music is\ncurrently set to FRLG.$"
 
 EventScript_MusicMenu_Text_6:
-# 2646 "data/scripts/battle_labyrinth.pory"
+# 2637 "data/scripts/battle_labyrinth.pory"
 	.string "The Wild Pokémon music is\ncurrently set to DPPt.$"
 
 EventScript_MusicMenu_Text_7:
-# 2649 "data/scripts/battle_labyrinth.pory"
+# 2640 "data/scripts/battle_labyrinth.pory"
 	.string "The Wild Pokémon music is\ncurrently set to HGSS (Johto).$"
 
 EventScript_MusicMenu_Text_8:
-# 2652 "data/scripts/battle_labyrinth.pory"
+# 2643 "data/scripts/battle_labyrinth.pory"
 	.string "The Wild Pokémon music is\ncurrently set to HGSS (Kanto).$"
 
 EventScript_MusicMenu_Text_9:
-# 2655 "data/scripts/battle_labyrinth.pory"
+# 2646 "data/scripts/battle_labyrinth.pory"
 	.string "The Wild Pokémon music is\ncurrently set to BW.$"
 
 EventScript_MusicMenu_Text_10:
-# 2657 "data/scripts/battle_labyrinth.pory"
+# 2648 "data/scripts/battle_labyrinth.pory"
 	.string "RSE$"
 
 EventScript_MusicMenu_Text_11:
-# 2657 "data/scripts/battle_labyrinth.pory"
+# 2648 "data/scripts/battle_labyrinth.pory"
 	.string "FRLG$"
 
 EventScript_MusicMenu_Text_12:
-# 2657 "data/scripts/battle_labyrinth.pory"
+# 2648 "data/scripts/battle_labyrinth.pory"
 	.string "DPPt$"
 
 EventScript_MusicMenu_Text_13:
-# 2657 "data/scripts/battle_labyrinth.pory"
+# 2648 "data/scripts/battle_labyrinth.pory"
 	.string "HGSS Johto$"
 
 EventScript_MusicMenu_Text_14:
-# 2657 "data/scripts/battle_labyrinth.pory"
+# 2648 "data/scripts/battle_labyrinth.pory"
 	.string "HGSS Kanto$"
 
 EventScript_MusicMenu_Text_15:
-# 2657 "data/scripts/battle_labyrinth.pory"
+# 2648 "data/scripts/battle_labyrinth.pory"
 	.string "BW$"
 
 EventScript_MusicMenu_Text_16:
-# 2671 "data/scripts/battle_labyrinth.pory"
+# 2662 "data/scripts/battle_labyrinth.pory"
 	.string "The BW Wild Pokémon music is not\nfinished.$"
 
 EventScript_MusicMenu_Text_17:
-# 2682 "data/scripts/battle_labyrinth.pory"
+# 2673 "data/scripts/battle_labyrinth.pory"
 	.string "The Trainer music is\ncurrently set to RSE.$"
 
 EventScript_MusicMenu_Text_18:
-# 2685 "data/scripts/battle_labyrinth.pory"
+# 2676 "data/scripts/battle_labyrinth.pory"
 	.string "The Trainer music is\ncurrently set to FRLG.$"
 
 EventScript_MusicMenu_Text_19:
-# 2688 "data/scripts/battle_labyrinth.pory"
+# 2679 "data/scripts/battle_labyrinth.pory"
 	.string "The Trainer music is\ncurrently set to DPPt.$"
 
 EventScript_MusicMenu_Text_20:
-# 2691 "data/scripts/battle_labyrinth.pory"
+# 2682 "data/scripts/battle_labyrinth.pory"
 	.string "The Trainer music is\ncurrently set to HGSS (Johto).$"
 
 EventScript_MusicMenu_Text_21:
-# 2694 "data/scripts/battle_labyrinth.pory"
+# 2685 "data/scripts/battle_labyrinth.pory"
 	.string "The Trainer music is\ncurrently set to HGSS (Kanto).$"
 
 EventScript_MusicMenu_Text_22:
-# 2697 "data/scripts/battle_labyrinth.pory"
+# 2688 "data/scripts/battle_labyrinth.pory"
 	.string "The Trainer music is\ncurrently set to BW.$"
 
 EventScript_MusicMenu_Text_23:
-# 2713 "data/scripts/battle_labyrinth.pory"
+# 2704 "data/scripts/battle_labyrinth.pory"
 	.string "The BW Trainer music is not\nfinished.$"
 
 EventScript_MusicMenu_Text_24:
-# 2724 "data/scripts/battle_labyrinth.pory"
+# 2715 "data/scripts/battle_labyrinth.pory"
 	.string "The Leviathan music is\ncurrently set to RSE.$"
 
 EventScript_MusicMenu_Text_25:
-# 2727 "data/scripts/battle_labyrinth.pory"
+# 2718 "data/scripts/battle_labyrinth.pory"
 	.string "The Leviathan music is\ncurrently set to FRLG.$"
 
 EventScript_MusicMenu_Text_26:
-# 2730 "data/scripts/battle_labyrinth.pory"
+# 2721 "data/scripts/battle_labyrinth.pory"
 	.string "The Leviathan music is\ncurrently set to DPPt.$"
 
 EventScript_MusicMenu_Text_27:
-# 2733 "data/scripts/battle_labyrinth.pory"
+# 2724 "data/scripts/battle_labyrinth.pory"
 	.string "The Leviathan music is\ncurrently set to HGSS (Johto).$"
 
 EventScript_MusicMenu_Text_28:
-# 2736 "data/scripts/battle_labyrinth.pory"
+# 2727 "data/scripts/battle_labyrinth.pory"
 	.string "The Leviathan music is\ncurrently set to HGSS (Kanto).$"
 
 EventScript_MusicMenu_Text_29:
-# 2739 "data/scripts/battle_labyrinth.pory"
+# 2730 "data/scripts/battle_labyrinth.pory"
 	.string "The Leviathan music is\ncurrently set to BW.$"
 
 EventScript_MusicMenu_Text_30:
-# 2755 "data/scripts/battle_labyrinth.pory"
+# 2746 "data/scripts/battle_labyrinth.pory"
 	.string "The BW Leviathan music is not\nfinished.$"
 
 EventScript_SignsQuestGirl_Text_0:
-# 2772 "data/scripts/battle_labyrinth.pory"
+# 2763 "data/scripts/battle_labyrinth.pory"
 	.string "Hiya! I'm improving on my reading skills!\p"
 	.string "You should work on your reading skills\n"
 	.string "too!\p"
@@ -9497,7 +9477,7 @@ EventScript_SignsQuestGirl_Text_0:
 	.string "reward!$"
 
 EventScript_SignsQuestGirl_Text_1:
-# 2775 "data/scripts/battle_labyrinth.pory"
+# 2766 "data/scripts/battle_labyrinth.pory"
 	.string "Signs have lots of useful info about\n"
 	.string "unique mechanics to the Pokémon Battle\l"
 	.string "Labyrinth!\p"
@@ -9506,7 +9486,7 @@ EventScript_SignsQuestGirl_Text_1:
 	.string "challenges at hand!$"
 
 EventScript_SavesQuestBoy_Text_0:
-# 2785 "data/scripts/battle_labyrinth.pory"
+# 2776 "data/scripts/battle_labyrinth.pory"
 	.string "Saving your progress is important while\n"
 	.string "playing games.\p"
 	.string "I learned that the hard way!\p"
@@ -9515,11 +9495,11 @@ EventScript_SavesQuestBoy_Text_0:
 	.string "the game 50 times!$"
 
 EventScript_SavesQuestBoy_Text_1:
-# 2788 "data/scripts/battle_labyrinth.pory"
+# 2779 "data/scripts/battle_labyrinth.pory"
 	.string "Don't forget to save your game!$"
 
 EventScript_PokedexQuestScientist_Text_0:
-# 2798 "data/scripts/battle_labyrinth.pory"
+# 2789 "data/scripts/battle_labyrinth.pory"
 	.string "Kids these days are always neglecting\n"
 	.string "filling their Pokédex!\p"
 	.string "If you can show me a Pokédex that's\n"
@@ -9527,72 +9507,72 @@ EventScript_PokedexQuestScientist_Text_0:
 	.string "reward you!$"
 
 EventScript_PokedexQuestScientist_Text_1:
-# 2801 "data/scripts/battle_labyrinth.pory"
+# 2792 "data/scripts/battle_labyrinth.pory"
 	.string "Seeing all the Pokémon is tough enough.\p"
 	.string "Imagine capturing them all!$"
 
 EventScript_NuzlockeVerifyBuy_Text_0:
-# 3067 "data/scripts/battle_labyrinth.pory"
+# 3058 "data/scripts/battle_labyrinth.pory"
 	.string "On Nuzlocke mode, you will randomly\n"
 	.string "receive one of the possible Pokémon.\p"
 	.string "Is this ok?$"
 
 EventScript_PorygonExit_Text_0:
-# 3095 "data/scripts/battle_labyrinth.pory"
+# 3086 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR GREEN}Proceed to the Sanctuary?$"
 
 EventScript_ShakeTree_Text_0:
-# 3178 "data/scripts/battle_labyrinth.pory"
+# 3169 "data/scripts/battle_labyrinth.pory"
 	.string "There's a sweet aroma in the air…\nWould you like to shake the tree?$"
 
 EventScript_ShakeTree_Text_1:
-# 3184 "data/scripts/battle_labyrinth.pory"
+# 3175 "data/scripts/battle_labyrinth.pory"
 	.string "{PLAYER} shook the tree!$"
 
 EventScript_ShakeTree_Text_2:
-# 3220 "data/scripts/battle_labyrinth.pory"
+# 3211 "data/scripts/battle_labyrinth.pory"
 	.string "A Berry fell from the tree!$"
 
 EventScript_RecoverySign_Text_0:
-# 3288 "data/scripts/battle_labyrinth.pory"
+# 3279 "data/scripts/battle_labyrinth.pory"
 	.string "Joy's Center of Restoration\nA meeting place for everyone!$"
 
 EventScript_MedicineSign_Text_0:
-# 3294 "data/scripts/battle_labyrinth.pory"
+# 3285 "data/scripts/battle_labyrinth.pory"
 	.string "Portentia's Potions\nCurated Medicines!$"
 
 EventScript_PokeballSign_Text_0:
-# 3300 "data/scripts/battle_labyrinth.pory"
+# 3291 "data/scripts/battle_labyrinth.pory"
 	.string "Tim's Pokéball Shop\nSponsored by Pokémart Inc.$"
 
 EventScript_ItemsSign_Text_0:
-# 3306 "data/scripts/battle_labyrinth.pory"
+# 3297 "data/scripts/battle_labyrinth.pory"
 	.string "Varrick's Extravagant Emporium\nA Fine Collection!$"
 
 EventScript_BerriesSign_Text_0:
-# 3312 "data/scripts/battle_labyrinth.pory"
+# 3303 "data/scripts/battle_labyrinth.pory"
 	.string "Julia's Berries\nOnly the Berry best!$"
 
 EventScript_EggsSign_Text_0:
-# 3318 "data/scripts/battle_labyrinth.pory"
+# 3309 "data/scripts/battle_labyrinth.pory"
 	.string "Marie's Egg Delivery Service\nCome meet your next friend!$"
 
 EventScript_ServicesSign_Text_0:
-# 3324 "data/scripts/battle_labyrinth.pory"
+# 3315 "data/scripts/battle_labyrinth.pory"
 	.string "Lelouch's Services Shop\nAnything for the right price…$"
 
 Zone0A_EventScript_TPISign_Text_0:
-# 3330 "data/scripts/battle_labyrinth.pory"
+# 3321 "data/scripts/battle_labyrinth.pory"
 	.string "Teleport Institute\n"
 	.string "Getting around, easy peasy.$"
 
 Zone0A_EventScript_DayCareSign_Text_0:
-# 3336 "data/scripts/battle_labyrinth.pory"
+# 3327 "data/scripts/battle_labyrinth.pory"
 	.string "Pokémon Day Care\n"
 	.string "9 Generations and counting!$"
 
 Zone1A_EventScript_Sign_GoldenTree_Text_0:
-# 3342 "data/scripts/battle_labyrinth.pory"
+# 3333 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Tips\p"
 	.string "Shaking a Golden Tree might drop\n"
 	.string "berries, though occasionally you'll\l"
@@ -9600,19 +9580,19 @@ Zone1A_EventScript_Sign_GoldenTree_Text_0:
 	.string "tree!$"
 
 Zone1A_EventScript_PorygonSign_Text_0:
-# 3348 "data/scripts/battle_labyrinth.pory"
+# 3339 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Tips\p"
 	.string "Every Zone has its own challenges.\n"
 	.string "In order to reach the Sanctuary and\l"
 	.string "clear a Zone, you must find {COLOR RED}Porygon{COLOR DARK_GRAY}.$"
 
 Zone1A_EventScript_Sign_RunningShoes_Text_0:
-# 3359 "data/scripts/battle_labyrinth.pory"
+# 3350 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Tips\p"
 	.string "Press {L_BUTTON} to enable or disable Auto Run.$"
 
 Zone2A_EventScript_Sign_Text_0:
-# 3365 "data/scripts/battle_labyrinth.pory"
+# 3356 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Tips\p"
 	.string "You may find hidden items by checking\n"
 	.string "certain tiles with {A_BUTTON}.\p"
@@ -9620,7 +9600,7 @@ Zone2A_EventScript_Sign_Text_0:
 	.string "items on Brutal or Independent.$"
 
 Zone2A_EventScript_ExpShareSign_Text_0:
-# 3371 "data/scripts/battle_labyrinth.pory"
+# 3362 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Tips\p"
 	.string "The Exp. All only gives Pokémon who\n"
 	.string "didn't participate in battle 25%\l"
@@ -9631,28 +9611,28 @@ Zone2A_EventScript_ExpShareSign_Text_0:
 	.string "experience!$"
 
 Zone2A_EventScript_CautionSign_Text_0:
-# 3377 "data/scripts/battle_labyrinth.pory"
+# 3368 "data/scripts/battle_labyrinth.pory"
 	.string "Caution!\p"
 	.string "Diglett have been found living inside\n"
 	.string "the tunnel.\p"
 	.string "Repels recommended!$"
 
 Zone2B_EventScript_PartySelectSign_Text_0:
-# 3389 "data/scripts/battle_labyrinth.pory"
+# 3380 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Tips\p"
 	.string "You can switch the order of your party\n"
 	.string "around in your party menu faster by\l"
 	.string "pressing {SELECT_BUTTON}.$"
 
 Zone2B_EventScript_OptionalLeviathan_Text_0:
-# 3395 "data/scripts/battle_labyrinth.pory"
+# 3386 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Tips\p"
 	.string "In some Zones, Leviathans are optional\n"
 	.string "to battle, but may give good rewards\l"
 	.string "when defeated!$"
 
 Zone3A_EventScript_Surveil_Text_0:
-# 3401 "data/scripts/battle_labyrinth.pory"
+# 3392 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Tips\p"
 	.string "In battle, you can use Surveil to see\n"
 	.string "the opponent's team.\p"
@@ -9661,12 +9641,12 @@ Zone3A_EventScript_Surveil_Text_0:
 	.string "Info setting by speaking to Colress.$"
 
 Zone4A_EventScript_Sign_Text_0:
-# 3407 "data/scripts/battle_labyrinth.pory"
+# 3398 "data/scripts/battle_labyrinth.pory"
 	.string "These woods are enchanted…\n"
 	.string "Don't get lost!$"
 
 Zone4B_EventScript_Sign_Text_0:
-# 3413 "data/scripts/battle_labyrinth.pory"
+# 3404 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Tips\p"
 	.string "You can see detailed information about\n"
 	.string "a Pokémon species in its Pokédex entry\l"
@@ -9674,153 +9654,153 @@ Zone4B_EventScript_Sign_Text_0:
 	.string "it learns or how to evolve it.$"
 
 Zone4C_EventScript_Sign_Text_0:
-# 3419 "data/scripts/battle_labyrinth.pory"
+# 3410 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Tips\p"
 	.string "Starting from now, there is a 20%\n"
 	.string "chance to encounter wild Pokémon in a\l"
 	.string "Double Battle.$"
 
 Zone4D_EventScript_Sign_Text_0:
-# 3425 "data/scripts/battle_labyrinth.pory"
+# 3416 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Tips\p"
 	.string "Some areas require backtracking later\n"
 	.string "on in order to access them.$"
 
 Zone4E_EventScript_Sign_Text_0:
-# 3431 "data/scripts/battle_labyrinth.pory"
+# 3422 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Tips\p"
 	.string "The Pokémon you encounter in different\n"
 	.string "areas of the same zone may have slight\l"
 	.string "differences!$"
 
 Zone6A_EventScript_Sign_Text_0:
-# 3437 "data/scripts/battle_labyrinth.pory"
+# 3428 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Tips\p"
 	.string "You can sort items in the Bag using {START_BUTTON}.$"
 
 Zone7A_EventScript_Sign_Text_0:
-# 3443 "data/scripts/battle_labyrinth.pory"
+# 3434 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Tips\p"
 	.string "You can change the music you hear in\n"
 	.string "battle by speaking to Colress!$"
 
 Zone7A_EventScript_HealSign_Text_0:
-# 3449 "data/scripts/battle_labyrinth.pory"
+# 3440 "data/scripts/battle_labyrinth.pory"
 	.string "A stop for weary travelers.$"
 
 Zone9A_EventScript_Sign_Text_0:
-# 3455 "data/scripts/battle_labyrinth.pory"
+# 3446 "data/scripts/battle_labyrinth.pory"
 	.string "Trainer Tips\p"
 	.string "While you are on the Pokémon stats\n"
 	.string "screen, you can press {A_BUTTON} to switch\l"
 	.string "between stats, IVs, or EVs.$"
 
 Zone9A_EventScript_HerbalSign_Text_0:
-# 3461 "data/scripts/battle_labyrinth.pory"
+# 3452 "data/scripts/battle_labyrinth.pory"
 	.string "Herbal and Incense Shop$"
 
 Debug_CheatStart_PBL_Text_0:
-# 3531 "data/scripts/battle_labyrinth.pory"
+# 3522 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 0 grass?$"
 
 Debug_CheatStart_PBL_Text_1:
-# 3538 "data/scripts/battle_labyrinth.pory"
+# 3529 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 1 options$"
 
 Debug_CheatStart_PBL_Text_2:
-# 3539 "data/scripts/battle_labyrinth.pory"
+# 3530 "data/scripts/battle_labyrinth.pory"
 	.string "Grass$"
 
 Debug_CheatStart_PBL_Text_3:
-# 3539 "data/scripts/battle_labyrinth.pory"
+# 3530 "data/scripts/battle_labyrinth.pory"
 	.string "Tree$"
 
 Debug_CheatStart_PBL_Text_4:
-# 3556 "data/scripts/battle_labyrinth.pory"
+# 3547 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 1 gwf$"
 
 Debug_CheatStart_PBL_Text_5:
-# 3557 "data/scripts/battle_labyrinth.pory"
+# 3548 "data/scripts/battle_labyrinth.pory"
 	.string "Fire$"
 
 Debug_CheatStart_PBL_Text_6:
-# 3557 "data/scripts/battle_labyrinth.pory"
+# 3548 "data/scripts/battle_labyrinth.pory"
 	.string "Water$"
 
 Debug_CheatStart_PBL_Text_7:
-# 3614 "data/scripts/battle_labyrinth.pory"
+# 3605 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 2 options$"
 
 Debug_CheatStart_PBL_Text_8:
-# 3615 "data/scripts/battle_labyrinth.pory"
+# 3606 "data/scripts/battle_labyrinth.pory"
 	.string "Grass A$"
 
 Debug_CheatStart_PBL_Text_9:
-# 3615 "data/scripts/battle_labyrinth.pory"
+# 3606 "data/scripts/battle_labyrinth.pory"
 	.string "Tunnel$"
 
 Debug_CheatStart_PBL_Text_10:
-# 3615 "data/scripts/battle_labyrinth.pory"
+# 3606 "data/scripts/battle_labyrinth.pory"
 	.string "Grass B$"
 
 Debug_CheatStart_PBL_Text_11:
-# 3678 "data/scripts/battle_labyrinth.pory"
+# 3669 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 3 options$"
 
 Debug_CheatStart_PBL_Text_12:
-# 3701 "data/scripts/battle_labyrinth.pory"
+# 3692 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 4 options$"
 
 Debug_CheatStart_PBL_Text_13:
-# 3702 "data/scripts/battle_labyrinth.pory"
+# 3693 "data/scripts/battle_labyrinth.pory"
 	.string "A$"
 
 Debug_CheatStart_PBL_Text_14:
-# 3702 "data/scripts/battle_labyrinth.pory"
+# 3693 "data/scripts/battle_labyrinth.pory"
 	.string "B$"
 
 Debug_CheatStart_PBL_Text_15:
-# 3702 "data/scripts/battle_labyrinth.pory"
+# 3693 "data/scripts/battle_labyrinth.pory"
 	.string "C$"
 
 Debug_CheatStart_PBL_Text_16:
-# 3702 "data/scripts/battle_labyrinth.pory"
+# 3693 "data/scripts/battle_labyrinth.pory"
 	.string "D$"
 
 Debug_CheatStart_PBL_Text_17:
-# 3702 "data/scripts/battle_labyrinth.pory"
+# 3693 "data/scripts/battle_labyrinth.pory"
 	.string "E$"
 
 Debug_CheatStart_PBL_Text_18:
-# 3762 "data/scripts/battle_labyrinth.pory"
+# 3753 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 5 options$"
 
 Debug_CheatStart_PBL_Text_19:
-# 3763 "data/scripts/battle_labyrinth.pory"
+# 3754 "data/scripts/battle_labyrinth.pory"
 	.string "Forest$"
 
 Debug_CheatStart_PBL_Text_20:
-# 3763 "data/scripts/battle_labyrinth.pory"
+# 3754 "data/scripts/battle_labyrinth.pory"
 	.string "Grassland$"
 
 Debug_CheatStart_PBL_Text_21:
-# 3808 "data/scripts/battle_labyrinth.pory"
+# 3799 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 6 options$"
 
 Debug_CheatStart_PBL_Text_22:
-# 3838 "data/scripts/battle_labyrinth.pory"
+# 3829 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 7 options$"
 
 Debug_CheatStart_PBL_Text_23:
-# 3857 "data/scripts/battle_labyrinth.pory"
+# 3848 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 8 options$"
 
 Debug_CheatStart_PBL_Text_24:
-# 3895 "data/scripts/battle_labyrinth.pory"
+# 3886 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 9 options$"
 
 Debug_CheatStart_PBL_GiveMon_Text_0:
-# 3943 "data/scripts/battle_labyrinth.pory"
+# 3934 "data/scripts/battle_labyrinth.pory"
 	.string "Obtained {STR_VAR_1}!$"
 
 gText_Lelouch_NotEnoughColor::
@@ -9893,7 +9873,7 @@ gText_Lelouch_ChangedNature::
 	.string "requested nature.$"
 
 gText_Colress_BrutalExplained::
-# 2033 "data/scripts/battle_labyrinth.pory"
+# 2024 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Brutal{COLOR DARK_GRAY} mode enables all of the\n"
 	.string "increased difficulty modes at the same\l"
 	.string "time.\p"
@@ -9905,7 +9885,7 @@ gText_Colress_BrutalExplained::
 	.string "{COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY} already.$"
 
 gText_Colress_RandomizerExplanation::
-# 2039 "data/scripts/battle_labyrinth.pory"
+# 2030 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Randomizer{COLOR DARK_GRAY} mode randomizes wild\n"
 	.string "encounters and gift Pokémon, including\l"
 	.string "your starter.\p"
@@ -9914,7 +9894,7 @@ gText_Colress_RandomizerExplanation::
 	.string "the beginning of the game.$"
 
 gText_Colress_NuzlockeExplained::
-# 2045 "data/scripts/battle_labyrinth.pory"
+# 2036 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode completely implements all\n"
 	.string "standard Nuzlocke rules, such as\l"
 	.string "permanent death and capture\l"
@@ -9929,7 +9909,7 @@ gText_Colress_NuzlockeExplained::
 	.string "disabled at any point.$"
 
 gText_Colress_InfiniteExplained::
-# 2052 "data/scripts/battle_labyrinth.pory"
+# 2043 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}Infinite{COLOR DARK_GRAY} mode gives you access to\n"
 	.string "unlimited resources that can normally\l"
 	.string "be obtained by grinding.\p"
@@ -9940,25 +9920,25 @@ gText_Colress_InfiniteExplained::
 	.string "the beginning of the game.$"
 
 gText_Colress_CannotChangeSettingBrutal::
-# 2058 "data/scripts/battle_labyrinth.pory"
+# 2049 "data/scripts/battle_labyrinth.pory"
 	.string "You cannot change this setting\n"
 	.string "because you are playing on Brutal mode.$"
 
 gText_Colress_CannotChangeSettingInfinite::
-# 2062 "data/scripts/battle_labyrinth.pory"
+# 2053 "data/scripts/battle_labyrinth.pory"
 	.string "You cannot change this setting\n"
 	.string "because you are playing on Infinite\l"
 	.string "mode.$"
 
 gText_ItemChestIsEmpty::
-# 2817 "data/scripts/battle_labyrinth.pory"
+# 2808 "data/scripts/battle_labyrinth.pory"
 	.string "The item chest is empty.$"
 
 gText_OneOpponentRemaining::
-# 3057 "data/scripts/battle_labyrinth.pory"
+# 3048 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}There is 1 opponent remaining in this\n"
 	.string "area.$"
 
 gText_MultipleOpponentsRemaining::
-# 3061 "data/scripts/battle_labyrinth.pory"
+# 3052 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR RED}There are still {STR_VAR_1} opponents\nremaining in the area.$"
