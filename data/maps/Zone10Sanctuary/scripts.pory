@@ -22,6 +22,15 @@ script Zone10Sanctuary_EventScript_Intro {
 	msgbox(format("In battle, you can Terastilize your Pokémon now.\pPress {START_BUTTON} to Terastilize!\pAfter you use it, you'll have to go back to the Pokémon Center to recharge it."))
 	msgbox(gText_Colress_Upgraded, MSGBOX_DEFAULT)
 	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox(gText_Colress_UpgradedPotions, MSGBOX_DEFAULT)
+	waitfanfare
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox(gText_Colress_UpgradedItems, MSGBOX_DEFAULT)
+	waitfanfare
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox(gText_Colress_UpgradedEggs, MSGBOX_DEFAULT)
+	waitfanfare
+	playfanfare(MUS_OBTAIN_ITEM)
 	msgbox(gText_Colress_UpgradedServices, MSGBOX_DEFAULT)
 	waitfanfare
 	playfanfare(MUS_OBTAIN_ITEM)

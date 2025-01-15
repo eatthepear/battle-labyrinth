@@ -40,26 +40,44 @@ Zone10Sanctuary_EventScript_Intro_1:
 # 24 "data/maps/Zone10Sanctuary/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 25 "data/maps/Zone10Sanctuary/scripts.pory"
-	msgbox gText_Colress_UpgradedServices, MSGBOX_DEFAULT
+	msgbox gText_Colress_UpgradedPotions, MSGBOX_DEFAULT
 # 26 "data/maps/Zone10Sanctuary/scripts.pory"
 	waitfanfare
 # 27 "data/maps/Zone10Sanctuary/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 28 "data/maps/Zone10Sanctuary/scripts.pory"
-	msgbox gText_Colress_UpgradedRecovery, MSGBOX_DEFAULT
+	msgbox gText_Colress_UpgradedItems, MSGBOX_DEFAULT
 # 29 "data/maps/Zone10Sanctuary/scripts.pory"
 	waitfanfare
 # 30 "data/maps/Zone10Sanctuary/scripts.pory"
-	setvar VAR_ZONE, 11
+	playfanfare MUS_OBTAIN_ITEM
 # 31 "data/maps/Zone10Sanctuary/scripts.pory"
-	buffernumberstring 0, VAR_ZONE
+	msgbox gText_Colress_UpgradedEggs, MSGBOX_DEFAULT
 # 32 "data/maps/Zone10Sanctuary/scripts.pory"
-	msgbox gText_Colress_WhenUReady, MSGBOX_AUTOCLOSE
+	waitfanfare
 # 33 "data/maps/Zone10Sanctuary/scripts.pory"
-	applymovement 1, Common_Movement_Colress_WalkUp
+	playfanfare MUS_OBTAIN_ITEM
 # 34 "data/maps/Zone10Sanctuary/scripts.pory"
-	waitmovement 0
+	msgbox gText_Colress_UpgradedServices, MSGBOX_DEFAULT
 # 35 "data/maps/Zone10Sanctuary/scripts.pory"
+	waitfanfare
+# 36 "data/maps/Zone10Sanctuary/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 37 "data/maps/Zone10Sanctuary/scripts.pory"
+	msgbox gText_Colress_UpgradedRecovery, MSGBOX_DEFAULT
+# 38 "data/maps/Zone10Sanctuary/scripts.pory"
+	waitfanfare
+# 39 "data/maps/Zone10Sanctuary/scripts.pory"
+	setvar VAR_ZONE, 11
+# 40 "data/maps/Zone10Sanctuary/scripts.pory"
+	buffernumberstring 0, VAR_ZONE
+# 41 "data/maps/Zone10Sanctuary/scripts.pory"
+	msgbox gText_Colress_WhenUReady, MSGBOX_AUTOCLOSE
+# 42 "data/maps/Zone10Sanctuary/scripts.pory"
+	applymovement 1, Common_Movement_Colress_WalkUp
+# 43 "data/maps/Zone10Sanctuary/scripts.pory"
+	waitmovement 0
+# 44 "data/maps/Zone10Sanctuary/scripts.pory"
 	releaseall
 	end
 
@@ -72,55 +90,55 @@ Zone10Sanctuary_EventScript_Intro_2:
 
 
 Zone10Sanctuary_EventScript_NextZone::
-# 40 "data/maps/Zone10Sanctuary/scripts.pory"
+# 49 "data/maps/Zone10Sanctuary/scripts.pory"
 	lock
-# 41 "data/maps/Zone10Sanctuary/scripts.pory"
+# 50 "data/maps/Zone10Sanctuary/scripts.pory"
 	faceplayer
-# 42 "data/maps/Zone10Sanctuary/scripts.pory"
+# 51 "data/maps/Zone10Sanctuary/scripts.pory"
 	message gText_Colress_Greetings
-# 43 "data/maps/Zone10Sanctuary/scripts.pory"
+# 52 "data/maps/Zone10Sanctuary/scripts.pory"
 	waitmessage
-# 44 "data/maps/Zone10Sanctuary/scripts.pory"
+# 53 "data/maps/Zone10Sanctuary/scripts.pory"
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Zone10Sanctuary_EventScript_NextZone_Text_0, Zone10Sanctuary_EventScript_NextZone_Text_1, Zone10Sanctuary_EventScript_NextZone_Text_2, Zone10Sanctuary_EventScript_NextZone_Text_3
-# 45 "data/maps/Zone10Sanctuary/scripts.pory"
-	switch VAR_RESULT
-# 46 "data/maps/Zone10Sanctuary/scripts.pory"
-	case 0, Zone10Sanctuary_EventScript_NextZone_3
 # 54 "data/maps/Zone10Sanctuary/scripts.pory"
+	switch VAR_RESULT
+# 55 "data/maps/Zone10Sanctuary/scripts.pory"
+	case 0, Zone10Sanctuary_EventScript_NextZone_3
+# 63 "data/maps/Zone10Sanctuary/scripts.pory"
 	case 1, Zone10Sanctuary_EventScript_NextZone_4
-# 56 "data/maps/Zone10Sanctuary/scripts.pory"
+# 65 "data/maps/Zone10Sanctuary/scripts.pory"
 	case 2, Zone10Sanctuary_EventScript_NextZone_5
 Zone10Sanctuary_EventScript_NextZone_1:
-# 59 "data/maps/Zone10Sanctuary/scripts.pory"
+# 68 "data/maps/Zone10Sanctuary/scripts.pory"
 	goto EventScript_WhenUReady
 	return
 
 Zone10Sanctuary_EventScript_NextZone_3:
-# 47 "data/maps/Zone10Sanctuary/scripts.pory"
+# 56 "data/maps/Zone10Sanctuary/scripts.pory"
 	buffernumberstring 0, VAR_ZONE
-# 48 "data/maps/Zone10Sanctuary/scripts.pory"
+# 57 "data/maps/Zone10Sanctuary/scripts.pory"
 	msgbox gText_Colress_SureReadyToLeave, MSGBOX_YESNO
-# 49 "data/maps/Zone10Sanctuary/scripts.pory"
+# 58 "data/maps/Zone10Sanctuary/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone10Sanctuary_EventScript_NextZone_6
 	goto Zone10Sanctuary_EventScript_NextZone_1
 
 Zone10Sanctuary_EventScript_NextZone_4:
-# 55 "data/maps/Zone10Sanctuary/scripts.pory"
+# 64 "data/maps/Zone10Sanctuary/scripts.pory"
 	goto EventScript_Settings
 	goto Zone10Sanctuary_EventScript_NextZone_1
 
 Zone10Sanctuary_EventScript_NextZone_5:
-# 57 "data/maps/Zone10Sanctuary/scripts.pory"
+# 66 "data/maps/Zone10Sanctuary/scripts.pory"
 	goto EventScript_Documentation
 	goto Zone10Sanctuary_EventScript_NextZone_1
 
 Zone10Sanctuary_EventScript_NextZone_6:
-# 50 "data/maps/Zone10Sanctuary/scripts.pory"
+# 59 "data/maps/Zone10Sanctuary/scripts.pory"
 	call EventScript_LeavingSetup
-# 51 "data/maps/Zone10Sanctuary/scripts.pory"
+# 60 "data/maps/Zone10Sanctuary/scripts.pory"
 	warp MAP_ZONE11A, 255, 46, 2
-# 52 "data/maps/Zone10Sanctuary/scripts.pory"
+# 61 "data/maps/Zone10Sanctuary/scripts.pory"
 	waitstate
 	goto Zone10Sanctuary_EventScript_NextZone_1
 
@@ -138,21 +156,21 @@ Zone10Sanctuary_EventScript_Intro_Text_1:
 	.string "to the Pokémon Center to recharge it.$"
 
 Zone10Sanctuary_EventScript_NextZone_Text_0:
-# 44 "data/maps/Zone10Sanctuary/scripts.pory"
+# 53 "data/maps/Zone10Sanctuary/scripts.pory"
 	.string "Next Zone$"
 
 Zone10Sanctuary_EventScript_NextZone_Text_1:
-# 44 "data/maps/Zone10Sanctuary/scripts.pory"
+# 53 "data/maps/Zone10Sanctuary/scripts.pory"
 	.string "Settings$"
 
 Zone10Sanctuary_EventScript_NextZone_Text_2:
-# 44 "data/maps/Zone10Sanctuary/scripts.pory"
+# 53 "data/maps/Zone10Sanctuary/scripts.pory"
 	.string "Documentation$"
 
 Zone10Sanctuary_EventScript_NextZone_Text_3:
-# 44 "data/maps/Zone10Sanctuary/scripts.pory"
+# 53 "data/maps/Zone10Sanctuary/scripts.pory"
 	.string "Exit$"
 
 Zone10Sanctuary_Text_Reward::
-# 62 "data/maps/Zone10Sanctuary/scripts.pory"
+# 71 "data/maps/Zone10Sanctuary/scripts.pory"
 	.string "The Tera Orb!$"
