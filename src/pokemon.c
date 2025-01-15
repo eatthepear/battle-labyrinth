@@ -3211,6 +3211,15 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
     case MON_DATA_DAYS_SINCE_FORM_CHANGE:
         retVal = 0;
         break;
+    case MON_DATA_MAX_HP:
+        s32 hpIV = GetBoxMonData(boxMon, MON_DATA_HYPER_TRAINED_HP) ? MAX_PER_STAT_IVS : GetBoxMonData(boxMon, MON_DATA_HP_IV, NULL);
+        s32 hpEV = GetBoxMonData(boxMon, MON_DATA_HP_EV, NULL);
+        u16 species = GetBoxMonData(boxMon, MON_DATA_SPECIES, NULL);
+        s32 level = GetLevelFromBoxMonExp(boxMon);
+
+        s32 n = 2 * gSpeciesInfo[species].baseHP + hpIV;
+        retVal = (((n + hpEV / 4) * level) / 100) + level + 10;
+        break;
     default:
         break;
     }
@@ -7284,8 +7293,7 @@ void HealPokemon(struct Pokemon *mon)
 void HealBoxPokemon(struct BoxPokemon *boxMon)
 {
     u32 data;
-
-    if (FlagGet(FLAG_SETTINGS_NUZLOCKE) && GetBoxMonData(boxMon, MON_DATA_HP_LOST) >= GetBoxMonData(boxMon, MON_DATA_MAX_HP))
+    if (FlagGet(FLAG_SETTINGS_NUZLOCKE) && (GetBoxMonData(boxMon, MON_DATA_HP_LOST) >= GetBoxMonData(boxMon, MON_DATA_MAX_HP)))
         return;
 
     data = 0;

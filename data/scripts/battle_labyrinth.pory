@@ -171,6 +171,7 @@ script EventScript_Shop_Portentia {
 		case 12:
 		case 13:
 		case 15:
+			pokemart(Shop_Medicine_4)
 		case 16:
 		case 17:
 		case 18:
@@ -213,6 +214,18 @@ mart Shop_Medicine_3 {
 	ITEM_ICE_HEAL
 }
 
+mart Shop_Medicine_4 {
+	ITEM_POTION
+	ITEM_SUPER_POTION
+	ITEM_REVIVE
+	ITEM_ANTIDOTE
+	ITEM_PARALYZE_HEAL
+	ITEM_AWAKENING
+	ITEM_BURN_HEAL
+	ITEM_ICE_HEAL
+	ITEM_ETHER
+}
+
 script EventScript_Shop_Tim {
 	lock
 	faceplayer
@@ -235,11 +248,11 @@ script EventScript_Shop_Tim {
 			pokemart(Shop_Pokeballs_3)
 		case 9:
 		case 10:
-			pokemart(Shop_Pokeballs_4)
 		case 11:
 		case 12:
 		case 13:
 		case 15:
+			pokemart(Shop_Pokeballs_4)
 		case 16:
 		case 17:
 		case 18:
@@ -318,7 +331,7 @@ script EventScript_Shop_Varrick {
 		case 12:
 		case 13:
 		case 15:
-			pokemart(Shop_Unique_Varrick_11to15)
+			pokemart(Shop_Items_4)
 		case 16:
 		case 17:
 		case 18:
@@ -356,6 +369,26 @@ mart Shop_Items_3 {
 	ITEM_MUSCLE_BAND
 	ITEM_WISE_GLASSES
 	ITEM_SILK_SCARF
+	ITEM_MIRACLE_SEED
+	ITEM_SILVER_POWDER
+	ITEM_POISON_BARB
+	ITEM_TWISTED_SPOON
+	ITEM_REPEL
+}
+
+mart Shop_Items_4 {
+	ITEM_EVIOLITE
+	ITEM_MUSCLE_BAND
+	ITEM_WISE_GLASSES
+	ITEM_SILK_SCARF
+	ITEM_CHARCOAL
+	ITEM_MYSTIC_WATER
+	ITEM_MAGNET
+	ITEM_BLACK_BELT
+	ITEM_SOFT_SAND
+	ITEM_SHARP_BEAK
+	ITEM_HARD_STONE
+	ITEM_BLACK_GLASSES
 	ITEM_MIRACLE_SEED
 	ITEM_SILVER_POWDER
 	ITEM_POISON_BARB
@@ -1365,7 +1398,8 @@ script EventScript_Shop_Lelouch_Moves {
 		msgbox(gText_Lelouch_NotEnoughColor)
 		return
 	}
-	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Move Tutor", "Move Reminder", "Exit")
+	msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Choose which kind of moves you want to teach."), MSGBOX_DEFAULT)
+	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Move Reminder", "Move Tutor", "Exit")
 	switch(var(VAR_RESULT)) {
 		case 0:
 			call(EventScript_Shop_Lelouch_MoveReminder)
@@ -1424,16 +1458,16 @@ script EventScript_Shop_Lelouch_MoveTutor {
 	while {
 		msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Move Tutor services cost Blue Shards. Which move would you like to tutor?"), MSGBOX_DEFAULT)
 		if (var(VAR_ZONE) > 10) {
-			dynmultipush("Icy Wind", 1)
-			dynmultipush("Grass Knot", 2)
+			dynmultipush("Venoshock", 0)
+			dynmultipush("Electroweb", 1)
+			dynmultipush("Icy Wind", 2)
 			dynmultipush("Low Kick", 3)
-			dynmultipush("Fire Fang", 4)
-			dynmultipush("Ice Fang", 5)
-			dynmultipush("Thunder Fang", 6)
-			dynmultipush("Heal Bell", 7)
-			dynmultipush("Helping Hand", 8)
-			dynmultipush("Sleep Talk", 9)
-			dynmultipush("Taunt", 10)
+			dynmultipush("Heal Bell", 4)
+			dynmultipush("Helping Hand", 5)
+			dynmultipush("Synthesis", 6)
+			dynmultipush("Pain Split", 7)
+			dynmultipush("Defog", 8)
+			dynmultipush("Trick", 9)
 		}
 		// if (var(VAR_ZONE) > 15) {
 		// 	dynmultipush("", 1)
@@ -1462,36 +1496,36 @@ script EventScript_Shop_Lelouch_MoveTutor {
 		dynmultipush("Exit", 50)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
+			case 0:
+				setvar(VAR_TEMP_0, MOVE_VENOSHOCK)
+				setvar(VAR_0x8005, MOVE_VENOSHOCK)
 			case 1:
+				setvar(VAR_TEMP_0, MOVE_ELECTROWEB)
+				setvar(VAR_0x8005, MOVE_ELECTROWEB)
+			case 2:
 				setvar(VAR_TEMP_0, MOVE_ICY_WIND)
 				setvar(VAR_0x8005, MOVE_ICY_WIND)
-			case 2:
-				setvar(VAR_TEMP_0, MOVE_GRASS_KNOT)
-				setvar(VAR_0x8005, MOVE_GRASS_KNOT)
 			case 3:
 				setvar(VAR_TEMP_0, MOVE_LOW_KICK)
 				setvar(VAR_0x8005, MOVE_LOW_KICK)
 			case 4:
-				setvar(VAR_TEMP_0, MOVE_FIRE_FANG)
-				setvar(VAR_0x8005, MOVE_FIRE_FANG)
-			case 5:
-				setvar(VAR_TEMP_0, MOVE_ICE_FANG)
-				setvar(VAR_0x8005, MOVE_ICE_FANG)
-			case 6:
-				setvar(VAR_TEMP_0, MOVE_THUNDER_FANG)
-				setvar(VAR_0x8005, MOVE_THUNDER_FANG)
-			case 7:
 				setvar(VAR_TEMP_0, MOVE_HEAL_BELL)
 				setvar(VAR_0x8005, MOVE_HEAL_BELL)
-			case 8:
+			case 5:
 				setvar(VAR_TEMP_0, MOVE_HELPING_HAND)
 				setvar(VAR_0x8005, MOVE_HELPING_HAND)
+			case 6:
+				setvar(VAR_TEMP_0, MOVE_SYNTHESIS)
+				setvar(VAR_0x8005, MOVE_SYNTHESIS)
+			case 7:
+				setvar(VAR_TEMP_0, MOVE_PAIN_SPLIT)
+				setvar(VAR_0x8005, MOVE_PAIN_SPLIT)
+			case 8:
+				setvar(VAR_TEMP_0, MOVE_DEFOG)
+				setvar(VAR_0x8005, MOVE_DEFOG)
 			case 9:
-				setvar(VAR_TEMP_0, MOVE_SLEEP_TALK)
-				setvar(VAR_0x8005, MOVE_SLEEP_TALK)
-			case 10:
-				setvar(VAR_TEMP_0, MOVE_TAUNT)
-				setvar(VAR_0x8005, MOVE_TAUNT)
+				setvar(VAR_TEMP_0, MOVE_TRICK)
+				setvar(VAR_0x8005, MOVE_TRICK)
 			// case 6:
 			// 	setvar(VAR_TEMP_0, MOVE_STEALTH_ROCK)
 			// 	setvar(VAR_0x8005, MOVE_STEALTH_ROCK)
@@ -1577,7 +1611,10 @@ script EventScript_Shop_Lelouch_MoveTutor {
 			continue
 		}
 		msgbox("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Which Pokémon should learn\n{STR_VAR_1}?", MSGBOX_DEFAULT)
-		call(MoveTutor_EventScript_OpenPartyMenu)
+		special(ChooseMonForMoveTutor)
+		waitstate
+		lock
+		faceplayer
 		if (var(VAR_RESULT) == 0) {
 			continue
 		}
@@ -1761,8 +1798,12 @@ script EventScript_Shop_Joy {
 		setflag(FLAG_JOY_INTRO)
 		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Welcome to the Pokémon… Ugh. Never mind.\p{COLOR BLUE}???{COLOR DARK_GRAY}: My name is Joy. Just Joy.\p{COLOR BLUE}Joy{COLOR DARK_GRAY}: I used to work at the Pokémon Center, but they gave terrible pay.\pSo now, this shop, Joy's Center of Restoration, is my own!"), MSGBOX_DEFAULT)
 	}
+	if (var(VAR_ZONE) > 10 && flag(FLAG_JOY_UPGRADED) == false) {
+		msgbox(format("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Welcome back to Joy's Center of Restoration.\pWe've developed new technology that allows us to heal your entire party and all your PC Pokémon as well."))
+		setflag(FLAG_JOY_UPGRADED)
+	}
 	if (flag(FLAG_JOY_UPGRADED) == TRUE) {
-		msgbox(format("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Welcome to Joy's Center of Restoration.\pWe heal your entire party and PC for a flat ¥2000 fee."), MSGBOX_DEFAULT)
+		msgbox(format("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Welcome to Joy's Center of Restoration.\pWe heal your entire party and PC for a flat ¥1000 fee"), MSGBOX_DEFAULT)
 	} else {
 		msgbox(format("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Welcome to Joy's Center of Restoration.\pWe heal your entire party for a flat ¥1000 fee."), MSGBOX_DEFAULT)
 	}
@@ -1773,14 +1814,14 @@ script EventScript_Shop_Joy {
 		hidemoneybox
 	} else {
 		if (flag(FLAG_JOY_UPGRADED) == TRUE) {
-			checkmoney(2000, 0)
+			checkmoney(1000, 0)
 			if (var(VAR_RESULT) == FALSE) {
 				msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: You don't have enough money.")
 				hidemoneybox
 			} else {
-				removemoney(2000, 0)
+				removemoney(1000, 0)
 				updatemoneybox
-				msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: That will be ¥2000, thank you…")
+				msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: That will be ¥1000, thank you…")
 				fadescreenswapbuffers(FADE_TO_BLACK)
 				playfanfare(MUS_HEAL)
 				waitfanfare
@@ -1808,7 +1849,7 @@ script EventScript_Shop_Joy {
 			}
 		}
 	}
-	msgbox("{COLOR BLUE}Joy{COLOR DARK_GRAY}: See you next time.")
+	msgbox(format("{COLOR BLUE}Joy{COLOR DARK_GRAY}: See you next time."))
 	release
 	end
 }
