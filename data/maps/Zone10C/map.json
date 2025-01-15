@@ -2,7 +2,7 @@
   "id": "MAP_ZONE10C",
   "name": "Zone10C",
   "layout": "LAYOUT_ZONE10C",
-  "music": "MUS_ROUTE111",
+  "music": "MUS_SEALED_CHAMBER",
   "region_map_section": "MAPSEC_ZONE_10",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
