@@ -68,12 +68,14 @@ Zone2B_EventScript_LeviathanBattle_7:
 # 45 "data/maps/Zone2B/scripts.pory"
 	giveitem ITEM_ASPEAR_BERRY, 2
 # 46 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_LeviathanBattle_Text_0
+	giveitem ITEM_PERSIM_BERRY, 2
 # 47 "data/maps/Zone2B/scripts.pory"
-	closemessage
+	msgbox Zone2B_EventScript_LeviathanBattle_Text_0
 # 48 "data/maps/Zone2B/scripts.pory"
-	setflag FLAG_BEAT_LEVIATHAN_2
+	closemessage
 # 49 "data/maps/Zone2B/scripts.pory"
+	setflag FLAG_BEAT_LEVIATHAN_2
+# 50 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
@@ -98,595 +100,595 @@ Zone2B_EventScript_LeviathanBattle_8:
 
 
 Zone2B_EventScript_BuyBug::
-# 70 "data/maps/Zone2B/scripts.pory"
-	lock
 # 71 "data/maps/Zone2B/scripts.pory"
-	faceplayer
+	lock
 # 72 "data/maps/Zone2B/scripts.pory"
+	faceplayer
+# 73 "data/maps/Zone2B/scripts.pory"
 	checktrainerflag TRAINER_PBL_JOSH
 	goto_if 0, Zone2B_EventScript_BuyBug_2
 Zone2B_EventScript_BuyBug_1:
-# 83 "data/maps/Zone2B/scripts.pory"
+# 84 "data/maps/Zone2B/scripts.pory"
 	goto_if_set FLAG_SETTINGS_NUZLOCKE, Zone2B_EventScript_BuyBug_6
 Zone2B_EventScript_BuyBug_4:
-# 88 "data/maps/Zone2B/scripts.pory"
-	showmoneybox 0, 0, 0
 # 89 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_6, MSGBOX_YESNO
+	showmoneybox 0, 0, 0
 # 90 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_6, MSGBOX_YESNO
+# 91 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Zone2B_EventScript_BuyBug_13
-# 96 "data/maps/Zone2B/scripts.pory"
-	checkmoney 500, 0
 # 97 "data/maps/Zone2B/scripts.pory"
+	checkmoney 500, 0
+# 98 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Zone2B_EventScript_BuyBug_16
-# 103 "data/maps/Zone2B/scripts.pory"
+# 104 "data/maps/Zone2B/scripts.pory"
 	goto_if_set FLAG_SETTINGS_NUZLOCKE, Zone2B_EventScript_BuyBug_19
-# 229 "data/maps/Zone2B/scripts.pory"
-	message Zone2B_EventScript_BuyBug_Text_11
 # 230 "data/maps/Zone2B/scripts.pory"
-	dynmultichoice 400, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Zone2B_EventScript_BuyBug_Text_12, Zone2B_EventScript_BuyBug_Text_13, Zone2B_EventScript_BuyBug_Text_14, Zone2B_EventScript_BuyBug_Text_15, Zone2B_EventScript_BuyBug_Text_16, Zone2B_EventScript_BuyBug_Text_17, Zone2B_EventScript_BuyBug_Text_18, Zone2B_EventScript_BuyBug_Text_19, Zone2B_EventScript_BuyBug_Text_20, Zone2B_EventScript_BuyBug_Text_21
+	message Zone2B_EventScript_BuyBug_Text_11
 # 231 "data/maps/Zone2B/scripts.pory"
-	switch VAR_RESULT
+	dynmultichoice 400, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Zone2B_EventScript_BuyBug_Text_12, Zone2B_EventScript_BuyBug_Text_13, Zone2B_EventScript_BuyBug_Text_14, Zone2B_EventScript_BuyBug_Text_15, Zone2B_EventScript_BuyBug_Text_16, Zone2B_EventScript_BuyBug_Text_17, Zone2B_EventScript_BuyBug_Text_18, Zone2B_EventScript_BuyBug_Text_19, Zone2B_EventScript_BuyBug_Text_20, Zone2B_EventScript_BuyBug_Text_21
 # 232 "data/maps/Zone2B/scripts.pory"
+	switch VAR_RESULT
+# 233 "data/maps/Zone2B/scripts.pory"
 	case 0, Zone2B_EventScript_BuyBug_29
-# 234 "data/maps/Zone2B/scripts.pory"
+# 235 "data/maps/Zone2B/scripts.pory"
 	case 1, Zone2B_EventScript_BuyBug_30
-# 236 "data/maps/Zone2B/scripts.pory"
+# 237 "data/maps/Zone2B/scripts.pory"
 	case 2, Zone2B_EventScript_BuyBug_31
-# 238 "data/maps/Zone2B/scripts.pory"
+# 239 "data/maps/Zone2B/scripts.pory"
 	case 3, Zone2B_EventScript_BuyBug_32
-# 240 "data/maps/Zone2B/scripts.pory"
+# 241 "data/maps/Zone2B/scripts.pory"
 	case 4, Zone2B_EventScript_BuyBug_33
-# 242 "data/maps/Zone2B/scripts.pory"
+# 243 "data/maps/Zone2B/scripts.pory"
 	case 5, Zone2B_EventScript_BuyBug_34
-# 244 "data/maps/Zone2B/scripts.pory"
+# 245 "data/maps/Zone2B/scripts.pory"
 	case 6, Zone2B_EventScript_BuyBug_35
-# 246 "data/maps/Zone2B/scripts.pory"
+# 247 "data/maps/Zone2B/scripts.pory"
 	case 7, Zone2B_EventScript_BuyBug_36
-# 248 "data/maps/Zone2B/scripts.pory"
+# 249 "data/maps/Zone2B/scripts.pory"
 	case 8, Zone2B_EventScript_BuyBug_37
-# 250 "data/maps/Zone2B/scripts.pory"
+# 251 "data/maps/Zone2B/scripts.pory"
 	case 9, Zone2B_EventScript_BuyBug_38
-# 252 "data/maps/Zone2B/scripts.pory"
+# 253 "data/maps/Zone2B/scripts.pory"
 	case MULTI_B_PRESSED, Zone2B_EventScript_BuyBug_39
 Zone2B_EventScript_BuyBug_18:
-# 260 "data/maps/Zone2B/scripts.pory"
-	specialvar VAR_TEMP_2, CalculatePlayerPartyCount
 # 261 "data/maps/Zone2B/scripts.pory"
+	specialvar VAR_TEMP_2, CalculatePlayerPartyCount
+# 262 "data/maps/Zone2B/scripts.pory"
 	compare VAR_TEMP_2, PARTY_SIZE
 	goto_if_eq Zone2B_EventScript_BuyBug_23
 Zone2B_EventScript_BuyBug_22:
-# 285 "data/maps/Zone2B/scripts.pory"
+# 286 "data/maps/Zone2B/scripts.pory"
 	goto_if_set FLAG_SETTINGS_NUZLOCKE, Zone2B_EventScript_BuyBug_41
-# 295 "data/maps/Zone2B/scripts.pory"
-	bufferspeciesname 0, VAR_TEMP_1
 # 296 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_25, MSGBOX_YESNO
+	bufferspeciesname 0, VAR_TEMP_1
 # 297 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_25, MSGBOX_YESNO
+# 298 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Zone2B_EventScript_BuyBug_56
 Zone2B_EventScript_BuyBug_40:
-# 304 "data/maps/Zone2B/scripts.pory"
+# 305 "data/maps/Zone2B/scripts.pory"
 	compare VAR_TEMP_2, PARTY_SIZE
 	goto_if_eq Zone2B_EventScript_BuyBug_51
 Zone2B_EventScript_BuyBug_50:
-# 308 "data/maps/Zone2B/scripts.pory"
-	removemoney 500
 # 309 "data/maps/Zone2B/scripts.pory"
-	updatemoneybox
+	removemoney 500
 # 310 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_26, MSGBOX_DEFAULT
+	updatemoneybox
 # 311 "data/maps/Zone2B/scripts.pory"
-	hidemoneybox
+	msgbox Zone2B_EventScript_BuyBug_Text_26, MSGBOX_DEFAULT
 # 312 "data/maps/Zone2B/scripts.pory"
-	givemon VAR_TEMP_1, 6, ITEM_NONE
+	hidemoneybox
 # 313 "data/maps/Zone2B/scripts.pory"
-	setmonmetlocation VAR_TEMP_2, 251
+	givemon VAR_TEMP_1, 6, ITEM_NONE
 # 314 "data/maps/Zone2B/scripts.pory"
-	bufferspeciesname 0, VAR_TEMP_1
+	setmonmetlocation VAR_TEMP_2, 251
 # 315 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_27, MSGBOX_DEFAULT
+	bufferspeciesname 0, VAR_TEMP_1
 # 316 "data/maps/Zone2B/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	msgbox Zone2B_EventScript_BuyBug_Text_27, MSGBOX_DEFAULT
 # 317 "data/maps/Zone2B/scripts.pory"
-	message Zone2B_EventScript_BuyBug_Text_28
+	playfanfare MUS_OBTAIN_ITEM
 # 318 "data/maps/Zone2B/scripts.pory"
-	waitmessage
+	message Zone2B_EventScript_BuyBug_Text_28
 # 319 "data/maps/Zone2B/scripts.pory"
-	waitfanfare
+	waitmessage
 # 320 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_29, MSGBOX_YESNO
+	waitfanfare
 # 321 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_29, MSGBOX_YESNO
+# 322 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone2B_EventScript_BuyBug_64
 Zone2B_EventScript_BuyBug_63:
-# 325 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_30, MSGBOX_DEFAULT
 # 326 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_30, MSGBOX_DEFAULT
+# 327 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 Zone2B_EventScript_BuyBug_2:
-# 73 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_0, MSGBOX_YESNO
 # 74 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_0, MSGBOX_YESNO
+# 75 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Zone2B_EventScript_BuyBug_10
-# 79 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_2, MSGBOX_AUTOCLOSE
 # 80 "data/maps/Zone2B/scripts.pory"
-	trainerbattle_no_intro TRAINER_PBL_JOSH, Zone2B_EventScript_BuyBug_Text_3
+	msgbox Zone2B_EventScript_BuyBug_Text_2, MSGBOX_AUTOCLOSE
 # 81 "data/maps/Zone2B/scripts.pory"
+	trainerbattle_no_intro TRAINER_PBL_JOSH, Zone2B_EventScript_BuyBug_Text_3
+# 82 "data/maps/Zone2B/scripts.pory"
 	msgbox Zone2B_EventScript_BuyBug_Text_4, MSGBOX_DEFAULT
 	goto Zone2B_EventScript_BuyBug_1
 
 Zone2B_EventScript_BuyBug_5:
-# 84 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_5
 # 85 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_5
+# 86 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 Zone2B_EventScript_BuyBug_6:
-# 83 "data/maps/Zone2B/scripts.pory"
+# 84 "data/maps/Zone2B/scripts.pory"
 	goto_if_set FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG, Zone2B_EventScript_BuyBug_5
 	goto Zone2B_EventScript_BuyBug_4
 
 Zone2B_EventScript_BuyBug_10:
-# 75 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_1
 # 76 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_1
+# 77 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 Zone2B_EventScript_BuyBug_13:
-# 91 "data/maps/Zone2B/scripts.pory"
-	hidemoneybox
 # 92 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_1
+	hidemoneybox
 # 93 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_1
+# 94 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 Zone2B_EventScript_BuyBug_16:
-# 98 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_7
 # 99 "data/maps/Zone2B/scripts.pory"
-	hidemoneybox
+	msgbox Zone2B_EventScript_BuyBug_Text_7
 # 100 "data/maps/Zone2B/scripts.pory"
+	hidemoneybox
+# 101 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 Zone2B_EventScript_BuyBug_19:
-# 104 "data/maps/Zone2B/scripts.pory"
+# 105 "data/maps/Zone2B/scripts.pory"
 	goto_if_unset FLAG_SETTINGS_RANDOMIZER, Zone2B_EventScript_BuyBug_25
-# 226 "data/maps/Zone2B/scripts.pory"
+# 227 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_SEWADDLE
 	goto Zone2B_EventScript_BuyBug_18
 
 Zone2B_EventScript_BuyBug_23:
-# 262 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_22, MSGBOX_AUTOCLOSE
 # 263 "data/maps/Zone2B/scripts.pory"
-	hidemoneybox
+	msgbox Zone2B_EventScript_BuyBug_Text_22, MSGBOX_AUTOCLOSE
 # 264 "data/maps/Zone2B/scripts.pory"
-	special ChoosePartyMon
+	hidemoneybox
 # 265 "data/maps/Zone2B/scripts.pory"
-	waitstate
+	special ChoosePartyMon
 # 266 "data/maps/Zone2B/scripts.pory"
-	faceplayer
+	waitstate
 # 267 "data/maps/Zone2B/scripts.pory"
-	showmoneybox 0, 0, 0
+	faceplayer
 # 268 "data/maps/Zone2B/scripts.pory"
+	showmoneybox 0, 0, 0
+# 269 "data/maps/Zone2B/scripts.pory"
 	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
 	goto_if_eq Zone2B_EventScript_BuyBug_45
-# 274 "data/maps/Zone2B/scripts.pory"
-	specialvar VAR_TEMP_3, ScriptGetPartyMonSpecies
 # 275 "data/maps/Zone2B/scripts.pory"
-	bufferspeciesname 2, VAR_TEMP_3
+	specialvar VAR_TEMP_3, ScriptGetPartyMonSpecies
 # 276 "data/maps/Zone2B/scripts.pory"
-	copyvar VAR_TEMP_3, VAR_0x8004
+	bufferspeciesname 2, VAR_TEMP_3
 # 277 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_23, MSGBOX_YESNO
+	copyvar VAR_TEMP_3, VAR_0x8004
 # 278 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_23, MSGBOX_YESNO
+# 279 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Zone2B_EventScript_BuyBug_58
 	goto Zone2B_EventScript_BuyBug_22
 
 Zone2B_EventScript_BuyBug_25:
-# 105 "data/maps/Zone2B/scripts.pory"
-	setvar VAR_TEMP_3, 0
 # 106 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_SEWADDLE
+	setvar VAR_TEMP_3, 0
 # 107 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_SEWADDLE
+# 108 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_48
 Zone2B_EventScript_BuyBug_47:
-# 110 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_SPINARAK
 # 111 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_SPINARAK
+# 112 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_61
 Zone2B_EventScript_BuyBug_60:
-# 114 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_LEDYBA
 # 115 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_LEDYBA
+# 116 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_67
 Zone2B_EventScript_BuyBug_66:
-# 118 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_VENIPEDE
 # 119 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_VENIPEDE
+# 120 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_70
 Zone2B_EventScript_BuyBug_69:
-# 122 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_NINCADA
 # 123 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_NINCADA
+# 124 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_73
 Zone2B_EventScript_BuyBug_72:
-# 126 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_CATERPIE
 # 127 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_CATERPIE
+# 128 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_76
 Zone2B_EventScript_BuyBug_75:
-# 130 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_WEEDLE
 # 131 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_WEEDLE
+# 132 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_79
 Zone2B_EventScript_BuyBug_78:
-# 134 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_TAROUNTULA
 # 135 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_TAROUNTULA
+# 136 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_82
 Zone2B_EventScript_BuyBug_81:
-# 138 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_KRICKETOT
 # 139 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_KRICKETOT
+# 140 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_85
 Zone2B_EventScript_BuyBug_84:
-# 142 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_PARAS
 # 143 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_PARAS
+# 144 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_88
 Zone2B_EventScript_BuyBug_87:
-# 146 "data/maps/Zone2B/scripts.pory"
+# 147 "data/maps/Zone2B/scripts.pory"
 	compare VAR_TEMP_3, 10
 	goto_if_eq Zone2B_EventScript_BuyBug_91
-# 152 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_9, MSGBOX_YESNO
 # 153 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_9, MSGBOX_YESNO
+# 154 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Zone2B_EventScript_BuyBug_94
-# 159 "data/maps/Zone2B/scripts.pory"
+# 160 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, 0
 Zone2B_EventScript_BuyBug_96:
-# 160 "data/maps/Zone2B/scripts.pory"
+# 161 "data/maps/Zone2B/scripts.pory"
 	compare VAR_TEMP_1, 0
 	goto_if_eq Zone2B_EventScript_BuyBug_97
 	goto Zone2B_EventScript_BuyBug_18
 
 Zone2B_EventScript_BuyBug_29:
-# 233 "data/maps/Zone2B/scripts.pory"
+# 234 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_SEWADDLE
 	goto Zone2B_EventScript_BuyBug_18
 
 Zone2B_EventScript_BuyBug_30:
-# 235 "data/maps/Zone2B/scripts.pory"
+# 236 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_SPINARAK
 	goto Zone2B_EventScript_BuyBug_18
 
 Zone2B_EventScript_BuyBug_31:
-# 237 "data/maps/Zone2B/scripts.pory"
+# 238 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_LEDYBA
 	goto Zone2B_EventScript_BuyBug_18
 
 Zone2B_EventScript_BuyBug_32:
-# 239 "data/maps/Zone2B/scripts.pory"
+# 240 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_VENIPEDE
 	goto Zone2B_EventScript_BuyBug_18
 
 Zone2B_EventScript_BuyBug_33:
-# 241 "data/maps/Zone2B/scripts.pory"
+# 242 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_NINCADA
 	goto Zone2B_EventScript_BuyBug_18
 
 Zone2B_EventScript_BuyBug_34:
-# 243 "data/maps/Zone2B/scripts.pory"
+# 244 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_CATERPIE
 	goto Zone2B_EventScript_BuyBug_18
 
 Zone2B_EventScript_BuyBug_35:
-# 245 "data/maps/Zone2B/scripts.pory"
+# 246 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_WEEDLE
 	goto Zone2B_EventScript_BuyBug_18
 
 Zone2B_EventScript_BuyBug_36:
-# 247 "data/maps/Zone2B/scripts.pory"
+# 248 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_TAROUNTULA
 	goto Zone2B_EventScript_BuyBug_18
 
 Zone2B_EventScript_BuyBug_37:
-# 249 "data/maps/Zone2B/scripts.pory"
+# 250 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_KRICKETOT
 	goto Zone2B_EventScript_BuyBug_18
 
 Zone2B_EventScript_BuyBug_38:
-# 251 "data/maps/Zone2B/scripts.pory"
+# 252 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_PARAS
 	goto Zone2B_EventScript_BuyBug_18
 
 Zone2B_EventScript_BuyBug_39:
-# 253 "data/maps/Zone2B/scripts.pory"
-	closemessage
 # 254 "data/maps/Zone2B/scripts.pory"
-	hidemoneybox
+	closemessage
 # 255 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_1
+	hidemoneybox
 # 256 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_1
+# 257 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 Zone2B_EventScript_BuyBug_41:
-# 286 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_24, MSGBOX_YESNO
 # 287 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_24, MSGBOX_YESNO
+# 288 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Zone2B_EventScript_BuyBug_54
-# 293 "data/maps/Zone2B/scripts.pory"
+# 294 "data/maps/Zone2B/scripts.pory"
 	setflag FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG
 	goto Zone2B_EventScript_BuyBug_40
 
 Zone2B_EventScript_BuyBug_45:
-# 269 "data/maps/Zone2B/scripts.pory"
-	hidemoneybox
 # 270 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_1
+	hidemoneybox
 # 271 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_1
+# 272 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 Zone2B_EventScript_BuyBug_48:
-# 108 "data/maps/Zone2B/scripts.pory"
+# 109 "data/maps/Zone2B/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone2B_EventScript_BuyBug_47
 
 Zone2B_EventScript_BuyBug_51:
-# 305 "data/maps/Zone2B/scripts.pory"
-	special SendChosenMonToPC
 # 306 "data/maps/Zone2B/scripts.pory"
+	special SendChosenMonToPC
+# 307 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_2, 5
 	goto Zone2B_EventScript_BuyBug_50
 
 Zone2B_EventScript_BuyBug_54:
-# 288 "data/maps/Zone2B/scripts.pory"
-	hidemoneybox
 # 289 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_1
+	hidemoneybox
 # 290 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_1
+# 291 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 Zone2B_EventScript_BuyBug_56:
-# 298 "data/maps/Zone2B/scripts.pory"
-	hidemoneybox
 # 299 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_1
+	hidemoneybox
 # 300 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_1
+# 301 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 Zone2B_EventScript_BuyBug_58:
-# 279 "data/maps/Zone2B/scripts.pory"
-	hidemoneybox
 # 280 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_1
+	hidemoneybox
 # 281 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_1
+# 282 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 Zone2B_EventScript_BuyBug_61:
-# 112 "data/maps/Zone2B/scripts.pory"
+# 113 "data/maps/Zone2B/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone2B_EventScript_BuyBug_60
 
 Zone2B_EventScript_BuyBug_64:
-# 322 "data/maps/Zone2B/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
 # 323 "data/maps/Zone2B/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 324 "data/maps/Zone2B/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto Zone2B_EventScript_BuyBug_63
 
 Zone2B_EventScript_BuyBug_67:
-# 116 "data/maps/Zone2B/scripts.pory"
+# 117 "data/maps/Zone2B/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone2B_EventScript_BuyBug_66
 
 Zone2B_EventScript_BuyBug_70:
-# 120 "data/maps/Zone2B/scripts.pory"
+# 121 "data/maps/Zone2B/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone2B_EventScript_BuyBug_69
 
 Zone2B_EventScript_BuyBug_73:
-# 124 "data/maps/Zone2B/scripts.pory"
+# 125 "data/maps/Zone2B/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone2B_EventScript_BuyBug_72
 
 Zone2B_EventScript_BuyBug_76:
-# 128 "data/maps/Zone2B/scripts.pory"
+# 129 "data/maps/Zone2B/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone2B_EventScript_BuyBug_75
 
 Zone2B_EventScript_BuyBug_79:
-# 132 "data/maps/Zone2B/scripts.pory"
+# 133 "data/maps/Zone2B/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone2B_EventScript_BuyBug_78
 
 Zone2B_EventScript_BuyBug_82:
-# 136 "data/maps/Zone2B/scripts.pory"
+# 137 "data/maps/Zone2B/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone2B_EventScript_BuyBug_81
 
 Zone2B_EventScript_BuyBug_85:
-# 140 "data/maps/Zone2B/scripts.pory"
+# 141 "data/maps/Zone2B/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone2B_EventScript_BuyBug_84
 
 Zone2B_EventScript_BuyBug_88:
-# 144 "data/maps/Zone2B/scripts.pory"
+# 145 "data/maps/Zone2B/scripts.pory"
 	addvar VAR_TEMP_3, 1
 	goto Zone2B_EventScript_BuyBug_87
 
 Zone2B_EventScript_BuyBug_91:
-# 147 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_8
 # 148 "data/maps/Zone2B/scripts.pory"
-	hidemoneybox
+	msgbox Zone2B_EventScript_BuyBug_Text_8
 # 149 "data/maps/Zone2B/scripts.pory"
+	hidemoneybox
+# 150 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 Zone2B_EventScript_BuyBug_94:
-# 154 "data/maps/Zone2B/scripts.pory"
-	hidemoneybox
 # 155 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_EventScript_BuyBug_Text_10
+	hidemoneybox
 # 156 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_EventScript_BuyBug_Text_10
+# 157 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 Zone2B_EventScript_BuyBug_97:
-# 161 "data/maps/Zone2B/scripts.pory"
-	random 10
 # 162 "data/maps/Zone2B/scripts.pory"
-	switch VAR_RESULT
+	random 10
 # 163 "data/maps/Zone2B/scripts.pory"
+	switch VAR_RESULT
+# 164 "data/maps/Zone2B/scripts.pory"
 	case 0, Zone2B_EventScript_BuyBug_100
-# 169 "data/maps/Zone2B/scripts.pory"
+# 170 "data/maps/Zone2B/scripts.pory"
 	case 1, Zone2B_EventScript_BuyBug_101
-# 175 "data/maps/Zone2B/scripts.pory"
+# 176 "data/maps/Zone2B/scripts.pory"
 	case 2, Zone2B_EventScript_BuyBug_102
-# 181 "data/maps/Zone2B/scripts.pory"
+# 182 "data/maps/Zone2B/scripts.pory"
 	case 3, Zone2B_EventScript_BuyBug_103
-# 187 "data/maps/Zone2B/scripts.pory"
+# 188 "data/maps/Zone2B/scripts.pory"
 	case 4, Zone2B_EventScript_BuyBug_104
-# 193 "data/maps/Zone2B/scripts.pory"
+# 194 "data/maps/Zone2B/scripts.pory"
 	case 5, Zone2B_EventScript_BuyBug_105
-# 199 "data/maps/Zone2B/scripts.pory"
+# 200 "data/maps/Zone2B/scripts.pory"
 	case 6, Zone2B_EventScript_BuyBug_106
-# 205 "data/maps/Zone2B/scripts.pory"
+# 206 "data/maps/Zone2B/scripts.pory"
 	case 7, Zone2B_EventScript_BuyBug_107
-# 211 "data/maps/Zone2B/scripts.pory"
+# 212 "data/maps/Zone2B/scripts.pory"
 	case 8, Zone2B_EventScript_BuyBug_108
-# 217 "data/maps/Zone2B/scripts.pory"
+# 218 "data/maps/Zone2B/scripts.pory"
 	case 9, Zone2B_EventScript_BuyBug_109
 	goto Zone2B_EventScript_BuyBug_96
 
 Zone2B_EventScript_BuyBug_100:
-# 164 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_SEWADDLE
 # 165 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_SEWADDLE
+# 166 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_111
-# 168 "data/maps/Zone2B/scripts.pory"
+# 169 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_SEWADDLE
 	goto Zone2B_EventScript_BuyBug_96
 
 Zone2B_EventScript_BuyBug_101:
-# 170 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_SPINARAK
 # 171 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_SPINARAK
+# 172 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_114
-# 174 "data/maps/Zone2B/scripts.pory"
+# 175 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_SPINARAK
 	goto Zone2B_EventScript_BuyBug_96
 
 Zone2B_EventScript_BuyBug_102:
-# 176 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_LEDYBA
 # 177 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_LEDYBA
+# 178 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_117
-# 180 "data/maps/Zone2B/scripts.pory"
+# 181 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_LEDYBA
 	goto Zone2B_EventScript_BuyBug_96
 
 Zone2B_EventScript_BuyBug_103:
-# 182 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_VENIPEDE
 # 183 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_VENIPEDE
+# 184 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_120
-# 186 "data/maps/Zone2B/scripts.pory"
+# 187 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_VENIPEDE
 	goto Zone2B_EventScript_BuyBug_96
 
 Zone2B_EventScript_BuyBug_104:
-# 188 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_NINCADA
 # 189 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_NINCADA
+# 190 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_123
-# 192 "data/maps/Zone2B/scripts.pory"
+# 193 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_NINCADA
 	goto Zone2B_EventScript_BuyBug_96
 
 Zone2B_EventScript_BuyBug_105:
-# 194 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_CATERPIE
 # 195 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_CATERPIE
+# 196 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_126
-# 198 "data/maps/Zone2B/scripts.pory"
+# 199 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_CATERPIE
 	goto Zone2B_EventScript_BuyBug_96
 
 Zone2B_EventScript_BuyBug_106:
-# 200 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_WEEDLE
 # 201 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_WEEDLE
+# 202 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_129
-# 204 "data/maps/Zone2B/scripts.pory"
+# 205 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_WEEDLE
 	goto Zone2B_EventScript_BuyBug_96
 
 Zone2B_EventScript_BuyBug_107:
-# 206 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_TAROUNTULA
 # 207 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_TAROUNTULA
+# 208 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_132
-# 210 "data/maps/Zone2B/scripts.pory"
+# 211 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_TAROUNTULA
 	goto Zone2B_EventScript_BuyBug_96
 
 Zone2B_EventScript_BuyBug_108:
-# 212 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_KRICKETOT
 # 213 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_KRICKETOT
+# 214 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_135
-# 216 "data/maps/Zone2B/scripts.pory"
+# 217 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_KRICKETOT
 	goto Zone2B_EventScript_BuyBug_96
 
 Zone2B_EventScript_BuyBug_109:
-# 218 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_PARAS
 # 219 "data/maps/Zone2B/scripts.pory"
+	checkspeciesclause SPECIES_PARAS
+# 220 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_138
-# 222 "data/maps/Zone2B/scripts.pory"
+# 223 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_PARAS
 	goto Zone2B_EventScript_BuyBug_96
 
@@ -722,122 +724,122 @@ Zone2B_EventScript_BuyBug_138:
 
 
 Zone2B_EventScript_ItemRandom1::
-# 331 "data/maps/Zone2B/scripts.pory"
-	lock
 # 332 "data/maps/Zone2B/scripts.pory"
+	lock
+# 333 "data/maps/Zone2B/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE2B_RANDOM_1, Zone2B_EventScript_ItemRandom1_2
-# 337 "data/maps/Zone2B/scripts.pory"
-	waitse
 # 338 "data/maps/Zone2B/scripts.pory"
-	removeobject VAR_LAST_TALKED
+	waitse
 # 339 "data/maps/Zone2B/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
+	removeobject VAR_LAST_TALKED
 # 340 "data/maps/Zone2B/scripts.pory"
-	setflag FLAG_ITEM_ZONE2B_RANDOM_1
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 341 "data/maps/Zone2B/scripts.pory"
-	addobject VAR_LAST_TALKED
+	setflag FLAG_ITEM_ZONE2B_RANDOM_1
 # 342 "data/maps/Zone2B/scripts.pory"
-	specialvar VAR_TEMP_1, RandomItemChest
+	addobject VAR_LAST_TALKED
 # 343 "data/maps/Zone2B/scripts.pory"
-	finditem VAR_TEMP_1, VAR_TEMP_0
+	specialvar VAR_TEMP_1, RandomItemChest
 # 344 "data/maps/Zone2B/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 345 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 Zone2B_EventScript_ItemRandom1_2:
-# 333 "data/maps/Zone2B/scripts.pory"
-	msgbox gText_ItemChestIsEmpty
 # 334 "data/maps/Zone2B/scripts.pory"
+	msgbox gText_ItemChestIsEmpty
+# 335 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 
 Zone2B_EventScript_ItemTMBugBite::
-# 349 "data/maps/Zone2B/scripts.pory"
-	lock
 # 350 "data/maps/Zone2B/scripts.pory"
+	lock
+# 351 "data/maps/Zone2B/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE2B_TM_BUG_BITE, Zone2B_EventScript_ItemTMBugBite_2
-# 355 "data/maps/Zone2B/scripts.pory"
-	waitse
 # 356 "data/maps/Zone2B/scripts.pory"
-	removeobject VAR_LAST_TALKED
+	waitse
 # 357 "data/maps/Zone2B/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TM_CHEST_OPEN
+	removeobject VAR_LAST_TALKED
 # 358 "data/maps/Zone2B/scripts.pory"
-	setflag FLAG_ITEM_ZONE2B_TM_BUG_BITE
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TM_CHEST_OPEN
 # 359 "data/maps/Zone2B/scripts.pory"
-	addobject VAR_LAST_TALKED
+	setflag FLAG_ITEM_ZONE2B_TM_BUG_BITE
 # 360 "data/maps/Zone2B/scripts.pory"
-	finditem ITEM_TM_BUG_BITE
+	addobject VAR_LAST_TALKED
 # 361 "data/maps/Zone2B/scripts.pory"
+	finditem ITEM_TM_BUG_BITE
+# 362 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 Zone2B_EventScript_ItemTMBugBite_2:
-# 351 "data/maps/Zone2B/scripts.pory"
-	msgbox gText_ItemChestIsEmpty
 # 352 "data/maps/Zone2B/scripts.pory"
+	msgbox gText_ItemChestIsEmpty
+# 353 "data/maps/Zone2B/scripts.pory"
 	release
 	end
 
 
-# 365 "data/maps/Zone2B/scripts.pory"
-
 # 366 "data/maps/Zone2B/scripts.pory"
-Zone2B_EventScript_Harper::
+
 # 367 "data/maps/Zone2B/scripts.pory"
-	trainerbattle_single TRAINER_PBL_HARPER, Zone2B_Text_HarperIntro, Zone2B_Text_HarperDefeat
+Zone2B_EventScript_Harper::
 # 368 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_Text_HarperPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_PBL_HARPER, Zone2B_Text_HarperIntro, Zone2B_Text_HarperDefeat
 # 369 "data/maps/Zone2B/scripts.pory"
-	end
+	msgbox Zone2B_Text_HarperPostBattle, MSGBOX_AUTOCLOSE
 # 370 "data/maps/Zone2B/scripts.pory"
-
-# 371 "data/maps/Zone2B/scripts.pory"
-Zone2B_Text_HarperIntro:
-# 372 "data/maps/Zone2B/scripts.pory"
-	.string "Surprise! Battle time!$"
-# 373 "data/maps/Zone2B/scripts.pory"
-
-# 374 "data/maps/Zone2B/scripts.pory"
-Zone2B_Text_HarperDefeat:
-# 375 "data/maps/Zone2B/scripts.pory"
-	.string "My spirit, crushed!$"
-# 376 "data/maps/Zone2B/scripts.pory"
-
-# 377 "data/maps/Zone2B/scripts.pory"
-Zone2B_Text_HarperPostBattle:
-# 378 "data/maps/Zone2B/scripts.pory"
-	.string "I don't know if I can ever\n"
-# 379 "data/maps/Zone2B/scripts.pory"
-	.string "come back from this loss…$"
-# 380 "data/maps/Zone2B/scripts.pory"
-
-# 381 "data/maps/Zone2B/scripts.pory"
-Zone2B_EventScript_Arthur::
-# 382 "data/maps/Zone2B/scripts.pory"
-	trainerbattle_single TRAINER_PBL_ARTHUR, Zone2B_Text_ArthurIntro, Zone2B_Text_ArthurDefeat
-# 383 "data/maps/Zone2B/scripts.pory"
-	msgbox Zone2B_Text_ArthurPostBattle, MSGBOX_AUTOCLOSE
-# 384 "data/maps/Zone2B/scripts.pory"
 	end
+# 371 "data/maps/Zone2B/scripts.pory"
+
+# 372 "data/maps/Zone2B/scripts.pory"
+Zone2B_Text_HarperIntro:
+# 373 "data/maps/Zone2B/scripts.pory"
+	.string "Surprise! Battle time!$"
+# 374 "data/maps/Zone2B/scripts.pory"
+
+# 375 "data/maps/Zone2B/scripts.pory"
+Zone2B_Text_HarperDefeat:
+# 376 "data/maps/Zone2B/scripts.pory"
+	.string "My spirit, crushed!$"
+# 377 "data/maps/Zone2B/scripts.pory"
+
+# 378 "data/maps/Zone2B/scripts.pory"
+Zone2B_Text_HarperPostBattle:
+# 379 "data/maps/Zone2B/scripts.pory"
+	.string "I don't know if I can ever\n"
+# 380 "data/maps/Zone2B/scripts.pory"
+	.string "come back from this loss…$"
+# 381 "data/maps/Zone2B/scripts.pory"
+
+# 382 "data/maps/Zone2B/scripts.pory"
+Zone2B_EventScript_Arthur::
+# 383 "data/maps/Zone2B/scripts.pory"
+	trainerbattle_single TRAINER_PBL_ARTHUR, Zone2B_Text_ArthurIntro, Zone2B_Text_ArthurDefeat
+# 384 "data/maps/Zone2B/scripts.pory"
+	msgbox Zone2B_Text_ArthurPostBattle, MSGBOX_AUTOCLOSE
 # 385 "data/maps/Zone2B/scripts.pory"
-
+	end
 # 386 "data/maps/Zone2B/scripts.pory"
-Zone2B_Text_ArthurIntro:
+
 # 387 "data/maps/Zone2B/scripts.pory"
-	.string "Hey, you! Get out of my way!$"
+Zone2B_Text_ArthurIntro:
 # 388 "data/maps/Zone2B/scripts.pory"
-
+	.string "Hey, you! Get out of my way!$"
 # 389 "data/maps/Zone2B/scripts.pory"
-Zone2B_Text_ArthurDefeat:
-# 390 "data/maps/Zone2B/scripts.pory"
-	.string "You're too strong!$"
-# 391 "data/maps/Zone2B/scripts.pory"
 
+# 390 "data/maps/Zone2B/scripts.pory"
+Zone2B_Text_ArthurDefeat:
+# 391 "data/maps/Zone2B/scripts.pory"
+	.string "You're too strong!$"
 # 392 "data/maps/Zone2B/scripts.pory"
-Zone2B_Text_ArthurPostBattle:
+
 # 393 "data/maps/Zone2B/scripts.pory"
+Zone2B_Text_ArthurPostBattle:
+# 394 "data/maps/Zone2B/scripts.pory"
 	.string "Sorry about earlier.$"
 
 Zone2B_EventScript_LeviathanBattle_Text_0:
@@ -860,56 +862,56 @@ Zone2B_EventScript_LeviathanBattle_Text_1:
 	.string "give you some extra Berries!$"
 
 Zone2B_EventScript_BuyBug_Text_0:
-# 73 "data/maps/Zone2B/scripts.pory"
+# 74 "data/maps/Zone2B/scripts.pory"
 	.string "Oh! You look like a Bug-type\n"
 	.string "enthusiast.\p"
 	.string "Bug-type Pokémon sure are great.\p"
 	.string "I can show you some Bugs, if you like?$"
 
 Zone2B_EventScript_BuyBug_Text_1:
-# 75 "data/maps/Zone2B/scripts.pory"
+# 76 "data/maps/Zone2B/scripts.pory"
 	.string "You don't want any? Fine. More for me.$"
 
 Zone2B_EventScript_BuyBug_Text_2:
-# 79 "data/maps/Zone2B/scripts.pory"
+# 80 "data/maps/Zone2B/scripts.pory"
 	.string "I'll show you some great Bug-type\n"
 	.string "Pokémon!$"
 
 Zone2B_EventScript_BuyBug_Text_3:
-# 80 "data/maps/Zone2B/scripts.pory"
+# 81 "data/maps/Zone2B/scripts.pory"
 	.string "They were great, weren't they?$"
 
 Zone2B_EventScript_BuyBug_Text_4:
-# 81 "data/maps/Zone2B/scripts.pory"
+# 82 "data/maps/Zone2B/scripts.pory"
 	.string "Hey, tell you what.\p"
 	.string "I'm actually selling some Bug-type\n"
 	.string "Pokémon!$"
 
 Zone2B_EventScript_BuyBug_Text_5:
-# 84 "data/maps/Zone2B/scripts.pory"
+# 85 "data/maps/Zone2B/scripts.pory"
 	.string "Scram! I'm out of bugs for you to buy\n"
 	.string "right now.\p"
 	.string "Come back later.$"
 
 Zone2B_EventScript_BuyBug_Text_6:
-# 89 "data/maps/Zone2B/scripts.pory"
+# 90 "data/maps/Zone2B/scripts.pory"
 	.string "Would you care to buy a Bug-type\n"
 	.string "Pokémon?\p"
 	.string "I've got quite the great selection for\n"
 	.string "only ¥500!$"
 
 Zone2B_EventScript_BuyBug_Text_7:
-# 98 "data/maps/Zone2B/scripts.pory"
+# 99 "data/maps/Zone2B/scripts.pory"
 	.string "You don't have enough money.$"
 
 Zone2B_EventScript_BuyBug_Text_8:
-# 147 "data/maps/Zone2B/scripts.pory"
+# 148 "data/maps/Zone2B/scripts.pory"
 	.string "Unfortunately, you have already\n"
 	.string "obtained a Pokémon in each of these\l"
 	.string "evolution lines.$"
 
 Zone2B_EventScript_BuyBug_Text_9:
-# 152 "data/maps/Zone2B/scripts.pory"
+# 153 "data/maps/Zone2B/scripts.pory"
 	.string "On Nuzlocke mode, you will randomly\n"
 	.string "receive one of the possible Pokémon:\l"
 	.string "Sewaddle, Spinarak, Ledyba, Venipede,\l"
@@ -918,112 +920,112 @@ Zone2B_EventScript_BuyBug_Text_9:
 	.string "Is this ok?$"
 
 Zone2B_EventScript_BuyBug_Text_10:
-# 155 "data/maps/Zone2B/scripts.pory"
+# 156 "data/maps/Zone2B/scripts.pory"
 	.string "Alrighty, well, you just come on back if\n"
 	.string "you change your mind.$"
 
 Zone2B_EventScript_BuyBug_Text_11:
-# 229 "data/maps/Zone2B/scripts.pory"
+# 230 "data/maps/Zone2B/scripts.pory"
 	.string "Choose which Bug you would like.$"
 
 Zone2B_EventScript_BuyBug_Text_12:
-# 230 "data/maps/Zone2B/scripts.pory"
+# 231 "data/maps/Zone2B/scripts.pory"
 	.string "Sewaddle$"
 
 Zone2B_EventScript_BuyBug_Text_13:
-# 230 "data/maps/Zone2B/scripts.pory"
+# 231 "data/maps/Zone2B/scripts.pory"
 	.string "Spinarak$"
 
 Zone2B_EventScript_BuyBug_Text_14:
-# 230 "data/maps/Zone2B/scripts.pory"
+# 231 "data/maps/Zone2B/scripts.pory"
 	.string "Ledyba$"
 
 Zone2B_EventScript_BuyBug_Text_15:
-# 230 "data/maps/Zone2B/scripts.pory"
+# 231 "data/maps/Zone2B/scripts.pory"
 	.string "Venipede$"
 
 Zone2B_EventScript_BuyBug_Text_16:
-# 230 "data/maps/Zone2B/scripts.pory"
+# 231 "data/maps/Zone2B/scripts.pory"
 	.string "Nincada$"
 
 Zone2B_EventScript_BuyBug_Text_17:
-# 230 "data/maps/Zone2B/scripts.pory"
+# 231 "data/maps/Zone2B/scripts.pory"
 	.string "Caterpie$"
 
 Zone2B_EventScript_BuyBug_Text_18:
-# 230 "data/maps/Zone2B/scripts.pory"
+# 231 "data/maps/Zone2B/scripts.pory"
 	.string "Weedle$"
 
 Zone2B_EventScript_BuyBug_Text_19:
-# 230 "data/maps/Zone2B/scripts.pory"
+# 231 "data/maps/Zone2B/scripts.pory"
 	.string "Tarountula$"
 
 Zone2B_EventScript_BuyBug_Text_20:
-# 230 "data/maps/Zone2B/scripts.pory"
+# 231 "data/maps/Zone2B/scripts.pory"
 	.string "Kricketot$"
 
 Zone2B_EventScript_BuyBug_Text_21:
-# 230 "data/maps/Zone2B/scripts.pory"
+# 231 "data/maps/Zone2B/scripts.pory"
 	.string "Paras$"
 
 Zone2B_EventScript_BuyBug_Text_22:
-# 262 "data/maps/Zone2B/scripts.pory"
+# 263 "data/maps/Zone2B/scripts.pory"
 	.string "Your party is full. Choose a Pokémon to\n"
 	.string "send to the PC.$"
 
 Zone2B_EventScript_BuyBug_Text_23:
-# 277 "data/maps/Zone2B/scripts.pory"
+# 278 "data/maps/Zone2B/scripts.pory"
 	.string "Are you sure you want to send your\n"
 	.string "{STR_VAR_3} to the PC?$"
 
 Zone2B_EventScript_BuyBug_Text_24:
-# 286 "data/maps/Zone2B/scripts.pory"
+# 287 "data/maps/Zone2B/scripts.pory"
 	.string "Just to confirm…\p"
 	.string "You're sure you want to buy a Bug for\n"
 	.string "¥500?$"
 
 Zone2B_EventScript_BuyBug_Text_25:
-# 296 "data/maps/Zone2B/scripts.pory"
+# 297 "data/maps/Zone2B/scripts.pory"
 	.string "Just to confirm…\p"
 	.string "You're sure you want to buy\n"
 	.string "{STR_VAR_1} for ¥500?$"
 
 Zone2B_EventScript_BuyBug_Text_26:
-# 310 "data/maps/Zone2B/scripts.pory"
+# 311 "data/maps/Zone2B/scripts.pory"
 	.string "Ehehehe, thank you…$"
 
 Zone2B_EventScript_BuyBug_Text_27:
-# 315 "data/maps/Zone2B/scripts.pory"
+# 316 "data/maps/Zone2B/scripts.pory"
 	.string "Here's your {STR_VAR_1}.$"
 
 Zone2B_EventScript_BuyBug_Text_28:
-# 317 "data/maps/Zone2B/scripts.pory"
+# 318 "data/maps/Zone2B/scripts.pory"
 	.string "{PLAYER} received the\n"
 	.string "{STR_VAR_1}!$"
 
 Zone2B_EventScript_BuyBug_Text_29:
-# 320 "data/maps/Zone2B/scripts.pory"
+# 321 "data/maps/Zone2B/scripts.pory"
 	.string "Would you like to give a nickname to\n"
 	.string "{STR_VAR_1}?$"
 
 Zone2B_EventScript_BuyBug_Text_30:
-# 325 "data/maps/Zone2B/scripts.pory"
+# 326 "data/maps/Zone2B/scripts.pory"
 	.string "Pleasure doing business with you.$"
 
 Zone2B_Text_Leviathan2WantBattle::
-# 53 "data/maps/Zone2B/scripts.pory"
+# 54 "data/maps/Zone2B/scripts.pory"
 	.string "{COLOR BLUE}Shaun{COLOR DARK_GRAY}: My Pokémon love to eat, just like\n"
 	.string "me! Want to see?$"
 
 Zone2B_Text_Leviathan2Intro::
-# 57 "data/maps/Zone2B/scripts.pory"
+# 58 "data/maps/Zone2B/scripts.pory"
 	.string "{COLOR BLUE}Shaun{COLOR DARK_GRAY}: All right then, let's battle!$"
 
 Zone2B_Text_Leviathan2DenyBattle::
-# 61 "data/maps/Zone2B/scripts.pory"
+# 62 "data/maps/Zone2B/scripts.pory"
 	.string "{COLOR BLUE}Shaun{COLOR DARK_GRAY}: Oh, all right…$"
 
 Zone2B_Text_Leviathan2Defeat::
-# 65 "data/maps/Zone2B/scripts.pory"
+# 66 "data/maps/Zone2B/scripts.pory"
 	.string "Ack! I lost again!\p"
 	.string "Doggone it!$"
