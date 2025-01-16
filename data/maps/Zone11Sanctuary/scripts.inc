@@ -91,7 +91,7 @@ Zone11Sanctuary_EventScript_NextZone_6:
 # 37 "data/maps/Zone11Sanctuary/scripts.pory"
 	call EventScript_LeavingSetup
 # 38 "data/maps/Zone11Sanctuary/scripts.pory"
-	warp MAP_ZONE12A, 255, 9, 17
+	warp MAP_ZONE12A, 255, 9, 16
 # 39 "data/maps/Zone11Sanctuary/scripts.pory"
 	waitstate
 	goto Zone11Sanctuary_EventScript_NextZone_1
