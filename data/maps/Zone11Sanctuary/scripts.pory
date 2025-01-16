@@ -13,9 +13,8 @@ script Zone11Sanctuary_EventScript_Intro {
 	buffernumberstring(0, VAR_ZONE)
 	msgbox(gText_RewardClear, MSGBOX_DEFAULT)
 	msgbox(Zone11Sanctuary_Text_Reward, MSGBOX_DEFAULT)
-	giveitem(ITEM_TM23)
+	giveitem(ITEM_TM_GRASS_KNOT)
 	setvar(VAR_ZONE, 12)
-	msgbox(Zone11Sanctuary_Text_NoBagAccessInNextZone, MSGBOX_DEFAULT)
 	buffernumberstring(0, VAR_ZONE)
 	msgbox(gText_Colress_WhenUReady, MSGBOX_AUTOCLOSE)
 	applymovement(1, Common_Movement_Colress_WalkUp)
@@ -24,27 +23,18 @@ script Zone11Sanctuary_EventScript_Intro {
 	end
 }
 
-text Zone11Sanctuary_Text_NoBagAccessInNextZone {
-	format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next zone, {COLOR RED}Zone 12{COLOR DARK_GRAY}, restricts the use of your Bag.\pYou will not be able to use items from your Bag outside of battle.")
-}
-
 script Zone11Sanctuary_EventScript_NextZone {
 	lock
 	faceplayer
 	message(gText_Colress_Greetings)
 	waitmessage
-	dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
+	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
 	switch (var(VAR_RESULT)) {
 		case 0:
-			msgbox(Zone11Sanctuary_Text_NoBagAccessInNextZone, MSGBOX_DEFAULT)
 			buffernumberstring(0, VAR_ZONE)
 			msgbox(gText_Colress_SureReadyToLeave, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				call(EventScript_LeavingSetup)
-				setflag(FLAG_SYS_NO_BAG_START_MENU)
-				if (flag(FLAG_SETTINGS_BRUTAL)== true || flag(FLAG_SETTINGS_INDEPENDENT) == true) {
-					setflag(FLAG_HIDE_ZONE12A_NURSE)
-				}
 				warp(MAP_ZONE12A, 255, 9, 17)
 				waitstate
 			}
@@ -57,5 +47,5 @@ script Zone11Sanctuary_EventScript_NextZone {
 }
 
 text Zone11Sanctuary_Text_Reward {
-	format("TM23 - Pluck!")
+	format("TM86 - Grass Knot!")
 }
