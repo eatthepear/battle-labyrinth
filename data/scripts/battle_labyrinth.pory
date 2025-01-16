@@ -2842,6 +2842,7 @@ script EventScript_WarpZone0 {
 	clearflag(FLAG_IS_REVISITING_ZONE)
 	setvar(VAR_REVISITING_ZONE, 0)
 	warp(MAP_ZONE0A, 1, 255, 255)
+	waitstate
 	releaseall
 	end
 }
