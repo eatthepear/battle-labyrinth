@@ -13,7 +13,7 @@ mapscripts Zone4C_MapScripts {
 	}
 }
 
-script Zone4C_EventScript_ItemMuscleBand {
+script Zone4C_EventScript_MuscleBand {
 	lock
 	if (flag(FLAG_ITEM_ZONE4C_MUSCLE_BAND)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -30,7 +30,7 @@ script Zone4C_EventScript_ItemMuscleBand {
 	end
 }
 
-script Zone4C_EventScript_ItemTwistedSpoon {
+script Zone4C_EventScript_TwistedSpoon {
 	lock
 	if (flag(FLAG_ITEM_ZONE4C_TWISTED_SPOON)) {
 		msgbox(gText_ItemChestIsEmpty)

@@ -8,7 +8,7 @@ mapscripts Zone9G_MapScripts {
 	}
 }
 
-script Zone9G_EventScript_ItemCharcoal {
+script Zone9G_EventScript_Charcoal {
 	lock
 	if (flag(FLAG_ITEM_ZONE9G_CHARCOAL)) {
 		msgbox(gText_ItemChestIsEmpty)

@@ -242,11 +242,11 @@ Zone8A_EventScript_BuyTyrogue_35:
 	goto Zone8A_EventScript_BuyTyrogue_34
 
 
-Zone8A_EventScript_ItemMagnet::
+Zone8A_EventScript_Magnet::
 # 120 "data/maps/Zone8A/scripts.pory"
 	lock
 # 121 "data/maps/Zone8A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8A_MAGNET, Zone8A_EventScript_ItemMagnet_2
+	goto_if_set FLAG_ITEM_ZONE8A_MAGNET, Zone8A_EventScript_Magnet_2
 # 126 "data/maps/Zone8A/scripts.pory"
 	waitse
 # 127 "data/maps/Zone8A/scripts.pory"
@@ -263,7 +263,7 @@ Zone8A_EventScript_ItemMagnet::
 	release
 	end
 
-Zone8A_EventScript_ItemMagnet_2:
+Zone8A_EventScript_Magnet_2:
 # 122 "data/maps/Zone8A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 123 "data/maps/Zone8A/scripts.pory"
@@ -271,11 +271,11 @@ Zone8A_EventScript_ItemMagnet_2:
 	end
 
 
-Zone8A_EventScript_ItemRandom1::
+Zone8A_EventScript_Random1::
 # 137 "data/maps/Zone8A/scripts.pory"
 	lock
 # 138 "data/maps/Zone8A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8A_RANDOM_1, Zone8A_EventScript_ItemRandom1_2
+	goto_if_set FLAG_ITEM_ZONE8A_RANDOM_1, Zone8A_EventScript_Random1_2
 # 143 "data/maps/Zone8A/scripts.pory"
 	waitse
 # 144 "data/maps/Zone8A/scripts.pory"
@@ -294,7 +294,7 @@ Zone8A_EventScript_ItemRandom1::
 	release
 	end
 
-Zone8A_EventScript_ItemRandom1_2:
+Zone8A_EventScript_Random1_2:
 # 139 "data/maps/Zone8A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 140 "data/maps/Zone8A/scripts.pory"
@@ -302,11 +302,11 @@ Zone8A_EventScript_ItemRandom1_2:
 	end
 
 
-Zone8A_EventScript_ItemRandom2::
+Zone8A_EventScript_Random2::
 # 155 "data/maps/Zone8A/scripts.pory"
 	lock
 # 156 "data/maps/Zone8A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8A_RANDOM_2, Zone8A_EventScript_ItemRandom2_2
+	goto_if_set FLAG_ITEM_ZONE8A_RANDOM_2, Zone8A_EventScript_Random2_2
 # 161 "data/maps/Zone8A/scripts.pory"
 	waitse
 # 162 "data/maps/Zone8A/scripts.pory"
@@ -325,7 +325,7 @@ Zone8A_EventScript_ItemRandom2::
 	release
 	end
 
-Zone8A_EventScript_ItemRandom2_2:
+Zone8A_EventScript_Random2_2:
 # 157 "data/maps/Zone8A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 158 "data/maps/Zone8A/scripts.pory"

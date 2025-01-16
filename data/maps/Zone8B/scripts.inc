@@ -36,11 +36,11 @@ Zone8B_MapScripts_MAP_SCRIPT_ON_RESUME_9:
 	return
 
 
-Zone8B_EventScript_ItemHardStone::
+Zone8B_EventScript_HardStone::
 # 22 "data/maps/Zone8B/scripts.pory"
 	lock
 # 23 "data/maps/Zone8B/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8B_HARD_STONE, Zone8B_EventScript_ItemHardStone_2
+	goto_if_set FLAG_ITEM_ZONE8B_HARD_STONE, Zone8B_EventScript_HardStone_2
 # 28 "data/maps/Zone8B/scripts.pory"
 	waitse
 # 29 "data/maps/Zone8B/scripts.pory"
@@ -57,7 +57,7 @@ Zone8B_EventScript_ItemHardStone::
 	release
 	end
 
-Zone8B_EventScript_ItemHardStone_2:
+Zone8B_EventScript_HardStone_2:
 # 24 "data/maps/Zone8B/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 25 "data/maps/Zone8B/scripts.pory"
@@ -65,11 +65,11 @@ Zone8B_EventScript_ItemHardStone_2:
 	end
 
 
-Zone8B_EventScript_ItemDuskBall::
+Zone8B_EventScript_DuskBall::
 # 39 "data/maps/Zone8B/scripts.pory"
 	lock
 # 40 "data/maps/Zone8B/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8B_DUSK_BALL, Zone8B_EventScript_ItemDuskBall_2
+	goto_if_set FLAG_ITEM_ZONE8B_DUSK_BALL, Zone8B_EventScript_DuskBall_2
 # 45 "data/maps/Zone8B/scripts.pory"
 	waitse
 # 46 "data/maps/Zone8B/scripts.pory"
@@ -86,7 +86,7 @@ Zone8B_EventScript_ItemDuskBall::
 	release
 	end
 
-Zone8B_EventScript_ItemDuskBall_2:
+Zone8B_EventScript_DuskBall_2:
 # 41 "data/maps/Zone8B/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 42 "data/maps/Zone8B/scripts.pory"
@@ -94,11 +94,11 @@ Zone8B_EventScript_ItemDuskBall_2:
 	end
 
 
-Zone8B_EventScript_ItemRandom1::
+Zone8B_EventScript_Random1::
 # 56 "data/maps/Zone8B/scripts.pory"
 	lock
 # 57 "data/maps/Zone8B/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8B_RANDOM_1, Zone8B_EventScript_ItemRandom1_2
+	goto_if_set FLAG_ITEM_ZONE8B_RANDOM_1, Zone8B_EventScript_Random1_2
 # 62 "data/maps/Zone8B/scripts.pory"
 	waitse
 # 63 "data/maps/Zone8B/scripts.pory"
@@ -117,7 +117,7 @@ Zone8B_EventScript_ItemRandom1::
 	release
 	end
 
-Zone8B_EventScript_ItemRandom1_2:
+Zone8B_EventScript_Random1_2:
 # 58 "data/maps/Zone8B/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 59 "data/maps/Zone8B/scripts.pory"

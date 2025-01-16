@@ -16,11 +16,11 @@ Zone2A_MapScripts_MAP_SCRIPT_ON_RESUME_1:
 	return
 
 
-Zone2A_EventScript_ItemRandom1::
+Zone2A_EventScript_Random1::
 # 12 "data/maps/Zone2A/scripts.pory"
 	lock
 # 13 "data/maps/Zone2A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE2A_RANDOM_1, Zone2A_EventScript_ItemRandom1_2
+	goto_if_set FLAG_ITEM_ZONE2A_RANDOM_1, Zone2A_EventScript_Random1_2
 # 18 "data/maps/Zone2A/scripts.pory"
 	waitse
 # 19 "data/maps/Zone2A/scripts.pory"
@@ -39,7 +39,7 @@ Zone2A_EventScript_ItemRandom1::
 	release
 	end
 
-Zone2A_EventScript_ItemRandom1_2:
+Zone2A_EventScript_Random1_2:
 # 14 "data/maps/Zone2A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 15 "data/maps/Zone2A/scripts.pory"

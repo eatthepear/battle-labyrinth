@@ -18,7 +18,7 @@ mapscripts Zone8C_MapScripts {
 	}
 }
 
-script Zone8C_EventScript_ItemRandom2 {
+script Zone8C_EventScript_Random2 {
 	lock
 	if (flag(FLAG_ITEM_ZONE8C_RANDOM_2)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -36,7 +36,7 @@ script Zone8C_EventScript_ItemRandom2 {
 	end
 }
 
-script Zone8C_EventScript_ItemFullHeal {
+script Zone8C_EventScript_FullHeal {
 	lock
 	if (flag(FLAG_ITEM_ZONE8C_FULL_HEAL)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -53,7 +53,7 @@ script Zone8C_EventScript_ItemFullHeal {
 	end
 }
 
-script Zone8C_EventScript_ItemRandom1 {
+script Zone8C_EventScript_Random1 {
 	lock
 	if (flag(FLAG_ITEM_ZONE8C_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)

@@ -522,7 +522,7 @@ text Zone1A_Text_Leviathan1Defeat {
 	format("Drats! My Fire-Water-Grass core wasn't enough!")
 }
 
-script Zone1A_EventScript_ItemRandom1 {
+script Zone1A_EventScript_Random1 {
 	lock
 	if (flag(FLAG_ITEM_ZONE1A_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -540,7 +540,7 @@ script Zone1A_EventScript_ItemRandom1 {
 	end
 }
 
-script Zone1A_EventScript_ItemQuickClaw {
+script Zone1A_EventScript_QuickClaw {
 	lock
 	if (flag(FLAG_ITEM_ZONE1A_QUICK_CLAW)) {
 		msgbox(gText_ItemChestIsEmpty)

@@ -26,11 +26,11 @@ Zone4D_MapScripts_MAP_SCRIPT_ON_RESUME_5:
 	return
 
 
-Zone4D_EventScript_ItemWiseGlasses::
+Zone4D_EventScript_WiseGlasses::
 # 17 "data/maps/Zone4D/scripts.pory"
 	lock
 # 18 "data/maps/Zone4D/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE4D_WISE_GLASSES, Zone4D_EventScript_ItemWiseGlasses_2
+	goto_if_set FLAG_ITEM_ZONE4D_WISE_GLASSES, Zone4D_EventScript_WiseGlasses_2
 # 23 "data/maps/Zone4D/scripts.pory"
 	waitse
 # 24 "data/maps/Zone4D/scripts.pory"
@@ -47,7 +47,7 @@ Zone4D_EventScript_ItemWiseGlasses::
 	release
 	end
 
-Zone4D_EventScript_ItemWiseGlasses_2:
+Zone4D_EventScript_WiseGlasses_2:
 # 19 "data/maps/Zone4D/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 20 "data/maps/Zone4D/scripts.pory"
@@ -55,11 +55,11 @@ Zone4D_EventScript_ItemWiseGlasses_2:
 	end
 
 
-Zone4D_EventScript_ItemTMHiddenPower::
+Zone4D_EventScript_TMHiddenPower::
 # 34 "data/maps/Zone4D/scripts.pory"
 	lock
 # 35 "data/maps/Zone4D/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE4D_TM_HIDDEN_POWER, Zone4D_EventScript_ItemTMHiddenPower_2
+	goto_if_set FLAG_ITEM_ZONE4D_TM_HIDDEN_POWER, Zone4D_EventScript_TMHiddenPower_2
 # 40 "data/maps/Zone4D/scripts.pory"
 	waitse
 # 41 "data/maps/Zone4D/scripts.pory"
@@ -76,7 +76,7 @@ Zone4D_EventScript_ItemTMHiddenPower::
 	release
 	end
 
-Zone4D_EventScript_ItemTMHiddenPower_2:
+Zone4D_EventScript_TMHiddenPower_2:
 # 36 "data/maps/Zone4D/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 37 "data/maps/Zone4D/scripts.pory"

@@ -198,11 +198,11 @@ Zone4E_EventScript_StruggleBugTutor_18:
 	goto Zone4E_EventScript_StruggleBugTutor_17
 
 
-Zone4E_EventScript_ItemRandom1::
+Zone4E_EventScript_Random1::
 # 114 "data/maps/Zone4E/scripts.pory"
 	lock
 # 115 "data/maps/Zone4E/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE4E_RANDOM_1, Zone4E_EventScript_ItemRandom1_2
+	goto_if_set FLAG_ITEM_ZONE4E_RANDOM_1, Zone4E_EventScript_Random1_2
 # 120 "data/maps/Zone4E/scripts.pory"
 	waitse
 # 121 "data/maps/Zone4E/scripts.pory"
@@ -221,7 +221,7 @@ Zone4E_EventScript_ItemRandom1::
 	release
 	end
 
-Zone4E_EventScript_ItemRandom1_2:
+Zone4E_EventScript_Random1_2:
 # 116 "data/maps/Zone4E/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 117 "data/maps/Zone4E/scripts.pory"
@@ -229,11 +229,11 @@ Zone4E_EventScript_ItemRandom1_2:
 	end
 
 
-Zone4E_EventScript_ItemPoisonBarb::
+Zone4E_EventScript_PoisonBarb::
 # 132 "data/maps/Zone4E/scripts.pory"
 	lock
 # 133 "data/maps/Zone4E/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE4E_POISON_BARB, Zone4E_EventScript_ItemPoisonBarb_2
+	goto_if_set FLAG_ITEM_ZONE4E_POISON_BARB, Zone4E_EventScript_PoisonBarb_2
 # 138 "data/maps/Zone4E/scripts.pory"
 	waitse
 # 139 "data/maps/Zone4E/scripts.pory"
@@ -250,7 +250,7 @@ Zone4E_EventScript_ItemPoisonBarb::
 	release
 	end
 
-Zone4E_EventScript_ItemPoisonBarb_2:
+Zone4E_EventScript_PoisonBarb_2:
 # 134 "data/maps/Zone4E/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 135 "data/maps/Zone4E/scripts.pory"

@@ -851,11 +851,11 @@ Zone5B_EventScript_NeverMissTutor_25:
 	goto Zone5B_EventScript_NeverMissTutor_24
 
 
-Zone5B_EventScript_ItemRandom1::
+Zone5B_EventScript_Random1::
 # 389 "data/maps/Zone5B/scripts.pory"
 	lock
 # 390 "data/maps/Zone5B/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE5B_RANDOM_1, Zone5B_EventScript_ItemRandom1_2
+	goto_if_set FLAG_ITEM_ZONE5B_RANDOM_1, Zone5B_EventScript_Random1_2
 # 395 "data/maps/Zone5B/scripts.pory"
 	waitse
 # 396 "data/maps/Zone5B/scripts.pory"
@@ -874,7 +874,7 @@ Zone5B_EventScript_ItemRandom1::
 	release
 	end
 
-Zone5B_EventScript_ItemRandom1_2:
+Zone5B_EventScript_Random1_2:
 # 391 "data/maps/Zone5B/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 392 "data/maps/Zone5B/scripts.pory"
@@ -882,11 +882,11 @@ Zone5B_EventScript_ItemRandom1_2:
 	end
 
 
-Zone5B_EventScript_ItemRandom2::
+Zone5B_EventScript_Random2::
 # 407 "data/maps/Zone5B/scripts.pory"
 	lock
 # 408 "data/maps/Zone5B/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE5B_RANDOM_2, Zone5B_EventScript_ItemRandom2_2
+	goto_if_set FLAG_ITEM_ZONE5B_RANDOM_2, Zone5B_EventScript_Random2_2
 # 413 "data/maps/Zone5B/scripts.pory"
 	waitse
 # 414 "data/maps/Zone5B/scripts.pory"
@@ -905,7 +905,7 @@ Zone5B_EventScript_ItemRandom2::
 	release
 	end
 
-Zone5B_EventScript_ItemRandom2_2:
+Zone5B_EventScript_Random2_2:
 # 409 "data/maps/Zone5B/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 410 "data/maps/Zone5B/scripts.pory"
@@ -913,11 +913,11 @@ Zone5B_EventScript_ItemRandom2_2:
 	end
 
 
-Zone5B_EventScript_ItemGems::
+Zone5B_EventScript_Gems::
 # 425 "data/maps/Zone5B/scripts.pory"
 	lock
 # 426 "data/maps/Zone5B/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE5B_GEMS, Zone5B_EventScript_ItemGems_2
+	goto_if_set FLAG_ITEM_ZONE5B_GEMS, Zone5B_EventScript_Gems_2
 # 431 "data/maps/Zone5B/scripts.pory"
 	waitse
 # 432 "data/maps/Zone5B/scripts.pory"
@@ -938,7 +938,7 @@ Zone5B_EventScript_ItemGems::
 	release
 	end
 
-Zone5B_EventScript_ItemGems_2:
+Zone5B_EventScript_Gems_2:
 # 427 "data/maps/Zone5B/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 428 "data/maps/Zone5B/scripts.pory"

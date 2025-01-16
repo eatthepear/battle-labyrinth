@@ -11,7 +11,7 @@ mapscripts Zone2C_MapScripts {
 	}
 }
 
-script Zone2C_EventScript_ItemSilkScarf {
+script Zone2C_EventScript_SilkScarf {
 	lock
 	if (flag(FLAG_ITEM_ZONE2C_SILK_SCARF)) {
 	msgbox(gText_ItemChestIsEmpty)

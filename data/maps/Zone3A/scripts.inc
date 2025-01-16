@@ -416,11 +416,11 @@ Zone3A_EventScript_Breeder_18:
 	goto Zone3A_EventScript_Breeder_6
 
 
-Zone3A_EventScript_ItemRandom1::
+Zone3A_EventScript_Random1::
 # 210 "data/maps/Zone3A/scripts.pory"
 	lock
 # 211 "data/maps/Zone3A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE3A_RANDOM_1, Zone3A_EventScript_ItemRandom1_2
+	goto_if_set FLAG_ITEM_ZONE3A_RANDOM_1, Zone3A_EventScript_Random1_2
 # 216 "data/maps/Zone3A/scripts.pory"
 	waitse
 # 217 "data/maps/Zone3A/scripts.pory"
@@ -439,7 +439,7 @@ Zone3A_EventScript_ItemRandom1::
 	release
 	end
 
-Zone3A_EventScript_ItemRandom1_2:
+Zone3A_EventScript_Random1_2:
 # 212 "data/maps/Zone3A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 213 "data/maps/Zone3A/scripts.pory"
@@ -447,11 +447,11 @@ Zone3A_EventScript_ItemRandom1_2:
 	end
 
 
-Zone3A_EventScript_ItemRandom2::
+Zone3A_EventScript_Random2::
 # 228 "data/maps/Zone3A/scripts.pory"
 	lock
 # 229 "data/maps/Zone3A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE3A_RANDOM_2, Zone3A_EventScript_ItemRandom2_2
+	goto_if_set FLAG_ITEM_ZONE3A_RANDOM_2, Zone3A_EventScript_Random2_2
 # 234 "data/maps/Zone3A/scripts.pory"
 	waitse
 # 235 "data/maps/Zone3A/scripts.pory"
@@ -470,7 +470,7 @@ Zone3A_EventScript_ItemRandom2::
 	release
 	end
 
-Zone3A_EventScript_ItemRandom2_2:
+Zone3A_EventScript_Random2_2:
 # 230 "data/maps/Zone3A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 231 "data/maps/Zone3A/scripts.pory"
@@ -478,11 +478,11 @@ Zone3A_EventScript_ItemRandom2_2:
 	end
 
 
-Zone3A_EventScript_ItemRandom3::
+Zone3A_EventScript_Random3::
 # 246 "data/maps/Zone3A/scripts.pory"
 	lock
 # 247 "data/maps/Zone3A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE3A_RANDOM_3, Zone3A_EventScript_ItemRandom3_2
+	goto_if_set FLAG_ITEM_ZONE3A_RANDOM_3, Zone3A_EventScript_Random3_2
 # 252 "data/maps/Zone3A/scripts.pory"
 	waitse
 # 253 "data/maps/Zone3A/scripts.pory"
@@ -501,7 +501,7 @@ Zone3A_EventScript_ItemRandom3::
 	release
 	end
 
-Zone3A_EventScript_ItemRandom3_2:
+Zone3A_EventScript_Random3_2:
 # 248 "data/maps/Zone3A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 249 "data/maps/Zone3A/scripts.pory"
@@ -509,11 +509,11 @@ Zone3A_EventScript_ItemRandom3_2:
 	end
 
 
-Zone3A_EventScript_ItemHyperPotion::
+Zone3A_EventScript_HyperPotion::
 # 264 "data/maps/Zone3A/scripts.pory"
 	lock
 # 265 "data/maps/Zone3A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE3A_HYPER_POTION, Zone3A_EventScript_ItemHyperPotion_2
+	goto_if_set FLAG_ITEM_ZONE3A_HYPER_POTION, Zone3A_EventScript_HyperPotion_2
 # 270 "data/maps/Zone3A/scripts.pory"
 	waitse
 # 271 "data/maps/Zone3A/scripts.pory"
@@ -530,7 +530,7 @@ Zone3A_EventScript_ItemHyperPotion::
 	release
 	end
 
-Zone3A_EventScript_ItemHyperPotion_2:
+Zone3A_EventScript_HyperPotion_2:
 # 266 "data/maps/Zone3A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 267 "data/maps/Zone3A/scripts.pory"

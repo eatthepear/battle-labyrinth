@@ -333,11 +333,11 @@ Zone4A_EventScript_Breeder_51:
 	goto Zone4A_EventScript_Breeder_25
 
 
-Zone4A_EventScript_ItemRandom1::
+Zone4A_EventScript_Random1::
 # 142 "data/maps/Zone4A/scripts.pory"
 	lock
 # 143 "data/maps/Zone4A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE4A_RANDOM_1, Zone4A_EventScript_ItemRandom1_2
+	goto_if_set FLAG_ITEM_ZONE4A_RANDOM_1, Zone4A_EventScript_Random1_2
 # 148 "data/maps/Zone4A/scripts.pory"
 	waitse
 # 149 "data/maps/Zone4A/scripts.pory"
@@ -356,7 +356,7 @@ Zone4A_EventScript_ItemRandom1::
 	release
 	end
 
-Zone4A_EventScript_ItemRandom1_2:
+Zone4A_EventScript_Random1_2:
 # 144 "data/maps/Zone4A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 145 "data/maps/Zone4A/scripts.pory"
@@ -364,11 +364,11 @@ Zone4A_EventScript_ItemRandom1_2:
 	end
 
 
-Zone4A_EventScript_ItemSilverPowder::
+Zone4A_EventScript_SilverPowder::
 # 160 "data/maps/Zone4A/scripts.pory"
 	lock
 # 161 "data/maps/Zone4A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE4A_SILVER_POWDER, Zone4A_EventScript_ItemSilverPowder_2
+	goto_if_set FLAG_ITEM_ZONE4A_SILVER_POWDER, Zone4A_EventScript_SilverPowder_2
 # 166 "data/maps/Zone4A/scripts.pory"
 	waitse
 # 167 "data/maps/Zone4A/scripts.pory"
@@ -385,7 +385,7 @@ Zone4A_EventScript_ItemSilverPowder::
 	release
 	end
 
-Zone4A_EventScript_ItemSilverPowder_2:
+Zone4A_EventScript_SilverPowder_2:
 # 162 "data/maps/Zone4A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 163 "data/maps/Zone4A/scripts.pory"

@@ -56,11 +56,11 @@ Zone5A_MapScripts_MAP_SCRIPT_ON_RESUME_17:
 	return
 
 
-Zone5A_EventScript_ItemQuickBall::
+Zone5A_EventScript_QuickBall::
 # 32 "data/maps/Zone5A/scripts.pory"
 	lock
 # 33 "data/maps/Zone5A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE5A_QUICK_BALL, Zone5A_EventScript_ItemQuickBall_2
+	goto_if_set FLAG_ITEM_ZONE5A_QUICK_BALL, Zone5A_EventScript_QuickBall_2
 # 38 "data/maps/Zone5A/scripts.pory"
 	waitse
 # 39 "data/maps/Zone5A/scripts.pory"
@@ -77,7 +77,7 @@ Zone5A_EventScript_ItemQuickBall::
 	release
 	end
 
-Zone5A_EventScript_ItemQuickBall_2:
+Zone5A_EventScript_QuickBall_2:
 # 34 "data/maps/Zone5A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 35 "data/maps/Zone5A/scripts.pory"
@@ -85,11 +85,11 @@ Zone5A_EventScript_ItemQuickBall_2:
 	end
 
 
-Zone5A_EventScript_ItemRandom1::
+Zone5A_EventScript_Random1::
 # 49 "data/maps/Zone5A/scripts.pory"
 	lock
 # 50 "data/maps/Zone5A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE5A_RANDOM_1, Zone5A_EventScript_ItemRandom1_2
+	goto_if_set FLAG_ITEM_ZONE5A_RANDOM_1, Zone5A_EventScript_Random1_2
 # 55 "data/maps/Zone5A/scripts.pory"
 	waitse
 # 56 "data/maps/Zone5A/scripts.pory"
@@ -108,7 +108,7 @@ Zone5A_EventScript_ItemRandom1::
 	release
 	end
 
-Zone5A_EventScript_ItemRandom1_2:
+Zone5A_EventScript_Random1_2:
 # 51 "data/maps/Zone5A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 52 "data/maps/Zone5A/scripts.pory"
@@ -174,11 +174,11 @@ Zone5A_EventScript_MiracleSeed_2:
 	end
 
 
-Zone5A_EventScript_ItemRandom2::
+Zone5A_EventScript_Random2::
 # 101 "data/maps/Zone5A/scripts.pory"
 	lock
 # 102 "data/maps/Zone5A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE5A_RANDOM_2, Zone5A_EventScript_ItemRandom2_2
+	goto_if_set FLAG_ITEM_ZONE5A_RANDOM_2, Zone5A_EventScript_Random2_2
 # 107 "data/maps/Zone5A/scripts.pory"
 	waitse
 # 108 "data/maps/Zone5A/scripts.pory"
@@ -197,7 +197,7 @@ Zone5A_EventScript_ItemRandom2::
 	release
 	end
 
-Zone5A_EventScript_ItemRandom2_2:
+Zone5A_EventScript_Random2_2:
 # 103 "data/maps/Zone5A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 104 "data/maps/Zone5A/scripts.pory"

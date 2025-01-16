@@ -8,7 +8,7 @@ mapscripts Zone4B_MapScripts {
 	}
 }
 
-script Zone4B_EventScript_ItemRandom1 {
+script Zone4B_EventScript_Random1 {
 	lock
 	if (flag(FLAG_ITEM_ZONE4B_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)

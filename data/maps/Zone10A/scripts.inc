@@ -146,11 +146,11 @@ Zone10A_EventScript_Adamina_12:
 	goto Zone10A_EventScript_Adamina_11
 
 
-Zone10A_EventScript_ItemGems::
+Zone10A_EventScript_Gems::
 # 121 "data/maps/Zone10A/scripts.pory"
 	lock
 # 122 "data/maps/Zone10A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE10A_GEMS, Zone10A_EventScript_ItemGems_2
+	goto_if_set FLAG_ITEM_ZONE10A_GEMS, Zone10A_EventScript_Gems_2
 # 127 "data/maps/Zone10A/scripts.pory"
 	waitse
 # 128 "data/maps/Zone10A/scripts.pory"
@@ -171,7 +171,7 @@ Zone10A_EventScript_ItemGems::
 	release
 	end
 
-Zone10A_EventScript_ItemGems_2:
+Zone10A_EventScript_Gems_2:
 # 123 "data/maps/Zone10A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 124 "data/maps/Zone10A/scripts.pory"
@@ -268,11 +268,11 @@ Zone10A_EventScript_BlackGlasses_2:
 	end
 
 
-Zone10A_EventScript_ItemTMScorchingSands::
+Zone10A_EventScript_TMScorchingSands::
 # 192 "data/maps/Zone10A/scripts.pory"
 	lock
 # 193 "data/maps/Zone10A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE10A_TM_SCORCHING_SANDS, Zone10A_EventScript_ItemTMScorchingSands_2
+	goto_if_set FLAG_ITEM_ZONE10A_TM_SCORCHING_SANDS, Zone10A_EventScript_TMScorchingSands_2
 # 198 "data/maps/Zone10A/scripts.pory"
 	waitse
 # 199 "data/maps/Zone10A/scripts.pory"
@@ -289,7 +289,7 @@ Zone10A_EventScript_ItemTMScorchingSands::
 	release
 	end
 
-Zone10A_EventScript_ItemTMScorchingSands_2:
+Zone10A_EventScript_TMScorchingSands_2:
 # 194 "data/maps/Zone10A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 195 "data/maps/Zone10A/scripts.pory"

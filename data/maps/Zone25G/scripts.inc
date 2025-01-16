@@ -13,7 +13,7 @@ Zone25G_EventScript_KingsRock::
 	finditem ITEM_KINGS_ROCK
 	end
 
-Zone25G_EventScript_Item4000::
+Zone25G_EventScript_4000::
 	lock
 	showmoneybox 0, 0, 0
 	addmoney 4000, 0

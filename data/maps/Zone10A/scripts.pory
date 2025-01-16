@@ -117,7 +117,7 @@ text Zone10A_Text_HeadInside {
 	"I've got nothing for you.$"
 }
 
-script Zone10A_EventScript_ItemGems {
+script Zone10A_EventScript_Gems {
 	lock
 	if (flag(FLAG_ITEM_ZONE10A_GEMS)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -188,7 +188,7 @@ script Zone10A_EventScript_BlackGlasses {
 	end
 }
 
-script Zone10A_EventScript_ItemTMScorchingSands {
+script Zone10A_EventScript_TMScorchingSands {
 	lock
 	if (flag(FLAG_ITEM_ZONE10A_TM_SCORCHING_SANDS)) {
 		msgbox(gText_ItemChestIsEmpty)

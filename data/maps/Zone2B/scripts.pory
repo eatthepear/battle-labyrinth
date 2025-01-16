@@ -328,7 +328,7 @@ script Zone2B_EventScript_BuyBug {
 	end
 }
 
-script Zone2B_EventScript_ItemRandom1 {
+script Zone2B_EventScript_Random1 {
 	lock
 	if (flag(FLAG_ITEM_ZONE2B_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -346,7 +346,7 @@ script Zone2B_EventScript_ItemRandom1 {
 	end
 }
 
-script Zone2B_EventScript_ItemTMBugBite {
+script Zone2B_EventScript_TMBugBite {
 	lock
 	if (flag(FLAG_ITEM_ZONE2B_TM_BUG_BITE)) {
 		msgbox(gText_ItemChestIsEmpty)
