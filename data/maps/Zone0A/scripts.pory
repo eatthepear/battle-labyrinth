@@ -272,6 +272,14 @@ script Zone0A_EventScript_Exit {
 			setvar(VAR_REVISITING_ZONE, 9)
 			warp(MAP_ZONE9A, 255, 41, 22)
 			waitstate
+		case 10:
+			setvar(VAR_REVISITING_ZONE, 10)
+			warp(MAP_ZONE10A, 255, 42, 51)
+			waitstate
+		case 11:
+			setvar(VAR_REVISITING_ZONE, 11)
+			warp(MAP_ZONE11A, 255, 46, 2)
+			waitstate
 		case 51:
 		case MULTI_B_PRESSED:
 			closemessage
