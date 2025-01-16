@@ -1837,63 +1837,63 @@
             "mons": [
               {
                 "min_level": 21,
-                "max_level": 21,
-                "species": "SPECIES_DUSKULL"
-              },
-              {
-                "min_level": 21,
-                "max_level": 21,
-                "species": "SPECIES_FOONGUS"
-              },
-              {
-                "min_level": 21,
-                "max_level": 21,
+                "max_level": 22,
                 "species": "SPECIES_GASTLY"
               },
               {
                 "min_level": 21,
-                "max_level": 21,
-                "species": "SPECIES_HONEDGE"
-              },
-              {
-                "min_level": 21,
-                "max_level": 21,
-                "species": "SPECIES_LITWICK"
-              },
-              {
-                "min_level": 21,
-                "max_level": 21,
+                "max_level": 22,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
                 "min_level": 21,
-                "max_level": 21,
-                "species": "SPECIES_MUNNA"
+                "max_level": 22,
+                "species": "SPECIES_DUSKULL"
               },
               {
                 "min_level": 21,
-                "max_level": 21,
+                "max_level": 22,
+                "species": "SPECIES_DRIFLOON"
+              },
+              {
+                "min_level": 21,
+                "max_level": 22,
+                "species": "SPECIES_LITWICK"
+              },
+              {
+                "min_level": 21,
+                "max_level": 22,
+                "species": "SPECIES_TOEDSCOOL"
+              },
+              {
+                "min_level": 21,
+                "max_level": 22,
+                "species": "SPECIES_FOONGUS"
+              },
+              {
+                "min_level": 21,
+                "max_level": 22,
+                "species": "SPECIES_SHROOMISH"
+              },
+              {
+                "min_level": 21,
+                "max_level": 22,
                 "species": "SPECIES_MURKROW"
               },
               {
                 "min_level": 21,
-                "max_level": 21,
-                "species": "SPECIES_SHROOMISH"
+                "max_level": 22,
+                "species": "SPECIES_MURKROW"
               },
               {
                 "min_level": 21,
-                "max_level": 21,
-                "species": "SPECIES_SHROOMISH"
+                "max_level": 22,
+                "species": "SPECIES_HONEDGE"
               },
               {
                 "min_level": 21,
-                "max_level": 21,
+                "max_level": 22,
                 "species": "SPECIES_ZORUA"
-              },
-              {
-                "min_level": 19,
-                "max_level": 19,
-                "species": "SPECIES_NONE"
               }
             ]
           }
