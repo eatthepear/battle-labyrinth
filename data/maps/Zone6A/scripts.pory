@@ -209,7 +209,7 @@ script Zone6A_EventScript_TradeDelibird {
 	end
 }
 
-script Zone6A_EventScript_ItemNetBall {
+script Zone6A_EventScript_NetBall {
 	lock
 	if (flag(FLAG_ITEM_ZONE6A_NET_BALL)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -226,7 +226,7 @@ script Zone6A_EventScript_ItemNetBall {
 	end
 }
 
-script Zone6A_EventScript_ItemGems {
+script Zone6A_EventScript_Gems {
 	lock
 	if (flag(FLAG_ITEM_ZONE6A_GEMS)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -245,7 +245,7 @@ script Zone6A_EventScript_ItemGems {
 	end
 }
 
-script Zone6A_EventScript_ItemNestBall {
+script Zone6A_EventScript_NestBall {
 	lock
 	if (flag(FLAG_ITEM_ZONE6A_NEST_BALL)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -262,7 +262,7 @@ script Zone6A_EventScript_ItemNestBall {
 	end
 }
 
-script Zone6A_EventScript_ItemTMDrainingKiss {
+script Zone6A_EventScript_TMDrainingKiss {
 	lock
 	if (flag(FLAG_ITEM_ZONE6A_TM_DRAINING_KISS)) {
 		msgbox(gText_ItemChestIsEmpty)

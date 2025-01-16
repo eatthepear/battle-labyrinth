@@ -1186,11 +1186,11 @@ Zone1A_EventScript_LeviathanBattle_14:
 	goto Zone1A_EventScript_LeviathanBattle_1
 
 
-Zone1A_EventScript_ItemRandom1::
+Zone1A_EventScript_Random1::
 # 526 "data/maps/Zone1A/scripts.pory"
 	lock
 # 527 "data/maps/Zone1A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE1A_RANDOM_1, Zone1A_EventScript_ItemRandom1_2
+	goto_if_set FLAG_ITEM_ZONE1A_RANDOM_1, Zone1A_EventScript_Random1_2
 # 532 "data/maps/Zone1A/scripts.pory"
 	waitse
 # 533 "data/maps/Zone1A/scripts.pory"
@@ -1209,7 +1209,7 @@ Zone1A_EventScript_ItemRandom1::
 	release
 	end
 
-Zone1A_EventScript_ItemRandom1_2:
+Zone1A_EventScript_Random1_2:
 # 528 "data/maps/Zone1A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 529 "data/maps/Zone1A/scripts.pory"
@@ -1217,11 +1217,11 @@ Zone1A_EventScript_ItemRandom1_2:
 	end
 
 
-Zone1A_EventScript_ItemQuickClaw::
+Zone1A_EventScript_QuickClaw::
 # 544 "data/maps/Zone1A/scripts.pory"
 	lock
 # 545 "data/maps/Zone1A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE1A_QUICK_CLAW, Zone1A_EventScript_ItemQuickClaw_2
+	goto_if_set FLAG_ITEM_ZONE1A_QUICK_CLAW, Zone1A_EventScript_QuickClaw_2
 # 550 "data/maps/Zone1A/scripts.pory"
 	waitse
 # 551 "data/maps/Zone1A/scripts.pory"
@@ -1238,7 +1238,7 @@ Zone1A_EventScript_ItemQuickClaw::
 	release
 	end
 
-Zone1A_EventScript_ItemQuickClaw_2:
+Zone1A_EventScript_QuickClaw_2:
 # 546 "data/maps/Zone1A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 547 "data/maps/Zone1A/scripts.pory"

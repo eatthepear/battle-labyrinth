@@ -385,7 +385,7 @@ script Zone5B_EventScript_NeverMissTutor {
 	end
 }
 
-script Zone5B_EventScript_ItemRandom1 {
+script Zone5B_EventScript_Random1 {
 	lock
 	if (flag(FLAG_ITEM_ZONE5B_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -403,7 +403,7 @@ script Zone5B_EventScript_ItemRandom1 {
 	end
 }
 
-script Zone5B_EventScript_ItemRandom2 {
+script Zone5B_EventScript_Random2 {
 	lock
 	if (flag(FLAG_ITEM_ZONE5B_RANDOM_2)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -421,7 +421,7 @@ script Zone5B_EventScript_ItemRandom2 {
 	end
 }
 
-script Zone5B_EventScript_ItemGems {
+script Zone5B_EventScript_Gems {
 	lock
 	if (flag(FLAG_ITEM_ZONE5B_GEMS)) {
 		msgbox(gText_ItemChestIsEmpty)

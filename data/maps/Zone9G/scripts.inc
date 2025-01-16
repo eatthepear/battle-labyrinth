@@ -16,11 +16,11 @@ Zone9G_MapScripts_MAP_SCRIPT_ON_RESUME_1:
 	return
 
 
-Zone9G_EventScript_ItemCharcoal::
+Zone9G_EventScript_Charcoal::
 # 12 "data/maps/Zone9G/scripts.pory"
 	lock
 # 13 "data/maps/Zone9G/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE9G_CHARCOAL, Zone9G_EventScript_ItemCharcoal_2
+	goto_if_set FLAG_ITEM_ZONE9G_CHARCOAL, Zone9G_EventScript_Charcoal_2
 # 18 "data/maps/Zone9G/scripts.pory"
 	waitse
 # 19 "data/maps/Zone9G/scripts.pory"
@@ -37,7 +37,7 @@ Zone9G_EventScript_ItemCharcoal::
 	release
 	end
 
-Zone9G_EventScript_ItemCharcoal_2:
+Zone9G_EventScript_Charcoal_2:
 # 14 "data/maps/Zone9G/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 15 "data/maps/Zone9G/scripts.pory"

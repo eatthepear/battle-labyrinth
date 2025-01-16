@@ -348,7 +348,7 @@ Zone22A_EventScript_MetalCoat::
 	finditem ITEM_METAL_COAT
 	end
 
-Zone22A_EventScript_Item3000::
+Zone22A_EventScript_3000::
 	lock
 	showmoneybox 0, 0, 0
 	addmoney 3000, 0

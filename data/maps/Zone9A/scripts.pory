@@ -154,7 +154,7 @@ movement Zone9A_Movement_WaitForNextWinstrate {
 	delay_16 * 3
 }
 
-script Zone9A_EventScript_ItemBigRoot {
+script Zone9A_EventScript_BigRoot {
 	lock
 	if (flag(FLAG_ITEM_ZONE9A_BIG_ROOT)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -171,7 +171,7 @@ script Zone9A_EventScript_ItemBigRoot {
 	end
 }
 
-script Zone9A_EventScript_ItemGems {
+script Zone9A_EventScript_Gems {
 	lock
 	if (flag(FLAG_ITEM_ZONE9A_GEMS)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -190,7 +190,7 @@ script Zone9A_EventScript_ItemGems {
 	end
 }
 
-script Zone9A_EventScript_ItemTMPluck {
+script Zone9A_EventScript_TMPluck {
 	lock
 	if (flag(FLAG_ITEM_ZONE9A_TM_PLUCK)) {
 		msgbox(gText_ItemChestIsEmpty)

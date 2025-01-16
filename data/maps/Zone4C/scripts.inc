@@ -26,11 +26,11 @@ Zone4C_MapScripts_MAP_SCRIPT_ON_RESUME_5:
 	return
 
 
-Zone4C_EventScript_ItemMuscleBand::
+Zone4C_EventScript_MuscleBand::
 # 17 "data/maps/Zone4C/scripts.pory"
 	lock
 # 18 "data/maps/Zone4C/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE4C_MUSCLE_BAND, Zone4C_EventScript_ItemMuscleBand_2
+	goto_if_set FLAG_ITEM_ZONE4C_MUSCLE_BAND, Zone4C_EventScript_MuscleBand_2
 # 23 "data/maps/Zone4C/scripts.pory"
 	waitse
 # 24 "data/maps/Zone4C/scripts.pory"
@@ -47,7 +47,7 @@ Zone4C_EventScript_ItemMuscleBand::
 	release
 	end
 
-Zone4C_EventScript_ItemMuscleBand_2:
+Zone4C_EventScript_MuscleBand_2:
 # 19 "data/maps/Zone4C/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 20 "data/maps/Zone4C/scripts.pory"
@@ -55,11 +55,11 @@ Zone4C_EventScript_ItemMuscleBand_2:
 	end
 
 
-Zone4C_EventScript_ItemTwistedSpoon::
+Zone4C_EventScript_TwistedSpoon::
 # 34 "data/maps/Zone4C/scripts.pory"
 	lock
 # 35 "data/maps/Zone4C/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE4C_TWISTED_SPOON, Zone4C_EventScript_ItemTwistedSpoon_2
+	goto_if_set FLAG_ITEM_ZONE4C_TWISTED_SPOON, Zone4C_EventScript_TwistedSpoon_2
 # 40 "data/maps/Zone4C/scripts.pory"
 	waitse
 # 41 "data/maps/Zone4C/scripts.pory"
@@ -76,7 +76,7 @@ Zone4C_EventScript_ItemTwistedSpoon::
 	release
 	end
 
-Zone4C_EventScript_ItemTwistedSpoon_2:
+Zone4C_EventScript_TwistedSpoon_2:
 # 36 "data/maps/Zone4C/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 37 "data/maps/Zone4C/scripts.pory"

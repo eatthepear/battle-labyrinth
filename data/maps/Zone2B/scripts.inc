@@ -723,11 +723,11 @@ Zone2B_EventScript_BuyBug_138:
 	goto Zone2B_EventScript_BuyBug_96
 
 
-Zone2B_EventScript_ItemRandom1::
+Zone2B_EventScript_Random1::
 # 332 "data/maps/Zone2B/scripts.pory"
 	lock
 # 333 "data/maps/Zone2B/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE2B_RANDOM_1, Zone2B_EventScript_ItemRandom1_2
+	goto_if_set FLAG_ITEM_ZONE2B_RANDOM_1, Zone2B_EventScript_Random1_2
 # 338 "data/maps/Zone2B/scripts.pory"
 	waitse
 # 339 "data/maps/Zone2B/scripts.pory"
@@ -746,7 +746,7 @@ Zone2B_EventScript_ItemRandom1::
 	release
 	end
 
-Zone2B_EventScript_ItemRandom1_2:
+Zone2B_EventScript_Random1_2:
 # 334 "data/maps/Zone2B/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 335 "data/maps/Zone2B/scripts.pory"
@@ -754,11 +754,11 @@ Zone2B_EventScript_ItemRandom1_2:
 	end
 
 
-Zone2B_EventScript_ItemTMBugBite::
+Zone2B_EventScript_TMBugBite::
 # 350 "data/maps/Zone2B/scripts.pory"
 	lock
 # 351 "data/maps/Zone2B/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE2B_TM_BUG_BITE, Zone2B_EventScript_ItemTMBugBite_2
+	goto_if_set FLAG_ITEM_ZONE2B_TM_BUG_BITE, Zone2B_EventScript_TMBugBite_2
 # 356 "data/maps/Zone2B/scripts.pory"
 	waitse
 # 357 "data/maps/Zone2B/scripts.pory"
@@ -775,7 +775,7 @@ Zone2B_EventScript_ItemTMBugBite::
 	release
 	end
 
-Zone2B_EventScript_ItemTMBugBite_2:
+Zone2B_EventScript_TMBugBite_2:
 # 352 "data/maps/Zone2B/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 353 "data/maps/Zone2B/scripts.pory"

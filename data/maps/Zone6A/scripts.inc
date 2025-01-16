@@ -399,11 +399,11 @@ Zone6A_EventScript_TradeDelibird_8:
 	end
 
 
-Zone6A_EventScript_ItemNetBall::
+Zone6A_EventScript_NetBall::
 # 213 "data/maps/Zone6A/scripts.pory"
 	lock
 # 214 "data/maps/Zone6A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE6A_NET_BALL, Zone6A_EventScript_ItemNetBall_2
+	goto_if_set FLAG_ITEM_ZONE6A_NET_BALL, Zone6A_EventScript_NetBall_2
 # 219 "data/maps/Zone6A/scripts.pory"
 	waitse
 # 220 "data/maps/Zone6A/scripts.pory"
@@ -420,7 +420,7 @@ Zone6A_EventScript_ItemNetBall::
 	release
 	end
 
-Zone6A_EventScript_ItemNetBall_2:
+Zone6A_EventScript_NetBall_2:
 # 215 "data/maps/Zone6A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 216 "data/maps/Zone6A/scripts.pory"
@@ -428,11 +428,11 @@ Zone6A_EventScript_ItemNetBall_2:
 	end
 
 
-Zone6A_EventScript_ItemGems::
+Zone6A_EventScript_Gems::
 # 230 "data/maps/Zone6A/scripts.pory"
 	lock
 # 231 "data/maps/Zone6A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE6A_GEMS, Zone6A_EventScript_ItemGems_2
+	goto_if_set FLAG_ITEM_ZONE6A_GEMS, Zone6A_EventScript_Gems_2
 # 236 "data/maps/Zone6A/scripts.pory"
 	waitse
 # 237 "data/maps/Zone6A/scripts.pory"
@@ -453,7 +453,7 @@ Zone6A_EventScript_ItemGems::
 	release
 	end
 
-Zone6A_EventScript_ItemGems_2:
+Zone6A_EventScript_Gems_2:
 # 232 "data/maps/Zone6A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 233 "data/maps/Zone6A/scripts.pory"
@@ -461,11 +461,11 @@ Zone6A_EventScript_ItemGems_2:
 	end
 
 
-Zone6A_EventScript_ItemNestBall::
+Zone6A_EventScript_NestBall::
 # 249 "data/maps/Zone6A/scripts.pory"
 	lock
 # 250 "data/maps/Zone6A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE6A_NEST_BALL, Zone6A_EventScript_ItemNestBall_2
+	goto_if_set FLAG_ITEM_ZONE6A_NEST_BALL, Zone6A_EventScript_NestBall_2
 # 255 "data/maps/Zone6A/scripts.pory"
 	waitse
 # 256 "data/maps/Zone6A/scripts.pory"
@@ -482,7 +482,7 @@ Zone6A_EventScript_ItemNestBall::
 	release
 	end
 
-Zone6A_EventScript_ItemNestBall_2:
+Zone6A_EventScript_NestBall_2:
 # 251 "data/maps/Zone6A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 252 "data/maps/Zone6A/scripts.pory"
@@ -490,11 +490,11 @@ Zone6A_EventScript_ItemNestBall_2:
 	end
 
 
-Zone6A_EventScript_ItemTMDrainingKiss::
+Zone6A_EventScript_TMDrainingKiss::
 # 266 "data/maps/Zone6A/scripts.pory"
 	lock
 # 267 "data/maps/Zone6A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE6A_TM_DRAINING_KISS, Zone6A_EventScript_ItemTMDrainingKiss_2
+	goto_if_set FLAG_ITEM_ZONE6A_TM_DRAINING_KISS, Zone6A_EventScript_TMDrainingKiss_2
 # 272 "data/maps/Zone6A/scripts.pory"
 	waitse
 # 273 "data/maps/Zone6A/scripts.pory"
@@ -511,7 +511,7 @@ Zone6A_EventScript_ItemTMDrainingKiss::
 	release
 	end
 
-Zone6A_EventScript_ItemTMDrainingKiss_2:
+Zone6A_EventScript_TMDrainingKiss_2:
 # 268 "data/maps/Zone6A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 269 "data/maps/Zone6A/scripts.pory"

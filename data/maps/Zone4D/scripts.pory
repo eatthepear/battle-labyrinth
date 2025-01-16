@@ -13,7 +13,7 @@ mapscripts Zone4D_MapScripts {
 	}
 }
 
-script Zone4D_EventScript_ItemWiseGlasses {
+script Zone4D_EventScript_WiseGlasses {
 	lock
 	if (flag(FLAG_ITEM_ZONE4D_WISE_GLASSES)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -30,7 +30,7 @@ script Zone4D_EventScript_ItemWiseGlasses {
 	end
 }
 
-script Zone4D_EventScript_ItemTMHiddenPower {
+script Zone4D_EventScript_TMHiddenPower {
 	lock
 	if (flag(FLAG_ITEM_ZONE4D_TM_HIDDEN_POWER)) {
 		msgbox(gText_ItemChestIsEmpty)

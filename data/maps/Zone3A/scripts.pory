@@ -206,7 +206,7 @@ script Zone3A_EventScript_Breeder {
 	end
 }
 
-script Zone3A_EventScript_ItemRandom1 {
+script Zone3A_EventScript_Random1 {
 	lock
 	if (flag(FLAG_ITEM_ZONE3A_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -224,7 +224,7 @@ script Zone3A_EventScript_ItemRandom1 {
 	end
 }
 
-script Zone3A_EventScript_ItemRandom2 {
+script Zone3A_EventScript_Random2 {
 	lock
 	if (flag(FLAG_ITEM_ZONE3A_RANDOM_2)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -242,7 +242,7 @@ script Zone3A_EventScript_ItemRandom2 {
 	end
 }
 
-script Zone3A_EventScript_ItemRandom3 {
+script Zone3A_EventScript_Random3 {
 	lock
 	if (flag(FLAG_ITEM_ZONE3A_RANDOM_3)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -260,7 +260,7 @@ script Zone3A_EventScript_ItemRandom3 {
 	end
 }
 
-script Zone3A_EventScript_ItemHyperPotion {
+script Zone3A_EventScript_HyperPotion {
 	lock
 	if (flag(FLAG_ITEM_ZONE3A_HYPER_POTION)) {
 		msgbox(gText_ItemChestIsEmpty)

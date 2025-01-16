@@ -28,7 +28,7 @@ mapscripts Zone5A_MapScripts {
 	}
 }
 
-script Zone5A_EventScript_ItemQuickBall {
+script Zone5A_EventScript_QuickBall {
 	lock
 	if (flag(FLAG_ITEM_ZONE5A_QUICK_BALL)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -45,7 +45,7 @@ script Zone5A_EventScript_ItemQuickBall {
 	end
 }
 
-script Zone5A_EventScript_ItemRandom1 {
+script Zone5A_EventScript_Random1 {
 	lock
 	if (flag(FLAG_ITEM_ZONE5A_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -97,7 +97,7 @@ script Zone5A_EventScript_MiracleSeed {
 	end
 }
 
-script Zone5A_EventScript_ItemRandom2 {
+script Zone5A_EventScript_Random2 {
 	lock
 	if (flag(FLAG_ITEM_ZONE5A_RANDOM_2)) {
 		msgbox(gText_ItemChestIsEmpty)

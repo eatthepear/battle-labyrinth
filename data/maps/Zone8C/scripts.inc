@@ -36,11 +36,11 @@ Zone8C_MapScripts_MAP_SCRIPT_ON_RESUME_9:
 	return
 
 
-Zone8C_EventScript_ItemRandom2::
+Zone8C_EventScript_Random2::
 # 22 "data/maps/Zone8C/scripts.pory"
 	lock
 # 23 "data/maps/Zone8C/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8C_RANDOM_2, Zone8C_EventScript_ItemRandom2_2
+	goto_if_set FLAG_ITEM_ZONE8C_RANDOM_2, Zone8C_EventScript_Random2_2
 # 28 "data/maps/Zone8C/scripts.pory"
 	waitse
 # 29 "data/maps/Zone8C/scripts.pory"
@@ -59,7 +59,7 @@ Zone8C_EventScript_ItemRandom2::
 	release
 	end
 
-Zone8C_EventScript_ItemRandom2_2:
+Zone8C_EventScript_Random2_2:
 # 24 "data/maps/Zone8C/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 25 "data/maps/Zone8C/scripts.pory"
@@ -67,11 +67,11 @@ Zone8C_EventScript_ItemRandom2_2:
 	end
 
 
-Zone8C_EventScript_ItemFullHeal::
+Zone8C_EventScript_FullHeal::
 # 40 "data/maps/Zone8C/scripts.pory"
 	lock
 # 41 "data/maps/Zone8C/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8C_FULL_HEAL, Zone8C_EventScript_ItemFullHeal_2
+	goto_if_set FLAG_ITEM_ZONE8C_FULL_HEAL, Zone8C_EventScript_FullHeal_2
 # 46 "data/maps/Zone8C/scripts.pory"
 	waitse
 # 47 "data/maps/Zone8C/scripts.pory"
@@ -88,7 +88,7 @@ Zone8C_EventScript_ItemFullHeal::
 	release
 	end
 
-Zone8C_EventScript_ItemFullHeal_2:
+Zone8C_EventScript_FullHeal_2:
 # 42 "data/maps/Zone8C/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 43 "data/maps/Zone8C/scripts.pory"
@@ -96,11 +96,11 @@ Zone8C_EventScript_ItemFullHeal_2:
 	end
 
 
-Zone8C_EventScript_ItemRandom1::
+Zone8C_EventScript_Random1::
 # 57 "data/maps/Zone8C/scripts.pory"
 	lock
 # 58 "data/maps/Zone8C/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE8C_RANDOM_1, Zone8C_EventScript_ItemRandom1_2
+	goto_if_set FLAG_ITEM_ZONE8C_RANDOM_1, Zone8C_EventScript_Random1_2
 # 63 "data/maps/Zone8C/scripts.pory"
 	waitse
 # 64 "data/maps/Zone8C/scripts.pory"
@@ -119,7 +119,7 @@ Zone8C_EventScript_ItemRandom1::
 	release
 	end
 
-Zone8C_EventScript_ItemRandom1_2:
+Zone8C_EventScript_Random1_2:
 # 59 "data/maps/Zone8C/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 60 "data/maps/Zone8C/scripts.pory"

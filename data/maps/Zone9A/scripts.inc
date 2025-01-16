@@ -315,11 +315,11 @@ Zone9A_Movement_WaitForNextWinstrate:
 	delay_16
 	step_end
 
-Zone9A_EventScript_ItemBigRoot::
+Zone9A_EventScript_BigRoot::
 # 158 "data/maps/Zone9A/scripts.pory"
 	lock
 # 159 "data/maps/Zone9A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE9A_BIG_ROOT, Zone9A_EventScript_ItemBigRoot_2
+	goto_if_set FLAG_ITEM_ZONE9A_BIG_ROOT, Zone9A_EventScript_BigRoot_2
 # 164 "data/maps/Zone9A/scripts.pory"
 	waitse
 # 165 "data/maps/Zone9A/scripts.pory"
@@ -336,7 +336,7 @@ Zone9A_EventScript_ItemBigRoot::
 	release
 	end
 
-Zone9A_EventScript_ItemBigRoot_2:
+Zone9A_EventScript_BigRoot_2:
 # 160 "data/maps/Zone9A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 161 "data/maps/Zone9A/scripts.pory"
@@ -344,11 +344,11 @@ Zone9A_EventScript_ItemBigRoot_2:
 	end
 
 
-Zone9A_EventScript_ItemGems::
+Zone9A_EventScript_Gems::
 # 175 "data/maps/Zone9A/scripts.pory"
 	lock
 # 176 "data/maps/Zone9A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE9A_GEMS, Zone9A_EventScript_ItemGems_2
+	goto_if_set FLAG_ITEM_ZONE9A_GEMS, Zone9A_EventScript_Gems_2
 # 181 "data/maps/Zone9A/scripts.pory"
 	waitse
 # 182 "data/maps/Zone9A/scripts.pory"
@@ -369,7 +369,7 @@ Zone9A_EventScript_ItemGems::
 	release
 	end
 
-Zone9A_EventScript_ItemGems_2:
+Zone9A_EventScript_Gems_2:
 # 177 "data/maps/Zone9A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 178 "data/maps/Zone9A/scripts.pory"
@@ -377,11 +377,11 @@ Zone9A_EventScript_ItemGems_2:
 	end
 
 
-Zone9A_EventScript_ItemTMPluck::
+Zone9A_EventScript_TMPluck::
 # 194 "data/maps/Zone9A/scripts.pory"
 	lock
 # 195 "data/maps/Zone9A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE9A_TM_PLUCK, Zone9A_EventScript_ItemTMPluck_2
+	goto_if_set FLAG_ITEM_ZONE9A_TM_PLUCK, Zone9A_EventScript_TMPluck_2
 # 200 "data/maps/Zone9A/scripts.pory"
 	waitse
 # 201 "data/maps/Zone9A/scripts.pory"
@@ -398,7 +398,7 @@ Zone9A_EventScript_ItemTMPluck::
 	release
 	end
 
-Zone9A_EventScript_ItemTMPluck_2:
+Zone9A_EventScript_TMPluck_2:
 # 196 "data/maps/Zone9A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 197 "data/maps/Zone9A/scripts.pory"

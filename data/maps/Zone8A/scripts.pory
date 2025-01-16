@@ -116,7 +116,7 @@ script Zone8A_EventScript_BuyTyrogue {
 	end
 }
 
-script Zone8A_EventScript_ItemMagnet {
+script Zone8A_EventScript_Magnet {
 	lock
 	if (flag(FLAG_ITEM_ZONE8A_MAGNET)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -133,7 +133,7 @@ script Zone8A_EventScript_ItemMagnet {
 	end
 }
 
-script Zone8A_EventScript_ItemRandom1 {
+script Zone8A_EventScript_Random1 {
 	lock
 	if (flag(FLAG_ITEM_ZONE8A_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -151,7 +151,7 @@ script Zone8A_EventScript_ItemRandom1 {
 	end
 }
 
-script Zone8A_EventScript_ItemRandom2 {
+script Zone8A_EventScript_Random2 {
 	lock
 	if (flag(FLAG_ITEM_ZONE8A_RANDOM_2)) {
 		msgbox(gText_ItemChestIsEmpty)

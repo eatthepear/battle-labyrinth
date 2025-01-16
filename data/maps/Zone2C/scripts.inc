@@ -23,11 +23,11 @@ Zone2C_MapScripts_MAP_SCRIPT_ON_RESUME_1:
 	return
 
 
-Zone2C_EventScript_ItemSilkScarf::
+Zone2C_EventScript_SilkScarf::
 # 15 "data/maps/Zone2C/scripts.pory"
 	lock
 # 16 "data/maps/Zone2C/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE2C_SILK_SCARF, Zone2C_EventScript_ItemSilkScarf_2
+	goto_if_set FLAG_ITEM_ZONE2C_SILK_SCARF, Zone2C_EventScript_SilkScarf_2
 # 21 "data/maps/Zone2C/scripts.pory"
 	waitse
 # 22 "data/maps/Zone2C/scripts.pory"
@@ -44,7 +44,7 @@ Zone2C_EventScript_ItemSilkScarf::
 	release
 	end
 
-Zone2C_EventScript_ItemSilkScarf_2:
+Zone2C_EventScript_SilkScarf_2:
 # 17 "data/maps/Zone2C/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 18 "data/maps/Zone2C/scripts.pory"

@@ -138,7 +138,7 @@ text Zone4A_Text_HereGem {
 	format("Then I suppose this would be of good use to you!")
 }
 
-script Zone4A_EventScript_ItemRandom1 {
+script Zone4A_EventScript_Random1 {
 	lock
 	if (flag(FLAG_ITEM_ZONE4A_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -156,7 +156,7 @@ script Zone4A_EventScript_ItemRandom1 {
 	end
 }
 
-script Zone4A_EventScript_ItemSilverPowder {
+script Zone4A_EventScript_SilverPowder {
 	lock
 	if (flag(FLAG_ITEM_ZONE4A_SILVER_POWDER)) {
 		msgbox(gText_ItemChestIsEmpty)

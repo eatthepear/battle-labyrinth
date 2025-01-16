@@ -157,7 +157,7 @@ script Zone7A_EventScript_FangsTutor {
 	end
 }
 
-script Zone7A_EventScript_ItemSharpBeak {
+script Zone7A_EventScript_SharpBeak {
 	lock
 	if (flag(FLAG_ITEM_ZONE7A_SHARP_BEAK)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -174,7 +174,7 @@ script Zone7A_EventScript_ItemSharpBeak {
 	end
 }
 
-script Zone7A_EventScript_ItemRandom1 {
+script Zone7A_EventScript_Random1 {
 	lock
 	if (flag(FLAG_ITEM_ZONE7A_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -192,7 +192,7 @@ script Zone7A_EventScript_ItemRandom1 {
 	end
 }
 
-script Zone7A_EventScript_ItemGems {
+script Zone7A_EventScript_Gems {
 	lock
 	if (flag(FLAG_ITEM_ZONE7A_GEMS)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -211,7 +211,7 @@ script Zone7A_EventScript_ItemGems {
 	end
 }
 
-script Zone7A_EventScript_ItemSeriousMint {
+script Zone7A_EventScript_SeriousMint {
 	lock
 	if (flag(FLAG_ITEM_ZONE7A_SERIOUS_MINT)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -229,7 +229,7 @@ script Zone7A_EventScript_ItemSeriousMint {
 	end
 }
 
-script Zone7A_EventScript_ItemBlackBelt {
+script Zone7A_EventScript_BlackBelt {
 	lock
 	if (flag(FLAG_ITEM_ZONE7A_BLACK_BELT)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -246,7 +246,7 @@ script Zone7A_EventScript_ItemBlackBelt {
 	end
 }
 
-script Zone7A_EventScript_ItemRandom2 {
+script Zone7A_EventScript_Random2 {
 	lock
 	if (flag(FLAG_ITEM_ZONE7A_RANDOM_2)) {
 		msgbox(gText_ItemChestIsEmpty)
@@ -264,7 +264,7 @@ script Zone7A_EventScript_ItemRandom2 {
 	end
 }
 
-script Zone7A_EventScript_ItemRandom3 {
+script Zone7A_EventScript_Random3 {
 	lock
 	if (flag(FLAG_ITEM_ZONE7A_RANDOM_3)) {
 		msgbox(gText_ItemChestIsEmpty)

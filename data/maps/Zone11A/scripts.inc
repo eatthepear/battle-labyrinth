@@ -268,11 +268,11 @@ Zone11A_EventScript_TimerBall_2:
 	end
 
 
-Zone11A_EventScript_ItemGems::
+Zone11A_EventScript_Gems::
 # 156 "data/maps/Zone11A/scripts.pory"
 	lock
 # 157 "data/maps/Zone11A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE11A_GEMS, Zone11A_EventScript_ItemGems_2
+	goto_if_set FLAG_ITEM_ZONE11A_GEMS, Zone11A_EventScript_Gems_2
 # 162 "data/maps/Zone11A/scripts.pory"
 	waitse
 # 163 "data/maps/Zone11A/scripts.pory"
@@ -293,7 +293,7 @@ Zone11A_EventScript_ItemGems::
 	release
 	end
 
-Zone11A_EventScript_ItemGems_2:
+Zone11A_EventScript_Gems_2:
 # 158 "data/maps/Zone11A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 159 "data/maps/Zone11A/scripts.pory"
@@ -301,11 +301,11 @@ Zone11A_EventScript_ItemGems_2:
 	end
 
 
-Zone11A_EventScript_ItemRandom1::
+Zone11A_EventScript_Random1::
 # 175 "data/maps/Zone11A/scripts.pory"
 	lock
 # 176 "data/maps/Zone11A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE11A_RANDOM_1, Zone11A_EventScript_ItemRandom1_2
+	goto_if_set FLAG_ITEM_ZONE11A_RANDOM_1, Zone11A_EventScript_Random1_2
 # 181 "data/maps/Zone11A/scripts.pory"
 	waitse
 # 182 "data/maps/Zone11A/scripts.pory"
@@ -324,7 +324,7 @@ Zone11A_EventScript_ItemRandom1::
 	release
 	end
 
-Zone11A_EventScript_ItemRandom1_2:
+Zone11A_EventScript_Random1_2:
 # 177 "data/maps/Zone11A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 178 "data/maps/Zone11A/scripts.pory"
@@ -332,11 +332,11 @@ Zone11A_EventScript_ItemRandom1_2:
 	end
 
 
-Zone11A_EventScript_ItemRandom2::
+Zone11A_EventScript_Random2::
 # 193 "data/maps/Zone11A/scripts.pory"
 	lock
 # 194 "data/maps/Zone11A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE11A_RANDOM_2, Zone11A_EventScript_ItemRandom2_2
+	goto_if_set FLAG_ITEM_ZONE11A_RANDOM_2, Zone11A_EventScript_Random2_2
 # 199 "data/maps/Zone11A/scripts.pory"
 	waitse
 # 200 "data/maps/Zone11A/scripts.pory"
@@ -355,7 +355,7 @@ Zone11A_EventScript_ItemRandom2::
 	release
 	end
 
-Zone11A_EventScript_ItemRandom2_2:
+Zone11A_EventScript_Random2_2:
 # 195 "data/maps/Zone11A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 196 "data/maps/Zone11A/scripts.pory"
@@ -363,11 +363,11 @@ Zone11A_EventScript_ItemRandom2_2:
 	end
 
 
-Zone11A_EventScript_ItemFairyFeather::
+Zone11A_EventScript_FairyFeather::
 # 211 "data/maps/Zone11A/scripts.pory"
 	lock
 # 212 "data/maps/Zone11A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE11A_FAIRY_FEATHER, Zone11A_EventScript_ItemFairyFeather_2
+	goto_if_set FLAG_ITEM_ZONE11A_FAIRY_FEATHER, Zone11A_EventScript_FairyFeather_2
 # 217 "data/maps/Zone11A/scripts.pory"
 	waitse
 # 218 "data/maps/Zone11A/scripts.pory"
@@ -384,7 +384,7 @@ Zone11A_EventScript_ItemFairyFeather::
 	release
 	end
 
-Zone11A_EventScript_ItemFairyFeather_2:
+Zone11A_EventScript_FairyFeather_2:
 # 213 "data/maps/Zone11A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 214 "data/maps/Zone11A/scripts.pory"
