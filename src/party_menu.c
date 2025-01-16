@@ -5383,9 +5383,13 @@ static void Task_LearnNextMoveOrClosePartyMenu(u8 taskId)
             if (gPartyMenu.learnMoveState == 2) // never occurs
                 gSpecialVar_Result = TRUE;
             if (FlagGet(FLAG_DOING_TRAINING) == TRUE)
+            {
                 TryDoTrainingToSelectedMon(taskId);
+            }
             else
+            {
                 Task_ClosePartyMenu(taskId);
+            }
         }
     }
 }
@@ -5694,7 +5698,8 @@ static void Task_DisplayLevelUpStatsPg2(u8 taskId)
 
 static void DisplayLevelUpStatsPg1(u8 taskId)
 {
-    if (FlagGet(FLAG_DOING_TRAINING) == FALSE) {
+    if (FlagGet(FLAG_DOING_TRAINING) == FALSE)
+    {
         u16 *arrayPtr = (u16*) sPartyMenuInternal->data;
 
         arrayPtr[12] = CreateLevelUpStatsWindow();
@@ -5793,9 +5798,12 @@ static void PartyMenuTryEvolution(u8 taskId)
     sInitialLevel = 0;
     sFinalLevel = 0;
 
-    if (FlagGet(FLAG_DOING_TRAINING) == TRUE) {
+    if (FlagGet(FLAG_DOING_TRAINING) == TRUE)
+    {
         TryDoTrainingToSelectedMon(taskId);
-    } else {
+    }
+    else
+    {
         targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL);
         if (targetSpecies == SPECIES_NONE)
         {
@@ -7981,11 +7989,9 @@ void TryDoTrainingToSelectedMon(u8 taskId)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     u32 currentLevel = GetMonData(mon, MON_DATA_LEVEL);
-    DebugPrintf("currentLevel: %d", currentLevel);
 
     if (!gPaletteFade.active)
     {
-        DebugPrintf("GetCurrentLevelCap(): %d", GetCurrentLevelCap());
         if ((currentLevel != MAX_LEVEL) && GetCurrentLevelCap() > currentLevel)
         {
             DisplayShouldTrainMessage(&gPlayerParty[gPartyMenu.slotId], TRUE);
@@ -8090,7 +8096,7 @@ static void Task_ChooseSendMonToPC(u8 taskId)
 static void CB2_ChooseSendMonToPC(void)
 {
     u8 gSendMonPartyIndex;
-    
+
     gSendMonPartyIndex = GetCursorSelectionMonId();
     if (gContestMonPartyIndex >= PARTY_SIZE)
         gContestMonPartyIndex = 7;
@@ -8102,7 +8108,7 @@ static void CB2_ChooseSendMonToPC(void)
 void DisplaySendMonToPCMessage(struct Pokemon* mon)
 {
     GetMonData(mon, MON_DATA_NICKNAME, gStringVar1);
-    
+
     StringExpandPlaceholders(gStringVar4, gText_WouldLikeSendToPC);
     DrawDialogueFrame(1, 0);
     gTextFlags.canABSpeedUpPrint = TRUE;
