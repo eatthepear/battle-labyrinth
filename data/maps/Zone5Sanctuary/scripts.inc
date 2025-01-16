@@ -27,7 +27,7 @@ Zone5Sanctuary_EventScript_Intro::
 # 15 "data/maps/Zone5Sanctuary/scripts.pory"
 	msgbox Zone5Sanctuary_Text_Reward, MSGBOX_DEFAULT
 # 16 "data/maps/Zone5Sanctuary/scripts.pory"
-	giveitem ITEM_RED_SHARD, 5
+	giveitem ITEM_RED_SHARD, 10
 # 17 "data/maps/Zone5Sanctuary/scripts.pory"
 	msgbox gText_Colress_Upgraded, MSGBOX_DEFAULT
 # 18 "data/maps/Zone5Sanctuary/scripts.pory"
@@ -135,4 +135,4 @@ Zone5Sanctuary_EventScript_NextZone_Text_3:
 
 Zone5Sanctuary_Text_Reward::
 # 58 "data/maps/Zone5Sanctuary/scripts.pory"
-	.string "5 Red Shards!$"
+	.string "10 Red Shards!$"

@@ -13,7 +13,7 @@ script Zone5Sanctuary_EventScript_Intro {
 	buffernumberstring(0, VAR_ZONE)
 	msgbox(gText_RewardClear, MSGBOX_DEFAULT)
 	msgbox(Zone5Sanctuary_Text_Reward, MSGBOX_DEFAULT)
-	giveitem(ITEM_RED_SHARD, 5)
+	giveitem(ITEM_RED_SHARD, 10)
 	msgbox(gText_Colress_Upgraded, MSGBOX_DEFAULT)
 	playfanfare(MUS_OBTAIN_ITEM)
 	msgbox(gText_Colress_UpgradedPokeball, MSGBOX_DEFAULT)
@@ -56,5 +56,5 @@ script Zone5Sanctuary_EventScript_NextZone {
 }
 
 text Zone5Sanctuary_Text_Reward {
-	format("5 Red Shards!")
+	format("10 Red Shards!")
 }
