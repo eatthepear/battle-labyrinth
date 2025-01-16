@@ -40,26 +40,18 @@ mapscripts Zone11A_MapScripts {
 
 script Zone11A_EventScript_LeviathanIntro {
 	lockall
-	applymovement(6, Common_Movement_FaceLeft)
+	applymovement(1, Common_Movement_FaceLeft)
 	waitmovement(0)
-	applymovement(6, Common_Movement_ExclamationMark)
+	applymovement(1, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	applymovement(6, Common_Movement_WalkLeft)
-	waitmovement(0)
-	applymovement(6, Common_Movement_WalkLeft)
-	waitmovement(0)
-	applymovement(6, Common_Movement_WalkLeft)
+	applymovement(1, Common_Movement_WalkLeft3)
 	waitmovement(0)
 	msgbox(format("{COLOR BLUE}Newton{COLOR DARK_GRAY}: Excuse me, I realize this is rather sudden, but would you like to be a part of my experiment?\pIt involves the study of Gravity!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		msgbox(format("{COLOR BLUE}Newton{COLOR DARK_GRAY}: I see."))
-		applymovement(6, Common_Movement_WalkRight)
-		waitmovement(0)
-		applymovement(6, Common_Movement_WalkRight)
-		waitmovement(0)
-		applymovement(6, Common_Movement_WalkRight)
+		applymovement(1, Common_Movement_WalkRight3)
 		waitmovement(0)
 		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
 		waitmovement(0)
@@ -72,7 +64,7 @@ script Zone11A_EventScript_LeviathanIntro {
 		} else {
 			trainerbattle_no_intro(TRAINER_PBL_NEWTON_LEVIATHAN_10, Zone11A_Text_Leviathan10Defeat)
 		}
-		applymovement(6, Common_Movement_FaceLeft)
+		applymovement(1, Common_Movement_FaceLeft)
 		waitmovement(0)
 		clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 		msgbox(format("{COLOR BLUE}Newton{COLOR DARK_GRAY}: Gravity is not the only way to utilize lower accuracy moves consistently.\pI'd like you to have this Wide Lens."), MSGBOX_DEFAULT)
