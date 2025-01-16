@@ -9137,7 +9137,7 @@
                 MOVE_GRAVITY,
                 MOVE_DRAINING_KISS,
                 MOVE_MOONLIGHT,
-                MOVE_CHILLING_WATER,
+                MOVE_SING,
             },
             },
             {
@@ -9247,7 +9247,7 @@
                 MOVE_GRAVITY,
                 MOVE_DRAINING_KISS,
                 MOVE_MOONLIGHT,
-                MOVE_CHILLING_WATER,
+                MOVE_SING,
             },
             },
             {
