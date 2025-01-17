@@ -2817,6 +2817,16 @@ script EventScript_SavesQuestBoy {
 		msgbox(format("Saving your progress is important while playing games.\pI learned that the hard way!\pDon't be like me!\pI'll give you something if you can save the game 50 times!"))
 		startquest(QUEST_SAVES)
 	}
+	questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SAVES)
+	if (var(VAR_RESULT) == FALSE) {
+		callnative(SavesQuestCheckIfDone)
+		if (flag(FLAG_TEMP_6) == TRUE) {
+			msgbox(format("Wow!\pYou really went and saved 50 times?\pThat's crazy.\pHere's a little something for you as a reward!"))
+			giveitem(ITEM_ROTOM_CATALOG)
+			msgbox(format("I've heard this nifty little item is useful if you have a Rotom.\pWhich I, unfortunately, do not.\pI hope you put it to better use!"))
+			completequest(QUEST_SAVES)
+		}
+	}
 	msgbox(format("Don't forget to save your game!"))
 	release
 	end

@@ -3877,3 +3877,9 @@ static const u8* GetSubquestFlavorText(s32 questId, s32 subquestId)
 			return sSideQuests[questId].subquests[subquestId].desc;
 	}
 }
+
+void SavesQuestCheckIfDone(void) {
+	if (GetGameStat(GAME_STAT_SAVED_GAME) > 49) {
+		FlagSet(FLAG_TEMP_6);
+	}
+}
