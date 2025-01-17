@@ -2769,6 +2769,9 @@ extern const u8 gText_SideQuestName_PBL[];
 extern const u8 gText_SideQuestName_Signs[];
 extern const u8 gText_SideQuestName_Saves[];
 extern const u8 gText_SideQuestName_Pokedex[];
+extern const u8 gText_SideQuestName_Catch50[];
+extern const u8 gText_SideQuestName_DefeatAll1[];
+extern const u8 gText_SideQuestName_Berries[];
 
 //descriptions
 extern const u8 gText_SideQuestDesc_Filler[];
@@ -2776,6 +2779,9 @@ extern const u8 gText_SideQuestDesc_PBL[];
 extern const u8 gText_SideQuestDesc_Signs[];
 extern const u8 gText_SideQuestDesc_Saves[];
 extern const u8 gText_SideQuestDesc_Pokedex[];
+extern const u8 gText_SideQuestDesc_Catch50[];
+extern const u8 gText_SideQuestDesc_DefeatAll1[];
+extern const u8 gText_SideQuestDesc_Berries[];
 
 //completed quest description
 extern const u8 gText_SideQuestDoneDesc_Filler[];
@@ -2783,6 +2789,9 @@ extern const u8 gText_SideQuestDoneDesc_PBL[];
 extern const u8 gText_SideQuestDoneDesc_Signs[];
 extern const u8 gText_SideQuestDoneDesc_Saves[];
 extern const u8 gText_SideQuestDoneDesc_Pokedex[];
+extern const u8 gText_SideQuestDoneDesc_Catch50[];
+extern const u8 gText_SideQuestDoneDesc_DefeatAll1[];
+extern const u8 gText_SideQuestDoneDesc_Berries[];
 
 //map
 extern const u8 gText_QuestMapFiller[];

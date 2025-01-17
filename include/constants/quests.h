@@ -19,9 +19,9 @@
 #define QUEST_SIGNS      1
 #define QUEST_SAVES      2
 #define QUEST_POKEDEX    3
-#define QUEST_5          4
-#define QUEST_6          5
-#define QUEST_7          6
+#define QUEST_CATCH_50   4
+#define QUEST_GAUNTLET_1 5
+#define QUEST_BERRIES    6
 #define QUEST_8          7
 #define QUEST_9          8
 #define QUEST_10         9

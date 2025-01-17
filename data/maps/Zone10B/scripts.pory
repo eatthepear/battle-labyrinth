@@ -44,12 +44,17 @@ script Zone10B_EventScript_Collector {
 	lock
 	faceplayer
 	if (flag(FLAG_ZONE10B_RECEIVED_LUCKY_EGG) == false) {
-		msgbox("You know what would make a\nCollector like me happy? Meeting\lsomeone who has caught 50 different\lspecies of Pokémon. Now, that\lperson is someone I'd like to meet!")
+		msgbox(format("You know what would make a Collector like me happy?\pMeeting someone who has caught 50 different species of Pokémon.\pNow, that person is someone I'd like to meet!"))
+		questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_CATCH_50)
+		if (var(VAR_RESULT) == FALSE) {
+			startquest(QUEST_CATCH_50)
+		}
 		specialvar(VAR_RESULT, GetCaughtSpeciesCount)
 		if (var(VAR_RESULT) > 49) {
-			msgbox("Whoah, you've caught 50 species of\nPokémon? That's amazing.\pI aspire to be like you. Here, I\nwant you to have this.")
+			msgbox(format("Whoah, you've caught 50 species of Pokémon? That's amazing.\pI aspire to be like you.\pHere, I want you to have this."))
 			setflag(FLAG_ZONE10B_RECEIVED_LUCKY_EGG)
 			giveitem(ITEM_LUCKY_EGG, 1)
+			completequest(QUEST_CATCH_50)
 		} else {
 			applymovement(3, Common_Movement_FaceRight)
 			waitmovement(0)
@@ -57,7 +62,7 @@ script Zone10B_EventScript_Collector {
 			end
 		}
 	}
-	msgbox("Maybe I can catch 50 species of\nPokémon someday too.")
+	msgbox(format("Maybe I can catch 50 species of Pokémon someday too."))
 	applymovement(3, Common_Movement_FaceRight)
 	waitmovement(0)
 	release
@@ -68,6 +73,10 @@ script Zone10B_EventScript_BirdKeeper {
 	faceplayer
 	if (flag(FLAG_ZONE10B_RECEIVED_TM_STEEL_WING) == false) {
 		msgbox(format("Bird Pokémon sometimes can need some coverage moves!\pIf you can show me you've beaten all the trainers thus far, I'll reward you with a special TM!"))
+		questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_GAUNTLET_1)
+		if (var(VAR_RESULT) == FALSE) {
+			startquest(QUEST_GAUNTLET_1)
+		}
 		if (!defeated(TRAINER_PBL_NINA) ||
 			!defeated(TRAINER_PBL_MARIAM) ||
 			!defeated(TRAINER_PBL_OSCAR) ||
@@ -154,6 +163,7 @@ script Zone10B_EventScript_BirdKeeper {
 			setflag(FLAG_ZONE10B_RECEIVED_TM_STEEL_WING)
 			msgbox(format("Wow! You really did beat all those trainers.\pHere's the TM for Steel Wing!"))
 			giveitem(ITEM_TM_STEEL_WING)
+			completequest(QUEST_GAUNTLET_1)
 		}
 	}
 	msgbox(format("The move Steel Wing can help Flying Pokémon cover for their Rock weakness, by giving Steel coverage to them!"))
@@ -166,23 +176,28 @@ script Zone10B_EventScript_BirdKeeper {
 script Zone10B_EventScript_BerryExchange {
 	lock
 	faceplayer
-	msgbox("Listen, you know how some berries\ncan treat status conditions?\pWell, I'm looking to start a Berry\nfarm. If you have 10 of each of\lthose Berries, I'll trade them\lfor 5 Revives. How about it?", MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		checkitem(ITEM_CHERI_BERRY, 10)
+	msgbox("Listen, you know how some berries\ncan treat status conditions?\pWell, I'm looking to start a Berry\nfarm. If you have 5 of each of\lthose Berries, I'll trade them\lfor 5 Revives.")
+	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_BERRIES)
+	if (var(VAR_RESULT) == FALSE) {
+		startquest(QUEST_BERRIES)
+	}
+	checkitem(ITEM_CHERI_BERRY, 5)
+	if (var(VAR_RESULT) == TRUE) {
+		checkitem(ITEM_CHESTO_BERRY, 5)
 		if (var(VAR_RESULT) == TRUE) {
-			checkitem(ITEM_CHESTO_BERRY, 10)
+			checkitem(ITEM_PECHA_BERRY, 5)
 			if (var(VAR_RESULT) == TRUE) {
-				checkitem(ITEM_PECHA_BERRY, 10)
+				checkitem(ITEM_RAWST_BERRY, 5)
 				if (var(VAR_RESULT) == TRUE) {
-					checkitem(ITEM_RAWST_BERRY, 10)
+					checkitem(ITEM_ASPEAR_BERRY, 5)
 					if (var(VAR_RESULT) == TRUE) {
-						checkitem(ITEM_ASPEAR_BERRY, 10)
-						if (var(VAR_RESULT) == TRUE) {
-							removeitem(ITEM_CHERI_BERRY, 10)
-							removeitem(ITEM_CHESTO_BERRY, 10)
-							removeitem(ITEM_PECHA_BERRY, 10)
-							removeitem(ITEM_RAWST_BERRY, 10)
-							removeitem(ITEM_ASPEAR_BERRY, 10)
+						msgbox(format("Looks like you do have the Berries I'm looking for. What do you say?"), MSGBOX_YESNO)
+						if (var(VAR_RESULT) == YES) {
+							removeitem(ITEM_CHERI_BERRY, 5)
+							removeitem(ITEM_CHESTO_BERRY, 5)
+							removeitem(ITEM_PECHA_BERRY, 5)
+							removeitem(ITEM_RAWST_BERRY, 5)
+							removeitem(ITEM_ASPEAR_BERRY, 5)
 							msgbox("Alright…{PAUSE_UNTIL_PRESS} Here we go…{PAUSE_UNTIL_PRESS}\nAnd bam! 5 Revives!")
 							giveitem(ITEM_REVIVE, 5)
 							msgbox("Thank you.\nI'll be seeing you around!")
@@ -190,29 +205,29 @@ script Zone10B_EventScript_BerryExchange {
 							setflag(FLAG_HIDE_ZONE10B_BERRYMAN)
 							removeobject(5)
 							fadescreenswapbuffers(FADE_FROM_BLACK)
+							completequest(QUEST_BERRIES)
 						} else {
-							msgbox("It looks like you don't have enough\nAspear Berries.")
+							msgbox("Aw, that's too bad.\nIt's a good offer though!")	
 						}
 					} else {
-						msgbox("It looks like you don't have enough\nRawst Berries.")
+						msgbox("It looks like you don't have enough\nAspear Berries.")
 					}
 				} else {
-					msgbox("It looks like you don't have enough\nPecha Berries.")
+					msgbox("It looks like you don't have enough\nRawst Berries.")
 				}
 			} else {
-				msgbox("It looks like you don't have enough\nChesto Berries.")
+				msgbox("It looks like you don't have enough\nPecha Berries.")
 			}
 		} else {
-			msgbox("It looks like you don't have enough\nCheri Berries.")
+			msgbox("It looks like you don't have enough\nChesto Berries.")
 		}
 	} else {
-		msgbox("Aw, that's too bad.\nIt's a good offer though!$")	
+		msgbox("It looks like you don't have enough\nCheri Berries.")
 	}
 	applymovement(5, Common_Movement_FaceLeft)
 	waitmovement(0)
 	release
 	end
-
 }
 
 script Zone10B_EventScript_FossilScientist {

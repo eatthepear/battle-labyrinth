@@ -1628,6 +1628,9 @@ const u8 gText_SideQuestName_PBL[] = _("Pokémon Battle Labyrinth");
 const u8 gText_SideQuestName_Signs[] = _("Learn to Read");
 const u8 gText_SideQuestName_Saves[] = _("Saving Progress");
 const u8 gText_SideQuestName_Pokedex[] = _("Fill the Pokédex");
+const u8 gText_SideQuestName_Catch50[] = _("A Fine Collection");
+const u8 gText_SideQuestName_DefeatAll1[] = _("The Best Trainer 1");
+const u8 gText_SideQuestName_Berries[] = _("Berry Investments");
 
 //descriptions
 const u8 gText_SideQuestDesc_Filler[] = _("Filler Description");
@@ -1635,6 +1638,9 @@ const u8 gText_SideQuestDesc_PBL[] = _("Complete all 50 Zones without losing\na 
 const u8 gText_SideQuestDesc_Signs[] = _("Read all the signs in the game!");
 const u8 gText_SideQuestDesc_Saves[] = _("Save the game 50 times!\nSo far you've saved the game {STR_VAR_1} times!");
 const u8 gText_SideQuestDesc_Pokedex[] = _("See all the Pokémon in the Pokédex!\nSo far you've seen {STR_VAR_1} Pokémon!");
+const u8 gText_SideQuestDesc_Catch50[] = _("Show the Collector that you've caught\nat least 50 Pokémon species!");
+const u8 gText_SideQuestDesc_DefeatAll1[] = _("Defeat all trainers in\nZones 1-10.");
+const u8 gText_SideQuestDesc_Berries[] = _("Procure 5 of each\nstatus healing Berry.");
 
 //completed quest description
 const u8 gText_SideQuestDoneDesc_Filler[] = _("Filler Completed Quest");
@@ -1642,6 +1648,9 @@ const u8 gText_SideQuestDoneDesc_PBL[] = _("You've completed all 50 Zones!");
 const u8 gText_SideQuestDoneDesc_Signs[] = _("You've read all the signs in the game!");
 const u8 gText_SideQuestDoneDesc_Saves[] = _("You've saved the game 50 times!");
 const u8 gText_SideQuestDoneDesc_Pokedex[] = _("You've seen all the Pokémon in the Pokédex!");
+const u8 gText_SideQuestDoneDesc_Catch50[] = _("You've caught 50 different Pokémon species!");
+const u8 gText_SideQuestDoneDesc_DefeatAll1[] = _("You've defeated all trainers in\nZones 1-10!");
+const u8 gText_SideQuestDoneDesc_Berries[] = _("You gave the chef the Berries!");
 
 //map
 const u8 gText_QuestMapFiller[] = _("???");
