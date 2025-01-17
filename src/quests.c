@@ -1303,32 +1303,32 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      0
 	),
 	side_quest(
-	      gText_SideQuestName_Filler,
-	      gText_SideQuestDesc_Filler,
-	      gText_SideQuestDoneDesc_Filler,
-	      gText_QuestMapFiller,
-	      ITEM_NONE,
-	      ITEM,
+	      gText_SideQuestName_Catch50,
+	      gText_SideQuestDesc_Catch50,
+	      gText_SideQuestDoneDesc_Catch50,
+	      gText_QuestMapZone10,
+	      OBJ_EVENT_GFX_COLLECTOR,
+	      OBJECT,
 	      NULL,
 	      0
 	),
 	side_quest(
-	      gText_SideQuestName_Filler,
-	      gText_SideQuestDesc_Filler,
-	      gText_SideQuestDoneDesc_Filler,
-	      gText_QuestMapFiller,
-	      ITEM_NONE,
-	      ITEM,
+	      gText_SideQuestName_DefeatAll1,
+	      gText_SideQuestDesc_DefeatAll1,
+	      gText_SideQuestDoneDesc_DefeatAll1,
+	      gText_QuestMapZone10,
+	      OBJ_EVENT_GFX_BIRD_KEEPER,
+	      OBJECT,
 	      NULL,
 	      0
 	),
 	side_quest(
-	      gText_SideQuestName_Filler,
-	      gText_SideQuestDesc_Filler,
-	      gText_SideQuestDoneDesc_Filler,
-	      gText_QuestMapFiller,
-	      ITEM_NONE,
-	      ITEM,
+	      gText_SideQuestName_Berries,
+	      gText_SideQuestDesc_Berries,
+	      gText_SideQuestDoneDesc_Berries,
+	      gText_QuestMapZone10,
+	      OBJ_EVENT_GFX_COOK,
+	      OBJECT,
 	      NULL,
 	      0
 	),
@@ -3854,7 +3854,7 @@ static const u8 *GetQuestDesc(s32 questId)
 			StringExpandPlaceholders(gStringVar4, gText_SideQuestDesc_PBL);
             return gStringVar4;
         case QUEST_SAVES:
-			ConvertIntToDecimalStringN(gStringVar1, GetGameStat(GAME_STAT_SAVED_GAME), STR_CONV_MODE_LEFT_ALIGN, 2);
+			ConvertIntToDecimalStringN(gStringVar1, GetGameStat(GAME_STAT_SAVED_GAME), STR_CONV_MODE_LEFT_ALIGN, 3);
 			StringExpandPlaceholders(gStringVar4, gText_SideQuestDesc_Saves);
             return gStringVar4;
         case QUEST_POKEDEX:
