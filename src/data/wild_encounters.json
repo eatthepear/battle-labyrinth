@@ -1906,63 +1906,63 @@
             "mons": [
               {
                 "min_level": 22,
-                "max_level": 22,
-                "species": "SPECIES_BLITZLE"
-              },
-              {
-                "min_level": 22,
-                "max_level": 22,
-                "species": "SPECIES_CRAMORANT"
-              },
-              {
-                "min_level": 22,
-                "max_level": 22,
-                "species": "SPECIES_DEERLING"
-              },
-              {
-                "min_level": 22,
-                "max_level": 22,
+                "max_level": 23,
                 "species": "SPECIES_DODUO"
               },
               {
                 "min_level": 22,
-                "max_level": 22,
-                "species": "SPECIES_DUCKLETT"
+                "max_level": 23,
+                "species": "SPECIES_VULLABY"
               },
               {
                 "min_level": 22,
-                "max_level": 22,
-                "species": "SPECIES_RUFFLET"
+                "max_level": 23,
+                "species": "SPECIES_GROWLITHE_HISUI"
               },
               {
                 "min_level": 22,
-                "max_level": 22,
+                "max_level": 23,
+                "species": "SPECIES_CAPSAKID"
+              },
+              {
+                "min_level": 22,
+                "max_level": 23,
+                "species": "SPECIES_RHYHORN"
+              },
+              {
+                "min_level": 22,
+                "max_level": 23,
                 "species": "SPECIES_FARFETCHD_GALAR"
               },
               {
                 "min_level": 22,
-                "max_level": 22,
-                "species": "SPECIES_MUDBRAY"
+                "max_level": 23,
+                "species": "SPECIES_FLITTLE"
               },
               {
                 "min_level": 22,
-                "max_level": 22,
-                "species": "SPECIES_PONYTA"
+                "max_level": 23,
+                "species": "SPECIES_TOXEL"
               },
               {
                 "min_level": 22,
-                "max_level": 22,
-                "species": "SPECIES_PONYTA"
+                "max_level": 23,
+                "species": "SPECIES_STONJOURNER"
               },
               {
                 "min_level": 22,
-                "max_level": 22,
-                "species": "SPECIES_STANTLER"
+                "max_level": 23,
+                "species": "SPECIES_FLAMIGO"
               },
               {
-                "min_level": 19,
-                "max_level": 19,
-                "species": "SPECIES_NONE"
+                "min_level": 22,
+                "max_level": 23,
+                "species": "SPECIES_ZANGOOSE"
+              },
+              {
+                "min_level": 22,
+                "max_level": 23,
+                "species": "SPECIES_SEVIPER"
               }
             ]
           },
@@ -1971,28 +1971,28 @@
             "mons": [
               {
                 "min_level": 22,
-                "max_level": 22,
+                "max_level": 23,
                 "species": "SPECIES_ARROKUDA"
               },
               {
                 "min_level": 22,
-                "max_level": 22,
-                "species": "SPECIES_BASCULIN_WHITE_STRIPED"
-              },
-              {
-                "min_level": 22,
-                "max_level": 22,
-                "species": "SPECIES_CARVANHA"
-              },
-              {
-                "min_level": 22,
-                "max_level": 22,
+                "max_level": 23,
                 "species": "SPECIES_REMORAID"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
+                "min_level": 22,
+                "max_level": 23,
+                "species": "SPECIES_WISHIWASHI"
+              },
+              {
+                "min_level": 22,
+                "max_level": 23,
+                "species": "SPECIES_BASCULIN_BLUE_STRIPED"
+              },
+              {
+                "min_level": 22,
+                "max_level": 23,
+                "species": "SPECIES_BASCULIN_RED_STRIPED"
               }
             ]
           },
