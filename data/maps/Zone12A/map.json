@@ -296,6 +296,15 @@
       "var": "VAR_GENERIC",
       "var_value": "0",
       "script": "Zone12A_EventScript_Waterfall"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_ZONE_12_STATE",
+      "var_value": "0",
+      "script": "Zone12A_EventScript_LeviathanBattles"
     }
   ],
   "bg_events": [
