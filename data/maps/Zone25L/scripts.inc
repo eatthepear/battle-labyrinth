@@ -6,7 +6,7 @@ Zone25L_EventScript_Exit::
 	compare VAR_ZONE, 24
 	goto_if_gt EventScript_WarpZone0
 	call_if_set FLAG_SETTINGS_BRUTAL, Zone25L_EventScript_CheckBrutal
-	warp MAP_ZONE25SANCTUARY, 255, 22, 7
+	warp MAP_ZONE_SANCTUARY, 255, 22, 7
 	releaseall
 	end
 

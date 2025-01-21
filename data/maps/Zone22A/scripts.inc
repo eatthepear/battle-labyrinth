@@ -7,7 +7,7 @@ Zone22A_EventScript_Exit::
 	goto_if_gt EventScript_WarpZone0
 	goto_if_unset FLAG_BEAT_LEVIATHAN_13, Zone22A_EventScript_LeviathanBattle
 	call_if_set FLAG_SETTINGS_BRUTAL, Zone22A_EventScript_CheckBrutal
-	warp MAP_ZONE22SANCTUARY, 255, 22, 7
+	warp MAP_ZONE_SANCTUARY, 255, 22, 7
 	releaseall
 	end
 

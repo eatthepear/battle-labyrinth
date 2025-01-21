@@ -1155,15 +1155,11 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
 
-	.include "data/maps/Zone0Sanctuary/scripts.inc"
+	.include "data/maps/ZoneSanctuary/scripts.inc"
 
-	.include "data/maps/Zone0Shops/scripts.inc"
+	.include "data/maps/ZoneShops/scripts.inc"
 
 	.include "data/maps/Zone1A/scripts.inc"
-
-	.include "data/maps/Zone1Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone1Shops/scripts.inc"
 
 	.include "data/maps/Zone2A/scripts.inc"
 
@@ -1171,15 +1167,7 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/Zone2C/scripts.inc"
 
-	.include "data/maps/Zone2Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone2Shops/scripts.inc"
-
 	.include "data/maps/Zone3A/scripts.inc"
-
-	.include "data/maps/Zone3Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone3Shops/scripts.inc"
 
 	.include "data/maps/Zone4A/scripts.inc"
 
@@ -1191,23 +1179,11 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/Zone4E/scripts.inc"
 
-	.include "data/maps/Zone4Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone4Shops/scripts.inc"
-
 	.include "data/maps/Zone5A/scripts.inc"
 
 	.include "data/maps/Zone5B/scripts.inc"
 
-	.include "data/maps/Zone5Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone5Shops/scripts.inc"
-
 	.include "data/maps/Zone6A/scripts.inc"
-
-	.include "data/maps/Zone6Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone6Shops/scripts.inc"
 
 	.include "data/maps/Zone7A/scripts.inc"
 
@@ -1220,10 +1196,6 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Zone8D/scripts.inc"
 
 	.include "data/maps/Zone7B/scripts.inc"
-
-	.include "data/maps/Zone8Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone8Shops/scripts.inc"
 
 	.include "data/maps/Zone9A/scripts.inc"
 
@@ -1239,17 +1211,9 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/Zone9G/scripts.inc"
 
-	.include "data/maps/Zone9Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone9Shops/scripts.inc"
-
 	.include "data/maps/Zone10A/scripts.inc"
 
 	.include "data/maps/Zone10B/scripts.inc"
-
-	.include "data/maps/Zone10Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone10Shops/scripts.inc"
 
 	.include "data/maps/Zone0A/scripts.inc"
 
@@ -1259,15 +1223,7 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/Zone11A/scripts.inc"
 
-	.include "data/maps/Zone11Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone11Shops/scripts.inc"
-
 	.include "data/maps/Zone12A/scripts.inc"
-
-	.include "data/maps/Zone12Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone12Shops/scripts.inc"
 
 	.include "data/maps/Zone13A/scripts.inc"
 
@@ -1281,29 +1237,13 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/Zone14C/scripts.inc"
 
-	.include "data/maps/Zone14Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone14Shops/scripts.inc"
-
 	.include "data/maps/Zone15A/scripts.inc"
 
 	.include "data/maps/Zone15B/scripts.inc"
 
-	.include "data/maps/Zone15Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone15Shops/scripts.inc"
-
 	.include "data/maps/Zone16A/scripts.inc"
 
-	.include "data/maps/Zone16Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone16Shops/scripts.inc"
-
 	.include "data/maps/Zone17A/scripts.inc"
-
-	.include "data/maps/Zone17Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone17Shops/scripts.inc"
 
 	.include "data/maps/Zone18A/scripts.inc"
 
@@ -1317,15 +1257,7 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/Zone19D/scripts.inc"
 
-	.include "data/maps/Zone19Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone19Shops/scripts.inc"
-
 	.include "data/maps/Zone20A/scripts.inc"
-
-	.include "data/maps/Zone20Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone20Shops/scripts.inc"
 
 	.include "data/maps/Zone21A/scripts.inc"
 
@@ -1335,21 +1267,9 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/Zone21D/scripts.inc"
 
-	.include "data/maps/Zone21Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone21Shops/scripts.inc"
-
 	.include "data/maps/Zone22A/scripts.inc"
 
-	.include "data/maps/Zone22Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone22Shops/scripts.inc"
-
 	.include "data/maps/Zone23A/scripts.inc"
-
-	.include "data/maps/Zone23Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone23Shops/scripts.inc"
 
 	.include "data/maps/Zone24A/scripts.inc"
 
@@ -1379,19 +1299,11 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/Zone25L/scripts.inc"
 
-	.include "data/maps/Zone25Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone25Shops/scripts.inc"
-
 	.include "data/maps/ZoneB1/scripts.inc"
 
 	.include "data/maps/Zone26A/scripts.inc"
 
 	.include "data/maps/Zone26B/scripts.inc"
-
-	.include "data/maps/Zone26Sanctuary/scripts.inc"
-
-	.include "data/maps/Zone26Shops/scripts.inc"
 
 	.include "data/maps/Zone27A/scripts.inc"
 
