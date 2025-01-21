@@ -168,74 +168,8 @@ script Zone0A_EventScript_Exit {
 		case 0:
 			closemessage
 			setvar(VAR_ZONE_0_STATE, 2)
-			switch (var(VAR_ZONE)) {
-				case 1:
-					warpdoor(MAP_ZONE0SHOPS, 255, 46, 1)
-					waitstate
-				case 2:
-					warpdoor(MAP_ZONE1SHOPS, 255, 46, 1)
-					waitstate
-				case 3:
-					warpdoor(MAP_ZONE2SHOPS, 255, 46, 1)
-					waitstate
-				case 4:
-					warpdoor(MAP_ZONE3SHOPS, 255, 46, 1)
-					waitstate
-				case 5:
-					warpdoor(MAP_ZONE4SHOPS, 255, 46, 1)
-					waitstate
-				case 6:
-					warpdoor(MAP_ZONE5SHOPS, 255, 46, 1)
-					waitstate
-				case 7:
-					warpdoor(MAP_ZONE6SHOPS, 255, 46, 1)
-					waitstate
-				case 9:
-					warpdoor(MAP_ZONE8SHOPS, 255, 46, 1)
-					waitstate
-				case 10:
-					warpdoor(MAP_ZONE9SHOPS, 255, 46, 1)
-					waitstate
-				case 11:
-					warpdoor(MAP_ZONE10SHOPS, 255, 46, 1)
-					waitstate
-				case 12:
-					warpdoor(MAP_ZONE11SHOPS, 255, 46, 1)
-					waitstate
-				case 13:
-					warpdoor(MAP_ZONE12SHOPS, 255, 46, 1)
-					waitstate
-				case 15:
-					warpdoor(MAP_ZONE14SHOPS, 255, 46, 1)
-					waitstate
-				case 16:
-					warpdoor(MAP_ZONE15SHOPS, 255, 46, 1)
-					waitstate
-				case 17:
-					warpdoor(MAP_ZONE16SHOPS, 255, 46, 1)
-					waitstate
-				case 18:
-					warpdoor(MAP_ZONE17SHOPS, 255, 46, 1)
-					waitstate
-				case 20:
-					warpdoor(MAP_ZONE20SHOPS, 255, 46, 1)
-					waitstate
-				case 21:
-					warpdoor(MAP_ZONE20SHOPS, 255, 46, 1)
-					waitstate
-				case 22:
-					warpdoor(MAP_ZONE21SHOPS, 255, 46, 1)
-					waitstate
-				case 23:
-					warpdoor(MAP_ZONE22SHOPS, 255, 46, 1)
-					waitstate
-				case 24:
-					warpdoor(MAP_ZONE23SHOPS, 255, 46, 1)
-					waitstate
-				case 26:
-					warpdoor(MAP_ZONE25SHOPS, 255, 46, 1)
-					waitstate
-			}
+			warpdoor(MAP_ZONE_SHOPS, 255, 46, 1)
+			waitstate
 		case 1:
 			setvar(VAR_REVISITING_ZONE, 1)
 			warp(MAP_ZONE1A, 255, 16, 28)

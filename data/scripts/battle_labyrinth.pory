@@ -1,142 +1,3 @@
-script EventScript_EnterSanctuary {
-	clearflag(FLAG_IN_NEW_ZONE)
-	clearflag(FLAG_ZONE_PC_USED)
-	call(EventScript_MoveCameraUp)
-	applymovement(1, Common_Movement_ExclamationMark)
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
-	playse(SE_PIN)
-	waitmovement(0)
-	waitse
-	call(EventScript_MoveCameraDown)
-	applymovement(1, Common_Movement_WalkDown3)
-	waitmovement(0)
-	playfanfare(MUS_OBTAIN_BADGE)
-	call(EventScript_CompletePBLSubquest)
-	return
-}
-
-script EventScript_CompletePBLSubquest {
-	switch(var(VAR_ZONE)) {
-		case 1:
-			completesubquest(QUEST_PBL, SUB_QUEST_1)
-		case 2:
-			completesubquest(QUEST_PBL, SUB_QUEST_2)
-		case 3:
-			completesubquest(QUEST_PBL, SUB_QUEST_3)
-		case 4:
-			completesubquest(QUEST_PBL, SUB_QUEST_4)
-		case 5:
-			completesubquest(QUEST_PBL, SUB_QUEST_5)
-		case 6:
-			completesubquest(QUEST_PBL, SUB_QUEST_6)
-		case 7:
-			completesubquest(QUEST_PBL, SUB_QUEST_7)
-			completesubquest(QUEST_PBL, SUB_QUEST_8)
-		case 9:
-			completesubquest(QUEST_PBL, SUB_QUEST_9)
-		case 10:
-			completesubquest(QUEST_PBL, SUB_QUEST_10)
-		case 11:
-			completesubquest(QUEST_PBL, SUB_QUEST_11)
-		case 12:
-			completesubquest(QUEST_PBL, SUB_QUEST_12)
-		case 13:
-			completesubquest(QUEST_PBL, SUB_QUEST_13)
-			completesubquest(QUEST_PBL, SUB_QUEST_14)
-		case 15:
-			completesubquest(QUEST_PBL, SUB_QUEST_15)
-		case 16:
-			completesubquest(QUEST_PBL, SUB_QUEST_16)
-		case 17:
-			completesubquest(QUEST_PBL, SUB_QUEST_17)
-		case 18:
-			completesubquest(QUEST_PBL, SUB_QUEST_18)
-			completesubquest(QUEST_PBL, SUB_QUEST_19)
-		case 20:
-			completesubquest(QUEST_PBL, SUB_QUEST_20)
-		case 21:
-			completesubquest(QUEST_PBL, SUB_QUEST_21)
-		case 22:
-			completesubquest(QUEST_PBL, SUB_QUEST_22)
-		case 23:
-			completesubquest(QUEST_PBL, SUB_QUEST_23)
-		case 24:
-			completesubquest(QUEST_PBL, SUB_QUEST_24)
-			completesubquest(QUEST_PBL, SUB_QUEST_25)
-		case 26:
-			completesubquest(QUEST_PBL, SUB_QUEST_26)
-		case 27:
-			completesubquest(QUEST_PBL, SUB_QUEST_27)
-		case 28:
-			completesubquest(QUEST_PBL, SUB_QUEST_28)
-		case 29:
-			completesubquest(QUEST_PBL, SUB_QUEST_29)
-		case 30:
-			completesubquest(QUEST_PBL, SUB_QUEST_30)
-		case 31:
-			completesubquest(QUEST_PBL, SUB_QUEST_31)
-		case 32:
-			completesubquest(QUEST_PBL, SUB_QUEST_32)
-		case 33:
-			completesubquest(QUEST_PBL, SUB_QUEST_33)
-		case 34:
-			completesubquest(QUEST_PBL, SUB_QUEST_34)
-		case 35:
-			completesubquest(QUEST_PBL, SUB_QUEST_35)
-		case 36:
-			completesubquest(QUEST_PBL, SUB_QUEST_36)
-		case 37:
-			completesubquest(QUEST_PBL, SUB_QUEST_37)
-		case 38:
-			completesubquest(QUEST_PBL, SUB_QUEST_38)
-		case 39:
-			completesubquest(QUEST_PBL, SUB_QUEST_39)
-		case 40:
-			completesubquest(QUEST_PBL, SUB_QUEST_40)
-		case 41:
-			completesubquest(QUEST_PBL, SUB_QUEST_41)
-		case 42:
-			completesubquest(QUEST_PBL, SUB_QUEST_42)
-		case 43:
-			completesubquest(QUEST_PBL, SUB_QUEST_43)
-		case 44:
-			completesubquest(QUEST_PBL, SUB_QUEST_44)
-		case 45:
-			completesubquest(QUEST_PBL, SUB_QUEST_45)
-		case 46:
-			completesubquest(QUEST_PBL, SUB_QUEST_46)
-		case 47:
-			completesubquest(QUEST_PBL, SUB_QUEST_47)
-		case 48:
-			completesubquest(QUEST_PBL, SUB_QUEST_48)
-		case 49:
-			completesubquest(QUEST_PBL, SUB_QUEST_49)
-		case 50:
-			completesubquest(QUEST_PBL, SUB_QUEST_50)
-	}
-}
-
-script EventScript_MoveCameraUp {
-	special(SpawnCameraObject)
-	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp3)
-	waitmovement(0)
-	special(RemoveCameraObject)
-	return
-}
-
-script EventScript_MoveCameraDown {
-	special(SpawnCameraObject)
-	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown3)
-	waitmovement(0)
-	special(RemoveCameraObject)
-	return
-}
-
-script EventScript_ConsumablesSign {
-	msgbox("Varrick's Items\nA Fine Collection!", MSGBOX_SIGN)
-	end
-}
-
 mart Shop_Filler {
 	ITEM_POKE_BALL
 }
@@ -1944,102 +1805,6 @@ mart Zone18A_Shop_TMShop {
 	ITEM_TM33
 }
 
-script EventScript_LeavingSetup {
-	setflag(FLAG_IN_NEW_ZONE)
-	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Bring out the strength of you and your Pokémon!"), MSGBOX_AUTOCLOSE)
-	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
-	if (var(VAR_TEMP_0) == 37) {
-		applymovement(1, Common_Movement_WalkRight)
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
-		waitmovement(0)
-		applymovement(1, Common_Movement_FaceLeft)
-		waitmovement(0)
-	}
-	if (var(VAR_TEMP_0) == 38) {
-		applymovement(1, Common_Movement_WalkLeft)
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
-		waitmovement(0)
-		applymovement(1, Common_Movement_FaceRight)
-		waitmovement(0)
-	}
-	if (var(VAR_TEMP_0) == 39) {
-		applymovement(1, Common_Movement_WalkLeft)
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
-		waitmovement(0)
-		applymovement(1, Common_Movement_FaceRight)
-		waitmovement(0)
-	}
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
-	waitmovement(0)
-	switch(var(VAR_ZONE)) {
-		case 1:
-			setvar(VAR_LEVEL_CAP, 7)
-		case 2:
-			setvar(VAR_LEVEL_CAP, 9)
-		case 3:
-			setvar(VAR_LEVEL_CAP, 11)
-		case 4:
-			setvar(VAR_LEVEL_CAP, 13)
-		case 5:
-			setvar(VAR_LEVEL_CAP, 15)
-		case 6:
-			setvar(VAR_LEVEL_CAP, 17)
-		case 7:
-			setvar(VAR_LEVEL_CAP, 20)
-		case 9:
-			setvar(VAR_LEVEL_CAP, 21)
-		case 10:
-			setvar(VAR_LEVEL_CAP, 23)
-		case 11:
-			setvar(VAR_LEVEL_CAP, 24)
-		case 12:
-			setvar(VAR_LEVEL_CAP, 26)
-		case 13:
-			setvar(VAR_LEVEL_CAP, 30)
-		case 15:
-			setvar(VAR_LEVEL_CAP, 32)
-		case 16:
-			setvar(VAR_LEVEL_CAP, 33)
-		case 17:
-			setvar(VAR_LEVEL_CAP, 34)
-		case 18:
-			setvar(VAR_LEVEL_CAP, 37)
-		case 20:
-			setvar(VAR_LEVEL_CAP, 39)
-		case 21:
-			setvar(VAR_LEVEL_CAP, 41)
-		case 22:
-			setvar(VAR_LEVEL_CAP, 43)
-		case 23:
-			setvar(VAR_LEVEL_CAP, 45)
-		case 24:
-			setvar(VAR_LEVEL_CAP, 48)
-		case 26:
-			setvar(VAR_LEVEL_CAP, 49)
-	}
-	return
-}
-
-script EventScript_WhenUReady {
-	if (var(VAR_ZONE) == 7) {
-		msgbox(Zone6Sanctuary_Text_Colress_WhenUReady)
-		release
-	} elif (var(VAR_ZONE) == 13) {
-		msgbox(Zone12Sanctuary_Text_Colress_WhenUReady)
-		release
-	} elif (var(VAR_ZONE) == 18) {
-		msgbox(Zone17Sanctuary_Text_Colress_WhenUReady)
-		release
-	} elif (var(VAR_ZONE) == 24) {
-		msgbox(Zone23Sanctuary_Text_Colress_WhenUReady)
-		release
-	} else {
-		buffernumberstring(0, VAR_ZONE)
-		msgbox(gText_Colress_WhenUReady, MSGBOX_AUTOCLOSE)
-		release
-	}
-}
-
 script EventScript_SanctuaryToZone0 {
 	lockall
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
@@ -2055,6 +1820,23 @@ script EventScript_SanctuaryToZone0 {
 		waitmovement(0)
 	}
 	releaseall
+}
+
+script EventScript_WhenUReady {
+	if (var(VAR_ZONE) == 7) {
+		msgbox(Sanctuary_Text_Colress_WhenUReady_78, MSGBOX_AUTOCLOSE)
+	} elif (var(VAR_ZONE) == 13) {
+		msgbox(Sanctuary_Text_Colress_WhenUReady_1314, MSGBOX_AUTOCLOSE)
+	} elif (var(VAR_ZONE) == 18) {
+		msgbox(Sanctuary_Text_Colress_WhenUReady_1819, MSGBOX_AUTOCLOSE)
+	} elif (var(VAR_ZONE) == 24) {
+		msgbox(Sanctuary_Text_Colress_WhenUReady_2425, MSGBOX_AUTOCLOSE)
+	} else {
+		buffernumberstring(0, VAR_ZONE)
+		msgbox(Sanctuary_Text_Colress_WhenUReady, MSGBOX_AUTOCLOSE)
+	}
+	release
+	end
 }
 
 script EventScript_Documentation {
@@ -2882,7 +2664,7 @@ text gText_ItemChestIsEmpty {
 // 			cleartrainerflag(TRAINER_PBL_OSCAR)
 // 			clearflag(FLAG_BEAT_LEVIATHAN_1)
 // 			setvar(VAR_ZONE_1_STATE, 0)
-// 			warpteleport(MAP_ZONE0SANCTUARY, 255, 38, 11)
+// 			warpteleport(MAP_ZONE_SANCTUARY, 255, 38, 11)
 // 			waitstate
 // 		case 2:
 // 			cleartrainerflag(TRAINER_PBL_POLLY)
@@ -3140,71 +2922,9 @@ script EventScript_PorygonExit {
 		closemessage
 		playmoncry(SPECIES_PORYGON, 0)
 		waitmoncry
-		switch (var(VAR_ZONE)) {
-			case 1:
-				warp(MAP_ZONE1SANCTUARY, 255, 38, 11)
-				waitstate
-			case 2:
-				warp(MAP_ZONE2SANCTUARY, 255, 38, 11)
-				waitstate
-			case 3:
-				setflag(FLAG_HIDE_ZONE2A_MAX)
-				warp(MAP_ZONE3SANCTUARY, 255, 38, 11)
-				waitstate
-			case 4:
-				warp(MAP_ZONE4SANCTUARY, 255, 38, 11)
-				waitstate
-			case 5:
-				warp(MAP_ZONE5SANCTUARY, 255, 38, 11)
-				waitstate
-			case 6:
-				setflag(FLAG_HIDE_ZONE6A_MAX)
-				warp(MAP_ZONE6SANCTUARY, 255, 38, 11)
-				waitstate
-			case 7:
-				setflag(FLAG_ZONE7B_HEAL_USED)
-				warp(MAP_ZONE8SANCTUARY, 255, 38, 11)
-				waitstate
-			case 9:
-				warp(MAP_ZONE9SANCTUARY, 255, 38, 11)
-				waitstate
-			case 10:
-				setflag(FLAG_HIDE_ZONE10A_MAX)
-				warp(MAP_ZONE10SANCTUARY, 255, 38, 11)
-				waitstate
-			case 11:
-				warp(MAP_ZONE11SANCTUARY, 255, 38, 11)
-				waitstate
-			case 12:
-				clearflag(FLAG_SYS_NO_BAG_START_MENU)
-				setflag(FLAG_HIDE_ZONE12A_NURSE)
-				warp(MAP_ZONE12SANCTUARY, 255, 38, 11)
-				waitstate
-			case 13:
-				warp(MAP_ZONE14SANCTUARY, 255, 38, 11)
-				waitstate
-			case 15:
-				warp(MAP_ZONE15SANCTUARY, 255, 38, 11)
-				waitstate
-			case 16:
-				warp(MAP_ZONE16SANCTUARY, 255, 38, 11)
-				waitstate
-			case 17:
-				warp(MAP_ZONE17SANCTUARY, 255, 38, 11)
-				waitstate
-			case 18:
-				setflag(FLAG_HIDE_ZONE18A_MAX)
-				warp(MAP_ZONE19SANCTUARY, 255, 38, 11)
-				waitstate
-			case 20:
-			case 21:
-			case 22:
-			case 23:
-			case 24:
-			case 25:
-				warp(MAP_ZONE1SANCTUARY, 255, 38, 11)
-				waitstate
-		}
+		setvar(VAR_GENERIC, 1)
+		warp(MAP_ZONE_SANCTUARY, 255, 38, 11)
+		waitstate
 	}
     release
     end
@@ -3590,7 +3310,7 @@ script Debug_CheatStart_PBL {
 			closemessage
 			setvar(VAR_ZONE, 1)
 			setvar(VAR_LEVEL_CAP, 7)
-			warp(MAP_ZONE0SANCTUARY, 255, 38, 11)
+			warp(MAP_ZONE_SANCTUARY, 255, 38, 11)
 			waitstate
 			end
 	}
@@ -3667,8 +3387,6 @@ script Debug_CheatStart_PBL {
 			closemessage
 			setvar(VAR_ZONE, 2)
 			setvar(VAR_LEVEL_CAP, 9)
-			warp(MAP_ZONE1SANCTUARY, 255, 38, 11)
-			waitstate
 			end
 	}
 	setvar(VAR_TEMP_1, 5) // level
@@ -3730,8 +3448,6 @@ script Debug_CheatStart_PBL {
 			closemessage
 			setvar(VAR_ZONE, 3)
 			setvar(VAR_LEVEL_CAP, 11)
-			warp(MAP_ZONE2SANCTUARY, 255, 38, 11)
-			waitstate
 			end
 	}
 	setvar(VAR_TEMP_1, 7) // level
@@ -3758,8 +3474,6 @@ script Debug_CheatStart_PBL {
 			closemessage
 			setvar(VAR_ZONE, 4)
 			setvar(VAR_LEVEL_CAP, 13)
-			warp(MAP_ZONE3SANCTUARY, 255, 38, 11)
-			waitstate
 			end
 	}
 	setvar(VAR_TEMP_1, 9) // level
@@ -3813,8 +3527,6 @@ script Debug_CheatStart_PBL {
 			closemessage
 			setvar(VAR_ZONE, 5)
 			setvar(VAR_LEVEL_CAP, 13)
-			warp(MAP_ZONE4SANCTUARY, 255, 38, 11)
-			waitstate
 			end
 	}
 	setvar(VAR_TEMP_1, 11) // level
@@ -3860,8 +3572,6 @@ script Debug_CheatStart_PBL {
 			closemessage
 			setvar(VAR_ZONE, 6)
 			setvar(VAR_LEVEL_CAP, 15)
-			warp(MAP_ZONE5SANCTUARY, 255, 38, 11)
-			waitstate
 			end
 	}
 	setvar(VAR_TEMP_1, 13) // level
@@ -3890,8 +3600,6 @@ script Debug_CheatStart_PBL {
 			closemessage
 			setvar(VAR_ZONE, 7)
 			setvar(VAR_LEVEL_CAP, 17)
-			warp(MAP_ZONE6SANCTUARY, 255, 38, 11)
-			waitstate
 			end
 	}
 	setvar(VAR_TEMP_1, 15) // level
@@ -3947,8 +3655,6 @@ script Debug_CheatStart_PBL {
 			closemessage
 			setvar(VAR_ZONE, 9)
 			setvar(VAR_LEVEL_CAP, 20)
-			warp(MAP_ZONE8SANCTUARY, 255, 38, 11)
-			waitstate
 			end
 	}
 	setvar(VAR_TEMP_1, 18) // level
@@ -3970,8 +3676,6 @@ script Debug_CheatStart_PBL {
 	// end
 	setvar(VAR_ZONE, 10)
 	setvar(VAR_LEVEL_CAP, 21)
-	warp(MAP_ZONE9SANCTUARY, 255, 38, 11)
-	waitstate
 	closemessage
 }
 

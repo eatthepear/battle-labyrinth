@@ -77,74 +77,8 @@ script Zone0C_EventScript_WarpBack {
 	if (var(VAR_ZONE_0_STATE) == 3) {
 		setvar(VAR_ZONE_0_STATE, 4)
 	}
-	switch (var(VAR_ZONE)) {
-		case 1:
-			warp(MAP_ZONE0SHOPS, 255, 38, 1)
-			waitstate
-		case 2:
-			warp(MAP_ZONE1SHOPS, 255, 38, 1)
-			waitstate
-		case 3:
-			warp(MAP_ZONE2SHOPS, 255, 38, 1)
-			waitstate
-		case 4:
-			warp(MAP_ZONE3SHOPS, 255, 38, 1)
-			waitstate
-		case 5:
-			warp(MAP_ZONE4SHOPS, 255, 38, 1)
-			waitstate
-		case 6:
-			warp(MAP_ZONE5SHOPS, 255, 38, 1)
-			waitstate
-		case 7:
-			warp(MAP_ZONE6SHOPS, 255, 38, 1)
-			waitstate
-		case 9:
-			warp(MAP_ZONE8SHOPS, 255, 38, 1)
-			waitstate
-		case 10:
-			warp(MAP_ZONE9SHOPS, 255, 38, 1)
-			waitstate
-		case 11:
-			warp(MAP_ZONE10SHOPS, 255, 38, 1)
-			waitstate
-		case 12:
-			warp(MAP_ZONE11SHOPS, 255, 38, 1)
-			waitstate
-		case 13:
-			warp(MAP_ZONE12SHOPS, 255, 38, 1)
-			waitstate
-		case 15:
-			warp(MAP_ZONE14SHOPS, 255, 38, 1)
-			waitstate
-		case 16:
-			warp(MAP_ZONE15SHOPS, 255, 38, 1)
-			waitstate
-		case 17:
-			warp(MAP_ZONE16SHOPS, 255, 38, 1)
-			waitstate
-		case 18:
-			warp(MAP_ZONE17SHOPS, 255, 38, 1)
-			waitstate
-		case 20:
-			warp(MAP_ZONE20SHOPS, 255, 38, 1)
-			waitstate
-		case 21:
-			warp(MAP_ZONE20SHOPS, 255, 38, 1)
-			waitstate
-		case 22:
-			warp(MAP_ZONE21SHOPS, 255, 38, 1)
-			waitstate
-		case 23:
-			warp(MAP_ZONE22SHOPS, 255, 38, 1)
-			waitstate
-		case 24:
-			warp(MAP_ZONE23SHOPS, 255, 38, 1)
-			waitstate
-		case 26:
-			warp(MAP_ZONE25SHOPS, 255, 38, 1)
-			waitstate
-	}
+	warp(MAP_ZONE_SHOPS, 255, 38, 1)
+	waitstate
 }
 
 script Zone0C_EventScript_VerifyDestination {

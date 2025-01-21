@@ -21,7 +21,7 @@
       "x": 42,
       "y": 13,
       "elevation": 0,
-      "dest_map": "MAP_ZONE23SANCTUARY",
+      "dest_map": "MAP_ZONE_SANCTUARY",
       "dest_warp_id": "0"
     }
   ],
