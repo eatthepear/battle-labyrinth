@@ -744,7 +744,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     [SPECIES_DIGGERSBY] =
     {
         .baseHP        = 85,
-        .baseAttack    = 56,
+        .baseAttack    = 66,
         .baseDefense   = 77,
         .baseSpeed     = 78,
         .baseSpAttack  = 50,

@@ -1797,7 +1797,7 @@
                 MOVE_SAND_ATTACK,
                 MOVE_NUZZLE,
                 MOVE_SPARK,
-                MOVE_CHARGE,
+                MOVE_CHARM,
             },
             },
         },
@@ -2306,7 +2306,7 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 1015
-                MOVE_TAIL_WHIP,
+                MOVE_BABY_DOLL_EYES,
                 MOVE_BITE,
                 MOVE_YAWN,
                 MOVE_COVET,
