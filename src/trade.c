@@ -4549,7 +4549,7 @@ static void BufferInGameTradeMonName(void)
 static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTrade)
 {
     const struct InGameTrade *inGameTrade = &sIngameTrades[whichInGameTrade];
-    u8 level = GetMonData(&gPlayerParty[whichPlayerMon], MON_DATA_LEVEL);
+    u8 level = inGameTrade->sheen;
 
     struct Mail mail;
     u8 metLocation = METLOC_IN_GAME_TRADE;
