@@ -1077,7 +1077,7 @@ static const struct InGameTrade sIngameTrades[] =
         .mailNum = -1,
         .otName = _("Aidan"),
         .otGender = MALE,
-        .sheen = 10,
+        .sheen = 15,
         .requestedSpecies = SPECIES_NONE
     }
 };
