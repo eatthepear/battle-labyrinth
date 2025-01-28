@@ -1905,10 +1905,10 @@ static const struct LevelUpMove sMachampLevelUpLearnset[] = {
 
 #if P_FAMILY_BELLSPROUT
 static const struct LevelUpMove sBellsproutLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_VINE_WHIP),
-    LEVEL_UP_MOVE( 1, MOVE_WRAP),
     LEVEL_UP_MOVE( 1, MOVE_INGRAIN),
     LEVEL_UP_MOVE( 1, MOVE_GASTRO_ACID),
+    LEVEL_UP_MOVE( 1, MOVE_VINE_WHIP),
+    LEVEL_UP_MOVE( 1, MOVE_WRAP),
     LEVEL_UP_MOVE( 3, MOVE_ACID),
     LEVEL_UP_MOVE( 5, MOVE_TICKLE),
     LEVEL_UP_MOVE( 7, MOVE_STUN_SPORE),
@@ -1936,10 +1936,10 @@ static const struct LevelUpMove sBellsproutLevelUpLearnset[] = {
 
 
 static const struct LevelUpMove sWeepinbellLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_VINE_WHIP),
-    LEVEL_UP_MOVE( 1, MOVE_WRAP),
     LEVEL_UP_MOVE( 1, MOVE_INGRAIN),
     LEVEL_UP_MOVE( 1, MOVE_GASTRO_ACID),
+    LEVEL_UP_MOVE( 1, MOVE_VINE_WHIP),
+    LEVEL_UP_MOVE( 1, MOVE_WRAP),
     LEVEL_UP_MOVE( 3, MOVE_ACID),
     LEVEL_UP_MOVE( 5, MOVE_TICKLE),
     LEVEL_UP_MOVE( 7, MOVE_STUN_SPORE),
