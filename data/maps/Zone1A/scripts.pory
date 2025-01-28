@@ -48,7 +48,7 @@ script Zone1A_EventScript_GiveFWG {
 			setvar(VAR_TEMP_1, SPECIES_BULBASAUR) // gets randomized anyways
 		} else {
 			if (var(VAR_TEMP_4) == 0) {
-				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pansage, Hoppip, Sunkern, Smoliv, or Bounsweet.\pIs this ok?"), MSGBOX_YESNO)
+				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pansage, Hoppip, Bellsprout, Smoliv, or Bounsweet.\pIs this ok?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == NO) {
 					msgbox(Zone1A_Text_FWG_ComeBack)
 					release
@@ -63,7 +63,7 @@ script Zone1A_EventScript_GiveFWG {
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_SUNKERN)
+				checkspeciesclause(SPECIES_BELLSPROUT)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
@@ -97,11 +97,11 @@ script Zone1A_EventScript_GiveFWG {
 							}
 							setvar(VAR_TEMP_1, SPECIES_HOPPIP)
 						case 2:
-							checkspeciesclause(SPECIES_SUNKERN)
+							checkspeciesclause(SPECIES_BELLSPROUT)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
-							setvar(VAR_TEMP_1, SPECIES_SUNKERN)
+							setvar(VAR_TEMP_1, SPECIES_BELLSPROUT)
 						case 3:
 							checkspeciesclause(SPECIES_SMOLIV)
 							if (var(VAR_RESULT) == TRUE) {
@@ -117,7 +117,7 @@ script Zone1A_EventScript_GiveFWG {
 					}
 				}
 			} elif (var(VAR_TEMP_4) == 1) {
-				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pansear, Slugma, Salandit, Vulpix, or Sizzlipede.\pIs this ok?"), MSGBOX_YESNO)
+				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pansear, Numel, Salandit, Litleo, or Sizzlipede.\pIs this ok?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == NO) {
 					msgbox(Zone1A_Text_FWG_ComeBack)
 					release
@@ -128,7 +128,7 @@ script Zone1A_EventScript_GiveFWG {
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_SLUGMA)
+				checkspeciesclause(SPECIES_NUMEL)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
@@ -136,7 +136,7 @@ script Zone1A_EventScript_GiveFWG {
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_VULPIX)
+				checkspeciesclause(SPECIES_LITLEO)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
@@ -160,11 +160,11 @@ script Zone1A_EventScript_GiveFWG {
 							}
 							setvar(VAR_TEMP_1, SPECIES_PANSEAR)
 						case 1:
-							checkspeciesclause(SPECIES_SLUGMA)
+							checkspeciesclause(SPECIES_NUMEL)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
-							setvar(VAR_TEMP_1, SPECIES_SLUGMA)
+							setvar(VAR_TEMP_1, SPECIES_NUMEL)
 						case 2:
 							checkspeciesclause(SPECIES_SALANDIT)
 							if (var(VAR_RESULT) == TRUE) {
@@ -172,11 +172,11 @@ script Zone1A_EventScript_GiveFWG {
 							}
 							setvar(VAR_TEMP_1, SPECIES_SALANDIT)
 						case 3:
-							checkspeciesclause(SPECIES_VULPIX)
+							checkspeciesclause(SPECIES_LITLEO)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
-							setvar(VAR_TEMP_1, SPECIES_VULPIX)
+							setvar(VAR_TEMP_1, SPECIES_LITLEO)
 						case 4:
 							checkspeciesclause(SPECIES_SIZZLIPEDE)
 							if (var(VAR_RESULT) == TRUE) {
@@ -186,7 +186,7 @@ script Zone1A_EventScript_GiveFWG {
 					}
 				}
 			} elif (var(VAR_TEMP_4) == 2) {
-				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Panpour, Barboach, Finneon, Seel, or Goldeen.\pIs this ok?"), MSGBOX_YESNO)
+				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Panpour, Barboach, Clamperl, Seel, or Goldeen.\pIs this ok?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == NO) {
 					msgbox(Zone1A_Text_FWG_ComeBack)
 					release
@@ -201,7 +201,7 @@ script Zone1A_EventScript_GiveFWG {
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_FINNEON)
+				checkspeciesclause(SPECIES_CLAMPERL)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
@@ -235,11 +235,11 @@ script Zone1A_EventScript_GiveFWG {
 							}
 							setvar(VAR_TEMP_1, SPECIES_BARBOACH)
 						case 2:
-							checkspeciesclause(SPECIES_FINNEON)
+							checkspeciesclause(SPECIES_CLAMPERL)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
-							setvar(VAR_TEMP_1, SPECIES_FINNEON)
+							setvar(VAR_TEMP_1, SPECIES_CLAMPERL)
 						case 3:
 							checkspeciesclause(SPECIES_SEEL)
 							if (var(VAR_RESULT) == TRUE) {
@@ -259,14 +259,14 @@ script Zone1A_EventScript_GiveFWG {
 	} else {
 		message(format("Choose which Pokémon you would like."))
 		if (var(VAR_TEMP_4) == 0) {
-			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Pansage", "Hoppip", "Sunkern", "Smoliv", "Bounsweet", "Exit")
+			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Pansage", "Hoppip", "Bellsprout", "Smoliv", "Bounsweet", "Exit")
 			switch (var(VAR_RESULT)) {
 				case 0:
 					setvar(VAR_TEMP_1, SPECIES_PANSAGE)
 				case 1:
 					setvar(VAR_TEMP_1, SPECIES_HOPPIP)
 				case 2:
-					setvar(VAR_TEMP_1, SPECIES_SUNKERN)
+					setvar(VAR_TEMP_1, SPECIES_BELLSPROUT)
 				case 3:
 					setvar(VAR_TEMP_1, SPECIES_SMOLIV)
 				case 4:
@@ -278,16 +278,16 @@ script Zone1A_EventScript_GiveFWG {
 					end
 			}
 		} elif (var(VAR_TEMP_4) == 1) {
-			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Pansear", "Slugma", "Salandit", "Vulpix", "Sizzlipede", "Exit")
+			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Pansear", "Numel", "Salandit", "Litleo", "Sizzlipede", "Exit")
 			switch (var(VAR_RESULT)) {
 				case 0:
 					setvar(VAR_TEMP_1, SPECIES_PANSEAR)
 				case 1:
-					setvar(VAR_TEMP_1, SPECIES_SLUGMA)
+					setvar(VAR_TEMP_1, SPECIES_NUMEL)
 				case 2:
 					setvar(VAR_TEMP_1, SPECIES_SALANDIT)
 				case 3:
-					setvar(VAR_TEMP_1, SPECIES_VULPIX)
+					setvar(VAR_TEMP_1, SPECIES_LITLEO)
 				case 4:
 					setvar(VAR_TEMP_1, SPECIES_SIZZLIPEDE)
 				case 5:
@@ -297,14 +297,14 @@ script Zone1A_EventScript_GiveFWG {
 					end
 			}
 		} elif (var(VAR_TEMP_4) == 2) {
-			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Panpour", "Barboach", "Finneon", "Seel", "Goldeen", "Exit")
+			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Panpour", "Barboach", "Clamperl", "Seel", "Goldeen", "Exit")
 			switch (var(VAR_RESULT)) {
 				case 0:
 					setvar(VAR_TEMP_1, SPECIES_PANPOUR)
 				case 1:
 					setvar(VAR_TEMP_1, SPECIES_BARBOACH)
 				case 2:
-					setvar(VAR_TEMP_1, SPECIES_FINNEON)
+					setvar(VAR_TEMP_1, SPECIES_CLAMPERL)
 				case 3:
 					setvar(VAR_TEMP_1, SPECIES_SEEL)
 				case 4:
