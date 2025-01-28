@@ -1048,21 +1048,21 @@ static const struct InGameTrade sIngameTrades[] =
         .sheen = 10,
         .requestedSpecies = SPECIES_SKITTY
     },
-    [INGAME_TRADE_ROCKRUFF] =
+    [INGAME_TRADE_ZIGZAGOON] =
     {
-        .nickname = _("Charlie"),
-        .species = SPECIES_ROCKRUFF_OWN_TEMPO,
-        .ivs = {9, 26, 31, 13, 6, 11},
-        .abilityNum = 1,
-        .otId = 38726,
+        .nickname = _("Zaggers"),
+        .species = SPECIES_ZIGZAGOON_GALAR,
+        .ivs = {0, 0, 0, 0, 0, 0},
+        .abilityNum = 0,
+        .otId = 73996,
         .conditions = {5, 5, 5, 30, 5},
         .personality = 0x8B,
-        .heldItem = ITEM_BIG_MALASADA,
-        .mailNum = -1,
-        .otName = _("Travis"),
+        .heldItem = ITEM_NONE,
+        .mailNum = 1,
+        .otName = _("Calvin"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_PATRAT
+        .requestedSpecies = SPECIES_ZIGZAGOON
     },
     [INGAME_TRADE_DELIBIRD] =
     {
