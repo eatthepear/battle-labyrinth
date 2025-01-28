@@ -309,7 +309,7 @@ Zone1A_EventScript_GiveFWG_78:
 	goto_if_eq Zone1A_EventScript_GiveFWG_88
 Zone1A_EventScript_GiveFWG_87:
 # 66 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SUNKERN
+	checkspeciesclause SPECIES_BELLSPROUT
 # 67 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone1A_EventScript_GiveFWG_97
@@ -352,7 +352,7 @@ Zone1A_EventScript_GiveFWG_38:
 	goto_if_eq Zone1A_EventScript_GiveFWG_82
 Zone1A_EventScript_GiveFWG_81:
 # 131 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SLUGMA
+	checkspeciesclause SPECIES_NUMEL
 # 132 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone1A_EventScript_GiveFWG_91
@@ -364,7 +364,7 @@ Zone1A_EventScript_GiveFWG_90:
 	goto_if_eq Zone1A_EventScript_GiveFWG_100
 Zone1A_EventScript_GiveFWG_99:
 # 139 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_VULPIX
+	checkspeciesclause SPECIES_LITLEO
 # 140 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone1A_EventScript_GiveFWG_109
@@ -407,7 +407,7 @@ Zone1A_EventScript_GiveFWG_84:
 	goto_if_eq Zone1A_EventScript_GiveFWG_94
 Zone1A_EventScript_GiveFWG_93:
 # 204 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_FINNEON
+	checkspeciesclause SPECIES_CLAMPERL
 # 205 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone1A_EventScript_GiveFWG_103
@@ -454,7 +454,7 @@ Zone1A_EventScript_GiveFWG_47:
 
 Zone1A_EventScript_GiveFWG_48:
 # 269 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SUNKERN
+	setvar VAR_TEMP_1, SPECIES_BELLSPROUT
 	goto Zone1A_EventScript_GiveFWG_24
 
 Zone1A_EventScript_GiveFWG_49:
@@ -481,7 +481,7 @@ Zone1A_EventScript_GiveFWG_53:
 
 Zone1A_EventScript_GiveFWG_54:
 # 286 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SLUGMA
+	setvar VAR_TEMP_1, SPECIES_NUMEL
 	goto Zone1A_EventScript_GiveFWG_24
 
 Zone1A_EventScript_GiveFWG_55:
@@ -491,7 +491,7 @@ Zone1A_EventScript_GiveFWG_55:
 
 Zone1A_EventScript_GiveFWG_56:
 # 290 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_VULPIX
+	setvar VAR_TEMP_1, SPECIES_LITLEO
 	goto Zone1A_EventScript_GiveFWG_24
 
 Zone1A_EventScript_GiveFWG_57:
@@ -518,7 +518,7 @@ Zone1A_EventScript_GiveFWG_61:
 
 Zone1A_EventScript_GiveFWG_62:
 # 307 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_FINNEON
+	setvar VAR_TEMP_1, SPECIES_CLAMPERL
 	goto Zone1A_EventScript_GiveFWG_24
 
 Zone1A_EventScript_GiveFWG_63:
@@ -735,12 +735,12 @@ Zone1A_EventScript_GiveFWG_143:
 
 Zone1A_EventScript_GiveFWG_144:
 # 100 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SUNKERN
+	checkspeciesclause SPECIES_BELLSPROUT
 # 101 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone1A_EventScript_GiveFWG_166
 # 104 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SUNKERN
+	setvar VAR_TEMP_1, SPECIES_BELLSPROUT
 	goto Zone1A_EventScript_GiveFWG_132
 
 Zone1A_EventScript_GiveFWG_145:
@@ -775,12 +775,12 @@ Zone1A_EventScript_GiveFWG_148:
 
 Zone1A_EventScript_GiveFWG_149:
 # 163 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_SLUGMA
+	checkspeciesclause SPECIES_NUMEL
 # 164 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone1A_EventScript_GiveFWG_178
 # 167 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SLUGMA
+	setvar VAR_TEMP_1, SPECIES_NUMEL
 	goto Zone1A_EventScript_GiveFWG_135
 
 Zone1A_EventScript_GiveFWG_150:
@@ -795,12 +795,12 @@ Zone1A_EventScript_GiveFWG_150:
 
 Zone1A_EventScript_GiveFWG_151:
 # 175 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_VULPIX
+	checkspeciesclause SPECIES_LITLEO
 # 176 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone1A_EventScript_GiveFWG_184
 # 179 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_VULPIX
+	setvar VAR_TEMP_1, SPECIES_LITLEO
 	goto Zone1A_EventScript_GiveFWG_135
 
 Zone1A_EventScript_GiveFWG_152:
@@ -835,12 +835,12 @@ Zone1A_EventScript_GiveFWG_155:
 
 Zone1A_EventScript_GiveFWG_156:
 # 238 "data/maps/Zone1A/scripts.pory"
-	checkspeciesclause SPECIES_FINNEON
+	checkspeciesclause SPECIES_CLAMPERL
 # 239 "data/maps/Zone1A/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone1A_EventScript_GiveFWG_196
 # 242 "data/maps/Zone1A/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_FINNEON
+	setvar VAR_TEMP_1, SPECIES_CLAMPERL
 	goto Zone1A_EventScript_GiveFWG_138
 
 Zone1A_EventScript_GiveFWG_157:
@@ -1384,7 +1384,7 @@ Zone1A_EventScript_GiveFWG_Text_9:
 # 51 "data/maps/Zone1A/scripts.pory"
 	.string "On Nuzlocke mode, you will randomly\n"
 	.string "receive one of the possible Pokémon:\l"
-	.string "Pansage, Hoppip, Sunkern, Smoliv, or\l"
+	.string "Pansage, Hoppip, Bellsprout, Smoliv, or\l"
 	.string "Bounsweet.\p"
 	.string "Is this ok?$"
 
@@ -1398,7 +1398,7 @@ Zone1A_EventScript_GiveFWG_Text_11:
 # 120 "data/maps/Zone1A/scripts.pory"
 	.string "On Nuzlocke mode, you will randomly\n"
 	.string "receive one of the possible Pokémon:\l"
-	.string "Pansear, Slugma, Salandit, Vulpix, or\l"
+	.string "Pansear, Numel, Salandit, Litleo, or\l"
 	.string "Sizzlipede.\p"
 	.string "Is this ok?$"
 
@@ -1406,7 +1406,7 @@ Zone1A_EventScript_GiveFWG_Text_12:
 # 189 "data/maps/Zone1A/scripts.pory"
 	.string "On Nuzlocke mode, you will randomly\n"
 	.string "receive one of the possible Pokémon:\l"
-	.string "Panpour, Barboach, Finneon, Seel, or\l"
+	.string "Panpour, Barboach, Clamperl, Seel, or\l"
 	.string "Goldeen.\p"
 	.string "Is this ok?$"
 
@@ -1424,7 +1424,7 @@ Zone1A_EventScript_GiveFWG_Text_15:
 
 Zone1A_EventScript_GiveFWG_Text_16:
 # 262 "data/maps/Zone1A/scripts.pory"
-	.string "Sunkern$"
+	.string "Bellsprout$"
 
 Zone1A_EventScript_GiveFWG_Text_17:
 # 262 "data/maps/Zone1A/scripts.pory"
@@ -1440,7 +1440,7 @@ Zone1A_EventScript_GiveFWG_Text_19:
 
 Zone1A_EventScript_GiveFWG_Text_20:
 # 281 "data/maps/Zone1A/scripts.pory"
-	.string "Slugma$"
+	.string "Numel$"
 
 Zone1A_EventScript_GiveFWG_Text_21:
 # 281 "data/maps/Zone1A/scripts.pory"
@@ -1448,7 +1448,7 @@ Zone1A_EventScript_GiveFWG_Text_21:
 
 Zone1A_EventScript_GiveFWG_Text_22:
 # 281 "data/maps/Zone1A/scripts.pory"
-	.string "Vulpix$"
+	.string "Litleo$"
 
 Zone1A_EventScript_GiveFWG_Text_23:
 # 281 "data/maps/Zone1A/scripts.pory"
@@ -1464,7 +1464,7 @@ Zone1A_EventScript_GiveFWG_Text_25:
 
 Zone1A_EventScript_GiveFWG_Text_26:
 # 300 "data/maps/Zone1A/scripts.pory"
-	.string "Finneon$"
+	.string "Clamperl$"
 
 Zone1A_EventScript_GiveFWG_Text_27:
 # 300 "data/maps/Zone1A/scripts.pory"

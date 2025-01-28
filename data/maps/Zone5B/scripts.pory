@@ -133,6 +133,10 @@ script Zone5B_EventScript_BuyPikaClone {
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
+			checkspeciesclause(SPECIES_EMOLGA)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
 			checkspeciesclause(SPECIES_PLUSLE)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
@@ -141,33 +145,13 @@ script Zone5B_EventScript_BuyPikaClone {
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
-			checkspeciesclause(SPECIES_CATERPIE)
-			if (var(VAR_RESULT) == TRUE) {
-				addvar(VAR_TEMP_3, 1)
-			}
-			checkspeciesclause(SPECIES_WEEDLE)
-			if (var(VAR_RESULT) == TRUE) {
-				addvar(VAR_TEMP_3, 1)
-			}
-			checkspeciesclause(SPECIES_TAROUNTULA)
-			if (var(VAR_RESULT) == TRUE) {
-				addvar(VAR_TEMP_3, 1)
-			}
-			checkspeciesclause(SPECIES_KRICKETOT)
-			if (var(VAR_RESULT) == TRUE) {
-				addvar(VAR_TEMP_3, 1)
-			}
-			checkspeciesclause(SPECIES_PARAS)
-			if (var(VAR_RESULT) == TRUE) {
-				addvar(VAR_TEMP_3, 1)
-			}
-			if (var(VAR_TEMP_3) == 10) {
+			if (var(VAR_TEMP_3) == 6) {
 				msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
 				hidemoneybox
 				release
 				end
 			}
-			msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pachirisu, Dedenne, Morpeko, Plusle, or Minun.\pIs this ok?"), MSGBOX_YESNO)
+			msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pachirisu, Dedenne, Morpeko, Emolga, Plusle, or Minun.\pIs this ok?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == NO) {
 				hidemoneybox
 				msgbox(format("Alrighty, well, you just come on back if you change your mind."))
@@ -176,7 +160,7 @@ script Zone5B_EventScript_BuyPikaClone {
 			}
 			setvar(VAR_TEMP_1, 0)
 			while (var(VAR_TEMP_1) == 0) {
-				random(5)
+				random(6)
 				switch (var(VAR_RESULT)) {
 					case 0:
 						checkspeciesclause(SPECIES_PACHIRISU)
@@ -197,12 +181,18 @@ script Zone5B_EventScript_BuyPikaClone {
 						}
 						setvar(VAR_TEMP_1, SPECIES_MORPEKO)
 					case 3:
+						checkspeciesclause(SPECIES_EMOLGA)
+						if (var(VAR_RESULT) == TRUE) {
+							continue
+						}
+						setvar(VAR_TEMP_1, SPECIES_EMOLGA)
+					case 4:
 						checkspeciesclause(SPECIES_PLUSLE)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_PLUSLE)
-					case 4:
+					case 5:
 						checkspeciesclause(SPECIES_MINUN)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
@@ -215,7 +205,7 @@ script Zone5B_EventScript_BuyPikaClone {
 		}
 	} else {
 		message(format("Choose which Electric-type you would like."))
-		dynmultichoice(400, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Pachirisu", "Dedenne", "Morpeko", "Plusle", "Minun")
+		dynmultichoice(400, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Pachirisu", "Dedenne", "Morpeko", "Emolga", "Plusle", "Minun")
 		switch (var(VAR_RESULT)) {
 			case 0:
 				setvar(VAR_TEMP_1, SPECIES_PACHIRISU)
@@ -224,8 +214,10 @@ script Zone5B_EventScript_BuyPikaClone {
 			case 2:
 				setvar(VAR_TEMP_1, SPECIES_MORPEKO)
 			case 3:
-				setvar(VAR_TEMP_1, SPECIES_PLUSLE)
+				setvar(VAR_TEMP_1, SPECIES_EMOLGA)
 			case 4:
+				setvar(VAR_TEMP_1, SPECIES_PLUSLE)
+			case 5:
 				setvar(VAR_TEMP_1, SPECIES_MINUN)
 			case MULTI_B_PRESSED:
 				closemessage
