@@ -3223,6 +3223,13 @@ script Zone9A_EventScript_HerbalSign {
 }
 
 script Debug_CheatStart_PBL {
+	setflag(FLAG_PORTENTIA_INTRO)
+	setflag(FLAG_TIM_INTRO)
+	setflag(FLAG_VARRICK_INTRO)
+	setflag(FLAG_JULIA_INTRO)
+	setflag(FLAG_LELOUCH_INTRO)
+	setflag(FLAG_MARIE_INTRO)
+	setflag(FLAG_JOY_INTRO)
 	// music
 	random(5)
 	switch (var(VAR_RESULT)) {
@@ -3286,6 +3293,7 @@ script Debug_CheatStart_PBL {
 	completesubquest(QUEST_SIGNS, SUB_QUEST_7)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_8)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_9)
+	setflag(FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES)
 	// zone 0
 	setvar(VAR_TEMP_0, 0) // wild define gWildMonHeaders in src/data/wild_encounters.h
 	msgbox(format("Zone 0 grass?"), MSGBOX_YESNO)
@@ -3370,6 +3378,10 @@ script Debug_CheatStart_PBL {
 	completesubquest(QUEST_SIGNS, SUB_QUEST_10)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_11)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_12)
+	settrainerflag(TRAINER_PBL_NINA)
+	settrainerflag(TRAINER_PBL_MARIAM)
+	settrainerflag(TRAINER_PBL_OSCAR)
+	setflag(FLAG_BEAT_LEVIATHAN_1)
 	// zone 2
 	message(format("Zone 2 options"))
 	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass A", "Tunnel", "Grass B")
@@ -3431,6 +3443,12 @@ script Debug_CheatStart_PBL {
 	completesubquest(QUEST_SIGNS, SUB_QUEST_15)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_16)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_17)
+	settrainerflag(TRAINER_PBL_POLLY)
+	settrainerflag(TRAINER_PBL_JEREMIAH)
+	settrainerflag(TRAINER_PBL_JOSH)
+	settrainerflag(TRAINER_PBL_HARPER)
+	settrainerflag(TRAINER_PBL_ARTHUR)
+	setflag(FLAG_BEAT_LEVIATHAN_2)
 	// zone 3
 	message(format("Zone 3 options"))
 	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
@@ -3452,6 +3470,12 @@ script Debug_CheatStart_PBL {
 	// zone 3 items
 	additem(ITEM_GOOD_ROD)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_18)
+	settrainerflag(TRAINER_PBL_JEMMA)
+	settrainerflag(TRAINER_PBL_PATRICK)
+	settrainerflag(TRAINER_PBL_ANNABELLE)
+	settrainerflag(TRAINER_PBL_BORIS)
+	settrainerflag(TRAINER_PBL_RICHARD)
+	setflag(FLAG_BEAT_LEVIATHAN_3)
 	// zone 4
 	message(format("Zone 4 options"))
 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "A", "B", "C", "D", "E")
@@ -3511,6 +3535,14 @@ script Debug_CheatStart_PBL {
 	completesubquest(QUEST_SIGNS, SUB_QUEST_21)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_22)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_23)
+	settrainerflag(TRAINER_PBL_HERMAN)
+	settrainerflag(TRAINER_PBL_RALPH)
+	settrainerflag(TRAINER_PBL_CALLIE)
+	settrainerflag(TRAINER_PBL_SANTIAGO)
+	settrainerflag(TRAINER_PBL_CHLOE_AND_KAYA)
+	settrainerflag(TRAINER_PBL_FRED)
+	settrainerflag(TRAINER_PBL_LUCIA)
+	setflag(FLAG_BEAT_LEVIATHAN_4)
 	// zone 5
 	message(format("Zone 5 options"))
 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Forest", "Grassland")
@@ -3556,6 +3588,15 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_GRASS_GEM)
 	additem(ITEM_EVIOLITE)
 	additem(ITEM_RED_SHARD, 5)
+	settrainerflag(TRAINER_PBL_ANNE_AND_JUNE)
+	settrainerflag(TRAINER_PBL_NOVA_AND_CORA)
+	settrainerflag(TRAINER_PBL_CLINTON)
+	settrainerflag(TRAINER_PBL_REBECCA)
+	settrainerflag(TRAINER_PBL_RYAN)
+	settrainerflag(TRAINER_PBL_CAITLYN)
+	settrainerflag(TRAINER_PBL_KENNETH)
+	settrainerflag(TRAINER_PBL_KEVIN)
+	setflag(FLAG_BEAT_LEVIATHAN_5)
 	// zone 6
 	message(format("Zone 6 options"))
 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
@@ -3584,6 +3625,15 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_SLEDGEHAMMER)
 	additem(ITEM_SUPER_POTION, 2)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_24)
+	settrainerflag(TRAINER_PBL_GILBERT)
+	settrainerflag(TRAINER_PBL_MELANIE)
+	settrainerflag(TRAINER_PBL_CONSTANCE)
+	settrainerflag(TRAINER_PBL_FRANK)
+	settrainerflag(TRAINER_PBL_DUDLEY)
+	settrainerflag(TRAINER_PBL_DAISY)
+	settrainerflag(TRAINER_PBL_VIC_AND_DELL)
+	settrainerflag(TRAINER_PBL_MINA)
+	setflag(FLAG_BEAT_LEVIATHAN_6)
 	// zone 7
 	message(format("Zone 7 options"))
 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Tree")
@@ -3638,6 +3688,22 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_TM_HIDDEN_POWER)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_25)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_26)
+	settrainerflag(TRAINER_PBL_MILLIE)
+	settrainerflag(TRAINER_PBL_JAMAL)
+	settrainerflag(TRAINER_PBL_PAIGE)
+	settrainerflag(TRAINER_PBL_SETH)
+	settrainerflag(TRAINER_PBL_CONNIE)
+	settrainerflag(TRAINER_PBL_PETER)
+	settrainerflag(TRAINER_PBL_WHITAKER)
+	settrainerflag(TRAINER_PBL_JIMMY)
+	settrainerflag(TRAINER_PBL_EMILIANO)
+	settrainerflag(TRAINER_PBL_BECKHAM)
+	settrainerflag(TRAINER_PBL_KAREN)
+	settrainerflag(TRAINER_PBL_JAYDEN)
+	settrainerflag(TRAINER_PBL_NEIL)
+	settrainerflag(TRAINER_PBL_TAMARA)
+	setflag(FLAG_BEAT_LEVIATHAN_7)
+	setflag(FLAG_BEAT_LEVIATHAN_8)
 	// zone 9
 	message(format("Zone 9 options"))
 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
@@ -3659,20 +3725,76 @@ script Debug_CheatStart_PBL {
 	// zone 9 items
 	additem(ITEM_BIG_ROOT)
 	additem(ITEM_TM_PLUCK)
+	additem(ITEM_POISON_GEM)
+	additem(ITEM_STEEL_GEM)
+	additem(ITEM_DARK_GEM)
 	additem(ITEM_MYSTIC_WATER)
 	additem(ITEM_CHARCOAL)
 	additem(ITEM_TM_RETALIATE)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_27)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_28)
-	// zone 9 squawkabilly
-	setvar(VAR_TEMP_0, SPECIES_SQUAWKABILLY)
-	setvar(VAR_TEMP_1, 20) // level
-	call(Debug_CheatStart_PBL_GiveMon)
-	setflag(FLAG_ZONE9E_RECEIVED_SQUAWKABILLY)
+	settrainerflag(TRAINER_PBL_COOPER)
+	settrainerflag(TRAINER_PBL_CARMINE)
+	settrainerflag(TRAINER_PBL_JONATHAN)
+	settrainerflag(TRAINER_PBL_CALVIN)
+	settrainerflag(TRAINER_PBL_LUIS)
+	settrainerflag(TRAINER_PBL_ARI)
+	settrainerflag(TRAINER_PBL_ARI_CHALLENGE)
+	settrainerflag(TRAINER_PBL_BERTHA)
+	settrainerflag(TRAINER_PBL_BERTHA_CHALLENGE)
+	settrainerflag(TRAINER_PBL_CASSANDRA)
+	settrainerflag(TRAINER_PBL_CASSANDRA_CHALLENGE)
+	settrainerflag(TRAINER_PBL_DOMINIC)
+	settrainerflag(TRAINER_PBL_DOMINIC_CHALLENGE)
+	settrainerflag(TRAINER_PBL_ERICA)
+	settrainerflag(TRAINER_PBL_ERICA_CHALLENGE)
+	// zone 10
+	message(format("Zone 10 options"))
+	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Sand", "Ruin")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, 19) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 1:
+			setvar(VAR_TEMP_0, 20) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case MULTI_B_PRESSED:
+			closemessage
+			setvar(VAR_ZONE, 11)
+			setvar(VAR_LEVEL_CAP, 23)
+			end
+	}
+	setvar(VAR_TEMP_1, 19) // level
+	call(Debug_CheatStart_PBL_GenerateMon)
+	completesubquest(QUEST_PBL, SUB_QUEST_10)
+	// zone 10 items
+	additem(ITEM_TM_SCORCHING_SANDS)
+	additem(ITEM_FIRE_GEM)
+	additem(ITEM_ELECTRIC_GEM)
+	additem(ITEM_GROUND_GEM)
+	additem(ITEM_SOFT_SAND)
+	additem(ITEM_BLACK_GLASSES)
+	additem(ITEM_HEAVY_DUTY_BOOTS)
+	additem(ITEM_SAFETY_GOGGLES)
+	additem(ITEM_TM_BULLDOZE)
+	additem(ITEM_TERA_ORB)
+	additem(ITEM_BLUE_SHARD, 5)
+	additem(ITEM_TM_STEEL_WING)
+	settrainerflag(TRAINER_PBL_ALANA)
+	settrainerflag(TRAINER_PBL_JACOB)
+	settrainerflag(TRAINER_PBL_DEWEY)
+	settrainerflag(TRAINER_PBL_ERNEST)
+	settrainerflag(TRAINER_PBL_KYLE)
+	settrainerflag(TRAINER_PBL_ELIAS)
+	settrainerflag(TRAINER_PBL_PEARLIE)
+	settrainerflag(TRAINER_PBL_SUSAN)
+	settrainerflag(TRAINER_PBL_CONRAD)
+	settrainerflag(TRAINER_PBL_BRETT)
+	setflag(FLAG_BEAT_LEVIATHAN_10)
+	setflag(FLAG_ZONE10B_RECEIVED_TM_STEEL_WING)
 	// end
-	setvar(VAR_ZONE, 10)
-	setvar(VAR_LEVEL_CAP, 21)
-	closemessage
+	setvar(VAR_ZONE, 11)
+	setvar(VAR_LEVEL_CAP, 23)
+	release
+	end
 }
 
 script Debug_CheatStart_PBL_GenerateMon {
