@@ -20,7 +20,7 @@ Zone5B_MapScripts_MAP_SCRIPT_ON_RESUME_5:
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST
 Zone5B_MapScripts_MAP_SCRIPT_ON_RESUME_9:
 # 18 "data/maps/Zone5B/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE5B_GENTLE_MINT, Zone5B_MapScripts_MAP_SCRIPT_ON_RESUME_13
+	goto_if_set FLAG_ITEM_ZONE5B_RANDOM_3, Zone5B_MapScripts_MAP_SCRIPT_ON_RESUME_13
 # 21 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST
 	return
@@ -924,11 +924,11 @@ Zone5B_EventScript_Gems_2:
 	end
 
 
-Zone5B_EventScript_GentleMint::
+Zone5B_EventScript_Random3::
 # 436 "data/maps/Zone5B/scripts.pory"
 	lock
 # 437 "data/maps/Zone5B/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE5B_GENTLE_MINT, Zone5B_EventScript_GentleMint_2
+	goto_if_set FLAG_ITEM_ZONE5B_RANDOM_3, Zone5B_EventScript_Random3_2
 # 442 "data/maps/Zone5B/scripts.pory"
 	waitse
 # 443 "data/maps/Zone5B/scripts.pory"
@@ -936,16 +936,18 @@ Zone5B_EventScript_GentleMint::
 # 444 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 445 "data/maps/Zone5B/scripts.pory"
-	setflag FLAG_ITEM_ZONE5B_GENTLE_MINT
+	setflag FLAG_ITEM_ZONE5B_RANDOM_3
 # 446 "data/maps/Zone5B/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 447 "data/maps/Zone5B/scripts.pory"
-	finditem ITEM_GENTLE_MINT
+	specialvar VAR_TEMP_1, RandomItemChest
 # 448 "data/maps/Zone5B/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 449 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
-Zone5B_EventScript_GentleMint_2:
+Zone5B_EventScript_Random3_2:
 # 438 "data/maps/Zone5B/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 439 "data/maps/Zone5B/scripts.pory"
@@ -953,137 +955,137 @@ Zone5B_EventScript_GentleMint_2:
 	end
 
 
-# 452 "data/maps/Zone5B/scripts.pory"
-
 # 453 "data/maps/Zone5B/scripts.pory"
-Zone5B_EventScript_NovaandCora::
+
 # 454 "data/maps/Zone5B/scripts.pory"
-	trainerbattle_double TRAINER_PBL_NOVA_AND_CORA, Zone5B_Text_NovaandCoraIntro, Zone5B_Text_NovaandCoraDefeat, gText_NotEnoughMons
+Zone5B_EventScript_NovaandCora::
 # 455 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_Text_NovaandCoraPostBattle, MSGBOX_DEFAULT
+	trainerbattle_double TRAINER_PBL_NOVA_AND_CORA, Zone5B_Text_NovaandCoraIntro, Zone5B_Text_NovaandCoraDefeat, gText_NotEnoughMons
 # 456 "data/maps/Zone5B/scripts.pory"
-	release
+	msgbox Zone5B_Text_NovaandCoraPostBattle, MSGBOX_DEFAULT
 # 457 "data/maps/Zone5B/scripts.pory"
-	end
+	release
 # 458 "data/maps/Zone5B/scripts.pory"
-
+	end
 # 459 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_NovaandCoraIntro:
+
 # 460 "data/maps/Zone5B/scripts.pory"
-	.string "Nova: This grass is so tall!\p"
+Zone5B_Text_NovaandCoraIntro:
 # 461 "data/maps/Zone5B/scripts.pory"
-	.string "Cora: It's going up my nose!$"
+	.string "Nova: This grass is so tall!\p"
 # 462 "data/maps/Zone5B/scripts.pory"
-
+	.string "Cora: It's going up my nose!$"
 # 463 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_NovaandCoraDefeat:
+
 # 464 "data/maps/Zone5B/scripts.pory"
-	.string "Nova: Achoo!\p"
+Zone5B_Text_NovaandCoraDefeat:
 # 465 "data/maps/Zone5B/scripts.pory"
-	.string "Cora: Achoo!$"
+	.string "Nova: Achoo!\p"
 # 466 "data/maps/Zone5B/scripts.pory"
-
+	.string "Cora: Achoo!$"
 # 467 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_NovaandCoraPostBattle:
+
 # 468 "data/maps/Zone5B/scripts.pory"
-	.string "Nova: Being twins means-\p"
+Zone5B_Text_NovaandCoraPostBattle:
 # 469 "data/maps/Zone5B/scripts.pory"
-	.string "Cora: Sharing allergies!$"
+	.string "Nova: Being twins means-\p"
 # 470 "data/maps/Zone5B/scripts.pory"
-
+	.string "Cora: Sharing allergies!$"
 # 471 "data/maps/Zone5B/scripts.pory"
-Zone5B_EventScript_Clinton::
+
 # 472 "data/maps/Zone5B/scripts.pory"
-	trainerbattle_single TRAINER_PBL_CLINTON, Zone5B_Text_ClintonIntro, Zone5B_Text_ClintonDefeat
+Zone5B_EventScript_Clinton::
 # 473 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_Text_ClintonPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_PBL_CLINTON, Zone5B_Text_ClintonIntro, Zone5B_Text_ClintonDefeat
 # 474 "data/maps/Zone5B/scripts.pory"
-	end
+	msgbox Zone5B_Text_ClintonPostBattle, MSGBOX_AUTOCLOSE
 # 475 "data/maps/Zone5B/scripts.pory"
-
+	end
 # 476 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_ClintonIntro:
+
 # 477 "data/maps/Zone5B/scripts.pory"
-	.string "I've had my Pokémon specially\n"
+Zone5B_Text_ClintonIntro:
 # 478 "data/maps/Zone5B/scripts.pory"
-	.string "imported from rare habitats!$"
+	.string "I've had my Pokémon specially\n"
 # 479 "data/maps/Zone5B/scripts.pory"
-
+	.string "imported from rare habitats!$"
 # 480 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_ClintonDefeat:
+
 # 481 "data/maps/Zone5B/scripts.pory"
-	.string "Um… I thought they were\n"
+Zone5B_Text_ClintonDefeat:
 # 482 "data/maps/Zone5B/scripts.pory"
-	.string "supposed to be strong!$"
+	.string "Um… I thought they were\n"
 # 483 "data/maps/Zone5B/scripts.pory"
-
+	.string "supposed to be strong!$"
 # 484 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_ClintonPostBattle:
+
 # 485 "data/maps/Zone5B/scripts.pory"
-	.string "I suppose just because a\n"
+Zone5B_Text_ClintonPostBattle:
 # 486 "data/maps/Zone5B/scripts.pory"
-	.string "Pokémon is rare, doesn't\l"
+	.string "I suppose just because a\n"
 # 487 "data/maps/Zone5B/scripts.pory"
-	.string "mean it's strong!$"
+	.string "Pokémon is rare, doesn't\l"
 # 488 "data/maps/Zone5B/scripts.pory"
-
+	.string "mean it's strong!$"
 # 489 "data/maps/Zone5B/scripts.pory"
-Zone5B_EventScript_Ryan::
+
 # 490 "data/maps/Zone5B/scripts.pory"
-	trainerbattle_single TRAINER_PBL_RYAN, Zone5B_Text_RyanIntro, Zone5B_Text_RyanDefeat
+Zone5B_EventScript_Ryan::
 # 491 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_Text_RyanPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_PBL_RYAN, Zone5B_Text_RyanIntro, Zone5B_Text_RyanDefeat
 # 492 "data/maps/Zone5B/scripts.pory"
-	end
+	msgbox Zone5B_Text_RyanPostBattle, MSGBOX_AUTOCLOSE
 # 493 "data/maps/Zone5B/scripts.pory"
-
-# 494 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_RyanIntro:
-# 495 "data/maps/Zone5B/scripts.pory"
-	.string "Where am I?\n"
-# 496 "data/maps/Zone5B/scripts.pory"
-	.string "Ah! A wild Pokémon!$"
-# 497 "data/maps/Zone5B/scripts.pory"
-
-# 498 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_RyanDefeat:
-# 499 "data/maps/Zone5B/scripts.pory"
-	.string "Sorry! I thought you were a\n"
-# 500 "data/maps/Zone5B/scripts.pory"
-	.string "Pokémon!$"
-# 501 "data/maps/Zone5B/scripts.pory"
-
-# 502 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_RyanPostBattle:
-# 503 "data/maps/Zone5B/scripts.pory"
-	.string "This grass is just too tall to see!$"
-# 504 "data/maps/Zone5B/scripts.pory"
-
-# 505 "data/maps/Zone5B/scripts.pory"
-Zone5B_EventScript_Kenneth::
-# 506 "data/maps/Zone5B/scripts.pory"
-	trainerbattle_single TRAINER_PBL_KENNETH, Zone5B_Text_KennethIntro, Zone5B_Text_KennethDefeat
-# 507 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_Text_KennethPostBattle, MSGBOX_AUTOCLOSE
-# 508 "data/maps/Zone5B/scripts.pory"
 	end
+# 494 "data/maps/Zone5B/scripts.pory"
+
+# 495 "data/maps/Zone5B/scripts.pory"
+Zone5B_Text_RyanIntro:
+# 496 "data/maps/Zone5B/scripts.pory"
+	.string "Where am I?\n"
+# 497 "data/maps/Zone5B/scripts.pory"
+	.string "Ah! A wild Pokémon!$"
+# 498 "data/maps/Zone5B/scripts.pory"
+
+# 499 "data/maps/Zone5B/scripts.pory"
+Zone5B_Text_RyanDefeat:
+# 500 "data/maps/Zone5B/scripts.pory"
+	.string "Sorry! I thought you were a\n"
+# 501 "data/maps/Zone5B/scripts.pory"
+	.string "Pokémon!$"
+# 502 "data/maps/Zone5B/scripts.pory"
+
+# 503 "data/maps/Zone5B/scripts.pory"
+Zone5B_Text_RyanPostBattle:
+# 504 "data/maps/Zone5B/scripts.pory"
+	.string "This grass is just too tall to see!$"
+# 505 "data/maps/Zone5B/scripts.pory"
+
+# 506 "data/maps/Zone5B/scripts.pory"
+Zone5B_EventScript_Kenneth::
+# 507 "data/maps/Zone5B/scripts.pory"
+	trainerbattle_single TRAINER_PBL_KENNETH, Zone5B_Text_KennethIntro, Zone5B_Text_KennethDefeat
+# 508 "data/maps/Zone5B/scripts.pory"
+	msgbox Zone5B_Text_KennethPostBattle, MSGBOX_AUTOCLOSE
 # 509 "data/maps/Zone5B/scripts.pory"
-
+	end
 # 510 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_KennethIntro:
+
 # 511 "data/maps/Zone5B/scripts.pory"
-	.string "I'm running back and forth! Huzzah!$"
+Zone5B_Text_KennethIntro:
 # 512 "data/maps/Zone5B/scripts.pory"
-
+	.string "I'm running back and forth! Huzzah!$"
 # 513 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_KennethDefeat:
-# 514 "data/maps/Zone5B/scripts.pory"
-	.string "Whew! I'm all out of steam!$"
-# 515 "data/maps/Zone5B/scripts.pory"
 
+# 514 "data/maps/Zone5B/scripts.pory"
+Zone5B_Text_KennethDefeat:
+# 515 "data/maps/Zone5B/scripts.pory"
+	.string "Whew! I'm all out of steam!$"
 # 516 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_KennethPostBattle:
+
 # 517 "data/maps/Zone5B/scripts.pory"
+Zone5B_Text_KennethPostBattle:
+# 518 "data/maps/Zone5B/scripts.pory"
 	.string "I gotta keep running!$"
 
 Zone5B_EventScript_LeviathanBattle_Text_0:

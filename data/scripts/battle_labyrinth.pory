@@ -3552,13 +3552,12 @@ script Debug_CheatStart_PBL {
 	setflag(FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE)
 	completesubquest(QUEST_PBL, SUB_QUEST_5)
 	// zone 5 items
-	additem(ITEM_LAX_MINT)
+	additem(ITEM_METRONOME)
 	additem(ITEM_QUICK_BALL)
 	additem(ITEM_MIRACLE_SEED)
 	additem(ITEM_NORMAL_GEM)
 	additem(ITEM_BUG_GEM)
 	additem(ITEM_GRASS_GEM)
-	additem(ITEM_GENTLE_MINT)
 	additem(ITEM_EVIOLITE)
 	additem(ITEM_RED_SHARD, 5)
 	// zone 6
@@ -3587,7 +3586,7 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_FLYING_GEM)
 	additem(ITEM_ICE_GEM)
 	additem(ITEM_SLEDGEHAMMER)
-	additem(ITEM_SUPER_POTION, 1)
+	additem(ITEM_SUPER_POTION, 2)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_24)
 	// zone 7
 	message(format("Zone 7 options"))
@@ -3626,7 +3625,6 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_ROCK_GEM)
 	additem(ITEM_FIGHTING_GEM)
 	additem(ITEM_PSYCHIC_GEM)
-	additem(ITEM_SERIOUS_MINT)
 	additem(ITEM_BLACK_BELT)
 	additem(ITEM_SITRUS_BERRY, 5)
 	additem(ITEM_MAGNET)

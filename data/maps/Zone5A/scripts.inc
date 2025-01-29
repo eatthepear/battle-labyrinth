@@ -15,7 +15,7 @@ Zone5A_MapScripts_MAP_SCRIPT_ON_RESUME_1:
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST
 Zone5A_MapScripts_MAP_SCRIPT_ON_RESUME_5:
 # 13 "data/maps/Zone5A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE5A_LAX_MINT, Zone5A_MapScripts_MAP_SCRIPT_ON_RESUME_10
+	goto_if_set FLAG_ITEM_ZONE5A_METRONOME, Zone5A_MapScripts_MAP_SCRIPT_ON_RESUME_10
 # 16 "data/maps/Zone5A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST
 Zone5A_MapScripts_MAP_SCRIPT_ON_RESUME_9:
@@ -116,11 +116,11 @@ Zone5A_EventScript_Random1_2:
 	end
 
 
-Zone5A_EventScript_LaxMint::
+Zone5A_EventScript_Metronome::
 # 67 "data/maps/Zone5A/scripts.pory"
 	lock
 # 68 "data/maps/Zone5A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE5A_LAX_MINT, Zone5A_EventScript_LaxMint_2
+	goto_if_set FLAG_ITEM_ZONE5A_METRONOME, Zone5A_EventScript_Metronome_2
 # 73 "data/maps/Zone5A/scripts.pory"
 	waitse
 # 74 "data/maps/Zone5A/scripts.pory"
@@ -128,16 +128,16 @@ Zone5A_EventScript_LaxMint::
 # 75 "data/maps/Zone5A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 76 "data/maps/Zone5A/scripts.pory"
-	setflag FLAG_ITEM_ZONE5A_LAX_MINT
+	setflag FLAG_ITEM_ZONE5A_METRONOME
 # 77 "data/maps/Zone5A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 78 "data/maps/Zone5A/scripts.pory"
-	finditem ITEM_LAX_MINT
+	finditem ITEM_METRONOME
 # 79 "data/maps/Zone5A/scripts.pory"
 	release
 	end
 
-Zone5A_EventScript_LaxMint_2:
+Zone5A_EventScript_Metronome_2:
 # 69 "data/maps/Zone5A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 70 "data/maps/Zone5A/scripts.pory"

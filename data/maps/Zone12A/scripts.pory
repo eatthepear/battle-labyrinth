@@ -1,6 +1,6 @@
 mapscripts Zone12A_MapScripts {
 	MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_ITEM_ZONE12A_TM24)) {
+		if (flag(FLAG_ITEM_ZONE12A_TM_BRICK_BREAK)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST)
@@ -15,12 +15,12 @@ mapscripts Zone12A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE12A_MACHO_BRACE)) {
+		if (flag(FLAG_ITEM_ZONE12A_WATER_STONE)) {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE12A_METRONOME)) {
+		if (flag(FLAG_ITEM_ZONE12A_LEAF_STONE)) {
 			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -133,9 +133,9 @@ script Zone12A_EventScript_BreederF {
 	end
 }
 
-script Zone12A_EventScript_TM24 {
+script Zone12A_EventScript_TMBrickBreak {
 	lock
-	if (flag(FLAG_ITEM_ZONE12A_TM24)) {
+	if (flag(FLAG_ITEM_ZONE12A_TM_BRICK_BREAK)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -143,9 +143,9 @@ script Zone12A_EventScript_TM24 {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE12A_TM24)
+	setflag(FLAG_ITEM_ZONE12A_TM_BRICK_BREAK)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_TM24, 1)
+	finditem(ITEM_TM_BRICK_BREAK, 1)
 	release
 	end
 }
@@ -184,9 +184,9 @@ script Zone12A_EventScript_FireStone {
 	end
 }
 
-script Zone12A_EventScript_MachoBrace {
+script Zone12A_EventScript_WaterStone {
 	lock
-	if (flag(FLAG_ITEM_ZONE12A_MACHO_BRACE)) {
+	if (flag(FLAG_ITEM_ZONE12A_WATER_STONE)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -194,16 +194,16 @@ script Zone12A_EventScript_MachoBrace {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE12A_MACHO_BRACE)
+	setflag(FLAG_ITEM_ZONE12A_WATER_STONE)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_MACHO_BRACE, 1)
+	finditem(ITEM_WATER_STONE, 1)
 	release
 	end
 }
 
-script Zone12A_EventScript_Metronome {
+script Zone12A_EventScript_LeafStone {
 	lock
-	if (flag(FLAG_ITEM_ZONE12A_METRONOME)) {
+	if (flag(FLAG_ITEM_ZONE12A_LEAF_STONE)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -211,9 +211,9 @@ script Zone12A_EventScript_Metronome {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE12A_METRONOME)
+	setflag(FLAG_ITEM_ZONE12A_LEAF_STONE)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_METRONOME, 1)
+	finditem(ITEM_LEAF_STONE, 1)
 	release
 	end
 }

@@ -20,7 +20,7 @@ Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_5:
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST
 Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_9:
 # 18 "data/maps/Zone7A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE7A_SERIOUS_MINT, Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_14
+	goto_if_set FLAG_ITEM_ZONE7A_RANDOM_4, Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_14
 # 21 "data/maps/Zone7A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST
 Zone7A_MapScripts_MAP_SCRIPT_ON_RESUME_13:
@@ -416,11 +416,11 @@ Zone7A_EventScript_Gems_2:
 	end
 
 
-Zone7A_EventScript_SeriousMint::
+Zone7A_EventScript_Random4::
 # 215 "data/maps/Zone7A/scripts.pory"
 	lock
 # 216 "data/maps/Zone7A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE7A_SERIOUS_MINT, Zone7A_EventScript_SeriousMint_2
+	goto_if_set FLAG_ITEM_ZONE7A_RANDOM_4, Zone7A_EventScript_Random4_2
 # 221 "data/maps/Zone7A/scripts.pory"
 	waitse
 # 222 "data/maps/Zone7A/scripts.pory"
@@ -428,7 +428,7 @@ Zone7A_EventScript_SeriousMint::
 # 223 "data/maps/Zone7A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 224 "data/maps/Zone7A/scripts.pory"
-	setflag FLAG_ITEM_ZONE7A_SERIOUS_MINT
+	setflag FLAG_ITEM_ZONE7A_RANDOM_4
 # 225 "data/maps/Zone7A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 226 "data/maps/Zone7A/scripts.pory"
@@ -439,7 +439,7 @@ Zone7A_EventScript_SeriousMint::
 	release
 	end
 
-Zone7A_EventScript_SeriousMint_2:
+Zone7A_EventScript_Random4_2:
 # 217 "data/maps/Zone7A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 218 "data/maps/Zone7A/scripts.pory"

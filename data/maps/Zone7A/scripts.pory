@@ -15,7 +15,7 @@ mapscripts Zone7A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE7A_SERIOUS_MINT)) {
+		if (flag(FLAG_ITEM_ZONE7A_RANDOM_4)) {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -211,9 +211,9 @@ script Zone7A_EventScript_Gems {
 	end
 }
 
-script Zone7A_EventScript_SeriousMint {
+script Zone7A_EventScript_Random4 {
 	lock
-	if (flag(FLAG_ITEM_ZONE7A_SERIOUS_MINT)) {
+	if (flag(FLAG_ITEM_ZONE7A_RANDOM_4)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -221,7 +221,7 @@ script Zone7A_EventScript_SeriousMint {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE7A_SERIOUS_MINT)
+	setflag(FLAG_ITEM_ZONE7A_RANDOM_4)
 	addobject(VAR_LAST_TALKED)
 	specialvar(VAR_TEMP_1, RandomItemChest)
 	finditem(VAR_TEMP_1, VAR_TEMP_0)
