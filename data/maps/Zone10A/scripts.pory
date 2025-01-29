@@ -43,7 +43,9 @@ script Zone10A_EventScript_Adamina {
 	msgbox(Zone10A_Text_Explain, MSGBOX_AUTOCLOSE)
 	if ((flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_1) == false) ||
 	(flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_2) == false) ||
-	(flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_3) == false)) {
+	(flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_3) == false) ||
+	(flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_4) == false) ||
+	(flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_5) == false)) {
 		release
 		end
 	}
@@ -88,7 +90,7 @@ text Zone10A_Text_NoChance {
 text Zone10A_Text_Explain {
 	"If you really want to get in,\n"
 	"you have to earn your place.\p"
-	"In the desert, there are 3 hidden\n"
+	"In the desert, there are 5 hidden\n"
 	"Blue Shards.\p"
 	"Find them and bring them to me.\n"
 	"Then we'll see."
@@ -105,7 +107,7 @@ text Zone10A_Text_CrushYou {
 	"found some scraps? No way.\p"
 	"You'll have to beat me in a battle\n"
 	"to earn my respect!\l"
-	"I'm gonna crush you!$"
+	"I'm gonna crush you!"
 }
 
 text Zone10A_Text_Leviathan9Defeat {
@@ -114,7 +116,7 @@ text Zone10A_Text_Leviathan9Defeat {
 
 text Zone10A_Text_HeadInside {
 	"{COLOR BLUE}Adamina{COLOR DARK_GRAY}: Go on, head inside.\n"
-	"I've got nothing for you.$"
+	"I've got nothing for you."
 }
 
 script Zone10A_EventScript_Gems {

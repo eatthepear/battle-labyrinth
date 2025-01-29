@@ -462,7 +462,7 @@ static const u8 *GetInteractedBackgroundEventScript(struct MapPosition *position
         gSpecialVar_0x8004 = ((u32)bgEvent->bgUnion.script >> 16) + FLAG_HIDDEN_ITEMS_START;
         gSpecialVar_0x8005 = (u32)bgEvent->bgUnion.script;
         if (FlagGet(gSpecialVar_0x8004) == TRUE ||
-            ((FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_INDEPENDENT)) && (gSpecialVar_0x8004 != FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_1) && (gSpecialVar_0x8004 != FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_2) && (gSpecialVar_0x8004 != FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_3)))
+            ((FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_INDEPENDENT)) && (gSpecialVar_0x8004 != FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_1) && (gSpecialVar_0x8004 != FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_2) && (gSpecialVar_0x8004 != FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_3) && (gSpecialVar_0x8004 != FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_4) && (gSpecialVar_0x8004 != FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_5)))
             return NULL;
         return EventScript_HiddenItemScript;
     case BG_EVENT_SECRET_BASE:
