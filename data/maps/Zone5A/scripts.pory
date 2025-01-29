@@ -28,56 +28,6 @@ mapscripts Zone5A_MapScripts {
 	}
 }
 
-script Zone5A_EventScript_BreederF {
-	lock
-	faceplayer
-	showmoneybox(0, 0, 0)
-	msgbox(format("I'll change a Pokémon's nature to Serious for the price of ¥100."), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		hidemoneybox
-		msgbox(format("Why so serious?"))
-	} else {
-		checkmoney(100, 0)
-		if (var(VAR_RESULT) == FALSE) {
-			msgbox("You don't have enough money.")
-			hidemoneybox
-		} else {
-			msgbox(format("Which Pokémon would you like to change the nature?"), MSGBOX_DEFAULT)
-			special(ChoosePartyMon)
-			waitstate
-			faceplayer
-			showmoneybox(0, 0, 0)
-			if (var(VAR_0x8004) != PARTY_NOTHING_CHOSEN) {
-				specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
-				if (var(VAR_RESULT) == SPECIES_EGG) {
-					msgbox(format("I can't change the nature of an egg."))
-				} else {
-					specialvar(VAR_TEMP_1, ScriptGetPartyMonSpecies)
-					bufferspeciesname(0, VAR_TEMP_1)
-					copyvar(VAR_TEMP_1, VAR_0x8004)
-					msgbox(format("Are you sure you want your {STR_VAR_1} to have a Serious nature?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						removemoney(100)
-						updatemoneybox
-						setvar(VAR_TEMP_2, 12)
-						special(SetMonNature)
-						msgbox(format("It's done."))
-						hidemoneybox
-					} else {
-						hidemoneybox
-						msgbox(format("Why so serious?"))
-					}
-				}
-			} else {
-				hidemoneybox
-				msgbox(format("Why so serious?"))
-			}
-		}
-	}
-	release
-	end
-}
-
 script Zone5A_EventScript_QuickBall {
 	lock
 	if (flag(FLAG_ITEM_ZONE5A_QUICK_BALL)) {
