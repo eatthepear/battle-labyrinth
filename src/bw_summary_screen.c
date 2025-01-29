@@ -3928,8 +3928,8 @@ static void BufferMonTrainerMemo(void)
             case METLOC_BOUGHT_FARM:
                 text = gText_XNatureBoughtFarm;
                 break;
-            case METLOC_ADOPTED:
-                text = gText_XNatureAdopted;
+            case METLOC_ZONE10B_GIFT:
+                text = gText_XNatureDragonTamer;
                 break;
             case METLOC_REVIVED_FOSSIL:
                 text = gText_XNatureRevived;

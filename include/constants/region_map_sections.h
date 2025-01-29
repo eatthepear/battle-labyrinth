@@ -222,7 +222,7 @@
 #define METLOC_GIVE_FWG                     0xF5
 #define METLOC_BOUGHT_RUIN                  0xF6
 #define METLOC_REVIVED_FOSSIL               0xF7
-#define METLOC_ADOPTED                      0xF8
+#define METLOC_ZONE10B_GIFT                 0xF8
 #define METLOC_BOUGHT_FARM                  0xF9
 #define METLOC_BOUGHT_PIKA_CLONE            0xFA
 #define METLOC_BOUGHT_BUG                   0xFB

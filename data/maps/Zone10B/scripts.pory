@@ -68,11 +68,11 @@ script Zone10B_EventScript_Collector {
 	release
 }
 
-script Zone10B_EventScript_BirdKeeper {
+script Zone10B_EventScript_DragonTamer {
 	lock
 	faceplayer
-	if (flag(FLAG_ZONE10B_RECEIVED_TM_STEEL_WING) == false) {
-		msgbox(format("Bird Pokémon sometimes can need some coverage moves!\pIf you can show me you've beaten all the trainers thus far, I'll reward you with a special TM!"))
+	if (flag(FLAG_ZONE10B_RECEIVED_DRUDDIGON) == false) {
+		msgbox(format("Dragon-type Pokémon should only be raised by Trainers who know what they are doing.\pIf you can show me you've beaten all the trainers thus far, I'll give you this Druddigon of mine."))
 		questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_GAUNTLET_1)
 		if (var(VAR_RESULT) == FALSE) {
 			startquest(QUEST_GAUNTLET_1)
@@ -160,14 +160,62 @@ script Zone10B_EventScript_BirdKeeper {
 			release
 			end
 		} else {
-			setflag(FLAG_ZONE10B_RECEIVED_TM_STEEL_WING)
-			msgbox(format("Wow! You really did beat all those trainers.\pHere's the TM for Steel Wing!"))
-			giveitem(ITEM_TM_STEEL_WING)
-			completequest(QUEST_GAUNTLET_1)
+			msgbox(format("Incredible!\pYou really did defeat all those trainers.\pAre you ready to take care of this Druddigon?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == TRUE) {
+				specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+				if (var(VAR_TEMP_2) == PARTY_SIZE) {
+					msgbox("It seems your party is full!")
+					release
+					end
+				}
+				msgbox(format("A wise choice!"), MSGBOX_DEFAULT)
+				if (flag(FLAG_SETTINGS_NUZLOCKE) == true && flag(FLAG_SETTINGS_RANDOMIZER) == false) {
+					checkspeciesclause(SPECIES_DRUDDIGON)
+					if (var(VAR_RESULT) == TRUE) {
+						msgbox(format("Unfortunately, you have already obtained a Pokémon in Druddigon's evolution line."))
+						release
+						end
+					}
+				}
+				givemon(SPECIES_DRUDDIGON, 22, ITEM_DRAGON_FANG)
+				setmonmetlocation(VAR_TEMP_2, 248)
+				playfanfare(MUS_OBTAIN_ITEM)
+				message(format("Received Druddigon!"))
+				waitmessage
+				waitfanfare
+				msgbox(format("Would you like to give a nickname to Druddigon?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					call(Common_EventScript_GetGiftMonPartySlot)
+					call(Common_EventScript_NameReceivedPartyMon)
+				}
+				setflag(FLAG_ZONE10B_RECEIVED_DRUDDIGON)
+				completequest(QUEST_GAUNTLET_1)
+			} else {
+				msgbox(format("Very well. Speak to me when you change your mind."))
+				applymovement(4, Common_Movement_FaceLeft)
+				waitmovement(0)
+				release
+				end
+			}
 		}
 	}
-	msgbox(format("The move Steel Wing can help Flying Pokémon cover for their Rock weakness, by giving Steel coverage to them!"))
+	msgbox(format("Aside from their own kind, Dragon-types need only fear Fairy-types and Ice-types."))
 	applymovement(4, Common_Movement_FaceLeft)
+	waitmovement(0)
+	release
+	end
+}
+
+script Zone10B_EventScript_BirdKeeper {
+	lock
+	faceplayer
+	if (flag(FLAG_ZONE10B_RECEIVED_TM_STEEL_WING) == false) {
+		msgbox(format("Bird Pokémon sometimes can need some coverage moves! This TM will help remedy that!"))
+		giveitem(ITEM_TM_STEEL_WING)
+		setflag(FLAG_ZONE10B_RECEIVED_TM_STEEL_WING)
+	}
+	msgbox(format("The move Steel Wing can help Flying Pokémon cover for their Rock weakness, by giving Steel coverage to them!"))
+	applymovement(8, Common_Movement_FaceLeft)
 	waitmovement(0)
 	release
 	end

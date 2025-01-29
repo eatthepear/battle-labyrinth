@@ -884,7 +884,7 @@ extern const u8 gText_XNatureGivenAt[];
 extern const u8 gText_XNatureBoughtBug[];
 extern const u8 gText_XNatureBoughtPikaClone[];
 extern const u8 gText_XNatureBoughtFarm[];
-extern const u8 gText_XNatureAdopted[];
+extern const u8 gText_XNatureDragonTamer[];
 extern const u8 gText_XNatureRevived[];
 extern const u8 gText_XNatureBoughtRuin[];
 extern const u8 gText_XNatureFWG[];
