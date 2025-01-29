@@ -29,6 +29,21 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 6,
+      "y": 4,
+      "elevation": 0,
+      "item": "ITEM_BLUE_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_5"
+    },
+    {
+      "type": "hidden_item",
+      "x": 10,
+      "y": 10,
+      "elevation": 0,
+      "item": "ITEM_BLUE_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_4"
+    }
   ]
 }
