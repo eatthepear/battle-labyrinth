@@ -10,7 +10,7 @@ mapscripts Zone5A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE5A_LAX_MINT)) {
+		if (flag(FLAG_ITEM_ZONE5A_METRONOME)) {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -63,9 +63,9 @@ script Zone5A_EventScript_Random1 {
 	end
 }
 
-script Zone5A_EventScript_LaxMint {
+script Zone5A_EventScript_Metronome {
 	lock
-	if (flag(FLAG_ITEM_ZONE5A_LAX_MINT)) {
+	if (flag(FLAG_ITEM_ZONE5A_METRONOME)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -73,9 +73,9 @@ script Zone5A_EventScript_LaxMint {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5A_LAX_MINT)
+	setflag(FLAG_ITEM_ZONE5A_METRONOME)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_LAX_MINT)
+	finditem(ITEM_METRONOME)
 	release
 	end
 }

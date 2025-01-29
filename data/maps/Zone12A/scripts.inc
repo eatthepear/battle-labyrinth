@@ -5,7 +5,7 @@ Zone12A_MapScripts::
 
 Zone12A_MapScripts_MAP_SCRIPT_ON_RESUME:
 # 3 "data/maps/Zone12A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE12A_TM24, Zone12A_MapScripts_MAP_SCRIPT_ON_RESUME_2
+	goto_if_set FLAG_ITEM_ZONE12A_TM_BRICK_BREAK, Zone12A_MapScripts_MAP_SCRIPT_ON_RESUME_2
 # 6 "data/maps/Zone12A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST
 Zone12A_MapScripts_MAP_SCRIPT_ON_RESUME_1:
@@ -20,12 +20,12 @@ Zone12A_MapScripts_MAP_SCRIPT_ON_RESUME_5:
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST
 Zone12A_MapScripts_MAP_SCRIPT_ON_RESUME_9:
 # 18 "data/maps/Zone12A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE12A_MACHO_BRACE, Zone12A_MapScripts_MAP_SCRIPT_ON_RESUME_14
+	goto_if_set FLAG_ITEM_ZONE12A_WATER_STONE, Zone12A_MapScripts_MAP_SCRIPT_ON_RESUME_14
 # 21 "data/maps/Zone12A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST
 Zone12A_MapScripts_MAP_SCRIPT_ON_RESUME_13:
 # 23 "data/maps/Zone12A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE12A_METRONOME, Zone12A_MapScripts_MAP_SCRIPT_ON_RESUME_17
+	goto_if_set FLAG_ITEM_ZONE12A_LEAF_STONE, Zone12A_MapScripts_MAP_SCRIPT_ON_RESUME_17
 # 26 "data/maps/Zone12A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST
 	return
@@ -254,11 +254,11 @@ Zone12A_EventScript_BreederF_14:
 	goto Zone12A_EventScript_BreederF_1
 
 
-Zone12A_EventScript_TM24::
+Zone12A_EventScript_TMBrickBreak::
 # 137 "data/maps/Zone12A/scripts.pory"
 	lock
 # 138 "data/maps/Zone12A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE12A_TM24, Zone12A_EventScript_TM24_2
+	goto_if_set FLAG_ITEM_ZONE12A_TM_BRICK_BREAK, Zone12A_EventScript_TMBrickBreak_2
 # 143 "data/maps/Zone12A/scripts.pory"
 	waitse
 # 144 "data/maps/Zone12A/scripts.pory"
@@ -266,16 +266,16 @@ Zone12A_EventScript_TM24::
 # 145 "data/maps/Zone12A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN
 # 146 "data/maps/Zone12A/scripts.pory"
-	setflag FLAG_ITEM_ZONE12A_TM24
+	setflag FLAG_ITEM_ZONE12A_TM_BRICK_BREAK
 # 147 "data/maps/Zone12A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 148 "data/maps/Zone12A/scripts.pory"
-	finditem ITEM_TM24, 1
+	finditem ITEM_TM_BRICK_BREAK, 1
 # 149 "data/maps/Zone12A/scripts.pory"
 	release
 	end
 
-Zone12A_EventScript_TM24_2:
+Zone12A_EventScript_TMBrickBreak_2:
 # 139 "data/maps/Zone12A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 140 "data/maps/Zone12A/scripts.pory"
@@ -341,11 +341,11 @@ Zone12A_EventScript_FireStone_2:
 	end
 
 
-Zone12A_EventScript_MachoBrace::
+Zone12A_EventScript_WaterStone::
 # 188 "data/maps/Zone12A/scripts.pory"
 	lock
 # 189 "data/maps/Zone12A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE12A_MACHO_BRACE, Zone12A_EventScript_MachoBrace_2
+	goto_if_set FLAG_ITEM_ZONE12A_WATER_STONE, Zone12A_EventScript_WaterStone_2
 # 194 "data/maps/Zone12A/scripts.pory"
 	waitse
 # 195 "data/maps/Zone12A/scripts.pory"
@@ -353,16 +353,16 @@ Zone12A_EventScript_MachoBrace::
 # 196 "data/maps/Zone12A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 197 "data/maps/Zone12A/scripts.pory"
-	setflag FLAG_ITEM_ZONE12A_MACHO_BRACE
+	setflag FLAG_ITEM_ZONE12A_WATER_STONE
 # 198 "data/maps/Zone12A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 199 "data/maps/Zone12A/scripts.pory"
-	finditem ITEM_MACHO_BRACE, 1
+	finditem ITEM_WATER_STONE, 1
 # 200 "data/maps/Zone12A/scripts.pory"
 	release
 	end
 
-Zone12A_EventScript_MachoBrace_2:
+Zone12A_EventScript_WaterStone_2:
 # 190 "data/maps/Zone12A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 191 "data/maps/Zone12A/scripts.pory"
@@ -370,11 +370,11 @@ Zone12A_EventScript_MachoBrace_2:
 	end
 
 
-Zone12A_EventScript_Metronome::
+Zone12A_EventScript_LeafStone::
 # 205 "data/maps/Zone12A/scripts.pory"
 	lock
 # 206 "data/maps/Zone12A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE12A_METRONOME, Zone12A_EventScript_Metronome_2
+	goto_if_set FLAG_ITEM_ZONE12A_LEAF_STONE, Zone12A_EventScript_LeafStone_2
 # 211 "data/maps/Zone12A/scripts.pory"
 	waitse
 # 212 "data/maps/Zone12A/scripts.pory"
@@ -382,16 +382,16 @@ Zone12A_EventScript_Metronome::
 # 213 "data/maps/Zone12A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 214 "data/maps/Zone12A/scripts.pory"
-	setflag FLAG_ITEM_ZONE12A_METRONOME
+	setflag FLAG_ITEM_ZONE12A_LEAF_STONE
 # 215 "data/maps/Zone12A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 216 "data/maps/Zone12A/scripts.pory"
-	finditem ITEM_METRONOME, 1
+	finditem ITEM_LEAF_STONE, 1
 # 217 "data/maps/Zone12A/scripts.pory"
 	release
 	end
 
-Zone12A_EventScript_Metronome_2:
+Zone12A_EventScript_LeafStone_2:
 # 207 "data/maps/Zone12A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 208 "data/maps/Zone12A/scripts.pory"

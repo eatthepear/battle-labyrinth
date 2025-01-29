@@ -5,7 +5,7 @@ Zone11A_MapScripts::
 
 Zone11A_MapScripts_MAP_SCRIPT_ON_RESUME:
 # 3 "data/maps/Zone11A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE11A_TM22, Zone11A_MapScripts_MAP_SCRIPT_ON_RESUME_2
+	goto_if_set FLAG_ITEM_ZONE11A_TM_TAUNT, Zone11A_MapScripts_MAP_SCRIPT_ON_RESUME_2
 # 6 "data/maps/Zone11A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST
 Zone11A_MapScripts_MAP_SCRIPT_ON_RESUME_1:
@@ -15,7 +15,7 @@ Zone11A_MapScripts_MAP_SCRIPT_ON_RESUME_1:
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST
 Zone11A_MapScripts_MAP_SCRIPT_ON_RESUME_5:
 # 13 "data/maps/Zone11A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE11A_TIMER_BALL, Zone11A_MapScripts_MAP_SCRIPT_ON_RESUME_10
+	goto_if_set FLAG_ITEM_ZONE11A_SPELL_TAG, Zone11A_MapScripts_MAP_SCRIPT_ON_RESUME_10
 # 16 "data/maps/Zone11A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST
 Zone11A_MapScripts_MAP_SCRIPT_ON_RESUME_9:
@@ -169,7 +169,7 @@ Zone11A_EventScript_TMTaunt::
 # 97 "data/maps/Zone11A/scripts.pory"
 	lock
 # 98 "data/maps/Zone11A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE11A_TM22, Zone11A_EventScript_TMTaunt_2
+	goto_if_set FLAG_ITEM_ZONE11A_TM_TAUNT, Zone11A_EventScript_TMTaunt_2
 # 103 "data/maps/Zone11A/scripts.pory"
 	waitse
 # 104 "data/maps/Zone11A/scripts.pory"
@@ -177,7 +177,7 @@ Zone11A_EventScript_TMTaunt::
 # 105 "data/maps/Zone11A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN
 # 106 "data/maps/Zone11A/scripts.pory"
-	setflag FLAG_ITEM_ZONE11A_TM22
+	setflag FLAG_ITEM_ZONE11A_TM_TAUNT
 # 107 "data/maps/Zone11A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 108 "data/maps/Zone11A/scripts.pory"
@@ -223,11 +223,11 @@ Zone11A_EventScript_MoonStone_2:
 	end
 
 
-Zone11A_EventScript_TimerBall::
+Zone11A_EventScript_SpellTag::
 # 131 "data/maps/Zone11A/scripts.pory"
 	lock
 # 132 "data/maps/Zone11A/scripts.pory"
-	goto_if_set FLAG_ITEM_ZONE11A_TIMER_BALL, Zone11A_EventScript_TimerBall_2
+	goto_if_set FLAG_ITEM_ZONE11A_SPELL_TAG, Zone11A_EventScript_SpellTag_2
 # 137 "data/maps/Zone11A/scripts.pory"
 	waitse
 # 138 "data/maps/Zone11A/scripts.pory"
@@ -235,16 +235,16 @@ Zone11A_EventScript_TimerBall::
 # 139 "data/maps/Zone11A/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 140 "data/maps/Zone11A/scripts.pory"
-	setflag FLAG_ITEM_ZONE11A_TIMER_BALL
+	setflag FLAG_ITEM_ZONE11A_SPELL_TAG
 # 141 "data/maps/Zone11A/scripts.pory"
 	addobject VAR_LAST_TALKED
 # 142 "data/maps/Zone11A/scripts.pory"
-	finditem ITEM_TIMER_BALL, 1
+	finditem ITEM_SPELL_TAG, 1
 # 143 "data/maps/Zone11A/scripts.pory"
 	release
 	end
 
-Zone11A_EventScript_TimerBall_2:
+Zone11A_EventScript_SpellTag_2:
 # 133 "data/maps/Zone11A/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
 # 134 "data/maps/Zone11A/scripts.pory"
