@@ -4649,3 +4649,13 @@ u16 RandomItemChest(void) {
 
     return item;
 }
+
+bool8 SetMonNature(void)
+{
+    u16 nature = VarGet(VAR_TEMP_2);
+    SetMonData(&gPlayerParty[VarGet(VAR_TEMP_1)], MON_DATA_HIDDEN_NATURE, &nature);
+
+    CalculateMonStats(&gPlayerParty[VarGet(VAR_TEMP_1)]);
+
+    return FALSE;
+}

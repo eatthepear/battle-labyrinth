@@ -563,3 +563,4 @@ gSpecials::
 	def_special GetNumTrainersRemaining
 	def_special GetNumItemsRemaining
 	def_special RandomItemChest
+	def_special SetMonNature
