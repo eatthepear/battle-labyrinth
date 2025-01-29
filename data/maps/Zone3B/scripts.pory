@@ -40,6 +40,12 @@ script Zone3B_EventScript_TradeZigzagoon {
 		release
 		end
 	}
+	specialvar(VAR_RESULT, IsPokemonFainted)
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox(format("Hey! Don't trade me a fainted Pokémon!"))
+		release
+		end
+	}
 	copyvar(VAR_0x8005, VAR_0x800A)
 	specialvar(VAR_RESULT, GetTradeSpecies)
 	copyvar(VAR_0x800B, VAR_RESULT)
