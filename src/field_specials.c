@@ -4659,3 +4659,8 @@ bool8 SetMonNature(void)
 
     return FALSE;
 }
+
+bool8 IsPokemonFainted(void)
+{
+    return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP) == 0;
+}

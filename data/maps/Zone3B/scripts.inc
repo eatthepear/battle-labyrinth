@@ -52,29 +52,34 @@ Zone3B_EventScript_TradeZigzagoon::
 	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
 	goto_if_eq Zone3B_EventScript_TradeZigzagoon_8
 # 43 "data/maps/Zone3B/scripts.pory"
-	copyvar VAR_0x8005, VAR_0x800A
+	specialvar VAR_RESULT, IsPokemonFainted
 # 44 "data/maps/Zone3B/scripts.pory"
-	specialvar VAR_RESULT, GetTradeSpecies
-# 45 "data/maps/Zone3B/scripts.pory"
-	copyvar VAR_0x800B, VAR_RESULT
-# 46 "data/maps/Zone3B/scripts.pory"
-	compare VAR_RESULT, VAR_0x8009
-	goto_if_ne Zone3B_EventScript_TradeZigzagoon_11
-# 52 "data/maps/Zone3B/scripts.pory"
-	copyvar VAR_0x8004, VAR_0x8008
-# 53 "data/maps/Zone3B/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Zone3B_EventScript_TradeZigzagoon_11
+# 49 "data/maps/Zone3B/scripts.pory"
 	copyvar VAR_0x8005, VAR_0x800A
-# 54 "data/maps/Zone3B/scripts.pory"
-	special CreateInGameTradePokemon
-# 55 "data/maps/Zone3B/scripts.pory"
-	special DoInGameTradeScene
-# 56 "data/maps/Zone3B/scripts.pory"
-	waitstate
-# 57 "data/maps/Zone3B/scripts.pory"
-	msgbox Zone3B_EventScript_TradeZigzagoon_Text_0, MSGBOX_DEFAULT
+# 50 "data/maps/Zone3B/scripts.pory"
+	specialvar VAR_RESULT, GetTradeSpecies
+# 51 "data/maps/Zone3B/scripts.pory"
+	copyvar VAR_0x800B, VAR_RESULT
+# 52 "data/maps/Zone3B/scripts.pory"
+	compare VAR_RESULT, VAR_0x8009
+	goto_if_ne Zone3B_EventScript_TradeZigzagoon_14
 # 58 "data/maps/Zone3B/scripts.pory"
-	setflag FLAG_ZONE3B_TRADED_ZIGZAGOON
+	copyvar VAR_0x8004, VAR_0x8008
 # 59 "data/maps/Zone3B/scripts.pory"
+	copyvar VAR_0x8005, VAR_0x800A
+# 60 "data/maps/Zone3B/scripts.pory"
+	special CreateInGameTradePokemon
+# 61 "data/maps/Zone3B/scripts.pory"
+	special DoInGameTradeScene
+# 62 "data/maps/Zone3B/scripts.pory"
+	waitstate
+# 63 "data/maps/Zone3B/scripts.pory"
+	msgbox Zone3B_EventScript_TradeZigzagoon_Text_0, MSGBOX_DEFAULT
+# 64 "data/maps/Zone3B/scripts.pory"
+	setflag FLAG_ZONE3B_TRADED_ZIGZAGOON
+# 65 "data/maps/Zone3B/scripts.pory"
 	release
 	end
 
@@ -100,11 +105,18 @@ Zone3B_EventScript_TradeZigzagoon_8:
 	end
 
 Zone3B_EventScript_TradeZigzagoon_11:
-# 47 "data/maps/Zone3B/scripts.pory"
+# 45 "data/maps/Zone3B/scripts.pory"
+	msgbox Zone3B_EventScript_TradeZigzagoon_Text_3
+# 46 "data/maps/Zone3B/scripts.pory"
+	release
+	end
+
+Zone3B_EventScript_TradeZigzagoon_14:
+# 53 "data/maps/Zone3B/scripts.pory"
 	bufferspeciesname STR_VAR_1, VAR_0x8009
-# 48 "data/maps/Zone3B/scripts.pory"
-	msgbox Zone3B_EventScript_TradeZigzagoon_Text_3, MSGBOX_DEFAULT
-# 49 "data/maps/Zone3B/scripts.pory"
+# 54 "data/maps/Zone3B/scripts.pory"
+	msgbox Zone3B_EventScript_TradeZigzagoon_Text_4, MSGBOX_DEFAULT
+# 55 "data/maps/Zone3B/scripts.pory"
 	release
 	end
 
@@ -137,6 +149,10 @@ Zone3B_EventScript_TradeZigzagoon_Text_2:
 	.string "Aww, you're a goon!$"
 
 Zone3B_EventScript_TradeZigzagoon_Text_3:
-# 48 "data/maps/Zone3B/scripts.pory"
+# 45 "data/maps/Zone3B/scripts.pory"
+	.string "Hey! Don't trade me a fainted Pokémon!$"
+
+Zone3B_EventScript_TradeZigzagoon_Text_4:
+# 54 "data/maps/Zone3B/scripts.pory"
 	.string "Huh? That doesn't look anything like a\n"
 	.string "{STR_VAR_1} to me.$"

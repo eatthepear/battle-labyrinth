@@ -564,3 +564,4 @@ gSpecials::
 	def_special GetNumItemsRemaining
 	def_special RandomItemChest
 	def_special SetMonNature
+	def_special IsPokemonFainted
