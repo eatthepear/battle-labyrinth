@@ -73,6 +73,7 @@
 #include "battle_setup.h"
 #include "item_menu.h"
 #include "item.h"
+#include "constants/abilities.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -4663,4 +4664,47 @@ bool8 SetMonNature(void)
 bool8 IsPokemonFainted(void)
 {
     return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP) == 0;
+}
+
+// gStringVars are the abilities 0 1 2 respectively
+// FLAG_TEMP_1 is if ability 1 is available (i.e. normal)
+// FLAG_TEMP_2 is if ability 2 is available (i.e. hidden)
+// VAR_TEMP_2 is which ability you have now
+void BufferMonAbilities(void)
+{
+    u16 abilityNum = GetMonData(&gPlayerParty[VarGet(VAR_TEMP_1)], MON_DATA_ABILITY_NUM);
+    u16 species = GetMonData(&gPlayerParty[VarGet(VAR_TEMP_1)], MON_DATA_SPECIES);
+    DebugPrintf("abilityNum %d", abilityNum);
+    DebugPrintf("species %d", species);
+    DebugPrintf("%d", gSpeciesInfo[species].abilities[0]);
+    DebugPrintf("%d", gSpeciesInfo[species].abilities[1]);
+    DebugPrintf("%d", gSpeciesInfo[species].abilities[2]);
+    StringCopy(gStringVar1, gAbilitiesInfo[gSpeciesInfo[species].abilities[0]].name);
+    StringCopy(gStringVar2, gAbilitiesInfo[gSpeciesInfo[species].abilities[1]].name);
+    StringCopy(gStringVar3, gAbilitiesInfo[gSpeciesInfo[species].abilities[2]].name);
+    if (gSpeciesInfo[species].abilities[1] != ABILITY_NONE)
+    {
+        FlagSet(FLAG_TEMP_1);
+    }
+    else
+    {
+        FlagClear(FLAG_TEMP_1);
+    }
+    if (gSpeciesInfo[species].abilities[2] != ABILITY_NONE)
+    {
+        FlagSet(FLAG_TEMP_2);
+    }
+    else
+    {
+        FlagClear(FLAG_TEMP_2);
+    }
+    VarSet(VAR_TEMP_2, abilityNum);
+}
+
+void ChangePokemonAbility(void)
+{
+    u16 abilityNum = VarGet(VAR_TEMP_2);
+    u16 species = GetMonData(&gPlayerParty[VarGet(VAR_TEMP_1)], MON_DATA_SPECIES);
+    SetMonData(&gPlayerParty[VarGet(VAR_TEMP_1)], MON_DATA_ABILITY_NUM, &abilityNum);
+    StringCopy(gStringVar1, gAbilitiesInfo[gSpeciesInfo[species].abilities[abilityNum]].name);
 }
