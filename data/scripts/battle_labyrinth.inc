@@ -6095,1097 +6095,1343 @@ Zone9A_EventScript_HerbalSign::
 
 
 Debug_CheatStart_PBL::
+# 3226 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_PORTENTIA_INTRO
 # 3227 "data/scripts/battle_labyrinth.pory"
-	random 5
+	setflag FLAG_TIM_INTRO
 # 3228 "data/scripts/battle_labyrinth.pory"
-	switch VAR_RESULT
+	setflag FLAG_VARRICK_INTRO
 # 3229 "data/scripts/battle_labyrinth.pory"
-	case 0, Debug_CheatStart_PBL_3
+	setflag FLAG_JULIA_INTRO
+# 3230 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_LELOUCH_INTRO
 # 3231 "data/scripts/battle_labyrinth.pory"
-	case 1, Debug_CheatStart_PBL_4
-# 3233 "data/scripts/battle_labyrinth.pory"
-	case 2, Debug_CheatStart_PBL_5
+	setflag FLAG_MARIE_INTRO
+# 3232 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_JOY_INTRO
+# 3234 "data/scripts/battle_labyrinth.pory"
+	random 5
 # 3235 "data/scripts/battle_labyrinth.pory"
+	switch VAR_RESULT
+# 3236 "data/scripts/battle_labyrinth.pory"
+	case 0, Debug_CheatStart_PBL_3
+# 3238 "data/scripts/battle_labyrinth.pory"
+	case 1, Debug_CheatStart_PBL_4
+# 3240 "data/scripts/battle_labyrinth.pory"
+	case 2, Debug_CheatStart_PBL_5
+# 3242 "data/scripts/battle_labyrinth.pory"
 	case 3, Debug_CheatStart_PBL_6
-# 3237 "data/scripts/battle_labyrinth.pory"
+# 3244 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_7
 Debug_CheatStart_PBL_1:
-# 3240 "data/scripts/battle_labyrinth.pory"
+# 3247 "data/scripts/battle_labyrinth.pory"
 	random 5
-# 3241 "data/scripts/battle_labyrinth.pory"
-	switch VAR_RESULT
-# 3242 "data/scripts/battle_labyrinth.pory"
-	case 0, Debug_CheatStart_PBL_10
-# 3244 "data/scripts/battle_labyrinth.pory"
-	case 1, Debug_CheatStart_PBL_11
-# 3246 "data/scripts/battle_labyrinth.pory"
-	case 2, Debug_CheatStart_PBL_12
 # 3248 "data/scripts/battle_labyrinth.pory"
+	switch VAR_RESULT
+# 3249 "data/scripts/battle_labyrinth.pory"
+	case 0, Debug_CheatStart_PBL_10
+# 3251 "data/scripts/battle_labyrinth.pory"
+	case 1, Debug_CheatStart_PBL_11
+# 3253 "data/scripts/battle_labyrinth.pory"
+	case 2, Debug_CheatStart_PBL_12
+# 3255 "data/scripts/battle_labyrinth.pory"
 	case 3, Debug_CheatStart_PBL_13
-# 3250 "data/scripts/battle_labyrinth.pory"
+# 3257 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_14
 Debug_CheatStart_PBL_8:
-# 3253 "data/scripts/battle_labyrinth.pory"
+# 3260 "data/scripts/battle_labyrinth.pory"
 	random 5
-# 3254 "data/scripts/battle_labyrinth.pory"
-	switch VAR_RESULT
-# 3255 "data/scripts/battle_labyrinth.pory"
-	case 0, Debug_CheatStart_PBL_17
-# 3257 "data/scripts/battle_labyrinth.pory"
-	case 1, Debug_CheatStart_PBL_18
-# 3259 "data/scripts/battle_labyrinth.pory"
-	case 2, Debug_CheatStart_PBL_19
 # 3261 "data/scripts/battle_labyrinth.pory"
+	switch VAR_RESULT
+# 3262 "data/scripts/battle_labyrinth.pory"
+	case 0, Debug_CheatStart_PBL_17
+# 3264 "data/scripts/battle_labyrinth.pory"
+	case 1, Debug_CheatStart_PBL_18
+# 3266 "data/scripts/battle_labyrinth.pory"
+	case 2, Debug_CheatStart_PBL_19
+# 3268 "data/scripts/battle_labyrinth.pory"
 	case 3, Debug_CheatStart_PBL_20
-# 3263 "data/scripts/battle_labyrinth.pory"
+# 3270 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_21
 Debug_CheatStart_PBL_15:
-# 3266 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_RARE_CANDY, 900
-# 3267 "data/scripts/battle_labyrinth.pory"
-	removemoney 2000
-# 3268 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_POTION, 6
-# 3269 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_PARALYZE_HEAL, 2
-# 3270 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_ANTIDOTE, 2
-# 3271 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_ZONE_0_STATE, 2
-# 3272 "data/scripts/battle_labyrinth.pory"
-	setflag FLAG_ZONE0B_RECEIVED_EEVEE
 # 3273 "data/scripts/battle_labyrinth.pory"
-	givemon SPECIES_EEVEE, 5, ITEM_NONE
+	additem ITEM_RARE_CANDY, 900
+# 3274 "data/scripts/battle_labyrinth.pory"
+	removemoney 2000
 # 3275 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_WAILMER_PAIL
+	additem ITEM_POTION, 6
 # 3276 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_ORAN_BERRY, 2
+	additem ITEM_PARALYZE_HEAL, 2
 # 3277 "data/scripts/battle_labyrinth.pory"
-	questmenu QUEST_MENU_SET_ACTIVE, QUEST_SIGNS
+	additem ITEM_ANTIDOTE, 2
 # 3278 "data/scripts/battle_labyrinth.pory"
-	questmenu QUEST_MENU_SET_ACTIVE, QUEST_SAVES
+	setvar VAR_ZONE_0_STATE, 2
 # 3279 "data/scripts/battle_labyrinth.pory"
-	questmenu QUEST_MENU_SET_ACTIVE, QUEST_POKEDEX
+	setflag FLAG_ZONE0B_RECEIVED_EEVEE
 # 3280 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_1
-# 3281 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_2
+	givemon SPECIES_EEVEE, 5, ITEM_NONE
 # 3282 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_3
+	additem ITEM_WAILMER_PAIL
 # 3283 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_4
+	additem ITEM_ORAN_BERRY, 2
 # 3284 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_5
+	questmenu QUEST_MENU_SET_ACTIVE, QUEST_SIGNS
 # 3285 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_6
+	questmenu QUEST_MENU_SET_ACTIVE, QUEST_SAVES
 # 3286 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_7
+	questmenu QUEST_MENU_SET_ACTIVE, QUEST_POKEDEX
 # 3287 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_8
+	completesubquest QUEST_SIGNS, SUB_QUEST_1
 # 3288 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_9
+	completesubquest QUEST_SIGNS, SUB_QUEST_2
+# 3289 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_3
 # 3290 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_TEMP_0, 0
+	completesubquest QUEST_SIGNS, SUB_QUEST_4
 # 3291 "data/scripts/battle_labyrinth.pory"
-	msgbox Debug_CheatStart_PBL_Text_0, MSGBOX_YESNO
+	completesubquest QUEST_SIGNS, SUB_QUEST_5
 # 3292 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_6
+# 3293 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_7
+# 3294 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_8
+# 3295 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_9
+# 3296 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES
+# 3298 "data/scripts/battle_labyrinth.pory"
+	setvar VAR_TEMP_0, 0
+# 3299 "data/scripts/battle_labyrinth.pory"
+	msgbox Debug_CheatStart_PBL_Text_0, MSGBOX_YESNO
+# 3300 "data/scripts/battle_labyrinth.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Debug_CheatStart_PBL_23
 Debug_CheatStart_PBL_22:
-# 3295 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_TEMP_1, 3
-# 3296 "data/scripts/battle_labyrinth.pory"
-	call Debug_CheatStart_PBL_GenerateMon
-# 3298 "data/scripts/battle_labyrinth.pory"
-	message Debug_CheatStart_PBL_Text_1
-# 3299 "data/scripts/battle_labyrinth.pory"
-	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_3
-# 3300 "data/scripts/battle_labyrinth.pory"
-	switch VAR_RESULT
-# 3301 "data/scripts/battle_labyrinth.pory"
-	case 0, Debug_CheatStart_PBL_27
 # 3303 "data/scripts/battle_labyrinth.pory"
-	case 1, Debug_CheatStart_PBL_28
+	setvar VAR_TEMP_1, 3
+# 3304 "data/scripts/battle_labyrinth.pory"
+	call Debug_CheatStart_PBL_GenerateMon
 # 3306 "data/scripts/battle_labyrinth.pory"
+	message Debug_CheatStart_PBL_Text_1
+# 3307 "data/scripts/battle_labyrinth.pory"
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_3
+# 3308 "data/scripts/battle_labyrinth.pory"
+	switch VAR_RESULT
+# 3309 "data/scripts/battle_labyrinth.pory"
+	case 0, Debug_CheatStart_PBL_27
+# 3311 "data/scripts/battle_labyrinth.pory"
+	case 1, Debug_CheatStart_PBL_28
+# 3314 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, Debug_CheatStart_PBL_29
 Debug_CheatStart_PBL_25:
-# 3314 "data/scripts/battle_labyrinth.pory"
+# 3322 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GenerateMon
-# 3316 "data/scripts/battle_labyrinth.pory"
+# 3324 "data/scripts/battle_labyrinth.pory"
 	message Debug_CheatStart_PBL_Text_4
-# 3317 "data/scripts/battle_labyrinth.pory"
+# 3325 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_5, Debug_CheatStart_PBL_Text_6
-# 3318 "data/scripts/battle_labyrinth.pory"
+# 3326 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3319 "data/scripts/battle_labyrinth.pory"
+# 3327 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_32
-# 3333 "data/scripts/battle_labyrinth.pory"
+# 3341 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_33
-# 3347 "data/scripts/battle_labyrinth.pory"
+# 3355 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_34
 Debug_CheatStart_PBL_30:
-# 3362 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_TEMP_1, 5
-# 3363 "data/scripts/battle_labyrinth.pory"
-	call Debug_CheatStart_PBL_GiveMon
-# 3364 "data/scripts/battle_labyrinth.pory"
-	setflag FLAG_ZONE1A_RECEIVED_FWG
-# 3365 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_PBL, SUB_QUEST_1
-# 3367 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_QUICK_CLAW
-# 3368 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_EXP_SHARE
-# 3369 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_INFINITE_REPEL
 # 3370 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_10
+	setvar VAR_TEMP_1, 5
 # 3371 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_11
+	call Debug_CheatStart_PBL_GiveMon
 # 3372 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_12
-# 3374 "data/scripts/battle_labyrinth.pory"
-	message Debug_CheatStart_PBL_Text_7
+	setflag FLAG_ZONE1A_RECEIVED_FWG
+# 3373 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_PBL, SUB_QUEST_1
 # 3375 "data/scripts/battle_labyrinth.pory"
-	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_8, Debug_CheatStart_PBL_Text_9, Debug_CheatStart_PBL_Text_10
+	additem ITEM_QUICK_CLAW
 # 3376 "data/scripts/battle_labyrinth.pory"
-	switch VAR_RESULT
+	additem ITEM_EXP_SHARE
 # 3377 "data/scripts/battle_labyrinth.pory"
-	case 0, Debug_CheatStart_PBL_37
+	additem ITEM_INFINITE_REPEL
+# 3378 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_10
 # 3379 "data/scripts/battle_labyrinth.pory"
-	case 1, Debug_CheatStart_PBL_38
+	completesubquest QUEST_SIGNS, SUB_QUEST_11
+# 3380 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_12
 # 3381 "data/scripts/battle_labyrinth.pory"
-	case 2, Debug_CheatStart_PBL_39
+	settrainerflag TRAINER_PBL_NINA
+# 3382 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_MARIAM
 # 3383 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_OSCAR
+# 3384 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_BEAT_LEVIATHAN_1
+# 3386 "data/scripts/battle_labyrinth.pory"
+	message Debug_CheatStart_PBL_Text_7
+# 3387 "data/scripts/battle_labyrinth.pory"
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_8, Debug_CheatStart_PBL_Text_9, Debug_CheatStart_PBL_Text_10
+# 3388 "data/scripts/battle_labyrinth.pory"
+	switch VAR_RESULT
+# 3389 "data/scripts/battle_labyrinth.pory"
+	case 0, Debug_CheatStart_PBL_37
+# 3391 "data/scripts/battle_labyrinth.pory"
+	case 1, Debug_CheatStart_PBL_38
+# 3393 "data/scripts/battle_labyrinth.pory"
+	case 2, Debug_CheatStart_PBL_39
+# 3395 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, Debug_CheatStart_PBL_40
 Debug_CheatStart_PBL_35:
-# 3389 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_TEMP_1, 5
-# 3390 "data/scripts/battle_labyrinth.pory"
-	call Debug_CheatStart_PBL_GenerateMon
-# 3392 "data/scripts/battle_labyrinth.pory"
-	random 10
-# 3393 "data/scripts/battle_labyrinth.pory"
-	switch VAR_RESULT
-# 3394 "data/scripts/battle_labyrinth.pory"
-	case 0, Debug_CheatStart_PBL_61
-# 3395 "data/scripts/battle_labyrinth.pory"
-	case 1, Debug_CheatStart_PBL_61
-# 3397 "data/scripts/battle_labyrinth.pory"
-	case 2, Debug_CheatStart_PBL_62
-# 3399 "data/scripts/battle_labyrinth.pory"
-	case 3, Debug_CheatStart_PBL_63
 # 3401 "data/scripts/battle_labyrinth.pory"
-	case 4, Debug_CheatStart_PBL_64
-# 3403 "data/scripts/battle_labyrinth.pory"
-	case 5, Debug_CheatStart_PBL_65
+	setvar VAR_TEMP_1, 5
+# 3402 "data/scripts/battle_labyrinth.pory"
+	call Debug_CheatStart_PBL_GenerateMon
+# 3404 "data/scripts/battle_labyrinth.pory"
+	random 10
 # 3405 "data/scripts/battle_labyrinth.pory"
-	case 6, Debug_CheatStart_PBL_66
+	switch VAR_RESULT
+# 3406 "data/scripts/battle_labyrinth.pory"
+	case 0, Debug_CheatStart_PBL_61
 # 3407 "data/scripts/battle_labyrinth.pory"
-	case 7, Debug_CheatStart_PBL_67
+	case 1, Debug_CheatStart_PBL_61
 # 3409 "data/scripts/battle_labyrinth.pory"
-	case 8, Debug_CheatStart_PBL_68
+	case 2, Debug_CheatStart_PBL_62
 # 3411 "data/scripts/battle_labyrinth.pory"
+	case 3, Debug_CheatStart_PBL_63
+# 3413 "data/scripts/battle_labyrinth.pory"
+	case 4, Debug_CheatStart_PBL_64
+# 3415 "data/scripts/battle_labyrinth.pory"
+	case 5, Debug_CheatStart_PBL_65
+# 3417 "data/scripts/battle_labyrinth.pory"
+	case 6, Debug_CheatStart_PBL_66
+# 3419 "data/scripts/battle_labyrinth.pory"
+	case 7, Debug_CheatStart_PBL_67
+# 3421 "data/scripts/battle_labyrinth.pory"
+	case 8, Debug_CheatStart_PBL_68
+# 3423 "data/scripts/battle_labyrinth.pory"
 	case 9, Debug_CheatStart_PBL_69
 Debug_CheatStart_PBL_59:
-# 3414 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_TEMP_1, 6
-# 3415 "data/scripts/battle_labyrinth.pory"
-	call Debug_CheatStart_PBL_GiveMon
-# 3416 "data/scripts/battle_labyrinth.pory"
-	setflag FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG
-# 3417 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_PBL, SUB_QUEST_2
-# 3419 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_SILK_SCARF
-# 3420 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_TM_BUG_BITE
-# 3421 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_ORAN_BERRY, 5
-# 3422 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_CHERI_BERRY, 2
-# 3423 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_CHESTO_BERRY, 2
-# 3424 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_RAWST_BERRY, 2
-# 3425 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_ASPEAR_BERRY, 2
 # 3426 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_PECHA_BERRY, 2
+	setvar VAR_TEMP_1, 6
 # 3427 "data/scripts/battle_labyrinth.pory"
-	setflag FLAG_SYS_DEXNAV_GET
+	call Debug_CheatStart_PBL_GiveMon
 # 3428 "data/scripts/battle_labyrinth.pory"
-	setflag FLAG_SYS_DEXNAV_SEARCH
+	setflag FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG
 # 3429 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_13
-# 3430 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_14
+	completesubquest QUEST_PBL, SUB_QUEST_2
 # 3431 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_15
+	additem ITEM_SILK_SCARF
 # 3432 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_16
+	additem ITEM_TM_BUG_BITE
 # 3433 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_17
+	additem ITEM_ORAN_BERRY, 5
+# 3434 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_CHERI_BERRY, 2
 # 3435 "data/scripts/battle_labyrinth.pory"
-	message Debug_CheatStart_PBL_Text_11
+	additem ITEM_CHESTO_BERRY, 2
 # 3436 "data/scripts/battle_labyrinth.pory"
-	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_6
+	additem ITEM_RAWST_BERRY, 2
 # 3437 "data/scripts/battle_labyrinth.pory"
-	switch VAR_RESULT
+	additem ITEM_ASPEAR_BERRY, 2
 # 3438 "data/scripts/battle_labyrinth.pory"
-	case 0, Debug_CheatStart_PBL_72
+	additem ITEM_PECHA_BERRY, 2
+# 3439 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_SYS_DEXNAV_GET
 # 3440 "data/scripts/battle_labyrinth.pory"
-	case 1, Debug_CheatStart_PBL_73
+	setflag FLAG_SYS_DEXNAV_SEARCH
+# 3441 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_13
+# 3442 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_14
 # 3443 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_15
+# 3444 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_16
+# 3445 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_17
+# 3446 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_POLLY
+# 3447 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_JEREMIAH
+# 3448 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_JOSH
+# 3449 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_HARPER
+# 3450 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_ARTHUR
+# 3451 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_BEAT_LEVIATHAN_2
+# 3453 "data/scripts/battle_labyrinth.pory"
+	message Debug_CheatStart_PBL_Text_11
+# 3454 "data/scripts/battle_labyrinth.pory"
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_6
+# 3455 "data/scripts/battle_labyrinth.pory"
+	switch VAR_RESULT
+# 3456 "data/scripts/battle_labyrinth.pory"
+	case 0, Debug_CheatStart_PBL_72
+# 3458 "data/scripts/battle_labyrinth.pory"
+	case 1, Debug_CheatStart_PBL_73
+# 3461 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, Debug_CheatStart_PBL_74
 Debug_CheatStart_PBL_70:
-# 3449 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_TEMP_1, 7
-# 3450 "data/scripts/battle_labyrinth.pory"
-	call Debug_CheatStart_PBL_GenerateMon
-# 3451 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_PBL, SUB_QUEST_3
-# 3453 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_GOOD_ROD
-# 3454 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_18
-# 3456 "data/scripts/battle_labyrinth.pory"
-	message Debug_CheatStart_PBL_Text_12
-# 3457 "data/scripts/battle_labyrinth.pory"
-	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_13, Debug_CheatStart_PBL_Text_14, Debug_CheatStart_PBL_Text_15, Debug_CheatStart_PBL_Text_16, Debug_CheatStart_PBL_Text_17
-# 3458 "data/scripts/battle_labyrinth.pory"
-	switch VAR_RESULT
-# 3459 "data/scripts/battle_labyrinth.pory"
-	case 0, Debug_CheatStart_PBL_77
-# 3461 "data/scripts/battle_labyrinth.pory"
-	case 1, Debug_CheatStart_PBL_78
-# 3463 "data/scripts/battle_labyrinth.pory"
-	case 2, Debug_CheatStart_PBL_79
-# 3465 "data/scripts/battle_labyrinth.pory"
-	case 3, Debug_CheatStart_PBL_80
 # 3467 "data/scripts/battle_labyrinth.pory"
-	case 4, Debug_CheatStart_PBL_81
+	setvar VAR_TEMP_1, 7
+# 3468 "data/scripts/battle_labyrinth.pory"
+	call Debug_CheatStart_PBL_GenerateMon
 # 3469 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_PBL, SUB_QUEST_3
+# 3471 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_GOOD_ROD
+# 3472 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_18
+# 3473 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_JEMMA
+# 3474 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_PATRICK
+# 3475 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_ANNABELLE
+# 3476 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_BORIS
+# 3477 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_RICHARD
+# 3478 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_BEAT_LEVIATHAN_3
+# 3480 "data/scripts/battle_labyrinth.pory"
+	message Debug_CheatStart_PBL_Text_12
+# 3481 "data/scripts/battle_labyrinth.pory"
+	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_13, Debug_CheatStart_PBL_Text_14, Debug_CheatStart_PBL_Text_15, Debug_CheatStart_PBL_Text_16, Debug_CheatStart_PBL_Text_17
+# 3482 "data/scripts/battle_labyrinth.pory"
+	switch VAR_RESULT
+# 3483 "data/scripts/battle_labyrinth.pory"
+	case 0, Debug_CheatStart_PBL_77
+# 3485 "data/scripts/battle_labyrinth.pory"
+	case 1, Debug_CheatStart_PBL_78
+# 3487 "data/scripts/battle_labyrinth.pory"
+	case 2, Debug_CheatStart_PBL_79
+# 3489 "data/scripts/battle_labyrinth.pory"
+	case 3, Debug_CheatStart_PBL_80
+# 3491 "data/scripts/battle_labyrinth.pory"
+	case 4, Debug_CheatStart_PBL_81
+# 3493 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, Debug_CheatStart_PBL_82
 Debug_CheatStart_PBL_75:
-# 3475 "data/scripts/battle_labyrinth.pory"
+# 3499 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 9
-# 3476 "data/scripts/battle_labyrinth.pory"
+# 3500 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GenerateMon
-# 3477 "data/scripts/battle_labyrinth.pory"
+# 3501 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_PBL, SUB_QUEST_4
-# 3479 "data/scripts/battle_labyrinth.pory"
+# 3503 "data/scripts/battle_labyrinth.pory"
 	random 8
-# 3480 "data/scripts/battle_labyrinth.pory"
+# 3504 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3481 "data/scripts/battle_labyrinth.pory"
+# 3505 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_85
-# 3483 "data/scripts/battle_labyrinth.pory"
+# 3507 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_86
-# 3485 "data/scripts/battle_labyrinth.pory"
+# 3509 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_87
-# 3487 "data/scripts/battle_labyrinth.pory"
+# 3511 "data/scripts/battle_labyrinth.pory"
 	case 3, Debug_CheatStart_PBL_88
-# 3489 "data/scripts/battle_labyrinth.pory"
+# 3513 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_89
-# 3491 "data/scripts/battle_labyrinth.pory"
+# 3515 "data/scripts/battle_labyrinth.pory"
 	case 5, Debug_CheatStart_PBL_90
-# 3493 "data/scripts/battle_labyrinth.pory"
+# 3517 "data/scripts/battle_labyrinth.pory"
 	case 6, Debug_CheatStart_PBL_91
-# 3495 "data/scripts/battle_labyrinth.pory"
+# 3519 "data/scripts/battle_labyrinth.pory"
 	case 7, Debug_CheatStart_PBL_92
 Debug_CheatStart_PBL_83:
-# 3498 "data/scripts/battle_labyrinth.pory"
-	setflag FLAG_ZONE4A_RECEIVED_GEM
-# 3500 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_SILVER_POWDER
-# 3501 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MUSCLE_BAND
-# 3502 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_WISE_GLASSES
-# 3503 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_TWISTED_SPOON
-# 3504 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_POISON_BARB
-# 3505 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_TM_SNARL
-# 3506 "data/scripts/battle_labyrinth.pory"
-	setflag FLAG_SYS_START_MENU_PC_GET
-# 3507 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_BURN_HEAL, 2
-# 3508 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_AWAKENING, 2
-# 3509 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_19
-# 3510 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_20
-# 3511 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_21
-# 3512 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_22
-# 3513 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_23
-# 3515 "data/scripts/battle_labyrinth.pory"
-	message Debug_CheatStart_PBL_Text_18
-# 3516 "data/scripts/battle_labyrinth.pory"
-	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_19, Debug_CheatStart_PBL_Text_20
-# 3517 "data/scripts/battle_labyrinth.pory"
-	switch VAR_RESULT
-# 3518 "data/scripts/battle_labyrinth.pory"
-	case 0, Debug_CheatStart_PBL_95
-# 3520 "data/scripts/battle_labyrinth.pory"
-	case 1, Debug_CheatStart_PBL_96
 # 3522 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_ZONE4A_RECEIVED_GEM
+# 3524 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_SILVER_POWDER
+# 3525 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_MUSCLE_BAND
+# 3526 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_WISE_GLASSES
+# 3527 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_TWISTED_SPOON
+# 3528 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_POISON_BARB
+# 3529 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_TM_SNARL
+# 3530 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_SYS_START_MENU_PC_GET
+# 3531 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_BURN_HEAL, 2
+# 3532 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_AWAKENING, 2
+# 3533 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_19
+# 3534 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_20
+# 3535 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_21
+# 3536 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_22
+# 3537 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_23
+# 3538 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_HERMAN
+# 3539 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_RALPH
+# 3540 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_CALLIE
+# 3541 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_SANTIAGO
+# 3542 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_CHLOE_AND_KAYA
+# 3543 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_FRED
+# 3544 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_LUCIA
+# 3545 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_BEAT_LEVIATHAN_4
+# 3547 "data/scripts/battle_labyrinth.pory"
+	message Debug_CheatStart_PBL_Text_18
+# 3548 "data/scripts/battle_labyrinth.pory"
+	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_19, Debug_CheatStart_PBL_Text_20
+# 3549 "data/scripts/battle_labyrinth.pory"
+	switch VAR_RESULT
+# 3550 "data/scripts/battle_labyrinth.pory"
+	case 0, Debug_CheatStart_PBL_95
+# 3552 "data/scripts/battle_labyrinth.pory"
+	case 1, Debug_CheatStart_PBL_96
+# 3554 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, Debug_CheatStart_PBL_97
 Debug_CheatStart_PBL_93:
-# 3528 "data/scripts/battle_labyrinth.pory"
+# 3560 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 11
-# 3529 "data/scripts/battle_labyrinth.pory"
+# 3561 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GenerateMon
-# 3531 "data/scripts/battle_labyrinth.pory"
+# 3563 "data/scripts/battle_labyrinth.pory"
 	random 6
-# 3532 "data/scripts/battle_labyrinth.pory"
+# 3564 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3533 "data/scripts/battle_labyrinth.pory"
+# 3565 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_100
-# 3535 "data/scripts/battle_labyrinth.pory"
+# 3567 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_101
-# 3537 "data/scripts/battle_labyrinth.pory"
+# 3569 "data/scripts/battle_labyrinth.pory"
 	case 2, Debug_CheatStart_PBL_102
-# 3539 "data/scripts/battle_labyrinth.pory"
+# 3571 "data/scripts/battle_labyrinth.pory"
 	case 3, Debug_CheatStart_PBL_103
-# 3541 "data/scripts/battle_labyrinth.pory"
+# 3573 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_104
-# 3543 "data/scripts/battle_labyrinth.pory"
+# 3575 "data/scripts/battle_labyrinth.pory"
 	case 5, Debug_CheatStart_PBL_105
 Debug_CheatStart_PBL_98:
-# 3546 "data/scripts/battle_labyrinth.pory"
+# 3578 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 12
-# 3547 "data/scripts/battle_labyrinth.pory"
+# 3579 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GiveMon
-# 3548 "data/scripts/battle_labyrinth.pory"
+# 3580 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE
-# 3549 "data/scripts/battle_labyrinth.pory"
+# 3581 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_PBL, SUB_QUEST_5
-# 3551 "data/scripts/battle_labyrinth.pory"
+# 3583 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_METRONOME
-# 3552 "data/scripts/battle_labyrinth.pory"
+# 3584 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_QUICK_BALL
-# 3553 "data/scripts/battle_labyrinth.pory"
+# 3585 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_MIRACLE_SEED
-# 3554 "data/scripts/battle_labyrinth.pory"
+# 3586 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_NORMAL_GEM
-# 3555 "data/scripts/battle_labyrinth.pory"
+# 3587 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_BUG_GEM
-# 3556 "data/scripts/battle_labyrinth.pory"
+# 3588 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_GRASS_GEM
-# 3557 "data/scripts/battle_labyrinth.pory"
+# 3589 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_EVIOLITE
-# 3558 "data/scripts/battle_labyrinth.pory"
+# 3590 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_RED_SHARD, 5
-# 3560 "data/scripts/battle_labyrinth.pory"
+# 3591 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_ANNE_AND_JUNE
+# 3592 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_NOVA_AND_CORA
+# 3593 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_CLINTON
+# 3594 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_REBECCA
+# 3595 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_RYAN
+# 3596 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_CAITLYN
+# 3597 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_KENNETH
+# 3598 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_KEVIN
+# 3599 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_BEAT_LEVIATHAN_5
+# 3601 "data/scripts/battle_labyrinth.pory"
 	message Debug_CheatStart_PBL_Text_21
-# 3561 "data/scripts/battle_labyrinth.pory"
+# 3602 "data/scripts/battle_labyrinth.pory"
 	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_6
-# 3562 "data/scripts/battle_labyrinth.pory"
+# 3603 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3563 "data/scripts/battle_labyrinth.pory"
+# 3604 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_108
-# 3565 "data/scripts/battle_labyrinth.pory"
+# 3606 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_109
-# 3568 "data/scripts/battle_labyrinth.pory"
+# 3609 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, Debug_CheatStart_PBL_110
 Debug_CheatStart_PBL_106:
-# 3574 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_TEMP_1, 13
-# 3575 "data/scripts/battle_labyrinth.pory"
-	call Debug_CheatStart_PBL_GenerateMon
-# 3576 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_PBL, SUB_QUEST_6
-# 3578 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_NEST_BALL
-# 3579 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_NET_BALL
-# 3580 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_TM_DRAINING_KISS
-# 3581 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_WATER_GEM
-# 3582 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_FLYING_GEM
-# 3583 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_ICE_GEM
-# 3584 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_SLEDGEHAMMER
-# 3585 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_SUPER_POTION, 2
-# 3586 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_24
-# 3588 "data/scripts/battle_labyrinth.pory"
-	message Debug_CheatStart_PBL_Text_22
-# 3589 "data/scripts/battle_labyrinth.pory"
-	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_3
-# 3590 "data/scripts/battle_labyrinth.pory"
-	switch VAR_RESULT
-# 3591 "data/scripts/battle_labyrinth.pory"
-	case 0, Debug_CheatStart_PBL_113
-# 3593 "data/scripts/battle_labyrinth.pory"
-	case 1, Debug_CheatStart_PBL_114
-# 3596 "data/scripts/battle_labyrinth.pory"
-	case MULTI_B_PRESSED, Debug_CheatStart_PBL_115
-Debug_CheatStart_PBL_111:
-# 3602 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_TEMP_1, 15
-# 3603 "data/scripts/battle_labyrinth.pory"
-	call Debug_CheatStart_PBL_GenerateMon
-# 3605 "data/scripts/battle_labyrinth.pory"
-	message Debug_CheatStart_PBL_Text_23
-# 3606 "data/scripts/battle_labyrinth.pory"
-	dynmultichoice 0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_13, Debug_CheatStart_PBL_Text_14, Debug_CheatStart_PBL_Text_15
-# 3607 "data/scripts/battle_labyrinth.pory"
-	switch VAR_RESULT
-# 3608 "data/scripts/battle_labyrinth.pory"
-	case 0, Debug_CheatStart_PBL_118
-# 3610 "data/scripts/battle_labyrinth.pory"
-	case 1, Debug_CheatStart_PBL_119
-# 3612 "data/scripts/battle_labyrinth.pory"
-	case 2, Debug_CheatStart_PBL_120
-Debug_CheatStart_PBL_116:
 # 3615 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_TEMP_1, 16
+	setvar VAR_TEMP_1, 13
 # 3616 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GenerateMon
 # 3617 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_PBL, SUB_QUEST_7
-# 3618 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_PBL, SUB_QUEST_8
+	completesubquest QUEST_PBL, SUB_QUEST_6
+# 3619 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_NEST_BALL
 # 3620 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_SHARP_BEAK
+	additem ITEM_NET_BALL
 # 3621 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_ROCK_GEM
+	additem ITEM_TM_DRAINING_KISS
 # 3622 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_FIGHTING_GEM
+	additem ITEM_WATER_GEM
 # 3623 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_PSYCHIC_GEM
+	additem ITEM_FLYING_GEM
 # 3624 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_BLACK_BELT
+	additem ITEM_ICE_GEM
 # 3625 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_SITRUS_BERRY, 5
+	additem ITEM_SLEDGEHAMMER
 # 3626 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MAGNET
-# 3627 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_HARD_STONE
-# 3628 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_DUSK_BALL
-# 3629 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_FULL_HEAL
-# 3630 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_TM_THIEF
-# 3631 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_TM_ROCK_TOMB
-# 3632 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_PARALYZE_HEAL, 2
-# 3633 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_ANTIDOTE, 2
-# 3634 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_GREAT_BALL
-# 3635 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_POTION, 5
-# 3636 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_SUPER_POTION, 2
-# 3637 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_MACHETE
+# 3627 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_24
+# 3628 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_GILBERT
+# 3629 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_MELANIE
+# 3630 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_CONSTANCE
+# 3631 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_FRANK
+# 3632 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_DUDLEY
+# 3633 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_DAISY
+# 3634 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_VIC_AND_DELL
+# 3635 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_MINA
+# 3636 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_BEAT_LEVIATHAN_6
 # 3638 "data/scripts/battle_labyrinth.pory"
-	additem ITEM_TM_HIDDEN_POWER
+	message Debug_CheatStart_PBL_Text_22
 # 3639 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_25
+	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_3
 # 3640 "data/scripts/battle_labyrinth.pory"
-	completesubquest QUEST_SIGNS, SUB_QUEST_26
-# 3642 "data/scripts/battle_labyrinth.pory"
-	message Debug_CheatStart_PBL_Text_24
-# 3643 "data/scripts/battle_labyrinth.pory"
-	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_6
-# 3644 "data/scripts/battle_labyrinth.pory"
 	switch VAR_RESULT
-# 3645 "data/scripts/battle_labyrinth.pory"
+# 3641 "data/scripts/battle_labyrinth.pory"
+	case 0, Debug_CheatStart_PBL_113
+# 3643 "data/scripts/battle_labyrinth.pory"
+	case 1, Debug_CheatStart_PBL_114
+# 3646 "data/scripts/battle_labyrinth.pory"
+	case MULTI_B_PRESSED, Debug_CheatStart_PBL_115
+Debug_CheatStart_PBL_111:
+# 3652 "data/scripts/battle_labyrinth.pory"
+	setvar VAR_TEMP_1, 15
+# 3653 "data/scripts/battle_labyrinth.pory"
+	call Debug_CheatStart_PBL_GenerateMon
+# 3655 "data/scripts/battle_labyrinth.pory"
+	message Debug_CheatStart_PBL_Text_23
+# 3656 "data/scripts/battle_labyrinth.pory"
+	dynmultichoice 0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_13, Debug_CheatStart_PBL_Text_14, Debug_CheatStart_PBL_Text_15
+# 3657 "data/scripts/battle_labyrinth.pory"
+	switch VAR_RESULT
+# 3658 "data/scripts/battle_labyrinth.pory"
+	case 0, Debug_CheatStart_PBL_118
+# 3660 "data/scripts/battle_labyrinth.pory"
+	case 1, Debug_CheatStart_PBL_119
+# 3662 "data/scripts/battle_labyrinth.pory"
+	case 2, Debug_CheatStart_PBL_120
+Debug_CheatStart_PBL_116:
+# 3665 "data/scripts/battle_labyrinth.pory"
+	setvar VAR_TEMP_1, 16
+# 3666 "data/scripts/battle_labyrinth.pory"
+	call Debug_CheatStart_PBL_GenerateMon
+# 3667 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_PBL, SUB_QUEST_7
+# 3668 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_PBL, SUB_QUEST_8
+# 3670 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_SHARP_BEAK
+# 3671 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_ROCK_GEM
+# 3672 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_FIGHTING_GEM
+# 3673 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_PSYCHIC_GEM
+# 3674 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_BLACK_BELT
+# 3675 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_SITRUS_BERRY, 5
+# 3676 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_MAGNET
+# 3677 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_HARD_STONE
+# 3678 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_DUSK_BALL
+# 3679 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_FULL_HEAL
+# 3680 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_TM_THIEF
+# 3681 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_TM_ROCK_TOMB
+# 3682 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_PARALYZE_HEAL, 2
+# 3683 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_ANTIDOTE, 2
+# 3684 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_GREAT_BALL
+# 3685 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_POTION, 5
+# 3686 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_SUPER_POTION, 2
+# 3687 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_MACHETE
+# 3688 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_TM_HIDDEN_POWER
+# 3689 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_25
+# 3690 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_SIGNS, SUB_QUEST_26
+# 3691 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_MILLIE
+# 3692 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_JAMAL
+# 3693 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_PAIGE
+# 3694 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_SETH
+# 3695 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_CONNIE
+# 3696 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_PETER
+# 3697 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_WHITAKER
+# 3698 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_JIMMY
+# 3699 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_EMILIANO
+# 3700 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_BECKHAM
+# 3701 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_KAREN
+# 3702 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_JAYDEN
+# 3703 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_NEIL
+# 3704 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_TAMARA
+# 3705 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_BEAT_LEVIATHAN_7
+# 3706 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_BEAT_LEVIATHAN_8
+# 3708 "data/scripts/battle_labyrinth.pory"
+	message Debug_CheatStart_PBL_Text_24
+# 3709 "data/scripts/battle_labyrinth.pory"
+	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_2, Debug_CheatStart_PBL_Text_6
+# 3710 "data/scripts/battle_labyrinth.pory"
+	switch VAR_RESULT
+# 3711 "data/scripts/battle_labyrinth.pory"
 	case 0, Debug_CheatStart_PBL_123
-# 3647 "data/scripts/battle_labyrinth.pory"
+# 3713 "data/scripts/battle_labyrinth.pory"
 	case 1, Debug_CheatStart_PBL_124
-# 3650 "data/scripts/battle_labyrinth.pory"
+# 3716 "data/scripts/battle_labyrinth.pory"
 	case MULTI_B_PRESSED, Debug_CheatStart_PBL_125
 Debug_CheatStart_PBL_121:
-# 3656 "data/scripts/battle_labyrinth.pory"
+# 3722 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_1, 18
-# 3657 "data/scripts/battle_labyrinth.pory"
+# 3723 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GenerateMon
-# 3658 "data/scripts/battle_labyrinth.pory"
+# 3724 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_PBL, SUB_QUEST_9
-# 3660 "data/scripts/battle_labyrinth.pory"
+# 3726 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_BIG_ROOT
-# 3661 "data/scripts/battle_labyrinth.pory"
+# 3727 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_TM_PLUCK
-# 3662 "data/scripts/battle_labyrinth.pory"
+# 3728 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_POISON_GEM
+# 3729 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_STEEL_GEM
+# 3730 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_DARK_GEM
+# 3731 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_MYSTIC_WATER
-# 3663 "data/scripts/battle_labyrinth.pory"
+# 3732 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_CHARCOAL
-# 3664 "data/scripts/battle_labyrinth.pory"
+# 3733 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_TM_RETALIATE
-# 3665 "data/scripts/battle_labyrinth.pory"
+# 3734 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_27
-# 3666 "data/scripts/battle_labyrinth.pory"
+# 3735 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_SIGNS, SUB_QUEST_28
-# 3668 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_TEMP_0, SPECIES_SQUAWKABILLY
-# 3669 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_TEMP_1, 20
-# 3670 "data/scripts/battle_labyrinth.pory"
-	call Debug_CheatStart_PBL_GiveMon
-# 3671 "data/scripts/battle_labyrinth.pory"
-	setflag FLAG_ZONE9E_RECEIVED_SQUAWKABILLY
-# 3673 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_ZONE, 10
-# 3674 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_LEVEL_CAP, 21
-# 3675 "data/scripts/battle_labyrinth.pory"
-	closemessage
-	return
+# 3736 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_COOPER
+# 3737 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_CARMINE
+# 3738 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_JONATHAN
+# 3739 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_CALVIN
+# 3740 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_LUIS
+# 3741 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_ARI
+# 3742 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_ARI_CHALLENGE
+# 3743 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_BERTHA
+# 3744 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_BERTHA_CHALLENGE
+# 3745 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_CASSANDRA
+# 3746 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_CASSANDRA_CHALLENGE
+# 3747 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_DOMINIC
+# 3748 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_DOMINIC_CHALLENGE
+# 3749 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_ERICA
+# 3750 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_ERICA_CHALLENGE
+# 3752 "data/scripts/battle_labyrinth.pory"
+	message Debug_CheatStart_PBL_Text_25
+# 3753 "data/scripts/battle_labyrinth.pory"
+	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Debug_CheatStart_PBL_Text_26, Debug_CheatStart_PBL_Text_27
+# 3754 "data/scripts/battle_labyrinth.pory"
+	switch VAR_RESULT
+# 3755 "data/scripts/battle_labyrinth.pory"
+	case 0, Debug_CheatStart_PBL_128
+# 3757 "data/scripts/battle_labyrinth.pory"
+	case 1, Debug_CheatStart_PBL_129
+# 3759 "data/scripts/battle_labyrinth.pory"
+	case MULTI_B_PRESSED, Debug_CheatStart_PBL_130
+Debug_CheatStart_PBL_126:
+# 3765 "data/scripts/battle_labyrinth.pory"
+	setvar VAR_TEMP_1, 19
+# 3766 "data/scripts/battle_labyrinth.pory"
+	call Debug_CheatStart_PBL_GenerateMon
+# 3767 "data/scripts/battle_labyrinth.pory"
+	completesubquest QUEST_PBL, SUB_QUEST_10
+# 3769 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_TM_SCORCHING_SANDS
+# 3770 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_FIRE_GEM
+# 3771 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_ELECTRIC_GEM
+# 3772 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_GROUND_GEM
+# 3773 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_SOFT_SAND
+# 3774 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_BLACK_GLASSES
+# 3775 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_HEAVY_DUTY_BOOTS
+# 3776 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_SAFETY_GOGGLES
+# 3777 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_TM_BULLDOZE
+# 3778 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_TERA_ORB
+# 3779 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_BLUE_SHARD, 5
+# 3780 "data/scripts/battle_labyrinth.pory"
+	additem ITEM_TM_STEEL_WING
+# 3781 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_ALANA
+# 3782 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_JACOB
+# 3783 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_DEWEY
+# 3784 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_ERNEST
+# 3785 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_KYLE
+# 3786 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_ELIAS
+# 3787 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_PEARLIE
+# 3788 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_SUSAN
+# 3789 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_CONRAD
+# 3790 "data/scripts/battle_labyrinth.pory"
+	settrainerflag TRAINER_PBL_BRETT
+# 3791 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_BEAT_LEVIATHAN_10
+# 3792 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_ZONE10B_RECEIVED_TM_STEEL_WING
+# 3794 "data/scripts/battle_labyrinth.pory"
+	setvar VAR_ZONE, 11
+# 3795 "data/scripts/battle_labyrinth.pory"
+	setvar VAR_LEVEL_CAP, 23
+# 3796 "data/scripts/battle_labyrinth.pory"
+	release
+	end
 
 Debug_CheatStart_PBL_3:
-# 3230 "data/scripts/battle_labyrinth.pory"
+# 3237 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TRAINER_MUSIC, 0
 	goto Debug_CheatStart_PBL_1
 
 Debug_CheatStart_PBL_4:
-# 3232 "data/scripts/battle_labyrinth.pory"
+# 3239 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TRAINER_MUSIC, 1
 	goto Debug_CheatStart_PBL_1
 
 Debug_CheatStart_PBL_5:
-# 3234 "data/scripts/battle_labyrinth.pory"
+# 3241 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TRAINER_MUSIC, 2
 	goto Debug_CheatStart_PBL_1
 
 Debug_CheatStart_PBL_6:
-# 3236 "data/scripts/battle_labyrinth.pory"
+# 3243 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TRAINER_MUSIC, 3
 	goto Debug_CheatStart_PBL_1
 
 Debug_CheatStart_PBL_7:
-# 3238 "data/scripts/battle_labyrinth.pory"
+# 3245 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TRAINER_MUSIC, 4
 	goto Debug_CheatStart_PBL_1
 
 Debug_CheatStart_PBL_10:
-# 3243 "data/scripts/battle_labyrinth.pory"
+# 3250 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_WILD_MUSIC, 0
 	goto Debug_CheatStart_PBL_8
 
 Debug_CheatStart_PBL_11:
-# 3245 "data/scripts/battle_labyrinth.pory"
+# 3252 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_WILD_MUSIC, 1
 	goto Debug_CheatStart_PBL_8
 
 Debug_CheatStart_PBL_12:
-# 3247 "data/scripts/battle_labyrinth.pory"
+# 3254 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_WILD_MUSIC, 2
 	goto Debug_CheatStart_PBL_8
 
 Debug_CheatStart_PBL_13:
-# 3249 "data/scripts/battle_labyrinth.pory"
+# 3256 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_WILD_MUSIC, 3
 	goto Debug_CheatStart_PBL_8
 
 Debug_CheatStart_PBL_14:
-# 3251 "data/scripts/battle_labyrinth.pory"
+# 3258 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_WILD_MUSIC, 4
 	goto Debug_CheatStart_PBL_8
 
 Debug_CheatStart_PBL_17:
-# 3256 "data/scripts/battle_labyrinth.pory"
+# 3263 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVIATHAN_MUSIC, 0
 	goto Debug_CheatStart_PBL_15
 
 Debug_CheatStart_PBL_18:
-# 3258 "data/scripts/battle_labyrinth.pory"
+# 3265 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVIATHAN_MUSIC, 1
 	goto Debug_CheatStart_PBL_15
 
 Debug_CheatStart_PBL_19:
-# 3260 "data/scripts/battle_labyrinth.pory"
+# 3267 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVIATHAN_MUSIC, 2
 	goto Debug_CheatStart_PBL_15
 
 Debug_CheatStart_PBL_20:
-# 3262 "data/scripts/battle_labyrinth.pory"
+# 3269 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVIATHAN_MUSIC, 3
 	goto Debug_CheatStart_PBL_15
 
 Debug_CheatStart_PBL_21:
-# 3264 "data/scripts/battle_labyrinth.pory"
+# 3271 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVIATHAN_MUSIC, 4
 	goto Debug_CheatStart_PBL_15
 
 Debug_CheatStart_PBL_23:
-# 3293 "data/scripts/battle_labyrinth.pory"
+# 3301 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_TEMP_1
 	goto Debug_CheatStart_PBL_22
 
 Debug_CheatStart_PBL_27:
-# 3302 "data/scripts/battle_labyrinth.pory"
+# 3310 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 1
 	goto Debug_CheatStart_PBL_25
 
 Debug_CheatStart_PBL_28:
-# 3304 "data/scripts/battle_labyrinth.pory"
+# 3312 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 1
-# 3305 "data/scripts/battle_labyrinth.pory"
+# 3313 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_TEMP_1
 	goto Debug_CheatStart_PBL_25
 
 Debug_CheatStart_PBL_29:
-# 3307 "data/scripts/battle_labyrinth.pory"
+# 3315 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3308 "data/scripts/battle_labyrinth.pory"
+# 3316 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 1
-# 3309 "data/scripts/battle_labyrinth.pory"
+# 3317 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 7
-# 3310 "data/scripts/battle_labyrinth.pory"
+# 3318 "data/scripts/battle_labyrinth.pory"
 	warp MAP_ZONE_SANCTUARY, 255, 38, 11
-# 3311 "data/scripts/battle_labyrinth.pory"
+# 3319 "data/scripts/battle_labyrinth.pory"
 	waitstate
 	end
 
 Debug_CheatStart_PBL_32:
-# 3320 "data/scripts/battle_labyrinth.pory"
-	random 5
-# 3321 "data/scripts/battle_labyrinth.pory"
-	switch VAR_RESULT
-# 3322 "data/scripts/battle_labyrinth.pory"
-	case 0, Debug_CheatStart_PBL_42
-# 3324 "data/scripts/battle_labyrinth.pory"
-	case 1, Debug_CheatStart_PBL_43
-# 3326 "data/scripts/battle_labyrinth.pory"
-	case 2, Debug_CheatStart_PBL_44
 # 3328 "data/scripts/battle_labyrinth.pory"
-	case 3, Debug_CheatStart_PBL_45
+	random 5
+# 3329 "data/scripts/battle_labyrinth.pory"
+	switch VAR_RESULT
 # 3330 "data/scripts/battle_labyrinth.pory"
+	case 0, Debug_CheatStart_PBL_42
+# 3332 "data/scripts/battle_labyrinth.pory"
+	case 1, Debug_CheatStart_PBL_43
+# 3334 "data/scripts/battle_labyrinth.pory"
+	case 2, Debug_CheatStart_PBL_44
+# 3336 "data/scripts/battle_labyrinth.pory"
+	case 3, Debug_CheatStart_PBL_45
+# 3338 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_46
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_33:
-# 3334 "data/scripts/battle_labyrinth.pory"
-	random 5
-# 3335 "data/scripts/battle_labyrinth.pory"
-	switch VAR_RESULT
-# 3336 "data/scripts/battle_labyrinth.pory"
-	case 0, Debug_CheatStart_PBL_48
-# 3338 "data/scripts/battle_labyrinth.pory"
-	case 1, Debug_CheatStart_PBL_49
-# 3340 "data/scripts/battle_labyrinth.pory"
-	case 2, Debug_CheatStart_PBL_50
 # 3342 "data/scripts/battle_labyrinth.pory"
-	case 3, Debug_CheatStart_PBL_51
+	random 5
+# 3343 "data/scripts/battle_labyrinth.pory"
+	switch VAR_RESULT
 # 3344 "data/scripts/battle_labyrinth.pory"
+	case 0, Debug_CheatStart_PBL_48
+# 3346 "data/scripts/battle_labyrinth.pory"
+	case 1, Debug_CheatStart_PBL_49
+# 3348 "data/scripts/battle_labyrinth.pory"
+	case 2, Debug_CheatStart_PBL_50
+# 3350 "data/scripts/battle_labyrinth.pory"
+	case 3, Debug_CheatStart_PBL_51
+# 3352 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_52
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_34:
-# 3348 "data/scripts/battle_labyrinth.pory"
-	random 5
-# 3349 "data/scripts/battle_labyrinth.pory"
-	switch VAR_RESULT
-# 3350 "data/scripts/battle_labyrinth.pory"
-	case 0, Debug_CheatStart_PBL_54
-# 3352 "data/scripts/battle_labyrinth.pory"
-	case 1, Debug_CheatStart_PBL_55
-# 3354 "data/scripts/battle_labyrinth.pory"
-	case 2, Debug_CheatStart_PBL_56
 # 3356 "data/scripts/battle_labyrinth.pory"
-	case 3, Debug_CheatStart_PBL_57
+	random 5
+# 3357 "data/scripts/battle_labyrinth.pory"
+	switch VAR_RESULT
 # 3358 "data/scripts/battle_labyrinth.pory"
+	case 0, Debug_CheatStart_PBL_54
+# 3360 "data/scripts/battle_labyrinth.pory"
+	case 1, Debug_CheatStart_PBL_55
+# 3362 "data/scripts/battle_labyrinth.pory"
+	case 2, Debug_CheatStart_PBL_56
+# 3364 "data/scripts/battle_labyrinth.pory"
+	case 3, Debug_CheatStart_PBL_57
+# 3366 "data/scripts/battle_labyrinth.pory"
 	case 4, Debug_CheatStart_PBL_58
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_37:
-# 3378 "data/scripts/battle_labyrinth.pory"
+# 3390 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 2
 	goto Debug_CheatStart_PBL_35
 
 Debug_CheatStart_PBL_38:
-# 3380 "data/scripts/battle_labyrinth.pory"
+# 3392 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 4
 	goto Debug_CheatStart_PBL_35
 
 Debug_CheatStart_PBL_39:
-# 3382 "data/scripts/battle_labyrinth.pory"
+# 3394 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 3
 	goto Debug_CheatStart_PBL_35
 
 Debug_CheatStart_PBL_40:
-# 3384 "data/scripts/battle_labyrinth.pory"
+# 3396 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3385 "data/scripts/battle_labyrinth.pory"
+# 3397 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 2
-# 3386 "data/scripts/battle_labyrinth.pory"
+# 3398 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 9
 	end
 
 Debug_CheatStart_PBL_42:
-# 3323 "data/scripts/battle_labyrinth.pory"
+# 3331 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_PANSAGE
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_43:
-# 3325 "data/scripts/battle_labyrinth.pory"
+# 3333 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_HOPPIP
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_44:
-# 3327 "data/scripts/battle_labyrinth.pory"
+# 3335 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_BELLSPROUT
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_45:
-# 3329 "data/scripts/battle_labyrinth.pory"
+# 3337 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SMOLIV
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_46:
-# 3331 "data/scripts/battle_labyrinth.pory"
+# 3339 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_BOUNSWEET
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_48:
-# 3337 "data/scripts/battle_labyrinth.pory"
+# 3345 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_PANSEAR
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_49:
-# 3339 "data/scripts/battle_labyrinth.pory"
+# 3347 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_NUMEL
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_50:
-# 3341 "data/scripts/battle_labyrinth.pory"
+# 3349 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SALANDIT
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_51:
-# 3343 "data/scripts/battle_labyrinth.pory"
+# 3351 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_LITLEO
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_52:
-# 3345 "data/scripts/battle_labyrinth.pory"
+# 3353 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SIZZLIPEDE
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_54:
-# 3351 "data/scripts/battle_labyrinth.pory"
+# 3359 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_PANPOUR
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_55:
-# 3353 "data/scripts/battle_labyrinth.pory"
+# 3361 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_BARBOACH
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_56:
-# 3355 "data/scripts/battle_labyrinth.pory"
+# 3363 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_CLAMPERL
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_57:
-# 3357 "data/scripts/battle_labyrinth.pory"
+# 3365 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SEEL
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_58:
-# 3359 "data/scripts/battle_labyrinth.pory"
+# 3367 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_GOLDEEN
 	goto Debug_CheatStart_PBL_30
 
 Debug_CheatStart_PBL_61:
-# 3396 "data/scripts/battle_labyrinth.pory"
+# 3408 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_WURMPLE
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_62:
-# 3398 "data/scripts/battle_labyrinth.pory"
+# 3410 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_CATERPIE
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_63:
-# 3400 "data/scripts/battle_labyrinth.pory"
+# 3412 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_WEEDLE
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_64:
-# 3402 "data/scripts/battle_labyrinth.pory"
+# 3414 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SCATTERBUG
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_65:
-# 3404 "data/scripts/battle_labyrinth.pory"
+# 3416 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SPINARAK
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_66:
-# 3406 "data/scripts/battle_labyrinth.pory"
+# 3418 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_LEDYBA
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_67:
-# 3408 "data/scripts/battle_labyrinth.pory"
+# 3420 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_KRICKETOT
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_68:
-# 3410 "data/scripts/battle_labyrinth.pory"
+# 3422 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_TAROUNTULA
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_69:
-# 3412 "data/scripts/battle_labyrinth.pory"
+# 3424 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_SEWADDLE
 	goto Debug_CheatStart_PBL_59
 
 Debug_CheatStart_PBL_72:
-# 3439 "data/scripts/battle_labyrinth.pory"
+# 3457 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 5
 	goto Debug_CheatStart_PBL_70
 
 Debug_CheatStart_PBL_73:
-# 3441 "data/scripts/battle_labyrinth.pory"
+# 3459 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 5
-# 3442 "data/scripts/battle_labyrinth.pory"
+# 3460 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_TEMP_1
 	goto Debug_CheatStart_PBL_70
 
 Debug_CheatStart_PBL_74:
-# 3444 "data/scripts/battle_labyrinth.pory"
+# 3462 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3445 "data/scripts/battle_labyrinth.pory"
+# 3463 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 3
-# 3446 "data/scripts/battle_labyrinth.pory"
+# 3464 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 11
 	end
 
 Debug_CheatStart_PBL_77:
-# 3460 "data/scripts/battle_labyrinth.pory"
+# 3484 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 6
 	goto Debug_CheatStart_PBL_75
 
 Debug_CheatStart_PBL_78:
-# 3462 "data/scripts/battle_labyrinth.pory"
+# 3486 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 7
 	goto Debug_CheatStart_PBL_75
 
 Debug_CheatStart_PBL_79:
-# 3464 "data/scripts/battle_labyrinth.pory"
+# 3488 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 8
 	goto Debug_CheatStart_PBL_75
 
 Debug_CheatStart_PBL_80:
-# 3466 "data/scripts/battle_labyrinth.pory"
+# 3490 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 9
 	goto Debug_CheatStart_PBL_75
 
 Debug_CheatStart_PBL_81:
-# 3468 "data/scripts/battle_labyrinth.pory"
+# 3492 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 10
 	goto Debug_CheatStart_PBL_75
 
 Debug_CheatStart_PBL_82:
-# 3470 "data/scripts/battle_labyrinth.pory"
+# 3494 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3471 "data/scripts/battle_labyrinth.pory"
+# 3495 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 4
-# 3472 "data/scripts/battle_labyrinth.pory"
+# 3496 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 13
 	end
 
 Debug_CheatStart_PBL_85:
-# 3482 "data/scripts/battle_labyrinth.pory"
+# 3506 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_WATER_GEM
 	goto Debug_CheatStart_PBL_83
 
 Debug_CheatStart_PBL_86:
-# 3484 "data/scripts/battle_labyrinth.pory"
+# 3508 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_ELECTRIC_GEM
 	goto Debug_CheatStart_PBL_83
 
 Debug_CheatStart_PBL_87:
-# 3486 "data/scripts/battle_labyrinth.pory"
+# 3510 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_FIRE_GEM
 	goto Debug_CheatStart_PBL_83
 
 Debug_CheatStart_PBL_88:
-# 3488 "data/scripts/battle_labyrinth.pory"
+# 3512 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_PSYCHIC_GEM
 	goto Debug_CheatStart_PBL_83
 
 Debug_CheatStart_PBL_89:
-# 3490 "data/scripts/battle_labyrinth.pory"
+# 3514 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_DARK_GEM
 	goto Debug_CheatStart_PBL_83
 
 Debug_CheatStart_PBL_90:
-# 3492 "data/scripts/battle_labyrinth.pory"
+# 3516 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_GRASS_GEM
 	goto Debug_CheatStart_PBL_83
 
 Debug_CheatStart_PBL_91:
-# 3494 "data/scripts/battle_labyrinth.pory"
+# 3518 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_ICE_GEM
 	goto Debug_CheatStart_PBL_83
 
 Debug_CheatStart_PBL_92:
-# 3496 "data/scripts/battle_labyrinth.pory"
+# 3520 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_FAIRY_GEM
 	goto Debug_CheatStart_PBL_83
 
 Debug_CheatStart_PBL_95:
-# 3519 "data/scripts/battle_labyrinth.pory"
+# 3551 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 11
 	goto Debug_CheatStart_PBL_93
 
 Debug_CheatStart_PBL_96:
-# 3521 "data/scripts/battle_labyrinth.pory"
+# 3553 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 12
 	goto Debug_CheatStart_PBL_93
 
 Debug_CheatStart_PBL_97:
-# 3523 "data/scripts/battle_labyrinth.pory"
+# 3555 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3524 "data/scripts/battle_labyrinth.pory"
+# 3556 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 5
-# 3525 "data/scripts/battle_labyrinth.pory"
+# 3557 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 13
 	end
 
 Debug_CheatStart_PBL_100:
-# 3534 "data/scripts/battle_labyrinth.pory"
+# 3566 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_PACHIRISU
 	goto Debug_CheatStart_PBL_98
 
 Debug_CheatStart_PBL_101:
-# 3536 "data/scripts/battle_labyrinth.pory"
+# 3568 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_DEDENNE
 	goto Debug_CheatStart_PBL_98
 
 Debug_CheatStart_PBL_102:
-# 3538 "data/scripts/battle_labyrinth.pory"
+# 3570 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_MORPEKO
 	goto Debug_CheatStart_PBL_98
 
 Debug_CheatStart_PBL_103:
-# 3540 "data/scripts/battle_labyrinth.pory"
+# 3572 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_EMOLGA
 	goto Debug_CheatStart_PBL_98
 
 Debug_CheatStart_PBL_104:
-# 3542 "data/scripts/battle_labyrinth.pory"
+# 3574 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_PLUSLE
 	goto Debug_CheatStart_PBL_98
 
 Debug_CheatStart_PBL_105:
-# 3544 "data/scripts/battle_labyrinth.pory"
+# 3576 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, SPECIES_MINUN
 	goto Debug_CheatStart_PBL_98
 
 Debug_CheatStart_PBL_108:
-# 3564 "data/scripts/battle_labyrinth.pory"
+# 3605 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 13
 	goto Debug_CheatStart_PBL_106
 
 Debug_CheatStart_PBL_109:
-# 3566 "data/scripts/battle_labyrinth.pory"
+# 3607 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 13
-# 3567 "data/scripts/battle_labyrinth.pory"
+# 3608 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_TEMP_1
 	goto Debug_CheatStart_PBL_106
 
 Debug_CheatStart_PBL_110:
-# 3569 "data/scripts/battle_labyrinth.pory"
+# 3610 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3570 "data/scripts/battle_labyrinth.pory"
+# 3611 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 6
-# 3571 "data/scripts/battle_labyrinth.pory"
+# 3612 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 15
 	end
 
 Debug_CheatStart_PBL_113:
-# 3592 "data/scripts/battle_labyrinth.pory"
+# 3642 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 14
 	goto Debug_CheatStart_PBL_111
 
 Debug_CheatStart_PBL_114:
-# 3594 "data/scripts/battle_labyrinth.pory"
+# 3644 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 14
-# 3595 "data/scripts/battle_labyrinth.pory"
+# 3645 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_TEMP_1
 	goto Debug_CheatStart_PBL_111
 
 Debug_CheatStart_PBL_115:
-# 3597 "data/scripts/battle_labyrinth.pory"
+# 3647 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3598 "data/scripts/battle_labyrinth.pory"
+# 3648 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 7
-# 3599 "data/scripts/battle_labyrinth.pory"
+# 3649 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 17
 	end
 
 Debug_CheatStart_PBL_118:
-# 3609 "data/scripts/battle_labyrinth.pory"
+# 3659 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 15
 	goto Debug_CheatStart_PBL_116
 
 Debug_CheatStart_PBL_119:
-# 3611 "data/scripts/battle_labyrinth.pory"
+# 3661 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 16
 	goto Debug_CheatStart_PBL_116
 
 Debug_CheatStart_PBL_120:
-# 3613 "data/scripts/battle_labyrinth.pory"
+# 3663 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 17
 	goto Debug_CheatStart_PBL_116
 
 Debug_CheatStart_PBL_123:
-# 3646 "data/scripts/battle_labyrinth.pory"
+# 3712 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 18
 	goto Debug_CheatStart_PBL_121
 
 Debug_CheatStart_PBL_124:
-# 3648 "data/scripts/battle_labyrinth.pory"
+# 3714 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_TEMP_0, 18
-# 3649 "data/scripts/battle_labyrinth.pory"
+# 3715 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_TEMP_1
 	goto Debug_CheatStart_PBL_121
 
 Debug_CheatStart_PBL_125:
-# 3651 "data/scripts/battle_labyrinth.pory"
+# 3717 "data/scripts/battle_labyrinth.pory"
 	closemessage
-# 3652 "data/scripts/battle_labyrinth.pory"
+# 3718 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_ZONE, 9
-# 3653 "data/scripts/battle_labyrinth.pory"
+# 3719 "data/scripts/battle_labyrinth.pory"
 	setvar VAR_LEVEL_CAP, 20
+	end
+
+Debug_CheatStart_PBL_128:
+# 3756 "data/scripts/battle_labyrinth.pory"
+	setvar VAR_TEMP_0, 19
+	goto Debug_CheatStart_PBL_126
+
+Debug_CheatStart_PBL_129:
+# 3758 "data/scripts/battle_labyrinth.pory"
+	setvar VAR_TEMP_0, 20
+	goto Debug_CheatStart_PBL_126
+
+Debug_CheatStart_PBL_130:
+# 3760 "data/scripts/battle_labyrinth.pory"
+	closemessage
+# 3761 "data/scripts/battle_labyrinth.pory"
+	setvar VAR_ZONE, 11
+# 3762 "data/scripts/battle_labyrinth.pory"
+	setvar VAR_LEVEL_CAP, 23
 	end
 
 
 Debug_CheatStart_PBL_GenerateMon::
-# 3679 "data/scripts/battle_labyrinth.pory"
+# 3801 "data/scripts/battle_labyrinth.pory"
 	callnative DebugCheatStartGenerateMon
-# 3680 "data/scripts/battle_labyrinth.pory"
+# 3802 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GiveMon
 	return
 
 
 Debug_CheatStart_PBL_GiveMon::
-# 3684 "data/scripts/battle_labyrinth.pory"
+# 3806 "data/scripts/battle_labyrinth.pory"
 	givemon VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE
-# 3685 "data/scripts/battle_labyrinth.pory"
+# 3807 "data/scripts/battle_labyrinth.pory"
 	bufferspeciesname 0, VAR_TEMP_0
-# 3686 "data/scripts/battle_labyrinth.pory"
+# 3808 "data/scripts/battle_labyrinth.pory"
 	msgbox Debug_CheatStart_PBL_GiveMon_Text_0
 	return
 
@@ -9014,107 +9260,119 @@ Zone9A_EventScript_HerbalSign_Text_0:
 	.string "Herbal and Incense Shop$"
 
 Debug_CheatStart_PBL_Text_0:
-# 3291 "data/scripts/battle_labyrinth.pory"
+# 3299 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 0 grass?$"
 
 Debug_CheatStart_PBL_Text_1:
-# 3298 "data/scripts/battle_labyrinth.pory"
+# 3306 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 1 options$"
 
 Debug_CheatStart_PBL_Text_2:
-# 3299 "data/scripts/battle_labyrinth.pory"
+# 3307 "data/scripts/battle_labyrinth.pory"
 	.string "Grass$"
 
 Debug_CheatStart_PBL_Text_3:
-# 3299 "data/scripts/battle_labyrinth.pory"
+# 3307 "data/scripts/battle_labyrinth.pory"
 	.string "Tree$"
 
 Debug_CheatStart_PBL_Text_4:
-# 3316 "data/scripts/battle_labyrinth.pory"
+# 3324 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 1 gwf$"
 
 Debug_CheatStart_PBL_Text_5:
-# 3317 "data/scripts/battle_labyrinth.pory"
+# 3325 "data/scripts/battle_labyrinth.pory"
 	.string "Fire$"
 
 Debug_CheatStart_PBL_Text_6:
-# 3317 "data/scripts/battle_labyrinth.pory"
+# 3325 "data/scripts/battle_labyrinth.pory"
 	.string "Water$"
 
 Debug_CheatStart_PBL_Text_7:
-# 3374 "data/scripts/battle_labyrinth.pory"
+# 3386 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 2 options$"
 
 Debug_CheatStart_PBL_Text_8:
-# 3375 "data/scripts/battle_labyrinth.pory"
+# 3387 "data/scripts/battle_labyrinth.pory"
 	.string "Grass A$"
 
 Debug_CheatStart_PBL_Text_9:
-# 3375 "data/scripts/battle_labyrinth.pory"
+# 3387 "data/scripts/battle_labyrinth.pory"
 	.string "Tunnel$"
 
 Debug_CheatStart_PBL_Text_10:
-# 3375 "data/scripts/battle_labyrinth.pory"
+# 3387 "data/scripts/battle_labyrinth.pory"
 	.string "Grass B$"
 
 Debug_CheatStart_PBL_Text_11:
-# 3435 "data/scripts/battle_labyrinth.pory"
+# 3453 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 3 options$"
 
 Debug_CheatStart_PBL_Text_12:
-# 3456 "data/scripts/battle_labyrinth.pory"
+# 3480 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 4 options$"
 
 Debug_CheatStart_PBL_Text_13:
-# 3457 "data/scripts/battle_labyrinth.pory"
+# 3481 "data/scripts/battle_labyrinth.pory"
 	.string "A$"
 
 Debug_CheatStart_PBL_Text_14:
-# 3457 "data/scripts/battle_labyrinth.pory"
+# 3481 "data/scripts/battle_labyrinth.pory"
 	.string "B$"
 
 Debug_CheatStart_PBL_Text_15:
-# 3457 "data/scripts/battle_labyrinth.pory"
+# 3481 "data/scripts/battle_labyrinth.pory"
 	.string "C$"
 
 Debug_CheatStart_PBL_Text_16:
-# 3457 "data/scripts/battle_labyrinth.pory"
+# 3481 "data/scripts/battle_labyrinth.pory"
 	.string "D$"
 
 Debug_CheatStart_PBL_Text_17:
-# 3457 "data/scripts/battle_labyrinth.pory"
+# 3481 "data/scripts/battle_labyrinth.pory"
 	.string "E$"
 
 Debug_CheatStart_PBL_Text_18:
-# 3515 "data/scripts/battle_labyrinth.pory"
+# 3547 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 5 options$"
 
 Debug_CheatStart_PBL_Text_19:
-# 3516 "data/scripts/battle_labyrinth.pory"
+# 3548 "data/scripts/battle_labyrinth.pory"
 	.string "Forest$"
 
 Debug_CheatStart_PBL_Text_20:
-# 3516 "data/scripts/battle_labyrinth.pory"
+# 3548 "data/scripts/battle_labyrinth.pory"
 	.string "Grassland$"
 
 Debug_CheatStart_PBL_Text_21:
-# 3560 "data/scripts/battle_labyrinth.pory"
+# 3601 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 6 options$"
 
 Debug_CheatStart_PBL_Text_22:
-# 3588 "data/scripts/battle_labyrinth.pory"
+# 3638 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 7 options$"
 
 Debug_CheatStart_PBL_Text_23:
-# 3605 "data/scripts/battle_labyrinth.pory"
+# 3655 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 8 options$"
 
 Debug_CheatStart_PBL_Text_24:
-# 3642 "data/scripts/battle_labyrinth.pory"
+# 3708 "data/scripts/battle_labyrinth.pory"
 	.string "Zone 9 options$"
 
+Debug_CheatStart_PBL_Text_25:
+# 3752 "data/scripts/battle_labyrinth.pory"
+	.string "Zone 10 options$"
+
+Debug_CheatStart_PBL_Text_26:
+# 3753 "data/scripts/battle_labyrinth.pory"
+	.string "Sand$"
+
+Debug_CheatStart_PBL_Text_27:
+# 3753 "data/scripts/battle_labyrinth.pory"
+	.string "Ruin$"
+
 Debug_CheatStart_PBL_GiveMon_Text_0:
-# 3686 "data/scripts/battle_labyrinth.pory"
+# 3808 "data/scripts/battle_labyrinth.pory"
 	.string "Obtained {STR_VAR_1}!$"
 
 gText_Lelouch_NotEnoughColor::
