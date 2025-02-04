@@ -3895,7 +3895,7 @@ static void BufferMonTrainerMemo(void)
 
         if (locationFound)
         {
-            GetMapNameHandleAquaHideout(metLocationString, sum->metLocation);
+            GetMapNameGeneric(metLocationString, sum->metLocation);
             DynamicPlaceholderTextUtil_SetPlaceholderPtr(4, metLocationString);
         }
 

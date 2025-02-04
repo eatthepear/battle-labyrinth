@@ -1602,6 +1602,56 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 {
     switch (mapSecId)
     {
+    case MAPSEC_ZONE_1:  return StringCopy(dest, gText_MapZone1);
+    case MAPSEC_ZONE_2:  return StringCopy(dest, gText_MapZone2);
+    case MAPSEC_ZONE_3:  return StringCopy(dest, gText_MapZone3);
+    case MAPSEC_ZONE_4:  return StringCopy(dest, gText_MapZone4);
+    case MAPSEC_ZONE_5:  return StringCopy(dest, gText_MapZone5);
+    case MAPSEC_ZONE_6:  return StringCopy(dest, gText_MapZone6);
+    case MAPSEC_ZONE_7:  return StringCopy(dest, gText_MapZone7);
+    case MAPSEC_ZONE_8:  return StringCopy(dest, gText_MapZone8);
+    case MAPSEC_ZONE_9:  return StringCopy(dest, gText_MapZone9);
+    case MAPSEC_ZONE_10: return StringCopy(dest, gText_MapZone10);
+    case MAPSEC_ZONE_11: return StringCopy(dest, gText_MapZone11);
+    case MAPSEC_ZONE_12: return StringCopy(dest, gText_MapZone12);
+    case MAPSEC_ZONE_13: return StringCopy(dest, gText_MapZone13);
+    case MAPSEC_ZONE_14: return StringCopy(dest, gText_MapZone14);
+    case MAPSEC_ZONE_15: return StringCopy(dest, gText_MapZone15);
+    case MAPSEC_ZONE_16: return StringCopy(dest, gText_MapZone16);
+    case MAPSEC_ZONE_17: return StringCopy(dest, gText_MapZone17);
+    case MAPSEC_ZONE_18: return StringCopy(dest, gText_MapZone18);
+    case MAPSEC_ZONE_19: return StringCopy(dest, gText_MapZone19);
+    case MAPSEC_ZONE_20: return StringCopy(dest, gText_MapZone20);
+    case MAPSEC_ZONE_21: return StringCopy(dest, gText_MapZone21);
+    case MAPSEC_ZONE_22: return StringCopy(dest, gText_MapZone22);
+    case MAPSEC_ZONE_23: return StringCopy(dest, gText_MapZone23);
+    case MAPSEC_ZONE_24: return StringCopy(dest, gText_MapZone24);
+    case MAPSEC_ZONE_25: return StringCopy(dest, gText_MapZone25);
+    case MAPSEC_ZONE_26: return StringCopy(dest, gText_MapZone26);
+    case MAPSEC_ZONE_27: return StringCopy(dest, gText_MapZone27);
+    case MAPSEC_ZONE_28: return StringCopy(dest, gText_MapZone28);
+    case MAPSEC_ZONE_29: return StringCopy(dest, gText_MapZone29);
+    case MAPSEC_ZONE_30: return StringCopy(dest, gText_MapZone30);
+    case MAPSEC_ZONE_31: return StringCopy(dest, gText_MapZone31);
+    case MAPSEC_ZONE_32: return StringCopy(dest, gText_MapZone32);
+    case MAPSEC_ZONE_33: return StringCopy(dest, gText_MapZone33);
+    case MAPSEC_ZONE_34: return StringCopy(dest, gText_MapZone34);
+    case MAPSEC_ZONE_35: return StringCopy(dest, gText_MapZone35);
+    case MAPSEC_ZONE_36: return StringCopy(dest, gText_MapZone36);
+    case MAPSEC_ZONE_37: return StringCopy(dest, gText_MapZone37);
+    case MAPSEC_ZONE_38: return StringCopy(dest, gText_MapZone38);
+    case MAPSEC_ZONE_39: return StringCopy(dest, gText_MapZone39);
+    case MAPSEC_ZONE_40: return StringCopy(dest, gText_MapZone40);
+    case MAPSEC_ZONE_41: return StringCopy(dest, gText_MapZone41);
+    case MAPSEC_ZONE_42: return StringCopy(dest, gText_MapZone42);
+    case MAPSEC_ZONE_43: return StringCopy(dest, gText_MapZone43);
+    case MAPSEC_ZONE_44: return StringCopy(dest, gText_MapZone44);
+    case MAPSEC_ZONE_45: return StringCopy(dest, gText_MapZone45);
+    case MAPSEC_ZONE_46: return StringCopy(dest, gText_MapZone46);
+    case MAPSEC_ZONE_47: return StringCopy(dest, gText_MapZone47);
+    case MAPSEC_ZONE_48: return StringCopy(dest, gText_MapZone48);
+    case MAPSEC_ZONE_49: return StringCopy(dest, gText_MapZone49);
+    case MAPSEC_ZONE_50: return StringCopy(dest, gText_MapZone50);
     case MAPSEC_DYNAMIC:
         return StringCopy(dest, gText_Ferry);
     case MAPSEC_SECRET_BASE:

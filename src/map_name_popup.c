@@ -525,7 +525,7 @@ static void ShowMapNamePopUpWindow(void)
     else
     {
         withoutPrefixPtr = &(mapDisplayHeader[3]);
-        GetMapName(withoutPrefixPtr, gMapHeader.regionMapSectionId, 0);
+        GetMapNameGeneric(withoutPrefixPtr, gMapHeader.regionMapSectionId);
     }
 
     if (OW_POPUP_GENERATION == GEN_5)
