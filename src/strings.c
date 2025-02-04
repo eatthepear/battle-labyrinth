@@ -1616,6 +1616,8 @@ const u8 gText_SaveMenuInfiniteRandomizer[] =_("Infinite Randomizer");
 const u8 gText_SaveMenuInfiniteNuzlocke[] =_("Infinite Nuzlocke");
 const u8 gText_SaveMenuInfiniteRandomlocke[] =_("Infinite Randomlocke");
 
+const u8 gText_LevelCapVar1[] = _("Lvl Cap: {STR_VAR_1}");
+
 const u8 gText_MapZone0[] = _("Zone 0");
 const u8 gText_MapZone1[] = _("Zone 1");
 const u8 gText_MapZone2[] = _("Zone 2");

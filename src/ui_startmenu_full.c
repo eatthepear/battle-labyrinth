@@ -51,6 +51,7 @@
 #include "dexnav.h"
 #include "quests.h"
 #include "constants/songs.h"
+#include "caps.h"
 
 /*
     Full Screen Start Menu
@@ -1263,37 +1264,32 @@ static const u8 sText_PM[] = _("PM");
 
 static void PrintMapNameAndTime(void) //this code is ripped froom different parts of pokeemerald and is a mess because of that, but it all works
 {
-    u8 mapDisplayHeader[24];
+    u8 mapDisplayHeader[32];
     u8 *withoutPrefixPtr;
-    u8 x;
-    // const u8 *str, *suffix = NULL;
     u8 sTimeTextColors[] = {TEXT_COLOR_TRANSPARENT, 2, 3};
 
-    // u16 hours;
-    // u16 minutes;
-    // u16 dayOfWeek;
-    // s32 width;
-    u32 y;
-    // u32 y, totalWidth;
     u32 money;
 
     FillWindowPixelBuffer(WINDOW_TOP_BAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
 
     withoutPrefixPtr = &(mapDisplayHeader[3]);
-    GetMapName(withoutPrefixPtr, gMapHeader.regionMapSectionId, 0);
-    x = GetStringRightAlignXOffset(FONT_NARROW, withoutPrefixPtr, 80);
+    GetMapNameGeneric(withoutPrefixPtr, gMapHeader.regionMapSectionId);
     mapDisplayHeader[0] = EXT_CTRL_CODE_BEGIN;
     mapDisplayHeader[1] = EXT_CTRL_CODE_HIGHLIGHT;
     mapDisplayHeader[2] = TEXT_COLOR_TRANSPARENT;
-    AddTextPrinterParameterized(WINDOW_TOP_BAR, FONT_NARROW, mapDisplayHeader, x + 152, 1, TEXT_SKIP_DRAW, NULL); // Print Map Name
+    AddTextPrinterParameterized(WINDOW_TOP_BAR, FONT_NARROW, mapDisplayHeader, GetStringCenterAlignXOffset(FONT_NARROW, withoutPrefixPtr, 240), 1, TEXT_SKIP_DRAW, NULL); // Print Map Name
 
     money = GetMoney(&gSaveBlock1Ptr->money);
-    x = 64;
-    y = 1;
 
     ConvertIntToDecimalStringN(gStringVar1, money, STR_CONV_MODE_LEFT_ALIGN, 7);
     StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, 10, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4); //print dayof week
+    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, 4, 1, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4); //print dayof week
+
+    if (GetCurrentLevelCap() < 100) {
+        ConvertIntToDecimalStringN(gStringVar1, GetCurrentLevelCap(), STR_CONV_MODE_LEFT_ALIGN, 2);
+        StringExpandPlaceholders(gStringVar4, gText_LevelCapVar1);
+        AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 494), 1, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
+    }
 //     RtcCalcLocalTime();
 
 //     hours = gLocalTime.hours;
