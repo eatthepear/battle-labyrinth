@@ -5,55 +5,62 @@ mapscripts Zone0A_MapScripts {
 	]
     MAP_SCRIPT_ON_TRANSITION {
 		call(Zone0A_EventScript_TryMoveDayCareMan)
-		call(Zone0A_EventScript_TryMoveBerryGirl)
+		call(Zone0A_EventScript_TryMoveScientist)
     }
 }
 
-script Zone0A_EventScript_TryMoveBerryGirl {
+script Zone0A_EventScript_TryMoveScientist {
 	if (var(VAR_ZONE_0_STATE) == 0) {
-		setobjectxyperm(14, 40, 9)
+		setobjectxyperm(15, 40, 9)
 	}
 }
 
 script Zone0A_EventScript_Intro {
 	lockall
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
-	applymovement(14, Common_Movement_FaceLeft)
+	applymovement(15, Common_Movement_FaceLeft)
 	waitmovement(0)
-	applymovement(14, Common_Movement_ExclamationMark)
+	applymovement(15, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	applymovement(14, Common_Movement_WalkLeft2)
+	applymovement(15, Common_Movement_WalkLeft2)
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
-	msgbox(format("Hello, {PLAYER}.\pWelcome to my home.\pThere are no trainers here, and no challenges to face. Everything is meant to help you on your journey.\pAs a welcome gift, I'd like you to have this."), MSGBOX_DEFAULT)
+	msgbox(format("Hello, {PLAYER}.\pWelcome to my home, {COLOR GREEN}Harvest Road{COLOR DARK_GRAY}.\pThere are no trainers here, and no challenges to face. Everything is meant to help you on your journey.\pAs a welcome gift, I'd like you to have this."), MSGBOX_DEFAULT)
 	giveitem(ITEM_WAILMER_PAIL)
-	if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_RED_THUMB)) {
-		msgbox(format("I'm the caretaker of the berry fields here.\pThe soil is getting too hard to farm any more though, plus with the wild Pokémon that eat the Berries, it's impossible to grow more.\pFeel free to pick any Berries I may have left."))
-	} else {
-		msgbox(format("I'm the caretaker of the berry fields here.\pYou should try growing some berries yourself, though beware wild Pokémon that might be nibbling on your Berries.\pFeel free to pick any Berries I may have left."))
-	}
-	applymovement(14, Common_Movement_ExclamationMark)
+	msgbox(format("I help run the TPI, or Teleport Institute.\pYou can easily access the Sanctuary, prior areas, or even extra areas here."))
+	applymovement(15, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
 	msgbox(format("Oh, right! I just remembered something.\pI've heard the Pokémon Day-Care nearby is having a special gift Pokémon promotion.\pIt might be worth a look."), MSGBOX_AUTOCLOSE)
-	applymovement(14, Common_Movement_WalkRight6)
+	applymovement(15, Common_Movement_WalkUp)
 	waitmovement(0)
-	applymovement(14, Common_Movement_WalkRight)
+	applymovement(15, Common_Movement_FaceDown)
 	waitmovement(0)
-	setobjectxyperm(14, 53, 7)
-	setobjectxy(14, 53, 7)
+	setobjectxyperm(15, 53, 7)
 	setvar(VAR_ZONE_0_STATE, 1)
 	releaseall
+	end
+}
+
+script Zone0A_EventScript_Scientist {
+	lock
+	faceplayer
+	msgbox(format("The TPI connects to the Sanctuary, prior areas you've been to, and some extra areas as well.\pI've been working on getting more extra areas linked in, so do come back to see them."))
+	release
 	end
 }
 
 script Zone0A_EventScript_BerryGirl {
 	lock
 	faceplayer
-	msgbox(format("Hello, {PLAYER}.\pHope you are doing well."))
+	if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_RED_THUMB)) {
+		msgbox(format("I'm the caretaker of the berry fields here.\pThe soil is getting too hard to farm any more though, plus with the wild Pokémon that eat the Berries, it's impossible to grow more.\pFeel free to pick any Berries I may have left."))
+	} else {
+		msgbox(format("I'm the caretaker of the berry fields here.\pYou should try growing some berries yourself, though beware wild Pokémon that might be nibbling on your Berries.\pFeel free to pick any Berries I may have left."))
+	}
 	release
 	end
 }
@@ -69,161 +76,171 @@ script Zone0A_EventScript_MoveDown {
 
 script Zone0A_EventScript_Exit {
 	lockall
+	applymovement(15, Common_Movement_FaceLeft)
+	waitmovement(0)
 	message(format("Where do you want to go to?"))
 	waitmessage
-	dynmultipush("Sanctuary", 0)
-	if (var(VAR_ZONE) > 1) {
-		dynmultipush("Zone 1", 1)
-	}
-	if (var(VAR_ZONE) > 2) {
-		dynmultipush("Zone 2", 2)
-	}
-	if (var(VAR_ZONE) > 3) {
-		dynmultipush("Zone 3", 3)
-	}
-	if (var(VAR_ZONE) > 4) {
-		dynmultipush("Zone 4", 4)
-	}
-	if (var(VAR_ZONE) > 5) {
-		dynmultipush("Zone 5", 5)
-	}
-	if (var(VAR_ZONE) > 6) {
-		dynmultipush("Zone 6", 6)
-	}
-	if (var(VAR_ZONE) > 7) {
-		dynmultipush("Zone 7", 7)
-	}
-	if (var(VAR_ZONE) > 8) {
-		dynmultipush("Zone 8", 8)
-	}
-	if (var(VAR_ZONE) > 9) {
-		dynmultipush("Zone 9", 9)
-	}
-	if (var(VAR_ZONE) > 10) {
-		dynmultipush("Zone 10", 10)
-	}
-	if (var(VAR_ZONE) > 11) {
-		dynmultipush("Zone 11", 11)
-	}
-	if (var(VAR_ZONE) > 12) {
-		dynmultipush("Zone 12", 12)
-	}
-	if (var(VAR_ZONE) > 13) {
-		dynmultipush("Zone 13", 13)
-	}
-	if (var(VAR_ZONE) > 14) {
-		dynmultipush("Zone 14", 14)
-	}
-	if (var(VAR_ZONE) > 15) {
-		dynmultipush("Zone 15", 15)
-	}
-	if (var(VAR_ZONE) > 16) {
-		dynmultipush("Zone 16", 16)
-	}
-	if (var(VAR_ZONE) > 17) {
-		dynmultipush("Zone 17", 17)
-	}
-	if (var(VAR_ZONE) > 18) {
-		dynmultipush("Zone 18", 18)
-	}
-	if (var(VAR_ZONE) > 19) {
-		dynmultipush("Zone 19", 19)
-	}
-	if (var(VAR_ZONE) > 20) {
-		dynmultipush("Zone 20", 20)
-	}
-	if (var(VAR_ZONE) > 21) {
-		dynmultipush("Zone 21", 21)
-	}
-	if (var(VAR_ZONE) > 22) {
-		dynmultipush("Zone 22", 22)
-	}
-	if (var(VAR_ZONE) > 23) {
-		dynmultipush("Zone 23", 23)
-	}
-	if (var(VAR_ZONE) > 24) {
-		dynmultipush("Zone 24", 24)
-	}
-	if (var(VAR_ZONE) > 25) {
-		dynmultipush("Zone 25", 25)
-	}
-	if (var(VAR_ZONE) > 26) {
-		dynmultipush("Zone 26", 26)
-	}
-	if (var(VAR_ZONE) > 27) {
-		dynmultipush("Zone 27", 27)
-	}
-	if (var(VAR_ZONE) > 28) {
-		dynmultipush("Zone 28", 28)
-	}
-	if (var(VAR_ZONE) > 29) {
-		dynmultipush("Zone 29", 29)
-	}
-	if (var(VAR_ZONE) > 30) {
-		dynmultipush("Zone 30", 30)
-	}
-	dynmultipush("Exit", 51)
-	dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
-	switch (var(VAR_RESULT)) {
+	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Sanctuary", "Zones", "Extra Areas", "Exit")
+	switch(var(VAR_RESULT)) {
 		case 0:
 			closemessage
 			setvar(VAR_ZONE_0_STATE, 2)
 			warpdoor(MAP_ZONE_SHOPS, 255, 46, 1)
 			waitstate
 		case 1:
-			setvar(VAR_REVISITING_ZONE, 1)
-			warp(MAP_ZONE1A, 255, 16, 28)
-			waitstate
+			if (var(VAR_ZONE) > 1) {
+				dynmultipush("Zone 1", 1)
+			}
+			if (var(VAR_ZONE) > 2) {
+				dynmultipush("Zone 2", 2)
+			}
+			if (var(VAR_ZONE) > 3) {
+				dynmultipush("Zone 3", 3)
+			}
+			if (var(VAR_ZONE) > 4) {
+				dynmultipush("Zone 4", 4)
+			}
+			if (var(VAR_ZONE) > 5) {
+				dynmultipush("Zone 5", 5)
+			}
+			if (var(VAR_ZONE) > 6) {
+				dynmultipush("Zone 6", 6)
+			}
+			if (var(VAR_ZONE) > 7) {
+				dynmultipush("Zone 7", 7)
+			}
+			if (var(VAR_ZONE) > 8) {
+				dynmultipush("Zone 8", 8)
+			}
+			if (var(VAR_ZONE) > 9) {
+				dynmultipush("Zone 9", 9)
+			}
+			if (var(VAR_ZONE) > 10) {
+				dynmultipush("Zone 10", 10)
+			}
+			if (var(VAR_ZONE) > 11) {
+				dynmultipush("Zone 11", 11)
+			}
+			if (var(VAR_ZONE) > 12) {
+				dynmultipush("Zone 12", 12)
+			}
+			if (var(VAR_ZONE) > 13) {
+				dynmultipush("Zone 13", 13)
+			}
+			if (var(VAR_ZONE) > 14) {
+				dynmultipush("Zone 14", 14)
+			}
+			if (var(VAR_ZONE) > 15) {
+				dynmultipush("Zone 15", 15)
+			}
+			if (var(VAR_ZONE) > 16) {
+				dynmultipush("Zone 16", 16)
+			}
+			if (var(VAR_ZONE) > 17) {
+				dynmultipush("Zone 17", 17)
+			}
+			if (var(VAR_ZONE) > 18) {
+				dynmultipush("Zone 18", 18)
+			}
+			if (var(VAR_ZONE) > 19) {
+				dynmultipush("Zone 19", 19)
+			}
+			if (var(VAR_ZONE) > 20) {
+				dynmultipush("Zone 20", 20)
+			}
+			if (var(VAR_ZONE) > 21) {
+				dynmultipush("Zone 21", 21)
+			}
+			if (var(VAR_ZONE) > 22) {
+				dynmultipush("Zone 22", 22)
+			}
+			if (var(VAR_ZONE) > 23) {
+				dynmultipush("Zone 23", 23)
+			}
+			if (var(VAR_ZONE) > 24) {
+				dynmultipush("Zone 24", 24)
+			}
+			if (var(VAR_ZONE) > 25) {
+				dynmultipush("Zone 25", 25)
+			}
+			if (var(VAR_ZONE) > 26) {
+				dynmultipush("Zone 26", 26)
+			}
+			if (var(VAR_ZONE) > 27) {
+				dynmultipush("Zone 27", 27)
+			}
+			if (var(VAR_ZONE) > 28) {
+				dynmultipush("Zone 28", 28)
+			}
+			if (var(VAR_ZONE) > 29) {
+				dynmultipush("Zone 29", 29)
+			}
+			if (var(VAR_ZONE) > 30) {
+				dynmultipush("Zone 30", 30)
+			}
+			dynmultipush("Exit", 51)
+			dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+			switch (var(VAR_RESULT)) {
+				case 1:
+					setvar(VAR_REVISITING_ZONE, 1)
+					warp(MAP_ZONE1A, 255, 16, 28)
+					waitstate
+				case 2:
+					setvar(VAR_REVISITING_ZONE, 2)
+					warp(MAP_ZONE2A, 255, 4, 3)
+					waitstate
+				case 3:
+					setvar(VAR_REVISITING_ZONE, 3)
+					warp(MAP_ZONE3A, 255, 38, 25)
+					waitstate
+				case 4:
+					setvar(VAR_REVISITING_ZONE, 4)
+					warp(MAP_ZONE4A, 255, 6, 4)
+					waitstate
+				case 5:
+					setvar(VAR_REVISITING_ZONE, 5)
+					warp(MAP_ZONE5A, 255, 3, 0)
+					waitstate
+				case 6:
+					setvar(VAR_REVISITING_ZONE, 6)
+					warp(MAP_ZONE6A, 255, 51, 22)
+					waitstate
+				case 7:
+					setvar(VAR_REVISITING_ZONE, 7)
+					warp(MAP_ZONE7A, 255, 10, 33)
+					waitstate
+				case 8:
+					setvar(VAR_REVISITING_ZONE, 8)
+					warp(MAP_ZONE8A, 255, 21, 26)
+					waitstate
+				case 9:
+					setvar(VAR_REVISITING_ZONE, 9)
+					warp(MAP_ZONE9A, 255, 41, 22)
+					waitstate
+				case 10:
+					setvar(VAR_REVISITING_ZONE, 10)
+					warp(MAP_ZONE10A, 255, 42, 51)
+					waitstate
+				case 11:
+					setvar(VAR_REVISITING_ZONE, 11)
+					warp(MAP_ZONE11A, 255, 46, 2)
+					waitstate
+				case 12:
+					setvar(VAR_REVISITING_ZONE, 12)
+					warp(MAP_ZONE12A, 255, 9, 16)
+					waitstate
+				case 51:
+				case MULTI_B_PRESSED:
+					closemessage
+					applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+					waitmovement(0)
+			}
 		case 2:
-			setvar(VAR_REVISITING_ZONE, 2)
-			warp(MAP_ZONE2A, 255, 4, 3)
-			waitstate
 		case 3:
-			setvar(VAR_REVISITING_ZONE, 3)
-			warp(MAP_ZONE3A, 255, 38, 25)
-			waitstate
-		case 4:
-			setvar(VAR_REVISITING_ZONE, 4)
-			warp(MAP_ZONE4A, 255, 6, 4)
-			waitstate
-		case 5:
-			setvar(VAR_REVISITING_ZONE, 5)
-			warp(MAP_ZONE5A, 255, 3, 0)
-			waitstate
-		case 6:
-			setvar(VAR_REVISITING_ZONE, 6)
-			warp(MAP_ZONE6A, 255, 51, 22)
-			waitstate
-		case 7:
-			setvar(VAR_REVISITING_ZONE, 7)
-			warp(MAP_ZONE7A, 255, 10, 33)
-			waitstate
-		case 8:
-			setvar(VAR_REVISITING_ZONE, 8)
-			warp(MAP_ZONE8A, 255, 21, 26)
-			waitstate
-		case 9:
-			setvar(VAR_REVISITING_ZONE, 9)
-			warp(MAP_ZONE9A, 255, 41, 22)
-			waitstate
-		case 10:
-			setvar(VAR_REVISITING_ZONE, 10)
-			warp(MAP_ZONE10A, 255, 42, 51)
-			waitstate
-		case 11:
-			setvar(VAR_REVISITING_ZONE, 11)
-			warp(MAP_ZONE11A, 255, 46, 2)
-			waitstate
-		case 12:
-			setvar(VAR_REVISITING_ZONE, 12)
-			warp(MAP_ZONE12A, 255, 9, 16)
-			waitstate
-		case 51:
 		case MULTI_B_PRESSED:
 			closemessage
 			applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
 			waitmovement(0)
-
 	}
 	releaseall
 	end
