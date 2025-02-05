@@ -1960,19 +1960,55 @@ script EventScript_SanctuaryToZone0 {
 	releaseall
 }
 
-script EventScript_WhenUReady {
-	if (var(VAR_ZONE) == 7) {
-		msgbox(Sanctuary_Text_Colress_WhenUReady_78, MSGBOX_AUTOCLOSE)
-	} elif (var(VAR_ZONE) == 13) {
-		msgbox(Sanctuary_Text_Colress_WhenUReady_1314, MSGBOX_AUTOCLOSE)
-	} elif (var(VAR_ZONE) == 18) {
-		msgbox(Sanctuary_Text_Colress_WhenUReady_1819, MSGBOX_AUTOCLOSE)
-	} elif (var(VAR_ZONE) == 24) {
-		msgbox(Sanctuary_Text_Colress_WhenUReady_2425, MSGBOX_AUTOCLOSE)
-	} else {
-		buffernumberstring(0, VAR_ZONE)
-		msgbox(Sanctuary_Text_Colress_WhenUReady, MSGBOX_AUTOCLOSE)
+script EventScript_WhenUReadyDialogue {
+	switch (var(VAR_ZONE)) {
+		case 1:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 1 - Leafway Trail{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 2:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 2 - Duskwarren Woods{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 3:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 3 - Sunlit Pond{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 4:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 4 - Mystic Glade{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 5:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 5 - Timberstep Plateau{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 6:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 6 - Seabreeze Island{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 7:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Duskmire Hollow{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 9:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 9 - Lushbranch Village{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 10:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 10 - Scornwind Desert{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 11:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 11 - Duskwither Maze{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 12:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 12 - Twinstream Plains{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 13:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 7{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 15:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 15 - {COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 16:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 16 - {COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 17:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 17 - {COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 18:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 7{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 20:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 20 - {COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 21:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 21 - {COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 22:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 22 - {COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 23:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 23 - {COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+		case 24:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 7{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
 	}
+}
+
+script EventScript_WhenUReady {
+	call(EventScript_WhenUReadyDialogue)
 	release
 	end
 }
@@ -3055,7 +3091,7 @@ script EventScript_PorygonExit {
 		goto(EventScript_WarpZone0)
 	}
 	call(EventScript_MandatoryCheck)
-	msgbox(format("{COLOR GREEN}Proceed to the Sanctuary?"), MSGBOX_YESNO)
+	msgbox(format("Proceed to the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		closemessage
 		playmoncry(SPECIES_PORYGON, 0)
