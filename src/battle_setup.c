@@ -417,10 +417,16 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_ZONE_48] = 0x30,
     [MAPSEC_ZONE_49] = 0x31,
     [MAPSEC_ZONE_50] = 0x32,
-    [MAPSEC_ZONE_B1] = 0x33,
-    [MAPSEC_ZONE_B2] = 0x34,
-    [MAPSEC_ZONE_B3] = 0x35,
-    [MAPSEC_ZONE_B4] = 0x36,
+    [MAPSEC_ZONE_S1] = 0x33,
+    [MAPSEC_ZONE_S2] = 0x34,
+    [MAPSEC_ZONE_S3] = 0x35,
+    [MAPSEC_ZONE_S4] = 0x36,
+    [MAPSEC_ZONE_S5] = 0x37,
+    [MAPSEC_ZONE_S6] = 0x38,
+    [MAPSEC_ZONE_S7] = 0x39,
+    [MAPSEC_ZONE_S8] = 0x3A,
+    [MAPSEC_ZONE_S9] = 0x3B,
+    [MAPSEC_ZONE_S10] = 0x3C,
 };
 
 static const u16 sBadgeFlags[NUM_BADGES] =

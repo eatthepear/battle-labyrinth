@@ -850,8 +850,8 @@ Zone0A_EventScript_Intro_Text_1:
 # 32 "data/maps/Zone0A/scripts.pory"
 	.string "I help run the TPI, or Teleport\n"
 	.string "Institute.\p"
-	.string "You can easily access the Sanctuary,\n"
-	.string "prior areas, or even extra areas here.$"
+	.string "You can easily access the Sanctuary\n"
+	.string "and additional areas from here.$"
 
 Zone0A_EventScript_Intro_Text_2:
 # 37 "data/maps/Zone0A/scripts.pory"
@@ -863,12 +863,11 @@ Zone0A_EventScript_Intro_Text_2:
 
 Zone0A_EventScript_Scientist_Text_0:
 # 51 "data/maps/Zone0A/scripts.pory"
-	.string "The TPI connects to the Sanctuary,\n"
-	.string "prior areas you've been to, and some\l"
-	.string "extra areas as well.\p"
-	.string "I've been working on getting more extra\n"
-	.string "areas linked in, so do come back to see\l"
-	.string "them.$"
+	.string "The TPI connects to the Sanctuary and\n"
+	.string "other areas.\p"
+	.string "I've been working on getting more areas\n"
+	.string "linked to our network, so do come back\l"
+	.string "to see them.$"
 
 Zone0A_EventScript_BerryGirl_Text_0:
 # 60 "data/maps/Zone0A/scripts.pory"
@@ -901,11 +900,11 @@ Zone0A_EventScript_Exit_Text_1:
 
 Zone0A_EventScript_Exit_Text_2:
 # 83 "data/maps/Zone0A/scripts.pory"
-	.string "Zones$"
+	.string "Prior Zones$"
 
 Zone0A_EventScript_Exit_Text_3:
 # 83 "data/maps/Zone0A/scripts.pory"
-	.string "Extra Areas$"
+	.string "Other Zones$"
 
 Zone0A_EventScript_Exit_Text_4:
 # 83 "data/maps/Zone0A/scripts.pory"

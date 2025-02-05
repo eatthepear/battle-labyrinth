@@ -29,7 +29,7 @@ script Zone0A_EventScript_Intro {
 	waitmovement(0)
 	msgbox(format("Hello, {PLAYER}.\pWelcome to my home, {COLOR GREEN}Harvest Road{COLOR DARK_GRAY}.\pThere are no trainers here, and no challenges to face. Everything is meant to help you on your journey.\pAs a welcome gift, I'd like you to have this."), MSGBOX_DEFAULT)
 	giveitem(ITEM_WAILMER_PAIL)
-	msgbox(format("I help run the TPI, or Teleport Institute.\pYou can easily access the Sanctuary, prior areas, or even extra areas here."))
+	msgbox(format("I help run the TPI, or Teleport Institute.\pYou can easily access the Sanctuary and additional areas from here."))
 	applymovement(15, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
@@ -48,7 +48,7 @@ script Zone0A_EventScript_Intro {
 script Zone0A_EventScript_Scientist {
 	lock
 	faceplayer
-	msgbox(format("The TPI connects to the Sanctuary, prior areas you've been to, and some extra areas as well.\pI've been working on getting more extra areas linked in, so do come back to see them."))
+	msgbox(format("The TPI connects to the Sanctuary and other areas.\pI've been working on getting more areas linked to our network, so do come back to see them."))
 	release
 	end
 }
@@ -80,7 +80,7 @@ script Zone0A_EventScript_Exit {
 	waitmovement(0)
 	message(format("Where do you want to go to?"))
 	waitmessage
-	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Sanctuary", "Zones", "Extra Areas", "Exit")
+	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Sanctuary", "Prior Zones", "Other Zones", "Exit")
 	switch(var(VAR_RESULT)) {
 		case 0:
 			closemessage
