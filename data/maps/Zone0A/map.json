@@ -209,7 +209,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
-      "x": 38,
+      "x": 39,
       "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
@@ -218,6 +218,19 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Zone0A_EventScript_Scientist",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_COLLECTOR",
+      "x": 71,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone0A_EventScript_Collector",
       "flag": "0"
     }
   ],
@@ -230,23 +243,15 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 37,
+      "x": 35,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_ZONE0A",
-      "dest_warp_id": "1"
+      "dest_map": "MAP_ZONE_SHOPS",
+      "dest_warp_id": "15"
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 37,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone0A_EventScript_Exit"
-    }
+
   ],
   "bg_events": [
     {
@@ -259,11 +264,19 @@
     },
     {
       "type": "sign",
-      "x": 35,
+      "x": 40,
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Zone0A_EventScript_TPISign"
+    },
+    {
+      "type": "sign",
+      "x": 70,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
     }
   ]
 }

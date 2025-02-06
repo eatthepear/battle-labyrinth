@@ -3452,7 +3452,7 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_POTION, 6)
 	additem(ITEM_PARALYZE_HEAL, 2)
 	additem(ITEM_ANTIDOTE, 2)
-	setvar(VAR_ZONE_0_STATE, 2)
+	setvar(VAR_ZONE_0_STATE, 1)
 	setflag(FLAG_ZONE0B_RECEIVED_EEVEE)
 	givemon(SPECIES_EEVEE, 5, ITEM_NONE)
 	// zone 0 items

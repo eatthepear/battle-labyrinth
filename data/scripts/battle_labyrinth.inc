@@ -6554,7 +6554,7 @@ Debug_CheatStart_PBL_15:
 # 3454 "data/scripts/battle_labyrinth.pory"
 	additem ITEM_ANTIDOTE, 2
 # 3455 "data/scripts/battle_labyrinth.pory"
-	setvar VAR_ZONE_0_STATE, 2
+	setvar VAR_ZONE_0_STATE, 1
 # 3456 "data/scripts/battle_labyrinth.pory"
 	setflag FLAG_ZONE0B_RECEIVED_EEVEE
 # 3457 "data/scripts/battle_labyrinth.pory"
