@@ -3502,46 +3502,40 @@ script Debug_CheatStart_PBL {
 	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Fire", "Water")
 	switch (var(VAR_RESULT)) {
 		case 0:
-			random(5)
+			random(4)
 			switch (var(VAR_RESULT)) {
 				case 0:
 					setvar(VAR_TEMP_0, SPECIES_PANSAGE)
 				case 1:
-					setvar(VAR_TEMP_0, SPECIES_HOPPIP)
+					setvar(VAR_TEMP_0, SPECIES_GOSSIFLEUR)
 				case 2:
-					setvar(VAR_TEMP_0, SPECIES_BELLSPROUT)
+					setvar(VAR_TEMP_0, SPECIES_SUNKERN)
 				case 3:
-					setvar(VAR_TEMP_0, SPECIES_SMOLIV)
-				case 4:
-					setvar(VAR_TEMP_0, SPECIES_BOUNSWEET)
+					setvar(VAR_TEMP_0, SPECIES_CHERUBI)
 			}
 		case 1:
-			random(5)
+			random(4)
 			switch (var(VAR_RESULT)) {
 				case 0:
 					setvar(VAR_TEMP_0, SPECIES_PANSEAR)
 				case 1:
-					setvar(VAR_TEMP_0, SPECIES_NUMEL)
+					setvar(VAR_TEMP_0, SPECIES_VULPIX)
 				case 2:
-					setvar(VAR_TEMP_0, SPECIES_SALANDIT)
+					setvar(VAR_TEMP_0, SPECIES_SLUGMA)
 				case 3:
 					setvar(VAR_TEMP_0, SPECIES_LITLEO)
-				case 4:
-					setvar(VAR_TEMP_0, SPECIES_SIZZLIPEDE)
 			}
 		case 2:
-			random(5)
+			random(4)
 			switch (var(VAR_RESULT)) {
 				case 0:
 					setvar(VAR_TEMP_0, SPECIES_PANPOUR)
 				case 1:
 					setvar(VAR_TEMP_0, SPECIES_BARBOACH)
 				case 2:
-					setvar(VAR_TEMP_0, SPECIES_CLAMPERL)
-				case 3:
-					setvar(VAR_TEMP_0, SPECIES_SEEL)
-				case 4:
 					setvar(VAR_TEMP_0, SPECIES_GOLDEEN)
+				case 3:
+					setvar(VAR_TEMP_0, SPECIES_FINNEON)
 			}
 	}
 	setvar(VAR_TEMP_1, 5) // level
@@ -3737,19 +3731,23 @@ script Debug_CheatStart_PBL {
 	setvar(VAR_TEMP_1, 11) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
 	// zone 5 pika
-	random(6)
+	random(10)
 	switch (var(VAR_RESULT)) {
 		case 0:
-			setvar(VAR_TEMP_0, SPECIES_PACHIRISU)
 		case 1:
-			setvar(VAR_TEMP_0, SPECIES_DEDENNE)
+			setvar(VAR_TEMP_0, SPECIES_PACHIRISU)
 		case 2:
-			setvar(VAR_TEMP_0, SPECIES_MORPEKO)
 		case 3:
-			setvar(VAR_TEMP_0, SPECIES_EMOLGA)
+			setvar(VAR_TEMP_0, SPECIES_DEDENNE)
 		case 4:
-			setvar(VAR_TEMP_0, SPECIES_PLUSLE)
 		case 5:
+			setvar(VAR_TEMP_0, SPECIES_MORPEKO)
+		case 6:
+		case 7:
+			setvar(VAR_TEMP_0, SPECIES_EMOLGA)
+		case 8:
+			setvar(VAR_TEMP_0, SPECIES_PLUSLE)
+		case 9:
 			setvar(VAR_TEMP_0, SPECIES_MINUN)
 	}
 	setvar(VAR_TEMP_1, 12) // level

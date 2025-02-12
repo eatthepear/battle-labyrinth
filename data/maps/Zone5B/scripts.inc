@@ -214,80 +214,80 @@ Zone5B_EventScript_BuyPikaClone_1:
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_10
 # 121 "data/maps/Zone5B/scripts.pory"
 	goto_if_set FLAG_SETTINGS_NUZLOCKE, Zone5B_EventScript_BuyPikaClone_13
-# 207 "data/maps/Zone5B/scripts.pory"
+# 211 "data/maps/Zone5B/scripts.pory"
 	message Zone5B_EventScript_BuyPikaClone_Text_6
-# 208 "data/maps/Zone5B/scripts.pory"
-	dynmultichoice 400, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Zone5B_EventScript_BuyPikaClone_Text_7, Zone5B_EventScript_BuyPikaClone_Text_8, Zone5B_EventScript_BuyPikaClone_Text_9, Zone5B_EventScript_BuyPikaClone_Text_10, Zone5B_EventScript_BuyPikaClone_Text_11, Zone5B_EventScript_BuyPikaClone_Text_12
-# 209 "data/maps/Zone5B/scripts.pory"
-	switch VAR_RESULT
-# 210 "data/maps/Zone5B/scripts.pory"
-	case 0, Zone5B_EventScript_BuyPikaClone_23
 # 212 "data/maps/Zone5B/scripts.pory"
-	case 1, Zone5B_EventScript_BuyPikaClone_24
+	dynmultichoice 400, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Zone5B_EventScript_BuyPikaClone_Text_7, Zone5B_EventScript_BuyPikaClone_Text_8, Zone5B_EventScript_BuyPikaClone_Text_9, Zone5B_EventScript_BuyPikaClone_Text_10, Zone5B_EventScript_BuyPikaClone_Text_11, Zone5B_EventScript_BuyPikaClone_Text_12
+# 213 "data/maps/Zone5B/scripts.pory"
+	switch VAR_RESULT
 # 214 "data/maps/Zone5B/scripts.pory"
-	case 2, Zone5B_EventScript_BuyPikaClone_25
+	case 0, Zone5B_EventScript_BuyPikaClone_23
 # 216 "data/maps/Zone5B/scripts.pory"
-	case 3, Zone5B_EventScript_BuyPikaClone_26
+	case 1, Zone5B_EventScript_BuyPikaClone_24
 # 218 "data/maps/Zone5B/scripts.pory"
-	case 4, Zone5B_EventScript_BuyPikaClone_27
+	case 2, Zone5B_EventScript_BuyPikaClone_25
 # 220 "data/maps/Zone5B/scripts.pory"
-	case 5, Zone5B_EventScript_BuyPikaClone_28
+	case 3, Zone5B_EventScript_BuyPikaClone_26
 # 222 "data/maps/Zone5B/scripts.pory"
+	case 4, Zone5B_EventScript_BuyPikaClone_27
+# 224 "data/maps/Zone5B/scripts.pory"
+	case 5, Zone5B_EventScript_BuyPikaClone_28
+# 226 "data/maps/Zone5B/scripts.pory"
 	case MULTI_B_PRESSED, Zone5B_EventScript_BuyPikaClone_29
 Zone5B_EventScript_BuyPikaClone_12:
-# 230 "data/maps/Zone5B/scripts.pory"
+# 234 "data/maps/Zone5B/scripts.pory"
 	specialvar VAR_TEMP_2, CalculatePlayerPartyCount
-# 231 "data/maps/Zone5B/scripts.pory"
+# 235 "data/maps/Zone5B/scripts.pory"
 	compare VAR_TEMP_2, PARTY_SIZE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_17
 Zone5B_EventScript_BuyPikaClone_16:
-# 255 "data/maps/Zone5B/scripts.pory"
+# 259 "data/maps/Zone5B/scripts.pory"
 	goto_if_set FLAG_SETTINGS_NUZLOCKE, Zone5B_EventScript_BuyPikaClone_31
-# 265 "data/maps/Zone5B/scripts.pory"
+# 269 "data/maps/Zone5B/scripts.pory"
 	bufferspeciesname 0, VAR_TEMP_1
-# 266 "data/maps/Zone5B/scripts.pory"
+# 270 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_BuyPikaClone_Text_16, MSGBOX_YESNO
-# 267 "data/maps/Zone5B/scripts.pory"
+# 271 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_46
 Zone5B_EventScript_BuyPikaClone_30:
-# 274 "data/maps/Zone5B/scripts.pory"
+# 278 "data/maps/Zone5B/scripts.pory"
 	compare VAR_TEMP_2, PARTY_SIZE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_41
 Zone5B_EventScript_BuyPikaClone_40:
-# 278 "data/maps/Zone5B/scripts.pory"
-	removemoney 1000
-# 279 "data/maps/Zone5B/scripts.pory"
-	updatemoneybox
-# 280 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_EventScript_BuyPikaClone_Text_17, MSGBOX_DEFAULT
-# 281 "data/maps/Zone5B/scripts.pory"
-	hidemoneybox
 # 282 "data/maps/Zone5B/scripts.pory"
-	givemon VAR_TEMP_1, 12, ITEM_NONE
+	removemoney 1000
 # 283 "data/maps/Zone5B/scripts.pory"
-	setmonmetlocation VAR_TEMP_2, 250
+	updatemoneybox
 # 284 "data/maps/Zone5B/scripts.pory"
-	bufferspeciesname 0, VAR_TEMP_1
+	msgbox Zone5B_EventScript_BuyPikaClone_Text_17, MSGBOX_DEFAULT
 # 285 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_EventScript_BuyPikaClone_Text_18, MSGBOX_DEFAULT
+	hidemoneybox
 # 286 "data/maps/Zone5B/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	givemon VAR_TEMP_1, 12, ITEM_NONE
 # 287 "data/maps/Zone5B/scripts.pory"
-	message Zone5B_EventScript_BuyPikaClone_Text_19
+	setmonmetlocation VAR_TEMP_2, 250
 # 288 "data/maps/Zone5B/scripts.pory"
-	waitmessage
+	bufferspeciesname 0, VAR_TEMP_1
 # 289 "data/maps/Zone5B/scripts.pory"
-	waitfanfare
+	msgbox Zone5B_EventScript_BuyPikaClone_Text_18, MSGBOX_DEFAULT
 # 290 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_EventScript_BuyPikaClone_Text_20, MSGBOX_YESNO
+	playfanfare MUS_OBTAIN_ITEM
 # 291 "data/maps/Zone5B/scripts.pory"
+	message Zone5B_EventScript_BuyPikaClone_Text_19
+# 292 "data/maps/Zone5B/scripts.pory"
+	waitmessage
+# 293 "data/maps/Zone5B/scripts.pory"
+	waitfanfare
+# 294 "data/maps/Zone5B/scripts.pory"
+	msgbox Zone5B_EventScript_BuyPikaClone_Text_20, MSGBOX_YESNO
+# 295 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_54
 Zone5B_EventScript_BuyPikaClone_53:
-# 295 "data/maps/Zone5B/scripts.pory"
+# 299 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_BuyPikaClone_Text_21, MSGBOX_DEFAULT
-# 296 "data/maps/Zone5B/scripts.pory"
+# 300 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
@@ -324,35 +324,35 @@ Zone5B_EventScript_BuyPikaClone_10:
 Zone5B_EventScript_BuyPikaClone_13:
 # 122 "data/maps/Zone5B/scripts.pory"
 	goto_if_unset FLAG_SETTINGS_RANDOMIZER, Zone5B_EventScript_BuyPikaClone_19
-# 204 "data/maps/Zone5B/scripts.pory"
+# 208 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_PACHIRISU
 	goto Zone5B_EventScript_BuyPikaClone_12
 
 Zone5B_EventScript_BuyPikaClone_17:
-# 232 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_EventScript_BuyPikaClone_Text_13, MSGBOX_AUTOCLOSE
-# 233 "data/maps/Zone5B/scripts.pory"
-	hidemoneybox
-# 234 "data/maps/Zone5B/scripts.pory"
-	special ChoosePartyMon
-# 235 "data/maps/Zone5B/scripts.pory"
-	waitstate
 # 236 "data/maps/Zone5B/scripts.pory"
-	faceplayer
+	msgbox Zone5B_EventScript_BuyPikaClone_Text_13, MSGBOX_AUTOCLOSE
 # 237 "data/maps/Zone5B/scripts.pory"
-	showmoneybox 0, 0, 0
+	hidemoneybox
 # 238 "data/maps/Zone5B/scripts.pory"
+	special ChoosePartyMon
+# 239 "data/maps/Zone5B/scripts.pory"
+	waitstate
+# 240 "data/maps/Zone5B/scripts.pory"
+	faceplayer
+# 241 "data/maps/Zone5B/scripts.pory"
+	showmoneybox 0, 0, 0
+# 242 "data/maps/Zone5B/scripts.pory"
 	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_35
-# 244 "data/maps/Zone5B/scripts.pory"
-	specialvar VAR_TEMP_3, ScriptGetPartyMonSpecies
-# 245 "data/maps/Zone5B/scripts.pory"
-	bufferspeciesname 2, VAR_TEMP_3
-# 246 "data/maps/Zone5B/scripts.pory"
-	copyvar VAR_TEMP_3, VAR_0x8004
-# 247 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_EventScript_BuyPikaClone_Text_14, MSGBOX_YESNO
 # 248 "data/maps/Zone5B/scripts.pory"
+	specialvar VAR_TEMP_3, ScriptGetPartyMonSpecies
+# 249 "data/maps/Zone5B/scripts.pory"
+	bufferspeciesname 2, VAR_TEMP_3
+# 250 "data/maps/Zone5B/scripts.pory"
+	copyvar VAR_TEMP_3, VAR_0x8004
+# 251 "data/maps/Zone5B/scripts.pory"
+	msgbox Zone5B_EventScript_BuyPikaClone_Text_14, MSGBOX_YESNO
+# 252 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_48
 	goto Zone5B_EventScript_BuyPikaClone_16
@@ -413,62 +413,62 @@ Zone5B_EventScript_BuyPikaClone_74:
 	goto Zone5B_EventScript_BuyPikaClone_12
 
 Zone5B_EventScript_BuyPikaClone_23:
-# 211 "data/maps/Zone5B/scripts.pory"
+# 215 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_PACHIRISU
 	goto Zone5B_EventScript_BuyPikaClone_12
 
 Zone5B_EventScript_BuyPikaClone_24:
-# 213 "data/maps/Zone5B/scripts.pory"
+# 217 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_DEDENNE
 	goto Zone5B_EventScript_BuyPikaClone_12
 
 Zone5B_EventScript_BuyPikaClone_25:
-# 215 "data/maps/Zone5B/scripts.pory"
+# 219 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_MORPEKO
 	goto Zone5B_EventScript_BuyPikaClone_12
 
 Zone5B_EventScript_BuyPikaClone_26:
-# 217 "data/maps/Zone5B/scripts.pory"
+# 221 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_EMOLGA
 	goto Zone5B_EventScript_BuyPikaClone_12
 
 Zone5B_EventScript_BuyPikaClone_27:
-# 219 "data/maps/Zone5B/scripts.pory"
+# 223 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_PLUSLE
 	goto Zone5B_EventScript_BuyPikaClone_12
 
 Zone5B_EventScript_BuyPikaClone_28:
-# 221 "data/maps/Zone5B/scripts.pory"
+# 225 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_MINUN
 	goto Zone5B_EventScript_BuyPikaClone_12
 
 Zone5B_EventScript_BuyPikaClone_29:
-# 223 "data/maps/Zone5B/scripts.pory"
+# 227 "data/maps/Zone5B/scripts.pory"
 	closemessage
-# 224 "data/maps/Zone5B/scripts.pory"
+# 228 "data/maps/Zone5B/scripts.pory"
 	hidemoneybox
-# 225 "data/maps/Zone5B/scripts.pory"
+# 229 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_BuyPikaClone_Text_2
-# 226 "data/maps/Zone5B/scripts.pory"
+# 230 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 Zone5B_EventScript_BuyPikaClone_31:
-# 256 "data/maps/Zone5B/scripts.pory"
+# 260 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_BuyPikaClone_Text_15, MSGBOX_YESNO
-# 257 "data/maps/Zone5B/scripts.pory"
+# 261 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_44
-# 263 "data/maps/Zone5B/scripts.pory"
+# 267 "data/maps/Zone5B/scripts.pory"
 	setflag FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE
 	goto Zone5B_EventScript_BuyPikaClone_30
 
 Zone5B_EventScript_BuyPikaClone_35:
-# 239 "data/maps/Zone5B/scripts.pory"
+# 243 "data/maps/Zone5B/scripts.pory"
 	hidemoneybox
-# 240 "data/maps/Zone5B/scripts.pory"
+# 244 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_BuyPikaClone_Text_2
-# 241 "data/maps/Zone5B/scripts.pory"
+# 245 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
@@ -478,36 +478,36 @@ Zone5B_EventScript_BuyPikaClone_38:
 	goto Zone5B_EventScript_BuyPikaClone_37
 
 Zone5B_EventScript_BuyPikaClone_41:
-# 275 "data/maps/Zone5B/scripts.pory"
+# 279 "data/maps/Zone5B/scripts.pory"
 	special SendChosenMonToPC
-# 276 "data/maps/Zone5B/scripts.pory"
+# 280 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_2, 5
 	goto Zone5B_EventScript_BuyPikaClone_40
 
 Zone5B_EventScript_BuyPikaClone_44:
-# 258 "data/maps/Zone5B/scripts.pory"
+# 262 "data/maps/Zone5B/scripts.pory"
 	hidemoneybox
-# 259 "data/maps/Zone5B/scripts.pory"
+# 263 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_BuyPikaClone_Text_2
-# 260 "data/maps/Zone5B/scripts.pory"
+# 264 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 Zone5B_EventScript_BuyPikaClone_46:
-# 268 "data/maps/Zone5B/scripts.pory"
+# 272 "data/maps/Zone5B/scripts.pory"
 	hidemoneybox
-# 269 "data/maps/Zone5B/scripts.pory"
+# 273 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_BuyPikaClone_Text_2
-# 270 "data/maps/Zone5B/scripts.pory"
+# 274 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 Zone5B_EventScript_BuyPikaClone_48:
-# 249 "data/maps/Zone5B/scripts.pory"
+# 253 "data/maps/Zone5B/scripts.pory"
 	hidemoneybox
-# 250 "data/maps/Zone5B/scripts.pory"
+# 254 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_BuyPikaClone_Text_2
-# 251 "data/maps/Zone5B/scripts.pory"
+# 255 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
@@ -517,9 +517,9 @@ Zone5B_EventScript_BuyPikaClone_51:
 	goto Zone5B_EventScript_BuyPikaClone_50
 
 Zone5B_EventScript_BuyPikaClone_54:
-# 292 "data/maps/Zone5B/scripts.pory"
+# 296 "data/maps/Zone5B/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 293 "data/maps/Zone5B/scripts.pory"
+# 297 "data/maps/Zone5B/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto Zone5B_EventScript_BuyPikaClone_53
 
@@ -563,80 +563,88 @@ Zone5B_EventScript_BuyPikaClone_72:
 
 Zone5B_EventScript_BuyPikaClone_75:
 # 163 "data/maps/Zone5B/scripts.pory"
-	random 6
+	random 10
 # 164 "data/maps/Zone5B/scripts.pory"
 	switch VAR_RESULT
 # 165 "data/maps/Zone5B/scripts.pory"
 	case 0, Zone5B_EventScript_BuyPikaClone_78
-# 171 "data/maps/Zone5B/scripts.pory"
-	case 1, Zone5B_EventScript_BuyPikaClone_79
-# 177 "data/maps/Zone5B/scripts.pory"
-	case 2, Zone5B_EventScript_BuyPikaClone_80
-# 183 "data/maps/Zone5B/scripts.pory"
-	case 3, Zone5B_EventScript_BuyPikaClone_81
-# 189 "data/maps/Zone5B/scripts.pory"
-	case 4, Zone5B_EventScript_BuyPikaClone_82
-# 195 "data/maps/Zone5B/scripts.pory"
-	case 5, Zone5B_EventScript_BuyPikaClone_83
+# 166 "data/maps/Zone5B/scripts.pory"
+	case 1, Zone5B_EventScript_BuyPikaClone_78
+# 172 "data/maps/Zone5B/scripts.pory"
+	case 2, Zone5B_EventScript_BuyPikaClone_79
+# 173 "data/maps/Zone5B/scripts.pory"
+	case 3, Zone5B_EventScript_BuyPikaClone_79
+# 179 "data/maps/Zone5B/scripts.pory"
+	case 4, Zone5B_EventScript_BuyPikaClone_80
+# 180 "data/maps/Zone5B/scripts.pory"
+	case 5, Zone5B_EventScript_BuyPikaClone_80
+# 186 "data/maps/Zone5B/scripts.pory"
+	case 6, Zone5B_EventScript_BuyPikaClone_81
+# 187 "data/maps/Zone5B/scripts.pory"
+	case 7, Zone5B_EventScript_BuyPikaClone_81
+# 193 "data/maps/Zone5B/scripts.pory"
+	case 8, Zone5B_EventScript_BuyPikaClone_82
+# 199 "data/maps/Zone5B/scripts.pory"
+	case 9, Zone5B_EventScript_BuyPikaClone_83
 	goto Zone5B_EventScript_BuyPikaClone_74
 
 Zone5B_EventScript_BuyPikaClone_78:
-# 166 "data/maps/Zone5B/scripts.pory"
-	checkspeciesclause SPECIES_PACHIRISU
 # 167 "data/maps/Zone5B/scripts.pory"
+	checkspeciesclause SPECIES_PACHIRISU
+# 168 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_85
-# 170 "data/maps/Zone5B/scripts.pory"
+# 171 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_PACHIRISU
 	goto Zone5B_EventScript_BuyPikaClone_74
 
 Zone5B_EventScript_BuyPikaClone_79:
-# 172 "data/maps/Zone5B/scripts.pory"
+# 174 "data/maps/Zone5B/scripts.pory"
 	checkspeciesclause SPECIES_DEDENNE
-# 173 "data/maps/Zone5B/scripts.pory"
+# 175 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_88
-# 176 "data/maps/Zone5B/scripts.pory"
+# 178 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_DEDENNE
 	goto Zone5B_EventScript_BuyPikaClone_74
 
 Zone5B_EventScript_BuyPikaClone_80:
-# 178 "data/maps/Zone5B/scripts.pory"
+# 181 "data/maps/Zone5B/scripts.pory"
 	checkspeciesclause SPECIES_MORPEKO
-# 179 "data/maps/Zone5B/scripts.pory"
+# 182 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_91
-# 182 "data/maps/Zone5B/scripts.pory"
+# 185 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_MORPEKO
 	goto Zone5B_EventScript_BuyPikaClone_74
 
 Zone5B_EventScript_BuyPikaClone_81:
-# 184 "data/maps/Zone5B/scripts.pory"
+# 188 "data/maps/Zone5B/scripts.pory"
 	checkspeciesclause SPECIES_EMOLGA
-# 185 "data/maps/Zone5B/scripts.pory"
+# 189 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_94
-# 188 "data/maps/Zone5B/scripts.pory"
+# 192 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_EMOLGA
 	goto Zone5B_EventScript_BuyPikaClone_74
 
 Zone5B_EventScript_BuyPikaClone_82:
-# 190 "data/maps/Zone5B/scripts.pory"
+# 194 "data/maps/Zone5B/scripts.pory"
 	checkspeciesclause SPECIES_PLUSLE
-# 191 "data/maps/Zone5B/scripts.pory"
+# 195 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_97
-# 194 "data/maps/Zone5B/scripts.pory"
+# 198 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_PLUSLE
 	goto Zone5B_EventScript_BuyPikaClone_74
 
 Zone5B_EventScript_BuyPikaClone_83:
-# 196 "data/maps/Zone5B/scripts.pory"
+# 200 "data/maps/Zone5B/scripts.pory"
 	checkspeciesclause SPECIES_MINUN
-# 197 "data/maps/Zone5B/scripts.pory"
+# 201 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_100
-# 200 "data/maps/Zone5B/scripts.pory"
+# 204 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_MINUN
 	goto Zone5B_EventScript_BuyPikaClone_74
 
@@ -660,432 +668,432 @@ Zone5B_EventScript_BuyPikaClone_100:
 
 
 Zone5B_EventScript_NeverMissTutor::
-# 301 "data/maps/Zone5B/scripts.pory"
+# 305 "data/maps/Zone5B/scripts.pory"
 	lock
-# 302 "data/maps/Zone5B/scripts.pory"
+# 306 "data/maps/Zone5B/scripts.pory"
 	faceplayer
-# 303 "data/maps/Zone5B/scripts.pory"
+# 307 "data/maps/Zone5B/scripts.pory"
 	showmoneybox 0, 0, 0
-# 304 "data/maps/Zone5B/scripts.pory"
+# 308 "data/maps/Zone5B/scripts.pory"
 	goto_if_set FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS, Zone5B_EventScript_NeverMissTutor_2
-# 313 "data/maps/Zone5B/scripts.pory"
+# 317 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_NeverMissTutor_Text_2, MSGBOX_YESNO
-# 314 "data/maps/Zone5B/scripts.pory"
+# 318 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Zone5B_EventScript_NeverMissTutor_10
 Zone5B_EventScript_NeverMissTutor_1:
-# 321 "data/maps/Zone5B/scripts.pory"
+# 325 "data/maps/Zone5B/scripts.pory"
 	goto_if_set FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS, Zone5B_EventScript_NeverMissTutor_6
 Zone5B_EventScript_NeverMissTutor_5:
-# 330 "data/maps/Zone5B/scripts.pory"
-	message Zone5B_EventScript_NeverMissTutor_Text_4
-# 331 "data/maps/Zone5B/scripts.pory"
-	waitmessage
-# 332 "data/maps/Zone5B/scripts.pory"
-	dynmultichoice 21, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Zone5B_EventScript_NeverMissTutor_Text_5, Zone5B_EventScript_NeverMissTutor_Text_6, Zone5B_EventScript_NeverMissTutor_Text_7, Zone5B_EventScript_NeverMissTutor_Text_8, Zone5B_EventScript_NeverMissTutor_Text_9
-# 333 "data/maps/Zone5B/scripts.pory"
-	switch VAR_RESULT
 # 334 "data/maps/Zone5B/scripts.pory"
-	case 0, Zone5B_EventScript_NeverMissTutor_14
+	message Zone5B_EventScript_NeverMissTutor_Text_4
+# 335 "data/maps/Zone5B/scripts.pory"
+	waitmessage
+# 336 "data/maps/Zone5B/scripts.pory"
+	dynmultichoice 21, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Zone5B_EventScript_NeverMissTutor_Text_5, Zone5B_EventScript_NeverMissTutor_Text_6, Zone5B_EventScript_NeverMissTutor_Text_7, Zone5B_EventScript_NeverMissTutor_Text_8, Zone5B_EventScript_NeverMissTutor_Text_9
 # 337 "data/maps/Zone5B/scripts.pory"
+	switch VAR_RESULT
+# 338 "data/maps/Zone5B/scripts.pory"
+	case 0, Zone5B_EventScript_NeverMissTutor_14
+# 341 "data/maps/Zone5B/scripts.pory"
 	case 1, Zone5B_EventScript_NeverMissTutor_15
-# 340 "data/maps/Zone5B/scripts.pory"
+# 344 "data/maps/Zone5B/scripts.pory"
 	case 2, Zone5B_EventScript_NeverMissTutor_16
-# 343 "data/maps/Zone5B/scripts.pory"
-	case 3, Zone5B_EventScript_NeverMissTutor_17
-# 346 "data/maps/Zone5B/scripts.pory"
-	case 4, Zone5B_EventScript_NeverMissTutor_18
 # 347 "data/maps/Zone5B/scripts.pory"
+	case 3, Zone5B_EventScript_NeverMissTutor_17
+# 350 "data/maps/Zone5B/scripts.pory"
+	case 4, Zone5B_EventScript_NeverMissTutor_18
+# 351 "data/maps/Zone5B/scripts.pory"
 	case MULTI_B_PRESSED, Zone5B_EventScript_NeverMissTutor_18
 Zone5B_EventScript_NeverMissTutor_12:
-# 353 "data/maps/Zone5B/scripts.pory"
-	buffermovename 0, VAR_TEMP_0
-# 354 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_EventScript_NeverMissTutor_Text_10, MSGBOX_DEFAULT
-# 355 "data/maps/Zone5B/scripts.pory"
-	special ChooseMonForMoveTutor
-# 356 "data/maps/Zone5B/scripts.pory"
-	waitstate
 # 357 "data/maps/Zone5B/scripts.pory"
-	lock
+	buffermovename 0, VAR_TEMP_0
 # 358 "data/maps/Zone5B/scripts.pory"
-	faceplayer
+	msgbox Zone5B_EventScript_NeverMissTutor_Text_10, MSGBOX_DEFAULT
 # 359 "data/maps/Zone5B/scripts.pory"
+	special ChooseMonForMoveTutor
+# 360 "data/maps/Zone5B/scripts.pory"
+	waitstate
+# 361 "data/maps/Zone5B/scripts.pory"
+	lock
+# 362 "data/maps/Zone5B/scripts.pory"
+	faceplayer
+# 363 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Zone5B_EventScript_NeverMissTutor_22
-# 365 "data/maps/Zone5B/scripts.pory"
+# 369 "data/maps/Zone5B/scripts.pory"
 	showmoneybox 0, 0, 0
-# 366 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_EventScript_NeverMissTutor_Text_11, MSGBOX_DEFAULT
-# 367 "data/maps/Zone5B/scripts.pory"
-	goto_if_unset FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS, Zone5B_EventScript_NeverMissTutor_25
 # 370 "data/maps/Zone5B/scripts.pory"
-	removemoney 1000
+	msgbox Zone5B_EventScript_NeverMissTutor_Text_11, MSGBOX_DEFAULT
 # 371 "data/maps/Zone5B/scripts.pory"
+	goto_if_unset FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS, Zone5B_EventScript_NeverMissTutor_25
+# 374 "data/maps/Zone5B/scripts.pory"
+	removemoney 1000
+# 375 "data/maps/Zone5B/scripts.pory"
 	updatemoneybox
-# 372 "data/maps/Zone5B/scripts.pory"
+# 376 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_NeverMissTutor_Text_12, MSGBOX_DEFAULT
-# 373 "data/maps/Zone5B/scripts.pory"
+# 377 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_NeverMissTutor_Text_1
 Zone5B_EventScript_NeverMissTutor_24:
-# 375 "data/maps/Zone5B/scripts.pory"
+# 379 "data/maps/Zone5B/scripts.pory"
 	hidemoneybox
-# 376 "data/maps/Zone5B/scripts.pory"
+# 380 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 Zone5B_EventScript_NeverMissTutor_2:
-# 305 "data/maps/Zone5B/scripts.pory"
+# 309 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_NeverMissTutor_Text_0, MSGBOX_YESNO
-# 306 "data/maps/Zone5B/scripts.pory"
+# 310 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Zone5B_EventScript_NeverMissTutor_8
 	goto Zone5B_EventScript_NeverMissTutor_1
 
 Zone5B_EventScript_NeverMissTutor_6:
-# 322 "data/maps/Zone5B/scripts.pory"
+# 326 "data/maps/Zone5B/scripts.pory"
 	checkmoney 1000, 0
-# 323 "data/maps/Zone5B/scripts.pory"
+# 327 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Zone5B_EventScript_NeverMissTutor_19
 	goto Zone5B_EventScript_NeverMissTutor_5
 
 Zone5B_EventScript_NeverMissTutor_8:
-# 307 "data/maps/Zone5B/scripts.pory"
+# 311 "data/maps/Zone5B/scripts.pory"
 	hidemoneybox
-# 308 "data/maps/Zone5B/scripts.pory"
+# 312 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_NeverMissTutor_Text_1
-# 309 "data/maps/Zone5B/scripts.pory"
+# 313 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 Zone5B_EventScript_NeverMissTutor_10:
-# 315 "data/maps/Zone5B/scripts.pory"
+# 319 "data/maps/Zone5B/scripts.pory"
 	hidemoneybox
-# 316 "data/maps/Zone5B/scripts.pory"
+# 320 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_NeverMissTutor_Text_1
-# 317 "data/maps/Zone5B/scripts.pory"
+# 321 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 Zone5B_EventScript_NeverMissTutor_14:
-# 335 "data/maps/Zone5B/scripts.pory"
+# 339 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_0, MOVE_SWIFT
-# 336 "data/maps/Zone5B/scripts.pory"
+# 340 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_0x8005, MOVE_SWIFT
 	goto Zone5B_EventScript_NeverMissTutor_12
 
 Zone5B_EventScript_NeverMissTutor_15:
-# 338 "data/maps/Zone5B/scripts.pory"
+# 342 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_0, MOVE_AERIAL_ACE
-# 339 "data/maps/Zone5B/scripts.pory"
+# 343 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_0x8005, MOVE_AERIAL_ACE
 	goto Zone5B_EventScript_NeverMissTutor_12
 
 Zone5B_EventScript_NeverMissTutor_16:
-# 341 "data/maps/Zone5B/scripts.pory"
+# 345 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_0, MOVE_MAGICAL_LEAF
-# 342 "data/maps/Zone5B/scripts.pory"
+# 346 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_0x8005, MOVE_MAGICAL_LEAF
 	goto Zone5B_EventScript_NeverMissTutor_12
 
 Zone5B_EventScript_NeverMissTutor_17:
-# 344 "data/maps/Zone5B/scripts.pory"
+# 348 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_0, MOVE_SHOCK_WAVE
-# 345 "data/maps/Zone5B/scripts.pory"
+# 349 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_0x8005, MOVE_SHOCK_WAVE
 	goto Zone5B_EventScript_NeverMissTutor_12
 
 Zone5B_EventScript_NeverMissTutor_18:
-# 348 "data/maps/Zone5B/scripts.pory"
+# 352 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_NeverMissTutor_Text_1
-# 349 "data/maps/Zone5B/scripts.pory"
+# 353 "data/maps/Zone5B/scripts.pory"
 	hidemoneybox
-# 350 "data/maps/Zone5B/scripts.pory"
+# 354 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 Zone5B_EventScript_NeverMissTutor_19:
-# 324 "data/maps/Zone5B/scripts.pory"
+# 328 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_NeverMissTutor_Text_3
-# 325 "data/maps/Zone5B/scripts.pory"
+# 329 "data/maps/Zone5B/scripts.pory"
 	hidemoneybox
-# 326 "data/maps/Zone5B/scripts.pory"
+# 330 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 Zone5B_EventScript_NeverMissTutor_22:
-# 360 "data/maps/Zone5B/scripts.pory"
+# 364 "data/maps/Zone5B/scripts.pory"
 	msgbox Zone5B_EventScript_NeverMissTutor_Text_1
-# 361 "data/maps/Zone5B/scripts.pory"
+# 365 "data/maps/Zone5B/scripts.pory"
 	hidemoneybox
-# 362 "data/maps/Zone5B/scripts.pory"
+# 366 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 Zone5B_EventScript_NeverMissTutor_25:
-# 368 "data/maps/Zone5B/scripts.pory"
+# 372 "data/maps/Zone5B/scripts.pory"
 	setflag FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS
 	goto Zone5B_EventScript_NeverMissTutor_24
 
 
 Zone5B_EventScript_Random1::
-# 381 "data/maps/Zone5B/scripts.pory"
+# 385 "data/maps/Zone5B/scripts.pory"
 	lock
-# 382 "data/maps/Zone5B/scripts.pory"
+# 386 "data/maps/Zone5B/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE5B_RANDOM_1, Zone5B_EventScript_Random1_2
-# 387 "data/maps/Zone5B/scripts.pory"
-	waitse
-# 388 "data/maps/Zone5B/scripts.pory"
-	removeobject VAR_LAST_TALKED
-# 389 "data/maps/Zone5B/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 390 "data/maps/Zone5B/scripts.pory"
-	setflag FLAG_ITEM_ZONE5B_RANDOM_1
 # 391 "data/maps/Zone5B/scripts.pory"
-	addobject VAR_LAST_TALKED
+	waitse
 # 392 "data/maps/Zone5B/scripts.pory"
-	specialvar VAR_TEMP_1, RandomItemChest
+	removeobject VAR_LAST_TALKED
 # 393 "data/maps/Zone5B/scripts.pory"
-	finditem VAR_TEMP_1, VAR_TEMP_0
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 394 "data/maps/Zone5B/scripts.pory"
+	setflag FLAG_ITEM_ZONE5B_RANDOM_1
+# 395 "data/maps/Zone5B/scripts.pory"
+	addobject VAR_LAST_TALKED
+# 396 "data/maps/Zone5B/scripts.pory"
+	specialvar VAR_TEMP_1, RandomItemChest
+# 397 "data/maps/Zone5B/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 398 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 Zone5B_EventScript_Random1_2:
-# 383 "data/maps/Zone5B/scripts.pory"
+# 387 "data/maps/Zone5B/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 384 "data/maps/Zone5B/scripts.pory"
+# 388 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 
 Zone5B_EventScript_Random2::
-# 399 "data/maps/Zone5B/scripts.pory"
+# 403 "data/maps/Zone5B/scripts.pory"
 	lock
-# 400 "data/maps/Zone5B/scripts.pory"
+# 404 "data/maps/Zone5B/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE5B_RANDOM_2, Zone5B_EventScript_Random2_2
-# 405 "data/maps/Zone5B/scripts.pory"
-	waitse
-# 406 "data/maps/Zone5B/scripts.pory"
-	removeobject VAR_LAST_TALKED
-# 407 "data/maps/Zone5B/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 408 "data/maps/Zone5B/scripts.pory"
-	setflag FLAG_ITEM_ZONE5B_RANDOM_2
 # 409 "data/maps/Zone5B/scripts.pory"
-	addobject VAR_LAST_TALKED
+	waitse
 # 410 "data/maps/Zone5B/scripts.pory"
-	specialvar VAR_TEMP_1, RandomItemChest
+	removeobject VAR_LAST_TALKED
 # 411 "data/maps/Zone5B/scripts.pory"
-	finditem VAR_TEMP_1, VAR_TEMP_0
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 412 "data/maps/Zone5B/scripts.pory"
+	setflag FLAG_ITEM_ZONE5B_RANDOM_2
+# 413 "data/maps/Zone5B/scripts.pory"
+	addobject VAR_LAST_TALKED
+# 414 "data/maps/Zone5B/scripts.pory"
+	specialvar VAR_TEMP_1, RandomItemChest
+# 415 "data/maps/Zone5B/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 416 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 Zone5B_EventScript_Random2_2:
-# 401 "data/maps/Zone5B/scripts.pory"
+# 405 "data/maps/Zone5B/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 402 "data/maps/Zone5B/scripts.pory"
+# 406 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 
 Zone5B_EventScript_Gems::
-# 417 "data/maps/Zone5B/scripts.pory"
+# 421 "data/maps/Zone5B/scripts.pory"
 	lock
-# 418 "data/maps/Zone5B/scripts.pory"
+# 422 "data/maps/Zone5B/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE5B_GEMS, Zone5B_EventScript_Gems_2
-# 423 "data/maps/Zone5B/scripts.pory"
-	waitse
-# 424 "data/maps/Zone5B/scripts.pory"
-	removeobject VAR_LAST_TALKED
-# 425 "data/maps/Zone5B/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 426 "data/maps/Zone5B/scripts.pory"
-	setflag FLAG_ITEM_ZONE5B_GEMS
 # 427 "data/maps/Zone5B/scripts.pory"
-	addobject VAR_LAST_TALKED
+	waitse
 # 428 "data/maps/Zone5B/scripts.pory"
-	finditem ITEM_NORMAL_GEM
+	removeobject VAR_LAST_TALKED
 # 429 "data/maps/Zone5B/scripts.pory"
-	finditem ITEM_BUG_GEM
+	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 430 "data/maps/Zone5B/scripts.pory"
-	finditem ITEM_GRASS_GEM
+	setflag FLAG_ITEM_ZONE5B_GEMS
 # 431 "data/maps/Zone5B/scripts.pory"
+	addobject VAR_LAST_TALKED
+# 432 "data/maps/Zone5B/scripts.pory"
+	finditem ITEM_NORMAL_GEM
+# 433 "data/maps/Zone5B/scripts.pory"
+	finditem ITEM_BUG_GEM
+# 434 "data/maps/Zone5B/scripts.pory"
+	finditem ITEM_GRASS_GEM
+# 435 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 Zone5B_EventScript_Gems_2:
-# 419 "data/maps/Zone5B/scripts.pory"
+# 423 "data/maps/Zone5B/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 420 "data/maps/Zone5B/scripts.pory"
+# 424 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 
 Zone5B_EventScript_Random3::
-# 436 "data/maps/Zone5B/scripts.pory"
+# 440 "data/maps/Zone5B/scripts.pory"
 	lock
-# 437 "data/maps/Zone5B/scripts.pory"
+# 441 "data/maps/Zone5B/scripts.pory"
 	goto_if_set FLAG_ITEM_ZONE5B_RANDOM_3, Zone5B_EventScript_Random3_2
-# 442 "data/maps/Zone5B/scripts.pory"
-	waitse
-# 443 "data/maps/Zone5B/scripts.pory"
-	removeobject VAR_LAST_TALKED
-# 444 "data/maps/Zone5B/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
-# 445 "data/maps/Zone5B/scripts.pory"
-	setflag FLAG_ITEM_ZONE5B_RANDOM_3
 # 446 "data/maps/Zone5B/scripts.pory"
-	addobject VAR_LAST_TALKED
+	waitse
 # 447 "data/maps/Zone5B/scripts.pory"
-	specialvar VAR_TEMP_1, RandomItemChest
+	removeobject VAR_LAST_TALKED
 # 448 "data/maps/Zone5B/scripts.pory"
-	finditem VAR_TEMP_1, VAR_TEMP_0
+	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN
 # 449 "data/maps/Zone5B/scripts.pory"
+	setflag FLAG_ITEM_ZONE5B_RANDOM_3
+# 450 "data/maps/Zone5B/scripts.pory"
+	addobject VAR_LAST_TALKED
+# 451 "data/maps/Zone5B/scripts.pory"
+	specialvar VAR_TEMP_1, RandomItemChest
+# 452 "data/maps/Zone5B/scripts.pory"
+	finditem VAR_TEMP_1, VAR_TEMP_0
+# 453 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 Zone5B_EventScript_Random3_2:
-# 438 "data/maps/Zone5B/scripts.pory"
+# 442 "data/maps/Zone5B/scripts.pory"
 	msgbox gText_ItemChestIsEmpty
-# 439 "data/maps/Zone5B/scripts.pory"
+# 443 "data/maps/Zone5B/scripts.pory"
 	release
 	end
 
 
-# 453 "data/maps/Zone5B/scripts.pory"
-
-# 454 "data/maps/Zone5B/scripts.pory"
-Zone5B_EventScript_NovaandCora::
-# 455 "data/maps/Zone5B/scripts.pory"
-	trainerbattle_double TRAINER_PBL_NOVA_AND_CORA, Zone5B_Text_NovaandCoraIntro, Zone5B_Text_NovaandCoraDefeat, gText_NotEnoughMons
-# 456 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_Text_NovaandCoraPostBattle, MSGBOX_DEFAULT
 # 457 "data/maps/Zone5B/scripts.pory"
-	release
-# 458 "data/maps/Zone5B/scripts.pory"
-	end
-# 459 "data/maps/Zone5B/scripts.pory"
 
+# 458 "data/maps/Zone5B/scripts.pory"
+Zone5B_EventScript_NovaandCora::
+# 459 "data/maps/Zone5B/scripts.pory"
+	trainerbattle_double TRAINER_PBL_NOVA_AND_CORA, Zone5B_Text_NovaandCoraIntro, Zone5B_Text_NovaandCoraDefeat, gText_NotEnoughMons
 # 460 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_NovaandCoraIntro:
+	msgbox Zone5B_Text_NovaandCoraPostBattle, MSGBOX_DEFAULT
 # 461 "data/maps/Zone5B/scripts.pory"
-	.string "Nova: This grass is so tall!\p"
+	release
 # 462 "data/maps/Zone5B/scripts.pory"
-	.string "Cora: It's going up my nose!$"
+	end
 # 463 "data/maps/Zone5B/scripts.pory"
 
 # 464 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_NovaandCoraDefeat:
+Zone5B_Text_NovaandCoraIntro:
 # 465 "data/maps/Zone5B/scripts.pory"
-	.string "Nova: Achoo!\p"
+	.string "Nova: This grass is so tall!\p"
 # 466 "data/maps/Zone5B/scripts.pory"
-	.string "Cora: Achoo!$"
+	.string "Cora: It's going up my nose!$"
 # 467 "data/maps/Zone5B/scripts.pory"
 
 # 468 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_NovaandCoraPostBattle:
+Zone5B_Text_NovaandCoraDefeat:
 # 469 "data/maps/Zone5B/scripts.pory"
-	.string "Nova: Being twins means-\p"
+	.string "Nova: Achoo!\p"
 # 470 "data/maps/Zone5B/scripts.pory"
-	.string "Cora: Sharing allergies!$"
+	.string "Cora: Achoo!$"
 # 471 "data/maps/Zone5B/scripts.pory"
 
 # 472 "data/maps/Zone5B/scripts.pory"
-Zone5B_EventScript_Clinton::
+Zone5B_Text_NovaandCoraPostBattle:
 # 473 "data/maps/Zone5B/scripts.pory"
-	trainerbattle_single TRAINER_PBL_CLINTON, Zone5B_Text_ClintonIntro, Zone5B_Text_ClintonDefeat
+	.string "Nova: Being twins means-\p"
 # 474 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_Text_ClintonPostBattle, MSGBOX_AUTOCLOSE
+	.string "Cora: Sharing allergies!$"
 # 475 "data/maps/Zone5B/scripts.pory"
-	end
-# 476 "data/maps/Zone5B/scripts.pory"
 
+# 476 "data/maps/Zone5B/scripts.pory"
+Zone5B_EventScript_Clinton::
 # 477 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_ClintonIntro:
+	trainerbattle_single TRAINER_PBL_CLINTON, Zone5B_Text_ClintonIntro, Zone5B_Text_ClintonDefeat
 # 478 "data/maps/Zone5B/scripts.pory"
-	.string "I've had my Pokémon specially\n"
+	msgbox Zone5B_Text_ClintonPostBattle, MSGBOX_AUTOCLOSE
 # 479 "data/maps/Zone5B/scripts.pory"
-	.string "imported from rare habitats!$"
+	end
 # 480 "data/maps/Zone5B/scripts.pory"
 
 # 481 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_ClintonDefeat:
+Zone5B_Text_ClintonIntro:
 # 482 "data/maps/Zone5B/scripts.pory"
-	.string "Um… I thought they were\n"
+	.string "I've had my Pokémon specially\n"
 # 483 "data/maps/Zone5B/scripts.pory"
-	.string "supposed to be strong!$"
+	.string "imported from rare habitats!$"
 # 484 "data/maps/Zone5B/scripts.pory"
 
 # 485 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_ClintonPostBattle:
+Zone5B_Text_ClintonDefeat:
 # 486 "data/maps/Zone5B/scripts.pory"
-	.string "I suppose just because a\n"
+	.string "Um… I thought they were\n"
 # 487 "data/maps/Zone5B/scripts.pory"
-	.string "Pokémon is rare, doesn't\l"
+	.string "supposed to be strong!$"
 # 488 "data/maps/Zone5B/scripts.pory"
-	.string "mean it's strong!$"
+
 # 489 "data/maps/Zone5B/scripts.pory"
-
+Zone5B_Text_ClintonPostBattle:
 # 490 "data/maps/Zone5B/scripts.pory"
-Zone5B_EventScript_Ryan::
+	.string "I suppose just because a\n"
 # 491 "data/maps/Zone5B/scripts.pory"
-	trainerbattle_single TRAINER_PBL_RYAN, Zone5B_Text_RyanIntro, Zone5B_Text_RyanDefeat
+	.string "Pokémon is rare, doesn't\l"
 # 492 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_Text_RyanPostBattle, MSGBOX_AUTOCLOSE
+	.string "mean it's strong!$"
 # 493 "data/maps/Zone5B/scripts.pory"
-	end
-# 494 "data/maps/Zone5B/scripts.pory"
 
+# 494 "data/maps/Zone5B/scripts.pory"
+Zone5B_EventScript_Ryan::
 # 495 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_RyanIntro:
+	trainerbattle_single TRAINER_PBL_RYAN, Zone5B_Text_RyanIntro, Zone5B_Text_RyanDefeat
 # 496 "data/maps/Zone5B/scripts.pory"
-	.string "Where am I?\n"
+	msgbox Zone5B_Text_RyanPostBattle, MSGBOX_AUTOCLOSE
 # 497 "data/maps/Zone5B/scripts.pory"
-	.string "Ah! A wild Pokémon!$"
+	end
 # 498 "data/maps/Zone5B/scripts.pory"
 
 # 499 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_RyanDefeat:
+Zone5B_Text_RyanIntro:
 # 500 "data/maps/Zone5B/scripts.pory"
-	.string "Sorry! I thought you were a\n"
+	.string "Where am I?\n"
 # 501 "data/maps/Zone5B/scripts.pory"
-	.string "Pokémon!$"
+	.string "Ah! A wild Pokémon!$"
 # 502 "data/maps/Zone5B/scripts.pory"
 
 # 503 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_RyanPostBattle:
+Zone5B_Text_RyanDefeat:
 # 504 "data/maps/Zone5B/scripts.pory"
-	.string "This grass is just too tall to see!$"
+	.string "Sorry! I thought you were a\n"
 # 505 "data/maps/Zone5B/scripts.pory"
-
+	.string "Pokémon!$"
 # 506 "data/maps/Zone5B/scripts.pory"
-Zone5B_EventScript_Kenneth::
+
 # 507 "data/maps/Zone5B/scripts.pory"
-	trainerbattle_single TRAINER_PBL_KENNETH, Zone5B_Text_KennethIntro, Zone5B_Text_KennethDefeat
+Zone5B_Text_RyanPostBattle:
 # 508 "data/maps/Zone5B/scripts.pory"
-	msgbox Zone5B_Text_KennethPostBattle, MSGBOX_AUTOCLOSE
+	.string "This grass is just too tall to see!$"
 # 509 "data/maps/Zone5B/scripts.pory"
-	end
+
 # 510 "data/maps/Zone5B/scripts.pory"
-
+Zone5B_EventScript_Kenneth::
 # 511 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_KennethIntro:
+	trainerbattle_single TRAINER_PBL_KENNETH, Zone5B_Text_KennethIntro, Zone5B_Text_KennethDefeat
 # 512 "data/maps/Zone5B/scripts.pory"
-	.string "I'm running back and forth! Huzzah!$"
+	msgbox Zone5B_Text_KennethPostBattle, MSGBOX_AUTOCLOSE
 # 513 "data/maps/Zone5B/scripts.pory"
-
+	end
 # 514 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_KennethDefeat:
-# 515 "data/maps/Zone5B/scripts.pory"
-	.string "Whew! I'm all out of steam!$"
-# 516 "data/maps/Zone5B/scripts.pory"
 
+# 515 "data/maps/Zone5B/scripts.pory"
+Zone5B_Text_KennethIntro:
+# 516 "data/maps/Zone5B/scripts.pory"
+	.string "I'm running back and forth! Huzzah!$"
 # 517 "data/maps/Zone5B/scripts.pory"
-Zone5B_Text_KennethPostBattle:
+
 # 518 "data/maps/Zone5B/scripts.pory"
+Zone5B_Text_KennethDefeat:
+# 519 "data/maps/Zone5B/scripts.pory"
+	.string "Whew! I'm all out of steam!$"
+# 520 "data/maps/Zone5B/scripts.pory"
+
+# 521 "data/maps/Zone5B/scripts.pory"
+Zone5B_Text_KennethPostBattle:
+# 522 "data/maps/Zone5B/scripts.pory"
 	.string "I gotta keep running!$"
 
 Zone5B_EventScript_LeviathanBattle_Text_0:
@@ -1146,82 +1154,82 @@ Zone5B_EventScript_BuyPikaClone_Text_5:
 	.string "Is this ok?$"
 
 Zone5B_EventScript_BuyPikaClone_Text_6:
-# 207 "data/maps/Zone5B/scripts.pory"
+# 211 "data/maps/Zone5B/scripts.pory"
 	.string "Choose which Electric-type you would\n"
 	.string "like.$"
 
 Zone5B_EventScript_BuyPikaClone_Text_7:
-# 208 "data/maps/Zone5B/scripts.pory"
+# 212 "data/maps/Zone5B/scripts.pory"
 	.string "Pachirisu$"
 
 Zone5B_EventScript_BuyPikaClone_Text_8:
-# 208 "data/maps/Zone5B/scripts.pory"
+# 212 "data/maps/Zone5B/scripts.pory"
 	.string "Dedenne$"
 
 Zone5B_EventScript_BuyPikaClone_Text_9:
-# 208 "data/maps/Zone5B/scripts.pory"
+# 212 "data/maps/Zone5B/scripts.pory"
 	.string "Morpeko$"
 
 Zone5B_EventScript_BuyPikaClone_Text_10:
-# 208 "data/maps/Zone5B/scripts.pory"
+# 212 "data/maps/Zone5B/scripts.pory"
 	.string "Emolga$"
 
 Zone5B_EventScript_BuyPikaClone_Text_11:
-# 208 "data/maps/Zone5B/scripts.pory"
+# 212 "data/maps/Zone5B/scripts.pory"
 	.string "Plusle$"
 
 Zone5B_EventScript_BuyPikaClone_Text_12:
-# 208 "data/maps/Zone5B/scripts.pory"
+# 212 "data/maps/Zone5B/scripts.pory"
 	.string "Minun$"
 
 Zone5B_EventScript_BuyPikaClone_Text_13:
-# 232 "data/maps/Zone5B/scripts.pory"
+# 236 "data/maps/Zone5B/scripts.pory"
 	.string "Your party is full. Choose a Pokémon to\n"
 	.string "send to the PC.$"
 
 Zone5B_EventScript_BuyPikaClone_Text_14:
-# 247 "data/maps/Zone5B/scripts.pory"
+# 251 "data/maps/Zone5B/scripts.pory"
 	.string "Are you sure you want to send your\n"
 	.string "{STR_VAR_3} to the PC?$"
 
 Zone5B_EventScript_BuyPikaClone_Text_15:
-# 256 "data/maps/Zone5B/scripts.pory"
+# 260 "data/maps/Zone5B/scripts.pory"
 	.string "Just to confirm…\p"
 	.string "You're sure you want to buy a Pikachu\n"
 	.string "clone for ¥1000?$"
 
 Zone5B_EventScript_BuyPikaClone_Text_16:
-# 266 "data/maps/Zone5B/scripts.pory"
+# 270 "data/maps/Zone5B/scripts.pory"
 	.string "Just to confirm…\p"
 	.string "You're sure you want to buy\n"
 	.string "{STR_VAR_1} for ¥1000?$"
 
 Zone5B_EventScript_BuyPikaClone_Text_17:
-# 280 "data/maps/Zone5B/scripts.pory"
+# 284 "data/maps/Zone5B/scripts.pory"
 	.string "I appreciate it!$"
 
 Zone5B_EventScript_BuyPikaClone_Text_18:
-# 285 "data/maps/Zone5B/scripts.pory"
+# 289 "data/maps/Zone5B/scripts.pory"
 	.string "Here's your {STR_VAR_1}.$"
 
 Zone5B_EventScript_BuyPikaClone_Text_19:
-# 287 "data/maps/Zone5B/scripts.pory"
+# 291 "data/maps/Zone5B/scripts.pory"
 	.string "{PLAYER} received the\n"
 	.string "{STR_VAR_1}!$"
 
 Zone5B_EventScript_BuyPikaClone_Text_20:
-# 290 "data/maps/Zone5B/scripts.pory"
+# 294 "data/maps/Zone5B/scripts.pory"
 	.string "Would you like to give a nickname to\n"
 	.string "{STR_VAR_1}?$"
 
 Zone5B_EventScript_BuyPikaClone_Text_21:
-# 295 "data/maps/Zone5B/scripts.pory"
+# 299 "data/maps/Zone5B/scripts.pory"
 	.string "Take good care of your new\n"
 	.string "Electric-type, small mammal-like\l"
 	.string "Pokémon!$"
 
 Zone5B_EventScript_NeverMissTutor_Text_0:
-# 305 "data/maps/Zone5B/scripts.pory"
+# 309 "data/maps/Zone5B/scripts.pory"
 	.string "Hey there! Ever been stuck because the\n"
 	.string "opposing Pokémon is too hard to hit?\l"
 	.string "Well, I specialize in teaching certain\l"
@@ -1232,12 +1240,12 @@ Zone5B_EventScript_NeverMissTutor_Text_0:
 	.string "moves. Deal?$"
 
 Zone5B_EventScript_NeverMissTutor_Text_1:
-# 308 "data/maps/Zone5B/scripts.pory"
+# 312 "data/maps/Zone5B/scripts.pory"
 	.string "Evasion is really tough to deal with;\n"
 	.string "come back if you need!$"
 
 Zone5B_EventScript_NeverMissTutor_Text_2:
-# 313 "data/maps/Zone5B/scripts.pory"
+# 317 "data/maps/Zone5B/scripts.pory"
 	.string "Hey there! Ever been stuck because the\n"
 	.string "opposing Pokémon is too hard to hit?\l"
 	.string "Well, I specialize in teaching certain\l"
@@ -1249,43 +1257,43 @@ Zone5B_EventScript_NeverMissTutor_Text_2:
 	.string "this, it'll be free! Deal?$"
 
 Zone5B_EventScript_NeverMissTutor_Text_3:
-# 324 "data/maps/Zone5B/scripts.pory"
+# 328 "data/maps/Zone5B/scripts.pory"
 	.string "Hate to break it to you, but you don't have enough money.$"
 
 Zone5B_EventScript_NeverMissTutor_Text_4:
-# 330 "data/maps/Zone5B/scripts.pory"
+# 334 "data/maps/Zone5B/scripts.pory"
 	.string "What move should I teach?$"
 
 Zone5B_EventScript_NeverMissTutor_Text_5:
-# 332 "data/maps/Zone5B/scripts.pory"
+# 336 "data/maps/Zone5B/scripts.pory"
 	.string "Swift$"
 
 Zone5B_EventScript_NeverMissTutor_Text_6:
-# 332 "data/maps/Zone5B/scripts.pory"
+# 336 "data/maps/Zone5B/scripts.pory"
 	.string "Aerial Ace$"
 
 Zone5B_EventScript_NeverMissTutor_Text_7:
-# 332 "data/maps/Zone5B/scripts.pory"
+# 336 "data/maps/Zone5B/scripts.pory"
 	.string "Magical Leaf$"
 
 Zone5B_EventScript_NeverMissTutor_Text_8:
-# 332 "data/maps/Zone5B/scripts.pory"
+# 336 "data/maps/Zone5B/scripts.pory"
 	.string "Shock Wave$"
 
 Zone5B_EventScript_NeverMissTutor_Text_9:
-# 332 "data/maps/Zone5B/scripts.pory"
+# 336 "data/maps/Zone5B/scripts.pory"
 	.string "Exit$"
 
 Zone5B_EventScript_NeverMissTutor_Text_10:
-# 354 "data/maps/Zone5B/scripts.pory"
+# 358 "data/maps/Zone5B/scripts.pory"
 	.string "Which Pokémon should learn\n{STR_VAR_1}?$"
 
 Zone5B_EventScript_NeverMissTutor_Text_11:
-# 366 "data/maps/Zone5B/scripts.pory"
+# 370 "data/maps/Zone5B/scripts.pory"
 	.string "There! It's done. Use that move well!$"
 
 Zone5B_EventScript_NeverMissTutor_Text_12:
-# 372 "data/maps/Zone5B/scripts.pory"
+# 376 "data/maps/Zone5B/scripts.pory"
 	.string "{PLAYER} paid ¥1000.$"
 
 Zone5B_Text_Leviathan5Intro::

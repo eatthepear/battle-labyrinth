@@ -48,7 +48,7 @@ script Zone1A_EventScript_GiveFWG {
 			setvar(VAR_TEMP_1, SPECIES_BULBASAUR) // gets randomized anyways
 		} else {
 			if (var(VAR_TEMP_4) == 0) {
-				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pansage, Hoppip, Bellsprout, Smoliv, or Bounsweet.\pIs this ok?"), MSGBOX_YESNO)
+				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pansage, Gossifleur, Sunkern, or Cherubi.\pIs this ok?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == NO) {
 					msgbox(Zone1A_Text_FWG_ComeBack)
 					release
@@ -59,30 +59,26 @@ script Zone1A_EventScript_GiveFWG {
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_HOPPIP)
+				checkspeciesclause(SPECIES_GOSSIFLEUR)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_BELLSPROUT)
+				checkspeciesclause(SPECIES_SUNKERN)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_SMOLIV)
+				checkspeciesclause(SPECIES_CHERUBI)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_BOUNSWEET)
-				if (var(VAR_RESULT) == TRUE) {
-					addvar(VAR_TEMP_3, 1)
-				}
-				if (var(VAR_TEMP_3) == 5) {
+				if (var(VAR_TEMP_3) == 4) {
 					msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."), MSGBOX_AUTOCLOSE)
 					release
 					end
 				}
 				setvar(VAR_TEMP_1, 0)
 				while (var(VAR_TEMP_1) == 0) {
-					random(5)
+					random(4)
 					switch (var(VAR_RESULT)) {
 						case 0:
 							checkspeciesclause(SPECIES_PANSAGE)
@@ -91,33 +87,27 @@ script Zone1A_EventScript_GiveFWG {
 							}
 							setvar(VAR_TEMP_1, SPECIES_PANSAGE)
 						case 1:
-							checkspeciesclause(SPECIES_HOPPIP)
+							checkspeciesclause(SPECIES_GOSSIFLEUR)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
-							setvar(VAR_TEMP_1, SPECIES_HOPPIP)
+							setvar(VAR_TEMP_1, SPECIES_GOSSIFLEUR)
 						case 2:
-							checkspeciesclause(SPECIES_BELLSPROUT)
+							checkspeciesclause(SPECIES_SUNKERN)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
-							setvar(VAR_TEMP_1, SPECIES_BELLSPROUT)
+							setvar(VAR_TEMP_1, SPECIES_SUNKERN)
 						case 3:
-							checkspeciesclause(SPECIES_SMOLIV)
+							checkspeciesclause(SPECIES_CHERUBI)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
-							setvar(VAR_TEMP_1, SPECIES_SMOLIV)
-						case 4:
-							checkspeciesclause(SPECIES_BOUNSWEET)
-							if (var(VAR_RESULT) == TRUE) {
-								continue
-							}
-							setvar(VAR_TEMP_1, SPECIES_BOUNSWEET)
+							setvar(VAR_TEMP_1, SPECIES_CHERUBI)
 					}
 				}
 			} elif (var(VAR_TEMP_4) == 1) {
-				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pansear, Numel, Salandit, Litleo, or Sizzlipede.\pIs this ok?"), MSGBOX_YESNO)
+				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pansear, Vulpix, Slugma, or Litleo.\pIs this ok?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == NO) {
 					msgbox(Zone1A_Text_FWG_ComeBack)
 					release
@@ -128,11 +118,11 @@ script Zone1A_EventScript_GiveFWG {
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_NUMEL)
+				checkspeciesclause(SPECIES_VULPIX)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_SALANDIT)
+				checkspeciesclause(SPECIES_SLUGMA)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
@@ -140,18 +130,14 @@ script Zone1A_EventScript_GiveFWG {
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_SIZZLIPEDE)
-				if (var(VAR_RESULT) == TRUE) {
-					addvar(VAR_TEMP_3, 1)
-				}
-				if (var(VAR_TEMP_3) == 5) {
+				if (var(VAR_TEMP_3) == 4) {
 					msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."), MSGBOX_AUTOCLOSE)
 					release
 					end
 				}
 				setvar(VAR_TEMP_1, 0)
 				while (var(VAR_TEMP_1) == 0) {
-					random(5)
+					random(4)
 					switch (var(VAR_RESULT)) {
 						case 0:
 							checkspeciesclause(SPECIES_PANSEAR)
@@ -160,33 +146,27 @@ script Zone1A_EventScript_GiveFWG {
 							}
 							setvar(VAR_TEMP_1, SPECIES_PANSEAR)
 						case 1:
-							checkspeciesclause(SPECIES_NUMEL)
+							checkspeciesclause(SPECIES_VULPIX)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
-							setvar(VAR_TEMP_1, SPECIES_NUMEL)
+							setvar(VAR_TEMP_1, SPECIES_VULPIX)
 						case 2:
-							checkspeciesclause(SPECIES_SALANDIT)
+							checkspeciesclause(SPECIES_SLUGMA)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
-							setvar(VAR_TEMP_1, SPECIES_SALANDIT)
+							setvar(VAR_TEMP_1, SPECIES_SLUGMA)
 						case 3:
 							checkspeciesclause(SPECIES_LITLEO)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
 							setvar(VAR_TEMP_1, SPECIES_LITLEO)
-						case 4:
-							checkspeciesclause(SPECIES_SIZZLIPEDE)
-							if (var(VAR_RESULT) == TRUE) {
-								continue
-							}
-							setvar(VAR_TEMP_1, SPECIES_SIZZLIPEDE)
 					}
 				}
 			} elif (var(VAR_TEMP_4) == 2) {
-				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Panpour, Barboach, Clamperl, Seel, or Goldeen.\pIs this ok?"), MSGBOX_YESNO)
+				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Panpour, Barboach, Goldeen, or Finneon.\pIs this ok?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == NO) {
 					msgbox(Zone1A_Text_FWG_ComeBack)
 					release
@@ -201,26 +181,22 @@ script Zone1A_EventScript_GiveFWG {
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_CLAMPERL)
-				if (var(VAR_RESULT) == TRUE) {
-					addvar(VAR_TEMP_3, 1)
-				}
-				checkspeciesclause(SPECIES_SEEL)
-				if (var(VAR_RESULT) == TRUE) {
-					addvar(VAR_TEMP_3, 1)
-				}
 				checkspeciesclause(SPECIES_GOLDEEN)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				if (var(VAR_TEMP_3) == 5) {
+				checkspeciesclause(SPECIES_FINNEON)
+				if (var(VAR_RESULT) == TRUE) {
+					addvar(VAR_TEMP_3, 1)
+				}
+				if (var(VAR_TEMP_3) == 4) {
 					msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."), MSGBOX_AUTOCLOSE)
 					release
 					end
 				}
 				setvar(VAR_TEMP_1, 0)
 				while (var(VAR_TEMP_1) == 0) {
-					random(5)
+					random(4)
 					switch (var(VAR_RESULT)) {
 						case 0:
 							checkspeciesclause(SPECIES_PANPOUR)
@@ -235,23 +211,17 @@ script Zone1A_EventScript_GiveFWG {
 							}
 							setvar(VAR_TEMP_1, SPECIES_BARBOACH)
 						case 2:
-							checkspeciesclause(SPECIES_CLAMPERL)
-							if (var(VAR_RESULT) == TRUE) {
-								continue
-							}
-							setvar(VAR_TEMP_1, SPECIES_CLAMPERL)
-						case 3:
-							checkspeciesclause(SPECIES_SEEL)
-							if (var(VAR_RESULT) == TRUE) {
-								continue
-							}
-							setvar(VAR_TEMP_1, SPECIES_SEEL)
-						case 4:
 							checkspeciesclause(SPECIES_GOLDEEN)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
 							setvar(VAR_TEMP_1, SPECIES_GOLDEEN)
+						case 3:
+							checkspeciesclause(SPECIES_FINNEON)
+							if (var(VAR_RESULT) == TRUE) {
+								continue
+							}
+							setvar(VAR_TEMP_1, SPECIES_FINNEON)
 					}
 				}
 			}
@@ -259,57 +229,51 @@ script Zone1A_EventScript_GiveFWG {
 	} else {
 		message(format("Choose which Pokémon you would like."))
 		if (var(VAR_TEMP_4) == 0) {
-			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Pansage", "Hoppip", "Bellsprout", "Smoliv", "Bounsweet", "Exit")
+			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Pansage", "Gossifleur", "Sunkern", "Cherubi", "Exit")
 			switch (var(VAR_RESULT)) {
 				case 0:
 					setvar(VAR_TEMP_1, SPECIES_PANSAGE)
 				case 1:
-					setvar(VAR_TEMP_1, SPECIES_HOPPIP)
+					setvar(VAR_TEMP_1, SPECIES_GOSSIFLEUR)
 				case 2:
-					setvar(VAR_TEMP_1, SPECIES_BELLSPROUT)
+					setvar(VAR_TEMP_1, SPECIES_SUNKERN)
 				case 3:
-					setvar(VAR_TEMP_1, SPECIES_SMOLIV)
+					setvar(VAR_TEMP_1, SPECIES_CHERUBI)
 				case 4:
-					setvar(VAR_TEMP_1, SPECIES_BOUNSWEET)
-				case 5:
 				case MULTI_B_PRESSED:
 					msgbox(Zone1A_Text_FWG_ComeBack)
 					release
 					end
 			}
 		} elif (var(VAR_TEMP_4) == 1) {
-			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Pansear", "Numel", "Salandit", "Litleo", "Sizzlipede", "Exit")
+			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Pansear", "Vulpix", "Slugma", "Litleo", "Exit")
 			switch (var(VAR_RESULT)) {
 				case 0:
 					setvar(VAR_TEMP_1, SPECIES_PANSEAR)
 				case 1:
-					setvar(VAR_TEMP_1, SPECIES_NUMEL)
+					setvar(VAR_TEMP_1, SPECIES_VULPIX)
 				case 2:
-					setvar(VAR_TEMP_1, SPECIES_SALANDIT)
+					setvar(VAR_TEMP_1, SPECIES_SLUGMA)
 				case 3:
 					setvar(VAR_TEMP_1, SPECIES_LITLEO)
 				case 4:
-					setvar(VAR_TEMP_1, SPECIES_SIZZLIPEDE)
-				case 5:
 				case MULTI_B_PRESSED:
 					msgbox(Zone1A_Text_FWG_ComeBack)
 					release
 					end
 			}
 		} elif (var(VAR_TEMP_4) == 2) {
-			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Panpour", "Barboach", "Clamperl", "Seel", "Goldeen", "Exit")
+			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Panpour", "Barboach", "Goldeen", "Finneon", "Exit")
 			switch (var(VAR_RESULT)) {
 				case 0:
 					setvar(VAR_TEMP_1, SPECIES_PANPOUR)
 				case 1:
 					setvar(VAR_TEMP_1, SPECIES_BARBOACH)
 				case 2:
-					setvar(VAR_TEMP_1, SPECIES_CLAMPERL)
-				case 3:
-					setvar(VAR_TEMP_1, SPECIES_SEEL)
-				case 4:
 					setvar(VAR_TEMP_1, SPECIES_GOLDEEN)
-				case 5:
+				case 3:
+					setvar(VAR_TEMP_1, SPECIES_FINNEON)
+				case 4:
 				case MULTI_B_PRESSED:
 					msgbox(Zone1A_Text_FWG_ComeBack)
 					release

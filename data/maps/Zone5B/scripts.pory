@@ -160,39 +160,43 @@ script Zone5B_EventScript_BuyPikaClone {
 			}
 			setvar(VAR_TEMP_1, 0)
 			while (var(VAR_TEMP_1) == 0) {
-				random(6)
+				random(10)
 				switch (var(VAR_RESULT)) {
 					case 0:
+					case 1:
 						checkspeciesclause(SPECIES_PACHIRISU)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_PACHIRISU)
-					case 1:
+					case 2:
+					case 3:
 						checkspeciesclause(SPECIES_DEDENNE)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_DEDENNE)
-					case 2:
+					case 4:
+					case 5:
 						checkspeciesclause(SPECIES_MORPEKO)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_MORPEKO)
-					case 3:
+					case 6:
+					case 7:
 						checkspeciesclause(SPECIES_EMOLGA)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_EMOLGA)
-					case 4:
+					case 8:
 						checkspeciesclause(SPECIES_PLUSLE)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_PLUSLE)
-					case 5:
+					case 9:
 						checkspeciesclause(SPECIES_MINUN)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
