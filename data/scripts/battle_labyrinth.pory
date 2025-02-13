@@ -3577,7 +3577,7 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 5) // level
 	call(Debug_CheatStart_PBL_GiveMon)
-	setflag(FLAG_ZONE1A_RECEIVED_FWG)
+	setflag(FLAG_ZONE1A_NUZLOCKE_RECEIVED_FWG)
 	completesubquest(QUEST_PBL, SUB_QUEST_1)
 	// zone 1 items
 	additem(ITEM_QUICK_CLAW)

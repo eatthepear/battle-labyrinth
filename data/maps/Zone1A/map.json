@@ -116,7 +116,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Zone1A_EventScript_GiveFWG",
-      "flag": "FLAG_ZONE1A_RECEIVED_FWG"
+      "flag": "0"
     }
   ],
   "warp_events": [
