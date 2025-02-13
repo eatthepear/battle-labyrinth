@@ -2,7 +2,7 @@
   "id": "MAP_ZONE_S1B",
   "name": "ZoneS1B",
   "layout": "LAYOUT_ZONE_S1B",
-  "music": "MUS_DUMMY",
+  "music": "MUS_HG_UNION_CAVE",
   "region_map_section": "MAPSEC_ZONE_S1",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
