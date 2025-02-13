@@ -3411,6 +3411,9 @@ script EventScript_Collector {
 	if (var(VAR_REVISITING_ZONE) != 1) {
 		dynmultipush("{COLOR GREEN}S1 - Beginner Safari", 1)
 	}
+	if (var(VAR_REVISITING_ZONE) != 2) {
+		dynmultipush("{COLOR GREEN}S2 - Forest River Safari", 2)
+	}
 	if (var(VAR_REVISITING_ZONE) == 0) {
 		dynmultipush("Exit", 11)
 	} else {
@@ -3422,6 +3425,11 @@ script EventScript_Collector {
 			msgbox(format("Alright, let's go!"), MSGBOX_AUTOCLOSE)
 			setvar(VAR_REVISITING_ZONE, 1)
 			warp(MAP_ZONE_S1A, 255, 11, 18)
+			waitstate
+		case 2:
+			msgbox(format("Alright, let's go!"), MSGBOX_AUTOCLOSE)
+			setvar(VAR_REVISITING_ZONE, 2)
+			warp(MAP_ZONE_S2A, 255, 10, 17)
 			waitstate
 		case 11:
 			msgbox(format("See you around sometime."))

@@ -5240,6 +5240,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/ZoneS1B/border.bin",
       "blockdata_filepath": "data/layouts/ZoneS1B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE_S2A",
+      "name": "ZoneS2A_Layout",
+      "width": 24,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/ZoneS2A/border.bin",
+      "blockdata_filepath": "data/layouts/ZoneS2A/map.bin"
     }
   ]
 }
