@@ -1669,6 +1669,16 @@ const u8 gText_MapZone47[] = _("Zone 47");
 const u8 gText_MapZone48[] = _("Zone 48");
 const u8 gText_MapZone49[] = _("Zone 49");
 const u8 gText_MapZone50[] = _("Zone 50");
+const u8 gText_MapZoneS1[] = _("S1 - Beginner Safari");
+const u8 gText_MapZoneS2[] = _("Zone 2 - Duskwarren Woods");
+const u8 gText_MapZoneS3[] = _("Zone 3 - Sunlit Pond");
+const u8 gText_MapZoneS4[] = _("Zone 4 - Mystic Glade");
+const u8 gText_MapZoneS5[] = _("Zone 5 - Timberstep Plateau");
+const u8 gText_MapZoneS6[] = _("Zone 6 - Seabreeze Island");
+const u8 gText_MapZoneS7[] = _("Zone 7 - Gemini Heights");
+const u8 gText_MapZoneS8[] = _("Zone 8 - Duskmire Hollow");
+const u8 gText_MapZoneS9[] = _("Zone 9 - Lushbranch Village");
+const u8 gText_MapZoneS10[] = _("Zone 10 - Scornwind Desert");
 
 //// side quest data
 //generic strings

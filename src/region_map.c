@@ -1653,6 +1653,16 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
     case MAPSEC_ZONE_48: return StringCopy(dest, gText_MapZone48);
     case MAPSEC_ZONE_49: return StringCopy(dest, gText_MapZone49);
     case MAPSEC_ZONE_50: return StringCopy(dest, gText_MapZone50);
+    case MAPSEC_ZONE_S1:  return StringCopy(dest, gText_MapZoneS1);
+    case MAPSEC_ZONE_S2:  return StringCopy(dest, gText_MapZoneS2);
+    case MAPSEC_ZONE_S3:  return StringCopy(dest, gText_MapZoneS3);
+    case MAPSEC_ZONE_S4:  return StringCopy(dest, gText_MapZoneS4);
+    case MAPSEC_ZONE_S5:  return StringCopy(dest, gText_MapZoneS5);
+    case MAPSEC_ZONE_S6:  return StringCopy(dest, gText_MapZoneS6);
+    case MAPSEC_ZONE_S7:  return StringCopy(dest, gText_MapZoneS7);
+    case MAPSEC_ZONE_S8:  return StringCopy(dest, gText_MapZoneS8);
+    case MAPSEC_ZONE_S9:  return StringCopy(dest, gText_MapZoneS9);
+    case MAPSEC_ZONE_S10: return StringCopy(dest, gText_MapZoneS10);
     case MAPSEC_DYNAMIC:
         return StringCopy(dest, gText_Ferry);
     case MAPSEC_SECRET_BASE:
