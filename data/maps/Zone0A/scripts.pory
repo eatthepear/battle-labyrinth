@@ -371,14 +371,6 @@ script Zone0A_EventScript_Scientist {
 	end
 }
 
-script Zone0A_EventScript_Collector {
-	lock
-	faceplayer
-	msgbox(format("TEMP"))
-	release
-	end
-}
-
 script Zone0A_EventScript_BerryGirl {
 	lock
 	faceplayer

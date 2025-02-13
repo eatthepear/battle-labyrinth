@@ -200,7 +200,7 @@
 #define FLAG_JOY_INTRO                                    0x106
 #define FLAG_LELOUCH_SHARDS_INTRO                         0x107
 #define FLAG_MARIE_NUZLOCKE_RECEIVED                      0x108
-#define FLAG_JOY_UPGRADED                                 0x109
+#define FLAG_ZONE0A_SAFARI_INTRO                          0x109
 #define FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES                 0x10A
 #define FLAG_ZONE0B_RECEIVED_EEVEE                        0x10B
 #define FLAG_ZONE1A_RECEIVED_FWG                          0x10C
@@ -278,6 +278,7 @@
 #define FLAG_ZONE_B1_PORYGON_4                            0x154
 #define FLAG_ZONE_B1_PORYGON_5                            0x155
 #define FLAG_RECEIVED_PORYGON                             0x156
+#define FLAG_JOY_UPGRADED                                 0x157
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x200

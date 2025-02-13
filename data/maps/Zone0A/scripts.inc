@@ -876,116 +876,120 @@ Zone0A_EventScript_Scientist_151:
 	goto Zone0A_EventScript_Scientist_150
 
 
-Zone0A_EventScript_Collector::
+Zone0A_EventScript_BerryGirl::
 # 375 "data/maps/Zone0A/scripts.pory"
 	lock
 # 376 "data/maps/Zone0A/scripts.pory"
-	faceplayer
-# 377 "data/maps/Zone0A/scripts.pory"
-	msgbox Zone0A_EventScript_Collector_Text_0
-# 378 "data/maps/Zone0A/scripts.pory"
-	release
-	end
-
-
-Zone0A_EventScript_BerryGirl::
-# 383 "data/maps/Zone0A/scripts.pory"
-	lock
-# 384 "data/maps/Zone0A/scripts.pory"
 	faceplayer
 	checkitem ITEM_WAILMER_PAIL
 # 0 "data/maps/Zone0A/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Zone0A_EventScript_BerryGirl_2
 Zone0A_EventScript_BerryGirl_1:
-# 389 "data/maps/Zone0A/scripts.pory"
+# 381 "data/maps/Zone0A/scripts.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, Zone0A_EventScript_BerryGirl_5
-# 389 "data/maps/Zone0A/scripts.pory"
+# 381 "data/maps/Zone0A/scripts.pory"
 	goto_if_set FLAG_SETTINGS_RED_THUMB, Zone0A_EventScript_BerryGirl_5
-# 392 "data/maps/Zone0A/scripts.pory"
+# 384 "data/maps/Zone0A/scripts.pory"
 	msgbox Zone0A_EventScript_BerryGirl_Text_2
 Zone0A_EventScript_BerryGirl_4:
-# 394 "data/maps/Zone0A/scripts.pory"
+# 386 "data/maps/Zone0A/scripts.pory"
 	release
 	end
 
 Zone0A_EventScript_BerryGirl_2:
-# 386 "data/maps/Zone0A/scripts.pory"
+# 378 "data/maps/Zone0A/scripts.pory"
 	msgbox Zone0A_EventScript_BerryGirl_Text_0
-# 387 "data/maps/Zone0A/scripts.pory"
+# 379 "data/maps/Zone0A/scripts.pory"
 	giveitem ITEM_WAILMER_PAIL
 	goto Zone0A_EventScript_BerryGirl_1
 
 Zone0A_EventScript_BerryGirl_5:
-# 390 "data/maps/Zone0A/scripts.pory"
+# 382 "data/maps/Zone0A/scripts.pory"
 	msgbox Zone0A_EventScript_BerryGirl_Text_1
 	goto Zone0A_EventScript_BerryGirl_4
 
 
-# 426 "data/maps/Zone0A/scripts.pory"
+# 418 "data/maps/Zone0A/scripts.pory"
 
-# 427 "data/maps/Zone0A/scripts.pory"
+# 419 "data/maps/Zone0A/scripts.pory"
 Zone0A_EventScript_TryMoveDayCareMan::
-# 428 "data/maps/Zone0A/scripts.pory"
+# 420 "data/maps/Zone0A/scripts.pory"
 	goto_if_unset FLAG_PBL_PENDING_DAYCARE_EGG, Zone0A_EventScript_StopMoveDayCareMan
-# 429 "data/maps/Zone0A/scripts.pory"
+# 421 "data/maps/Zone0A/scripts.pory"
 	setobjectxyperm 1, 22, 9
-# 430 "data/maps/Zone0A/scripts.pory"
+# 422 "data/maps/Zone0A/scripts.pory"
 Zone0A_EventScript_StopMoveDayCareMan::
-# 431 "data/maps/Zone0A/scripts.pory"
+# 423 "data/maps/Zone0A/scripts.pory"
 	return
-# 432 "data/maps/Zone0A/scripts.pory"
+# 424 "data/maps/Zone0A/scripts.pory"
 
-# 433 "data/maps/Zone0A/scripts.pory"
+# 425 "data/maps/Zone0A/scripts.pory"
 Zone0A_EventScript_DaycareMan::
-# 434 "data/maps/Zone0A/scripts.pory"
+# 426 "data/maps/Zone0A/scripts.pory"
 	lock
-# 435 "data/maps/Zone0A/scripts.pory"
+# 427 "data/maps/Zone0A/scripts.pory"
 	faceplayer
-# 436 "data/maps/Zone0A/scripts.pory"
+# 428 "data/maps/Zone0A/scripts.pory"
 	special GetDaycareMonNicknames
-# 437 "data/maps/Zone0A/scripts.pory"
+# 429 "data/maps/Zone0A/scripts.pory"
 	specialvar VAR_RESULT, GetDaycareState
-# 438 "data/maps/Zone0A/scripts.pory"
+# 430 "data/maps/Zone0A/scripts.pory"
 	compare VAR_RESULT, DAYCARE_EGG_WAITING
-# 439 "data/maps/Zone0A/scripts.pory"
+# 431 "data/maps/Zone0A/scripts.pory"
 	goto_if_eq Zone0A_EventScript_DaycareEggWaiting
-# 440 "data/maps/Zone0A/scripts.pory"
+# 432 "data/maps/Zone0A/scripts.pory"
 	compare VAR_RESULT, DAYCARE_ONE_MON
-# 441 "data/maps/Zone0A/scripts.pory"
+# 433 "data/maps/Zone0A/scripts.pory"
 	goto_if_eq Zone0A_EventScript_CheckOnOneMon
-# 442 "data/maps/Zone0A/scripts.pory"
+# 434 "data/maps/Zone0A/scripts.pory"
 	compare VAR_RESULT, DAYCARE_TWO_MONS
-# 443 "data/maps/Zone0A/scripts.pory"
+# 435 "data/maps/Zone0A/scripts.pory"
 	goto_if_eq Zone0A_EventScript_CheckOnTwoMons
-# 444 "data/maps/Zone0A/scripts.pory"
+# 436 "data/maps/Zone0A/scripts.pory"
 	msgbox Zone0A_Text_SeeWifeIfYoudLikeMeToRaiseMon, MSGBOX_DEFAULT
-# 445 "data/maps/Zone0A/scripts.pory"
+# 437 "data/maps/Zone0A/scripts.pory"
 	release
-# 446 "data/maps/Zone0A/scripts.pory"
+# 438 "data/maps/Zone0A/scripts.pory"
 	end
-# 447 "data/maps/Zone0A/scripts.pory"
+# 439 "data/maps/Zone0A/scripts.pory"
 
-# 448 "data/maps/Zone0A/scripts.pory"
+# 440 "data/maps/Zone0A/scripts.pory"
 Zone0A_EventScript_DaycareEggWaiting:
-# 449 "data/maps/Zone0A/scripts.pory"
+# 441 "data/maps/Zone0A/scripts.pory"
 	msgbox Zone0A_Text_DoYouWantEgg, MSGBOX_YESNO
-# 450 "data/maps/Zone0A/scripts.pory"
+# 442 "data/maps/Zone0A/scripts.pory"
 	compare VAR_RESULT, YES
-# 451 "data/maps/Zone0A/scripts.pory"
+# 443 "data/maps/Zone0A/scripts.pory"
 	goto_if_eq Zone0A_EventScript_DaycareAcceptEgg
-# 452 "data/maps/Zone0A/scripts.pory"
+# 444 "data/maps/Zone0A/scripts.pory"
 	msgbox Zone0A_Text_IWillKeepDoYouWantIt, MSGBOX_YESNO
-# 453 "data/maps/Zone0A/scripts.pory"
+# 445 "data/maps/Zone0A/scripts.pory"
 	compare VAR_RESULT, YES
-# 454 "data/maps/Zone0A/scripts.pory"
+# 446 "data/maps/Zone0A/scripts.pory"
 	goto_if_eq Zone0A_EventScript_DaycareAcceptEgg
-# 455 "data/maps/Zone0A/scripts.pory"
+# 447 "data/maps/Zone0A/scripts.pory"
 	msgbox Zone0A_Text_IllKeepIt, MSGBOX_DEFAULT
-# 456 "data/maps/Zone0A/scripts.pory"
+# 448 "data/maps/Zone0A/scripts.pory"
 	clearflag FLAG_PBL_PENDING_DAYCARE_EGG
-# 457 "data/maps/Zone0A/scripts.pory"
+# 449 "data/maps/Zone0A/scripts.pory"
 	special RejectEggFromDayCare
+# 450 "data/maps/Zone0A/scripts.pory"
+	release
+# 451 "data/maps/Zone0A/scripts.pory"
+	end
+# 452 "data/maps/Zone0A/scripts.pory"
+
+# 453 "data/maps/Zone0A/scripts.pory"
+Zone0A_EventScript_DaycareAcceptEgg:
+# 454 "data/maps/Zone0A/scripts.pory"
+	specialvar VAR_RESULT, CalculatePlayerPartyCount
+# 455 "data/maps/Zone0A/scripts.pory"
+	compare VAR_RESULT, PARTY_SIZE
+# 456 "data/maps/Zone0A/scripts.pory"
+	goto_if_ne Zone0A_EventScript_DaycareReceiveEgg
+# 457 "data/maps/Zone0A/scripts.pory"
+	msgbox Zone0A_Text_YouHaveNoRoomForIt, MSGBOX_DEFAULT
 # 458 "data/maps/Zone0A/scripts.pory"
 	release
 # 459 "data/maps/Zone0A/scripts.pory"
@@ -993,158 +997,142 @@ Zone0A_EventScript_DaycareEggWaiting:
 # 460 "data/maps/Zone0A/scripts.pory"
 
 # 461 "data/maps/Zone0A/scripts.pory"
-Zone0A_EventScript_DaycareAcceptEgg:
-# 462 "data/maps/Zone0A/scripts.pory"
-	specialvar VAR_RESULT, CalculatePlayerPartyCount
-# 463 "data/maps/Zone0A/scripts.pory"
-	compare VAR_RESULT, PARTY_SIZE
-# 464 "data/maps/Zone0A/scripts.pory"
-	goto_if_ne Zone0A_EventScript_DaycareReceiveEgg
-# 465 "data/maps/Zone0A/scripts.pory"
-	msgbox Zone0A_Text_YouHaveNoRoomForIt, MSGBOX_DEFAULT
-# 466 "data/maps/Zone0A/scripts.pory"
-	release
-# 467 "data/maps/Zone0A/scripts.pory"
-	end
-# 468 "data/maps/Zone0A/scripts.pory"
-
-# 469 "data/maps/Zone0A/scripts.pory"
 Zone0A_EventScript_DaycareReceiveEgg:
-# 470 "data/maps/Zone0A/scripts.pory"
+# 462 "data/maps/Zone0A/scripts.pory"
 	message Zone0A_Text_ReceivedEgg
-# 471 "data/maps/Zone0A/scripts.pory"
+# 463 "data/maps/Zone0A/scripts.pory"
 	playfanfare MUS_LEVEL_UP
-# 472 "data/maps/Zone0A/scripts.pory"
+# 464 "data/maps/Zone0A/scripts.pory"
 	waitfanfare
-# 473 "data/maps/Zone0A/scripts.pory"
+# 465 "data/maps/Zone0A/scripts.pory"
 	waitbuttonpress
-# 474 "data/maps/Zone0A/scripts.pory"
+# 466 "data/maps/Zone0A/scripts.pory"
 	msgbox Zone0A_Text_TakeGoodCareOfIt, MSGBOX_DEFAULT
-# 475 "data/maps/Zone0A/scripts.pory"
+# 467 "data/maps/Zone0A/scripts.pory"
 	special GiveEggFromDaycare
-# 476 "data/maps/Zone0A/scripts.pory"
+# 468 "data/maps/Zone0A/scripts.pory"
 	clearflag FLAG_PBL_PENDING_DAYCARE_EGG
-# 477 "data/maps/Zone0A/scripts.pory"
+# 469 "data/maps/Zone0A/scripts.pory"
 	release
-# 478 "data/maps/Zone0A/scripts.pory"
+# 470 "data/maps/Zone0A/scripts.pory"
 	end
-# 479 "data/maps/Zone0A/scripts.pory"
+# 471 "data/maps/Zone0A/scripts.pory"
 
-# 480 "data/maps/Zone0A/scripts.pory"
+# 472 "data/maps/Zone0A/scripts.pory"
 Zone0A_EventScript_CheckOnOneMon:
-# 481 "data/maps/Zone0A/scripts.pory"
+# 473 "data/maps/Zone0A/scripts.pory"
 	special GetDaycareMonNicknames
-# 482 "data/maps/Zone0A/scripts.pory"
+# 474 "data/maps/Zone0A/scripts.pory"
 	msgbox Zone0A_Text_YourMonIsDoingFine, MSGBOX_DEFAULT
-# 483 "data/maps/Zone0A/scripts.pory"
+# 475 "data/maps/Zone0A/scripts.pory"
 	release
-# 484 "data/maps/Zone0A/scripts.pory"
+# 476 "data/maps/Zone0A/scripts.pory"
 	end
-# 485 "data/maps/Zone0A/scripts.pory"
+# 477 "data/maps/Zone0A/scripts.pory"
 
-# 486 "data/maps/Zone0A/scripts.pory"
+# 478 "data/maps/Zone0A/scripts.pory"
 Zone0A_EventScript_CheckOnTwoMons:
-# 487 "data/maps/Zone0A/scripts.pory"
+# 479 "data/maps/Zone0A/scripts.pory"
 	special GetDaycareMonNicknames
-# 488 "data/maps/Zone0A/scripts.pory"
+# 480 "data/maps/Zone0A/scripts.pory"
 	msgbox Zone0A_Text_YourMonsAreDoingFine, MSGBOX_DEFAULT
-# 489 "data/maps/Zone0A/scripts.pory"
+# 481 "data/maps/Zone0A/scripts.pory"
 	special SetDaycareCompatibilityString
-# 490 "data/maps/Zone0A/scripts.pory"
+# 482 "data/maps/Zone0A/scripts.pory"
 	special ShowFieldMessageStringVar4
-# 491 "data/maps/Zone0A/scripts.pory"
+# 483 "data/maps/Zone0A/scripts.pory"
 	waitmessage
-# 492 "data/maps/Zone0A/scripts.pory"
+# 484 "data/maps/Zone0A/scripts.pory"
 	waitbuttonpress
-# 493 "data/maps/Zone0A/scripts.pory"
+# 485 "data/maps/Zone0A/scripts.pory"
 	release
-# 494 "data/maps/Zone0A/scripts.pory"
+# 486 "data/maps/Zone0A/scripts.pory"
 	end
-# 495 "data/maps/Zone0A/scripts.pory"
+# 487 "data/maps/Zone0A/scripts.pory"
 
-# 496 "data/maps/Zone0A/scripts.pory"
+# 488 "data/maps/Zone0A/scripts.pory"
 Zone0A_Text_SeeWifeIfYoudLikeMeToRaiseMon:
-# 497 "data/maps/Zone0A/scripts.pory"
+# 489 "data/maps/Zone0A/scripts.pory"
 	.string "I'm the Day-Care Man.\p"
-# 498 "data/maps/Zone0A/scripts.pory"
+# 490 "data/maps/Zone0A/scripts.pory"
 	.string "I help take care of the precious\n"
-# 499 "data/maps/Zone0A/scripts.pory"
+# 491 "data/maps/Zone0A/scripts.pory"
 	.string "Pokémon of Trainers.\p"
-# 500 "data/maps/Zone0A/scripts.pory"
+# 492 "data/maps/Zone0A/scripts.pory"
 	.string "If you'd like me to raise your Pokémon,\n"
-# 501 "data/maps/Zone0A/scripts.pory"
+# 493 "data/maps/Zone0A/scripts.pory"
 	.string "have a word with my wife.$"
-# 502 "data/maps/Zone0A/scripts.pory"
+# 494 "data/maps/Zone0A/scripts.pory"
 
-# 503 "data/maps/Zone0A/scripts.pory"
+# 495 "data/maps/Zone0A/scripts.pory"
 Zone0A_Text_DoYouWantEgg:
-# 504 "data/maps/Zone0A/scripts.pory"
+# 496 "data/maps/Zone0A/scripts.pory"
 	.string "Ah, it's you!\p"
-# 505 "data/maps/Zone0A/scripts.pory"
+# 497 "data/maps/Zone0A/scripts.pory"
 	.string "We were raising your Pokémon,\n"
-# 506 "data/maps/Zone0A/scripts.pory"
+# 498 "data/maps/Zone0A/scripts.pory"
 	.string "and my goodness, were we surprised!\p"
-# 507 "data/maps/Zone0A/scripts.pory"
+# 499 "data/maps/Zone0A/scripts.pory"
 	.string "Your Pokémon had an Egg!\p"
-# 508 "data/maps/Zone0A/scripts.pory"
+# 500 "data/maps/Zone0A/scripts.pory"
 	.string "We don't know how it got there,\n"
-# 509 "data/maps/Zone0A/scripts.pory"
+# 501 "data/maps/Zone0A/scripts.pory"
 	.string "but your Pokémon had it.\p"
-# 510 "data/maps/Zone0A/scripts.pory"
+# 502 "data/maps/Zone0A/scripts.pory"
 	.string "You do want it, yes?$"
+# 503 "data/maps/Zone0A/scripts.pory"
+
+# 504 "data/maps/Zone0A/scripts.pory"
+Zone0A_Text_YourMonIsDoingFine:
+# 505 "data/maps/Zone0A/scripts.pory"
+	.string "Ah, it's you! Good to see you.\n"
+# 506 "data/maps/Zone0A/scripts.pory"
+	.string "Your {STR_VAR_1}'s doing fine.$"
+# 507 "data/maps/Zone0A/scripts.pory"
+
+# 508 "data/maps/Zone0A/scripts.pory"
+Zone0A_Text_IllKeepIt:
+# 509 "data/maps/Zone0A/scripts.pory"
+	.string "Well then, I'll keep it.\n"
+# 510 "data/maps/Zone0A/scripts.pory"
+	.string "Thanks!$"
 # 511 "data/maps/Zone0A/scripts.pory"
 
 # 512 "data/maps/Zone0A/scripts.pory"
-Zone0A_Text_YourMonIsDoingFine:
+Zone0A_Text_YouHaveNoRoomForIt:
 # 513 "data/maps/Zone0A/scripts.pory"
-	.string "Ah, it's you! Good to see you.\n"
+	.string "You have no room for it…\n"
 # 514 "data/maps/Zone0A/scripts.pory"
-	.string "Your {STR_VAR_1}'s doing fine.$"
+	.string "Come back when you've made room.$"
 # 515 "data/maps/Zone0A/scripts.pory"
 
 # 516 "data/maps/Zone0A/scripts.pory"
-Zone0A_Text_IllKeepIt:
+Zone0A_Text_ReceivedEgg:
 # 517 "data/maps/Zone0A/scripts.pory"
-	.string "Well then, I'll keep it.\n"
+	.string "{PLAYER} received the Egg from\n"
 # 518 "data/maps/Zone0A/scripts.pory"
-	.string "Thanks!$"
+	.string "the Day-Care Man.$"
 # 519 "data/maps/Zone0A/scripts.pory"
 
 # 520 "data/maps/Zone0A/scripts.pory"
-Zone0A_Text_YouHaveNoRoomForIt:
-# 521 "data/maps/Zone0A/scripts.pory"
-	.string "You have no room for it…\n"
-# 522 "data/maps/Zone0A/scripts.pory"
-	.string "Come back when you've made room.$"
-# 523 "data/maps/Zone0A/scripts.pory"
-
-# 524 "data/maps/Zone0A/scripts.pory"
-Zone0A_Text_ReceivedEgg:
-# 525 "data/maps/Zone0A/scripts.pory"
-	.string "{PLAYER} received the Egg from\n"
-# 526 "data/maps/Zone0A/scripts.pory"
-	.string "the Day-Care Man.$"
-# 527 "data/maps/Zone0A/scripts.pory"
-
-# 528 "data/maps/Zone0A/scripts.pory"
 Zone0A_Text_TakeGoodCareOfIt:
-# 529 "data/maps/Zone0A/scripts.pory"
+# 521 "data/maps/Zone0A/scripts.pory"
 	.string "Take good care of it.$"
-# 530 "data/maps/Zone0A/scripts.pory"
+# 522 "data/maps/Zone0A/scripts.pory"
 
-# 531 "data/maps/Zone0A/scripts.pory"
+# 523 "data/maps/Zone0A/scripts.pory"
 Zone0A_Text_YourMonsAreDoingFine:
-# 532 "data/maps/Zone0A/scripts.pory"
+# 524 "data/maps/Zone0A/scripts.pory"
 	.string "Ah, it's you! Your {STR_VAR_1} and\n"
-# 533 "data/maps/Zone0A/scripts.pory"
+# 525 "data/maps/Zone0A/scripts.pory"
 	.string "{STR_VAR_2} are doing fine.$"
-# 534 "data/maps/Zone0A/scripts.pory"
+# 526 "data/maps/Zone0A/scripts.pory"
 
-# 535 "data/maps/Zone0A/scripts.pory"
+# 527 "data/maps/Zone0A/scripts.pory"
 Zone0A_Text_IWillKeepDoYouWantIt:
-# 536 "data/maps/Zone0A/scripts.pory"
+# 528 "data/maps/Zone0A/scripts.pory"
 	.string "I really will keep it.\n"
-# 537 "data/maps/Zone0A/scripts.pory"
+# 529 "data/maps/Zone0A/scripts.pory"
 	.string "You do want this, yes?$"
 
 Zone0A_EventScript_Intro_Text_0:
@@ -1309,17 +1297,13 @@ Zone0A_EventScript_Scientist_Text_32:
 	.string "Let me know if you need to go to any\n"
 	.string "prior areas.$"
 
-Zone0A_EventScript_Collector_Text_0:
-# 377 "data/maps/Zone0A/scripts.pory"
-	.string "TEMP$"
-
 Zone0A_EventScript_BerryGirl_Text_0:
-# 386 "data/maps/Zone0A/scripts.pory"
+# 378 "data/maps/Zone0A/scripts.pory"
 	.string "Hey there! You look new around here.\p"
 	.string "Take this as a present!$"
 
 Zone0A_EventScript_BerryGirl_Text_1:
-# 390 "data/maps/Zone0A/scripts.pory"
+# 382 "data/maps/Zone0A/scripts.pory"
 	.string "I'm the caretaker of the berry fields\n"
 	.string "here.\p"
 	.string "The soil is getting too hard to farm any\n"
@@ -1330,7 +1314,7 @@ Zone0A_EventScript_BerryGirl_Text_1:
 	.string "left.$"
 
 Zone0A_EventScript_BerryGirl_Text_2:
-# 392 "data/maps/Zone0A/scripts.pory"
+# 384 "data/maps/Zone0A/scripts.pory"
 	.string "I'm the caretaker of the berry fields\n"
 	.string "here.\p"
 	.string "You should try growing some berries\n"

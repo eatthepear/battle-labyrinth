@@ -3399,6 +3399,43 @@ script Zone9A_EventScript_HerbalSign {
 	end
 }
 
+script EventScript_Collector {
+	lock
+	faceplayer
+	if (flag(FLAG_ZONE0A_SAFARI_INTRO) == false) {
+		msgbox(format("Hello there!\pAre you interested in seeing Pokémon you might not be able to see elsewhere?\pCome and see my Safari Zones!\pFor beginning Safari enjoyers, one area is unlocked and accessible.\pYou can pay to unlock more areas, unlocking access to more rare Pokémon!"))
+		setflag(FLAG_ZONE0A_SAFARI_INTRO)
+	}
+	message("Where do you want to go?")
+	waitmessage
+	dynmultipush("{COLOR GREEN}S1 - Beginner Safari", 1)
+	if (var(VAR_REVISITING_ZONE) == 0) {
+		dynmultipush("Exit", 11)
+	} else {
+		dynmultipush("Return to Zone 0", 11)
+	}
+	dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+	switch (var(VAR_RESULT)) {
+		case 1:
+			msgbox(format("Alright, let's go!"), MSGBOX_AUTOCLOSE)
+			setvar(VAR_REVISITING_ZONE, 1)
+			warp(MAP_ZONE_S1A, 255, 11, 18)
+			waitstate
+		case 11:
+			if (var(VAR_REVISITING_ZONE) == 0) {
+				msgbox(format("See you around sometime."))
+			} else {
+				setvar(VAR_REVISITING_ZONE, 0)
+				warp(MAP_ZONE0A, 255, 71, 9)
+				waitstate
+			}
+		case MULTI_B_PRESSED:
+			msgbox(format("See you around sometime."))
+	}
+	release
+	end
+}
+
 script Debug_CheatStart_PBL {
 	setflag(FLAG_PORTENTIA_INTRO)
 	setflag(FLAG_TIM_INTRO)
