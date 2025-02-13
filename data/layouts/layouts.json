@@ -5220,6 +5220,26 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Zone10C/border.bin",
       "blockdata_filepath": "data/layouts/Zone10C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE_S1A",
+      "name": "ZoneS1A_Layout",
+      "width": 23,
+      "height": 28,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ZoneS1A/border.bin",
+      "blockdata_filepath": "data/layouts/ZoneS1A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE_S1B",
+      "name": "ZoneS1B_Layout",
+      "width": 7,
+      "height": 9,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/ZoneS1B/border.bin",
+      "blockdata_filepath": "data/layouts/ZoneS1B/map.bin"
     }
   ]
 }
