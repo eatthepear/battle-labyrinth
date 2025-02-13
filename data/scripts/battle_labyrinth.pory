@@ -3408,11 +3408,13 @@ script EventScript_Collector {
 	}
 	message("Where do you want to go?")
 	waitmessage
-	dynmultipush("{COLOR GREEN}S1 - Beginner Safari", 1)
+	if (var(VAR_REVISITING_ZONE) != 1) {
+		dynmultipush("{COLOR GREEN}S1 - Beginner Safari", 1)
+	}
 	if (var(VAR_REVISITING_ZONE) == 0) {
 		dynmultipush("Exit", 11)
 	} else {
-		dynmultipush("Return to Zone 0", 11)
+		dynmultipush("Return to Zone 0", 12)
 	}
 	dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 	switch (var(VAR_RESULT)) {
@@ -3422,15 +3424,11 @@ script EventScript_Collector {
 			warp(MAP_ZONE_S1A, 255, 11, 18)
 			waitstate
 		case 11:
-			if (var(VAR_REVISITING_ZONE) == 0) {
-				msgbox(format("See you around sometime."))
-			} else {
-				setvar(VAR_REVISITING_ZONE, 0)
-				warp(MAP_ZONE0A, 255, 71, 9)
-				waitstate
-			}
-		case MULTI_B_PRESSED:
 			msgbox(format("See you around sometime."))
+		case 12:
+			setvar(VAR_REVISITING_ZONE, 0)
+			warp(MAP_ZONE0A, 255, 71, 9)
+			waitstate
 	}
 	release
 	end
