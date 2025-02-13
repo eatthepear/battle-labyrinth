@@ -3334,10 +3334,10 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 1451
-                MOVE_CHARM,
                 MOVE_LEECH_SEED,
-                MOVE_FEINT_ATTACK,
+                MOVE_CHARM,
                 MOVE_DOUBLE_KICK,
+                MOVE_FEINT_ATTACK,
             },
             },
             {
