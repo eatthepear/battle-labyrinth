@@ -40,986 +40,990 @@ Zone0A_EventScript_Intro::
 # 21 "data/maps/Zone0A/scripts.pory"
 	msgbox Zone0A_EventScript_Intro_Text_0, MSGBOX_DEFAULT
 # 22 "data/maps/Zone0A/scripts.pory"
-	giveitem ITEM_WAILMER_PAIL
+	giveitem ITEM_GREEN_APRICORN
 # 23 "data/maps/Zone0A/scripts.pory"
-	msgbox Zone0A_EventScript_Intro_Text_1
+	giveitem ITEM_RED_APRICORN
 # 24 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_ExclamationMark
+	giveitem ITEM_BLUE_APRICORN
 # 25 "data/maps/Zone0A/scripts.pory"
-	playse SE_PIN
+	msgbox Zone0A_EventScript_Intro_Text_1
 # 26 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_ExclamationMark
 # 27 "data/maps/Zone0A/scripts.pory"
-	waitse
+	playse SE_PIN
 # 28 "data/maps/Zone0A/scripts.pory"
-	msgbox Zone0A_EventScript_Intro_Text_2, MSGBOX_AUTOCLOSE
-# 29 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkRight3
-# 30 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
+# 29 "data/maps/Zone0A/scripts.pory"
+	waitse
+# 30 "data/maps/Zone0A/scripts.pory"
+	msgbox Zone0A_EventScript_Intro_Text_2, MSGBOX_AUTOCLOSE
 # 31 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceDown
+	applymovement 15, Common_Movement_WalkRight3
 # 32 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
 # 33 "data/maps/Zone0A/scripts.pory"
-	setvar VAR_ZONE_0_STATE, 1
+	applymovement 15, Common_Movement_FaceDown
 # 34 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+# 35 "data/maps/Zone0A/scripts.pory"
+	setvar VAR_ZONE_0_STATE, 1
+# 36 "data/maps/Zone0A/scripts.pory"
 	releaseall
 	end
 
 
 Zone0A_EventScript_Scientist::
-# 39 "data/maps/Zone0A/scripts.pory"
-	lock
-# 40 "data/maps/Zone0A/scripts.pory"
-	faceplayer
 # 41 "data/maps/Zone0A/scripts.pory"
-	message Zone0A_EventScript_Scientist_Text_0
+	lock
 # 42 "data/maps/Zone0A/scripts.pory"
-	waitmessage
+	faceplayer
 # 43 "data/maps/Zone0A/scripts.pory"
+	message Zone0A_EventScript_Scientist_Text_0
+# 44 "data/maps/Zone0A/scripts.pory"
+	waitmessage
+# 45 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 1
 	goto_if_gt Zone0A_EventScript_Scientist_2
 Zone0A_EventScript_Scientist_1:
-# 46 "data/maps/Zone0A/scripts.pory"
+# 48 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 2
 	goto_if_gt Zone0A_EventScript_Scientist_5
 Zone0A_EventScript_Scientist_4:
-# 49 "data/maps/Zone0A/scripts.pory"
+# 51 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 3
 	goto_if_gt Zone0A_EventScript_Scientist_8
 Zone0A_EventScript_Scientist_7:
-# 52 "data/maps/Zone0A/scripts.pory"
+# 54 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 4
 	goto_if_gt Zone0A_EventScript_Scientist_11
 Zone0A_EventScript_Scientist_10:
-# 55 "data/maps/Zone0A/scripts.pory"
+# 57 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 5
 	goto_if_gt Zone0A_EventScript_Scientist_14
 Zone0A_EventScript_Scientist_13:
-# 58 "data/maps/Zone0A/scripts.pory"
+# 60 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 6
 	goto_if_gt Zone0A_EventScript_Scientist_17
 Zone0A_EventScript_Scientist_16:
-# 61 "data/maps/Zone0A/scripts.pory"
+# 63 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 7
 	goto_if_gt Zone0A_EventScript_Scientist_20
 Zone0A_EventScript_Scientist_19:
-# 64 "data/maps/Zone0A/scripts.pory"
+# 66 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 8
 	goto_if_gt Zone0A_EventScript_Scientist_23
 Zone0A_EventScript_Scientist_22:
-# 67 "data/maps/Zone0A/scripts.pory"
+# 69 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 9
 	goto_if_gt Zone0A_EventScript_Scientist_26
 Zone0A_EventScript_Scientist_25:
-# 70 "data/maps/Zone0A/scripts.pory"
+# 72 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 10
 	goto_if_gt Zone0A_EventScript_Scientist_29
 Zone0A_EventScript_Scientist_28:
-# 73 "data/maps/Zone0A/scripts.pory"
+# 75 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 11
 	goto_if_gt Zone0A_EventScript_Scientist_32
 Zone0A_EventScript_Scientist_31:
-# 76 "data/maps/Zone0A/scripts.pory"
+# 78 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 12
 	goto_if_gt Zone0A_EventScript_Scientist_35
 Zone0A_EventScript_Scientist_34:
-# 79 "data/maps/Zone0A/scripts.pory"
+# 81 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 13
 	goto_if_gt Zone0A_EventScript_Scientist_38
 Zone0A_EventScript_Scientist_37:
-# 82 "data/maps/Zone0A/scripts.pory"
+# 84 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 14
 	goto_if_gt Zone0A_EventScript_Scientist_41
 Zone0A_EventScript_Scientist_40:
-# 85 "data/maps/Zone0A/scripts.pory"
+# 87 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 15
 	goto_if_gt Zone0A_EventScript_Scientist_44
 Zone0A_EventScript_Scientist_43:
-# 88 "data/maps/Zone0A/scripts.pory"
+# 90 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 16
 	goto_if_gt Zone0A_EventScript_Scientist_47
 Zone0A_EventScript_Scientist_46:
-# 91 "data/maps/Zone0A/scripts.pory"
+# 93 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 17
 	goto_if_gt Zone0A_EventScript_Scientist_50
 Zone0A_EventScript_Scientist_49:
-# 94 "data/maps/Zone0A/scripts.pory"
+# 96 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 18
 	goto_if_gt Zone0A_EventScript_Scientist_53
 Zone0A_EventScript_Scientist_52:
-# 97 "data/maps/Zone0A/scripts.pory"
+# 99 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 19
 	goto_if_gt Zone0A_EventScript_Scientist_56
 Zone0A_EventScript_Scientist_55:
-# 100 "data/maps/Zone0A/scripts.pory"
+# 102 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 20
 	goto_if_gt Zone0A_EventScript_Scientist_59
 Zone0A_EventScript_Scientist_58:
-# 103 "data/maps/Zone0A/scripts.pory"
+# 105 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 21
 	goto_if_gt Zone0A_EventScript_Scientist_62
 Zone0A_EventScript_Scientist_61:
-# 106 "data/maps/Zone0A/scripts.pory"
+# 108 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 22
 	goto_if_gt Zone0A_EventScript_Scientist_65
 Zone0A_EventScript_Scientist_64:
-# 109 "data/maps/Zone0A/scripts.pory"
+# 111 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 23
 	goto_if_gt Zone0A_EventScript_Scientist_68
 Zone0A_EventScript_Scientist_67:
-# 112 "data/maps/Zone0A/scripts.pory"
+# 114 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 24
 	goto_if_gt Zone0A_EventScript_Scientist_71
 Zone0A_EventScript_Scientist_70:
-# 115 "data/maps/Zone0A/scripts.pory"
+# 117 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 25
 	goto_if_gt Zone0A_EventScript_Scientist_74
 Zone0A_EventScript_Scientist_73:
-# 118 "data/maps/Zone0A/scripts.pory"
+# 120 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 26
 	goto_if_gt Zone0A_EventScript_Scientist_77
 Zone0A_EventScript_Scientist_76:
-# 121 "data/maps/Zone0A/scripts.pory"
+# 123 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 27
 	goto_if_gt Zone0A_EventScript_Scientist_80
 Zone0A_EventScript_Scientist_79:
-# 124 "data/maps/Zone0A/scripts.pory"
+# 126 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 28
 	goto_if_gt Zone0A_EventScript_Scientist_83
 Zone0A_EventScript_Scientist_82:
-# 127 "data/maps/Zone0A/scripts.pory"
+# 129 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 29
 	goto_if_gt Zone0A_EventScript_Scientist_86
 Zone0A_EventScript_Scientist_85:
-# 130 "data/maps/Zone0A/scripts.pory"
+# 132 "data/maps/Zone0A/scripts.pory"
 	compare VAR_ZONE, 30
 	goto_if_gt Zone0A_EventScript_Scientist_89
 Zone0A_EventScript_Scientist_88:
-# 133 "data/maps/Zone0A/scripts.pory"
-	dynmultipush Zone0A_EventScript_Scientist_Text_31, 51
-# 134 "data/maps/Zone0A/scripts.pory"
-	dynmultistack 21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 # 135 "data/maps/Zone0A/scripts.pory"
-	switch VAR_RESULT
+	dynmultipush Zone0A_EventScript_Scientist_Text_31, 51
 # 136 "data/maps/Zone0A/scripts.pory"
+	dynmultistack 21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+# 137 "data/maps/Zone0A/scripts.pory"
+	switch VAR_RESULT
+# 138 "data/maps/Zone0A/scripts.pory"
 	case 1, Zone0A_EventScript_Scientist_93
-# 155 "data/maps/Zone0A/scripts.pory"
+# 157 "data/maps/Zone0A/scripts.pory"
 	case 2, Zone0A_EventScript_Scientist_94
-# 174 "data/maps/Zone0A/scripts.pory"
+# 176 "data/maps/Zone0A/scripts.pory"
 	case 3, Zone0A_EventScript_Scientist_95
-# 193 "data/maps/Zone0A/scripts.pory"
+# 195 "data/maps/Zone0A/scripts.pory"
 	case 4, Zone0A_EventScript_Scientist_96
-# 212 "data/maps/Zone0A/scripts.pory"
+# 214 "data/maps/Zone0A/scripts.pory"
 	case 5, Zone0A_EventScript_Scientist_97
-# 231 "data/maps/Zone0A/scripts.pory"
+# 233 "data/maps/Zone0A/scripts.pory"
 	case 6, Zone0A_EventScript_Scientist_98
-# 250 "data/maps/Zone0A/scripts.pory"
+# 252 "data/maps/Zone0A/scripts.pory"
 	case 7, Zone0A_EventScript_Scientist_99
-# 269 "data/maps/Zone0A/scripts.pory"
+# 271 "data/maps/Zone0A/scripts.pory"
 	case 8, Zone0A_EventScript_Scientist_100
-# 288 "data/maps/Zone0A/scripts.pory"
+# 290 "data/maps/Zone0A/scripts.pory"
 	case 9, Zone0A_EventScript_Scientist_101
-# 307 "data/maps/Zone0A/scripts.pory"
+# 309 "data/maps/Zone0A/scripts.pory"
 	case 10, Zone0A_EventScript_Scientist_102
-# 326 "data/maps/Zone0A/scripts.pory"
+# 328 "data/maps/Zone0A/scripts.pory"
 	case 11, Zone0A_EventScript_Scientist_103
-# 345 "data/maps/Zone0A/scripts.pory"
+# 347 "data/maps/Zone0A/scripts.pory"
 	case 12, Zone0A_EventScript_Scientist_104
-# 364 "data/maps/Zone0A/scripts.pory"
+# 366 "data/maps/Zone0A/scripts.pory"
 	case 51, Zone0A_EventScript_Scientist_105
-# 365 "data/maps/Zone0A/scripts.pory"
+# 367 "data/maps/Zone0A/scripts.pory"
 	case MULTI_B_PRESSED, Zone0A_EventScript_Scientist_105
 Zone0A_EventScript_Scientist_91:
-# 368 "data/maps/Zone0A/scripts.pory"
+# 370 "data/maps/Zone0A/scripts.pory"
 	release
 	end
 
 Zone0A_EventScript_Scientist_2:
-# 44 "data/maps/Zone0A/scripts.pory"
+# 46 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_1, 1
 	goto Zone0A_EventScript_Scientist_1
 
 Zone0A_EventScript_Scientist_5:
-# 47 "data/maps/Zone0A/scripts.pory"
+# 49 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_2, 2
 	goto Zone0A_EventScript_Scientist_4
 
 Zone0A_EventScript_Scientist_8:
-# 50 "data/maps/Zone0A/scripts.pory"
+# 52 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_3, 3
 	goto Zone0A_EventScript_Scientist_7
 
 Zone0A_EventScript_Scientist_11:
-# 53 "data/maps/Zone0A/scripts.pory"
+# 55 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_4, 4
 	goto Zone0A_EventScript_Scientist_10
 
 Zone0A_EventScript_Scientist_14:
-# 56 "data/maps/Zone0A/scripts.pory"
+# 58 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_5, 5
 	goto Zone0A_EventScript_Scientist_13
 
 Zone0A_EventScript_Scientist_17:
-# 59 "data/maps/Zone0A/scripts.pory"
+# 61 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_6, 6
 	goto Zone0A_EventScript_Scientist_16
 
 Zone0A_EventScript_Scientist_20:
-# 62 "data/maps/Zone0A/scripts.pory"
+# 64 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_7, 7
 	goto Zone0A_EventScript_Scientist_19
 
 Zone0A_EventScript_Scientist_23:
-# 65 "data/maps/Zone0A/scripts.pory"
+# 67 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_8, 8
 	goto Zone0A_EventScript_Scientist_22
 
 Zone0A_EventScript_Scientist_26:
-# 68 "data/maps/Zone0A/scripts.pory"
+# 70 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_9, 9
 	goto Zone0A_EventScript_Scientist_25
 
 Zone0A_EventScript_Scientist_29:
-# 71 "data/maps/Zone0A/scripts.pory"
+# 73 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_10, 10
 	goto Zone0A_EventScript_Scientist_28
 
 Zone0A_EventScript_Scientist_32:
-# 74 "data/maps/Zone0A/scripts.pory"
+# 76 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_11, 11
 	goto Zone0A_EventScript_Scientist_31
 
 Zone0A_EventScript_Scientist_35:
-# 77 "data/maps/Zone0A/scripts.pory"
+# 79 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_12, 12
 	goto Zone0A_EventScript_Scientist_34
 
 Zone0A_EventScript_Scientist_38:
-# 80 "data/maps/Zone0A/scripts.pory"
+# 82 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_13, 13
 	goto Zone0A_EventScript_Scientist_37
 
 Zone0A_EventScript_Scientist_41:
-# 83 "data/maps/Zone0A/scripts.pory"
+# 85 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_14, 14
 	goto Zone0A_EventScript_Scientist_40
 
 Zone0A_EventScript_Scientist_44:
-# 86 "data/maps/Zone0A/scripts.pory"
+# 88 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_15, 15
 	goto Zone0A_EventScript_Scientist_43
 
 Zone0A_EventScript_Scientist_47:
-# 89 "data/maps/Zone0A/scripts.pory"
+# 91 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_16, 16
 	goto Zone0A_EventScript_Scientist_46
 
 Zone0A_EventScript_Scientist_50:
-# 92 "data/maps/Zone0A/scripts.pory"
+# 94 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_17, 17
 	goto Zone0A_EventScript_Scientist_49
 
 Zone0A_EventScript_Scientist_53:
-# 95 "data/maps/Zone0A/scripts.pory"
+# 97 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_18, 18
 	goto Zone0A_EventScript_Scientist_52
 
 Zone0A_EventScript_Scientist_56:
-# 98 "data/maps/Zone0A/scripts.pory"
+# 100 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_19, 19
 	goto Zone0A_EventScript_Scientist_55
 
 Zone0A_EventScript_Scientist_59:
-# 101 "data/maps/Zone0A/scripts.pory"
+# 103 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_20, 20
 	goto Zone0A_EventScript_Scientist_58
 
 Zone0A_EventScript_Scientist_62:
-# 104 "data/maps/Zone0A/scripts.pory"
+# 106 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_21, 21
 	goto Zone0A_EventScript_Scientist_61
 
 Zone0A_EventScript_Scientist_65:
-# 107 "data/maps/Zone0A/scripts.pory"
+# 109 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_22, 22
 	goto Zone0A_EventScript_Scientist_64
 
 Zone0A_EventScript_Scientist_68:
-# 110 "data/maps/Zone0A/scripts.pory"
+# 112 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_23, 23
 	goto Zone0A_EventScript_Scientist_67
 
 Zone0A_EventScript_Scientist_71:
-# 113 "data/maps/Zone0A/scripts.pory"
+# 115 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_24, 24
 	goto Zone0A_EventScript_Scientist_70
 
 Zone0A_EventScript_Scientist_74:
-# 116 "data/maps/Zone0A/scripts.pory"
+# 118 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_25, 25
 	goto Zone0A_EventScript_Scientist_73
 
 Zone0A_EventScript_Scientist_77:
-# 119 "data/maps/Zone0A/scripts.pory"
+# 121 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_26, 26
 	goto Zone0A_EventScript_Scientist_76
 
 Zone0A_EventScript_Scientist_80:
-# 122 "data/maps/Zone0A/scripts.pory"
+# 124 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_27, 27
 	goto Zone0A_EventScript_Scientist_79
 
 Zone0A_EventScript_Scientist_83:
-# 125 "data/maps/Zone0A/scripts.pory"
+# 127 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_28, 28
 	goto Zone0A_EventScript_Scientist_82
 
 Zone0A_EventScript_Scientist_86:
-# 128 "data/maps/Zone0A/scripts.pory"
+# 130 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_29, 29
 	goto Zone0A_EventScript_Scientist_85
 
 Zone0A_EventScript_Scientist_89:
-# 131 "data/maps/Zone0A/scripts.pory"
+# 133 "data/maps/Zone0A/scripts.pory"
 	dynmultipush Zone0A_EventScript_Scientist_Text_30, 30
 	goto Zone0A_EventScript_Scientist_88
 
 Zone0A_EventScript_Scientist_93:
-# 137 "data/maps/Zone0A/scripts.pory"
-	setvar VAR_REVISITING_ZONE, 1
-# 138 "data/maps/Zone0A/scripts.pory"
-	closemessage
 # 139 "data/maps/Zone0A/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	setvar VAR_REVISITING_ZONE, 1
 # 140 "data/maps/Zone0A/scripts.pory"
+	closemessage
+# 141 "data/maps/Zone0A/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 142 "data/maps/Zone0A/scripts.pory"
 	compare VAR_TEMP_0, 38
 	goto_if_eq Zone0A_EventScript_Scientist_107
-# 147 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkLeft
-# 148 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 149 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkLeft
 # 150 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 151 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
-Zone0A_EventScript_Scientist_106:
+# 152 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceRight
 # 153 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+Zone0A_EventScript_Scientist_106:
+# 155 "data/maps/Zone0A/scripts.pory"
 	warpdoor MAP_ZONE1A, 255, 16, 28
-# 154 "data/maps/Zone0A/scripts.pory"
+# 156 "data/maps/Zone0A/scripts.pory"
 	waitstate
 	goto Zone0A_EventScript_Scientist_91
 
 Zone0A_EventScript_Scientist_94:
-# 156 "data/maps/Zone0A/scripts.pory"
-	setvar VAR_REVISITING_ZONE, 2
-# 157 "data/maps/Zone0A/scripts.pory"
-	closemessage
 # 158 "data/maps/Zone0A/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	setvar VAR_REVISITING_ZONE, 2
 # 159 "data/maps/Zone0A/scripts.pory"
+	closemessage
+# 160 "data/maps/Zone0A/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 161 "data/maps/Zone0A/scripts.pory"
 	compare VAR_TEMP_0, 38
 	goto_if_eq Zone0A_EventScript_Scientist_111
-# 166 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkLeft
-# 167 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 168 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkLeft
 # 169 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 170 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
-Zone0A_EventScript_Scientist_110:
+# 171 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceRight
 # 172 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+Zone0A_EventScript_Scientist_110:
+# 174 "data/maps/Zone0A/scripts.pory"
 	warpdoor MAP_ZONE2A, 255, 4, 3
-# 173 "data/maps/Zone0A/scripts.pory"
+# 175 "data/maps/Zone0A/scripts.pory"
 	waitstate
 	goto Zone0A_EventScript_Scientist_91
 
 Zone0A_EventScript_Scientist_95:
-# 175 "data/maps/Zone0A/scripts.pory"
-	setvar VAR_REVISITING_ZONE, 3
-# 176 "data/maps/Zone0A/scripts.pory"
-	closemessage
 # 177 "data/maps/Zone0A/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	setvar VAR_REVISITING_ZONE, 3
 # 178 "data/maps/Zone0A/scripts.pory"
+	closemessage
+# 179 "data/maps/Zone0A/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 180 "data/maps/Zone0A/scripts.pory"
 	compare VAR_TEMP_0, 38
 	goto_if_eq Zone0A_EventScript_Scientist_115
-# 185 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkLeft
-# 186 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 187 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkLeft
 # 188 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 189 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
-Zone0A_EventScript_Scientist_114:
+# 190 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceRight
 # 191 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+Zone0A_EventScript_Scientist_114:
+# 193 "data/maps/Zone0A/scripts.pory"
 	warpdoor MAP_ZONE3A, 255, 38, 25
-# 192 "data/maps/Zone0A/scripts.pory"
+# 194 "data/maps/Zone0A/scripts.pory"
 	waitstate
 	goto Zone0A_EventScript_Scientist_91
 
 Zone0A_EventScript_Scientist_96:
-# 194 "data/maps/Zone0A/scripts.pory"
-	setvar VAR_REVISITING_ZONE, 4
-# 195 "data/maps/Zone0A/scripts.pory"
-	closemessage
 # 196 "data/maps/Zone0A/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	setvar VAR_REVISITING_ZONE, 4
 # 197 "data/maps/Zone0A/scripts.pory"
+	closemessage
+# 198 "data/maps/Zone0A/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 199 "data/maps/Zone0A/scripts.pory"
 	compare VAR_TEMP_0, 38
 	goto_if_eq Zone0A_EventScript_Scientist_119
-# 204 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkLeft
-# 205 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 206 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkLeft
 # 207 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 208 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
-Zone0A_EventScript_Scientist_118:
+# 209 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceRight
 # 210 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+Zone0A_EventScript_Scientist_118:
+# 212 "data/maps/Zone0A/scripts.pory"
 	warpdoor MAP_ZONE4A, 255, 6, 4
-# 211 "data/maps/Zone0A/scripts.pory"
+# 213 "data/maps/Zone0A/scripts.pory"
 	waitstate
 	goto Zone0A_EventScript_Scientist_91
 
 Zone0A_EventScript_Scientist_97:
-# 213 "data/maps/Zone0A/scripts.pory"
-	setvar VAR_REVISITING_ZONE, 5
-# 214 "data/maps/Zone0A/scripts.pory"
-	closemessage
 # 215 "data/maps/Zone0A/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	setvar VAR_REVISITING_ZONE, 5
 # 216 "data/maps/Zone0A/scripts.pory"
+	closemessage
+# 217 "data/maps/Zone0A/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 218 "data/maps/Zone0A/scripts.pory"
 	compare VAR_TEMP_0, 38
 	goto_if_eq Zone0A_EventScript_Scientist_123
-# 223 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkLeft
-# 224 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 225 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkLeft
 # 226 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 227 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
-Zone0A_EventScript_Scientist_122:
+# 228 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceRight
 # 229 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+Zone0A_EventScript_Scientist_122:
+# 231 "data/maps/Zone0A/scripts.pory"
 	warpdoor MAP_ZONE5A, 255, 3, 0
-# 230 "data/maps/Zone0A/scripts.pory"
+# 232 "data/maps/Zone0A/scripts.pory"
 	waitstate
 	goto Zone0A_EventScript_Scientist_91
 
 Zone0A_EventScript_Scientist_98:
-# 232 "data/maps/Zone0A/scripts.pory"
-	setvar VAR_REVISITING_ZONE, 6
-# 233 "data/maps/Zone0A/scripts.pory"
-	closemessage
 # 234 "data/maps/Zone0A/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	setvar VAR_REVISITING_ZONE, 6
 # 235 "data/maps/Zone0A/scripts.pory"
+	closemessage
+# 236 "data/maps/Zone0A/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 237 "data/maps/Zone0A/scripts.pory"
 	compare VAR_TEMP_0, 38
 	goto_if_eq Zone0A_EventScript_Scientist_127
-# 242 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkLeft
-# 243 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 244 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkLeft
 # 245 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 246 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
-Zone0A_EventScript_Scientist_126:
+# 247 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceRight
 # 248 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+Zone0A_EventScript_Scientist_126:
+# 250 "data/maps/Zone0A/scripts.pory"
 	warpdoor MAP_ZONE6A, 255, 51, 22
-# 249 "data/maps/Zone0A/scripts.pory"
+# 251 "data/maps/Zone0A/scripts.pory"
 	waitstate
 	goto Zone0A_EventScript_Scientist_91
 
 Zone0A_EventScript_Scientist_99:
-# 251 "data/maps/Zone0A/scripts.pory"
-	setvar VAR_REVISITING_ZONE, 7
-# 252 "data/maps/Zone0A/scripts.pory"
-	closemessage
 # 253 "data/maps/Zone0A/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	setvar VAR_REVISITING_ZONE, 7
 # 254 "data/maps/Zone0A/scripts.pory"
+	closemessage
+# 255 "data/maps/Zone0A/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 256 "data/maps/Zone0A/scripts.pory"
 	compare VAR_TEMP_0, 38
 	goto_if_eq Zone0A_EventScript_Scientist_131
-# 261 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkLeft
-# 262 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 263 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkLeft
 # 264 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 265 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
-Zone0A_EventScript_Scientist_130:
+# 266 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceRight
 # 267 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+Zone0A_EventScript_Scientist_130:
+# 269 "data/maps/Zone0A/scripts.pory"
 	warpdoor MAP_ZONE7A, 255, 10, 33
-# 268 "data/maps/Zone0A/scripts.pory"
+# 270 "data/maps/Zone0A/scripts.pory"
 	waitstate
 	goto Zone0A_EventScript_Scientist_91
 
 Zone0A_EventScript_Scientist_100:
-# 270 "data/maps/Zone0A/scripts.pory"
-	setvar VAR_REVISITING_ZONE, 8
-# 271 "data/maps/Zone0A/scripts.pory"
-	closemessage
 # 272 "data/maps/Zone0A/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	setvar VAR_REVISITING_ZONE, 8
 # 273 "data/maps/Zone0A/scripts.pory"
+	closemessage
+# 274 "data/maps/Zone0A/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 275 "data/maps/Zone0A/scripts.pory"
 	compare VAR_TEMP_0, 38
 	goto_if_eq Zone0A_EventScript_Scientist_135
-# 280 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkLeft
-# 281 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 282 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkLeft
 # 283 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 284 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
-Zone0A_EventScript_Scientist_134:
+# 285 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceRight
 # 286 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+Zone0A_EventScript_Scientist_134:
+# 288 "data/maps/Zone0A/scripts.pory"
 	warpdoor MAP_ZONE8A, 255, 21, 26
-# 287 "data/maps/Zone0A/scripts.pory"
+# 289 "data/maps/Zone0A/scripts.pory"
 	waitstate
 	goto Zone0A_EventScript_Scientist_91
 
 Zone0A_EventScript_Scientist_101:
-# 289 "data/maps/Zone0A/scripts.pory"
-	setvar VAR_REVISITING_ZONE, 9
-# 290 "data/maps/Zone0A/scripts.pory"
-	closemessage
 # 291 "data/maps/Zone0A/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	setvar VAR_REVISITING_ZONE, 9
 # 292 "data/maps/Zone0A/scripts.pory"
+	closemessage
+# 293 "data/maps/Zone0A/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 294 "data/maps/Zone0A/scripts.pory"
 	compare VAR_TEMP_0, 38
 	goto_if_eq Zone0A_EventScript_Scientist_139
-# 299 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkLeft
-# 300 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 301 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkLeft
 # 302 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 303 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
-Zone0A_EventScript_Scientist_138:
+# 304 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceRight
 # 305 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+Zone0A_EventScript_Scientist_138:
+# 307 "data/maps/Zone0A/scripts.pory"
 	warpdoor MAP_ZONE9A, 255, 41, 22
-# 306 "data/maps/Zone0A/scripts.pory"
+# 308 "data/maps/Zone0A/scripts.pory"
 	waitstate
 	goto Zone0A_EventScript_Scientist_91
 
 Zone0A_EventScript_Scientist_102:
-# 308 "data/maps/Zone0A/scripts.pory"
-	setvar VAR_REVISITING_ZONE, 10
-# 309 "data/maps/Zone0A/scripts.pory"
-	closemessage
 # 310 "data/maps/Zone0A/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	setvar VAR_REVISITING_ZONE, 10
 # 311 "data/maps/Zone0A/scripts.pory"
+	closemessage
+# 312 "data/maps/Zone0A/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 313 "data/maps/Zone0A/scripts.pory"
 	compare VAR_TEMP_0, 38
 	goto_if_eq Zone0A_EventScript_Scientist_143
-# 318 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkLeft
-# 319 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 320 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkLeft
 # 321 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 322 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
-Zone0A_EventScript_Scientist_142:
+# 323 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceRight
 # 324 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+Zone0A_EventScript_Scientist_142:
+# 326 "data/maps/Zone0A/scripts.pory"
 	warpdoor MAP_ZONE10A, 255, 42, 51
-# 325 "data/maps/Zone0A/scripts.pory"
+# 327 "data/maps/Zone0A/scripts.pory"
 	waitstate
 	goto Zone0A_EventScript_Scientist_91
 
 Zone0A_EventScript_Scientist_103:
-# 327 "data/maps/Zone0A/scripts.pory"
-	setvar VAR_REVISITING_ZONE, 11
-# 328 "data/maps/Zone0A/scripts.pory"
-	closemessage
 # 329 "data/maps/Zone0A/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	setvar VAR_REVISITING_ZONE, 11
 # 330 "data/maps/Zone0A/scripts.pory"
+	closemessage
+# 331 "data/maps/Zone0A/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 332 "data/maps/Zone0A/scripts.pory"
 	compare VAR_TEMP_0, 38
 	goto_if_eq Zone0A_EventScript_Scientist_147
-# 337 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkLeft
-# 338 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 339 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkLeft
 # 340 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 341 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
-Zone0A_EventScript_Scientist_146:
+# 342 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceRight
 # 343 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+Zone0A_EventScript_Scientist_146:
+# 345 "data/maps/Zone0A/scripts.pory"
 	warpdoor MAP_ZONE11A, 255, 46, 2
-# 344 "data/maps/Zone0A/scripts.pory"
+# 346 "data/maps/Zone0A/scripts.pory"
 	waitstate
 	goto Zone0A_EventScript_Scientist_91
 
 Zone0A_EventScript_Scientist_104:
-# 346 "data/maps/Zone0A/scripts.pory"
-	setvar VAR_REVISITING_ZONE, 12
-# 347 "data/maps/Zone0A/scripts.pory"
-	closemessage
 # 348 "data/maps/Zone0A/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	setvar VAR_REVISITING_ZONE, 12
 # 349 "data/maps/Zone0A/scripts.pory"
+	closemessage
+# 350 "data/maps/Zone0A/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 351 "data/maps/Zone0A/scripts.pory"
 	compare VAR_TEMP_0, 38
 	goto_if_eq Zone0A_EventScript_Scientist_151
-# 356 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkLeft
-# 357 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 358 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkLeft
 # 359 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 360 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
-Zone0A_EventScript_Scientist_150:
+# 361 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceRight
 # 362 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+Zone0A_EventScript_Scientist_150:
+# 364 "data/maps/Zone0A/scripts.pory"
 	warpdoor MAP_ZONE12A, 255, 9, 16
-# 363 "data/maps/Zone0A/scripts.pory"
+# 365 "data/maps/Zone0A/scripts.pory"
 	waitstate
 	goto Zone0A_EventScript_Scientist_91
 
 Zone0A_EventScript_Scientist_105:
-# 366 "data/maps/Zone0A/scripts.pory"
+# 368 "data/maps/Zone0A/scripts.pory"
 	msgbox Zone0A_EventScript_Scientist_Text_32
 	goto Zone0A_EventScript_Scientist_91
 
 Zone0A_EventScript_Scientist_107:
-# 141 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkDown
-# 142 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 143 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkDown
 # 144 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 145 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+# 146 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceUp
+# 147 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
 	goto Zone0A_EventScript_Scientist_106
 
 Zone0A_EventScript_Scientist_111:
-# 160 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkDown
-# 161 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 162 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkDown
 # 163 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 164 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+# 165 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceUp
+# 166 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
 	goto Zone0A_EventScript_Scientist_110
 
 Zone0A_EventScript_Scientist_115:
-# 179 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkDown
-# 180 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 181 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkDown
 # 182 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 183 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+# 184 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceUp
+# 185 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
 	goto Zone0A_EventScript_Scientist_114
 
 Zone0A_EventScript_Scientist_119:
-# 198 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkDown
-# 199 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 200 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkDown
 # 201 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 202 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+# 203 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceUp
+# 204 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
 	goto Zone0A_EventScript_Scientist_118
 
 Zone0A_EventScript_Scientist_123:
-# 217 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkDown
-# 218 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 219 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkDown
 # 220 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 221 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+# 222 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceUp
+# 223 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
 	goto Zone0A_EventScript_Scientist_122
 
 Zone0A_EventScript_Scientist_127:
-# 236 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkDown
-# 237 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 238 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkDown
 # 239 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 240 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+# 241 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceUp
+# 242 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
 	goto Zone0A_EventScript_Scientist_126
 
 Zone0A_EventScript_Scientist_131:
-# 255 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkDown
-# 256 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 257 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkDown
 # 258 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 259 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+# 260 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceUp
+# 261 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
 	goto Zone0A_EventScript_Scientist_130
 
 Zone0A_EventScript_Scientist_135:
-# 274 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkDown
-# 275 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 276 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkDown
 # 277 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 278 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+# 279 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceUp
+# 280 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
 	goto Zone0A_EventScript_Scientist_134
 
 Zone0A_EventScript_Scientist_139:
-# 293 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkDown
-# 294 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 295 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkDown
 # 296 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 297 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+# 298 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceUp
+# 299 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
 	goto Zone0A_EventScript_Scientist_138
 
 Zone0A_EventScript_Scientist_143:
-# 312 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkDown
-# 313 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 314 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkDown
 # 315 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 316 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+# 317 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceUp
+# 318 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
 	goto Zone0A_EventScript_Scientist_142
 
 Zone0A_EventScript_Scientist_147:
-# 331 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkDown
-# 332 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 333 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkDown
 # 334 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 335 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+# 336 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceUp
+# 337 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
 	goto Zone0A_EventScript_Scientist_146
 
 Zone0A_EventScript_Scientist_151:
-# 350 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_WalkDown
-# 351 "data/maps/Zone0A/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 352 "data/maps/Zone0A/scripts.pory"
-	waitmovement 0
+	applymovement 15, Common_Movement_WalkDown
 # 353 "data/maps/Zone0A/scripts.pory"
-	applymovement 15, Common_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 354 "data/maps/Zone0A/scripts.pory"
+	waitmovement 0
+# 355 "data/maps/Zone0A/scripts.pory"
+	applymovement 15, Common_Movement_FaceUp
+# 356 "data/maps/Zone0A/scripts.pory"
 	waitmovement 0
 	goto Zone0A_EventScript_Scientist_150
 
 
 Zone0A_EventScript_Collector::
-# 373 "data/maps/Zone0A/scripts.pory"
-	lock
-# 374 "data/maps/Zone0A/scripts.pory"
-	faceplayer
 # 375 "data/maps/Zone0A/scripts.pory"
-	msgbox Zone0A_EventScript_Collector_Text_0
+	lock
 # 376 "data/maps/Zone0A/scripts.pory"
+	faceplayer
+# 377 "data/maps/Zone0A/scripts.pory"
+	msgbox Zone0A_EventScript_Collector_Text_0
+# 378 "data/maps/Zone0A/scripts.pory"
 	release
 	end
 
 
 Zone0A_EventScript_BerryGirl::
-# 381 "data/maps/Zone0A/scripts.pory"
+# 383 "data/maps/Zone0A/scripts.pory"
 	lock
-# 382 "data/maps/Zone0A/scripts.pory"
+# 384 "data/maps/Zone0A/scripts.pory"
 	faceplayer
-# 383 "data/maps/Zone0A/scripts.pory"
-	goto_if_set FLAG_SETTINGS_BRUTAL, Zone0A_EventScript_BerryGirl_2
-# 383 "data/maps/Zone0A/scripts.pory"
-	goto_if_set FLAG_SETTINGS_RED_THUMB, Zone0A_EventScript_BerryGirl_2
-# 386 "data/maps/Zone0A/scripts.pory"
-	msgbox Zone0A_EventScript_BerryGirl_Text_1
+	checkitem ITEM_WAILMER_PAIL
+# 0 "data/maps/Zone0A/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Zone0A_EventScript_BerryGirl_2
 Zone0A_EventScript_BerryGirl_1:
-# 388 "data/maps/Zone0A/scripts.pory"
+# 389 "data/maps/Zone0A/scripts.pory"
+	goto_if_set FLAG_SETTINGS_BRUTAL, Zone0A_EventScript_BerryGirl_5
+# 389 "data/maps/Zone0A/scripts.pory"
+	goto_if_set FLAG_SETTINGS_RED_THUMB, Zone0A_EventScript_BerryGirl_5
+# 392 "data/maps/Zone0A/scripts.pory"
+	msgbox Zone0A_EventScript_BerryGirl_Text_2
+Zone0A_EventScript_BerryGirl_4:
+# 394 "data/maps/Zone0A/scripts.pory"
 	release
 	end
 
 Zone0A_EventScript_BerryGirl_2:
-# 384 "data/maps/Zone0A/scripts.pory"
+# 386 "data/maps/Zone0A/scripts.pory"
 	msgbox Zone0A_EventScript_BerryGirl_Text_0
+# 387 "data/maps/Zone0A/scripts.pory"
+	giveitem ITEM_WAILMER_PAIL
 	goto Zone0A_EventScript_BerryGirl_1
 
+Zone0A_EventScript_BerryGirl_5:
+# 390 "data/maps/Zone0A/scripts.pory"
+	msgbox Zone0A_EventScript_BerryGirl_Text_1
+	goto Zone0A_EventScript_BerryGirl_4
 
-# 420 "data/maps/Zone0A/scripts.pory"
 
-# 421 "data/maps/Zone0A/scripts.pory"
-Zone0A_EventScript_TryMoveDayCareMan::
-# 422 "data/maps/Zone0A/scripts.pory"
-	goto_if_unset FLAG_PBL_PENDING_DAYCARE_EGG, Zone0A_EventScript_StopMoveDayCareMan
-# 423 "data/maps/Zone0A/scripts.pory"
-	setobjectxyperm 1, 22, 9
-# 424 "data/maps/Zone0A/scripts.pory"
-Zone0A_EventScript_StopMoveDayCareMan::
-# 425 "data/maps/Zone0A/scripts.pory"
-	return
 # 426 "data/maps/Zone0A/scripts.pory"
 
 # 427 "data/maps/Zone0A/scripts.pory"
-Zone0A_EventScript_DaycareMan::
+Zone0A_EventScript_TryMoveDayCareMan::
 # 428 "data/maps/Zone0A/scripts.pory"
-	lock
+	goto_if_unset FLAG_PBL_PENDING_DAYCARE_EGG, Zone0A_EventScript_StopMoveDayCareMan
 # 429 "data/maps/Zone0A/scripts.pory"
-	faceplayer
+	setobjectxyperm 1, 22, 9
 # 430 "data/maps/Zone0A/scripts.pory"
-	special GetDaycareMonNicknames
+Zone0A_EventScript_StopMoveDayCareMan::
 # 431 "data/maps/Zone0A/scripts.pory"
-	specialvar VAR_RESULT, GetDaycareState
+	return
 # 432 "data/maps/Zone0A/scripts.pory"
-	compare VAR_RESULT, DAYCARE_EGG_WAITING
+
 # 433 "data/maps/Zone0A/scripts.pory"
-	goto_if_eq Zone0A_EventScript_DaycareEggWaiting
+Zone0A_EventScript_DaycareMan::
 # 434 "data/maps/Zone0A/scripts.pory"
-	compare VAR_RESULT, DAYCARE_ONE_MON
+	lock
 # 435 "data/maps/Zone0A/scripts.pory"
-	goto_if_eq Zone0A_EventScript_CheckOnOneMon
+	faceplayer
 # 436 "data/maps/Zone0A/scripts.pory"
-	compare VAR_RESULT, DAYCARE_TWO_MONS
-# 437 "data/maps/Zone0A/scripts.pory"
-	goto_if_eq Zone0A_EventScript_CheckOnTwoMons
-# 438 "data/maps/Zone0A/scripts.pory"
-	msgbox Zone0A_Text_SeeWifeIfYoudLikeMeToRaiseMon, MSGBOX_DEFAULT
-# 439 "data/maps/Zone0A/scripts.pory"
-	release
-# 440 "data/maps/Zone0A/scripts.pory"
-	end
-# 441 "data/maps/Zone0A/scripts.pory"
-
-# 442 "data/maps/Zone0A/scripts.pory"
-Zone0A_EventScript_DaycareEggWaiting:
-# 443 "data/maps/Zone0A/scripts.pory"
-	msgbox Zone0A_Text_DoYouWantEgg, MSGBOX_YESNO
-# 444 "data/maps/Zone0A/scripts.pory"
-	compare VAR_RESULT, YES
-# 445 "data/maps/Zone0A/scripts.pory"
-	goto_if_eq Zone0A_EventScript_DaycareAcceptEgg
-# 446 "data/maps/Zone0A/scripts.pory"
-	msgbox Zone0A_Text_IWillKeepDoYouWantIt, MSGBOX_YESNO
-# 447 "data/maps/Zone0A/scripts.pory"
-	compare VAR_RESULT, YES
-# 448 "data/maps/Zone0A/scripts.pory"
-	goto_if_eq Zone0A_EventScript_DaycareAcceptEgg
-# 449 "data/maps/Zone0A/scripts.pory"
-	msgbox Zone0A_Text_IllKeepIt, MSGBOX_DEFAULT
-# 450 "data/maps/Zone0A/scripts.pory"
-	clearflag FLAG_PBL_PENDING_DAYCARE_EGG
-# 451 "data/maps/Zone0A/scripts.pory"
-	special RejectEggFromDayCare
-# 452 "data/maps/Zone0A/scripts.pory"
-	release
-# 453 "data/maps/Zone0A/scripts.pory"
-	end
-# 454 "data/maps/Zone0A/scripts.pory"
-
-# 455 "data/maps/Zone0A/scripts.pory"
-Zone0A_EventScript_DaycareAcceptEgg:
-# 456 "data/maps/Zone0A/scripts.pory"
-	specialvar VAR_RESULT, CalculatePlayerPartyCount
-# 457 "data/maps/Zone0A/scripts.pory"
-	compare VAR_RESULT, PARTY_SIZE
-# 458 "data/maps/Zone0A/scripts.pory"
-	goto_if_ne Zone0A_EventScript_DaycareReceiveEgg
-# 459 "data/maps/Zone0A/scripts.pory"
-	msgbox Zone0A_Text_YouHaveNoRoomForIt, MSGBOX_DEFAULT
-# 460 "data/maps/Zone0A/scripts.pory"
-	release
-# 461 "data/maps/Zone0A/scripts.pory"
-	end
-# 462 "data/maps/Zone0A/scripts.pory"
-
-# 463 "data/maps/Zone0A/scripts.pory"
-Zone0A_EventScript_DaycareReceiveEgg:
-# 464 "data/maps/Zone0A/scripts.pory"
-	message Zone0A_Text_ReceivedEgg
-# 465 "data/maps/Zone0A/scripts.pory"
-	playfanfare MUS_LEVEL_UP
-# 466 "data/maps/Zone0A/scripts.pory"
-	waitfanfare
-# 467 "data/maps/Zone0A/scripts.pory"
-	waitbuttonpress
-# 468 "data/maps/Zone0A/scripts.pory"
-	msgbox Zone0A_Text_TakeGoodCareOfIt, MSGBOX_DEFAULT
-# 469 "data/maps/Zone0A/scripts.pory"
-	special GiveEggFromDaycare
-# 470 "data/maps/Zone0A/scripts.pory"
-	clearflag FLAG_PBL_PENDING_DAYCARE_EGG
-# 471 "data/maps/Zone0A/scripts.pory"
-	release
-# 472 "data/maps/Zone0A/scripts.pory"
-	end
-# 473 "data/maps/Zone0A/scripts.pory"
-
-# 474 "data/maps/Zone0A/scripts.pory"
-Zone0A_EventScript_CheckOnOneMon:
-# 475 "data/maps/Zone0A/scripts.pory"
 	special GetDaycareMonNicknames
+# 437 "data/maps/Zone0A/scripts.pory"
+	specialvar VAR_RESULT, GetDaycareState
+# 438 "data/maps/Zone0A/scripts.pory"
+	compare VAR_RESULT, DAYCARE_EGG_WAITING
+# 439 "data/maps/Zone0A/scripts.pory"
+	goto_if_eq Zone0A_EventScript_DaycareEggWaiting
+# 440 "data/maps/Zone0A/scripts.pory"
+	compare VAR_RESULT, DAYCARE_ONE_MON
+# 441 "data/maps/Zone0A/scripts.pory"
+	goto_if_eq Zone0A_EventScript_CheckOnOneMon
+# 442 "data/maps/Zone0A/scripts.pory"
+	compare VAR_RESULT, DAYCARE_TWO_MONS
+# 443 "data/maps/Zone0A/scripts.pory"
+	goto_if_eq Zone0A_EventScript_CheckOnTwoMons
+# 444 "data/maps/Zone0A/scripts.pory"
+	msgbox Zone0A_Text_SeeWifeIfYoudLikeMeToRaiseMon, MSGBOX_DEFAULT
+# 445 "data/maps/Zone0A/scripts.pory"
+	release
+# 446 "data/maps/Zone0A/scripts.pory"
+	end
+# 447 "data/maps/Zone0A/scripts.pory"
+
+# 448 "data/maps/Zone0A/scripts.pory"
+Zone0A_EventScript_DaycareEggWaiting:
+# 449 "data/maps/Zone0A/scripts.pory"
+	msgbox Zone0A_Text_DoYouWantEgg, MSGBOX_YESNO
+# 450 "data/maps/Zone0A/scripts.pory"
+	compare VAR_RESULT, YES
+# 451 "data/maps/Zone0A/scripts.pory"
+	goto_if_eq Zone0A_EventScript_DaycareAcceptEgg
+# 452 "data/maps/Zone0A/scripts.pory"
+	msgbox Zone0A_Text_IWillKeepDoYouWantIt, MSGBOX_YESNO
+# 453 "data/maps/Zone0A/scripts.pory"
+	compare VAR_RESULT, YES
+# 454 "data/maps/Zone0A/scripts.pory"
+	goto_if_eq Zone0A_EventScript_DaycareAcceptEgg
+# 455 "data/maps/Zone0A/scripts.pory"
+	msgbox Zone0A_Text_IllKeepIt, MSGBOX_DEFAULT
+# 456 "data/maps/Zone0A/scripts.pory"
+	clearflag FLAG_PBL_PENDING_DAYCARE_EGG
+# 457 "data/maps/Zone0A/scripts.pory"
+	special RejectEggFromDayCare
+# 458 "data/maps/Zone0A/scripts.pory"
+	release
+# 459 "data/maps/Zone0A/scripts.pory"
+	end
+# 460 "data/maps/Zone0A/scripts.pory"
+
+# 461 "data/maps/Zone0A/scripts.pory"
+Zone0A_EventScript_DaycareAcceptEgg:
+# 462 "data/maps/Zone0A/scripts.pory"
+	specialvar VAR_RESULT, CalculatePlayerPartyCount
+# 463 "data/maps/Zone0A/scripts.pory"
+	compare VAR_RESULT, PARTY_SIZE
+# 464 "data/maps/Zone0A/scripts.pory"
+	goto_if_ne Zone0A_EventScript_DaycareReceiveEgg
+# 465 "data/maps/Zone0A/scripts.pory"
+	msgbox Zone0A_Text_YouHaveNoRoomForIt, MSGBOX_DEFAULT
+# 466 "data/maps/Zone0A/scripts.pory"
+	release
+# 467 "data/maps/Zone0A/scripts.pory"
+	end
+# 468 "data/maps/Zone0A/scripts.pory"
+
+# 469 "data/maps/Zone0A/scripts.pory"
+Zone0A_EventScript_DaycareReceiveEgg:
+# 470 "data/maps/Zone0A/scripts.pory"
+	message Zone0A_Text_ReceivedEgg
+# 471 "data/maps/Zone0A/scripts.pory"
+	playfanfare MUS_LEVEL_UP
+# 472 "data/maps/Zone0A/scripts.pory"
+	waitfanfare
+# 473 "data/maps/Zone0A/scripts.pory"
+	waitbuttonpress
+# 474 "data/maps/Zone0A/scripts.pory"
+	msgbox Zone0A_Text_TakeGoodCareOfIt, MSGBOX_DEFAULT
+# 475 "data/maps/Zone0A/scripts.pory"
+	special GiveEggFromDaycare
 # 476 "data/maps/Zone0A/scripts.pory"
-	msgbox Zone0A_Text_YourMonIsDoingFine, MSGBOX_DEFAULT
+	clearflag FLAG_PBL_PENDING_DAYCARE_EGG
 # 477 "data/maps/Zone0A/scripts.pory"
 	release
 # 478 "data/maps/Zone0A/scripts.pory"
@@ -1027,108 +1031,120 @@ Zone0A_EventScript_CheckOnOneMon:
 # 479 "data/maps/Zone0A/scripts.pory"
 
 # 480 "data/maps/Zone0A/scripts.pory"
-Zone0A_EventScript_CheckOnTwoMons:
+Zone0A_EventScript_CheckOnOneMon:
 # 481 "data/maps/Zone0A/scripts.pory"
 	special GetDaycareMonNicknames
 # 482 "data/maps/Zone0A/scripts.pory"
-	msgbox Zone0A_Text_YourMonsAreDoingFine, MSGBOX_DEFAULT
+	msgbox Zone0A_Text_YourMonIsDoingFine, MSGBOX_DEFAULT
 # 483 "data/maps/Zone0A/scripts.pory"
-	special SetDaycareCompatibilityString
-# 484 "data/maps/Zone0A/scripts.pory"
-	special ShowFieldMessageStringVar4
-# 485 "data/maps/Zone0A/scripts.pory"
-	waitmessage
-# 486 "data/maps/Zone0A/scripts.pory"
-	waitbuttonpress
-# 487 "data/maps/Zone0A/scripts.pory"
 	release
-# 488 "data/maps/Zone0A/scripts.pory"
+# 484 "data/maps/Zone0A/scripts.pory"
 	end
+# 485 "data/maps/Zone0A/scripts.pory"
+
+# 486 "data/maps/Zone0A/scripts.pory"
+Zone0A_EventScript_CheckOnTwoMons:
+# 487 "data/maps/Zone0A/scripts.pory"
+	special GetDaycareMonNicknames
+# 488 "data/maps/Zone0A/scripts.pory"
+	msgbox Zone0A_Text_YourMonsAreDoingFine, MSGBOX_DEFAULT
 # 489 "data/maps/Zone0A/scripts.pory"
-
+	special SetDaycareCompatibilityString
 # 490 "data/maps/Zone0A/scripts.pory"
-Zone0A_Text_SeeWifeIfYoudLikeMeToRaiseMon:
+	special ShowFieldMessageStringVar4
 # 491 "data/maps/Zone0A/scripts.pory"
-	.string "I'm the Day-Care Man.\p"
+	waitmessage
 # 492 "data/maps/Zone0A/scripts.pory"
-	.string "I help take care of the precious\n"
+	waitbuttonpress
 # 493 "data/maps/Zone0A/scripts.pory"
-	.string "Pokémon of Trainers.\p"
+	release
 # 494 "data/maps/Zone0A/scripts.pory"
-	.string "If you'd like me to raise your Pokémon,\n"
+	end
 # 495 "data/maps/Zone0A/scripts.pory"
-	.string "have a word with my wife.$"
+
 # 496 "data/maps/Zone0A/scripts.pory"
-
+Zone0A_Text_SeeWifeIfYoudLikeMeToRaiseMon:
 # 497 "data/maps/Zone0A/scripts.pory"
-Zone0A_Text_DoYouWantEgg:
+	.string "I'm the Day-Care Man.\p"
 # 498 "data/maps/Zone0A/scripts.pory"
-	.string "Ah, it's you!\p"
+	.string "I help take care of the precious\n"
 # 499 "data/maps/Zone0A/scripts.pory"
-	.string "We were raising your Pokémon,\n"
+	.string "Pokémon of Trainers.\p"
 # 500 "data/maps/Zone0A/scripts.pory"
-	.string "and my goodness, were we surprised!\p"
+	.string "If you'd like me to raise your Pokémon,\n"
 # 501 "data/maps/Zone0A/scripts.pory"
-	.string "Your Pokémon had an Egg!\p"
+	.string "have a word with my wife.$"
 # 502 "data/maps/Zone0A/scripts.pory"
-	.string "We don't know how it got there,\n"
+
 # 503 "data/maps/Zone0A/scripts.pory"
-	.string "but your Pokémon had it.\p"
+Zone0A_Text_DoYouWantEgg:
 # 504 "data/maps/Zone0A/scripts.pory"
-	.string "You do want it, yes?$"
+	.string "Ah, it's you!\p"
 # 505 "data/maps/Zone0A/scripts.pory"
-
+	.string "We were raising your Pokémon,\n"
 # 506 "data/maps/Zone0A/scripts.pory"
-Zone0A_Text_YourMonIsDoingFine:
+	.string "and my goodness, were we surprised!\p"
 # 507 "data/maps/Zone0A/scripts.pory"
-	.string "Ah, it's you! Good to see you.\n"
+	.string "Your Pokémon had an Egg!\p"
 # 508 "data/maps/Zone0A/scripts.pory"
-	.string "Your {STR_VAR_1}'s doing fine.$"
+	.string "We don't know how it got there,\n"
 # 509 "data/maps/Zone0A/scripts.pory"
-
+	.string "but your Pokémon had it.\p"
 # 510 "data/maps/Zone0A/scripts.pory"
-Zone0A_Text_IllKeepIt:
+	.string "You do want it, yes?$"
 # 511 "data/maps/Zone0A/scripts.pory"
-	.string "Well then, I'll keep it.\n"
+
 # 512 "data/maps/Zone0A/scripts.pory"
-	.string "Thanks!$"
+Zone0A_Text_YourMonIsDoingFine:
 # 513 "data/maps/Zone0A/scripts.pory"
-
+	.string "Ah, it's you! Good to see you.\n"
 # 514 "data/maps/Zone0A/scripts.pory"
-Zone0A_Text_YouHaveNoRoomForIt:
+	.string "Your {STR_VAR_1}'s doing fine.$"
 # 515 "data/maps/Zone0A/scripts.pory"
-	.string "You have no room for it…\n"
+
 # 516 "data/maps/Zone0A/scripts.pory"
-	.string "Come back when you've made room.$"
+Zone0A_Text_IllKeepIt:
 # 517 "data/maps/Zone0A/scripts.pory"
-
+	.string "Well then, I'll keep it.\n"
 # 518 "data/maps/Zone0A/scripts.pory"
-Zone0A_Text_ReceivedEgg:
+	.string "Thanks!$"
 # 519 "data/maps/Zone0A/scripts.pory"
-	.string "{PLAYER} received the Egg from\n"
+
 # 520 "data/maps/Zone0A/scripts.pory"
-	.string "the Day-Care Man.$"
+Zone0A_Text_YouHaveNoRoomForIt:
 # 521 "data/maps/Zone0A/scripts.pory"
-
+	.string "You have no room for it…\n"
 # 522 "data/maps/Zone0A/scripts.pory"
-Zone0A_Text_TakeGoodCareOfIt:
+	.string "Come back when you've made room.$"
 # 523 "data/maps/Zone0A/scripts.pory"
-	.string "Take good care of it.$"
+
 # 524 "data/maps/Zone0A/scripts.pory"
-
+Zone0A_Text_ReceivedEgg:
 # 525 "data/maps/Zone0A/scripts.pory"
-Zone0A_Text_YourMonsAreDoingFine:
+	.string "{PLAYER} received the Egg from\n"
 # 526 "data/maps/Zone0A/scripts.pory"
-	.string "Ah, it's you! Your {STR_VAR_1} and\n"
+	.string "the Day-Care Man.$"
 # 527 "data/maps/Zone0A/scripts.pory"
-	.string "{STR_VAR_2} are doing fine.$"
-# 528 "data/maps/Zone0A/scripts.pory"
 
+# 528 "data/maps/Zone0A/scripts.pory"
+Zone0A_Text_TakeGoodCareOfIt:
 # 529 "data/maps/Zone0A/scripts.pory"
-Zone0A_Text_IWillKeepDoYouWantIt:
+	.string "Take good care of it.$"
 # 530 "data/maps/Zone0A/scripts.pory"
-	.string "I really will keep it.\n"
+
 # 531 "data/maps/Zone0A/scripts.pory"
+Zone0A_Text_YourMonsAreDoingFine:
+# 532 "data/maps/Zone0A/scripts.pory"
+	.string "Ah, it's you! Your {STR_VAR_1} and\n"
+# 533 "data/maps/Zone0A/scripts.pory"
+	.string "{STR_VAR_2} are doing fine.$"
+# 534 "data/maps/Zone0A/scripts.pory"
+
+# 535 "data/maps/Zone0A/scripts.pory"
+Zone0A_Text_IWillKeepDoYouWantIt:
+# 536 "data/maps/Zone0A/scripts.pory"
+	.string "I really will keep it.\n"
+# 537 "data/maps/Zone0A/scripts.pory"
 	.string "You do want this, yes?$"
 
 Zone0A_EventScript_Intro_Text_0:
@@ -1139,10 +1155,10 @@ Zone0A_EventScript_Intro_Text_0:
 	.string "challenges to face. Everything is meant\l"
 	.string "to help you on your journey.\p"
 	.string "As a welcome gift, I'd like you to have\n"
-	.string "this.$"
+	.string "these!$"
 
 Zone0A_EventScript_Intro_Text_1:
-# 23 "data/maps/Zone0A/scripts.pory"
+# 25 "data/maps/Zone0A/scripts.pory"
 	.string "I run this green building that you just\n"
 	.string "walked out of, called the {COLOR GREEN}TPI{COLOR DARK_GRAY} or\l"
 	.string "{COLOR GREEN}Teleport Institute{COLOR DARK_GRAY}.\p"
@@ -1153,7 +1169,7 @@ Zone0A_EventScript_Intro_Text_1:
 	.string "anywhere!$"
 
 Zone0A_EventScript_Intro_Text_2:
-# 28 "data/maps/Zone0A/scripts.pory"
+# 30 "data/maps/Zone0A/scripts.pory"
 	.string "Oh, right! I just remembered something.\p"
 	.string "I've heard the Pokémon Day-Care nearby\n"
 	.string "is having a special gift Pokémon\l"
@@ -1161,144 +1177,149 @@ Zone0A_EventScript_Intro_Text_2:
 	.string "It might be worth a look.$"
 
 Zone0A_EventScript_Scientist_Text_0:
-# 41 "data/maps/Zone0A/scripts.pory"
+# 43 "data/maps/Zone0A/scripts.pory"
 	.string "Where do you want to go to?$"
 
 Zone0A_EventScript_Scientist_Text_1:
-# 44 "data/maps/Zone0A/scripts.pory"
+# 46 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 1$"
 
 Zone0A_EventScript_Scientist_Text_2:
-# 47 "data/maps/Zone0A/scripts.pory"
+# 49 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 2$"
 
 Zone0A_EventScript_Scientist_Text_3:
-# 50 "data/maps/Zone0A/scripts.pory"
+# 52 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 3$"
 
 Zone0A_EventScript_Scientist_Text_4:
-# 53 "data/maps/Zone0A/scripts.pory"
+# 55 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 4$"
 
 Zone0A_EventScript_Scientist_Text_5:
-# 56 "data/maps/Zone0A/scripts.pory"
+# 58 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 5$"
 
 Zone0A_EventScript_Scientist_Text_6:
-# 59 "data/maps/Zone0A/scripts.pory"
+# 61 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 6$"
 
 Zone0A_EventScript_Scientist_Text_7:
-# 62 "data/maps/Zone0A/scripts.pory"
+# 64 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 7$"
 
 Zone0A_EventScript_Scientist_Text_8:
-# 65 "data/maps/Zone0A/scripts.pory"
+# 67 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 8$"
 
 Zone0A_EventScript_Scientist_Text_9:
-# 68 "data/maps/Zone0A/scripts.pory"
+# 70 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 9$"
 
 Zone0A_EventScript_Scientist_Text_10:
-# 71 "data/maps/Zone0A/scripts.pory"
+# 73 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 10$"
 
 Zone0A_EventScript_Scientist_Text_11:
-# 74 "data/maps/Zone0A/scripts.pory"
+# 76 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 11$"
 
 Zone0A_EventScript_Scientist_Text_12:
-# 77 "data/maps/Zone0A/scripts.pory"
+# 79 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 12$"
 
 Zone0A_EventScript_Scientist_Text_13:
-# 80 "data/maps/Zone0A/scripts.pory"
+# 82 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 13$"
 
 Zone0A_EventScript_Scientist_Text_14:
-# 83 "data/maps/Zone0A/scripts.pory"
+# 85 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 14$"
 
 Zone0A_EventScript_Scientist_Text_15:
-# 86 "data/maps/Zone0A/scripts.pory"
+# 88 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 15$"
 
 Zone0A_EventScript_Scientist_Text_16:
-# 89 "data/maps/Zone0A/scripts.pory"
+# 91 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 16$"
 
 Zone0A_EventScript_Scientist_Text_17:
-# 92 "data/maps/Zone0A/scripts.pory"
+# 94 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 17$"
 
 Zone0A_EventScript_Scientist_Text_18:
-# 95 "data/maps/Zone0A/scripts.pory"
+# 97 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 18$"
 
 Zone0A_EventScript_Scientist_Text_19:
-# 98 "data/maps/Zone0A/scripts.pory"
+# 100 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 19$"
 
 Zone0A_EventScript_Scientist_Text_20:
-# 101 "data/maps/Zone0A/scripts.pory"
+# 103 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 20$"
 
 Zone0A_EventScript_Scientist_Text_21:
-# 104 "data/maps/Zone0A/scripts.pory"
+# 106 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 21$"
 
 Zone0A_EventScript_Scientist_Text_22:
-# 107 "data/maps/Zone0A/scripts.pory"
+# 109 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 22$"
 
 Zone0A_EventScript_Scientist_Text_23:
-# 110 "data/maps/Zone0A/scripts.pory"
+# 112 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 23$"
 
 Zone0A_EventScript_Scientist_Text_24:
-# 113 "data/maps/Zone0A/scripts.pory"
+# 115 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 24$"
 
 Zone0A_EventScript_Scientist_Text_25:
-# 116 "data/maps/Zone0A/scripts.pory"
+# 118 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 25$"
 
 Zone0A_EventScript_Scientist_Text_26:
-# 119 "data/maps/Zone0A/scripts.pory"
+# 121 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 26$"
 
 Zone0A_EventScript_Scientist_Text_27:
-# 122 "data/maps/Zone0A/scripts.pory"
+# 124 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 27$"
 
 Zone0A_EventScript_Scientist_Text_28:
-# 125 "data/maps/Zone0A/scripts.pory"
+# 127 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 28$"
 
 Zone0A_EventScript_Scientist_Text_29:
-# 128 "data/maps/Zone0A/scripts.pory"
+# 130 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 29$"
 
 Zone0A_EventScript_Scientist_Text_30:
-# 131 "data/maps/Zone0A/scripts.pory"
+# 133 "data/maps/Zone0A/scripts.pory"
 	.string "Zone 30$"
 
 Zone0A_EventScript_Scientist_Text_31:
-# 133 "data/maps/Zone0A/scripts.pory"
+# 135 "data/maps/Zone0A/scripts.pory"
 	.string "Cancel$"
 
 Zone0A_EventScript_Scientist_Text_32:
-# 366 "data/maps/Zone0A/scripts.pory"
+# 368 "data/maps/Zone0A/scripts.pory"
 	.string "Let me know if you need to go to any\n"
 	.string "prior areas.$"
 
 Zone0A_EventScript_Collector_Text_0:
-# 375 "data/maps/Zone0A/scripts.pory"
+# 377 "data/maps/Zone0A/scripts.pory"
 	.string "TEMP$"
 
 Zone0A_EventScript_BerryGirl_Text_0:
-# 384 "data/maps/Zone0A/scripts.pory"
+# 386 "data/maps/Zone0A/scripts.pory"
+	.string "Hey there! You look new around here.\p"
+	.string "Take this as a present!$"
+
+Zone0A_EventScript_BerryGirl_Text_1:
+# 390 "data/maps/Zone0A/scripts.pory"
 	.string "I'm the caretaker of the berry fields\n"
 	.string "here.\p"
 	.string "The soil is getting too hard to farm any\n"
@@ -1308,8 +1329,8 @@ Zone0A_EventScript_BerryGirl_Text_0:
 	.string "Feel free to pick any Berries I may have\n"
 	.string "left.$"
 
-Zone0A_EventScript_BerryGirl_Text_1:
-# 386 "data/maps/Zone0A/scripts.pory"
+Zone0A_EventScript_BerryGirl_Text_2:
+# 392 "data/maps/Zone0A/scripts.pory"
 	.string "I'm the caretaker of the berry fields\n"
 	.string "here.\p"
 	.string "You should try growing some berries\n"

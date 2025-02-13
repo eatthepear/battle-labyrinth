@@ -18,8 +18,10 @@ script Zone0A_EventScript_Intro {
 	waitse
 	applymovement(15, Common_Movement_WalkLeft3)
 	waitmovement(0)
-	msgbox(format("Hello, {PLAYER}.\pWelcome to my home, {COLOR GREEN}Harvest Road{COLOR DARK_GRAY}.\pThere are no trainers here, and no challenges to face. Everything is meant to help you on your journey.\pAs a welcome gift, I'd like you to have this."), MSGBOX_DEFAULT)
-	giveitem(ITEM_WAILMER_PAIL)
+	msgbox(format("Hello, {PLAYER}.\pWelcome to my home, {COLOR GREEN}Harvest Road{COLOR DARK_GRAY}.\pThere are no trainers here, and no challenges to face. Everything is meant to help you on your journey.\pAs a welcome gift, I'd like you to have these!"), MSGBOX_DEFAULT)
+	giveitem(ITEM_GREEN_APRICORN)
+	giveitem(ITEM_RED_APRICORN)
+	giveitem(ITEM_BLUE_APRICORN)
 	msgbox(format("I run this green building that you just walked out of, called the {COLOR GREEN}TPI{COLOR DARK_GRAY} or {COLOR GREEN}Teleport Institute{COLOR DARK_GRAY}.\pThat door on the left leads back to the Sanctuary, while this door on the right is for prior areas.\pLet me know if I can help you get anywhere!"))
 	applymovement(15, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
@@ -380,6 +382,10 @@ script Zone0A_EventScript_Collector {
 script Zone0A_EventScript_BerryGirl {
 	lock
 	faceplayer
+	if (checkitem(ITEM_WAILMER_PAIL) == FALSE) {
+		msgbox(format("Hey there! You look new around here.\pTake this as a present!"))
+		giveitem(ITEM_WAILMER_PAIL)
+	}
 	if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_RED_THUMB)) {
 		msgbox(format("I'm the caretaker of the berry fields here.\pThe soil is getting too hard to farm any more though, plus with the wild Pokémon that eat the Berries, it's impossible to grow more.\pFeel free to pick any Berries I may have left."))
 	} else {
