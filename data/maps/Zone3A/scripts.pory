@@ -282,7 +282,7 @@ script Zone3A_EventScript_ChillingWaterTutor {
 	faceplayer
 	showmoneybox(0, 0, 0)
 	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER) == TRUE) {
-		msgbox(format("Ho there, trainer!\pAre your Water Pokémon interested in learning a new technique? I call it: Chilling Water!\pI can teach one of your Pokémon Chilling Water for the low price of ¥500. Interested?"), MSGBOX_YESNO)
+		msgbox(format("Ho there, trainer!\pAre your Water Pokémon interested in learning a new technique? I call it: Chilling Water!\pI can teach one of your Pokémon Chilling Water for the low price of ¥200. Interested?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
 			msgbox(format("Good day to you!"))
@@ -290,7 +290,7 @@ script Zone3A_EventScript_ChillingWaterTutor {
 			end
 		}
 	} else {
-		msgbox(format("Ho there, trainer!\pAre your Water Pokémon interested in learning a new technique? I call it: Chilling Water!\pI can teach one of your Pokémon Chilling Water. First time is free, while subsequent times cost ¥500! Interested?"), MSGBOX_YESNO)
+		msgbox(format("Ho there, trainer!\pAre your Water Pokémon interested in learning a new technique? I call it: Chilling Water!\pI can teach one of your Pokémon Chilling Water. First time is free, while subsequent times cost ¥200! Interested?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
 			msgbox(format("Good day to you!"))
@@ -299,7 +299,7 @@ script Zone3A_EventScript_ChillingWaterTutor {
 		}
 	}
 	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER) == TRUE) {
-		checkmoney(500, 0)
+		checkmoney(200, 0)
 		if (var(VAR_RESULT) == FALSE) {
 			msgbox("Hate to break it to you, but you don't have enough money.")
 			hidemoneybox
@@ -325,9 +325,9 @@ script Zone3A_EventScript_ChillingWaterTutor {
 	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER) == FALSE) {
 		setflag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER)
 	} else {
-		removemoney(500)
+		removemoney(200)
 		updatemoneybox
-		msgbox(format("{PLAYER} paid ¥500."), MSGBOX_DEFAULT)
+		msgbox(format("{PLAYER} paid ¥200."), MSGBOX_DEFAULT)
 		msgbox(format("Good day to you!"))
 	}
 	hidemoneybox

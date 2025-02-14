@@ -57,7 +57,7 @@ script Zone4E_EventScript_StruggleBugTutor {
 	faceplayer
 	showmoneybox(0, 0, 0)
 	if (flag(FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG) == TRUE) {
-		msgbox(format("Hey! You made it to the end. I bet it was a struggle getting here, right?\pYou know what's not a struggle? The move Struggle Bug!\pI can teach Struggle Bug to one of your Pokémon for the low price of ¥500. How about it?"), MSGBOX_YESNO)
+		msgbox(format("Hey! You made it to the end. I bet it was a struggle getting here, right?\pYou know what's not a struggle? The move Struggle Bug!\pI can teach Struggle Bug to one of your Pokémon for the low price of ¥200. How about it?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
 			msgbox(format("Okay, come back again."))
@@ -65,7 +65,7 @@ script Zone4E_EventScript_StruggleBugTutor {
 			end
 		}
 	} else {
-		msgbox(format("Hey! You made it to the end. I bet it was a struggle getting here, right?\pYou know what's not a struggle? The move Struggle Bug!\pI can teach Struggle Bug to one of your Pokémon. First time is free, while subsequent times cost ¥500! How about it?"), MSGBOX_YESNO)
+		msgbox(format("Hey! You made it to the end. I bet it was a struggle getting here, right?\pYou know what's not a struggle? The move Struggle Bug!\pI can teach Struggle Bug to one of your Pokémon. First time is free, while subsequent times cost ¥200! How about it?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
 			msgbox(format("Okay, come back again."))
@@ -74,7 +74,7 @@ script Zone4E_EventScript_StruggleBugTutor {
 		}
 	}
 	if (flag(FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG) == TRUE) {
-		checkmoney(500, 0)
+		checkmoney(200, 0)
 		if (var(VAR_RESULT) == FALSE) {
 			msgbox("Hate to break it to you, but you don't have enough money.")
 			hidemoneybox
@@ -100,9 +100,9 @@ script Zone4E_EventScript_StruggleBugTutor {
 	if (flag(FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG) == FALSE) {
 		setflag(FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG)
 	} else {
-		removemoney(500)
+		removemoney(200)
 		updatemoneybox
-		msgbox(format("{PLAYER} paid ¥500."), MSGBOX_DEFAULT)
+		msgbox(format("{PLAYER} paid ¥200."), MSGBOX_DEFAULT)
 		msgbox(format("Okay, come back again."))
 	}
 	hidemoneybox

@@ -582,7 +582,7 @@ Zone3A_EventScript_ChillingWaterTutor_5:
 # 325 "data/maps/Zone3A/scripts.pory"
 	goto_if_unset FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER, Zone3A_EventScript_ChillingWaterTutor_18
 # 328 "data/maps/Zone3A/scripts.pory"
-	removemoney 500
+	removemoney 200
 # 329 "data/maps/Zone3A/scripts.pory"
 	updatemoneybox
 # 330 "data/maps/Zone3A/scripts.pory"
@@ -606,7 +606,7 @@ Zone3A_EventScript_ChillingWaterTutor_2:
 
 Zone3A_EventScript_ChillingWaterTutor_6:
 # 302 "data/maps/Zone3A/scripts.pory"
-	checkmoney 500, 0
+	checkmoney 200, 0
 # 303 "data/maps/Zone3A/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Zone3A_EventScript_ChillingWaterTutor_15
@@ -912,7 +912,7 @@ Zone3A_EventScript_ChillingWaterTutor_Text_0:
 	.string "learning a new technique? I call it:\l"
 	.string "Chilling Water!\p"
 	.string "I can teach one of your Pokémon\n"
-	.string "Chilling Water for the low price of ¥500.\l"
+	.string "Chilling Water for the low price of ¥200.\l"
 	.string "Interested?$"
 
 Zone3A_EventScript_ChillingWaterTutor_Text_1:
@@ -927,7 +927,7 @@ Zone3A_EventScript_ChillingWaterTutor_Text_2:
 	.string "Chilling Water!\p"
 	.string "I can teach one of your Pokémon\n"
 	.string "Chilling Water. First time is free, while\l"
-	.string "subsequent times cost ¥500!\l"
+	.string "subsequent times cost ¥200!\l"
 	.string "Interested?$"
 
 Zone3A_EventScript_ChillingWaterTutor_Text_3:
@@ -944,7 +944,7 @@ Zone3A_EventScript_ChillingWaterTutor_Text_5:
 
 Zone3A_EventScript_ChillingWaterTutor_Text_6:
 # 330 "data/maps/Zone3A/scripts.pory"
-	.string "{PLAYER} paid ¥500.$"
+	.string "{PLAYER} paid ¥200.$"
 
 Zone3A_Text_Leviathan3Intro::
 # 128 "data/maps/Zone3A/scripts.pory"

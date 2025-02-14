@@ -104,14 +104,14 @@ script Zone5B_EventScript_BuyPikaClone {
 		end
 	}
 	showmoneybox(0, 0, 0)
-	msgbox(format("You seem like the type that would like Pikachu!\pNow, I don't have Pikachu for sale, but I do have some very similar Pokémon, each for only ¥1000!"), MSGBOX_YESNO)
+	msgbox(format("You seem like the type that would like Pikachu!\pNow, I don't have Pikachu for sale, but I do have some very similar Pokémon, each for only ¥500!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		hidemoneybox
 		msgbox(format("Alrighty, well, you just come on back if you change your mind."))
 		release
 		end
 	}
-	checkmoney(1000, 0)
+	checkmoney(500, 0)
 	if (var(VAR_RESULT) == FALSE) {
 		msgbox("You don't have enough money.")
 		hidemoneybox
@@ -257,7 +257,7 @@ script Zone5B_EventScript_BuyPikaClone {
 		}
 	}
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
-		msgbox(format("Just to confirm…\pYou're sure you want to buy a Pikachu clone for ¥1000?"), MSGBOX_YESNO)
+		msgbox(format("Just to confirm…\pYou're sure you want to buy a Pikachu clone for ¥500?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
 			msgbox(format("Alrighty, well, you just come on back if you change your mind."))
@@ -267,7 +267,7 @@ script Zone5B_EventScript_BuyPikaClone {
 		setflag(FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE)
 	} else {
 		bufferspeciesname(0, VAR_TEMP_1)
-		msgbox(format("Just to confirm…\pYou're sure you want to buy {STR_VAR_1} for ¥1000?"), MSGBOX_YESNO)
+		msgbox(format("Just to confirm…\pYou're sure you want to buy {STR_VAR_1} for ¥500?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
 			msgbox(format("Alrighty, well, you just come on back if you change your mind."))
@@ -279,7 +279,7 @@ script Zone5B_EventScript_BuyPikaClone {
 		special(SendChosenMonToPC)
 		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
 	}
-	removemoney(1000)
+	removemoney(500)
 	updatemoneybox
 	msgbox(format("I appreciate it!"), MSGBOX_DEFAULT)
 	hidemoneybox
@@ -306,7 +306,7 @@ script Zone5B_EventScript_NeverMissTutor {
 	faceplayer
 	showmoneybox(0, 0, 0)
 	if (flag(FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS) == TRUE) {
-		msgbox(format("Hey there! Ever been stuck because the opposing Pokémon is too hard to hit? Well, I specialize in teaching certain moves that always hit, no matter how evasive the foe is!\pFor the low price of ¥1000, I could teach one of your Pokémon one of these moves. Deal?"), MSGBOX_YESNO)
+		msgbox(format("Hey there! Ever been stuck because the opposing Pokémon is too hard to hit? Well, I specialize in teaching certain moves that always hit, no matter how evasive the foe is!\pFor the low price of ¥400, I could teach one of your Pokémon one of these moves. Deal?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
 			msgbox(format("Evasion is really tough to deal with; come back if you need!"))
@@ -314,7 +314,7 @@ script Zone5B_EventScript_NeverMissTutor {
 			end
 		}
 	} else {
-		msgbox(format("Hey there! Ever been stuck because the opposing Pokémon is too hard to hit? Well, I specialize in teaching certain moves that always hit, no matter how evasive the foe is!\pFor the low price of ¥1000, I could teach one of your Pokémon one of these moves. Tell you what, the first time I do this, it'll be free! Deal?"), MSGBOX_YESNO)
+		msgbox(format("Hey there! Ever been stuck because the opposing Pokémon is too hard to hit? Well, I specialize in teaching certain moves that always hit, no matter how evasive the foe is!\pFor the low price of ¥400, I could teach one of your Pokémon one of these moves. Tell you what, the first time I do this, it'll be free! Deal?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
 			msgbox(format("Evasion is really tough to deal with; come back if you need!"))
@@ -323,7 +323,7 @@ script Zone5B_EventScript_NeverMissTutor {
 		}
 	}
 	if (flag(FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS) == TRUE) {
-		checkmoney(1000, 0)
+		checkmoney(400, 0)
 		if (var(VAR_RESULT) == FALSE) {
 			msgbox("Hate to break it to you, but you don't have enough money.")
 			hidemoneybox
@@ -371,9 +371,9 @@ script Zone5B_EventScript_NeverMissTutor {
 	if (flag(FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS) == FALSE) {
 		setflag(FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS)
 	} else {
-		removemoney(1000)
+		removemoney(400)
 		updatemoneybox
-		msgbox(format("{PLAYER} paid ¥1000."), MSGBOX_DEFAULT)
+		msgbox(format("{PLAYER} paid ¥400."), MSGBOX_DEFAULT)
 		msgbox(format("Evasion is really tough to deal with; come back if you need!"))
 	}
 	hidemoneybox

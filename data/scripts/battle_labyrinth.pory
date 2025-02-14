@@ -1716,12 +1716,12 @@ script EventScript_Shop_BreederF {
 	lock
 	faceplayer
 	showmoneybox(0, 0, 0)
-	msgbox(format("My brother and I are twins. We specialize in light training for your Pokémon.\pWould you be interested in changing a Pokémon's nature to Serious for the price of ¥100?"), MSGBOX_YESNO)
+	msgbox(format("My brother and I are twins. We specialize in light training for your Pokémon.\pWould you be interested in changing a Pokémon's nature to Serious for the price of ¥50?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		hidemoneybox
 		msgbox(Shop_Breeders_Exit)
 	} else {
-		checkmoney(100, 0)
+		checkmoney(50, 0)
 		if (var(VAR_RESULT) == FALSE) {
 			msgbox("You don't have enough money.")
 			hidemoneybox
@@ -1742,7 +1742,7 @@ script EventScript_Shop_BreederF {
 					copyvar(VAR_TEMP_1, VAR_0x8004)
 					msgbox(format("Are you sure you want your {STR_VAR_1} to have a Serious nature?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
-						removemoney(100)
+						removemoney(50)
 						updatemoneybox
 						setvar(VAR_TEMP_2, 12)
 						special(SetMonNature)
@@ -1767,12 +1767,12 @@ script EventScript_Shop_BreederM {
 	lock
 	faceplayer
 	showmoneybox(0, 0, 0)
-	msgbox(format("My sister and I are twins. We specialize in light training for your Pokémon.\pWould you be interested in swapping your Pokemon's normal ability to its other normal ability for the price of ¥100?"), MSGBOX_YESNO)
+	msgbox(format("My sister and I are twins. We specialize in light training for your Pokémon.\pWould you be interested in swapping your Pokemon's normal ability to its other normal ability for the price of ¥50?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		hidemoneybox
 		msgbox(Shop_Breeders_Exit)
 	} else {
-		checkmoney(100, 0)
+		checkmoney(50, 0)
 		if (var(VAR_RESULT) == FALSE) {
 			msgbox("You don't have enough money.")
 			hidemoneybox
@@ -1808,7 +1808,7 @@ script EventScript_Shop_BreederM {
 							msgbox(format("Are you sure you want to change your {STR_VAR_3}'s ability from {STR_VAR_1} to {STR_VAR_2}?"), MSGBOX_YESNO)
 							if (var(VAR_RESULT) == YES) {
 								copyvar(VAR_TEMP_1, VAR_0x8004)
-								removemoney(100)
+								removemoney(50)
 								updatemoneybox
 								setvar(VAR_TEMP_2, 1)
 								special(ChangePokemonAbility)
@@ -1826,7 +1826,7 @@ script EventScript_Shop_BreederM {
 						msgbox(format("Are you sure you want to change your {STR_VAR_3}'s ability from {STR_VAR_2} to {STR_VAR_1}?"), MSGBOX_YESNO)
 						if (var(VAR_RESULT) == YES) {
 							copyvar(VAR_TEMP_1, VAR_0x8004)
-							removemoney(100)
+							removemoney(50)
 							updatemoneybox
 							setvar(VAR_TEMP_2, 0)
 							special(ChangePokemonAbility)
@@ -3852,6 +3852,7 @@ script Debug_CheatStart_PBL {
 	settrainerflag(TRAINER_PBL_KENNETH)
 	settrainerflag(TRAINER_PBL_KEVIN)
 	setflag(FLAG_BEAT_LEVIATHAN_5)
+	addmoney(1000)
 	// zone 6
 	message(format("Zone 6 options"))
 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
@@ -3889,6 +3890,7 @@ script Debug_CheatStart_PBL {
 	settrainerflag(TRAINER_PBL_VIC_AND_DELL)
 	settrainerflag(TRAINER_PBL_MINA)
 	setflag(FLAG_BEAT_LEVIATHAN_6)
+	addmoney(1000)
 	// zone 7
 	message(format("Zone 7 options"))
 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Tree")

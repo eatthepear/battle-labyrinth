@@ -119,7 +119,7 @@ Zone2B_EventScript_BuyBug_4:
 	compare VAR_RESULT, NO
 	goto_if_eq Zone2B_EventScript_BuyBug_13
 # 97 "data/maps/Zone2B/scripts.pory"
-	checkmoney 500, 0
+	checkmoney 200, 0
 # 98 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Zone2B_EventScript_BuyBug_16
@@ -173,7 +173,7 @@ Zone2B_EventScript_BuyBug_39:
 	goto_if_eq Zone2B_EventScript_BuyBug_50
 Zone2B_EventScript_BuyBug_49:
 # 298 "data/maps/Zone2B/scripts.pory"
-	removemoney 500
+	removemoney 200
 # 299 "data/maps/Zone2B/scripts.pory"
 	updatemoneybox
 # 300 "data/maps/Zone2B/scripts.pory"
@@ -867,7 +867,7 @@ Zone2B_EventScript_BuyBug_Text_6:
 	.string "Would you care to buy a Bug-type\n"
 	.string "Pokémon?\p"
 	.string "I've got quite the great selection for\n"
-	.string "only ¥500!$"
+	.string "only ¥200!$"
 
 Zone2B_EventScript_BuyBug_Text_7:
 # 99 "data/maps/Zone2B/scripts.pory"
@@ -947,13 +947,13 @@ Zone2B_EventScript_BuyBug_Text_23:
 # 276 "data/maps/Zone2B/scripts.pory"
 	.string "Just to confirm…\p"
 	.string "You're sure you want to buy a Bug for\n"
-	.string "¥500?$"
+	.string "¥200?$"
 
 Zone2B_EventScript_BuyBug_Text_24:
 # 286 "data/maps/Zone2B/scripts.pory"
 	.string "Just to confirm…\p"
 	.string "You're sure you want to buy\n"
-	.string "{STR_VAR_1} for ¥500?$"
+	.string "{STR_VAR_1} for ¥200?$"
 
 Zone2B_EventScript_BuyBug_Text_25:
 # 300 "data/maps/Zone2B/scripts.pory"

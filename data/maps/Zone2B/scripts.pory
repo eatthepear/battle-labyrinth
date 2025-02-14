@@ -87,14 +87,14 @@ script Zone2B_EventScript_BuyBug {
 		end
 	}
 	showmoneybox(0, 0, 0)
-	msgbox(format("Would you care to buy a Bug-type Pokémon?\pI've got quite the great selection for only ¥500!"), MSGBOX_YESNO)
+	msgbox(format("Would you care to buy a Bug-type Pokémon?\pI've got quite the great selection for only ¥200!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		hidemoneybox
 		msgbox(format("You don't want any? Fine. More for me."))
 		release
 		end
 	}
-	checkmoney(500, 0)
+	checkmoney(200, 0)
 	if (var(VAR_RESULT) == FALSE) {
 		msgbox("You don't have enough money.")
 		hidemoneybox
@@ -273,7 +273,7 @@ script Zone2B_EventScript_BuyBug {
 		}
 	}
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
-		msgbox(format("Just to confirm…\pYou're sure you want to buy a Bug for ¥500?"), MSGBOX_YESNO)
+		msgbox(format("Just to confirm…\pYou're sure you want to buy a Bug for ¥200?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
 			msgbox(format("You don't want any? Fine. More for me."))
@@ -283,7 +283,7 @@ script Zone2B_EventScript_BuyBug {
 		setflag(FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG)
 	} else {
 		bufferspeciesname(0, VAR_TEMP_1)
-		msgbox(format("Just to confirm…\pYou're sure you want to buy {STR_VAR_1} for ¥500?"), MSGBOX_YESNO)
+		msgbox(format("Just to confirm…\pYou're sure you want to buy {STR_VAR_1} for ¥200?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
 			msgbox(format("You don't want any? Fine. More for me."))
@@ -295,7 +295,7 @@ script Zone2B_EventScript_BuyBug {
 		special(SendChosenMonToPC)
 		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
 	}
-	removemoney(500)
+	removemoney(200)
 	updatemoneybox
 	msgbox(format("Ehehehe, thank you…"), MSGBOX_DEFAULT)
 	hidemoneybox

@@ -27,14 +27,14 @@ script Zone8A_EventScript_BuyTyrogue {
 		end
 	}
 	showmoneybox(0, 0, 0)
-	msgbox(format("I'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pErr… Oh!\pYou look like a capable Trainer!\pAre you interested in raising this Tyrogue?\pI won't part with it without ¥2000!"), MSGBOX_YESNO)
+	msgbox(format("I'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pErr… Oh!\pYou look like a capable Trainer!\pAre you interested in raising this Tyrogue?\pI won't part with it without ¥1000!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		hidemoneybox
 		msgbox(format("ALRIGHT! BACK TO TRAINING!"))
 		release
 		end
 	}
-	checkmoney(2000, 0)
+	checkmoney(1000, 0)
 	if (var(VAR_RESULT) == FALSE) {
 		msgbox("You don't have enough money.\pALRIGHT! BACK TO TRAINING!")
 		hidemoneybox
@@ -82,7 +82,7 @@ script Zone8A_EventScript_BuyTyrogue {
 			end
 		}
 	}
-	msgbox(format("Just to confirm…\pYou're sure you want to buy Tyrogue for ¥2000?"), MSGBOX_YESNO)
+	msgbox(format("Just to confirm…\pYou're sure you want to buy Tyrogue for ¥1000?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		hidemoneybox
 		msgbox(format("ALRIGHT! BACK TO TRAINING!"))
@@ -94,7 +94,7 @@ script Zone8A_EventScript_BuyTyrogue {
 		special(SendChosenMonToPC)
 		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
 	}
-	removemoney(2000)
+	removemoney(1000)
 	updatemoneybox
 	msgbox(format("GOOD PURCHASE!"), MSGBOX_DEFAULT)
 	hidemoneybox

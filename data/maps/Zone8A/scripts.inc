@@ -51,7 +51,7 @@ Zone8A_EventScript_BuyTyrogue::
 	compare VAR_RESULT, NO
 	goto_if_eq Zone8A_EventScript_BuyTyrogue_5
 # 37 "data/maps/Zone8A/scripts.pory"
-	checkmoney 2000, 0
+	checkmoney 1000, 0
 # 38 "data/maps/Zone8A/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Zone8A_EventScript_BuyTyrogue_8
@@ -78,7 +78,7 @@ Zone8A_EventScript_BuyTyrogue_13:
 	goto_if_eq Zone8A_EventScript_BuyTyrogue_28
 Zone8A_EventScript_BuyTyrogue_27:
 # 97 "data/maps/Zone8A/scripts.pory"
-	removemoney 2000
+	removemoney 1000
 # 98 "data/maps/Zone8A/scripts.pory"
 	updatemoneybox
 # 99 "data/maps/Zone8A/scripts.pory"
@@ -444,7 +444,7 @@ Zone8A_EventScript_BuyTyrogue_Text_1:
 	.string "You look like a capable Trainer!\p"
 	.string "Are you interested in raising this\n"
 	.string "Tyrogue?\p"
-	.string "I won't part with it without ¥2000!$"
+	.string "I won't part with it without ¥1000!$"
 
 Zone8A_EventScript_BuyTyrogue_Text_2:
 # 39 "data/maps/Zone8A/scripts.pory"
@@ -470,7 +470,7 @@ Zone8A_EventScript_BuyTyrogue_Text_6:
 # 85 "data/maps/Zone8A/scripts.pory"
 	.string "Just to confirm…\p"
 	.string "You're sure you want to buy Tyrogue for\n"
-	.string "¥2000?$"
+	.string "¥1000?$"
 
 Zone8A_EventScript_BuyTyrogue_Text_7:
 # 99 "data/maps/Zone8A/scripts.pory"

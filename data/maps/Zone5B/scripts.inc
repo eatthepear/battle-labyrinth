@@ -208,7 +208,7 @@ Zone5B_EventScript_BuyPikaClone_1:
 	compare VAR_RESULT, NO
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_7
 # 114 "data/maps/Zone5B/scripts.pory"
-	checkmoney 1000, 0
+	checkmoney 500, 0
 # 115 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_10
@@ -256,7 +256,7 @@ Zone5B_EventScript_BuyPikaClone_30:
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_41
 Zone5B_EventScript_BuyPikaClone_40:
 # 282 "data/maps/Zone5B/scripts.pory"
-	removemoney 1000
+	removemoney 500
 # 283 "data/maps/Zone5B/scripts.pory"
 	updatemoneybox
 # 284 "data/maps/Zone5B/scripts.pory"
@@ -728,7 +728,7 @@ Zone5B_EventScript_NeverMissTutor_12:
 # 371 "data/maps/Zone5B/scripts.pory"
 	goto_if_unset FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS, Zone5B_EventScript_NeverMissTutor_25
 # 374 "data/maps/Zone5B/scripts.pory"
-	removemoney 1000
+	removemoney 400
 # 375 "data/maps/Zone5B/scripts.pory"
 	updatemoneybox
 # 376 "data/maps/Zone5B/scripts.pory"
@@ -752,7 +752,7 @@ Zone5B_EventScript_NeverMissTutor_2:
 
 Zone5B_EventScript_NeverMissTutor_6:
 # 326 "data/maps/Zone5B/scripts.pory"
-	checkmoney 1000, 0
+	checkmoney 400, 0
 # 327 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Zone5B_EventScript_NeverMissTutor_19
@@ -1128,7 +1128,7 @@ Zone5B_EventScript_BuyPikaClone_Text_1:
 	.string "Pikachu!\p"
 	.string "Now, I don't have Pikachu for sale, but I\n"
 	.string "do have some very similar Pokémon, each\l"
-	.string "for only ¥1000!$"
+	.string "for only ¥500!$"
 
 Zone5B_EventScript_BuyPikaClone_Text_2:
 # 110 "data/maps/Zone5B/scripts.pory"
@@ -1196,13 +1196,13 @@ Zone5B_EventScript_BuyPikaClone_Text_15:
 # 260 "data/maps/Zone5B/scripts.pory"
 	.string "Just to confirm…\p"
 	.string "You're sure you want to buy a Pikachu\n"
-	.string "clone for ¥1000?$"
+	.string "clone for ¥500?$"
 
 Zone5B_EventScript_BuyPikaClone_Text_16:
 # 270 "data/maps/Zone5B/scripts.pory"
 	.string "Just to confirm…\p"
 	.string "You're sure you want to buy\n"
-	.string "{STR_VAR_1} for ¥1000?$"
+	.string "{STR_VAR_1} for ¥500?$"
 
 Zone5B_EventScript_BuyPikaClone_Text_17:
 # 284 "data/maps/Zone5B/scripts.pory"
@@ -1235,8 +1235,8 @@ Zone5B_EventScript_NeverMissTutor_Text_0:
 	.string "Well, I specialize in teaching certain\l"
 	.string "moves that always hit, no matter how\l"
 	.string "evasive the foe is!\p"
-	.string "For the low price of ¥1000, I could\n"
-	.string "teach one of your Pokémon one of these\l"
+	.string "For the low price of ¥400, I could teach\n"
+	.string "one of your Pokémon one of these\l"
 	.string "moves. Deal?$"
 
 Zone5B_EventScript_NeverMissTutor_Text_1:
@@ -1251,8 +1251,8 @@ Zone5B_EventScript_NeverMissTutor_Text_2:
 	.string "Well, I specialize in teaching certain\l"
 	.string "moves that always hit, no matter how\l"
 	.string "evasive the foe is!\p"
-	.string "For the low price of ¥1000, I could\n"
-	.string "teach one of your Pokémon one of these\l"
+	.string "For the low price of ¥400, I could teach\n"
+	.string "one of your Pokémon one of these\l"
 	.string "moves. Tell you what, the first time I do\l"
 	.string "this, it'll be free! Deal?$"
 
@@ -1294,7 +1294,7 @@ Zone5B_EventScript_NeverMissTutor_Text_11:
 
 Zone5B_EventScript_NeverMissTutor_Text_12:
 # 376 "data/maps/Zone5B/scripts.pory"
-	.string "{PLAYER} paid ¥1000.$"
+	.string "{PLAYER} paid ¥400.$"
 
 Zone5B_Text_Leviathan5Intro::
 # 85 "data/maps/Zone5B/scripts.pory"

@@ -128,7 +128,7 @@ Zone4E_EventScript_StruggleBugTutor_5:
 # 100 "data/maps/Zone4E/scripts.pory"
 	goto_if_unset FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG, Zone4E_EventScript_StruggleBugTutor_18
 # 103 "data/maps/Zone4E/scripts.pory"
-	removemoney 500
+	removemoney 200
 # 104 "data/maps/Zone4E/scripts.pory"
 	updatemoneybox
 # 105 "data/maps/Zone4E/scripts.pory"
@@ -152,7 +152,7 @@ Zone4E_EventScript_StruggleBugTutor_2:
 
 Zone4E_EventScript_StruggleBugTutor_6:
 # 77 "data/maps/Zone4E/scripts.pory"
-	checkmoney 500, 0
+	checkmoney 200, 0
 # 78 "data/maps/Zone4E/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Zone4E_EventScript_StruggleBugTutor_15
@@ -284,7 +284,7 @@ Zone4E_EventScript_StruggleBugTutor_Text_0:
 	.string "You know what's not a struggle? The\n"
 	.string "move Struggle Bug!\p"
 	.string "I can teach Struggle Bug to one of your\n"
-	.string "Pokémon for the low price of ¥500. How\l"
+	.string "Pokémon for the low price of ¥200. How\l"
 	.string "about it?$"
 
 Zone4E_EventScript_StruggleBugTutor_Text_1:
@@ -299,7 +299,7 @@ Zone4E_EventScript_StruggleBugTutor_Text_2:
 	.string "move Struggle Bug!\p"
 	.string "I can teach Struggle Bug to one of your\n"
 	.string "Pokémon. First time is free, while\l"
-	.string "subsequent times cost ¥500! How about\l"
+	.string "subsequent times cost ¥200! How about\l"
 	.string "it?$"
 
 Zone4E_EventScript_StruggleBugTutor_Text_3:
@@ -316,7 +316,7 @@ Zone4E_EventScript_StruggleBugTutor_Text_5:
 
 Zone4E_EventScript_StruggleBugTutor_Text_6:
 # 105 "data/maps/Zone4E/scripts.pory"
-	.string "{PLAYER} paid ¥500.$"
+	.string "{PLAYER} paid ¥200.$"
 
 Zone4E_Text_Leviathan4Intro::
 # 46 "data/maps/Zone4E/scripts.pory"
