@@ -3412,15 +3412,21 @@ script EventScript_Collector {
 		dynmultipush("{COLOR GREEN}S1 - Beginner Safari", 1)
 	}
 	if (var(VAR_REVISITING_ZONE) != 2) {
-		dynmultipush("{COLOR GREEN}S2 - Forest River Safari", 2)
+		if (var(VAR_ZONE_0_STATE) > 1) {
+			dynmultipush("{COLOR GREEN}S2 - Forest River Safari", 2)
+		} elif (var(VAR_ZONE_0_STATE) == 1) {
+			dynmultipush("S2 - Unlock for ¥500", 12)
+		}
 	}
 	if (var(VAR_REVISITING_ZONE) == 0) {
-		dynmultipush("Exit", 11)
+		dynmultipush("Exit", 0)
 	} else {
-		dynmultipush("Return to Zone 0", 12)
+		dynmultipush("Return to Zone 0", 11)
 	}
 	dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 	switch (var(VAR_RESULT)) {
+		case 0:
+			msgbox(format("See you around sometime."))
 		case 1:
 			msgbox(format("Alright, let's go!"), MSGBOX_AUTOCLOSE)
 			setvar(VAR_REVISITING_ZONE, 1)
@@ -3432,11 +3438,27 @@ script EventScript_Collector {
 			warp(MAP_ZONE_S2A, 255, 10, 17)
 			waitstate
 		case 11:
-			msgbox(format("See you around sometime."))
-		case 12:
 			setvar(VAR_REVISITING_ZONE, 0)
 			warp(MAP_ZONE0A, 255, 71, 9)
 			waitstate
+		case 12:
+			showmoneybox(0, 0, 0)
+			msgbox(format("So, you're interested in unlocking S2 for ¥500?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				checkmoney(500, 0)
+				if (var(VAR_RESULT) == FALSE) {
+					msgbox("You don't have enough money.")
+				} else {
+					removemoney(500)
+					updatemoneybox
+					playfanfare(MUS_OBTAIN_ITEM)
+					msgbox(format("Alright! You unlocked {COLOR GREEN}S2 - Forest River Safari{COLOR DARK_GRAY} for ¥500!"))
+					waitfanfare
+					setvar(VAR_ZONE_0_STATE, 2)
+				}
+			}
+			hidemoneybox
+			msgbox(format("See you around sometime."))
 	}
 	release
 	end
