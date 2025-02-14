@@ -3535,6 +3535,22 @@ script Debug_CheatStart_PBL {
 	completesubquest(QUEST_SIGNS, SUB_QUEST_9)
 	setflag(FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES)
 	setvar(VAR_ZONE_0_STATE, 2)
+	// zone S1
+	setvar(VAR_TEMP_0, 51) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	msgbox(format("Zone S1 grass?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		setvar(VAR_TEMP_0, 52) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	}
+	setvar(VAR_TEMP_1, 3) // level
+	call(Debug_CheatStart_PBL_GenerateMon)
+	// zone S2
+	setvar(VAR_TEMP_0, 53) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	msgbox(format("Zone S2 grass?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		setflag(FLAG_TEMP_1) // special encounter
+	}
+	setvar(VAR_TEMP_1, 5) // level
+	call(Debug_CheatStart_PBL_GenerateMon)
 	// zone 0
 	setvar(VAR_TEMP_0, 0) // wild define gWildMonHeaders in src/data/wild_encounters.h
 	msgbox(format("Zone 0 grass?"), MSGBOX_YESNO)
