@@ -25,7 +25,11 @@ script Zone0A_EventScript_Intro {
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	msgbox(format("Oh, right! I just remembered something.\pI've heard the Pokémon Day-Care nearby is having a special gift Pokémon promotion.\pIt might be worth a look."), MSGBOX_AUTOCLOSE)
+	if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_INDEPENDENT)) {
+		msgbox(format("I've heard the Pokémon Day-Care takes care of your Pokémon for you.\pIt might be worth a look."), MSGBOX_AUTOCLOSE)
+	} else {
+		msgbox(format("Oh, right! I just remembered something.\pI've heard the Pokémon Day-Care nearby is having a special gift Pokémon promotion.\pIt might be worth a look."), MSGBOX_AUTOCLOSE)
+	}
 	applymovement(15, Common_Movement_WalkRight3)
 	waitmovement(0)
 	applymovement(15, Common_Movement_FaceDown)

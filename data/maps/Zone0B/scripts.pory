@@ -1,6 +1,9 @@
 script Zone0B_EventScript_EeveeGirl {
 	lock
 	faceplayer
+	if (flag(FLAG_SETTINGS_INDEPENDENT) || flag(FLAG_SETTINGS_BRUTAL)) {
+		goto(Zone0B_EventScript_EeveeUnique)
+	}
 	if (flag(FLAG_ZONE0B_RECEIVED_EEVEE) == true) {
 		goto(Zone0B_EventScript_EeveeUnique)
 	}

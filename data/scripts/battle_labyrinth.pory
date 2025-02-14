@@ -3513,15 +3513,13 @@ script Debug_CheatStart_PBL {
 			setvar(VAR_LEVIATHAN_MUSIC, 4)
 	}
 	additem(ITEM_RARE_CANDY, 900)
-	removemoney(2000)
+	removemoney(2500)
 	additem(ITEM_POTION, 6)
 	additem(ITEM_PARALYZE_HEAL, 2)
 	additem(ITEM_ANTIDOTE, 2)
-	setvar(VAR_ZONE_0_STATE, 1)
-	setflag(FLAG_ZONE0B_RECEIVED_EEVEE)
-	givemon(SPECIES_EEVEE, 5, ITEM_NONE)
 	// zone 0 items
 	additem(ITEM_WAILMER_PAIL)
+	additem(ITEM_EVERSTONE)
 	additem(ITEM_ORAN_BERRY, 2)
 	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_SIGNS)
 	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_SAVES)
@@ -3536,6 +3534,7 @@ script Debug_CheatStart_PBL {
 	completesubquest(QUEST_SIGNS, SUB_QUEST_8)
 	completesubquest(QUEST_SIGNS, SUB_QUEST_9)
 	setflag(FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES)
+	setvar(VAR_ZONE_0_STATE, 2)
 	// zone 0
 	setvar(VAR_TEMP_0, 0) // wild define gWildMonHeaders in src/data/wild_encounters.h
 	msgbox(format("Zone 0 grass?"), MSGBOX_YESNO)
