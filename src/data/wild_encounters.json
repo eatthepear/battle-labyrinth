@@ -114,12 +114,12 @@
               {
                 "min_level": 3,
                 "max_level": 4,
-                "species": "SPECIES_PONYTA"
+                "species": "SPECIES_YAMPER"
               },
               {
                 "min_level": 3,
                 "max_level": 4,
-                "species": "SPECIES_GROWLITHE"
+                "species": "SPECIES_PONYTA"
               },
               {
                 "min_level": 3,
@@ -228,12 +228,12 @@
               {
                 "min_level": 3,
                 "max_level": 4,
-                "species": "SPECIES_YAMPER"
+                "species": "SPECIES_VULPIX"
               },
               {
                 "min_level": 3,
                 "max_level": 4,
-                "species": "SPECIES_YAMPER"
+                "species": "SPECIES_VULPIX"
               },
               {
                 "min_level": 3,
@@ -1062,7 +1062,7 @@
               {
                 "min_level": 11,
                 "max_level": 12,
-                "species": "SPECIES_VULPIX"
+                "species": "SPECIES_SKIDDO"
               },
               {
                 "min_level": 11,
