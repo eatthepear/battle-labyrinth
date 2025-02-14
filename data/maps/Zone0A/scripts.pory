@@ -18,10 +18,8 @@ script Zone0A_EventScript_Intro {
 	waitse
 	applymovement(15, Common_Movement_WalkLeft3)
 	waitmovement(0)
-	msgbox(format("Hello, {PLAYER}.\pWelcome to my home, {COLOR GREEN}Harvest Road{COLOR DARK_GRAY}.\pThere are no trainers here, and no challenges to face. Everything is meant to help you on your journey.\pAs a welcome gift, I'd like you to have these!"), MSGBOX_DEFAULT)
-	giveitem(ITEM_GREEN_APRICORN)
-	giveitem(ITEM_RED_APRICORN)
-	giveitem(ITEM_BLUE_APRICORN)
+	msgbox(format("Hello, {PLAYER}.\pWelcome to my home, {COLOR GREEN}Harvest Road{COLOR DARK_GRAY}.\pThere are no trainers here, and no challenges to face. Everything is meant to help you on your journey.\pAs a welcome gift, I'd like you to have this!"), MSGBOX_DEFAULT)
+	giveitem(ITEM_EVERSTONE)
 	msgbox(format("I run this green building that you just walked out of, called the {COLOR GREEN}TPI{COLOR DARK_GRAY} or {COLOR GREEN}Teleport Institute{COLOR DARK_GRAY}.\pThat door on the left leads back to the Sanctuary, while this door on the right is for prior areas.\pLet me know if I can help you get anywhere!"))
 	applymovement(15, Common_Movement_ExclamationMark)
 	playse(SE_PIN)

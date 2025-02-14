@@ -6736,7 +6736,7 @@ Debug_CheatStart_PBL_30:
 # 3585 "data/scripts/battle_labyrinth.pory"
 	call Debug_CheatStart_PBL_GiveMon
 # 3586 "data/scripts/battle_labyrinth.pory"
-	setflag FLAG_ZONE1A_NUZLOCKE_RECEIVED_FWG
+	setflag FLAG_ZONE1A_RECEIVED_FWG
 # 3587 "data/scripts/battle_labyrinth.pory"
 	completesubquest QUEST_PBL, SUB_QUEST_1
 # 3589 "data/scripts/battle_labyrinth.pory"

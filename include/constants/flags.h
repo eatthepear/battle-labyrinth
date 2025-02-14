@@ -203,7 +203,7 @@
 #define FLAG_ZONE0A_SAFARI_INTRO                          0x109
 #define FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES                 0x10A
 #define FLAG_ZONE0B_RECEIVED_EEVEE                        0x10B
-#define FLAG_ZONE1A_NUZLOCKE_RECEIVED_FWG                 0x10C
+#define FLAG_ZONE1A_RECEIVED_FWG                          0x10C
 #define FLAG_MAX_INTRO                                    0x10D
 #define FLAG_HIDE_ZONE2A_MAX                              0x10E
 #define FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG                   0x10F

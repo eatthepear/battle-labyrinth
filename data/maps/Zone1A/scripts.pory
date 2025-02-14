@@ -16,13 +16,18 @@ mapscripts Zone1A_MapScripts {
 script Zone1A_EventScript_GiveFWG {
 	lock
 	faceplayer
+	if (flag(FLAG_ZONE1A_RECEIVED_FWG)) {
+		msgbox(format("Uh… It looks like I'm actually almost out of Pokémon to give, so I can't give you anymore. Sorry!"))
+		release
+		end
+	}
 	msgbox(format("Hello! You look like a new trainer.\pDo you know about Pokémon type matchups?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		msgbox(format("Type matchups are one of the most important parts of Pokémon battles!\pThe most basic type matchup is Grass beats Water, Water beats Fire, and Fire beats Grass.\pIt can be very important to have a diversity of types on your team."), MSGBOX_DEFAULT)
 	} else {
 		msgbox(format("Oh! Then I'm sure you could see the benefits of having a diversity of types on your team."), MSGBOX_DEFAULT)
 	}
-	msgbox(format("In exchange for a Green, Red, or Blue Apricorn, I'm offering trainers a Grass, Fire, or Water type Pokémon to help supplement their teams. Interested?"), MSGBOX_YESNO)
+	msgbox(format("I'm offering trainers a Grass, Fire, or Water type Pokémon to help supplement their teams. Interested?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		msgbox(Zone1A_Text_FWG_ComeBack, MSGBOX_AUTOCLOSE)
 		release
@@ -44,21 +49,10 @@ script Zone1A_EventScript_GiveFWG {
 			end
 	}
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
-		if (flag(FLAG_ZONE1A_NUZLOCKE_RECEIVED_FWG)) {
-			msgbox(format("Uh… It looks like I'm actually almost out of Pokémon to give, so I can't give you anymore. Sorry!"))
-			release
-			end
-		}
 		if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
 			setvar(VAR_TEMP_1, SPECIES_BULBASAUR) // gets randomized anyways
 		} else {
 			if (var(VAR_TEMP_4) == 0) {
-				if (checkitem(ITEM_GREEN_APRICORN) == FALSE) {
-					msgbox(format("Unfortunately, you do not have a Green Apricorn."))
-					msgbox(Zone1A_Text_FWG_ComeBack)
-					release
-					end
-				}
 				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pansage, Gossifleur, Sunkern, or Cherubi.\pIs this ok?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == NO) {
 					msgbox(Zone1A_Text_FWG_ComeBack)
@@ -118,12 +112,6 @@ script Zone1A_EventScript_GiveFWG {
 					}
 				}
 			} elif (var(VAR_TEMP_4) == 1) {
-				if (checkitem(ITEM_RED_APRICORN) == FALSE) {
-					msgbox(format("Unfortunately, you do not have a Red Apricorn."))
-					msgbox(Zone1A_Text_FWG_ComeBack)
-					release
-					end
-				}
 				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Pansear, Vulpix, Slugma, or Litleo.\pIs this ok?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == NO) {
 					msgbox(Zone1A_Text_FWG_ComeBack)
@@ -183,12 +171,6 @@ script Zone1A_EventScript_GiveFWG {
 					}
 				}
 			} elif (var(VAR_TEMP_4) == 2) {
-				if (checkitem(ITEM_BLUE_APRICORN) == FALSE) {
-					msgbox(format("Unfortunately, you do not have a Blue Apricorn."))
-					msgbox(Zone1A_Text_FWG_ComeBack)
-					release
-					end
-				}
 				msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon: Panpour, Barboach, Goldeen, or Finneon.\pIs this ok?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == NO) {
 					msgbox(Zone1A_Text_FWG_ComeBack)
@@ -251,12 +233,6 @@ script Zone1A_EventScript_GiveFWG {
 		}
 	} else {
 		if (var(VAR_TEMP_4) == 0) {
-			if (checkitem(ITEM_GREEN_APRICORN) == FALSE) {
-				msgbox(format("Unfortunately, you do not have a Green Apricorn."))
-				msgbox(Zone1A_Text_FWG_ComeBack)
-				release
-				end
-			}
 			message(format("Choose which Pokémon you would like."))
 			waitmessage
 			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Pansage", "Gossifleur", "Sunkern", "Cherubi", "Exit")
@@ -276,12 +252,6 @@ script Zone1A_EventScript_GiveFWG {
 					end
 			}
 		} elif (var(VAR_TEMP_4) == 1) {
-			if (checkitem(ITEM_RED_APRICORN) == FALSE) {
-				msgbox(format("Unfortunately, you do not have a Red Apricorn."))
-				msgbox(Zone1A_Text_FWG_ComeBack)
-				release
-				end
-			}
 			message(format("Choose which Pokémon you would like."))
 			waitmessage
 			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Pansear", "Vulpix", "Slugma", "Litleo", "Exit")
@@ -301,12 +271,6 @@ script Zone1A_EventScript_GiveFWG {
 					end
 			}
 		} elif (var(VAR_TEMP_4) == 2) {
-			if (checkitem(ITEM_BLUE_APRICORN) == FALSE) {
-				msgbox(format("Unfortunately, you do not have a Blue Apricorn."))
-				msgbox(Zone1A_Text_FWG_ComeBack)
-				release
-				end
-			}
 			message(format("Choose which Pokémon you would like."))
 			waitmessage
 			dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Panpour", "Barboach", "Goldeen", "Finneon", "Exit")
@@ -371,17 +335,8 @@ script Zone1A_EventScript_GiveFWG {
 		call(Common_EventScript_NameReceivedPartyMon)
 	}
 	faceplayer
-	if (var(VAR_TEMP_4) == 0) {
-		msgbox(format("{PLAYER} handed over 1 Green Apricorn."), MSGBOX_AUTOCLOSE)
-		removeitem(ITEM_GREEN_APRICORN)
-	} elif (var(VAR_TEMP_4) == 1) {
-		msgbox(format("{PLAYER} handed over 1 Red Apricorn."), MSGBOX_AUTOCLOSE)
-		removeitem(ITEM_RED_APRICORN)
-	} elif (var(VAR_TEMP_4) == 2) {
-		msgbox(format("{PLAYER} handed over 1 Blue Apricorn."), MSGBOX_AUTOCLOSE)
-		removeitem(ITEM_BLUE_APRICORN)
-	}
-	setflag(FLAG_ZONE1A_NUZLOCKE_RECEIVED_FWG)
+	msgbox(format("Take care of your {STR_VAR_1}!"))
+	setflag(FLAG_ZONE1A_RECEIVED_FWG)
 	release
 	end
 }
