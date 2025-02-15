@@ -4045,11 +4045,79 @@ script Debug_CheatStart_PBL {
 	settrainerflag(TRAINER_PBL_SUSAN)
 	settrainerflag(TRAINER_PBL_CONRAD)
 	settrainerflag(TRAINER_PBL_BRETT)
-	setflag(FLAG_BEAT_LEVIATHAN_10)
+	setflag(FLAG_BEAT_LEVIATHAN_9)
 	setflag(FLAG_ZONE10B_RECEIVED_TM_STEEL_WING)
+	// zone 11
+	message(format("Zone 11 options"))
+	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, 21) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case MULTI_B_PRESSED:
+			closemessage
+			setvar(VAR_ZONE, 11)
+			setvar(VAR_LEVEL_CAP, 23)
+			end
+	}
+	setvar(VAR_TEMP_1, 21) // level
+	call(Debug_CheatStart_PBL_GenerateMon)
+	completesubquest(QUEST_PBL, SUB_QUEST_11)
+	// zone 11 items
+	additem(ITEM_TM_GRASS_KNOT)
+	additem(ITEM_TM_TAUNT)
+	additem(ITEM_MOON_STONE)
+	additem(ITEM_SPELL_TAG)
+	additem(ITEM_FAIRY_GEM)
+	additem(ITEM_GHOST_GEM)
+	additem(ITEM_DRAGON_GEM)
+	additem(ITEM_FAIRY_FEATHER)
+	additem(ITEM_TM_STEEL_WING)
+	settrainerflag(TRAINER_PBL_JEANETTE)
+	settrainerflag(TRAINER_PBL_EMMA_AND_LEO)
+	settrainerflag(TRAINER_PBL_JOEL)
+	settrainerflag(TRAINER_PBL_MARION)
+	settrainerflag(TRAINER_PBL_REGINA)
+	setflag(FLAG_BEAT_LEVIATHAN_10)
+	// zone 12
+	message(format("Zone 12 options"))
+	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_TEMP_0, 22) // wild define gWildMonHeaders in src/data/wild_encounters.h
+		case 1:
+			setvar(VAR_TEMP_0, 22) // wild define gWildMonHeaders in src/data/wild_encounters.h
+			setflag(FLAG_TEMP_1) // special encounter
+		case MULTI_B_PRESSED:
+			closemessage
+			setvar(VAR_ZONE, 12)
+			setvar(VAR_LEVEL_CAP, 24)
+			end
+	}
+	setvar(VAR_TEMP_1, 21) // level
+	call(Debug_CheatStart_PBL_GenerateMon)
+	completesubquest(QUEST_PBL, SUB_QUEST_12)
+	// zone 12 items
+	additem(ITEM_TM_BRICK_BREAK)
+	additem(ITEM_THUNDER_STONE)
+	additem(ITEM_FIRE_STONE)
+	additem(ITEM_WATER_STONE)
+	additem(ITEM_LEAF_STONE)
+	settrainerflag(TRAINER_PBL_ESSENCE)
+	settrainerflag(TRAINER_PBL_DOLORES)
+	settrainerflag(TRAINER_PBL_GENIE)
+	settrainerflag(TRAINER_PBL_ABIGAIL)
+	settrainerflag(TRAINER_PBL_FEDERICO)
+	settrainerflag(TRAINER_PBL_ROMULUS)
+	settrainerflag(TRAINER_PBL_JULIE)
+	settrainerflag(TRAINER_PBL_HILDA)
+	settrainerflag(TRAINER_PBL_TREVOR)
+	settrainerflag(TRAINER_PBL_RUFUS)
+	settrainerflag(TRAINER_PBL_KINLEY)
+	settrainerflag(TRAINER_PBL_REID)
+	setflag(FLAG_BEAT_LEVIATHAN_11)
 	// end
-	setvar(VAR_ZONE, 11)
-	setvar(VAR_LEVEL_CAP, 23)
+	setvar(VAR_ZONE, 13)
+	setvar(VAR_LEVEL_CAP, 26)
 	release
 	end
 }
