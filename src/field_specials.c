@@ -4448,7 +4448,7 @@ u16 GetNumTrainersRemaining(void)
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
-        count += !FlagGet(FLAG_BEAT_LEVIATHAN_5);
+        count += 2 * !FlagGet(FLAG_BEAT_LEVIATHAN_6);
         break;
     case 7:
     case 8:
