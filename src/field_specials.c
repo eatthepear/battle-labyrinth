@@ -4643,8 +4643,6 @@ u16 RandomItemChest(void) {
     amount = (totalPrice - (totalPrice % itemPrice)) / itemPrice;
     if (amount == 0) {
         amount += 1;
-    } else if (amount > 3) {
-        amount = 3;
     }
     VarSet(VAR_TEMP_0, amount);
 
