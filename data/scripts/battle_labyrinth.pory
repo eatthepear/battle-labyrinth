@@ -30,20 +30,21 @@ script EventScript_Shop_Portentia {
 			pokemart(Shop_Medicine_3)
 		case 11:
 		case 12:
+			pokemart(Shop_Medicine_4)
 		case 13:
 		case 15:
-			pokemart(Shop_Medicine_4)
 		case 16:
 		case 17:
 		case 18:
 		case 20:
+			pokemart(Shop_Medicine_5)
 		case 21:
 		case 22:
 		case 23:
 		case 24:
 		case 25:
 		case 26:
-			pokemart(Shop_Filler)
+			pokemart(Shop_Medicine_5)
 	}
 	msgbox("{COLOR BLUE}Portentia{COLOR DARK_GRAY}: Travel safe.", MSGBOX_DEFAULT)
 	release
@@ -78,6 +79,19 @@ mart Shop_Medicine_3 {
 mart Shop_Medicine_4 {
 	ITEM_POTION
 	ITEM_SUPER_POTION
+	ITEM_REVIVE
+	ITEM_ANTIDOTE
+	ITEM_PARALYZE_HEAL
+	ITEM_AWAKENING
+	ITEM_BURN_HEAL
+	ITEM_ICE_HEAL
+	ITEM_ETHER
+}
+
+mart Shop_Medicine_5 {
+	ITEM_POTION
+	ITEM_SUPER_POTION
+	ITEM_HYPER_POTION
 	ITEM_REVIVE
 	ITEM_ANTIDOTE
 	ITEM_PARALYZE_HEAL
@@ -124,7 +138,7 @@ script EventScript_Shop_Tim {
 		case 24:
 		case 25:
 		case 26:
-			pokemart(Shop_Filler)
+			pokemart(Shop_Pokeballs_4)
 	}
 	msgbox("{COLOR BLUE}Tim{COLOR DARK_GRAY}: Have a nice day!", MSGBOX_DEFAULT)
 	release
@@ -1985,7 +1999,7 @@ script EventScript_WhenUReadyDialogue {
 		case 12:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 12 - Twinstream Plains{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
 		case 13:
-			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 7{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 13{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
 		case 15:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 15 - {COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
 		case 16:

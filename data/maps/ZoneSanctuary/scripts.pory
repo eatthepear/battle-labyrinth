@@ -120,6 +120,15 @@ script Sanctuary_EventScript_NextZone {
 						waitstate
 						end
 					}
+				case 13:
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 13 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Duskmire Hollow{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						call(Sanctuary_EventScript_EnterZone)
+						setvar(VAR_LEVEL_CAP, 30)
+						warp(MAP_ZONE13A, 255, 18, 10)
+						waitstate
+						end
+					}
 			}
 		case 1:
 			goto(EventScript_Settings)
@@ -348,6 +357,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 11:
 			msgbox(format("TM86 - Grass Knot!"), MSGBOX_DEFAULT)
 			giveitem(ITEM_TM_GRASS_KNOT)
+		case 12:
+			msgbox(format("Ultra Balls!"), MSGBOX_DEFAULT)
+			giveitem(ITEM_ULTRA_BALL, 10)
 	}
 	switch(var(VAR_ZONE)) {
 		case 1:
@@ -441,6 +453,13 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 12:
 			completesubquest(QUEST_PBL, SUB_QUEST_12)
 			setvar(VAR_ZONE, 13)
+			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
+			playfanfare(MUS_OBTAIN_ITEM)
+			msgbox(Sanctuary_Text_Colress_UpgradedPotions, MSGBOX_DEFAULT)
+			waitfanfare
+			playfanfare(MUS_OBTAIN_ITEM)
+			msgbox(Sanctuary_Text_Colress_UpgradedItems, MSGBOX_DEFAULT)
+			waitfanfare
 		case 13:
 			completesubquest(QUEST_PBL, SUB_QUEST_13)
 			completesubquest(QUEST_PBL, SUB_QUEST_14)
