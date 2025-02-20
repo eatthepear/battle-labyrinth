@@ -24,7 +24,7 @@ script Sanctuary_EventScript_NextZone {
 						end
 					}
 				case 2:
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 2 - Duskwarren Woods{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 2 - Warren Woods{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						call(Sanctuary_EventScript_EnterZone)
 						setvar(VAR_LEVEL_CAP, 9)
@@ -71,7 +71,7 @@ script Sanctuary_EventScript_NextZone {
 						end
 					}
 				case 7:
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you ready to leave? You will be entering {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Duskmire Hollow{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you ready to leave? You will be entering {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						call(Sanctuary_EventScript_EnterZone)
 						setvar(VAR_LEVEL_CAP, 20)
@@ -121,7 +121,7 @@ script Sanctuary_EventScript_NextZone {
 						end
 					}
 				case 13:
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 13 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Duskmire Hollow{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 13 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Gemini Caves{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						call(Sanctuary_EventScript_EnterZone)
 						setvar(VAR_LEVEL_CAP, 30)
@@ -225,9 +225,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 			waitfanfare
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Your reward for clearing {COLOR GREEN}Zone 1 - Leafway Trail{COLOR DARK_GRAY} is…"))
 		case 2:
-			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Congratulations.\nYou have cleared {COLOR GREEN}Zone 2 - Duskwarren Woods{COLOR DARK_GRAY}."))
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Congratulations.\nYou have cleared {COLOR GREEN}Zone 2 - Warren Woods{COLOR DARK_GRAY}."))
 			waitfanfare
-			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Your reward for clearing {COLOR GREEN}Zone 2 - Duskwarren Woods{COLOR DARK_GRAY} is…"))
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Your reward for clearing {COLOR GREEN}Zone 2 - Warren Woods{COLOR DARK_GRAY} is…"))
 		case 3:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Congratulations.\nYou have cleared {COLOR GREEN}Zone 3 - Sunlit Pond{COLOR DARK_GRAY}."))
 			waitfanfare
@@ -245,9 +245,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 			waitfanfare
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Your reward for clearing {COLOR GREEN}Zone 6 - Seabreeze Island{COLOR DARK_GRAY} is…"))
 		case 7:
-			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Congratulations.\nYou have cleared {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Duskmire Hollow{COLOR DARK_GRAY}."))
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Congratulations.\nYou have cleared {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}."))
 			waitfanfare
-			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Your reward for clearing {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Duskmire Hollow{COLOR DARK_GRAY} is…"))
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Your reward for clearing {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY} is…"))
 		case 9:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Congratulations.\nYou have cleared {COLOR GREEN}Zone 9 - Lushbranch Village{COLOR DARK_GRAY}."))
 			waitfanfare

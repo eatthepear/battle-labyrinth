@@ -1979,7 +1979,7 @@ script EventScript_WhenUReadyDialogue {
 		case 1:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 1 - Leafway Trail{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
 		case 2:
-			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 2 - Duskwarren Woods{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 2 - Warren Woods{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
 		case 3:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 3 - Sunlit Pond{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
 		case 4:
@@ -1989,7 +1989,7 @@ script EventScript_WhenUReadyDialogue {
 		case 6:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 6 - Seabreeze Island{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
 		case 7:
-			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Duskmire Hollow{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
 		case 9:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 9 - Lushbranch Village{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
 		case 10:

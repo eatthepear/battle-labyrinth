@@ -9034,7 +9034,7 @@ EventScript_WhenUReadyDialogue_Text_0:
 EventScript_WhenUReadyDialogue_Text_1:
 # 1982 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter\n"
-	.string "{COLOR GREEN}Zone 2 - Duskwarren Woods{COLOR DARK_GRAY}, speak to me.$"
+	.string "{COLOR GREEN}Zone 2 - Warren Woods{COLOR DARK_GRAY}, speak to me.$"
 
 EventScript_WhenUReadyDialogue_Text_2:
 # 1984 "data/scripts/battle_labyrinth.pory"
@@ -9061,7 +9061,7 @@ EventScript_WhenUReadyDialogue_Text_6:
 # 1992 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter\n"
 	.string "{COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 -\l"
-	.string "Duskmire Hollow{COLOR DARK_GRAY}, speak to me.$"
+	.string "Gemini Caves{COLOR DARK_GRAY}, speak to me.$"
 
 EventScript_WhenUReadyDialogue_Text_7:
 # 1994 "data/scripts/battle_labyrinth.pory"

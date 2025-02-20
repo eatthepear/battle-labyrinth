@@ -3505,8 +3505,7 @@ Sanctuary_EventScript_NextZone_Text_5:
 Sanctuary_EventScript_NextZone_Text_6:
 # 27 "data/maps/ZoneSanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You\n"
-	.string "will be entering {COLOR GREEN}Zone 2 - Duskwarren\l"
-	.string "Woods{COLOR DARK_GRAY}.$"
+	.string "will be entering {COLOR GREEN}Zone 2 - Warren Woods{COLOR DARK_GRAY}.$"
 
 Sanctuary_EventScript_NextZone_Text_7:
 # 36 "data/maps/ZoneSanctuary/scripts.pory"
@@ -3534,7 +3533,7 @@ Sanctuary_EventScript_NextZone_Text_11:
 # 74 "data/maps/ZoneSanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you ready to leave? You\n"
 	.string "will be entering {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY}\l"
-	.string "and {COLOR GREEN}Zone 8 - Duskmire Hollow{COLOR DARK_GRAY}.$"
+	.string "and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}.$"
 
 Sanctuary_EventScript_NextZone_Text_12:
 # 83 "data/maps/ZoneSanctuary/scripts.pory"
@@ -3564,7 +3563,7 @@ Sanctuary_EventScript_NextZone_Text_16:
 # 124 "data/maps/ZoneSanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You\n"
 	.string "will be entering {COLOR GREEN}Zone 13 - Gemini\l"
-	.string "Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Duskmire Hollow{COLOR DARK_GRAY}.$"
+	.string "Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Gemini Caves{COLOR DARK_GRAY}.$"
 
 Sanctuary_EventScript_EnterZone_Text_0:
 # 143 "data/maps/ZoneSanctuary/scripts.pory"
@@ -3584,13 +3583,12 @@ Sanctuary_EventScript_EnterSanctuary_Text_1:
 Sanctuary_EventScript_EnterSanctuary_Text_2:
 # 228 "data/maps/ZoneSanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Congratulations.\n"
-	.string "You have cleared {COLOR GREEN}Zone 2 - Duskwarren\l"
-	.string "Woods{COLOR DARK_GRAY}.$"
+	.string "You have cleared {COLOR GREEN}Zone 2 - Warren Woods{COLOR DARK_GRAY}.$"
 
 Sanctuary_EventScript_EnterSanctuary_Text_3:
 # 230 "data/maps/ZoneSanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Your reward for clearing {COLOR GREEN}Zone\n"
-	.string "2 - Duskwarren Woods{COLOR DARK_GRAY} is…$"
+	.string "2 - Warren Woods{COLOR DARK_GRAY} is…$"
 
 Sanctuary_EventScript_EnterSanctuary_Text_4:
 # 232 "data/maps/ZoneSanctuary/scripts.pory"
@@ -3638,13 +3636,13 @@ Sanctuary_EventScript_EnterSanctuary_Text_12:
 # 248 "data/maps/ZoneSanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Congratulations.\n"
 	.string "You have cleared {COLOR GREEN}Zone 7 - Gemini\l"
-	.string "Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Duskmire Hollow{COLOR DARK_GRAY}.$"
+	.string "Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}.$"
 
 Sanctuary_EventScript_EnterSanctuary_Text_13:
 # 250 "data/maps/ZoneSanctuary/scripts.pory"
 	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Your reward for clearing {COLOR GREEN}Zone\n"
-	.string "7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Duskmire\l"
-	.string "Hollow{COLOR DARK_GRAY} is…$"
+	.string "7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini\l"
+	.string "Caves{COLOR DARK_GRAY} is…$"
 
 Sanctuary_EventScript_EnterSanctuary_Text_14:
 # 252 "data/maps/ZoneSanctuary/scripts.pory"

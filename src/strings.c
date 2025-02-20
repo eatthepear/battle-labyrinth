@@ -1620,13 +1620,13 @@ const u8 gText_LevelCapVar1[] = _("Lvl Cap: {STR_VAR_1}");
 
 const u8 gText_MapZone0[] = _("Zone 0 - Harvest Road");
 const u8 gText_MapZone1[] = _("Zone 1 - Leafway Trail");
-const u8 gText_MapZone2[] = _("Zone 2 - Duskwarren Woods");
+const u8 gText_MapZone2[] = _("Zone 2 - Warren Woods");
 const u8 gText_MapZone3[] = _("Zone 3 - Sunlit Pond");
 const u8 gText_MapZone4[] = _("Zone 4 - Mystic Glade");
 const u8 gText_MapZone5[] = _("Zone 5 - Timberstep Plateau");
 const u8 gText_MapZone6[] = _("Zone 6 - Seabreeze Island");
 const u8 gText_MapZone7[] = _("Zone 7 - Gemini Heights");
-const u8 gText_MapZone8[] = _("Zone 8 - Duskmire Hollow");
+const u8 gText_MapZone8[] = _("Zone 8 - Gemini Caves");
 const u8 gText_MapZone9[] = _("Zone 9 - Lushbranch Village");
 const u8 gText_MapZone10[] = _("Zone 10 - Scornwind Desert");
 const u8 gText_MapZone11[] = _("Zone 11 - Duskwither Maze");
