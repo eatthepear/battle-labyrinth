@@ -222,9 +222,9 @@ Sanctuary_EventScript_NextZone_27:
 # 58 "data/maps/ZoneSanctuary/scripts.pory"
 	call Sanctuary_EventScript_EnterZone
 # 59 "data/maps/ZoneSanctuary/scripts.pory"
-	setvar VAR_LEVEL_CAP, 17
+	setvar VAR_LEVEL_CAP, 15
 # 60 "data/maps/ZoneSanctuary/scripts.pory"
-	warp MAP_ZONE6A, 255, 51, 22
+	warp MAP_ZONE5A, 255, 3, 0
 # 61 "data/maps/ZoneSanctuary/scripts.pory"
 	waitstate
 	end

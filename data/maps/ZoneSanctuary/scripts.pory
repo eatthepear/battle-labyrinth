@@ -56,8 +56,8 @@ script Sanctuary_EventScript_NextZone {
 					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 5 - Timberstep Plateau{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						call(Sanctuary_EventScript_EnterZone)
-						setvar(VAR_LEVEL_CAP, 17)
-						warp(MAP_ZONE6A, 255, 51, 22)
+						setvar(VAR_LEVEL_CAP, 15)
+						warp(MAP_ZONE5A, 255, 3, 0)
 						waitstate
 						end
 					}
