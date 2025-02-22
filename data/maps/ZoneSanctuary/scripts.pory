@@ -766,7 +766,7 @@ script Sanctuary_EventScript_GameIntro {
 
 script Sanctuary_EventScript_HandleStarterSelectionDefault {
 	hidemonpic
-	message(format("Choose a starter Pokémon."))
+	message(format("Choose a starter Pokémon.\nPress {B_BUTTON} to randomize."))
 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Bulbasaur", "Charmander", "Squirtle", "Chikorita", "Cyndaquil", "Totodile", "Treecko", "Torchic", "Mudkip", "Turtwig", "Chimchar", "Piplup", "Snivy", "Tepig", "Oshawott", "Chespin", "Fennekin", "Froakie", "Rowlet", "Litten", "Popplio", "Grookey", "Scorbunny", "Sobble", "Sprigatito", "Fuecoco", "Quaxly", "Random")
 	switch (var(VAR_RESULT)) {
 		case 0:

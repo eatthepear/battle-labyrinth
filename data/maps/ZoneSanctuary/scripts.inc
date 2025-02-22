@@ -4024,7 +4024,8 @@ Sanctuary_EventScript_GameIntro_Text_20:
 
 Sanctuary_EventScript_HandleStarterSelectionDefault_Text_0:
 # 769 "data/maps/ZoneSanctuary/scripts.pory"
-	.string "Choose a starter Pokémon.$"
+	.string "Choose a starter Pokémon.\n"
+	.string "Press {B_BUTTON} to randomize.$"
 
 Sanctuary_EventScript_HandleStarterSelectionDefault_Text_1:
 # 770 "data/maps/ZoneSanctuary/scripts.pory"
