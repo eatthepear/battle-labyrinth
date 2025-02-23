@@ -1288,7 +1288,7 @@ static void PrintMapNameAndTime(void) //this code is ripped froom different part
     if (GetCurrentLevelCap() < 100) {
         ConvertIntToDecimalStringN(gStringVar1, GetCurrentLevelCap(), STR_CONV_MODE_LEFT_ALIGN, 2);
         StringExpandPlaceholders(gStringVar4, gText_LevelCapVar1);
-        AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 494), 1, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
+        AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NARROW, GetStringRightAlignXOffset(FONT_NARROW, gStringVar4, 494), 1, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
     }
 //     RtcCalcLocalTime();
 
