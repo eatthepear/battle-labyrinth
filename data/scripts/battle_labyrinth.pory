@@ -2312,7 +2312,7 @@ script EventScript_Settings {
 					}
 				}
 			case 4:
-				msgbox(format("The {COLOR RED}Full Info{COLOR DARK_GRAY} setting enables you to see more information that is not visible otherwise, such as full info about enemy Pokémon through the {COLOR RED}Surveil{COLOR DARK_GRAY} option in battle, or the {COLOR RED}DexNav{COLOR DARK_GRAY} to see potential encounterable Pokémon."), MSGBOX_DEFAULT)
+				msgbox(format("The {COLOR RED}Full Info{COLOR DARK_GRAY} setting enables you to see more information that is not visible otherwise.\pYou can view enemy Pokémon information through the {COLOR RED}Surveil{COLOR DARK_GRAY} option in battle, use the {COLOR RED}DexNav{COLOR DARK_GRAY} to see potential encounterable Pokémon, or use the {COLOR RED}Trainer Notebook{COLOR DARK_GRAY} to see what Pokémon upcoming trainers have."), MSGBOX_DEFAULT)
 				if (flag(FLAG_SETTINGS_FULL_INFO) == true) {
 					msgbox(format("The {COLOR RED}Full Info{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
 					msgbox(format("Would you like to turn the {COLOR RED}Full Info{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
@@ -2324,6 +2324,10 @@ script EventScript_Settings {
 						if (var(VAR_ZONE) < 3) {
 							clearflag(FLAG_SYS_DEXNAV_GET)
 							clearflag(FLAG_SYS_DETECTOR_MODE)
+						}
+						questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SAVES)
+						if (var(VAR_RESULT) == NO) {
+							removeitem(ITEM_TRAINER_NOTEBOOK)
 						}
 					}
 				} else {
@@ -2337,6 +2341,9 @@ script EventScript_Settings {
 						if (var(VAR_ZONE) < 3) {
 							setflag(FLAG_SYS_DEXNAV_GET)
 							setflag(FLAG_SYS_DETECTOR_MODE)
+						}
+						if (checkitem(ITEM_TRAINER_NOTEBOOK) == FALSE) {
+							additem(ITEM_TRAINER_NOTEBOOK)
 						}
 					}
 				}
@@ -2791,9 +2798,13 @@ script EventScript_SavesQuestBoy {
 	if (var(VAR_RESULT) == FALSE) {
 		callnative(SavesQuestCheckIfDone)
 		if (flag(FLAG_TEMP_6) == TRUE) {
-			msgbox(format("Wow!\pYou really went and saved 50 times?\pThat's crazy.\pHere's a little something for you as a reward!"))
-			giveitem(ITEM_ROTOM_CATALOG)
-			msgbox(format("I've heard this nifty little item is useful if you have a Rotom.\pWhich I, unfortunately, do not.\pI hope you put it to better use!"))
+			msgbox(format("Wow!\pYou really went and saved 50 times?\pThat's crazy.\pHere, as a reward, I can give you this nifty Trainer Notebook!"))
+			if (checkitem(ITEM_TRAINER_NOTEBOOK) == FALSE) {
+				giveitem(ITEM_TRAINER_NOTEBOOK)
+				msgbox(format("This notebook contains all the trainers in the Pokémon Battle Labyrinth.\pIt's a nice way to keep track of your progress!"))
+			} else {
+				msgbox(format("Oh! You already have one.\pUh… Have some brownie points, I guess? Sorry!"))
+			}
 			completequest(QUEST_SAVES)
 		}
 	}
@@ -3475,6 +3486,1674 @@ script EventScript_Collector {
 			msgbox(format("See you around sometime."))
 	}
 	release
+	end
+}
+
+script EventScript_TrainerNotebook {
+	if (!flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 1) {
+		msgbox(format("Trainer Notebook is currently empty."))
+		releaseall
+		end
+	}
+	message(format("Trainer Notebook open."))
+	waitmessage
+	if (var(VAR_ZONE) > 50 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 50)) {
+		dynmultipush("Zone 50", 50)
+	}
+	if (var(VAR_ZONE) > 49 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 49)) {
+		dynmultipush("Zone 49", 49)
+	}
+	if (var(VAR_ZONE) > 48 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 48)) {
+		dynmultipush("Zone 48", 48)
+	}
+	if (var(VAR_ZONE) > 47 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 47)) {
+		dynmultipush("Zone 47", 47)
+	}
+	if (var(VAR_ZONE) > 46 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 46)) {
+		dynmultipush("Zone 46", 46)
+	}
+	if (var(VAR_ZONE) > 45 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 45)) {
+		dynmultipush("Zone 45", 45)
+	}
+	if (var(VAR_ZONE) > 44 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 44)) {
+		dynmultipush("Zone 44", 44)
+	}
+	if (var(VAR_ZONE) > 43 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 43)) {
+		dynmultipush("Zone 43", 43)
+	}
+	if (var(VAR_ZONE) > 42 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 42)) {
+		dynmultipush("Zone 42", 42)
+	}
+	if (var(VAR_ZONE) > 41 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 41)) {
+		dynmultipush("Zone 41", 41)
+	}
+	if (var(VAR_ZONE) > 40 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 40)) {
+		dynmultipush("Zone 40", 40)
+	}
+	if (var(VAR_ZONE) > 39 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 39)) {
+		dynmultipush("Zone 39", 39)
+	}
+	if (var(VAR_ZONE) > 38 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 38)) {
+		dynmultipush("Zone 38", 38)
+	}
+	if (var(VAR_ZONE) > 37 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 37)) {
+		dynmultipush("Zone 37", 37)
+	}
+	if (var(VAR_ZONE) > 36 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 36)) {
+		dynmultipush("Zone 36", 36)
+	}
+	if (var(VAR_ZONE) > 35 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 35)) {
+		dynmultipush("Zone 35", 35)
+	}
+	if (var(VAR_ZONE) > 34 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 34)) {
+		dynmultipush("Zone 34", 34)
+	}
+	if (var(VAR_ZONE) > 33 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 33)) {
+		dynmultipush("Zone 33", 33)
+	}
+	if (var(VAR_ZONE) > 32 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 32)) {
+		dynmultipush("Zone 32", 32)
+	}
+	if (var(VAR_ZONE) > 31 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 31)) {
+		dynmultipush("Zone 31", 31)
+	}
+	if (var(VAR_ZONE) > 30 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 30)) {
+		dynmultipush("Zone 30", 30)
+	}
+	if (var(VAR_ZONE) > 29 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 29)) {
+		dynmultipush("Zone 29", 29)
+	}
+	if (var(VAR_ZONE) > 28 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 28)) {
+		dynmultipush("Zone 28", 28)
+	}
+	if (var(VAR_ZONE) > 27 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 27)) {
+		dynmultipush("Zone 27", 27)
+	}
+	if (var(VAR_ZONE) > 26 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 26)) {
+		dynmultipush("Zone 26", 26)
+	}
+	if (var(VAR_ZONE) > 24 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 24)) {
+		dynmultipush("Zone 24 & 25", 24)
+	}
+	if (var(VAR_ZONE) > 23 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 23)) {
+		dynmultipush("Zone 23", 23)
+	}
+	if (var(VAR_ZONE) > 22 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 22)) {
+		dynmultipush("Zone 22", 22)
+	}
+	if (var(VAR_ZONE) > 21 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 21)) {
+		dynmultipush("Zone 21", 21)
+	}
+	if (var(VAR_ZONE) > 20 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 20)) {
+		dynmultipush("Zone 20", 20)
+	}
+	if (var(VAR_ZONE) > 18 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 18)) {
+		dynmultipush("Zone 18 & 19", 18)
+	}
+	if (var(VAR_ZONE) > 17 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 17)) {
+		dynmultipush("Zone 17", 17)
+	}
+	if (var(VAR_ZONE) > 16 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 16)) {
+		dynmultipush("Zone 16", 16)
+	}
+	if (var(VAR_ZONE) > 15 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 15)) {
+		dynmultipush("Zone 15", 15)
+	}
+	if (var(VAR_ZONE) > 13 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 13)) {
+		dynmultipush("Zone 13 & 14", 13)
+	}
+	if (var(VAR_ZONE) > 12 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 12)) {
+		dynmultipush("Zone 12", 12)
+	}
+	if (var(VAR_ZONE) > 11 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 11)) {
+		dynmultipush("Zone 11", 11)
+	}
+	if (var(VAR_ZONE) > 10 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 10)) {
+		dynmultipush("Zone 10", 10)
+	}
+	if (var(VAR_ZONE) > 9 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 9)) {
+		dynmultipush("Zone 9", 9)
+	}
+	if (var(VAR_ZONE) > 7 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 7)) {
+		dynmultipush("Zone 7 & 8", 7)
+	}
+	if (var(VAR_ZONE) > 6 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 6)) {
+		dynmultipush("Zone 6", 6)
+	}
+	if (var(VAR_ZONE) > 5 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 5)) {
+		dynmultipush("Zone 5", 5)
+	}
+	if (var(VAR_ZONE) > 4 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 4)) {
+		dynmultipush("Zone 4", 4)
+	}
+	if (var(VAR_ZONE) > 3 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 3)) {
+		dynmultipush("Zone 3", 3)
+	}
+	if (var(VAR_ZONE) > 2 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 2)) {
+		dynmultipush("Zone 2", 2)
+	}
+	if (var(VAR_ZONE) > 1 || (flag(FLAG_IN_NEW_ZONE) && var(VAR_ZONE) == 1)) {
+		dynmultipush("Zone 1", 1)
+	}
+	dynmultipush("Close Notebook", 51)
+	dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+	switch (var(VAR_RESULT)) {
+		case 1:
+			message(format("Trainer Notebook open to\n{COLOR GREEN}Zone 1 - Leafway Trail{COLOR DARK_GRAY}."))
+			waitmessage
+			buffertrainerclassname(1, TRAINER_PBL_NINA)
+			buffertrainername(2, TRAINER_PBL_NINA)
+			if (!defeated(TRAINER_PBL_NINA)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_SCHOOL_KID_F)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_SCHOOL_KID_F)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_MARIAM)
+			buffertrainername(2, TRAINER_PBL_MARIAM)
+			if (!defeated(TRAINER_PBL_MARIAM)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LASS)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LASS)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_OSCAR)
+			buffertrainername(2, TRAINER_PBL_OSCAR)
+			if (!defeated(TRAINER_PBL_OSCAR)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_YOUNGSTER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_YOUNGSTER)
+			}
+			buffertrainername(2, TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER)
+			if (!defeated(TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER)) {
+				dynmultipush("{COLOR RED}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_SCHOOL_KID_M)
+			} else {
+				dynmultipush("{COLOR GREEN}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_SCHOOL_KID_M)
+			}
+			dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_OBJECT)
+			switch (var(VAR_RESULT)) {
+				case OBJ_EVENT_GFX_SCHOOL_KID_F:
+					setvar(VAR_TEMP_2, TRAINER_PBL_NINA)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_NINA)
+					buffertrainername(2, TRAINER_PBL_NINA)
+					if (!defeated(TRAINER_PBL_NINA)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3}is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_LASS:
+					setvar(VAR_TEMP_2, TRAINER_PBL_MARIAM)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_MARIAM)
+					buffertrainername(2, TRAINER_PBL_MARIAM)
+					if (!defeated(TRAINER_PBL_MARIAM)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3}is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_YOUNGSTER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_OSCAR)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_OSCAR)
+					buffertrainername(2, TRAINER_PBL_OSCAR)
+					if (!defeated(TRAINER_PBL_OSCAR)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3}is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_SCHOOL_KID_M:
+					if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+						switch (var(VAR_STARTER_MON)) {
+							case 0:
+								setvar(VAR_TEMP_2, TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_CHALLENGE)
+							case 1:
+								setvar(VAR_TEMP_2, TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_CHALLENGE)
+							case 2:
+								setvar(VAR_TEMP_2, TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_CHALLENGE)
+						}
+					} else {
+						switch (var(VAR_STARTER_MON)) {
+							case 0:
+								setvar(VAR_TEMP_2, TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER)
+							case 1:
+								setvar(VAR_TEMP_2, TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER)
+							case 2:
+								setvar(VAR_TEMP_2, TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER)
+						}
+					}
+					special(BufferTrainerPartyPokemon)
+					buffertrainername(2, TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER)
+					if (!flag(FLAG_BEAT_LEVIATHAN_1)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("Leviathan {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("Leviathan {STR_VAR_3}is ready to\nbattle!")
+						}
+					} else {
+						msgbox("Leviathan {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+			}
+		case 2:
+			message(format("Trainer Notebook open to\n{COLOR GREEN}Zone 2 - Warren Woods{COLOR DARK_GRAY}."))
+			waitmessage
+			buffertrainerclassname(1, TRAINER_PBL_POLLY)
+			buffertrainername(2, TRAINER_PBL_POLLY)
+			if (!defeated(TRAINER_PBL_POLLY)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_SCHOOL_KID_F)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_SCHOOL_KID_F)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_JEREMIAH)
+			buffertrainername(2, TRAINER_PBL_JEREMIAH)
+			if (!defeated(TRAINER_PBL_JEREMIAH)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BUG_CATCHER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BUG_CATCHER)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_JOSH)
+			buffertrainername(2, TRAINER_PBL_JOSH)
+			if (!defeated(TRAINER_PBL_JOSH)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BUG_CATCHER + 400)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BUG_CATCHER + 400)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_HARPER)
+			buffertrainername(2, TRAINER_PBL_HARPER)
+			if (!defeated(TRAINER_PBL_HARPER)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LASS)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LASS)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_ARTHUR)
+			buffertrainername(2, TRAINER_PBL_ARTHUR)
+			if (!defeated(TRAINER_PBL_ARTHUR)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_SCHOOL_KID_M)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_SCHOOL_KID_M)
+			}
+			buffertrainername(2, TRAINER_PBL_SHAUN_LEVIATHAN_2)
+			if (!flag(FLAG_BEAT_LEVIATHAN_2)) {
+				dynmultipush("{COLOR RED}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_YOUNGSTER)
+			} else {
+				dynmultipush("{COLOR GREEN}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_YOUNGSTER)
+			}
+			dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_OBJECT)
+			switch (var(VAR_RESULT)) {
+				case OBJ_EVENT_GFX_SCHOOL_KID_F:
+					setvar(VAR_TEMP_2, TRAINER_PBL_POLLY)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_POLLY)
+					buffertrainername(2, TRAINER_PBL_POLLY)
+					if (!defeated(TRAINER_PBL_POLLY)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3}is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_BUG_CATCHER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_JEREMIAH)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_JEREMIAH)
+					buffertrainername(2, TRAINER_PBL_JEREMIAH)
+					if (!defeated(TRAINER_PBL_JEREMIAH)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3}is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_BUG_CATCHER + 400:
+					setvar(VAR_TEMP_2, TRAINER_PBL_JOSH)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_JOSH)
+					buffertrainername(2, TRAINER_PBL_JOSH)
+					if (!defeated(TRAINER_PBL_JOSH)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3}is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_LASS:
+					setvar(VAR_TEMP_2, TRAINER_PBL_HARPER)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_HARPER)
+					buffertrainername(2, TRAINER_PBL_HARPER)
+					if (!defeated(TRAINER_PBL_HARPER)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3}is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_SCHOOL_KID_M:
+					setvar(VAR_TEMP_2, TRAINER_PBL_ARTHUR)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_ARTHUR)
+					buffertrainername(2, TRAINER_PBL_ARTHUR)
+					if (!defeated(TRAINER_PBL_ARTHUR)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3}is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_YOUNGSTER:
+					if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+						setvar(VAR_TEMP_2, TRAINER_PBL_SHAUN_LEVIATHAN_2_CHALLENGE)
+					} else {
+						setvar(VAR_TEMP_2, TRAINER_PBL_SHAUN_LEVIATHAN_2)
+					}
+					special(BufferTrainerPartyPokemon)
+					buffertrainername(2, TRAINER_PBL_SHAUN_LEVIATHAN_2)
+					if (!flag(FLAG_BEAT_LEVIATHAN_2)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("Leviathan {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("Leviathan {STR_VAR_3}is ready to\nbattle!")
+						}
+					} else {
+						msgbox("Leviathan {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+			}
+		case 3:
+			message(format("Trainer Notebook open to\n{COLOR GREEN}Zone 3 - Sunlit Pond{COLOR DARK_GRAY}."))
+			waitmessage
+			buffertrainerclassname(1, TRAINER_PBL_JEMMA)
+			buffertrainername(2, TRAINER_PBL_JEMMA)
+			if (!defeated(TRAINER_PBL_JEMMA)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LASS)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LASS)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_PATRICK)
+			buffertrainername(2, TRAINER_PBL_PATRICK)
+			if (!defeated(TRAINER_PBL_PATRICK)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BUG_CATCHER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BUG_CATCHER)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_ANNABELLE)
+			buffertrainername(2, TRAINER_PBL_ANNABELLE)
+			if (!defeated(TRAINER_PBL_ANNABELLE)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LADY)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LADY)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_BORIS)
+			buffertrainername(2, TRAINER_PBL_BORIS)
+			if (!defeated(TRAINER_PBL_BORIS)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_YOUNGSTER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_YOUNGSTER)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_RICHARD)
+			buffertrainername(2, TRAINER_PBL_RICHARD)
+			if (!defeated(TRAINER_PBL_RICHARD)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_RICH_BOY)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_RICH_BOY)
+			}
+			buffertrainername(2, TRAINER_PBL_PHILLIPA_LEVIATHAN_3)
+			if (!flag(FLAG_BEAT_LEVIATHAN_3)) {
+				dynmultipush("{COLOR RED}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_SCHOOL_KID_F)
+			} else {
+				dynmultipush("{COLOR GREEN}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_SCHOOL_KID_F)
+			}
+			dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_OBJECT)
+			switch (var(VAR_RESULT)) {
+				case OBJ_EVENT_GFX_LASS:
+					setvar(VAR_TEMP_2, TRAINER_PBL_JEMMA)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_JEMMA)
+					buffertrainername(2, TRAINER_PBL_JEMMA)
+					if (!defeated(TRAINER_PBL_JEMMA)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3}is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+									case OBJ_EVENT_GFX_BUG_CATCHER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_PATRICK)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_PATRICK)
+					buffertrainername(2, TRAINER_PBL_PATRICK)
+					if (!defeated(TRAINER_PBL_PATRICK)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_LADY:
+					setvar(VAR_TEMP_2, TRAINER_PBL_ANNABELLE)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_ANNABELLE)
+					buffertrainername(2, TRAINER_PBL_ANNABELLE)
+					if (!defeated(TRAINER_PBL_ANNABELLE)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_YOUNGSTER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_BORIS)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_BORIS)
+					buffertrainername(2, TRAINER_PBL_BORIS)
+					if (!defeated(TRAINER_PBL_BORIS)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_RICH_BOY:
+					setvar(VAR_TEMP_2, TRAINER_PBL_RICHARD)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_RICHARD)
+					buffertrainername(2, TRAINER_PBL_RICHARD)
+					if (!defeated(TRAINER_PBL_RICHARD)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_SCHOOL_KID_F:
+					if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+						setvar(VAR_TEMP_2, TRAINER_PBL_PHILLIPA_LEVIATHAN_3_CHALLENGE)
+					} else {
+						setvar(VAR_TEMP_2, TRAINER_PBL_PHILLIPA_LEVIATHAN_3)
+					}
+					special(BufferTrainerPartyPokemon)
+					buffertrainername(2, TRAINER_PBL_PHILLIPA_LEVIATHAN_3)
+					if (!flag(FLAG_BEAT_LEVIATHAN_3)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("Leviathan {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("Leviathan {STR_VAR_3}is ready to\nbattle!")
+						}
+					} else {
+						msgbox("Leviathan {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+			}
+		case 4:
+			message(format("Trainer Notebook open to\n{COLOR GREEN}Zone 4 - Mystic Glade{COLOR DARK_GRAY}."))
+			waitmessage
+			buffertrainerclassname(1, TRAINER_PBL_HERMAN)
+			buffertrainername(2, TRAINER_PBL_HERMAN)
+			if (!defeated(TRAINER_PBL_HERMAN)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_SCHOOL_KID_M)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_SCHOOL_KID_M)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_RALPH)
+			buffertrainername(2, TRAINER_PBL_RALPH)
+			if (!defeated(TRAINER_PBL_RALPH)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_YOUNGSTER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_YOUNGSTER)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_CALLIE)
+			buffertrainername(2, TRAINER_PBL_CALLIE)
+			if (!defeated(TRAINER_PBL_CALLIE)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LASS)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LASS)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_SANTIAGO)
+			buffertrainername(2, TRAINER_PBL_SANTIAGO)
+			if (!defeated(TRAINER_PBL_SANTIAGO)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BUG_CATCHER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BUG_CATCHER)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_CHLOE_AND_KAYA)
+			buffertrainername(2, TRAINER_PBL_CHLOE_AND_KAYA)
+			if (!defeated(TRAINER_PBL_CHLOE_AND_KAYA)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_TWIN)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_TWIN)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_FRED)
+			buffertrainername(2, TRAINER_PBL_FRED)
+			if (!defeated(TRAINER_PBL_FRED)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_CAMPER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_CAMPER)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_LUCIA)
+			buffertrainername(2, TRAINER_PBL_LUCIA)
+			if (!defeated(TRAINER_PBL_LUCIA)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_FAIRY_TALE_GIRL)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_FAIRY_TALE_GIRL)
+			}
+			buffertrainername(2, TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4)
+			if (!flag(FLAG_BEAT_LEVIATHAN_3)) {
+				dynmultipush("{COLOR RED}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_LASS + 400)
+			} else {
+				dynmultipush("{COLOR GREEN}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_LASS + 400)
+			}
+			dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_OBJECT)
+			switch (var(VAR_RESULT)) {
+				case OBJ_EVENT_GFX_SCHOOL_KID_M:
+					setvar(VAR_TEMP_2, TRAINER_PBL_HERMAN)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_HERMAN)
+					buffertrainername(2, TRAINER_PBL_HERMAN)
+					if (!defeated(TRAINER_PBL_HERMAN)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_YOUNGSTER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_RALPH)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_RALPH)
+					buffertrainername(2, TRAINER_PBL_RALPH)
+					if (!defeated(TRAINER_PBL_RALPH)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_LASS:
+					setvar(VAR_TEMP_2, TRAINER_PBL_CALLIE)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_CALLIE)
+					buffertrainername(2, TRAINER_PBL_CALLIE)
+					if (!defeated(TRAINER_PBL_CALLIE)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_BUG_CATCHER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_SANTIAGO)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_SANTIAGO)
+					buffertrainername(2, TRAINER_PBL_SANTIAGO)
+					if (!defeated(TRAINER_PBL_SANTIAGO)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_TWIN:
+					setvar(VAR_TEMP_2, TRAINER_PBL_CHLOE_AND_KAYA)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_CHLOE_AND_KAYA)
+					buffertrainername(2, TRAINER_PBL_CHLOE_AND_KAYA)
+					if (!defeated(TRAINER_PBL_CHLOE_AND_KAYA)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} are ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} are ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} are defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_CAMPER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_FRED)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_FRED)
+					buffertrainername(2, TRAINER_PBL_FRED)
+					if (!defeated(TRAINER_PBL_FRED)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_FAIRY_TALE_GIRL:
+					setvar(VAR_TEMP_2, TRAINER_PBL_LUCIA)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_LUCIA)
+					buffertrainername(2, TRAINER_PBL_LUCIA)
+					if (!defeated(TRAINER_PBL_LUCIA)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_LASS + 400:
+					if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+						setvar(VAR_TEMP_2, TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4_CHALLENGE)
+					} else {
+						setvar(VAR_TEMP_2, TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4)
+					}
+					special(BufferTrainerPartyPokemon)
+					buffertrainername(2, TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4)
+					if (!flag(FLAG_BEAT_LEVIATHAN_4)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("Leviathan {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("Leviathan {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("Leviathan {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+			}
+		case 5:
+			message(format("Trainer Notebook open to\n{COLOR GREEN}Zone 5 - Timberstep Plateau{COLOR DARK_GRAY}."))
+			waitmessage
+			buffertrainerclassname(1, TRAINER_PBL_ANNE_AND_JUNE)
+			buffertrainername(2, TRAINER_PBL_ANNE_AND_JUNE)
+			if (!defeated(TRAINER_PBL_ANNE_AND_JUNE)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LASS)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LASS)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_NOVA_AND_CORA)
+			buffertrainername(2, TRAINER_PBL_NOVA_AND_CORA)
+			if (!defeated(TRAINER_PBL_NOVA_AND_CORA)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_TWIN)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_TWIN)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_CLINTON)
+			buffertrainername(2, TRAINER_PBL_CLINTON)
+			if (!defeated(TRAINER_PBL_CLINTON)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_RICH_BOY)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_RICH_BOY)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_REBECCA)
+			buffertrainername(2, TRAINER_PBL_REBECCA)
+			if (!defeated(TRAINER_PBL_REBECCA)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_POKEFAN_F)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_POKEFAN_F)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_RYAN)
+			buffertrainername(2, TRAINER_PBL_RYAN)
+			if (!defeated(TRAINER_PBL_RYAN)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_POKEFAN_M)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_POKEFAN_M)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_CAITLYN)
+			buffertrainername(2, TRAINER_PBL_CAITLYN)
+			if (!defeated(TRAINER_PBL_CAITLYN)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_PICNICKER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_PICNICKER)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_KENNETH)
+			buffertrainername(2, TRAINER_PBL_KENNETH)
+			if (!defeated(TRAINER_PBL_KENNETH)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_CAMPER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_CAMPER)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_KEVIN)
+			buffertrainername(2, TRAINER_PBL_KEVIN)
+			if (!defeated(TRAINER_PBL_KEVIN)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BUG_CATCHER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BUG_CATCHER)
+			}
+			buffertrainername(2, TRAINER_PBL_MARIA_LEVIATHAN_5)
+			if (!flag(FLAG_BEAT_LEVIATHAN_5)) {
+				dynmultipush("{COLOR RED}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_BACKPACKER_F)
+			} else {
+				dynmultipush("{COLOR GREEN}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_BACKPACKER_F)
+			}
+			dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_OBJECT)
+			switch (var(VAR_RESULT)) {
+				case OBJ_EVENT_GFX_LASS:
+					setvar(VAR_TEMP_2, TRAINER_PBL_ANNE_AND_JUNE)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_ANNE_AND_JUNE)
+					buffertrainername(2, TRAINER_PBL_ANNE_AND_JUNE)
+					if (!defeated(TRAINER_PBL_ANNE_AND_JUNE)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} are ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} are ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} are defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_TWIN:
+					setvar(VAR_TEMP_2, TRAINER_PBL_NOVA_AND_CORA)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_NOVA_AND_CORA)
+					buffertrainername(2, TRAINER_PBL_NOVA_AND_CORA)
+					if (!defeated(TRAINER_PBL_NOVA_AND_CORA)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} are ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} are ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} are defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_RICH_BOY:
+					setvar(VAR_TEMP_2, TRAINER_PBL_CLINTON)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_CLINTON)
+					buffertrainername(2, TRAINER_PBL_CLINTON)
+					if (!defeated(TRAINER_PBL_CLINTON)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_POKEFAN_F:
+					setvar(VAR_TEMP_2, TRAINER_PBL_REBECCA)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_REBECCA)
+					buffertrainername(2, TRAINER_PBL_REBECCA)
+					if (!defeated(TRAINER_PBL_REBECCA)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_POKEFAN_M:
+					setvar(VAR_TEMP_2, TRAINER_PBL_RYAN)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_RYAN)
+					buffertrainername(2, TRAINER_PBL_RYAN)
+					if (!defeated(TRAINER_PBL_RYAN)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_PICNICKER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_CAITLYN)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_CAITLYN)
+					buffertrainername(2, TRAINER_PBL_CAITLYN)
+					if (!defeated(TRAINER_PBL_CAITLYN)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_CAMPER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_KENNETH)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_KENNETH)
+					buffertrainername(2, TRAINER_PBL_KENNETH)
+					if (!defeated(TRAINER_PBL_KENNETH)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_BUG_CATCHER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_KEVIN)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_KEVIN)
+					buffertrainername(2, TRAINER_PBL_KEVIN)
+					if (!defeated(TRAINER_PBL_KEVIN)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+				case OBJ_EVENT_GFX_BACKPACKER_F:
+					if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+						setvar(VAR_TEMP_2, TRAINER_PBL_MARIA_LEVIATHAN_5_CHALLENGE)
+					} else {
+						setvar(VAR_TEMP_2, TRAINER_PBL_MARIA_LEVIATHAN_5)
+					}
+					special(BufferTrainerPartyPokemon)
+					buffertrainername(2, TRAINER_PBL_MARIA_LEVIATHAN_5)
+					if (!flag(FLAG_BEAT_LEVIATHAN_5)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("Leviathan {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("Leviathan {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("Leviathan {STR_VAR_3} is defeated!\nThey battled with:\l{STR_VAR_1}.")
+					}
+			}
+		case 6:
+			message(format("Trainer Notebook open to\n{COLOR GREEN}Zone 6 - Seabreeze Island{COLOR DARK_GRAY}."))
+			waitmessage
+			buffertrainerclassname(1, TRAINER_PBL_GILBERT)
+			buffertrainername(2, TRAINER_PBL_GILBERT)
+			if (!defeated(TRAINER_PBL_GILBERT)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_FISHERMAN)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_FISHERMAN)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_MELANIE)
+			buffertrainername(2, TRAINER_PBL_MELANIE)
+			if (!defeated(TRAINER_PBL_MELANIE)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LASS)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LASS)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_CONSTANCE)
+			buffertrainername(2, TRAINER_PBL_CONSTANCE)
+			if (!defeated(TRAINER_PBL_CONSTANCE)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LADY)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LADY)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_FRANK)
+			buffertrainername(2, TRAINER_PBL_FRANK)
+			if (!defeated(TRAINER_PBL_FRANK)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_YOUNGSTER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_YOUNGSTER)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_DUDLEY)
+			buffertrainername(2, TRAINER_PBL_DUDLEY)
+			if (!defeated(TRAINER_PBL_DUDLEY)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BIRD_KEEPER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BIRD_KEEPER)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_DAISY)
+			buffertrainername(2, TRAINER_PBL_DAISY)
+			if (!defeated(TRAINER_PBL_DAISY)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BREEDER_F)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BREEDER_F)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_VIC_AND_DELL)
+			buffertrainername(2, TRAINER_PBL_VIC_AND_DELL)
+			if (!defeated(TRAINER_PBL_VIC_AND_DELL)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_TWIN)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_TWIN)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_MINA)
+			buffertrainername(2, TRAINER_PBL_MINA)
+			if (!defeated(TRAINER_PBL_MINA)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_TUBER_F)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_TUBER_F)
+			}
+			buffertrainername(2, TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6)
+			if (!flag(FLAG_BEAT_LEVIATHAN_6)) {
+				dynmultipush("{COLOR RED}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_SWIMMER_F_WALKING)
+			} else {
+				dynmultipush("{COLOR GREEN}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_SWIMMER_F_WALKING)
+			}
+			dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_OBJECT)
+			switch (var(VAR_RESULT)) {
+				case OBJ_EVENT_GFX_FISHERMAN:
+					setvar(VAR_TEMP_2, TRAINER_PBL_GILBERT)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_GILBERT)
+					buffertrainername(2, TRAINER_PBL_GILBERT)
+					if (!defeated(TRAINER_PBL_GILBERT)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_LASS:
+					setvar(VAR_TEMP_2, TRAINER_PBL_MELANIE)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_MELANIE)
+					buffertrainername(2, TRAINER_PBL_MELANIE)
+					if (!defeated(TRAINER_PBL_MELANIE)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_LADY:
+					setvar(VAR_TEMP_2, TRAINER_PBL_CONSTANCE)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_CONSTANCE)
+					buffertrainername(2, TRAINER_PBL_CONSTANCE)
+					if (!defeated(TRAINER_PBL_CONSTANCE)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_YOUNGSTER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_FRANK)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_FRANK)
+					buffertrainername(2, TRAINER_PBL_FRANK)
+					if (!defeated(TRAINER_PBL_FRANK)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_BIRD_KEEPER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_DUDLEY)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_DUDLEY)
+					buffertrainername(2, TRAINER_PBL_DUDLEY)
+					if (!defeated(TRAINER_PBL_DUDLEY)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_BREEDER_F:
+					setvar(VAR_TEMP_2, TRAINER_PBL_DAISY)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_DAISY)
+					buffertrainername(2, TRAINER_PBL_DAISY)
+					if (!defeated(TRAINER_PBL_DAISY)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_TWIN:
+					setvar(VAR_TEMP_2, TRAINER_PBL_VIC_AND_DELL)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_VIC_AND_DELL)
+					buffertrainername(2, TRAINER_PBL_VIC_AND_DELL)
+					if (!defeated(TRAINER_PBL_VIC_AND_DELL)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_TUBER_F:
+					setvar(VAR_TEMP_2, TRAINER_PBL_MINA)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_MINA)
+					buffertrainername(2, TRAINER_PBL_MINA)
+					if (!defeated(TRAINER_PBL_MINA)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_SWIMMER_F_WALKING:
+					if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+						setvar(VAR_TEMP_2, TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_CHALLENGE)
+					} else {
+						setvar(VAR_TEMP_2, TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6)
+					}
+					special(BufferTrainerPartyPokemon)
+					buffertrainername(2, TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6)
+					if (!flag(FLAG_BEAT_LEVIATHAN_6)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("Leviathan {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("Leviathan {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("Leviathan {STR_VAR_3} is defeated!")
+					}
+			}
+		case 7:
+			message(format("Trainer Notebook open to\n{COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and\l{COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}."))
+			waitmessage
+			buffertrainerclassname(1, TRAINER_PBL_MILLIE)
+			buffertrainername(2, TRAINER_PBL_MILLIE)
+			if (!defeated(TRAINER_PBL_MILLIE)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_GIRL_3)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_GIRL_3)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_JAMAL)
+			buffertrainername(2, TRAINER_PBL_JAMAL)
+			if (!defeated(TRAINER_PBL_JAMAL)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_CAMPER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_CAMPER)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_PAIGE)
+			buffertrainername(2, TRAINER_PBL_PAIGE)
+			if (!defeated(TRAINER_PBL_PAIGE)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_AROMA_LADY)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_AROMA_LADY)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_SETH)
+			buffertrainername(2, TRAINER_PBL_SETH)
+			if (!defeated(TRAINER_PBL_SETH)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_RICH_BOY)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_RICH_BOY)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_CONNIE)
+			buffertrainername(2, TRAINER_PBL_CONNIE)
+			if (!defeated(TRAINER_PBL_CONNIE)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LASS)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_LASS)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_PETER)
+			buffertrainername(2, TRAINER_PBL_PETER)
+			if (!defeated(TRAINER_PBL_PETER)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_YOUNGSTER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_YOUNGSTER)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_WHITAKER)
+			buffertrainername(2, TRAINER_PBL_WHITAKER)
+			if (!defeated(TRAINER_PBL_WHITAKER)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BIRD_KEEPER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BIRD_KEEPER)
+			}
+			buffertrainername(2, TRAINER_PBL_BETTY_LEVIATHAN_7)
+			if (!flag(FLAG_BEAT_LEVIATHAN_7)) {
+				dynmultipush("{COLOR RED}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_LADY)
+			} else {
+				dynmultipush("{COLOR GREEN}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_LADY)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_JIMMY)
+			buffertrainername(2, TRAINER_PBL_JIMMY)
+			if (!defeated(TRAINER_PBL_JIMMY)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_COLLECTOR)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_COLLECTOR)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_EMILIANO)
+			buffertrainername(2, TRAINER_PBL_EMILIANO)
+			if (!defeated(TRAINER_PBL_EMILIANO)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_HIKER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_HIKER)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_BECKHAM)
+			buffertrainername(2, TRAINER_PBL_BECKHAM)
+			if (!defeated(TRAINER_PBL_BECKHAM)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_POKEMANIAC)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_POKEMANIAC)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_KAREN)
+			buffertrainername(2, TRAINER_PBL_KAREN)
+			if (!defeated(TRAINER_PBL_KAREN)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BACKPACKER_F)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BACKPACKER_F)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_JAYDEN)
+			buffertrainername(2, TRAINER_PBL_JAYDEN)
+			if (!defeated(TRAINER_PBL_JAYDEN)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_HIKER + 400)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_HIKER + 400)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_NEIL)
+			buffertrainername(2, TRAINER_PBL_NEIL)
+			if (!defeated(TRAINER_PBL_NEIL)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_RUIN_MANIAC)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_RUIN_MANIAC)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_TAMARA)
+			buffertrainername(2, TRAINER_PBL_TAMARA)
+			if (!defeated(TRAINER_PBL_TAMARA)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_PICNICKER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_PICNICKER)
+			}
+			buffertrainername(2, TRAINER_PBL_ALISTAIR_LEVIATHAN_8)
+			if (!flag(FLAG_BEAT_LEVIATHAN_8)) {
+				dynmultipush("{COLOR RED}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_ROUGHNECK)
+			} else {
+				dynmultipush("{COLOR GREEN}Leviathan {STR_VAR_3}", OBJ_EVENT_GFX_ROUGHNECK)
+			}
+			dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_OBJECT)
+			switch (var(VAR_RESULT)) {
+				case OBJ_EVENT_GFX_GIRL_3:
+					setvar(VAR_TEMP_2, TRAINER_PBL_MILLIE)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_MILLIE)
+					buffertrainername(2, TRAINER_PBL_MILLIE)
+					if (!defeated(TRAINER_PBL_MILLIE)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_CAMPER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_JAMAL)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_JAMAL)
+					buffertrainername(2, TRAINER_PBL_JAMAL)
+					if (!defeated(TRAINER_PBL_JAMAL)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_AROMA_LADY:
+					setvar(VAR_TEMP_2, TRAINER_PBL_PAIGE)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_PAIGE)
+					buffertrainername(2, TRAINER_PBL_PAIGE)
+					if (!defeated(TRAINER_PBL_PAIGE)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_RICH_BOY:
+					setvar(VAR_TEMP_2, TRAINER_PBL_SETH)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_SETH)
+					buffertrainername(2, TRAINER_PBL_SETH)
+					if (!defeated(TRAINER_PBL_SETH)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_LASS:
+					setvar(VAR_TEMP_2, TRAINER_PBL_CONNIE)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_CONNIE)
+					buffertrainername(2, TRAINER_PBL_CONNIE)
+					if (!defeated(TRAINER_PBL_CONNIE)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_YOUNGSTER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_PETER)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_PETER)
+					buffertrainername(2, TRAINER_PBL_PETER)
+					if (!defeated(TRAINER_PBL_PETER)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_BIRD_KEEPER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_WHITAKER)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_WHITAKER)
+					buffertrainername(2, TRAINER_PBL_WHITAKER)
+					if (!defeated(TRAINER_PBL_WHITAKER)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_LADY:
+					if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+						setvar(VAR_TEMP_2, TRAINER_PBL_BETTY_LEVIATHAN_7_CHALLENGE)
+					} else {
+						setvar(VAR_TEMP_2, TRAINER_PBL_BETTY_LEVIATHAN_7)
+					}
+					special(BufferTrainerPartyPokemon)
+					buffertrainername(2, TRAINER_PBL_BETTY_LEVIATHAN_7)
+					if (!flag(FLAG_BEAT_LEVIATHAN_7)) {
+						msgbox("Leviathan {STR_VAR_3} is ready to\nbattle!")
+					} else {
+						msgbox("Leviathan {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_COLLECTOR:
+					setvar(VAR_TEMP_2, TRAINER_PBL_JIMMY)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_JIMMY)
+					buffertrainername(2, TRAINER_PBL_JIMMY)
+					if (!defeated(TRAINER_PBL_JIMMY)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_HIKER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_EMILIANO)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_EMILIANO)
+					buffertrainername(2, TRAINER_PBL_EMILIANO)
+					if (!defeated(TRAINER_PBL_EMILIANO)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_POKEMANIAC:
+					setvar(VAR_TEMP_2, TRAINER_PBL_BECKHAM)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_BECKHAM)
+					buffertrainername(2, TRAINER_PBL_BECKHAM)
+					if (!defeated(TRAINER_PBL_BECKHAM)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_BACKPACKER_F:
+					setvar(VAR_TEMP_2, TRAINER_PBL_KAREN)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_KAREN)
+					buffertrainername(2, TRAINER_PBL_KAREN)
+					if (!defeated(TRAINER_PBL_KAREN)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_HIKER + 400:
+					setvar(VAR_TEMP_2, TRAINER_PBL_JAYDEN)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_JAYDEN)
+					buffertrainername(2, TRAINER_PBL_JAYDEN)
+					if (!defeated(TRAINER_PBL_JAYDEN)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_RUIN_MANIAC:
+					setvar(VAR_TEMP_2, TRAINER_PBL_NEIL)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_NEIL)
+					buffertrainername(2, TRAINER_PBL_NEIL)
+					if (!defeated(TRAINER_PBL_NEIL)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_PICNICKER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_TAMARA)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_TAMARA)
+					buffertrainername(2, TRAINER_PBL_TAMARA)
+					if (!defeated(TRAINER_PBL_TAMARA)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_ROUGHNECK:
+					if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+						setvar(VAR_TEMP_2, TRAINER_PBL_ALISTAIR_LEVIATHAN_8_CHALLENGE)
+					} else {
+						setvar(VAR_TEMP_2, TRAINER_PBL_ALISTAIR_LEVIATHAN_8)
+					}
+					special(BufferTrainerPartyPokemon)
+					buffertrainername(2, TRAINER_PBL_ALISTAIR_LEVIATHAN_8)
+					if (!flag(FLAG_BEAT_LEVIATHAN_8)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("Leviathan {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("Leviathan {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("Leviathan {STR_VAR_3} is defeated!")
+					}
+			}
+		case 9:
+			message(format("Trainer Notebook open to\n{COLOR GREEN}Zone 9 - Lushbranch Village{COLOR DARK_GRAY}."))
+			waitmessage
+			buffertrainerclassname(1, TRAINER_PBL_COOPER)
+			buffertrainername(2, TRAINER_PBL_COOPER)
+			if (!defeated(TRAINER_PBL_COOPER)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_NINJA_BOY)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_NINJA_BOY)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_CARMINE)
+			buffertrainername(2, TRAINER_PBL_CARMINE)
+			if (!defeated(TRAINER_PBL_CARMINE)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BACKPACKER_F)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BACKPACKER_F)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_JONATHAN)
+			buffertrainername(2, TRAINER_PBL_JONATHAN)
+			if (!defeated(TRAINER_PBL_JONATHAN)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BUG_CATCHER)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BUG_CATCHER)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_CALVIN)
+			buffertrainername(2, TRAINER_PBL_CALVIN)
+			if (!defeated(TRAINER_PBL_CALVIN)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_FISHERMAN)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_FISHERMAN)
+			}
+			buffertrainerclassname(1, TRAINER_PBL_LUIS)
+			buffertrainername(2, TRAINER_PBL_LUIS)
+			if (!defeated(TRAINER_PBL_LUIS)) {
+				dynmultipush("{COLOR RED}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BREEDER_M)
+			} else {
+				dynmultipush("{COLOR GREEN}{STR_VAR_2} {STR_VAR_3}", OBJ_EVENT_GFX_BREEDER_M)
+			}
+			buffertrainername(2, TRAINER_PBL_ARI)
+			if (!defeated(TRAINER_PBL_ARI)) {
+				dynmultipush("{COLOR RED}Winstrate {STR_VAR_3}", OBJ_EVENT_GFX_CAMPER)
+			} else {
+				dynmultipush("{COLOR GREEN}Winstrate {STR_VAR_3}", OBJ_EVENT_GFX_CAMPER)
+			}
+			buffertrainername(2, TRAINER_PBL_BERTHA)
+			if (!defeated(TRAINER_PBL_BERTHA)) {
+				dynmultipush("{COLOR RED}Winstrate {STR_VAR_3}", OBJ_EVENT_GFX_PICNICKER)
+			} else {
+				dynmultipush("{COLOR GREEN}Winstrate {STR_VAR_3}", OBJ_EVENT_GFX_PICNICKER)
+			}
+			buffertrainername(2, TRAINER_PBL_CASSANDRA)
+			if (!defeated(TRAINER_PBL_CASSANDRA)) {
+				dynmultipush("{COLOR RED}Winstrate {STR_VAR_3}", OBJ_EVENT_GFX_POKEFAN_F)
+			} else {
+				dynmultipush("{COLOR GREEN}Winstrate {STR_VAR_3}", OBJ_EVENT_GFX_POKEFAN_F)
+			}
+			buffertrainername(2, TRAINER_PBL_DOMINIC)
+			if (!defeated(TRAINER_PBL_DOMINIC)) {
+				dynmultipush("{COLOR RED}Winstrate {STR_VAR_3}", OBJ_EVENT_GFX_POKEFAN_M)
+			} else {
+				dynmultipush("{COLOR GREEN}Winstrate {STR_VAR_3}", OBJ_EVENT_GFX_POKEFAN_M)
+			}
+			buffertrainername(2, TRAINER_PBL_ERICA)
+			if (!defeated(TRAINER_PBL_ERICA)) {
+				dynmultipush("{COLOR RED}Winstrate {STR_VAR_3}", OBJ_EVENT_GFX_EXPERT_F)
+			} else {
+				dynmultipush("{COLOR GREEN}Winstrate {STR_VAR_3}", OBJ_EVENT_GFX_EXPERT_F)
+			}
+			dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_OBJECT)
+			switch (var(VAR_RESULT)) {
+				case OBJ_EVENT_GFX_NINJA_BOY:
+					setvar(VAR_TEMP_2, TRAINER_PBL_COOPER)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_COOPER)
+					buffertrainername(2, TRAINER_PBL_COOPER)
+					if (!defeated(TRAINER_PBL_COOPER)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_BACKPACKER_F:
+					setvar(VAR_TEMP_2, TRAINER_PBL_CARMINE)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_CARMINE)
+					buffertrainername(2, TRAINER_PBL_CARMINE)
+					if (!defeated(TRAINER_PBL_CARMINE)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_BUG_CATCHER:
+					setvar(VAR_TEMP_2, TRAINER_PBL_JONATHAN)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_JONATHAN)
+					buffertrainername(2, TRAINER_PBL_JONATHAN)
+					if (!defeated(TRAINER_PBL_JONATHAN)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_FISHERMAN:
+					setvar(VAR_TEMP_2, TRAINER_PBL_CALVIN)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_CALVIN)
+					buffertrainername(2, TRAINER_PBL_CALVIN)
+					if (!defeated(TRAINER_PBL_CALVIN)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_BREEDER_M:
+					setvar(VAR_TEMP_2, TRAINER_PBL_LUIS)
+					special(BufferTrainerPartyPokemon)
+					buffertrainerclassname(1, TRAINER_PBL_LUIS)
+					buffertrainername(2, TRAINER_PBL_LUIS)
+					if (!defeated(TRAINER_PBL_LUIS)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("{STR_VAR_2} {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("{STR_VAR_2} {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_CAMPER:
+					if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+						setvar(VAR_TEMP_2, TRAINER_PBL_ARI_CHALLENGE)
+					} else {
+						setvar(VAR_TEMP_2, TRAINER_PBL_ARI)
+					}
+					special(BufferTrainerPartyPokemon)
+					buffertrainername(2, TRAINER_PBL_ARI)
+					if (!flag(FLAG_HIDE_ZONE9A_ARI_WINSTRATE)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("Winstrate {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("Winstrate {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("Winstrate {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_PICNICKER:
+					if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+						setvar(VAR_TEMP_2, TRAINER_PBL_BERTHA_CHALLENGE)
+					} else {
+						setvar(VAR_TEMP_2, TRAINER_PBL_BERTHA)
+					}
+					special(BufferTrainerPartyPokemon)
+					buffertrainername(2, TRAINER_PBL_BERTHA)
+					if (!flag(FLAG_HIDE_ZONE9A_ARI_WINSTRATE)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("Winstrate {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("Winstrate {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("Winstrate {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_POKEFAN_F:
+					if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+						setvar(VAR_TEMP_2, TRAINER_PBL_CASSANDRA_CHALLENGE)
+					} else {
+						setvar(VAR_TEMP_2, TRAINER_PBL_CASSANDRA)
+					}
+					special(BufferTrainerPartyPokemon)
+					buffertrainername(2, TRAINER_PBL_CASSANDRA)
+					if (!flag(FLAG_HIDE_ZONE9A_ARI_WINSTRATE)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("Winstrate {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("Winstrate {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("Winstrate {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_POKEFAN_M:
+					if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+						setvar(VAR_TEMP_2, TRAINER_PBL_DOMINIC_CHALLENGE)
+					} else {
+						setvar(VAR_TEMP_2, TRAINER_PBL_DOMINIC)
+					}
+					special(BufferTrainerPartyPokemon)
+					buffertrainername(2, TRAINER_PBL_DOMINIC)
+					if (!flag(FLAG_HIDE_ZONE9A_ARI_WINSTRATE)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("Winstrate {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("Winstrate {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("Winstrate {STR_VAR_3} is defeated!")
+					}
+				case OBJ_EVENT_GFX_EXPERT_F:
+					if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+						setvar(VAR_TEMP_2, TRAINER_PBL_ERICA_CHALLENGE)
+					} else {
+						setvar(VAR_TEMP_2, TRAINER_PBL_ERICA)
+					}
+					special(BufferTrainerPartyPokemon)
+					buffertrainername(2, TRAINER_PBL_ERICA)
+					if (!flag(FLAG_HIDE_ZONE9A_ARI_WINSTRATE)) {
+						if (flag(FLAG_SETTINGS_FULL_INFO)) {
+							msgbox("Winstrate {STR_VAR_3} is ready to\nbattle! They will use:\l{STR_VAR_1}!")
+						} else {
+							msgbox("Winstrate {STR_VAR_3} is ready to\nbattle!")
+						}
+					} else {
+						msgbox("Winstrate {STR_VAR_3} is defeated!")
+					}
+			}
+
+	}
+	setvar(VAR_TEMP_2, 0)
+	releaseall
 	end
 }
 

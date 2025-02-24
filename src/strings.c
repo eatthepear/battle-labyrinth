@@ -1618,6 +1618,8 @@ const u8 gText_SaveMenuInfiniteRandomlocke[] =_("Infinite Randomlocke");
 
 const u8 gText_LevelCapVar1[] = _("Lvl Cap: {STR_VAR_1}");
 
+const u8 gText_TrainerStatusParty[] = _("{STR_VAR_1},\l{STR_VAR_2}");
+
 const u8 gText_MapZone0[] = _("Zone 0 - Harvest Road");
 const u8 gText_MapZone1[] = _("Zone 1 - Leafway Trail");
 const u8 gText_MapZone2[] = _("Zone 2 - Warren Woods");

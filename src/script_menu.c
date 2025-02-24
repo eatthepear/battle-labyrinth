@@ -21,6 +21,8 @@
 #include "constants/items.h"
 #include "constants/script_menu.h"
 #include "constants/songs.h"
+#include "event_object_movement.h"
+#include "constants/event_objects.h"
 
 #include "data/script_menu.h"
 
@@ -67,6 +69,10 @@ static void MultichoiceDynamicEventDebug_OnDestroy(struct DynamicListMenuEventAr
 static void MultichoiceDynamicEventShowItem_OnInit(struct DynamicListMenuEventArgs *eventArgs);
 static void MultichoiceDynamicEventShowItem_OnSelectionChanged(struct DynamicListMenuEventArgs *eventArgs);
 static void MultichoiceDynamicEventShowItem_OnDestroy(struct DynamicListMenuEventArgs *eventArgs);
+static void MultichoiceDynamicEventShowObject_OnInit(struct DynamicListMenuEventArgs *eventArgs);
+static void MultichoiceDynamicEventShowObject_OnSelectionChanged(struct DynamicListMenuEventArgs *eventArgs);
+static void MultichoiceDynamicEventShowObject_OnDestroy(struct DynamicListMenuEventArgs *eventArgs);
+static u16 MultichoiceDynamicEventShowObject_FindOriginalObjectEventID(u16 objectEventID);
 
 static const struct DynamicListMenuEventCollection sDynamicListMenuEventCollections[] =
 {
@@ -81,6 +87,12 @@ static const struct DynamicListMenuEventCollection sDynamicListMenuEventCollecti
         .OnInit = MultichoiceDynamicEventShowItem_OnInit,
         .OnSelectionChanged = MultichoiceDynamicEventShowItem_OnSelectionChanged,
         .OnDestroy = MultichoiceDynamicEventShowItem_OnDestroy
+    },
+    [DYN_MULTICHOICE_CB_SHOW_OBJECT] =
+    {
+        .OnInit = MultichoiceDynamicEventShowObject_OnInit,
+        .OnSelectionChanged = MultichoiceDynamicEventShowObject_OnSelectionChanged,
+        .OnDestroy = MultichoiceDynamicEventShowObject_OnDestroy
     }
 };
 
@@ -206,6 +218,67 @@ static void MultichoiceDynamicEventShowItem_OnDestroy(struct DynamicListMenuEven
 #undef sAuxWindowId
 #undef sItemSpriteId
 #undef TAG_CB_ITEM_ICON
+
+#define sAuxWindowId sDynamicMenuEventScratchPad[0]
+#define sObjectSpriteId sDynamicMenuEventScratchPad[1]
+#define TAG_CB_OBJECT_ICON 3000
+
+static void MultichoiceDynamicEventShowObject_OnInit(struct DynamicListMenuEventArgs *eventArgs)
+{
+    struct WindowTemplate *template = &gWindows[eventArgs->windowId].window;
+    u32 baseBlock = template->baseBlock + template->width * template->height;
+    struct WindowTemplate auxTemplate = CreateWindowTemplate(0, template->tilemapLeft + template->width + 2, template->tilemapTop, 4, 4, 15, baseBlock);
+    u32 auxWindowId = AddWindow(&auxTemplate);
+    SetStandardWindowBorderStyle(auxWindowId, FALSE);
+    FillWindowPixelBuffer(auxWindowId, 0x11);
+    CopyWindowToVram(auxWindowId, COPYWIN_FULL);
+    sAuxWindowId = auxWindowId;
+    sObjectSpriteId = MAX_SPRITES;
+}
+
+static void MultichoiceDynamicEventShowObject_OnSelectionChanged(struct DynamicListMenuEventArgs *eventArgs)
+{
+    struct WindowTemplate *template = &gWindows[eventArgs->windowId].window;
+    u32 x = template->tilemapLeft * 8 + template->width * 8 + 32;
+    u32 y = template->tilemapTop * 8 + 12;
+
+    if (sObjectSpriteId != MAX_SPRITES)
+    {
+        FreeSpriteTilesByTag(TAG_CB_OBJECT_ICON);
+        FreeSpritePaletteByTag(TAG_CB_OBJECT_ICON);
+        DestroySprite(&gSprites[sObjectSpriteId]);
+    }
+
+    sObjectSpriteId = CreateObjectGraphicsSprite(MultichoiceDynamicEventShowObject_FindOriginalObjectEventID(eventArgs->selectedItem), SpriteCallbackDummy, x, y, 0);
+    gSprites[sObjectSpriteId].oam.priority = 0;
+    gSprites[sObjectSpriteId].x = x;
+    gSprites[sObjectSpriteId].y = y;
+}
+
+static u16 MultichoiceDynamicEventShowObject_FindOriginalObjectEventID(u16 objectEventID) {
+    u16 currentID = objectEventID;
+    while (currentID > NUM_OBJ_EVENT_GFX) {
+        currentID -= 400;
+    }
+    return currentID;
+}
+
+static void MultichoiceDynamicEventShowObject_OnDestroy(struct DynamicListMenuEventArgs *eventArgs)
+{
+    ClearStdWindowAndFrame(sAuxWindowId, TRUE);
+    RemoveWindow(sAuxWindowId);
+
+    if (sObjectSpriteId != MAX_SPRITES)
+    {
+        FreeSpriteTilesByTag(TAG_CB_OBJECT_ICON);
+        FreeSpritePaletteByTag(TAG_CB_OBJECT_ICON);
+        DestroySprite(&gSprites[sObjectSpriteId]);
+    }
+}
+
+#undef sAuxWindowId
+#undef sObjectSpriteId
+#undef TAG_CB_OBJECT_ICON
 
 static void FreeListMenuItems(struct ListMenuItem *items, u32 count)
 {

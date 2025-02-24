@@ -567,3 +567,4 @@ gSpecials::
 	def_special IsPokemonFainted
 	def_special BufferMonAbilities
 	def_special ChangePokemonAbility
+	def_special BufferTrainerPartyPokemon

@@ -90,6 +90,7 @@ static void ItemUseOnFieldCB_DivingSuitAboveWater(u8);
 static void ItemUseOnFieldCB_DivingSuitUnderwater(u8);
 static void ItemUseOnFieldCB_Flashlight(u8);
 static void ItemUseOnFieldCB_PowerGlove(u8);
+static void ItemUseOnFieldCB_TrainerNotebook(u8);
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -1798,6 +1799,19 @@ void ItemUseOutOfBattle_InfiniteRepel(u8 taskId)
             DisplayItemMessage(taskId, 1, gText_InfiniteRepelOff, CloseItemMessage);
         }
     }
+}
+
+static void ItemUseOnFieldCB_TrainerNotebook(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_TrainerNotebook);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_TrainerNotebook(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_TrainerNotebook;
+    SetUpItemUseOnFieldCallback(taskId);
 }
 
 #undef tUsingRegisteredKeyItem

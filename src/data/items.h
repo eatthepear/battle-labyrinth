@@ -13078,21 +13078,20 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_MaxRepel,
     },
 
-    [ITEM_TRI_PASS] =
+    [ITEM_TRAINER_NOTEBOOK] =
     {
-        .name = _("Tri-Pass"),
-        .pluralName = _("Tri-Passes"),
+        .name = _("Trainer Notebook"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A pass for ferries\n"
-            "between One, Two,\n"
-            "and Three Island."),
+            "A notebook for\n"
+            "keeping track of\n"
+            "trainers."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_TriPass,
-        .iconPalette = gItemIconPalette_TriPass,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_TrainerNotebook,
+        .iconPic = gItemIcon_TrainerNotebook,
+        .iconPalette = gItemIconPalette_TrainerNotebook,
     },
 
     [ITEM_RAINBOW_PASS] =

@@ -2754,6 +2754,8 @@ extern const u8 gText_SaveMenuInfiniteRandomlocke[];
 
 extern const u8 gText_LevelCapVar1[];
 
+extern const u8 gText_TrainerStatusParty[];
+
 extern const u8 gMenuText_Move[];
 extern const u8 gText_MoveItemWhere[];
 extern const u8 gText_XsYAnd[];
