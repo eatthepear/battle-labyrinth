@@ -412,6 +412,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			playfanfare(MUS_OBTAIN_ITEM)
 			msgbox(Sanctuary_Text_Colress_UpgradedItems, MSGBOX_DEFAULT)
 			waitfanfare
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
 		case 7:
 			setflag(FLAG_ZONE7B_HEAL_USED)
 			completesubquest(QUEST_PBL, SUB_QUEST_7)
@@ -460,6 +461,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			playfanfare(MUS_OBTAIN_ITEM)
 			msgbox(Sanctuary_Text_Colress_UpgradedItems, MSGBOX_DEFAULT)
 			waitfanfare
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
 		case 13:
 			completesubquest(QUEST_PBL, SUB_QUEST_13)
 			completesubquest(QUEST_PBL, SUB_QUEST_14)
@@ -473,6 +475,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 17:
 			completesubquest(QUEST_PBL, SUB_QUEST_17)
 			setvar(VAR_ZONE, 18)
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
 		case 18:
 			completesubquest(QUEST_PBL, SUB_QUEST_18)
 			completesubquest(QUEST_PBL, SUB_QUEST_19)
@@ -489,6 +492,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 23:
 			completesubquest(QUEST_PBL, SUB_QUEST_23)
 			setvar(VAR_ZONE, 24)
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
 		case 24:
 			completesubquest(QUEST_PBL, SUB_QUEST_24)
 			completesubquest(QUEST_PBL, SUB_QUEST_25)
