@@ -223,6 +223,7 @@ static void PrepareExchangePacketForRubySapphire(struct PlayerRecordRS *dest)
 
 static void PrepareExchangePacket(void)
 {
+#if FREE_OTHER_PBL == FALSE
     SetPlayerSecretBaseParty();
     DeactivateAllNormalTVShows();
     SetSrcLookupPointers();
@@ -252,6 +253,7 @@ static void PrepareExchangePacket(void)
         GetSavedApprentices(sSentRecord->emerald.apprentices, sApprenticesSave);
         GetPlayerHallRecords(&sSentRecord->emerald.hallRecords);
     }
+#endif //FREE_OTHER_PBL
 }
 
 static void ReceiveExchangePacket(u32 multiplayerId)
@@ -632,6 +634,7 @@ static void ShufflePlayerIndices(u32 *data)
 
 static void ReceiveOldManData(OldMan *records, size_t recordSize, u8 multiplayerId)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 version;
     u16 language;
     OldMan *oldMan;
@@ -649,6 +652,7 @@ static void ReceiveOldManData(OldMan *records, size_t recordSize, u8 multiplayer
 
     memcpy(sOldManSave, (void *)records + recordSize * mixIndices[multiplayerId], sizeof(OldMan));
     ResetMauvilleOldManFlag();
+#endif
 }
 
 static void ReceiveBattleTowerData(void *records, size_t recordSize, u8 multiplayerId)
@@ -685,6 +689,7 @@ static void ReceiveBattleTowerData(void *records, size_t recordSize, u8 multipla
 
 static void ReceiveLilycoveLadyData(LilycoveLady *records, size_t recordSize, u8 multiplayerId)
 {
+#if FREE_OTHER_PBL == FALSE
     LilycoveLady *lilycoveLady;
     u32 mixIndices[MAX_LINK_PLAYERS];
 
@@ -711,6 +716,7 @@ static void ReceiveLilycoveLadyData(LilycoveLady *records, size_t recordSize, u8
         QuizLadyClearQuestionForRecordMix(lilycoveLady);
         Free(lilycoveLady);
     }
+#endif
 }
 
 static UNUSED u8 GetDaycareMailItemId(struct DaycareMail *mail)
@@ -773,14 +779,12 @@ static void ReceiveDaycareMailData(struct RecordMixingDaycareMail *records, size
     bool8 canHoldItem[MAX_LINK_PLAYERS][DAYCARE_MON_COUNT];
     u8 idxs[MAX_LINK_PLAYERS][2];
     u8 numDaycareCanHold;
-    u16 oldSeed;
     bool32 anyRS;
+    rng_value_t localRngState = LocalRandomSeed(gLinkPlayers[0].trainerId);
 
     // Seed RNG to the first player's trainer id so that
     // every player has the same random swap occur
     // (see the other use of Random2 in this function)
-    oldSeed = Random2();
-    SeedRng2(gLinkPlayers[0].trainerId);
     linkPlayerCount = GetLinkPlayerCount();
     for (i = 0; i < MAX_LINK_PLAYERS; i++)
     {
@@ -910,7 +914,7 @@ static void ReceiveDaycareMailData(struct RecordMixingDaycareMail *records, size
             itemId2 = GetDaycareMailItemId(&mixMail->mail[1]);
 
             if ((!itemId1 && !itemId2) || (itemId1 && itemId2))
-                idxs[j][DAYCARE_SLOT] = Random2() % 2;
+                idxs[j][DAYCARE_SLOT] = LocalRandom32(&localRngState) % 2;
             else if (itemId1 && !itemId2)
                 idxs[j][DAYCARE_SLOT] = 0;
             else if (!itemId1 && itemId2)
@@ -961,10 +965,8 @@ static void ReceiveDaycareMailData(struct RecordMixingDaycareMail *records, size
     mixMail = (void *)records + multiplayerId * recordSize;
     memcpy(&gSaveBlock1Ptr->daycare.mons[0].mail, &mixMail->mail[0], sizeof(struct DaycareMail));
     memcpy(&gSaveBlock1Ptr->daycare.mons[1].mail, &mixMail->mail[1], sizeof(struct DaycareMail));
-    SeedRng(oldSeed);
 #endif //FREE_OTHER_PBL
 }
-
 
 static void ReceiveGiftItem(u16 *item, u8 multiplayerId)
 {
