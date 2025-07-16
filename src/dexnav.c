@@ -982,6 +982,7 @@ void EndDexNavSearch(u8 taskId)
     RemoveDexNavWindowAndGfx();
     FieldEffectStop(&gSprites[sDexNavSearchDataPtr->fldEffSpriteId], sDexNavSearchDataPtr->fldEffId);
     Free(sDexNavSearchDataPtr);
+    sDexNavSearchDataPtr = NULL;  // Prevent dangling pointer
 }
 
 static void EndDexNavSearchSetupScript(const u8 *script, u8 taskId)
@@ -1092,6 +1093,7 @@ static void Task_DexNavSearch(u8 taskId)
         gDexnavBattle = TRUE;
         ScriptContext_SetupScript(EventScript_StartDexNavBattle);
         Free(sDexNavSearchDataPtr);
+        sDexNavSearchDataPtr = NULL;  // Prevent dangling pointer
         DestroyTask(taskId);
         return;
     }
@@ -2629,6 +2631,10 @@ u32 CalculateDexNavShinyRolls(void)
 void TryIncrementSpeciesSearchLevel()
 {
 #if USE_DEXNAV_SEARCH_LEVELS == TRUE
+    // Safety check: ensure species is valid before accessing array
+    if (gDexNavSpecies == SPECIES_NONE || gDexNavSpecies >= NUM_SPECIES)
+        return;
+        
     if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER && gSaveBlock3Ptr->dexNavSearchLevels[gDexNavSpecies] < 255)
         gSaveBlock3Ptr->dexNavSearchLevels[gDexNavSpecies]++;
 #endif
@@ -2638,6 +2644,10 @@ void ResetDexNavSearch(void)
 {
     if (FlagGet(DN_FLAG_SEARCHING))
         EndDexNavSearch(FindTaskIdByFunc(Task_DexNavSearch));   //moving to new map ends dexnav search
+    
+    // Reset global DexNav species to prevent memory corruption
+    gDexNavSpecies = SPECIES_NONE;
+    gDexnavBattle = FALSE;
 }
 
 void IncrementDexNavChain(void)

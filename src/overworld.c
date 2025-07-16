@@ -1621,6 +1621,10 @@ void UpdateTimeOfDay(void)
         gTimeBlend.startBlend = gTimeBlend.endBlend = gTimeOfDayBlend[TIME_DAY];
         gTimeOfDay = TIME_DAY;
     }
+    
+    // Safety check: ensure gTimeOfDay is always within valid bounds
+    if (gTimeOfDay >= TIMES_OF_DAY_COUNT)
+        gTimeOfDay = TIME_DAY;
 }
 
 #undef MORNING_HOUR_MIDDLE
