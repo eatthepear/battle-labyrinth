@@ -2,7 +2,7 @@
   "id": "MAP_ZONE4A",
   "name": "Zone4A",
   "layout": "LAYOUT_ZONE4A",
-  "music": "MUS_DP_ETERNA_FOREST",
+  "music": "MUS_FORTREE",
   "region_map_section": "MAPSEC_ZONE_4",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",

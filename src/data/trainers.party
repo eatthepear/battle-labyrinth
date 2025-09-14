@@ -20,7 +20,7 @@ Optional (but still recommended) fields for trainers:
     - Music (Male, Female, Girl, Suspicious, Intense, Cool, Aqua, Magma, Swimmer, Twins, Elite Four, Hiker, Interviewer, Rich)
     - Items (Some Item / Another Item / Third Item)
             (Can also be specified with ITEM_SOME_ITEM)
-    - Double Battle (Yes/No, defaults to No)
+    - Battle Type (Singles / Doubles, defaults to Singles)
     - AI (Ai Flag / Another Flag / Third Flag / ...
           see "constants/battle_ai.h" for all flags)
     - Mugshot (enable Mugshots during battle transition
@@ -80,7 +80,6 @@ Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Mugshot: Purple
-Random Lead: Yes
 
 Alomomola (F) @ Choice Specs  
 Ability: Hydration  
@@ -102,7 +101,6 @@ Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Poochyena
 Ability: Run Away
@@ -137,7 +135,6 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Zigzagoon
 Ability: Gluttony
@@ -172,7 +169,6 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Rattata
 Ability: Guts
@@ -208,7 +204,6 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Panpour
@@ -239,7 +234,6 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_CHALLENGE
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Panpour
@@ -270,7 +264,6 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Pansage
@@ -301,7 +294,6 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_CHALLENGE
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Pansage
@@ -332,7 +324,6 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Pansear
@@ -363,7 +354,6 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_CHALLENGE
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Pansear
@@ -394,7 +384,6 @@ Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Sentret
 Ability: Keen Eye
@@ -429,7 +418,6 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Caterpie
 Ability: Shield Dust
@@ -468,7 +456,6 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Blipbug
 Ability: Swarm
@@ -509,7 +496,6 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Whismur
 Ability: Rattled
@@ -545,7 +531,6 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Yungoos
 Ability: Strong Jaw
@@ -580,7 +565,6 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Bunnelby @ Oran Berry
@@ -617,7 +601,6 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_CHALLENGE
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Bunnelby @ Oran Berry
@@ -662,7 +645,6 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Bounsweet
 Ability: Oblivious
@@ -698,7 +680,6 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Kakuna
 Ability: Shed Skin
@@ -735,7 +716,6 @@ Pic: Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Meowth
 Ability: Technician
@@ -779,7 +759,6 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Lotad
 Ability: Swift Swim
@@ -815,7 +794,6 @@ Pic: Rich Boy
 Music: Rich
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Wooloo
 Ability: Fluffy
@@ -860,7 +838,6 @@ Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Bidoof
@@ -888,7 +865,6 @@ Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_CHALLENGE
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Bidoof
@@ -925,7 +901,6 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Buneary
 Ability: Limber
@@ -961,7 +936,6 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Shinx
 Ability: Intimidate
@@ -997,7 +971,6 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Lillipup
 Ability: Pickup
@@ -1033,7 +1006,6 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Spinarak
 Ability: Swarm
@@ -1103,7 +1075,6 @@ Pic: Camper
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Gossifleur
 Ability: Cotton Down
@@ -1148,7 +1119,6 @@ Pic: Fairy Tale Girl
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Morelull
 Ability: Effect Spore
@@ -1193,7 +1163,6 @@ Pic: Sr And Jr
 Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
-Random Lead: No
 Mugshot: Purple
 
 Nickit
@@ -1231,7 +1200,6 @@ Pic: Sr And Jr
 Music: Twins
 AI: AI_FLAG_CHALLENGE
 Double Battle: Yes
-Random Lead: No
 Mugshot: Purple
 
 Nickit
@@ -1343,7 +1311,6 @@ Pic: Rich Boy
 Music: Rich
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Ralts
 Ability: Trace
@@ -1388,7 +1355,6 @@ Pic: Pokefan F
 Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Vulpix
 Ability: Flash Fire
@@ -1433,7 +1399,6 @@ Pic: Pokefan M
 Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Sizzlipede
 Ability: Flash Fire
@@ -1478,7 +1443,6 @@ Pic: Picnicker
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Snubbull
 Ability: Intimidate
@@ -1523,7 +1487,6 @@ Pic: Camper
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Phanpy
 Ability: Sturdy
@@ -1568,7 +1531,6 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Grubbin
 Ability: Swarm
@@ -1613,7 +1575,6 @@ Pic: Backpacker F
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Girafarig @ Eviolite
@@ -1631,7 +1592,6 @@ Pic: Backpacker F
 Music: Hiker
 AI: AI_FLAG_CHALLENGE
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Girafarig @ Eviolite
@@ -1650,7 +1610,6 @@ Pic: Fisherman
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Magikarp
 Ability: Swift Swim
@@ -1694,7 +1653,6 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Blitzle
 Ability: Sap Sipper
@@ -1730,7 +1688,6 @@ Pic: Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Minccino
 Ability: Technician
@@ -1775,7 +1732,6 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Flabebe
 Ability: Flower Veil
@@ -1811,7 +1767,6 @@ Pic: Bird Keeper
 Music: Cool
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Wingull
 Ability: Keen Eye
@@ -1856,7 +1811,6 @@ Pic: Pokemon Breeder F
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Smeargle
 Ability: Technician
@@ -1939,7 +1893,6 @@ Pic: Tuber F
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 
 Wiglett
 Ability: Gooey
@@ -1984,7 +1937,6 @@ Pic: Sis And Bro
 Music: Swimmer
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
-Random Lead: No
 Mugshot: Purple
 
 Luvdisc @ Oran Berry
@@ -2009,7 +1961,6 @@ Pic: Sis And Bro
 Music: Swimmer
 AI: AI_FLAG_CHALLENGE
 Double Battle: Yes
-Random Lead: No
 Mugshot: Purple
 
 Luvdisc @ Oran Berry
@@ -2034,7 +1985,6 @@ Pic: Battle Girl
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Mienfoo
 Ability: Inner Focus
@@ -2079,7 +2029,6 @@ Pic: Camper
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Numel
 Ability: Oblivious
@@ -2124,7 +2073,6 @@ Pic: Aroma Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Combee
 Ability: Honey Gather
@@ -2169,7 +2117,6 @@ Pic: Rich Boy
 Music: Rich
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Pachirisu
 Ability: Prankster
@@ -2215,7 +2162,6 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 
 Oddish
 Ability: Chlorophyll
@@ -2243,7 +2189,6 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 
 Bellsprout
 Ability: Chlorophyll
@@ -2270,7 +2215,6 @@ Pic: Bird Keeper
 Music: Cool
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Spearow
 Ability: Sniper
@@ -2315,7 +2259,6 @@ Pic: Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
-Random Lead: No
 Mugshot: Purple
 
 Dedenne @ Sitrus Berry
@@ -2343,7 +2286,6 @@ Pic: Lady
 Music: Female
 AI: AI_FLAG_CHALLENGE
 Double Battle: Yes
-Random Lead: No
 Mugshot: Purple
 
 Dedenne @ Sitrus Berry
@@ -2371,7 +2313,6 @@ Pic: Collector
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Noibat
 Ability: Infiltrator
@@ -2413,7 +2354,6 @@ Pic: Hiker
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Onix
 Ability: Sturdy
@@ -2458,7 +2398,6 @@ Pic: Pokemaniac
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Slowpoke
 Ability: Own Tempo
@@ -2503,7 +2442,6 @@ Pic: Backpacker F
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 
 Spinda
 Ability: Contrary
@@ -2521,7 +2459,6 @@ Pic: Hiker
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Geodude
 Ability: Sturdy
@@ -2566,7 +2503,6 @@ Pic: Ruin Maniac
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Rellor
 Ability: Compound Eyes
@@ -2611,7 +2547,6 @@ Pic: Picnicker
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Shellos
 Ability: Storm Drain
@@ -2656,7 +2591,6 @@ Pic: Roughneck
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Grimer @ Poison Barb
@@ -2702,7 +2636,6 @@ Pic: Roughneck
 Music: Suspicious
 AI: AI_FLAG_CHALLENGE
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Grimer @ Poison Barb
@@ -2757,7 +2690,6 @@ Pic: Ninja Boy
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Foongus
 Ability: Effect Spore
@@ -2802,7 +2734,6 @@ Pic: Backpacker F
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 
 Emolga
 Ability: Motor Drive
@@ -2820,7 +2751,6 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Nymble
 Ability: Swarm
@@ -2865,7 +2795,6 @@ Pic: Fisherman
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Arrokuda
 Ability: Propeller Tail
@@ -2910,7 +2839,6 @@ Pic: Pokemon Breeder F
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Charcadet
 Ability: Flash Fire
@@ -2973,7 +2901,6 @@ Pic: Camper
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 
 Tandemaus
 Ability: Pickup
@@ -3000,7 +2927,6 @@ Pic: Picnicker
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 
 Stunfisk
 Ability: Static
@@ -3016,7 +2942,6 @@ Pic: Pokefan F
 Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 
 Squawkabilly-Blue
 Ability: Intimidate
@@ -3032,7 +2957,6 @@ Pic: Pokefan M
 Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 
 Carnivine
 Ability: Levitate
@@ -3048,7 +2972,6 @@ Pic: Expert F
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 
 Throh
 Ability: Guts
@@ -3071,7 +2994,6 @@ Pic: Camper
 Music: Male
 AI: AI_FLAG_CHALLENGE
 Double Battle: No
-Random Lead: No
 
 Tandemaus @ Oran Berry
 Ability: Pickup
@@ -3104,7 +3026,6 @@ Pic: Picnicker
 Music: Girl
 AI: AI_FLAG_CHALLENGE
 Double Battle: No
-Random Lead: No
 
 Stunfisk @ Oran Berry
 Ability: Static
@@ -3122,7 +3043,6 @@ Pic: Pokefan F
 Music: Twins
 AI: AI_FLAG_CHALLENGE
 Double Battle: No
-Random Lead: No
 
 Squawkabilly-Blue @ Sitrus Berry
 Ability: Intimidate
@@ -3140,7 +3060,6 @@ Pic: Pokefan M
 Music: Twins
 AI: AI_FLAG_CHALLENGE
 Double Battle: No
-Random Lead: No
 
 Carnivine @ Sitrus Berry
 Ability: Levitate
@@ -3158,7 +3077,6 @@ Pic: Expert F
 Music: Intense
 AI: AI_FLAG_CHALLENGE
 Double Battle: No
-Random Lead: No
 
 Sawk @ Sitrus Berry
 Ability: Sturdy
@@ -3185,7 +3103,6 @@ Pic: Picnicker
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Tinkatink
 Ability: Mold Breaker
@@ -3230,7 +3147,6 @@ Pic: Bird Keeper
 Music: Cool
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Rufflet
 Ability: Sheer Force
@@ -3275,7 +3191,6 @@ Pic: Camper
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Cacnea
 Ability: Water Absorb
@@ -3320,7 +3235,6 @@ Pic: Hiker
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Drilbur
 Ability: Sand Force
@@ -3365,7 +3279,6 @@ Pic: Collector
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Larvitar
 Ability: Guts
@@ -3410,7 +3323,6 @@ Pic: Dragon Tamer
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Deino
 Ability: Hustle
@@ -3455,7 +3367,6 @@ Pic: Backpacker F
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 
 Passimian
 Ability: Receiver
@@ -3473,7 +3384,6 @@ Pic: Backpacker F
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 
 Oranguru
 Ability: Symbiosis
@@ -3491,7 +3401,6 @@ Pic: Hiker
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Aron
 Ability: Sturdy
@@ -3536,7 +3445,6 @@ Pic: Fisherman
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Tentacool
 Ability: Liquid Ooze
@@ -3581,7 +3489,6 @@ Pic: Pokemon Ranger F
 Music: Cool
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Klawf @ Hard Stone
@@ -3627,7 +3534,6 @@ Pic: Pokemon Ranger F
 Music: Cool
 AI: AI_FLAG_CHALLENGE
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Klawf @ Hard Stone
@@ -3682,7 +3588,6 @@ Pic: Hex Maniac
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Gastly
 Ability: Levitate
@@ -3727,7 +3632,6 @@ Pic: Young Couple
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
-Random Lead: No
 
 Volbeat
 Ability: Prankster
@@ -3772,7 +3676,6 @@ Pic: Psychic M
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Bronzor
 Ability: Levitate
@@ -3817,7 +3720,6 @@ Pic: Psychic F
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Duskull
 Ability: Levitate
@@ -3862,7 +3764,6 @@ Pic: Hex Maniac
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Misdreavus
 Ability: Levitate
@@ -3905,7 +3806,6 @@ Pic: Scientist
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
-Random Lead: No
 Mugshot: Purple
 
 Clefairy
@@ -3951,7 +3851,6 @@ Pic: Scientist
 Music: Intense
 AI: AI_FLAG_CHALLENGE
 Double Battle: Yes
-Random Lead: No
 Mugshot: Purple
 
 Clefairy @ Eviolite
@@ -3998,7 +3897,6 @@ Pic: Beauty
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Clamperl
 Level: 24
@@ -4023,7 +3921,6 @@ Pic: Parasol Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Snover
 Level: 24
@@ -4048,7 +3945,6 @@ Pic: Pokefan M
 Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Magnemite
 Level: 24
@@ -4073,7 +3969,6 @@ Pic: Pokefan F
 Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Glimmet
 Level: 24
@@ -4098,7 +3993,6 @@ Pic: Fisherman
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Clobbopus
 Level: 24
@@ -4124,7 +4018,6 @@ Pic: Camper
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 
 Ferroseed
 Level: 24
@@ -4146,7 +4039,6 @@ Pic: Picnicker
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 
 Pawniard
 Level: 24
@@ -4167,7 +4059,6 @@ Pic: Swimmer F
 Music: Swimmer
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Carvanha
 Level: 24
@@ -4192,7 +4083,6 @@ Pic: Pokemon Breeder M
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Togepi
 Level: 24
@@ -4225,7 +4115,6 @@ Pic: Collector
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Frigibax
 Level: 24
@@ -4255,7 +4144,6 @@ Pic: Gentleman
 Music: Rich
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: Yes
 
 Herdier
 Level: 24
@@ -4284,7 +4172,6 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 
 Dottler
 Level: 25
@@ -4305,7 +4192,6 @@ Pic: Bug Maniac
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Ariados
@@ -4331,7 +4217,6 @@ Pic: Bug Maniac
 Music: Suspicious
 AI: AI_FLAG_CHALLENGE
 Double Battle: No
-Random Lead: No
 Mugshot: Purple
 
 Ariados
@@ -4430,19 +4315,19 @@ Pic: Steven
 Gender: Male
 Music: Male
 
-Furfrou-Star-Trim
+Furfrou-Star
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Furfrou-Heart-Trim
+Furfrou-Heart
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Furfrou-Dandy-Trim
+Furfrou-Dandy
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Furfrou-Debutante-Trim
+Furfrou-Debutante
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 

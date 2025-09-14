@@ -55,10 +55,6 @@ Zone20B_EventScript_InitiateBattle::
 	goto_if_set FLAG_SETTINGS_BRUTAL, Zone20B_EventScript_InitiateBattle_2
 # 28 "data/maps/Zone20B/scripts.pory"
 	goto_if_set FLAG_SETTINGS_CHALLENGE, Zone20B_EventScript_InitiateBattle_2
-# 32 "data/maps/Zone20B/scripts.pory"
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_PBL_TROY, 0, NULL, Zone20B_EventScript_InitiateBattle_Text_1
-# 33 "data/maps/Zone20B/scripts.pory"
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_PBL_ABED, 0, NULL, Zone20B_EventScript_InitiateBattle_Text_2
 Zone20B_EventScript_InitiateBattle_1:
 # 35 "data/maps/Zone20B/scripts.pory"
 	setflag FLAG_SHOULD_1V2
@@ -101,10 +97,6 @@ Zone20B_EventScript_InitiateBattle_1:
 	end
 
 Zone20B_EventScript_InitiateBattle_2:
-# 29 "data/maps/Zone20B/scripts.pory"
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_PBL_TROY_BRUTAL, 0, NULL, Zone20B_EventScript_InitiateBattle_Text_1
-# 30 "data/maps/Zone20B/scripts.pory"
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_PBL_ABED_BRUTAL, 0, NULL, Zone20B_EventScript_InitiateBattle_Text_2
 	goto Zone20B_EventScript_InitiateBattle_1
 
 
@@ -145,11 +137,3 @@ Zone20B_Movement_Leave:
 Zone20B_EventScript_InitiateBattle_Text_0:
 # 9 "data/maps/Zone20B/scripts.pory"
 	.string "{COLOR BLUE}???{COLOR DARK_GRAY}:$"
-
-Zone20B_EventScript_InitiateBattle_Text_1:
-# 29 "data/maps/Zone20B/scripts.pory"
-	.string "ahhh$"
-
-Zone20B_EventScript_InitiateBattle_Text_2:
-# 30 "data/maps/Zone20B/scripts.pory"
-	.string "bahhhh$"

@@ -2,7 +2,7 @@
   "id": "MAP_ZONE22A",
   "name": "Zone22A",
   "layout": "LAYOUT_ZONE22A",
-  "music": "MUS_DP_ROUTE216_DAY",
+  "music": "MUS_FORTREE",
   "region_map_section": "MAPSEC_ZONE_22",
   "requires_flash": false,
   "weather": "WEATHER_SNOW",

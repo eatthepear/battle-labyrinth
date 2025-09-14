@@ -2,7 +2,7 @@
   "id": "MAP_ZONE_SANCTUARY",
   "name": "ZoneSanctuary",
   "layout": "LAYOUT_SANCTUARY",
-  "music": "MUS_DP_AMITY_SQUARE",
+  "music": "MUS_FORTREE",
   "region_map_section": "MAPSEC_SANCTUARY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

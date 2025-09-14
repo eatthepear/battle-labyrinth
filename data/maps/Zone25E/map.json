@@ -2,7 +2,7 @@
   "id": "MAP_ZONE25E",
   "name": "Zone25E",
   "layout": "LAYOUT_ZONE25E",
-  "music": "MUS_HG_B_HALL",
+  "music": "MUS_FORTREE",
   "region_map_section": "MAPSEC_ZONE_25",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -134,7 +134,7 @@ static const struct SpriteTemplate sSpriteTemplate_CutGrass =
 };
 
 // code
-bool8 SetUpFieldMove_Cut(void)
+bool32 SetUpFieldMove_Cut(void)
 {
     if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_CUTTABLE_TREE) == TRUE)
     {

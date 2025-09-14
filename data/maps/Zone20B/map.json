@@ -2,7 +2,7 @@
   "id": "MAP_ZONE20B",
   "name": "Zone20B",
   "layout": "LAYOUT_ZONE20B",
-  "music": "MUS_DP_VICTORY_ROAD",
+  "music": "MUS_FORTREE",
   "region_map_section": "MAPSEC_ZONE_20",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -2,7 +2,7 @@
   "id": "MAP_ZONE_S2A",
   "name": "ZoneS2A",
   "layout": "LAYOUT_ZONE_S2A",
-  "music": "MUS_DP_ROUTE205_DAY",
+  "music": "MUS_FORTREE",
   "region_map_section": "MAPSEC_ZONE_S2",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

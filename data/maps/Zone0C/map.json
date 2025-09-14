@@ -2,7 +2,7 @@
   "id": "MAP_ZONE0C",
   "name": "Zone0C",
   "layout": "LAYOUT_ZONE0C",
-  "music": "MUS_DP_VEILSTONE_DAY",
+  "music": "MUS_FORTREE",
   "region_map_section": "MAPSEC_ZONE_0",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

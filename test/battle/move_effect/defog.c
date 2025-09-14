@@ -3,20 +3,21 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_DEFOG].effect == EFFECT_DEFOG);
-    ASSUME(gMovesInfo[MOVE_REFLECT].effect == EFFECT_REFLECT);
-    ASSUME(gMovesInfo[MOVE_LIGHT_SCREEN].effect == EFFECT_LIGHT_SCREEN);
-    ASSUME(gMovesInfo[MOVE_MIST].effect == EFFECT_MIST);
-    ASSUME(gMovesInfo[MOVE_SAFEGUARD].effect == EFFECT_SAFEGUARD);
-    ASSUME(gMovesInfo[MOVE_AURORA_VEIL].effect == EFFECT_AURORA_VEIL);
-    ASSUME(gMovesInfo[MOVE_STEALTH_ROCK].effect == EFFECT_STEALTH_ROCK);
-    ASSUME(gMovesInfo[MOVE_SPIKES].effect == EFFECT_SPIKES);
-    ASSUME(gMovesInfo[MOVE_TOXIC_SPIKES].effect == EFFECT_TOXIC_SPIKES);
-    ASSUME(gMovesInfo[MOVE_STICKY_WEB].effect == EFFECT_STICKY_WEB);
-    ASSUME(gMovesInfo[MOVE_TOXIC].effect == EFFECT_TOXIC);
-    ASSUME(gMovesInfo[MOVE_SCREECH].effect == EFFECT_DEFENSE_DOWN_2);
-    ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-    ASSUME(gMovesInfo[MOVE_GUST].category == DAMAGE_CATEGORY_SPECIAL);
+    ASSUME(GetMoveEffect(MOVE_DEFOG) == EFFECT_DEFOG);
+    ASSUME(GetMoveEffect(MOVE_REFLECT) == EFFECT_REFLECT);
+    ASSUME(GetMoveEffect(MOVE_LIGHT_SCREEN) == EFFECT_LIGHT_SCREEN);
+    ASSUME(GetMoveEffect(MOVE_MIST) == EFFECT_MIST);
+    ASSUME(GetMoveEffect(MOVE_SAFEGUARD) == EFFECT_SAFEGUARD);
+    ASSUME(GetMoveEffect(MOVE_AURORA_VEIL) == EFFECT_AURORA_VEIL);
+    ASSUME(GetMoveEffect(MOVE_STEALTH_ROCK) == EFFECT_STEALTH_ROCK);
+    ASSUME(GetMoveEffect(MOVE_SPIKES) == EFFECT_SPIKES);
+    ASSUME(GetMoveEffect(MOVE_TOXIC_SPIKES) == EFFECT_TOXIC_SPIKES);
+    ASSUME(GetMoveEffect(MOVE_STICKY_WEB) == EFFECT_STICKY_WEB);
+    ASSUME(GetMoveEffect(MOVE_TOXIC) == EFFECT_NON_VOLATILE_STATUS);
+    ASSUME(GetMoveNonVolatileStatus(MOVE_TOXIC) == MOVE_EFFECT_TOXIC);
+    ASSUME(GetMoveEffect(MOVE_SCREECH) == EFFECT_DEFENSE_DOWN_2);
+    ASSUME(GetMoveCategory(MOVE_SCRATCH) == DAMAGE_CATEGORY_PHYSICAL);
+    ASSUME(GetMoveCategory(MOVE_GUST) == DAMAGE_CATEGORY_SPECIAL);
 }
 
 SINGLE_BATTLE_TEST("Defog lowers evasiveness by 1 stage")
@@ -66,7 +67,7 @@ DOUBLE_BATTLE_TEST("Defog removes Reflect and Light Screen from target's side", 
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_REFLECT); MOVE(opponentRight, MOVE_LIGHT_SCREEN); }
         TURN { MOVE(playerLeft, move, target: opponentLeft); }
-        TURN { MOVE(playerLeft, MOVE_TACKLE, target: opponentLeft); MOVE(playerRight, MOVE_GUST, target: opponentRight); }
+        TURN { MOVE(playerLeft, MOVE_SCRATCH, target: opponentLeft); MOVE(playerRight, MOVE_GUST, target: opponentRight); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_REFLECT, opponentLeft);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_LIGHT_SCREEN, opponentRight);
@@ -75,7 +76,7 @@ DOUBLE_BATTLE_TEST("Defog removes Reflect and Light Screen from target's side", 
             MESSAGE("The opposing team's Reflect wore off!");
             MESSAGE("The opposing team's Light Screen wore off!");
         }
-        MESSAGE("Wobbuffet used Tackle!");
+        MESSAGE("Wobbuffet used Scratch!");
         HP_BAR(opponentLeft, captureDamage: &results[i].damagePhysical);
         MESSAGE("Wobbuffet used Gust!");
         HP_BAR(opponentRight, captureDamage: &results[i].damageSpecial);
@@ -153,8 +154,8 @@ DOUBLE_BATTLE_TEST("Defog removes Stealth Rock and Sticky Web from user's side (
         ANIMATION(ANIM_TYPE_MOVE, MOVE_STICKY_WEB, opponentRight);
         ANIMATION(ANIM_TYPE_MOVE, move, playerLeft);
         if (move == MOVE_DEFOG && B_DEFOG_EFFECT_CLEARING >= GEN_6) {
-            MESSAGE("The pointed stones disappeared from around your team!");
             MESSAGE("The sticky web has disappeared from the ground around your team!");
+            MESSAGE("The pointed stones disappeared from around your team!");
         }
         // Switch happens
         SWITCH_OUT_MESSAGE("Wobbuffet");
@@ -302,8 +303,8 @@ DOUBLE_BATTLE_TEST("Defog removes Aurora Veil from target's side", s16 damagePhy
     PARAMETRIZE { move = MOVE_DEFOG; }
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_HAIL].effect == EFFECT_HAIL);
-        ASSUME(gSpeciesInfo[SPECIES_GLALIE].types[0] == TYPE_ICE);
+        ASSUME(GetMoveEffect(MOVE_HAIL) == EFFECT_HAIL);
+        ASSUME(GetSpeciesType(SPECIES_GLALIE, 0) == TYPE_ICE);
         PLAYER(SPECIES_GLALIE) { Speed(4); }
         PLAYER(SPECIES_GLALIE) { Speed(3); }
         OPPONENT(SPECIES_GLALIE) { Speed(2); }
@@ -311,7 +312,7 @@ DOUBLE_BATTLE_TEST("Defog removes Aurora Veil from target's side", s16 damagePhy
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_HAIL); MOVE(playerRight, MOVE_AURORA_VEIL); }
         TURN { MOVE(opponentLeft, move, target: playerLeft); }
-        TURN { MOVE(opponentLeft, MOVE_TACKLE, target: playerLeft); MOVE(opponentRight, MOVE_GUST, target: playerRight); }
+        TURN { MOVE(opponentLeft, MOVE_SCRATCH, target: playerLeft); MOVE(opponentRight, MOVE_GUST, target: playerRight); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_HAIL, playerLeft);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_AURORA_VEIL, playerRight);
@@ -321,7 +322,7 @@ DOUBLE_BATTLE_TEST("Defog removes Aurora Veil from target's side", s16 damagePhy
             MESSAGE("Glalie's evasiveness fell!");
             MESSAGE("Your team's Aurora Veil wore off!");
         }
-        MESSAGE("The opposing Glalie used Tackle!");
+        MESSAGE("The opposing Glalie used Scratch!");
         HP_BAR(playerLeft, captureDamage: &results[i].damagePhysical);
         MESSAGE("The opposing Glalie used Gust!");
         HP_BAR(playerRight, captureDamage: &results[i].damageSpecial);
@@ -334,8 +335,8 @@ DOUBLE_BATTLE_TEST("Defog removes Aurora Veil from target's side", s16 damagePhy
 DOUBLE_BATTLE_TEST("Defog removes everything it can")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_HAIL].effect == EFFECT_HAIL);
-        ASSUME(gSpeciesInfo[SPECIES_GLALIE].types[0] == TYPE_ICE);
+        ASSUME(GetMoveEffect(MOVE_HAIL) == EFFECT_HAIL);
+        ASSUME(GetSpeciesType(SPECIES_GLALIE, 0) == TYPE_ICE);
         PLAYER(SPECIES_GLALIE) { Speed(4); }
         PLAYER(SPECIES_GLALIE) { Speed(3); }
         PLAYER(SPECIES_GLALIE) { Speed(12); }
@@ -364,16 +365,30 @@ DOUBLE_BATTLE_TEST("Defog removes everything it can")
 
         if (B_DEFOG_EFFECT_CLEARING >= GEN_6) {
             MESSAGE("The spikes disappeared from the ground around your team!");
-            MESSAGE("The pointed stones disappeared from around your team!");
-            MESSAGE("The poison spikes disappeared from the ground around your team!");
             MESSAGE("The sticky web has disappeared from the ground around your team!");
+            MESSAGE("The poison spikes disappeared from the ground around your team!");
+            MESSAGE("The pointed stones disappeared from around your team!");
 
             // Opponent side
             MESSAGE("The spikes disappeared from the ground around the opposing team!");
-            MESSAGE("The pointed stones disappeared from around the opposing team!");
-            MESSAGE("The poison spikes disappeared from the ground around the opposing team!");
             MESSAGE("The sticky web has disappeared from the ground around the opposing team!");
+            MESSAGE("The poison spikes disappeared from the ground around the opposing team!");
+            MESSAGE("The pointed stones disappeared from around the opposing team!");
         }
+    } THEN {
+        EXPECT_EQ(gBattleStruct->hazardsQueue[0][0], HAZARDS_NONE);
+        EXPECT_EQ(gBattleStruct->hazardsQueue[0][1], HAZARDS_NONE);
+        EXPECT_EQ(gBattleStruct->hazardsQueue[0][2], HAZARDS_NONE);
+        EXPECT_EQ(gBattleStruct->hazardsQueue[0][3], HAZARDS_NONE);
+        EXPECT_EQ(gBattleStruct->hazardsQueue[0][4], HAZARDS_NONE);
+        EXPECT_EQ(gBattleStruct->hazardsQueue[0][5], HAZARDS_NONE);
+
+        EXPECT_EQ(gBattleStruct->hazardsQueue[1][0], HAZARDS_NONE);
+        EXPECT_EQ(gBattleStruct->hazardsQueue[1][1], HAZARDS_NONE);
+        EXPECT_EQ(gBattleStruct->hazardsQueue[1][2], HAZARDS_NONE);
+        EXPECT_EQ(gBattleStruct->hazardsQueue[1][3], HAZARDS_NONE);
+        EXPECT_EQ(gBattleStruct->hazardsQueue[1][4], HAZARDS_NONE);
+        EXPECT_EQ(gBattleStruct->hazardsQueue[1][5], HAZARDS_NONE);
     }
 }
 

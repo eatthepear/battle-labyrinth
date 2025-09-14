@@ -2241,8 +2241,6 @@ EventScript_Shop_Lelouch_Training_15:
 	return
 
 EventScript_Shop_Lelouch_Training_16:
-# 1054 "data/scripts/battle_labyrinth.pory"
-	special ChoosePartyMonForTraining
 # 1055 "data/scripts/battle_labyrinth.pory"
 	waitstate
 # 1056 "data/scripts/battle_labyrinth.pory"
@@ -5609,21 +5607,21 @@ EventScript_MusicMenu_20:
 
 EventScript_MusicMenu_21:
 # 2654 "data/scripts/battle_labyrinth.pory"
-	playbgm MUS_DP_VS_WILD, FALSE
+	playbgm MUS_FORTREE, FALSE
 # 2655 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_6
 	goto EventScript_MusicMenu_17
 
 EventScript_MusicMenu_22:
 # 2657 "data/scripts/battle_labyrinth.pory"
-	playbgm MUS_HG_VS_WILD, FALSE
+	playbgm MUS_FORTREE, FALSE
 # 2658 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_7
 	goto EventScript_MusicMenu_17
 
 EventScript_MusicMenu_23:
 # 2660 "data/scripts/battle_labyrinth.pory"
-	playbgm MUS_HG_VS_WILD_KANTO, FALSE
+	playbgm MUS_FORTREE, FALSE
 # 2661 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_8
 	goto EventScript_MusicMenu_17
@@ -5649,21 +5647,21 @@ EventScript_MusicMenu_28:
 
 EventScript_MusicMenu_29:
 # 2696 "data/scripts/battle_labyrinth.pory"
-	playbgm MUS_DP_VS_TRAINER, FALSE
+	playbgm MUS_FORTREE, FALSE
 # 2697 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_19
 	goto EventScript_MusicMenu_25
 
 EventScript_MusicMenu_30:
 # 2699 "data/scripts/battle_labyrinth.pory"
-	playbgm MUS_HG_VS_TRAINER, FALSE
+	playbgm MUS_FORTREE, FALSE
 # 2700 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_20
 	goto EventScript_MusicMenu_25
 
 EventScript_MusicMenu_31:
 # 2702 "data/scripts/battle_labyrinth.pory"
-	playbgm MUS_HG_VS_TRAINER_KANTO, FALSE
+	playbgm MUS_FORTREE, FALSE
 # 2703 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_21
 	goto EventScript_MusicMenu_25
@@ -5689,21 +5687,21 @@ EventScript_MusicMenu_36:
 
 EventScript_MusicMenu_37:
 # 2738 "data/scripts/battle_labyrinth.pory"
-	playbgm MUS_DP_VS_GYM_LEADER, FALSE
+	playbgm MUS_FORTREE, FALSE
 # 2739 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_26
 	goto EventScript_MusicMenu_33
 
 EventScript_MusicMenu_38:
 # 2741 "data/scripts/battle_labyrinth.pory"
-	playbgm MUS_HG_VS_GYM_LEADER, FALSE
+	playbgm MUS_FORTREE, FALSE
 # 2742 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_27
 	goto EventScript_MusicMenu_33
 
 EventScript_MusicMenu_39:
 # 2744 "data/scripts/battle_labyrinth.pory"
-	playbgm MUS_HG_VS_GYM_LEADER_KANTO, FALSE
+	playbgm MUS_FORTREE, FALSE
 # 2745 "data/scripts/battle_labyrinth.pory"
 	message EventScript_MusicMenu_Text_28
 	goto EventScript_MusicMenu_33
@@ -12278,6 +12276,763 @@ Debug_CheatStart_PBL_GiveMon::
 	return
 
 
+# 5829 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkDown2:
+# 5830 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5830 "data/scripts/battle_labyrinth.pory"
+	walk_down
+	step_end
+
+# 5833 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkLeft2:
+# 5834 "data/scripts/battle_labyrinth.pory"
+	walk_left
+# 5834 "data/scripts/battle_labyrinth.pory"
+	walk_left
+	step_end
+
+# 5837 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkRight2:
+# 5838 "data/scripts/battle_labyrinth.pory"
+	walk_right
+# 5838 "data/scripts/battle_labyrinth.pory"
+	walk_right
+	step_end
+
+# 5841 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkUp3:
+# 5842 "data/scripts/battle_labyrinth.pory"
+	walk_up
+# 5842 "data/scripts/battle_labyrinth.pory"
+	walk_up
+# 5842 "data/scripts/battle_labyrinth.pory"
+	walk_up
+	step_end
+
+# 5845 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkDown3:
+# 5846 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5846 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5846 "data/scripts/battle_labyrinth.pory"
+	walk_down
+	step_end
+
+# 5849 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkLeft3:
+# 5850 "data/scripts/battle_labyrinth.pory"
+	walk_left
+# 5850 "data/scripts/battle_labyrinth.pory"
+	walk_left
+# 5850 "data/scripts/battle_labyrinth.pory"
+	walk_left
+	step_end
+
+# 5853 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkRight3:
+# 5854 "data/scripts/battle_labyrinth.pory"
+	walk_right
+# 5854 "data/scripts/battle_labyrinth.pory"
+	walk_right
+# 5854 "data/scripts/battle_labyrinth.pory"
+	walk_right
+	step_end
+
+# 5857 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkDown4:
+# 5858 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5858 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5858 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5858 "data/scripts/battle_labyrinth.pory"
+	walk_down
+	step_end
+
+# 5861 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkLeft4:
+# 5862 "data/scripts/battle_labyrinth.pory"
+	walk_left
+# 5862 "data/scripts/battle_labyrinth.pory"
+	walk_left
+# 5862 "data/scripts/battle_labyrinth.pory"
+	walk_left
+# 5862 "data/scripts/battle_labyrinth.pory"
+	walk_left
+	step_end
+
+# 5865 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkRight4:
+# 5866 "data/scripts/battle_labyrinth.pory"
+	walk_right
+# 5866 "data/scripts/battle_labyrinth.pory"
+	walk_right
+# 5866 "data/scripts/battle_labyrinth.pory"
+	walk_right
+# 5866 "data/scripts/battle_labyrinth.pory"
+	walk_right
+	step_end
+
+# 5869 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkUp5:
+# 5870 "data/scripts/battle_labyrinth.pory"
+	walk_up
+# 5870 "data/scripts/battle_labyrinth.pory"
+	walk_up
+# 5870 "data/scripts/battle_labyrinth.pory"
+	walk_up
+# 5870 "data/scripts/battle_labyrinth.pory"
+	walk_up
+# 5870 "data/scripts/battle_labyrinth.pory"
+	walk_up
+	step_end
+
+# 5873 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkDown5:
+# 5874 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5874 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5874 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5874 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5874 "data/scripts/battle_labyrinth.pory"
+	walk_down
+	step_end
+
+# 5877 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkLeft5:
+# 5878 "data/scripts/battle_labyrinth.pory"
+	walk_left
+# 5878 "data/scripts/battle_labyrinth.pory"
+	walk_left
+# 5878 "data/scripts/battle_labyrinth.pory"
+	walk_left
+# 5878 "data/scripts/battle_labyrinth.pory"
+	walk_left
+# 5878 "data/scripts/battle_labyrinth.pory"
+	walk_left
+	step_end
+
+# 5881 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkRight5:
+# 5882 "data/scripts/battle_labyrinth.pory"
+	walk_right
+# 5882 "data/scripts/battle_labyrinth.pory"
+	walk_right
+# 5882 "data/scripts/battle_labyrinth.pory"
+	walk_right
+# 5882 "data/scripts/battle_labyrinth.pory"
+	walk_right
+# 5882 "data/scripts/battle_labyrinth.pory"
+	walk_right
+	step_end
+
+# 5885 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkDown6:
+# 5886 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5886 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5886 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5886 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5886 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5886 "data/scripts/battle_labyrinth.pory"
+	walk_down
+	step_end
+
+# 5889 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkLeft6:
+# 5890 "data/scripts/battle_labyrinth.pory"
+	walk_left
+# 5890 "data/scripts/battle_labyrinth.pory"
+	walk_left
+# 5890 "data/scripts/battle_labyrinth.pory"
+	walk_left
+# 5890 "data/scripts/battle_labyrinth.pory"
+	walk_left
+# 5890 "data/scripts/battle_labyrinth.pory"
+	walk_left
+# 5890 "data/scripts/battle_labyrinth.pory"
+	walk_left
+	step_end
+
+# 5893 "data/scripts/battle_labyrinth.pory"
+Common_Movement_WalkRight6:
+# 5894 "data/scripts/battle_labyrinth.pory"
+	walk_right
+# 5894 "data/scripts/battle_labyrinth.pory"
+	walk_right
+# 5894 "data/scripts/battle_labyrinth.pory"
+	walk_right
+# 5894 "data/scripts/battle_labyrinth.pory"
+	walk_right
+# 5894 "data/scripts/battle_labyrinth.pory"
+	walk_right
+# 5894 "data/scripts/battle_labyrinth.pory"
+	walk_right
+	step_end
+
+# 5897 "data/scripts/battle_labyrinth.pory"
+Common_Movement_Colress_WalkDown:
+# 5898 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5898 "data/scripts/battle_labyrinth.pory"
+	walk_down
+# 5898 "data/scripts/battle_labyrinth.pory"
+	walk_down
+	step_end
+
+# 5901 "data/scripts/battle_labyrinth.pory"
+Common_Movement_Colress_WalkUp:
+# 5902 "data/scripts/battle_labyrinth.pory"
+	walk_up
+# 5902 "data/scripts/battle_labyrinth.pory"
+	walk_up
+# 5902 "data/scripts/battle_labyrinth.pory"
+	walk_up
+# 5903 "data/scripts/battle_labyrinth.pory"
+	face_down
+	step_end
+
+EventScript_UseFlash_PBL::
+# 5907 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_UseFlash_PBL_Text_0, MSGBOX_DEFAULT
+# 5908 "data/scripts/battle_labyrinth.pory"
+	closemessage
+# 5909 "data/scripts/battle_labyrinth.pory"
+	animateflash 1
+# 5910 "data/scripts/battle_labyrinth.pory"
+	setflashlevel 1
+# 5911 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+
+EventScript_UseCut_PBL::
+# 5916 "data/scripts/battle_labyrinth.pory"
+	lockall
+	checkitem ITEM_MACHETE
+# 0 "data/scripts/battle_labyrinth.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_UseCut_PBL_2
+# 5922 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_UseCut_PBL_Text_1, MSGBOX_DEFAULT
+# 5923 "data/scripts/battle_labyrinth.pory"
+	dofieldeffect FLDEFF_USE_CUT_ON_TREE
+# 5924 "data/scripts/battle_labyrinth.pory"
+	waitstate
+# 5925 "data/scripts/battle_labyrinth.pory"
+	applymovement VAR_LAST_TALKED, EventScript_UseCut_PBL_Movement_0
+# 5926 "data/scripts/battle_labyrinth.pory"
+	waitmovement 0
+# 5927 "data/scripts/battle_labyrinth.pory"
+	removeobject VAR_LAST_TALKED
+# 5928 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+EventScript_UseCut_PBL_2:
+# 5918 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_UseCut_PBL_Text_0, MSGBOX_DEFAULT
+# 5919 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+
+EventScript_UseRockSmash_PBL::
+# 5933 "data/scripts/battle_labyrinth.pory"
+	lockall
+	checkitem ITEM_SLEDGEHAMMER
+# 0 "data/scripts/battle_labyrinth.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_UseRockSmash_PBL_2
+# 5939 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_UseRockSmash_PBL_Text_1, MSGBOX_DEFAULT
+# 5940 "data/scripts/battle_labyrinth.pory"
+	dofieldeffect FLDEFF_USE_ROCK_SMASH
+# 5941 "data/scripts/battle_labyrinth.pory"
+	waitstate
+# 5942 "data/scripts/battle_labyrinth.pory"
+	applymovement VAR_LAST_TALKED, EventScript_UseRockSmash_PBL_Movement_0
+# 5943 "data/scripts/battle_labyrinth.pory"
+	waitmovement 0
+# 5944 "data/scripts/battle_labyrinth.pory"
+	removeobject VAR_LAST_TALKED
+# 5945 "data/scripts/battle_labyrinth.pory"
+	special RockSmashWildEncounter
+# 5946 "data/scripts/battle_labyrinth.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq EventScript_UseRockSmash_PBL_5
+# 5951 "data/scripts/battle_labyrinth.pory"
+	goto_if_set FLAG_SETTINGS_BRUTAL, EventScript_UseRockSmash_PBL_8
+# 5951 "data/scripts/battle_labyrinth.pory"
+	goto_if_set FLAG_SETTINGS_RED_THUMB, EventScript_UseRockSmash_PBL_8
+# 5955 "data/scripts/battle_labyrinth.pory"
+	random 100
+# 5956 "data/scripts/battle_labyrinth.pory"
+	switch VAR_RESULT
+# 5957 "data/scripts/battle_labyrinth.pory"
+	case 0, EventScript_UseRockSmash_PBL_14
+# 5958 "data/scripts/battle_labyrinth.pory"
+	case 1, EventScript_UseRockSmash_PBL_14
+# 5959 "data/scripts/battle_labyrinth.pory"
+	case 2, EventScript_UseRockSmash_PBL_14
+# 5960 "data/scripts/battle_labyrinth.pory"
+	case 3, EventScript_UseRockSmash_PBL_14
+# 5961 "data/scripts/battle_labyrinth.pory"
+	case 4, EventScript_UseRockSmash_PBL_14
+# 5962 "data/scripts/battle_labyrinth.pory"
+	case 5, EventScript_UseRockSmash_PBL_14
+# 5963 "data/scripts/battle_labyrinth.pory"
+	case 6, EventScript_UseRockSmash_PBL_14
+# 5964 "data/scripts/battle_labyrinth.pory"
+	case 7, EventScript_UseRockSmash_PBL_14
+# 5965 "data/scripts/battle_labyrinth.pory"
+	case 8, EventScript_UseRockSmash_PBL_14
+# 5966 "data/scripts/battle_labyrinth.pory"
+	case 9, EventScript_UseRockSmash_PBL_14
+# 5967 "data/scripts/battle_labyrinth.pory"
+	case 10, EventScript_UseRockSmash_PBL_14
+# 5968 "data/scripts/battle_labyrinth.pory"
+	case 11, EventScript_UseRockSmash_PBL_14
+# 5969 "data/scripts/battle_labyrinth.pory"
+	case 12, EventScript_UseRockSmash_PBL_14
+# 5970 "data/scripts/battle_labyrinth.pory"
+	case 13, EventScript_UseRockSmash_PBL_14
+# 5971 "data/scripts/battle_labyrinth.pory"
+	case 14, EventScript_UseRockSmash_PBL_14
+# 5972 "data/scripts/battle_labyrinth.pory"
+	case 15, EventScript_UseRockSmash_PBL_14
+# 5973 "data/scripts/battle_labyrinth.pory"
+	case 16, EventScript_UseRockSmash_PBL_14
+# 5974 "data/scripts/battle_labyrinth.pory"
+	case 17, EventScript_UseRockSmash_PBL_14
+# 5975 "data/scripts/battle_labyrinth.pory"
+	case 18, EventScript_UseRockSmash_PBL_14
+# 5976 "data/scripts/battle_labyrinth.pory"
+	case 19, EventScript_UseRockSmash_PBL_14
+# 5977 "data/scripts/battle_labyrinth.pory"
+	case 20, EventScript_UseRockSmash_PBL_14
+# 5978 "data/scripts/battle_labyrinth.pory"
+	case 21, EventScript_UseRockSmash_PBL_14
+# 5980 "data/scripts/battle_labyrinth.pory"
+	case 22, EventScript_UseRockSmash_PBL_15
+# 5981 "data/scripts/battle_labyrinth.pory"
+	case 23, EventScript_UseRockSmash_PBL_15
+# 5982 "data/scripts/battle_labyrinth.pory"
+	case 24, EventScript_UseRockSmash_PBL_15
+# 5983 "data/scripts/battle_labyrinth.pory"
+	case 25, EventScript_UseRockSmash_PBL_15
+# 5984 "data/scripts/battle_labyrinth.pory"
+	case 26, EventScript_UseRockSmash_PBL_15
+# 5985 "data/scripts/battle_labyrinth.pory"
+	case 27, EventScript_UseRockSmash_PBL_15
+# 5986 "data/scripts/battle_labyrinth.pory"
+	case 28, EventScript_UseRockSmash_PBL_15
+# 5987 "data/scripts/battle_labyrinth.pory"
+	case 29, EventScript_UseRockSmash_PBL_15
+# 5988 "data/scripts/battle_labyrinth.pory"
+	case 30, EventScript_UseRockSmash_PBL_15
+# 5989 "data/scripts/battle_labyrinth.pory"
+	case 31, EventScript_UseRockSmash_PBL_15
+# 5990 "data/scripts/battle_labyrinth.pory"
+	case 32, EventScript_UseRockSmash_PBL_15
+# 5991 "data/scripts/battle_labyrinth.pory"
+	case 33, EventScript_UseRockSmash_PBL_15
+# 5992 "data/scripts/battle_labyrinth.pory"
+	case 34, EventScript_UseRockSmash_PBL_15
+# 5993 "data/scripts/battle_labyrinth.pory"
+	case 35, EventScript_UseRockSmash_PBL_15
+# 5994 "data/scripts/battle_labyrinth.pory"
+	case 36, EventScript_UseRockSmash_PBL_15
+# 5998 "data/scripts/battle_labyrinth.pory"
+	case 37, EventScript_UseRockSmash_PBL_16
+# 5999 "data/scripts/battle_labyrinth.pory"
+	case 38, EventScript_UseRockSmash_PBL_16
+# 6000 "data/scripts/battle_labyrinth.pory"
+	case 39, EventScript_UseRockSmash_PBL_16
+# 6001 "data/scripts/battle_labyrinth.pory"
+	case 40, EventScript_UseRockSmash_PBL_16
+# 6002 "data/scripts/battle_labyrinth.pory"
+	case 41, EventScript_UseRockSmash_PBL_16
+# 6003 "data/scripts/battle_labyrinth.pory"
+	case 42, EventScript_UseRockSmash_PBL_16
+# 6004 "data/scripts/battle_labyrinth.pory"
+	case 43, EventScript_UseRockSmash_PBL_16
+# 6005 "data/scripts/battle_labyrinth.pory"
+	case 44, EventScript_UseRockSmash_PBL_16
+# 6006 "data/scripts/battle_labyrinth.pory"
+	case 45, EventScript_UseRockSmash_PBL_16
+# 6007 "data/scripts/battle_labyrinth.pory"
+	case 46, EventScript_UseRockSmash_PBL_16
+# 6011 "data/scripts/battle_labyrinth.pory"
+	case 47, EventScript_UseRockSmash_PBL_17
+# 6012 "data/scripts/battle_labyrinth.pory"
+	case 48, EventScript_UseRockSmash_PBL_17
+# 6013 "data/scripts/battle_labyrinth.pory"
+	case 49, EventScript_UseRockSmash_PBL_17
+# 6014 "data/scripts/battle_labyrinth.pory"
+	case 50, EventScript_UseRockSmash_PBL_17
+# 6015 "data/scripts/battle_labyrinth.pory"
+	case 51, EventScript_UseRockSmash_PBL_17
+# 6019 "data/scripts/battle_labyrinth.pory"
+	case 52, EventScript_UseRockSmash_PBL_18
+# 6021 "data/scripts/battle_labyrinth.pory"
+	case 53, EventScript_UseRockSmash_PBL_19
+# 6023 "data/scripts/battle_labyrinth.pory"
+	case 54, EventScript_UseRockSmash_PBL_20
+# 6025 "data/scripts/battle_labyrinth.pory"
+	case 55, EventScript_UseRockSmash_PBL_21
+# 6027 "data/scripts/battle_labyrinth.pory"
+	case 56, EventScript_UseRockSmash_PBL_22
+# 6029 "data/scripts/battle_labyrinth.pory"
+	case 57, EventScript_UseRockSmash_PBL_23
+# 6031 "data/scripts/battle_labyrinth.pory"
+	case 58, EventScript_UseRockSmash_PBL_24
+# 6033 "data/scripts/battle_labyrinth.pory"
+	case 59, EventScript_UseRockSmash_PBL_25
+# 6035 "data/scripts/battle_labyrinth.pory"
+	case 60, EventScript_UseRockSmash_PBL_26
+# 6037 "data/scripts/battle_labyrinth.pory"
+	case 61, EventScript_UseRockSmash_PBL_27
+# 6039 "data/scripts/battle_labyrinth.pory"
+	case 62, EventScript_UseRockSmash_PBL_28
+# 6041 "data/scripts/battle_labyrinth.pory"
+	case 63, EventScript_UseRockSmash_PBL_29
+# 6043 "data/scripts/battle_labyrinth.pory"
+	case 64, EventScript_UseRockSmash_PBL_30
+# 6045 "data/scripts/battle_labyrinth.pory"
+	case 65, EventScript_UseRockSmash_PBL_31
+# 6047 "data/scripts/battle_labyrinth.pory"
+	case 66, EventScript_UseRockSmash_PBL_32
+# 6049 "data/scripts/battle_labyrinth.pory"
+	case 67, EventScript_UseRockSmash_PBL_33
+# 6051 "data/scripts/battle_labyrinth.pory"
+	case 68, EventScript_UseRockSmash_PBL_34
+# 6053 "data/scripts/battle_labyrinth.pory"
+	case 69, EventScript_UseRockSmash_PBL_35
+EventScript_UseRockSmash_PBL_12:
+# 6056 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+EventScript_UseRockSmash_PBL_2:
+# 5935 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_UseRockSmash_PBL_Text_0, MSGBOX_DEFAULT
+# 5936 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+EventScript_UseRockSmash_PBL_5:
+# 5947 "data/scripts/battle_labyrinth.pory"
+	waitstate
+# 5948 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+EventScript_UseRockSmash_PBL_8:
+# 5952 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+EventScript_UseRockSmash_PBL_14:
+# 5979 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_RED_SHARD, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_15:
+# 5995 "data/scripts/battle_labyrinth.pory"
+	compare VAR_ZONE, 10
+	goto_if_gt EventScript_UseRockSmash_PBL_36
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_16:
+# 6008 "data/scripts/battle_labyrinth.pory"
+	compare VAR_ZONE, 20
+	goto_if_gt EventScript_UseRockSmash_PBL_38
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_17:
+# 6016 "data/scripts/battle_labyrinth.pory"
+	compare VAR_ZONE, 30
+	goto_if_gt EventScript_UseRockSmash_PBL_40
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_18:
+# 6020 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_NORMAL_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_19:
+# 6022 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_FIRE_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_20:
+# 6024 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_WATER_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_21:
+# 6026 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_ELECTRIC_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_22:
+# 6028 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_GRASS_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_23:
+# 6030 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_ICE_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_24:
+# 6032 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_FIGHTING_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_25:
+# 6034 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_POISON_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_26:
+# 6036 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_GROUND_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_27:
+# 6038 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_FLYING_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_28:
+# 6040 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_PSYCHIC_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_29:
+# 6042 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_BUG_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_30:
+# 6044 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_ROCK_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_31:
+# 6046 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_GHOST_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_32:
+# 6048 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_DRAGON_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_33:
+# 6050 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_DARK_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_34:
+# 6052 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_STEEL_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_35:
+# 6054 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_FAIRY_GEM, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_36:
+# 5996 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_BLUE_SHARD, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_38:
+# 6009 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_YELLOW_SHARD, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+EventScript_UseRockSmash_PBL_40:
+# 6017 "data/scripts/battle_labyrinth.pory"
+	finditem ITEM_GREEN_SHARD, 1
+	goto EventScript_UseRockSmash_PBL_12
+
+
+EventScript_UseStrength_PBL::
+# 6061 "data/scripts/battle_labyrinth.pory"
+	lockall
+# 6062 "data/scripts/battle_labyrinth.pory"
+	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_UseStrength_PBL_2
+	checkitem ITEM_POWER_GLOVE
+# 0 "data/scripts/battle_labyrinth.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_UseStrength_PBL_5
+# 6072 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_UseStrength_PBL_Text_2, MSGBOX_DEFAULT
+# 6073 "data/scripts/battle_labyrinth.pory"
+	dofieldeffect FLDEFF_USE_STRENGTH
+# 6074 "data/scripts/battle_labyrinth.pory"
+	waitstate
+# 6075 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_SYS_USE_STRENGTH
+# 6076 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+EventScript_UseStrength_PBL_2:
+# 6063 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_UseStrength_PBL_Text_0, MSGBOX_DEFAULT
+# 6064 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+EventScript_UseStrength_PBL_5:
+# 6068 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_UseStrength_PBL_Text_1, MSGBOX_DEFAULT
+# 6069 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+
+EventScript_UseWaterfall_PBL::
+# 6081 "data/scripts/battle_labyrinth.pory"
+	lockall
+# 6082 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_UseWaterfall_PBL_Text_0, MSGBOX_DEFAULT
+# 6083 "data/scripts/battle_labyrinth.pory"
+	dofieldeffect FLDEFF_USE_WATERFALL
+# 6084 "data/scripts/battle_labyrinth.pory"
+	waitstate
+# 6085 "data/scripts/battle_labyrinth.pory"
+	setflag FLAG_SYS_USE_STRENGTH
+# 6086 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+
+EventScript_CannotUseWaterfall_PBL::
+# 6091 "data/scripts/battle_labyrinth.pory"
+	lockall
+# 6092 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_CannotUseWaterfall_PBL_Text_0, MSGBOX_DEFAULT
+# 6093 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+
+EventScript_DiveSpot_PBL::
+# 6098 "data/scripts/battle_labyrinth.pory"
+	lockall
+	checkitem ITEM_DIVING_SUIT
+# 0 "data/scripts/battle_labyrinth.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_DiveSpot_PBL_2
+# 6104 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_DiveSpot_PBL_Text_1, MSGBOX_DEFAULT
+# 6105 "data/scripts/battle_labyrinth.pory"
+	dofieldeffect FLDEFF_USE_DIVE
+# 6106 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+EventScript_DiveSpot_PBL_2:
+# 6100 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_DiveSpot_PBL_Text_0, MSGBOX_DEFAULT
+# 6101 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+
+EventScript_UseDive_PBL::
+# 6111 "data/scripts/battle_labyrinth.pory"
+	lockall
+# 6112 "data/scripts/battle_labyrinth.pory"
+	dofieldeffect FLDEFF_USE_DIVE
+# 6113 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+
+EventScript_UseDiveUnderwater_PBL::
+# 6118 "data/scripts/battle_labyrinth.pory"
+	lockall
+	checkitem ITEM_DIVING_SUIT
+# 0 "data/scripts/battle_labyrinth.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_UseDiveUnderwater_PBL_2
+# 6124 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_UseDiveUnderwater_PBL_Text_1, MSGBOX_DEFAULT
+# 6125 "data/scripts/battle_labyrinth.pory"
+	dofieldeffect FLDEFF_USE_DIVE
+# 6126 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+EventScript_UseDiveUnderwater_PBL_2:
+# 6120 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_UseDiveUnderwater_PBL_Text_0, MSGBOX_DEFAULT
+# 6121 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+
+EventScript_UseSurf_PBL::
+	checkitem ITEM_SURFBOARD
+# 0 "data/scripts/battle_labyrinth.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_UseSurf_PBL_2
+# 6134 "data/scripts/battle_labyrinth.pory"
+	lockall
+# 6135 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_UseSurf_PBL_Text_0, MSGBOX_DEFAULT
+# 6136 "data/scripts/battle_labyrinth.pory"
+	dofieldeffect FLDEFF_USE_SURF
+# 6137 "data/scripts/battle_labyrinth.pory"
+	releaseall
+	end
+
+EventScript_UseSurf_PBL_2:
+	end
+
+
+EventScript_DisableAutoRun::
+# 6142 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_DisableAutoRun_Text_0, MSGBOX_SIGN
+	return
+
+
+EventScript_EnableAutoRun::
+# 6146 "data/scripts/battle_labyrinth.pory"
+	msgbox EventScript_EnableAutoRun_Text_0, MSGBOX_SIGN
+	return
+
+
+# 5925 "data/scripts/battle_labyrinth.pory"
+EventScript_UseCut_PBL_Movement_0:
+# 5925 "data/scripts/battle_labyrinth.pory"
+	cut_tree
+	step_end
+
+# 5942 "data/scripts/battle_labyrinth.pory"
+EventScript_UseRockSmash_PBL_Movement_0:
+# 5942 "data/scripts/battle_labyrinth.pory"
+	rock_smash_break
+	step_end
+
 EventScript_Shop_Portentia_Text_0:
 # 9 "data/scripts/battle_labyrinth.pory"
 	.string "{COLOR BLUE}???{COLOR DARK_GRAY}: Hello, lovely. Your name is…\n"
@@ -14798,6 +15553,77 @@ Debug_CheatStart_PBL_Text_31:
 Debug_CheatStart_PBL_GiveMon_Text_0:
 # 5826 "data/scripts/battle_labyrinth.pory"
 	.string "Obtained {STR_VAR_1}!$"
+
+EventScript_UseFlash_PBL_Text_0:
+# 5907 "data/scripts/battle_labyrinth.pory"
+	.string "{PLAYER} used the Flashlight!$"
+
+EventScript_UseCut_PBL_Text_0:
+# 5918 "data/scripts/battle_labyrinth.pory"
+	.string "This shrub is blocking the way.$"
+
+EventScript_UseCut_PBL_Text_1:
+# 5922 "data/scripts/battle_labyrinth.pory"
+	.string "{PLAYER} used the Machete!$"
+
+EventScript_UseRockSmash_PBL_Text_0:
+# 5935 "data/scripts/battle_labyrinth.pory"
+	.string "It's a rugged rock.$"
+
+EventScript_UseRockSmash_PBL_Text_1:
+# 5939 "data/scripts/battle_labyrinth.pory"
+	.string "{PLAYER} used the Sledgehammer!$"
+
+EventScript_UseStrength_PBL_Text_0:
+# 6063 "data/scripts/battle_labyrinth.pory"
+	.string "It's now possible to move boulders\n"
+	.string "around.$"
+
+EventScript_UseStrength_PBL_Text_1:
+# 6068 "data/scripts/battle_labyrinth.pory"
+	.string "It's a big boulder, but it's too heavy to\n"
+	.string "push it aside.$"
+
+EventScript_UseStrength_PBL_Text_2:
+# 6072 "data/scripts/battle_labyrinth.pory"
+	.string "{PLAYER} used the Power Glove!$"
+
+EventScript_UseWaterfall_PBL_Text_0:
+# 6082 "data/scripts/battle_labyrinth.pory"
+	.string "{PLAYER} climbed the watefall!$"
+
+EventScript_CannotUseWaterfall_PBL_Text_0:
+# 6092 "data/scripts/battle_labyrinth.pory"
+	.string "A wall of water is crashing down with a\n"
+	.string "mighty roar.$"
+
+EventScript_DiveSpot_PBL_Text_0:
+# 6100 "data/scripts/battle_labyrinth.pory"
+	.string "The sea is deep here.$"
+
+EventScript_DiveSpot_PBL_Text_1:
+# 6104 "data/scripts/battle_labyrinth.pory"
+	.string "{PLAYER} put on the Diving Suit!$"
+
+EventScript_UseDiveUnderwater_PBL_Text_0:
+# 6120 "data/scripts/battle_labyrinth.pory"
+	.string "Light is filtering down from above.$"
+
+EventScript_UseDiveUnderwater_PBL_Text_1:
+# 6124 "data/scripts/battle_labyrinth.pory"
+	.string "{PLAYER} swam to the surface!$"
+
+EventScript_UseSurf_PBL_Text_0:
+# 6135 "data/scripts/battle_labyrinth.pory"
+	.string "{PLAYER} used the Surfboard!$"
+
+EventScript_DisableAutoRun_Text_0:
+# 6142 "data/scripts/battle_labyrinth.pory"
+	.string "Auto Run {COLOR RED}Disabled{COLOR DARK_GRAY}.$"
+
+EventScript_EnableAutoRun_Text_0:
+# 6146 "data/scripts/battle_labyrinth.pory"
+	.string "Auto Run {COLOR GREEN}Enabled{COLOR DARK_GRAY}.$"
 
 gText_Lelouch_NotEnoughColor::
 # 1029 "data/scripts/battle_labyrinth.pory"

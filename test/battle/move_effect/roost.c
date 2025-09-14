@@ -3,28 +3,28 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_ROOST].effect == EFFECT_ROOST);
-    ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] != TYPE_FLYING);
-    ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[1] != TYPE_FLYING);
+    ASSUME(GetMoveEffect(MOVE_ROOST) == EFFECT_ROOST);
+    ASSUME(GetSpeciesType(SPECIES_WOBBUFFET, 0) != TYPE_FLYING);
+    ASSUME(GetSpeciesType(SPECIES_WOBBUFFET, 1) != TYPE_FLYING);
     // One attack of each type to verify typelessness
-    ASSUME(gMovesInfo[MOVE_POUND].type == TYPE_NORMAL);
-    ASSUME(gMovesInfo[MOVE_KARATE_CHOP].type == TYPE_FIGHTING);
-    ASSUME(gMovesInfo[MOVE_GUST].type == TYPE_FLYING);
-    ASSUME(gMovesInfo[MOVE_POISON_STING].type == TYPE_POISON);
-    ASSUME(gMovesInfo[MOVE_EARTHQUAKE].type == TYPE_GROUND);
-    ASSUME(gMovesInfo[MOVE_ROCK_THROW].type == TYPE_ROCK);
-    ASSUME(gMovesInfo[MOVE_LEECH_LIFE].type == TYPE_BUG);
-    ASSUME(gMovesInfo[MOVE_LICK].type == TYPE_GHOST);
-    ASSUME(gMovesInfo[MOVE_STEEL_WING].type == TYPE_STEEL);
-    ASSUME(gMovesInfo[MOVE_EMBER].type == TYPE_FIRE);
-    ASSUME(gMovesInfo[MOVE_WATER_GUN].type == TYPE_WATER);
-    ASSUME(gMovesInfo[MOVE_VINE_WHIP].type == TYPE_GRASS);
-    ASSUME(gMovesInfo[MOVE_THUNDER_SHOCK].type == TYPE_ELECTRIC);
-    ASSUME(gMovesInfo[MOVE_CONFUSION].type == TYPE_PSYCHIC);
-    ASSUME(gMovesInfo[MOVE_ICE_BEAM].type == TYPE_ICE);
-    ASSUME(gMovesInfo[MOVE_DRAGON_BREATH].type == TYPE_DRAGON);
-    ASSUME(gMovesInfo[MOVE_BITE].type == TYPE_DARK);
-    ASSUME(gMovesInfo[MOVE_DISARMING_VOICE].type == TYPE_FAIRY);
+    ASSUME(GetMoveType(MOVE_POUND) == TYPE_NORMAL);
+    ASSUME(GetMoveType(MOVE_KARATE_CHOP) == TYPE_FIGHTING);
+    ASSUME(GetMoveType(MOVE_GUST) == TYPE_FLYING);
+    ASSUME(GetMoveType(MOVE_POISON_STING) == TYPE_POISON);
+    ASSUME(GetMoveType(MOVE_EARTHQUAKE) == TYPE_GROUND);
+    ASSUME(GetMoveType(MOVE_ROCK_THROW) == TYPE_ROCK);
+    ASSUME(GetMoveType(MOVE_LEECH_LIFE) == TYPE_BUG);
+    ASSUME(GetMoveType(MOVE_LICK) == TYPE_GHOST);
+    ASSUME(GetMoveType(MOVE_STEEL_WING) == TYPE_STEEL);
+    ASSUME(GetMoveType(MOVE_EMBER) == TYPE_FIRE);
+    ASSUME(GetMoveType(MOVE_WATER_GUN) == TYPE_WATER);
+    ASSUME(GetMoveType(MOVE_VINE_WHIP) == TYPE_GRASS);
+    ASSUME(GetMoveType(MOVE_THUNDER_SHOCK) == TYPE_ELECTRIC);
+    ASSUME(GetMoveType(MOVE_CONFUSION) == TYPE_PSYCHIC);
+    ASSUME(GetMoveType(MOVE_ICE_BEAM) == TYPE_ICE);
+    ASSUME(GetMoveType(MOVE_DRAGON_BREATH) == TYPE_DRAGON);
+    ASSUME(GetMoveType(MOVE_BITE) == TYPE_DARK);
+    ASSUME(GetMoveType(MOVE_DISARMING_VOICE) == TYPE_FAIRY);
 }
 
 SINGLE_BATTLE_TEST("Roost fails when user is at full HP")
@@ -85,8 +85,8 @@ SINGLE_BATTLE_TEST("Roost recovers 50% of the user's Max HP")
 SINGLE_BATTLE_TEST("Roost suppresses the user's Flying-typing this turn, then restores it at the end of the turn")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_SKARMORY].types[0] == TYPE_STEEL);
-        ASSUME(gSpeciesInfo[SPECIES_SKARMORY].types[1] == TYPE_FLYING);
+        ASSUME(GetSpeciesType(SPECIES_SKARMORY, 0) == TYPE_STEEL);
+        ASSUME(GetSpeciesType(SPECIES_SKARMORY, 1) == TYPE_FLYING);
         PLAYER(SPECIES_SKARMORY) { HP(50); MaxHP(100); Ability(ABILITY_STURDY); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -131,8 +131,8 @@ SINGLE_BATTLE_TEST("Roost, if used by a Flying/Flying type, treats the user as a
     PARAMETRIZE { damagingMove = MOVE_DISARMING_VOICE; }
 
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_TORNADUS].types[0] == TYPE_FLYING);
-        ASSUME(gSpeciesInfo[SPECIES_TORNADUS].types[1] == TYPE_FLYING);
+        ASSUME(GetSpeciesType(SPECIES_TORNADUS, 0) == TYPE_FLYING);
+        ASSUME(GetSpeciesType(SPECIES_TORNADUS, 1) == TYPE_FLYING);
         PLAYER(SPECIES_TORNADUS) { HP(50); MaxHP(100); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -199,8 +199,8 @@ SINGLE_BATTLE_TEST("Roost, if used by a Mystery/Flying type, treats the user as 
     PARAMETRIZE { damagingMove = MOVE_DISARMING_VOICE; }
 
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_MOLTRES].types[0] == TYPE_FIRE);
-        ASSUME(gSpeciesInfo[SPECIES_MOLTRES].types[1] == TYPE_FLYING);
+        ASSUME(GetSpeciesType(SPECIES_MOLTRES, 0) == TYPE_FIRE);
+        ASSUME(GetSpeciesType(SPECIES_MOLTRES, 1) == TYPE_FLYING);
         PLAYER(SPECIES_MOLTRES) { HP(300); MaxHP(400); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -228,8 +228,8 @@ SINGLE_BATTLE_TEST("Roost, if used by a Mystery/Flying type, treats the user as 
 DOUBLE_BATTLE_TEST("Roost suppresses the user's not-yet-aquired Flying-type this turn")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_KECLEON].types[0] != TYPE_FLYING);
-        ASSUME(gSpeciesInfo[SPECIES_KECLEON].types[1] != TYPE_FLYING);
+        ASSUME(GetSpeciesType(SPECIES_KECLEON, 0) != TYPE_FLYING);
+        ASSUME(GetSpeciesType(SPECIES_KECLEON, 1) != TYPE_FLYING);
         PLAYER(SPECIES_KECLEON) { Speed(40); HP(150); Ability(ABILITY_COLOR_CHANGE); }
         PLAYER(SPECIES_WOBBUFFET) { Speed(10); }
         OPPONENT(SPECIES_PIDGEY) { Speed(30); }
@@ -255,7 +255,7 @@ DOUBLE_BATTLE_TEST("Roost suppresses the user's not-yet-aquired Flying-type this
 SINGLE_BATTLE_TEST("Roost prevents a Flying-type user from being protected by Delta Stream")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_RAYQUAZA].types[1] == TYPE_FLYING);
+        ASSUME(GetSpeciesType(SPECIES_RAYQUAZA, 1) == TYPE_FLYING);
         PLAYER(SPECIES_RAYQUAZA) { HP(1); Ability(ABILITY_DELTA_STREAM); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -272,8 +272,8 @@ SINGLE_BATTLE_TEST("Roost prevents a Flying-type user from being protected by De
 SINGLE_BATTLE_TEST("Roost does not undo other type-changing effects at the end of the turn")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_SWELLOW].types[0] == TYPE_NORMAL);
-        ASSUME(gSpeciesInfo[SPECIES_SWELLOW].types[1] == TYPE_FLYING);
+        ASSUME(GetSpeciesType(SPECIES_SWELLOW, 0) == TYPE_NORMAL);
+        ASSUME(GetSpeciesType(SPECIES_SWELLOW, 1) == TYPE_FLYING);
         PLAYER(SPECIES_SWELLOW) { HP(1); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -296,8 +296,8 @@ SINGLE_BATTLE_TEST("Roost does not undo other type-changing effects at the end o
 SINGLE_BATTLE_TEST("Roost's effect is lifted after Grassy Terrain's healing")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_SWELLOW].types[0] == TYPE_NORMAL);
-        ASSUME(gSpeciesInfo[SPECIES_SWELLOW].types[1] == TYPE_FLYING);
+        ASSUME(GetSpeciesType(SPECIES_SWELLOW, 0) == TYPE_NORMAL);
+        ASSUME(GetSpeciesType(SPECIES_SWELLOW, 1) == TYPE_FLYING);
         PLAYER(SPECIES_SWELLOW) { HP(1); Ability(ABILITY_GRASSY_SURGE); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -315,10 +315,10 @@ SINGLE_BATTLE_TEST("Roost's effect is lifted after Grassy Terrain's healing")
 SINGLE_BATTLE_TEST("Roost's suppression prevents Reflect Type from copying any Flying typing")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_SWELLOW].types[0] == TYPE_NORMAL);
-        ASSUME(gSpeciesInfo[SPECIES_SWELLOW].types[1] == TYPE_FLYING);
-        ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] == TYPE_PSYCHIC);
-        ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[1] == TYPE_PSYCHIC);
+        ASSUME(GetSpeciesType(SPECIES_SWELLOW, 0) == TYPE_NORMAL);
+        ASSUME(GetSpeciesType(SPECIES_SWELLOW, 1) == TYPE_FLYING);
+        ASSUME(GetSpeciesType(SPECIES_WOBBUFFET, 0) == TYPE_PSYCHIC);
+        ASSUME(GetSpeciesType(SPECIES_WOBBUFFET, 1) == TYPE_PSYCHIC);
         PLAYER(SPECIES_SWELLOW) { HP(1); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

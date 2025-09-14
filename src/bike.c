@@ -7,7 +7,6 @@
 #include "metatile_behavior.h"
 #include "overworld.h"
 #include "sound.h"
-#include "constants/map_types.h"
 #include "constants/songs.h"
 
 // this file's functions
@@ -996,8 +995,6 @@ bool8 IsPlayerNotUsingAcroBikeOnBumpySlope(void)
 
 void GetOnOffBike(u8 transitionFlags)
 {
-    gUnusedBikeCameraAheadPanback = FALSE;
-
     if (gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
     {
         SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT);

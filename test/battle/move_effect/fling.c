@@ -3,10 +3,10 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_FLING].effect == EFFECT_FLING);
+    ASSUME(GetMoveEffect(MOVE_FLING) == EFFECT_FLING);
 }
 
-SINGLE_BATTLE_TEST("Fling fails if pokemon holds no item")
+SINGLE_BATTLE_TEST("Fling fails if Pokémon holds no item")
 {
     u16 item;
 
@@ -29,7 +29,7 @@ SINGLE_BATTLE_TEST("Fling fails if pokemon holds no item")
     }
 }
 
-SINGLE_BATTLE_TEST("Fling fails if pokemon is under the effects of Embargo or Magic Room")
+SINGLE_BATTLE_TEST("Fling fails if Pokémon is under the effects of Embargo or Magic Room")
 {
     u16 move;
 
@@ -38,8 +38,8 @@ SINGLE_BATTLE_TEST("Fling fails if pokemon is under the effects of Embargo or Ma
     PARAMETRIZE {move = MOVE_MAGIC_ROOM; }
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_EMBARGO].effect == EFFECT_EMBARGO);
-        ASSUME(gMovesInfo[MOVE_MAGIC_ROOM].effect == EFFECT_MAGIC_ROOM);
+        ASSUME(GetMoveEffect(MOVE_EMBARGO) == EFFECT_EMBARGO);
+        ASSUME(GetMoveEffect(MOVE_MAGIC_ROOM) == EFFECT_MAGIC_ROOM);
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RAZOR_CLAW); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -56,7 +56,7 @@ SINGLE_BATTLE_TEST("Fling fails if pokemon is under the effects of Embargo or Ma
     }
 }
 
-SINGLE_BATTLE_TEST("Fling fails for pokemon with Klutz ability")
+SINGLE_BATTLE_TEST("Fling fails for Pokémon with Klutz ability")
 {
     u16 ability;
 
@@ -80,10 +80,13 @@ SINGLE_BATTLE_TEST("Fling fails for pokemon with Klutz ability")
     }
 }
 
+TO_DO_BATTLE_TEST("Fling fails if the item changes the Pokémon's form")
+TO_DO_BATTLE_TEST("Fling works if the item changes a Pokémon's form but not the one holding it") //Eg. non-matching Mega Stones
+
 SINGLE_BATTLE_TEST("Fling's thrown item can be regained with Recycle")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_RECYCLE].effect == EFFECT_RECYCLE);
+        ASSUME(GetMoveEffect(MOVE_RECYCLE) == EFFECT_RECYCLE);
         PLAYER(SPECIES_WOBBUFFET) {Item(ITEM_RAZOR_CLAW); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -106,7 +109,7 @@ SINGLE_BATTLE_TEST("Fling's thrown item can be regained with Recycle")
 SINGLE_BATTLE_TEST("Fling - Item is lost even when there is no target")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_SELF_DESTRUCT].effect == EFFECT_EXPLOSION);
+        ASSUME(GetMoveEffect(MOVE_SELF_DESTRUCT) == EFFECT_EXPLOSION);
         PLAYER(SPECIES_WOBBUFFET) {Item(ITEM_RAZOR_CLAW); Speed(2); }
         OPPONENT(SPECIES_WOBBUFFET) {Speed(5); }
         OPPONENT(SPECIES_WOBBUFFET) {Speed(5); }
@@ -131,7 +134,7 @@ SINGLE_BATTLE_TEST("Fling - Item is lost even when there is no target")
 SINGLE_BATTLE_TEST("Fling - Item is lost when target protects itself")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_PROTECT].effect == EFFECT_PROTECT);
+        ASSUME(GetMoveEffect(MOVE_PROTECT) == EFFECT_PROTECT);
         PLAYER(SPECIES_WOBBUFFET) {Item(ITEM_RAZOR_CLAW); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -150,7 +153,7 @@ SINGLE_BATTLE_TEST("Fling - Item is lost when target protects itself")
     }
 }
 
-SINGLE_BATTLE_TEST("Fling doesn't consume the item if pokemon is asleep/frozen/paralyzed")
+SINGLE_BATTLE_TEST("Fling doesn't consume the item if Pokémon is asleep/frozen/paralyzed")
 {
     u32 status;
     u16 item;
@@ -362,7 +365,7 @@ SINGLE_BATTLE_TEST("Fling - thrown berry's effect activates for the target even 
     PARAMETRIZE { item = ITEM_SALAC_BERRY; effect = HOLD_EFFECT_SPEED_UP; statId = STAT_SPEED; }
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_FLING].category == DAMAGE_CATEGORY_PHYSICAL);
+        ASSUME(GetMoveCategory(MOVE_FLING) == DAMAGE_CATEGORY_PHYSICAL);
         PLAYER(SPECIES_WOBBUFFET) { Item(item); Attack(1); }
         OPPONENT(SPECIES_WOBBUFFET) { Status1(status1); HP(399); MaxHP(400); MovesWithPP({MOVE_CELEBRATE, 35}); }
     } WHEN {
@@ -441,19 +444,21 @@ SINGLE_BATTLE_TEST("Fling deals damage based on items fling power")
     s16 damage[2];
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_CRUNCH].power == 80);
+        ASSUME(GetMovePower(MOVE_CRUNCH) == 80);
         ASSUME(gItemsInfo[ITEM_VENUSAURITE].flingPower == 80);
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_VENUSAURITE); }
         OPPONENT(SPECIES_REGIROCK);
     } WHEN {
-        TURN { MOVE(player, MOVE_CRUNCH); }
         TURN { MOVE(player, MOVE_FLING); }
+        TURN { MOVE(player, MOVE_CRUNCH); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_CRUNCH, player);
-        HP_BAR(opponent, captureDamage: &damage[0]);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FLING, player);
+        HP_BAR(opponent, captureDamage: &damage[0]);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_CRUNCH, player);
         HP_BAR(opponent, captureDamage: &damage[1]);
     } THEN {
         EXPECT_EQ(damage[0], damage[1]);
     }
 }
+
+TO_DO_BATTLE_TEST("Fling deals damage based on a TM's move power")

@@ -164,13 +164,17 @@ struct SoundChannel
     u16 xpc;
 };
 
-#define MAX_DIRECTSOUND_CHANNELS 15
+#define MAX_DIRECTSOUND_CHANNELS 12
 
 #define PCM_DMA_BUF_SIZE 1584 // size of Direct Sound buffer
 
 struct MusicPlayerInfo;
 
+#if __STDC_VERSION__ < 202311L
 typedef void (*MPlayFunc)();
+#else
+typedef void (*MPlayFunc)(...);
+#endif
 typedef void (*PlyNoteFunc)(u32, struct MusicPlayerInfo *, struct MusicPlayerTrack *);
 typedef void (*CgbSoundFunc)(void);
 typedef void (*CgbOscOffFunc)(u8);
@@ -397,7 +401,7 @@ extern const u8 gNoiseTable[];
 
 extern const struct PokemonCrySong gPokemonCrySongTemplate;
 
-extern const struct ToneData voicegroup000;
+extern const struct ToneData voicegroup_dummy;
 
 extern char gNumMusicPlayers[];
 extern char gMaxLines[];

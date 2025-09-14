@@ -2,7 +2,7 @@
   "id": "MAP_ZONE0A",
   "name": "Zone0A",
   "layout": "LAYOUT_ZONE0A",
-  "music": "MUS_HG_VERMILION",
+  "music": "MUS_FORTREE",
   "region_map_section": "MAPSEC_ZONE_0",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

@@ -47,7 +47,6 @@
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
-#include "constants/region_map_sections.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
@@ -409,15 +408,15 @@ static const u8 sText_None[]                                = _("NONE");
 static const u8 sText_Dashes[]                       = _("-----");
 
 // bg gfx
-const u32 sSummaryScreen_Gfx_BW[]                           = INCBIN_U32("graphics/summary_screen/bw/tiles.4bpp.lz");
-const u32 sSummaryScreen_Pal_BW[]                           = INCBIN_U32("graphics/summary_screen/bw/tiles.gbapal.lz");
-const u32 sSummaryPage_ScrollBG_Tilemap_BW[]                = INCBIN_U32("graphics/summary_screen/bw/scroll_bg.bin.lz");
-const u32 sSummaryPage_Info_Tilemap_BW[]                    = INCBIN_U32("graphics/summary_screen/bw/page_info.bin.lz");
-const u32 sSummaryPage_Skills_Tilemap_BW[]                  = INCBIN_U32("graphics/summary_screen/bw/page_skills.bin.lz");
-const u32 sSummaryPage_BattleMoves_Tilemap_BW[]             = INCBIN_U32("graphics/summary_screen/bw/page_battle_moves.bin.lz");
-const u32 sSummaryPage_ContestMoves_Tilemap_BW[]            = INCBIN_U32("graphics/summary_screen/bw/page_contest_moves.bin.lz");
-const u32 sSummaryEffect_Battle_Tilemap_BW[]                = INCBIN_U32("graphics/summary_screen/bw/effect_battle.bin.lz");
-const u32 sSummaryEffect_Contest_Tilemap_BW[]               = INCBIN_U32("graphics/summary_screen/bw/effect_contest.bin.lz");
+const u32 sSummaryScreen_Gfx_BW[]                           = INCBIN_U32("graphics/summary_screen/bw/tiles.4bpp.smol");
+const u16 sSummaryScreen_Pal_BW[]                           = INCBIN_U16("graphics/summary_screen/bw/tiles.gbapal");
+const u32 sSummaryPage_ScrollBG_Tilemap_BW[]                = INCBIN_U32("graphics/summary_screen/bw/scroll_bg.bin.smolTM");
+const u32 sSummaryPage_Info_Tilemap_BW[]                    = INCBIN_U32("graphics/summary_screen/bw/page_info.bin.smolTM");
+const u32 sSummaryPage_Skills_Tilemap_BW[]                  = INCBIN_U32("graphics/summary_screen/bw/page_skills.bin.smolTM");
+const u32 sSummaryPage_BattleMoves_Tilemap_BW[]             = INCBIN_U32("graphics/summary_screen/bw/page_battle_moves.bin.smolTM");
+const u32 sSummaryPage_ContestMoves_Tilemap_BW[]            = INCBIN_U32("graphics/summary_screen/bw/page_contest_moves.bin.smolTM");
+const u32 sSummaryEffect_Battle_Tilemap_BW[]                = INCBIN_U32("graphics/summary_screen/bw/effect_battle.bin.smolTM");
+const u32 sSummaryEffect_Contest_Tilemap_BW[]               = INCBIN_U32("graphics/summary_screen/bw/effect_contest.bin.smolTM");
 const u16 sSummaryScreen_PPTextPalette_BW[]                 = INCBIN_U16("graphics/summary_screen/bw/text_pp.gbapal");
 
 // sprite gfx
@@ -427,21 +426,21 @@ static const u8 sButtons_Gfx[][4 * TILE_SIZE_4BPP] = {
 };
 
 #if BW_SUMMARY_BW_TYPE_ICONS == TRUE
-static const u32 sMoveTypes_Gfx_BW[]                        = INCBIN_U32("graphics/types_bw/move_types_bw.4bpp.lz");
-static const u32 sMoveTypes_Pal_BW[]                        = INCBIN_U32("graphics/types_bw/move_types_bw.gbapal.lz");
+static const u32 sMoveTypes_Gfx_BW[]                        = INCBIN_U32("graphics/types_bw/move_types_bw.4bpp.smol");
+static const u32 sMoveTypes_Pal_BW[]                        = INCBIN_U32("graphics/types_bw/move_types_bw.gbapal");
 #endif
-static const u32 sTeraTypes_Gfx[]                           = INCBIN_U32("graphics/types_bw/tera/tera_types_bw.4bpp.lz");
-static const u32 sSummaryMoveSelect_Gfx_BW[]                = INCBIN_U32("graphics/summary_screen/bw/move_select.4bpp.lz");
-static const u32 sSummaryMoveSelect_Pal_BW[]                = INCBIN_U32("graphics/summary_screen/bw/move_select.gbapal.lz");
+static const u32 sTeraTypes_Gfx[]                           = INCBIN_U32("graphics/types_bw/tera/tera_types_bw.4bpp.smol");
+static const u32 sSummaryMoveSelect_Gfx_BW[]                = INCBIN_U32("graphics/summary_screen/bw/move_select.4bpp.smol");
+static const u16 sSummaryMoveSelect_Pal_BW[]                = INCBIN_U16("graphics/summary_screen/bw/move_select.gbapal");
 static const u16 sMarkings_Pal_BW[]                         = INCBIN_U16("graphics/summary_screen/bw/markings.gbapal");
-static const u32 sShinyIcon_Gfx_BW[]                        = INCBIN_U32("graphics/summary_screen/bw/shiny_icon.4bpp.lz");
-static const u32 sPokerusCuredIcon_Gfx_BW[]                 = INCBIN_U32("graphics/summary_screen/bw/pokerus_cured_icon.4bpp.lz");
+static const u32 sShinyIcon_Gfx_BW[]                        = INCBIN_U32("graphics/summary_screen/bw/shiny_icon.4bpp.smol");
+static const u32 sPokerusCuredIcon_Gfx_BW[]                 = INCBIN_U32("graphics/summary_screen/bw/pokerus_cured_icon.4bpp.smol");
 static const u16 sCategoryIcons_Pal[]                       = INCBIN_U16("graphics/summary_screen/bw/category_icons.gbapal");
-static const u32 sCategoryIcons_Gfx[]                       = INCBIN_U32("graphics/summary_screen/bw/category_icons.4bpp.lz");
+static const u32 sCategoryIcons_Gfx[]                       = INCBIN_U32("graphics/summary_screen/bw/category_icons.4bpp.smol");
 static const u16 sStatGrades_Pal[]                          = INCBIN_U16("graphics/summary_screen/bw/stat_grades.gbapal");
-static const u32 sStatGrades_Gfx[]                          = INCBIN_U32("graphics/summary_screen/bw/stat_grades.4bpp.lz");
+static const u32 sStatGrades_Gfx[]                          = INCBIN_U32("graphics/summary_screen/bw/stat_grades.4bpp.smol");
 static const u16 sFriendshipIcon_Pal[]                      = INCBIN_U16("graphics/summary_screen/bw/heart.gbapal");
-static const u32 sFriendshipIcon_Gfx[]                      = INCBIN_U32("graphics/summary_screen/bw/heart.4bpp.lz");
+static const u32 sFriendshipIcon_Gfx[]                      = INCBIN_U32("graphics/summary_screen/bw/heart.4bpp.smol");
 
 static const struct BgTemplate sBgTemplates[] =
 {
@@ -1441,7 +1440,7 @@ static const struct CompressedSpriteSheet sMoveSelectorSpriteSheet =
     .tag = TAG_MOVE_SELECTOR
 };
 
-static const struct CompressedSpritePalette sMoveSelectorSpritePal =
+static const struct SpritePalette sMoveSelectorSpritePal =
 {
     .data = sSummaryMoveSelect_Pal_BW,
     .tag = TAG_MOVE_SELECTOR
@@ -1520,8 +1519,8 @@ static const union AnimCmd *const sSpriteAnimTable_StatusCondition[] = {
 };
 
 #if BW_SUMMARY_BW_STATUS_ICONS == TRUE
-static const u32 sStatusGfx_Icons[] = INCBIN_U32("graphics/summary_screen/bw/status_icons.4bpp.lz");
-static const u32 sStatusPal_Icons[] = INCBIN_U32("graphics/summary_screen/bw/status_icons.gbapal.lz");
+static const u32 sStatusGfx_Icons[] = INCBIN_U32("graphics/summary_screen/bw/status_icons.4bpp.smol");
+static const u16 sStatusPal_Icons[] = INCBIN_U16("graphics/summary_screen/bw/status_icons.gbapal");
 #endif
 
 static const struct CompressedSpriteSheet sStatusIconsSpriteSheet =
@@ -1535,7 +1534,7 @@ static const struct CompressedSpriteSheet sStatusIconsSpriteSheet =
     .tag = TAG_MON_STATUS
 };
 
-static const struct CompressedSpritePalette sStatusIconsSpritePalette =
+static const struct SpritePalette sStatusIconsSpritePalette =
 {
 #if BW_SUMMARY_BW_STATUS_ICONS == TRUE
     .data = sStatusPal_Icons,
@@ -1944,36 +1943,36 @@ static bool8 DecompressGraphics(void)
     case 1:
         if (FreeTempTileDataBuffersIfPossible() != 1)
         {
-            LZDecompressWram(sSummaryPage_Info_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_INFO]);
+            DecompressDataWithHeaderWram(sSummaryPage_Info_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_INFO]);
             sMonSummaryScreen->switchCounter++;
         }
         break;
     case 2:
-        LZDecompressWram(sSummaryPage_Skills_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_SKILLS]);
+        DecompressDataWithHeaderWram(sSummaryPage_Skills_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_SKILLS]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 3:
-        LZDecompressWram(sSummaryPage_BattleMoves_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_BATTLE_MOVES]);
+        DecompressDataWithHeaderWram(sSummaryPage_BattleMoves_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_BATTLE_MOVES]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 4:
-        LZDecompressWram(sSummaryPage_ContestMoves_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_CONTEST_MOVES]);
+        DecompressDataWithHeaderWram(sSummaryPage_ContestMoves_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_CONTEST_MOVES]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 5:
-        LZDecompressWram(sSummaryEffect_Battle_Tilemap_BW, sMonSummaryScreen->bg1TilemapBuffers[PSS_EFFECT_BATTLE]);
+        DecompressDataWithHeaderWram(sSummaryEffect_Battle_Tilemap_BW, sMonSummaryScreen->bg1TilemapBuffers[PSS_EFFECT_BATTLE]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 6:
-        LZDecompressWram(sSummaryEffect_Contest_Tilemap_BW, sMonSummaryScreen->bg1TilemapBuffers[PSS_EFFECT_CONTEST]);
+        DecompressDataWithHeaderWram(sSummaryEffect_Contest_Tilemap_BW, sMonSummaryScreen->bg1TilemapBuffers[PSS_EFFECT_CONTEST]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 7:
-        LZDecompressWram(sSummaryPage_ScrollBG_Tilemap_BW, sMonSummaryScreen->bg3TilemapBuffers);
+        DecompressDataWithHeaderWram(sSummaryPage_ScrollBG_Tilemap_BW, sMonSummaryScreen->bg3TilemapBuffers);
         sMonSummaryScreen->switchCounter++;
         break;
     case 8:
-        LoadCompressedPalette(sSummaryScreen_Pal_BW, BG_PLTT_ID(0), 8 * PLTT_SIZE_4BPP);
+        LoadPalette(sSummaryScreen_Pal_BW, BG_PLTT_ID(0), 8 * PLTT_SIZE_4BPP);
         LoadPalette(&sSummaryScreen_PPTextPalette_BW, BG_PLTT_ID(8) + 1, PLTT_SIZEOF(16 - 1));
         sMonSummaryScreen->switchCounter++;
         break;
@@ -1990,7 +1989,7 @@ static bool8 DecompressGraphics(void)
         sMonSummaryScreen->switchCounter++;
         break;
     case 12:
-        LoadCompressedSpritePalette(&sStatusIconsSpritePalette);
+        LoadSpritePalette(&sStatusIconsSpritePalette);
         sMonSummaryScreen->switchCounter++;
         break;
     case 13:
@@ -2002,7 +2001,7 @@ static bool8 DecompressGraphics(void)
         sMonSummaryScreen->switchCounter++;
         break;
     case 15:
-        LoadCompressedSpritePalette(&sMoveSelectorSpritePal);
+        LoadSpritePalette(&sMoveSelectorSpritePal);
         sMonSummaryScreen->switchCounter++;
         break;
     case 16:
@@ -2037,9 +2036,9 @@ static bool8 DecompressGraphics(void)
         break;
     case 22:
     #if BW_SUMMARY_BW_TYPE_ICONS == TRUE
-        LoadCompressedPalette(sMoveTypes_Pal_BW, OBJ_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+        LoadPalette(sMoveTypes_Pal_BW, OBJ_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
     #else
-        LoadCompressedPalette(gMoveTypes_Pal, OBJ_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+        LoadPalette(gMoveTypes_Pal, OBJ_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
     #endif
         sMonSummaryScreen->switchCounter++;
         break;
@@ -4149,7 +4148,7 @@ static void PrintHeldItemName(void)
         && IsMultiBattle() == TRUE
         && (sMonSummaryScreen->curMonIndex == 1 || sMonSummaryScreen->curMonIndex == 4 || sMonSummaryScreen->curMonIndex == 5))
     {
-        text = ItemId_GetName(ITEM_ENIGMA_BERRY_E_READER);
+        text = GetItemName(ITEM_ENIGMA_BERRY_E_READER);
     }
     else if (sMonSummaryScreen->summary.item == ITEM_NONE)
     {
@@ -4692,9 +4691,9 @@ static void ShowCategoryIcon(u16 move)
     
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_CATEGORY]].invisible = FALSE;
 
-    if (IS_MOVE_SPECIAL(move))
+    if (IsBattleMoveSpecial(move))
         StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_CATEGORY]], CATEGORY_ICON_SPECIAL);
-    else if (IS_MOVE_PHYSICAL(move))
+    else if (IsBattleMovePhysical(move))
         StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_CATEGORY]], CATEGORY_ICON_PHYSICAL);
     else
         StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_CATEGORY]], CATEGORY_ICON_STATUS);
@@ -4994,7 +4993,7 @@ static u8 LoadMonGfxAndSprite(struct Pokemon *mon, s16 *state, bool32 isShadow)
         (*state)++;
         return 0xFF;
     case 1:
-        LoadCompressedSpritePaletteWithTag(GetMonSpritePalFromSpeciesAndPersonality(summary->species2, summary->isShiny, summary->pid), summary->species2);
+        LoadSpritePaletteWithTag(GetMonSpritePalFromSpeciesAndPersonality(summary->species2, summary->isShiny, summary->pid), summary->species2);
         SetMultiuseSpriteTemplateToPokemon(summary->species2, B_POSITION_OPPONENT_LEFT);
         (*state)++;
         return 0xFF;

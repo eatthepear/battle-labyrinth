@@ -7,7 +7,7 @@ SINGLE_BATTLE_TEST("Frostbite reduces the special attack by 50 percent")
     s16 normaleDamage;
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_SWIFT].category == DAMAGE_CATEGORY_SPECIAL);
+        ASSUME(GetMoveCategory(MOVE_SWIFT) == DAMAGE_CATEGORY_SPECIAL);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_FROSTBITE); }
     } WHEN {
@@ -23,7 +23,7 @@ SINGLE_BATTLE_TEST("Frostbite reduces the special attack by 50 percent")
    } THEN { EXPECT_EQ(reducedDamage * 2, normaleDamage); }
 }
 
-SINGLE_BATTLE_TEST("Frostbite deals 1/16th (Gen7+) or 1/8th damage to affected pokemon")
+SINGLE_BATTLE_TEST("Frostbite deals 1/16th (Gen7+) or 1/8th damage to affected Pokémon")
 {
     s16 frostbiteDamage;
 

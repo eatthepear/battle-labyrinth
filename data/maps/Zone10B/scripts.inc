@@ -583,8 +583,6 @@ Zone10B_EventScript_BerryExchange_4:
 	end
 
 Zone10B_EventScript_BerryExchange_2:
-# 230 "data/maps/Zone10B/scripts.pory"
-	startquest QUEST_BERRIES
 	goto Zone10B_EventScript_BerryExchange_1
 
 Zone10B_EventScript_BerryExchange_5:
@@ -680,8 +678,6 @@ Zone10B_EventScript_FossilScientist::
 Zone10B_EventScript_FossilScientist_1:
 # 288 "data/maps/Zone10B/scripts.pory"
 	msgbox Zone10B_EventScript_FossilScientist_Text_1
-# 289 "data/maps/Zone10B/scripts.pory"
-	chooseitem TREASURES_POCKET
 # 290 "data/maps/Zone10B/scripts.pory"
 	switch VAR_ITEM_ID
 # 291 "data/maps/Zone10B/scripts.pory"

@@ -227,7 +227,7 @@ script Zone10B_EventScript_BerryExchange {
 	msgbox("Listen, you know how some berries\ncan treat status conditions?\pWell, I'm looking to start a Berry\nfarm. If you have 5 of each of\lthose Berries, I'll trade them\lfor 5 Revives.")
 	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_BERRIES)
 	if (var(VAR_RESULT) == FALSE) {
-		startquest(QUEST_BERRIES)
+		// startquest(QUEST_BERRIES)
 	}
 	checkitem(ITEM_CHERI_BERRY, 5)
 	if (var(VAR_RESULT) == TRUE) {
@@ -286,7 +286,7 @@ script Zone10B_EventScript_FossilScientist {
 		goto(Zone10B_EventScript_FossilDone)
 	}
 	msgbox(format("Which fossil would you like me to revive?"))
-	chooseitem(TREASURES_POCKET)
+	// chooseitem(TREASURES_POCKET)
 	switch (var(VAR_ITEM_ID)) {
 		case ITEM_HELIX_FOSSIL:
 			bufferspeciesname(1, SPECIES_OMANYTE)

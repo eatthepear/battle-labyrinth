@@ -69,7 +69,7 @@
           }
         },
         {
-          "type": "special_mons",
+          "type": "hidden_mons",
           "encounter_rates": [
             20,
             20,
@@ -148,7 +148,7 @@
               }
             ]
           },
-          "special_mons": {
+          "hidden_mons": {
             "encounter_rate": 0,
             "mons": [
               {
@@ -247,7 +247,7 @@
               }
             ]
           },
-          "special_mons": {
+          "hidden_mons": {
             "encounter_rate": 0,
             "mons": [
               {
@@ -1314,7 +1314,7 @@
               }
             ]
           },
-          "special_mons": {
+          "hidden_mons": {
             "encounter_rate": 30,
             "mons": [
               {
@@ -2105,7 +2105,7 @@
               }
             ]
           },
-          "special_mons": {
+          "hidden_mons": {
             "encounter_rate": 30,
             "mons": [
               {

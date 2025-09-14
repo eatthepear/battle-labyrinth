@@ -1,6 +1,5 @@
 EventScript_PC::
 	lockall
-	setflag FLAG_USE_PC_MACHINE
 	setvar VAR_0x8004, PC_LOCATION_OTHER
 	special DoPCTurnOnEffect
 	playse SE_PC_ON
@@ -52,7 +51,6 @@ EventScript_AccessLanettesPC::
 	return
 
 EventScript_TurnOffPC::
-	clearflag FLAG_USE_PC_MACHINE
 	setvar VAR_0x8004, PC_LOCATION_OTHER
 	playse SE_PC_OFF
 	special DoPCTurnOffEffect

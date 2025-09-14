@@ -2,7 +2,7 @@
   "id": "MAP_ZONE10A",
   "name": "Zone10A",
   "layout": "LAYOUT_ZONE10A",
-  "music": "MUS_ROUTE111",
+  "music": "MUS_DESERT",
   "region_map_section": "MAPSEC_ZONE_10",
   "requires_flash": false,
   "weather": "WEATHER_SANDSTORM",

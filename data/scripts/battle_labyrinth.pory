@@ -1051,7 +1051,7 @@ script EventScript_Shop_Lelouch_Training {
 		case 0:
 			msgbox(gText_Lelouch_Exp, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				special(ChoosePartyMonForTraining)
+				// special(ChoosePartyMonForTraining) // TODO
 				waitstate
 				if (var(VAR_0x8004) == 1) {
 					msgbox(gText_Lelouch_ExpTrainingFinished, MSGBOX_DEFAULT)
@@ -2651,13 +2651,13 @@ script EventScript_MusicMenu {
 							playbgm(MUS_RG_VS_WILD, FALSE)
 							message("The Wild Pokémon music is\ncurrently set to FRLG.")
 						case 2:
-							playbgm(MUS_DP_VS_WILD, FALSE)
+							playbgm(MUS_FORTREE, FALSE)
 							message("The Wild Pokémon music is\ncurrently set to DPPt.")
 						case 3:
-							playbgm(MUS_HG_VS_WILD, FALSE)
+							playbgm(MUS_FORTREE, FALSE)
 							message("The Wild Pokémon music is\ncurrently set to HGSS (Johto).")
 						case 4:
-							playbgm(MUS_HG_VS_WILD_KANTO, FALSE)
+							playbgm(MUS_FORTREE, FALSE)
 							message("The Wild Pokémon music is\ncurrently set to HGSS (Kanto).")
 						case 5:
 							// playbgm(MUS_BW_SEQ_BGM_VS_NORAPOKE, FALSE)
@@ -2693,13 +2693,13 @@ script EventScript_MusicMenu {
 							playbgm(MUS_RG_VS_TRAINER, FALSE)
 							message("The Trainer music is\ncurrently set to FRLG.")
 						case 2:
-							playbgm(MUS_DP_VS_TRAINER, FALSE)
+							playbgm(MUS_FORTREE, FALSE)
 							message("The Trainer music is\ncurrently set to DPPt.")
 						case 3:
-							playbgm(MUS_HG_VS_TRAINER, FALSE)
+							playbgm(MUS_FORTREE, FALSE)
 							message("The Trainer music is\ncurrently set to HGSS (Johto).")
 						case 4:
-							playbgm(MUS_HG_VS_TRAINER_KANTO, FALSE)
+							playbgm(MUS_FORTREE, FALSE)
 							message("The Trainer music is\ncurrently set to HGSS (Kanto).")
 						case 5:
 							// playbgm(MUS_BW_SEQ_BGM_VS_TRAINER, FALSE)
@@ -2735,13 +2735,13 @@ script EventScript_MusicMenu {
 							playbgm(MUS_RG_VS_GYM_LEADER, FALSE)
 							message("The Leviathan music is\ncurrently set to FRLG.")
 						case 2:
-							playbgm(MUS_DP_VS_GYM_LEADER, FALSE)
+							playbgm(MUS_FORTREE, FALSE)
 							message("The Leviathan music is\ncurrently set to DPPt.")
 						case 3:
-							playbgm(MUS_HG_VS_GYM_LEADER, FALSE)
+							playbgm(MUS_FORTREE, FALSE)
 							message("The Leviathan music is\ncurrently set to HGSS (Johto).")
 						case 4:
-							playbgm(MUS_HG_VS_GYM_LEADER_KANTO, FALSE)
+							playbgm(MUS_FORTREE, FALSE)
 							message("The Leviathan music is\ncurrently set to HGSS (Kanto).")
 						case 5:
 							// playbgm(MUS_BW_SEQ_BGM_VS_GYMLEADER, FALSE)
@@ -5825,3 +5825,324 @@ script Debug_CheatStart_PBL_GiveMon {
 	bufferspeciesname(0, VAR_TEMP_0)
 	msgbox(format("Obtained {STR_VAR_1}!"))
 }
+
+movement Common_Movement_WalkDown2 {
+	walk_down * 2
+}
+
+movement Common_Movement_WalkLeft2 {
+	walk_left * 2
+}
+
+movement Common_Movement_WalkRight2 {
+	walk_right * 2
+}
+
+movement Common_Movement_WalkUp3 {
+	walk_up * 3
+}
+
+movement Common_Movement_WalkDown3 {
+	walk_down * 3
+}
+
+movement Common_Movement_WalkLeft3 {
+	walk_left * 3
+}
+
+movement Common_Movement_WalkRight3 {
+	walk_right * 3
+}
+
+movement Common_Movement_WalkDown4 {
+	walk_down * 4
+}
+
+movement Common_Movement_WalkLeft4 {
+	walk_left * 4
+}
+
+movement Common_Movement_WalkRight4 {
+	walk_right * 4
+}
+
+movement Common_Movement_WalkUp5 {
+	walk_up * 5
+}
+
+movement Common_Movement_WalkDown5 {
+	walk_down * 5
+}
+
+movement Common_Movement_WalkLeft5 {
+	walk_left * 5
+}
+
+movement Common_Movement_WalkRight5 {
+	walk_right * 5
+}
+
+movement Common_Movement_WalkDown6 {
+	walk_down * 6
+}
+
+movement Common_Movement_WalkLeft6 {
+	walk_left * 6
+}
+
+movement Common_Movement_WalkRight6 {
+	walk_right * 6
+}
+
+movement Common_Movement_Colress_WalkDown {
+	walk_down * 3
+}
+
+movement Common_Movement_Colress_WalkUp {
+	walk_up * 3
+	face_down
+}
+
+script EventScript_UseFlash_PBL {
+	msgbox(format("{PLAYER} used the Flashlight!"), MSGBOX_DEFAULT)
+	closemessage
+	animateflash(1)
+	setflashlevel(1)
+	releaseall
+	end
+}
+
+script EventScript_UseCut_PBL {
+	lockall
+	if (checkitem(ITEM_MACHETE) == FALSE) {
+		msgbox(format("This shrub is blocking the way."), MSGBOX_DEFAULT)
+		releaseall
+		end
+	}
+	msgbox("{PLAYER} used the Machete!", MSGBOX_DEFAULT)
+	dofieldeffect(FLDEFF_USE_CUT_ON_TREE)
+	waitstate
+	applymovement(VAR_LAST_TALKED, moves(cut_tree))
+	waitmovement(0)
+	removeobject(VAR_LAST_TALKED)
+	releaseall
+	end
+}
+
+script EventScript_UseRockSmash_PBL {
+	lockall
+	if (checkitem(ITEM_SLEDGEHAMMER) == FALSE) {
+		msgbox(format("It's a rugged rock."), MSGBOX_DEFAULT)
+		releaseall
+		end
+	}
+	msgbox("{PLAYER} used the Sledgehammer!", MSGBOX_DEFAULT)
+	dofieldeffect(FLDEFF_USE_ROCK_SMASH)
+	waitstate
+	applymovement(VAR_LAST_TALKED, moves(rock_smash_break))
+	waitmovement(0)
+	removeobject(VAR_LAST_TALKED)
+	special(RockSmashWildEncounter)
+	if (var(VAR_RESULT) == TRUE) {
+		waitstate
+		releaseall
+		end
+	}
+	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_RED_THUMB) == true)) {
+		releaseall
+		end
+	}
+	random(100)
+	switch(var(VAR_RESULT)) {
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+		case 12:
+		case 13:
+		case 14:
+		case 15:
+		case 16:
+		case 17:
+		case 18:
+		case 19:
+		case 20:
+		case 21:
+			finditem(ITEM_RED_SHARD, 1)
+		case 22:
+		case 23:
+		case 24:
+		case 25:
+		case 26:
+		case 27:
+		case 28:
+		case 29:
+		case 30:
+		case 31:
+		case 32:
+		case 33:
+		case 34:
+		case 35:
+		case 36:
+			if (var(VAR_ZONE) > 10) {
+				finditem(ITEM_BLUE_SHARD, 1)
+			}
+		case 37:
+		case 38:
+		case 39:
+		case 40:
+		case 41:
+		case 42:
+		case 43:
+		case 44:
+		case 45:
+		case 46:
+			if (var(VAR_ZONE) > 20) {
+				finditem(ITEM_YELLOW_SHARD, 1)
+			}
+		case 47:
+		case 48:
+		case 49:
+		case 50:
+		case 51:
+			if (var(VAR_ZONE) > 30) {
+				finditem(ITEM_GREEN_SHARD, 1)
+			}
+		case 52:
+			finditem(ITEM_NORMAL_GEM, 1)
+		case 53:
+			finditem(ITEM_FIRE_GEM, 1)
+		case 54:
+			finditem(ITEM_WATER_GEM, 1)
+		case 55:
+			finditem(ITEM_ELECTRIC_GEM, 1)
+		case 56:
+			finditem(ITEM_GRASS_GEM, 1)
+		case 57:
+			finditem(ITEM_ICE_GEM, 1)
+		case 58:
+			finditem(ITEM_FIGHTING_GEM, 1)
+		case 59:
+			finditem(ITEM_POISON_GEM, 1)
+		case 60:
+			finditem(ITEM_GROUND_GEM, 1)
+		case 61:
+			finditem(ITEM_FLYING_GEM, 1)
+		case 62:
+			finditem(ITEM_PSYCHIC_GEM, 1)
+		case 63:
+			finditem(ITEM_BUG_GEM, 1)
+		case 64:
+			finditem(ITEM_ROCK_GEM, 1)
+		case 65:
+			finditem(ITEM_GHOST_GEM, 1)
+		case 66:
+			finditem(ITEM_DRAGON_GEM, 1)
+		case 67:
+			finditem(ITEM_DARK_GEM, 1)
+		case 68:
+			finditem(ITEM_STEEL_GEM, 1)
+		case 69:
+			finditem(ITEM_FAIRY_GEM, 1)
+	}
+	releaseall
+	end
+}
+
+script EventScript_UseStrength_PBL {
+	lockall
+	if (flag(FLAG_SYS_USE_STRENGTH) == TRUE) {
+		msgbox(format("It's now possible to move boulders around."), MSGBOX_DEFAULT)
+		releaseall
+		end
+	}
+	if (checkitem(ITEM_POWER_GLOVE) == FALSE) {
+		msgbox(format("It's a big boulder, but it's too heavy to push it aside."), MSGBOX_DEFAULT)
+		releaseall
+		end
+	}
+	msgbox("{PLAYER} used the Power Glove!", MSGBOX_DEFAULT)
+	dofieldeffect(FLDEFF_USE_STRENGTH)
+	waitstate
+	setflag(FLAG_SYS_USE_STRENGTH)
+	releaseall
+	end
+}
+
+script EventScript_UseWaterfall_PBL {
+	lockall
+	msgbox(format("{PLAYER} climbed the watefall!"), MSGBOX_DEFAULT)
+	dofieldeffect(FLDEFF_USE_WATERFALL)
+	waitstate
+	setflag(FLAG_SYS_USE_STRENGTH)
+	releaseall
+	end
+}
+
+script EventScript_CannotUseWaterfall_PBL {
+	lockall
+	msgbox(format("A wall of water is crashing down with a mighty roar."), MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script EventScript_DiveSpot_PBL {
+	lockall
+	if (checkitem(ITEM_DIVING_SUIT) == FALSE) {
+		msgbox(format("The sea is deep here."), MSGBOX_DEFAULT)
+		releaseall
+		end
+	}
+	msgbox(format("{PLAYER} put on the Diving Suit!"), MSGBOX_DEFAULT)
+	dofieldeffect(FLDEFF_USE_DIVE)
+	releaseall
+	end
+}
+
+script EventScript_UseDive_PBL {
+	lockall
+	dofieldeffect(FLDEFF_USE_DIVE)
+	releaseall
+	end
+}
+
+script EventScript_UseDiveUnderwater_PBL {
+	lockall
+	if (checkitem(ITEM_DIVING_SUIT) == FALSE) {
+		msgbox(format("Light is filtering down from above."), MSGBOX_DEFAULT)
+		releaseall
+		end
+	}
+	msgbox(format("{PLAYER} swam to the surface!"), MSGBOX_DEFAULT)
+	dofieldeffect(FLDEFF_USE_DIVE)
+	releaseall
+	end
+}
+
+script EventScript_UseSurf_PBL {
+	if (checkitem(ITEM_SURFBOARD) == FALSE) {
+		end
+	}
+	lockall
+	msgbox(format("{PLAYER} used the Surfboard!"), MSGBOX_DEFAULT)
+	dofieldeffect(FLDEFF_USE_SURF)
+	releaseall
+	end
+}
+
+script EventScript_DisableAutoRun {
+	msgbox(format("Auto Run {COLOR RED}Disabled{COLOR DARK_GRAY}."), MSGBOX_SIGN)
+}
+    
+script EventScript_EnableAutoRun {
+	msgbox(format("Auto Run {COLOR GREEN}Enabled{COLOR DARK_GRAY}."), MSGBOX_SIGN)
+}
+

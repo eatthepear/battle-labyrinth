@@ -2,7 +2,7 @@
   "id": "MAP_ZONE27A",
   "name": "Zone27A",
   "layout": "LAYOUT_ZONE27A",
-  "music": "MUS_HG_UNION_CAVE",
+  "music": "MUS_FORTREE",
   "region_map_section": "MAPSEC_ZONE_27",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
