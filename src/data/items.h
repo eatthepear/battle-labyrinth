@@ -1994,14 +1994,15 @@ const struct Item gItemsInfo[] =
 
     [ITEM_RARE_CANDY] =
     {
-        .name = ITEM_NAME("Rare Candy"),
+        .name = ITEM_NAME("Rare Candies"),
         .pluralName = ITEM_PLURAL_NAME("Rare Candies"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 4800,
+        .price = 0,
+        .importance = 1,
         .description = COMPOUND_STRING(
             "Raises the level\n"
             "of a Pokémon by\n"
             "one."),
-        .pocket = POCKET_MEDICINE,
+        .pocket = POCKET_KEY_ITEMS,
         .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
