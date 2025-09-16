@@ -189,7 +189,7 @@ BattleScript_TryPrintCaughtMonInfo:
 	printstring STRINGID_PKMNDATAADDEDTODEX
 	waitstate
 	setbyte gBattleCommunication, 0
-	displaydexinfo
+	// displaydexinfo
 BattleScript_TryNicknameCaughtMon::
 	printstring STRINGID_GIVENICKNAMECAPTURED
 	waitstate
