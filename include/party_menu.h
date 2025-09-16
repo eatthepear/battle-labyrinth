@@ -108,7 +108,6 @@ void BufferMoveDeleterNicknameAndMove(void);
 void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
 void ChooseSendMonToPC(void);
-void DisplaySendMonToPCMessage(struct Pokemon* mon);
 
 bool32 SetUpFieldMove_Surf(void);
 bool32 SetUpFieldMove_Fly(void);

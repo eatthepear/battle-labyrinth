@@ -79,7 +79,6 @@
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
-#include "naming_screen.h"
 
 enum {
     MENU_SUMMARY,
@@ -132,6 +131,13 @@ enum {
     ACTIONS_ROTOM_CATALOG,
     ACTIONS_ZYGARDE_CUBE,
     ACTIONS_CANCEL_ONLY,
+};
+
+enum
+{
+    PARTY_BOX_LEFT_COLUMN,
+    PARTY_BOX_RIGHT_COLUMN,
+    PARTY_BOX_EQUAL_COLUMN //Custom party menu
 };
 
 enum {
@@ -208,8 +214,6 @@ struct PartyMenuBox
     u8 pokeballSpriteId;
     u8 statusSpriteId;
 };
-
-extern const u8 gText_WouldLikeSendToPC[];
 
 // EWRAM vars
 static EWRAM_DATA struct PartyMenuInternal *sPartyMenuInternal = NULL;
@@ -341,7 +345,6 @@ static void Task_HandleSelectionMenuInput(u8);
 static void CB2_ShowPokemonSummaryScreen(void);
 static void UpdatePartyToBattleOrder(void);
 static void CB2_ReturnToPartyMenuFromSummaryScreen(void);
-static void CB2_ReturnToPartyMenuFromNicknameScreen(void);
 static void SlidePartyMenuBoxOneStep(u8);
 static void Task_SlideSelectedSlotsOffscreen(u8);
 static void SwitchPartyMon(void);
@@ -369,6 +372,12 @@ static void Task_HandleLoseMailMessageYesNoInput(u8);
 static bool8 TrySwitchInPokemon(void);
 static void Task_SpinTradeYesNo(u8);
 static void Task_HandleSpinTradeYesNoInput(u8);
+static void Task_CancelAfterAorBPress(u8);
+static void DisplayFieldMoveExitAreaMessage(u8);
+static void DisplayCantUseFlashMessage(void);
+static void DisplayCantUseSurfMessage(void);
+static void Task_FieldMoveExitAreaYesNo(u8);
+static void Task_HandleFieldMoveExitAreaYesNoInput(u8);
 static void Task_FieldMoveWaitForFade(u8);
 static u16 GetFieldMoveMonSpecies(void);
 static void UpdatePartyMonHPBar(u8, struct Pokemon *);
@@ -4083,7 +4092,119 @@ static void Task_HandleSpinTradeYesNoInput(u8 taskId)
 
 static void CursorCb_FieldMove(u8 taskId)
 {
+    u8 fieldMove = sPartyMenuInternal->actions[Menu_GetCursorPos()] - MENU_FIELD_MOVES;
+    const struct MapHeader *mapHeader;
 
+    PlaySE(SE_SELECT);
+    if (gFieldMoveInfo[fieldMove].fieldMoveFunc == NULL)
+        return;
+
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    if (MenuHelpers_IsLinkActive() == TRUE || InUnionRoom() == TRUE)
+    {
+        if (fieldMove == FIELD_MOVE_MILK_DRINK || fieldMove == FIELD_MOVE_SOFT_BOILED)
+            DisplayPartyMenuStdMessage(PARTY_MSG_CANT_USE_HERE);
+        else
+            DisplayPartyMenuStdMessage(FieldMove_GetPartyMsgID(fieldMove));
+
+        gTasks[taskId].func = Task_CancelAfterAorBPress;
+    }
+    else
+    {
+        // All field moves before WATERFALL are HMs.
+        if (!IsFieldMoveUnlocked(fieldMove))
+        {
+            DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
+            gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+        }
+        else if (SetUpFieldMove(fieldMove) == TRUE)
+        {
+            switch (fieldMove)
+            {
+            case FIELD_MOVE_MILK_DRINK:
+            case FIELD_MOVE_SOFT_BOILED:
+                ChooseMonForSoftboiled(taskId);
+                break;
+            case FIELD_MOVE_TELEPORT:
+#if FREE_OTHER_PBL == FALSE
+                mapHeader = Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->lastHealLocation.mapGroup, gSaveBlock1Ptr->lastHealLocation.mapNum);
+#endif //FREE_OTHER_PBL
+                mapHeader = 0;
+                GetMapNameGeneric(gStringVar1, mapHeader->regionMapSectionId);
+                StringExpandPlaceholders(gStringVar4, gText_ReturnToHealingSpot);
+                DisplayFieldMoveExitAreaMessage(taskId);
+                sPartyMenuInternal->data[0] = fieldMove;
+                break;
+            case FIELD_MOVE_DIG:
+                mapHeader = Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->escapeWarp.mapGroup, gSaveBlock1Ptr->escapeWarp.mapNum);
+                GetMapNameGeneric(gStringVar1, mapHeader->regionMapSectionId);
+                StringExpandPlaceholders(gStringVar4, gText_EscapeFromHere);
+                DisplayFieldMoveExitAreaMessage(taskId);
+                sPartyMenuInternal->data[0] = fieldMove;
+                break;
+            case FIELD_MOVE_FLY:
+                gPartyMenu.exitCallback = CB2_OpenFlyMap;
+                Task_ClosePartyMenu(taskId);
+                break;
+            default:
+                gPartyMenu.exitCallback = CB2_ReturnToField;
+                Task_ClosePartyMenu(taskId);
+                break;
+            }
+        }
+        // Cant use Field Move
+        else
+        {
+            switch (fieldMove)
+            {
+            case FIELD_MOVE_SURF:
+                DisplayCantUseSurfMessage();
+                break;
+            case FIELD_MOVE_FLASH:
+                DisplayCantUseFlashMessage();
+                break;
+            default:
+                DisplayPartyMenuStdMessage(FieldMove_GetPartyMsgID(fieldMove));
+                break;
+            }
+            gTasks[taskId].func = Task_CancelAfterAorBPress;
+        }
+    }
+}
+
+static void DisplayFieldMoveExitAreaMessage(u8 taskId)
+{
+    DisplayPartyMenuMessage(gStringVar4, TRUE);
+    gTasks[taskId].func = Task_FieldMoveExitAreaYesNo;
+}
+
+static void Task_FieldMoveExitAreaYesNo(u8 taskId)
+{
+    if (IsPartyMenuTextPrinterActive() != TRUE)
+    {
+        PartyMenuDisplayYesNoMenu();
+        gTasks[taskId].func = Task_HandleFieldMoveExitAreaYesNoInput;
+    }
+}
+
+static void Task_HandleFieldMoveExitAreaYesNoInput(u8 taskId)
+{
+    switch (Menu_ProcessInputNoWrapClearOnChoose())
+    {
+    case 0:
+        gPartyMenu.exitCallback = CB2_ReturnToField;
+        Task_ClosePartyMenu(taskId);
+        break;
+    case MENU_B_PRESSED:
+        PlaySE(SE_SELECT);
+        // fallthrough
+    case 1:
+        gFieldCallback2 = NULL;
+        gPostMenuFieldCallback = NULL;
+        Task_ReturnToChooseMonAfterText(taskId);
+        break;
+    }
 }
 
 bool8 FieldCallback_PrepareFadeInFromMenu(void)
@@ -4210,7 +4331,7 @@ bool32 SetUpFieldMove_Fly(void)
 
 void CB2_ReturnToPartyMenuFromFlyMap(void)
 {
-    InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_MON, TRUE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ReturnToFullScreenStartMenu);
+    InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_MON, TRUE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ReturnToFieldWithOpenMenu);
 }
 
 static void FieldCallback_Waterfall(void)
@@ -8108,17 +8229,6 @@ static void CB2_ChooseSendMonToPC(void)
     VarSet(VAR_MON_TO_PC, gSendMonPartyIndex);
     //gFieldCallback2 = CB2_FadeFromPartyMenu;
     SetMainCallback2(BattleMainCB2);
-}
-
-void DisplaySendMonToPCMessage(struct Pokemon* mon)
-{
-    GetMonData(mon, MON_DATA_NICKNAME, gStringVar1);
-
-    StringExpandPlaceholders(gStringVar4, gText_WouldLikeSendToPC);
-    DrawDialogueFrame(1, 0);
-    gTextFlags.canABSpeedUpPrint = TRUE;
-    AddTextPrinterParameterized2(0, 1, gStringVar4, GetPlayerTextSpeedDelay(), 0, 2, 0, 3);
-    CopyWindowToVram(0, 3);
 }
 
 static void FieldCallback_RockClimb(void)
