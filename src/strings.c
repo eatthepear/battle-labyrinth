@@ -199,14 +199,12 @@ const u8 gText_ReturnToVar1[] = _("Return to\n{STR_VAR_1}.");
 
 const u8 *const gPocketNamesStringsTable[] =
 {
-    [POCKET_TREASURES] = COMPOUND_STRING("Treasures"),
-    [POCKET_MEDICINE] = COMPOUND_STRING("Medicine"),
-    [POCKET_POKE_BALLS] = COMPOUND_STRING("Poké Balls"),
-    [POCKET_BATTLE_ITEMS] = COMPOUND_STRING("Battle Items"),
-    [POCKET_BERRIES] = COMPOUND_STRING("Berries"),
-    [POCKET_CONSUMABLES] = COMPOUND_STRING("Consumables"),
-    [POCKET_TM_HM] = COMPOUND_STRING("TMs"),
-    [POCKET_KEY_ITEMS] = COMPOUND_STRING("Key Items"),
+    [POCKET_ITEMS] =        COMPOUND_STRING("Items"),
+    [POCKET_MEDICINE] =     COMPOUND_STRING("Medicine"),
+    [POCKET_POKE_BALLS] =   COMPOUND_STRING("Poké Balls"),
+    [POCKET_TM_HM]  =       COMPOUND_STRING("TMs & HMs"),
+    [POCKET_BERRIES] =      COMPOUND_STRING("Berries"),
+    [POCKET_KEY_ITEMS] =    COMPOUND_STRING("Key Items")
 };
 
 const u8 gText_NumberItem_TMBerry[] = _("{NO}{STR_VAR_1}{CLEAR 0x07}{STR_VAR_2}");
