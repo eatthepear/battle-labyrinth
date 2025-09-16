@@ -18,7 +18,7 @@ script Zone4A_EventScript_PoisonTree {
 	bufferleadmonspeciesname(STR_VAR_1)
 	msgbox(format("This strange looking tree has potentially dangerous looking sap flowing out of it.\pDo you want to have your {STR_VAR_1} touch it?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
-		trysetstatus(STATUS1_POISON, 0)
+		// trysetstatus(STATUS1_POISON, 0)
 		msgbox(format("Your {STR_VAR_1} touched the strange sap and was exposed to the poison!"))
 	} else {
 		msgbox(format("Better to be safe than sorry."))

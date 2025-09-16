@@ -44,8 +44,6 @@ Zone4A_EventScript_PoisonTree_1:
 	return
 
 Zone4A_EventScript_PoisonTree_2:
-# 21 "data/maps/Zone4A/scripts.pory"
-	trysetstatus STATUS1_POISON, 0
 # 22 "data/maps/Zone4A/scripts.pory"
 	msgbox Zone4A_EventScript_PoisonTree_Text_1
 	goto Zone4A_EventScript_PoisonTree_1
