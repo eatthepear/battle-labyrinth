@@ -8716,7 +8716,7 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
         }
         break;
     case ABILITY_FLOWER_GIFT:
-        if (gBattleMons[BATTLE_PARTNER(battlerAtk)].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(BATTLE_PARTNER(battlerAtk), B_WEATHER_SUN) && IsBattleMovePhysical(move))
+        if (gBattleMons[battlerAtk].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SUN) && IsBattleMovePhysical(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_HUSTLE:
@@ -8811,7 +8811,7 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
         switch (GetBattlerAbility(BATTLE_PARTNER(battlerAtk)))
         {
         case ABILITY_FLOWER_GIFT:
-            if (gBattleMons[BATTLE_PARTNER(battlerAtk)].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(BATTLE_PARTNER(battlerAtk), B_WEATHER_SUN))
+            if (gBattleMons[BATTLE_PARTNER(battlerAtk)].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(BATTLE_PARTNER(battlerAtk), B_WEATHER_SUN) && IsBattleMovePhysical(move))
                 modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
             break;
         }
@@ -8968,7 +8968,7 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
         }
         break;
     case ABILITY_FLOWER_GIFT:
-        if (gBattleMons[battlerDef].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SUN))
+        if (gBattleMons[battlerDef].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SUN) && !usesDefStat)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
     }
@@ -8979,7 +8979,7 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
         switch (GetBattlerAbility(BATTLE_PARTNER(battlerDef)))
         {
         case ABILITY_FLOWER_GIFT:
-            if (gBattleMons[BATTLE_PARTNER(battlerDef)].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(BATTLE_PARTNER(battlerDef), B_WEATHER_SUN))
+            if (gBattleMons[BATTLE_PARTNER(battlerDef)].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(BATTLE_PARTNER(battlerDef), B_WEATHER_SUN) && !usesDefStat)
                 modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
             break;
         }
@@ -9101,8 +9101,7 @@ static inline uq4_12_t GetBurnOrFrostBiteModifier(struct DamageContext *ctx)
     if (gBattleMons[ctx->battlerAtk].status1 & STATUS1_BURN
         && IsBattleMovePhysical(ctx->move)
         && (B_BURN_FACADE_DMG < GEN_6 || moveEffect != EFFECT_FACADE)
-        && ctx->abilityAtk != ABILITY_GUTS
-        && ctx->abilityAtk != ABILITY_FLARE_BOOST)
+        && ctx->abilityAtk != ABILITY_GUTS)
         return UQ_4_12(0.5);
     if (gBattleMons[ctx->battlerAtk].status1 & STATUS1_FROSTBITE
         && IsBattleMoveSpecial(ctx->move)
