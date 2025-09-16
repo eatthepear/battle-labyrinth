@@ -6,7 +6,7 @@
 
 // Flag/var defines
 #define DN_FLAG_SEARCHING             FLAG_SYS_DEXNAV_SEARCH // Searching for mon
-#define DN_FLAG_DEXNAV_GET            0 // DexNav shows in start menu
+#define DN_FLAG_DEXNAV_GET            FLAG_SYS_DEXNAV_GET // DexNav shows in start menu
 #define DN_FLAG_DETECTOR_MODE         0 // Allow player to find hidden mons
 #define DN_VAR_SPECIES                0 // Registered DexNav species
 #define DN_VAR_STEP_COUNTER           0 // Steps for finding hidden pokemon

@@ -121,27 +121,27 @@ script Zone5B_EventScript_BuyPikaClone {
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
 		if (flag(FLAG_SETTINGS_RANDOMIZER) == false) {
 			setvar(VAR_TEMP_3, 0) // counter for species clause
-			checkspeciesclause(SPECIES_PACHIRISU)
+			//checkspeciesclause(SPECIES_PACHIRISU)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
-			checkspeciesclause(SPECIES_DEDENNE)
+			//checkspeciesclause(SPECIES_DEDENNE)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
-			checkspeciesclause(SPECIES_MORPEKO)
+			//checkspeciesclause(SPECIES_MORPEKO)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
-			checkspeciesclause(SPECIES_EMOLGA)
+			//checkspeciesclause(SPECIES_EMOLGA)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
-			checkspeciesclause(SPECIES_PLUSLE)
+			//checkspeciesclause(SPECIES_PLUSLE)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
-			checkspeciesclause(SPECIES_MINUN)
+			//checkspeciesclause(SPECIES_MINUN)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
@@ -164,40 +164,40 @@ script Zone5B_EventScript_BuyPikaClone {
 				switch (var(VAR_RESULT)) {
 					case 0:
 					case 1:
-						checkspeciesclause(SPECIES_PACHIRISU)
+						//checkspeciesclause(SPECIES_PACHIRISU)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_PACHIRISU)
 					case 2:
 					case 3:
-						checkspeciesclause(SPECIES_DEDENNE)
+						//checkspeciesclause(SPECIES_DEDENNE)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_DEDENNE)
 					case 4:
 					case 5:
-						checkspeciesclause(SPECIES_MORPEKO)
+						//checkspeciesclause(SPECIES_MORPEKO)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_MORPEKO)
 					case 6:
 					case 7:
-						checkspeciesclause(SPECIES_EMOLGA)
+						//checkspeciesclause(SPECIES_EMOLGA)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_EMOLGA)
 					case 8:
-						checkspeciesclause(SPECIES_PLUSLE)
+						//checkspeciesclause(SPECIES_PLUSLE)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_PLUSLE)
 					case 9:
-						checkspeciesclause(SPECIES_MINUN)
+						//checkspeciesclause(SPECIES_MINUN)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}

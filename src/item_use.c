@@ -9,6 +9,7 @@
 #include "bike.h"
 #include "coins.h"
 #include "data.h"
+#include "dexnav.h"
 #include "event_data.h"
 #include "event_object_lock.h"
 #include "event_object_movement.h"
@@ -29,6 +30,7 @@
 #include "menu.h"
 #include "menu_helpers.h"
 #include "metatile_behavior.h"
+#include "nuzlocke.h"
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
@@ -48,8 +50,6 @@
 #include "constants/items.h"
 #include "constants/songs.h"
 #include "constants/map_types.h"
-#include "battle_setup.h"
-#include "dexnav.h"
 
 static void SetUpItemUseCallback(u8);
 static void FieldCB_UseItemOnField(void);
@@ -111,9 +111,6 @@ static const u8 sText_PokeFluteAwakenedMon[] = _("The POKé FLUTE awakened sleep
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
-
-EWRAM_DATA u8 IsCaptureBlockedByNuzlocke = 0;
-EWRAM_DATA u8 IsSpeciesClauseActive = 0;
 
 // Below is set TRUE by UseRegisteredKeyItemOnField
 #define tUsingRegisteredKeyItem  data[3]
@@ -1154,37 +1151,25 @@ static u32 GetBallThrowableState(void)
     else if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
     {
         u8 battler;
-        u8 IsCaptureBlockedByDexnav = 0;
         if (IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)))
             battler = 0;
         else
             battler = 1;
 
-        IsSpeciesClauseActive = IsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[battler], MON_DATA_SPECIES));
-        if (IsMonShiny(&gEnemyParty[battler]))
+        if (!IsMonShiny(&gEnemyParty[battler])) // Shiny Clause
         {
-            IsSpeciesClauseActive = 0;
-            IsCaptureBlockedByNuzlocke = 0;
-        }
-        else if (NuzlockeFlagGet(GetCurrentRegionMapSectionId()) == 0)
-        {
-            IsCaptureBlockedByNuzlocke = 0;
-            // if (gDexnavBattle) TODO
-            //     IsCaptureBlockedByDexnav = 1;
-        }
-        else
-            IsCaptureBlockedByNuzlocke = 1;
-        if (IsCaptureBlockedByNuzlocke == 1)
-        {
-            return BALL_THROW_UNABLE_NUZLOCKE_ALREADY_CAUGHT; // Already got Nuzlocke encounter
-        }
-        else if (IsSpeciesClauseActive == 1)
-        {
-            return BALL_THROW_UNABLE_NUZLOCKE_SPECIES_CLAUSE; // Nuzlocke Species Clause
-        }
-        else if (IsCaptureBlockedByDexnav == 1)
-        {
-            return BALL_THROW_UNABLE_NUZLOCKE_NO_DEXNAV; // Nuzlocke disallows Dexnav
+            if (NuzlockeFlagGet(GetCurrentRegionMapSectionId()) == 1)
+            {
+                return BALL_THROW_UNABLE_NUZLOCKE_ALREADY_CAUGHT; // Already got Nuzlocke encounter
+            }
+            else if (IsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[battler], MON_DATA_SPECIES)))
+            {
+                return BALL_THROW_UNABLE_NUZLOCKE_SPECIES_CLAUSE; // Nuzlocke Species Clause
+            }
+            else if (gDexNavSpecies != SPECIES_NONE)
+            {
+                return BALL_THROW_UNABLE_NUZLOCKE_NO_DEXNAV; // Nuzlocke disallows Dexnav encounters
+            }
         }
     }
 

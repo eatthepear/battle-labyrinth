@@ -71,7 +71,5 @@ enum {
 
 bool32 CanThrowBall(void);
 bool32 CannotUseItemsInBattle(u16 itemId, struct Pokemon *mon);
-extern u8 IsCaptureBlockedByNuzlocke;
-extern u8 IsSpeciesClauseActive;
 
 #endif // GUARD_ITEM_USE_H

@@ -175,8 +175,6 @@ Zone8A_EventScript_BuyTyrogue_14:
 Zone8A_EventScript_BuyTyrogue_16:
 # 46 "data/maps/Zone8A/scripts.pory"
 	setvar VAR_TEMP_3, 0
-# 47 "data/maps/Zone8A/scripts.pory"
-	checkspeciesclause SPECIES_TYROGUE
 # 48 "data/maps/Zone8A/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone8A_EventScript_BuyTyrogue_25

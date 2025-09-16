@@ -170,8 +170,9 @@ script Zone10B_EventScript_DragonTamer {
 				}
 				msgbox(format("A wise choice!"), MSGBOX_DEFAULT)
 				if (flag(FLAG_SETTINGS_NUZLOCKE) == true && flag(FLAG_SETTINGS_RANDOMIZER) == false) {
-					checkspeciesclause(SPECIES_DRUDDIGON)
-					if (var(VAR_RESULT) == TRUE) {
+					setvar(VAR_TEMP_0, SPECIES_DRUDDIGON)
+					callnative(CheckSpeciesClause)
+					if (flag(FLAG_TEMP_1) == TRUE) {
 						msgbox(format("Unfortunately, you have already obtained a Pokémon in Druddigon's evolution line."))
 						release
 						end

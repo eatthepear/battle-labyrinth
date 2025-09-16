@@ -109,8 +109,6 @@ Zone9E_EventScript_GiveSquawkabilly_11:
 Zone9E_EventScript_GiveSquawkabilly_14:
 # 31 "data/maps/Zone9E/scripts.pory"
 	goto_if_set FLAG_SETTINGS_RANDOMIZER, Zone9E_EventScript_GiveSquawkabilly_22
-# 34 "data/maps/Zone9E/scripts.pory"
-	checkspeciesclause SPECIES_SQUAWKABILLY
 # 35 "data/maps/Zone9E/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone9E_EventScript_GiveSquawkabilly_28

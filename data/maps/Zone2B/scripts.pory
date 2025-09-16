@@ -104,39 +104,39 @@ script Zone2B_EventScript_BuyBug {
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
 		if (flag(FLAG_SETTINGS_RANDOMIZER) == false) {
 			setvar(VAR_TEMP_3, 0) // counter for species clause
-			checkspeciesclause(SPECIES_WURMPLE)
+			//checkspeciesclause(SPECIES_WURMPLE)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
-			checkspeciesclause(SPECIES_CATERPIE)
+			//checkspeciesclause(SPECIES_CATERPIE)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
-			checkspeciesclause(SPECIES_WEEDLE)
+			//checkspeciesclause(SPECIES_WEEDLE)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
-			checkspeciesclause(SPECIES_SCATTERBUG)
+			//checkspeciesclause(SPECIES_SCATTERBUG)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
-			checkspeciesclause(SPECIES_SPINARAK)
+			//checkspeciesclause(SPECIES_SPINARAK)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
-			checkspeciesclause(SPECIES_LEDYBA)
+			//checkspeciesclause(SPECIES_LEDYBA)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
-			checkspeciesclause(SPECIES_KRICKETOT)
+			//checkspeciesclause(SPECIES_KRICKETOT)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
-			checkspeciesclause(SPECIES_TAROUNTULA)
+			//checkspeciesclause(SPECIES_TAROUNTULA)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
-			checkspeciesclause(SPECIES_SEWADDLE)
+			//checkspeciesclause(SPECIES_SEWADDLE)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}
@@ -159,55 +159,55 @@ script Zone2B_EventScript_BuyBug {
 				switch (var(VAR_RESULT)) {
 					case 0:
 					case 1:
-						checkspeciesclause(SPECIES_WURMPLE)
+						//checkspeciesclause(SPECIES_WURMPLE)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_WURMPLE)
 					case 2:
-						checkspeciesclause(SPECIES_CATERPIE)
+						//checkspeciesclause(SPECIES_CATERPIE)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_CATERPIE)
 					case 3:
-						checkspeciesclause(SPECIES_WEEDLE)
+						//checkspeciesclause(SPECIES_WEEDLE)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_WEEDLE)
 					case 4:
-						checkspeciesclause(SPECIES_SCATTERBUG)
+						//checkspeciesclause(SPECIES_SCATTERBUG)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_SCATTERBUG)
 					case 5:
-						checkspeciesclause(SPECIES_SPINARAK)
+						//checkspeciesclause(SPECIES_SPINARAK)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_SPINARAK)
 					case 6:
-						checkspeciesclause(SPECIES_LEDYBA)
+						//checkspeciesclause(SPECIES_LEDYBA)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_LEDYBA)
 					case 7:
-						checkspeciesclause(SPECIES_KRICKETOT)
+						//checkspeciesclause(SPECIES_KRICKETOT)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_KRICKETOT)
 					case 8:
-						checkspeciesclause(SPECIES_TAROUNTULA)
+						//checkspeciesclause(SPECIES_TAROUNTULA)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}
 						setvar(VAR_TEMP_1, SPECIES_TAROUNTULA)
 					case 9:
-						checkspeciesclause(SPECIES_SEWADDLE)
+						//checkspeciesclause(SPECIES_SEWADDLE)
 						if (var(VAR_RESULT) == TRUE) {
 							continue
 						}

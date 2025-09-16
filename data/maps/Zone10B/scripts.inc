@@ -147,13 +147,13 @@ Zone10B_EventScript_DragonTamer::
 # 74 "data/maps/Zone10B/scripts.pory"
 	goto_if_unset FLAG_ZONE10B_RECEIVED_DRUDDIGON, Zone10B_EventScript_DragonTamer_2
 Zone10B_EventScript_DragonTamer_1:
-# 202 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_DragonTamer_Text_9
 # 203 "data/maps/Zone10B/scripts.pory"
-	applymovement 4, Common_Movement_FaceLeft
+	msgbox Zone10B_EventScript_DragonTamer_Text_9
 # 204 "data/maps/Zone10B/scripts.pory"
-	waitmovement 0
+	applymovement 4, Common_Movement_FaceLeft
 # 205 "data/maps/Zone10B/scripts.pory"
+	waitmovement 0
+# 206 "data/maps/Zone10B/scripts.pory"
 	release
 	end
 
@@ -399,13 +399,13 @@ Zone10B_EventScript_DragonTamer_149:
 # 164 "data/maps/Zone10B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone10B_EventScript_DragonTamer_172
-# 194 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_DragonTamer_Text_8
 # 195 "data/maps/Zone10B/scripts.pory"
-	applymovement 4, Common_Movement_FaceLeft
+	msgbox Zone10B_EventScript_DragonTamer_Text_8
 # 196 "data/maps/Zone10B/scripts.pory"
-	waitmovement 0
+	applymovement 4, Common_Movement_FaceLeft
 # 197 "data/maps/Zone10B/scripts.pory"
+	waitmovement 0
+# 198 "data/maps/Zone10B/scripts.pory"
 	release
 	end
 
@@ -466,27 +466,27 @@ Zone10B_EventScript_DragonTamer_172:
 # 172 "data/maps/Zone10B/scripts.pory"
 	goto_if_set FLAG_SETTINGS_NUZLOCKE, Zone10B_EventScript_DragonTamer_180
 Zone10B_EventScript_DragonTamer_178:
-# 180 "data/maps/Zone10B/scripts.pory"
-	givemon SPECIES_DRUDDIGON, 22, ITEM_DRAGON_FANG
 # 181 "data/maps/Zone10B/scripts.pory"
-	setmonmetlocation VAR_TEMP_2, 248
+	givemon SPECIES_DRUDDIGON, 22, ITEM_DRAGON_FANG
 # 182 "data/maps/Zone10B/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	setmonmetlocation VAR_TEMP_2, 248
 # 183 "data/maps/Zone10B/scripts.pory"
-	message Zone10B_EventScript_DragonTamer_Text_6
+	playfanfare MUS_OBTAIN_ITEM
 # 184 "data/maps/Zone10B/scripts.pory"
-	waitmessage
+	message Zone10B_EventScript_DragonTamer_Text_6
 # 185 "data/maps/Zone10B/scripts.pory"
-	waitfanfare
+	waitmessage
 # 186 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_DragonTamer_Text_7, MSGBOX_YESNO
+	waitfanfare
 # 187 "data/maps/Zone10B/scripts.pory"
+	msgbox Zone10B_EventScript_DragonTamer_Text_7, MSGBOX_YESNO
+# 188 "data/maps/Zone10B/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone10B_EventScript_DragonTamer_184
 Zone10B_EventScript_DragonTamer_183:
-# 191 "data/maps/Zone10B/scripts.pory"
-	setflag FLAG_ZONE10B_RECEIVED_DRUDDIGON
 # 192 "data/maps/Zone10B/scripts.pory"
+	setflag FLAG_ZONE10B_RECEIVED_DRUDDIGON
+# 193 "data/maps/Zone10B/scripts.pory"
 	completequest QUEST_GAUNTLET_1
 	goto Zone10B_EventScript_DragonTamer_1
 
@@ -499,10 +499,11 @@ Zone10B_EventScript_DragonTamer_176:
 
 Zone10B_EventScript_DragonTamer_179:
 # 173 "data/maps/Zone10B/scripts.pory"
-	checkspeciesclause SPECIES_DRUDDIGON
+	setvar VAR_TEMP_0, SPECIES_DRUDDIGON
 # 174 "data/maps/Zone10B/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Zone10B_EventScript_DragonTamer_186
+	callnative CheckSpeciesClause
+# 175 "data/maps/Zone10B/scripts.pory"
+	goto_if_set FLAG_TEMP_1, Zone10B_EventScript_DragonTamer_186
 	goto Zone10B_EventScript_DragonTamer_178
 
 Zone10B_EventScript_DragonTamer_180:
@@ -511,74 +512,74 @@ Zone10B_EventScript_DragonTamer_180:
 	goto Zone10B_EventScript_DragonTamer_178
 
 Zone10B_EventScript_DragonTamer_184:
-# 188 "data/maps/Zone10B/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
 # 189 "data/maps/Zone10B/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 190 "data/maps/Zone10B/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto Zone10B_EventScript_DragonTamer_183
 
 Zone10B_EventScript_DragonTamer_186:
-# 175 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_DragonTamer_Text_5
 # 176 "data/maps/Zone10B/scripts.pory"
+	msgbox Zone10B_EventScript_DragonTamer_Text_5
+# 177 "data/maps/Zone10B/scripts.pory"
 	release
 	end
 
 
 Zone10B_EventScript_BirdKeeper::
-# 210 "data/maps/Zone10B/scripts.pory"
-	lock
 # 211 "data/maps/Zone10B/scripts.pory"
-	faceplayer
+	lock
 # 212 "data/maps/Zone10B/scripts.pory"
+	faceplayer
+# 213 "data/maps/Zone10B/scripts.pory"
 	goto_if_unset FLAG_ZONE10B_RECEIVED_TM_STEEL_WING, Zone10B_EventScript_BirdKeeper_2
 Zone10B_EventScript_BirdKeeper_1:
-# 217 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_BirdKeeper_Text_1
 # 218 "data/maps/Zone10B/scripts.pory"
-	applymovement 8, Common_Movement_FaceLeft
+	msgbox Zone10B_EventScript_BirdKeeper_Text_1
 # 219 "data/maps/Zone10B/scripts.pory"
-	waitmovement 0
+	applymovement 8, Common_Movement_FaceLeft
 # 220 "data/maps/Zone10B/scripts.pory"
+	waitmovement 0
+# 221 "data/maps/Zone10B/scripts.pory"
 	release
 	end
 
 Zone10B_EventScript_BirdKeeper_2:
-# 213 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_BirdKeeper_Text_0
 # 214 "data/maps/Zone10B/scripts.pory"
-	giveitem ITEM_TM_STEEL_WING
+	msgbox Zone10B_EventScript_BirdKeeper_Text_0
 # 215 "data/maps/Zone10B/scripts.pory"
+	giveitem ITEM_TM_STEEL_WING
+# 216 "data/maps/Zone10B/scripts.pory"
 	setflag FLAG_ZONE10B_RECEIVED_TM_STEEL_WING
 	goto Zone10B_EventScript_BirdKeeper_1
 
 
 Zone10B_EventScript_BerryExchange::
-# 225 "data/maps/Zone10B/scripts.pory"
-	lock
 # 226 "data/maps/Zone10B/scripts.pory"
-	faceplayer
+	lock
 # 227 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_BerryExchange_Text_0
+	faceplayer
 # 228 "data/maps/Zone10B/scripts.pory"
-	questmenu QUEST_MENU_CHECK_UNLOCKED, QUEST_BERRIES
+	msgbox Zone10B_EventScript_BerryExchange_Text_0
 # 229 "data/maps/Zone10B/scripts.pory"
+	questmenu QUEST_MENU_CHECK_UNLOCKED, QUEST_BERRIES
+# 230 "data/maps/Zone10B/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Zone10B_EventScript_BerryExchange_2
 Zone10B_EventScript_BerryExchange_1:
-# 232 "data/maps/Zone10B/scripts.pory"
-	checkitem ITEM_CHERI_BERRY, 5
 # 233 "data/maps/Zone10B/scripts.pory"
+	checkitem ITEM_CHERI_BERRY, 5
+# 234 "data/maps/Zone10B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone10B_EventScript_BerryExchange_5
-# 273 "data/maps/Zone10B/scripts.pory"
+# 274 "data/maps/Zone10B/scripts.pory"
 	msgbox Zone10B_EventScript_BerryExchange_Text_9
 Zone10B_EventScript_BerryExchange_4:
-# 275 "data/maps/Zone10B/scripts.pory"
-	applymovement 5, Common_Movement_FaceLeft
 # 276 "data/maps/Zone10B/scripts.pory"
-	waitmovement 0
+	applymovement 5, Common_Movement_FaceLeft
 # 277 "data/maps/Zone10B/scripts.pory"
+	waitmovement 0
+# 278 "data/maps/Zone10B/scripts.pory"
 	release
 	end
 
@@ -586,496 +587,496 @@ Zone10B_EventScript_BerryExchange_2:
 	goto Zone10B_EventScript_BerryExchange_1
 
 Zone10B_EventScript_BerryExchange_5:
-# 234 "data/maps/Zone10B/scripts.pory"
-	checkitem ITEM_CHESTO_BERRY, 5
 # 235 "data/maps/Zone10B/scripts.pory"
+	checkitem ITEM_CHESTO_BERRY, 5
+# 236 "data/maps/Zone10B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone10B_EventScript_BerryExchange_8
-# 270 "data/maps/Zone10B/scripts.pory"
+# 271 "data/maps/Zone10B/scripts.pory"
 	msgbox Zone10B_EventScript_BerryExchange_Text_8
 	goto Zone10B_EventScript_BerryExchange_4
 
 Zone10B_EventScript_BerryExchange_8:
-# 236 "data/maps/Zone10B/scripts.pory"
-	checkitem ITEM_PECHA_BERRY, 5
 # 237 "data/maps/Zone10B/scripts.pory"
+	checkitem ITEM_PECHA_BERRY, 5
+# 238 "data/maps/Zone10B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone10B_EventScript_BerryExchange_11
-# 267 "data/maps/Zone10B/scripts.pory"
+# 268 "data/maps/Zone10B/scripts.pory"
 	msgbox Zone10B_EventScript_BerryExchange_Text_7
 	goto Zone10B_EventScript_BerryExchange_4
 
 Zone10B_EventScript_BerryExchange_11:
-# 238 "data/maps/Zone10B/scripts.pory"
-	checkitem ITEM_RAWST_BERRY, 5
 # 239 "data/maps/Zone10B/scripts.pory"
+	checkitem ITEM_RAWST_BERRY, 5
+# 240 "data/maps/Zone10B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone10B_EventScript_BerryExchange_14
-# 264 "data/maps/Zone10B/scripts.pory"
+# 265 "data/maps/Zone10B/scripts.pory"
 	msgbox Zone10B_EventScript_BerryExchange_Text_6
 	goto Zone10B_EventScript_BerryExchange_4
 
 Zone10B_EventScript_BerryExchange_14:
-# 240 "data/maps/Zone10B/scripts.pory"
-	checkitem ITEM_ASPEAR_BERRY, 5
 # 241 "data/maps/Zone10B/scripts.pory"
+	checkitem ITEM_ASPEAR_BERRY, 5
+# 242 "data/maps/Zone10B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone10B_EventScript_BerryExchange_17
-# 261 "data/maps/Zone10B/scripts.pory"
+# 262 "data/maps/Zone10B/scripts.pory"
 	msgbox Zone10B_EventScript_BerryExchange_Text_5
 	goto Zone10B_EventScript_BerryExchange_4
 
 Zone10B_EventScript_BerryExchange_17:
-# 242 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_BerryExchange_Text_1, MSGBOX_YESNO
 # 243 "data/maps/Zone10B/scripts.pory"
+	msgbox Zone10B_EventScript_BerryExchange_Text_1, MSGBOX_YESNO
+# 244 "data/maps/Zone10B/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone10B_EventScript_BerryExchange_20
-# 258 "data/maps/Zone10B/scripts.pory"
+# 259 "data/maps/Zone10B/scripts.pory"
 	msgbox Zone10B_EventScript_BerryExchange_Text_4
 	goto Zone10B_EventScript_BerryExchange_4
 
 Zone10B_EventScript_BerryExchange_20:
-# 244 "data/maps/Zone10B/scripts.pory"
-	removeitem ITEM_CHERI_BERRY, 5
 # 245 "data/maps/Zone10B/scripts.pory"
-	removeitem ITEM_CHESTO_BERRY, 5
+	removeitem ITEM_CHERI_BERRY, 5
 # 246 "data/maps/Zone10B/scripts.pory"
-	removeitem ITEM_PECHA_BERRY, 5
+	removeitem ITEM_CHESTO_BERRY, 5
 # 247 "data/maps/Zone10B/scripts.pory"
-	removeitem ITEM_RAWST_BERRY, 5
+	removeitem ITEM_PECHA_BERRY, 5
 # 248 "data/maps/Zone10B/scripts.pory"
-	removeitem ITEM_ASPEAR_BERRY, 5
+	removeitem ITEM_RAWST_BERRY, 5
 # 249 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_BerryExchange_Text_2
+	removeitem ITEM_ASPEAR_BERRY, 5
 # 250 "data/maps/Zone10B/scripts.pory"
-	giveitem ITEM_REVIVE, 5
+	msgbox Zone10B_EventScript_BerryExchange_Text_2
 # 251 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_BerryExchange_Text_3
+	giveitem ITEM_REVIVE, 5
 # 252 "data/maps/Zone10B/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	msgbox Zone10B_EventScript_BerryExchange_Text_3
 # 253 "data/maps/Zone10B/scripts.pory"
-	setflag FLAG_HIDE_ZONE10B_BERRYMAN
+	fadescreenswapbuffers FADE_TO_BLACK
 # 254 "data/maps/Zone10B/scripts.pory"
-	removeobject 5
+	setflag FLAG_HIDE_ZONE10B_BERRYMAN
 # 255 "data/maps/Zone10B/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	removeobject 5
 # 256 "data/maps/Zone10B/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 257 "data/maps/Zone10B/scripts.pory"
 	completequest QUEST_BERRIES
 	goto Zone10B_EventScript_BerryExchange_4
 
 
 Zone10B_EventScript_FossilScientist::
-# 282 "data/maps/Zone10B/scripts.pory"
-	lock
 # 283 "data/maps/Zone10B/scripts.pory"
-	faceplayer
+	lock
 # 284 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_FossilScientist_Text_0, MSGBOX_YESNO
+	faceplayer
 # 285 "data/maps/Zone10B/scripts.pory"
+	msgbox Zone10B_EventScript_FossilScientist_Text_0, MSGBOX_YESNO
+# 286 "data/maps/Zone10B/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Zone10B_EventScript_FossilScientist_2
 Zone10B_EventScript_FossilScientist_1:
-# 288 "data/maps/Zone10B/scripts.pory"
+# 289 "data/maps/Zone10B/scripts.pory"
 	msgbox Zone10B_EventScript_FossilScientist_Text_1
-# 290 "data/maps/Zone10B/scripts.pory"
-	switch VAR_ITEM_ID
 # 291 "data/maps/Zone10B/scripts.pory"
+	switch VAR_ITEM_ID
+# 292 "data/maps/Zone10B/scripts.pory"
 	case ITEM_HELIX_FOSSIL, Zone10B_EventScript_FossilScientist_6
-# 298 "data/maps/Zone10B/scripts.pory"
+# 299 "data/maps/Zone10B/scripts.pory"
 	case ITEM_DOME_FOSSIL, Zone10B_EventScript_FossilScientist_7
-# 305 "data/maps/Zone10B/scripts.pory"
+# 306 "data/maps/Zone10B/scripts.pory"
 	case ITEM_OLD_AMBER, Zone10B_EventScript_FossilScientist_8
-# 312 "data/maps/Zone10B/scripts.pory"
+# 313 "data/maps/Zone10B/scripts.pory"
 	case ITEM_ROOT_FOSSIL, Zone10B_EventScript_FossilScientist_9
-# 319 "data/maps/Zone10B/scripts.pory"
+# 320 "data/maps/Zone10B/scripts.pory"
 	case ITEM_CLAW_FOSSIL, Zone10B_EventScript_FossilScientist_10
-# 326 "data/maps/Zone10B/scripts.pory"
+# 327 "data/maps/Zone10B/scripts.pory"
 	case ITEM_ARMOR_FOSSIL, Zone10B_EventScript_FossilScientist_11
-# 333 "data/maps/Zone10B/scripts.pory"
+# 334 "data/maps/Zone10B/scripts.pory"
 	case ITEM_SKULL_FOSSIL, Zone10B_EventScript_FossilScientist_12
-# 340 "data/maps/Zone10B/scripts.pory"
+# 341 "data/maps/Zone10B/scripts.pory"
 	case ITEM_COVER_FOSSIL, Zone10B_EventScript_FossilScientist_13
-# 347 "data/maps/Zone10B/scripts.pory"
+# 348 "data/maps/Zone10B/scripts.pory"
 	case ITEM_PLUME_FOSSIL, Zone10B_EventScript_FossilScientist_14
-# 354 "data/maps/Zone10B/scripts.pory"
+# 355 "data/maps/Zone10B/scripts.pory"
 	case ITEM_JAW_FOSSIL, Zone10B_EventScript_FossilScientist_15
-# 361 "data/maps/Zone10B/scripts.pory"
+# 362 "data/maps/Zone10B/scripts.pory"
 	case ITEM_SAIL_FOSSIL, Zone10B_EventScript_FossilScientist_16
-# 369 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_FossilScientist_Text_2
 # 370 "data/maps/Zone10B/scripts.pory"
-	applymovement 6, Common_Movement_FaceLeft
+	msgbox Zone10B_EventScript_FossilScientist_Text_2
 # 371 "data/maps/Zone10B/scripts.pory"
-	waitmovement 0
+	applymovement 6, Common_Movement_FaceLeft
 # 372 "data/maps/Zone10B/scripts.pory"
+	waitmovement 0
+# 373 "data/maps/Zone10B/scripts.pory"
 	release
 	end
 
 Zone10B_EventScript_FossilScientist_2:
-# 286 "data/maps/Zone10B/scripts.pory"
+# 287 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_FossilDone
 	goto Zone10B_EventScript_FossilScientist_1
 
 Zone10B_EventScript_FossilScientist_4:
-# 375 "data/maps/Zone10B/scripts.pory"
+# 376 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_FossilDone
 	return
 
 Zone10B_EventScript_FossilScientist_6:
-# 292 "data/maps/Zone10B/scripts.pory"
-	bufferspeciesname 1, SPECIES_OMANYTE
 # 293 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_CommonFossilIntro
+	bufferspeciesname 1, SPECIES_OMANYTE
 # 294 "data/maps/Zone10B/scripts.pory"
-	givemon SPECIES_OMANYTE, 20, ITEM_NONE
+	call Zone10B_EventScript_CommonFossilIntro
 # 295 "data/maps/Zone10B/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_OMANYTE
+	givemon SPECIES_OMANYTE, 20, ITEM_NONE
 # 296 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_ReceivedFossilMonFanfare
+	setvar VAR_TEMP_1, SPECIES_OMANYTE
 # 297 "data/maps/Zone10B/scripts.pory"
+	call Zone10B_EventScript_ReceivedFossilMonFanfare
+# 298 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_SendFossilMonParty
 	goto Zone10B_EventScript_FossilScientist_4
 
 Zone10B_EventScript_FossilScientist_7:
-# 299 "data/maps/Zone10B/scripts.pory"
-	bufferspeciesname 1, SPECIES_KABUTO
 # 300 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_CommonFossilIntro
+	bufferspeciesname 1, SPECIES_KABUTO
 # 301 "data/maps/Zone10B/scripts.pory"
-	givemon SPECIES_KABUTO, 20, ITEM_NONE
+	call Zone10B_EventScript_CommonFossilIntro
 # 302 "data/maps/Zone10B/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_KABUTO
+	givemon SPECIES_KABUTO, 20, ITEM_NONE
 # 303 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_ReceivedFossilMonFanfare
+	setvar VAR_TEMP_1, SPECIES_KABUTO
 # 304 "data/maps/Zone10B/scripts.pory"
+	call Zone10B_EventScript_ReceivedFossilMonFanfare
+# 305 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_SendFossilMonParty
 	goto Zone10B_EventScript_FossilScientist_4
 
 Zone10B_EventScript_FossilScientist_8:
-# 306 "data/maps/Zone10B/scripts.pory"
-	bufferspeciesname 1, SPECIES_AERODACTYL
 # 307 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_CommonFossilIntro
+	bufferspeciesname 1, SPECIES_AERODACTYL
 # 308 "data/maps/Zone10B/scripts.pory"
-	givemon SPECIES_AERODACTYL, 20, ITEM_NONE
+	call Zone10B_EventScript_CommonFossilIntro
 # 309 "data/maps/Zone10B/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_AERODACTYL
+	givemon SPECIES_AERODACTYL, 20, ITEM_NONE
 # 310 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_ReceivedFossilMonFanfare
+	setvar VAR_TEMP_1, SPECIES_AERODACTYL
 # 311 "data/maps/Zone10B/scripts.pory"
+	call Zone10B_EventScript_ReceivedFossilMonFanfare
+# 312 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_SendFossilMonParty
 	goto Zone10B_EventScript_FossilScientist_4
 
 Zone10B_EventScript_FossilScientist_9:
-# 313 "data/maps/Zone10B/scripts.pory"
-	bufferspeciesname 1, SPECIES_LILEEP
 # 314 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_CommonFossilIntro
+	bufferspeciesname 1, SPECIES_LILEEP
 # 315 "data/maps/Zone10B/scripts.pory"
-	givemon SPECIES_LILEEP, 20, ITEM_NONE
+	call Zone10B_EventScript_CommonFossilIntro
 # 316 "data/maps/Zone10B/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_LILEEP
+	givemon SPECIES_LILEEP, 20, ITEM_NONE
 # 317 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_ReceivedFossilMonFanfare
+	setvar VAR_TEMP_1, SPECIES_LILEEP
 # 318 "data/maps/Zone10B/scripts.pory"
+	call Zone10B_EventScript_ReceivedFossilMonFanfare
+# 319 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_SendFossilMonParty
 	goto Zone10B_EventScript_FossilScientist_4
 
 Zone10B_EventScript_FossilScientist_10:
-# 320 "data/maps/Zone10B/scripts.pory"
-	bufferspeciesname 1, SPECIES_ANORITH
 # 321 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_CommonFossilIntro
+	bufferspeciesname 1, SPECIES_ANORITH
 # 322 "data/maps/Zone10B/scripts.pory"
-	givemon SPECIES_ANORITH, 20, ITEM_NONE
+	call Zone10B_EventScript_CommonFossilIntro
 # 323 "data/maps/Zone10B/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_ANORITH
+	givemon SPECIES_ANORITH, 20, ITEM_NONE
 # 324 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_ReceivedFossilMonFanfare
+	setvar VAR_TEMP_1, SPECIES_ANORITH
 # 325 "data/maps/Zone10B/scripts.pory"
+	call Zone10B_EventScript_ReceivedFossilMonFanfare
+# 326 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_SendFossilMonParty
 	goto Zone10B_EventScript_FossilScientist_4
 
 Zone10B_EventScript_FossilScientist_11:
-# 327 "data/maps/Zone10B/scripts.pory"
-	bufferspeciesname 1, SPECIES_SHIELDON
 # 328 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_CommonFossilIntro
+	bufferspeciesname 1, SPECIES_SHIELDON
 # 329 "data/maps/Zone10B/scripts.pory"
-	givemon SPECIES_SHIELDON, 20, ITEM_NONE
+	call Zone10B_EventScript_CommonFossilIntro
 # 330 "data/maps/Zone10B/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SHIELDON
+	givemon SPECIES_SHIELDON, 20, ITEM_NONE
 # 331 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_ReceivedFossilMonFanfare
+	setvar VAR_TEMP_1, SPECIES_SHIELDON
 # 332 "data/maps/Zone10B/scripts.pory"
+	call Zone10B_EventScript_ReceivedFossilMonFanfare
+# 333 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_SendFossilMonParty
 	goto Zone10B_EventScript_FossilScientist_4
 
 Zone10B_EventScript_FossilScientist_12:
-# 334 "data/maps/Zone10B/scripts.pory"
-	bufferspeciesname 1, SPECIES_CRANIDOS
 # 335 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_CommonFossilIntro
+	bufferspeciesname 1, SPECIES_CRANIDOS
 # 336 "data/maps/Zone10B/scripts.pory"
-	givemon SPECIES_CRANIDOS, 20, ITEM_NONE
+	call Zone10B_EventScript_CommonFossilIntro
 # 337 "data/maps/Zone10B/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_CRANIDOS
+	givemon SPECIES_CRANIDOS, 20, ITEM_NONE
 # 338 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_ReceivedFossilMonFanfare
+	setvar VAR_TEMP_1, SPECIES_CRANIDOS
 # 339 "data/maps/Zone10B/scripts.pory"
+	call Zone10B_EventScript_ReceivedFossilMonFanfare
+# 340 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_SendFossilMonParty
 	goto Zone10B_EventScript_FossilScientist_4
 
 Zone10B_EventScript_FossilScientist_13:
-# 341 "data/maps/Zone10B/scripts.pory"
-	bufferspeciesname 1, SPECIES_TIRTOUGA
 # 342 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_CommonFossilIntro
+	bufferspeciesname 1, SPECIES_TIRTOUGA
 # 343 "data/maps/Zone10B/scripts.pory"
-	givemon SPECIES_TIRTOUGA, 20, ITEM_NONE
+	call Zone10B_EventScript_CommonFossilIntro
 # 344 "data/maps/Zone10B/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_TIRTOUGA
+	givemon SPECIES_TIRTOUGA, 20, ITEM_NONE
 # 345 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_ReceivedFossilMonFanfare
+	setvar VAR_TEMP_1, SPECIES_TIRTOUGA
 # 346 "data/maps/Zone10B/scripts.pory"
+	call Zone10B_EventScript_ReceivedFossilMonFanfare
+# 347 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_SendFossilMonParty
 	goto Zone10B_EventScript_FossilScientist_4
 
 Zone10B_EventScript_FossilScientist_14:
-# 348 "data/maps/Zone10B/scripts.pory"
-	bufferspeciesname 1, SPECIES_ARCHEN
 # 349 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_CommonFossilIntro
+	bufferspeciesname 1, SPECIES_ARCHEN
 # 350 "data/maps/Zone10B/scripts.pory"
-	givemon SPECIES_ARCHEN, 20, ITEM_NONE
+	call Zone10B_EventScript_CommonFossilIntro
 # 351 "data/maps/Zone10B/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_ARCHEN
+	givemon SPECIES_ARCHEN, 20, ITEM_NONE
 # 352 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_ReceivedFossilMonFanfare
+	setvar VAR_TEMP_1, SPECIES_ARCHEN
 # 353 "data/maps/Zone10B/scripts.pory"
+	call Zone10B_EventScript_ReceivedFossilMonFanfare
+# 354 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_SendFossilMonParty
 	goto Zone10B_EventScript_FossilScientist_4
 
 Zone10B_EventScript_FossilScientist_15:
-# 355 "data/maps/Zone10B/scripts.pory"
-	bufferspeciesname 1, SPECIES_TYRUNT
 # 356 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_CommonFossilIntro
+	bufferspeciesname 1, SPECIES_TYRUNT
 # 357 "data/maps/Zone10B/scripts.pory"
-	givemon SPECIES_TYRUNT, 20, ITEM_NONE
+	call Zone10B_EventScript_CommonFossilIntro
 # 358 "data/maps/Zone10B/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_TYRUNT
+	givemon SPECIES_TYRUNT, 20, ITEM_NONE
 # 359 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_ReceivedFossilMonFanfare
+	setvar VAR_TEMP_1, SPECIES_TYRUNT
 # 360 "data/maps/Zone10B/scripts.pory"
+	call Zone10B_EventScript_ReceivedFossilMonFanfare
+# 361 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_SendFossilMonParty
 	goto Zone10B_EventScript_FossilScientist_4
 
 Zone10B_EventScript_FossilScientist_16:
-# 362 "data/maps/Zone10B/scripts.pory"
-	bufferspeciesname 1, SPECIES_AMAURA
 # 363 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_CommonFossilIntro
+	bufferspeciesname 1, SPECIES_AMAURA
 # 364 "data/maps/Zone10B/scripts.pory"
-	givemon SPECIES_AMAURA, 20, ITEM_NONE
+	call Zone10B_EventScript_CommonFossilIntro
 # 365 "data/maps/Zone10B/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_AMAURA
+	givemon SPECIES_AMAURA, 20, ITEM_NONE
 # 366 "data/maps/Zone10B/scripts.pory"
-	call Zone10B_EventScript_ReceivedFossilMonFanfare
+	setvar VAR_TEMP_1, SPECIES_AMAURA
 # 367 "data/maps/Zone10B/scripts.pory"
+	call Zone10B_EventScript_ReceivedFossilMonFanfare
+# 368 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_SendFossilMonParty
 	goto Zone10B_EventScript_FossilScientist_4
 
 
 Zone10B_EventScript_SendFossilMonParty::
-# 379 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_SendFossilMonParty_Text_0, MSGBOX_YESNO
 # 380 "data/maps/Zone10B/scripts.pory"
+	msgbox Zone10B_EventScript_SendFossilMonParty_Text_0, MSGBOX_YESNO
+# 381 "data/maps/Zone10B/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Zone10B_EventScript_SendFossilMonParty_2
 Zone10B_EventScript_SendFossilMonParty_1:
-# 384 "data/maps/Zone10B/scripts.pory"
-	setmonmetlocation VAR_TEMP_2, 247
 # 385 "data/maps/Zone10B/scripts.pory"
+	setmonmetlocation VAR_TEMP_2, 247
+# 386 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_FossilDone
 	return
 
 Zone10B_EventScript_SendFossilMonParty_2:
-# 381 "data/maps/Zone10B/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
 # 382 "data/maps/Zone10B/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 383 "data/maps/Zone10B/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto Zone10B_EventScript_SendFossilMonParty_1
 
 
 Zone10B_EventScript_ReceivedFossilMonFanfare::
-# 389 "data/maps/Zone10B/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
 # 390 "data/maps/Zone10B/scripts.pory"
-	message Zone10B_EventScript_ReceivedFossilMonFanfare_Text_0
+	playfanfare MUS_OBTAIN_ITEM
 # 391 "data/maps/Zone10B/scripts.pory"
-	waitmessage
+	message Zone10B_EventScript_ReceivedFossilMonFanfare_Text_0
 # 392 "data/maps/Zone10B/scripts.pory"
+	waitmessage
+# 393 "data/maps/Zone10B/scripts.pory"
 	waitfanfare
 	return
 
 
 Zone10B_EventScript_CommonFossilIntro::
-# 397 "data/maps/Zone10B/scripts.pory"
-	bufferitemname 0, VAR_ITEM_ID
 # 398 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_CommonFossilIntro_Text_0, MSGBOX_YESNO
+	bufferitemname 0, VAR_ITEM_ID
 # 399 "data/maps/Zone10B/scripts.pory"
+	msgbox Zone10B_EventScript_CommonFossilIntro_Text_0, MSGBOX_YESNO
+# 400 "data/maps/Zone10B/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Zone10B_EventScript_CommonFossilIntro_2
 Zone10B_EventScript_CommonFossilIntro_1:
-# 402 "data/maps/Zone10B/scripts.pory"
-	specialvar VAR_TEMP_2, CalculatePlayerPartyCount
 # 403 "data/maps/Zone10B/scripts.pory"
+	specialvar VAR_TEMP_2, CalculatePlayerPartyCount
+# 404 "data/maps/Zone10B/scripts.pory"
 	compare VAR_TEMP_2, PARTY_SIZE
 	goto_if_eq Zone10B_EventScript_CommonFossilIntro_5
-# 410 "data/maps/Zone10B/scripts.pory"
-	removeitem VAR_ITEM_ID
 # 411 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_CommonFossilIntro_Text_2
+	removeitem VAR_ITEM_ID
 # 412 "data/maps/Zone10B/scripts.pory"
-	applymovement 6, Common_Movement_FaceLeft
+	msgbox Zone10B_EventScript_CommonFossilIntro_Text_2
 # 413 "data/maps/Zone10B/scripts.pory"
-	waitmovement 0
+	applymovement 6, Common_Movement_FaceLeft
 # 414 "data/maps/Zone10B/scripts.pory"
-	delay 192
+	waitmovement 0
 # 415 "data/maps/Zone10B/scripts.pory"
-	faceplayer
+	delay 192
 # 416 "data/maps/Zone10B/scripts.pory"
+	faceplayer
+# 417 "data/maps/Zone10B/scripts.pory"
 	msgbox Zone10B_EventScript_CommonFossilIntro_Text_3
 	return
 
 Zone10B_EventScript_CommonFossilIntro_2:
-# 400 "data/maps/Zone10B/scripts.pory"
+# 401 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_FossilDone
 	goto Zone10B_EventScript_CommonFossilIntro_1
 
 Zone10B_EventScript_CommonFossilIntro_5:
-# 404 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_CommonFossilIntro_Text_1
 # 405 "data/maps/Zone10B/scripts.pory"
-	applymovement 6, Common_Movement_FaceLeft
+	msgbox Zone10B_EventScript_CommonFossilIntro_Text_1
 # 406 "data/maps/Zone10B/scripts.pory"
-	waitmovement 0
+	applymovement 6, Common_Movement_FaceLeft
 # 407 "data/maps/Zone10B/scripts.pory"
+	waitmovement 0
+# 408 "data/maps/Zone10B/scripts.pory"
 	release
 	end
 
 
 Zone10B_EventScript_FossilDone::
-# 421 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_FossilDone_Text_0
 # 422 "data/maps/Zone10B/scripts.pory"
-	applymovement 6, Common_Movement_FaceLeft
+	msgbox Zone10B_EventScript_FossilDone_Text_0
 # 423 "data/maps/Zone10B/scripts.pory"
-	waitmovement 0
+	applymovement 6, Common_Movement_FaceLeft
 # 424 "data/maps/Zone10B/scripts.pory"
+	waitmovement 0
+# 425 "data/maps/Zone10B/scripts.pory"
 	release
 	end
 
 
 Zone10B_EventScript_WaterMerchant::
-# 429 "data/maps/Zone10B/scripts.pory"
-	lock
 # 430 "data/maps/Zone10B/scripts.pory"
+	lock
+# 431 "data/maps/Zone10B/scripts.pory"
 	faceplayer
-# 431 "data/maps/Zone10B/scripts.pory"
+# 432 "data/maps/Zone10B/scripts.pory"
 	goto_if_set FLAG_SETTINGS_BRUTAL, Zone10B_EventScript_WaterMerchant_2
-# 431 "data/maps/Zone10B/scripts.pory"
+# 432 "data/maps/Zone10B/scripts.pory"
 	goto_if_set FLAG_SETTINGS_INDEPENDENT, Zone10B_EventScript_WaterMerchant_2
-# 436 "data/maps/Zone10B/scripts.pory"
-	showmoneybox 0, 0, 0
 # 437 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_WaterMerchant_Text_1, MSGBOX_DEFAULT
+	showmoneybox 0, 0, 0
 # 438 "data/maps/Zone10B/scripts.pory"
-	dynmultichoice 0, 12, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Zone10B_EventScript_WaterMerchant_Text_2, Zone10B_EventScript_WaterMerchant_Text_3, Zone10B_EventScript_WaterMerchant_Text_4
+	msgbox Zone10B_EventScript_WaterMerchant_Text_1, MSGBOX_DEFAULT
 # 439 "data/maps/Zone10B/scripts.pory"
-	switch VAR_RESULT
+	dynmultichoice 0, 12, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Zone10B_EventScript_WaterMerchant_Text_2, Zone10B_EventScript_WaterMerchant_Text_3, Zone10B_EventScript_WaterMerchant_Text_4
 # 440 "data/maps/Zone10B/scripts.pory"
+	switch VAR_RESULT
+# 441 "data/maps/Zone10B/scripts.pory"
 	case 0, Zone10B_EventScript_WaterMerchant_8
-# 453 "data/maps/Zone10B/scripts.pory"
+# 454 "data/maps/Zone10B/scripts.pory"
 	case 1, Zone10B_EventScript_WaterMerchant_9
 Zone10B_EventScript_WaterMerchant_6:
-# 467 "data/maps/Zone10B/scripts.pory"
-	closemessage
 # 468 "data/maps/Zone10B/scripts.pory"
-	hidemoneybox
+	closemessage
 # 469 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_WaterMerchant_Text_6
+	hidemoneybox
 # 470 "data/maps/Zone10B/scripts.pory"
+	msgbox Zone10B_EventScript_WaterMerchant_Text_6
+# 471 "data/maps/Zone10B/scripts.pory"
 	release
 	return
 
 Zone10B_EventScript_WaterMerchant_2:
-# 432 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_WaterMerchant_Text_0
 # 433 "data/maps/Zone10B/scripts.pory"
+	msgbox Zone10B_EventScript_WaterMerchant_Text_0
+# 434 "data/maps/Zone10B/scripts.pory"
 	release
 	end
 
 Zone10B_EventScript_WaterMerchant_8:
-# 441 "data/maps/Zone10B/scripts.pory"
-	checkmoney 200, 0
 # 442 "data/maps/Zone10B/scripts.pory"
+	checkmoney 200, 0
+# 443 "data/maps/Zone10B/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Zone10B_EventScript_WaterMerchant_10
-# 445 "data/maps/Zone10B/scripts.pory"
-	removemoney 200, 0
 # 446 "data/maps/Zone10B/scripts.pory"
-	updatemoneybox
+	removemoney 200, 0
 # 447 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_WaterMerchant_Text_5
+	updatemoneybox
 # 448 "data/maps/Zone10B/scripts.pory"
-	giveitem ITEM_FRESH_WATER, 1
+	msgbox Zone10B_EventScript_WaterMerchant_Text_5
 # 449 "data/maps/Zone10B/scripts.pory"
-	hidemoneybox
+	giveitem ITEM_FRESH_WATER, 1
 # 450 "data/maps/Zone10B/scripts.pory"
+	hidemoneybox
+# 451 "data/maps/Zone10B/scripts.pory"
 	release
 	end
 
 Zone10B_EventScript_WaterMerchant_9:
-# 454 "data/maps/Zone10B/scripts.pory"
-	checkmoney 2000, 0
 # 455 "data/maps/Zone10B/scripts.pory"
+	checkmoney 2000, 0
+# 456 "data/maps/Zone10B/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Zone10B_EventScript_WaterMerchant_13
-# 458 "data/maps/Zone10B/scripts.pory"
-	removemoney 2000, 0
 # 459 "data/maps/Zone10B/scripts.pory"
-	updatemoneybox
+	removemoney 2000, 0
 # 460 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_WaterMerchant_Text_5
+	updatemoneybox
 # 461 "data/maps/Zone10B/scripts.pory"
-	giveitem ITEM_FRESH_WATER, 10
+	msgbox Zone10B_EventScript_WaterMerchant_Text_5
 # 462 "data/maps/Zone10B/scripts.pory"
-	hidemoneybox
+	giveitem ITEM_FRESH_WATER, 10
 # 463 "data/maps/Zone10B/scripts.pory"
+	hidemoneybox
+# 464 "data/maps/Zone10B/scripts.pory"
 	release
 	end
 
 Zone10B_EventScript_WaterMerchant_10:
-# 443 "data/maps/Zone10B/scripts.pory"
+# 444 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_WaterNotEnough
 	goto Zone10B_EventScript_WaterMerchant_6
 
 Zone10B_EventScript_WaterMerchant_13:
-# 456 "data/maps/Zone10B/scripts.pory"
+# 457 "data/maps/Zone10B/scripts.pory"
 	goto Zone10B_EventScript_WaterNotEnough
 	goto Zone10B_EventScript_WaterMerchant_6
 
 
 Zone10B_EventScript_WaterNotEnough::
-# 474 "data/maps/Zone10B/scripts.pory"
-	msgbox Zone10B_EventScript_WaterNotEnough_Text_0
 # 475 "data/maps/Zone10B/scripts.pory"
-	hidemoneybox
+	msgbox Zone10B_EventScript_WaterNotEnough_Text_0
 # 476 "data/maps/Zone10B/scripts.pory"
+	hidemoneybox
+# 477 "data/maps/Zone10B/scripts.pory"
 	releaseall
 	end
 
@@ -1151,161 +1152,161 @@ Zone10B_EventScript_DragonTamer_Text_4:
 	.string "A wise choice!$"
 
 Zone10B_EventScript_DragonTamer_Text_5:
-# 175 "data/maps/Zone10B/scripts.pory"
+# 176 "data/maps/Zone10B/scripts.pory"
 	.string "Unfortunately, you have already\n"
 	.string "obtained a Pokémon in Druddigon's\l"
 	.string "evolution line.$"
 
 Zone10B_EventScript_DragonTamer_Text_6:
-# 183 "data/maps/Zone10B/scripts.pory"
+# 184 "data/maps/Zone10B/scripts.pory"
 	.string "Received Druddigon!$"
 
 Zone10B_EventScript_DragonTamer_Text_7:
-# 186 "data/maps/Zone10B/scripts.pory"
+# 187 "data/maps/Zone10B/scripts.pory"
 	.string "Would you like to give a nickname to\n"
 	.string "Druddigon?$"
 
 Zone10B_EventScript_DragonTamer_Text_8:
-# 194 "data/maps/Zone10B/scripts.pory"
+# 195 "data/maps/Zone10B/scripts.pory"
 	.string "Very well. Speak to me when you change\n"
 	.string "your mind.$"
 
 Zone10B_EventScript_DragonTamer_Text_9:
-# 202 "data/maps/Zone10B/scripts.pory"
+# 203 "data/maps/Zone10B/scripts.pory"
 	.string "Aside from their own kind, Dragon-types\n"
 	.string "need only fear Fairy-types and\l"
 	.string "Ice-types.$"
 
 Zone10B_EventScript_BirdKeeper_Text_0:
-# 213 "data/maps/Zone10B/scripts.pory"
+# 214 "data/maps/Zone10B/scripts.pory"
 	.string "Bird Pokémon sometimes can need some\n"
 	.string "coverage moves! This TM will help remedy\l"
 	.string "that!$"
 
 Zone10B_EventScript_BirdKeeper_Text_1:
-# 217 "data/maps/Zone10B/scripts.pory"
+# 218 "data/maps/Zone10B/scripts.pory"
 	.string "The move Steel Wing can help Flying\n"
 	.string "Pokémon cover for their Rock weakness,\l"
 	.string "by giving Steel coverage to them!$"
 
 Zone10B_EventScript_BerryExchange_Text_0:
-# 227 "data/maps/Zone10B/scripts.pory"
+# 228 "data/maps/Zone10B/scripts.pory"
 	.string "Listen, you know how some berries\ncan treat status conditions?\pWell, I'm looking to start a Berry\nfarm. If you have 5 of each of\lthose Berries, I'll trade them\lfor 5 Revives.$"
 
 Zone10B_EventScript_BerryExchange_Text_1:
-# 242 "data/maps/Zone10B/scripts.pory"
+# 243 "data/maps/Zone10B/scripts.pory"
 	.string "Looks like you do have the Berries I'm\n"
 	.string "looking for. What do you say?$"
 
 Zone10B_EventScript_BerryExchange_Text_2:
-# 249 "data/maps/Zone10B/scripts.pory"
+# 250 "data/maps/Zone10B/scripts.pory"
 	.string "Alright…{PAUSE_UNTIL_PRESS} Here we go…{PAUSE_UNTIL_PRESS}\nAnd bam! 5 Revives!$"
 
 Zone10B_EventScript_BerryExchange_Text_3:
-# 251 "data/maps/Zone10B/scripts.pory"
+# 252 "data/maps/Zone10B/scripts.pory"
 	.string "Thank you.\nI'll be seeing you around!$"
 
 Zone10B_EventScript_BerryExchange_Text_4:
-# 258 "data/maps/Zone10B/scripts.pory"
+# 259 "data/maps/Zone10B/scripts.pory"
 	.string "Aw, that's too bad.\nIt's a good offer though!$"
 
 Zone10B_EventScript_BerryExchange_Text_5:
-# 261 "data/maps/Zone10B/scripts.pory"
+# 262 "data/maps/Zone10B/scripts.pory"
 	.string "It looks like you don't have enough\nAspear Berries.$"
 
 Zone10B_EventScript_BerryExchange_Text_6:
-# 264 "data/maps/Zone10B/scripts.pory"
+# 265 "data/maps/Zone10B/scripts.pory"
 	.string "It looks like you don't have enough\nRawst Berries.$"
 
 Zone10B_EventScript_BerryExchange_Text_7:
-# 267 "data/maps/Zone10B/scripts.pory"
+# 268 "data/maps/Zone10B/scripts.pory"
 	.string "It looks like you don't have enough\nPecha Berries.$"
 
 Zone10B_EventScript_BerryExchange_Text_8:
-# 270 "data/maps/Zone10B/scripts.pory"
+# 271 "data/maps/Zone10B/scripts.pory"
 	.string "It looks like you don't have enough\nChesto Berries.$"
 
 Zone10B_EventScript_BerryExchange_Text_9:
-# 273 "data/maps/Zone10B/scripts.pory"
+# 274 "data/maps/Zone10B/scripts.pory"
 	.string "It looks like you don't have enough\nCheri Berries.$"
 
 Zone10B_EventScript_FossilScientist_Text_0:
-# 284 "data/maps/Zone10B/scripts.pory"
+# 285 "data/maps/Zone10B/scripts.pory"
 	.string "Oh. Another traveler looking to employ\n"
 	.string "my fossil reviving services, eh?\p"
 	.string "So, how about it? Do you have a fossil\n"
 	.string "you'd like to revive?$"
 
 Zone10B_EventScript_FossilScientist_Text_1:
-# 288 "data/maps/Zone10B/scripts.pory"
+# 289 "data/maps/Zone10B/scripts.pory"
 	.string "Which fossil would you like me to\n"
 	.string "revive?$"
 
 Zone10B_EventScript_FossilScientist_Text_2:
-# 369 "data/maps/Zone10B/scripts.pory"
+# 370 "data/maps/Zone10B/scripts.pory"
 	.string "That ain't no fossil! Kids these days!$"
 
 Zone10B_EventScript_SendFossilMonParty_Text_0:
-# 379 "data/maps/Zone10B/scripts.pory"
+# 380 "data/maps/Zone10B/scripts.pory"
 	.string "Would you like to give a nickname to\n"
 	.string "{STR_VAR_1}?$"
 
 Zone10B_EventScript_ReceivedFossilMonFanfare_Text_0:
-# 390 "data/maps/Zone10B/scripts.pory"
+# 391 "data/maps/Zone10B/scripts.pory"
 	.string "Received the Fossil Pokémon\n{STR_VAR_2}!$"
 
 Zone10B_EventScript_CommonFossilIntro_Text_0:
-# 398 "data/maps/Zone10B/scripts.pory"
+# 399 "data/maps/Zone10B/scripts.pory"
 	.string "You want me to turn that\n{STR_VAR_1} back into a Pokémon?$"
 
 Zone10B_EventScript_CommonFossilIntro_Text_1:
-# 404 "data/maps/Zone10B/scripts.pory"
+# 405 "data/maps/Zone10B/scripts.pory"
 	.string "Your party is full. Clear a party slot,\n"
 	.string "then come back.$"
 
 Zone10B_EventScript_CommonFossilIntro_Text_2:
-# 411 "data/maps/Zone10B/scripts.pory"
+# 412 "data/maps/Zone10B/scripts.pory"
 	.string "Alright. Gimme a moment…$"
 
 Zone10B_EventScript_CommonFossilIntro_Text_3:
-# 416 "data/maps/Zone10B/scripts.pory"
+# 417 "data/maps/Zone10B/scripts.pory"
 	.string "There. Here's your Pokémon.$"
 
 Zone10B_EventScript_FossilDone_Text_0:
-# 421 "data/maps/Zone10B/scripts.pory"
+# 422 "data/maps/Zone10B/scripts.pory"
 	.string "Ok, back to my drink.$"
 
 Zone10B_EventScript_WaterMerchant_Text_0:
-# 432 "data/maps/Zone10B/scripts.pory"
+# 433 "data/maps/Zone10B/scripts.pory"
 	.string "In the desert, it's supply and demand.\n"
 	.string "And the demand is water.\p"
 	.string "The Fresh Water I usually sell is in such\n"
 	.string "high demand that I am out of stock.$"
 
 Zone10B_EventScript_WaterMerchant_Text_1:
-# 437 "data/maps/Zone10B/scripts.pory"
+# 438 "data/maps/Zone10B/scripts.pory"
 	.string "In the desert, it's supply and\ndemand. And the demand is water.\p¥200 for Fresh Water.\nRestores 30 HP each.$"
 
 Zone10B_EventScript_WaterMerchant_Text_2:
-# 438 "data/maps/Zone10B/scripts.pory"
+# 439 "data/maps/Zone10B/scripts.pory"
 	.string "One Fresh Water - ¥200$"
 
 Zone10B_EventScript_WaterMerchant_Text_3:
-# 438 "data/maps/Zone10B/scripts.pory"
+# 439 "data/maps/Zone10B/scripts.pory"
 	.string "Ten Fresh Water - ¥2000$"
 
 Zone10B_EventScript_WaterMerchant_Text_4:
-# 438 "data/maps/Zone10B/scripts.pory"
+# 439 "data/maps/Zone10B/scripts.pory"
 	.string "Exit$"
 
 Zone10B_EventScript_WaterMerchant_Text_5:
-# 447 "data/maps/Zone10B/scripts.pory"
+# 448 "data/maps/Zone10B/scripts.pory"
 	.string "Here you go.$"
 
 Zone10B_EventScript_WaterMerchant_Text_6:
-# 469 "data/maps/Zone10B/scripts.pory"
+# 470 "data/maps/Zone10B/scripts.pory"
 	.string "Ah, fine.$"
 
 Zone10B_EventScript_WaterNotEnough_Text_0:
-# 474 "data/maps/Zone10B/scripts.pory"
+# 475 "data/maps/Zone10B/scripts.pory"
 	.string "You don't have enough money.$"

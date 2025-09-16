@@ -31,7 +31,7 @@ script Zone9E_EventScript_GiveSquawkabilly {
 		if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
 			setvar(VAR_TEMP_1, SPECIES_BULBASAUR) // gets randomized anyways
 		} else {
-			checkspeciesclause(SPECIES_SQUAWKABILLY)
+			//checkspeciesclause(SPECIES_SQUAWKABILLY)
 			if (var(VAR_RESULT) == TRUE) {
 				msgbox(format("Unfortunately, you have already obtained a Squawkabilly."), MSGBOX_AUTOCLOSE)
 				release
@@ -135,19 +135,19 @@ text Zone9E_Text_Squawkabilly_ComeBack {
 // 						setvar(VAR_TEMP_1, SPECIES_MILTANK) // gets randomized anyways
 // 					} else {
 // 						setvar(VAR_TEMP_3, 0)
-// 						checkspeciesclause(SPECIES_MILTANK)
+// 						//checkspeciesclause(SPECIES_MILTANK)
 // 						if (var(VAR_RESULT) == TRUE) {
 // 							addvar(VAR_TEMP_3, 1)
 // 						}
-// 						checkspeciesclause(SPECIES_TAUROS)
+// 						//checkspeciesclause(SPECIES_TAUROS)
 // 						if (var(VAR_RESULT) == TRUE) {
 // 							addvar(VAR_TEMP_3, 1)
 // 						}
-// 						checkspeciesclause(SPECIES_INDEEDEE_F)
+// 						//checkspeciesclause(SPECIES_INDEEDEE_F)
 // 						if (var(VAR_RESULT) == TRUE) {
 // 							addvar(VAR_TEMP_3, 1)
 // 						}
-// 						checkspeciesclause(SPECIES_INDEEDEE)
+// 						//checkspeciesclause(SPECIES_INDEEDEE)
 // 						if (var(VAR_RESULT) == TRUE) {
 // 							addvar(VAR_TEMP_3, 1)
 // 						}
@@ -161,25 +161,25 @@ text Zone9E_Text_Squawkabilly_ComeBack {
 // 							random(4)
 // 							switch (var(VAR_RESULT)) {
 // 								case 0:
-// 									checkspeciesclause(SPECIES_MILTANK)
+// 									//checkspeciesclause(SPECIES_MILTANK)
 // 									if (var(VAR_RESULT) == TRUE) {
 // 										continue
 // 									}
 // 									setvar(VAR_TEMP_1, SPECIES_MILTANK)
 // 								case 1:
-// 									checkspeciesclause(SPECIES_TAUROS)
+// 									//checkspeciesclause(SPECIES_TAUROS)
 // 									if (var(VAR_RESULT) == TRUE) {
 // 										continue
 // 									}
 // 									setvar(VAR_TEMP_1, SPECIES_TAUROS)
 // 								case 2:
-// 									checkspeciesclause(SPECIES_INDEEDEE_F)
+// 									//checkspeciesclause(SPECIES_INDEEDEE_F)
 // 									if (var(VAR_RESULT) == TRUE) {
 // 										continue
 // 									}
 // 									setvar(VAR_TEMP_1, SPECIES_INDEEDEE_F)
 // 								case 3:
-// 									checkspeciesclause(SPECIES_INDEEDEE)
+// 									//checkspeciesclause(SPECIES_INDEEDEE)
 // 									if (var(VAR_RESULT) == TRUE) {
 // 										continue
 // 									}

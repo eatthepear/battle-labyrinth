@@ -44,7 +44,7 @@ script Zone8A_EventScript_BuyTyrogue {
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
 		if (flag(FLAG_SETTINGS_RANDOMIZER) == false) {
 			setvar(VAR_TEMP_3, 0) // counter for species clause
-			checkspeciesclause(SPECIES_TYROGUE)
+			//checkspeciesclause(SPECIES_TYROGUE)
 			if (var(VAR_RESULT) == TRUE) {
 				addvar(VAR_TEMP_3, 1)
 			}

@@ -2807,13 +2807,6 @@
 	.2byte \battlePartner
 	.endm
 
-	@ Checks if it is a blocked Pokemon under Species Clause
-	@ The result is stored in VAR_RESULT
-	.macro checkspeciesclause species:req
-	setvar VAR_TEMP_0, \species
-	specialvar VAR_RESULT, CheckSpeciesClause
-	.endm
-
 	@ Opens the bag in the specified pocket and lets the Player choose an item.
 	@ This item can be used for scripting purposes and it's stored in VAR_ITEM_ID.
 	.macro chooseitem pocket:req

@@ -60,20 +60,24 @@ script Zone1A_EventScript_GiveFWG {
 					end
 				}
 				setvar(VAR_TEMP_3, 0)
-				checkspeciesclause(SPECIES_PANSAGE)
-				if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_0, SPECIES_PANSAGE)
+				callnative(CheckSpeciesClause)
+				if (flag(FLAG_TEMP_1) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_GOSSIFLEUR)
-				if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_0, SPECIES_GOSSIFLEUR)
+				callnative(CheckSpeciesClause)
+				if (flag(FLAG_TEMP_1) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_SUNKERN)
-				if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_0, SPECIES_SUNKERN)
+				callnative(CheckSpeciesClause)
+				if (flag(FLAG_TEMP_1) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_CHERUBI)
-				if (var(VAR_RESULT) == TRUE) {
+				setvar(VAR_TEMP_0, SPECIES_CHERUBI)
+				callnative(CheckSpeciesClause)
+				if (flag(FLAG_TEMP_1) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
 				if (var(VAR_TEMP_3) == 4) {
@@ -86,26 +90,30 @@ script Zone1A_EventScript_GiveFWG {
 					random(4)
 					switch (var(VAR_RESULT)) {
 						case 0:
-							checkspeciesclause(SPECIES_PANSAGE)
-							if (var(VAR_RESULT) == TRUE) {
+							setvar(VAR_TEMP_0, SPECIES_PANSAGE)
+							callnative(CheckSpeciesClause)
+							if (flag(FLAG_TEMP_1) == TRUE) {
 								continue
 							}
 							setvar(VAR_TEMP_1, SPECIES_PANSAGE)
 						case 1:
-							checkspeciesclause(SPECIES_GOSSIFLEUR)
-							if (var(VAR_RESULT) == TRUE) {
+							setvar(VAR_TEMP_0, SPECIES_GOSSIFLEUR)
+							callnative(CheckSpeciesClause)
+							if (flag(FLAG_TEMP_1) == TRUE) {
 								continue
 							}
 							setvar(VAR_TEMP_1, SPECIES_GOSSIFLEUR)
 						case 2:
-							checkspeciesclause(SPECIES_SUNKERN)
-							if (var(VAR_RESULT) == TRUE) {
+							setvar(VAR_TEMP_0, SPECIES_SUNKERN)
+							callnative(CheckSpeciesClause)
+							if (flag(FLAG_TEMP_1) == TRUE) {
 								continue
 							}
 							setvar(VAR_TEMP_1, SPECIES_SUNKERN)
 						case 3:
-							checkspeciesclause(SPECIES_CHERUBI)
-							if (var(VAR_RESULT) == TRUE) {
+							setvar(VAR_TEMP_0, SPECIES_CHERUBI)
+							callnative(CheckSpeciesClause)
+							if (flag(FLAG_TEMP_1) == TRUE) {
 								continue
 							}
 							setvar(VAR_TEMP_1, SPECIES_CHERUBI)
@@ -119,19 +127,19 @@ script Zone1A_EventScript_GiveFWG {
 					end
 				}
 				setvar(VAR_TEMP_3, 0)
-				checkspeciesclause(SPECIES_PANSEAR)
+				//checkspeciesclause(SPECIES_PANSEAR)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_VULPIX)
+				//checkspeciesclause(SPECIES_VULPIX)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_SLUGMA)
+				//checkspeciesclause(SPECIES_SLUGMA)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_LITLEO)
+				//checkspeciesclause(SPECIES_LITLEO)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
@@ -145,25 +153,25 @@ script Zone1A_EventScript_GiveFWG {
 					random(4)
 					switch (var(VAR_RESULT)) {
 						case 0:
-							checkspeciesclause(SPECIES_PANSEAR)
+							//checkspeciesclause(SPECIES_PANSEAR)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
 							setvar(VAR_TEMP_1, SPECIES_PANSEAR)
 						case 1:
-							checkspeciesclause(SPECIES_VULPIX)
+							//checkspeciesclause(SPECIES_VULPIX)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
 							setvar(VAR_TEMP_1, SPECIES_VULPIX)
 						case 2:
-							checkspeciesclause(SPECIES_SLUGMA)
+							//checkspeciesclause(SPECIES_SLUGMA)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
 							setvar(VAR_TEMP_1, SPECIES_SLUGMA)
 						case 3:
-							checkspeciesclause(SPECIES_LITLEO)
+							//checkspeciesclause(SPECIES_LITLEO)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
@@ -178,19 +186,19 @@ script Zone1A_EventScript_GiveFWG {
 					end
 				}
 				setvar(VAR_TEMP_3, 0)
-				checkspeciesclause(SPECIES_PANPOUR)
+				//checkspeciesclause(SPECIES_PANPOUR)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_BARBOACH)
+				//checkspeciesclause(SPECIES_BARBOACH)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_GOLDEEN)
+				//checkspeciesclause(SPECIES_GOLDEEN)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
-				checkspeciesclause(SPECIES_FINNEON)
+				//checkspeciesclause(SPECIES_FINNEON)
 				if (var(VAR_RESULT) == TRUE) {
 					addvar(VAR_TEMP_3, 1)
 				}
@@ -204,25 +212,25 @@ script Zone1A_EventScript_GiveFWG {
 					random(4)
 					switch (var(VAR_RESULT)) {
 						case 0:
-							checkspeciesclause(SPECIES_PANPOUR)
+							//checkspeciesclause(SPECIES_PANPOUR)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
 							setvar(VAR_TEMP_1, SPECIES_PANPOUR)
 						case 1:
-							checkspeciesclause(SPECIES_BARBOACH)
+							//checkspeciesclause(SPECIES_BARBOACH)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
 							setvar(VAR_TEMP_1, SPECIES_BARBOACH)
 						case 2:
-							checkspeciesclause(SPECIES_GOLDEEN)
+							//checkspeciesclause(SPECIES_GOLDEEN)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}
 							setvar(VAR_TEMP_1, SPECIES_GOLDEEN)
 						case 3:
-							checkspeciesclause(SPECIES_FINNEON)
+							//checkspeciesclause(SPECIES_FINNEON)
 							if (var(VAR_RESULT) == TRUE) {
 								continue
 							}

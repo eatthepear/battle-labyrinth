@@ -564,7 +564,6 @@ gSpecials::
 	def_special EnterCode
 	def_special GetCodeFeedback
 	def_special SetHiddenNature
-	def_special CheckSpeciesClause
 	def_special ChooseItemFromBag
 	def_special SendChosenMonToPC
 	def_special HeadbuttWildEncounter

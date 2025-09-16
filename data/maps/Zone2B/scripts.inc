@@ -298,56 +298,38 @@ Zone2B_EventScript_BuyBug_23:
 Zone2B_EventScript_BuyBug_25:
 # 106 "data/maps/Zone2B/scripts.pory"
 	setvar VAR_TEMP_3, 0
-# 107 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_WURMPLE
 # 108 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_47
 Zone2B_EventScript_BuyBug_46:
-# 111 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_CATERPIE
 # 112 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_60
 Zone2B_EventScript_BuyBug_59:
-# 115 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_WEEDLE
 # 116 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_66
 Zone2B_EventScript_BuyBug_65:
-# 119 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_SCATTERBUG
 # 120 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_69
 Zone2B_EventScript_BuyBug_68:
-# 123 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_SPINARAK
 # 124 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_72
 Zone2B_EventScript_BuyBug_71:
-# 127 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_LEDYBA
 # 128 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_75
 Zone2B_EventScript_BuyBug_74:
-# 131 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_KRICKETOT
 # 132 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_78
 Zone2B_EventScript_BuyBug_77:
-# 135 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_TAROUNTULA
 # 136 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_81
 Zone2B_EventScript_BuyBug_80:
-# 139 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_SEWADDLE
 # 140 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_84
@@ -575,8 +557,6 @@ Zone2B_EventScript_BuyBug_93:
 	goto Zone2B_EventScript_BuyBug_92
 
 Zone2B_EventScript_BuyBug_96:
-# 162 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_WURMPLE
 # 163 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_106
@@ -585,8 +565,6 @@ Zone2B_EventScript_BuyBug_96:
 	goto Zone2B_EventScript_BuyBug_92
 
 Zone2B_EventScript_BuyBug_97:
-# 168 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_CATERPIE
 # 169 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_109
@@ -595,8 +573,6 @@ Zone2B_EventScript_BuyBug_97:
 	goto Zone2B_EventScript_BuyBug_92
 
 Zone2B_EventScript_BuyBug_98:
-# 174 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_WEEDLE
 # 175 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_112
@@ -605,8 +581,6 @@ Zone2B_EventScript_BuyBug_98:
 	goto Zone2B_EventScript_BuyBug_92
 
 Zone2B_EventScript_BuyBug_99:
-# 180 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_SCATTERBUG
 # 181 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_115
@@ -615,8 +589,6 @@ Zone2B_EventScript_BuyBug_99:
 	goto Zone2B_EventScript_BuyBug_92
 
 Zone2B_EventScript_BuyBug_100:
-# 186 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_SPINARAK
 # 187 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_118
@@ -625,8 +597,6 @@ Zone2B_EventScript_BuyBug_100:
 	goto Zone2B_EventScript_BuyBug_92
 
 Zone2B_EventScript_BuyBug_101:
-# 192 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_LEDYBA
 # 193 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_121
@@ -635,8 +605,6 @@ Zone2B_EventScript_BuyBug_101:
 	goto Zone2B_EventScript_BuyBug_92
 
 Zone2B_EventScript_BuyBug_102:
-# 198 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_KRICKETOT
 # 199 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_124
@@ -645,8 +613,6 @@ Zone2B_EventScript_BuyBug_102:
 	goto Zone2B_EventScript_BuyBug_92
 
 Zone2B_EventScript_BuyBug_103:
-# 204 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_TAROUNTULA
 # 205 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_127
@@ -655,8 +621,6 @@ Zone2B_EventScript_BuyBug_103:
 	goto Zone2B_EventScript_BuyBug_92
 
 Zone2B_EventScript_BuyBug_104:
-# 210 "data/maps/Zone2B/scripts.pory"
-	checkspeciesclause SPECIES_SEWADDLE
 # 211 "data/maps/Zone2B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone2B_EventScript_BuyBug_130

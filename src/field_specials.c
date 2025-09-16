@@ -4357,11 +4357,6 @@ void UseBlankMessageToCancelPokemonPic(void)
     ScriptMenu_HidePokemonPic();
 }
 
-bool8 CheckSpeciesClause(void)
-{
-    return IsCaptureBlockedBySpeciesClause(VarGet(VAR_TEMP_0));
-}
-
 void ChooseItemFromBag(void)
 {
     switch (VarGet(VAR_TEMP_1))

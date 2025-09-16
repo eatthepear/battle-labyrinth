@@ -35,7 +35,6 @@ EWRAM_DATA static u16 sTestVars[TEST_VARS_SIZE] = {0};
 #endif // TESTING
 
 extern u16 *const gSpecialVars[];
-extern u8 NuzlockeLUT[];
 
 const u16 gBadgeFlags[NUM_BADGES] =
 {
@@ -281,36 +280,4 @@ bool8 FlagGet(u16 id)
         return FALSE;
 
     return TRUE;
-}
-
-u8 NuzlockeFlagSet(u16 mapsec)
-{
-    u8 id = NuzlockeLUT[mapsec];
-    u8 * ptr = &gSaveBlock1Ptr->NuzlockeEncounterFlags[id / 8];
-    if (ptr)
-        * ptr |= 1 << (id & 7);
-    return 0;
-}
-
-u8 NuzlockeFlagClear(u16 mapsec)
-{
-    u8 id = NuzlockeLUT[mapsec];
-    u8 * ptr = &gSaveBlock1Ptr->NuzlockeEncounterFlags[id / 8];
-    if (ptr)
-        * ptr &= ~(1 << (id & 7));
-    return 0;
-}
-
-u8 NuzlockeFlagGet(u16 mapsec)
-{
-    u8 id = NuzlockeLUT[mapsec];
-    u8 * ptr = &gSaveBlock1Ptr->NuzlockeEncounterFlags[id / 8];
-    
-    if (!ptr)
-        return 0;
-    
-    if (!(((*ptr) >> (id & 7)) & 1))
-        return 0;
-    
-    return 1;
 }

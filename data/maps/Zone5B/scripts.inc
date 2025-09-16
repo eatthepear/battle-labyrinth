@@ -360,38 +360,26 @@ Zone5B_EventScript_BuyPikaClone_17:
 Zone5B_EventScript_BuyPikaClone_19:
 # 123 "data/maps/Zone5B/scripts.pory"
 	setvar VAR_TEMP_3, 0
-# 124 "data/maps/Zone5B/scripts.pory"
-	checkspeciesclause SPECIES_PACHIRISU
 # 125 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_38
 Zone5B_EventScript_BuyPikaClone_37:
-# 128 "data/maps/Zone5B/scripts.pory"
-	checkspeciesclause SPECIES_DEDENNE
 # 129 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_51
 Zone5B_EventScript_BuyPikaClone_50:
-# 132 "data/maps/Zone5B/scripts.pory"
-	checkspeciesclause SPECIES_MORPEKO
 # 133 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_57
 Zone5B_EventScript_BuyPikaClone_56:
-# 136 "data/maps/Zone5B/scripts.pory"
-	checkspeciesclause SPECIES_EMOLGA
 # 137 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_60
 Zone5B_EventScript_BuyPikaClone_59:
-# 140 "data/maps/Zone5B/scripts.pory"
-	checkspeciesclause SPECIES_PLUSLE
 # 141 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_63
 Zone5B_EventScript_BuyPikaClone_62:
-# 144 "data/maps/Zone5B/scripts.pory"
-	checkspeciesclause SPECIES_MINUN
 # 145 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_66
@@ -589,8 +577,6 @@ Zone5B_EventScript_BuyPikaClone_75:
 	goto Zone5B_EventScript_BuyPikaClone_74
 
 Zone5B_EventScript_BuyPikaClone_78:
-# 167 "data/maps/Zone5B/scripts.pory"
-	checkspeciesclause SPECIES_PACHIRISU
 # 168 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_85
@@ -599,8 +585,6 @@ Zone5B_EventScript_BuyPikaClone_78:
 	goto Zone5B_EventScript_BuyPikaClone_74
 
 Zone5B_EventScript_BuyPikaClone_79:
-# 174 "data/maps/Zone5B/scripts.pory"
-	checkspeciesclause SPECIES_DEDENNE
 # 175 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_88
@@ -609,8 +593,6 @@ Zone5B_EventScript_BuyPikaClone_79:
 	goto Zone5B_EventScript_BuyPikaClone_74
 
 Zone5B_EventScript_BuyPikaClone_80:
-# 181 "data/maps/Zone5B/scripts.pory"
-	checkspeciesclause SPECIES_MORPEKO
 # 182 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_91
@@ -619,8 +601,6 @@ Zone5B_EventScript_BuyPikaClone_80:
 	goto Zone5B_EventScript_BuyPikaClone_74
 
 Zone5B_EventScript_BuyPikaClone_81:
-# 188 "data/maps/Zone5B/scripts.pory"
-	checkspeciesclause SPECIES_EMOLGA
 # 189 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_94
@@ -629,8 +609,6 @@ Zone5B_EventScript_BuyPikaClone_81:
 	goto Zone5B_EventScript_BuyPikaClone_74
 
 Zone5B_EventScript_BuyPikaClone_82:
-# 194 "data/maps/Zone5B/scripts.pory"
-	checkspeciesclause SPECIES_PLUSLE
 # 195 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_97
@@ -639,8 +617,6 @@ Zone5B_EventScript_BuyPikaClone_82:
 	goto Zone5B_EventScript_BuyPikaClone_74
 
 Zone5B_EventScript_BuyPikaClone_83:
-# 200 "data/maps/Zone5B/scripts.pory"
-	checkspeciesclause SPECIES_MINUN
 # 201 "data/maps/Zone5B/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Zone5B_EventScript_BuyPikaClone_100

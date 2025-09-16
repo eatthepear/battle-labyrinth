@@ -37,6 +37,7 @@
 #include "main.h"
 #include "malloc.h"
 #include "m4a.h"
+#include "nuzlocke.h"
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
@@ -5649,13 +5650,10 @@ static void HandleEndTurn_FinishBattle(void)
                                   | BATTLE_TYPE_TOWER_LINK_MULTI
                                   | BATTLE_TYPE_RECORDED_LINK)))
         {
-            if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
+            if (FlagGet(FLAG_SETTINGS_NUZLOCKE) && ShouldSkipEncounterNuzlocke == FALSE)
             {
-                if (ShouldSkipEncounterNuzlocke == 0)
-                {
-                    if (NuzlockeFlagGet(GetCurrentRegionMapSectionId()) == 0)
-                        NuzlockeFlagSet(GetCurrentRegionMapSectionId());
-                }
+                if (NuzlockeFlagGet(GetCurrentRegionMapSectionId()) == 0)
+                    NuzlockeFlagSet(GetCurrentRegionMapSectionId());
             }
         }
 
@@ -5714,7 +5712,6 @@ static void FreeResetData_ReturnToOvOrDoEvolutions(void)
 {
     if (!gPaletteFade.active)
     {
-        // gDexnavBattle = FALSE; TODO
         gIsFishingEncounter = FALSE;
         gIsSurfingEncounter = FALSE;
         if (gDexNavSpecies && (gBattleOutcome == B_OUTCOME_WON || gBattleOutcome == B_OUTCOME_CAUGHT))
