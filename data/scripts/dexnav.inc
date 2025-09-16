@@ -28,6 +28,10 @@ EventScript_TooDark::
 	msgbox sText_TooDark, MSGBOX_SIGN
 	end
 
+EventScript_SnowInterference::
+    msgbox sText_SnowInterference, MSGBOX_SIGN
+    end
+
 sText_NotFoundNearby:
 	.string "It couldn't be found nearby.\n"
 	.string "Try looking in a different area!$"
@@ -45,11 +49,6 @@ sText_LostSignal:
 
 sText_TooDark:
 	.string "It's too dark to search\nfor a Pokémon!$"
-
-
-EventScript_SnowInterference::
-    msgbox sText_SnowInterference, MSGBOX_SIGN
-    end
 
 sText_SnowInterference:
     .string "The snow is interfering with the\nDexNav's search function!$"

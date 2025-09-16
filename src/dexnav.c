@@ -14,6 +14,7 @@
 #include "field_message_box.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
+#include "field_weather.h"
 #include "fieldmap.h"
 #include "gpu_regs.h"
 #include "graphics.h"
@@ -58,6 +59,7 @@
 #include "constants/abilities.h"
 #include "constants/rgb.h"
 #include "constants/region_map_sections.h"
+#include "constants/weather.h"
 #include "gba/m4a_internal.h"
 
 #if DEXNAV_ENABLED
@@ -479,6 +481,7 @@ static void AddSearchWindow(u8 width)
 
 static void AddSearchWindowText(u16 species, u8 proximity, u8 searchLevel, bool8 hidden)
 {
+#if FREE_OTHER_PBL == FALSE
     u8 windowId = sDexNavSearchDataPtr->windowId;
 
     //species name - always present
@@ -490,15 +493,19 @@ static void AddSearchWindowText(u16 species, u8 proximity, u8 searchLevel, bool8
     }
     else
     {
+#endif //FREE_OTHER_PBL
         StringCopy(gStringVar1, GetSpeciesName(species));
         AddTextPrinterParameterized3(sDexNavSearchDataPtr->windowId, 0, WINDOW_COL_0, 0, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar1);
+#if FREE_OTHER_PBL == FALSE
     }
+#endif //FREE_OTHER_PBL
 
     //level - always present
     ConvertIntToDecimalStringN(gStringVar1, sDexNavSearchDataPtr->monLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
     StringExpandPlaceholders(gStringVar4, sText_MonLevel);
     AddTextPrinterParameterized3(sDexNavSearchDataPtr->windowId, 0, WINDOW_COL_1, 0, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
 
+#if FREE_OTHER_PBL == FALSE
     if (proximity <= SNEAKING_PROXIMITY)
     {
         PlaySE(SE_POKENAV_ON);
@@ -533,6 +540,7 @@ static void AddSearchWindowText(u16 species, u8 proximity, u8 searchLevel, bool8
     else
         StringExpandPlaceholders(gStringVar4, sText_DexNavChain);
     AddTextPrinterParameterized3(windowId, 0, SEARCH_ARROW_X - 16, 12, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
+#endif //FREE_OTHER_PBL
 
     CopyWindowToVram(sDexNavSearchDataPtr->windowId, 2);
 }
@@ -900,6 +908,12 @@ static void Task_InitDexNavSearch(u8 taskId)
         return;
     }
 
+    if (GetCurrentWeather() == WEATHER_SNOW)
+    {
+        DexNavSearchBail(taskId, EventScript_SnowInterference);
+        return;
+    }
+
     if (sDexNavSearchDataPtr->monLevel == MON_LEVEL_NONEXISTENT || !TryStartHiddenMonFieldEffect(sDexNavSearchDataPtr->environment, 12, 12, FALSE))
     {
         DexNavSearchBail(taskId, EventScript_NotFoundNearby);
@@ -1010,7 +1024,7 @@ static void EndDexNavSearchSetupScript(const u8 *script, u8 taskId)
     ScriptContext_SetupScript(script);
 }
 
-static u8 GetMovementProximityBySearchLevel(void)
+static UNUSED u8 GetMovementProximityBySearchLevel(void)
 {
     if (sDexNavSearchDataPtr->searchLevel < 20)
         return 2;
@@ -1077,6 +1091,7 @@ static void Task_DexNavSearch(u8 taskId)
         return;
     }
 
+#if FREE_OTHER_PBL == FALSE
     if (sDexNavSearchDataPtr->proximity <= CREEPING_PROXIMITY && !gPlayerAvatar.creeping && task->tFrameCount > 60)
     { //should be creeping but player walks normally
         if (sDexNavSearchDataPtr->hiddenSearch && !task->tRevealed)
@@ -1092,6 +1107,7 @@ static void Task_DexNavSearch(u8 taskId)
         EndDexNavSearchSetupScript(EventScript_MovedTooFast, taskId);
         return;
     }
+#endif //FREE_OTHER_PBL
 
     if (ArePlayerFieldControlsLocked() == TRUE)
     { // check if script just executed
@@ -1135,6 +1151,7 @@ static void Task_DexNavSearch(u8 taskId)
         return;
     }
 
+#if FREE_OTHER_PBL == FALSE
     //Caves and water the pokemon moves around
     if ((sDexNavSearchDataPtr->environment == ENCOUNTER_TYPE_WATER || GetCurrentMapType() == MAP_TYPE_UNDERGROUND)
         && sDexNavSearchDataPtr->proximity < GetMovementProximityBySearchLevel() && sDexNavSearchDataPtr->movementCount < 2
@@ -1150,6 +1167,7 @@ static void Task_DexNavSearch(u8 taskId)
 
         sDexNavSearchDataPtr->movementCount++;
     }
+#endif //FREE_OTHER_PBL
 
     DexNavProximityUpdate();
     if (task->tProximity != sDexNavSearchDataPtr->proximity)
@@ -1186,6 +1204,7 @@ static void DexNavUpdateSearchWindow(u8 proximity, u8 searchLevel)
     if (sDexNavSearchDataPtr->starSpriteIds[2] != MAX_SPRITES)
         gSprites[sDexNavSearchDataPtr->starSpriteIds[2]].invisible = TRUE;
 
+#if FREE_OTHER_PBL == FALSE
     if (proximity <= SNEAKING_PROXIMITY)
     {
         if (searchLevel > 2 && sDexNavSearchDataPtr->heldItem)
@@ -1207,6 +1226,7 @@ static void DexNavUpdateSearchWindow(u8 proximity, u8 searchLevel)
                 gSprites[sDexNavSearchDataPtr->starSpriteIds[2]].invisible = FALSE;
         }
     }
+#endif //FREE_OTHER_PBL
 }
 
 //////////////////////////////
@@ -1260,8 +1280,10 @@ static u8 DexNavTryGenerateMonLevel(u16 species, enum EncounterType environment)
     if (levelBase == MON_LEVEL_NONEXISTENT)
         return MON_LEVEL_NONEXISTENT;   //species not found in the area
 
+#if FREE_OTHER_PBL == FALSE
     if (Random() % 100 < 4)
         levelBonus += 10; //4% chance of having a +10 level
+#endif //FREE_OTHER_PBL
 
     if (levelBase + levelBonus > MAX_LEVEL)
         return MAX_LEVEL;
@@ -1326,6 +1348,7 @@ static void DexNavGenerateMoveset(u16 species, u8 searchLevel, u8 encounterLevel
 
 static u16 DexNavGenerateHeldItem(u16 species, u8 searchLevel)
 {
+#if FREE_OTHER_PBL == FALSE
     u16 randVal = Random() % 100;
     u8 searchLevelInfluence = searchLevel >> 1;
     u16 item1 = gSpeciesInfo[species].itemCommon;
@@ -1348,6 +1371,7 @@ static u16 DexNavGenerateHeldItem(u16 species, u8 searchLevel)
         return (randVal > 5 + searchLevelInfluence) ? item1 : item2;
     else
         return ITEM_NONE;
+#endif //FREE_OTHER_PBL
 
     return ITEM_NONE;
 }
@@ -2002,7 +2026,7 @@ static void TryDrawIconInSlot(u16 species, s16 x, s16 y)
 {
     if (species == SPECIES_NONE || species > NUM_SPECIES)
         CreateNoDataIcon(x, y);   //'X' in slot
-    else if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN))
+    else if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN) && !FlagGet(FLAG_SETTINGS_FULL_INFO))
         CreateMonIcon(SPECIES_NONE, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF); //question mark
     else
         CreateMonIcon(species, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF);
@@ -2089,23 +2113,23 @@ static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES] =
 {
     [TYPE_NORMAL] = TYPE_ICON_PAL_NUM_0,
     [TYPE_FIGHTING] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_FLYING] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_POISON] = TYPE_ICON_PAL_NUM_1,
+    [TYPE_FLYING] = TYPE_ICON_PAL_NUM_0,
+    [TYPE_POISON] = TYPE_ICON_PAL_NUM_0,
     [TYPE_GROUND] = TYPE_ICON_PAL_NUM_0,
     [TYPE_ROCK] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_BUG] = TYPE_ICON_PAL_NUM_2,
+    [TYPE_BUG] = TYPE_ICON_PAL_NUM_1,
     [TYPE_GHOST] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_STEEL] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_MYSTERY] = TYPE_ICON_PAL_NUM_2,
-    [TYPE_FIRE] = TYPE_ICON_PAL_NUM_0,
+    [TYPE_STEEL] = TYPE_ICON_PAL_NUM_1,
+    [TYPE_MYSTERY] = TYPE_ICON_PAL_NUM_1,
+    [TYPE_FIRE] = TYPE_ICON_PAL_NUM_1,
     [TYPE_WATER] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_GRASS] = TYPE_ICON_PAL_NUM_2,
-    [TYPE_ELECTRIC] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_PSYCHIC] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_ICE] = TYPE_ICON_PAL_NUM_1,
+    [TYPE_GRASS] = TYPE_ICON_PAL_NUM_1,
+    [TYPE_ELECTRIC] = TYPE_ICON_PAL_NUM_2,
+    [TYPE_PSYCHIC] = TYPE_ICON_PAL_NUM_2,
+    [TYPE_ICE] = TYPE_ICON_PAL_NUM_2,
     [TYPE_DRAGON] = TYPE_ICON_PAL_NUM_2,
-    [TYPE_DARK] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_FAIRY] = TYPE_ICON_PAL_NUM_1,
+    [TYPE_DARK] = TYPE_ICON_PAL_NUM_2,
+    [TYPE_FAIRY] = TYPE_ICON_PAL_NUM_2,
 };
 static void SetTypeIconPosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
 {
@@ -2154,6 +2178,7 @@ static void PrintCurrentSpeciesInfo(void)
         SetTypeIconPosAndPal(type2, 168 + 33, 69, 1);
     }
 
+#if FREE_OTHER_PBL == FALSE
     //search level
     if (species == SPECIES_NONE)
     {
@@ -2185,6 +2210,7 @@ static void PrintCurrentSpeciesInfo(void)
     //current chain
     ConvertIntToDecimalStringN(gStringVar1, gSaveBlock3Ptr->dexNavChain, STR_CONV_MODE_LEFT_ALIGN, 3);
     AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, CHAIN_BONUS_Y, sFontColor_Black, 0, gStringVar1);
+#endif //FREE_OTHER_PBL
 
     CopyWindowToVram(WINDOW_INFO, 3);
     PutWindowTilemap(WINDOW_INFO);
@@ -2350,7 +2376,7 @@ void Task_OpenDexNavFromStartMenu(u8 taskId)
     else if (!gPaletteFade.active)
     {
         CleanupOverworldWindowsAndTilemaps();
-        DexNavGuiInit(CB2_ReturnToFieldWithOpenMenu);
+        DexNavGuiInit(CB2_ReturnToFullScreenStartMenu);
         DestroyTask(taskId);
     }
 }
