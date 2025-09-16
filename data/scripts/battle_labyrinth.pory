@@ -6146,3 +6146,76 @@ script EventScript_EnableAutoRun {
 	msgbox(format("Auto Run {COLOR GREEN}Enabled{COLOR DARK_GRAY}."), MSGBOX_SIGN)
 }
 
+raw `
+
+gText_Colress_UpgradedWarp:
+	.string "Because of your progress,\n"
+	.string "you have unlocked a special warp in\l"
+	.string "Zone 0.$"
+
+gText_Lelouch_ExpTrainingFinished:
+	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: The training session has\n"
+	.string "finished.\p"
+	.string "Your Pokémon has grown stronger.$"
+
+gText_Lelouch_DidNotTrain:
+	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: If you do want to\n"
+	.string "train your Pokémon, I'll be here.$"
+
+gText_Lelouch_Exp:
+	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: With Experience Training,\n"
+	.string "you can train one Pokémon to any\l"
+	.string "level up to the level cap,\l"
+	.string "at the cost of one Red Shard.\p"
+	.string "Would you like to start an\n"
+	.string "Experience Training session?$"
+
+gText_Lelouch_PayRed:
+	.string "{PLAYER} handed over 1 Red Shard.$"
+
+gText_Lelouch_ChooseTraining:
+	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Choose which training\n"
+	.string "regiment you would like.$"
+
+gText_Lelouch_CostsBlueShards:
+	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Move Reminder services\n"
+	.string "cost one Blue Shard.\p"
+	.string "Would you like me to teach a\n"
+	.string "forgotten move to your Pokémon?$"
+
+gText_Lelouch_PayBlue:
+	.string "{PLAYER} handed over 1 Blue Shard.$"
+
+gText_Lelouch_CostsYellowShards:
+	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Move Tutor services cost\n"
+	.string "Yellow Shards. Which move would you\l"
+	.string "like to tutor?$"
+
+gText_Lelouch_PayYellow1:
+	.string "{PLAYER} handed over 1 Yellow Shard.$"
+
+gText_Lelouch_CostsGreenShards:
+	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: I can craft special items\n"
+	.string "as well as upgrade your items\l"
+	.string "in exchange for Green Shards.\l"
+	.string "What would you like?$"
+
+gText_Lelouch_PayGreen:
+	.string "{PLAYER} handed over 1 Green Shard.$"
+
+gText_HealingSign:
+	.string "Joy's Healing Shop\n"
+	.string "Health care costs money!$"
+
+gText_ExitSign:
+	.string "This is the exit!$"
+
+gText_NotEnoughMons:
+	.string "You need at least two Pokémon to\n"
+	.string "initiate a Double Battle.$"
+
+gText_PleasePick3Mons:
+	.string "Please select three Pokémon to\n"
+	.string "participate in the tag battle.$"
+
+`
