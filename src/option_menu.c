@@ -1,6 +1,7 @@
 #include "global.h"
 #include "option_menu.h"
 #include "bg.h"
+#include "difficulty.h"
 #include "gpu_regs.h"
 #include "international_string_util.h"
 #include "main.h"
@@ -354,7 +355,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsTextSpeed = gTasks[taskId].tTextSpeed;
     gSaveBlock2Ptr->optionsBattleSceneOff = gTasks[taskId].tBattleSceneOff;
     gSaveBlock2Ptr->optionsBattleStyle = gTasks[taskId].tBattleStyle;
-    if (FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_CLUMSY))
+    if (GetCurrentDifficultyLevel() >= DIFFICULTY_HARD)
         gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET;
     gSaveBlock2Ptr->optionsSound = gTasks[taskId].tSound;
     gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;

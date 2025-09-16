@@ -4316,7 +4316,7 @@ static void HandleTurnActionSelectionState(void)
                     }
                     break;
                 case B_ACTION_USE_ITEM:
-                    if (FlagGet(B_FLAG_NO_BAG_USE) || ((FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_ANTIDOCTOR)) && (gBattleTypeFlags & BATTLE_TYPE_TRAINER)))
+                    if (FlagGet(B_FLAG_NO_BAG_USE) || ((GetCurrentDifficultyLevel() >= DIFFICULTY_HARD) && (gBattleTypeFlags & BATTLE_TYPE_TRAINER)))
                     {
                         RecordedBattle_ClearBattlerAction(battler, 1);
                         gSelectionBattleScripts[battler] = BattleScript_ActionSelectionItemsCantBeUsed;
@@ -6197,8 +6197,6 @@ void ScriptSetTotemBoost(struct ScriptContext *ctx)
 bool32 IsWildMonSmart(void)
 {
 #if B_SMART_WILD_AI_FLAG != 0
-    if (FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_CHALLENGE))
-        return TRUE;
     return (FlagGet(B_SMART_WILD_AI_FLAG));
 #else
     return FALSE;

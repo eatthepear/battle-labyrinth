@@ -2,6 +2,7 @@
 #include "battle.h"
 #include "event_data.h"
 #include "caps.h"
+#include "difficulty.h"
 #include "pokemon.h"
 
 static const u32 sLevelCapFlagMap[][2] =
@@ -107,6 +108,7 @@ u32 GetSoftLevelCapExpValue(u32 level, u32 expValue)
 
 u32 GetCurrentEVCap(void)
 {
+#if FREE_OTHER_PBL == FALSE
     static const u16 sEvCapFlagMap[][2] = {
         // Define EV caps for each milestone
         {FLAG_BADGE01_GET, MAX_TOTAL_EVS *  1 / 17},
@@ -136,6 +138,9 @@ u32 GetCurrentEVCap(void)
     {
         return 0;
     }
+#endif //FREE_OTHER_PBL
+    if (GetCurrentDifficultyLevel() >= DIFFICULTY_HARD)
+        return 0;
 
     return MAX_TOTAL_EVS;
 }

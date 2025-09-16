@@ -1519,7 +1519,7 @@ static void Cmd_ppreduce(void)
     if (gBattleMons[gBattlerAttacker].volatiles.multipleTurns)
         gHitMarker |= HITMARKER_NO_PPDEDUCT;
 
-    if ((FlagGet(FLAG_SETTINGS_BRUTAL) == TRUE) || (FlagGet(FLAG_SETTINGS_CHALLENGE) == TRUE))
+    if ((GetCurrentDifficultyLevel() >= DIFFICULTY_HARD))
     {
         if (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER)
         {
@@ -3181,7 +3181,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, bool32 primary, bool32 certai
         {
             u16 payday = gPaydayMoney;
             u16 moveTarget = GetBattlerMoveTargetType(gBattlerAttacker, gCurrentMove);
-            if (!((FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_RED_THUMB)) && !(gBattleTypeFlags & BATTLE_TYPE_TRAINER)))
+            if (!((GetCurrentDifficultyLevel() >= DIFFICULTY_NORMAL) && !(gBattleTypeFlags & BATTLE_TYPE_TRAINER)))
                 gPaydayMoney += (gBattleMons[gBattlerAttacker].level * 5);
             if (payday > gPaydayMoney)
                 gPaydayMoney = 0xFFFF;
@@ -4525,7 +4525,7 @@ static bool32 BattleTypeAllowsExp(void)
 {
     if (RECORDED_WILD_BATTLE)
         return TRUE;
-    else if (!(gBattleTypeFlags & (BATTLE_TYPE_TRAINER)) && (FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_ANTIGRIND)))
+    else if (!(gBattleTypeFlags & (BATTLE_TYPE_TRAINER)) && (GetCurrentDifficultyLevel() >= DIFFICULTY_NORMAL) && FlagGet(FLAG_IN_NEW_ZONE))
         return FALSE;
     else if (gBattleTypeFlags &
               ( BATTLE_TYPE_LINK
@@ -4682,10 +4682,7 @@ static void Cmd_getexp(void)
                 gBattleScripting.getexpState = 5;
                 gBattleStruct->battlerExpReward = 0;
                 if (B_MAX_LEVEL_EV_GAINS >= GEN_5)
-                    if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_EFFORTLESS) == FALSE))
-                    {
-                        MonGainEVs(&gPlayerParty[*expMonId], gBattleMons[gBattlerFainted].species);
-                    }
+                    MonGainEVs(&gPlayerParty[*expMonId], gBattleMons[gBattlerFainted].species);
             }
             else
             {
@@ -4772,8 +4769,7 @@ static void Cmd_getexp(void)
                         gBattleStruct->teamGotExpMsgPrinted = TRUE;
                     }
 
-                    if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_EFFORTLESS) == FALSE))
-                        MonGainEVs(&gPlayerParty[*expMonId], gBattleMons[gBattlerFainted].species);
+                    MonGainEVs(&gPlayerParty[*expMonId], gBattleMons[gBattlerFainted].species);
                 }
                 gBattleScripting.getexpState++;
             }
@@ -8329,7 +8325,7 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     u8 trainerMoney = 0;
     u8 numMons = 0;
     u32 scale = 4;
-    if ((FlagGet(FLAG_SETTINGS_BRUTAL)) || FlagGet(FLAG_SETTINGS_POOR))
+    if (GetCurrentDifficultyLevel() >= DIFFICULTY_BRUTAL)
         scale = 2;
 
     if (trainerId == TRAINER_SECRET_BASE)
@@ -13438,7 +13434,7 @@ static void Cmd_pickup(void)
     u16 species, heldItem, ability;
     u8 lvlDivBy10;
 
-    if (!InBattlePike() && !((FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_RED_THUMB)) && !(gBattleTypeFlags & BATTLE_TYPE_TRAINER))) // No items in Battle Pike.
+    if (!InBattlePike() && !((GetCurrentDifficultyLevel() >= DIFFICULTY_NORMAL) && !(gBattleTypeFlags & BATTLE_TYPE_TRAINER))) // No items in Battle Pike.
     {
         bool32 isInPyramid = CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE;
         for (i = 0; i < PARTY_SIZE; i++)

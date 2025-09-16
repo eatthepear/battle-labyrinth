@@ -2275,7 +2275,7 @@ static void ChangeSummaryState(s16 *data, u8 taskId)
         tSkillsState = SKILL_STATE_IVS;
         break;
     case SKILL_STATE_IVS:
-        if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_EFFORTLESS) == FALSE))
+        if (GetCurrentDifficultyLevel() < DIFFICULTY_HARD)
             tSkillsState = SKILL_STATE_EVS;
         else
             tSkillsState = SKILL_STATE_STATS;
@@ -2302,7 +2302,7 @@ static void DrawNextSkillsButtonPrompt(u8 mode)
             break;
         case SKILL_STATE_IVS:
             ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_IVS);
-            if ((FlagGet(FLAG_SETTINGS_BRUTAL) == FALSE) && (FlagGet(FLAG_SETTINGS_EFFORTLESS) == FALSE))
+            if (GetCurrentDifficultyLevel() < DIFFICULTY_HARD)
                 PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_EVS);
             else
                 PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_STATS);
