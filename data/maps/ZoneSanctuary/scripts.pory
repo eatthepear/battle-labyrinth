@@ -734,7 +734,7 @@ script Sanctuary_EventScript_GameIntro {
 	}
 	if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Because the {COLOR RED}Randomizer{COLOR DARK_GRAY} is on, you get a random starter."))
-		callnative(GiveRandomStarter)
+		// callnative(GiveRandomStarter)
 		playfanfare(MUS_OBTAIN_ITEM)
 		bufferleadmonspeciesname(0)
 		message(format("{PLAYER} received the {STR_VAR_1}!"))

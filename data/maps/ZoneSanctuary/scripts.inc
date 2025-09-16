@@ -1652,8 +1652,6 @@ Sanctuary_EventScript_GameIntro_12:
 Sanctuary_EventScript_GameIntro_15:
 # 736 "data/maps/ZoneSanctuary/scripts.pory"
 	msgbox Sanctuary_EventScript_GameIntro_Text_16
-# 737 "data/maps/ZoneSanctuary/scripts.pory"
-	callnative GiveRandomStarter
 # 738 "data/maps/ZoneSanctuary/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 739 "data/maps/ZoneSanctuary/scripts.pory"
