@@ -58,11 +58,13 @@
 #define VAR_STARTER_MON                      0x4028 // 0=Grass, 1=Fire, 2=Water
 #define VAR_NUM_TRAINERS_REMAINING           0x4029
 #define VAR_DEXNAV_SPECIES                   0x402A // Registered dexnav species
+#define VAR_DIFFICULTY                       0x402B
 
 // Tracker Vars (Don't manually set)
 #define VAR_REPEL_STEP_COUNT                 0x4040
 #define VAR_MON_TO_PC                        0x4041
 #define VAR_NUZLOCKE_DEATHS                  0x4042
+#define VAR_NEVER_SET                        0x4043
 
 // Zone State vars
 #define VAR_ZONE_0_STATE                     0x4050

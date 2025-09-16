@@ -189,6 +189,7 @@
 #define FLAG_USED_TERA                              0xE6
 #define FLAG_PBL_PENDING_DAYCARE_EGG                0xE7
 #define FLAG_AUTORUN_TOGGLE                         0xE8
+#define FLAG_NEVER_SET                              0xE9
 
 // Custom Flags Scripts
 #define FLAG_PORTENTIA_INTRO                              0x100
