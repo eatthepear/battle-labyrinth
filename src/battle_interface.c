@@ -2429,13 +2429,13 @@ static void SafariTextIntoHealthboxObject(void *dest, u8 *windowTileData, u32 wi
  * FG = ForeGround
  * SH = SHadow
  */
-#define ABILITY_POP_UP_BATTLER_BG_TXTCLR 2
-#define ABILITY_POP_UP_BATTLER_FG_TXTCLR 7
-#define ABILITY_POP_UP_BATTLER_SH_TXTCLR 1
+#define ABILITY_POP_UP_BATTLER_BG_TXTCLR 6
+#define ABILITY_POP_UP_BATTLER_FG_TXTCLR 1
+#define ABILITY_POP_UP_BATTLER_SH_TXTCLR 2
 
-#define ABILITY_POP_UP_ABILITY_BG_TXTCLR 7
-#define ABILITY_POP_UP_ABILITY_FG_TXTCLR 9
-#define ABILITY_POP_UP_ABILITY_SH_TXTCLR 1
+#define ABILITY_POP_UP_ABILITY_BG_TXTCLR 5
+#define ABILITY_POP_UP_ABILITY_FG_TXTCLR 1
+#define ABILITY_POP_UP_ABILITY_SH_TXTCLR 2
 
 #define sState          data[0]
 #define sAutoDestroy    data[1]
@@ -2598,7 +2598,7 @@ static void PrintBattlerOnAbilityPopUp(u8 battler, u8 spriteId1, u8 spriteId2)
     PrintOnAbilityPopUp(gStringVar1,
                         (void *)(OBJ_VRAM0) + TILE_OFFSET_4BPP(gSprites[spriteId1].oam.tileNum),
                         (void *)(OBJ_VRAM0) + TILE_OFFSET_4BPP(gSprites[spriteId2].oam.tileNum),
-                        5, 12,
+                        0, 0,
                         ABILITY_POP_UP_BATTLER_BG_TXTCLR, ABILITY_POP_UP_BATTLER_FG_TXTCLR, ABILITY_POP_UP_BATTLER_SH_TXTCLR,
                         TRUE, gSprites[spriteId1].sBattlerId);
 }
@@ -2608,13 +2608,13 @@ static void PrintAbilityOnAbilityPopUp(u32 ability, u8 spriteId1, u8 spriteId2)
     PrintOnAbilityPopUp(COMPOUND_STRING("                    "),
                         (void *)(OBJ_VRAM0) + TILE_OFFSET_4BPP(gSprites[spriteId1].oam.tileNum) + TILE_OFFSET_4BPP(8),
                         (void *)(OBJ_VRAM0) + TILE_OFFSET_4BPP(gSprites[spriteId2].oam.tileNum) + TILE_OFFSET_4BPP(8),
-                        5, 12,
+                        0, 4,
                         ABILITY_POP_UP_ABILITY_BG_TXTCLR, ABILITY_POP_UP_ABILITY_FG_TXTCLR, ABILITY_POP_UP_ABILITY_SH_TXTCLR,
                         FALSE, gSprites[spriteId1].sBattlerId);
     PrintOnAbilityPopUp(gAbilitiesInfo[ability].name,
                         (void *)(OBJ_VRAM0) + TILE_OFFSET_4BPP(gSprites[spriteId1].oam.tileNum) + TILE_OFFSET_4BPP(8),
                         (void *)(OBJ_VRAM0) + TILE_OFFSET_4BPP(gSprites[spriteId2].oam.tileNum) + TILE_OFFSET_4BPP(8),
-                        5, 12,
+                        0, 4,
                         ABILITY_POP_UP_ABILITY_BG_TXTCLR, ABILITY_POP_UP_ABILITY_FG_TXTCLR, ABILITY_POP_UP_ABILITY_SH_TXTCLR,
                         FALSE, gSprites[spriteId1].sBattlerId);
 }
@@ -2888,12 +2888,12 @@ static const struct SpriteSheet sSpriteSheet_MoveInfoWindow =
 
 #define LAST_USED_BALL_X_F    14
 #define LAST_USED_BALL_X_0    -14
-#define LAST_USED_BALL_Y      ((IsDoubleBattle()) ? 93 : 83)
+#define LAST_USED_BALL_Y      ((IsDoubleBattle()) ? 78 : 68)
 #define LAST_USED_BALL_Y_BNC  ((IsDoubleBattle()) ? 76 : 66)
 
 #define LAST_BALL_WIN_X_F       (LAST_USED_BALL_X_F - 0)
 #define LAST_BALL_WIN_X_0       (LAST_USED_BALL_X_0 - 0)
-#define LAST_USED_WIN_Y         (LAST_USED_BALL_Y - 9)
+#define LAST_USED_WIN_Y         (LAST_USED_BALL_Y - 8)
 
 #define sHide  data[0]
 #define sTimer  data[1]
