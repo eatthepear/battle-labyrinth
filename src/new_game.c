@@ -43,6 +43,7 @@
 #include "field_specials.h"
 #include "berry_powder.h"
 #include "mystery_gift.h"
+#include "tx_registered_items_menu.h"
 #include "union_room_chat.h"
 #include "quests.h"
 #include "constants/map_groups.h"
@@ -190,9 +191,10 @@ void NewGameInitData(void)
     ZeroPlayerPartyMons();
     ResetPokemonStorageSystem();
     DeactivateAllRoamers();
-    gSaveBlock1Ptr->registeredItem = ITEM_NONE;
+    gSaveBlock1Ptr->registeredItemSelect = ITEM_NONE;
     ClearBag();
     NewGameInitPCItems();
+    TxRegItemsMenu_RegisteredItemsMenuNewGame();
     ClearPokeblocks();
     ClearDecorationInventories();
     InitEasyChatPhrases();

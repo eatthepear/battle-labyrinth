@@ -1732,6 +1732,8 @@ const u16 gBattlePyramidBagInterface_Pal[] = INCBIN_U16("graphics/bag/menu_pyram
 
 const u32 gSwapLineGfx[] = INCBIN_U32("graphics/interface/swap_line.4bpp.smol");
 const u16 gSwapLinePal[] = INCBIN_U16("graphics/interface/swap_line.gbapal");
+//tx_registered_items_menu
+const u32 gSwapLineGfx_RegisteredItemsMenu[] = INCBIN_U32("graphics/interface/swap_line_tx.4bpp.smol");
 
 const u32 gShopMenu_Gfx[] = INCBIN_U32("graphics/shop/menu.4bpp.smol");
 const u16 gShopMenu_Pal[] = INCBIN_U16("graphics/shop/menu.gbapal");
