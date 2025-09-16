@@ -190,6 +190,7 @@
 #define FLAG_PBL_PENDING_DAYCARE_EGG                0xE7
 #define FLAG_AUTORUN_TOGGLE                         0xE8
 #define FLAG_NEVER_SET                              0xE9
+#define FLAG_ALWAYS_SET                             0xEA
 
 // Custom Flags Scripts
 #define FLAG_PORTENTIA_INTRO                              0x100

@@ -4,22 +4,22 @@
 #include "caps.h"
 #include "pokemon.h"
 
+static const u32 sLevelCapFlagMap[][2] =
+{
+    {FLAG_ALWAYS_SET, 8},
+    {FLAG_BADGE01_GET, 15},
+    {FLAG_BADGE02_GET, 19},
+    {FLAG_BADGE03_GET, 24},
+    {FLAG_BADGE04_GET, 29},
+    {FLAG_BADGE05_GET, 31},
+    {FLAG_BADGE06_GET, 33},
+    {FLAG_BADGE07_GET, 42},
+    {FLAG_BADGE08_GET, 46},
+    {FLAG_IS_CHAMPION, 58},
+};
 
 u32 GetCurrentLevelCap(void)
 {
-    static const u32 sLevelCapFlagMap[][2] =
-    {
-        {FLAG_BADGE01_GET, 15},
-        {FLAG_BADGE02_GET, 19},
-        {FLAG_BADGE03_GET, 24},
-        {FLAG_BADGE04_GET, 29},
-        {FLAG_BADGE05_GET, 31},
-        {FLAG_BADGE06_GET, 33},
-        {FLAG_BADGE07_GET, 42},
-        {FLAG_BADGE08_GET, 46},
-        {FLAG_IS_CHAMPION, 58},
-    };
-
     u32 i;
 
     if (B_LEVEL_CAP_TYPE == LEVEL_CAP_FLAG_LIST)
@@ -35,6 +35,29 @@ u32 GetCurrentLevelCap(void)
         return VarGet(B_LEVEL_CAP_VARIABLE);
     }
 
+    return MAX_LEVEL;
+}
+
+// If the player is in a New Zone, they are only allowed to Rare Candy up to the prior level cap.
+u32 GetRareCandyLevelCap(void)
+{
+    u32 i;
+
+    if (FlagGet(FLAG_IN_NEW_ZONE))
+    {
+        if (B_LEVEL_CAP_TYPE == LEVEL_CAP_FLAG_LIST)
+        {
+            for (i = 1; i < ARRAY_COUNT(sLevelCapFlagMap); i++)
+            {
+                if (!FlagGet(sLevelCapFlagMap[i][0]))
+                    return sLevelCapFlagMap[i - 1][1];
+            }
+        }
+    }
+    else
+    {
+        return GetCurrentLevelCap();
+    }
     return MAX_LEVEL;
 }
 
