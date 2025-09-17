@@ -2538,6 +2538,7 @@ bool8 TryFindHiddenPokemon(void)
 {
     u16 *stepPtr = GetVarPointer(DN_VAR_STEP_COUNTER);
 
+#if FREE_OTHER_PBL == FALSE
     if (DEXNAV_ENABLED == 0
             || !FlagGet(DN_FLAG_DETECTOR_MODE)
             || FlagGet(DN_FLAG_SEARCHING)
@@ -2547,6 +2548,10 @@ bool8 TryFindHiddenPokemon(void)
             (*stepPtr) = 0;
         return FALSE;
     }
+#endif //FREE_OTHER_PBL
+    if (stepPtr != NULL)
+        (*stepPtr) = 0;
+    return FALSE;
 
     (*stepPtr)++;
     (*stepPtr) %= HIDDEN_MON_STEP_COUNT;
