@@ -5,18 +5,19 @@
 #include "difficulty.h"
 #include "pokemon.h"
 
-static const u32 sLevelCapFlagMap[][2] =
+static const u32 sLevelCapFlagMap[] =
 {
-    {FLAG_ALWAYS_SET, 8},
-    {FLAG_BADGE01_GET, 15},
-    {FLAG_BADGE02_GET, 19},
-    {FLAG_BADGE03_GET, 24},
-    {FLAG_BADGE04_GET, 29},
-    {FLAG_BADGE05_GET, 31},
-    {FLAG_BADGE06_GET, 33},
-    {FLAG_BADGE07_GET, 42},
-    {FLAG_BADGE08_GET, 46},
-    {FLAG_IS_CHAMPION, 58},
+    5,
+    7,
+    15,
+    19,
+    24,
+    29,
+    31,
+    33,
+    42,
+    46,
+    58,
 };
 
 u32 GetCurrentLevelCap(void)
@@ -27,8 +28,8 @@ u32 GetCurrentLevelCap(void)
     {
         for (i = 0; i < ARRAY_COUNT(sLevelCapFlagMap); i++)
         {
-            if (!FlagGet(sLevelCapFlagMap[i][0]))
-                return sLevelCapFlagMap[i][1];
+            if (VarGet(VAR_LEVEL_CAP) == i)
+                return sLevelCapFlagMap[i];
         }
     }
     else if (B_LEVEL_CAP_TYPE == LEVEL_CAP_VARIABLE)
@@ -50,8 +51,8 @@ u32 GetRareCandyLevelCap(void)
         {
             for (i = 1; i < ARRAY_COUNT(sLevelCapFlagMap); i++)
             {
-                if (!FlagGet(sLevelCapFlagMap[i][0]))
-                    return sLevelCapFlagMap[i - 1][1];
+                if (VarGet(VAR_LEVEL_CAP) == i)
+                    return sLevelCapFlagMap[i];
             }
         }
     }

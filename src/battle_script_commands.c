@@ -4525,7 +4525,9 @@ static bool32 BattleTypeAllowsExp(void)
 {
     if (RECORDED_WILD_BATTLE)
         return TRUE;
-    else if (!(gBattleTypeFlags & (BATTLE_TYPE_TRAINER)) && (GetCurrentDifficultyLevel() >= DIFFICULTY_NORMAL) && FlagGet(FLAG_IN_NEW_ZONE))
+    else if (!(gBattleTypeFlags & (BATTLE_TYPE_TRAINER)) && (GetCurrentDifficultyLevel() >= DIFFICULTY_NORMAL)) // No grinding exp off wild Pokemon
+        return FALSE;
+    else if ((gBattleTypeFlags & (BATTLE_TYPE_TRAINER)) && (GetCurrentDifficultyLevel() >= DIFFICULTY_NORMAL) && !FlagGet(FLAG_IN_NEW_ZONE)) // No getting exp off trainers if it's not the current Zone
         return FALSE;
     else if (gBattleTypeFlags &
               ( BATTLE_TYPE_LINK
@@ -4621,7 +4623,8 @@ static void Cmd_getexp(void)
             if (orderId < PARTY_SIZE)
                 gBattleStruct->expGettersOrder[orderId] = PARTY_SIZE;
 
-            calculatedExp = gSpeciesInfo[gBattleMons[gBattlerFainted].species].expYield * gBattleMons[gBattlerFainted].level;
+            // Custom experience gain formula.
+            calculatedExp = GetCurrentLevelCap() * GetCurrentLevelCap() * 3.5 + 70;
             if (B_SCALED_EXP >= GEN_5 && B_SCALED_EXP != GEN_6)
                 calculatedExp /= 5;
             else
