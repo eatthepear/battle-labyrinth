@@ -531,7 +531,6 @@
     {
       "id": "MAPSEC_AQUA_HIDEOUT_OLD",
       "name": "{AQUA} HIDEOUT",
-      "name_clone": true,
       "x": 19,
       "y": 3,
       "width": 1,
@@ -690,8 +689,7 @@
       "name": "SECRET BASE"
     },
     {
-      "id": "MAPSEC_DYNAMIC",
-      "name": ""
+      "id": "MAPSEC_DYNAMIC"
     },
     {
       "id": "MAPSEC_ZONE_0",
@@ -1311,8 +1309,7 @@
     },
     {
       "id": "MAPSEC_TRAINER_TOWER_2",
-      "name": "TRAINER TOWER",
-      "name_clone": true
+      "name": "TRAINER TOWER"
     },
     {
       "id": "MAPSEC_DOTTED_HOLE",
