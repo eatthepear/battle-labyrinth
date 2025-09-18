@@ -4623,8 +4623,10 @@ static void Cmd_getexp(void)
             if (orderId < PARTY_SIZE)
                 gBattleStruct->expGettersOrder[orderId] = PARTY_SIZE;
 
-            // Custom experience gain formula.
-            calculatedExp = GetCurrentLevelCap() * GetCurrentLevelCap() * 3.5 + 70;
+            if (FlagGet(FLAG_IN_NEW_ZONE))
+                calculatedExp = GetCurrentLevelCap() * GetCurrentLevelCap() * 3.5 + 70;
+            else
+                calculatedExp = gSpeciesInfo[gBattleMons[gBattlerFainted].species].expYield * gBattleMons[gBattlerFainted].level;
             if (B_SCALED_EXP >= GEN_5 && B_SCALED_EXP != GEN_6)
                 calculatedExp /= 5;
             else
