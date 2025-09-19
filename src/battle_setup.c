@@ -654,13 +654,13 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
 
     //Note: POND refers to underground water (so it will be darker there). FOREST refers to a forest area (so it will be darker there)
-    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE2A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE2A)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE2B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE2B)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE4A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE4A)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE4B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE4B)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE4C) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE4C)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE4D) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE4D)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE4E) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE4E)) 
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE2A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE2A))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE2B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE2B))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE4A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE4A))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE4B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE4B))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE4C) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE4C))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE4D) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE4D))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE4E) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE4E))
     || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE11A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE11A))
     || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE17A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE17A))
     || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE23A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE23A)))
@@ -672,7 +672,7 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     }
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE22A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE22A))
         return BATTLE_ENVIRONMENT_SNOW;
-    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE5A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE5A)) 
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE5A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE5A))
     || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE5B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE5B)))
         return BATTLE_ENVIRONMENT_GRASS;
     if (MetatileBehavior_IsTallGrass(tileBehavior))
@@ -690,17 +690,17 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
         else
             return BATTLE_ENVIRONMENT_DESERT;
     }
-    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE19D) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE19D)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25A)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25B)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25C) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25C)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25D) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25D)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25E) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25E)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25F)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25G) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25G)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25I) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25I)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25J) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25J)) 
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25K) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25K)) 
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE19D) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE19D))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25A))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25B))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25C) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25C))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25D) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25D))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25E) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25E))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25F))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25G) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25G))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25I) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25I))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25J) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25J))
+    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25K) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25K))
     || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE25L) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE25L)))
         return BATTLE_ENVIRONMENT_CAVE;
     if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))
@@ -726,9 +726,7 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     case MAP_TYPE_OCEAN_ROUTE:
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
             return BATTLE_ENVIRONMENT_WATER;
-        if (MetatileBehavior_IsGrassTerrain(tileBehavior))
-            return BATTLE_ENVIRONMENT_GRASS;
-        return BATTLE_ENVIRONMENT_SAND;
+        return BATTLE_ENVIRONMENT_PLAIN;
     }
     if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior))
         return BATTLE_ENVIRONMENT_WATER;
@@ -749,9 +747,7 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
         return BATTLE_ENVIRONMENT_BRIDGE;
     if (GetSavedWeather() == WEATHER_SANDSTORM)
         return BATTLE_ENVIRONMENT_SAND;
-    if (MetatileBehavior_IsGrassTerrain(tileBehavior))
-        return BATTLE_ENVIRONMENT_GRASS;
-    return BATTLE_ENVIRONMENT_PLAIN;
+    return BATTLE_ENVIRONMENT_GRASS;
 }
 
 static u8 GetBattleTransitionTypeByMap(void)
