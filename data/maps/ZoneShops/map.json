@@ -2,7 +2,7 @@
   "id": "MAP_ZONE_SHOPS",
   "name": "ZoneShops",
   "layout": "LAYOUT_SHOPS",
-  "music": "MUS_FORTREE",
+  "music": "MUS_BW_POKE_CENTER",
   "region_map_section": "MAPSEC_SANCTUARY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

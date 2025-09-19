@@ -5584,14 +5584,14 @@ u16 GetBattleBGM(void)
                 {
                 case 1:
                     return MUS_RG_VS_GYM_LEADER;
-                // case 2:
-                //     return MUS_DP_VS_GYM_LEADER;
-                // case 3:
-                //     return MUS_HG_VS_GYM_LEADER;
-                // case 4:
-                //     return MUS_HG_VS_GYM_LEADER_KANTO;
+                case 2:
+                    return MUS_DP_VS_GYM_LEADER;
+                case 3:
+                    return MUS_HG_VS_GYM_LEADER;
+                case 4:
+                    return MUS_HG_VS_GYM_LEADER_KANTO;
                 case 5:
-                    return MUS_VS_FRONTIER_BRAIN; // BW music not implemented yet
+                    return MUS_BW_VS_GYM_LEADER;
                 default:
                     return MUS_VS_GYM_LEADER;
                 }
@@ -5600,14 +5600,14 @@ u16 GetBattleBGM(void)
                 {
                 case 1:
                     return MUS_RG_VS_TRAINER;
-                // case 2:
-                //     return MUS_DP_VS_TRAINER;
-                // case 3:
-                //     return MUS_HG_VS_TRAINER;
-                // case 4:
-                //     return MUS_HG_VS_TRAINER;
+                case 2:
+                    return MUS_DP_VS_TRAINER;
+                case 3:
+                    return MUS_HG_VS_TRAINER;
+                case 4:
+                    return MUS_HG_VS_TRAINER;
                 case 5:
-                    return MUS_VS_FRONTIER_BRAIN; // BW music not implemented yet
+                    return MUS_BW_VS_TRAINER;
                 default:
                     return MUS_VS_TRAINER;
                 }
@@ -5616,119 +5616,20 @@ u16 GetBattleBGM(void)
     }
     else
     {
-        switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+        switch (VarGet(VAR_WILD_MUSIC))
         {
-        case SPECIES_ARTICUNO:
-        case SPECIES_ZAPDOS:
-        case SPECIES_MOLTRES:
-        case SPECIES_ARTICUNO_GALAR:
-        case SPECIES_ZAPDOS_GALAR:
-        case SPECIES_MOLTRES_GALAR:
-            return MUS_RG_VS_LEGEND;
-        case SPECIES_MEWTWO:
-        case SPECIES_MEWTWO_MEGA_X:
-        case SPECIES_MEWTWO_MEGA_Y:
-            return MUS_RG_VS_MEWTWO;
-        case SPECIES_MEW:
-            return MUS_VS_MEW;
-        // case SPECIES_RAIKOU:
-        //     return MUS_HG_VS_RAIKOU;
-        // case SPECIES_ENTEI:
-        //     return MUS_HG_VS_ENTEI;
-        // case SPECIES_SUICUNE:
-        //     return MUS_HG_VS_SUICUNE;
-        // case SPECIES_LUGIA:
-        //     return MUS_HG_VS_LUGIA;
-        // case SPECIES_HO_OH:
-        //     return MUS_HG_VS_HO_OH;
-        // case SPECIES_CELEBI:
-        //     return MUS_HG_VS_WILD;
-        case SPECIES_REGIROCK:
-        case SPECIES_REGICE:
-        case SPECIES_REGISTEEL:
-        case SPECIES_REGIGIGAS:
-        case SPECIES_REGIELEKI:
-        case SPECIES_REGIDRAGO:
-            return MUS_VS_REGI;
-        case SPECIES_LATIAS:
-        case SPECIES_LATIOS:
-        case SPECIES_LATIAS_MEGA:
-        case SPECIES_LATIOS_MEGA:
-            return MUS_VS_WILD;
-        case SPECIES_GROUDON:
-        case SPECIES_KYOGRE:
-        case SPECIES_RAYQUAZA:
-        case SPECIES_RAYQUAZA_MEGA:
-        case SPECIES_KYOGRE_PRIMAL:
-        case SPECIES_GROUDON_PRIMAL:
-            return MUS_VS_KYOGRE_GROUDON;
-        case SPECIES_JIRACHI:
-            return MUS_VS_WILD;
-        case SPECIES_DEOXYS:
-        case SPECIES_DEOXYS_ATTACK:
-        case SPECIES_DEOXYS_DEFENSE:
-        case SPECIES_DEOXYS_SPEED:
-            return MUS_RG_VS_DEOXYS;
-        // case SPECIES_UXIE:
-        // case SPECIES_MESPRIT:
-        // case SPECIES_AZELF:
-        //     return MUS_DP_VS_UXIE_MESPRIT_AZELF;
-        // case SPECIES_DIALGA:
-        // case SPECIES_PALKIA:
-        //     return MUS_DP_VS_DIALGA_PALKIA;
-        // case SPECIES_ROTOM:
-        // case SPECIES_ROTOM_HEAT:
-        // case SPECIES_ROTOM_WASH:
-        // case SPECIES_ROTOM_FROST:
-        // case SPECIES_ROTOM_FAN:
-        // case SPECIES_ROTOM_MOW:
-        // case SPECIES_HEATRAN:
-        // case SPECIES_MANAPHY:
-        // case SPECIES_DARKRAI:
-        //     return MUS_DP_VS_LEGEND;
-        // case SPECIES_GIRATINA:
-        // case SPECIES_GIRATINA_ORIGIN:
-        //     return MUS_PL_VS_GIRATINA;
-        // case SPECIES_CRESSELIA:
-        // case SPECIES_PHIONE:
-        // case SPECIES_SHAYMIN:
-        // case SPECIES_SHAYMIN_SKY:
-        //     return MUS_DP_VS_WILD;
-        case SPECIES_ARCEUS:
-        case SPECIES_ARCEUS_FIGHTING:
-        case SPECIES_ARCEUS_FLYING:
-        case SPECIES_ARCEUS_POISON:
-        case SPECIES_ARCEUS_GROUND:
-        case SPECIES_ARCEUS_ROCK:
-        case SPECIES_ARCEUS_BUG:
-        case SPECIES_ARCEUS_GHOST:
-        case SPECIES_ARCEUS_STEEL:
-        case SPECIES_ARCEUS_FIRE:
-        case SPECIES_ARCEUS_WATER:
-        case SPECIES_ARCEUS_GRASS:
-        case SPECIES_ARCEUS_ELECTRIC:
-        case SPECIES_ARCEUS_PSYCHIC:
-        case SPECIES_ARCEUS_ICE:
-        case SPECIES_ARCEUS_DRAGON:
-        case SPECIES_ARCEUS_DARK:
-        case SPECIES_ARCEUS_FAIRY:
-            // return MUS_DP_VS_ARCEUS;
+        case 1:
+            return MUS_RG_VS_WILD;
+        case 2:
+            return MUS_DP_VS_WILD;
+        case 3:
+            return MUS_HG_VS_WILD;
+        case 4:
+            return MUS_HG_VS_WILD_KANTO;
+        case 5:
+            return MUS_BW_VS_TRAINER;
         default:
-            switch (VarGet(VAR_WILD_MUSIC))
-            {
-            case 1:
-                return MUS_RG_VS_WILD;
-            // case 2:
-            //     return MUS_DP_VS_WILD;
-            // case 3:
-            //     return MUS_HG_VS_WILD;
-            // case 4:
-            //     return MUS_HG_VS_WILD_KANTO;
-            case 5:
-                return MUS_VS_FRONTIER_BRAIN; // BW music not implemented yet
-            default:
-                return MUS_VS_WILD;
-            }
+            return MUS_VS_WILD;
         }
     }
 }
