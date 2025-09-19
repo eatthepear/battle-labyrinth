@@ -222,3 +222,6 @@ const u16 gMetatileAttributes_JungleTemple[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_Sanctuary[] = INCBIN_U16("data/tilesets/secondary/sanctuary/metatiles.bin");
 const u16 gMetatileAttributes_Sanctuary[] = INCBIN_U16("data/tilesets/secondary/sanctuary/metatile_attributes.bin");
+
+const u16 gMetatiles_Common[] = INCBIN_U16("data/tilesets/primary/common/metatiles.bin");
+const u16 gMetatileAttributes_Common[] = INCBIN_U16("data/tilesets/primary/common/metatile_attributes.bin");

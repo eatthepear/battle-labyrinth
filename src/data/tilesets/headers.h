@@ -885,3 +885,14 @@ const struct Tileset gTileset_Sanctuary =
     .metatileAttributes = gMetatileAttributes_Sanctuary,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Common =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Common,
+    .palettes = gTilesetPalettes_Common,
+    .metatiles = gMetatiles_Common,
+    .metatileAttributes = gMetatileAttributes_Common,
+    .callback = NULL,
+};
