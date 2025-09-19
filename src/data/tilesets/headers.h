@@ -894,5 +894,5 @@ const struct Tileset gTileset_Common =
     .palettes = gTilesetPalettes_Common,
     .metatiles = gMetatiles_Common,
     .metatileAttributes = gMetatileAttributes_Common,
-    .callback = NULL,
+    .callback = InitTilesetAnim_Common,
 };

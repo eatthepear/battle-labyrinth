@@ -1186,3 +1186,42 @@ static void BlendAnimPalette_BattleDome_FloorLightsNoBlend(u16 timer)
             sSecondaryTilesetAnimCallback = NULL;
     }
 }
+
+const u16 gTilesetAnims_Common_Water_Frame0[] = INCBIN_U16("data/tilesets/primary/common/anim/water/0.4bpp");
+const u16 gTilesetAnims_Common_Water_Frame1[] = INCBIN_U16("data/tilesets/primary/common/anim/water/1.4bpp");
+const u16 gTilesetAnims_Common_Water_Frame2[] = INCBIN_U16("data/tilesets/primary/common/anim/water/2.4bpp");
+const u16 gTilesetAnims_Common_Water_Frame3[] = INCBIN_U16("data/tilesets/primary/common/anim/water/3.4bpp");
+const u16 gTilesetAnims_Common_Water_Frame4[] = INCBIN_U16("data/tilesets/primary/common/anim/water/4.4bpp");
+const u16 gTilesetAnims_Common_Water_Frame5[] = INCBIN_U16("data/tilesets/primary/common/anim/water/5.4bpp");
+const u16 gTilesetAnims_Common_Water_Frame6[] = INCBIN_U16("data/tilesets/primary/common/anim/water/6.4bpp");
+const u16 gTilesetAnims_Common_Water_Frame7[] = INCBIN_U16("data/tilesets/primary/common/anim/water/7.4bpp");
+
+const u16 *const gTilesetAnims_Common_Water[] = {
+    gTilesetAnims_Common_Water_Frame0,
+    gTilesetAnims_Common_Water_Frame1,
+    gTilesetAnims_Common_Water_Frame2,
+    gTilesetAnims_Common_Water_Frame3,
+    gTilesetAnims_Common_Water_Frame4,
+    gTilesetAnims_Common_Water_Frame5,
+    gTilesetAnims_Common_Water_Frame6,
+    gTilesetAnims_Common_Water_Frame7
+};
+
+static void QueueAnimTiles_Common_Water(u16 timer)
+{
+    u8 i = timer % ARRAY_COUNT(gTilesetAnims_Common_Water);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Common_Water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1)), 40 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_Common(u16 timer)
+{
+    if (timer % 16 == 1)
+        QueueAnimTiles_Common_Water(timer / 16);
+}
+
+void InitTilesetAnim_Common(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_Common;
+}
