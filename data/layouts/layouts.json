@@ -5254,8 +5254,8 @@
     {
       "id": "LAYOUT_PORYTILES_TESTING_GROUND",
       "name": "PorytilesTestingGround_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 40,
+      "height": 40,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_Sanctuary",
       "border_filepath": "data/layouts/PorytilesTestingGround/border.bin",
