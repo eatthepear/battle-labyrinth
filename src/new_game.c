@@ -220,6 +220,7 @@ void NewGameInitData(void)
     QuestMenu_ResetMenuSaveData();
     ResetDexNav();
     ClearFollowerNPCData();
+    gSaveBlock1Ptr->wildEncounterSeed = Random32();
 }
 
 static void ResetMiniGamesRecords(void)

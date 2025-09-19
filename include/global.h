@@ -1134,6 +1134,7 @@ struct SaveBlock1
     /*0x139C*/ u16 vars[VARS_COUNT];
     /*0x159C*/ u32 gameStats[NUM_GAME_STATS];
     /*0x169C*/ struct BerryTree berryTrees[BERRY_TREES_COUNT];
+               u32 wildEncounterSeed;
                u8 NuzlockeEncounterFlags[10];
 #if FREE_OTHER_PBL == FALSE
     /*0x1A9C*/ struct SecretBase secretBases[SECRET_BASES_COUNT];

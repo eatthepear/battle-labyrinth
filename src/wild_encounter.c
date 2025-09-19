@@ -11,6 +11,7 @@
 #include "overworld.h"
 #include "pokeblock.h"
 #include "battle_setup.h"
+#include "random.h"
 #include "roamer.h"
 #include "tv.h"
 #include "link.h"
@@ -184,7 +185,7 @@ u32 ChooseWildMonIndex_Land(void)
 {
     u8 wildMonIndex = 0;
     bool8 swap = FALSE;
-    u8 rand = Random() % ENCOUNTER_CHANCE_LAND_MONS_TOTAL;
+    u8 rand = Random() % (SELECTED_LAND_WILD_COUNT * 10);
 
     if (rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_0)
         wildMonIndex = 0;
@@ -198,24 +199,13 @@ u32 ChooseWildMonIndex_Land(void)
         wildMonIndex = 4;
     else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_4 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_5)
         wildMonIndex = 5;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_5 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_6)
-        wildMonIndex = 6;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_6 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_7)
-        wildMonIndex = 7;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_7 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_8)
-        wildMonIndex = 8;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_8 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_9)
-        wildMonIndex = 9;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_9 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_10)
-        wildMonIndex = 10;
-    else
-        wildMonIndex = 11;
+    // If you change SELECTED_LAND_WILD_COUNT, you need to edit the number of if else statements and also change the if swap number
 
     if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
         swap = TRUE;
 
     if (swap)
-        wildMonIndex = 11 - wildMonIndex;
+        wildMonIndex = 5 - wildMonIndex;
 
     return wildMonIndex;
 }
@@ -225,7 +215,7 @@ u32 ChooseWildMonIndex_Water(void)
 {
     u32 wildMonIndex = 0;
     bool8 swap = FALSE;
-    u8 rand = Random() % ENCOUNTER_CHANCE_WATER_MONS_TOTAL;
+    u8 rand = Random() % (SELECTED_WATER_WILD_COUNT * 20);
 
     if (rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_0)
         wildMonIndex = 0;
@@ -233,16 +223,13 @@ u32 ChooseWildMonIndex_Water(void)
         wildMonIndex = 1;
     else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_2)
         wildMonIndex = 2;
-    else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_3)
-        wildMonIndex = 3;
-    else
-        wildMonIndex = 4;
+    // If you change SELECTED_WATER_WILD_COUNT, you need to edit the number of if else statements and also change the if swap number
 
     if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
         swap = TRUE;
 
     if (swap)
-        wildMonIndex = 4 - wildMonIndex;
+        wildMonIndex = 2 - wildMonIndex;
 
     return wildMonIndex;
 }
@@ -252,7 +239,7 @@ u32 ChooseWildMonIndex_Rocks(void)
 {
     u32 wildMonIndex = 0;
     bool8 swap = FALSE;
-    u8 rand = Random() % ENCOUNTER_CHANCE_ROCK_SMASH_MONS_TOTAL;
+    u8 rand = Random() % (SELECTED_ROCK_WILD_COUNT * 20);
 
     if (rand < ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_0)
         wildMonIndex = 0;
@@ -260,16 +247,13 @@ u32 ChooseWildMonIndex_Rocks(void)
         wildMonIndex = 1;
     else if (rand >= ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_2)
         wildMonIndex = 2;
-    else if (rand >= ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_3)
-        wildMonIndex = 3;
-    else
-        wildMonIndex = 4;
+    // If you change SELECTED_ROCK_WILD_COUNT, you need to edit the number of if else statements and also change the if swap number
 
     if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
         swap = TRUE;
 
     if (swap)
-        wildMonIndex = 4 - wildMonIndex;
+        wildMonIndex = 2 - wildMonIndex;
 
     return wildMonIndex;
 }
@@ -469,41 +453,168 @@ void CreateWildMon(u16 species, u8 level)
 #define TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildPokemon, type, ability, ptr, count) TryGetAbilityInfluencedWildMonIndex(wildPokemon, type, ability, ptr)
 #endif
 
+void GenerateRandomWildIndices(uint32_t *out, size_t totalCount, size_t selectCount, uint32_t seed)
+{
+    if (selectCount > totalCount || selectCount == 0 || totalCount == 0)
+        return;  // Optional: handle invalid inputs gracefully
+
+    // Create a pool of [0, 1, ..., totalCount - 1]
+    uint32_t pool[totalCount];
+    for (size_t i = 0; i < totalCount; i++)
+        pool[i] = i;
+
+    // Use independent PRNG seeded with `seed`
+    rng_value_t rng = LocalRandomSeed(seed);
+
+    // Partial Fisher-Yates shuffle
+    for (size_t i = 0; i < selectCount; i++)
+    {
+        size_t j = i + (LocalRandom32(&rng) % (totalCount - i));
+
+        // Swap pool[i] <-> pool[j]
+        uint32_t tmp = pool[i];
+        pool[i] = pool[j];
+        pool[j] = tmp;
+
+        // Store selected index
+        out[i] = pool[i];
+    }
+}
+
+EWRAM_DATA static struct WildPokemon sSelectedLandWildMons[SELECTED_LAND_WILD_COUNT];
+EWRAM_DATA static struct WildPokemon sSelectedWaterWildMons[SELECTED_WATER_WILD_COUNT];
+EWRAM_DATA static struct WildPokemon sSelectedHiddenWildMons[SELECTED_HIDDEN_WILD_COUNT];
+
+static void GenerateSelectedLandWildPokemonTable(const struct WildPokemon *wildPokemon, u32 indices[SELECTED_LAND_WILD_COUNT])
+{
+    for (int i = 0; i < SELECTED_LAND_WILD_COUNT; i++) {
+        sSelectedLandWildMons[i] = wildPokemon[indices[i]];
+    }
+}
+
+static void GenerateSelectedWaterWildPokemonTable(const struct WildPokemon *wildPokemon, u32 indices[SELECTED_WATER_WILD_COUNT])
+{
+    for (int i = 0; i < SELECTED_WATER_WILD_COUNT; i++) {
+        sSelectedWaterWildMons[i] = wildPokemon[indices[i]];
+    }
+}
+
+static void GenerateSelectedHiddenWildPokemonTable(const struct WildPokemon *wildPokemon, u32 indices[SELECTED_HIDDEN_WILD_COUNT])
+{
+    for (int i = 0; i < SELECTED_HIDDEN_WILD_COUNT; i++) {
+        sSelectedHiddenWildMons[i] = wildPokemon[indices[i]];
+    }
+}
+
+const struct WildPokemon *GetSelectedWildPokemonTable(const struct WildPokemonInfo *wildMonInfo, enum WildPokemonArea area)
+{
+    u8 totalWildCount;
+    u8 selectedWildCount;
+    
+    switch (area)
+    {
+    case WILD_AREA_LAND:
+        totalWildCount = LAND_WILD_COUNT;
+        selectedWildCount = SELECTED_LAND_WILD_COUNT;
+        break;
+    case WILD_AREA_WATER:
+        totalWildCount = WATER_WILD_COUNT;
+        selectedWildCount = SELECTED_WATER_WILD_COUNT;
+        break;
+    case WILD_AREA_ROCKS:
+        totalWildCount = ROCK_WILD_COUNT;
+        selectedWildCount = SELECTED_ROCK_WILD_COUNT;
+        break;
+    case WILD_AREA_FISHING:
+        totalWildCount = FISH_WILD_COUNT;
+        selectedWildCount = SELECTED_FISH_WILD_COUNT;
+        break;
+    case WILD_AREA_HIDDEN:
+    default:
+        totalWildCount = HIDDEN_WILD_COUNT;
+        selectedWildCount = SELECTED_HIDDEN_WILD_COUNT;
+        break;
+    }
+    u32 indices[selectedWildCount];
+    u32 seed = gSaveBlock1Ptr->wildEncounterSeed ^ (gSaveBlock1Ptr->location.mapGroup << 16) ^ gSaveBlock1Ptr->location.mapNum;
+    // Fills the indices
+    GenerateRandomWildIndices(indices, totalWildCount, selectedWildCount, seed);
+    // Fills the EWRAM_DATA array
+    switch (area)
+    {
+    case WILD_AREA_LAND:
+        GenerateSelectedLandWildPokemonTable(wildMonInfo->wildPokemon, indices);
+        break;
+    case WILD_AREA_WATER:
+    case WILD_AREA_FISHING:
+    case WILD_AREA_ROCKS:
+        GenerateSelectedWaterWildPokemonTable(wildMonInfo->wildPokemon, indices);
+        break;
+    case WILD_AREA_HIDDEN:
+        GenerateSelectedHiddenWildPokemonTable(wildMonInfo->wildPokemon, indices);
+        break;
+    }
+
+    // Returns the array with the correct type
+    switch (area)
+    {
+    case WILD_AREA_LAND:
+        return sSelectedLandWildMons;
+    case WILD_AREA_WATER:
+    case WILD_AREA_FISHING:
+    case WILD_AREA_ROCKS:
+        return sSelectedWaterWildMons;
+    case WILD_AREA_HIDDEN:
+        return sSelectedHiddenWildMons;
+    default:
+        DebugPrintf("GetSelectedWildPokemonTable area is none of the normal ones!");
+        return sSelectedLandWildMons;
+    }
+}
+
+void RegenerateWildEncounterSeed(void)
+{
+    if (!FlagGet(FLAG_SETTINGS_NUZLOCKE))
+        gSaveBlock1Ptr->wildEncounterSeed = Random32();
+}
+
 static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum WildPokemonArea area, u8 flags)
 {
     u8 wildMonIndex = 0;
     u8 level;
 
+    const struct WildPokemon *table = GetSelectedWildPokemonTable(wildMonInfo, area);
+
     switch (area)
     {
     case WILD_AREA_LAND:
-        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_STEEL, ABILITY_MAGNET_PULL, &wildMonIndex, LAND_WILD_COUNT))
+        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(table, TYPE_STEEL, ABILITY_MAGNET_PULL, &wildMonIndex, SELECTED_LAND_WILD_COUNT))
             break;
-        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex, LAND_WILD_COUNT))
+        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(table, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex, SELECTED_LAND_WILD_COUNT))
             break;
-        if (OW_LIGHTNING_ROD >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_LIGHTNING_ROD, &wildMonIndex, LAND_WILD_COUNT))
+        if (OW_LIGHTNING_ROD >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(table, TYPE_ELECTRIC, ABILITY_LIGHTNING_ROD, &wildMonIndex, SELECTED_LAND_WILD_COUNT))
             break;
-        if (OW_FLASH_FIRE >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_FIRE, ABILITY_FLASH_FIRE, &wildMonIndex, LAND_WILD_COUNT))
+        if (OW_FLASH_FIRE >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(table, TYPE_FIRE, ABILITY_FLASH_FIRE, &wildMonIndex, SELECTED_LAND_WILD_COUNT))
             break;
-        if (OW_HARVEST >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_GRASS, ABILITY_HARVEST, &wildMonIndex, LAND_WILD_COUNT))
+        if (OW_HARVEST >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(table, TYPE_GRASS, ABILITY_HARVEST, &wildMonIndex, SELECTED_LAND_WILD_COUNT))
             break;
-        if (OW_STORM_DRAIN >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_WATER, ABILITY_STORM_DRAIN, &wildMonIndex, LAND_WILD_COUNT))
+        if (OW_STORM_DRAIN >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(table, TYPE_WATER, ABILITY_STORM_DRAIN, &wildMonIndex, SELECTED_LAND_WILD_COUNT))
             break;
 
         wildMonIndex = ChooseWildMonIndex_Land();
         break;
     case WILD_AREA_WATER:
-        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_STEEL, ABILITY_MAGNET_PULL, &wildMonIndex, WATER_WILD_COUNT))
+        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(table, TYPE_STEEL, ABILITY_MAGNET_PULL, &wildMonIndex, WATER_WILD_COUNT))
             break;
-        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex, WATER_WILD_COUNT))
+        if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(table, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex, WATER_WILD_COUNT))
             break;
-        if (OW_LIGHTNING_ROD >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_LIGHTNING_ROD, &wildMonIndex, WATER_WILD_COUNT))
+        if (OW_LIGHTNING_ROD >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(table, TYPE_ELECTRIC, ABILITY_LIGHTNING_ROD, &wildMonIndex, WATER_WILD_COUNT))
             break;
-        if (OW_FLASH_FIRE >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_FIRE, ABILITY_FLASH_FIRE, &wildMonIndex, WATER_WILD_COUNT))
+        if (OW_FLASH_FIRE >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(table, TYPE_FIRE, ABILITY_FLASH_FIRE, &wildMonIndex, WATER_WILD_COUNT))
             break;
-        if (OW_HARVEST >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_GRASS, ABILITY_HARVEST, &wildMonIndex, WATER_WILD_COUNT))
+        if (OW_HARVEST >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(table, TYPE_GRASS, ABILITY_HARVEST, &wildMonIndex, WATER_WILD_COUNT))
             break;
-        if (OW_STORM_DRAIN >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_WATER, ABILITY_STORM_DRAIN, &wildMonIndex, WATER_WILD_COUNT))
+        if (OW_STORM_DRAIN >= GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(table, TYPE_WATER, ABILITY_STORM_DRAIN, &wildMonIndex, WATER_WILD_COUNT))
             break;
 
         wildMonIndex = ChooseWildMonIndex_Water();
@@ -517,21 +628,22 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum 
         break;
     }
 
-    level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, area);
+    level = ChooseWildMonLevel(table, wildMonIndex, area);
     if (flags & WILD_CHECK_REPEL && !IsWildLevelAllowedByRepel(level))
         return FALSE;
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
         return FALSE;
 
-    CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
+    CreateWildMon(table[wildMonIndex].species, level);
     return TRUE;
 }
 
 static u16 GenerateFishingWildMon(const struct WildPokemonInfo *wildMonInfo, u8 rod)
 {
     u8 wildMonIndex = ChooseWildMonIndex_Water();
-    u16 wildMonSpecies = wildMonInfo->wildPokemon[wildMonIndex].species;
-    u8 level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, WILD_AREA_FISHING);
+    const struct WildPokemon *table = GetSelectedWildPokemonTable(wildMonInfo, WILD_AREA_FISHING);
+    u16 wildMonSpecies = table[wildMonIndex].species;
+    u8 level = ChooseWildMonLevel(table, wildMonIndex, WILD_AREA_FISHING);
 
     UpdateChainFishingStreak();
     CreateWildMon(wildMonSpecies, level);
