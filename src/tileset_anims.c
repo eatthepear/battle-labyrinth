@@ -1187,6 +1187,25 @@ static void BlendAnimPalette_BattleDome_FloorLightsNoBlend(u16 timer)
     }
 }
 
+const u16 gTilesetAnims_Common_SandWaterEdge_Frame0[] = INCBIN_U16("data/tilesets/primary/common/anim/sand_water_edge/0.4bpp");
+const u16 gTilesetAnims_Common_SandWaterEdge_Frame1[] = INCBIN_U16("data/tilesets/primary/common/anim/sand_water_edge/1.4bpp");
+const u16 gTilesetAnims_Common_SandWaterEdge_Frame2[] = INCBIN_U16("data/tilesets/primary/common/anim/sand_water_edge/2.4bpp");
+const u16 gTilesetAnims_Common_SandWaterEdge_Frame3[] = INCBIN_U16("data/tilesets/primary/common/anim/sand_water_edge/3.4bpp");
+const u16 gTilesetAnims_Common_SandWaterEdge_Frame4[] = INCBIN_U16("data/tilesets/primary/common/anim/sand_water_edge/4.4bpp");
+const u16 gTilesetAnims_Common_SandWaterEdge_Frame5[] = INCBIN_U16("data/tilesets/primary/common/anim/sand_water_edge/5.4bpp");
+const u16 gTilesetAnims_Common_SandWaterEdge_Frame6[] = INCBIN_U16("data/tilesets/primary/common/anim/sand_water_edge/6.4bpp");
+
+const u16 *const gTilesetAnims_Common_SandWaterEdge[] = {
+    gTilesetAnims_Common_SandWaterEdge_Frame0,
+    gTilesetAnims_Common_SandWaterEdge_Frame1,
+    gTilesetAnims_Common_SandWaterEdge_Frame2,
+    gTilesetAnims_Common_SandWaterEdge_Frame3,
+    gTilesetAnims_Common_SandWaterEdge_Frame4,
+    gTilesetAnims_Common_SandWaterEdge_Frame5,
+    gTilesetAnims_Common_SandWaterEdge_Frame6,
+    gTilesetAnims_Common_SandWaterEdge_Frame0
+};
+
 const u16 gTilesetAnims_Common_Water_Frame0[] = INCBIN_U16("data/tilesets/primary/common/anim/water/0.4bpp");
 const u16 gTilesetAnims_Common_Water_Frame1[] = INCBIN_U16("data/tilesets/primary/common/anim/water/1.4bpp");
 const u16 gTilesetAnims_Common_Water_Frame2[] = INCBIN_U16("data/tilesets/primary/common/anim/water/2.4bpp");
@@ -1207,16 +1226,46 @@ const u16 *const gTilesetAnims_Common_Water[] = {
     gTilesetAnims_Common_Water_Frame7
 };
 
+const u16 gTilesetAnims_Common_Waterfall_Frame0[] = INCBIN_U16("data/tilesets/primary/common/anim/waterfall/0.4bpp");
+const u16 gTilesetAnims_Common_Waterfall_Frame1[] = INCBIN_U16("data/tilesets/primary/common/anim/waterfall/1.4bpp");
+const u16 gTilesetAnims_Common_Waterfall_Frame2[] = INCBIN_U16("data/tilesets/primary/common/anim/waterfall/2.4bpp");
+const u16 gTilesetAnims_Common_Waterfall_Frame3[] = INCBIN_U16("data/tilesets/primary/common/anim/waterfall/3.4bpp");
+
+const u16 *const gTilesetAnims_Common_Waterfall[] = {
+    gTilesetAnims_Common_Waterfall_Frame0,
+    gTilesetAnims_Common_Waterfall_Frame1,
+    gTilesetAnims_Common_Waterfall_Frame2,
+    gTilesetAnims_Common_Waterfall_Frame3
+};
+
+// These should all be sorted alphabetically. When you add a new animation, you need to edit all the numbers to update. The # tiles is the last constant in the AppendTilesetAnimToBuffer line
+
+static void QueueAnimTiles_Common_SandWaterEdge(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Common_SandWaterEdge);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Common_SandWaterEdge[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1)), 10 * TILE_SIZE_4BPP);
+}
+
 static void QueueAnimTiles_Common_Water(u16 timer)
 {
     u8 i = timer % ARRAY_COUNT(gTilesetAnims_Common_Water);
-    AppendTilesetAnimToBuffer(gTilesetAnims_Common_Water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1)), 40 * TILE_SIZE_4BPP);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Common_Water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(11)), 40 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Common_Waterfall(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Common_Waterfall);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Common_Waterfall[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(51)), 6 * TILE_SIZE_4BPP);
 }
 
 static void TilesetAnim_Common(u16 timer)
 {
     if (timer % 16 == 1)
         QueueAnimTiles_Common_Water(timer / 16);
+    if (timer % 16 == 1)
+        QueueAnimTiles_Common_SandWaterEdge(timer / 16);
+    if (timer % 16 == 2)
+        QueueAnimTiles_Common_Waterfall(timer / 16);
 }
 
 void InitTilesetAnim_Common(void)
