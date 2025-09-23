@@ -5578,7 +5578,9 @@ static void PrintStatsScreen_Left(u8 taskId)
     if (gTasks[taskId].data[5] == 0)
     {
         u32 catchRate = sPokedexView->sPokemonStats.catchRate;
+#if FREE_OTHER_PBL == FALSE
         enum GrowthRate growthRate = sPokedexView->sPokemonStats.growthRate;
+#endif //FREE_OTHER_PBL
 
         //Catch rate
         PrintStatsScreenTextSmall(WIN_STATS_LEFT, sText_Stats_CatchRate, base_x, base_y + base_y_offset*base_i);
@@ -5596,6 +5598,7 @@ static void PrintStatsScreen_Left(u8 taskId)
             PrintStatsScreenTextSmall(WIN_STATS_LEFT, sText_Stats_CatchRate_Easy, base_x + x_offset_column, base_y + base_y_offset*base_i);
         base_i++;
 
+#if FREE_OTHER_PBL == FALSE
         //Growth rate
         PrintStatsScreenTextSmall(WIN_STATS_LEFT, sText_Stats_Growthrate, base_x, base_y + base_y_offset*base_i);
         switch (growthRate)
@@ -5623,6 +5626,7 @@ static void PrintStatsScreen_Left(u8 taskId)
         }
         align_x = GetStringRightAlignXOffset(0, strEV, total_x);
         PrintStatsScreenTextSmall(WIN_STATS_LEFT, strEV, align_x, base_y + base_y_offset*base_i);
+#endif //FREE_OTHER_PBL
     }
     else
     {
