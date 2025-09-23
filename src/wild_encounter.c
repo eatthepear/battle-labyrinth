@@ -453,31 +453,35 @@ void CreateWildMon(u16 species, u8 level)
 #define TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildPokemon, type, ability, ptr, count) TryGetAbilityInfluencedWildMonIndex(wildPokemon, type, ability, ptr)
 #endif
 
-void GenerateRandomWildIndices(uint32_t *out, size_t totalCount, size_t selectCount, uint32_t seed)
+static void GenerateRandomWildIndices(uint32_t *out, size_t totalCount, size_t selectCount, uint32_t seed, const struct WildPokemon *wildPokemon)
 {
     if (selectCount > totalCount || selectCount == 0 || totalCount == 0)
         return;  // Optional: handle invalid inputs gracefully
 
     // Create a pool of [0, 1, ..., totalCount - 1]
-    uint32_t pool[totalCount];
+    uint32_t validPool[totalCount];
+    size_t validCount = 0;
     for (size_t i = 0; i < totalCount; i++)
-        pool[i] = i;
+    {
+        if (wildPokemon[i].species != SPECIES_NONE)
+            validPool[validCount++] = i;
+    }
 
     // Use independent PRNG seeded with `seed`
     rng_value_t rng = LocalRandomSeed(seed);
 
-    // Partial Fisher-Yates shuffle
+    // Partial Fisher-Yates shuffle on valid indices only
     for (size_t i = 0; i < selectCount; i++)
     {
-        size_t j = i + (LocalRandom32(&rng) % (totalCount - i));
+        size_t j = i + (LocalRandom32(&rng) % (validCount - i));
 
-        // Swap pool[i] <-> pool[j]
-        uint32_t tmp = pool[i];
-        pool[i] = pool[j];
-        pool[j] = tmp;
+        // Swap validPool[i] <-> validPool[j]
+        uint32_t tmp = validPool[i];
+        validPool[i] = validPool[j];
+        validPool[j] = tmp;
 
         // Store selected index
-        out[i] = pool[i];
+        out[i] = validPool[i];
     }
 }
 
@@ -538,7 +542,7 @@ const struct WildPokemon *GetSelectedWildPokemonTable(const struct WildPokemonIn
     u32 indices[selectedWildCount];
     u32 seed = gSaveBlock1Ptr->wildEncounterSeed ^ (gSaveBlock1Ptr->location.mapGroup << 16) ^ gSaveBlock1Ptr->location.mapNum;
     // Fills the indices
-    GenerateRandomWildIndices(indices, totalWildCount, selectedWildCount, seed);
+    GenerateRandomWildIndices(indices, totalWildCount, selectedWildCount, seed, wildMonInfo->wildPokemon);
     // Fills the EWRAM_DATA array
     switch (area)
     {
