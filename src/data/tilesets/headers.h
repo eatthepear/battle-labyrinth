@@ -896,3 +896,14 @@ const struct Tileset gTileset_Common =
     .metatileAttributes = gMetatileAttributes_Common,
     .callback = InitTilesetAnim_Common,
 };
+
+const struct Tileset gTileset_Cavern =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Cavern,
+    .palettes = gTilesetPalettes_Cavern,
+    .metatiles = gMetatiles_Cavern,
+    .metatileAttributes = gMetatileAttributes_Cavern,
+    .callback = NULL,
+};

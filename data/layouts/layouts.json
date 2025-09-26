@@ -5257,7 +5257,7 @@
       "width": 40,
       "height": 40,
       "primary_tileset": "gTileset_Common",
-      "secondary_tileset": "gTileset_Sanctuary",
+      "secondary_tileset": "gTileset_Cavern",
       "border_filepath": "data/layouts/PorytilesTestingGround/border.bin",
       "blockdata_filepath": "data/layouts/PorytilesTestingGround/map.bin"
     }

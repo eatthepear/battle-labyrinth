@@ -225,3 +225,6 @@ const u16 gMetatileAttributes_Sanctuary[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_Common[] = INCBIN_U16("data/tilesets/primary/common/metatiles.bin");
 const u16 gMetatileAttributes_Common[] = INCBIN_U16("data/tilesets/primary/common/metatile_attributes.bin");
+
+const u16 gMetatiles_Cavern[] = INCBIN_U16("data/tilesets/secondary/cavern/metatiles.bin");
+const u16 gMetatileAttributes_Cavern[] = INCBIN_U16("data/tilesets/secondary/cavern/metatile_attributes.bin");
