@@ -37,7 +37,7 @@ void HealPlayerParty(void)
     u32 i;
     for (i = 0; i < gPlayerPartyCount; i++)
         HealPokemon(&gPlayerParty[i]);
-    if (OW_PC_HEAL >= GEN_8 && FlagGet(FLAG_JOY_UPGRADED))
+    if (OW_PC_HEAL >= GEN_8)
         HealPlayerBoxes();
 
     // Recharge Tera Orb, if possible.
