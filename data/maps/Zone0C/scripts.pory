@@ -77,7 +77,7 @@ script Zone0C_EventScript_WarpBack {
 	if (var(VAR_ZONE_0_STATE) == 3) {
 		setvar(VAR_ZONE_0_STATE, 4)
 	}
-	warp(MAP_ZONE_SHOPS, 255, 38, 1)
+	// warp(MAP_ZONE_SHOPS, 255, 38, 1)
 	waitstate
 }
 

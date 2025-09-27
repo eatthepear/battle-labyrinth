@@ -241,13 +241,6 @@
       "elevation": 0,
       "dest_map": "MAP_ZONE0B",
       "dest_warp_id": "0"
-    },
-    {
-      "x": 35,
-      "y": 7,
-      "elevation": 0,
-      "dest_map": "MAP_ZONE_SHOPS",
-      "dest_warp_id": "15"
     }
   ],
   "coord_events": [

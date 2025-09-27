@@ -1161,8 +1161,6 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/ZoneSanctuary/scripts.inc"
 
-	.include "data/maps/ZoneShops/scripts.inc"
-
 	.include "data/maps/Zone1A/scripts.inc"
 
 	.include "data/maps/Zone2A/scripts.inc"
@@ -1326,3 +1324,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ZoneS1B/scripts.inc"
 
 	.include "data/maps/ZoneS2A/scripts.inc"
+
+	.include "data/maps/ZoneSanctuary_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/ZoneSanctuary_PokemonCenter_2F/scripts.inc"

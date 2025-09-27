@@ -672,7 +672,8 @@
   ],
   "gMapGroup_Sanctuaries": [
     "ZoneSanctuary",
-    "ZoneShops"
+    "ZoneSanctuary_PokemonCenter_1F",
+    "ZoneSanctuary_PokemonCenter_2F"
   ],
   "gMapGroup_IndoorRoute109": [
     "Route109_SeashoreHouse"
