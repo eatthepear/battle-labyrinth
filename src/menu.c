@@ -23,6 +23,7 @@
 #include "text_window.h"
 #include "window.h"
 #include "config/overworld.h"
+#include "constants/difficulty.h"
 #include "constants/songs.h"
 
 struct MenuInfoIcon
@@ -2227,8 +2228,7 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
     s32 flagCount;
     u8 *endOfString;
     u8 *string = dest;
-    int zone;
-    u16 mode = 0;
+    u16 zone;
 
     *(string++) = EXT_CTRL_CODE_BEGIN;
     *(string++) = EXT_CTRL_CODE_COLOR;
@@ -2241,6 +2241,20 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
     {
         case SAVE_MENU_NAME:
             StringCopy(string, gSaveBlock2Ptr->playerName);
+            break;
+        case SAVE_MENU_CAUGHT:
+            if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
+            {
+                StringCopy(string, gText_SaveMenuNuzlocke);
+            }
+            else
+            {
+                if (IsNationalPokedexEnabled())
+                    string = ConvertIntToDecimalStringN(string, GetNationalPokedexCount(FLAG_GET_CAUGHT), STR_CONV_MODE_LEFT_ALIGN, 3);
+                else
+                    string = ConvertIntToDecimalStringN(string, GetHoennPokedexCount(FLAG_GET_CAUGHT), STR_CONV_MODE_LEFT_ALIGN, 3);
+                *string = EOS;
+            }
             break;
         case SAVE_MENU_PLAY_TIME:
             string = ConvertIntToDecimalStringN(string, gSaveBlock2Ptr->playTimeHours, STR_CONV_MODE_LEFT_ALIGN, 3);
@@ -2264,58 +2278,20 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
             string = ConvertIntToDecimalStringN(string, zone, STR_CONV_MODE_LEFT_ALIGN, 3);
             *string = EOS;
             break;
-        case SAVE_MENU_CAUGHT:
-            if (FlagGet(FLAG_SETTINGS_BRUTAL) == TRUE) {
-                mode += 1;
-            } else if (FlagGet(FLAG_SETTINGS_INFINITE) == TRUE) {
-                mode += 2;
-            }
-            if (FlagGet(FLAG_SETTINGS_NUZLOCKE) == TRUE) {
-                mode += 10;
-            }
-            if (FlagGet(FLAG_SETTINGS_RANDOMIZER) == TRUE) {
-                mode += 100;
-            }
-            switch (mode) {
-                case 0:
-                    if (IsNationalPokedexEnabled())
-                        string = ConvertIntToDecimalStringN(string, GetNationalPokedexCount(FLAG_GET_CAUGHT), STR_CONV_MODE_LEFT_ALIGN, 3);
-                    else
-                        string = ConvertIntToDecimalStringN(string, GetHoennPokedexCount(FLAG_GET_CAUGHT), STR_CONV_MODE_LEFT_ALIGN, 3);    
-                    *string = EOS;
+        case SAVE_MENU_DIFFICULTY:
+            switch (VarGet(VAR_DIFFICULTY))
+            {
+                case DIFFICULTY_EASY:
+                    StringCopy(string, gText_SaveMenuEasy);
                     break;
-                case 1:
+                case DIFFICULTY_NORMAL:
+                    StringCopy(string, gText_SaveMenuNormal);
+                    break;
+                case DIFFICULTY_HARD:
+                    StringCopy(string, gText_SaveMenuHard);
+                    break;
+                case DIFFICULTY_BRUTAL:
                     StringCopy(string, gText_SaveMenuBrutal);
-                    break;
-                case 2:
-                    StringCopy(string, gText_SaveMenuInfinite);
-                    break;
-                case 10:
-                    StringCopy(string, gText_SaveMenuNuzlocke);
-                    break;
-                case 11:
-                    StringCopy(string, gText_SaveMenuBrutalNuzlocke);
-                    break;
-                case 12:
-                    StringCopy(string, gText_SaveMenuInfiniteNuzlocke);
-                    break;
-                case 100:
-                    StringCopy(string, gText_SaveMenuRandomizer);
-                    break;
-                case 101:
-                    StringCopy(string, gText_SaveMenuBrutalRandomizer);
-                    break;
-                case 102:
-                    StringCopy(string, gText_SaveMenuInfiniteRandomizer);
-                    break;
-                case 110:
-                    StringCopy(string, gText_SaveMenuRandomlocke);
-                    break;
-                case 111:
-                    StringCopy(string, gText_SaveMenuBrutalRandomlocke);
-                    break;
-                case 112:
-                    StringCopy(string, gText_SaveMenuInfiniteRandomlocke);
                     break;
             }
             break;

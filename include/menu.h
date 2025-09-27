@@ -36,7 +36,7 @@ enum
     SAVE_MENU_LOCATION,
     SAVE_MENU_BADGES,
     SAVE_MENU_ZONE,
-    SAVE_MENU_MODE,
+    SAVE_MENU_DIFFICULTY,
 };
 
 struct MenuAction

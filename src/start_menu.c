@@ -1468,6 +1468,12 @@ static void ShowSaveInfoWindow(void)
     BufferSaveMenuText(SAVE_MENU_LOCATION, gStringVar4, TEXT_COLOR_GREEN);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, 0, yOffset, TEXT_SKIP_DRAW, NULL);
 
+    // Print difficulty
+    yOffset = 1;
+    BufferSaveMenuText(SAVE_MENU_DIFFICULTY, gStringVar4, TEXT_COLOR_RED);
+    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
+    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
+
     // Print player name
     yOffset += 16;
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPlayer, 0, yOffset, TEXT_SKIP_DRAW, NULL);
@@ -1486,8 +1492,7 @@ static void ShowSaveInfoWindow(void)
     {
         // Print Pokédex count
         yOffset += 16;
-        if (!(FlagGet(FLAG_SETTINGS_BRUTAL) || FlagGet(FLAG_SETTINGS_INFINITE) || FlagGet(FLAG_SETTINGS_NUZLOCKE) || FlagGet(FLAG_SETTINGS_RANDOMIZER) == TRUE))
-            AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL);
         BufferSaveMenuText(SAVE_MENU_CAUGHT, gStringVar4, color);
         xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
         AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);

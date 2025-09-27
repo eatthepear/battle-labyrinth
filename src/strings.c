@@ -1322,17 +1322,11 @@ const u8 gText_InfiniteRepelOn[] = _("The Infinite Repellent is now {COLOR RED}o
 const u8 gText_InfiniteRepelOff[] = _("The Infinite Repellent is now {COLOR RED}off{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
 
 const u8 gText_SavingZone[] = _("Zones Completed");
-const u8 gText_SaveMenuRandomizer[] =_("Randomizer");
 const u8 gText_SaveMenuNuzlocke[] =_("Nuzlocke");
-const u8 gText_SaveMenuRandomlocke[] =_("Randomlocke");
+const u8 gText_SaveMenuEasy[] =_("Easy");
+const u8 gText_SaveMenuNormal[] =_("Normal");
+const u8 gText_SaveMenuHard[] =_("Hard");
 const u8 gText_SaveMenuBrutal[] =_("Brutal");
-const u8 gText_SaveMenuBrutalRandomizer[] =_("Brutal Randomizer");
-const u8 gText_SaveMenuBrutalNuzlocke[] =_("Brutal Nuzlocke");
-const u8 gText_SaveMenuBrutalRandomlocke[] =_("Brutal Randomlocke");
-const u8 gText_SaveMenuInfinite[] =_("Infinite");
-const u8 gText_SaveMenuInfiniteRandomizer[] =_("Infinite Randomizer");
-const u8 gText_SaveMenuInfiniteNuzlocke[] =_("Infinite Nuzlocke");
-const u8 gText_SaveMenuInfiniteRandomlocke[] =_("Infinite Randomlocke");
 
 const u8 gText_LevelCapVar1[] = _("Lvl Cap: {STR_VAR_1}");
 
