@@ -1809,15 +1809,27 @@ script EventScript_Settings {
 	}
 }
 
+script EventScript_Guitarist {
+	lock
+	faceplayer
+	if (flag(FLAG_GUITARIST_INTRO) == FALSE) {
+		msgbox(format("Yo! I have some sick tunes for you!\pI can adjust the music you hear during battle, if you want!"))
+		setflag(FLAG_GUITARIST_INTRO)
+	}
+	call(EventScript_MusicMenu)
+	msgbox(format("Rock on!"))
+	release
+}
+
 script EventScript_MusicMenu {
 	while {
 		fadedefaultbgm
-		message("Please select a music setting.")
-		dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Wild Battle", "Trainer Battle", "Leviathan Battle", "Back")
+		message(format("What kinda music do you want in battle?"))
+		dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Wild Battle", "Trainer Battle", "Leviathan Battle", "Exit")
 		switch (var(VAR_RESULT)) {
 			case 0:
 				setvar(VAR_TEMP_0, 1)
-				while (var(VAR_TEMP_0) == 1) {
+				do {
 					switch (var(VAR_WILD_MUSIC)) {
 						case 0:
 							playbgm(MUS_VS_WILD, FALSE)
@@ -1855,10 +1867,10 @@ script EventScript_MusicMenu {
 						case MULTI_B_PRESSED:
 							setvar(VAR_TEMP_0, 0)
 					}
-				}
+				} while (var(VAR_TEMP_0) == 1)
 			case 1:
 				setvar(VAR_TEMP_0, 1)
-				while (var(VAR_TEMP_0) == 1) {
+				do {
 					switch (var(VAR_TRAINER_MUSIC)) {
 						case 0:
 							playbgm(MUS_VS_TRAINER, FALSE)
@@ -1896,10 +1908,10 @@ script EventScript_MusicMenu {
 						case MULTI_B_PRESSED:
 							setvar(VAR_TEMP_0, 0)
 					}
-				}
+				} while (var(VAR_TEMP_0) == 1)
 			case 2:
 				setvar(VAR_TEMP_0, 1)
-				while (var(VAR_TEMP_0) == 1) {
+				do {
 					switch (var(VAR_LEVIATHAN_MUSIC)) {
 						case 0:
 							playbgm(MUS_VS_GYM_LEADER, FALSE)
@@ -1937,7 +1949,7 @@ script EventScript_MusicMenu {
 						case MULTI_B_PRESSED:
 							setvar(VAR_TEMP_0, 0)
 					}
-				}
+				} while (var(VAR_TEMP_0) == 1)
 			case 3:
 			case MULTI_B_PRESSED:
 				return
