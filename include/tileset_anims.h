@@ -33,5 +33,6 @@ void InitTilesetAnim_BattleDome(void);
 void InitTilesetAnim_BattlePyramid(void);
 
 void InitTilesetAnim_Common(void);
+void InitTilesetAnim_Sanctuary(void);
 
 #endif // GUARD_TILESET_ANIMS_H

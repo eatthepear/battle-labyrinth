@@ -883,7 +883,7 @@ const struct Tileset gTileset_Sanctuary =
     .palettes = gTilesetPalettes_Sanctuary,
     .metatiles = gMetatiles_Sanctuary,
     .metatileAttributes = gMetatileAttributes_Sanctuary,
-    .callback = NULL,
+    .callback = InitTilesetAnim_Sanctuary,
 };
 
 const struct Tileset gTileset_Common =

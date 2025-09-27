@@ -1274,3 +1274,42 @@ void InitTilesetAnim_Common(void)
     sPrimaryTilesetAnimCounterMax = 256;
     sPrimaryTilesetAnimCallback = TilesetAnim_Common;
 }
+
+const u16 gTilesetAnims_Sanctuary_Flower_Frame0[] = INCBIN_U16("data/tilesets/secondary/sanctuary/anim/flower/0.4bpp");
+const u16 gTilesetAnims_Sanctuary_Flower_Frame1[] = INCBIN_U16("data/tilesets/secondary/sanctuary/anim/flower/1.4bpp");
+const u16 gTilesetAnims_Sanctuary_Flower_Frame2[] = INCBIN_U16("data/tilesets/secondary/sanctuary/anim/flower/2.4bpp");
+const u16 gTilesetAnims_Sanctuary_Flower_Frame3[] = INCBIN_U16("data/tilesets/secondary/sanctuary/anim/flower/3.4bpp");
+const u16 gTilesetAnims_Sanctuary_Flower_Frame4[] = INCBIN_U16("data/tilesets/secondary/sanctuary/anim/flower/4.4bpp");
+const u16 gTilesetAnims_Sanctuary_Flower_Frame5[] = INCBIN_U16("data/tilesets/secondary/sanctuary/anim/flower/5.4bpp");
+const u16 gTilesetAnims_Sanctuary_Flower_Frame6[] = INCBIN_U16("data/tilesets/secondary/sanctuary/anim/flower/6.4bpp");
+const u16 gTilesetAnims_Sanctuary_Flower_Frame7[] = INCBIN_U16("data/tilesets/secondary/sanctuary/anim/flower/7.4bpp");
+
+const u16 *const gTilesetAnims_Sanctuary_Flower[] = {
+    gTilesetAnims_Sanctuary_Flower_Frame0,
+    gTilesetAnims_Sanctuary_Flower_Frame1,
+    gTilesetAnims_Sanctuary_Flower_Frame2,
+    gTilesetAnims_Sanctuary_Flower_Frame3,
+    gTilesetAnims_Sanctuary_Flower_Frame4,
+    gTilesetAnims_Sanctuary_Flower_Frame5,
+    gTilesetAnims_Sanctuary_Flower_Frame6,
+    gTilesetAnims_Sanctuary_Flower_Frame7
+};
+
+static void QueueAnimTiles_Sanctuary_Flower(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Sanctuary_Flower);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Sanctuary_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 24 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_Sanctuary(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_Sanctuary_Flower(timer / 16);
+}
+
+void InitTilesetAnim_Sanctuary(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_Sanctuary;
+}
