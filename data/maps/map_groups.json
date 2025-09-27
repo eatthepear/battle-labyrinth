@@ -672,8 +672,7 @@
   ],
   "gMapGroup_Sanctuaries": [
     "ZoneSanctuary",
-    "ZoneShops",
-    "PorytilesTestingGround"
+    "ZoneShops"
   ],
   "gMapGroup_IndoorRoute109": [
     "Route109_SeashoreHouse"

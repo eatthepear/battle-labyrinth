@@ -277,13 +277,6 @@
       "elevation": 0,
       "dest_map": "MAP_ZONE_SANCTUARY",
       "dest_warp_id": "13"
-    },
-    {
-      "x": 46,
-      "y": 1,
-      "elevation": 0,
-      "dest_map": "MAP_PORYTILES_TESTING_GROUND",
-      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

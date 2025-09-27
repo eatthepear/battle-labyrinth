@@ -1326,5 +1326,3 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ZoneS1B/scripts.inc"
 
 	.include "data/maps/ZoneS2A/scripts.inc"
-
-	.include "data/maps/PorytilesTestingGround/scripts.inc"
