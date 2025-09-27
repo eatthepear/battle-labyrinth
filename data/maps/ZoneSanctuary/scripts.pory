@@ -5,6 +5,101 @@ mapscripts ZoneSanctuary_MapScripts {
 	]
 }
 
+script ZoneSanctuary_EventScript_Colress {
+	lock
+	faceplayer
+	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Greetings, {PLAYER}."))
+	setvar(VAR_TEMP_0, 1)
+	message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Anything I can help with?"))
+	waitmessage
+	do {
+		dynmultipush("Difficulty", 0)
+		if (flag(FLAG_SETTINGS_NUZLOCKE)) {
+			dynmultipush("Nuzlocke", 2)
+		} else {
+			dynmultipush("Respin Encounters", 3)
+		}
+		dynmultipush("Documentation", 1)
+		dynmultipush("Exit", 4)
+		dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+		switch (var(VAR_RESULT)) {
+			case 0:
+				call(EventScript_Difficulty)
+			case 1:
+				call(EventScript_Documentation)
+			case 2:
+				call(EventScript_Nuzlocke)
+			case 3:
+				call(EventScript_RespinEncounters)
+			case 4:
+			case MULTI_B_PRESSED:
+				setvar(VAR_TEMP_0, 0)
+		}
+		if (var(VAR_TEMP_0) == 1) {
+			message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Anything else I can help with?"))
+			waitmessage
+		}
+	} while (var(VAR_TEMP_0) == 1)
+	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}:"))
+	release
+}
+
+script EventScript_Difficulty {
+	switch (var(VAR_DIFFICULTY)) {
+		case DIFFICULTY_EASY:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}:"))
+		case DIFFICULTY_NORMAL:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}:"))
+		case DIFFICULTY_HARD:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}:"))
+		case DIFFICULTY_BRUTAL:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}:"))
+	}
+	return
+}
+
+script EventScript_Documentation {
+	msgbox(format("This is version 2.0.0 of the Pokémon Battle Labyrinth.\pMake sure you're playing the most up to date version!"))
+	return
+}
+
+script EventScript_Nuzlocke {
+	msgbox(gText_Colress_NuzlockeExplained)
+	if (var(VAR_NUZLOCKE_DEATHS) == 1) {
+		msgbox("So far there has been 1 death.")
+	} else {
+		buffernumberstring(STR_VAR_1, VAR_NUZLOCKE_DEATHS)
+		msgbox("So far there have been {STR_VAR_1} deaths.")
+	}
+	msgbox(format("Would you like to turn off Nuzlocke mode?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		msgbox(format("Are you sure you would like to turn off Nuzlocke mode?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			playse(SE_PC_OFF)
+			msgbox("Nuzlocke mode turned off.")
+			waitse
+			clearflag(FLAG_SETTINGS_NUZLOCKE)
+			clearflag(FLAG_ZONE13C_NUZLOCKE_FOSSIL_RECEIVED)
+		}
+	}
+	return
+}
+
+text gText_Colress_NuzlockeExplained {
+	format("Nuzlocke mode completely implements all standard Nuzlocke rules, such as permanent death and capture restrictions.\p"
+	"It comes with Species Clause, Shiny Clause, and Gift Clause.\p"
+	"It is not recommended to play Nuzlocke mode unless you are familiar with Nuzlockes already.\p"
+	"Nuzlocke mode can only be enabled at the beginning of the game, but can be disabled at any point.")
+}
+
+script EventScript_RespinEncounters {
+	msgbox(format("Respin encounters?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		callnative(RegenerateWildEncounterSeed)
+	}
+	return
+}
+
 script Sanctuary_EventScript_NextZone {
 	lock
 	faceplayer
@@ -131,7 +226,7 @@ script Sanctuary_EventScript_NextZone {
 					}
 			}
 		case 1:
-			goto(EventScript_Settings)
+			// goto(EventScript_Settings)
 		case 2:
 			goto(EventScript_Documentation)
 	}
@@ -632,7 +727,7 @@ script Sanctuary_EventScript_GameIntro {
 		setvar(VAR_TEMP_1, 1) // VAR_TEMP_1: 1 means dealing w/ settings menu, 2 means done w/ it
 		msgbox(format("Note that some settings cannot be adjusted once the challenge has started.\pIf you're looking to play the hardest game mode, {COLOR RED}Brutal{COLOR DARK_GRAY} automatically enables most of the difficulty settings.\pOtherwise, information about each individual setting can be found by selecting it."), MSGBOX_DEFAULT)
 		while (var(VAR_TEMP_1) == 1) {
-			call(EventScript_Settings)
+			// call(EventScript_Settings)
 			msgbox(format("Are you sure you are done selecting your settings?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				setvar(VAR_TEMP_1, 0)
@@ -1202,11 +1297,6 @@ script EventScript_WhenUReady {
 	end
 }
 
-script EventScript_Documentation {
-	msgbox(format("This is version 1.4.0 of the Pokémon Battle Labyrinth.\pMake sure you're playing the most up to date version!$"), MSGBOX_DEFAULT)
-	goto(EventScript_WhenUReady)
-}
-
 text gText_Colress_BrutalExplained {
 	format("{COLOR RED}Brutal{COLOR DARK_GRAY} mode enables all of the increased difficulty modes at the same time.\p"
 	"{COLOR RED}Brutal{COLOR DARK_GRAY} mode can only be enabled at the beginning of the game, but can be disabled at any point.\p"
@@ -1217,13 +1307,6 @@ text gText_Colress_RandomizerExplanation {
 	format("{COLOR RED}Randomizer{COLOR DARK_GRAY} mode randomizes wild encounters and gift Pokémon, including your starter.\p"
 	"Trainer Pokémon are left unchanged.\p"
 	"{COLOR RED}Randomizer{COLOR DARK_GRAY} mode can only be altered at the beginning of the game.")
-}
-
-text gText_Colress_NuzlockeExplained {
-	format("{COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode completely implements all standard Nuzlocke rules, such as permanent death and capture restrictions.\p"
-	"It comes with Species Clause, Shiny Clause, and Gift Clause.\p"
-	"It is not recommended to play {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode unless you are familiar with Nuzlockes already.\p"
-	"{COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode can only be enabled at the beginning of the game, but can be disabled at any point.")
 }
 
 text gText_Colress_InfiniteExplained {
@@ -1238,575 +1321,6 @@ text gText_Colress_CannotChangeSettingBrutal {
 
 text gText_Colress_CannotChangeSettingInfinite {
 	format("You cannot change this setting because you are playing on Infinite mode.")
-}
-
-script EventScript_Settings {
-	while {
-		message("Choose a setting to adjust.\n{COLOR RED}Red{COLOR DARK_GRAY} means enabled.")
-		waitmessage
-		if (flag(FLAG_SETTINGS_BRUTAL) == true) {
-			dynmultipush("{COLOR RED}Brutal", 0)
-		} elif (var(VAR_TEMP_1) == 1) {
-			dynmultipush("Brutal", 0)
-		}
-		if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
-			dynmultipush("{COLOR RED}Nuzlocke", 1)
-		} elif (var(VAR_TEMP_1) == 1) {
-			dynmultipush("Nuzlocke", 1)
-		}
-		if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
-			dynmultipush("{COLOR RED}Randomizer", 2)
-		} elif (var(VAR_TEMP_1) == 1) {
-			dynmultipush("Randomizer", 2)
-		}
-		if (flag(FLAG_SETTINGS_INFINITE) == true) {
-			dynmultipush("{COLOR RED}Infinite", 3)
-		} elif (var(VAR_TEMP_1) == 1) {
-			dynmultipush("Infinite", 3)
-		}
-		if (flag(FLAG_SETTINGS_FULL_INFO) == true) {
-			dynmultipush("{COLOR RED}Full Info", 4)
-		} else {
-			dynmultipush("Full Info", 4)
-		}
-		if (flag(FLAG_SETTINGS_EXP_ALL) == true) {
-			dynmultipush("{COLOR RED}Exp. All", 5)
-		} else {
-			dynmultipush("Exp. All", 5)
-		}
-		dynmultipush("{COLOR RED}Music", 6)
-		if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-			dynmultipush("{COLOR RED}Challenge", 7)
-		} else {
-			dynmultipush("Challenge", 7)
-		}
-		if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_GAUNTLET) == true)) {
-			dynmultipush("{COLOR RED}Gauntlet", 8)
-		} else {
-			dynmultipush("Gauntlet", 8)
-		}
-		if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_ANTIDOCTOR) == true)) {
-			dynmultipush("{COLOR RED}Antidoctor", 9)
-		} else {
-			dynmultipush("Antidoctor", 9)
-		}
-		if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CLUMSY) == true)) {
-			dynmultipush("{COLOR RED}Clumsy", 10)
-		} else {
-			dynmultipush("Clumsy", 10)
-		}
-		if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_EFFORTLESS) == true)) {
-			dynmultipush("{COLOR RED}Effortless", 11)
-		} else {
-			dynmultipush("Effortless", 11)
-		}
-		if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_RED_THUMB) == true)) {
-			dynmultipush("{COLOR RED}Red Thumb", 12)
-		} else {
-			dynmultipush("Red Thumb", 12)
-		}
-		if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_ANTIGRIND) == true)) {
-			dynmultipush("{COLOR RED}Antigrind", 13)
-		} else {
-			dynmultipush("Antigrind", 13)
-		}
-		if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_SINGLE_USE) == true)) {
-			dynmultipush("{COLOR RED}Single-Use", 14)
-		} else {
-			dynmultipush("Single-Use", 14)
-		}
-		if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_POOR) == true)) {
-			dynmultipush("{COLOR RED}Poor", 15)
-		} else {
-			dynmultipush("Poor", 15)
-		}
-		if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_INDEPENDENT) == true)) {
-			dynmultipush("{COLOR RED}Independent", 16)
-		} else {
-			dynmultipush("Independent", 16)
-		}
-		dynmultipush("Exit", 17)
-		dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
-		switch (var(VAR_RESULT)) {
-			case 0:
-				msgbox(gText_Colress_BrutalExplained, MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_BRUTAL) == true) {
-					msgbox(format("Would you like to turn off {COLOR RED}Brutal{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						msgbox(format("Are you sure you would like to turn off {COLOR RED}Brutal{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_OFF)
-							msgbox("{COLOR RED}Brutal{COLOR DARK_GRAY} mode turned off.", MSGBOX_DEFAULT)
-							waitse
-							clearflag(FLAG_SETTINGS_BRUTAL)
-						}
-					}
-				} else {
-					if (flag(FLAG_SETTINGS_INFINITE) == true) {
-						msgbox(gText_Colress_CannotChangeSettingInfinite, MSGBOX_DEFAULT)
-					} else {
-						msgbox(format("Would you like to turn on {COLOR RED}Brutal{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							msgbox(format("Are you sure you would like to turn on {COLOR RED}Brutal{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-							if (var(VAR_RESULT) == YES) {
-								playse(SE_PC_ON)
-								msgbox("{COLOR RED}Brutal{COLOR DARK_GRAY} mode turned on.", MSGBOX_DEFAULT)
-								waitse
-								setflag(FLAG_SETTINGS_BRUTAL)
-							}
-						}
-					}
-				}
-			case 1:
-				msgbox(gText_Colress_NuzlockeExplained, MSGBOX_DEFAULT)
-				if (var(VAR_TEMP_1) == 0) {
-					if (var(VAR_NUZLOCKE_DEATHS) == 0) {
-						msgbox("So far there have been 0 deaths.", MSGBOX_DEFAULT)
-					} elif (var(VAR_NUZLOCKE_DEATHS) == 1) {
-						msgbox("So far there has been 1 death.", MSGBOX_DEFAULT)
-					} else {
-						buffernumberstring(STR_VAR_1, VAR_NUZLOCKE_DEATHS)
-						msgbox("So far there have been {STR_VAR_1} deaths.", MSGBOX_DEFAULT)
-					}
-				}
-				if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
-					msgbox(format("Would you like to turn off {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						msgbox(format("Are you sure you would like to turn off {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_OFF)
-							msgbox("{COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode turned off.", MSGBOX_DEFAULT)
-							waitse
-							clearflag(FLAG_SETTINGS_NUZLOCKE)
-							clearflag(FLAG_ZONE13C_NUZLOCKE_FOSSIL_RECEIVED)
-						}
-					}
-				} else {
-					msgbox(format("Would you like to turn on {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						msgbox(format("Are you sure you would like to turn on {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_ON)
-							msgbox("{COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode turned on.", MSGBOX_DEFAULT)
-							waitse
-							setflag(FLAG_SETTINGS_NUZLOCKE)
-						}
-					}
-				}
-			case 2:
-				msgbox(gText_Colress_RandomizerExplanation, MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
-					if (var(VAR_TEMP_1) == 0) {
-						msgbox(format("You cannot turn off {COLOR RED}Randomizer{COLOR DARK_GRAY} mode once set."), MSGBOX_DEFAULT)
-					} else {
-						msgbox(format("Would you like to turn off {COLOR RED}Randomizer{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							msgbox(format("Are you sure you would like to turn off {COLOR RED}Randomizer{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-							if (var(VAR_RESULT) == YES) {
-								playse(SE_PC_OFF)
-								msgbox("{COLOR RED}Randomizer{COLOR DARK_GRAY} mode turned off.", MSGBOX_DEFAULT)
-								waitse
-								clearflag(FLAG_SETTINGS_RANDOMIZER)
-							}
-						}
-					}
-				} else {
-					msgbox(format("Would you like to turn on {COLOR RED}Randomizer{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						msgbox(format("Are you sure you would like to turn on {COLOR RED}Randomizer{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_ON)
-							msgbox("{COLOR RED}Randomizer{COLOR DARK_GRAY} mode turned on.", MSGBOX_DEFAULT)
-							waitse
-							setflag(FLAG_SETTINGS_RANDOMIZER)
-						}
-					}
-				}
-			case 3:
-				msgbox(gText_Colress_InfiniteExplained, MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_INFINITE) == true) {
-					if (var(VAR_TEMP_1) == 0) {
-						msgbox(format("You cannot turn off {COLOR RED}Infinite{COLOR DARK_GRAY} mode once set."), MSGBOX_DEFAULT)
-						msgbox(format("Would you like to restock your supply of Full Restores, Max Elixirs, and Max Repels?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							additem(ITEM_FULL_RESTORE, 100)
-							additem(ITEM_FULL_RESTORE, 100)
-							additem(ITEM_FULL_RESTORE, 100)
-							additem(ITEM_FULL_RESTORE, 100)
-							additem(ITEM_FULL_RESTORE, 100)
-							additem(ITEM_FULL_RESTORE, 100)
-							additem(ITEM_FULL_RESTORE, 100)
-							additem(ITEM_FULL_RESTORE, 100)
-							additem(ITEM_FULL_RESTORE, 100)
-							additem(ITEM_MAX_ELIXIR, 100)
-							additem(ITEM_MAX_ELIXIR, 100)
-							additem(ITEM_MAX_ELIXIR, 100)
-							additem(ITEM_MAX_ELIXIR, 100)
-							additem(ITEM_MAX_ELIXIR, 100)
-							additem(ITEM_MAX_ELIXIR, 100)
-							additem(ITEM_MAX_ELIXIR, 100)
-							additem(ITEM_MAX_ELIXIR, 100)
-							additem(ITEM_MAX_ELIXIR, 100)
-							additem(ITEM_MAX_REPEL, 100)
-							additem(ITEM_MAX_REPEL, 100)
-							additem(ITEM_MAX_REPEL, 100)
-							additem(ITEM_MAX_REPEL, 100)
-							additem(ITEM_MAX_REPEL, 100)
-							additem(ITEM_MAX_REPEL, 100)
-							additem(ITEM_MAX_REPEL, 100)
-							additem(ITEM_MAX_REPEL, 100)
-							additem(ITEM_MAX_REPEL, 100)
-							msgbox("Items restocked.", MSGBOX_DEFAULT)
-						}
-					} else {
-						msgbox(format("Would you like to turn off {COLOR RED}Infinite{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							msgbox(format("Are you sure you would like to turn off {COLOR RED}Infinite{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-							if (var(VAR_RESULT) == YES) {
-								playse(SE_PC_OFF)
-								msgbox("{COLOR RED}Infinite{COLOR DARK_GRAY} mode turned off.", MSGBOX_DEFAULT)
-								waitse
-								clearflag(FLAG_SETTINGS_INFINITE)
-							}
-						}
-					}
-				} else {
-					if (flag(FLAG_SETTINGS_BRUTAL) == true) {
-						msgbox(gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT)
-					} else {
-						msgbox(format("Would you like to turn on {COLOR RED}Infinite{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							msgbox(format("Are you sure you would like to turn on {COLOR RED}Infinite{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-							if (var(VAR_RESULT) == YES) {
-								playse(SE_PC_ON)
-								msgbox("{COLOR RED}Infinite{COLOR DARK_GRAY} mode turned on.", MSGBOX_DEFAULT)
-								waitse
-								setflag(FLAG_SETTINGS_INFINITE)
-							}
-						}
-					}
-				}
-			case 4:
-				msgbox(format("The {COLOR RED}Full Info{COLOR DARK_GRAY} setting enables you to see more information that is not visible otherwise.\pYou can view enemy Pokémon information through the {COLOR RED}Surveil{COLOR DARK_GRAY} option in battle, use the {COLOR RED}DexNav{COLOR DARK_GRAY} to see potential encounterable Pokémon, or use the {COLOR RED}Trainer Notebook{COLOR DARK_GRAY} to see what Pokémon upcoming trainers have."), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_FULL_INFO) == true) {
-					msgbox(format("The {COLOR RED}Full Info{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
-					msgbox(format("Would you like to turn the {COLOR RED}Full Info{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						playse(SE_PC_OFF)
-						msgbox("{COLOR RED}Full Info{COLOR DARK_GRAY} setting turned off.", MSGBOX_DEFAULT)
-						waitse
-						clearflag(FLAG_SETTINGS_FULL_INFO)
-						if (var(VAR_ZONE) < 3) {
-							clearflag(FLAG_SYS_DEXNAV_GET)
-							clearflag(FLAG_SYS_DETECTOR_MODE)
-						}
-						questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SAVES)
-						if (var(VAR_RESULT) == NO) {
-							removeitem(ITEM_TRAINER_NOTEBOOK)
-						}
-					}
-				} else {
-					msgbox(format("The {COLOR RED}Full Info{COLOR DARK_GRAY} setting is currently off."), MSGBOX_DEFAULT)
-					msgbox(format("Would you like to turn the {COLOR RED}Full Info{COLOR DARK_GRAY} setting on?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						playse(SE_PC_ON)
-						msgbox("{COLOR RED}Full Info{COLOR DARK_GRAY} setting turned on.", MSGBOX_DEFAULT)
-						waitse
-						setflag(FLAG_SETTINGS_FULL_INFO)
-						if (var(VAR_ZONE) < 3) {
-							setflag(FLAG_SYS_DEXNAV_GET)
-							setflag(FLAG_SYS_DETECTOR_MODE)
-						}
-						if (checkitem(ITEM_TRAINER_NOTEBOOK) == FALSE) {
-							additem(ITEM_TRAINER_NOTEBOOK)
-						}
-					}
-				}
-			case 5:
-				msgbox(format("The {COLOR RED}Exp. All{COLOR DARK_GRAY} setting, if turned on, gives members of your party that don't participate in battle 25% experience.\pThe game's experience curve is balanced around the Exp. All being turned on, though you may turn it off if you choose."), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_EXP_ALL) == true) {
-					msgbox(format("The {COLOR RED}Exp. All{COLOR DARK_GRAY} is currently on. Would you like to turn it off?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						playse(SE_PC_OFF)
-						msgbox(format("Turned the {COLOR RED}Exp. All{COLOR DARK_GRAY} off."), MSGBOX_DEFAULT)
-						waitse
-						clearflag(FLAG_SETTINGS_EXP_ALL)
-					}
-				} else {
-					msgbox(format("The {COLOR RED}Exp. All{COLOR DARK_GRAY} is currently off. Would you like to turn it on?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						playse(SE_PC_ON)
-						msgbox(format("Turned the {COLOR RED}Exp. All{COLOR DARK_GRAY} on."), MSGBOX_DEFAULT)
-						waitse
-						setflag(FLAG_SETTINGS_EXP_ALL)
-					}
-				}
-			case 6:
-				call(EventScript_MusicMenu)
-			case 7:
-				msgbox(format("The {COLOR RED}Challenge{COLOR DARK_GRAY} setting makes battles more difficult.\pSpecial trainers have harder fights and the player is limited in their usage of powerful moves.\pThe AI cannot be PP stalled."), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_CHALLENGE) || flag(FLAG_SETTINGS_BRUTAL)) {
-					msgbox(format("The {COLOR RED}Challenge{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
-					if (flag(FLAG_SETTINGS_BRUTAL) == false) {
-						msgbox(format("Would you like to turn the {COLOR RED}Challenge{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_OFF)
-							msgbox(format("{COLOR RED}Challenge{COLOR DARK_GRAY} setting turned off."), MSGBOX_DEFAULT)
-							waitse
-							clearflag(FLAG_SETTINGS_CHALLENGE)
-						}
-					} else {
-						msgbox(gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT)
-					}
-				} else {
-					msgbox(format("The {COLOR RED}Challenge{COLOR DARK_GRAY} setting is currently off."), MSGBOX_DEFAULT)
-					msgbox(format("Would you like to turn the {COLOR RED}Challenge{COLOR DARK_GRAY} setting on?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						playse(SE_PC_ON)
-						msgbox(format("{COLOR RED}Challenge{COLOR DARK_GRAY} setting turned on."), MSGBOX_DEFAULT)
-						waitse
-						setflag(FLAG_SETTINGS_CHALLENGE)
-					}
-				}
-			case 8:
-				msgbox(format("The {COLOR RED}Gauntlet{COLOR DARK_GRAY} setting makes all trainers mandatory before leaving a Zone."), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_GAUNTLET) || flag(FLAG_SETTINGS_BRUTAL)) {
-					msgbox(format("The {COLOR RED}Gauntlet{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
-					if (flag(FLAG_SETTINGS_BRUTAL) == false) {
-						msgbox(format("Would you like to turn the {COLOR RED}Gauntlet{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_OFF)
-							msgbox("{COLOR RED}Gauntlet{COLOR DARK_GRAY} setting turned off.", MSGBOX_DEFAULT)
-							waitse
-							clearflag(FLAG_SETTINGS_GAUNTLET)
-						}
-					} else {
-						msgbox(gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT)
-					}
-				} else {
-					msgbox(format("The {COLOR RED}Gauntlet{COLOR DARK_GRAY} setting is currently off."), MSGBOX_DEFAULT)
-					msgbox(format("Would you like to turn the {COLOR RED}Gauntlet{COLOR DARK_GRAY} setting on?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						playse(SE_PC_ON)
-						msgbox("{COLOR RED}Gauntlet{COLOR DARK_GRAY} setting turned on.", MSGBOX_DEFAULT)
-						waitse
-						setflag(FLAG_SETTINGS_GAUNTLET)
-					}
-				}
-			case 9:
-				msgbox(format("The {COLOR RED}Antidoctor{COLOR DARK_GRAY} setting prevents in-battle items from being used during trainer battles.\pPokémon Battle Labyrinth does not have opponents use any items."), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_ANTIDOCTOR) || flag(FLAG_SETTINGS_BRUTAL)) {
-					msgbox(format("The {COLOR RED}Antidoctor{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
-					if (flag(FLAG_SETTINGS_BRUTAL) == false) {
-						msgbox(format("Would you like to turn the {COLOR RED}Antidoctor{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_OFF)
-							msgbox("{COLOR RED}Antidoctor{COLOR DARK_GRAY} setting turned off.", MSGBOX_DEFAULT)
-							waitse
-							clearflag(FLAG_SETTINGS_ANTIDOCTOR)
-						}
-					} else {
-						msgbox(gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT)
-					}
-				} else {
-					msgbox(format("The {COLOR RED}Antidoctor{COLOR DARK_GRAY} setting is currently off."), MSGBOX_DEFAULT)
-					msgbox(format("Would you like to turn the {COLOR RED}Antidoctor{COLOR DARK_GRAY} setting on?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						playse(SE_PC_ON)
-						msgbox("{COLOR RED}Antidoctor{COLOR DARK_GRAY} setting turned on.", MSGBOX_DEFAULT)
-						waitse
-						setflag(FLAG_SETTINGS_ANTIDOCTOR)
-					}
-				}
-			case 10:
-				msgbox(format("The {COLOR RED}Clumsy{COLOR DARK_GRAY} setting enforces Set mode."), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_CLUMSY) || flag(FLAG_SETTINGS_BRUTAL)) {
-					msgbox(format("The {COLOR RED}Clumsy{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
-					if (flag(FLAG_SETTINGS_BRUTAL) == false) {
-						msgbox(format("Would you like to turn the {COLOR RED}Clumsy{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_OFF)
-							msgbox("{COLOR RED}Clumsy{COLOR DARK_GRAY} setting turned off.", MSGBOX_DEFAULT)
-							waitse
-							clearflag(FLAG_SETTINGS_CLUMSY)
-						}
-					} else {
-						msgbox(gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT)
-					}
-				} else {
-					msgbox(format("The {COLOR RED}Clumsy{COLOR DARK_GRAY} setting is currently off."), MSGBOX_DEFAULT)
-					msgbox(format("Would you like to turn the {COLOR RED}Clumsy{COLOR DARK_GRAY} setting on?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						playse(SE_PC_ON)
-						msgbox("{COLOR RED}Clumsy{COLOR DARK_GRAY} setting turned on.", MSGBOX_DEFAULT)
-						waitse
-						setflag(FLAG_SETTINGS_CLUMSY)
-					}
-				}
-			case 11:
-				msgbox(format("The {COLOR RED}Effortless{COLOR DARK_GRAY} setting prevents Pokémon from gaining EVs."), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_EFFORTLESS) || flag(FLAG_SETTINGS_BRUTAL)) {
-					msgbox(format("The {COLOR RED}Effortless{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
-					if (flag(FLAG_SETTINGS_BRUTAL) == false) {
-						msgbox(format("Would you like to turn the {COLOR RED}Effortless{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_OFF)
-							msgbox("{COLOR RED}Effortless{COLOR DARK_GRAY} setting turned off.", MSGBOX_DEFAULT)
-							waitse
-							clearflag(FLAG_SETTINGS_EFFORTLESS)
-						}
-					} else {
-						msgbox(gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT)
-					}
-				} else {
-					msgbox(format("The {COLOR RED}Effortless{COLOR DARK_GRAY} setting is currently off."), MSGBOX_DEFAULT)
-					msgbox(format("Would you like to turn the {COLOR RED}Effortless{COLOR DARK_GRAY} setting on?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						playse(SE_PC_ON)
-						msgbox("{COLOR RED}Effortless{COLOR DARK_GRAY} setting turned on.", MSGBOX_DEFAULT)
-						waitse
-						setflag(FLAG_SETTINGS_EFFORTLESS)
-					}
-				}
-			case 12:
-				msgbox(format("In most Pokémon games, players can farm items and money by growing Berries, Thief, and other means.\pThe {COLOR RED}Red Thumb{COLOR DARK_GRAY} setting disables these ways of infinitely obtaining items."), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_RED_THUMB) || flag(FLAG_SETTINGS_BRUTAL)) {
-					msgbox(format("The {COLOR RED}Red Thumb{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
-					if (flag(FLAG_SETTINGS_BRUTAL) == false) {
-						msgbox(format("Would you like to turn the {COLOR RED}Red Thumb{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_OFF)
-							msgbox("{COLOR RED}Red Thumb{COLOR DARK_GRAY} setting turned off.", MSGBOX_DEFAULT)
-							waitse
-							clearflag(FLAG_SETTINGS_RED_THUMB)
-						}
-					} else {
-						msgbox(gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT)
-					}
-				} else {
-					msgbox(format("The {COLOR RED}Red Thumb{COLOR DARK_GRAY} setting is currently off."), MSGBOX_DEFAULT)
-					if (flag(FLAG_SETTINGS_INFINITE) == false) {
-						msgbox(format("Would you like to turn the {COLOR RED}Red Thumb{COLOR DARK_GRAY} setting on?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_ON)
-							msgbox("{COLOR RED}Red Thumb{COLOR DARK_GRAY} setting turned on.", MSGBOX_DEFAULT)
-							waitse
-							setflag(FLAG_SETTINGS_RED_THUMB)
-						}
-					} else {
-						msgbox(gText_Colress_CannotChangeSettingInfinite, MSGBOX_DEFAULT)
-					}
-				}
-			case 13:
-				msgbox(format("In most Pokémon games, players can 'grind' experience by defeating wild Pokémon.\pThe {COLOR RED}Antigrind{COLOR DARK_GRAY} setting prevents players from grinding by disabling experience gain from wild Pokémon."), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_ANTIGRIND) || flag(FLAG_SETTINGS_BRUTAL)) {
-					msgbox(format("The {COLOR RED}Antigrind{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
-					if (flag(FLAG_SETTINGS_BRUTAL) == false) {
-						msgbox(format("Would you like to turn the {COLOR RED}Antigrind{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_OFF)
-							msgbox("{COLOR RED}Antigrind{COLOR DARK_GRAY} setting turned off.", MSGBOX_DEFAULT)
-							waitse
-							clearflag(FLAG_SETTINGS_ANTIGRIND)
-						}
-					} else {
-						msgbox(gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT)
-					}
-				} else {
-					msgbox(format("The {COLOR RED}Antigrind{COLOR DARK_GRAY} setting is currently off."), MSGBOX_DEFAULT)
-					msgbox(format("Would you like to turn the {COLOR RED}Antigrind{COLOR DARK_GRAY} setting on?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						playse(SE_PC_ON)
-						msgbox("{COLOR RED}Antigrind{COLOR DARK_GRAY} setting turned on.", MSGBOX_DEFAULT)
-						waitse
-						setflag(FLAG_SETTINGS_ANTIGRIND)
-					}
-				}
-			case 14:
-				msgbox(format("The {COLOR RED}Single-Use{COLOR DARK_GRAY} setting makes all TMs single-use."), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_SINGLE_USE) || flag(FLAG_SETTINGS_BRUTAL)) {
-					msgbox(format("The {COLOR RED}Single-Use{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
-					if (flag(FLAG_SETTINGS_BRUTAL) == false) {
-						msgbox(format("Would you like to turn the {COLOR RED}Single-Use{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_OFF)
-							msgbox("{COLOR RED}Single-Use{COLOR DARK_GRAY} setting turned off.", MSGBOX_DEFAULT)
-							waitse
-							clearflag(FLAG_SETTINGS_SINGLE_USE)
-						}
-					} else {
-						msgbox(gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT)
-					}
-				} else {
-					msgbox(format("The {COLOR RED}Single-Use{COLOR DARK_GRAY} setting is currently off."), MSGBOX_DEFAULT)
-					msgbox(format("Would you like to turn the {COLOR RED}Single-Use{COLOR DARK_GRAY} setting on?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						playse(SE_PC_ON)
-						msgbox("{COLOR RED}Single-Use{COLOR DARK_GRAY} setting turned on.", MSGBOX_DEFAULT)
-						waitse
-						setflag(FLAG_SETTINGS_SINGLE_USE)
-					}
-				}
-			case 15:
-				msgbox(format("The {COLOR RED}Poor{COLOR DARK_GRAY} setting halves the reward money from trainers."), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_POOR) || flag(FLAG_SETTINGS_BRUTAL)) {
-					msgbox(format("The {COLOR RED}Poor{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
-					if (flag(FLAG_SETTINGS_BRUTAL) == false) {
-						msgbox(format("Would you like to turn the {COLOR RED}Poor{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_OFF)
-							msgbox("{COLOR RED}Poor{COLOR DARK_GRAY} setting turned off.", MSGBOX_DEFAULT)
-							waitse
-							clearflag(FLAG_SETTINGS_POOR)
-						}
-					} else {
-						msgbox(gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT)
-					}
-				} else {
-					msgbox(format("The {COLOR RED}Poor{COLOR DARK_GRAY} setting is currently off."), MSGBOX_DEFAULT)
-					msgbox(format("Would you like to turn the {COLOR RED}Poor{COLOR DARK_GRAY} setting on?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						playse(SE_PC_ON)
-						msgbox("{COLOR RED}Poor{COLOR DARK_GRAY} setting turned on.", MSGBOX_DEFAULT)
-						waitse
-						setflag(FLAG_SETTINGS_POOR)
-					}
-				}
-			case 16:
-				msgbox(format("In many Zones, there are hidden items, NPC shops, or free heals you can find.\pThe {COLOR RED}Independent{COLOR DARK_GRAY} setting disables many of these free sources of help."), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_INDEPENDENT) || flag(FLAG_SETTINGS_BRUTAL)) {
-					msgbox(format("The {COLOR RED}Independent{COLOR DARK_GRAY} setting is currently on."), MSGBOX_DEFAULT)
-					if (flag(FLAG_SETTINGS_BRUTAL) == false) {
-						msgbox(format("Would you like to turn the {COLOR RED}Independent{COLOR DARK_GRAY} setting off?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							playse(SE_PC_OFF)
-							msgbox("{COLOR RED}Independent{COLOR DARK_GRAY} setting turned off.", MSGBOX_DEFAULT)
-							waitse
-							clearflag(FLAG_SETTINGS_INDEPENDENT)
-						}
-					} else {
-						msgbox(gText_Colress_CannotChangeSettingBrutal, MSGBOX_DEFAULT)
-					}
-				} else {
-					msgbox(format("The {COLOR RED}Independent{COLOR DARK_GRAY} setting is currently off."), MSGBOX_DEFAULT)
-					msgbox(format("Would you like to turn the {COLOR RED}Independent{COLOR DARK_GRAY} setting on?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						playse(SE_PC_ON)
-						msgbox("{COLOR RED}Independent{COLOR DARK_GRAY} setting turned on.", MSGBOX_DEFAULT)
-						waitse
-						setflag(FLAG_SETTINGS_INDEPENDENT)
-					}
-				}
-				// msgbox(format("Hidden items can be disabled to limit the supply of available items.\pThis is recommended to be used alongside the disabling farming setting."), MSGBOX_DEFAULT)
-			case 17:
-			case MULTI_B_PRESSED:
-				if (var(VAR_TEMP_1) == 1) {
-					return
-				} else {
-					goto(EventScript_WhenUReady)
-				}
-		}
-	}
 }
 
 script EventScript_Guitarist {
