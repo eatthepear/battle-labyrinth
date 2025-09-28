@@ -246,6 +246,7 @@ static void DebugAction_ToggleFlag(u8 taskId);
 
 static void DebugTask_HandleMenuInput_General(u8 taskId);
 
+static void DebugAction_Util_Warp_PBL(u8 taskId);
 static void DebugAction_Util_Fly(u8 taskId);
 static void DebugAction_Util_Warp_Warp(u8 taskId);
 static void DebugAction_Util_Warp_SelectMapGroup(u8 taskId);
@@ -299,6 +300,8 @@ static void DebugAction_FlagsVars_TrainerSeeOnOff(u8 taskId);
 static void DebugAction_FlagsVars_BagUseOnOff(u8 taskId);
 static void DebugAction_FlagsVars_CatchingOnOff(u8 taskId);
 static void DebugAction_FlagsVars_RunningShoes(u8 taskId);
+static void DebugAction_FlagsVars_ToggleNuzlockeFlag(u8 taskId);
+static void DebugAction_FlagsVars_CycleDifficulty(u8 taskId);
 
 static void DebugAction_Give_Item(u8 taskId);
 static void DebugAction_Give_Item_SelectId(u8 taskId);
@@ -532,7 +535,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_FollowerNPCMenu[] =
 
 static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
 {
-    { COMPOUND_STRING("Fly to map…"),       DebugAction_Util_Fly },
+    { COMPOUND_STRING("Warp to PBL map warp…"), DebugAction_Util_Warp_PBL },
     { COMPOUND_STRING("Warp to map warp…"), DebugAction_Util_Warp_Warp },
     { COMPOUND_STRING("Set weather…"),      DebugAction_Util_Weather },
     { COMPOUND_STRING("Font Test…"),        DebugAction_ExecuteScript, Debug_EventScript_FontTest },
@@ -641,9 +644,9 @@ static const struct DebugMenuOption sDebugMenu_Actions_Flags[] =
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKEDEX]       = { COMPOUND_STRING("Toggle {STR_VAR_1}Pokédex"),         DebugAction_ToggleFlag, DebugAction_FlagsVars_SwitchDex },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_NATDEX]        = { COMPOUND_STRING("Toggle {STR_VAR_1}National Dex"),    DebugAction_ToggleFlag, DebugAction_FlagsVars_SwitchNatDex },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKENAV]       = { COMPOUND_STRING("Toggle {STR_VAR_1}PokéNav"),         DebugAction_ToggleFlag, DebugAction_FlagsVars_SwitchPokeNav },
-    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_MATCH_CALL]    = { COMPOUND_STRING("Toggle {STR_VAR_1}Match Call"),      DebugAction_ToggleFlag, DebugAction_FlagsVars_SwitchMatchCall },
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_MATCH_CALL]    = { COMPOUND_STRING("Toggle {STR_VAR_1}Nuzlocke"),        DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleNuzlockeFlag },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES]     = { COMPOUND_STRING("Toggle {STR_VAR_1}Running Shoes"),   DebugAction_ToggleFlag, DebugAction_FlagsVars_RunningShoes },
-    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS]     = { COMPOUND_STRING("Toggle {STR_VAR_1}Fly Flags"),       DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleFlyFlags },
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS]     = { COMPOUND_STRING("Cycle {STR_VAR_1}Difficulty"),       DebugAction_ToggleFlag, DebugAction_FlagsVars_CycleDifficulty },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL]    = { COMPOUND_STRING("Toggle {STR_VAR_1}All badges"),      DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleBadgeFlags },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_GAME_CLEAR]    = { COMPOUND_STRING("Toggle {STR_VAR_1}Game clear"),      DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleGameClear },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS] = { COMPOUND_STRING("Toggle {STR_VAR_1}Frontier Pass"),   DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleFrontierPass },
@@ -969,7 +972,7 @@ static u8 Debug_CheckToggleFlags(u8 id)
             result = FlagGet(FLAG_SYS_POKENAV_GET);
             break;
         case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_MATCH_CALL:
-            result = FlagGet(FLAG_ADDED_MATCH_CALL_TO_POKENAV) && FlagGet(FLAG_HAS_MATCH_CALL);
+            result = FlagGet(FLAG_SETTINGS_NUZLOCKE);
             break;
         case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES:
             result = FlagGet(FLAG_SYS_B_DASH);
@@ -1204,7 +1207,7 @@ static void DebugAction_OpenSubMenuCreateFollowerNPC(u8 taskId, const struct Deb
 // *******************************
 // Actions Utilities
 
-static void DebugAction_Util_Fly(u8 taskId)
+static UNUSED void DebugAction_Util_Fly(u8 taskId)
 {
     Debug_DestroyMenu_Full(taskId);
     SetMainCallback2(CB2_OpenFlyMap);
@@ -1213,6 +1216,38 @@ static void DebugAction_Util_Fly(u8 taskId)
 #define tMapGroup  data[5]
 #define tMapNum    data[6]
 #define tWarp      data[7]
+
+static void DebugAction_Util_Warp_PBL(u8 taskId)
+{
+    u8 windowId;
+
+    ClearStdWindowAndFrame(gTasks[taskId].tWindowId, TRUE);
+    RemoveWindow(gTasks[taskId].tWindowId);
+
+    HideMapNamePopUpWindow();
+    LoadMessageBoxAndBorderGfx();
+    windowId = AddWindow(&sDebugMenuWindowTemplateExtra);
+    DrawStdWindowFrame(windowId, FALSE);
+
+    CopyWindowToVram(windowId, COPYWIN_FULL);
+
+    gTasks[taskId].tSubWindowId = windowId;
+    gTasks[taskId].tInput = 0;
+    gTasks[taskId].tDigit = 0;
+    gTasks[taskId].tMapGroup = 27;
+    gTasks[taskId].tMapNum = 0;
+    gTasks[taskId].tWarp = 0;
+
+    ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, (MAP_GROUP_COUNT[gTasks[taskId].tMapGroup] - 1 >= 100) ? 3 : 2);
+    ConvertIntToDecimalStringN(gStringVar2, MAP_GROUP_COUNT[gTasks[taskId].tMapGroup] - 1, STR_CONV_MODE_LEADING_ZEROS, (MAP_GROUP_COUNT[gTasks[taskId].tMapGroup] - 1 >= 100) ? 3 : 2);
+    StringExpandPlaceholders(gStringVar1, sDebugText_Util_WarpToMap_SelMax);
+    GetMapName(gStringVar2, Overworld_GetMapHeaderByGroupAndId(gTasks[taskId].tMapGroup, gTasks[taskId].tInput)->regionMapSectionId, 0);
+    StringCopy(gStringVar3, gText_DigitIndicator[gTasks[taskId].tDigit]);
+    StringExpandPlaceholders(gStringVar4, sDebugText_Util_WarpToMap_SelectMap);
+    AddTextPrinterParameterized(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL);
+
+    gTasks[taskId].func = DebugAction_Util_Warp_SelectMap;
+}
 
 #define LAST_MAP_GROUP (MAP_GROUPS_COUNT - 1)
 
@@ -1887,7 +1922,7 @@ static void DebugAction_FlagsVars_SwitchPokeNav(u8 taskId)
     FlagToggle(FLAG_SYS_POKENAV_GET);
 }
 
-static void DebugAction_FlagsVars_SwitchMatchCall(u8 taskId)
+static UNUSED void DebugAction_FlagsVars_SwitchMatchCall(u8 taskId)
 {
     if (FlagGet(FLAG_ADDED_MATCH_CALL_TO_POKENAV))
     {
@@ -1912,7 +1947,7 @@ static void DebugAction_FlagsVars_RunningShoes(u8 taskId)
     FlagToggle(FLAG_SYS_B_DASH);
 }
 
-static void DebugAction_FlagsVars_ToggleFlyFlags(u8 taskId)
+static UNUSED void DebugAction_FlagsVars_ToggleFlyFlags(u8 taskId)
 {
     if (FlagGet(sLocationFlags[ARRAY_COUNT(sLocationFlags) - 1]))
     {
@@ -1925,6 +1960,40 @@ static void DebugAction_FlagsVars_ToggleFlyFlags(u8 taskId)
         PlaySE(SE_PC_LOGIN);
         for (u32 i = 0; i < ARRAY_COUNT(sLocationFlags); i++)
             FlagSet(sLocationFlags[i]);
+    }
+}
+
+static void DebugAction_FlagsVars_ToggleNuzlockeFlag(u8 taskId)
+{
+    if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
+    {
+        PlaySE(SE_PC_OFF);
+        FlagClear(FLAG_SETTINGS_NUZLOCKE);
+    }
+    else
+    {
+        PlaySE(SE_PC_LOGIN);
+        FlagSet(FLAG_SETTINGS_NUZLOCKE);
+    }
+}
+
+static void DebugAction_FlagsVars_CycleDifficulty(u8 taskId)
+{
+    if (GetCurrentDifficultyLevel() == DIFFICULTY_EASY)
+    {
+        SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
+    }
+    else if (GetCurrentDifficultyLevel() == DIFFICULTY_NORMAL)
+    {
+        SetCurrentDifficultyLevel(DIFFICULTY_HARD);
+    }
+    else if (GetCurrentDifficultyLevel() == DIFFICULTY_HARD)
+    {
+        SetCurrentDifficultyLevel(DIFFICULTY_BRUTAL);
+    }
+    else if (GetCurrentDifficultyLevel() == DIFFICULTY_BRUTAL)
+    {
+        SetCurrentDifficultyLevel(DIFFICULTY_EASY);
     }
 }
 
