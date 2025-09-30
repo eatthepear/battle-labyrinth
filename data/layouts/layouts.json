@@ -4415,7 +4415,7 @@
       "id": "LAYOUT_SANCTUARY",
       "name": "Sanctuary_Layout",
       "width": 77,
-      "height": 55,
+      "height": 41,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_Sanctuary",
       "border_filepath": "data/layouts/Sanctuary/border.bin",
