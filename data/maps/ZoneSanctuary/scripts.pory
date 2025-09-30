@@ -3372,3 +3372,61 @@ script EventScript_Joy {
 	release
 	end
 }
+
+script EventScript_Twin {
+	lock
+	faceplayer
+	msgbox(format("I love watching Furret walk!"))
+	playbgm(MUS_BW_ACCUMULA, FALSE)
+	release
+}
+
+script EventScript_Furret {
+	lock
+	faceplayer
+	playmoncry(SPECIES_FURRET, CRY_MODE_NORMAL)
+	msgbox(format("Furr?"))
+	waitmoncry
+	release
+	end
+}
+
+script EventScript_Ponyta {
+	lock
+	faceplayer
+	playmoncry(SPECIES_PONYTA, CRY_MODE_NORMAL)
+	msgbox(format("Pony! Ponyta!"))
+	waitmoncry
+	release
+	end
+}
+
+script EventScript_Tyrogue {
+	lock
+	faceplayer
+	playmoncry(SPECIES_TYROGUE, CRY_MODE_NORMAL)
+	msgbox(format("T-Tyrogue!"))
+	waitmoncry
+	release
+	end
+}
+
+script EventScript_MeowthAlola {
+	lock
+	faceplayer
+	playmoncry(SPECIES_MEOWTH_ALOLA, CRY_MODE_NORMAL)
+	msgbox(format("Meee-owth!"))
+	waitmoncry
+	release
+	end
+}
+
+script EventScript_Marill {
+	lock
+	faceplayer
+	playmoncry(SPECIES_MARILL, CRY_MODE_NORMAL)
+	msgbox(format("Mari! Mari!"))
+	waitmoncry
+	release
+	end
+}
