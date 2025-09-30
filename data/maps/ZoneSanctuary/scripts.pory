@@ -1473,7 +1473,7 @@ text gText_Colress_CannotChangeSettingInfinite {
 	format("You cannot change this setting because you are playing on Infinite mode.")
 }
 
-script EventScript_Cowgirl {
+script EventScript_Shop_Cowgirl {
 	lock
 	faceplayer
 	if (flag(FLAG_COWGIRL_INTRO) == FALSE) {
