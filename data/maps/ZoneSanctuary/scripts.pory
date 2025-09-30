@@ -3394,32 +3394,6 @@ script EventScript_Shop_Lelouch_Other {
 	return
 }
 
-script EventScript_Joy {
-	lock
-	faceplayer
-	if (flag(FLAG_JOY_INTRO) == false) {
-		setflag(FLAG_JOY_INTRO)
-		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Welcome to Joy's Center of Restoration! My name is Joy.\p{COLOR BLUE}Joy{COLOR DARK_GRAY}: I used to work at the Pokémon Center, but they gave terrible pay.\pSo now, this building, Joy's Center of Restoration, is my own! I own it! Isn't that amazing?\pAnyways, not only do we encourage folks to use the building as a social space, we also still heal your Pokémon and offer access to the PC, for free!"), MSGBOX_DEFAULT)
-	}
-	msgbox(format("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Welcome! Should I heal your Pokémon?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		closemessage
-		incrementgamestat(GAME_STAT_USED_POKECENTER)
-		hidefollower(0)
-		fadescreenswapbuffers(FADE_TO_BLACK)
-		playfanfare(MUS_HEAL)
-		waitfanfare
-		special(HealPlayerParty)
-		fadescreenswapbuffers(FADE_FROM_BLACK)
-		callnative(UpdateFollowingPokemon)
-		applymovement(LOCALID_JOY, Movement_PkmnCenterNurse_Bow)
-		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Your Pokémon have been restored. See you next time!"))
-	}
-	release
-	end
-}
-
 script EventScript_Twin {
 	lock
 	faceplayer
