@@ -1473,6 +1473,177 @@ text gText_Colress_CannotChangeSettingInfinite {
 	format("You cannot change this setting because you are playing on Infinite mode.")
 }
 
+script EventScript_Cowgirl {
+	lock
+	faceplayer
+	if (flag(FLAG_COWGIRL_INTRO) == FALSE) {
+		msgbox(format("Howdy! Welcome to the Farmer's Stand."))
+		call(EventScript_Shop_FarmersStand_Info)
+		setflag(FLAG_COWGIRL_INTRO)
+	}
+	showmoneybox(0, 0)
+	call(EventScript_Shop_FarmersStand)
+	hidemoneybox
+	msgbox(format("So long, partner!"))
+	release
+	end
+}
+
+script EventScript_Shop_FarmersStand {
+	buffernumberstring(0, VAR_HERBAL_STOCK)
+	message("Howdy! Welcome to the Farmer's Stand.\nYou can buy up to {STR_VAR_1} items.")
+	waitmessage
+	dynmultipush("Shop Info", 0)
+	dynmultipush("Oran Berry", 2)
+	dynmultipush("Cheri Berry", 3)
+	dynmultipush("Chesto Berry", 4)
+	dynmultipush("Pecha Berry", 5)
+	dynmultipush("Rawst Berry", 6)
+	dynmultipush("Aspear Berry", 7)
+	dynmultipush("Persim Berry", 8)
+	dynmultipush("Ability Snack", 9)
+	dynmultipush("Serious Mint", 10)
+	dynmultipush("Exit", 1)
+	dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			call(EventScript_Shop_FarmersStand_Info)
+		case 1:
+		case MULTI_B_PRESSED:
+			return
+		case 2:
+			setvar(VAR_TEMP_0, ITEM_ORAN_BERRY)
+			call(EventScript_Shop_FarmersStand_BuyItem)
+		case 3:
+			setvar(VAR_TEMP_0, ITEM_CHERI_BERRY)
+			call(EventScript_Shop_FarmersStand_BuyItem)
+		case 4:
+			setvar(VAR_TEMP_0, ITEM_CHESTO_BERRY)
+			call(EventScript_Shop_FarmersStand_BuyItem)
+		case 5:
+			setvar(VAR_TEMP_0, ITEM_PECHA_BERRY)
+			call(EventScript_Shop_FarmersStand_BuyItem)
+		case 6:
+			setvar(VAR_TEMP_0, ITEM_RAWST_BERRY)
+			call(EventScript_Shop_FarmersStand_BuyItem)
+		case 7:
+			setvar(VAR_TEMP_0, ITEM_ASPEAR_BERRY)
+			call(EventScript_Shop_FarmersStand_BuyItem)
+		case 8:
+			setvar(VAR_TEMP_0, ITEM_PERSIM_BERRY)
+			call(EventScript_Shop_FarmersStand_BuyItem)
+		case 9:
+			setvar(VAR_TEMP_0, ITEM_ABILITY_SNACK)
+			call(EventScript_Shop_FarmersStand_BuyItem)
+		case 10:
+			setvar(VAR_TEMP_0, ITEM_SERIOUS_MINT)
+			call(EventScript_Shop_FarmersStand_BuyItem)
+	}
+	call(EventScript_Shop_FarmersStand)
+}
+
+script EventScript_Shop_FarmersStand_Info {
+	buffernumberstring(0, VAR_HERBAL_STOCK)
+	msgbox(Text_Shop_Herbal_Info)
+}
+
+text Text_Shop_Herbal_Info {
+	"We sell freshly grown or baked goods,\nall organically sourced, and it's\lsubsidized, so everything is dirt cheap!\p"
+	"We do have a per-customer limit on how\nmany items you can buy, as our stock of\litems is limited.\p"
+	"Currently, you can buy up to {STR_VAR_1} items,\nthough the limit will reset when we\lrestock our supply. (every 5th Zone)"
+}
+
+// This script assumes everything costs ¥80
+script EventScript_Shop_FarmersStand_BuyItem {
+	if (var(VAR_HERBAL_STOCK) == 0) {
+		msgbox(Text_Shop_Herbal_YouCantPurchaseMore)
+		return
+	}
+	buffernumberstring(0, VAR_HERBAL_STOCK)
+	bufferitemnameplural(1, VAR_TEMP_0, 2)
+	message("How many {STR_VAR_2} do you want?\n(You can still buy up to {STR_VAR_1} items.)")
+	waitmessage
+	buffernumberstring(1, 80)
+	dynmultipush("One - ¥{STR_VAR_1}", 0)
+	if (var(VAR_HERBAL_STOCK) >= 5) {
+		buffernumberstring(1, 80 * 5)
+		dynmultipush("Five - ¥{STR_VAR_2}", 1)
+	}
+	if (var(VAR_HERBAL_STOCK) >= 10) {
+		buffernumberstring(2, 80 * 10)
+		dynmultipush("Ten - ¥{STR_VAR_3}", 2)
+	}
+	dynmultipush("Back", 3)
+	dynmultistack(21, 0, FALSE, 4, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			if (checkmoney(80) == FALSE) {
+				msgbox(gText_YouDontHaveEnoughMoney)
+				break
+			}
+			buffernumberstring(0, 1)
+			bufferitemnameplural(1, VAR_TEMP_0, 1)
+			buffernumberstring(2, 80)
+			msgbox("You want to buy {STR_VAR_1} {STR_VAR_2}?\nThat will be ¥{STR_VAR_3}.", MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				removemoney(80)
+				updatemoneybox
+				playse(SE_SHOP)
+				msgbox(gText_HereYouGoThankYou)
+				waitse
+				additem(VAR_TEMP_0, 1)
+				subvar(VAR_HERBAL_STOCK, 1)
+				return
+			}
+		case 1:
+			if (checkmoney(80 * 5) == FALSE) {
+				msgbox(gText_YouDontHaveEnoughMoney)
+				break
+			}
+			buffernumberstring(0, 5)
+			bufferitemnameplural(1, VAR_TEMP_0, 5)
+			buffernumberstring(2, 80 * 5)
+			msgbox("You want to buy {STR_VAR_1} {STR_VAR_2}?\nThat will be ¥{STR_VAR_3}.", MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				removemoney(80 * 5)
+				updatemoneybox
+				playse(SE_SHOP)
+				msgbox(gText_HereYouGoThankYou)
+				waitse
+				additem(VAR_TEMP_0, 5)
+				subvar(VAR_HERBAL_STOCK, 5)
+				return
+			}
+		case 2:
+			if (checkmoney(80 * 10) == FALSE) {
+				msgbox(gText_YouDontHaveEnoughMoney)
+				break
+			}
+			buffernumberstring(0, 10)
+			bufferitemnameplural(1, VAR_TEMP_0, 10)
+			buffernumberstring(2, 80 * 10)
+			msgbox("You want to buy {STR_VAR_1} {STR_VAR_2}?\nThat will be ¥{STR_VAR_3}.", MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				removemoney(80 * 10)
+				updatemoneybox
+				playse(SE_SHOP)
+				msgbox(gText_HereYouGoThankYou)
+				waitse
+				additem(VAR_TEMP_0, 10)
+				subvar(VAR_HERBAL_STOCK, 10)
+				return
+			}
+		case 3:
+		case MULTI_B_PRESSED:
+			return
+	}
+	call(EventScript_Shop_FarmersStand_BuyItem)
+}
+
+text Text_Shop_Herbal_YouCantPurchaseMore {
+	format("You've already reached the purchase limit, I'm afraid. Come back when we restock! (every 5th Zone)")
+}
+
 script EventScript_Guitarist {
 	lock
 	faceplayer

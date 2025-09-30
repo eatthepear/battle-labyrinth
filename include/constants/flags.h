@@ -281,6 +281,7 @@
 #define FLAG_ZONE_B1_PORYGON_5                            0x155
 #define FLAG_RECEIVED_PORYGON                             0x156
 #define FLAG_GUITARIST_INTRO                              0x157
+#define FLAG_COWGIRL_INTRO                                0x158
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x200

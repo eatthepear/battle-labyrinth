@@ -1,3 +1,7 @@
+text gText_YouDontHaveEnoughMoney {
+	format("You don't have enough money.")
+}
+
 script EventScript_Shop_BreederF {
 	lock
 	faceplayer

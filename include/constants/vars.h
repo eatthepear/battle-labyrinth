@@ -59,6 +59,7 @@
 #define VAR_NUM_TRAINERS_REMAINING           0x4029
 #define VAR_DEXNAV_SPECIES                   0x402A // Registered dexnav species
 #define VAR_DIFFICULTY                       0x402B
+#define VAR_HERBAL_STOCK                     0x402C
 
 // Tracker Vars (Don't manually set)
 #define VAR_REPEL_STEP_COUNT                 0x4040
