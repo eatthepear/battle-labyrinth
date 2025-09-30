@@ -336,6 +336,9 @@ static bool32 CanFish(void)
     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_UNDERWATER))
         return FALSE;
 
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE_SANCTUARY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE_SANCTUARY))
+        return FALSE;
+
     if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
     {
         if (IsPlayerFacingSurfableFishableWater())
