@@ -1190,6 +1190,27 @@ u16 GetCurrLocationDefaultMusic(void)
      && GetSavedWeather() == WEATHER_SANDSTORM)
         return MUS_DESERT;
 
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE_SANCTUARY)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE_SANCTUARY))
+    {
+        switch (VarGet(VAR_SANCTUARY_MUSIC))
+        {
+            case 0:
+            default:
+                return MUS_DP_AMITY_SQUARE;
+            case 1:
+                return MUS_PL_B_HALL;
+            case 2:
+                return MUS_BW_ACCUMULA;
+            case 3:
+                return MUS_BW_SKYARROW_BRIDGE;
+            case 4:
+                return MUS_BW_WHITE_FOREST;
+            case 5:
+                return MUS_BW_ANVILLE_TOWN;
+        }
+    }
+
     music = GetLocationMusic(&gSaveBlock1Ptr->location);
     if (music != MUS_ROUTE118)
     {

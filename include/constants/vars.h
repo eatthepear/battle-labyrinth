@@ -54,12 +54,13 @@
 #define VAR_WILD_MUSIC                       0x4024
 #define VAR_TRAINER_MUSIC                    0x4025
 #define VAR_LEVIATHAN_MUSIC                  0x4026
-#define VAR_REVISITING_ZONE                  0x4027
+#define VAR_SANCTUARY_MUSIC                  0x4027
 #define VAR_STARTER_MON                      0x4028 // 0=Grass, 1=Fire, 2=Water
 #define VAR_NUM_TRAINERS_REMAINING           0x4029
 #define VAR_DEXNAV_SPECIES                   0x402A // Registered dexnav species
 #define VAR_DIFFICULTY                       0x402B
 #define VAR_HERBAL_STOCK                     0x402C
+#define VAR_REVISITING_ZONE                  0x402D
 
 // Tracker Vars (Don't manually set)
 #define VAR_REPEL_STEP_COUNT                 0x4040
