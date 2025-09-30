@@ -3451,3 +3451,13 @@ script EventScript_Marill {
 	release
 	end
 }
+
+script EventScript_Magnemite {
+	lock
+	faceplayer
+	playmoncry(SPECIES_MAGNEMITE, CRY_MODE_NORMAL)
+	msgbox(format("BZZT!"))
+	waitmoncry
+	release
+	end
+}

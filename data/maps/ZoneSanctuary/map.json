@@ -18,9 +18,9 @@
       "local_id": "LOCALID_COLRESS",
       "graphics_id": "OBJ_EVENT_GFX_COLRESS",
       "x": 48,
-      "y": 14,
+      "y": 9,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -31,7 +31,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
       "x": 29,
-      "y": 15,
+      "y": 13,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -44,7 +44,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
       "x": 32,
-      "y": 23,
+      "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -57,7 +57,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_COWGIRL",
       "x": 17,
-      "y": 15,
+      "y": 13,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -70,7 +70,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",
       "x": 19,
-      "y": 23,
+      "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -83,7 +83,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_GUITARIST",
       "x": 64,
-      "y": 19,
+      "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -96,7 +96,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(FURRET)",
       "x": 21,
-      "y": 17,
+      "y": 15,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_UP_LEFT_DOWN",
       "movement_range_x": 4,
@@ -109,7 +109,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEOWTH_ALOLA)",
       "x": 30,
-      "y": 24,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
       "movement_range_x": 0,
@@ -122,7 +122,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TYROGUE)",
       "x": 17,
-      "y": 24,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -135,7 +135,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PONYTA)",
       "x": 17,
-      "y": 20,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_UP_DOWN_RIGHT",
       "movement_range_x": 3,
@@ -148,7 +148,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MARILL)",
       "x": 31,
-      "y": 16,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -161,7 +161,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
       "x": 21,
-      "y": 16,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
       "movement_range_x": 4,
@@ -175,7 +175,7 @@
       "local_id": "LOCALID_FISHERMAN",
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
       "x": 49,
-      "y": 24,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -184,12 +184,38 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_Fisherman",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAGNEMITE)",
+      "x": 49,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Magnemite",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAGNEMITE)",
+      "x": 47,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Magnemite",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
       "x": 65,
-      "y": 16,
+      "y": 14,
       "elevation": 0,
       "dest_map": "MAP_ZONE_SANCTUARY_POKEMON_CENTER_1F",
       "dest_warp_id": "1"
