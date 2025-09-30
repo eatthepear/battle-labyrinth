@@ -30,7 +30,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
-      "x": 32,
+      "x": 23,
       "y": 15,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -38,7 +38,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_Shop_Tim",
+      "script": "EventScript_Shop_MartEmployee",
       "flag": "0"
     },
     {
@@ -51,13 +51,13 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_Shop_Tim",
+      "script": "EventScript_Shop_MartEmployee",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_COWGIRL",
-      "x": 34,
-      "y": 23,
+      "x": 32,
+      "y": 15,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -69,15 +69,15 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
-      "x": 23,
-      "y": 15,
+      "x": 34,
+      "y": 23,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_Shop_Tim",
+      "script": "EventScript_Shop_MartEmployee",
       "flag": "0"
     },
     {

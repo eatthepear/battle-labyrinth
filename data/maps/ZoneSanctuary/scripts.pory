@@ -1796,132 +1796,31 @@ mart Shop_Filler {
 	ITEM_POKE_BALL
 }
 
-script EventScript_Shop_Portentia {
+script EventScript_Shop_MartEmployee {
 	lock
 	faceplayer
-	if (flag(FLAG_PORTENTIA_INTRO) == false) {
-		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Hello, lovely. Your name is… {PLAYER}?\pI see! Well then, {PLAYER}, would you care to try some of my special brews?\pAhem! I realize I should introduce myself.\p{COLOR BLUE}Portentia{COLOR DARK_GRAY}: I am Portentia, and I craft the finest medicines for your Pokémon.\pMy skills are unparalleled and my prices can't be beat."), MSGBOX_DEFAULT)
-		setflag(FLAG_PORTENTIA_INTRO)
-	}
-	if ((var(VAR_ZONE) > 20) && (flag(FLAG_PORTENTIA_SUPER_POTION_INTRO) == false)) {
-		msgbox(format("{COLOR BLUE}Portentia{COLOR DARK_GRAY}: It's good to see you again. I have a new discount option available in my shop.\pIf you buy 10 Potions, you will receive a free Super Potion.\pI hope that is a most compelling deal."), MSGBOX_DEFAULT)
-		setflag(FLAG_PORTENTIA_SUPER_POTION_INTRO)
-	}
-	message(format("{COLOR BLUE}Portentia{COLOR DARK_GRAY}: Welcome, {PLAYER}. What are you looking for?"))
-	waitmessage
-	switch (var(VAR_ZONE)) {
-		case 1:
-		case 2:
-		case 3:
-			pokemart(Shop_Medicine_1)
-		case 4:
-		case 5:
-		case 6:
-			pokemart(Shop_Medicine_2)
-		case 7:
-		case 9:
-		case 10:
-			pokemart(Shop_Medicine_3)
-		case 11:
-		case 12:
-			pokemart(Shop_Medicine_4)
-		case 13:
-		case 15:
-		case 16:
-		case 17:
-		case 18:
-		case 20:
-			pokemart(Shop_Medicine_5)
-		case 21:
-		case 22:
-		case 23:
-		case 24:
-		case 25:
-		case 26:
-			pokemart(Shop_Medicine_5)
-	}
-	msgbox("{COLOR BLUE}Portentia{COLOR DARK_GRAY}: Travel safe.", MSGBOX_DEFAULT)
-	release
-}
-
-mart Shop_Medicine_1 {
-	ITEM_POTION
-	ITEM_ANTIDOTE
-	ITEM_PARALYZE_HEAL
-}
-
-mart Shop_Medicine_2 {
-	ITEM_POTION
-	ITEM_ANTIDOTE
-	ITEM_PARALYZE_HEAL
-	ITEM_AWAKENING
-	ITEM_BURN_HEAL
-	ITEM_ICE_HEAL
-}
-
-mart Shop_Medicine_3 {
-	ITEM_POTION
-	ITEM_SUPER_POTION
-	ITEM_REVIVE
-	ITEM_ANTIDOTE
-	ITEM_PARALYZE_HEAL
-	ITEM_AWAKENING
-	ITEM_BURN_HEAL
-	ITEM_ICE_HEAL
-}
-
-mart Shop_Medicine_4 {
-	ITEM_POTION
-	ITEM_SUPER_POTION
-	ITEM_REVIVE
-	ITEM_ANTIDOTE
-	ITEM_PARALYZE_HEAL
-	ITEM_AWAKENING
-	ITEM_BURN_HEAL
-	ITEM_ICE_HEAL
-	ITEM_ETHER
-}
-
-mart Shop_Medicine_5 {
-	ITEM_POTION
-	ITEM_SUPER_POTION
-	ITEM_HYPER_POTION
-	ITEM_REVIVE
-	ITEM_ANTIDOTE
-	ITEM_PARALYZE_HEAL
-	ITEM_AWAKENING
-	ITEM_BURN_HEAL
-	ITEM_ICE_HEAL
-	ITEM_ETHER
-}
-
-script EventScript_Shop_Tim {
-	lock
-	faceplayer
+	playbgm(MUS_POKE_MART, FALSE)
 	if (flag(FLAG_TIM_INTRO) == false) {
-		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Hey there! The name's Tim Johnson.\p{COLOR BLUE}Tim{COLOR DARK_GRAY}: I run this store, sponsored by Pokémart Incorporated.\pYou can find all variants of Pokéballs for your travels."), MSGBOX_DEFAULT)
+		msgbox(format("Hey there! Welcome to the Poké Mart Stand.\pWe carry items that are typically sold in Poké Marts."), MSGBOX_DEFAULT)
 		setflag(FLAG_TIM_INTRO)
 	}
-	message(format("{COLOR BLUE}Tim{COLOR DARK_GRAY}: Welcome to Tim's. Can I get you anything?"))
+	message(format("Welcome to the Poké Mart Stand!"))
 	waitmessage
 	switch (var(VAR_ZONE)) {
 		case 1:
 		case 2:
 		case 3:
-			pokemart(Shop_Pokeballs_1)
 		case 4:
 		case 5:
-			pokemart(Shop_Pokeballs_2)
+			pokemart(Shop_Mart_1)
 		case 6:
 		case 7:
-			pokemart(Shop_Pokeballs_3)
 		case 9:
 		case 10:
 		case 11:
 		case 12:
 		case 13:
 		case 15:
-			pokemart(Shop_Pokeballs_4)
 		case 16:
 		case 17:
 		case 18:
@@ -1932,37 +1831,21 @@ script EventScript_Shop_Tim {
 		case 24:
 		case 25:
 		case 26:
-			pokemart(Shop_Pokeballs_4)
+			pokemart(Shop_Filler)
 	}
-	msgbox("{COLOR BLUE}Tim{COLOR DARK_GRAY}: Have a nice day!", MSGBOX_DEFAULT)
+	msgbox("Please come again!")
+	fadedefaultbgm
 	release
 }
 
-mart Shop_Pokeballs_1 {
+mart Shop_Mart_1 {
 	ITEM_POKE_BALL
-}
-
-mart Shop_Pokeballs_2 {
-	ITEM_POKE_BALL
-	ITEM_HEAL_BALL
-}
-
-mart Shop_Pokeballs_3 {
-	ITEM_POKE_BALL
-	ITEM_GREAT_BALL
-	ITEM_HEAL_BALL
-	ITEM_NEST_BALL
-	ITEM_NET_BALL
-}
-
-mart Shop_Pokeballs_4 {
-	ITEM_POKE_BALL
-	ITEM_GREAT_BALL
-	ITEM_HEAL_BALL
-	ITEM_NEST_BALL
-	ITEM_NET_BALL
-	ITEM_DIVE_BALL
-	ITEM_REPEAT_BALL
+	ITEM_POTION
+	ITEM_ANTIDOTE
+	ITEM_PARALYZE_HEAL
+	ITEM_AWAKENING
+	ITEM_BURN_HEAL
+	ITEM_ICE_HEAL
 }
 
 script EventScript_Shop_Varrick {
