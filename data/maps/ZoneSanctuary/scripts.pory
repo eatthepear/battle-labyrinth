@@ -1851,6 +1851,7 @@ mart Shop_Mart_1 {
 script EventScript_Shop_Varrick {
 	lock
 	faceplayer
+	playbgm(MUS_DP_POKE_MART, FALSE)
 	if (flag(FLAG_VARRICK_INTRO) == false) {
 		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Wowza! Yeetastic! Blamo!\p"
 				"My name is Varrick,\n"
@@ -1859,9 +1860,9 @@ script EventScript_Shop_Varrick {
 				"All the items you can or can't find in the world, you'll find here!\p"
 				"Fantastic evolution stones!\p"
 				"Powerful held items!\p"
-				"Trinkets and bobs!\p"
+				"All variety of Poké Balls!\p"
 				"Witness the finest item collection you've ever seen!\p"
-				"Please, enjoy my shop!"), MSGBOX_DEFAULT)
+				"Please, enjoy my shop!"))
 		setflag(FLAG_VARRICK_INTRO)
 	}
 	message(format("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: Salutations! Welcome to Varrick's Extravagant Emporium!"))
@@ -1870,46 +1871,38 @@ script EventScript_Shop_Varrick {
 		case 1:
 		case 2:
 		case 3:
-			pokemart(Shop_Items_1)
 		case 4:
 		case 5:
+			pokemart(Shop_Items_1)
 		case 6:
-			pokemart(Shop_Items_2)
 		case 7:
 		case 9:
 		case 10:
-			pokemart(Shop_Items_3)
 		case 11:
 		case 12:
-			pokemart(Shop_Items_4)
 		case 13:
 		case 15:
-			pokemart(Shop_Items_5)
 		case 16:
 		case 17:
 		case 18:
 		case 20:
-			pokemart(Shop_Unique_Varrick_16to20)
 		case 21:
 		case 22:
 		case 23:
-			pokemart(Shop_Unique_Varrick_21to23)
 		case 24:
 		case 25:
-			pokemart(Shop_Unique_Varrick_24to25)
 		case 26:
-			if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_EFFORTLESS) == true)) {
-				pokemart(Shop_Unique_Varrick_26to30_Brutal)
-			} else {
-				pokemart(Shop_Unique_Varrick_26to30)
-			}
+			pokemart(Shop_Filler)
 	}
-	msgbox("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: A big thank you from me!", MSGBOX_DEFAULT)
+	msgbox("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: A big thank you from me!")
+	fadedefaultbgm
 	release
 }
 
 mart Shop_Items_1 {
-	ITEM_REPEL
+	ITEM_HEAL_BALL
+	ITEM_MUSCLE_BAND
+	ITEM_WISE_GLASSES
 }
 
 mart Shop_Items_2 {
