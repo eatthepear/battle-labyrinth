@@ -1181,18 +1181,17 @@ u16 GetLocationMusic(struct WarpData *warp)
     {
         switch (VarGet(VAR_SANCTUARY_MUSIC))
         {
-            case 0:
             default:
                 return MUS_DP_AMITY_SQUARE;
-            case 1:
-                return MUS_PL_B_HALL;
             case 2:
-                return MUS_BW_ACCUMULA;
+                return MUS_PL_B_HALL;
             case 3:
-                return MUS_BW_SKYARROW_BRIDGE;
+                return MUS_BW_ACCUMULA;
             case 4:
-                return MUS_BW_WHITE_FOREST;
+                return MUS_BW_SKYARROW_BRIDGE;
             case 5:
+                return MUS_BW_WHITE_FOREST;
+            case 6:
                 return MUS_BW_ANVILLE_TOWN;
         }
     }

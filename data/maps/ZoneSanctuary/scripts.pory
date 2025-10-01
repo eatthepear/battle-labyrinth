@@ -87,15 +87,15 @@ script EventScript_Difficulty {
 			message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to Brutal."))
 			waitmessage
 	}
-	dynmultipush("Switch Difficulty", 0)
-	dynmultipush("Difficulty Info", 1)
+	dynmultipush("Difficulty Info", 0)
+	dynmultipush("Switch Difficulty", 1)
 	dynmultipush("Back", 2)
 	dynmultistack(0, 0, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 	switch (var(VAR_RESULT)) {
 		case 0:
-			call(EventScript_Difficulty_Switch)
-		case 1:
 			call(EventScript_Difficulty_Info)
+		case 1:
+			call(EventScript_Difficulty_Switch)
 		case 2:
 		case MULTI_B_PRESSED:
 			return
@@ -135,7 +135,7 @@ script EventScript_Difficulty_Switch {
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_EASY) {
 				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is already set to Easy."))
 			} else {
-				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty from Easy?"), MSGBOX_YESNO)
+				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty to Easy?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == YES) {
 					setvar(VAR_DIFFICULTY, DIFFICULTY_EASY)
 					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty has been changed to Easy."))
@@ -146,7 +146,7 @@ script EventScript_Difficulty_Switch {
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_NORMAL) {
 				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is already set to Normal."))
 			} else {
-				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty from Normal?"), MSGBOX_YESNO)
+				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty to Normal?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == YES) {
 					setvar(VAR_DIFFICULTY, DIFFICULTY_NORMAL)
 					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty has been changed to Normal."))
@@ -157,7 +157,7 @@ script EventScript_Difficulty_Switch {
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_HARD) {
 				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is already set to Hard."))
 			} else {
-				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty from Hard?"), MSGBOX_YESNO)
+				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty to Hard?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == YES) {
 					setvar(VAR_DIFFICULTY, DIFFICULTY_HARD)
 					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty has been changed to Hard."))
@@ -168,7 +168,7 @@ script EventScript_Difficulty_Switch {
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is already set to Brutal."))
 			} else {
-				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty from Brutal?"), MSGBOX_YESNO)
+				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty to Brutal?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == YES) {
 					setvar(VAR_DIFFICULTY, DIFFICULTY_BRUTAL)
 					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty has been changed to Brutal."))
@@ -200,7 +200,7 @@ script EventScript_Difficulty_Info {
 		case 2:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Hard is suited for players looking for a serious challenge.\pIt carries over the changes from Normal, but in addition, the battles are more difficult.\pAlso, you can't use in-battle items during non-wild battles, you must play on SET mode, and your Pokémon can't gain EVs."))
 		case 3:
-			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Brutal is suited for players extremely experienced in challenging ROM hacks.\pIt carries over the changes from Hard, but in addition, the battles are even more difficult.\pAlso, the amount of money you gain is halved, and many helpful NPCs or services are not available."))
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Brutal is suited for players extremely experienced in challenging ROM hacks.\pIt carries over the changes from Hard, but in addition, the battles are even more difficult.\pAlso, the amount of money you gain is halved, and the Pokémon, NPCs, and services you have access to are more limited."))
 		case 4:
 		case MULTI_B_PRESSED:
 			return
@@ -827,7 +827,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 
 script Sanctuary_EventScript_MoveCameraUp {
 	special(SpawnCameraObject)
-	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp3)
+	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
 	waitmovement(0)
 	special(RemoveCameraObject)
 	return
@@ -835,20 +835,15 @@ script Sanctuary_EventScript_MoveCameraUp {
 
 script Sanctuary_EventScript_MoveCameraDown {
 	special(SpawnCameraObject)
-	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown3)
+	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
 	waitmovement(0)
 	special(RemoveCameraObject)
 	return
 }
 
-
 script Sanctuary_EventScript_GameIntro {
     lockall
-	clearflag(FLAG_SETTINGS_NUZLOCKE)
-	setflag(FLAG_SYS_B_DASH)
-	setflag(FLAG_SYS_POKEMON_GET)
-	setflag(FLAG_SYS_PC_LANETTE)
-	setflag(FLAG_AUTORUN_TOGGLE)
+	call(EventScript_GameIntro_SetStartingVariablesAndFlags)
 	call(Sanctuary_EventScript_MoveCameraUp)
 	applymovement(LOCALID_COLRESS, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
@@ -856,35 +851,24 @@ script Sanctuary_EventScript_GameIntro {
 	waitse
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
 	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Ah. You've arrived."), MSGBOX_AUTOCLOSE)
-	applymovement(LOCALID_COLRESS, Common_Movement_WalkDown3)
+	applymovement(LOCALID_COLRESS, Common_Movement_WalkDown2)
 	call(Sanctuary_EventScript_MoveCameraDown)
 	waitmovement(0)
 	msgbox("Welcome to the\n{COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY}.\pI am your guide for braving the\nchallenges ahead.\pWould you like to listen to the tutorial?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		setvar(VAR_TEMP_5, 1) // VAR_TEMP_5: 1 means yes tutorial
 		msgbox(format("The Pokémon Battle Labyrinth is comprised of many {COLOR GREEN}Zones{COLOR DARK_GRAY} you must traverse.\p"
-		"In these Zones, you might encounter wild Pokémon, great treasures, tough trainers, and more.\p"
-		"Each Zone typically contains a {COLOR RED}Leviathan{COLOR DARK_GRAY}, a boss that yields great rewards if defeated.\p"
-		"At the end of each Zone and before the next Zone begins, you will find a {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}, like this one, with shops to purchase supplies, heal your Pokémon, and other benefits.\p"
+		"In these Zones, you might encounter wild Pokémon, great treasures, tough opponents, and more.\p"
+		"Each Zone typically contains a {COLOR RED}Leviathan{COLOR DARK_GRAY} or other tough boss fight that yields great rewards if defeated.\p"
+		"After completing a Zone, you will return to this {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}, where you can heal your Pokémon, purchase supplies, and access the next Zone.\p"
 		"Once you enter a new Zone, you will not be able to access a Sanctuary until you exit that Zone.\p"
-		"In order to win, you must progress through all Zones without losing a battle."), MSGBOX_AUTOCLOSE)
+		"In order to win, you must progress through all Zones, overcoming all challenges you face along the way."), MSGBOX_AUTOCLOSE)
 		delay(16)
 	}
 	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_PBL)
-	setflag(FLAG_SETTINGS_EXP_ALL)
-	msgbox(format("Pokémon Battle Labyrinth has many settings that are customizable, including {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode,\l{COLOR RED}Randomizer{COLOR DARK_GRAY} mode, and difficulty options.\pWould you like to modify these settings now from the default?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		setvar(VAR_TEMP_1, 1) // VAR_TEMP_1: 1 means dealing w/ settings menu, 2 means done w/ it
-		msgbox(format("Note that some settings cannot be adjusted once the challenge has started.\pIf you're looking to play the hardest game mode, {COLOR RED}Brutal{COLOR DARK_GRAY} automatically enables most of the difficulty settings.\pOtherwise, information about each individual setting can be found by selecting it."), MSGBOX_DEFAULT)
-		while (var(VAR_TEMP_1) == 1) {
-			// call(EventScript_Settings)
-			msgbox(format("Are you sure you are done selecting your settings?"), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				setvar(VAR_TEMP_1, 0)
-			}
-		}
-		msgbox(format("Settings saved!"), MSGBOX_DEFAULT)
-	}
+	msgbox(format("Pokémon Battle Labyrinth has a few difficulty options. Please adjust the difficulty as you see fit."))
+	call(EventScript_GameIntro_Difficulty)
+	call(EventScript_GameIntro_Nuzlocke)
 	delay(16)
 	if (var(VAR_TEMP_5) == 1) {
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Allow me to show you each of the shops."), MSGBOX_AUTOCLOSE)
@@ -977,22 +961,7 @@ script Sanctuary_EventScript_GameIntro {
 		"Also, it is highly recommended you stock up on any supplies before entering the next Zone."), MSGBOX_AUTOCLOSE)
 		delay(16)
 	}
-	if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Because the {COLOR RED}Randomizer{COLOR DARK_GRAY} is on, you get a random starter."))
-		// callnative(GiveRandomStarter)
-		playfanfare(MUS_OBTAIN_ITEM)
-		bufferleadmonspeciesname(0)
-		message(format("{PLAYER} received the {STR_VAR_1}!"))
-		waitmessage
-		waitfanfare
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: How about a nickname for your {STR_VAR_1}?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == YES) {
-			setvar(VAR_0x8004, 0)
-			call(Common_EventScript_NameReceivedPartyMon)
-		}
-		goto(Sanctuary_EventScript_EndIntro)
-	}
-	if (flag(FLAG_SETTINGS_BRUTAL) == true) {
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 		msgbox(format("As a new challenger, you will receive a starter Pokémon.\p"
 		"On Brutal difficulty, your choice is limited from the pool of possible starters to only three options.\p"
 		"Choose carefully as these Pokémon are very rare."))
@@ -1004,19 +973,133 @@ script Sanctuary_EventScript_GameIntro {
 			setvar(VAR_0x8004, 0)
 			call(Common_EventScript_NameReceivedPartyMon)
 		}
-		goto(Sanctuary_EventScript_EndIntro)
 	} else {
 		msgbox(format("As a new challenger, you will receive a starter Pokémon.\p"
 		"You may have your choice of any of the generation 1-9 starter Pokémon.\p"
 		"Choose carefully as these Pokémon are very rare."))
-		goto(Sanctuary_EventScript_HandleStarterSelectionDefault)
+		call(Sanctuary_EventScript_HandleStarterSelectionDefault)
 	}
+	if (var(VAR_TEMP_5) == 1) {
+		msgbox(format("Excellent choice.\p""You can also re-nickname your Pokémon from the party menu."))
+		delay(16)
+		msgbox(format("I also have a beginner's kit with items and cash to get you started."), MSGBOX_DEFAULT)
+		giveitem(ITEM_POKE_BALL, 15)
+		giveitem(ITEM_POTION, 10)
+		playfanfare(MUS_OBTAIN_ITEM)
+		msgbox(format("Received ¥5000!"), MSGBOX_DEFAULT)
+		waitfanfare
+		playfanfare(MUS_OBTAIN_ITEM)
+		msgbox(format("Received the {COLOR RED}Pokédex{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+		waitfanfare
+		closemessage
+		delay(16)
+	} else {
+		additem(ITEM_POTION, 10)
+		additem(ITEM_POKE_BALL, 15)
+	}
+	setmonmetlocation(0, 255)
+	call(EventScript_WhenUReadyDialogue)
+	applymovement(LOCALID_COLRESS, Common_Movement_Colress_WalkUp)
+	waitmovement(LOCALID_COLRESS)
+	releaseall
+	end
+}
+
+script EventScript_GameIntro_SetStartingVariablesAndFlags {
+	setflag(FLAG_SYS_B_DASH)
+	setflag(FLAG_SYS_POKEMON_GET)
+	setflag(FLAG_SYS_PC_LANETTE)
+	setflag(FLAG_AUTORUN_TOGGLE)
+	setvar(VAR_FARM_STOCK, 10)
+	setflag(FLAG_SYS_POKEDEX_GET)
+	special(SetUnlockedPokedexFlags)
+	setflag(FLAG_SYS_NATIONAL_DEX)
+	special(EnableNationalPokedex)
+	initclock(1, 1)
+	callnative(InitTimeBasedEvents)
+	setvar(VAR_ZONE, 1)
+	setvar(VAR_LEVEL_CAP, 1)
+	setflag(FLAG_IS_DEBUGGING_SAVEFILE) // to remove for release
+}
+
+script EventScript_GameIntro_Difficulty {
+	switch (var(VAR_DIFFICULTY)) {
+		case DIFFICULTY_EASY:
+			message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to Easy."))
+			waitmessage
+		case DIFFICULTY_NORMAL:
+			message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to Normal."))
+			waitmessage
+		case DIFFICULTY_HARD:
+			message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to Hard."))
+			waitmessage
+		case DIFFICULTY_BRUTAL:
+			message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to Brutal."))
+			waitmessage
+	}
+	dynmultipush("Difficulty Info", 0)
+	dynmultipush("Switch Difficulty", 1)
+	dynmultipush("Confirm Difficulty", 2)
+	dynmultistack(0, 0, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			call(EventScript_Difficulty_Info)
+		case 1:
+			call(EventScript_Difficulty_Switch)
+		case 2:
+		case MULTI_B_PRESSED:
+			switch (var(VAR_DIFFICULTY)) {
+				case DIFFICULTY_EASY:
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you want to play on Easy?"), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						return
+					}
+				case DIFFICULTY_NORMAL:
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you want to play on Normal?"), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						return
+					}
+				case DIFFICULTY_HARD:
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you want to play on Hard?"), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						return
+					}
+				case DIFFICULTY_BRUTAL:
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you want to play on Brutal?"), MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						return
+					}
+			}
+	}
+	call(EventScript_GameIntro_Difficulty)
+}
+
+script EventScript_GameIntro_Nuzlocke {
+	message(format("Pokémon Battle Labyrinth has a built-in {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode. Would you like to enable it?"))
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Info", "Yes", "No")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			msgbox(gText_Colress_NuzlockeExplained)
+		case 1:
+			msgbox(format("Are you sure you want to enable {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				setflag(FLAG_SETTINGS_NUZLOCKE)
+				msgbox(format("{COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode enabled."))
+				return
+			}
+		case 2:
+		case MULTI_B_PRESSED:
+			msgbox(format("{COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode disabled."))
+			return
+	}
+	call(EventScript_GameIntro_Nuzlocke)
 }
 
 script Sanctuary_EventScript_HandleStarterSelectionDefault {
-	hidemonpic
 	message(format("Choose a starter Pokémon.\nPress {B_BUTTON} to randomize."))
-	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Bulbasaur", "Charmander", "Squirtle", "Chikorita", "Cyndaquil", "Totodile", "Treecko", "Torchic", "Mudkip", "Turtwig", "Chimchar", "Piplup", "Snivy", "Tepig", "Oshawott", "Chespin", "Fennekin", "Froakie", "Rowlet", "Litten", "Popplio", "Grookey", "Scorbunny", "Sobble", "Sprigatito", "Fuecoco", "Quaxly", "Random")
+	waitmessage
+	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Bulbasaur", "Charmander", "Squirtle", "Chikorita", "Cyndaquil", "Totodile", "Treecko", "Torchic", "Mudkip", "Turtwig", "Chimchar", "Piplup", "Snivy", "Tepig", "Oshawott", "Chespin", "Fennekin", "Froakie", "Rowlet", "Litten", "Popplio", "Grookey", "Scorbunny", "Sobble", "Sprigatito", "Fuecoco", "Quaxly", "Random")
 	switch (var(VAR_RESULT)) {
 		case 0:
 			setvar(VAR_TEMP_3, SPECIES_BULBASAUR)
@@ -1073,6 +1156,7 @@ script Sanctuary_EventScript_HandleStarterSelectionDefault {
 		case 26:
 			setvar(VAR_TEMP_3, SPECIES_QUAXLY)
 		case 27:
+		case MULTI_B_PRESSED:
 			setvar(VAR_TEMP_3, 0)
 	}
 	if (var(VAR_TEMP_3) == 0) {
@@ -1081,7 +1165,7 @@ script Sanctuary_EventScript_HandleStarterSelectionDefault {
 		delay(96)
 		waitse
 		waitmessage
-		random(24)
+		random(27)
 		switch (var(VAR_RESULT)) {
 			case 0:
 				setvar(VAR_TEMP_3, SPECIES_BULBASAUR)
@@ -1131,138 +1215,68 @@ script Sanctuary_EventScript_HandleStarterSelectionDefault {
 				setvar(VAR_TEMP_3, SPECIES_SCORBUNNY)
 			case 23:
 				setvar(VAR_TEMP_3, SPECIES_SOBBLE)
+			case 24:
+				setvar(VAR_TEMP_3, SPECIES_SPRIGATITO)
+			case 25:
+				setvar(VAR_TEMP_3, SPECIES_FUECOCO)
+			case 26:
+				setvar(VAR_TEMP_3, SPECIES_QUAXLY)
 		}
 	}
 	bufferspeciesname(0, VAR_TEMP_3)
 	showmonpic(VAR_TEMP_3, 10, 3)
 	playmoncry(VAR_TEMP_3, 0)
-	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: You want {STR_VAR_1}?"), MSGBOX_YESNO)
 	waitmoncry
-	if (var(VAR_RESULT) == NO) {
-		setvar(VAR_TEMP_3, 0)
-		goto(Sanctuary_EventScript_HandleStarterSelectionDefault)
-	}
-	switch(var(VAR_TEMP_3)) {
-		case SPECIES_BULBASAUR:
-		case SPECIES_CHIKORITA:
-		case SPECIES_TREECKO:
-		case SPECIES_TURTWIG:
-		case SPECIES_SNIVY:
-		case SPECIES_CHESPIN:
-		case SPECIES_ROWLET:
-		case SPECIES_GROOKEY:
-		case SPECIES_SPRIGATITO:
-			setvar(VAR_STARTER_MON, 0)
-		case SPECIES_CHARMANDER:
-		case SPECIES_CYNDAQUIL:
-		case SPECIES_TORCHIC:
-		case SPECIES_CHIMCHAR:
-		case SPECIES_TEPIG:
-		case SPECIES_FENNEKIN:
-		case SPECIES_LITTEN:
-		case SPECIES_SCORBUNNY:
-		case SPECIES_FUECOCO:
-			setvar(VAR_STARTER_MON, 1)
-		case SPECIES_SQUIRTLE:
-		case SPECIES_TOTODILE:
-		case SPECIES_MUDKIP:
-		case SPECIES_PIPLUP:
-		case SPECIES_OSHAWOTT:
-		case SPECIES_FROAKIE:
-		case SPECIES_POPPLIO:
-		case SPECIES_SOBBLE:
-		case SPECIES_QUAXLY:
-			setvar(VAR_STARTER_MON, 2)
-	}
-	givemon(VAR_TEMP_3, 5, ITEM_NONE)
-	hidemonpic
-	playfanfare(MUS_OBTAIN_ITEM)
-	message(format("{PLAYER} received the {STR_VAR_1}!"))
-	waitmessage
-	waitfanfare
-	bufferleadmonspeciesname(0)
-	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: How about a nickname for your {STR_VAR_1}?"), MSGBOX_YESNO)
+	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: You want {STR_VAR_1} as your starter?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
-		setvar(VAR_0x8004, 0)
-		call(Common_EventScript_NameReceivedPartyMon)
-	}
-	goto(Sanctuary_EventScript_EndIntro)
-}
-
-script Sanctuary_EventScript_EndIntro {
-	if (var(VAR_TEMP_5) == 1) {
-		msgbox(format("Excellent choice.\p""You can also re-nickname your Pokémon from the party menu."))
-		delay(16)
-		if (flag(FLAG_SETTINGS_INFINITE)) {
-			msgbox(format("Because you are playing on {COLOR RED}Infinite{COLOR DARK_GRAY} mode, here are the items you'd need.\pYou can get more by asking me about {COLOR RED}Infinite{COLOR DARK_GRAY} mode again."), MSGBOX_DEFAULT)
-			additem(ITEM_FULL_RESTORE, 100)
-			additem(ITEM_FULL_RESTORE, 100)
-			additem(ITEM_FULL_RESTORE, 100)
-			additem(ITEM_FULL_RESTORE, 100)
-			additem(ITEM_FULL_RESTORE, 100)
-			additem(ITEM_FULL_RESTORE, 100)
-			additem(ITEM_FULL_RESTORE, 100)
-			additem(ITEM_FULL_RESTORE, 100)
-			additem(ITEM_FULL_RESTORE, 100)
-			additem(ITEM_MAX_ELIXIR, 100)
-			additem(ITEM_MAX_ELIXIR, 100)
-			additem(ITEM_MAX_ELIXIR, 100)
-			additem(ITEM_MAX_ELIXIR, 100)
-			additem(ITEM_MAX_ELIXIR, 100)
-			additem(ITEM_MAX_ELIXIR, 100)
-			additem(ITEM_MAX_ELIXIR, 100)
-			additem(ITEM_MAX_ELIXIR, 100)
-			additem(ITEM_MAX_ELIXIR, 100)
-			additem(ITEM_MAX_REPEL, 100)
-			additem(ITEM_MAX_REPEL, 100)
-			additem(ITEM_MAX_REPEL, 100)
-			additem(ITEM_MAX_REPEL, 100)
-			additem(ITEM_MAX_REPEL, 100)
-			additem(ITEM_MAX_REPEL, 100)
-			additem(ITEM_MAX_REPEL, 100)
-			additem(ITEM_MAX_REPEL, 100)
-			additem(ITEM_MAX_REPEL, 100)
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(format("Obtained Full Restores, Max Elixirs, and Max Repels!"), MSGBOX_DEFAULT)
-			waitfanfare
-		} else {
-			msgbox(format("I also have a beginner's kit with items and cash to get you started."), MSGBOX_DEFAULT)
-			giveitem(ITEM_POKE_BALL, 15)
-			giveitem(ITEM_POTION, 10)
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(format("Received ¥5000!"), MSGBOX_DEFAULT)
-			waitfanfare
+		hidemonpic
+		switch(var(VAR_TEMP_3)) {
+			case SPECIES_BULBASAUR:
+			case SPECIES_CHIKORITA:
+			case SPECIES_TREECKO:
+			case SPECIES_TURTWIG:
+			case SPECIES_SNIVY:
+			case SPECIES_CHESPIN:
+			case SPECIES_ROWLET:
+			case SPECIES_GROOKEY:
+			case SPECIES_SPRIGATITO:
+				setvar(VAR_STARTER_MON, 0)
+			case SPECIES_CHARMANDER:
+			case SPECIES_CYNDAQUIL:
+			case SPECIES_TORCHIC:
+			case SPECIES_CHIMCHAR:
+			case SPECIES_TEPIG:
+			case SPECIES_FENNEKIN:
+			case SPECIES_LITTEN:
+			case SPECIES_SCORBUNNY:
+			case SPECIES_FUECOCO:
+				setvar(VAR_STARTER_MON, 1)
+			case SPECIES_SQUIRTLE:
+			case SPECIES_TOTODILE:
+			case SPECIES_MUDKIP:
+			case SPECIES_PIPLUP:
+			case SPECIES_OSHAWOTT:
+			case SPECIES_FROAKIE:
+			case SPECIES_POPPLIO:
+			case SPECIES_SOBBLE:
+			case SPECIES_QUAXLY:
+				setvar(VAR_STARTER_MON, 2)
 		}
+		givemon(VAR_TEMP_3, 5, ITEM_NONE)
 		playfanfare(MUS_OBTAIN_ITEM)
-		msgbox(format("Received the {COLOR RED}Pokédex{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+		message(format("{PLAYER} received the {STR_VAR_1}!"))
+		waitmessage
 		waitfanfare
-		closemessage
-		delay(16)
-	} else {
-		if (flag(FLAG_SETTINGS_INFINITE)) {
-			additem(ITEM_FULL_RESTORE, 900)
-			additem(ITEM_MAX_ELIXIR, 900)
-			additem(ITEM_MAX_REPEL, 900)
-		} else {
-			additem(ITEM_POTION, 10)
+		bufferleadmonspeciesname(0)
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: How about a nickname for your {STR_VAR_1}?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			setvar(VAR_0x8004, 0)
+			call(Common_EventScript_NameReceivedPartyMon)
 		}
-		additem(ITEM_POKE_BALL, 15)
+		return
 	}
-	setflag(FLAG_SYS_POKEDEX_GET)
-	special(SetUnlockedPokedexFlags)
-	setmonmetlocation(0, 255)
-	setflag(FLAG_SYS_NATIONAL_DEX)
-	special(EnableNationalPokedex)
-	initclock(1, 1)
-	callnative(InitTimeBasedEvents)
-	setvar(VAR_ZONE, 1)
-	setvar(VAR_LEVEL_CAP, 5)
-	call(EventScript_WhenUReadyDialogue)
-	applymovement(LOCALID_COLRESS, Common_Movement_Colress_WalkUp)
-	waitmovement(LOCALID_COLRESS)
-	setflag(FLAG_IS_DEBUGGING_SAVEFILE) // to remove for release
-	releaseall
-	end
+	hidemonpic
+	call(Sanctuary_EventScript_HandleStarterSelectionDefault)
 }
 
 movement Sanctuary_Movement_Colress_FirstShop {
@@ -1490,7 +1504,7 @@ script EventScript_Shop_Cowgirl {
 }
 
 script EventScript_Shop_FarmersStand {
-	buffernumberstring(0, VAR_HERBAL_STOCK)
+	buffernumberstring(0, VAR_FARM_STOCK)
 	message("Howdy! Welcome to the Farmer's Stand.\nYou can buy up to {STR_VAR_1} items.")
 	waitmessage
 	dynmultipush("Shop Info", 0)
@@ -1543,7 +1557,7 @@ script EventScript_Shop_FarmersStand {
 }
 
 script EventScript_Shop_FarmersStand_Info {
-	buffernumberstring(0, VAR_HERBAL_STOCK)
+	buffernumberstring(0, VAR_FARM_STOCK)
 	msgbox(Text_Shop_Herbal_Info)
 }
 
@@ -1555,21 +1569,21 @@ text Text_Shop_Herbal_Info {
 
 // This script assumes everything costs ¥80
 script EventScript_Shop_FarmersStand_BuyItem {
-	if (var(VAR_HERBAL_STOCK) == 0) {
+	if (var(VAR_FARM_STOCK) == 0) {
 		msgbox(Text_Shop_Herbal_YouCantPurchaseMore)
 		return
 	}
-	buffernumberstring(0, VAR_HERBAL_STOCK)
+	buffernumberstring(0, VAR_FARM_STOCK)
 	bufferitemnameplural(1, VAR_TEMP_0, 2)
 	message("How many {STR_VAR_2} do you want?\n(You can still buy up to {STR_VAR_1} items.)")
 	waitmessage
 	buffernumberstring(1, 80)
 	dynmultipush("One - ¥{STR_VAR_1}", 0)
-	if (var(VAR_HERBAL_STOCK) >= 5) {
+	if (var(VAR_FARM_STOCK) >= 5) {
 		buffernumberstring(1, 80 * 5)
 		dynmultipush("Five - ¥{STR_VAR_2}", 1)
 	}
-	if (var(VAR_HERBAL_STOCK) >= 10) {
+	if (var(VAR_FARM_STOCK) >= 10) {
 		buffernumberstring(2, 80 * 10)
 		dynmultipush("Ten - ¥{STR_VAR_3}", 2)
 	}
@@ -1592,7 +1606,7 @@ script EventScript_Shop_FarmersStand_BuyItem {
 				msgbox(gText_HereYouGoThankYou)
 				waitse
 				additem(VAR_TEMP_0, 1)
-				subvar(VAR_HERBAL_STOCK, 1)
+				subvar(VAR_FARM_STOCK, 1)
 				return
 			}
 		case 1:
@@ -1611,7 +1625,7 @@ script EventScript_Shop_FarmersStand_BuyItem {
 				msgbox(gText_HereYouGoThankYou)
 				waitse
 				additem(VAR_TEMP_0, 5)
-				subvar(VAR_HERBAL_STOCK, 5)
+				subvar(VAR_FARM_STOCK, 5)
 				return
 			}
 		case 2:
@@ -1630,7 +1644,7 @@ script EventScript_Shop_FarmersStand_BuyItem {
 				msgbox(gText_HereYouGoThankYou)
 				waitse
 				additem(VAR_TEMP_0, 10)
-				subvar(VAR_HERBAL_STOCK, 10)
+				subvar(VAR_FARM_STOCK, 10)
 				return
 			}
 		case 3:
@@ -1713,17 +1727,17 @@ script EventScript_MusicMenu_Sanctuary {
 	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Amity Square", "Battle Hall", "Accumula Town", "Skyarrow Bridge", "White Forest", "Anville Town")
 	switch (var(VAR_RESULT)) {
 		case 0:
-			setvar(VAR_SANCTUARY_MUSIC, 0)
-		case 1:
 			setvar(VAR_SANCTUARY_MUSIC, 1)
-		case 2:
+		case 1:
 			setvar(VAR_SANCTUARY_MUSIC, 2)
-		case 3:
+		case 2:
 			setvar(VAR_SANCTUARY_MUSIC, 3)
-		case 4:
+		case 3:
 			setvar(VAR_SANCTUARY_MUSIC, 4)
-		case 5:
+		case 4:
 			setvar(VAR_SANCTUARY_MUSIC, 5)
+		case 5:
+			setvar(VAR_SANCTUARY_MUSIC, 6)
 		case MULTI_B_PRESSED:
 			return
 	}
@@ -1754,17 +1768,17 @@ script EventScript_MusicMenu_Wild {
 	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "RSE", "FRLG", "DPPt", "HGSS (Johto)", "HGSS (Kanto)", "BW")
 	switch (var(VAR_RESULT)) {
 		case 0:
-			setvar(VAR_WILD_MUSIC, 0)
-		case 1:
 			setvar(VAR_WILD_MUSIC, 1)
-		case 2:
+		case 1:
 			setvar(VAR_WILD_MUSIC, 2)
-		case 3:
+		case 2:
 			setvar(VAR_WILD_MUSIC, 3)
-		case 4:
+		case 3:
 			setvar(VAR_WILD_MUSIC, 4)
-		case 5:
+		case 4:
 			setvar(VAR_WILD_MUSIC, 5)
+		case 5:
+			setvar(VAR_WILD_MUSIC, 6)
 		case MULTI_B_PRESSED:
 			return
 	}
@@ -1795,17 +1809,17 @@ script EventScript_MusicMenu_Trainer {
 	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "RSE", "FRLG", "DPPt", "HGSS (Johto)", "HGSS (Kanto)", "BW")
 	switch (var(VAR_RESULT)) {
 		case 0:
-			setvar(VAR_TRAINER_MUSIC, 0)
-		case 1:
 			setvar(VAR_TRAINER_MUSIC, 1)
-		case 2:
+		case 1:
 			setvar(VAR_TRAINER_MUSIC, 2)
-		case 3:
+		case 2:
 			setvar(VAR_TRAINER_MUSIC, 3)
-		case 4:
+		case 3:
 			setvar(VAR_TRAINER_MUSIC, 4)
-		case 5:
+		case 4:
 			setvar(VAR_TRAINER_MUSIC, 5)
+		case 5:
+			setvar(VAR_TRAINER_MUSIC, 6)
 		case MULTI_B_PRESSED:
 			return
 	}
@@ -1836,17 +1850,17 @@ script EventScript_MusicMenu_Leviathan {
 	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "RSE", "FRLG", "DPPt", "HGSS (Johto)", "HGSS (Kanto)", "BW")
 	switch (var(VAR_RESULT)) {
 		case 0:
-			setvar(VAR_LEVIATHAN_MUSIC, 0)
-		case 1:
 			setvar(VAR_LEVIATHAN_MUSIC, 1)
-		case 2:
+		case 1:
 			setvar(VAR_LEVIATHAN_MUSIC, 2)
-		case 3:
+		case 2:
 			setvar(VAR_LEVIATHAN_MUSIC, 3)
-		case 4:
+		case 3:
 			setvar(VAR_LEVIATHAN_MUSIC, 4)
-		case 5:
+		case 4:
 			setvar(VAR_LEVIATHAN_MUSIC, 5)
+		case 5:
+			setvar(VAR_LEVIATHAN_MUSIC, 6)
 		case MULTI_B_PRESSED:
 			return
 	}

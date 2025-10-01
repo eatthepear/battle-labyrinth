@@ -3218,12 +3218,8 @@ movement Common_Movement_WalkRight6 {
 	walk_right * 6
 }
 
-movement Common_Movement_Colress_WalkDown {
-	walk_down * 3
-}
-
 movement Common_Movement_Colress_WalkUp {
-	walk_up * 3
+	walk_up * 2
 	face_down
 }
 

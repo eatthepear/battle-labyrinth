@@ -382,9 +382,9 @@ static const struct SpriteTemplate sSpriteTemplate_StarterCircle =
 // .text
 u16 GetStarterPokemon(u16 chosenStarterId)
 {
-    u16 grassIndex = VarGet(VAR_RAND_STARTER_SEED) % 9;
-    u16 fireIndex = ((VarGet(VAR_RAND_STARTER_SEED) % 81) - grassIndex) / 9;
-    u16 waterIndex = (VarGet(VAR_RAND_STARTER_SEED) - fireIndex * 9 - grassIndex) / 81;
+    u16 grassIndex = gSaveBlock1Ptr->wildEncounterSeed % 9;
+    u16 fireIndex = ((gSaveBlock1Ptr->wildEncounterSeed % 81) - grassIndex) / 9;
+    u16 waterIndex = (gSaveBlock1Ptr->wildEncounterSeed - fireIndex * 9 - grassIndex) / 81;
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
     switch (chosenStarterId)

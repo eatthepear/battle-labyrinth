@@ -5582,15 +5582,15 @@ u16 GetBattleBGM(void)
             if (DoesTrainerHaveMugshot(TRAINER_BATTLE_PARAM.opponentA)) {
                 switch (VarGet(VAR_LEVIATHAN_MUSIC))
                 {
-                case 1:
-                    return MUS_RG_VS_GYM_LEADER;
                 case 2:
-                    return MUS_DP_VS_GYM_LEADER;
+                    return MUS_RG_VS_GYM_LEADER;
                 case 3:
-                    return MUS_HG_VS_GYM_LEADER;
+                    return MUS_DP_VS_GYM_LEADER;
                 case 4:
-                    return MUS_HG_VS_GYM_LEADER_KANTO;
+                    return MUS_HG_VS_GYM_LEADER;
                 case 5:
+                    return MUS_HG_VS_GYM_LEADER_KANTO;
+                case 6:
                     return MUS_BW_VS_GYM_LEADER;
                 default:
                     return MUS_VS_GYM_LEADER;
@@ -5598,15 +5598,15 @@ u16 GetBattleBGM(void)
             } else {
                 switch (VarGet(VAR_TRAINER_MUSIC))
                 {
-                case 1:
-                    return MUS_RG_VS_TRAINER;
                 case 2:
-                    return MUS_DP_VS_TRAINER;
+                    return MUS_RG_VS_TRAINER;
                 case 3:
-                    return MUS_HG_VS_TRAINER;
+                    return MUS_DP_VS_TRAINER;
                 case 4:
                     return MUS_HG_VS_TRAINER;
                 case 5:
+                    return MUS_HG_VS_TRAINER_KANTO;
+                case 6:
                     return MUS_BW_VS_TRAINER;
                 default:
                     return MUS_VS_TRAINER;
@@ -5618,15 +5618,15 @@ u16 GetBattleBGM(void)
     {
         switch (VarGet(VAR_WILD_MUSIC))
         {
-        case 1:
-            return MUS_RG_VS_WILD;
         case 2:
-            return MUS_DP_VS_WILD;
+            return MUS_RG_VS_WILD;
         case 3:
-            return MUS_HG_VS_WILD;
+            return MUS_DP_VS_WILD;
         case 4:
-            return MUS_HG_VS_WILD_KANTO;
+            return MUS_HG_VS_WILD;
         case 5:
+            return MUS_HG_VS_WILD_KANTO;
+        case 6:
             return MUS_BW_VS_TRAINER;
         default:
             return MUS_VS_WILD;

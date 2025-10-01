@@ -135,7 +135,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    SetWarpDestination(MAP_GROUP(MAP_ZONE_SANCTUARY), MAP_NUM(MAP_ZONE_SANCTUARY), WARP_ID_NONE, 38, 11);
+    SetWarpDestination(MAP_GROUP(MAP_ZONE_SANCTUARY), MAP_NUM(MAP_ZONE_SANCTUARY), WARP_ID_NONE, 48, 12);
     WarpIntoMap();
 }
 
@@ -221,6 +221,10 @@ void NewGameInitData(void)
     ResetDexNav();
     ClearFollowerNPCData();
     gSaveBlock1Ptr->wildEncounterSeed = Random32();
+    VarSet(VAR_SANCTUARY_MUSIC, Random32() % 6 + 1);
+    VarSet(VAR_WILD_MUSIC, Random32() % 6 + 1);
+    VarSet(VAR_TRAINER_MUSIC, Random32() % 6 + 1);
+    VarSet(VAR_LEVIATHAN_MUSIC, Random32() % 6 + 1);
 }
 
 static void ResetMiniGamesRecords(void)

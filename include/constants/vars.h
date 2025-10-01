@@ -49,7 +49,7 @@
 // Custom vars
 #define VAR_ZONE                             0x4020
 #define VAR_LEVEL_CAP                        0x4021
-#define VAR_RAND_STARTER_SEED                0x4022
+#define VAR_UNUSED_0x4022                    0x4022
 #define VAR_GENERIC                          0x4023
 #define VAR_WILD_MUSIC                       0x4024
 #define VAR_TRAINER_MUSIC                    0x4025
@@ -59,7 +59,7 @@
 #define VAR_NUM_TRAINERS_REMAINING           0x4029
 #define VAR_DEXNAV_SPECIES                   0x402A // Registered dexnav species
 #define VAR_DIFFICULTY                       0x402B
-#define VAR_HERBAL_STOCK                     0x402C
+#define VAR_FARM_STOCK                       0x402C
 #define VAR_REVISITING_ZONE                  0x402D
 
 // Tracker Vars (Don't manually set)
