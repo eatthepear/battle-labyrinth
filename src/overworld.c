@@ -1176,22 +1176,8 @@ u16 GetLocationMusic(struct WarpData *warp)
         return MUS_ENCOUNTER_MAGMA;
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
         return MUS_MT_CHIMNEY;
-    else
-        return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
-}
-
-u16 GetCurrLocationDefaultMusic(void)
-{
-    u16 music;
-
-    // Play the desert music only when the sandstorm is active on Route 111.
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE111)
-     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE111)
-     && GetSavedWeather() == WEATHER_SANDSTORM)
-        return MUS_DESERT;
-
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE_SANCTUARY)
-     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE_SANCTUARY))
+    else if (warp->mapGroup == MAP_GROUP(MAP_ZONE_SANCTUARY)
+     && warp->mapNum == MAP_NUM(MAP_ZONE_SANCTUARY))
     {
         switch (VarGet(VAR_SANCTUARY_MUSIC))
         {
@@ -1210,6 +1196,19 @@ u16 GetCurrLocationDefaultMusic(void)
                 return MUS_BW_ANVILLE_TOWN;
         }
     }
+    else
+        return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
+}
+
+u16 GetCurrLocationDefaultMusic(void)
+{
+    u16 music;
+
+    // Play the desert music only when the sandstorm is active on Route 111.
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE111)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE111)
+     && GetSavedWeather() == WEATHER_SANDSTORM)
+        return MUS_DESERT;
 
     music = GetLocationMusic(&gSaveBlock1Ptr->location);
     if (music != MUS_ROUTE118)
