@@ -5,7 +5,6 @@ Zone25L_EventScript_Exit::
 	lockall
 	compare VAR_ZONE, 24
 	goto_if_gt EventScript_WarpZone0
-	call_if_set FLAG_SETTINGS_BRUTAL, Zone25L_EventScript_CheckBrutal
 	warp MAP_ZONE_SANCTUARY, 255, 22, 7
 	releaseall
 	end
@@ -111,7 +110,6 @@ Zone25L_EventScript_InitiateLeviathanBattle:
 	msgbox Zone25L_Text_Mirage_7, MSGBOX_AUTOCLOSE
 	waitmovement 0
 	setflag FLAG_FORCE_BATTLE_ANIM_ON
-	goto_if_set FLAG_SETTINGS_BRUTAL, Zone25L_EventScript_MirageBrutal
 	trainerbattle_no_intro TRAINER_PBL_LEVIATHAN14, Zone25L_Text_Leviathan14Defeat
 	goto Zone25L_EventScript_Leviathan14Defeated
 	end

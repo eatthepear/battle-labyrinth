@@ -1086,16 +1086,16 @@ script Zone18B_EventScript_LeviathanBattle {
 	msgbox(format("{COLOR BLUE}Zoe{COLOR DARK_GRAY}: To truly clear the Trainer's Dojo, you must defeat the two of us in a Double Battle!"), MSGBOX_DEFAULT)
 	msgbox(format("{COLOR BLUE}Eli{COLOR DARK_GRAY}: Taste our power!"), MSGBOX_DEFAULT)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		setweather(WEATHER_RAIN)
-		doweather
-		msgbox("It suddenly began to rain!", MSGBOX_DEFAULT)
-		trainerbattle_no_intro(TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16_CHALLENGE, Zone18B_Text_Leviathan16Defeat)
-		resetweather
-		doweather
-	} else {
-		trainerbattle_no_intro(TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16, Zone18B_Text_Leviathan16Defeat)
-	}
+	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+	// 	setweather(WEATHER_RAIN)
+	// 	doweather
+	// 	msgbox("It suddenly began to rain!", MSGBOX_DEFAULT)
+	// 	trainerbattle_no_intro(TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16_CHALLENGE, Zone18B_Text_Leviathan16Defeat)
+	// 	resetweather
+	// 	doweather
+	// } else {
+	// 	trainerbattle_no_intro(TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16, Zone18B_Text_Leviathan16Defeat)
+	// }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	applymovement(1, Common_Movement_FaceRight)
 	applymovement(2, Common_Movement_FaceLeft)

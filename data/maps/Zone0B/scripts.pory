@@ -1,9 +1,9 @@
 script Zone0B_EventScript_EeveeGirl {
 	lock
 	faceplayer
-	if (flag(FLAG_SETTINGS_INDEPENDENT) || flag(FLAG_SETTINGS_BRUTAL)) {
-		goto(Zone0B_EventScript_EeveeUnique)
-	}
+	// if (flag(FLAG_SETTINGS_INDEPENDENT) || flag(FLAG_SETTINGS_BRUTAL)) {
+	// 	goto(Zone0B_EventScript_EeveeUnique)
+	// }
 	if (flag(FLAG_ZONE0B_RECEIVED_EEVEE) == true) {
 		goto(Zone0B_EventScript_EeveeUnique)
 	}
@@ -20,7 +20,7 @@ script Zone0B_EventScript_EeveeGirl {
 		end
 	}
 	msgbox(Zone0B_Text_SureThing, MSGBOX_DEFAULT)
-	if (flag(FLAG_SETTINGS_NUZLOCKE) == true && flag(FLAG_SETTINGS_RANDOMIZER) == false) {
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
 		setvar(VAR_TEMP_0, SPECIES_EEVEE)
 		callnative(CheckSpeciesClause)
 		if (flag(FLAG_TEMP_1) == TRUE) {

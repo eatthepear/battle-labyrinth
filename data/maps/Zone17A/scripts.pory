@@ -209,13 +209,13 @@ script Zone17A_EventScript_InitiateLeviathanBattle {
 	delay(48)
 	msgbox(format("{COLOR BLUE}Mia{COLOR DARK_GRAY}: You'll join my COLLECTION OF SOULS TO PLAY WITH, WON'T YOU?"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		setflag(FLAG_DISABLE_PREVIEW)
-		trainerbattle_no_intro(TRAINER_PBL_MIA_LEVIATHAN_15_CHALLENGE, Zone15B_Text_Leviathan13Defeat)
-		clearflag(FLAG_DISABLE_PREVIEW)
-	} else {
-		trainerbattle_no_intro(TRAINER_PBL_MIA_LEVIATHAN_15, Zone15B_Text_Leviathan13Defeat)
-	}
+	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+	// 	setflag(FLAG_DISABLE_PREVIEW)
+	// 	trainerbattle_no_intro(TRAINER_PBL_MIA_LEVIATHAN_15_CHALLENGE, Zone15B_Text_Leviathan13Defeat)
+	// 	clearflag(FLAG_DISABLE_PREVIEW)
+	// } else {
+	// 	trainerbattle_no_intro(TRAINER_PBL_MIA_LEVIATHAN_15, Zone15B_Text_Leviathan13Defeat)
+	// }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Mia{COLOR DARK_GRAY}: AH!!!!!"))
 	setflag(FLAG_BEAT_LEVIATHAN_15)

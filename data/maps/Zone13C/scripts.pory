@@ -18,11 +18,11 @@ script Zone13C_EventScript_LeviathanBattle {
 	fadeoutbgm(1)
 	msgbox(format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: My battle style is quite ferocious, despite me having only one Pokémon!"), MSGBOX_DEFAULT)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		trainerbattle_no_intro(TRAINER_PBL_JENNY_LEVIATHAN_11_CHALLENGE, Zone13C_Text_Leviathan11Defeat)
-	} else {
-		trainerbattle_no_intro(TRAINER_PBL_JENNY_LEVIATHAN_11, Zone13C_Text_Leviathan11Defeat)
-	}
+	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+	// 	trainerbattle_no_intro(TRAINER_PBL_JENNY_LEVIATHAN_11_CHALLENGE, Zone13C_Text_Leviathan11Defeat)
+	// } else {
+	// 	trainerbattle_no_intro(TRAINER_PBL_JENNY_LEVIATHAN_11, Zone13C_Text_Leviathan11Defeat)
+	// }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: Here, I want you to have this item.\pIt'll stop your Pokémon's stats from being lowered, but it's only single use."), MSGBOX_DEFAULT)
 	giveitem(ITEM_WHITE_HERB)
@@ -48,14 +48,14 @@ text Zone13C_Text_Jenny_PostBattle {
 script Zone13C_EventScript_Fossil_Scientist {
 	lock
 	faceplayer
-	if (flag(FLAG_SETTINGS_BRUTAL) == true) {
-		msgbox("Sorry, I just ran out of fossils.")
-		release
-		end
-	}
-	if ((flag(FLAG_ZONE13C_NUZLOCKE_FOSSIL_RECEIVED) == true) || (flag(FLAG_SETTINGS_RED_THUMB) == true)) {
-		goto(Zone13C_EventScript_Fossil_NuzlockeReceived)
-	}
+	// if (flag(FLAG_SETTINGS_BRUTAL) == true) {
+	// 	msgbox("Sorry, I just ran out of fossils.")
+	// 	release
+	// 	end
+	// }
+	// if ((flag(FLAG_ZONE13C_NUZLOCKE_FOSSIL_RECEIVED) == true) || (flag(FLAG_SETTINGS_RED_THUMB) == true)) {
+	// 	goto(Zone13C_EventScript_Fossil_NuzlockeReceived)
+	// }
 	if (flag(FLAG_DAILY_FOSSIL_RECEIVED) == true) {
 		goto(Zone13C_EventScript_Fossil_VanillaReceived)
 	}

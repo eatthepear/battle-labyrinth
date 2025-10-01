@@ -141,22 +141,9 @@
 #define FLAG_BEAT_LEVIATHAN_95                         0x7F
 
 // Setting Flags
-#define FLAG_SETTINGS_BRUTAL                        0xA0
 #define FLAG_SETTINGS_NUZLOCKE                      0xA1
-#define FLAG_SETTINGS_RANDOMIZER                    0xA2
-#define FLAG_SETTINGS_INFINITE                      0xA3
-#define FLAG_SETTINGS_FULL_INFO                     0xA4
-#define FLAG_SETTINGS_EXP_ALL                       0xA5
-#define FLAG_SETTINGS_CHALLENGE                     0xA6
-#define FLAG_SETTINGS_GAUNTLET                      0xA7
-#define FLAG_SETTINGS_ANTIDOCTOR                    0xA8
-#define FLAG_SETTINGS_CLUMSY                        0xA9
-#define FLAG_SETTINGS_EFFORTLESS                    0xAA
-#define FLAG_SETTINGS_RED_THUMB                     0xAB
-#define FLAG_SETTINGS_ANTIGRIND                     0xAC
-#define FLAG_SETTINGS_SINGLE_USE                    0xAD
-#define FLAG_SETTINGS_POOR                          0xAE
-#define FLAG_SETTINGS_INDEPENDENT                   0xAF
+#define FLAG_SETTINGS_FULL_INFO                     0xA2
+#define FLAG_SETTINGS_EXP_ALL                       0xA3
 
 // Debug Flags
 #define FLAG_IS_DEBUGGING_SAVEFILE                  0xB0
@@ -172,11 +159,8 @@
 #define FLAG_FORCE_BATTLE_ANIM_ON                   0xC0
 #define FLAG_FORCE_BATTLE_ANIM_OFF                  0xC1
 #define FLAG_SYS_DEXNAV_GET                         0xC2
-#define FLAG_SYS_DETECTOR_MODE                      0xC3
-#define FLAG_SYS_NO_BAG_START_MENU                  0xC4
 #define FLAG_SYS_INVERSE_BATTLE                     0xC5
 #define FLAG_DISABLE_PREVIEW                        0xC6
-#define FLAG_SHOULD_1V2                             0xC7
 #define FLAG_SYS_ENABLE_WATERFALL                   0xC8
 
 // Tracker Flags (Don't manually set)
@@ -184,10 +168,8 @@
 #define FLAG_IN_NEW_ZONE                            0xE1
 #define FLAG_UNUSED_0xE2                            0xE2
 #define FLAG_SYS_DEXNAV_SEARCH                      0xE3
-#define FLAG_USE_PC_MACHINE                         0xE4
 #define FLAG_ZONE_PC_USED                           0xE5
 #define FLAG_USED_TERA                              0xE6
-#define FLAG_PBL_PENDING_DAYCARE_EGG                0xE7
 #define FLAG_AUTORUN_TOGGLE                         0xE8
 #define FLAG_NEVER_SET                              0xE9
 #define FLAG_ALWAYS_SET                             0xEA

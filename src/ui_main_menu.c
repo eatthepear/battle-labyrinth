@@ -830,16 +830,15 @@ static void DestroyMonIcons()
 //
 static const u8 sText_DexNum[] = _("Dex {STR_VAR_1}");
 static const u8 sText_Zone[] = _("Zone {RIGHT_ARROW} {STR_VAR_1}");
-static const u8 gText_ContinueMenuRandomizer[] =_("Randomizer");
-static const u8 gText_ContinueMenuNuzlocke[] =_("Nuzlocke");
-static const u8 gText_ContinueMenuInfinite[] =_("Infinite");
+static const u8 gText_ContinueMenuEasy[] =_("Easy");
+static const u8 gText_ContinueMenuNormal[] =_("Normal");
+static const u8 gText_ContinueMenuHard[] =_("Hard");
 static const u8 gText_ContinueMenuBrutal[] =_("Brutal");
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
     const u8 colors[3] = {0,  2,  3};
     u8 mapDisplayHeader[24];
     u8 *withoutPrefixPtr, *playTimePtr;
-    u16 dexCount = 0;
 
     FillWindowPixelBuffer(WINDOW_HEADER, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
     FillWindowPixelBuffer(WINDOW_MIDDLE, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
@@ -858,42 +857,23 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     ConvertIntToDecimalStringN(playTimePtr + 1, gSaveBlock2Ptr->playTimeMinutes, STR_CONV_MODE_LEADING_ZEROS, 2);
     AddTextPrinterParameterized4(WINDOW_HEADER, FONT_NORMAL, (104 - 12) + GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, (6*8)), 1, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
 
-    if (FlagGet(FLAG_SETTINGS_INFINITE) == TRUE) {
-        dexCount = 0;
-    } else if (FlagGet(FLAG_SETTINGS_RANDOMIZER) == TRUE) {
-        dexCount = 1;
-    } else if (FlagGet(FLAG_SETTINGS_BRUTAL) == TRUE) {
-        dexCount = 2;
-    } else if (FlagGet(FLAG_SETTINGS_NUZLOCKE) == TRUE) {
-        dexCount = 3;
-    } else {
-        dexCount = 4;
-    }
-    switch (dexCount) {
-        case 0:
-            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuInfinite);
+    switch (GetCurrentDifficultyLevel()) {
+        case DIFFICULTY_EASY:
+            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuEasy);
             AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 16, 16 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
             break;
-        case 1:
-            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuRandomizer);
+        default:
+        case DIFFICULTY_NORMAL:
+            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuNormal);
             AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 16, 16 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
             break;
-        case 2:
+        case DIFFICULTY_HARD:
+            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuHard);
+            AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 16, 16 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
+            break;
+        case DIFFICULTY_BRUTAL:
             StringExpandPlaceholders(gStringVar4, gText_ContinueMenuBrutal);
             AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 16, 16 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
-            break;
-        case 3:
-            StringExpandPlaceholders(gStringVar4, gText_ContinueMenuNuzlocke);
-            AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 16, 16 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
-            break;
-        case 4:
-            if (IsNationalPokedexEnabled())
-                dexCount = GetNationalPokedexCount(FLAG_GET_CAUGHT);
-            else
-                dexCount = GetHoennPokedexCount(FLAG_GET_CAUGHT);
-            ConvertIntToDecimalStringN(gStringVar1, dexCount, STR_CONV_MODE_RIGHT_ALIGN, 4);
-            StringExpandPlaceholders(gStringVar4, sText_DexNum);
-            AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 8 + 8, 16 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
             break;
     }
 

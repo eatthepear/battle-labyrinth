@@ -17,11 +17,11 @@ script Zone7B_EventScript_LeviathanBattle {
 	fadeoutbgm(1)
 	msgbox(format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: I will show you how to behave in the prim and proper way!"), MSGBOX_DEFAULT)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		trainerbattle_no_intro(TRAINER_PBL_BETTY_LEVIATHAN_7_CHALLENGE, Zone7B_Text_Leviathan7Defeat)
-	} else {
-		trainerbattle_no_intro(TRAINER_PBL_BETTY_LEVIATHAN_7, Zone7B_Text_Leviathan7Defeat)
-	}
+	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+	// 	trainerbattle_no_intro(TRAINER_PBL_BETTY_LEVIATHAN_7_CHALLENGE, Zone7B_Text_Leviathan7Defeat)
+	// } else {
+	// 	trainerbattle_no_intro(TRAINER_PBL_BETTY_LEVIATHAN_7, Zone7B_Text_Leviathan7Defeat)
+	// }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: Your battling skills are certainly up to par. Excellent form.\pAside from that, I'd like to give you these Berries.\pVery, very expensive, or so my butler tells me."), MSGBOX_DEFAULT)
 	giveitem(ITEM_SITRUS_BERRY, 5)
@@ -50,8 +50,6 @@ raw `
 Zone7B_EventScript_Lady::
 	lock
 	faceplayer
-	goto_if_set FLAG_SETTINGS_BRUTAL, Zone7B_EventScript_AlreadyHealed
-	goto_if_set FLAG_SETTINGS_INDEPENDENT, Zone7B_EventScript_AlreadyHealed
 	goto_if_set FLAG_ZONE7B_HEAL_USED, Zone7B_EventScript_AlreadyHealed
 	msgbox Zone7B_Text_WantToHeal, MSGBOX_YESNO
 	compare VAR_RESULT, YES

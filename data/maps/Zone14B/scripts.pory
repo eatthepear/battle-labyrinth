@@ -17,11 +17,11 @@ script Zone14B_EventScript_LeviathanBattle {
 	fadeoutbgm(1)
 	msgbox(Zone14B_Text_Leviathan12Intro)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		trainerbattle_no_intro(TRAINER_PBL_MIGUEL_LEVIATHAN_12_CHALLENGE, Zone14B_Text_Leviathan12Defeat)
-	} else {
-		trainerbattle_no_intro(TRAINER_PBL_MIGUEL_LEVIATHAN_12, Zone14B_Text_Leviathan12Defeat)
-	}
+	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+	// 	trainerbattle_no_intro(TRAINER_PBL_MIGUEL_LEVIATHAN_12_CHALLENGE, Zone14B_Text_Leviathan12Defeat)
+	// } else {
+	// 	trainerbattle_no_intro(TRAINER_PBL_MIGUEL_LEVIATHAN_12, Zone14B_Text_Leviathan12Defeat)
+	// }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Miguel{COLOR DARK_GRAY}: Oh… You're not here to cause trouble?\pYou're just passing through?\pWell, I'm sorry about that! I get really riled up about protecting spaces for wild Pokémon.\pHere, as an apology, take these."))
 	additem(ITEM_CHILAN_BERRY)

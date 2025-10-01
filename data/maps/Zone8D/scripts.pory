@@ -51,11 +51,11 @@ script Zone8D_EventScript_LeviathanBattle {
 	setvar(VAR_ZONE_1_STATE, 1)
 	msgbox(Zone8D_Text_Leviathan8Intro)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		trainerbattle_no_intro(TRAINER_PBL_ALISTAIR_LEVIATHAN_8_CHALLENGE, Zone8D_Text_Leviathan8Defeat)
-	} else {
-		trainerbattle_no_intro(TRAINER_PBL_ALISTAIR_LEVIATHAN_8, Zone8D_Text_Leviathan8Defeat)
-	}
+	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+	// 	trainerbattle_no_intro(TRAINER_PBL_ALISTAIR_LEVIATHAN_8_CHALLENGE, Zone8D_Text_Leviathan8Defeat)
+	// } else {
+	// 	trainerbattle_no_intro(TRAINER_PBL_ALISTAIR_LEVIATHAN_8, Zone8D_Text_Leviathan8Defeat)
+	// }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Alistair{COLOR DARK_GRAY}: Ugh. I can't believe I lost this one.\pI guess I owe you a little something for winning."), MSGBOX_DEFAULT)
 	giveitem(ITEM_TM_THIEF)

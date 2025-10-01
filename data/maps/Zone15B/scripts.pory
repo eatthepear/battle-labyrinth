@@ -20,11 +20,11 @@ script Zone15B_EventScript_LeviathanBattle {
 	fadeoutbgm(1)
 	msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Another AI!\pEven in a place as cold and empty as this?\pNo matter, my blood is boiling for a fight!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		trainerbattle_no_intro(TRAINER_PBL_MIRAGE_LEVIATHAN_13_CHALLENGE, Zone15B_Text_Leviathan13Defeat)
-	} else {
-		trainerbattle_no_intro(TRAINER_PBL_MIRAGE_LEVIATHAN_13, Zone15B_Text_Leviathan13Defeat)
-	}
+	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+	// 	trainerbattle_no_intro(TRAINER_PBL_MIRAGE_LEVIATHAN_13_CHALLENGE, Zone15B_Text_Leviathan13Defeat)
+	// } else {
+	// 	trainerbattle_no_intro(TRAINER_PBL_MIRAGE_LEVIATHAN_13, Zone15B_Text_Leviathan13Defeat)
+	// }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox("{COLOR BLUE}???{COLOR DARK_GRAY}: It seems I was mistaken.\nYou're no ordinary AI.")
 	applymovement(1, Common_Movement_FaceLeft)

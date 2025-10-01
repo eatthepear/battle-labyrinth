@@ -115,7 +115,6 @@ Zone24A_Movement_Camera_MoveCameraUp:
 Zone24A_EventScript_SellLemonade::
 	lock
 	faceplayer
-	goto_if_set FLAG_SETTINGS_BRUTAL, Zone24A_EventScript_DontSell
 	showmoneybox 0, 0, 0
 	msgbox Zone24A_Text_WantToBuyLemonade, MSGBOX_YESNO
 	compare VAR_RESULT, YES

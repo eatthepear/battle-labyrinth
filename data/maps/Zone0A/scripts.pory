@@ -25,11 +25,11 @@ script Zone0A_EventScript_Intro {
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_INDEPENDENT)) {
-		msgbox(format("I've heard the Pokémon Day-Care takes care of your Pokémon for you.\pIt might be worth a look."), MSGBOX_AUTOCLOSE)
-	} else {
-		msgbox(format("Oh, right! I just remembered something.\pI've heard the Pokémon Day-Care nearby is having a special gift Pokémon promotion.\pIt might be worth a look."), MSGBOX_AUTOCLOSE)
-	}
+	// if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_INDEPENDENT)) {
+	// 	msgbox(format("I've heard the Pokémon Day-Care takes care of your Pokémon for you.\pIt might be worth a look."), MSGBOX_AUTOCLOSE)
+	// } else {
+	// 	msgbox(format("Oh, right! I just remembered something.\pI've heard the Pokémon Day-Care nearby is having a special gift Pokémon promotion.\pIt might be worth a look."), MSGBOX_AUTOCLOSE)
+	// }
 	applymovement(15, Common_Movement_WalkRight3)
 	waitmovement(0)
 	applymovement(15, Common_Movement_FaceDown)
@@ -380,11 +380,11 @@ script Zone0A_EventScript_BerryGirl {
 		msgbox(format("Hey there! You look new around here.\pTake this as a present!"))
 		giveitem(ITEM_WAILMER_PAIL)
 	}
-	if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_RED_THUMB)) {
-		msgbox(format("I'm the caretaker of the berry fields here.\pThe soil is getting too hard to farm any more though, plus with the wild Pokémon that eat the Berries, it's impossible to grow more.\pFeel free to pick any Berries I may have left."))
-	} else {
-		msgbox(format("I'm the caretaker of the berry fields here.\pYou should try growing some berries yourself, though beware wild Pokémon that might be nibbling on your Berries.\pFeel free to pick any Berries I may have left."))
-	}
+	// if (flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_RED_THUMB)) {
+	// 	msgbox(format("I'm the caretaker of the berry fields here.\pThe soil is getting too hard to farm any more though, plus with the wild Pokémon that eat the Berries, it's impossible to grow more.\pFeel free to pick any Berries I may have left."))
+	// } else {
+	// 	msgbox(format("I'm the caretaker of the berry fields here.\pYou should try growing some berries yourself, though beware wild Pokémon that might be nibbling on your Berries.\pFeel free to pick any Berries I may have left."))
+	// }
 	release
 	end
 }
@@ -419,7 +419,6 @@ script Zone0A_EventScript_BerryGirl {
 
 raw `
 Zone0A_EventScript_TryMoveDayCareMan::
-	goto_if_unset FLAG_PBL_PENDING_DAYCARE_EGG, Zone0A_EventScript_StopMoveDayCareMan
 	setobjectxyperm 1, 22, 9
 Zone0A_EventScript_StopMoveDayCareMan::
 	return
@@ -447,7 +446,6 @@ Zone0A_EventScript_DaycareEggWaiting:
 	compare VAR_RESULT, YES
 	goto_if_eq Zone0A_EventScript_DaycareAcceptEgg
 	msgbox Zone0A_Text_IllKeepIt, MSGBOX_DEFAULT
-	clearflag FLAG_PBL_PENDING_DAYCARE_EGG
 	special RejectEggFromDayCare
 	release
 	end
@@ -467,7 +465,6 @@ Zone0A_EventScript_DaycareReceiveEgg:
 	waitbuttonpress
 	msgbox Zone0A_Text_TakeGoodCareOfIt, MSGBOX_DEFAULT
 	special GiveEggFromDaycare
-	clearflag FLAG_PBL_PENDING_DAYCARE_EGG
 	release
 	end
 

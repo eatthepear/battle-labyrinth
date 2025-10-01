@@ -19,7 +19,6 @@ Zone26B_Text_ComputerOff:
 	.string "The computer is off.$"
 
 Zone26B_EventScript_SingleRotomFight:
-	goto_if_set FLAG_SETTINGS_BRUTAL, Zone26B_EventScript_NoRotom
 	msgbox Zone26B_Text_Flickering, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Zone26B_EventScript_StartRotomSingleBattle
 	releaseall
@@ -48,7 +47,6 @@ Zone26B_Text_Flickering:
 Zone26B_EventScript_StartRotomBattles:
 	setflag FLAG_SYS_NO_CATCHING
 	setflag FLAG_SYS_SMART_WILD_AI_ON
-	call_if_set FLAG_SETTINGS_BRUTAL, Zone26B_EventScript_DisableBag
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	playse SE_PIN
@@ -59,7 +57,6 @@ Zone26B_EventScript_StartRotomBattles:
 	delay 40
 	waitmoncry
 	delay 40
-	call_if_set FLAG_SETTINGS_BRUTAL, Zone26B_EventScript_SetTotemBoost
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_RAN
@@ -86,7 +83,6 @@ Zone26B_EventScript_StartRotomBattles:
 	delay 40
 	waitmoncry
 	delay 40
-	call_if_set FLAG_SETTINGS_BRUTAL, Zone26B_EventScript_SetTotemBoost
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_RAN
@@ -103,7 +99,6 @@ Zone26B_EventScript_StartRotomBattles:
 	delay 40
 	waitmoncry
 	delay 40
-	call_if_set FLAG_SETTINGS_BRUTAL, Zone26B_EventScript_SetTotemBoost
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_RAN
@@ -120,7 +115,6 @@ Zone26B_EventScript_StartRotomBattles:
 	delay 40
 	waitmoncry
 	delay 40
-	call_if_set FLAG_SETTINGS_BRUTAL, Zone26B_EventScript_SetTotemBoost
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_RAN
@@ -137,7 +131,6 @@ Zone26B_EventScript_StartRotomBattles:
 	delay 40
 	waitmoncry
 	delay 40
-	call_if_set FLAG_SETTINGS_BRUTAL, Zone26B_EventScript_SetTotemBoost
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_RAN
@@ -154,7 +147,6 @@ Zone26B_EventScript_StartRotomBattles:
 	delay 40
 	waitmoncry
 	delay 40
-	call_if_set FLAG_SETTINGS_BRUTAL, Zone26B_EventScript_SetTotemBoost
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_RAN
@@ -162,8 +154,6 @@ Zone26B_EventScript_StartRotomBattles:
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq Zone26B_EventScript_RestartRotomBattles
 	clearflag FLAG_SYS_NO_CATCHING
-	call_if_unset FLAG_SETTINGS_BRUTAL, Zone26B_EventScript_RemoveSmartWildAI
-	call_if_set FLAG_SETTINGS_BRUTAL, Zone26B_EventScript_EnableBag
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	playmoncry SPECIES_ROTOM, 2

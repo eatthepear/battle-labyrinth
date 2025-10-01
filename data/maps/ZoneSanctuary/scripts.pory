@@ -560,7 +560,6 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 2:
 			msgbox(format("The {COLOR RED}DexNav{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
 			setflag(FLAG_SYS_DEXNAV_GET)
-			setflag(FLAG_SYS_DETECTOR_MODE)
 			playfanfare(MUS_OBTAIN_ITEM)
 			msgbox(format("{PLAYER} received the {COLOR RED}DexNav{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
 			waitfanfare
@@ -597,10 +596,6 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("The {COLOR RED}Tera Orb{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
 			giveitem(ITEM_TERA_ORB)
 			setflag(FLAG_USED_TERA)
-			if (flag(FLAG_SETTINGS_INFINITE)) {
-				msgbox("Because you're playing on Infinite, you also get Blue Shards!", MSGBOX_DEFAULT)
-				giveitem(ITEM_BLUE_SHARD, 900)
-			}
 			msgbox(format("In battle, you can Terastilize your Pokémon now.\pPress {START_BUTTON} to Terastilize!\pAfter you use it, you'll have to go back to the Pokémon Center to recharge it."))
 		case 11:
 			msgbox(format("TM86 - Grass Knot!"), MSGBOX_DEFAULT)
@@ -2795,7 +2790,7 @@ script EventScript_Shop_Lelouch_Training {
 	}
 	msgbox("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Choose which training\nregiment you would like.", MSGBOX_DEFAULT)
 	dynmultipush("Experience Training", 0)
-	if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_EFFORTLESS) == false) && var(VAR_ZONE) > 25) {
+	if ((var(VAR_DIFFICULTY) >= DIFFICULTY_HARD) && var(VAR_ZONE) > 25) {
 		dynmultipush("EV Training", 1)
 	}
 	dynmultipush("Exit", 2)

@@ -6,7 +6,6 @@ Zone22A_EventScript_Exit::
 	compare VAR_ZONE, 22
 	goto_if_gt EventScript_WarpZone0
 	goto_if_unset FLAG_BEAT_LEVIATHAN_13, Zone22A_EventScript_LeviathanBattle
-	call_if_set FLAG_SETTINGS_BRUTAL, Zone22A_EventScript_CheckBrutal
 	warp MAP_ZONE_SANCTUARY, 255, 22, 7
 	releaseall
 	end
@@ -50,7 +49,6 @@ Zone22A_EventScript_LeviathanBattle:
 	msgbox Zone22A_Text_Cam_WhatDo, MSGBOX_AUTOCLOSE
 	msgbox Zone22A_Text_Pam_OurCombo, MSGBOX_AUTOCLOSE
 	setflag FLAG_FORCE_BATTLE_ANIM_ON
-	goto_if_set FLAG_SETTINGS_BRUTAL, Zone22A_EventScript_PamAndCamBrutal
 	trainerbattle_no_intro TRAINER_PBL_LEVIATHAN13, Zone22A_Text_Leviathan13Defeat
 	goto Zone22A_EventScript_Leviathan13Defeated
 	end

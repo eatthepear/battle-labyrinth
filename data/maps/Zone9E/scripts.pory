@@ -28,15 +28,11 @@ script Zone9E_EventScript_GiveSquawkabilly {
 		end
 	}
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
-		if (flag(FLAG_SETTINGS_RANDOMIZER) == true) {
-			setvar(VAR_TEMP_1, SPECIES_BULBASAUR) // gets randomized anyways
-		} else {
-			//checkspeciesclause(SPECIES_SQUAWKABILLY)
-			if (var(VAR_RESULT) == TRUE) {
-				msgbox(format("Unfortunately, you have already obtained a Squawkabilly."), MSGBOX_AUTOCLOSE)
-				release
-				end
-			}
+		//checkspeciesclause(SPECIES_SQUAWKABILLY)
+		if (var(VAR_RESULT) == TRUE) {
+			msgbox(format("Unfortunately, you have already obtained a Squawkabilly."), MSGBOX_AUTOCLOSE)
+			release
+			end
 		}
 	}
 	random(4)

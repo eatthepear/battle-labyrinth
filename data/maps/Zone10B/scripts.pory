@@ -169,7 +169,7 @@ script Zone10B_EventScript_DragonTamer {
 					end
 				}
 				msgbox(format("A wise choice!"), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_NUZLOCKE) == true && flag(FLAG_SETTINGS_RANDOMIZER) == false) {
+				if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
 					setvar(VAR_TEMP_0, SPECIES_DRUDDIGON)
 					callnative(CheckSpeciesClause)
 					if (flag(FLAG_TEMP_1) == TRUE) {
@@ -429,11 +429,11 @@ script Zone10B_EventScript_FossilDone {
 script Zone10B_EventScript_WaterMerchant {
 	lock
 	faceplayer
-	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_INDEPENDENT) == true)) {
-		msgbox(format("In the desert, it's supply and demand. And the demand is water.\pThe Fresh Water I usually sell is in such high demand that I am out of stock."))
-		release
-		end
-	}
+	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_INDEPENDENT) == true)) {
+	// 	msgbox(format("In the desert, it's supply and demand. And the demand is water.\pThe Fresh Water I usually sell is in such high demand that I am out of stock."))
+	// 	release
+	// 	end
+	// }
 	showmoneybox(0, 0, 0)
 	msgbox("In the desert, it's supply and\ndemand. And the demand is water.\p¥200 for Fresh Water.\nRestores 30 HP each.", MSGBOX_DEFAULT)
 	dynmultichoice(0, 12, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "One Fresh Water - ¥200", "Ten Fresh Water - ¥2000", "Exit")

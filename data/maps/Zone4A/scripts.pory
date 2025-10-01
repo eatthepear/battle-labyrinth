@@ -29,14 +29,14 @@ script Zone4A_EventScript_PoisonTree {
 script Zone4A_EventScript_Breeder {
 	lock
 	faceplayer
-	if (flag(FLAG_ZONE4A_RECEIVED_GEM) || flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_INDEPENDENT)) {
-		msgbox(format("If you want to evolve an Eevee into a different evolution, I've heard you can find the occasional gem in an item chests."))
-		if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_RED_THUMB) == false)) {
-			msgbox(format("You can also try to find Gems by smashing rocks with a Sledgehammer!"), MSGBOX_DEFAULT)
-		}
-		release
-		end
-	}
+	// if (flag(FLAG_ZONE4A_RECEIVED_GEM) || flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_INDEPENDENT)) {
+	// 	msgbox(format("If you want to evolve an Eevee into a different evolution, I've heard you can find the occasional gem in an item chests."))
+	// 	if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_RED_THUMB) == false)) {
+	// 		msgbox(format("You can also try to find Gems by smashing rocks with a Sledgehammer!"), MSGBOX_DEFAULT)
+	// 	}
+	// 	release
+	// 	end
+	// }
 	if (flag(FLAG_ZONE0B_RECEIVED_EEVEE) == false) {
 		msgbox(format("Hello, {PLAYER}!\nI work at the Pokémon Day-Care.\pThere's a special Eevee giveaway at the Day-Care, so go check that out!"))
 		release

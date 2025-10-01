@@ -41,11 +41,11 @@ script Zone6A_EventScript_LeviathanBattle {
 	fadeoutbgm(1)
 	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Who do you think you are?"), MSGBOX_DEFAULT)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		setweather(WEATHER_RAIN)
-		doweather
-		msgbox("It suddenly began to rain!")
-	}
+	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+	// 	setweather(WEATHER_RAIN)
+	// 	doweather
+	// 	msgbox("It suddenly began to rain!")
+	// }
 	closemessage
 	trainerbattle_no_intro(TRAINER_PBL_MINA, "Rain, rain, go away…")
 	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Uh, sorry I was so angry at you.\pI didn't mean to… You're just passing by. Sorry!"), MSGBOX_AUTOCLOSE)
@@ -64,13 +64,13 @@ script Zone6A_EventScript_LeviathanBattle {
 	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: No one messes with our family!\pLet's show 'em, sis!"), MSGBOX_DEFAULT)
 	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Wait! It isn't their fault!"), MSGBOX_DEFAULT)
 	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: Combined family attack!"))
-	if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		trainerbattle_no_intro(TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_CHALLENGE, Zone6A_Text_Leviathan6Defeat)
-		resetweather
-		doweather
-	} else {
-		trainerbattle_no_intro(TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6, Zone6A_Text_Leviathan6Defeat)
-	}
+	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
+	// 	trainerbattle_no_intro(TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_CHALLENGE, Zone6A_Text_Leviathan6Defeat)
+	// 	resetweather
+	// 	doweather
+	// } else {
+	// 	trainerbattle_no_intro(TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6, Zone6A_Text_Leviathan6Defeat)
+	// }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Whew! You're a tough nut to crack. But we'll crush you for messing with our family!"), MSGBOX_DEFAULT)
 	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Wait! Just listen!"), MSGBOX_DEFAULT)
