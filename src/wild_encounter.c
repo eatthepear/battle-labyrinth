@@ -626,9 +626,10 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum 
     case WILD_AREA_ROCKS:
         wildMonIndex = ChooseWildMonIndex_Rocks();
         break;
+    case WILD_AREA_HIDDEN:
+        wildMonIndex = ChooseWildMonIndex_Water();
     default:
     case WILD_AREA_FISHING:
-    case WILD_AREA_HIDDEN:
         break;
     }
 
@@ -1335,32 +1336,20 @@ bool8 StandardWildEncounter_Debug(void)
 
 void HeadbuttWildEncounter(void)
 {
-    // TODO
-    // u16 headerId = GetCurrentMapWildMonHeaderId();
+    u16 headerId = GetCurrentMapWildMonHeaderId();
 
-    // if (headerId != HEADER_NONE)
-    // {
-    //     const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].hiddenMonsInfo;
+    if (headerId != HEADER_NONE)
+    {
+        enum TimeOfDay timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
 
-    //     if (wildPokemonInfo == NULL)
-    //     {
-    //         gSpecialVar_Result = FALSE;
-    //     }
-    //     else if (WildEncounterCheck(30, 1) == TRUE
-    //      && TryGenerateWildMon(wildPokemonInfo, WILD_AREA_HIDDEN, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
-    //     {
-    //         BattleSetup_StartWildBattle();
-    //         gSpecialVar_Result = TRUE;
-    //     }
-    //     else
-    //     {
-    //         gSpecialVar_Result = FALSE;
-    //     }
-    // }
-    // else
-    // {
-    //     gSpecialVar_Result = FALSE;
-    // }
+        if ((WildEncounterCheck(30, 1) == TRUE) && (TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo, WILD_AREA_HIDDEN, 0) == TRUE))
+        {
+            BattleSetup_StartWildBattle();
+            gSpecialVar_Result = TRUE;
+            return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
 }
 
 bool8 BerryTreeWildEncounter(void)
