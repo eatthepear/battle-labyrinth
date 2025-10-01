@@ -232,7 +232,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 
@@ -292,7 +292,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 
@@ -352,7 +352,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 
@@ -599,7 +599,7 @@ Name: Shaun
 Class: Youngster
 Pic: Youngster
 Music: Male
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 
@@ -863,7 +863,7 @@ Name: Phillipa
 Class: School Kid
 Pic: School Kid F
 Music: Girl
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 
@@ -1198,7 +1198,7 @@ Name: Ella&Bella
 Class: Sr And Jr
 Pic: Sr And Jr
 Music: Twins
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
 Mugshot: Purple
 
@@ -1590,7 +1590,7 @@ Name: Maria
 Class: Backpacker
 Pic: Backpacker F
 Music: Hiker
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 
@@ -1959,7 +1959,7 @@ Name: Zack&Coby
 Class: Sis And Bro
 Pic: Sis And Bro
 Music: Swimmer
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
 Mugshot: Purple
 
@@ -2284,7 +2284,7 @@ Name: Betty
 Class: Lady
 Pic: Lady
 Music: Female
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
 Mugshot: Purple
 
@@ -2634,7 +2634,7 @@ Name: Alistair
 Class: Roughneck
 Pic: Roughneck
 Music: Suspicious
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 
@@ -2992,7 +2992,7 @@ Name: Ari
 Class: Winstrate
 Pic: Camper
 Music: Male
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
 Tandemaus @ Oran Berry
@@ -3024,7 +3024,7 @@ Name: Bertha
 Class: Winstrate
 Pic: Picnicker
 Music: Girl
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
 Stunfisk @ Oran Berry
@@ -3041,7 +3041,7 @@ Name: Cassandra
 Class: Winstrate
 Pic: Pokefan F
 Music: Twins
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
 Squawkabilly-Blue @ Sitrus Berry
@@ -3058,7 +3058,7 @@ Name: Dominic
 Class: Winstrate
 Pic: Pokefan M
 Music: Twins
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
 Carnivine @ Sitrus Berry
@@ -3075,7 +3075,7 @@ Name: Erica
 Class: Winstrate
 Pic: Expert F
 Music: Intense
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
 Sawk @ Sitrus Berry
@@ -3532,7 +3532,7 @@ Name: Adamina
 Class: Pkmn Ranger
 Pic: Pokemon Ranger F
 Music: Cool
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 
@@ -3849,7 +3849,7 @@ Name: Newton
 Class: Scientist
 Pic: Scientist
 Music: Intense
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
 Mugshot: Purple
 
@@ -4215,7 +4215,7 @@ Name: Declan
 Class: Bug Maniac
 Pic: Bug Maniac
 Music: Suspicious
-AI: AI_FLAG_CHALLENGE
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 

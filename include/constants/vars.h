@@ -49,7 +49,7 @@
 // Custom vars
 #define VAR_ZONE                             0x4020
 #define VAR_LEVEL_CAP                        0x4021
-#define VAR_UNUSED_0x4022                    0x4022
+#define VAR_BATTLE_STARTING_STATUS           0x4022
 #define VAR_GENERIC                          0x4023
 #define VAR_WILD_MUSIC                       0x4024
 #define VAR_TRAINER_MUSIC                    0x4025

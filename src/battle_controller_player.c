@@ -327,7 +327,7 @@ static void HandleInputChooseAction(u32 battler)
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_SWITCH, 0);
             break;
         case 3: // Bottom right
-            if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+            if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER) || (FlagGet(FLAG_FORCE_BATTLE_ANIM_ON)))
             {
                 BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_VIEW_ENEMY_PARTY, 0);
             }
@@ -1985,7 +1985,7 @@ static void PlayerHandleChooseAction(u32 battler)
 
     gBattlerControllerFuncs[battler] = HandleChooseActionAfterDma3;
     BattleTv_ClearExplosionFaintCause();
-    if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+    if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER) || FlagGet(FLAG_FORCE_BATTLE_ANIM_ON))
     {
         BattlePutTextOnWindow(gText_TrainerBattleMenu, B_WIN_ACTION_MENU);
     }

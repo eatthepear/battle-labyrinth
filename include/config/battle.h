@@ -210,7 +210,7 @@
 #define B_SMART_WILD_AI_FLAG        FLAG_SYS_SMART_WILD_AI_ON     // If this flag is set, wild Pokémon will become smart, with all AI flags enabled.
 #define B_FLAG_NO_BAG_USE           FLAG_SYS_NO_BAG_USE_IN_BATTLE     // If this flag is set, the ability to use the bag in battle is disabled.
 #define B_FLAG_NO_CATCHING          FLAG_SYS_NO_CATCHING     // If this flag is set, the ability to catch wild Pokémon is disabled.
-#define B_FLAG_NO_RUNNING           0     // If this flag is set, the ability to escape from wild battles is disabled. Also makes Roar/Whirlwind and Teleport (under Gen8) fail.
+#define B_FLAG_NO_RUNNING           FLAG_SYS_NO_RUNNING     // If this flag is set, the ability to escape from wild battles is disabled. Also makes Roar/Whirlwind and Teleport (under Gen8) fail.
 #define B_FLAG_AI_VS_AI_BATTLE      0     // If this flag is set, the player's mons will be controlled by the ai next battles.
 #define B_FLAG_DYNAMAX_BATTLE       0     // If this flag is set, the ability to Dynamax in battle is enabled for all trainers.
 #define B_FLAG_TERA_ORB_CHARGED     FLAG_USED_TERA     // If this flag is set, the Tera Orb is charged. It is automatically set upon healing and cleared upon Terastallizing once configured.
@@ -221,7 +221,7 @@
 // Var Settings
 // To use the following features, change the 0 for a var present in include/constants/vars.h, preferably an unused one.
 // Eg: You may rename VAR_UNUSED_0x404E to a descriptive name and use it below.
-#define B_VAR_STARTING_STATUS       0     // If this var has a value, assigning a STATUS_FIELD_xx_TERRAIN to it before battle causes the battle to start with that terrain active.
+#define B_VAR_STARTING_STATUS       VAR_BATTLE_STARTING_STATUS     // If this var has a value, assigning a STATUS_FIELD_xx_TERRAIN to it before battle causes the battle to start with that terrain active.
                                           // This var should never remain non-zero long enough for the player to save.
 #define B_VAR_STARTING_STATUS_TIMER 0     // If this var has a value greater or equal than 1 field terrains will last that number of turns, otherwise they will last until they're overwritten.
 #define B_VAR_WILD_AI_FLAGS         0     // If not 0, you can use this var to add to default wild AI flags. IMPORTANT: NOT usable with flags above (1 << 15)

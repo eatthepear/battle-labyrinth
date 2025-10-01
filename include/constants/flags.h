@@ -154,6 +154,7 @@
 #define FLAG_SYS_NO_CATCHING                        0xB5
 #define FLAG_SYS_FORCE_DOUBLE_WILD                  0xB6
 #define FLAG_SYS_SMART_WILD_AI_ON                   0xB7
+#define FLAG_SYS_NO_RUNNING                         0xB8
 
 // Flags editable via script
 #define FLAG_FORCE_BATTLE_ANIM_ON                   0xC0
@@ -265,6 +266,7 @@
 #define FLAG_GUITARIST_INTRO                              0x157
 #define FLAG_COWGIRL_INTRO                                0x158
 #define FLAG_SANCTUARY_RECEIVED_FISHING_ROD               0x159
+#define FLAG_TESTING_FLAG                                 0x15A
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x200

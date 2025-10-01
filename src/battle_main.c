@@ -4316,7 +4316,7 @@ static void HandleTurnActionSelectionState(void)
                     }
                     break;
                 case B_ACTION_USE_ITEM:
-                    if (FlagGet(B_FLAG_NO_BAG_USE) || ((GetCurrentDifficultyLevel() >= DIFFICULTY_HARD) && (gBattleTypeFlags & BATTLE_TYPE_TRAINER)))
+                    if (FlagGet(B_FLAG_NO_BAG_USE) || ((GetCurrentDifficultyLevel() >= DIFFICULTY_HARD) && ((gBattleTypeFlags & BATTLE_TYPE_TRAINER) || FlagGet(FLAG_FORCE_BATTLE_ANIM_ON))))
                     {
                         RecordedBattle_ClearBattlerAction(battler, 1);
                         gSelectionBattleScripts[battler] = BattleScript_ActionSelectionItemsCantBeUsed;

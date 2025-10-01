@@ -3267,6 +3267,46 @@ bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
     return TRUE;
 }
 
+bool8 ScrCmd_setwildbattle_pbl(struct ScriptContext *ctx)
+{
+    u16 species = ScriptReadHalfword(ctx);
+    u8 level = ScriptReadByte(ctx);
+    u16 item = ScriptReadHalfword(ctx);
+    u8 nature = ScriptReadByte(ctx);
+    u8 iv = ScriptReadByte(ctx);
+    u8 abilityNum = ScriptReadByte(ctx);
+    u16 move11 = ScriptReadHalfword(ctx);
+    u16 move12 = ScriptReadHalfword(ctx);
+    u16 move13 = ScriptReadHalfword(ctx);
+    u16 move14 = ScriptReadHalfword(ctx);
+    u16 species2 = ScriptReadHalfword(ctx);
+    u8 level2 = ScriptReadByte(ctx);
+    u16 item2 = ScriptReadHalfword(ctx);
+    u8 nature2 = ScriptReadByte(ctx);
+    u8 iv2 = ScriptReadByte(ctx);
+    u8 abilityNum2 = ScriptReadByte(ctx);
+    u16 move21 = ScriptReadHalfword(ctx);
+    u16 move22 = ScriptReadHalfword(ctx);
+    u16 move23 = ScriptReadHalfword(ctx);
+    u16 move24 = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+
+    if(species2 == SPECIES_NONE)
+    {
+        CreateScriptedWildMon_PBL(species, level, item, nature, iv, abilityNum, move11, move12, move13, move14);
+        sIsScriptedWildDouble = FALSE;
+    }
+    else
+    {
+        CreateScriptedDoubleWildMon_PBL(species, level, item, nature, iv, abilityNum, move11, move12, move13, move14,
+                                        species2, level2, item2, nature2, iv2, abilityNum2, move21, move22, move23, move24);
+        sIsScriptedWildDouble = TRUE;
+    }
+
+    return FALSE;
+}
+
 bool8 ScrFunc_hidefollower(struct ScriptContext *ctx)
 {
     bool16 wait = VarGet(ScriptReadHalfword(ctx));
