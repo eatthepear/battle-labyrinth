@@ -28,7 +28,7 @@
     "gMapGroup_IndoorDynamic",
     "gMapGroup_SpecialArea",
     "gMapGroup_Zones",
-    "gMapGroup_Sanctuaries",
+    "gMapGroup_Sanctuary",
     "gMapGroup_IndoorRoute109",
     "gMapGroup_IndoorRoute110",
     "gMapGroup_IndoorRoute113",
@@ -670,7 +670,7 @@
     "ZoneS1B",
     "ZoneS2A"
   ],
-  "gMapGroup_Sanctuaries": [
+  "gMapGroup_Sanctuary": [
     "ZoneSanctuary",
     "ZoneSanctuary_PokemonCenter_1F",
     "ZoneSanctuary_PokemonCenter_2F"
