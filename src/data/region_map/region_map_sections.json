@@ -693,523 +693,271 @@
     },
     {
       "id": "MAPSEC_ZONE_0",
-      "name": "Zone 0",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 0"
     },
     {
       "id": "MAPSEC_ZONE_1",
-      "name": "Zone 1",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 1"
     },
     {
       "id": "MAPSEC_ZONE_2",
-      "name": "Zone 2",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 2"
     },
     {
       "id": "MAPSEC_ZONE_3",
-      "name": "Zone 3",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 3"
     },
     {
       "id": "MAPSEC_ZONE_4",
-      "name": "Zone 4",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 4"
     },
     {
       "id": "MAPSEC_ZONE_5",
-      "name": "Zone 5",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 5"
     },
     {
       "id": "MAPSEC_ZONE_6",
-      "name": "Zone 6",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 6"
     },
     {
       "id": "MAPSEC_ZONE_7",
-      "name": "Zone 7",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 7"
     },
     {
       "id": "MAPSEC_ZONE_8",
-      "name": "Zone 8",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 8"
     },
     {
       "id": "MAPSEC_ZONE_9",
-      "name": "Zone 9",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 9"
     },
     {
       "id": "MAPSEC_ZONE_10",
-      "name": "Zone 10",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 10"
     },
     {
       "id": "MAPSEC_ZONE_11",
-      "name": "Zone 11",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 11"
     },
     {
       "id": "MAPSEC_ZONE_12",
-      "name": "Zone 12",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 12"
     },
     {
       "id": "MAPSEC_ZONE_13",
-      "name": "Zone 13",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 13"
     },
     {
       "id": "MAPSEC_ZONE_14",
-      "name": "Zone 14",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 14"
     },
     {
       "id": "MAPSEC_ZONE_15",
-      "name": "Zone 15",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 15"
     },
     {
       "id": "MAPSEC_ZONE_16",
-      "name": "Zone 16",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 16"
     },
     {
       "id": "MAPSEC_ZONE_17",
-      "name": "Zone 17",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 17"
     },
     {
       "id": "MAPSEC_ZONE_18",
-      "name": "Zone 18",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 18"
     },
     {
       "id": "MAPSEC_ZONE_19",
-      "name": "Zone 19",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 19"
     },
     {
       "id": "MAPSEC_ZONE_20",
-      "name": "Zone 20",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 20"
     },
     {
       "id": "MAPSEC_ZONE_21",
-      "name": "Zone 21",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 21"
     },
     {
       "id": "MAPSEC_ZONE_22",
-      "name": "Zone 22",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 22"
     },
     {
       "id": "MAPSEC_ZONE_23",
-      "name": "Zone 23",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 23"
     },
     {
       "id": "MAPSEC_ZONE_24",
-      "name": "Zone 24",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 24"
     },
     {
       "id": "MAPSEC_ZONE_25",
-      "name": "Zone 25",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 25"
     },
     {
       "id": "MAPSEC_ZONE_26",
-      "name": "Zone 26",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 26"
     },
     {
       "id": "MAPSEC_ZONE_27",
-      "name": "Zone 27",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 27"
     },
     {
       "id": "MAPSEC_ZONE_28",
-      "name": "Zone 28",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 28"
     },
     {
       "id": "MAPSEC_ZONE_29",
-      "name": "Zone 29",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 29"
     },
     {
       "id": "MAPSEC_ZONE_30",
-      "name": "Zone 30",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 30"
     },
     {
       "id": "MAPSEC_ZONE_31",
-      "name": "Zone 31",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 31"
     },
     {
       "id": "MAPSEC_ZONE_32",
-      "name": "Zone 32",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 32"
     },
     {
       "id": "MAPSEC_ZONE_33",
-      "name": "Zone 33",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 33"
     },
     {
       "id": "MAPSEC_ZONE_34",
-      "name": "Zone 34",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 34"
     },
     {
       "id": "MAPSEC_ZONE_35",
-      "name": "Zone 35",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 35"
     },
     {
       "id": "MAPSEC_ZONE_36",
-      "name": "Zone 36",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 36"
     },
     {
       "id": "MAPSEC_ZONE_37",
-      "name": "Zone 37",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 37"
     },
     {
       "id": "MAPSEC_ZONE_38",
-      "name": "Zone 38",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 38"
     },
     {
       "id": "MAPSEC_ZONE_39",
-      "name": "Zone 39",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 39"
     },
     {
       "id": "MAPSEC_ZONE_40",
-      "name": "Zone 40",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 40"
     },
     {
       "id": "MAPSEC_ZONE_41",
-      "name": "Zone 41",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 41"
     },
     {
       "id": "MAPSEC_ZONE_42",
-      "name": "Zone 42",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 42"
     },
     {
       "id": "MAPSEC_ZONE_43",
-      "name": "Zone 43",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 43"
     },
     {
       "id": "MAPSEC_ZONE_44",
-      "name": "Zone 44",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 44"
     },
     {
       "id": "MAPSEC_ZONE_45",
-      "name": "Zone 45",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 45"
     },
     {
       "id": "MAPSEC_ZONE_46",
-      "name": "Zone 46",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 46"
     },
     {
       "id": "MAPSEC_ZONE_47",
-      "name": "Zone 47",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 47"
     },
     {
       "id": "MAPSEC_ZONE_48",
-      "name": "Zone 48",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 48"
     },
     {
       "id": "MAPSEC_ZONE_49",
-      "name": "Zone 49",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 49"
     },
     {
       "id": "MAPSEC_ZONE_50",
-      "name": "Zone 50",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone 50"
     },
     {
       "id": "MAPSEC_SANCTUARY",
-      "name": "Sanctuary",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Sanctuary"
     },
     {
       "id": "MAPSEC_ZONE_S1",
-      "name": "Zone S1",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone S1"
     },
     {
       "id": "MAPSEC_ZONE_S2",
-      "name": "Zone S2",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone S2"
     },
     {
       "id": "MAPSEC_ZONE_S3",
-      "name": "Zone S3",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone S3"
     },
     {
       "id": "MAPSEC_ZONE_S4",
-      "name": "Zone S4",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone S4"
     },
     {
       "id": "MAPSEC_ZONE_S5",
-      "name": "Zone S5",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone S5"
     },
     {
       "id": "MAPSEC_ZONE_S6",
-      "name": "Zone S6",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone S6"
     },
     {
       "id": "MAPSEC_ZONE_S7",
-      "name": "Zone S7",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone S7"
     },
     {
       "id": "MAPSEC_ZONE_S8",
-      "name": "Zone S8",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone S8"
     },
     {
       "id": "MAPSEC_ZONE_S9",
-      "name": "Zone S9",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone S9"
     },
     {
       "id": "MAPSEC_ZONE_S10",
-      "name": "Zone S10",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone S10"
     },
     {
       "id": "MAPSEC_ZONE_B1",
-      "name": "Zone B1",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": "Zone B1"
     },
     {
-      "id": "MAPSEC_TREASURE_BEACH",
-      "name": "TREASURE BEACH"
+      "id": "MAPSEC_ZONE_QUIET_FIELD",
+      "name": "Quiet Field"
     },
     {
-      "id": "MAPSEC_CAPE_BRINK",
-      "name": "CAPE BRINK"
+      "id": "MAPSEC_ZONE_BREEZY_MEADOW",
+      "name": "Breezy Meadow"
     },
     {
-      "id": "MAPSEC_BOND_BRIDGE",
-      "name": "BOND BRIDGE"
+      "id": "MAPSEC_ZONE_PEACEFUL_GROVE",
+      "name": "Peaceful Grove"
     },
     {
-      "id": "MAPSEC_THREE_ISLE_PORT",
-      "name": "THREE ISLE PORT"
+      "id": "MAPSEC_ZONE_WHISPER_CAVE",
+      "name": "Whisper Cave"
     },
     {
       "id": "MAPSEC_SEVII_ISLE_6",
