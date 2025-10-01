@@ -1328,3 +1328,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ZoneSanctuary_PokemonCenter_1F/scripts.inc"
 
 	.include "data/maps/ZoneSanctuary_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/Zone_QuietField/scripts.inc"
