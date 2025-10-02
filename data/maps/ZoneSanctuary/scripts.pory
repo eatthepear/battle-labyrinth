@@ -49,20 +49,7 @@ script EventScript_Colress_Menu {
 
 script EventScript_Difficulty {
 	while {
-		switch (var(VAR_DIFFICULTY)) {
-			case DIFFICULTY_EASY:
-				message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to Easy."))
-				waitmessage
-			case DIFFICULTY_NORMAL:
-				message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to Normal."))
-				waitmessage
-			case DIFFICULTY_HARD:
-				message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to Hard."))
-				waitmessage
-			case DIFFICULTY_BRUTAL:
-				message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to Brutal."))
-				waitmessage
-		}
+		call(EventScript_Difficulty_SetToMessage)
 		dynmultipush("Difficulty Info", 0)
 		dynmultipush("Switch Difficulty", 1)
 		dynmultipush("Back", 2)
@@ -79,76 +66,93 @@ script EventScript_Difficulty {
 	}
 }
 
+script EventScript_Difficulty_SetToMessage {
+	switch (var(VAR_DIFFICULTY)) {
+		case DIFFICULTY_EASY:
+			message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to {COLOR RED}Easy{COLOR DARK_GRAY}."))
+			waitmessage
+		case DIFFICULTY_NORMAL:
+			message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to {COLOR RED}Normal{COLOR DARK_GRAY}."))
+			waitmessage
+		case DIFFICULTY_HARD:
+			message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to {COLOR RED}Hard{COLOR DARK_GRAY}."))
+			waitmessage
+		case DIFFICULTY_BRUTAL:
+			message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to {COLOR RED}Brutal{COLOR DARK_GRAY}."))
+			waitmessage
+	}
+}
+
 script EventScript_Difficulty_Switch {
 	while {
 		message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Which difficulty would you like to switch to?"))
 		waitmessage
 		switch (var(VAR_DIFFICULTY)) {
 			case DIFFICULTY_EASY:
-				dynmultipush("{COLOR GREEN}Easy", 0)
+				dynmultipush("{COLOR RED}Easy", 0)
 				dynmultipush("Normal", 1)
 				dynmultipush("Hard", 2)
 				dynmultipush("Brutal", 3)
 			case DIFFICULTY_NORMAL:
 				dynmultipush("Easy", 0)
-				dynmultipush("{COLOR GREEN}Normal", 1)
+				dynmultipush("{COLOR RED}Normal", 1)
 				dynmultipush("Hard", 2)
 				dynmultipush("Brutal", 3)
 			case DIFFICULTY_HARD:
 				dynmultipush("Easy", 0)
 				dynmultipush("Normal", 1)
-				dynmultipush("{COLOR GREEN}Hard", 2)
+				dynmultipush("{COLOR RED}Hard", 2)
 				dynmultipush("Brutal", 3)
 			case DIFFICULTY_BRUTAL:
 				dynmultipush("Easy", 0)
 				dynmultipush("Normal", 1)
 				dynmultipush("Hard", 2)
-				dynmultipush("{COLOR GREEN}Brutal", 3)
+				dynmultipush("{COLOR RED}Brutal", 3)
 		}
 		dynmultipush("Back", 4)
 		dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
 				if (var(VAR_DIFFICULTY) == DIFFICULTY_EASY) {
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is already set to Easy."))
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is already set to {COLOR RED}Easy{COLOR DARK_GRAY}."))
 				} else {
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty to Easy?"), MSGBOX_YESNO)
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty to {COLOR RED}Easy{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_EASY)
-						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty has been changed to Easy."))
+						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty has been changed to {COLOR RED}Easy{COLOR DARK_GRAY}."))
 						return
 					}
 				}
 			case 1:
 				if (var(VAR_DIFFICULTY) == DIFFICULTY_NORMAL) {
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is already set to Normal."))
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is already set to {COLOR RED}Normal{COLOR DARK_GRAY}."))
 				} else {
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty to Normal?"), MSGBOX_YESNO)
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty to {COLOR RED}Normal{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_NORMAL)
-						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty has been changed to Normal."))
+						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty has been changed to {COLOR RED}Normal{COLOR DARK_GRAY}."))
 						return
 					}
 				}
 			case 2:
 				if (var(VAR_DIFFICULTY) == DIFFICULTY_HARD) {
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is already set to Hard."))
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is already set to {COLOR RED}Hard{COLOR DARK_GRAY}."))
 				} else {
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty to Hard?"), MSGBOX_YESNO)
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty to {COLOR RED}Hard{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_HARD)
-						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty has been changed to Hard."))
+						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty has been changed to {COLOR RED}Hard{COLOR DARK_GRAY}."))
 						return
 					}
 				}
 			case 3:
 				if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is already set to Brutal."))
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is already set to {COLOR RED}Brutal{COLOR DARK_GRAY}."))
 				} else {
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty to Brutal?"), MSGBOX_YESNO)
+					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Change the difficulty to {COLOR RED}Brutal{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_BRUTAL)
-						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty has been changed to Brutal."))
+						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty has been changed to {COLOR RED}Brutal{COLOR DARK_GRAY}."))
 						return
 					}
 				}
@@ -171,13 +175,13 @@ script EventScript_Difficulty_Info {
 		dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
-				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Easy is suited for casual players.\pFor the most part, you can play as if this was one of the harder vanilla Pokémon games, meaning you can grind experience, items, and money.\pThe difficulty of battles is the same as Normal."))
+				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: {COLOR RED}Easy{COLOR DARK_GRAY} is suited for casual players.\pFor the most part, you can play as if this was one of the harder vanilla Pokémon games, meaning you can grind experience, items, and money.\pThe difficulty of battles is the same as {COLOR RED}Normal{COLOR DARK_GRAY}."))
 			case 1:
-				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Normal is suited for the typical player.\pThe game is more challenging than a vanilla Pokémon game.\pRecommended for first time playthroughs!"))
+				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: {COLOR RED}Normal{COLOR DARK_GRAY} is suited for the typical player.\pThe game is more challenging than a vanilla Pokémon game.\pRecommended for first time playthroughs!"))
 			case 2:
-				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Hard is suited for players looking for a serious challenge.\pThe battles are more difficult than on Normal.\pIn addition, you can't use in-battle items during non-wild battles, you must play on SET mode, and your Pokémon can't gain EVs."))
+				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: {COLOR RED}Hard{COLOR DARK_GRAY} is suited for players looking for a serious challenge.\pThe battles are more difficult than on {COLOR RED}Normal{COLOR DARK_GRAY}.\pIn addition, you can't use in-battle items during non-wild battles, you must play on SET mode, and your Pokémon can't gain EVs."))
 			case 3:
-				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Brutal is suited for players experienced in challenging ROM hacks.\pAll changes from Hard are carried over, and battles are even more difficult.\pIn addition, the amount of money you gain is halved, and the Pokémon, NPCs, and services you have access to are more limited."))
+				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: {COLOR RED}Brutal{COLOR DARK_GRAY} is suited for players experienced in challenging ROM hacks.\pAll changes from {COLOR RED}Hard{COLOR DARK_GRAY} are carried over, and battles are even more difficult.\pIn addition, the amount of money you gain is halved, and the Pokémon, NPCs, and services you have access to are more limited."))
 			case 4:
 			case MULTI_B_PRESSED:
 				return
@@ -231,7 +235,7 @@ script EventScript_Nuzlocke {
 }
 
 text gText_Colress_NuzlockeExplained {
-	format("Nuzlocke mode completely implements all standard Nuzlocke rules, such as permanent death and capture restrictions.\p"
+	format("{COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode completely implements all standard Nuzlocke rules, such as permanent death and capture restrictions.\p"
 	"It comes with Species Clause, Shiny Clause, and Gift Clause.\p"
 	"In addition, Gift Pokémon are randomized among their options, if any.\p"
 	"It is not recommended to play Nuzlocke mode unless you are familiar with Nuzlockes already.\p"
@@ -920,20 +924,7 @@ script EventScript_GameIntro_SetStartingVariablesAndFlags {
 script EventScript_GameIntro_Difficulty {
 	msgbox(format("Pokémon Battle Labyrinth has a few difficulty options. Please adjust the difficulty as you see fit."))
 	while {
-		switch (var(VAR_DIFFICULTY)) {
-			case DIFFICULTY_EASY:
-				message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to Easy."))
-				waitmessage
-			case DIFFICULTY_NORMAL:
-				message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to Normal."))
-				waitmessage
-			case DIFFICULTY_HARD:
-				message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to Hard."))
-				waitmessage
-			case DIFFICULTY_BRUTAL:
-				message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty is currently set to Brutal."))
-				waitmessage
-		}
+		call(EventScript_Difficulty_SetToMessage)
 		dynmultipush("Difficulty Info", 0)
 		dynmultipush("Switch Difficulty", 1)
 		dynmultipush("Confirm Difficulty", 2)
@@ -947,22 +938,22 @@ script EventScript_GameIntro_Difficulty {
 			case MULTI_B_PRESSED:
 				switch (var(VAR_DIFFICULTY)) {
 					case DIFFICULTY_EASY:
-						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you want to play on Easy?"), MSGBOX_YESNO)
+						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you want to play on {COLOR RED}Easy{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 						if (var(VAR_RESULT) == YES) {
 							return
 						}
 					case DIFFICULTY_NORMAL:
-						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you want to play on Normal?"), MSGBOX_YESNO)
+						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you want to play on {COLOR RED}Normal{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 						if (var(VAR_RESULT) == YES) {
 							return
 						}
 					case DIFFICULTY_HARD:
-						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you want to play on Hard?"), MSGBOX_YESNO)
+						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you want to play on {COLOR RED}Hard{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 						if (var(VAR_RESULT) == YES) {
 							return
 						}
 					case DIFFICULTY_BRUTAL:
-						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you want to play on Brutal?"), MSGBOX_YESNO)
+						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you want to play on {COLOR RED}Brutal{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 						if (var(VAR_RESULT) == YES) {
 							return
 						}
