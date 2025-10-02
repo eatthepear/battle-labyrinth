@@ -9,37 +9,9 @@ script ZoneSanctuary_EventScript_Colress {
 	lock
 	faceplayer
 	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Greetings, {PLAYER}."))
-	setvar(VAR_TEMP_0, 1)
 	message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Anything I can help with?"))
 	waitmessage
-	do {
-		dynmultipush("Difficulty", 0)
-		if (flag(FLAG_SETTINGS_NUZLOCKE)) {
-			dynmultipush("Nuzlocke", 2)
-		} else {
-			dynmultipush("Respin Encounters", 3)
-		}
-		dynmultipush("Documentation", 1)
-		dynmultipush("Exit", 4)
-		dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
-		switch (var(VAR_RESULT)) {
-			case 0:
-				call(EventScript_Difficulty)
-			case 1:
-				call(EventScript_Documentation)
-			case 2:
-				call(EventScript_Nuzlocke)
-			case 3:
-				call(EventScript_RespinEncounters)
-			case 4:
-			case MULTI_B_PRESSED:
-				setvar(VAR_TEMP_0, 0)
-		}
-		if (var(VAR_TEMP_0) == 1) {
-			message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Anything else I can help with?"))
-			waitmessage
-		}
-	} while (var(VAR_TEMP_0) == 1)
+	call(EventScript_Difficulty)
 	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}:"))
 	release
 }
@@ -52,14 +24,14 @@ script EventScript_Colress_Menu {
 		} else {
 			dynmultipush("Respin Encounters", 3)
 		}
-		dynmultipush("Documentation", 1)
+		dynmultipush("Game Version", 1)
 		dynmultipush("Exit", 4)
 		dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
 				call(EventScript_Difficulty)
 			case 1:
-				call(EventScript_Documentation)
+				call(EventScript_Version)
 			case 2:
 				call(EventScript_Nuzlocke)
 			case 3:
@@ -211,7 +183,25 @@ script EventScript_Difficulty_Info {
 	}
 }
 
-script EventScript_Documentation {
+// Removed for now, as FLAG_SETTINGS_FULL_INFO has been removed.
+// script EventScript_FullInfo {
+// 	if (flag(FLAG_SETTINGS_FULL_INFO)) {
+// 		msgbox(format("You currently have the Full Info option on. Would you like to turn it off?"), MSGBOX_YESNO)
+// 		if (var(VAR_RESULT) == YES) {
+// 			clearflag(FLAG_SETTINGS_FULL_INFO)
+// 			msgbox(format("Full Info turned off."))
+// 		}
+// 	} else {
+// 		msgbox(format("You currently have the Full Info option off. Would you like to turn it on?"), MSGBOX_YESNO)
+// 		if (var(VAR_RESULT) == YES) {
+// 			setflag(FLAG_SETTINGS_FULL_INFO)
+// 			msgbox(format("Full Info turned on."))
+// 		}
+// 	}
+// 	return
+// }
+
+script EventScript_Version {
 	msgbox(format("This is version 2.0.0 of the Pokémon Battle Labyrinth.\pMake sure you're playing the most up to date version!"))
 	return
 }
@@ -380,8 +370,6 @@ script Sanctuary_EventScript_NextZone {
 			}
 		case 1:
 			// goto(EventScript_Settings)
-		case 2:
-			goto(EventScript_Documentation)
 	}
 	goto(EventScript_WhenUReady)
 }

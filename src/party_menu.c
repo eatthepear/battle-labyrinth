@@ -2983,13 +2983,9 @@ static u8 GetPartyMenuActionsType(struct Pokemon *mon)
         {
             actionType = GetPartyMenuActionsTypeInBattle(mon);
         }
-        else if (FlagGet(FLAG_SETTINGS_FULL_INFO))
-        {
-            actionType = ACTIONS_SUMMARY_ONLY;
-        }
         else
         {
-            actionType = ACTIONS_CANCEL_ONLY;
+            actionType = ACTIONS_SUMMARY_ONLY;
         }
         break;
     case PARTY_MENU_TYPE_CHOOSE_HALF:

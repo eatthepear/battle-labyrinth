@@ -142,7 +142,7 @@
 
 // Configs / Major Flags
 #define FLAG_SETTINGS_NUZLOCKE                      0xA1
-#define FLAG_SETTINGS_FULL_INFO                     0xA2
+#define FLAG_UNUSED_0xA2                            0xA2
 #define FLAG_SYS_EXP_SHARE                          0xA3
 #define FLAG_SYS_DEBUG                              0xB0
 #define FLAG_SYS_NO_COLLISION                       0xB1
