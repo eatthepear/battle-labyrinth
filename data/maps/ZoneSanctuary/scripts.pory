@@ -171,7 +171,7 @@ script EventScript_Difficulty_Info {
 		dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
-				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Easy is suited for casual players.\pFor the most part, you can play as if this was one of the harder vanilla Pokémon games.\pThe difficulty of battles is the same as Normal."))
+				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Easy is suited for casual players.\pFor the most part, you can play as if this was one of the harder vanilla Pokémon games, meaning you can grind experience, items, and money.\pThe difficulty of battles is the same as Normal."))
 			case 1:
 				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Normal is suited for the typical player.\pThe game is more challenging than a vanilla Pokémon game.\pRecommended for first time playthroughs!"))
 			case 2:
