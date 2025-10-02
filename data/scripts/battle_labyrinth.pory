@@ -122,13 +122,8 @@ script EventScript_SavesQuestBoy {
 	if (var(VAR_RESULT) == FALSE) {
 		callnative(SavesQuestCheckIfDone)
 		if (flag(FLAG_TEMP_6) == TRUE) {
-			msgbox(format("Wow!\pYou really went and saved 50 times?\pThat's crazy.\pHere, as a reward, I can give you this nifty Trainer Notebook!"))
-			if (checkitem(ITEM_NOTEBOOK) == FALSE) {
-				giveitem(ITEM_NOTEBOOK)
-				msgbox(format("This notebook contains all the trainers in the Pokémon Battle Labyrinth.\pIt's a nice way to keep track of your progress!"))
-			} else {
-				msgbox(format("Oh! You already have one.\pUh… Have some brownie points, I guess? Sorry!"))
-			}
+			msgbox(format("Wow!\pYou really went and saved 50 times?\pThat's crazy.\pHere, as a reward, I can give you this nifty Exp. Share!\pI would only use it if I don't want my Pokémon to grow at the rate it's supposed to!"))
+			giveitem(ITEM_EXP_SHARE)
 			completequest(QUEST_SAVES)
 		}
 	}

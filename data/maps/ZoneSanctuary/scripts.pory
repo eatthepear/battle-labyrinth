@@ -870,13 +870,11 @@ script Sanctuary_EventScript_GameIntro {
 		giveitem(ITEM_NOTEBOOK)
 		giveitem(ITEM_INFINITE_REPEL)
 		giveitem(ITEM_RARE_CANDY)
-		giveitem(ITEM_EXP_SHARE)
 	} else {
 		additem(ITEM_POTION, 10)
 		additem(ITEM_POKE_BALL, 15)
 		additem(ITEM_NOTEBOOK)
 		additem(ITEM_INFINITE_REPEL)
-		additem(ITEM_EXP_SHARE)
 		additem(ITEM_RARE_CANDY)
 	}
 	setmonmetlocation(0, 255)
@@ -897,6 +895,7 @@ script EventScript_GameIntro_SetStartingVariablesAndFlags {
 	setflag(FLAG_SYS_START_MENU_PC_GET)
 	setvar(VAR_FARM_STOCK, 10)
 	setflag(FLAG_SYS_POKEDEX_GET)
+	setflag(FLAG_SYS_EXP_SHARE)
 	special(SetUnlockedPokedexFlags)
 	setflag(FLAG_SYS_NATIONAL_DEX)
 	special(EnableNationalPokedex)
