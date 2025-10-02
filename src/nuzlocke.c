@@ -66,6 +66,11 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_ZONE_S8] = 0x3A,
     [MAPSEC_ZONE_S9] = 0x3B,
     [MAPSEC_ZONE_S10] = 0x3C,
+    [MAPSEC_ZONE_B1] = 0x3D,
+    [MAPSEC_QUIET_FIELD] = 0x3E,
+    [MAPSEC_BREEZY_MEADOW] = 0x3F,
+    [MAPSEC_PEACEFUL_GROVE] = 0x40,
+    [MAPSEC_WHISPER_CAVE] = 0x41,
 };
 
 u8 NuzlockeFlagSet(u16 mapsec)
