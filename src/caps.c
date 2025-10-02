@@ -9,6 +9,8 @@ static const u32 sLevelCapFlagMap[] =
 {
     5,
     7,
+    9,
+    11,
     15,
     19,
     24,
@@ -49,9 +51,9 @@ u32 GetRareCandyLevelCap(void)
     {
         if (B_LEVEL_CAP_TYPE == LEVEL_CAP_FLAG_LIST)
         {
-            for (i = 1; i < ARRAY_COUNT(sLevelCapFlagMap); i++)
+            for (i = 0; i < ARRAY_COUNT(sLevelCapFlagMap); i++)
             {
-                if (VarGet(VAR_LEVEL_CAP) == i)
+                if (VarGet(VAR_LEVEL_CAP) - 1 == i)
                     return sLevelCapFlagMap[i];
             }
         }
