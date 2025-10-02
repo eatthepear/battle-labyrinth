@@ -972,7 +972,7 @@ script EventScript_Notebook_Other {
 			case 1:
 				msgbox(format("Many trainers have a pool of possible Pokémon they can have, and may vary their lead Pokémon."))
 			case 2:
-				msgbox(format("The DexNav does not allow wild Pokémon to flee when searching.\pHowever, it cannot chain Pokémon, and all Pokémon found through the DexNav are the same as ordinary wild Pokémon."))
+				msgbox(format("The DexNav displays all wild Pokémon available in a Zone. Pokémon in the Hidden category are found through shaking Golden Trees, smashing rocks, etc.\pWild Pokémon do not flee when using the DexNav's search function.\pThe DexNav cannot chain Pokémon, and all Pokémon found through the DexNav are the same as ordinary wild Pokémon."))
 			case 3:
 				msgbox(format("There is no day/night cycle."))
 			case 4:
