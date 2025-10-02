@@ -1457,7 +1457,7 @@ static void Task_RushInjuredPokemonToCenter(u8 taskId)
             if (gTasks[taskId].tIsPlayerHouse)
                 ScriptContext_SetupScript(EventScript_AfterWhiteOutMomHeal);
             else
-                ScriptContext_SetupScript(EventScript_AfterWhiteOutHeal);
+                ScriptContext_SetupScript(EventScript_AfterWhiteOutHeal_PBL);
         }
         break;
     }

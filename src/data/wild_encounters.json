@@ -4550,12 +4550,12 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_SPOINK"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_SLUGMA"
+                "species": "SPECIES_NONE"
               }
             ]
           },
@@ -4619,7 +4619,7 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_DROWZEE"
               },
               {
                 "min_level": 3,
@@ -4630,6 +4630,11 @@
                 "min_level": 3,
                 "max_level": 3,
                 "species": "SPECIES_DEERLING"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_FOMANTIS"
               },
               {
                 "min_level": 3,
@@ -4649,12 +4654,7 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_PICHU"
-              },
-              {
-                "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_MIME_JR"
+                "species": "SPECIES_NONE"
               }
             ]
           },
@@ -4743,7 +4743,7 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_WINGULL"
+                "species": "SPECIES_SPOINK"
               },
               {
                 "min_level": 3,
@@ -4753,7 +4753,7 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_GOSSIFLEUR"
+                "species": "SPECIES_NONE"
               }
             ]
           },

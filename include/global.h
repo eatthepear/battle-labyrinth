@@ -1093,9 +1093,7 @@ struct SaveBlock1
     /*0x04*/ struct WarpData location;
     /*0x0C*/ struct WarpData continueGameWarp;
     /*0x14*/ struct WarpData dynamicWarp;
-#if FREE_OTHER_PBL == FALSE
     /*0x1C*/ struct WarpData lastHealLocation; // used by white-out and teleport
-#endif //FREE_OTHER_PBL
     /*0x24*/ struct WarpData escapeWarp; // used by Dig and Escape Rope
     /*0x2C*/ u16 savedMusic;
     /*0x2E*/ u8 weather;

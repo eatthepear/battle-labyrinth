@@ -4106,9 +4106,7 @@ static void CursorCb_FieldMove(u8 taskId)
                 ChooseMonForSoftboiled(taskId);
                 break;
             case FIELD_MOVE_TELEPORT:
-#if FREE_OTHER_PBL == FALSE
                 mapHeader = Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->lastHealLocation.mapGroup, gSaveBlock1Ptr->lastHealLocation.mapNum);
-#endif //FREE_OTHER_PBL
                 mapHeader = 0;
                 GetMapNameGeneric(gStringVar1, mapHeader->regionMapSectionId);
                 StringExpandPlaceholders(gStringVar4, gText_ReturnToHealingSpot);

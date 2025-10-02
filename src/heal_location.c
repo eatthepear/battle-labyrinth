@@ -55,7 +55,6 @@ const struct HealLocation *GetHealLocation(u32 index)
 
 static bool32 IsLastHealLocation(u32 healLocation)
 {
-#if FREE_OTHER_PBL == FALSE
     const struct HealLocation *loc = GetHealLocation(healLocation);
     const struct WarpData *warpData = &gSaveBlock1Ptr->lastHealLocation;
 
@@ -64,8 +63,6 @@ static bool32 IsLastHealLocation(u32 healLocation)
         && warpData->warpId == WARP_ID_NONE
         && warpData->x == loc->x
         && warpData->y == loc->y;
-#endif //FREE_OTHER_PBL
-    return FALSE;
 }
 
 bool32 IsLastHealLocationPlayerHouse()
@@ -89,7 +86,6 @@ u32 GetHealNpcLocalId(u32 healLocationId)
 
 void SetWhiteoutRespawnWarpAndHealerNPC(struct WarpData *warp)
 {
-#if FREE_OTHER_PBL == FALSE
     u32 healLocationId = GetHealLocationIndexByWarpData(&gSaveBlock1Ptr->lastHealLocation);
     u32 healNpcLocalId = GetHealNpcLocalId(healLocationId);
 
@@ -105,5 +101,4 @@ void SetWhiteoutRespawnWarpAndHealerNPC(struct WarpData *warp)
     warp->x = sWhiteoutRespawnHealCenterMapIdxs[healLocationId - 1][2];
     warp->y = sWhiteoutRespawnHealCenterMapIdxs[healLocationId - 1][3];
     gSpecialVar_LastTalked = healNpcLocalId;
-#endif //FREE_OTHER_PBL
 }

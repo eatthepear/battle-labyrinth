@@ -918,6 +918,7 @@ script EventScript_GameIntro_SetStartingVariablesAndFlags {
 	setvar(VAR_ZONE, 1)
 	setvar(VAR_LEVEL_CAP, 0)
 	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_PBL)
+	setrespawn(HEAL_LOCATION_PBL)
 	setflag(FLAG_SYS_DEBUG) // to remove for release
 }
 

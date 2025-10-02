@@ -379,7 +379,11 @@ static void (*const sMovementStatusHandler[])(struct LinkPlayerObjectEvent *, st
 // code
 void DoWhiteOut(void)
 {
-    DoSoftReset();
+    RunScriptImmediately(EventScript_WhiteOut);
+    HealPlayerParty();
+    Overworld_ResetStateAfterWhiteOut();
+    SetWarpDestinationToLastHealLocation();
+    WarpIntoMap();
 }
 
 void Overworld_ResetStateAfterFly(void)
@@ -437,10 +441,15 @@ void Overworld_ResetBattleFlagsAndVars(void)
     FlagClear(B_FLAG_DYNAMAX_BATTLE);
     FlagClear(B_FLAG_SKY_BATTLE);
     FlagClear(B_FLAG_NO_WHITEOUT);
+	FlagClear(FLAG_IN_NEW_ZONE);
+	FlagClear(FLAG_FORCE_BATTLE_ANIM_ON);
+	FlagClear(FLAG_FORCE_BATTLE_ANIM_OFF);
+    FlagClear(FLAG_ZONE_PC_USED);
+    FlagClear(FLAG_IS_REVISITING_ZONE);
 }
 #endif
 
-static UNUSED void Overworld_ResetStateAfterWhiteOut(void)
+static void Overworld_ResetStateAfterWhiteOut(void)
 {
     ResetInitialPlayerAvatarState();
     FlagClear(FLAG_SYS_CYCLING_ROAD);
@@ -708,31 +717,24 @@ void SetWarpDestinationToHealLocation(u8 healLocationId)
 
 static bool32 IsWhiteoutCutscene(void)
 {
-#if FREE_OTHER_PBL == FALSE
     if (OW_WHITEOUT_CUTSCENE < GEN_4)
         return FALSE;
     return GetHealNpcLocalId(GetHealLocationIndexByWarpData(&gSaveBlock1Ptr->lastHealLocation)) > 0;
-#endif //FREE_OTHER_PBL
-    return FALSE;
 }
 
 void SetWarpDestinationToLastHealLocation(void)
 {
-#if FREE_OTHER_PBL == FALSE
     if (IsWhiteoutCutscene())
         SetWhiteoutRespawnWarpAndHealerNPC(&sWarpDestination);
     else
         sWarpDestination = gSaveBlock1Ptr->lastHealLocation;
-#endif //FREE_OTHER_PBL
 }
 
 void SetLastHealLocationWarp(u8 healLocationId)
 {
-#if FREE_OTHER_PBL == FALSE
     const struct HealLocation *healLocation = GetHealLocation(healLocationId);
     if (healLocation)
         SetWarpData(&gSaveBlock1Ptr->lastHealLocation, healLocation->mapGroup, healLocation->mapNum, WARP_ID_NONE, healLocation->x, healLocation->y);
-#endif //FREE_OTHER_PBL
 }
 
 void UpdateEscapeWarp(s16 x, s16 y)
