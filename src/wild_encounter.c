@@ -1309,14 +1309,23 @@ bool8 TryDoDoubleWildBattle(void)
         return TRUE;
     else if (B_DOUBLE_WILD_CHANCE != 0 && ((Random() % 100) + 1 <= B_DOUBLE_WILD_CHANCE))
     {
-        // You can't get wild Double Battles until you clear Zone 3
-        if (VarGet(VAR_ZONE) < 4)
+        // Wild Double Battles are only found in Zone 6+
+        switch (gMapHeader.regionMapSectionId)
         {
-            return FALSE;
-        }
-        else
-        {
-            return TRUE;
+            case MAPSEC_SANCTUARY:
+            case MAPSEC_QUIET_FIELD:
+            case MAPSEC_PEACEFUL_GROVE:
+            case MAPSEC_BREEZY_MEADOW:
+            case MAPSEC_WHISPER_CAVE:
+            case MAPSEC_ZONE_0:
+            case MAPSEC_ZONE_1:
+            case MAPSEC_ZONE_2:
+            case MAPSEC_ZONE_3:
+            case MAPSEC_ZONE_4:
+            case MAPSEC_ZONE_5:
+                return FALSE;
+            default:
+                return TRUE;
         }
     }
     return FALSE;
