@@ -173,11 +173,11 @@ script EventScript_Difficulty_Info {
 			case 0:
 				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Easy is suited for casual players.\pFor the most part, you can play as if this was one of the harder vanilla Pokémon games.\pThe difficulty of battles is the same as Normal."))
 			case 1:
-				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Normal is suited for the typical player.\pIn each Zone, you must defeat all opponents in order to proceed to the Sanctuary.\pIn addition, you can't grind experience in new Zones, nor can you grind items or money at all.\pThe difficulty of battles is the same as Easy."))
+				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Normal is suited for the typical player.\pThe game is more challenging than a vanilla Pokémon game.\pRecommended for first time playthroughs!"))
 			case 2:
-				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Hard is suited for players looking for a serious challenge.\pIt carries over the changes from Normal, but in addition, the battles are more difficult.\pAlso, you can't use in-battle items during non-wild battles, you must play on SET mode, and your Pokémon can't gain EVs."))
+				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Hard is suited for players looking for a serious challenge.\pThe battles are more difficult than on Normal.\pIn addition, you can't use in-battle items during non-wild battles, you must play on SET mode, and your Pokémon can't gain EVs."))
 			case 3:
-				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Brutal is suited for players extremely experienced in challenging ROM hacks.\pIt carries over the changes from Hard, but in addition, the battles are even more difficult.\pAlso, the amount of money you gain is halved, and the Pokémon, NPCs, and services you have access to are more limited."))
+				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Brutal is suited for players experienced in challenging ROM hacks.\pAll changes from Hard are carried over, and battles are even more difficult.\pIn addition, the amount of money you gain is halved, and the Pokémon, NPCs, and services you have access to are more limited."))
 			case 4:
 			case MULTI_B_PRESSED:
 				return
@@ -834,7 +834,7 @@ script Sanctuary_EventScript_GameIntro {
 		setvar(VAR_TEMP_5, 1) // VAR_TEMP_5: 1 means yes tutorial
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Pokémon Battle Labyrinth is comprised of many {COLOR GREEN}Zones{COLOR DARK_GRAY} you must traverse.\p"
 		"In these Zones, you might encounter wild Pokémon, great treasures, fierce opponents, and more.\p"
-		"Each Zone typically contains a {COLOR RED}Leviathan{COLOR DARK_GRAY} or other tough challenge that yields great rewards.\p"
+		"Each Zone typically contains a {COLOR RED}Leviathan{COLOR DARK_GRAY} or other tough challenge that yields great rewards.\lYou must defeat all opponents in a Zone to proceed.\p"
 		"When you complete a Zone, you will return to this area, the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}, where you can heal your Pokémon, purchase supplies, and prepare for the next Zone.\p"
 		"Once you enter a new Zone, you will not be able to access the Sanctuary until you exit that Zone.\p"
 		"As you complete more Zones, more items, quests, and services are unlocked.\p"
