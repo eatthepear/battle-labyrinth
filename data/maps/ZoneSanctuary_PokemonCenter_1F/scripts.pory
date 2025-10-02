@@ -37,3 +37,51 @@ script EventScript_Chansey {
 	release
 	end
 }
+
+script EventScript_SignsQuestGirl {
+	lock
+	faceplayer
+	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_SIGNS)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(format("Hiya! I'm improving on my reading skills!\pYou should work on your reading skills too!\pIf you read all the signs in the Pokémon Battle Labyrinth, I'll give you a nice reward!"))
+		startquest(QUEST_SIGNS)
+	}
+	msgbox(format("Signs have lots of useful info about unique mechanics to the Pokémon Battle Labyrinth!\pYou can improve your reading skills while learning more about the challenges at hand!"))
+	release
+	end
+}
+
+script EventScript_SavesQuestBoy {
+	lock
+	faceplayer
+	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_SAVES)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(format("Saving your progress is important while playing games.\pI learned that the hard way!\pDon't be like me!\pI'll give you something if you can save the game 50 times!"))
+		startquest(QUEST_SAVES)
+	}
+	questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SAVES)
+	if (var(VAR_RESULT) == FALSE) {
+		callnative(SavesQuestCheckIfDone)
+		if (flag(FLAG_TEMP_6) == TRUE) {
+			msgbox(format("Wow!\pYou really went and saved 50 times?\pThat's crazy.\pHere, as a reward, I can give you this nifty Exp. Share!\pI would only use it if I don't want my Pokémon to grow at the rate it's supposed to!"))
+			giveitem(ITEM_EXP_SHARE)
+			completequest(QUEST_SAVES)
+		}
+	}
+	msgbox(format("Don't forget to save your game!"))
+	release
+	end
+}
+
+script EventScript_PokedexQuestScientist {
+	lock
+	faceplayer
+	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_POKEDEX)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(format("Kids these days are always neglecting filling their Pokédex!\pIf you can show me a Pokédex that's seen all the Pokémon in existence, I'll reward you!"))
+		startquest(QUEST_POKEDEX)
+	}
+	msgbox(format("Seeing all the Pokémon is tough enough.\pImagine capturing them all!"))
+	release
+	end
+}

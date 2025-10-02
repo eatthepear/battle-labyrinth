@@ -7,7 +7,7 @@ script EventScript_MandatoryCheck {
 		specialvar(VAR_TEMP_0, GetNumTrainersRemaining)
 		if (var(VAR_TEMP_0) > 0) {
 			buffernumberstring(0, VAR_TEMP_0)
-			msgbox(format("{COLOR RED}You haven't defeated all the opponents in the area yet."), MSGBOX_DEFAULT)
+			msgbox(format("{COLOR RED}You haven't defeated all the opponents in the area yet."))
 			switch(var(VAR_TEMP_0)) {
 				case 1:
 					msgbox(gText_OneOpponentRemaining)
@@ -21,6 +21,15 @@ script EventScript_MandatoryCheck {
 	return
 }
 
+text gText_OneOpponentRemaining {
+	format("{COLOR RED}There is 1 opponent remaining in this area.")
+}
+
+text gText_MultipleOpponentsRemaining {
+	"{COLOR RED}There are {STR_VAR_1} opponents remaining\nin the area."
+}
+
+// Legacy
 script EventScript_BrutalExitNotSatisfied {
 	buffernumberstring(0, VAR_TEMP_0)
 	msgbox(format("{COLOR RED}You haven't defeated all the opponents in the area yet."))
@@ -78,71 +87,6 @@ mart Zone18A_Shop_TMShop {
 	ITEM_TM31
 	ITEM_TM32
 	ITEM_TM33
-}
-
-script EventScript_SanctuaryToZone0 {
-	lockall
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
-	waitmovement(0)
-	msgbox(format("Go to Zone 0?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		closemessage
-		warpdoor(MAP_ZONE0A, 255, 17, 10)
-		waitstate
-	} else {
-		closemessage
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
-		waitmovement(0)
-	}
-	releaseall
-}
-
-script EventScript_SignsQuestGirl {
-	lock
-	faceplayer
-	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_SIGNS)
-	if (var(VAR_RESULT) == FALSE) {
-		msgbox(format("Hiya! I'm improving on my reading skills!\pYou should work on your reading skills too!\pIf you read all the signs in the Pokémon Battle Labyrinth, I'll give you a nice reward!"))
-		startquest(QUEST_SIGNS)
-	}
-	msgbox(format("Signs have lots of useful info about unique mechanics to the Pokémon Battle Labyrinth!\pYou can improve your reading skills while learning more about the challenges at hand!"))
-	release
-	end
-}
-
-script EventScript_SavesQuestBoy {
-	lock
-	faceplayer
-	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_SAVES)
-	if (var(VAR_RESULT) == FALSE) {
-		msgbox(format("Saving your progress is important while playing games.\pI learned that the hard way!\pDon't be like me!\pI'll give you something if you can save the game 50 times!"))
-		startquest(QUEST_SAVES)
-	}
-	questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SAVES)
-	if (var(VAR_RESULT) == FALSE) {
-		callnative(SavesQuestCheckIfDone)
-		if (flag(FLAG_TEMP_6) == TRUE) {
-			msgbox(format("Wow!\pYou really went and saved 50 times?\pThat's crazy.\pHere, as a reward, I can give you this nifty Exp. Share!\pI would only use it if I don't want my Pokémon to grow at the rate it's supposed to!"))
-			giveitem(ITEM_EXP_SHARE)
-			completequest(QUEST_SAVES)
-		}
-	}
-	msgbox(format("Don't forget to save your game!"))
-	release
-	end
-}
-
-script EventScript_PokedexQuestScientist {
-	lock
-	faceplayer
-	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_POKEDEX)
-	if (var(VAR_RESULT) == FALSE) {
-		msgbox(format("Kids these days are always neglecting filling their Pokédex!\pIf you can show me a Pokédex that's seen all the Pokémon in existence, I'll reward you!"))
-		startquest(QUEST_POKEDEX)
-	}
-	msgbox(format("Seeing all the Pokémon is tough enough.\pImagine capturing them all!"))
-	release
-	end
 }
 
 script EventScript_WarpZone0 {
@@ -397,14 +341,6 @@ text gText_ItemChestIsEmpty {
 // 	end
 // }
 
-text gText_OneOpponentRemaining {
-	format("{COLOR RED}There is 1 opponent remaining in this area.")
-}
-
-text gText_MultipleOpponentsRemaining {
-	"{COLOR RED}There are still {STR_VAR_1} opponents\nremaining in the area."
-}
-
 script EventScript_NuzlockeVerifyBuy {
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
 		msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon.\pIs this ok?"), MSGBOX_YESNO)
@@ -503,44 +439,34 @@ script EventScript_ShakeTree {
 			case 20:
 			case 21:
 			case 22:
-				if (var(VAR_ZONE) > 2) {
-					msgbox(format("A Berry fell from the tree!"))
-					finditem(ITEM_CHERI_BERRY, 1)
-				}
+				msgbox(format("A Berry fell from the tree!"))
+				finditem(ITEM_CHERI_BERRY, 1)
 			case 23:
 			case 24:
 			case 25:
-				if (var(VAR_ZONE) > 2) {
-					msgbox(format("A Berry fell from the tree!"))
-					finditem(ITEM_CHESTO_BERRY, 1)
-				}
+				msgbox(format("A Berry fell from the tree!"))
+				finditem(ITEM_CHESTO_BERRY, 1)
 			case 26:
 			case 27:
 			case 28:
-				if (var(VAR_ZONE) > 2) {
-					msgbox(format("A Berry fell from the tree!"))
-					finditem(ITEM_PECHA_BERRY, 1)
-				}
+				msgbox(format("A Berry fell from the tree!"))
+				finditem(ITEM_PECHA_BERRY, 1)
 			case 29:
 			case 30:
 			case 31:
-				if (var(VAR_ZONE) > 2) {
-					msgbox(format("A Berry fell from the tree!"))
-					finditem(ITEM_ASPEAR_BERRY, 1)
-				}
+				msgbox(format("A Berry fell from the tree!"))
+				finditem(ITEM_ASPEAR_BERRY, 1)
 			case 32:
 			case 33:
 			case 34:
-				if (var(VAR_ZONE) > 2) {
-					msgbox(format("A Berry fell from the tree!"))
-					finditem(ITEM_PERSIM_BERRY, 1)
-				}
+				msgbox(format("A Berry fell from the tree!"))
+				finditem(ITEM_PERSIM_BERRY, 1)
 			case 35:
 			case 36:
 			case 37:
 			case 38:
 			case 39:
-				if (var(VAR_ZONE) > 8) {
+				if (var(VAR_ZONE) > 5) {
 					msgbox(format("A Berry fell from the tree!"))
 					finditem(ITEM_SITRUS_BERRY, 1)
 				}
@@ -1963,12 +1889,6 @@ script EventScript_EnableAutoRun {
 }
 
 raw `
-
-gText_Colress_UpgradedWarp:
-	.string "Because of your progress,\n"
-	.string "you have unlocked a special warp in\l"
-	.string "Zone 0.$"
-
 gText_Lelouch_ExpTrainingFinished:
 	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: The training session has\n"
 	.string "finished.\p"
