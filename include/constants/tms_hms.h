@@ -10,13 +10,13 @@
     F(TOXIC) \
     F(HAIL) \
     F(BULK_UP) \
-    F(TRAILBLAZE) \
+    F(VENOSHOCK) \
     F(HIDDEN_POWER) \
     F(SUNNY_DAY) \
     F(TAUNT) \
     F(ICE_BEAM) \
     F(BLIZZARD) \
-    F(COVET) \
+    F(TRAILBLAZE) \
     F(LIGHT_SCREEN) \
     F(PROTECT) \
     F(RAIN_DANCE) \
