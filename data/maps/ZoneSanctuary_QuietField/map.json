@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ZONE_QUIET_FIELD",
-  "name": "Zone_QuietField",
-  "layout": "LAYOUT_ZONE_QUIET_FIELD",
+  "id": "MAP_ZONE_SANCTUARY_QUIET_FIELD",
+  "name": "ZoneSanctuary_QuietField",
+  "layout": "LAYOUT_ZONE_SANCTUARY_QUIET_FIELD",
   "music": "MUS_ROUTE101",
   "region_map_section": "MAPSEC_QUIET_FIELD",
   "requires_flash": false,

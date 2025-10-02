@@ -4492,8 +4492,8 @@
           }
         },
         {
-          "map": "MAP_ZONE_QUIET_FIELD",
-          "base_label": "gZone_QuietField",
+          "map": "MAP_ZONE_SANCTUARY_QUIET_FIELD",
+          "base_label": "gZoneSanctuary_QuietField",
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
