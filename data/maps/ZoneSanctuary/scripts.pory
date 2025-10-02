@@ -233,6 +233,7 @@ script EventScript_Nuzlocke {
 text gText_Colress_NuzlockeExplained {
 	format("Nuzlocke mode completely implements all standard Nuzlocke rules, such as permanent death and capture restrictions.\p"
 	"It comes with Species Clause, Shiny Clause, and Gift Clause.\p"
+	"In addition, Gift Pokémon are randomized among their options, if any.\p"
 	"It is not recommended to play Nuzlocke mode unless you are familiar with Nuzlockes already.\p"
 	"Nuzlocke mode can only be enabled at the beginning of the game, but can be disabled at any point.")
 }
@@ -824,116 +825,22 @@ script Sanctuary_EventScript_GameIntro {
 	applymovement(LOCALID_COLRESS, Common_Movement_WalkDown2)
 	call(Sanctuary_EventScript_MoveCameraDown)
 	waitmovement(0)
-	msgbox("Welcome to the\n{COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY}.\pI am your guide for braving the\nchallenges ahead.\pWould you like to listen to the tutorial?", MSGBOX_YESNO)
+	msgbox("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Welcome to\n{COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY}!\pI am your guide for braving the\nchallenges ahead.\pWould you like to listen to the tutorial?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		setvar(VAR_TEMP_5, 1) // VAR_TEMP_5: 1 means yes tutorial
-		msgbox(format("The Pokémon Battle Labyrinth is comprised of many {COLOR GREEN}Zones{COLOR DARK_GRAY} you must traverse.\p"
-		"In these Zones, you might encounter wild Pokémon, great treasures, tough opponents, and more.\p"
-		"Each Zone typically contains a {COLOR RED}Leviathan{COLOR DARK_GRAY} or other tough battle that yields great rewards if defeated.\p"
-		"After completing a Zone, you will return to this {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}, where you can heal your Pokémon, purchase supplies, and prepare for the next Zone.\p"
-		"Once you enter a new Zone, you will not be able to access a Sanctuary until you exit that Zone.\p"
-		"In order to win, you must progress through all Zones, overcoming all challenges you face along the way."), MSGBOX_AUTOCLOSE)
-		delay(16)
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Pokémon Battle Labyrinth is comprised of many {COLOR GREEN}Zones{COLOR DARK_GRAY} you must traverse.\p"
+		"In these Zones, you might encounter wild Pokémon, great treasures, fierce opponents, and more.\p"
+		"Each Zone typically contains a {COLOR RED}Leviathan{COLOR DARK_GRAY} or other tough challenge that yields great rewards.\p"
+		"When you complete a Zone, you will return to this area, the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}, where you can heal your Pokémon, purchase supplies, and prepare for the next Zone.\p"
+		"Once you enter a new Zone, you will not be able to access the Sanctuary until you exit that Zone.\p"
+		"As you complete more Zones, more items, quests, and services are unlocked.\p"
+		"In order to win, you must progress through all Zones, overcoming all challenges you face along the way."))
 	}
-	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_PBL)
-	msgbox(format("Pokémon Battle Labyrinth has a few difficulty options. Please adjust the difficulty as you see fit."))
 	call(EventScript_GameIntro_Difficulty)
 	call(EventScript_GameIntro_Nuzlocke)
-	delay(16)
-	if (var(VAR_TEMP_5) == 1) {
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Allow me to show you each of the shops."), MSGBOX_AUTOCLOSE)
-		applymovement(LOCALID_COLRESS, Sanctuary_Movement_Colress_FirstShop)
-		applymovement(OBJ_EVENT_ID_PLAYER, Sanctuary_Movement_Player_FirstShop)
-		waitmovement(0)
-		special(SpawnCameraObject)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
-		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Portentia's Potions{COLOR DARK_GRAY}.\p"
-		"Healing supplies, such as Potions or other curative measures, can be found here."), MSGBOX_AUTOCLOSE)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
-		waitmovement(0)
-		special(RemoveCameraObject)
-		applymovement(LOCALID_COLRESS, Sanctuary_Movement_Colress_SecondShop)
-		applymovement(OBJ_EVENT_ID_PLAYER, Sanctuary_Movement_Player_SecondShop)
-		waitmovement(0)
-		special(SpawnCameraObject)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
-		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Tim's Pokéball Shop{COLOR DARK_GRAY}.\p"
-		"They have a variety of Pokéballs to buy."), MSGBOX_AUTOCLOSE)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
-		waitmovement(0)
-		special(RemoveCameraObject)
-		applymovement(LOCALID_COLRESS, Sanctuary_Movement_Colress_ThirdShop)
-		applymovement(OBJ_EVENT_ID_PLAYER, Sanctuary_Movement_Player_ThirdShop)
-		waitmovement(0)
-		special(SpawnCameraObject)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
-		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Julia's Berries{COLOR DARK_GRAY}.\p"
-		"Julia is a legendary chef who curates a selection of Berries for Pokémon."), MSGBOX_AUTOCLOSE)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
-		waitmovement(0)
-		special(RemoveCameraObject)
-		applymovement(LOCALID_COLRESS, Sanctuary_Movement_Colress_FourthShop)
-		applymovement(OBJ_EVENT_ID_PLAYER, Sanctuary_Movement_Player_FourthShop)
-		waitmovement(0)
-		special(SpawnCameraObject)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
-		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Marie's Egg Delivery Service{COLOR DARK_GRAY}.\p"
-		"Marie helps match Pokémon eggs with new owners."), MSGBOX_AUTOCLOSE)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
-		waitmovement(0)
-		special(RemoveCameraObject)
-		applymovement(LOCALID_COLRESS, Sanctuary_Movement_Colress_FifthShop)
-		applymovement(OBJ_EVENT_ID_PLAYER, Sanctuary_Movement_Player_FifthShop)
-		waitmovement(0)
-		special(SpawnCameraObject)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
-		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Varrick's Extravagant Emporium{COLOR DARK_GRAY}.\p"
-		"A huge variety of items are sold here."), MSGBOX_AUTOCLOSE)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
-		waitmovement(0)
-		special(RemoveCameraObject)
-		applymovement(LOCALID_COLRESS, Sanctuary_Movement_Colress_SixthShop)
-		applymovement(OBJ_EVENT_ID_PLAYER, Sanctuary_Movement_Player_SixthShop)
-		waitmovement(0)
-		special(SpawnCameraObject)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
-		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This shop is {COLOR RED}Lelouch's Services Shop{COLOR DARK_GRAY}.\p"
-		"He only sees customers who can pay his price."), MSGBOX_AUTOCLOSE)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
-		waitmovement(0)
-		special(RemoveCameraObject)
-		applymovement(LOCALID_COLRESS, Sanctuary_Movement_Colress_ToPokemonCenter)
-		applymovement(OBJ_EVENT_ID_PLAYER, Sanctuary_Movement_Player_ToPokemonCenter)
-		waitmovement(0)
-		special(SpawnCameraObject)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkRight)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp2)
-		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This is the {COLOR RED}Pokémon Center{COLOR DARK_GRAY}, though don't let Joy catch you saying that.\pYour Pokémon can be healed at a flat fee.\pIn addition, inside you might find people with advice or aid for you.\pNote the building has a back entrance for ease of access.\pYou can also access {COLOR GREEN}Zone 0{COLOR DARK_GRAY} on the right inside."), MSGBOX_AUTOCLOSE)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown2)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkLeft)
-		waitmovement(0)
-		special(RemoveCameraObject)
-		applymovement(LOCALID_COLRESS, Sanctuary_Movement_Colress_BackMid)
-		applymovement(OBJ_EVENT_ID_PLAYER, Sanctuary_Movement_Player_BackMid)
-		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Our tour has finished.\p"
-		"These shops will be available at every Sanctuary.\p"
-		"As you progress through more Zones, more items and services will unlock.\p"
-		"Also, it is highly recommended you stock up on any supplies before entering the next Zone."), MSGBOX_AUTOCLOSE)
-		delay(16)
-	}
-	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+	if (flag(FLAG_SETTINGS_NUZLOCKE)) {
 		msgbox(format("As a new challenger, you will receive a starter Pokémon.\p"
-		"On Brutal difficulty, your choice is limited from the pool of possible starters to only three options.\p"
+		"On Nuzlocke, your choice is limited from the pool of possible starters to only three options.\p"
 		"Choose carefully as these Pokémon are very rare."))
 		special(ChooseStarter)
 		waitstate
@@ -950,8 +857,6 @@ script Sanctuary_EventScript_GameIntro {
 		call(Common_EventScript_NameReceivedPartyMon)
 	}
 	if (var(VAR_TEMP_5) == 1) {
-		msgbox(format("Excellent choice.\p""You can also re-nickname your Pokémon from the party menu."))
-		delay(16)
 		msgbox(format("I also have a beginner's kit with items and cash to get you started."), MSGBOX_DEFAULT)
 		giveitem(ITEM_POKE_BALL, 15)
 		giveitem(ITEM_POTION, 10)
@@ -959,27 +864,23 @@ script Sanctuary_EventScript_GameIntro {
 		msgbox(format("Received ¥5000!"), MSGBOX_DEFAULT)
 		waitfanfare
 		playfanfare(MUS_OBTAIN_ITEM)
-		msgbox(format("Received the {COLOR RED}Pokédex{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+		msgbox(format("Received the {COLOR RED}Pokédex{COLOR DARK_GRAY}, {COLOR RED}DexNav{COLOR DARK_GRAY}, and {COLOR RED}Portable PC{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
 		waitfanfare
-		playfanfare(MUS_OBTAIN_ITEM)
-		msgbox(format("Received the {COLOR RED}DexNav{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
-		waitfanfare
-		playfanfare(MUS_OBTAIN_ITEM)
-		msgbox(format("{PLAYER} received the {COLOR RED}Portable PC{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
-		waitfanfare
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Additionally, here are some Key Items to make your life easier."))
+		giveitem(ITEM_NOTEBOOK)
 		giveitem(ITEM_INFINITE_REPEL)
 		giveitem(ITEM_RARE_CANDY)
 		giveitem(ITEM_EXP_SHARE)
-		closemessage
-		delay(16)
 	} else {
 		additem(ITEM_POTION, 10)
 		additem(ITEM_POKE_BALL, 15)
+		additem(ITEM_NOTEBOOK)
 		additem(ITEM_INFINITE_REPEL)
 		additem(ITEM_EXP_SHARE)
 		additem(ITEM_RARE_CANDY)
 	}
 	setmonmetlocation(0, 255)
+	callnative(UpdateFollowingPokemon)
 	call(EventScript_WhenUReadyDialogue)
 	applymovement(LOCALID_COLRESS, Common_Movement_Colress_WalkUp)
 	waitmovement(LOCALID_COLRESS)
@@ -1003,10 +904,12 @@ script EventScript_GameIntro_SetStartingVariablesAndFlags {
 	callnative(InitTimeBasedEvents)
 	setvar(VAR_ZONE, 1)
 	setvar(VAR_LEVEL_CAP, 1)
+	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_PBL)
 	setflag(FLAG_SYS_DEBUG) // to remove for release
 }
 
 script EventScript_GameIntro_Difficulty {
+	msgbox(format("Pokémon Battle Labyrinth has a few difficulty options. Please adjust the difficulty as you see fit."))
 	while {
 		switch (var(VAR_DIFFICULTY)) {
 			case DIFFICULTY_EASY:
@@ -1061,7 +964,7 @@ script EventScript_GameIntro_Difficulty {
 
 script EventScript_GameIntro_Nuzlocke {
 	while {
-		message(format("Pokémon Battle Labyrinth has a built-in {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode. Would you like to enable it?"))
+		message(format("There is a built-in {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode. Would you like to enable it?"))
 		waitmessage
 		dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Info", "Yes", "No")
 		switch (var(VAR_RESULT)) {
@@ -1149,7 +1052,7 @@ script Sanctuary_EventScript_HandleStarterSelectionDefault {
 		if (var(VAR_TEMP_3) == 0) {
 			playse(SE_CONTEST_PLACE)
 			message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Randomizing…"))
-			delay(96)
+			delay(32)
 			waitse
 			waitmessage
 			random(27)
@@ -1260,135 +1163,6 @@ script Sanctuary_EventScript_HandleStarterSelectionDefault {
 	}
 }
 
-movement Sanctuary_Movement_Colress_FirstShop {
-	walk_left
-	walk_down * 6
-	walk_left * 15
-	face_up
-}
-
-movement Sanctuary_Movement_Player_FirstShop {
-	delay_16 * 2
-	walk_left
-	walk_down * 5
-	walk_left * 14
-	face_up
-}
-
-movement Sanctuary_Movement_Colress_SecondShop {
-	walk_down
-	walk_right * 16
-	walk_up
-	walk_right * 16
-	face_up
-}
-
-movement Sanctuary_Movement_Player_SecondShop {
-	delay_16 * 2
-	walk_down
-	walk_right * 15
-	walk_up
-	walk_right * 15
-	face_up
-}
-
-movement Sanctuary_Movement_Colress_ThirdShop {
-	walk_right * 3
-	walk_down * 15
-	walk_left * 8
-	face_up
-}
-
-movement Sanctuary_Movement_Player_ThirdShop {
-	walk_right * 4
-	walk_down * 15
-	walk_left * 7
-	face_up
-}
-
-movement Sanctuary_Movement_Colress_FourthShop {
-	walk_left * 2
-	walk_down * 10
-	walk_right * 13
-	face_up
-}
-
-movement Sanctuary_Movement_Player_FourthShop {
-	walk_left * 3
-	walk_down * 10
-	walk_right * 12
-	face_up
-}
-
-movement Sanctuary_Movement_Colress_FifthShop {
-	walk_down
-	walk_left * 13
-	walk_up * 11
-	walk_left * 21
-	face_up
-}
-
-movement Sanctuary_Movement_Player_FifthShop {
-	delay_16 * 2
-	walk_down
-	walk_left * 12
-	walk_up * 11
-	walk_left * 20
-	face_up
-}
-
-movement Sanctuary_Movement_Colress_SixthShop {
-	walk_down
-	walk_right * 3
-	walk_down * 9
-	walk_left * 13
-	face_up
-}
-
-movement Sanctuary_Movement_Player_SixthShop {
-	delay_16 * 2
-	walk_down
-	walk_right * 2
-	walk_down * 9
-	walk_left * 12
-	face_up
-}
-
-movement Sanctuary_Movement_Colress_ToPokemonCenter {
-	walk_down
-	walk_right * 13
-	walk_up * 3
-	walk_right * 9
-	face_up
-}
-
-movement Sanctuary_Movement_Player_ToPokemonCenter {
-	delay_16 * 2
-	walk_down
-	walk_right * 12
-	walk_up * 3
-	walk_right * 8
-	face_up
-}
-
-movement Sanctuary_Movement_Colress_BackMid {
-	walk_down
-	walk_left * 8
-	walk_up * 8
-	walk_right * 8
-	walk_up * 22
-	face_down
-}
-
-movement Sanctuary_Movement_Player_BackMid {
-	delay_16 * 2
-	walk_down
-	walk_left * 7
-	walk_up * 8
-	walk_right * 8
-	walk_up * 21
-}
-
 script EventScript_WhenUReadyDialogue {
 	switch (var(VAR_ZONE)) {
 		case 1:
@@ -1434,32 +1208,6 @@ script EventScript_WhenUReadyDialogue {
 		case 24:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 7{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
 	}
-}
-
-text gText_Colress_BrutalExplained {
-	format("{COLOR RED}Brutal{COLOR DARK_GRAY} mode enables all of the increased difficultys at the same time.\p"
-	"{COLOR RED}Brutal{COLOR DARK_GRAY} mode can only be enabled at the beginning of the game, but can be disabled at any point.\p"
-	"It is not recommended to play on {COLOR RED}Brutal{COLOR DARK_GRAY} mode unless you are familiar with {COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY} already.")
-}
-
-text gText_Colress_RandomizerExplanation {
-	format("{COLOR RED}Randomizer{COLOR DARK_GRAY} mode randomizes wild encounters and gift Pokémon, including your starter.\p"
-	"Trainer Pokémon are left unchanged.\p"
-	"{COLOR RED}Randomizer{COLOR DARK_GRAY} mode can only be altered at the beginning of the game.")
-}
-
-text gText_Colress_InfiniteExplained {
-	format("{COLOR RED}Infinite{COLOR DARK_GRAY} mode gives you access to unlimited resources that can normally be obtained by grinding.\p"
-	"This is not the intended game mode, as resource management was designed to be part of the game.\p"
-	"{COLOR RED}Infinite{COLOR DARK_GRAY} mode can only be altered at the beginning of the game.")
-}
-
-text gText_Colress_CannotChangeSettingBrutal {
-	format("You cannot change this setting because you are playing on Brutal mode.")
-}
-
-text gText_Colress_CannotChangeSettingInfinite {
-	format("You cannot change this setting because you are playing on Infinite mode.")
 }
 
 script EventScript_Shop_Cowgirl {
