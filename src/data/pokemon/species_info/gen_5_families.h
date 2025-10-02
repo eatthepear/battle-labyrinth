@@ -656,8 +656,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sDewottLevelUpLearnset,
         .teachableLearnset = sDewottTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SAMUROTT},
-                                {EVO_NONE, 0, SPECIES_SAMUROTT_HISUI}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SAMUROTT_HISUI, CONDITIONS({IF_IN_MAPSEC, MAPSEC_ZONE_QUIET_FIELD})},
+                                {EVO_LEVEL, 36, SPECIES_SAMUROTT}),
     },
 
     [SPECIES_SAMUROTT] =
@@ -4158,8 +4158,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sPetililLevelUpLearnset,
         .teachableLearnset = sPetililTeachableLearnset,
         .eggMoveLearnset = sPetililEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_LILLIGANT},
-                                {EVO_NONE, 0, SPECIES_LILLIGANT_HISUI}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_LILLIGANT_HISUI, CONDITIONS({IF_IN_MAPSEC, MAPSEC_ZONE_QUIET_FIELD})},
+                                {EVO_ITEM, ITEM_SUN_STONE, SPECIES_LILLIGANT}),
     },
 
     [SPECIES_LILLIGANT] =
@@ -11316,8 +11316,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sRuffletLevelUpLearnset,
         .teachableLearnset = sRuffletTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 54, SPECIES_BRAVIARY},
-                                {EVO_NONE, 0, SPECIES_BRAVIARY_HISUI}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 54, SPECIES_BRAVIARY_HISUI, CONDITIONS({IF_IN_MAPSEC, MAPSEC_ZONE_QUIET_FIELD})},
+                                {EVO_LEVEL, 54, SPECIES_BRAVIARY}),
     },
 
     [SPECIES_BRAVIARY] =
