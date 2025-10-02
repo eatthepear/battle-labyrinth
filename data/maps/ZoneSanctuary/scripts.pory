@@ -8,17 +8,17 @@ mapscripts ZoneSanctuary_MapScripts {
 script ZoneSanctuary_EventScript_Colress {
 	lock
 	faceplayer
-	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Greetings, {PLAYER}."))
-	message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Anything I can help with?"))
+	message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Greetings, {PLAYER}.\pWhat can I help you with?"))
 	waitmessage
-	call(EventScript_Difficulty)
-	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}:"))
+	call(EventScript_Colress_Menu)
+	call(EventScript_WhenUReadyDialogue)
 	release
 }
 
 script EventScript_Colress_Menu {
 	while {
-		dynmultipush("Difficulty", 0)
+		dynmultipush("Next Zone", 0)
+		dynmultipush("Difficulty", 5)
 		if (flag(FLAG_SETTINGS_NUZLOCKE)) {
 			dynmultipush("Nuzlocke", 2)
 		} else {
@@ -29,6 +29,8 @@ script EventScript_Colress_Menu {
 		dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
+				call(EventScript_NextZone)
+			case 5:
 				call(EventScript_Difficulty)
 			case 1:
 				call(EventScript_Version)
@@ -243,165 +245,147 @@ script EventScript_RespinEncounters {
 	return
 }
 
-script Sanctuary_EventScript_NextZone {
-	lock
-	faceplayer
-	message(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Greetings, {PLAYER}.\pWhat can I help you with?"))
-	waitmessage
-	dynmultichoice(0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Next Zone", "Settings", "Documentation", "Exit")
-	switch (var(VAR_RESULT)) {
-		case 0:
-			switch (var(VAR_ZONE)) {
-				case 1:
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 1 - Leafway Trail{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						call(Sanctuary_EventScript_EnterZone)
-						setvar(VAR_LEVEL_CAP, 7)
-						warp(MAP_ZONE1A, 255, 16, 28)
-						waitstate
-						end
-					}
-				case 2:
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 2 - Warren Woods{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						call(Sanctuary_EventScript_EnterZone)
-						setvar(VAR_LEVEL_CAP, 9)
-						warp(MAP_ZONE2A, 255, 4, 3)
-						waitstate
-						end
-					}
-				case 3:
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 3 - Sunlit Pond{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						call(Sanctuary_EventScript_EnterZone)
-						setvar(VAR_LEVEL_CAP, 11)
-						setflag(FLAG_HIDE_ZONE3A_PHILLIPA)
-						setflag(FLAG_HIDE_ZONE3A_REMI)
-						warp(MAP_ZONE3A, 255, 38, 25)
-						waitstate
-						end
-					}
-				case 4:
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 4 - Mystic Glade{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						call(Sanctuary_EventScript_EnterZone)
-						setvar(VAR_LEVEL_CAP, 13)
-						warp(MAP_ZONE4A, 255, 6, 4)
-						waitstate
-						end
-					}
-				case 5:
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 5 - Timberstep Plateau{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						call(Sanctuary_EventScript_EnterZone)
-						setvar(VAR_LEVEL_CAP, 15)
-						warp(MAP_ZONE5A, 255, 3, 0)
-						waitstate
-						end
-					}
-				case 6:
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 6 - Seabreeze Island{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						call(Sanctuary_EventScript_EnterZone)
-						setvar(VAR_LEVEL_CAP, 17)
-						warp(MAP_ZONE6A, 255, 51, 22)
-						waitstate
-						end
-					}
-				case 7:
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you ready to leave? You will be entering {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						call(Sanctuary_EventScript_EnterZone)
-						setvar(VAR_LEVEL_CAP, 20)
-						warp(MAP_ZONE7A, 255, 10, 33)
-						waitstate
-						end
-					}
-				case 9:
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 9 - Lushbranch Village{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						call(Sanctuary_EventScript_EnterZone)
-						setvar(VAR_LEVEL_CAP, 21)
-						setflag(FLAG_HIDE_ZONE9A_BERTHA_WINSTRATE)
-						setflag(FLAG_HIDE_ZONE9A_CASSANDRA_WINSTRATE)
-						setflag(FLAG_HIDE_ZONE9A_DOMINIC_WINSTRATE)
-						setflag(FLAG_HIDE_ZONE9A_ERICA_WINSTRATE)
-						setvar(VAR_ZONE_9_STATE, 0)
-						warp(MAP_ZONE9A, 255, 41, 22)
-						waitstate
-						end
-					}
-				case 10:
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 10 - Scornwind Desert{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						call(Sanctuary_EventScript_EnterZone)
-						setvar(VAR_LEVEL_CAP, 23)
-						warp(MAP_ZONE10A, 255, 42, 51)
-						waitstate
-						end
-					}
-				case 11:
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 11 - Duskwither Maze{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						call(Sanctuary_EventScript_EnterZone)
-						setvar(VAR_LEVEL_CAP, 17)
-						warp(MAP_ZONE6A, 255, 51, 22)
-						waitstate
-						end
-					}
-				case 12:
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 12 - Twinstream Plains{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						call(Sanctuary_EventScript_EnterZone)
-						setvar(VAR_LEVEL_CAP, 26)
-						warp(MAP_ZONE12A, 255, 9, 16)
-						waitstate
-						end
-					}
-				case 13:
-					msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 13 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Gemini Caves{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						call(Sanctuary_EventScript_EnterZone)
-						setvar(VAR_LEVEL_CAP, 30)
-						warp(MAP_ZONE13A, 255, 18, 10)
-						waitstate
-						end
-					}
-			}
+script EventScript_NextZone {
+	switch (var(VAR_ZONE)) {
 		case 1:
-			// goto(EventScript_Settings)
+			bufferstring(0, "Zone 1 - Leafway Trail")
+			msgbox(gText_Colress_SureYoureReady, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call(Sanctuary_EventScript_EnterZone)
+				setvar(VAR_LEVEL_CAP, 2)
+				warp(MAP_ZONE1A, 255, 16, 28)
+				waitstate
+				end
+			}
+		case 2:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 2 - Warren Woods{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call(Sanctuary_EventScript_EnterZone)
+				setvar(VAR_LEVEL_CAP, 3)
+				warp(MAP_ZONE2A, 255, 4, 3)
+				waitstate
+				end
+			}
+		case 3:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 3 - Sunlit Pond{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call(Sanctuary_EventScript_EnterZone)
+				setvar(VAR_LEVEL_CAP, 4)
+				setflag(FLAG_HIDE_ZONE3A_PHILLIPA)
+				setflag(FLAG_HIDE_ZONE3A_REMI)
+				warp(MAP_ZONE3A, 255, 38, 25)
+				waitstate
+				end
+			}
+		case 4:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 4 - Mystic Glade{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call(Sanctuary_EventScript_EnterZone)
+				setvar(VAR_LEVEL_CAP, 5)
+				warp(MAP_ZONE4A, 255, 6, 4)
+				waitstate
+				end
+			}
+		case 5:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 5 - Timberstep Plateau{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call(Sanctuary_EventScript_EnterZone)
+				setvar(VAR_LEVEL_CAP, 6)
+				warp(MAP_ZONE5A, 255, 3, 0)
+				waitstate
+				end
+			}
+		case 6:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 6 - Seabreeze Island{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call(Sanctuary_EventScript_EnterZone)
+				setvar(VAR_LEVEL_CAP, 7)
+				warp(MAP_ZONE6A, 255, 51, 22)
+				waitstate
+				end
+			}
+		case 7:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you ready to leave? You will be entering {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call(Sanctuary_EventScript_EnterZone)
+				setvar(VAR_LEVEL_CAP, 9)
+				warp(MAP_ZONE7A, 255, 10, 33)
+				waitstate
+				end
+			}
+		case 9:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 9 - Lushbranch Village{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call(Sanctuary_EventScript_EnterZone)
+				setvar(VAR_LEVEL_CAP, 10)
+				setflag(FLAG_HIDE_ZONE9A_BERTHA_WINSTRATE)
+				setflag(FLAG_HIDE_ZONE9A_CASSANDRA_WINSTRATE)
+				setflag(FLAG_HIDE_ZONE9A_DOMINIC_WINSTRATE)
+				setflag(FLAG_HIDE_ZONE9A_ERICA_WINSTRATE)
+				setvar(VAR_ZONE_9_STATE, 0)
+				warp(MAP_ZONE9A, 255, 41, 22)
+				waitstate
+				end
+			}
+		case 10:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 10 - Scornwind Desert{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call(Sanctuary_EventScript_EnterZone)
+				setvar(VAR_LEVEL_CAP, 11)
+				warp(MAP_ZONE10A, 255, 42, 51)
+				waitstate
+				end
+			}
+		case 11:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 11 - Duskwither Maze{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call(Sanctuary_EventScript_EnterZone)
+				setvar(VAR_LEVEL_CAP, 12)
+				warp(MAP_ZONE6A, 255, 51, 22)
+				waitstate
+				end
+			}
+		case 12:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 12 - Twinstream Plains{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call(Sanctuary_EventScript_EnterZone)
+				setvar(VAR_LEVEL_CAP, 13)
+				warp(MAP_ZONE12A, 255, 9, 16)
+				waitstate
+				end
+			}
+		case 13:
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 13 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Gemini Caves{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call(Sanctuary_EventScript_EnterZone)
+				setvar(VAR_LEVEL_CAP, 15)
+				warp(MAP_ZONE13A, 255, 18, 10)
+				waitstate
+				end
+			}
 	}
-	goto(EventScript_WhenUReady)
+}
+
+text gText_Colress_SureYoureReady {
+	format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}.")
 }
 
 script Sanctuary_EventScript_EnterZone {
 	setflag(FLAG_IN_NEW_ZONE)
 	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Bring out the strength of you and your Pokémon!"), MSGBOX_AUTOCLOSE)
-	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
-	if (var(VAR_TEMP_0) == 37) {
-		applymovement(LOCALID_COLRESS, Common_Movement_WalkRight)
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
-		waitmovement(0)
-		applymovement(LOCALID_COLRESS, Common_Movement_FaceLeft)
-		waitmovement(0)
-	}
-	if (var(VAR_TEMP_0) == 38) {
-		applymovement(LOCALID_COLRESS, Common_Movement_WalkLeft)
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
-		waitmovement(0)
-		applymovement(LOCALID_COLRESS, Common_Movement_FaceRight)
-		waitmovement(0)
-	}
-	if (var(VAR_TEMP_0) == 39) {
-		applymovement(LOCALID_COLRESS, Common_Movement_WalkLeft)
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
-		waitmovement(0)
-		applymovement(LOCALID_COLRESS, Common_Movement_FaceRight)
-		waitmovement(0)
-	}
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+	applymovement(LOCALID_COLRESS, Common_Movement_WalkUp)
+	waitmovement(0)
+	applymovement(LOCALID_COLRESS, Common_Movement_WalkLeft)
+	waitmovement(0)
+	applymovement(LOCALID_COLRESS, Common_Movement_FaceRight)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_PLAYER, Movement_Player_EnterZone)
 	waitmovement(0)
 	return
+}
+
+movement Movement_Player_EnterZone {
+	player_run_up * 5
 }
 
 text Sanctuary_Text_Colress_EndofDemo {
@@ -1436,12 +1420,6 @@ script EventScript_WhenUReadyDialogue {
 		case 24:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}Zone 7{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
 	}
-}
-
-script EventScript_WhenUReady {
-	call(EventScript_WhenUReadyDialogue)
-	release
-	end
 }
 
 text gText_Colress_BrutalExplained {
