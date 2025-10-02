@@ -930,10 +930,11 @@ script EventScript_Notebook_Items {
 		waitmessage
 		dynmultipush("Rare Candies", 0)
 		dynmultipush("Infinite Repel", 1)
-		dynmultipush("Mints", 2)
-		dynmultipush("Ability Snack", 3)
-		dynmultipush("Hex Orb", 4)
-		dynmultipush("Back", 5)
+		dynmultipush("TMs", 2)
+		dynmultipush("Mints", 3)
+		dynmultipush("Ability Snack", 4)
+		dynmultipush("Hex Orb", 5)
+		dynmultipush("Back", 6)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
@@ -941,12 +942,14 @@ script EventScript_Notebook_Items {
 			case 1:
 				msgbox(format("The Infinite Repel Key Item allows you to avoid encountering any wild Pokémon, regardless of your level."))
 			case 2:
-				msgbox(format("Mints cost reduced to ¥80."))
+				msgbox(format("TMs can be used infinitely, but don't restore PP."))
 			case 3:
-				msgbox(format("The Ability Snack costs ¥80 and functions the same as an Ability Capsule."))
+				msgbox(format("Mints cost reduced to ¥80."))
 			case 4:
-				msgbox(format("The Hex Orb Key Item lets you pre-status Pokémon."))
+				msgbox(format("The Ability Snack costs ¥80 and functions the same as an Ability Capsule."))
 			case 5:
+				msgbox(format("The Hex Orb Key Item lets you pre-status Pokémon."))
+			case 6:
 			case MULTI_B_PRESSED:
 				return
 		}
