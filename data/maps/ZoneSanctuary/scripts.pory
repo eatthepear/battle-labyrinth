@@ -208,7 +208,7 @@ script EventScript_Difficulty_Info {
 // }
 
 script EventScript_Version {
-	msgbox(format("This is version 2.0.0 of the Pokémon Battle Labyrinth.\pMake sure you're playing the most up to date version!"))
+	msgbox(format("This is version 2.0.0 of Pokémon Battle Labyrinth.\pMake sure you're playing the most up to date version!"))
 	return
 }
 
@@ -394,7 +394,7 @@ movement Movement_Player_EnterZone {
 }
 
 text Sanctuary_Text_Colress_EndofDemo {
-	format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This is the end of the demo. Our engineers are still working on the remainder of the {COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY}. Please save your game using the in game save so you might be able to transfer your save file to the next version when it comes out.")
+	format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: This is the end of the demo. Our engineers are still working on the remainder of {COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY}. Please save your game using the in game save so you might be able to transfer your save file to the next version when it comes out.")
 }
 
 text Sanctuary_Text_Colress_Upgraded {

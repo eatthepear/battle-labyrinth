@@ -43,10 +43,10 @@ script EventScript_SignsQuestGirl {
 	faceplayer
 	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_SIGNS)
 	if (var(VAR_RESULT) == FALSE) {
-		msgbox(format("Hiya! I'm improving on my reading skills!\pYou should work on your reading skills too!\pIf you read all the signs in the Pokémon Battle Labyrinth, I'll give you a nice reward!"))
+		msgbox(format("Hiya! I'm improving on my reading skills!\pYou should work on your reading skills too!\pIf you read all the signs in Pokémon Battle Labyrinth, I'll give you a nice reward!"))
 		startquest(QUEST_SIGNS)
 	}
-	msgbox(format("Signs have lots of useful info about unique mechanics to the Pokémon Battle Labyrinth!\pYou can improve your reading skills while learning more about the challenges at hand!"))
+	msgbox(format("Signs have lots of useful info about unique mechanics to Pokémon Battle Labyrinth!\pYou can improve your reading skills while learning more about the challenges at hand!"))
 	release
 	end
 }
