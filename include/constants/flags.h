@@ -163,7 +163,7 @@
 // Tracker Flags (Don't manually set)
 #define FLAG_IS_REVISITING_ZONE                     0xE0
 #define FLAG_IN_NEW_ZONE                            0xE1
-#define FLAG_UNUSED_0xE2                            0xE2
+#define FLAG_USE_PC_MACHINE                         0xE2 // Used for differentiating between Start Menu PC and Machine PC
 #define FLAG_SYS_DEXNAV_SEARCH                      0xE3
 #define FLAG_ZONE_PC_USED                           0xE5
 #define FLAG_USED_TERA                              0xE6
