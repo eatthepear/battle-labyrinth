@@ -5300,6 +5300,16 @@
       "secondary_tileset": "gTileset_Sanctuary",
       "border_filepath": "data/layouts/ZoneSanctuary_BreezyMeadow/border.bin",
       "blockdata_filepath": "data/layouts/ZoneSanctuary_BreezyMeadow/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE_SANCTUARY_WHISPER_CAVE",
+      "name": "ZoneSanctuary_WhisperCave_Layout",
+      "width": 24,
+      "height": 24,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Cavern",
+      "border_filepath": "data/layouts/ZoneSanctuary_WhisperCave/border.bin",
+      "blockdata_filepath": "data/layouts/ZoneSanctuary_WhisperCave/map.bin"
     }
   ]
 }

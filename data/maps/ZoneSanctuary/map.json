@@ -235,6 +235,13 @@
       "elevation": 0,
       "dest_map": "MAP_ZONE_SANCTUARY_POKEMON_CENTER_1F",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 34,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE_SANCTUARY_WHISPER_CAVE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
