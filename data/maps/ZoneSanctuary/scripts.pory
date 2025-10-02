@@ -961,11 +961,23 @@ script Sanctuary_EventScript_GameIntro {
 		playfanfare(MUS_OBTAIN_ITEM)
 		msgbox(format("Received the {COLOR RED}Pokédex{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
 		waitfanfare
+		playfanfare(MUS_OBTAIN_ITEM)
+		msgbox(format("Received the {COLOR RED}DexNav{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+		waitfanfare
+		playfanfare(MUS_OBTAIN_ITEM)
+		msgbox(format("{PLAYER} received the {COLOR RED}Portable PC{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+		waitfanfare
+		giveitem(ITEM_INFINITE_REPEL)
+		giveitem(ITEM_RARE_CANDY)
+		giveitem(ITEM_EXP_SHARE)
 		closemessage
 		delay(16)
 	} else {
 		additem(ITEM_POTION, 10)
 		additem(ITEM_POKE_BALL, 15)
+		additem(ITEM_INFINITE_REPEL)
+		additem(ITEM_EXP_SHARE)
+		additem(ITEM_RARE_CANDY)
 	}
 	setmonmetlocation(0, 255)
 	call(EventScript_WhenUReadyDialogue)
@@ -980,6 +992,8 @@ script EventScript_GameIntro_SetStartingVariablesAndFlags {
 	setflag(FLAG_SYS_POKEMON_GET)
 	setflag(FLAG_SYS_PC_LANETTE)
 	setflag(FLAG_AUTORUN_TOGGLE)
+	setflag(FLAG_SYS_DEXNAV_GET)
+	setflag(FLAG_SYS_START_MENU_PC_GET)
 	setvar(VAR_FARM_STOCK, 10)
 	setflag(FLAG_SYS_POKEDEX_GET)
 	special(SetUnlockedPokedexFlags)
