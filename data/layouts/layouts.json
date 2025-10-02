@@ -5285,11 +5285,21 @@
       "id": "LAYOUT_ZONE_SANCTUARY_PEACEFUL_GROVE",
       "name": "ZoneSanctuary_PeacefulGrove_Layout",
       "width": 30,
-      "height": 24,
+      "height": 28,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_Sanctuary",
       "border_filepath": "data/layouts/ZoneSanctuary_PeacefulGrove/border.bin",
       "blockdata_filepath": "data/layouts/ZoneSanctuary_PeacefulGrove/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE_SANCTUARY_BREEZY_MEADOW",
+      "name": "ZoneSanctuary_BreezyMeadow_Layout",
+      "width": 30,
+      "height": 23,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Sanctuary",
+      "border_filepath": "data/layouts/ZoneSanctuary_BreezyMeadow/border.bin",
+      "blockdata_filepath": "data/layouts/ZoneSanctuary_BreezyMeadow/map.bin"
     }
   ]
 }

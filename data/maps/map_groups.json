@@ -675,7 +675,8 @@
     "ZoneSanctuary_PokemonCenter_1F",
     "ZoneSanctuary_PokemonCenter_2F",
     "ZoneSanctuary_QuietField",
-    "ZoneSanctuary_PeacefulGrove"
+    "ZoneSanctuary_PeacefulGrove",
+    "ZoneSanctuary_BreezyMeadow"
   ],
   "gMapGroup_IndoorRoute109": [
     "Route109_SeashoreHouse"

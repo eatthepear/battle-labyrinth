@@ -1,9 +1,9 @@
 {
-  "id": "MAP_ZONE_SANCTUARY_PEACEFUL_GROVE",
-  "name": "ZoneSanctuary_PeacefulGrove",
-  "layout": "LAYOUT_ZONE_SANCTUARY_PEACEFUL_GROVE",
-  "music": "MUS_HG_ROUTE1",
-  "region_map_section": "MAPSEC_PEACEFUL_GROVE",
+  "id": "MAP_ZONE_SANCTUARY_BREEZY_MEADOW",
+  "name": "ZoneSanctuary_BreezyMeadow",
+  "layout": "LAYOUT_ZONE_SANCTUARY_BREEZY_MEADOW",
+  "music": "MUS_HG_CIANWOOD",
+  "region_map_section": "MAPSEC_BREEZY_MEADOW",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
@@ -15,13 +15,13 @@
   "connections": [
     {
       "map": "MAP_ZONE_SANCTUARY",
-      "offset": -13,
-      "direction": "left"
+      "offset": -60,
+      "direction": "up"
     },
     {
-      "map": "MAP_ZONE_SANCTUARY_BREEZY_MEADOW",
-      "offset": -17,
-      "direction": "down"
+      "map": "MAP_ZONE_SANCTUARY_PEACEFUL_GROVE",
+      "offset": 17,
+      "direction": "up"
     }
   ],
   "object_events": [],

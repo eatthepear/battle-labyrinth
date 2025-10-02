@@ -4688,6 +4688,145 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ZONE_SANCTUARY_BREEZY_MEADOW",
+          "base_label": "gZoneSanctuary_BreezyMeadow",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_SENTRET"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_BIDOOF"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_IGGLYBUFF"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_NICKIT"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_MEOWTH_GALAR"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_VULPIX"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_SUNKERN"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_HOPPIP"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_SPOINK"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_FARFETCHD"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 2,
+            "mons": [
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_VOLBEAT"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_ILLUMISE"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_VOLBEAT"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_ILLUMISE"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          }
         }
       ]
     },
