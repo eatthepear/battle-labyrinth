@@ -700,6 +700,6 @@ extern const u8 EventScript_MovedTooFast[];
 extern const u8 EventScript_SnowInterference[];
 
 
-extern const u8 EventScript_TrainerNotebook[];
+extern const u8 EventScript_Notebook[];
 
 #endif // GUARD_EVENT_SCRIPTS_H

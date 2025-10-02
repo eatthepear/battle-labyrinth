@@ -4712,20 +4712,6 @@ void ChangePokemonAbility(void)
     StringCopy(gStringVar1, gAbilitiesInfo[gSpeciesInfo[species].abilities[abilityNum]].name);
 }
 
-void BufferTrainerPartyPokemon(void)
-{
-    u16 trainerID = VarGet(VAR_TEMP_2);
-    s32 i;
-    const struct Trainer *trainer = GetTrainerStructFromId(trainerID);
-    StringCopy(gStringVar1, gSpeciesInfo[trainer->party[0].species].speciesName);
-    for (i = 1; i < trainer->partySize; i++) {
-        u16 species = trainer->party[i].species;
-        StringCopy(gStringVar2, gSpeciesInfo[species].speciesName);
-        StringExpandPlaceholders(gStringVar3, gText_TrainerStatusParty);
-        StringCopy(gStringVar1, gStringVar3);
-    }
-}
-
 void EnterCode(void)
 {
     DoNamingScreen(NAMING_SCREEN_CODE, gStringVar2, 0, 0, 0, CB2_ReturnToFieldContinueScript);

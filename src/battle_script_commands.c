@@ -4527,8 +4527,6 @@ static bool32 BattleTypeAllowsExp(void)
         return TRUE;
     else if (!(gBattleTypeFlags & (BATTLE_TYPE_TRAINER)) && (GetCurrentDifficultyLevel() >= DIFFICULTY_NORMAL)) // No grinding exp off wild Pokemon
         return FALSE;
-    else if ((gBattleTypeFlags & (BATTLE_TYPE_TRAINER)) && (GetCurrentDifficultyLevel() >= DIFFICULTY_NORMAL) && !FlagGet(FLAG_IN_NEW_ZONE)) // No getting exp off trainers if it's not the current Zone
-        return FALSE;
     else if (gBattleTypeFlags &
               ( BATTLE_TYPE_LINK
               | BATTLE_TYPE_RECORDED_LINK

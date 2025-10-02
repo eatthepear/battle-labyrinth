@@ -92,7 +92,7 @@ static void ItemUseOnFieldCB_DivingSuitAboveWater(u8);
 static void ItemUseOnFieldCB_DivingSuitUnderwater(u8);
 static void ItemUseOnFieldCB_Flashlight(u8);
 static void ItemUseOnFieldCB_PowerGlove(u8);
-static void ItemUseOnFieldCB_TrainerNotebook(u8);
+static void ItemUseOnFieldCB_Notebook(u8);
 
 static const u8 sText_CantDismountBike[] = _("You can't dismount your BIKE here.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_ItemFinderNearby[] = _("Huh?\nThe ITEMFINDER's responding!\pThere's an item buried around here!{PAUSE_UNTIL_PRESS}");
@@ -1805,16 +1805,16 @@ void ItemUseOutOfBattle_InfiniteRepel(u8 taskId)
     }
 }
 
-static void ItemUseOnFieldCB_TrainerNotebook(u8 taskId)
+static void ItemUseOnFieldCB_Notebook(u8 taskId)
 {
     LockPlayerFieldControls();
-    ScriptContext_SetupScript(EventScript_TrainerNotebook);
+    ScriptContext_SetupScript(EventScript_Notebook);
     DestroyTask(taskId);
 }
 
-void ItemUseOutOfBattle_TrainerNotebook(u8 taskId)
+void ItemUseOutOfBattle_Notebook(u8 taskId)
 {
-    sItemUseOnFieldCB = ItemUseOnFieldCB_TrainerNotebook;
+    sItemUseOnFieldCB = ItemUseOnFieldCB_Notebook;
     SetUpItemUseOnFieldCallback(taskId);
 }
 

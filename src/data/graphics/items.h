@@ -1945,8 +1945,8 @@ const u16 gItemIconPalette_PowerGlove[] = INCBIN_U16("graphics/items/icon_palett
 const u32 gItemIcon_SilphScope[] = INCBIN_U32("graphics/items/icons/silph_scope.4bpp.smol");
 const u16 gItemIconPalette_SilphScope[] = INCBIN_U16("graphics/items/icon_palettes/silph_scope.gbapal");
 
-const u32 gItemIcon_TrainerNotebook[] = INCBIN_U32("graphics/items/icons/journal.4bpp.smol");
-const u16 gItemIconPalette_TrainerNotebook[] = INCBIN_U16("graphics/items/icon_palettes/journal.gbapal");
+const u32 gItemIcon_Notebook[] = INCBIN_U32("graphics/items/icons/journal.4bpp.smol");
+const u16 gItemIconPalette_Notebook[] = INCBIN_U16("graphics/items/icon_palettes/journal.gbapal");
 
 const u32 gItemIcon_RainbowPass[] = INCBIN_U32("graphics/items/icons/rainbow_pass.4bpp.smol");
 const u16 gItemIconPalette_RainbowPass[] = INCBIN_U16("graphics/items/icon_palettes/rainbow_pass.gbapal");
