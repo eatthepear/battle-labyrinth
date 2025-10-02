@@ -480,7 +480,7 @@ script EventScript_ShakeTree {
 	special(HeadbuttWildEncounter)
 	if (var(VAR_RESULT) == TRUE) {
 		waitstate
-	} elif (var(VAR_DIFFICULTY) >= DIFFICULTY_NORMAL) {
+	} elif (var(VAR_DIFFICULTY) == DIFFICULTY_EASY) {
 		random(70) // 30% headbutt encounter, so remaining 70%
 		switch(var(VAR_RESULT)) {
 			case 0:
