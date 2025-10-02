@@ -3,7 +3,7 @@
   "name": "Zone_QuietField",
   "layout": "LAYOUT_ZONE_QUIET_FIELD",
   "music": "MUS_ROUTE101",
-  "region_map_section": "MAPSEC_ZONE_QUIET_FIELD",
+  "region_map_section": "MAPSEC_QUIET_FIELD",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",

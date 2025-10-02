@@ -944,19 +944,19 @@
       "name": "Zone B1"
     },
     {
-      "id": "MAPSEC_ZONE_QUIET_FIELD",
+      "id": "MAPSEC_QUIET_FIELD",
       "name": "Quiet Field"
     },
     {
-      "id": "MAPSEC_ZONE_BREEZY_MEADOW",
+      "id": "MAPSEC_BREEZY_MEADOW",
       "name": "Breezy Meadow"
     },
     {
-      "id": "MAPSEC_ZONE_PEACEFUL_GROVE",
+      "id": "MAPSEC_PEACEFUL_GROVE",
       "name": "Peaceful Grove"
     },
     {
-      "id": "MAPSEC_ZONE_WHISPER_CAVE",
+      "id": "MAPSEC_WHISPER_CAVE",
       "name": "Whisper Cave"
     },
     {
