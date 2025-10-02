@@ -2413,7 +2413,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
     #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_STURDY, ABILITY_SAND_STREAM, ABILITY_SAND_FORCE },
+        .abilities = { ABILITY_STURDY, ABILITY_SAND_FORCE, ABILITY_SAND_STREAM },
     #else
         .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_SAND_FORCE },
     #endif
@@ -2789,7 +2789,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_HEALER, ABILITY_REGENERATOR, ABILITY_KLUTZ },
+        .abilities = { ABILITY_HEALER, ABILITY_KLUTZ, ABILITY_REGENERATOR },
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("Audino"),
         .cryId = CRY_AUDINO,
@@ -7476,7 +7476,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
     #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_ICE_BODY, ABILITY_SNOW_CLOAK, ABILITY_WEAK_ARMOR },
+        .abilities = { ABILITY_ICE_BODY, ABILITY_WEAK_ARMOR, ABILITY_SNOW_CLOAK },
     #else
         .abilities = { ABILITY_ICE_BODY, ABILITY_NONE, ABILITY_WEAK_ARMOR },
     #endif
@@ -7552,7 +7552,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
     #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_ICE_BODY, ABILITY_SNOW_CLOAK, ABILITY_WEAK_ARMOR },
+        .abilities = { ABILITY_ICE_BODY, ABILITY_WEAK_ARMOR, ABILITY_SNOW_CLOAK },
     #else
         .abilities = { ABILITY_ICE_BODY, ABILITY_NONE, ABILITY_WEAK_ARMOR },
     #endif
@@ -7625,7 +7625,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
     #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_ICE_BODY, ABILITY_SNOW_WARNING, ABILITY_WEAK_ARMOR },
+        .abilities = { ABILITY_ICE_BODY, ABILITY_WEAK_ARMOR, ABILITY_SNOW_WARNING },
     #else
         .abilities = { ABILITY_ICE_BODY, ABILITY_NONE, ABILITY_WEAK_ARMOR },
     #endif
@@ -10629,7 +10629,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_INNER_FOCUS, ABILITY_REGENERATOR, ABILITY_RECKLESS },
+        .abilities = { ABILITY_INNER_FOCUS, ABILITY_RECKLESS, ABILITY_REGENERATOR },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Mienfoo"),
         .cryId = CRY_MIENFOO,
@@ -10697,7 +10697,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_INNER_FOCUS, ABILITY_REGENERATOR, ABILITY_RECKLESS },
+        .abilities = { ABILITY_INNER_FOCUS, ABILITY_RECKLESS, ABILITY_REGENERATOR },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Mienshao"),
         .cryId = CRY_MIENSHAO,

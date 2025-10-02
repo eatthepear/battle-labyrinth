@@ -4232,7 +4232,8 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 if ((IsBattlerWeatherAffected(battler, B_WEATHER_SUN) || RandomPercentage(RNG_HARVEST, 50))
                  && gBattleMons[battler].item == ITEM_NONE
                  && gBattleStruct->changedItems[battler] == ITEM_NONE   // Will not inherit an item
-                 && GetItemPocket(GetUsedHeldItem(battler)) == POCKET_BERRIES)
+                 && GetItemPocket(GetUsedHeldItem(battler)) == POCKET_BERRIES
+                 && ((GetCurrentDifficultyLevel() == DIFFICULTY_EASY) || (gBattleTypeFlags & BATTLE_TYPE_TRAINER) || FlagGet(FLAG_FORCE_BATTLE_ANIM_ON)))
                 {
                     gLastUsedItem = GetUsedHeldItem(battler);
                     BattleScriptPushCursorAndCallback(BattleScript_HarvestActivates);

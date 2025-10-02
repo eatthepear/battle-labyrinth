@@ -875,10 +875,10 @@ script EventScript_Notebook_Pokemon {
 			case 1:
 				msgbox(format("Some Pokémon have one of their regular Abilites swapped with their hidden ability.\pRead which ones?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == YES) {
-					msgbox(format("All Pokémon that get Regenerator, Seed Sower, Sand Spit, Sand Stream, Snow Warning, Drought, or Drizzle as regular abilities now have those abilities as Hidden Abilities instead, and their original Hidden Ability is now a regular ability.\pYou can see how to evolve a Pokémon in the Pokédex."))
+					msgbox(format("All Pokémon that get Regenerator, Sand Stream, Snow Warning, Drought, or Drizzle as regular abilities now have those abilities as Hidden Abilities instead, and their original Hidden Ability is now a regular ability.\pTheir pre-evolution's abilities may also have been moved around as a result.\pYou can see what abilites Pokémon have in the Pokédex."))
 				}
 			case 2:
-				msgbox(format("Many Pokémon have evolution methods that are another option from their default or directly replace the default.\pThis includes Day/Night evolutions, Friendship evolutions, weak Pokémon evolutions, and hard to achieve evolutions."))
+				msgbox(format("Many Pokémon have evolution methods that are another option from their default or directly replace the default.\pThis includes Day/Night evolutions, Friendship evolutions, weak Pokémon evolutions, and hard to achieve evolutions.\pYou can see how to evolve a Pokémon in the Pokédex."))
 			case 3:
 				msgbox(format("Friendship is always considered maxed out."))
 			case 4:
@@ -892,29 +892,32 @@ script EventScript_Notebook_Battle {
 	while {
 		message(format("Battle Changes open.\nAnything not listed is vanilla."))
 		waitmessage
-		dynmultipush("Pickup", 0)
-		dynmultipush("Pay Day", 1)
-		dynmultipush("Accuracy", 2)
-		dynmultipush("Experience", 3)
-		dynmultipush("Back", 4)
+		dynmultipush("Accuracy", 0)
+		dynmultipush("Experience", 1)
+		dynmultipush("Pickup", 2)
+		dynmultipush("Harvest", 3)
+		dynmultipush("Pay Day", 4)
+		dynmultipush("Back", 5)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
-				msgbox(format("On Normal difficulty or higher, Pickup does not find items after wild battles."))
-			case 1:
-				msgbox(format("On Normal difficulty or higher, Pay Day does not earn money during wild battles."))
-			case 2:
 				msgbox(format(
 					"All moves with 95% accuracy {RIGHT_ARROW} 100% (except Jump Kick & Supercell Slam)\p"
 					"All moves with 90% accuracy {RIGHT_ARROW} 100% (except High Jump Kick, Axe Kick, Population Bomb, & Triple Axel)\p"
 					"All moves with 85% accuracy {RIGHT_ARROW} 100% (except Fire Blast, Megahorn, Power Whip, & Muddy Water)\p"
 					"All moves with 80% accuracy {RIGHT_ARROW} 100% (except Cross Chop, Hydro Pump, Stone Edge, Gunk Shot, Head Smash, Bleakwind Storm, Wildbolt Storm, & Sandsear Storm)"
 				))
-			case 3:
+			case 1:
 				msgbox(format("There are hard level caps built in, which typically increase by 2-3 every Zone."))
 				msgbox(format("In a Zone, the amount of experience gained from a knocked out Pokémon is a flat number based on the current level cap, rather than being dependent on level or species."))
 				msgbox(format("On Normal difficulty or higher, Pokémon don't gain experience through wild battles, including capture."))
+			case 2:
+				msgbox(format("On Normal difficulty or higher, Pickup does not find items after wild battles."))
+			case 3:
+				msgbox(format("On Normal difficulty or higher, Harvest does not recover used Berries during wild battles."))
 			case 4:
+				msgbox(format("On Normal difficulty or higher, Pay Day does not earn money during wild battles."))
+			case 5:
 			case MULTI_B_PRESSED:
 				return
 		}
