@@ -437,14 +437,12 @@ script Sanctuary_EventScript_EnterSanctuary {
 	waitmovement(0)
 	waitse
 	call(Sanctuary_EventScript_MoveCameraDown)
-	applymovement(LOCALID_COLRESS, Common_Movement_WalkDown3)
+	applymovement(LOCALID_COLRESS, Common_Movement_WalkDown2)
 	waitmovement(0)
 	playfanfare(MUS_OBTAIN_BADGE)
 	switch (var(VAR_ZONE)) {
 		case 1:
-			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Congratulations.\nYou have cleared {COLOR GREEN}Zone 1 - Leafway Trail{COLOR DARK_GRAY}."))
-			waitfanfare
-			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Your reward for clearing {COLOR GREEN}Zone 1 - Leafway Trail{COLOR DARK_GRAY} is…"))
+			bufferstring(0, "Zone 1 - Leafway Trail")
 		case 2:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Congratulations.\nYou have cleared {COLOR GREEN}Zone 2 - Warren Woods{COLOR DARK_GRAY}."))
 			waitfanfare
@@ -526,6 +524,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 			waitfanfare
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Your reward for clearing {COLOR GREEN}Zone 7{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8{COLOR DARK_GRAY} is…"))
 	}
+	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Congratulations.\nYou have cleared {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."))
+	waitfanfare
+	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Your reward for clearing {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY} is…"))
 	switch (var(VAR_ZONE)) {
 		case 1:
 			msgbox(format("The {COLOR RED}Infinite Repellent{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
@@ -798,6 +799,11 @@ script Sanctuary_EventScript_EnterSanctuary {
 	}
 	releaseall
 	end
+}
+
+movement Common_Movement_Colress_WalkUp {
+	walk_up * 2
+	face_down
 }
 
 script Sanctuary_EventScript_MoveCameraUp {
