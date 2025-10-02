@@ -3684,7 +3684,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                             itemEffectParam++;
                             break;
                         }
-                        if (FlagGet(FLAG_SETTINGS_NUZLOCKE) && !FlagGet(FLAG_IS_DEBUGGING_SAVEFILE))
+                        if (FlagGet(FLAG_SETTINGS_NUZLOCKE) && !FlagGet(FLAG_SYS_DEBUG))
                         {
                             itemEffectParam++;
                             break;

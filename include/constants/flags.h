@@ -140,13 +140,11 @@
 #define FLAG_BEAT_LEVIATHAN_94                         0x7E
 #define FLAG_BEAT_LEVIATHAN_95                         0x7F
 
-// Setting Flags
+// Configs / Major Flags
 #define FLAG_SETTINGS_NUZLOCKE                      0xA1
 #define FLAG_SETTINGS_FULL_INFO                     0xA2
-#define FLAG_SETTINGS_EXP_ALL                       0xA3
-
-// Debug Flags
-#define FLAG_IS_DEBUGGING_SAVEFILE                  0xB0
+#define FLAG_SYS_EXP_SHARE                          0xA3
+#define FLAG_SYS_DEBUG                              0xB0
 #define FLAG_SYS_NO_COLLISION                       0xB1
 #define FLAG_SYS_NO_ENCOUNTER                       0xB2
 #define FLAG_SYS_NO_TRAINER_SEE                     0xB3
@@ -155,8 +153,6 @@
 #define FLAG_SYS_FORCE_DOUBLE_WILD                  0xB6
 #define FLAG_SYS_SMART_WILD_AI_ON                   0xB7
 #define FLAG_SYS_NO_RUNNING                         0xB8
-
-// Flags editable via script
 #define FLAG_FORCE_BATTLE_ANIM_ON                   0xC0
 #define FLAG_FORCE_BATTLE_ANIM_OFF                  0xC1
 #define FLAG_SYS_DEXNAV_GET                         0xC2

@@ -1017,7 +1017,7 @@ script EventScript_GameIntro_SetStartingVariablesAndFlags {
 	callnative(InitTimeBasedEvents)
 	setvar(VAR_ZONE, 1)
 	setvar(VAR_LEVEL_CAP, 1)
-	setflag(FLAG_IS_DEBUGGING_SAVEFILE) // to remove for release
+	setflag(FLAG_SYS_DEBUG) // to remove for release
 }
 
 script EventScript_GameIntro_Difficulty {
