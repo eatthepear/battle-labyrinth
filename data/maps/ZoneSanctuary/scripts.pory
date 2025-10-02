@@ -792,6 +792,10 @@ script Sanctuary_EventScript_EnterSanctuary {
 	call(EventScript_WhenUReadyDialogue)
 	applymovement(LOCALID_COLRESS, Common_Movement_Colress_WalkUp)
 	waitmovement(0)
+	msgbox(format("Save your game?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		forcesave
+	}
 	releaseall
 	end
 }
