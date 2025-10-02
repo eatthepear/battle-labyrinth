@@ -10,6 +10,7 @@
 #include "palette.h"
 #include "pokedex.h"
 #include "pokemon.h"
+#include "random.h"
 #include "scanline_effect.h"
 #include "sound.h"
 #include "sprite.h"
@@ -382,9 +383,10 @@ static const struct SpriteTemplate sSpriteTemplate_StarterCircle =
 // .text
 u16 GetStarterPokemon(u16 chosenStarterId)
 {
-    u16 grassIndex = gSaveBlock1Ptr->wildEncounterSeed % 9;
-    u16 fireIndex = ((gSaveBlock1Ptr->wildEncounterSeed % 81) - grassIndex) / 9;
-    u16 waterIndex = (gSaveBlock1Ptr->wildEncounterSeed - fireIndex * 9 - grassIndex) / 81;
+    rng_value_t rng = LocalRandomSeed(gSaveBlock1Ptr->wildEncounterSeed);
+    u16 grassIndex = LocalRandom32(&rng) % 9;
+    u16 fireIndex = LocalRandom32(&rng) % 9;
+    u16 waterIndex = LocalRandom32(&rng) % 9;
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
     switch (chosenStarterId)
