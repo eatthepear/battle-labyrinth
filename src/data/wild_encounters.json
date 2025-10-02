@@ -4589,6 +4589,105 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ZONE_SANCTUARY_PEACEFUL_GROVE",
+          "base_label": "gZoneSanctuary_PeacefulGrove",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_BUNNELBY"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_GLAMEOW"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_MEOWTH"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_POOCHYENA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_DROWZEE"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_MORELULL"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_DEERLING"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_FOMANTIS"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PANSAGE"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PANSEAR"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PANPOUR"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          },
+          "hidden_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_SLAKOTH"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_SKWOVET"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_BOUNSWEET"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PIKIPEK"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_HOOTHOOT"
+              }
+            ]
+          }
         }
       ]
     },

@@ -1,0 +1,26 @@
+{
+  "id": "MAP_ZONE_SANCTUARY_PEACEFUL_GROVE",
+  "name": "ZoneSanctuary_PeacefulGrove",
+  "layout": "LAYOUT_ZONE_SANCTUARY_PEACEFUL_GROVE",
+  "music": "MUS_HG_ROUTE1",
+  "region_map_section": "MAPSEC_PEACEFUL_GROVE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ZONE_SANCTUARY",
+      "offset": -13,
+      "direction": "left"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

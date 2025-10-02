@@ -17,6 +17,11 @@
       "map": "MAP_ZONE_SANCTUARY_QUIET_FIELD",
       "offset": 18,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ZONE_SANCTUARY_PEACEFUL_GROVE",
+      "offset": 13,
+      "direction": "right"
     }
   ],
   "object_events": [

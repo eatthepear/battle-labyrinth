@@ -5280,6 +5280,16 @@
       "secondary_tileset": "gTileset_Sanctuary",
       "border_filepath": "data/layouts/ZoneSanctuary_QuietField/border.bin",
       "blockdata_filepath": "data/layouts/ZoneSanctuary_QuietField/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE_SANCTUARY_PEACEFUL_GROVE",
+      "name": "ZoneSanctuary_PeacefulGrove_Layout",
+      "width": 30,
+      "height": 24,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Sanctuary",
+      "border_filepath": "data/layouts/ZoneSanctuary_PeacefulGrove/border.bin",
+      "blockdata_filepath": "data/layouts/ZoneSanctuary_PeacefulGrove/map.bin"
     }
   ]
 }
