@@ -1574,7 +1574,7 @@ script EventScript_Shop_FarmersStand_BuyItem {
 		bufferitemnameplural(1, VAR_TEMP_0, 2)
 		message("How many {STR_VAR_2} do you want?\n(You can still buy up to {STR_VAR_1} items.)")
 		waitmessage
-		buffernumberstring(1, 80)
+		buffernumberstring(0, 80 * 1)
 		dynmultipush("One - ¥{STR_VAR_1}", 0)
 		if (var(VAR_FARM_STOCK) >= 5) {
 			buffernumberstring(1, 80 * 5)
@@ -1705,22 +1705,22 @@ script EventScript_MusicMenu {
 script EventScript_MusicMenu_Sanctuary {
 	while {
 		switch (var(VAR_SANCTUARY_MUSIC)) {
-			case 0:
+			case 1:
 				playbgm(MUS_DP_AMITY_SQUARE, FALSE)
 				message("The Sanctuary music is\ncurrently set to Amity Square.")
-			case 1:
+			case 2:
 				playbgm(MUS_PL_B_HALL, FALSE)
 				message("The Sanctuary music is\ncurrently set to Battle Hall.")
-			case 2:
+			case 3:
 				playbgm(MUS_BW_ACCUMULA, FALSE)
 				message("The Sanctuary music is\ncurrently set to Accumula Town.")
-			case 3:
+			case 4:
 				playbgm(MUS_BW_SKYARROW_BRIDGE, FALSE)
 				message("The Sanctuary music is\ncurrently set to Skyarrow Bridge.")
-			case 4:
+			case 5:
 				playbgm(MUS_BW_WHITE_FOREST, FALSE)
 				message("The Sanctuary music is\ncurrently set to White Forest.")
-			case 5:
+			case 6:
 				playbgm(MUS_BW_ANVILLE_TOWN, FALSE)
 				message("The Sanctuary music is\ncurrently set to Anville Town.")
 		}
@@ -1747,22 +1747,22 @@ script EventScript_MusicMenu_Sanctuary {
 script EventScript_MusicMenu_Wild {
 	while {
 		switch (var(VAR_WILD_MUSIC)) {
-			case 0:
+			case 1:
 				playbgm(MUS_VS_WILD, FALSE)
 				message("The Wild Pokémon music is\ncurrently set to RSE.")
-			case 1:
+			case 2:
 				playbgm(MUS_RG_VS_WILD, FALSE)
 				message("The Wild Pokémon music is\ncurrently set to FRLG.")
-			case 2:
+			case 3:
 				playbgm(MUS_DP_VS_WILD, FALSE)
 				message("The Wild Pokémon music is\ncurrently set to DPPt.")
-			case 3:
+			case 4:
 				playbgm(MUS_HG_VS_WILD, FALSE)
 				message("The Wild Pokémon music is\ncurrently set to HGSS (Johto).")
-			case 4:
+			case 5:
 				playbgm(MUS_HG_VS_WILD_KANTO, FALSE)
 				message("The Wild Pokémon music is\ncurrently set to HGSS (Kanto).")
-			case 5:
+			case 6:
 				playbgm(MUS_BW_VS_WILD, FALSE)
 				message("The Wild Pokémon music is\ncurrently set to BW.")
 		}
@@ -1789,22 +1789,22 @@ script EventScript_MusicMenu_Wild {
 script EventScript_MusicMenu_Trainer {
 	while {
 		switch (var(VAR_TRAINER_MUSIC)) {
-			case 0:
+			case 1:
 				playbgm(MUS_VS_TRAINER, FALSE)
 				message("The Trainer music is\ncurrently set to RSE.")
-			case 1:
+			case 2:
 				playbgm(MUS_RG_VS_TRAINER, FALSE)
 				message("The Trainer music is\ncurrently set to FRLG.")
-			case 2:
+			case 3:
 				playbgm(MUS_DP_VS_TRAINER, FALSE)
 				message("The Trainer music is\ncurrently set to DPPt.")
-			case 3:
+			case 4:
 				playbgm(MUS_HG_VS_TRAINER, FALSE)
 				message("The Trainer music is\ncurrently set to HGSS (Johto).")
-			case 4:
+			case 5:
 				playbgm(MUS_HG_VS_TRAINER_KANTO, FALSE)
 				message("The Trainer music is\ncurrently set to HGSS (Kanto).")
-			case 5:
+			case 6:
 				playbgm(MUS_BW_VS_TRAINER, FALSE)
 				message("The Trainer music is\ncurrently set to BW.")
 		}
@@ -1831,22 +1831,22 @@ script EventScript_MusicMenu_Trainer {
 script EventScript_MusicMenu_Leviathan {
 	while {
 		switch (var(VAR_LEVIATHAN_MUSIC)) {
-			case 0:
+			case 1:
 				playbgm(MUS_VS_GYM_LEADER, FALSE)
 				message("The Leviathan music is\ncurrently set to RSE.")
-			case 1:
+			case 2:
 				playbgm(MUS_RG_VS_GYM_LEADER, FALSE)
 				message("The Leviathan music is\ncurrently set to FRLG.")
-			case 2:
+			case 3:
 				playbgm(MUS_DP_VS_GYM_LEADER, FALSE)
 				message("The Leviathan music is\ncurrently set to DPPt.")
-			case 3:
+			case 4:
 				playbgm(MUS_HG_VS_GYM_LEADER, FALSE)
 				message("The Leviathan music is\ncurrently set to HGSS (Johto).")
-			case 4:
+			case 5:
 				playbgm(MUS_HG_VS_GYM_LEADER_KANTO, FALSE)
 				message("The Leviathan music is\ncurrently set to HGSS (Kanto).")
-			case 5:
+			case 6:
 				playbgm(MUS_BW_VS_GYM_LEADER, FALSE)
 				message("The Leviathan music is\ncurrently set to BW.")
 		}
