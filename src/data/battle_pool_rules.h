@@ -22,6 +22,11 @@ const struct PoolRules gPoolRulesetsList[] = {
         .itemClauseExclusions = B_POOL_RULES_USE_ITEM_EXCLUSIONS,
         .tagMaxMembers[POOL_TAG_LEAD] = 1,
         .tagMaxMembers[POOL_TAG_ACE] = 1,
+        .tagMaxMembers[POOL_TAG_TAG6] = 1,
+        .tagMaxMembers[POOL_TAG_TAG7] = 1,
+        .tagMaxMembers[POOL_TAG_TAG8] = 1,
+        .tagMaxMembers[POOL_TAG_WEATHER_SETTER] = 1,
+        .tagMaxMembers[POOL_TAG_SUPPORT] = 1,
     },
     [POOL_RULESET_DOUBLES] = {
         .speciesClause = B_POOL_RULE_SPECIES_CLAUSE,
