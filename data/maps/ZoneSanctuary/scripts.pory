@@ -1998,29 +1998,31 @@ script EventScript_Shop_Varrick {
 script EventScript_Shop_Varrick_Items {
 	while {
 		dynmultipush("Poké Balls", 0)
-		dynmultipush("Evo+Species Items", 1)
+		if (var(VAR_ZONE) > 5) {
+			dynmultipush("Evo Items", 1)
+		}
 		dynmultipush("Battle Items", 2)
 		dynmultipush("Treasures", 3)
 		if (checkitem(ITEM_MEGA_RING) == TRUE) {
-			dynmultipush("Mega Stones", 5)
+			dynmultipush("Mega Stones", 6)
 		}
 		dynmultipush("Other", 4)
-		dynmultipush("Exit", 6)
+		dynmultipush("Exit", 7)
 		dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
 				call(EventScript_Shop_Varrick_Pokeballs)
 			case 1:
-				call(EventScript_Shop_Varrick_EvoSpecies)
+				call(EventScript_Shop_Varrick_Evo)
 			case 2:
 				call(EventScript_Shop_Varrick_Battle)
 			case 3:
 				call(EventScript_Shop_Varrick_Treasures)
 			case 4:
 				call(EventScript_Shop_Varrick_Other)
-			case 5:
-				call(EventScript_Shop_Varrick_MegaStones)
 			case 6:
+				call(EventScript_Shop_Varrick_MegaStones)
+			case 7:
 			case MULTI_B_PRESSED:
 				return
 		}
@@ -2029,6 +2031,8 @@ script EventScript_Shop_Varrick_Items {
 }
 
 script EventScript_Shop_Varrick_Pokeballs {
+	message(format("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: We sell a great variety of Poké Balls!"))
+	waitmessage
 	switch (var(VAR_ZONE)) {
 		case 1:
 		case 2:
@@ -2107,14 +2111,15 @@ mart Shop_Pokeballs_5 {
 	ITEM_MOON_BALL
 }
 
-script EventScript_Shop_Varrick_EvoSpecies {
+script EventScript_Shop_Varrick_Evo {
+	message(format("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: All the evolution items you might need, you'll find here!"))
+	waitmessage
 	switch (var(VAR_ZONE)) {
 		case 1:
 		case 2:
 		case 3:
 		case 4:
 		case 5:
-			pokemart(Shop_EvoSpecies_1)
 		case 6:
 		case 7:
 		case 9:
@@ -2140,19 +2145,6 @@ script EventScript_Shop_Varrick_EvoSpecies {
 	}
 }
 
-mart Shop_EvoSpecies_1 {
-	ITEM_RED_NECTAR
-	ITEM_YELLOW_NECTAR
-	ITEM_PINK_NECTAR
-	ITEM_PURPLE_NECTAR
-	ITEM_LIGHT_BALL
-	ITEM_LEEK
-	ITEM_THICK_CLUB
-	ITEM_LUCKY_PUNCH
-	ITEM_METAL_POWDER
-	ITEM_QUICK_POWDER
-}
-
 mart Shop_EvoSpecies_2 {
 	ITEM_UPGRADE
 	ITEM_DEEP_SEA_SCALE
@@ -2161,12 +2153,6 @@ mart Shop_EvoSpecies_2 {
 	ITEM_WHIPPED_DREAM
 	ITEM_SACHET
 	ITEM_STRAWBERRY_SWEET
-	ITEM_LIGHT_BALL
-	ITEM_LEEK
-	ITEM_THICK_CLUB
-	ITEM_LUCKY_PUNCH
-	ITEM_METAL_POWDER
-	ITEM_QUICK_POWDER
 }
 
 mart Shop_EvoSpecies_3 {
@@ -2184,12 +2170,6 @@ mart Shop_EvoSpecies_3 {
 	ITEM_WHIPPED_DREAM
 	ITEM_SACHET
 	ITEM_STRAWBERRY_SWEET
-	ITEM_LIGHT_BALL
-	ITEM_LEEK
-	ITEM_THICK_CLUB
-	ITEM_LUCKY_PUNCH
-	ITEM_METAL_POWDER
-	ITEM_QUICK_POWDER
 #define ITEM_FIRE_MEMORY 271
 #define ITEM_WATER_MEMORY 272
 #define ITEM_ELECTRIC_MEMORY 273
@@ -2251,15 +2231,11 @@ mart Shop_EvoSpecies_4 {
 	ITEM_WHIPPED_DREAM
 	ITEM_SACHET
 	ITEM_STRAWBERRY_SWEET
-	ITEM_LIGHT_BALL
-	ITEM_LEEK
-	ITEM_THICK_CLUB
-	ITEM_LUCKY_PUNCH
-	ITEM_METAL_POWDER
-	ITEM_QUICK_POWDER
 }
 
 script EventScript_Shop_Varrick_Battle {
+	message(format("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: There are tons of Battle Items, and you can find all of them here!"))
+	waitmessage
 	switch (var(VAR_ZONE)) {
 		case 1:
 		case 2:
@@ -2450,6 +2426,8 @@ mart Shop_Battle_2 {
 }
 
 script EventScript_Shop_Varrick_Treasures {
+	message(format("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: Treasures for you!"))
+	waitmessage
 	switch (var(VAR_ZONE)) {
 		case 1:
 		case 2:
@@ -2531,6 +2509,8 @@ mart Shop_Treasures_4 {
 }
 
 script EventScript_Shop_Varrick_Other {
+	message(format("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: Everything else that I sell, you can find here!"))
+	waitmessage
 	switch (var(VAR_ZONE)) {
 		case 1:
 		case 2:
@@ -2562,9 +2542,21 @@ script EventScript_Shop_Varrick_Other {
 
 mart Shop_Other_1 {
 	ITEM_EXP_CANDY_XS
+	ITEM_RED_NECTAR
+	ITEM_YELLOW_NECTAR
+	ITEM_PINK_NECTAR
+	ITEM_PURPLE_NECTAR
+	ITEM_LIGHT_BALL
+	ITEM_LEEK
+	ITEM_THICK_CLUB
+	ITEM_LUCKY_PUNCH
+	ITEM_METAL_POWDER
+	ITEM_QUICK_POWDER
 }
 
 script EventScript_Shop_Varrick_MegaStones {
+	message(format("{COLOR BLUE}Varrick{COLOR DARK_GRAY}: In case you're missing some Mega Stones, you can buy them here!"))
+	waitmessage
 	switch (var(VAR_ZONE)) {
 		case 1:
 		case 2:
