@@ -361,24 +361,24 @@ script Zone1A_EventScript_TriggerLeviathanBottom {
 	lockall
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
-	applymovement(1, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_COREY, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	applymovement(1, Common_Movement_WalkDown)
+	applymovement(LOCALID_COREY, Common_Movement_WalkDown)
 	waitmovement(0)
-	applymovement(1, Zone1A_Corey_WalkLeft)
+	applymovement(LOCALID_COREY, Zone1A_Corey_WalkLeft)
 	waitmovement(0)
 	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		goto(Zone1A_EventScript_LeviathanBattle)
 	}
 	msgbox(Zone1A_Text_Leviathan1Wait, MSGBOX_AUTOCLOSE)
-	applymovement(1, Common_Movement_WalkUp)
+	applymovement(LOCALID_COREY, Common_Movement_WalkUp)
 	waitmovement(0)
-	applymovement(1, Zone1A_Corey_WalkRight)
+	applymovement(LOCALID_COREY, Zone1A_Corey_WalkRight)
 	waitmovement(0)
-	applymovement(1, Common_Movement_FaceLeft)
+	applymovement(LOCALID_COREY, Common_Movement_FaceLeft)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
 	waitmovement(0)
@@ -387,20 +387,20 @@ script Zone1A_EventScript_TriggerLeviathanBottom {
 
 script Zone1A_EventScript_TriggerLeviathanMiddle {
 	lockall
-	applymovement(1, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_COREY, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	applymovement(1, Zone1A_Corey_WalkLeft)
+	applymovement(LOCALID_COREY, Zone1A_Corey_WalkLeft)
 	waitmovement(0)
 	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		goto(Zone1A_EventScript_LeviathanBattle)
 	}
 	msgbox(Zone1A_Text_Leviathan1Wait, MSGBOX_AUTOCLOSE)
-	applymovement(1, Zone1A_Corey_WalkRight)
+	applymovement(LOCALID_COREY, Zone1A_Corey_WalkRight)
 	waitmovement(0)
-	applymovement(1, Common_Movement_FaceLeft)
+	applymovement(LOCALID_COREY, Common_Movement_FaceLeft)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
 	waitmovement(0)
@@ -409,24 +409,24 @@ script Zone1A_EventScript_TriggerLeviathanMiddle {
 
 script Zone1A_EventScript_TriggerLeviathanTop {
 	lockall
-	applymovement(1, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_COREY, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	applymovement(1, Common_Movement_WalkUp)
+	applymovement(LOCALID_COREY, Common_Movement_WalkUp)
 	waitmovement(0)
-	applymovement(1, Zone1A_Corey_WalkLeft)
+	applymovement(LOCALID_COREY, Zone1A_Corey_WalkLeft)
 	waitmovement(0)
 	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		goto(Zone1A_EventScript_LeviathanBattle)
 	}
 	msgbox(Zone1A_Text_Leviathan1Wait, MSGBOX_AUTOCLOSE)
-	applymovement(1, Common_Movement_WalkDown)
+	applymovement(LOCALID_COREY, Common_Movement_WalkDown)
 	waitmovement(0)
-	applymovement(1, Zone1A_Corey_WalkRight)
+	applymovement(LOCALID_COREY, Zone1A_Corey_WalkRight)
 	waitmovement(0)
-	applymovement(1, Common_Movement_FaceLeft)
+	applymovement(LOCALID_COREY, Common_Movement_FaceLeft)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
 	waitmovement(0)
@@ -469,7 +469,7 @@ script Zone1A_EventScript_LeviathanBattle {
 	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Well, anyways, I've gotta run now.\pBye bye!"), MSGBOX_AUTOCLOSE)
 	closemessage
 	fadescreenswapbuffers(FADE_TO_BLACK)
-	removeobject(1)
+	removeobject(LOCALID_COREY)
 	setflag(FLAG_BEAT_LEVIATHAN_1)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	release
