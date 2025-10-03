@@ -3406,3 +3406,13 @@ void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
     if (ctx->breakOnTrainerBattle && sScriptConditionTable[condition][ctx->comparisonResult] == 1)
         StopScript(ctx);
 }
+
+bool8 ScrCmd_checkspeciesclause(struct ScriptContext *ctx)
+{
+    u16 species = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+
+    gSpecialVar_Result = IsCaptureBlockedBySpeciesClause(species);
+    return FALSE;
+}

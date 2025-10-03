@@ -92,6 +92,9 @@
     },
     "msgbox": {
       "var_name": "VAR_RESULT"
+    },
+    "checkspeciesclause": {
+      "var_name": "VAR_RESULT"
     }
   }
 }

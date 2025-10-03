@@ -2842,3 +2842,9 @@
 	.2byte \move23
 	.2byte \move24
 	.endm
+
+	@ Checks if the species would be an ineligible encounter under Species Clause. Sets VAR_RESULT.
+	.macro checkspeciesclause species:req
+	.byte SCR_OP_CHECKSPECIESCLAUSE
+	.2byte \species
+	.endm
