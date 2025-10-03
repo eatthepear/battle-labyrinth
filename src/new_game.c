@@ -221,10 +221,10 @@ void NewGameInitData(void)
     ResetDexNav();
     ClearFollowerNPCData();
     gSaveBlock1Ptr->wildEncounterSeed = Random32();
-    VarSet(VAR_SANCTUARY_MUSIC, Random32() % 6 + 1);
-    VarSet(VAR_WILD_MUSIC, Random32() % 6 + 1);
-    VarSet(VAR_TRAINER_MUSIC, Random32() % 6 + 1);
-    VarSet(VAR_LEVIATHAN_MUSIC, Random32() % 6 + 1);
+    VarSet(VAR_SANCTUARY_MUSIC, 1);
+    VarSet(VAR_WILD_MUSIC, 6);
+    VarSet(VAR_TRAINER_MUSIC, 6);
+    VarSet(VAR_LEVIATHAN_MUSIC, 6);
 }
 
 static void ResetMiniGamesRecords(void)
