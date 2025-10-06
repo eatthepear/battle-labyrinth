@@ -251,6 +251,12 @@ script EventScript_RespinEncounters {
 }
 
 script EventScript_NextZone {
+	if (getpartysize() < 4) {
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: You're undergoing quite the challenge by entering the next Zone with that few Pokémon in your party. Proceed anyways?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			return
+		}
+	}
 	switch (var(VAR_ZONE)) {
 		case 1:
 			bufferstring(0, "Zone 1 - Leafway Trail")
