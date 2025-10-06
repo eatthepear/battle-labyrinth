@@ -179,9 +179,9 @@ script EventScript_Difficulty_Info {
 			case 1:
 				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: {COLOR RED}Normal{COLOR DARK_GRAY} is suited for the typical player.\pThe game is more challenging than a vanilla Pokémon game.\pRecommended for first time playthroughs!"))
 			case 2:
-				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: {COLOR RED}Hard{COLOR DARK_GRAY} is suited for players looking for a serious challenge.\pBoss battles are more difficult than on {COLOR RED}Normal{COLOR DARK_GRAY}.\pIn addition, you can't use in-battle items during non-wild battles, you must play on SET mode, and your Pokémon can't gain EVs."))
+				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: {COLOR RED}Hard{COLOR DARK_GRAY} is suited for players looking for a serious challenge.\pYou can't use in-battle items during non-wild battles, you must play on SET mode, and your Pokémon can't gain EVs."))
 			case 3:
-				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: {COLOR RED}Brutal{COLOR DARK_GRAY} is suited for players experienced in challenging ROM hacks.\pAll changes from {COLOR RED}Hard{COLOR DARK_GRAY} are carried over, and all battles are more difficult than Hard.\pIn addition, the amount of money you gain is halved, and the Pokémon, NPCs, and services you have access to are more limited."))
+				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: {COLOR RED}Brutal{COLOR DARK_GRAY} is suited for players experienced in challenging ROM hacks.\pAll changes from {COLOR RED}Hard{COLOR DARK_GRAY} are carried over, and {COLOR RED}Leviathan{COLOR DARK_GRAY} and other boss battles are more difficult.\pIn addition, the amount of money from trainers is halved, and the Pokémon, NPCs, and services you have access to are more limited."))
 			case 4:
 			case MULTI_B_PRESSED:
 				return

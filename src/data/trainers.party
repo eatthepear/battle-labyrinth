@@ -101,32 +101,52 @@ Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 3
+
+Bidoof
+Level: 5
+Tags: Tag6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Sentret
+Level: 5
+Tags: Tag6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Patrat
+Level: 5
+Tags: Tag6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Purrloin
+Level: 5
+Tags: Tag7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Nickit
+Level: 5
+Tags: Tag7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Poochyena
-Ability: Run Away
-Level: 4
+Level: 5
+Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Leer
-- Sand Attack
+
+Hoothoot
+Level: 5
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Pidove
-Ability: Super Luck
-Level: 4
-Timid Nature
+Level: 5
+Tags: Tag8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Quick Attack
-- Growl
-- Leer
 
-Skitty
-Ability: Normalize
-Level: 4
-Bold Nature
+Pikipek
+Level: 5
+Tags: Tag8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Tail Whip
-- Growl
 
 === TRAINER_PBL_MARIAM ===
 Name: Mariam
@@ -135,32 +155,52 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 3
 
 Zigzagoon
-Ability: Gluttony
 Level: 5
-Calm Nature
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Growl
-- Sand Attack
 
-Purrloin
-Ability: Limber
+Lechonk
 Level: 5
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Scratch
-- Growl
-- Sand Attack
-- Yawn
 
-Sunkern
-Ability: Chlorophyll
+Zigzagoon-Galar
 Level: 5
-Careful Nature
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Absorb
+
+Mime Jr.
+Level: 5
+Tags: Tag7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Igglybuff
+Level: 5
+Tags: Tag7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Flabebe
+Level: 5
+Tags: Tag7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pichu
+Level: 5
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pawmi
+Level: 5
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Shinx
+Level: 5
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_OSCAR ===
 Name: Oscar
@@ -169,33 +209,52 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 3
 
-Rattata
-Ability: Guts
+Sunkern
 Level: 5
-Bold Nature
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Tail Whip
-- Focus Energy
 
-Psyduck
-Ability: Damp
+Seedot
 Level: 5
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Scratch
-- Tail Whip
-- Refresh
-- Water Gun
 
-Starly
-Ability: Keen Eye
+Bounsweet
 Level: 5
-Calm Nature
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Growl
-- Quick Attack
+
+Vulpix
+Level: 5
+Tags: Tag7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Slugma
+Level: 5
+Tags: Tag7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Sizzlipede
+Level: 5
+Tags: Tag7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Goldeen
+Level: 5
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Finneon
+Level: 5
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Chewtle
+Level: 5
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER ===
 Name: Corey
@@ -205,13 +264,8 @@ Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Mugshot: Purple
-
-Panpour
-Ability: Gluttony
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Gun
-- Scratch
+Party Size: 3
+Difficulty: Normal
 
 Pansage
 Ability: Gluttony
@@ -223,8 +277,49 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Pansear
 Ability: Gluttony
 Level: 7
+Tags: Ace
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
+- Scratch
+
+Panpour
+Ability: Gluttony
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Gun
+- Scratch
+
+=== TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER ===
+Name: Corey
+Class: School Kid
+Pic: School Kid M
+Music: Girl
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Mugshot: Purple
+Party Size: 3
+Difficulty: Brutal
+
+Pansage
+Ability: Overgrow
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leafage
+- Scratch
+
+Pansear
+Ability: Blaze
+Level: 7
+Tags: Ace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Scratch
+
+Panpour
+Ability: Torrent
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Gun
 - Scratch
 
 === TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_CHALLENGE ===
@@ -265,6 +360,8 @@ Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Mugshot: Purple
+Party Size: 3
+Difficulty: Normal
 
 Pansage
 Ability: Gluttony
@@ -283,6 +380,40 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Panpour
 Ability: Gluttony
 Level: 7
+Tags: Ace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Gun
+- Scratch
+
+=== TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER ===
+Name: Corey
+Class: School Kid
+Pic: School Kid M
+Music: Girl
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Mugshot: Purple
+Party Size: 3
+Difficulty: Brutal
+
+Pansage
+Ability: Overgrow
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leafage
+- Scratch
+
+Pansear
+Ability: Blaze
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Scratch
+
+Panpour
+Ability: Torrent
+Level: 7
+Tags: Ace
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
@@ -325,6 +456,16 @@ Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Mugshot: Purple
+Party Size: 3
+Difficulty: Normal
+
+Pansage
+Ability: Gluttony
+Level: 7
+Tags: Ace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leafage
+- Scratch
 
 Pansear
 Ability: Gluttony
@@ -340,11 +481,37 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
 
+=== TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER ===
+Name: Corey
+Class: School Kid
+Pic: School Kid M
+Music: Girl
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Mugshot: Purple
+Party Size: 3
+Difficulty: Brutal
+
 Pansage
-Ability: Gluttony
+Ability: Overgrow
 Level: 7
+Tags: Ace
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leafage
+- Scratch
+
+Pansear
+Ability: Blaze
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Scratch
+
+Panpour
+Ability: Torrent
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Gun
 - Scratch
 
 === TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_CHALLENGE ===
