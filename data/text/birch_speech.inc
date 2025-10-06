@@ -38,9 +38,8 @@ gText_Birch_SoItsPlayer::
 	.string "Your name is {COLOR BLUE}{PLAYER}{KUN}{COLOR DARK_GRAY}?$"
 
 gText_Birch_YourePlayer::
-	.string "Thank you very much.\p"
-	.string "Please check the documentation if\n"
-	.string "you have any questions or issues.\p"
+	.string "Thank you very much, {COLOR BLUE}{PLAYER}{KUN}{COLOR DARK_GRAY}.\n"
+	.string "Your info has been saved.\p"
 	.string "$"
 
 gText_Birch_AreYouReady::

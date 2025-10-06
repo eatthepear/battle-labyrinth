@@ -172,7 +172,7 @@ script EventScript_Difficulty_Info {
 		dynmultipush("Hard", 2)
 		dynmultipush("Brutal", 3)
 		dynmultipush("Back", 4)
-		dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+		dynmultistack(0, 0, FALSE, 5, FALSE, VAR_DIFFICULTY, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
 				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: {COLOR RED}Easy{COLOR DARK_GRAY} is suited for casual players.\pFor the most part, you can play as if this was one of the harder vanilla Pokémon games, meaning you can grind experience, items, and money.\pThe difficulty of battles is the same as {COLOR RED}Normal{COLOR DARK_GRAY}."))
@@ -220,12 +220,12 @@ script EventScript_Nuzlocke {
 		buffernumberstring(STR_VAR_1, VAR_NUZLOCKE_DEATHS)
 		msgbox("So far there have been {STR_VAR_1} deaths.")
 	}
-	msgbox(format("Would you like to turn off Nuzlocke mode?"), MSGBOX_YESNO)
+	msgbox(format("Would you like to turn off {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
-		msgbox(format("Are you sure you would like to turn off Nuzlocke mode?"), MSGBOX_YESNO)
+		msgbox(format("Are you sure you would like to turn off {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
 			playse(SE_PC_OFF)
-			msgbox("Nuzlocke mode turned off.")
+			msgbox("{COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode turned off.")
 			waitse
 			clearflag(FLAG_SETTINGS_NUZLOCKE)
 			clearflag(FLAG_ZONE13C_NUZLOCKE_FOSSIL_RECEIVED)
@@ -846,7 +846,7 @@ script Sanctuary_EventScript_GameIntro {
 		"In these Zones, you might encounter wild Pokémon, great treasures, fierce opponents, and more.\p"
 		"Each Zone typically contains a {COLOR RED}Leviathan{COLOR DARK_GRAY} or other tough challenge that yields great rewards.\lYou must defeat all opponents in a Zone to proceed.\p"
 		"When you complete a Zone, you will return to this area, the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}, where you can heal your Pokémon, purchase supplies, and prepare for the next Zone.\p"
-		"Once you enter a new Zone, you will not be able to access the Sanctuary until you exit that Zone.\p"
+		"Once you enter a new Zone, you will not be able to access the Sanctuary until you complete that Zone.\p"
 		"As you complete more Zones, more items, quests, and services are unlocked.\p"
 		"In order to win, you must progress through all Zones, overcoming all challenges you face along the way."))
 	}
@@ -854,7 +854,7 @@ script Sanctuary_EventScript_GameIntro {
 	call(EventScript_GameIntro_Nuzlocke)
 	if (flag(FLAG_SETTINGS_NUZLOCKE)) {
 		msgbox(format("As a new challenger, you will receive a starter Pokémon.\p"
-		"On Nuzlocke, your choice is limited from the pool of possible starters to only three options.\p"
+		"On {COLOR RED}Nuzlocke{COLOR DARK_GRAY}, your choice is limited from the pool of possible starters to only three options.\p"
 		"Choose carefully as these Pokémon are very rare."))
 		special(ChooseStarter)
 		waitstate
