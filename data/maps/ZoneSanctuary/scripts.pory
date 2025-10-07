@@ -557,8 +557,12 @@ script Sanctuary_EventScript_EnterSanctuary {
 	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Your reward for clearing {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY} is…"))
 	switch (var(VAR_ZONE)) {
 		case 1:
-			msgbox(format("The {COLOR RED}Infinite Repellent{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
-			giveitem(ITEM_INFINITE_REPEL)
+			msgbox(format("The {COLOR RED}Portable PC{COLOR DARK_GRAY}!"))
+			setflag(FLAG_SYS_START_MENU_PC_GET)
+			playfanfare(MUS_OBTAIN_ITEM)
+			msgbox(format("{PLAYER} received the {COLOR RED}Portable PC{COLOR DARK_GRAY}!"))
+			waitfanfare
+			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Note that if you are in a Zone, you can only use the Portable PC once before reaching the Sanctuary."))
 		case 2:
 			msgbox(format("The {COLOR RED}DexNav{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
 			setflag(FLAG_SYS_DEXNAV_GET)
@@ -896,10 +900,10 @@ script Sanctuary_EventScript_GameIntro {
 		giveitem(ITEM_POKE_BALL, 15)
 		giveitem(ITEM_POTION, 10)
 		playfanfare(MUS_OBTAIN_ITEM)
-		msgbox(format("Received ¥5000!"), MSGBOX_DEFAULT)
+		msgbox(format("Received {COLOR RED}¥5000{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
 		waitfanfare
 		playfanfare(MUS_OBTAIN_ITEM)
-		msgbox(format("Received the {COLOR RED}Pokédex{COLOR DARK_GRAY}, {COLOR RED}DexNav{COLOR DARK_GRAY}, and {COLOR RED}Portable PC{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+		msgbox(format("Received the {COLOR RED}Pokédex{COLOR DARK_GRAY} and the {COLOR RED}DexNav{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
 		waitfanfare
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Additionally, here are some Key Items to make your life easier."))
 		giveitem(ITEM_NOTEBOOK)
@@ -927,7 +931,6 @@ script EventScript_GameIntro_SetStartingVariablesAndFlags {
 	setflag(FLAG_SYS_PC_LANETTE)
 	setflag(FLAG_AUTORUN_TOGGLE)
 	setflag(FLAG_SYS_DEXNAV_GET)
-	setflag(FLAG_SYS_START_MENU_PC_GET)
 	setvar(VAR_FARM_STOCK, 10)
 	setflag(FLAG_SYS_POKEDEX_GET)
 	setflag(FLAG_SYS_EXP_SHARE)
