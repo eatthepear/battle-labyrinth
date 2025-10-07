@@ -1995,3 +1995,11 @@ script EventScript_TestingLegendBattle {
 	// -->
 	// dowildbattle
 }
+
+script EventScript_AskSaveGame {
+	msgbox(format("Save your game?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		forcesave
+	}
+	return
+}

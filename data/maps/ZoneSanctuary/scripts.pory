@@ -260,14 +260,6 @@ script EventScript_NextZone {
 	switch (var(VAR_ZONE)) {
 		case 1:
 			bufferstring(0, "Zone 1 - Leafway Trail")
-			msgbox(gText_Colress_SureYoureReady, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				call(Sanctuary_EventScript_EnterZone)
-				setvar(VAR_LEVEL_CAP, 1)
-				warp(MAP_ZONE1A, 255, 16, 28)
-				waitstate
-				end
-			}
 		case 2:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 2 - Warren Woods{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
@@ -375,6 +367,32 @@ script EventScript_NextZone {
 				end
 			}
 	}
+	msgbox(gText_Colress_SureYoureReady, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call(EventScript_AskSaveGame)
+		setflag(FLAG_IN_NEW_ZONE)
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Bring out the strength of you and your Pokémon!"), MSGBOX_AUTOCLOSE)
+		applymovement(LOCALID_COLRESS, Common_Movement_WalkUp)
+		waitmovement(0)
+		applymovement(LOCALID_COLRESS, Common_Movement_WalkLeft)
+		waitmovement(0)
+		applymovement(LOCALID_COLRESS, Common_Movement_FaceRight)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Movement_Player_EnterZone)
+		waitmovement(0)
+		copyvar(VAR_LEVEL_CAP, VAR_ZONE)
+		goto(EventScript_WarpNextZone)
+	}
+	return
+}
+
+script EventScript_WarpNextZone {
+	switch (var(VAR_ZONE)) {
+		case 1:
+			warp(MAP_ZONE1A, 255, 16, 28)
+	}
+	waitstate
+	end
 }
 
 text gText_Colress_SureYoureReady {
@@ -803,10 +821,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 	call(EventScript_WhenUReadyDialogue)
 	applymovement(LOCALID_COLRESS, Common_Movement_Colress_WalkUp)
 	waitmovement(0)
-	msgbox(format("Save your game?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		forcesave
-	}
+	call(EventScript_AskSaveGame)
 	releaseall
 	end
 }
