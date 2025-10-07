@@ -104,32 +104,32 @@ Double Battle: No
 Party Size: 3
 
 Patrat
-Level: 5
+Level: 4
 Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Sentret
-Level: 5
+Level: 4
 Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Purrloin
-Level: 5
+Level: 4
 Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Poochyena
-Level: 5
+Level: 4
 Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Caterpie
-Level: 5
+Level: 4
 Tags: Tag8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Scatterbug
-Level: 5
+Level: 4
 Tags: Tag8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -143,32 +143,32 @@ Double Battle: No
 Party Size: 3
 
 Zigzagoon
-Level: 5
+Level: 4
 Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Zigzagoon-Galar
-Level: 5
+Level: 4
 Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Pidove
-Level: 5
+Level: 4
 Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Pikipek
-Level: 5
+Level: 4
 Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Yamper
-Level: 5
+Level: 4
 Tags: Tag8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Shinx
-Level: 5
+Level: 4
 Tags: Tag8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -182,32 +182,32 @@ Double Battle: No
 Party Size: 3
 
 Sunkern
-Level: 5
+Level: 4
 Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Bounsweet
-Level: 5
+Level: 4
 Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Vulpix
-Level: 5
+Level: 4
 Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Slugma
-Level: 5
+Level: 4
 Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Goldeen
-Level: 5
+Level: 4
 Tags: Tag8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Finneon
-Level: 5
+Level: 4
 Tags: Tag8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -255,14 +255,14 @@ Mugshot: Purple
 Party Size: 3
 Difficulty: Brutal
 
-Pansage
+Pansage @ Oran Berry
 Ability: Overgrow
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leafage
 - Scratch
 
-Pansear
+Pansear @ Oran Berry
 Ability: Blaze
 Level: 7
 Tags: Ace
@@ -270,7 +270,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
 - Scratch
 
-Panpour
+Panpour @ Oran Berry
 Ability: Torrent
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -351,21 +351,21 @@ Mugshot: Purple
 Party Size: 3
 Difficulty: Brutal
 
-Pansage
+Pansage @ Oran Berry
 Ability: Overgrow
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leafage
 - Scratch
 
-Pansear
+Pansear @ Oran Berry
 Ability: Blaze
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
 - Scratch
 
-Panpour
+Panpour @ Oran Berry
 Ability: Torrent
 Level: 7
 Tags: Ace
@@ -447,7 +447,7 @@ Mugshot: Purple
 Party Size: 3
 Difficulty: Brutal
 
-Pansage
+Pansage @ Oran Berry
 Ability: Overgrow
 Level: 7
 Tags: Ace
@@ -455,14 +455,14 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leafage
 - Scratch
 
-Pansear
+Pansear @ Oran Berry
 Ability: Blaze
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
 - Scratch
 
-Panpour
+Panpour @ Oran Berry
 Ability: Torrent
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
