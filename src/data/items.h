@@ -11694,14 +11694,14 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_SCORCHING_SANDS] =
+    [ITEM_TM_FALSE_SWIPE] =
     {
         .name = ITEM_NAME("TM54"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Throws scorching\n"
-            "sand at the target.\n"
-            "May leave a burn."),
+            "An attack that\n"
+            "leaves the foe\n"
+            "with at least 1 HP."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11750,14 +11750,14 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_AMNESIA] =
+    [ITEM_TM_SCORCHING_SANDS] =
     {
         .name = ITEM_NAME("TM58"),
         .price = 5000,
         .description = COMPOUND_STRING(
-            "Empties the mind,\n"
-            "sharply raising\n"
-            "Sp. Defense."),
+            "Throws scorching\n"
+            "sand at the target.\n"
+            "May leave a burn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

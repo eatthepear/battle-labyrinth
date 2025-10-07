@@ -55,11 +55,11 @@
     F(ROOST) \
     F(FOCUS_BLAST) \
     F(ENERGY_BALL) \
-    F(SCORCHING_SANDS) \
+    F(FALSE_SWIPE) \
     F(SCALD) \
     F(AGILITY) \
     F(CHARGE_BEAM) \
-    F(AMNESIA) \
+    F(SCORCHING_SANDS) \
     F(DRAGON_PULSE) \
     F(DRAIN_PUNCH) \
     F(WILL_O_WISP) \
