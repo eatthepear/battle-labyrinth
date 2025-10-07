@@ -3005,7 +3005,7 @@ script EventScript_Shop_Lelouch {
 	if (flag(FLAG_LELOUCH_INTRO) == false) {
 		msgbox("{COLOR BLUE}???{COLOR DARK_GRAY}: You… What is your name?\p{COLOR BLUE}???{COLOR DARK_GRAY}: {PLAYER}? Curious…\nThat's a funny name…", MSGBOX_AUTOCLOSE)
 		delay(16)
-		msgbox("{COLOR BLUE}???{COLOR DARK_GRAY}: You may call me Lelouch.\p{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: I provide a variety of\nservices to improve one's Pokémon.\pBut I require special items in exchange for my services.")
+		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: You may call me Lelouch.\p{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: I provide a variety of services to improve one's Pokémon.\pBut I require special items in exchange for my services."))
 		setflag(FLAG_LELOUCH_INTRO)
 	}
 	message("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: For the right price…\nWelcome to Lelouch's Services Stand.")
@@ -3020,6 +3020,7 @@ script EventScript_Shop_Lelouch_Services {
 		dynmultipush("Move Reminder", 0)
 		dynmultipush("Move Tutor", 1)
 		dynmultipush("Move Deleter", 2)
+		dynmultipush("Exit", 3)
 		dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
@@ -3027,7 +3028,7 @@ script EventScript_Shop_Lelouch_Services {
 			case 1:
 				call(EventScript_Shop_Lelouch_Moves)
 			case 2:
-				call(EventScript_Shop_Lelouch_Improvement)
+				call(EventScript_Shop_Lelouch_MoveDeleter)
 			case 3:
 			case MULTI_B_PRESSED:
 				return
@@ -3035,6 +3036,49 @@ script EventScript_Shop_Lelouch_Services {
 		message("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Anything else for you?\nFor the right price…")
 		waitmessage
 	}
+}
+
+script EventScript_Shop_Lelouch_MoveDeleter {
+	msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Would you like me to delete a Pokémon's move?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		return
+	}
+	while {
+		msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Which Pokémon should forget a move?"))
+		special(ChoosePartyMon)
+		waitstate
+		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+			return
+		}
+		special(IsSelectedMonEgg)
+		if (var(VAR_RESULT) == TRUE) {
+			msgbox("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: That is an Egg.")
+			return
+		}
+		special(GetNumMovesSelectedMonHas)
+		if (var(VAR_RESULT) == 1) {
+			special(BufferMoveDeleterNicknameAndMove)
+			msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: {STR_VAR_1} knows only one move so it can't be forgotten…"))
+		}
+		msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Which move should be forgotten?"))
+		fadescreen(FADE_TO_BLACK)
+		special(MoveDeleterChooseMoveToForget)
+		fadescreen(FADE_FROM_BLACK)
+		if (var(VAR_0x8005) == MAX_MON_MOVES) {
+			break
+		}
+		special(BufferMoveDeleterNicknameAndMove)
+		msgbox(format("Hm! {STR_VAR_1}'s {STR_VAR_2}? That move should be forgotten?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			return
+		}
+		special(MoveDeleterForgetMove)
+		playfanfare(MUS_MOVE_DELETED)
+		waitfanfare
+		msgbox(format("It worked to perfection!\p{STR_VAR_1} has forgotten {STR_VAR_2} completely."))
+		break
+	}
+	return
 }
 
 text gText_Lelouch_NotEnoughColor {
@@ -3312,7 +3356,7 @@ script EventScript_Shop_Lelouch_MoveReminder {
 		msgbox("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Which Pokémon should\nrelearn a move?", MSGBOX_DEFAULT)
 		special(ChooseMonForMoveRelearner)
 		waitstate
-		if (var(VAR_0x8004) == 255) {
+		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 			return
 		}
 		special(IsSelectedMonEgg)
