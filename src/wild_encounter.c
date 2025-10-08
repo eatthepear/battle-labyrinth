@@ -998,7 +998,7 @@ bool8 SweetScentWildEncounter(void)
                 TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo, WILD_AREA_LAND, 0);
 
             struct Pokemon mon1 = gEnemyParty[0];
-            TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_KEEN_EYE);
+            TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo, WILD_AREA_LAND, 0);
             gEnemyParty[1] = mon1;
             BattleSetup_StartDoubleWildBattle();
             return TRUE;
@@ -1020,7 +1020,7 @@ bool8 SweetScentWildEncounter(void)
 
             TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo, WILD_AREA_WATER, 0);
             struct Pokemon mon1 = gEnemyParty[0];
-            TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo, WILD_AREA_WATER, WILD_CHECK_KEEN_EYE);
+            TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo, WILD_AREA_WATER, 0);
             gEnemyParty[1] = mon1;
             BattleSetup_StartDoubleWildBattle();
             return TRUE;
@@ -1357,19 +1357,9 @@ void HeadbuttWildEncounter(void)
     {
         enum TimeOfDay timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
 
-        if ((WildEncounterCheck(30, 1) == TRUE) && (TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo, WILD_AREA_HIDDEN, 0) == TRUE))
+        if (TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo, WILD_AREA_HIDDEN, 0) == TRUE)
         {
-            if (FlagGet(FLAG_TEMP_1))
-            {
-                struct Pokemon mon1 = gEnemyParty[0];
-                TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_KEEN_EYE);
-                gEnemyParty[1] = mon1;
-                BattleSetup_StartDoubleWildBattle();
-            }
-            else
-            {
-                BattleSetup_StartWildBattle();
-            }
+            BattleSetup_StartWildBattle();
             gSpecialVar_Result = TRUE;
             return;
         }
