@@ -852,9 +852,10 @@ script EventScript_Notebook_Items {
 		dynmultipush("Infinite Repel", 1)
 		dynmultipush("TMs", 2)
 		dynmultipush("Mints", 3)
-		dynmultipush("Ability Snack", 4)
-		dynmultipush("Hex Orb", 5)
-		dynmultipush("Back", 6)
+		dynmultipush("Heart Scale", 4)
+		dynmultipush("Ability Snack", 5)
+		dynmultipush("Hex Orb", 6)
+		dynmultipush("Back", 7)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
@@ -866,10 +867,12 @@ script EventScript_Notebook_Items {
 			case 3:
 				msgbox(format("Mints cost reduced to ¥80."))
 			case 4:
-				msgbox(format("The Ability Snack costs ¥80 and functions the same as an Ability Capsule."))
+				msgbox(format("Heart Scale cost increased to ¥1000."))
 			case 5:
-				msgbox(format("The Hex Orb Key Item lets you pre-status Pokémon."))
+				msgbox(format("The Ability Snack costs ¥80 and functions the same as an Ability Capsule."))
 			case 6:
+				msgbox(format("The Hex Orb Key Item lets you pre-status Pokémon."))
+			case 7:
 			case MULTI_B_PRESSED:
 				return
 		}
