@@ -3018,75 +3018,27 @@ script EventScript_Shop_Lelouch {
 script EventScript_Shop_Lelouch_Services {
 	while {
 		dynmultipush("Move Reminder", 0)
-		dynmultipush("Move Tutor", 1)
-		dynmultipush("Move Deleter", 2)
+		if (var(VAR_ZONE) > 5) {
+			dynmultipush("Move Tutor", 1)
+		}
 		dynmultipush("Exit", 3)
 		dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
 				call(EventScript_Shop_Lelouch_MoveReminder)
 			case 1:
-				call(EventScript_Shop_Lelouch_Moves)
-			case 2:
-				call(EventScript_Shop_Lelouch_MoveDeleter)
+				call(EventScript_Shop_Lelouch_MoveTutor)
 			case 3:
 			case MULTI_B_PRESSED:
 				return
 		}
-		message("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Anything else for you?\nFor the right price…")
+		message("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Anything else for you?")
 		waitmessage
 	}
 }
 
-script EventScript_Shop_Lelouch_MoveDeleter {
-	msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Would you like me to delete a Pokémon's move?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		return
-	}
-	while {
-		msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Which Pokémon should forget a move?"))
-		special(ChoosePartyMon)
-		waitstate
-		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
-			return
-		}
-		special(IsSelectedMonEgg)
-		if (var(VAR_RESULT) == TRUE) {
-			msgbox("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: That is an Egg.")
-			return
-		}
-		special(GetNumMovesSelectedMonHas)
-		if (var(VAR_RESULT) == 1) {
-			special(BufferMoveDeleterNicknameAndMove)
-			msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: {STR_VAR_1} knows only one move so it can't be forgotten…"))
-		}
-		msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Which move should be forgotten?"))
-		fadescreen(FADE_TO_BLACK)
-		special(MoveDeleterChooseMoveToForget)
-		fadescreen(FADE_FROM_BLACK)
-		if (var(VAR_0x8005) == MAX_MON_MOVES) {
-			break
-		}
-		special(BufferMoveDeleterNicknameAndMove)
-		msgbox(format("Hm! {STR_VAR_1}'s {STR_VAR_2}? That move should be forgotten?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			return
-		}
-		special(MoveDeleterForgetMove)
-		playfanfare(MUS_MOVE_DELETED)
-		waitfanfare
-		msgbox(format("It worked to perfection!\p{STR_VAR_1} has forgotten {STR_VAR_2} completely."))
-		break
-	}
-	return
-}
-
 text gText_Lelouch_NotEnoughColor {
 	"{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: You don't have any Shards\nof that color."
-}
-
-text gText_Lelouch_Leave {
-	"{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Farewell."
 }
 
 script EventScript_Shop_Lelouch_Training {
@@ -3323,25 +3275,6 @@ text gText_Lelouch_ChangedEVs {
 	format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: I've changed your {STR_VAR_1}'s EVs to your requested values.")
 }
 
-script EventScript_Shop_Lelouch_Moves {
-	checkitem(ITEM_BLUE_SHARD, 1)
-	if (var(VAR_RESULT) == FALSE) {
-		msgbox(gText_Lelouch_NotEnoughColor)
-		return
-	}
-	msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Choose which kind of moves you want to teach."), MSGBOX_DEFAULT)
-	dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Move Reminder", "Move Tutor", "Exit")
-	switch(var(VAR_RESULT)) {
-		case 0:
-			call(EventScript_Shop_Lelouch_MoveReminder)
-		case 1:
-			call(EventScript_Shop_Lelouch_MoveTutor)
-		case 2:
-		case MULTI_B_PRESSED:
-			return
-	}
-}
-
 script EventScript_Shop_Lelouch_MoveReminder {
 	msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Move Reminder services cost one Heart Scale.\pWould you like me to teach a forgotten move to your Pokémon?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
@@ -3392,14 +3325,14 @@ script EventScript_Shop_Lelouch_Improvement {
 
 script EventScript_Shop_Lelouch_MoveTutor {
 	while {
-		msgbox(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Move Tutor services cost Blue Shards. Which move would you like to tutor?"), MSGBOX_DEFAULT)
+		message(format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Which move should I teach?"))
+		waitmessage
+		dynmultipush("Helping Hand", MOVE_HELPING_HAND)
 		if (var(VAR_ZONE) > 10) {
-			dynmultipush("Venoshock", 0)
 			dynmultipush("Electroweb", 1)
 			dynmultipush("Icy Wind", 2)
 			dynmultipush("Low Kick", 3)
 			dynmultipush("Heal Bell", 4)
-			dynmultipush("Helping Hand", 5)
 			dynmultipush("Synthesis", 6)
 			dynmultipush("Pain Split", 7)
 			dynmultipush("Defog", 8)
@@ -3432,9 +3365,9 @@ script EventScript_Shop_Lelouch_MoveTutor {
 		dynmultipush("Exit", 50)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
-			case 0:
-				setvar(VAR_TEMP_0, MOVE_VENOSHOCK)
-				setvar(VAR_0x8005, MOVE_VENOSHOCK)
+			case MOVE_HELPING_HAND:
+				setvar(VAR_TEMP_0, MOVE_HELPING_HAND)
+				setvar(VAR_0x8005, MOVE_HELPING_HAND)
 			case 1:
 				setvar(VAR_TEMP_0, MOVE_ELECTROWEB)
 				setvar(VAR_0x8005, MOVE_ELECTROWEB)
@@ -3542,7 +3475,7 @@ script EventScript_Shop_Lelouch_MoveTutor {
 				return
 		}
 		buffermovename(0, VAR_TEMP_0)
-		msgbox("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: You want to teach the move\n{STR_VAR_1}?", MSGBOX_YESNO)
+		msgbox("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: You want me to teach the move\n{STR_VAR_1}?", MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			continue
 		}
@@ -3558,7 +3491,6 @@ script EventScript_Shop_Lelouch_MoveTutor {
 		removeitem(ITEM_BLUE_SHARD)
 		return
 	}
-
 }
 
 script EventScript_Shop_Lelouch_Other {

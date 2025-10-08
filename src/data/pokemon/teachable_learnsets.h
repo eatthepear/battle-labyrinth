@@ -114,6 +114,7 @@
 // - MOVE_FIRE_FANG                                    //
 // - MOVE_HEAL_BELL                                    //
 // - MOVE_HELPING_HAND                                 //
+// - MOVE_HELPING_HAND                                 //
 // - MOVE_ICE_FANG                                     //
 // - MOVE_ICY_WIND                                     //
 // - MOVE_LOW_KICK                                     //
@@ -125,7 +126,6 @@
 // - MOVE_SYNTHESIS                                    //
 // - MOVE_THUNDER_FANG                                 //
 // - MOVE_TRICK                                        //
-// - MOVE_VENOSHOCK                                    //
 // *************************************************** //
 // Near-universal moves found from sUniversalMoves:    //
 // - MOVE_HIDDEN_POWER                                 //
