@@ -1259,6 +1259,7 @@ script EventScript_Shop_FarmersStand {
 		waitmessage
 		dynmultipush("Shop Info", 0)
 		dynmultipush("Ability Snack", 9)
+		dynmultipush("Honey", 51)
 		dynmultipush("Oran Berry", 2)
 		dynmultipush("Cheri Berry", 3)
 		dynmultipush("Chesto Berry", 4)
@@ -1495,6 +1496,9 @@ script EventScript_Shop_FarmersStand {
 				call(EventScript_Shop_FarmersStand_BuyItem)
 			case 50:
 				setvar(VAR_TEMP_0, ITEM_NAIVE_MINT)
+				call(EventScript_Shop_FarmersStand_BuyItem)
+			case 51:
+				setvar(VAR_TEMP_0, ITEM_HONEY)
 				call(EventScript_Shop_FarmersStand_BuyItem)
 		}
 	}

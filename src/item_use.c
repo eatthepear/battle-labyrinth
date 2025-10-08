@@ -44,6 +44,7 @@
 #include "task.h"
 #include "text.h"
 #include "vs_seeker.h"
+#include "wild_encounter.h"
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
 #include "constants/item_effects.h"
@@ -1511,12 +1512,35 @@ static void ItemUseOnFieldCB_Honey(u8 taskId)
     DisplayItemMessageOnField(taskId, gStringVar4, Task_UseHoneyOnField);
 }
 
+static bool32 CanUseHoney()
+{
+    s16 x, y;
+    u16 tileBehavior;
+
+    PlayerGetDestCoords(&x, &y);
+    tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+    if (!MetatileBehavior_IsEncounterTile(tileBehavior))
+        return FALSE;
+
+    if (GetCurrentMapWildMonHeaderId() == HEADER_NONE)
+        return FALSE;
+
+    return TRUE;
+}
+
 void ItemUseOutOfBattle_Honey(u8 taskId)
 {
-    sItemUseOnFieldCB = ItemUseOnFieldCB_Honey;
-    gFieldCallback = FieldCB_UseItemOnField;
-    gBagMenu->newScreenCallback = CB2_ReturnToField;
-    Task_FadeAndCloseBagMenu(taskId);
+    if (CanUseHoney() == TRUE)
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_Honey;
+        gFieldCallback = FieldCB_UseItemOnField;
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else
+    {
+        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+    }
 }
 
 void ItemUseOutOfBattle_CannotUse(u8 taskId)
