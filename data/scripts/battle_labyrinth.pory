@@ -397,6 +397,12 @@ script EventScript_ShakeTree {
 		releaseall
 		end
 	}
+	if (checkitem(ITEM_HONEY) == TRUE) {
+		msgbox(format("Would you like to slather the bark with Honey first?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			setflag(FLAG_TEMP_1)
+		}
+	}
 	msgbox(format("{PLAYER} shook the tree!"), MSGBOX_DEFAULT)
 	closemessage
 	setvar(VAR_0x8004, 1)
@@ -410,6 +416,9 @@ script EventScript_ShakeTree {
 	special(HeadbuttWildEncounter)
 	if (var(VAR_RESULT) == TRUE) {
 		waitstate
+		if (flag(FLAG_TEMP_1)) {
+			removeitem(ITEM_HONEY)
+		}
 	} elif (var(VAR_DIFFICULTY) == DIFFICULTY_EASY) {
 		random(70) // 30% headbutt encounter, so remaining 70%
 		switch(var(VAR_RESULT)) {
@@ -476,6 +485,7 @@ script EventScript_ShakeTree {
 				}
 		}
 	}
+	clearflag(FLAG_TEMP_1)
 	releaseall
 	end
 }
@@ -866,7 +876,7 @@ script EventScript_Notebook_Items {
 			case 2:
 				msgbox(format("TMs can be used infinitely, but don't restore PP."))
 			case 3:
-				msgbox(format("Honey cost reduced to ¥80, and starts a wild Double Battle if on a map and tile that can have wild Pokémon."))
+				msgbox(format("Honey cost reduced to ¥80, and starts a wild Double Battle if on a map and tile that can have wild Pokémon.\pYou can also slather it on a Golden Tree for the same effect."))
 			case 4:
 				msgbox(format("The Ability Snack costs ¥80 and functions the same as an Ability Capsule."))
 			case 5:
@@ -889,8 +899,9 @@ script EventScript_Notebook_Other {
 		dynmultipush("Wild Encounters", 0)
 		dynmultipush("Trainers", 1)
 		dynmultipush("DexNav", 2)
-		dynmultipush("Day/Night", 3)
-		dynmultipush("Back", 4)
+		dynmultipush("Golden Tree", 3)
+		dynmultipush("Day/Night", 4)
+		dynmultipush("Back", 5)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
@@ -900,8 +911,10 @@ script EventScript_Notebook_Other {
 			case 2:
 				msgbox(format("The DexNav displays all wild Pokémon available in a Zone. Pokémon in the Hidden category are found through shaking Golden Trees, smashing rocks, etc.\pWild Pokémon do not flee when using the DexNav's search function.\pThe DexNav cannot chain Pokémon, and all Pokémon found through the DexNav are the same as ordinary wild Pokémon."))
 			case 3:
-				msgbox(format("There is no day/night cycle."))
+				msgbox(format("Golden Trees can be shaken, which will sometimes result in a wild Pokémon!"))
 			case 4:
+				msgbox(format("There is no day/night cycle."))
+			case 5:
 			case MULTI_B_PRESSED:
 				return
 		}

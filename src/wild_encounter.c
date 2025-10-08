@@ -1359,7 +1359,17 @@ void HeadbuttWildEncounter(void)
 
         if ((WildEncounterCheck(30, 1) == TRUE) && (TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo, WILD_AREA_HIDDEN, 0) == TRUE))
         {
-            BattleSetup_StartWildBattle();
+            if (FlagGet(FLAG_TEMP_1))
+            {
+                struct Pokemon mon1 = gEnemyParty[0];
+                TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_KEEN_EYE);
+                gEnemyParty[1] = mon1;
+                BattleSetup_StartDoubleWildBattle();
+            }
+            else
+            {
+                BattleSetup_StartWildBattle();
+            }
             gSpecialVar_Result = TRUE;
             return;
         }

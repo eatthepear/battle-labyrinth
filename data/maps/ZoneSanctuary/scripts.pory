@@ -3726,3 +3726,10 @@ script EventScript_Magnemite {
 	release
 	end
 }
+
+script ZoneSanctuary_EventScript_SchoolKidF {
+	lock
+	faceplayer
+	msgbox(format("Did you know? Honey can be used to start wild Double Battles in the field!\pYou can also slather some on a Golden Tree to start a Double Battle there!"))
+	release
+}
