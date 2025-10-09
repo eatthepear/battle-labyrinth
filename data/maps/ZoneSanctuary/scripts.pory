@@ -1244,10 +1244,12 @@ script EventScript_Shop_Cowgirl {
 		call(EventScript_Shop_FarmersStand_Info)
 		setflag(FLAG_COWGIRL_INTRO)
 	}
-	showmoneybox(0, 0)
+	call(Sanctuary_EventScript_MoveCameraUp)
+	showmoneybox(18, 0)
 	call(EventScript_Shop_FarmersStand)
 	hidemoneybox
-	msgbox(format("So long, partner!"))
+	msgbox(format("So long, partner!"), MSGBOX_AUTOCLOSE)
+	call(Sanctuary_EventScript_MoveCameraDown)
 	release
 	end
 }
@@ -1258,258 +1260,249 @@ script EventScript_Shop_FarmersStand {
 		message("Howdy! Welcome to the Farmer's Stand.\nYou can buy up to {STR_VAR_1} items.")
 		waitmessage
 		dynmultipush("Shop Info", 0)
-		dynmultipush("Ability Snack", 9)
-		dynmultipush("Honey", 51)
-		dynmultipush("Oran Berry", 2)
-		dynmultipush("Cheri Berry", 3)
-		dynmultipush("Chesto Berry", 4)
-		dynmultipush("Pecha Berry", 5)
-		dynmultipush("Rawst Berry", 6)
-		dynmultipush("Aspear Berry", 7)
-		dynmultipush("Persim Berry", 8)
+		dynmultipush("Ability Snack", ITEM_ABILITY_SNACK)
+		dynmultipush("Honey", ITEM_HONEY)
+		dynmultipush("Oran Berry", ITEM_ORAN_BERRY)
+		dynmultipush("Cheri Berry", ITEM_CHERI_BERRY)
+		dynmultipush("Chesto Berry", ITEM_CHESTO_BERRY)
+		dynmultipush("Pecha Berry", ITEM_PECHA_BERRY)
+		dynmultipush("Rawst Berry", ITEM_RAWST_BERRY)
+		dynmultipush("Aspear Berry", ITEM_ASPEAR_BERRY)
+		dynmultipush("Persim Berry", ITEM_PERSIM_BERRY)
 		if (var(VAR_ZONE) > 5) {
-			dynmultipush("Sitrus Berry", 11)
+			dynmultipush("Sitrus Berry", ITEM_SITRUS_BERRY)
 		}
 		if (var(VAR_ZONE) > 30) {
-			dynmultipush("Occa Berry", 12)
-			dynmultipush("Passho Berry", 13)
-			dynmultipush("Wacan Berry", 14)
-			dynmultipush("Rindo Berry", 15)
-			dynmultipush("Yache Berry", 16)
-			dynmultipush("Chope Berry", 17)
-			dynmultipush("Kebia Berry", 18)
-			dynmultipush("Shuca Berry", 19)
-			dynmultipush("Coba Berry", 20)
-			dynmultipush("Payapa Berry", 21)
-			dynmultipush("Tanga Berry", 22)
-			dynmultipush("Charti Berry", 23)
-			dynmultipush("Kasib Berry", 24)
-			dynmultipush("Haban Berry", 25)
-			dynmultipush("Colbur Berry", 26)
-			dynmultipush("Babiri Berry", 27)
-			dynmultipush("Chilan Berry", 28)
-			dynmultipush("Roseli Berry", 29)
+			dynmultipush("Occa Berry", ITEM_OCCA_BERRY)
+			dynmultipush("Passho Berry", ITEM_PASSHO_BERRY)
+			dynmultipush("Wacan Berry", ITEM_WACAN_BERRY)
+			dynmultipush("Rindo Berry", ITEM_RINDO_BERRY)
+			dynmultipush("Yache Berry", ITEM_YACHE_BERRY)
+			dynmultipush("Chople Berry", ITEM_CHOPLE_BERRY)
+			dynmultipush("Kebia Berry", ITEM_KEBIA_BERRY)
+			dynmultipush("Shuca Berry", ITEM_SHUCA_BERRY)
+			dynmultipush("Coba Berry", ITEM_COBA_BERRY)
+			dynmultipush("Payapa Berry", ITEM_PAYAPA_BERRY)
+			dynmultipush("Tanga Berry", ITEM_TANGA_BERRY)
+			dynmultipush("Charti Berry", ITEM_CHARTI_BERRY)
+			dynmultipush("Kasib Berry", ITEM_KASIB_BERRY)
+			dynmultipush("Haban Berry", ITEM_HABAN_BERRY)
+			dynmultipush("Colbur Berry", ITEM_COLBUR_BERRY)
+			dynmultipush("Babiri Berry", ITEM_BABIRI_BERRY)
+			dynmultipush("Chilan Berry", ITEM_CHILAN_BERRY)
+			dynmultipush("Roseli Berry", ITEM_ROSELI_BERRY)
 		}
 		if (var(VAR_ZONE) > 25) {
-			dynmultipush("Lum Berry", 30)
+			dynmultipush("Lum Berry", ITEM_LUM_BERRY)
 		}
-		dynmultipush("Serious Mint", 10)
+		dynmultipush("Serious Mint", ITEM_SERIOUS_MINT)
 		if (var(VAR_ZONE) > 10) {
-			dynmultipush("Gentle Mint", 44)
-			dynmultipush("Lax Mint", 37)
+			dynmultipush("Gentle Mint", ITEM_GENTLE_MINT)
+			dynmultipush("Lax Mint", ITEM_LAX_MINT)
 		}
 		if (var(VAR_ZONE) > 15) {
-			dynmultipush("Relaxed Mint", 38)
-			dynmultipush("Sassy Mint", 46)
+			dynmultipush("Relaxed Mint", ITEM_RELAXED_MINT)
+			dynmultipush("Sassy Mint", ITEM_SASSY_MINT)
 		}
 		if (var(VAR_ZONE) > 20) {
-			dynmultipush("Bold Mint", 35)
-			dynmultipush("Impish Mint", 36)
-			dynmultipush("Calm Mint", 43)
-			dynmultipush("Careful Mint", 45)
-			dynmultipush("Quiet Mint", 42)
-			dynmultipush("Brave Mint", 34)
+			dynmultipush("Bold Mint", ITEM_BOLD_MINT)
+			dynmultipush("Impish Mint", ITEM_IMPISH_MINT)
+			dynmultipush("Calm Mint", ITEM_CALM_MINT)
+			dynmultipush("Careful Mint", ITEM_CAREFUL_MINT)
+			dynmultipush("Quiet Mint", ITEM_QUIET_MINT)
+			dynmultipush("Brave Mint", ITEM_BRAVE_MINT)
 		}
 		if (var(VAR_ZONE) > 35) {
-			dynmultipush("Lonely Mint", 31)
-			dynmultipush("Adamant Mint", 32)
-			dynmultipush("Naughty Mint", 33)
-			dynmultipush("Modest Mint", 39)
-			dynmultipush("Mild Mint", 40)
-			dynmultipush("Rash Mint", 41)
-			dynmultipush("Timid Mint", 47)
-			dynmultipush("Hasty Mint", 48)
-			dynmultipush("Jolly Mint", 49)
-			dynmultipush("Naive Mint", 50)
+			dynmultipush("Lonely Mint", ITEM_LONELY_MINT)
+			dynmultipush("Adamant Mint", ITEM_ADAMANT_MINT)
+			dynmultipush("Naughty Mint", ITEM_NAUGHTY_MINT)
+			dynmultipush("Modest Mint", ITEM_MODEST_MINT)
+			dynmultipush("Mild Mint", ITEM_MILD_MINT)
+			dynmultipush("Rash Mint", ITEM_RASH_MINT)
+			dynmultipush("Timid Mint", ITEM_TIMID_MINT)
+			dynmultipush("Hasty Mint", ITEM_HASTY_MINT)
+			dynmultipush("Jolly Mint", ITEM_JOLLY_MINT)
+			dynmultipush("Naive Mint", ITEM_NAIVE_MINT)
 		}
-		#define ITEM_FIGY_BERRY 524
-		#define ITEM_WIKI_BERRY 525
-		#define ITEM_MAGO_BERRY 526
-		#define ITEM_AGUAV_BERRY 527
-		#define ITEM_IAPAPA_BERRY 528
-
-		#define ITEM_LIECHI_BERRY 567
-		#define ITEM_GANLON_BERRY 568
-		#define ITEM_SALAC_BERRY 569
-		#define ITEM_PETAYA_BERRY 570
-		#define ITEM_APICOT_BERRY 571
-		#define ITEM_LANSAT_BERRY 572
-		#define ITEM_STARF_BERRY 573
-		#define ITEM_ENIGMA_BERRY 574
-		#define ITEM_MICLE_BERRY 575
-		#define ITEM_CUSTAP_BERRY 576
-		#define ITEM_JABOCA_BERRY 577
-		#define ITEM_ROWAP_BERRY 578
-		#define ITEM_KEE_BERRY 579
-		#define ITEM_MARANGA_BERRY 580
-		dynmultipush("Exit", 1)
-		dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+		if (var(VAR_ZONE) > 40) {
+			dynmultipush("Figy Berry", ITEM_FIGY_BERRY)
+			dynmultipush("Wiki Berry", ITEM_WIKI_BERRY)
+			dynmultipush("Mago Berry", ITEM_MAGO_BERRY)
+			dynmultipush("Aguav Berry", ITEM_AGUAV_BERRY)
+			dynmultipush("Iapapa Berry", ITEM_IAPAPA_BERRY)
+			dynmultipush("Liechi Berry", ITEM_LIECHI_BERRY)
+			dynmultipush("Ganlon Berry", ITEM_GANLON_BERRY)
+			dynmultipush("Salac Berry", ITEM_SALAC_BERRY)
+			dynmultipush("Petaya Berry", ITEM_PETAYA_BERRY)
+			dynmultipush("Apicot Berry", ITEM_APICOT_BERRY)
+			dynmultipush("Lansat Berry", ITEM_LANSAT_BERRY)
+			dynmultipush("Starf Berry", ITEM_STARF_BERRY)
+			dynmultipush("Enigma Berry", ITEM_ENIGMA_BERRY)
+			dynmultipush("Micle Berry", ITEM_MICLE_BERRY)
+			dynmultipush("Custap Berry", ITEM_CUSTAP_BERRY)
+			dynmultipush("Jaboca Berry", ITEM_JABOCA_BERRY)
+			dynmultipush("Rowap Berry", ITEM_ROWAP_BERRY)
+			// dynmultipush("Kee Berry", ITEM_KEE_BERRY)
+			// dynmultipush("Maranga Berry", ITEM_MARANGA_BERRY)
+		}
+		dynmultipush("Exit", 1000)
+		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
 		switch (var(VAR_RESULT)) {
 			case 0:
 				call(EventScript_Shop_FarmersStand_Info)
-			case 1:
+				setvar(VAR_TEMP_0, ITEM_NONE)
+			case 1000:
 			case MULTI_B_PRESSED:
 				return
-			case 2:
+			case ITEM_ORAN_BERRY:
 				setvar(VAR_TEMP_0, ITEM_ORAN_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 3:
+			case ITEM_CHERI_BERRY:
 				setvar(VAR_TEMP_0, ITEM_CHERI_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 4:
+			case ITEM_CHESTO_BERRY:
 				setvar(VAR_TEMP_0, ITEM_CHESTO_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 5:
+			case ITEM_PECHA_BERRY:
 				setvar(VAR_TEMP_0, ITEM_PECHA_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 6:
+			case ITEM_RAWST_BERRY:
 				setvar(VAR_TEMP_0, ITEM_RAWST_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 7:
+			case ITEM_ASPEAR_BERRY:
 				setvar(VAR_TEMP_0, ITEM_ASPEAR_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 8:
+			case ITEM_PERSIM_BERRY:
 				setvar(VAR_TEMP_0, ITEM_PERSIM_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 9:
+			case ITEM_ABILITY_SNACK:
 				setvar(VAR_TEMP_0, ITEM_ABILITY_SNACK)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 10:
+			case ITEM_SERIOUS_MINT:
 				setvar(VAR_TEMP_0, ITEM_SERIOUS_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 11:
+			case ITEM_SITRUS_BERRY:
 				setvar(VAR_TEMP_0, ITEM_SITRUS_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 12:
+			case ITEM_OCCA_BERRY:
 				setvar(VAR_TEMP_0, ITEM_OCCA_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 13:
+			case ITEM_PASSHO_BERRY:
 				setvar(VAR_TEMP_0, ITEM_PASSHO_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 14:
+			case ITEM_WACAN_BERRY:
 				setvar(VAR_TEMP_0, ITEM_WACAN_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 15:
+			case ITEM_RINDO_BERRY:
 				setvar(VAR_TEMP_0, ITEM_RINDO_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 16:
+			case ITEM_YACHE_BERRY:
 				setvar(VAR_TEMP_0, ITEM_YACHE_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 17:
+			case ITEM_CHOPLE_BERRY:
 				setvar(VAR_TEMP_0, ITEM_CHOPLE_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 18:
+			case ITEM_KEBIA_BERRY:
 				setvar(VAR_TEMP_0, ITEM_KEBIA_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 19:
+			case ITEM_SHUCA_BERRY:
 				setvar(VAR_TEMP_0, ITEM_SHUCA_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 20:
+			case ITEM_COBA_BERRY:
 				setvar(VAR_TEMP_0, ITEM_COBA_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 21:
+			case ITEM_PAYAPA_BERRY:
 				setvar(VAR_TEMP_0, ITEM_PAYAPA_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 22:
+			case ITEM_TANGA_BERRY:
 				setvar(VAR_TEMP_0, ITEM_TANGA_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 23:
+			case ITEM_CHARTI_BERRY:
 				setvar(VAR_TEMP_0, ITEM_CHARTI_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 24:
+			case ITEM_KASIB_BERRY:
 				setvar(VAR_TEMP_0, ITEM_KASIB_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 25:
+			case ITEM_HABAN_BERRY:
 				setvar(VAR_TEMP_0, ITEM_HABAN_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 26:
+			case ITEM_COLBUR_BERRY:
 				setvar(VAR_TEMP_0, ITEM_COLBUR_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 27:
+			case ITEM_BABIRI_BERRY:
 				setvar(VAR_TEMP_0, ITEM_BABIRI_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 28:
+			case ITEM_CHILAN_BERRY:
 				setvar(VAR_TEMP_0, ITEM_CHILAN_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 29:
+			case ITEM_ROSELI_BERRY:
 				setvar(VAR_TEMP_0, ITEM_ROSELI_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 30:
+			case ITEM_LUM_BERRY:
 				setvar(VAR_TEMP_0, ITEM_LUM_BERRY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 31:
+			case ITEM_LONELY_MINT:
 				setvar(VAR_TEMP_0, ITEM_LONELY_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 32:
+			case ITEM_ADAMANT_MINT:
 				setvar(VAR_TEMP_0, ITEM_ADAMANT_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 33:
+			case ITEM_NAUGHTY_MINT:
 				setvar(VAR_TEMP_0, ITEM_NAUGHTY_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 34:
+			case ITEM_BRAVE_MINT:
 				setvar(VAR_TEMP_0, ITEM_BRAVE_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 35:
+			case ITEM_BOLD_MINT:
 				setvar(VAR_TEMP_0, ITEM_BOLD_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 36:
+			case ITEM_IMPISH_MINT:
 				setvar(VAR_TEMP_0, ITEM_IMPISH_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 37:
+			case ITEM_LAX_MINT:
 				setvar(VAR_TEMP_0, ITEM_LAX_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 38:
+			case ITEM_RELAXED_MINT:
 				setvar(VAR_TEMP_0, ITEM_RELAXED_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 39:
+			case ITEM_MODEST_MINT:
 				setvar(VAR_TEMP_0, ITEM_MODEST_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 40:
+			case ITEM_MILD_MINT:
 				setvar(VAR_TEMP_0, ITEM_MILD_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 41:
+			case ITEM_RASH_MINT:
 				setvar(VAR_TEMP_0, ITEM_RASH_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 42:
+			case ITEM_QUIET_MINT:
 				setvar(VAR_TEMP_0, ITEM_QUIET_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 43:
+			case ITEM_CALM_MINT:
 				setvar(VAR_TEMP_0, ITEM_CALM_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 44:
+			case ITEM_GENTLE_MINT:
 				setvar(VAR_TEMP_0, ITEM_GENTLE_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 45:
+			case ITEM_CAREFUL_MINT:
 				setvar(VAR_TEMP_0, ITEM_CAREFUL_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 46:
+			case ITEM_SASSY_MINT:
 				setvar(VAR_TEMP_0, ITEM_SASSY_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 47:
+			case ITEM_TIMID_MINT:
 				setvar(VAR_TEMP_0, ITEM_TIMID_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 48:
+			case ITEM_HASTY_MINT:
 				setvar(VAR_TEMP_0, ITEM_HASTY_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 49:
+			case ITEM_JOLLY_MINT:
 				setvar(VAR_TEMP_0, ITEM_JOLLY_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 50:
+			case ITEM_NAIVE_MINT:
 				setvar(VAR_TEMP_0, ITEM_NAIVE_MINT)
-				call(EventScript_Shop_FarmersStand_BuyItem)
-			case 51:
+			case ITEM_HONEY:
 				setvar(VAR_TEMP_0, ITEM_HONEY)
-				call(EventScript_Shop_FarmersStand_BuyItem)
+			case ITEM_FIGY_BERRY:
+				setvar(VAR_TEMP_0, ITEM_FIGY_BERRY)
+			case ITEM_WIKI_BERRY:
+				setvar(VAR_TEMP_0, ITEM_WIKI_BERRY)
+			case ITEM_MAGO_BERRY:
+				setvar(VAR_TEMP_0, ITEM_MAGO_BERRY)
+			case ITEM_AGUAV_BERRY:
+				setvar(VAR_TEMP_0, ITEM_AGUAV_BERRY)
+			case ITEM_IAPAPA_BERRY:
+				setvar(VAR_TEMP_0, ITEM_IAPAPA_BERRY)
+			case ITEM_LIECHI_BERRY:
+				setvar(VAR_TEMP_0, ITEM_LIECHI_BERRY)
+			case ITEM_GANLON_BERRY:
+				setvar(VAR_TEMP_0, ITEM_GANLON_BERRY)
+			case ITEM_SALAC_BERRY:
+				setvar(VAR_TEMP_0, ITEM_SALAC_BERRY)
+			case ITEM_PETAYA_BERRY:
+				setvar(VAR_TEMP_0, ITEM_PETAYA_BERRY)
+			case ITEM_APICOT_BERRY:
+				setvar(VAR_TEMP_0, ITEM_APICOT_BERRY)
+			case ITEM_LANSAT_BERRY:
+				setvar(VAR_TEMP_0, ITEM_LANSAT_BERRY)
+			case ITEM_STARF_BERRY:
+				setvar(VAR_TEMP_0, ITEM_STARF_BERRY)
+			case ITEM_ENIGMA_BERRY:
+				setvar(VAR_TEMP_0, ITEM_ENIGMA_BERRY)
+			case ITEM_MICLE_BERRY:
+				setvar(VAR_TEMP_0, ITEM_MICLE_BERRY)
+			case ITEM_CUSTAP_BERRY:
+				setvar(VAR_TEMP_0, ITEM_CUSTAP_BERRY)
+			case ITEM_JABOCA_BERRY:
+				setvar(VAR_TEMP_0, ITEM_JABOCA_BERRY)
+			case ITEM_ROWAP_BERRY:
+				setvar(VAR_TEMP_0, ITEM_ROWAP_BERRY)
+			case ITEM_KEE_BERRY:
+				setvar(VAR_TEMP_0, ITEM_KEE_BERRY)
+			case ITEM_MARANGA_BERRY:
+				setvar(VAR_TEMP_0, ITEM_MARANGA_BERRY)
 		}
+		call(EventScript_Shop_FarmersStand_BuyItem)
 	}
 }
 
 script EventScript_Shop_FarmersStand_Info {
 	buffernumberstring(0, VAR_FARM_STOCK)
-	msgbox(Text_Shop_Herbal_Info)
+	msgbox(Text_Shop_FarmersStand_Info)
 }
 
-text Text_Shop_Herbal_Info {
+text Text_Shop_FarmersStand_Info {
 	"We sell freshly grown or baked goods,\nall organically sourced, and it's\lsubsidized, so everything is dirt cheap!\p"
 	"We do have a per-customer limit on how\nmany items you can buy, as our stock of\litems is limited.\p"
 	"Currently, you can buy up to {STR_VAR_1} items,\nthough the limit will reset when we\lrestock our supply. (every 5th Zone)"
@@ -1517,9 +1510,12 @@ text Text_Shop_Herbal_Info {
 
 // This script assumes everything costs ¥80
 script EventScript_Shop_FarmersStand_BuyItem {
+	if (var(VAR_TEMP_0) == ITEM_NONE) {
+		return
+	}
 	while {
 		if (var(VAR_FARM_STOCK) == 0) {
-			msgbox(Text_Shop_Herbal_YouCantPurchaseMore)
+			msgbox(Text_Shop_FarmersStand_YouCantPurchaseMore)
 			return
 		}
 		buffernumberstring(0, VAR_FARM_STOCK)
@@ -1537,7 +1533,7 @@ script EventScript_Shop_FarmersStand_BuyItem {
 			dynmultipush("Ten - ¥{STR_VAR_3}", 2)
 		}
 		dynmultipush("Back", 3)
-		dynmultistack(21, 0, FALSE, 4, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+		dynmultistack(0, 0, FALSE, 4, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
 				if (checkmoney(80) == FALSE) {
@@ -1603,7 +1599,7 @@ script EventScript_Shop_FarmersStand_BuyItem {
 	}
 }
 
-text Text_Shop_Herbal_YouCantPurchaseMore {
+text Text_Shop_FarmersStand_YouCantPurchaseMore {
 	format("You've already reached the purchase limit, I'm afraid. Come back when we restock! (every 5th Zone)")
 }
 
