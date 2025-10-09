@@ -142,12 +142,12 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 3
 
-Zigzagoon
+Rattata
 Level: 4
 Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zigzagoon-Galar
+Rattata-Alola
 Level: 4
 Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
@@ -223,6 +223,7 @@ Party Size: 3
 Difficulty: Normal
 
 Pansage
+Jolly Nature
 Ability: Gluttony
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -230,6 +231,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Scratch
 
 Pansear
+Naive Nature
 Ability: Gluttony
 Level: 7
 Tags: Ace
@@ -238,6 +240,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Scratch
 
 Panpour
+Hasty Nature
 Ability: Gluttony
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -256,6 +259,7 @@ Party Size: 3
 Difficulty: Brutal
 
 Pansage @ Oran Berry
+Jolly Nature
 Ability: Overgrow
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -263,6 +267,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Scratch
 
 Pansear @ Oran Berry
+Naive Nature
 Ability: Blaze
 Level: 7
 Tags: Ace
@@ -271,40 +276,11 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Scratch
 
 Panpour @ Oran Berry
+Hasty Nature
 Ability: Torrent
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
-- Scratch
-
-=== TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER_CHALLENGE ===
-Name: Corey
-Class: School Kid
-Pic: School Kid M
-Music: Girl
-AI: AI_FLAG_LEVIATHAN
-Double Battle: No
-Mugshot: Purple
-
-Panpour
-Ability: Torrent
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Gun
-- Scratch
-
-Pansage
-Ability: Overgrow
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Leafage
-- Scratch
-
-Pansear
-Ability: Blaze
-Level: 7
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Ember
 - Scratch
 
 === TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER ===
@@ -319,6 +295,7 @@ Party Size: 3
 Difficulty: Normal
 
 Pansage
+Jolly Nature
 Ability: Gluttony
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -326,6 +303,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Scratch
 
 Pansear
+Naive Nature
 Ability: Gluttony
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -333,6 +311,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Scratch
 
 Panpour
+Hasty Nature
 Ability: Gluttony
 Level: 7
 Tags: Ace
@@ -352,6 +331,7 @@ Party Size: 3
 Difficulty: Brutal
 
 Pansage @ Oran Berry
+Jolly Nature
 Ability: Overgrow
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -359,6 +339,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Scratch
 
 Pansear @ Oran Berry
+Naive Nature
 Ability: Blaze
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -366,39 +347,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Scratch
 
 Panpour @ Oran Berry
+Hasty Nature
 Ability: Torrent
 Level: 7
 Tags: Ace
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Gun
-- Scratch
-
-=== TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER_CHALLENGE ===
-Name: Corey
-Class: School Kid
-Pic: School Kid M
-Music: Girl
-AI: AI_FLAG_LEVIATHAN
-Double Battle: No
-Mugshot: Purple
-
-Pansage
-Ability: Overgrow
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Leafage
-- Scratch
-
-Pansear
-Ability: Blaze
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Ember
-- Scratch
-
-Panpour
-Ability: Torrent
-Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
@@ -415,6 +367,7 @@ Party Size: 3
 Difficulty: Normal
 
 Pansage
+Jolly Nature
 Ability: Gluttony
 Level: 7
 Tags: Ace
@@ -423,6 +376,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Scratch
 
 Pansear
+Naive Nature
 Ability: Gluttony
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -430,6 +384,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Scratch
 
 Panpour
+Hasty Nature
 Ability: Gluttony
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -448,6 +403,7 @@ Party Size: 3
 Difficulty: Brutal
 
 Pansage @ Oran Berry
+Jolly Nature
 Ability: Overgrow
 Level: 7
 Tags: Ace
@@ -456,6 +412,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Scratch
 
 Pansear @ Oran Berry
+Naive Nature
 Ability: Blaze
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -463,40 +420,11 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Scratch
 
 Panpour @ Oran Berry
+Hasty Nature
 Ability: Torrent
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
-- Scratch
-
-=== TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER_CHALLENGE ===
-Name: Corey
-Class: School Kid
-Pic: School Kid M
-Music: Girl
-AI: AI_FLAG_LEVIATHAN
-Double Battle: No
-Mugshot: Purple
-
-Pansear
-Ability: Blaze
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Ember
-- Scratch
-
-Panpour
-Ability: Torrent
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Gun
-- Scratch
-
-Pansage
-Ability: Overgrow
-Level: 7
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Leafage
 - Scratch
 
 === TRAINER_PBL_POLLY ===
@@ -506,32 +434,37 @@ Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 3
 
-Sentret
-Ability: Keen Eye
+Zigzagoon
 Level: 6
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Scratch
-- Growl
-- Quick Attack
 
-Seedot
-Ability: Early Bird
+Zigzagoon-Galar
 Level: 6
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Harden
-- Astonish
-- Bide
-- Absorb
+
+Nidoran-M
+Level: 6
+Tags: Tag7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Nidoran-F
-Ability: Poison Point
 Level: 6
+Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Scratch
-- Tail Whip
-- Poison Sting
-- Disable
+
+Igglybuff
+Level: 6
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Azurill
+Level: 6
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_JEREMIAH ===
 Name: Jeremiah
@@ -540,36 +473,47 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Caterpie
-Ability: Shield Dust
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- String Shot
+Party Size: 3
 
 Weedle
-Ability: Shield Dust
 Level: 6
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Sting
-- String Shot
 
 Wurmple
-Ability: Shield Dust
 Level: 6
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- String Shot
-- Poison Sting
 
-Scatterbug
-Ability: Shield Dust
+Kricketot
 Level: 6
+Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- String Shot
-- Struggle Bug
+
+Tarountula
+Level: 6
+Tags: Tag7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Spinarak
+Level: 6
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Ledyba
+Level: 6
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Blipbug
+Level: 6
+Tags: Ace
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Burmy
+Level: 6
+Tags: Ace
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_JOSH ===
 Name: Josh
@@ -578,38 +522,37 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 3
 
-Blipbug
-Ability: Swarm
-Level: 7
+Whismur
+Level: 6
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Struggle Bug
 
-Kricketot
-Ability: Shed Skin
-Level: 7
+Skitty
+Level: 6
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Growl
-- Struggle Bug
-- Bide
 
-Burmy
-Ability: Shed Skin
-Level: 7
+Cherubi
+Level: 6
+Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- String Shot
-- Protect
 
-Tarountula
-Ability: Insomnia
-Level: 7
+Gossifleur
+Level: 6
+Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- String Shot
-- Struggle Bug
-- Assurance
+
+Hoothoot
+Level: 6
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pidgey
+Level: 6
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_HARPER ===
 Name: Harper
@@ -618,33 +561,31 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 3
 
-Whismur
-Ability: Rattled
-Level: 7
+Wooloo
+Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Astonish
-- Pound
-- Supersonic
-- Echoed Voice
 
-Hoothoot
-Ability: Insomnia
-Level: 7
+Fletchling
+Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Growl
-- Peck
-- Confusion
 
-Diglett
-Ability: Sand Force
-Level: 7
+Skiddo
+Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Scratch
-- Sand Attack
-- Growl
-- Astonish
+
+Ponyta
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Ducklett
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Mareep
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_ARTHUR ===
 Name: Arthur
@@ -688,8 +629,10 @@ Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Mugshot: Purple
+Difficulty: Normal
 
 Bunnelby @ Oran Berry
+Sassy Nature
 Ability: Cheek Pouch
 Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -698,34 +641,38 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Defense Curl
 - Mud Slap
 
-Patrat @ Oran Berry
-Ability: Cheek Pouch
+Smoliv @ Oran Berry
+Relaxed Nature
+Ability: Harvest
 Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
-- Bite
-- Bide
-- Tearful Look
+- Mega Drain
+- Leech Seed
+- Protect
 
 Skwovet @ Oran Berry
+Adamant Nature
 Ability: Cheek Pouch
 Level: 9
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
-- Stuff Cheeks
 - Tail Whip
 - Defense Curl
+- Bite
 
-=== TRAINER_PBL_SHAUN_LEVIATHAN_2_CHALLENGE ===
+=== TRAINER_PBL_SHAUN_LEVIATHAN_2 ===
 Name: Shaun
 Class: Youngster
 Pic: Youngster
 Music: Male
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Mugshot: Purple
+Difficulty: Brutal
 
 Bunnelby @ Oran Berry
+Sassy Nature
 Ability: Cheek Pouch
 Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -734,31 +681,33 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Defense Curl
 - Mud Slap
 
-Patrat @ Oran Berry
-Ability: Cheek Pouch
+Smoliv @ Oran Berry
+Relaxed Nature
+Ability: Harvest
 Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
-- Bite
-- Bide
-- Tearful Look
-
-Lechonk @ Oran Berry
-Ability: Thick Fat
-Level: 7
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Tackle
-- Disarming Voice
-- Stuff Cheeks
+- Mega Drain
+- Leech Seed
+- Protect
 
 Skwovet @ Oran Berry
+Adamant Nature
 Ability: Cheek Pouch
 Level: 9
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
-- Stuff Cheeks
 - Tail Whip
 - Defense Curl
+- Bite
+
+Gulpin @ Oran Berry
+Calm Nature
+Ability: Sticky Hold
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Belch
+- Stuff Cheeks
 
 === TRAINER_PBL_JEMMA ===
 Name: Jemma
