@@ -1847,18 +1847,18 @@ script EventScript_Shop_MartEmployee {
 		case 12:
 		case 13:
 		case 15:
-			pokemart(Shop_Mart_2)
+			pokemart(Shop_Mart_3)
 		case 16:
 		case 17:
 		case 18:
 		case 20:
-			pokemart(Shop_Mart_3)
+			pokemart(Shop_Mart_4)
 		case 21:
 		case 22:
 		case 23:
 		case 24:
 		case 25:
-			pokemart(Shop_Mart_4)
+			pokemart(Shop_Mart_5)
 		case 26:
 		case 27:
 		case 28:
@@ -1869,19 +1869,19 @@ script EventScript_Shop_MartEmployee {
 		case 33:
 		case 34:
 		case 35:
-			pokemart(Shop_Mart_5)
+			pokemart(Shop_Mart_7)
 		case 36:
 		case 37:
 		case 38:
 		case 39:
 		case 40:
-			pokemart(Shop_Mart_6)
+			pokemart(Shop_Mart_8)
 		case 41:
 		case 42:
 		case 43:
 		case 44:
 		case 45:
-			pokemart(Shop_Mart_7)
+			pokemart(Shop_Mart_9)
 	}
 	msgbox("Please come again!")
 	fadedefaultbgm
@@ -1898,26 +1898,11 @@ mart Shop_Mart_1 {
 	ITEM_ICE_HEAL
 }
 
-mart Shop_Mart_2 {
-	ITEM_POKE_BALL
-	ITEM_GREAT_BALL
-	ITEM_POTION
-	ITEM_SUPER_POTION
-	ITEM_REVIVE
-	ITEM_ANTIDOTE
-	ITEM_PARALYZE_HEAL
-	ITEM_AWAKENING
-	ITEM_BURN_HEAL
-	ITEM_ICE_HEAL
-}
-
 mart Shop_Mart_3 {
 	ITEM_POKE_BALL
 	ITEM_GREAT_BALL
-	ITEM_ULTRA_BALL
 	ITEM_POTION
 	ITEM_SUPER_POTION
-	ITEM_HYPER_POTION
 	ITEM_REVIVE
 	ITEM_ANTIDOTE
 	ITEM_PARALYZE_HEAL
@@ -1939,10 +1924,25 @@ mart Shop_Mart_4 {
 	ITEM_AWAKENING
 	ITEM_BURN_HEAL
 	ITEM_ICE_HEAL
-	ITEM_FULL_HEAL
 }
 
 mart Shop_Mart_5 {
+	ITEM_POKE_BALL
+	ITEM_GREAT_BALL
+	ITEM_ULTRA_BALL
+	ITEM_POTION
+	ITEM_SUPER_POTION
+	ITEM_HYPER_POTION
+	ITEM_REVIVE
+	ITEM_ANTIDOTE
+	ITEM_PARALYZE_HEAL
+	ITEM_AWAKENING
+	ITEM_BURN_HEAL
+	ITEM_ICE_HEAL
+	ITEM_FULL_HEAL
+}
+
+mart Shop_Mart_7 {
 	ITEM_POKE_BALL
 	ITEM_GREAT_BALL
 	ITEM_ULTRA_BALL
@@ -1959,7 +1959,7 @@ mart Shop_Mart_5 {
 	ITEM_FULL_HEAL
 }
 
-mart Shop_Mart_6 {
+mart Shop_Mart_8 {
 	ITEM_POKE_BALL
 	ITEM_GREAT_BALL
 	ITEM_ULTRA_BALL
@@ -1977,7 +1977,7 @@ mart Shop_Mart_6 {
 	ITEM_FULL_HEAL
 }
 
-mart Shop_Mart_7 {
+mart Shop_Mart_9 {
 	ITEM_POKE_BALL
 	ITEM_GREAT_BALL
 	ITEM_ULTRA_BALL
@@ -2069,21 +2069,19 @@ script EventScript_Shop_Varrick_Pokeballs {
 		case 7:
 		case 9:
 		case 10:
+			pokemart(Shop_Pokeballs_2)
 		case 11:
 		case 12:
 		case 13:
 		case 15:
+			pokemart(Shop_Pokeballs_3)
 		case 16:
 		case 17:
 		case 18:
 		case 20:
-		case 21:
-		case 22:
-		case 23:
-		case 24:
-		case 25:
-		case 26:
-			pokemart(Shop_Filler)
+			pokemart(Shop_Pokeballs_4)
+		default:
+			pokemart(Shop_Pokeballs_5)
 	}
 }
 
@@ -2155,18 +2153,8 @@ script EventScript_Shop_Varrick_Evo {
 		case 13:
 		case 15:
 			pokemart(Shop_EvoSpecies_3)
-		case 16:
-		case 17:
-		case 18:
-		case 20:
+		default:
 			pokemart(Shop_EvoSpecies_4)
-		case 21:
-		case 22:
-		case 23:
-		case 24:
-		case 25:
-		case 26:
-			pokemart(Shop_Filler)
 	}
 }
 
@@ -2195,23 +2183,6 @@ mart Shop_EvoSpecies_3 {
 	ITEM_WHIPPED_DREAM
 	ITEM_SACHET
 	ITEM_STRAWBERRY_SWEET
-#define ITEM_FIRE_MEMORY 271
-#define ITEM_WATER_MEMORY 272
-#define ITEM_ELECTRIC_MEMORY 273
-#define ITEM_GRASS_MEMORY 274
-#define ITEM_ICE_MEMORY 275
-#define ITEM_FIGHTING_MEMORY 276
-#define ITEM_POISON_MEMORY 277
-#define ITEM_GROUND_MEMORY 278
-#define ITEM_FLYING_MEMORY 279
-#define ITEM_PSYCHIC_MEMORY 280
-#define ITEM_BUG_MEMORY 281
-#define ITEM_ROCK_MEMORY 282
-#define ITEM_GHOST_MEMORY 283
-#define ITEM_DRAGON_MEMORY 284
-#define ITEM_DARK_MEMORY 285
-#define ITEM_STEEL_MEMORY 286
-#define ITEM_FAIRY_MEMORY 287
 }
 
 mart Shop_EvoSpecies_4 {
@@ -2272,19 +2243,23 @@ script EventScript_Shop_Varrick_Battle {
 		case 7:
 		case 9:
 		case 10:
+			// pokemart(Shop_Battle_2)
 		case 11:
 		case 12:
 		case 13:
 		case 15:
+			// pokemart(Shop_Battle_3)
 		case 16:
 		case 17:
 		case 18:
 		case 20:
+			// pokemart(Shop_Battle_4)
 		case 21:
 		case 22:
 		case 23:
 		case 24:
 		case 25:
+			// pokemart(Shop_Battle_5)
 		case 26:
 			pokemart(Shop_Filler)
 	}
@@ -2479,9 +2454,9 @@ script EventScript_Shop_Varrick_Treasures {
 		case 23:
 		case 24:
 		case 25:
-			pokemart(Shop_Treasures_4)
-		case 26:
-			pokemart(Shop_Filler)
+			pokemart(Shop_Treasures_5)
+		default:
+			pokemart(Shop_Treasures_6)
 	}
 }
 
@@ -2506,7 +2481,16 @@ mart Shop_Treasures_3 {
 	ITEM_BOTTLE_CAP
 }
 
-mart Shop_Treasures_4 {
+mart Shop_Treasures_5 {
+	ITEM_HEART_SCALE
+	ITEM_RED_SHARD
+	ITEM_BLUE_SHARD
+	ITEM_YELLOW_SHARD
+	ITEM_GREEN_SHARD
+	ITEM_GOLD_BOTTLE_CAP
+}
+
+mart Shop_Treasures_6 {
 	ITEM_HEART_SCALE
 	ITEM_RED_SHARD
 	ITEM_BLUE_SHARD
@@ -2547,19 +2531,23 @@ script EventScript_Shop_Varrick_Other {
 		case 7:
 		case 9:
 		case 10:
+			// pokemart(Shop_Other_2)
 		case 11:
 		case 12:
 		case 13:
 		case 15:
+			// pokemart(Shop_Other_3)
 		case 16:
 		case 17:
 		case 18:
 		case 20:
+			// pokemart(Shop_Other_4)
 		case 21:
 		case 22:
 		case 23:
 		case 24:
 		case 25:
+			// pokemart(Shop_Other_5)
 		case 26:
 			pokemart(Shop_Filler)
 	}
@@ -2577,6 +2565,23 @@ mart Shop_Other_1 {
 	ITEM_LUCKY_PUNCH
 	ITEM_METAL_POWDER
 	ITEM_QUICK_POWDER
+#define ITEM_FIRE_MEMORY 271
+#define ITEM_WATER_MEMORY 272
+#define ITEM_ELECTRIC_MEMORY 273
+#define ITEM_GRASS_MEMORY 274
+#define ITEM_ICE_MEMORY 275
+#define ITEM_FIGHTING_MEMORY 276
+#define ITEM_POISON_MEMORY 277
+#define ITEM_GROUND_MEMORY 278
+#define ITEM_FLYING_MEMORY 279
+#define ITEM_PSYCHIC_MEMORY 280
+#define ITEM_BUG_MEMORY 281
+#define ITEM_ROCK_MEMORY 282
+#define ITEM_GHOST_MEMORY 283
+#define ITEM_DRAGON_MEMORY 284
+#define ITEM_DARK_MEMORY 285
+#define ITEM_STEEL_MEMORY 286
+#define ITEM_FAIRY_MEMORY 287
 }
 
 script EventScript_Shop_Varrick_MegaStones {
@@ -2588,7 +2593,6 @@ script EventScript_Shop_Varrick_MegaStones {
 		case 3:
 		case 4:
 		case 5:
-			pokemart(Shop_Mega_1)
 		case 6:
 		case 7:
 		case 9:
@@ -2606,12 +2610,15 @@ script EventScript_Shop_Varrick_MegaStones {
 		case 23:
 		case 24:
 		case 25:
+			pokemart(Shop_Filler)
 		case 26:
+			pokemart(Shop_Mega_6)
+		default:
 			pokemart(Shop_Filler)
 	}
 }
 
-mart Shop_Mega_1 {
+mart Shop_Mega_6 {
 	ITEM_EXP_CANDY_XS
 #define ITEM_VENUSAURITE 292
 #define ITEM_CHARIZARDITE_X 293
