@@ -300,7 +300,6 @@ script Zone1A_EventScript_TriggerLeviathanTop {
 
 script Zone1A_EventScript_LeviathanBattle {
 	fadeoutbgm(1)
-	setvar(VAR_ZONE_1_STATE, 1)
 	msgbox(Zone1A_Text_Leviathan1Intro2)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	switch (var(VAR_STARTER_MON)) {
@@ -312,13 +311,13 @@ script Zone1A_EventScript_LeviathanBattle {
 			trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER, Zone1A_Text_Leviathan1Defeat)
 	}
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
 	giveitem(ITEM_TM_FALSE_SWIPE)
 	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Well, anyways, I've gotta run now.\pBye bye!"), MSGBOX_AUTOCLOSE)
-	closemessage
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(LOCALID_COREY)
 	setflag(FLAG_BEAT_LEVIATHAN_1)
+	setvar(VAR_ZONE_1_STATE, 1)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	release
 	end
