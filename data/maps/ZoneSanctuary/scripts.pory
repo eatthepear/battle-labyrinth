@@ -391,6 +391,11 @@ script EventScript_WarpNextZone {
 	switch (var(VAR_ZONE)) {
 		case 1:
 			warp(MAP_ZONE1A, 255, 16, 28)
+		case 2:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				setflag(FLAG_HIDE_ZONE2A_MAX)
+			}
+			warp(MAP_ZONE2A, 255, 4, 3)
 	}
 	waitstate
 	end

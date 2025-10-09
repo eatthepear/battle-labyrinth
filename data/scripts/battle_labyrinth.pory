@@ -46,8 +46,8 @@ script EventScript_Max {
 	lock
 	faceplayer
 	if (flag(FLAG_MAX_INTRO) == false) {
-		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: By my calculations, you should be {PLAYER}!\pHi, {PLAYER}! My name is {COLOR BLUE}Max{COLOR DARK_GRAY}."), MSGBOX_DEFAULT)
-		msgbox(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: I am a traveling merchant, selling special Technical Machines for you to use!\pI travel a lot, never going to the same place again.\pI'll have different wares every time you see me, so be sure to buy whatever TMs you deem important!"), MSGBOX_DEFAULT)
+		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: By my calculations, you should be {PLAYER}!\pHi, {PLAYER}! My name is {COLOR BLUE}Max{COLOR DARK_GRAY}."))
+		msgbox(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: I am a traveling merchant, selling special Technical Machines for you to use!\pI travel a lot, never going to the same place again.\pI'll have different wares every time you see me, so be sure to buy whatever TMs you deem important!"))
 		setflag(FLAG_MAX_INTRO)
 	}
 	message(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: Hi {PLAYER}! Long time no see!\pWelcome to my TM shop!"))
@@ -803,7 +803,7 @@ script EventScript_Notebook_Items {
 			case 1:
 				msgbox(format("The Infinite Repel Key Item allows you to avoid encountering any wild Pokémon, regardless of your level."))
 			case 2:
-				msgbox(format("TMs can be used infinitely, but don't restore PP."))
+				msgbox(format("TMs do not restore PP."))
 			case 3:
 				msgbox(format("Honey cost reduced to ¥80, and starts a wild Double Battle if on a map and tile that can have wild Pokémon.\pYou can also slather it on a Golden Tree to attract a wild Pokémon."))
 			case 4:
