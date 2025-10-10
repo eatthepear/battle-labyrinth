@@ -4706,8 +4706,8 @@
       "name": "Zone0A_Layout",
       "width": 86,
       "height": 15,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Farm",
       "border_filepath": "data/layouts/Zone0A/border.bin",
       "blockdata_filepath": "data/layouts/Zone0A/map.bin"
     },
