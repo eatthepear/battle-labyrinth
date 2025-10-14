@@ -4444,10 +4444,10 @@
     {
       "id": "LAYOUT_ZONE2A",
       "name": "Zone2A_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Unused1",
+      "width": 75,
+      "height": 45,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Farm",
       "border_filepath": "data/layouts/Zone2A/border.bin",
       "blockdata_filepath": "data/layouts/Zone2A/map.bin"
     },
