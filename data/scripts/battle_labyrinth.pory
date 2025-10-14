@@ -1950,3 +1950,168 @@ script EventScript_AskSaveGame {
 	}
 	return
 }
+
+script EventScript_BossBattleNPC {
+	lock
+	faceplayer
+	msgbox(format("Err… what was I supposed to remember?\pAh, that's right!\pI have braved Pokémon Battle Labyrinth many times before.\pPerhaps I could tell you about your next set of challenges, if you're interested?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call(EventScript_BufferZoneName)
+		msgbox(format("Ah, so your next challenge is {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}…"))
+		switch (var(VAR_ZONE)) {
+			case 1:
+				msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY} the {COLOR RED}Leviathan{COLOR DARK_GRAY} uses a trio of Elemental Monkeys, with his ace being the one with a type advantage over your starter."))
+			case 2:
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+			case 7:
+			case 8:
+			case 9:
+			case 10:
+			case 11:
+			case 12:
+			case 13:
+			case 14:
+			case 15:
+			case 16:
+			case 17:
+			case 18:
+			case 19:
+			case 20:
+			case 21:
+			case 22:
+			case 23:
+			case 24:
+			case 25:
+			case 26:
+			case 27:
+			case 28:
+			case 29:
+			case 30:
+			case 31:
+			case 32:
+			case 33:
+			case 34:
+			case 35:
+			case 36:
+			case 37:
+			case 38:
+			case 39:
+			case 40:
+			case 41:
+			case 42:
+			case 43:
+			case 44:
+			case 45:
+		}
+	}
+	release
+	end
+}
+
+script EventScript_BufferZoneName {
+	switch (var(VAR_ZONE)) {
+		case 1:
+			bufferstring(0, gText_MapZone1)
+		case 2:
+			bufferstring(0, gText_MapZone2)
+		case 3:
+			bufferstring(0, gText_MapZone3)
+		case 4:
+			bufferstring(0, gText_MapZone4)
+		case 5:
+			bufferstring(0, gText_MapZone5)
+		case 6:
+			bufferstring(0, gText_MapZone6)
+		case 7:
+			bufferstring(0, gText_MapZone7)
+		case 8:
+			bufferstring(0, gText_MapZone8)
+		case 9:
+			bufferstring(0, gText_MapZone9)
+		case 10:
+			bufferstring(0, gText_MapZone10)
+		case 11:
+			bufferstring(0, gText_MapZone11)
+		case 12:
+			bufferstring(0, gText_MapZone12)
+		case 13:
+			bufferstring(0, gText_MapZone13)
+		case 14:
+			bufferstring(0, gText_MapZone14)
+		case 15:
+			bufferstring(0, gText_MapZone15)
+		case 16:
+			bufferstring(0, gText_MapZone16)
+		case 17:
+			bufferstring(0, gText_MapZone17)
+		case 18:
+			bufferstring(0, gText_MapZone18)
+		case 19:
+			bufferstring(0, gText_MapZone19)
+		case 20:
+			bufferstring(0, gText_MapZone20)
+		case 21:
+			bufferstring(0, gText_MapZone21)
+		case 22:
+			bufferstring(0, gText_MapZone22)
+		case 23:
+			bufferstring(0, gText_MapZone23)
+		case 24:
+			bufferstring(0, gText_MapZone24)
+		case 25:
+			bufferstring(0, gText_MapZone25)
+		case 26:
+			bufferstring(0, gText_MapZone26)
+		case 27:
+			bufferstring(0, gText_MapZone27)
+		case 28:
+			bufferstring(0, gText_MapZone28)
+		case 29:
+			bufferstring(0, gText_MapZone29)
+		case 30:
+			bufferstring(0, gText_MapZone30)
+		case 31:
+			bufferstring(0, gText_MapZone31)
+		case 32:
+			bufferstring(0, gText_MapZone32)
+		case 33:
+			bufferstring(0, gText_MapZone33)
+		case 34:
+			bufferstring(0, gText_MapZone34)
+		case 35:
+			bufferstring(0, gText_MapZone35)
+		case 36:
+			bufferstring(0, gText_MapZone36)
+		case 37:
+			bufferstring(0, gText_MapZone37)
+		case 38:
+			bufferstring(0, gText_MapZone38)
+		case 39:
+			bufferstring(0, gText_MapZone39)
+		case 40:
+			bufferstring(0, gText_MapZone40)
+		case 41:
+			bufferstring(0, gText_MapZone41)
+		case 42:
+			bufferstring(0, gText_MapZone42)
+		case 43:
+			bufferstring(0, gText_MapZone43)
+		case 44:
+			bufferstring(0, gText_MapZone44)
+		case 45:
+			bufferstring(0, gText_MapZone45)
+		case 46:
+			bufferstring(0, gText_MapZone46)
+		case 47:
+			bufferstring(0, gText_MapZone47)
+		case 48:
+			bufferstring(0, gText_MapZone48)
+		case 49:
+			bufferstring(0, gText_MapZone49)
+		case 50:
+			bufferstring(0, gText_MapZone50)
+	}
+}
