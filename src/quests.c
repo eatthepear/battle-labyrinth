@@ -712,27 +712,27 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 {
 	sub_quest(
-	      gText_SubQuest_Name_Signs1,
-	      gText_SubQuest_Desc_SignsSanctuary,
-	      gText_QuestMapSanctuary,
+	      COMPOUND_STRING("Porygon Sign"),
+	      COMPOUND_STRING("Trainer Tips\nTo complete a Zone, defeat all\nopponents, then find Porygon."),
+	      gText_MapZone1,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
 	      sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs2,
-	      gText_SubQuest_Desc_SignsSanctuary,
-	      gText_QuestMapSanctuary,
+	      COMPOUND_STRING("Running Shoes Sign"),
+	      COMPOUND_STRING("Trainer Tips\nPress {L_BUTTON} to toggle Auto Run."),
+	      gText_MapZone1,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
 	      sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs3,
-	      gText_SubQuest_Desc_SignsSanctuary,
-	      gText_QuestMapSanctuary,
+	      COMPOUND_STRING("Register Sign"),
+	      COMPOUND_STRING("Trainer Tips\nYou can register multiple key items at\na time."),
+	      gText_MapZone1,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
 	      sText_Read

@@ -441,26 +441,32 @@ script Zone0A_EventScript_DayCareSign {
 	end
 }
 
-script Zone1A_EventScript_Sign_GoldenTree {
-	completesubquest(QUEST_SIGNS, 10)
-	msgbox(format("Trainer Tips\pShaking a Golden Tree might drop berries, though occasionally you'll disturb the wild Pokémon living in the tree!"), MSGBOX_SIGN)
-	end
-}
-
-script Zone1A_EventScript_PorygonSign {
-	completesubquest(QUEST_SIGNS, 11)
-	msgbox(format("Trainer Tips\pEvery Zone has its own challenges.\nIn order to reach the Sanctuary and clear a Zone, you must find {COLOR RED}Porygon{COLOR DARK_GRAY}."), MSGBOX_DEFAULT)
+script EventScript_PorygonSign {
+	completesubquest(QUEST_SIGNS, 0)
+	if (var(VAR_DIFFICULTY) >= DIFFICULTY_NORMAL) {
+		message(format("Trainer Tips\pTo complete a Zone, defeat all opponents, then find {COLOR RED}Porygon{COLOR DARK_GRAY}."))
+	} else {
+		message(format("Trainer Tips\pTo complete a Zone, find {COLOR RED}Porygon{COLOR DARK_GRAY}.\pOn Easy difficulty, you don't need to defeat all opponents to proceed."))
+	}
+	waitmessage
 	showmonpic(SPECIES_PORYGON, 10, 3)
 	setseenmon(SPECIES_PORYGON)
 	waitbuttonpress
 	hidemonpic
+	closemessage
 	release
 	end
 }
 
-script Zone1A_EventScript_Sign_RunningShoes {
-	completesubquest(QUEST_SIGNS, 12)
-	msgbox(format("Trainer Tips\pPress {L_BUTTON} to enable or disable Auto Run."), MSGBOX_SIGN)
+script EventScript_Sign_RunningShoes {
+	completesubquest(QUEST_SIGNS, 1)
+	msgbox(format("Trainer Tips\pPress {L_BUTTON} to toggle Auto Run."), MSGBOX_SIGN)
+	end
+}
+
+script EventScript_Sign_Register {
+	completesubquest(QUEST_SIGNS, 2)
+	msgbox(format("Trainer Tips\pYou can register multiple key items at a time."), MSGBOX_SIGN)
 	end
 }
 
