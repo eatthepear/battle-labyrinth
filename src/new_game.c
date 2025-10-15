@@ -103,6 +103,10 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
+    VarSet(VAR_SANCTUARY_MUSIC, 1);
+    VarSet(VAR_WILD_MUSIC, 6);
+    VarSet(VAR_TRAINER_MUSIC, 6);
+    VarSet(VAR_LEVIATHAN_MUSIC, 6);
 }
 
 static void ClearPokedexFlags(void)
@@ -160,6 +164,10 @@ void NewGameInitData(void)
     if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_CORRUPT)
         RtcReset();
 
+    u16 sanctuaryMusic = VarGet(VAR_SANCTUARY_MUSIC);
+    u16 wildMusic = VarGet(VAR_WILD_MUSIC);
+    u16 trainerMusic = VarGet(VAR_TRAINER_MUSIC);
+    u16 leviathanMusic = VarGet(VAR_LEVIATHAN_MUSIC);
     gDifferentSaveFile = TRUE;
     gSaveBlock2Ptr->encryptionKey = 0;
     ZeroPlayerPartyMons();
@@ -221,10 +229,10 @@ void NewGameInitData(void)
     ResetDexNav();
     ClearFollowerNPCData();
     gSaveBlock1Ptr->wildEncounterSeed = Random32();
-    VarSet(VAR_SANCTUARY_MUSIC, 1);
-    VarSet(VAR_WILD_MUSIC, 6);
-    VarSet(VAR_TRAINER_MUSIC, 6);
-    VarSet(VAR_LEVIATHAN_MUSIC, 6);
+    VarSet(VAR_SANCTUARY_MUSIC, sanctuaryMusic);
+    VarSet(VAR_WILD_MUSIC, wildMusic);
+    VarSet(VAR_TRAINER_MUSIC, trainerMusic);
+    VarSet(VAR_LEVIATHAN_MUSIC, leviathanMusic);
 }
 
 static void ResetMiniGamesRecords(void)
