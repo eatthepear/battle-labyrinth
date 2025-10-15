@@ -1,14 +1,1 @@
 mapscripts ZoneSanctuary_BreezyMeadow_MapScripts {}
-
-script EventScript_ExpertM {
-	lock
-	faceplayer
-	if (checkitem(ITEM_RARE_CANDY) == FALSE) {
-		msgbox(format("I have studied the most effective training techniques for Pokémon, and developed these as the most optimal solution."))
-		giveitem(ITEM_RARE_CANDY)
-	}
-	msgbox(format("These {COLOR RED}Rare Candies{COLOR DARK_GRAY} can increase your Pokémon's level up to the prior level cap."), MSGBOX_AUTOCLOSE)
-	applymovement(LOCALID_EXPERT_M, Common_Movement_FaceLeft)
-	waitmovement(LOCALID_EXPERT_M)
-	release
-}
