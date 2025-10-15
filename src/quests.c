@@ -233,6 +233,7 @@ static const u8 sText_ReturnRecieveReward[] =
 static const u8 sText_SubQuestButton[] = _(" {A_BUTTON}");
 static const u8 sText_Type[] = _("{R_BUTTON}Type");
 static const u8 sText_Done[] = _("Done");
+static const u8 sText_Completed[] = _("Completed");
 static const u8 sText_Caught[] = _("Caught");
 static const u8 sText_Found[] = _("Found");
 static const u8 sText_Read[] = _("Read");
@@ -248,504 +249,505 @@ static const u8 sText_AZ[] = _(" A-Z");
 //Declaration of subquest structures. Edits to subquests are made here.
 #define sub_quest(i, n, d, m, s, st, t) {.id = i, .name = n, .desc = d, .map = m, .sprite = s, .spritetype = st, .type = t}
 static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
-{	sub_quest(
+{
+	sub_quest(
 	      SUB_QUEST_1,
-	      gText_SubQuest_Name_PBL1,
-	      gText_SubQuest_Desc_PBL1,
-	      gText_QuestMapZone1,
+	      COMPOUND_STRING("Zone 1"),
+	      COMPOUND_STRING("You completed Zone 1!"),
+	      COMPOUND_STRING("Zone 1"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_2,
-	      gText_SubQuest_Name_PBL2,
-	      gText_SubQuest_Desc_PBL2,
-	      gText_QuestMapZone2,
+	      COMPOUND_STRING("Zone 2"),
+	      COMPOUND_STRING("You completed Zone 2!"),
+	      COMPOUND_STRING("Zone 2"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_3,
-	      gText_SubQuest_Name_PBL3,
-	      gText_SubQuest_Desc_PBL3,
-	      gText_QuestMapZone3,
+	      COMPOUND_STRING("Zone 3"),
+	      COMPOUND_STRING("You completed Zone 3!"),
+	      COMPOUND_STRING("Zone 3"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_4,
-	      gText_SubQuest_Name_PBL4,
-	      gText_SubQuest_Desc_PBL4,
-	      gText_QuestMapZone4,
+	      COMPOUND_STRING("Zone 4"),
+	      COMPOUND_STRING("You completed Zone 4!"),
+	      COMPOUND_STRING("Zone 4"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_5,
-	      gText_SubQuest_Name_PBL5,
-	      gText_SubQuest_Desc_PBL5,
-	      gText_QuestMapZone5,
+	      COMPOUND_STRING("Zone 5"),
+	      COMPOUND_STRING("You completed Zone 5!"),
+	      COMPOUND_STRING("Zone 5"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_6,
-	      gText_SubQuest_Name_PBL6,
-	      gText_SubQuest_Desc_PBL6,
-	      gText_QuestMapZone6,
+	      COMPOUND_STRING("Zone 6"),
+	      COMPOUND_STRING("You completed Zone 6!"),
+	      COMPOUND_STRING("Zone 6"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_7,
-	      gText_SubQuest_Name_PBL7,
-	      gText_SubQuest_Desc_PBL7,
-	      gText_QuestMapZone7,
+	      COMPOUND_STRING("Zone 7"),
+	      COMPOUND_STRING("You completed Zone 7!"),
+	      COMPOUND_STRING("Zone 7"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_8,
-	      gText_SubQuest_Name_PBL8,
-	      gText_SubQuest_Desc_PBL8,
-	      gText_QuestMapZone8,
+	      COMPOUND_STRING("Zone 8"),
+	      COMPOUND_STRING("You completed Zone 8!"),
+	      COMPOUND_STRING("Zone 8"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_9,
-	      gText_SubQuest_Name_PBL9,
-	      gText_SubQuest_Desc_PBL9,
-	      gText_QuestMapZone9,
+	      COMPOUND_STRING("Zone 9"),
+	      COMPOUND_STRING("You completed Zone 9!"),
+	      COMPOUND_STRING("Zone 9"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_10,
-	      gText_SubQuest_Name_PBL10,
-	      gText_SubQuest_Desc_PBL10,
-	      gText_QuestMapZone10,
+	      COMPOUND_STRING("Zone 10"),
+	      COMPOUND_STRING("You completed Zone 10!"),
+	      COMPOUND_STRING("Zone 10"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_11,
-	      gText_SubQuest_Name_PBL11,
-	      gText_SubQuest_Desc_PBL11,
-	      gText_QuestMapZone11,
+	      COMPOUND_STRING("Zone 11"),
+	      COMPOUND_STRING("You completed Zone 11!"),
+	      COMPOUND_STRING("Zone 11"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_12,
-	      gText_SubQuest_Name_PBL12,
-	      gText_SubQuest_Desc_PBL12,
-	      gText_QuestMapZone12,
+	      COMPOUND_STRING("Zone 12"),
+	      COMPOUND_STRING("You completed Zone 12!"),
+	      COMPOUND_STRING("Zone 12"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_13,
-	      gText_SubQuest_Name_PBL13,
-	      gText_SubQuest_Desc_PBL13,
-	      gText_QuestMapZone13,
+	      COMPOUND_STRING("Zone 13"),
+	      COMPOUND_STRING("You completed Zone 13!"),
+	      COMPOUND_STRING("Zone 13"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_14,
-	      gText_SubQuest_Name_PBL14,
-	      gText_SubQuest_Desc_PBL14,
-	      gText_QuestMapZone14,
+	      COMPOUND_STRING("Zone 14"),
+	      COMPOUND_STRING("You completed Zone 14!"),
+	      COMPOUND_STRING("Zone 14"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_15,
-	      gText_SubQuest_Name_PBL15,
-	      gText_SubQuest_Desc_PBL15,
-	      gText_QuestMapZone15,
+	      COMPOUND_STRING("Zone 15"),
+	      COMPOUND_STRING("You completed Zone 15!"),
+	      COMPOUND_STRING("Zone 15"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_16,
-	      gText_SubQuest_Name_PBL16,
-	      gText_SubQuest_Desc_PBL16,
-	      gText_QuestMapZone16,
+	      COMPOUND_STRING("Zone 16"),
+	      COMPOUND_STRING("You completed Zone 16!"),
+	      COMPOUND_STRING("Zone 16"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_17,
-	      gText_SubQuest_Name_PBL17,
-	      gText_SubQuest_Desc_PBL17,
-	      gText_QuestMapZone17,
+	      COMPOUND_STRING("Zone 17"),
+	      COMPOUND_STRING("You completed Zone 17!"),
+	      COMPOUND_STRING("Zone 17"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_18,
-	      gText_SubQuest_Name_PBL18,
-	      gText_SubQuest_Desc_PBL18,
-	      gText_QuestMapZone18,
+	      COMPOUND_STRING("Zone 18"),
+	      COMPOUND_STRING("You completed Zone 18!"),
+	      COMPOUND_STRING("Zone 18"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_19,
-	      gText_SubQuest_Name_PBL19,
-	      gText_SubQuest_Desc_PBL19,
-	      gText_QuestMapZone19,
+	      COMPOUND_STRING("Zone 19"),
+	      COMPOUND_STRING("You completed Zone 19!"),
+	      COMPOUND_STRING("Zone 19"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_20,
-	      gText_SubQuest_Name_PBL20,
-	      gText_SubQuest_Desc_PBL20,
-	      gText_QuestMapZone20,
+	      COMPOUND_STRING("Zone 20"),
+	      COMPOUND_STRING("You completed Zone 20!"),
+	      COMPOUND_STRING("Zone 20"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_21,
-	      gText_SubQuest_Name_PBL21,
-	      gText_SubQuest_Desc_PBL21,
-	      gText_QuestMapZone21,
+	      COMPOUND_STRING("Zone 21"),
+	      COMPOUND_STRING("You completed Zone 21!"),
+	      COMPOUND_STRING("Zone 21"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_22,
-	      gText_SubQuest_Name_PBL22,
-	      gText_SubQuest_Desc_PBL22,
-	      gText_QuestMapZone22,
+	      COMPOUND_STRING("Zone 22"),
+	      COMPOUND_STRING("You completed Zone 22!"),
+	      COMPOUND_STRING("Zone 22"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_23,
-	      gText_SubQuest_Name_PBL23,
-	      gText_SubQuest_Desc_PBL23,
-	      gText_QuestMapZone23,
+	      COMPOUND_STRING("Zone 23"),
+	      COMPOUND_STRING("You completed Zone 23!"),
+	      COMPOUND_STRING("Zone 23"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_24,
-	      gText_SubQuest_Name_PBL24,
-	      gText_SubQuest_Desc_PBL24,
-	      gText_QuestMapZone24,
+	      COMPOUND_STRING("Zone 24"),
+	      COMPOUND_STRING("You completed Zone 24!"),
+	      COMPOUND_STRING("Zone 24"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_25,
-	      gText_SubQuest_Name_PBL25,
-	      gText_SubQuest_Desc_PBL25,
-	      gText_QuestMapZone25,
+	      COMPOUND_STRING("Zone 25"),
+	      COMPOUND_STRING("You completed Zone 25!"),
+	      COMPOUND_STRING("Zone 25"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_26,
-	      gText_SubQuest_Name_PBL26,
-	      gText_SubQuest_Desc_PBL26,
-	      gText_QuestMapZone26,
+	      COMPOUND_STRING("Zone 26"),
+	      COMPOUND_STRING("You completed Zone 26!"),
+	      COMPOUND_STRING("Zone 26"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_27,
-	      gText_SubQuest_Name_PBL27,
-	      gText_SubQuest_Desc_PBL27,
-	      gText_QuestMapZone27,
+	      COMPOUND_STRING("Zone 27"),
+	      COMPOUND_STRING("You completed Zone 27!"),
+	      COMPOUND_STRING("Zone 27"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_28,
-	      gText_SubQuest_Name_PBL28,
-	      gText_SubQuest_Desc_PBL28,
-	      gText_QuestMapZone28,
+	      COMPOUND_STRING("Zone 28"),
+	      COMPOUND_STRING("You completed Zone 28!"),
+	      COMPOUND_STRING("Zone 28"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_29,
-	      gText_SubQuest_Name_PBL29,
-	      gText_SubQuest_Desc_PBL29,
-	      gText_QuestMapZone29,
+	      COMPOUND_STRING("Zone 29"),
+	      COMPOUND_STRING("You completed Zone 29!"),
+	      COMPOUND_STRING("Zone 29"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_30,
-	      gText_SubQuest_Name_PBL30,
-	      gText_SubQuest_Desc_PBL30,
-	      gText_QuestMapZone30,
+	      COMPOUND_STRING("Zone 30"),
+	      COMPOUND_STRING("You completed Zone 30!"),
+	      COMPOUND_STRING("Zone 30"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_31,
-	      gText_SubQuest_Name_PBL31,
-	      gText_SubQuest_Desc_PBL31,
-	      gText_QuestMapZone31,
+	      COMPOUND_STRING("Zone 31"),
+	      COMPOUND_STRING("You completed Zone 31!"),
+	      COMPOUND_STRING("Zone 31"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_32,
-	      gText_SubQuest_Name_PBL32,
-	      gText_SubQuest_Desc_PBL32,
-	      gText_QuestMapZone32,
+	      COMPOUND_STRING("Zone 32"),
+	      COMPOUND_STRING("You completed Zone 32!"),
+	      COMPOUND_STRING("Zone 32"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_33,
-	      gText_SubQuest_Name_PBL33,
-	      gText_SubQuest_Desc_PBL33,
-	      gText_QuestMapZone33,
+	      COMPOUND_STRING("Zone 33"),
+	      COMPOUND_STRING("You completed Zone 33!"),
+	      COMPOUND_STRING("Zone 33"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_34,
-	      gText_SubQuest_Name_PBL34,
-	      gText_SubQuest_Desc_PBL34,
-	      gText_QuestMapZone34,
+	      COMPOUND_STRING("Zone 34"),
+	      COMPOUND_STRING("You completed Zone 34!"),
+	      COMPOUND_STRING("Zone 34"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_35,
-	      gText_SubQuest_Name_PBL35,
-	      gText_SubQuest_Desc_PBL35,
-	      gText_QuestMapZone35,
+	      COMPOUND_STRING("Zone 35"),
+	      COMPOUND_STRING("You completed Zone 35!"),
+	      COMPOUND_STRING("Zone 35"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_36,
-	      gText_SubQuest_Name_PBL36,
-	      gText_SubQuest_Desc_PBL36,
-	      gText_QuestMapZone36,
+	      COMPOUND_STRING("Zone 36"),
+	      COMPOUND_STRING("You completed Zone 36!"),
+	      COMPOUND_STRING("Zone 36"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_37,
-	      gText_SubQuest_Name_PBL37,
-	      gText_SubQuest_Desc_PBL37,
-	      gText_QuestMapZone37,
+	      COMPOUND_STRING("Zone 37"),
+	      COMPOUND_STRING("You completed Zone 37!"),
+	      COMPOUND_STRING("Zone 37"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_38,
-	      gText_SubQuest_Name_PBL38,
-	      gText_SubQuest_Desc_PBL38,
-	      gText_QuestMapZone38,
+	      COMPOUND_STRING("Zone 38"),
+	      COMPOUND_STRING("You completed Zone 38!"),
+	      COMPOUND_STRING("Zone 38"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_39,
-	      gText_SubQuest_Name_PBL39,
-	      gText_SubQuest_Desc_PBL39,
-	      gText_QuestMapZone39,
+	      COMPOUND_STRING("Zone 39"),
+	      COMPOUND_STRING("You completed Zone 39!"),
+	      COMPOUND_STRING("Zone 39"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_40,
-	      gText_SubQuest_Name_PBL40,
-	      gText_SubQuest_Desc_PBL40,
-	      gText_QuestMapZone40,
+	      COMPOUND_STRING("Zone 40"),
+	      COMPOUND_STRING("You completed Zone 40!"),
+	      COMPOUND_STRING("Zone 40"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_41,
-	      gText_SubQuest_Name_PBL41,
-	      gText_SubQuest_Desc_PBL41,
-	      gText_QuestMapZone41,
+	      COMPOUND_STRING("Zone 41"),
+	      COMPOUND_STRING("You completed Zone 41!"),
+	      COMPOUND_STRING("Zone 41"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_42,
-	      gText_SubQuest_Name_PBL42,
-	      gText_SubQuest_Desc_PBL42,
-	      gText_QuestMapZone42,
+	      COMPOUND_STRING("Zone 42"),
+	      COMPOUND_STRING("You completed Zone 42!"),
+	      COMPOUND_STRING("Zone 42"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_43,
-	      gText_SubQuest_Name_PBL43,
-	      gText_SubQuest_Desc_PBL43,
-	      gText_QuestMapZone43,
+	      COMPOUND_STRING("Zone 43"),
+	      COMPOUND_STRING("You completed Zone 43!"),
+	      COMPOUND_STRING("Zone 43"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_44,
-	      gText_SubQuest_Name_PBL44,
-	      gText_SubQuest_Desc_PBL44,
-	      gText_QuestMapZone44,
+	      COMPOUND_STRING("Zone 44"),
+	      COMPOUND_STRING("You completed Zone 44!"),
+	      COMPOUND_STRING("Zone 44"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_45,
-	      gText_SubQuest_Name_PBL45,
-	      gText_SubQuest_Desc_PBL45,
-	      gText_QuestMapZone45,
+	      COMPOUND_STRING("Zone 45"),
+	      COMPOUND_STRING("You completed Zone 45!"),
+	      COMPOUND_STRING("Zone 45"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_46,
-	      gText_SubQuest_Name_PBL46,
-	      gText_SubQuest_Desc_PBL46,
-	      gText_QuestMapZone46,
+	      COMPOUND_STRING("Zone 46"),
+	      COMPOUND_STRING("You completed Zone 46!"),
+	      COMPOUND_STRING("Zone 46"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_47,
-	      gText_SubQuest_Name_PBL47,
-	      gText_SubQuest_Desc_PBL47,
-	      gText_QuestMapZone47,
+	      COMPOUND_STRING("Zone 47"),
+	      COMPOUND_STRING("You completed Zone 47!"),
+	      COMPOUND_STRING("Zone 47"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_48,
-	      gText_SubQuest_Name_PBL48,
-	      gText_SubQuest_Desc_PBL48,
-	      gText_QuestMapZone48,
+	      COMPOUND_STRING("Zone 48"),
+	      COMPOUND_STRING("You completed Zone 48!"),
+	      COMPOUND_STRING("Zone 48"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_49,
-	      gText_SubQuest_Name_PBL49,
-	      gText_SubQuest_Desc_PBL49,
-	      gText_QuestMapZone49,
+	      COMPOUND_STRING("Zone 49"),
+	      COMPOUND_STRING("You completed Zone 49!"),
+	      COMPOUND_STRING("Zone 49"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 
 	sub_quest(
 	      SUB_QUEST_50,
-	      gText_SubQuest_Name_PBL50,
-	      gText_SubQuest_Desc_PBL50,
-	      gText_QuestMapZone50,
+	      COMPOUND_STRING("Zone 50"),
+	      COMPOUND_STRING("You completed Zone 50!"),
+	      COMPOUND_STRING("Zone 50"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Done
+	      sText_Completed
 	),
 };
 
@@ -1034,7 +1036,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_29,
 	      gText_SubQuest_Name_Signs29,
-	      gText_SubQuest_Desc_PBL29,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone29,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1044,7 +1046,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_30,
 	      gText_SubQuest_Name_Signs30,
-	      gText_SubQuest_Desc_PBL30,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone30,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1054,7 +1056,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_31,
 	      gText_SubQuest_Name_Signs31,
-	      gText_SubQuest_Desc_PBL31,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone31,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1064,7 +1066,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_32,
 	      gText_SubQuest_Name_Signs32,
-	      gText_SubQuest_Desc_PBL32,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone32,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1074,7 +1076,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_33,
 	      gText_SubQuest_Name_Signs33,
-	      gText_SubQuest_Desc_PBL33,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone33,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1084,7 +1086,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_34,
 	      gText_SubQuest_Name_Signs34,
-	      gText_SubQuest_Desc_PBL34,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone34,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1094,7 +1096,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_35,
 	      gText_SubQuest_Name_Signs35,
-	      gText_SubQuest_Desc_PBL35,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone35,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1104,7 +1106,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_36,
 	      gText_SubQuest_Name_Signs36,
-	      gText_SubQuest_Desc_PBL36,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone36,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1114,7 +1116,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_37,
 	      gText_SubQuest_Name_Signs37,
-	      gText_SubQuest_Desc_PBL37,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone37,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1124,7 +1126,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_38,
 	      gText_SubQuest_Name_Signs38,
-	      gText_SubQuest_Desc_PBL38,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone38,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1134,7 +1136,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_39,
 	      gText_SubQuest_Name_Signs39,
-	      gText_SubQuest_Desc_PBL39,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone39,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1144,7 +1146,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_40,
 	      gText_SubQuest_Name_Signs40,
-	      gText_SubQuest_Desc_PBL40,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone40,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1154,7 +1156,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_41,
 	      gText_SubQuest_Name_Signs41,
-	      gText_SubQuest_Desc_PBL41,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone41,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1164,7 +1166,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_42,
 	      gText_SubQuest_Name_Signs42,
-	      gText_SubQuest_Desc_PBL42,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone42,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1174,7 +1176,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_43,
 	      gText_SubQuest_Name_Signs43,
-	      gText_SubQuest_Desc_PBL43,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone43,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1184,7 +1186,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_44,
 	      gText_SubQuest_Name_Signs44,
-	      gText_SubQuest_Desc_PBL44,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone44,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1194,7 +1196,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_45,
 	      gText_SubQuest_Name_Signs45,
-	      gText_SubQuest_Desc_PBL45,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone45,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1204,7 +1206,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_46,
 	      gText_SubQuest_Name_Signs46,
-	      gText_SubQuest_Desc_PBL46,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone46,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1214,7 +1216,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_47,
 	      gText_SubQuest_Name_Signs47,
-	      gText_SubQuest_Desc_PBL47,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone47,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1224,7 +1226,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_48,
 	      gText_SubQuest_Name_Signs48,
-	      gText_SubQuest_Desc_PBL48,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone48,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1234,7 +1236,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_49,
 	      gText_SubQuest_Name_Signs49,
-	      gText_SubQuest_Desc_PBL49,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone49,
 	      ITEM_WISE_GLASSES,
 	      ITEM,
@@ -1244,7 +1246,7 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	sub_quest(
 	      SUB_QUEST_50,
 	      gText_SubQuest_Name_Signs50,
-	      gText_SubQuest_Desc_PBL50,
+	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone50,
 	      ITEM_WISE_GLASSES,
 	      ITEM,

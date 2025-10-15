@@ -14,123 +14,126 @@
 #define QUEST_MENU_CHECK_COMPLETE       9   //checks if questId has been completed. Returns result to gSpecialVar_Result
 #define QUEST_MENU_BUFFER_QUEST_NAME    10   //buffers a quest name to gStringVar1
 
-// quest number defines
-#define QUEST_PBL        0
-#define QUEST_SIGNS      1
-#define QUEST_SAVES      2
-#define QUEST_POKEDEX    3
-#define QUEST_CATCH_50   4
-#define QUEST_GAUNTLET_1 5
-#define QUEST_BERRIES    6
-#define QUEST_8          7
-#define QUEST_9          8
-#define QUEST_10         9
-#define QUEST_11        10
-#define QUEST_12        11
-#define QUEST_13        12
-#define QUEST_14        13
-#define QUEST_15        14
-#define QUEST_16        15
-#define QUEST_17        16
-#define QUEST_18        17
-#define QUEST_19        18
-#define QUEST_20        19
-#define QUEST_21        20
-#define QUEST_22        21
-#define QUEST_23        22
-#define QUEST_24        23
-#define QUEST_25        24
-#define QUEST_26        25
-#define QUEST_27        26
-#define QUEST_28        27
-#define QUEST_29        28
-#define QUEST_30        29
-#define QUEST_31        30
-#define QUEST_32        31
-#define QUEST_33        32
-#define QUEST_34        33
-#define QUEST_35        34
-#define QUEST_36        35
-#define QUEST_37        36
-#define QUEST_38        37
-#define QUEST_39        38
-#define QUEST_40        39
-#define QUEST_41        40
-#define QUEST_42        41
-#define QUEST_43        42
-#define QUEST_44        43
-#define QUEST_45        44
-#define QUEST_46        45
-#define QUEST_47        46
-#define QUEST_48        47
-#define QUEST_49        48
-#define QUEST_50        49
-#define QUEST_51        50
-#define QUEST_52        51
-#define QUEST_53        52
-#define QUEST_54        53
-#define QUEST_55        54
-#define QUEST_56        55
-#define QUEST_57        56
-#define QUEST_58        57
-#define QUEST_59        58
-#define QUEST_60        59
-#define QUEST_61        60
-#define QUEST_62        61
-#define QUEST_63        62
-#define QUEST_64        63
-#define QUEST_COUNT     64
+enum {
+    QUEST_PBL,
+    QUEST_SIGNS,
+    QUEST_SAVES,
+    QUEST_POKEDEX,
+    QUEST_CATCH_50,
+    QUEST_GAUNTLET_1,
+    QUEST_BERRIES,
+    QUEST_8,
+    QUEST_9,
+    QUEST_10,
+    QUEST_11,
+    QUEST_12,
+    QUEST_13,
+    QUEST_14,
+    QUEST_15,
+    QUEST_16,
+    QUEST_17,
+    QUEST_18,
+    QUEST_19,
+    QUEST_20,
+    QUEST_21,
+    QUEST_22,
+    QUEST_23,
+    QUEST_24,
+    QUEST_25,
+    QUEST_26,
+    QUEST_27,
+    QUEST_28,
+    QUEST_29,
+    QUEST_30,
+    QUEST_31,
+    QUEST_32,
+    QUEST_33,
+    QUEST_34,
+    QUEST_35,
+    QUEST_36,
+    QUEST_37,
+    QUEST_38,
+    QUEST_39,
+    QUEST_40,
+    QUEST_41,
+    QUEST_42,
+    QUEST_43,
+    QUEST_44,
+    QUEST_45,
+    QUEST_46,
+    QUEST_47,
+    QUEST_48,
+    QUEST_49,
+    QUEST_50,
+    QUEST_51,
+    QUEST_52,
+    QUEST_53,
+    QUEST_54,
+    QUEST_55,
+    QUEST_56,
+    QUEST_57,
+    QUEST_58,
+    QUEST_59,
+    QUEST_60,
+    QUEST_61,
+    QUEST_62,
+    QUEST_63,
+    QUEST_64,
+    QUEST_COUNT
+};
 
-#define SUB_QUEST_1      0
-#define SUB_QUEST_2      1
-#define SUB_QUEST_3      2
-#define SUB_QUEST_4      3
-#define SUB_QUEST_5      4
-#define SUB_QUEST_6      5
-#define SUB_QUEST_7      6
-#define SUB_QUEST_8      7
-#define SUB_QUEST_9      8
-#define SUB_QUEST_10     9
-#define SUB_QUEST_11    10
-#define SUB_QUEST_12    11
-#define SUB_QUEST_13    12
-#define SUB_QUEST_14    13
-#define SUB_QUEST_15    14
-#define SUB_QUEST_16    15
-#define SUB_QUEST_17    16
-#define SUB_QUEST_18    17
-#define SUB_QUEST_19    18
-#define SUB_QUEST_20    19
-#define SUB_QUEST_21    20
-#define SUB_QUEST_22    21
-#define SUB_QUEST_23    22
-#define SUB_QUEST_24    23
-#define SUB_QUEST_25    24
-#define SUB_QUEST_26    25
-#define SUB_QUEST_27    26
-#define SUB_QUEST_28    27
-#define SUB_QUEST_29    28
-#define SUB_QUEST_30    29
-#define SUB_QUEST_31    30
-#define SUB_QUEST_32    31
-#define SUB_QUEST_33    32
-#define SUB_QUEST_34    33
-#define SUB_QUEST_35    34
-#define SUB_QUEST_36    35
-#define SUB_QUEST_37    36
-#define SUB_QUEST_38    37
-#define SUB_QUEST_39    38
-#define SUB_QUEST_40    39
-#define SUB_QUEST_41    40
-#define SUB_QUEST_42    41
-#define SUB_QUEST_43    42
-#define SUB_QUEST_44    43
-#define SUB_QUEST_45    44
-#define SUB_QUEST_46    45
-#define SUB_QUEST_47    46
-#define SUB_QUEST_48    47
-#define SUB_QUEST_49    48
-#define SUB_QUEST_50    49
+enum {
+    SUB_QUEST_1,
+    SUB_QUEST_2,
+    SUB_QUEST_3,
+    SUB_QUEST_4,
+    SUB_QUEST_5,
+    SUB_QUEST_6,
+    SUB_QUEST_7,
+    SUB_QUEST_8,
+    SUB_QUEST_9,
+    SUB_QUEST_10,
+    SUB_QUEST_11,
+    SUB_QUEST_12,
+    SUB_QUEST_13,
+    SUB_QUEST_14,
+    SUB_QUEST_15,
+    SUB_QUEST_16,
+    SUB_QUEST_17,
+    SUB_QUEST_18,
+    SUB_QUEST_19,
+    SUB_QUEST_20,
+    SUB_QUEST_21,
+    SUB_QUEST_22,
+    SUB_QUEST_23,
+    SUB_QUEST_24,
+    SUB_QUEST_25,
+    SUB_QUEST_26,
+    SUB_QUEST_27,
+    SUB_QUEST_28,
+    SUB_QUEST_29,
+    SUB_QUEST_30,
+    SUB_QUEST_31,
+    SUB_QUEST_32,
+    SUB_QUEST_33,
+    SUB_QUEST_34,
+    SUB_QUEST_35,
+    SUB_QUEST_36,
+    SUB_QUEST_37,
+    SUB_QUEST_38,
+    SUB_QUEST_39,
+    SUB_QUEST_40,
+    SUB_QUEST_41,
+    SUB_QUEST_42,
+    SUB_QUEST_43,
+    SUB_QUEST_44,
+    SUB_QUEST_45,
+    SUB_QUEST_46,
+    SUB_QUEST_47,
+    SUB_QUEST_48,
+    SUB_QUEST_49,
+    SUB_QUEST_50
+};
 
 #define QUEST_PBL_SUB_COUNT 50
 #define QUEST_SIGNS_SUB_COUNT 50
