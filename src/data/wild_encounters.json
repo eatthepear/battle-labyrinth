@@ -385,33 +385,33 @@
             "mons": [
               {
                 "min_level": 7,
-                "max_level": 7,
-                "species": "SPECIES_GLAMEOW"
+                "max_level": 8,
+                "species": "SPECIES_MINCCINO"
               },
               {
                 "min_level": 7,
-                "max_level": 7,
-                "species": "SPECIES_MEOWTH"
+                "max_level": 8,
+                "species": "SPECIES_BELLSPROUT"
               },
               {
                 "min_level": 7,
-                "max_level": 7,
-                "species": "SPECIES_MEOWTH_ALOLA"
+                "max_level": 8,
+                "species": "SPECIES_EKANS"
               },
               {
                 "min_level": 7,
-                "max_level": 7,
+                "max_level": 8,
                 "species": "SPECIES_CRABRAWLER"
               },
               {
                 "min_level": 7,
-                "max_level": 7,
+                "max_level": 8,
                 "species": "SPECIES_STUFFUL"
               },
               {
                 "min_level": 7,
-                "max_level": 7,
-                "species": "SPECIES_BUDEW"
+                "max_level": 8,
+                "species": "SPECIES_DROWZEE"
               },
               {
                 "min_level": 7,
@@ -421,7 +421,17 @@
               {
                 "min_level": 7,
                 "max_level": 8,
-                "species": "SPECIES_EKANS"
+                "species": "SPECIES_PANCHAM"
+              },
+              {
+                "min_level": 7,
+                "max_level": 8,
+                "species": "SPECIES_BIDOOF"
+              },
+              {
+                "min_level": 7,
+                "max_level": 8,
+                "species": "SPECIES_BUIZEL"
               },
               {
                 "min_level": 7,
@@ -432,16 +442,6 @@
                 "min_level": 7,
                 "max_level": 8,
                 "species": "SPECIES_NIDORAN_M"
-              },
-              {
-                "min_level": 7,
-                "max_level": 8,
-                "species": "SPECIES_SKITTY"
-              },
-              {
-                "min_level": 7,
-                "max_level": 8,
-                "species": "SPECIES_IGGLYBUFF"
               }
             ]
           },
@@ -450,28 +450,28 @@
             "mons": [
               {
                 "min_level": 7,
-                "max_level": 7,
+                "max_level": 8,
                 "species": "SPECIES_TYMPOLE"
               },
               {
                 "min_level": 7,
-                "max_level": 7,
-                "species": "SPECIES_LOTAD"
-              },
-              {
-                "min_level": 7,
-                "max_level": 7,
-                "species": "SPECIES_SURSKIT"
+                "max_level": 8,
+                "species": "SPECIES_POLIWAG"
               },
               {
                 "min_level": 7,
                 "max_level": 8,
-                "species": "SPECIES_DEWPIDER"
+                "species": "SPECIES_VOLBEAT"
               },
               {
                 "min_level": 7,
                 "max_level": 8,
-                "species": "SPECIES_AZURILL"
+                "species": "SPECIES_ILLUMISE"
+              },
+              {
+                "min_level": 7,
+                "max_level": 8,
+                "species": "SPECIES_STUNFISK"
               }
             ]
           },
@@ -480,28 +480,28 @@
             "mons": [
               {
                 "min_level": 7,
-                "max_level": 7,
+                "max_level": 8,
                 "species": "SPECIES_TYMPOLE"
               },
               {
                 "min_level": 7,
-                "max_level": 7,
-                "species": "SPECIES_LOTAD"
-              },
-              {
-                "min_level": 7,
-                "max_level": 7,
-                "species": "SPECIES_SURSKIT"
+                "max_level": 8,
+                "species": "SPECIES_POLIWAG"
               },
               {
                 "min_level": 7,
                 "max_level": 8,
-                "species": "SPECIES_DEWPIDER"
+                "species": "SPECIES_VOLBEAT"
               },
               {
                 "min_level": 7,
                 "max_level": 8,
-                "species": "SPECIES_AZURILL"
+                "species": "SPECIES_ILLUMISE"
+              },
+              {
+                "min_level": 7,
+                "max_level": 8,
+                "species": "SPECIES_STUNFISK"
               },
               {
                 "min_level": 1,
