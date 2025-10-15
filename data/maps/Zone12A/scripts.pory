@@ -56,7 +56,7 @@ script Zone12A_EventScript_LeviathanBattles {
 	applymovement(2, Common_Movement_FaceUp)
 	waitmovement(0)
 	applymovement(2, Common_Movement_FaceLeft)
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement(0)
 	msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Hmph."))
 	applymovement(2, Common_Movement_FaceRight)
@@ -181,7 +181,7 @@ raw `
 Zone12A_EventScript_Waterfall::
 	lockall
 	msgbox Zone12A_Text_DontGoDown, MSGBOX_AUTOCLOSE
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	releaseall
 	end

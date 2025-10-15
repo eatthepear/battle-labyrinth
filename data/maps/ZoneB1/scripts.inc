@@ -8,7 +8,7 @@ ZoneB1_OnFrame:
 
 ZoneB1_EventScript_Intro:
 	lockall
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	applymovement 1, Common_Movement_ExclamationMark
 	playse SE_PIN

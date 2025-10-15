@@ -27,12 +27,12 @@ script Zone6A_EventScript_LeviathanBattle {
 	lockall
 	applymovement(1, Common_Movement_FaceDown)
 	waitmovement(0)
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
 	waitmovement(0)
 	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Woah!\pYou're trying to sneak past me to get to my family's treasures?\pNo can do!\pYou really want to be taught a lesson?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: That's what I thought!"))
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
 		applymovement(1, Common_Movement_FaceLeft)
 		waitmovement(0)
 		release
@@ -58,7 +58,7 @@ script Zone6A_EventScript_LeviathanBattle {
 	applymovement(1, Zone6A_Movement_Mina_MoveOutOfWay)
 	applymovement(2, Zone6A_Movement_Coby_WalkUp)
 	applymovement(3, Zone6A_Movement_Zack_WalkUp)
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
 	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Hey! You're messing with my little sister!\pI'll teach you a lesson!"), MSGBOX_DEFAULT)
 	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: No one messes with our family!\pLet's show 'em, sis!"), MSGBOX_DEFAULT)

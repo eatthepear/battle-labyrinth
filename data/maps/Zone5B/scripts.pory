@@ -28,11 +28,11 @@ mapscripts Zone5B_MapScripts {
 
 script Zone5B_EventScript_LeviathanBattle {
 	lockall
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
 	msgbox(format("It sounds like someone is running down towards you. Stay where you are?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
 		waitmovement(0)
 		releaseall
 		end
@@ -520,12 +520,12 @@ Zone5B_Text_KennethPostBattle:
 
 // script Zone5B_EventScript_Intro {
 //     lockall
-// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+// 	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 // 	waitmovement(0)
-// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+// 	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 // 	waitmovement(0)
 // 	special(SpawnCameraObject)
-// 	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
+// 	applymovement(LOCALID_CAMERA, Common_Movement_WalkUp)
 // 	waitmovement(0)
 // 	special(RemoveCameraObject)
 // 	applymovement(2, Common_Movement_ExclamationMark)
@@ -537,7 +537,7 @@ Zone5B_Text_KennethPostBattle:
 // 	waitmovement(0)
 // 	waitmoncry
 // 	special(SpawnCameraObject)
-// 	applymovement(OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
+// 	applymovement(LOCALID_CAMERA, Common_Movement_WalkDown)
 // 	applymovement(2, Common_Movement_WalkDown)
 // 	waitmovement(0)
 // 	special(RemoveCameraObject)
@@ -553,7 +553,7 @@ Zone5B_Text_KennethPostBattle:
 // 	applymovement(2, Common_Movement_WalkDown)
 // 	waitmovement(0)
 // 	applymovement(2, Common_Movement_FaceRight)
-// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+// 	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
 // 	waitmovement(0)
 // 	applymovement(2, Zone5B_Porygon_AnimateRight)
 // 	waitmovement(0)
@@ -562,7 +562,7 @@ Zone5B_Text_KennethPostBattle:
 // 	applymovement(2, Common_Movement_WalkRight)
 // 	waitmovement(0)
 // 	applymovement(2, Common_Movement_FaceDown)
-// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+// 	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
 // 	waitmovement(0)
 // 	applymovement(2, Zone5B_Porygon_AnimateDown)
 // 	waitmovement(0)
@@ -571,7 +571,7 @@ Zone5B_Text_KennethPostBattle:
 // 	applymovement(2, Common_Movement_WalkDown)
 // 	waitmovement(0)
 // 	applymovement(2, Common_Movement_FaceLeft)
-// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+// 	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 // 	waitmovement(0)
 // 	applymovement(2, Zone5B_Porygon_AnimateLeft)
 // 	waitmovement(0)
@@ -580,7 +580,7 @@ Zone5B_Text_KennethPostBattle:
 // 	applymovement(2, Common_Movement_WalkLeft)
 // 	waitmovement(0)
 // 	applymovement(2, Common_Movement_FaceDown)
-// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+// 	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
 // 	waitmovement(0)
 // 	applymovement(2, Zone5B_Porygon_AnimateDown)
 // 	waitmovement(0)
@@ -598,7 +598,7 @@ Zone5B_Text_KennethPostBattle:
 // 	waitmovement(0)
 //     removeobject(2)
 //     setflag(FLAG_HIDE_ZONE5B_SHINY_PORYGON)
-// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+// 	applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
 // 	playse(SE_PIN)
 // 	waitmovement(0)
 // 	waitse

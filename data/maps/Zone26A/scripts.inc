@@ -3,7 +3,7 @@ Zone26A_MapScripts::
 
 Zone26A_EventScript_StopLeave::
 	lockall
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	msgbox Zone26A_Text_CantLeave, MSGBOX_AUTOCLOSE
 	releaseall

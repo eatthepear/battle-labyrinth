@@ -26,7 +26,7 @@ Zone26B_EventScript_SingleRotomFight:
 
 Zone26B_EventScript_StartRotomSingleBattle:
 	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	waitse
@@ -48,7 +48,7 @@ Zone26B_EventScript_StartRotomBattles:
 	setflag FLAG_SYS_NO_CATCHING
 	setflag FLAG_SYS_SMART_WILD_AI_ON
 	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	waitse
@@ -63,9 +63,9 @@ Zone26B_EventScript_StartRotomBattles:
 	goto_if_eq Zone26B_EventScript_RestartRotomBattles
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq Zone26B_EventScript_RestartRotomBattles
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	waitse
@@ -74,7 +74,7 @@ Zone26B_EventScript_StartRotomBattles:
 	waitmoncry
 	msgbox Zone26B_Text_RotomBoxes, MSGBOX_AUTOCLOSE
 	delay 40
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	waitse
@@ -89,7 +89,7 @@ Zone26B_EventScript_StartRotomBattles:
 	goto_if_eq Zone26B_EventScript_RestartRotomBattles
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq Zone26B_EventScript_RestartRotomBattles
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	waitse
@@ -105,7 +105,7 @@ Zone26B_EventScript_StartRotomBattles:
 	goto_if_eq Zone26B_EventScript_RestartRotomBattles
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq Zone26B_EventScript_RestartRotomBattles
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	waitse
@@ -121,7 +121,7 @@ Zone26B_EventScript_StartRotomBattles:
 	goto_if_eq Zone26B_EventScript_RestartRotomBattles
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq Zone26B_EventScript_RestartRotomBattles
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	waitse
@@ -137,7 +137,7 @@ Zone26B_EventScript_StartRotomBattles:
 	goto_if_eq Zone26B_EventScript_RestartRotomBattles
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq Zone26B_EventScript_RestartRotomBattles
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	waitse
@@ -154,7 +154,7 @@ Zone26B_EventScript_StartRotomBattles:
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq Zone26B_EventScript_RestartRotomBattles
 	clearflag FLAG_SYS_NO_CATCHING
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	playmoncry SPECIES_ROTOM, 2
 	delay 40
@@ -191,7 +191,7 @@ Zone26B_Text_RotomBoxes:
 
 Zone26B_EventScript_RestartRotomBattles:
 	msgbox Zone26B_Text_Rotom, MSGBOX_AUTOCLOSE
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	goto Zone26B_EventScript_StartRotomBattles
 	end

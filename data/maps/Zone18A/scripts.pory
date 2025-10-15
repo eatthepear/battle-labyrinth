@@ -15,11 +15,11 @@ mapscripts Zone18A_MapScripts {
 
 script Zone18A_EventScript_PirateEvent {
 	lockall
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
 	waitmovement(0)
 	msgbox(format("{COLOR BLUE}Eli{COLOR DARK_GRAY}: There it is! My Azurill doll!"))
 	special(SpawnCameraObject)
-	applymovement(OBJ_EVENT_ID_CAMERA, Zone18A_Movement_CameraDown)
+	applymovement(LOCALID_CAMERA, Zone18A_Movement_CameraDown)
 	waitmovement(0)
 	playbgm(MUS_ENCOUNTER_AQUA, 0)
 	addobject(7)
@@ -46,7 +46,7 @@ script Zone18A_EventScript_PirateEvent {
 	removeobject(7)
 	removeobject(8)
 	setflag(FLAG_HIDE_ZONE18A_PIRATES)
-	applymovement(OBJ_EVENT_ID_CAMERA, Zone18A_Movement_CameraUp)
+	applymovement(LOCALID_CAMERA, Zone18A_Movement_CameraUp)
 	waitmovement(0)
 	special(RemoveCameraObject)
 	removeobject(11)

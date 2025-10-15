@@ -23,7 +23,7 @@ script EventScript_Joy {
 		applymovement(LOCALID_JOY, Movement_PkmnCenterNurse_Bow)
 		waitmovement(0)
 		msgbox(format("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Your Pokémon have been restored. See you next time!"), MSGBOX_AUTOCLOSE)
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+		applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
 		waitmovement(0)
 	}
 	release

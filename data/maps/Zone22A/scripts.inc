@@ -22,11 +22,11 @@ Zone22A_EventScript_CheckBrutal:
 Zone22A_EventScript_LeviathanBattle:
 	fadeoutbgm 1
 	msgbox Zone22A_Text_Pam_StopRightThere, MSGBOX_AUTOCLOSE
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	waitse
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 	waitmovement 0
 	addobject 11
 	addobject 12

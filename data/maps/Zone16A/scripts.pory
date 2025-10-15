@@ -82,7 +82,7 @@ script Zone16A_EventScript_SandPile {
 	lockall
 	random(5)
 	if (var(VAR_RESULT) == 0) {
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
 		msgbox(format("There was a Pokémon in the sand pile!"), MSGBOX_DEFAULT)
 		waitmovement(0)
 		closemessage

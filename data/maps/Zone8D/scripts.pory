@@ -25,7 +25,7 @@ script Zone8D_EventScript_LeviathanBattle {
 	msgbox(format("{COLOR BLUE}Alistair{COLOR DARK_GRAY}: Well, well, well. You're almost out, but you have another challenge to face: me.\pReady to duke it out?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		msgbox(format("Well, if you're not ready, I respect it."), MSGBOX_AUTOCLOSE)
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
 		waitmovement(0)
 		if (var(VAR_TEMP_0) == 3) {
 			applymovement(2, Common_Movement_WalkRight2)

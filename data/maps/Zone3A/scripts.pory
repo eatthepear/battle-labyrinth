@@ -25,32 +25,32 @@ mapscripts Zone3A_MapScripts {
 
 script Zone3A_EventScript_TriggerLeviathan {
 	lockall
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
 	waitmovement(0)
 	msgbox("This looks like someone's home!\nGo inside?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		closemessage
-		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
 		waitmovement(0)
 		releaseall
 		end
 	}
 	closemessage
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 	waitmovement(0)
 	fadeoutbgm(1)
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
 	waitmovement(0)
 	addobject(1)
 	clearflag(FLAG_HIDE_ZONE3A_PHILLIPA)
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
 	applymovement(1, Common_Movement_WalkDown)
 	waitmovement(0)
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
 	waitmovement(0)
 	msgbox(Zone3A_Text_Leviathan3Intro)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
@@ -64,7 +64,7 @@ script Zone3A_EventScript_TriggerLeviathan {
 	applymovement(1, Zone3A_Movement_Phillipa_RunAway)
 	waitmovement(0)
 	msgbox(format("{COLOR BLUE}Remi{COLOR DARK_GRAY}: Phillipa? Are you ok?"))
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
@@ -96,11 +96,11 @@ script Zone3A_EventScript_TriggerLeviathan {
 	msgbox(format("{COLOR BLUE}Remi{COLOR DARK_GRAY}: I'm proud of you, kiddo."))
 	applymovement(2, Zone3A_Movement_Remi_WalkToPlayer)
 	waitmovement(0)
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
 	msgbox(format("{COLOR BLUE}Remi{COLOR DARK_GRAY}: Thanks for being a good sport.\pHere, I want you to have this."), MSGBOX_DEFAULT)
 	giveitem(ITEM_GOOD_ROD, 1)
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
 	waitmovement(0)
 	applymovement(2, Zone3A_Movement_Remi_WalkBackToPhillipa)
 	waitmovement(0)

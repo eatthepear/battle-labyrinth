@@ -2,9 +2,9 @@ mapscripts Zone20B_MapScripts {}
 
 script Zone20B_EventScript_InitiateBattle {
 	lockall
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
 	waitmovement(0)
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
 	waitmovement(0)
 	msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: "), MSGBOX_DEFAULT)
 	msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: "), MSGBOX_DEFAULT)
@@ -67,9 +67,9 @@ movement Zone20B_Movement_Leave {
 
 // script Zone20B_EventScript_LeviathanBattle {
 //     lockall
-// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+// 	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 // 	waitmovement(0)
-// 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+// 	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 // 	waitmovement(0)
 // 	msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: We've gone undetected thus far, but we need to hurry.\pThere's no telling when something…"))
 // 	applymovement(1, Common_Movement_ExclamationMark)

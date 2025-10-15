@@ -15,13 +15,13 @@ Zone24A_EventScript_Intro:
 Zone24A_EventScript_LookDown::
 	lockall
 	special SpawnCameraObject
-	applymovement OBJ_EVENT_ID_CAMERA, Zone24A_Movement_Camera_MoveCameraDown
+	applymovement LOCALID_CAMERA, Zone24A_Movement_Camera_MoveCameraDown
 	waitmovement 0
 	delay 96
-	applymovement OBJ_EVENT_ID_CAMERA, Zone24A_Movement_Camera_MoveCameraUp
+	applymovement LOCALID_CAMERA, Zone24A_Movement_Camera_MoveCameraUp
 	waitmovement 0
 	special RemoveCameraObject
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	releaseall
 	end

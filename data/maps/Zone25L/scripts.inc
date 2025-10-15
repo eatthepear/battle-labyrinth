@@ -22,13 +22,13 @@ Zone25L_EventScript_CheckBrutal:
 
 Zone25L_EventScript_LeftMost::
 	lockall
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	setvar VAR_ZONE_25_STATE, 1
 	goto Zone25L_EventScript_InitiateLeviathanBattle
@@ -36,9 +36,9 @@ Zone25L_EventScript_LeftMost::
 
 Zone25L_EventScript_Left::
 	lockall
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	setvar VAR_ZONE_25_STATE, 1
 	goto Zone25L_EventScript_InitiateLeviathanBattle
@@ -46,7 +46,7 @@ Zone25L_EventScript_Left::
 
 Zone25L_EventScript_Middle::
 	lockall
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	setvar VAR_ZONE_25_STATE, 1
 	goto Zone25L_EventScript_InitiateLeviathanBattle
@@ -54,9 +54,9 @@ Zone25L_EventScript_Middle::
 
 Zone25L_EventScript_Right::
 	lockall
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	setvar VAR_ZONE_25_STATE, 1
 	goto Zone25L_EventScript_InitiateLeviathanBattle
@@ -64,13 +64,13 @@ Zone25L_EventScript_Right::
 
 Zone25L_EventScript_RightMost::
 	lockall
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	setvar VAR_ZONE_25_STATE, 1
 	goto Zone25L_EventScript_InitiateLeviathanBattle
@@ -155,15 +155,15 @@ Zone25L_EventScript_DontHaveEnoughMons:
 	applymovement 2, Common_Movement_FaceUp
 	applymovement 1, Common_Movement_FaceUp
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 	waitmovement 0
 	setvar VAR_ZONE_25_STATE, 0
 	releaseall
@@ -203,9 +203,9 @@ Zone25L_EventScript_Leviathan14Defeated:
 	clearflag FLAG_HIDE_ZONE25L_COLRESS
 	addobject 5
 	fadeoutbgm 1
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	waitse
