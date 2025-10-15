@@ -612,11 +612,14 @@ script EventScript_Notebook {
 	while {
 		message(format("Notebook open.\nWhat would you like to read?"))
 		waitmessage
-		dynmultipush("Changes from Vanilla", 0)
+		dynmultipush("Zone Info", 0)
+		dynmultipush("Changes from Vanilla", 1)
 		dynmultipush("Close Notebook", 4)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
+				call(EventScript_Notebook_ZoneInfo)
+			case 1:
 				call(EventScript_Notebook_ChangesFromVanilla)
 			case 4:
 			case MULTI_B_PRESSED:
@@ -624,6 +627,79 @@ script EventScript_Notebook {
 				releaseall
 				end
 		}
+	}
+}
+
+script EventScript_Notebook_ZoneInfo {
+	call(EventScript_BufferZoneName)
+	msgbox(format("{PLAYER} flipped to the page about {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}…\pRead on?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		return
+	}
+	buffernumberstring(0, VAR_ZONE)
+	switch (var(VAR_ZONE)) {
+		case 1:
+			msgbox(format("{COLOR GREEN}Zone 1{COLOR DARK_GRAY} is a simple route through a forested area."))
+			msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY} the Leviathan uses a trio of Elemental Monkeys, with his ace being the one with a type advantage over your starter."))
+		case 2:
+			msgbox(format("{COLOR GREEN}Zone 2{COLOR DARK_GRAY} is a ranch with lots of open area."))
+			msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY} the Leviathan trains a Bunnelby, Smoliv, and ace Skwovet that use Oran Berries exceptionally well with their abilties."))
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				msgbox(format("On Brutal difficulty, he also has a Gulpin with Sticky Hold that uses Stuff Cheeks to set up its Belch."))
+			}
+		case 3:
+			msgbox(format("{COLOR GREEN}Zone 3{COLOR DARK_GRAY} is a set of small forested islands with clear water."))
+			msgbox(format("{COLOR BLUE}Phillipa{COLOR DARK_GRAY} the Leviathan ramps up the damage over time. Her Bidoof, Sandshrew, and ace Marill all use Defense Curl and Rollout."))
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				msgbox(format("On Brutal difficulty, she also has a Spheal that uses Defense Curl and Ice Ball."))
+			}
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+		case 12:
+		case 13:
+		case 14:
+		case 15:
+		case 16:
+		case 17:
+		case 18:
+		case 19:
+		case 20:
+		case 21:
+		case 22:
+		case 23:
+		case 24:
+		case 25:
+		case 26:
+		case 27:
+		case 28:
+		case 29:
+		case 30:
+		case 31:
+		case 32:
+		case 33:
+		case 34:
+		case 35:
+		case 36:
+		case 37:
+		case 38:
+		case 39:
+		case 40:
+		case 41:
+		case 42:
+		case 43:
+		case 44:
+		case 45:
+			msgbox(format("{COLOR GREEN}Zone {COLOR DARK_GRAY} is "))
+			msgbox(format("{COLOR BLUE}{COLOR DARK_GRAY} the Leviathan "))
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				msgbox(format("On Brutal difficulty, __ also has "))
+			}
 	}
 }
 
