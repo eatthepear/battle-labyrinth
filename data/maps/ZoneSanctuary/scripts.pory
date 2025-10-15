@@ -478,7 +478,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("The {COLOR RED}Portable PC{COLOR DARK_GRAY}!"))
 			setflag(FLAG_SYS_START_MENU_PC_GET)
 			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(format("{PLAYER} received the {COLOR RED}Portable PC{COLOR DARK_GRAY}!"))
+			msgbox(format("{PLAYER} received the {COLOR RED}Portable PC{COLOR DARK_GRAY}! It was added to the {START_BUTTON} menu."))
 			waitfanfare
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Note that if you are in a Zone, you can only use the Portable PC once before reaching the Sanctuary."))
 		case 2:
