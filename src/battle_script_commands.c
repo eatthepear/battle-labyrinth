@@ -8366,9 +8366,14 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     u32 moneyReward;
     u8 trainerMoney = 0;
     u8 numMons = 0;
-    u32 scale = 4;
-    if (GetCurrentDifficultyLevel() >= DIFFICULTY_BRUTAL)
+    u32 scale;
+
+    if (GetCurrentDifficultyLevel() == DIFFICULTY_BRUTAL)
         scale = 2;
+    else if (GetCurrentDifficultyLevel() == DIFFICULTY_EASY)
+        scale = 8;
+    else
+        scale = 4;
 
     if (trainerId == TRAINER_SECRET_BASE)
     {
