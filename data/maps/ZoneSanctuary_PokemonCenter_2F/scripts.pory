@@ -34,6 +34,74 @@ script ZoneSanctuary_PokemonCenter_2F_EventScript_NameRater {
 	end
 }
 
+script EventScript_ExpertF_ZonePreview {
+	lock
+	faceplayer
+	msgbox(format("Err… what was I supposed to remember?\pAh, that's right!\pI have braved Pokémon Battle Labyrinth many times before.\pPerhaps I could tell you about your next set of challenges, if you're interested?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call(EventScript_BufferZoneName)
+		msgbox(format("Ah, so your next challenge is {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}…"))
+		buffernumberstring(0, VAR_ZONE)
+		switch (var(VAR_ZONE)) {
+			case 1:
+				msgbox(format("{COLOR GREEN}Zone 1{COLOR DARK_GRAY} is a simple route through a forested area, with a few novice trainers along the way."))
+				msgbox(format("Beware {COLOR BLUE}Corey{COLOR DARK_GRAY} the {COLOR RED}Leviathan{COLOR DARK_GRAY} and his trio of Elemental Monkeys, with his ace being the one with a type advantage over your starter."))
+			case 2:
+				msgbox(format("{COLOR GREEN}Zone 2{COLOR DARK_GRAY} is a farm with lots of open area, and a few beginner trainers scattered throughout."))
+				msgbox(format("Beware {COLOR BLUE}Shaun{COLOR DARK_GRAY} the {COLOR RED}Leviathan{COLOR DARK_GRAY}. His Bunnelby, Smoliv, and ace Skwovet use Oran Berries exceptionally well with their abilties."))
+				if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+					msgbox(format("Also, his Gulpin has Sticky Hold, so it just wants to Stuff Cheeks then Belch everywhere!"))
+				}
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+			case 7:
+			case 8:
+			case 9:
+			case 10:
+			case 11:
+			case 12:
+			case 13:
+			case 14:
+			case 15:
+			case 16:
+			case 17:
+			case 18:
+			case 19:
+			case 20:
+			case 21:
+			case 22:
+			case 23:
+			case 24:
+			case 25:
+			case 26:
+			case 27:
+			case 28:
+			case 29:
+			case 30:
+			case 31:
+			case 32:
+			case 33:
+			case 34:
+			case 35:
+			case 36:
+			case 37:
+			case 38:
+			case 39:
+			case 40:
+			case 41:
+			case 42:
+			case 43:
+			case 44:
+			case 45:
+		}
+	}
+	msgbox(format("I hope this knowledge is helpful…"))
+	release
+	end
+}
+
 raw `
 ZoneSanctuary_PokemonCenter_2F_Text_PleasedToRateMonNickname:
 	.string "Hi, hi! I'm the Name Rater!\n"
