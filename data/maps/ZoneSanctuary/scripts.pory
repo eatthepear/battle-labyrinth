@@ -276,26 +276,6 @@ script EventScript_NextZone {
 	}
 	call(EventScript_BufferZoneName)
 	switch (var(VAR_ZONE)) {
-		case 2:
-			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 2 - Warren Woods{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				call(Sanctuary_EventScript_EnterZone)
-				setvar(VAR_LEVEL_CAP, 2)
-				warp(MAP_ZONE2A, 255, 4, 3)
-				waitstate
-				end
-			}
-		case 3:
-			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 3 - Sunlit Pond{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				call(Sanctuary_EventScript_EnterZone)
-				setvar(VAR_LEVEL_CAP, 3)
-				setflag(FLAG_HIDE_ZONE3A_PHILLIPA)
-				setflag(FLAG_HIDE_ZONE3A_REMI)
-				warp(MAP_ZONE3A, 255, 38, 25)
-				waitstate
-				end
-			}
 		case 4:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 4 - Mystic Glade{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
@@ -383,7 +363,7 @@ script EventScript_NextZone {
 				end
 			}
 	}
-	msgbox(gText_Colress_SureYoureReady, MSGBOX_YESNO)
+	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you prepared? You will be entering {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		call(EventScript_AskSaveGame)
 		setflag(FLAG_IN_NEW_ZONE)
@@ -410,14 +390,14 @@ script EventScript_WarpNextZone {
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				setflag(FLAG_HIDE_ZONE2A_MAX)
 			}
-			warp(MAP_ZONE2A, 255, 4, 3)
+			warp(MAP_ZONE2A, 255, 10, 8)
+		case 3:
+			setflag(FLAG_HIDE_ZONE3A_PHILLIPA)
+			setflag(FLAG_HIDE_ZONE3A_REMI)
+			warp(MAP_ZONE3A, 255, 38, 25)
 	}
 	waitstate
 	end
-}
-
-text gText_Colress_SureYoureReady {
-	format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}.")
 }
 
 script Sanctuary_EventScript_EnterZone {
