@@ -910,16 +910,11 @@ script Sanctuary_EventScript_GameIntro {
 		playfanfare(MUS_OBTAIN_ITEM)
 		msgbox(format("Received the {COLOR RED}Pokédex{COLOR DARK_GRAY} and the {COLOR RED}DexNav{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
 		waitfanfare
-		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Additionally, here are some Key Items to make your life easier."))
 		giveitem(ITEM_NOTEBOOK)
-		giveitem(ITEM_INFINITE_REPEL)
-		giveitem(ITEM_RARE_CANDY)
 	} else {
 		additem(ITEM_POTION, 10)
 		additem(ITEM_POKE_BALL, 15)
 		additem(ITEM_NOTEBOOK)
-		additem(ITEM_INFINITE_REPEL)
-		additem(ITEM_RARE_CANDY)
 	}
 	setmonmetlocation(0, 255)
 	callnative(UpdateFollowingPokemon)
@@ -1568,14 +1563,24 @@ text Text_Shop_FarmersStand_YouCantPurchaseMore {
 script EventScript_Fisherman {
 	lock
 	faceplayer
-	if (flag(FLAG_SANCTUARY_RECEIVED_FISHING_ROD) == FALSE) {
+	if (checkitem(ITEM_SUPER_ROD) == FALSE) {
 		msgbox(format("A Fisherman deigns to spread his love of fishing with others!"))
-		setflag(FLAG_SANCTUARY_RECEIVED_FISHING_ROD)
 		giveitem(ITEM_SUPER_ROD)
 	}
 	msgbox(format("A Fisherman always fishes if he can!\pThough you can't fish when there's no Pokémon there!"), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_FISHERMAN, Common_Movement_FaceRight)
 	waitmovement(LOCALID_FISHERMAN)
+	release
+}
+
+script EventScript_Hiker {
+	lock
+	faceplayer
+	if (checkitem(ITEM_INFINITE_REPEL) == FALSE) {
+		msgbox(format("When you're traveling through caves or other areas, you may want to avoid wild Pokémon altogether.\pSo why don't you have this?"))
+		giveitem(ITEM_INFINITE_REPEL)
+	}
+	msgbox(format("That {COLOR RED}Infinite Repellent{COLOR DARK_GRAY} repels all wild Pokémon encounters, regardless of your Pokémon's level!"))
 	release
 }
 

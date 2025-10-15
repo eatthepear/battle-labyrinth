@@ -1,1 +1,8 @@
 mapscripts ZoneSanctuary_QuietField_MapScripts {}
+
+script ZoneSanctuary_QuietField_EventScript_SchoolKidM {
+	lock
+	faceplayer
+	msgbox(format("I've tried to knock out wild Pokémon to gain experience, but they don't give any!\pMaybe it's time for me to switch to Easy difficulty…"))
+	release
+}

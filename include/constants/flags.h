@@ -261,7 +261,7 @@
 #define FLAG_RECEIVED_PORYGON                             0x156
 #define FLAG_GUITARIST_INTRO                              0x157
 #define FLAG_COWGIRL_INTRO                                0x158
-#define FLAG_SANCTUARY_RECEIVED_FISHING_ROD               0x159
+#define FLAG_UNUSED_0x159                                 0x159
 #define FLAG_TESTING_FLAG                                 0x15A
 
 // Hidden Items
