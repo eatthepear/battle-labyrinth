@@ -437,16 +437,25 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
 
     [BATTLE_ENVIRONMENT_DESERT] =
     {
+        .naturePower = MOVE_EARTH_POWER,
+        .secretPowerEffect = MOVE_EFFECT_ACC_MINUS_1,
+        .camouflageType = TYPE_GROUND,
         .background = ENVIRONMENT_BACKGROUND(Desert),
     },
 
     [BATTLE_ENVIRONMENT_FOREST] =
     {
+        .naturePower = MOVE_ENERGY_BALL,
+        .secretPowerEffect = MOVE_EFFECT_SLEEP,
+        .camouflageType = TYPE_GRASS,
         .background = ENVIRONMENT_BACKGROUND(Forest),
     },
 
     [BATTLE_ENVIRONMENT_BRIDGE] =
     {
+        .naturePower = MOVE_AIR_SLASH,
+        .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
+        .camouflageType = TYPE_NORMAL,
         .background = ENVIRONMENT_BACKGROUND(Bridge),
     },
 };
