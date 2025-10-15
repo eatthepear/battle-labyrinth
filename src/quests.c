@@ -232,7 +232,6 @@ static const u8 sText_ReturnRecieveReward[] =
       _("Return to {STR_VAR_2}\nto recieve your reward!");
 static const u8 sText_SubQuestButton[] = _(" {A_BUTTON}");
 static const u8 sText_Type[] = _("{R_BUTTON}Type");
-static const u8 sText_Done[] = _("Done");
 static const u8 sText_Completed[] = _("Completed");
 static const u8 sText_Caught[] = _("Caught");
 static const u8 sText_Found[] = _("Found");
@@ -247,11 +246,10 @@ static const u8 sText_AZ[] = _(" A-Z");
 //////////////////////BEGIN SUBQUEST CUSTOMIZATION/////////////////////////////
 
 //Declaration of subquest structures. Edits to subquests are made here.
-#define sub_quest(i, n, d, m, s, st, t) {.id = i, .name = n, .desc = d, .map = m, .sprite = s, .spritetype = st, .type = t}
+#define sub_quest(n, d, m, s, st, t) {.name = n, .desc = d, .map = m, .sprite = s, .spritetype = st, .type = t}
 static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 {
 	sub_quest(
-	      SUB_QUEST_1,
 	      COMPOUND_STRING("Zone 1"),
 	      COMPOUND_STRING("You completed Zone 1!"),
 	      COMPOUND_STRING("Zone 1"),
@@ -261,7 +259,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_2,
 	      COMPOUND_STRING("Zone 2"),
 	      COMPOUND_STRING("You completed Zone 2!"),
 	      COMPOUND_STRING("Zone 2"),
@@ -271,7 +268,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_3,
 	      COMPOUND_STRING("Zone 3"),
 	      COMPOUND_STRING("You completed Zone 3!"),
 	      COMPOUND_STRING("Zone 3"),
@@ -281,7 +277,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_4,
 	      COMPOUND_STRING("Zone 4"),
 	      COMPOUND_STRING("You completed Zone 4!"),
 	      COMPOUND_STRING("Zone 4"),
@@ -291,7 +286,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_5,
 	      COMPOUND_STRING("Zone 5"),
 	      COMPOUND_STRING("You completed Zone 5!"),
 	      COMPOUND_STRING("Zone 5"),
@@ -301,7 +295,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_6,
 	      COMPOUND_STRING("Zone 6"),
 	      COMPOUND_STRING("You completed Zone 6!"),
 	      COMPOUND_STRING("Zone 6"),
@@ -311,7 +304,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_7,
 	      COMPOUND_STRING("Zone 7"),
 	      COMPOUND_STRING("You completed Zone 7!"),
 	      COMPOUND_STRING("Zone 7"),
@@ -321,7 +313,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_8,
 	      COMPOUND_STRING("Zone 8"),
 	      COMPOUND_STRING("You completed Zone 8!"),
 	      COMPOUND_STRING("Zone 8"),
@@ -331,7 +322,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_9,
 	      COMPOUND_STRING("Zone 9"),
 	      COMPOUND_STRING("You completed Zone 9!"),
 	      COMPOUND_STRING("Zone 9"),
@@ -341,7 +331,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_10,
 	      COMPOUND_STRING("Zone 10"),
 	      COMPOUND_STRING("You completed Zone 10!"),
 	      COMPOUND_STRING("Zone 10"),
@@ -351,7 +340,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_11,
 	      COMPOUND_STRING("Zone 11"),
 	      COMPOUND_STRING("You completed Zone 11!"),
 	      COMPOUND_STRING("Zone 11"),
@@ -361,7 +349,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_12,
 	      COMPOUND_STRING("Zone 12"),
 	      COMPOUND_STRING("You completed Zone 12!"),
 	      COMPOUND_STRING("Zone 12"),
@@ -371,7 +358,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_13,
 	      COMPOUND_STRING("Zone 13"),
 	      COMPOUND_STRING("You completed Zone 13!"),
 	      COMPOUND_STRING("Zone 13"),
@@ -381,7 +367,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_14,
 	      COMPOUND_STRING("Zone 14"),
 	      COMPOUND_STRING("You completed Zone 14!"),
 	      COMPOUND_STRING("Zone 14"),
@@ -391,7 +376,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_15,
 	      COMPOUND_STRING("Zone 15"),
 	      COMPOUND_STRING("You completed Zone 15!"),
 	      COMPOUND_STRING("Zone 15"),
@@ -401,7 +385,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_16,
 	      COMPOUND_STRING("Zone 16"),
 	      COMPOUND_STRING("You completed Zone 16!"),
 	      COMPOUND_STRING("Zone 16"),
@@ -411,7 +394,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_17,
 	      COMPOUND_STRING("Zone 17"),
 	      COMPOUND_STRING("You completed Zone 17!"),
 	      COMPOUND_STRING("Zone 17"),
@@ -421,7 +403,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_18,
 	      COMPOUND_STRING("Zone 18"),
 	      COMPOUND_STRING("You completed Zone 18!"),
 	      COMPOUND_STRING("Zone 18"),
@@ -431,7 +412,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_19,
 	      COMPOUND_STRING("Zone 19"),
 	      COMPOUND_STRING("You completed Zone 19!"),
 	      COMPOUND_STRING("Zone 19"),
@@ -441,7 +421,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_20,
 	      COMPOUND_STRING("Zone 20"),
 	      COMPOUND_STRING("You completed Zone 20!"),
 	      COMPOUND_STRING("Zone 20"),
@@ -451,7 +430,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_21,
 	      COMPOUND_STRING("Zone 21"),
 	      COMPOUND_STRING("You completed Zone 21!"),
 	      COMPOUND_STRING("Zone 21"),
@@ -461,7 +439,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_22,
 	      COMPOUND_STRING("Zone 22"),
 	      COMPOUND_STRING("You completed Zone 22!"),
 	      COMPOUND_STRING("Zone 22"),
@@ -471,7 +448,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_23,
 	      COMPOUND_STRING("Zone 23"),
 	      COMPOUND_STRING("You completed Zone 23!"),
 	      COMPOUND_STRING("Zone 23"),
@@ -481,7 +457,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_24,
 	      COMPOUND_STRING("Zone 24"),
 	      COMPOUND_STRING("You completed Zone 24!"),
 	      COMPOUND_STRING("Zone 24"),
@@ -491,7 +466,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_25,
 	      COMPOUND_STRING("Zone 25"),
 	      COMPOUND_STRING("You completed Zone 25!"),
 	      COMPOUND_STRING("Zone 25"),
@@ -501,7 +475,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_26,
 	      COMPOUND_STRING("Zone 26"),
 	      COMPOUND_STRING("You completed Zone 26!"),
 	      COMPOUND_STRING("Zone 26"),
@@ -511,7 +484,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_27,
 	      COMPOUND_STRING("Zone 27"),
 	      COMPOUND_STRING("You completed Zone 27!"),
 	      COMPOUND_STRING("Zone 27"),
@@ -521,7 +493,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_28,
 	      COMPOUND_STRING("Zone 28"),
 	      COMPOUND_STRING("You completed Zone 28!"),
 	      COMPOUND_STRING("Zone 28"),
@@ -531,7 +502,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_29,
 	      COMPOUND_STRING("Zone 29"),
 	      COMPOUND_STRING("You completed Zone 29!"),
 	      COMPOUND_STRING("Zone 29"),
@@ -541,7 +511,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_30,
 	      COMPOUND_STRING("Zone 30"),
 	      COMPOUND_STRING("You completed Zone 30!"),
 	      COMPOUND_STRING("Zone 30"),
@@ -551,7 +520,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_31,
 	      COMPOUND_STRING("Zone 31"),
 	      COMPOUND_STRING("You completed Zone 31!"),
 	      COMPOUND_STRING("Zone 31"),
@@ -561,7 +529,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_32,
 	      COMPOUND_STRING("Zone 32"),
 	      COMPOUND_STRING("You completed Zone 32!"),
 	      COMPOUND_STRING("Zone 32"),
@@ -571,7 +538,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_33,
 	      COMPOUND_STRING("Zone 33"),
 	      COMPOUND_STRING("You completed Zone 33!"),
 	      COMPOUND_STRING("Zone 33"),
@@ -581,7 +547,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_34,
 	      COMPOUND_STRING("Zone 34"),
 	      COMPOUND_STRING("You completed Zone 34!"),
 	      COMPOUND_STRING("Zone 34"),
@@ -591,7 +556,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_35,
 	      COMPOUND_STRING("Zone 35"),
 	      COMPOUND_STRING("You completed Zone 35!"),
 	      COMPOUND_STRING("Zone 35"),
@@ -601,7 +565,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_36,
 	      COMPOUND_STRING("Zone 36"),
 	      COMPOUND_STRING("You completed Zone 36!"),
 	      COMPOUND_STRING("Zone 36"),
@@ -611,7 +574,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_37,
 	      COMPOUND_STRING("Zone 37"),
 	      COMPOUND_STRING("You completed Zone 37!"),
 	      COMPOUND_STRING("Zone 37"),
@@ -621,7 +583,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_38,
 	      COMPOUND_STRING("Zone 38"),
 	      COMPOUND_STRING("You completed Zone 38!"),
 	      COMPOUND_STRING("Zone 38"),
@@ -631,7 +592,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_39,
 	      COMPOUND_STRING("Zone 39"),
 	      COMPOUND_STRING("You completed Zone 39!"),
 	      COMPOUND_STRING("Zone 39"),
@@ -641,7 +601,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_40,
 	      COMPOUND_STRING("Zone 40"),
 	      COMPOUND_STRING("You completed Zone 40!"),
 	      COMPOUND_STRING("Zone 40"),
@@ -651,7 +610,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_41,
 	      COMPOUND_STRING("Zone 41"),
 	      COMPOUND_STRING("You completed Zone 41!"),
 	      COMPOUND_STRING("Zone 41"),
@@ -661,7 +619,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_42,
 	      COMPOUND_STRING("Zone 42"),
 	      COMPOUND_STRING("You completed Zone 42!"),
 	      COMPOUND_STRING("Zone 42"),
@@ -671,7 +628,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_43,
 	      COMPOUND_STRING("Zone 43"),
 	      COMPOUND_STRING("You completed Zone 43!"),
 	      COMPOUND_STRING("Zone 43"),
@@ -681,7 +637,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_44,
 	      COMPOUND_STRING("Zone 44"),
 	      COMPOUND_STRING("You completed Zone 44!"),
 	      COMPOUND_STRING("Zone 44"),
@@ -691,7 +646,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_45,
 	      COMPOUND_STRING("Zone 45"),
 	      COMPOUND_STRING("You completed Zone 45!"),
 	      COMPOUND_STRING("Zone 45"),
@@ -701,7 +655,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_46,
 	      COMPOUND_STRING("Zone 46"),
 	      COMPOUND_STRING("You completed Zone 46!"),
 	      COMPOUND_STRING("Zone 46"),
@@ -711,7 +664,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_47,
 	      COMPOUND_STRING("Zone 47"),
 	      COMPOUND_STRING("You completed Zone 47!"),
 	      COMPOUND_STRING("Zone 47"),
@@ -721,7 +673,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_48,
 	      COMPOUND_STRING("Zone 48"),
 	      COMPOUND_STRING("You completed Zone 48!"),
 	      COMPOUND_STRING("Zone 48"),
@@ -731,7 +682,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_49,
 	      COMPOUND_STRING("Zone 49"),
 	      COMPOUND_STRING("You completed Zone 49!"),
 	      COMPOUND_STRING("Zone 49"),
@@ -741,7 +691,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_50,
 	      COMPOUND_STRING("Zone 50"),
 	      COMPOUND_STRING("You completed Zone 50!"),
 	      COMPOUND_STRING("Zone 50"),
@@ -754,7 +703,6 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 {
 	sub_quest(
-	      SUB_QUEST_1,
 	      gText_SubQuest_Name_Signs1,
 	      gText_SubQuest_Desc_SignsSanctuary,
 	      gText_QuestMapSanctuary,
@@ -764,7 +712,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_2,
 	      gText_SubQuest_Name_Signs2,
 	      gText_SubQuest_Desc_SignsSanctuary,
 	      gText_QuestMapSanctuary,
@@ -774,7 +721,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_3,
 	      gText_SubQuest_Name_Signs3,
 	      gText_SubQuest_Desc_SignsSanctuary,
 	      gText_QuestMapSanctuary,
@@ -784,7 +730,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_4,
 	      gText_SubQuest_Name_Signs4,
 	      gText_SubQuest_Desc_SignsSanctuary,
 	      gText_QuestMapSanctuary,
@@ -794,7 +739,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_5,
 	      gText_SubQuest_Name_Signs5,
 	      gText_SubQuest_Desc_SignsSanctuary,
 	      gText_QuestMapSanctuary,
@@ -804,7 +748,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_6,
 	      gText_SubQuest_Name_Signs6,
 	      gText_SubQuest_Desc_SignsSanctuary,
 	      gText_QuestMapSanctuary,
@@ -814,7 +757,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_7,
 	      gText_SubQuest_Name_Signs7,
 	      gText_SubQuest_Desc_SignsSanctuary,
 	      gText_QuestMapSanctuary,
@@ -824,7 +766,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_8,
 	      gText_SubQuest_Name_Signs8,
 	      gText_SubQuest_Desc_SignsZone0,
 	      gText_QuestMapZone0,
@@ -834,7 +775,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_9,
 	      gText_SubQuest_Name_Signs9,
 	      gText_SubQuest_Desc_SignsZone0,
 	      gText_QuestMapZone0,
@@ -844,7 +784,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_10,
 	      gText_SubQuest_Name_Signs10,
 	      gText_SubQuest_Desc_SignsZone1,
 	      gText_QuestMapZone1,
@@ -854,7 +793,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_11,
 	      gText_SubQuest_Name_Signs11,
 	      gText_SubQuest_Desc_SignsZone1,
 	      gText_QuestMapZone1,
@@ -864,7 +802,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_12,
 	      gText_SubQuest_Name_Signs12,
 	      gText_SubQuest_Desc_SignsZone1,
 	      gText_QuestMapZone1,
@@ -874,7 +811,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_13,
 	      gText_SubQuest_Name_Signs13,
 	      gText_SubQuest_Desc_SignsZone2,
 	      gText_QuestMapZone2,
@@ -884,7 +820,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_14,
 	      gText_SubQuest_Name_Signs14,
 	      gText_SubQuest_Desc_SignsZone2,
 	      gText_QuestMapZone2,
@@ -894,7 +829,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_15,
 	      gText_SubQuest_Name_Signs15,
 	      gText_SubQuest_Desc_SignsZone2,
 	      gText_QuestMapZone2,
@@ -904,7 +838,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_16,
 	      gText_SubQuest_Name_Signs16,
 	      gText_SubQuest_Desc_SignsZone2,
 	      gText_QuestMapZone2,
@@ -914,7 +847,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_17,
 	      gText_SubQuest_Name_Signs17,
 	      gText_SubQuest_Desc_SignsZone2,
 	      gText_QuestMapZone2,
@@ -924,7 +856,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_18,
 	      gText_SubQuest_Name_Signs18,
 	      gText_SubQuest_Desc_SignsZone3,
 	      gText_QuestMapZone3,
@@ -934,7 +865,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_19,
 	      gText_SubQuest_Name_Signs19,
 	      gText_SubQuest_Desc_SignsZone4,
 	      gText_QuestMapZone4,
@@ -944,7 +874,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_20,
 	      gText_SubQuest_Name_Signs20,
 	      gText_SubQuest_Desc_SignsZone4,
 	      gText_QuestMapZone4,
@@ -954,7 +883,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_21,
 	      gText_SubQuest_Name_Signs21,
 	      gText_SubQuest_Desc_SignsZone4,
 	      gText_QuestMapZone4,
@@ -964,7 +892,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_22,
 	      gText_SubQuest_Name_Signs22,
 	      gText_SubQuest_Desc_SignsZone4,
 	      gText_QuestMapZone4,
@@ -974,7 +901,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_23,
 	      gText_SubQuest_Name_Signs23,
 	      gText_SubQuest_Desc_SignsZone4,
 	      gText_QuestMapZone4,
@@ -984,7 +910,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_24,
 	      gText_SubQuest_Name_Signs24,
 	      gText_SubQuest_Desc_SignsZone6,
 	      gText_QuestMapZone6,
@@ -994,7 +919,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_25,
 	      gText_SubQuest_Name_Signs25,
 	      gText_SubQuest_Desc_SignsZone7,
 	      gText_QuestMapZone7,
@@ -1004,7 +928,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_26,
 	      gText_SubQuest_Name_Signs26,
 	      gText_SubQuest_Desc_SignsZone7,
 	      gText_QuestMapZone7,
@@ -1014,7 +937,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_27,
 	      gText_SubQuest_Name_Signs27,
 	      gText_SubQuest_Desc_SignsZone9,
 	      gText_QuestMapZone9,
@@ -1024,7 +946,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_28,
 	      gText_SubQuest_Name_Signs28,
 	      gText_SubQuest_Desc_SignsZone9,
 	      gText_QuestMapZone9,
@@ -1034,7 +955,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_29,
 	      gText_SubQuest_Name_Signs29,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone29,
@@ -1044,7 +964,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_30,
 	      gText_SubQuest_Name_Signs30,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone30,
@@ -1054,7 +973,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_31,
 	      gText_SubQuest_Name_Signs31,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone31,
@@ -1064,7 +982,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_32,
 	      gText_SubQuest_Name_Signs32,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone32,
@@ -1074,7 +991,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_33,
 	      gText_SubQuest_Name_Signs33,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone33,
@@ -1084,7 +1000,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_34,
 	      gText_SubQuest_Name_Signs34,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone34,
@@ -1094,7 +1009,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_35,
 	      gText_SubQuest_Name_Signs35,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone35,
@@ -1104,7 +1018,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_36,
 	      gText_SubQuest_Name_Signs36,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone36,
@@ -1114,7 +1027,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_37,
 	      gText_SubQuest_Name_Signs37,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone37,
@@ -1124,7 +1036,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_38,
 	      gText_SubQuest_Name_Signs38,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone38,
@@ -1134,7 +1045,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_39,
 	      gText_SubQuest_Name_Signs39,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone39,
@@ -1144,7 +1054,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_40,
 	      gText_SubQuest_Name_Signs40,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone40,
@@ -1154,7 +1063,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_41,
 	      gText_SubQuest_Name_Signs41,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone41,
@@ -1164,7 +1072,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_42,
 	      gText_SubQuest_Name_Signs42,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone42,
@@ -1174,7 +1081,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_43,
 	      gText_SubQuest_Name_Signs43,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone43,
@@ -1184,7 +1090,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_44,
 	      gText_SubQuest_Name_Signs44,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone44,
@@ -1194,7 +1099,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_45,
 	      gText_SubQuest_Name_Signs45,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone45,
@@ -1204,7 +1108,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_46,
 	      gText_SubQuest_Name_Signs46,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone46,
@@ -1214,7 +1117,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_47,
 	      gText_SubQuest_Name_Signs47,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone47,
@@ -1224,7 +1126,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_48,
 	      gText_SubQuest_Name_Signs48,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone48,
@@ -1234,7 +1135,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_49,
 	      gText_SubQuest_Name_Signs49,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone49,
@@ -1244,7 +1144,6 @@ static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      SUB_QUEST_50,
 	      gText_SubQuest_Name_Signs50,
 	      gText_SubQuest_Name_Signs50,
 	      gText_QuestMapZone50,
@@ -2672,12 +2571,10 @@ static void AssignCancelNameAndId(u8 numRow)
 
 u8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest)
 {
-	u8 uniqueId = 0;
-	u8 i;
-	for (i = 0; i < quest; i++) {
-		uniqueId += sSideQuests[quest].numSubquests;
+	u8 uniqueId = childQuest;
+	for (u8 i = 0; i < quest; i++) {
+		uniqueId += sSideQuests[i].numSubquests;
 	}
-	uniqueId += childQuest;
 	u8  index = uniqueId / 8; //8 bits per byte
 	u8	bit = uniqueId % 8;
 	u8	mask = 1 << bit;
