@@ -4466,8 +4466,8 @@
       "name": "Zone3A_Layout",
       "width": 40,
       "height": 35,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Rustboro",
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Sanctuary",
       "border_filepath": "data/layouts/Zone3A/border.bin",
       "blockdata_filepath": "data/layouts/Zone3A/map.bin"
     },
