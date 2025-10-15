@@ -187,7 +187,7 @@
 #define FLAG_ZONE1A_RECEIVED_FWG                          0x10C
 #define FLAG_MAX_INTRO                                    0x10D
 #define FLAG_HIDE_ZONE2A_MAX                              0x10E
-#define FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG                   0x10F
+#define FLAG_ZONE2A_NUZLOCKE_BOUGHT_BUG                   0x10F
 #define FLAG_HIDE_ZONE3A_REMI                             0x110
 #define FLAG_HIDE_ZONE3A_PHILLIPA                         0x111
 #define FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER      0x112
@@ -268,8 +268,8 @@
 #define FLAG_HIDDEN_ITEMS_START                                                         0x200
 // Custom
 #define FLAG_HIDDEN_ITEM_ZONE2A_CHERI_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x02)
-#define FLAG_HIDDEN_ITEM_ZONE2B_PECHA_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x03)
-#define FLAG_HIDDEN_ITEM_ZONE2B_CHESTO_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x04)
+#define FLAG_HIDDEN_ITEM_ZONE2A_PECHA_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x03)
+#define FLAG_HIDDEN_ITEM_ZONE2A_CHESTO_BERRY                (FLAG_HIDDEN_ITEMS_START + 0x04)
 #define FLAG_HIDDEN_ITEM_ZONE3A_PECHA_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x05)
 #define FLAG_HIDDEN_ITEM_ZONE3A_CHERI_BERRY                 (FLAG_HIDDEN_ITEMS_START + 0x06)
 #define FLAG_HIDDEN_ITEM_ZONE4A_ORAN_BERRY                  (FLAG_HIDDEN_ITEMS_START + 0x07)
@@ -379,9 +379,9 @@
 #define FLAG_ITEM_ZONE1A_RANDOM_1                  0x300
 #define FLAG_ITEM_ZONE1A_QUICK_CLAW                0x301
 #define FLAG_ITEM_ZONE2A_RANDOM_1                  0x302
-#define FLAG_ITEM_ZONE2B_RANDOM_1                  0x303
-#define FLAG_ITEM_ZONE2B_TM_BUG_BITE               0x304
-#define FLAG_ITEM_ZONE2C_SILK_SCARF                0x305
+#define FLAG_ITEM_ZONE2A_RANDOM_2                  0x303
+#define FLAG_ITEM_ZONE2A_TM_BUG_BITE               0x304
+#define FLAG_ITEM_ZONE2A_SILK_SCARF                0x305
 #define FLAG_ITEM_ZONE3A_RANDOM_1                  0x306
 #define FLAG_ITEM_ZONE3A_RANDOM_2                  0x307
 #define FLAG_ITEM_ZONE3A_RANDOM_3                  0x308

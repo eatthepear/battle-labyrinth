@@ -476,36 +476,6 @@ script Zone2A_EventScript_Sign {
 	end
 }
 
-script Zone2A_EventScript_ExpShareSign {
-	completesubquest(QUEST_SIGNS, 14)
-	msgbox(format("Trainer Tips\pThe Exp. All only gives Pokémon who didn't participate in battle 25% experience.\pIf you want to train up a particular Pokémon, you can give them the held item Exp. Share so they get full experience!"), MSGBOX_SIGN)
-	end
-}
-
-script Zone2A_EventScript_CautionSign {
-	completesubquest(QUEST_SIGNS, 15)
-	msgbox(format("Caution!\pDiglett have been found living inside the tunnel.\pRepels recommended!"), MSGBOX_SIGN)
-	end
-}
-
-script Zone2B_EventScript_CautionSign {
-	completesubquest(QUEST_SIGNS, 13)
-	msgbox(format("Caution!\pDiglett have been found living inside the tunnel.\pRepels recommended!"), MSGBOX_SIGN)
-	end
-}
-
-script Zone2B_EventScript_PartySelectSign {
-	completesubquest(QUEST_SIGNS, 16)
-	msgbox(format("Trainer Tips\pYou can switch the order of your party around in your party menu faster by pressing {SELECT_BUTTON}."), MSGBOX_SIGN)
-	end
-}
-
-script Zone2B_EventScript_OptionalLeviathan {
-	completesubquest(QUEST_SIGNS, 17)
-	msgbox(format("Trainer Tips\pIn some Zones, Leviathans are optional to battle, but may give good rewards when defeated!"), MSGBOX_SIGN)
-	end
-}
-
 script Zone3A_EventScript_Surveil {
 	completesubquest(QUEST_SIGNS, 18)
 	msgbox(format("Trainer Tips\pIn battle, you can use Surveil to see the opponent's team.\pIf you want to see full team information, you can turn on the Full Info setting by speaking to Colress."), MSGBOX_SIGN)
@@ -1027,7 +997,7 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 6) // level
 	call(Debug_CheatStart_PBL_GiveMon)
-	setflag(FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG)
+	setflag(FLAG_ZONE2A_NUZLOCKE_BOUGHT_BUG)
 	completesubquest(QUEST_PBL, 2)
 	// zone 2 items
 	additem(ITEM_SILK_SCARF)
@@ -1049,7 +1019,7 @@ script Debug_CheatStart_PBL {
 	settrainerflag(TRAINER_PBL_JEREMIAH)
 	settrainerflag(TRAINER_PBL_JOSH)
 	settrainerflag(TRAINER_PBL_HARPER)
-	settrainerflag(TRAINER_PBL_ARTHUR)
+	// settrainerflag(TRAINER_PBL_ARTHUR)
 	setflag(FLAG_BEAT_LEVIATHAN_2)
 	// zone 3
 	message(format("Zone 3 options"))

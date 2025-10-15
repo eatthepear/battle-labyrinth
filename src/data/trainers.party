@@ -436,12 +436,12 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 3
 
-Zigzagoon
+Rattata
 Level: 6
 Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zigzagoon-Galar
+Rattata-Alola
 Level: 6
 Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
@@ -517,9 +517,9 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_JOSH ===
 Name: Josh
-Class: Bug Catcher
-Pic: Bug Catcher
-Music: Male
+Class: School Kid
+Pic: School Kid M
+Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 3
@@ -586,40 +586,6 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Mareep
 Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_ARTHUR ===
-Name: Arthur
-Class: School Kid
-Pic: School Kid M
-Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Yungoos
-Ability: Strong Jaw
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Sand Attack
-- Leer
-- Mud-Slap
-
-Pikipek
-Ability: Skill Link
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Peck
-- Growl
-- Mirror Move
-
-Nidoran-M
-Ability: Poison Point
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Peck
-- Focus Energy
-- Poison Sting
-- Disable
 
 === TRAINER_PBL_SHAUN_LEVIATHAN_2 ===
 Name: Shaun
@@ -704,7 +670,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Gulpin @ Oran Berry
 Calm Nature
 Ability: Sticky Hold
-Level: 9
+Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Belch
 - Stuff Cheeks

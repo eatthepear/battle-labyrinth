@@ -14,7 +14,7 @@
 #define TRAINER_PBL_JEREMIAH                                       8
 #define TRAINER_PBL_JOSH                                           9
 #define TRAINER_PBL_HARPER                                        10
-#define TRAINER_PBL_ARTHUR                                        11
+#define TRAINER_PBL_UNUSED_11                                        11
 #define TRAINER_PBL_SHAUN_LEVIATHAN_2                             12
 #define TRAINER_PBL_JEMMA                                         13
 #define TRAINER_PBL_PATRICK                                       14

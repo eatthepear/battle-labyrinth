@@ -4414,18 +4414,16 @@ u16 GetNumTrainersRemaining(void)
     switch (zone)
     {
     case 1:
-        for (trainer = TRAINER_PBL_NINA; trainer <= TRAINER_PBL_OSCAR; trainer++) {
+        for (trainer = TRAINER_PBL_NINA; trainer <= TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
-        count += !FlagGet(FLAG_BEAT_LEVIATHAN_1);
         break;
     case 2:
-        for (trainer = TRAINER_PBL_POLLY; trainer <= TRAINER_PBL_ARTHUR; trainer++) {
+        for (trainer = TRAINER_PBL_POLLY; trainer <= TRAINER_PBL_SHAUN_LEVIATHAN_2; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
-        count += !FlagGet(FLAG_BEAT_LEVIATHAN_2);
         break;
     case 3:
         for (trainer = TRAINER_PBL_JEMMA; trainer <= TRAINER_PBL_RICHARD; trainer++) {

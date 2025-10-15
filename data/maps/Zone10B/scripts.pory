@@ -85,7 +85,7 @@ script Zone10B_EventScript_DragonTamer {
 			!defeated(TRAINER_PBL_JEREMIAH) ||
 			!defeated(TRAINER_PBL_JOSH) ||
 			!defeated(TRAINER_PBL_HARPER) ||
-			!defeated(TRAINER_PBL_ARTHUR) ||
+			// !defeated(TRAINER_PBL_ARTHUR) ||
 			!flag(FLAG_BEAT_LEVIATHAN_2) ||
 			!defeated(TRAINER_PBL_JEMMA) ||
 			!defeated(TRAINER_PBL_PATRICK) ||

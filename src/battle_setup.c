@@ -654,9 +654,7 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
 
     //Note: POND refers to underground water (so it will be darker there). FOREST refers to a forest area (so it will be darker there)
-    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE2A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE2A))
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE2B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE2B))
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE4A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE4A))
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE4A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE4A))
     || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE4B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE4B))
     || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE4C) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE4C))
     || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE4D) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE4D))
