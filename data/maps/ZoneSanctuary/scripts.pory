@@ -921,6 +921,7 @@ script Sanctuary_EventScript_GameIntro {
 	call(EventScript_WhenUReadyDialogue)
 	applymovement(LOCALID_COLRESS, Common_Movement_Colress_WalkUp)
 	waitmovement(LOCALID_COLRESS)
+	startquest(QUEST_PBL)
 	releaseall
 	end
 }
@@ -941,7 +942,6 @@ script EventScript_GameIntro_SetStartingVariablesAndFlags {
 	callnative(InitTimeBasedEvents)
 	setvar(VAR_ZONE, 1)
 	setvar(VAR_LEVEL_CAP, 0)
-	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_PBL)
 	setrespawn(HEAL_LOCATION_PBL)
 	setflag(FLAG_SYS_DEBUG) // to remove for release
 }
@@ -991,7 +991,7 @@ script EventScript_GameIntro_Nuzlocke {
 	while {
 		message(format("There is a built-in {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode. Would you like to enable it?"))
 		waitmessage
-		dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Info", "Yes", "No")
+		dynmultichoice(20, 6, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Info", "Yes", "No")
 		switch (var(VAR_RESULT)) {
 			case 0:
 				msgbox(gText_Colress_NuzlockeExplained)
