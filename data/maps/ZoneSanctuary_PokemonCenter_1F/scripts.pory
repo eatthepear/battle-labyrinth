@@ -47,6 +47,8 @@ script EventScript_AfterWhiteOutHeal_PBL {
 		decreasedifficulty
 		msgbox(format("Difficulty decreased."))
 	}
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement(0)
 	releaseall
 	end
 }
