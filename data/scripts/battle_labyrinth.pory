@@ -765,9 +765,10 @@ script EventScript_Notebook_Battle {
 		dynmultipush("Accuracy", 0)
 		dynmultipush("Experience", 1)
 		dynmultipush("Pickup", 2)
-		dynmultipush("Harvest", 3)
-		dynmultipush("Pay Day", 4)
-		dynmultipush("Back", 5)
+		dynmultipush("Honey Gather", 3)
+		dynmultipush("Harvest", 4)
+		dynmultipush("Pay Day", 5)
+		dynmultipush("Back", 6)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
@@ -784,10 +785,12 @@ script EventScript_Notebook_Battle {
 			case 2:
 				msgbox(format("On Normal difficulty or higher, Pickup does not find items after wild battles."))
 			case 3:
-				msgbox(format("On Normal difficulty or higher, Harvest does not recover used Berries during wild battles."))
+				msgbox(format("On Normal difficulty or higher, Honey Gather does not find items after wild battles."))
 			case 4:
-				msgbox(format("On Normal difficulty or higher, Pay Day does not earn money during wild battles."))
+				msgbox(format("On Normal difficulty or higher, Harvest does not recover used Berries during wild battles."))
 			case 5:
+				msgbox(format("On Normal difficulty or higher, Pay Day does not earn money during wild battles."))
+			case 6:
 			case MULTI_B_PRESSED:
 				return
 		}
@@ -816,7 +819,7 @@ script EventScript_Notebook_Items {
 			case 2:
 				msgbox(format("TMs do not restore PP."))
 			case 3:
-				msgbox(format("Honey cost reduced to ¥80, and starts a wild Double Battle if on a map and tile that can have wild Pokémon.\pYou can also slather it on a Golden Tree to attract a wild Pokémon."))
+				msgbox(format("Honey cost reduced to ¥80, and starts a wild Double Battle if on a map and tile that can have wild Pokémon.\pYou can also slather it on a Honey Tree to attract a wild Pokémon."))
 			case 4:
 				msgbox(format("The Ability Snack costs ¥80 and functions the same as an Ability Capsule."))
 			case 5:
@@ -836,22 +839,22 @@ script EventScript_Notebook_Other {
 	while {
 		message(format("Other Changes open.\nAnything not listed is vanilla."))
 		waitmessage
-		dynmultipush("Wild Encounters", 0)
+		dynmultipush("Wild Species", 0)
 		dynmultipush("Trainers", 1)
 		dynmultipush("DexNav", 2)
-		dynmultipush("Golden Tree", 3)
+		dynmultipush("Honey Tree", 3)
 		dynmultipush("Day/Night", 4)
 		dynmultipush("Back", 5)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
-				msgbox(format("Wild encounters are determined based on your save file.\pThere are 12 possible land encounters, and 5 possible other encounters.\pWhen you start a new game, for each area, 6 land encounters and 3 other encounters are randomly chosen.\pEach of these encounters has an equal likelihood of being encountered."))
+				msgbox(format("Wild species are determined based on your save file.\pWhen you start a new game, for each area, 6 land species and 3 other species are randomly chosen from a pool of 12 and 5 respectively.\pEach species has an equal likelihood of being encountered."))
 			case 1:
 				msgbox(format("Many trainers have a pool of possible Pokémon they can have, and may vary their lead Pokémon."))
 			case 2:
-				msgbox(format("The DexNav displays all wild Pokémon available in a Zone. Pokémon in the Hidden category are found through shaking Golden Trees, smashing rocks, etc.\pWild Pokémon do not flee when using the DexNav's search function.\pThe DexNav cannot chain Pokémon, and all Pokémon found through the DexNav are the same as ordinary wild Pokémon."))
+				msgbox(format("The DexNav displays all wild Pokémon available in a Zone. Pokémon in the Hidden category are found through Honey trees, smashing rocks, etc.\pWild Pokémon do not flee when using the DexNav's search function.\pThe DexNav cannot chain Pokémon, and all Pokémon found through the DexNav are the same as ordinary wild Pokémon."))
 			case 3:
-				msgbox(format("Golden Trees can be shaken, which will sometimes result in a wild Pokémon!"))
+				msgbox(format("Honey Trees can be slathered with Honey, instantly triggering a wild Pokémon battle."))
 			case 4:
 				msgbox(format("There is no day/night cycle."))
 			case 5:
