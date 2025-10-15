@@ -26,7 +26,6 @@ Optional (but still recommended) fields for trainers:
     - Mugshot (enable Mugshots during battle transition
                set to one of Purple, Green, Pink, Blue or Yellow)
     - Starting Status (see include/constants/battle.h for values)
-    - Random Lead (Yes/No, defaults to No)
 
 Pokemon are then specified using the Showdown Export format.
 If a field is not specified, it will use it's default value.
@@ -81,17 +80,17 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Mugshot: Purple
 
-Alomomola (F) @ Choice Specs  
-Ability: Hydration  
-Level: 67  
-Shiny: Yes  
-Tera Type: Fairy  
-EVs: 252 HP / 252 Atk / 4 SpA  
-Naughty Nature  
-IVs: 0 Atk / 0 Spe  
-- Alluring Voice  
-- Aqua Jet  
-- Baton Pass  
+Alomomola (F) @ Choice Specs
+Ability: Hydration
+Level: 67
+Shiny: Yes
+Tera Type: Fairy
+EVs: 252 HP / 252 Atk / 4 SpA
+Naughty Nature
+IVs: 0 Atk / 0 Spe
+- Alluring Voice
+- Aqua Jet
+- Baton Pass
 - Acrobatics
 
 === TRAINER_PBL_NINA ===
@@ -216,7 +215,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 Party Size: 3
@@ -252,7 +251,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 Party Size: 3
@@ -288,7 +287,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 Party Size: 3
@@ -324,7 +323,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 Party Size: 3
@@ -360,7 +359,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 Party Size: 3
@@ -396,7 +395,7 @@ Name: Corey
 Class: School Kid
 Pic: School Kid M
 Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 Party Size: 3
@@ -592,7 +591,7 @@ Name: Shaun
 Class: Youngster
 Pic: Youngster
 Music: Male
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 Difficulty: Normal
@@ -632,7 +631,7 @@ Name: Shaun
 Class: Youngster
 Pic: Youngster
 Music: Male
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 Difficulty: Brutal
@@ -682,69 +681,76 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 3
 
-Bounsweet
-Ability: Oblivious
+Whismur
 Level: 8
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Play Nice
-- Aromatic Mist
-- Absorb
-- Grass Whistle
+
+Skitty
+Level: 8
+Tags: Tag6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Cherubi
+Level: 8
+Tags: Tag7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Gossifleur
+Level: 8
+Tags: Tag7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Hoothoot
+Level: 8
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Pidgey
-Ability: Keen Eye
 Level: 8
+Tags: Tag8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Sand Attack
-- Gust
-- Quick Attack
-
-Mareep
-Ability: Static
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Growl
-- Charge
-- Thunder Shock
-- Cotton Spore
 
 === TRAINER_PBL_PATRICK ===
 Name: Patrick
-Class: Bug Catcher
-Pic: Bug Catcher
-Music: Male
+Class: School Kid
+Pic: School Kid M
+Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 3
 
-Kakuna
-Ability: Shed Skin
-Level: 9
+Whismur
+Level: 8
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Harden
-- Tackle
 
-Metapod
-Ability: Shed Skin
-Level: 9
+Skitty
+Level: 8
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Harden
-- Tackle
 
-Cascoon
-Ability: Shed Skin
-Level: 9
+Cherubi
+Level: 8
+Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Harden
-- Tackle
 
-Silcoon
-Ability: Shed Skin
-Level: 9
+Gossifleur
+Level: 8
+Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Harden
-- Tackle
+
+Hoothoot
+Level: 8
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pidgey
+Level: 8
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_ANNABELLE ===
 Name: Annabelle
@@ -753,41 +759,37 @@ Pic: Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 3
 
-Meowth
-Ability: Technician
-Level: 9
+Whismur
+Level: 8
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Scratch
-- Growl
-- Feint
 
-Budew
-Ability: Poison Point
-Level: 9
+Skitty
+Level: 8
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Absorb
-- Worry Seed
-- Life Dew
-- Stun Spore
 
-Azurill
-Ability: Huge Power
-Level: 9
+Cherubi
+Level: 8
+Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Soak
-- Refresh
-- Charm
-- Bubble
 
-Chingling
-Ability: Levitate
-Level: 9
+Gossifleur
+Level: 8
+Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Growl
-- Astonish
-- Confusion
-- Disable
+
+Hoothoot
+Level: 8
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pidgey
+Level: 8
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_BORIS ===
 Name: Boris
@@ -796,33 +798,37 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 3
 
-Lotad
-Ability: Swift Swim
-Level: 9
+Whismur
+Level: 8
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Absorb
-- Bubble
-- Mist
-- Astonish
 
-Fletchling
-Ability: Big Pecks
-Level: 9
+Skitty
+Level: 8
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Growl
-- Peck
-- Quick Attack
-- Ember
 
-Yamper
-Ability: Ball Fetch
-Level: 9
+Cherubi
+Level: 8
+Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sand Attack
-- Nuzzle
-- Spark
-- Charm
+
+Gossifleur
+Level: 8
+Tags: Tag7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Hoothoot
+Level: 8
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pidgey
+Level: 8
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_RICHARD ===
 Name: Richard
@@ -831,71 +837,39 @@ Pic: Rich Boy
 Music: Rich
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 3
 
-Wooloo
-Ability: Fluffy
-Level: 9
+Whismur
+Level: 8
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Growl
-- Defense Curl
-- Copycat
 
-Pichu
-Ability: Static
-Level: 9
+Skitty
+Level: 8
+Tags: Tag6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Thunder Shock
-- Sweet Kiss
-- Fake Out
-- Charm
 
-Smoliv
-Ability: Early Bird
-Level: 9
+Cherubi
+Level: 8
+Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Absorb
-- Helping Hand
-- Leech Seed
 
-Igglybuff
-Ability: Cute Charm
-Level: 9
+Gossifleur
+Level: 8
+Tags: Tag7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Echoed Voice
-- Sweet Kiss
-- Disarming Voice
-- Disable
+
+Hoothoot
+Level: 8
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pidgey
+Level: 8
+Tags: Tag8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_PHILLIPA_LEVIATHAN_3 ===
-Name: Phillipa
-Class: School Kid
-Pic: School Kid F
-Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Mugshot: Purple
-
-Bidoof
-Ability: Unaware
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
-
-Sandshrew
-Ability: Sand Rush
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
-
-Marill @ Oran Berry
-Ability: Huge Power
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
-
-=== TRAINER_PBL_PHILLIPA_LEVIATHAN_3_CHALLENGE ===
 Name: Phillipa
 Class: School Kid
 Pic: School Kid F
@@ -903,32 +877,72 @@ Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
+Difficulty: Normal
 
-Bidoof
+Bidoof @ Chesto Berry
+Brave Nature
 Ability: Unaware
 Level: 9
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rollout
 - Defense Curl
 
-Sandshrew
-Ability: Sand Rush
+Sandshrew @ Pecha Berry
+Sassy Nature
+Ability: Sand Veil
 Level: 9
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rollout
 - Defense Curl
 
-Voltorb @ Oran Berry
-Ability: Aftermath
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
-
 Marill @ Oran Berry
+Careful Nature
 Ability: Huge Power
 Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rollout
+- Defense Curl
+
+=== TRAINER_PBL_PHILLIPA_LEVIATHAN_3 ===
+Name: Phillipa
+Class: School Kid
+Pic: School Kid F
+Music: Girl
+AI: AI_FLAG_LEVIATHAN
+Double Battle: No
+Mugshot: Purple
+Difficulty: Brutal
+
+Bidoof @ Chesto Berry
+Brave Nature
+Ability: Unaware
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rollout
+- Defense Curl
+
+Sandshrew @ Pecha Berry
+Sassy Nature
+Ability: Sand Veil
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rollout
+- Defense Curl
+
+Marill @ Oran Berry
+Careful Nature
+Ability: Huge Power
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rollout
+- Defense Curl
+
+Spheal @ Cheri Berry
+Adamant Nature
+Ability: Thick Fat
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Ball
 - Defense Curl
 
 === TRAINER_PBL_HERMAN ===

@@ -3,236 +3,234 @@
 
 #include "constants/battle_partner.h"
 
-#define TRAINER_NONE                                               0
-#define TRAINER_PBL_NINA                                           1
-#define TRAINER_PBL_MARIAM                                         2
-#define TRAINER_PBL_OSCAR                                          3
-#define TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER                4
-#define TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER                 5
-#define TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER                6
-#define TRAINER_PBL_POLLY                                          7
-#define TRAINER_PBL_JEREMIAH                                       8
-#define TRAINER_PBL_JOSH                                           9
-#define TRAINER_PBL_HARPER                                        10
-#define TRAINER_PBL_UNUSED_11                                        11
-#define TRAINER_PBL_SHAUN_LEVIATHAN_2                             12
-#define TRAINER_PBL_JEMMA                                         13
-#define TRAINER_PBL_PATRICK                                       14
-#define TRAINER_PBL_ANNABELLE                                     15
-#define TRAINER_PBL_BORIS                                         16
-#define TRAINER_PBL_RICHARD                                       17
-#define TRAINER_PBL_PHILLIPA_LEVIATHAN_3                          18
-#define TRAINER_PBL_PHILLIPA_LEVIATHAN_3_CHALLENGE                19
-#define TRAINER_PBL_HERMAN                                        20
-#define TRAINER_PBL_RALPH                                         21
-#define TRAINER_PBL_CALLIE                                        22
-#define TRAINER_PBL_SANTIAGO                                      23
-#define TRAINER_PBL_CHLOE_AND_KAYA                                24
-#define TRAINER_PBL_FRED                                          25
-#define TRAINER_PBL_LUCIA                                         26
-#define TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4                    27
-#define TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4_CHALLENGE          28
-#define TRAINER_PBL_ANNE_AND_JUNE                                 29
-#define TRAINER_PBL_NOVA_AND_CORA                                 30
-#define TRAINER_PBL_CLINTON                                       31
-#define TRAINER_PBL_REBECCA                                       32
-#define TRAINER_PBL_RYAN                                          33
-#define TRAINER_PBL_CAITLYN                                       34
-#define TRAINER_PBL_KENNETH                                       35
-#define TRAINER_PBL_KEVIN                                         36
-#define TRAINER_PBL_MARIA_LEVIATHAN_5                             37
-#define TRAINER_PBL_MARIA_LEVIATHAN_5_CHALLENGE                   38
-#define TRAINER_PBL_GILBERT                                       39
-#define TRAINER_PBL_MELANIE                                       40
-#define TRAINER_PBL_CONSTANCE                                     41
-#define TRAINER_PBL_FRANK                                         42
-#define TRAINER_PBL_DUDLEY                                        43
-#define TRAINER_PBL_DAISY                                         44
-#define TRAINER_PBL_VIC_AND_DELL                                  45
-#define TRAINER_PBL_MINA                                          46
-#define TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6                     47
-#define TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_CHALLENGE           48
-#define TRAINER_PBL_MILLIE                                        49
-#define TRAINER_PBL_JAMAL                                         50
-#define TRAINER_PBL_PAIGE                                         51
-#define TRAINER_PBL_SETH                                          52
-#define TRAINER_PBL_CONNIE                                        53
-#define TRAINER_PBL_PETER                                         54
-#define TRAINER_PBL_WHITAKER                                      55
-#define TRAINER_PBL_BETTY_LEVIATHAN_7                             56
-#define TRAINER_PBL_BETTY_LEVIATHAN_7_CHALLENGE                   57
-#define TRAINER_PBL_JIMMY                                         58
-#define TRAINER_PBL_EMILIANO                                      59
-#define TRAINER_PBL_BECKHAM                                       60
-#define TRAINER_PBL_KAREN                                         61
-#define TRAINER_PBL_JAYDEN                                        62
-#define TRAINER_PBL_NEIL                                          63
-#define TRAINER_PBL_TAMARA                                        64
-#define TRAINER_PBL_ALISTAIR_LEVIATHAN_8                          65
-#define TRAINER_PBL_ALISTAIR_LEVIATHAN_8_CHALLENGE                66
-#define TRAINER_PBL_COOPER                                        67
-#define TRAINER_PBL_CARMINE                                       68
-#define TRAINER_PBL_JONATHAN                                      69
-#define TRAINER_PBL_CALVIN                                        70
-#define TRAINER_PBL_LUIS                                          71
-#define TRAINER_PBL_ARI                                           72
-#define TRAINER_PBL_ARI_CHALLENGE                                 73
-#define TRAINER_PBL_BERTHA                                        74
-#define TRAINER_PBL_BERTHA_CHALLENGE                              75
-#define TRAINER_PBL_CASSANDRA                                     76
-#define TRAINER_PBL_CASSANDRA_CHALLENGE                           77
-#define TRAINER_PBL_DOMINIC                                       78
-#define TRAINER_PBL_DOMINIC_CHALLENGE                             79
-#define TRAINER_PBL_ERICA                                         80
-#define TRAINER_PBL_ERICA_CHALLENGE                               81
-#define TRAINER_PBL_ALANA                                         82
-#define TRAINER_PBL_JACOB                                         83
-#define TRAINER_PBL_DEWEY                                         84
-#define TRAINER_PBL_ERNEST                                        85
-#define TRAINER_PBL_KYLE                                          86
-#define TRAINER_PBL_ELIAS                                         87
-#define TRAINER_PBL_PEARLIE                                       88
-#define TRAINER_PBL_SUSAN                                         89
-#define TRAINER_PBL_CONRAD                                        90
-#define TRAINER_PBL_BRETT                                         91
-#define TRAINER_PBL_ADAMINA_LEVIATHAN_9                           92
-#define TRAINER_PBL_ADAMINA_LEVIATHAN_9_CHALLENGE                 93
-#define TRAINER_PBL_JEANETTE                                      94
-#define TRAINER_PBL_EMMA_AND_LEO                                  95
-#define TRAINER_PBL_JOEL                                          96
-#define TRAINER_PBL_MARION                                        97
-#define TRAINER_PBL_REGINA                                        98
-#define TRAINER_PBL_NEWTON_LEVIATHAN_10                           99
-#define TRAINER_PBL_NEWTON_LEVIATHAN_10_CHALLENGE                100
-#define TRAINER_PBL_ESSENCE                                      101
-#define TRAINER_PBL_DOLORES                                      102
-#define TRAINER_PBL_GENIE                                        103
-#define TRAINER_PBL_ABIGAIL                                      104
-#define TRAINER_PBL_FEDERICO                                     105
-#define TRAINER_PBL_ROMULUS                                      106
-#define TRAINER_PBL_JULIE                                        107
-#define TRAINER_PBL_HILDA                                        108
-#define TRAINER_PBL_TREVOR                                       109
-#define TRAINER_PBL_RUFUS                                        110
-#define TRAINER_PBL_KINLEY                                       111
-#define TRAINER_PBL_REID                                         112
-#define TRAINER_PBL_DECLAN_LEVIATHAN_11                          113
-#define TRAINER_PBL_DECLAN_LEVIATHAN_11_CHALLENGE                114
-#define TRAINER_PBL_VIOLET                                       115
-#define TRAINER_PBL_WANDA                                        116
-#define TRAINER_PBL_AMBER_AND_KIM                                117
-#define TRAINER_PBL_JAN_AND_ERIN                                 118
-#define TRAINER_PBL_STEVE                                        119
-#define TRAINER_PBL_GOULD                                        120
-#define TRAINER_PBL_MENDEL                                       121
-#define TRAINER_PBL_DARWIN                                       122
-#define TRAINER_PBL_JENNY_LEVIATHAN_11                           123
-#define TRAINER_PBL_JENNY_LEVIATHAN_11_CHALLENGE                 124
-#define TRAINER_PBL_BART                                         125
-#define TRAINER_PBL_NIGEL                                        126
-#define TRAINER_PBL_LOLA                                         127
-#define TRAINER_PBL_CHARLIE                                      128
-#define TRAINER_PBL_RANDOLPH                                     129
-#define TRAINER_PBL_TODD                                         130
-#define TRAINER_PBL_RUSSELL                                      131
-#define TRAINER_PBL_OTIS                                         132
-#define TRAINER_PBL_MIGUEL_LEVIATHAN_12                          133
-#define TRAINER_PBL_MIGUEL_LEVIATHAN_12_CHALLENGE                134
-#define TRAINER_PBL_MIRAGE_LEVIATHAN_13                          135
-#define TRAINER_PBL_MIRAGE_LEVIATHAN_13_CHALLENGE                136
-#define TRAINER_PBL_IONA                                         137
-#define TRAINER_PBL_BERKE                                        138
-#define TRAINER_PBL_TANISHA                                      139
-#define TRAINER_PBL_ROBERT                                       140
-#define TRAINER_PBL_CHRIS                                        141
-#define TRAINER_PBL_ANGUS                                        142
-#define TRAINER_PBL_LILY_LEVIATHAN_14                            143
-#define TRAINER_PBL_LILY_LEVIATHAN_14_CHALLENGE                  144
-#define TRAINER_PBL_AXLE                                         145
-#define TRAINER_PBL_RAFAEL                                       146
-#define TRAINER_PBL_GEORGINA                                     147
-#define TRAINER_PBL_MIA_LEVIATHAN_15                             148
-#define TRAINER_PBL_MIA_LEVIATHAN_15_CHALLENGE                   149
-#define TRAINER_PBL_DORIS                                        150
-#define TRAINER_PBL_HOMER                                        151
-#define TRAINER_PBL_JOHN                                         152
-#define TRAINER_PBL_GLENN                                        153
-#define TRAINER_PBL_JAY                                          154
-#define TRAINER_PBL_TYLER                                        155
-#define TRAINER_PBL_TERRENCE                                     156
-#define TRAINER_PBL_MARTY                                        157
-#define TRAINER_PBL_KARI                                         158
-#define TRAINER_PBL_ABRAHAM                                      159
-#define TRAINER_PBL_MELINDA                                      160
-#define TRAINER_PBL_EMILIO                                       161
-#define TRAINER_PBL_REX                                          162
-#define TRAINER_PBL_LOUIS                                        163
-#define TRAINER_PBL_LEROY                                        164
-#define TRAINER_PBL_ELTON                                        165
-#define TRAINER_PBL_WILLIE                                       166
-#define TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16                     167
-#define TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16_CHALLENGE           168
-#define TRAINER_PBL_PIRATE_1                                     169
-#define TRAINER_PBL_PIRATE_2                                     170
-#define TRAINER_PBL_PIRATE_3                                     171
-#define TRAINER_PBL_PIRATE_4                                     172
-#define TRAINER_PBL_SHAWN                                        173
-#define TRAINER_PBL_FERNANDO                                     174
-#define TRAINER_PBL_KANE                                         175
-#define TRAINER_PBL_KIRK                                         176
-#define TRAINER_PBL_DALTON                                       177
-#define TRAINER_PBL_LEE                                          178
-#define TRAINER_PBL_BLANCHE                                      179
-#define TRAINER_PBL_TROY                                         180
-#define TRAINER_PBL_ABED                                         181
-#define TRAINER_PBL_TROY_BRUTAL                                  182
-#define TRAINER_PBL_ABED_BRUTAL                                  183
-#define TRAINER_PBL_MIRAGE_LEVIATHAN_17                          184
-#define TRAINER_PBL_MIRAGE_LEVIATHAN_17_CHALLENGE                185
-#define TRAINER_PBL_ANITA                                        186
-#define TRAINER_PBL_DESIREE                                      187
-#define TRAINER_PBL_HOWARD                                       188
-#define TRAINER_PBL_ELOISE                                       189
-#define TRAINER_PBL_ALLY_AND_EMMY                                190
-#define TRAINER_PBL_AMIR                                         191
-#define TRAINER_PBL_GETHIN                                       192
-#define TRAINER_PBL_BERNARD                                      193
-#define TRAINER_PBL_ELLIE                                        194
-#define TRAINER_PBL_RUSTY                                        195
-#define TRAINER_PBL_CODY                                         196
-#define TRAINER_PBL_LEWIS                                        197
-#define TRAINER_PBL_CORNELIUS                                    198
-#define TRAINER_PBL_INEZ_AND_EMMA                                199
-#define TRAINER_PBL_HELEN                                        200
-#define TRAINER_PBL_WESLEY                                       201
-#define TRAINER_PBL_ALFREDO                                      202
-#define TRAINER_PBL_IAN                                          203
-#define TRAINER_PBL_AUDREY                                       204
-#define TRAINER_PBL_LEVIATHAN13                                  205
-#define TRAINER_PBL_EDGARDO                                      206
-#define TRAINER_PBL_JEAN                                         207
-#define TRAINER_PBL_ROSE                                         208
-#define TRAINER_PBL_JENNIFER                                     209
-#define TRAINER_PBL_MATTHEW                                      210
-#define TRAINER_PBL_KERRY                                        211
-#define TRAINER_PBL_ANNIE                                        212
-#define TRAINER_PBL_CHRISTI                                      213
-#define TRAINER_PBL_SPENCER                                      214
-#define TRAINER_PBL_HAYWOOD                                      215
-#define TRAINER_PBL_MONROE                                       216
-#define TRAINER_PBL_DAVID                                        217
-#define TRAINER_PBL_DOMINIK                                      218
-#define TRAINER_PBL_DOUGLAS                                      219
-#define TRAINER_PBL_NADINE                                       220
-#define TRAINER_PBL_SANDY                                        221
-#define TRAINER_PBL_SHELDON                                      222
-#define TRAINER_PBL_LEVIATHAN14                                  223
-#define TRAINER_PBL_LEVIATHAN12_BRUTAL                           224
-#define TRAINER_PBL_LEVIATHAN13_BRUTAL                           225
-#define TRAINER_PBL_LEVIATHAN14_BRUTAL                           226
-#define TRAINER_PBL_LEVIATHAN12                                  227
-
-
+enum {
+    TRAINER_NONE,
+    TRAINER_PBL_NINA,
+    TRAINER_PBL_MARIAM,
+    TRAINER_PBL_OSCAR,
+    TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER,
+    TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER,
+    TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER,
+    TRAINER_PBL_POLLY,
+    TRAINER_PBL_JEREMIAH,
+    TRAINER_PBL_JOSH,
+    TRAINER_PBL_HARPER,
+    TRAINER_PBL_SHAUN_LEVIATHAN_2,
+    TRAINER_PBL_JEMMA,
+    TRAINER_PBL_PATRICK,
+    TRAINER_PBL_ANNABELLE,
+    TRAINER_PBL_BORIS,
+    TRAINER_PBL_RICHARD,
+    TRAINER_PBL_PHILLIPA_LEVIATHAN_3,
+    TRAINER_PBL_HERMAN,
+    TRAINER_PBL_RALPH,
+    TRAINER_PBL_CALLIE,
+    TRAINER_PBL_SANTIAGO,
+    TRAINER_PBL_CHLOE_AND_KAYA,
+    TRAINER_PBL_FRED,
+    TRAINER_PBL_LUCIA,
+    TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4,
+    TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4_CHALLENGE,
+    TRAINER_PBL_ANNE_AND_JUNE,
+    TRAINER_PBL_NOVA_AND_CORA,
+    TRAINER_PBL_CLINTON,
+    TRAINER_PBL_REBECCA,
+    TRAINER_PBL_RYAN,
+    TRAINER_PBL_CAITLYN,
+    TRAINER_PBL_KENNETH,
+    TRAINER_PBL_KEVIN,
+    TRAINER_PBL_MARIA_LEVIATHAN_5,
+    TRAINER_PBL_MARIA_LEVIATHAN_5_CHALLENGE,
+    TRAINER_PBL_GILBERT,
+    TRAINER_PBL_MELANIE,
+    TRAINER_PBL_CONSTANCE,
+    TRAINER_PBL_FRANK,
+    TRAINER_PBL_DUDLEY,
+    TRAINER_PBL_DAISY,
+    TRAINER_PBL_VIC_AND_DELL,
+    TRAINER_PBL_MINA,
+    TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6,
+    TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_CHALLENGE,
+    TRAINER_PBL_MILLIE,
+    TRAINER_PBL_JAMAL,
+    TRAINER_PBL_PAIGE,
+    TRAINER_PBL_SETH,
+    TRAINER_PBL_CONNIE,
+    TRAINER_PBL_PETER,
+    TRAINER_PBL_WHITAKER,
+    TRAINER_PBL_BETTY_LEVIATHAN_7,
+    TRAINER_PBL_BETTY_LEVIATHAN_7_CHALLENGE,
+    TRAINER_PBL_JIMMY,
+    TRAINER_PBL_EMILIANO,
+    TRAINER_PBL_BECKHAM,
+    TRAINER_PBL_KAREN,
+    TRAINER_PBL_JAYDEN,
+    TRAINER_PBL_NEIL,
+    TRAINER_PBL_TAMARA,
+    TRAINER_PBL_ALISTAIR_LEVIATHAN_8,
+    TRAINER_PBL_ALISTAIR_LEVIATHAN_8_CHALLENGE,
+    TRAINER_PBL_COOPER,
+    TRAINER_PBL_CARMINE,
+    TRAINER_PBL_JONATHAN,
+    TRAINER_PBL_CALVIN,
+    TRAINER_PBL_LUIS,
+    TRAINER_PBL_ARI,
+    TRAINER_PBL_ARI_CHALLENGE,
+    TRAINER_PBL_BERTHA,
+    TRAINER_PBL_BERTHA_CHALLENGE,
+    TRAINER_PBL_CASSANDRA,
+    TRAINER_PBL_CASSANDRA_CHALLENGE,
+    TRAINER_PBL_DOMINIC,
+    TRAINER_PBL_DOMINIC_CHALLENGE,
+    TRAINER_PBL_ERICA,
+    TRAINER_PBL_ERICA_CHALLENGE,
+    TRAINER_PBL_ALANA,
+    TRAINER_PBL_JACOB,
+    TRAINER_PBL_DEWEY,
+    TRAINER_PBL_ERNEST,
+    TRAINER_PBL_KYLE,
+    TRAINER_PBL_ELIAS,
+    TRAINER_PBL_PEARLIE,
+    TRAINER_PBL_SUSAN,
+    TRAINER_PBL_CONRAD,
+    TRAINER_PBL_BRETT,
+    TRAINER_PBL_ADAMINA_LEVIATHAN_9,
+    TRAINER_PBL_ADAMINA_LEVIATHAN_9_CHALLENGE,
+    TRAINER_PBL_JEANETTE,
+    TRAINER_PBL_EMMA_AND_LEO,
+    TRAINER_PBL_JOEL,
+    TRAINER_PBL_MARION,
+    TRAINER_PBL_REGINA,
+    TRAINER_PBL_NEWTON_LEVIATHAN_10,
+    TRAINER_PBL_NEWTON_LEVIATHAN_10_CHALLENGE,
+    TRAINER_PBL_ESSENCE,
+    TRAINER_PBL_DOLORES,
+    TRAINER_PBL_GENIE,
+    TRAINER_PBL_ABIGAIL,
+    TRAINER_PBL_FEDERICO,
+    TRAINER_PBL_ROMULUS,
+    TRAINER_PBL_JULIE,
+    TRAINER_PBL_HILDA,
+    TRAINER_PBL_TREVOR,
+    TRAINER_PBL_RUFUS,
+    TRAINER_PBL_KINLEY,
+    TRAINER_PBL_REID,
+    TRAINER_PBL_DECLAN_LEVIATHAN_11,
+    TRAINER_PBL_DECLAN_LEVIATHAN_11_CHALLENGE,
+    TRAINER_PBL_VIOLET,
+    TRAINER_PBL_WANDA,
+    TRAINER_PBL_AMBER_AND_KIM,
+    TRAINER_PBL_JAN_AND_ERIN,
+    TRAINER_PBL_STEVE,
+    TRAINER_PBL_GOULD,
+    TRAINER_PBL_MENDEL,
+    TRAINER_PBL_DARWIN,
+    TRAINER_PBL_JENNY_LEVIATHAN_11,
+    TRAINER_PBL_JENNY_LEVIATHAN_11_CHALLENGE,
+    TRAINER_PBL_BART,
+    TRAINER_PBL_NIGEL,
+    TRAINER_PBL_LOLA,
+    TRAINER_PBL_CHARLIE,
+    TRAINER_PBL_RANDOLPH,
+    TRAINER_PBL_TODD,
+    TRAINER_PBL_RUSSELL,
+    TRAINER_PBL_OTIS,
+    TRAINER_PBL_MIGUEL_LEVIATHAN_12,
+    TRAINER_PBL_MIGUEL_LEVIATHAN_12_CHALLENGE,
+    TRAINER_PBL_MIRAGE_LEVIATHAN_13,
+    TRAINER_PBL_MIRAGE_LEVIATHAN_13_CHALLENGE,
+    TRAINER_PBL_IONA,
+    TRAINER_PBL_BERKE,
+    TRAINER_PBL_TANISHA,
+    TRAINER_PBL_ROBERT,
+    TRAINER_PBL_CHRIS,
+    TRAINER_PBL_ANGUS,
+    TRAINER_PBL_LILY_LEVIATHAN_14,
+    TRAINER_PBL_LILY_LEVIATHAN_14_CHALLENGE,
+    TRAINER_PBL_AXLE,
+    TRAINER_PBL_RAFAEL,
+    TRAINER_PBL_GEORGINA,
+    TRAINER_PBL_MIA_LEVIATHAN_15,
+    TRAINER_PBL_MIA_LEVIATHAN_15_CHALLENGE,
+    TRAINER_PBL_DORIS,
+    TRAINER_PBL_HOMER,
+    TRAINER_PBL_JOHN,
+    TRAINER_PBL_GLENN,
+    TRAINER_PBL_JAY,
+    TRAINER_PBL_TYLER,
+    TRAINER_PBL_TERRENCE,
+    TRAINER_PBL_MARTY,
+    TRAINER_PBL_KARI,
+    TRAINER_PBL_ABRAHAM,
+    TRAINER_PBL_MELINDA,
+    TRAINER_PBL_EMILIO,
+    TRAINER_PBL_REX,
+    TRAINER_PBL_LOUIS,
+    TRAINER_PBL_LEROY,
+    TRAINER_PBL_ELTON,
+    TRAINER_PBL_WILLIE,
+    TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16,
+    TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16_CHALLENGE,
+    TRAINER_PBL_PIRATE_1,
+    TRAINER_PBL_PIRATE_2,
+    TRAINER_PBL_PIRATE_3,
+    TRAINER_PBL_PIRATE_4,
+    TRAINER_PBL_SHAWN,
+    TRAINER_PBL_FERNANDO,
+    TRAINER_PBL_KANE,
+    TRAINER_PBL_KIRK,
+    TRAINER_PBL_DALTON,
+    TRAINER_PBL_LEE,
+    TRAINER_PBL_BLANCHE,
+    TRAINER_PBL_TROY,
+    TRAINER_PBL_ABED,
+    TRAINER_PBL_TROY_BRUTAL,
+    TRAINER_PBL_ABED_BRUTAL,
+    TRAINER_PBL_MIRAGE_LEVIATHAN_17,
+    TRAINER_PBL_MIRAGE_LEVIATHAN_17_CHALLENGE,
+    TRAINER_PBL_ANITA,
+    TRAINER_PBL_DESIREE,
+    TRAINER_PBL_HOWARD,
+    TRAINER_PBL_ELOISE,
+    TRAINER_PBL_ALLY_AND_EMMY,
+    TRAINER_PBL_AMIR,
+    TRAINER_PBL_GETHIN,
+    TRAINER_PBL_BERNARD,
+    TRAINER_PBL_ELLIE,
+    TRAINER_PBL_RUSTY,
+    TRAINER_PBL_CODY,
+    TRAINER_PBL_LEWIS,
+    TRAINER_PBL_CORNELIUS,
+    TRAINER_PBL_INEZ_AND_EMMA,
+    TRAINER_PBL_HELEN,
+    TRAINER_PBL_WESLEY,
+    TRAINER_PBL_ALFREDO,
+    TRAINER_PBL_IAN,
+    TRAINER_PBL_AUDREY,
+    TRAINER_PBL_LEVIATHAN13,
+    TRAINER_PBL_EDGARDO,
+    TRAINER_PBL_JEAN,
+    TRAINER_PBL_ROSE,
+    TRAINER_PBL_JENNIFER,
+    TRAINER_PBL_MATTHEW,
+    TRAINER_PBL_KERRY,
+    TRAINER_PBL_ANNIE,
+    TRAINER_PBL_CHRISTI,
+    TRAINER_PBL_SPENCER,
+    TRAINER_PBL_HAYWOOD,
+    TRAINER_PBL_MONROE,
+    TRAINER_PBL_DAVID,
+    TRAINER_PBL_DOMINIK,
+    TRAINER_PBL_DOUGLAS,
+    TRAINER_PBL_NADINE,
+    TRAINER_PBL_SANDY,
+    TRAINER_PBL_SHELDON,
+    TRAINER_PBL_LEVIATHAN14,
+    TRAINER_PBL_LEVIATHAN12_BRUTAL,
+    TRAINER_PBL_LEVIATHAN13_BRUTAL,
+    TRAINER_PBL_LEVIATHAN14_BRUTAL,
+    TRAINER_PBL_LEVIATHAN12
+};
 
 #define TRAINER_SAWYER_1                    TRAINER_NONE
 #define TRAINER_GRUNT_AQUA_HIDEOUT_1        TRAINER_NONE

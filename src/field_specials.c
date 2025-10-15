@@ -4426,11 +4426,10 @@ u16 GetNumTrainersRemaining(void)
         }
         break;
     case 3:
-        for (trainer = TRAINER_PBL_JEMMA; trainer <= TRAINER_PBL_RICHARD; trainer++) {
+        for (trainer = TRAINER_PBL_JEMMA; trainer <= TRAINER_PBL_PHILLIPA_LEVIATHAN_3; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
-        count += !FlagGet(FLAG_BEAT_LEVIATHAN_3);
         break;
     case 4:
         for (trainer = TRAINER_PBL_HERMAN; trainer <= TRAINER_PBL_LUCIA; trainer++) {
