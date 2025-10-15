@@ -821,7 +821,9 @@ script Sanctuary_EventScript_GameIntro {
 		msgbox(format("Received {COLOR RED}¥5000{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
 		waitfanfare
 		playfanfare(MUS_OBTAIN_ITEM)
-		msgbox(format("Received the {COLOR RED}Pokédex{COLOR DARK_GRAY} and the {COLOR RED}DexNav{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+		msgbox(format("Received the {COLOR RED}Pokédex{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+		waitfanfare
+		msgbox(format("Received the {COLOR RED}DexNav{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
 		waitfanfare
 		giveitem(ITEM_NOTEBOOK)
 	} else {
@@ -831,7 +833,22 @@ script Sanctuary_EventScript_GameIntro {
 	}
 	setmonmetlocation(0, 255)
 	callnative(UpdateFollowingPokemon)
-	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: I would recommend exploring the Sanctuary before you enter the first Zone.\pMany people here have free items or advice for new challengers."))
+	if (var(VAR_TEMP_1) == 1) {
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: I would recommend exploring the Sanctuary before you enter the first Zone.\pMany people here have free items or advice for new challengers."))
+	} else {
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Since you've elected to skip the tutorial, would you like to skip all Sanctuary exploration as well?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			setflag(FLAG_JOY_INTRO)
+			setflag(FLAG_TIM_INTRO)
+			setflag(FLAG_COWGIRL_INTRO)
+			setflag(FLAG_VARRICK_INTRO)
+			setflag(FLAG_LELOUCH_INTRO)
+			additem(ITEM_SUPER_ROD)
+			additem(ITEM_INFINITE_REPEL)
+			additem(ITEM_RARE_CANDY)
+			completesubquest(QUEST_PBL, 0)
+		}
+	}
 	call(EventScript_WhenUReadyDialogue)
 	applymovement(LOCALID_COLRESS, Common_Movement_Colress_WalkUp)
 	waitmovement(LOCALID_COLRESS)
