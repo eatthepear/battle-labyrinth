@@ -47,7 +47,7 @@ script EventScript_ExpertF_ZonePreview {
 				msgbox(format("{COLOR GREEN}Zone 1{COLOR DARK_GRAY} is a simple route through a forested area, with a few novice trainers along the way."))
 				msgbox(format("Beware {COLOR BLUE}Corey{COLOR DARK_GRAY} the {COLOR RED}Leviathan{COLOR DARK_GRAY} and his trio of Elemental Monkeys, with his ace being the one with a type advantage over your starter."))
 			case 2:
-				msgbox(format("{COLOR GREEN}Zone 2{COLOR DARK_GRAY} is a farm with lots of open area, and a few beginner trainers scattered throughout."))
+				msgbox(format("{COLOR GREEN}Zone 2{COLOR DARK_GRAY} is a ranch with lots of open area, and a few beginner trainers scattered throughout."))
 				msgbox(format("Beware {COLOR BLUE}Shaun{COLOR DARK_GRAY} the {COLOR RED}Leviathan{COLOR DARK_GRAY}. His Bunnelby, Smoliv, and ace Skwovet use Oran Berries exceptionally well with their abilties."))
 				if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 					msgbox(format("Also, his Gulpin has Sticky Hold, so it just wants to Stuff Cheeks then Belch everywhere!"))
