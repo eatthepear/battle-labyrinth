@@ -63,17 +63,6 @@ text Zone2A_Text_Shaun_MoreBerries {
 script Zone2A_EventScript_BuyBug {
 	lock
 	faceplayer
-	if (!defeated(TRAINER_PBL_JOSH)) {
-		msgbox(format("Oh! You look like a Bug-type enthusiast.\pBug-type Pokémon sure are great.\pI can show you some Bugs, if you like?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			msgbox(format("You don't want any? Fine. More for me."))
-			release
-			end
-		}
-		msgbox(format("I'll show you some great Bug-type Pokémon!"), MSGBOX_AUTOCLOSE)
-		trainerbattle_no_intro(TRAINER_PBL_JOSH, format("They were great, weren't they?"))
-		msgbox(format("Hey, tell you what.\pI'm actually selling some Bug-type Pokémon!"), MSGBOX_DEFAULT)
-	}
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == true && flag(FLAG_ZONE2A_NUZLOCKE_BOUGHT_BUG) == true) {
 		msgbox(format("Scram! I'm out of bugs for you to buy right now.\pCome back later."))
 		release
