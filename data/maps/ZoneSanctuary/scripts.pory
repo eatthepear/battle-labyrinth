@@ -252,7 +252,22 @@ script EventScript_RespinEncounters {
 }
 
 script EventScript_NextZone {
-	completesubquest(QUEST_PBL, 0)
+	if (checkitem(ITEM_SUPER_ROD) == FALSE) {
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: It seems you haven't explored the Sanctuary fully yet.\pPerhaps speak to the Fisherman south of here."))
+		return
+	}
+	if (checkitem(ITEM_INFINITE_REPEL) == FALSE) {
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: It seems you haven't explored the Sanctuary fully yet.\pPerhaps speak to the Hiker south of the shops."))
+		return
+	}
+	if (checkitem(ITEM_RARE_CANDY) == FALSE) {
+		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: It seems you haven't explored the Sanctuary fully yet.\pPerhaps speak to the Expert southwest of the Pokémon Center."))
+		return
+	}
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PBL, 0)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_PBL, 0)
+	}
 	if (getpartysize() < 4) {
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: You're undergoing quite the challenge by entering the next Zone with that few Pokémon in your party. Proceed anyways?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
@@ -919,6 +934,7 @@ script Sanctuary_EventScript_GameIntro {
 	}
 	setmonmetlocation(0, 255)
 	callnative(UpdateFollowingPokemon)
+	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: I would recommend exploring the Sanctuary before you enter the first Zone.\pMany people here have free items or advice for new challengers."))
 	call(EventScript_WhenUReadyDialogue)
 	applymovement(LOCALID_COLRESS, Common_Movement_Colress_WalkUp)
 	waitmovement(LOCALID_COLRESS)
