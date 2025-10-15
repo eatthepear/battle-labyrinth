@@ -216,7 +216,7 @@ static const u8 sText_AllHeader[] = _("All Quests");
 static const u8 sText_InactiveHeader[] = _("Inactive Quests");
 static const u8 sText_ActiveHeader[] = _("Active Quests");
 static const u8 sText_RewardHeader[] = _("Reward Available");
-static const u8 sText_CompletedHeader[] =
+static const u8 sText_DoneHeader[] =
       _("Completed Quests");
 static const u8 sText_QuestNumberDisplay[] =
       _("{STR_VAR_1}/{STR_VAR_2}");
@@ -232,7 +232,7 @@ static const u8 sText_ReturnRecieveReward[] =
       _("Return to {STR_VAR_2}\nto recieve your reward!");
 static const u8 sText_SubQuestButton[] = _(" {A_BUTTON}");
 static const u8 sText_Type[] = _("{R_BUTTON}Type");
-static const u8 sText_Completed[] = _("Completed");
+static const u8 sText_Done[] = _("Done");
 static const u8 sText_Caught[] = _("Caught");
 static const u8 sText_Found[] = _("Found");
 static const u8 sText_Read[] = _("Read");
@@ -250,453 +250,462 @@ static const u8 sText_AZ[] = _(" A-Z");
 static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 {
 	sub_quest(
-	      COMPOUND_STRING("Zone 1"),
-	      COMPOUND_STRING("You completed Zone 1!"),
-	      COMPOUND_STRING("Zone 1"),
+	      COMPOUND_STRING("Sanctuary"),
+	      COMPOUND_STRING("You explored the Sanctuary!"),
+	      COMPOUND_STRING("Sanctuary"),
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
+	),
+
+	sub_quest(
+	      COMPOUND_STRING("Zone 1"),
+	      COMPOUND_STRING("You completed Zone 1!"),
+	      gText_MapZone1,
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 2"),
 	      COMPOUND_STRING("You completed Zone 2!"),
-	      COMPOUND_STRING("Zone 2"),
+	      gText_MapZone2,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 3"),
 	      COMPOUND_STRING("You completed Zone 3!"),
-	      COMPOUND_STRING("Zone 3"),
+	      gText_MapZone3,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 4"),
 	      COMPOUND_STRING("You completed Zone 4!"),
-	      COMPOUND_STRING("Zone 4"),
+	      gText_MapZone4,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 5"),
 	      COMPOUND_STRING("You completed Zone 5!"),
-	      COMPOUND_STRING("Zone 5"),
+	      gText_MapZone5,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 6"),
 	      COMPOUND_STRING("You completed Zone 6!"),
-	      COMPOUND_STRING("Zone 6"),
+	      gText_MapZone6,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 7"),
 	      COMPOUND_STRING("You completed Zone 7!"),
-	      COMPOUND_STRING("Zone 7"),
+	      gText_MapZone7,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 8"),
 	      COMPOUND_STRING("You completed Zone 8!"),
-	      COMPOUND_STRING("Zone 8"),
+	      gText_MapZone8,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 9"),
 	      COMPOUND_STRING("You completed Zone 9!"),
-	      COMPOUND_STRING("Zone 9"),
+	      gText_MapZone9,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 10"),
 	      COMPOUND_STRING("You completed Zone 10!"),
-	      COMPOUND_STRING("Zone 10"),
+	      gText_MapZone10,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 11"),
 	      COMPOUND_STRING("You completed Zone 11!"),
-	      COMPOUND_STRING("Zone 11"),
+	      gText_MapZone11,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 12"),
 	      COMPOUND_STRING("You completed Zone 12!"),
-	      COMPOUND_STRING("Zone 12"),
+	      gText_MapZone12,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 13"),
 	      COMPOUND_STRING("You completed Zone 13!"),
-	      COMPOUND_STRING("Zone 13"),
+	      gText_MapZone13,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 14"),
 	      COMPOUND_STRING("You completed Zone 14!"),
-	      COMPOUND_STRING("Zone 14"),
+	      gText_MapZone14,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 15"),
 	      COMPOUND_STRING("You completed Zone 15!"),
-	      COMPOUND_STRING("Zone 15"),
+	      gText_MapZone15,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 16"),
 	      COMPOUND_STRING("You completed Zone 16!"),
-	      COMPOUND_STRING("Zone 16"),
+	      gText_MapZone16,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 17"),
 	      COMPOUND_STRING("You completed Zone 17!"),
-	      COMPOUND_STRING("Zone 17"),
+	      gText_MapZone17,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 18"),
 	      COMPOUND_STRING("You completed Zone 18!"),
-	      COMPOUND_STRING("Zone 18"),
+	      gText_MapZone18,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 19"),
 	      COMPOUND_STRING("You completed Zone 19!"),
-	      COMPOUND_STRING("Zone 19"),
+	      gText_MapZone19,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 20"),
 	      COMPOUND_STRING("You completed Zone 20!"),
-	      COMPOUND_STRING("Zone 20"),
+	      gText_MapZone20,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 21"),
 	      COMPOUND_STRING("You completed Zone 21!"),
-	      COMPOUND_STRING("Zone 21"),
+	      gText_MapZone21,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 22"),
 	      COMPOUND_STRING("You completed Zone 22!"),
-	      COMPOUND_STRING("Zone 22"),
+	      gText_MapZone22,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 23"),
 	      COMPOUND_STRING("You completed Zone 23!"),
-	      COMPOUND_STRING("Zone 23"),
+	      gText_MapZone23,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 24"),
 	      COMPOUND_STRING("You completed Zone 24!"),
-	      COMPOUND_STRING("Zone 24"),
+	      gText_MapZone24,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 25"),
 	      COMPOUND_STRING("You completed Zone 25!"),
-	      COMPOUND_STRING("Zone 25"),
+	      gText_MapZone25,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 26"),
 	      COMPOUND_STRING("You completed Zone 26!"),
-	      COMPOUND_STRING("Zone 26"),
+	      gText_MapZone26,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 27"),
 	      COMPOUND_STRING("You completed Zone 27!"),
-	      COMPOUND_STRING("Zone 27"),
+	      gText_MapZone27,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 28"),
 	      COMPOUND_STRING("You completed Zone 28!"),
-	      COMPOUND_STRING("Zone 28"),
+	      gText_MapZone28,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 29"),
 	      COMPOUND_STRING("You completed Zone 29!"),
-	      COMPOUND_STRING("Zone 29"),
+	      gText_MapZone29,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 30"),
 	      COMPOUND_STRING("You completed Zone 30!"),
-	      COMPOUND_STRING("Zone 30"),
+	      gText_MapZone30,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 31"),
 	      COMPOUND_STRING("You completed Zone 31!"),
-	      COMPOUND_STRING("Zone 31"),
+	      gText_MapZone31,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 32"),
 	      COMPOUND_STRING("You completed Zone 32!"),
-	      COMPOUND_STRING("Zone 32"),
+	      gText_MapZone32,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 33"),
 	      COMPOUND_STRING("You completed Zone 33!"),
-	      COMPOUND_STRING("Zone 33"),
+	      gText_MapZone33,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 34"),
 	      COMPOUND_STRING("You completed Zone 34!"),
-	      COMPOUND_STRING("Zone 34"),
+	      gText_MapZone34,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 35"),
 	      COMPOUND_STRING("You completed Zone 35!"),
-	      COMPOUND_STRING("Zone 35"),
+	      gText_MapZone35,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 36"),
 	      COMPOUND_STRING("You completed Zone 36!"),
-	      COMPOUND_STRING("Zone 36"),
+	      gText_MapZone36,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 37"),
 	      COMPOUND_STRING("You completed Zone 37!"),
-	      COMPOUND_STRING("Zone 37"),
+	      gText_MapZone37,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 38"),
 	      COMPOUND_STRING("You completed Zone 38!"),
-	      COMPOUND_STRING("Zone 38"),
+	      gText_MapZone38,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 39"),
 	      COMPOUND_STRING("You completed Zone 39!"),
-	      COMPOUND_STRING("Zone 39"),
+	      gText_MapZone39,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 40"),
 	      COMPOUND_STRING("You completed Zone 40!"),
-	      COMPOUND_STRING("Zone 40"),
+	      gText_MapZone40,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 41"),
 	      COMPOUND_STRING("You completed Zone 41!"),
-	      COMPOUND_STRING("Zone 41"),
+	      gText_MapZone41,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 42"),
 	      COMPOUND_STRING("You completed Zone 42!"),
-	      COMPOUND_STRING("Zone 42"),
+	      gText_MapZone42,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 43"),
 	      COMPOUND_STRING("You completed Zone 43!"),
-	      COMPOUND_STRING("Zone 43"),
+	      gText_MapZone43,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 44"),
 	      COMPOUND_STRING("You completed Zone 44!"),
-	      COMPOUND_STRING("Zone 44"),
+	      gText_MapZone44,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 45"),
 	      COMPOUND_STRING("You completed Zone 45!"),
-	      COMPOUND_STRING("Zone 45"),
+	      gText_MapZone45,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 46"),
 	      COMPOUND_STRING("You completed Zone 46!"),
-	      COMPOUND_STRING("Zone 46"),
+	      gText_MapZone46,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 47"),
 	      COMPOUND_STRING("You completed Zone 47!"),
-	      COMPOUND_STRING("Zone 47"),
+	      gText_MapZone47,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 48"),
 	      COMPOUND_STRING("You completed Zone 48!"),
-	      COMPOUND_STRING("Zone 48"),
+	      gText_MapZone48,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 49"),
 	      COMPOUND_STRING("You completed Zone 49!"),
-	      COMPOUND_STRING("Zone 49"),
+	      gText_MapZone49,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 
 	sub_quest(
 	      COMPOUND_STRING("Zone 50"),
 	      COMPOUND_STRING("You completed Zone 50!"),
-	      COMPOUND_STRING("Zone 50"),
+	      gText_MapZone50,
 	      ITEM_NONE,
 	      ITEM,
-	      sText_Completed
+	      sText_Done
 	),
 };
 
@@ -3334,7 +3343,7 @@ static void GenerateMenuContext(void)
 			break;
 		case SORT_DONE:
 			questNamePointer = StringCopy(questNameArray[QUEST_ARRAY_COUNT],
-			                              sText_CompletedHeader);
+			                              sText_DoneHeader);
 			break;
 	}
 

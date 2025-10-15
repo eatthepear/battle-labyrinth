@@ -252,6 +252,7 @@ script EventScript_RespinEncounters {
 }
 
 script EventScript_NextZone {
+	completesubquest(QUEST_PBL, 0)
 	if (getpartysize() < 4) {
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: You're undergoing quite the challenge by entering the next Zone with that few Pokémon in your party. Proceed anyways?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
@@ -617,14 +618,14 @@ script Sanctuary_EventScript_EnterSanctuary {
 	}
 	switch(var(VAR_ZONE)) {
 		case 1:
-			completesubquest(QUEST_PBL, SUB_QUEST_1)
+			completesubquest(QUEST_PBL, 1)
 			setvar(VAR_ZONE, 2)
 		case 2:
 			setflag(FLAG_HIDE_ZONE2A_MAX)
-			completesubquest(QUEST_PBL, SUB_QUEST_2)
+			completesubquest(QUEST_PBL, 2)
 			setvar(VAR_ZONE, 3)
 		case 3:
-			completesubquest(QUEST_PBL, SUB_QUEST_3)
+			completesubquest(QUEST_PBL, 3)
 			setvar(VAR_ZONE, 4)
 			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
 			playfanfare(MUS_OBTAIN_ITEM)
@@ -640,10 +641,10 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(Sanctuary_Text_Colress_UpgradedItems, MSGBOX_DEFAULT)
 			waitfanfare
 		case 4:
-			completesubquest(QUEST_PBL, SUB_QUEST_4)
+			completesubquest(QUEST_PBL, 4)
 			setvar(VAR_ZONE, 5)
 		case 5:
-			completesubquest(QUEST_PBL, SUB_QUEST_5)
+			completesubquest(QUEST_PBL, 5)
 			setvar(VAR_ZONE, 6)
 			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
 			playfanfare(MUS_OBTAIN_ITEM)
@@ -657,7 +658,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			waitfanfare
 		case 6:
 			setflag(FLAG_HIDE_ZONE6A_MAX)
-			completesubquest(QUEST_PBL, SUB_QUEST_6)
+			completesubquest(QUEST_PBL, 6)
 			setvar(VAR_ZONE, 7)
 			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
 			playfanfare(MUS_OBTAIN_ITEM)
@@ -669,8 +670,8 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
 		case 7:
 			setflag(FLAG_ZONE7B_HEAL_USED)
-			completesubquest(QUEST_PBL, SUB_QUEST_7)
-			completesubquest(QUEST_PBL, SUB_QUEST_8)
+			completesubquest(QUEST_PBL, 7)
+			completesubquest(QUEST_PBL, 8)
 			setvar(VAR_ZONE, 9)
 			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
 			playfanfare(MUS_OBTAIN_ITEM)
@@ -680,11 +681,11 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(Sanctuary_Text_Colress_UpgradedBerries, MSGBOX_DEFAULT)
 			waitfanfare
 		case 9:
-			completesubquest(QUEST_PBL, SUB_QUEST_9)
+			completesubquest(QUEST_PBL, 9)
 			setvar(VAR_ZONE, 10)
 		case 10:
 			setflag(FLAG_HIDE_ZONE10A_MAX)
-			completesubquest(QUEST_PBL, SUB_QUEST_10)
+			completesubquest(QUEST_PBL, 10)
 			setvar(VAR_ZONE, 11)
 			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
 			playfanfare(MUS_OBTAIN_ITEM)
@@ -703,10 +704,10 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(Sanctuary_Text_Colress_UpgradedRecovery, MSGBOX_DEFAULT)
 			waitfanfare
 		case 11:
-			completesubquest(QUEST_PBL, SUB_QUEST_11)
+			completesubquest(QUEST_PBL, 11)
 			setvar(VAR_ZONE, 12)
 		case 12:
-			completesubquest(QUEST_PBL, SUB_QUEST_12)
+			completesubquest(QUEST_PBL, 12)
 			setvar(VAR_ZONE, 13)
 			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
 			playfanfare(MUS_OBTAIN_ITEM)
@@ -717,114 +718,114 @@ script Sanctuary_EventScript_EnterSanctuary {
 			waitfanfare
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
 		case 13:
-			completesubquest(QUEST_PBL, SUB_QUEST_13)
-			completesubquest(QUEST_PBL, SUB_QUEST_14)
+			completesubquest(QUEST_PBL, 13)
+			completesubquest(QUEST_PBL, 14)
 			setvar(VAR_ZONE, 15)
 		case 15:
-			completesubquest(QUEST_PBL, SUB_QUEST_15)
+			completesubquest(QUEST_PBL, 15)
 			setvar(VAR_ZONE, 16)
 		case 16:
-			completesubquest(QUEST_PBL, SUB_QUEST_16)
+			completesubquest(QUEST_PBL, 16)
 			setvar(VAR_ZONE, 17)
 		case 17:
-			completesubquest(QUEST_PBL, SUB_QUEST_17)
+			completesubquest(QUEST_PBL, 17)
 			setvar(VAR_ZONE, 18)
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
 		case 18:
-			completesubquest(QUEST_PBL, SUB_QUEST_18)
-			completesubquest(QUEST_PBL, SUB_QUEST_19)
+			completesubquest(QUEST_PBL, 18)
+			completesubquest(QUEST_PBL, 19)
 			setvar(VAR_ZONE, 20)
 		case 20:
-			completesubquest(QUEST_PBL, SUB_QUEST_20)
+			completesubquest(QUEST_PBL, 20)
 			setvar(VAR_ZONE, 21)
 		case 21:
-			completesubquest(QUEST_PBL, SUB_QUEST_21)
+			completesubquest(QUEST_PBL, 21)
 			setvar(VAR_ZONE, 22)
 		case 22:
-			completesubquest(QUEST_PBL, SUB_QUEST_22)
+			completesubquest(QUEST_PBL, 22)
 			setvar(VAR_ZONE, 23)
 		case 23:
-			completesubquest(QUEST_PBL, SUB_QUEST_23)
+			completesubquest(QUEST_PBL, 23)
 			setvar(VAR_ZONE, 24)
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
 		case 24:
-			completesubquest(QUEST_PBL, SUB_QUEST_24)
-			completesubquest(QUEST_PBL, SUB_QUEST_25)
+			completesubquest(QUEST_PBL, 24)
+			completesubquest(QUEST_PBL, 25)
 			setvar(VAR_ZONE, 26)
 		case 26:
-			completesubquest(QUEST_PBL, SUB_QUEST_26)
+			completesubquest(QUEST_PBL, 26)
 			setvar(VAR_ZONE, 27)
 		case 27:
-			completesubquest(QUEST_PBL, SUB_QUEST_27)
+			completesubquest(QUEST_PBL, 27)
 			setvar(VAR_ZONE, 28)
 		case 28:
-			completesubquest(QUEST_PBL, SUB_QUEST_28)
+			completesubquest(QUEST_PBL, 28)
 			setvar(VAR_ZONE, 29)
 		case 29:
-			completesubquest(QUEST_PBL, SUB_QUEST_29)
+			completesubquest(QUEST_PBL, 29)
 			setvar(VAR_ZONE, 30)
 		case 30:
-			completesubquest(QUEST_PBL, SUB_QUEST_30)
+			completesubquest(QUEST_PBL, 30)
 			setvar(VAR_ZONE, 31)
 		case 31:
-			completesubquest(QUEST_PBL, SUB_QUEST_31)
+			completesubquest(QUEST_PBL, 31)
 			setvar(VAR_ZONE, 32)
 		case 32:
-			completesubquest(QUEST_PBL, SUB_QUEST_32)
+			completesubquest(QUEST_PBL, 32)
 			setvar(VAR_ZONE, 33)
 		case 33:
-			completesubquest(QUEST_PBL, SUB_QUEST_33)
+			completesubquest(QUEST_PBL, 33)
 			setvar(VAR_ZONE, 34)
 		case 34:
-			completesubquest(QUEST_PBL, SUB_QUEST_34)
+			completesubquest(QUEST_PBL, 34)
 			setvar(VAR_ZONE, 35)
 		case 35:
-			completesubquest(QUEST_PBL, SUB_QUEST_35)
+			completesubquest(QUEST_PBL, 35)
 			setvar(VAR_ZONE, 36)
 		case 36:
-			completesubquest(QUEST_PBL, SUB_QUEST_36)
+			completesubquest(QUEST_PBL, 36)
 			setvar(VAR_ZONE, 37)
 		case 37:
-			completesubquest(QUEST_PBL, SUB_QUEST_37)
+			completesubquest(QUEST_PBL, 37)
 			setvar(VAR_ZONE, 38)
 		case 38:
-			completesubquest(QUEST_PBL, SUB_QUEST_38)
+			completesubquest(QUEST_PBL, 38)
 			setvar(VAR_ZONE, 39)
 		case 39:
-			completesubquest(QUEST_PBL, SUB_QUEST_39)
+			completesubquest(QUEST_PBL, 39)
 			setvar(VAR_ZONE, 40)
 		case 40:
-			completesubquest(QUEST_PBL, SUB_QUEST_40)
+			completesubquest(QUEST_PBL, 40)
 			setvar(VAR_ZONE, 41)
 		case 41:
-			completesubquest(QUEST_PBL, SUB_QUEST_41)
+			completesubquest(QUEST_PBL, 41)
 			setvar(VAR_ZONE, 42)
 		case 42:
-			completesubquest(QUEST_PBL, SUB_QUEST_42)
+			completesubquest(QUEST_PBL, 42)
 			setvar(VAR_ZONE, 43)
 		case 43:
-			completesubquest(QUEST_PBL, SUB_QUEST_43)
+			completesubquest(QUEST_PBL, 43)
 			setvar(VAR_ZONE, 44)
 		case 44:
-			completesubquest(QUEST_PBL, SUB_QUEST_44)
+			completesubquest(QUEST_PBL, 44)
 			setvar(VAR_ZONE, 45)
 		case 45:
-			completesubquest(QUEST_PBL, SUB_QUEST_45)
+			completesubquest(QUEST_PBL, 45)
 			setvar(VAR_ZONE, 46)
 		case 46:
-			completesubquest(QUEST_PBL, SUB_QUEST_46)
+			completesubquest(QUEST_PBL, 46)
 			setvar(VAR_ZONE, 47)
 		case 47:
-			completesubquest(QUEST_PBL, SUB_QUEST_47)
+			completesubquest(QUEST_PBL, 47)
 			setvar(VAR_ZONE, 48)
 		case 48:
-			completesubquest(QUEST_PBL, SUB_QUEST_48)
+			completesubquest(QUEST_PBL, 48)
 			setvar(VAR_ZONE, 49)
 		case 49:
-			completesubquest(QUEST_PBL, SUB_QUEST_49)
+			completesubquest(QUEST_PBL, 49)
 			setvar(VAR_ZONE, 50)
 		case 50:
-			completesubquest(QUEST_PBL, SUB_QUEST_50)
+			completesubquest(QUEST_PBL, 50)
 			setvar(VAR_ZONE, 51)
 	}
 	call(EventScript_WhenUReadyDialogue)

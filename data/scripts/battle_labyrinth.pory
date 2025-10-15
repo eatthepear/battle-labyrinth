@@ -428,68 +428,27 @@ script EventScript_HandleFlashlight {
 	return
 }
 
-script EventScript_RecoverySign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_1)
-	msgbox("Joy's Center of Restoration\nA meeting place for everyone!", MSGBOX_SIGN)
-	end
-}
-
-script EventScript_MedicineSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_2)
-	msgbox("Portentia's Potions\nCurated Medicines!", MSGBOX_SIGN)
-	end
-}
-
-script EventScript_PokeballSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_3)
-	msgbox("Tim's Pokéball Shop\nSponsored by Pokémart Inc.", MSGBOX_SIGN)
-	end
-}
-
-script EventScript_ItemsSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_4)
-	msgbox("Varrick's Extravagant Emporium\nA Fine Collection!", MSGBOX_SIGN)
-	end
-}
-
-script EventScript_BerriesSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_5)
-	msgbox("Julia's Berries\nOnly the Berry best!", MSGBOX_SIGN)
-	end
-}
-
-script EventScript_EggsSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_6)
-	msgbox("Marie's Egg Delivery Service\nCome meet your next friend!", MSGBOX_SIGN)
-	end
-}
-
-script EventScript_ServicesSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_7)
-	msgbox("Lelouch's Services Shop\nAnything for the right price…", MSGBOX_SIGN)
-	end
-}
-
+// subquests are all 0 indexed
 script Zone0A_EventScript_TPISign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_8)
+	completesubquest(QUEST_SIGNS, 8)
 	msgbox(format("Teleport Institute\nGetting around, easy peasy."), MSGBOX_SIGN)
 	end
 }
 
 script Zone0A_EventScript_DayCareSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_9)
+	completesubquest(QUEST_SIGNS, 9)
 	msgbox(format("Pokémon Day Care\n9 Generations and counting!"), MSGBOX_SIGN)
 	end
 }
 
 script Zone1A_EventScript_Sign_GoldenTree {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_10)
+	completesubquest(QUEST_SIGNS, 10)
 	msgbox(format("Trainer Tips\pShaking a Golden Tree might drop berries, though occasionally you'll disturb the wild Pokémon living in the tree!"), MSGBOX_SIGN)
 	end
 }
 
 script Zone1A_EventScript_PorygonSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_11)
+	completesubquest(QUEST_SIGNS, 11)
 	msgbox(format("Trainer Tips\pEvery Zone has its own challenges.\nIn order to reach the Sanctuary and clear a Zone, you must find {COLOR RED}Porygon{COLOR DARK_GRAY}."), MSGBOX_DEFAULT)
 	showmonpic(SPECIES_PORYGON, 10, 3)
 	setseenmon(SPECIES_PORYGON)
@@ -500,109 +459,109 @@ script Zone1A_EventScript_PorygonSign {
 }
 
 script Zone1A_EventScript_Sign_RunningShoes {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_12)
+	completesubquest(QUEST_SIGNS, 12)
 	msgbox(format("Trainer Tips\pPress {L_BUTTON} to enable or disable Auto Run."), MSGBOX_SIGN)
 	end
 }
 
 script Zone2A_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_13)
+	completesubquest(QUEST_SIGNS, 13)
 	msgbox(format("Trainer Tips\pYou may find hidden items by checking certain tiles with {A_BUTTON}.\pHowever, you won't find any hidden items on Brutal or Independent."), MSGBOX_SIGN)
 	end
 }
 
 script Zone2A_EventScript_ExpShareSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_14)
+	completesubquest(QUEST_SIGNS, 14)
 	msgbox(format("Trainer Tips\pThe Exp. All only gives Pokémon who didn't participate in battle 25% experience.\pIf you want to train up a particular Pokémon, you can give them the held item Exp. Share so they get full experience!"), MSGBOX_SIGN)
 	end
 }
 
 script Zone2A_EventScript_CautionSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_15)
+	completesubquest(QUEST_SIGNS, 15)
 	msgbox(format("Caution!\pDiglett have been found living inside the tunnel.\pRepels recommended!"), MSGBOX_SIGN)
 	end
 }
 
 script Zone2B_EventScript_CautionSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_13)
+	completesubquest(QUEST_SIGNS, 13)
 	msgbox(format("Caution!\pDiglett have been found living inside the tunnel.\pRepels recommended!"), MSGBOX_SIGN)
 	end
 }
 
 script Zone2B_EventScript_PartySelectSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_16)
+	completesubquest(QUEST_SIGNS, 16)
 	msgbox(format("Trainer Tips\pYou can switch the order of your party around in your party menu faster by pressing {SELECT_BUTTON}."), MSGBOX_SIGN)
 	end
 }
 
 script Zone2B_EventScript_OptionalLeviathan {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_17)
+	completesubquest(QUEST_SIGNS, 17)
 	msgbox(format("Trainer Tips\pIn some Zones, Leviathans are optional to battle, but may give good rewards when defeated!"), MSGBOX_SIGN)
 	end
 }
 
 script Zone3A_EventScript_Surveil {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_18)
+	completesubquest(QUEST_SIGNS, 18)
 	msgbox(format("Trainer Tips\pIn battle, you can use Surveil to see the opponent's team.\pIf you want to see full team information, you can turn on the Full Info setting by speaking to Colress."), MSGBOX_SIGN)
 	end
 }
 
 script Zone4A_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_19)
+	completesubquest(QUEST_SIGNS, 19)
 	msgbox(format("These woods are enchanted…\nDon't get lost!"), MSGBOX_SIGN)
 	end
 }
 
 script Zone4B_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_20)
+	completesubquest(QUEST_SIGNS, 20)
 	msgbox(format("Trainer Tips\pYou can see detailed information about a Pokémon species in its Pokédex entry after capturing it, such as what moves it learns or how to evolve it."), MSGBOX_SIGN)
 	end
 }
 
 script Zone4C_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_21)
+	completesubquest(QUEST_SIGNS, 21)
 	msgbox(format("Trainer Tips\pStarting from now, there is a 20% chance to encounter wild Pokémon in a Double Battle."), MSGBOX_SIGN)
 	end
 }
 
 script Zone4D_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_22)
+	completesubquest(QUEST_SIGNS, 22)
 	msgbox(format("Trainer Tips\pSome areas require backtracking later on in order to access them."), MSGBOX_SIGN)
 	end
 }
 
 script Zone4E_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_23)
+	completesubquest(QUEST_SIGNS, 23)
 	msgbox(format("Trainer Tips\pThe Pokémon you encounter in different areas of the same zone may have slight differences!"), MSGBOX_SIGN)
 	end
 }
 
 script Zone6A_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_24)
+	completesubquest(QUEST_SIGNS, 24)
 	msgbox(format("Trainer Tips\pYou can sort items in the Bag using {START_BUTTON}."), MSGBOX_SIGN)
 	end
 }
 
 script Zone7A_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_25)
+	completesubquest(QUEST_SIGNS, 25)
 	msgbox(format("Trainer Tips\pYou can change the music you hear in battle by speaking to Colress!"), MSGBOX_SIGN)
 	end
 }
 
 script Zone7A_EventScript_HealSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_26)
+	completesubquest(QUEST_SIGNS, 26)
 	msgbox(format("A stop for weary travelers."), MSGBOX_SIGN)
 	end
 }
 
 script Zone9A_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_27)
+	completesubquest(QUEST_SIGNS, 27)
 	msgbox(format("Trainer Tips\pWhile you are on the Pokémon stats screen, you can press {A_BUTTON} to switch between stats, IVs, or EVs."), MSGBOX_SIGN)
 	end
 }
 
 script Zone9A_EventScript_HerbalSign {
-	completesubquest(QUEST_SIGNS, SUB_QUEST_28)
+	completesubquest(QUEST_SIGNS, 28)
 	msgbox(format("Herbal and Incense Shop"), MSGBOX_SIGN)
 	end
 }
@@ -910,15 +869,15 @@ script Debug_CheatStart_PBL {
 	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_SIGNS)
 	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_SAVES)
 	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_POKEDEX)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_1)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_2)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_3)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_4)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_5)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_6)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_7)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_8)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_9)
+	completesubquest(QUEST_SIGNS, 1)
+	completesubquest(QUEST_SIGNS, 2)
+	completesubquest(QUEST_SIGNS, 3)
+	completesubquest(QUEST_SIGNS, 4)
+	completesubquest(QUEST_SIGNS, 5)
+	completesubquest(QUEST_SIGNS, 6)
+	completesubquest(QUEST_SIGNS, 7)
+	completesubquest(QUEST_SIGNS, 8)
+	completesubquest(QUEST_SIGNS, 9)
 	setflag(FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES)
 	setvar(VAR_ZONE_0_STATE, 2)
 	// zone S1
@@ -1007,14 +966,14 @@ script Debug_CheatStart_PBL {
 	setvar(VAR_TEMP_1, 5) // level
 	call(Debug_CheatStart_PBL_GiveMon)
 	setflag(FLAG_ZONE1A_RECEIVED_FWG)
-	completesubquest(QUEST_PBL, SUB_QUEST_1)
+	completesubquest(QUEST_PBL, 1)
 	// zone 1 items
 	additem(ITEM_QUICK_CLAW)
 	additem(ITEM_EXP_SHARE)
 	additem(ITEM_INFINITE_REPEL)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_10)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_11)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_12)
+	completesubquest(QUEST_SIGNS, 10)
+	completesubquest(QUEST_SIGNS, 11)
+	completesubquest(QUEST_SIGNS, 12)
 	settrainerflag(TRAINER_PBL_NINA)
 	settrainerflag(TRAINER_PBL_MARIAM)
 	settrainerflag(TRAINER_PBL_OSCAR)
@@ -1063,7 +1022,7 @@ script Debug_CheatStart_PBL {
 	setvar(VAR_TEMP_1, 6) // level
 	call(Debug_CheatStart_PBL_GiveMon)
 	setflag(FLAG_ZONE2B_NUZLOCKE_BOUGHT_BUG)
-	completesubquest(QUEST_PBL, SUB_QUEST_2)
+	completesubquest(QUEST_PBL, 2)
 	// zone 2 items
 	additem(ITEM_SILK_SCARF)
 	additem(ITEM_TM_BUG_BITE)
@@ -1075,11 +1034,11 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_PECHA_BERRY, 2)
 	setflag(FLAG_SYS_DEXNAV_GET)
 	setflag(FLAG_SYS_DEXNAV_SEARCH)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_13)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_14)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_15)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_16)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_17)
+	completesubquest(QUEST_SIGNS, 13)
+	completesubquest(QUEST_SIGNS, 14)
+	completesubquest(QUEST_SIGNS, 15)
+	completesubquest(QUEST_SIGNS, 16)
+	completesubquest(QUEST_SIGNS, 17)
 	settrainerflag(TRAINER_PBL_POLLY)
 	settrainerflag(TRAINER_PBL_JEREMIAH)
 	settrainerflag(TRAINER_PBL_JOSH)
@@ -1103,10 +1062,10 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 7) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, SUB_QUEST_3)
+	completesubquest(QUEST_PBL, 3)
 	// zone 3 items
 	additem(ITEM_GOOD_ROD)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_18)
+	completesubquest(QUEST_SIGNS, 18)
 	settrainerflag(TRAINER_PBL_JEMMA)
 	settrainerflag(TRAINER_PBL_PATRICK)
 	settrainerflag(TRAINER_PBL_ANNABELLE)
@@ -1135,7 +1094,7 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 9) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, SUB_QUEST_4)
+	completesubquest(QUEST_PBL, 4)
 	// zone 4 gem
 	random(8)
 	switch(var(VAR_RESULT)) {
@@ -1167,11 +1126,11 @@ script Debug_CheatStart_PBL {
 	setflag(FLAG_SYS_START_MENU_PC_GET)
 	additem(ITEM_BURN_HEAL, 2)
 	additem(ITEM_AWAKENING, 2)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_19)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_20)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_21)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_22)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_23)
+	completesubquest(QUEST_SIGNS, 19)
+	completesubquest(QUEST_SIGNS, 20)
+	completesubquest(QUEST_SIGNS, 21)
+	completesubquest(QUEST_SIGNS, 22)
+	completesubquest(QUEST_SIGNS, 23)
 	settrainerflag(TRAINER_PBL_HERMAN)
 	settrainerflag(TRAINER_PBL_RALPH)
 	settrainerflag(TRAINER_PBL_CALLIE)
@@ -1219,7 +1178,7 @@ script Debug_CheatStart_PBL {
 	setvar(VAR_TEMP_1, 12) // level
 	call(Debug_CheatStart_PBL_GiveMon)
 	setflag(FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE)
-	completesubquest(QUEST_PBL, SUB_QUEST_5)
+	completesubquest(QUEST_PBL, 5)
 	// zone 5 items
 	additem(ITEM_METRONOME)
 	additem(ITEM_QUICK_BALL)
@@ -1256,7 +1215,7 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 13) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, SUB_QUEST_6)
+	completesubquest(QUEST_PBL, 6)
 	// zone 6 items
 	additem(ITEM_NEST_BALL)
 	additem(ITEM_NET_BALL)
@@ -1266,7 +1225,7 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_ICE_GEM)
 	additem(ITEM_SLEDGEHAMMER)
 	additem(ITEM_SUPER_POTION, 2)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_24)
+	completesubquest(QUEST_SIGNS, 24)
 	settrainerflag(TRAINER_PBL_GILBERT)
 	settrainerflag(TRAINER_PBL_MELANIE)
 	settrainerflag(TRAINER_PBL_CONSTANCE)
@@ -1307,8 +1266,8 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 16) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, SUB_QUEST_7)
-	completesubquest(QUEST_PBL, SUB_QUEST_8)
+	completesubquest(QUEST_PBL, 7)
+	completesubquest(QUEST_PBL, 8)
 	// zone 7 & 8 items
 	additem(ITEM_SHARP_BEAK)
 	additem(ITEM_ROCK_GEM)
@@ -1329,8 +1288,8 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_SUPER_POTION, 2)
 	additem(ITEM_MACHETE)
 	additem(ITEM_TM_HIDDEN_POWER)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_25)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_26)
+	completesubquest(QUEST_SIGNS, 25)
+	completesubquest(QUEST_SIGNS, 26)
 	settrainerflag(TRAINER_PBL_MILLIE)
 	settrainerflag(TRAINER_PBL_JAMAL)
 	settrainerflag(TRAINER_PBL_PAIGE)
@@ -1364,7 +1323,7 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 18) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, SUB_QUEST_9)
+	completesubquest(QUEST_PBL, 9)
 	// zone 9 items
 	additem(ITEM_BIG_ROOT)
 	additem(ITEM_TM_PLUCK)
@@ -1374,8 +1333,8 @@ script Debug_CheatStart_PBL {
 	additem(ITEM_MYSTIC_WATER)
 	additem(ITEM_CHARCOAL)
 	additem(ITEM_TM_RETALIATE)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_27)
-	completesubquest(QUEST_SIGNS, SUB_QUEST_28)
+	completesubquest(QUEST_SIGNS, 27)
+	completesubquest(QUEST_SIGNS, 28)
 	settrainerflag(TRAINER_PBL_COOPER)
 	settrainerflag(TRAINER_PBL_CARMINE)
 	settrainerflag(TRAINER_PBL_JONATHAN)
@@ -1407,7 +1366,7 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 19) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, SUB_QUEST_10)
+	completesubquest(QUEST_PBL, 10)
 	// zone 10 items
 	additem(ITEM_TM_SCORCHING_SANDS)
 	additem(ITEM_FIRE_GEM)
@@ -1447,7 +1406,7 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 21) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, SUB_QUEST_11)
+	completesubquest(QUEST_PBL, 11)
 	// zone 11 items
 	additem(ITEM_TM_GRASS_KNOT)
 	additem(ITEM_TM_TAUNT)
@@ -1481,7 +1440,7 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 21) // level
 	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, SUB_QUEST_12)
+	completesubquest(QUEST_PBL, 12)
 	// zone 12 items
 	additem(ITEM_TM_BRICK_BREAK)
 	additem(ITEM_THUNDER_STONE)
