@@ -529,5 +529,7 @@ const u16 gObjectEventPal_ParasolLady[] = INCBIN_U16("graphics/object_events/pic
 const u16 gObjectEventPal_RunningTriathleteF[] = INCBIN_U16("graphics/object_events/pics/people/running_triathlete_f.gbapal");
 const u16 gObjectEventPal_Beauty[] = INCBIN_U16("graphics/object_events/pics/people/beauty.gbapal");
 const u16 gObjectEventPal_SchoolKidM[] = INCBIN_U16("graphics/object_events/pics/people/school_kid_m.gbapal");
+const u32 gObjectEventPic_Serena[] = INCBIN_U32("graphics/object_events/pics/people/serena.4bpp");
+const u16 gObjectEventPal_Serena[] = INCBIN_U16("graphics/object_events/pics/people/serena.gbapal");
 
 const u32 gFieldEffectObjectPic_SnowFootprints[] = INCBIN_U32("graphics/field_effects/pics/snow_footprints.4bpp");

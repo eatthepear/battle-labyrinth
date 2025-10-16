@@ -279,6 +279,7 @@
 #define OBJ_EVENT_GFX_POKEMANIAC                 279
 #define OBJ_EVENT_GFX_LADY                       280
 #define OBJ_EVENT_GFX_PARASOL_LADY               281
+#define OBJ_EVENT_GFX_SERENA                     282
 
 #define OBJ_EVENT_GFX_OW_MON                     399
 #define OBJ_EVENT_GFX_LIGHT_SPRITE               400
@@ -494,6 +495,7 @@
 #define OBJ_EVENT_PAL_TAG_POKEMANIAC              0x7277
 #define OBJ_EVENT_PAL_TAG_LADY                    0x7278
 #define OBJ_EVENT_PAL_TAG_PARASOL_LADY            0x7279
+#define OBJ_EVENT_PAL_TAG_SERENA                  0x7280
 
 #define OBJ_EVENT_PAL_TAG_RUNNING_TRIATHLETE_F    0x7401
 #define OBJ_EVENT_PAL_TAG_SCHOOL_KID_M            0x7402

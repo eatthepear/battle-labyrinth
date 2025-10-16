@@ -1485,3 +1485,7 @@ static const struct SpriteFrameImage sPicTable_Lady[] = {
 static const struct SpriteFrameImage sPicTable_Pokemaniac[] = {
     overworld_ascending_frames(gObjectEventPic_Pokemaniac, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Serena[] = {
+    overworld_ascending_frames(gObjectEventPic_Serena, 2, 4),
+};
