@@ -4404,13 +4404,7 @@ u16 GetNumTrainersRemaining(void)
 {
     u16 count = 0;
     u16 trainer = 0;
-    u16 zone;
-    if (FlagGet(FLAG_IN_NEW_ZONE))
-        zone = VarGet(VAR_ZONE);
-    else if (FlagGet(FLAG_IS_REVISITING_ZONE))
-        zone = VarGet(VAR_REVISITING_ZONE);
-    else
-        return 0; //In a Sanctuary, for no opponents msg
+    u16 zone = VarGet(VAR_ZONE);
     switch (zone)
     {
     case 1:
