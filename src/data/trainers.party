@@ -1212,39 +1212,36 @@ Name: Ella&Bella
 Class: Sr And Jr
 Pic: Sr And Jr
 Music: Twins
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
 Mugshot: Purple
+Difficulty: Normal
 
-Nickit
-Ability: Unburden
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Snarl
-- Growl
-
-Litleo
-Ability: Unnerve
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Incinerate
-- Growl
-
-Steenee @ Oran Berry
-Ability: Oblivious
+Spinda @ Silk Scarf
+Careful Nature
+Ability: Own Tempo
 Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Razor Leaf
-- Grass Whistle
+- Teeter Dance
+- Dizzy Punch
 
-Jigglypuff @ Oran Berry
-Ability: Friend Guard
-Level: 13
+Spoink @ Chesto Berry
+Quiet Nature
+Ability: Own Tempo
+Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Swift
-- Disarming Voice
+- Confusion
+- Growl
 
-=== TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4_CHALLENGE ===
+Glameow @ Oran Berry
+Jolly Nature
+Ability: Own Tempo
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Fury Swipes
+
+=== TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4 ===
 Name: Ella&Bella
 Class: Sr And Jr
 Pic: Sr And Jr
@@ -1252,38 +1249,39 @@ Music: Twins
 AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
 Mugshot: Purple
+Difficulty: Brutal
 
-Nickit
-Ability: Stakeout
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Snarl
-- Quick Attack
-- Growl
-
-Litleo
-Ability: Unnerve
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Incinerate
-- Echoed Voice
-- Growl
-
-Steenee @ Oran Berry
-Ability: Oblivious
+Spinda @ Silk Scarf
+Careful Nature
+Ability: Own Tempo
 Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Razor Leaf
-- Rapid Spin
-- Grass Whistle
+- Teeter Dance
+- Dizzy Punch
 
-Jigglypuff @ Oran Berry
-Ability: Friend Guard
-Level: 13
+Spoink @ Chesto Berry
+Quiet Nature
+Ability: Own Tempo
+Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Swift
-- Disarming Voice
-- Sing
+- Confusion
+- Growl
+
+Glameow @ Oran Berry
+Jolly Nature
+Ability: Own Tempo
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Fury Swipes
+
+Mime Jr. @ Persim Berry
+Bold Nature
+Ability: Filter
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Teeter Dance
+- Confusion
 
 === TRAINER_PBL_ANNE_AND_JUNE ===
 Name: Anne&June
