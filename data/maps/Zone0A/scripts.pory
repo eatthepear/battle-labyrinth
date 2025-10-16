@@ -1,7 +1,4 @@
 mapscripts Zone0A_MapScripts {
-	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_ZONE_0_STATE, 0: Zone0A_EventScript_Intro
-	]
     MAP_SCRIPT_ON_TRANSITION {
 		call(Zone0A_EventScript_TryMoveDayCareMan)
     }

@@ -1806,6 +1806,65 @@ script EventScript_TestingLegendBattle {
 	faceplayer
 	waitse
 	fadeoutbgm(1)
+	playmoncry(SPECIES_LUNATONE, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	setwildbattle_pbl(SPECIES_LUNATONE, 15, ITEM_LUM_BERRY, NATURE_BOLD, 31, 0, MOVE_MOONLIGHT, MOVE_PSYSHOCK, MOVE_POWER_GEM, MOVE_COSMIC_POWER)
+	setflag(FLAG_SYS_NO_RUNNING)
+	setflag(FLAG_SYS_NO_CATCHING)
+	setflag(FLAG_SYS_SMART_WILD_AI_ON)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 0, 1, 0, 0, 1)
+	special(BattleSetup_StartLegendaryBattle)
+	waitstate
+	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	specialvar(VAR_RESULT, GetBattleOutcome)
+	switch (var(VAR_RESULT)) {
+		case B_OUTCOME_WON:
+		case B_OUTCOME_RAN:
+		case B_OUTCOME_PLAYER_TELEPORTED:
+			fadescreenswapbuffers(FADE_TO_BLACK)
+			removeobject(VAR_LAST_TALKED)
+			fadescreenswapbuffers(FADE_FROM_BLACK)
+	}
+	setwildbattle_pbl(SPECIES_SOLROCK, 15, ITEM_LUM_BERRY, NATURE_CAREFUL, 31, 0, MOVE_MORNING_SUN, MOVE_ZEN_HEADBUTT, MOVE_ROCK_SLIDE, MOVE_COSMIC_POWER)
+	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 0, 1, 0, 0, 1)
+	special(BattleSetup_StartLegendaryBattle)
+	waitstate
+	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	specialvar(VAR_RESULT, GetBattleOutcome)
+	switch (var(VAR_RESULT)) {
+		case B_OUTCOME_WON:
+		case B_OUTCOME_RAN:
+		case B_OUTCOME_PLAYER_TELEPORTED:
+			fadescreenswapbuffers(FADE_TO_BLACK)
+			removeobject(VAR_LAST_TALKED)
+			fadescreenswapbuffers(FADE_FROM_BLACK)
+	}
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	clearflag(FLAG_SYS_NO_CATCHING)
+	clearflag(FLAG_SYS_SMART_WILD_AI_ON)
+	setflag(FLAG_SYS_NO_RUNNING)
+	setvar(VAR_BATTLE_STARTING_STATUS, 0)
+	setflag(FLAG_TESTING_FLAG)
+	release
+	end
+	// if you want to do double battle, do something like this instead:
+	// setwildbattle_pbl(SPECIES_MOLTRES, 60, ITEM_NONE, NATURE_JOLLY, 31, 2, MOVE_FLAMETHROWER, MOVE_BLIZZARD, MOVE_THUNDER, MOVE_ROOST, SPECIES_ELDEGOSS, 44, ITEM_SITRUS_BERRY, NATURE_ADAMANT, 22, 1, MOVE_SUCKER_PUNCH, MOVE_POUND, MOVE_RAZOR_LEAF, MOVE_POWER_WHIP)
+	// and make sure to change
+	// special(BattleSetup_StartLegendaryBattle)
+	// waitstate
+	// -->
+	// dowildbattle
+}
+
+script EventScript_TestingLegendBattle_Template {
+	lock
+	faceplayer
+	waitse
+	fadeoutbgm(1)
 	playmoncry(SPECIES_MOLTRES, CRY_MODE_ENCOUNTER)
 	delay(40)
 	waitmoncry
