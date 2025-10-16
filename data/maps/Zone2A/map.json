@@ -16,10 +16,10 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_F",
-      "x": 37,
-      "y": 20,
+      "x": 27,
+      "y": 18,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -43,7 +43,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 19,
-      "y": 14,
+      "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -54,11 +54,12 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_MAX",
       "graphics_id": "OBJ_EVENT_GFX_MAN_2",
-      "x": 21,
-      "y": 5,
+      "x": 9,
+      "y": 16,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -107,8 +108,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
-      "x": 13,
-      "y": 15,
+      "x": 20,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -120,12 +121,12 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
-      "x": 54,
-      "y": 14,
+      "x": 39,
+      "y": 27,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Zone2A_EventScript_Josh",
@@ -133,12 +134,12 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 61,
-      "y": 28,
+      "x": 45,
+      "y": 11,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Zone2A_EventScript_Harper",
@@ -146,7 +147,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
-      "x": 51,
+      "x": 49,
       "y": 37,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT",
@@ -172,28 +173,74 @@
     }
   ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ZONE_2_STATE",
+      "var_value": "0",
+      "script": "Zone2A_EventScript_Max"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ZONE_2_STATE",
+      "var_value": "0",
+      "script": "Zone2A_EventScript_Max"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ZONE_2_STATE",
+      "var_value": "0",
+      "script": "Zone2A_EventScript_Max"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ZONE_2_STATE",
+      "var_value": "0",
+      "script": "Zone2A_EventScript_Max"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ZONE_2_STATE",
+      "var_value": "0",
+      "script": "Zone2A_EventScript_Max"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 24,
-      "y": 26,
+      "x": 37,
+      "y": 15,
       "elevation": 3,
       "item": "ITEM_CHERI_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE2A_CHERI_BERRY"
     },
     {
       "type": "hidden_item",
-      "x": 12,
-      "y": 10,
+      "x": 48,
+      "y": 18,
       "elevation": 3,
       "item": "ITEM_PECHA_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE2A_PECHA_BERRY"
     },
     {
       "type": "hidden_item",
-      "x": 12,
-      "y": 11,
+      "x": 27,
+      "y": 29,
       "elevation": 3,
       "item": "ITEM_CHESTO_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE2A_CHESTO_BERRY"

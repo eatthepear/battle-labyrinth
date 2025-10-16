@@ -45,11 +45,13 @@ script EventScript_BrutalExitNotSatisfied {
 script EventScript_Max {
 	lock
 	faceplayer
-	if (flag(FLAG_MAX_INTRO) == false) {
-		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: By my calculations, you should be {PLAYER}!\pHi, {PLAYER}! My name is {COLOR BLUE}Max{COLOR DARK_GRAY}."))
-		msgbox(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: I am a traveling merchant, selling special Technical Machines for you to use!\pI travel a lot, never going to the same place again.\pI'll have different wares every time you see me, so be sure to buy whatever TMs you deem important!"))
-		setflag(FLAG_MAX_INTRO)
-	}
+	playbgm(MUS_DP_POKE_MART, FALSE)
+	call(EventScript_Shop_Max)
+	fadedefaultbgm
+	release
+}
+
+script EventScript_Shop_Max {
 	message(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: Hi {PLAYER}! Long time no see!\pWelcome to my TM shop!"))
 	waitmessage
 	switch(var(VAR_ZONE)) {
@@ -63,7 +65,6 @@ script EventScript_Max {
 			pokemart(Zone18A_Shop_TMShop)
 	}
 	msgbox(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: Goodbye!"), MSGBOX_AUTOCLOSE)
-	release
 }
 
 mart Zone2A_Shop_TMShop {

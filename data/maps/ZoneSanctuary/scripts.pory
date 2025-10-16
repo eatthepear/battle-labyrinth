@@ -387,9 +387,6 @@ script EventScript_WarpNextZone {
 		case 1:
 			warp(MAP_ZONE1A, 255, 16, 28)
 		case 2:
-			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				setflag(FLAG_HIDE_ZONE2A_MAX)
-			}
 			warp(MAP_ZONE2A, 255, 10, 8)
 		case 3:
 			setflag(FLAG_HIDE_ZONE3A_PHILLIPA)

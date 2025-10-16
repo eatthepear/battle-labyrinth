@@ -23,6 +23,38 @@ mapscripts Zone2A_MapScripts {
 	}
 }
 
+script Zone2A_EventScript_Max {
+	lockall
+	playbgm(MUS_DP_POKE_MART, FALSE)
+	applymovement(LOCALID_MAX, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	switch (var(VAR_TEMP_0)) {
+		case 7:
+			applymovement(LOCALID_MAX, Common_Movement_WalkLeft2)
+			waitmovement(0)
+		case 8:
+			applymovement(LOCALID_MAX, Common_Movement_WalkLeft)
+			waitmovement(0)
+		case 10:
+			applymovement(LOCALID_MAX, Common_Movement_WalkRight)
+			waitmovement(0)
+		case 11:
+			applymovement(LOCALID_MAX, Common_Movement_WalkRight2)
+			waitmovement(0)
+	}
+	applymovement(LOCALID_MAX, Common_Movement_WalkUp2)
+	waitmovement(0)
+	msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: By my calculations, you should be {PLAYER}!\pHi, {PLAYER}! My name is {COLOR BLUE}Max{COLOR DARK_GRAY}."))
+	msgbox(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: I am a traveling merchant, selling special Technical Machines for you to use!\pI travel a lot, never going to the same place again.\pI'll have different wares every time you see me, so be sure to buy whatever TMs you deem important!"))
+	call(EventScript_Shop_Max)
+	setvar(VAR_ZONE_2_STATE, 1)
+	fadedefaultbgm
+	releaseall
+}
+
 script Zone2A_EventScript_LeviathanBattle {
 	lock
 	faceplayer

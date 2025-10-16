@@ -4444,7 +4444,7 @@
     {
       "id": "LAYOUT_ZONE2A",
       "name": "Zone2A_Layout",
-      "width": 75,
+      "width": 58,
       "height": 45,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_Farm",
