@@ -1148,16 +1148,15 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Sacred Ash"),
         .pluralName = ITEM_PLURAL_NAME("Sacred Ashes"),
-        .price = (I_PRICE >= GEN_7) ? 50000 : 200,
+        .price = 0,
         .description = COMPOUND_STRING(
             "Fully revives and\n"
             "restores all\n"
-            "fainted Pokémon."),
+            "party Pokémon."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
-        .type = ITEM_USE_PARTY_MENU,
+        .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_SacredAsh,
-        .effect = gItemEffect_SacredAsh,
         .flingPower = 30,
         .iconPic = gItemIcon_SacredAsh,
         .iconPalette = gItemIconPalette_SacredAsh,

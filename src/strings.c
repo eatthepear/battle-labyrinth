@@ -1320,6 +1320,8 @@ const u8 gText_Rename[] = _("RENAME");
 // Custom
 const u8 gText_InfiniteRepelOn[] = _("The Infinite Repellent is now {COLOR RED}on{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
 const u8 gText_InfiniteRepelOff[] = _("The Infinite Repellent is now {COLOR RED}off{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
+const u8 gText_ConfirmSacredAsh[] = _("Use the Sacred Ash to fully\nrevive and heal your party?");
+const u8 gText_UsedSacredAsh[] = _("You used the Sacred Ash!\nYour party was completely healed!{PAUSE_UNTIL_PRESS}");
 
 const u8 gText_SavingZone[] = _("Zones Completed");
 const u8 gText_SaveMenuNuzlocke[] =_("Nuzlocke");

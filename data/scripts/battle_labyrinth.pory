@@ -940,10 +940,11 @@ script EventScript_Notebook_Items {
 		dynmultipush("TMs", 2)
 		dynmultipush("Honey", 3)
 		dynmultipush("Ability Snack", 4)
-		dynmultipush("Mints", 5)
-		dynmultipush("Heart Scale", 6)
-		dynmultipush("Hex Orb", 7)
-		dynmultipush("Back", 8)
+		dynmultipush("Sacred Ash", 5)
+		dynmultipush("Mints", 6)
+		dynmultipush("Heart Scale", 7)
+		dynmultipush("Hex Orb", 8)
+		dynmultipush("Back", 9)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
@@ -957,12 +958,14 @@ script EventScript_Notebook_Items {
 			case 4:
 				msgbox(format("The Ability Snack costs ¥80 and functions the same as an Ability Capsule."))
 			case 5:
-				msgbox(format("Mints cost reduced to ¥80."))
+				msgbox(format("The Sacred Ash now fully revives and heals your entire party."))
 			case 6:
-				msgbox(format("Heart Scale cost increased to ¥1000."))
+				msgbox(format("Mints cost reduced to ¥80."))
 			case 7:
-				msgbox(format("The Hex Orb Key Item lets you pre-status Pokémon."))
+				msgbox(format("Heart Scale cost increased to ¥1000."))
 			case 8:
+				msgbox(format("The Hex Orb Key Item lets you pre-status Pokémon."))
+			case 9:
 			case MULTI_B_PRESSED:
 				return
 		}
