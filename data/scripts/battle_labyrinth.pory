@@ -804,9 +804,88 @@ script EventScript_Notebook_Pokemon {
 				}
 			case 2:
 				msgbox(format("Many Pokémon have evolution methods that are another option from their default or directly replace the default.\pThis includes Day/Night evolutions, Friendship evolutions, weak Pokémon evolutions, and hard to achieve evolutions.\pYou can see how to evolve a Pokémon in the Pokédex."))
+				msgbox(format("The next page notes Pokémon with major evolution changes. Would you like to read it?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					call(EventScript_Notebook_Evolutions)
+				}
 			case 3:
 				msgbox(format("Friendship is always considered maxed out."))
 			case 4:
+			case MULTI_B_PRESSED:
+				return
+		}
+	}
+}
+
+script EventScript_Notebook_Evolutions {
+	while {
+		message(format("Which Pokémon's evolution change would you like to read?"))
+		waitmessage
+		dynmultipush("Rockruff - Random", SPECIES_ROCKRUFF)
+		dynmultipush("Eevee - Evo Stone", SPECIES_EEVEE)
+		dynmultipush("Gimmighoul - Evo Stone", SPECIES_GIMMIGHOUL)
+		dynmultipush("Milcery - Evo Stone", SPECIES_MILCERY)
+		dynmultipush("Igglybuff - Lv. 10", SPECIES_IGGLYBUFF)
+		dynmultipush("Cleffa - Lv. 10", SPECIES_CLEFFA)
+		dynmultipush("Azurill - Lv. 10", SPECIES_AZURILL)
+		dynmultipush("Sunkern - Lv. 10", SPECIES_SUNKERN)
+		dynmultipush("Pichu - Lv. 10", SPECIES_PICHU)
+		dynmultipush("Chingling - Lv. 15", SPECIES_CHINGLING)
+		dynmultipush("Budew - Lv. 15", SPECIES_BUDEW)
+		dynmultipush("Buneary - Lv. 15", SPECIES_BUNEARY)
+		dynmultipush("Woobat - Lv. 15", SPECIES_WOOBAT)
+		dynmultipush("Mantyke - Lv. 28", SPECIES_MANTYKE)
+		dynmultipush("Golbat - Lv. 28", SPECIES_GOLBAT)
+		dynmultipush("Meowth Alola - Lv. 28", SPECIES_MEOWTH_ALOLA)
+		dynmultipush("Swadloon - Lv. 28", SPECIES_SWADLOON)
+		dynmultipush("Stantler - Lv. 28", SPECIES_STANTLER)
+		dynmultipush("Pawmo - Lv. 28", SPECIES_PAWMO)
+		dynmultipush("Bramblin - Lv. 28", SPECIES_BRAMBLIN)
+		dynmultipush("Rellor - Lv. 28", SPECIES_RELLOR)
+		dynmultipush("Snom - Lv. 30", SPECIES_SNOM)
+		dynmultipush("Riolu - Lv. 30", SPECIES_RIOLU)
+		dynmultipush("Munchlax - Lv. 30", SPECIES_MUNCHLAX)
+		dynmultipush("Togepi - Lv. 30", SPECIES_TOGEPI)
+		dynmultipush("Chansey - Lv. 30", SPECIES_CHANSEY)
+		dynmultipush("Basculin Hisui - Lv. 30", SPECIES_BASCULIN_WHITE_STRIPED)
+		dynmultipush("Karrablast - Lv. 30", SPECIES_KARRABLAST)
+		dynmultipush("Shelmet - Lv. 30", SPECIES_SHELMET)
+		dynmultipush("Type: Null - Lv. 30", SPECIES_TYPE_NULL)
+		dynmultipush("Yamask Galar - Lv. 34", SPECIES_YAMASK_GALAR)
+		dynmultipush("Farfetch'd Galar - Lv. 34", SPECIES_FARFETCHD_GALAR)
+		dynmultipush("Primeape - Lv. 45", SPECIES_PRIMEAPE)
+		dynmultipush("Bisharp - Lv. 64", SPECIES_BISHARP)
+		dynmultipush("Skitty - Lv. 10", SPECIES_SKITTY)
+		dynmultipush("Ledyba - Lv. 12", SPECIES_LEDYBA)
+		dynmultipush("Spinarak - Lv. 12", SPECIES_SPINARAK)
+		dynmultipush("Slugma - Lv. 18", SPECIES_SLUGMA)
+		dynmultipush("Finneon - Lv. 21", SPECIES_FINNEON)
+		dynmultipush("Goldeen - Lv. 23", SPECIES_GOLDEEN)
+		dynmultipush("Glameow - Lv. 28", SPECIES_GLAMEOW)
+		dynmultipush("Ponyta - Lv. 30", SPECIES_PONYTA)
+		dynmultipush("Ponyta Galar - Lv. 30", SPECIES_PONYTA_GALAR)
+		dynmultipush("Elgyem - Lv. 32", SPECIES_ELGYEM)
+		dynmultipush("Rhyhorn - Lv. 32", SPECIES_RHYHORN)
+		dynmultipush("Golett - Lv. 33", SPECIES_GOLETT)
+		dynmultipush("Rufflet - Lv. 34", SPECIES_RUFFLET)
+		dynmultipush("Vullaby - Lv. 34", SPECIES_VULLABY)
+		dynmultipush("Mienfoo - Lv. 40", SPECIES_MIENFOO)
+		dynmultipush("Pawniard - Lv. 42", SPECIES_PAWNIARD)
+		dynmultipush("Back", 0)
+		dynmultistack(0, 0, FALSE, 6, FALSE, 1, DYN_MULTICHOICE_CB_NONE)
+		switch (var(VAR_RESULT)) {
+			default:
+				bufferspeciesname(0, VAR_RESULT)
+				msgbox(format("{STR_VAR_1} now evolves using a level up evolution at a new level."))
+			case SPECIES_ROCKRUFF:
+				msgbox(format("Rockruff evolves at level 25 randomly into Lycanroc Midday or Lycanroc Midnight."))
+			case SPECIES_EEVEE:
+				msgbox(format("Eevee also evolves into Espeon using a Sun Stone, Umbreon using a Moon Stone, and Sylveon using a Shiny Stone."))
+			case SPECIES_GIMMIGHOUL:
+				msgbox(format("Gimmighoul evolves into Gholdengo using a Dusk Stone."))
+			case SPECIES_MILCERY:
+				msgbox(format("Milcery evolves into Alcremie using a Shiny Stone."))
+			case 0:
 			case MULTI_B_PRESSED:
 				return
 		}
