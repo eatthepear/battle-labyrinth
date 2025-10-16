@@ -531,5 +531,7 @@ const u16 gObjectEventPal_Beauty[] = INCBIN_U16("graphics/object_events/pics/peo
 const u16 gObjectEventPal_SchoolKidM[] = INCBIN_U16("graphics/object_events/pics/people/school_kid_m.gbapal");
 const u32 gObjectEventPic_Serena[] = INCBIN_U32("graphics/object_events/pics/people/serena.4bpp");
 const u16 gObjectEventPal_Serena[] = INCBIN_U16("graphics/object_events/pics/people/serena.gbapal");
+const u32 gObjectEventPic_KimonoGirl[] = INCBIN_U32("graphics/object_events/pics/people/kimono_girl.4bpp");
+const u16 gObjectEventPal_KimonoGirl[] = INCBIN_U16("graphics/object_events/pics/people/kimono_girl.gbapal");
 
 const u32 gFieldEffectObjectPic_SnowFootprints[] = INCBIN_U32("graphics/field_effects/pics/snow_footprints.4bpp");

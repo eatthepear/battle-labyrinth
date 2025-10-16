@@ -120,8 +120,9 @@
 #define TRAINER_PIC_ICE_WORKER            100
 #define TRAINER_PIC_ROUGHNECK             101
 #define TRAINER_PIC_SERENA                102
+#define TRAINER_PIC_KIMONO_GIRL           103
 
-#define TRAINER_PIC_COUNT                 103
+#define TRAINER_PIC_COUNT                 104
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -375,6 +376,7 @@ enum TrainerClassID
     TRAINER_CLASS_BACKPACKER,
     TRAINER_CLASS_WORKER,
     TRAINER_CLASS_ROUGHNECK,
+    TRAINER_CLASS_KIMONO_GIRL,
     TRAINER_CLASS_COUNT,
 };
 

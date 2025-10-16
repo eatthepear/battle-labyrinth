@@ -378,6 +378,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_BACKPACKER] = { _("Backpacker"), 2, BALL_GREAT },
     [TRAINER_CLASS_WORKER] = { _("Worker"), 2, BALL_HEAVY },
     [TRAINER_CLASS_ROUGHNECK] = { _("Roughneck"), 2, BALL_NEST },
+    [TRAINER_CLASS_KIMONO_GIRL] = { _("Kimono Girl"), 2 },
 };
 
 static void (*const sTurnActionsFuncsTable[])(void) =

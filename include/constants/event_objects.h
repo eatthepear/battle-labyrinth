@@ -280,6 +280,7 @@
 #define OBJ_EVENT_GFX_LADY                       280
 #define OBJ_EVENT_GFX_PARASOL_LADY               281
 #define OBJ_EVENT_GFX_SERENA                     282
+#define OBJ_EVENT_GFX_KIMONO_GIRL                283
 
 #define OBJ_EVENT_GFX_OW_MON                     399
 #define OBJ_EVENT_GFX_LIGHT_SPRITE               400
@@ -469,7 +470,6 @@
 
 #define OBJ_EVENT_PAL_TAG_COLRESS                 0x7260
 #define OBJ_EVENT_PAL_TAG_RANGER                  0x7261
-
 #define OBJ_EVENT_PAL_TAG_BUG_MANIAC              0x7262
 #define OBJ_EVENT_PAL_TAG_SCHOOL_KID_F            0x7263
 #define OBJ_EVENT_PAL_TAG_FAIRY_TALE_GIRL         0x7264
@@ -482,7 +482,6 @@
 #define OBJ_EVENT_PAL_TAG_ROUGHNECK               0x726B
 #define OBJ_EVENT_PAL_TAG_SWIMMER_F_WALKING       0x726C
 #define OBJ_EVENT_PAL_TAG_BREEDER                 0x726D
-
 #define OBJ_EVENT_PAL_TAG_RUIN_MANIAC             0x726E
 #define OBJ_EVENT_PAL_TAG_GUITARIST               0x726F
 #define OBJ_EVENT_PAL_TAG_COLLECTOR               0x7270
@@ -496,6 +495,7 @@
 #define OBJ_EVENT_PAL_TAG_LADY                    0x7278
 #define OBJ_EVENT_PAL_TAG_PARASOL_LADY            0x7279
 #define OBJ_EVENT_PAL_TAG_SERENA                  0x7280
+#define OBJ_EVENT_PAL_TAG_KIMONO_GIRL             0x7281
 
 #define OBJ_EVENT_PAL_TAG_RUNNING_TRIATHLETE_F    0x7401
 #define OBJ_EVENT_PAL_TAG_SCHOOL_KID_M            0x7402

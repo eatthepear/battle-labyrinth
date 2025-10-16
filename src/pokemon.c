@@ -5578,6 +5578,8 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
+        case TRAINER_CLASS_KIMONO_GIRL:
+            return MUS_HG_VS_HO_OH;
         default:
             if (DoesTrainerHaveMugshot(TRAINER_BATTLE_PARAM.opponentA)) {
                 switch (VarGet(VAR_LEVIATHAN_MUSIC))
