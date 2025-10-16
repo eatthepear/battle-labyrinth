@@ -48,7 +48,11 @@ script Zone2A_EventScript_Max {
 	applymovement(LOCALID_MAX, Common_Movement_WalkUp2)
 	waitmovement(0)
 	msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: By my calculations, you should be {PLAYER}!\pHi, {PLAYER}! My name is {COLOR BLUE}Max{COLOR DARK_GRAY}."))
-	msgbox(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: I am a traveling merchant, selling special Technical Machines for you to use!\pI travel a lot, never going to the same place again.\pI'll have different wares every time you see me, so be sure to buy whatever TMs you deem important!"))
+	msgbox(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: I am a traveling merchant, selling Technical Machines for your Pokémon!\pI travel a lot, never going to the same place again.\pI'll have different wares every time you see me, so be sure to buy whatever TMs you deem important!"))
+	if (var(VAR_DIFFICULTY) < DIFFICULTY_BRUTAL) {
+		msgbox(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: Tell you what, for a first-time customer like you, I'll give you a TM for free!"))
+		giveitem(ITEM_TM_PROTECT)
+	}
 	call(EventScript_Shop_Max)
 	setvar(VAR_ZONE_2_STATE, 1)
 	fadedefaultbgm

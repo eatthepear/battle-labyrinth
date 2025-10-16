@@ -11099,7 +11099,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_TAUNT] =
     {
         .name = ITEM_NAME("TM12"),
-        .price = 3000,
+        .price = 2000,
         .description = COMPOUND_STRING(
             "Enrages the foe so\n"
             "it can only use\n"
