@@ -38,17 +38,12 @@ script EventScript_AfterWhiteOutHeal_PBL {
 	}
 	msgbox(format("First, let's restore your Pokémon to full health."))
 	call(EventScript_PkmnCenterNurse_TakeAndHealPkmn)
-	msgbox(format("Your Pokémon have been healed to perfect health.\pWe hope you excel!"))
+	msgbox(format("Your Pokémon have been healed to perfect health.\pYou can always speak to Colress to decrease the difficulty.\pWe hope you excel!"))
 	applymovement(VAR_LAST_TALKED, Movement_PkmnCenterNurse_Bow)
 	waitmovement(0)
-	fadedefaultbgm
-	msgbox(format("Turn down the difficulty?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		decreasedifficulty
-		msgbox(format("Difficulty decreased."))
-	}
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
 	waitmovement(0)
+	fadedefaultbgm
 	releaseall
 	end
 }

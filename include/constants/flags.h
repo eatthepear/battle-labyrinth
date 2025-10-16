@@ -172,12 +172,12 @@
 #define FLAG_ALWAYS_SET                             0xEA
 
 // Custom Flags Scripts
-#define FLAG_PORTENTIA_INTRO                              0x100
+#define FLAG_TRUE_BRUTAL                                  0x100 // keeps track if you actually started on Brutal difficulty and stayed there the whole time
 #define FLAG_TIM_INTRO                                    0x101
 #define FLAG_VARRICK_INTRO                                0x102
-#define FLAG_JULIA_INTRO                                  0x103
+#define FLAG_UNUSED_0x103                                  0x103
 #define FLAG_LELOUCH_INTRO                                0x104
-#define FLAG_MARIE_INTRO                                  0x105
+#define FLAG_UNUSED_0x105                                  0x105
 #define FLAG_JOY_INTRO                                    0x106
 #define FLAG_LELOUCH_SHARDS_INTRO                         0x107
 #define FLAG_MARIE_NUZLOCKE_RECEIVED                      0x108

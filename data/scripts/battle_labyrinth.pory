@@ -866,13 +866,6 @@ script EventScript_Notebook_Other {
 }
 
 script Debug_CheatStart_PBL {
-	setflag(FLAG_PORTENTIA_INTRO)
-	setflag(FLAG_TIM_INTRO)
-	setflag(FLAG_VARRICK_INTRO)
-	setflag(FLAG_JULIA_INTRO)
-	setflag(FLAG_LELOUCH_INTRO)
-	setflag(FLAG_MARIE_INTRO)
-	setflag(FLAG_JOY_INTRO)
 	// music
 	random(5)
 	switch (var(VAR_RESULT)) {

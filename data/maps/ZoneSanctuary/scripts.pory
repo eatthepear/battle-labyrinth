@@ -120,6 +120,10 @@ script EventScript_Difficulty_Switch {
 					if (var(VAR_RESULT) == YES) {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_EASY)
 						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty has been changed to {COLOR RED}Easy{COLOR DARK_GRAY}."))
+						if ((flag(FLAG_TRUE_BRUTAL) == TRUE) && (var(VAR_ZONE_2_STATE) == 1)) {
+							additem(ITEM_TM_PROTECT)
+						}
+						clearflag(FLAG_TRUE_BRUTAL)
 						return
 					}
 				}
@@ -131,6 +135,10 @@ script EventScript_Difficulty_Switch {
 					if (var(VAR_RESULT) == YES) {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_NORMAL)
 						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty has been changed to {COLOR RED}Normal{COLOR DARK_GRAY}."))
+						if ((flag(FLAG_TRUE_BRUTAL) == TRUE) && (var(VAR_ZONE_2_STATE) == 1)) {
+							additem(ITEM_TM_PROTECT)
+						}
+						clearflag(FLAG_TRUE_BRUTAL)
 						return
 					}
 				}
@@ -142,6 +150,10 @@ script EventScript_Difficulty_Switch {
 					if (var(VAR_RESULT) == YES) {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_HARD)
 						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The difficulty has been changed to {COLOR RED}Hard{COLOR DARK_GRAY}."))
+						if ((flag(FLAG_TRUE_BRUTAL) == TRUE) && (var(VAR_ZONE_2_STATE) == 1)) {
+							additem(ITEM_TM_PROTECT)
+						}
+						clearflag(FLAG_TRUE_BRUTAL)
 						return
 					}
 				}
@@ -902,6 +914,7 @@ script EventScript_GameIntro_Difficulty {
 					case DIFFICULTY_BRUTAL:
 						msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you want to play on {COLOR RED}Brutal{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 						if (var(VAR_RESULT) == YES) {
+							setflag(FLAG_TRUE_BRUTAL)
 							return
 						}
 				}
@@ -2574,15 +2587,15 @@ mart Shop_Mega_6 {
 script EventScript_Shop_Marie {
 	lock
 	faceplayer
-	if (flag(FLAG_MARIE_INTRO) == false) {
-		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Hi. My name is Marie, and welcome to my shop.\p"
-				"You're probably wondering what this shop is even for.\p"
-				"Let me explain: lots of trainers leave extra eggs at the Daycare.\p"
-				"Some trainers mix up which egg has which species of Pokémon.\p"
-				"It's my job to help match these eggs with the right trainer.\p"
-				"Maybe you'll be able to make your next friend here!"), MSGBOX_DEFAULT)
-		setflag(FLAG_MARIE_INTRO)
-	}
+	// if (flag(FLAG_MARIE_INTRO) == false) {
+	// 	msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Hi. My name is Marie, and welcome to my shop.\p"
+	// 			"You're probably wondering what this shop is even for.\p"
+	// 			"Let me explain: lots of trainers leave extra eggs at the Daycare.\p"
+	// 			"Some trainers mix up which egg has which species of Pokémon.\p"
+	// 			"It's my job to help match these eggs with the right trainer.\p"
+	// 			"Maybe you'll be able to make your next friend here!"), MSGBOX_DEFAULT)
+	// 	setflag(FLAG_MARIE_INTRO)
+	// }
 	call(EventScript_Shop_Marie_MainMenu)
 	msgbox(format("{COLOR BLUE}Marie{COLOR DARK_GRAY}: Au revoir!"))
 	release
