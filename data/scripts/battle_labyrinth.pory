@@ -68,7 +68,7 @@ script EventScript_Shop_Max {
 }
 
 mart Zone2A_Shop_TMShop {
-	ITEM_TM_TAUNT
+	ITEM_TM_HIDDEN_POWER
 }
 
 mart Zone6A_Shop_TMShop {
