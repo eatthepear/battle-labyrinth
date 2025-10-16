@@ -1999,9 +1999,9 @@ const struct Item gItemsInfo[] =
         .price = 0,
         .importance = 1,
         .description = COMPOUND_STRING(
-            "Raises the level\n"
-            "of a Pokémon by\n"
-            "one."),
+            "Raises level by\n"
+            "one, up to the\n"
+            "prior level cap."),
         .pocket = POCKET_KEY_ITEMS,
         .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
         .type = ITEM_USE_PARTY_MENU,
