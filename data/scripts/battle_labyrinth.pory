@@ -694,7 +694,7 @@ script EventScript_Notebook_ZoneInfo {
 	}
 	switch (var(VAR_ZONE)) {
 		case 1:
-			msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY} the Leviathan uses a trio of Elemental Monkeys, with his ace being the one with a type advantage over your starter."))
+			msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY} the Leviathan uses a trio of Elemental Monkeys, with his lead being weak against your starter, and his ace being strong against your starter."))
 		case 2:
 			msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY} the Leviathan trains a Bunnelby, Smoliv, and ace Skwovet that use Oran Berries exceptionally well with their abilties."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {

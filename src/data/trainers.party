@@ -218,8 +218,15 @@ Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
-Party Size: 3
 Difficulty: Normal
+
+Panpour
+Hasty Nature
+Ability: Gluttony
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Gun
+- Scratch
 
 Pansage
 Jolly Nature
@@ -233,17 +240,8 @@ Pansear
 Naive Nature
 Ability: Gluttony
 Level: 7
-Tags: Ace
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
-- Scratch
-
-Panpour
-Hasty Nature
-Ability: Gluttony
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Gun
 - Scratch
 
 === TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER ===
@@ -254,8 +252,15 @@ Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
-Party Size: 3
 Difficulty: Brutal
+
+Panpour @ Oran Berry
+Hasty Nature
+Ability: Torrent
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Gun
+- Scratch
 
 Pansage @ Oran Berry
 Jolly Nature
@@ -269,17 +274,8 @@ Pansear @ Oran Berry
 Naive Nature
 Ability: Blaze
 Level: 7
-Tags: Ace
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
-- Scratch
-
-Panpour @ Oran Berry
-Hasty Nature
-Ability: Torrent
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Gun
 - Scratch
 
 === TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER ===
@@ -290,7 +286,6 @@ Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
-Party Size: 3
 Difficulty: Normal
 
 Pansage
@@ -313,7 +308,6 @@ Panpour
 Hasty Nature
 Ability: Gluttony
 Level: 7
-Tags: Ace
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
@@ -326,7 +320,6 @@ Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
-Party Size: 3
 Difficulty: Brutal
 
 Pansage @ Oran Berry
@@ -349,7 +342,6 @@ Panpour @ Oran Berry
 Hasty Nature
 Ability: Torrent
 Level: 7
-Tags: Ace
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
@@ -362,17 +354,7 @@ Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
-Party Size: 3
 Difficulty: Normal
-
-Pansage
-Jolly Nature
-Ability: Gluttony
-Level: 7
-Tags: Ace
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Leafage
-- Scratch
 
 Pansear
 Naive Nature
@@ -390,6 +372,14 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
 
+Pansage
+Jolly Nature
+Ability: Gluttony
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leafage
+- Scratch
+
 === TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER ===
 Name: Corey
 Class: School Kid
@@ -398,17 +388,7 @@ Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
-Party Size: 3
 Difficulty: Brutal
-
-Pansage @ Oran Berry
-Jolly Nature
-Ability: Overgrow
-Level: 7
-Tags: Ace
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Leafage
-- Scratch
 
 Pansear @ Oran Berry
 Naive Nature
@@ -424,6 +404,14 @@ Ability: Torrent
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
+- Scratch
+
+Pansage @ Oran Berry
+Jolly Nature
+Ability: Overgrow
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leafage
 - Scratch
 
 === TRAINER_PBL_POLLY ===
