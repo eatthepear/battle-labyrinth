@@ -538,19 +538,6 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 3:
 			completesubquest(QUEST_PBL, 3)
 			setvar(VAR_ZONE, 4)
-			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedPotions, MSGBOX_DEFAULT)
-			waitfanfare
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedPokeball, MSGBOX_DEFAULT)
-			waitfanfare
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedBerries, MSGBOX_DEFAULT)
-			waitfanfare
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedItems, MSGBOX_DEFAULT)
-			waitfanfare
 		case 4:
 			completesubquest(QUEST_PBL, 4)
 			setvar(VAR_ZONE, 5)
@@ -559,38 +546,17 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setvar(VAR_ZONE, 6)
 			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
 			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedPokeball, MSGBOX_DEFAULT)
-			waitfanfare
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedEggs, MSGBOX_DEFAULT)
-			waitfanfare
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedServices, MSGBOX_DEFAULT)
+			msgbox(Sanctuary_Text_Colress_UpgradedPotions, MSGBOX_DEFAULT)
 			waitfanfare
 		case 6:
 			setflag(FLAG_HIDE_ZONE6A_MAX)
 			completesubquest(QUEST_PBL, 6)
 			setvar(VAR_ZONE, 7)
-			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedPotions, MSGBOX_DEFAULT)
-			waitfanfare
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedItems, MSGBOX_DEFAULT)
-			waitfanfare
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
 		case 7:
 			setflag(FLAG_ZONE7B_HEAL_USED)
 			completesubquest(QUEST_PBL, 7)
 			completesubquest(QUEST_PBL, 8)
-			setvar(VAR_ZONE, 9)
-			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedPokeball, MSGBOX_DEFAULT)
-			waitfanfare
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedBerries, MSGBOX_DEFAULT)
-			waitfanfare
 		case 9:
 			completesubquest(QUEST_PBL, 9)
 			setvar(VAR_ZONE, 10)
@@ -598,35 +564,12 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setflag(FLAG_HIDE_ZONE10A_MAX)
 			completesubquest(QUEST_PBL, 10)
 			setvar(VAR_ZONE, 11)
-			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedPotions, MSGBOX_DEFAULT)
-			waitfanfare
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedItems, MSGBOX_DEFAULT)
-			waitfanfare
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedEggs, MSGBOX_DEFAULT)
-			waitfanfare
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedServices, MSGBOX_DEFAULT)
-			waitfanfare
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedRecovery, MSGBOX_DEFAULT)
-			waitfanfare
 		case 11:
 			completesubquest(QUEST_PBL, 11)
 			setvar(VAR_ZONE, 12)
 		case 12:
 			completesubquest(QUEST_PBL, 12)
 			setvar(VAR_ZONE, 13)
-			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedPotions, MSGBOX_DEFAULT)
-			waitfanfare
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedItems, MSGBOX_DEFAULT)
-			waitfanfare
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
 		case 13:
 			completesubquest(QUEST_PBL, 13)
