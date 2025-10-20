@@ -484,28 +484,24 @@ script Sanctuary_EventScript_EnterSanctuary {
 	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Your reward for clearing {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY} is…"))
 	switch (var(VAR_ZONE)) {
 		case 1:
+			msgbox(format("The {COLOR RED}Dowsing Machine{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+			giveitem(ITEM_DOWSING_MACHINE)
+		case 2:
+			msgbox(format("5 {COLOR RED}Revives{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+			giveitem(ITEM_REVIVE, 5)
+		case 3:
+			msgbox(format("The {COLOR RED}Sledgehammer!{COLOR DARK_GRAY}"), MSGBOX_DEFAULT)
+			giveitem(ITEM_SLEDGEHAMMER)
+		case 4:
+			msgbox(format("{COLOR RED}TM39 - Rock Tomb!{COLOR DARK_GRAY}"), MSGBOX_DEFAULT)
+			giveitem(ITEM_TM_ROCK_TOMB)
+		case 5:
 			msgbox(format("The {COLOR RED}Portable PC{COLOR DARK_GRAY}!"))
 			setflag(FLAG_SYS_START_MENU_PC_GET)
 			playfanfare(MUS_OBTAIN_ITEM)
 			msgbox(format("{PLAYER} received the {COLOR RED}Portable PC{COLOR DARK_GRAY}! It was added to the {START_BUTTON} menu."))
 			waitfanfare
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Note that if you are in a Zone, you can only use the Portable PC once before reaching the Sanctuary."))
-		case 2:
-			msgbox(format("The {COLOR RED}Dowsing Machine{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
-			giveitem(ITEM_DOWSING_MACHINE)
-		case 3:
-			msgbox(format("5 {COLOR RED}Revives{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
-			giveitem(ITEM_REVIVE, 5)
-		case 4:
-			msgbox(format("The {COLOR RED}Portable PC{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
-			setflag(FLAG_SYS_START_MENU_PC_GET)
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(format("{PLAYER} received the {COLOR RED}Portable PC{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
-			waitfanfare
-			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Note that if you are in a Zone, you can only use the Portable PC once before reaching the Sanctuary."), MSGBOX_DEFAULT)
-		case 5:
-			msgbox(format("10 {COLOR RED}Red Shards{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
-			giveitem(ITEM_RED_SHARD, 10)
 		case 6:
 			msgbox(format("The {COLOR RED}Sledgehammer!{COLOR DARK_GRAY}"), MSGBOX_DEFAULT)
 			giveitem(ITEM_SLEDGEHAMMER)
