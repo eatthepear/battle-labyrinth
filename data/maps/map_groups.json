@@ -666,7 +666,8 @@
     "Zone28A",
     "ZoneS1A",
     "ZoneS1B",
-    "ZoneS2A"
+    "ZoneS2A",
+    "Zone4A_New"
   ],
   "gMapGroup_Sanctuary": [
     "ZoneSanctuary",
