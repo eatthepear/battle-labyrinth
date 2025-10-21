@@ -1,32 +1,32 @@
-mapscripts Zone5B_MapScripts {
+mapscripts Zone5B_Old_MapScripts {
 	MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_ITEM_ZONE5B_RANDOM_1)) {
+		if (flag(FLAG_ITEM_ZONE5B_Old_RANDOM_1)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE5B_RANDOM_2)) {
+		if (flag(FLAG_ITEM_ZONE5B_Old_RANDOM_2)) {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE5B_GEMS)) {
+		if (flag(FLAG_ITEM_ZONE5B_Old_GEMS)) {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE5B_RANDOM_3)) {
+		if (flag(FLAG_ITEM_ZONE5B_Old_RANDOM_3)) {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
 	}
 	// MAP_SCRIPT_ON_FRAME_TABLE [
-	// 	VAR_ZONE_5_STATE, 1: Zone5B_EventScript_Intro
+	// 	VAR_ZONE_5_STATE, 1: Zone5B_Old_EventScript_Intro
 	// ]
 }
 
-script Zone5B_EventScript_LeviathanBattle {
+script Zone5B_Old_EventScript_LeviathanBattle {
 	lockall
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
@@ -38,7 +38,7 @@ script Zone5B_EventScript_LeviathanBattle {
 		end
 	}
 	closemessage
-	applymovement(1, Zone5B_Maria_Movement_WalkDown)
+	applymovement(1, Zone5B_Old_Maria_Movement_WalkDown)
 	waitmovement(0)
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 28) {
@@ -50,12 +50,12 @@ script Zone5B_EventScript_LeviathanBattle {
 	setvar(VAR_TEMP_0, 0)
 	setvar(VAR_TEMP_1, 0)
 	fadeoutbgm(1)
-	msgbox(Zone5B_Text_Leviathan5Intro)
+	msgbox(Zone5B_Old_Text_Leviathan5Intro)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	trainerbattle_no_intro(TRAINER_PBL_MARIA_LEVIATHAN_5_CHALLENGE, Zone5B_Text_Leviathan5Defeat)
+	// 	trainerbattle_no_intro(TRAINER_PBL_MARIA_LEVIATHAN_5_CHALLENGE, Zone5B_Old_Text_Leviathan5Defeat)
 	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_MARIA_LEVIATHAN_5, Zone5B_Text_Leviathan5Defeat)
+	// 	trainerbattle_no_intro(TRAINER_PBL_MARIA_LEVIATHAN_5, Zone5B_Old_Text_Leviathan5Defeat)
 	// }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Maria{COLOR DARK_GRAY}: Argh, how did you manage to beat me?\pWell, I guess I'm supposed to give you a reward now."), MSGBOX_DEFAULT)
@@ -68,7 +68,7 @@ script Zone5B_EventScript_LeviathanBattle {
 	}
 	setvar(VAR_TEMP_0, 0)
 	setvar(VAR_TEMP_1, 0)
-	applymovement(1, Zone5B_Maria_Movement_WalkUp)
+	applymovement(1, Zone5B_Old_Maria_Movement_WalkUp)
 	waitmovement(0)
 	removeobject(1)
 	setflag(FLAG_BEAT_LEVIATHAN_5)
@@ -77,28 +77,28 @@ script Zone5B_EventScript_LeviathanBattle {
 	end
 }
 
-movement Zone5B_Maria_Movement_WalkDown {
+movement Zone5B_Old_Maria_Movement_WalkDown {
 	walk_down * 6
 	walk_left * 2
 }
 
-text Zone5B_Text_Leviathan5Intro {
+text Zone5B_Old_Text_Leviathan5Intro {
 	format("{COLOR BLUE}Maria{COLOR DARK_GRAY}: Not so fast! I'm training my Pokémon around here!\pYou'll have to face our combined might to get past!\pThis is where your journey forward stops!")
 }
 
-text Zone5B_Text_Leviathan5Defeat {
+text Zone5B_Old_Text_Leviathan5Defeat {
 	format("How!? My Pokémon was so bulky with its Eviolite!")
 }
 
-movement Zone5B_Maria_Movement_WalkUp {
+movement Zone5B_Old_Maria_Movement_WalkUp {
 	walk_right * 2
 	walk_up * 6
 }
 
-script Zone5B_EventScript_BuyPikaClone {
+script Zone5B_Old_EventScript_BuyPikaClone {
 	lock
 	faceplayer
-	if (flag(FLAG_SETTINGS_NUZLOCKE) == true && flag(FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE) == true) {
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true && flag(FLAG_ZONE5B_Old_NUZLOCKE_BOUGHT_PIKACLONE) == true) {
 		msgbox(format("Sorry! I'm all out of Pikachu clones for sale right now."))
 		release
 		end
@@ -260,7 +260,7 @@ script Zone5B_EventScript_BuyPikaClone {
 			release
 			end
 		}
-		setflag(FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE)
+		setflag(FLAG_ZONE5B_Old_NUZLOCKE_BOUGHT_PIKACLONE)
 	} else {
 		bufferspeciesname(0, VAR_TEMP_1)
 		msgbox(format("Just to confirm…\pYou're sure you want to buy {STR_VAR_1} for ¥500?"), MSGBOX_YESNO)
@@ -297,11 +297,11 @@ script Zone5B_EventScript_BuyPikaClone {
 	end
 }
 
-script Zone5B_EventScript_NeverMissTutor {
+script Zone5B_Old_EventScript_NeverMissTutor {
 	lock
 	faceplayer
 	showmoneybox(0, 0, 0)
-	if (flag(FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS) == TRUE) {
+	if (flag(FLAG_ZONE5B_Old_MOVE_TUTOR_TAUGHT_NEVER_MISS) == TRUE) {
 		msgbox(format("Hey there! Ever been stuck because the opposing Pokémon is too hard to hit? Well, I specialize in teaching certain moves that always hit, no matter how evasive the foe is!\pFor the low price of ¥400, I could teach one of your Pokémon one of these moves. Deal?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
@@ -318,7 +318,7 @@ script Zone5B_EventScript_NeverMissTutor {
 			end
 		}
 	}
-	if (flag(FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS) == TRUE) {
+	if (flag(FLAG_ZONE5B_Old_MOVE_TUTOR_TAUGHT_NEVER_MISS) == TRUE) {
 		checkmoney(400, 0)
 		if (var(VAR_RESULT) == FALSE) {
 			msgbox("Hate to break it to you, but you don't have enough money.")
@@ -364,8 +364,8 @@ script Zone5B_EventScript_NeverMissTutor {
 	}
 	showmoneybox(0, 0, 0)
 	msgbox(format("There! It's done. Use that move well!"), MSGBOX_DEFAULT)
-	if (flag(FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS) == FALSE) {
-		setflag(FLAG_ZONE5B_MOVE_TUTOR_TAUGHT_NEVER_MISS)
+	if (flag(FLAG_ZONE5B_Old_MOVE_TUTOR_TAUGHT_NEVER_MISS) == FALSE) {
+		setflag(FLAG_ZONE5B_Old_MOVE_TUTOR_TAUGHT_NEVER_MISS)
 	} else {
 		removemoney(400)
 		updatemoneybox
@@ -377,9 +377,9 @@ script Zone5B_EventScript_NeverMissTutor {
 	end
 }
 
-script Zone5B_EventScript_Random1 {
+script Zone5B_Old_EventScript_Random1 {
 	lock
-	if (flag(FLAG_ITEM_ZONE5B_RANDOM_1)) {
+	if (flag(FLAG_ITEM_ZONE5B_Old_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -387,7 +387,7 @@ script Zone5B_EventScript_Random1 {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5B_RANDOM_1)
+	setflag(FLAG_ITEM_ZONE5B_Old_RANDOM_1)
 	addobject(VAR_LAST_TALKED)
 	specialvar(VAR_TEMP_1, RandomItemChest)
 	finditem(VAR_TEMP_1, VAR_TEMP_0)
@@ -395,9 +395,9 @@ script Zone5B_EventScript_Random1 {
 	end
 }
 
-script Zone5B_EventScript_Random2 {
+script Zone5B_Old_EventScript_Random2 {
 	lock
-	if (flag(FLAG_ITEM_ZONE5B_RANDOM_2)) {
+	if (flag(FLAG_ITEM_ZONE5B_Old_RANDOM_2)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -405,7 +405,7 @@ script Zone5B_EventScript_Random2 {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5B_RANDOM_2)
+	setflag(FLAG_ITEM_ZONE5B_Old_RANDOM_2)
 	addobject(VAR_LAST_TALKED)
 	specialvar(VAR_TEMP_1, RandomItemChest)
 	finditem(VAR_TEMP_1, VAR_TEMP_0)
@@ -413,9 +413,9 @@ script Zone5B_EventScript_Random2 {
 	end
 }
 
-script Zone5B_EventScript_Gems {
+script Zone5B_Old_EventScript_Gems {
 	lock
-	if (flag(FLAG_ITEM_ZONE5B_GEMS)) {
+	if (flag(FLAG_ITEM_ZONE5B_Old_GEMS)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -423,7 +423,7 @@ script Zone5B_EventScript_Gems {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5B_GEMS)
+	setflag(FLAG_ITEM_ZONE5B_Old_GEMS)
 	addobject(VAR_LAST_TALKED)
 	finditem(ITEM_NORMAL_GEM)
 	finditem(ITEM_BUG_GEM)
@@ -432,9 +432,9 @@ script Zone5B_EventScript_Gems {
 	end
 }
 
-script Zone5B_EventScript_Random3 {
+script Zone5B_Old_EventScript_Random3 {
 	lock
-	if (flag(FLAG_ITEM_ZONE5B_RANDOM_3)) {
+	if (flag(FLAG_ITEM_ZONE5B_Old_RANDOM_3)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -442,7 +442,7 @@ script Zone5B_EventScript_Random3 {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5B_RANDOM_3)
+	setflag(FLAG_ITEM_ZONE5B_Old_RANDOM_3)
 	addobject(VAR_LAST_TALKED)
 	specialvar(VAR_TEMP_1, RandomItemChest)
 	finditem(VAR_TEMP_1, VAR_TEMP_0)
@@ -451,74 +451,74 @@ script Zone5B_EventScript_Random3 {
 }
 
 raw `
-Zone5B_EventScript_NovaandCora::
-	trainerbattle_double TRAINER_PBL_NOVA_AND_CORA, Zone5B_Text_NovaandCoraIntro, Zone5B_Text_NovaandCoraDefeat, gText_NotEnoughMons
-	msgbox Zone5B_Text_NovaandCoraPostBattle, MSGBOX_DEFAULT
+Zone5B_Old_EventScript_NovaandCora::
+	trainerbattle_double TRAINER_PBL_NOVA_AND_CORA, Zone5B_Old_Text_NovaandCoraIntro, Zone5B_Old_Text_NovaandCoraDefeat, gText_NotEnoughMons
+	msgbox Zone5B_Old_Text_NovaandCoraPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
-Zone5B_Text_NovaandCoraIntro:
+Zone5B_Old_Text_NovaandCoraIntro:
 	.string "Nova: This grass is so tall!\p"
 	.string "Cora: It's going up my nose!$"
 
-Zone5B_Text_NovaandCoraDefeat:
+Zone5B_Old_Text_NovaandCoraDefeat:
 	.string "Nova: Achoo!\p"
 	.string "Cora: Achoo!$"
 
-Zone5B_Text_NovaandCoraPostBattle:
+Zone5B_Old_Text_NovaandCoraPostBattle:
 	.string "Nova: Being twins means-\p"
 	.string "Cora: Sharing allergies!$"
 
-Zone5B_EventScript_Clinton::
-	trainerbattle_single TRAINER_PBL_CLINTON, Zone5B_Text_ClintonIntro, Zone5B_Text_ClintonDefeat
-	msgbox Zone5B_Text_ClintonPostBattle, MSGBOX_AUTOCLOSE
+Zone5B_Old_EventScript_Clinton::
+	trainerbattle_single TRAINER_PBL_CLINTON, Zone5B_Old_Text_ClintonIntro, Zone5B_Old_Text_ClintonDefeat
+	msgbox Zone5B_Old_Text_ClintonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Zone5B_Text_ClintonIntro:
+Zone5B_Old_Text_ClintonIntro:
 	.string "I've had my Pokémon specially\n"
 	.string "imported from rare habitats!$"
 
-Zone5B_Text_ClintonDefeat:
+Zone5B_Old_Text_ClintonDefeat:
 	.string "Um… I thought they were\n"
 	.string "supposed to be strong!$"
 
-Zone5B_Text_ClintonPostBattle:
+Zone5B_Old_Text_ClintonPostBattle:
 	.string "I suppose just because a\n"
 	.string "Pokémon is rare, doesn't\l"
 	.string "mean it's strong!$"
 
-Zone5B_EventScript_Ryan::
-	trainerbattle_single TRAINER_PBL_RYAN, Zone5B_Text_RyanIntro, Zone5B_Text_RyanDefeat
-	msgbox Zone5B_Text_RyanPostBattle, MSGBOX_AUTOCLOSE
+Zone5B_Old_EventScript_Ryan::
+	trainerbattle_single TRAINER_PBL_RYAN, Zone5B_Old_Text_RyanIntro, Zone5B_Old_Text_RyanDefeat
+	msgbox Zone5B_Old_Text_RyanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Zone5B_Text_RyanIntro:
+Zone5B_Old_Text_RyanIntro:
 	.string "Where am I?\n"
 	.string "Ah! A wild Pokémon!$"
 
-Zone5B_Text_RyanDefeat:
+Zone5B_Old_Text_RyanDefeat:
 	.string "Sorry! I thought you were a\n"
 	.string "Pokémon!$"
 
-Zone5B_Text_RyanPostBattle:
+Zone5B_Old_Text_RyanPostBattle:
 	.string "This grass is just too tall to see!$"
 
-Zone5B_EventScript_Kenneth::
-	trainerbattle_single TRAINER_PBL_KENNETH, Zone5B_Text_KennethIntro, Zone5B_Text_KennethDefeat
-	msgbox Zone5B_Text_KennethPostBattle, MSGBOX_AUTOCLOSE
+Zone5B_Old_EventScript_Kenneth::
+	trainerbattle_single TRAINER_PBL_KENNETH, Zone5B_Old_Text_KennethIntro, Zone5B_Old_Text_KennethDefeat
+	msgbox Zone5B_Old_Text_KennethPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Zone5B_Text_KennethIntro:
+Zone5B_Old_Text_KennethIntro:
 	.string "I'm running back and forth! Huzzah!$"
 
-Zone5B_Text_KennethDefeat:
+Zone5B_Old_Text_KennethDefeat:
 	.string "Whew! I'm all out of steam!$"
 
-Zone5B_Text_KennethPostBattle:
+Zone5B_Old_Text_KennethPostBattle:
 	.string "I gotta keep running!$"
 `
 
-// script Zone5B_EventScript_Intro {
+// script Zone5B_Old_EventScript_Intro {
 //     lockall
 // 	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 // 	waitmovement(0)
@@ -533,7 +533,7 @@ Zone5B_Text_KennethPostBattle:
 // 	waitmovement(0)
 // 	waitse
 //     playmoncry(SPECIES_PORYGON, 2)
-// 	applymovement(2, Zone5B_Porygon_AnimateDown)
+// 	applymovement(2, Zone5B_Old_Porygon_AnimateDown)
 // 	waitmovement(0)
 // 	waitmoncry
 // 	special(SpawnCameraObject)
@@ -545,7 +545,7 @@ Zone5B_Text_KennethPostBattle:
 // 	waitmovement(0)
 //     msgbox(format("This {COLOR BLUE}Porygon{COLOR DARK_GRAY} is a strange color…\pIt almost seems… familiar?"))
 //     playmoncry(SPECIES_PORYGON, 2)
-// 	applymovement(2, Zone5B_Porygon_AnimateDown)
+// 	applymovement(2, Zone5B_Old_Porygon_AnimateDown)
 // 	waitmovement(0)
 // 	waitmoncry
 // 	applymovement(2, Common_Movement_WalkLeft)
@@ -555,7 +555,7 @@ Zone5B_Text_KennethPostBattle:
 // 	applymovement(2, Common_Movement_FaceRight)
 // 	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
 // 	waitmovement(0)
-// 	applymovement(2, Zone5B_Porygon_AnimateRight)
+// 	applymovement(2, Zone5B_Old_Porygon_AnimateRight)
 // 	waitmovement(0)
 // 	applymovement(2, Common_Movement_WalkUp)
 // 	waitmovement(0)
@@ -564,7 +564,7 @@ Zone5B_Text_KennethPostBattle:
 // 	applymovement(2, Common_Movement_FaceDown)
 // 	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
 // 	waitmovement(0)
-// 	applymovement(2, Zone5B_Porygon_AnimateDown)
+// 	applymovement(2, Zone5B_Old_Porygon_AnimateDown)
 // 	waitmovement(0)
 // 	applymovement(2, Common_Movement_WalkRight)
 // 	waitmovement(0)
@@ -573,7 +573,7 @@ Zone5B_Text_KennethPostBattle:
 // 	applymovement(2, Common_Movement_FaceLeft)
 // 	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 // 	waitmovement(0)
-// 	applymovement(2, Zone5B_Porygon_AnimateLeft)
+// 	applymovement(2, Zone5B_Old_Porygon_AnimateLeft)
 // 	waitmovement(0)
 // 	applymovement(2, Common_Movement_WalkUp)
 // 	waitmovement(0)
@@ -582,22 +582,22 @@ Zone5B_Text_KennethPostBattle:
 // 	applymovement(2, Common_Movement_FaceDown)
 // 	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
 // 	waitmovement(0)
-// 	applymovement(2, Zone5B_Porygon_AnimateDown)
+// 	applymovement(2, Zone5B_Old_Porygon_AnimateDown)
 // 	waitmovement(0)
 //     msgbox(format("The {COLOR BLUE}Porygon{COLOR DARK_GRAY} looks confused…"))
 //     playmoncry(SPECIES_PORYGON, 2)
 // 	delay(40)
 // 	waitmoncry
-// 	applymovement(2, Zone5B_Porygon_AnimateDown)
+// 	applymovement(2, Zone5B_Old_Porygon_AnimateDown)
 // 	waitmovement(0)
-// 	applymovement(2, Zone5B_Porygon_AnimateDown)
+// 	applymovement(2, Zone5B_Old_Porygon_AnimateDown)
 // 	waitmovement(0)
 // 	applymovement(2, Common_Movement_WalkUp)
 // 	waitmovement(0)
 // 	applymovement(2, Common_Movement_WalkUp)
 // 	waitmovement(0)
 //     removeobject(2)
-//     setflag(FLAG_HIDE_ZONE5B_SHINY_PORYGON)
+//     setflag(FLAG_HIDE_ZONE5B_Old_SHINY_PORYGON)
 // 	applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
 // 	playse(SE_PIN)
 // 	waitmovement(0)
@@ -607,14 +607,14 @@ Zone5B_Text_KennethPostBattle:
 // 	releaseall
 // }
 
-// movement Zone5B_Porygon_AnimateRight {
+// movement Zone5B_Old_Porygon_AnimateRight {
 // 	walk_in_place_slow_right * 2
 // }
 
-// movement Zone5B_Porygon_AnimateDown {
+// movement Zone5B_Old_Porygon_AnimateDown {
 // 	walk_in_place_slow_down * 2
 // }
 
-// movement Zone5B_Porygon_AnimateLeft {
+// movement Zone5B_Old_Porygon_AnimateLeft {
 // 	walk_in_place_slow_left * 2
 // }

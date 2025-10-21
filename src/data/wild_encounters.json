@@ -862,8 +862,8 @@
           }
         },
         {
-          "map": "MAP_ZONE5A",
-          "base_label": "gZone5A",
+          "map": "MAP_ZONE5A_Old",
+          "base_label": "gZone5A_Old",
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
@@ -931,8 +931,8 @@
           }
         },
         {
-          "map": "MAP_ZONE5B",
-          "base_label": "gZone5B",
+          "map": "MAP_ZONE5B_Old",
+          "base_label": "gZone5B_Old",
           "land_mons": {
             "encounter_rate": 10,
             "mons": [

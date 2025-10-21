@@ -1362,7 +1362,7 @@ script Debug_CheatStart_PBL {
 	}
 	setvar(VAR_TEMP_1, 12) // level
 	call(Debug_CheatStart_PBL_GiveMon)
-	setflag(FLAG_ZONE5B_NUZLOCKE_BOUGHT_PIKACLONE)
+	setflag(FLAG_ZONE5B_Old_NUZLOCKE_BOUGHT_PIKACLONE)
 	completesubquest(QUEST_PBL, 5)
 	// zone 5 items
 	additem(ITEM_METRONOME)

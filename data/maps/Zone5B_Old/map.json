@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ZONE5B",
-  "name": "Zone5B",
-  "layout": "LAYOUT_ZONE5B",
+  "id": "MAP_ZONE5B_Old",
+  "name": "Zone5B_Old",
+  "layout": "LAYOUT_ZONE5B_Old",
   "music": "MUS_RG_ROUTE24",
   "region_map_section": "MAPSEC_ZONE_5",
   "requires_flash": false,
@@ -14,7 +14,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ZONE5A",
+      "map": "MAP_ZONE5A_Old",
       "offset": 0,
       "direction": "down"
     }
@@ -56,7 +56,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "Zone5B_EventScript_NovaandCora",
+      "script": "Zone5B_Old_EventScript_NovaandCora",
       "flag": "0"
     },
     {
@@ -69,7 +69,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "Zone5B_EventScript_NovaandCora",
+      "script": "Zone5B_Old_EventScript_NovaandCora",
       "flag": "0"
     },
     {
@@ -82,7 +82,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "Zone5B_EventScript_Clinton",
+      "script": "Zone5B_Old_EventScript_Clinton",
       "flag": "0"
     },
     {
@@ -95,7 +95,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Zone5B_EventScript_Ryan",
+      "script": "Zone5B_Old_EventScript_Ryan",
       "flag": "0"
     },
     {
@@ -108,7 +108,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Zone5B_EventScript_Kenneth",
+      "script": "Zone5B_Old_EventScript_Kenneth",
       "flag": "0"
     },
     {
@@ -121,7 +121,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone5B_EventScript_BuyPikaClone",
+      "script": "Zone5B_Old_EventScript_BuyPikaClone",
       "flag": "0"
     },
     {
@@ -134,7 +134,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone5B_EventScript_Random1",
+      "script": "Zone5B_Old_EventScript_Random1",
       "flag": "0"
     },
     {
@@ -147,7 +147,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone5B_EventScript_Random2",
+      "script": "Zone5B_Old_EventScript_Random2",
       "flag": "0"
     },
     {
@@ -160,7 +160,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone5B_EventScript_Gems",
+      "script": "Zone5B_Old_EventScript_Gems",
       "flag": "0"
     },
     {
@@ -173,7 +173,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone5B_EventScript_Random3",
+      "script": "Zone5B_Old_EventScript_Random3",
       "flag": "0"
     },
     {
@@ -199,7 +199,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone5B_EventScript_NeverMissTutor",
+      "script": "Zone5B_Old_EventScript_NeverMissTutor",
       "flag": "0"
     }
   ],
@@ -214,7 +214,7 @@
       "elevation": 0,
       "var": "VAR_ZONE_5_STATE",
       "var_value": "0",
-      "script": "Zone5B_EventScript_LeviathanBattle"
+      "script": "Zone5B_Old_EventScript_LeviathanBattle"
     },
     {
       "type": "trigger",
@@ -223,7 +223,7 @@
       "elevation": 0,
       "var": "VAR_ZONE_5_STATE",
       "var_value": "0",
-      "script": "Zone5B_EventScript_LeviathanBattle"
+      "script": "Zone5B_Old_EventScript_LeviathanBattle"
     }
   ],
   "bg_events": [
@@ -233,7 +233,7 @@
       "y": 5,
       "elevation": 0,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE5B_ORAN_BERRY"
+      "flag": "FLAG_HIDDEN_ITEM_ZONE5B_Old_ORAN_BERRY"
     },
     {
       "type": "hidden_item",
@@ -241,7 +241,7 @@
       "y": 6,
       "elevation": 0,
       "item": "ITEM_RAWST_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE5B_RAWST_BERRY"
+      "flag": "FLAG_HIDDEN_ITEM_ZONE5B_Old_RAWST_BERRY"
     },
     {
       "type": "hidden_item",
@@ -249,7 +249,7 @@
       "y": 17,
       "elevation": 0,
       "item": "ITEM_CHERI_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE5B_CHERI_BERRY"
+      "flag": "FLAG_HIDDEN_ITEM_ZONE5B_Old_CHERI_BERRY"
     }
   ]
 }

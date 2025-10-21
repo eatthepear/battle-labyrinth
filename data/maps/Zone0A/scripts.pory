@@ -227,7 +227,7 @@ script Zone0A_EventScript_Scientist {
 				applymovement(15, Common_Movement_FaceRight)
 				waitmovement(0)
 			}
-			warpdoor(MAP_ZONE5A, 255, 3, 0)
+			warpdoor(MAP_ZONE5A_Old, 255, 3, 0)
 			waitstate
 		case 6:
 			setvar(VAR_REVISITING_ZONE, 6)

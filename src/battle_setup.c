@@ -672,9 +672,6 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     }
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE22A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE22A))
         return BATTLE_ENVIRONMENT_SNOW;
-    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE5A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE5A))
-    || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE5B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE5B)))
-        return BATTLE_ENVIRONMENT_GRASS;
     if (MetatileBehavior_IsTallGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_GRASS;
     if (MetatileBehavior_IsLongGrass(tileBehavior))

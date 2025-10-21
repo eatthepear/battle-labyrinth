@@ -1,26 +1,26 @@
-mapscripts Zone5A_MapScripts {
+mapscripts Zone5A_Old_MapScripts {
 	MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_ITEM_ZONE5A_QUICK_BALL)) {
+		if (flag(FLAG_ITEM_ZONE5A_Old_QUICK_BALL)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE5A_RANDOM_1)) {
+		if (flag(FLAG_ITEM_ZONE5A_Old_RANDOM_1)) {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE5A_METRONOME)) {
+		if (flag(FLAG_ITEM_ZONE5A_Old_METRONOME)) {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE5A_MIRACLE_SEED)) {
+		if (flag(FLAG_ITEM_ZONE5A_Old_MIRACLE_SEED)) {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE5A_RANDOM_2)) {
+		if (flag(FLAG_ITEM_ZONE5A_Old_RANDOM_2)) {
 			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -28,9 +28,9 @@ mapscripts Zone5A_MapScripts {
 	}
 }
 
-script Zone5A_EventScript_QuickBall {
+script Zone5A_Old_EventScript_QuickBall {
 	lock
-	if (flag(FLAG_ITEM_ZONE5A_QUICK_BALL)) {
+	if (flag(FLAG_ITEM_ZONE5A_Old_QUICK_BALL)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -38,16 +38,16 @@ script Zone5A_EventScript_QuickBall {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5A_QUICK_BALL)
+	setflag(FLAG_ITEM_ZONE5A_Old_QUICK_BALL)
 	addobject(VAR_LAST_TALKED)
 	finditem(ITEM_QUICK_BALL, 1)
 	release
 	end
 }
 
-script Zone5A_EventScript_Random1 {
+script Zone5A_Old_EventScript_Random1 {
 	lock
-	if (flag(FLAG_ITEM_ZONE5A_RANDOM_1)) {
+	if (flag(FLAG_ITEM_ZONE5A_Old_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -55,7 +55,7 @@ script Zone5A_EventScript_Random1 {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5A_RANDOM_1)
+	setflag(FLAG_ITEM_ZONE5A_Old_RANDOM_1)
 	addobject(VAR_LAST_TALKED)
 	specialvar(VAR_TEMP_1, RandomItemChest)
 	finditem(VAR_TEMP_1, VAR_TEMP_0)
@@ -63,9 +63,9 @@ script Zone5A_EventScript_Random1 {
 	end
 }
 
-script Zone5A_EventScript_Metronome {
+script Zone5A_Old_EventScript_Metronome {
 	lock
-	if (flag(FLAG_ITEM_ZONE5A_METRONOME)) {
+	if (flag(FLAG_ITEM_ZONE5A_Old_METRONOME)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -73,16 +73,16 @@ script Zone5A_EventScript_Metronome {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5A_METRONOME)
+	setflag(FLAG_ITEM_ZONE5A_Old_METRONOME)
 	addobject(VAR_LAST_TALKED)
 	finditem(ITEM_METRONOME)
 	release
 	end
 }
 
-script Zone5A_EventScript_MiracleSeed {
+script Zone5A_Old_EventScript_MiracleSeed {
 	lock
-	if (flag(FLAG_ITEM_ZONE5A_MIRACLE_SEED)) {
+	if (flag(FLAG_ITEM_ZONE5A_Old_MIRACLE_SEED)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -90,16 +90,16 @@ script Zone5A_EventScript_MiracleSeed {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5A_MIRACLE_SEED)
+	setflag(FLAG_ITEM_ZONE5A_Old_MIRACLE_SEED)
 	addobject(VAR_LAST_TALKED)
 	finditem(ITEM_MIRACLE_SEED)
 	release
 	end
 }
 
-script Zone5A_EventScript_Random2 {
+script Zone5A_Old_EventScript_Random2 {
 	lock
-	if (flag(FLAG_ITEM_ZONE5A_RANDOM_2)) {
+	if (flag(FLAG_ITEM_ZONE5A_Old_RANDOM_2)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -107,7 +107,7 @@ script Zone5A_EventScript_Random2 {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5A_RANDOM_2)
+	setflag(FLAG_ITEM_ZONE5A_Old_RANDOM_2)
 	addobject(VAR_LAST_TALKED)
 	specialvar(VAR_TEMP_1, RandomItemChest)
 	finditem(VAR_TEMP_1, VAR_TEMP_0)
@@ -115,89 +115,89 @@ script Zone5A_EventScript_Random2 {
 	end
 }
 
-// Zone5A_EventScript_Gilbert::
-// 	trainerbattle_single TRAINER_PBL_GILBERT, Zone5A_Text_GilbertIntro, Zone5A_Text_GilbertDefeat
-// 	msgbox Zone5A_Text_GilbertPostBattle, MSGBOX_AUTOCLOSE
+// Zone5A_Old_EventScript_Gilbert::
+// 	trainerbattle_single TRAINER_PBL_GILBERT, Zone5A_Old_Text_GilbertIntro, Zone5A_Old_Text_GilbertDefeat
+// 	msgbox Zone5A_Old_Text_GilbertPostBattle, MSGBOX_AUTOCLOSE
 // 	end
 
-// Zone5A_Text_GilbertIntro:
+// Zone5A_Old_Text_GilbertIntro:
 // 	.string "I've fished up a wild Trainer!$"
 
-// Zone5A_Text_GilbertDefeat:
+// Zone5A_Old_Text_GilbertDefeat:
 // 	.string "You're too tough to take down!$"
 
-// Zone5A_Text_GilbertPostBattle:
+// Zone5A_Old_Text_GilbertPostBattle:
 // 	.string "I can't seem to catch a break!\p"
 // 	.string "Get it? Catch?$"
 
 raw `
-Zone5A_EventScript_AnneAndJune::
-	trainerbattle_double TRAINER_PBL_ANNE_AND_JUNE, Zone5A_Text_AnneAndJuneIntro, Zone5A_Text_AnneAndJuneDefeat, gText_NotEnoughMons
-	msgbox Zone5A_Text_AnneAndJunePostBattle, MSGBOX_DEFAULT
+Zone5A_Old_EventScript_AnneAndJune::
+	trainerbattle_double TRAINER_PBL_ANNE_AND_JUNE, Zone5A_Old_Text_AnneAndJuneIntro, Zone5A_Old_Text_AnneAndJuneDefeat, gText_NotEnoughMons
+	msgbox Zone5A_Old_Text_AnneAndJunePostBattle, MSGBOX_DEFAULT
 	release
 	end
 
-Zone5A_Text_AnneAndJuneIntro:
+Zone5A_Old_Text_AnneAndJuneIntro:
 	.string "Anne: We're teammates!\p"
 	.string "June: No, I'm the Senior and\n"
 	.string "you're the Junior!$"
 
-Zone5A_Text_AnneAndJuneDefeat:
+Zone5A_Old_Text_AnneAndJuneDefeat:
 	.string "Anne: I guess you were right…\p"
 	.string "June: We still lost though…$"
 
-Zone5A_Text_AnneAndJunePostBattle:
+Zone5A_Old_Text_AnneAndJunePostBattle:
 	.string "Anne: Maybe we needed better…\p"
 	.string "June: Coordination?\p"
 	.string "Anne: Yeah, exactly that!$"
 
-Zone5A_EventScript_Rebecca::
-	trainerbattle_single TRAINER_PBL_REBECCA, Zone5A_Text_RebeccaIntro, Zone5A_Text_RebeccaDefeat
-	msgbox Zone5A_Text_RebeccaPostBattle, MSGBOX_AUTOCLOSE
+Zone5A_Old_EventScript_Rebecca::
+	trainerbattle_single TRAINER_PBL_REBECCA, Zone5A_Old_Text_RebeccaIntro, Zone5A_Old_Text_RebeccaDefeat
+	msgbox Zone5A_Old_Text_RebeccaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Zone5A_Text_RebeccaIntro:
+Zone5A_Old_Text_RebeccaIntro:
 	.string "Don't interrupt my morning walk!$"
 
-Zone5A_Text_RebeccaDefeat:
+Zone5A_Old_Text_RebeccaDefeat:
 	.string "I really like walking, ok?$"
 
-Zone5A_Text_RebeccaPostBattle:
+Zone5A_Old_Text_RebeccaPostBattle:
 	.string "Exercise is good for the heart and\n"
 	.string "body!$"
 
-Zone5A_EventScript_Caitlyn::
-	trainerbattle_single TRAINER_PBL_CAITLYN, Zone5A_Text_CaitlynIntro, Zone5A_Text_CaitlynDefeat
-	msgbox Zone5A_Text_CaitlynPostBattle, MSGBOX_AUTOCLOSE
+Zone5A_Old_EventScript_Caitlyn::
+	trainerbattle_single TRAINER_PBL_CAITLYN, Zone5A_Old_Text_CaitlynIntro, Zone5A_Old_Text_CaitlynDefeat
+	msgbox Zone5A_Old_Text_CaitlynPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Zone5A_Text_CaitlynIntro:
+Zone5A_Old_Text_CaitlynIntro:
 	.string "This is such a nice spot to picnic!\n"
 	.string "Shoo! Find your own spot!$"
 
-Zone5A_Text_CaitlynDefeat:
+Zone5A_Old_Text_CaitlynDefeat:
 	.string "I guess you can join me…$"
 
-Zone5A_Text_CaitlynPostBattle:
+Zone5A_Old_Text_CaitlynPostBattle:
 	.string "Why's this the best spot to picnic?\n"
 	.string "It's because you can see a lot of\l"
 	.string "the forest below from here!$"
 
-Zone5A_EventScript_Kevin::
-	trainerbattle_single TRAINER_PBL_KEVIN, Zone5A_Text_KevinIntro, Zone5A_Text_KevinDefeat
-	msgbox Zone5A_Text_KevinPostBattle, MSGBOX_AUTOCLOSE
+Zone5A_Old_EventScript_Kevin::
+	trainerbattle_single TRAINER_PBL_KEVIN, Zone5A_Old_Text_KevinIntro, Zone5A_Old_Text_KevinDefeat
+	msgbox Zone5A_Old_Text_KevinPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Zone5A_Text_KevinIntro:
+Zone5A_Old_Text_KevinIntro:
 	.string "Hmm… It appears there's not many\n"
 	.string "Bug Pokémon in this area… Maybe\l"
 	.string "I'll study you instead!$"
 
-Zone5A_Text_KevinDefeat:
+Zone5A_Old_Text_KevinDefeat:
 	.string "You seem to be the type that's good\n"
 	.string "at Pokémon battling!$"
 
-Zone5A_Text_KevinPostBattle:
+Zone5A_Old_Text_KevinPostBattle:
 	.string "Still, you know anywhere I can find\n"
 	.string "some good Bug Pokémon?$"
 `

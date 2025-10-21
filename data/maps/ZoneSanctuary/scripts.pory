@@ -302,7 +302,7 @@ script EventScript_NextZone {
 			if (var(VAR_RESULT) == YES) {
 				call(Sanctuary_EventScript_EnterZone)
 				setvar(VAR_LEVEL_CAP, 5)
-				warp(MAP_ZONE5A, 255, 3, 0)
+				warp(MAP_ZONE5A_Old, 255, 3, 0)
 				waitstate
 				end
 			}

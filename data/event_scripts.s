@@ -1177,9 +1177,9 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/Zone4E/scripts.inc"
 
-	.include "data/maps/Zone5A/scripts.inc"
+	.include "data/maps/Zone5A_Old/scripts.inc"
 
-	.include "data/maps/Zone5B/scripts.inc"
+	.include "data/maps/Zone5B_Old/scripts.inc"
 
 	.include "data/maps/Zone6A/scripts.inc"
 

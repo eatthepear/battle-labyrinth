@@ -4512,24 +4512,24 @@
       "blockdata_filepath": "data/layouts/Zone4E/map.bin"
     },
     {
-      "id": "LAYOUT_ZONE5A",
-      "name": "Zone5A_Layout",
+      "id": "LAYOUT_ZONE5A_Old",
+      "name": "Zone5A_Old_Layout",
       "width": 97,
       "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
-      "border_filepath": "data/layouts/Zone5A/border.bin",
-      "blockdata_filepath": "data/layouts/Zone5A/map.bin"
+      "border_filepath": "data/layouts/Zone5A_Old/border.bin",
+      "blockdata_filepath": "data/layouts/Zone5A_Old/map.bin"
     },
     {
-      "id": "LAYOUT_ZONE5B",
-      "name": "Zone5B_Layout",
+      "id": "LAYOUT_ZONE5B_Old",
+      "name": "Zone5B_Old_Layout",
       "width": 97,
       "height": 34,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
-      "border_filepath": "data/layouts/Zone5B/border.bin",
-      "blockdata_filepath": "data/layouts/Zone5B/map.bin"
+      "border_filepath": "data/layouts/Zone5B_Old/border.bin",
+      "blockdata_filepath": "data/layouts/Zone5B_Old/map.bin"
     },
     {
       "id": "LAYOUT_ZONE6A",

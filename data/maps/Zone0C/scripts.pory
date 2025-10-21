@@ -154,7 +154,7 @@ script Zone0C_EventScript_WarpZone5 {
 	buffernumberstring(0, 5)
 	call(Zone0C_EventScript_VerifyDestination)
 	setvar(VAR_REVISITING_ZONE, 5)
-	warpteleport(MAP_ZONE5A, 255, 43, 31)
+	warpteleport(MAP_ZONE5A_Old, 255, 43, 31)
 	waitstate
 }
 
