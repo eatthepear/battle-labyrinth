@@ -1332,5 +1332,3 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ZoneSanctuary_BreezyMeadow/scripts.inc"
 
 	.include "data/maps/ZoneSanctuary_WhisperCave/scripts.inc"
-
-	.include "data/maps/Zone4A_New/scripts.inc"

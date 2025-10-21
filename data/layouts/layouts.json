@@ -5290,16 +5290,6 @@
       "secondary_tileset": "gTileset_Cavern",
       "border_filepath": "data/layouts/ZoneSanctuary_WhisperCave/border.bin",
       "blockdata_filepath": "data/layouts/ZoneSanctuary_WhisperCave/map.bin"
-    },
-    {
-      "id": "LAYOUT_ZONE4A_NEW",
-      "name": "Zone4A_New_Layout",
-      "width": 49,
-      "height": 83,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Lavaridge",
-      "border_filepath": "data/layouts/Zone4A_New/border.bin",
-      "blockdata_filepath": "data/layouts/Zone4A_New/map.bin"
     }
   ]
 }
