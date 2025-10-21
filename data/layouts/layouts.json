@@ -5290,6 +5290,26 @@
       "secondary_tileset": "gTileset_Cavern",
       "border_filepath": "data/layouts/ZoneSanctuary_WhisperCave/border.bin",
       "blockdata_filepath": "data/layouts/ZoneSanctuary_WhisperCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE5A",
+      "name": "Zone5A_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_GymsExterior",
+      "border_filepath": "data/layouts/Zone5A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone5A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE5B",
+      "name": "Zone5B_Layout",
+      "width": 26,
+      "height": 36,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MossdeepGym",
+      "border_filepath": "data/layouts/Zone5B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone5B/map.bin"
     }
   ]
 }
