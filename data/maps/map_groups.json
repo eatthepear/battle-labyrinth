@@ -29,6 +29,7 @@
     "gMapGroup_SpecialArea",
     "gMapGroup_Zones",
     "gMapGroup_Sanctuary",
+    "gMapGroup_Unused",
     "gMapGroup_IndoorRoute109",
     "gMapGroup_IndoorRoute110",
     "gMapGroup_IndoorRoute113",
@@ -587,9 +588,6 @@
     "TrainerHill_Elevator"
   ],
   "gMapGroup_Zones": [
-    "Zone0A",
-    "Zone0B",
-    "Zone0C",
     "Zone1A",
     "Zone2A",
     "Zone3A",
@@ -599,8 +597,6 @@
     "Zone4C",
     "Zone4D",
     "Zone4E",
-    "Zone5A_Old",
-    "Zone5B_Old",
     "Zone6A",
     "Zone7A",
     "Zone7B",
@@ -663,10 +659,7 @@
     "Zone26A",
     "Zone26B",
     "Zone27A",
-    "Zone28A",
-    "ZoneS1A",
-    "ZoneS1B",
-    "ZoneS2A"
+    "Zone28A"
   ],
   "gMapGroup_Sanctuary": [
     "ZoneSanctuary",
@@ -676,6 +669,16 @@
     "ZoneSanctuary_PeacefulGrove",
     "ZoneSanctuary_BreezyMeadow",
     "ZoneSanctuary_WhisperCave"
+  ],
+  "gMapGroup_Unused": [
+    "Zone0A",
+    "Zone0B",
+    "Zone0C",
+    "ZoneS1A",
+    "ZoneS1B",
+    "ZoneS2A",
+    "Zone5A_Old",
+    "Zone5B_Old"
   ],
   "gMapGroup_IndoorRoute109": [
     "Route109_SeashoreHouse"
