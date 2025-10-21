@@ -13,125 +13,29 @@ mapscripts Zone4A_MapScripts {
 	}
 }
 
-script Zone4A_EventScript_PoisonTree {
-	lock
-	bufferleadmonspeciesname(STR_VAR_1)
-	msgbox(format("This strange looking tree has potentially dangerous looking sap flowing out of it.\pDo you want to have your {STR_VAR_1} touch it?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		// trysetstatus(STATUS1_POISON, 0)
-		msgbox(format("Your {STR_VAR_1} touched the strange sap and was exposed to the poison!"))
-	} else {
-		msgbox(format("Better to be safe than sorry."))
+script Zone4A_EventScript_KimonoGirl_Intro {
+	lockall
+	playbgm(MUS_HG_KIMONO_GIRL, 0)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 3) {
+		applymovement(LOCALID_KIMONO_GIRL, Common_Movement_WalkUp)
+		waitmovement(0)
 	}
-	release
+	applymovement(LOCALID_KIMONO_GIRL, Common_Movement_WalkLeft3)
+	waitmovement(0)
+	msgbox(format("Let's go together!"), MSGBOX_AUTOCLOSE)
+	setfollowernpc(LOCALID_KIMONO_GIRL, FOLLOWER_NPC_FLAG_ALL)
+	setvar(VAR_ZONE_4_STATE, 1)
+	fadedefaultbgm
+	releaseall
 }
 
-script Zone4A_EventScript_Breeder {
+script Zone4A_EventScript_KimonoGirl {
 	lock
 	faceplayer
-	// if (flag(FLAG_ZONE4A_RECEIVED_GEM) || flag(FLAG_SETTINGS_BRUTAL) || flag(FLAG_SETTINGS_INDEPENDENT)) {
-	// 	msgbox(format("If you want to evolve an Eevee into a different evolution, I've heard you can find the occasional gem in an item chests."))
-	// 	if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_RED_THUMB) == false)) {
-	// 		msgbox(format("You can also try to find Gems by smashing rocks with a Sledgehammer!"), MSGBOX_DEFAULT)
-	// 	}
-	// 	release
-	// 	end
-	// }
-	if (flag(FLAG_ZONE0B_RECEIVED_EEVEE) == false) {
-		msgbox(format("Hello, {PLAYER}!\nI work at the Pokémon Day-Care.\pThere's a special Eevee giveaway at the Day-Care, so go check that out!"))
-		release
-		end
-	}
-	msgbox(format("Hello, {PLAYER}!\nI work at the Pokémon Day-Care.\pWe've been studying how Eevee evolves differently based on which elemental Gem it is exposed to."), MSGBOX_DEFAULT)
-	if (flag(FLAG_SETTINGS_NUZLOCKE)) {
-		msgbox(format("Why don't you take this Gem!"))
-		random(8)
-		switch(var(VAR_RESULT)) {
-			case 0:
-				giveitem(ITEM_WATER_GEM)
-			case 1:
-				giveitem(ITEM_ELECTRIC_GEM)
-			case 2:
-				giveitem(ITEM_FIRE_GEM)
-			case 3:
-				giveitem(ITEM_PSYCHIC_GEM)
-			case 4:
-				giveitem(ITEM_DARK_GEM)
-			case 5:
-				giveitem(ITEM_GRASS_GEM)
-			case 6:
-				giveitem(ITEM_ICE_GEM)
-			case 7:
-				giveitem(ITEM_FAIRY_GEM)
-		}
-	} else {
-		setvar(VAR_TEMP_0, 0)
-		while (var(VAR_TEMP_0) != 1) {
-			msgbox(format("What's your favorite evolution of Eevee?"), MSGBOX_DEFAULT)
-			dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Vaporeon", "Jolteon", "Flareon", "Espeon", "Umbreon", "Leafeon", "Glaceon", "Sylveon")
-			switch (var(VAR_RESULT)) {
-				case 0:
-					msgbox(format("Oh, so you like Vaporeon?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-						giveitem(ITEM_WATER_GEM)
-						setvar(VAR_TEMP_0, 1)
-					}
-				case 1:
-					msgbox(format("Oh, so you like Jolteon?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-						giveitem(ITEM_ELECTRIC_GEM)
-						setvar(VAR_TEMP_0, 1)
-					}
-				case 2:
-					msgbox(format("Oh, so you like Flareon?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-						giveitem(ITEM_FIRE_GEM)
-						setvar(VAR_TEMP_0, 1)
-					}
-				case 3:
-					msgbox(format("Oh, so you like Espeon?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-						giveitem(ITEM_PSYCHIC_GEM)
-						setvar(VAR_TEMP_0, 1)
-					}
-				case 4:
-					msgbox(format("Oh, so you like Umbreon?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-						giveitem(ITEM_DARK_GEM)
-						setvar(VAR_TEMP_0, 1)
-					}
-				case 5:
-					msgbox(format("Oh, so you like Leafeon?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-						giveitem(ITEM_GRASS_GEM)
-						setvar(VAR_TEMP_0, 1)
-					}
-				case 6:
-					msgbox(format("Oh, so you like Glaceon?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-						giveitem(ITEM_ICE_GEM)
-						setvar(VAR_TEMP_0, 1)
-					}
-				case 7:
-					msgbox(format("Oh, so you like Sylveon?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						msgbox(Zone4A_Text_HereGem, MSGBOX_DEFAULT)
-						giveitem(ITEM_FAIRY_GEM)
-						setvar(VAR_TEMP_0, 1)
-					}
-			}
-		}
-	}
-	msgbox(format("I hope you can put that Gem to good use!"), MSGBOX_DEFAULT)
-	setflag(FLAG_ZONE4A_RECEIVED_GEM)
+	msgbox(format("Hello."))
 	release
+	end
 }
 
 text Zone4A_Text_HereGem {

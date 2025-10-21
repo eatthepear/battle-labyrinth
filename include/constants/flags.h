@@ -159,6 +159,8 @@
 #define FLAG_SYS_INVERSE_BATTLE                     0xC5
 #define FLAG_DISABLE_PREVIEW                        0xC6
 #define FLAG_SYS_ENABLE_WATERFALL                   0xC8
+#define FLAG_SYS_FOLLOWER_HEAL                      0xC9
+#define FLAG_SYS_FOLLOWER_WILD                      0xCA
 
 // Tracker Flags (Don't manually set)
 #define FLAG_IS_REVISITING_ZONE                     0xE0
@@ -194,7 +196,7 @@
 #define FLAG_ZONE3A_RECEIVED_PINK_SCARF                   0x113
 #define FLAG_ZONE3A_RECEIVED_SURPRISE_MULCH               0x114
 #define FLAG_ZONE3B_TRADED_ZIGZAGOON                      0x115
-#define FLAG_ZONE4A_RECEIVED_GEM                          0x116
+#define FLAG_HIDE_ZONE4A_KIMONO_GIRL                      0x116
 #define FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG        0x117
 #define FLAG_ZONE5B_Old_NUZLOCKE_BOUGHT_PIKACLONE             0x118
 #define FLAG_ZONE5B_Old_MOVE_TUTOR_TAUGHT_NEVER_MISS          0x119

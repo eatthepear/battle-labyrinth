@@ -1300,7 +1300,6 @@ script Debug_CheatStart_PBL {
 		case 7:
 			additem(ITEM_FAIRY_GEM)
 	}
-	setflag(FLAG_ZONE4A_RECEIVED_GEM)
 	// zone 4 items
 	additem(ITEM_SILVER_POWDER)
 	additem(ITEM_MUSCLE_BAND)
