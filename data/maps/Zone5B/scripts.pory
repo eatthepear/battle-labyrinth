@@ -1,1 +1,39 @@
 mapscripts Zone5B_MapScripts {}
+
+script Zone5B_EventScript_YellowFloorSwitch {
+    setvar(VAR_TEMP_0, 0)
+    goto(Zone5B_EventScript_FloorSwitch)
+}
+
+script Zone5B_EventScript_BlueFloorSwitch {
+    setvar(VAR_TEMP_0, 1)
+    goto(Zone5B_EventScript_FloorSwitch)
+}
+
+script Zone5B_EventScript_GreenFloorSwitch {
+    setvar(VAR_TEMP_0, 2)
+    goto(Zone5B_EventScript_FloorSwitch)
+}
+
+script Zone5B_EventScript_PurpleFloorSwitch {
+    setvar(VAR_TEMP_0, 3)
+    goto(Zone5B_EventScript_FloorSwitch)
+}
+
+script Zone5B_EventScript_RedFloorSwitch {
+    setvar(VAR_TEMP_0, 4)
+    goto(Zone5B_EventScript_FloorSwitch)
+}
+
+script Zone5B_EventScript_FloorSwitch {
+	playse(SE_SWITCH)
+	waitse
+	playse(SE_REPEL)
+	initrotatingtilepuzzle(FALSE)
+	moverotatingtileobjects(VAR_TEMP_0)
+	waitmovement(0)
+	turnrotatingtileobjects
+	waitmovement(0)
+	freerotatingtilepuzzle
+    end
+}
