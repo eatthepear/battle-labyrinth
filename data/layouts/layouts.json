@@ -5294,8 +5294,8 @@
     {
       "id": "LAYOUT_ZONE4A_NEW",
       "name": "Zone4A_New_Layout",
-      "width": 14,
-      "height": 56,
+      "width": 49,
+      "height": 83,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/Zone4A_New/border.bin",
