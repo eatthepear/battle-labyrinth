@@ -117,26 +117,41 @@ void CreateScriptedWildMon_PBL(u16 species, u8 level, u16 item, u8 nature, u8 iv
     u32 pp;
 
     ZeroEnemyPartyMons();
-    CreateMonWithNature(&gEnemyParty[0], species, level, iv, nature);
+    if (nature == NUM_NATURES)
+        CreateMonWithNature(&gEnemyParty[0], species, level, iv, PickWildMonNature());
+    else
+        CreateMonWithNature(&gEnemyParty[0], species, level, iv, nature);
+
     if (item)
     {
         heldItem[0] = item;
         heldItem[1] = item >> 8;
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem);
     }
-    SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &abilityNum);
-    pp = GetMovePP(move1);
-    SetMonData(&gEnemyParty[0], MON_DATA_MOVE1, &move1);
-    SetMonData(&gEnemyParty[0], MON_DATA_PP1, &pp);
-    pp = GetMovePP(move2);
-    SetMonData(&gEnemyParty[0], MON_DATA_MOVE2, &move2);
-    SetMonData(&gEnemyParty[0], MON_DATA_PP2, &pp);
-    pp = GetMovePP(move3);
-    SetMonData(&gEnemyParty[0], MON_DATA_MOVE3, &move3);
-    SetMonData(&gEnemyParty[0], MON_DATA_PP3, &pp);
-    pp = GetMovePP(move4);
-    SetMonData(&gEnemyParty[0], MON_DATA_MOVE4, &move4);
-    SetMonData(&gEnemyParty[0], MON_DATA_PP4, &pp);
+
+    if (abilityNum < 3)
+        SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &abilityNum);
+
+    if (move1) {
+        pp = GetMovePP(move1);
+        SetMonData(&gEnemyParty[0], MON_DATA_MOVE1, &move1);
+        SetMonData(&gEnemyParty[0], MON_DATA_PP1, &pp);
+    }
+    if (move2) {
+        pp = GetMovePP(move2);
+        SetMonData(&gEnemyParty[0], MON_DATA_MOVE2, &move2);
+        SetMonData(&gEnemyParty[0], MON_DATA_PP2, &pp);
+    }
+    if (move3) {
+        pp = GetMovePP(move3);
+        SetMonData(&gEnemyParty[0], MON_DATA_MOVE3, &move3);
+        SetMonData(&gEnemyParty[0], MON_DATA_PP3, &pp);
+    }
+    if (move4) {
+        pp = GetMovePP(move4);
+        SetMonData(&gEnemyParty[0], MON_DATA_MOVE4, &move4);
+        SetMonData(&gEnemyParty[0], MON_DATA_PP4, &pp);
+    }
 }
 
 void CreateScriptedDoubleWildMon_PBL(u16 species1, u8 level1, u16 item1, u8 nature1, u8 iv1, u8 abilityNum1, u16 move11, u16 move12, u16 move13, u16 move14,
@@ -147,47 +162,71 @@ void CreateScriptedDoubleWildMon_PBL(u16 species1, u8 level1, u16 item1, u8 natu
     u32 pp;
 
     ZeroEnemyPartyMons();
-    CreateMonWithNature(&gEnemyParty[0], species1, level1, iv1, nature1);
+    if (nature1 == NUM_NATURES)
+        CreateMonWithNature(&gEnemyParty[0], species1, level1, iv1, PickWildMonNature());
+    else
+        CreateMonWithNature(&gEnemyParty[0], species1, level1, iv1, nature1);
     if (item1)
     {
         heldItem1[0] = item1;
         heldItem1[1] = item1 >> 8;
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem1);
     }
-    SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &abilityNum1);
+    if (abilityNum1 < 3)
+        SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &abilityNum1);
+    if (move11) {
     pp = GetMovePP(move11);
     SetMonData(&gEnemyParty[0], MON_DATA_MOVE1, &move11);
     SetMonData(&gEnemyParty[0], MON_DATA_PP1, &pp);
+    }
+    if (move12) {
     pp = GetMovePP(move12);
     SetMonData(&gEnemyParty[0], MON_DATA_MOVE2, &move12);
     SetMonData(&gEnemyParty[0], MON_DATA_PP2, &pp);
+    }
+    if (move13) {
     pp = GetMovePP(move13);
     SetMonData(&gEnemyParty[0], MON_DATA_MOVE3, &move13);
     SetMonData(&gEnemyParty[0], MON_DATA_PP3, &pp);
+    }
+    if (move14) {
     pp = GetMovePP(move14);
     SetMonData(&gEnemyParty[0], MON_DATA_MOVE4, &move14);
     SetMonData(&gEnemyParty[0], MON_DATA_PP4, &pp);
+    }
 
-    CreateMonWithNature(&gEnemyParty[1], species2, level2, iv2, nature2);
+    if (nature2 == NUM_NATURES)
+        CreateMonWithNature(&gEnemyParty[1], species2, level2, iv2, PickWildMonNature());
+    else
+        CreateMonWithNature(&gEnemyParty[1], species2, level2, iv2, nature2);
     if (item2)
     {
         heldItem2[0] = item2;
         heldItem2[1] = item2 >> 8;
         SetMonData(&gEnemyParty[1], MON_DATA_HELD_ITEM, heldItem2);
     }
-    SetMonData(&gEnemyParty[1], MON_DATA_ABILITY_NUM, &abilityNum2);
-    pp = GetMovePP(move21);
-    SetMonData(&gEnemyParty[1], MON_DATA_MOVE1, &move21);
-    SetMonData(&gEnemyParty[1], MON_DATA_PP1, &pp);
-    pp = GetMovePP(move22);
-    SetMonData(&gEnemyParty[1], MON_DATA_MOVE2, &move22);
-    SetMonData(&gEnemyParty[1], MON_DATA_PP2, &pp);
-    pp = GetMovePP(move23);
-    SetMonData(&gEnemyParty[1], MON_DATA_MOVE3, &move23);
-    SetMonData(&gEnemyParty[1], MON_DATA_PP3, &pp);
-    pp = GetMovePP(move24);
-    SetMonData(&gEnemyParty[1], MON_DATA_MOVE4, &move24);
-    SetMonData(&gEnemyParty[1], MON_DATA_PP4, &pp);
+    if (abilityNum2 < 3)
+        SetMonData(&gEnemyParty[1], MON_DATA_ABILITY_NUM, &abilityNum2);
+    if (move21) {
+        pp = GetMovePP(move21);
+        SetMonData(&gEnemyParty[1], MON_DATA_MOVE1, &move21);
+        SetMonData(&gEnemyParty[1], MON_DATA_PP1, &pp);
+    }
+    if (move22) {
+        pp = GetMovePP(move22);
+        SetMonData(&gEnemyParty[1], MON_DATA_MOVE2, &move22);
+        SetMonData(&gEnemyParty[1], MON_DATA_PP2, &pp);
+    }
+    if (move23) {
+        pp = GetMovePP(move23);
+        SetMonData(&gEnemyParty[1], MON_DATA_MOVE3, &move23);
+        SetMonData(&gEnemyParty[1], MON_DATA_PP3, &pp);
+    }
+    if (move24) {
+        pp = GetMovePP(move24);
+        SetMonData(&gEnemyParty[1], MON_DATA_MOVE4, &move24);
+        SetMonData(&gEnemyParty[1], MON_DATA_PP4, &pp);
+    }
 }
 
 void CreateScriptedWildMon(u16 species, u8 level, u16 item)

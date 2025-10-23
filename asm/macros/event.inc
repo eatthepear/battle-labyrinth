@@ -2819,7 +2819,7 @@
 	.endm
 
 	@ See setwildbattle
-	.macro setwildbattle_pbl species:req, level:req, item=ITEM_NONE, nature=0, iv=32, abilitynum=0, move1=MOVE_NONE, move2=MOVE_NONE, move3=MOVE_NONE, move4=MOVE_NONE, species2=SPECIES_NONE, level2=0, item2=ITEM_NONE, nature2=0, iv2=32, abilitynum2=0, move21=MOVE_NONE, move22=MOVE_NONE, move23=MOVE_NONE, move24=MOVE_NONE
+	.macro setwildbattle_pbl species:req, level:req, item=ITEM_NONE, nature=NUM_NATURES, iv=32, abilitynum=3, move1=MOVE_NONE, move2=MOVE_NONE, move3=MOVE_NONE, move4=MOVE_NONE, species2=SPECIES_NONE, level2=0, item2=ITEM_NONE, nature2=0, iv2=32, abilitynum2=0, move21=MOVE_NONE, move22=MOVE_NONE, move23=MOVE_NONE, move24=MOVE_NONE
 	.byte SCR_OP_SETWILDBATTLE_PBL
 	.2byte \species
 	.byte \level
