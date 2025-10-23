@@ -694,16 +694,16 @@ script EventScript_Notebook_ZoneInfo {
 	}
 	switch (var(VAR_ZONE)) {
 		case 1:
-			msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY} the Leviathan uses a trio of Elemental Monkeys, with his lead being weak against your starter, and his ace being strong against your starter."))
+			msgbox(format("The Leviathan uses a trio of Elemental Monkeys, with their lead being weak against your starter, and their ace being strong against your starter."))
 		case 2:
-			msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY} the Leviathan trains a Bunnelby, Smoliv, and ace Skwovet that use Oran Berries exceptionally well with their abilties."))
+			msgbox(format("The Leviathan trains a Bunnelby, Smoliv, and ace Skwovet that use Oran Berries."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, he also has a Gulpin with Sticky Hold that uses Stuff Cheeks to set up its Belch."))
+				msgbox(format("On Brutal difficulty, they also have a Gulpin with Sticky Hold that uses Stuff Cheeks to set up its Belch."))
 			}
 		case 3:
-			msgbox(format("{COLOR BLUE}Phillipa{COLOR DARK_GRAY} the Leviathan ramps up the damage over time. Her Bidoof, Sandshrew, and ace Marill all use Defense Curl and Rollout."))
+			msgbox(format("The Leviathan ramps up the damage over time. Their Bidoof, Sandshrew, and ace Marill all use Defense Curl and Rollout."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, she also has a Spheal that uses Defense Curl and Ice Ball."))
+				msgbox(format("On Brutal difficulty, they also have a Spheal that uses Defense Curl and Ice Ball."))
 			}
 		case 4:
 		case 5:
