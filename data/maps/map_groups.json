@@ -661,7 +661,8 @@
     "Zone26A",
     "Zone26B",
     "Zone27A",
-    "Zone28A"
+    "Zone28A",
+    "HiddenGrotto"
   ],
   "gMapGroup_Sanctuary": [
     "ZoneSanctuary",

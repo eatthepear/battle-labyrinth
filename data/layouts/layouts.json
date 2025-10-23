@@ -5310,6 +5310,16 @@
       "secondary_tileset": "gTileset_MossdeepGym",
       "border_filepath": "data/layouts/Zone5B/border.bin",
       "blockdata_filepath": "data/layouts/Zone5B/map.bin"
+    },
+    {
+      "id": "LAYOUT_HIDDEN_GROTTO",
+      "name": "HiddenGrotto_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Grotto",
+      "border_filepath": "data/layouts/HiddenGrotto/border.bin",
+      "blockdata_filepath": "data/layouts/HiddenGrotto/map.bin"
     }
   ]
 }

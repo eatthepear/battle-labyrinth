@@ -1336,3 +1336,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Zone5A/scripts.inc"
 
 	.include "data/maps/Zone5B/scripts.inc"
+
+	.include "data/maps/HiddenGrotto/scripts.inc"
