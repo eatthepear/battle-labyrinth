@@ -573,5 +573,3 @@ gSpecials::
 	def_special RandomItemChest
 	def_special SetMonNature
 	def_special IsPokemonFainted
-	def_special BufferMonAbilities
-	def_special ChangePokemonAbility
