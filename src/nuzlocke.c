@@ -71,6 +71,7 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_BREEZY_MEADOW] = 0x3F,
     [MAPSEC_PEACEFUL_GROVE] = 0x40,
     [MAPSEC_WHISPER_CAVE] = 0x41,
+    [MAPSEC_HIDDEN_GROTTO] = 0x42,
 };
 
 u8 NuzlockeFlagSet(u16 mapsec)
