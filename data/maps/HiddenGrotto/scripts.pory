@@ -1,1 +1,5 @@
-mapscripts HiddenGrotto_MapScripts {}
+mapscripts HiddenGrotto_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		setvar(VAR_OBJ_GFX_ID_0, VAR_GROTTO_SPECIES + OBJ_EVENT_MON)
+	}
+}
