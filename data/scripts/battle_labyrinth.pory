@@ -962,7 +962,7 @@ script EventScript_Notebook_Items {
 			case 6:
 				msgbox(format("Mints cost reduced to ¥80."))
 			case 7:
-				msgbox(format("Heart Scale cost increased to ¥1000."))
+				msgbox(format("Heart Scale cost increased to ¥2500."))
 			case 8:
 				msgbox(format("The Hex Orb Key Item lets you pre-status Pokémon."))
 			case 9:
