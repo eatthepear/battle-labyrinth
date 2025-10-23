@@ -1519,67 +1519,8 @@ static void Cmd_ppreduce(void)
     if (gBattleMons[gBattlerAttacker].volatiles.multipleTurns)
         gHitMarker |= HITMARKER_NO_PPDEDUCT;
 
-    if ((GetCurrentDifficultyLevel() >= DIFFICULTY_HARD))
-    {
-        if (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER)
-        {
-            switch (gMovesInfo[gCurrentMove].effect)
-            {
-            case EFFECT_PROTECT:
-            case EFFECT_SUBSTITUTE:
-                ppToDeduct = 2; // divide PP by 2
-                break;
-            case EFFECT_ATTACK_UP:
-            case EFFECT_NO_RETREAT:
-            case EFFECT_CLANGOROUS_SOUL:
-            case EFFECT_SHIFT_GEAR:
-            case EFFECT_CURSE:
-            case EFFECT_FLOWER_SHIELD:
-            case EFFECT_DEFENSE_UP:
-            case EFFECT_COSMIC_POWER:
-            case EFFECT_AROMATIC_MIST:
-            case EFFECT_CHARGE:
-                ppToDeduct = 5; // divide PP by 5
-                break;
-            case EFFECT_MINIMIZE:
-            case EFFECT_ACUPRESSURE:
-            case EFFECT_ATTACK_ACCURACY_UP:
-            case EFFECT_ATTACK_SPATK_UP:
-            case EFFECT_DEFENSE_UP_3:
-            case EFFECT_STOCKPILE:
-            case EFFECT_BELLY_DRUM:
-                ppToDeduct = 10; // divide PP by 10
-                break;
-            case EFFECT_DEFENSE_UP_2:
-            case EFFECT_SPECIAL_DEFENSE_UP_2:
-                ppToDeduct = 15; // divide PP by 10
-                break;
-            case EFFECT_SHELL_SMASH:
-            case EFFECT_EVASION_UP:
-            case EFFECT_BULK_UP:
-            case EFFECT_CALM_MIND:
-            case EFFECT_SPEED_UP_2:
-            case EFFECT_GROWTH:
-            case EFFECT_AUTOTOMIZE:
-            case EFFECT_COIL:
-                ppToDeduct = 20; // divide PP by 20
-                break;
-            case EFFECT_DRAGON_DANCE:
-            case EFFECT_QUIVER_DANCE:
-            case EFFECT_ATTACK_UP_2:
-            case EFFECT_SPECIAL_ATTACK_UP_2:
-            case EFFECT_SPECIAL_ATTACK_UP_3:
-                ppToDeduct = 25; // divide PP by 25
-                break;
-            default:
-                break;
-            }
-        }
-        else
-        {
-            ppToDeduct = 0;
-        }
-    }
+    if ((GetCurrentDifficultyLevel() >= DIFFICULTY_BRUTAL) && (GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT))
+        ppToDeduct = 0;
 
     if (moveTarget == MOVE_TARGET_BOTH
         || moveTarget == MOVE_TARGET_FOES_AND_ALLY

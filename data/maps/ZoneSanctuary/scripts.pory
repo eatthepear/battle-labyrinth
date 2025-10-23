@@ -193,7 +193,7 @@ script EventScript_Difficulty_Info {
 			case 2:
 				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: {COLOR RED}Hard{COLOR DARK_GRAY} is suited for players looking for a serious challenge.\pYou can't use in-battle items during non-wild battles, you must play on SET mode, and your Pokémon can't gain EVs."))
 			case 3:
-				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: {COLOR RED}Brutal{COLOR DARK_GRAY} is suited for players experienced in challenging ROM hacks.\pAll changes from {COLOR RED}Hard{COLOR DARK_GRAY} are carried over, and {COLOR RED}Leviathan{COLOR DARK_GRAY} and other boss battles are more difficult.\pIn addition, the amount of money from trainers is halved, and the Pokémon, NPCs, and services you have access to are more limited."))
+				msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: {COLOR RED}Brutal{COLOR DARK_GRAY} is suited for players experienced in challenging ROM hacks.\pAll changes from {COLOR RED}Hard{COLOR DARK_GRAY} are carried over, and {COLOR RED}Leviathan{COLOR DARK_GRAY} and other boss battles are more difficult.\pIn addition, the amount of money from trainers is halved, and the Pokémon, NPCs, and services you have access to are more limited.\pFinally, setup moves and other moves are more limited in distribution, and the AI cannot be PP stalled normally."))
 			case 4:
 			case MULTI_B_PRESSED:
 				return
