@@ -6,6 +6,7 @@
 #include "cable_club.h"
 #include "data.h"
 #include "decoration.h"
+#include "difficulty.h"
 #include "diploma.h"
 #include "event_data.h"
 #include "event_object_movement.h"
@@ -4672,4 +4673,22 @@ void SetHiddenNature(void)
     u32 hiddenNature = gSpecialVar_Result;
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HIDDEN_NATURE, &hiddenNature);
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+static const u16 sGrottoEncounters[][4] =
+{
+    { SPECIES_MIENFOO, SPECIES_SLOWPOKE, SPECIES_TANGELA, SPECIES_KLAWF },
+};
+
+// Returns the SPECIES_ VAR_GROTTO_SPECIES should be set to, based on VAR_GROTTO_NUMBER and the saveblock seed.
+u16 GetHiddenGrottoSpecies(void)
+{
+    u32 grottoId = VarGet(VAR_GROTTO_NUMBER);
+    rng_value_t rng = LocalRandomSeed(gSaveBlock1Ptr->wildEncounterSeed + grottoId);
+    if (GetCurrentDifficultyLevel() >= DIFFICULTY_BRUTAL) {
+        if (LocalRandom32(&rng) % 3) {
+            return SPECIES_NONE;
+        }
+    }
+    return sGrottoEncounters[grottoId][LocalRandom32(&rng) % 4];
 }

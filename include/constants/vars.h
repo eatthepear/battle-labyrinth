@@ -61,7 +61,8 @@
 #define VAR_DIFFICULTY                       0x402B
 #define VAR_FARM_STOCK                       0x402C
 #define VAR_REVISITING_ZONE                  0x402D
-#define VAR_GROTTO_SPECIES                   0x402E
+#define VAR_GROTTO_NUMBER                    0x402E
+#define VAR_GROTTO_SPECIES                   0x402F
 
 // Tracker Vars (Don't manually set)
 #define VAR_REPEL_STEP_COUNT                 0x4040

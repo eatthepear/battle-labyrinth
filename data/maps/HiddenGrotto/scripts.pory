@@ -1,6 +1,11 @@
 mapscripts HiddenGrotto_MapScripts {
 	MAP_SCRIPT_ON_RESUME {
-        copyvar(VAR_OBJ_GFX_ID_0, VAR_GROTTO_SPECIES)
-        addvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_MON)
+	    specialvar(VAR_GROTTO_SPECIES, GetHiddenGrottoSpecies)
+        if (var(VAR_GROTTO_SPECIES)) {
+            copyvar(VAR_OBJ_GFX_ID_0, VAR_GROTTO_SPECIES)
+            addvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_MON)
+        } else {
+            setflag(FLAG_TEMP_2)
+        }
 	}
 }
