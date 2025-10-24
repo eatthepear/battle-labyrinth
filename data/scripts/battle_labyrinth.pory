@@ -986,7 +986,7 @@ script EventScript_Notebook_Other {
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
-				msgbox(format("Wild species are determined based on your save file.\pWhen you start a new game, for each area, 6 land species and 3 other species are randomly chosen from a pool of 12 and 5 respectively.\pEach species has an equal likelihood of being encountered."))
+				msgbox(format("Wild species are determined based on your save file.\pWhen you start a new game, for each area, 6 land species and 3 other species are randomly chosen from pools.\pEach species has an equal likelihood of being encountered."))
 			case 1:
 				msgbox(format("Many trainers have a pool of possible Pokémon they can have, and may vary their lead Pokémon."))
 			case 2:
@@ -994,7 +994,7 @@ script EventScript_Notebook_Other {
 			case 3:
 				msgbox(format("Honey Trees can be slathered with Honey, instantly triggering a wild Pokémon battle."))
 			case 4:
-				msgbox(format("Hidden Grottoes contain one specific Pokémon species with its Hidden Ability, chosen out of 3 possible species.\pPokémon respawn upon exiting the Hidden Grotto, though it will always be the same species."))
+				msgbox(format("Hidden Grottoes contain one specific Pokémon species with its Hidden Ability, chosen randomly from a pool.\pPokémon respawn upon exiting the Hidden Grotto, though it will always be the same species."))
 			case 5:
 				msgbox(format("There is no day/night cycle."))
 			case 6:
@@ -2165,10 +2165,11 @@ script EventScript_FoundGrotto {
 	return
 }
 
-script EventScript_Grotto1 {
+// Always contains a Pokemon
+script EventScript_Grotto0 {
 	lock
 	call(EventScript_FoundGrotto)
-	setvar(VAR_GROTTO_NUMBER, 1)
+	setvar(VAR_GROTTO_NUMBER, 0)
 	warp(MAP_HIDDEN_GROTTO, 255, 10, 14)
 	waitstate
 	release
@@ -2193,7 +2194,7 @@ script EventScript_GrottoPokemon {
 script EventScript_LeaveGrotto {
 	lockall
 	switch(var(VAR_GROTTO_NUMBER)) {
-		case 1:
+		case 0:
 			warp(MAP_ZONE3A, 255, 37, 6)
 			waitstate
 	}
