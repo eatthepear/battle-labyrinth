@@ -8,7 +8,7 @@ extern u16 gScrollableMultichoice_ScrollOffset;
 struct ItemChest
 {
     u16 itemId;
-    u8 percentage[51];
+    u8 percentage[11];
 };
 
 u8 GetLeadMonIndex(void);
