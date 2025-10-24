@@ -209,8 +209,8 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 23,
-      "y": 17,
+      "x": 8,
+      "y": 20,
       "elevation": 3,
       "item": "ITEM_PECHA_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE3A_PECHA_BERRY"
