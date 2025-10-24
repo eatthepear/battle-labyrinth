@@ -2161,7 +2161,7 @@ script EventScript_GrottoPokemon {
 	playmoncry(VAR_GROTTO_SPECIES, CRY_MODE_ENCOUNTER)
 	delay(40)
 	waitmoncry
-	setwildbattle_pbl(SPECIES_CHARIZARD, 15, ITEM_NONE, NUM_NATURES, 32, 2)
+	setwildbattle_pbl(VAR_GROTTO_SPECIES, 15, ITEM_NONE, NUM_NATURES, 32, 2)
 	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	dowildbattle
 	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
