@@ -4587,12 +4587,6 @@ u16 GetNumTrainersRemaining(void)
     return count;
 }
 
-u16 GetNumItemsRemaining(void)
-{
-    u16 count = 0;
-    return count;
-}
-
 #define RANDOM_ITEM_CHEST_TABLE_COUNT ARRAY_COUNT(sItemChestTable)
 static const struct ItemChest sItemChestTable[] =
 {
