@@ -1002,651 +1002,651 @@ script EventScript_Notebook_Other {
 }
 
 script Debug_CheatStart_PBL {
-	// music
-	random(5)
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_TRAINER_MUSIC, 0)
-		case 1:
-			setvar(VAR_TRAINER_MUSIC, 1)
-		case 2:
-			setvar(VAR_TRAINER_MUSIC, 2)
-		case 3:
-			setvar(VAR_TRAINER_MUSIC, 3)
-		case 4:
-			setvar(VAR_TRAINER_MUSIC, 4)
-	}
-	random(5)
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_WILD_MUSIC, 0)
-		case 1:
-			setvar(VAR_WILD_MUSIC, 1)
-		case 2:
-			setvar(VAR_WILD_MUSIC, 2)
-		case 3:
-			setvar(VAR_WILD_MUSIC, 3)
-		case 4:
-			setvar(VAR_WILD_MUSIC, 4)
-	}
-	random(5)
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_LEVIATHAN_MUSIC, 0)
-		case 1:
-			setvar(VAR_LEVIATHAN_MUSIC, 1)
-		case 2:
-			setvar(VAR_LEVIATHAN_MUSIC, 2)
-		case 3:
-			setvar(VAR_LEVIATHAN_MUSIC, 3)
-		case 4:
-			setvar(VAR_LEVIATHAN_MUSIC, 4)
-	}
-	additem(ITEM_RARE_CANDY, 900)
-	removemoney(2500)
-	additem(ITEM_POTION, 6)
-	additem(ITEM_PARALYZE_HEAL, 2)
-	additem(ITEM_ANTIDOTE, 2)
-	// zone 0 items
-	additem(ITEM_WAILMER_PAIL)
-	additem(ITEM_EVERSTONE)
-	additem(ITEM_ORAN_BERRY, 2)
-	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_SIGNS)
-	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_SAVES)
-	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_POKEDEX)
-	completesubquest(QUEST_SIGNS, 1)
-	completesubquest(QUEST_SIGNS, 2)
-	completesubquest(QUEST_SIGNS, 3)
-	completesubquest(QUEST_SIGNS, 4)
-	completesubquest(QUEST_SIGNS, 5)
-	completesubquest(QUEST_SIGNS, 6)
-	completesubquest(QUEST_SIGNS, 7)
-	completesubquest(QUEST_SIGNS, 8)
-	completesubquest(QUEST_SIGNS, 9)
-	setflag(FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES)
-	setvar(VAR_ZONE_0_STATE, 2)
-	// zone S1
-	setvar(VAR_TEMP_0, 51) // wild define gWildMonHeaders in src/data/wild_encounters.h
-	msgbox(format("Zone S1 grass?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		setvar(VAR_TEMP_0, 52) // wild define gWildMonHeaders in src/data/wild_encounters.h
-	}
-	setvar(VAR_TEMP_1, 3) // level
-	call(Debug_CheatStart_PBL_GenerateMon)
-	// zone S2
-	setvar(VAR_TEMP_0, 53) // wild define gWildMonHeaders in src/data/wild_encounters.h
-	msgbox(format("Zone S2 grass?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		setflag(FLAG_TEMP_1) // special encounter
-	}
-	setvar(VAR_TEMP_1, 5) // level
-	call(Debug_CheatStart_PBL_GenerateMon)
-	// zone 0
-	setvar(VAR_TEMP_0, 0) // wild define gWildMonHeaders in src/data/wild_encounters.h
-	msgbox(format("Zone 0 grass?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		setflag(FLAG_TEMP_1) // special encounter
-	}
-	setvar(VAR_TEMP_1, 3) // level
-	call(Debug_CheatStart_PBL_GenerateMon)
-	// zone 1
-	message(format("Zone 1 options"))
-	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Tree")
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_TEMP_0, 1) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 1:
-			setvar(VAR_TEMP_0, 1) // wild define gWildMonHeaders in src/data/wild_encounters.h
-			setflag(FLAG_TEMP_1) // special encounter
-		case MULTI_B_PRESSED:
-			closemessage
-			setvar(VAR_ZONE, 1)
-			setvar(VAR_LEVEL_CAP, 7)
-			warp(MAP_ZONE_SANCTUARY, 255, 38, 11)
-			waitstate
-			end
-	}
-	call(Debug_CheatStart_PBL_GenerateMon)
-	// zone 1 gwf
-	message(format("Zone 1 gwf"))
-	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Fire", "Water")
-	switch (var(VAR_RESULT)) {
-		case 0:
-			random(4)
-			switch (var(VAR_RESULT)) {
-				case 0:
-					setvar(VAR_TEMP_0, SPECIES_PANSAGE)
-				case 1:
-					setvar(VAR_TEMP_0, SPECIES_GOSSIFLEUR)
-				case 2:
-					setvar(VAR_TEMP_0, SPECIES_SUNKERN)
-				case 3:
-					setvar(VAR_TEMP_0, SPECIES_CHERUBI)
-			}
-		case 1:
-			random(4)
-			switch (var(VAR_RESULT)) {
-				case 0:
-					setvar(VAR_TEMP_0, SPECIES_PANSEAR)
-				case 1:
-					setvar(VAR_TEMP_0, SPECIES_VULPIX)
-				case 2:
-					setvar(VAR_TEMP_0, SPECIES_SLUGMA)
-				case 3:
-					setvar(VAR_TEMP_0, SPECIES_LITLEO)
-			}
-		case 2:
-			random(4)
-			switch (var(VAR_RESULT)) {
-				case 0:
-					setvar(VAR_TEMP_0, SPECIES_PANPOUR)
-				case 1:
-					setvar(VAR_TEMP_0, SPECIES_BARBOACH)
-				case 2:
-					setvar(VAR_TEMP_0, SPECIES_GOLDEEN)
-				case 3:
-					setvar(VAR_TEMP_0, SPECIES_FINNEON)
-			}
-	}
-	setvar(VAR_TEMP_1, 5) // level
-	call(Debug_CheatStart_PBL_GiveMon)
-	setflag(FLAG_ZONE1A_RECEIVED_FWG)
-	completesubquest(QUEST_PBL, 1)
-	// zone 1 items
-	additem(ITEM_QUICK_CLAW)
-	additem(ITEM_EXP_SHARE)
-	additem(ITEM_INFINITE_REPEL)
-	completesubquest(QUEST_SIGNS, 10)
-	completesubquest(QUEST_SIGNS, 11)
-	completesubquest(QUEST_SIGNS, 12)
-	settrainerflag(TRAINER_PBL_NINA)
-	settrainerflag(TRAINER_PBL_MARIAM)
-	settrainerflag(TRAINER_PBL_OSCAR)
-	setflag(FLAG_BEAT_LEVIATHAN_1)
-	// zone 2
-	message(format("Zone 2 options"))
-	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass A", "Tunnel", "Grass B")
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_TEMP_0, 2) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 1:
-			setvar(VAR_TEMP_0, 4) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 2:
-			setvar(VAR_TEMP_0, 3) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case MULTI_B_PRESSED:
-			closemessage
-			setvar(VAR_ZONE, 2)
-			setvar(VAR_LEVEL_CAP, 9)
-			end
-	}
-	setvar(VAR_TEMP_1, 5) // level
-	call(Debug_CheatStart_PBL_GenerateMon)
-	// zone 2 bug
-	random(10)
-	switch (var(VAR_RESULT)) {
-		case 0:
-		case 1:
-			setvar(VAR_TEMP_0, SPECIES_WURMPLE)
-		case 2:
-			setvar(VAR_TEMP_0, SPECIES_CATERPIE)
-		case 3:
-			setvar(VAR_TEMP_0, SPECIES_WEEDLE)
-		case 4:
-			setvar(VAR_TEMP_0, SPECIES_SCATTERBUG)
-		case 5:
-			setvar(VAR_TEMP_0, SPECIES_SPINARAK)
-		case 6:
-			setvar(VAR_TEMP_0, SPECIES_LEDYBA)
-		case 7:
-			setvar(VAR_TEMP_0, SPECIES_KRICKETOT)
-		case 8:
-			setvar(VAR_TEMP_0, SPECIES_TAROUNTULA)
-		case 9:
-			setvar(VAR_TEMP_0, SPECIES_SEWADDLE)
-	}
-	setvar(VAR_TEMP_1, 6) // level
-	call(Debug_CheatStart_PBL_GiveMon)
-	setflag(FLAG_ZONE2A_NUZLOCKE_BOUGHT_BUG)
-	completesubquest(QUEST_PBL, 2)
-	// zone 2 items
-	additem(ITEM_SILK_SCARF)
-	additem(ITEM_TM_BUG_BITE)
-	additem(ITEM_ORAN_BERRY, 5)
-	additem(ITEM_CHERI_BERRY, 2)
-	additem(ITEM_CHESTO_BERRY, 2)
-	additem(ITEM_RAWST_BERRY, 2)
-	additem(ITEM_ASPEAR_BERRY, 2)
-	additem(ITEM_PECHA_BERRY, 2)
-	setflag(FLAG_SYS_DEXNAV_GET)
-	setflag(FLAG_SYS_DEXNAV_SEARCH)
-	completesubquest(QUEST_SIGNS, 13)
-	completesubquest(QUEST_SIGNS, 14)
-	completesubquest(QUEST_SIGNS, 15)
-	completesubquest(QUEST_SIGNS, 16)
-	completesubquest(QUEST_SIGNS, 17)
-	settrainerflag(TRAINER_PBL_POLLY)
-	settrainerflag(TRAINER_PBL_JEREMIAH)
-	settrainerflag(TRAINER_PBL_JOSH)
-	settrainerflag(TRAINER_PBL_HARPER)
-	// settrainerflag(TRAINER_PBL_ARTHUR)
-	setflag(FLAG_BEAT_LEVIATHAN_2)
-	// zone 3
-	message(format("Zone 3 options"))
-	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_TEMP_0, 5) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 1:
-			setvar(VAR_TEMP_0, 5) // wild define gWildMonHeaders in src/data/wild_encounters.h
-			setflag(FLAG_TEMP_1) // special encounter
-		case MULTI_B_PRESSED:
-			closemessage
-			setvar(VAR_ZONE, 3)
-			setvar(VAR_LEVEL_CAP, 11)
-			end
-	}
-	setvar(VAR_TEMP_1, 7) // level
-	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, 3)
-	// zone 3 items
-	additem(ITEM_GOOD_ROD)
-	completesubquest(QUEST_SIGNS, 18)
-	settrainerflag(TRAINER_PBL_JEMMA)
-	settrainerflag(TRAINER_PBL_PATRICK)
-	settrainerflag(TRAINER_PBL_ANNABELLE)
-	settrainerflag(TRAINER_PBL_BORIS)
-	settrainerflag(TRAINER_PBL_RICHARD)
-	setflag(FLAG_BEAT_LEVIATHAN_3)
-	// zone 4
-	message(format("Zone 4 options"))
-	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "A", "B", "C", "D", "E")
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_TEMP_0, 6) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 1:
-			setvar(VAR_TEMP_0, 7) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 2:
-			setvar(VAR_TEMP_0, 8) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 3:
-			setvar(VAR_TEMP_0, 9) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 4:
-			setvar(VAR_TEMP_0, 10) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case MULTI_B_PRESSED:
-			closemessage
-			setvar(VAR_ZONE, 4)
-			setvar(VAR_LEVEL_CAP, 13)
-			end
-	}
-	setvar(VAR_TEMP_1, 9) // level
-	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, 4)
-	// zone 4 gem
-	random(8)
-	switch(var(VAR_RESULT)) {
-		case 0:
-			additem(ITEM_WATER_GEM)
-		case 1:
-			additem(ITEM_ELECTRIC_GEM)
-		case 2:
-			additem(ITEM_FIRE_GEM)
-		case 3:
-			additem(ITEM_PSYCHIC_GEM)
-		case 4:
-			additem(ITEM_DARK_GEM)
-		case 5:
-			additem(ITEM_GRASS_GEM)
-		case 6:
-			additem(ITEM_ICE_GEM)
-		case 7:
-			additem(ITEM_FAIRY_GEM)
-	}
-	// zone 4 items
-	additem(ITEM_SILVER_POWDER)
-	additem(ITEM_MUSCLE_BAND)
-	additem(ITEM_WISE_GLASSES)
-	additem(ITEM_TWISTED_SPOON)
-	additem(ITEM_POISON_BARB)
-	additem(ITEM_TM_SNARL)
-	setflag(FLAG_SYS_START_MENU_PC_GET)
-	additem(ITEM_BURN_HEAL, 2)
-	additem(ITEM_AWAKENING, 2)
-	completesubquest(QUEST_SIGNS, 19)
-	completesubquest(QUEST_SIGNS, 20)
-	completesubquest(QUEST_SIGNS, 21)
-	completesubquest(QUEST_SIGNS, 22)
-	completesubquest(QUEST_SIGNS, 23)
-	settrainerflag(TRAINER_PBL_HERMAN)
-	settrainerflag(TRAINER_PBL_RALPH)
-	settrainerflag(TRAINER_PBL_CALLIE)
-	settrainerflag(TRAINER_PBL_SANTIAGO)
-	settrainerflag(TRAINER_PBL_CHLOE_AND_KAYA)
-	settrainerflag(TRAINER_PBL_FRED)
-	settrainerflag(TRAINER_PBL_LUCIA)
-	setflag(FLAG_BEAT_LEVIATHAN_4)
-	// zone 5
-	message(format("Zone 5 options"))
-	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Forest", "Grassland")
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_TEMP_0, 11) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 1:
-			setvar(VAR_TEMP_0, 12) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case MULTI_B_PRESSED:
-			closemessage
-			setvar(VAR_ZONE, 5)
-			setvar(VAR_LEVEL_CAP, 13)
-			end
-	}
-	setvar(VAR_TEMP_1, 11) // level
-	call(Debug_CheatStart_PBL_GenerateMon)
-	// zone 5 pika
-	random(10)
-	switch (var(VAR_RESULT)) {
-		case 0:
-		case 1:
-			setvar(VAR_TEMP_0, SPECIES_PACHIRISU)
-		case 2:
-		case 3:
-			setvar(VAR_TEMP_0, SPECIES_DEDENNE)
-		case 4:
-		case 5:
-			setvar(VAR_TEMP_0, SPECIES_MORPEKO)
-		case 6:
-		case 7:
-			setvar(VAR_TEMP_0, SPECIES_EMOLGA)
-		case 8:
-			setvar(VAR_TEMP_0, SPECIES_PLUSLE)
-		case 9:
-			setvar(VAR_TEMP_0, SPECIES_MINUN)
-	}
-	setvar(VAR_TEMP_1, 12) // level
-	call(Debug_CheatStart_PBL_GiveMon)
-	setflag(FLAG_ZONE5B_Old_NUZLOCKE_BOUGHT_PIKACLONE)
-	completesubquest(QUEST_PBL, 5)
-	// zone 5 items
-	additem(ITEM_METRONOME)
-	additem(ITEM_QUICK_BALL)
-	additem(ITEM_MIRACLE_SEED)
-	additem(ITEM_NORMAL_GEM)
-	additem(ITEM_BUG_GEM)
-	additem(ITEM_GRASS_GEM)
-	additem(ITEM_EVIOLITE)
-	additem(ITEM_RED_SHARD, 5)
-	settrainerflag(TRAINER_PBL_ANNE_AND_JUNE)
-	settrainerflag(TRAINER_PBL_NOVA_AND_CORA)
-	settrainerflag(TRAINER_PBL_CLINTON)
-	settrainerflag(TRAINER_PBL_REBECCA)
-	settrainerflag(TRAINER_PBL_RYAN)
-	settrainerflag(TRAINER_PBL_CAITLYN)
-	settrainerflag(TRAINER_PBL_KENNETH)
-	settrainerflag(TRAINER_PBL_KEVIN)
-	setflag(FLAG_BEAT_LEVIATHAN_5)
-	addmoney(1000)
-	// zone 6
-	message(format("Zone 6 options"))
-	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_TEMP_0, 13) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 1:
-			setvar(VAR_TEMP_0, 13) // wild define gWildMonHeaders in src/data/wild_encounters.h
-			setflag(FLAG_TEMP_1) // special encounter
-		case MULTI_B_PRESSED:
-			closemessage
-			setvar(VAR_ZONE, 6)
-			setvar(VAR_LEVEL_CAP, 15)
-			end
-	}
-	setvar(VAR_TEMP_1, 13) // level
-	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, 6)
-	// zone 6 items
-	additem(ITEM_NEST_BALL)
-	additem(ITEM_NET_BALL)
-	additem(ITEM_TM_DRAINING_KISS)
-	additem(ITEM_WATER_GEM)
-	additem(ITEM_FLYING_GEM)
-	additem(ITEM_ICE_GEM)
-	additem(ITEM_SLEDGEHAMMER)
-	additem(ITEM_SUPER_POTION, 2)
-	completesubquest(QUEST_SIGNS, 24)
-	settrainerflag(TRAINER_PBL_GILBERT)
-	settrainerflag(TRAINER_PBL_MELANIE)
-	settrainerflag(TRAINER_PBL_CONSTANCE)
-	settrainerflag(TRAINER_PBL_FRANK)
-	settrainerflag(TRAINER_PBL_DUDLEY)
-	settrainerflag(TRAINER_PBL_DAISY)
-	settrainerflag(TRAINER_PBL_VIC_AND_DELL)
-	settrainerflag(TRAINER_PBL_MINA)
-	setflag(FLAG_BEAT_LEVIATHAN_6)
-	addmoney(1000)
-	// zone 7
-	message(format("Zone 7 options"))
-	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Tree")
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_TEMP_0, 14) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 1:
-			setvar(VAR_TEMP_0, 14) // wild define gWildMonHeaders in src/data/wild_encounters.h
-			setflag(FLAG_TEMP_1) // special encounter
-		case MULTI_B_PRESSED:
-			closemessage
-			setvar(VAR_ZONE, 7)
-			setvar(VAR_LEVEL_CAP, 17)
-			end
-	}
-	setvar(VAR_TEMP_1, 15) // level
-	call(Debug_CheatStart_PBL_GenerateMon)
-	// zone 8
-	message(format("Zone 8 options"))
-	dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "A", "B", "C")
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_TEMP_0, 15) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 1:
-			setvar(VAR_TEMP_0, 16) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 2:
-			setvar(VAR_TEMP_0, 17) // wild define gWildMonHeaders in src/data/wild_encounters.h
-	}
-	setvar(VAR_TEMP_1, 16) // level
-	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, 7)
-	completesubquest(QUEST_PBL, 8)
-	// zone 7 & 8 items
-	additem(ITEM_SHARP_BEAK)
-	additem(ITEM_ROCK_GEM)
-	additem(ITEM_FIGHTING_GEM)
-	additem(ITEM_PSYCHIC_GEM)
-	additem(ITEM_BLACK_BELT)
-	additem(ITEM_SITRUS_BERRY, 5)
-	additem(ITEM_MAGNET)
-	additem(ITEM_HARD_STONE)
-	additem(ITEM_DUSK_BALL)
-	additem(ITEM_FULL_HEAL)
-	additem(ITEM_TM_THIEF)
-	additem(ITEM_TM_ROCK_TOMB)
-	additem(ITEM_PARALYZE_HEAL, 2)
-	additem(ITEM_ANTIDOTE, 2)
-	additem(ITEM_GREAT_BALL)
-	additem(ITEM_POTION, 5)
-	additem(ITEM_SUPER_POTION, 2)
-	additem(ITEM_MACHETE)
-	additem(ITEM_TM_HIDDEN_POWER)
-	completesubquest(QUEST_SIGNS, 25)
-	completesubquest(QUEST_SIGNS, 26)
-	settrainerflag(TRAINER_PBL_MILLIE)
-	settrainerflag(TRAINER_PBL_JAMAL)
-	settrainerflag(TRAINER_PBL_PAIGE)
-	settrainerflag(TRAINER_PBL_SETH)
-	settrainerflag(TRAINER_PBL_CONNIE)
-	settrainerflag(TRAINER_PBL_PETER)
-	settrainerflag(TRAINER_PBL_WHITAKER)
-	settrainerflag(TRAINER_PBL_JIMMY)
-	settrainerflag(TRAINER_PBL_EMILIANO)
-	settrainerflag(TRAINER_PBL_BECKHAM)
-	settrainerflag(TRAINER_PBL_KAREN)
-	settrainerflag(TRAINER_PBL_JAYDEN)
-	settrainerflag(TRAINER_PBL_NEIL)
-	settrainerflag(TRAINER_PBL_TAMARA)
-	setflag(FLAG_BEAT_LEVIATHAN_7)
-	setflag(FLAG_BEAT_LEVIATHAN_8)
-	// zone 9
-	message(format("Zone 9 options"))
-	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_TEMP_0, 18) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 1:
-			setvar(VAR_TEMP_0, 18) // wild define gWildMonHeaders in src/data/wild_encounters.h
-			setflag(FLAG_TEMP_1) // special encounter
-		case MULTI_B_PRESSED:
-			closemessage
-			setvar(VAR_ZONE, 9)
-			setvar(VAR_LEVEL_CAP, 20)
-			end
-	}
-	setvar(VAR_TEMP_1, 18) // level
-	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, 9)
-	// zone 9 items
-	additem(ITEM_BIG_ROOT)
-	additem(ITEM_TM_PLUCK)
-	additem(ITEM_POISON_GEM)
-	additem(ITEM_STEEL_GEM)
-	additem(ITEM_DARK_GEM)
-	additem(ITEM_MYSTIC_WATER)
-	additem(ITEM_CHARCOAL)
-	additem(ITEM_TM_RETALIATE)
-	completesubquest(QUEST_SIGNS, 27)
-	completesubquest(QUEST_SIGNS, 28)
-	settrainerflag(TRAINER_PBL_COOPER)
-	settrainerflag(TRAINER_PBL_CARMINE)
-	settrainerflag(TRAINER_PBL_JONATHAN)
-	settrainerflag(TRAINER_PBL_CALVIN)
-	settrainerflag(TRAINER_PBL_LUIS)
-	settrainerflag(TRAINER_PBL_ARI)
-	settrainerflag(TRAINER_PBL_ARI_CHALLENGE)
-	settrainerflag(TRAINER_PBL_BERTHA)
-	settrainerflag(TRAINER_PBL_BERTHA_CHALLENGE)
-	settrainerflag(TRAINER_PBL_CASSANDRA)
-	settrainerflag(TRAINER_PBL_CASSANDRA_CHALLENGE)
-	settrainerflag(TRAINER_PBL_DOMINIC)
-	settrainerflag(TRAINER_PBL_DOMINIC_CHALLENGE)
-	settrainerflag(TRAINER_PBL_ERICA)
-	settrainerflag(TRAINER_PBL_ERICA_CHALLENGE)
-	// zone 10
-	message(format("Zone 10 options"))
-	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Sand", "Ruin")
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_TEMP_0, 19) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 1:
-			setvar(VAR_TEMP_0, 20) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case MULTI_B_PRESSED:
-			closemessage
-			setvar(VAR_ZONE, 11)
-			setvar(VAR_LEVEL_CAP, 23)
-			end
-	}
-	setvar(VAR_TEMP_1, 19) // level
-	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, 10)
-	// zone 10 items
-	additem(ITEM_TM_SCORCHING_SANDS)
-	additem(ITEM_FIRE_GEM)
-	additem(ITEM_ELECTRIC_GEM)
-	additem(ITEM_GROUND_GEM)
-	additem(ITEM_SOFT_SAND)
-	additem(ITEM_BLACK_GLASSES)
-	additem(ITEM_HEAVY_DUTY_BOOTS)
-	additem(ITEM_SAFETY_GOGGLES)
-	additem(ITEM_TM_BULLDOZE)
-	additem(ITEM_TERA_ORB)
-	additem(ITEM_BLUE_SHARD, 5)
-	additem(ITEM_TM_STEEL_WING)
-	settrainerflag(TRAINER_PBL_ALANA)
-	settrainerflag(TRAINER_PBL_JACOB)
-	settrainerflag(TRAINER_PBL_DEWEY)
-	settrainerflag(TRAINER_PBL_ERNEST)
-	settrainerflag(TRAINER_PBL_KYLE)
-	settrainerflag(TRAINER_PBL_ELIAS)
-	settrainerflag(TRAINER_PBL_PEARLIE)
-	settrainerflag(TRAINER_PBL_SUSAN)
-	settrainerflag(TRAINER_PBL_CONRAD)
-	settrainerflag(TRAINER_PBL_BRETT)
-	setflag(FLAG_BEAT_LEVIATHAN_9)
-	setflag(FLAG_ZONE10B_RECEIVED_TM_STEEL_WING)
-	// zone 11
-	message(format("Zone 11 options"))
-	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass")
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_TEMP_0, 21) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case MULTI_B_PRESSED:
-			closemessage
-			setvar(VAR_ZONE, 11)
-			setvar(VAR_LEVEL_CAP, 23)
-			end
-	}
-	setvar(VAR_TEMP_1, 21) // level
-	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, 11)
-	// zone 11 items
-	additem(ITEM_TM_GRASS_KNOT)
-	additem(ITEM_TM_TAUNT)
-	additem(ITEM_MOON_STONE)
-	additem(ITEM_SPELL_TAG)
-	additem(ITEM_FAIRY_GEM)
-	additem(ITEM_GHOST_GEM)
-	additem(ITEM_DRAGON_GEM)
-	additem(ITEM_FAIRY_FEATHER)
-	additem(ITEM_TM_STEEL_WING)
-	settrainerflag(TRAINER_PBL_JEANETTE)
-	settrainerflag(TRAINER_PBL_EMMA_AND_LEO)
-	settrainerflag(TRAINER_PBL_JOEL)
-	settrainerflag(TRAINER_PBL_MARION)
-	settrainerflag(TRAINER_PBL_REGINA)
-	setflag(FLAG_BEAT_LEVIATHAN_10)
-	// zone 12
-	message(format("Zone 12 options"))
-	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
-	switch (var(VAR_RESULT)) {
-		case 0:
-			setvar(VAR_TEMP_0, 22) // wild define gWildMonHeaders in src/data/wild_encounters.h
-		case 1:
-			setvar(VAR_TEMP_0, 22) // wild define gWildMonHeaders in src/data/wild_encounters.h
-			setflag(FLAG_TEMP_1) // special encounter
-		case MULTI_B_PRESSED:
-			closemessage
-			setvar(VAR_ZONE, 12)
-			setvar(VAR_LEVEL_CAP, 24)
-			end
-	}
-	setvar(VAR_TEMP_1, 21) // level
-	call(Debug_CheatStart_PBL_GenerateMon)
-	completesubquest(QUEST_PBL, 12)
-	// zone 12 items
-	additem(ITEM_TM_BRICK_BREAK)
-	additem(ITEM_THUNDER_STONE)
-	additem(ITEM_FIRE_STONE)
-	additem(ITEM_WATER_STONE)
-	additem(ITEM_LEAF_STONE)
-	settrainerflag(TRAINER_PBL_ESSENCE)
-	settrainerflag(TRAINER_PBL_DOLORES)
-	settrainerflag(TRAINER_PBL_GENIE)
-	settrainerflag(TRAINER_PBL_ABIGAIL)
-	settrainerflag(TRAINER_PBL_FEDERICO)
-	settrainerflag(TRAINER_PBL_ROMULUS)
-	settrainerflag(TRAINER_PBL_JULIE)
-	settrainerflag(TRAINER_PBL_HILDA)
-	settrainerflag(TRAINER_PBL_TREVOR)
-	settrainerflag(TRAINER_PBL_RUFUS)
-	settrainerflag(TRAINER_PBL_KINLEY)
-	settrainerflag(TRAINER_PBL_REID)
-	setflag(FLAG_BEAT_LEVIATHAN_11)
-	// end
-	setvar(VAR_ZONE, 13)
-	setvar(VAR_LEVEL_CAP, 26)
+// 	// music
+// 	random(5)
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			setvar(VAR_TRAINER_MUSIC, 0)
+// 		case 1:
+// 			setvar(VAR_TRAINER_MUSIC, 1)
+// 		case 2:
+// 			setvar(VAR_TRAINER_MUSIC, 2)
+// 		case 3:
+// 			setvar(VAR_TRAINER_MUSIC, 3)
+// 		case 4:
+// 			setvar(VAR_TRAINER_MUSIC, 4)
+// 	}
+// 	random(5)
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			setvar(VAR_WILD_MUSIC, 0)
+// 		case 1:
+// 			setvar(VAR_WILD_MUSIC, 1)
+// 		case 2:
+// 			setvar(VAR_WILD_MUSIC, 2)
+// 		case 3:
+// 			setvar(VAR_WILD_MUSIC, 3)
+// 		case 4:
+// 			setvar(VAR_WILD_MUSIC, 4)
+// 	}
+// 	random(5)
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			setvar(VAR_LEVIATHAN_MUSIC, 0)
+// 		case 1:
+// 			setvar(VAR_LEVIATHAN_MUSIC, 1)
+// 		case 2:
+// 			setvar(VAR_LEVIATHAN_MUSIC, 2)
+// 		case 3:
+// 			setvar(VAR_LEVIATHAN_MUSIC, 3)
+// 		case 4:
+// 			setvar(VAR_LEVIATHAN_MUSIC, 4)
+// 	}
+// 	additem(ITEM_RARE_CANDY, 900)
+// 	removemoney(2500)
+// 	additem(ITEM_POTION, 6)
+// 	additem(ITEM_PARALYZE_HEAL, 2)
+// 	additem(ITEM_ANTIDOTE, 2)
+// 	// zone 0 items
+// 	additem(ITEM_WAILMER_PAIL)
+// 	additem(ITEM_EVERSTONE)
+// 	additem(ITEM_ORAN_BERRY, 2)
+// 	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_SIGNS)
+// 	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_SAVES)
+// 	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_POKEDEX)
+// 	completesubquest(QUEST_SIGNS, 1)
+// 	completesubquest(QUEST_SIGNS, 2)
+// 	completesubquest(QUEST_SIGNS, 3)
+// 	completesubquest(QUEST_SIGNS, 4)
+// 	completesubquest(QUEST_SIGNS, 5)
+// 	completesubquest(QUEST_SIGNS, 6)
+// 	completesubquest(QUEST_SIGNS, 7)
+// 	completesubquest(QUEST_SIGNS, 8)
+// 	completesubquest(QUEST_SIGNS, 9)
+// 	setflag(FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES)
+// 	setvar(VAR_ZONE_0_STATE, 2)
+// 	// zone S1
+// 	setvar(VAR_TEMP_0, 51) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 	msgbox(format("Zone S1 grass?"), MSGBOX_YESNO)
+// 	if (var(VAR_RESULT) == NO) {
+// 		setvar(VAR_TEMP_0, 52) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 	}
+// 	setvar(VAR_TEMP_1, 3) // level
+// 	call(Debug_CheatStart_PBL_GenerateMon)
+// 	// zone S2
+// 	setvar(VAR_TEMP_0, 53) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 	msgbox(format("Zone S2 grass?"), MSGBOX_YESNO)
+// 	if (var(VAR_RESULT) == NO) {
+// 		setflag(FLAG_TEMP_1) // special encounter
+// 	}
+// 	setvar(VAR_TEMP_1, 5) // level
+// 	call(Debug_CheatStart_PBL_GenerateMon)
+// 	// zone 0
+// 	setvar(VAR_TEMP_0, 0) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 	msgbox(format("Zone 0 grass?"), MSGBOX_YESNO)
+// 	if (var(VAR_RESULT) == NO) {
+// 		setflag(FLAG_TEMP_1) // special encounter
+// 	}
+// 	setvar(VAR_TEMP_1, 3) // level
+// 	call(Debug_CheatStart_PBL_GenerateMon)
+// 	// zone 1
+// 	message(format("Zone 1 options"))
+// 	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Tree")
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			setvar(VAR_TEMP_0, 1) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 1:
+// 			setvar(VAR_TEMP_0, 1) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 			setflag(FLAG_TEMP_1) // special encounter
+// 		case MULTI_B_PRESSED:
+// 			closemessage
+// 			setvar(VAR_ZONE, 1)
+// 			setvar(VAR_LEVEL_CAP, 7)
+// 			warp(MAP_ZONE_SANCTUARY, 255, 38, 11)
+// 			waitstate
+// 			end
+// 	}
+// 	call(Debug_CheatStart_PBL_GenerateMon)
+// 	// zone 1 gwf
+// 	message(format("Zone 1 gwf"))
+// 	dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Fire", "Water")
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			random(4)
+// 			switch (var(VAR_RESULT)) {
+// 				case 0:
+// 					setvar(VAR_TEMP_0, SPECIES_PANSAGE)
+// 				case 1:
+// 					setvar(VAR_TEMP_0, SPECIES_GOSSIFLEUR)
+// 				case 2:
+// 					setvar(VAR_TEMP_0, SPECIES_SUNKERN)
+// 				case 3:
+// 					setvar(VAR_TEMP_0, SPECIES_CHERUBI)
+// 			}
+// 		case 1:
+// 			random(4)
+// 			switch (var(VAR_RESULT)) {
+// 				case 0:
+// 					setvar(VAR_TEMP_0, SPECIES_PANSEAR)
+// 				case 1:
+// 					setvar(VAR_TEMP_0, SPECIES_VULPIX)
+// 				case 2:
+// 					setvar(VAR_TEMP_0, SPECIES_SLUGMA)
+// 				case 3:
+// 					setvar(VAR_TEMP_0, SPECIES_LITLEO)
+// 			}
+// 		case 2:
+// 			random(4)
+// 			switch (var(VAR_RESULT)) {
+// 				case 0:
+// 					setvar(VAR_TEMP_0, SPECIES_PANPOUR)
+// 				case 1:
+// 					setvar(VAR_TEMP_0, SPECIES_BARBOACH)
+// 				case 2:
+// 					setvar(VAR_TEMP_0, SPECIES_GOLDEEN)
+// 				case 3:
+// 					setvar(VAR_TEMP_0, SPECIES_FINNEON)
+// 			}
+// 	}
+// 	setvar(VAR_TEMP_1, 5) // level
+// 	call(Debug_CheatStart_PBL_GiveMon)
+// 	setflag(FLAG_ZONE1A_RECEIVED_FWG)
+// 	completesubquest(QUEST_PBL, 1)
+// 	// zone 1 items
+// 	additem(ITEM_QUICK_CLAW)
+// 	additem(ITEM_EXP_SHARE)
+// 	additem(ITEM_INFINITE_REPEL)
+// 	completesubquest(QUEST_SIGNS, 10)
+// 	completesubquest(QUEST_SIGNS, 11)
+// 	completesubquest(QUEST_SIGNS, 12)
+// 	settrainerflag(TRAINER_PBL_NINA)
+// 	settrainerflag(TRAINER_PBL_MARIAM)
+// 	settrainerflag(TRAINER_PBL_OSCAR)
+// 	setflag(FLAG_BEAT_LEVIATHAN_1)
+// 	// zone 2
+// 	message(format("Zone 2 options"))
+// 	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass A", "Tunnel", "Grass B")
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			setvar(VAR_TEMP_0, 2) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 1:
+// 			setvar(VAR_TEMP_0, 4) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 2:
+// 			setvar(VAR_TEMP_0, 3) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case MULTI_B_PRESSED:
+// 			closemessage
+// 			setvar(VAR_ZONE, 2)
+// 			setvar(VAR_LEVEL_CAP, 9)
+// 			end
+// 	}
+// 	setvar(VAR_TEMP_1, 5) // level
+// 	call(Debug_CheatStart_PBL_GenerateMon)
+// 	// zone 2 bug
+// 	random(10)
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 		case 1:
+// 			setvar(VAR_TEMP_0, SPECIES_WURMPLE)
+// 		case 2:
+// 			setvar(VAR_TEMP_0, SPECIES_CATERPIE)
+// 		case 3:
+// 			setvar(VAR_TEMP_0, SPECIES_WEEDLE)
+// 		case 4:
+// 			setvar(VAR_TEMP_0, SPECIES_SCATTERBUG)
+// 		case 5:
+// 			setvar(VAR_TEMP_0, SPECIES_SPINARAK)
+// 		case 6:
+// 			setvar(VAR_TEMP_0, SPECIES_LEDYBA)
+// 		case 7:
+// 			setvar(VAR_TEMP_0, SPECIES_KRICKETOT)
+// 		case 8:
+// 			setvar(VAR_TEMP_0, SPECIES_TAROUNTULA)
+// 		case 9:
+// 			setvar(VAR_TEMP_0, SPECIES_SEWADDLE)
+// 	}
+// 	setvar(VAR_TEMP_1, 6) // level
+// 	call(Debug_CheatStart_PBL_GiveMon)
+// 	setflag(FLAG_ZONE2A_NUZLOCKE_BOUGHT_BUG)
+// 	completesubquest(QUEST_PBL, 2)
+// 	// zone 2 items
+// 	additem(ITEM_SILK_SCARF)
+// 	additem(ITEM_TM_BUG_BITE)
+// 	additem(ITEM_ORAN_BERRY, 5)
+// 	additem(ITEM_CHERI_BERRY, 2)
+// 	additem(ITEM_CHESTO_BERRY, 2)
+// 	additem(ITEM_RAWST_BERRY, 2)
+// 	additem(ITEM_ASPEAR_BERRY, 2)
+// 	additem(ITEM_PECHA_BERRY, 2)
+// 	setflag(FLAG_SYS_DEXNAV_GET)
+// 	setflag(FLAG_SYS_DEXNAV_SEARCH)
+// 	completesubquest(QUEST_SIGNS, 13)
+// 	completesubquest(QUEST_SIGNS, 14)
+// 	completesubquest(QUEST_SIGNS, 15)
+// 	completesubquest(QUEST_SIGNS, 16)
+// 	completesubquest(QUEST_SIGNS, 17)
+// 	settrainerflag(TRAINER_PBL_POLLY)
+// 	settrainerflag(TRAINER_PBL_JEREMIAH)
+// 	settrainerflag(TRAINER_PBL_JOSH)
+// 	settrainerflag(TRAINER_PBL_HARPER)
+// 	// settrainerflag(TRAINER_PBL_ARTHUR)
+// 	setflag(FLAG_BEAT_LEVIATHAN_2)
+// 	// zone 3
+// 	message(format("Zone 3 options"))
+// 	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			setvar(VAR_TEMP_0, 5) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 1:
+// 			setvar(VAR_TEMP_0, 5) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 			setflag(FLAG_TEMP_1) // special encounter
+// 		case MULTI_B_PRESSED:
+// 			closemessage
+// 			setvar(VAR_ZONE, 3)
+// 			setvar(VAR_LEVEL_CAP, 11)
+// 			end
+// 	}
+// 	setvar(VAR_TEMP_1, 7) // level
+// 	call(Debug_CheatStart_PBL_GenerateMon)
+// 	completesubquest(QUEST_PBL, 3)
+// 	// zone 3 items
+// 	additem(ITEM_GOOD_ROD)
+// 	completesubquest(QUEST_SIGNS, 18)
+// 	settrainerflag(TRAINER_PBL_JEMMA)
+// 	settrainerflag(TRAINER_PBL_PATRICK)
+// 	settrainerflag(TRAINER_PBL_ANNABELLE)
+// 	settrainerflag(TRAINER_PBL_BORIS)
+// 	settrainerflag(TRAINER_PBL_RICHARD)
+// 	setflag(FLAG_BEAT_LEVIATHAN_3)
+// 	// zone 4
+// 	message(format("Zone 4 options"))
+// 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "A", "B", "C", "D", "E")
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			setvar(VAR_TEMP_0, 6) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 1:
+// 			setvar(VAR_TEMP_0, 7) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 2:
+// 			setvar(VAR_TEMP_0, 8) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 3:
+// 			setvar(VAR_TEMP_0, 9) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 4:
+// 			setvar(VAR_TEMP_0, 10) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case MULTI_B_PRESSED:
+// 			closemessage
+// 			setvar(VAR_ZONE, 4)
+// 			setvar(VAR_LEVEL_CAP, 13)
+// 			end
+// 	}
+// 	setvar(VAR_TEMP_1, 9) // level
+// 	call(Debug_CheatStart_PBL_GenerateMon)
+// 	completesubquest(QUEST_PBL, 4)
+// 	// zone 4 gem
+// 	random(8)
+// 	switch(var(VAR_RESULT)) {
+// 		case 0:
+// 			additem(ITEM_WATER_GEM)
+// 		case 1:
+// 			additem(ITEM_ELECTRIC_GEM)
+// 		case 2:
+// 			additem(ITEM_FIRE_GEM)
+// 		case 3:
+// 			additem(ITEM_PSYCHIC_GEM)
+// 		case 4:
+// 			additem(ITEM_DARK_GEM)
+// 		case 5:
+// 			additem(ITEM_GRASS_GEM)
+// 		case 6:
+// 			additem(ITEM_ICE_GEM)
+// 		case 7:
+// 			additem(ITEM_FAIRY_GEM)
+// 	}
+// 	// zone 4 items
+// 	additem(ITEM_SILVER_POWDER)
+// 	additem(ITEM_MUSCLE_BAND)
+// 	additem(ITEM_WISE_GLASSES)
+// 	additem(ITEM_TWISTED_SPOON)
+// 	additem(ITEM_POISON_BARB)
+// 	additem(ITEM_TM_SNARL)
+// 	setflag(FLAG_SYS_START_MENU_PC_GET)
+// 	additem(ITEM_BURN_HEAL, 2)
+// 	additem(ITEM_AWAKENING, 2)
+// 	completesubquest(QUEST_SIGNS, 19)
+// 	completesubquest(QUEST_SIGNS, 20)
+// 	completesubquest(QUEST_SIGNS, 21)
+// 	completesubquest(QUEST_SIGNS, 22)
+// 	completesubquest(QUEST_SIGNS, 23)
+// 	settrainerflag(TRAINER_PBL_HERMAN)
+// 	settrainerflag(TRAINER_PBL_RALPH)
+// 	settrainerflag(TRAINER_PBL_CALLIE)
+// 	settrainerflag(TRAINER_PBL_SANTIAGO)
+// 	settrainerflag(TRAINER_PBL_CHLOE_AND_KAYA)
+// 	settrainerflag(TRAINER_PBL_FRED)
+// 	settrainerflag(TRAINER_PBL_LUCIA)
+// 	setflag(FLAG_BEAT_LEVIATHAN_4)
+// 	// zone 5
+// 	message(format("Zone 5 options"))
+// 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Forest", "Grassland")
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			setvar(VAR_TEMP_0, 11) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 1:
+// 			setvar(VAR_TEMP_0, 12) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case MULTI_B_PRESSED:
+// 			closemessage
+// 			setvar(VAR_ZONE, 5)
+// 			setvar(VAR_LEVEL_CAP, 13)
+// 			end
+// 	}
+// 	setvar(VAR_TEMP_1, 11) // level
+// 	call(Debug_CheatStart_PBL_GenerateMon)
+// 	// zone 5 pika
+// 	random(10)
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 		case 1:
+// 			setvar(VAR_TEMP_0, SPECIES_PACHIRISU)
+// 		case 2:
+// 		case 3:
+// 			setvar(VAR_TEMP_0, SPECIES_DEDENNE)
+// 		case 4:
+// 		case 5:
+// 			setvar(VAR_TEMP_0, SPECIES_MORPEKO)
+// 		case 6:
+// 		case 7:
+// 			setvar(VAR_TEMP_0, SPECIES_EMOLGA)
+// 		case 8:
+// 			setvar(VAR_TEMP_0, SPECIES_PLUSLE)
+// 		case 9:
+// 			setvar(VAR_TEMP_0, SPECIES_MINUN)
+// 	}
+// 	setvar(VAR_TEMP_1, 12) // level
+// 	call(Debug_CheatStart_PBL_GiveMon)
+// 	setflag(FLAG_ZONE5B_Old_NUZLOCKE_BOUGHT_PIKACLONE)
+// 	completesubquest(QUEST_PBL, 5)
+// 	// zone 5 items
+// 	additem(ITEM_METRONOME)
+// 	additem(ITEM_QUICK_BALL)
+// 	additem(ITEM_MIRACLE_SEED)
+// 	additem(ITEM_NORMAL_GEM)
+// 	additem(ITEM_BUG_GEM)
+// 	additem(ITEM_GRASS_GEM)
+// 	additem(ITEM_EVIOLITE)
+// 	additem(ITEM_RED_SHARD, 5)
+// 	settrainerflag(TRAINER_PBL_ANNE_AND_JUNE)
+// 	settrainerflag(TRAINER_PBL_NOVA_AND_CORA)
+// 	settrainerflag(TRAINER_PBL_CLINTON)
+// 	settrainerflag(TRAINER_PBL_REBECCA)
+// 	settrainerflag(TRAINER_PBL_RYAN)
+// 	settrainerflag(TRAINER_PBL_CAITLYN)
+// 	settrainerflag(TRAINER_PBL_KENNETH)
+// 	settrainerflag(TRAINER_PBL_KEVIN)
+// 	setflag(FLAG_BEAT_LEVIATHAN_5)
+// 	addmoney(1000)
+// 	// zone 6
+// 	message(format("Zone 6 options"))
+// 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			setvar(VAR_TEMP_0, 13) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 1:
+// 			setvar(VAR_TEMP_0, 13) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 			setflag(FLAG_TEMP_1) // special encounter
+// 		case MULTI_B_PRESSED:
+// 			closemessage
+// 			setvar(VAR_ZONE, 6)
+// 			setvar(VAR_LEVEL_CAP, 15)
+// 			end
+// 	}
+// 	setvar(VAR_TEMP_1, 13) // level
+// 	call(Debug_CheatStart_PBL_GenerateMon)
+// 	completesubquest(QUEST_PBL, 6)
+// 	// zone 6 items
+// 	additem(ITEM_NEST_BALL)
+// 	additem(ITEM_NET_BALL)
+// 	additem(ITEM_TM_DRAINING_KISS)
+// 	additem(ITEM_WATER_GEM)
+// 	additem(ITEM_FLYING_GEM)
+// 	additem(ITEM_ICE_GEM)
+// 	additem(ITEM_SLEDGEHAMMER)
+// 	additem(ITEM_SUPER_POTION, 2)
+// 	completesubquest(QUEST_SIGNS, 24)
+// 	settrainerflag(TRAINER_PBL_GILBERT)
+// 	settrainerflag(TRAINER_PBL_MELANIE)
+// 	settrainerflag(TRAINER_PBL_CONSTANCE)
+// 	settrainerflag(TRAINER_PBL_FRANK)
+// 	settrainerflag(TRAINER_PBL_DUDLEY)
+// 	settrainerflag(TRAINER_PBL_DAISY)
+// 	settrainerflag(TRAINER_PBL_VIC_AND_DELL)
+// 	settrainerflag(TRAINER_PBL_MINA)
+// 	setflag(FLAG_BEAT_LEVIATHAN_6)
+// 	addmoney(1000)
+// 	// zone 7
+// 	message(format("Zone 7 options"))
+// 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Tree")
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			setvar(VAR_TEMP_0, 14) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 1:
+// 			setvar(VAR_TEMP_0, 14) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 			setflag(FLAG_TEMP_1) // special encounter
+// 		case MULTI_B_PRESSED:
+// 			closemessage
+// 			setvar(VAR_ZONE, 7)
+// 			setvar(VAR_LEVEL_CAP, 17)
+// 			end
+// 	}
+// 	setvar(VAR_TEMP_1, 15) // level
+// 	call(Debug_CheatStart_PBL_GenerateMon)
+// 	// zone 8
+// 	message(format("Zone 8 options"))
+// 	dynmultichoice(0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "A", "B", "C")
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			setvar(VAR_TEMP_0, 15) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 1:
+// 			setvar(VAR_TEMP_0, 16) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 2:
+// 			setvar(VAR_TEMP_0, 17) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 	}
+// 	setvar(VAR_TEMP_1, 16) // level
+// 	call(Debug_CheatStart_PBL_GenerateMon)
+// 	completesubquest(QUEST_PBL, 7)
+// 	completesubquest(QUEST_PBL, 8)
+// 	// zone 7 & 8 items
+// 	additem(ITEM_SHARP_BEAK)
+// 	additem(ITEM_ROCK_GEM)
+// 	additem(ITEM_FIGHTING_GEM)
+// 	additem(ITEM_PSYCHIC_GEM)
+// 	additem(ITEM_BLACK_BELT)
+// 	additem(ITEM_SITRUS_BERRY, 5)
+// 	additem(ITEM_MAGNET)
+// 	additem(ITEM_HARD_STONE)
+// 	additem(ITEM_DUSK_BALL)
+// 	additem(ITEM_FULL_HEAL)
+// 	additem(ITEM_TM_THIEF)
+// 	additem(ITEM_TM_ROCK_TOMB)
+// 	additem(ITEM_PARALYZE_HEAL, 2)
+// 	additem(ITEM_ANTIDOTE, 2)
+// 	additem(ITEM_GREAT_BALL)
+// 	additem(ITEM_POTION, 5)
+// 	additem(ITEM_SUPER_POTION, 2)
+// 	additem(ITEM_MACHETE)
+// 	additem(ITEM_TM_HIDDEN_POWER)
+// 	completesubquest(QUEST_SIGNS, 25)
+// 	completesubquest(QUEST_SIGNS, 26)
+// 	settrainerflag(TRAINER_PBL_MILLIE)
+// 	settrainerflag(TRAINER_PBL_JAMAL)
+// 	settrainerflag(TRAINER_PBL_PAIGE)
+// 	settrainerflag(TRAINER_PBL_SETH)
+// 	settrainerflag(TRAINER_PBL_CONNIE)
+// 	settrainerflag(TRAINER_PBL_PETER)
+// 	settrainerflag(TRAINER_PBL_WHITAKER)
+// 	settrainerflag(TRAINER_PBL_JIMMY)
+// 	settrainerflag(TRAINER_PBL_EMILIANO)
+// 	settrainerflag(TRAINER_PBL_BECKHAM)
+// 	settrainerflag(TRAINER_PBL_KAREN)
+// 	settrainerflag(TRAINER_PBL_JAYDEN)
+// 	settrainerflag(TRAINER_PBL_NEIL)
+// 	settrainerflag(TRAINER_PBL_TAMARA)
+// 	setflag(FLAG_BEAT_LEVIATHAN_7)
+// 	setflag(FLAG_BEAT_LEVIATHAN_8)
+// 	// zone 9
+// 	message(format("Zone 9 options"))
+// 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			setvar(VAR_TEMP_0, 18) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 1:
+// 			setvar(VAR_TEMP_0, 18) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 			setflag(FLAG_TEMP_1) // special encounter
+// 		case MULTI_B_PRESSED:
+// 			closemessage
+// 			setvar(VAR_ZONE, 9)
+// 			setvar(VAR_LEVEL_CAP, 20)
+// 			end
+// 	}
+// 	setvar(VAR_TEMP_1, 18) // level
+// 	call(Debug_CheatStart_PBL_GenerateMon)
+// 	completesubquest(QUEST_PBL, 9)
+// 	// zone 9 items
+// 	additem(ITEM_BIG_ROOT)
+// 	additem(ITEM_TM_PLUCK)
+// 	additem(ITEM_POISON_GEM)
+// 	additem(ITEM_STEEL_GEM)
+// 	additem(ITEM_DARK_GEM)
+// 	additem(ITEM_MYSTIC_WATER)
+// 	additem(ITEM_CHARCOAL)
+// 	additem(ITEM_TM_RETALIATE)
+// 	completesubquest(QUEST_SIGNS, 27)
+// 	completesubquest(QUEST_SIGNS, 28)
+// 	settrainerflag(TRAINER_PBL_COOPER)
+// 	settrainerflag(TRAINER_PBL_CARMINE)
+// 	settrainerflag(TRAINER_PBL_JONATHAN)
+// 	settrainerflag(TRAINER_PBL_CALVIN)
+// 	settrainerflag(TRAINER_PBL_LUIS)
+// 	settrainerflag(TRAINER_PBL_ARI)
+// 	settrainerflag(TRAINER_PBL_ARI_CHALLENGE)
+// 	settrainerflag(TRAINER_PBL_BERTHA)
+// 	settrainerflag(TRAINER_PBL_BERTHA_CHALLENGE)
+// 	settrainerflag(TRAINER_PBL_CASSANDRA)
+// 	settrainerflag(TRAINER_PBL_CASSANDRA_CHALLENGE)
+// 	settrainerflag(TRAINER_PBL_DOMINIC)
+// 	settrainerflag(TRAINER_PBL_DOMINIC_CHALLENGE)
+// 	settrainerflag(TRAINER_PBL_ERICA)
+// 	settrainerflag(TRAINER_PBL_ERICA_CHALLENGE)
+// 	// zone 10
+// 	message(format("Zone 10 options"))
+// 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Sand", "Ruin")
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			setvar(VAR_TEMP_0, 19) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 1:
+// 			setvar(VAR_TEMP_0, 20) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case MULTI_B_PRESSED:
+// 			closemessage
+// 			setvar(VAR_ZONE, 11)
+// 			setvar(VAR_LEVEL_CAP, 23)
+// 			end
+// 	}
+// 	setvar(VAR_TEMP_1, 19) // level
+// 	call(Debug_CheatStart_PBL_GenerateMon)
+// 	completesubquest(QUEST_PBL, 10)
+// 	// zone 10 items
+// 	additem(ITEM_TM_SCORCHING_SANDS)
+// 	additem(ITEM_FIRE_GEM)
+// 	additem(ITEM_ELECTRIC_GEM)
+// 	additem(ITEM_GROUND_GEM)
+// 	additem(ITEM_SOFT_SAND)
+// 	additem(ITEM_BLACK_GLASSES)
+// 	additem(ITEM_HEAVY_DUTY_BOOTS)
+// 	additem(ITEM_SAFETY_GOGGLES)
+// 	additem(ITEM_TM_BULLDOZE)
+// 	additem(ITEM_TERA_ORB)
+// 	additem(ITEM_BLUE_SHARD, 5)
+// 	additem(ITEM_TM_STEEL_WING)
+// 	settrainerflag(TRAINER_PBL_ALANA)
+// 	settrainerflag(TRAINER_PBL_JACOB)
+// 	settrainerflag(TRAINER_PBL_DEWEY)
+// 	settrainerflag(TRAINER_PBL_ERNEST)
+// 	settrainerflag(TRAINER_PBL_KYLE)
+// 	settrainerflag(TRAINER_PBL_ELIAS)
+// 	settrainerflag(TRAINER_PBL_PEARLIE)
+// 	settrainerflag(TRAINER_PBL_SUSAN)
+// 	settrainerflag(TRAINER_PBL_CONRAD)
+// 	settrainerflag(TRAINER_PBL_BRETT)
+// 	setflag(FLAG_BEAT_LEVIATHAN_9)
+// 	setflag(FLAG_ZONE10B_RECEIVED_TM_STEEL_WING)
+// 	// zone 11
+// 	message(format("Zone 11 options"))
+// 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass")
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			setvar(VAR_TEMP_0, 21) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case MULTI_B_PRESSED:
+// 			closemessage
+// 			setvar(VAR_ZONE, 11)
+// 			setvar(VAR_LEVEL_CAP, 23)
+// 			end
+// 	}
+// 	setvar(VAR_TEMP_1, 21) // level
+// 	call(Debug_CheatStart_PBL_GenerateMon)
+// 	completesubquest(QUEST_PBL, 11)
+// 	// zone 11 items
+// 	additem(ITEM_TM_GRASS_KNOT)
+// 	additem(ITEM_TM_TAUNT)
+// 	additem(ITEM_MOON_STONE)
+// 	additem(ITEM_SPELL_TAG)
+// 	additem(ITEM_FAIRY_GEM)
+// 	additem(ITEM_GHOST_GEM)
+// 	additem(ITEM_DRAGON_GEM)
+// 	additem(ITEM_FAIRY_FEATHER)
+// 	additem(ITEM_TM_STEEL_WING)
+// 	settrainerflag(TRAINER_PBL_JEANETTE)
+// 	settrainerflag(TRAINER_PBL_EMMA_AND_LEO)
+// 	settrainerflag(TRAINER_PBL_JOEL)
+// 	settrainerflag(TRAINER_PBL_MARION)
+// 	settrainerflag(TRAINER_PBL_REGINA)
+// 	setflag(FLAG_BEAT_LEVIATHAN_10)
+// 	// zone 12
+// 	message(format("Zone 12 options"))
+// 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
+// 	switch (var(VAR_RESULT)) {
+// 		case 0:
+// 			setvar(VAR_TEMP_0, 22) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 		case 1:
+// 			setvar(VAR_TEMP_0, 22) // wild define gWildMonHeaders in src/data/wild_encounters.h
+// 			setflag(FLAG_TEMP_1) // special encounter
+// 		case MULTI_B_PRESSED:
+// 			closemessage
+// 			setvar(VAR_ZONE, 12)
+// 			setvar(VAR_LEVEL_CAP, 24)
+// 			end
+// 	}
+// 	setvar(VAR_TEMP_1, 21) // level
+// 	call(Debug_CheatStart_PBL_GenerateMon)
+// 	completesubquest(QUEST_PBL, 12)
+// 	// zone 12 items
+// 	additem(ITEM_TM_BRICK_BREAK)
+// 	additem(ITEM_THUNDER_STONE)
+// 	additem(ITEM_FIRE_STONE)
+// 	additem(ITEM_WATER_STONE)
+// 	additem(ITEM_LEAF_STONE)
+// 	settrainerflag(TRAINER_PBL_ESSENCE)
+// 	settrainerflag(TRAINER_PBL_DOLORES)
+// 	settrainerflag(TRAINER_PBL_GENIE)
+// 	settrainerflag(TRAINER_PBL_ABIGAIL)
+// 	settrainerflag(TRAINER_PBL_FEDERICO)
+// 	settrainerflag(TRAINER_PBL_ROMULUS)
+// 	settrainerflag(TRAINER_PBL_JULIE)
+// 	settrainerflag(TRAINER_PBL_HILDA)
+// 	settrainerflag(TRAINER_PBL_TREVOR)
+// 	settrainerflag(TRAINER_PBL_RUFUS)
+// 	settrainerflag(TRAINER_PBL_KINLEY)
+// 	settrainerflag(TRAINER_PBL_REID)
+// 	setflag(FLAG_BEAT_LEVIATHAN_11)
+// 	// end
+// 	setvar(VAR_ZONE, 13)
+// 	setvar(VAR_LEVEL_CAP, 26)
 	release
 	end
 }
