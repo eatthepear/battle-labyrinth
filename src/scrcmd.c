@@ -3269,7 +3269,7 @@ bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
 
 bool8 ScrCmd_setwildbattle_pbl(struct ScriptContext *ctx)
 {
-    u16 species = ScriptReadHalfword(ctx);
+    u16 species = VarGet(ScriptReadHalfword(ctx));
     u8 level = ScriptReadByte(ctx);
     u16 item = ScriptReadHalfword(ctx);
     u8 nature = ScriptReadByte(ctx);
@@ -3279,7 +3279,7 @@ bool8 ScrCmd_setwildbattle_pbl(struct ScriptContext *ctx)
     u16 move12 = ScriptReadHalfword(ctx);
     u16 move13 = ScriptReadHalfword(ctx);
     u16 move14 = ScriptReadHalfword(ctx);
-    u16 species2 = ScriptReadHalfword(ctx);
+    u16 species2 = VarGet(ScriptReadHalfword(ctx));
     u8 level2 = ScriptReadByte(ctx);
     u16 item2 = ScriptReadHalfword(ctx);
     u8 nature2 = ScriptReadByte(ctx);
