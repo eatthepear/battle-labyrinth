@@ -4675,10 +4675,10 @@ void SetHiddenNature(void)
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 
-static const u16 sGrottoEncounters[][4] =
+static const u16 sGrottoEncounters[][3] =
 {
-    { SPECIES_NONE, SPECIES_NONE, SPECIES_NONE, SPECIES_NONE },
-    { SPECIES_MIENFOO, SPECIES_SLOWPOKE, SPECIES_TANGELA, SPECIES_KLAWF },
+    { SPECIES_NONE, SPECIES_NONE, SPECIES_NONE },
+    { SPECIES_MIENFOO, SPECIES_SLOWPOKE, SPECIES_TANGELA },
 };
 
 // Returns the SPECIES_ VAR_GROTTO_SPECIES should be set to, based on VAR_GROTTO_NUMBER and the saveblock seed.
@@ -4687,9 +4687,9 @@ u16 GetHiddenGrottoSpecies(void)
     u32 grottoId = VarGet(VAR_GROTTO_NUMBER);
     rng_value_t rng = LocalRandomSeed(gSaveBlock1Ptr->wildEncounterSeed + grottoId);
     if (GetCurrentDifficultyLevel() >= DIFFICULTY_BRUTAL) {
-        if (LocalRandom32(&rng) % 3) {
+        if (LocalRandom32(&rng) % 10) {
             return SPECIES_NONE;
         }
     }
-    return sGrottoEncounters[grottoId][LocalRandom32(&rng) % 4];
+    return sGrottoEncounters[grottoId][LocalRandom32(&rng) % 3];
 }

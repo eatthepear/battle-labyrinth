@@ -980,8 +980,9 @@ script EventScript_Notebook_Other {
 		dynmultipush("Trainers", 1)
 		dynmultipush("DexNav", 2)
 		dynmultipush("Honey Tree", 3)
-		dynmultipush("Day/Night", 4)
-		dynmultipush("Back", 5)
+		dynmultipush("Hidden Grotto", 4)
+		dynmultipush("Day/Night", 5)
+		dynmultipush("Back", 6)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
@@ -993,8 +994,10 @@ script EventScript_Notebook_Other {
 			case 3:
 				msgbox(format("Honey Trees can be slathered with Honey, instantly triggering a wild Pokémon battle."))
 			case 4:
-				msgbox(format("There is no day/night cycle."))
+				msgbox(format("Hidden Grottoes contain one specific Pokémon species with its Hidden Ability, chosen out of 3 possible species.\pPokémon respawn upon exiting the Hidden Grotto, though it will always be the same species."))
 			case 5:
+				msgbox(format("There is no day/night cycle."))
+			case 6:
 			case MULTI_B_PRESSED:
 				return
 		}
