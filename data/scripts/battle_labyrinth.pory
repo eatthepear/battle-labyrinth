@@ -2153,6 +2153,25 @@ script EventScript_BufferZoneName {
 	}
 }
 
+script EventScript_FoundGrotto {
+	msgbox(format("Look!\nYou've found a narrow path.\pWill you follow it?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		release
+		end
+	}
+	return
+}
+
+script EventScript_Grotto1 {
+	lock
+	call(EventScript_FoundGrotto)
+	setvar(VAR_GROTTO_NUMBER, 1)
+	warp(MAP_HIDDEN_GROTTO, 255, 10, 14)
+	waitstate
+	release
+	end
+}
+
 script EventScript_GrottoPokemon {
 	lock
 	faceplayer
@@ -2166,4 +2185,16 @@ script EventScript_GrottoPokemon {
 	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	setflag(FLAG_TEMP_2)
 	goto(Common_EventScript_RemoveStaticPokemon)
+}
+
+script EventScript_LeaveGrotto {
+	lockall
+	switch(var(VAR_GROTTO_NUMBER)) {
+		case 1:
+			warp(MAP_ZONE3A, 255, 37, 6)
+			waitstate
+	}
+	setvar(VAR_GROTTO_NUMBER, 0)
+	releaseall
+	end
 }

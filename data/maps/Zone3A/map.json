@@ -230,6 +230,22 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Zone3A_EventScript_Surveil"
+    },
+    {
+      "type": "sign",
+      "x": 37,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "EventScript_Grotto1"
+    },
+    {
+      "type": "sign",
+      "x": 38,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "EventScript_Grotto1"
     }
   ]
 }

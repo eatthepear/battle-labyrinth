@@ -4677,6 +4677,7 @@ void SetHiddenNature(void)
 
 static const u16 sGrottoEncounters[][4] =
 {
+    { SPECIES_NONE, SPECIES_NONE, SPECIES_NONE, SPECIES_NONE },
     { SPECIES_MIENFOO, SPECIES_SLOWPOKE, SPECIES_TANGELA, SPECIES_KLAWF },
 };
 
