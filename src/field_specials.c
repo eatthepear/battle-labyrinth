@@ -4677,8 +4677,8 @@ void SetHiddenNature(void)
 
 static const u16 sGrottoEncounters[][3] =
 {
-    { SPECIES_PANSAGE, SPECIES_PANSEAR, SPECIES_PANPOUR },
-    { SPECIES_PANSAGE, SPECIES_PANSEAR, SPECIES_PANPOUR },
+    { SPECIES_LECHONK, SPECIES_WHISMUR, SPECIES_KRICKETOT },
+    { SPECIES_TYMPOLE, SPECIES_PAWMI, SPECIES_WOOBAT },
 };
 
 // Returns the SPECIES_ VAR_GROTTO_SPECIES should be set to, based on VAR_GROTTO_NUMBER and the saveblock seed.

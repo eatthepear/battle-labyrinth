@@ -5255,7 +5255,7 @@
       "id": "LAYOUT_ZONE_SANCTUARY_QUIET_FIELD",
       "name": "ZoneSanctuary_QuietField_Layout",
       "width": 24,
-      "height": 19,
+      "height": 21,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_Sanctuary",
       "border_filepath": "data/layouts/ZoneSanctuary_QuietField/border.bin",

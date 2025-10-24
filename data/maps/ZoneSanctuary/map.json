@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ZONE_SANCTUARY_QUIET_FIELD",
-      "offset": 18,
+      "offset": 16,
       "direction": "left"
     },
     {

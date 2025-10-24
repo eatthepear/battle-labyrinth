@@ -2176,6 +2176,16 @@ script EventScript_Grotto0 {
 	end
 }
 
+script EventScript_Grotto1 {
+	lock
+	call(EventScript_FoundGrotto)
+	setvar(VAR_GROTTO_NUMBER, 1)
+	warp(MAP_HIDDEN_GROTTO, 255, 10, 14)
+	waitstate
+	release
+	end
+}
+
 script EventScript_GrottoPokemon {
 	lock
 	faceplayer
@@ -2183,7 +2193,7 @@ script EventScript_GrottoPokemon {
 	playmoncry(VAR_GROTTO_SPECIES, CRY_MODE_ENCOUNTER)
 	delay(40)
 	waitmoncry
-	setwildbattle_pbl(VAR_GROTTO_SPECIES, 15, ITEM_NONE, NUM_NATURES, 32, 2)
+	setwildbattle_pbl(VAR_GROTTO_SPECIES, 5, ITEM_NONE, NUM_NATURES, 32, 2)
 	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	dowildbattle
 	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
@@ -2195,6 +2205,9 @@ script EventScript_LeaveGrotto {
 	lockall
 	switch(var(VAR_GROTTO_NUMBER)) {
 		case 0:
+			warp(MAP_ZONE_SANCTUARY_QUIET_FIELD, 255, 9, 4)
+			waitstate
+		case 1:
 			warp(MAP_ZONE3A, 255, 37, 6)
 			waitstate
 	}
