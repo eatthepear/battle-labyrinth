@@ -1314,26 +1314,7 @@ bool8 TryDoDoubleWildBattle(void)
     else if (B_FLAG_FORCE_DOUBLE_WILD != 0 && FlagGet(B_FLAG_FORCE_DOUBLE_WILD))
         return TRUE;
     else if (B_DOUBLE_WILD_CHANCE != 0 && ((Random() % 100) + 1 <= B_DOUBLE_WILD_CHANCE))
-    {
-        // Wild Double Battles are only found in Zone 6+
-        switch (gMapHeader.regionMapSectionId)
-        {
-            case MAPSEC_SANCTUARY:
-            case MAPSEC_QUIET_FIELD:
-            case MAPSEC_PEACEFUL_GROVE:
-            case MAPSEC_BREEZY_MEADOW:
-            case MAPSEC_WHISPER_CAVE:
-            case MAPSEC_ZONE_0:
-            case MAPSEC_ZONE_1:
-            case MAPSEC_ZONE_2:
-            case MAPSEC_ZONE_3:
-            case MAPSEC_ZONE_4:
-            case MAPSEC_ZONE_5:
-                return FALSE;
-            default:
-                return TRUE;
-        }
-    }
+        return TRUE;
     return FALSE;
 }
 
