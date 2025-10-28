@@ -1,4 +1,35 @@
-mapscripts Zone5B_MapScripts {}
+mapscripts Zone5B_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_TEMP_HIDE_FOLLOWER)
+    }
+}
+
+script Zone5B_EventScript_Liza {
+    lock
+	msgbox(format("{COLOR BLUE}Liza{COLOR DARK_GRAY}: Gym battle!"))
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	// trainerbattle_no_intro(TRAINER_PBL_PHILLIPA_LEVIATHAN_3, format("Wah!!!"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	msgbox(format("{COLOR BLUE}Wargh!{COLOR DARK_GRAY}: Gym battle!"))
+    setflag(FLAG_BEAT_LEVIATHAN_5)
+	release
+	end
+}
+
+script Zone5B_EventScript_GymStatue {
+    lockall
+	msgbox(format("Liza's Pokémon Gym"))
+	releaseall
+	end
+}
+
+script Zone5B_EventScript_GymGuide {
+    lock
+    faceplayer
+    msgbox(format("Welcome to Liza's Pokémon Gym!\pYou'll find some challenging puzzles up ahead to test your mind.\pThe Gym Leader, Liza, is without her brother currently, so be prepared for a single battle!"))
+    release
+    end
+}
 
 script Zone5B_EventScript_YellowFloorSwitch {
     setvar(VAR_TEMP_0, 0)
@@ -36,4 +67,20 @@ script Zone5B_EventScript_FloorSwitch {
 	waitmovement(0)
 	freerotatingtilepuzzle
     end
+}
+
+script Zone5B_EventScript_WarpToEntrance {
+	lockall
+	warpmossdeepgym(MAP_ZONE5B, 0, 31)
+	waitstate
+	releaseall
+	end
+}
+
+script Zone5B_EventScript_WarpToPriorWarp {
+	lockall
+	warpmossdeepgym(MAP_ZONE5B, 4, 11)
+	waitstate
+	releaseall
+	end
 }
