@@ -17,6 +17,7 @@
 #include "battle_z_move.h"
 #include "battle_gimmick.h"
 #include "berry.h"
+#include "caps.h"
 #include "bg.h"
 #include "data.h"
 #include "debug.h"
@@ -1928,6 +1929,9 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u32 fixedOtId = 0;
             u32 abilityNum = 0;
             u8 nature;
+            u8 level = GetRareCandyLevelCap() - 1 + partyData[monIndex].lvl;
+            if (GetCurrentDifficultyLevel() == DIFFICULTY_EASY)
+                level -= 1;
 
             personalityValue = 0x80;
 
@@ -1969,7 +1973,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 otIdType = OT_ID_PRESET;
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-            CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+            CreateMon(&party[i], partyData[monIndex].species, level, 0, TRUE, personalityValue, otIdType, fixedOtId);
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex]);
