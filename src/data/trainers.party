@@ -139,8 +139,6 @@ Ekans
 
 Electrike
 
-Espurr
-
 Fidough
 
 Finneon
@@ -158,8 +156,6 @@ Gulpin
 Hoothoot
 
 Hoppip
-
-Karrablast
 
 Kricketot
 
@@ -182,12 +178,6 @@ Numel
 Nymble
 
 Oddish
-
-Panpour
-
-Pansage
-
-Pansear
 
 Paras
 
@@ -227,10 +217,6 @@ Sewaddle
 
 Shinx
 
-Shroomish
-
-Sizzlipede
-
 Skiddo
 
 Skitty
@@ -253,19 +239,13 @@ Sunkern
 
 Surskit
 
-Tadbulb
-
 Tarountula
-
-Venipede
 
 Vulpix
 
 Weedle
 
 Whismur
-
-Woobat
 
 Wooper
 
@@ -281,8 +261,6 @@ Zigzagoon
 
 Zigzagoon Galar
 
-Zubat
-
 === TRAINER_PBL_MARIAM ===
 Name: Mariam
 Class: Lass
@@ -290,37 +268,7 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-
-Rattata
-Level: 4
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Rattata-Alola
-Level: 4
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Pidove
-Level: 4
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Pikipek
-Level: 4
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Yamper
-Level: 4
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Shinx
-Level: 4
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_OSCAR ===
 Name: Oscar
@@ -329,37 +277,7 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-
-Sunkern
-Level: 4
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Bounsweet
-Level: 4
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Vulpix
-Level: 4
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Slugma
-Level: 4
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Goldeen
-Level: 4
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Finneon
-Level: 4
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER ===
 Name: Corey
@@ -572,37 +490,7 @@ Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-
-Rattata
-Level: 6
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Rattata-Alola
-Level: 6
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Nidoran-M
-Level: 6
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Nidoran-F
-Level: 6
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Igglybuff
-Level: 6
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Azurill
-Level: 6
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_JEREMIAH ===
 Name: Jeremiah
@@ -611,47 +499,8 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-
-Weedle
-Level: 6
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Wurmple
-Level: 6
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Kricketot
-Level: 6
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Tarountula
-Level: 6
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Spinarak
-Level: 6
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Ledyba
-Level: 6
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Blipbug
-Level: 6
-Tags: Ace
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Burmy
-Level: 6
-Tags: Ace
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pool Rules: All Bug
+Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_JOSH ===
 Name: Josh
@@ -660,37 +509,7 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-
-Whismur
-Level: 6
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Skitty
-Level: 6
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Cherubi
-Level: 6
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Gossifleur
-Level: 6
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Hoothoot
-Level: 6
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Pidgey
-Level: 6
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_HARPER ===
 Name: Harper
@@ -699,31 +518,7 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-
-Wooloo
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Fletchling
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Skiddo
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Ponyta
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Ducklett
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Mareep
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_SHAUN_LEVIATHAN_2 ===
 Name: Shaun
@@ -820,37 +615,7 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-
-Pichu
-Level: 8
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Pawmi
-Level: 8
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Lechonk
-Level: 8
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Yungoos
-Level: 8
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Wingull
-Level: 8
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Barboach
-Level: 8
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_PATRICK ===
 Name: Patrick
@@ -859,37 +624,7 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-
-Cleffa
-Level: 8
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Fidough
-Level: 8
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Hoppip
-Level: 8
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Morelull
-Level: 8
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Psyduck
-Level: 8
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Buizel
-Level: 8
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_ANNABELLE ===
 Name: Annabelle
@@ -898,37 +633,7 @@ Pic: Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-
-Deerling
-Level: 8
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Budew
-Level: 8
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Nickit
-Level: 8
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Maschiff
-Level: 8
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Lillipup
-Level: 8
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Minccino
-Level: 8
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_BORIS ===
 Name: Boris
@@ -937,37 +642,7 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-
-Lotad
-Level: 8
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Seedot
-Level: 8
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Ekans
-Level: 8
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Trubbish
-Level: 8
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Spearow
-Level: 8
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Starly
-Level: 8
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_RICHARD ===
 Name: Richard
@@ -976,37 +651,7 @@ Pic: Rich Boy
 Music: Rich
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-
-Wooper
-Level: 8
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Wooper-Paldea
-Level: 8
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Meowth
-Level: 8
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Meowth-Alola
-Level: 8
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Litleo
-Level: 8
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Sizzlipede
-Level: 8
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_PHILLIPA_LEVIATHAN_3 ===
 Name: Phillipa
