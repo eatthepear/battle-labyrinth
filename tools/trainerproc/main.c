@@ -2113,8 +2113,8 @@ int main(int argc, char *argv[])
     FILE *output_file = NULL;
     unsigned char *source_buffer = NULL;
     struct Parsed parsed = {
-        .default_ivs = { 31, 31, 31, 31, 31, 31 },
-        .default_level = 100,
+        .default_ivs = { 0, 0, 0, 0, 0, 0 },
+        .default_level = 0,
     };
 
     const char *source_path = NULL;
