@@ -605,6 +605,7 @@ script EventScript_Notebook {
 		waitmessage
 		dynmultipush("Zone Info", 0)
 		dynmultipush("Changes from Vanilla", 1)
+		dynmultipush("Difficulty Info", 2)
 		dynmultipush("Close Notebook", 4)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
@@ -612,6 +613,8 @@ script EventScript_Notebook {
 				call(EventScript_Notebook_ZoneInfo)
 			case 1:
 				call(EventScript_Notebook_ChangesFromVanilla)
+			case 2:
+				call(EventScript_Difficulty_Info)
 			case 4:
 			case MULTI_B_PRESSED:
 				fadedefaultbgm
@@ -1001,6 +1004,50 @@ script EventScript_Notebook_Other {
 			case 5:
 				msgbox(format("There is no day/night cycle."))
 			case 6:
+			case MULTI_B_PRESSED:
+				return
+		}
+	}
+}
+
+script EventScript_Difficulty_Info {
+	while {
+		message(format("Which difficulty would you like to know about?"))
+		waitmessage
+		switch (var(VAR_DIFFICULTY)) {
+			case DIFFICULTY_EASY:
+				dynmultipush("{COLOR RED}Easy", 0)
+				dynmultipush("Normal", 1)
+				dynmultipush("Hard", 2)
+				dynmultipush("Brutal", 3)
+			case DIFFICULTY_NORMAL:
+				dynmultipush("Easy", 0)
+				dynmultipush("{COLOR RED}Normal", 1)
+				dynmultipush("Hard", 2)
+				dynmultipush("Brutal", 3)
+			case DIFFICULTY_HARD:
+				dynmultipush("Easy", 0)
+				dynmultipush("Normal", 1)
+				dynmultipush("{COLOR RED}Hard", 2)
+				dynmultipush("Brutal", 3)
+			case DIFFICULTY_BRUTAL:
+				dynmultipush("Easy", 0)
+				dynmultipush("Normal", 1)
+				dynmultipush("Hard", 2)
+				dynmultipush("{COLOR RED}Brutal", 3)
+		}
+		dynmultipush("Back", 4)
+		dynmultistack(0, 0, FALSE, 5, FALSE, VAR_DIFFICULTY, DYN_MULTICHOICE_CB_NONE)
+		switch (var(VAR_RESULT)) {
+			case 0:
+				msgbox(format("{COLOR RED}Easy{COLOR DARK_GRAY} is suited for casual players.\pFor the most part, you can play as if this was one of the harder vanilla Pokémon games, meaning you can grind experience, items, and money.\pYou gain double the amount of money from battles, and you don't need to defeat all opponents in a Zone to proceed to the Sanctuary.\pAll trainers are one level lower than {COLOR RED}Normal{COLOR DARK_GRAY}."))
+			case 1:
+				msgbox(format("{COLOR RED}Normal{COLOR DARK_GRAY} is suited for the typical player.\pThe game is more challenging than a vanilla Pokémon game.\pRecommended for first time playthroughs!"))
+			case 2:
+				msgbox(format("{COLOR RED}Hard{COLOR DARK_GRAY} is suited for players looking for a serious challenge.\pYou can't use in-battle items during non-wild battles, you must play on SET mode, and your Pokémon can't gain EVs."))
+			case 3:
+				msgbox(format("{COLOR RED}Brutal{COLOR DARK_GRAY} is suited for players experienced in challenging ROM hacks.\pAll changes from {COLOR RED}Hard{COLOR DARK_GRAY} are carried over, and {COLOR RED}Leviathan{COLOR DARK_GRAY} and other boss battles are more difficult.\pIn addition, the amount of money from trainers is halved, and the Pokémon, moves, abilities, NPCs, and services you have access to are more limited.\pFinally, the AI cannot be PP stalled without the Pressure ability."))
+			case 4:
 			case MULTI_B_PRESSED:
 				return
 		}
