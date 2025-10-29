@@ -8322,14 +8322,21 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     }
     else
     {
-        const struct TrainerMon *party = GetTrainerPartyFromId(trainerId);
+        const struct TrainerMon *party;
+        u16 effectiveTrainerId = trainerId;
+        
+        if (GetTrainerStructFromId(trainerId)->overrideTrainer)
+            effectiveTrainerId = GetTrainerStructFromId(trainerId)->overrideTrainer;
+        party = GetTrainerPartyFromId(effectiveTrainerId);
         if (party == NULL)
             return 20;
-        lastMonLevel = party[GetTrainerPartySizeFromId(trainerId) - 1].lvl;
-        numMons = GetTrainerPartySizeFromId(trainerId);
+        lastMonLevel = party[GetTrainerPartySizeFromId(effectiveTrainerId) - 1].lvl;
+        numMons = GetTrainerPartySizeFromId(effectiveTrainerId);
         trainerMoney = (gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 2) * numMons;
         if (DoesTrainerHaveMugshot(trainerId))
             trainerMoney = 5 * numMons;
+        else
+            lastMonLevel = GetRareCandyLevelCap() - 1;
         // trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 5;
 
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
