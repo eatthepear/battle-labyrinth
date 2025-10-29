@@ -65,6 +65,15 @@ const struct PoolRules gPoolRulesetsList[] = {
         .tagMaxMembers[POOL_TAG_SUPPORT] = 1,
         .tagRequired[POOL_TAG_SUPPORT] = TRUE,
     },
+    [POOL_RULESET_UNIQUE_TYPES] = {
+        .speciesClause = B_POOL_RULE_SPECIES_CLAUSE,
+        .excludeForms = B_POOL_RULE_EXCLUDE_FORMS,
+        .itemClause = B_POOL_RULE_ITEM_CLAUSE,
+        .itemClauseExclusions = B_POOL_RULES_USE_ITEM_EXCLUSIONS,
+        .uniqueTypeClause = TRUE,
+        .tagMaxMembers[POOL_TAG_LEAD] = 1,
+        .tagMaxMembers[POOL_TAG_ACE] = 1,
+    },
     [POOL_RULESET_ALL_BUG] = {
         .speciesClause = B_POOL_RULE_SPECIES_CLAUSE,
         .excludeForms = B_POOL_RULE_EXCLUDE_FORMS,

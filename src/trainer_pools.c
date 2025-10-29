@@ -233,6 +233,27 @@ static u32 PickMonFromPool(const struct Trainer *trainer, u8 *poolIndexArray, u3
                     poolIndexArray[currIndex] = POOL_SLOT_DISABLED;
                 }
             }
+            if (rules->uniqueTypeClause)
+            {
+                u8 chosenType1 = GetSpeciesType(chosenSpecies, 0);
+                u8 chosenType2 = GetSpeciesType(chosenSpecies, 1);
+                u8 currentType1 = GetSpeciesType(currentSpecies, 0);
+                u8 currentType2 = GetSpeciesType(currentSpecies, 1);
+
+                // Special case: Treat Normal/Flying as pure Flying
+                if (chosenType1 == TYPE_NORMAL && chosenType2 == TYPE_FLYING)
+                    chosenType1 = TYPE_FLYING;
+                if (currentType1 == TYPE_NORMAL && currentType2 == TYPE_FLYING)
+                    currentType1 = TYPE_FLYING;
+
+                if (chosenType1 == currentType1
+                 || chosenType1 == currentType2
+                 || chosenType2 == currentType1
+                 || chosenType2 == currentType2)
+                {
+                    poolIndexArray[currIndex] = POOL_SLOT_DISABLED;
+                }
+            }
         }
     }
     return monIndex;
