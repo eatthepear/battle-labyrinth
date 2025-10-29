@@ -102,35 +102,185 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 3
 
-Patrat
-Level: 4
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Azurill
 
-Sentret
-Level: 4
-Tags: Tag6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Barboach
 
-Purrloin
-Level: 4
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bellsprout
 
-Poochyena
-Level: 4
-Tags: Tag7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bidoof
+
+Blipbug
+
+Bounsweet
+
+Budew
+
+Bunnelby
+
+Burmy
 
 Caterpie
-Level: 4
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Cherubi
+
+Chewtle
+
+Cleffa
+
+Combee
+
+Deerling
+
+Ducklett
+
+Ekans
+
+Electrike
+
+Espurr
+
+Fidough
+
+Finneon
+
+Fletchling
+
+Goldeen
+
+Gossifleur
+
+Grubbin
+
+Gulpin
+
+Hoothoot
+
+Hoppip
+
+Karrablast
+
+Kricketot
+
+Lechonk
+
+Lillipup
+
+Lotad
+
+Mareep
+
+Nickit
+
+Nidoran-F
+
+Nidoran-M
+
+Numel
+
+Nymble
+
+Oddish
+
+Panpour
+
+Pansage
+
+Pansear
+
+Paras
+
+Patrat
+
+Pawmi
+
+Pichu
+
+Pidgey
+
+Pidove
+
+Pikipek
+
+Poochyena
+
+Psyduck
+
+Purrloin
+
+Rattata
+
+Rattata-Alola
+
+Remoraid
+
+Rookidee
 
 Scatterbug
-Level: 4
-Tags: Tag8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Seedot
+
+Sentret
+
+Sewaddle
+
+Shinx
+
+Shroomish
+
+Sizzlipede
+
+Skiddo
+
+Skitty
+
+Skwovet
+
+Slakoth
+
+Slugma
+
+Smoliv
+
+Spearow
+
+Spinarak
+
+Starly
+
+Sunkern
+
+Surskit
+
+Tadbulb
+
+Tarountula
+
+Venipede
+
+Vulpix
+
+Weedle
+
+Whismur
+
+Woobat
+
+Wooper
+
+Wooper Paldea
+
+Wurmple
+
+Yamper
+
+Yungoos
+
+Zigzagoon
+
+Zigzagoon Galar
+
+Zubat
 
 === TRAINER_PBL_MARIAM ===
 Name: Mariam

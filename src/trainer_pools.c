@@ -40,6 +40,8 @@ static u32 DefaultLeadPickFunction(const struct Trainer *trainer, u8 *poolIndexA
             if ((poolIndexArray[currIndex] != POOL_SLOT_DISABLED)
              && (trainer->party[poolIndexArray[currIndex]].tags & (1u << POOL_TAG_LEAD)))
             {
+                if (rules->mustPickType != TYPE_NONE && !IsSpeciesOfType(trainer->party[poolIndexArray[currIndex]].species, rules->mustPickType))
+                    continue;
                 if (firstLeadIndex == POOL_SLOT_DISABLED)
                     firstLeadIndex = currIndex;
                 //  Start from index 2, since lead and ace has special handling
@@ -79,6 +81,8 @@ static u32 DefaultAcePickFunction(const struct Trainer *trainer, u8 *poolIndexAr
             if ((poolIndexArray[currIndex] != POOL_SLOT_DISABLED)
              && (trainer->party[poolIndexArray[currIndex]].tags & (1u << POOL_TAG_ACE)))
             {
+                if (rules->mustPickType != TYPE_NONE && !IsSpeciesOfType(trainer->party[poolIndexArray[currIndex]].species, rules->mustPickType))
+                    continue;
                 if (firstAceIndex == POOL_SLOT_DISABLED)
                     firstAceIndex = currIndex;
                 HasRequiredTag(trainer, poolIndexArray, rules, &arrayIndex, &foundRequiredTag, currIndex);
@@ -115,6 +119,8 @@ static u32 DefaultOtherPickFunction(const struct Trainer *trainer, u8 *poolIndex
          && !(trainer->party[poolIndexArray[currIndex]].tags & (1u << POOL_TAG_LEAD))
          && !(trainer->party[poolIndexArray[currIndex]].tags & (1u << POOL_TAG_ACE)))
         {
+            if (rules->mustPickType != TYPE_NONE && !IsSpeciesOfType(trainer->party[poolIndexArray[currIndex]].species, rules->mustPickType))
+                continue;
             if (firstUnpickedIndex == POOL_SLOT_DISABLED)
                 firstUnpickedIndex = currIndex;
             HasRequiredTag(trainer, poolIndexArray, rules, &arrayIndex, &foundRequiredTag, currIndex);

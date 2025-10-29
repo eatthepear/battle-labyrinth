@@ -17,6 +17,8 @@ enum PoolRulesets {
     POOL_RULESET_WEATHER_SINGLES,
     POOL_RULESET_WEATHER_DOUBLES,
     POOL_RULESET_SUPPORT_DOUBLES,
+    POOL_RULESET_ALL_BUG,
+    POOL_RULESET_ALL_FIRE,
 };
 
 enum PoolPickFunctions {
@@ -60,6 +62,7 @@ struct PoolRules
     bool8 excludeForms;
     bool8 itemClause;
     bool8 itemClauseExclusions;
+    u8 mustPickType;
     u8 tagMaxMembers[POOL_NUM_TAGS];
     bool8 tagRequired[POOL_NUM_TAGS];
 };
