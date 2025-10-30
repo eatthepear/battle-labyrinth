@@ -2220,7 +2220,7 @@ script EventScript_Grotto0 {
 	lock
 	call(EventScript_FoundGrotto)
 	setvar(VAR_GROTTO_NUMBER, 0)
-	warp(MAP_HIDDEN_GROTTO, 255, 10, 14)
+	warp(MAP_HIDDEN_GROTTO, 255, 11, 14)
 	waitstate
 	release
 	end
