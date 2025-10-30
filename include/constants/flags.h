@@ -192,7 +192,7 @@
 #define FLAG_ZONE2A_NUZLOCKE_BOUGHT_BUG                   0x10F
 #define FLAG_HIDE_ZONE3A_REMI                             0x110
 #define FLAG_HIDE_ZONE3A_PHILLIPA                         0x111
-#define FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER      0x112
+#define FLAG_ZONE3A_MOVE_TUTOR_TAUGHT      0x112
 #define FLAG_ZONE3A_RECEIVED_PINK_SCARF                   0x113
 #define FLAG_ZONE3A_RECEIVED_SURPRISE_MULCH               0x114
 #define FLAG_ZONE3B_TRADED_ZIGZAGOON                      0x115

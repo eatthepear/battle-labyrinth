@@ -263,12 +263,12 @@ script Zone3A_EventScript_HyperPotion {
 	end
 }
 
-script Zone3A_EventScript_ChillingWaterTutor {
+script Zone3A_EventScript_Tutor {
 	lock
 	faceplayer
 	showmoneybox(0, 0, 0)
-	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER) == TRUE) {
-		msgbox(format("Ho there, trainer!\pAre your Water Pokémon interested in learning a new technique? I call it: Chilling Water!\pI can teach one of your Pokémon Chilling Water for the low price of ¥200. Interested?"), MSGBOX_YESNO)
+	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT) == TRUE) {
+		msgbox(format("Ho there, trainer!\pI can teach one of your Pokémon Water Pulse for the low price of ¥200. Interested?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
 			msgbox(format("Good day to you!"))
@@ -276,7 +276,7 @@ script Zone3A_EventScript_ChillingWaterTutor {
 			end
 		}
 	} else {
-		msgbox(format("Ho there, trainer!\pAre your Water Pokémon interested in learning a new technique? I call it: Chilling Water!\pI can teach one of your Pokémon Chilling Water. First time is free, while subsequent times cost ¥200! Interested?"), MSGBOX_YESNO)
+		msgbox(format("Ho there, trainer!\pI can teach one of your Pokémon Water Pulse. First time is free, while subsequent times cost ¥200! Interested?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
 			msgbox(format("Good day to you!"))
@@ -284,7 +284,7 @@ script Zone3A_EventScript_ChillingWaterTutor {
 			end
 		}
 	}
-	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER) == TRUE) {
+	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT) == TRUE) {
 		checkmoney(200, 0)
 		if (var(VAR_RESULT) == FALSE) {
 			msgbox("Hate to break it to you, but you don't have enough money.")
@@ -293,8 +293,8 @@ script Zone3A_EventScript_ChillingWaterTutor {
 			end
 		}
 	}
-	setvar(VAR_TEMP_0, MOVE_CHILLING_WATER)
-	setvar(VAR_0x8005, MOVE_CHILLING_WATER)
+	setvar(VAR_TEMP_0, MOVE_WATER_PULSE)
+	setvar(VAR_0x8005, MOVE_WATER_PULSE)
 	buffermovename(0, VAR_TEMP_0)
 	msgbox("Which Pokémon should learn\n{STR_VAR_1}?", MSGBOX_DEFAULT)
 	special(ChooseMonForMoveTutor)
@@ -308,8 +308,8 @@ script Zone3A_EventScript_ChillingWaterTutor {
 	}
 	showmoneybox(0, 0, 0)
 	msgbox(format("There! It's done. Use that move well!"), MSGBOX_DEFAULT)
-	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER) == FALSE) {
-		setflag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT_CHILLING_WATER)
+	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT) == FALSE) {
+		setflag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT)
 	} else {
 		removemoney(200)
 		updatemoneybox
