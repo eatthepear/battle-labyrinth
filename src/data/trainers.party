@@ -606,8 +606,328 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 3
 Pool Rules: Unique Types
-Copy Pool: TRAINER_PBL_NINA
+
+Barboach
+
+Bellsprout
+
+Bidoof
+
+Blitzle
+
+Bounsweet
+
+Bronzor
+
+Budew
+
+Buizel
+
+Buneary
+
+Bunnelby
+
+Burmy
+
+Carvanha
+
+Cherubi
+
+Chewtle
+
+Chingling
+
+Clefairy
+
+Clobbopus
+
+Combee
+
+Corphish
+
+Cottonee
+
+Crabrawler
+
+Croagunk
+
+Cufant
+
+Cutiefly
+
+Deerling
+
+Diglett
+
+Drilbur
+
+Drowzee
+
+Ducklett
+
+Ekans
+
+Electrike
+
+Espurr
+
+Exeggcute
+
+Fidough
+
+Finneon
+
+Flabebe
+
+Fletchling
+
+Flittle
+
+Fomantis
+
+Glameow
+
+Goldeen
+
+Gossifleur
+
+Gothita
+
+Grimer
+
+Grimer Alola
+
+Growlithe
+
+Grubbin
+
+Gulpin
+
+Hatenna
+
+Hoothoot
+
+Hoppip
+
+Houndour
+
+Impidimp
+
+Inkay
+
+Jigglypuff
+
+Lechonk
+
+Ledyba
+
+Lickitung
+
+Lillipup
+
+Litleo
+
+Lotad
+
+Machop
+
+Makuhita
+
+Mankey
+
+Mareep
+
+Maschiff
+
+Meowth
+
+Meowth Alola
+
+Milcery
+
+Mime Jr.
+
+Minccino
+
+Morelull
+
+Munna
+
+Nacli
+
+Natu
+
+Nickit
+
+Nidoran-F
+
+Nidoran-M
+
+Nincada
+
+Numel
+
+Nymble
+
+Oddish
+
+Pancham
+
+Panpour
+
+Pansage
+
+Pansear
+
+Paras
+
+Patrat
+
+Pawmi
+
+Petilil
+
+Phanpy
+
+Pidgey
+
+Pidove
+
+Pikachu
+
+Pikipek
+
+Pineco
+
+Poliwag
+
+Ponyta
+
+Ponyta Galar
+
+Poochyena
+
+Psyduck
+
+Purrloin
+
+Rattata
+
+Rattata Alola
+
+Remoraid
+
+Rockruff
+
+Roggenrola
+
+Rolycoly
+
+Rookidee
+
+Salandit
+
+Sandshrew
+
+Seedot
+
+Sentret
+
+Sewaddle
+
+Shellos
+
+Shinx
+
+Shroomish
+
+Sizzlipede
+
+Skiddo
+
+Skitty
+
+Skwovet
+
+Slakoth
+
+Slowpoke
+
+Slowpoke Galar
+
+Slugma
+
+Smoliv
+
+Snubbull
+
+Spearow
+
+Spinarak
+
+Spoink
+
+Spritzee
+
+Starly
+
+Stunky
+
+Sunkern
+
+Surskit
+
+Swablu
+
+Swirlix
+
+Tadbulb
+
+Taillow
+
+Tandemaus
+
+Tarountula
+
+Teddiursa
+
+Timburr
+
+Trubbish
+
+Tympole
+
+Venipede
+
+Venonat
+
+Vulpix
+
+Wattrel
+
+Whismur
+
+Wingull
+
+Woobat
+
+Wooloo
+
+Wooper
+
+Wooper Paldea
+
+Yamper
+
+Yungoos
+
+Zigzagoon
+
+Zigzagoon Galar
+
+Zubat
 
 === TRAINER_PBL_PATRICK ===
 Name: Patrick
@@ -617,7 +937,7 @@ Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
-Copy Pool: TRAINER_PBL_NINA
+Copy Pool: TRAINER_PBL_JEMMA
 
 === TRAINER_PBL_ANNABELLE ===
 Name: Annabelle
@@ -627,7 +947,7 @@ Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
-Copy Pool: TRAINER_PBL_NINA
+Copy Pool: TRAINER_PBL_JEMMA
 
 === TRAINER_PBL_BORIS ===
 Name: Boris
@@ -637,7 +957,7 @@ Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
-Copy Pool: TRAINER_PBL_NINA
+Copy Pool: TRAINER_PBL_JEMMA
 
 === TRAINER_PBL_RICHARD ===
 Name: Richard
@@ -647,7 +967,7 @@ Music: Rich
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
-Copy Pool: TRAINER_PBL_NINA
+Copy Pool: TRAINER_PBL_JEMMA
 
 === TRAINER_PBL_PHILLIPA_LEVIATHAN_3 ===
 Name: Phillipa
@@ -732,33 +1052,8 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Buneary
-Ability: Limber
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Quick Attack
-- Baby-Doll Eyes
-- Copycat
-- Fake Out
-
-Ducklett
-Ability: Big Pecks
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Gust
-- Aqua Jet
-- Feather Dance
-- Wing Attack
-
-Cherubi
-Ability: Chlorophyll
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Absorb
-- Leech Seed
-- Rollout
-- Grass Whistle
+Pool Rules: Unique Types
+Copy Pool: TRAINER_PBL_JEMMA
 
 === TRAINER_PBL_RALPH ===
 Name: Ralph
@@ -767,33 +1062,8 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Shinx
-Ability: Intimidate
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Charge
-- Thunder Shock
-- Quick Attack
-- Bite
-
-Houndour
-Ability: Flash Fire
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Ember
-- Smog
-- Torment
-- Bite
-
-Wooper
-Ability: Water Absorb
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Water Gun
-- Mud Shot
-- Yawn
-- Slam
+Pool Rules: Unique Types
+Copy Pool: TRAINER_PBL_JEMMA
 
 === TRAINER_PBL_CALLIE ===
 Name: Callie
@@ -802,33 +1072,8 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Lillipup
-Ability: Pickup
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Helping Hand
-- Bite
-- Yawn
-
-Fidough
-Ability: Own Tempo
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Baby-Doll Eyes
-- Bite
-- Yawn
-- Covet
-
-Maschiff
-Ability: Intimidate
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Lick
-- Snarl
-- Scary Face
-- Bite
+Pool Rules: Unique Types
+Copy Pool: TRAINER_PBL_JEMMA
 
 === TRAINER_PBL_SANTIAGO ===
 Name: Santiago
@@ -837,41 +1082,8 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Spinarak
-Ability: Swarm
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- String Shot
-- Night Shade
-- Infestation
-- Disable
-
-Ledyba
-Ability: Swarm
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Swift
-- Comet Punch
-- Bug Bite
-- Roost
-
-Paras
-Ability: Effect Spore
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Powder
-- Absorb
-- Bug Bite
-- Leech Seed
-
-Spewpa
-Ability: Shed Skin
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Protect
-- Harden
-- Tackle
+Pool Rules: Unique Types
+Copy Pool: TRAINER_PBL_JEMMA
 
 === TRAINER_PBL_CHLOE_AND_KAYA ===
 Name: Chloe&Kaya
@@ -880,24 +1092,9 @@ Pic: Twins
 Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
-
-Cottonee
-Ability: Prankster
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Fairy Wind
-- Razor Leaf
-- Stun Spore
-- Poison Powder
-
-Petilil
-Ability: Own Tempo
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Absorb
-- Helping Hand
-- Stun Spore
-- Leech Seed
+Party Size: 2
+Pool Rules: Unique Types
+Copy Pool: TRAINER_PBL_JEMMA
 
 === TRAINER_PBL_FRED ===
 Name: Fred
@@ -906,42 +1103,8 @@ Pic: Camper
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Gossifleur
-Ability: Cotton Down
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Grass Whistle
-- Rapid Spin
-- Razor Leaf
-- Leech Seed
-
-Ekans
-Ability: Intimidate
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Glare
-- Bite
-- Acid
-- Disable
-
-Bonsly
-Ability: Sturdy
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tearful Look
-- Rock Throw
-- Low Kick
-- Block
-
-Pancham
-Ability: Iron Fist
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Seismic Toss
-- Comet Punch
-- Karate Chop
-- Taunt
+Pool Rules: Unique Types
+Copy Pool: TRAINER_PBL_JEMMA
 
 === TRAINER_PBL_LUCIA ===
 Name: Lucia
@@ -950,42 +1113,8 @@ Pic: Fairy Tale Girl
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Morelull
-Ability: Effect Spore
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Absorb
-- Astonish
-- Confuse Ray
-- Ingrain
-
-Spritzee
-Ability: Healer
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Fairy Wind
-- Sweet Kiss
-- Refresh
-- Disarming Voice
-
-Swirlix
-Ability: Sweet Veil
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Fairy Wind
-- Yawn
-- Cotton Spore
-- Round
-
-Mime Jr.
-Ability: Soundproof
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Teeter Dance
-- Double Slap
-- Confusion
-- Fake Out
+Pool Rules: Unique Types
+Copy Pool: TRAINER_PBL_JEMMA
 
 === TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4 ===
 Name: Ella&Bella
