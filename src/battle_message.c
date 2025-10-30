@@ -2427,7 +2427,7 @@ static void GetBattlerNick(u32 battler, u8 *dst)
     {                                                                   \
         if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)                     \
             toCpy = sText_FoePkmnPrefix;                                \
-        if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)                   \
+        else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)              \
             toCpy = sText_EmptyString8;                                 \
         else                                                            \
             toCpy = sText_WildPkmnPrefix;                               \
@@ -2446,7 +2446,7 @@ static void GetBattlerNick(u32 battler, u8 *dst)
     {                                                                   \
         if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)                     \
             toCpy = sText_FoePkmnPrefixLower;                           \
-        if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)                   \
+        else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)              \
             toCpy = sText_EmptyString8;                                 \
         else                                                            \
             toCpy = sText_WildPkmnPrefixLower;                          \
