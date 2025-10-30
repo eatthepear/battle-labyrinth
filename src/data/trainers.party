@@ -268,6 +268,7 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Pool Rules: Unique Types
 Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_OSCAR ===
@@ -277,6 +278,7 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Pool Rules: Unique Types
 Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER ===
@@ -490,6 +492,7 @@ Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Pool Rules: Unique Types
 Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_JEREMIAH ===
@@ -499,8 +502,8 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: All Bug
 Party Size: 4
+Pool Rules: All Bug
 Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_JOSH ===
@@ -510,6 +513,7 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Pool Rules: Unique Types
 Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_HARPER ===
@@ -519,6 +523,7 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Pool Rules: Unique Types
 Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_SHAUN_LEVIATHAN_2 ===
@@ -616,6 +621,7 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Pool Rules: Unique Types
 Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_PATRICK ===
@@ -625,6 +631,7 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Pool Rules: Unique Types
 Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_ANNABELLE ===
@@ -634,6 +641,7 @@ Pic: Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Pool Rules: Unique Types
 Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_BORIS ===
@@ -643,6 +651,7 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Pool Rules: Unique Types
 Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_RICHARD ===
@@ -652,6 +661,7 @@ Pic: Rich Boy
 Music: Rich
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Pool Rules: Unique Types
 Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_PHILLIPA_LEVIATHAN_3 ===
