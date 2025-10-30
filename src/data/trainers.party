@@ -503,7 +503,7 @@ Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
-Pool Rules: All Bug
+Pool Prune: Non Bug
 Copy Pool: TRAINER_PBL_NINA
 
 === TRAINER_PBL_JOSH ===

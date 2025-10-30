@@ -18,8 +18,6 @@ enum PoolRulesets {
     POOL_RULESET_WEATHER_DOUBLES,
     POOL_RULESET_SUPPORT_DOUBLES,
     POOL_RULESET_UNIQUE_TYPES,
-    POOL_RULESET_ALL_BUG,
-    POOL_RULESET_ALL_FIRE,
 };
 
 enum PoolPickFunctions {
@@ -31,6 +29,7 @@ enum PoolPruneOptions {
     POOL_PRUNE_NONE,
     POOL_PRUNE_TEST,
     POOL_PRUNE_RANDOM_TAG,
+    POOL_PRUNE_NON_BUG,
 };
 
 enum PoolTags {
@@ -64,7 +63,6 @@ struct PoolRules
     bool8 itemClause;
     bool8 itemClauseExclusions;
     bool8 uniqueTypeClause;
-    u8 mustPickType;
     u8 tagMaxMembers[POOL_NUM_TAGS];
     bool8 tagRequired[POOL_NUM_TAGS];
 };
