@@ -4530,22 +4530,22 @@ s8 GetSetPokedexFlag(enum NationalDexOrder nationalDexNo, u8 caseID)
     switch (caseID)
     {
     case FLAG_GET_SEEN:
-        retVal = TRUE;
+        retVal = ((gSaveBlock1Ptr->dexSeen[index] & mask) != 0);
         break;
     case FLAG_GET_CAUGHT:
          retVal = ((gSaveBlock1Ptr->dexCaught[index] & mask) != 0);
         break;
-    // case FLAG_SET_SEEN:
-    //     gSaveBlock1Ptr->dexSeen[index] |= mask;
-    //     break;
+    case FLAG_SET_SEEN:
+        gSaveBlock1Ptr->dexSeen[index] |= mask;
+        break;
     case FLAG_SET_CAUGHT:
         gSaveBlock1Ptr->dexCaught[index] |= mask;
         break;
     case FLAG_GET_BATTLED:
-        retVal = ((gSaveBlock1Ptr->dexSeen[index] & mask) != 0);
+        retVal = ((gSaveBlock1Ptr->dexBattled[index] & mask) != 0);
         break;
     case FLAG_SET_BATTLED:
-        gSaveBlock1Ptr->dexSeen[index] |= mask;
+        gSaveBlock1Ptr->dexBattled[index] |= mask;
         break;
     }
 

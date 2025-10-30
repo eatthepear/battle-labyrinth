@@ -1189,6 +1189,7 @@ struct SaveBlock1
 #endif //FREE_MYSTERY_GIFT
     /*0x3???*/ u8 dexSeen[NUM_DEX_FLAG_BYTES];
     /*0x3???*/ u8 dexCaught[NUM_DEX_FLAG_BYTES];
+    /*0x3???*/ u8 dexBattled[NUM_DEX_FLAG_BYTES]; // Tracks which species have been battled. Used for trainer party pools to avoid duplicates when possible.
 #if FREE_TRAINER_HILL == FALSE
     /*0x3???*/ u32 trainerHillTimes[NUM_TRAINER_HILL_MODES];
 #endif //FREE_TRAINER_HILL
