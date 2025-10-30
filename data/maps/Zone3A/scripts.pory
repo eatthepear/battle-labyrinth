@@ -94,8 +94,8 @@ script Zone3A_EventScript_TriggerLeviathan {
 	waitmovement(0)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Remi{COLOR DARK_GRAY}: Thanks for being a good sport.\pHere, I want you to have this."))
-	giveitem(ITEM_GOOD_ROD, 1)
+	msgbox(format("{COLOR BLUE}Remi{COLOR DARK_GRAY}: Thanks for being a good sport.\pHere, I want you to have these."))
+	giveitem(ITEM_LURE_BALL, 5)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
 	waitmovement(0)
 	applymovement(LOCALID_REMI, Zone3A_Movement_Remi_WalkBackToPhillipa)
@@ -152,42 +152,17 @@ movement Zone3A_Movement_Remi_WalkBackToPhillipa {
 	face_left
 }
 
-script Zone3A_EventScript_Breeder {
+script Zone3A_EventScript_BugCatcher {
 	lock
 	faceplayer
-	if (flag(FLAG_ZONE3A_RECEIVED_PINK_SCARF) && flag(FLAG_ZONE3A_RECEIVED_SURPRISE_MULCH)) {
-		msgbox(format("I already gave you all the evolution items I have!"))
+	if (flag(FLAG_ZONE3A_RECEIVED_SILVER_POWDER) == true) {
+		msgbox(format("Type-boosting items like Silver Powder boost the power of the corresponding type moves by 20%!"))
 		release
 		end
 	}
-	msgbox(format("I know some people think of them as weak Pokémon…\pBut Skitty and Sunkern are my favorites!\pI'll give you the corresponding evolution item if you show me a Skitty or a Sunkern."), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		special(ChoosePartyMon)
-		waitstate
-		if (var(VAR_RESULT) != PARTY_NOTHING_CHOSEN) {
-			specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
-			switch(var(VAR_RESULT)) {
-				case SPECIES_SKITTY:
-					if (flag(FLAG_ZONE3A_RECEIVED_PINK_SCARF) == false) {
-						msgbox(format("Aww… It's so cute!\pTake this evolution item!"))
-						giveitem(ITEM_PINK_SCARF)
-						setflag(FLAG_ZONE3A_RECEIVED_PINK_SCARF)
-					} else {
-						msgbox(format("I already gave you all the Skitty evolution items I have!"))
-					}
-				case SPECIES_SUNKERN:
-					if (flag(FLAG_ZONE3A_RECEIVED_SURPRISE_MULCH) == false) {
-						msgbox(format("Aww… It's so cute!\pTake this evolution item!"))
-						giveitem(ITEM_SURPRISE_MULCH)
-						setflag(FLAG_ZONE3A_RECEIVED_SURPRISE_MULCH)
-					} else {
-						msgbox(format("I already gave you all the Sunkern evolution items I have!"))
-					}
-				default:
-					msgbox(format("That's not a Skitty nor a Sunkern!"))
-			}
-		}
-	}
+	setflag(FLAG_ZONE3A_RECEIVED_SILVER_POWDER)
+	msgbox(format("Bug-type Pokémon love Silver Powder.\pHere, take one!"))
+	giveitem(ITEM_SILVER_POWDER)
 	release
 	end
 }

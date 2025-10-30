@@ -464,8 +464,8 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("5 {COLOR RED}Revives{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
 			giveitem(ITEM_REVIVE, 5)
 		case 3:
-			msgbox(format("The {COLOR RED}Sledgehammer!{COLOR DARK_GRAY}"), MSGBOX_DEFAULT)
-			giveitem(ITEM_SLEDGEHAMMER)
+			msgbox(format("The {COLOR RED}Machete!{COLOR DARK_GRAY}"), MSGBOX_DEFAULT)
+			giveitem(ITEM_MACHETE)
 		case 4:
 			msgbox(format("{COLOR RED}TM39 - Rock Tomb!{COLOR DARK_GRAY}"), MSGBOX_DEFAULT)
 			giveitem(ITEM_TM_ROCK_TOMB)

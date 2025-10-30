@@ -193,8 +193,8 @@
 #define FLAG_HIDE_ZONE3A_REMI                             0x110
 #define FLAG_HIDE_ZONE3A_PHILLIPA                         0x111
 #define FLAG_ZONE3A_MOVE_TUTOR_TAUGHT      0x112
-#define FLAG_ZONE3A_RECEIVED_PINK_SCARF                   0x113
-#define FLAG_ZONE3A_RECEIVED_SURPRISE_MULCH               0x114
+#define FLAG_ZONE3A_RECEIVED_UNUSED_0x113                   0x113
+#define FLAG_ZONE3A_RECEIVED_SILVER_POWDER               0x114
 #define FLAG_ZONE3B_TRADED_ZIGZAGOON                      0x115
 #define FLAG_HIDE_ZONE4A_KIMONO_GIRL                      0x116
 #define FLAG_ZONE4E_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG        0x117
