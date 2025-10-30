@@ -5645,17 +5645,20 @@ static void HandleEndTurn_FinishBattle(void)
                                   | BATTLE_TYPE_TRAINER_HILL
                                   | BATTLE_TYPE_FRONTIER)))
         {
-            for (u32 side = 0; side < NUM_BATTLE_SIDES; side++)
+            if (gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_LEGENDARY))
             {
-                struct Pokemon *party = GetSideParty(side);
-
-                if (side == B_SIDE_PLAYER && !B_PARTNER_MONS_MARKED_SEEN)
-                    continue;
-
-                for (u32 partySlot = 0; partySlot < PARTY_SIZE; partySlot++)
+                for (u32 side = 0; side < NUM_BATTLE_SIDES; side++)
                 {
-                    if (gBattleStruct->partyState[side][partySlot].sentOut)
-                        HandleSetPokedexFlagFromMon(&party[partySlot], FLAG_SET_SEEN);
+                    struct Pokemon *party = GetSideParty(side);
+
+                    if (side == B_SIDE_PLAYER && !B_PARTNER_MONS_MARKED_SEEN)
+                        continue;
+
+                    for (u32 partySlot = 0; partySlot < PARTY_SIZE; partySlot++)
+                    {
+                        if (gBattleStruct->partyState[side][partySlot].sentOut)
+                            HandleSetPokedexFlagFromMon(&party[partySlot], FLAG_SET_BATTLED);
+                    }
                 }
             }
         }
