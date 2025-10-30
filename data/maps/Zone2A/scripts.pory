@@ -79,6 +79,7 @@ script Zone2A_EventScript_LeviathanBattle {
 		release
 		end
 	}
+	closemessage
 	fadeoutbgm(1)
 	msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: All right then, let's battle!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
