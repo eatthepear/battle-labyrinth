@@ -6334,8 +6334,8 @@ static const struct LevelUpMove sYanmegaLevelUpLearnset[] = {
 static const struct LevelUpMove sWooperLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE( 1, MOVE_WATER_GUN),
-    LEVEL_UP_MOVE( 4, MOVE_MUD_SHOT),
-    LEVEL_UP_MOVE( 7, MOVE_YAWN),
+    LEVEL_UP_MOVE( 4, MOVE_YAWN),
+    LEVEL_UP_MOVE( 7, MOVE_MUD_SHOT),
     LEVEL_UP_MOVE(11, MOVE_SLAM),
     LEVEL_UP_MOVE(14, MOVE_MUD_BOMB),
     LEVEL_UP_MOVE(18, MOVE_BODY_SLAM),
@@ -6358,8 +6358,8 @@ static const struct LevelUpMove sWooperLevelUpLearnset[] = {
 static const struct LevelUpMove sQuagsireLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE( 1, MOVE_WATER_GUN),
-    LEVEL_UP_MOVE( 4, MOVE_MUD_SHOT),
-    LEVEL_UP_MOVE( 7, MOVE_YAWN),
+    LEVEL_UP_MOVE( 4, MOVE_YAWN),
+    LEVEL_UP_MOVE( 7, MOVE_MUD_SHOT),
     LEVEL_UP_MOVE(11, MOVE_SLAM),
     LEVEL_UP_MOVE(14, MOVE_MUD_BOMB),
     LEVEL_UP_MOVE(18, MOVE_BODY_SLAM),
