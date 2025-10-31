@@ -13,6 +13,51 @@ mapscripts Zone4E_MapScripts {
 	}
 }
 
+script Zone4E_EventScript_KimonoGirl_Exit {
+	lockall
+	applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Common_Movement_FaceUp)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	playbgm(MUS_HG_KIMONO_GIRL, 0)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement(0)
+	msgbox(format("Oh, look! The exit!\pThe poor Kimono Girl has been led to the exit by a kind trainer!\pPlease take this as thanks."))
+	giveitem(ITEM_SACRED_ASH)
+	msgbox(format("Well, I shall be off.\pI think someone awaits you up ahead."), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_PLAYER, Zone4E_Movement_Player_UnblockKimonoGirl)
+	applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Zone4E_Movement_KimonoGirl_Exit)
+	waitmovement(0)
+	destroyfollowernpc
+	setvar(VAR_ZONE_4_STATE, 2)
+	fadedefaultbgm
+	releaseall
+}
+
+movement Zone4E_Movement_Player_UnblockKimonoGirl {
+	walk_down
+	walk_right
+	face_left
+	delay_16 * 4
+	face_up
+	delay_16 * 6
+	face_left
+}
+
+movement Zone4E_Movement_KimonoGirl_Exit {
+	walk_left
+	walk_right
+	walk_up * 2
+	walk_right * 4
+	walk_up * 2
+	walk_left * 4
+	walk_up
+	walk_left * 3
+	walk_up
+}
+
 script Zone4E_EventScript_LeviathanBattle {
 	lockall
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)

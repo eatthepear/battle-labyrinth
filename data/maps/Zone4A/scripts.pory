@@ -16,24 +16,33 @@ mapscripts Zone4A_MapScripts {
 script Zone4A_EventScript_KimonoGirl_Intro {
 	lockall
 	playbgm(MUS_HG_KIMONO_GIRL, 0)
+	applymovement(LOCALID_KIMONO_GIRL, Common_Movement_FaceLeft)
+	waitmovement(0)
+	msgbox(format("Oh, poor Kimono Girl, all alone in these woods.\pWon't you help show me the way out?"), MSGBOX_AUTOCLOSE)
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 3) {
 		applymovement(LOCALID_KIMONO_GIRL, Common_Movement_WalkUp)
 		waitmovement(0)
 	}
+	msgbox(Zone4A_Text_KimonoGirl, MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_KIMONO_GIRL, Common_Movement_WalkLeft3)
 	waitmovement(0)
-	msgbox(format("Let's go together!"), MSGBOX_AUTOCLOSE)
 	setfollowernpc(LOCALID_KIMONO_GIRL, FOLLOWER_NPC_FLAG_ALL)
+	applymovement(LOCALID_KIMONO_GIRL, Common_Movement_FaceLeft)
+	waitmovement(0)
 	setvar(VAR_ZONE_4_STATE, 1)
 	fadedefaultbgm
 	releaseall
 }
 
+text Zone4A_Text_KimonoGirl {
+	format("It seems fate has smiled upon me today, meeting you.\pI do hope we find our way through these woods soon…")
+}
+
 script Zone4A_EventScript_KimonoGirl {
 	lock
 	faceplayer
-	msgbox(format("Hello."))
+	msgbox(Zone4A_Text_KimonoGirl, MSGBOX_AUTOCLOSE)
 	release
 	end
 }
