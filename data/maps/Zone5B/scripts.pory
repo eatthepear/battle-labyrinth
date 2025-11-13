@@ -30,6 +30,9 @@ script Zone5B_EventScript_GymGuide {
     lock
     faceplayer
     msgbox(format("Welcome to Liza's Pokémon Gym!\pYou'll find some challenging puzzles up ahead to test your mind.\pThe Gym Leader, Liza, is without her brother currently, so be prepared for a single battle!"))
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		msgbox(format("Also, beware! The Gym is under the effect of Psychic Terrain, meaning all grounded Pokémon deal 30% more with Psychic moves and are immune to priority and sleep, among other things."))
+	}
     release
     end
 }
@@ -85,5 +88,41 @@ script Zone5B_EventScript_WarpToPriorWarp {
 	warpmossdeepgym(MAP_ZONE5B, 4, 11)
 	waitstate
 	releaseall
+	end
+}
+
+script EventScript_Lunatone {
+	lock
+	faceplayer
+	playmoncry(SPECIES_LUNATONE, CRY_MODE_NORMAL)
+	msgbox(format("Lunee!"))
+	waitmoncry
+	release
+}
+
+script Zone5B_EventScript_Sylvia {
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		setvar(VAR_BATTLE_STARTING_STATUS, STARTING_STATUS_PSYCHIC_TERRAIN)
+	}
+	trainerbattle_single(TRAINER_PBL_SYLVIA, format(""), format(""))
+	msgbox(format(""), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone5B_EventScript_Theresa {
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		setvar(VAR_BATTLE_STARTING_STATUS, STARTING_STATUS_PSYCHIC_TERRAIN)
+	}
+	trainerbattle_single(TRAINER_PBL_THERESA, format(""), format(""))
+	msgbox(format(""), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone5B_EventScript_Anthony {
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		setvar(VAR_BATTLE_STARTING_STATUS, STARTING_STATUS_PSYCHIC_TERRAIN)
+	}
+	trainerbattle_single(TRAINER_PBL_ANTHONY, format(""), format(""))
+	msgbox(format(""), MSGBOX_AUTOCLOSE)
 	end
 }

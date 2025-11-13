@@ -1166,6 +1166,159 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Spark
 - Electroweb
 
+=== TRAINER_PBL_SYLVIA ===
+Name: Joel
+Class: Psychic
+Pic: Psychic M
+Music: Intense
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+
+Munna @ Light Clay
+Calm Nature
+Ability: Synchronize
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Psywave
+- Light Screen
+- Reflect
+
+=== TRAINER_PBL_THERESA ===
+Name: Joel
+Class: Psychic
+Pic: Psychic M
+Music: Intense
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+
+Munna @ Light Clay
+Calm Nature
+Ability: Synchronize
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Psywave
+- Light Screen
+- Reflect
+
+=== TRAINER_PBL_ANTHONY ===
+Name: Anthony
+Class: Psychic
+Pic: Psychic M
+Music: Intense
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+
+Munna @ Light Clay
+Calm Nature
+Ability: Synchronize
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Psywave
+- Light Screen
+- Reflect
+
+=== TRAINER_PBL_LIZA_LEVIATHAN_5 ===
+Name: Liza
+Class: Leader
+Pic: Liza
+Music: Female
+AI: AI_FLAG_LEVIATHAN
+Double Battle: No
+Mugshot: Purple
+
+Munna @ Light Clay
+Calm Nature
+Ability: Synchronize
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Psywave
+- Light Screen
+- Reflect
+
+Dottler @ Silver Powder
+Modest Nature
+Ability: Swarm
+Level: 14
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Confusion
+- Struggle Bug
+- Light Screen
+- Reflect
+
+Natu @ Psychic Seed
+Timid Nature
+Ability: Magic Bounce
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Cutter
+- Night Shade
+- Light Screen
+- Reflect
+
+Lunatone @ Sitrus Berry
+Lonely Nature
+Ability: Levitate
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Confusion
+- Rock Throw
+- Light Screen
+- Reflect
+
+=== TRAINER_PBL_LIZA_LEVIATHAN_5 ===
+Name: Liza
+Class: Leader
+Pic: Liza
+Music: Female
+AI: AI_FLAG_LEVIATHAN
+Double Battle: No
+Mugshot: Purple
+Difficulty: Brutal
+
+Munna @ Light Clay
+Calm Nature
+Ability: Synchronize
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Psywave
+- Light Screen
+- Reflect
+
+Dottler @ Silver Powder
+Modest Nature
+Ability: Swarm
+Level: 14
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Confusion
+- Struggle Bug
+- Light Screen
+- Reflect
+
+Natu @ Psychic Seed
+Timid Nature
+Ability: Magic Bounce
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Cutter
+- Night Shade
+- Light Screen
+- Reflect
+
+Lunatone @ Sitrus Berry
+Lonely Nature
+Ability: Levitate
+Level: 14
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Confusion
+- Rock Throw
+- Light Screen
+- Reflect
+
 === TRAINER_PBL_ANNE_AND_JUNE ===
 Name: Anne&June
 Class: Sr And Jr
@@ -1499,105 +1652,6 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bug Bite
 - Protect
 - Twineedle
-
-=== TRAINER_PBL_LIZA_LEVIATHAN_5 ===
-Name: Liza
-Class: Leader
-Pic: Liza
-Music: Female
-AI: AI_FLAG_LEVIATHAN
-Double Battle: No
-Mugshot: Purple
-
-Munna @ Light Clay
-Calm Nature
-Ability: Synchronize
-Level: 15
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psybeam
-- Psywave
-- Light Screen
-- Reflect
-
-Dottler @ Silver Powder
-Modest Nature
-Ability: Swarm
-Level: 14
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Confusion
-- Struggle Bug
-- Light Screen
-- Reflect
-
-Natu @ Psychic Seed
-Timid Nature
-Ability: Magic Bounce
-Level: 13
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Air Cutter
-- Night Shade
-- Light Screen
-- Reflect
-
-Lunatone @ Sitrus Berry
-Lonely Nature
-Ability: Levitate
-Level: 12
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Confusion
-- Rock Throw
-- Light Screen
-- Reflect
-
-=== TRAINER_PBL_LIZA_LEVIATHAN_5 ===
-Name: Liza
-Class: Leader
-Pic: Liza
-Music: Female
-AI: AI_FLAG_LEVIATHAN
-Double Battle: No
-Mugshot: Purple
-Difficulty: Brutal
-
-Munna @ Light Clay
-Calm Nature
-Ability: Synchronize
-Level: 15
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psybeam
-- Psywave
-- Light Screen
-- Reflect
-
-Dottler @ Silver Powder
-Modest Nature
-Ability: Swarm
-Level: 14
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Confusion
-- Struggle Bug
-- Light Screen
-- Reflect
-
-Natu @ Psychic Seed
-Timid Nature
-Ability: Magic Bounce
-Level: 15
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Air Cutter
-- Night Shade
-- Light Screen
-- Reflect
-
-Lunatone @ Sitrus Berry
-Lonely Nature
-Ability: Levitate
-Level: 14
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Confusion
-- Rock Throw
-- Light Screen
-- Reflect
 
 === TRAINER_PBL_GILBERT ===
 Name: Gilbert
