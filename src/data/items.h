@@ -2000,7 +2000,7 @@ const struct Item gItemsInfo[] =
             "Raises level by\n"
             "one, past the\n"
             "level cap."),
-        .pocket = POCKET_ITEMS,
+        .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
