@@ -371,7 +371,6 @@ script EventScript_PorygonExit {
 		release
 		end
 	}
-	call(EventScript_MandatoryCheck)
 	msgbox(format("Proceed to the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		closemessage
@@ -1078,7 +1077,7 @@ script EventScript_Difficulty_Info {
 		dynmultistack(0, 0, FALSE, 5, FALSE, VAR_DIFFICULTY, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
-				msgbox(format("{COLOR RED}Easy{COLOR DARK_GRAY} is suited for casual players.\pFor the most part, you can play as if this was one of the harder vanilla Pokémon games, meaning you can grind experience, items, and money.\pYou gain double the amount of money from battles, and you don't need to defeat all opponents in a Zone to proceed to the Sanctuary.\pAll trainers are one level lower than {COLOR RED}Normal{COLOR DARK_GRAY}."))
+				msgbox(format("{COLOR RED}Easy{COLOR DARK_GRAY} is suited for casual players.\pFor the most part, you can play as if this was one of the harder vanilla Pokémon games, meaning you can grind experience, items, and money.\pYou gain double the amount of money from battles, and all trainers are one level lower than {COLOR RED}Normal{COLOR DARK_GRAY}."))
 			case 1:
 				msgbox(format("{COLOR RED}Normal{COLOR DARK_GRAY} is suited for the typical player.\pThe game is more challenging than a vanilla Pokémon game.\pRecommended for first time playthroughs!"))
 			case 2:
