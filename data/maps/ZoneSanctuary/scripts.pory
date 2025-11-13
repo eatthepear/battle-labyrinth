@@ -256,7 +256,7 @@ script EventScript_NextZone {
 			return
 		}
 	}
-	call(EventScript_BufferZoneName)
+	call(EventScript_BufferCurrentZoneName)
 	switch (var(VAR_ZONE)) {
 		case 5:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 5 - Timberstep Plateau{COLOR DARK_GRAY}."), MSGBOX_YESNO)
@@ -441,7 +441,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 	applymovement(LOCALID_COLRESS, Common_Movement_WalkDown2)
 	waitmovement(0)
 	playfanfare(MUS_OBTAIN_BADGE)
-	call(EventScript_BufferZoneName)
+	call(EventScript_BufferCurrentZoneName)
 	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Congratulations. You have\ncompleted {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."))
 	waitfanfare
 	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Your reward for clearing {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY} is…"))
@@ -1053,7 +1053,7 @@ script Sanctuary_EventScript_HandleStarterSelectionDefault {
 }
 
 script EventScript_WhenUReadyDialogue {
-	call(EventScript_BufferZoneName)
+	call(EventScript_BufferCurrentZoneName)
 	msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: When you are prepared to enter {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
 }
 

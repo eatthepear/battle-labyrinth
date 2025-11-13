@@ -106,3 +106,95 @@ script EventScript_PokedexQuestScientist {
 	release
 	end
 }
+
+script EventScript_OldMan_PriorZone {
+	lock
+	faceplayer
+	if (var(VAR_ZONE) == 1) {
+		msgbox(format("Looking to access a prior Zone?\pHm, it seems you have not completed any Zones yet. Come back when you have."))
+		release
+		end
+	}
+	showmoneybox(18, 0)
+	message(format("Looking to access a prior Zone?\nIt will cost you ¥1000."))
+	waitmessage
+	setvar(VAR_TEMP_0, 1)
+	while (var(VAR_TEMP_0) != VAR_ZONE) {
+		call(EventScript_BufferZoneName)
+		dynmultipush("{STR_VAR_1}", VAR_TEMP_0)
+		addvar(VAR_TEMP_0, 1)
+	}
+	dynmultipush("Cancel", 0)
+	dynmultistack(0, 0, FALSE, 6, FALSE, 1, DYN_MULTICHOICE_CB_NONE)
+	switch (var(VAR_RESULT)) {
+		case 0:
+		case MULTI_B_PRESSED:
+			hidemoneybox
+			release
+			end
+		default:
+			copyvar(VAR_TEMP_0, VAR_RESULT)
+	}
+	call(EventScript_BufferZoneName)
+	msgbox(format("Are you sure you want to go to {STR_VAR_1}?\lIt will cost you ¥1000."), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		hidemoneybox
+		release
+		end
+	}
+	if (checkmoney(1000) == FALSE) {
+		msgbox(gText_YouDontHaveEnoughMoney)
+		hidemoneybox
+		release
+		end
+	}
+	removemoney(1000)
+	updatemoneybox
+	msgbox(format("Thank you very much…"), MSGBOX_DEFAULT)
+	setflag(FLAG_IS_REVISITING_ZONE)
+	switch (var(VAR_TEMP_0)) {
+		case 1:
+			call(EventScript_OldMan_MoveOutOfWay)
+			warpdoor(MAP_ZONE1A, 255, 16, 28)
+			waitstate
+		case 2:
+			call(EventScript_OldMan_MoveOutOfWay)
+			warpdoor(MAP_ZONE2A, 255, 10, 8)
+			waitstate
+		case 3:
+			call(EventScript_OldMan_MoveOutOfWay)
+			warpdoor(MAP_ZONE3A, 255, 38, 25)
+			waitstate
+		case 4:
+			call(EventScript_OldMan_MoveOutOfWay)
+			warpdoor(MAP_ZONE4A, 255, 3, 4)
+			waitstate
+	}
+	release
+	end
+}
+
+script EventScript_OldMan_MoveOutOfWay {
+	closemessage
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 15) {
+		applymovement(LOCALID_OLD_MAN, Common_Movement_WalkDown)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
+		waitmovement(0)
+		applymovement(LOCALID_OLD_MAN, Common_Movement_FaceUp)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 16) {
+		applymovement(LOCALID_OLD_MAN, Common_Movement_WalkLeft)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
+		waitmovement(0)
+		applymovement(LOCALID_OLD_MAN, Common_Movement_FaceRight)
+		waitmovement(0)
+	} else {
+		applymovement(LOCALID_OLD_MAN, Common_Movement_WalkDown)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+		applymovement(LOCALID_OLD_MAN, Common_Movement_FaceUp)
+		waitmovement(0)
+	}
+	return
+}

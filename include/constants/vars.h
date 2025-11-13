@@ -60,7 +60,7 @@
 #define VAR_DEXNAV_SPECIES                   0x402A // Registered dexnav species
 #define VAR_DIFFICULTY                       0x402B
 #define VAR_FARM_STOCK                       0x402C
-#define VAR_REVISITING_ZONE                  0x402D
+#define VAR_REVISITING_ZONE                  0x402D // functionally unused
 #define VAR_GROTTO_NUMBER                    0x402E
 #define VAR_GROTTO_SPECIES                   0x402F
 

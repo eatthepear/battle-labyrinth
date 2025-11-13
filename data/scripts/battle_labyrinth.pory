@@ -357,8 +357,19 @@ script EventScript_NuzlockeVerifyGift {
 script EventScript_PorygonExit {
     lock
 	faceplayer
-	if (var(VAR_REVISITING_ZONE) != 0) {
-		goto(EventScript_WarpZone0)
+	if (flag(FLAG_IS_REVISITING_ZONE)) {
+		msgbox(format("Return to the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			release
+			end
+		}
+		closemessage
+		playmoncry(SPECIES_PORYGON, 0)
+		waitmoncry
+		warp(MAP_ZONE_SANCTUARY, 255, 48, 12)
+		waitstate
+		release
+		end
 	}
 	call(EventScript_MandatoryCheck)
 	msgbox(format("Proceed to the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
@@ -625,7 +636,7 @@ script EventScript_Notebook {
 }
 
 script EventScript_Notebook_ZoneInfo {
-	call(EventScript_BufferZoneName)
+	call(EventScript_BufferCurrentZoneName)
 	msgbox(format("{PLAYER} flipped to the page about {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}…"))
 	msgbox(gText_Notebook_ReadOn, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
@@ -689,7 +700,7 @@ script EventScript_Notebook_ZoneInfo {
 	}
 	specialvar(VAR_TEMP_0, GetNumTrainersRemaining)
 	call(EventScript_OpponentsRemainingMessage)
-	call(EventScript_BufferZoneName)
+	call(EventScript_BufferCurrentZoneName)
 	msgbox(format("The next page talks about a fierce foe in {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."))
 	msgbox(gText_Notebook_ReadOn, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
@@ -2128,8 +2139,13 @@ script EventScript_AskSaveGame {
 	return
 }
 
+script EventScript_BufferCurrentZoneName {
+	copyvar(VAR_TEMP_0, VAR_ZONE)
+	call(EventScript_BufferZoneName)
+}
+
 script EventScript_BufferZoneName {
-	switch (var(VAR_ZONE)) {
+	switch (var(VAR_TEMP_0)) {
 		case 1:
 			bufferstring(0, gText_MapZone1)
 		case 2:
