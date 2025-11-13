@@ -483,6 +483,12 @@ script Zone3A_EventScript_Surveil {
 	end
 }
 
+script Zone3A_EventScript_RareCandy {
+	// completesubquest(QUEST_SIGNS, 18)
+	msgbox(format("Trainer Tips\pRare Candies are different from the Infinite Candy in that they can be used to level up past the level cap!\pOnly 15 of them can be found throughout the game."), MSGBOX_SIGN)
+	end
+}
+
 script Zone4A_EventScript_Sign {
 	completesubquest(QUEST_SIGNS, 19)
 	msgbox(format("These woods are enchanted…\nDon't get lost!"), MSGBOX_SIGN)
@@ -988,7 +994,7 @@ script EventScript_Notebook_Items {
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
-				msgbox(format("The Infinite Candy Key Item allows you to raise your Pokémon up to the level cap.\pIn a Zone however, you can only raise your Pokémon up to the prior level cap.\pYou can use normal Rare Candies, of which there are a limited amount, to level up your Pokémon past the current level cap."))
+				msgbox(format("The Infinite Candy Key Item allows you to raise your Pokémon up to the level cap.\pIn a Zone however, you can only raise your Pokémon up to the prior level cap.\pYou can use normal Rare Candies, of which there only 15 in the game, to level up your Pokémon past the current level cap."))
 			case 1:
 				msgbox(format("The Infinite Repel Key Item allows you to avoid encountering any wild Pokémon, regardless of your level."))
 			case 2:
