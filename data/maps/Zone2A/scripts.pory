@@ -85,14 +85,8 @@ script Zone2A_EventScript_LeviathanBattle {
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_SHAUN_LEVIATHAN_2, format("Ack! I lost again!\pDoggone it!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though;\pI enjoyed our battle so much, I want to give you some extra Berries!"), MSGBOX_DEFAULT)
-	giveitem(ITEM_ORAN_BERRY, 2)
-	giveitem(ITEM_CHERI_BERRY, 2)
-	giveitem(ITEM_PECHA_BERRY, 2)
-	giveitem(ITEM_RAWST_BERRY, 2)
-	giveitem(ITEM_CHESTO_BERRY, 2)
-	giveitem(ITEM_ASPEAR_BERRY, 2)
-	giveitem(ITEM_PERSIM_BERRY, 2)
+	msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though;\pI enjoyed our battle so much, I want to give you these!"), MSGBOX_DEFAULT)
+	giveitem(ITEM_ORAN_BERRY, 5)
 	setflag(FLAG_BEAT_LEVIATHAN_2)
 	msgbox(Zone2A_Text_Shaun_MoreBerries)
 	release
@@ -100,7 +94,7 @@ script Zone2A_EventScript_LeviathanBattle {
 }
 
 text Zone2A_Text_Shaun_MoreBerries {
-	format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: If you're looking for more Berries, you can always buy more at the Farmer's Stand!")
+	format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: If you're looking for more Berries, you can always buy more at the Farmer's Stand, or find them hidden in the field!")
 }
 
 script Zone2A_EventScript_BuyBug {
