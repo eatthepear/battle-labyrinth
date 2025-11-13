@@ -17,7 +17,7 @@
     {
       "local_id": "LOCALID_GROTTO_POKEMON",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 10,
+      "x": 9,
       "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -33,7 +33,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 10,
+      "x": 9,
       "y": 15,
       "elevation": 0,
       "var": "VAR_GENERIC",

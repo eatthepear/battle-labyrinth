@@ -5314,7 +5314,7 @@
     {
       "id": "LAYOUT_HIDDEN_GROTTO",
       "name": "HiddenGrotto_Layout",
-      "width": 20,
+      "width": 19,
       "height": 19,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_Grotto",
