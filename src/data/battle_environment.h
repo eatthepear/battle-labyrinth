@@ -220,7 +220,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .tilemap = gBattleEnvironmentTilemap_Building,
             .entryTileset = gBattleEnvironmentAnimTiles_Building,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
-            .palette = gBattleEnvironmentPalette_BuildingLeader,
+            .palette = gBattleEnvironmentPalette_Plain,
         },
     },
 
