@@ -185,29 +185,15 @@ static UNUSED void FeebasSeedRng(u16 seed)
 // LAND_WILD_COUNT
 u32 ChooseWildMonIndex_Land(void)
 {
-    u8 wildMonIndex = 0;
     bool8 swap = FALSE;
-    u8 rand = Random() % (SELECTED_LAND_WILD_COUNT * 10);
-
-    if (rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_0)
-        wildMonIndex = 0;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_1)
-        wildMonIndex = 1;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_2)
-        wildMonIndex = 2;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_3)
-        wildMonIndex = 3;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_3 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_4)
-        wildMonIndex = 4;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_4 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_5)
-        wildMonIndex = 5;
-    // If you change SELECTED_LAND_WILD_COUNT, you need to edit the number of if else statements and also change the if swap number
+    u8 numWildMons = FlagGet(FLAG_SYS_ALL_WILD_MONS) ? LAND_WILD_COUNT : SELECTED_LAND_WILD_COUNT;
+    u8 wildMonIndex = Random() % numWildMons;
 
     if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
         swap = TRUE;
 
     if (swap)
-        wildMonIndex = 5 - wildMonIndex;
+        wildMonIndex = numWildMons - wildMonIndex;
 
     return wildMonIndex;
 }
@@ -215,23 +201,15 @@ u32 ChooseWildMonIndex_Land(void)
 // WATER_WILD_COUNT
 u32 ChooseWildMonIndex_Water(void)
 {
-    u32 wildMonIndex = 0;
     bool8 swap = FALSE;
-    u8 rand = Random() % (SELECTED_WATER_WILD_COUNT * 20);
-
-    if (rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_0)
-        wildMonIndex = 0;
-    else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_1)
-        wildMonIndex = 1;
-    else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_2)
-        wildMonIndex = 2;
-    // If you change SELECTED_WATER_WILD_COUNT, you need to edit the number of if else statements and also change the if swap number
+    u8 numWildMons = FlagGet(FLAG_SYS_ALL_WILD_MONS) ? WATER_WILD_COUNT : SELECTED_WATER_WILD_COUNT;
+    u8 wildMonIndex = Random() % numWildMons;
 
     if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
         swap = TRUE;
 
     if (swap)
-        wildMonIndex = 2 - wildMonIndex;
+        wildMonIndex = numWildMons - wildMonIndex;
 
     return wildMonIndex;
 }
@@ -239,23 +217,15 @@ u32 ChooseWildMonIndex_Water(void)
 // ROCK_WILD_COUNT
 u32 ChooseWildMonIndex_Rocks(void)
 {
-    u32 wildMonIndex = 0;
     bool8 swap = FALSE;
-    u8 rand = Random() % (SELECTED_ROCK_WILD_COUNT * 20);
-
-    if (rand < ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_0)
-        wildMonIndex = 0;
-    else if (rand >= ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_1)
-        wildMonIndex = 1;
-    else if (rand >= ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_ROCK_SMASH_MONS_SLOT_2)
-        wildMonIndex = 2;
-    // If you change SELECTED_ROCK_WILD_COUNT, you need to edit the number of if else statements and also change the if swap number
+    u8 numWildMons = FlagGet(FLAG_SYS_ALL_WILD_MONS) ? ROCK_WILD_COUNT : SELECTED_ROCK_WILD_COUNT;
+    u8 wildMonIndex = Random() % numWildMons;
 
     if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
         swap = TRUE;
 
     if (swap)
-        wildMonIndex = 2 - wildMonIndex;
+        wildMonIndex = numWildMons - wildMonIndex;
 
     return wildMonIndex;
 }
@@ -516,7 +486,9 @@ const struct WildPokemon *GetSelectedWildPokemonTable(const struct WildPokemonIn
 {
     u8 totalWildCount;
     u8 selectedWildCount;
-    
+    if (FlagGet(FLAG_SYS_ALL_WILD_MONS))
+        return wildMonInfo->wildPokemon;
+
     switch (area)
     {
     case WILD_AREA_LAND:

@@ -992,7 +992,10 @@ script EventScript_Notebook_Other {
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
-				msgbox(format("Wild species are determined based on your save file.\pWhen you start a new game, for each area, 6 land species and 3 other species are randomly chosen from pools.\pEach species has an equal likelihood of being encountered."))
+				if (flag(FLAG_SYS_ALL_WILD_MONS) == false) {
+					msgbox(format("Wild encounters are determined based on your save file.\pWhen you start a new game, for each area, 6 land species and 3 other species are randomly chosen from pools of 12 and 5."))
+				}
+				msgbox(format("By default, wild encounters each have an equal likelihood of being encountered."))
 			case 1:
 				msgbox(format("Many trainers have a pool of possible Pokémon they can have, and may vary their lead Pokémon."))
 			case 2:

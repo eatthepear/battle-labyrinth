@@ -1992,7 +1992,7 @@ static void DexNavLoadEncounterData(void)
     if (landMonsInfo != NULL && landMonsInfo->encounterRate != 0)
     {
         const struct WildPokemon *table = GetSelectedWildPokemonTable(landMonsInfo, WILD_AREA_LAND);
-        for (i = 0; i < SELECTED_LAND_WILD_COUNT; i++)
+        for (i = 0; i < (FlagGet(FLAG_SYS_ALL_WILD_MONS) ? LAND_WILD_COUNT : SELECTED_LAND_WILD_COUNT); i++)
         {
             species = table[i].species;
             if (species != SPECIES_NONE && !SpeciesInArray(species, 0))
@@ -2004,7 +2004,7 @@ static void DexNavLoadEncounterData(void)
     if (waterMonsInfo != NULL && waterMonsInfo->encounterRate != 0)
     {
         const struct WildPokemon *table = GetSelectedWildPokemonTable(waterMonsInfo, WILD_AREA_WATER);
-        for (i = 0; i < WATER_WILD_COUNT; i++)
+        for (i = 0; i < (FlagGet(FLAG_SYS_ALL_WILD_MONS) ? WATER_WILD_COUNT : SELECTED_WATER_WILD_COUNT); i++)
         {
             species = table[i].species;
             if (species != SPECIES_NONE && !SpeciesInArray(species, 1))
@@ -2016,7 +2016,7 @@ static void DexNavLoadEncounterData(void)
     if (hiddenMonsInfo != NULL) // no encounter rate check since 0 means land, 1 means water encounters
     {
         const struct WildPokemon *table = GetSelectedWildPokemonTable(hiddenMonsInfo, WILD_AREA_HIDDEN);
-        for (i = 0; i < SELECTED_HIDDEN_WILD_COUNT; i++)
+        for (i = 0; i < (FlagGet(FLAG_SYS_ALL_WILD_MONS) ? HIDDEN_WILD_COUNT : SELECTED_HIDDEN_WILD_COUNT); i++)
         {
             species = table[i].species;
             if (species != SPECIES_NONE && !SpeciesInArray(species, 2))
@@ -2040,7 +2040,7 @@ static void DrawSpeciesIcons(void)
     u16 species;
 
     LoadCompressedSpriteSheetUsingHeap(&sNoDataIconSpriteSheet);
-    for (i = 0; i < SELECTED_LAND_WILD_COUNT; i++)
+    for (i = 0; i < (FlagGet(FLAG_SYS_ALL_WILD_MONS) ? LAND_WILD_COUNT : SELECTED_LAND_WILD_COUNT); i++)
     {
         species = sDexNavUiDataPtr->landSpecies[i];
         x = ROW_LAND_ICON_X + (24 * (i % COL_LAND_COUNT));
@@ -2048,7 +2048,7 @@ static void DrawSpeciesIcons(void)
         TryDrawIconInSlot(species, x, y);
     }
 
-    for (i = 0; i < SELECTED_WATER_WILD_COUNT; i++)
+    for (i = 0; i < (FlagGet(FLAG_SYS_ALL_WILD_MONS) ? WATER_WILD_COUNT : SELECTED_WATER_WILD_COUNT); i++)
     {
         species = sDexNavUiDataPtr->waterSpecies[i];
         x = ROW_WATER_ICON_X + 24 * i;
@@ -2056,7 +2056,7 @@ static void DrawSpeciesIcons(void)
         TryDrawIconInSlot(species, x, y);
     }
 
-    for (i = 0; i < SELECTED_HIDDEN_WILD_COUNT; i++)
+    for (i = 0; i < (FlagGet(FLAG_SYS_ALL_WILD_MONS) ? HIDDEN_WILD_COUNT : SELECTED_HIDDEN_WILD_COUNT); i++)
     {
         species = sDexNavUiDataPtr->hiddenSpecies[i];
         x = ROW_HIDDEN_ICON_X + 24 * i;
