@@ -1054,7 +1054,8 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: Unique Types
+Party Size: 4
+Pool Prune: Non Bug
 Copy Pool: TRAINER_PBL_JEMMA
 
 === TRAINER_PBL_CHLOE_AND_KAYA ===
@@ -1085,7 +1086,8 @@ Pic: Fairy Tale Girl
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: Unique Types
+Party Size: 4
+Pool Prune: Non Fairy
 Copy Pool: TRAINER_PBL_JEMMA
 
 === TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4 ===

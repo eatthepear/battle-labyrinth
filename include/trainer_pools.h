@@ -30,6 +30,7 @@ enum PoolPruneOptions {
     POOL_PRUNE_TEST,
     POOL_PRUNE_RANDOM_TAG,
     POOL_PRUNE_NON_BUG,
+    POOL_PRUNE_NON_FAIRY,
 };
 
 enum PoolTags {

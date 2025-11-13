@@ -381,6 +381,7 @@ static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const s
     switch (trainer->poolPruneIndex)
     {
         case POOL_PRUNE_NONE:
+            PruneBattled(trainer, poolIndexArray, rules);
             break;
         case POOL_PRUNE_TEST:
             TestPrune(trainer, poolIndexArray, rules);
@@ -391,10 +392,12 @@ static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const s
         case POOL_PRUNE_NON_BUG:
             PruneNonType(trainer, poolIndexArray, rules, TYPE_BUG);
             break;
+        case POOL_PRUNE_NON_FAIRY:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_FAIRY);
+            break;
         default:
             break;
     }
-    PruneBattled(trainer, poolIndexArray, rules);
 }
 
 void DoTrainerPartyPool(const struct Trainer *trainer, u32 *monIndices, u8 monsCount, u32 battleTypeFlags)
