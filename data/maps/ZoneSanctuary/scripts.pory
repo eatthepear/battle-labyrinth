@@ -501,12 +501,18 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 3:
 			completesubquest(QUEST_PBL, 3)
 			setvar(VAR_ZONE, 4)
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				setflag(FLAG_ITEM_ZONE3A_RARE_CANDY)
+			}
 		case 4:
 			completesubquest(QUEST_PBL, 4)
 			setvar(VAR_ZONE, 5)
 		case 5:
 			completesubquest(QUEST_PBL, 5)
 			setvar(VAR_ZONE, 6)
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				setflag(FLAG_ITEM_ZONE5A_RARE_CANDY)
+			}
 			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
 			playfanfare(MUS_OBTAIN_ITEM)
 			msgbox(Sanctuary_Text_Colress_UpgradedPotions, MSGBOX_DEFAULT)
