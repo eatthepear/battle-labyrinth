@@ -16,27 +16,27 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 15,
-      "y": 14,
+      "x": 16,
+      "y": 12,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_sight_or_berry_tree_id": "4",
       "script": "Zone4D_EventScript_Fred",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FAIRY_TALE_GIRL",
-      "x": 6,
-      "y": 7,
+      "x": 11,
+      "y": 3,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "2",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "Zone4D_EventScript_Lucia",
       "flag": "0"
     },
@@ -52,32 +52,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Zone4D_EventScript_WiseGlasses",
       "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_VAR_1",
-      "x": 4,
-      "y": 16,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone4D_EventScript_TMHiddenPower",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 3,
-      "y": 16,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_UseCut_PBL",
-      "flag": "FLAG_TEMP_1"
     }
   ],
   "warp_events": [
@@ -136,20 +110,6 @@
       "elevation": 0,
       "dest_map": "MAP_ZONE4B",
       "dest_warp_id": "2"
-    },
-    {
-      "x": 1,
-      "y": 15,
-      "elevation": 0,
-      "dest_map": "MAP_ZONE4D",
-      "dest_warp_id": "4"
-    },
-    {
-      "x": 1,
-      "y": 16,
-      "elevation": 0,
-      "dest_map": "MAP_ZONE4A",
-      "dest_warp_id": "5"
     }
   ],
   "coord_events": [],

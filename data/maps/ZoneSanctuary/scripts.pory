@@ -262,15 +262,6 @@ script EventScript_NextZone {
 	}
 	call(EventScript_BufferZoneName)
 	switch (var(VAR_ZONE)) {
-		case 4:
-			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 4 - Mystic Glade{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				call(Sanctuary_EventScript_EnterZone)
-				setvar(VAR_LEVEL_CAP, 4)
-				warp(MAP_ZONE4A, 255, 6, 4)
-				waitstate
-				end
-			}
 		case 5:
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Are you sure you're ready? You will be entering {COLOR GREEN}Zone 5 - Timberstep Plateau{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
@@ -378,6 +369,8 @@ script EventScript_WarpNextZone {
 			setflag(FLAG_HIDE_ZONE3A_PHILLIPA)
 			setflag(FLAG_HIDE_ZONE3A_REMI)
 			warp(MAP_ZONE3A, 255, 38, 25)
+		case 4:
+			warp(MAP_ZONE4A, 255, 3, 4)
 	}
 	waitstate
 	end

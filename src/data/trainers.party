@@ -1047,16 +1047,6 @@ Double Battle: No
 Pool Rules: Unique Types
 Copy Pool: TRAINER_PBL_JEMMA
 
-=== TRAINER_PBL_CALLIE ===
-Name: Callie
-Class: Lass
-Pic: Lass
-Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Pool Rules: Unique Types
-Copy Pool: TRAINER_PBL_JEMMA
-
 === TRAINER_PBL_SANTIAGO ===
 Name: Santiago
 Class: Bug Catcher
