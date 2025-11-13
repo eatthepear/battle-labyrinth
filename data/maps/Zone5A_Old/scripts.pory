@@ -151,38 +151,6 @@ Zone5A_Old_Text_AnneAndJunePostBattle:
 	.string "June: Coordination?\p"
 	.string "Anne: Yeah, exactly that!$"
 
-Zone5A_Old_EventScript_Rebecca::
-	trainerbattle_single TRAINER_PBL_REBECCA, Zone5A_Old_Text_RebeccaIntro, Zone5A_Old_Text_RebeccaDefeat
-	msgbox Zone5A_Old_Text_RebeccaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone5A_Old_Text_RebeccaIntro:
-	.string "Don't interrupt my morning walk!$"
-
-Zone5A_Old_Text_RebeccaDefeat:
-	.string "I really like walking, ok?$"
-
-Zone5A_Old_Text_RebeccaPostBattle:
-	.string "Exercise is good for the heart and\n"
-	.string "body!$"
-
-Zone5A_Old_EventScript_Caitlyn::
-	trainerbattle_single TRAINER_PBL_CAITLYN, Zone5A_Old_Text_CaitlynIntro, Zone5A_Old_Text_CaitlynDefeat
-	msgbox Zone5A_Old_Text_CaitlynPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone5A_Old_Text_CaitlynIntro:
-	.string "This is such a nice spot to picnic!\n"
-	.string "Shoo! Find your own spot!$"
-
-Zone5A_Old_Text_CaitlynDefeat:
-	.string "I guess you can join me…$"
-
-Zone5A_Old_Text_CaitlynPostBattle:
-	.string "Why's this the best spot to picnic?\n"
-	.string "It's because you can see a lot of\l"
-	.string "the forest below from here!$"
-
 Zone5A_Old_EventScript_Kevin::
 	trainerbattle_single TRAINER_PBL_KEVIN, Zone5A_Old_Text_KevinIntro, Zone5A_Old_Text_KevinDefeat
 	msgbox Zone5A_Old_Text_KevinPostBattle, MSGBOX_AUTOCLOSE

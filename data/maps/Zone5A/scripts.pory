@@ -1,1 +1,19 @@
 mapscripts Zone5A_MapScripts {}
+
+script Zone5A_EventScript_Caitlyn {
+	trainerbattle_single(TRAINER_PBL_CAITLYN, format("This is such a nice spot to picnic! Shoo! Find your own spot!"), format("I guess you can join me…"))
+	msgbox(format("Why's this the best spot to picnic?\nThe air is really nice, that's why!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone5A_EventScript_Rebecca {
+	trainerbattle_single(TRAINER_PBL_REBECCA, format("Have you seen the Gym up ahead?"), format("I wish I hadn't!"))
+	msgbox(format("Now I'm nervous for a Gym challenge I don't even plan to do!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone5A_EventScript_Clinton {
+	trainerbattle_single(TRAINER_PBL_CLINTON, format("Perhaps if I bribed the Gym Leader, I would be able to get a badge!"), format("Unfortunately, I tried, and no dice!"))
+	msgbox(format("She requested a single battle instead.\pMaybe her brother isn't here or something?"), MSGBOX_AUTOCLOSE)
+	end
+}

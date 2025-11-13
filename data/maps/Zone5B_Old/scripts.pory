@@ -469,24 +469,6 @@ Zone5B_Old_Text_NovaandCoraPostBattle:
 	.string "Nova: Being twins means-\p"
 	.string "Cora: Sharing allergies!$"
 
-Zone5B_Old_EventScript_Clinton::
-	trainerbattle_single TRAINER_PBL_CLINTON, Zone5B_Old_Text_ClintonIntro, Zone5B_Old_Text_ClintonDefeat
-	msgbox Zone5B_Old_Text_ClintonPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone5B_Old_Text_ClintonIntro:
-	.string "I've had my Pokémon specially\n"
-	.string "imported from rare habitats!$"
-
-Zone5B_Old_Text_ClintonDefeat:
-	.string "Um… I thought they were\n"
-	.string "supposed to be strong!$"
-
-Zone5B_Old_Text_ClintonPostBattle:
-	.string "I suppose just because a\n"
-	.string "Pokémon is rare, doesn't\l"
-	.string "mean it's strong!$"
-
 Zone5B_Old_EventScript_Ryan::
 	trainerbattle_single TRAINER_PBL_RYAN, Zone5B_Old_Text_RyanIntro, Zone5B_Old_Text_RyanDefeat
 	msgbox Zone5B_Old_Text_RyanPostBattle, MSGBOX_AUTOCLOSE
