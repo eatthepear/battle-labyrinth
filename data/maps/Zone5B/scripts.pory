@@ -8,7 +8,10 @@ script Zone5B_EventScript_Liza {
     lock
 	msgbox(format("{COLOR BLUE}Liza{COLOR DARK_GRAY}: Gym battle!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	// trainerbattle_no_intro(TRAINER_PBL_PHILLIPA_LEVIATHAN_3, format("Wah!!!"))
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		setvar(VAR_BATTLE_STARTING_STATUS, STARTING_STATUS_PSYCHIC_TERRAIN)
+	}
+	trainerbattle_no_intro(TRAINER_PBL_LIZA_LEVIATHAN_5, format("Wah!!!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Wargh!{COLOR DARK_GRAY}: Gym battle!"))
     setflag(FLAG_BEAT_LEVIATHAN_5)

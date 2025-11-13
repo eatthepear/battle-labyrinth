@@ -1108,29 +1108,29 @@ Double Battle: Yes
 Mugshot: Purple
 Difficulty: Normal
 
-Spinda @ Silk Scarf
+Nickit @ Cheri Berry
+Naive Nature
+Ability: Stakeout
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Snarl
+- Quick Attack
+
+Axew @ Chesto Berry
 Careful Nature
-Ability: Own Tempo
+Ability: Unnerve
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Breaking Swipe
+- Scratch
+
+Ledian @ Oran Berry
+Mild Nature
+Ability: Swarm
 Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Teeter Dance
-- Dizzy Punch
-
-Spoink @ Chesto Berry
-Quiet Nature
-Ability: Own Tempo
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Confusion
-- Growl
-
-Glameow @ Oran Berry
-Jolly Nature
-Ability: Own Tempo
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fake Out
-- Fury Swipes
+- Struggle Bug
+- Tackle
 
 === TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4 ===
 Name: Ella&Bella
@@ -1142,37 +1142,37 @@ Double Battle: Yes
 Mugshot: Purple
 Difficulty: Brutal
 
-Spinda @ Silk Scarf
+Nickit @ Cheri Berry
+Naive Nature
+Ability: Stakeout
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Snarl
+- Quick Attack
+
+Axew @ Chesto Berry
 Careful Nature
-Ability: Own Tempo
+Ability: Unnerve
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Breaking Swipe
+- Scratch
+
+Ledian @ Oran Berry
+Mild Nature
+Ability: Swarm
 Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Teeter Dance
-- Dizzy Punch
+- Struggle Bug
+- Tackle
 
-Spoink @ Chesto Berry
-Quiet Nature
-Ability: Own Tempo
+Shinx @ Wise Glasses
+Rash Nature
+Ability: Intimidate
 Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Confusion
-- Growl
-
-Glameow @ Oran Berry
-Jolly Nature
-Ability: Own Tempo
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fake Out
-- Fury Swipes
-
-Mime Jr. @ Persim Berry
-Bold Nature
-Ability: Filter
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Teeter Dance
-- Confusion
+- Spark
+- Electroweb
 
 === TRAINER_PBL_ANNE_AND_JUNE ===
 Name: Anne&June
@@ -1508,40 +1508,54 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Protect
 - Twineedle
 
-=== TRAINER_PBL_MARIA_LEVIATHAN_5 ===
-Name: Maria
-Class: Backpacker
-Pic: Backpacker F
-Music: Hiker
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Mugshot: Purple
-
-Girafarig @ Eviolite
-Ability: Early Bird
-Level: 15
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psybeam
-- Stomp
-- Double Kick
-
-=== TRAINER_PBL_MARIA_LEVIATHAN_5_CHALLENGE ===
-Name: Maria
-Class: Backpacker
-Pic: Backpacker F
-Music: Hiker
+=== TRAINER_PBL_LIZA_LEVIATHAN_5 ===
+Name: Liza
+Class: Leader
+Pic: Liza
+Music: Female
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 
-Girafarig @ Eviolite
-Ability: Early Bird
-Level: 15
+Munna @ Light Clay
+Calm Nature
+Ability: Synchronize
+Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psybeam
-- Stomp
-- Double Kick
-- Rest
+- Psywave
+- Light Screen
+- Reflect
+
+Baltoy @ Eviolite
+Bold Nature
+Ability: Levitate
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Confusion
+- Sand Tomb
+- Light Screen
+- Reflect
+
+Natu @ Psychic Seed
+Timid Nature
+Ability: Magic Bounce
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Cutter
+- Night Shade
+- Light Screen
+- Reflect
+
+Lunatone @ Oran Berry
+Naive Nature
+Ability: Levitate
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Confusion
+- Rock Throw
+- Light Screen
+- Reflect
 
 === TRAINER_PBL_GILBERT ===
 Name: Gilbert
