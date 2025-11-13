@@ -1520,20 +1520,70 @@ Mugshot: Purple
 Munna @ Light Clay
 Calm Nature
 Ability: Synchronize
-Level: 13
+Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psybeam
 - Psywave
 - Light Screen
 - Reflect
 
-Baltoy @ Eviolite
-Bold Nature
-Ability: Levitate
-Level: 15
+Dottler @ Silver Powder
+Modest Nature
+Ability: Swarm
+Level: 14
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Confusion
-- Sand Tomb
+- Struggle Bug
+- Light Screen
+- Reflect
+
+Natu @ Psychic Seed
+Timid Nature
+Ability: Magic Bounce
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Cutter
+- Night Shade
+- Light Screen
+- Reflect
+
+Lunatone @ Sitrus Berry
+Lonely Nature
+Ability: Levitate
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Confusion
+- Rock Throw
+- Light Screen
+- Reflect
+
+=== TRAINER_PBL_LIZA_LEVIATHAN_5 ===
+Name: Liza
+Class: Leader
+Pic: Liza
+Music: Female
+AI: AI_FLAG_LEVIATHAN
+Double Battle: No
+Mugshot: Purple
+Difficulty: Brutal
+
+Munna @ Light Clay
+Calm Nature
+Ability: Synchronize
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Psywave
+- Light Screen
+- Reflect
+
+Dottler @ Silver Powder
+Modest Nature
+Ability: Swarm
+Level: 14
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Confusion
+- Struggle Bug
 - Light Screen
 - Reflect
 
@@ -1547,10 +1597,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Light Screen
 - Reflect
 
-Lunatone @ Oran Berry
-Naive Nature
+Lunatone @ Sitrus Berry
+Lonely Nature
 Ability: Levitate
-Level: 13
+Level: 14
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Confusion
 - Rock Throw
