@@ -5336,3 +5336,22 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KimonoGirl = {
     .images = sPicTable_KimonoGirl,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RareCandy = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_RARE_CANDY,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 128,
+    .width = 16,
+    .height = 16,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_16x16,
+    .subspriteTables = sOamTables_16x16,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_RareCandy,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};

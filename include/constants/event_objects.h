@@ -281,6 +281,7 @@
 #define OBJ_EVENT_GFX_PARASOL_LADY               281
 #define OBJ_EVENT_GFX_SERENA                     282
 #define OBJ_EVENT_GFX_KIMONO_GIRL                283
+#define OBJ_EVENT_GFX_RARE_CANDY                 284
 
 #define OBJ_EVENT_GFX_OW_MON                     399
 #define OBJ_EVENT_GFX_LIGHT_SPRITE               400
@@ -467,6 +468,7 @@
 // Custom
 #define OBJ_EVENT_PAL_TAG_ITEM_CHEST              0x7250
 #define OBJ_EVENT_PAL_TAG_TM_CHEST                0x7251
+#define OBJ_EVENT_PAL_TAG_RARE_CANDY              0x7252
 
 #define OBJ_EVENT_PAL_TAG_COLRESS                 0x7260
 #define OBJ_EVENT_PAL_TAG_RANGER                  0x7261

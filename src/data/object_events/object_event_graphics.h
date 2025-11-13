@@ -471,6 +471,8 @@ const u32 gObjectEventPic_ItemChestOpen[] = INCBIN_U32("graphics/object_events/p
 const u32 gObjectEventPic_ItemChest[] = INCBIN_U32("graphics/object_events/pics/misc/tm_chest_closed.4bpp");
 const u16 gObjectEventPal_ItemChest[] = INCBIN_U16("graphics/object_events/pics/misc/item_chest_open.gbapal");
 const u16 gObjectEventPal_TMChest[] = INCBIN_U16("graphics/object_events/pics/misc/tm_chest_closed.gbapal");
+const u32 gObjectEventPic_RareCandy[] = INCBIN_U32("graphics/object_events/pics/misc/rare_candy.4bpp");
+const u16 gObjectEventPal_RareCandy[] = INCBIN_U16("graphics/object_events/pics/misc/rare_candy.gbapal");
 
 const u32 gObjectEventPic_Colress[] = INCBIN_U32("graphics/object_events/pics/people/colress.4bpp");
 const u16 gObjectEventPal_Colress[] = INCBIN_U16("graphics/object_events/pics/people/colress.gbapal");

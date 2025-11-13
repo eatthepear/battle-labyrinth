@@ -508,6 +508,7 @@
 #define FLAG_ITEM_ZONE25K_TM37                     0x37F
 #define FLAG_ITEM_ZONE26A_BANETTITE                0x380
 
+#define FLAG_ITEM_ZONE3A_RARE_CANDY                0x401
 
 #define FLAG_UNUSED_0x020    0x4FA // Unused Flag
 #define FLAG_UNUSED_0x021    0x4FA // Unused Flag

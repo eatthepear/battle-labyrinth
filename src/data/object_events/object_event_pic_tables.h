@@ -1493,3 +1493,7 @@ static const struct SpriteFrameImage sPicTable_Serena[] = {
 static const struct SpriteFrameImage sPicTable_KimonoGirl[] = {
     overworld_ascending_frames(gObjectEventPic_KimonoGirl, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_RareCandy[] = {
+    obj_frame_tiles(gObjectEventPic_RareCandy),
+};

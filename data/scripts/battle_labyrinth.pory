@@ -2308,3 +2308,13 @@ script EventScript_LeaveGrotto {
 	releaseall
 	end
 }
+
+script EventScript_RareCandy {
+	lock
+    faceplayer
+    waitse
+	removeobject(VAR_LAST_TALKED)
+	finditem(ITEM_RARE_CANDY)
+	release
+	end
+}
