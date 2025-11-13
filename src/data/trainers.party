@@ -530,8 +530,6 @@ Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 - Leer
-- Defense Curl
-- Mud Slap
 
 Smoliv @ Oran Berry
 Relaxed Nature
@@ -540,8 +538,6 @@ Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 - Mega Drain
-- Leech Seed
-- Protect
 
 Skwovet @ Oran Berry
 Adamant Nature
@@ -550,8 +546,6 @@ Level: 9
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 - Tail Whip
-- Defense Curl
-- Bite
 
 === TRAINER_PBL_SHAUN_LEVIATHAN_2 ===
 Name: Shaun
@@ -570,8 +564,6 @@ Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 - Leer
-- Defense Curl
-- Mud Slap
 
 Smoliv @ Oran Berry
 Relaxed Nature
@@ -580,8 +572,6 @@ Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 - Mega Drain
-- Leech Seed
-- Protect
 
 Skwovet @ Oran Berry
 Adamant Nature
@@ -590,8 +580,6 @@ Level: 9
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 - Tail Whip
-- Defense Curl
-- Bite
 
 Gulpin @ Oran Berry
 Calm Nature
@@ -1249,7 +1237,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Light Screen
 - Reflect
 
-Natu @ Psychic Seed
+Natu @ Wise Glasses
 Timid Nature
 Ability: Magic Bounce
 Level: 13
