@@ -2717,5 +2717,7 @@ extern const u8 gText_SubQuest_Desc_SignsZone50[];
 
 // Switch Caught Mon into Party
 extern const u8 gText_CannotSendMonToBoxHM[];
+extern const u8 gText_CannotSendMonToBoxActive[];
+extern const u8 gText_CannotSendMonToBoxPartner[];
 
 #endif // GUARD_STRINGS_H
