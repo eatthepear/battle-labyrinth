@@ -5829,9 +5829,10 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     bool8 cannotUseEffect;
     u8 holdEffectParam = GetItemHoldEffectParam(*itemPtr);
     u8 candyCap = GetRareCandyLevelCap();
+    bool8 isInfiniteCandy = (GetItemPocket(gSpecialVar_ItemId) == POCKET_KEY_ITEMS);
 
     sInitialLevel = GetMonData(mon, MON_DATA_LEVEL);
-    if (!(B_RARE_CANDY_CAP && sInitialLevel >= candyCap))
+    if (!(isInfiniteCandy && sInitialLevel >= candyCap))
     {
         BufferMonStatsToTaskData(mon, arrayPtr);
         cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);
@@ -5859,7 +5860,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         if (targetSpecies != SPECIES_NONE)
         {
             GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, DO_EVO);
-            if (GetItemPocket(gSpecialVar_ItemId) != POCKET_KEY_ITEMS)
+            if (!isInfiniteCandy)
                 RemoveBagItem(gSpecialVar_ItemId, 1);
             FreePartyPointers();
             gCB2_AfterEvolution = gPartyMenu.exitCallback;
@@ -5871,7 +5872,10 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
             gPartyMenuUseExitCallback = FALSE;
             ConvertIntToDecimalStringN(gStringVar2, candyCap, STR_CONV_MODE_LEFT_ALIGN, 3);
             StringExpandPlaceholders(gStringVar4, gText_CandyNoEffectBecauseCap);
-            DisplayPartyMenuMessage(gStringVar4, TRUE);
+            if (isInfiniteCandy)
+                DisplayPartyMenuMessage(gStringVar4, TRUE);
+            else
+                DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
             ScheduleBgCopyTilemapToVram(2);
             gTasks[taskId].func = task;
         }
@@ -5881,7 +5885,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         sFinalLevel = GetMonData(mon, MON_DATA_LEVEL, NULL);
         gPartyMenuUseExitCallback = TRUE;
         UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
-        if (GetItemPocket(gSpecialVar_ItemId) != POCKET_KEY_ITEMS)
+        if (!isInfiniteCandy)
             RemoveBagItem(gSpecialVar_ItemId, 1);
         GetMonNickname(mon, gStringVar1);
         if (sFinalLevel > sInitialLevel)

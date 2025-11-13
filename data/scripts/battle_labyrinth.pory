@@ -941,7 +941,7 @@ script EventScript_Notebook_Items {
 	while {
 		message(format("Item Changes open.\nAnything not listed is vanilla."))
 		waitmessage
-		dynmultipush("Rare Candies", 0)
+		dynmultipush("Rare Candy", 0)
 		dynmultipush("Infinite Repel", 1)
 		dynmultipush("TMs", 2)
 		dynmultipush("Honey", 3)
@@ -954,7 +954,7 @@ script EventScript_Notebook_Items {
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
-				msgbox(format("The Rare Candies Key Item allows you to raise your Pokémon up to the level cap.\pIn a Zone however, you can only raise your Pokémon up to the prior level cap."))
+				msgbox(format("The Infinite Candy Key Item allows you to raise your Pokémon up to the level cap.\pIn a Zone however, you can only raise your Pokémon up to the prior level cap.\pYou can use normal Rare Candies, of which there are a limited amount, to level up your Pokémon past the current level cap."))
 			case 1:
 				msgbox(format("The Infinite Repel Key Item allows you to avoid encountering any wild Pokémon, regardless of your level."))
 			case 2:

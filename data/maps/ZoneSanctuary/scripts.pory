@@ -246,7 +246,7 @@ script EventScript_NextZone {
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: It seems you haven't explored the Sanctuary fully yet.\pPerhaps speak to the Hiker south of the shops."))
 		return
 	}
-	if (checkitem(ITEM_RARE_CANDY) == FALSE) {
+	if (checkitem(ITEM_INFINITE_CANDY) == FALSE) {
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: It seems you haven't explored the Sanctuary fully yet.\pPerhaps speak to the Expert southwest of the Pokémon Center."))
 		return
 	}
@@ -754,7 +754,7 @@ script Sanctuary_EventScript_GameIntro {
 			setflag(FLAG_LELOUCH_INTRO)
 			additem(ITEM_SUPER_ROD)
 			additem(ITEM_INFINITE_REPEL)
-			additem(ITEM_RARE_CANDY)
+			additem(ITEM_INFINITE_CANDY)
 			completesubquest(QUEST_PBL, 0)
 		}
 	}
@@ -1417,11 +1417,11 @@ script EventScript_Fisherman {
 script EventScript_ExpertM {
 	lock
 	faceplayer
-	if (checkitem(ITEM_RARE_CANDY) == FALSE) {
+	if (checkitem(ITEM_INFINITE_CANDY) == FALSE) {
 		msgbox(format("I have studied the most effective training techniques for Pokémon, and developed these as the most optimal solution."))
-		giveitem(ITEM_RARE_CANDY)
+		giveitem(ITEM_INFINITE_CANDY)
 	}
-	msgbox(format("These {COLOR RED}Rare Candies{COLOR DARK_GRAY} can increase your Pokémon's level up to the prior level cap."), MSGBOX_AUTOCLOSE)
+	msgbox(format("This {COLOR RED}Infinite Candy{COLOR DARK_GRAY} can increase your Pokémon's level up to the prior level cap.\pThough it's not as strong as a true Rare Candy, which would be able to increase your Pokémon's level past the current level cap."), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_EXPERT_M, Common_Movement_FaceLeft)
 	waitmovement(LOCALID_EXPERT_M)
 	release
