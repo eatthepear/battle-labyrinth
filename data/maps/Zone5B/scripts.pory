@@ -31,7 +31,7 @@ script Zone5B_EventScript_GymGuide {
     faceplayer
     msgbox(format("Welcome to Liza's Pokémon Gym!\pYou'll find some challenging puzzles up ahead to test your mind.\pThe Gym Leader, Liza, is without her brother currently, so be prepared for a single battle!"))
 	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-		msgbox(format("Also, beware! The Gym is under the effect of Psychic Terrain, meaning all grounded Pokémon deal 30% more with Psychic moves and are immune to priority and sleep, among other things."))
+		msgbox(format("Also, beware! The Gym is under the effect of Psychic Terrain, meaning all grounded Pokémon deal 30% more with Psychic moves and are immune to priority moves."))
 	}
     release
     end
