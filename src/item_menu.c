@@ -201,7 +201,6 @@ static void BagMenu_MoveCursorCallback(s32, bool8, struct ListMenu *);
 static void BagMenu_ItemPrintCallback(u8, u32, u8);
 static void ItemMenu_UseOutOfBattle(u8);
 static void ItemMenu_Toss(u8);
-static void ItemMenu_Register(u8);
 static void ItemMenu_Give(u8);
 static void ItemMenu_Cancel(u8);
 static void ItemMenu_UseInBattle(u8);
@@ -307,7 +306,7 @@ static const struct MenuAction sItemMenuActions[] = {
     [ACTION_BATTLE_USE]        = {gMenuText_Use,                {ItemMenu_UseInBattle}},
     [ACTION_CHECK]             = {COMPOUND_STRING("CHECK"),     {ItemMenu_UseOutOfBattle}},
     [ACTION_WALK]              = {COMPOUND_STRING("WALK"),      {ItemMenu_UseOutOfBattle}},
-    [ACTION_DESELECT]          = {COMPOUND_STRING("DESELECT"),  {ItemMenu_Deselect}},
+    [ACTION_DESELECT]          = {COMPOUND_STRING("Deselect"),  {ItemMenu_Deselect}},
     [ACTION_CHECK_TAG]         = {COMPOUND_STRING("CHECK TAG"), {ItemMenu_CheckTag}},
     [ACTION_CONFIRM]           = {gMenuText_Confirm,            {Task_FadeAndCloseBagMenu}},
     [ACTION_SHOW]              = {COMPOUND_STRING("SHOW"),      {ItemMenu_Show}},
@@ -3109,27 +3108,7 @@ static void ItemMenu_FailRegister(u8 taskId) //returns error message if no free 
     ItemMenu_Cancel2(taskId);
 }
 
-void UNUSED ItemMenu_Register(u8 taskId)
-{
-    s16* data = gTasks[taskId].data;
-    u16* scrollPos = &gBagPosition.scrollPosition[gBagPosition.pocket];
-    u16* cursorPos = &gBagPosition.cursorPosition[gBagPosition.pocket];
-
-    //tx_registered_items_menu
-    s32 listPosition;
-    RemoveContextWindow();
-    //sRegisterSubMenu = TRUE;
-    listPosition = ListMenu_ProcessInput(tListTaskId);
-    ListMenuGetScrollAndRow(tListTaskId, scrollPos, cursorPos);
-    BagDestroyPocketScrollArrowPair();
-    BagMenu_PrintCursor(tListTaskId, COLORID_GRAY_CURSOR);
-    tListPosition = listPosition;
-    tQuantity = GetBagItemQuantity(gBagPosition.pocket + 1, listPosition);
-    gSpecialVar_ItemId = GetBagItemId(gBagPosition.pocket + 1, listPosition);
-    sContextMenuFuncs[gBagPosition.location](taskId);
-}
-
-static void UNUSED ItemMenu_RegisterList(u8 taskId)
+static void ItemMenu_RegisterList(u8 taskId)
 {
     if (TxRegItemsMenu_AddRegisteredItem(gSpecialVar_ItemId))
         gTasks[taskId].func = ItemMenu_FinishRegister;
@@ -3137,11 +3116,11 @@ static void UNUSED ItemMenu_RegisterList(u8 taskId)
         gTasks[taskId].func = ItemMenu_FailRegister;
 }
 
-static void UNUSED ItemMenu_Deselect(u8 taskId)
+static void ItemMenu_Deselect(u8 taskId)
 {
     s16* data = gTasks[taskId].data;
     int listPosition = ListMenu_ProcessInput(tListTaskId);
-    u16 itemId = GetBagItemId(gBagPosition.pocket + 1, listPosition);
+    u16 itemId = GetBagItemId(gBagPosition.pocket, listPosition);
 
     ResetRegisteredItem(itemId);
 
