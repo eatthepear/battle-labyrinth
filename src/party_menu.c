@@ -8095,6 +8095,7 @@ void MoveDeleterChooseMoveToForget(void)
         ShowPokemonSummaryScreen_BW(SUMMARY_MODE_SELECT_MOVE, gPlayerParty, gSpecialVar_0x8004, gPlayerPartyCount - 1, CB2_ReturnToField);
     else
         ShowPokemonSummaryScreen(SUMMARY_MODE_SELECT_MOVE, gPlayerParty, gSpecialVar_0x8004, gPlayerPartyCount - 1, CB2_ReturnToField);
+    
     gFieldCallback = FieldCB_ContinueScriptHandleMusic;
 }
 
