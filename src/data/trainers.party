@@ -1208,6 +1208,49 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Light Screen
 - Reflect
 
+=== TRAINER_PBL_MELINDA_OPTIONAL_1 ===
+Name: Melinda
+Class: Lady
+Pic: Lady
+Music: Female
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+
+Delibird @ Wide Lens
+Naive Nature
+Ability: Hustle
+Level: 14
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Shard
+- Aurora Beam
+- Present
+
+Luvdisc @ Wise Glasses
+Mild Nature
+Ability: Swift Swim
+Level: 14
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Draining Kiss
+- Icy Wind
+
+Unown @ Twisted Spoon
+Naive Nature
+Ability: Levitate
+Level: 14
+IVs: 31 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
+- Hidden Power
+
+Spinda @ Sitrus Berry
+Naughty Nature
+Ability: Contrary
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dizzy Punch
+- Feint Attack
+- Fake Out
+- Psybeam
+
 === TRAINER_PBL_LIZA_LEVIATHAN_5 ===
 Name: Liza
 Class: Leader

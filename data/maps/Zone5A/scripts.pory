@@ -17,3 +17,9 @@ script Zone5A_EventScript_Clinton {
 	msgbox(format("She requested a single battle instead.\pMaybe her brother isn't here or something?"), MSGBOX_AUTOCLOSE)
 	end
 }
+
+script Zone5A_EventScript_Melinda {
+	trainerbattle_single(TRAINER_PBL_MELINDA_OPTIONAL_1, format("You want this Rare Candy? You won't get it!\pI'll defeat you with the power of the Pokémon my girlfriend gave me!"), format("Fine… take the Rare Candy! Use it to evolve your starter or something…"))
+	msgbox(format("I wish I was better at battling. My girlfriend is always telling me how to improve, but it's hard when I don't have much practice…"), MSGBOX_AUTOCLOSE)
+	end
+}
