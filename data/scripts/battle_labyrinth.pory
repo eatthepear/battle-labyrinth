@@ -371,6 +371,45 @@ script EventScript_PorygonExit {
 		release
 		end
 	}
+	switch (var(VAR_ZONE)) {
+		case 1:
+			if (!flag(FLAG_BEAT_LEVIATHAN_1)) {
+				setflag(FLAG_TEMP_1)
+			}
+		case 2:
+			if (!flag(FLAG_BEAT_LEVIATHAN_2)) {
+				setflag(FLAG_TEMP_1)
+			}
+		case 3:
+			if (!flag(FLAG_BEAT_LEVIATHAN_3)) {
+				setflag(FLAG_TEMP_1)
+			}
+		case 4:
+			if (!flag(FLAG_BEAT_LEVIATHAN_4)) {
+				setflag(FLAG_TEMP_1)
+			}
+		case 5:
+			if (!flag(FLAG_BEAT_LEVIATHAN_5)) {
+				setflag(FLAG_TEMP_1)
+			}
+		case 6:
+			if (!flag(FLAG_BEAT_LEVIATHAN_6)) {
+				setflag(FLAG_TEMP_1)
+			}
+		case 7:
+			if (!flag(FLAG_BEAT_LEVIATHAN_7)) {
+				setflag(FLAG_TEMP_1)
+			}
+			if (!flag(FLAG_BEAT_LEVIATHAN_8)) {
+				setflag(FLAG_TEMP_1)
+			}
+	}
+	if (flag(FLAG_TEMP_1)) {
+		msgbox(format("You must defeat the Leviathan or other challenge before proceeding to the Sanctuary."))
+		clearflag(FLAG_TEMP_1)
+		release
+		end
+	}
 	msgbox(format("Proceed to the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		closemessage
