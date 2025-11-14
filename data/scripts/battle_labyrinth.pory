@@ -694,7 +694,9 @@ script EventScript_Notebook_ZoneInfo {
 		case 3:
 			msgbox(format("{COLOR GREEN}Zone 3{COLOR DARK_GRAY} is a set of small forested islands with clear water."))
 		case 4:
+			msgbox(format("{COLOR GREEN}Zone 4{COLOR DARK_GRAY} is a tightly nestled woodland."))
 		case 5:
+			msgbox(format("{COLOR GREEN}Zone 5{COLOR DARK_GRAY} is a temperate forest with a Psychic Gym."))
 		case 6:
 		case 7:
 		case 8:
@@ -764,7 +766,15 @@ script EventScript_Notebook_ZoneInfo {
 				msgbox(format("On Brutal difficulty, they also have a Spheal that uses Defense Curl and Ice Ball."))
 			}
 		case 4:
+			msgbox(format("The Leviathan battles in a Double Battle. Their Nickit, Axew, and ace Ledian all use spread moves that lower your stats."))
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				msgbox(format("On Brutal difficulty, they also have a Shinx with Intimidate and Electroweb."))
+			}
 		case 5:
+			msgbox(format("The Leviathan is a Psychic Gym Leader fought in a Single Battle. Their Munna, Dottler, Natu, and Lunatone all can utilize Light Screen and Reflect to reduce damage."))
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				msgbox(format("On Brutal difficulty, their Gym has permanent Psychic Terrain, and their Natu and Lunatone are higher level."))
+			}
 		case 6:
 		case 7:
 		case 8:
