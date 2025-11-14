@@ -193,7 +193,7 @@ u32 ChooseWildMonIndex_Land(void)
         swap = TRUE;
 
     if (swap)
-        wildMonIndex = numWildMons - wildMonIndex;
+        wildMonIndex = numWildMons - 1 - wildMonIndex;
 
     return wildMonIndex;
 }
@@ -209,7 +209,7 @@ u32 ChooseWildMonIndex_Water(void)
         swap = TRUE;
 
     if (swap)
-        wildMonIndex = numWildMons - wildMonIndex;
+        wildMonIndex = numWildMons - 1 - wildMonIndex;
 
     return wildMonIndex;
 }
@@ -225,7 +225,7 @@ u32 ChooseWildMonIndex_Rocks(void)
         swap = TRUE;
 
     if (swap)
-        wildMonIndex = numWildMons - wildMonIndex;
+        wildMonIndex = numWildMons - 1 - wildMonIndex;
 
     return wildMonIndex;
 }
