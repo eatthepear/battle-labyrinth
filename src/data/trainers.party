@@ -1563,9 +1563,9 @@ Pool Rules: Unique Types
 Copy Pool: TRAINER_PBL_REBECCA
 
 === TRAINER_PBL_SYLVIA ===
-Name: Joel
+Name: Syvlia
 Class: Psychic
-Pic: Psychic M
+Pic: Psychic F
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
@@ -1573,10 +1573,10 @@ Pool Prune: Non Psychic
 Copy Pool: TRAINER_PBL_REBECCA
 
 === TRAINER_PBL_THERESA ===
-Name: Joel
-Class: Psychic
-Pic: Psychic M
-Music: Intense
+Name: Theresa
+Class: Hex Maniac
+Pic: Hex Maniac
+Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Prune: Non Psychic
