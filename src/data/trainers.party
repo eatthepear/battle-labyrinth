@@ -103,149 +103,73 @@ Double Battle: No
 Party Size: 3
 Pool Rules: Unique Types
 
+Sunkern
+
 Azurill
-
-Barboach
-
-Bellsprout
-
-Blipbug
-
-Bounsweet
-
-Budew
-
-Burmy
-
-Caterpie
-
-Cherubi
-
-Chewtle
-
-Cleffa
-
-Deerling
-
-Ducklett
-
-Fidough
-
-Finneon
-
-Fletchling
-
-Goldeen
-
-Gossifleur
-
-Grubbin
-
-Hoothoot
-
-Hoppip
-
-Kricketot
-
-Lechonk
-
-Lechonk
-
-Lillipup
-
-Lillipup
-
-Lotad
-
-Mareep
-
-Nickit
-
-Nidoran-F
-
-Nidoran-M
-
-Patrat
-
-Patrat
-
-Pawmi
 
 Pichu
 
+Igglybuff
+
+Sentret
+
+Poochyena
+
+Lotad
+
+Seedot
+
+Bunnelby
+
+Zigzagoon
+
+Zigzagoon Galar
+
+Whismur
+
+Starly
+
+Rookidee
+
+Nickit
+
+Bidoof
+
 Pidgey
+
+Rattata
+
+Rattata Alola
+
+Yungoos
+
+Lechonk
+
+Patrat
+
+Skitty
+
+Smoliv
+
+Hoothoot
+
+Shinx
 
 Pidove
 
 Pikipek
 
-Poochyena
+Taillow
 
-Psyduck
+Lillipup
+
+Skwovet
+
+Fletchling
+
+Mareep
 
 Purrloin
-
-Rattata
-
-Rattata
-
-Rattata Alola
-
-Rattata Alola
-
-Remoraid
-
-Rookidee
-
-Scatterbug
-
-Seedot
-
-Sentret
-
-Sentret
-
-Sewaddle
-
-Shinx
-
-Skitty
-
-Skitty
-
-Slakoth
-
-Spearow
-
-Spinarak
-
-Starly
-
-Sunkern
-
-Tarountula
-
-Vulpix
-
-Weedle
-
-Whismur
-
-Wurmple
-
-Yamper
-
-Yungoos
-
-Yungoos
-
-Zigzagoon
-
-Zigzagoon
-
-Zigzagoon Galar
-
-Zigzagoon Galar
 
 
 === TRAINER_PBL_MARIAM ===
@@ -479,8 +403,128 @@ Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 3
 Pool Rules: Unique Types
-Copy Pool: TRAINER_PBL_NINA
+
+Sunkern
+
+Azurill
+
+Pichu
+
+Igglybuff
+
+Sentret
+
+Poochyena
+
+Lotad
+
+Seedot
+
+Bunnelby
+
+Zigzagoon
+
+Zigzagoon Galar
+
+Whismur
+
+Starly
+
+Rookidee
+
+Nickit
+
+Bidoof
+
+Pidgey
+
+Rattata
+
+Rattata Alola
+
+Yungoos
+
+Lechonk
+
+Patrat
+
+Skitty
+
+Smoliv
+
+Hoothoot
+
+Shinx
+
+Pidove
+
+Pikipek
+
+Taillow
+
+Lillipup
+
+Skwovet
+
+Fletchling
+
+Mareep
+
+Purrloin
+
+Blipbug
+
+Burmy
+
+Kricketot
+
+Caterpie
+
+Weedle
+
+Wurmple
+
+Scatterbug
+
+Tarountula
+
+Combee
+
+Bounsweet
+
+Cleffa
+
+Fomantis
+
+Gossifleur
+
+Pawmi
+
+Ledyba
+
+Spinarak
+
+Wingull
+
+Hoppip
+
+Yamper
+
+Slakoth
+
+Tadbulb
+
+Nidoran M
+
+Nidoran F
+
+Cherubi
+
+Budew
+
+Paras
 
 === TRAINER_PBL_JEREMIAH ===
 Name: Jeremiah
@@ -491,7 +535,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
 Pool Prune: Non Bug
-Copy Pool: TRAINER_PBL_NINA
+Copy Pool: TRAINER_PBL_POLLY
 
 === TRAINER_PBL_JOSH ===
 Name: Josh
@@ -501,7 +545,7 @@ Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
-Copy Pool: TRAINER_PBL_NINA
+Copy Pool: TRAINER_PBL_POLLY
 
 === TRAINER_PBL_HARPER ===
 Name: Harper
@@ -511,7 +555,7 @@ Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
-Copy Pool: TRAINER_PBL_NINA
+Copy Pool: TRAINER_PBL_POLLY
 
 === TRAINER_PBL_SHAUN_LEVIATHAN_2 ===
 Name: Shaun
@@ -599,305 +643,227 @@ Double Battle: No
 Party Size: 3
 Pool Rules: Unique Types
 
-Barboach
+Sunkern
 
-Bellsprout
+Azurill
 
-Blitzle
+Pichu
 
-Bounsweet
-
-Budew
-
-Buizel
-
-Buneary
-
-Bunnelby
-
-Burmy
-
-Carvanha
-
-Cherubi
-
-Chewtle
-
-Chingling
-
-Clefairy
-
-Clobbopus
-
-Combee
-
-Corphish
-
-Cottonee
-
-Crabrawler
-
-Cutiefly
-
-Deerling
-
-Diglett
-
-Drowzee
-
-Ducklett
-
-Ekans
-
-Electrike
-
-Espurr
-
-Exeggcute
-
-Fidough
-
-Finneon
-
-Flabebe
-
-Fletchling
-
-Flittle
-
-Fomantis
-
-Glameow
-
-Goldeen
-
-Gossifleur
-
-Gothita
-
-Grimer
-
-Grimer Alola
-
-Growlithe
-
-Grubbin
-
-Gulpin
-
-Hatenna
-
-Hoothoot
-
-Hoppip
-
-Houndour
-
-Impidimp
-
-Inkay
-
-Jigglypuff
-
-Lechonk
-
-Ledyba
-
-Lickitung
-
-Lillipup
-
-Litleo
-
-Lotad
-
-Makuhita
-
-Mankey
-
-Mareep
-
-Maschiff
-
-Meowth
-
-Meowth Alola
-
-Mime Jr.
-
-Minccino
-
-Morelull
-
-Munna
-
-Nacli
-
-Natu
-
-Nickit
-
-Nidoran-F
-
-Nidoran-M
-
-Nincada
-
-Numel
-
-Nymble
-
-Oddish
-
-Pancham
-
-Panpour
-
-Pansage
-
-Pansear
-
-Paras
-
-Patrat
-
-Pawmi
-
-Petilil
-
-Phanpy
-
-Pidgey
-
-Pidove
-
-Pikachu
-
-Pikipek
-
-Pineco
-
-Poliwag
-
-Ponyta
-
-Ponyta Galar
-
-Poochyena
-
-Psyduck
-
-Purrloin
-
-Rattata
-
-Rattata Alola
-
-Remoraid
-
-Rockruff
-
-Roggenrola
-
-Rolycoly
-
-Rookidee
-
-Salandit
-
-Seedot
+Igglybuff
 
 Sentret
 
-Sewaddle
+Poochyena
 
-Shellos
+Lotad
 
-Shinx
+Seedot
 
-Shroomish
-
-Sizzlipede
-
-Skiddo
-
-Skwovet
-
-Slakoth
-
-Slowpoke
-
-Slowpoke Galar
-
-Slugma
-
-Smoliv
-
-Snubbull
-
-Spearow
-
-Spinarak
-
-Spoink
-
-Spritzee
-
-Starly
-
-Stunky
-
-Surskit
-
-Swablu
-
-Swirlix
-
-Tadbulb
-
-Taillow
-
-Tandemaus
-
-Tarountula
-
-Teddiursa
-
-Timburr
-
-Trubbish
-
-Tympole
-
-Venipede
-
-Venonat
-
-Vulpix
-
-Wattrel
-
-Whismur
-
-Wingull
-
-Woobat
-
-Wooloo
-
-Wooper
-
-Wooper Paldea
-
-Yamper
-
-Yungoos
+Bunnelby
 
 Zigzagoon
 
 Zigzagoon Galar
 
-Zubat
+Whismur
+
+Starly
+
+Rookidee
+
+Nickit
+
+Bidoof
+
+Pidgey
+
+Rattata
+
+Rattata Alola
+
+Yungoos
+
+Lechonk
+
+Patrat
+
+Skitty
+
+Smoliv
+
+Hoothoot
+
+Shinx
+
+Pidove
+
+Pikipek
+
+Taillow
+
+Lillipup
+
+Skwovet
+
+Fletchling
+
+Mareep
+
+Purrloin
+
+Bounsweet
+
+Cleffa
+
+Fomantis
+
+Gossifleur
+
+Pawmi
+
+Ledyba
+
+Spinarak
+
+Wingull
+
+Hoppip
+
+Yamper
+
+Slakoth
+
+Tadbulb
+
+Nidoran M
+
+Nidoran F
+
+Cherubi
+
+Budew
+
+Paras
+
+Spewpa
+
+Metapod
+
+Kakuna
+
+Silcoon
+
+Cascoon
+
+Chingling
+
+Venipede
+
+Wooper
+
+Wooper Paldea
+
+Wiglett
+
+Diglett
+
+Diglett Alola
+
+Slugma
+
+Nincada
+
+Surskit
+
+Milcery
+
+Spearow
+
+Wooloo
+
+Chewtle
+
+Ekans
+
+Barboach
+
+Tympole
+
+Foongus
+
+Shroomish
+
+Electrike
+
+Blitzle
+
+Vulpix
+
+Sandshrew
+
+Poliwag
+
+Bellsprout
+
+Snubbull
+
+Remoraid
+
+Grubbin
+
+Gulpin
+
+Flabébé
+
+Ducklett
+
+Marill
+
+Jigglypuff
+
+Pikachu
+
+Clefairy
+
+Glameow
+
+Mime Jr.
+
+Sewaddle
+
+Fidough
+
+Slowpoke
+
+Slowpoke Galar
+
+Pansage
+
+Pansear
+
+Panpour
+
+Oddish
+
+Psyduck
+
+Cubone
+
+Goldeen
+
+Woobat
+
+Phanpy
+
+Buizel
+
+Finneon
+
+Deerling
+
+Buneary
+
+Skiddo
 
 === TRAINER_PBL_PATRICK ===
 Name: Patrick
@@ -1015,16 +981,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Ball
 - Defense Curl
 
-=== TRAINER_PBL_HERMAN ===
-Name: Herman
-Class: School Kid
-Pic: School Kid M
-Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Pool Rules: Unique Types
-Copy Pool: TRAINER_PBL_JEMMA
-
 === TRAINER_PBL_RALPH ===
 Name: Ralph
 Class: Youngster
@@ -1032,8 +988,190 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 3
 Pool Rules: Unique Types
-Copy Pool: TRAINER_PBL_JEMMA
+
+Chingling
+
+Venipede
+
+Wooper
+
+Wooper Paldea
+
+Wiglett
+
+Diglett
+
+Diglett Alola
+
+Slugma
+
+Nincada
+
+Surskit
+
+Milcery
+
+Spearow
+
+Wooloo
+
+Chewtle
+
+Ekans
+
+Barboach
+
+Tympole
+
+Foongus
+
+Shroomish
+
+Electrike
+
+Blitzle
+
+Vulpix
+
+Sandshrew
+
+Poliwag
+
+Bellsprout
+
+Snubbull
+
+Remoraid
+
+Grubbin
+
+Gulpin
+
+Flabébé
+
+Ducklett
+
+Marill
+
+Jigglypuff
+
+Pikachu
+
+Clefairy
+
+Dottler
+
+Glameow
+
+Mime Jr.
+
+Sewaddle
+
+Fidough
+
+Slowpoke
+
+Slowpoke Galar
+
+Pansage
+
+Pansear
+
+Panpour
+
+Joltik
+
+Oddish
+
+Psyduck
+
+Cubone
+
+Goldeen
+
+Woobat
+
+Phanpy
+
+Buizel
+
+Finneon
+
+Deerling
+
+Buneary
+
+Skiddo
+
+Shelmet
+
+Karrablast
+
+Exeggcute
+
+Drowzee
+
+Stunky
+
+Trubbish
+
+Houndour
+
+Spoink
+
+Maschiff
+
+Spritzee
+
+Swirlix
+
+Espurr
+
+Rellor
+
+Cottonee
+
+Petilil
+
+Zubat
+
+Flittle
+
+Hatenna
+
+Impidimp
+
+Bonsly
+
+Gothita
+
+Solosis
+
+Munna
+
+Wattrel
+
+Morelull
+
+Inkay
+
+Meowth
+
+Meowth Alola
+
+Makuhita
+
+Nymble
+
+Tyrogue
+
+Minccino
+
+Cutiefly
+
+Capsakid
 
 === TRAINER_PBL_SANTIAGO ===
 Name: Santiago
@@ -1044,7 +1182,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
 Pool Prune: Non Bug
-Copy Pool: TRAINER_PBL_JEMMA
+Copy Pool: TRAINER_PBL_RALPH
 
 === TRAINER_PBL_CHLOE_AND_KAYA ===
 Name: Chloe&Kaya
@@ -1055,7 +1193,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
 Party Size: 2
 Pool Rules: Unique Types
-Copy Pool: TRAINER_PBL_JEMMA
+Copy Pool: TRAINER_PBL_RALPH
 
 === TRAINER_PBL_FRED ===
 Name: Fred
@@ -1065,7 +1203,7 @@ Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
-Copy Pool: TRAINER_PBL_JEMMA
+Copy Pool: TRAINER_PBL_RALPH
 
 === TRAINER_PBL_LUCIA ===
 Name: Lucia
@@ -1076,7 +1214,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
 Pool Prune: Non Fairy
-Copy Pool: TRAINER_PBL_JEMMA
+Copy Pool: TRAINER_PBL_RALPH
 
 === TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4 ===
 Name: Ella&Bella
@@ -1154,6 +1292,276 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Spark
 - Electroweb
 
+=== TRAINER_PBL_REBECCA ===
+Name: Rebecca
+Class: Pokefan
+Pic: Pokefan F
+Music: Twins
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+
+Spearow
+
+Wooloo
+
+Chewtle
+
+Ekans
+
+Barboach
+
+Tympole
+
+Foongus
+
+Shroomish
+
+Electrike
+
+Blitzle
+
+Vulpix
+
+Sandshrew
+
+Poliwag
+
+Bellsprout
+
+Snubbull
+
+Remoraid
+
+Gulpin
+
+Flabébé
+
+Ducklett
+
+Marill
+
+Jigglypuff
+
+Pikachu
+
+Clefairy
+
+Dottler
+
+Glameow
+
+Mime Jr.
+
+Slowpoke
+
+Slowpoke Galar
+
+Joltik
+
+Oddish
+
+Psyduck
+
+Cubone
+
+Goldeen
+
+Woobat
+
+Phanpy
+
+Buizel
+
+Finneon
+
+Deerling
+
+Buneary
+
+Skiddo
+
+Shelmet
+
+Karrablast
+
+Exeggcute
+
+Drowzee
+
+Stunky
+
+Trubbish
+
+Houndour
+
+Spoink
+
+Maschiff
+
+Spritzee
+
+Swirlix
+
+Espurr
+
+Rellor
+
+Cottonee
+
+Petilil
+
+Zubat
+
+Flittle
+
+Hatenna
+
+Impidimp
+
+Bonsly
+
+Gothita
+
+Solosis
+
+Munna
+
+Wattrel
+
+Morelull
+
+Inkay
+
+Meowth
+
+Meowth Alola
+
+Makuhita
+
+Nymble
+
+Tyrogue
+
+Minccino
+
+Cutiefly
+
+Capsakid
+
+Helioptile
+
+Applin
+
+Rolycoly
+
+Vulpix Alola
+
+Sandshrew Alola
+
+Swinub
+
+Arrokuda
+
+Roggenrola
+
+Rockruff
+
+Nacli
+
+Geodude
+
+Geodude Alola
+
+Pineco
+
+Croagunk
+
+Venonat
+
+Mankey
+
+Machop
+
+Carvanha
+
+Numel
+
+Timburr
+
+Sizzlipede
+
+Tandemaus
+
+Binacle
+
+Corphish
+
+Swablu
+
+Clobbopus
+
+Natu
+
+Grimer
+
+Grimer Alola
+
+Krabby
+
+Shellos
+
+Drilbur
+
+Voltorb
+
+Voltorb Hisui
+
+Teddiursa
+
+Luvdisc
+
+Skorupi
+
+Clauncher
+
+Tentacool
+
+Koffing
+
+Crabrawler
+
+Meditite
+
+Scraggy
+
+Pancham
+
+Growlithe
+
+Growlithe Hisui
+
+=== TRAINER_PBL_CAITLYN ===
+Name: Caitlyn
+Class: Picnicker
+Pic: Picnicker
+Music: Girl
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Pool Rules: Unique Types
+Copy Pool: TRAINER_PBL_REBECCA
+
+=== TRAINER_PBL_CLINTON ===
+Name: Clinton
+Class: Rich Boy
+Pic: Rich Boy
+Music: Rich
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Pool Rules: Unique Types
+Copy Pool: TRAINER_PBL_REBECCA
+
 === TRAINER_PBL_SYLVIA ===
 Name: Joel
 Class: Psychic
@@ -1161,16 +1569,8 @@ Pic: Psychic M
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Munna @ Light Clay
-Calm Nature
-Ability: Synchronize
-Level: 15
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psybeam
-- Psywave
-- Light Screen
-- Reflect
+Pool Prune: Non Psychic
+Copy Pool: TRAINER_PBL_REBECCA
 
 === TRAINER_PBL_THERESA ===
 Name: Joel
@@ -1179,16 +1579,8 @@ Pic: Psychic M
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Munna @ Light Clay
-Calm Nature
-Ability: Synchronize
-Level: 15
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psybeam
-- Psywave
-- Light Screen
-- Reflect
+Pool Prune: Non Psychic
+Copy Pool: TRAINER_PBL_REBECCA
 
 === TRAINER_PBL_ANTHONY ===
 Name: Anthony
@@ -1197,23 +1589,15 @@ Pic: Psychic M
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Munna @ Light Clay
-Calm Nature
-Ability: Synchronize
-Level: 15
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psybeam
-- Psywave
-- Light Screen
-- Reflect
+Pool Prune: Non Psychic
+Copy Pool: TRAINER_PBL_REBECCA
 
 === TRAINER_PBL_MELINDA_OPTIONAL_1 ===
 Name: Melinda
 Class: Lady
 Pic: Lady
 Music: Female
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
 Delibird @ Wide Lens
@@ -1420,94 +1804,6 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Fake Out
 - Assurance
 
-=== TRAINER_PBL_CLINTON ===
-Name: Clinton
-Class: Rich Boy
-Pic: Rich Boy
-Music: Rich
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Ralts
-Ability: Trace
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Confusion
-- Shadow Sneak
-- Teleport
-- Magical Leaf
-
-Hoppip
-Ability: Leaf Guard
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Powder
-- Sleep Powder
-- Mega Drain
-- Helping Hand
-
-Slugma
-Ability: Flame Body
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Yawn
-- Rock Throw
-- Clear Smog
-- Incinerate
-
-Seel
-Ability: Thick Fat
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Ice Shard
-- Fake Out
-- Headbutt
-- Water Gun
-
-=== TRAINER_PBL_REBECCA ===
-Name: Rebecca
-Class: Pokefan
-Pic: Pokefan F
-Music: Twins
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Vulpix
-Ability: Flash Fire
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Baby-Doll Eyes
-- Disable
-- Quick Attack
-- Incinerate
-
-Skiddo
-Ability: Grass Pelt
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Vine Whip
-- Rollout
-- Leech Seed
-- Razor Leaf
-
-Crabrawler
-Ability: Hyper Cutter
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Rock Smash
-- Bubble
-- Leer
-- Dizzy Punch
-
-Pawmi
-Ability: Static
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Thunder Shock
-- Bite
-- Fake Out
-- Sweet Kiss
-
 === TRAINER_PBL_RYAN ===
 Name: Ryan
 Class: Pokefan
@@ -1551,50 +1847,6 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Spark
 - Bite
 - Swift
-
-=== TRAINER_PBL_CAITLYN ===
-Name: Caitlyn
-Class: Picnicker
-Pic: Picnicker
-Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Snubbull
-Ability: Intimidate
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bite
-- Rage
-- Fake Tears
-- Covet
-
-Pumpkaboo
-Ability: Pickup
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Razor Leaf
-- Leech Seed
-- Disable
-- Shadow Sneak
-
-Trubbish
-Ability: Aftermath
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Double Slap
-- Rollout
-- Sludge
-- Take Down
-
-Espurr
-Ability: Own Tempo
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tickle
-- Confusion
-- Disarming Voice
-- Yawn
 
 === TRAINER_PBL_KENNETH ===
 Name: Kenneth
