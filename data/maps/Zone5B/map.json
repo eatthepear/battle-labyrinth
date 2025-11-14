@@ -351,6 +351,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_Lunatone",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
+      "x": 24,
+      "y": 32,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_PorygonExit",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -423,6 +436,20 @@
       "elevation": 0,
       "dest_map": "MAP_ZONE5B",
       "dest_warp_id": "8"
+    },
+    {
+      "x": 20,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE5B",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 24,
+      "y": 35,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE5B",
+      "dest_warp_id": "10"
     }
   ],
   "coord_events": [
