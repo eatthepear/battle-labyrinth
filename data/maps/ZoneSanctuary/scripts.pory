@@ -456,8 +456,8 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("The {COLOR RED}Machete!{COLOR DARK_GRAY}"), MSGBOX_DEFAULT)
 			giveitem(ITEM_MACHETE)
 		case 4:
-			msgbox(format("{COLOR RED}TM39 - Rock Tomb!{COLOR DARK_GRAY}"), MSGBOX_DEFAULT)
-			giveitem(ITEM_TM_ROCK_TOMB)
+			msgbox(format("{COLOR RED}TM09 - Venoshock!{COLOR DARK_GRAY}"), MSGBOX_DEFAULT)
+			giveitem(ITEM_TM_VENOSHOCK)
 		case 5:
 			msgbox(format("The {COLOR RED}Portable PC{COLOR DARK_GRAY}!"))
 			setflag(FLAG_SYS_START_MENU_PC_GET)

@@ -49,7 +49,7 @@
     F(RETALIATE) \
     F(THIEF) \
     F(STEEL_WING) \
-    F(SKILL_SWAP) \
+    F(BULLET_SEED) \
     F(DRAINING_KISS) \
     F(OVERHEAT) \
     F(ROOST) \
