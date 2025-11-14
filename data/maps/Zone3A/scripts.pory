@@ -36,6 +36,7 @@ script Zone3A_EventScript_TriggerLeviathan {
 		end
 	}
 	closemessage
+	hidefollower
 	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 	waitmovement(0)
 	fadeoutbgm(1)
