@@ -14717,9 +14717,9 @@ static const struct LevelUpMove sLeavannyLevelUpLearnset[] = {
 
 #if P_FAMILY_VENIPEDE
 static const struct LevelUpMove sVenipedeLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_ROLLOUT),
     LEVEL_UP_MOVE( 1, MOVE_POISON_STING),
-    LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
-    LEVEL_UP_MOVE( 4, MOVE_ROLLOUT),
+    LEVEL_UP_MOVE( 4, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE( 6, MOVE_SCREECH),
     LEVEL_UP_MOVE( 8, MOVE_BUG_BITE),
     LEVEL_UP_MOVE(10, MOVE_PROTECT),
@@ -14740,9 +14740,9 @@ static const struct LevelUpMove sVenipedeLevelUpLearnset[] = {
 
 static const struct LevelUpMove sWhirlipedeLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_IRON_DEFENSE),
+    LEVEL_UP_MOVE( 1, MOVE_ROLLOUT),
     LEVEL_UP_MOVE( 1, MOVE_POISON_STING),
-    LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
-    LEVEL_UP_MOVE( 4, MOVE_ROLLOUT),
+    LEVEL_UP_MOVE( 4, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE( 6, MOVE_SCREECH),
     LEVEL_UP_MOVE( 8, MOVE_BUG_BITE),
     LEVEL_UP_MOVE(10, MOVE_PROTECT),
@@ -14764,9 +14764,9 @@ static const struct LevelUpMove sWhirlipedeLevelUpLearnset[] = {
 static const struct LevelUpMove sScolipedeLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_BATON_PASS),
     LEVEL_UP_MOVE( 1, MOVE_IRON_DEFENSE),
+    LEVEL_UP_MOVE( 1, MOVE_ROLLOUT),
     LEVEL_UP_MOVE( 1, MOVE_POISON_STING),
-    LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
-    LEVEL_UP_MOVE( 4, MOVE_ROLLOUT),
+    LEVEL_UP_MOVE( 4, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE( 6, MOVE_SCREECH),
     LEVEL_UP_MOVE( 8, MOVE_BUG_BITE),
     LEVEL_UP_MOVE(10, MOVE_PROTECT),
