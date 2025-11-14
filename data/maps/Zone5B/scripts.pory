@@ -6,14 +6,23 @@ mapscripts Zone5B_MapScripts {
 
 script Zone5B_EventScript_Liza {
     lock
-	msgbox(format("{COLOR BLUE}Liza{COLOR DARK_GRAY}: Gym battle!"))
+	if (flag(FLAG_BEAT_LEVIATHAN_5)) {
+		msgbox(format("{COLOR BLUE}Liza{COLOR DARK_GRAY}: You will become even stronger! I've battled you, so I know."))
+		release
+		end
+	}
+	msgbox(format("{COLOR BLUE}Liza{COLOR DARK_GRAY}: Hehehe… Were you surprised?\pThis is my own Pokémon Gym, free from the shackles of my brother.\pWhile it would be nice to be around him sometimes…\pNever mind. You've brought yourself, and you're looking for a challenge.\pI hope to meet that expectation!\pBring it!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 		setvar(VAR_BATTLE_STARTING_STATUS, STARTING_STATUS_PSYCHIC_TERRAIN)
 	}
-	trainerbattle_no_intro(TRAINER_PBL_LIZA_LEVIATHAN_5, format("Wah!!!"))
+	trainerbattle_no_intro(TRAINER_PBL_LIZA_LEVIATHAN_5, format("What? I lost?"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Wargh!{COLOR DARK_GRAY}: Gym battle!"))
+	msgbox(format("{COLOR BLUE}Liza{COLOR DARK_GRAY}: It can't be helped. You've won…\pCongratulations. As a reward, take this!"))
+	giveitem(ITEM_TM_LIGHT_SCREEN)
+	msgbox(format("{COLOR BLUE}Liza{COLOR DARK_GRAY}: That's it!\pFufufu…\pJust kidding, here's the other one as well. Us Gym Leaders give out multiple rewards!"))
+	giveitem(ITEM_TM_REFLECT)
+	msgbox(format("{COLOR BLUE}Liza{COLOR DARK_GRAY}: You're doing great, challenger!\pKeep up the good work.\pLeft leads to the exit, while right returns you to the Gym entrance."))
     setflag(FLAG_BEAT_LEVIATHAN_5)
 	release
 	end
@@ -104,8 +113,8 @@ script Zone5B_EventScript_Sylvia {
 	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 		setvar(VAR_BATTLE_STARTING_STATUS, STARTING_STATUS_PSYCHIC_TERRAIN)
 	}
-	trainerbattle_single(TRAINER_PBL_SYLVIA, format(""), format(""))
-	msgbox(format(""), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_SYLVIA, format("Psychic Pokémon are the most powerful!"), format("I stand corrected!"))
+	msgbox(format("You are the most powerful!\pWell, aside from our Gym Leader!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -113,8 +122,8 @@ script Zone5B_EventScript_Theresa {
 	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 		setvar(VAR_BATTLE_STARTING_STATUS, STARTING_STATUS_PSYCHIC_TERRAIN)
 	}
-	trainerbattle_single(TRAINER_PBL_THERESA, format(""), format(""))
-	msgbox(format(""), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_THERESA, format("What a strange place to find myself in…"), format("I find myself feeling dizzy for some reaon!"))
+	msgbox(format("Surely the spinning isn't messing with my head, right?"), MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -122,7 +131,7 @@ script Zone5B_EventScript_Anthony {
 	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 		setvar(VAR_BATTLE_STARTING_STATUS, STARTING_STATUS_PSYCHIC_TERRAIN)
 	}
-	trainerbattle_single(TRAINER_PBL_ANTHONY, format(""), format(""))
-	msgbox(format(""), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_ANTHONY, format("Have you used a Rare Candy yet?\pYou might want to, if you want any hope of beating the Gym Leader!"), format("That's if you can figure out the puzzle first!"))
+	msgbox(format("Rare Candies are used best to evolve your Pokémon or learn a new move."), MSGBOX_AUTOCLOSE)
 	end
 }
