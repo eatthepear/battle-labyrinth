@@ -210,7 +210,7 @@
     {
       "type": "hidden_item",
       "x": 8,
-      "y": 20,
+      "y": 9,
       "elevation": 3,
       "item": "ITEM_PECHA_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE3A_PECHA_BERRY"
