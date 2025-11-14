@@ -357,6 +357,7 @@ script EventScript_NuzlockeVerifyGift {
 script EventScript_PorygonExit {
     lock
 	faceplayer
+	setvar(VAR_BATTLE_STARTING_STATUS, 0)
 	if (flag(FLAG_IS_REVISITING_ZONE)) {
 		msgbox(format("Return to the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
