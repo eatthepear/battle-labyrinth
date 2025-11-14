@@ -78,6 +78,45 @@
       "trainer_sight_or_berry_tree_id": "4",
       "script": "Zone5A_EventScript_Clinton",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "x": 7,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone5A_EventScript_MiracleSeed",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_VAR_1",
+      "x": 28,
+      "y": 19,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone5A_EventScript_Random1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_VAR_2",
+      "x": 25,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone5A_EventScript_TMThief",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -90,5 +129,22 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 19,
+      "y": 7,
+      "elevation": 3,
+      "item": "ITEM_PERSIM_BERRY",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE5A_PERSIM_BERRY"
+    },
+    {
+      "type": "hidden_item",
+      "x": 40,
+      "y": 11,
+      "elevation": 0,
+      "item": "ITEM_CHESTO_BERRY",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE5A_CHESTO_BERRY"
+    }
+  ]
 }
