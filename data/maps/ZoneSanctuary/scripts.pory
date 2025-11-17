@@ -246,10 +246,6 @@ script EventScript_NextZone {
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: It seems you haven't explored the Sanctuary fully yet.\pPerhaps speak to the Expert southwest of the Pokémon Center."))
 		return
 	}
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PBL, 0)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_PBL, 0)
-	}
 	if (getpartysize() < 4) {
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: You're undergoing quite the challenge by entering the next Zone with that few Pokémon in your party. Proceed anyways?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
@@ -388,35 +384,7 @@ text Sanctuary_Text_Colress_EndofDemo {
 }
 
 text Sanctuary_Text_Colress_Upgraded {
-	format("Because of your progress, the following shops are upgraded:")
-}
-
-text Sanctuary_Text_Colress_UpgradedPokeball {
-	format("{COLOR RED}Tim's Pokéball Shop{COLOR DARK_GRAY}!")
-}
-
-text Sanctuary_Text_Colress_UpgradedPotions {
-	format("{COLOR RED}Portentia's Potions{COLOR DARK_GRAY}!")
-}
-
-text Sanctuary_Text_Colress_UpgradedItems {
-	format("{COLOR RED}Varrick's Extravagant Emporium{COLOR DARK_GRAY}!")
-}
-
-text Sanctuary_Text_Colress_UpgradedBerries {
-	format("{COLOR RED}Julia's Berries{COLOR DARK_GRAY}!")
-}
-
-text Sanctuary_Text_Colress_UpgradedEggs {
-	format("{COLOR RED}Marie's Egg Delivery Service{COLOR DARK_GRAY}!")
-}
-
-text Sanctuary_Text_Colress_UpgradedServices {
-	format("{COLOR RED}Lelouch's Services Shop{COLOR DARK_GRAY}!")
-}
-
-text Sanctuary_Text_Colress_UpgradedRecovery {
-	format("{COLOR RED}Joy's Center of Restoration{COLOR DARK_GRAY}!")
+	format("Because of your progress, all shops are upgraded!")
 }
 
 script Sanctuary_EventScript_EnterSanctuary {
@@ -485,74 +453,73 @@ script Sanctuary_EventScript_EnterSanctuary {
 	}
 	switch(var(VAR_ZONE)) {
 		case 1:
-			completesubquest(QUEST_PBL, 1)
+			completesubquest(QUEST_PBL, 0)
 			setvar(VAR_ZONE, 2)
 		case 2:
 			setflag(FLAG_HIDE_ZONE2A_MAX)
-			completesubquest(QUEST_PBL, 2)
+			completesubquest(QUEST_PBL, 1)
 			setvar(VAR_ZONE, 3)
 		case 3:
-			completesubquest(QUEST_PBL, 3)
+			completesubquest(QUEST_PBL, 2)
 			setvar(VAR_ZONE, 4)
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				setflag(FLAG_ITEM_ZONE3A_RARE_CANDY)
 			}
 		case 4:
-			completesubquest(QUEST_PBL, 4)
+			completesubquest(QUEST_PBL, 3)
 			setvar(VAR_ZONE, 5)
 		case 5:
-			completesubquest(QUEST_PBL, 5)
+			completesubquest(QUEST_PBL, 4)
 			setvar(VAR_ZONE, 6)
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				setflag(FLAG_ITEM_ZONE5A_RARE_CANDY)
 			}
-			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
 			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_UpgradedPotions, MSGBOX_DEFAULT)
+			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
 			waitfanfare
 		case 6:
 			setflag(FLAG_HIDE_ZONE6A_MAX)
-			completesubquest(QUEST_PBL, 6)
+			completesubquest(QUEST_PBL, 5)
 			setvar(VAR_ZONE, 7)
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
 		case 7:
 			setflag(FLAG_ZONE7B_HEAL_USED)
+			completesubquest(QUEST_PBL, 6)
 			completesubquest(QUEST_PBL, 7)
-			completesubquest(QUEST_PBL, 8)
 		case 9:
-			completesubquest(QUEST_PBL, 9)
+			completesubquest(QUEST_PBL, 8)
 			setvar(VAR_ZONE, 10)
 		case 10:
 			setflag(FLAG_HIDE_ZONE10A_MAX)
-			completesubquest(QUEST_PBL, 10)
+			completesubquest(QUEST_PBL, 9)
 			setvar(VAR_ZONE, 11)
 		case 11:
-			completesubquest(QUEST_PBL, 11)
+			completesubquest(QUEST_PBL, 10)
 			setvar(VAR_ZONE, 12)
 		case 12:
-			completesubquest(QUEST_PBL, 12)
+			completesubquest(QUEST_PBL, 11)
 			setvar(VAR_ZONE, 13)
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
 		case 13:
+			completesubquest(QUEST_PBL, 12)
 			completesubquest(QUEST_PBL, 13)
-			completesubquest(QUEST_PBL, 14)
 			setvar(VAR_ZONE, 15)
 		case 15:
-			completesubquest(QUEST_PBL, 15)
+			completesubquest(QUEST_PBL, 14)
 			setvar(VAR_ZONE, 16)
 		case 16:
-			completesubquest(QUEST_PBL, 16)
+			completesubquest(QUEST_PBL, 15)
 			setvar(VAR_ZONE, 17)
 		case 17:
-			completesubquest(QUEST_PBL, 17)
+			completesubquest(QUEST_PBL, 16)
 			setvar(VAR_ZONE, 18)
 			msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
 		case 18:
+			completesubquest(QUEST_PBL, 17)
 			completesubquest(QUEST_PBL, 18)
-			completesubquest(QUEST_PBL, 19)
 			setvar(VAR_ZONE, 20)
 		case 20:
-			completesubquest(QUEST_PBL, 20)
+			completesubquest(QUEST_PBL, 19)
 			setvar(VAR_ZONE, 21)
 		case 21:
 			completesubquest(QUEST_PBL, 21)

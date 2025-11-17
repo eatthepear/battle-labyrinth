@@ -82,7 +82,7 @@ enum {
     QUEST_COUNT
 };
 
-#define QUEST_PBL_SUB_COUNT 51
+#define QUEST_PBL_SUB_COUNT 50
 #define QUEST_SIGNS_SUB_COUNT 50
 
 #define SUB_QUEST_COUNT 160

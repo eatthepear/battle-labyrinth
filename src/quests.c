@@ -250,15 +250,6 @@ static const u8 sText_AZ[] = _(" A-Z");
 static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 {
 	sub_quest(
-	      COMPOUND_STRING("Sanctuary"),
-	      COMPOUND_STRING("You explored the Sanctuary!"),
-	      COMPOUND_STRING("Sanctuary"),
-	      ITEM_NONE,
-	      ITEM,
-	      sText_Done
-	),
-
-	sub_quest(
 	      COMPOUND_STRING("Zone 1"),
 	      COMPOUND_STRING("You completed Zone 1!"),
 	      gText_MapZone1,
