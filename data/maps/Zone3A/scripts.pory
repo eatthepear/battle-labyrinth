@@ -263,7 +263,7 @@ script Zone3A_EventScript_Tutor {
 	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT) == TRUE) {
 		checkmoney(200, 0)
 		if (var(VAR_RESULT) == FALSE) {
-			msgbox("Hate to break it to you, but you don't have enough money.")
+			msgbox(gText_YouDontHaveEnoughMoney)
 			hidemoneybox
 			release
 			end

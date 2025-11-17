@@ -36,13 +36,13 @@ script Zone5A_EventScript_BuyPikaClone {
 	msgbox(format("You seem like the type that would like Pikachu!\pI have Pikachu and plenty of similar Pokémon available, each for only ¥500!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		hidemoneybox
-		msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+		msgbox(gText_BuyPikaClone_ComeBack)
 		release
 		end
 	}
 	checkmoney(500, 0)
 	if (var(VAR_RESULT) == FALSE) {
-		msgbox("You don't have enough money.")
+		msgbox(gText_YouDontHaveEnoughMoney)
 		hidemoneybox
 		release
 		end
@@ -101,7 +101,7 @@ script Zone5A_EventScript_BuyPikaClone {
 		msgbox(format("Is this ok?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
-			msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+			msgbox(gText_BuyPikaClone_ComeBack)
 			release
 			end
 		}
@@ -192,7 +192,7 @@ script Zone5A_EventScript_BuyPikaClone {
 			case MULTI_B_PRESSED:
 				closemessage
 				hidemoneybox
-				msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+				msgbox(gText_BuyPikaClone_ComeBack)
 				release
 				end
 		}
@@ -201,7 +201,7 @@ script Zone5A_EventScript_BuyPikaClone {
 		msgbox(format("Just to confirm…\pYou're sure you want to buy a Pokémon for ¥500??"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
-			msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+			msgbox(gText_BuyPikaClone_ComeBack)
 			release
 			end
 		}
@@ -210,7 +210,7 @@ script Zone5A_EventScript_BuyPikaClone {
 		msgbox(format("Just to confirm…\pYou're sure you want to buy {STR_VAR_1} for ¥200?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
-			msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+			msgbox(gText_BuyPikaClone_ComeBack)
 			release
 			end
 		}
@@ -225,7 +225,7 @@ script Zone5A_EventScript_BuyPikaClone {
 		showmoneybox(0, 0, 0)
 		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 			hidemoneybox
-			msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+			msgbox(gText_BuyPikaClone_ComeBack)
 			release
 			end
 		}
@@ -235,7 +235,7 @@ script Zone5A_EventScript_BuyPikaClone {
 		msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
-			msgbox(format("Alrighty, well, you just come on back if you change your mind."))
+			msgbox(gText_BuyPikaClone_ComeBack)
 			release
 			end
 		}
@@ -244,6 +244,7 @@ script Zone5A_EventScript_BuyPikaClone {
 		special(SendChosenMonToPC)
 		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
 	}
+	setflag(FLAG_ZONE5A_NUZLOCKE_BOUGHT_PIKACLONE)
 	removemoney(500)
 	updatemoneybox
 	msgbox(format("I appreciate it!"))
@@ -264,6 +265,10 @@ script Zone5A_EventScript_BuyPikaClone {
 	msgbox(format("Take good care of your new Electric-type, small mammal-like Pokémon!"))
 	release
 	end
+}
+
+text gText_BuyPikaClone_ComeBack {
+	format("Alrighty, well, you just come on back if you change your mind.")
 }
 
 script Zone5A_EventScript_NeverMissTutor {
@@ -291,7 +296,7 @@ script Zone5A_EventScript_NeverMissTutor {
 	if (flag(FLAG_ZONE5A_MOVE_TUTOR_TAUGHT_NEVER_MISS) == TRUE) {
 		checkmoney(400, 0)
 		if (var(VAR_RESULT) == FALSE) {
-			msgbox("Hate to break it to you, but you don't have enough money.")
+			msgbox(gText_YouDontHaveEnoughMoney)
 			hidemoneybox
 			release
 			end

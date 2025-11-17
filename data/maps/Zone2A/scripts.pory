@@ -115,7 +115,7 @@ script Zone2A_EventScript_BuyBug {
 	}
 	checkmoney(200, 0)
 	if (var(VAR_RESULT) == FALSE) {
-		msgbox("You don't have enough money.")
+		msgbox(gText_YouDontHaveEnoughMoney)
 		hidemoneybox
 		release
 		end
@@ -367,6 +367,7 @@ script Zone2A_EventScript_BuyBug {
 		special(SendChosenMonToPC)
 		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
 	}
+	setflag(FLAG_ZONE2A_NUZLOCKE_BOUGHT_BUG)
 	removemoney(200)
 	updatemoneybox
 	msgbox(format("Ehehehe, thank you…"), MSGBOX_DEFAULT)

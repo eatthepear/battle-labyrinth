@@ -190,6 +190,7 @@ script Zone1A_EventScript_GiveFWG {
 		special(SendChosenMonToPC)
 		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
 	}
+	setflag(FLAG_ZONE1A_RECEIVED_FWG)
 	givemon(VAR_TEMP_1, 5, ITEM_NONE)
 	setmonmetlocation(VAR_TEMP_2, 245)
 	bufferspeciesname(0, VAR_TEMP_1)
@@ -205,7 +206,6 @@ script Zone1A_EventScript_GiveFWG {
 	}
 	faceplayer
 	msgbox(format("Take care of your {STR_VAR_1}!"))
-	setflag(FLAG_ZONE1A_RECEIVED_FWG)
 	release
 	end
 }
