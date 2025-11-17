@@ -368,6 +368,49 @@ static void PruneBattled(const struct Trainer *trainer, u8 *poolIndexArray, cons
             poolIndexArray[i] = POOL_SLOT_DISABLED;
 }
 
+static void PruneBossMons(const struct Trainer *trainer, u8 *poolIndexArray, const struct PoolRules *rules)
+{
+    static const u32 BossTrainerIds[] = {
+        TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER,
+        TRAINER_PBL_SHAUN_LEVIATHAN_2,
+        TRAINER_PBL_PHILLIPA_LEVIATHAN_3,
+        TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4,
+        TRAINER_PBL_MELINDA_OPTIONAL_1,
+        TRAINER_PBL_LIZA_LEVIATHAN_5
+    };
+    static u16 excludedSpecies[PARTY_SIZE * ARRAY_COUNT(BossTrainerIds)];
+    static u8 excludedSpeciesCount = 0;
+    static bool32 initialized = FALSE;
+
+    if (!initialized)
+    {
+        for (u32 j = 0; j < ARRAY_COUNT(BossTrainerIds); j++)
+        {
+            const struct Trainer *bossTrainer = GetTrainerStructFromId(BossTrainerIds[j]);
+
+            for (u32 k = 0; k < bossTrainer->partySize; k++)
+            {
+                excludedSpecies[excludedSpeciesCount++] = bossTrainer->party[k].species;
+            }
+        }
+    }
+
+    for (u32 i = 0; i < trainer->poolSize; i++)
+    {
+        if (poolIndexArray[i] == POOL_SLOT_DISABLED)
+            continue;
+        u16 currentSpecies = trainer->party[poolIndexArray[i]].species;
+        for (u32 j = 0; j < excludedSpeciesCount; j++)
+        {
+            if (currentSpecies == excludedSpecies[j])
+            {
+                poolIndexArray[i] = POOL_SLOT_DISABLED;
+                break;
+            }
+        }
+    }
+}
+
 static void PruneNonType(const struct Trainer *trainer, u8 *poolIndexArray, const struct PoolRules *rules, u32 type)
 {
     for (u32 i = 0; i < trainer->poolSize; i++)
@@ -401,6 +444,7 @@ static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const s
         default:
             break;
     }
+    PruneBossMons(trainer, poolIndexArray, rules);
 }
 
 void DoTrainerPartyPool(const struct Trainer *trainer, u32 *monIndices, u8 monsCount, u32 battleTypeFlags)
