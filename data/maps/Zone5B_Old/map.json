@@ -99,19 +99,6 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
-      "x": 6,
-      "y": 28,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone5B_Old_EventScript_BuyPikaClone",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 20,
       "y": 28,
@@ -175,19 +162,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_UseStrength_PBL",
       "flag": "FLAG_TEMP_10"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_RANGER_F",
-      "x": 44,
-      "y": 17,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone5B_Old_EventScript_NeverMissTutor",
-      "flag": "0"
     }
   ],
   "warp_events": [
