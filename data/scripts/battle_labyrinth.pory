@@ -485,9 +485,9 @@ script Zone0A_EventScript_DayCareSign {
 script EventScript_PorygonSign {
 	completesubquest(QUEST_SIGNS, 0)
 	if (var(VAR_DIFFICULTY) >= DIFFICULTY_NORMAL) {
-		message(format("Trainer Tips\pTo complete a Zone, defeat all opponents, then find {COLOR RED}Porygon{COLOR DARK_GRAY}."))
+		message(format("Trainer Tips\pTo complete a Zone, defeat all bosses and find {COLOR RED}Porygon{COLOR DARK_GRAY}."))
 	} else {
-		message(format("Trainer Tips\pTo complete a Zone, find {COLOR RED}Porygon{COLOR DARK_GRAY}.\pOn Easy difficulty, you don't need to defeat all opponents to proceed."))
+		message(format("Trainer Tips\pTo complete a Zone, defeat all bosses and find {COLOR RED}Porygon{COLOR DARK_GRAY}.\pOn Easy difficulty, you can skip defeating some bosses."))
 	}
 	waitmessage
 	showmonpic(SPECIES_PORYGON, 10, 3)
