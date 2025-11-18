@@ -5023,8 +5023,22 @@ static void SetMoveTypeIcons(void)
         move = summary->moves[i];
         if (move != MOVE_NONE)
         {
-            enum MonState state = gMain.inBattle ? MON_IN_BATTLE : MON_OUTSIDE_BATTLE;
-            type = P_SHOW_DYNAMIC_TYPES ? CheckDynamicMoveType(&sMonSummaryScreen->currentMon, move, 0, state) : GetMoveType(move);
+            bool8 isCurrentMonInBattle = FALSE;
+            u8 battlerId = 0;
+            if (gMain.inBattle)
+            {
+                for (u8 i = 0; i < gBattlersCount; i++)
+                {
+                    if (gBattlerPartyIndexes[i] == sMonSummaryScreen->curMonIndex)
+                    {
+                        isCurrentMonInBattle = TRUE;
+                        battlerId = i;
+                        break;
+                    }
+                }
+            }
+            enum MonState state = isCurrentMonInBattle ? MON_IN_BATTLE : MON_OUTSIDE_BATTLE;
+            type = P_SHOW_DYNAMIC_TYPES ? CheckDynamicMoveType(&sMonSummaryScreen->currentMon, move, battlerId, state) : GetMoveType(move);
             SetTypeSpritePosAndPal(type, 8, 16 + (i * 28), i + SPRITE_ARR_ID_TYPE);
         }
         else
@@ -5060,8 +5074,22 @@ static void SetNewMoveTypeIcon(void)
     {
         if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
         {
-            enum MonState state = gMain.inBattle ? MON_IN_BATTLE : MON_OUTSIDE_BATTLE;
-            u32 type = P_SHOW_DYNAMIC_TYPES ? CheckDynamicMoveType(&sMonSummaryScreen->currentMon, move, 0, state) : GetMoveType(move);
+            bool8 isCurrentMonInBattle = FALSE;
+            u8 battlerId = 0;
+            if (gMain.inBattle)
+            {
+                for (u8 i = 0; i < gBattlersCount; i++)
+                {
+                    if (gBattlerPartyIndexes[i] == sMonSummaryScreen->curMonIndex)
+                    {
+                        isCurrentMonInBattle = TRUE;
+                        battlerId = i;
+                        break;
+                    }
+                }
+            }
+            enum MonState state = isCurrentMonInBattle ? MON_IN_BATTLE : MON_OUTSIDE_BATTLE;
+            u32 type = P_SHOW_DYNAMIC_TYPES ? CheckDynamicMoveType(&sMonSummaryScreen->currentMon, move, battlerId, state) : GetMoveType(move);
             SetTypeSpritePosAndPal(type, 8, 128, SPRITE_ARR_ID_TYPE + 4);
         }
         else
