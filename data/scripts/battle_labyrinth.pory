@@ -971,6 +971,7 @@ script EventScript_Notebook_Abilities {
 		dynmultipush("Snover", SPECIES_SNOVER)
 		dynmultipush("Abomasnow", SPECIES_ABOMASNOW)
 		dynmultipush("Watchog", SPECIES_WATCHOG)
+		dynmultipush("Audino", SPECIES_AUDINO)
 		dynmultipush("Leavanny", SPECIES_LEAVANNY)
 		dynmultipush("Scraggy", SPECIES_SCRAGGY)
 		dynmultipush("Scrafty", SPECIES_SCRAFTY)
@@ -990,6 +991,8 @@ script EventScript_Notebook_Abilities {
 		dynmultipush("Blipbug", SPECIES_BLIPBUG)
 		dynmultipush("Dottler", SPECIES_DOTTLER)
 		dynmultipush("Orbeetle", SPECIES_ORBEETLE)
+		dynmultipush("Gossifleur", SPECIES_GOSSIFLEUR)
+		dynmultipush("Eldegoss", SPECIES_ELDEGOSS)
 		dynmultipush("Wiglett", SPECIES_WIGLETT)
 		dynmultipush("Wugtrio", SPECIES_WUGTRIO)
 		dynmultipush("Bombirdier", SPECIES_BOMBIRDIER)
@@ -1046,6 +1049,8 @@ script EventScript_Notebook_Abilities {
 				msgbox(format("Snover and Abomasnow now get Soundproof as a regular ability instead of Snow Warning, which is now their Hidden Ability."))
 			case SPECIES_WATCHOG:
 				msgbox(format("Watchog now gets No Guard as a regular ability instead of Pressure."))
+			case SPECIES_AUDINO:
+				msgbox(format("Audino now gets Klutz as a regular ability instead of Regenerator, which is now its Hidden Ability."))
 			case SPECIES_LEAVANNY:
 				msgbox(format("Leavanny now gets Sharpness as a regular ability instead of Swarm."))
 			case SPECIES_SCRAGGY:
@@ -1078,6 +1083,9 @@ script EventScript_Notebook_Abilities {
 				msgbox(format("Blipbug and Dottler now get Telepathy as a regular ability instead of Compound Eyes, which is now their Hidden Ability."))
 			case SPECIES_ORBEETLE:
 				msgbox(format("Orbeetle now gets Telepathy as a regular ability instead of Frisk, which is now its Hidden Ability."))
+			case SPECIES_GOSSIFLEUR:
+			case SPECIES_ELDEGOSS:
+				msgbox(format("Gossifleur and Eldegoss now get Effect Spore as a regular ability instead of Regenerator, which is now their Hidden Ability."))
 			case SPECIES_WIGLETT:
 			case SPECIES_WUGTRIO:
 				msgbox(format("Wiglett and Wugtrio now get Arena Trap as a Hidden Ability instead of Sand Veil."))
