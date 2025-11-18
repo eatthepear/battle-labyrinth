@@ -866,9 +866,17 @@ script EventScript_Notebook_Pokemon {
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
-				call(EventScript_Notebook_Typings)
+				msgbox(format("Many Pokémon have typings that replace their default typing.\pYou can easily view their typing in battle when you are selecting a move to use."))
+				msgbox(format("The next page notes Pokémon with typing changes. Would you like to read it?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					call(EventScript_Notebook_Typings)
+				}
 			case 1:
-				call(EventScript_Notebook_Abilities)
+				msgbox(format("Many Pokémon have abilities that replace their default ones.\pThese include weather setting abilities and balance changes."))
+				msgbox(format("The next page notes Pokémon with ability changes. Would you like to read it?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					call(EventScript_Notebook_Abilities)
+				}
 			case 2:
 				msgbox(format("Many Pokémon have evolution methods that are another option from their default or directly replace the default.\pThis includes Day/Night evolutions, Friendship evolutions, weak Pokémon evolutions, and hard to achieve evolutions.\pYou can see how to evolve a Pokémon in the Pokédex."))
 				msgbox(format("The next page notes Pokémon with major evolution changes. Would you like to read it?"), MSGBOX_YESNO)
