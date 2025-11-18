@@ -105,7 +105,7 @@ script Zone2A_EventScript_BuyBug {
 		release
 		end
 	}
-	showmoneybox(0, 0, 0)
+	showmoneybox(18, 0, 0)
 	msgbox(format("Would you care to buy a Bug-type Pokémon?\pI've got quite the great selection for only ¥200!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		hidemoneybox
@@ -345,7 +345,7 @@ script Zone2A_EventScript_BuyBug {
 		special(ChoosePartyMon)
 		waitstate
 		faceplayer
-		showmoneybox(0, 0, 0)
+		showmoneybox(18, 0, 0)
 		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 			hidemoneybox
 			msgbox(format("You don't want any? Fine. More for me."))
