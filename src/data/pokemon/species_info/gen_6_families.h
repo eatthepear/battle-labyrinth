@@ -4174,7 +4174,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     #else
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
     #endif
-        .abilities = { ABILITY_LIMBER, ABILITY_UNBURDEN, ABILITY_MOLD_BREAKER },
+        .abilities = { ABILITY_LIMBER, ABILITY_MOLD_BREAKER, ABILITY_UNBURDEN },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Hawlucha"),
         .cryId = CRY_HAWLUCHA,
@@ -4315,7 +4315,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_CLEAR_BODY, ABILITY_NONE, ABILITY_STURDY },
+        .abilities = { ABILITY_CLEAR_BODY, ABILITY_LEVITATE, ABILITY_STURDY },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Carbink"),
         .cryId = CRY_CARBINK,
