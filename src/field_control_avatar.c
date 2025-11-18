@@ -268,10 +268,6 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
                 PlaySE(SE_BIKE_BELL);
             }
         }
-        else if (EnableAutoRun())
-        {
-            return TRUE;
-        }
     }
 
     if (input->pressedRButton && TryStartDexNavSearch())
@@ -291,6 +287,9 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         TrySpecialOverworldEvo(); // Special vars set in CanTriggerSpinEvolution.
         return TRUE;
     }
+
+    if (input->pressedBButton)
+        EnableAutoRun();
 
     return FALSE;
 }
@@ -1289,23 +1288,18 @@ void CancelSignPostMessageBox(struct FieldInput *input)
     CreateTask(Task_OpenStartMenu, 8);
 }
 
-extern const u8 EventScript_DisableAutoRun[];
-extern const u8 EventScript_EnableAutoRun[];
 static bool8 EnableAutoRun(void)
 {
     if (!FlagGet(FLAG_SYS_B_DASH))
         return FALSE;   //auto run unusable until you get running shoes
 
-    PlaySE(SE_SELECT);
     if (FlagGet(FLAG_AUTORUN_TOGGLE))
     {
         FlagClear(FLAG_AUTORUN_TOGGLE);
-        ScriptContext_SetupScript(EventScript_DisableAutoRun);
     }
     else
     {
         FlagSet(FLAG_AUTORUN_TOGGLE);
-        ScriptContext_SetupScript(EventScript_EnableAutoRun);
     }
 
     return TRUE;

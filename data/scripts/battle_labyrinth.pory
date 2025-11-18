@@ -501,7 +501,7 @@ script EventScript_PorygonSign {
 
 script EventScript_Sign_RunningShoes {
 	completesubquest(QUEST_SIGNS, 1)
-	msgbox(format("Trainer Tips\pPress {L_BUTTON} to toggle Auto Run."), MSGBOX_SIGN)
+	msgbox(format("Trainer Tips\pPress {B_BUTTON} to toggle Auto Run."), MSGBOX_SIGN)
 	end
 }
 
@@ -2216,14 +2216,6 @@ script EventScript_UseSurf_PBL {
 	dofieldeffect(FLDEFF_USE_SURF)
 	releaseall
 	end
-}
-
-script EventScript_DisableAutoRun {
-	msgbox(format("Auto Run {COLOR RED}Disabled{COLOR DARK_GRAY}."), MSGBOX_SIGN)
-}
-    
-script EventScript_EnableAutoRun {
-	msgbox(format("Auto Run {COLOR GREEN}Enabled{COLOR DARK_GRAY}."), MSGBOX_SIGN)
 }
 
 raw `
