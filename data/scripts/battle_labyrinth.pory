@@ -501,7 +501,7 @@ script EventScript_PorygonSign {
 
 script EventScript_Sign_RunningShoes {
 	completesubquest(QUEST_SIGNS, 1)
-	msgbox(format("Trainer Tips\pPress {B_BUTTON} to toggle Auto Run."), MSGBOX_SIGN)
+	msgbox(format("Trainer Tips\pPress {L_BUTTON} to toggle Auto Run."), MSGBOX_SIGN)
 	end
 }
 

@@ -268,6 +268,10 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
                 PlaySE(SE_BIKE_BELL);
             }
         }
+        else
+        {
+            EnableAutoRun();
+        }
     }
 
     if (input->pressedRButton && TryStartDexNavSearch())
@@ -287,9 +291,6 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         TrySpecialOverworldEvo(); // Special vars set in CanTriggerSpinEvolution.
         return TRUE;
     }
-
-    if (input->pressedBButton)
-        EnableAutoRun();
 
     return FALSE;
 }
