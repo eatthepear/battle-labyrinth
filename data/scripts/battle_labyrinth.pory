@@ -942,6 +942,8 @@ script EventScript_Notebook_Abilities {
 	while {
 		message(format("Which Pokémon's ability changes would you like to read?"))
 		waitmessage
+		dynmultipush("Diglett", SPECIES_DIGLETT)
+		dynmultipush("Dugtrio", SPECIES_DUGTRIO)
 		dynmultipush("Dodrio", SPECIES_DODRIO)
 		dynmultipush("Goldeen", SPECIES_GOLDEEN)
 		dynmultipush("Seaking", SPECIES_SEAKING)
@@ -994,6 +996,9 @@ script EventScript_Notebook_Abilities {
 		dynmultipush("Back", 0)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 1, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
+			case SPECIES_DIGLETT:
+			case SPECIES_DUGTRIO:
+				msgbox(format("Diglett and Dugtrio now get Sand Force as a regular ability instead of Arena Trap, which is now their Hidden Ability."))
 			case SPECIES_DODRIO:
 				msgbox(format("Dodrio now gets Rock Head as a regular ability instead of Run Away."))
 			case SPECIES_GOLDEEN:
@@ -1075,7 +1080,7 @@ script EventScript_Notebook_Abilities {
 				msgbox(format("Orbeetle now gets Telepathy as a regular ability instead of Frisk, which is now its Hidden Ability."))
 			case SPECIES_WIGLETT:
 			case SPECIES_WUGTRIO:
-				msgbox(format("Wiglett and Wugtrio now get Arena Trap as a regular ability instead of Rattled."))
+				msgbox(format("Wiglett and Wugtrio now get Arena Trap as a Hidden Ability instead of Sand Veil."))
 			case SPECIES_BOMBIRDIER:
 				msgbox(format("Bombirdier now gets Rocky Payload a regular ability instead of Keen Eye, which is now its Hidden Ability."))
 			case 0:
