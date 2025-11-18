@@ -655,7 +655,7 @@ script Sanctuary_EventScript_GameIntro {
 	waitmovement(0)
 	msgbox("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Welcome to\n{COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY}!\pI am your guide for braving the\nchallenges ahead.\pWould you like to listen to the tutorial?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
-		setvar(VAR_TEMP_5, 1) // VAR_TEMP_5: 1 means yes tutorial
+		setflag(FLAG_TEMP_1)
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Pokémon Battle Labyrinth is comprised of many {COLOR GREEN}Zones{COLOR DARK_GRAY} you must traverse.\p"
 		"In these Zones, you can encounter wild Pokémon, find great treasures, challenge fierce opponents, and more.\p"
 		"Each Zone typically contains a {COLOR RED}Leviathan{COLOR DARK_GRAY} or other tough challenge that must be defeated in order to proceed.\p"
@@ -685,7 +685,7 @@ script Sanctuary_EventScript_GameIntro {
 		setvar(VAR_0x8004, 0)
 		call(Common_EventScript_NameReceivedPartyMon)
 	}
-	if (var(VAR_TEMP_5) == 1) {
+	if (flag(FLAG_TEMP_1)) {
 		msgbox(format("I also have a beginner's kit with items and cash to get you started."), MSGBOX_DEFAULT)
 		giveitem(ITEM_POKE_BALL, 15)
 		giveitem(ITEM_POTION, 10)
@@ -705,7 +705,7 @@ script Sanctuary_EventScript_GameIntro {
 	}
 	setmonmetlocation(0, 255)
 	callnative(UpdateFollowingPokemon)
-	if (var(VAR_TEMP_1) == 1) {
+	if (flag(FLAG_TEMP_1)) {
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: I would recommend exploring the Sanctuary before you enter the first Zone.\pMany people here have free items or advice for new challengers."))
 	} else {
 		msgbox(format("{COLOR BLUE}Colress{COLOR DARK_GRAY}: Since you've elected to skip the tutorial, would you like to skip all Sanctuary exploration as well?"), MSGBOX_YESNO)
