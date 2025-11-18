@@ -776,6 +776,7 @@ script EventScript_Notebook_ZoneInfo {
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				msgbox(format("On Brutal difficulty, their Gym has permanent Psychic Terrain, and their Natu and Lunatone are higher level."))
 			}
+			msgbox(format("There is also a Lady with Delibird, Luvdisc, Unown, and Spinda, who can pose a challenge with a diversity of threats and coverage moves."))
 		case 6:
 		case 7:
 		case 8:
