@@ -11071,9 +11071,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM10"),
         .price = 1000,
         .description = COMPOUND_STRING(
-            "The attack power\n"
+            "The attack type\n"
             "varies among\n"
-            "different Pokémon."),
+            "individual Pokémon."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
