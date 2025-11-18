@@ -368,41 +368,47 @@ static void PruneBattled(const struct Trainer *trainer, u8 *poolIndexArray, cons
             poolIndexArray[i] = POOL_SLOT_DISABLED;
 }
 
+static const u16 bossSpecies[] = {
+    SPECIES_PANSEAR,
+    SPECIES_PANPOUR,
+    SPECIES_PANSAGE,
+
+    SPECIES_BUNNELBY,
+    SPECIES_SMOLIV,
+    SPECIES_SKWOVET,
+    SPECIES_GULPIN,
+
+    SPECIES_BIDOOF,
+    SPECIES_SANDSHREW,
+    SPECIES_MARILL,
+    SPECIES_SPHEAL,
+
+    SPECIES_NICKIT,
+    SPECIES_AXEW,
+    SPECIES_LEDIAN,
+    SPECIES_SHINX,
+
+    SPECIES_DELIBIRD,
+    SPECIES_LUVDISC,
+    SPECIES_UNOWN,
+    SPECIES_SPINDA,
+
+    SPECIES_MUNNA,
+    SPECIES_DOTTLER,
+    SPECIES_NATU,
+    SPECIES_LUNATONE,
+};
+
 static void PruneBossMons(const struct Trainer *trainer, u8 *poolIndexArray, const struct PoolRules *rules)
 {
-    static const u32 BossTrainerIds[] = {
-        TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER,
-        TRAINER_PBL_SHAUN_LEVIATHAN_2,
-        TRAINER_PBL_PHILLIPA_LEVIATHAN_3,
-        TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4,
-        TRAINER_PBL_MELINDA_OPTIONAL_1,
-        TRAINER_PBL_LIZA_LEVIATHAN_5
-    };
-    static u16 excludedSpecies[PARTY_SIZE * ARRAY_COUNT(BossTrainerIds)];
-    static u8 excludedSpeciesCount = 0;
-    static bool32 initialized = FALSE;
-
-    if (!initialized)
-    {
-        for (u32 j = 0; j < ARRAY_COUNT(BossTrainerIds); j++)
-        {
-            const struct Trainer *bossTrainer = GetTrainerStructFromId(BossTrainerIds[j]);
-
-            for (u32 k = 0; k < bossTrainer->partySize; k++)
-            {
-                excludedSpecies[excludedSpeciesCount++] = bossTrainer->party[k].species;
-            }
-        }
-    }
-
     for (u32 i = 0; i < trainer->poolSize; i++)
     {
         if (poolIndexArray[i] == POOL_SLOT_DISABLED)
             continue;
         u16 currentSpecies = trainer->party[poolIndexArray[i]].species;
-        for (u32 j = 0; j < excludedSpeciesCount; j++)
+        for (u32 j = 0; j < ARRAY_COUNT(bossSpecies); j++)
         {
-            if (currentSpecies == excludedSpecies[j])
+            if (currentSpecies == bossSpecies[j])
             {
                 poolIndexArray[i] = POOL_SLOT_DISABLED;
                 break;
