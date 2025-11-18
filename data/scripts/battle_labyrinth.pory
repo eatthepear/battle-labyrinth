@@ -1050,8 +1050,9 @@ script EventScript_Notebook_Abilities {
 				msgbox(format("Swanna now gets No Guard as a regular ability instead of Keen Eye."))
 			case SPECIES_VANILLITE:
 			case SPECIES_VANILLISH:
+				msgbox(format("Vanillite and Vanillish now get Weak Armor as a regular ability instead of Snow Cloak, which is now their Hidden Ability."))
 			case SPECIES_VANILLUXE:
-				msgbox(format("Vanillite, Vanillish, and Vanilluxe now get Weak Armor as a regular ability instead of Snow Warning, which is now their Hidden Ability."))
+				msgbox(format("Vanilluxe now gets Weak Armor as a regular ability instead of Snow Warning, which is now its Hidden Ability."))
 			case SPECIES_LITWICK:
 			case SPECIES_LAMPENT:
 			case SPECIES_CHANDELURE:
