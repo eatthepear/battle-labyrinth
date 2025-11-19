@@ -2444,6 +2444,7 @@ extern const u8 gText_InfiniteRepelOff[];
 extern const u8 gText_ConfirmSacredAsh[];
 extern const u8 gText_UsedSacredAsh[];
 extern const u8 gText_CandyNoEffectBecauseCap[];
+extern const u8 gText_YourPkmnBecameHealthy[];
 
 extern const u8 gText_SavingZone[];
 extern const u8 gText_SaveMenuNuzlocke[];

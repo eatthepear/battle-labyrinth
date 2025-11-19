@@ -60,4 +60,14 @@ bool32 SetUpFieldMove_Refresh(void);
 void Task_RefreshOnPartyMon(u8 taskId);
 void UseRefresh(u8 taskId);
 
+// aromatherapy
+bool32 SetUpFieldMove_Aromatherapy(void);
+void Task_AromatherapyOnParty(u8 taskId);
+void UseAromatherapy(u8 taskId);
+
+// heal bell
+bool32 SetUpFieldMove_HealBell(void);
+void Task_HealBellOnParty(u8 taskId);
+void UseHealBell(u8 taskId);
+
 #endif // GUARD_FLDEFF_H

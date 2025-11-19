@@ -4131,6 +4131,12 @@ static void CursorCb_FieldMove(u8 taskId)
             case FIELD_MOVE_REFRESH:
                 UseRefresh(taskId);
                 break;
+            case FIELD_MOVE_AROMATHERAPY:
+                UseAromatherapy(taskId);
+                break;
+            case FIELD_MOVE_HEAL_BELL:
+                UseHealBell(taskId);
+                break;
             default:
                 gPartyMenu.exitCallback = CB2_ReturnToField;
                 Task_ClosePartyMenu(taskId);
@@ -8261,7 +8267,7 @@ static void CB2_ChooseSendMonToPC(void)
     SetMainCallback2(BattleMainCB2);
 }
 
-void PartyMenuCureStatus(u8 taskId, u8 slot, TaskFunc task)
+static void CureMonStatus(u8 slot)
 {
     struct Pokemon *mon = &gPlayerParty[slot];
     u32 status = 0;
@@ -8269,7 +8275,20 @@ void PartyMenuCureStatus(u8 taskId, u8 slot, TaskFunc task)
     SetMonData(mon, MON_DATA_STATUS, &status);
 
     SetPartyMonAilmentGfx(mon, &sPartyMenuBoxes[slot]);
+}
 
+void PartyMenuCureStatus(u8 taskId, u8 slot, TaskFunc task)
+{
+    CureMonStatus(slot);
+    gTasks[taskId].func = task;
+}
+
+void PartyMenuCureWholePartyStatus(u8 taskId, TaskFunc task)
+{
+    for (u8 i = 0; i < gPlayerPartyCount; i++)
+    {
+        CureMonStatus(i);
+    }
     gTasks[taskId].func = task;
 }
 

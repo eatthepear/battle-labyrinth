@@ -1330,6 +1330,35 @@ void DestroyRecordMixingLights(void)
     }
 }
 
+static bool8 MonHasMoveWithPP(struct Pokemon *mon, u16 move)
+{
+    for (u8 i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == move)
+        {
+            return (GetMonData(mon, MON_DATA_PP1 + i, NULL) > 0);
+        }
+    }
+    return FALSE;
+}
+
+static void DecrementMovePP(struct Pokemon *mon, u16 move)
+{
+    for (u8 i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == move)
+        {
+            u8 pp = GetMonData(mon, MON_DATA_PP1 + i, NULL);
+            if (pp > 0)
+            {
+                pp--;
+                SetMonData(mon, MON_DATA_PP1 + i, &pp);
+            }
+            break;
+        }
+    }
+}
+
 bool32 SetUpFieldMove_Refresh(void)
 {
     struct Pokemon *mon = &gPlayerParty[GetCursorSelectionMonId()];
@@ -1341,18 +1370,32 @@ bool32 SetUpFieldMove_Refresh(void)
         case AILMENT_PKRS:
             return FALSE;
     }
-
-    for (u8 i = 0; i < MAX_MON_MOVES; i++)
-    {
-        if (GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_REFRESH)
-        {
-            return (GetMonData(mon, MON_DATA_PP1 + i, NULL) > 0);
-        }
-    }
-    return FALSE;
+    return MonHasMoveWithPP(mon, MOVE_REFRESH);
 }
 
-static void Task_FinishRefresh(u8 taskId)
+bool32 SetUpFieldMove_PartyCureAllStatus(u16 move)
+{
+    struct Pokemon *mon = &gPlayerParty[GetCursorSelectionMonId()];
+    bool8 foundStatus = FALSE;
+
+    for (u8 i = 0; i < gPlayerPartyCount; i++)
+    {
+        switch (GetMonAilment(&gPlayerParty[i]))
+        {
+            case AILMENT_NONE:
+            case AILMENT_FNT:
+            case AILMENT_PKRS:
+                break;
+            default:
+                foundStatus = TRUE;
+                break;
+        }
+    }
+
+    return foundStatus && MonHasMoveWithPP(mon, move);
+}
+
+static void Task_FinishStatusCure(u8 taskId)
 {
     if (IsPartyMenuTextPrinterActive() == TRUE)
         return;
@@ -1365,13 +1408,11 @@ static void Task_FinishRefresh(u8 taskId)
     gTasks[taskId].func = Task_HandleChooseMonInput;
 }
 
-static void Task_DisplayRefreshMessage(u8 taskId)
+static void Task_DisplayStatusCureMessage(u8 taskId)
 {
-    GetMonNickname(&gPlayerParty[gPartyMenu.slotId], gStringVar1);
-    StringExpandPlaceholders(gStringVar4, gText_PkmnBecameHealthy);
-    DisplayPartyMenuMessage(gStringVar4, TRUE);
+    DisplayPartyMenuMessage(gText_YourPkmnBecameHealthy, TRUE);
     ScheduleBgCopyTilemapToVram(2);
-    gTasks[taskId].func = Task_FinishRefresh;
+    gTasks[taskId].func = Task_FinishStatusCure;
 }
 
 void UseRefresh(u8 taskId)
@@ -1384,19 +1425,46 @@ void Task_RefreshOnPartyMon(u8 taskId)
     struct Pokemon *mon = &gPlayerParty[GetCursorSelectionMonId()];
     u8 userPartyId = gPartyMenu.slotId;
 
-    for (u8 i = 0; i < MAX_MON_MOVES; i++)
-    {
-        if (GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_REFRESH)
-        {
-            u8 pp = GetMonData(mon, MON_DATA_PP1 + i, NULL);
-            if (pp > 0)
-            {
-                pp--;
-                SetMonData(mon, MON_DATA_PP1 + i, &pp);
-            }
-            break;
-        }
-    }
+    DecrementMovePP(mon, MOVE_REFRESH);
+
     PlaySE(SE_USE_ITEM);
-    PartyMenuCureStatus(taskId, userPartyId, Task_DisplayRefreshMessage);
+    PartyMenuCureStatus(taskId, userPartyId, Task_DisplayStatusCureMessage);
+}
+
+void Task_AromatherapyOnParty(u8 taskId)
+{
+    struct Pokemon *mon = &gPlayerParty[GetCursorSelectionMonId()];
+    DecrementMovePP(mon, MOVE_AROMATHERAPY);
+
+    PlaySE(SE_USE_ITEM);
+    PartyMenuCureWholePartyStatus(taskId, Task_DisplayStatusCureMessage);
+}
+
+void Task_HealBellOnParty(u8 taskId)
+{
+    struct Pokemon *mon = &gPlayerParty[GetCursorSelectionMonId()];
+    DecrementMovePP(mon, MOVE_HEAL_BELL);
+
+    PlaySE(SE_USE_ITEM);
+    PartyMenuCureWholePartyStatus(taskId, Task_DisplayStatusCureMessage);
+}
+
+void UseAromatherapy(u8 taskId)
+{
+    gTasks[taskId].func = Task_AromatherapyOnParty;
+}
+
+void UseHealBell(u8 taskId)
+{
+    gTasks[taskId].func = Task_HealBellOnParty;
+}
+
+bool32 SetUpFieldMove_Aromatherapy(void)
+{
+    return SetUpFieldMove_PartyCureAllStatus(MOVE_AROMATHERAPY);
+}
+
+bool32 SetUpFieldMove_HealBell(void)
+{
+    return SetUpFieldMove_PartyCureAllStatus(MOVE_HEAL_BELL);
 }
