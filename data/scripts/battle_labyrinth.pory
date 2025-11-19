@@ -1228,11 +1228,12 @@ script EventScript_Notebook_Battle {
 		dynmultipush("Accuracy", 0)
 		dynmultipush("Experience", 1)
 		dynmultipush("Frostbite", 2)
-		dynmultipush("Pickup", 3)
-		dynmultipush("Honey Gather", 4)
-		dynmultipush("Harvest", 5)
-		dynmultipush("Pay Day", 6)
-		dynmultipush("Back", 7)
+		dynmultipush("Refresh", 3)
+		dynmultipush("Pickup", 4)
+		dynmultipush("Honey Gather", 5)
+		dynmultipush("Harvest", 6)
+		dynmultipush("Pay Day", 7)
+		dynmultipush("Back", 8)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
@@ -1247,16 +1248,18 @@ script EventScript_Notebook_Battle {
 				msgbox(format("In a Zone, the amount of experience gained from a knocked out Pokémon is a flat number based on the current level cap, rather than being dependent on level or species."))
 				msgbox(format("On Normal difficulty or higher, Pokémon don't gain experience through wild battles, including capture."))
 			case 2:
-				msgbox(format("Frostbite replaces Freeze, as in Legends: Arceus."))
+				msgbox(format("Frostbite replaces Freeze, as in Legends: Arceus.\pThe move Refresh heals Frostbite."))
 			case 3:
-				msgbox(format("On Normal difficulty or higher, Pickup does not find items after wild battles."))
+				msgbox(format("Refresh heals Frostbite in addition to its other effects."))
 			case 4:
-				msgbox(format("On Normal difficulty or higher, Honey Gather does not find items after wild battles."))
+				msgbox(format("On Normal difficulty or higher, Pickup does not find items after wild battles."))
 			case 5:
-				msgbox(format("On Normal difficulty or higher, Harvest does not recover used Berries during wild battles."))
+				msgbox(format("On Normal difficulty or higher, Honey Gather does not find items after wild battles."))
 			case 6:
-				msgbox(format("On Normal difficulty or higher, Pay Day does not earn money during wild battles."))
+				msgbox(format("On Normal difficulty or higher, Harvest does not recover used Berries during wild battles."))
 			case 7:
+				msgbox(format("On Normal difficulty or higher, Pay Day does not earn money during wild battles."))
+			case 8:
 			case MULTI_B_PRESSED:
 				return
 		}

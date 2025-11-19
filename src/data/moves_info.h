@@ -7595,7 +7595,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Refresh"),
         .description = COMPOUND_STRING(
             "Heals poisoning, paralysis,\n"
-            "or a burn."),
+            "a burn, or frostbite."),
         .effect = EFFECT_REFRESH,
         .power = 0,
         .type = TYPE_NORMAL,
