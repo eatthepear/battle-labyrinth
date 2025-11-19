@@ -1,6 +1,5 @@
 mapscripts Zone5A_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        setflag(FLAG_TEMP_HIDE_FOLLOWER)
 		if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 			setvar(VAR_BATTLE_STARTING_STATUS, 0)
 		}
