@@ -2504,6 +2504,8 @@ static void Task_DexNavMain(u8 taskId)
     {
         // check selection is valid. Play sound if invalid
         species = DexNavGetSpecies();
+        if (sDexNavUiDataPtr->cursorRow == ROW_HIDDEN)
+            species = SPECIES_NONE; // Can't search for hidden mons
 
         if (species != SPECIES_NONE)
         {
