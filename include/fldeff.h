@@ -70,4 +70,8 @@ bool32 SetUpFieldMove_HealBell(void);
 void Task_HealBellOnParty(u8 taskId);
 void UseHealBell(u8 taskId);
 
+// pp checkers/setters
+bool8 MonHasMoveWithPP(struct Pokemon *mon, u16 move);
+void DecrementMovePP(struct Pokemon *mon, u16 move);
+
 #endif // GUARD_FLDEFF_H

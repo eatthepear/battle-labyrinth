@@ -1289,7 +1289,7 @@ script EventScript_Notebook_Items {
 			case 2:
 				msgbox(format("TMs do not restore PP."))
 			case 3:
-				msgbox(format("Honey cost reduced to ¥80, and starts a wild Double Battle if on a map and tile that can have wild Pokémon.\pYou can also slather it on a Honey Tree to attract a wild Pokémon."))
+				msgbox(format("Honey cost reduced to ¥80, and starts a wild Double Battle if on a map and tile that can have wild Pokémon.\pYou can also slather it on a Honey Tree to attract a wild Pokémon.\pSweet Scent can be used out of battle to trigger the Double Battle part of Honey."))
 			case 4:
 				msgbox(format("The Ability Snack costs ¥80 and functions the same as an Ability Capsule."))
 			case 5:

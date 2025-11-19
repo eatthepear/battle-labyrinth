@@ -1330,7 +1330,7 @@ void DestroyRecordMixingLights(void)
     }
 }
 
-static bool8 MonHasMoveWithPP(struct Pokemon *mon, u16 move)
+bool8 MonHasMoveWithPP(struct Pokemon *mon, u16 move)
 {
     for (u8 i = 0; i < MAX_MON_MOVES; i++)
     {
@@ -1342,7 +1342,7 @@ static bool8 MonHasMoveWithPP(struct Pokemon *mon, u16 move)
     return FALSE;
 }
 
-static void DecrementMovePP(struct Pokemon *mon, u16 move)
+void DecrementMovePP(struct Pokemon *mon, u16 move)
 {
     for (u8 i = 0; i < MAX_MON_MOVES; i++)
     {
