@@ -1313,8 +1313,9 @@ script EventScript_Notebook_Other {
 		dynmultipush("DexNav", 2)
 		dynmultipush("Honey Tree", 3)
 		dynmultipush("Hidden Grotto", 4)
-		dynmultipush("Day/Night", 5)
-		dynmultipush("Back", 6)
+		dynmultipush("Field Moves", 5)
+		dynmultipush("Day/Night", 6)
+		dynmultipush("Back", 7)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
@@ -1331,8 +1332,10 @@ script EventScript_Notebook_Other {
 			case 4:
 				msgbox(format("Hidden Grottoes contain one specific Pokémon species with its Hidden Ability, chosen randomly from a pool.\pPokémon respawn upon exiting the Hidden Grotto, though it will always be the same species."))
 			case 5:
-				msgbox(format("There is no day/night cycle."))
+				msgbox(format("Some moves are available as field moves: standard healing moves (Recover, Synthesis, etc),\lRefresh, Aromatherapy, and Heal Bell,\lSweet Scent (same effect as Honey).\pAll of these require 1 PP to be used, and their usage is unaffected by the Pokémon that used them nor the weather conditions.\pFor example, a Pokémon that is asleep can still use Aromatherapy to cure itself, and a Pokémon will still gain half its maximum HP using Synthesis despite the presence of a sandstorm in the overworld."))
 			case 6:
+				msgbox(format("There is no day/night cycle."))
+			case 7:
 			case MULTI_B_PRESSED:
 				return
 		}
