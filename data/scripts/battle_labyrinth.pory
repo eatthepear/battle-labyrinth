@@ -1206,14 +1206,40 @@ script EventScript_Notebook_Learnsets {
 	while {
 		message(format("Which Pokémon's learnset change would you like to read?"))
 		waitmessage
+		dynmultipush("Spearow - Brave Bird", SPECIES_SPEAROW)
+		dynmultipush("Fearow - Brave Bird", SPECIES_FEAROW)
+		dynmultipush("Ponyta - Blaze Kick", SPECIES_PONYTA)
+		dynmultipush("Rapidash - Blaze Kick", SPECIES_RAPIDASH)
+		dynmultipush("Flareon - Blaze Kick", SPECIES_FLAREON)
+		dynmultipush("Grumpig - Slack Off", SPECIES_GRUMPIG)
+		dynmultipush("Lumineon - Tail Glow", SPECIES_LUMINEON)
 		dynmultipush("Deerling - Leafage", SPECIES_DEERLING)
 		dynmultipush("Sawsbuck - Leafage", SPECIES_SAWSBUCK)
+		dynmultipush("Bounsweet - Mega Drain", SPECIES_BOUNSWEET)
+		dynmultipush("Steenee - Mega Drain", SPECIES_STEENEE)
+		dynmultipush("Tsareena - Mega Drain", SPECIES_TSAREENA)
 		dynmultipush("Back", 0)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 1, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
+			case SPECIES_SPEAROW:
+			case SPECIES_FEAROW:
+				msgbox(format("Spearow and Fearow now learn Brave Bird as a level up move."))
+			case SPECIES_PONYTA:
+			case SPECIES_RAPIDASH:
+				msgbox(format("Ponyta and Rapidash now learn Blaze Kick as a level up move."))
+			case SPECIES_FLAREON:
+				msgbox(format("Flareon now learns Blaze Kick as a level up move."))
+			case SPECIES_GRUMPIG:
+				msgbox(format("Grumpig now learns Slack Off as a level up move."))
+			case SPECIES_LUMINEON:
+				msgbox(format("Lumineon now learns Tail Glow as a level up move."))
 			case SPECIES_DEERLING:
 			case SPECIES_SAWSBUCK:
 				msgbox(format("Deerling and Sawsbuck now learn Leafage as a level up move."))
+			case SPECIES_BOUNSWEET:
+			case SPECIES_STEENEE:
+			case SPECIES_TSAREENA:
+				msgbox(format("Bounsweet, Steenee, and Tsareena now learn Mega Drain as a level up move."))
 			case 0:
 			case MULTI_B_PRESSED:
 				return
