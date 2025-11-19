@@ -2101,8 +2101,8 @@ static u16 DexNavGetSpecies(void)
         return SPECIES_NONE;
     }
 
-    if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN))
-        return SPECIES_NONE;
+    // if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN))
+    //     return SPECIES_NONE;
 
     return species;
 }
