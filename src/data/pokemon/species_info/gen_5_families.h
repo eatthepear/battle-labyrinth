@@ -3554,7 +3554,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sSewaddleLevelUpLearnset,
         .teachableLearnset = sSewaddleTeachableLearnset,
         .eggMoveLearnset = sSewaddleEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_SWADLOON}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_SWADLOON}),
     },
 
     [SPECIES_SWADLOON] =

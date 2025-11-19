@@ -2626,7 +2626,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sHoppipLevelUpLearnset,
         .teachableLearnset = sHoppipTeachableLearnset,
         .eggMoveLearnset = sHoppipEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_SKIPLOOM}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_SKIPLOOM}),
     },
 
     [SPECIES_SKIPLOOM] =

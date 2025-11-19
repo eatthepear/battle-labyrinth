@@ -1870,8 +1870,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sBurmyTeachableLearnset,
         .formSpeciesIdTable = sBurmyFormSpeciesIdTable,
         .formChangeTable = sBurmyFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_WORMADAM_PLANT, CONDITIONS({IF_GENDER, MON_FEMALE})},
-                                {EVO_LEVEL, 20, SPECIES_MOTHIM_PLANT, CONDITIONS({IF_GENDER, MON_MALE})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_WORMADAM_PLANT, CONDITIONS({IF_GENDER, MON_FEMALE})},
+                                {EVO_LEVEL, 16, SPECIES_MOTHIM_PLANT, CONDITIONS({IF_GENDER, MON_MALE})}),
     },
 
     [SPECIES_BURMY_SANDY] =
@@ -1939,8 +1939,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sBurmyTeachableLearnset,
         .formSpeciesIdTable = sBurmyFormSpeciesIdTable,
         .formChangeTable = sBurmyFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_WORMADAM_SANDY, CONDITIONS({IF_GENDER, MON_FEMALE})},
-                                {EVO_LEVEL, 20, SPECIES_MOTHIM_SANDY, CONDITIONS({IF_GENDER, MON_MALE})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_WORMADAM_SANDY, CONDITIONS({IF_GENDER, MON_FEMALE})},
+                                {EVO_LEVEL, 16, SPECIES_MOTHIM_SANDY, CONDITIONS({IF_GENDER, MON_MALE})}),
     },
 
     [SPECIES_BURMY_TRASH] =
@@ -2008,8 +2008,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sBurmyTeachableLearnset,
         .formSpeciesIdTable = sBurmyFormSpeciesIdTable,
         .formChangeTable = sBurmyFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_WORMADAM_TRASH, CONDITIONS({IF_GENDER, MON_FEMALE})},
-                                {EVO_LEVEL, 20, SPECIES_MOTHIM_TRASH, CONDITIONS({IF_GENDER, MON_MALE})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_WORMADAM_TRASH, CONDITIONS({IF_GENDER, MON_FEMALE})},
+                                {EVO_LEVEL, 16, SPECIES_MOTHIM_TRASH, CONDITIONS({IF_GENDER, MON_MALE})}),
     },
 
     [SPECIES_WORMADAM_PLANT] =
@@ -2363,7 +2363,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .tmIlliterate = TRUE,
         .levelUpLearnset = sCombeeLevelUpLearnset,
         .teachableLearnset = sCombeeTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 21, SPECIES_VESPIQUEN, CONDITIONS({IF_GENDER, MON_FEMALE})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_VESPIQUEN, CONDITIONS({IF_GENDER, MON_FEMALE})}),
     },
 
     [SPECIES_VESPIQUEN] =
@@ -2767,7 +2767,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sCherubiLevelUpLearnset,
         .teachableLearnset = sCherubiTeachableLearnset,
         .eggMoveLearnset = sCherubiEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_CHERRIM_OVERCAST}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_CHERRIM_OVERCAST}),
     },
 
     [SPECIES_CHERRIM_OVERCAST] =

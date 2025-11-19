@@ -3949,7 +3949,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sWhismurLevelUpLearnset,
         .teachableLearnset = sWhismurTeachableLearnset,
         .eggMoveLearnset = sWhismurEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_LOUDRED}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_LOUDRED}),
     },
 
     [SPECIES_LOUDRED] =

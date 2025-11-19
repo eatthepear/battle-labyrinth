@@ -1622,7 +1622,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .levelUpLearnset = sSmolivLevelUpLearnset,
         .teachableLearnset = sSmolivTeachableLearnset,
         .eggMoveLearnset = sSmolivEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_DOLLIV}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_DOLLIV}),
     },
 
     [SPECIES_DOLLIV] =
