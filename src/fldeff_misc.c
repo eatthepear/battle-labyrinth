@@ -1368,6 +1368,9 @@ bool32 SetUpFieldMove_Refresh(void)
         case AILMENT_NONE:
         case AILMENT_FNT:
         case AILMENT_PKRS:
+        case AILMENT_SLP:
+        case AILMENT_FRB:
+        case AILMENT_FRZ:
             return FALSE;
     }
     return MonHasMoveWithPP(mon, MOVE_REFRESH);
