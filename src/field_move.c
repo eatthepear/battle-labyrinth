@@ -51,7 +51,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
 
     [FIELD_MOVE_REFRESH] =
     {
-        .fieldMoveFunc = SetUpFieldMove_SweetScent,
+        .fieldMoveFunc = SetUpFieldMove_Refresh,
         .isUnlockedFunc = IsFieldMoveUnlocked_SweetScent,
         .moveID = MOVE_REFRESH,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,

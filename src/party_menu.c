@@ -4128,6 +4128,9 @@ static void CursorCb_FieldMove(u8 taskId)
             case FIELD_MOVE_SOFT_BOILED:
                 ChooseMonForSoftboiled(taskId);
                 break;
+            case FIELD_MOVE_REFRESH:
+                UseRefresh(taskId);
+                break;
             default:
                 gPartyMenu.exitCallback = CB2_ReturnToField;
                 Task_ClosePartyMenu(taskId);
@@ -8256,6 +8259,18 @@ static void CB2_ChooseSendMonToPC(void)
     VarSet(VAR_MON_TO_PC, gSendMonPartyIndex);
     //gFieldCallback2 = CB2_FadeFromPartyMenu;
     SetMainCallback2(BattleMainCB2);
+}
+
+void PartyMenuCureStatus(u8 taskId, u8 slot, TaskFunc task)
+{
+    struct Pokemon *mon = &gPlayerParty[slot];
+    u32 status = 0;
+
+    SetMonData(mon, MON_DATA_STATUS, &status);
+
+    SetPartyMonAilmentGfx(mon, &sPartyMenuBoxes[slot]);
+
+    gTasks[taskId].func = task;
 }
 
 static void FieldCallback_RockClimb(void)

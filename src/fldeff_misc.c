@@ -1,5 +1,6 @@
 #include "global.h"
 #include "gpu_regs.h"
+#include "menu.h"
 #include "palette.h"
 #include "script.h"
 #include "sound.h"
@@ -17,10 +18,14 @@
 #include "event_scripts.h"
 #include "event_object_movement.h"
 #include "metatile_behavior.h"
+#include "party_menu.h"
+#include "strings.h"
 #include "string_util.h"
 #include "constants/field_effects.h"
 #include "constants/metatile_behaviors.h"
 #include "constants/metatile_labels.h"
+#include "constants/moves.h"
+#include "constants/party_menu.h"
 #include "constants/songs.h"
 
 
@@ -1323,4 +1328,75 @@ void DestroyRecordMixingLights(void)
             DestroySprite(&gSprites[i]);
         }
     }
+}
+
+bool32 SetUpFieldMove_Refresh(void)
+{
+    struct Pokemon *mon = &gPlayerParty[GetCursorSelectionMonId()];
+
+    switch (GetMonAilment(mon))
+    {
+        case AILMENT_NONE:
+        case AILMENT_FNT:
+        case AILMENT_PKRS:
+            return FALSE;
+    }
+
+    for (u8 i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_REFRESH)
+        {
+            return (GetMonData(mon, MON_DATA_PP1 + i, NULL) > 0);
+        }
+    }
+    return FALSE;
+}
+
+static void Task_FinishRefresh(u8 taskId)
+{
+    if (IsPartyMenuTextPrinterActive() == TRUE)
+        return;
+    gPartyMenu.action = 0;
+    AnimatePartySlot(gPartyMenu.slotId, 0);
+    AnimatePartySlot(gPartyMenu.slotId, 1);
+    ClearStdWindowAndFrameToTransparent(6, FALSE);
+    ClearWindowTilemap(6);
+    DisplayPartyMenuStdMessage(PARTY_MSG_CHOOSE_MON);
+    gTasks[taskId].func = Task_HandleChooseMonInput;
+}
+
+static void Task_DisplayRefreshMessage(u8 taskId)
+{
+    GetMonNickname(&gPlayerParty[gPartyMenu.slotId], gStringVar1);
+    StringExpandPlaceholders(gStringVar4, gText_PkmnBecameHealthy);
+    DisplayPartyMenuMessage(gStringVar4, TRUE);
+    ScheduleBgCopyTilemapToVram(2);
+    gTasks[taskId].func = Task_FinishRefresh;
+}
+
+void UseRefresh(u8 taskId)
+{
+    gTasks[taskId].func = Task_RefreshOnPartyMon;
+}
+
+void Task_RefreshOnPartyMon(u8 taskId)
+{
+    struct Pokemon *mon = &gPlayerParty[GetCursorSelectionMonId()];
+    u8 userPartyId = gPartyMenu.slotId;
+
+    for (u8 i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_REFRESH)
+        {
+            u8 pp = GetMonData(mon, MON_DATA_PP1 + i, NULL);
+            if (pp > 0)
+            {
+                pp--;
+                SetMonData(mon, MON_DATA_PP1 + i, &pp);
+            }
+            break;
+        }
+    }
+    PlaySE(SE_USE_ITEM);
+    PartyMenuCureStatus(taskId, userPartyId, Task_DisplayRefreshMessage);
 }

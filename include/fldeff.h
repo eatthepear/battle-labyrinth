@@ -55,4 +55,9 @@ bool8 FldEff_UseRockSmash(void);
 bool32 SetUpFieldMove_Defog(void);
 bool8 FldEff_Defog(void);
 
+// refresh
+bool32 SetUpFieldMove_Refresh(void);
+void Task_RefreshOnPartyMon(u8 taskId);
+void UseRefresh(u8 taskId);
+
 #endif // GUARD_FLDEFF_H
