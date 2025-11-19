@@ -675,7 +675,7 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     if (MetatileBehavior_IsTallGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_GRASS;
     if (MetatileBehavior_IsLongGrass(tileBehavior))
-        return BATTLE_ENVIRONMENT_LONG_GRASS;
+        return BATTLE_ENVIRONMENT_GRASS;
     if (MetatileBehavior_IsPuddle(tileBehavior))
         return BATTLE_ENVIRONMENT_GRASS;
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE10A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE10A))
