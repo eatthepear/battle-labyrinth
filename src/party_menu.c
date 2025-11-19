@@ -2908,7 +2908,10 @@ static u8 DisplaySelectionWindow(u8 windowType)
     {
         const u8 *text;
         u8 fontColorsId = (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES) ? 4 : 3;
-        text = sCursorOptions[sPartyMenuInternal->actions[i]].text;
+        if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
+            text = GetMoveName(FieldMove_GetMoveId(sPartyMenuInternal->actions[i] - MENU_FIELD_MOVES));
+        else
+            text = sCursorOptions[sPartyMenuInternal->actions[i]].text;
 
         AddTextPrinterParameterized4(sPartyMenuInternal->windowId[0], FONT_NORMAL, cursorDimension, (i * 16) + 1, letterSpacing, 0, sFontColorTable[fontColorsId], 0, text);
     }
@@ -2962,8 +2965,23 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
 
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
+    u8 i, j;
+
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
+
+    // Add field moves to action list
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        for (j = 0; j != FIELD_MOVES_COUNT; j++)
+        {
+            if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == FieldMove_GetMoveId(j))
+            {
+                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                break;
+            }
+        }
+    }
 
     if (!InBattlePike())
     {
