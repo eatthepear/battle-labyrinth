@@ -885,7 +885,11 @@ script EventScript_Notebook_Pokemon {
 					call(EventScript_Notebook_Evolutions)
 				}
 			case 3:
-				msgbox(format("All Pokémon can only learn moves they could learn in vanilla.\pAll Pokémon have edited level-up learnsets and may learn moves earlier than they do in vanilla.\pYou can see what moves Pokémon learn in the Pokédex."))
+				msgbox(format("Most Pokémon have very similar learnsets as vanilla.\pAll Pokémon have tailored level-up learnsets and may learn moves earlier than they do in vanilla.\pYou can see what moves Pokémon learn in the Pokédex."))
+				msgbox(format("The next page notes Pokémon with any learnset changes from vanilla. Would you like to read it?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					call(EventScript_Notebook_Learnsets)
+				}
 			case 4:
 				msgbox(format("Friendship is always considered maxed out."))
 			case 5:
@@ -1191,6 +1195,25 @@ script EventScript_Notebook_Evolutions {
 				msgbox(format("Gimmighoul evolves into Gholdengo using a Dusk Stone."))
 			case SPECIES_MILCERY:
 				msgbox(format("Milcery evolves into Alcremie using a Shiny Stone."))
+			case 0:
+			case MULTI_B_PRESSED:
+				return
+		}
+	}
+}
+
+script EventScript_Notebook_Learnsets {
+	while {
+		message(format("Which Pokémon's learnset change would you like to read?"))
+		waitmessage
+		dynmultipush("Deerling - Leafage", SPECIES_DEERLING)
+		dynmultipush("Sawsbuck - Leafage", SPECIES_SAWSBUCK)
+		dynmultipush("Back", 0)
+		dynmultistack(0, 0, FALSE, 6, FALSE, 1, DYN_MULTICHOICE_CB_NONE)
+		switch (var(VAR_RESULT)) {
+			case SPECIES_DEERLING:
+			case SPECIES_SAWSBUCK:
+				msgbox(format("Deerling and Sawsbuck now learn Leafage as a level up move."))
 			case 0:
 			case MULTI_B_PRESSED:
 				return
