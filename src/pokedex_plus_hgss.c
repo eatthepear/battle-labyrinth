@@ -5196,7 +5196,7 @@ static void PrintStatsScreen_Moves_Top(u8 taskId)
     u8 numTutorMoves    = sPokedexView->numTutorMoves;
     u16 movesTotal      = sPokedexView->movesTotal;
     u16 selected        = sPokedexView->moveSelected;
-    u8 level;
+    u8 level = 99; // initialize to non-multiple of 5 so it views as restricted if it's not a level up move
     u8 moves_x = 5;
     u8 moves_y = 3;
     u16 move;
@@ -5212,11 +5212,6 @@ static void PrintStatsScreen_Moves_Top(u8 taskId)
     ConvertIntToDecimalStringN(gStringVar2, movesTotal, STR_CONV_MODE_RIGHT_ALIGN, 3);
     StringExpandPlaceholders(gStringVar1, sText_Stats_MoveSelectedMax);
     PrintStatsScreenTextSmallWhite(WIN_STATS_MOVES_TOP, gStringVar1, moves_x-1, moves_y+1);
-
-    //Move name
-    StringCopy(gStringVar3, GetMoveName(move));
-    StringCopyPadded(gStringVar3, gStringVar3, CHAR_SPACE, 20);
-    PrintStatsScreenTextSmall(WIN_STATS_MOVES_TOP, gStringVar3, moves_x, moves_y + 17);
 
     //Draw move type icon
     SetTypeIconPosAndPal(GetMoveType(move), moves_x + 146, moves_y + 17, 0);
@@ -5251,6 +5246,21 @@ static void PrintStatsScreen_Moves_Top(u8 taskId)
     {
         StringCopy(gStringVar4, gText_CommunicationError);
         item = ITEM_MASTER_BALL;
+    }
+
+    //Move name
+    if ((GetCurrentDifficultyLevel() == DIFFICULTY_BRUTAL) && IsMoveRestricted(move, level))
+    {
+        StringCopy(gStringVar1, GetMoveName(move));
+        StringExpandPlaceholders(gStringVar4, gText_RestrictedMove);
+        StringCopyPadded(gStringVar4, gStringVar4, CHAR_SPACE, 20);
+        PrintStatsScreenTextSmall(WIN_STATS_MOVES_TOP, gStringVar4, moves_x, moves_y + 17);
+    }
+    else
+    {
+        StringCopy(gStringVar3, GetMoveName(move));
+        StringCopyPadded(gStringVar3, gStringVar3, CHAR_SPACE, 20);
+        PrintStatsScreenTextSmall(WIN_STATS_MOVES_TOP, gStringVar3, moves_x, moves_y + 17);
     }
 
     //Egg/TM/Level/Tutor Item Icon

@@ -1856,6 +1856,11 @@ void GiveBoxMonInitialMoveset(struct BoxPokemon *boxMon) //Credit: AsparagusEdua
             break;
         if (learnset[i].level == 0)
             continue;
+        if (IsMoveRestricted(learnset[i].move, learnset[i].level))
+        {
+            alreadyKnown = TRUE;
+            continue;
+        }
 
         for (j = 0; j < addedMoves; j++)
         {
@@ -1934,6 +1939,8 @@ u16 MonTryLearningNewMoveAtLevel(struct Pokemon *mon, bool32 firstMove, u32 leve
     {
         gMoveToLearn = learnset[sLearningMoveTableID].move;
         sLearningMoveTableID++;
+        if ((GetCurrentDifficultyLevel() == DIFFICULTY_BRUTAL) && IsMoveRestricted(gMoveToLearn, level))
+            return MOVE_NONE;
         retVal = GiveMoveToMon(mon, gMoveToLearn);
     }
 
@@ -3336,6 +3343,68 @@ u32 GetSpeciesBaseStat(u16 species, u32 statIndex)
         return GetSpeciesBaseSpDefense(species);
     }
     return 0;
+}
+
+// These are restricted moves for the random opponents and the player on Brutal
+static const u16 RestrictedMoves[] =
+{
+    // set up moves
+    MOVE_POWER_UP_PUNCH,
+    MOVE_TRAILBLAZE,
+    MOVE_CHARGE_BEAM,
+    MOVE_FLAME_CHARGE,
+    MOVE_ACID_ARMOR,
+    MOVE_AGILITY,
+    MOVE_AMNESIA,
+    MOVE_AUTOTOMIZE,
+    MOVE_BARRIER,
+    MOVE_BELLY_DRUM,
+    MOVE_BULK_UP,
+    MOVE_CALM_MIND,
+    MOVE_COACHING,
+    MOVE_COIL,
+    MOVE_COSMIC_POWER,
+    MOVE_COTTON_GUARD,
+    MOVE_CURSE,
+    MOVE_DEFENSE_CURL,
+    MOVE_DRAGON_DANCE,
+    MOVE_GROWTH,
+    MOVE_HARDEN,
+    MOVE_HONE_CLAWS,
+    MOVE_HOWL,
+    MOVE_IRON_DEFENSE,
+    MOVE_MEDITATE,
+    MOVE_NASTY_PLOT,
+    MOVE_QUIVER_DANCE,
+    MOVE_ROCK_POLISH,
+    MOVE_SHELL_SMASH,
+    MOVE_SHIFT_GEAR,
+    MOVE_STOCKPILE,
+    MOVE_SWALLOW,
+    MOVE_SPIT_UP,
+    MOVE_SWORDS_DANCE,
+    MOVE_TAIL_GLOW,
+    MOVE_TAILWIND,
+    MOVE_WITHDRAW,
+    MOVE_WORK_UP,
+    // other moves
+    MOVE_PSYCH_UP,
+    MOVE_PROTECT,
+    MOVE_SUBSTITUTE,
+};
+
+bool32 IsMoveRestricted(u16 move, u16 level)
+{
+    for (u32 i = 0; i < ARRAY_COUNT(RestrictedMoves); i++)
+    {
+        if (move == RestrictedMoves[i])
+        {
+            if ((level % 5) != 0) // you can learn it if it's at a level that's divisible by 5
+                return TRUE;
+        }
+    }
+
+    return FALSE;
 }
 
 const struct LevelUpMove *GetSpeciesLevelUpLearnset(u16 species)
@@ -5448,6 +5517,9 @@ u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)
         if (learnset[i].move == LEVEL_UP_MOVE_END)
             break;
 
+        if ((GetCurrentDifficultyLevel() == DIFFICULTY_BRUTAL) && IsMoveRestricted(learnset[i].move, learnset[i].level))
+            continue;
+
         moveLevel = learnset[i].level;
 
         if (moveLevel <= level)
@@ -5503,6 +5575,9 @@ u8 GetNumberOfRelearnableMoves(struct Pokemon *mon)
 
         if (learnset[i].move == LEVEL_UP_MOVE_END)
             break;
+
+        if ((GetCurrentDifficultyLevel() == DIFFICULTY_BRUTAL) && IsMoveRestricted(learnset[i].move, learnset[i].level))
+            continue;
 
         moveLevel = learnset[i].level;
 

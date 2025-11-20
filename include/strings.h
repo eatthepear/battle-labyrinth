@@ -2466,7 +2466,7 @@ extern const u8 gText_SaveMenuBrutal[];
 
 extern const u8 gText_LevelCapVar1[];
 
-extern const u8 gText_TrainerStatusParty[];
+extern const u8 gText_RestrictedMove[];
 
 extern const u8 gText_MapZone0[];
 extern const u8 gText_MapZone1[];

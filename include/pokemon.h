@@ -691,6 +691,7 @@ u32 GetSpeciesBaseSpAttack(u16 species);
 u32 GetSpeciesBaseSpDefense(u16 species);
 u32 GetSpeciesBaseSpeed(u16 species);
 u32 GetSpeciesBaseStat(u16 species, u32 statIndex);
+bool32 IsMoveRestricted(u16 move, u16 level);
 const struct LevelUpMove *GetSpeciesLevelUpLearnset(u16 species);
 const u16 *GetSpeciesTeachableLearnset(u16 species);
 const u16 *GetSpeciesEggMoves(u16 species);

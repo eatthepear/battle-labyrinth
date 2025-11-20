@@ -1334,7 +1334,7 @@ const u8 gText_SaveMenuBrutal[] =_("Brutal");
 
 const u8 gText_LevelCapVar1[] = _("Lvl Cap: {STR_VAR_1}");
 
-const u8 gText_TrainerStatusParty[] = _("{STR_VAR_1},\l{STR_VAR_2}");
+const u8 gText_RestrictedMove[] = _("{COLOR LIGHT_GRAY}{STR_VAR_1}");
 
 const u8 gText_MapZone0[] = _("Zone 0 - Harvest Road");
 const u8 gText_MapZone1[] = _("Zone 1 - Leafway Trail");
