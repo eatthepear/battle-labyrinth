@@ -800,6 +800,17 @@ extern const u8 gText_Decoration2[];
 extern const u8 gText_PackUp[];
 extern const u8 gText_Registry[];
 extern const u8 gText_Information[];
+extern const u8 gText_Mach[];
+extern const u8 gText_Acro[];
+extern const u8 gText_Psn[];
+extern const u8 gText_Par[];
+extern const u8 gText_Slp[];
+extern const u8 gText_Brn[];
+extern const u8 gText_Frz[];
+extern const u8 gText_Fsb[];
+extern const u8 gText_Dewford[];
+extern const u8 gText_SawIt[];
+extern const u8 gText_NotYet[];
 extern const u8 gText_Yes[];
 extern const u8 gText_No[];
 

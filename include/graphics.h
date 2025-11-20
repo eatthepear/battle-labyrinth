@@ -3429,4 +3429,9 @@ extern const u32 gBattleIcons_Gfx2[];
 extern const u16 gBattleIcons_Pal1[];
 extern const u16 gBattleIcons_Pal2[];
 
+// Start hexorb branch
+extern const u32 gItemIcon_Hexorb[];
+extern const u16 gItemIconPalette_Hexorb[];
+// End hexorb Branch
+
 #endif //GUARD_GRAPHICS_H

@@ -86,6 +86,7 @@
 #define PARTY_MSG_MOVE_ITEM_WHERE           31
 #define PARTY_MSG_ENEMY_PREVIEW             32
 #define PARTY_MSG_CANT_USE_RIGHT_NOW        33
+#define PARTY_MSG_WHICH_STATUS              34 // hexorb Branch
 
 #define PARTY_MSG_NONE                      127
 
@@ -110,5 +111,6 @@
 #define SELECTWINDOW_MOVES       3
 #define SELECTWINDOW_CATALOG     4
 #define SELECTWINDOW_ZYGARDECUBE 5
+#define SELECTWINDOW_HEXORB      6 // hexorb Branch
 
 #endif // GUARD_CONSTANTS_PARTY_MENU_H

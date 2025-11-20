@@ -117,4 +117,9 @@ bool32 SetUpFieldMove_Waterfall(void);
 bool32 SetUpFieldMove_Dive(void);
 bool32 SetUpFieldMove_RockClimb(void);
 
+// Start hexorb Branch
+void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task);
+void InitPartyMenuForHexorbFromField(u8 taskId);
+// End hexorb Branch
+
 #endif // GUARD_PARTY_MENU_H

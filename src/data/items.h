@@ -13524,22 +13524,26 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_InfiniteCandy,
     },
 
-    [ITEM_TEA] =
+// Start hexorb branch
+    [ITEM_HEXORB] =
     {
-        .name = ITEM_NAME("Tea"),
-        .pluralName = ITEM_PLURAL_NAME("Tea"),
+        .name = ITEM_NAME("Hexorb"),
+        .pluralName = ITEM_PLURAL_NAME("Hexorb"),
         .price = 0,
-        .description = COMPOUND_STRING(
-            "A thirst-quenching\n"
-            "tea prepared by an\n"
-            "old lady."),
         .importance = 1,
+        .description = COMPOUND_STRING(
+            "A purple orb\n"
+            "said to contain a\n"
+            "cursed power."),
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_Tea,
-        .iconPalette = gItemIconPalette_Tea,
+        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Hexorb,
+        .effect = gItemEffect_Hexorb,
+        .iconPic = gItemIcon_Hexorb,
+        .iconPalette = gItemIconPalette_Hexorb,
     },
+// End hexorb Branch
 
     [ITEM_RUBY] =
     {
