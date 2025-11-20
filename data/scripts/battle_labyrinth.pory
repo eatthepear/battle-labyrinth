@@ -662,6 +662,10 @@ script EventScript_Notebook_ZoneInfo {
 			}
 			msgbox(format("There is also a Rich Boy guarding a Rare Candy who uses Delibird, Unown, and Spinda."))
 		case 6:
+			msgbox(format("Another foe battles you with a Goldeen, Mantyke, and Corsola.\pImmediately afterwards, the Leviathan battles you in a Double Battle with a Hatenna that uses Life Dew and a Lumineon."))
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				msgbox(format("On Brutal difficulty, the Lumineon has Storm Drain to take advantage of its partner's Life Dew, and the Hatenna has an Eviolite and Magic Bounce to protect itself."))
+			}
 		case 7:
 		case 8:
 		case 9:

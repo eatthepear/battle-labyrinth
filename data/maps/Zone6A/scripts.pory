@@ -25,7 +25,7 @@ mapscripts Zone6A_MapScripts {
 
 script Zone6A_EventScript_LeviathanBattle {
 	lockall
-	applymovement(1, Common_Movement_FaceDown)
+	applymovement(LOCALID_MINA, Common_Movement_FaceDown)
 	waitmovement(0)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
 	waitmovement(0)
@@ -33,80 +33,69 @@ script Zone6A_EventScript_LeviathanBattle {
 	if (var(VAR_RESULT) == NO) {
 		msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: That's what I thought!"))
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
-		applymovement(1, Common_Movement_FaceLeft)
+		applymovement(LOCALID_MINA, Common_Movement_FaceLeft)
 		waitmovement(0)
 		release
 		end
 	}
 	fadeoutbgm(1)
-	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Who do you think you are?"), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Who do you think you are?"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	setweather(WEATHER_RAIN)
-	// 	doweather
-	// 	msgbox("It suddenly began to rain!")
-	// }
 	closemessage
 	trainerbattle_no_intro(TRAINER_PBL_MINA, "Rain, rain, go away…")
 	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Uh, sorry I was so angry at you.\pI didn't mean to… You're just passing by. Sorry!"), MSGBOX_AUTOCLOSE)
-	applymovement(2, Common_Movement_ExclamationMark)
-	applymovement(3, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_COBY, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_ZACK, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
 	delay(16)
-	applymovement(1, Zone6A_Movement_Mina_MoveOutOfWay)
-	applymovement(2, Zone6A_Movement_Coby_WalkUp)
-	applymovement(3, Zone6A_Movement_Zack_WalkUp)
+	applymovement(LOCALID_MINA, Zone6A_Movement_Mina_MoveOutOfWay)
+	applymovement(LOCALID_COBY, Zone6A_Movement_Coby_WalkUp)
+	applymovement(LOCALID_ZACK, Zone6A_Movement_Zack_WalkUp)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Hey! You're messing with my little sister!\pI'll teach you a lesson!"), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: No one messes with our family!\pLet's show 'em, sis!"), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Wait! It isn't their fault!"), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Hey! You're messing with my little sister!\pI'll teach you a lesson!"))
+	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: No one messes with our family!\pLet's show 'em, sis!"))
+	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Wait! It isn't their fault!"))
 	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: Combined family attack!"))
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	trainerbattle_no_intro(TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_CHALLENGE, Zone6A_Text_Leviathan6Defeat)
-	// 	resetweather
-	// 	doweather
-	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6, Zone6A_Text_Leviathan6Defeat)
-	// }
+	trainerbattle_no_intro(TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6, format("Our family loses together!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Whew! You're a tough nut to crack. But we'll crush you for messing with our family!"), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Wait! Just listen!"), MSGBOX_DEFAULT)
-	applymovement(2, Common_Movement_ExclamationMark)
-	applymovement(3, Common_Movement_ExclamationMark)
+	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Whew! You're a tough nut to crack. But we'll crush you for messing with our family!"))
+	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Wait! Just listen!"))
+	applymovement(LOCALID_COBY, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_ZACK, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
 	delay(16)
-	applymovement(2, Common_Movement_FaceRight)
-	applymovement(3, Common_Movement_FaceRight)
+	applymovement(LOCALID_COBY, Common_Movement_FaceRight)
+	applymovement(LOCALID_ZACK, Common_Movement_FaceRight)
 	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: Shouldn't we go after this person, Mina? They're after the treasure!"), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: I've been trying to tell you, they've just been trying to pass through!"), MSGBOX_DEFAULT)
-	applymovement(2, Common_Movement_ExclamationMark)
-	applymovement(3, Common_Movement_ExclamationMark)
+	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: Shouldn't we go after this person, Mina? They're after the treasure!"))
+	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: I've been trying to tell you, they've just been trying to pass through!"))
+	applymovement(LOCALID_COBY, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_ZACK, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
 	delay(16)
-	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Oh. Uh…"), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: This is awkward."), MSGBOX_DEFAULT)
-	applymovement(2, Common_Movement_FaceLeft)
-	applymovement(3, Common_Movement_FaceLeft)
+	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Oh. Uh…"))
+	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: This is awkward."))
+	applymovement(LOCALID_COBY, Common_Movement_FaceLeft)
+	applymovement(LOCALID_ZACK, Common_Movement_FaceLeft)
 	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: We're, um…"), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: We're very sorry for antagonizing you. Really, very sorry."), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: C'mon, guys, this isn't enough. We were so mean to them…"), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: Maybe we can share the treasure?\pWe got most of it out of the sand already anyways."), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Good idea.\pYou can have what's left of the treasure. We've already gotten our fair share."), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: We're really sorry, again. We didn't mean to be so mean."), MSGBOX_DEFAULT)
+	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: We're, um…"))
+	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: We're very sorry for antagonizing you. Really, very sorry."))
+	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: C'mon, guys, this isn't enough. We were so mean to them…"))
+	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: Maybe we can share the treasure?\pWe got most of it out of the sand already anyways."))
+	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Good idea.\pYou can have what's left of the treasure. We've already gotten our fair share."))
+	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: We're really sorry, again. We didn't mean to be so mean."))
 	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Well, you live and you learn."))
 	setflag(FLAG_BEAT_LEVIATHAN_6)
 	setvar(VAR_ZONE_6_STATE, 1)
-	applymovement(2, Zone6A_Movement_Coby_WalkDown)
-	applymovement(3, Zone6A_Movement_Zack_WalkDown)
+	applymovement(LOCALID_COBY, Zone6A_Movement_Coby_WalkDown)
+	applymovement(LOCALID_ZACK, Zone6A_Movement_Zack_WalkDown)
 	waitmovement(0)
 	release
 	end
@@ -136,10 +125,6 @@ movement Zone6A_Movement_Zack_WalkDown {
 	walk_down * 2
 	walk_right
 	face_down
-}
-
-text Zone6A_Text_Leviathan6Defeat {
-	"Our family loses together!"
 }
 
 script Zone6A_EventScript_Mina {
@@ -186,7 +171,7 @@ script Zone6A_EventScript_TradeDelibird {
 	copyvar(VAR_0x8009, VAR_RESULT)
 	msgbox(format("Please! You've got to trade me! I'll take anything! Delibird is the worst Pokémon ever!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Please! I can't win any battles with a Delibird!"), MSGBOX_DEFAULT)
+		msgbox(format("Please! I can't win any battles with a Delibird!"))
 		release
 		end
 	}
@@ -194,7 +179,7 @@ script Zone6A_EventScript_TradeDelibird {
 	waitstate
 	copyvar(VAR_0x800A, VAR_0x8004)
 	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
-		msgbox(format("Please! I can't win any battles with a Delibird!"), MSGBOX_DEFAULT)
+		msgbox(format("Please! I can't win any battles with a Delibird!"))
 		release
 		end
 	}
@@ -210,7 +195,7 @@ script Zone6A_EventScript_TradeDelibird {
 	special(CreateInGameTradePokemon)
 	special(DoInGameTradeScene)
 	waitstate
-	msgbox(format("Thank you! Now I've got a real Pokémon to use!"), MSGBOX_DEFAULT)
+	msgbox(format("Thank you! Now I've got a real Pokémon to use!"))
 	setflag(FLAG_ZONE6A_TRADED_DELIBIRD)
 	release
 	end
@@ -385,7 +370,7 @@ Zone6A_Text_DaisyPostBattle:
 
 Zone6A_EventScript_VicandDell::
 	trainerbattle_double TRAINER_PBL_VIC_AND_DELL, Zone6A_Text_VicandDellIntro, Zone6A_Text_VicandDellDefeat, gText_NotEnoughMons
-	msgbox Zone6A_Text_VicandDellPostBattle, MSGBOX_DEFAULT
+	msgbox Zone6A_Text_VicandDellPostBattle
 	release
 	end
 

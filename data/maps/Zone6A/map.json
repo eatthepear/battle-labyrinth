@@ -12,9 +12,10 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_MINA",
       "graphics_id": "OBJ_EVENT_GFX_TUBER_F",
       "x": 46,
       "y": 16,
@@ -28,6 +29,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_COBY",
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_WALKING",
       "x": 47,
       "y": 19,
@@ -41,6 +43,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_ZACK",
       "graphics_id": "OBJ_EVENT_GFX_TUBER_M",
       "x": 48,
       "y": 19,
@@ -249,9 +252,7 @@
       "flag": "0"
     }
   ],
-  "warp_events": [
-
-  ],
+  "warp_events": [],
   "coord_events": [
     {
       "type": "trigger",

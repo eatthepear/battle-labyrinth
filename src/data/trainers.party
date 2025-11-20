@@ -2259,70 +2259,34 @@ Name: Nina
 Class: Tuber F
 Pic: Tuber F
 Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
-Wiglett
-Ability: Gooey
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Aqua Jet
-- Water Pulse
-- Slam
-- Mud Slap
-
-Barboach
-Ability: Hydration
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Magnitude
-- Water Pulse
-- Mud Bomb
-- Rest
-
-Goldeen
-Ability: Swift Swim
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Water Pulse
-- Horn Attack
-- Peck
-- Aqua Ring
-
-Corsola @ Oran Berry
-Ability: Regenerator
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bubble Beam
-- Ancient Power
-- Spike Cannon
-- Refresh
-
-=== TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6 ===
-Name: Zack&Coby
-Class: Sis And Bro
-Pic: Sis And Bro
-Music: Swimmer
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: Yes
-Mugshot: Purple
-
-Luvdisc @ Oran Berry
-Ability: Swift Swim
+Goldeen @ Chesto Berry
+Hasty Nature
+Ability: Lightning Rod
 Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Chilling Water
-- Draining Kiss
+- Water Pulse
+- Horn Attack
 
-Lumineon @ Oran Berry
-Ability: Storm Drain
-Level: 17
-IVs: 31 HP / 31 Atk / 31 Def / 30 SpA / 30 SpD / 31 Spe
-- Chilling Water
-- Hidden Power
-/* Hidden Power Ground */
+Mantyke @ Cheri Berry
+Naughty Nature
+Ability: Water Absorb
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bubble Beam
+- Wing Attack
 
-=== TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6_CHALLENGE ===
+Corsola @ Sitrus Berry
+Modest Nature
+Ability: Regenerator
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bubble Beam
+- Ancient Power
+
+=== TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6 ===
 Name: Zack&Coby
 Class: Sis And Bro
 Pic: Sis And Bro
@@ -2331,20 +2295,45 @@ AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
 Mugshot: Purple
 
-Luvdisc @ Oran Berry
-Ability: Swift Swim
-Level: 15
+Hatenna @ Chesto Berry
+Relaxed Nature
+Ability: Anticipation
+Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Chilling Water
-- Draining Kiss
+- Life Dew
 
-Lumineon @ Oran Berry
+Lumineon @ Sitrus Berry
+Timid Nature
+Ability: Swift Swim
+Level: 17
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Silver Wind
+
+=== TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6 ===
+Name: Zack&Coby
+Class: Sis And Bro
+Pic: Sis And Bro
+Music: Swimmer
+AI: AI_FLAG_LEVIATHAN
+Double Battle: Yes
+Mugshot: Purple
+Difficulty: Brutal
+
+Hatenna @ Eviolite
+Relaxed Nature
+Ability: Magic Bounce
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Life Dew
+
+Lumineon @ Sitrus Berry
+Timid Nature
 Ability: Storm Drain
 Level: 17
-IVs: 31 HP / 31 Atk / 31 Def / 30 SpA / 30 SpD / 31 Spe
-- Surf
-- Hidden Power
-/* Hidden Power Ground */
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Silver Wind
 
 === TRAINER_PBL_MILLIE ===
 Name: Millie
