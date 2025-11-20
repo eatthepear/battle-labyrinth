@@ -3368,11 +3368,11 @@ static const u16 RestrictedMoves[] =
     MOVE_STOCKPILE,
     MOVE_SWALLOW,
     MOVE_SPIT_UP,
-    MOVE_WORK_UP, // to readd
-    MOVE_GROWTH, // to readd
-    MOVE_HONE_CLAWS, // to readd
-    MOVE_HOWL, // to readd
-    MOVE_MEDITATE, // to readd
+    MOVE_MEDITATE,
+    MOVE_HOWL,
+    MOVE_GROWTH,
+    MOVE_WORK_UP,
+    MOVE_HONE_CLAWS,
     // really good ones (these are all tutors)
     MOVE_AGILITY,
     MOVE_BULK_UP,
