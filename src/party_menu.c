@@ -5553,6 +5553,12 @@ static void Task_LearnedMove(u8 taskId)
         if (!GetItemImportance(item))
             RemoveBagItem(item, 1);
     }
+    else
+    {
+        // Restore max PP if not from TM. For example, Rare Candy level up move.
+        u32 maxPP = GetMovePP(move[0]);
+        SetMonData(mon, MON_DATA_PP1 + GetMoveSlotToReplace(), &maxPP);
+    }
     GetMonNickname(mon, gStringVar1);
     StringCopy(gStringVar2, GetMoveName(move[0]));
     StringExpandPlaceholders(gStringVar4, gText_PkmnLearnedMove3);
@@ -5675,7 +5681,7 @@ static void Task_PartyMenuReplaceMove(u8 taskId)
         oldPP = GetMonData(mon, MON_DATA_PP1 + GetMoveSlotToReplace(), NULL);
         move = gPartyMenu.data1;
         SetMonMoveSlot(mon, move, GetMoveSlotToReplace());
-        if (GetMonData(mon, MON_DATA_PP1 + GetMoveSlotToReplace(), NULL) > oldPP)
+        if ((GetMonData(mon, MON_DATA_PP1 + GetMoveSlotToReplace(), NULL) > oldPP) && FlagGet(FLAG_IN_NEW_ZONE))
             SetMonData(mon, MON_DATA_PP1 + GetMoveSlotToReplace(), &oldPP);
         Task_LearnedMove(taskId);
     }
