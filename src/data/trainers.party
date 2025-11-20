@@ -1273,13 +1273,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Snarl
 - Quick Attack
 
-Axew @ Chesto Berry
-Careful Nature
-Ability: Unnerve
+Shinx @ Wise Glasses
+Rash Nature
+Ability: Intimidate
 Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Breaking Swipe
-- Scratch
+- Electroweb
+- Quick Attack
 
 Ledian @ Oran Berry
 Mild Nature
@@ -1307,13 +1307,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Snarl
 - Quick Attack
 
-Axew @ Chesto Berry
-Careful Nature
-Ability: Unnerve
+Shinx @ Wise Glasses
+Rash Nature
+Ability: Intimidate
 Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Breaking Swipe
-- Scratch
+- Electroweb
+- Quick Attack
 
 Ledian @ Oran Berry
 Mild Nature
@@ -1323,13 +1323,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Struggle Bug
 - Tackle
 
-Shinx @ Wise Glasses
-Rash Nature
-Ability: Intimidate
+Axew @ Chesto Berry
+Careful Nature
+Ability: Unnerve
 Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Spark
-- Electroweb
+- Breaking Swipe
+- Scratch
 
 === TRAINER_PBL_REBECCA ===
 Name: Rebecca

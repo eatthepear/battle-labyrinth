@@ -651,9 +651,9 @@ script EventScript_Notebook_ZoneInfo {
 			}
 			msgbox(format("There is also a Lady guarding a Rare Candy who uses Farfetch'd, Luvdisc, and Delcatty."))
 		case 4:
-			msgbox(format("The Leviathan battles in a Double Battle. Their Nickit, Axew, and ace Ledian all use spread moves that lower your stats."))
+			msgbox(format("The Leviathan battles in a Double Battle. Their Nickit, Shinx, and ace Ledian all use spread moves that lower your stats."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, they also have a Shinx with Intimidate and Electroweb."))
+				msgbox(format("On Brutal difficulty, they also have a Axew with Breaking Swipe."))
 			}
 		case 5:
 			msgbox(format("The Leviathan is a Psychic Gym Leader fought in a Single Battle. Their Munna, Dottler, Natu, and Lunatone all can utilize Light Screen and Reflect to reduce damage."))
