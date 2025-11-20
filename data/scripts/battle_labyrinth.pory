@@ -1287,7 +1287,7 @@ script EventScript_Notebook_Items {
 			case 7:
 				msgbox(format("Heart Scale cost increased to ¥2500."))
 			case 8:
-				msgbox(format("The Hex Orb Key Item lets you pre-status Pokémon."))
+				msgbox(format("The Hexorb Key Item lets you pre-status Pokémon."))
 			case 9:
 			case MULTI_B_PRESSED:
 				return
