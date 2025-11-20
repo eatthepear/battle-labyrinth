@@ -165,7 +165,7 @@
       "y": 20,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "EventScript_Sign_RunningShoes"
+      "script": "EventScript_Sign_AutoRun"
     },
     {
       "type": "sign",

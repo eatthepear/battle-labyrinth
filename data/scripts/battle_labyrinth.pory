@@ -768,7 +768,7 @@ script EventScript_Notebook_Pokemon {
 					call(EventScript_Notebook_Learnsets)
 				}
 			case 4:
-				msgbox(format("Friendship is always considered maxed out."))
+				msgbox(format("Friendship is always considered maxed out.\pAll friendship evolutions have been changed to level up, so in practice this only affects moves like Return."))
 			case 5:
 			case MULTI_B_PRESSED:
 				return
@@ -1117,19 +1117,19 @@ script EventScript_Notebook_Battle {
 			case 1:
 				msgbox(format("There are hard level caps built in, which typically increase by 2-3 every Zone."))
 				msgbox(format("In a Zone, the amount of experience gained from a knocked out Pokémon is a flat number based on the current level cap, rather than being dependent on level or species."))
-				msgbox(format("On Normal difficulty or higher, Pokémon don't gain experience through wild battles, including capture."))
+				msgbox(format("Pokémon don't gain experience through wild battles, including capture, except on Easy difficulty."))
 			case 2:
 				msgbox(format("Frostbite replaces Freeze, as in Legends: Arceus.\pThe move Refresh heals Frostbite."))
 			case 3:
 				msgbox(format("Refresh heals Frostbite in addition to its other effects."))
 			case 4:
-				msgbox(format("On Normal difficulty or higher, Pickup does not find items after wild battles."))
+				msgbox(format("Pickup does not find items after wild battles, except on Easy difficulty."))
 			case 5:
-				msgbox(format("On Normal difficulty or higher, Honey Gather does not find items after wild battles."))
+				msgbox(format("Honey Gather does not find items after wild battles, except on Easy difficulty."))
 			case 6:
-				msgbox(format("On Normal difficulty or higher, Harvest does not recover used Berries during wild battles."))
+				msgbox(format("Harvest does not recover used Berries during wild battles, except on Easy difficulty."))
 			case 7:
-				msgbox(format("On Normal difficulty or higher, Pay Day does not earn money during wild battles."))
+				msgbox(format("Pay Day does not earn money during wild battles, except on Easy difficulty."))
 			case 8:
 			case MULTI_B_PRESSED:
 				return
@@ -1160,7 +1160,7 @@ script EventScript_Notebook_Items {
 			case 2:
 				msgbox(format("TMs are infinite use, but do not restore PP if you are in a new Zone."))
 			case 3:
-				msgbox(format("Honey cost reduced to ¥80, and starts a wild Double Battle if on a map and tile that can have wild Pokémon.\pYou can also slather it on a Honey Tree to attract a wild Pokémon.\pSweet Scent can be used out of battle to trigger the Double Battle part of Honey."))
+				msgbox(format("Honey cost reduced to ¥80, and starts a wild Double Battle if on a map and tile that can have wild Pokémon.\pYou can also slather it on a Honey Tree to attract a wild Pokémon."))
 			case 4:
 				msgbox(format("The Ability Snack costs ¥80 and functions the same as an Ability Capsule."))
 			case 5:
@@ -1206,7 +1206,7 @@ script EventScript_Notebook_Other {
 			case 4:
 				msgbox(format("Hidden Grottoes contain one specific Pokémon species with its Hidden Ability, chosen randomly from a pool.\pPokémon respawn upon exiting the Hidden Grotto, though it will always be the same species."))
 			case 5:
-				msgbox(format("Some moves are available as field moves: Refresh, Aromatherapy, and Heal Bell,\lSweet Scent (same effect as Honey).\pAll of these require 1 PP to be used, and their usage is unaffected by the Pokémon that used them nor the weather conditions.\pFor example, a Pokémon that is asleep can still use Aromatherapy to cure itself, and a Pokémon will still gain half its maximum HP using Synthesis despite the presence of a sandstorm in the overworld."))
+				msgbox(format("Some moves are available as field moves: Refresh, Aromatherapy, and Heal Bell,\lSweet Scent (triggers wild Double Battle).\pAll of these require 1 PP to be used, and their usage is unaffected by the Pokémon that used them nor the weather conditions.\pFor example, a Pokémon that is asleep can still use Aromatherapy to cure itself."))
 			case 6:
 				msgbox(format("There is no day/night cycle."))
 			case 7:
@@ -1221,14 +1221,59 @@ script EventScript_Notebook_TrainerTips {
 		message(format("Trainer Tips open. Read more\nTrainer Tips signs to fill this!"))
 		waitmessage
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_1)
-		if (var(VAR_RESULT) == TRUE) {
-			dynmultipush("NAME", SUB_QUEST_1)
-		}
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Notebook", SUB_QUEST_1) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_2)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Porygon", SUB_QUEST_2) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_3)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Auto Run", SUB_QUEST_3) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_4)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Zone Info", SUB_QUEST_4) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_5)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Infinite Candy", SUB_QUEST_5) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_6)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Surveil", SUB_QUEST_6) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_7)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Honey & Sweet Scent", SUB_QUEST_7) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_8)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Pokémon Changes", SUB_QUEST_8) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_9)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Register Items", SUB_QUEST_9) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_10)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Battle Changes", SUB_QUEST_10) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_11)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Field Moves", SUB_QUEST_11) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_12)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Hidden Items", SUB_QUEST_12) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_13)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Rare Candy", SUB_QUEST_13) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_14)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Pokédex Info", SUB_QUEST_14) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_15)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Different Areas", SUB_QUEST_15) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_16)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Sort Bag", SUB_QUEST_16) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_17)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Change Music", SUB_QUEST_17) }
 		dynmultipush("Back", 51)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
-			case SUB_QUEST_1:
-				call(EventScript_Sign_Notebook)
+			case SUB_QUEST_1:  call(EventScript_Sign_Notebook)
+			case SUB_QUEST_2:  call(EventScript_Sign_Porygon)
+			case SUB_QUEST_3:  call(EventScript_Sign_AutoRun)
+			case SUB_QUEST_4:  call(EventScript_Sign_ZoneInfo)
+			case SUB_QUEST_5:  call(EventScript_Sign_InfiniteCandy)
+			case SUB_QUEST_6:  call(EventScript_Surveil)
+			case SUB_QUEST_7:  call(EventScript_Sign_HoneySweetScent)
+			case SUB_QUEST_8:  call(EventScript_Sign_PokemonChanges)
+			case SUB_QUEST_9:  call(EventScript_Sign_Register)
+			case SUB_QUEST_10: call(EventScript_Sign_BattleChanges)
+			case SUB_QUEST_11: call(EventScript_Sign_FieldMoves)
+			case SUB_QUEST_12: call(EventScript_Sign_HiddenItems)
+			case SUB_QUEST_13: call(EventScript_Sign_RareCandy)
+			case SUB_QUEST_14: call(EventScript_Sign_PokedexInfo)
+			case SUB_QUEST_15: call(EventScript_Sign_DifferentAreas)
+			case SUB_QUEST_16: call(EventScript_Sign_SortBag)
+			case SUB_QUEST_17: call(EventScript_Sign_ChangeMusic)
 			case 51:
 			case MULTI_B_PRESSED:
 				return
@@ -1251,9 +1296,9 @@ script EventScript_Sign_Porygon {
 		message(format("Trainer Tips\pTo complete a Zone, defeat all Leviathans and find {COLOR RED}Porygon{COLOR DARK_GRAY}.\pOn Easy difficulty, you can skip defeating some Leviathans."))
 	}
 	waitmessage
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_1)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_2)
 	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_1)
+		completesubquest(QUEST_SIGNS, SUB_QUEST_2)
 	}
 	showmonpic(SPECIES_PORYGON, 10, 3)
 	setseenmon(SPECIES_PORYGON)
@@ -1263,44 +1308,124 @@ script EventScript_Sign_Porygon {
 	release
 }
 
-script EventScript_Sign_RunningShoes {
+script EventScript_Sign_AutoRun {
 	msgbox(format("Trainer Tips\pPress {L_BUTTON} to toggle Auto Run."), MSGBOX_SIGN)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_2)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_3)
 	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_2)
+		completesubquest(QUEST_SIGNS, SUB_QUEST_3)
+	}
+}
+
+script EventScript_Sign_ZoneInfo {
+	msgbox(format("Trainer Tips\pYou can see a short preview of a Zone by consulting the {COLOR RED}Notebook{COLOR DARK_GRAY}, which includes a general description of the Zone, how many opponents remain in that Zone, and a summary of any bosses in that Zone."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_4)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_4)
+	}
+}
+
+script EventScript_Sign_InfiniteCandy {
+	msgbox(format("Trainer Tips\pThe {COLOR RED}Infinite Candy{COLOR DARK_GRAY} can be used to increase your Pokémon's level up to the prior level cap.\pConsult the {COLOR RED}Notebook{COLOR DARK_GRAY} for more details."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_5)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_5)
+	}
+}
+
+script EventScript_Surveil {
+	msgbox(format("Trainer Tips\pIn battle, you can use {COLOR RED}Surveil{COLOR DARK_GRAY} to see the opponent's team."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_6)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_6)
+	}
+}
+
+script EventScript_Sign_HoneySweetScent {
+	msgbox(format("Trainer Tips\pIn addition to attracting Pokémon on Honey Trees, Honey can be used to trigger a wild Double Battle if used from the Bag.\pThe field move {COLOR RED}Sweet Scent{COLOR DARK_GRAY} can also do this!"), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_7)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_7)
+	}
+}
+
+script EventScript_Sign_PokemonChanges {
+	msgbox(format("Trainer Tips\pMany Pokémon have had their evolution methods, abilities, or learnsets altered.\pConsult the Pokédex if you've already captured that Pokémon, or the {COLOR RED}Notebook{COLOR DARK_GRAY} for changes from vanilla."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_8)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_8)
 	}
 }
 
 script EventScript_Sign_Register {
 	msgbox(format("Trainer Tips\pYou can register multiple Key Items at a time."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_9)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_9)
+	}
 }
 
-script EventScript_Surveil {
-	msgbox(format("Trainer Tips\pIn battle, you can use Surveil to see the opponent's team."), MSGBOX_SIGN)
+script EventScript_Sign_BattleChanges {
+	msgbox(format("Trainer Tips\pA few battle mechanics have been altered from vanilla, including increased accuracy for many moves, the Frostbite condition instead of Freeze, and experience gain.\pConsult the {COLOR RED}Notebook{COLOR DARK_GRAY} for more details."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_10)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_10)
+	}
+}
+
+script EventScript_Sign_FieldMoves {
+	msgbox(format("Trainer Tips\pA few field moves are available for use, including Refresh and Aromatherapy.\pConsult the {COLOR RED}Notebook{COLOR DARK_GRAY} for more details."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_11)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_11)
+	}
 }
 
 script EventScript_Sign_HiddenItems {
 	msgbox(format("Trainer Tips\pYou may find hidden items by checking certain tiles with {A_BUTTON}.\pYou can use the {COLOR RED}Dowsing Machine{COLOR DARK_GRAY} to help you find such items."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_12)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_12)
+	}
 }
 
 script EventScript_Sign_RareCandy {
-	msgbox(format("Trainer Tips\pRare Candies are different from the Infinite Candy in that they can be used to level up past the level cap!\pOnly 15 of them can be found throughout the game."), MSGBOX_SIGN)
+	msgbox(format("Trainer Tips\p{COLOR RED}Rare Candies{COLOR DARK_GRAY} differ from the {COLOR RED}Infinite Candy{COLOR DARK_GRAY} because they can be used to level up past the level cap!\pOnly 15 {COLOR RED}Rare Candies{COLOR DARK_GRAY} can be found throughout the game, and each is guarded by an optional miniboss."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_13)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_13)
+	}
 }
 
 script EventScript_Sign_PokedexInfo {
-	msgbox(format("Trainer Tips\pYou can see detailed information about a Pokémon species in its Pokédex entry after capturing it, such as what moves it learns or how to evolve it."), MSGBOX_SIGN)
+	msgbox(format("Trainer Tips\pYou can see detailed information about a Pokémon species in its Pokédex entry after capturing it, such as what moves it learns or how to evolve it.\pAny changes from vanilla can be found in the {COLOR RED}Notebook{COLOR DARK_GRAY}."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_14)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_14)
+	}
 }
 
 script EventScript_Sign_DifferentAreas {
-	msgbox(format("Trainer Tips\pThe Pokémon you encounter in different areas of the same zone may have slight differences!"), MSGBOX_SIGN)
+	msgbox(format("Trainer Tips\pThe encounterable Pokémon in different areas of the same Zone may vary significantly."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_15)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_15)
+	}
 }
 
 script EventScript_Sign_SortBag {
 	msgbox(format("Trainer Tips\pYou can sort items in the Bag using {START_BUTTON}."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_16)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_16)
+	}
 }
 
 script EventScript_Sign_ChangeMusic {
-	msgbox(format("Trainer Tips\pYou can change some of the music you hear by speaking to the Guitarist in the Sanctuary!"), MSGBOX_SIGN)
+	msgbox(format("Trainer Tips\pYou can change some of the music you hear by speaking to the Guitarist in the Sanctuary."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_17)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_17)
+	}
 }
 
 script EventScript_Sign_StatsIVEV {
