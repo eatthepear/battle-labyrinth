@@ -1971,6 +1971,17 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Protect
 - Twineedle
 
+=== TRAINER_PBL_DUDLEY ===
+Name: Dudley
+Class: Bird Keeper
+Pic: Bird Keeper
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Flying
+Copy Pool: TRAINER_PBL_GILBERT
+
 === TRAINER_PBL_GILBERT ===
 Name: Gilbert
 Class: Fisherman
@@ -1978,41 +1989,296 @@ Pic: Fisherman
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 4
+Pool Prune: Non Water
 
-Magikarp
-Ability: Swift Swim
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Splash
-- Tackle
-- Flail
+Dottler
 
-Finneon
-Ability: Storm Drain
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sweet Kiss
-- Tickle
-- Water Pulse
-- Tailwind
+Helioptile
+
+Applin
+
+Rolycoly
+
+Vulpix Alola
+
+Sandshrew Alola
+
+Swinub
+
+Arrokuda
+
+Roggenrola
+
+Rockruff
+
+Nacli
+
+Geodude
+
+Geodude Alola
+
+Pineco
+
+Croagunk
+
+Venonat
+
+Mankey
+
+Machop
+
+Carvanha
+
+Numel
+
+Timburr
+
+Sizzlipede
+
+Tandemaus
+
+Binacle
+
+Corphish
+
+Swablu
+
+Clobbopus
+
+Natu
+
+Grimer
+
+Grimer Alola
 
 Krabby
-Ability: Sheer Force
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Mud Shot
-- Stomp
-- Bubble Beam
-- Slam
 
-Chewtle
-Ability: Strong Jaw
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Water Gun
-- Bite
-- Headbutt
-- Gastro Acid
+Shellos
+
+Drilbur
+
+Voltorb
+
+Voltorb Hisui
+
+Teddiursa
+
+Luvdisc
+
+Skorupi
+
+Clauncher
+
+Tentacool
+
+Koffing
+
+Crabrawler
+
+Meditite
+
+Scraggy
+
+Pancham
+
+Growlithe
+
+Growlithe Hisui
+
+Mienfoo
+
+Rufflet
+
+Dewpider
+
+Litwick
+
+Bramblin
+
+Meowth Galar
+
+Trapinch
+
+Spheal
+
+Shroodle
+
+Greavard
+
+Sandile
+
+Horsea
+
+Shuppet
+
+Duskull
+
+Tinkatink
+
+Baltoy
+
+Snorunt
+
+Bronzor
+
+Klink
+
+Varoom
+
+Gimmighoul
+
+Yamask
+
+Yamask Galar
+
+Golett
+
+Bergmite
+
+Shellder
+
+Smoochum
+
+Vanillite
+
+Ferroseed
+
+Cubchoo
+
+Mareanie
+
+Sinistea
+
+Poltchageist
+
+Phantump
+
+Doduo
+
+Gastly
+
+Darumaka
+
+Darumaka Galar
+
+Silicobra
+
+Finizen
+
+Axew
+
+Skrelp
+
+Salandit
+
+Sandygast
+
+Magnemite
+
+Seel
+
+Dwebble
+
+Honedge
+
+Chinchou
+
+Delibird
+
+Aron
+
+Hippopotas
+
+Noibat
+
+Zorua
+
+Zorua Hisui
+
+Cufant
+
+Snover
+
+Cetoddle
+
+Cacnea
+
+Frillish
+
+Elgyem
+
+Pumpkaboo
+
+Toedscool
+
+Staryu
+
+Pawniard
+
+Stufful
+
+Rhyhorn
+
+Clamperl
+
+Mantyke
+
+Drifloon
+
+Glimmet
+
+Cranidos
+
+Shieldon
+
+Omanyte
+
+Kabuto
+
+Lileep
+
+Anorith
+
+Tirtouga
+
+Tyrunt
+
+Amaura
+
+Archen
+
+Wailmer
+
+Aipom
+
+Elekid
+
+Magby
+
+Litleo
+
+Nosepass
+
+Onix
+
+Lickitung
+
+Vullaby
+
+Mudbray
+
+Yanma
+
+Munchlax
+
+Porygon
+
+Spinda
+
+Farfetch'd
+
+Farfetch'd Galar
 
 === TRAINER_PBL_MELANIE ===
 Name: Melanie
@@ -2021,33 +2287,9 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Blitzle
-Ability: Sap Sipper
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Thunder Wave
-- Shock Wave
-- Stomp
-- Charge
-
-Ponyta
-Ability: Flame Body
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Quick Attack
-- Double Kick
-- Fire Spin
-- Flame Wheel
-
-Mudbray
-Ability: Stamina
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Smack Down
-- Bulldoze
-- Double Kick
-- Stomp
+Pool Rules: Unique Types
+Party Size: 3
+Copy Pool: TRAINER_PBL_GILBERT
 
 === TRAINER_PBL_CONSTANCE ===
 Name: Constance
@@ -2056,42 +2298,9 @@ Pic: Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Minccino
-Ability: Technician
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Helping Hand
-- Double Slap
-- Tickle
-- Swift
-
-Rockruff
-Ability: Vital Spirit
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Rock Throw
-- Bite
-- Roar
-- Rock Tomb
-
-Makuhita
-Ability: Guts
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Fake Out
-- Force Palm
-- Bullet Punch
-- Smelling Salts
-
-Spoink
-Ability: Thick Fat
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Confuse Ray
-- Payback
-- Psybeam
-- Trick
+Pool Rules: Unique Types
+Party Size: 3
+Copy Pool: TRAINER_PBL_GILBERT
 
 === TRAINER_PBL_FRANK ===
 Name: Frank
@@ -2100,77 +2309,9 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Flabebe
-Ability: Flower Veil
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tearful Look
-- Lucky Chant
-- Synthesis
-- Razor Leaf
-
-Growlithe
-Ability: Intimidate
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bite
-- Helping Hand
-- Double Kick
-- Flame Wheel
-
-Slakoth
-Ability: Truant
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Snore
-- Slash
-- Feint Attack
-- Slack Off
-
-=== TRAINER_PBL_DUDLEY ===
-Name: Dudley
-Class: Bird Keeper
-Pic: Bird Keeper
-Music: Cool
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Wingull
-Ability: Keen Eye
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Twister
-- Aqua Ring
-- Wing Attack
-- Water Pulse
-
-Taillow
-Ability: Scrappy
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Focus Energy
-- Wing Attack
-- Double Team
-- Rage
-
-Wattrel
-Ability: Wind Power
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Thunder Shock
-- Uproar
-- Feather Dance
-- Pluck
-
-Rookidee
-Ability: Big Pecks
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Power Trip
-- Fury Attack
-- Rock Smash
-- Pluck
+Pool Rules: Unique Types
+Party Size: 3
+Copy Pool: TRAINER_PBL_GILBERT
 
 === TRAINER_PBL_DAISY ===
 Name: Daisy
@@ -2179,54 +2320,9 @@ Pic: Pokemon Breeder F
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Smeargle
-Ability: Technician
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sketch
-
-Applin
-Ability: Ripen
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Astonish
-- Withdraw
-- Defense Curl
-- Rollout
-
-Milcery
-Ability: Sweet Veil
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Baby-Doll Eyes
-- Charm
-- Sweet Kiss
-- Draining Kiss
-
-Abra
-Ability: Synchronize
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Teleport
-
-Cleffa
-Ability: Cute Charm
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Disarming Voice
-- Charm
-- Encore
-- Wish
-
-Snom
-Ability: Ice Scales
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Struggle Bug
-- Powder Snow
-- Mirror Coat
-- Fairy Wind
+Pool Rules: Unique Types
+Party Size: 3
+Copy Pool: TRAINER_PBL_GILBERT
 
 === TRAINER_PBL_VIC_AND_DELL ===
 Name: Vic&Dell
@@ -2235,24 +2331,9 @@ Pic: Twins
 Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
-
-Plusle
-Ability: Plus
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Thunder Wave
-- Spark
-- Charm
-- Electro Ball
-
-Minun
-Ability: Minus
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Thunder Wave
-- Spark
-- Charm
-- Electro Ball
+Party Size: 4
+Pool Prune: Non Normal
+Copy Pool: TRAINER_PBL_GILBERT
 
 === TRAINER_PBL_MINA ===
 Name: Nina

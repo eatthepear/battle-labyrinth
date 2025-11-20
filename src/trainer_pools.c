@@ -444,8 +444,14 @@ static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const s
         case POOL_PRUNE_NON_NORMAL:
             PruneNonType(trainer, poolIndexArray, rules, TYPE_NORMAL);
             break;
+        case POOL_PRUNE_NON_FLYING:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_FLYING);
+            break;
         case POOL_PRUNE_NON_BUG:
             PruneNonType(trainer, poolIndexArray, rules, TYPE_BUG);
+            break;
+        case POOL_PRUNE_NON_WATER:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_WATER);
             break;
         case POOL_PRUNE_NON_PSYCHIC:
             PruneNonType(trainer, poolIndexArray, rules, TYPE_PSYCHIC);
