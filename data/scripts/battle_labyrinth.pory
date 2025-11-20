@@ -859,7 +859,6 @@ script EventScript_Notebook_Pokemon {
 	while {
 		message(format("Pokémon Changes open.\nAnything not listed is vanilla."))
 		waitmessage
-		dynmultipush("Typings", 1)
 		dynmultipush("Abilities", 1)
 		dynmultipush("Evolutions", 2)
 		dynmultipush("Learnsets", 3)
@@ -867,12 +866,6 @@ script EventScript_Notebook_Pokemon {
 		dynmultipush("Back", 5)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
-			case 0:
-				msgbox(format("Many Pokémon have typings that replace their default typing.\pYou can easily view their typing in battle when you are selecting a move to use."))
-				msgbox(format("The next page notes Pokémon with typing changes. Would you like to read it?"), MSGBOX_YESNO)
-				if (var(VAR_RESULT) == YES) {
-					call(EventScript_Notebook_Typings)
-				}
 			case 1:
 				msgbox(format("Many Pokémon have abilities that replace their default ones.\pThese include weather setting abilities and balance changes."))
 				msgbox(format("The next page notes Pokémon with ability changes. Would you like to read it?"), MSGBOX_YESNO)
@@ -894,50 +887,6 @@ script EventScript_Notebook_Pokemon {
 			case 4:
 				msgbox(format("Friendship is always considered maxed out."))
 			case 5:
-			case MULTI_B_PRESSED:
-				return
-		}
-	}
-}
-
-script EventScript_Notebook_Typings {
-	while {
-		message(format("Which Pokémon's typing change would you like to read?"))
-		waitmessage
-		dynmultipush("Arbok: Poison/Dark", SPECIES_ARBOK)
-		dynmultipush("Ledian: Bug/Fighting", SPECIES_LEDIAN)
-		dynmultipush("Yanmega: Bug/Dragon", SPECIES_YANMEGA)
-		dynmultipush("Masquerain: Bug/Water", SPECIES_MASQUERAIN)
-		dynmultipush("Volbeat: Bug/Electric", SPECIES_VOLBEAT)
-		dynmultipush("Illumise: Bug/Fairy", SPECIES_ILLUMISE)
-		dynmultipush("Tropius: Grass/Dragon", SPECIES_TROPIUS)
-		dynmultipush("Luvdisc: Water/Fairy", SPECIES_LUVDISC)
-		dynmultipush("Luxray: Electric/Dark", SPECIES_LUXRAY)
-		dynmultipush("Beartic: Ice/Fighting", SPECIES_BEARTIC)
-		dynmultipush("Back", 0)
-		dynmultistack(0, 0, FALSE, 6, FALSE, 1, DYN_MULTICHOICE_CB_NONE)
-		switch (var(VAR_RESULT)) {
-			case SPECIES_ARBOK:
-				msgbox(format("Arbok is now Poison/Dark type."))
-			case SPECIES_LEDIAN:
-				msgbox(format("Ledian is now Bug/Fighting type."))
-			case SPECIES_YANMEGA:
-				msgbox(format("Yanmega is now Bug/Dragon type."))
-			case SPECIES_MASQUERAIN:
-				msgbox(format("Masquerain is now Bug/Water type."))
-			case SPECIES_VOLBEAT:
-				msgbox(format("Volbeat is now Bug/Electric type."))
-			case SPECIES_ILLUMISE:
-				msgbox(format("Illumise is now Bug/Fairy type."))
-			case SPECIES_TROPIUS:
-				msgbox(format("Tropius is now Grass/Dragon type."))
-			case SPECIES_LUVDISC:
-				msgbox(format("Luvdisc is now Water/Fairy type."))
-			case SPECIES_LUXRAY:
-				msgbox(format("Luxray is now Electric/Dark type."))
-			case SPECIES_BEARTIC:
-				msgbox(format("Beartic is now Ice/Fighting type."))
-			case 0:
 			case MULTI_B_PRESSED:
 				return
 		}
