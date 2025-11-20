@@ -405,7 +405,7 @@ script EventScript_PorygonExit {
 				setflag(FLAG_TEMP_1)
 			}
 	}
-	if (flag(FLAG_TEMP_1)) {
+	if (flag(FLAG_TEMP_1) && var(VAR_DIFFICULTY) >= DIFFICULTY_NORMAL) {
 		msgbox(format("You must defeat the Leviathan or other challenge before proceeding to the Sanctuary."))
 		clearflag(FLAG_TEMP_1)
 		release
