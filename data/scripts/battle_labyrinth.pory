@@ -904,6 +904,7 @@ script EventScript_Notebook_Abilities {
 		dynmultipush("Seaking", SPECIES_SEAKING)
 		dynmultipush("Leafeon", SPECIES_LEAFEON)
 		dynmultipush("Furret", SPECIES_FURRET)
+		dynmultipush("Noctowl", SPECIES_NOCTOWL)
 		dynmultipush("Yanma", SPECIES_YANMA)
 		dynmultipush("Yanmega", SPECIES_YANMEGA)
 		dynmultipush("Qwilfish", SPECIES_QWILFISH)
@@ -966,6 +967,8 @@ script EventScript_Notebook_Abilities {
 				msgbox(format("Leafeon now gets Chlorophyll and Filter as a regular abilities instead of Leaf Guard, which is now its Hidden Ability."))
 			case SPECIES_FURRET:
 				msgbox(format("Furret now gets Adaptability as a regular ability instead of Run Away."))
+			case SPECIES_NOCTOWL:
+				msgbox(format("Noctowl now gets No Guard as a regular ability instead of Keen Eye."))
 			case SPECIES_YANMA:
 			case SPECIES_YANMEGA:
 				msgbox(format("Yanma and Yanmega now get Frisk as a regular ability instead of Speed Boost, which is now their Hidden Ability."))
@@ -1224,7 +1227,7 @@ script EventScript_Notebook_Battle {
 			case 0:
 				msgbox(format(
 					"All moves with 95% accuracy {RIGHT_ARROW} 100% (except Jump Kick & Supercell Slam)\p"
-					"All moves with 90% accuracy {RIGHT_ARROW} 100% (except High Jump Kick, Axe Kick, Population Bomb, & Triple Axel)\p"
+					"All moves with 90% accuracy {RIGHT_ARROW} 100% (except High Jump Kick, Axe Kick, Population Bomb, Triple Axel, & Heat Wave)\p"
 					"All moves with 85% accuracy {RIGHT_ARROW} 100% (except Fire Blast, Megahorn, Power Whip, & Muddy Water)\p"
 					"All moves with 80% accuracy {RIGHT_ARROW} 100% (except Cross Chop, Hydro Pump, Stone Edge, Gunk Shot, Head Smash, Bleakwind Storm, Wildbolt Storm, & Sandsear Storm)"
 				))
