@@ -703,192 +703,192 @@ static const struct SubQuest sSubQuestsPBL[QUEST_PBL_SUB_COUNT] =
 static const struct SubQuest sSubQuestsSigns[QUEST_SIGNS_SUB_COUNT] =
 {
 	sub_quest(
-	      COMPOUND_STRING("Porygon Sign"),
-	      COMPOUND_STRING("Trainer Tips\nTo complete a Zone, defeat all\nopponents, then find Porygon."),
-	      gText_MapZone1,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Notebook"),
+		gText_SubQuest_Desc_SignsZone1,
+		gText_MapZone1,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      COMPOUND_STRING("Running Shoes Sign"),
-	      COMPOUND_STRING("Trainer Tips\nPress {L_BUTTON} to toggle Auto Run."),
-	      gText_MapZone1,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Porygon"),
+		gText_SubQuest_Desc_SignsZone1,
+		gText_MapZone1,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      COMPOUND_STRING("Register Sign"),
-	      COMPOUND_STRING("Trainer Tips\nYou can register multiple key items at\na time."),
-	      gText_MapZone1,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Auto Run"),
+		gText_SubQuest_Desc_SignsZone1,
+		gText_MapZone1,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs4,
-	      gText_SubQuest_Desc_SignsSanctuary,
-	      gText_QuestMapSanctuary,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Zone Info"),
+		gText_SubQuest_Desc_SignsZone2,
+		gText_MapZone2,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs5,
-	      gText_SubQuest_Desc_SignsSanctuary,
-	      gText_QuestMapSanctuary,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Infinite Candy"),
+		gText_SubQuest_Desc_SignsZone2,
+		gText_MapZone2,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs6,
-	      gText_SubQuest_Desc_SignsSanctuary,
-	      gText_QuestMapSanctuary,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Surveil"),
+		gText_SubQuest_Desc_SignsZone2,
+		gText_MapZone2,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs7,
-	      gText_SubQuest_Desc_SignsSanctuary,
-	      gText_QuestMapSanctuary,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Honey & Sweet Scent"),
+		gText_SubQuest_Desc_SignsZone2,
+		gText_MapZone2,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs8,
-	      gText_SubQuest_Desc_SignsZone0,
-	      gText_QuestMapZone0,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Hidden Items"),
+		gText_SubQuest_Desc_SignsZone2,
+		gText_MapZone2,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs9,
-	      gText_SubQuest_Desc_SignsZone0,
-	      gText_QuestMapZone0,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Register List"),
+		gText_SubQuest_Desc_SignsZone3,
+		gText_MapZone3,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs10,
-	      gText_SubQuest_Desc_SignsZone1,
-	      gText_QuestMapZone1,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Battle Changes"),
+		gText_SubQuest_Desc_SignsZone3,
+		gText_MapZone3,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs11,
-	      gText_SubQuest_Desc_SignsZone1,
-	      gText_QuestMapZone1,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Rare Candy"),
+		gText_SubQuest_Desc_SignsZone3,
+		gText_MapZone3,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs12,
-	      gText_SubQuest_Desc_SignsZone1,
-	      gText_QuestMapZone1,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Field Moves"),
+		gText_SubQuest_Desc_SignsZone3,
+		gText_MapZone3,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs13,
-	      gText_SubQuest_Desc_SignsZone2,
-	      gText_QuestMapZone2,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Pokémon Changes"),
+		gText_SubQuest_Desc_SignsZone4,
+		gText_MapZone4,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs14,
-	      gText_SubQuest_Desc_SignsZone2,
-	      gText_QuestMapZone2,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Different Areas"),
+		gText_SubQuest_Desc_SignsZone4,
+		gText_MapZone4,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs15,
-	      gText_SubQuest_Desc_SignsZone2,
-	      gText_QuestMapZone2,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Pokédex Info"),
+		gText_SubQuest_Desc_SignsZone4,
+		gText_MapZone4,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs16,
-	      gText_SubQuest_Desc_SignsZone2,
-	      gText_QuestMapZone2,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Sort Bag"),
+		gText_SubQuest_Desc_SignsZone4,
+		gText_MapZone4,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs17,
-	      gText_SubQuest_Desc_SignsZone2,
-	      gText_QuestMapZone2,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Change Music"),
+		gText_SubQuest_Desc_SignsZone4,
+		gText_MapZone4,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs18,
-	      gText_SubQuest_Desc_SignsZone3,
-	      gText_QuestMapZone3,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("View IVs & EVs"),
+		gText_SubQuest_Desc_SignsZone5,
+		gText_MapZone5,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs19,
-	      gText_SubQuest_Desc_SignsZone4,
-	      gText_QuestMapZone4,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Backtracking"),
+		gText_SubQuest_Desc_SignsZone5,
+		gText_MapZone5,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs20,
-	      gText_SubQuest_Desc_SignsZone4,
-	      gText_QuestMapZone4,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Gym"),
+		gText_SubQuest_Desc_SignsZone5,
+		gText_MapZone5,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(
-	      gText_SubQuest_Name_Signs21,
-	      gText_SubQuest_Desc_SignsZone4,
-	      gText_QuestMapZone4,
-	      ITEM_WISE_GLASSES,
-	      ITEM,
-	      sText_Read
+		COMPOUND_STRING("Select Switch"),
+		gText_SubQuest_Desc_SignsZone6,
+		gText_MapZone6,
+		ITEM_WISE_GLASSES,
+		ITEM,
+		sText_Read
 	),
 
 	sub_quest(

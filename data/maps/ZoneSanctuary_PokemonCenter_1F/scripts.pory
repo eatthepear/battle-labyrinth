@@ -67,7 +67,7 @@ script EventScript_SignsQuestGirl {
 		startquest(QUEST_SIGNS)
 		msgbox(format("You can see the signs you've already read in the Quest Menu."))
 	}
-	msgbox(format("Signs have lots of useful info about unique mechanics to Pokémon Battle Labyrinth!\pYou can improve your reading skills while learning more about the challenges at hand!\pThough it's really nice to read the Notebook as well!"))
+	msgbox(format("Signs have lots of useful info about unique mechanics to Pokémon Battle Labyrinth!\pAll signs get their messages transcribed to the Notebook after you read them.\pThe Notebook also has lots of useful information independent of signs, it's worth a read!"))
 	release
 	end
 }

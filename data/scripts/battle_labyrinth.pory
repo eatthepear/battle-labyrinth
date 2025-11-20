@@ -1235,25 +1235,33 @@ script EventScript_Notebook_TrainerTips {
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_7)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("Honey & Sweet Scent", SUB_QUEST_7) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_8)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Pokémon Changes", SUB_QUEST_8) }
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Hidden Items", SUB_QUEST_8) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_9)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Register Items", SUB_QUEST_9) }
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Register List", SUB_QUEST_9) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_10)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("Battle Changes", SUB_QUEST_10) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_11)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Field Moves", SUB_QUEST_11) }
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Rare Candy", SUB_QUEST_11) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_12)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Hidden Items", SUB_QUEST_12) }
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Field Moves", SUB_QUEST_12) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_13)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Rare Candy", SUB_QUEST_13) }
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Pokémon Changes", SUB_QUEST_13) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_14)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Pokédex Info", SUB_QUEST_14) }
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Different Areas", SUB_QUEST_14) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_15)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Different Areas", SUB_QUEST_15) }
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Pokédex Info", SUB_QUEST_15) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_16)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("Sort Bag", SUB_QUEST_16) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_17)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("Change Music", SUB_QUEST_17) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_18)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("View IVs & EVs", SUB_QUEST_18) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_19)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Backtracking", SUB_QUEST_19) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_20)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Gym", SUB_QUEST_20) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_21)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Select Switch", SUB_QUEST_21) }
 		dynmultipush("Back", 51)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
@@ -1264,16 +1272,20 @@ script EventScript_Notebook_TrainerTips {
 			case SUB_QUEST_5:  call(EventScript_Sign_InfiniteCandy)
 			case SUB_QUEST_6:  call(EventScript_Surveil)
 			case SUB_QUEST_7:  call(EventScript_Sign_HoneySweetScent)
-			case SUB_QUEST_8:  call(EventScript_Sign_PokemonChanges)
+			case SUB_QUEST_8:  call(EventScript_Sign_HiddenItems)
 			case SUB_QUEST_9:  call(EventScript_Sign_Register)
 			case SUB_QUEST_10: call(EventScript_Sign_BattleChanges)
-			case SUB_QUEST_11: call(EventScript_Sign_FieldMoves)
-			case SUB_QUEST_12: call(EventScript_Sign_HiddenItems)
-			case SUB_QUEST_13: call(EventScript_Sign_RareCandy)
-			case SUB_QUEST_14: call(EventScript_Sign_PokedexInfo)
-			case SUB_QUEST_15: call(EventScript_Sign_DifferentAreas)
+			case SUB_QUEST_11: call(EventScript_Sign_RareCandy)
+			case SUB_QUEST_12: call(EventScript_Sign_FieldMoves)
+			case SUB_QUEST_13: call(EventScript_Sign_PokemonChanges)
+			case SUB_QUEST_14: call(EventScript_Sign_DifferentAreas)
+			case SUB_QUEST_15: call(EventScript_Sign_PokedexInfo)
 			case SUB_QUEST_16: call(EventScript_Sign_SortBag)
 			case SUB_QUEST_17: call(EventScript_Sign_ChangeMusic)
+			case SUB_QUEST_18: call(EventScript_Sign_StatsIVEV)
+			case SUB_QUEST_19: call(EventScript_Sign_Backtracking)
+			case SUB_QUEST_20: call(EventScript_Sign_Gym)
+			case SUB_QUEST_21: call(EventScript_Sign_SelectSwitch)
 			case 51:
 			case MULTI_B_PRESSED:
 				return
@@ -1348,8 +1360,8 @@ script EventScript_Sign_HoneySweetScent {
 	}
 }
 
-script EventScript_Sign_PokemonChanges {
-	msgbox(format("Trainer Tips\pMany Pokémon have had their evolution methods, abilities, or learnsets altered.\pConsult the Pokédex if you've already captured that Pokémon, or the {COLOR RED}Notebook{COLOR DARK_GRAY} for changes from vanilla."), MSGBOX_SIGN)
+script EventScript_Sign_HiddenItems {
+	msgbox(format("Trainer Tips\pYou may find hidden items by checking certain tiles with {A_BUTTON}.\pYou can use the {COLOR RED}Dowsing Machine{COLOR DARK_GRAY} to help you find such items."), MSGBOX_SIGN)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_8)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_8)
@@ -1372,40 +1384,40 @@ script EventScript_Sign_BattleChanges {
 	}
 }
 
-script EventScript_Sign_FieldMoves {
-	msgbox(format("Trainer Tips\pA few field moves are available for use, including Refresh and Aromatherapy.\pConsult the {COLOR RED}Notebook{COLOR DARK_GRAY} for more details."), MSGBOX_SIGN)
+script EventScript_Sign_RareCandy {
+	msgbox(format("Trainer Tips\p{COLOR RED}Rare Candies{COLOR DARK_GRAY} differ from the {COLOR RED}Infinite Candy{COLOR DARK_GRAY} because they can be used to level up past the level cap!\pOnly 15 {COLOR RED}Rare Candies{COLOR DARK_GRAY} can be found throughout the game, and each is guarded by an optional miniboss."), MSGBOX_SIGN)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_11)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_11)
 	}
 }
 
-script EventScript_Sign_HiddenItems {
-	msgbox(format("Trainer Tips\pYou may find hidden items by checking certain tiles with {A_BUTTON}.\pYou can use the {COLOR RED}Dowsing Machine{COLOR DARK_GRAY} to help you find such items."), MSGBOX_SIGN)
+script EventScript_Sign_FieldMoves {
+	msgbox(format("Trainer Tips\pA few field moves are available for use, including Refresh and Aromatherapy.\pConsult the {COLOR RED}Notebook{COLOR DARK_GRAY} for more details."), MSGBOX_SIGN)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_12)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_12)
 	}
 }
 
-script EventScript_Sign_RareCandy {
-	msgbox(format("Trainer Tips\p{COLOR RED}Rare Candies{COLOR DARK_GRAY} differ from the {COLOR RED}Infinite Candy{COLOR DARK_GRAY} because they can be used to level up past the level cap!\pOnly 15 {COLOR RED}Rare Candies{COLOR DARK_GRAY} can be found throughout the game, and each is guarded by an optional miniboss."), MSGBOX_SIGN)
+script EventScript_Sign_PokemonChanges {
+	msgbox(format("Trainer Tips\pMany Pokémon have had their evolution methods, abilities, or learnsets altered.\pConsult the Pokédex if you've already captured that Pokémon, or the {COLOR RED}Notebook{COLOR DARK_GRAY} for changes from vanilla."), MSGBOX_SIGN)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_13)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_13)
 	}
 }
 
-script EventScript_Sign_PokedexInfo {
-	msgbox(format("Trainer Tips\pYou can see detailed information about a Pokémon species in its Pokédex entry after capturing it, such as what moves it learns or how to evolve it.\pAny changes from vanilla can be found in the {COLOR RED}Notebook{COLOR DARK_GRAY}."), MSGBOX_SIGN)
+script EventScript_Sign_DifferentAreas {
+	msgbox(format("Trainer Tips\pThe encounterable Pokémon in different areas of the same Zone may vary significantly."), MSGBOX_SIGN)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_14)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_14)
 	}
 }
 
-script EventScript_Sign_DifferentAreas {
-	msgbox(format("Trainer Tips\pThe encounterable Pokémon in different areas of the same Zone may vary significantly."), MSGBOX_SIGN)
+script EventScript_Sign_PokedexInfo {
+	msgbox(format("Trainer Tips\pYou can see detailed information about a Pokémon species in its Pokédex entry after capturing it, such as what moves it learns or how to evolve it.\pAny changes from vanilla can be found in the {COLOR RED}Notebook{COLOR DARK_GRAY}."), MSGBOX_SIGN)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_15)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_15)
@@ -1434,20 +1446,35 @@ script EventScript_Sign_StatsIVEV {
 	} else {
 		msgbox(format("Trainer Tips\pWhile you are on the Pokémon stats screen, you can press {A_BUTTON} to switch between stats and IVs."), MSGBOX_SIGN)
 	}
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_18)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_18)
+	}
 }
 
-script Zone4A_EventScript_Sign {
-	msgbox(format("These woods are enchanted…\nDon't get lost!"), MSGBOX_SIGN)
+script EventScript_Sign_Backtracking {
+	msgbox(format("Trainer Tips\pSome Zones require backtracking in order to obtain all their items and rewards.\pYou can speak to the man in the Pokémon Center to access a past Zone for ¥1000."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_19)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_19)
+	}
 }
 
-script Zone4C_EventScript_Sign { // TO REMOVE
-	completesubquest(QUEST_SIGNS, 21)
-	msgbox(format("Trainer Tips\pStarting from now, there is a 20% chance to encounter wild Pokémon in a Double Battle."), MSGBOX_SIGN)
+script EventScript_Sign_Gym {
+	msgbox(format("Trainer Tips\pSome Zones have a Gym, where a special Leviathan resides.\pThis Leviathan specializes in a single type only, and will often be stronger than other Leviathans up to that point."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_20)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_20)
+	}
 }
 
-script Zone4D_EventScript_Sign { // TO REMOVE
-	completesubquest(QUEST_SIGNS, 22)
-	msgbox(format("Trainer Tips\pSome areas require backtracking later on in order to access them."), MSGBOX_SIGN)
+// everything below here is to assign (haha get it)
+script EventScript_Sign_SelectSwitch {
+	msgbox(format("Trainer Tips\pIn the party menu, you can press {SELECT_BUTTON} to quickly shift a Pokémon to the front of your party."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_21)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_21)
+	}
 }
 
 script Zone7A_EventScript_HealSign {
