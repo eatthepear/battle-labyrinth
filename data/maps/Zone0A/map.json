@@ -260,22 +260,6 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 19,
-      "y": 8,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Zone0A_EventScript_DayCareSign"
-    },
-    {
-      "type": "sign",
-      "x": 40,
-      "y": 8,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Zone0A_EventScript_TPISign"
-    },
-    {
-      "type": "sign",
       "x": 70,
       "y": 8,
       "elevation": 0,

@@ -469,126 +469,6 @@ script EventScript_HandleFlashlight {
 	return
 }
 
-// subquests are all 0 indexed
-script Zone0A_EventScript_TPISign {
-	completesubquest(QUEST_SIGNS, 8)
-	msgbox(format("Teleport Institute\nGetting around, easy peasy."), MSGBOX_SIGN)
-	end
-}
-
-script Zone0A_EventScript_DayCareSign {
-	completesubquest(QUEST_SIGNS, 9)
-	msgbox(format("Pokémon Day Care\n9 Generations and counting!"), MSGBOX_SIGN)
-	end
-}
-
-script EventScript_PorygonSign {
-	completesubquest(QUEST_SIGNS, 0)
-	if (var(VAR_DIFFICULTY) >= DIFFICULTY_NORMAL) {
-		message(format("Trainer Tips\pTo complete a Zone, defeat all bosses and find {COLOR RED}Porygon{COLOR DARK_GRAY}."))
-	} else {
-		message(format("Trainer Tips\pTo complete a Zone, defeat all bosses and find {COLOR RED}Porygon{COLOR DARK_GRAY}.\pOn Easy difficulty, you can skip defeating some bosses."))
-	}
-	waitmessage
-	showmonpic(SPECIES_PORYGON, 10, 3)
-	setseenmon(SPECIES_PORYGON)
-	waitbuttonpress
-	hidemonpic
-	closemessage
-	release
-	end
-}
-
-script EventScript_Sign_RunningShoes {
-	completesubquest(QUEST_SIGNS, 1)
-	msgbox(format("Trainer Tips\pPress {L_BUTTON} to toggle Auto Run."), MSGBOX_SIGN)
-	end
-}
-
-script EventScript_Sign_Register {
-	completesubquest(QUEST_SIGNS, 2)
-	msgbox(format("Trainer Tips\pYou can register multiple key items at a time."), MSGBOX_SIGN)
-	end
-}
-
-script Zone2A_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, 13)
-	msgbox(format("Trainer Tips\pYou may find hidden items by checking certain tiles with {A_BUTTON}.\pHowever, you won't find any hidden items on Brutal or Independent."), MSGBOX_SIGN)
-	end
-}
-
-script Zone3A_EventScript_Surveil {
-	completesubquest(QUEST_SIGNS, 18)
-	msgbox(format("Trainer Tips\pIn battle, you can use Surveil to see the opponent's team.\pIf you want to see full team information, you can turn on the Full Info setting by speaking to Colress."), MSGBOX_SIGN)
-	end
-}
-
-script Zone3A_EventScript_RareCandy {
-	// completesubquest(QUEST_SIGNS, 18)
-	msgbox(format("Trainer Tips\pRare Candies are different from the Infinite Candy in that they can be used to level up past the level cap!\pOnly 15 of them can be found throughout the game."), MSGBOX_SIGN)
-	end
-}
-
-script Zone4A_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, 19)
-	msgbox(format("These woods are enchanted…\nDon't get lost!"), MSGBOX_SIGN)
-	end
-}
-
-script Zone4B_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, 20)
-	msgbox(format("Trainer Tips\pYou can see detailed information about a Pokémon species in its Pokédex entry after capturing it, such as what moves it learns or how to evolve it."), MSGBOX_SIGN)
-	end
-}
-
-script Zone4C_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, 21)
-	msgbox(format("Trainer Tips\pStarting from now, there is a 20% chance to encounter wild Pokémon in a Double Battle."), MSGBOX_SIGN)
-	end
-}
-
-script Zone4D_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, 22)
-	msgbox(format("Trainer Tips\pSome areas require backtracking later on in order to access them."), MSGBOX_SIGN)
-	end
-}
-
-script Zone4E_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, 23)
-	msgbox(format("Trainer Tips\pThe Pokémon you encounter in different areas of the same zone may have slight differences!"), MSGBOX_SIGN)
-	end
-}
-
-script Zone6A_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, 24)
-	msgbox(format("Trainer Tips\pYou can sort items in the Bag using {START_BUTTON}."), MSGBOX_SIGN)
-	end
-}
-
-script Zone7A_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, 25)
-	msgbox(format("Trainer Tips\pYou can change the music you hear in battle by speaking to Colress!"), MSGBOX_SIGN)
-	end
-}
-
-script Zone7A_EventScript_HealSign {
-	completesubquest(QUEST_SIGNS, 26)
-	msgbox(format("A stop for weary travelers."), MSGBOX_SIGN)
-	end
-}
-
-script Zone9A_EventScript_Sign {
-	completesubquest(QUEST_SIGNS, 27)
-	msgbox(format("Trainer Tips\pWhile you are on the Pokémon stats screen, you can press {A_BUTTON} to switch between stats, IVs, or EVs."), MSGBOX_SIGN)
-	end
-}
-
-script Zone9A_EventScript_HerbalSign {
-	completesubquest(QUEST_SIGNS, 28)
-	msgbox(format("Herbal and Incense Shop"), MSGBOX_SIGN)
-	end
-}
-
 script EventScript_Collector {
 	lock
 	faceplayer
@@ -662,6 +542,7 @@ script EventScript_Notebook {
 		dynmultipush("Zone Info", 0)
 		dynmultipush("Changes from Vanilla", 1)
 		dynmultipush("Difficulty Info", 2)
+		dynmultipush("Trainer Tips", 3)
 		dynmultipush("Close Notebook", 4)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
@@ -671,6 +552,8 @@ script EventScript_Notebook {
 				call(EventScript_Notebook_ChangesFromVanilla)
 			case 2:
 				call(EventScript_Difficulty_Info)
+			case 3:
+				call(EventScript_Notebook_TrainerTips)
 			case 4:
 			case MULTI_B_PRESSED:
 				fadedefaultbgm
@@ -1331,6 +1214,125 @@ script EventScript_Notebook_Other {
 				return
 		}
 	}
+}
+
+script EventScript_Notebook_TrainerTips {
+	while {
+		message(format("Trainer Tips open. Read more\nTrainer Tips signs to fill this!"))
+		waitmessage
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_1)
+		if (var(VAR_RESULT) == TRUE) {
+			dynmultipush("NAME", SUB_QUEST_1)
+		}
+		dynmultipush("Back", 51)
+		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+		switch (var(VAR_RESULT)) {
+			case SUB_QUEST_1:
+				call(EventScript_Sign_Notebook)
+			case 51:
+			case MULTI_B_PRESSED:
+				return
+		}
+	}
+}
+
+script EventScript_Sign_Notebook {
+	msgbox(format("Trainer Tips\pThe {COLOR RED}Notebook{COLOR DARK_GRAY} has a ton of information in it, including mechanics changes from vanilla Pokémon games, upcoming Zones and boss battles, and difficulty info.\pIn addition, any trainer tips sign you read will have its message transcribed in the Notebook."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_1)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_1)
+	}
+}
+
+script EventScript_Sign_Porygon {
+	if (var(VAR_DIFFICULTY) >= DIFFICULTY_NORMAL) {
+		message(format("Trainer Tips\pTo complete a Zone, defeat all Leviathans and find {COLOR RED}Porygon{COLOR DARK_GRAY}."))
+	} else {
+		message(format("Trainer Tips\pTo complete a Zone, defeat all Leviathans and find {COLOR RED}Porygon{COLOR DARK_GRAY}.\pOn Easy difficulty, you can skip defeating some Leviathans."))
+	}
+	waitmessage
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_1)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_1)
+	}
+	showmonpic(SPECIES_PORYGON, 10, 3)
+	setseenmon(SPECIES_PORYGON)
+	waitbuttonpress
+	hidemonpic
+	closemessage
+	release
+}
+
+script EventScript_Sign_RunningShoes {
+	msgbox(format("Trainer Tips\pPress {L_BUTTON} to toggle Auto Run."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_2)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_2)
+	}
+}
+
+script EventScript_Sign_Register {
+	msgbox(format("Trainer Tips\pYou can register multiple Key Items at a time."), MSGBOX_SIGN)
+}
+
+script EventScript_Surveil {
+	msgbox(format("Trainer Tips\pIn battle, you can use Surveil to see the opponent's team."), MSGBOX_SIGN)
+}
+
+script EventScript_Sign_HiddenItems {
+	msgbox(format("Trainer Tips\pYou may find hidden items by checking certain tiles with {A_BUTTON}.\pYou can use the {COLOR RED}Dowsing Machine{COLOR DARK_GRAY} to help you find such items."), MSGBOX_SIGN)
+}
+
+script EventScript_Sign_RareCandy {
+	msgbox(format("Trainer Tips\pRare Candies are different from the Infinite Candy in that they can be used to level up past the level cap!\pOnly 15 of them can be found throughout the game."), MSGBOX_SIGN)
+}
+
+script EventScript_Sign_PokedexInfo {
+	msgbox(format("Trainer Tips\pYou can see detailed information about a Pokémon species in its Pokédex entry after capturing it, such as what moves it learns or how to evolve it."), MSGBOX_SIGN)
+}
+
+script EventScript_Sign_DifferentAreas {
+	msgbox(format("Trainer Tips\pThe Pokémon you encounter in different areas of the same zone may have slight differences!"), MSGBOX_SIGN)
+}
+
+script EventScript_Sign_SortBag {
+	msgbox(format("Trainer Tips\pYou can sort items in the Bag using {START_BUTTON}."), MSGBOX_SIGN)
+}
+
+script EventScript_Sign_ChangeMusic {
+	msgbox(format("Trainer Tips\pYou can change some of the music you hear by speaking to the Guitarist in the Sanctuary!"), MSGBOX_SIGN)
+}
+
+script EventScript_Sign_StatsIVEV {
+	if (var(VAR_DIFFICULTY) >= DIFFICULTY_HARD) {
+		msgbox(format("Trainer Tips\pWhile you are on the Pokémon stats screen, you can press {A_BUTTON} to switch between stats, IVs, and EVs."), MSGBOX_SIGN)
+	} else {
+		msgbox(format("Trainer Tips\pWhile you are on the Pokémon stats screen, you can press {A_BUTTON} to switch between stats and IVs."), MSGBOX_SIGN)
+	}
+}
+
+script Zone4A_EventScript_Sign {
+	msgbox(format("These woods are enchanted…\nDon't get lost!"), MSGBOX_SIGN)
+}
+
+script Zone4C_EventScript_Sign { // TO REMOVE
+	completesubquest(QUEST_SIGNS, 21)
+	msgbox(format("Trainer Tips\pStarting from now, there is a 20% chance to encounter wild Pokémon in a Double Battle."), MSGBOX_SIGN)
+}
+
+script Zone4D_EventScript_Sign { // TO REMOVE
+	completesubquest(QUEST_SIGNS, 22)
+	msgbox(format("Trainer Tips\pSome areas require backtracking later on in order to access them."), MSGBOX_SIGN)
+}
+
+script Zone7A_EventScript_HealSign {
+	completesubquest(QUEST_SIGNS, 26)
+	msgbox(format("A stop for weary travelers."), MSGBOX_SIGN)
+}
+
+script Zone9A_EventScript_HerbalSign {
+	completesubquest(QUEST_SIGNS, 28)
+	msgbox(format("Herbal and Incense Shop"), MSGBOX_SIGN)
 }
 
 script EventScript_Difficulty_Info {
