@@ -2362,8 +2362,10 @@ enum
     EFFECTIVENESS_CANNOT_VIEW,
     EFFECTIVENESS_NO_EFFECT,
     EFFECTIVENESS_NOT_VERY_EFFECTIVE,
+    EFFECTIVENESS_VERY_NOT_VERY_EFFECTIVE,
     EFFECTIVENESS_NORMAL,
     EFFECTIVENESS_SUPER_EFFECTIVE,
+    EFFECTIVENESS_VERY_SUPER_EFFECTIVE,
 };
 
 static bool32 ShouldShowTypeEffectiveness(u32 targetId)
@@ -2398,10 +2400,14 @@ static u32 CheckTypeEffectiveness(u32 battlerAtk, u32 battlerDef)
 
     if (modifier == UQ_4_12(0.0))
         return EFFECTIVENESS_NO_EFFECT; // No effect
-    else if (modifier <= UQ_4_12(0.5))
+    else if (modifier == UQ_4_12(0.5))
         return EFFECTIVENESS_NOT_VERY_EFFECTIVE; // Not very effective
-    else if (modifier >= UQ_4_12(2.0))
+    else if (modifier <= UQ_4_12(0.25))
+        return EFFECTIVENESS_VERY_NOT_VERY_EFFECTIVE; // Not very effective
+    else if (modifier == UQ_4_12(2.0))
         return EFFECTIVENESS_SUPER_EFFECTIVE; // Super effective
+    else if (modifier >= UQ_4_12(4.0))
+        return EFFECTIVENESS_VERY_SUPER_EFFECTIVE; // Super effective
     return EFFECTIVENESS_NORMAL; // Normal effectiveness
 }
 
@@ -2426,10 +2432,12 @@ static u32 CheckTargetTypeEffectiveness(u32 battler)
 static void MoveSelectionDisplayMoveEffectiveness(u32 foeEffectiveness, u32 battler)
 {
     static const u8 noIcon[] =  _("");
-    static const u8 effectiveIcon[] =  _("{CIRCLE_HOLLOW}");
-    static const u8 superEffectiveIcon[] =  _("{CIRCLE_DOT}");
-    static const u8 notVeryEffectiveIcon[] =  _("{TRIANGLE}");
-    static const u8 immuneIcon[] =  _("{BIG_MULT_X}");
+    static const u8 effectiveIcon[] =  _("{COLOR LIGHT_GREEN}1x");
+    static const u8 superEffectiveIcon[] =  _("{COLOR GREEN}2x");
+    static const u8 verySuperEffectiveIcon[] =  _("{COLOR GREEN}4x");
+    static const u8 notVeryEffectiveIcon[] =  _("{COLOR RED}.5x");
+    static const u8 veryNotVeryEffectiveIcon[] =  _("{COLOR RED}.25x");
+    static const u8 immuneIcon[] =  _("{COLOR LIGHT_GRAY}0x");
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
     u8 *txtPtr;
 
@@ -2442,8 +2450,14 @@ static void MoveSelectionDisplayMoveEffectiveness(u32 foeEffectiveness, u32 batt
         case EFFECTIVENESS_SUPER_EFFECTIVE:
             StringCopy(txtPtr, superEffectiveIcon);
             break;
+        case EFFECTIVENESS_VERY_SUPER_EFFECTIVE:
+            StringCopy(txtPtr, verySuperEffectiveIcon);
+            break;
         case EFFECTIVENESS_NOT_VERY_EFFECTIVE:
             StringCopy(txtPtr, notVeryEffectiveIcon);
+            break;
+        case EFFECTIVENESS_VERY_NOT_VERY_EFFECTIVE:
+            StringCopy(txtPtr, veryNotVeryEffectiveIcon);
             break;
         case EFFECTIVENESS_NO_EFFECT:
             StringCopy(txtPtr, immuneIcon);
