@@ -1,1 +1,12 @@
 mapscripts ZoneSanctuary_WhisperCave_MapScripts {}
+
+script EventScript_HexManiac {
+	lock
+	faceplayer
+	if (checkitem(ITEM_HEXORB) == FALSE) {
+		msgbox(format("If you ever need to status your own Pokémon, take this."))
+		giveitem(ITEM_HEXORB)
+	}
+	msgbox(format("That {COLOR RED}Hexorb{COLOR DARK_GRAY} can be used to pre-status your Pokémon.\pIt might be useful for a Pokémon with Guts, for example."))
+	release
+}

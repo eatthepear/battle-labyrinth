@@ -718,7 +718,7 @@ script Sanctuary_EventScript_GameIntro {
 			additem(ITEM_SUPER_ROD)
 			additem(ITEM_INFINITE_REPEL)
 			additem(ITEM_INFINITE_CANDY)
-			completesubquest(QUEST_PBL, 0)
+			additem(ITEM_HEXORB)
 		}
 	}
 	call(EventScript_WhenUReadyDialogue)
