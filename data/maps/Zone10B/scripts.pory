@@ -89,7 +89,7 @@ script Zone10B_EventScript_DragonTamer {
 			!flag(FLAG_BEAT_LEVIATHAN_2) ||
 			!defeated(TRAINER_PBL_JEMMA) ||
 			!defeated(TRAINER_PBL_PATRICK) ||
-			!defeated(TRAINER_PBL_ANNABELLE) ||
+			// !defeated(TRAINER_PBL_ANNABELLE) ||
 			!defeated(TRAINER_PBL_BORIS) ||
 			!defeated(TRAINER_PBL_RICHARD) ||
 			!flag(FLAG_BEAT_LEVIATHAN_3) ||

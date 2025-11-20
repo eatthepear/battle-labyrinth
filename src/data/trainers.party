@@ -876,17 +876,6 @@ Pool Rules: Unique Types
 Party Size: 3
 Copy Pool: TRAINER_PBL_JEMMA
 
-=== TRAINER_PBL_ANNABELLE ===
-Name: Annabelle
-Class: Lady
-Pic: Lady
-Music: Female
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Pool Rules: Unique Types
-Party Size: 3
-Copy Pool: TRAINER_PBL_JEMMA
-
 === TRAINER_PBL_BORIS ===
 Name: Boris
 Class: Youngster
@@ -900,14 +889,57 @@ Copy Pool: TRAINER_PBL_JEMMA
 
 === TRAINER_PBL_RICHARD ===
 Name: Richard
-Class: Rich Boy
-Pic: Rich Boy
-Music: Rich
+Class: Bug Catcher
+Pic: Bug Catcher
+Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: Unique Types
-Party Size: 3
+Party Size: 4
+Pool Prune: Non Bug
 Copy Pool: TRAINER_PBL_JEMMA
+
+=== TRAINER_PBL_LUNA_AND_NORA ===
+Name: Luna&Nora
+Class: Twins
+Pic: Twins
+Music: Twins
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: Yes
+Party Size: 2
+Pool Rules: Unique Types
+Copy Pool: TRAINER_PBL_JEMMA
+
+=== TRAINER_PBL_MELINDA_OPTIONAL_1 ===
+Name: Melinda
+Class: Lady
+Pic: Lady
+Music: Female
+AI: AI_FLAG_LEVIATHAN
+Double Battle: No
+
+Farfetch'd @ Leek
+Hasty Nature
+Ability: Swift Swim
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Peck
+- False Swipe
+
+Luvdisc @ Wise Glasses
+Mild Nature
+Ability: Swift Swim
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Attract
+
+Delcatty @ Oran Berry
+Naive Nature
+Ability: Cute Charm
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Fury Swipes
 
 === TRAINER_PBL_PHILLIPA_LEVIATHAN_3 ===
 Name: Phillipa
@@ -1604,48 +1636,39 @@ Pool Prune: Non Psychic
 Party Size: 3
 Copy Pool: TRAINER_PBL_REBECCA
 
-=== TRAINER_PBL_MELINDA_OPTIONAL_1 ===
-Name: Melinda
-Class: Lady
-Pic: Lady
-Music: Female
+=== TRAINER_PBL_BILL_OPTIONAL_2 ===
+Name: Bill
+Class: Rich Boy
+Pic: Rich Boy
+Music: Rich
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
 Delibird @ Wide Lens
 Naive Nature
 Ability: Hustle
-Level: 14
+Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Shard
 - Aurora Beam
 - Present
 
-Luvdisc @ Wise Glasses
-Mild Nature
-Ability: Swift Swim
-Level: 14
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Draining Kiss
-- Icy Wind
-
 Unown @ Twisted Spoon
-Naive Nature
+Timid Nature
 Ability: Levitate
-Level: 14
+Level: 13
 IVs: 31 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - Hidden Power
 
 Spinda @ Sitrus Berry
-Naughty Nature
+Hasty Nature
 Ability: Contrary
-Level: 15
+Level: 14
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dizzy Punch
 - Feint Attack
 - Fake Out
-- Psybeam
+- Hypnosis
 
 === TRAINER_PBL_LIZA_LEVIATHAN_5 ===
 Name: Liza

@@ -298,20 +298,14 @@ script Zone3A_EventScript_Tutor {
 }
 
 script Zone3A_EventScript_Patrick {
-	trainerbattle_single(TRAINER_PBL_PATRICK, format("My friends call me the free Exp guy, but I'll prove them wrong!"), format("Oops, guess not…"))
-	msgbox(format("I guess I am the free Exp guy…"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_PATRICK, format("I wonder what day it is…"), format("Apparently it's defeat day!"))
+	msgbox(format("Tomorrow will be another day."), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone3A_EventScript_Jemma {
 	trainerbattle_single(TRAINER_PBL_JEMMA, format("Hey! You have to pay to cross!"), format("Uh… You can go for free!"))
 	msgbox(format("I was scamming people so well too…"), MSGBOX_AUTOCLOSE)
-	end
-}
-
-script Zone3A_EventScript_Annabelle {
-	trainerbattle_single(TRAINER_PBL_ANNABELLE, format("I wonder what day it is…"), format("Apparently it's defeat day!"))
-	msgbox(format("Tomorrow will be another day."), MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -322,7 +316,20 @@ script Zone3A_EventScript_Boris {
 }
 
 script Zone3A_EventScript_Richard {
-	trainerbattle_single(TRAINER_PBL_RICHARD, format("I have far too much money to deal with the likes of you!"), format("Agh! My money!"))
-	msgbox(format("Do you think I can buy humility with my money?"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_RICHARD, format("My friends call me the free Exp guy, but I'll prove them wrong!"), format("Oops, guess not…"))
+	msgbox(format("I guess I am the free Exp guy…"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone3A_EventScript_LunaAndNora {
+	trainerbattle_double(TRAINER_PBL_LUNA_AND_NORA, format("Up ahead is a strong lady!\pShe's guarding something special!"), format("We hear she's so strong, she's written about in the Notebook!"), gText_NotEnoughMons)
+	msgbox(format("You don't have to battle her if you don't want to!"), MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Zone3A_EventScript_Melinda {
+	trainerbattle_single(TRAINER_PBL_MELINDA_OPTIONAL_1, format("You want this Rare Candy? You won't get it!\pI'll defeat you with the power of the Pokémon my partner gave me!"), format("Fine… take the Rare Candy! It's really rare, so be careful how you use it!"))
+	msgbox(format("Rare Candies are typically guarded by an optional miniboss, but can be used to increase your Pokémon's level over the level cap."), MSGBOX_AUTOCLOSE)
 	end
 }
