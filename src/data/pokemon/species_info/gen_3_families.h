@@ -5989,7 +5989,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sBudewLevelUpLearnset,
         .teachableLearnset = sBudewTeachableLearnset,
         .eggMoveLearnset = sBudewEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_ROSELIA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_ROSELIA}),
     },
 #endif //P_GEN_4_CROSS_EVOS
 
@@ -10152,7 +10152,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sChinglingLevelUpLearnset,
         .teachableLearnset = sChinglingTeachableLearnset,
         .eggMoveLearnset = sChinglingEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_CHIMECHO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_CHIMECHO}),
     },
 #endif //P_GEN_4_CROSS_EVOS
 

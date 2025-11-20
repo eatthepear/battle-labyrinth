@@ -3379,7 +3379,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sBunearyLevelUpLearnset,
         .teachableLearnset = sBunearyTeachableLearnset,
         .eggMoveLearnset = sBunearyEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_LOPUNNY}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_LOPUNNY}),
     },
 
     [SPECIES_LOPUNNY] =
@@ -5301,7 +5301,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sFinneonLevelUpLearnset,
         .teachableLearnset = sFinneonTeachableLearnset,
         .eggMoveLearnset = sFinneonEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 21, SPECIES_LUMINEON}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_LUMINEON}),
     },
 
     [SPECIES_LUMINEON] =

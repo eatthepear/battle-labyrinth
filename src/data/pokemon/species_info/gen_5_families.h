@@ -2551,7 +2551,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sWoobatLevelUpLearnset,
         .teachableLearnset = sWoobatTeachableLearnset,
         .eggMoveLearnset = sWoobatEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_SWOOBAT}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_SWOOBAT}),
     },
 
     [SPECIES_SWOOBAT] =

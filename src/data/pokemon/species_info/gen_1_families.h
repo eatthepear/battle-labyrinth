@@ -15242,7 +15242,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sGoldeenLevelUpLearnset,
         .teachableLearnset = sGoldeenTeachableLearnset,
         .eggMoveLearnset = sGoldeenEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 23, SPECIES_SEAKING}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_SEAKING}),
     },
 
     [SPECIES_SEAKING] =
