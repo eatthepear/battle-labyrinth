@@ -438,6 +438,9 @@ static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const s
         case POOL_PRUNE_RANDOM_TAG:
             RandomTagPrune(trainer, poolIndexArray, rules);
             break;
+        case POOL_PRUNE_NON_NORMAL:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_NORMAL);
+            break;
         case POOL_PRUNE_NON_BUG:
             PruneNonType(trainer, poolIndexArray, rules, TYPE_BUG);
             break;

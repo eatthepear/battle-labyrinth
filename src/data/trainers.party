@@ -906,7 +906,7 @@ Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
 Party Size: 2
-Pool Rules: Unique Types
+Pool Prune: Non Normal
 Copy Pool: TRAINER_PBL_JEMMA
 
 === TRAINER_PBL_MELINDA_OPTIONAL_1 ===
@@ -1230,7 +1230,7 @@ Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
 Party Size: 2
-Pool Rules: Unique Types
+Pool Prune: Non Normal
 Copy Pool: TRAINER_PBL_RALPH
 
 === TRAINER_PBL_FRED ===
