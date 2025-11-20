@@ -444,17 +444,53 @@ static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const s
         case POOL_PRUNE_NON_NORMAL:
             PruneNonType(trainer, poolIndexArray, rules, TYPE_NORMAL);
             break;
+        case POOL_PRUNE_NON_FIGHTING:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_FIGHTING);
+            break;
         case POOL_PRUNE_NON_FLYING:
             PruneNonType(trainer, poolIndexArray, rules, TYPE_FLYING);
+            break;
+        case POOL_PRUNE_NON_POISON:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_POISON);
+            break;
+        case POOL_PRUNE_NON_GROUND:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_GROUND);
+            break;
+        case POOL_PRUNE_NON_ROCK:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_ROCK);
             break;
         case POOL_PRUNE_NON_BUG:
             PruneNonType(trainer, poolIndexArray, rules, TYPE_BUG);
             break;
+        case POOL_PRUNE_NON_GHOST:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_GHOST);
+            break;
+        case POOL_PRUNE_NON_STEEL:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_STEEL);
+            break;
+        case POOL_PRUNE_NON_FIRE:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_FIRE);
+            break;
         case POOL_PRUNE_NON_WATER:
             PruneNonType(trainer, poolIndexArray, rules, TYPE_WATER);
             break;
+        case POOL_PRUNE_NON_GRASS:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_GRASS);
+            break;
+        case POOL_PRUNE_NON_ELECTRIC:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_ELECTRIC);
+            break;
         case POOL_PRUNE_NON_PSYCHIC:
             PruneNonType(trainer, poolIndexArray, rules, TYPE_PSYCHIC);
+            break;
+        case POOL_PRUNE_NON_ICE:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_ICE);
+            break;
+        case POOL_PRUNE_NON_DRAGON:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_DRAGON);
+            break;
+        case POOL_PRUNE_NON_DARK:
+            PruneNonType(trainer, poolIndexArray, rules, TYPE_DARK);
             break;
         case POOL_PRUNE_NON_FAIRY:
             PruneNonType(trainer, poolIndexArray, rules, TYPE_FAIRY);
