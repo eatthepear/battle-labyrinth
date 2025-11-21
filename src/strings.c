@@ -1318,6 +1318,7 @@ const u8 gText_Relearn[] = _("{START_BUTTON} RELEARN"); // future note: don't de
 const u8 gText_Rename[] = _("RENAME");
 
 // Custom
+const u8 gText_Leviathan[] = _("Leviathan");
 const u8 gText_InfiniteRepelOn[] = _("The Infinite Repellent is now {COLOR RED}on{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
 const u8 gText_InfiniteRepelOff[] = _("The Infinite Repellent is now {COLOR RED}off{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
 const u8 gText_ConfirmSacredAsh[] = _("Use the Sacred Ash to fully\nrevive and heal your party?");

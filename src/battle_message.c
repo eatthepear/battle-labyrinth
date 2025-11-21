@@ -4,6 +4,7 @@
 #include "battle_controllers.h"
 #include "battle_message.h"
 #include "battle_setup.h"
+#include "battle_transition.h"
 #include "battle_tower.h"
 #include "battle_z_move.h"
 #include "data.h"
@@ -2593,8 +2594,8 @@ static const u8 *BattleStringGetOpponentClassByTrainerId(u16 trainerId)
         toCpy = gTrainerClasses[GetTrainerHillOpponentClass(trainerId)].name;
     else if (gBattleTypeFlags & BATTLE_TYPE_EREADER_TRAINER)
         toCpy = gTrainerClasses[GetEreaderTrainerClassId()].name;
-    else if (DoesTrainerHaveMugshot(trainerId))
-        toCpy = gTrainerClasses[TRAINER_CLASS_COOLTRAINER_2].name;
+    else if (GetTrainerMugshotColorFromId(trainerId) == MUGSHOT_COLOR_GREEN)
+        toCpy = gText_Leviathan;
     else
         toCpy = gTrainerClasses[GetTrainerClassFromId(trainerId)].name;
 

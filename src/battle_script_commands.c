@@ -6,6 +6,7 @@
 #include "battle_ai_util.h"
 #include "battle_scripts.h"
 #include "battle_environment.h"
+#include "battle_transition.h"
 #include "battle_z_move.h"
 #include "bw_summary_screen.h"
 #include "item.h"
@@ -8351,7 +8352,7 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     {
         const struct TrainerMon *party;
         u16 effectiveTrainerId = trainerId;
-        
+
         if (GetTrainerStructFromId(trainerId)->overrideTrainer)
             effectiveTrainerId = GetTrainerStructFromId(trainerId)->overrideTrainer;
         party = GetTrainerPartyFromId(effectiveTrainerId);
@@ -8360,11 +8361,11 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
         lastMonLevel = party[GetTrainerPartySizeFromId(effectiveTrainerId) - 1].lvl;
         numMons = GetTrainerPartySizeFromId(effectiveTrainerId);
         trainerMoney = (gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 2) * numMons;
-        if (DoesTrainerHaveMugshot(trainerId))
+        if (GetTrainerMugshotColorFromId(trainerId) == MUGSHOT_COLOR_GREEN)
             trainerMoney = 5 * numMons;
-        else
+
+        if (lastMonLevel == 0)
             lastMonLevel = GetRareCandyLevelCap() - 1;
-        // trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 5;
 
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
             moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
