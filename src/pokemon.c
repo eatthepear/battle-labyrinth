@@ -6253,7 +6253,7 @@ u16 PlayerGenderToFrontTrainerPicId(u8 playerGender)
 
 void HandleSetPokedexFlag(enum NationalDexOrder nationalNum, u8 caseId, u32 personality)
 {
-    u8 getFlagCaseId = (caseId == FLAG_SET_SEEN) ? FLAG_GET_SEEN : ((caseId == FLAG_SET_BATTLED) ? FLAG_GET_BATTLED : FLAG_GET_CAUGHT);
+    u8 getFlagCaseId = (caseId == FLAG_SET_SEEN) ? FLAG_GET_SEEN : FLAG_GET_CAUGHT;
     if (!GetSetPokedexFlag(nationalNum, getFlagCaseId)) // don't set if it's already set
     {
         GetSetPokedexFlag(nationalNum, caseId);

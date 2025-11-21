@@ -361,10 +361,11 @@ static void RandomTagPrune(const struct Trainer *trainer, u8 *poolIndexArray, co
             poolIndexArray[i] = POOL_SLOT_DISABLED;
 }
 
+// Prunes forms as well
 static void PruneBattled(const struct Trainer *trainer, u8 *poolIndexArray, const struct PoolRules *rules)
 {
     for (u32 i = 0; i < trainer->poolSize; i++)
-        if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(trainer->party[poolIndexArray[i]].species), FLAG_GET_BATTLED))
+        if (GetSetBattledFlag(trainer->party[poolIndexArray[i]].species, FLAG_GET_BATTLED))
             poolIndexArray[i] = POOL_SLOT_DISABLED;
 }
 

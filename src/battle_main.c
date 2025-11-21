@@ -1976,6 +1976,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
             CreateMon(&party[i], partyData[monIndex].species, level, 0, TRUE, personalityValue, otIdType, fixedOtId);
+            GetSetBattledFlag(partyData[monIndex].species, FLAG_SET_BATTLED);
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex]);
@@ -5661,10 +5662,6 @@ static void HandleEndTurn_FinishBattle(void)
                     if (gBattleStruct->partyState[side][partySlot].sentOut)
                     {
                         HandleSetPokedexFlagFromMon(&party[partySlot], FLAG_SET_SEEN);
-                        if (gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_LEGENDARY))
-                        {
-                            HandleSetPokedexFlagFromMon(&party[partySlot], FLAG_SET_BATTLED);
-                        }
                     }
                 }
             }
