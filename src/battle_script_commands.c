@@ -4670,7 +4670,21 @@ static void Cmd_getexp(void)
                     && !gBattleStruct->wildVictorySong)
                 {
                     BattleStopLowHpSound();
-                    PlayBGM(MUS_VICTORY_WILD);
+                    switch (VarGet(VAR_TRAINER_MUSIC))
+                    {
+                    case 2:
+                        PlayBGM(MUS_RG_VICTORY_WILD);
+                    case 3:
+                        PlayBGM(MUS_DP_VICTORY_WILD);
+                    case 4:
+                        PlayBGM(MUS_HG_VICTORY_WILD);
+                    case 5:
+                        PlayBGM(MUS_HG_VICTORY_WILD);
+                    case 6:
+                        PlayBGM(MUS_BW_VICTORY_WILD);
+                    default:
+                        PlayBGM(MUS_VICTORY_WILD);
+                    }
                     gBattleStruct->wildVictorySong++;
                 }
 
