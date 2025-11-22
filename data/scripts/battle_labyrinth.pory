@@ -913,7 +913,7 @@ script EventScript_Notebook_Abilities {
 			case SPECIES_CHANDELURE:
 				msgbox(format("Litwick, Lampent, and Chandelure now get Shadow Tag as a Hidden Ability instead of Infiltrator."))
 			case SPECIES_STUNFISK:
-				msgbox(format("Stunfisk now gets Water Absorb as a regular ability instead of Keen Eye."))
+				msgbox(format("Stunfisk now gets Water Absorb as a regular ability instead of Limber."))
 			case SPECIES_MIENFOO:
 			case SPECIES_MIENSHAO:
 				msgbox(format("Mienfoo and Mienshao now get Reckless as a regular ability instead of Regenerator, which is now their Hidden Ability."))
