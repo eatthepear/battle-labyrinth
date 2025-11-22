@@ -505,6 +505,24 @@ $(OBJEVENTGFXDIR)/people/rainbow_rocket_member_m.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/rainbow_rocket_giovanni.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/galactic_member_f.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/galactic_member_m.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/mars.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/jupiter.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/saturn.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/cyrus.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 
 $(OBJEVENTGFXDIR)/pokemon_old/azumarill.4bpp: %.4bpp: %.png

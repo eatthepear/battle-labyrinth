@@ -383,6 +383,9 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_RAINBOW_ROCKET] = { _("Rainbow Rocket"), 2, BALL_GREAT },
     [TRAINER_CLASS_RAINBOW_ROCKET_EXECUTIVE] = { _("Rainbow Rocket Executive"), 5, BALL_ULTRA },
     [TRAINER_CLASS_RAINBOW_ROCKET_BOSS] = { _("Rainbow Rocket Boss"), 10, BALL_MASTER },
+    [TRAINER_CLASS_GALACTIC] = { _("Team Galactic"), 2, BALL_GREAT },
+    [TRAINER_CLASS_GALACTIC_COMMANDER] = { _("Team Galactic Comander"), 5, BALL_ULTRA },
+    [TRAINER_CLASS_GALACTIC_BOSS] = { _("Team Galactic Boss"), 10, BALL_MASTER },
 };
 
 static void (*const sTurnActionsFuncsTable[])(void) =
@@ -5515,6 +5518,11 @@ static void HandleEndTurn_BattleWon(void)
             break;
         case TRAINER_CLASS_LEADER:
             PlayBGM(MUS_VICTORY_GYM_LEADER);
+            break;
+        case TRAINER_CLASS_GALACTIC:
+        case TRAINER_CLASS_GALACTIC_COMMANDER:
+        case TRAINER_CLASS_GALACTIC_BOSS:
+            PlayBGM(MUS_DP_VICTORY_GALACTIC);
             break;
         default:
             if (DoesTrainerHaveMugshot(TRAINER_BATTLE_PARAM.opponentA)) {

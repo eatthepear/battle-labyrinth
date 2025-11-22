@@ -340,6 +340,24 @@ const u16 gTrainerPalette_RainbowRocketGruntM[] = INCBIN_U16("graphics/trainers/
 const u32 gTrainerFrontPic_RainbowRocketGiovanni[] = INCBIN_U32("graphics/trainers/front_pics/rainbow_rocket_giovanni.4bpp.smol");
 const u16 gTrainerPalette_RainbowRocketGiovanni[] = INCBIN_U16("graphics/trainers/front_pics/rainbow_rocket_giovanni.gbapal");
 
+const u32 gTrainerFrontPic_GalacticGruntF[] = INCBIN_U32("graphics/trainers/front_pics/galactic_grunt_f.4bpp.smol");
+const u16 gTrainerPalette_GalacticGruntF[] = INCBIN_U16("graphics/trainers/front_pics/galactic_grunt_f.gbapal");
+
+const u32 gTrainerFrontPic_GalacticGruntM[] = INCBIN_U32("graphics/trainers/front_pics/galactic_grunt_m.4bpp.smol");
+const u16 gTrainerPalette_GalacticGruntM[] = INCBIN_U16("graphics/trainers/front_pics/galactic_grunt_m.gbapal");
+
+const u32 gTrainerFrontPic_Mars[] = INCBIN_U32("graphics/trainers/front_pics/mars.4bpp.smol");
+const u16 gTrainerPalette_Mars[] = INCBIN_U16("graphics/trainers/front_pics/mars.gbapal");
+
+const u32 gTrainerFrontPic_Jupiter[] = INCBIN_U32("graphics/trainers/front_pics/jupiter.4bpp.smol");
+const u16 gTrainerPalette_Jupiter[] = INCBIN_U16("graphics/trainers/front_pics/jupiter.gbapal");
+
+const u32 gTrainerFrontPic_Saturn[] = INCBIN_U32("graphics/trainers/front_pics/saturn.4bpp.smol");
+const u16 gTrainerPalette_Saturn[] = INCBIN_U16("graphics/trainers/front_pics/saturn.gbapal");
+
+const u32 gTrainerFrontPic_Cyrus[] = INCBIN_U32("graphics/trainers/front_pics/cyrus.4bpp.smol");
+const u16 gTrainerPalette_Cyrus[] = INCBIN_U16("graphics/trainers/front_pics/cyrus.gbapal");
+
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
 // gTrainerFrontPic/gTrainerPalette pointers, (e.g "gTrainerFrontPic_Hiker" and "gTrainerPalette_Hiker").
@@ -464,6 +482,12 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_RAINBOW_ROCKET_GRUNT_F, gTrainerFrontPic_RainbowRocketGruntF, gTrainerPalette_RainbowRocketGruntF),
     TRAINER_SPRITE(TRAINER_PIC_RAINBOW_ROCKET_GRUNT_M, gTrainerFrontPic_RainbowRocketGruntM, gTrainerPalette_RainbowRocketGruntM),
     TRAINER_SPRITE(TRAINER_PIC_RAINBOW_ROCKET_GIOVANNI, gTrainerFrontPic_RainbowRocketGiovanni, gTrainerPalette_RainbowRocketGiovanni),
+    TRAINER_SPRITE(TRAINER_PIC_GALACTIC_GRUNT_F, gTrainerFrontPic_GalacticGruntF, gTrainerPalette_GalacticGruntF),
+    TRAINER_SPRITE(TRAINER_PIC_GALACTIC_GRUNT_M, gTrainerFrontPic_GalacticGruntM, gTrainerPalette_GalacticGruntM),
+    TRAINER_SPRITE(TRAINER_PIC_MARS, gTrainerFrontPic_Mars, gTrainerPalette_Mars),
+    TRAINER_SPRITE(TRAINER_PIC_JUPITER, gTrainerFrontPic_Jupiter, gTrainerPalette_Jupiter),
+    TRAINER_SPRITE(TRAINER_PIC_SATURN, gTrainerFrontPic_Saturn, gTrainerPalette_Saturn),
+    TRAINER_SPRITE(TRAINER_PIC_CYRUS, gTrainerFrontPic_Cyrus, gTrainerPalette_Cyrus),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

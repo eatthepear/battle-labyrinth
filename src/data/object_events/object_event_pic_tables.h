@@ -1509,3 +1509,27 @@ static const struct SpriteFrameImage sPicTable_RainbowRocketMemberM[] = {
 static const struct SpriteFrameImage sPicTable_RainbowRocketGiovanni[] = {
     overworld_ascending_frames(gObjectEventPic_RainbowRocketGiovanni, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_GalacticMemberF[] = {
+    overworld_ascending_frames(gObjectEventPic_GalacticMemberF, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_GalacticMemberM[] = {
+    overworld_ascending_frames(gObjectEventPic_GalacticMemberM, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Mars[] = {
+    overworld_ascending_frames(gObjectEventPic_Mars, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Jupiter[] = {
+    overworld_ascending_frames(gObjectEventPic_Jupiter, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Saturn[] = {
+    overworld_ascending_frames(gObjectEventPic_Saturn, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Cyrus[] = {
+    overworld_ascending_frames(gObjectEventPic_Cyrus, 2, 4),
+};

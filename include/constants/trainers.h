@@ -125,12 +125,14 @@
 #define TRAINER_PIC_RAINBOW_ROCKET_GRUNT_F 105
 #define TRAINER_PIC_RAINBOW_ROCKET_GRUNT_M 106
 #define TRAINER_PIC_RAINBOW_ROCKET_GIOVANNI 107
-#define TRAINER_PIC_108                   108
-#define TRAINER_PIC_109                   109
-#define TRAINER_PIC_110                   110
-#define TRAINER_PIC_111                   111
+#define TRAINER_PIC_GALACTIC_GRUNT_F      108
+#define TRAINER_PIC_GALACTIC_GRUNT_M      109
+#define TRAINER_PIC_MARS                  110
+#define TRAINER_PIC_JUPITER               111
+#define TRAINER_PIC_SATURN                112
+#define TRAINER_PIC_CYRUS                 113
 
-#define TRAINER_PIC_COUNT                 112
+#define TRAINER_PIC_COUNT                 114
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -388,6 +390,9 @@ enum TrainerClassID
     TRAINER_CLASS_RAINBOW_ROCKET,
     TRAINER_CLASS_RAINBOW_ROCKET_EXECUTIVE,
     TRAINER_CLASS_RAINBOW_ROCKET_BOSS,
+    TRAINER_CLASS_GALACTIC,
+    TRAINER_CLASS_GALACTIC_COMMANDER,
+    TRAINER_CLASS_GALACTIC_BOSS,
     TRAINER_CLASS_COUNT,
 };
 

@@ -289,6 +289,12 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RareCandy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RainbowRocketMemberF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RainbowRocketMemberM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RainbowRocketGiovanni;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GalacticMemberF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GalacticMemberM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mars;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jupiter;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Saturn;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cyrus;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -569,6 +575,12 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RAINBOW_ROCKET_MEMBER_F] =  &gObjectEventGraphicsInfo_RainbowRocketMemberF,
     [OBJ_EVENT_GFX_RAINBOW_ROCKET_MEMBER_M] =  &gObjectEventGraphicsInfo_RainbowRocketMemberM,
     [OBJ_EVENT_GFX_RAINBOW_ROCKET_GIOVANNI] =  &gObjectEventGraphicsInfo_RainbowRocketGiovanni,
+    [OBJ_EVENT_GFX_GALACTIC_MEMBER_F] =        &gObjectEventGraphicsInfo_GalacticMemberF,
+    [OBJ_EVENT_GFX_GALACTIC_MEMBER_M] =        &gObjectEventGraphicsInfo_GalacticMemberM,
+    [OBJ_EVENT_GFX_MARS] =                     &gObjectEventGraphicsInfo_Mars,
+    [OBJ_EVENT_GFX_JUPITER] =                  &gObjectEventGraphicsInfo_Jupiter,
+    [OBJ_EVENT_GFX_SATURN] =                   &gObjectEventGraphicsInfo_Saturn,
+    [OBJ_EVENT_GFX_CYRUS] =                    &gObjectEventGraphicsInfo_Cyrus,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
 };

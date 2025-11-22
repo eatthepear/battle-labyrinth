@@ -541,5 +541,17 @@ const u32 gObjectEventPic_RainbowRocketMemberM[] = INCBIN_U32("graphics/object_e
 const u16 gObjectEventPal_RainbowRocketMemberM[] = INCBIN_U16("graphics/object_events/pics/people/rainbow_rocket_member_m.gbapal");
 const u32 gObjectEventPic_RainbowRocketGiovanni[] = INCBIN_U32("graphics/object_events/pics/people/rainbow_rocket_giovanni.4bpp");
 const u16 gObjectEventPal_RainbowRocketGiovanni[] = INCBIN_U16("graphics/object_events/pics/people/rainbow_rocket_giovanni.gbapal");
+const u32 gObjectEventPic_GalacticMemberF[] = INCBIN_U32("graphics/object_events/pics/people/galactic_member_f.4bpp");
+const u16 gObjectEventPal_GalacticMemberF[] = INCBIN_U16("graphics/object_events/pics/people/galactic_member_f.gbapal");
+const u32 gObjectEventPic_GalacticMemberM[] = INCBIN_U32("graphics/object_events/pics/people/galactic_member_m.4bpp");
+const u16 gObjectEventPal_GalacticMemberM[] = INCBIN_U16("graphics/object_events/pics/people/galactic_member_m.gbapal");
+const u32 gObjectEventPic_Mars[] = INCBIN_U32("graphics/object_events/pics/people/mars.4bpp");
+const u16 gObjectEventPal_Mars[] = INCBIN_U16("graphics/object_events/pics/people/mars.gbapal");
+const u32 gObjectEventPic_Jupiter[] = INCBIN_U32("graphics/object_events/pics/people/jupiter.4bpp");
+const u16 gObjectEventPal_Jupiter[] = INCBIN_U16("graphics/object_events/pics/people/jupiter.gbapal");
+const u32 gObjectEventPic_Saturn[] = INCBIN_U32("graphics/object_events/pics/people/saturn.4bpp");
+const u16 gObjectEventPal_Saturn[] = INCBIN_U16("graphics/object_events/pics/people/saturn.gbapal");
+const u32 gObjectEventPic_Cyrus[] = INCBIN_U32("graphics/object_events/pics/people/cyrus.4bpp");
+const u16 gObjectEventPal_Cyrus[] = INCBIN_U16("graphics/object_events/pics/people/cyrus.gbapal");
 
 const u32 gFieldEffectObjectPic_SnowFootprints[] = INCBIN_U32("graphics/field_effects/pics/snow_footprints.4bpp");

@@ -5698,6 +5698,12 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_RAINBOW_ROCKET_EXECUTIVE:
         case TRAINER_CLASS_RAINBOW_ROCKET_BOSS:
             return MUS_HG_VS_ROCKET;
+        case TRAINER_CLASS_GALACTIC:
+            return MUS_DP_VS_GALACTIC;
+        case TRAINER_CLASS_GALACTIC_COMMANDER:
+            return MUS_DP_VS_GALACTIC_COMMANDER;
+        case TRAINER_CLASS_GALACTIC_BOSS:
+            return MUS_DP_VS_GALACTIC_BOSS;
         default:
             if (DoesTrainerHaveMugshot(TRAINER_BATTLE_PARAM.opponentA)) {
                 switch (VarGet(VAR_LEVIATHAN_MUSIC))
