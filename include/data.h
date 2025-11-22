@@ -111,7 +111,7 @@ struct Trainer
 
 struct TrainerClass
 {
-    u8 name[13];
+    u8 name[25];
     u8 money;
     u16 ball;
 };
