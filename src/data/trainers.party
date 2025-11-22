@@ -102,73 +102,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 3
 Pool Rules: Unique Types
-
-Sunkern
-
-Azurill
-
-Igglybuff
-
-Sentret
-
-Poochyena
-
-Lotad
-
-Seedot
-
-Bunnelby
-
-Zigzagoon
-
-Zigzagoon Galar
-
-Whismur
-
-Starly
-
-Rookidee
-
-Nickit
-
-Bidoof
-
-Pidgey
-
-Rattata
-
-Rattata Alola
-
-Yungoos
-
-Lechonk
-
-Patrat
-
-Skitty
-
-Smoliv
-
-Hoothoot
-
-Shinx
-
-Pidove
-
-Pikipek
-
-Taillow
-
-Lillipup
-
-Skwovet
-
-Fletchling
-
-Mareep
-
-Purrloin
-
+Copy Pool: TRAINER_POOL_ZONE_1
 
 === TRAINER_PBL_MARIAM ===
 Name: Mariam
@@ -179,7 +113,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
 Party Size: 3
-Copy Pool: TRAINER_PBL_NINA
+Copy Pool: TRAINER_POOL_ZONE_1
 
 === TRAINER_PBL_OSCAR ===
 Name: Oscar
@@ -190,7 +124,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
 Party Size: 3
-Copy Pool: TRAINER_PBL_NINA
+Copy Pool: TRAINER_POOL_ZONE_1
 
 === TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER ===
 Name: Corey
@@ -405,126 +339,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 3
 Pool Rules: Unique Types
-
-Sunkern
-
-Azurill
-
-Igglybuff
-
-Sentret
-
-Poochyena
-
-Lotad
-
-Seedot
-
-Bunnelby
-
-Zigzagoon
-
-Zigzagoon Galar
-
-Whismur
-
-Starly
-
-Rookidee
-
-Nickit
-
-Bidoof
-
-Pidgey
-
-Rattata
-
-Rattata Alola
-
-Yungoos
-
-Lechonk
-
-Patrat
-
-Skitty
-
-Smoliv
-
-Hoothoot
-
-Shinx
-
-Pidove
-
-Pikipek
-
-Taillow
-
-Lillipup
-
-Skwovet
-
-Fletchling
-
-Pichu
-
-Mareep
-
-Purrloin
-
-Blipbug
-
-Burmy
-
-Kricketot
-
-Caterpie
-
-Weedle
-
-Wurmple
-
-Scatterbug
-
-Tarountula
-
-Combee
-
-Bounsweet
-
-Cleffa
-
-Fomantis
-
-Gossifleur
-
-Pawmi
-
-Ledyba
-
-Spinarak
-
-Wingull
-
-Hoppip
-
-Yamper
-
-Slakoth
-
-Tadbulb
-
-Nidoran M
-
-Nidoran F
-
-Cherubi
-
-Budew
-
-Paras
+Copy Pool: TRAINER_POOL_ZONE_2
 
 === TRAINER_PBL_JEREMIAH ===
 Name: Jeremiah
@@ -535,7 +350,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
 Pool Prune: Non Bug
-Copy Pool: TRAINER_PBL_POLLY
+Copy Pool: TRAINER_POOL_ZONE_2
 
 === TRAINER_PBL_JOSH ===
 Name: Josh
@@ -546,7 +361,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
 Party Size: 3
-Copy Pool: TRAINER_PBL_POLLY
+Copy Pool: TRAINER_POOL_ZONE_2
 
 === TRAINER_PBL_HARPER ===
 Name: Harper
@@ -557,7 +372,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
 Party Size: 3
-Copy Pool: TRAINER_PBL_POLLY
+Copy Pool: TRAINER_POOL_ZONE_2
 
 === TRAINER_PBL_SHAUN_LEVIATHAN_2 ===
 Name: Shaun
@@ -644,226 +459,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 3
 Pool Rules: Unique Types
-
-Sunkern
-
-Azurill
-
-Igglybuff
-
-Sentret
-
-Poochyena
-
-Lotad
-
-Seedot
-
-Bunnelby
-
-Zigzagoon
-
-Zigzagoon Galar
-
-Whismur
-
-Starly
-
-Rookidee
-
-Nickit
-
-Bidoof
-
-Pidgey
-
-Rattata
-
-Rattata Alola
-
-Yungoos
-
-Lechonk
-
-Patrat
-
-Skitty
-
-Smoliv
-
-Hoothoot
-
-Shinx
-
-Pidove
-
-Pikipek
-
-Taillow
-
-Lillipup
-
-Skwovet
-
-Fletchling
-
-Pichu
-
-Mareep
-
-Purrloin
-
-Bounsweet
-
-Cleffa
-
-Fomantis
-
-Gossifleur
-
-Pawmi
-
-Ledyba
-
-Spinarak
-
-Wingull
-
-Hoppip
-
-Yamper
-
-Slakoth
-
-Tadbulb
-
-Nidoran M
-
-Nidoran F
-
-Cherubi
-
-Budew
-
-Paras
-
-Metapod
-
-Kakuna
-
-Silcoon
-
-Cascoon
-
-Chingling
-
-Venipede
-
-Wooper
-
-Wooper Paldea
-
-Wiglett
-
-Diglett
-
-Diglett Alola
-
-Slugma
-
-Nincada
-
-Surskit
-
-Milcery
-
-Spearow
-
-Wooloo
-
-Chewtle
-
-Ekans
-
-Barboach
-
-Tympole
-
-Foongus
-
-Shroomish
-
-Electrike
-
-Blitzle
-
-Vulpix
-
-Sandshrew
-
-Poliwag
-
-Bellsprout
-
-Snubbull
-
-Remoraid
-
-Grubbin
-
-Gulpin
-
-Flabébé
-
-Ducklett
-
-Marill
-
-Jigglypuff
-
-Pikachu
-
-Clefairy
-
-Glameow
-
-Mime Jr.
-
-Sewaddle
-
-Fidough
-
-Slowpoke
-
-Slowpoke Galar
-
-Pansage
-
-Pansear
-
-Panpour
-
-Oddish
-
-Psyduck
-
-Cubone
-
-Goldeen
-
-Woobat
-
-Phanpy
-
-Buizel
-
-Finneon
-
-Deerling
-
-Buneary
-
-Skiddo
+Copy Pool: TRAINER_POOL_ZONE_3
 
 === TRAINER_PBL_PATRICK ===
 Name: Patrick
@@ -874,7 +470,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
 Party Size: 3
-Copy Pool: TRAINER_PBL_JEMMA
+Copy Pool: TRAINER_POOL_ZONE_3
 
 === TRAINER_PBL_BORIS ===
 Name: Boris
@@ -885,7 +481,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
 Party Size: 3
-Copy Pool: TRAINER_PBL_JEMMA
+Copy Pool: TRAINER_POOL_ZONE_3
 
 === TRAINER_PBL_RICHARD ===
 Name: Richard
@@ -896,7 +492,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
 Pool Prune: Non Bug
-Copy Pool: TRAINER_PBL_JEMMA
+Copy Pool: TRAINER_POOL_ZONE_3
 
 === TRAINER_PBL_LUNA_AND_NORA ===
 Name: Luna&Nora
@@ -907,7 +503,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
 Party Size: 2
 Pool Prune: Non Normal
-Copy Pool: TRAINER_PBL_JEMMA
+Copy Pool: TRAINER_POOL_ZONE_3
 
 === TRAINER_PBL_MELINDA_OPTIONAL_1 ===
 Name: Melinda
@@ -1026,190 +622,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 3
 Pool Rules: Unique Types
-
-Chingling
-
-Venipede
-
-Wooper
-
-Wooper Paldea
-
-Wiglett
-
-Diglett
-
-Diglett Alola
-
-Slugma
-
-Nincada
-
-Surskit
-
-Milcery
-
-Spearow
-
-Wooloo
-
-Chewtle
-
-Ekans
-
-Barboach
-
-Tympole
-
-Foongus
-
-Shroomish
-
-Electrike
-
-Blitzle
-
-Vulpix
-
-Sandshrew
-
-Poliwag
-
-Bellsprout
-
-Snubbull
-
-Remoraid
-
-Grubbin
-
-Gulpin
-
-Flabébé
-
-Ducklett
-
-Marill
-
-Jigglypuff
-
-Pikachu
-
-Clefairy
-
-Dottler
-
-Glameow
-
-Mime Jr.
-
-Sewaddle
-
-Fidough
-
-Slowpoke
-
-Slowpoke Galar
-
-Pansage
-
-Pansear
-
-Panpour
-
-Spewpa
-
-Joltik
-
-Oddish
-
-Psyduck
-
-Cubone
-
-Goldeen
-
-Woobat
-
-Phanpy
-
-Buizel
-
-Finneon
-
-Deerling
-
-Buneary
-
-Skiddo
-
-Shelmet
-
-Karrablast
-
-Exeggcute
-
-Drowzee
-
-Stunky
-
-Trubbish
-
-Houndour
-
-Spoink
-
-Maschiff
-
-Spritzee
-
-Swirlix
-
-Espurr
-
-Rellor
-
-Cottonee
-
-Petilil
-
-Zubat
-
-Flittle
-
-Hatenna
-
-Impidimp
-
-Bonsly
-
-Gothita
-
-Solosis
-
-Munna
-
-Wattrel
-
-Morelull
-
-Inkay
-
-Meowth
-
-Meowth Alola
-
-Makuhita
-
-Nymble
-
-Tyrogue
-
-Minccino
-
-Cutiefly
-
-Capsakid
+Copy Pool: TRAINER_POOL_ZONE_4
 
 === TRAINER_PBL_SANTIAGO ===
 Name: Santiago
@@ -1220,7 +633,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
 Pool Prune: Non Bug
-Copy Pool: TRAINER_PBL_RALPH
+Copy Pool: TRAINER_POOL_ZONE_4
 
 === TRAINER_PBL_CHLOE_AND_KAYA ===
 Name: Chloe&Kaya
@@ -1231,7 +644,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
 Party Size: 2
 Pool Prune: Non Normal
-Copy Pool: TRAINER_PBL_RALPH
+Copy Pool: TRAINER_POOL_ZONE_4
 
 === TRAINER_PBL_FRED ===
 Name: Fred
@@ -1242,7 +655,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
 Party Size: 3
-Copy Pool: TRAINER_PBL_RALPH
+Copy Pool: TRAINER_POOL_ZONE_4
 
 === TRAINER_PBL_LUCIA ===
 Name: Lucia
@@ -1253,7 +666,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
 Pool Prune: Non Fairy
-Copy Pool: TRAINER_PBL_RALPH
+Copy Pool: TRAINER_POOL_ZONE_4
 
 === TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4 ===
 Name: Ella&Bella
@@ -1340,246 +753,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 3
 Pool Rules: Unique Types
-
-Spearow
-
-Wooloo
-
-Chewtle
-
-Ekans
-
-Barboach
-
-Tympole
-
-Foongus
-
-Shroomish
-
-Electrike
-
-Blitzle
-
-Vulpix
-
-Sandshrew
-
-Poliwag
-
-Bellsprout
-
-Snubbull
-
-Remoraid
-
-Gulpin
-
-Flabébé
-
-Ducklett
-
-Marill
-
-Jigglypuff
-
-Pikachu
-
-Clefairy
-
-Dottler
-
-Glameow
-
-Mime Jr.
-
-Slowpoke
-
-Slowpoke Galar
-
-Joltik
-
-Oddish
-
-Psyduck
-
-Cubone
-
-Goldeen
-
-Woobat
-
-Phanpy
-
-Buizel
-
-Finneon
-
-Deerling
-
-Buneary
-
-Skiddo
-
-Shelmet
-
-Karrablast
-
-Exeggcute
-
-Drowzee
-
-Stunky
-
-Trubbish
-
-Houndour
-
-Spoink
-
-Maschiff
-
-Spritzee
-
-Swirlix
-
-Espurr
-
-Rellor
-
-Cottonee
-
-Petilil
-
-Zubat
-
-Flittle
-
-Hatenna
-
-Impidimp
-
-Bonsly
-
-Gothita
-
-Solosis
-
-Munna
-
-Wattrel
-
-Morelull
-
-Inkay
-
-Meowth
-
-Meowth Alola
-
-Makuhita
-
-Nymble
-
-Tyrogue
-
-Minccino
-
-Cutiefly
-
-Capsakid
-
-Helioptile
-
-Applin
-
-Rolycoly
-
-Vulpix Alola
-
-Sandshrew Alola
-
-Swinub
-
-Arrokuda
-
-Roggenrola
-
-Rockruff
-
-Nacli
-
-Geodude
-
-Geodude Alola
-
-Pineco
-
-Croagunk
-
-Venonat
-
-Mankey
-
-Machop
-
-Carvanha
-
-Numel
-
-Timburr
-
-Sizzlipede
-
-Tandemaus
-
-Binacle
-
-Corphish
-
-Swablu
-
-Clobbopus
-
-Natu
-
-Grimer
-
-Grimer Alola
-
-Krabby
-
-Shellos
-
-Drilbur
-
-Voltorb
-
-Voltorb Hisui
-
-Teddiursa
-
-Luvdisc
-
-Skorupi
-
-Clauncher
-
-Tentacool
-
-Koffing
-
-Crabrawler
-
-Meditite
-
-Scraggy
-
-Pancham
-
-Growlithe
-
-Growlithe Hisui
+Copy Pool: TRAINER_POOL_ZONE_5
 
 === TRAINER_PBL_CAITLYN ===
 Name: Caitlyn
@@ -1590,7 +764,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
 Party Size: 3
-Copy Pool: TRAINER_PBL_REBECCA
+Copy Pool: TRAINER_POOL_ZONE_5
 
 === TRAINER_PBL_CLINTON ===
 Name: Clinton
@@ -1601,7 +775,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Rules: Unique Types
 Party Size: 3
-Copy Pool: TRAINER_PBL_REBECCA
+Copy Pool: TRAINER_POOL_ZONE_5
 
 === TRAINER_PBL_SYLVIA ===
 Name: Syvlia
@@ -1612,7 +786,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Prune: Non Psychic
 Party Size: 3
-Copy Pool: TRAINER_PBL_REBECCA
+Copy Pool: TRAINER_POOL_ZONE_5
 
 === TRAINER_PBL_THERESA ===
 Name: Theresa
@@ -1623,7 +797,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Prune: Non Psychic
 Party Size: 3
-Copy Pool: TRAINER_PBL_REBECCA
+Copy Pool: TRAINER_POOL_ZONE_5
 
 === TRAINER_PBL_ANTHONY ===
 Name: Anthony
@@ -1634,7 +808,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Pool Prune: Non Psychic
 Party Size: 3
-Copy Pool: TRAINER_PBL_REBECCA
+Copy Pool: TRAINER_POOL_ZONE_5
 
 === TRAINER_PBL_BILL_OPTIONAL_2 ===
 Name: Bill
@@ -1991,294 +1165,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
 Pool Prune: Non Water
-
-Dottler
-
-Helioptile
-
-Applin
-
-Rolycoly
-
-Vulpix Alola
-
-Sandshrew Alola
-
-Swinub
-
-Arrokuda
-
-Roggenrola
-
-Rockruff
-
-Nacli
-
-Geodude
-
-Geodude Alola
-
-Pineco
-
-Croagunk
-
-Venonat
-
-Mankey
-
-Machop
-
-Carvanha
-
-Numel
-
-Timburr
-
-Sizzlipede
-
-Tandemaus
-
-Binacle
-
-Corphish
-
-Swablu
-
-Clobbopus
-
-Natu
-
-Grimer
-
-Grimer Alola
-
-Krabby
-
-Shellos
-
-Drilbur
-
-Voltorb
-
-Voltorb Hisui
-
-Teddiursa
-
-Luvdisc
-
-Skorupi
-
-Clauncher
-
-Tentacool
-
-Koffing
-
-Crabrawler
-
-Meditite
-
-Scraggy
-
-Pancham
-
-Growlithe
-
-Growlithe Hisui
-
-Mienfoo
-
-Rufflet
-
-Dewpider
-
-Litwick
-
-Bramblin
-
-Meowth Galar
-
-Trapinch
-
-Spheal
-
-Shroodle
-
-Greavard
-
-Sandile
-
-Horsea
-
-Shuppet
-
-Duskull
-
-Tinkatink
-
-Baltoy
-
-Snorunt
-
-Bronzor
-
-Klink
-
-Varoom
-
-Gimmighoul
-
-Yamask
-
-Yamask Galar
-
-Golett
-
-Bergmite
-
-Shellder
-
-Smoochum
-
-Vanillite
-
-Ferroseed
-
-Cubchoo
-
-Mareanie
-
-Sinistea
-
-Poltchageist
-
-Phantump
-
-Doduo
-
-Gastly
-
-Darumaka
-
-Darumaka Galar
-
-Silicobra
-
-Finizen
-
-Axew
-
-Skrelp
-
-Salandit
-
-Sandygast
-
-Magnemite
-
-Seel
-
-Dwebble
-
-Honedge
-
-Chinchou
-
-Delibird
-
-Aron
-
-Hippopotas
-
-Noibat
-
-Zorua
-
-Zorua Hisui
-
-Cufant
-
-Snover
-
-Cetoddle
-
-Cacnea
-
-Frillish
-
-Elgyem
-
-Pumpkaboo
-
-Toedscool
-
-Staryu
-
-Pawniard
-
-Stufful
-
-Rhyhorn
-
-Clamperl
-
-Mantyke
-
-Drifloon
-
-Glimmet
-
-Cranidos
-
-Shieldon
-
-Omanyte
-
-Kabuto
-
-Lileep
-
-Anorith
-
-Tirtouga
-
-Tyrunt
-
-Amaura
-
-Archen
-
-Wailmer
-
-Aipom
-
-Elekid
-
-Magby
-
-Litleo
-
-Nosepass
-
-Onix
-
-Lickitung
-
-Vullaby
-
-Mudbray
-
-Yanma
-
-Munchlax
-
-Porygon
-
-Spinda
-
-Farfetch'd
-
-Farfetch'd Galar
+Copy Pool: TRAINER_POOL_ZONE_6
 
 === TRAINER_PBL_MELANIE ===
 Name: Melanie
@@ -2287,9 +1174,9 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: Unique Types
 Party Size: 3
-Copy Pool: TRAINER_PBL_GILBERT
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_6
 
 === TRAINER_PBL_CONSTANCE ===
 Name: Constance
@@ -2298,9 +1185,9 @@ Pic: Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: Unique Types
 Party Size: 3
-Copy Pool: TRAINER_PBL_GILBERT
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_6
 
 === TRAINER_PBL_FRANK ===
 Name: Frank
@@ -2309,9 +1196,9 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: Unique Types
 Party Size: 3
-Copy Pool: TRAINER_PBL_GILBERT
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_6
 
 === TRAINER_PBL_DAISY ===
 Name: Daisy
@@ -2320,9 +1207,9 @@ Pic: Pokemon Breeder F
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: Unique Types
 Party Size: 3
-Copy Pool: TRAINER_PBL_GILBERT
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_6
 
 === TRAINER_PBL_VIC_AND_DELL ===
 Name: Vic&Dell
@@ -2333,7 +1220,7 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
 Party Size: 2
 Pool Prune: Non Normal
-Copy Pool: TRAINER_PBL_GILBERT
+Copy Pool: TRAINER_POOL_ZONE_6
 
 === TRAINER_PBL_MINA ===
 Name: Nina
@@ -6695,3 +5582,1192 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Psychic
 - Reflect
 - Metal Claw
+
+=== TRAINER_POOL_ZONE_1 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Sunkern
+
+Azurill
+
+Igglybuff
+
+Sentret
+
+Poochyena
+
+Lotad
+
+Seedot
+
+Bunnelby
+
+Zigzagoon
+
+Zigzagoon Galar
+
+Whismur
+
+Starly
+
+Rookidee
+
+Nickit
+
+Bidoof
+
+Pidgey
+
+Rattata
+
+Rattata Alola
+
+Yungoos
+
+Lechonk
+
+Patrat
+
+Skitty
+
+Smoliv
+
+Hoothoot
+
+Shinx
+
+Pidove
+
+Pikipek
+
+Taillow
+
+Lillipup
+
+Skwovet
+
+Fletchling
+
+Mareep
+
+Purrloin
+
+=== TRAINER_POOL_ZONE_2 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Sunkern
+
+Azurill
+
+Igglybuff
+
+Sentret
+
+Poochyena
+
+Lotad
+
+Seedot
+
+Bunnelby
+
+Zigzagoon
+
+Zigzagoon Galar
+
+Whismur
+
+Starly
+
+Rookidee
+
+Nickit
+
+Bidoof
+
+Pidgey
+
+Rattata
+
+Rattata Alola
+
+Yungoos
+
+Lechonk
+
+Patrat
+
+Skitty
+
+Smoliv
+
+Hoothoot
+
+Shinx
+
+Pidove
+
+Pikipek
+
+Taillow
+
+Lillipup
+
+Skwovet
+
+Fletchling
+
+Pichu
+
+Mareep
+
+Purrloin
+
+Blipbug
+
+Burmy
+
+Kricketot
+
+Caterpie
+
+Weedle
+
+Wurmple
+
+Scatterbug
+
+Tarountula
+
+Combee
+
+Bounsweet
+
+Cleffa
+
+Fomantis
+
+Gossifleur
+
+Pawmi
+
+Ledyba
+
+Spinarak
+
+Wingull
+
+Hoppip
+
+Yamper
+
+Slakoth
+
+Tadbulb
+
+Nidoran M
+
+Nidoran F
+
+Cherubi
+
+Budew
+
+Paras
+
+
+=== TRAINER_POOL_ZONE_3 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Sunkern
+
+Azurill
+
+Igglybuff
+
+Sentret
+
+Poochyena
+
+Lotad
+
+Seedot
+
+Bunnelby
+
+Zigzagoon
+
+Zigzagoon Galar
+
+Whismur
+
+Starly
+
+Rookidee
+
+Nickit
+
+Bidoof
+
+Pidgey
+
+Rattata
+
+Rattata Alola
+
+Yungoos
+
+Lechonk
+
+Patrat
+
+Skitty
+
+Smoliv
+
+Hoothoot
+
+Shinx
+
+Pidove
+
+Pikipek
+
+Taillow
+
+Lillipup
+
+Skwovet
+
+Fletchling
+
+Pichu
+
+Mareep
+
+Purrloin
+
+Bounsweet
+
+Cleffa
+
+Fomantis
+
+Gossifleur
+
+Pawmi
+
+Ledyba
+
+Spinarak
+
+Wingull
+
+Hoppip
+
+Yamper
+
+Slakoth
+
+Tadbulb
+
+Nidoran M
+
+Nidoran F
+
+Cherubi
+
+Budew
+
+Paras
+
+Metapod
+
+Kakuna
+
+Silcoon
+
+Cascoon
+
+Chingling
+
+Venipede
+
+Wooper
+
+Wooper Paldea
+
+Wiglett
+
+Diglett
+
+Diglett Alola
+
+Slugma
+
+Nincada
+
+Surskit
+
+Milcery
+
+Spearow
+
+Wooloo
+
+Chewtle
+
+Ekans
+
+Barboach
+
+Tympole
+
+Foongus
+
+Shroomish
+
+Electrike
+
+Blitzle
+
+Vulpix
+
+Sandshrew
+
+Poliwag
+
+Bellsprout
+
+Snubbull
+
+Remoraid
+
+Grubbin
+
+Gulpin
+
+Flabébé
+
+Ducklett
+
+Marill
+
+Jigglypuff
+
+Pikachu
+
+Clefairy
+
+Glameow
+
+Mime Jr.
+
+Sewaddle
+
+Fidough
+
+Slowpoke
+
+Slowpoke Galar
+
+Pansage
+
+Pansear
+
+Panpour
+
+Oddish
+
+Psyduck
+
+Cubone
+
+Goldeen
+
+Woobat
+
+Phanpy
+
+Buizel
+
+Finneon
+
+Deerling
+
+Buneary
+
+Skiddo
+
+
+=== TRAINER_POOL_ZONE_4 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Chingling
+
+Venipede
+
+Wooper
+
+Wooper Paldea
+
+Wiglett
+
+Diglett
+
+Diglett Alola
+
+Slugma
+
+Nincada
+
+Surskit
+
+Milcery
+
+Spearow
+
+Wooloo
+
+Chewtle
+
+Ekans
+
+Barboach
+
+Tympole
+
+Foongus
+
+Shroomish
+
+Electrike
+
+Blitzle
+
+Vulpix
+
+Sandshrew
+
+Poliwag
+
+Bellsprout
+
+Snubbull
+
+Remoraid
+
+Grubbin
+
+Gulpin
+
+Flabébé
+
+Ducklett
+
+Marill
+
+Jigglypuff
+
+Pikachu
+
+Clefairy
+
+Dottler
+
+Glameow
+
+Mime Jr.
+
+Sewaddle
+
+Fidough
+
+Slowpoke
+
+Slowpoke Galar
+
+Pansage
+
+Pansear
+
+Panpour
+
+Spewpa
+
+Joltik
+
+Oddish
+
+Psyduck
+
+Cubone
+
+Goldeen
+
+Woobat
+
+Phanpy
+
+Buizel
+
+Finneon
+
+Deerling
+
+Buneary
+
+Skiddo
+
+Shelmet
+
+Karrablast
+
+Exeggcute
+
+Drowzee
+
+Stunky
+
+Trubbish
+
+Houndour
+
+Spoink
+
+Maschiff
+
+Spritzee
+
+Swirlix
+
+Espurr
+
+Rellor
+
+Cottonee
+
+Petilil
+
+Zubat
+
+Flittle
+
+Hatenna
+
+Impidimp
+
+Bonsly
+
+Gothita
+
+Solosis
+
+Munna
+
+Wattrel
+
+Morelull
+
+Inkay
+
+Meowth
+
+Meowth Alola
+
+Makuhita
+
+Nymble
+
+Tyrogue
+
+Minccino
+
+Cutiefly
+
+Capsakid
+
+
+=== TRAINER_POOL_ZONE_5 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Spearow
+
+Wooloo
+
+Chewtle
+
+Ekans
+
+Barboach
+
+Tympole
+
+Foongus
+
+Shroomish
+
+Electrike
+
+Blitzle
+
+Vulpix
+
+Sandshrew
+
+Poliwag
+
+Bellsprout
+
+Snubbull
+
+Remoraid
+
+Gulpin
+
+Flabébé
+
+Ducklett
+
+Marill
+
+Jigglypuff
+
+Pikachu
+
+Clefairy
+
+Dottler
+
+Glameow
+
+Mime Jr.
+
+Slowpoke
+
+Slowpoke Galar
+
+Joltik
+
+Oddish
+
+Psyduck
+
+Cubone
+
+Goldeen
+
+Woobat
+
+Phanpy
+
+Buizel
+
+Finneon
+
+Deerling
+
+Buneary
+
+Skiddo
+
+Shelmet
+
+Karrablast
+
+Exeggcute
+
+Drowzee
+
+Stunky
+
+Trubbish
+
+Houndour
+
+Spoink
+
+Maschiff
+
+Spritzee
+
+Swirlix
+
+Espurr
+
+Rellor
+
+Cottonee
+
+Petilil
+
+Zubat
+
+Flittle
+
+Hatenna
+
+Impidimp
+
+Bonsly
+
+Gothita
+
+Solosis
+
+Munna
+
+Wattrel
+
+Morelull
+
+Inkay
+
+Meowth
+
+Meowth Alola
+
+Makuhita
+
+Nymble
+
+Tyrogue
+
+Minccino
+
+Cutiefly
+
+Capsakid
+
+Helioptile
+
+Applin
+
+Rolycoly
+
+Vulpix Alola
+
+Sandshrew Alola
+
+Swinub
+
+Arrokuda
+
+Roggenrola
+
+Rockruff
+
+Nacli
+
+Geodude
+
+Geodude Alola
+
+Pineco
+
+Croagunk
+
+Venonat
+
+Mankey
+
+Machop
+
+Carvanha
+
+Numel
+
+Timburr
+
+Sizzlipede
+
+Tandemaus
+
+Binacle
+
+Corphish
+
+Swablu
+
+Clobbopus
+
+Natu
+
+Grimer
+
+Grimer Alola
+
+Krabby
+
+Shellos
+
+Drilbur
+
+Voltorb
+
+Voltorb Hisui
+
+Teddiursa
+
+Luvdisc
+
+Skorupi
+
+Clauncher
+
+Tentacool
+
+Koffing
+
+Crabrawler
+
+Meditite
+
+Scraggy
+
+Pancham
+
+Growlithe
+
+Growlithe Hisui
+
+=== TRAINER_POOL_ZONE_6 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Dottler
+
+Helioptile
+
+Applin
+
+Rolycoly
+
+Vulpix Alola
+
+Sandshrew Alola
+
+Swinub
+
+Arrokuda
+
+Roggenrola
+
+Rockruff
+
+Nacli
+
+Geodude
+
+Geodude Alola
+
+Pineco
+
+Croagunk
+
+Venonat
+
+Mankey
+
+Machop
+
+Carvanha
+
+Numel
+
+Timburr
+
+Sizzlipede
+
+Tandemaus
+
+Binacle
+
+Corphish
+
+Swablu
+
+Clobbopus
+
+Natu
+
+Grimer
+
+Grimer Alola
+
+Krabby
+
+Shellos
+
+Drilbur
+
+Voltorb
+
+Voltorb Hisui
+
+Teddiursa
+
+Luvdisc
+
+Skorupi
+
+Clauncher
+
+Tentacool
+
+Koffing
+
+Crabrawler
+
+Meditite
+
+Scraggy
+
+Pancham
+
+Growlithe
+
+Growlithe Hisui
+
+Mienfoo
+
+Rufflet
+
+Dewpider
+
+Litwick
+
+Bramblin
+
+Meowth Galar
+
+Trapinch
+
+Spheal
+
+Shroodle
+
+Greavard
+
+Sandile
+
+Horsea
+
+Shuppet
+
+Duskull
+
+Tinkatink
+
+Baltoy
+
+Snorunt
+
+Bronzor
+
+Klink
+
+Varoom
+
+Gimmighoul
+
+Yamask
+
+Yamask Galar
+
+Golett
+
+Bergmite
+
+Shellder
+
+Smoochum
+
+Vanillite
+
+Ferroseed
+
+Cubchoo
+
+Mareanie
+
+Sinistea
+
+Poltchageist
+
+Phantump
+
+Doduo
+
+Gastly
+
+Darumaka
+
+Darumaka Galar
+
+Silicobra
+
+Finizen
+
+Axew
+
+Skrelp
+
+Salandit
+
+Sandygast
+
+Magnemite
+
+Seel
+
+Dwebble
+
+Honedge
+
+Chinchou
+
+Delibird
+
+Aron
+
+Hippopotas
+
+Noibat
+
+Zorua
+
+Zorua Hisui
+
+Cufant
+
+Snover
+
+Cetoddle
+
+Cacnea
+
+Frillish
+
+Elgyem
+
+Pumpkaboo
+
+Toedscool
+
+Staryu
+
+Pawniard
+
+Stufful
+
+Rhyhorn
+
+Clamperl
+
+Mantyke
+
+Drifloon
+
+Glimmet
+
+Cranidos
+
+Shieldon
+
+Omanyte
+
+Kabuto
+
+Lileep
+
+Anorith
+
+Tirtouga
+
+Tyrunt
+
+Amaura
+
+Archen
+
+Wailmer
+
+Aipom
+
+Elekid
+
+Magby
+
+Litleo
+
+Nosepass
+
+Onix
+
+Lickitung
+
+Vullaby
+
+Mudbray
+
+Yanma
+
+Munchlax
+
+Porygon
+
+Spinda
+
+Farfetch'd
+
+Farfetch'd Galar
+
+=== TRAINER_POOL_ZONE_7_AND_8 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_7_AND_8_GRUNTS ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
