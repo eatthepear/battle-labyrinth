@@ -45,7 +45,7 @@ enum {
     TRAINER_PBL_KENNETH,
     TRAINER_PBL_KEVIN,
     TRAINER_PBL_DUDLEY,
-    // below is zone 5
+    // below is zone 6
     TRAINER_PBL_GILBERT,
     TRAINER_PBL_MELANIE,
     TRAINER_PBL_CONSTANCE,
