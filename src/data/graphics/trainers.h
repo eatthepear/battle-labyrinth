@@ -331,6 +331,15 @@ const u16 gTrainerPalette_KimonoGirl[] = INCBIN_U16("graphics/trainers/palettes/
 const u32 gTrainerFrontPic_Liza[] = INCBIN_U32("graphics/trainers/front_pics/liza.4bpp.smol");
 const u16 gTrainerPalette_Liza[] = INCBIN_U16("graphics/trainers/front_pics/liza.gbapal");
 
+const u32 gTrainerFrontPic_RainbowRocketGruntF[] = INCBIN_U32("graphics/trainers/front_pics/rainbow_rocket_grunt_f.4bpp.smol");
+const u16 gTrainerPalette_RainbowRocketGruntF[] = INCBIN_U16("graphics/trainers/front_pics/rainbow_rocket_grunt_f.gbapal");
+
+const u32 gTrainerFrontPic_RainbowRocketGruntM[] = INCBIN_U32("graphics/trainers/front_pics/rainbow_rocket_grunt_m.4bpp.smol");
+const u16 gTrainerPalette_RainbowRocketGruntM[] = INCBIN_U16("graphics/trainers/front_pics/rainbow_rocket_grunt_m.gbapal");
+
+const u32 gTrainerFrontPic_RainbowRocketGiovanni[] = INCBIN_U32("graphics/trainers/front_pics/rainbow_rocket_giovanni.4bpp.smol");
+const u16 gTrainerPalette_RainbowRocketGiovanni[] = INCBIN_U16("graphics/trainers/front_pics/rainbow_rocket_giovanni.gbapal");
+
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
 // gTrainerFrontPic/gTrainerPalette pointers, (e.g "gTrainerFrontPic_Hiker" and "gTrainerPalette_Hiker").
@@ -452,6 +461,9 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_SERENA, gTrainerFrontPic_Serena, gTrainerPalette_Serena),
     TRAINER_SPRITE(TRAINER_PIC_KIMONO_GIRL, gTrainerFrontPic_KimonoGirl, gTrainerPalette_KimonoGirl),
     TRAINER_SPRITE(TRAINER_PIC_LIZA, gTrainerFrontPic_Liza, gTrainerPalette_Liza),
+    TRAINER_SPRITE(TRAINER_PIC_RAINBOW_ROCKET_GRUNT_F, gTrainerFrontPic_RainbowRocketGruntF, gTrainerPalette_RainbowRocketGruntF),
+    TRAINER_SPRITE(TRAINER_PIC_RAINBOW_ROCKET_GRUNT_M, gTrainerFrontPic_RainbowRocketGruntM, gTrainerPalette_RainbowRocketGruntM),
+    TRAINER_SPRITE(TRAINER_PIC_RAINBOW_ROCKET_GIOVANNI, gTrainerFrontPic_RainbowRocketGiovanni, gTrainerPalette_RainbowRocketGiovanni),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

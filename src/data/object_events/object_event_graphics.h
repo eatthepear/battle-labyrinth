@@ -535,5 +535,11 @@ const u32 gObjectEventPic_Serena[] = INCBIN_U32("graphics/object_events/pics/peo
 const u16 gObjectEventPal_Serena[] = INCBIN_U16("graphics/object_events/pics/people/serena.gbapal");
 const u32 gObjectEventPic_KimonoGirl[] = INCBIN_U32("graphics/object_events/pics/people/kimono_girl.4bpp");
 const u16 gObjectEventPal_KimonoGirl[] = INCBIN_U16("graphics/object_events/pics/people/kimono_girl.gbapal");
+const u32 gObjectEventPic_RainbowRocketMemberF[] = INCBIN_U32("graphics/object_events/pics/people/rainbow_rocket_member_f.4bpp");
+const u16 gObjectEventPal_RainbowRocketMemberF[] = INCBIN_U16("graphics/object_events/pics/people/rainbow_rocket_member_f.gbapal");
+const u32 gObjectEventPic_RainbowRocketMemberM[] = INCBIN_U32("graphics/object_events/pics/people/rainbow_rocket_member_m.4bpp");
+const u16 gObjectEventPal_RainbowRocketMemberM[] = INCBIN_U16("graphics/object_events/pics/people/rainbow_rocket_member_m.gbapal");
+const u32 gObjectEventPic_RainbowRocketGiovanni[] = INCBIN_U32("graphics/object_events/pics/people/rainbow_rocket_giovanni.4bpp");
+const u16 gObjectEventPal_RainbowRocketGiovanni[] = INCBIN_U16("graphics/object_events/pics/people/rainbow_rocket_giovanni.gbapal");
 
 const u32 gFieldEffectObjectPic_SnowFootprints[] = INCBIN_U32("graphics/field_effects/pics/snow_footprints.4bpp");

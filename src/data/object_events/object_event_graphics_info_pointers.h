@@ -286,6 +286,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lady;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Serena;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KimonoGirl;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RareCandy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RainbowRocketMemberF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RainbowRocketMemberM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RainbowRocketGiovanni;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -563,6 +566,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SERENA] =                   &gObjectEventGraphicsInfo_Serena,
     [OBJ_EVENT_GFX_KIMONO_GIRL] =              &gObjectEventGraphicsInfo_KimonoGirl,
     [OBJ_EVENT_GFX_RARE_CANDY] =               &gObjectEventGraphicsInfo_RareCandy,
+    [OBJ_EVENT_GFX_RAINBOW_ROCKET_MEMBER_F] =  &gObjectEventGraphicsInfo_RainbowRocketMemberF,
+    [OBJ_EVENT_GFX_RAINBOW_ROCKET_MEMBER_M] =  &gObjectEventGraphicsInfo_RainbowRocketMemberM,
+    [OBJ_EVENT_GFX_RAINBOW_ROCKET_GIOVANNI] =  &gObjectEventGraphicsInfo_RainbowRocketGiovanni,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
 };

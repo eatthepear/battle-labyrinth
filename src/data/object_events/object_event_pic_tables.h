@@ -1497,3 +1497,15 @@ static const struct SpriteFrameImage sPicTable_KimonoGirl[] = {
 static const struct SpriteFrameImage sPicTable_RareCandy[] = {
     obj_frame_tiles(gObjectEventPic_RareCandy),
 };
+
+static const struct SpriteFrameImage sPicTable_RainbowRocketMemberF[] = {
+    overworld_ascending_frames(gObjectEventPic_RainbowRocketMemberF, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_RainbowRocketMemberM[] = {
+    overworld_ascending_frames(gObjectEventPic_RainbowRocketMemberM, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_RainbowRocketGiovanni[] = {
+    overworld_ascending_frames(gObjectEventPic_RainbowRocketGiovanni, 2, 4),
+};
