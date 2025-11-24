@@ -4687,13 +4687,21 @@ u16 GetHiddenGrottoSpecies(void)
 {
     u32 grottoId = VarGet(VAR_GROTTO_NUMBER);
     rng_value_t rng = LocalRandomSeed(gSaveBlock1Ptr->wildEncounterSeed + grottoId);
+    u32 rand1 = LocalRandom32(&rng) % 10;
+    u32 rand2;
+
+    if (FlagGet(FLAG_SYS_ALL_WILD_MONS))
+        rand2 = Random() % 3;
+    else
+        rand2 = LocalRandom32(&rng) % 3;
+
     // The first Grotto always contains something, even on Brutal
     if (grottoId != 0) {
         if (GetCurrentDifficultyLevel() >= DIFFICULTY_BRUTAL) {
-            if (LocalRandom32(&rng) % 10) {
+            if (rand1) {
                 return SPECIES_NONE;
             }
         }
     }
-    return sGrottoEncounters[grottoId][LocalRandom32(&rng) % 3];
+    return sGrottoEncounters[grottoId][rand2];
 }

@@ -1,6 +1,14 @@
 mapscripts HiddenGrotto_MapScripts {
-	MAP_SCRIPT_ON_RESUME {
+    MAP_SCRIPT_ON_TRANSITION {
 	    specialvar(VAR_GROTTO_SPECIES, GetHiddenGrottoSpecies)
+    }
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_TEMP_1, 0 {
+            setvar(VAR_TEMP_1, 1)
+            turnobject(LOCALID_PLAYER, DIR_NORTH)
+        }
+    ]
+	MAP_SCRIPT_ON_RESUME {
         if (var(VAR_GROTTO_SPECIES)) {
             copyvar(VAR_OBJ_GFX_ID_0, VAR_GROTTO_SPECIES)
             addvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_MON)
@@ -8,10 +16,4 @@ mapscripts HiddenGrotto_MapScripts {
             setflag(FLAG_TEMP_2)
         }
 	}
-    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-        VAR_TEMP_1, 0 {
-            setvar(VAR_TEMP_1, 1)
-            turnobject(LOCALID_PLAYER, DIR_NORTH)
-        }
-    ]
 }
