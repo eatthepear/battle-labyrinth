@@ -1172,7 +1172,7 @@ script EventScript_Notebook_Items {
 			case 5:
 				msgbox(format("The Sacred Ash now fully revives and heals your entire party."))
 			case 6:
-				msgbox(format("Mints cost reduced to ¥80."))
+				msgbox(format("Mints cost reduced to ¥80, and change natures permanently."))
 			case 7:
 				msgbox(format("Heart Scale cost increased to ¥2500."))
 			case 8:
