@@ -1155,7 +1155,8 @@ script EventScript_Notebook_Items {
 		dynmultipush("Mints", 6)
 		dynmultipush("Heart Scale", 7)
 		dynmultipush("Hex Orb", 8)
-		dynmultipush("Back", 9)
+		dynmultipush("Tera Shard", 9)
+		dynmultipush("Back", 10)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
@@ -1177,6 +1178,8 @@ script EventScript_Notebook_Items {
 			case 8:
 				msgbox(format("The Hexorb Key Item lets you pre-status Pokémon."))
 			case 9:
+				msgbox(format("Tera Shard cost reduced to ¥200."))
+			case 10:
 			case MULTI_B_PRESSED:
 				return
 		}
