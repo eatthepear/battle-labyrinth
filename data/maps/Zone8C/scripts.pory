@@ -86,19 +86,4 @@ Zone8C_Text_NeilDefeat:
 Zone8C_Text_NeilPostBattle:
        .string "Maybe it's on the other side\n"
        .string "of the mountain?$"
-
-Zone8C_EventScript_Tamara::
-       trainerbattle_single TRAINER_PBL_TAMARA, Zone8C_Text_TamaraIntro, Zone8C_Text_TamaraDefeat
-       msgbox Zone8C_Text_TamaraPostBattle, MSGBOX_AUTOCLOSE
-       end
-
-Zone8C_Text_TamaraIntro:
-	.string "If I win, you have to lead me out of here!$"
-
-Zone8C_Text_TamaraDefeat:
-	.string "Wahhhhh!!!$"
-
-Zone8C_Text_TamaraPostBattle:
-	.string "It's my destiny to wander this cave\n"
-	.string "forever…$"
 `

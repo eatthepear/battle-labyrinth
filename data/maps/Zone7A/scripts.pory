@@ -39,42 +39,89 @@ mapscripts Zone7A_MapScripts {
 }
 
 
-script Zone7A_EventScript_Beauty {
+// script Zone7A_EventScript_Beauty {
+// 	lock
+// 	faceplayer
+// 	if (flag(FLAG_ZONE7A_RECEIVED_WHIPPED_DREAM) && flag(FLAG_ZONE7A_RECEIVED_SACHET)) {
+// 		msgbox(format("I already gave you all the evolution items I have!"))
+// 		release
+// 		end
+// 	}
+// 	msgbox(format("Beautiful, Fairy-type Pokémon…\pI'll give you the corresponding evolution item if you show me a Swirlix or a Spritzee."), MSGBOX_YESNO)
+// 	if (var(VAR_RESULT) == YES) {
+// 		special(ChoosePartyMon)
+// 		waitstate
+// 		if (var(VAR_RESULT) != 255) {
+// 			specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+// 			switch(var(VAR_RESULT)) {
+// 				case SPECIES_SWIRLIX:
+// 					if (flag(FLAG_ZONE7A_RECEIVED_WHIPPED_DREAM) == false) {
+// 						msgbox(format("That Pokémon is absolutely stunning… Take this, as promised."))
+// 						giveitem(ITEM_WHIPPED_DREAM)
+// 						setflag(FLAG_ZONE7A_RECEIVED_WHIPPED_DREAM)
+// 					} else {
+// 						msgbox(format("I already gave you all the Swirlix evolution items I have!"))
+// 					}
+// 				case SPECIES_SPRITZEE:
+// 					if (flag(FLAG_ZONE7A_RECEIVED_SACHET) == false) {
+// 						msgbox(format("That Pokémon is absolutely stunning… Take this, as promised."))
+// 						giveitem(ITEM_SACHET)
+// 						setflag(FLAG_ZONE7A_RECEIVED_SACHET)
+// 					} else {
+// 						msgbox(format("I already gave you all the Spritzee evolution items I have!"))
+// 					}
+// 				default:
+// 					msgbox(format("That's not a Swirlix nor a Spritzee!"))
+// 			}
+// 		}
+// 	}
+// 	release
+// 	end
+// }
+
+script Zone7A_EventScript_Password {
+	lockall
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 9) {
+		applymovement(LOCALID_GRUNT_1, Common_Movement_WalkDown)
+		applymovement(LOCALID_GRUNT_2, Common_Movement_WalkUp2)
+		waitmovement(0)
+	} else {
+		applymovement(LOCALID_GRUNT_1, Common_Movement_WalkDown2)
+		applymovement(LOCALID_GRUNT_2, Common_Movement_WalkUp)
+		waitmovement(0)
+	}
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement(0)
+	msgbox(format("No password, no passing through.\pThis is by order of the Commander! Get lost, kid."))
+	if (var(VAR_ZONE_8_STATE) == 0) {
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+	} else {
+		msgbox(format("{PLAYER} told them the password: {COLOR BLUE}Dazzling{COLOR DARK_GRAY}!"))
+		setvar(VAR_ZONE_7_STATE, 1)
+		msgbox(format("Oh, I didn't realize we had some undercover grunts as well.\pVery well then, pass on through."))
+	}
+	if (var(VAR_TEMP_1) == 9) {
+		applymovement(LOCALID_GRUNT_1, Common_Movement_WalkUp)
+		applymovement(LOCALID_GRUNT_2, Common_Movement_WalkDown2)
+		waitmovement(0)
+	} else {
+		applymovement(LOCALID_GRUNT_1, Common_Movement_WalkUp2)
+		applymovement(LOCALID_GRUNT_2, Common_Movement_WalkDown)
+		waitmovement(0)
+	}
+	applymovement(LOCALID_GRUNT_1, Common_Movement_FaceDown)
+	applymovement(LOCALID_GRUNT_2, Common_Movement_FaceUp)
+	waitmovement(0)
+	releaseall
+	end
+}
+
+script Zone7A_EventScript_RichBoy {
 	lock
 	faceplayer
-	if (flag(FLAG_ZONE7A_RECEIVED_WHIPPED_DREAM) && flag(FLAG_ZONE7A_RECEIVED_SACHET)) {
-		msgbox(format("I already gave you all the evolution items I have!"))
-		release
-		end
-	}
-	msgbox(format("Beautiful, Fairy-type Pokémon…\pI'll give you the corresponding evolution item if you show me a Swirlix or a Spritzee."), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		special(ChoosePartyMon)
-		waitstate
-		if (var(VAR_RESULT) != 255) {
-			specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
-			switch(var(VAR_RESULT)) {
-				case SPECIES_SWIRLIX:
-					if (flag(FLAG_ZONE7A_RECEIVED_WHIPPED_DREAM) == false) {
-						msgbox(format("That Pokémon is absolutely stunning… Take this, as promised."))
-						giveitem(ITEM_WHIPPED_DREAM)
-						setflag(FLAG_ZONE7A_RECEIVED_WHIPPED_DREAM)
-					} else {
-						msgbox(format("I already gave you all the Swirlix evolution items I have!"))
-					}
-				case SPECIES_SPRITZEE:
-					if (flag(FLAG_ZONE7A_RECEIVED_SACHET) == false) {
-						msgbox(format("That Pokémon is absolutely stunning… Take this, as promised."))
-						giveitem(ITEM_SACHET)
-						setflag(FLAG_ZONE7A_RECEIVED_SACHET)
-					} else {
-						msgbox(format("I already gave you all the Spritzee evolution items I have!"))
-					}
-				default:
-					msgbox(format("That's not a Swirlix nor a Spritzee!"))
-			}
-		}
-	}
+	msgbox(format("Hey! This area isn't safe. There are strange people with space suits running amok.\pNow, I could let you through if you were to beat my aunt {COLOR BLUE}Betty{COLOR DARK_GRAY} in battle.\pShe's on vacation staying at the house at the base of these mountains."))
 	release
 	end
 }
@@ -388,4 +435,19 @@ Zone7A_Text_WhitakerDefeat:
 Zone7A_Text_WhitakerPostBattle:
 	.string "My birds need some time to sleep\n"
 	.string "in their nests!$"
+
+Zone7A_EventScript_Tamara::
+       trainerbattle_single TRAINER_PBL_TAMARA, Zone7A_Text_TamaraIntro, Zone7A_Text_TamaraDefeat
+       msgbox Zone7A_Text_TamaraPostBattle, MSGBOX_AUTOCLOSE
+       end
+
+Zone7A_Text_TamaraIntro:
+	.string "If I win, you have to lead me out of here!$"
+
+Zone7A_Text_TamaraDefeat:
+	.string "Wahhhhh!!!$"
+
+Zone7A_Text_TamaraPostBattle:
+	.string "It's my destiny to wander this cave\n"
+	.string "forever…$"
 `

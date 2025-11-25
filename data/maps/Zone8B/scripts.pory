@@ -18,6 +18,33 @@ mapscripts Zone8B_MapScripts {
 	}
 }
 
+script Zone8B_EventScript_GalacticGrunt {
+	lock
+	if (var(VAR_ZONE_8_STATE) != 0) {
+		msgbox(Zone8B_Text_GalacticGrunt)
+		release
+		end
+	}
+	msgbox(format("I can do this!\pI'm a strong, independent man!\pI can turn to the Commander and say, I quit!\pShe doesn't scare me one bit!"), MSGBOX_AUTOCLOSE)
+	delay(32)
+	msgbox(format("Sigh, who am I kidding. She'd probably mop the floor with me…"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_GRUNT, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	delay(16)
+	faceplayer
+	msgbox(format("You… You'll tell the Commander for me? Thank you so much!\pOh, but in order to get to her, you need the password: {COLOR BLUE}Dazzling{COLOR DARK_GRAY}!\pTell that to the guards, and they should let you through."))
+	setvar(VAR_ZONE_8_STATE, 1)
+	msgbox(Zone8B_Text_GalacticGrunt)
+	release
+	end
+}
+
+text Zone8B_Text_GalacticGrunt {
+	format("Now, I'm free! I can finally get rid of this silly uniform.\pIt's so uncomfortable!")
+}
+
 script Zone8B_EventScript_HardStone {
 	lock
 	if (flag(FLAG_ITEM_ZONE8B_HARD_STONE)) {
