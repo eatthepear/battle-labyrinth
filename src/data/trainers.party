@@ -856,27 +856,27 @@ Mugshot: Purple
 Munna @ Light Clay
 Calm Nature
 Ability: Synchronize
-Level: 15
+Level: 14
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psybeam
-- Psywave
+- Hypnosis
 - Light Screen
 - Reflect
 
-Dottler @ Silver Powder
-Modest Nature
+Spoink @ Light Clay
+Timid Nature
 Ability: Swarm
 Level: 14
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Confusion
-- Struggle Bug
+- Psybeam
+- Night Shade
 - Light Screen
 - Reflect
 
-Natu @ Wise Glasses
-Timid Nature
+Natu @ Light Clay
+Naive Nature
 Ability: Magic Bounce
-Level: 13
+Level: 14
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Air Cutter
 - Night Shade
@@ -884,12 +884,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Reflect
 
 Lunatone @ Sitrus Berry
-Lonely Nature
+Naughty Nature
 Ability: Levitate
-Level: 12
+Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Confusion
 - Rock Throw
+- Confusion
 - Light Screen
 - Reflect
 
@@ -906,27 +906,27 @@ Difficulty: Brutal
 Munna @ Light Clay
 Calm Nature
 Ability: Synchronize
-Level: 15
+Level: 14
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psybeam
-- Psywave
+- Hypnosis
 - Light Screen
 - Reflect
 
-Dottler @ Silver Powder
-Modest Nature
+Spoink @ Light Clay
+Timid Nature
 Ability: Swarm
 Level: 14
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Confusion
-- Struggle Bug
+- Psybeam
+- Night Shade
 - Light Screen
 - Reflect
 
-Natu @ Psychic Seed
-Timid Nature
+Natu @ Light Clay
+Naive Nature
 Ability: Magic Bounce
-Level: 15
+Level: 14
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Air Cutter
 - Night Shade
@@ -934,12 +934,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Reflect
 
 Lunatone @ Sitrus Berry
-Lonely Nature
+Bold Nature
 Ability: Levitate
-Level: 14
+Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ancient Power
 - Confusion
-- Rock Throw
 - Light Screen
 - Reflect
 
