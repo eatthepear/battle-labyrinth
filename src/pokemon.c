@@ -3357,6 +3357,7 @@ static const u16 RestrictedMoves[] =
     MOVE_WITHDRAW,
     MOVE_HARDEN,
     MOVE_DEFENSE_CURL,
+    MOVE_CHARGE,
     // medium ones
     MOVE_ACID_ARMOR,
     MOVE_AMNESIA,
