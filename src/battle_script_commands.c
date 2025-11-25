@@ -8373,13 +8373,13 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
         if (party == NULL)
             return 20;
         lastMonLevel = party[GetTrainerPartySizeFromId(effectiveTrainerId) - 1].lvl;
-        numMons = GetTrainerPartySizeFromId(effectiveTrainerId);
+        numMons = GetTrainerPartySizeFromId(trainerId);
         trainerMoney = (gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 2) * numMons;
         if (GetTrainerMugshotColorFromId(trainerId) == MUGSHOT_COLOR_GREEN)
             trainerMoney = 5 * numMons;
 
         if (lastMonLevel == 0)
-            lastMonLevel = GetRareCandyLevelCap() - 1;
+            lastMonLevel = (GetRareCandyLevelCap() - 1);
 
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
             moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
