@@ -1572,57 +1572,39 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_BETTY_LEVIATHAN_7 ===
 Name: Betty
-Class: Lady
-Pic: Lady
-Music: Female
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: Yes
-Mugshot: Green
-
-Dedenne @ Sitrus Berry
-Ability: Plus
-Level: 19
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shock Wave
-- Draining Kiss
-- Nuzzle
-- Charge Beam
-
-Drampa @ Sitrus Berry
-Ability: Cloud Nine
-Level: 19
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Breath
-- Glare
-- Natural Gift
-- Swift
-
-=== TRAINER_PBL_BETTY_LEVIATHAN_7_CHALLENGE ===
-Name: Betty
-Class: Lady
-Pic: Lady
+Class: Socialite
+Pic: Socialite
 Music: Female
 AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
 Mugshot: Green
 
-Dedenne @ Sitrus Berry
-Ability: Cheek Pouch
-Level: 19
+Drifloon @ Sitrus Berry
+Naughty Nature
+Ability: Unburden
+Level: 18
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shock Wave
+- Acrobatics
+- Hex
+- Will-O-Wisp
+
+Dedenne @ Sitrus Berry
+Timid Nature
+Ability: Cheek Pouch
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Parabolic Charge
 - Draining Kiss
 - Nuzzle
-- Charge Beam
 
-Drampa @ Sitrus Berry
-Ability: Berserk
-Level: 19
+Klawf @ Sitrus Berry
+Careful Nature
+Ability: Anger Shell
+Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Breath
-- Glare
-- Natural Gift
-- Swift
+- Rock Tomb
+- Bulldoze
+- Trailblaze
 
 === TRAINER_PBL_JIMMY ===
 Name: Jimmy

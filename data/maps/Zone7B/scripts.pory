@@ -4,11 +4,11 @@ script Zone7B_EventScript_LeviathanBattle {
 	lock
 	faceplayer
 	if (flag(FLAG_BEAT_LEVIATHAN_7) == true) {
-		msgbox(Zone7B_Text_LeviathanPost)
+		msgbox(format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: Your clothes are all covered in dirt.\pI think you could use a lesson in proper etiquette, what do you say?"))
 		release
 		end
 	}
-	msgbox(Zone7B_Text_Leviathan7WantBattle, MSGBOX_YESNO)
+	msgbox(format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: Your clothes are all covered in dirt.\pI think you could use a lesson in proper etiquette, what do you say?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		msgbox(format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: Well, I will be here, if you change your mind."))
 		release
@@ -17,11 +17,7 @@ script Zone7B_EventScript_LeviathanBattle {
 	fadeoutbgm(1)
 	msgbox(format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: I will show you how to behave in the prim and proper way!"), MSGBOX_DEFAULT)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	trainerbattle_no_intro(TRAINER_PBL_BETTY_LEVIATHAN_7_CHALLENGE, Zone7B_Text_Leviathan7Defeat)
-	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_BETTY_LEVIATHAN_7, Zone7B_Text_Leviathan7Defeat)
-	// }
+	trainerbattle_no_intro(TRAINER_PBL_BETTY_LEVIATHAN_7, format("It seems I was the one who ended up being humbled…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: Your battling skills are certainly up to par. Excellent form.\pAside from that, I'd like to give you these Berries.\pVery, very expensive, or so my butler tells me."), MSGBOX_DEFAULT)
 	giveitem(ITEM_SITRUS_BERRY, 5)
@@ -32,21 +28,11 @@ script Zone7B_EventScript_LeviathanBattle {
 	end
 }
 
-text Zone7B_Text_Leviathan7WantBattle {
-	format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: Your clothes are all covered in dirt.\pI think you could use a lesson in proper etiquette, what do you say?")
-}
-
-text Zone7B_Text_Leviathan7Defeat {
-	"It seems I was the one who ended\n"
-	"up being humbled…"
-}
-
 text Zone7B_Text_LeviathanPost {
-	format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: I've been staying here at my friend's house while our new mansion gets renovated.\pIsn't that exciting?")
+	format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: I've been staying here at my friend's house while our new mansion gets renovated.\pIsn't that exciting?\pThough, I've been hearing that there's some people dressed in space suits messing around in the caves.\pSounds rather frightening, wouldn't you say?")
 }
 
 raw `
-
 Zone7B_EventScript_Lady::
 	lock
 	faceplayer
