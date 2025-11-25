@@ -419,11 +419,11 @@ script Zone5A_EventScript_Rebecca {
 	end
 }
 
-script Zone5A_EventScript_Clinton {
-	trainerbattle_single(TRAINER_PBL_CLINTON, format("Perhaps if I bribed the Gym Leader, I would be able to get a badge!"), format("Unfortunately, I tried, and no dice!"))
-	msgbox(format("She requested a single battle instead.\pMaybe her brother isn't here or something?"), MSGBOX_AUTOCLOSE)
-	end
-}
+// script Zone5A_EventScript_Clinton {
+// 	trainerbattle_single(TRAINER_PBL_CLINTON, format("Perhaps if I bribed the Gym Leader, I would be able to get a badge!"), format("Unfortunately, I tried, and no dice!"))
+// 	msgbox(format("She requested a single battle instead.\pMaybe her brother isn't here or something?"), MSGBOX_AUTOCLOSE)
+// 	end
+// }
 
 script Zone5A_EventScript_Bill {
 	trainerbattle_single(TRAINER_PBL_BILL_OPTIONAL_2, format("This Rare Candy here can be used to increase your Pokémon's level over the level cap.\pYou won't get it easily!"), format("Use the Rare Candy carefully! Maybe to evolve your starter or something…"))

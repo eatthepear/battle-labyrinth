@@ -156,7 +156,7 @@ static const u32 sNumFoes[] =
     9,
     12,
     15,
-    15,
+    16,
     18
 };
 
