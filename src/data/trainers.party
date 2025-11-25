@@ -24,7 +24,7 @@ Optional (but still recommended) fields for trainers:
     - AI (Ai Flag / Another Flag / Third Flag / ...
           see "constants/battle_ai.h" for all flags)
     - Mugshot (enable Mugshots during battle transition
-               set to one of Purple, Green, Pink, Blue or Yellow)
+               set to one of Green, Green, Pink, Blue or Yellow)
     - Starting Status (see include/constants/battle.h for values)
 
 Pokemon are then specified using the Showdown Export format.
@@ -381,7 +381,7 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
-Mugshot: Purple
+Mugshot: Green
 Difficulty: Normal
 
 Bunnelby @ Oran Berry
@@ -415,7 +415,7 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
-Mugshot: Purple
+Mugshot: Green
 Difficulty: Brutal
 
 Bunnelby @ Oran Berry
@@ -544,7 +544,7 @@ Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
-Mugshot: Purple
+Mugshot: Green
 Difficulty: Normal
 
 Bidoof @ Chesto Berry
@@ -578,7 +578,7 @@ Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
-Mugshot: Purple
+Mugshot: Green
 Difficulty: Brutal
 
 Bidoof @ Chesto Berry
@@ -675,7 +675,7 @@ Pic: Sr And Jr
 Music: Twins
 AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
-Mugshot: Purple
+Mugshot: Green
 Difficulty: Normal
 
 Nickit @ Cheri Berry
@@ -709,7 +709,7 @@ Pic: Sr And Jr
 Music: Twins
 AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
-Mugshot: Purple
+Mugshot: Green
 Difficulty: Brutal
 
 Nickit @ Cheri Berry
@@ -1261,7 +1261,7 @@ Pic: Sis And Bro
 Music: Swimmer
 AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
-Mugshot: Purple
+Mugshot: Green
 
 Hatenna @ Chesto Berry
 Relaxed Nature
@@ -1285,7 +1285,7 @@ Pic: Sis And Bro
 Music: Swimmer
 AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
-Mugshot: Purple
+Mugshot: Green
 Difficulty: Brutal
 
 Hatenna @ Eviolite
@@ -1584,7 +1584,7 @@ Pic: Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
-Mugshot: Purple
+Mugshot: Green
 
 Dedenne @ Sitrus Berry
 Ability: Plus
@@ -1611,7 +1611,7 @@ Pic: Lady
 Music: Female
 AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
-Mugshot: Purple
+Mugshot: Green
 
 Dedenne @ Sitrus Berry
 Ability: Cheek Pouch
@@ -1916,7 +1916,7 @@ Pic: Roughneck
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Purple
+Mugshot: Green
 
 Grimer @ Poison Barb
 Ability: Poison Touch
@@ -1961,7 +1961,7 @@ Pic: Roughneck
 Music: Suspicious
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
-Mugshot: Purple
+Mugshot: Green
 
 Grimer @ Poison Barb
 Ability: Poison Touch
@@ -2814,7 +2814,7 @@ Pic: Pokemon Ranger F
 Music: Cool
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Purple
+Mugshot: Green
 
 Klawf @ Hard Stone
 Ability: Anger Shell
@@ -2859,7 +2859,7 @@ Pic: Pokemon Ranger F
 Music: Cool
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
-Mugshot: Purple
+Mugshot: Green
 
 Klawf @ Hard Stone
 Ability: Anger Shell
@@ -3131,7 +3131,7 @@ Pic: Scientist
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
-Mugshot: Purple
+Mugshot: Green
 
 Clefairy
 Ability: Friend Guard
@@ -3176,7 +3176,7 @@ Pic: Scientist
 Music: Intense
 AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
-Mugshot: Purple
+Mugshot: Green
 
 Clefairy @ Eviolite
 Ability: Friend Guard
@@ -3517,7 +3517,7 @@ Pic: Bug Maniac
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Purple
+Mugshot: Green
 
 Ariados
 Level: 25
@@ -3542,7 +3542,7 @@ Pic: Bug Maniac
 Music: Suspicious
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
-Mugshot: Purple
+Mugshot: Green
 
 Ariados
 Level: 25
