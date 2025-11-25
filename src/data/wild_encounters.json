@@ -253,17 +253,17 @@
               {
                 "min_level": 3,
                 "max_level": 4,
-                "species": "SPECIES_CATERPIE"
+                "species": "SPECIES_STARLY"
               },
               {
                 "min_level": 3,
                 "max_level": 4,
-                "species": "SPECIES_WEEDLE"
+                "species": "SPECIES_FLETCHLING"
               },
               {
                 "min_level": 3,
                 "max_level": 4,
-                "species": "SPECIES_SKWOVET"
+                "species": "SPECIES_PIDGEY"
               },
               {
                 "min_level": 3,
@@ -935,7 +935,17 @@
               {
                 "min_level": 11,
                 "max_level": 12,
-                "species": "SPECIES_SKWOVET"
+                "species": "SPECIES_ROOKIDEE"
+              },
+              {
+                "min_level": 11,
+                "max_level": 12,
+                "species": "SPECIES_FLETCHLING"
+              },
+              {
+                "min_level": 11,
+                "max_level": 12,
+                "species": "SPECIES_SPEAROW"
               },
               {
                 "min_level": 11,
@@ -945,17 +955,7 @@
               {
                 "min_level": 11,
                 "max_level": 12,
-                "species": "SPECIES_ROOKIDEE"
-              },
-              {
-                "min_level": 11,
-                "max_level": 12,
-                "species": "SPECIES_APPLIN"
-              },
-              {
-                "min_level": 11,
-                "max_level": 12,
-                "species": "SPECIES_PINECO"
+                "species": "SPECIES_TAILLOW"
               }
             ]
           }
@@ -4655,7 +4655,7 @@
               {
                 "min_level": 2,
                 "max_level": 3,
-                "species": "SPECIES_BLIPBUG"
+                "species": "SPECIES_BOUNSWEET"
               },
               {
                 "min_level": 2,
@@ -4675,7 +4675,7 @@
               {
                 "min_level": 2,
                 "max_level": 3,
-                "species": "SPECIES_HOOTHOOT"
+                "species": "SPECIES_APPLIN"
               }
             ]
           }
