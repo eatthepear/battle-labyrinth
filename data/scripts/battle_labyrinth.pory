@@ -1121,7 +1121,7 @@ script EventScript_Notebook_Battle {
 				))
 			case 1:
 				msgbox(format("There are hard level caps built in, which typically increase by 2-3 every Zone."))
-				msgbox(format("In a Zone, the amount of experience gained from a knocked out Pokémon is a flat number based on the current level cap, rather than being dependent on level or species."))
+				msgbox(format("In a Zone, the amount of experience gained from a knocked out Pokémon is a flat number based on the current level cap and the current zone, rather than being dependent on level or species."))
 				msgbox(format("Pokémon don't gain experience through wild battles, including capture, except on Easy difficulty."))
 			case 2:
 				msgbox(format("Frostbite replaces Freeze, as in Legends: Arceus.\pThe move Refresh heals Frostbite."))

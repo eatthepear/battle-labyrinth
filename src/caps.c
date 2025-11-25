@@ -150,3 +150,32 @@ u32 GetCurrentEVCap(void)
 
     return MAX_TOTAL_EVS;
 }
+
+static const u32 sNumFoes[] =
+{
+    9,
+    12,
+    15,
+    15,
+    18
+};
+
+u32 GetExpValue(void)
+{
+    u32 i;
+    u32 levelCap;
+    u32 levelCapMinusTwo;
+    u32 numFoes;
+    for (i = 0; i < ARRAY_COUNT(sNumFoes); i++)
+    {
+        if (VarGet(VAR_LEVEL_CAP) == i)
+        {
+            levelCap = sLevelCapFlagMap[i];
+            levelCapMinusTwo = levelCap - 2;
+            numFoes = sNumFoes[i];
+            return (levelCap * levelCap * levelCap - levelCapMinusTwo * levelCapMinusTwo * levelCapMinusTwo) * 1000 / numFoes / 575;
+        }
+    }
+
+    return 1;
+}
