@@ -139,11 +139,6 @@ script Zone10B_EventScript_DragonTamer {
 			!defeated(TRAINER_PBL_JONATHAN) ||
 			!defeated(TRAINER_PBL_CALVIN) ||
 			!defeated(TRAINER_PBL_LUIS) ||
-			(!defeated(TRAINER_PBL_ARI) && !defeated(TRAINER_PBL_ARI_CHALLENGE)) || 
-			(!defeated(TRAINER_PBL_BERTHA) && !defeated(TRAINER_PBL_BERTHA_CHALLENGE)) || 
-			(!defeated(TRAINER_PBL_CASSANDRA) && !defeated(TRAINER_PBL_CASSANDRA_CHALLENGE)) || 
-			(!defeated(TRAINER_PBL_DOMINIC) && !defeated(TRAINER_PBL_DOMINIC_CHALLENGE)) || 
-			(!defeated(TRAINER_PBL_ERICA) && !defeated(TRAINER_PBL_ERICA_CHALLENGE)) || 
 			!defeated(TRAINER_PBL_ALANA) ||
 			!defeated(TRAINER_PBL_JACOB) ||
 			!defeated(TRAINER_PBL_DEWEY) ||

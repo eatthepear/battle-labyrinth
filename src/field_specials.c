@@ -4473,7 +4473,6 @@ u16 GetNumTrainersRemaining(void)
         count += !HasTrainerBeenFought(TRAINER_PBL_JONATHAN);
         count += !HasTrainerBeenFought(TRAINER_PBL_CALVIN);
         count += !HasTrainerBeenFought(TRAINER_PBL_LUIS);
-        count += 5 * !(HasTrainerBeenFought(TRAINER_PBL_ERICA) || HasTrainerBeenFought(TRAINER_PBL_ERICA_CHALLENGE));
         break;
     case 10:
         count += !HasTrainerBeenFought(TRAINER_PBL_ALANA);
