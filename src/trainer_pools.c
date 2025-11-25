@@ -379,7 +379,7 @@ static const u16 bossSpecies[] = {
     SPECIES_SKWOVET,
     SPECIES_GULPIN,
 
-    SPECIES_FARFETCHD,
+    SPECIES_WOOBAT,
     SPECIES_LUVDISC,
     SPECIES_DELCATTY,
 
@@ -394,13 +394,20 @@ static const u16 bossSpecies[] = {
     SPECIES_AXEW,
 
     SPECIES_DELIBIRD,
-    SPECIES_UNOWN,
+    SPECIES_FARFETCHD,
     SPECIES_SPINDA,
 
     SPECIES_MUNNA,
-    SPECIES_DOTTLER,
+    SPECIES_SPOINK,
     SPECIES_NATU,
     SPECIES_LUNATONE,
+
+    SPECIES_GOLDEEN,
+    SPECIES_MANTYKE,
+    SPECIES_CORSOLA,
+
+    SPECIES_CRAMORANT,
+    SPECIES_LUMINEON,
 };
 
 static void PruneBossMons(const struct Trainer *trainer, u8 *poolIndexArray, const struct PoolRules *rules)

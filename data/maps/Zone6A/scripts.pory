@@ -41,6 +41,11 @@ script Zone6A_EventScript_LeviathanBattle {
 	fadeoutbgm(1)
 	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Who do you think you are?"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		setweather(WEATHER_RAIN)
+		doweather
+		msgbox("It suddenly began to rain!")
+	}
 	closemessage
 	trainerbattle_no_intro(TRAINER_PBL_MINA, "Rain, rain, go away…")
 	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Uh, sorry I was so angry at you.\pI didn't mean to… You're just passing by. Sorry!"), MSGBOX_AUTOCLOSE)
@@ -61,6 +66,8 @@ script Zone6A_EventScript_LeviathanBattle {
 	msgbox(format("{COLOR BLUE}Zack{COLOR DARK_GRAY}: Combined family attack!"))
 	trainerbattle_no_intro(TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6, format("Our family loses together!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	resetweather
+	doweather
 	msgbox(format("{COLOR BLUE}Coby{COLOR DARK_GRAY}: Whew! You're a tough nut to crack. But we'll crush you for messing with our family!"))
 	msgbox(format("{COLOR BLUE}Mina{COLOR DARK_GRAY}: Wait! Just listen!"))
 	applymovement(LOCALID_COBY, Common_Movement_ExclamationMark)

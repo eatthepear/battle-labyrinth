@@ -513,13 +513,13 @@ Music: Female
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
-Farfetch'd @ Leek
+Woobat @ Cheri Berry
 Hasty Nature
-Ability: Swift Swim
+Ability: Unaware
 Level: 9
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Peck
-- False Swipe
+- Confusion
+- Gust
 
 Luvdisc @ Wise Glasses
 Mild Nature
@@ -827,12 +827,14 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Aurora Beam
 - Present
 
-Unown @ Twisted Spoon
-Timid Nature
-Ability: Levitate
+Farfetch'd @ Leek
+Jolly Nature
+Ability: Inner Focus
 Level: 13
-IVs: 31 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
-- Hidden Power
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aerial Ace
+- Quick Attack
+- Fury Cutter
 
 Spinda @ Sitrus Berry
 Hasty Nature
@@ -1231,8 +1233,8 @@ AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
 Goldeen @ Chesto Berry
-Hasty Nature
-Ability: Lightning Rod
+Mild Nature
+Ability: Swift Swim
 Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pulse
@@ -1240,7 +1242,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Mantyke @ Cheri Berry
 Naughty Nature
-Ability: Water Absorb
+Ability: Swift Swim
 Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bubble Beam
@@ -1263,12 +1265,13 @@ AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
 Mugshot: Green
 
-Hatenna @ Chesto Berry
-Relaxed Nature
-Ability: Anticipation
+Cramorant @ Sitrus Berry
+Hasty Nature
+Ability: Gulp Missile
 Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Life Dew
+- Surf
+- Water Gun
 
 Lumineon @ Sitrus Berry
 Timid Nature
@@ -1288,12 +1291,13 @@ Double Battle: Yes
 Mugshot: Green
 Difficulty: Brutal
 
-Hatenna @ Eviolite
-Relaxed Nature
-Ability: Magic Bounce
+Cramorant @ Sitrus Berry
+Hasty Nature
+Ability: Gulp Missile
 Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Life Dew
+- Surf
+- Water Gun
 
 Lumineon @ Sitrus Berry
 Timid Nature
