@@ -666,7 +666,6 @@ script Sanctuary_EventScript_GameIntro {
 	}
 	call(EventScript_GameIntro_Difficulty)
 	call(EventScript_GameIntro_Nuzlocke)
-	call(EventScript_GameIntro_Encounters)
 	if (flag(FLAG_SETTINGS_NUZLOCKE)) {
 		msgbox(format("As a new challenger, you will receive a starter Pokémon.\p"
 		"On {COLOR RED}Nuzlocke{COLOR DARK_GRAY}, your choice is limited from the pool of possible starters to only three options.\p"
@@ -810,32 +809,6 @@ script EventScript_GameIntro_Nuzlocke {
 			case MULTI_B_PRESSED:
 				msgbox(format("{COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode disabled."))
 				return
-		}
-	}
-}
-
-script EventScript_GameIntro_Encounters {
-	while {
-		message(format("Would you like to enable Encounter Overcrowding?"))
-		waitmessage
-		dynmultichoice(20, 6, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Info", "Yes", "No")
-		switch (var(VAR_RESULT)) {
-			case 0:
-				msgbox(format("By default, for a given save file, the possible wild encounters are randomly chosen from a limited pool.\pFor example, on a map with grass encounters, there are typically 6 species you can actually encounter, chosen randomly when you start your save file out of 12 total species.\pEncounter Overcrowding makes it so all 12 species are encounterable in the wild.\pThis typically causes routes to feel overcrowded, hence it is disabled by default.\pIf you'd like to use a specific Pokémon species, it is recommended to enable Encounter Overcrowding."))
-			case 1:
-				msgbox(format("Are you sure you want to enable Encounter Overcrowding?"), MSGBOX_YESNO)
-				if (var(VAR_RESULT) == YES) {
-					setflag(FLAG_SYS_ALL_WILD_MONS)
-					msgbox(format("Encounter Overcrowding enabled."))
-					return
-				}
-			case 2:
-			case MULTI_B_PRESSED:
-				msgbox(format("Are you sure you want to disable Encounter Overcrowding?"), MSGBOX_YESNO)
-				if (var(VAR_RESULT) == YES) {
-					msgbox(format("Encounter Overcrowding disabled."))
-					return
-				}
 		}
 	}
 }
@@ -3544,5 +3517,33 @@ script ZoneSanctuary_EventScript_SchoolKidF {
 	lock
 	faceplayer
 	msgbox(format("Did you know? Honey can be slathered on Honey Trees, or used in the field to attract multiple wild Pokémon at the same time!\pYou can buy Honey at the Farmer's Stand, where my older sister works!"))
+	release
+}
+
+script EventScript_RangerF {
+	lock
+	faceplayer
+	message(format("Hey there, challenger! Would you like to enable Encounter Overcrowding?"))
+	waitmessage
+	dynmultichoice(20, 6, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Info", "Yes", "No", "Exit")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			msgbox(format("By default, for a given save file, the possible wild encounters are randomly chosen from a limited pool.\pFor example, on a map with grass encounters, there are typically 6 species you can actually encounter, chosen randomly when you start your save file out of 12 total species.\pEncounter Overcrowding makes it so all 12 species are encounterable in the wild.\pThis typically causes routes to feel overcrowded, hence it is disabled by default.\pIf you'd like to use a specific Pokémon species, it is recommended to enable Encounter Overcrowding."))
+		case 1:
+			msgbox(format("Are you sure you want to enable Encounter Overcrowding?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				setflag(FLAG_SYS_ALL_WILD_MONS)
+				msgbox(format("Encounter Overcrowding enabled."))
+				return
+			}
+		case 2:
+			msgbox(format("Are you sure you want to disable Encounter Overcrowding?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				clearflag(FLAG_SYS_ALL_WILD_MONS)
+				msgbox(format("Encounter Overcrowding disabled."))
+				return
+			}
+	}
+	msgbox(format("Come on back if you change your mind!"))
 	release
 }
