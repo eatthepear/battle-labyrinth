@@ -83,14 +83,16 @@ script Zone7A_EventScript_Password {
 	lockall
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 9) {
-		applymovement(LOCALID_GRUNT_1, Common_Movement_WalkDown)
-		applymovement(LOCALID_GRUNT_2, Common_Movement_WalkUp2)
+		applymovement(LOCALID_GRUNT_1_7A, Common_Movement_WalkDown)
+		applymovement(LOCALID_GRUNT_2_7A, Common_Movement_WalkUp2)
 		waitmovement(0)
 	} else {
-		applymovement(LOCALID_GRUNT_1, Common_Movement_WalkDown2)
-		applymovement(LOCALID_GRUNT_2, Common_Movement_WalkUp)
+		applymovement(LOCALID_GRUNT_1_7A, Common_Movement_WalkDown2)
+		applymovement(LOCALID_GRUNT_2_7A, Common_Movement_WalkUp)
 		waitmovement(0)
 	}
+	applymovement(LOCALID_GRUNT_1_7A, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
 	waitmovement(0)
 	msgbox(format("No password, no passing through.\pThis is by order of the Commander! Get lost, kid."))
@@ -101,18 +103,25 @@ script Zone7A_EventScript_Password {
 		msgbox(format("{PLAYER} told them the password: {COLOR BLUE}Dazzling{COLOR DARK_GRAY}!"))
 		setvar(VAR_ZONE_7_STATE, 1)
 		msgbox(format("Oh, I didn't realize we had some undercover grunts as well.\pVery well then, pass on through."))
+		applymovement(LOCALID_GRUNT_2_7A, Common_Movement_WalkInPlaceUp)
+		waitmovement(0)
+		applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
+		waitmovement(0)
+		msgbox(format("You idiot! This is just some kid! Let's get this nuisance out of here, before the Commander notices!"))
+		// trainerbattle_two_trainers()
+		msgbox(format("Argh…"))
 	}
 	if (var(VAR_TEMP_1) == 9) {
-		applymovement(LOCALID_GRUNT_1, Common_Movement_WalkUp)
-		applymovement(LOCALID_GRUNT_2, Common_Movement_WalkDown2)
+		applymovement(LOCALID_GRUNT_1_7A, Common_Movement_WalkUp)
+		applymovement(LOCALID_GRUNT_2_7A, Common_Movement_WalkDown2)
 		waitmovement(0)
 	} else {
-		applymovement(LOCALID_GRUNT_1, Common_Movement_WalkUp2)
-		applymovement(LOCALID_GRUNT_2, Common_Movement_WalkDown)
+		applymovement(LOCALID_GRUNT_1_7A, Common_Movement_WalkUp2)
+		applymovement(LOCALID_GRUNT_2_7A, Common_Movement_WalkDown)
 		waitmovement(0)
 	}
-	applymovement(LOCALID_GRUNT_1, Common_Movement_FaceDown)
-	applymovement(LOCALID_GRUNT_2, Common_Movement_FaceUp)
+	applymovement(LOCALID_GRUNT_1_7A, Common_Movement_FaceDown)
+	applymovement(LOCALID_GRUNT_2_7A, Common_Movement_FaceUp)
 	waitmovement(0)
 	releaseall
 	end

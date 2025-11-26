@@ -2268,6 +2268,10 @@ movement Common_Movement_WalkRight6 {
 	walk_right * 6
 }
 
+movement Common_Movement_WalkInPlaceUp {
+	walk_in_place_up
+}
+
 script EventScript_UseFlash_PBL {
 	msgbox(format("{PLAYER} used the Flashlight!"), MSGBOX_DEFAULT)
 	closemessage
