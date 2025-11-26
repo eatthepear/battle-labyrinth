@@ -92,8 +92,8 @@ static OldMan *sOldManSave;
 static struct DewfordTrend *sDewfordTrendsSave;
 static UNUSED struct RecordMixingDaycareMail *sRecordMixMailSave;
 static void *sBattleTowerSave;
-static LilycoveLady *sLilycoveLadySave;
-static void *sApprenticesSave;
+static UNUSED LilycoveLady *sLilycoveLadySave;
+static UNUSED void *sApprenticesSave;
 static UNUSED void *sBattleTowerSave_Duplicate;
 static u32 sRecordStructSize;
 static u8 sDaycareMailRandSum;
@@ -171,7 +171,7 @@ void RecordMixingPlayerSpotTriggered(void)
 }
 
 // these variables were const in R/S, but had to become changeable because of saveblocks changing RAM position
-static void SetSrcLookupPointers(void)
+static UNUSED void SetSrcLookupPointers(void)
 {
 #if FREE_OTHER_PBL == FALSE
     sSecretBasesSave = gSaveBlock1Ptr->secretBases;
@@ -187,7 +187,7 @@ static void SetSrcLookupPointers(void)
 #endif //FREE_OTHER_PBL
 }
 
-static void PrepareUnknownExchangePacket(struct PlayerRecordRS *dest)
+static UNUSED void PrepareUnknownExchangePacket(struct PlayerRecordRS *dest)
 {
     memcpy(dest->secretBases, sSecretBasesSave, sizeof(dest->secretBases));
     memcpy(dest->tvShows, sTvShowsSave, sizeof(dest->tvShows));
@@ -202,7 +202,7 @@ static void PrepareUnknownExchangePacket(struct PlayerRecordRS *dest)
         dest->giftItem = GetRecordMixingGift();
 }
 
-static void PrepareExchangePacketForRubySapphire(struct PlayerRecordRS *dest)
+static UNUSED void PrepareExchangePacketForRubySapphire(struct PlayerRecordRS *dest)
 {
 #if FREE_OTHER_PBL == FALSE
     memcpy(dest->secretBases, sSecretBasesSave, sizeof(dest->secretBases));
@@ -1066,7 +1066,7 @@ static void Task_DoRecordMixing(u8 taskId)
     }
 }
 
-static void GetSavedApprentices(struct Apprentice *dst, struct Apprentice *src)
+static UNUSED void GetSavedApprentices(struct Apprentice *dst, struct Apprentice *src)
 {
     s32 i, id;
     s32 apprenticeSaveId, oldPlayerApprenticeSaveId;
@@ -1385,7 +1385,7 @@ static void GetRecordMixingDaycareMail(struct RecordMixingDaycareMail *dst)
 #endif //FREE_OTHER_PBL
 }
 
-static void SanitizeDaycareMailForRuby(struct RecordMixingDaycareMail *src)
+static UNUSED void SanitizeDaycareMailForRuby(struct RecordMixingDaycareMail *src)
 {
     s32 i;
 
@@ -1402,12 +1402,12 @@ static void SanitizeDaycareMailForRuby(struct RecordMixingDaycareMail *src)
     }
 }
 
-static void SanitizeRubyBattleTowerRecord(struct RSBattleTowerRecord *src)
+static UNUSED void SanitizeRubyBattleTowerRecord(struct RSBattleTowerRecord *src)
 {
 
 }
 
-static void SanitizeEmeraldBattleTowerRecord(struct EmeraldBattleTowerRecord *dst)
+static UNUSED void SanitizeEmeraldBattleTowerRecord(struct EmeraldBattleTowerRecord *dst)
 {
     s32 i;
 
