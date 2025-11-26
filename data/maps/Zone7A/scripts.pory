@@ -127,6 +127,14 @@ script Zone7A_EventScript_Password {
 	end
 }
 
+script Zone7A_EventScript_Grunt {
+	lock
+	faceplayer
+	msgbox(format("Argh… The Commander is not going to be happy…"))
+	release
+	end
+}
+
 script Zone7A_EventScript_RichBoy {
 	lock
 	faceplayer

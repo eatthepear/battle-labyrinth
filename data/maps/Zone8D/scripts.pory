@@ -2,47 +2,47 @@ mapscripts Zone8D_MapScripts {}
 
 script Zone8D_EventScript_LeviathanBattle {
 	lockall
-	applymovement(2, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_MARS, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_0) == 3) {
-		applymovement(2, Common_Movement_WalkLeft2)
+		applymovement(LOCALID_MARS, Common_Movement_WalkLeft2)
 		waitmovement(0)
 	} elif (var(VAR_TEMP_0) == 4) {
-		applymovement(2, Common_Movement_WalkLeft)
+		applymovement(LOCALID_MARS, Common_Movement_WalkLeft)
 		waitmovement(0)
 	} elif (var(VAR_TEMP_0) == 6) {
-		applymovement(2, Common_Movement_WalkRight)
+		applymovement(LOCALID_MARS, Common_Movement_WalkRight)
 		waitmovement(0)
 	} elif (var(VAR_TEMP_0) == 7) {
-		applymovement(2, Common_Movement_WalkRight2)
+		applymovement(LOCALID_MARS, Common_Movement_WalkRight2)
 		waitmovement(0)
 	}
-	applymovement(2, Common_Movement_WalkDown2)
+	applymovement(LOCALID_MARS, Common_Movement_WalkDown2)
 	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Alistair{COLOR DARK_GRAY}: Well, well, well. You're almost out, but you have another challenge to face: me.\pReady to duke it out?"), MSGBOX_YESNO)
+	msgbox(format("{COLOR BLUE}Mars{COLOR DARK_GRAY}: Well, well, well. I was wondering what sort of pest had wandered in.\pBut it turns out to be just a child.\pListen well, child. If you win, we, Team Galactic, will leave. If I win, all your Pokémon are mine.\pFancy a gamble?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Well, if you're not ready, I respect it."), MSGBOX_AUTOCLOSE)
+		msgbox(format("Well, if you're not ready, that works out for both of us."), MSGBOX_AUTOCLOSE)
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
 		waitmovement(0)
 		if (var(VAR_TEMP_0) == 3) {
-			applymovement(2, Common_Movement_WalkRight2)
+			applymovement(LOCALID_MARS, Common_Movement_WalkRight2)
 			waitmovement(0)
 		} elif (var(VAR_TEMP_0) == 4) {
-			applymovement(2, Common_Movement_WalkRight)
+			applymovement(LOCALID_MARS, Common_Movement_WalkRight)
 			waitmovement(0)
 		} elif (var(VAR_TEMP_0) == 6) {
-			applymovement(2, Common_Movement_WalkLeft)
+			applymovement(LOCALID_MARS, Common_Movement_WalkLeft)
 			waitmovement(0)
 		} elif (var(VAR_TEMP_0) == 7) {
-			applymovement(2, Common_Movement_WalkLeft2)
+			applymovement(LOCALID_MARS, Common_Movement_WalkLeft2)
 			waitmovement(0)
 		}
-		applymovement(2, Common_Movement_WalkUp2)
+		applymovement(LOCALID_MARS, Common_Movement_WalkUp2)
 		waitmovement(0)
-		applymovement(2, Common_Movement_FaceDown)
+		applymovement(LOCALID_MARS, Common_Movement_FaceDown)
 		waitmovement(0)
 		releaseall
 		end
@@ -62,8 +62,8 @@ script Zone8D_EventScript_LeviathanBattle {
 	msgbox(format("{COLOR BLUE}Alistair{COLOR DARK_GRAY}: It's a tough world out there. Watch your step."))
 	closemessage
 	fadescreenswapbuffers(FADE_TO_BLACK)
-	removeobject(2)
-	setvar(VAR_ZONE_8_STATE, 1)
+	removeobject(LOCALID_MARS)
+	setvar(VAR_ZONE_8_STATE, 2)
 	setflag(FLAG_BEAT_LEVIATHAN_8)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	release
