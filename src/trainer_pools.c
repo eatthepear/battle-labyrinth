@@ -1,5 +1,6 @@
 #include "global.h"
 #include "data.h"
+#include "item.h"
 #include "malloc.h"
 #include "pokedex.h"
 #include "pokemon.h"
@@ -228,6 +229,10 @@ static u32 PickMonFromPool(const struct Trainer *trainer, u8 *poolIndexArray, u3
                     poolIndexArray[currIndex] = POOL_SLOT_DISABLED;
                 }
             }
+            if (rules->megaStoneClause && gItemsInfo[currentItem].sortType == ITEM_TYPE_MEGA_STONE && gItemsInfo[chosenItem].sortType == ITEM_TYPE_MEGA_STONE)
+                poolIndexArray[currIndex] = POOL_SLOT_DISABLED;
+            if (rules->zCrystalClause && gItemsInfo[currentItem].sortType == ITEM_TYPE_Z_CRYSTAL && gItemsInfo[chosenItem].sortType == ITEM_TYPE_Z_CRYSTAL)
+                poolIndexArray[currIndex] = POOL_SLOT_DISABLED;
             if (rules->uniqueTypeClause)
             {
                 u8 chosenType1 = GetSpeciesType(chosenSpecies, 0);

@@ -564,6 +564,9 @@ gSpecials::
 	def_special EnterCode
 	def_special GetCodeFeedback
 	def_special SetHiddenNature
+	def_special SetAbility
+	def_special ObjectEventInteractionGetApricornTreeData
+	def_special ObjectEventInteractionPickApricornTree
 	def_special ChooseItemFromBag
 	def_special SendChosenMonToPC
 	def_special HeadbuttWildEncounter

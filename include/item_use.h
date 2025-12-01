@@ -57,6 +57,8 @@ void ItemUseOutOfBattle_Flashlight(u8);
 void ItemUseOutOfBattle_PowerGlove(u8);
 void ItemUseOutOfBattle_InfiniteRepel(u8 taskId);
 void ItemUseOutOfBattle_Notebook(u8 taskId);
+bool8 ItemfinderCheckForHiddenItems(const struct MapEvents *, u8);
+u8 GetDirectionToHiddenItem(s16, s16);
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,
