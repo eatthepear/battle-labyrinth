@@ -42,7 +42,8 @@ script EventScript_Max {
 }
 
 script EventScript_Shop_Max {
-	message(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: Hi {PLAYER}! Long time no see!\pWelcome to my TM shop!"))
+	setspeaker("Max")
+	message(format("Hi {PLAYER}! Long time no see!\pWelcome to my TM shop!"))
 	waitmessage
 	switch(var(VAR_ZONE)) {
 		case 2:
@@ -54,7 +55,8 @@ script EventScript_Shop_Max {
 		case 18:
 			pokemart(Zone18A_Shop_TMShop)
 	}
-	msgbox(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: Goodbye!"), MSGBOX_AUTOCLOSE)
+	setspeaker("Max")
+	msgbox(format("Goodbye!"), MSGBOX_AUTOCLOSE)
 }
 
 mart Zone2A_Shop_TMShop {
@@ -1497,6 +1499,7 @@ script Zone9A_EventScript_HerbalSign {
 
 script EventScript_Difficulty_Info {
 	while {
+		setspeaker("Colress")
 		message(format("Which difficulty would you like to know about?"))
 		waitmessage
 		switch (var(VAR_DIFFICULTY)) {

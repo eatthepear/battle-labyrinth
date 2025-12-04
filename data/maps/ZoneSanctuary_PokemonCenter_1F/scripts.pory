@@ -7,9 +7,13 @@ script EventScript_Joy {
 	faceplayer
 	if (flag(FLAG_JOY_INTRO) == false) {
 		setflag(FLAG_JOY_INTRO)
-		msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Welcome to Joy's Center of Restoration! My name is Joy.\p{COLOR BLUE}Joy{COLOR DARK_GRAY}: I used to work at the Pokémon Center, but they gave terrible pay.\pSo now, this building, Joy's Center of Restoration, is my own! I own it! Isn't that amazing?\pAnyways, not only do we encourage folks to use the building as a social space, we also still heal your Pokémon and offer access to the PC, for free!"), MSGBOX_DEFAULT)
+		setspeaker("???")
+		msgbox(format("Welcome to Joy's Center of Restoration! My name is Joy."))
+		setspeaker("Joy")
+		msgbox(format("I used to work at the Pokémon Center, but they gave terrible pay.\pSo now, this building, Joy's Center of Restoration, is my own! I own it! Isn't that amazing?\pAnyways, not only do we encourage folks to use the building as a social space, we also still heal your Pokémon and offer access to the PC, for free!"), MSGBOX_DEFAULT)
 	}
-	msgbox(format("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Welcome! Should I heal your Pokémon?"), MSGBOX_YESNO)
+	setspeaker("Joy")
+	msgbox(format("Welcome! Should I heal your Pokémon?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		closemessage
 		incrementgamestat(GAME_STAT_USED_POKECENTER)
@@ -22,7 +26,7 @@ script EventScript_Joy {
 		callnative(UpdateFollowingPokemon)
 		applymovement(LOCALID_JOY, Movement_PkmnCenterNurse_Bow)
 		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Joy{COLOR DARK_GRAY}: Your Pokémon have been restored. See you next time!"), MSGBOX_AUTOCLOSE)
+		msgbox(format("Your Pokémon have been restored. See you next time!"), MSGBOX_AUTOCLOSE)
 		applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
 		waitmovement(0)
 	}
@@ -36,8 +40,10 @@ script EventScript_AfterWhiteOutHeal_PBL {
 		msgbox(format("You have wiped. {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode turned off."))
 		clearflag(FLAG_SETTINGS_NUZLOCKE)
 	}
+	setspeaker("Joy")
 	msgbox(format("First, let's restore your Pokémon to full health."))
 	call(EventScript_PkmnCenterNurse_TakeAndHealPkmn)
+	setspeaker("Joy")
 	msgbox(format("Your Pokémon have been healed to perfect health.\pYou can always speak to Colress to decrease the difficulty.\pWe hope you excel!"))
 	applymovement(VAR_LAST_TALKED, Movement_PkmnCenterNurse_Bow)
 	waitmovement(0)
@@ -51,6 +57,7 @@ script EventScript_AfterWhiteOutHeal_PBL {
 script EventScript_Chansey {
 	lock
 	faceplayer
+	setspeaker("Chansey")
 	playmoncry(SPECIES_CHANSEY, CRY_MODE_NORMAL)
 	msgbox(format("Chan!"))
 	waitmoncry

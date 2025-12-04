@@ -248,21 +248,21 @@ Zone25L_Text_Mirage_9:
 	.string "Command, we need evac immediately.$"
 
 Zone25L_Text_Colress_Unfortunate:
-	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Unfortunate.\n"
+	.string "Unfortunate.\n"
 	.string "It appears they've escaped, again.$"
 
 Zone25L_Text_Colress_Hmm:
-	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Hmm.\n"
+	.string "Hmm.\n"
 	.string "It seems that your battles against\l"
 	.string "these Mirages has brought out your\l"
 	.string "strength as a Trainer.$"
 
 Zone25L_Text_Colress_Resistance:
-	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: Perhaps their…{PAUSE_UNTIL_PRESS}\n"
+	.string "Perhaps their…{PAUSE_UNTIL_PRESS}\n"
 	.string "resistance can be put to good use…$"
 
 Zone25L_Text_Colress_BringOut:
-	.string "{COLOR BLUE}Colress{COLOR DARK_GRAY}: To bring out the power in\n"
+	.string "To bring out the power in\n"
 	.string "Pokémon…{PAUSE_UNTIL_PRESS} what else could it take?$"
 
 Zone25L_Text_FoundBag:
