@@ -1065,7 +1065,7 @@ u16 GetLocalWildMon(bool8 *isWaterMon)
     else if (landMonsInfo == NULL && waterMonsInfo != NULL)
     {
         *isWaterMon = TRUE;
-        return GetSelectedWildPokemonTable(landMonsInfo, WILD_AREA_WATER)[ChooseWildMonIndex_Water()].species;
+        return GetSelectedWildPokemonTable(waterMonsInfo, WILD_AREA_WATER)[ChooseWildMonIndex_Water()].species;
     }
     // Either land or water Pokémon
     if ((Random() % 100) < 80)
@@ -1075,7 +1075,7 @@ u16 GetLocalWildMon(bool8 *isWaterMon)
     else
     {
         *isWaterMon = TRUE;
-        return GetSelectedWildPokemonTable(landMonsInfo, WILD_AREA_WATER)[ChooseWildMonIndex_Water()].species;
+        return GetSelectedWildPokemonTable(waterMonsInfo, WILD_AREA_WATER)[ChooseWildMonIndex_Water()].species;
     }
 }
 
