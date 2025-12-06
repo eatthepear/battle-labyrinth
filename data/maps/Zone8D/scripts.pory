@@ -21,9 +21,13 @@ script Zone8D_EventScript_LeviathanBattle {
 		waitmovement(0)
 	}
 	applymovement(LOCALID_MARS, Common_Movement_WalkDown2)
+	applymovement(LOCALID_GRUNT_1_8D, Common_Movement_WalkDown2)
+	applymovement(LOCALID_GRUNT_2_8D, Common_Movement_WalkDown2)
 	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Mars{COLOR DARK_GRAY}: Well, well, well. I was wondering what sort of pest had wandered in.\pBut it turns out to be just a child.\pListen well, child. If you win, we, Team Galactic, will leave. If I win, all your Pokémon are mine.\pFancy a gamble?"), MSGBOX_YESNO)
+	setspeaker("Mars")
+	msgbox(format("Well, well, well. I was wondering what sort of pest had wandered in.\pBut it turns out to be just a child.\pListen well, child. If you win, we, Team Galactic, will leave. If I win, all your Pokémon are mine. How does that sound?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
+		setspeaker("Mars")
 		msgbox(format("Well, if you're not ready, that works out for both of us."), MSGBOX_AUTOCLOSE)
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
 		waitmovement(0)
@@ -41,6 +45,8 @@ script Zone8D_EventScript_LeviathanBattle {
 			waitmovement(0)
 		}
 		applymovement(LOCALID_MARS, Common_Movement_WalkUp2)
+		applymovement(LOCALID_GRUNT_1_8D, Common_Movement_WalkUp2)
+		applymovement(LOCALID_GRUNT_2_8D, Common_Movement_WalkUp2)
 		waitmovement(0)
 		applymovement(LOCALID_MARS, Common_Movement_FaceDown)
 		waitmovement(0)
@@ -49,31 +55,30 @@ script Zone8D_EventScript_LeviathanBattle {
 	}
 	fadeoutbgm(1)
 	setvar(VAR_ZONE_1_STATE, 1)
-	msgbox(Zone8D_Text_Leviathan8Intro)
+	setspeaker("Mars")
+	msgbox(format("Prepare to be crushed by the might of Team Galactic!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	trainerbattle_no_intro(TRAINER_PBL_ALISTAIR_LEVIATHAN_8_CHALLENGE, Zone8D_Text_Leviathan8Defeat)
-	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_ALISTAIR_LEVIATHAN_8, Zone8D_Text_Leviathan8Defeat)
-	// }
+	trainerbattle_no_intro(TRAINER_PBL_MARS_LEVIATHAN_8, format("Defeated by a child… This is embarrasing for me…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Alistair{COLOR DARK_GRAY}: Ugh. I can't believe I lost this one.\pI guess I owe you a little something for winning."), MSGBOX_DEFAULT)
-	giveitem(ITEM_TM_THIEF)
-	msgbox(format("{COLOR BLUE}Alistair{COLOR DARK_GRAY}: It's a tough world out there. Watch your step."))
-	closemessage
+	setspeaker("Mars")
+	msgbox(format("Ugh. I can't believe I lost that one.\pI guess I owe you a little something for winning."), MSGBOX_DEFAULT)
+	giveitem(ITEM_RED_SHARD, 5)
+	setspeaker("Mars")
+	msgbox(format("Our boss had us collecting these Shards in the caves.\pWe've collected enough for our mission, so I don't mind giving a few scraps to you."), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_MARS, Common_Movement_FaceLeft)
+	waitmovement(0)
+	delay(32)
+	applymovement(LOCALID_MARS, Common_Movement_FaceDown)
+	waitmovement(0)
+	setspeaker("Mars")
+	msgbox(format("It's a tough world out there. Watch your step."), MSGBOX_AUTOCLOSE)
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(LOCALID_MARS)
+	removeobject(LOCALID_GRUNT_1_8D)
+	removeobject(LOCALID_GRUNT_2_8D)
 	setvar(VAR_ZONE_8_STATE, 2)
 	setflag(FLAG_BEAT_LEVIATHAN_8)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	release
 	end
-}
-
-text Zone8D_Text_Leviathan8Intro {
-	format("Right on!")
-}
-
-text Zone8D_Text_Leviathan8Defeat {
-	format("Beaten by a chump like you!")
 }
