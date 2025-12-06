@@ -1988,6 +1988,9 @@ static void DexNavLoadEncounterData(void)
     memset(sDexNavUiDataPtr->waterSpecies, 0, sizeof(sDexNavUiDataPtr->waterSpecies));
     memset(sDexNavUiDataPtr->hiddenSpecies, 0, sizeof(sDexNavUiDataPtr->hiddenSpecies));
 
+    if (headerId == HEADER_NONE)
+        return;
+
     // land mons
     if (landMonsInfo != NULL && landMonsInfo->encounterRate != 0)
     {
