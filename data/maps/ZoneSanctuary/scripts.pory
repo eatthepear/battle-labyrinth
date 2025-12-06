@@ -1018,6 +1018,7 @@ script Sanctuary_EventScript_HandleStarterSelectionDefault {
 
 script EventScript_WhenUReadyDialogue {
 	call(EventScript_BufferCurrentZoneName)
+	setspeaker("Colress")
 	msgbox(format("When you are prepared to enter {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
 }
 
