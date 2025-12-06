@@ -47,6 +47,7 @@ enum PoolPruneOptions {
     POOL_PRUNE_NON_DRAGON,
     POOL_PRUNE_NON_DARK,
     POOL_PRUNE_NON_FAIRY,
+    POOL_PRUNE_NON_GROUND_ROCK_STEEL,
 };
 
 enum PoolTags {

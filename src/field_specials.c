@@ -4458,18 +4458,15 @@ u16 GetNumTrainersRemaining(void)
         break;
     case 7:
     case 8:
-        count += !HasTrainerBeenFought(TRAINER_PBL_MILLIE);
-        count += !HasTrainerBeenFought(TRAINER_PBL_JAMAL);
-        count += !HasTrainerBeenFought(TRAINER_PBL_PAIGE);
-        count += !HasTrainerBeenFought(TRAINER_PBL_SETH);
-        count += !HasTrainerBeenFought(TRAINER_PBL_CONNIE);
+        for (trainer = TRAINER_PBL_MILLIE; trainer <= TRAINER_PBL_EMILIANO; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
         count += !FlagGet(FLAG_BEAT_LEVIATHAN_7);
-        count += !HasTrainerBeenFought(TRAINER_PBL_JIMMY);
-        count += !HasTrainerBeenFought(TRAINER_PBL_EMILIANO);
-        count += !HasTrainerBeenFought(TRAINER_PBL_KAREN);
-        count += !HasTrainerBeenFought(TRAINER_PBL_JAYDEN);
-        count += !HasTrainerBeenFought(TRAINER_PBL_NEIL);
-        count += !HasTrainerBeenFought(TRAINER_PBL_TAMARA);
+        for (trainer = TRAINER_PBL_GALACTIC_GRUNT_7A_1; trainer <= TRAINER_PBL_GALACTIC_GRUNT_8B; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
         count += !FlagGet(FLAG_BEAT_LEVIATHAN_8);
         break;
     case 9:

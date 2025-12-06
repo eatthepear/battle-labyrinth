@@ -440,6 +440,24 @@ static void PruneNonType(const struct Trainer *trainer, u8 *poolIndexArray, cons
             poolIndexArray[i] = POOL_SLOT_DISABLED;
 }
 
+static void PruneNonType2(const struct Trainer *trainer, u8 *poolIndexArray, const struct PoolRules *rules, u32 type1, u32 type2)
+{
+    for (u32 i = 0; i < trainer->poolSize; i++)
+    {
+        if (!IsSpeciesOfType(trainer->party[poolIndexArray[i]].species, type1) && !IsSpeciesOfType(trainer->party[poolIndexArray[i]].species, type2))
+            poolIndexArray[i] = POOL_SLOT_DISABLED;
+    }
+}
+
+static void PruneNonType3(const struct Trainer *trainer, u8 *poolIndexArray, const struct PoolRules *rules, u32 type1, u32 type2, u32 type3)
+{
+    for (u32 i = 0; i < trainer->poolSize; i++)
+    {
+        if (!IsSpeciesOfType(trainer->party[poolIndexArray[i]].species, type1) && !IsSpeciesOfType(trainer->party[poolIndexArray[i]].species, type2) && !IsSpeciesOfType(trainer->party[poolIndexArray[i]].species, type3))
+            poolIndexArray[i] = POOL_SLOT_DISABLED;
+    }
+}
+
 static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const struct PoolRules *rules)
 {
     //  Use defined pruning functions go here
@@ -507,6 +525,9 @@ static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const s
             break;
         case POOL_PRUNE_NON_FAIRY:
             PruneNonType(trainer, poolIndexArray, rules, TYPE_FAIRY);
+            break;
+        case POOL_PRUNE_NON_GROUND_ROCK_STEEL:
+            PruneNonType3(trainer, poolIndexArray, rules, TYPE_GROUND, TYPE_ROCK, TYPE_STEEL);
             break;
         default:
             break;

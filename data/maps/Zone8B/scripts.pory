@@ -97,36 +97,8 @@ script Zone8B_EventScript_Random1 {
 	end
 }
 
-raw `
-Zone8B_EventScript_Jayden::
-	trainerbattle_single TRAINER_PBL_JAYDEN, Zone8B_Text_JaydenIntro, Zone8B_Text_JaydenDefeat
-	msgbox Zone8B_Text_JaydenPostBattle, MSGBOX_AUTOCLOSE
+script Zone8B_EventScript_GalacticGrunt_F {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_8B, format("A kid? The Commander won't need to deal with you, because I'm here!"), format("I'm so getting a pay cut…"))
+	msgbox(format("The Commander will mop the floor with you though, surely!"))
 	end
-
-Zone8B_Text_JaydenIntro:
-	.string "I'm an explorer, a spelunkerer,\n"
-	.string "an adventurer, a Hiker!$"
-
-Zone8B_Text_JaydenDefeat:
-	.string "Also a bit of a sore loser…$"
-
-Zone8B_Text_JaydenPostBattle:
-	.string "Next time, I'll be a winner too!$"
-
-Zone8B_EventScript_Karen::
-	trainerbattle_single TRAINER_PBL_KAREN, Zone8B_Text_KarenIntro, Zone8B_Text_KarenDefeat
-	msgbox Zone8B_Text_KarenPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone8B_Text_KarenIntro:
-	.string "Can I speak to your manager?$"
-
-Zone8B_Text_KarenDefeat:
-	.string "What do you mean you don't have a\n"
-	.string "manager?$"
-
-Zone8B_Text_KarenPostBattle:
-	.string "Argh! You're a cheapskate,\n"
-	.string "just like the rest of them!$"
-
-`
+}

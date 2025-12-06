@@ -143,7 +143,6 @@ script Zone7A_EventScript_RichBoy {
 	end
 }
 
-
 script Zone7A_EventScript_FangsTutor {
 	lock
 	faceplayer
@@ -346,6 +345,12 @@ script Zone7A_EventScript_Random3 {
 	end
 }
 
+script Zone7A_EventScript_Tamara {
+	trainerbattle_single(TRAINER_PBL_TAMARA, format("There are some strange people with space suits running around.\pAre you one of them?"), format("Clearly you're not part of their crew!"))
+	msgbox(format("Sorry, your outfit looks nothing like a space suit."))
+	end
+}
+
 raw `
 
 Zone7A_EventScript_Millie::
@@ -392,50 +397,8 @@ Zone7A_Text_PaigeDefeat:
 	.string "I just can't keep up!$"
 
 Zone7A_Text_PaigePostBattle:
-	.string "Maybe I'll rest in the rest house…$"
-
-Zone7A_EventScript_Seth::
-	trainerbattle_single TRAINER_PBL_SETH, Zone7A_Text_SethIntro, Zone7A_Text_SethDefeat
-	msgbox Zone7A_Text_SethPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone7A_Text_SethIntro:
-	.string "Momma! You're too slow!$"
-
-Zone7A_Text_SethDefeat:
-	.string "I wasn't fast enough!$"
-
-Zone7A_Text_SethPostBattle:
-	.string "I'm all out of energy…\n"
-	.string "Snack time!$"
-
-Zone7A_EventScript_Connie::
-	trainerbattle_single TRAINER_PBL_CONNIE, Zone7A_Text_ConnieIntro, Zone7A_Text_ConnieDefeat
-	msgbox Zone7A_Text_ConniePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone7A_Text_ConnieIntro:
-	.string "You've been double teamed!$"
-
-Zone7A_Text_ConnieDefeat:
-	.string "Shoot! My bad!$"
-
-Zone7A_Text_ConniePostBattle:
-	.string "We're working on our strategy!$"
-
-Zone7A_EventScript_Peter::
-	trainerbattle_single TRAINER_PBL_PETER, Zone7A_Text_PeterIntro, Zone7A_Text_PeterDefeat
-	msgbox Zone7A_Text_PeterPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone7A_Text_PeterIntro:
-	.string "Together we're unstoppable!$"
-
-Zone7A_Text_PeterDefeat:
-	.string "Darn! My mistake!$"
-
-Zone7A_Text_PeterPostBattle:
-	.string "We're trying our best!$"
+	.string "Maybe I'll rest in the rest house…\n"
+	.string "My sister is visiting!$"
 
 Zone7A_EventScript_Whitaker::
 	trainerbattle_single TRAINER_PBL_WHITAKER, Zone7A_Text_WhitakerIntro, Zone7A_Text_WhitakerDefeat
@@ -452,19 +415,4 @@ Zone7A_Text_WhitakerDefeat:
 Zone7A_Text_WhitakerPostBattle:
 	.string "My birds need some time to sleep\n"
 	.string "in their nests!$"
-
-Zone7A_EventScript_Tamara::
-       trainerbattle_single TRAINER_PBL_TAMARA, Zone7A_Text_TamaraIntro, Zone7A_Text_TamaraDefeat
-       msgbox Zone7A_Text_TamaraPostBattle, MSGBOX_AUTOCLOSE
-       end
-
-Zone7A_Text_TamaraIntro:
-	.string "If I win, you have to lead me out of here!$"
-
-Zone7A_Text_TamaraDefeat:
-	.string "Wahhhhh!!!$"
-
-Zone7A_Text_TamaraPostBattle:
-	.string "It's my destiny to wander this cave\n"
-	.string "forever…$"
 `

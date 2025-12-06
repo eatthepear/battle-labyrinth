@@ -118,21 +118,21 @@ script Zone10B_EventScript_DragonTamer {
 			!defeated(TRAINER_PBL_VIC_AND_DELL) ||
 			!defeated(TRAINER_PBL_MINA) ||
 			!flag(FLAG_BEAT_LEVIATHAN_6) ||
-			!defeated(TRAINER_PBL_MILLIE) ||
-			!defeated(TRAINER_PBL_JAMAL) ||
-			!defeated(TRAINER_PBL_PAIGE) ||
-			!defeated(TRAINER_PBL_SETH) ||
-			!defeated(TRAINER_PBL_CONNIE) ||
-			!defeated(TRAINER_PBL_PETER) ||
-			!defeated(TRAINER_PBL_WHITAKER) ||
-			!flag(FLAG_BEAT_LEVIATHAN_7) ||
-			!defeated(TRAINER_PBL_JIMMY) ||
-			!defeated(TRAINER_PBL_EMILIANO) ||
-			!defeated(TRAINER_PBL_BECKHAM) ||
-			!defeated(TRAINER_PBL_KAREN) ||
-			!defeated(TRAINER_PBL_JAYDEN) ||
-			!defeated(TRAINER_PBL_NEIL) ||
-			!defeated(TRAINER_PBL_TAMARA) ||
+			// !defeated(TRAINER_PBL_MILLIE) ||
+			// !defeated(TRAINER_PBL_JAMAL) ||
+			// !defeated(TRAINER_PBL_PAIGE) ||
+			// !defeated(TRAINER_PBL_SETH) ||
+			// !defeated(TRAINER_PBL_CONNIE) ||
+			// !defeated(TRAINER_PBL_PETER) ||
+			// !defeated(TRAINER_PBL_WHITAKER) ||
+			// !flag(FLAG_BEAT_LEVIATHAN_7) ||
+			// !defeated(TRAINER_PBL_JIMMY) ||
+			// !defeated(TRAINER_PBL_EMILIANO) ||
+			// !defeated(TRAINER_PBL_BECKHAM) ||
+			// !defeated(TRAINER_PBL_KAREN) ||
+			// !defeated(TRAINER_PBL_JAYDEN) ||
+			// !defeated(TRAINER_PBL_NEIL) ||
+			// !defeated(TRAINER_PBL_TAMARA) ||
 			!flag(FLAG_BEAT_LEVIATHAN_8) ||
 			!defeated(TRAINER_PBL_COOPER) ||
 			!defeated(TRAINER_PBL_CARMINE) ||

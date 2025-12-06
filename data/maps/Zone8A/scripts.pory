@@ -183,23 +183,6 @@ Zone8A_Text_JimmyPostBattle:
 	.string "I want to collect all the rare\n"
 	.string "Pokémon in the world!$"
 
-Zone8A_EventScript_Beckham::
-	trainerbattle_single TRAINER_PBL_BECKHAM, Zone8A_Text_BeckhamIntro, Zone8A_Text_BeckhamDefeat
-	msgbox Zone8A_Text_BeckhamPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone8A_Text_BeckhamIntro:
-	.string "What's your favorite monster movie?$"
-
-Zone8A_Text_BeckhamDefeat:
-	.string "I like the ones with lots of\n"
-	.string "destruction: all of them!$"
-
-Zone8A_Text_BeckhamPostBattle:
-	.string "Which one is my favorite?\n"
-	.string "That's a good question…\l"
-	.string "I'll have to think about it!$"
-
 Zone8A_EventScript_Emiliano::
 	trainerbattle_single TRAINER_PBL_EMILIANO, Zone8A_Text_EmilianoIntro, Zone8A_Text_EmilianoDefeat
 	msgbox Zone8A_Text_EmilianoPostBattle, MSGBOX_AUTOCLOSE

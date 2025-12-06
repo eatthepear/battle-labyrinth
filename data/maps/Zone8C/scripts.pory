@@ -71,19 +71,8 @@ script Zone8C_EventScript_Random1 {
 	end
 }
 
-raw `
-Zone8C_EventScript_Neil::
-       trainerbattle_single TRAINER_PBL_NEIL, Zone8C_Text_NeilIntro, Zone8C_Text_NeilDefeat
-       msgbox Zone8C_Text_NeilPostBattle, MSGBOX_AUTOCLOSE
-       end
-	   
-Zone8C_Text_NeilIntro:
-       .string "I'm looking for another path down…$"
-
-Zone8C_Text_NeilDefeat:
-       .string "But all I found is you.$"
-
-Zone8C_Text_NeilPostBattle:
-       .string "Maybe it's on the other side\n"
-       .string "of the mountain?$"
-`
+script Zone8C_EventScript_GalacticGrunt {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_8C, format("If I win, you have to lead me out of here!"), format("Wah! I have no idea what I'm doing here!"))
+	msgbox(format("It's my destiny to wander this cave forever…\pAt least until the Commander comes and finds me!"))
+	end
+}
