@@ -152,7 +152,7 @@ Zone5A_Old_Text_AnneAndJunePostBattle:
 	.string "Anne: Yeah, exactly that!$"
 
 Zone5A_Old_EventScript_Kevin::
-	trainerbattle_single TRAINER_PBL_KEVIN, Zone5A_Old_Text_KevinIntro, Zone5A_Old_Text_KevinDefeat
+	trainerbattle_single TRAINER_PBL_ANNE_AND_JUNE, Zone5A_Old_Text_KevinIntro, Zone5A_Old_Text_KevinDefeat
 	msgbox Zone5A_Old_Text_KevinPostBattle, MSGBOX_AUTOCLOSE
 	end
 

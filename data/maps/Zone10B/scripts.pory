@@ -78,46 +78,46 @@ script Zone10B_EventScript_DragonTamer {
 			startquest(QUEST_GAUNTLET_1)
 		}
 		if (!defeated(TRAINER_PBL_NINA) ||
-			!defeated(TRAINER_PBL_MARIAM) ||
-			!defeated(TRAINER_PBL_OSCAR) ||
-			!flag(FLAG_BEAT_LEVIATHAN_1) ||
-			!defeated(TRAINER_PBL_POLLY) ||
-			!defeated(TRAINER_PBL_JEREMIAH) ||
-			!defeated(TRAINER_PBL_JOSH) ||
-			!defeated(TRAINER_PBL_HARPER) ||
-			// !defeated(TRAINER_PBL_ARTHUR) ||
-			!flag(FLAG_BEAT_LEVIATHAN_2) ||
-			!defeated(TRAINER_PBL_JEMMA) ||
-			!defeated(TRAINER_PBL_PATRICK) ||
-			// !defeated(TRAINER_PBL_ANNABELLE) ||
-			!defeated(TRAINER_PBL_BORIS) ||
-			!defeated(TRAINER_PBL_RICHARD) ||
-			!flag(FLAG_BEAT_LEVIATHAN_3) ||
-			!defeated(TRAINER_PBL_HERMAN) ||
-			!defeated(TRAINER_PBL_RALPH) ||
-			!defeated(TRAINER_PBL_SANTIAGO) ||
-			!defeated(TRAINER_PBL_CHLOE_AND_KAYA) ||
-			!defeated(TRAINER_PBL_FRED) ||
-			!defeated(TRAINER_PBL_LUCIA) ||
-			!flag(FLAG_BEAT_LEVIATHAN_4) ||
-			!defeated(TRAINER_PBL_ANNE_AND_JUNE) ||
-			!defeated(TRAINER_PBL_NOVA_AND_CORA) ||
-			!defeated(TRAINER_PBL_CLINTON) ||
-			!defeated(TRAINER_PBL_REBECCA) ||
-			!defeated(TRAINER_PBL_RYAN) ||
-			!defeated(TRAINER_PBL_CAITLYN) ||
-			!defeated(TRAINER_PBL_KENNETH) ||
-			!defeated(TRAINER_PBL_KEVIN) ||
-			!flag(FLAG_BEAT_LEVIATHAN_5) ||
-			!defeated(TRAINER_PBL_GILBERT) ||
-			!defeated(TRAINER_PBL_MELANIE) ||
-			!defeated(TRAINER_PBL_CONSTANCE) ||
-			!defeated(TRAINER_PBL_FRANK) ||
-			!defeated(TRAINER_PBL_DUDLEY) ||
-			!defeated(TRAINER_PBL_DAISY) ||
-			!defeated(TRAINER_PBL_VIC_AND_DELL) ||
-			!defeated(TRAINER_PBL_MINA) ||
-			!flag(FLAG_BEAT_LEVIATHAN_6) ||
+			// !defeated(TRAINER_PBL_MARIAM) ||
+			// !defeated(TRAINER_PBL_OSCAR) ||
+			// !flag(FLAG_BEAT_LEVIATHAN_1) ||
+			// !defeated(TRAINER_PBL_POLLY) ||
+			// !defeated(TRAINER_PBL_JEREMIAH) ||
+			// !defeated(TRAINER_PBL_JOSH) ||
+			// !defeated(TRAINER_PBL_HARPER) ||
+			// // !defeated(TRAINER_PBL_ARTHUR) ||
+			// !flag(FLAG_BEAT_LEVIATHAN_2) ||
+			// !defeated(TRAINER_PBL_JEMMA) ||
+			// !defeated(TRAINER_PBL_PATRICK) ||
+			// // !defeated(TRAINER_PBL_ANNABELLE) ||
+			// !defeated(TRAINER_PBL_BORIS) ||
+			// !defeated(TRAINER_PBL_RICHARD) ||
+			// !flag(FLAG_BEAT_LEVIATHAN_3) ||
+			// !defeated(TRAINER_PBL_HERMAN) ||
+			// !defeated(TRAINER_PBL_RALPH) ||
+			// !defeated(TRAINER_PBL_SANTIAGO) ||
+			// !defeated(TRAINER_PBL_CHLOE_AND_KAYA) ||
+			// !defeated(TRAINER_PBL_FRED) ||
+			// !defeated(TRAINER_PBL_LUCIA) ||
+			// !flag(FLAG_BEAT_LEVIATHAN_4) ||
+			// !defeated(TRAINER_PBL_ANNE_AND_JUNE) ||
+			// !defeated(TRAINER_PBL_NOVA_AND_CORA) ||
+			// !defeated(TRAINER_PBL_CLINTON) ||
+			// !defeated(TRAINER_PBL_REBECCA) ||
+			// !defeated(TRAINER_PBL_RYAN) ||
+			// !defeated(TRAINER_PBL_CAITLYN) ||
+			// !defeated(TRAINER_PBL_KENNETH) ||
+			// !defeated(TRAINER_PBL_KEVIN) ||
+			// !flag(FLAG_BEAT_LEVIATHAN_5) ||
+			// !defeated(TRAINER_PBL_GILBERT) ||
+			// !defeated(TRAINER_PBL_MELANIE) ||
+			// !defeated(TRAINER_PBL_CONSTANCE) ||
+			// !defeated(TRAINER_PBL_FRANK) ||
+			// !defeated(TRAINER_PBL_DUDLEY) ||
+			// !defeated(TRAINER_PBL_DAISY) ||
+			// !defeated(TRAINER_PBL_VIC_AND_DELL) ||
+			// !defeated(TRAINER_PBL_MINA) ||
+			// !flag(FLAG_BEAT_LEVIATHAN_6) ||
 			// !defeated(TRAINER_PBL_MILLIE) ||
 			// !defeated(TRAINER_PBL_JAMAL) ||
 			// !defeated(TRAINER_PBL_PAIGE) ||
@@ -134,20 +134,20 @@ script Zone10B_EventScript_DragonTamer {
 			// !defeated(TRAINER_PBL_NEIL) ||
 			// !defeated(TRAINER_PBL_TAMARA) ||
 			!flag(FLAG_BEAT_LEVIATHAN_8) ||
-			!defeated(TRAINER_PBL_COOPER) ||
-			!defeated(TRAINER_PBL_CARMINE) ||
-			!defeated(TRAINER_PBL_JONATHAN) ||
-			!defeated(TRAINER_PBL_CALVIN) ||
-			!defeated(TRAINER_PBL_LUIS) ||
-			!defeated(TRAINER_PBL_ALANA) ||
-			!defeated(TRAINER_PBL_JACOB) ||
-			!defeated(TRAINER_PBL_DEWEY) ||
-			!defeated(TRAINER_PBL_ERNEST) ||
-			!defeated(TRAINER_PBL_KYLE) ||
-			!defeated(TRAINER_PBL_ELIAS) ||
-			!defeated(TRAINER_PBL_PEARLIE) ||
-			!defeated(TRAINER_PBL_SUSAN) ||
-			!defeated(TRAINER_PBL_CONRAD) ||
+			// !defeated(TRAINER_PBL_COOPER) ||
+			// !defeated(TRAINER_PBL_CARMINE) ||
+			// !defeated(TRAINER_PBL_JONATHAN) ||
+			// !defeated(TRAINER_PBL_CALVIN) ||
+			// !defeated(TRAINER_PBL_LUIS) ||
+			// !defeated(TRAINER_PBL_ALANA) ||
+			// !defeated(TRAINER_PBL_JACOB) ||
+			// !defeated(TRAINER_PBL_DEWEY) ||
+			// !defeated(TRAINER_PBL_ERNEST) ||
+			// !defeated(TRAINER_PBL_KYLE) ||
+			// !defeated(TRAINER_PBL_ELIAS) ||
+			// !defeated(TRAINER_PBL_PEARLIE) ||
+			// !defeated(TRAINER_PBL_SUSAN) ||
+			// !defeated(TRAINER_PBL_CONRAD) ||
 			!defeated(TRAINER_PBL_BRETT)) {
 			msgbox("You still have trainers to defeat.")
 			applymovement(4, Common_Movement_FaceLeft)

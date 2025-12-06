@@ -1092,61 +1092,6 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Imprison
 - Psybeam
 
-=== TRAINER_PBL_KEVIN ===
-Name: Kevin
-Class: Bug Catcher
-Pic: Bug Catcher
-Music: Male
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Grubbin
-Ability: Swarm
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- String Shot
-- Vise Grip
-- Bug Bite
-- Bite
-
-Sewaddle
-Ability: Swarm
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Razor Leaf
-- Bug Bite
-- Synthesis
-- Flail
-
-Nincada
-Ability: Compound Eyes
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Fury Swipes
-- Bug Bite
-- Mud Slap
-- Absorb
-
-Venipede
-Ability: Poison Point
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Screech
-- Bug Bite
-- Protect
-- Twineedle
-
-=== TRAINER_PBL_DUDLEY ===
-Name: Dudley
-Class: Bird Keeper
-Pic: Bird Keeper
-Music: Cool
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Party Size: 4
-Pool Prune: Non Flying
-Copy Pool: TRAINER_PBL_GILBERT
-
 === TRAINER_PBL_GILBERT ===
 Name: Gilbert
 Class: Fisherman
@@ -1237,7 +1182,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bubble Beam
 - Wing Attack
 
-Corsola @ Sitrus Berry
+Corsola @ Berry Juice
 Modest Nature
 Ability: Regenerator
 Level: 16
@@ -1254,7 +1199,7 @@ AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
 Mugshot: Green
 
-Cramorant @ Sitrus Berry
+Cramorant @ Berry Juice
 Hasty Nature
 Ability: Gulp Missile
 Level: 16
@@ -1262,7 +1207,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 - Water Gun
 
-Lumineon @ Sitrus Berry
+Lumineon @ Berry Juice
 Timid Nature
 Ability: Swift Swim
 Level: 17
@@ -1280,7 +1225,7 @@ Double Battle: Yes
 Mugshot: Green
 Difficulty: Brutal
 
-Cramorant @ Sitrus Berry
+Cramorant @ Berry Juice
 Hasty Nature
 Ability: Gulp Missile
 Level: 16
@@ -1288,7 +1233,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 - Water Gun
 
-Lumineon @ Sitrus Berry
+Lumineon @ Berry Juice
 Timid Nature
 Ability: Storm Drain
 Level: 17
@@ -1478,15 +1423,45 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Giga Drain
 - Electroweb
 
-Bruxish @ Colbur Berry
-Naive Nature
-Ability: Dazzling
+Purugly @ Sitrus Berry
+Adamant Nature
+Ability: Thick Fat
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Facade
+- Thief
+- Slack Off
+
+=== TRAINER_PBL_MARS_LEVIATHAN_8 ===
+Name: Mars
+Class: Galactic Commander
+Pic: Mars
+Music: Intense
+AI: AI_FLAG_LEVIATHAN
+Double Battle: No
+Mugshot: Green
+Difficulty: Brutal
+
+Stunfisk @ Chesto Berry
+Modest Nature
+Ability: Unburden
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aqua Jet
-- Ice Fang
-- Confusion
-- Bite
+- Shock Wave
+- Mud Bomb
+- Water Pulse
+- Yawn
+
+Beautifly @ Wise Glasses
+Timid Nature
+Ability: Swarm
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Cutter
+- Silver Wind
+- Giga Drain
+- Electroweb
 
 Purugly @ Sitrus Berry
 Adamant Nature
@@ -1497,6 +1472,16 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Facade
 - Thief
 - Slack Off
+
+Bruxish @ Colbur Berry
+Naive Nature
+Ability: Dazzling
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aqua Jet
+- Ice Fang
+- Confusion
+- Bite
 
 === TRAINER_PBL_COOPER ===
 Name: Cooper

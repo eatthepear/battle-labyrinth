@@ -344,21 +344,6 @@ Zone6A_Text_FrankDefeat:
 Zone6A_Text_FrankPostBattle:
 	.string "Your skills are astounding!$"
 
-Zone6A_EventScript_Dudley::
-	trainerbattle_single TRAINER_PBL_DUDLEY, Zone6A_Text_DudleyIntro, Zone6A_Text_DudleyDefeat
-	msgbox Zone6A_Text_DudleyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone6A_Text_DudleyIntro:
-	.string "Birds of a feather flock together!$"
-
-Zone6A_Text_DudleyDefeat:
-	.string "This bird has been sent crashing\n"
-	.string "down!$"
-
-Zone6A_Text_DudleyPostBattle:
-	.string "Oh, how the mighty have fallen!$"
-
 Zone6A_EventScript_Daisy::
 	trainerbattle_single TRAINER_PBL_DAISY, Zone6A_Text_DaisyIntro, Zone6A_Text_DaisyDefeat
 	msgbox Zone6A_Text_DaisyPostBattle, MSGBOX_AUTOCLOSE
