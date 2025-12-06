@@ -161,6 +161,7 @@
 #define FLAG_SYS_ENABLE_WATERFALL                   0xC8
 #define FLAG_SYS_FOLLOWER_HEAL                      0xC9
 #define FLAG_SYS_FOLLOWER_WILD                      0xCA
+#define FLAG_SYS_DOWSING_MACHINE_ACTIVE             0xCB
 
 // Tracker Flags (Don't manually set)
 #define FLAG_IS_REVISITING_ZONE                     0xE0
