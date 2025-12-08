@@ -23,9 +23,9 @@ script Zone1A_EventScript_GiveFWG {
 	}
 	msgbox(format("Hello! You look like a new trainer.\pDo you know about Pokémon type matchups?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Type matchups are one of the most important parts of Pokémon battles!\pThe most basic type matchup is Grass beats Water, Water beats Fire, and Fire beats Grass.\pIt can be very important to have a diversity of types on your team."), MSGBOX_DEFAULT)
+		msgbox(format("Type matchups are one of the most important parts of Pokémon battles!\pThe most basic type matchup is Grass beats Water, Water beats Fire, and Fire beats Grass.\pIt can be very important to have a diversity of types on your team."))
 	} else {
-		msgbox(format("Oh! Then I'm sure you could see the benefits of having a diversity of types on your team."), MSGBOX_DEFAULT)
+		msgbox(format("Oh! Then I'm sure you could see the benefits of having a diversity of types on your team."))
 	}
 	msgbox(format("I'm offering trainers a Grass, Fire, or Water type Pokémon to help supplement their teams. Interested?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
@@ -96,35 +96,35 @@ script Zone1A_EventScript_GiveFWG {
 			release
 			end
 		}
-		setvar(VAR_TEMP_1, 0)
-		while (var(VAR_TEMP_1) == 0) {
+		setvar(VAR_TEMP_0, 0)
+		while (var(VAR_TEMP_0) == 0) {
 			random(5)
 			switch (var(VAR_RESULT)) {
 				case 0:
 					if (checkspeciesclause(VAR_TEMP_A) == TRUE) {
 						continue
 					}
-					copyvar(VAR_TEMP_1, VAR_TEMP_A)
+					copyvar(VAR_TEMP_0, VAR_TEMP_A)
 				case 1:
 					if (checkspeciesclause(VAR_TEMP_B) == TRUE) {
 						continue
 					}
-					copyvar(VAR_TEMP_1, VAR_TEMP_B)
+					copyvar(VAR_TEMP_0, VAR_TEMP_B)
 				case 2:
 					if (checkspeciesclause(VAR_TEMP_C) == TRUE) {
 						continue
 					}
-					copyvar(VAR_TEMP_1, VAR_TEMP_C)
+					copyvar(VAR_TEMP_0, VAR_TEMP_C)
 				case 3:
 					if (checkspeciesclause(VAR_TEMP_D) == TRUE) {
 						continue
 					}
-					copyvar(VAR_TEMP_1, VAR_TEMP_D)
+					copyvar(VAR_TEMP_0, VAR_TEMP_D)
 				case 4:
 					if (checkspeciesclause(VAR_TEMP_E) == TRUE) {
 						continue
 					}
-					copyvar(VAR_TEMP_1, VAR_TEMP_E)
+					copyvar(VAR_TEMP_0, VAR_TEMP_E)
 			}
 		}
 	} else {
@@ -144,22 +144,22 @@ script Zone1A_EventScript_GiveFWG {
 		dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
-				copyvar(VAR_TEMP_1, VAR_TEMP_A)
+				copyvar(VAR_TEMP_0, VAR_TEMP_A)
 			case 1:
-				copyvar(VAR_TEMP_1, VAR_TEMP_B)
+				copyvar(VAR_TEMP_0, VAR_TEMP_B)
 			case 2:
-				copyvar(VAR_TEMP_1, VAR_TEMP_C)
+				copyvar(VAR_TEMP_0, VAR_TEMP_C)
 			case 3:
-				copyvar(VAR_TEMP_1, VAR_TEMP_D)
+				copyvar(VAR_TEMP_0, VAR_TEMP_D)
 			case 4:
-				copyvar(VAR_TEMP_1, VAR_TEMP_E)
+				copyvar(VAR_TEMP_0, VAR_TEMP_E)
 			case 5:
 			case MULTI_B_PRESSED:
 				msgbox(Zone1A_Text_FWG_ComeBack)
 				release
 				end
 		}
-		bufferspeciesname(0, VAR_TEMP_1)
+		bufferspeciesname(0, VAR_TEMP_0)
 		msgbox(format("Are you sure you want {STR_VAR_1}?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			msgbox(Zone1A_Text_FWG_ComeBack)
@@ -167,9 +167,8 @@ script Zone1A_EventScript_GiveFWG {
 			end
 		}
 	}
-	setflag(FLAG_ZONE1A_RECEIVED_FWG)
-	bufferspeciesname(0, VAR_TEMP_1)
-	msgbox("Here's your {STR_VAR_1}.", MSGBOX_DEFAULT)
+	bufferspeciesname(0, VAR_TEMP_0)
+	msgbox("Here's your {STR_VAR_1}.")
 	playfanfare(MUS_OBTAIN_ITEM)
 	message(format("{PLAYER} received the {STR_VAR_1}!"))
 	waitmessage
@@ -181,43 +180,26 @@ script Zone1A_EventScript_GiveFWG {
 			call(EventScript_ChoosePartyMonToSend)
 		}
 	}
-	givemon(VAR_TEMP_1, 5, metLocation=METLOC_GIVE_FWG)
+	givemon(VAR_TEMP_0, 5, metLocation=METLOC_GIVE_FWG)
 	if (var(VAR_RESULT) == MON_GIVEN_TO_PARTY) {
-		bufferspeciesname(0, VAR_TEMP_1)
+		bufferspeciesname(0, VAR_TEMP_0)
 		msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
 			call(Common_EventScript_GetGiftMonPartySlot)
 			call(Common_EventScript_NameReceivedPartyMon)
 		}
 	} else {
-		bufferspeciesname(0, VAR_TEMP_1)
+		bufferspeciesname(0, VAR_TEMP_0)
 		msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
 			call(Common_EventScript_NameReceivedBoxMon)
 		}
 		call(Common_EventScript_TransferredToPC)
 	}
+	setflag(FLAG_ZONE1A_RECEIVED_FWG)
 	msgbox(format("Take care of your new Pokémon!"))
 	release
 	end
-}
-
-script EventScript_ChoosePartyMonToSend {
-	while {
-		msgbox(format("Choose a party Pokémon to send to the PC."))
-		special(ChoosePartyMon)
-		waitstate
-		if (var(VAR_0x8004) != PARTY_NOTHING_CHOSEN) {
-			specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
-			bufferspeciesname(2, VAR_TEMP_3)
-			copyvar(VAR_TEMP_3, VAR_0x8004) // used in SendChosenMonToPC
-			msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				special(SendChosenMonToPC)
-				return
-			}
-		}
-	}
 }
 
 text Zone1A_Text_FWG_ComeBack {
@@ -365,8 +347,8 @@ script Zone1A_EventScript_Random1 {
 	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 	setflag(FLAG_ITEM_ZONE1A_RANDOM_1)
 	addobject(VAR_LAST_TALKED)
-	specialvar(VAR_TEMP_1, RandomItemChest)
-	finditem(VAR_TEMP_1, VAR_TEMP_0)
+	specialvar(VAR_TEMP_0, RandomItemChest)
+	finditem(VAR_TEMP_0, VAR_TEMP_0)
 	release
 	end
 }

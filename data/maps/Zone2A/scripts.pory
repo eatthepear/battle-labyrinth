@@ -338,54 +338,41 @@ script Zone2A_EventScript_BuyBug {
 			end
 		}
 	}
-	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
-	if (var(VAR_TEMP_2) == PARTY_SIZE) {
-		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
-		hidemoneybox
-		special(ChoosePartyMon)
-		waitstate
-		faceplayer
-		showmoneybox(18, 0, 0)
-		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
-			hidemoneybox
-			msgbox(format("You don't want any? Fine. More for me."))
-			release
-			end
-		}
-		specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
-		bufferspeciesname(2, VAR_TEMP_3)
-		copyvar(VAR_TEMP_3, VAR_0x8004) // used in SendChosenMonToPC
-		msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			hidemoneybox
-			msgbox(format("You don't want any? Fine. More for me."))
-			release
-			end
-		}
-	}
-	if (var(VAR_TEMP_2) == PARTY_SIZE) {
-		special(SendChosenMonToPC)
-		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
-	}
-	setflag(FLAG_ZONE2A_NUZLOCKE_BOUGHT_BUG)
 	removemoney(200)
 	updatemoneybox
-	msgbox(format("Ehehehe, thank you…"), MSGBOX_DEFAULT)
+	msgbox(format("Ehehehe, thank you…"))
 	hidemoneybox
-	givemon(VAR_TEMP_0, 6, ITEM_NONE)
-	setmonmetlocation(VAR_TEMP_2, 251)
-	bufferspeciesname(0, VAR_TEMP_0)
-	msgbox("Here's your {STR_VAR_1}.", MSGBOX_DEFAULT)
+	bufferspeciesname(0, VAR_TEMP_1)
+	msgbox("Here's your {STR_VAR_1}.")
 	playfanfare(MUS_OBTAIN_ITEM)
 	message(format("{PLAYER} received the {STR_VAR_1}!"))
 	waitmessage
 	waitfanfare
-	msgbox(format("Would you like to give a nickname to {STR_VAR_1}?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		call(Common_EventScript_GetGiftMonPartySlot)
-		call(Common_EventScript_NameReceivedPartyMon)
+	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		msgbox(format("Your party is full. Would you like to send a party Pokémon to the PC and add {STR_VAR_1} to your party?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call(EventScript_ChoosePartyMonToSend)
+		}
 	}
-	msgbox(format("Pleasure doing business with you."), MSGBOX_DEFAULT)
+	givemon(VAR_TEMP_0, 6, metLocation=METLOC_BOUGHT_BUG)
+	if (var(VAR_RESULT) == MON_GIVEN_TO_PARTY) {
+		bufferspeciesname(0, VAR_TEMP_0)
+		msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call(Common_EventScript_GetGiftMonPartySlot)
+			call(Common_EventScript_NameReceivedPartyMon)
+		}
+	} else {
+		bufferspeciesname(0, VAR_TEMP_0)
+		msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call(Common_EventScript_NameReceivedBoxMon)
+		}
+		call(Common_EventScript_TransferredToPC)
+	}
+	setflag(FLAG_ZONE2A_NUZLOCKE_BOUGHT_BUG)
+	msgbox(format("Pleasure doing business with you."))
 	release
 	end
 }

@@ -356,6 +356,24 @@ script EventScript_NuzlockeVerifyGift {
 	return
 }
 
+script EventScript_ChoosePartyMonToSend {
+	while {
+		msgbox(format("Choose a party Pokémon to send to the PC."))
+		special(ChoosePartyMon)
+		waitstate
+		if (var(VAR_0x8004) != PARTY_NOTHING_CHOSEN) {
+			specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
+			bufferspeciesname(2, VAR_TEMP_3)
+			copyvar(VAR_TEMP_3, VAR_0x8004) // used in SendChosenMonToPC
+			msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				special(SendChosenMonToPC)
+				return
+			}
+		}
+	}
+}
+
 script EventScript_PorygonExit {
     lock
 	faceplayer
