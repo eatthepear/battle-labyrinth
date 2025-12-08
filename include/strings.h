@@ -2446,13 +2446,11 @@ extern const u8 gText_CandyNoEffectBecauseCap[];
 extern const u8 gText_YourPkmnBecameHealthy[];
 
 extern const u8 gText_SavingZone[];
-extern const u8 gText_SaveMenuNuzlocke[];
-extern const u8 gText_SaveMenuEasy[];
-extern const u8 gText_SaveMenuNormal[];
-extern const u8 gText_SaveMenuHard[];
-extern const u8 gText_SaveMenuBrutal[];
-
-extern const u8 gText_LevelCapVar1[];
+extern const u8 gText_Nuzlocke[];
+extern const u8 gText_EasyDifficulty[];
+extern const u8 gText_NormalDifficulty[];
+extern const u8 gText_HardDifficulty[];
+extern const u8 gText_BrutalDifficulty[];
 
 extern const u8 gText_RestrictedMove[];
 

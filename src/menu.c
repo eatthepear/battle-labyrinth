@@ -2258,7 +2258,7 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
         case SAVE_MENU_CAUGHT:
             if (FlagGet(FLAG_SETTINGS_NUZLOCKE))
             {
-                StringCopy(string, gText_SaveMenuNuzlocke);
+                StringCopy(string, gText_Nuzlocke);
             }
             else
             {
@@ -2295,16 +2295,16 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
             switch (VarGet(VAR_DIFFICULTY))
             {
                 case DIFFICULTY_EASY:
-                    StringCopy(string, gText_SaveMenuEasy);
+                    StringCopy(string, gText_EasyDifficulty);
                     break;
                 case DIFFICULTY_NORMAL:
-                    StringCopy(string, gText_SaveMenuNormal);
+                    StringCopy(string, gText_NormalDifficulty);
                     break;
                 case DIFFICULTY_HARD:
-                    StringCopy(string, gText_SaveMenuHard);
+                    StringCopy(string, gText_HardDifficulty);
                     break;
                 case DIFFICULTY_BRUTAL:
-                    StringCopy(string, gText_SaveMenuBrutal);
+                    StringCopy(string, gText_BrutalDifficulty);
                     break;
             }
             break;

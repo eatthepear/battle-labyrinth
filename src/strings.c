@@ -1312,13 +1312,11 @@ const u8 gText_CandyNoEffectBecauseCap[] = _("Infinite Candy can't level up past
 const u8 gText_YourPkmnBecameHealthy[] = _("Your Pokémon became healthy.{PAUSE_UNTIL_PRESS}");
 
 const u8 gText_SavingZone[] = _("Zones Completed");
-const u8 gText_SaveMenuNuzlocke[] =_("Nuzlocke");
-const u8 gText_SaveMenuEasy[] =_("Easy");
-const u8 gText_SaveMenuNormal[] =_("Normal");
-const u8 gText_SaveMenuHard[] =_("Hard");
-const u8 gText_SaveMenuBrutal[] =_("Brutal");
-
-const u8 gText_LevelCapVar1[] = _("Lvl Cap: {STR_VAR_1}");
+const u8 gText_Nuzlocke[] =_("Nuzlocke");
+const u8 gText_EasyDifficulty[] =_("Easy");
+const u8 gText_NormalDifficulty[] =_("Normal");
+const u8 gText_HardDifficulty[] =_("Hard");
+const u8 gText_BrutalDifficulty[] =_("Brutal");
 
 const u8 gText_RestrictedMove[] = _("{COLOR LIGHT_GRAY}{STR_VAR_1}");
 

@@ -1277,7 +1277,7 @@ static void PrintMapNameAndTime(void) //this code is ripped froom different part
     mapDisplayHeader[0] = EXT_CTRL_CODE_BEGIN;
     mapDisplayHeader[1] = EXT_CTRL_CODE_HIGHLIGHT;
     mapDisplayHeader[2] = TEXT_COLOR_TRANSPARENT;
-    AddTextPrinterParameterized(WINDOW_TOP_BAR, FONT_NARROW, mapDisplayHeader, GetStringCenterAlignXOffset(FONT_NARROW, withoutPrefixPtr, 240), 1, TEXT_SKIP_DRAW, NULL); // Print Map Name
+    AddTextPrinterParameterized(WINDOW_TOP_BAR, FONT_NORMAL, mapDisplayHeader, GetStringCenterAlignXOffset(FONT_NORMAL, withoutPrefixPtr, 240), 1, TEXT_SKIP_DRAW, NULL); // Print Map Name
 
     money = GetMoney(&gSaveBlock1Ptr->money);
 
@@ -1285,10 +1285,22 @@ static void PrintMapNameAndTime(void) //this code is ripped froom different part
     StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
     AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, 4, 1, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4); //print dayof week
 
-    if (GetCurrentLevelCap() < 100) {
-        ConvertIntToDecimalStringN(gStringVar1, GetCurrentLevelCap(), STR_CONV_MODE_LEFT_ALIGN, 2);
-        StringExpandPlaceholders(gStringVar4, gText_LevelCapVar1);
-        AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NARROW, GetStringRightAlignXOffset(FONT_NARROW, gStringVar4, 494), 1, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
+    switch (GetCurrentDifficultyLevel())
+    {
+        case DIFFICULTY_EASY:
+            AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, gText_EasyDifficulty, 494), 1, sTimeTextColors, TEXT_SKIP_DRAW, gText_EasyDifficulty);
+            break;
+        case DIFFICULTY_NORMAL:
+            AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, gText_NormalDifficulty, 494), 1, sTimeTextColors, TEXT_SKIP_DRAW, gText_NormalDifficulty);
+            break;
+        case DIFFICULTY_HARD:
+            AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, gText_HardDifficulty, 494), 1, sTimeTextColors, TEXT_SKIP_DRAW, gText_HardDifficulty);
+            break;
+        case DIFFICULTY_BRUTAL:
+            AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, gText_BrutalDifficulty, 494), 1, sTimeTextColors, TEXT_SKIP_DRAW, gText_BrutalDifficulty);
+            break;
+        default:
+            break;
     }
 //     RtcCalcLocalTime();
 
