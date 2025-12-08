@@ -121,6 +121,7 @@ script EventScript_Difficulty_Switch {
 					msgbox(format("Change the difficulty to {COLOR RED}Easy{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_EASY)
+						setspeaker(SP_NAME_COLRESS)
 						msgbox(format("The difficulty has been changed to {COLOR RED}Easy{COLOR DARK_GRAY}."))
 						if ((flag(FLAG_TRUE_BRUTAL) == TRUE) && (var(VAR_ZONE_2_STATE) == 1)) {
 							additem(ITEM_TM_PROTECT)
@@ -138,6 +139,7 @@ script EventScript_Difficulty_Switch {
 					msgbox(format("Change the difficulty to {COLOR RED}Normal{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_NORMAL)
+						setspeaker(SP_NAME_COLRESS)
 						msgbox(format("The difficulty has been changed to {COLOR RED}Normal{COLOR DARK_GRAY}."))
 						if ((flag(FLAG_TRUE_BRUTAL) == TRUE) && (var(VAR_ZONE_2_STATE) == 1)) {
 							additem(ITEM_TM_PROTECT)
@@ -155,6 +157,7 @@ script EventScript_Difficulty_Switch {
 					msgbox(format("Change the difficulty to {COLOR RED}Hard{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_HARD)
+						setspeaker(SP_NAME_COLRESS)
 						msgbox(format("The difficulty has been changed to {COLOR RED}Hard{COLOR DARK_GRAY}."))
 						if ((flag(FLAG_TRUE_BRUTAL) == TRUE) && (var(VAR_ZONE_2_STATE) == 1)) {
 							additem(ITEM_TM_PROTECT)
@@ -172,6 +175,7 @@ script EventScript_Difficulty_Switch {
 					msgbox(format("Change the difficulty to {COLOR RED}Brutal{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_BRUTAL)
+						setspeaker(SP_NAME_COLRESS)
 						msgbox(format("The difficulty has been changed to {COLOR RED}Brutal{COLOR DARK_GRAY}."))
 						return
 					}
@@ -851,7 +855,7 @@ script Sanctuary_EventScript_HandleStarterSelectionDefault {
 		setspeaker(SP_NAME_COLRESS)
 		message(format("Choose a starter Pokémon.\nPress {B_BUTTON} to randomize."))
 		waitmessage
-		dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Bulbasaur", "Charmander", "Squirtle", "Chikorita", "Cyndaquil", "Totodile", "Treecko", "Torchic", "Mudkip", "Turtwig", "Chimchar", "Piplup", "Snivy", "Tepig", "Oshawott", "Chespin", "Fennekin", "Froakie", "Rowlet", "Litten", "Popplio", "Grookey", "Scorbunny", "Sobble", "Sprigatito", "Fuecoco", "Quaxly", "Random")
+		dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Bulbasaur", "Charmander", "Squirtle", "Chikorita", "Cyndaquil", "Totodile", "Treecko", "Torchic", "Mudkip", "Turtwig", "Chimchar", "Piplup", "Snivy", "Tepig", "Oshawott", "Chespin", "Fennekin", "Froakie", "Rowlet", "Litten", "Popplio", "Grookey", "Scorbunny", "Sobble", "Sprigatito", "Fuecoco", "Quaxly", "Random")
 		switch (var(VAR_RESULT)) {
 			case 0:
 				setvar(VAR_TEMP_3, SPECIES_BULBASAUR)
@@ -1144,7 +1148,7 @@ script EventScript_Shop_FarmersStand {
 			// dynmultipush("Maranga Berry", ITEM_MARANGA_BERRY)
 		}
 		dynmultipush("Exit", 1000)
-		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
+		dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
 		switch (var(VAR_RESULT)) {
 			case 0:
 				call(EventScript_Shop_FarmersStand_Info)
@@ -1410,7 +1414,7 @@ script EventScript_Fisherman {
 		msgbox(format("A Fisherman deigns to spread his love of fishing with others!"))
 		giveitem(ITEM_SUPER_ROD)
 	}
-	msgbox(format("A Fisherman always fishes if he can!\pThough you can't fish when there's no Pokémon there!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("A Fisherman always fishes if he can!\pAnd a Fisherman checks what Pokémon are avaiable to fish using the DexNav!"), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_FISHERMAN, Common_Movement_FaceRight)
 	waitmovement(LOCALID_FISHERMAN)
 	release
@@ -1849,7 +1853,6 @@ script EventScript_Shop_Varrick {
 
 script EventScript_Shop_Varrick_Items {
 	while {
-		setspeaker("Varrick")
 		dynmultipush("Poké Balls", 0)
 		if (var(VAR_ZONE) > 5) {
 			dynmultipush("Evo Items", 1)
@@ -1861,7 +1864,7 @@ script EventScript_Shop_Varrick_Items {
 		}
 		dynmultipush("Other", 4)
 		dynmultipush("Exit", 7)
-		dynmultistack(21, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+		dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
 				call(EventScript_Shop_Varrick_Pokeballs)
@@ -3213,7 +3216,7 @@ script EventScript_Shop_Lelouch_MoveTutor {
 		// 	dynmultipush("", 0)
 		// }
 		dynmultipush("Exit", 50)
-		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+		dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case MOVE_HELPING_HAND:
 				setvar(VAR_TEMP_0, MOVE_HELPING_HAND)
