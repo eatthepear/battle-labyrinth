@@ -26,6 +26,7 @@ script EventScript_Joy {
 		callnative(UpdateFollowingPokemon)
 		applymovement(LOCALID_JOY, Movement_PkmnCenterNurse_Bow)
 		waitmovement(0)
+		setspeaker("Joy")
 		msgbox(format("Your Pokémon have been restored. See you next time!"), MSGBOX_AUTOCLOSE)
 		applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
 		waitmovement(0)
