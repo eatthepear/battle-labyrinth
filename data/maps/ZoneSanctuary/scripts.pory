@@ -346,25 +346,25 @@ script EventScript_NextZone {
 	}
 	setspeaker(SP_NAME_COLRESS)
 	msgbox(format("Are you prepared? You will be entering {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		call(EventScript_AskSaveGame)
-		setflag(FLAG_IN_NEW_ZONE)
-		msgbox(format("Bring out the strength of you and your Pokémon!"), MSGBOX_AUTOCLOSE)
-		applymovement(LOCALID_COLRESS, Common_Movement_WalkUp)
-		waitmovement(0)
-		applymovement(LOCALID_COLRESS, Common_Movement_WalkLeft)
-		waitmovement(0)
-		applymovement(LOCALID_COLRESS, Common_Movement_FaceRight)
-		waitmovement(0)
-		applymovement(LOCALID_PLAYER, Movement_Player_EnterZone)
-		waitmovement(0)
-		copyvar(VAR_LEVEL_CAP, VAR_ZONE)
-		goto(EventScript_WarpNextZone)
+	if (var(VAR_RESULT) == NO) {
+		return
 	}
-	return
-}
-
-script EventScript_WarpNextZone {
+	call(EventScript_AskSaveGame)
+	copyvar(VAR_LEVEL_CAP, VAR_ZONE)
+	special(BufferCurrentLevelCap)
+	setspeaker(SP_NAME_NONE)
+	msgbox(format("Level Cap increased to {COLOR RED}{STR_VAR_1}{COLOR DARK_GRAY}."))
+	setflag(FLAG_IN_NEW_ZONE)
+	setspeaker(SP_NAME_COLRESS)
+	msgbox(format("Bring out the strength of you and your Pokémon!"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_COLRESS, Common_Movement_WalkUp)
+	waitmovement(0)
+	applymovement(LOCALID_COLRESS, Common_Movement_WalkLeft)
+	waitmovement(0)
+	applymovement(LOCALID_COLRESS, Common_Movement_FaceRight)
+	waitmovement(0)
+	applymovement(LOCALID_PLAYER, Movement_Player_EnterZone)
+	waitmovement(0)
 	switch (var(VAR_ZONE)) {
 		case 1:
 			warp(MAP_ZONE1A, 255, 16, 28)

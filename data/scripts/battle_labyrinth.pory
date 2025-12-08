@@ -539,9 +539,10 @@ script EventScript_Collector {
 script EventScript_Notebook {
 	playbgm(MUS_HG_FOLLOW_ME_1, FALSE)
 	while {
-		message(format("Notebook open.\nWhat would you like to read?"))
+		special(BufferCurrentLevelCap)
+		message("Notebook open. Level Cap: {STR_VAR_1}\nWhat would you like to read?")
 		waitmessage
-		dynmultipush("Zone Info", 0)
+		dynmultipush("Current Zone", 0)
 		dynmultipush("Changes from Vanilla", 1)
 		dynmultipush("Difficulty Info", 2)
 		dynmultipush("Trainer Tips", 3)

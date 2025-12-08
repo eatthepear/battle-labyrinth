@@ -576,3 +576,4 @@ gSpecials::
 	def_special SetMonNature
 	def_special IsPokemonFainted
 	def_special GetHiddenGrottoSpecies
+	def_special BufferCurrentLevelCap

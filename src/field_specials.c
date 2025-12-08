@@ -4,6 +4,7 @@
 #include "battle.h"
 #include "battle_tower.h"
 #include "cable_club.h"
+#include "caps.h"
 #include "data.h"
 #include "decoration.h"
 #include "difficulty.h"
@@ -4711,4 +4712,9 @@ void SetAbility(void)
 {
     u32 ability = gSpecialVar_Result;
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ABILITY_NUM, &ability);
+}
+
+void BufferCurrentLevelCap(void)
+{
+    ConvertIntToDecimalStringN(gStringVar1, GetCurrentLevelCap(), STR_CONV_MODE_LEFT_ALIGN, 3);
 }
