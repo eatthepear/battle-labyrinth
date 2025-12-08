@@ -167,47 +167,57 @@ script Zone1A_EventScript_GiveFWG {
 			end
 		}
 	}
-	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
-	if (var(VAR_TEMP_2) == PARTY_SIZE) {
-		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
-		special(ChoosePartyMon)
-		waitstate
-		faceplayer
-		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
-			msgbox(Zone1A_Text_FWG_ComeBack)
-			release
-			end
-		}
-		specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
-		bufferspeciesname(2, VAR_TEMP_3)
-		copyvar(VAR_TEMP_3, VAR_0x8004) // used in SendChosenMonToPC
-		msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			msgbox(Zone1A_Text_FWG_ComeBack)
-			release
-			end
-		}
-		special(SendChosenMonToPC)
-		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
-	}
 	setflag(FLAG_ZONE1A_RECEIVED_FWG)
-	givemon(VAR_TEMP_1, 5, ITEM_NONE)
-	setmonmetlocation(VAR_TEMP_2, 245)
 	bufferspeciesname(0, VAR_TEMP_1)
 	msgbox("Here's your {STR_VAR_1}.", MSGBOX_DEFAULT)
 	playfanfare(MUS_OBTAIN_ITEM)
 	message(format("{PLAYER} received the {STR_VAR_1}!"))
 	waitmessage
 	waitfanfare
-	msgbox(format("Would you like to give a nickname to {STR_VAR_1}?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		call(Common_EventScript_GetGiftMonPartySlot)
-		call(Common_EventScript_NameReceivedPartyMon)
+	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		msgbox(format("Your party is full. Would you like to send a party Pokémon to the PC and add {STR_VAR_1} to your party?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call(EventScript_ChoosePartyMonToSend)
+		}
 	}
-	faceplayer
-	msgbox(format("Take care of your {STR_VAR_1}!"))
+	givemon(VAR_TEMP_1, 5, metLocation=METLOC_GIVE_FWG)
+	if (var(VAR_RESULT) == MON_GIVEN_TO_PARTY) {
+		bufferspeciesname(0, VAR_TEMP_1)
+		msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call(Common_EventScript_GetGiftMonPartySlot)
+			call(Common_EventScript_NameReceivedPartyMon)
+		}
+	} else {
+		bufferspeciesname(0, VAR_TEMP_1)
+		msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call(Common_EventScript_NameReceivedBoxMon)
+		}
+		call(Common_EventScript_TransferredToPC)
+	}
+	msgbox(format("Take care of your new Pokémon!"))
 	release
 	end
+}
+
+script EventScript_ChoosePartyMonToSend {
+	while {
+		msgbox(format("Choose a party Pokémon to send to the PC."))
+		special(ChoosePartyMon)
+		waitstate
+		if (var(VAR_0x8004) != PARTY_NOTHING_CHOSEN) {
+			specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
+			bufferspeciesname(2, VAR_TEMP_3)
+			copyvar(VAR_TEMP_3, VAR_0x8004) // used in SendChosenMonToPC
+			msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				special(SendChosenMonToPC)
+				return
+			}
+		}
+	}
 }
 
 text Zone1A_Text_FWG_ComeBack {

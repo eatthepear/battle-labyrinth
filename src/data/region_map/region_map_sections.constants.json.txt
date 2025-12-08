@@ -12,17 +12,6 @@ enum {
 
 // Special location IDs that use the same value space as MAPSECs.
 
-#define METLOC_ZONE4A_GIFT         0xF2
-#define METLOC_ZONE8A_GIFT         0xF3
-#define METLOC_MARIE_EGG           0xF4
-#define METLOC_GIVE_FWG            0xF5
-#define METLOC_BOUGHT_RUIN         0xF6
-#define METLOC_REVIVED_FOSSIL      0xF7
-#define METLOC_ZONE10B_GIFT        0xF8
-#define METLOC_BOUGHT_FARM         0xF9
-#define METLOC_BOUGHT_PIKA_CLONE   0xFA
-#define METLOC_BOUGHT_BUG          0xFB
-#define METLOC_DAYCARE_GIVEAWAY    0xFC
 #define METLOC_SPECIAL_EGG         0xFD
 #define METLOC_IN_GAME_TRADE       0xFE
 #define METLOC_FATEFUL_ENCOUNTER   0xFF
