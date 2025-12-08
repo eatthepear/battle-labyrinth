@@ -114,8 +114,10 @@ script EventScript_Difficulty_Switch {
 		switch (var(VAR_RESULT)) {
 			case 0:
 				if (var(VAR_DIFFICULTY) == DIFFICULTY_EASY) {
+					setspeaker(SP_NAME_COLRESS)
 					msgbox(format("The difficulty is already set to {COLOR RED}Easy{COLOR DARK_GRAY}."))
 				} else {
+					setspeaker(SP_NAME_COLRESS)
 					msgbox(format("Change the difficulty to {COLOR RED}Easy{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_EASY)
@@ -129,8 +131,10 @@ script EventScript_Difficulty_Switch {
 				}
 			case 1:
 				if (var(VAR_DIFFICULTY) == DIFFICULTY_NORMAL) {
+					setspeaker(SP_NAME_COLRESS)
 					msgbox(format("The difficulty is already set to {COLOR RED}Normal{COLOR DARK_GRAY}."))
 				} else {
+					setspeaker(SP_NAME_COLRESS)
 					msgbox(format("Change the difficulty to {COLOR RED}Normal{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_NORMAL)
@@ -144,8 +148,10 @@ script EventScript_Difficulty_Switch {
 				}
 			case 2:
 				if (var(VAR_DIFFICULTY) == DIFFICULTY_HARD) {
+					setspeaker(SP_NAME_COLRESS)
 					msgbox(format("The difficulty is already set to {COLOR RED}Hard{COLOR DARK_GRAY}."))
 				} else {
+					setspeaker(SP_NAME_COLRESS)
 					msgbox(format("Change the difficulty to {COLOR RED}Hard{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_HARD)
@@ -159,8 +165,10 @@ script EventScript_Difficulty_Switch {
 				}
 			case 3:
 				if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+					setspeaker(SP_NAME_COLRESS)
 					msgbox(format("The difficulty is already set to {COLOR RED}Brutal{COLOR DARK_GRAY}."))
 				} else {
+					setspeaker(SP_NAME_COLRESS)
 					msgbox(format("Change the difficulty to {COLOR RED}Brutal{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 					if (var(VAR_RESULT) == YES) {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_BRUTAL)
@@ -822,6 +830,7 @@ script EventScript_GameIntro_Nuzlocke {
 				setspeaker(SP_NAME_COLRESS)
 				msgbox(gText_Colress_NuzlockeExplained)
 			case 1:
+				setspeaker(SP_NAME_COLRESS)
 				msgbox(format("Are you sure you want to enable {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == YES) {
 					setflag(FLAG_SETTINGS_NUZLOCKE)
