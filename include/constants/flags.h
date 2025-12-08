@@ -412,7 +412,7 @@
 #define FLAG_ITEM_ZONE5B_Old_RANDOM_2                  0x319
 #define FLAG_ITEM_ZONE5B_Old_GEMS                      0x31A
 #define FLAG_ITEM_ZONE5B_Old_RANDOM_3                  0x31B
-#define FLAG_ITEM_ZONE6A_TM_DRAINING_KISS          0x31C
+#define FLAG_ITEM_ZONE6A_TM_ROCK_TOMB          0x31C
 #define FLAG_ITEM_ZONE6A_NET_BALL                  0x31D
 #define FLAG_ITEM_ZONE6A_NEST_BALL                 0x31E
 #define FLAG_ITEM_ZONE6A_GEMS                      0x31F
