@@ -2377,7 +2377,10 @@ static void DrawNextSkillsButtonPrompt(u8 mode)
             break;
         case SKILL_STATE_IVS:
             ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_IVS);
-            PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_EVS);
+            if (GetCurrentDifficultyLevel() < DIFFICULTY_HARD)
+                PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_EVS);
+            else
+                PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_STATS);
             break;
         case SKILL_STATE_EVS:
             if (BW_SUMMARY_IV_EV_DISPLAY == BW_IV_EV_GRADED)
