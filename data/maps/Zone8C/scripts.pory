@@ -73,6 +73,6 @@ script Zone8C_EventScript_Random1 {
 
 script Zone8C_EventScript_GalacticGrunt {
 	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_8C, format("If I win, you have to lead me out of here!"), format("Wah! I have no idea what I'm doing here!"))
-	msgbox(format("It's my destiny to wander this cave forever…\pAt least until the Commander comes and finds me!"))
+	msgbox(format("It's my destiny to wander this cave forever…\pAt least until the Commander comes and finds me!"), MSGBOX_AUTOCLOSE)
 	end
 }

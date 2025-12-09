@@ -450,24 +450,24 @@ script Zone2A_EventScript_TMBugBite {
 
 script Zone2A_EventScript_Polly {
 	trainerbattle_single(TRAINER_PBL_POLLY, format("Our friend Shaun is our leader!\pYou'll have to defeat me to get to him!"), format("Defeated!"))
-	msgbox(format("Shaun likes to use Pokémon that enjoy Oran Berries."))
+	msgbox(format("Shaun likes to use Pokémon that enjoy Oran Berries."), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone2A_EventScript_Jeremiah {
 	trainerbattle_single(TRAINER_PBL_JEREMIAH, format("The more legs, the better!"), format("Oh… Come on!"))
-	msgbox(format("Just wait till my Bugs are all evolved!"))
+	msgbox(format("Just wait till my Bugs are all evolved!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone2A_EventScript_Harper {
 	trainerbattle_single(TRAINER_PBL_HARPER, format("Surprise! Battle time!"), format("My spirit, crushed!"))
-	msgbox(format("I don't know if I can ever come back from this loss…"))
+	msgbox(format("I don't know if I can ever come back from this loss…"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone2A_EventScript_Josh {
 	trainerbattle_single(TRAINER_PBL_JOSH, format("Hey, you! Get out of my way!"), format("You're too strong!"))
-	msgbox(format("Sorry about earlier."))
+	msgbox(format("Sorry about earlier."), MSGBOX_AUTOCLOSE)
 	end
 }

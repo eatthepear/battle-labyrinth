@@ -347,7 +347,7 @@ script Zone7A_EventScript_Random3 {
 
 script Zone7A_EventScript_Tamara {
 	trainerbattle_single(TRAINER_PBL_TAMARA, format("There are some strange people with space suits running around.\pAre you one of them?"), format("Clearly you're not part of their crew!"))
-	msgbox(format("Sorry, your outfit looks nothing like a space suit."))
+	msgbox(format("Sorry, your outfit looks nothing like a space suit."), MSGBOX_AUTOCLOSE)
 	end
 }
 
