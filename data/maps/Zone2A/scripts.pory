@@ -342,7 +342,7 @@ script Zone2A_EventScript_BuyBug {
 	updatemoneybox
 	msgbox(format("Ehehehe, thank you…"))
 	hidemoneybox
-	bufferspeciesname(0, VAR_TEMP_1)
+	bufferspeciesname(0, VAR_TEMP_0)
 	msgbox("Here's your {STR_VAR_1}.")
 	playfanfare(MUS_OBTAIN_ITEM)
 	message(format("{PLAYER} received the {STR_VAR_1}!"))
