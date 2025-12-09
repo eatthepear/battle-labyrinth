@@ -190,6 +190,7 @@ script Zone1A_EventScript_GiveFWG {
 		}
 	} else {
 		bufferspeciesname(0, VAR_TEMP_0)
+		copyvar(VAR_TEMP_TRANSFERRED_SPECIES, VAR_TEMP_0)
 		msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
 			call(Common_EventScript_NameReceivedBoxMon)
