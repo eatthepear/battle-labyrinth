@@ -47,10 +47,13 @@ script Zone2A_EventScript_Max {
 	}
 	applymovement(LOCALID_MAX, Common_Movement_WalkUp2)
 	waitmovement(0)
-	msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: By my calculations, you should be {PLAYER}!\pHi, {PLAYER}! My name is {COLOR BLUE}Max{COLOR DARK_GRAY}."))
-	msgbox(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: I am a traveling merchant, selling Technical Machines for your Pokémon!\pI travel a lot, never going to the same place again.\pI'll have different wares every time you see me, so be sure to buy whatever TMs you deem important!"))
+	setspeaker("???")
+	msgbox(format("By my calculations, you should be {PLAYER}!\pHi, {PLAYER}! My name is {COLOR BLUE}Max{COLOR DARK_GRAY}."))
+	setspeaker("Max")
+	msgbox(format("I am a traveling merchant, selling Technical Machines for your Pokémon!\pI travel a lot, never going to the same place again.\pI'll have different wares every time you see me, so be sure to buy whatever TMs you deem important!"))
 	if (var(VAR_DIFFICULTY) < DIFFICULTY_BRUTAL) {
-		msgbox(format("{COLOR BLUE}Max{COLOR DARK_GRAY}: Tell you what, for a first-time customer like you, I'll give you a TM for free!"))
+		setspeaker("Max")
+		msgbox(format("Tell you what, for a first-time customer like you, I'll give you a TM for free!"))
 		giveitem(ITEM_TM_PROTECT)
 	}
 	call(EventScript_Shop_Max)
@@ -63,38 +66,46 @@ script Zone2A_EventScript_LeviathanBattle {
 	lock
 	faceplayer
 	if (flag(FLAG_BEAT_LEVIATHAN_2) == true) {
+		setspeaker("Shaun")
 		msgbox(Zone2A_Text_Shaun_MoreBerries)
 		release
 		end
 	}
-	msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: My Pokémon love to eat, just like me!"))
+	setspeaker("Shaun")
+	msgbox(format("My Pokémon love to eat, just like me!"))
 	if (!defeated(TRAINER_PBL_POLLY) || !defeated(TRAINER_PBL_JEREMIAH) || !defeated(TRAINER_PBL_JOSH) || !defeated(TRAINER_PBL_HARPER)) {
-		msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: Tell you what, if you go and defeat all four of my friends around the farm, I'll show you just how much my Pokémon can eat!"))
+		setspeaker("Shaun")
+		msgbox(format("Tell you what, if you go and defeat all four of my friends around the farm, I'll show you just how much my Pokémon can eat!"))
 		release
 		end
 	}
-	msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: My friends tell me you've defeated every last one of them!\pAre you interested in a battle? I'll show you just how much my Pokémon can eat!"), MSGBOX_YESNO)
+	setspeaker("Shaun")
+	msgbox(format("My friends tell me you've defeated every last one of them!\pAre you interested in a battle? I'll show you just how much my Pokémon can eat!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: Oh, all right…"))
+		setspeaker("Shaun")
+		msgbox(format("Oh, all right…"))
 		release
 		end
 	}
 	closemessage
 	fadeoutbgm(1)
-	msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: All right then, let's battle!"))
+	setspeaker("Shaun")
+	msgbox(format("All right then, let's battle!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_SHAUN_LEVIATHAN_2, format("Ack! I lost again!\pDoggone it!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though;\pI enjoyed our battle so much, I want to give you these!"), MSGBOX_DEFAULT)
+	setspeaker("Shaun")
+	msgbox(format("Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though;\pI enjoyed our battle so much, I want to give you these!"), MSGBOX_DEFAULT)
 	giveitem(ITEM_ORAN_BERRY, 5)
 	setflag(FLAG_BEAT_LEVIATHAN_2)
+	setspeaker("Shaun")
 	msgbox(Zone2A_Text_Shaun_MoreBerries)
 	release
 	end
 }
 
 text Zone2A_Text_Shaun_MoreBerries {
-	format("{COLOR BLUE}Shaun{COLOR DARK_GRAY}: If you're looking for more Berries, you can always buy more at the Farmer's Stand, or find them hidden in the field!")
+	format("If you're looking for more Berries, you can always buy more at the Farmer's Stand, or find them hidden in the field!")
 }
 
 script Zone2A_EventScript_BuyBug {

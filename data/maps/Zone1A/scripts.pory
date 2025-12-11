@@ -227,11 +227,7 @@ script Zone1A_EventScript_TriggerLeviathanBottom {
 	waitmovement(0)
 	applymovement(LOCALID_COREY, Zone1A_Corey_WalkLeft)
 	waitmovement(0)
-	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		goto(Zone1A_EventScript_LeviathanBattle)
-	}
-	msgbox(Zone1A_Text_Leviathan1Wait, MSGBOX_AUTOCLOSE)
+	call(Zone1A_EventScript_LeviathanBattle)
 	applymovement(LOCALID_COREY, Common_Movement_WalkUp)
 	waitmovement(0)
 	applymovement(LOCALID_COREY, Zone1A_Corey_WalkRight)
@@ -251,11 +247,7 @@ script Zone1A_EventScript_TriggerLeviathanMiddle {
 	waitse
 	applymovement(LOCALID_COREY, Zone1A_Corey_WalkLeft)
 	waitmovement(0)
-	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		goto(Zone1A_EventScript_LeviathanBattle)
-	}
-	msgbox(Zone1A_Text_Leviathan1Wait, MSGBOX_AUTOCLOSE)
+	call(Zone1A_EventScript_LeviathanBattle)
 	applymovement(LOCALID_COREY, Zone1A_Corey_WalkRight)
 	waitmovement(0)
 	applymovement(LOCALID_COREY, Common_Movement_FaceLeft)
@@ -275,11 +267,7 @@ script Zone1A_EventScript_TriggerLeviathanTop {
 	waitmovement(0)
 	applymovement(LOCALID_COREY, Zone1A_Corey_WalkLeft)
 	waitmovement(0)
-	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		goto(Zone1A_EventScript_LeviathanBattle)
-	}
-	msgbox(Zone1A_Text_Leviathan1Wait, MSGBOX_AUTOCLOSE)
+	call(Zone1A_EventScript_LeviathanBattle)
 	applymovement(LOCALID_COREY, Common_Movement_WalkDown)
 	waitmovement(0)
 	applymovement(LOCALID_COREY, Zone1A_Corey_WalkRight)
@@ -292,7 +280,15 @@ script Zone1A_EventScript_TriggerLeviathanTop {
 }
 
 script Zone1A_EventScript_LeviathanBattle {
+	setspeaker("Corey")
+	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		setspeaker("Corey")
+		msgbox(Zone1A_Text_Leviathan1Wait, MSGBOX_AUTOCLOSE)
+		return
+	}
 	fadeoutbgm(1)
+	setspeaker("Corey")
 	msgbox(Zone1A_Text_Leviathan1Intro2)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	switch (var(VAR_STARTER_MON)) {
@@ -304,31 +300,33 @@ script Zone1A_EventScript_LeviathanBattle {
 			trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER, Zone1A_Text_Leviathan1Defeat)
 	}
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
+	setspeaker("Corey")
+	msgbox(format("I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
 	giveitem(ITEM_TM_FALSE_SWIPE)
-	msgbox(format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Well, anyways, I've gotta run now.\pBye bye!"), MSGBOX_AUTOCLOSE)
+	setspeaker("Corey")
+	msgbox(format("Well, anyways, I've gotta run now.\pBye bye!"), MSGBOX_AUTOCLOSE)
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(LOCALID_COREY)
 	setflag(FLAG_BEAT_LEVIATHAN_1)
 	setvar(VAR_ZONE_1_STATE, 1)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
-	release
+	releaseall
 	end
 }
 
 text Zone1A_Text_Leviathan1Intro {
-	format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Hi! My name's Corey.\n"
+	format("Hi! My name's Corey.\n"
 		   "I'm the resident Leviathan around here.\p"
 		   "If you want to go forward, you'll have to beat me!\p"
 		   "So, are you ready for our battle?")
 }
 
 text Zone1A_Text_Leviathan1Wait {
-	format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Okay. You just let me know when you're ready.")
+	format("Okay. You just let me know when you're ready!")
 }
 
 text Zone1A_Text_Leviathan1Intro2 {
-	format("{COLOR BLUE}Corey{COLOR DARK_GRAY}: Aww, yeah!\n"
+	format("Aww, yeah!\n"
 		   "This battle is gonna be awesome!")
 }
 
