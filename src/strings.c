@@ -1381,6 +1381,7 @@ const u8 gText_MapZoneS7[] = _("Zone 7 - Gemini Heights");
 const u8 gText_MapZoneS8[] = _("Zone 8 - Duskmire Hollow");
 const u8 gText_MapZoneS9[] = _("Zone 9 - Lushbranch Village");
 const u8 gText_MapZoneS10[] = _("Zone 10 - Scornwind Desert");
+const u8 gText_MapZone2Short[] = _("Zone 2 GoldenOakRanch");
 
 //// side quest data
 //generic strings

@@ -2654,6 +2654,15 @@ script EventScript_BufferZoneName {
 	}
 }
 
+script EventScript_BufferZoneNameShort {
+	switch (var(VAR_TEMP_0)) {
+		case 2:
+			bufferstring(0, gText_MapZone2Short)
+		default:
+			call(EventScript_BufferZoneName)
+	}
+}
+
 script EventScript_FoundGrotto {
 	msgbox(format("Look!\nYou've found a narrow path.\pWill you follow it?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {

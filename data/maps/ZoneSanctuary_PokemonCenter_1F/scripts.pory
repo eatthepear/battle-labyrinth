@@ -128,7 +128,7 @@ script EventScript_OldMan_PriorZone {
 	waitmessage
 	setvar(VAR_TEMP_0, 1)
 	while (var(VAR_TEMP_0) != VAR_ZONE) {
-		call(EventScript_BufferZoneName)
+		call(EventScript_BufferZoneNameShort)
 		dynmultipush("{STR_VAR_1}", VAR_TEMP_0)
 		addvar(VAR_TEMP_0, 1)
 	}
