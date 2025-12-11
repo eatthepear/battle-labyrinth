@@ -670,7 +670,7 @@ script EventScript_Notebook_ZoneInfo {
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				msgbox(format("On Brutal difficulty, they also have a Spheal that uses Defense Curl and Ice Ball."))
 			}
-			msgbox(format("There is also a Lady guarding a Rare Candy who uses Farfetch'd, Luvdisc, and Delcatty."))
+			msgbox(format("There is also a Lady guarding a Rare Candy who uses Woobat, Luvdisc, and Delcatty."))
 		case 4:
 			msgbox(format("The Leviathan battles in a Double Battle. Their Nickit, Shinx, and ace Ledian all use spread moves that lower your stats."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
