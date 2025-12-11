@@ -1,1 +1,32 @@
 mapscripts ZoneSanctuary_BreezyMeadow_MapScripts {}
+
+script ZoneSanctuary_EventScript_BreezyMeadow_BirdKeeperFlyingTaxi {
+    lock
+    faceplayer
+    msgbox(format("Flying Taxi at your service! Express flight to Boreal Grove! All aboard?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        msgbox(format("Alrighty, we'll be here, awaiting our next passenger!"))
+        release
+        end
+    }
+    applymovement(LOCALID_BIRD_KEEPER_BREEZY_MEADOW, Common_Movement_FaceRight)
+    waitmovement(0)
+    msgbox(format("Delibird! Use Fly!"))
+	setspeaker("Delibird")
+	playmoncry(SPECIES_DELIBIRD, CRY_MODE_NORMAL)
+	msgbox(format("Deliii!"))
+    // warp(MAP_ZONE6A, 255, 51, 22)
+    waitstate
+    end
+}
+
+script EventScript_Delibird {
+	lock
+	faceplayer
+	setspeaker("Delibird")
+	playmoncry(SPECIES_DELIBIRD, CRY_MODE_NORMAL)
+	msgbox(format("Deliii!"))
+	waitmoncry
+	release
+	end
+}
