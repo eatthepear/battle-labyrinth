@@ -672,7 +672,8 @@
     "ZoneSanctuary_BreezyMeadow",
     "ZoneSanctuary_WhisperCave",
     "HiddenGrotto",
-    "HiddenGrottoCave"
+    "HiddenGrottoCave",
+    "BorealThicket"
   ],
   "gMapGroup_Unused": [
     "Zone0A",
