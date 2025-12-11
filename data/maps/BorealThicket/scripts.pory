@@ -1,1 +1,21 @@
 mapscripts BorealThicket_MapScripts {}
+
+script BorealThicket_EventScript_BirdKeeperFlyingTaxi {
+    lock
+    faceplayer
+    msgbox(format("Flying Taxi at your service! Express flight to Breezy Meadow! All aboard?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        msgbox(format("Alrighty, we'll be here, awaiting our next passenger!"))
+        release
+        end
+    }
+    applymovement(LOCALID_BIRD_KEEPER_BOREAL_THICKET, Common_Movement_FaceRight)
+    waitmovement(0)
+    msgbox(format("Delibird! Use Fly!"))
+	setspeaker("Delibird")
+	playmoncry(SPECIES_DELIBIRD, CRY_MODE_NORMAL)
+	msgbox(format("Deliii!"))
+    warp(MAP_ZONE_SANCTUARY_BREEZY_MEADOW, 255, 21, 8)
+    waitstate
+    end
+}

@@ -15,7 +15,7 @@ script ZoneSanctuary_EventScript_BreezyMeadow_BirdKeeperFlyingTaxi {
 	setspeaker("Delibird")
 	playmoncry(SPECIES_DELIBIRD, CRY_MODE_NORMAL)
 	msgbox(format("Deliii!"))
-    // warp(MAP_ZONE6A, 255, 51, 22)
+    warp(MAP_BOREAL_THICKET, 255, 15, 15)
     waitstate
     end
 }
