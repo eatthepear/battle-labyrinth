@@ -588,6 +588,7 @@
     "TrainerHill_Elevator"
   ],
   "gMapGroup_Zones": [
+    "ZoneSanctuary",
     "Zone1A",
     "Zone2A",
     "Zone3A",
@@ -661,18 +662,17 @@
     "Zone26A",
     "Zone26B",
     "Zone27A",
-    "Zone28A",
-    "HiddenGrotto",
-    "HiddenGrottoCave"
+    "Zone28A"
   ],
   "gMapGroup_Sanctuary": [
-    "ZoneSanctuary",
     "ZoneSanctuary_PokemonCenter_1F",
     "ZoneSanctuary_PokemonCenter_2F",
     "ZoneSanctuary_QuietField",
     "ZoneSanctuary_PeacefulGrove",
     "ZoneSanctuary_BreezyMeadow",
-    "ZoneSanctuary_WhisperCave"
+    "ZoneSanctuary_WhisperCave",
+    "HiddenGrotto",
+    "HiddenGrottoCave"
   ],
   "gMapGroup_Unused": [
     "Zone0A",
