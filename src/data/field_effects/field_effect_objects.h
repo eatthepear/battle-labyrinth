@@ -1444,7 +1444,7 @@ static const union AnimCmd *const sAnimTable_SnowFootprints[] =
 };
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_SnowFootprints = {
-    .tileTag = 0xFFFF,
+    .tileTag = TAG_NONE,
     .paletteTag = FLDEFF_PAL_TAG_GENERAL_0,
     .oam = &gObjectEventBaseOam_16x16,
     .anims = sAnimTable_SnowFootprints,

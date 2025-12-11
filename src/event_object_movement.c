@@ -10033,14 +10033,15 @@ void GroundEffect_DeepSandTracks(struct ObjectEvent *objEvent, struct Sprite *sp
 void GroundEffect_SnowTracks(struct ObjectEvent *objEvent, struct Sprite *sprite)
 {
     const struct ObjectEventGraphicsInfo *info = GetObjectEventGraphicsInfo(objEvent->graphicsId);
-    sGroundEffectTracksFuncs[info->tracks](objEvent, sprite, 2);
+    if (info->tracks == TRACKS_FOOT)
+        sGroundEffectTracksFuncs[objEvent->invisible ? TRACKS_NONE : info->tracks](objEvent, sprite, 2);
 }
 
 static void DoTracksGroundEffect_None(struct ObjectEvent *objEvent, struct Sprite *sprite, bool8 isDeepSand)
 {
 }
 
-static void DoTracksGroundEffect_Footprints(struct ObjectEvent *objEvent, struct Sprite *sprite, bool8 isDeepSand)
+static void DoTracksGroundEffect_Footprints(struct ObjectEvent *objEvent, struct Sprite *sprite, u8 tracksType)
 {
     // First half-word is a Field Effect script id. (gFieldEffectScriptPointers)
     u16 sandFootprints_FieldEffectData[3] = {
@@ -10054,7 +10055,7 @@ static void DoTracksGroundEffect_Footprints(struct ObjectEvent *objEvent, struct
     gFieldEffectArguments[2] = 149;
     gFieldEffectArguments[3] = 2;
     gFieldEffectArguments[4] = objEvent->facingDirection;
-    FieldEffectStart(sandFootprints_FieldEffectData[isDeepSand]);
+    FieldEffectStart(sandFootprints_FieldEffectData[tracksType]);
 }
 
 static void DoTracksGroundEffect_FootprintsB(struct ObjectEvent *objEvent, struct Sprite *sprite, bool8 isDeepSand)
