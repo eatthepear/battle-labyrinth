@@ -1308,7 +1308,7 @@ const u8 gText_InfiniteRepelOn[] = _("The Infinite Repellent is now {COLOR RED}o
 const u8 gText_InfiniteRepelOff[] = _("The Infinite Repellent is now {COLOR RED}off{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
 const u8 gText_ConfirmSacredAsh[] = _("Use the Sacred Ash to fully\nrevive and heal your party?");
 const u8 gText_UsedSacredAsh[] = _("You used the Sacred Ash!\nYour party was completely healed!{PAUSE_UNTIL_PRESS}");
-const u8 gText_CandyNoEffectBecauseCap[] = _("Infinite Candy can't level up past\nLv. {STR_VAR_2}, the prior level cap.{PAUSE_UNTIL_PRESS}");
+const u8 gText_CandyNoEffectBecauseCap[] = _("It won't have any effect. Can't level up\npast Lv. {STR_VAR_2}, the prior level cap.{PAUSE_UNTIL_PRESS}");
 const u8 gText_YourPkmnBecameHealthy[] = _("Your Pokémon became healthy.{PAUSE_UNTIL_PRESS}");
 
 const u8 gText_SavingZone[] = _("Zones Completed");

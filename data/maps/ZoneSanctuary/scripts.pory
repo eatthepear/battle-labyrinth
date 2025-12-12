@@ -1105,11 +1105,18 @@ script EventScript_Shop_FarmersStand {
 			dynmultipush("Jolly Mint", ITEM_JOLLY_MINT)
 			dynmultipush("Naive Mint", ITEM_NAIVE_MINT)
 		}
-		if (var(VAR_ZONE) > 5) {
-			dynmultipush("Exp. Candy XS", ITEM_EXP_CANDY_XS)
-		}
+		dynmultipush("Exp. Candy XS", ITEM_EXP_CANDY_XS)
 		if (var(VAR_ZONE) > 10) {
 			dynmultipush("Exp. Candy S", ITEM_EXP_CANDY_XS)
+		}
+		if (var(VAR_ZONE) > 20) {
+			dynmultipush("Exp. Candy M", ITEM_EXP_CANDY_M)
+		}
+		if (var(VAR_ZONE) > 35) {
+			dynmultipush("Exp. Candy L", ITEM_EXP_CANDY_L)
+		}
+		if (var(VAR_ZONE) > 45) {
+			dynmultipush("Exp. Candy XL", ITEM_EXP_CANDY_XL)
 		}
 		dynmultipush("Oran Berry", ITEM_ORAN_BERRY)
 		dynmultipush("Cheri Berry", ITEM_CHERI_BERRY)

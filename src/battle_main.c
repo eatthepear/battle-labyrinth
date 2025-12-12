@@ -1938,7 +1938,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u32 fixedOtId = 0;
             u32 abilityNum = 0;
             u8 nature;
-            u8 level = GetRareCandyLevelCap() - 1;
+            u8 level = GetInfiniteCandyLevelCap() - 1;
             if (partyData[monIndex].lvl != 0)
                 level = partyData[monIndex].lvl;
             if (GetCurrentDifficultyLevel() == DIFFICULTY_EASY)

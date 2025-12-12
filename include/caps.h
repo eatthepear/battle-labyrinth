@@ -19,7 +19,7 @@
 #endif
 
 u32 GetCurrentLevelCap(void);
-u32 GetRareCandyLevelCap(void);
+u32 GetInfiniteCandyLevelCap(void);
 u32 GetSoftLevelCapExpValue(u32 level, u32 expValue);
 u32 GetCurrentEVCap(void);
 u32 GetExpValue(void);

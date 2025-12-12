@@ -8518,7 +8518,7 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
             trainerMoney = 5 * numMons;
 
         if (lastMonLevel == 0)
-            lastMonLevel = (GetRareCandyLevelCap() - 1);
+            lastMonLevel = (GetInfiniteCandyLevelCap() - 1);
 
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
             moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;

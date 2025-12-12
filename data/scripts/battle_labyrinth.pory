@@ -1142,7 +1142,7 @@ script EventScript_Notebook_Battle {
 				))
 			case 1:
 				msgbox(format("There are hard level caps built in, which typically increase by 2-3 every Zone."))
-				msgbox(format("In a Zone, the amount of experience gained from a knocked out Pokémon is a flat number based on the current level cap and the current zone, rather than being dependent on level or species."))
+				msgbox(format("In a Zone, the amount of experience gained from a knocked out Pokémon is a flat number based on the current zone, rather than being dependent on opposing level or species."))
 				msgbox(format("Pokémon don't gain experience through wild battles, including capture, except on Easy difficulty."))
 			case 2:
 				msgbox(format("Frostbite replaces Freeze, as in Legends: Arceus.\pThe move Refresh heals Frostbite."))
@@ -1174,14 +1174,15 @@ script EventScript_Notebook_Items {
 		dynmultipush("Ability Snack", 4)
 		dynmultipush("Sacred Ash", 5)
 		dynmultipush("Mints", 6)
-		dynmultipush("Heart Scale", 7)
-		dynmultipush("Hex Orb", 8)
-		dynmultipush("Tera Shard", 9)
-		dynmultipush("Back", 10)
+		dynmultipush("Exp. Candy", 7)
+		dynmultipush("Heart Scale", 8)
+		dynmultipush("Hex Orb", 9)
+		dynmultipush("Tera Shard", 10)
+		dynmultipush("Back", 11)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
-				msgbox(format("The Infinite Candy Key Item allows you to raise your Pokémon up to the level cap.\pIn a Zone however, you can only raise your Pokémon up to the prior level cap.\pYou can use normal Rare Candies, of which there only 15 in the game, to level up your Pokémon past the current level cap."))
+				msgbox(format("You can use normal Rare Candies, of which there only 15 in the game, to level up your Pokémon past the current level cap.\pThe Infinite Candy Key Item allows you to raise your Pokémon up to the level cap, or only the prior level cap if you are in a Zone."))
 			case 1:
 				msgbox(format("The Infinite Repel Key Item allows you to avoid encountering any wild Pokémon, regardless of your level."))
 			case 2:
@@ -1195,12 +1196,14 @@ script EventScript_Notebook_Items {
 			case 6:
 				msgbox(format("Mints cost reduced to ¥80, and change natures permanently."))
 			case 7:
-				msgbox(format("Heart Scale cost increased to ¥2500."))
+				msgbox(format("Exp. Candies cost all set to ¥80, and do not level up past the level cap."))
 			case 8:
-				msgbox(format("The Hexorb Key Item lets you pre-status Pokémon."))
+				msgbox(format("Heart Scale cost increased to ¥2500."))
 			case 9:
-				msgbox(format("Tera Shard cost reduced to ¥200."))
+				msgbox(format("The Hexorb Key Item lets you pre-status Pokémon."))
 			case 10:
+				msgbox(format("Tera Shard cost reduced to ¥200."))
+			case 11:
 			case MULTI_B_PRESSED:
 				return
 		}

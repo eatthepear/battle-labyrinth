@@ -5874,11 +5874,17 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     u16 *itemPtr = &gSpecialVar_ItemId;
     bool8 cannotUseEffect;
     u8 holdEffectParam = GetItemHoldEffectParam(*itemPtr);
-    u8 candyCap = GetRareCandyLevelCap();
+    u8 levelCap = GetCurrentLevelCap();
+    u8 infiniteCandyCap = GetInfiniteCandyLevelCap();
     bool8 isInfiniteCandy = (GetItemPocket(gSpecialVar_ItemId) == POCKET_KEY_ITEMS);
+    bool8 isExpCandy = (gSpecialVar_ItemId == ITEM_EXP_CANDY_XS) 
+                        || (gSpecialVar_ItemId == ITEM_EXP_CANDY_S) 
+                        || (gSpecialVar_ItemId == ITEM_EXP_CANDY_M) 
+                        || (gSpecialVar_ItemId == ITEM_EXP_CANDY_L) 
+                        || (gSpecialVar_ItemId == ITEM_EXP_CANDY_XL);
 
     sInitialLevel = GetMonData(mon, MON_DATA_LEVEL);
-    if (!(isInfiniteCandy && sInitialLevel >= candyCap))
+    if (!((isInfiniteCandy && sInitialLevel >= infiniteCandyCap) || (isExpCandy && sInitialLevel >= levelCap) ))
     {
         BufferMonStatsToTaskData(mon, arrayPtr);
         cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);
@@ -5916,9 +5922,9 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         else
         {
             gPartyMenuUseExitCallback = FALSE;
-            ConvertIntToDecimalStringN(gStringVar2, candyCap, STR_CONV_MODE_LEFT_ALIGN, 3);
+            ConvertIntToDecimalStringN(gStringVar2, infiniteCandyCap, STR_CONV_MODE_LEFT_ALIGN, 3);
             StringExpandPlaceholders(gStringVar4, gText_CandyNoEffectBecauseCap);
-            if (isInfiniteCandy)
+            if (isInfiniteCandy || isExpCandy)
                 DisplayPartyMenuMessage(gStringVar4, TRUE);
             else
                 DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
