@@ -1076,6 +1076,35 @@ script EventScript_Shop_FarmersStand {
 		dynmultipush("Shop Info", 0)
 		dynmultipush("Ability Snack", ITEM_ABILITY_SNACK)
 		dynmultipush("Honey", ITEM_HONEY)
+		dynmultipush("Serious Mint", ITEM_SERIOUS_MINT)
+		if (var(VAR_ZONE) > 10) {
+			dynmultipush("Gentle Mint", ITEM_GENTLE_MINT)
+			dynmultipush("Lax Mint", ITEM_LAX_MINT)
+		}
+		if (var(VAR_ZONE) > 15) {
+			dynmultipush("Relaxed Mint", ITEM_RELAXED_MINT)
+			dynmultipush("Sassy Mint", ITEM_SASSY_MINT)
+		}
+		if (var(VAR_ZONE) > 20) {
+			dynmultipush("Bold Mint", ITEM_BOLD_MINT)
+			dynmultipush("Impish Mint", ITEM_IMPISH_MINT)
+			dynmultipush("Calm Mint", ITEM_CALM_MINT)
+			dynmultipush("Careful Mint", ITEM_CAREFUL_MINT)
+			dynmultipush("Quiet Mint", ITEM_QUIET_MINT)
+			dynmultipush("Brave Mint", ITEM_BRAVE_MINT)
+		}
+		if (var(VAR_ZONE) > 35) {
+			dynmultipush("Lonely Mint", ITEM_LONELY_MINT)
+			dynmultipush("Adamant Mint", ITEM_ADAMANT_MINT)
+			dynmultipush("Naughty Mint", ITEM_NAUGHTY_MINT)
+			dynmultipush("Modest Mint", ITEM_MODEST_MINT)
+			dynmultipush("Mild Mint", ITEM_MILD_MINT)
+			dynmultipush("Rash Mint", ITEM_RASH_MINT)
+			dynmultipush("Timid Mint", ITEM_TIMID_MINT)
+			dynmultipush("Hasty Mint", ITEM_HASTY_MINT)
+			dynmultipush("Jolly Mint", ITEM_JOLLY_MINT)
+			dynmultipush("Naive Mint", ITEM_NAIVE_MINT)
+		}
 		dynmultipush("Oran Berry", ITEM_ORAN_BERRY)
 		dynmultipush("Cheri Berry", ITEM_CHERI_BERRY)
 		dynmultipush("Chesto Berry", ITEM_CHESTO_BERRY)
@@ -1108,35 +1137,6 @@ script EventScript_Shop_FarmersStand {
 		}
 		if (var(VAR_ZONE) > 25) {
 			dynmultipush("Lum Berry", ITEM_LUM_BERRY)
-		}
-		dynmultipush("Serious Mint", ITEM_SERIOUS_MINT)
-		if (var(VAR_ZONE) > 10) {
-			dynmultipush("Gentle Mint", ITEM_GENTLE_MINT)
-			dynmultipush("Lax Mint", ITEM_LAX_MINT)
-		}
-		if (var(VAR_ZONE) > 15) {
-			dynmultipush("Relaxed Mint", ITEM_RELAXED_MINT)
-			dynmultipush("Sassy Mint", ITEM_SASSY_MINT)
-		}
-		if (var(VAR_ZONE) > 20) {
-			dynmultipush("Bold Mint", ITEM_BOLD_MINT)
-			dynmultipush("Impish Mint", ITEM_IMPISH_MINT)
-			dynmultipush("Calm Mint", ITEM_CALM_MINT)
-			dynmultipush("Careful Mint", ITEM_CAREFUL_MINT)
-			dynmultipush("Quiet Mint", ITEM_QUIET_MINT)
-			dynmultipush("Brave Mint", ITEM_BRAVE_MINT)
-		}
-		if (var(VAR_ZONE) > 35) {
-			dynmultipush("Lonely Mint", ITEM_LONELY_MINT)
-			dynmultipush("Adamant Mint", ITEM_ADAMANT_MINT)
-			dynmultipush("Naughty Mint", ITEM_NAUGHTY_MINT)
-			dynmultipush("Modest Mint", ITEM_MODEST_MINT)
-			dynmultipush("Mild Mint", ITEM_MILD_MINT)
-			dynmultipush("Rash Mint", ITEM_RASH_MINT)
-			dynmultipush("Timid Mint", ITEM_TIMID_MINT)
-			dynmultipush("Hasty Mint", ITEM_HASTY_MINT)
-			dynmultipush("Jolly Mint", ITEM_JOLLY_MINT)
-			dynmultipush("Naive Mint", ITEM_NAIVE_MINT)
 		}
 		if (var(VAR_ZONE) > 40) {
 			dynmultipush("Figy Berry", ITEM_FIGY_BERRY)
