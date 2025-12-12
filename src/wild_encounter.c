@@ -521,9 +521,9 @@ const struct WildPokemon *GetSelectedWildPokemonTable(const struct WildPokemonIn
         break;
     case WILD_AREA_WATER:
     case WILD_AREA_FISHING:
-    case WILD_AREA_ROCKS:
         GenerateSelectedWaterWildPokemonTable(wildMonInfo->wildPokemon, indices);
         break;
+    case WILD_AREA_ROCKS:
     case WILD_AREA_HIDDEN:
         GenerateSelectedHiddenWildPokemonTable(wildMonInfo->wildPokemon, indices);
         break;
@@ -536,8 +536,8 @@ const struct WildPokemon *GetSelectedWildPokemonTable(const struct WildPokemonIn
         return sSelectedLandWildMons;
     case WILD_AREA_WATER:
     case WILD_AREA_FISHING:
-    case WILD_AREA_ROCKS:
         return sSelectedWaterWildMons;
+    case WILD_AREA_ROCKS:
     case WILD_AREA_HIDDEN:
         return sSelectedHiddenWildMons;
     default:
