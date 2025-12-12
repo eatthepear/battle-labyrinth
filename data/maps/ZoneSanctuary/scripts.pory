@@ -294,15 +294,6 @@ script EventScript_NextZone {
 	}
 	call(EventScript_BufferCurrentZoneName)
 	switch (var(VAR_ZONE)) {
-		case 6:
-			msgbox(format("Are you sure you're ready? You will be entering {COLOR GREEN}Zone 6 - Seabreeze Island{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				call(Sanctuary_EventScript_EnterZone)
-				setvar(VAR_LEVEL_CAP, 6)
-				warp(MAP_ZONE6A, 255, 51, 22)
-				waitstate
-				end
-			}
 		case 7:
 			msgbox(format("Are you ready to leave? You will be entering {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
@@ -396,7 +387,9 @@ script EventScript_NextZone {
 		case 4:
 			warp(MAP_ZONE4A, 255, 3, 4)
 		case 5:
-			warp(MAP_ZONE5A, 255, 39, 16)
+			warp(MAP_ZONE5A, 255, 39, 15)
+		case 6:
+			warp(MAP_ZONE6A, 255, 51, 22)
 	}
 	waitstate
 	end
@@ -425,7 +418,7 @@ text Sanctuary_Text_Colress_EndofDemo {
 }
 
 text Sanctuary_Text_Colress_Upgraded {
-	format("Because of your progress, all shops are upgraded!")
+	format("Congratulations! All shops are upgraded as a result of your progress!")
 }
 
 script Sanctuary_EventScript_EnterSanctuary {
@@ -519,6 +512,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			playfanfare(MUS_OBTAIN_ITEM)
 			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
 			waitfanfare
+			setvar(VAR_FARM_STOCK, 10)
 		case 6:
 			setflag(FLAG_HIDE_ZONE6A_MAX)
 			completesubquest(QUEST_PBL, 5)
