@@ -292,16 +292,18 @@ script EventScript_NextZone {
 				}
 		}
 	}
-	call(EventScript_BufferCurrentZoneName)
 	switch (var(VAR_ZONE)) {
+		default:
+			call(EventScript_BufferCurrentZoneName)
+			setspeaker(SP_NAME_COLRESS)
+			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO) {
+				return
+			}
 		case 7:
-			msgbox(format("Are you ready to leave? You will be entering {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				call(Sanctuary_EventScript_EnterZone)
-				setvar(VAR_LEVEL_CAP, 7)
-				warp(MAP_ZONE7A, 255, 10, 33)
-				waitstate
-				end
+			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO) {
+				return
 			}
 		case 9:
 			msgbox(format("Are you sure you're ready? You will be entering {COLOR GREEN}Zone 9 - Lushbranch Village{COLOR DARK_GRAY}."), MSGBOX_YESNO)
@@ -354,11 +356,6 @@ script EventScript_NextZone {
 				end
 			}
 	}
-	setspeaker(SP_NAME_COLRESS)
-	msgbox(format("Are you prepared? You will be entering {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		return
-	}
 	call(EventScript_AskSaveGame)
 	copyvar(VAR_LEVEL_CAP, VAR_ZONE)
 	special(BufferCurrentLevelCap)
@@ -390,6 +387,8 @@ script EventScript_NextZone {
 			warp(MAP_ZONE5A, 255, 39, 15)
 		case 6:
 			warp(MAP_ZONE6A, 255, 51, 22)
+		case 7:
+			warp(MAP_ZONE7A, 255, 10, 33)
 	}
 	waitstate
 	end
