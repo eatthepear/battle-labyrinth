@@ -23,6 +23,53 @@ mapscripts Zone6A_MapScripts {
 	}
 }
 
+script Zone6A_EventScript_Hiker {
+	lock
+	faceplayer
+	if (var(VAR_ZONE_6_STATE) == 0) {
+		call(Zone6A_EventScript_Sledgehammer)
+	}
+	msgbox(format("The Sledgehammer can be used to clear the way of fallen boulders.\pJust be wary, there may be Pokémon hiding there!"))
+	release
+	end
+}
+
+script Zone6A_EventScript_Sledgehammer {
+	lockall
+	getobjectfacingdirection(LOCALID_HIKER_ZONE6A, VAR_TEMP_0)
+	if (var(VAR_TEMP_0) == DIR_SOUTH) {
+		applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+		waitmovement(0)
+	}
+	applymovement(LOCALID_HIKER_ZONE6A, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 24) {
+		applymovement(LOCALID_HIKER_ZONE6A, Common_Movement_WalkDown)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 25) {
+		applymovement(LOCALID_HIKER_ZONE6A, Common_Movement_WalkDown2)
+		waitmovement(0)
+	}
+	msgbox(format("Ho there! You may have seen some fallen boulders lying around. It's best to clear them out of the way, with this handy dandy Sledgehammer!"))
+	giveitem(ITEM_SLEDGEHAMMER)
+	closemessage
+	if (var(VAR_TEMP_1) == 24) {
+		applymovement(LOCALID_HIKER_ZONE6A, Common_Movement_WalkUp)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 25) {
+		applymovement(LOCALID_HIKER_ZONE6A, Common_Movement_WalkUp2)
+		waitmovement(0)
+	}
+	applymovement(LOCALID_HIKER_ZONE6A, Common_Movement_FaceDown)
+	waitmovement(0)
+	setvar(VAR_ZONE_6_STATE, 1)
+	releaseall
+	end
+}
+
 script Zone6A_EventScript_LeviathanBattle {
 	lockall
 	applymovement(LOCALID_MINA, Common_Movement_FaceDown)
@@ -122,7 +169,7 @@ script Zone6A_EventScript_LeviathanBattle {
 	setspeaker("Coby")
 	msgbox(format("Well, you live and you learn."))
 	setflag(FLAG_BEAT_LEVIATHAN_6)
-	setvar(VAR_ZONE_6_STATE, 1)
+	setvar(VAR_ZONE_6_STATE, 2)
 	applymovement(LOCALID_COBY, Zone6A_Movement_Coby_WalkDown)
 	applymovement(LOCALID_ZACK, Zone6A_Movement_Zack_WalkDown)
 	waitmovement(0)
