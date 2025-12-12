@@ -415,7 +415,7 @@
 #define FLAG_ITEM_ZONE6A_TM_ROCK_TOMB          0x31C
 #define FLAG_ITEM_ZONE6A_NET_BALL                  0x31D
 #define FLAG_ITEM_ZONE6A_NEST_BALL                 0x31E
-#define FLAG_ITEM_ZONE6A_GEMS                      0x31F
+#define FLAG_ITEM_ZONE6A_RANDOM_1                      0x31F
 #define FLAG_ITEM_ZONE7A_SHARP_BEAK                0x320
 #define FLAG_ITEM_ZONE7A_RANDOM_1                  0x321
 #define FLAG_ITEM_ZONE7A_GEMS                      0x322
