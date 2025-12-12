@@ -11617,7 +11617,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_TRAILBLAZE] =
     {
         .name = ITEM_NAME("TM15"),
-        .price = 7500,
+        .price = 3000,
         .description = COMPOUND_STRING(
             "The user attacks\n"
             "suddenly, raising\n"

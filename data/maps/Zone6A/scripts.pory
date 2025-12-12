@@ -299,7 +299,7 @@ script Zone6A_EventScript_NetBall {
 
 script Zone6A_EventScript_Random1 {
 	lock
-	if (flag(FLAG_ITEM_ZONE5A_RANDOM_1)) {
+	if (flag(FLAG_ITEM_ZONE6A_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -307,7 +307,7 @@ script Zone6A_EventScript_Random1 {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5A_RANDOM_1)
+	setflag(FLAG_ITEM_ZONE6A_RANDOM_1)
 	addobject(VAR_LAST_TALKED)
 	specialvar(VAR_TEMP_1, RandomItemChest)
 	finditem(VAR_TEMP_1, VAR_TEMP_0)

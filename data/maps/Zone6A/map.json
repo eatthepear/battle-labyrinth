@@ -357,7 +357,7 @@
       "y": 17,
       "elevation": 0,
       "var": "VAR_ZONE_6_STATE",
-      "var_value": "0",
+      "var_value": "1",
       "script": "Zone6A_EventScript_LeviathanBattle"
     },
     {
