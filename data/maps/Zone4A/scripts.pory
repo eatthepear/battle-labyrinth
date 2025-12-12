@@ -22,6 +22,7 @@ script Zone4A_EventScript_KimonoGirl_Intro {
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
+	setspeaker("Kimono Girl")
 	msgbox(format("Oh, poor Kimono Girl, all alone in these woods.\pWon't you help show me the way out?"), MSGBOX_AUTOCLOSE)
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 3) {
@@ -32,6 +33,7 @@ script Zone4A_EventScript_KimonoGirl_Intro {
 	}
 	applymovement(LOCALID_KIMONO_GIRL, Common_Movement_WalkLeft3)
 	waitmovement(0)
+	setspeaker("Kimono Girl")
 	msgbox(Zone4A_Text_KimonoGirl, MSGBOX_AUTOCLOSE)
 	setfollowernpc(LOCALID_KIMONO_GIRL, FOLLOWER_NPC_FLAG_ALL)
 	applymovement(LOCALID_KIMONO_GIRL, Common_Movement_FaceLeft)
@@ -48,6 +50,7 @@ text Zone4A_Text_KimonoGirl {
 script Zone4A_EventScript_KimonoGirl {
 	lock
 	faceplayer
+	setspeaker("Kimono Girl")
 	msgbox(Zone4A_Text_KimonoGirl, MSGBOX_AUTOCLOSE)
 	release
 	end

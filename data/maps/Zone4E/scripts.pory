@@ -24,8 +24,10 @@ script Zone4E_EventScript_KimonoGirl_Exit {
 	playbgm(MUS_HG_KIMONO_GIRL, 0)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
 	waitmovement(0)
+	setspeaker("Kimono Girl")
 	msgbox(format("Oh, look! The exit!\pThe poor Kimono Girl has been led to the exit by a kind trainer!\pPlease take this as thanks."))
 	giveitem(ITEM_SACRED_ASH)
+	setspeaker("Kimono Girl")
 	msgbox(format("Well, I shall be off.\pIt seems two await you up ahead."), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_PLAYER, Zone4E_Movement_Player_UnblockKimonoGirl)
 	applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Zone4E_Movement_KimonoGirl_Exit)
@@ -75,13 +77,36 @@ script Zone4E_EventScript_LeviathanBattle {
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement(0)
 	delay(16)
-	msgbox(Zone4E_Text_Leviathan4Intro)
+	setspeaker("Ella")
+	msgbox(format("Watch out!"))
+	setspeaker("Bella")
+	msgbox(format("Don't fear!"))
+	setspeaker("Ella")
+	msgbox(format("The dynamic duo of Ella & Bella…"))
+	setspeaker("Bella")
+	msgbox(format("Will always persevere!"))
+	setspeaker("Ella & Bella")
+	msgbox(format("It's time to battle it out, victory is near!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4, format("We lost!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Ella{COLOR DARK_GRAY}: Wargh! Not only are we lost in the wood…\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: We could've won that battle, you misunderstood!\p{COLOR BLUE}Ella{COLOR DARK_GRAY}: I guess our teamwork could be improved…\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: Yeah… Oh right, here's a thing for those approved!"), MSGBOX_DEFAULT)
+	setspeaker("Ella")
+	msgbox(format("Wargh! Not only are we lost in the wood…"))
+	setspeaker("Bella")
+	msgbox(format("We could've won that battle, you misunderstood!"))
+	setspeaker("Ella")
+	msgbox(format("I guess our teamwork could be improved…"))
+	setspeaker("Bella")
+	msgbox(format("Yeah… Oh right, here's a thing for those approved!"))
 	giveitem(ITEM_TM_SNARL)
-	msgbox(format("{COLOR BLUE}Ella{COLOR DARK_GRAY}: This TM can help in Double Battles!\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: Shush, you're annoying them with your prattles!\p{COLOR BLUE}Ella{COLOR DARK_GRAY}: That rhyme barely worked!\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: Oh, don't be irked!"))
+	setspeaker("Ella")
+	msgbox(format("This TM can help in Double Battles!"))
+	setspeaker("Bella")
+	msgbox(format("Shush, you're annoying them with your prattles!"))
+	setspeaker("Ella")
+	msgbox(format("That rhyme barely worked!"))
+	setspeaker("Bella")
+	msgbox(format("Oh, don't be irked!"))
 	closemessage
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(LOCALID_ELLA)
@@ -91,10 +116,6 @@ script Zone4E_EventScript_LeviathanBattle {
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	releaseall
 	end
-}
-
-text Zone4E_Text_Leviathan4Intro {
-	format("{COLOR BLUE}Ella{COLOR DARK_GRAY}: Watch out!\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: Don't fear!\p{COLOR BLUE}Ella{COLOR DARK_GRAY}: The dynamic duo of Ella & Bella…\p{COLOR BLUE}Bella{COLOR DARK_GRAY}: Will always persevere!\p{COLOR BLUE}Ella & Bella{COLOR DARK_GRAY}: It's time to battle it out, victory is near!")
 }
 
 script Zone4E_EventScript_Random1 {

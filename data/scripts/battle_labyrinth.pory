@@ -968,7 +968,7 @@ script EventScript_Notebook_Evolutions {
 	while {
 		message(format("Which Pokémon's evolution change would you like to read?"))
 		waitmessage
-		dynmultipush("Rockruff - Random", SPECIES_ROCKRUFF)
+		dynmultipush("Rockruff - Lv. 25, random", SPECIES_ROCKRUFF)
 		dynmultipush("Eevee - Evo Stone", SPECIES_EEVEE)
 		dynmultipush("Gimmighoul - Evo Stone", SPECIES_GIMMIGHOUL)
 		dynmultipush("Milcery - Evo Stone", SPECIES_MILCERY)
@@ -1060,7 +1060,7 @@ script EventScript_Notebook_Evolutions {
 			case SPECIES_ROCKRUFF:
 				msgbox(format("Rockruff evolves at level 25 randomly into Lycanroc Midday or Lycanroc Midnight."))
 			case SPECIES_EEVEE:
-				msgbox(format("Eevee also evolves into Espeon using a Sun Stone, Umbreon using a Moon Stone, and Sylveon using a Shiny Stone."))
+				msgbox(format("Eevee evolves into Espeon using a Sun Stone, Umbreon using a Moon Stone, and Sylveon using a Shiny Stone."))
 			case SPECIES_GIMMIGHOUL:
 				msgbox(format("Gimmighoul evolves into Gholdengo using a Dusk Stone."))
 			case SPECIES_MILCERY:
