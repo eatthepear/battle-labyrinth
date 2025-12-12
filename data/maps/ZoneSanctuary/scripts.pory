@@ -462,8 +462,8 @@ script Sanctuary_EventScript_EnterSanctuary {
 			waitfanfare
 			msgbox(format("Note that if you are in a Zone, you can only use the Portable PC once before reaching the Sanctuary."))
 		case 6:
-			msgbox(format("The {COLOR RED}Sledgehammer!{COLOR DARK_GRAY}"), MSGBOX_DEFAULT)
-			giveitem(ITEM_SLEDGEHAMMER)
+			msgbox(format("{COLOR RED}TM78 - Bulldoze!{COLOR DARK_GRAY}"), MSGBOX_DEFAULT)
+			giveitem(ITEM_TM_BULLDOZE)
 		case 7:
 			msgbox("Your reward for clearing {COLOR GREEN}Zone 7{COLOR DARK_GRAY} is…", MSGBOX_DEFAULT)
 			msgbox(format("{COLOR RED}TM39 - Rock Tomb!{COLOR DARK_GRAY}"), MSGBOX_DEFAULT)
