@@ -10,7 +10,7 @@ mapscripts Zone7A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE7A_GEMS)) {
+		if (flag(FLAG_ITEM_ZONE7A_RANDOM_5)) {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -108,7 +108,7 @@ script Zone7A_EventScript_Password {
 		applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
 		waitmovement(0)
 		msgbox(format("You idiot! This is just some kid! Let's get this nuisance out of here, before the Commander notices!"))
-		// trainerbattle_two_trainers()
+		trainerbattle_two_trainers(TRAINER_PBL_GALACTIC_GRUNT_7A_1, format("Some kid you are…"), TRAINER_PBL_GALACTIC_GRUNT_7A_2, format("The Commander is not going to be happy…"))
 		msgbox(format("Argh…"))
 	}
 	if (var(VAR_TEMP_1) == 9) {
@@ -240,9 +240,9 @@ script Zone7A_EventScript_Random1 {
 	end
 }
 
-script Zone7A_EventScript_Gems {
+script Zone7A_EventScript_Random5 {
 	lock
-	if (flag(FLAG_ITEM_ZONE7A_GEMS)) {
+	if (flag(FLAG_ITEM_ZONE7A_RANDOM_5)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -250,11 +250,10 @@ script Zone7A_EventScript_Gems {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE7A_GEMS)
+	setflag(FLAG_ITEM_ZONE7A_RANDOM_5)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_ROCK_GEM)
-	finditem(ITEM_FIGHTING_GEM)
-	finditem(ITEM_PSYCHIC_GEM)
+	specialvar(VAR_TEMP_1, RandomItemChest)
+	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }

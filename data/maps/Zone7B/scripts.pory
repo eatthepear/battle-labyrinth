@@ -4,32 +4,37 @@ script Zone7B_EventScript_LeviathanBattle {
 	lock
 	faceplayer
 	if (flag(FLAG_BEAT_LEVIATHAN_7) == true) {
-		msgbox(format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: Your clothes are all covered in dirt.\pI think you could use a lesson in proper etiquette, what do you say?"))
+		setspeaker("Betty")
+		msgbox(Zone7B_Text_LeviathanPost)
 		release
 		end
 	}
-	msgbox(format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: Your clothes are all covered in dirt.\pI think you could use a lesson in proper etiquette, what do you say?"), MSGBOX_YESNO)
+	setspeaker("Betty")
+	msgbox(format("Ah, another traveler. I grow tired of sitting around nibbling on Berries.\pCare to entertain a lady like me with a battle?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: Well, I will be here, if you change your mind."))
+		setspeaker("Betty")
+		msgbox(format("Well, I will be here, if you change your mind."))
 		release
 		end
 	}
 	fadeoutbgm(1)
-	msgbox(format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: I will show you how to behave in the prim and proper way!"), MSGBOX_DEFAULT)
+	setspeaker("Betty")
+	msgbox(format("I will show you how to behave in the prim and proper way!"), MSGBOX_DEFAULT)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_BETTY_LEVIATHAN_7, format("It seems I was the one who ended up being humbled…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: Your battling skills are certainly up to par. Excellent form.\pAside from that, I'd like to give you these Berries.\pVery, very expensive, or so my butler tells me."), MSGBOX_DEFAULT)
+	setspeaker("Betty")
+	msgbox(format("Your battling skills are certainly up to par. Excellent form.\pI'd like to give you a few of these Berries.\pVery, very expensive, or so my butler tells me."), MSGBOX_DEFAULT)
 	giveitem(ITEM_SITRUS_BERRY, 5)
-	msgbox(Zone7B_Text_LeviathanPost)
-	closemessage
 	setflag(FLAG_BEAT_LEVIATHAN_7)
+	setspeaker("Betty")
+	msgbox(Zone7B_Text_LeviathanPost)
 	release
 	end
 }
 
 text Zone7B_Text_LeviathanPost {
-	format("{COLOR BLUE}Betty{COLOR DARK_GRAY}: I've been staying here at my friend's house while our new mansion gets renovated.\pIsn't that exciting?\pThough, I've been hearing that there's some people dressed in space suits messing around in the caves.\pSounds rather frightening, wouldn't you say?")
+	format("I've been staying here at my friend's house while our new mansion gets renovated.\pIsn't that exciting?\pThough, I've been hearing that there's some people dressed in space suits messing around in the caves.\pSounds rather frightening, wouldn't you say?")
 }
 
 raw `

@@ -418,7 +418,7 @@
 #define FLAG_ITEM_ZONE6A_RANDOM_1                      0x31F
 #define FLAG_ITEM_ZONE7A_SHARP_BEAK                0x320
 #define FLAG_ITEM_ZONE7A_RANDOM_1                  0x321
-#define FLAG_ITEM_ZONE7A_GEMS                      0x322
+#define FLAG_ITEM_ZONE7A_RANDOM_5                      0x322
 #define FLAG_ITEM_ZONE7A_BLACK_BELT                0x323
 #define FLAG_ITEM_ZONE7A_RANDOM_2                  0x324
 #define FLAG_ITEM_ZONE7A_RANDOM_3                  0x325
