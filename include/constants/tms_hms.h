@@ -22,7 +22,7 @@
     F(RAIN_DANCE) \
     F(GIGA_DRAIN) \
     F(HYPER_VOICE) \
-    F(IRON_DEFENSE) \
+    F(ICY_WIND) \
     F(SOLAR_BEAM) \
     F(IRON_TAIL) \
     F(THUNDERBOLT) \

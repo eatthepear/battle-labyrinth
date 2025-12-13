@@ -11698,14 +11698,14 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_IRON_DEFENSE] =
+    [ITEM_TM_ICY_WIND] =
     {
         .name = ITEM_NAME("TM21"),
         .price = 5000,
         .description = COMPOUND_STRING(
-            "Hardens the body's\n"
-            "surface to sharply\n"
-            "raise Defense."),
+            "A chilling attack\n"
+            "that lowers the\n"
+            "foe's Speed."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

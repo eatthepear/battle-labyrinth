@@ -71,7 +71,7 @@ mart Zone6A_Shop_TMShop {
 }
 
 mart Zone10A_Shop_TMShop {
-	ITEM_TM_IRON_DEFENSE
+	// ITEM_TM_IRON_DEFENSE
 	ITEM_TM_AGILITY
 }
 
