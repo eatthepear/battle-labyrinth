@@ -43,5 +43,7 @@ void GetObjectPosition(u16*, u16*, u32, u32);
 bool32 CheckObjectAtXY(u32, u32);
 bool32 CheckPartyHasSpecies(u32);
 void ChooseItemFromBag(void);
+u16 RandomHiddenBerry(void);
+u16 RandomHiddenShard(void);
 
 #endif // GUARD_FIELD_SPECIALS_H

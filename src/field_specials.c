@@ -4611,7 +4611,8 @@ static const struct ItemChest sItemChestTable[] =
     {	ITEM_MAX_REVIVE   	, {	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	 10,	 10,	 10,	} },
 };
 
-u16 RandomItemChest(void) {
+u16 RandomItemChest(void)
+{
     u32 i;
     u16 zoneIndex = gMapHeader.regionMapSectionId - MAPSEC_ZONE_0 - 1; // zone - 1
     u32 rand = Random() % 100;
@@ -4638,6 +4639,72 @@ u16 RandomItemChest(void) {
         amount += 1;
     }
     VarSet(VAR_TEMP_0, amount);
+
+    return item;
+}
+
+#define RANDOM_HIDDEN_BERRY_TABLE_COUNT ARRAY_COUNT(sRandomHiddenBerryTable)
+static const struct ItemChest sRandomHiddenBerryTable[] =
+{
+    {	ITEM_ORAN_BERRY   	, {	 50,	 40,	100,	100,	100,	100,	100,	100,	100,	100,	100,	} },
+    {	ITEM_PECHA_BERRY	, {	 15,	 15,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_CHERI_BERRY	, {	 15,	 15,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_CHESTO_BERRY	, {	  8,	  8,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_RAWST_BERRY	, {	  8,	  8,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_ASPEAR_BERRY	, {	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_PERSIM_BERRY	, {	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_SITRUS_BERRY	, {	  0,	 10,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+};
+
+u16 RandomHiddenBerry(void)
+{
+    u32 i;
+    u16 zoneIndex = gMapHeader.regionMapSectionId - MAPSEC_ZONE_0 - 1; // zone - 1
+    u32 rand = Random() % 100;
+    u32 percentTotal = 0;
+    u16 item = ITEM_NONE; // arbitrary item
+    u16 split = (zoneIndex) / 5;
+
+    for (i = 0; i < RANDOM_HIDDEN_BERRY_TABLE_COUNT; i++)
+    {
+        percentTotal += sRandomHiddenBerryTable[i].percentage[split];
+        if (rand < percentTotal)
+        {
+            item = sRandomHiddenBerryTable[i].itemId;
+            break;
+        }
+    }
+
+    return item;
+}
+
+#define RANDOM_HIDDEN_SHARD_TABLE_COUNT ARRAY_COUNT(sRandomHiddenShardTable)
+static const struct ItemChest sRandomHiddenShardTable[] =
+{
+    {	ITEM_RED_SHARD   	, {	 50,	 50,	100,	100,	100,	100,	100,	100,	100,	100,	100,	} },
+    {	ITEM_GREEN_SHARD   	, {	 50,	 50,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_BLUE_SHARD   	, {	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_YELLOW_SHARD  	, {	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+};
+
+u16 RandomHiddenShard(void)
+{
+    u32 i;
+    u16 zoneIndex = gMapHeader.regionMapSectionId - MAPSEC_ZONE_0 - 1; // zone - 1
+    u32 rand = Random() % 100;
+    u32 percentTotal = 0;
+    u16 item = ITEM_NONE; // arbitrary item
+    u16 split = (zoneIndex) / 5;
+
+    for (i = 0; i < RANDOM_HIDDEN_SHARD_TABLE_COUNT; i++)
+    {
+        percentTotal += sRandomHiddenShardTable[i].percentage[split];
+        if (rand < percentTotal)
+        {
+            item = sRandomHiddenShardTable[i].itemId;
+            break;
+        }
+    }
 
     return item;
 }
