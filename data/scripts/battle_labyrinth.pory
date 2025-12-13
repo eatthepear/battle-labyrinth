@@ -1203,7 +1203,7 @@ script EventScript_Notebook_Items {
 			case ITEM_HEART_SCALE:
 				msgbox(format("Heart Scale cost increased to ¥2500."))
 			case ITEM_NORMAL_TERA_SHARD:
-				msgbox(format("Tera Shard cost reduced to ¥200."))
+				msgbox(format("Tera Shard cost set to ¥400."))
 			case ITEM_HEXORB:
 				msgbox(format("The Hexorb Key Item lets you pre-status Pokémon."))
 			case 1:
