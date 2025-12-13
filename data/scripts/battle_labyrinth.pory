@@ -1220,8 +1220,9 @@ script EventScript_Notebook_Other {
 		dynmultipush("Honey Tree", 3)
 		dynmultipush("Hidden Grotto", 4)
 		dynmultipush("Field Moves", 5)
-		dynmultipush("Day/Night", 6)
-		dynmultipush("Back", 7)
+		dynmultipush("Move Tutors", 6)
+		dynmultipush("Day/Night", 7)
+		dynmultipush("Back", 8)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
@@ -1240,8 +1241,10 @@ script EventScript_Notebook_Other {
 			case 5:
 				msgbox(format("Available Field Moves:\nRefresh, Aromatherapy, and Heal Bell,\lSweet Scent (triggers wild Double Battle).\pAll of these require 1 PP to be used, and their usage is unaffected by the Pokémon that used them nor the weather conditions.\pFor example, a Pokémon that is asleep can still use Aromatherapy to cure itself."))
 			case 6:
-				msgbox(format("There is no day/night cycle."))
+				msgbox(format("Move Tutors can be found scattered in a few Zones.\pOnce encountered, Lelouch can handle teaching your Pokémon those moves."))
 			case 7:
+				msgbox(format("There is no day/night cycle."))
+			case 8:
 			case MULTI_B_PRESSED:
 				return
 		}
@@ -2754,9 +2757,6 @@ gText_Lelouch_Exp:
 	.string "Would you like to start an\n"
 	.string "Experience Training session?$"
 
-gText_Lelouch_PayRed:
-	.string "{PLAYER} handed over 1 Red Shard.$"
-
 gText_Lelouch_ChooseTraining:
 	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Choose which training\n"
 	.string "regiment you would like.$"
@@ -2767,25 +2767,16 @@ gText_Lelouch_CostsBlueShards:
 	.string "Would you like me to teach a\n"
 	.string "forgotten move to your Pokémon?$"
 
-gText_Lelouch_PayBlue:
-	.string "{PLAYER} handed over 1 Blue Shard.$"
-
 gText_Lelouch_CostsYellowShards:
 	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Move Tutor services cost\n"
 	.string "Yellow Shards. Which move would you\l"
 	.string "like to tutor?$"
-
-gText_Lelouch_PayYellow1:
-	.string "{PLAYER} handed over 1 Yellow Shard.$"
 
 gText_Lelouch_CostsGreenShards:
 	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: I can craft special items\n"
 	.string "as well as upgrade your items\l"
 	.string "in exchange for Green Shards.\l"
 	.string "What would you like?$"
-
-gText_Lelouch_PayGreen:
-	.string "{PLAYER} handed over 1 Green Shard.$"
 
 gText_ExitSign:
 	.string "This is the exit!$"
