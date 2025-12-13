@@ -226,7 +226,7 @@
       "x": 37,
       "y": 15,
       "elevation": 3,
-      "item": "ITEM_CHERI_BERRY",
+      "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE2A_CHERI_BERRY"
     },
     {
@@ -234,7 +234,7 @@
       "x": 48,
       "y": 18,
       "elevation": 3,
-      "item": "ITEM_PECHA_BERRY",
+      "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE2A_PECHA_BERRY"
     },
     {
@@ -242,7 +242,7 @@
       "x": 27,
       "y": 29,
       "elevation": 3,
-      "item": "ITEM_CHESTO_BERRY",
+      "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE2A_CHESTO_BERRY"
     },
     {

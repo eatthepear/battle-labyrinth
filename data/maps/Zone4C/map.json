@@ -159,7 +159,7 @@
       "x": 8,
       "y": 8,
       "elevation": 3,
-      "item": "ITEM_CHESTO_BERRY",
+      "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE4C_CHESTO_BERRY"
     },
     {
@@ -167,7 +167,7 @@
       "x": 10,
       "y": 4,
       "elevation": 3,
-      "item": "ITEM_RAWST_BERRY",
+      "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE4C_RAWST_BERRY"
     },
     {

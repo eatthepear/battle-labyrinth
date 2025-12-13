@@ -385,7 +385,7 @@
       "x": 12,
       "y": 16,
       "elevation": 3,
-      "item": "ITEM_RED_SHARD",
+      "item": "ITEM_NORMAL_TERA_SHARD",
       "flag": "FLAG_HIDDEN_ITEM_ZONE6A_RED_SHARD_2"
     },
     {
@@ -393,7 +393,7 @@
       "x": 33,
       "y": 23,
       "elevation": 3,
-      "item": "ITEM_RED_SHARD",
+      "item": "ITEM_NORMAL_TERA_SHARD",
       "flag": "FLAG_HIDDEN_ITEM_ZONE6A_RED_SHARD_1"
     },
     {
@@ -401,7 +401,7 @@
       "x": 18,
       "y": 20,
       "elevation": 3,
-      "item": "ITEM_RAWST_BERRY",
+      "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE6A_RAWST_BERRY"
     },
     {
@@ -409,7 +409,7 @@
       "x": 20,
       "y": 17,
       "elevation": 3,
-      "item": "ITEM_PERSIM_BERRY",
+      "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE6A_PERSIM_BERRY"
     },
     {
@@ -417,7 +417,7 @@
       "x": 28,
       "y": 16,
       "elevation": 3,
-      "item": "ITEM_CHESTO_BERRY",
+      "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE6A_CHESTO_BERRY"
     },
     {
