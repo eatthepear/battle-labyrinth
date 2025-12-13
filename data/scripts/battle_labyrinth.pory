@@ -1167,43 +1167,46 @@ script EventScript_Notebook_Items {
 	while {
 		message(format("Item Changes open.\nAnything not listed is vanilla."))
 		waitmessage
-		dynmultipush("Rare Candy", 0)
-		dynmultipush("Infinite Repel", 1)
-		dynmultipush("TMs", 2)
-		dynmultipush("Honey", 3)
-		dynmultipush("Ability Snack", 4)
-		dynmultipush("Sacred Ash", 5)
-		dynmultipush("Mints", 6)
-		dynmultipush("Exp. Candy", 7)
-		dynmultipush("Heart Scale", 8)
-		dynmultipush("Hex Orb", 9)
-		dynmultipush("Tera Shard", 10)
-		dynmultipush("Back", 11)
-		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+		dynmultipush("Rare Candy", ITEM_RARE_CANDY)
+		dynmultipush("Infinite Repel", ITEM_INFINITE_REPEL)
+		dynmultipush("TMs", ITEM_TM_RETURN)
+		dynmultipush("Honey", ITEM_HONEY)
+		dynmultipush("Ability Snack", ITEM_ABILITY_SNACK)
+		dynmultipush("Sacred Ash", ITEM_SACRED_ASH)
+		dynmultipush("Mints", ITEM_SERIOUS_MINT)
+		dynmultipush("Exp. Candy", ITEM_EXP_CANDY_M)
+		dynmultipush("Shards", ITEM_RED_SHARD)
+		dynmultipush("Heart Scale", ITEM_HEART_SCALE)
+		dynmultipush("Tera Shard", ITEM_NORMAL_TERA_SHARD)
+		dynmultipush("Hex Orb", ITEM_HEXORB)
+		dynmultipush("Back", 1)
+		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
 		switch (var(VAR_RESULT)) {
-			case 0:
+			case ITEM_RARE_CANDY:
 				msgbox(format("You can use normal Rare Candies, of which there only 15 in the game, to level up your Pokémon past the current level cap.\pThe Infinite Candy Key Item allows you to raise your Pokémon up to the level cap, or only the prior level cap if you are in a Zone."))
-			case 1:
+			case ITEM_INFINITE_REPEL:
 				msgbox(format("The Infinite Repel Key Item allows you to avoid encountering any wild Pokémon, regardless of your level."))
-			case 2:
+			case ITEM_TM_RETURN:
 				msgbox(format("TMs are infinite use, but do not restore PP if you are in a new Zone."))
-			case 3:
+			case ITEM_HONEY:
 				msgbox(format("Honey cost reduced to ¥80, and starts a wild Double Battle if on a map and tile that can have wild Pokémon.\pYou can also slather it on a Honey Tree to attract a wild Pokémon."))
-			case 4:
+			case ITEM_ABILITY_SNACK:
 				msgbox(format("The Ability Snack costs ¥80 and functions the same as an Ability Capsule."))
-			case 5:
+			case ITEM_SACRED_ASH:
 				msgbox(format("The Sacred Ash now fully revives and heals your entire party."))
-			case 6:
+			case ITEM_SERIOUS_MINT:
 				msgbox(format("Mints cost reduced to ¥80, and change natures permanently."))
-			case 7:
+			case ITEM_EXP_CANDY_M:
 				msgbox(format("Exp. Candies cost all set to ¥80, and do not level up past the level cap."))
-			case 8:
+			case ITEM_RED_SHARD:
+				msgbox(format("Shards cost reduced to ¥400."))
+			case ITEM_HEART_SCALE:
 				msgbox(format("Heart Scale cost increased to ¥2500."))
-			case 9:
-				msgbox(format("The Hexorb Key Item lets you pre-status Pokémon."))
-			case 10:
+			case ITEM_NORMAL_TERA_SHARD:
 				msgbox(format("Tera Shard cost reduced to ¥200."))
-			case 11:
+			case ITEM_HEXORB:
+				msgbox(format("The Hexorb Key Item lets you pre-status Pokémon."))
+			case 1:
 			case MULTI_B_PRESSED:
 				return
 		}

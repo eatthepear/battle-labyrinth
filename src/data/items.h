@@ -2883,7 +2883,7 @@ const struct Item gItemsInfo[] =
     [ITEM_RED_SHARD] =
     {
         .name = ITEM_NAME("Red Shard"),
-        .price = (I_PRICE >= GEN_7) ? 1000 : 200,
+        .price = 400,
         .description = sShardsDesc,
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_SHARD,
@@ -2897,7 +2897,7 @@ const struct Item gItemsInfo[] =
     [ITEM_BLUE_SHARD] =
     {
         .name = ITEM_NAME("Blue Shard"),
-        .price = (I_PRICE >= GEN_7) ? 1000 : 200,
+        .price = 400,
         .description = sShardsDesc,
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_SHARD,
@@ -2911,7 +2911,7 @@ const struct Item gItemsInfo[] =
     [ITEM_YELLOW_SHARD] =
     {
         .name = ITEM_NAME("Yellow Shard"),
-        .price = (I_PRICE >= GEN_7) ? 1000 : 200,
+        .price = 400,
         .description = sShardsDesc,
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_SHARD,
@@ -2925,7 +2925,7 @@ const struct Item gItemsInfo[] =
     [ITEM_GREEN_SHARD] =
     {
         .name = ITEM_NAME("Green Shard"),
-        .price = (I_PRICE >= GEN_7) ? 1000 : 200,
+        .price = 400,
         .description = sShardsDesc,
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_SHARD,
