@@ -3206,6 +3206,15 @@ script EventScript_Shop_Lelouch_MoveTutor {
 		message(format("Which move should I teach?"))
 		waitmessage
 		// --- Red Shard ---
+		dynmultipush("Water Pulse - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_WATER_PULSE)
+		dynmultipush("Chilling Water - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_CHILLING_WATER)
+		dynmultipush("Struggle Bug - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_STRUGGLE_BUG)
+		dynmultipush("Pounce - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_POUNCE)
+		dynmultipush("Aerial Ace - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_AERIAL_ACE)
+		dynmultipush("Magical Leaf - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_MAGICAL_LEAF)
+		dynmultipush("Shock Wave - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_SHOCK_WAVE)
+		dynmultipush("Swift - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_SWIFT)
+
 		dynmultipush("Breaking Swipe - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_BREAKING_SWIPE)
 		dynmultipush("Grassy Glide - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_GRASSY_GLIDE)
         dynmultipush("Low Sweep - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_LOW_SWEEP)
@@ -3213,6 +3222,13 @@ script EventScript_Shop_Lelouch_MoveTutor {
         dynmultipush("Electroweb - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_ELECTROWEB)
 
 		if (var(VAR_ZONE) > 50) {
+			dynmultipush("Thunder Fang - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_THUNDER_FANG)
+			dynmultipush("Fire Fang - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_FIRE_FANG)
+			dynmultipush("Ice Fang - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_ICE_FANG)
+			dynmultipush("Fire Punch - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_FIRE_PUNCH)
+			dynmultipush("Ice Punch - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_ICE_PUNCH)
+			dynmultipush("Thunder Punch - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_THUNDER_PUNCH)
+
 			dynmultipush("Rock Blast - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_ROCK_BLAST)
 			dynmultipush("Pin Missile - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_PIN_MISSILE)
 			dynmultipush("Icicle Spear - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_ICICLE_SPEAR)
@@ -3317,7 +3333,21 @@ script EventScript_Shop_Lelouch_MoveTutor {
 
 		dynmultipush("Exit", 0)
 		dynmultistack(0, 0, FALSE, 5, FALSE, 1, DYN_MULTICHOICE_CB_NONE)
-		switch (var(VAR_RESULT)) { // VAR_TEMP_1 is the number of Shards, VAR_TEMP_2 is the type of Shard
+		switch (var(VAR_RESULT)) { // VAR_TEMP_1 is the number of Shards, VAR_TEMP_2 is the type of Shard\
+			case MOVE_WATER_PULSE:
+			case MOVE_CHILLING_WATER:
+			case MOVE_STRUGGLE_BUG:
+			case MOVE_POUNCE:
+			case MOVE_AERIAL_ACE:
+			case MOVE_MAGICAL_LEAF:
+			case MOVE_SHOCK_WAVE:
+			case MOVE_SWIFT:
+			case MOVE_THUNDER_FANG:
+			case MOVE_FIRE_FANG:
+			case MOVE_ICE_FANG:
+			case MOVE_FIRE_PUNCH:
+			case MOVE_ICE_PUNCH:
+			case MOVE_THUNDER_PUNCH:
             case MOVE_BREAKING_SWIPE:
             case MOVE_GRASSY_GLIDE:
             case MOVE_LOW_SWEEP:

@@ -259,58 +259,58 @@ script Zone3A_EventScript_Tutor {
 	lock
 	faceplayer
 	showmoneybox(0, 0, 0)
-	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT) == TRUE) {
-		msgbox(format("Ho there, trainer!\pI can teach one of your Pokémon Water Pulse for the low price of ¥200. Interested?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
+	msgbox(format("Ahoy there, trainer!\pI can teach your Pokémon some watery techniques, at the low price of ¥200!"))
+	message(format("What move should I teach?\nThey will cost you ¥200."))
+	waitmessage
+	dynmultipush("Water Pulse", MOVE_WATER_PULSE)
+	dynmultipush("Chilling Water", MOVE_CHILLING_WATER)
+	dynmultipush("Exit", 1)
+	dynmultistack(21, 0, FALSE, 5, 0, 0, DYN_MULTICHOICE_CB_NONE)
+	switch (var(VAR_RESULT)) {
+		case MOVE_WATER_PULSE:
+			setvar(VAR_TEMP_0, MOVE_WATER_PULSE)
+			setvar(VAR_0x8005, MOVE_WATER_PULSE)
+		case MOVE_CHILLING_WATER:
+			setvar(VAR_TEMP_0, MOVE_CHILLING_WATER)
+			setvar(VAR_0x8005, MOVE_CHILLING_WATER)
+		case 1:
+		case MULTI_B_PRESSED:
 			hidemoneybox
-			msgbox(format("Good day to you!"))
+			msgbox(Zone3A_Text_GoodDay)
 			release
 			end
-		}
-	} else {
-		msgbox(format("Ho there, trainer!\pI can teach one of your Pokémon Water Pulse. First time is free, while subsequent times cost ¥200! Interested?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			hidemoneybox
-			msgbox(format("Good day to you!"))
-			release
-			end
-		}
 	}
-	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT) == TRUE) {
-		checkmoney(200, 0)
-		if (var(VAR_RESULT) == FALSE) {
-			msgbox(gText_YouDontHaveEnoughMoney)
-			hidemoneybox
-			release
-			end
-		}
+	checkmoney(200, 0)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(gText_YouDontHaveEnoughMoney)
+		hidemoneybox
+		release
+		end
 	}
-	setvar(VAR_TEMP_0, MOVE_WATER_PULSE)
-	setvar(VAR_0x8005, MOVE_WATER_PULSE)
 	buffermovename(0, VAR_TEMP_0)
-	msgbox("Which Pokémon should learn\n{STR_VAR_1}?", MSGBOX_DEFAULT)
+	msgbox("Which Pokémon should learn\n{STR_VAR_1}?")
 	special(ChooseMonForMoveTutor)
 	waitstate
 	lock
 	faceplayer
 	if (var(VAR_RESULT) == 0) {
-		msgbox(format("Good day to you!"))
+		msgbox(Zone3A_Text_GoodDay)
 		release
 		end
 	}
 	showmoneybox(0, 0, 0)
-	msgbox(format("There! It's done. Use that move well!"), MSGBOX_DEFAULT)
-	if (flag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT) == FALSE) {
-		setflag(FLAG_ZONE3A_MOVE_TUTOR_TAUGHT)
-	} else {
-		removemoney(200)
-		updatemoneybox
-		msgbox(format("{PLAYER} paid ¥200."), MSGBOX_DEFAULT)
-		msgbox(format("Good day to you!"))
-	}
+	msgbox(format("There! It's done. Use that move well!"))
+	removemoney(200)
+	updatemoneybox
+	msgbox(format("{PLAYER} paid ¥200."))
 	hidemoneybox
+	msgbox(Zone3A_Text_GoodDay)
 	release
 	end
+}
+
+text Zone3A_Text_GoodDay {
+	format("Good day to you!")
 }
 
 script Zone3A_EventScript_Patrick {

@@ -263,54 +263,40 @@ script Zone5A_EventScript_NeverMissTutor {
 	faceplayer
 	showmoneybox(0, 0, 0)
 	msgbox(format("Hey there! Ever been stuck because the opposing Pokémon is too hard to hit? Well, I specialize in teaching certain moves that always hit, no matter how evasive the foe is!"))
-	if (flag(FLAG_ZONE5A_MOVE_TUTOR_TAUGHT_NEVER_MISS) == TRUE) {
-		msgbox(format("For the low price of ¥400, I could teach one of your Pokémon one of these moves. Deal?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			hidemoneybox
-			msgbox(gText_NeverMissTutor_Evasion)
-			release
-			end
-		}
-	} else {
-		msgbox(format("For the low price of ¥400, I could teach one of your Pokémon one of these moves. Tell you what, the first time I do this, it'll be free! Deal?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			hidemoneybox
-			msgbox(gText_NeverMissTutor_Evasion)
-			release
-			end
-		}
-	}
-	if (flag(FLAG_ZONE5A_MOVE_TUTOR_TAUGHT_NEVER_MISS) == TRUE) {
-		checkmoney(400, 0)
-		if (var(VAR_RESULT) == FALSE) {
-			msgbox(gText_YouDontHaveEnoughMoney)
-			hidemoneybox
-			release
-			end
-		}
-	}
-	message(format("What move should I teach?"))
+	message(format("What move should I teach?\nThey will cost you ¥400."))
 	waitmessage
-	dynmultichoice(21, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Swift", "Aerial Ace", "Magical Leaf", "Shock Wave", "Exit")
+	dynmultipush("Swift", MOVE_SWIFT)
+	dynmultipush("Aerial Ace", MOVE_AERIAL_ACE)
+	dynmultipush("Magical Leaf", MOVE_MAGICAL_LEAF)
+	dynmultipush("Shock Wave", MOVE_SHOCK_WAVE)
+	dynmultipush("Exit", 1)
+	dynmultistack(21, 0, FALSE, 5, 0, 0, DYN_MULTICHOICE_CB_NONE)
 	switch (var(VAR_RESULT)) {
-		case 0:
+		case MOVE_SWIFT:
 			setvar(VAR_TEMP_0, MOVE_SWIFT)
 			setvar(VAR_0x8005, MOVE_SWIFT)
-		case 1:
+		case MOVE_AERIAL_ACE:
 			setvar(VAR_TEMP_0, MOVE_AERIAL_ACE)
 			setvar(VAR_0x8005, MOVE_AERIAL_ACE)
-		case 2:
+		case MOVE_MAGICAL_LEAF:
 			setvar(VAR_TEMP_0, MOVE_MAGICAL_LEAF)
 			setvar(VAR_0x8005, MOVE_MAGICAL_LEAF)
-		case 3:
+		case MOVE_SHOCK_WAVE:
 			setvar(VAR_TEMP_0, MOVE_SHOCK_WAVE)
 			setvar(VAR_0x8005, MOVE_SHOCK_WAVE)
-		case 4:
+		case 1:
 		case MULTI_B_PRESSED:
-			msgbox(gText_NeverMissTutor_Evasion)
 			hidemoneybox
+			msgbox(Zone5A_Text_NeverMissTutor_Evasion)
 			release
 			end
+	}
+	checkmoney(400, 0)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(gText_YouDontHaveEnoughMoney)
+		hidemoneybox
+		release
+		end
 	}
 	buffermovename(0, VAR_TEMP_0)
 	msgbox("Which Pokémon should learn\n{STR_VAR_1}?")
@@ -319,28 +305,23 @@ script Zone5A_EventScript_NeverMissTutor {
 	lock
 	faceplayer
 	if (var(VAR_RESULT) == 0) {
-		msgbox(gText_NeverMissTutor_Evasion)
-		hidemoneybox
+		msgbox(Zone5A_Text_NeverMissTutor_Evasion)
 		release
 		end
 	}
 	showmoneybox(0, 0, 0)
 	msgbox(format("There! It's done. Use that move well!"))
-	if (flag(FLAG_ZONE5A_MOVE_TUTOR_TAUGHT_NEVER_MISS) == FALSE) {
-		setflag(FLAG_ZONE5A_MOVE_TUTOR_TAUGHT_NEVER_MISS)
-	} else {
-		removemoney(400)
-		updatemoneybox
-		msgbox(format("{PLAYER} paid ¥400."))
-		msgbox(gText_NeverMissTutor_Evasion)
-	}
+	removemoney(400)
+	updatemoneybox
+	msgbox(format("{PLAYER} paid ¥400."))
 	hidemoneybox
+	msgbox(Zone5A_Text_NeverMissTutor_Evasion)
 	release
 	end
 }
 
-text gText_NeverMissTutor_Evasion {
-	format("Evasion is really tough to deal with; come back if you need!")
+text Zone5A_Text_NeverMissTutor_Evasion {
+	format("Evasion is really irritating to deal with, isn't it?")
 }
 
 script Zone5A_EventScript_MiracleSeed {

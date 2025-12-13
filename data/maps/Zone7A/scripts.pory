@@ -147,77 +147,62 @@ script Zone7A_EventScript_FangsTutor {
 	lock
 	faceplayer
 	showmoneybox(0, 0, 0)
-	if (flag(FLAG_ZONE7A_MOVE_TUTOR_TAUGHT_FANG) == TRUE) {
-		msgbox(format("Congrats on climbing the mountain! Had to fight tooth and nail to get here, didn't you?\pY'know, speaking of tooth, I can teach your Pokémon how to use one of the elemental fangs.\pFor the low price of ¥1000, your Pokémon could learn Thunder Fang, Fire Fang, or Ice Fang, if you're interested?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			hidemoneybox
-			msgbox(format("You just let me know if you need me."))
-			release
-			end
-		}
-	} else {
-		msgbox(format("Congrats on climbing the mountain! Had to fight tooth and nail to get here, didn't you?\pY'know, speaking of tooth, I can teach your Pokémon how to use one of the elemental fangs.\pFor the low price of ¥1000, your Pokémon could learn Thunder Fang, Fire Fang, or Ice Fang, if you're interested? First time tutor is free!"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			hidemoneybox
-			msgbox(format("You just let me know if you need me."))
-			release
-			end
-		}
-	}
-	if (flag(FLAG_ZONE7A_MOVE_TUTOR_TAUGHT_FANG) == TRUE) {
-		checkmoney(1000, 0)
-		if (var(VAR_RESULT) == FALSE) {
-			msgbox("Hate to break it to you, but you don't have enough money.")
-			hidemoneybox
-			release
-			end
-		}
-	}
-	message(format("What move should I teach?"))
+	msgbox(format("Congrats on climbing the mountain! Had to fight tooth and nail to get here, didn't you?\pY'know, speaking of tooth, I can teach your Pokémon how to use one of the elemental fangs."))
+	message(format("What move should I teach?\nThey will cost you ¥600."))
 	waitmessage
-	dynmultichoice(21, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Thunder Fang", "Fire Fang", "Ice Fang", "Exit")
+	dynmultipush("Thunder Fang", MOVE_THUNDER_FANG)
+	dynmultipush("Ice Fang", MOVE_ICE_FANG)
+	dynmultipush("Fire Fang", MOVE_FIRE_FANG)
+	dynmultipush("Exit", 1)
+	dynmultistack(21, 0, FALSE, 5, 0, 0, DYN_MULTICHOICE_CB_NONE)
 	switch (var(VAR_RESULT)) {
-		case 0:
+		case MOVE_THUNDER_FANG:
 			setvar(VAR_TEMP_0, MOVE_THUNDER_FANG)
 			setvar(VAR_0x8005, MOVE_THUNDER_FANG)
-		case 1:
-			setvar(VAR_TEMP_0, MOVE_FIRE_FANG)
-			setvar(VAR_0x8005, MOVE_FIRE_FANG)
-		case 2:
+		case MOVE_ICE_FANG:
 			setvar(VAR_TEMP_0, MOVE_ICE_FANG)
 			setvar(VAR_0x8005, MOVE_ICE_FANG)
-		case 3:
+		case MOVE_FIRE_FANG:
+			setvar(VAR_TEMP_0, MOVE_FIRE_FANG)
+			setvar(VAR_0x8005, MOVE_FIRE_FANG)
+		case 1:
 		case MULTI_B_PRESSED:
-			msgbox(format("You just let me know if you need me."))
 			hidemoneybox
+			msgbox(Zone7A_Text_Tutor)
 			release
 			end
 	}
+	checkmoney(600, 0)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(gText_YouDontHaveEnoughMoney)
+		hidemoneybox
+		release
+		end
+	}
 	buffermovename(0, VAR_TEMP_0)
-	msgbox("Which Pokémon should learn\n{STR_VAR_1}?", MSGBOX_DEFAULT)
+	msgbox("Which Pokémon should learn\n{STR_VAR_1}?")
 	special(ChooseMonForMoveTutor)
 	waitstate
 	lock
 	faceplayer
 	if (var(VAR_RESULT) == 0) {
-		msgbox(format("You just let me know if you need me."))
-		hidemoneybox
+		msgbox(Zone7A_Text_Tutor)
 		release
 		end
 	}
 	showmoneybox(0, 0, 0)
-	msgbox(format("There! It's done. Use that move well!"), MSGBOX_DEFAULT)
-	if (flag(FLAG_ZONE7A_MOVE_TUTOR_TAUGHT_FANG) == FALSE) {
-		setflag(FLAG_ZONE7A_MOVE_TUTOR_TAUGHT_FANG)
-	} else {
-		removemoney(1000)
-		updatemoneybox
-		msgbox(format("{PLAYER} paid ¥1000."), MSGBOX_DEFAULT)
-		msgbox(format("You just let me know if you need me."))
-	}
+	msgbox(format("There! It's done. Use that move well!"))
+	removemoney(600)
+	updatemoneybox
+	msgbox(format("{PLAYER} paid ¥600."))
 	hidemoneybox
+	msgbox(Zone7A_Text_Tutor)
 	release
 	end
+}
+
+text Zone7A_Text_Tutor {
+	format("Biting moves like Thunder Fang pair well with the Strong Jaw ability!")
 }
 
 script Zone7A_EventScript_SharpBeak {

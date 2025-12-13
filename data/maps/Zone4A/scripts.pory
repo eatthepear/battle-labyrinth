@@ -60,63 +60,58 @@ script Zone4A_EventScript_StruggleBugTutor {
 	lock
 	faceplayer
 	showmoneybox(0, 0, 0)
-	msgbox(format("You found my secret hideout…\pI bet it was a struggle getting here, right?\pYou know what's not a struggle? The move Struggle Bug!"))
-	if (flag(FLAG_ZONE4A_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG) == TRUE) {
-		msgbox(format("I can teach Struggle Bug to one of your Pokémon for the low price of ¥200. How about it?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
+	msgbox(format("You found my secret hideout…\pI bet it was a struggle getting here, right?\pI can teach your Pokémon to Struggle Bug, or to Pounce!"))
+	message(format("What move should I teach?\nThey will cost you ¥200."))
+	waitmessage
+	dynmultipush("Struggle Bug", MOVE_STRUGGLE_BUG)
+	dynmultipush("Pounce", MOVE_POUNCE)
+	dynmultipush("Exit", 1)
+	dynmultistack(21, 0, FALSE, 5, 0, 0, DYN_MULTICHOICE_CB_NONE)
+	switch (var(VAR_RESULT)) {
+		case MOVE_STRUGGLE_BUG:
+			setvar(VAR_TEMP_0, MOVE_STRUGGLE_BUG)
+			setvar(VAR_0x8005, MOVE_STRUGGLE_BUG)
+		case MOVE_POUNCE:
+			setvar(VAR_TEMP_0, MOVE_POUNCE)
+			setvar(VAR_0x8005, MOVE_POUNCE)
+		case 1:
+		case MULTI_B_PRESSED:
 			hidemoneybox
-			msgbox(gText_StruggleBugTutor_ComeBack)
+			msgbox(Zone4A_StruggleBugTutor_ComeBack)
 			release
 			end
-		}
-	} else {
-		msgbox(format("I can teach Struggle Bug to one of your Pokémon. First time is free, while subsequent times cost ¥200! How about it?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			hidemoneybox
-			msgbox(gText_StruggleBugTutor_ComeBack)
-			release
-			end
-		}
 	}
-	if (flag(FLAG_ZONE4A_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG) == TRUE) {
-		checkmoney(200, 0)
-		if (var(VAR_RESULT) == FALSE) {
-			msgbox(gText_YouDontHaveEnoughMoney)
-			hidemoneybox
-			release
-			end
-		}
+	checkmoney(200, 0)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(gText_YouDontHaveEnoughMoney)
+		hidemoneybox
+		release
+		end
 	}
-	setvar(VAR_TEMP_0, MOVE_STRUGGLE_BUG)
-	setvar(VAR_0x8005, MOVE_STRUGGLE_BUG)
 	buffermovename(0, VAR_TEMP_0)
-	msgbox("Which Pokémon should learn\n{STR_VAR_1}?", MSGBOX_DEFAULT)
+	msgbox("Which Pokémon should learn\n{STR_VAR_1}?")
 	special(ChooseMonForMoveTutor)
 	waitstate
 	lock
 	faceplayer
 	if (var(VAR_RESULT) == 0) {
-		msgbox(gText_StruggleBugTutor_ComeBack)
+		msgbox(Zone4A_StruggleBugTutor_ComeBack)
 		release
 		end
 	}
 	showmoneybox(0, 0, 0)
-	msgbox(format("There! It's done. Use that move well!"), MSGBOX_DEFAULT)
-	if (flag(FLAG_ZONE4A_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG) == FALSE) {
-		setflag(FLAG_ZONE4A_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG)
-	} else {
-		removemoney(200)
-		updatemoneybox
-		msgbox(format("{PLAYER} paid ¥200."), MSGBOX_DEFAULT)
-		msgbox(gText_StruggleBugTutor_ComeBack)
-	}
+	msgbox(format("There! It's done. Use that move well!"))
+	removemoney(200)
+	updatemoneybox
+	msgbox(format("{PLAYER} paid ¥200."))
 	hidemoneybox
+	msgbox(Zone4A_StruggleBugTutor_ComeBack)
 	release
 	end
 }
 
-text gText_StruggleBugTutor_ComeBack {
-	format("Okay, come back again.")
+text Zone4A_StruggleBugTutor_ComeBack {
+	format("Hope you don't struggle to get through the woods!")
 }
 
 script Zone4A_EventScript_Random1 {
