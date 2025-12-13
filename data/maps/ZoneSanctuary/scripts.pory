@@ -1882,8 +1882,8 @@ script EventScript_Shop_Varrick_Items {
 		if (var(VAR_ZONE) > 5) {
 			dynmultipush("Evo Items", 1)
 			dynmultipush("Battle Items", 2)
+			dynmultipush("Treasures", 3)
 		}
-		dynmultipush("Treasures", 3)
 		if (checkitem(ITEM_MEGA_RING) == TRUE) {
 			dynmultipush("Mega Stones", 6)
 		}
@@ -2288,7 +2288,6 @@ script EventScript_Shop_Varrick_Treasures {
 		case 3:
 		case 4:
 		case 5:
-			pokemart(Shop_Treasures_1)
 		case 6:
 		case 7:
 		case 9:
@@ -2303,6 +2302,7 @@ script EventScript_Shop_Varrick_Treasures {
 		case 17:
 		case 18:
 		case 20:
+			pokemart(Shop_Treasures_4)
 		case 21:
 		case 22:
 		case 23:
@@ -2314,12 +2314,7 @@ script EventScript_Shop_Varrick_Treasures {
 	}
 }
 
-mart Shop_Treasures_1 {
-	ITEM_HEART_SCALE
-}
-
 mart Shop_Treasures_2 {
-	ITEM_HEART_SCALE
 	ITEM_RED_SHARD
 	ITEM_BLUE_SHARD
 	ITEM_YELLOW_SHARD
@@ -2327,6 +2322,14 @@ mart Shop_Treasures_2 {
 }
 
 mart Shop_Treasures_3 {
+	ITEM_HEART_SCALE
+	ITEM_RED_SHARD
+	ITEM_BLUE_SHARD
+	ITEM_YELLOW_SHARD
+	ITEM_GREEN_SHARD
+}
+
+mart Shop_Treasures_4 {
 	ITEM_HEART_SCALE
 	ITEM_RED_SHARD
 	ITEM_BLUE_SHARD
