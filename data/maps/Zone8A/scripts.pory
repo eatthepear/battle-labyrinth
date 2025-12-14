@@ -22,7 +22,7 @@ script Zone8A_EventScript_BuyTyrogue {
 	lock
 	faceplayer
 	if (flag(FLAG_ZONE8A_BOUGHT_TYROGUE) == true) {
-		msgbox(format("ALRIGHT! BACK TO TRAINING!"))
+		msgbox(Zone8A_Text_BackToTraining)
 		release
 		end
 	}
@@ -30,21 +30,21 @@ script Zone8A_EventScript_BuyTyrogue {
 	msgbox(format("I'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pErr… Oh!\pYou look like a capable Trainer!\pAre you interested in raising this Tyrogue?\pI won't part with it without ¥1000!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		hidemoneybox
-		msgbox(format("ALRIGHT! BACK TO TRAINING!"))
+		msgbox(Zone8A_Text_BackToTraining)
 		release
 		end
 	}
 	checkmoney(1000, 0)
 	if (var(VAR_RESULT) == FALSE) {
-		msgbox("You don't have enough money.\pALRIGHT! BACK TO TRAINING!")
+		msgbox("You don't have enough money.")
 		hidemoneybox
+		msgbox(Zone8A_Text_BackToTraining)
 		release
 		end
 	}
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
 		setvar(VAR_TEMP_3, 0) // counter for species clause
-		//checkspeciesclause(SPECIES_TYROGUE)
-		if (var(VAR_RESULT) == TRUE) {
+		if (checkspeciesclause(VAR_TEMP_B) == TRUE) {
 			addvar(VAR_TEMP_3, 1)
 		}
 		if (var(VAR_TEMP_3) == 1) {
@@ -54,64 +54,49 @@ script Zone8A_EventScript_BuyTyrogue {
 			end
 		}
 	}
-	setvar(VAR_TEMP_1, SPECIES_TYROGUE)
-	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
-	if (var(VAR_TEMP_2) == PARTY_SIZE) {
-		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
-		hidemoneybox
-		special(ChoosePartyMon)
-		waitstate
-		faceplayer
-		showmoneybox(0, 0, 0)
-		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
-			hidemoneybox
-			msgbox(format("ALRIGHT! BACK TO TRAINING!"))
-			release
-			end
-		}
-		specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
-		bufferspeciesname(2, VAR_TEMP_3)
-		copyvar(VAR_TEMP_3, VAR_0x8004) // used in SendChosenMonToPC
-		msgbox(format("Are you sure you want to send your {STR_VAR_3} to the PC?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			hidemoneybox
-			msgbox(format("ALRIGHT! BACK TO TRAINING!"))
-			release
-			end
-		}
-	}
-	msgbox(format("Just to confirm…\pYou're sure you want to buy Tyrogue for ¥1000?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		hidemoneybox
-		msgbox(format("ALRIGHT! BACK TO TRAINING!"))
-		release
-		end
-	}
-	setflag(FLAG_ZONE8A_BOUGHT_TYROGUE)
-	if (var(VAR_TEMP_2) == PARTY_SIZE) {
-		special(SendChosenMonToPC)
-		setvar(VAR_TEMP_2, 5) // gift mon appears always in last slot if party initially full
-	}
+	setvar(VAR_TEMP_0, SPECIES_TYROGUE)
 	removemoney(1000)
 	updatemoneybox
-	msgbox(format("GOOD PURCHASE!"), MSGBOX_DEFAULT)
+	msgbox(format("GOOD PURCHASE!"))
 	hidemoneybox
-	givemon(VAR_TEMP_1, 15, ITEM_NONE)
-	setmonmetlocation(VAR_TEMP_2, 243)
-	bufferspeciesname(0, VAR_TEMP_1)
-	msgbox("Here's your {STR_VAR_1}.", MSGBOX_DEFAULT)
+	bufferspeciesname(0, VAR_TEMP_0)
+	msgbox("Here's your {STR_VAR_1}.")
 	playfanfare(MUS_OBTAIN_ITEM)
 	message(format("{PLAYER} received the {STR_VAR_1}!"))
 	waitmessage
 	waitfanfare
-	msgbox(format("Would you like to give a nickname to {STR_VAR_1}?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		call(Common_EventScript_GetGiftMonPartySlot)
-		call(Common_EventScript_NameReceivedPartyMon)
+	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+		msgbox(format("Your party is full. Would you like to send a party Pokémon to the PC and add {STR_VAR_1} to your party?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call(EventScript_ChoosePartyMonToSend)
+		}
 	}
-	msgbox(format("TRAIN TYROGUE WELL!"), MSGBOX_DEFAULT)
+	givemon(VAR_TEMP_0, 15, metLocation=METLOC_ZONE8A_GIFT)
+	if (var(VAR_RESULT) == MON_GIVEN_TO_PARTY) {
+		bufferspeciesname(0, VAR_TEMP_0)
+		msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call(Common_EventScript_GetGiftMonPartySlot)
+			call(Common_EventScript_NameReceivedPartyMon)
+		}
+	} else {
+		bufferspeciesname(0, VAR_TEMP_0)
+		copyvar(VAR_TEMP_TRANSFERRED_SPECIES, VAR_TEMP_0)
+		msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call(Common_EventScript_NameReceivedBoxMon)
+		}
+		call(Common_EventScript_TransferredToPC)
+	}
+	setflag(FLAG_ZONE8A_BOUGHT_TYROGUE)
+	msgbox(Zone8A_Text_BackToTraining)
 	release
 	end
+}
+
+text Zone8A_Text_BackToTraining {
+	format("ALRIGHT! BACK TO TRAINING!")
 }
 
 script Zone8A_EventScript_Magnet {
