@@ -1176,8 +1176,8 @@ script EventScript_Notebook_Items {
 		dynmultipush("Mints", ITEM_SERIOUS_MINT)
 		dynmultipush("Exp. Candy", ITEM_EXP_CANDY_M)
 		dynmultipush("Shards", ITEM_RED_SHARD)
-		dynmultipush("Heart Scale", ITEM_HEART_SCALE)
 		dynmultipush("Tera Shard", ITEM_NORMAL_TERA_SHARD)
+		dynmultipush("Heart Scale", ITEM_HEART_SCALE)
 		dynmultipush("Hex Orb", ITEM_HEXORB)
 		dynmultipush("Back", 1)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
@@ -1200,10 +1200,10 @@ script EventScript_Notebook_Items {
 				msgbox(format("Exp. Candies cost all set to ¥80, and do not level up past the level cap."))
 			case ITEM_RED_SHARD:
 				msgbox(format("Shards cost reduced to ¥400."))
-			case ITEM_HEART_SCALE:
-				msgbox(format("Heart Scale cost increased to ¥2500."))
 			case ITEM_NORMAL_TERA_SHARD:
 				msgbox(format("Tera Shard cost set to ¥400."))
+			case ITEM_HEART_SCALE:
+				msgbox(format("Heart Scale cost increased to ¥2500."))
 			case ITEM_HEXORB:
 				msgbox(format("The Hexorb Key Item lets you pre-status Pokémon."))
 			case 1:
