@@ -4060,7 +4060,7 @@ static void BufferMonTrainerMemo(void)
             case METLOC_GIVE_FWG:
                 text = gText_XNatureFWG;
                 break;
-            case METLOC_ZONE8A_GIFT:
+            case METLOC_ZONE8B_GIFT:
                 text = gText_XNatureBlackBelt;
                 break;
             case METLOC_ZONE4A_GIFT:

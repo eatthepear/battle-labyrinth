@@ -207,7 +207,7 @@
 #define FLAG_ZONE7A_RECEIVED_SACHET                       0x11D
 #define FLAG_ZONE7A_MOVE_TUTOR_TAUGHT_FANG                0x11E
 #define FLAG_ZONE7B_HEAL_USED                             0x11F
-#define FLAG_ZONE8A_BOUGHT_TYROGUE                        0x120
+#define FLAG_ZONE8B_BOUGHT_TYROGUE                        0x120
 #define FLAG_HIDE_ZONE9A_ARI_WINSTRATE                    0x121
 #define FLAG_HIDE_ZONE9A_BERTHA_WINSTRATE                 0x122
 #define FLAG_HIDE_ZONE9A_CASSANDRA_WINSTRATE              0x123
