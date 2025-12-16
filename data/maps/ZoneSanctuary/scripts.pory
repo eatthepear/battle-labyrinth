@@ -695,7 +695,7 @@ script Sanctuary_EventScript_GameIntro {
 		setflag(FLAG_TEMP_1)
 		msgbox(format("Pokémon Battle Labyrinth is comprised of many {COLOR GREEN}Zones{COLOR DARK_GRAY} you must traverse.\p"
 		"In these Zones, you can encounter wild Pokémon, find great treasures, challenge fierce opponents, and more.\p"
-		"Each Zone typically contains a {COLOR GREEN}Leviathan{COLOR DARK_GRAY} or other boss that must be defeated in order to proceed.\p"
+		"Each Zone typically contains a {COLOR GREEN}Leviathan{COLOR DARK_GRAY} or other difficult challenge that yields great rewards.\p"
 		"When you complete a Zone, you will return to this area, the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}, where you can heal your Pokémon, purchase supplies, and prepare for the next Zone.\p"
 		"Once you enter a new Zone, you will not be able to access the Sanctuary until you complete that Zone.\p"
 		"As you complete more Zones, more items, quests, and services are unlocked.\p"
