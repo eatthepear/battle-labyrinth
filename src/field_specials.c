@@ -4594,20 +4594,20 @@ u16 GetNumTrainersRemaining(void)
 #define RANDOM_ITEM_CHEST_TABLE_COUNT ARRAY_COUNT(sItemChestTable)
 static const struct ItemChest sItemChestTable[] =
 {
-    {	ITEM_POKE_BALL    	, {	 10,	  5,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_GREAT_BALL   	, {	  0,	  5,	 10,	  5,	  5,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_ULTRA_BALL   	, {	  0,	  0,	  0,	  5,	  5,	 10,	 10,	 10,	 10,	 10,	 10,	} },
-    {	ITEM_POTION       	, {	 60,	 30,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_SUPER_POTION 	, {	  0,	 30,	 60,	 30,	 30,	 10,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_HYPER_POTION 	, {	  0,	  0,	  0,	 30,	 30,	 30,	 40,	 30,	 20,	  0,	  0,	} },
-    {	ITEM_MAX_POTION   	, {	  0,	  0,	  0,	  0,	  0,	 20,	 20,	 20,	 20,	 30,	 30,	} },
+    {	ITEM_POKE_BALL    	, {	 10,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_GREAT_BALL   	, {	  0,	 10,	 10,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_ULTRA_BALL   	, {	  0,	  0,	  0,	 10,	 10,	 10,	 10,	 10,	 10,	 10,	 10,	} },
+    {	ITEM_POTION       	, {	 60,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_SUPER_POTION 	, {	  0,	 60,	 60,	 30,	 30,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_HYPER_POTION 	, {	  0,	  0,	  0,	 30,	 30,	 60,	 40,	 30,	 20,	  0,	  0,	} },
+    {	ITEM_MAX_POTION   	, {	  0,	  0,	  0,	  0,	  0,	  0,	 20,	 20,	 20,	 30,	 30,	} },
     {	ITEM_FULL_RESTORE 	, {	  0,	  0,	  0,	  0,	  0,	  0,	  0,	 10,	 20,	 30,	 30,	} },
-    {	ITEM_ANTIDOTE     	, {	 10,	  8,	  8,	  8,	  3,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_PARALYZE_HEAL	, {	 10,	  8,	  8,	  8,	  3,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_AWAKENING    	, {	  5,	  5,	  5,	  5,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_BURN_HEAL    	, {	  5,	  4,	  4,	  4,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_ANTIDOTE     	, {	 10,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_PARALYZE_HEAL	, {	 10,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_AWAKENING    	, {	  5,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_BURN_HEAL    	, {	  5,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
     {	ITEM_FULL_HEAL    	, {	  0,	  0,	  0,	  0,	 10,	 15,	 15,	 15,	 15,	 20,	 20,	} },
-    {	ITEM_REVIVE       	, {	  0,	  5,	  5,	  5,	 10,	 15,	 15,	 15,	  5,	  0,	  0,	} },
+    {	ITEM_REVIVE       	, {	  0,	 30,	 30,	 30,	 20,	 15,	 15,	 15,	  5,	  0,	  0,	} },
     {	ITEM_MAX_REVIVE   	, {	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	 10,	 10,	 10,	} },
 };
 
@@ -4646,14 +4646,14 @@ u16 RandomItemChest(void)
 #define RANDOM_HIDDEN_BERRY_TABLE_COUNT ARRAY_COUNT(sRandomHiddenBerryTable)
 static const struct ItemChest sRandomHiddenBerryTable[] =
 {
-    {	ITEM_ORAN_BERRY   	, {	 50,	 40,	100,	100,	100,	100,	100,	100,	100,	100,	100,	} },
-    {	ITEM_PECHA_BERRY	, {	 15,	 15,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_CHERI_BERRY	, {	 15,	 15,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_CHESTO_BERRY	, {	  8,	  8,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_RAWST_BERRY	, {	  8,	  8,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_ASPEAR_BERRY	, {	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_PERSIM_BERRY	, {	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_SITRUS_BERRY	, {	  0,	 10,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_ORAN_BERRY   	, {	 50,	 40,	  0,	100,	100,	100,	100,	100,	100,	100,	100,	} },
+    {	ITEM_PECHA_BERRY	, {	 15,	 15,	 15,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_CHERI_BERRY	, {	 15,	 15,	 15,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_CHESTO_BERRY	, {	  8,	  8,	  8,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_RAWST_BERRY	, {	  8,	  8,	  8,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_ASPEAR_BERRY	, {	  2,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_PERSIM_BERRY	, {	  2,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_SITRUS_BERRY	, {	  0,	  0,	 40,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
 };
 
 u16 RandomHiddenBerry(void)
@@ -4681,10 +4681,28 @@ u16 RandomHiddenBerry(void)
 #define RANDOM_HIDDEN_SHARD_TABLE_COUNT ARRAY_COUNT(sRandomHiddenShardTable)
 static const struct ItemChest sRandomHiddenShardTable[] =
 {
-    {	ITEM_RED_SHARD   	, {	 50,	 50,	100,	100,	100,	100,	100,	100,	100,	100,	100,	} },
-    {	ITEM_GREEN_SHARD   	, {	 50,	 50,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_BLUE_SHARD   	, {	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_YELLOW_SHARD  	, {	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_RED_SHARD          	, {	 50,	 50,	 16,	100,	100,	100,	100,	100,	100,	100,	100,	} },
+    {	ITEM_GREEN_SHARD        	, {	 50,	 50,	 16,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_BLUE_SHARD          	, {	  0,	  0,	 16,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_YELLOW_SHARD       	, {	  0,	  0,	 16,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_BUG_TERA_SHARD       	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_DARK_TERA_SHARD     	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_DRAGON_TERA_SHARD   	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_ELECTRIC_TERA_SHARD	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_FAIRY_TERA_SHARD   	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_FIGHTING_TERA_SHARD	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_FIRE_TERA_SHARD    	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_FLYING_TERA_SHARD    	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_GHOST_TERA_SHARD    	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_GRASS_TERA_SHARD    	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_GROUND_TERA_SHARD   	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_ICE_TERA_SHARD      	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_NORMAL_TERA_SHARD    	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_POISON_TERA_SHARD    	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_PSYCHIC_TERA_SHARD   	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_ROCK_TERA_SHARD    	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_STEEL_TERA_SHARD    	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_WATER_TERA_SHARD    	, {	  0,	  0,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
 };
 
 u16 RandomHiddenShard(void)
