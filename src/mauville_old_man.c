@@ -1157,7 +1157,7 @@ static const struct Story sStorytellerStories[] = {
         MauvilleCity_PokemonCenter_1F_Text_TimesShoppedStory
     },
     {
-        GAME_STAT_USED_ITEMFINDER, 1,
+        GAME_STAT_FOUND_HIDDEN_ITEM, 1,
         MauvilleCity_PokemonCenter_1F_Text_UsedItemFinderTitle,
         MauvilleCity_PokemonCenter_1F_Text_UsedItemFinderAction,
         MauvilleCity_PokemonCenter_1F_Text_UsedItemFinderStory

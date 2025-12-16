@@ -1234,12 +1234,12 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      0
 	),
 	side_quest(
-	      gText_SideQuestName_Filler,
-	      gText_SideQuestDesc_Filler,
-	      gText_SideQuestDoneDesc_Filler,
-	      gText_QuestMapFiller,
-	      ITEM_NONE,
-	      ITEM,
+	      COMPOUND_STRING("A Ruin Maniac's Challenge"),
+	      gText_SideQuestDesc_FindHiddenItems,
+	      COMPOUND_STRING("You found 100 hidden items!"),
+	      gText_QuestMapSanctuary,
+	      OBJ_EVENT_GFX_RUIN_MANIAC,
+	      OBJECT,
 	      NULL,
 	      0
 	),
@@ -3759,6 +3759,10 @@ static const u8 *GetQuestDesc(s32 questId)
         case QUEST_POKEDEX:
 			ConvertIntToDecimalStringN(gStringVar1, GetNationalPokedexCount(FLAG_GET_SEEN), STR_CONV_MODE_LEFT_ALIGN, 4);
 			StringExpandPlaceholders(gStringVar4, gText_SideQuestDesc_Pokedex);
+            return gStringVar4;
+        case QUEST_FIND_100_HIDDEN:
+			ConvertIntToDecimalStringN(gStringVar1, GetGameStat(GAME_STAT_FOUND_HIDDEN_ITEM), STR_CONV_MODE_LEFT_ALIGN, 4);
+			StringExpandPlaceholders(gStringVar4, gText_SideQuestDesc_FindHiddenItems);
             return gStringVar4;
         default:
             return sSideQuests[questId].desc;

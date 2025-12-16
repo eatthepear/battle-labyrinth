@@ -2544,6 +2544,7 @@ extern const u8 gText_SideQuestDesc_Pokedex[];
 extern const u8 gText_SideQuestDesc_Catch50[];
 extern const u8 gText_SideQuestDesc_DefeatAll1[];
 extern const u8 gText_SideQuestDesc_Berries[];
+extern const u8 gText_SideQuestDesc_FindHiddenItems[];
 
 //completed quest description
 extern const u8 gText_SideQuestDoneDesc_Filler[];

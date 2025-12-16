@@ -40,7 +40,7 @@
 #define GAME_STAT_ENTERED_CONTEST             36
 #define GAME_STAT_WON_CONTEST                 37
 #define GAME_STAT_SHOPPED                     38
-#define GAME_STAT_USED_ITEMFINDER             39
+#define GAME_STAT_FOUND_HIDDEN_ITEM             39
 #define GAME_STAT_GOT_RAINED_ON               40
 #define GAME_STAT_CHECKED_POKEDEX             41
 #define GAME_STAT_RECEIVED_RIBBONS            42

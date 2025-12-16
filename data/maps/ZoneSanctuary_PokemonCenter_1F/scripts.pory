@@ -115,6 +115,19 @@ script EventScript_PokedexQuestScientist {
 	end
 }
 
+script EventScript_FindHiddenQuestRuinManiac {
+	lock
+	faceplayer
+	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_FIND_100_HIDDEN)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(format("A Ruin Maniac's best friend is a Dowsing Machine!\pIf you can show me you've found 100 hidden items, I'll give you a sweet reward."))
+		startquest(QUEST_FIND_100_HIDDEN)
+	}
+	msgbox(format("The Dowsing Machine is your best friend when it comes to finding hidden items!\pYou can also look for empty patches of grass or check small rocks."))
+	release
+	end
+}
+
 script EventScript_OldMan_PriorZone {
 	lock
 	faceplayer

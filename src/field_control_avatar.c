@@ -494,6 +494,7 @@ static const u8 *GetInteractedBackgroundEventScript(struct MapPosition *position
             gSpecialVar_0x8005 = RandomHiddenBerry();
         else if (gSpecialVar_0x8005 == ITEM_NORMAL_TERA_SHARD)
             gSpecialVar_0x8005 = RandomHiddenShard();
+        IncrementGameStat(GAME_STAT_FOUND_HIDDEN_ITEM);
         return EventScript_HiddenItemScript;
     case BG_EVENT_SECRET_BASE:
         if (direction == DIR_NORTH)

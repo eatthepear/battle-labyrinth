@@ -1409,6 +1409,7 @@ const u8 gText_SideQuestDesc_Pokedex[] = _("See all the Pokémon in the Pokédex
 const u8 gText_SideQuestDesc_Catch50[] = _("Show the Collector that you've caught\nat least 50 Pokémon species!");
 const u8 gText_SideQuestDesc_DefeatAll1[] = _("Defeat all trainers in\nZones 1-10.");
 const u8 gText_SideQuestDesc_Berries[] = _("Procure 5 of each\nstatus healing Berry.");
+const u8 gText_SideQuestDesc_FindHiddenItems[] = _("Find 100 hidden items!\nSo far you've found {STR_VAR_1} hidden items!");
 
 //completed quest description
 const u8 gText_SideQuestDoneDesc_Filler[] = _("Filler Completed Quest");
