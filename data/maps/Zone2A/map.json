@@ -69,8 +69,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_1",
-      "x": 41,
-      "y": 8,
+      "x": 23,
+      "y": 35,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -95,8 +95,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_2",
-      "x": 30,
-      "y": 6,
+      "x": 50,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -160,8 +160,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_3",
-      "x": 37,
-      "y": 37,
+      "x": 30,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -170,6 +170,58 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Zone2A_EventScript_TMBugBite",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKWOVET)",
+      "x": 47,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Skwovet",
+      "flag": "FLAG_BEAT_LEVIATHAN_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKWOVET)",
+      "x": 48,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Skwovet",
+      "flag": "FLAG_BEAT_LEVIATHAN_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKWOVET)",
+      "x": 49,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Skwovet",
+      "flag": "FLAG_BEAT_LEVIATHAN_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKWOVET)",
+      "x": 50,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Skwovet",
+      "flag": "FLAG_BEAT_LEVIATHAN_2"
     }
   ],
   "warp_events": [],
@@ -223,8 +275,8 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 37,
-      "y": 15,
+      "x": 27,
+      "y": 29,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE2A_CHERI_BERRY"
@@ -239,8 +291,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 27,
-      "y": 29,
+      "x": 37,
+      "y": 37,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE2A_CHESTO_BERRY"

@@ -67,7 +67,7 @@ script Zone2A_EventScript_LeviathanBattle {
 	faceplayer
 	if (flag(FLAG_BEAT_LEVIATHAN_2) == true) {
 		setspeaker("Shaun")
-		msgbox(Zone2A_Text_Shaun_MoreBerries)
+		msgbox(Zone2A_Text_Shaun_Post)
 		release
 		end
 	}
@@ -99,13 +99,13 @@ script Zone2A_EventScript_LeviathanBattle {
 	giveitem(ITEM_ORAN_BERRY, 5)
 	setflag(FLAG_BEAT_LEVIATHAN_2)
 	setspeaker("Shaun")
-	msgbox(Zone2A_Text_Shaun_MoreBerries)
+	msgbox(Zone2A_Text_Shaun_Post)
 	release
 	end
 }
 
-text Zone2A_Text_Shaun_MoreBerries {
-	format("If you're looking for more Berries, you can always buy more at the Farmer's Stand, or find them hidden in the field!")
+text Zone2A_Text_Shaun_Post {
+	format("Sometimes Skwovet come looking for Berries and block the road.\pJust wait a little bit, and they should move out of the way shortly!")
 }
 
 script Zone2A_EventScript_BuyBug {

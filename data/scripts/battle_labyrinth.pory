@@ -2784,3 +2784,14 @@ gText_Lelouch_CostsGreenShards:
 gText_ExitSign:
 	.string "This is the exit!$"
 `
+
+script EventScript_Skwovet {
+	lock
+	faceplayer
+	setspeaker("Skwovet")
+	playmoncry(SPECIES_SKWOVET, CRY_MODE_NORMAL)
+	msgbox(format("Skee!"))
+	waitmoncry
+	release
+	end
+}
