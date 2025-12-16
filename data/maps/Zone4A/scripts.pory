@@ -61,7 +61,7 @@ script Zone4A_EventScript_StruggleBugTutor {
 	faceplayer
 	showmoneybox(0, 0, 0)
 	msgbox(format("You found my secret hideout…\pI bet it was a struggle getting here, right?\pI can teach your Pokémon to Struggle Bug, or to Pounce!"))
-	message(format("What move should I teach?\nThey will cost you ¥200."))
+	message(format("What move should I teach?\nThey will cost you ¥400."))
 	waitmessage
 	dynmultipush("Struggle Bug", MOVE_STRUGGLE_BUG)
 	dynmultipush("Pounce", MOVE_POUNCE)
@@ -81,7 +81,7 @@ script Zone4A_EventScript_StruggleBugTutor {
 			release
 			end
 	}
-	checkmoney(200, 0)
+	checkmoney(400, 0)
 	if (var(VAR_RESULT) == FALSE) {
 		msgbox(gText_YouDontHaveEnoughMoney)
 		hidemoneybox
@@ -101,9 +101,9 @@ script Zone4A_EventScript_StruggleBugTutor {
 	}
 	showmoneybox(0, 0, 0)
 	msgbox(format("There! It's done. Use that move well!"))
-	removemoney(200)
+	removemoney(400)
 	updatemoneybox
-	msgbox(format("{PLAYER} paid ¥200."))
+	msgbox(format("{PLAYER} paid ¥400."))
 	hidemoneybox
 	msgbox(Zone4A_StruggleBugTutor_ComeBack)
 	release

@@ -3209,14 +3209,14 @@ script EventScript_Shop_Lelouch_MoveTutor {
 		message(format("Which move should I teach?"))
 		waitmessage
 		// --- Red Shard ---
-		dynmultipush("Water Pulse - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_WATER_PULSE)
-		dynmultipush("Chilling Water - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_CHILLING_WATER)
-		dynmultipush("Struggle Bug - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_STRUGGLE_BUG)
-		dynmultipush("Pounce - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_POUNCE)
-		dynmultipush("Aerial Ace - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_AERIAL_ACE)
-		dynmultipush("Magical Leaf - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_MAGICAL_LEAF)
-		dynmultipush("Shock Wave - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_SHOCK_WAVE)
-		dynmultipush("Swift - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_SWIFT)
+		dynmultipush("Water Pulse - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_WATER_PULSE)
+		dynmultipush("Chilling Water - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_CHILLING_WATER)
+		dynmultipush("Struggle Bug - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_STRUGGLE_BUG)
+		dynmultipush("Pounce - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_POUNCE)
+		dynmultipush("Aerial Ace - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_AERIAL_ACE)
+		dynmultipush("Magical Leaf - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_MAGICAL_LEAF)
+		dynmultipush("Shock Wave - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_SHOCK_WAVE)
+		dynmultipush("Swift - {COLOR RED}1 Red Shard{COLOR DARK_GRAY}", MOVE_SWIFT)
 
 		dynmultipush("Breaking Swipe - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_BREAKING_SWIPE)
 		dynmultipush("Grassy Glide - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_GRASSY_GLIDE)
@@ -3345,6 +3345,11 @@ script EventScript_Shop_Lelouch_MoveTutor {
 			case MOVE_MAGICAL_LEAF:
 			case MOVE_SHOCK_WAVE:
 			case MOVE_SWIFT:
+				copyvar(VAR_TEMP_3, VAR_RESULT)
+                copyvar(VAR_TEMP_0, VAR_TEMP_3)
+                copyvar(VAR_0x8005, VAR_TEMP_3)
+                setvar(VAR_TEMP_1, 1)
+                setvar(VAR_TEMP_2, ITEM_RED_SHARD)
 			case MOVE_THUNDER_FANG:
 			case MOVE_FIRE_FANG:
 			case MOVE_ICE_FANG:

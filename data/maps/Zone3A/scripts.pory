@@ -259,8 +259,8 @@ script Zone3A_EventScript_Tutor {
 	lock
 	faceplayer
 	showmoneybox(0, 0, 0)
-	msgbox(format("Ahoy there, trainer!\pI can teach your Pokémon some watery techniques, at the low price of ¥200!"))
-	message(format("What move should I teach?\nThey will cost you ¥200."))
+	msgbox(format("Ahoy there, trainer!\pI can teach your Pokémon some watery techniques, at the low price of ¥400!"))
+	message(format("What move should I teach?\nThey will cost you ¥400."))
 	waitmessage
 	dynmultipush("Water Pulse", MOVE_WATER_PULSE)
 	dynmultipush("Chilling Water", MOVE_CHILLING_WATER)
@@ -280,7 +280,7 @@ script Zone3A_EventScript_Tutor {
 			release
 			end
 	}
-	checkmoney(200, 0)
+	checkmoney(400, 0)
 	if (var(VAR_RESULT) == FALSE) {
 		msgbox(gText_YouDontHaveEnoughMoney)
 		hidemoneybox
@@ -300,9 +300,9 @@ script Zone3A_EventScript_Tutor {
 	}
 	showmoneybox(0, 0, 0)
 	msgbox(format("There! It's done. Use that move well!"))
-	removemoney(200)
+	removemoney(400)
 	updatemoneybox
-	msgbox(format("{PLAYER} paid ¥200."))
+	msgbox(format("{PLAYER} paid ¥400."))
 	hidemoneybox
 	msgbox(Zone3A_Text_GoodDay)
 	release

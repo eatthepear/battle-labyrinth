@@ -149,7 +149,7 @@ script Zone7A_EventScript_FangsTutor {
 	faceplayer
 	showmoneybox(0, 0, 0)
 	msgbox(format("Congrats on climbing the mountain! Had to fight tooth and nail to get here, didn't you?\pY'know, speaking of tooth, I can teach your Pokémon how to use one of the elemental fangs."))
-	message(format("What move should I teach?\nThey will cost you ¥600."))
+	message(format("What move should I teach?\nThey will cost you ¥800."))
 	waitmessage
 	dynmultipush("Thunder Fang", MOVE_THUNDER_FANG)
 	dynmultipush("Ice Fang", MOVE_ICE_FANG)
@@ -173,7 +173,7 @@ script Zone7A_EventScript_FangsTutor {
 			release
 			end
 	}
-	checkmoney(600, 0)
+	checkmoney(800, 0)
 	if (var(VAR_RESULT) == FALSE) {
 		msgbox(gText_YouDontHaveEnoughMoney)
 		hidemoneybox
@@ -193,9 +193,9 @@ script Zone7A_EventScript_FangsTutor {
 	}
 	showmoneybox(0, 0, 0)
 	msgbox(format("There! It's done. Use that move well!"))
-	removemoney(600)
+	removemoney(800)
 	updatemoneybox
-	msgbox(format("{PLAYER} paid ¥600."))
+	msgbox(format("{PLAYER} paid ¥800."))
 	hidemoneybox
 	msgbox(Zone7A_Text_Tutor)
 	release
