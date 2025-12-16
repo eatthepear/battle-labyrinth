@@ -101,7 +101,6 @@ script Zone7A_EventScript_Password {
 		waitmovement(0)
 	} else {
 		msgbox(format("{PLAYER} told them the password: {COLOR BLUE}Dazzling{COLOR DARK_GRAY}!"))
-		setvar(VAR_ZONE_7_STATE, 1)
 		msgbox(format("Oh, I didn't realize we had some undercover grunts as well.\pVery well then, pass on through."))
 		applymovement(LOCALID_GRUNT_2_7A, Common_Movement_WalkInPlaceUp)
 		waitmovement(0)
@@ -110,6 +109,7 @@ script Zone7A_EventScript_Password {
 		msgbox(format("You idiot! This is just some kid! Let's get this nuisance out of here, before the Commander notices!"))
 		trainerbattle_two_trainers(TRAINER_PBL_GALACTIC_GRUNT_7A_1, format("Some kid you are…"), TRAINER_PBL_GALACTIC_GRUNT_7A_2, format("The Commander is not going to be happy…"))
 		msgbox(format("Argh…"))
+		setvar(VAR_ZONE_7_STATE, 1)
 	}
 	if (var(VAR_TEMP_1) == 9) {
 		applymovement(LOCALID_GRUNT_1_7A, Common_Movement_WalkUp)
@@ -121,6 +121,7 @@ script Zone7A_EventScript_Password {
 		waitmovement(0)
 	}
 	applymovement(LOCALID_GRUNT_1_7A, Common_Movement_FaceDown)
+	waitmovement(0)
 	applymovement(LOCALID_GRUNT_2_7A, Common_Movement_FaceUp)
 	waitmovement(0)
 	releaseall

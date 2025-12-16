@@ -53,7 +53,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_BEAT_LEVIATHAN_8"
     },
     {
       "local_id": "LOCALID_GRUNT_2_8D",
@@ -67,7 +67,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_BEAT_LEVIATHAN_8"
     }
   ],
   "warp_events": [
@@ -83,46 +83,46 @@
     {
       "type": "trigger",
       "x": 3,
-      "y": 7,
+      "y": 8,
       "elevation": 0,
       "var": "VAR_ZONE_8_STATE",
-      "var_value": "0",
+      "var_value": "1",
       "script": "Zone8D_EventScript_LeviathanBattle"
     },
     {
       "type": "trigger",
       "x": 4,
-      "y": 7,
+      "y": 8,
       "elevation": 0,
       "var": "VAR_ZONE_8_STATE",
-      "var_value": "0",
+      "var_value": "1",
       "script": "Zone8D_EventScript_LeviathanBattle"
     },
     {
       "type": "trigger",
       "x": 5,
-      "y": 7,
+      "y": 8,
       "elevation": 0,
       "var": "VAR_ZONE_8_STATE",
-      "var_value": "0",
+      "var_value": "1",
       "script": "Zone8D_EventScript_LeviathanBattle"
     },
     {
       "type": "trigger",
       "x": 6,
-      "y": 7,
+      "y": 8,
       "elevation": 0,
       "var": "VAR_ZONE_8_STATE",
-      "var_value": "0",
+      "var_value": "1",
       "script": "Zone8D_EventScript_LeviathanBattle"
     },
     {
       "type": "trigger",
       "x": 7,
-      "y": 7,
+      "y": 8,
       "elevation": 0,
       "var": "VAR_ZONE_8_STATE",
-      "var_value": "0",
+      "var_value": "1",
       "script": "Zone8D_EventScript_LeviathanBattle"
     }
   ],

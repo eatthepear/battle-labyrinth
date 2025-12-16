@@ -53,6 +53,7 @@ script Zone8D_EventScript_LeviathanBattle {
 		releaseall
 		end
 	}
+	closemessage
 	fadeoutbgm(1)
 	setvar(VAR_ZONE_1_STATE, 1)
 	setspeaker("Mars")
