@@ -61,15 +61,17 @@ script Zone1A_EventScript_GiveFWG {
 			end
 	}
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
-		msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon:"))
-		bufferspeciesname(0, VAR_TEMP_A)
-		bufferspeciesname(1, VAR_TEMP_B)
-		bufferspeciesname(2, VAR_TEMP_C)
-		msgbox("{STR_VAR_1},\n{STR_VAR_2},\l{STR_VAR_3},")
-		bufferspeciesname(0, VAR_TEMP_D)
-		bufferspeciesname(1, VAR_TEMP_E)
-		msgbox("{STR_VAR_1},\n{STR_VAR_2}.")
-		msgbox(format("Is this ok?"), MSGBOX_YESNO)
+		msgbox(gText_Nuzlocke_GiftPossible, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			if (var(VAR_TEMP_A) == SPECIES_PANSAGE) {
+				msgbox(format("Pansage, Gossifleur, Sunkern, Cherubi, or Fomantis."))
+			} elif (var(VAR_TEMP_A) == SPECIES_PANSEAR) {
+				msgbox(format("Pansear, Vulpix, Slugma, Sizzlipede, or Ponyta."))
+			} elif (var(VAR_TEMP_A) == SPECIES_PANPOUR) {
+				msgbox(format("Panpour, Psyduck, Goldeen, Finneon, or Krabby."))
+			}
+		}
+		msgbox(gText_Nuzlocke_ReadyReceive, MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			msgbox(Zone1A_Text_FWG_ComeBack)
 			release
