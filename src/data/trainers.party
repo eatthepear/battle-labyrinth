@@ -1324,7 +1324,7 @@ Class: Socialite
 Pic: Socialite
 Music: Female
 AI: AI_FLAG_LEVIATHAN
-Double Battle: Yes
+Double Battle: No
 Mugshot: Green
 
 Drifloon @ Sitrus Berry
@@ -1353,6 +1353,52 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Tomb
 - Bulldoze
 - Trailblaze
+
+=== TRAINER_PBL_BETTY_LEVIATHAN_7 ===
+Name: Betty
+Class: Socialite
+Pic: Socialite
+Music: Female
+AI: AI_FLAG_LEVIATHAN
+Double Battle: No
+Mugshot: Green
+Difficulty: Brutal
+
+Drifloon @ Sitrus Berry
+Naughty Nature
+Ability: Unburden
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Hex
+- Will-O-Wisp
+
+Dedenne @ Sitrus Berry
+Timid Nature
+Ability: Cheek Pouch
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Parabolic Charge
+- Draining Kiss
+- Nuzzle
+
+Klawf @ Sitrus Berry
+Careful Nature
+Ability: Anger Shell
+Level: 20
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Tomb
+- Bulldoze
+- Trailblaze
+
+Appletun @ Sitrus Berry
+Quiet Nature
+Ability: Ripen
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Magical Leaf
+- Dragon Tail
+- Leech Seed
 
 === TRAINER_PBL_GALACTIC_GRUNT_7A_1 ===
 Name: Grunt
@@ -6037,259 +6083,181 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Aipom
+Spearow
 
-Amaura
+Wooloo
 
-Anorith
+Chewtle
 
-Archen
+Ekans
 
-Aron
+Barboach
 
-Arrokuda
+Tympole
 
-Axew
+Foongus
 
-Bergmite
+Shroomish
 
-Binacle
+Electrike
 
-Bramblin
+Blitzle
 
-Cacnea
+Vulpix
 
-Carvanha
+Sandshrew
 
-Cetoddle
+Poliwag
 
-Chinchou
+Bellsprout
 
-Clamperl
+Snubbull
 
-Clauncher
+Remoraid
 
-Clobbopus
+Flabébé
 
-Corphish
+Ducklett
 
-Crabrawler
+Slowpoke
 
-Cranidos
+Slowpoke Galar
 
-Cubchoo
+Oddish
 
-Cufant
+Psyduck
 
-Darumaka
+Cubone
 
-Darumaka Galar
+Goldeen
 
-Delibird
+Phanpy
 
-Dewpider
+Buizel
 
-Doduo
+Finneon
 
-Dottler
+Deerling
 
-Drilbur
+Buneary
 
-Duskull
+Skiddo
 
-Dwebble
+Meowth
 
-Elekid
+Meowth Alola
 
-Farfetch'd
+Makuhita
 
-Farfetch'd Galar
+Tyrogue
 
-Ferroseed
+Roggenrola
 
-Finizen
+Rockruff
 
-Frillish
-
-Gastly
+Nacli
 
 Geodude
 
 Geodude Alola
 
-Gimmighoul
+Mankey
 
-Golett
+Machop
 
-Greavard
+Numel
+
+Timburr
+
+Sizzlipede
+
+Tandemaus
+
+Swablu
+
+Clobbopus
+
+Natu
 
 Grimer
 
 Grimer Alola
 
+Drilbur
+
+Voltorb Hisui
+
+Teddiursa
+
+Koffing
+
+Crabrawler
+
+Meditite
+
+Pancham
+
 Growlithe
 
 Growlithe Hisui
 
-Hippopotas
-
-Honedge
-
-Horsea
-
-Kabuto
-
-Klink
-
-Koffing
-
-Krabby
-
-Lickitung
-
-Lileep
-
-Litleo
-
-Litwick
-
-Luvdisc
-
-Machop
-
-Magby
-
-Magnemite
-
-Mankey
-
-Mantyke
-
-Mareanie
-
-Mawile
-
-Meditite
-
-Meowth Galar
+Dottler
 
 Mienfoo
 
-Mudbray
-
-Munchlax
-
-Nacli
-
-Natu
-
-Noibat
-
-Numel
-
-Omanyte
-
-Onix
-
-Pancham
-
-Pawniard
-
-Phantump
-
-Poltchageist
-
-Porygon
-
-Pumpkaboo
-
-Rhyhorn
-
-Rockruff
-
-Roggenrola
-
 Rufflet
 
-Sableye
+Dewpider
 
-Salandit
-
-Sandile
-
-Sandygast
-
-Seel
-
-Shellder
-
-Shellos
-
-Shieldon
-
-Shroodle
-
-Shuppet
-
-Silicobra
-
-Sinistea
-
-Sizzlipede
-
-Skrelp
-
-Smoochum
-
-Snorunt
-
-Snover
+Meowth Galar
 
 Spheal
 
-Spinda
+Shroodle
 
-Stufful
-
-Swablu
-
-Tandemaus
-
-Teddiursa
-
-Tentacool
-
-Timburr
+Greavard
 
 Tinkatink
 
-Tirtouga
+Golett
+
+Doduo
+
+Salandit
+
+Sandygast
+
+Magnemite
+
+Dwebble
+
+Delibird
+
+Aron
+
+Cufant
 
 Toedscool
 
-Trapinch
-
-Tyrunt
-
-Vanillite
-
-Varoom
-
-Voltorb Hisui
-
-Vullaby
+Rhyhorn
 
 Wailmer
 
-Yamask
+Aipom
 
-Yamask Galar
+Smoochum
 
-Yanma
+Elekid
 
-Zorua
+Magby
 
-Zorua Hisui
+Litleo
+
+Onix
+
+Lickitung
+
+Spinda
 
 === TRAINER_POOL_ZONE_7_AND_8_GRUNTS ===
 Name: Trainer Pool
@@ -6299,64 +6267,68 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Baltoy
-
-Bronzor
-
-Clefairy
-
-Croagunk
-
-Dewpider
-
-Drifloon
-
-Elgyem
-
-Espurr
-
-Glameow
-
-Glimmet
-
-Gothita
-
-Gulpin
-
-Houndour
-
-Impidimp
-
-Inkay
-
-Munna
+Venipede
 
 Nincada
 
-Nosepass
+Surskit
+
+Gulpin
+
+Clefairy
+
+Glameow
+
+Stunky
+
+Houndour
+
+Espurr
+
+Rellor
+
+Zubat
+
+Impidimp
+
+Gothita
+
+Solosis
+
+Munna
+
+Inkay
 
 Nymble
 
 Pineco
 
-Rellor
-
-Scraggy
-
-Skorupi
-
-Solosis
-
-Staryu
-
-Stunky
-
-Surskit
-
-Venipede
+Croagunk
 
 Venonat
 
 Voltorb
 
-Zubat
+Skorupi
+
+Scraggy
+
+Dewpider
+
+Baltoy
+
+Bronzor
+
+Klink
+
+Varoom
+
+Elgyem
+
+Staryu
+
+Drifloon
+
+Glimmet
+
+Nosepass
