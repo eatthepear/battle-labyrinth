@@ -573,7 +573,6 @@ gSpecials::
 	def_special GetCaughtSpeciesCount
 	def_special GetNumTrainersRemaining
 	def_special RandomItemChest
-	def_special SetMonNature
 	def_special IsPokemonFainted
 	def_special GetHiddenGrottoSpecies
 	def_special BufferCurrentLevelCap

@@ -4727,16 +4727,6 @@ u16 RandomHiddenShard(void)
     return item;
 }
 
-bool8 SetMonNature(void)
-{
-    u16 nature = VarGet(VAR_TEMP_2);
-    SetMonData(&gPlayerParty[VarGet(VAR_TEMP_1)], MON_DATA_HIDDEN_NATURE, &nature);
-
-    CalculateMonStats(&gPlayerParty[VarGet(VAR_TEMP_1)]);
-
-    return FALSE;
-}
-
 bool8 IsPokemonFainted(void)
 {
     return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP) == 0;
