@@ -1439,7 +1439,7 @@ script EventScript_Fisherman {
 		msgbox(format("A Fisherman deigns to spread his love of fishing with others!"))
 		giveitem(ITEM_SUPER_ROD)
 	}
-	msgbox(format("A Fisherman always fishes if he can!\pAnd a Fisherman checks what Pokémon are avaiable to fish using the DexNav!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("A Fisherman always fishes if he can!\pAnd a Fisherman checks what Pokémon are avaiable to fish using the DexNav!\pThough the Sanctuary doesn't have any Pokémon available to fish!"), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_FISHERMAN, Common_Movement_FaceRight)
 	waitmovement(LOCALID_FISHERMAN)
 	release
