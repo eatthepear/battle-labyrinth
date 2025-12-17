@@ -167,16 +167,16 @@ u32 GetExpValue(void)
 {
     u32 i;
     u32 levelCap;
-    u32 levelCapMinusTwo;
+    u32 pastLevelCap;
     u32 numFoes;
-    for (i = 0; i < ARRAY_COUNT(sNumFoes); i++)
+    for (i = 1; i < ARRAY_COUNT(sNumFoes); i++)
     {
         if (VarGet(VAR_LEVEL_CAP) == i)
         {
             levelCap = sLevelCapFlagMap[i];
-            levelCapMinusTwo = levelCap - 2;
+            pastLevelCap = sLevelCapFlagMap[i-1];
             numFoes = sNumFoes[i];
-            return (levelCap * levelCap * levelCap - levelCapMinusTwo * levelCapMinusTwo * levelCapMinusTwo) * 1000 / numFoes / 575;
+            return (levelCap * levelCap * levelCap - pastLevelCap * pastLevelCap * pastLevelCap) * 1000 / numFoes / 575;
         }
     }
 
