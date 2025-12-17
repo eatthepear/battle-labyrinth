@@ -1166,80 +1166,84 @@ Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
-Goldeen @ Chesto Berry
-Mild Nature
+Finneon @ Berry Juice
+Modest Nature
+Ability: Swift Swim
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Gust
+- Attract
+
+Barboach @ Berry Juice
+Calm Nature
+Ability: Hydration
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Mud Bomb
+- Rest
+
+Goldeen @ Berry Juice
+Naughty Nature
 Ability: Swift Swim
 Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pulse
 - Horn Attack
+- Peck
 
-Mantyke @ Cheri Berry
+=== TRAINER_PBL_ZACK ===
+Name: Zack
+Class: Tuber M
+Pic: Tuber M
+Music: Girl
+AI: AI_FLAG_LEVIATHAN
+Double Battle: No
+
+Pyukumuku @ Berry Juice
+Calm Nature
+Ability: Innards Out
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Counter
+- Mirror Coat
+- Block
+
+=== TRAINER_PBL_COBY ===
+Name: Coby
+Class: Swimmer F
+Pic: Swimmer F
+Music: Swimmer
+AI: AI_FLAG_LEVIATHAN
+Double Battle: No
+
+Wiglett @ Berry Juice
 Naughty Nature
+Ability: Gooey
+Level: 17
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aqua Jet
+- Wrap
+- Mud Slap
+
+Mantyke @ Berry Juice
+Lonely Nature
 Ability: Swift Swim
-Level: 15
+Level: 17
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bubble Beam
 - Wing Attack
+- Slam
 
 Corsola @ Berry Juice
 Modest Nature
 Ability: Regenerator
-Level: 16
+Level: 17
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bubble Beam
 - Ancient Power
-
-=== TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6 ===
-Name: Zack&Coby
-Class: Sis And Bro
-Pic: Sis And Bro
-Music: Swimmer
-AI: AI_FLAG_LEVIATHAN
-Double Battle: Yes
-Mugshot: Green
-
-Cramorant @ Berry Juice
-Hasty Nature
-Ability: Gulp Missile
-Level: 16
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Water Gun
-
-Lumineon @ Berry Juice
-Timid Nature
-Ability: Swift Swim
-Level: 17
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Silver Wind
-
-=== TRAINER_PBL_ZACK_AND_COBY_LEVIATHAN_6 ===
-Name: Zack&Coby
-Class: Sis And Bro
-Pic: Sis And Bro
-Music: Swimmer
-AI: AI_FLAG_LEVIATHAN
-Double Battle: Yes
-Mugshot: Green
-Difficulty: Brutal
-
-Cramorant @ Berry Juice
-Hasty Nature
-Ability: Gulp Missile
-Level: 16
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Water Gun
-
-Lumineon @ Berry Juice
-Timid Nature
-Ability: Storm Drain
-Level: 17
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Silver Wind
+- Icy Wind
 
 === TRAINER_PBL_JAMAL ===
 Name: Jamal

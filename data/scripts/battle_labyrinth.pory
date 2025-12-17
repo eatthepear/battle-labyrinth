@@ -573,6 +573,7 @@ script EventScript_Notebook_ZoneInfo {
 		case 5:
 			msgbox(format("{COLOR GREEN}Zone 5{COLOR DARK_GRAY} is a temperate forest with a Psychic Gym."))
 		case 6:
+			msgbox(format("{COLOR GREEN}Zone 6{COLOR DARK_GRAY} is an island surrounded by ocean."))
 		case 7:
 		case 8:
 		case 9:
@@ -622,7 +623,7 @@ script EventScript_Notebook_ZoneInfo {
 	specialvar(VAR_TEMP_0, GetNumTrainersRemaining)
 	call(EventScript_OpponentsRemainingMessage)
 	call(EventScript_BufferCurrentZoneName)
-	msgbox(format("The next page talks about a fierce foe in {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."))
+	msgbox(format("The next page talks about a great challenge in {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."))
 	msgbox(gText_Notebook_ReadOn, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		return
@@ -653,9 +654,9 @@ script EventScript_Notebook_ZoneInfo {
 			}
 			msgbox(format("There is also a Rich Boy guarding a Rare Candy who uses Delibird, Unown, and Spinda."))
 		case 6:
-			msgbox(format("Another foe battles you with a Goldeen, Mantyke, and Corsola.\pImmediately afterwards, the Leviathan battles you in a Double Battle with a Hatenna that uses Life Dew and a Lumineon."))
+			msgbox(format("There are three trainers you must defeat in a row.\pThe first uses a Finneon, a Barboach, and a Goldeen.\pThe second uses a Pyukumuku.\pThe third uses a Wiglett, a Mantyke, and a Corsola."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, the Lumineon has Storm Drain to take advantage of its partner's Life Dew, and the Hatenna has an Eviolite and Magic Bounce to protect itself."))
+				msgbox(format("On Brutal difficulty, all three fights take place in permanent rain."))
 			}
 		case 7:
 		case 8:
