@@ -5,16 +5,6 @@ mapscripts Zone8B_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE8B_DUSK_BALL)) {
-			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
-		}
-		if (flag(FLAG_ITEM_ZONE8B_RANDOM_1)) {
-			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
-		}
 	}
 }
 
@@ -139,41 +129,6 @@ script Zone8B_EventScript_HardStone {
 	setflag(FLAG_ITEM_ZONE8B_HARD_STONE)
 	addobject(VAR_LAST_TALKED)
 	finditem(ITEM_HARD_STONE, 1)
-	release
-	end
-}
-
-script Zone8B_EventScript_DuskBall {
-	lock
-	if (flag(FLAG_ITEM_ZONE8B_DUSK_BALL)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE8B_DUSK_BALL)
-	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_DUSK_BALL, 1)
-	release
-	end
-}
-
-script Zone8B_EventScript_Random1 {
-	lock
-	if (flag(FLAG_ITEM_ZONE8B_RANDOM_1)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE8B_RANDOM_1)
-	addobject(VAR_LAST_TALKED)
-	specialvar(VAR_TEMP_1, RandomItemChest)
-	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }

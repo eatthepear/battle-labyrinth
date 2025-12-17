@@ -418,19 +418,19 @@
 #define FLAG_ITEM_ZONE6A_RANDOM_1                      0x31F
 #define FLAG_ITEM_ZONE7A_SHARP_BEAK                0x320
 #define FLAG_ITEM_ZONE7A_RANDOM_1                  0x321
-#define FLAG_ITEM_ZONE7A_RANDOM_5                      0x322
+// #define FLAG_ITEM_ZONE7A_RANDOM_5                      0x322
 #define FLAG_ITEM_ZONE7A_BLACK_BELT                0x323
 #define FLAG_ITEM_ZONE7A_RANDOM_2                  0x324
-#define FLAG_ITEM_ZONE7A_RANDOM_3                  0x325
-#define FLAG_ITEM_ZONE7A_RANDOM_4                  0x326
+// #define FLAG_ITEM_ZONE7A_RANDOM_3                  0x325
+// #define FLAG_ITEM_ZONE7A_RANDOM_4                  0x326
 #define FLAG_ITEM_ZONE8A_MAGNET                    0x327
 #define FLAG_ITEM_ZONE8A_RANDOM_1                  0x328
 #define FLAG_ITEM_ZONE8A_RANDOM_2                  0x329
 #define FLAG_ITEM_ZONE8B_HARD_STONE                0x32A
-#define FLAG_ITEM_ZONE8B_DUSK_BALL                 0x32B
-#define FLAG_ITEM_ZONE8B_RANDOM_1                  0x32C
-#define FLAG_ITEM_ZONE8C_RANDOM_2                  0x32D
-#define FLAG_ITEM_ZONE8C_FULL_HEAL                 0x32E
+// #define FLAG_ITEM_ZONE8B_DUSK_BALL                 0x32B
+// #define FLAG_ITEM_ZONE8B_RANDOM_1                  0x32C
+// #define FLAG_ITEM_ZONE8C_RANDOM_2                  0x32D
+// #define FLAG_ITEM_ZONE8C_FULL_HEAL                 0x32E
 #define FLAG_ITEM_ZONE8C_RANDOM_1                  0x32F
 #define FLAG_ITEM_ZONE9A_GEMS                      0x330
 #define FLAG_ITEM_ZONE9A_BIG_ROOT                  0x331

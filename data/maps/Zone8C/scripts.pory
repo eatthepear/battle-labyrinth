@@ -1,56 +1,11 @@
 mapscripts Zone8C_MapScripts {
 	MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_ITEM_ZONE8C_RANDOM_2)) {
+		if (flag(FLAG_ITEM_ZONE8C_RANDOM_1)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE8C_FULL_HEAL)) {
-			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
-		}
-		if (flag(FLAG_ITEM_ZONE8C_RANDOM_1)) {
-			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
-		}
 	}
-}
-
-script Zone8C_EventScript_Random2 {
-	lock
-	if (flag(FLAG_ITEM_ZONE8C_RANDOM_2)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE8C_RANDOM_2)
-	addobject(VAR_LAST_TALKED)
-	specialvar(VAR_TEMP_1, RandomItemChest)
-	finditem(VAR_TEMP_1, VAR_TEMP_0)
-	release
-	end
-}
-
-script Zone8C_EventScript_FullHeal {
-	lock
-	if (flag(FLAG_ITEM_ZONE8C_FULL_HEAL)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE8C_FULL_HEAL)
-	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_FULL_HEAL, 1)
-	release
-	end
 }
 
 script Zone8C_EventScript_Random1 {
