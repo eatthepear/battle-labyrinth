@@ -110,8 +110,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 24,
-      "y": 24,
+      "x": 38,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -196,7 +196,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone6A_EventScript_TMRockTomb",
+      "script": "Zone6A_EventScript_TMBulldoze",
       "flag": "0"
     },
     {
@@ -240,7 +240,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 50,
+      "x": 44,
       "y": 23,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -315,20 +315,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_UseRockSmash_PBL",
       "flag": "FLAG_TEMP_6"
-    },
-    {
-      "local_id": "LOCALID_HIKER_ZONE6A",
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 42,
-      "y": 22,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone6A_EventScript_Hiker",
-      "flag": "0"
     }
   ],
   "warp_events": [],
@@ -344,39 +330,12 @@
     },
     {
       "type": "trigger",
-      "x": 42,
-      "y": 23,
-      "elevation": 0,
-      "var": "VAR_ZONE_6_STATE",
-      "var_value": "0",
-      "script": "Zone6A_EventScript_Sledgehammer"
-    },
-    {
-      "type": "trigger",
       "x": 46,
       "y": 17,
       "elevation": 0,
       "var": "VAR_ZONE_6_STATE",
-      "var_value": "1",
+      "var_value": "0",
       "script": "Zone6A_EventScript_LeviathanBattle"
-    },
-    {
-      "type": "trigger",
-      "x": 42,
-      "y": 25,
-      "elevation": 0,
-      "var": "VAR_ZONE_6_STATE",
-      "var_value": "0",
-      "script": "Zone6A_EventScript_Sledgehammer"
-    },
-    {
-      "type": "trigger",
-      "x": 42,
-      "y": 24,
-      "elevation": 0,
-      "var": "VAR_ZONE_6_STATE",
-      "var_value": "0",
-      "script": "Zone6A_EventScript_Sledgehammer"
     }
   ],
   "bg_events": [

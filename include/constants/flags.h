@@ -194,7 +194,7 @@
 #define FLAG_HIDE_ZONE3A_REMI                             0x110
 #define FLAG_HIDE_ZONE3A_PHILLIPA                         0x111
 #define FLAG_ZONE3A_MOVE_TUTOR_TAUGHT      0x112
-#define FLAG_ZONE3A_RECEIVED_UNUSED_0x113                   0x113
+#define FLAG_ITEM_HEATED_CAVITY_TM_ROCK_TOMB                   0x113
 #define FLAG_ZONE3A_RECEIVED_SILVER_POWDER               0x114
 #define FLAG_ZONE3B_TRADED_ZIGZAGOON                      0x115
 #define FLAG_HIDE_ZONE4A_KIMONO_GIRL                      0x116
@@ -412,7 +412,7 @@
 #define FLAG_ITEM_ZONE5B_Old_RANDOM_2                  0x319
 #define FLAG_ITEM_ZONE5B_Old_GEMS                      0x31A
 #define FLAG_ITEM_ZONE5B_Old_RANDOM_3                  0x31B
-#define FLAG_ITEM_ZONE6A_TM_ROCK_TOMB          0x31C
+#define FLAG_ITEM_ZONE6A_TM_BULLDOZE          0x31C
 #define FLAG_ITEM_ZONE6A_NET_BALL                  0x31D
 #define FLAG_ITEM_ZONE6A_NEST_BALL                 0x31E
 #define FLAG_ITEM_ZONE6A_RANDOM_1                      0x31F

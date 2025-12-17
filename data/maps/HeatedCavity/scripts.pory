@@ -1,1 +1,26 @@
-mapscripts HeatedCavity_MapScripts {}
+mapscripts HeatedCavity_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+        if (flag(FLAG_ITEM_HEATED_CAVITY_TM_ROCK_TOMB)) {
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+        } else {
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST)
+        }
+    }
+}
+
+script HeatedCavity_EventScript_TMRockTomb {
+	lock
+	if (flag(FLAG_ITEM_HEATED_CAVITY_TM_ROCK_TOMB)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+	setflag(FLAG_ITEM_HEATED_CAVITY_TM_ROCK_TOMB)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_TM_ROCK_TOMB)
+	release
+	end
+}
