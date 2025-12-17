@@ -5340,6 +5340,16 @@
       "secondary_tileset": "gTileset_Snowy",
       "border_filepath": "data/layouts/BorealThicket/border.bin",
       "blockdata_filepath": "data/layouts/BorealThicket/map.bin"
+    },
+    {
+      "id": "LAYOUT_HEATED_CAVITY",
+      "name": "HeatedCavity_Layout",
+      "width": 15,
+      "height": 11,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/HeatedCavity/border.bin",
+      "blockdata_filepath": "data/layouts/HeatedCavity/map.bin"
     }
   ]
 }

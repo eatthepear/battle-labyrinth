@@ -1346,3 +1346,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/HiddenGrottoCave/scripts.inc"
 
 	.include "data/maps/BorealThicket/scripts.inc"
+
+	.include "data/maps/HeatedCavity/scripts.inc"

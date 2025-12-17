@@ -283,7 +283,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 61,
-      "y": 31,
+      "y": 32,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -296,7 +296,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 60,
-      "y": 32,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -304,7 +304,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_UseRockSmash_PBL",
-      "flag": "FLAG_TEMP_4"
+      "flag": "FLAG_TEMP_5"
     }
   ],
   "warp_events": [
@@ -320,6 +320,13 @@
       "y": 31,
       "elevation": 0,
       "dest_map": "MAP_ZONE_SANCTUARY_WHISPER_CAVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 60,
+      "y": 30,
+      "elevation": 0,
+      "dest_map": "MAP_HEATED_CAVITY",
       "dest_warp_id": "0"
     }
   ],
