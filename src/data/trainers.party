@@ -1404,7 +1404,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Stomp
 - Leech Seed
 
-=== TRAINER_PBL_GALACTIC_GRUNT_7A_1 ===
+=== TRAINER_PBL_GALACTIC_GRUNT_8C_1 ===
 Name: Grunt
 Class: Galactic
 Pic: Galactic Grunt M
@@ -1414,7 +1414,7 @@ Double Battle: No
 Party Size: 2
 Copy Pool: TRAINER_POOL_ZONE_7_AND_8_GRUNTS
 
-=== TRAINER_PBL_GALACTIC_GRUNT_7A_2 ===
+=== TRAINER_PBL_GALACTIC_GRUNT_8C_2 ===
 Name: Grunt
 Class: Galactic
 Pic: Galactic Grunt F
@@ -1424,7 +1424,7 @@ Double Battle: No
 Party Size: 2
 Copy Pool: TRAINER_POOL_ZONE_7_AND_8_GRUNTS
 
-=== TRAINER_PBL_GALACTIC_GRUNT_8C ===
+=== TRAINER_PBL_GALACTIC_GRUNT_8C_3 ===
 Name: Grunt
 Class: Galactic
 Pic: Galactic Grunt M
@@ -1434,7 +1434,7 @@ Double Battle: No
 Party Size: 2
 Copy Pool: TRAINER_POOL_ZONE_7_AND_8_GRUNTS
 
-=== TRAINER_PBL_GALACTIC_GRUNT_8B ===
+=== TRAINER_PBL_GALACTIC_GRUNT_8C_4 ===
 Name: Grunt
 Class: Galactic
 Pic: Galactic Grunt F

@@ -177,9 +177,3 @@ script Zone8B_EventScript_Random1 {
 	release
 	end
 }
-
-script Zone8B_EventScript_GalacticGrunt_F {
-	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_8B, format("A kid? The Commander won't need to deal with you, because I'm here!"), format("I'm so getting a pay cut…"))
-	msgbox(format("The Commander will mop the floor with you though, surely!"), MSGBOX_AUTOCLOSE)
-	end
-}

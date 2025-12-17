@@ -71,8 +71,26 @@ script Zone8C_EventScript_Random1 {
 	end
 }
 
-script Zone8C_EventScript_GalacticGrunt {
-	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_8C, format("If I win, you have to lead me out of here!"), format("Wah! I have no idea what I'm doing here!"))
+script Zone8C_EventScript_GalacticGrunt_1 {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_8C_1, format("If I win, you have to lead me out of here!"), format("Wah! I have no idea what I'm doing here!"))
 	msgbox(format("It's my destiny to wander this cave forever…\pAt least until the Commander comes and finds me!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone8C_EventScript_GalacticGrunt_2 {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_8C_2, format("A kid? The Commander won't need to deal with you, because I'm here!"), format("I'm so getting a pay cut…"))
+	msgbox(format("The Commander will mop the floor with you though, surely!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone8C_EventScript_GalacticGrunt_3 {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_8C_3, format("For time! Timeeeee!"), format("You've defeated me for all time!"))
+	msgbox(format("I don't really know what we're doing here…"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone8C_EventScript_GalacticGrunt_4 {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_8C_4, format("For space! Spaceeeee!"), format("I'm all spaced out!"))
+	msgbox(format("I don't really know what we're doing here…"), MSGBOX_AUTOCLOSE)
 	end
 }

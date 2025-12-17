@@ -4464,7 +4464,7 @@ u16 GetNumTrainersRemaining(void)
                 count += 1;
         }
         count += !FlagGet(FLAG_BEAT_LEVIATHAN_7);
-        for (trainer = TRAINER_PBL_GALACTIC_GRUNT_7A_1; trainer <= TRAINER_PBL_GALACTIC_GRUNT_8B; trainer++) {
+        for (trainer = TRAINER_PBL_GALACTIC_GRUNT_8C_1; trainer <= TRAINER_PBL_GALACTIC_GRUNT_8C_4; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
