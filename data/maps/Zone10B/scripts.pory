@@ -1,45 +1,5 @@
 mapscripts Zone10B_MapScripts {}
 
-script Zone10B_EventScript_Adamina {
-	lock
-	faceplayer
-	goto(Zone10B_EventScript_AdaminaStuff)
-}
-
-script Zone10B_EventScript_Porygon {
-	lock
-	if (var(VAR_ZONE_10_STATE) == 2) {
-		goto(EventScript_PorygonExit)
-	}
-	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
-	if (var(VAR_TEMP_0) == 7) {
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
-		waitmovement(0)
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
-		waitmovement(0)
-	}
-	applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
-	waitmovement(0)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
-	waitmovement(0)
-	goto(Zone10B_EventScript_AdaminaStuff)
-}
-
-script Zone10B_EventScript_AdaminaStuff {
-	if (var(VAR_ZONE_10_STATE) == 2) {
-		msgbox(format("{COLOR BLUE}Adamina{COLOR DARK_GRAY}: You'll find some people here are looking to trade or provide service in exchange for goods.\pPerhaps they'll be helpful in your travels."))
-		release
-		end
-	}
-	msgbox("{COLOR BLUE}Adamina{COLOR DARK_GRAY}: You…\n…\pLook.\nI said some harsh words earlier.\lConsider this part of my apology.")
-	giveitem(ITEM_TM_BULLDOZE)
-	msgbox("{COLOR BLUE}Adamina{COLOR DARK_GRAY}: This is my tavern.\nIt's my safe space.\pAll the people from around here\ngather for shelter from the\lsandstorm.\pI just… feel defensive around\noutsiders. Because it feels like\lfamily here, you know?", MSGBOX_DEFAULT)
-	delay(96)
-	msgbox("{COLOR BLUE}Adamina{COLOR DARK_GRAY}: Tell you what, you can\nstay as long as you like to chat\lwith the people here.\pIt's kind of nice to just spend time\nwith other people, isn't it?")
-	setvar(VAR_ZONE_10_STATE, 2)
-	release
-}
-
 script Zone10B_EventScript_Collector {
 	lock
 	faceplayer

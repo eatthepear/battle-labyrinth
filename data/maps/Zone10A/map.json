@@ -15,8 +15,9 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_JASMINE",
       "graphics_id": "OBJ_EVENT_GFX_JASMINE",
-      "x": 47,
+      "x": 48,
       "y": 28,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -24,7 +25,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone10A_EventScript_Adamina",
+      "script": "Zone10A_EventScript_Jasmine",
       "flag": "FLAG_BEAT_LEVIATHAN_9"
     },
     {
@@ -197,8 +198,9 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_STEELIX",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(STEELIX)",
-      "x": 48,
+      "x": 49,
       "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",

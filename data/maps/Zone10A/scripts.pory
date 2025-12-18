@@ -1,4 +1,10 @@
 mapscripts Zone10A_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_ZONE_10_STATE) < 3) {
+			setobjectxyperm(LOCALID_JASMINE, 47, 28)
+			setobjectxyperm(LOCALID_STEELIX, 48, 28)
+		}
+    }
 	MAP_SCRIPT_ON_RESUME {
 		if (flag(FLAG_ITEM_ZONE10A_GEMS)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
@@ -33,90 +39,68 @@ mapscripts Zone10A_MapScripts {
 	}
 }
 
-script Zone10A_EventScript_Adamina {
+script Zone10A_EventScript_Jasmine {
 	lock
 	faceplayer
-	if (var(VAR_ZONE_10_STATE) == 0) {
-		msgbox(Zone10A_Text_NoChance)
-		setvar(VAR_ZONE_10_STATE, 1)
-	}
-	msgbox(Zone10A_Text_Explain, MSGBOX_AUTOCLOSE)
-	if ((flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_1) == false) ||
-	(flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_2) == false) ||
-	(flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_3) == false) ||
-	(flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_4) == false) ||
-	(flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_5) == false)) {
+	if (flag(FLAG_BEAT_LEVIATHAN_10)) {
+		setspeaker("Jasmine")
+		msgbox(format("This desert may be harsh, but it's a great place to train Pokémon. Um… yep."))
 		release
 		end
 	}
-	fadeoutbgm(1)
-	msgbox(Zone10A_Text_FoundEm, MSGBOX_AUTOCLOSE)
-	delay(96)
-	msgbox(Zone10A_Text_CrushYou)
+	if (var(VAR_ZONE_10_STATE) < 2) {
+		if (var(VAR_ZONE_10_STATE) == 0) {
+			setspeaker("Jasmine")
+			msgbox(format("Um… hi, trainer.\pIf you waht to enter this rest house, you have to prove your…\lum…\ldiligence."))
+			setvar(VAR_ZONE_10_STATE, 1)
+		}
+		setspeaker("Jasmine")
+		msgbox(format("In the desert, there are 5 hidden Blue Shards.\pFind them, and… return them to me."), MSGBOX_AUTOCLOSE)
+		if ((flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_1) == false) ||
+		(flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_2) == false) ||
+		(flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_3) == false) ||
+		(flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_4) == false) ||
+		(flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_5) == false)) {
+			release
+			end
+		}
+		setspeaker("Jasmine")
+		msgbox(format("Oh, great! You found all 5 Blue Shards. Then a final test remains: a battle.\p…\pPlease give me a moment to prepare myself."), MSGBOX_AUTOCLOSE)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown2)
+		waitmovement(0)
+		setvar(VAR_ZONE_10_STATE, 2)
+		release
+		end
+	}
+	playbgm(MUS_HG_GYM, FALSE)
+	setspeaker("Jasmine")
+	msgbox(format("Allow me to introduce myself.\pMy name is Jasmine.\pI use the… clang!\nSteel type!\pSteel Pokémon are very tough and really strong!\pAnd they're especially good in a sandstorm!\pUm… I'm not lying."))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	trainerbattle_no_intro(TRAINER_PBL_ADAMINA_LEVIATHAN_9_CHALLENGE, Zone10A_Text_Leviathan9Defeat)
-	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_ADAMINA_LEVIATHAN_9, Zone10A_Text_Leviathan9Defeat)
-	// }
+	trainerbattle_no_intro(TRAINER_PBL_ADAMINA_LEVIATHAN_9, format("Well done…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(Zone10A_Text_HeadInside, MSGBOX_AUTOCLOSE)
-	applymovement(1, Common_Movement_FaceUp)
+	setspeaker("Jasmine")
+	msgbox(format("You are a better Trainer than me, in both skill and kindness.\pI'd like you to have this."), MSGBOX_AUTOCLOSE)
+	giveitem(ITEM_TM_IRON_TAIL)
+	setspeaker("Jasmine")
+	msgbox(format("Iron Tail is a strong, powerful Steel-type move.\pYou'll find that its accuracy has improved over time, and is not too shabby either.\pI'd also like you to have this."))
+	giveitem(ITEM_EVIOLITE)
+	setspeaker("Jasmine")
+	msgbox(format("The Eviolite can help keep your weaker, unevolved Pokémon safe."), MSGBOX_AUTOCLOSE)
+	delay(32)
+	setspeaker("Jasmine")
+	msgbox(format("Um… anyways, I'll get out of your way for now.\pGood luck on the rest of your journey, and keep training!"))
+	applymovement(LOCALID_STEELIX, Common_Movement_WalkRight)
 	waitmovement(0)
-	opendoor(47, 27)
-	waitdooranim
-	applymovement(1, Common_Movement_WalkUp)
+	applymovement(LOCALID_STEELIX, Common_Movement_FaceDown)
 	waitmovement(0)
-	removeobject(VAR_LAST_TALKED)
-	setflag(FLAG_BEAT_LEVIATHAN_9)
-	closedoor(47, 27)
-	waitdooranim
+	applymovement(LOCALID_JASMINE, Common_Movement_WalkRight)
+	waitmovement(0)
+	applymovement(LOCALID_JASMINE, Common_Movement_FaceDown)
+	waitmovement(0)
+	setflag(FLAG_BEAT_LEVIATHAN_10)
+	setvar(VAR_ZONE_10_STATE, 3)
 	release
 	end
-}
-
-text Zone10A_Text_NoChance {
-	"{COLOR BLUE}Adamina{COLOR DARK_GRAY}: Nope.\n"
-	"No chance you're getting in.\p"
-	"Zero.\n"
-	"Zip.\l"
-	"Zilch.\l"
-	"…\l"
-	"…\l"
-	"…\l"
-	"Fine."
-}
-
-text Zone10A_Text_Explain {
-	"If you really want to get in,\n"
-	"you have to earn your place.\p"
-	"In the desert, there are 5 hidden\n"
-	"Blue Shards.\p"
-	"Find them and bring them to me.\n"
-	"Then we'll see."
-}
-
-text Zone10A_Text_FoundEm {
-	"{COLOR BLUE}Adamina{COLOR DARK_GRAY}: Oh, wow, you actually\n"
-	"found them? What a surprise."
-}
-
-text Zone10A_Text_CrushYou {
-	"{COLOR BLUE}Adamina{COLOR DARK_GRAY}: Oh, were you expecting me\n"
-	"to let you in just because you\l"
-	"found some scraps? No way.\p"
-	"You'll have to beat me in a battle\n"
-	"to earn my respect!\l"
-	"I'm gonna crush you!"
-}
-
-text Zone10A_Text_Leviathan9Defeat {
-	"Adamina: Fine. A win is a win."
-}
-
-text Zone10A_Text_HeadInside {
-	"{COLOR BLUE}Adamina{COLOR DARK_GRAY}: Go on, head inside.\n"
-	"I've got nothing for you."
 }
 
 script Zone10A_EventScript_Gems {
