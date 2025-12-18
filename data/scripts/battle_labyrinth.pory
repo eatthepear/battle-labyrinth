@@ -1293,7 +1293,7 @@ script EventScript_Notebook_TrainerTips {
 			case SUB_QUEST_17: call(EventScript_Sign_ChangeMusic)
 			case SUB_QUEST_18: call(EventScript_Sign_StatsIVEV)
 			case SUB_QUEST_19: call(EventScript_Sign_Backtracking)
-			case SUB_QUEST_20: call(EventScript_Sign_Gym)
+			case SUB_QUEST_20: call(EventScript_Sign_Leader)
 			case SUB_QUEST_21: call(EventScript_Sign_SelectSwitch)
 			case 51:
 			case MULTI_B_PRESSED:
@@ -1469,8 +1469,8 @@ script EventScript_Sign_Backtracking {
 	}
 }
 
-script EventScript_Sign_Gym {
-	msgbox(format("Trainer Tips\pSome Zones have a Gym, where a special Leviathan resides.\pThis Leviathan specializes in a single type only, and will often be stronger than other Leviathans up to that point."), MSGBOX_SIGN)
+script EventScript_Sign_Leader {
+	msgbox(format("Trainer Tips\pSome Zones have a special Leviathan who specializes in a single type only, and will often be stronger than other Leviathans up to that point."), MSGBOX_SIGN)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_20)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_20)
