@@ -435,23 +435,29 @@ script Sanctuary_EventScript_EnterSanctuary {
 	applymovement(LOCALID_COLRESS, Common_Movement_WalkDown2)
 	waitmovement(0)
 	playfanfare(MUS_OBTAIN_BADGE)
-	call(EventScript_BufferCurrentZoneName)
-	setspeaker(SP_NAME_COLRESS)
-	msgbox(format("Congratulations. You have\ncompleted {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."))
-	waitfanfare
-	msgbox(format("Your reward for clearing {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY} is…"))
+	switch (var(VAR_ZONE)) {
+		default:
+			setspeaker(SP_NAME_COLRESS)
+			call(EventScript_BufferCurrentZoneName)
+			msgbox(format("Congratulations. You have\ncompleted {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."))
+			waitfanfare
+			msgbox(format("Your reward for clearing {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY} is…"))
+		case 7:
+			setspeaker(SP_NAME_COLRESS)
+			msgbox(format("Congratulations. You have\ncompleted {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}."))
+	}
 	switch (var(VAR_ZONE)) {
 		case 1:
-			msgbox(format("The {COLOR RED}Dowsing Machine{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+			msgbox(format("The {COLOR RED}Dowsing Machine{COLOR DARK_GRAY}!"))
 			giveitem(ITEM_DOWSING_MACHINE)
 		case 2:
-			msgbox(format("5 {COLOR RED}Revives{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+			msgbox(format("{COLOR RED}5 Revives{COLOR DARK_GRAY}!"))
 			giveitem(ITEM_REVIVE, 5)
 		case 3:
-			msgbox(format("The {COLOR RED}Sledgehammer{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+			msgbox(format("The {COLOR RED}Sledgehammer{COLOR DARK_GRAY}!"))
 			giveitem(ITEM_SLEDGEHAMMER)
 		case 4:
-			msgbox(format("{COLOR RED}TM09 - Venoshock{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+			msgbox(format("{COLOR RED}TM09 - Venoshock{COLOR DARK_GRAY}!"))
 			giveitem(ITEM_TM_VENOSHOCK)
 		case 5:
 			msgbox(format("The {COLOR RED}Portable PC{COLOR DARK_GRAY}!"))
@@ -462,28 +468,28 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("Note that if you are in a Zone, you can only use the Portable PC once before reaching the Sanctuary."))
 		case 6:
-			msgbox(format("The {COLOR RED}Machete{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+			msgbox(format("The {COLOR RED}Machete{COLOR DARK_GRAY}!"))
 			giveitem(ITEM_MACHETE)
 		case 7:
-			msgbox("Your reward for clearing {COLOR GREEN}Zone 7{COLOR DARK_GRAY} is…", MSGBOX_DEFAULT)
-			msgbox(format("{COLOR RED}TM39 - Rock Tomb!{COLOR DARK_GRAY}"), MSGBOX_DEFAULT)
-			giveitem(ITEM_TM_ROCK_TOMB)
-			msgbox("Your reward for clearing {COLOR GREEN}Zone 8{COLOR DARK_GRAY} is…", MSGBOX_DEFAULT)
-			msgbox(format("The {COLOR RED}Machete{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
-			giveitem(ITEM_MACHETE)
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} is…"))
+			msgbox(format("{COLOR RED}TM49 - Draining Kiss!{COLOR DARK_GRAY}"))
+			giveitem(ITEM_TM_DRAINING_KISS)
+			msgbox("Your reward for clearing {COLOR GREEN}Zone 8{COLOR DARK_GRAY} is…")
+			msgbox(format("{COLOR RED}5 Green Shards{COLOR DARK_GRAY}!"))
+			giveitem(ITEM_GREEN_SHARD, 5)
 		case 9:
-			msgbox(format("{COLOR RED}TM15 - Covet{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+			msgbox(format("{COLOR RED}TM15 - Covet{COLOR DARK_GRAY}!"))
 			giveitem(ITEM_TM_VENOSHOCK)
 		case 10:
-			msgbox(format("The {COLOR RED}Tera Orb{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+			msgbox(format("The {COLOR RED}Tera Orb{COLOR DARK_GRAY}!"))
 			giveitem(ITEM_TERA_ORB)
 			setflag(FLAG_USED_TERA)
 			msgbox(format("In battle, you can Terastilize your Pokémon now.\pPress {START_BUTTON} to Terastilize!\pAfter you use it, you'll have to go back to the Pokémon Center to recharge it."))
 		case 11:
-			msgbox(format("TM86 - Grass Knot!"), MSGBOX_DEFAULT)
+			msgbox(format("TM86 - Grass Knot!"))
 			giveitem(ITEM_TM_GRASS_KNOT)
 		case 12:
-			msgbox(format("Ultra Balls!"), MSGBOX_DEFAULT)
+			msgbox(format("Ultra Balls!"))
 			giveitem(ITEM_ULTRA_BALL, 10)
 	}
 	switch(var(VAR_ZONE)) {
