@@ -661,6 +661,7 @@ script EventScript_Notebook_ZoneInfo {
 				msgbox(format("On Brutal difficulty, all three fights take place in permanent rain."))
 			}
 		case 7:
+		case 8:
 			msgbox(format("The first Leviathan has Pokémon that take advantage of held Sitrus Berries in different ways. Their Drifloon has Acrobatics and Unburden, their Dedenne has Cheek Pouch, and their Klawf can sometimes get multiple Anger Shell boosts because it has Sitrus Berry."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				msgbox(format("On Brutal difficulty, they also have a Appletun that maximizes the effectiveness of the Sitrus Berry with its Ripen ability."))
@@ -669,8 +670,12 @@ script EventScript_Notebook_ZoneInfo {
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				msgbox(format("On Brutal difficulty, they also have a Bruxish."))
 			}
-		case 8:
 		case 9:
+			msgbox(format("There are four trainers you must defeat in a row.\pThe first uses a Squawkabilly.\pThe second uses a Carnivine.\pThe third uses a Seel and a Wailmer.\pThe fourth uses a Morpeko."))
+			msgbox(format("You can optionally battle a fifth trainer in a row to get a Rare Candy. This trainer uses a Sawk and a Throh."))
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				msgbox(format("On Brutal difficulty, the fifth trainer is mandatory."))
+			}
 		case 10:
 		case 11:
 		case 12:
