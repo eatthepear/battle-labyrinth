@@ -2000,32 +2000,32 @@
             "mons": [
               {
                 "min_level": 19,
-                "max_level": 19,
+                "max_level": 20,
                 "species": "SPECIES_SANDILE"
               },
               {
                 "min_level": 19,
-                "max_level": 19,
+                "max_level": 20,
                 "species": "SPECIES_SILICOBRA"
               },
               {
                 "min_level": 19,
-                "max_level": 19,
+                "max_level": 20,
                 "species": "SPECIES_HIPPOPOTAS"
               },
               {
                 "min_level": 19,
-                "max_level": 19,
+                "max_level": 20,
                 "species": "SPECIES_HELIOPTILE"
               },
               {
                 "min_level": 19,
-                "max_level": 19,
+                "max_level": 20,
                 "species": "SPECIES_SCRAGGY"
               },
               {
                 "min_level": 19,
-                "max_level": 19,
+                "max_level": 20,
                 "species": "SPECIES_DWEBBLE"
               },
               {
@@ -2041,12 +2041,7 @@
               {
                 "min_level": 19,
                 "max_level": 20,
-                "species": "SPECIES_RELLOR"
-              },
-              {
-                "min_level": 19,
-                "max_level": 20,
-                "species": "SPECIES_RELLOR"
+                "species": "SPECIES_MARACTUS"
               },
               {
                 "min_level": 19,
@@ -2056,7 +2051,12 @@
               {
                 "min_level": 19,
                 "max_level": 20,
-                "species": "SPECIES_CAPSAKID"
+                "species": "SPECIES_FLITTLE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 20,
+                "species": "SPECIES_SKORUPI"
               }
             ]
           }
@@ -2069,32 +2069,17 @@
             "mons": [
               {
                 "min_level": 19,
-                "max_level": 19,
+                "max_level": 20,
                 "species": "SPECIES_BALTOY"
               },
               {
                 "min_level": 19,
-                "max_level": 19,
-                "species": "SPECIES_BALTOY"
-              },
-              {
-                "min_level": 19,
-                "max_level": 19,
+                "max_level": 20,
                 "species": "SPECIES_ELGYEM"
               },
               {
                 "min_level": 19,
-                "max_level": 19,
-                "species": "SPECIES_ELGYEM"
-              },
-              {
-                "min_level": 19,
-                "max_level": 19,
-                "species": "SPECIES_GOLETT"
-              },
-              {
-                "min_level": 19,
-                "max_level": 19,
+                "max_level": 20,
                 "species": "SPECIES_GOLETT"
               },
               {
@@ -2105,27 +2090,42 @@
               {
                 "min_level": 19,
                 "max_level": 20,
-                "species": "SPECIES_YAMASK"
-              },
-              {
-                "min_level": 19,
-                "max_level": 20,
                 "species": "SPECIES_YAMASK_GALAR"
               },
               {
                 "min_level": 19,
                 "max_level": 20,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_LUNATONE"
               },
               {
                 "min_level": 19,
                 "max_level": 20,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_SOLROCK"
               },
               {
                 "min_level": 19,
                 "max_level": 20,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_BRONZOR"
+              },
+              {
+                "min_level": 19,
+                "max_level": 20,
+                "species": "SPECIES_FALINKS"
+              },
+              {
+                "min_level": 19,
+                "max_level": 20,
+                "species": "SPECIES_GREAVARD"
+              },
+              {
+                "min_level": 19,
+                "max_level": 20,
+                "species": "SPECIES_SINISTEA"
+              },
+              {
+                "min_level": 19,
+                "max_level": 20,
+                "species": "SPECIES_STONJOURNER"
               }
             ]
           }
