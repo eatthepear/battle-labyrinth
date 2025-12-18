@@ -438,11 +438,11 @@
 #define FLAG_ITEM_ZONE9A_TM_PLUCK                  0x332
 #define FLAG_ITEM_ZONE9G_CHARCOAL                  0x333
 #define FLAG_ITEM_ZONE10A_TM_SCORCHING_SANDS       0x334
-#define FLAG_ITEM_ZONE10A_GEMS                     0x335
+// #define FLAG_ITEM_ZONE10A_GEMS                     0x335
 #define FLAG_ITEM_ZONE10A_SOFT_SAND                0x336
 #define FLAG_ITEM_ZONE10A_RANDOM_1                 0x337
 #define FLAG_ITEM_ZONE10A_BLACK_GLASSES            0x338
-#define FLAG_ITEM_ZONE10A_HEAVY_DUTY_BOOTS         0x339
+// #define FLAG_ITEM_ZONE10A_HEAVY_DUTY_BOOTS         0x339
 #define FLAG_ITEM_ZONE11A_TM_TAUNT                 0x33A
 #define FLAG_ITEM_ZONE11A_MOON_STONE               0x33B
 #define FLAG_ITEM_ZONE11A_SPELL_TAG                0x33C
