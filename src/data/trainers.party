@@ -17,7 +17,7 @@ Required fields for trainers:
 Optional (but still recommended) fields for trainers:
     - Class (if not specified, PkMn Trainer will be used)
     - Gender (Male/Female, affects random gender weights of party if not specified)
-    - Music (Male, Female, Girl, Suspicious, Intense, Cool, Aqua, Magma, Swimmer, Twins, Elite Four, Hiker, Interviewer, Rich)
+    - Music (Male, Female, Girl, Suspicious, Intense, Cool, Aqua, Magma, Swimmer, Twins, Elite Four, Hiker, Interviewer, Rich, Galactic)
     - Items (Some Item / Another Item / Third Item)
             (Can also be specified with ITEM_SOME_ITEM)
     - Battle Type (Singles / Doubles, defaults to Singles)
@@ -1250,7 +1250,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: Grunt
 Class: Galactic
 Pic: Galactic Grunt M
-Music: Suspicious
+Music: Galactic
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
@@ -1260,7 +1260,7 @@ Copy Pool: TRAINER_POOL_ZONE_7_AND_8_GRUNTS
 Name: Grunt
 Class: Galactic
 Pic: Galactic Grunt F
-Music: Suspicious
+Music: Galactic
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
@@ -1270,7 +1270,7 @@ Copy Pool: TRAINER_POOL_ZONE_7_AND_8_GRUNTS
 Name: Grunt
 Class: Galactic
 Pic: Galactic Grunt M
-Music: Suspicious
+Music: Galactic
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
@@ -1280,7 +1280,7 @@ Copy Pool: TRAINER_POOL_ZONE_7_AND_8_GRUNTS
 Name: Grunt
 Class: Galactic
 Pic: Galactic Grunt F
-Music: Suspicious
+Music: Galactic
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
@@ -1290,7 +1290,7 @@ Copy Pool: TRAINER_POOL_ZONE_7_AND_8_GRUNTS
 Name: Mars
 Class: Galactic Commander
 Pic: Mars
-Music: Intense
+Music: Galactic
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Blue
@@ -1329,7 +1329,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: Mars
 Class: Galactic Commander
 Pic: Mars
-Music: Intense
+Music: Galactic
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Blue
