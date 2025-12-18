@@ -132,7 +132,7 @@ script Zone5A_Old_EventScript_Random2 {
 
 raw `
 Zone5A_Old_EventScript_AnneAndJune::
-	trainerbattle_double TRAINER_PBL_ANNE_AND_JUNE, Zone5A_Old_Text_AnneAndJuneIntro, Zone5A_Old_Text_AnneAndJuneDefeat, gText_NotEnoughMons
+	trainerbattle_double TRAINER_NONE, Zone5A_Old_Text_AnneAndJuneIntro, Zone5A_Old_Text_AnneAndJuneDefeat, gText_NotEnoughMons
 	msgbox Zone5A_Old_Text_AnneAndJunePostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -152,7 +152,7 @@ Zone5A_Old_Text_AnneAndJunePostBattle:
 	.string "Anne: Yeah, exactly that!$"
 
 Zone5A_Old_EventScript_Kevin::
-	trainerbattle_single TRAINER_PBL_ANNE_AND_JUNE, Zone5A_Old_Text_KevinIntro, Zone5A_Old_Text_KevinDefeat
+	trainerbattle_single TRAINER_NONE, Zone5A_Old_Text_KevinIntro, Zone5A_Old_Text_KevinDefeat
 	msgbox Zone5A_Old_Text_KevinPostBattle, MSGBOX_AUTOCLOSE
 	end
 

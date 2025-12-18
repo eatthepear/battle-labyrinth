@@ -170,7 +170,7 @@ script Zone5B_Old_EventScript_Random3 {
 
 raw `
 Zone5B_Old_EventScript_NovaandCora::
-	trainerbattle_double TRAINER_PBL_NOVA_AND_CORA, Zone5B_Old_Text_NovaandCoraIntro, Zone5B_Old_Text_NovaandCoraDefeat, gText_NotEnoughMons
+	trainerbattle_double TRAINER_NONE, Zone5B_Old_Text_NovaandCoraIntro, Zone5B_Old_Text_NovaandCoraDefeat, gText_NotEnoughMons
 	msgbox Zone5B_Old_Text_NovaandCoraPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -188,7 +188,7 @@ Zone5B_Old_Text_NovaandCoraPostBattle:
 	.string "Cora: Sharing allergies!$"
 
 Zone5B_Old_EventScript_Ryan::
-	trainerbattle_single TRAINER_PBL_RYAN, Zone5B_Old_Text_RyanIntro, Zone5B_Old_Text_RyanDefeat
+	trainerbattle_single TRAINER_NONE, Zone5B_Old_Text_RyanIntro, Zone5B_Old_Text_RyanDefeat
 	msgbox Zone5B_Old_Text_RyanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -204,7 +204,7 @@ Zone5B_Old_Text_RyanPostBattle:
 	.string "This grass is just too tall to see!$"
 
 Zone5B_Old_EventScript_Kenneth::
-	trainerbattle_single TRAINER_PBL_KENNETH, Zone5B_Old_Text_KennethIntro, Zone5B_Old_Text_KennethDefeat
+	trainerbattle_single TRAINER_NONE, Zone5B_Old_Text_KennethIntro, Zone5B_Old_Text_KennethDefeat
 	msgbox Zone5B_Old_Text_KennethPostBattle, MSGBOX_AUTOCLOSE
 	end
 
