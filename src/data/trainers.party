@@ -5769,6 +5769,8 @@ Growlithe Hisui
 
 Helioptile
 
+Rockruff
+
 Hippopotas
 
 Honedge
@@ -6314,6 +6316,166 @@ Elekid
 Magby
 
 Litleo
+
+Nosepass
+
+Onix
+
+Lickitung
+
+Vullaby
+
+Mudbray
+
+Yanma
+
+Spinda
+
+Farfetch'd
+
+Farfetch'd Galar
+
+Sableye
+
+Mawile
+
+=== TRAINER_POOL_ZONE_10 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Rellor
+
+Capsakid
+
+Helioptile
+
+Natu
+
+Drilbur
+
+Skorupi
+
+Scraggy
+
+Growlithe Hisui
+
+Mienfoo
+
+Rufflet
+
+Bramblin
+
+Meowth Galar
+
+Trapinch
+
+Greavard
+
+Sandile
+
+Shuppet
+
+Duskull
+
+Tinkatink
+
+Baltoy
+
+Bronzor
+
+Klink
+
+Varoom
+
+Gimmighoul
+
+Yamask
+
+Yamask Galar
+
+Golett
+
+Ferroseed
+
+Sinistea
+
+Poltchageist
+
+Doduo
+
+Darumaka
+
+Silicobra
+
+Axew
+
+Salandit
+
+Sandygast
+
+Magnemite
+
+Dwebble
+
+Honedge
+
+Aron
+
+Hippopotas
+
+Noibat
+
+Zorua
+
+Zorua Hisui
+
+Cufant
+
+Cacnea
+
+Elgyem
+
+Pawniard
+
+Rhyhorn
+
+Drifloon
+
+Glimmet
+
+Cranidos
+
+Shieldon
+
+Omanyte
+
+Kabuto
+
+Lileep
+
+Anorith
+
+Tirtouga
+
+Tyrunt
+
+Amaura
+
+Archen
+
+Wailmer
+
+Aipom
+
+Smoochum
+
+Elekid
+
+Magby
 
 Nosepass
 
