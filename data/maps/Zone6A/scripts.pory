@@ -33,7 +33,7 @@ script Zone6A_EventScript_LeviathanBattle {
 	msgbox(format("Woah!\pYou're trying to sneak past me to get to my family's treasures?\pNo can do!\pYou really want to be taught a lesson?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		setspeaker("Mina")
-		msgbox(format("That's what I thought!"))
+		msgbox(format("That's what I thought!"), MSGBOX_AUTOCLOSE)
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
 		applymovement(LOCALID_MINA, Common_Movement_FaceLeft)
 		waitmovement(0)

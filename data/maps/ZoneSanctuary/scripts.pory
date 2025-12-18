@@ -459,6 +459,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			playfanfare(MUS_OBTAIN_ITEM)
 			msgbox(format("{PLAYER} received the {COLOR RED}Portable PC{COLOR DARK_GRAY}! It was added to the {START_BUTTON} menu."))
 			waitfanfare
+			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("Note that if you are in a Zone, you can only use the Portable PC once before reaching the Sanctuary."))
 		case 6:
 			msgbox(format("The {COLOR RED}Machete{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
@@ -509,7 +510,8 @@ script Sanctuary_EventScript_EnterSanctuary {
 				setflag(FLAG_ITEM_ZONE5A_RARE_CANDY)
 			}
 			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(Sanctuary_Text_Colress_Upgraded, MSGBOX_DEFAULT)
+			setspeaker(SP_NAME_COLRESS)
+			msgbox(Sanctuary_Text_Colress_Upgraded)
 			waitfanfare
 			setvar(VAR_FARM_STOCK, 10)
 		case 6:
