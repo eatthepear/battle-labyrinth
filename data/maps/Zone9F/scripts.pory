@@ -3,7 +3,8 @@ mapscripts Zone9F_MapScripts {}
 script Zone9F_EventScript_Ari {
 	lock
 	faceplayer
-	msgbox(format("{COLOR BLUE}Ari{COLOR DARK_GRAY}: I miss my cousin Victoria. She lives in the Hoenn region."))
+	setspeaker("Ari")
+	msgbox(format("I miss my cousin Victoria. She lives in the Hoenn region."))
 	release
 	end
 }
@@ -11,7 +12,8 @@ script Zone9F_EventScript_Ari {
 script Zone9F_EventScript_Bertha {
 	lock
 	faceplayer
-	msgbox(format("{COLOR BLUE}Bertha{COLOR DARK_GRAY}: Why did Mom buy this house? It's so small for the five of us…"))
+	setspeaker("Bertha")
+	msgbox(format("Why did Mom buy this house? It's so small for the five of us…"))
 	release
 	end
 }
@@ -19,7 +21,8 @@ script Zone9F_EventScript_Bertha {
 script Zone9F_EventScript_Cassandra {
 	lock
 	faceplayer
-	msgbox(format("{COLOR BLUE}Cassandra{COLOR DARK_GRAY}: All my kids do is complain, complain, then complain some more."))
+	setspeaker("Cassandra")
+	msgbox(format("All my kids do is complain, complain, then complain some more."))
 	release
 	end
 }
@@ -27,7 +30,8 @@ script Zone9F_EventScript_Cassandra {
 script Zone9F_EventScript_Dominic {
 	lock
 	faceplayer
-	msgbox(format("{COLOR BLUE}Dominic{COLOR DARK_GRAY}: I wonder what's for dinner…"))
+	setspeaker("Dominic")
+	msgbox(format("I wonder what's for dinner…"))
 	release
 	end
 }
@@ -35,7 +39,8 @@ script Zone9F_EventScript_Dominic {
 script Zone9F_EventScript_Erica {
 	lock
 	faceplayer
-	msgbox(format("{COLOR BLUE}Erica{COLOR DARK_GRAY}: May your travels be safe."))
+	setspeaker("Erica")
+	msgbox(format("May your travels be safe."))
 	release
 	end
 }

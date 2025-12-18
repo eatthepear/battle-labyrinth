@@ -46,7 +46,7 @@ script Zone9A_EventScript_Ari {
 	}
 	faceplayer
 	setspeaker("Ari")
-	msgbox(format("Howzit goin?\pOh, you're a traveler! You might be strong enough…\pI bet you can't defeat the five members of my family in a row!\pWhat do you say to my little wager?"), MSGBOX_YESNO)
+	msgbox(format("Howzit goin?\pOh, you're a traveler! You might be strong enough…\pI bet you can't defeat four members of my family in a row!\pWhat do you say to my little wager?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		setspeaker("Ari")
 		msgbox(format("Ah, so you're a chicken. Well, if you change your mind, I'll be here."))
@@ -118,9 +118,11 @@ script Zone9A_EventScript_Ari {
 			setspeaker("Erica")
 			msgbox(format("You've defeated the rest of my family.\pAs an added challenge, would you feel up to facing me right now? If you win, I'll give you a {COLOR RED}Rare Candy{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
+				setspeaker("Erica")
+				msgbox(format("So be it. Good luck to us both."))
 				trainerbattle_no_intro(TRAINER_PBL_ERICA, format("Very impressive."))
 				setspeaker("Erica")
-				msgbox(format("As promised."))
+				msgbox(format("As promised."), MSGBOX_AUTOCLOSE)
 				giveitem(ITEM_RARE_CANDY)
 			} else {
 				setspeaker("Erica")
@@ -131,11 +133,11 @@ script Zone9A_EventScript_Ari {
 			msgbox(format("You've defeated the rest of my family.\pNow, you must face your final challenge.\pIf you defeat me, I'll give you a {COLOR RED}Rare Candy{COLOR DARK_GRAY}!"))
 			trainerbattle_no_intro(TRAINER_PBL_ERICA, format("Very impressive."))
 			setspeaker("Erica")
-			msgbox(format("As promised."))
+			msgbox(format("As promised."), MSGBOX_AUTOCLOSE)
 			giveitem(ITEM_RARE_CANDY)
 		}
 		setspeaker("Erica")
-		msgbox(format("Finally, here is a little reward for completing my family's trial."))
+		msgbox(format("Finally, here is a little reward for completing my family's trial."), MSGBOX_AUTOCLOSE)
 		giveitem(ITEM_TM_RETALIATE)
 		closemessage
 		applymovement(5, Common_Movement_WalkInPlaceFasterUp)
