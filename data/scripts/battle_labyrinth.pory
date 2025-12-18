@@ -578,6 +578,7 @@ script EventScript_Notebook_ZoneInfo {
 		case 8:
 			msgbox(format("{COLOR GREEN}Zone 7{COLOR DARK_GRAY} is the exterior mountainside of two large mountains, while {COLOR GREEN}Zone 8{COLOR DARK_GRAY} is the interior of those mountains."))
 		case 9:
+			msgbox(format("{COLOR GREEN}Zone 9{COLOR DARK_GRAY} is a dense jungle village."))
 		case 10:
 		case 11:
 		case 12:

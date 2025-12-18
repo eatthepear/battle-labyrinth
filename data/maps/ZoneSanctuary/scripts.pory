@@ -305,20 +305,6 @@ script EventScript_NextZone {
 			if (var(VAR_RESULT) == NO) {
 				return
 			}
-		case 9:
-			msgbox(format("Are you sure you're ready? You will be entering {COLOR GREEN}Zone 9 - Lushbranch Village{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				call(Sanctuary_EventScript_EnterZone)
-				setvar(VAR_LEVEL_CAP, 9)
-				setflag(FLAG_HIDE_ZONE9A_BERTHA_WINSTRATE)
-				setflag(FLAG_HIDE_ZONE9A_CASSANDRA_WINSTRATE)
-				setflag(FLAG_HIDE_ZONE9A_DOMINIC_WINSTRATE)
-				setflag(FLAG_HIDE_ZONE9A_ERICA_WINSTRATE)
-				setvar(VAR_ZONE_9_STATE, 0)
-				warp(MAP_ZONE9A, 255, 41, 22)
-				waitstate
-				end
-			}
 		case 10:
 			msgbox(format("Are you sure you're ready? You will be entering {COLOR GREEN}Zone 10 - Scornwind Desert{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
@@ -389,6 +375,12 @@ script EventScript_NextZone {
 			warp(MAP_ZONE6A, 255, 51, 22)
 		case 7:
 			warp(MAP_ZONE7A, 255, 10, 33)
+		case 9:
+			setflag(FLAG_HIDE_ZONE9A_BERTHA_WINSTRATE)
+			setflag(FLAG_HIDE_ZONE9A_CASSANDRA_WINSTRATE)
+			setflag(FLAG_HIDE_ZONE9A_DOMINIC_WINSTRATE)
+			setflag(FLAG_HIDE_ZONE9A_ERICA_WINSTRATE)
+			warp(MAP_ZONE9A, 255, 41, 22)
 	}
 	waitstate
 	end
@@ -444,7 +436,8 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("Your reward for clearing {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY} is…"))
 		case 7:
 			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("Congratulations. You have\ncompleted {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}."))
+			msgbox(format("Congratulations. You have completed\n{COLOR GREEN}Zone 7 and Zone 8{COLOR DARK_GRAY}."))
+			waitfanfare
 	}
 	switch (var(VAR_ZONE)) {
 		case 1:
@@ -474,7 +467,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} is…"))
 			msgbox(format("{COLOR RED}TM49 - Draining Kiss!{COLOR DARK_GRAY}"))
 			giveitem(ITEM_TM_DRAINING_KISS)
-			msgbox("Your reward for clearing {COLOR GREEN}Zone 8{COLOR DARK_GRAY} is…")
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY} is…"))
 			msgbox(format("{COLOR RED}5 Green Shards{COLOR DARK_GRAY}!"))
 			giveitem(ITEM_GREEN_SHARD, 5)
 		case 9:
@@ -529,6 +522,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setflag(FLAG_ZONE7B_HEAL_USED)
 			completesubquest(QUEST_PBL, 6)
 			completesubquest(QUEST_PBL, 7)
+			setvar(VAR_ZONE, 9)
 		case 9:
 			completesubquest(QUEST_PBL, 8)
 			setvar(VAR_ZONE, 10)
