@@ -1066,6 +1066,7 @@ script EventScript_Shop_Cowgirl {
 	}
 	call(Sanctuary_EventScript_MoveCameraUp)
 	showmoneybox(18, 0)
+	setvar(VAR_TEMP_0, 0)
 	call(EventScript_Shop_FarmersStand)
 	hidemoneybox
 	setspeaker("Cowgirl")
@@ -1181,7 +1182,7 @@ script EventScript_Shop_FarmersStand {
 			// dynmultipush("Maranga Berry", ITEM_MARANGA_BERRY)
 		}
 		dynmultipush("Exit", 1000)
-		dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
+		dynmultistack(0, 0, FALSE, 5, FALSE, VAR_TEMP_0, DYN_MULTICHOICE_CB_SHOW_ITEM)
 		switch (var(VAR_RESULT)) {
 			case 0:
 				call(EventScript_Shop_FarmersStand_Info)
