@@ -1757,104 +1757,124 @@ Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_COLLECTOR
 
-=== TRAINER_PBL_ADAMINA_LEVIATHAN_9 ===
-Name: Adamina
-Class: Pkmn Ranger
-Pic: Pokemon Ranger F
-Music: Cool
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Mugshot: Green
-
-Klawf @ Hard Stone
-Ability: Anger Shell
-Level: 21
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rock Tomb
-- Bulldoze
-- Knock Off
-- Stealth Rock
-
-Vullaby @ Black Glasses
-Ability: Overcoat
-Level: 21
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Pluck
-- Feint Attack
-- Roost
-- Rock Tomb
-
-Maractus @ Miracle Seed
-Ability: Sand Rush
-Level: 21
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Mega Drain
-- Pin-Missile
-- Bounce
-- Growth
-
-Sigilyph @ Sitrus Berry
-Ability: Magic Guard
-Level: 23
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psybeam
-- Air Cutter
-- Ancient Power
-- Roost
-
-=== TRAINER_PBL_ADAMINA_LEVIATHAN_9_CHALLENGE ===
-Name: Adamina
-Class: Pkmn Ranger
-Pic: Pokemon Ranger F
-Music: Cool
+=== TRAINER_PBL_JASMINE_LEVIATHAN_10 ===
+Name: Jasmine
+Class: Leader
+Pic: Jasmine
+Music: Female
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
-Mugshot: Green
+Mugshot: Purple
 
-Klawf @ Hard Stone
-Ability: Anger Shell
-Level: 21
+Tinkatuff @ Eviolite
+Adamant Nature
+Ability: Own Tempo
+Level: 25
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rock Tomb
-- Bulldoze
-- Knock Off
 - Stealth Rock
-
-Vullaby @ Black Glasses
-Ability: Overcoat
-Level: 21
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Pluck
-- Feint Attack
-- Roost
+- Play Rough
+- Metal Claw
 - Rock Tomb
 
-Maractus @ Miracle Seed
-Ability: Sand Rush
-Level: 21
+Togedemaru @ Rocky Helmet
+Jolly Nature
+Ability: Iron Barbs
+Level: 25
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Mega Drain
-- Pin-Missile
-- Bounce
-- Growth
+- Fake Out
+- U-Turn
+- Spark
+- Iron Tail
 
-Braixen @ Charcoal
-Ability: Magic Guard
-Level: 21
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Incinerate
-- Psybeam
-- Shock Wave
-- Hypnosis
+Sliggoo Hisui @ Eviolite
+Modest Nature
+Ability: Gooey
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 30 SpA / 30 SpD / 30 Spe
+- Shelter
+- Dragon Breath
+- Water Pulse
+- Hidden Power
 
-Sigilyph @ Sitrus Berry
-Ability: Magic Guard
-Level: 23
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psybeam
-- Air Cutter
-- Ancient Power
+Prinplup @ Eviolite
+Timid Nature
+Ability: Competitive
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 30 SpA / 30 SpD / 31 Spe
+- Bubble Beam
+- Icy Wind
+- Hidden Power
 - Roost
+
+Steelix @ Sitrus Berry
+Careful Nature
+Ability: Sheer Force
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Tail
+- Bulldoze
+- Rock Tomb
+- Thunder Fang
+
+=== TRAINER_PBL_JASMINE_LEVIATHAN_10 ===
+Name: Jasmine
+Class: Leader
+Pic: Jasmine
+Music: Female
+AI: AI_FLAG_LEVIATHAN
+Double Battle: No
+Mugshot: Purple
+Difficulty: Brutal
+
+Tinkatuff @ Eviolite
+Adamant Nature
+Ability: Own Tempo
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stealth Rock
+- Play Rough
+- Metal Claw
+- Rock Tomb
+
+Togedemaru @ Rocky Helmet
+Jolly Nature
+Ability: Iron Barbs
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- U-Turn
+- Spark
+- Iron Tail
+
+Sliggoo Hisui @ Eviolite
+Modest Nature
+Ability: Gooey
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 30 SpA / 30 SpD / 30 Spe
+- Shelter
+- Dragon Breath
+- Water Pulse
+- Hidden Power
+
+Prinplup @ Eviolite
+Timid Nature
+Ability: Competitive
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 30 SpA / 30 SpD / 31 Spe
+- Bubble Beam
+- Icy Wind
+- Hidden Power
+- Roost
+
+Steelix @ Steelixite
+Careful Nature
+Ability: Sheer Force
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Tail
+- Bulldoze
+- Rock Tomb
+- Thunder Fang
 
 === TRAINER_PBL_JEANETTE ===
 Name: Jeanette

@@ -76,7 +76,7 @@ script Zone10A_EventScript_Jasmine {
 	setspeaker("Jasmine")
 	msgbox(format("Allow me to introduce myself.\pMy name is Jasmine.\pI use the… clang!\nSteel type!\pSteel Pokémon are very tough and really strong!\pAnd they're especially good in a sandstorm!\pUm… I'm not lying."))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_ADAMINA_LEVIATHAN_9, format("Well done…"))
+	trainerbattle_no_intro(TRAINER_PBL_JASMINE_LEVIATHAN_10, format("Well done…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Jasmine")
 	msgbox(format("You are a better Trainer than me, in both skill and kindness.\pI'd like you to have this."), MSGBOX_AUTOCLOSE)
