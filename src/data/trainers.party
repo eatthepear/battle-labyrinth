@@ -111,8 +111,8 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: Unique Types
 Party Size: 3
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_1
 
 === TRAINER_PBL_OSCAR ===
@@ -122,8 +122,8 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: Unique Types
 Party Size: 3
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_1
 
 === TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER ===
@@ -359,8 +359,8 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: Unique Types
 Party Size: 3
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_2
 
 === TRAINER_PBL_HARPER ===
@@ -370,8 +370,8 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: Unique Types
 Party Size: 3
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_2
 
 === TRAINER_PBL_SHAUN_LEVIATHAN_2 ===
@@ -468,8 +468,8 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: Unique Types
 Party Size: 3
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_3
 
 === TRAINER_PBL_BORIS ===
@@ -479,8 +479,8 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: Unique Types
 Party Size: 3
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_3
 
 === TRAINER_PBL_RICHARD ===
@@ -653,8 +653,8 @@ Pic: Camper
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: Unique Types
 Party Size: 3
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_4
 
 === TRAINER_PBL_LUCIA ===
@@ -762,8 +762,8 @@ Pic: Picnicker
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Rules: Unique Types
 Party Size: 3
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_5
 
 === TRAINER_PBL_SYLVIA ===
@@ -773,8 +773,8 @@ Pic: Psychic F
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Prune: Non Psychic
 Party Size: 4
+Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
 
 === TRAINER_PBL_THERESA ===
@@ -784,8 +784,8 @@ Pic: Hex Maniac
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Prune: Non Psychic
 Party Size: 4
+Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
 
 === TRAINER_PBL_ANTHONY ===
@@ -795,8 +795,8 @@ Pic: Psychic M
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Pool Prune: Non Psychic
 Party Size: 4
+Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
 
 === TRAINER_PBL_BILL_OPTIONAL_2 ===
@@ -1143,7 +1143,7 @@ Pic: Pokemon Breeder F
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_6
 
@@ -1318,7 +1318,7 @@ Pic: Hiker
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 4
 Pool Prune: Non Ground Rock Steel
 Copy Pool: TRAINER_POOL_ZONE_7_AND_8
 
@@ -1540,42 +1540,9 @@ Pic: Ninja Boy
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Foongus
-Ability: Effect Spore
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Gastro Acid
-- Mega Drain
-- Synthesis
-- Clear Smog
-
-Skorupi
-Ability: Sniper
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Fang
-- Bug Bite
-- Feint Attack
-- Hone Claws
-
-Koffing
-Ability: Levitate
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sludge
-- Stockpile
-- Spit Up
-- Swallow
-
-Venonat
-Ability: Compound Eyes
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Struggle Bug
-- Poison Powder
-- Psybeam
-- Stun Spore
+Party Size: 4
+Pool Prune: Non Poison
+Copy Pool: TRAINER_POOL_ZONE_9
 
 === TRAINER_PBL_CARMINE ===
 Name: Carmine
@@ -1584,165 +1551,42 @@ Pic: Backpacker F
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Emolga
-Ability: Motor Drive
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Shock Wave
-- Charge Beam
-- Aerial Ace
-- Encore
-
-=== TRAINER_PBL_JONATHAN ===
-Name: Jonathan
-Class: Bug Catcher
-Pic: Bug Catcher
-Music: Male
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Nymble
-Ability: Swarm
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Double Kick
-- Screech
-- Bug Bite
-- Feint
-
-Pineco
-Ability: Sturdy
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bug Bite
-- Payback
-- Rapid Spin
-- Take Down
-
-Shelmet
-Ability: Shell Armor
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Mud Slap
-- Struggle Bug
-- Mega Drain
-- Recover
-
-Karrablast
-Ability: Swarm
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Feint Attack
-- Bug Bite
-- Slash
-- Recover
-
-=== TRAINER_PBL_CALVIN ===
-Name: Calvin
-Class: Fisherman
-Pic: Fisherman
-Music: Hiker
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Arrokuda
-Ability: Propeller Tail
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Aqua Jet
-- Bite
-- Focus Energy
-- Laser Focus
-
-Poliwag
-Ability: Water Absorb
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Mud Shot
-- Bubble Beam
-- Endeavor
-- Body Slam
-
-Remoraid
-Ability: Sniper
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Focus Energy
-- Bubble Beam
-- Psybeam
-- Aurora Beam
-
-Tympole
-Ability: Water Absorb
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Uproar
-- Bubble Beam
-- Mud Bomb
-- Aqua Ring
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_9
 
 === TRAINER_PBL_LUIS ===
 Name: Luis
 Class: Pkmn Breeder
-Pic: Pokemon Breeder F
+Pic: Pokemon Breeder M
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_9
 
-Charcadet
-Ability: Flash Fire
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Night Shade
-- Incinerate
-- Will-O-Wisp
-- Flame Charge
+=== TRAINER_PBL_DEMI ===
+Name: Demi
+Class: Hex Maniac
+Pic: Hex Maniac
+Music: Suspicious
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Ghost
+Copy Pool: TRAINER_POOL_ZONE_9
 
-Capsakid
-Ability: Chlorophyll
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Leech Seed
-- Razor Leaf
-- Worry Seed
-- Headbutt
-
-Wimpod
-Ability: Wimp Out
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Struggle Bug
-- Sand Attack
-- Harden
-- Aqua Jet
-
-Tynamo
-Ability: Levitate
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Thunder Wave
-- Spark
-- Charge Beam
-
-Cetoddle
-Ability: Thick Fat
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Yawn
-- Ice Shard
-- Entrainment
-- Flail
-
-Toxel
-Ability: Static
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Growl
-- Acid
-- Nuzzle
-- Tearful Look
+=== TRAINER_PBL_KIMBERLY ===
+Name: Kimberly
+Class: Pkmn Breeder
+Pic: Pokemon Breeder F
+Music: Female
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_9
 
 === TRAINER_PBL_ARI ===
 Name: Ari
@@ -6336,3 +6180,149 @@ Drifloon
 Glimmet
 
 Nosepass
+
+=== TRAINER_POOL_ZONE_9 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Fomantis
+
+Pansage
+
+Pansear
+
+Panpour
+
+Ekans
+
+Bellsprout
+
+Oddish
+
+Exeggcute
+
+Drowzee
+
+Pineco
+
+Croagunk
+
+Venonat
+
+Mankey
+
+Machop
+
+Timburr
+
+Sizzlipede
+
+Swablu
+
+Natu
+
+Voltorb Hisui
+
+Skorupi
+
+Crabrawler
+
+Pancham
+
+Mienfoo
+
+Rufflet
+
+Dewpider
+
+Meowth Galar
+
+Shroodle
+
+Shuppet
+
+Duskull
+
+Tinkatink
+
+Golett
+
+Ferroseed
+
+Mareanie
+
+Sinistea
+
+Poltchageist
+
+Phantump
+
+Doduo
+
+Gastly
+
+Magnemite
+
+Honedge
+
+Noibat
+
+Zorua
+
+Zorua Hisui
+
+Cufant
+
+Elgyem
+
+Pumpkaboo
+
+Toedscool
+
+Staryu
+
+Pawniard
+
+Stufful
+
+Rhyhorn
+
+Drifloon
+
+Wailmer
+
+Aipom
+
+Smoochum
+
+Elekid
+
+Magby
+
+Litleo
+
+Nosepass
+
+Onix
+
+Lickitung
+
+Vullaby
+
+Mudbray
+
+Yanma
+
+Spinda
+
+Farfetch'd
+
+Farfetch'd Galar
+
+Sableye
+
+Mawile

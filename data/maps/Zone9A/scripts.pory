@@ -187,53 +187,32 @@ script Zone9A_EventScript_TMPluck {
 	end
 }
 
-raw `
-Zone9A_EventScript_Cooper::
-       trainerbattle_single TRAINER_PBL_COOPER, Zone9A_Text_CooperIntro, Zone9A_Text_CooperDefeat
-       msgbox Zone9A_Text_CooperPostBattle, MSGBOX_AUTOCLOSE
-       end
-
-Zone9A_Text_CooperIntro:
-	.string "Bet you didn't expect me!$"
-
-Zone9A_Text_CooperDefeat:
-	.string "I didn't expect you, either!$"
-
-Zone9A_Text_CooperPostBattle:
-	.string "I just pop out occasionally in\n"
-	.string "case someone is there.$"
-
-Zone9A_EventScript_Carmine::
-       trainerbattle_single TRAINER_PBL_CARMINE, Zone9A_Text_CarmineIntro, Zone9A_Text_CarmineDefeat
-       msgbox Zone9A_Text_CarminePostBattle, MSGBOX_AUTOCLOSE
-       end
-
-Zone9A_Text_CarmineIntro:
-	.string "Whew, it's hot in the jungle!$"
-
-Zone9A_Text_CarmineDefeat:
-	.string "I think the humidity is the worst\n"
-	.string "part!$"
-
-Zone9A_Text_CarminePostBattle:
-	.string "I hope there's AC in the village.$"
-
-`
-
-script Zone9A_EventScript_Jonathan {
-	trainerbattle_single(TRAINER_PBL_JONATHAN, format("Jungles like these are where Bugs thrive!"), format("I'm not thriving!"))
-	msgbox(format("Make sure to protect yourself from the elements!"), MSGBOX_AUTOCLOSE)
+script Zone9A_EventScript_Cooper {
+	trainerbattle_single(TRAINER_PBL_COOPER, format("Bet you didn't expect me!"), format("I didn't expect you, either!"))
+	msgbox(format("I just pop out occasionally in case someone is there."), MSGBOX_AUTOCLOSE)
 	end
 }
 
-script Zone9A_EventScript_Calvin {
-	trainerbattle_single(TRAINER_PBL_CALVIN, format("This pond is filled with muck!"), format("The muck is where Pokémon live!"))
-	msgbox(format("Fishing in a jungle is a unique experience!"), MSGBOX_AUTOCLOSE)
+script Zone9A_EventScript_Carmine {
+	trainerbattle_single(TRAINER_PBL_CARMINE, format("It's hot in the jungle!"), format("I think the humidity is the worst part!"))
+	msgbox(format("I hope there's air conditioning in the village."), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone9A_EventScript_Luis {
 	trainerbattle_single(TRAINER_PBL_LUIS, format("Whew! I am tired. If I beat you in a Pokémon battle, do you think you could watch the little ones for a while?"), format("At least now they're out of energy!"))
 	msgbox(format("Finally, I can take a short break!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone9A_EventScript_Demi {
+	trainerbattle_single(TRAINER_PBL_DEMI, format("Ghosts haunt this village…"), format("I do my best to keep them at bay…"))
+	msgbox(format("Ghosts are everywhere…"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone9A_EventScript_Kimberly {
+	trainerbattle_single(TRAINER_PBL_KIMBERLY, format("Raising Pokémon is hard work!"), format("Am I working hard, or hardly working?"))
+	msgbox(format("It doesn't feel like work when it's what I love!"), MSGBOX_AUTOCLOSE)
 	end
 }
