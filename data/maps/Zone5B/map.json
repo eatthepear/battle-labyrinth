@@ -276,8 +276,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TRICK_HOUSE_STATUE",
-      "x": 13,
-      "y": 10,
+      "x": 14,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
