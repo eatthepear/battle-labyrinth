@@ -2,14 +2,16 @@ mapscripts Zone3B_MapScripts {}
 
 script Zone3B_EventScript_Phillipa {
     lock
-	msgbox(format("{COLOR BLUE}Phillipa{COLOR DARK_GRAY}: This food is so tasty!"))
+	setspeaker("Phillipa")
+	msgbox(format("This food is so tasty!"))
     release
     end
 }
 
 script Zone3B_EventScript_Remi {
     lock
-	msgbox(format("{COLOR BLUE}Remi{COLOR DARK_GRAY}: I'm glad you like the food, kiddo.\pI wonder when your brother will get hungry; he seems upset about his Pokémon again."))
+	setspeaker("Remi")
+	msgbox(format("I'm glad you like the food, kiddo.\pI wonder when your brother will get hungry; he seems upset about his Pokémon again."))
     release
     end
 }
