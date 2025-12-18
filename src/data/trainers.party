@@ -1593,93 +1593,103 @@ Name: Ari
 Class: Winstrate
 Pic: Camper
 Music: Male
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
-Tandemaus
-Ability: Pickup
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Super Fang
-
-Tadbulb
-Ability: Static
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Parabolic Charge
-
-Doduo
-Ability: Run Away
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Double Hit
+Squawkabilly-Blue @ Sharp Beak
+Hasty Nature
+Ability: Intimidate
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pluck
+- Quick Attack
+- Roost
 
 === TRAINER_PBL_BERTHA ===
 Name: Bertha
 Class: Winstrate
 Pic: Picnicker
 Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
-Stunfisk
-Ability: Static
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Mud Shot
-- Spark
+Carnivine @ Sitrus Berry
+Relaxed Nature
+Ability: Levitate
+Level: 22
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leaf Tornado
+- Bite
+- Sleep Powder
 
 === TRAINER_PBL_CASSANDRA ===
 Name: Cassandra
 Class: Winstrate
 Pic: Pokefan F
 Music: Twins
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
-Squawkabilly-Blue
-Ability: Intimidate
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Pluck
-- Quick Attack
+Seel @ Eviolite
+Modest Nature
+Ability: Thick Fat
+Level: 22
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Chilling Water
+- Icy Wind
+- Aqua Ring
+
+Wailmer @ Eviolite
+Calm Nature
+Ability: Oblivious
+Level: 22
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Whirlpool
+- Bounce
+- Protect
 
 === TRAINER_PBL_DOMINIC ===
 Name: Dominic
 Class: Winstrate
 Pic: Pokefan M
 Music: Twins
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
-Carnivine
-Ability: Levitate
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Leaf Tornado
-- Leech Seed
+Morpeko @ Sitrus Berry
+Jolly Nature
+Ability: Hunger Switch
+Level: 22
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Spark
+- Bite
+- Fake Out
 
 === TRAINER_PBL_ERICA ===
 Name: Erica
 Class: Winstrate
 Pic: Expert F
 Music: Intense
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
-Throh
-Ability: Guts
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Retaliate
-- Revenge
-
-Sawk
+Sawk @ Sitrus Berry
+Naive Nature
 Ability: Sturdy
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Retaliate
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Low Sweep
+- Rock Tomb
+- Retaliate
+
+Throh @ Sitrus Berry
+Brave Nature
+Ability: Guts
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Circle Throw
+- Payback
+- Retaliate
 
 === TRAINER_PBL_ALANA ===
 Name: Alana
