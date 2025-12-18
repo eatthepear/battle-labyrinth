@@ -301,18 +301,10 @@ script EventScript_NextZone {
 				return
 			}
 		case 7:
+			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == NO) {
 				return
-			}
-		case 10:
-			msgbox(format("Are you sure you're ready? You will be entering {COLOR GREEN}Zone 10 - Scornwind Desert{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				call(Sanctuary_EventScript_EnterZone)
-				setvar(VAR_LEVEL_CAP, 10)
-				warp(MAP_ZONE10A, 255, 42, 51)
-				waitstate
-				end
 			}
 		case 11:
 			msgbox(format("Are you sure you're ready? You will be entering {COLOR GREEN}Zone 11 - Duskwither Maze{COLOR DARK_GRAY}."), MSGBOX_YESNO)
@@ -381,6 +373,8 @@ script EventScript_NextZone {
 			setflag(FLAG_HIDE_ZONE9A_DOMINIC_WINSTRATE)
 			setflag(FLAG_HIDE_ZONE9A_ERICA_WINSTRATE)
 			warp(MAP_ZONE9A, 255, 41, 22)
+		case 10:
+			warp(MAP_ZONE10A, 255, 42, 51)
 	}
 	waitstate
 	end
@@ -471,8 +465,8 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("{COLOR RED}5 Green Shards{COLOR DARK_GRAY}!"))
 			giveitem(ITEM_GREEN_SHARD, 5)
 		case 9:
-			msgbox(format("{COLOR RED}TM15 - Covet{COLOR DARK_GRAY}!"))
-			giveitem(ITEM_TM_VENOSHOCK)
+			msgbox(format("{COLOR RED}TM48 - Bullet Seed{COLOR DARK_GRAY}!"))
+			giveitem(ITEM_TM_BULLET_SEED)
 		case 10:
 			msgbox(format("The {COLOR RED}Tera Orb{COLOR DARK_GRAY}!"))
 			giveitem(ITEM_TERA_ORB)
