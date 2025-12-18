@@ -45,19 +45,22 @@ script Zone9A_EventScript_Ari {
 		waitmovement(0)
 	}
 	faceplayer
-	msgbox(format("{COLOR BLUE}Ari{COLOR DARK_GRAY}: Howzit goin?\pOh, you're a traveler! You might be strong enough…\pI bet you can't defeat the five members of my family in a row!\pWhat do you say to my little wager?"), MSGBOX_YESNO)
+	setspeaker("Ari")
+	msgbox(format("Howzit goin?\pOh, you're a traveler! You might be strong enough…\pI bet you can't defeat the five members of my family in a row!\pWhat do you say to my little wager?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Ah, so you're a chicken. Well, if you change your mind, I'll be here."), MSGBOX_DEFAULT)
+		setspeaker("Ari")
+		msgbox(format("Ah, so you're a chicken. Well, if you change your mind, I'll be here."))
 		release
 		end
 	} else {
-		msgbox(format("Alright, well, best of luck!"), MSGBOX_DEFAULT)
+		setspeaker("Ari")
+		msgbox(format("Alright, well, best of luck!"), MSGBOX_AUTOCLOSE)
 		setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 		trainerbattle_no_intro(TRAINER_PBL_ARI, format("What!? How!?\nYou're tougher than I thought!"))
 		applymovement(1, Common_Movement_WalkInPlaceFasterUp)
 		waitmovement(0)
-		msgbox("{COLOR BLUE}Ari{COLOR DARK_GRAY}: Hey, everyone!\nI've found a pretty strong Trainer!", MSGBOX_DEFAULT)
-		closemessage
+		setspeaker("Ari")
+		msgbox(format("Hey, everyone!\nI've found a pretty strong Trainer!"), MSGBOX_AUTOCLOSE)
 		applymovement(1, Zone9A_Movement_WinstrateEnterHouse)
 		waitmovement(0)
 		removeobject(1)
@@ -66,12 +69,13 @@ script Zone9A_EventScript_Ari {
 		addobject(2)
 		applymovement(2, Common_Movement_WalkDown)
 		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Bertha{COLOR DARK_GRAY}: You beat my brother? Ugh. Such a brat.\pLet's just get this over with."), MSGBOX_DEFAULT)
+		setspeaker("Bertha")
+		msgbox(format("You beat my brother? Ugh. Such a brat.\pLet's just get this over with."), MSGBOX_AUTOCLOSE)
 		trainerbattle_no_intro(TRAINER_PBL_BERTHA, format("Sigh… I thought this would happen…"))
 		applymovement(2, Common_Movement_WalkInPlaceFasterUp)
 		waitmovement(0)
-		msgbox("{COLOR BLUE}Bertha{COLOR DARK_GRAY}: Mom! It's your turn!", MSGBOX_DEFAULT)
-		closemessage
+		setspeaker("Bertha")
+		msgbox(format("Mom! It's your turn!"), MSGBOX_AUTOCLOSE)
 		applymovement(2, Zone9A_Movement_WinstrateEnterHouse)
 		waitmovement(0)
 		removeobject(2)
@@ -80,12 +84,13 @@ script Zone9A_EventScript_Ari {
 		addobject(3)
 		applymovement(3, Common_Movement_WalkDown)
 		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Cassandra{COLOR DARK_GRAY}: Oh! I am so excited!\pFinally, a challenger who got past both of my children!\pIt's Momma's time to shine!"), MSGBOX_DEFAULT)
+		setspeaker("Cassandra")
+		msgbox(format("Oh! I am so excited!\pFinally, a challenger who got past both of my children!\pIt's Momma's time to shine!"), MSGBOX_AUTOCLOSE)
 		trainerbattle_no_intro(TRAINER_PBL_CASSANDRA, format("It was you who shined instead!"))
 		applymovement(3, Common_Movement_WalkInPlaceFasterUp)
 		waitmovement(0)
-		msgbox("{COLOR BLUE}Cassandra{COLOR DARK_GRAY}: It's all you, baby!", MSGBOX_DEFAULT)
-		closemessage
+		setspeaker("Cassandra")
+		msgbox(format("It's all you, baby!"), MSGBOX_AUTOCLOSE)
 		applymovement(3, Zone9A_Movement_WinstrateEnterHouse)
 		waitmovement(0)
 		removeobject(3)
@@ -94,10 +99,11 @@ script Zone9A_EventScript_Ari {
 		addobject(4)
 		applymovement(4, Common_Movement_WalkDown)
 		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Dominic{COLOR DARK_GRAY}: Guess what time it is? It's time to take out the trash!"), MSGBOX_DEFAULT)
+		setspeaker("Dominic")
+		msgbox(format("Guess what time it is? It's time to take out the trash!"), MSGBOX_AUTOCLOSE)
 		trainerbattle_no_intro(TRAINER_PBL_DOMINIC, format("Sorry, sorry! I didn't realize you were so strong!"))
-		msgbox(format("{COLOR BLUE}Dominic{COLOR DARK_GRAY}: Kids!\nWake your grandma up!"), MSGBOX_DEFAULT)
-		closemessage
+		setspeaker("Dominic")
+		msgbox(format("Kids!\nWake your grandma up!"), MSGBOX_AUTOCLOSE)
 		applymovement(4, Common_Movement_WalkInPlaceFasterUp)
 		waitmovement(0)
 		applymovement(4, Zone9A_Movement_WinstrateEnterHouse)
@@ -108,9 +114,28 @@ script Zone9A_EventScript_Ari {
 		addobject(5)
 		applymovement(5, Common_Movement_WalkDown)
 		waitmovement(0)
-		msgbox(format("{COLOR BLUE}Erica{COLOR DARK_GRAY}: Who dares disturb me from my slumber?"))
-		trainerbattle_no_intro(TRAINER_PBL_ERICA, format("Very impressive."))
-		msgbox(format("{COLOR BLUE}Erica{COLOR DARK_GRAY}: Good, good.\pWell done, young one.\pHere is a little reward for completing my family's trial."))
+		if (var(VAR_DIFFICULTY) < DIFFICULTY_BRUTAL) {
+			setspeaker("Erica")
+			msgbox(format("You've defeated the rest of my family.\pAs an added challenge, would you feel up to facing me right now? If you win, I'll give you a {COLOR RED}Rare Candy{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				trainerbattle_no_intro(TRAINER_PBL_ERICA, format("Very impressive."))
+				setspeaker("Erica")
+				msgbox(format("As promised."))
+				giveitem(ITEM_RARE_CANDY)
+			} else {
+				setspeaker("Erica")
+				msgbox(format("Very well then."))
+			}
+		} else {
+			setspeaker("Erica")
+			msgbox(format("You've defeated the rest of my family.\pNow, you must face your final challenge.\pIf you defeat me, I'll give you a {COLOR RED}Rare Candy{COLOR DARK_GRAY}!"))
+			trainerbattle_no_intro(TRAINER_PBL_ERICA, format("Very impressive."))
+			setspeaker("Erica")
+			msgbox(format("As promised."))
+			giveitem(ITEM_RARE_CANDY)
+		}
+		setspeaker("Erica")
+		msgbox(format("Finally, here is a little reward for completing my family's trial."))
 		giveitem(ITEM_TM_RETALIATE)
 		closemessage
 		applymovement(5, Common_Movement_WalkInPlaceFasterUp)
