@@ -1,4 +1,12 @@
-mapscripts BorealThicket_MapScripts {}
+mapscripts BorealThicket_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_BOREAL_THICKET_TM_ICY_WIND)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST)
+		}
+	}
+}
 
 script BorealThicket_EventScript_BirdKeeperFlyingTaxi {
     lock
@@ -18,4 +26,21 @@ script BorealThicket_EventScript_BirdKeeperFlyingTaxi {
     warp(MAP_ZONE_SANCTUARY_BREEZY_MEADOW, 255, 21, 8)
     waitstate
     end
+}
+
+script BorealThicket_EventScript_TMIcyWind {
+	lock
+	if (flag(FLAG_ITEM_BOREAL_THICKET_TM_ICY_WIND)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+	setflag(FLAG_ITEM_BOREAL_THICKET_TM_ICY_WIND)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_TM_ICY_WIND)
+	release
+	end
 }
