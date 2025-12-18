@@ -213,12 +213,6 @@ script EventScript_Version {
 script EventScript_Nuzlocke {
 	setspeaker(SP_NAME_COLRESS)
 	msgbox(gText_Colress_NuzlockeExplained)
-	if (var(VAR_NUZLOCKE_DEATHS) == 1) {
-		msgbox("So far there has been 1 death.")
-	} else {
-		buffernumberstring(STR_VAR_1, VAR_NUZLOCKE_DEATHS)
-		msgbox("So far there have been {STR_VAR_1} deaths.")
-	}
 	msgbox(format("Would you like to turn off {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		msgbox(format("Are you sure you would like to turn off {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)

@@ -67,7 +67,7 @@
 // Tracker Vars (Don't manually set)
 #define VAR_REPEL_STEP_COUNT                 0x4040
 #define VAR_MON_TO_PC                        0x4041
-#define VAR_NUZLOCKE_DEATHS                  0x4042
+// #define VAR_NUZLOCKE_DEATHS                  0x4042
 #define VAR_NEVER_SET                        0x4043
 
 // Zone State vars

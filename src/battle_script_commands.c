@@ -4332,8 +4332,6 @@ static void Cmd_dofaintanimation(void)
     if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX)
     {
         UndoDynamax(battler);
-        if (FlagGet(FLAG_SETTINGS_NUZLOCKE) && !BattlerHasAi(battler))
-            VarSet(VAR_NUZLOCKE_DEATHS, VarGet(VAR_NUZLOCKE_DEATHS) + 1);
         gBattleScripting.battler = battler;
         BattleScriptCall(BattleScript_DynamaxEnds_Ret);
         return;
