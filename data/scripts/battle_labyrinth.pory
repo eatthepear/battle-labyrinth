@@ -1527,12 +1527,16 @@ script EventScript_Difficulty_Info {
 		dynmultistack(0, 0, FALSE, 5, FALSE, VAR_DIFFICULTY, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
+				setspeaker("Colress")
 				msgbox(format("{COLOR RED}Easy{COLOR DARK_GRAY} is suited for casual players.\pFor the most part, you can play as if this was one of the harder vanilla Pokémon games, meaning you can grind experience, items, and money.\pYou gain double the amount of money from battles, and all trainers are one level lower than {COLOR RED}Normal{COLOR DARK_GRAY}."))
 			case 1:
+				setspeaker("Colress")
 				msgbox(format("{COLOR RED}Normal{COLOR DARK_GRAY} is suited for the typical player.\pThe game is more challenging than a vanilla Pokémon game.\pRecommended for first time playthroughs!"))
 			case 2:
+				setspeaker("Colress")
 				msgbox(format("{COLOR RED}Hard{COLOR DARK_GRAY} is suited for players looking for a serious challenge.\pYou can't use in-battle items during non-wild battles, you must play on SET mode, and your Pokémon can't gain EVs."))
 			case 3:
+				setspeaker("Colress")
 				msgbox(format("{COLOR RED}Brutal{COLOR DARK_GRAY} is suited for players experienced in challenging ROM hacks.\pAll changes from {COLOR RED}Hard{COLOR DARK_GRAY} are carried over, and {COLOR RED}Leviathan{COLOR DARK_GRAY} and other boss battles are more difficult.\pIn addition, the amount of money from trainers is halved, and the Pokémon, moves, abilities, NPCs, and services you have access to are more limited.\pAlso, any Rare Candies you don't pick up while you are in a Zone disappear upon leaving the Zone.\pFinally, the AI cannot be PP stalled without the Pressure ability."))
 			case 4:
 			case MULTI_B_PRESSED:
