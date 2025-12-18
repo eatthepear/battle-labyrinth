@@ -432,7 +432,7 @@
 // #define FLAG_ITEM_ZONE8C_RANDOM_2                  0x32D
 // #define FLAG_ITEM_ZONE8C_FULL_HEAL                 0x32E
 #define FLAG_ITEM_ZONE8C_RANDOM_1                  0x32F
-#define FLAG_ITEM_ZONE9A_GEMS                      0x330
+#define FLAG_ITEM_ZONE9A_RANDOM_1                      0x330
 #define FLAG_ITEM_ZONE9A_BIG_ROOT                  0x331
 #define FLAG_ITEM_ZONE9A_TM_PLUCK                  0x332
 #define FLAG_ITEM_ZONE9G_CHARCOAL                  0x333

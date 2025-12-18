@@ -5,7 +5,7 @@ mapscripts Zone9A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE9A_GEMS)) {
+		if (flag(FLAG_ITEM_ZONE9A_RANDOM_1)) {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -176,9 +176,9 @@ script Zone9A_EventScript_BigRoot {
 	end
 }
 
-script Zone9A_EventScript_Gems {
+script Zone9A_EventScript_Random1 {
 	lock
-	if (flag(FLAG_ITEM_ZONE9A_GEMS)) {
+	if (flag(FLAG_ITEM_ZONE9A_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -186,11 +186,10 @@ script Zone9A_EventScript_Gems {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE9A_GEMS)
+	setflag(FLAG_ITEM_ZONE9A_RANDOM_1)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_POISON_GEM)
-	finditem(ITEM_STEEL_GEM)
-	finditem(ITEM_DARK_GEM)
+	specialvar(VAR_TEMP_1, RandomItemChest)
+	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
