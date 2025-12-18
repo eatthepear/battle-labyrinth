@@ -235,8 +235,8 @@ script Zone9A_EventScript_Demi {
 	end
 }
 
-script Zone9A_EventScript_Kimberly {
-	trainerbattle_single(TRAINER_PBL_KIMBERLY, format("Raising Pokémon is hard work!"), format("Am I working hard, or hardly working?"))
-	msgbox(format("It doesn't feel like work when it's what I love!"), MSGBOX_AUTOCLOSE)
+script Zone9A_EventScript_Calvin {
+	trainerbattle_single(TRAINER_PBL_CALVIN, format("I'm on the search, deep in the jungle, for the rarest Pokémon in the world!"), format("I suppose I'm not that deep in the jungle."))
+	msgbox(format("I'm trying to find the Legendary Pokémon Mew!"), MSGBOX_AUTOCLOSE)
 	end
 }

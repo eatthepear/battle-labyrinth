@@ -1307,9 +1307,9 @@ Pic: Collector
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 4
 Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_7_AND_8
+Copy Pool: TRAINER_POOL_COLLECTOR
 
 === TRAINER_PBL_EMILIANO ===
 Name: Emiliano
@@ -1577,16 +1577,16 @@ Party Size: 4
 Pool Prune: Non Ghost
 Copy Pool: TRAINER_POOL_ZONE_9
 
-=== TRAINER_PBL_KIMBERLY ===
-Name: Kimberly
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
-Music: Female
+=== TRAINER_PBL_CALVIN ===
+Name: Calvin
+Class: Collector
+Pic: Collector
+Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
 Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_9
+Copy Pool: TRAINER_POOL_COLLECTOR
 
 === TRAINER_PBL_ARI ===
 Name: Ari
@@ -6498,3 +6498,53 @@ Farfetch'd Galar
 Sableye
 
 Mawile
+
+=== TRAINER_POOL_COLLECTOR ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Magikarp
+
+Ralts
+
+Happiny
+
+Togepi
+
+Eevee
+
+Larvesta
+
+Riolu
+
+Dreepy
+
+Gible
+
+Deino
+
+Goomy
+
+Jangmo-o
+
+Larvitar
+
+Frigibax
+
+Beldum
+
+Dratini
+
+Bagon
+
+Charcadet
+
+Snom
+
+Toxel
+
+Tynamo
