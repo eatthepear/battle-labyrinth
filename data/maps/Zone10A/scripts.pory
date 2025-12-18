@@ -51,7 +51,7 @@ script Zone10A_EventScript_Jasmine {
 	if (var(VAR_ZONE_10_STATE) < 2) {
 		if (var(VAR_ZONE_10_STATE) == 0) {
 			setspeaker("Jasmine")
-			msgbox(format("Um… hi, trainer.\pIf you waht to enter this rest house, you have to prove your…\lum…\ldiligence."))
+			msgbox(format("Um… hi, trainer.\pIf you want to enter this rest house, you have to prove your…\lum…\ldiligence."))
 			setvar(VAR_ZONE_10_STATE, 1)
 		}
 		setspeaker("Jasmine")
@@ -82,13 +82,13 @@ script Zone10A_EventScript_Jasmine {
 	msgbox(format("You are a better Trainer than me, in both skill and kindness.\pI'd like you to have this."), MSGBOX_AUTOCLOSE)
 	giveitem(ITEM_TM_IRON_TAIL)
 	setspeaker("Jasmine")
-	msgbox(format("Iron Tail is a strong, powerful Steel-type move.\pYou'll find that its accuracy has improved over time, and is not too shabby either.\pI'd also like you to have this."))
+	msgbox(format("Iron Tail is a strong, powerful Steel-type move.\pYou'll find that its accuracy has improved over time, and is not too shabby either.\pI'd also like you to have this."), MSGBOX_AUTOCLOSE)
 	giveitem(ITEM_EVIOLITE)
 	setspeaker("Jasmine")
 	msgbox(format("The Eviolite can help keep your weaker, unevolved Pokémon safe."), MSGBOX_AUTOCLOSE)
 	delay(32)
 	setspeaker("Jasmine")
-	msgbox(format("Um… anyways, I'll get out of your way for now.\pGood luck on the rest of your journey, and keep training!"))
+	msgbox(format("Um… anyways, I'll get out of your way for now.\pGood luck on the rest of your journey, and keep training!"), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_STEELIX, Common_Movement_WalkRight)
 	waitmovement(0)
 	applymovement(LOCALID_STEELIX, Common_Movement_FaceDown)
