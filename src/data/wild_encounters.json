@@ -1861,32 +1861,32 @@
             "mons": [
               {
                 "min_level": 18,
-                "max_level": 18,
-                "species": "SPECIES_VENONAT"
+                "max_level": 19,
+                "species": "SPECIES_EXEGGCUTE"
               },
               {
                 "min_level": 18,
-                "max_level": 18,
+                "max_level": 19,
                 "species": "SPECIES_SHROODLE"
               },
               {
                 "min_level": 18,
-                "max_level": 18,
+                "max_level": 19,
                 "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 18,
-                "max_level": 18,
+                "max_level": 19,
                 "species": "SPECIES_NATU"
               },
               {
                 "min_level": 18,
-                "max_level": 18,
-                "species": "SPECIES_FOMANTIS"
+                "max_level": 19,
+                "species": "SPECIES_CROAGUNK"
               },
               {
                 "min_level": 18,
-                "max_level": 18,
+                "max_level": 19,
                 "species": "SPECIES_TROPIUS"
               },
               {
@@ -1902,22 +1902,22 @@
               {
                 "min_level": 18,
                 "max_level": 19,
-                "species": "SPECIES_PASSIMIAN"
-              },
-              {
-                "min_level": 18,
-                "max_level": 19,
-                "species": "SPECIES_PASSIMIAN"
-              },
-              {
-                "min_level": 18,
-                "max_level": 19,
                 "species": "SPECIES_ORANGURU"
               },
               {
                 "min_level": 18,
                 "max_level": 19,
-                "species": "SPECIES_ORANGURU"
+                "species": "SPECIES_PASSIMIAN"
+              },
+              {
+                "min_level": 18,
+                "max_level": 19,
+                "species": "SPECIES_FOMANTIS"
+              },
+              {
+                "min_level": 18,
+                "max_level": 19,
+                "species": "SPECIES_CHATOT"
               }
             ]
           },
@@ -1926,17 +1926,7 @@
             "mons": [
               {
                 "min_level": 18,
-                "max_level": 18,
-                "species": "SPECIES_BASCULIN_RED_STRIPED"
-              },
-              {
-                "min_level": 18,
-                "max_level": 18,
-                "species": "SPECIES_BASCULIN_RED_STRIPED"
-              },
-              {
-                "min_level": 18,
-                "max_level": 18,
+                "max_level": 19,
                 "species": "SPECIES_BASCULIN_RED_STRIPED"
               },
               {
@@ -1947,7 +1937,17 @@
               {
                 "min_level": 18,
                 "max_level": 19,
-                "species": "SPECIES_BASCULIN_BLUE_STRIPED"
+                "species": "SPECIES_STUNFISK"
+              },
+              {
+                "min_level": 18,
+                "max_level": 19,
+                "species": "SPECIES_CHEWTLE"
+              },
+              {
+                "min_level": 18,
+                "max_level": 19,
+                "species": "SPECIES_DEWPIDER"
               }
             ]
           },
@@ -1956,17 +1956,7 @@
             "mons": [
               {
                 "min_level": 18,
-                "max_level": 18,
-                "species": "SPECIES_BASCULIN_RED_STRIPED"
-              },
-              {
-                "min_level": 18,
-                "max_level": 18,
-                "species": "SPECIES_BASCULIN_RED_STRIPED"
-              },
-              {
-                "min_level": 18,
-                "max_level": 18,
+                "max_level": 19,
                 "species": "SPECIES_BASCULIN_RED_STRIPED"
               },
               {
@@ -1977,7 +1967,17 @@
               {
                 "min_level": 18,
                 "max_level": 19,
-                "species": "SPECIES_BASCULIN_BLUE_STRIPED"
+                "species": "SPECIES_STUNFISK"
+              },
+              {
+                "min_level": 18,
+                "max_level": 19,
+                "species": "SPECIES_CHEWTLE"
+              },
+              {
+                "min_level": 18,
+                "max_level": 19,
+                "species": "SPECIES_DEWPIDER"
               },
               {
                 "min_level": 5,
