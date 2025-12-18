@@ -576,6 +576,7 @@ script EventScript_Notebook_ZoneInfo {
 			msgbox(format("{COLOR GREEN}Zone 6{COLOR DARK_GRAY} is an island surrounded by ocean."))
 		case 7:
 		case 8:
+			msgbox(format("{COLOR GREEN}Zone 7{COLOR DARK_GRAY} is the exterior mountainside of two large mountains, while {COLOR GREEN}Zone 8{COLOR DARK_GRAY} is the interior of those mountains."))
 		case 9:
 		case 10:
 		case 11:
@@ -659,6 +660,14 @@ script EventScript_Notebook_ZoneInfo {
 				msgbox(format("On Brutal difficulty, all three fights take place in permanent rain."))
 			}
 		case 7:
+			msgbox(format("The first Leviathan has Pokémon that take advantage of held Sitrus Berries in different ways. Their Drifloon has Acrobatics and Unburden, their Dedenne has Cheek Pouch, and their Klawf can sometimes get multiple Anger Shell boosts because it has Sitrus Berry."))
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				msgbox(format("On Brutal difficulty, they also have a Appletun that maximizes the effectiveness of the Sitrus Berry with its Ripen ability."))
+			}
+			msgbox(format("The second Leviathan is a villainous team admin. They use a Stunfisk, a Beautifly, and a Purugly."))
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				msgbox(format("On Brutal difficulty, they also have a Bruxish."))
+			}
 		case 8:
 		case 9:
 		case 10:
