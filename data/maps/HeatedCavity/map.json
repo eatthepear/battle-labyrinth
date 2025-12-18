@@ -2,7 +2,7 @@
   "id": "MAP_HEATED_CAVITY",
   "name": "HeatedCavity",
   "layout": "LAYOUT_HEATED_CAVITY",
-  "music": "MUS_DUMMY",
+  "music": "MUS_DP_OREBURGH_GATE",
   "region_map_section": "MAPSEC_HEATED_CAVITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
