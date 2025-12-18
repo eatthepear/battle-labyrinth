@@ -162,6 +162,7 @@ static const u32 sNumFoes[] =
     34,
     34,
     19,
+    21,
 };
 
 u32 GetExpValue(void)

@@ -148,7 +148,7 @@ script Zone10B_EventScript_DragonTamer {
 			// !defeated(TRAINER_PBL_PEARLIE) ||
 			// !defeated(TRAINER_PBL_SUSAN) ||
 			// !defeated(TRAINER_PBL_CONRAD) ||
-			!defeated(TRAINER_PBL_BRETT)) {
+			!defeated(TRAINER_PBL_NINA)) {
 			msgbox("You still have trainers to defeat.")
 			applymovement(4, Common_Movement_FaceLeft)
 			waitmovement(0)

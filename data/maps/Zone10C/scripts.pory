@@ -1,1 +1,7 @@
 mapscripts Zone10C_MapScripts {}
+
+script Zone10C_EventScript_Kyle {
+	trainerbattle_single(TRAINER_PBL_KYLE, format("I daydream a lot. It's a bad habit!"), format("I dream of one day winning…"))
+	msgbox(format("I'll be a winner some day, just you wait!"), MSGBOX_AUTOCLOSE)
+	end
+}

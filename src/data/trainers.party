@@ -1698,86 +1698,9 @@ Pic: Picnicker
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Tinkatink
-Ability: Mold Breaker
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Metal Claw
-- Covet
-- Sweet Kiss
-- Slam
-
-Helioptile
-Ability: Sand Veil
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Thunder Wave
-- Quick Attack
-- Razor Wind
-- Parabolic Charge
-
-Darumaka
-Ability: Hustle
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Incinerate
-- Flame Wheel
-- Headbutt
-- Fire Fang
-
-Toedscool
-Ability: Mycelium Might
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Stun Spore
-- Mega Drain
-- Leech Seed
-- Mud Shot
-
-=== TRAINER_PBL_JACOB ===
-Name: Jacob
-Class: Bird Keeper
-Pic: Bird Keeper
-Music: Cool
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Rufflet
-Ability: Sheer Force
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Aerial Ace
-- Scary Face
-- Roost
-- Sky Drop
-
-Swablu
-Ability: Natural Cure
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Round
-- Haze
-- Feather Dance
-- Dragon Breath
-
-Murkrow
-Ability: Super Luck
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Night Shade
-- Assurance
-- Air Cutter
-- Whirlwind
-
-Trumbeak
-Ability: Skill Link
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Fury Attack
-- Pluck
-- Roost
-- Screech
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_10
 
 === TRAINER_PBL_DEWEY ===
 Name: Dewey
@@ -1786,130 +1709,9 @@ Pic: Camper
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Cacnea
-Ability: Water Absorb
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Pin Missile
-- Payback
-- Grass Whistle
-- Needle Arm
-
-Scraggy
-Ability: Intimidate
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Feint Attack
-- Brick Break
-- Torment
-- Swagger
-
-Trapinch
-Ability: Hyper Cutter
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Feint Attack
-- Bulldoze
-- Flail
-- Laser Focus
-
-Dwebble
-Ability: Sturdy
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bug Bite
-- Slash
-- Knock Off
-- Rock Blast
-
-=== TRAINER_PBL_ERNEST ===
-Name: Ernest
-Class: Hiker
-Pic: Hiker
-Music: Hiker
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Drilbur
-Ability: Sand Force
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Fury Swipes
-- Metal Claw
-- Slash
-- Dig
-
-Cufant
-Ability: Sheer Force
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bulldoze
-- Slam
-- Dig
-- Whirlwind
-
-Silicobra
-Ability: Shed Skin
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sand Tomb
-- Headbutt
-- Bulldoze
-- Mud-Slap
-
-Sandygast
-Ability: Water Compaction
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Hypnosis
-- Mega Drain
-- Bulldoze
-- Ancient Power
-
-=== TRAINER_PBL_KYLE ===
-Name: Kyle
-Class: Collector
-Pic: Collector
-Music: Suspicious
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Larvitar
-Ability: Guts
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Smack Down
-- Screech
-- Payback
-- Chip Away
-
-Riolu
-Ability: Steadfast
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Force Palm
-- Counter
-- Bullet Punch
-- Vacuum Wave
-
-Axew
-Ability: Mold Breaker
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Taunt
-- Breaking Swipe
-- Focus Energy
-- Slash
-
-Larvesta
-Ability: Flame Body
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Absorb
-- Flame Charge
-- Struggle Bug
-- Flame Wheel
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_10
 
 === TRAINER_PBL_ELIAS ===
 Name: Elias
@@ -1918,42 +1720,9 @@ Pic: Dragon Tamer
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Deino
-Ability: Hustle
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Dragon Breath
-- Bite
-- Headbutt
-- Screech
-
-Bagon
-Ability: Rock Head
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Headbutt
-- Dragon Breath
-- Scary Face
-- Fire Fang
-
-Gible
-Ability: Sand Veil
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bite
-- Bulldoze
-- Take Down
-- Scary Face
-
-Jangmo-o
-Ability: Soundproof
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Scary Face
-- Headbutt
-- Screech
-- Dragon Tail
+Party Size: 4
+Pool Prune: Non Dragon
+Copy Pool: TRAINER_POOL_COLLECTOR
 
 === TRAINER_PBL_PEARLIE ===
 Name: Pearlie
@@ -1962,120 +1731,31 @@ Pic: Backpacker F
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Passimian
-Ability: Receiver
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Feint
-- Vital Throw
-- Scary Face
-- Take Down
-
-=== TRAINER_PBL_SUSAN ===
-Name: Susan
-Class: Backpacker
-Pic: Backpacker F
-Music: Hiker
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Oranguru
-Ability: Symbiosis
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Psych Up
-- Extrasensory
-- Instruct
-- After You
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_10
 
 === TRAINER_PBL_CONRAD ===
-Name: Ernest
+Name: Conrad
 Class: Hiker
 Pic: Hiker
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 4
+Pool Prune: Non Ground Rock Steel
+Copy Pool: TRAINER_POOL_ZONE_10
 
-Aron
-Ability: Sturdy
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Metal Sound
-- Metal Claw
-- Rock Tomb
-- Take Down
-
-Hippopotas
-Ability: Sand Force
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sand Tomb
-- Dig
-- Take Down
-- Slack Off
-
-Sandile
-Ability: Intimidate
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Scary Face
-- Dig
-- Assurance
-- Rock Climb
-
-Rhyhorn
-Ability: Rock Head
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Horn Attack
-- Smack Down
-- Bulldoze
-- Take Down
-
-=== TRAINER_PBL_BRETT ===
-Name: Brett
-Class: Fisherman
-Pic: Fisherman
-Music: Hiker
+=== TRAINER_PBL_KYLE ===
+Name: Kyle
+Class: Collector
+Pic: Collector
+Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Tentacool
-Ability: Liquid Ooze
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Acid Spray
-- Tickle
-- Haze
-- Brine
-
-Chinchou
-Ability: Volt Absorb
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Confuse Ray
-- Bubble Beam
-- Thunder Wave
-- Shock Wave
-
-Binacle
-Ability: Tough Claws
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Fury Cutter
-- Ancient Power
-- Razor Shell
-- Slash
-
-Corphish
-Ability: Hyper Cutter
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Aqua Jet
-- Chip Away
-- Bubble Beam
-- Razor Shell
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_COLLECTOR
 
 === TRAINER_PBL_ADAMINA_LEVIATHAN_9 ===
 Name: Adamina

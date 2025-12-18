@@ -243,27 +243,9 @@ script Zone10A_EventScript_Alana {
 	end
 }
 
-script Zone10A_EventScript_Jacob {
-	trainerbattle_single(TRAINER_PBL_JACOB, format("Even with a sandstorm, birds can still fly high!"), format("But sometimes it's better to land and rest!"))
-	msgbox(format("I should really go take a rest at the rest house."), MSGBOX_AUTOCLOSE)
-	end
-}
-
 script Zone10A_EventScript_Dewey {
-	trainerbattle_single(TRAINER_PBL_DEWEY, format("I'm looking to camp near some ruins! There must be an entrance near!"), format("No ruins in sight!"))
-	msgbox(format("My map says the ruins are to the north somewhere… I'm not camping until I find them!"), MSGBOX_AUTOCLOSE)
-	end
-}
-
-script Zone10A_EventScript_Ernest {
-	trainerbattle_single(TRAINER_PBL_ERNEST, format("I came prepared for the wrath of the desert!"), format("But I was not prepared for you!"))
+	trainerbattle_single(TRAINER_PBL_DEWEY, format("I came prepared for the wrath of the desert!"), format("But I was not prepared for you!"))
 	msgbox(format("Preparations are important, be it for hiking or battling!"), MSGBOX_AUTOCLOSE)
-	end
-}
-
-script Zone10A_EventScript_Kyle {
-	trainerbattle_single(TRAINER_PBL_KYLE, format("I daydream a lot. It's a bad habit!"), format("I dream of one day winning…"))
-	msgbox(format("I'll be a winner some day, just you wait!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -274,13 +256,7 @@ script Zone10A_EventScript_Elias {
 }
 
 script Zone10A_EventScript_Pearlie {
-	trainerbattle_single(TRAINER_PBL_PEARLIE, format("Backpacking together is safer!"), format("At least I have Susan!"))
-	msgbox(format("We really like backpacking together."), MSGBOX_AUTOCLOSE)
-	end
-}
-
-script Zone10A_EventScript_Susan {
-	trainerbattle_single(TRAINER_PBL_SUSAN, format("Backpacking together makes us stronger!"), format("At least I have Pearlie!"))
+	trainerbattle_single(TRAINER_PBL_PEARLIE, format("Backpacking together is safer!"), format("At least I have my Pokémon!"))
 	msgbox(format("We really like backpacking together."), MSGBOX_AUTOCLOSE)
 	end
 }
@@ -288,11 +264,5 @@ script Zone10A_EventScript_Susan {
 script Zone10A_EventScript_Conrad {
 	trainerbattle_single(TRAINER_PBL_CONRAD, format("Sand keeps getting in my lunch, so I'll take out my frustration on you!"), format("Ugh! Now there's sand everywhere!"))
 	msgbox(format("I don't like sand.\n It's coarse and rough and irritating and it gets everywhere."), MSGBOX_AUTOCLOSE)
-	end
-}
-
-script Zone10A_EventScript_Brett {
-	trainerbattle_single(TRAINER_PBL_BRETT, format("My friend told me I could find an oasis in the desert, so I've come to fish!"), format("Uh… I'm realizing now she didn't mean a literal oasis."))
-	msgbox(format("There doesn't seem to be any water anywhere…\pMy friend gave me bad advice!"), MSGBOX_AUTOCLOSE)
 	end
 }
