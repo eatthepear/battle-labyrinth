@@ -100,15 +100,6 @@ script Zone5B_EventScript_WarpToPriorWarp {
 	end
 }
 
-script EventScript_Lunatone {
-	lock
-	faceplayer
-	playmoncry(SPECIES_LUNATONE, CRY_MODE_NORMAL)
-	msgbox(format("Lunee!"))
-	waitmoncry
-	release
-}
-
 script Zone5B_EventScript_Sylvia {
 	trainerbattle_single(TRAINER_PBL_SYLVIA, format("Psychic Pokémon are the most powerful!"), format("I stand corrected!"))
 	msgbox(format("You are the most powerful!\pWell, aside from our Gym Leader!"), MSGBOX_AUTOCLOSE)

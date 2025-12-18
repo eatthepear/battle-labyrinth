@@ -2832,3 +2832,21 @@ script EventScript_Skwovet {
 	release
 	end
 }
+
+script EventScript_Lunatone {
+	lock
+	faceplayer
+	playmoncry(SPECIES_LUNATONE, CRY_MODE_NORMAL)
+	msgbox(format("Lunee!"))
+	waitmoncry
+	release
+}
+
+script EventScript_Steelix {
+	lock
+	faceplayer
+	playmoncry(SPECIES_STEELIX, CRY_MODE_NORMAL)
+	msgbox(format("Lix! Lix!"))
+	waitmoncry
+	release
+}
