@@ -554,5 +554,7 @@ const u32 gObjectEventPic_Saturn[] = INCBIN_U32("graphics/object_events/pics/peo
 const u16 gObjectEventPal_Saturn[] = INCBIN_U16("graphics/object_events/pics/people/saturn.gbapal");
 const u32 gObjectEventPic_Cyrus[] = INCBIN_U32("graphics/object_events/pics/people/cyrus.4bpp");
 const u16 gObjectEventPal_Cyrus[] = INCBIN_U16("graphics/object_events/pics/people/cyrus.gbapal");
+const u32 gObjectEventPic_Jasmine[] = INCBIN_U32("graphics/object_events/pics/people/jasmine.4bpp");
+const u16 gObjectEventPal_Jasmine[] = INCBIN_U16("graphics/object_events/pics/people/jasmine.gbapal");
 
 const u32 gFieldEffectObjectPic_SnowFootprints[] = INCBIN_U32("graphics/field_effects/pics/snow_footprints.4bpp");
