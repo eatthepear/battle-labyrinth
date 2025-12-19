@@ -1371,7 +1371,6 @@ script EventScript_Sign_Porygon {
 	waitbuttonpress
 	hidemonpic
 	closemessage
-	release
 }
 
 script EventScript_Sign_AutoRun {
