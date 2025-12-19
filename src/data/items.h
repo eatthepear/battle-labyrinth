@@ -2939,7 +2939,7 @@ const struct Item gItemsInfo[] =
     [ITEM_HEART_SCALE] =
     {
         .name = ITEM_NAME("Heart Scale"),
-        .price = 2500,
+        .price = 2400,
         .description = COMPOUND_STRING(
             "A lovely scale.\n"
             "It is coveted by\n"
