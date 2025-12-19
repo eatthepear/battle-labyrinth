@@ -73,6 +73,8 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_PEACEFUL_GROVE] = 0x40,
     [MAPSEC_WHISPER_CAVE] = 0x41,
     [MAPSEC_HIDDEN_GROTTO] = 0x42,
+    [MAPSEC_HEATED_CAVITY] = 0x43,
+    [MAPSEC_BOREAL_THICKET] = 0x44,
 };
 
 u8 NuzlockeFlagSet(u16 mapsec)
