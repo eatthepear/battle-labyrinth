@@ -5282,7 +5282,7 @@
               {
                 "min_level": 13,
                 "max_level": 14,
-                "species": "SPECIES_HOOTHOOT"
+                "species": "SPECIES_BUNEARY"
               },
               {
                 "min_level": 13,
@@ -5302,12 +5302,12 @@
               {
                 "min_level": 13,
                 "max_level": 14,
-                "species": "SPECIES_SNOVER"
+                "species": "SPECIES_BERGMITE"
               },
               {
                 "min_level": 13,
                 "max_level": 14,
-                "species": "SPECIES_SNOM"
+                "species": "SPECIES_SWINUB"
               },
               {
                 "min_level": 13,
@@ -5336,73 +5336,33 @@
               }
             ]
           },
-          "water_mons": {
-            "encounter_rate": 2,
+          "hidden_mons": {
+            "encounter_rate": 0,
             "mons": [
               {
                 "min_level": 13,
                 "max_level": 14,
-                "species": "SPECIES_SEEL"
+                "species": "SPECIES_SNOVER"
               },
               {
                 "min_level": 13,
                 "max_level": 14,
-                "species": "SPECIES_SPHEAL"
+                "species": "SPECIES_SNOM"
               },
               {
                 "min_level": 13,
                 "max_level": 14,
-                "species": "SPECIES_BERGMITE"
+                "species": "SPECIES_TEDDIURSA"
               },
               {
                 "min_level": 13,
                 "max_level": 14,
-                "species": "SPECIES_CLOBBOPUS"
+                "species": "SPECIES_HOOTHOOT"
               },
               {
                 "min_level": 13,
                 "max_level": 14,
-                "species": "SPECIES_EISCUE"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 13,
-                "max_level": 14,
-                "species": "SPECIES_SEEL"
-              },
-              {
-                "min_level": 13,
-                "max_level": 14,
-                "species": "SPECIES_SPHEAL"
-              },
-              {
-                "min_level": 13,
-                "max_level": 14,
-                "species": "SPECIES_BERGMITE"
-              },
-              {
-                "min_level": 13,
-                "max_level": 14,
-                "species": "SPECIES_CLOBBOPUS"
-              },
-              {
-                "min_level": 13,
-                "max_level": 14,
-                "species": "SPECIES_EISCUE"
-              },
-              {
-                "min_level": 13,
-                "max_level": 14,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 13,
-                "max_level": 14,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_RUFFLET"
               }
             ]
           }
