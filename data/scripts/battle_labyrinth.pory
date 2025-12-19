@@ -2,20 +2,6 @@ text gText_YouDontHaveEnoughMoney {
 	format("You don't have enough money.")
 }
 
-// Legacy
-script EventScript_MandatoryCheck {
-	if ((var(VAR_DIFFICULTY) >= DIFFICULTY_NORMAL)) {
-		specialvar(VAR_TEMP_0, GetNumTrainersRemaining)
-		if (var(VAR_TEMP_0) > 0) {
-			msgbox(format("You haven't defeated all the opponents in the area yet."))
-			call(EventScript_OpponentsRemainingMessage)
-			release
-			end
-		}
-	}
-	return
-}
-
 script EventScript_OpponentsRemainingMessage {
 	buffernumberstring(0, VAR_TEMP_0)
 	switch(var(VAR_TEMP_0)) {
