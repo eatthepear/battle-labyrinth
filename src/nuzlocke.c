@@ -1,6 +1,7 @@
 #include "global.h"
 #include "nuzlocke.h"
 #include "event_data.h"
+#include "overworld.h"
 #include "pokedex.h"
 
 const u8 NuzlockeLUT[] =
@@ -586,4 +587,13 @@ void CheckSpeciesClause(void)
 	if (IsCaptureBlockedBySpeciesClause(VarGet(VAR_TEMP_0))) {
 		FlagSet(FLAG_TEMP_1);
 	}
+}
+
+// Use as a callnative in .pory files, i.e.
+// callnative(CheckSpeciesClause)
+// if (flag(FLAG_TEMP_1) == TRUE) {
+void GotEncounterFromCurrentArea(void)
+{
+    if (NuzlockeFlagGet(GetCurrentRegionMapSectionId()) != 0)
+        FlagSet(FLAG_TEMP_1);
 }

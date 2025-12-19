@@ -232,6 +232,7 @@ text gText_Colress_NuzlockeExplained {
 	"It comes with Species Clause, Shiny Clause, and Gift Clause.\p"
 	"In addition, Gift Pokémon are randomized among their options, if any.\p"
 	"You also cannot catch encounters through the DexNav.\p"
+	"As an add on, Honey Trees always let you reroll dupes.\p"
 	"It is not recommended to play Nuzlocke mode unless you are familiar with Nuzlockes already.\p"
 	"Nuzlocke mode can only be enabled at the beginning of the game, but can be disabled at any point.")
 }

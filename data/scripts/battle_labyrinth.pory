@@ -446,8 +446,36 @@ script EventScript_ShakeTree {
 	waitse
 	special(HeadbuttWildEncounter)
 	waitstate
+	if (flag(FLAG_SETTINGS_NUZLOCKE)) {
+		call(EventScript_MultipleHoneyEncountersNuzlocke)
+	}
 	releaseall
 	end
+}
+
+script EventScript_MultipleHoneyEncountersNuzlocke {
+	while {
+		callnative(GotEncounterFromCurrentArea)
+		if (flag(FLAG_TEMP_1)) {
+			return
+		}
+		msgbox(format("It looks like there's still some honey on the tree.\pWait for another Pokémon?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			return
+		}
+		closemessage
+		delay(32)
+		setvar(VAR_0x8004, 1)
+		setvar(VAR_0x8005, 1)
+		setvar(VAR_0x8006, 8)
+		setvar(VAR_0x8007, 5)
+		special(ShakeCamera)
+		playse(SE_M_BIND)
+		waitstate
+		waitse
+		special(HeadbuttWildEncounter)
+		waitstate
+	}
 }
 
 script EventScript_HandleFlashlight {

@@ -1294,7 +1294,7 @@ void HeadbuttWildEncounter(void)
 
         if (TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo, WILD_AREA_HIDDEN, 0) == TRUE)
         {
-            BattleSetup_StartWildBattle();
+            BattleSetup_StartScriptedWildBattle();
             gSpecialVar_Result = TRUE;
             return;
         }
