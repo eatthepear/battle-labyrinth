@@ -369,6 +369,9 @@ script EventScript_NextZone {
 			setflag(FLAG_HIDE_ZONE9A_ERICA_WINSTRATE)
 			warp(MAP_ZONE9A, 255, 41, 22)
 		case 10:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				setflag(FLAG_HIDE_ZONE10A_MAX)
+			}
 			warp(MAP_ZONE10A, 255, 42, 51)
 	}
 	waitstate

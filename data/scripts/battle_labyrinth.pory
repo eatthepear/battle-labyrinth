@@ -51,15 +51,15 @@ mart Zone2A_Shop_TMShop {
 }
 
 mart Zone6A_Shop_TMShop {
+	ITEM_TM_DIG
+	ITEM_TM_DIVE
+}
+
+mart Zone10A_Shop_TMShop {
 	ITEM_TM_TRAILBLAZE
 	ITEM_TM_FLAME_CHARGE
 	ITEM_TM_CHARGE_BEAM
 	ITEM_TM_POWER_UP_PUNCH
-}
-
-mart Zone10A_Shop_TMShop {
-	// ITEM_TM_IRON_DEFENSE
-	ITEM_TM_AGILITY
 }
 
 mart Zone18A_Shop_TMShop {
