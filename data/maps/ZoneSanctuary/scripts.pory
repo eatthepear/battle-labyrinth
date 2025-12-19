@@ -522,6 +522,11 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setflag(FLAG_HIDE_ZONE10A_MAX)
 			completesubquest(QUEST_PBL, 9)
 			setvar(VAR_ZONE, 11)
+			playfanfare(MUS_OBTAIN_ITEM)
+			setspeaker(SP_NAME_COLRESS)
+			msgbox(Sanctuary_Text_Colress_Upgraded)
+			waitfanfare
+			setvar(VAR_FARM_STOCK, 10)
 		case 11:
 			completesubquest(QUEST_PBL, 10)
 			setvar(VAR_ZONE, 12)
@@ -1336,13 +1341,14 @@ script EventScript_Shop_FarmersStand_BuyItem {
 		return
 	}
 	while {
-		setspeaker("Cowgirl")
 		if (var(VAR_FARM_STOCK) == 0) {
+			setspeaker("Cowgirl")
 			msgbox(Text_Shop_FarmersStand_YouCantPurchaseMore)
 			return
 		}
 		buffernumberstring(0, VAR_FARM_STOCK)
 		bufferitemnameplural(1, VAR_TEMP_0, 2)
+		setspeaker("Cowgirl")
 		message("How many {STR_VAR_2} do you want?\n(You can still buy up to {STR_VAR_1} items.)")
 		waitmessage
 		buffernumberstring(0, 80 * 1)
@@ -1366,6 +1372,7 @@ script EventScript_Shop_FarmersStand_BuyItem {
 				buffernumberstring(0, 1)
 				bufferitemnameplural(1, VAR_TEMP_0, 1)
 				buffernumberstring(2, 80)
+				setspeaker("Cowgirl")
 				msgbox("You want to buy {STR_VAR_1} {STR_VAR_2}?\nThat will be ¥{STR_VAR_3}.", MSGBOX_YESNO)
 				if (var(VAR_RESULT) == YES) {
 					removemoney(80)
@@ -1385,6 +1392,7 @@ script EventScript_Shop_FarmersStand_BuyItem {
 				buffernumberstring(0, 5)
 				bufferitemnameplural(1, VAR_TEMP_0, 5)
 				buffernumberstring(2, 80 * 5)
+				setspeaker("Cowgirl")
 				msgbox("You want to buy {STR_VAR_1} {STR_VAR_2}?\nThat will be ¥{STR_VAR_3}.", MSGBOX_YESNO)
 				if (var(VAR_RESULT) == YES) {
 					removemoney(80 * 5)
@@ -1404,6 +1412,7 @@ script EventScript_Shop_FarmersStand_BuyItem {
 				buffernumberstring(0, 10)
 				bufferitemnameplural(1, VAR_TEMP_0, 10)
 				buffernumberstring(2, 80 * 10)
+				setspeaker("Cowgirl")
 				msgbox("You want to buy {STR_VAR_1} {STR_VAR_2}?\nThat will be ¥{STR_VAR_3}.", MSGBOX_YESNO)
 				if (var(VAR_RESULT) == YES) {
 					removemoney(80 * 10)
@@ -2103,7 +2112,7 @@ script EventScript_Shop_Varrick_Battle {
 		case 12:
 		case 13:
 		case 15:
-			// pokemart(Shop_Battle_3)
+			pokemart(Shop_Battle_3)
 		case 16:
 		case 17:
 		case 18:
@@ -2133,21 +2142,40 @@ mart Shop_Battle_2 {
 	ITEM_POKE_DOLL
 	// Type boosting items
 	ITEM_SILK_SCARF
-	// ITEM_CHARCOAL
-	// ITEM_MYSTIC_WATER
-	// ITEM_MAGNET
 	ITEM_MIRACLE_SEED
-	// ITEM_NEVER_MELT_ICE
-	// ITEM_BLACK_BELT
 	ITEM_POISON_BARB
-	// ITEM_SOFT_SAND
-	// ITEM_SHARP_BEAK
 	ITEM_TWISTED_SPOON
 	ITEM_SILVER_POWDER
-	// ITEM_HARD_STONE
+}
+
+mart Shop_Battle_3 {
+	// X Items
+	ITEM_X_ATTACK
+	ITEM_X_DEFENSE
+	ITEM_X_SP_ATK
+	ITEM_X_SP_DEF
+	ITEM_X_SPEED
+	ITEM_X_ACCURACY
+	ITEM_DIRE_HIT
+	ITEM_GUARD_SPEC
+	ITEM_POKE_DOLL
+	// Type boosting items
+	ITEM_SILK_SCARF
+	ITEM_CHARCOAL
+	ITEM_MYSTIC_WATER
+	ITEM_MAGNET
+	ITEM_MIRACLE_SEED
+	ITEM_NEVER_MELT_ICE
+	ITEM_BLACK_BELT
+	ITEM_POISON_BARB
+	ITEM_SOFT_SAND
+	ITEM_SHARP_BEAK
+	ITEM_TWISTED_SPOON
+	ITEM_SILVER_POWDER
+	ITEM_HARD_STONE
 	// ITEM_SPELL_TAG
 	// ITEM_DRAGON_FANG
-	// ITEM_BLACK_GLASSES
+	ITEM_BLACK_GLASSES
 	// ITEM_METAL_COAT
 	// ITEM_FAIRY_FEATHER
 
@@ -2310,17 +2338,32 @@ script EventScript_Shop_Varrick_Treasures {
 
 mart Shop_Treasures_2 {
 	ITEM_RED_SHARD
-	ITEM_BLUE_SHARD
-	ITEM_YELLOW_SHARD
 	ITEM_GREEN_SHARD
 }
 
 mart Shop_Treasures_3 {
-	ITEM_HEART_SCALE
 	ITEM_RED_SHARD
 	ITEM_BLUE_SHARD
 	ITEM_YELLOW_SHARD
 	ITEM_GREEN_SHARD
+	ITEM_BUG_TERA_SHARD
+	ITEM_DARK_TERA_SHARD
+	ITEM_DRAGON_TERA_SHARD
+	ITEM_ELECTRIC_TERA_SHARD
+	ITEM_FAIRY_TERA_SHARD
+	ITEM_FIGHTING_TERA_SHARD
+	ITEM_FIRE_TERA_SHARD
+	ITEM_FLYING_TERA_SHARD
+	ITEM_GHOST_TERA_SHARD
+	ITEM_GRASS_TERA_SHARD
+	ITEM_GROUND_TERA_SHARD
+	ITEM_ICE_TERA_SHARD
+	ITEM_NORMAL_TERA_SHARD
+	ITEM_POISON_TERA_SHARD
+	ITEM_PSYCHIC_TERA_SHARD
+	ITEM_ROCK_TERA_SHARD
+	ITEM_STEEL_TERA_SHARD
+	ITEM_WATER_TERA_SHARD
 }
 
 mart Shop_Treasures_4 {
@@ -2329,7 +2372,25 @@ mart Shop_Treasures_4 {
 	ITEM_BLUE_SHARD
 	ITEM_YELLOW_SHARD
 	ITEM_GREEN_SHARD
-	ITEM_BOTTLE_CAP
+	// ITEM_BOTTLE_CAP
+	ITEM_BUG_TERA_SHARD
+	ITEM_DARK_TERA_SHARD
+	ITEM_DRAGON_TERA_SHARD
+	ITEM_ELECTRIC_TERA_SHARD
+	ITEM_FAIRY_TERA_SHARD
+	ITEM_FIGHTING_TERA_SHARD
+	ITEM_FIRE_TERA_SHARD
+	ITEM_FLYING_TERA_SHARD
+	ITEM_GHOST_TERA_SHARD
+	ITEM_GRASS_TERA_SHARD
+	ITEM_GROUND_TERA_SHARD
+	ITEM_ICE_TERA_SHARD
+	ITEM_NORMAL_TERA_SHARD
+	ITEM_POISON_TERA_SHARD
+	ITEM_PSYCHIC_TERA_SHARD
+	ITEM_ROCK_TERA_SHARD
+	ITEM_STEEL_TERA_SHARD
+	ITEM_WATER_TERA_SHARD
 }
 
 mart Shop_Treasures_5 {
@@ -2348,24 +2409,6 @@ mart Shop_Treasures_6 {
 	ITEM_YELLOW_SHARD
 	ITEM_GREEN_SHARD
 	ITEM_GOLD_BOTTLE_CAP
-	#define ITEM_BUG_TERA_SHARD 774
-	#define ITEM_DARK_TERA_SHARD 775
-	#define ITEM_DRAGON_TERA_SHARD 776
-	#define ITEM_ELECTRIC_TERA_SHARD 777
-	#define ITEM_FAIRY_TERA_SHARD 778
-	#define ITEM_FIGHTING_TERA_SHARD 779
-	#define ITEM_FIRE_TERA_SHARD 780
-	#define ITEM_FLYING_TERA_SHARD 781
-	#define ITEM_GHOST_TERA_SHARD 782
-	#define ITEM_GRASS_TERA_SHARD 783
-	#define ITEM_GROUND_TERA_SHARD 784
-	#define ITEM_ICE_TERA_SHARD 785
-	#define ITEM_NORMAL_TERA_SHARD 786
-	#define ITEM_POISON_TERA_SHARD 787
-	#define ITEM_PSYCHIC_TERA_SHARD 788
-	#define ITEM_ROCK_TERA_SHARD 789
-	#define ITEM_STEEL_TERA_SHARD 790
-	#define ITEM_WATER_TERA_SHARD 791
 }
 
 script EventScript_Shop_Varrick_Other {
@@ -2382,11 +2425,11 @@ script EventScript_Shop_Varrick_Other {
 		case 7:
 		case 9:
 		case 10:
-			pokemart(Shop_Other_2)
 		case 11:
 		case 12:
 		case 13:
 		case 15:
+			pokemart(Shop_Other_2)
 			// pokemart(Shop_Other_3)
 		case 16:
 		case 17:
@@ -3156,10 +3199,12 @@ script EventScript_Shop_Lelouch_MoveReminder {
 	}
 	checkitem(ITEM_HEART_SCALE, 1)
 	if (var(VAR_RESULT) == FALSE) {
+		setspeaker("Lelouch")
 		msgbox(format("You don't have any Heart Scales."))
 		return
 	}
 	while {
+		setspeaker("Lelouch")
 		msgbox("Which Pokémon should\nrelearn a move?", MSGBOX_DEFAULT)
 		special(ChooseMonForMoveRelearner)
 		waitstate
@@ -3168,20 +3213,24 @@ script EventScript_Shop_Lelouch_MoveReminder {
 		}
 		special(IsSelectedMonEgg)
 		if (var(VAR_RESULT) == TRUE) {
+			setspeaker("Lelouch")
 			msgbox("That is an Egg.", MSGBOX_DEFAULT)
 			continue
 		}
 		if (var(VAR_0x8005) == 0) {
+			setspeaker("Lelouch")
 			msgbox("That Pokémon cannot\nrelearn any moves.", MSGBOX_DEFAULT)
 			continue
 		}
+		setspeaker("Lelouch")
 		msgbox("Which move should it\nrelearn?", MSGBOX_DEFAULT)
 		special(TeachMoveRelearnerMove)
 		waitstate
 		if (var(VAR_0x8004) == 0) {
 			continue
 		}
-		msgbox(format("{PLAYER} handed over 1 Heart Scale."))
+		bufferitemnameplural(2, ITEM_HEART_SCALE, 1)
+		msgbox(gText_Lelouch_PayItem)
 		removeitem(ITEM_HEART_SCALE)
 		break
 	}
@@ -3218,10 +3267,13 @@ script EventScript_Shop_Lelouch_MoveTutor {
         dynmultipush("Steel Wing - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_STEEL_WING)
         dynmultipush("Electroweb - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_ELECTROWEB)
 
-		if (var(VAR_ZONE) > 50) {
+		if (var(VAR_ZONE) > 8) {
 			dynmultipush("Thunder Fang - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_THUNDER_FANG)
 			dynmultipush("Fire Fang - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_FIRE_FANG)
 			dynmultipush("Ice Fang - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_ICE_FANG)
+		}
+
+		if (var(VAR_ZONE) > 50) {
 			dynmultipush("Fire Punch - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_FIRE_PUNCH)
 			dynmultipush("Ice Punch - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_ICE_PUNCH)
 			dynmultipush("Thunder Punch - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_THUNDER_PUNCH)
@@ -3329,7 +3381,7 @@ script EventScript_Shop_Lelouch_MoveTutor {
 		}
 
 		dynmultipush("Exit", 0)
-		dynmultistack(0, 0, FALSE, 5, FALSE, 1, DYN_MULTICHOICE_CB_NONE)
+		dynmultistack(0, 0, FALSE, 5, FALSE, VAR_TEMP_0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) { // VAR_TEMP_1 is the number of Shards, VAR_TEMP_2 is the type of Shard\
 			case MOVE_WATER_PULSE:
 			case MOVE_CHILLING_WATER:
@@ -3339,9 +3391,8 @@ script EventScript_Shop_Lelouch_MoveTutor {
 			case MOVE_MAGICAL_LEAF:
 			case MOVE_SHOCK_WAVE:
 			case MOVE_SWIFT:
-				copyvar(VAR_TEMP_3, VAR_RESULT)
-                copyvar(VAR_TEMP_0, VAR_TEMP_3)
-                copyvar(VAR_0x8005, VAR_TEMP_3)
+                copyvar(VAR_TEMP_0, VAR_RESULT)
+                copyvar(VAR_0x8005, VAR_RESULT)
                 setvar(VAR_TEMP_1, 1)
                 setvar(VAR_TEMP_2, ITEM_RED_SHARD)
 			case MOVE_THUNDER_FANG:
@@ -3370,9 +3421,8 @@ script EventScript_Shop_Lelouch_MoveTutor {
             case MOVE_STOMPING_TANTRUM:
             case MOVE_MYSTICAL_FIRE:
             case MOVE_SCALE_SHOT:
-				copyvar(VAR_TEMP_3, VAR_RESULT)
-                copyvar(VAR_TEMP_0, VAR_TEMP_3)
-                copyvar(VAR_0x8005, VAR_TEMP_3)
+                copyvar(VAR_TEMP_0, VAR_RESULT)
+                copyvar(VAR_0x8005, VAR_RESULT)
                 setvar(VAR_TEMP_1, 2)
                 setvar(VAR_TEMP_2, ITEM_RED_SHARD)
             case MOVE_ICE_SPINNER:
