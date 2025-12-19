@@ -4935,7 +4935,7 @@
               {
                 "min_level": 2,
                 "max_level": 3,
-                "species": "SPECIES_DEERLING"
+                "species": "SPECIES_DEERLING_SUMMER"
               },
               {
                 "min_level": 2,
@@ -5287,7 +5287,7 @@
               {
                 "min_level": 13,
                 "max_level": 14,
-                "species": "SPECIES_POOCHYENA"
+                "species": "SPECIES_DEERLING_WINTER"
               },
               {
                 "min_level": 13,
