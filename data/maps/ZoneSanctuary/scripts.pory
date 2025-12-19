@@ -2344,7 +2344,6 @@ mart Shop_Treasures_2 {
 mart Shop_Treasures_3 {
 	ITEM_RED_SHARD
 	ITEM_BLUE_SHARD
-	ITEM_YELLOW_SHARD
 	ITEM_GREEN_SHARD
 	ITEM_BUG_TERA_SHARD
 	ITEM_DARK_TERA_SHARD
@@ -2942,6 +2941,7 @@ script EventScript_Shop_Lelouch_Services {
 			case 0:
 				call(EventScript_Shop_Lelouch_MoveReminder)
 			case 1:
+				setvar(VAR_TEMP_0, 1)
 				call(EventScript_Shop_Lelouch_MoveTutor)
 			case 3:
 			case MULTI_B_PRESSED:
