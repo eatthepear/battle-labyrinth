@@ -800,7 +800,7 @@ script EventScript_Notebook_Pokemon {
 					call(EventScript_Notebook_Abilities)
 				}
 			case 2:
-				msgbox(format("Many Pokémon have evolution methods that are another option from their default or directly replace the default.\pThis includes Day/Night evolutions, Friendship evolutions, weak Pokémon evolutions, and hard to achieve evolutions.\pYou can see how to evolve a Pokémon in the Pokédex."))
+				msgbox(format("Many Pokémon have evolution methods that are another option from their default or directly replace the default.\pThis includes Day/Night evolutions, Friendship evolutions, gender based evolutions, weak Pokémon evolutions, and hard to achieve evolutions.\pYou can see how to evolve a Pokémon in the Pokédex."))
 				msgbox(format("The next page notes Pokémon with major evolution changes. Would you like to read it?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == YES) {
 					call(EventScript_Notebook_Evolutions)
@@ -991,6 +991,10 @@ script EventScript_Notebook_Evolutions {
 		dynmultipush("Eevee - Evo Stone", SPECIES_EEVEE)
 		dynmultipush("Gimmighoul - Evo Stone", SPECIES_GIMMIGHOUL)
 		dynmultipush("Milcery - Evo Stone", SPECIES_MILCERY)
+        dynmultipush("Combee - Lv. 16", SPECIES_COMBEE)
+        dynmultipush("Kirlia - Evo Stone", SPECIES_KIRLIA)
+        dynmultipush("Snorunt - Evo Stone", SPECIES_KIRLIA)
+        dynmultipush("Salandit - Lv. 33", SPECIES_SALANDIT)
 		dynmultipush("Igglybuff - Lv. 10", SPECIES_IGGLYBUFF)
 		dynmultipush("Cleffa - Lv. 10", SPECIES_CLEFFA)
 		dynmultipush("Azurill - Lv. 10", SPECIES_AZURILL)
@@ -1022,7 +1026,6 @@ script EventScript_Notebook_Evolutions {
 		dynmultipush("Zigzagoon Galar - Lv. 16", SPECIES_ZIGZAGOON_GALAR)
 		dynmultipush("Poochyena - Lv. 16", SPECIES_POOCHYENA)
         dynmultipush("Whismur - Lv. 16", SPECIES_WHISMUR)
-        dynmultipush("Combee - Lv. 16", SPECIES_COMBEE)
 		dynmultipush("Burmy - Lv. 16", SPECIES_BURMY)
         dynmultipush("Cherubi - Lv. 16", SPECIES_CHERUBI)
 		dynmultipush("Finneon - Lv. 16", SPECIES_FINNEON)
@@ -1084,6 +1087,14 @@ script EventScript_Notebook_Evolutions {
 				msgbox(format("Gimmighoul evolves into Gholdengo using a Dusk Stone."))
 			case SPECIES_MILCERY:
 				msgbox(format("Milcery evolves into Alcremie using a Shiny Stone."))
+			case SPECIES_COMBEE:
+				msgbox(format("Combee now evolves into Vespiquen regardless of gender and evolves at a new level."))
+			case SPECIES_KIRLIA:
+				msgbox(format("Kirlia now evolves into Gallade regardless of gender."))
+			case SPECIES_SNORUNT:
+				msgbox(format("Snorunt now evolves into Froslass regardless of gender."))
+			case SPECIES_SALANDIT:
+				msgbox(format("Salandit now evolves into Salazzle regardless of gender."))
 			case 0:
 			case MULTI_B_PRESSED:
 				return
