@@ -123,7 +123,7 @@ script Zone6A_EventScript_LeviathanBattle {
 	setspeaker("Mina")
 	msgbox(format("We're really sorry, again. We didn't mean to be so mean."))
 	setspeaker("Coby")
-	msgbox(format("Well, you live and you learn."))
+	msgbox(format("Well, you live and you learn."), MSGBOX_AUTOCLOSE)
 	setflag(FLAG_BEAT_LEVIATHAN_6)
 	setvar(VAR_ZONE_6_STATE, 1)
 	applymovement(LOCALID_COBY, Zone6A_Movement_Coby_WalkDown)
