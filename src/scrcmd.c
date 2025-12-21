@@ -2195,7 +2195,10 @@ bool8 ScrCmd_buffernumberstring(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1);
 
-    ConvertIntToDecimalStringN(sScriptStringVars[stringVarIndex], num, STR_CONV_MODE_LEFT_ALIGN, numDigits);
+    if (num == 0)
+        ConvertIntToDecimalStringN(sScriptStringVars[stringVarIndex], 0, STR_CONV_MODE_LEFT_ALIGN, 1);
+    else
+        ConvertIntToDecimalStringN(sScriptStringVars[stringVarIndex], num, STR_CONV_MODE_LEFT_ALIGN, numDigits);
     return FALSE;
 }
 
