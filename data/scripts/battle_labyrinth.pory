@@ -665,11 +665,11 @@ script EventScript_Notebook_ZoneInfo {
 				msgbox(format("On Brutal difficulty, they also have a Axew with Breaking Swipe."))
 			}
 		case 5:
-			msgbox(format("The Leviathan is a Psychic Gym Leader. Their Munna, Dottler, Natu, and Lunatone all can utilize Light Screen and Reflect to reduce damage."))
+			msgbox(format("The Leviathan is a Psychic Gym Leader. Their Munna, Spoink, Natu, and Lunatone all can utilize Light Screen and Reflect to reduce damage."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, their Gym has permanent Psychic Terrain, and their Natu and Lunatone are higher level."))
+				msgbox(format("On Brutal difficulty, their Gym has permanent Psychic Terrain, and their Lunatone has improved move options instead of the screens."))
 			}
-			msgbox(format("There is also a Rich Boy guarding a Rare Candy who uses Delibird, Unown, and Spinda."))
+			msgbox(format("There is also a Rich Boy guarding a Rare Candy who uses Delibird, Farfetch'd, and Spinda."))
 		case 6:
 			msgbox(format("There are three trainers you must defeat in a row.\pThe first uses a Finneon, a Barboach, and a Goldeen.\pThe second uses a Pyukumuku.\pThe third uses a Wiglett, a Mantyke, and a Corsola."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
