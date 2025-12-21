@@ -3412,7 +3412,7 @@ void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
 
 bool8 ScrCmd_checkspeciesclause(struct ScriptContext *ctx)
 {
-    u16 species = ScriptReadHalfword(ctx);
+    u16 species = VarGet(ScriptReadHalfword(ctx));
 
     Script_RequestEffects(SCREFF_V1);
 
