@@ -4640,14 +4640,14 @@ u16 RandomItemChest(void)
 #define RANDOM_HIDDEN_BERRY_TABLE_COUNT ARRAY_COUNT(sRandomHiddenBerryTable)
 static const struct ItemChest sRandomHiddenBerryTable[] =
 {
-    {	ITEM_ORAN_BERRY   	, {	 50,	 40,	  0,	100,	100,	100,	100,	100,	100,	100,	100,	} },
+    {	ITEM_ORAN_BERRY   	, {	 50,	 50,	  0,	100,	100,	100,	100,	100,	100,	100,	100,	} },
     {	ITEM_PECHA_BERRY	, {	 15,	 15,	 15,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
     {	ITEM_CHERI_BERRY	, {	 15,	 15,	 15,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
     {	ITEM_CHESTO_BERRY	, {	  8,	  8,	  8,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
     {	ITEM_RAWST_BERRY	, {	  8,	  8,	  8,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
     {	ITEM_ASPEAR_BERRY	, {	  2,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
     {	ITEM_PERSIM_BERRY	, {	  2,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_SITRUS_BERRY	, {	  0,	  0,	 40,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_SITRUS_BERRY	, {	  0,	  0,	 50,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
 };
 
 u16 RandomHiddenBerry(void)
