@@ -177,7 +177,7 @@ u32 GetExpValue(void)
         {
             levelCap = sLevelCapFlagMap[i];
             pastLevelCap = sLevelCapFlagMap[i-1];
-            numFoes = sNumFoes[i];
+            numFoes = sNumFoes[i-1];
             return (levelCap * levelCap * levelCap - pastLevelCap * pastLevelCap * pastLevelCap) * 1000 / numFoes / 575;
         }
     }
