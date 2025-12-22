@@ -8,16 +8,17 @@ mapscripts Zone8B_MapScripts {
 	}
 }
 
+
 script Zone8B_EventScript_BuyTyrogue {
 	lock
 	faceplayer
-	if (flag(FLAG_ZONE8B_BOUGHT_TYROGUE) == true) {
-		msgbox(Zone8B_Text_BackToTraining)
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true && flag(FLAG_ZONE8B_NUZLOCKE_BOUGHT_FIGHTING) == true) {
+		msgbox(format("BUSY NOW! BUSY TRAINING!"))
 		release
 		end
 	}
-	showmoneybox(0, 0, 0)
-	msgbox(format("I'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pErr… Oh!\pYou look like a capable Trainer!\pAre you interested in raising this Tyrogue?\pI won't part with it without ¥1000!"), MSGBOX_YESNO)
+	showmoneybox(18, 0, 0)
+	msgbox(format("I'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pErr… Oh!\pYou look like a capable Trainer!\pAre you interested in raising a Fighting-type Pokémon?\pI won't part with one without ¥1000!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		hidemoneybox
 		msgbox(Zone8B_Text_BackToTraining)
@@ -26,25 +27,171 @@ script Zone8B_EventScript_BuyTyrogue {
 	}
 	checkmoney(1000, 0)
 	if (var(VAR_RESULT) == FALSE) {
-		msgbox("You don't have enough money.")
+		msgbox(gText_YouDontHaveEnoughMoney)
 		hidemoneybox
-		msgbox(Zone8B_Text_BackToTraining)
 		release
 		end
 	}
+	setvar(VAR_TEMP_1, SPECIES_TYROGUE)
+	setvar(VAR_TEMP_2, SPECIES_MAKUHITA)
+	setvar(VAR_TEMP_3, SPECIES_TIMBURR)
+	setvar(VAR_TEMP_4, SPECIES_MACHOP)
+	setvar(VAR_TEMP_5, SPECIES_THROH)
+	setvar(VAR_TEMP_6, SPECIES_SAWK)
+	setvar(VAR_TEMP_7, SPECIES_FLAMIGO)
+	setvar(VAR_TEMP_8, SPECIES_PASSIMIAN)
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
-		setvar(VAR_TEMP_3, 0) // counter for species clause
-		if (checkspeciesclause(VAR_TEMP_B) == TRUE) {
-			addvar(VAR_TEMP_3, 1)
+		msgbox(gText_Nuzlocke_GiftPossible, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			msgbox(format("Tyrogue, Makuhita, Timburr, Machop, Throh, Sawk, Flamigo, Passimian."))
 		}
-		if (var(VAR_TEMP_3) == 1) {
-			msgbox(format("Unfortunately, you have already obtained a Pokémon in this evolution line."))
+		setvar(VAR_TEMP_A, 0)
+		if (checkspeciesclause(VAR_TEMP_1) == TRUE) {
+			addvar(VAR_TEMP_A, 1)
+		}
+		if (checkspeciesclause(VAR_TEMP_2) == TRUE) {
+			addvar(VAR_TEMP_A, 1)
+		}
+		if (checkspeciesclause(VAR_TEMP_3) == TRUE) {
+			addvar(VAR_TEMP_A, 1)
+		}
+		if (checkspeciesclause(VAR_TEMP_4) == TRUE) {
+			addvar(VAR_TEMP_A, 1)
+		}
+		if (checkspeciesclause(VAR_TEMP_5) == TRUE) {
+			addvar(VAR_TEMP_A, 1)
+		}
+		if (checkspeciesclause(VAR_TEMP_6) == TRUE) {
+			addvar(VAR_TEMP_A, 1)
+		}
+		if (checkspeciesclause(VAR_TEMP_7) == TRUE) {
+			addvar(VAR_TEMP_A, 1)
+		}
+		if (checkspeciesclause(VAR_TEMP_8) == TRUE) {
+			addvar(VAR_TEMP_A, 1)
+		}
+		if (var(VAR_TEMP_A) == 8) {
+			msgbox(format("Unfortunately, you have already obtained a Pokémon in each of these evolution lines."))
+			release
+			end
+		}
+		msgbox(gText_Nuzlocke_ReadyReceive, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
+			msgbox(Zone8B_Text_BackToTraining)
+			release
+			end
+		}
+		setvar(VAR_TEMP_0, 0)
+		while (var(VAR_TEMP_0) == 0) {
+			random(8)
+			switch (var(VAR_RESULT)) {
+				case 0:
+					if (checkspeciesclause(VAR_TEMP_1) == TRUE) {
+						continue
+					}
+					copyvar(VAR_TEMP_0, VAR_TEMP_1)
+				case 1:
+					if (checkspeciesclause(VAR_TEMP_2) == TRUE) {
+						continue
+					}
+					copyvar(VAR_TEMP_0, VAR_TEMP_2)
+				case 2:
+					if (checkspeciesclause(VAR_TEMP_3) == TRUE) {
+						continue
+					}
+					copyvar(VAR_TEMP_0, VAR_TEMP_3)
+				case 3:
+					if (checkspeciesclause(VAR_TEMP_4) == TRUE) {
+						continue
+					}
+					copyvar(VAR_TEMP_0, VAR_TEMP_4)
+				case 4:
+					if (checkspeciesclause(VAR_TEMP_5) == TRUE) {
+						continue
+					}
+					copyvar(VAR_TEMP_0, VAR_TEMP_5)
+				case 5:
+					if (checkspeciesclause(VAR_TEMP_6) == TRUE) {
+						continue
+					}
+					copyvar(VAR_TEMP_0, VAR_TEMP_6)
+				case 6:
+					if (checkspeciesclause(VAR_TEMP_7) == TRUE) {
+						continue
+					}
+					copyvar(VAR_TEMP_0, VAR_TEMP_7)
+				case 7:
+					if (checkspeciesclause(VAR_TEMP_8) == TRUE) {
+						continue
+					}
+					copyvar(VAR_TEMP_0, VAR_TEMP_8)
+			}
+		}
+	} else {
+		message(format("CHOOSE YOUR FIGHTER!"))
+		bufferspeciesname(0, VAR_TEMP_1)
+		dynmultipush("{STR_VAR_1}", 0)
+		bufferspeciesname(0, VAR_TEMP_2)
+		dynmultipush("{STR_VAR_1}", 1)
+		bufferspeciesname(0, VAR_TEMP_3)
+		dynmultipush("{STR_VAR_1}", 2)
+		bufferspeciesname(0, VAR_TEMP_4)
+		dynmultipush("{STR_VAR_1}", 3)
+		bufferspeciesname(0, VAR_TEMP_5)
+		dynmultipush("{STR_VAR_1}", 4)
+		bufferspeciesname(0, VAR_TEMP_6)
+		dynmultipush("{STR_VAR_1}", 5)
+		bufferspeciesname(0, VAR_TEMP_7)
+		dynmultipush("{STR_VAR_1}", 6)
+		bufferspeciesname(0, VAR_TEMP_8)
+		dynmultipush("{STR_VAR_1}", 7)
+		dynmultipush("Exit", 8)
+		dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
+		switch (var(VAR_RESULT)) {
+			case 0:
+				copyvar(VAR_TEMP_0, VAR_TEMP_1)
+			case 1:
+				copyvar(VAR_TEMP_0, VAR_TEMP_2)
+			case 2:
+				copyvar(VAR_TEMP_0, VAR_TEMP_3)
+			case 3:
+				copyvar(VAR_TEMP_0, VAR_TEMP_4)
+			case 4:
+				copyvar(VAR_TEMP_0, VAR_TEMP_5)
+			case 5:
+				copyvar(VAR_TEMP_0, VAR_TEMP_6)
+			case 6:
+				copyvar(VAR_TEMP_0, VAR_TEMP_7)
+			case 7:
+				copyvar(VAR_TEMP_0, VAR_TEMP_8)
+			case 8:
+			case MULTI_B_PRESSED:
+				closemessage
+				hidemoneybox
+				msgbox(Zone8B_Text_BackToTraining)
+				release
+				end
+		}
+	}
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+		msgbox(format("Just to confirm…\pYou're sure you want to buy a Pokémon for ¥1000?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			msgbox(Zone8B_Text_BackToTraining)
+			release
+			end
+		}
+	} else {
+		bufferspeciesname(0, VAR_TEMP_0)
+		msgbox(format("Just to confirm…\pYou're sure you want to buy {STR_VAR_1} for ¥1000?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			hidemoneybox
+			msgbox(Zone8B_Text_BackToTraining)
 			release
 			end
 		}
 	}
-	setvar(VAR_TEMP_0, SPECIES_TYROGUE)
 	removemoney(1000)
 	updatemoneybox
 	msgbox(format("GOOD PURCHASE!"))
@@ -62,7 +209,7 @@ script Zone8B_EventScript_BuyTyrogue {
 			call(EventScript_ChoosePartyMonToSend)
 		}
 	}
-	givemon(VAR_TEMP_0, 15, metLocation=METLOC_ZONE8B_GIFT)
+	givemon(VAR_TEMP_0, 18, metLocation=METLOC_ZONE8B_GIFT)
 	if (var(VAR_RESULT) == MON_GIVEN_TO_PARTY) {
 		bufferspeciesname(0, VAR_TEMP_0)
 		msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
@@ -79,7 +226,7 @@ script Zone8B_EventScript_BuyTyrogue {
 		}
 		call(Common_EventScript_TransferredToPC)
 	}
-	setflag(FLAG_ZONE8B_BOUGHT_TYROGUE)
+	setflag(FLAG_ZONE8B_NUZLOCKE_BOUGHT_FIGHTING)
 	msgbox(Zone8B_Text_BackToTraining)
 	release
 	end
