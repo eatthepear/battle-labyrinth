@@ -1025,6 +1025,7 @@ script EventScript_Notebook_Evolutions {
 		dynmultipush("Nickit - Lv. 16", SPECIES_NICKIT)
 		dynmultipush("Lechonk - Lv. 16", SPECIES_LECHONK)
         dynmultipush("Smoliv - Lv. 16", SPECIES_SMOLIV)
+		dynmultipush("Machop - Lv. 25", SPECIES_MACHOP)
 		dynmultipush("Mantyke - Lv. 28", SPECIES_MANTYKE)
 		dynmultipush("Golbat - Lv. 28", SPECIES_GOLBAT)
 		dynmultipush("Meowth Alola - Lv. 28", SPECIES_MEOWTH_ALOLA)
