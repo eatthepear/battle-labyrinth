@@ -7,17 +7,17 @@
 
 static const u32 sLevelCapFlagMap[] =
 {
-    5,
+    5, // starting level cap
     7,
     9,
     11,
     13,
-    15,
+    15, // zone 5 cap
     17,
     21,
     21,
     23,
-    25,
+    25, // zone 10 cap
     31,
     33,
     42,
@@ -162,7 +162,7 @@ static const u32 sNumFoes[] =
     34,
     34,
     19,
-    21,
+    21, // zone 10
 };
 
 u32 GetExpValue(void)
@@ -171,7 +171,7 @@ u32 GetExpValue(void)
     u32 levelCap;
     u32 pastLevelCap;
     u32 numFoes;
-    for (i = 1; i < ARRAY_COUNT(sNumFoes); i++)
+    for (i = 1; i < ARRAY_COUNT(sLevelCapFlagMap); i++)
     {
         if (VarGet(VAR_LEVEL_CAP) == i)
         {
