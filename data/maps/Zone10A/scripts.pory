@@ -1,6 +1,9 @@
 mapscripts Zone10A_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ZONE_10_STATE, 0: Zone10A_EventScript_KimonoGirl_Intro
+	]
     MAP_SCRIPT_ON_TRANSITION {
-		if (var(VAR_ZONE_10_STATE) < 3) {
+		if (var(VAR_ZONE_10_STATE) < 5) {
 			setobjectxyperm(LOCALID_JASMINE, 47, 28)
 			setobjectxyperm(LOCALID_STEELIX, 48, 28)
 		}
@@ -29,6 +32,105 @@ mapscripts Zone10A_MapScripts {
 	}
 }
 
+script Zone10A_EventScript_KimonoGirl_Intro {
+	lockall
+	playbgm(MUS_HG_KIMONO_GIRL, 0)
+	applymovement(LOCALID_KIMONO_GIRL_10A, Common_Movement_FaceRight)
+	waitmovement(0)
+	applymovement(LOCALID_KIMONO_GIRL_10A, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	setspeaker("Kimono Girl")
+	msgbox(format("Oh, poor Kimono Girl, buffeted by the sandstorm.\pWon't you help show me the way to a shelter?"), MSGBOX_AUTOCLOSE)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	applymovement(LOCALID_KIMONO_GIRL_10A, Common_Movement_WalkRight3)
+	waitmovement(0)
+	applymovement(LOCALID_KIMONO_GIRL_10A, Common_Movement_FaceUp)
+	waitmovement(0)
+	setspeaker("Kimono Girl")
+	msgbox(Zone10A_Text_KimonoGirl, MSGBOX_AUTOCLOSE)
+	setfollowernpc(LOCALID_KIMONO_GIRL_10A, FOLLOWER_NPC_FLAG_ALL)
+	applymovement(LOCALID_KIMONO_GIRL_10A, Common_Movement_FaceLeft)
+	waitmovement(0)
+	setvar(VAR_ZONE_10_STATE, 1)
+	fadedefaultbgm
+	releaseall
+}
+
+text Zone10A_Text_KimonoGirl {
+	format("It seems fate has smiled upon me today, meeting you.\pI do hope we find our way to a shelter soon…")
+}
+
+script Zone10A_EventScript_KimonoGirl {
+	lock
+	faceplayer
+	setspeaker("Kimono Girl")
+	msgbox(Zone10A_Text_KimonoGirl, MSGBOX_AUTOCLOSE)
+	release
+	end
+}
+
+script Zone10A_EventScript_KimonoGirl_Exit {
+	lockall
+	applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Common_Movement_FaceRight)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	playbgm(MUS_HG_KIMONO_GIRL, 0)
+	facefollowernpc
+	setspeaker("Kimono Girl")
+	msgbox(format("Oh, look! The stairs to a shelter!\pThe poor Kimono Girl has been led to a shelter by a kind trainer!"))
+	msgbox(format("GIVEITEM CHUNK"), MSGBOX_AUTOCLOSE)
+	giveitem(ITEM_SACRED_ASH)
+	setspeaker("Kimono Girl")
+	msgbox(format("Goodbye."), MSGBOX_AUTOCLOSE)
+	getobjectcurrentxy(OBJ_EVENT_ID_NPC_FOLLOWER, destX=VAR_TEMP_0, destY=VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 33) {
+		applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Zone10A_Movement_KimonoGirl_Exit_Top)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 34) {
+		applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Zone10A_Movement_KimonoGirl_Exit_TopMiddle)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 35) {
+		applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Zone10A_Movement_KimonoGirl_Exit_BottomMiddle)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 36) {
+		applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Zone10A_Movement_KimonoGirl_Exit_Bottom)
+		waitmovement(0)
+	}
+	fadescreenswapbuffers(FADE_TO_BLACK)
+	destroyfollowernpc
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+	setvar(VAR_ZONE_10_STATE, 2)
+	fadedefaultbgm
+	releaseall
+}
+
+movement Zone10A_Movement_KimonoGirl_Exit_Top {
+	walk_left
+	walk_down * 2
+	walk_right
+}
+
+movement Zone10A_Movement_KimonoGirl_Exit_TopMiddle {
+	walk_down
+	walk_right
+}
+
+movement Zone10A_Movement_KimonoGirl_Exit_BottomMiddle {
+	walk_up
+	walk_right * 2
+}
+
+movement Zone10A_Movement_KimonoGirl_Exit_Bottom {
+	walk_left
+	walk_up * 2
+	walk_right
+}
+
 script Zone10A_EventScript_Jasmine {
 	lock
 	faceplayer
@@ -38,11 +140,11 @@ script Zone10A_EventScript_Jasmine {
 		release
 		end
 	}
-	if (var(VAR_ZONE_10_STATE) < 2) {
-		if (var(VAR_ZONE_10_STATE) == 0) {
+	if (var(VAR_ZONE_10_STATE) < 4) {
+		if (var(VAR_ZONE_10_STATE) == 2) {
 			setspeaker("Jasmine")
 			msgbox(format("Um… hi, trainer.\pIf you want to enter this rest house, you have to prove your…\lum…\ldiligence."))
-			setvar(VAR_ZONE_10_STATE, 1)
+			setvar(VAR_ZONE_10_STATE, 3)
 		}
 		setspeaker("Jasmine")
 		msgbox(format("In the desert, there are 5 hidden Blue Shards.\pFind them, and… return them to me."), MSGBOX_AUTOCLOSE)
@@ -58,7 +160,7 @@ script Zone10A_EventScript_Jasmine {
 		msgbox(format("Oh, great! You found all 5 Blue Shards. Then a final test remains: a battle.\p…\pPlease give me a moment to prepare myself."), MSGBOX_AUTOCLOSE)
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown2)
 		waitmovement(0)
-		setvar(VAR_ZONE_10_STATE, 2)
+		setvar(VAR_ZONE_10_STATE, 4)
 		release
 		end
 	}
@@ -88,7 +190,7 @@ script Zone10A_EventScript_Jasmine {
 	applymovement(LOCALID_JASMINE, Common_Movement_FaceDown)
 	waitmovement(0)
 	setflag(FLAG_BEAT_LEVIATHAN_10)
-	setvar(VAR_ZONE_10_STATE, 3)
+	setvar(VAR_ZONE_10_STATE, 5)
 	release
 	end
 }
