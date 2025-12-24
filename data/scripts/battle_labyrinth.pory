@@ -2827,9 +2827,12 @@ script EventScript_KimonoGirl_Items {
 			dynmultipush("Maximize Speed IV", ITEM_TIMID_MINT)
 	}
 
+	dynmultipush("Receive evo stone", ITEM_FIRE_STONE)
+
 	if (random(3) == 0) {
 		bufferitemnameplural(0, ITEM_SITRUS_BERRY, 10)
-		dynmultipush("Receive {STR_VAR_1}", ITEM_SITRUS_BERRY)
+		buffernumberstring(1, 10)
+		dynmultipush("Receive {STR_VAR_2} {STR_VAR_1}", ITEM_SITRUS_BERRY)
 	}
 
 	if (random(3) == 0) {
@@ -2843,16 +2846,20 @@ script EventScript_KimonoGirl_Items {
 		switch(var(VAR_RESULT)) {
 			case 0:
 				bufferitemnameplural(0, ITEM_RED_SHARD, 5)
-				dynmultipush("Receive {STR_VAR_1}", ITEM_RED_SHARD)
+				buffernumberstring(1, 5)
+				dynmultipush("Receive {STR_VAR_2} {STR_VAR_1}", ITEM_RED_SHARD)
 			case 1:
 				bufferitemnameplural(0, ITEM_GREEN_SHARD, 5)
-				dynmultipush("Receive {STR_VAR_1}", ITEM_GREEN_SHARD)
+				buffernumberstring(1, 5)
+				dynmultipush("Receive {STR_VAR_2} {STR_VAR_1}", ITEM_GREEN_SHARD)
 			case 2:
 				bufferitemnameplural(0, ITEM_BLUE_SHARD, 5)
-				dynmultipush("Receive {STR_VAR_1}", ITEM_BLUE_SHARD)
+				buffernumberstring(1, 5)
+				dynmultipush("Receive {STR_VAR_2} {STR_VAR_1}", ITEM_BLUE_SHARD)
 			case 3:
 				bufferitemnameplural(0, ITEM_YELLOW_SHARD, 5)
-				dynmultipush("Receive {STR_VAR_1}", ITEM_YELLOW_SHARD)
+				buffernumberstring(1, 5)
+				dynmultipush("Receive {STR_VAR_2} {STR_VAR_1}", ITEM_YELLOW_SHARD)
 		}
 	}
 
@@ -2862,7 +2869,7 @@ script EventScript_KimonoGirl_Items {
 		}
 	}
 
-	dynmultistack(0, 0, FALSE, 5, FALSE, ITEM_SACRED_ASH, DYN_MULTICHOICE_CB_SHOW_ITEM)
+	dynmultistack(0, 0, TRUE, 5, FALSE, ITEM_SACRED_ASH, DYN_MULTICHOICE_CB_SHOW_ITEM)
 	switch (var(VAR_RESULT)) {
 		case ITEM_SACRED_ASH:
 			special(HealPlayerParty)
@@ -2920,6 +2927,42 @@ script EventScript_KimonoGirl_Items {
 			setvar(VAR_TEMP_A, 49)
 			setvar(VAR_TEMP_B, 31)
 			special(SetIVOfSelectedPokemon)
+		case ITEM_FIRE_STONE:
+			setspeaker("Kimono Girl")
+			message(format("Choose which evolution stone you would like."))
+			waitmessage
+			bufferitemnameplural(0, ITEM_FIRE_STONE, 1)
+			buffernumberstring(1, 1)
+			dynmultipush("Receive {STR_VAR_2} {STR_VAR_1}", ITEM_FIRE_STONE)
+			bufferitemnameplural(0, ITEM_WATER_STONE, 1)
+			buffernumberstring(1, 1)
+			dynmultipush("Receive {STR_VAR_2} {STR_VAR_1}", ITEM_WATER_STONE)
+			bufferitemnameplural(0, ITEM_THUNDER_STONE, 1)
+			buffernumberstring(1, 1)
+			dynmultipush("Receive {STR_VAR_2} {STR_VAR_1}", ITEM_THUNDER_STONE)
+			bufferitemnameplural(0, ITEM_LEAF_STONE, 1)
+			buffernumberstring(1, 1)
+			dynmultipush("Receive {STR_VAR_2} {STR_VAR_1}", ITEM_LEAF_STONE)
+			bufferitemnameplural(0, ITEM_ICE_STONE, 1)
+			buffernumberstring(1, 1)
+			dynmultipush("Receive {STR_VAR_2} {STR_VAR_1}", ITEM_ICE_STONE)
+			bufferitemnameplural(0, ITEM_SUN_STONE, 1)
+			buffernumberstring(1, 1)
+			dynmultipush("Receive {STR_VAR_2} {STR_VAR_1}", ITEM_SUN_STONE)
+			bufferitemnameplural(0, ITEM_MOON_STONE, 1)
+			buffernumberstring(1, 1)
+			dynmultipush("Receive {STR_VAR_2} {STR_VAR_1}", ITEM_MOON_STONE)
+			bufferitemnameplural(0, ITEM_SHINY_STONE, 1)
+			buffernumberstring(1, 1)
+			dynmultipush("Receive {STR_VAR_2} {STR_VAR_1}", ITEM_SHINY_STONE)
+			bufferitemnameplural(0, ITEM_DUSK_STONE, 1)
+			buffernumberstring(1, 1)
+			dynmultipush("Receive {STR_VAR_2} {STR_VAR_1}", ITEM_DUSK_STONE)
+			bufferitemnameplural(0, ITEM_DAWN_STONE, 1)
+			buffernumberstring(1, 1)
+			dynmultipush("Receive {STR_VAR_2} {STR_VAR_1}", ITEM_DAWN_STONE)
+			dynmultistack(0, 0, TRUE, 5, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
+			giveitem(VAR_RESULT, 1)
 		case ITEM_SITRUS_BERRY:
 			giveitem(ITEM_SITRUS_BERRY, 10)
 		case ITEM_RED_SHARD:
