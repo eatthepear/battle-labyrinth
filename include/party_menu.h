@@ -123,4 +123,7 @@ void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task);
 void InitPartyMenuForHexorbFromField(u8 taskId);
 // End hexorb Branch
 
+void ChooseMonForIVChange(void);
+void SetIVOfSelectedPokemon(void);
+
 #endif // GUARD_PARTY_MENU_H

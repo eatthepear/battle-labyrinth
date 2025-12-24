@@ -8592,3 +8592,16 @@ void InitPartyMenuForHexorbFromField(u8 taskId)
 }
 // End hexorb Branch
 
+void ChooseMonForIVChange(void)
+{
+    InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_AND_CLOSE, FALSE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
+
+void SetIVOfSelectedPokemon(void)
+{
+    u8 monId = GetCursorSelectionMonId();
+    u32 stat = VarGet(VAR_TEMP_A);
+    u32 iv = VarGet(VAR_TEMP_B);
+    SetMonData(&gPlayerParty[monId], stat, &iv);
+    CalculateMonStats(&gPlayerParty[monId]);
+}

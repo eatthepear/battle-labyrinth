@@ -83,8 +83,7 @@ script Zone10A_EventScript_KimonoGirl_Exit {
 	facefollowernpc
 	setspeaker("Kimono Girl")
 	msgbox(format("Oh, look! The stairs to a shelter!\pThe poor Kimono Girl has been led to a shelter by a kind trainer!"))
-	msgbox(format("GIVEITEM CHUNK"), MSGBOX_AUTOCLOSE)
-	giveitem(ITEM_SACRED_ASH)
+	call(EventScript_KimonoGirl_Items)
 	setspeaker("Kimono Girl")
 	msgbox(format("Goodbye."), MSGBOX_AUTOCLOSE)
 	getobjectcurrentxy(OBJ_EVENT_ID_NPC_FOLLOWER, destX=VAR_TEMP_0, destY=VAR_TEMP_1)

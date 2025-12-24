@@ -2805,6 +2805,136 @@ gText_ExitSign:
 	.string "This is the exit!$"
 `
 
+script EventScript_KimonoGirl_Items {
+	setspeaker("Kimono Girl")
+	message(format("Choose your reward, trainer."))
+	waitmessage
+	dynmultipush("Heal Party", ITEM_SACRED_ASH)
+
+	random(6)
+	switch(var(VAR_RESULT)) {
+		case 0:
+			dynmultipush("Maximize HP IV", ITEM_SERIOUS_MINT)
+		case 1:
+			dynmultipush("Maximize Atk IV", ITEM_ADAMANT_MINT)
+		case 2:
+			dynmultipush("Maximize Def IV", ITEM_BOLD_MINT)
+		case 3:
+			dynmultipush("Maximize SpAtk IV", ITEM_MODEST_MINT)
+		case 4:
+			dynmultipush("Maximize SpDef IV", ITEM_CALM_MINT)
+		case 5:
+			dynmultipush("Maximize Speed IV", ITEM_TIMID_MINT)
+	}
+
+	if (random(3) == 0) {
+		bufferitemnameplural(0, ITEM_SITRUS_BERRY, 10)
+		dynmultipush("Receive {STR_VAR_1}", ITEM_SITRUS_BERRY)
+	}
+
+	if (random(3) == 0) {
+		if (var(VAR_ZONE) <= 10) {
+			random(2)
+		} elif (var(VAR_ZONE) <= 20) {
+			random(3)
+		} else {
+			random(4)
+		}
+		switch(var(VAR_RESULT)) {
+			case 0:
+				bufferitemnameplural(0, ITEM_RED_SHARD, 5)
+				dynmultipush("Receive {STR_VAR_1}", ITEM_RED_SHARD)
+			case 1:
+				bufferitemnameplural(0, ITEM_GREEN_SHARD, 5)
+				dynmultipush("Receive {STR_VAR_1}", ITEM_GREEN_SHARD)
+			case 2:
+				bufferitemnameplural(0, ITEM_BLUE_SHARD, 5)
+				dynmultipush("Receive {STR_VAR_1}", ITEM_BLUE_SHARD)
+			case 3:
+				bufferitemnameplural(0, ITEM_YELLOW_SHARD, 5)
+				dynmultipush("Receive {STR_VAR_1}", ITEM_YELLOW_SHARD)
+		}
+	}
+
+	if (random(3) == 0) {
+		if (!flag(FLAG_SETTINGS_NUZLOCKE) || !checkspeciesclause(SPECIES_EEVEE)) {
+			dynmultipush("Receive an Eevee egg", ITEM_LUCKY_EGG)
+		}
+	}
+
+	dynmultistack(0, 0, FALSE, 5, FALSE, ITEM_SACRED_ASH, DYN_MULTICHOICE_CB_SHOW_ITEM)
+	switch (var(VAR_RESULT)) {
+		case ITEM_SACRED_ASH:
+			special(HealPlayerParty)
+		case ITEM_SERIOUS_MINT:
+			special(ChooseMonForIVChange)
+			waitstate
+			if (var(VAR_0x8004) == 255) {
+				return
+			}
+			setvar(VAR_TEMP_A, 46)
+			setvar(VAR_TEMP_B, 31)
+			special(SetIVOfSelectedPokemon)
+		case ITEM_ADAMANT_MINT:
+			special(ChooseMonForIVChange)
+			waitstate
+			if (var(VAR_0x8004) == 255) {
+				return
+			}
+			setvar(VAR_TEMP_A, 47)
+			setvar(VAR_TEMP_B, 31)
+			special(SetIVOfSelectedPokemon)
+		case ITEM_BOLD_MINT:
+			special(ChooseMonForIVChange)
+			waitstate
+			if (var(VAR_0x8004) == 255) {
+				return
+			}
+			setvar(VAR_TEMP_A, 48)
+			setvar(VAR_TEMP_B, 31)
+			special(SetIVOfSelectedPokemon)
+		case ITEM_MODEST_MINT:
+			special(ChooseMonForIVChange)
+			waitstate
+			if (var(VAR_0x8004) == 255) {
+				return
+			}
+			setvar(VAR_TEMP_A, 50)
+			setvar(VAR_TEMP_B, 31)
+			special(SetIVOfSelectedPokemon)
+		case ITEM_CALM_MINT:
+			special(ChooseMonForIVChange)
+			waitstate
+			if (var(VAR_0x8004) == 255) {
+				return
+			}
+			setvar(VAR_TEMP_A, 51)
+			setvar(VAR_TEMP_B, 31)
+			special(SetIVOfSelectedPokemon)
+		case ITEM_TIMID_MINT:
+			special(ChooseMonForIVChange)
+			waitstate
+			if (var(VAR_0x8004) == 255) {
+				return
+			}
+			setvar(VAR_TEMP_A, 49)
+			setvar(VAR_TEMP_B, 31)
+			special(SetIVOfSelectedPokemon)
+		case ITEM_SITRUS_BERRY:
+			giveitem(ITEM_SITRUS_BERRY, 10)
+		case ITEM_RED_SHARD:
+			giveitem(ITEM_RED_SHARD, 5)
+		case ITEM_GREEN_SHARD:
+			giveitem(ITEM_GREEN_SHARD, 5)
+		case ITEM_BLUE_SHARD:
+			giveitem(ITEM_BLUE_SHARD, 5)
+		case ITEM_YELLOW_SHARD:
+			giveitem(ITEM_YELLOW_SHARD, 5)
+		case ITEM_LUCKY_EGG:
+			giveegg(SPECIES_EEVEE)
+	}
+}
+
 script EventScript_Furret {
 	lock
 	faceplayer
