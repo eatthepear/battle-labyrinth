@@ -385,7 +385,15 @@
       "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "EventScript_Sign_SortBag"
+      "script": "EventScript_Sign_Gauntlet"
+    },
+    {
+      "type": "sign",
+      "x": 37,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "EventScript_Sign_SanctuaryAreas"
     }
   ]
 }

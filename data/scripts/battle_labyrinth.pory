@@ -1312,11 +1312,19 @@ script EventScript_Notebook_TrainerTips {
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_18)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("View IVs & EVs", SUB_QUEST_18) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_19)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Backtracking", SUB_QUEST_19) }
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Level Cap", SUB_QUEST_19) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_20)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("Gym", SUB_QUEST_20) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_21)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("Select Switch", SUB_QUEST_21) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_22)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Gauntlet", SUB_QUEST_22) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_23)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Sanctuary Areas", SUB_QUEST_23) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_24)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Restore Held", SUB_QUEST_24) }
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_25)
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Sell Price", SUB_QUEST_25) }
 		dynmultipush("Back", 51)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
@@ -1338,9 +1346,13 @@ script EventScript_Notebook_TrainerTips {
 			case SUB_QUEST_16: call(EventScript_Sign_SortBag)
 			case SUB_QUEST_17: call(EventScript_Sign_ChangeMusic)
 			case SUB_QUEST_18: call(EventScript_Sign_StatsIVEV)
-			case SUB_QUEST_19: call(EventScript_Sign_Backtracking)
+			case SUB_QUEST_19: call(EventScript_Sign_LevelCap)
 			case SUB_QUEST_20: call(EventScript_Sign_Leader)
 			case SUB_QUEST_21: call(EventScript_Sign_SelectSwitch)
+			case SUB_QUEST_22: call(EventScript_Sign_SanctuaryAreas)
+			case SUB_QUEST_23: call(EventScript_Sign_Gauntlet)
+			case SUB_QUEST_24: call(EventScript_Sign_RestoreHeldItems)
+			case SUB_QUEST_25: call(EventScript_Sign_SellPrice)
 			case 51:
 			case MULTI_B_PRESSED:
 				return
@@ -1506,8 +1518,8 @@ script EventScript_Sign_StatsIVEV {
 	}
 }
 
-script EventScript_Sign_Backtracking {
-	msgbox(format("Trainer Tips\pSome Zones require backtracking in order to obtain all their items and rewards.\pYou can speak to the man in the Pokémon Center to access a past Zone for ¥1000."), MSGBOX_SIGN)
+script EventScript_Sign_LevelCap {
+	msgbox(format("Trainer Tips\pThe {COLOR RED}Notebook{COLOR DARK_GRAY} contains the level current level cap."), MSGBOX_SIGN)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_19)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_19)
@@ -1522,7 +1534,6 @@ script EventScript_Sign_Leader {
 	}
 }
 
-// everything below here is to assign (haha get it)
 script EventScript_Sign_SelectSwitch {
 	msgbox(format("Trainer Tips\pIn the party menu, you can press {SELECT_BUTTON} to quickly shift a Pokémon to the front of your party."), MSGBOX_SIGN)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_21)
@@ -1531,13 +1542,52 @@ script EventScript_Sign_SelectSwitch {
 	}
 }
 
+script EventScript_Sign_Gauntlet {
+	msgbox(format("Trainer Tips\pNot all Zones have a single Leviathan or boss.\pSome Zones have gauntlets, where you must win multiple battles in a row."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_22)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_22)
+	}
+}
+
+script EventScript_Sign_SanctuaryAreas {
+	msgbox(format("Trainer Tips\pThe Sanctuary has a few connected areas that are unlocked over time with access to new items."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_23)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_23)
+	}
+}
+
+script EventScript_Sign_RestoreHeldItems {
+	msgbox(format("Trainer Tips\pMatching Gen 9 mechanics, all held items (excluding Berries) are restored after battle."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_24)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_24)
+	}
+}
+
+script EventScript_Sign_SellPrice {
+	msgbox(format("Trainer Tips\pMatching Gen 9 mechanics, items can be sold at 1/4 of their original price."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_25)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_25)
+	}
+}
+
+// everything below here is to assign (haha get it)
+script EventScript_Sign_Backtracking {
+	msgbox(format("Trainer Tips\pSome Zones require backtracking in order to obtain all their items and rewards.\pYou can speak to the man in the Pokémon Center to access a past Zone for ¥1000."), MSGBOX_SIGN)
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_19)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(QUEST_SIGNS, SUB_QUEST_19)
+	}
+}
+
 script Zone7A_EventScript_HealSign {
-	completesubquest(QUEST_SIGNS, 26)
 	msgbox(format("A stop for weary travelers."), MSGBOX_SIGN)
 }
 
 script Zone9A_EventScript_HerbalSign {
-	completesubquest(QUEST_SIGNS, 28)
 	msgbox(format("Herbal and Incense Shop"), MSGBOX_SIGN)
 }
 
