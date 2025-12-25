@@ -5334,7 +5334,7 @@
     {
       "id": "LAYOUT_BOREAL_THICKET",
       "name": "BorealThicket_Layout",
-      "width": 30,
+      "width": 50,
       "height": 24,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_Snowy",
