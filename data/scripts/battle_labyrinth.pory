@@ -1325,7 +1325,7 @@ script EventScript_Notebook_TrainerTips {
 			case SUB_QUEST_3:  call(EventScript_Sign_AutoRun)
 			case SUB_QUEST_4:  call(EventScript_Sign_ZoneInfo)
 			case SUB_QUEST_5:  call(EventScript_Sign_InfiniteCandy)
-			case SUB_QUEST_6:  call(EventScript_Surveil)
+			case SUB_QUEST_6:  call(EventScript_Sign_Surveil)
 			case SUB_QUEST_7:  call(EventScript_Sign_HoneySweetScent)
 			case SUB_QUEST_8:  call(EventScript_Sign_HiddenItems)
 			case SUB_QUEST_9:  call(EventScript_Sign_Register)
@@ -1398,7 +1398,7 @@ script EventScript_Sign_InfiniteCandy {
 	}
 }
 
-script EventScript_Surveil {
+script EventScript_Sign_Surveil {
 	msgbox(format("Trainer Tips\pIn battle, you can use {COLOR RED}Surveil{COLOR DARK_GRAY} to see the opponent's team."), MSGBOX_SIGN)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_6)
 	if (var(VAR_RESULT) == FALSE) {
