@@ -14,7 +14,7 @@ script Zone5B_EventScript_Liza {
 		release
 		end
 	}
-	msgbox(format("{COLOR BLUE}Liza{COLOR DARK_GRAY}: Hehehe… Were you surprised?\pThis is my own Pokémon Gym, free from the shackles of my brother.\pWhile it would be nice to be around him sometimes…\pNever mind. You've brought yourself, and you're looking for a challenge.\pI hope to meet that expectation!\pBring it!"))
+	msgbox(format("{COLOR BLUE}Liza{COLOR DARK_GRAY}: Hehehe… Were you surprised?\pThis is my own Pokémon Gym, my very own, without my brother anywhere near!\pWhile it would be nice to be around him sometimes…\pNever mind. You've brought yourself, and you're looking for a challenge.\pI hope to meet that expectation!\pBring it!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_LIZA_LEVIATHAN_5, format("What? I lost?"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)

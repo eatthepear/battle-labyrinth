@@ -135,14 +135,14 @@ script Zone10A_EventScript_Jasmine {
 	faceplayer
 	if (flag(FLAG_BEAT_LEVIATHAN_10)) {
 		setspeaker("Jasmine")
-		msgbox(format("This desert may be harsh, but it's a great place to train Pokémon. Um… yep."))
+		msgbox(format("This desert may be harsh, but it's a great place to train Pokémon. Don't you agree?"))
 		release
 		end
 	}
 	if (var(VAR_ZONE_10_STATE) < 4) {
 		if (var(VAR_ZONE_10_STATE) == 2) {
 			setspeaker("Jasmine")
-			msgbox(format("Um… hi, trainer.\pIf you want to enter this rest house, you have to prove your…\lum…\ldiligence."))
+			msgbox(format("Hi, trainer.\pIf you want to enter this rest house, you have to prove your diligence."))
 			setvar(VAR_ZONE_10_STATE, 3)
 		}
 		setspeaker("Jasmine")
@@ -179,7 +179,7 @@ script Zone10A_EventScript_Jasmine {
 	msgbox(format("The Eviolite can help keep your weaker, unevolved Pokémon safe."), MSGBOX_AUTOCLOSE)
 	delay(32)
 	setspeaker("Jasmine")
-	msgbox(format("Um… anyways, I'll get out of your way for now.\pGood luck on the rest of your journey, and keep training!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("Um… I'll move out of your way.\pGood luck on the rest of your journey, and keep training to become stronger."), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_STEELIX, Common_Movement_WalkRight)
 	waitmovement(0)
 	applymovement(LOCALID_STEELIX, Common_Movement_FaceDown)
