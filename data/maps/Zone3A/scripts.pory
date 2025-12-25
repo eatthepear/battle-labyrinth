@@ -169,19 +169,64 @@ movement Zone3A_Movement_Remi_WalkBackToPhillipa {
 	face_left
 }
 
-script Zone3A_EventScript_BugCatcher {
+script Zone3A_EventScript_Trade {
 	lock
 	faceplayer
-	if (flag(FLAG_ZONE3A_RECEIVED_SILVER_POWDER) == true) {
-		msgbox(format("Type-boosting items like Silver Powder boost the power of the corresponding type moves by 20%!"))
+	if (flag(FLAG_ZONE3A_TRADE)) {
+		msgbox(Zone3A_Text_BeGood)
 		release
 		end
 	}
-	setflag(FLAG_ZONE3A_RECEIVED_SILVER_POWDER)
-	msgbox(format("Bug-type Pokémon love Silver Powder.\pHere, take one!"))
-	giveitem(ITEM_SILVER_POWDER)
+	setvar(VAR_0x8008, INGAME_TRADE_FARFETCHD)
+	copyvar(VAR_0x8004, VAR_0x8008)
+	specialvar(VAR_RESULT, GetInGameTradeSpeciesInfo)
+	copyvar(VAR_0x8009, VAR_RESULT)
+	msgbox(format("Hey! Are you a {STR_VAR_2} fan?\pIf so, let's trade {STR_VAR_2}s!\pI'll trade you a Galarian {STR_VAR_1} for a Kantonian {STR_VAR_1}!"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(Zone3A_Text_ComeBack)
+		release
+		end
+	}
+	special(ChoosePartyMon)
+	waitstate
+	copyvar(VAR_0x800A, VAR_0x8004)
+	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+		msgbox(Zone3A_Text_ComeBack)
+		release
+		end
+	}
+	specialvar(VAR_RESULT, IsPokemonFainted)
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox(format("Hey! Don't trade me a fainted Pokémon!"))
+		release
+		end
+	}
+	copyvar(VAR_0x8005, VAR_0x800A)
+	specialvar(VAR_RESULT, GetTradeSpecies)
+	copyvar(VAR_0x800B, VAR_RESULT)
+	if (var(VAR_RESULT) != VAR_0x8009) {
+		bufferspeciesname(STR_VAR_1, VAR_0x8009)
+		msgbox(format("Huh? That doesn't look anything like a {STR_VAR_1} to me."), MSGBOX_DEFAULT)
+		release
+		end
+	}
+	copyvar(VAR_0x8004, VAR_0x8008)
+	copyvar(VAR_0x8005, VAR_0x800A)
+	special(CreateInGameTradePokemon)
+	special(DoInGameTradeScene)
+	waitstate
+	msgbox(Zone3A_Text_BeGood)
+	setflag(FLAG_ZONE3A_TRADE)
 	release
 	end
+}
+
+text Zone3A_Text_ComeBack {
+	format("Come back with a Kantonian Farfetch'd if you want to trade!")
+}
+
+text Zone3A_Text_BeGood {
+	format("Please be good to my Farfetch'd!\pI wish I had a {COLOR RED}Notebook{COLOR DARK_GRAY} to see how to evolve a Galarian Farfetch'd…")
 }
 
 script Zone3A_EventScript_Random1 {

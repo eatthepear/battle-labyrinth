@@ -196,7 +196,7 @@
 #define FLAG_ZONE3A_MOVE_TUTOR_TAUGHT      0x112
 #define FLAG_ITEM_HEATED_CAVITY_TM_ROCK_TOMB                   0x113
 #define FLAG_ZONE3A_RECEIVED_SILVER_POWDER               0x114
-#define FLAG_ZONE3B_TRADED_ZIGZAGOON                      0x115
+#define FLAG_ZONE3A_TRADE                      0x115
 #define FLAG_HIDE_ZONE4A_KIMONO_GIRL                      0x116
 #define FLAG_ZONE4A_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG        0x117
 #define FLAG_ZONE5A_NUZLOCKE_BOUGHT_PIKACLONE             0x118

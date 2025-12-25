@@ -1048,10 +1048,10 @@ static const struct InGameTrade sIngameTrades[] =
         .sheen = 10,
         .requestedSpecies = SPECIES_SKITTY
     },
-    [INGAME_TRADE_ZIGZAGOON] =
+    [INGAME_TRADE_FARFETCHD] =
     {
         .nickname = _("Zaggers"),
-        .species = SPECIES_ZIGZAGOON_GALAR,
+        .species = SPECIES_FARFETCHD_GALAR,
         .ivs = {0, 0, 0, 0, 0, 0},
         .abilityNum = 0,
         .otId = 73996,
@@ -1059,10 +1059,10 @@ static const struct InGameTrade sIngameTrades[] =
         .personality = 0x8B,
         .heldItem = ITEM_NONE,
         .mailNum = 1,
-        .otName = _("Calvin"),
+        .otName = _("Charles"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_ZIGZAGOON
+        .requestedSpecies = SPECIES_FARFETCHD
     },
     [INGAME_TRADE_DELIBIRD] =
     {
