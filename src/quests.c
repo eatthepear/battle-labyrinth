@@ -1166,7 +1166,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	side_quest(
 	      gText_SideQuestName_PBL,
 	      gText_SideQuestDesc_PBL,
-	      gText_SideQuestDoneDesc_PBL,
+	      COMPOUND_STRING("You've completed all 50 Zones!"),
 	      gText_QuestMapSanctuary,
 	      OBJ_EVENT_GFX_COLRESS,
 	      OBJECT,
@@ -1176,8 +1176,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	side_quest(
 	      gText_SideQuestName_Signs,
 	      gText_SideQuestDesc_Signs,
-	      gText_SideQuestDoneDesc_Signs,
-	      gText_QuestMapSanctuary,
+	      COMPOUND_STRING("You've read all the signs in the game!"),
+	      COMPOUND_STRING("Sanctuary Pokémon Center 1F"),
 	      OBJ_EVENT_GFX_SCHOOL_KID_F,
 	      OBJECT,
 	      sSubQuestsSigns,
@@ -1186,8 +1186,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	side_quest(
 	      gText_SideQuestName_Saves,
 	      gText_SideQuestDesc_Saves,
-	      gText_SideQuestDoneDesc_Saves,
-	      gText_QuestMapSanctuary,
+	      COMPOUND_STRING("You've saved your game 50 times!"),
+	      COMPOUND_STRING("Sanctuary Pokémon Center 1F"),
 	      OBJ_EVENT_GFX_GAMEBOY_KID,
 	      OBJECT,
 	      NULL,
@@ -1196,8 +1196,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	side_quest(
 	      gText_SideQuestName_Pokedex,
 	      gText_SideQuestDesc_Pokedex,
-	      gText_SideQuestDoneDesc_Pokedex,
-	      gText_QuestMapSanctuary,
+	      COMPOUND_STRING("You've seen all the Pokémon in the Pokédex!"),
+	      COMPOUND_STRING("Sanctuary Pokémon Center 1F"),
 	      OBJ_EVENT_GFX_SCIENTIST_2,
 	      OBJECT,
 	      NULL,
@@ -1206,7 +1206,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	side_quest(
 	      gText_SideQuestName_Catch50,
 	      gText_SideQuestDesc_Catch50,
-	      gText_SideQuestDoneDesc_Catch50,
+	      COMPOUND_STRING("You've caught 50 different Pokémon species!"),
 	      gText_QuestMapZone10,
 	      OBJ_EVENT_GFX_COLLECTOR,
 	      OBJECT,
@@ -1216,7 +1216,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	side_quest(
 	      gText_SideQuestName_DefeatAll1,
 	      gText_SideQuestDesc_DefeatAll1,
-	      gText_SideQuestDoneDesc_DefeatAll1,
+	      COMPOUND_STRING("You've defeated all trainers in\nZones 1-10!"),
 	      gText_QuestMapZone10,
 	      OBJ_EVENT_GFX_BIRD_KEEPER,
 	      OBJECT,
@@ -1226,7 +1226,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	side_quest(
 	      gText_SideQuestName_Berries,
 	      gText_SideQuestDesc_Berries,
-	      gText_SideQuestDoneDesc_Berries,
+	      COMPOUND_STRING("FILLER!"),
 	      gText_QuestMapZone10,
 	      OBJ_EVENT_GFX_COOK,
 	      OBJECT,
@@ -1237,7 +1237,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      COMPOUND_STRING("A Ruin Maniac's Challenge"),
 	      gText_SideQuestDesc_FindHiddenItems,
 	      COMPOUND_STRING("You found 100 hidden items!"),
-	      gText_QuestMapSanctuary,
+	      COMPOUND_STRING("Sanctuary Pokémon Center 1F"),
 	      OBJ_EVENT_GFX_RUIN_MANIAC,
 	      OBJECT,
 	      NULL,

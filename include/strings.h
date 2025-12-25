@@ -2546,15 +2546,7 @@ extern const u8 gText_SideQuestDesc_DefeatAll1[];
 extern const u8 gText_SideQuestDesc_Berries[];
 extern const u8 gText_SideQuestDesc_FindHiddenItems[];
 
-//completed quest description
 extern const u8 gText_SideQuestDoneDesc_Filler[];
-extern const u8 gText_SideQuestDoneDesc_PBL[];
-extern const u8 gText_SideQuestDoneDesc_Signs[];
-extern const u8 gText_SideQuestDoneDesc_Saves[];
-extern const u8 gText_SideQuestDoneDesc_Pokedex[];
-extern const u8 gText_SideQuestDoneDesc_Catch50[];
-extern const u8 gText_SideQuestDoneDesc_DefeatAll1[];
-extern const u8 gText_SideQuestDoneDesc_Berries[];
 
 //map
 extern const u8 gText_QuestMapFiller[];

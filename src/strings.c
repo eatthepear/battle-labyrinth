@@ -1411,15 +1411,7 @@ const u8 gText_SideQuestDesc_DefeatAll1[] = _("Defeat all trainers in\nZones 1-1
 const u8 gText_SideQuestDesc_Berries[] = _("Procure 5 of each\nstatus healing Berry.");
 const u8 gText_SideQuestDesc_FindHiddenItems[] = _("Find 100 hidden items!\nSo far you've found {STR_VAR_1} hidden items!");
 
-//completed quest description
 const u8 gText_SideQuestDoneDesc_Filler[] = _("Filler Completed Quest");
-const u8 gText_SideQuestDoneDesc_PBL[] = _("You've completed all 50 Zones!");
-const u8 gText_SideQuestDoneDesc_Signs[] = _("You've read all the signs in the game!");
-const u8 gText_SideQuestDoneDesc_Saves[] = _("You've saved the game 50 times!");
-const u8 gText_SideQuestDoneDesc_Pokedex[] = _("You've seen all the Pokémon in the Pokédex!");
-const u8 gText_SideQuestDoneDesc_Catch50[] = _("You've caught 50 different Pokémon species!");
-const u8 gText_SideQuestDoneDesc_DefeatAll1[] = _("You've defeated all trainers in\nZones 1-10!");
-const u8 gText_SideQuestDoneDesc_Berries[] = _("You gave the chef the Berries!");
 
 //map
 const u8 gText_QuestMapFiller[] = _("???");
