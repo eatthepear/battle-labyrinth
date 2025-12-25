@@ -118,16 +118,16 @@
       "x": 26,
       "y": 4,
       "elevation": 3,
-      "item": "ITEM_BLUE_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE14B_BLUE_SHARD"
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE14_7"
     },
     {
       "type": "hidden_item",
       "x": 12,
       "y": 27,
       "elevation": 3,
-      "item": "ITEM_YELLOW_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE14B_YELLOW_SHARD"
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE14_8"
     }
   ]
 }

@@ -163,8 +163,8 @@
       "x": 14,
       "y": 9,
       "elevation": 3,
-      "item": "ITEM_LUM_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE13A_LUM_BERRY"
+      "item": "ITEM_ORAN_BERRY",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE13_1"
     },
     {
       "type": "sign",

@@ -300,32 +300,32 @@
       "x": 34,
       "y": 19,
       "elevation": 3,
-      "item": "ITEM_LEPPA_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE12A_LEPPA_BERRY"
+      "item": "ITEM_ORAN_BERRY",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE12_1"
     },
     {
       "type": "hidden_item",
       "x": 62,
       "y": 26,
       "elevation": 3,
-      "item": "ITEM_LUM_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE12A_LUM_BERRY"
+      "item": "ITEM_ORAN_BERRY",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE12_2"
     },
     {
       "type": "hidden_item",
       "x": 10,
       "y": 16,
       "elevation": 3,
-      "item": "ITEM_RED_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE12A_RED_SHARD"
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE12_6"
     },
     {
       "type": "hidden_item",
       "x": 35,
       "y": 37,
       "elevation": 3,
-      "item": "ITEM_BLUE_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE12A_BLUE_SHARD"
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE12_7"
     }
   ]
 }

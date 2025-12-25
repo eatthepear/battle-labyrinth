@@ -132,29 +132,5 @@
 
   ],
   "bg_events": [
-    {
-      "type": "hidden_item",
-      "x": 22,
-      "y": 21,
-      "elevation": 3,
-      "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE5A_Old_ORAN_BERRY"
-    },
-    {
-      "type": "hidden_item",
-      "x": 48,
-      "y": 24,
-      "elevation": 0,
-      "item": "ITEM_PECHA_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE5A_Old_PECHA_BERRY"
-    },
-    {
-      "type": "hidden_item",
-      "x": 47,
-      "y": 6,
-      "elevation": 0,
-      "item": "ITEM_CHESTO_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE5A_Old_CHESTO_BERRY"
-    }
   ]
 }

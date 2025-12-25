@@ -188,29 +188,5 @@
     }
   ],
   "bg_events": [
-    {
-      "type": "hidden_item",
-      "x": 32,
-      "y": 5,
-      "elevation": 0,
-      "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE5B_Old_ORAN_BERRY"
-    },
-    {
-      "type": "hidden_item",
-      "x": 65,
-      "y": 6,
-      "elevation": 0,
-      "item": "ITEM_RAWST_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE5B_Old_RAWST_BERRY"
-    },
-    {
-      "type": "hidden_item",
-      "x": 81,
-      "y": 17,
-      "elevation": 0,
-      "item": "ITEM_CHERI_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE5B_Old_CHERI_BERRY"
-    }
   ]
 }
