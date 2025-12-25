@@ -345,7 +345,7 @@
       "y": 16,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE6A_RED_SHARD_2"
+      "flag": "FLAG_HIDDEN_ITEM_ZONE6_6"
     },
     {
       "type": "hidden_item",
@@ -353,7 +353,7 @@
       "y": 23,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE6A_RED_SHARD_1"
+      "flag": "FLAG_HIDDEN_ITEM_ZONE6_7"
     },
     {
       "type": "hidden_item",
@@ -361,7 +361,7 @@
       "y": 20,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE6A_RAWST_BERRY"
+      "flag": "FLAG_HIDDEN_ITEM_ZONE6_1"
     },
     {
       "type": "hidden_item",
@@ -369,7 +369,7 @@
       "y": 17,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE6A_PERSIM_BERRY"
+      "flag": "FLAG_HIDDEN_ITEM_ZONE6_2"
     },
     {
       "type": "hidden_item",
@@ -377,7 +377,7 @@
       "y": 16,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE6A_CHESTO_BERRY"
+      "flag": "FLAG_HIDDEN_ITEM_ZONE6_3"
     },
     {
       "type": "sign",

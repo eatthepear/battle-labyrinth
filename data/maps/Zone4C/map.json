@@ -160,7 +160,7 @@
       "y": 8,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE4C_CHESTO_BERRY"
+      "flag": "FLAG_HIDDEN_ITEM_ZONE4_3"
     },
     {
       "type": "hidden_item",
@@ -168,7 +168,7 @@
       "y": 4,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE4C_RAWST_BERRY"
+      "flag": "FLAG_HIDDEN_ITEM_ZONE4_4"
     },
     {
       "type": "sign",
