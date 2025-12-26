@@ -28,211 +28,196 @@ script Zone10B_EventScript_Collector {
 	release
 }
 
-script Zone10B_EventScript_DragonTamer {
-	lock
-	faceplayer
-	if (flag(FLAG_ZONE10B_RECEIVED_DRUDDIGON) == false) {
-		msgbox(format("Dragon-type Pokémon should only be raised by Trainers who know what they are doing.\pIf you can show me you've beaten all the trainers thus far, I'll give you this Druddigon of mine."))
-		questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_GAUNTLET_1)
-		if (var(VAR_RESULT) == FALSE) {
-			startquest(QUEST_GAUNTLET_1)
-		}
-		if (!defeated(TRAINER_PBL_NINA) ||
-			// !defeated(TRAINER_PBL_MARIAM) ||
-			// !defeated(TRAINER_PBL_OSCAR) ||
-			// !flag(FLAG_BEAT_LEVIATHAN_1) ||
-			// !defeated(TRAINER_PBL_POLLY) ||
-			// !defeated(TRAINER_PBL_JEREMIAH) ||
-			// !defeated(TRAINER_PBL_JOSH) ||
-			// !defeated(TRAINER_PBL_HARPER) ||
-			// // !defeated(TRAINER_PBL_ARTHUR) ||
-			// !flag(FLAG_BEAT_LEVIATHAN_2) ||
-			// !defeated(TRAINER_PBL_JEMMA) ||
-			// !defeated(TRAINER_PBL_PATRICK) ||
-			// // !defeated(TRAINER_PBL_ANNABELLE) ||
-			// !defeated(TRAINER_PBL_BORIS) ||
-			// !defeated(TRAINER_PBL_RICHARD) ||
-			// !flag(FLAG_BEAT_LEVIATHAN_3) ||
-			// !defeated(TRAINER_PBL_HERMAN) ||
-			// !defeated(TRAINER_PBL_RALPH) ||
-			// !defeated(TRAINER_PBL_SANTIAGO) ||
-			// !defeated(TRAINER_PBL_CHLOE_AND_KAYA) ||
-			// !defeated(TRAINER_PBL_FRED) ||
-			// !defeated(TRAINER_PBL_LUCIA) ||
-			// !flag(FLAG_BEAT_LEVIATHAN_4) ||
-			// !defeated(TRAINER_PBL_ANNE_AND_JUNE) ||
-			// !defeated(TRAINER_PBL_NOVA_AND_CORA) ||
-			// !defeated(TRAINER_PBL_CLINTON) ||
-			// !defeated(TRAINER_PBL_REBECCA) ||
-			// !defeated(TRAINER_PBL_RYAN) ||
-			// !defeated(TRAINER_PBL_CAITLYN) ||
-			// !defeated(TRAINER_PBL_KENNETH) ||
-			// !defeated(TRAINER_PBL_KEVIN) ||
-			// !flag(FLAG_BEAT_LEVIATHAN_5) ||
-			// !defeated(TRAINER_PBL_GILBERT) ||
-			// !defeated(TRAINER_PBL_MELANIE) ||
-			// !defeated(TRAINER_PBL_CONSTANCE) ||
-			// !defeated(TRAINER_PBL_FRANK) ||
-			// !defeated(TRAINER_PBL_DUDLEY) ||
-			// !defeated(TRAINER_PBL_DAISY) ||
-			// !defeated(TRAINER_PBL_VIC_AND_DELL) ||
-			// !defeated(TRAINER_PBL_MINA) ||
-			// !flag(FLAG_BEAT_LEVIATHAN_6) ||
-			// !defeated(TRAINER_PBL_MILLIE) ||
-			// !defeated(TRAINER_PBL_JAMAL) ||
-			// !defeated(TRAINER_PBL_PAIGE) ||
-			// !defeated(TRAINER_PBL_SETH) ||
-			// !defeated(TRAINER_PBL_CONNIE) ||
-			// !defeated(TRAINER_PBL_PETER) ||
-			// !defeated(TRAINER_PBL_WHITAKER) ||
-			// !flag(FLAG_BEAT_LEVIATHAN_7) ||
-			// !defeated(TRAINER_PBL_JIMMY) ||
-			// !defeated(TRAINER_PBL_EMILIANO) ||
-			// !defeated(TRAINER_PBL_BECKHAM) ||
-			// !defeated(TRAINER_PBL_KAREN) ||
-			// !defeated(TRAINER_PBL_JAYDEN) ||
-			// !defeated(TRAINER_PBL_NEIL) ||
-			// !defeated(TRAINER_PBL_TAMARA) ||
-			!flag(FLAG_BEAT_LEVIATHAN_8) ||
-			// !defeated(TRAINER_PBL_COOPER) ||
-			// !defeated(TRAINER_PBL_CARMINE) ||
-			// !defeated(TRAINER_PBL_JONATHAN) ||
-			// !defeated(TRAINER_PBL_CALVIN) ||
-			// !defeated(TRAINER_PBL_LUIS) ||
-			// !defeated(TRAINER_PBL_ALANA) ||
-			// !defeated(TRAINER_PBL_JACOB) ||
-			// !defeated(TRAINER_PBL_DEWEY) ||
-			// !defeated(TRAINER_PBL_ERNEST) ||
-			// !defeated(TRAINER_PBL_KYLE) ||
-			// !defeated(TRAINER_PBL_ELIAS) ||
-			// !defeated(TRAINER_PBL_PEARLIE) ||
-			// !defeated(TRAINER_PBL_SUSAN) ||
-			// !defeated(TRAINER_PBL_CONRAD) ||
-			!defeated(TRAINER_PBL_NINA)) {
-			msgbox("You still have trainers to defeat.")
-			applymovement(4, Common_Movement_FaceLeft)
-			waitmovement(0)
-			release
-			end
-		} else {
-			msgbox(format("Incredible!\pYou really did defeat all those trainers.\pAre you ready to take care of this Druddigon?"), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == TRUE) {
-				specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
-				if (var(VAR_TEMP_2) == PARTY_SIZE) {
-					msgbox("It seems your party is full!")
-					release
-					end
-				}
-				msgbox(format("A wise choice!"), MSGBOX_DEFAULT)
-				if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
-					setvar(VAR_TEMP_0, SPECIES_DRUDDIGON)
-					callnative(CheckSpeciesClause)
-					if (flag(FLAG_TEMP_1) == TRUE) {
-						msgbox(format("Unfortunately, you have already obtained a Pokémon in Druddigon's evolution line."))
-						release
-						end
-					}
-				}
-				givemon(SPECIES_DRUDDIGON, 22, ITEM_DRAGON_FANG)
-				setmonmetlocation(VAR_TEMP_2, 248)
-				playfanfare(MUS_OBTAIN_ITEM)
-				message(format("Received Druddigon!"))
-				waitmessage
-				waitfanfare
-				msgbox(format("Would you like to give a nickname to Druddigon?"), MSGBOX_YESNO)
-				if (var(VAR_RESULT) == YES) {
-					call(Common_EventScript_GetGiftMonPartySlot)
-					call(Common_EventScript_NameReceivedPartyMon)
-				}
-				setflag(FLAG_ZONE10B_RECEIVED_DRUDDIGON)
-				completequest(QUEST_GAUNTLET_1)
-			} else {
-				msgbox(format("Very well. Speak to me when you change your mind."))
-				applymovement(4, Common_Movement_FaceLeft)
-				waitmovement(0)
-				release
-				end
-			}
-		}
-	}
-	msgbox(format("Aside from their own kind, Dragon-types need only fear Fairy-types and Ice-types."))
-	applymovement(4, Common_Movement_FaceLeft)
-	waitmovement(0)
-	release
-	end
-}
+// script Zone10B_EventScript_DragonTamer {
+// 	lock
+// 	faceplayer
+// 	if (flag(FLAG_ZONE10B_RECEIVED_DRUDDIGON) == false) {
+// 		msgbox(format("Dragon-type Pokémon should only be raised by Trainers who know what they are doing.\pIf you can show me you've beaten all the trainers thus far, I'll give you this Druddigon of mine."))
+// 		questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_GAUNTLET_1)
+// 		if (var(VAR_RESULT) == FALSE) {
+// 			startquest(QUEST_GAUNTLET_1)
+// 		}
+// 		if (!defeated(TRAINER_PBL_NINA) ||
+// 			// !defeated(TRAINER_PBL_MARIAM) ||
+// 			// !defeated(TRAINER_PBL_OSCAR) ||
+// 			// !flag(FLAG_BEAT_LEVIATHAN_1) ||
+// 			// !defeated(TRAINER_PBL_POLLY) ||
+// 			// !defeated(TRAINER_PBL_JEREMIAH) ||
+// 			// !defeated(TRAINER_PBL_JOSH) ||
+// 			// !defeated(TRAINER_PBL_HARPER) ||
+// 			// // !defeated(TRAINER_PBL_ARTHUR) ||
+// 			// !flag(FLAG_BEAT_LEVIATHAN_2) ||
+// 			// !defeated(TRAINER_PBL_JEMMA) ||
+// 			// !defeated(TRAINER_PBL_PATRICK) ||
+// 			// // !defeated(TRAINER_PBL_ANNABELLE) ||
+// 			// !defeated(TRAINER_PBL_BORIS) ||
+// 			// !defeated(TRAINER_PBL_RICHARD) ||
+// 			// !flag(FLAG_BEAT_LEVIATHAN_3) ||
+// 			// !defeated(TRAINER_PBL_HERMAN) ||
+// 			// !defeated(TRAINER_PBL_RALPH) ||
+// 			// !defeated(TRAINER_PBL_SANTIAGO) ||
+// 			// !defeated(TRAINER_PBL_CHLOE_AND_KAYA) ||
+// 			// !defeated(TRAINER_PBL_FRED) ||
+// 			// !defeated(TRAINER_PBL_LUCIA) ||
+// 			// !flag(FLAG_BEAT_LEVIATHAN_4) ||
+// 			// !defeated(TRAINER_PBL_ANNE_AND_JUNE) ||
+// 			// !defeated(TRAINER_PBL_NOVA_AND_CORA) ||
+// 			// !defeated(TRAINER_PBL_CLINTON) ||
+// 			// !defeated(TRAINER_PBL_REBECCA) ||
+// 			// !defeated(TRAINER_PBL_RYAN) ||
+// 			// !defeated(TRAINER_PBL_CAITLYN) ||
+// 			// !defeated(TRAINER_PBL_KENNETH) ||
+// 			// !defeated(TRAINER_PBL_KEVIN) ||
+// 			// !flag(FLAG_BEAT_LEVIATHAN_5) ||
+// 			// !defeated(TRAINER_PBL_GILBERT) ||
+// 			// !defeated(TRAINER_PBL_MELANIE) ||
+// 			// !defeated(TRAINER_PBL_CONSTANCE) ||
+// 			// !defeated(TRAINER_PBL_FRANK) ||
+// 			// !defeated(TRAINER_PBL_DUDLEY) ||
+// 			// !defeated(TRAINER_PBL_DAISY) ||
+// 			// !defeated(TRAINER_PBL_VIC_AND_DELL) ||
+// 			// !defeated(TRAINER_PBL_MINA) ||
+// 			// !flag(FLAG_BEAT_LEVIATHAN_6) ||
+// 			// !defeated(TRAINER_PBL_MILLIE) ||
+// 			// !defeated(TRAINER_PBL_JAMAL) ||
+// 			// !defeated(TRAINER_PBL_PAIGE) ||
+// 			// !defeated(TRAINER_PBL_SETH) ||
+// 			// !defeated(TRAINER_PBL_CONNIE) ||
+// 			// !defeated(TRAINER_PBL_PETER) ||
+// 			// !defeated(TRAINER_PBL_WHITAKER) ||
+// 			// !flag(FLAG_BEAT_LEVIATHAN_7) ||
+// 			// !defeated(TRAINER_PBL_JIMMY) ||
+// 			// !defeated(TRAINER_PBL_EMILIANO) ||
+// 			// !defeated(TRAINER_PBL_BECKHAM) ||
+// 			// !defeated(TRAINER_PBL_KAREN) ||
+// 			// !defeated(TRAINER_PBL_JAYDEN) ||
+// 			// !defeated(TRAINER_PBL_NEIL) ||
+// 			// !defeated(TRAINER_PBL_TAMARA) ||
+// 			!flag(FLAG_BEAT_LEVIATHAN_8) ||
+// 			// !defeated(TRAINER_PBL_COOPER) ||
+// 			// !defeated(TRAINER_PBL_CARMINE) ||
+// 			// !defeated(TRAINER_PBL_JONATHAN) ||
+// 			// !defeated(TRAINER_PBL_CALVIN) ||
+// 			// !defeated(TRAINER_PBL_LUIS) ||
+// 			// !defeated(TRAINER_PBL_ALANA) ||
+// 			// !defeated(TRAINER_PBL_JACOB) ||
+// 			// !defeated(TRAINER_PBL_DEWEY) ||
+// 			// !defeated(TRAINER_PBL_ERNEST) ||
+// 			// !defeated(TRAINER_PBL_KYLE) ||
+// 			// !defeated(TRAINER_PBL_ELIAS) ||
+// 			// !defeated(TRAINER_PBL_PEARLIE) ||
+// 			// !defeated(TRAINER_PBL_SUSAN) ||
+// 			// !defeated(TRAINER_PBL_CONRAD) ||
+// 			!defeated(TRAINER_PBL_NINA)) {
+// 			msgbox("You still have trainers to defeat.")
+// 			applymovement(4, Common_Movement_FaceLeft)
+// 			waitmovement(0)
+// 			release
+// 			end
+// 		} else {
+// 			msgbox(format("Incredible!\pYou really did defeat all those trainers.\pAre you ready to take care of this Druddigon?"), MSGBOX_YESNO)
+// 			if (var(VAR_RESULT) == TRUE) {
+// 				specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
+// 				if (var(VAR_TEMP_2) == PARTY_SIZE) {
+// 					msgbox("It seems your party is full!")
+// 					release
+// 					end
+// 				}
+// 				msgbox(format("A wise choice!"), MSGBOX_DEFAULT)
+// 				if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+// 					setvar(VAR_TEMP_0, SPECIES_DRUDDIGON)
+// 					callnative(CheckSpeciesClause)
+// 					if (flag(FLAG_TEMP_1) == TRUE) {
+// 						msgbox(format("Unfortunately, you have already obtained a Pokémon in Druddigon's evolution line."))
+// 						release
+// 						end
+// 					}
+// 				}
+// 				givemon(SPECIES_DRUDDIGON, 22, ITEM_DRAGON_FANG)
+// 				setmonmetlocation(VAR_TEMP_2, 248)
+// 				playfanfare(MUS_OBTAIN_ITEM)
+// 				message(format("Received Druddigon!"))
+// 				waitmessage
+// 				waitfanfare
+// 				msgbox(format("Would you like to give a nickname to Druddigon?"), MSGBOX_YESNO)
+// 				if (var(VAR_RESULT) == YES) {
+// 					call(Common_EventScript_GetGiftMonPartySlot)
+// 					call(Common_EventScript_NameReceivedPartyMon)
+// 				}
+// 				setflag(FLAG_ZONE10B_RECEIVED_DRUDDIGON)
+// 				completequest(QUEST_GAUNTLET_1)
+// 			} else {
+// 				msgbox(format("Very well. Speak to me when you change your mind."))
+// 				applymovement(4, Common_Movement_FaceLeft)
+// 				waitmovement(0)
+// 				release
+// 				end
+// 			}
+// 		}
+// 	}
+// 	msgbox(format("Aside from their own kind, Dragon-types need only fear Fairy-types and Ice-types."))
+// 	applymovement(4, Common_Movement_FaceLeft)
+// 	waitmovement(0)
+// 	release
+// 	end
+// }
 
-script Zone10B_EventScript_BirdKeeper {
-	lock
-	faceplayer
-	if (flag(FLAG_ZONE10B_RECEIVED_TM_STEEL_WING) == false) {
-		msgbox(format("Bird Pokémon sometimes can need some coverage moves! This TM will help remedy that!"))
-		giveitem(ITEM_TM_STEEL_WING)
-		setflag(FLAG_ZONE10B_RECEIVED_TM_STEEL_WING)
-	}
-	msgbox(format("The move Steel Wing can help Flying Pokémon cover for their Rock weakness, by giving Steel coverage to them!"))
-	applymovement(8, Common_Movement_FaceLeft)
-	waitmovement(0)
-	release
-	end
-}
-
-script Zone10B_EventScript_BerryExchange {
-	lock
-	faceplayer
-	msgbox("Listen, you know how some berries\ncan treat status conditions?\pWell, I'm looking to start a Berry\nfarm. If you have 5 of each of\lthose Berries, I'll trade them\lfor 5 Revives.")
-	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_BERRIES)
-	if (var(VAR_RESULT) == FALSE) {
-		// startquest(QUEST_BERRIES)
-	}
-	checkitem(ITEM_CHERI_BERRY, 5)
-	if (var(VAR_RESULT) == TRUE) {
-		checkitem(ITEM_CHESTO_BERRY, 5)
-		if (var(VAR_RESULT) == TRUE) {
-			checkitem(ITEM_PECHA_BERRY, 5)
-			if (var(VAR_RESULT) == TRUE) {
-				checkitem(ITEM_RAWST_BERRY, 5)
-				if (var(VAR_RESULT) == TRUE) {
-					checkitem(ITEM_ASPEAR_BERRY, 5)
-					if (var(VAR_RESULT) == TRUE) {
-						msgbox(format("Looks like you do have the Berries I'm looking for. What do you say?"), MSGBOX_YESNO)
-						if (var(VAR_RESULT) == YES) {
-							removeitem(ITEM_CHERI_BERRY, 5)
-							removeitem(ITEM_CHESTO_BERRY, 5)
-							removeitem(ITEM_PECHA_BERRY, 5)
-							removeitem(ITEM_RAWST_BERRY, 5)
-							removeitem(ITEM_ASPEAR_BERRY, 5)
-							msgbox("Alright…{PAUSE_UNTIL_PRESS} Here we go…{PAUSE_UNTIL_PRESS}\nAnd bam! 5 Revives!")
-							giveitem(ITEM_REVIVE, 5)
-							msgbox("Thank you.\nI'll be seeing you around!")
-							fadescreenswapbuffers(FADE_TO_BLACK)
-							setflag(FLAG_HIDE_ZONE10B_BERRYMAN)
-							removeobject(5)
-							fadescreenswapbuffers(FADE_FROM_BLACK)
-							completequest(QUEST_BERRIES)
-						} else {
-							msgbox("Aw, that's too bad.\nIt's a good offer though!")	
-						}
-					} else {
-						msgbox("It looks like you don't have enough\nAspear Berries.")
-					}
-				} else {
-					msgbox("It looks like you don't have enough\nRawst Berries.")
-				}
-			} else {
-				msgbox("It looks like you don't have enough\nPecha Berries.")
-			}
-		} else {
-			msgbox("It looks like you don't have enough\nChesto Berries.")
-		}
-	} else {
-		msgbox("It looks like you don't have enough\nCheri Berries.")
-	}
-	applymovement(5, Common_Movement_FaceLeft)
-	waitmovement(0)
-	release
-	end
-}
+// script Zone10B_EventScript_BerryExchange {
+// 	lock
+// 	faceplayer
+// 	msgbox("Listen, you know how some berries\ncan treat status conditions?\pWell, I'm looking to start a Berry\nfarm. If you have 5 of each of\lthose Berries, I'll trade them\lfor 5 Revives.")
+// 	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_BERRIES)
+// 	if (var(VAR_RESULT) == FALSE) {
+// 		// startquest(QUEST_BERRIES)
+// 	}
+// 	checkitem(ITEM_CHERI_BERRY, 5)
+// 	if (var(VAR_RESULT) == TRUE) {
+// 		checkitem(ITEM_CHESTO_BERRY, 5)
+// 		if (var(VAR_RESULT) == TRUE) {
+// 			checkitem(ITEM_PECHA_BERRY, 5)
+// 			if (var(VAR_RESULT) == TRUE) {
+// 				checkitem(ITEM_RAWST_BERRY, 5)
+// 				if (var(VAR_RESULT) == TRUE) {
+// 					checkitem(ITEM_ASPEAR_BERRY, 5)
+// 					if (var(VAR_RESULT) == TRUE) {
+// 						msgbox(format("Looks like you do have the Berries I'm looking for. What do you say?"), MSGBOX_YESNO)
+// 						if (var(VAR_RESULT) == YES) {
+// 							removeitem(ITEM_CHERI_BERRY, 5)
+// 							removeitem(ITEM_CHESTO_BERRY, 5)
+// 							removeitem(ITEM_PECHA_BERRY, 5)
+// 							removeitem(ITEM_RAWST_BERRY, 5)
+// 							removeitem(ITEM_ASPEAR_BERRY, 5)
+// 							msgbox("Alright…{PAUSE_UNTIL_PRESS} Here we go…{PAUSE_UNTIL_PRESS}\nAnd bam! 5 Revives!")
+// 							giveitem(ITEM_REVIVE, 5)
+// 							msgbox("Thank you.\nI'll be seeing you around!")
+// 							fadescreenswapbuffers(FADE_TO_BLACK)
+// 							setflag(FLAG_HIDE_ZONE10B_BERRYMAN)
+// 							removeobject(5)
+// 							fadescreenswapbuffers(FADE_FROM_BLACK)
+// 							completequest(QUEST_BERRIES)
+// 						} else {
+// 							msgbox("Aw, that's too bad.\nIt's a good offer though!")	
+// 						}
+// 					} else {
+// 						msgbox("It looks like you don't have enough\nAspear Berries.")
+// 					}
+// 				} else {
+// 					msgbox("It looks like you don't have enough\nRawst Berries.")
+// 				}
+// 			} else {
+// 				msgbox("It looks like you don't have enough\nPecha Berries.")
+// 			}
+// 		} else {
+// 			msgbox("It looks like you don't have enough\nChesto Berries.")
+// 		}
+// 	} else {
+// 		msgbox("It looks like you don't have enough\nCheri Berries.")
+// 	}
+// 	applymovement(5, Common_Movement_FaceLeft)
+// 	waitmovement(0)
+// 	release
+// 	end
+// }
 
 script Zone10B_EventScript_RuinManiac {
 	lock
@@ -300,7 +285,7 @@ script Zone10B_EventScript_WaterMerchant {
 		end
 	}
 	showmoneybox(0, 0, 0)
-	message(format("In the desert, it's supply and\ndemand. And the demand is water.\p¥200 for Fresh Water.\nRestores 30 HP each."))
+	message(format("In the desert, it's supply and demand. And the demand is water.\p¥200 for Fresh Water.\nRestores 30 HP each."))
 	waitmessage
 	dynmultichoice(0, 12, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "1x Fresh Water - ¥200", "10x Fresh Water - ¥2000", "Exit")
 	switch(var(VAR_RESULT)) {
