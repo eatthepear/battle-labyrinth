@@ -294,14 +294,15 @@ script Zone10B_EventScript_RuinManiac {
 script Zone10B_EventScript_WaterMerchant {
 	lock
 	faceplayer
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_INDEPENDENT) == true)) {
-	// 	msgbox(format("In the desert, it's supply and demand. And the demand is water.\pThe Fresh Water I usually sell is in such high demand that I am out of stock."))
-	// 	release
-	// 	end
-	// }
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		msgbox(format("In the desert, it's supply and demand. And the demand is water.\pThe Fresh Water I usually sell is in such high demand that I am out of stock."))
+		release
+		end
+	}
 	showmoneybox(0, 0, 0)
-	msgbox("In the desert, it's supply and\ndemand. And the demand is water.\p¥200 for Fresh Water.\nRestores 30 HP each.", MSGBOX_DEFAULT)
-	dynmultichoice(0, 12, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "One Fresh Water - ¥200", "Ten Fresh Water - ¥2000", "Exit")
+	message(format("In the desert, it's supply and\ndemand. And the demand is water.\p¥200 for Fresh Water.\nRestores 30 HP each."))
+	waitmessage
+	dynmultichoice(0, 12, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "1x Fresh Water - ¥200", "10x Fresh Water - ¥2000", "Exit")
 	switch(var(VAR_RESULT)) {
 	case 0:
 		checkmoney(200, 0)
@@ -337,7 +338,7 @@ script Zone10B_EventScript_WaterMerchant {
 }
 
 script Zone10B_EventScript_WaterNotEnough {
-	msgbox("You don't have enough money.")
+	msgbox(gText_YouDontHaveEnoughMoney)
 	hidemoneybox
 	releaseall
 	end
