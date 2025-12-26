@@ -2737,6 +2737,12 @@ script EventScript_BufferZoneNameShort {
 	switch (var(VAR_TEMP_0)) {
 		case 2:
 			bufferstring(0, gText_MapZone2Short)
+		case 5:
+			bufferstring(0, gText_MapZone5Short)
+		case 6:
+			bufferstring(0, gText_MapZone6Short)
+		case 7:
+			bufferstring(0, gText_MapZone7Short)
 		default:
 			call(EventScript_BufferZoneName)
 	}

@@ -2517,6 +2517,9 @@ extern const u8 gText_MapZoneS9[];
 extern const u8 gText_MapZoneS10[];
 
 extern const u8 gText_MapZone2Short[];
+extern const u8 gText_MapZone5Short[];
+extern const u8 gText_MapZone6Short[];
+extern const u8 gText_MapZone7Short[];
 
 ////side quests
 //generic strings
