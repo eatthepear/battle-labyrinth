@@ -234,148 +234,58 @@ script Zone10B_EventScript_BerryExchange {
 	end
 }
 
-script Zone10B_EventScript_FossilScientist {
+script Zone10B_EventScript_RuinManiac {
 	lock
 	faceplayer
-	msgbox(format("Oh. Another traveler looking to employ my fossil reviving services, eh?\pSo, how about it? Do you have a fossil you'd like to revive?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		goto(Zone10B_EventScript_FossilDone)
+	if (flag(FLAG_ZONE10B_FOSSIL_RECEIVED) == FALSE) {
+		msgbox("You get a Fossil!\nYou get a Fossil!\lEverybody gets a Fossil!")
+		setflag(FLAG_ZONE10B_FOSSIL_RECEIVED)
+		if (flag(FLAG_SETTINGS_NUZLOCKE)) {
+			random(11)
+			switch (var(VAR_RESULT)) {
+				case 0:
+					giveitem(ITEM_DOME_FOSSIL)
+				case 1:
+					giveitem(ITEM_HELIX_FOSSIL)
+				case 2:
+					giveitem(ITEM_OLD_AMBER)
+				case 3:
+					giveitem(ITEM_ROOT_FOSSIL)
+				case 4:
+					giveitem(ITEM_CLAW_FOSSIL)
+				case 5:
+					giveitem(ITEM_SKULL_FOSSIL)
+				case 6:
+					giveitem(ITEM_ARMOR_FOSSIL)
+				case 7:
+					giveitem(ITEM_COVER_FOSSIL)
+				case 8:
+					giveitem(ITEM_PLUME_FOSSIL)
+				case 9:
+					giveitem(ITEM_JAW_FOSSIL)
+				case 10:
+					giveitem(ITEM_SAIL_FOSSIL)
+			}
+		} else {
+			message(format("Which Fossil do you want?"))
+			waitmessage
+			dynmultipush("Dome Fossil", ITEM_DOME_FOSSIL)
+			dynmultipush("Helix Fossil", ITEM_HELIX_FOSSIL)
+			dynmultipush("Root Fossil", ITEM_ROOT_FOSSIL)
+			dynmultipush("Claw Fossil", ITEM_CLAW_FOSSIL)
+			dynmultipush("Skull Fossil", ITEM_SKULL_FOSSIL)
+			dynmultipush("Armor Fossil", ITEM_ARMOR_FOSSIL)
+			dynmultipush("Cover Fossil", ITEM_COVER_FOSSIL)
+			dynmultipush("Plume Fossil", ITEM_PLUME_FOSSIL)
+			dynmultipush("Jaw Fossil", ITEM_JAW_FOSSIL)
+			dynmultipush("Sail Fossil", ITEM_SAIL_FOSSIL)
+			dynmultipush("Old Amber", ITEM_OLD_AMBER)
+			dynmultistack(0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
+			giveitem(VAR_RESULT)
+		}
 	}
-	msgbox(format("Which fossil would you like me to revive?"))
-	// chooseitem(TREASURES_POCKET)
-	switch (var(VAR_ITEM_ID)) {
-		case ITEM_HELIX_FOSSIL:
-			bufferspeciesname(1, SPECIES_OMANYTE)
-			call(Zone10B_EventScript_CommonFossilIntro)
-			givemon(SPECIES_OMANYTE, 20, ITEM_NONE)
-			setvar(VAR_TEMP_1, SPECIES_OMANYTE)
-			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
-			goto(Zone10B_EventScript_SendFossilMonParty)
-		case ITEM_DOME_FOSSIL:
-			bufferspeciesname(1, SPECIES_KABUTO)
-			call(Zone10B_EventScript_CommonFossilIntro)
-			givemon(SPECIES_KABUTO, 20, ITEM_NONE)
-			setvar(VAR_TEMP_1, SPECIES_KABUTO)
-			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
-			goto(Zone10B_EventScript_SendFossilMonParty)
-		case ITEM_OLD_AMBER:
-			bufferspeciesname(1, SPECIES_AERODACTYL)
-			call(Zone10B_EventScript_CommonFossilIntro)
-			givemon(SPECIES_AERODACTYL, 20, ITEM_NONE)
-			setvar(VAR_TEMP_1, SPECIES_AERODACTYL)
-			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
-			goto(Zone10B_EventScript_SendFossilMonParty)
-		case ITEM_ROOT_FOSSIL:
-			bufferspeciesname(1, SPECIES_LILEEP)
-			call(Zone10B_EventScript_CommonFossilIntro)
-			givemon(SPECIES_LILEEP, 20, ITEM_NONE)
-			setvar(VAR_TEMP_1, SPECIES_LILEEP)
-			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
-			goto(Zone10B_EventScript_SendFossilMonParty)
-		case ITEM_CLAW_FOSSIL:
-			bufferspeciesname(1, SPECIES_ANORITH)
-			call(Zone10B_EventScript_CommonFossilIntro)
-			givemon(SPECIES_ANORITH, 20, ITEM_NONE)
-			setvar(VAR_TEMP_1, SPECIES_ANORITH)
-			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
-			goto(Zone10B_EventScript_SendFossilMonParty)
-		case ITEM_ARMOR_FOSSIL:
-			bufferspeciesname(1, SPECIES_SHIELDON)
-			call(Zone10B_EventScript_CommonFossilIntro)
-			givemon(SPECIES_SHIELDON, 20, ITEM_NONE)
-			setvar(VAR_TEMP_1, SPECIES_SHIELDON)
-			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
-			goto(Zone10B_EventScript_SendFossilMonParty)
-		case ITEM_SKULL_FOSSIL:
-			bufferspeciesname(1, SPECIES_CRANIDOS)
-			call(Zone10B_EventScript_CommonFossilIntro)
-			givemon(SPECIES_CRANIDOS, 20, ITEM_NONE)
-			setvar(VAR_TEMP_1, SPECIES_CRANIDOS)
-			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
-			goto(Zone10B_EventScript_SendFossilMonParty)
-		case ITEM_COVER_FOSSIL:
-			bufferspeciesname(1, SPECIES_TIRTOUGA)
-			call(Zone10B_EventScript_CommonFossilIntro)
-			givemon(SPECIES_TIRTOUGA, 20, ITEM_NONE)
-			setvar(VAR_TEMP_1, SPECIES_TIRTOUGA)
-			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
-			goto(Zone10B_EventScript_SendFossilMonParty)
-		case ITEM_PLUME_FOSSIL:
-			bufferspeciesname(1, SPECIES_ARCHEN)
-			call(Zone10B_EventScript_CommonFossilIntro)
-			givemon(SPECIES_ARCHEN, 20, ITEM_NONE)
-			setvar(VAR_TEMP_1, SPECIES_ARCHEN)
-			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
-			goto(Zone10B_EventScript_SendFossilMonParty)
-		case ITEM_JAW_FOSSIL:
-			bufferspeciesname(1, SPECIES_TYRUNT)
-			call(Zone10B_EventScript_CommonFossilIntro)
-			givemon(SPECIES_TYRUNT, 20, ITEM_NONE)
-			setvar(VAR_TEMP_1, SPECIES_TYRUNT)
-			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
-			goto(Zone10B_EventScript_SendFossilMonParty)
-		case ITEM_SAIL_FOSSIL:
-			bufferspeciesname(1, SPECIES_AMAURA)
-			call(Zone10B_EventScript_CommonFossilIntro)
-			givemon(SPECIES_AMAURA, 20, ITEM_NONE)
-			setvar(VAR_TEMP_1, SPECIES_AMAURA)
-			call(Zone10B_EventScript_ReceivedFossilMonFanfare)
-			goto(Zone10B_EventScript_SendFossilMonParty)
-		default:
-			msgbox(format("That ain't no fossil! Kids these days!"))
-			applymovement(6, Common_Movement_FaceLeft)
-			waitmovement(0)
-			release
-			end
-	}
-	goto(Zone10B_EventScript_FossilDone)
-}
-
-script Zone10B_EventScript_SendFossilMonParty {
-	msgbox(format("Would you like to give a nickname to {STR_VAR_1}?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		call(Common_EventScript_GetGiftMonPartySlot)
-		call(Common_EventScript_NameReceivedPartyMon)
-	}
-	setmonmetlocation(VAR_TEMP_2, 247)
-	goto(Zone10B_EventScript_FossilDone)
-}
-
-script Zone10B_EventScript_ReceivedFossilMonFanfare {
-	playfanfare(MUS_OBTAIN_ITEM)
-	message("Received the Fossil Pokémon\n{STR_VAR_2}!")
-	waitmessage
-	waitfanfare
-	return
-}
-
-script Zone10B_EventScript_CommonFossilIntro {
-	bufferitemname(0, VAR_ITEM_ID)
-	msgbox("You want me to turn that\n{STR_VAR_1} back into a Pokémon?", MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		goto(Zone10B_EventScript_FossilDone)
-	}
-	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
-	if (var(VAR_TEMP_2) == PARTY_SIZE) {
-		msgbox(format("Your party is full. Clear a party slot, then come back."))
-		applymovement(6, Common_Movement_FaceLeft)
-		waitmovement(0)
-		release
-		end
-	}
-	removeitem(VAR_ITEM_ID)
-	msgbox("Alright. Gimme a moment…")
-	applymovement(6, Common_Movement_FaceLeft)
-	waitmovement(0)
-	delay(192)
-	faceplayer
-	msgbox("There. Here's your Pokémon.")
-	return
-}
-
-script Zone10B_EventScript_FossilDone {
-	msgbox("Ok, back to my drink.")
-	applymovement(6, Common_Movement_FaceLeft)
+	msgbox(format("Hope you enjoy your Fossil!"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_RUIN_MANIAC_10B, Common_Movement_FaceLeft)
 	waitmovement(0)
 	release
 	end

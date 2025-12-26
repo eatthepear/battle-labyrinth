@@ -221,7 +221,6 @@ script EventScript_Nuzlocke {
 			msgbox("{COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode turned off.")
 			waitse
 			clearflag(FLAG_SETTINGS_NUZLOCKE)
-			clearflag(FLAG_ZONE13C_NUZLOCKE_FOSSIL_RECEIVED)
 		}
 	}
 	return

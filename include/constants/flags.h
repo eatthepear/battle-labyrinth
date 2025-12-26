@@ -223,6 +223,7 @@
 #define FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_3             0x12D
 #define FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_4             0x12E
 #define FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_5             0x12F
+#define FLAG_ZONE10B_FOSSIL_RECEIVED             0x138
 #define FLAG_ZONE10B_RECEIVED_TM_STEEL_WING               0x1C0
 #define FLAG_ZONE10B_RECEIVED_DRUDDIGON                   0x1C1
 #define FLAG_ZONE10B_RECEIVED_LUCKY_EGG                   0x132
@@ -231,7 +232,6 @@
 #define FLAG_HIDE_ZONE12A_NURSE                           0x135
 #define FLAG_ZONE13A_RECEIVED_UTILITY_UMBRELLA            0x136
 #define FLAG_ZONE13B_RECEIVED_FLASHLIGHT                  0x137
-#define FLAG_ZONE13C_NUZLOCKE_FOSSIL_RECEIVED             0x138
 #define FLAG_ZONE13C_RECEIVED_ZOOM_LENS                   0x139
 #define FLAG_ZONE13C_RECEIVED_APPLES                      0x13A
 #define FLAG_ZONE13C_RECEIVED_SWEETS                      0x13B
