@@ -1216,9 +1216,9 @@ script EventScript_Notebook_Items {
 			case ITEM_EXP_CANDY_M:
 				msgbox(format("Exp. Candies cost all set to ¥80, and do not level up past the level cap."))
 			case ITEM_RED_SHARD:
-				msgbox(format("Shards cost reduced to ¥400."))
+				msgbox(format("Shards cost set to ¥200."))
 			case ITEM_NORMAL_TERA_SHARD:
-				msgbox(format("Tera Shard cost set to ¥400."))
+				msgbox(format("Tera Shard cost set to ¥200."))
 			case ITEM_HEART_SCALE:
 				msgbox(format("Heart Scale cost increased to ¥2400."))
 			case ITEM_HEXORB:
