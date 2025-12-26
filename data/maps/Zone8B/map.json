@@ -136,11 +136,19 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 10,
-      "y": 19,
+      "x": 25,
+      "y": 7,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
       "flag": "FLAG_HIDDEN_ITEM_ZONE8_7"
+    },
+    {
+      "type": "hidden_item",
+      "x": 7,
+      "y": 11,
+      "elevation": 3,
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE8_10"
     }
   ]
 }

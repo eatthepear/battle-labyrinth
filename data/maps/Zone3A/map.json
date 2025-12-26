@@ -249,7 +249,7 @@
     {
       "type": "hidden_item",
       "x": 8,
-      "y": 9,
+      "y": 20,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE3_1"
@@ -309,6 +309,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "EventScript_Sign_FieldMoves"
+    },
+    {
+      "type": "hidden_item",
+      "x": 37,
+      "y": 29,
+      "elevation": 3,
+      "item": "ITEM_ORAN_BERRY",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE3_3"
     }
   ]
 }

@@ -260,8 +260,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 15,
-      "y": 14,
+      "x": 41,
+      "y": 10,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE9_2"
@@ -281,6 +281,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "EventScript_Sign_SellPrice"
+    },
+    {
+      "type": "hidden_item",
+      "x": 2,
+      "y": 16,
+      "elevation": 3,
+      "item": "ITEM_ORAN_BERRY",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE9_3"
     }
   ]
 }

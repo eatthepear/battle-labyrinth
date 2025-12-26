@@ -239,8 +239,8 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 26,
-      "y": 26,
+      "x": 11,
+      "y": 24,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
       "flag": "FLAG_HIDDEN_ITEM_ZONE10_6"
@@ -268,6 +268,38 @@
       "elevation": 3,
       "item": "ITEM_BLUE_SHARD",
       "flag": "FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_3"
+    },
+    {
+      "type": "hidden_item",
+      "x": 26,
+      "y": 26,
+      "elevation": 3,
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE10_7"
+    },
+    {
+      "type": "hidden_item",
+      "x": 41,
+      "y": 18,
+      "elevation": 3,
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE10_8"
+    },
+    {
+      "type": "hidden_item",
+      "x": 42,
+      "y": 44,
+      "elevation": 3,
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE10_9"
+    },
+    {
+      "type": "hidden_item",
+      "x": 26,
+      "y": 49,
+      "elevation": 3,
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_ZONE10_10"
     }
   ]
 }
