@@ -765,6 +765,7 @@ script Sanctuary_EventScript_GameIntro {
 	applymovement(LOCALID_COLRESS, Common_Movement_Colress_WalkUp)
 	waitmovement(LOCALID_COLRESS)
 	startquest(QUEST_PBL)
+	call(EventScript_AskSaveGame)
 	releaseall
 	end
 }
@@ -925,6 +926,7 @@ script Sanctuary_EventScript_HandleStarterSelectionDefault {
 				setvar(VAR_TEMP_3, 0)
 		}
 		if (var(VAR_TEMP_3) == 0) {
+			setspeaker(SP_NAME_NONE)
 			playse(SE_CONTEST_PLACE)
 			message(format("Randomizing…"))
 			delay(32)
@@ -992,6 +994,7 @@ script Sanctuary_EventScript_HandleStarterSelectionDefault {
 		showmonpic(VAR_TEMP_3, 10, 3)
 		playmoncry(VAR_TEMP_3, 0)
 		waitmoncry
+		setspeaker(SP_NAME_COLRESS)
 		msgbox(format("You want {STR_VAR_1} as your starter?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
 			hidemonpic
