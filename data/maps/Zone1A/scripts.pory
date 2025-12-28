@@ -199,6 +199,7 @@ script Zone1A_EventScript_GiveFWG {
 		}
 		call(Common_EventScript_TransferredToPC)
 	}
+	faceplayer
 	setflag(FLAG_ZONE1A_RECEIVED_FWG)
 	msgbox(format("Take care of your new Pokémon!"))
 	release

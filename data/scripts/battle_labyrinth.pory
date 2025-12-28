@@ -356,6 +356,7 @@ script EventScript_ChoosePartyMonToSend {
 		msgbox(format("Choose a party Pokémon to send to the PC."))
 		special(ChoosePartyMon)
 		waitstate
+		faceplayer
 		if (var(VAR_0x8004) != PARTY_NOTHING_CHOSEN) {
 			specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
 			bufferspeciesname(2, VAR_TEMP_3)

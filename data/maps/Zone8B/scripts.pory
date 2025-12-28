@@ -226,6 +226,7 @@ script Zone8B_EventScript_BuyTyrogue {
 		}
 		call(Common_EventScript_TransferredToPC)
 	}
+	faceplayer
 	setflag(FLAG_ZONE8B_NUZLOCKE_BOUGHT_FIGHTING)
 	msgbox(Zone8B_Text_BackToTraining)
 	release

@@ -366,6 +366,7 @@ script Zone2A_EventScript_BuyBug {
 		}
 		call(Common_EventScript_TransferredToPC)
 	}
+	faceplayer
 	setflag(FLAG_ZONE2A_NUZLOCKE_BOUGHT_BUG)
 	msgbox(format("Pleasure doing business with you."))
 	release
