@@ -724,7 +724,8 @@ script Sanctuary_EventScript_GameIntro {
 	}
 	if (flag(FLAG_TEMP_1)) {
 		setspeaker(SP_NAME_COLRESS)
-		msgbox(format("I also have a beginner's kit with items and cash to get you started."), MSGBOX_DEFAULT)
+		msgbox(format("I also have a beginner's kit with items and cash to get you started."))
+		setspeaker(SP_NAME_NONE)
 		giveitem(ITEM_POKE_BALL, 15)
 		giveitem(ITEM_POTION, 10)
 		playfanfare(MUS_OBTAIN_ITEM)

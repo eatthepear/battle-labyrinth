@@ -26,6 +26,7 @@ script Zone4E_EventScript_KimonoGirl_Exit {
 	waitmovement(0)
 	setspeaker("Kimono Girl")
 	msgbox(format("Oh, look! The exit!\pThe poor Kimono Girl has been led to the exit by a kind trainer!\pPlease take this as thanks."))
+	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_SACRED_ASH)
 	setspeaker("Kimono Girl")
 	msgbox(format("Well, I shall be off.\pIt seems two await you up ahead."), MSGBOX_AUTOCLOSE)
