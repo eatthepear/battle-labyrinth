@@ -291,7 +291,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_UseRockSmash_PBL",
-      "flag": "FLAG_TEMP_3"
+      "flag": "FLAG_HIDE_SANCTUARY_BOULDER_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -304,7 +304,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_UseRockSmash_PBL",
-      "flag": "FLAG_TEMP_5"
+      "flag": "FLAG_HIDE_SANCTUARY_BOULDER_2"
     }
   ],
   "warp_events": [

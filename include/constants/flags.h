@@ -266,6 +266,10 @@
 #define FLAG_COWGIRL_INTRO                                0x158
 #define FLAG_HIDE_ZONE10A_KIMONO_GIRL                                 0x159
 #define FLAG_TESTING_FLAG                                 0x15A
+#define FLAG_HIDE_SANCTUARY_BOULDER_1 0x15B
+#define FLAG_HIDE_SANCTUARY_BOULDER_2 0x15C
+#define FLAG_HIDE_BREEZY_MEADOW_SHRUB_1 0x15D
+#define FLAG_HIDE_BREEZY_MEADOW_SHRUB_2 0x15E
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START     0x200
