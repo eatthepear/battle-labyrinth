@@ -597,6 +597,8 @@ script EventScript_Notebook_ZoneInfo {
 		case 10:
 			msgbox(format("{COLOR GREEN}Zone 10{COLOR DARK_GRAY} is a desert valley."))
 		case 11:
+			msgbox(Sanctuary_Text_Colress_EndofDemo)
+			return
 		case 12:
 		case 13:
 		case 14:
@@ -695,7 +697,7 @@ script EventScript_Notebook_ZoneInfo {
 		case 10:
 			msgbox(format("The Leviathan is a Steel Gym Leader.\pTheir Tinkatuff can set up Stealth Rock, while their Togedemaru can chip away against its foes with Iron Barbs and Rocky Helmet.\pTheir Sliggoo-Hisui is also very tanky, and their ace Steelix has great coverage moves."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, they also have a Prinplup, and their Steelix can Mega evolve and use the Sand Force ability."))
+				msgbox(format("On Brutal difficulty, they also have a Prinplup, and their Steelix can Mega evolve."))
 			}
 		case 11:
 		case 12:
