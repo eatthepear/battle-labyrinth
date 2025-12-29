@@ -245,6 +245,11 @@ text gText_Colress_NuzlockeExplained {
 // }
 
 script EventScript_NextZone {
+	if (flag(FLAG_SYS_DEXNAV_GET) == FALSE) {
+		setspeaker(SP_NAME_COLRESS)
+		msgbox(format("It seems you haven't explored the Sanctuary fully yet.\pPerhaps speak to the Scientist southeast of here."))
+		return
+	}
 	if (checkitem(ITEM_SUPER_ROD) == FALSE) {
 		setspeaker(SP_NAME_COLRESS)
 		msgbox(format("It seems you haven't explored the Sanctuary fully yet.\pPerhaps speak to the Fisherman south of here."))
@@ -734,8 +739,6 @@ script Sanctuary_EventScript_GameIntro {
 		playfanfare(MUS_OBTAIN_ITEM)
 		msgbox(format("Received the {COLOR RED}Pokédex{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
 		waitfanfare
-		msgbox(format("Received the {COLOR RED}DexNav{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
-		waitfanfare
 		giveitem(ITEM_NOTEBOOK)
 	} else {
 		additem(ITEM_POTION, 10)
@@ -776,7 +779,6 @@ script EventScript_GameIntro_SetStartingVariablesAndFlags {
 	setflag(FLAG_SYS_POKEMON_GET)
 	setflag(FLAG_SYS_PC_LANETTE)
 	setflag(FLAG_AUTORUN_TOGGLE)
-	setflag(FLAG_SYS_DEXNAV_GET)
 	setvar(VAR_FARM_STOCK, 10)
 	setflag(FLAG_SYS_POKEDEX_GET)
 	setflag(FLAG_SYS_EXP_SHARE)
@@ -1445,7 +1447,7 @@ script EventScript_Fisherman {
 		msgbox(format("A Fisherman deigns to spread his love of fishing with others!"))
 		giveitem(ITEM_SUPER_ROD)
 	}
-	msgbox(format("A Fisherman always fishes if he can!\pAnd a Fisherman checks what Pokémon are avaiable to fish using the DexNav!\pThough the Sanctuary doesn't have any Pokémon available to fish!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("A Fisherman always fishes if he can!\pAnd a Fisherman checks what Pokémon are available to fish using the DexNav!\pThough the Sanctuary doesn't have any Pokémon available to fish!"), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_FISHERMAN, Common_Movement_FaceRight)
 	waitmovement(LOCALID_FISHERMAN)
 	release
@@ -1472,6 +1474,19 @@ script EventScript_Hiker {
 		giveitem(ITEM_INFINITE_REPEL)
 	}
 	msgbox(format("That {COLOR RED}Infinite Repellent{COLOR DARK_GRAY} repels all wild Pokémon encounters, regardless of your Pokémon's level!"))
+	release
+}
+
+script ZoneSanctuary_EventScript_Scientist {
+	lock
+	faceplayer
+	if (checkitem(FLAG_SYS_DEXNAV_GET) == FALSE) {
+		msgbox(format("Want to see all available encounters in an area?\pOr encounter a specific species?\pThe DexNav is the right tool for you!"))
+		setflag(FLAG_SYS_DEXNAV_GET)
+		msgbox(format("Received the {COLOR RED}DexNav{COLOR DARK_GRAY}! It was added to the {START_BUTTON} menu."), MSGBOX_DEFAULT)
+		waitfanfare
+	}
+	msgbox(format("The {COLOR RED}DexNav{COLOR DARK_GRAY} displays all possible Pokémon in an area, including by Honey Trees, Rock Smash, etc."))
 	release
 }
 
