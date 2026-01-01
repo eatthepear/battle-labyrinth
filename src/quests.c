@@ -1204,36 +1204,6 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      0
 	),
 	side_quest(
-	      gText_SideQuestName_Catch50,
-	      gText_SideQuestDesc_Catch50,
-	      COMPOUND_STRING("You've caught 50 different Pokémon species!"),
-	      gText_QuestMapZone10,
-	      OBJ_EVENT_GFX_COLLECTOR,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_DefeatAll1,
-	      gText_SideQuestDesc_DefeatAll1,
-	      COMPOUND_STRING("You've defeated all trainers in\nZones 1-10!"),
-	      gText_QuestMapZone10,
-	      OBJ_EVENT_GFX_BIRD_KEEPER,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_Berries,
-	      gText_SideQuestDesc_Berries,
-	      COMPOUND_STRING("FILLER!"),
-	      gText_QuestMapZone10,
-	      OBJ_EVENT_GFX_COOK,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
 	      COMPOUND_STRING("A Ruin Maniac's Challenge"),
 	      gText_SideQuestDesc_FindHiddenItems,
 	      COMPOUND_STRING("You found 100 hidden items!"),
@@ -1242,6 +1212,60 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJECT,
 	      NULL,
 	      0
+	),
+	side_quest(
+	      gText_SideQuestName_Filler,
+	      gText_SideQuestDesc_Filler,
+	      gText_SideQuestDoneDesc_Filler,
+	      gText_QuestMapFiller,
+	      ITEM_NONE,
+	      ITEM,
+	      NULL,
+	      0
+	    //   gText_SideQuestName_Catch50,
+	    //   gText_SideQuestDesc_Catch50,
+	    //   COMPOUND_STRING("You've caught 50 different Pokémon species!"),
+	    //   gText_QuestMapZone10,
+	    //   OBJ_EVENT_GFX_COLLECTOR,
+	    //   OBJECT,
+	    //   NULL,
+	    //   0
+	),
+	side_quest(
+	      gText_SideQuestName_Filler,
+	      gText_SideQuestDesc_Filler,
+	      gText_SideQuestDoneDesc_Filler,
+	      gText_QuestMapFiller,
+	      ITEM_NONE,
+	      ITEM,
+	      NULL,
+	      0
+	    //   gText_SideQuestName_DefeatAll1,
+	    //   gText_SideQuestDesc_DefeatAll1,
+	    //   COMPOUND_STRING("You've defeated all trainers in\nZones 1-10!"),
+	    //   gText_QuestMapZone10,
+	    //   OBJ_EVENT_GFX_BIRD_KEEPER,
+	    //   OBJECT,
+	    //   NULL,
+	    //   0
+	),
+	side_quest(
+	      gText_SideQuestName_Filler,
+	      gText_SideQuestDesc_Filler,
+	      gText_SideQuestDoneDesc_Filler,
+	      gText_QuestMapFiller,
+	      ITEM_NONE,
+	      ITEM,
+	      NULL,
+	      0
+	    //   gText_SideQuestName_Berries,
+	    //   gText_SideQuestDesc_Berries,
+	    //   COMPOUND_STRING("FILLER!"),
+	    //   gText_QuestMapZone10,
+	    //   OBJ_EVENT_GFX_COOK,
+	    //   OBJECT,
+	    //   NULL,
+	    //   0
 	),
 	side_quest(
 	      gText_SideQuestName_Filler,

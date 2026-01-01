@@ -206,7 +206,7 @@ script EventScript_Difficulty_Switch {
 // }
 
 script EventScript_Version {
-	msgbox(format("This is version 2.0.0 of Pokémon Battle Labyrinth.\pMake sure you're playing the most up to date version!"))
+	msgbox(format("This is the demo version of {COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY}, released on 12/31/25 and playable up to Zone 10.\pMake sure you're playing the most up to date version!"))
 	return
 }
 
