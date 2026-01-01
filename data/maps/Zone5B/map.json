@@ -564,6 +564,24 @@
       "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "Zone5B_EventScript_WarpToPriorWarp"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "Zone5B_EventScript_RudeToLeave"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 31,
+      "elevation": 0,
+      "var": "VAR_ZONE_5_STATE",
+      "var_value": "1",
+      "script": "Zone5B_EventScript_WarpToLizasRoom"
     }
   ],
   "bg_events": [

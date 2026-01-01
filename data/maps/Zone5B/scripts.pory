@@ -29,9 +29,20 @@ script Zone5B_EventScript_Liza {
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_REFLECT)
 	setspeaker("Liza")
-	msgbox(format("{COLOR BLUE}Liza{COLOR DARK_GRAY}: You're doing great, challenger!\pKeep up the good work.\pLeft leads to the exit, while right returns you to the Gym entrance."))
+	msgbox(format("{COLOR BLUE}Liza{COLOR DARK_GRAY}: You're doing great, challenger!\pKeep up the good work.\pLeft leads to the exit, while right returns you to the Gym entrance."), MSGBOX_AUTOCLOSE)
     setflag(FLAG_BEAT_LEVIATHAN_5)
 	release
+	end
+}
+
+script Zone5B_EventScript_RudeToLeave {
+	lockall
+	if (flag(FLAG_BEAT_LEVIATHAN_5) == FALSE) {
+		msgbox(format("It would be rude to leave without challenging Liza!"), MSGBOX_AUTOCLOSE)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
+		waitmovement(0)
+	}
+	releaseall
 	end
 }
 
@@ -93,7 +104,16 @@ script Zone5B_EventScript_FloorSwitch {
 
 script Zone5B_EventScript_WarpToEntrance {
 	lockall
+	setvar(VAR_ZONE_5_STATE, 1)
 	warpmossdeepgym(MAP_ZONE5B, 0, 31)
+	waitstate
+	releaseall
+	end
+}
+
+script Zone5B_EventScript_WarpToLizasRoom {
+	lockall
+	warpmossdeepgym(MAP_ZONE5B, 25, 2)
 	waitstate
 	releaseall
 	end
