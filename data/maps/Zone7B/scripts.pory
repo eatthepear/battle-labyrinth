@@ -23,6 +23,7 @@ script Zone7B_EventScript_LeviathanBattle {
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_BETTY_LEVIATHAN_7, format("It seems I was the one who ended up being humbled…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	faceplayer
 	setspeaker("Betty")
 	msgbox(format("Your battling skills are certainly up to par. Excellent form.\pI'd like to give you a few of these Berries.\pVery, very expensive, or so my butler tells me."), MSGBOX_AUTOCLOSE)
 	giveitem(ITEM_SITRUS_BERRY, 5)
