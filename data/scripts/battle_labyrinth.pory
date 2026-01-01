@@ -3071,6 +3071,17 @@ script EventScript_Lunatone {
 	release
 }
 
+script EventScript_Krabby {
+	lock
+	faceplayer
+	setspeaker("Krabby")
+	playmoncry(SPECIES_KRABBY, CRY_MODE_NORMAL)
+	msgbox(format("KRAB!"))
+	waitmoncry
+	release
+	end
+}
+
 script EventScript_Steelix {
 	lock
 	faceplayer
