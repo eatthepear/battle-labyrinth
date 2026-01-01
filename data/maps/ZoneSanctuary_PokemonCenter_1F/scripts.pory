@@ -8,9 +8,9 @@ script EventScript_Joy {
 	if (flag(FLAG_JOY_INTRO) == false) {
 		setflag(FLAG_JOY_INTRO)
 		setspeaker("???")
-		msgbox(format("Welcome to Joy's Center of Restoration! My name is Joy."))
+		msgbox(format("Welcome to {COLOR GREEN}Joy's Center of Restoration{COLOR DARK_GRAY}! My name is Joy."))
 		setspeaker("Joy")
-		msgbox(format("I used to work at the Pokémon Center, but they gave terrible pay.\pSo now, this building, Joy's Center of Restoration, is my own! I own it! Isn't that amazing?\pAnyways, not only do we encourage folks to use the building as a social space, we also still heal your Pokémon and offer access to the PC, for free!"), MSGBOX_DEFAULT)
+		msgbox(format("I used to work at the Pokémon Center, but they gave terrible pay.\pSo now, this building, {COLOR GREEN}Joy's Center of Restoration{COLOR DARK_GRAY}, is my own! I own it! Isn't that amazing?\pAnyways, not only do we encourage folks to use the building as a social space, we also still heal your Pokémon and offer access to the PC, for free!"), MSGBOX_DEFAULT)
 	}
 	setspeaker("Joy")
 	msgbox(format("Welcome! Should I heal your Pokémon?"), MSGBOX_YESNO)
@@ -71,11 +71,11 @@ script EventScript_SignsQuestGirl {
 	faceplayer
 	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_SIGNS)
 	if (var(VAR_RESULT) == FALSE) {
-		msgbox(format("Hiya! I'm improving on my reading skills!\pYou should work on your reading skills too!\pIf you read all the signs in Pokémon Battle Labyrinth, I'll give you a nice reward!"))
+		msgbox(format("Hiya! I'm improving on my reading skills!\pYou should work on your reading skills too!\pIf you read all the signs in {COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY}, I'll give you a nice reward!"))
 		startquest(QUEST_SIGNS)
 		msgbox(format("You can see the signs you've already read in the Quest Menu."))
 	}
-	msgbox(format("Signs have lots of useful info about unique mechanics to Pokémon Battle Labyrinth!\pAll signs get their messages transcribed to the Notebook after you read them.\pThe Notebook also has lots of useful information independent of signs, it's worth a read!"))
+	msgbox(format("Signs have lots of useful info about unique mechanics to {COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY}!\pAll signs get their messages transcribed to the {COLOR RED}Notebook{COLOR DARK_GRAY} after you read them. Isn't that amazing?"))
 	release
 	end
 }
@@ -92,7 +92,7 @@ script EventScript_SavesQuestBoy {
 	if (var(VAR_RESULT) == FALSE) {
 		callnative(SavesQuestCheckIfDone)
 		if (flag(FLAG_TEMP_6) == TRUE) {
-			msgbox(format("Wow!\pYou really went and saved 50 times?\pThat's crazy.\pHere, as a reward, I can give you this nifty Exp. Share!\pI would only use it if I don't want my Pokémon to grow at the rate it's supposed to!"))
+			msgbox(format("Wow!\pYou really went and saved 50 times?\pThat's crazy.\pHere, as a reward, I can give you this nifty Exp. Share!\pIt lets you toggle the Exp. Share on or off.\pI would only use it if I don't want my Pokémon to grow at the rate it's supposed to!"))
 			giveitem(ITEM_EXP_SHARE)
 			completequest(QUEST_SAVES)
 		}
@@ -120,10 +120,10 @@ script EventScript_FindHiddenQuestRuinManiac {
 	faceplayer
 	questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_FIND_100_HIDDEN)
 	if (var(VAR_RESULT) == FALSE) {
-		msgbox(format("A Ruin Maniac's best friend is a Dowsing Machine!\pIf you can show me you've found 100 hidden items, I'll give you a sweet reward."))
+		msgbox(format("A Ruin Maniac's best friend is a {COLOR RED}Dowsing Machine{COLOR DARK_GRAY}!\pIf you can show me you've found 100 hidden items, I'll give you a sweet reward."))
 		startquest(QUEST_FIND_100_HIDDEN)
 	}
-	msgbox(format("The Dowsing Machine is your best friend when it comes to finding hidden items!\pYou can also look for empty patches of grass or check small rocks."))
+	msgbox(format("The {COLOR RED}Dowsing Machine{COLOR DARK_GRAY} is your best friend when it comes to finding hidden items!\pYou can also look for empty patches of grass or check small rocks."))
 	release
 	end
 }

@@ -321,7 +321,7 @@ text gText_ItemChestIsEmpty {
 // }
 
 text gText_Nuzlocke_GiftPossible {
-	format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon. Would you like to see the list of possible Pokémon?")
+	format("On {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode, you will randomly receive one of the possible Pokémon. Would you like to see the list of possible Pokémon?")
 }
 
 text gText_Nuzlocke_ReadyReceive {
@@ -414,13 +414,13 @@ script EventScript_ShakeTree {
 		releaseall
 		end
 	}
-	msgbox(format("There is a sweet scent in the air…\pSlather the bark with honey?"), MSGBOX_YESNO)
+	msgbox(format("There is a sweet scent in the air…\pSlather the bark with Honey?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		releaseall
 		end
 	}
 	removeitem(ITEM_HONEY)
-	msgbox(format("{PLAYER} slathered the bark with honey…"), MSGBOX_DEFAULT)
+	msgbox(format("{PLAYER} slathered the bark with Honey…"), MSGBOX_DEFAULT)
 	closemessage
 	delay(32)
 	setvar(VAR_0x8004, 1)
@@ -446,7 +446,7 @@ script EventScript_MultipleHoneyEncountersNuzlocke {
 		if (flag(FLAG_TEMP_1)) {
 			return
 		}
-		msgbox(format("It looks like there's still some honey on the tree.\pWait for another Pokémon?"), MSGBOX_YESNO)
+		msgbox(format("It looks like there's still some Honey on the tree.\pWait for another Pokémon?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			return
 		}
@@ -650,27 +650,27 @@ script EventScript_Notebook_ZoneInfo {
 	}
 	switch (var(VAR_ZONE)) {
 		case 1:
-			msgbox(format("The Leviathan uses a trio of Elemental Monkeys, with their lead being weak against your starter, and their ace being strong against your starter."))
+			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} uses a trio of Elemental Monkeys, with their lead being weak against your starter, and their ace being strong against your starter."))
 		case 2:
-			msgbox(format("The Leviathan trains a Bunnelby, Smoliv, and ace Skwovet that use Oran Berries."))
+			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} trains a Bunnelby, Smoliv, and ace Skwovet that use Oran Berries."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, they also have a Gulpin with Sticky Hold that uses Stuff Cheeks to set up its Belch."))
+				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, they also have a Gulpin with Sticky Hold that uses Stuff Cheeks to set up its Belch."))
 			}
 		case 3:
-			msgbox(format("The Leviathan ramps up the damage over time. Their Bidoof, Sandshrew, and ace Marill all use Defense Curl and Rollout."))
+			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} ramps up the damage over time. Their Bidoof, Sandshrew, and ace Marill all use Defense Curl and Rollout."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, they also have a Spheal that uses Defense Curl and Ice Ball."))
+				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, they also have a Spheal that uses Defense Curl and Ice Ball."))
 			}
 			msgbox(format("There is also a Lady guarding a Rare Candy who uses Woobat, Luvdisc, and Delcatty."))
 		case 4:
-			msgbox(format("The Leviathan battles in a Double Battle. Their Nickit, Shinx, and ace Ledian all use spread moves that lower your stats."))
+			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} battles in a Double Battle. Their Nickit, Shinx, and ace Ledian all use spread moves that lower your stats."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, they also have a Axew with Breaking Swipe."))
+				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, they also have a Axew with Breaking Swipe."))
 			}
 		case 5:
-			msgbox(format("The Leviathan is a Psychic Gym Leader. Their Munna, Spoink, Natu, and Lunatone all can utilize Light Screen and Reflect to reduce damage."))
+			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} is a Psychic Gym Leader. Their Munna, Spoink, Natu, and Lunatone all can utilize Light Screen and Reflect to reduce damage."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, their Gym has permanent Psychic Terrain, and their Lunatone has improved move options instead of the screens."))
+				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, their Gym has permanent Psychic Terrain, and their Lunatone has improved move options instead of the screens."))
 			}
 			msgbox(format("There is also a Rich Boy guarding a Rare Candy who uses Delibird, Farfetch'd, and Spinda."))
 		case 6:
@@ -680,24 +680,24 @@ script EventScript_Notebook_ZoneInfo {
 			}
 		case 7:
 		case 8:
-			msgbox(format("The first Leviathan has Pokémon that take advantage of held Sitrus Berries in different ways. Their Drifloon has Acrobatics and Unburden, their Dedenne has Cheek Pouch, and their Klawf can sometimes get multiple Anger Shell boosts because it has Sitrus Berry."))
+			msgbox(format("The first {COLOR RED}Leviathan{COLOR DARK_GRAY} has Pokémon that take advantage of held Sitrus Berries in different ways. Their Drifloon has Acrobatics and Unburden, their Dedenne has Cheek Pouch, and their Klawf can sometimes get multiple Anger Shell boosts because it has Sitrus Berry."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, they also have a Appletun that maximizes the effectiveness of the Sitrus Berry with its Ripen ability."))
+				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, they also have a Appletun that maximizes the effectiveness of the Sitrus Berry with its Ripen ability."))
 			}
-			msgbox(format("The second Leviathan is a villainous team admin. They use a Stunfisk, a Beautifly, and a Purugly."))
+			msgbox(format("The second {COLOR RED}Leviathan{COLOR DARK_GRAY} is a villainous team admin. They use a Stunfisk, a Beautifly, and a Purugly."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, they also have a Bruxish."))
+				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, they also have a Bruxish."))
 			}
 		case 9:
 			msgbox(format("There are four trainers you must defeat in a row.\pThe first uses a Squawkabilly.\pThe second uses a Carnivine.\pThe third uses a Seel and a Wailmer.\pThe fourth uses a Morpeko."))
 			msgbox(format("You can optionally battle a fifth trainer in a row to get a Rare Candy. This trainer uses a Sawk and a Throh."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, the fifth trainer is mandatory."))
+				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, the fifth trainer is mandatory."))
 			}
 		case 10:
-			msgbox(format("The Leviathan is a Steel Gym Leader.\pTheir Tinkatuff can set up Stealth Rock, while their Togedemaru can chip away against its foes with Iron Barbs and Rocky Helmet.\pTheir Sliggoo-Hisui is also very tanky, and their ace Steelix has great coverage moves."))
+			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} is a Steel Gym Leader.\pTheir Tinkatuff can set up Stealth Rock, while their Togedemaru can chip away against its foes with Iron Barbs and Rocky Helmet.\pTheir Sliggoo-Hisui is also very tanky, and their ace Steelix has great coverage moves."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, they also have a Prinplup, and their Steelix can Mega evolve."))
+				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, they also have a Prinplup, and their Steelix can Mega evolve."))
 			}
 		case 11:
 		case 12:
@@ -1203,17 +1203,17 @@ script EventScript_Notebook_Items {
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
 		switch (var(VAR_RESULT)) {
 			case ITEM_RARE_CANDY:
-				msgbox(format("You can use normal Rare Candies, of which there only 15 in the game, to level up your Pokémon past the current level cap.\pThe Infinite Candy Key Item allows you to raise your Pokémon up to the level cap, or only the prior level cap if you are in a Zone."))
+				msgbox(format("You can use normal {COLOR RED}Rare Candies{COLOR DARK_GRAY}, of which there only 15 in the game, to level up your Pokémon past the current level cap.\pThe {COLOR RED}Infinite Candy{COLOR DARK_GRAY} Key Item allows you to raise your Pokémon up to the level cap, or only the prior level cap if you are in a {COLOR GREEN}Zone{COLOR DARK_GRAY}."))
 			case ITEM_INFINITE_REPEL:
-				msgbox(format("The Infinite Repel Key Item allows you to avoid encountering any wild Pokémon, regardless of your level."))
+				msgbox(format("The {COLOR RED}Infinite Repel{COLOR DARK_GRAY} Key Item allows you to avoid encountering any wild Pokémon, regardless of your level."))
 			case ITEM_TM_RETURN:
-				msgbox(format("TMs are infinite use, but do not restore PP if you are in a new Zone."))
+				msgbox(format("TMs are infinite use, but do not restore PP if you are in a new {COLOR GREEN}Zone{COLOR DARK_GRAY}."))
 			case ITEM_HONEY:
-				msgbox(format("Honey cost reduced to ¥80, and starts a wild Double Battle if on a map and tile that can have wild Pokémon.\pYou can also slather it on a Honey Tree to attract a wild Pokémon."))
+				msgbox(format("{COLOR RED}Honey{COLOR DARK_GRAY} cost reduced to ¥80, and starts a wild Double Battle if on a map and tile that can have wild Pokémon.\pYou can also slather it on a {COLOR GREEN}Honey Tree{COLOR DARK_GRAY} to attract a wild Pokémon."))
 			case ITEM_ABILITY_SNACK:
-				msgbox(format("The Ability Snack costs ¥80 and functions the same as an Ability Capsule."))
+				msgbox(format("The {COLOR RED}Ability Snack{COLOR DARK_GRAY} costs ¥80 and functions the same as an Ability Capsule."))
 			case ITEM_SACRED_ASH:
-				msgbox(format("The Sacred Ash now fully revives and heals your entire party."))
+				msgbox(format("The {COLOR RED}Sacred Ash{COLOR DARK_GRAY} now fully revives and heals your entire party."))
 			case ITEM_SERIOUS_MINT:
 				msgbox(format("Mints cost reduced to ¥80, and change natures permanently."))
 			case ITEM_EXP_CANDY_M:
@@ -1225,7 +1225,7 @@ script EventScript_Notebook_Items {
 			case ITEM_HEART_SCALE:
 				msgbox(format("Heart Scale cost increased to ¥2400."))
 			case ITEM_HEXORB:
-				msgbox(format("The Hexorb Key Item lets you pre-status Pokémon."))
+				msgbox(format("The {COLOR RED}Hexorb{COLOR DARK_GRAY} Key Item lets you pre-status Pokémon."))
 			case 1:
 			case MULTI_B_PRESSED:
 				return
@@ -1256,15 +1256,15 @@ script EventScript_Notebook_Other {
 			case 1:
 				msgbox(format("Many trainers have a pool of possible Pokémon they can have, and may vary their lead Pokémon."))
 			case 2:
-				msgbox(format("The DexNav displays all wild Pokémon available in a Zone. Pokémon in the Hidden category are found through Honey trees, smashing rocks, etc., though they cannot be found using the DexNav's search function.\pWild Pokémon do not flee when using the DexNav's search function.\pThe DexNav cannot chain Pokémon, and all Pokémon found through the DexNav are the same as ordinary wild Pokémon."))
+				msgbox(format("The {COLOR RED}DexNav{COLOR DARK_GRAY} displays all wild Pokémon available in a Zone. Pokémon in the Hidden category are found through Honey trees, smashing rocks, etc., though they cannot be found using the {COLOR RED}DexNav{COLOR DARK_GRAY}'s search function.\pWild Pokémon do not flee when using the {COLOR RED}DexNav{COLOR DARK_GRAY}'s search function.\pThe {COLOR RED}DexNav{COLOR DARK_GRAY} cannot chain Pokémon, and all Pokémon found through the {COLOR RED}DexNav{COLOR DARK_GRAY} are the same as ordinary wild Pokémon."))
 			case 3:
-				msgbox(format("Honey Trees can be slathered with Honey, instantly triggering a wild Pokémon battle."))
+				msgbox(format("{COLOR GREEN}Honey Trees{COLOR DARK_GRAY} can be slathered with Honey, instantly triggering a wild Pokémon battle."))
 			case 4:
-				msgbox(format("Hidden Grottoes contain one specific Pokémon species with its Hidden Ability, chosen randomly from a pool.\pPokémon respawn upon exiting the Hidden Grotto, though it will always be the same species."))
+				msgbox(format("{COLOR GREEN}Hidden Grottoes{COLOR DARK_GRAY} contain one specific Pokémon species with its Hidden Ability, chosen randomly from a pool.\pPokémon respawn upon exiting the {COLOR GREEN}Hidden Grotto{COLOR DARK_GRAY}, though it will always be the same species."))
 			case 5:
-				msgbox(format("Available Field Moves:\nRefresh, Aromatherapy, and Heal Bell,\lSweet Scent (triggers wild Double Battle).\pAll of these require 1 PP to be used, and their usage is unaffected by the Pokémon that used them nor the weather conditions.\pFor example, a Pokémon that is asleep can still use Aromatherapy to cure itself."))
+				msgbox(format("Available Field Moves:\n{COLOR RED}Refresh{COLOR DARK_GRAY}, {COLOR RED}Aromatherapy{COLOR DARK_GRAY}, and {COLOR RED}Heal Bell{COLOR DARK_GRAY},\l{COLOR RED}Sweet Scent{COLOR DARK_GRAY} (triggers wild Double Battle).\pAll of these require 1 PP to be used, and their usage is unaffected by the Pokémon that used them nor the weather conditions.\pFor example, a Pokémon that is asleep can still use {COLOR RED}Aromatherapy{COLOR DARK_GRAY} to cure itself."))
 			case 6:
-				msgbox(format("Move Tutors can be found scattered in a few Zones.\pOnce encountered, Lelouch can handle teaching your Pokémon those moves."))
+				msgbox(format("Move Tutors can be found scattered in a few Zones.\pOnce encountered, {COLOR GREEN}Lelouch's Services Stand{COLOR DARK_GRAY} can handle teaching your Pokémon those moves."))
 			case 7:
 				msgbox(format("There is no day/night cycle."))
 			case 8:

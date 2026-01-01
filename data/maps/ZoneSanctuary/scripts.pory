@@ -697,12 +697,12 @@ script Sanctuary_EventScript_GameIntro {
 	if (var(VAR_RESULT) == YES) {
 		setflag(FLAG_TEMP_1)
 		msgbox(format("Pokémon Battle Labyrinth is comprised of many {COLOR GREEN}Zones{COLOR DARK_GRAY} you must traverse.\p"
-		"In these Zones, you can encounter wild Pokémon, find great treasures, challenge fierce opponents, and more.\p"
-		"Each Zone typically contains a {COLOR GREEN}Leviathan{COLOR DARK_GRAY} or other difficult challenge that yields great rewards.\p"
-		"When you complete a Zone, you will return to this area, the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}, where you can heal your Pokémon, purchase supplies, and prepare for the next Zone.\p"
-		"Once you enter a new Zone, you will not be able to access the Sanctuary until you complete that Zone.\p"
-		"As you complete more Zones, more items, quests, and services are unlocked.\p"
-		"In order to win, you must progress through all Zones, overcoming all challenges you face along the way."))
+		"In these {COLOR GREEN}Zones{COLOR DARK_GRAY}, you can encounter wild Pokémon, find great treasures, challenge fierce opponents, and more.\p"
+		"Each {COLOR GREEN}Zone{COLOR DARK_GRAY} typically contains a {COLOR RED}Leviathan{COLOR DARK_GRAY} or other difficult challenge that yields great rewards.\p"
+		"When you complete a {COLOR GREEN}Zone{COLOR DARK_GRAY}, you will return to this area, the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}, where you can heal your Pokémon, purchase supplies, and prepare for the next {COLOR GREEN}Zone{COLOR DARK_GRAY}.\p"
+		"Once you enter a new Zo{COLOR GREEN}Zone{COLOR DARK_GRAY}ne, you will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} until you complete that {COLOR GREEN}Zone{COLOR DARK_GRAY}.\p"
+		"As you complete more {COLOR GREEN}Zones{COLOR DARK_GRAY}, more items, quests, and services are unlocked.\p"
+		"In order to win, you must progress through all {COLOR GREEN}Zones{COLOR DARK_GRAY}, overcoming all challenges you face along the way."))
 	}
 	call(EventScript_GameIntro_Difficulty)
 	call(EventScript_GameIntro_Nuzlocke)
@@ -749,10 +749,10 @@ script Sanctuary_EventScript_GameIntro {
 	callnative(UpdateFollowingPokemon)
 	if (flag(FLAG_TEMP_1)) {
 		setspeaker(SP_NAME_COLRESS)
-		msgbox(format("I would recommend exploring the Sanctuary before you enter the first Zone.\pMany people here have free items or advice for new challengers."))
+		msgbox(format("I would recommend exploring the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} before you enter the first {COLOR GREEN}Zone{COLOR DARK_GRAY}.\pMany people here have free items or advice for new challengers."))
 	} else {
 		setspeaker(SP_NAME_COLRESS)
-		msgbox(format("Since you've elected to skip the tutorial, would you like to skip all Sanctuary exploration as well?"), MSGBOX_YESNO)
+		msgbox(format("Since you've elected to skip the tutorial, would you like to skip all {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} exploration as well?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
 			setflag(FLAG_JOY_INTRO)
 			setflag(FLAG_TIM_INTRO)
@@ -794,7 +794,7 @@ script EventScript_GameIntro_SetStartingVariablesAndFlags {
 
 script EventScript_GameIntro_Difficulty {
 	setspeaker(SP_NAME_COLRESS)
-	msgbox(format("Pokémon Battle Labyrinth has a few difficulty options. Please adjust the difficulty as you see fit."))
+	msgbox(format("{COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY} has a few difficulty options. Please adjust the difficulty as you see fit."))
 	while {
 		call(EventScript_Difficulty_SetToMessage)
 		setspeaker(SP_NAME_COLRESS)
@@ -839,7 +839,7 @@ script EventScript_GameIntro_Difficulty {
 script EventScript_GameIntro_Nuzlocke {
 	while {
 		setspeaker(SP_NAME_COLRESS)
-		message(format("There is a built-in {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode. Would you like to enable it?"))
+		message(format("{COLOR RED}Pokémon Battle Labyrinth{COLOR DARK_GRAY} offers a built-in {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode. Would you like to enable it?"))
 		waitmessage
 		dynmultichoice(20, 6, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Info", "Yes", "No")
 		switch (var(VAR_RESULT)) {
@@ -1055,7 +1055,7 @@ script EventScript_Shop_Cowgirl {
 	faceplayer
 	setspeaker("Cowgirl")
 	if (flag(FLAG_COWGIRL_INTRO) == FALSE) {
-		msgbox(format("Howdy! Welcome to the Farmer's Stand."))
+		msgbox(format("Howdy! Welcome to the {COLOR GREEN}Farmer's Stand{COLOR DARK_GRAY}."))
 		call(EventScript_Shop_FarmersStand_Info)
 		setflag(FLAG_COWGIRL_INTRO)
 	}
@@ -1075,7 +1075,7 @@ script EventScript_Shop_FarmersStand {
 	while {
 		setspeaker("Cowgirl")
 		buffernumberstring(0, VAR_FARM_STOCK)
-		message("Howdy! Welcome to the Farmer's Stand.\nYou can buy up to {STR_VAR_1} items.")
+		message("Howdy! Welcome to the {COLOR GREEN}Farmer's Stand{COLOR DARK_GRAY}.\nYou can buy up to {COLOR RED}{STR_VAR_1}{COLOR DARK_GRAY} items.")
 		waitmessage
 		dynmultipush("Shop Info", 0)
 		dynmultipush("Ability Snack", ITEM_ABILITY_SNACK)
@@ -1337,7 +1337,7 @@ script EventScript_Shop_FarmersStand_Info {
 text Text_Shop_FarmersStand_Info {
 	"We sell freshly grown or baked goods,\nall organically sourced, and it's\lsubsidized, so everything is dirt cheap!\p"
 	"We do have a per-customer limit on how\nmany items you can buy, as our stock of\litems is limited.\p"
-	"Currently, you can buy up to {STR_VAR_1} items,\nthough the limit will reset when we\lrestock our supply. (every 5th Zone)"
+	"Currently, you can buy up to {COLOR RED}{STR_VAR_1}{COLOR DARK_GRAY} items,\nthough the limit will reset when we\lrestock our supply. (every 5th Zone)"
 }
 
 // This script assumes everything costs ¥80
@@ -1354,7 +1354,7 @@ script EventScript_Shop_FarmersStand_BuyItem {
 		buffernumberstring(0, VAR_FARM_STOCK)
 		bufferitemnameplural(1, VAR_TEMP_0, 2)
 		setspeaker("Cowgirl")
-		message("How many {STR_VAR_2} do you want?\n(You can still buy up to {STR_VAR_1} items.)")
+		message("How many {STR_VAR_2} do you want?\n(You can still buy up to {COLOR RED}{STR_VAR_1}{COLOR DARK_GRAY} items.)")
 		waitmessage
 		buffernumberstring(0, 80 * 1)
 		dynmultipush("One - ¥{STR_VAR_1}", 0)
@@ -1447,7 +1447,7 @@ script EventScript_Fisherman {
 		msgbox(format("A Fisherman deigns to spread his love of fishing with others!"))
 		giveitem(ITEM_SUPER_ROD)
 	}
-	msgbox(format("A Fisherman always fishes if he can!\pAnd a Fisherman checks what Pokémon are available to fish using the DexNav!\pThough the Sanctuary doesn't have any Pokémon available to fish!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("A Fisherman always fishes if he can!\pAnd a Fisherman checks what Pokémon are available to fish using the {COLOR RED}DexNav{COLOR DARK_GRAY}!\pThough the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} doesn't have any Pokémon available to fish!"), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_FISHERMAN, Common_Movement_FaceRight)
 	waitmovement(LOCALID_FISHERMAN)
 	release
@@ -1460,7 +1460,7 @@ script EventScript_ExpertM {
 		msgbox(format("I have studied the most effective training techniques for Pokémon, and developed these as the most optimal solution."))
 		giveitem(ITEM_INFINITE_CANDY)
 	}
-	msgbox(format("This {COLOR RED}Infinite Candy{COLOR DARK_GRAY} can increase your Pokémon's level up to the prior level cap.\pThough it's not as strong as a true Rare Candy, which would be able to increase your Pokémon's level past the current level cap."), MSGBOX_AUTOCLOSE)
+	msgbox(format("This {COLOR RED}Infinite Candy{COLOR DARK_GRAY} can increase your Pokémon's level up to the prior level cap.\pThough it's not as strong as a true {COLOR RED}Rare Candy{COLOR DARK_GRAY}, which would be able to increase your Pokémon's level past the current level cap."), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_EXPERT_M, Common_Movement_FaceLeft)
 	waitmovement(LOCALID_EXPERT_M)
 	release
@@ -1700,10 +1700,10 @@ script EventScript_Shop_MartEmployee {
 	faceplayer
 	playbgm(MUS_POKE_MART, FALSE)
 	if (flag(FLAG_TIM_INTRO) == false) {
-		msgbox(format("Hey there! Welcome to the Poké Mart Stand.\pWe carry items that are typically sold in Poké Marts."), MSGBOX_DEFAULT)
+		msgbox(format("Hey there! Welcome to the {COLOR GREEN}Poké Mart Stand{COLOR DARK_GRAY}.\pWe carry items that are typically sold in Poké Marts."), MSGBOX_DEFAULT)
 		setflag(FLAG_TIM_INTRO)
 	}
-	message(format("Welcome to the Poké Mart Stand!"))
+	message(format("Welcome to the {COLOR GREEN}Poké Mart Stand{COLOR DARK_GRAY}!"))
 	waitmessage
 	switch (var(VAR_ZONE)) {
 		case 1:
@@ -1889,7 +1889,7 @@ script EventScript_Shop_Varrick {
 		setflag(FLAG_VARRICK_INTRO)
 	}
 	setspeaker("Varrick")
-	message(format("Salutations! Welcome to Varrick's Extravagant Emporium!"))
+	message(format("Salutations! Welcome to {COLOR GREEN}Varrick's Extravagant Emporium{COLOR DARK_GRAY}!"))
 	waitmessage
 	call(EventScript_Shop_Varrick_Items)
 	msgbox("A big thank you from me!")
@@ -2937,7 +2937,7 @@ script EventScript_Shop_Lelouch {
 		end
 	}
 	setspeaker("Lelouch")
-	message("For the right price…\nWelcome to Lelouch's Services Stand.")
+	message("For the right price…\nWelcome to {COLOR GREEN}Lelouch's Services Stand{COLOR DARK_GRAY}.")
 	waitmessage
 	call(EventScript_Shop_Lelouch_Services)
 	msgbox("Farewell.")
@@ -3675,32 +3675,34 @@ script EventScript_Twin {
 script ZoneSanctuary_EventScript_SchoolKidF {
 	lock
 	faceplayer
-	msgbox(format("Did you know? Honey can be slathered on Honey Trees, or used in the field to attract multiple wild Pokémon at the same time!\pYou can buy Honey at the Farmer's Stand, where my older sister works!"))
+	msgbox(format("Did you know? {COLOR RED}Honey{COLOR DARK_GRAY} can be slathered on {COLOR GREEN}Honey Trees{COLOR DARK_GRAY}, or used in the field to attract multiple wild Pokémon at the same time!\pYou can buy {COLOR RED}Honey{COLOR DARK_GRAY} at the {COLOR GREEN}Farmer's Stand{COLOR DARK_GRAY}, where my older sister works!"))
 	release
 }
 
 script EventScript_RangerF {
 	lock
 	faceplayer
-	message(format("Hey there, challenger! Would you like to enable Encounter Overcrowding?"))
+	message(format("Hey there, challenger! Would you like to enable {COLOR RED}Encounter Overcrowding{COLOR DARK_GRAY}?"))
 	waitmessage
 	dynmultichoice(20, 6, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Info", "Yes", "No", "Exit")
 	switch (var(VAR_RESULT)) {
 		case 0:
-			msgbox(format("By default, for a given save file, the possible wild encounters are randomly chosen from a limited pool.\pFor example, on a map with grass encounters, there are typically 6 species you can actually encounter, chosen randomly when you start your save file out of 12 total species.\pEncounter Overcrowding makes it so all 12 species are encounterable in the wild.\pThis typically causes routes to feel overcrowded, hence it is disabled by default.\pIf you'd like to use a specific Pokémon species, it is recommended to enable Encounter Overcrowding."))
+			msgbox(format("By default, for a given save file, the possible wild encounters are randomly chosen from a limited pool.\pFor example, on a map with grass encounters, there are typically 6 species you can actually encounter, chosen randomly when you start your save file out of 12 total species.\pEncounter Overcrowding makes it so all 12 species are encounterable in the wild.\pThis typically causes routes to feel overcrowded, hence it is disabled by default.\pIf you'd like to use a specific Pokémon species, it is recommended to enable {COLOR RED}Encounter Overcrowding{COLOR DARK_GRAY}."))
 		case 1:
-			msgbox(format("Are you sure you want to enable Encounter Overcrowding?"), MSGBOX_YESNO)
+			msgbox(format("Are you sure you want to enable {COLOR RED}Encounter Overcrowding{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				setflag(FLAG_SYS_ALL_WILD_MONS)
-				msgbox(format("Encounter Overcrowding enabled."))
-				return
+				msgbox(format("{COLOR RED}Encounter Overcrowding{COLOR DARK_GRAY} enabled."))
+				release
+				end
 			}
 		case 2:
-			msgbox(format("Are you sure you want to disable Encounter Overcrowding?"), MSGBOX_YESNO)
+			msgbox(format("Are you sure you want to disable {COLOR RED}Encounter Overcrowding{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				clearflag(FLAG_SYS_ALL_WILD_MONS)
-				msgbox(format("Encounter Overcrowding disabled."))
-				return
+				msgbox(format("{COLOR RED}Encounter Overcrowding{COLOR DARK_GRAY} disabled."))
+				release
+				end
 			}
 	}
 	msgbox(format("Come on back if you change your mind!"))
