@@ -759,6 +759,7 @@ script Sanctuary_EventScript_GameIntro {
 			additem(ITEM_INFINITE_REPEL)
 			additem(ITEM_INFINITE_CANDY)
 			additem(ITEM_HEXORB)
+			setflag(FLAG_SYS_DEXNAV_GET)
 		}
 	}
 	call(EventScript_WhenUReadyDialogue)
