@@ -5,6 +5,8 @@
 #include "data.h"
 #include "decompress.h"
 #include "event_data.h"
+#include "event_object_movement.h"
+#include "event_scripts.h"
 #include "field_weather.h"
 #include "gpu_regs.h"
 #include "graphics.h"
@@ -1418,7 +1420,8 @@ void Task_OpenTrainerCardFromStartMenu(u8 taskId)
         StartMenuFull_FreeResources();
         PlayRainStoppingSoundEffect();
         CleanupOverworldWindowsAndTilemaps();
-        EnterPokeStorage(0);
+        SetMainCallback2(CB2_ReturnToField);
+        ScriptContext_SetupScript(EventScript_PC);
     }
 }
 
