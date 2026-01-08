@@ -3,6 +3,7 @@ mapscripts Zone10A_MapScripts {
 		VAR_ZONE_10_STATE, 0: Zone10A_EventScript_KimonoGirl_Intro
 	]
     MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_TEMP_HIDE_FOLLOWER)
 		if (var(VAR_ZONE_10_STATE) < 5) {
 			setobjectxyperm(LOCALID_JASMINE, 47, 28)
 			setobjectxyperm(LOCALID_STEELIX, 48, 28)
