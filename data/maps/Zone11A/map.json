@@ -2,7 +2,7 @@
   "id": "MAP_ZONE11A",
   "name": "Zone11A",
   "layout": "LAYOUT_ZONE11A",
-  "music": "MUS_FORTREE",
+  "music": "MUS_HG_RUINS_OF_ALPH",
   "region_map_section": "MAPSEC_ZONE_11",
   "requires_flash": false,
   "weather": "WEATHER_FOG_HORIZONTAL",
