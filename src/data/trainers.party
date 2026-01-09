@@ -1715,86 +1715,9 @@ Pic: Hex Maniac
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Gastly
-Ability: Levitate
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Clear Smog
-- Hex
-- Haze
-- Scary Face
-
-Frillish
-Ability: Cursed Body
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bubble Beam
-- Whirlpool
-- Hex
-- Recover
-
-Honedge
-Ability: No Guard
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Shadow Sneak
-- Metal Sound
-- Retaliate
-- Night Slash
-
-Greavard
-Ability: Fluffy
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Shadow Sneak
-- Yawn
-- Headbutt
-- Dig
-
-=== TRAINER_PBL_EMMA_AND_LEO ===
-Name: Emma&Leo
-Class: Young Couple
-Pic: Young Couple
-Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: Yes
-
-Volbeat
-Ability: Prankster
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Shock Wave
-- Encore
-- Moonlight
-- Signal Beam
-
-Illumise
-Ability: Prankster
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Covet
-- Encore
-- Moonlight
-- Signal Beam
-
-Nuzleaf
-Ability: Early Bird
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Feint Attack
-- Defog
-- Mega Drain
-- Beat Up
-
-Lombre
-Ability: Rain Dish
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bubble Beam
-- Mega Drain
-- Tickle
-- Synthesis
+Party Size: 4
+Pool Prune: Non Ghost
+Copy Pool: TRAINER_POOL_ZONE_11
 
 === TRAINER_PBL_JOEL ===
 Name: Joel
@@ -1803,42 +1726,9 @@ Pic: Psychic M
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Bronzor
-Ability: Levitate
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Imprison
-- Feint Attack
-- Metal Sound
-- Extrasensory
-
-Golett
-Ability: Iron Fist
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Magnitude
-- Curse
-- Shadow Punch
-- Stomping Tantrum
-
-Poltchageist
-Ability: Hospitality
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Life Dew
-- Mega Drain
-- Hex
-- Foul Play
-
-Inkay
-Ability: Contrary
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Slash
-- Pluck
-- Psybeam
-- Switcheroo
+Party Size: 4
+Pool Prune: Non Psychic
+Copy Pool: TRAINER_POOL_ZONE_11
 
 === TRAINER_PBL_MARION ===
 Name: Marion
@@ -1847,84 +1737,20 @@ Pic: Psychic F
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Duskull
-Ability: Levitate
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Night Shade
-- Confuse Ray
-- Curse
-- Hex
-
-Sinistea
-Ability: Cursed Body
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Night Shade
-- Sucker Punch
-- Hex
-- Ally Switch
-
-Elgyem
-Ability: Synchronize
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Psybeam
-- Teleport
-- Cosmic Power
-- Recover
-
-Litwick
-Ability: Flame Body
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Imprison
-- Hex
-- Flame Burst
-- Will-O-Wisp
+Party Size: 4
+Pool Prune: Non Psychic
+Copy Pool: TRAINER_POOL_ZONE_11
 
 === TRAINER_PBL_REGINA ===
 Name: Regina
-Class: Hex Maniac
-Pic: Hex Maniac
-Music: Suspicious
+Class: Fairy Tale Girl
+Pic: Fairy Tale Girl
+Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Misdreavus
-Ability: Levitate
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Curse
-- Hex
-- Psybeam
-- Ominous Wind
-
-Shuppet
-Ability: Cursed Body
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Shadow Sneak
-- Snatch
-- Ominous Wind
-- Trick
-
-Gimmighoul
-Ability: Rattled
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Astonish
-- Tackle
-
-Bramblin
-Ability: Wind Rider
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Leech Seed
-- Shadow Sneak
-- Mega Drain
-- Hex
+Party Size: 4
+Pool Prune: Non Fairy
+Copy Pool: TRAINER_POOL_ZONE_11
 
 === TRAINER_PBL_NEWTON_LEVIATHAN_10 ===
 Name: Newton
@@ -6018,3 +5844,127 @@ Popplio
 Sobble
 
 Quaxly
+
+=== TRAINER_POOL_ZONE_11 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Milcery
+
+Fidough
+
+Marill
+
+Jigglypuff
+
+Clefairy
+
+Spoink
+
+Spritzee
+
+Swirlix
+
+Hatenna
+
+Impidimp
+
+Gothita
+
+Solosis
+
+Munna
+
+Inkay
+
+Cutiefly
+
+Dottler
+
+Litwick
+
+Bramblin
+
+Greavard
+
+Shuppet
+
+Duskull
+
+Baltoy
+
+Bronzor
+
+Gimmighoul
+
+Yamask
+
+Yamask Galar
+
+Golett
+
+Sinistea
+
+Poltchageist
+
+Phantump
+
+Gastly
+
+Sandygast
+
+Honedge
+
+Zorua Hisui
+
+Frillish
+
+Elgyem
+
+Pumpkaboo
+
+Drifloon
+
+=== TRAINER_POOL_ZONE_12 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_13_AND_14 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_13_AND_14_GRUNTS ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_15 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur

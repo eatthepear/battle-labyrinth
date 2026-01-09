@@ -54,45 +54,6 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_YOUNG_MAN",
-      "x": 24,
-      "y": 12,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
-      "script": "Zone11A_EventScript_EmmaandLeo",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_YOUNG_WOMAN",
-      "x": 25,
-      "y": 12,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
-      "script": "Zone11A_EventScript_EmmaandLeo",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
-      "x": 8,
-      "y": 9,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "Zone11A_EventScript_Joel",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_F",
       "x": 35,
       "y": 35,
@@ -106,9 +67,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
-      "x": 16,
-      "y": 39,
+      "graphics_id": "OBJ_EVENT_GFX_FAIRY_TALE_GIRL",
+      "x": 12,
+      "y": 44,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -246,6 +207,19 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Zone11A_EventScript_FairyFeather",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+      "x": 8,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Zone11A_EventScript_Joel",
       "flag": "0"
     }
   ],

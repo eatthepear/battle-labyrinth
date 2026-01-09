@@ -4482,15 +4482,14 @@ u16 GetNumTrainersRemaining(void)
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
-        count += 5 * !FlagGet(FLAG_BEAT_LEVIATHAN_10);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_10);
         break;
     case 11:
-        count += !HasTrainerBeenFought(TRAINER_PBL_JEANETTE);
-        count += !HasTrainerBeenFought(TRAINER_PBL_EMMA_AND_LEO);
-        count += !HasTrainerBeenFought(TRAINER_PBL_JOEL);
-        count += !HasTrainerBeenFought(TRAINER_PBL_MARION);
-        count += !HasTrainerBeenFought(TRAINER_PBL_REGINA);
-        count += !FlagGet(FLAG_BEAT_LEVIATHAN_10);
+        for (trainer = TRAINER_PBL_JEANETTE; trainer <= TRAINER_PBL_REGINA; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_11);
         break;
     case 12:
         count += !HasTrainerBeenFought(TRAINER_PBL_ESSENCE);

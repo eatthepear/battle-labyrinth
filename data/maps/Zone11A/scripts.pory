@@ -246,26 +246,6 @@ Zone11A_Text_JeanetteDefeat:
 Zone11A_Text_JeanettePostBattle:
 	.string "It's gone now…$"
 
-Zone11A_EventScript_EmmaandLeo::
-	trainerbattle_double TRAINER_PBL_EMMA_AND_LEO, Zone11A_Text_EmmaandLeoIntro, Zone11A_Text_EmmaandLeoDefeat, gText_NotEnoughMons
-	msgbox Zone11A_Text_EmmaandLeoPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Zone11A_Text_EmmaandLeoIntro:
-	.string "Leo: I'm gonna show my girlfriend\n"
-	.string "that I'm brave!\p"
-	.string "Emma: Ugh. Enforcing gender norms,\n"
-	.string "am I right?$"
-
-Zone11A_Text_EmmaandLeoDefeat:
-	.string "Leo: My toxic masculinity, ruined!\p"
-	.string "Emma: Maybe I need a new SO…$"
-
-Zone11A_Text_EmmaandLeoPostBattle:
-	.string "Leo: Don't talk to my girlfriend!\p"
-	.string "Emma: Pff.$"
-
 Zone11A_EventScript_Joel::
 	trainerbattle_single TRAINER_PBL_JOEL, Zone11A_Text_JoelIntro, Zone11A_Text_JoelDefeat
 	msgbox Zone11A_Text_JoelPostBattle, MSGBOX_AUTOCLOSE
