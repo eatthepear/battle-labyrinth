@@ -138,7 +138,7 @@ script Zone9A_EventScript_Ari {
 		}
 		setspeaker("Erica")
 		msgbox(format("Finally, here is a little reward for completing my family's trial."), MSGBOX_AUTOCLOSE)
-		giveitem(ITEM_TM_RETALIATE)
+		giveitem(ITEM_TM_RETURN)
 		closemessage
 		applymovement(5, Common_Movement_WalkInPlaceFasterUp)
 		waitmovement(0)
