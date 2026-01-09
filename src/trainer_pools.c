@@ -467,9 +467,6 @@ static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const s
     //  Use defined pruning functions go here
     switch (trainer->poolPruneIndex)
     {
-        case POOL_PRUNE_NONE:
-            PruneBattled(trainer, poolIndexArray, rules);
-            break;
         case POOL_PRUNE_TEST:
             TestPrune(trainer, poolIndexArray, rules);
             break;
@@ -539,36 +536,57 @@ static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const s
     PruneBossMons(trainer, poolIndexArray, rules);
 }
 
+static bool32 DoTrainerPartyPoolHelper(const struct Trainer *trainer, u32 *monIndices, u8 monsCount, u32 battleTypeFlags, u32 poolAttempt)
+{
+    bool32 usingPool = FALSE;
+    struct PoolRules rules = defaultPoolRules;
+
+    if (poolAttempt > 3)
+        return FALSE;
+
+    usingPool = TRUE;
+    rules = gPoolRulesetsList[trainer->poolRuleIndex];
+    u8 *poolIndexArray = Alloc(trainer->poolSize);
+    RandomizePoolIndices(trainer, poolIndexArray);
+
+    struct PickFunctions pickFunctions = GetPickFunctions(trainer);
+
+    PrunePool(trainer, poolIndexArray, &rules);
+    if (poolAttempt == 1)
+    {
+        PruneBattled(trainer, poolIndexArray, &rules);
+    }
+
+    for (u32 i = 0; i < monsCount; i++)
+    {
+        monIndices[i] = PickMonFromPool(trainer, poolIndexArray, i, monsCount, battleTypeFlags, &rules, pickFunctions);
+        //  If the slot doesn't have a proper value, the pool creation failed, fall back to normal mon pick process
+        if (monIndices[i] == POOL_SLOT_DISABLED)
+        {
+            usingPool = FALSE;
+            DebugPrintf("Pool creation failed on pool attempt %d!", poolAttempt+1);
+            break;
+        }
+    }
+    Free(poolIndexArray);
+
+    if (!usingPool)
+    {
+        return DoTrainerPartyPoolHelper(trainer, monIndices, monsCount, battleTypeFlags, poolAttempt + 1);
+    }
+
+    return TRUE;
+}
+
 void DoTrainerPartyPool(const struct Trainer *trainer, u32 *monIndices, u8 monsCount, u32 battleTypeFlags)
 {
-        bool32 usingPool = FALSE;
-        struct PoolRules rules = defaultPoolRules;
-        if (trainer->poolSize != 0)
-        {
-            usingPool = TRUE;
-            rules = gPoolRulesetsList[trainer->poolRuleIndex];
-            u8 *poolIndexArray = Alloc(trainer->poolSize);
-            RandomizePoolIndices(trainer, poolIndexArray);
+    bool32 usingPool = FALSE;
+    if (trainer->poolSize != 0)
+    {
+        usingPool = DoTrainerPartyPoolHelper(trainer, monIndices, monsCount, battleTypeFlags, 1);
+    }
 
-            struct PickFunctions pickFunctions = GetPickFunctions(trainer);
-
-            PrunePool(trainer, poolIndexArray, &rules);
-
-            for (u32 i = 0; i < monsCount; i++)
-            {
-                monIndices[i] = PickMonFromPool(trainer, poolIndexArray, i, monsCount, battleTypeFlags, &rules, pickFunctions);
-                //  If the slot doesn't have a proper value, the pool creation failed, fall back to normal mon pick process
-                if (monIndices[i] == POOL_SLOT_DISABLED)
-                {
-                    usingPool = FALSE;
-                    DebugPrintf("Pool creation failed!");
-                    break;
-                }
-            }
-            Free(poolIndexArray);
-        }
-
-        if (!usingPool)
-            for (u32 i = 0; i < monsCount; i++)
-                monIndices[i] = i;
+    if (!usingPool)
+        for (u32 i = 0; i < monsCount; i++)
+            monIndices[i] = i;
 }
