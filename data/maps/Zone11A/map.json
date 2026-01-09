@@ -210,6 +210,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_ALICE",
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
       "x": 15,
       "y": 37,
@@ -219,10 +220,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Zone11A_EventScript_LeviathanBattle",
       "flag": "FLAG_BEAT_LEVIATHAN_11"
     },
     {
+      "local_id": "LOCALID_CELIA",
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
       "x": 16,
       "y": 37,
@@ -232,7 +234,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Zone11A_EventScript_LeviathanBattle",
       "flag": "FLAG_BEAT_LEVIATHAN_11"
     }
   ],

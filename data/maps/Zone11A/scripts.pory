@@ -38,59 +38,44 @@ mapscripts Zone11A_MapScripts {
 	}
 }
 
-script Zone11A_EventScript_LeviathanIntro {
-	lockall
-	applymovement(1, Common_Movement_FaceLeft)
-	waitmovement(0)
-	applymovement(1, Common_Movement_ExclamationMark)
-	playse(SE_PIN)
-	waitmovement(0)
-	waitse
-	applymovement(1, Common_Movement_WalkLeft3)
-	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Newton{COLOR DARK_GRAY}: Excuse me, I realize this is rather sudden, but would you like to be a part of my experiment?\pIt involves the study of Gravity!"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		msgbox(format("{COLOR BLUE}Newton{COLOR DARK_GRAY}: I see."))
-		applymovement(1, Common_Movement_WalkRight3)
-		waitmovement(0)
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
-		waitmovement(0)
-	} else {
-		fadeoutbgm(1)
-		msgbox(format("{COLOR BLUE}Newton{COLOR DARK_GRAY}: Thank you! The experiment name is: Gravity and its Pokémon battle-winning properties!"))
-		setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-		// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-		// 	trainerbattle_no_intro(TRAINER_PBL_NEWTON_LEVIATHAN_10_CHALLENGE, Zone11A_Text_Leviathan10Defeat)
-		// } else {
-		// 	trainerbattle_no_intro(TRAINER_PBL_NEWTON_LEVIATHAN_10, Zone11A_Text_Leviathan10Defeat)
-		// }
-		applymovement(1, Common_Movement_FaceLeft)
-		waitmovement(0)
-		clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-		msgbox(format("{COLOR BLUE}Newton{COLOR DARK_GRAY}: Gravity is not the only way to utilize lower accuracy moves consistently.\pI'd like you to have this Wide Lens."), MSGBOX_DEFAULT)
-		giveitem(ITEM_WIDE_LENS)
-		msgbox(Zone11A_Text_Leviathan10Post)
-		setflag(FLAG_BEAT_LEVIATHAN_10)
-		setvar(VAR_ZONE_11_STATE, 1)
-	}
-	releaseall
-	end
-}
-
-text Zone11A_Text_Leviathan10Defeat {
-	"Alas, not even the power of Gravity is\nstrong enough to win me a battle…"
-}
-
-script Zone11A_EventScript_Leviathan {
+script Zone11A_EventScript_LeviathanBattle {
 	lock
 	faceplayer
-	msgbox(Zone11A_Text_Leviathan10Post)
+	setspeaker("Alice & Celia")
+	msgbox(format("My Pokémon love to eat, just like me!"))
+	if (!defeated(TRAINER_PBL_JEANETTE) || !defeated(TRAINER_PBL_JOEL) || !defeated(TRAINER_PBL_MARION) || !defeated(TRAINER_PBL_REGINA)) {
+		setspeaker("Alice & Celia")
+		msgbox(format("Tell you what, if you go and defeat all four of my friends around the farm, I'll show you just how much my Pokémon can eat!"))
+		release
+		end
+	}
+	setspeaker("Alice & Celia")
+	msgbox(format("My friends tell me you've defeated every last one of them!\pAre you interested in a battle? I'll show you just how much my Pokémon can eat!"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		setspeaker("Alice & Celia")
+		msgbox(format("Oh, all right…"))
+		release
+		end
+	}
+	closemessage
+	fadeoutbgm(1)
+	setspeaker("Alice & Celia")
+	msgbox(format("All right then, let's battle!"))
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_ALICE_AND_CELIA_LEVIATHAN_11, format("Ack! I lost again!\pDoggone it!"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Alice & Celia")
+	msgbox(format("Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though! I enjoyed our battle so much, I want to give you these!"), MSGBOX_DEFAULT)
+	giveitem(ITEM_ORAN_BERRY, 5)
+	setspeaker("Alice & Celia")
+	msgbox(format("Bye!"), MSGBOX_AUTOCLOSE)
+	fadescreenswapbuffers(FADE_TO_BLACK)
+	removeobject(LOCALID_ALICE)
+	removeobject(LOCALID_CELIA)
+	setflag(FLAG_BEAT_LEVIATHAN_11)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
 	release
 	end
-}
-
-text Zone11A_Text_Leviathan10Post {
-	format("{COLOR BLUE}Newton{COLOR DARK_GRAY}: Unfortunately, I'm afraid the path ahead is blocked off until my experiments finish.\pPerhaps come back far in the future, when I've finished here.")
 }
 
 script Zone11A_EventScript_TMTaunt {

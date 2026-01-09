@@ -1752,96 +1752,102 @@ Party Size: 4
 Pool Prune: Non Fairy
 Copy Pool: TRAINER_POOL_ZONE_11
 
-=== TRAINER_PBL_NEWTON_LEVIATHAN_10 ===
-Name: Newton
-Class: Scientist
-Pic: Scientist
-Music: Intense
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: Yes
-Mugshot: Green
-
-Clefairy
-Ability: Friend Guard
-Level: 23
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Gravity
-- Draining Kiss
-- Moonlight
-- Sing
-
-Stantler
-Ability: Intimidate
-Level: 23
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Stomp
-- Double Kick
-- Hypnosis
-- Psyshield Bash
-
-Stonjourner
-Ability: Power Spot
-Level: 24
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Gravity
-- Rock Tomb
-- Wide Guard
-- Mega Kick
-
-Flapple @ Sitrus Berry
-Ability: Hustle
-Level: 24
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Grav Apple
-- Acrobatics
-- Roost
-- Dragon Claw
-
-=== TRAINER_PBL_NEWTON_LEVIATHAN_10_CHALLENGE ===
-Name: Newton
-Class: Scientist
-Pic: Scientist
-Music: Intense
+=== TRAINER_PBL_ALICE_AND_CELIA_LEVIATHAN_11 ===
+Name: Alice&Celia
+Class: Twins
+Pic: Twins
+Music: Twins
 AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
 Mugshot: Green
+Difficulty: Normal
 
-Clefairy @ Eviolite
-Ability: Friend Guard
-Level: 23
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Gravity
-- Draining Kiss
-- Moonlight
-- Sing
-
-Stantler @ Eviolite
-Ability: Intimidate
-Level: 23
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Stomp
-- Double Kick
-- Hypnosis
-- Psyshield Bash
-
-Stonjourner @ Sitrus Berry
-Ability: Power Spot
+Carbink @ Fairy Gem
+Quiet Nature
+Ability: Sturdy
 Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Gravity
+- Misty Explosion
+
+Clodsire @ Shuca Berry
+Adamant Nature
+Ability: Water Absorb
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stomping Tantrum
+- Poison Tail
 - Rock Tomb
-- Wide Guard
-- Mega Kick
 
-Flapple @ Sitrus Berry
-Ability: Hustle
-Tera Type: Dragon
+Pachirisu @ Misty Seed
+Jolly Nature
+Ability: Pickup
 Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Grav Apple
-- Acrobatics
-- Roost
-- Dragon Claw
+- Thunder Punch
+- Super Fang
+- Swagger
+
+Whimsicott @ Sitrus Berry
+Modest Nature
+Ability: Prankster
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Nature Power
+- Energy Ball
+- Swagger
+
+=== TRAINER_PBL_ALICE_AND_CELIA_LEVIATHAN_11 ===
+Name: Alice&Celia
+Class: Twins
+Pic: Twins
+Music: Twins
+AI: AI_FLAG_LEVIATHAN
+Double Battle: Yes
+Mugshot: Green
+Difficulty: Brutal
+
+Carbink @ Fairy Gem
+Quiet Nature
+Ability: Sturdy
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Misty Explosion
+
+Clodsire @ Shuca Berry
+Adamant Nature
+Ability: Water Absorb
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stomping Tantrum
+- Poison Tail
+- Rock Tomb
+
+Pachirisu @ Misty Seed
+Jolly Nature
+Ability: Pickup
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Punch
+- Super Fang
+- Swagger
+
+Whimsicott @ Sitrus Berry
+Modest Nature
+Ability: Prankster
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Nature Power
+- Energy Ball
+- Swagger
+
+Oinkologne-F @ White Herb
+Naughty Nature
+Ability: Aroma Veil
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Return
+- Stomping Tantrum
+- Swagger
 
 === TRAINER_PBL_ESSENCE ===
 Name: Essence
