@@ -19,6 +19,7 @@ static const u32 sLevelCapFlagMap[] =
     23,
     25, // zone 10 cap
     26,
+    28,
     31,
     33,
     42,
@@ -165,6 +166,7 @@ static const u32 sNumFoes[] =
     19,
     21, // zone 10
     16,
+    21,
 };
 
 u32 GetExpValue(void)
