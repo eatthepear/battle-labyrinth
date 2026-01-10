@@ -1168,7 +1168,7 @@ Copy Pool: TRAINER_POOL_ZONE_7_AND_8
 Name: Betty
 Class: Socialite
 Pic: Socialite
-Music: Female
+Music: Rich
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Green
@@ -1849,252 +1849,38 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Stomping Tantrum
 - Swagger
 
-=== TRAINER_PBL_ESSENCE ===
-Name: Essence
-Class: Beauty
-Pic: Beauty
-Music: Female
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Clamperl
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Staryu
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Spheal
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Roselia
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
 === TRAINER_PBL_DOLORES ===
 Name: Dolores
-Class: Parasol Lady
-Pic: Parasol Lady
+Class: Lady
+Pic: Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Snover
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Vanillite
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Cubchoo
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Snorunt
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_GENIE ===
-Name: Genie
-Class: Pokefan
-Pic: Pokefan M
-Music: Twins
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Magnemite
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Varoom
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Pawmo
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Skiploom
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_ABIGAIL ===
-Name: Abigail
-Class: Pokefan
-Pic: Pokefan F
-Music: Twins
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Glimmet
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Yanma
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Pikachu
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Flaaffy
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_FEDERICO ===
-Name: Federico
-Class: Fisherman
-Pic: Fisherman
-Music: Hiker
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Clobbopus
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Wailmer
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Mareanie
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Mantyke
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-/* Fought in a double battle with Julie */
-=== TRAINER_PBL_ROMULUS ===
-Name: Romulus
-Class: Camper
-Pic: Camper
-Music: Male
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Ferroseed
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Shellder
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Bergmite
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-/* Fought in a double battle with Romulus */
-=== TRAINER_PBL_JULIE ===
-Name: Julie
-Class: Picnicker
-Pic: Picnicker
-Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Pawniard
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Clauncher
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Swinub
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
 
 === TRAINER_PBL_HILDA ===
 Name: Hilda
-Class: Swimmer F
-Pic: Swimmer F
-Music: Swimmer
+Class: Socialite
+Pic: Socialite
+Music: Rich
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Carvanha
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Horsea
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Skrelp
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Finizen
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
 
 === TRAINER_PBL_TREVOR ===
 Name: Trevor
-Class: Pkmn Breeder
-Pic: Pokemon Breeder M
-Music: Male
+Class: Rich Boy
+Pic: Rich Boy
+Music: Rich
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-
-Togepi
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Happiny
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Munchlax
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Smoochum
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Elekid
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Magby
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_RUFUS ===
-Name: Rufus
-Class: Collector
-Pic: Collector
-Music: Suspicious
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Frigibax
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Dreepy
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Goomy
-Ability: Sap Sipper
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Flail
-- Water Pulse
-- Life Dew
-- Body Slam
-
-Zorua
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
 
 === TRAINER_PBL_KINLEY ===
 Name: Kinley
@@ -2103,100 +1889,143 @@ Pic: Gentleman
 Music: Rich
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
 
-Herdier
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Luxio
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Croconaw
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Raboot
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Floragato
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_REID ===
-Name: Reid
-Class: Bug Catcher
-Pic: Bug Catcher
-Music: Male
+=== TRAINER_PBL_GENIE ===
+Name: Genie
+Class: Pokefan
+Pic: Pokefan M
+Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
 
-Dottler
-Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+=== TRAINER_PBL_ABIGAIL ===
+Name: Abigail
+Class: Pokefan
+Pic: Pokefan F
+Music: Twins
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
 
-Whirlipede
-Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Swadloon
-Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_PBL_DECLAN_LEVIATHAN_11 ===
-Name: Declan
-Class: Bug Maniac
-Pic: Bug Maniac
+=== TRAINER_PBL_RUFUS ===
+Name: Rufus
+Class: Collector
+Pic: Collector
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Green
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_COLLECTOR
 
-Ariados
-Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Ledian
-Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Rabsca
-Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Lurantis
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-=== TRAINER_PBL_DECLAN_LEVIATHAN_11_CHALLENGE ===
-Name: Declan
-Class: Bug Maniac
-Pic: Bug Maniac
-Music: Suspicious
+=== TRAINER_PBL_ESSENCE_LEVIATHAN_12 ===
+Name: Essence
+Class: Beauty
+Pic: Beauty
+Music: Female
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Green
+Difficulty: Normal
 
-Ariados
-Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Ledian
-Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Rabsca
-Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Lurantis
+Aromatisse @ Fairy Feather
+Quiet Nature
+Ability: Aroma Veil
 Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draining Kiss
+- Psybeam
+- Wish
 
-Lokix
+Vespiquen @ Charti Berry
+Brave Nature
+Ability: Unnerve
 Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Attack Order
+- Defend Order
+- Heal Order
+
+Gorebyss @ Mystic Water
+Timid Nature
+Ability: Swift Swim
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brine
+- Icy Wind
+- Signal Beam
+
+Persian @ Sitrus Berry
+Adamant Nature
+Ability: Technician
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Covet
+- Thief
+
+=== TRAINER_PBL_ESSENCE_LEVIATHAN_12 ===
+Name: Essence
+Class: Beauty
+Pic: Beauty
+Music: Female
+AI: AI_FLAG_LEVIATHAN
+Double Battle: No
+Mugshot: Green
+Difficulty: Brutal
+
+Aromatisse @ Fairy Feather
+Quiet Nature
+Ability: Aroma Veil
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draining Kiss
+- Psybeam
+- Wish
+
+Vespiquen @ Charti Berry
+Brave Nature
+Ability: Unnerve
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Attack Order
+- Defend Order
+- Heal Order
+
+Gorebyss @ Mystic Water
+Timid Nature
+Ability: Swift Swim
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brine
+- Icy Wind
+- Signal Beam
+
+Persian @ Sitrus Berry
+Adamant Nature
+Ability: Technician
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Covet
+- Thief
+
+Lilligant @ Big Root
+Modest Nature
+Ability: Own Tempo
+Level: 26
+IVs: 31 HP / 31 Atk / 30 Def / 31 SpA / 30 SpD / 30 Spe
+- Giga Drain
+- Hidden Power
+- Quiver Dance
 
 === TRAINER_PBL_VIOLET ===
 Name: STEVEN

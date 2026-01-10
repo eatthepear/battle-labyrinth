@@ -28,58 +28,6 @@ mapscripts Zone12A_MapScripts {
 	}
 }
 
-script Zone12A_EventScript_LeviathanBattles {
-	lockall
-	applymovement(1, Common_Movement_ExclamationMark)
-	applymovement(2, Common_Movement_ExclamationMark)
-	playse(SE_PIN)
-	waitmovement(0)
-	waitse
-	applymovement(1, Common_Movement_WalkDown)
-	applymovement(2, Common_Movement_WalkRight)
-	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Reid{COLOR DARK_GRAY}: Hey, kid, you like Bugs?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		msgbox(format("{COLOR BLUE}Reid{COLOR DARK_GRAY}: Alrighty, I can let you go."))
-		msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Wait! We should check!"))
-		msgbox(format("{COLOR BLUE}Reid{COLOR DARK_GRAY}: Oof, you're right.\pSorry about this if you do actually like Bug Pokémon!"))
-	} else {
-		msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: You know what that means."))
-		msgbox(format("{COLOR BLUE}Reid{COLOR DARK_GRAY}: You're about to regret giving the wrong answer!"))
-	}
-	trainerbattle_no_intro(TRAINER_PBL_REID, format("My creepy crawlies!"))
-	msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: I'm disappointed, {COLOR BLUE}Reid{COLOR DARK_GRAY}. You had such potential!"))
-	msgbox(format("{COLOR BLUE}Reid{COLOR DARK_GRAY}: …"))
-	applymovement(1, Common_Movement_WalkUp)
-	waitmovement(0)
-	applymovement(1, Common_Movement_WalkRight3)
-	applymovement(2, Common_Movement_FaceUp)
-	waitmovement(0)
-	applymovement(2, Common_Movement_FaceLeft)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
-	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Hmph."))
-	applymovement(2, Common_Movement_FaceRight)
-	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: He wasn't that devoted to the cause anyways.\pLet me show you how devoted I am!\pFor Bug Pokémon!"))
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	trainerbattle_no_intro(TRAINER_PBL_DECLAN_LEVIATHAN_11_CHALLENGE, Zone12A_Text_Leviathan11Defeat)
-	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_DECLAN_LEVIATHAN_11, Zone12A_Text_Leviathan11Defeat)
-	// }
-	msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Uhm…"), MSGBOX_AUTOCLOSE)
-	delay(32)
-	msgbox(format("{COLOR BLUE}Declan{COLOR DARK_GRAY}: Reid!"))
-	// TODO
-	giveitem(ITEM_TM_X_SCISSOR)
-	setvar(VAR_ZONE_12_STATE, 1)
-	releaseall
-}
-
-text Zone12A_Text_Leviathan11Defeat {
-	format("No! You couldn't!\nHow could I lose to you?")
-}
-
 script Zone12A_EventScript_TMBrickBreak {
 	lock
 	if (flag(FLAG_ITEM_ZONE12A_TM_BRICK_BREAK)) {
@@ -190,23 +138,6 @@ Zone12A_Text_DontGoDown:
 	.string "You don't want to go down the\n"
 	.string "waterfall without a way back up!$"
 
-Zone12A_EventScript_Essence::
-	trainerbattle_single TRAINER_PBL_ESSENCE, Zone12A_Text_EssenceIntro, Zone12A_Text_EssenceDefeat
-	msgbox Zone12A_Text_EssencePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone12A_Text_EssenceIntro:
-	.string "I know I shouldn't be walking\n"
-	.string "near a puddle like this…$"
-
-Zone12A_Text_EssenceDefeat:
-	.string "But I just love looking at my\n"
-	.string "reflection too much!$"
-
-Zone12A_Text_EssencePostBattle:
-	.string "Sigh… I'm even more beautiful\n"
-	.string "than Narcissus…$"
-
 Zone12A_EventScript_Dolores::
 	trainerbattle_single TRAINER_PBL_DOLORES, Zone12A_Text_DoloresIntro, Zone12A_Text_DoloresDefeat
 	msgbox Zone12A_Text_DoloresPostBattle, MSGBOX_AUTOCLOSE
@@ -253,21 +184,6 @@ Zone12A_Text_AbigailDefeat:
 
 Zone12A_Text_AbigailPostBattle:
 	.string "Splashing around is fun!$"
-
-Zone12A_EventScript_Federico::
-	trainerbattle_single TRAINER_PBL_FEDERICO, Zone12A_Text_FedericoIntro, Zone12A_Text_FedericoDefeat
-	msgbox Zone12A_Text_FedericoPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone12A_Text_FedericoIntro:
-	.string "Argh… I wish I had a Surfboard…$"
-
-Zone12A_Text_FedericoDefeat:
-	.string "Then I could ride the waves,\n"
-	.string "searching for bigger fish!$"
-
-Zone12A_Text_FedericoPostBattle:
-	.string "Sounds like a catch, am I right?$"
 
 Zone12A_EventScript_Hilda::
 	trainerbattle_single TRAINER_PBL_HILDA, Zone12A_Text_HildaIntro, Zone12A_Text_HildaDefeat
