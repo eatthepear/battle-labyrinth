@@ -292,6 +292,7 @@
 #define OBJ_EVENT_GFX_SATURN                     292
 #define OBJ_EVENT_GFX_CYRUS                      293
 #define OBJ_EVENT_GFX_JASMINE                    294
+#define OBJ_EVENT_GFX_LARRY                      295
 
 #define OBJ_EVENT_GFX_OW_MON                     399
 #define OBJ_EVENT_GFX_LIGHT_SPRITE               400
@@ -519,6 +520,7 @@
 #define OBJ_EVENT_PAL_TAG_SATURN                  0x7289
 #define OBJ_EVENT_PAL_TAG_CYRUS                   0x728A
 #define OBJ_EVENT_PAL_TAG_JASMINE                 0x728B
+#define OBJ_EVENT_PAL_TAG_LARRY                   0x728C
 
 #define OBJ_EVENT_PAL_TAG_RUNNING_TRIATHLETE_F    0x7401
 #define OBJ_EVENT_PAL_TAG_SCHOOL_KID_M            0x7402

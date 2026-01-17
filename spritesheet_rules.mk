@@ -526,6 +526,9 @@ $(OBJEVENTGFXDIR)/people/cyrus.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/jasmine.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/larry.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 
 $(OBJEVENTGFXDIR)/pokemon_old/azumarill.4bpp: %.4bpp: %.png
