@@ -5350,6 +5350,46 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/HeatedCavity/border.bin",
       "blockdata_filepath": "data/layouts/HeatedCavity/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE15D",
+      "name": "Zone15D_Layout",
+      "width": 13,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleTent",
+      "border_filepath": "data/layouts/Zone15D/border.bin",
+      "blockdata_filepath": "data/layouts/Zone15D/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE15E",
+      "name": "Zone15E_Layout",
+      "width": 5,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleTent",
+      "border_filepath": "data/layouts/Zone15E/border.bin",
+      "blockdata_filepath": "data/layouts/Zone15E/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE15F",
+      "name": "Zone15F_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleTent",
+      "border_filepath": "data/layouts/Zone15F/border.bin",
+      "blockdata_filepath": "data/layouts/Zone15F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE15C",
+      "name": "Zone15C_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Sanctuary",
+      "border_filepath": "data/layouts/Zone15C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone15C/map.bin"
     }
   ]
 }

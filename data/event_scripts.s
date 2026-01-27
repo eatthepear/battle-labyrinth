@@ -1349,3 +1349,11 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/BorealThicket/scripts.inc"
 
 	.include "data/maps/HeatedCavity/scripts.inc"
+
+	.include "data/maps/Zone15D/scripts.inc"
+
+	.include "data/maps/Zone15E/scripts.inc"
+
+	.include "data/maps/Zone15F/scripts.inc"
+
+	.include "data/maps/Zone15C/scripts.inc"
