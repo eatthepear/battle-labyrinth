@@ -404,4 +404,3 @@ gFieldEffectScript_ORASDowse::
 gFieldEffectScript_SnowFootprints::
 	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_SnowFootprints
 	field_eff_end
-    
