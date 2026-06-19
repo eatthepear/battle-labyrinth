@@ -150,6 +150,17 @@ static const u16 sStarterMonWater[9] =
     SPECIES_QUAXLY,
 };
 
+#define GRASS_STARTER (IS_FRLG ? SPECIES_BULBASAUR  : SPECIES_TREECKO)
+#define FIRE_STARTER  (IS_FRLG ? SPECIES_CHARMANDER : SPECIES_TORCHIC)
+#define WATER_STARTER (IS_FRLG ? SPECIES_SQUIRTLE   : SPECIES_MUDKIP )
+
+static const u16 sStarterMon[STARTER_MON_COUNT] =
+{
+    GRASS_STARTER,
+    FIRE_STARTER,
+    WATER_STARTER,
+};
+
 static const struct BgTemplate sBgTemplates[3] =
 {
     {
@@ -353,8 +364,6 @@ static const struct SpriteTemplate sSpriteTemplate_Hand =
     .paletteTag = TAG_POKEBALL_SELECT,
     .oam = &sOam_Hand,
     .anims = sAnims_Hand,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_SelectionHand
 };
 
@@ -364,8 +373,6 @@ static const struct SpriteTemplate sSpriteTemplate_Pokeball =
     .paletteTag = TAG_POKEBALL_SELECT,
     .oam = &sOam_Pokeball,
     .anims = sAnims_Pokeball,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_Pokeball
 };
 
@@ -375,7 +382,6 @@ static const struct SpriteTemplate sSpriteTemplate_StarterCircle =
     .paletteTag = TAG_STARTER_CIRCLE,
     .oam = &sOam_StarterCircle,
     .anims = sAnims_StarterCircle,
-    .images = NULL,
     .affineAnims = sAffineAnims_StarterCircle,
     .callback = SpriteCB_StarterPokemon
 };

@@ -1,6 +1,7 @@
 BattleFrontier_Lounge7_MapScripts::
 	.byte 0
 
+@special ChooseMonForMoveTutor
 BattleFrontier_Lounge7_EventScript_LeftMoveTutor::
 	lock
 	faceplayer
@@ -275,6 +276,7 @@ BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection::
 	msgbox BattleFrontier_Lounge7_Text_HaventGotEnoughPoints, MSGBOX_DEFAULT
 	goto BattleFrontier_Lounge7_EventScript_ChooseNewMove
 	end
+
 
 BattleFrontier_Lounge7_EventScript_TeachTutorMove::
 	msgbox BattleFrontier_Lounge7_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT

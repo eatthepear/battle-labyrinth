@@ -7,6 +7,7 @@
 #include "random.h"
 #include "trainer_pools.h"
 #include "constants/battle.h"
+#include "constants/battle_ai.h"
 #include "constants/items.h"
 
 #include "data/battle_pool_rules.h"
@@ -269,7 +270,7 @@ static u32 GetPoolSeed(const struct Trainer *trainer)
     if (B_POOL_SETTING_USE_FIXED_SEED)
         seed = B_POOL_SETTING_FIXED_SEED;
     else
-        seed = gSaveBlock2Ptr->playerTrainerId[0] + (gSaveBlock2Ptr->playerTrainerId[1] << 8) + (gSaveBlock2Ptr->playerTrainerId[2] << 16) + (gSaveBlock2Ptr->playerTrainerId[3] << 24);
+        seed = READ_OTID_FROM_SAVE;
     seed ^= (u32)trainer;
     return seed;
 }
@@ -335,21 +336,21 @@ static struct PickFunctions GetPickFunctions(const struct Trainer *trainer)
     switch (trainer->poolPickIndex)
     {
         //  Repeats, but better to have the safety
-        case POOL_PICK_DEFAULT:
-            pickFunctions.LeadFunction = &DefaultLeadPickFunction;
-            pickFunctions.AceFunction = &DefaultAcePickFunction;
-            pickFunctions.OtherFunction = &DefaultOtherPickFunction;
-            break;
-        case POOL_PICK_LOWEST:
-            pickFunctions.LeadFunction = &PickLowest;
-            pickFunctions.AceFunction = &PickLowest;
-            pickFunctions.OtherFunction = &PickLowest;
-            break;
-        default:
-            pickFunctions.LeadFunction = &DefaultLeadPickFunction;
-            pickFunctions.AceFunction = &DefaultAcePickFunction;
-            pickFunctions.OtherFunction = &DefaultOtherPickFunction;
-            break;
+    case POOL_PICK_DEFAULT:
+        pickFunctions.LeadFunction = &DefaultLeadPickFunction;
+        pickFunctions.AceFunction = &DefaultAcePickFunction;
+        pickFunctions.OtherFunction = &DefaultOtherPickFunction;
+        break;
+    case POOL_PICK_LOWEST:
+        pickFunctions.LeadFunction = &PickLowest;
+        pickFunctions.AceFunction = &PickLowest;
+        pickFunctions.OtherFunction = &PickLowest;
+        break;
+    default:
+        pickFunctions.LeadFunction = &DefaultLeadPickFunction;
+        pickFunctions.AceFunction = &DefaultAcePickFunction;
+        pickFunctions.OtherFunction = &DefaultOtherPickFunction;
+        break;
     }
     return pickFunctions;
 }
@@ -467,71 +468,71 @@ static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const s
     //  Use defined pruning functions go here
     switch (trainer->poolPruneIndex)
     {
-        case POOL_PRUNE_TEST:
-            TestPrune(trainer, poolIndexArray, rules);
-            break;
-        case POOL_PRUNE_RANDOM_TAG:
-            RandomTagPrune(trainer, poolIndexArray, rules);
-            break;
-        case POOL_PRUNE_NON_NORMAL:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_NORMAL);
-            break;
-        case POOL_PRUNE_NON_FIGHTING:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_FIGHTING);
-            break;
-        case POOL_PRUNE_NON_FLYING:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_FLYING);
-            break;
-        case POOL_PRUNE_NON_POISON:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_POISON);
-            break;
-        case POOL_PRUNE_NON_GROUND:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_GROUND);
-            break;
-        case POOL_PRUNE_NON_ROCK:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_ROCK);
-            break;
-        case POOL_PRUNE_NON_BUG:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_BUG);
-            break;
-        case POOL_PRUNE_NON_GHOST:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_GHOST);
-            break;
-        case POOL_PRUNE_NON_STEEL:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_STEEL);
-            break;
-        case POOL_PRUNE_NON_FIRE:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_FIRE);
-            break;
-        case POOL_PRUNE_NON_WATER:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_WATER);
-            break;
-        case POOL_PRUNE_NON_GRASS:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_GRASS);
-            break;
-        case POOL_PRUNE_NON_ELECTRIC:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_ELECTRIC);
-            break;
-        case POOL_PRUNE_NON_PSYCHIC:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_PSYCHIC);
-            break;
-        case POOL_PRUNE_NON_ICE:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_ICE);
-            break;
-        case POOL_PRUNE_NON_DRAGON:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_DRAGON);
-            break;
-        case POOL_PRUNE_NON_DARK:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_DARK);
-            break;
-        case POOL_PRUNE_NON_FAIRY:
-            PruneNonType(trainer, poolIndexArray, rules, TYPE_FAIRY);
-            break;
-        case POOL_PRUNE_NON_GROUND_ROCK_STEEL:
-            PruneNonType3(trainer, poolIndexArray, rules, TYPE_GROUND, TYPE_ROCK, TYPE_STEEL);
-            break;
-        default:
-            break;
+    case POOL_PRUNE_TEST:
+        TestPrune(trainer, poolIndexArray, rules);
+        break;
+    case POOL_PRUNE_RANDOM_TAG:
+        RandomTagPrune(trainer, poolIndexArray, rules);
+        break;
+    case POOL_PRUNE_NON_NORMAL:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_NORMAL);
+        break;
+    case POOL_PRUNE_NON_FIGHTING:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_FIGHTING);
+        break;
+    case POOL_PRUNE_NON_FLYING:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_FLYING);
+        break;
+    case POOL_PRUNE_NON_POISON:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_POISON);
+        break;
+    case POOL_PRUNE_NON_GROUND:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_GROUND);
+        break;
+    case POOL_PRUNE_NON_ROCK:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_ROCK);
+        break;
+    case POOL_PRUNE_NON_BUG:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_BUG);
+        break;
+    case POOL_PRUNE_NON_GHOST:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_GHOST);
+        break;
+    case POOL_PRUNE_NON_STEEL:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_STEEL);
+        break;
+    case POOL_PRUNE_NON_FIRE:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_FIRE);
+        break;
+    case POOL_PRUNE_NON_WATER:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_WATER);
+        break;
+    case POOL_PRUNE_NON_GRASS:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_GRASS);
+        break;
+    case POOL_PRUNE_NON_ELECTRIC:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_ELECTRIC);
+        break;
+    case POOL_PRUNE_NON_PSYCHIC:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_PSYCHIC);
+        break;
+    case POOL_PRUNE_NON_ICE:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_ICE);
+        break;
+    case POOL_PRUNE_NON_DRAGON:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_DRAGON);
+        break;
+    case POOL_PRUNE_NON_DARK:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_DARK);
+        break;
+    case POOL_PRUNE_NON_FAIRY:
+        PruneNonType(trainer, poolIndexArray, rules, TYPE_FAIRY);
+        break;
+    case POOL_PRUNE_NON_GROUND_ROCK_STEEL:
+        PruneNonType3(trainer, poolIndexArray, rules, TYPE_GROUND, TYPE_ROCK, TYPE_STEEL);
+        break;
+    default:
+        break;
     }
     PruneBossMons(trainer, poolIndexArray, rules);
 }
@@ -580,11 +581,20 @@ static bool32 DoTrainerPartyPoolHelper(const struct Trainer *trainer, u32 *monIn
 
 void DoTrainerPartyPool(const struct Trainer *trainer, u32 *monIndices, u8 monsCount, u32 battleTypeFlags)
 {
-    bool32 usingPool = FALSE;
-    if (trainer->poolSize != 0)
-    {
-        usingPool = DoTrainerPartyPoolHelper(trainer, monIndices, monsCount, battleTypeFlags, 1);
-    }
+        bool32 usingPool = FALSE;
+        struct PoolRules rules = defaultPoolRules;
+        struct Trainer tempTrainer;
+        if (trainer->poolSize == 0 && (trainer->aiFlags & AI_FLAG_RANDOMIZE_PARTY_INDICES))
+        {
+            tempTrainer = *trainer;
+            tempTrainer.poolSize = tempTrainer.partySize;
+            trainer = &tempTrainer;
+        }
+
+        if (trainer->poolSize != 0)
+        {
+            usingPool = DoTrainerPartyPoolHelper(trainer, monIndices, monsCount, battleTypeFlags, 1);
+        }
 
     if (!usingPool)
         for (u32 i = 0; i < monsCount; i++)

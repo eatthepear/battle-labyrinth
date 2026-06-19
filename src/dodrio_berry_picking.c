@@ -2874,7 +2874,7 @@ enum {
 static u8 TryGivePrize(void)
 {
     u8 multiplayerId = sGame->multiplayerId;
-    u16 itemId = GetPrizeItemId();
+    enum Item itemId = GetPrizeItemId();
 
     if (GetScore(multiplayerId) != GetHighestScore())
         return NO_PRIZE;
@@ -3856,8 +3856,6 @@ static void CreateDodrioSprite(struct DodrioGame_MonInfo *monInfo, u8 playerId, 
         .paletteTag = monInfo->isShiny, // PALTAG_DODRIO_NORMAL / PALTAG_DODRIO_SHINY
         .oam = &sOamData_Dodrio,
         .anims = sAnims_Dodrio,
-        .images = NULL,
-        .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCB_Dodrio,
     };
 
@@ -4031,8 +4029,6 @@ static void CreateStatusBarSprites(void)
             .paletteTag = PALTAG_STATUS,
             .oam = &sOamData_16x16_Priority0,
             .anims = sAnims_StatusBar,
-            .images = NULL,
-            .affineAnims = gDummySpriteAffineAnimTable,
             .callback = SpriteCB_Status,
         };
 
@@ -4186,9 +4182,6 @@ static void CreateBerrySprites(void)
         .paletteTag = PALTAG_BERRIES,
         .oam = &sOamData_Berry,
         .anims = sAnims_Berry,
-        .images = NULL,
-        .affineAnims = gDummySpriteAffineAnimTable,
-        .callback = SpriteCallbackDummy,
     };
     struct SpriteTemplate berryIcon =
     {
@@ -4196,9 +4189,6 @@ static void CreateBerrySprites(void)
         .paletteTag = PALTAG_BERRIES,
         .oam = &sOamData_16x16_Priority0,
         .anims = sAnims_Berry,
-        .images = NULL,
-        .affineAnims = gDummySpriteAffineAnimTable,
-        .callback = SpriteCallbackDummy,
     };
 
     // Create berry sprites that fall during gameplay
@@ -4320,8 +4310,6 @@ static void CreateCloudSprites(void)
             .paletteTag = PALTAG_CLOUD,
             .oam = &sOamData_Cloud,
             .anims = sAnims_Cloud,
-            .images = NULL,
-            .affineAnims = gDummySpriteAffineAnimTable,
             .callback = SpriteCB_Cloud,
         };
 
@@ -4391,35 +4379,35 @@ static s16 GetDodrioXPos(u8 playerId, u8 numPlayers)
     case 2:
         switch (playerId)
         {
-            case 0: x = 12; break;
-            case 1: x = 18; break;
+        case 0: x = 12; break;
+        case 1: x = 18; break;
         }
         break;
     case 3:
         switch (playerId)
         {
-            case 0: x = 15; break;
-            case 1: x = 21; break;
-            case 2: x =  9; break;
+        case 0: x = 15; break;
+        case 1: x = 21; break;
+        case 2: x =  9; break;
         }
         break;
     case 4:
         switch (playerId)
         {
-            case 0: x = 12; break;
-            case 1: x = 18; break;
-            case 2: x = 24; break;
-            case 3: x =  6; break;
+        case 0: x = 12; break;
+        case 1: x = 18; break;
+        case 2: x = 24; break;
+        case 3: x =  6; break;
         }
         break;
     case 5:
         switch (playerId)
         {
-            case 0: x = 15; break;
-            case 1: x = 21; break;
-            case 2: x = 27; break;
-            case 3: x =  3; break;
-            case 4: x =  9; break;
+        case 0: x = 15; break;
+        case 1: x = 21; break;
+        case 2: x = 27; break;
+        case 3: x =  3; break;
+        case 4: x =  9; break;
         }
         break;
     }

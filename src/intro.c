@@ -24,6 +24,8 @@
 #include "util.h"
 #include "title_screen.h"
 #include "expansion_intro.h"
+#include "battle_anim.h"
+#include "intro_frlg.h"
 #include "constants/rgb.h"
 #include "constants/battle_anim.h"
 
@@ -106,8 +108,7 @@ static void SpriteCB_KyogreBubbles(struct Sprite *sprite);
 static void SpriteCB_Lightning(struct Sprite *sprite);
 static void SpriteCB_RayquazaOrb(struct Sprite *sprite);
 
-extern const struct CompressedSpriteSheet gBattleAnimPicTable[];
-extern const struct SpritePalette gBattleAnimPaletteTable[];
+extern const struct BattleAnimation gBattleAnimTable[ANIM_TAG_COUNT];
 extern const struct SpriteTemplate gAncientPowerRockSpriteTemplate;
 
 enum {
@@ -173,7 +174,7 @@ enum {
 #define TIMER_POKEBALL_FADE              28
 #define TIMER_START_LEGENDARIES          43
 
-static EWRAM_DATA u16 sIntroCharacterGender = 0;
+static EWRAM_DATA enum Gender sIntroCharacterGender = 0;
 static EWRAM_DATA u16 sFlygonYOffset = 0;
 
 COMMON_DATA u32 gIntroFrameCounter = 0;
@@ -250,8 +251,6 @@ static const struct SpriteTemplate sSpriteTemplate_Sparkle =
     .paletteTag = TAG_SPARKLE,
     .oam = &sOamData_Sparkle,
     .anims = sAnims_Sparkle,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_Sparkle,
 };
 static const u8 sSparkleCoords[][2] =
@@ -315,8 +314,6 @@ static const struct SpriteTemplate sSpriteTemplate_Volbeat =
     .paletteTag = TAG_VOLBEAT,
     .oam = &sOamData_Volbeat,
     .anims = sAnims_Volbeat,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_Volbeat,
 };
 static const struct OamData sOamData_Torchic =
@@ -375,8 +372,6 @@ static const struct SpriteTemplate sSpriteTemplate_Torchic =
     .paletteTag = TAG_TORCHIC,
     .oam = &sOamData_Torchic,
     .anims = sAnims_Torchic,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_Torchic,
 };
 static const struct OamData sOamData_Manectric =
@@ -413,8 +408,6 @@ static const struct SpriteTemplate sSpriteTemplate_Manectric =
     .paletteTag = TAG_MANECTRIC,
     .oam = &sOamData_Manectric,
     .anims = sAnims_Manectric,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_Manectric,
 };
 static const struct CompressedSpriteSheet sSpriteSheet_Lightning[] =
@@ -473,8 +466,6 @@ static const struct SpriteTemplate sSpriteTemplate_Lightning =
     .paletteTag = TAG_LIGHTNING,
     .oam = &sOamData_Lightning,
     .anims = sAnims_Lightning,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_Lightning,
 };
 // x coord, anim number, speed
@@ -553,8 +544,6 @@ static const struct SpriteTemplate sSpriteTemplate_Bubbles =
     .paletteTag = TAG_BUBBLES,
     .oam = &sOamData_Bubbles,
     .anims = sAnims_Bubbles,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_KyogreBubbles,
 };
 static const struct OamData sOamData_WaterDrop =
@@ -612,8 +601,6 @@ static const struct SpriteTemplate sSpriteTemplate_WaterDrop =
     .paletteTag = PALTAG_DROPS,
     .oam = &sOamData_WaterDrop,
     .anims = sAnims_WaterDrop,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_WaterDrop,
 };
 static const union AnimCmd sAnim_PlayerBicycle_Fast[] =
@@ -893,7 +880,6 @@ static const struct SpriteTemplate sSpriteTemplate_GameFreakLetter =
     .paletteTag = PALTAG_LOGO,
     .oam = &sOamData_GameFreakLetter,
     .anims = sAnims_GameFreakLetter,
-    .images = NULL,
     .affineAnims = sAffineAnims_GameFreak,
     .callback = SpriteCB_LogoLetter,
 };
@@ -904,8 +890,6 @@ static const struct SpriteTemplate sSpriteTemplate_PresentsLetter =
     .paletteTag = PALTAG_LOGO,
     .oam = &sOamData_PresentsLetter,
     .anims = sAnims_PresentsLetter,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_LogoLetter,
 };
 static const struct SpriteTemplate sSpriteTemplate_GameFreakLogo =
@@ -914,7 +898,6 @@ static const struct SpriteTemplate sSpriteTemplate_GameFreakLogo =
     .paletteTag = PALTAG_LOGO,
     .oam = &sOamData_GameFreakLogo,
     .anims = sAnims_GameFreakLogo,
-    .images = NULL,
     .affineAnims = sAffineAnims_GameFreak,
     .callback = SpriteCB_GameFreakLogo,
 };
@@ -961,8 +944,6 @@ static const struct SpriteTemplate sSpriteTemplate_FlygonSilhouette =
     .paletteTag = TAG_FLYGON_SILHOUETTE,
     .oam = &sOamData_FlygonSilhouette,
     .anims = sAnims_FlygonSilhouette,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_FlygonSilhouette,
 };
 static const struct CompressedSpriteSheet sSpriteSheet_WaterDropsAndLogo[] =
@@ -1013,8 +994,6 @@ static const struct SpriteTemplate sSpriteTemplate_RayquazaOrb =
     .paletteTag = TAG_RAYQUAZA_ORB,
     .oam = &sOamData_RayquazaOrb,
     .anims = sAnims_RayquazaOrb,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_RayquazaOrb,
 };
 static const struct CompressedSpriteSheet sSpriteSheet_RayquazaOrb[] =
@@ -1069,6 +1048,9 @@ static void SerialCB_CopyrightScreen(void)
 
 static u8 SetUpCopyrightScreen(void)
 {
+    if (IS_FRLG)
+        return SetUpCopyrightScreenFrlg();
+
     switch (gMain.state)
     {
     case COPYRIGHT_INITIALIZE:
@@ -1787,8 +1769,8 @@ static void Task_Scene3_LoadGroudon(u8 taskId)
         DecompressDataWithHeaderVram(gIntroGroudon_Tilemap, (void *)(BG_CHAR_ADDR(3)));
         DecompressDataWithHeaderVram(gIntroLegendBg_Gfx, (void *)(BG_CHAR_ADDR(1)));
         DecompressDataWithHeaderVram(gIntroGroudonBg_Tilemap, (void *)(BG_SCREEN_ADDR(28)));
-        LoadCompressedSpriteSheetUsingHeap(&gBattleAnimPicTable[GET_TRUE_SPRITE_INDEX(ANIM_TAG_ROCKS)]);
-        LoadSpritePalette(&gBattleAnimPaletteTable[GET_TRUE_SPRITE_INDEX(ANIM_TAG_ROCKS)]);
+        LoadCompressedSpriteSheetUsingHeap(&gBattleAnimTable[GET_TRUE_SPRITE_INDEX(ANIM_TAG_ROCKS)].pic);
+        LoadSpritePalette(&gBattleAnimTable[GET_TRUE_SPRITE_INDEX(ANIM_TAG_ROCKS)].palette);
         CpuCopy16(gIntro3Bg_Pal, gPlttBufferUnfaded, sizeof(gIntro3Bg_Pal));
         gTasks[taskId].func = Task_Scene3_InitGroudonBg;
     }
@@ -2019,7 +2001,7 @@ static void SpriteCB_GroudonRocks(struct Sprite *sprite)
     if (sprite->sTimer % 2 == 0)
         sprite->y2 ^= 3;
 
-    switch(sprite->sState)
+    switch (sprite->sState)
     {
     case 0:
         // Rock floats up
@@ -2284,7 +2266,7 @@ static void CreateKyogreBubbleSprites_Fins(void)
 
 static void SpriteCB_KyogreBubbles(struct Sprite *sprite)
 {
-    switch(sprite->sState)
+    switch (sprite->sState)
     {
     case 0:
         if (sprite->sDelay == 0)
@@ -2502,7 +2484,7 @@ static void SpriteCB_Lightning(struct Sprite *sprite)
     if (sprite->animEnded)
         sprite->invisible = TRUE;
 
-    switch(sprite->sState)
+    switch (sprite->sState)
     {
     case 0:
         sprite->sPalIdx = 0x1C2;
@@ -2565,7 +2547,7 @@ static void Task_Scene3_Rayquaza(u8 taskId)
 
     tTimer++;
 
-    switch(tState)
+    switch (tState)
     {
     case 0:
         if ((tTimer & 1) != 0)
@@ -2617,7 +2599,7 @@ static void Task_RayquazaAttack(u8 taskId)
     s16 *data = gTasks[taskId].data;
     data[2]++;
 
-    switch(tState)
+    switch (tState)
     {
     case 0:
         if ((data[2] & 1) != 0)
@@ -3280,7 +3262,7 @@ static void SpriteCB_LogoLetter(struct Sprite *sprite)
 
 static void SpriteCB_GameFreakLogo(struct Sprite *sprite)
 {
-    switch(sprite->sState)
+    switch (sprite->sState)
     {
     case 0:
         if (gIntroFrameCounter == TIMER_LOGO_APPEAR)

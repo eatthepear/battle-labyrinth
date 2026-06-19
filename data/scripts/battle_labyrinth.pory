@@ -2292,10 +2292,6 @@ movement Common_Movement_WalkRight4 {
 	walk_right * 4
 }
 
-movement Common_Movement_WalkUp5 {
-	walk_up * 5
-}
-
 movement Common_Movement_WalkDown5 {
 	walk_down * 5
 }

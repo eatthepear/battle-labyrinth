@@ -44,7 +44,7 @@ bool8 MonHasMail(struct Pokemon *mon)
         return FALSE;
 }
 
-u8 GiveMailToMonByItemId(struct Pokemon *mon, u16 itemId)
+u8 GiveMailToMonByItemId(struct Pokemon *mon, enum Item itemId)
 {
 #if FREE_OTHER_PBL == FALSE
     u8 heldItem[2];
@@ -116,7 +116,7 @@ u8 GiveMailToMon(struct Pokemon *mon, struct Mail *mail)
 {
 #if FREE_OTHER_PBL == FALSE
     u8 heldItem[2];
-    u16 itemId = mail->itemId;
+    enum Item itemId = mail->itemId;
     u8 mailId = GiveMailToMonByItemId(mon, itemId);
 
     if (mailId == MAIL_NONE)
@@ -167,35 +167,44 @@ void ClearMailItemId(u8 mailId)
 #endif //FREE_OTHER_PBL
 }
 
-u8 TakeMailFromMonAndSave(struct Pokemon *mon)
+u8 SaveMailToPC(struct Mail *mail)
 {
 #if FREE_OTHER_PBL == FALSE
-    u8 i;
-    u8 newHeldItem[2];
-    u8 newMailId;
-
-    newHeldItem[0] = ITEM_NONE;
-    newHeldItem[1] = ITEM_NONE << 8;
-    newMailId = MAIL_NONE;
-
-    for (i = PARTY_SIZE; i < MAIL_COUNT; i++)
+    for (u32 i = PARTY_SIZE; i < MAIL_COUNT; i++)
     {
         if (gSaveBlock1Ptr->mail[i].itemId == ITEM_NONE)
         {
-            memcpy(&gSaveBlock1Ptr->mail[i], &gSaveBlock1Ptr->mail[GetMonData(mon, MON_DATA_MAIL)], sizeof(struct Mail));
-            gSaveBlock1Ptr->mail[GetMonData(mon, MON_DATA_MAIL)].itemId = ITEM_NONE;
-            SetMonData(mon, MON_DATA_MAIL, &newMailId);
-            SetMonData(mon, MON_DATA_HELD_ITEM, newHeldItem);
+            memcpy(&gSaveBlock1Ptr->mail[i], mail, sizeof(struct Mail));
             return i;
         }
     }
-
     // No space to save mail
 #endif //FREE_OTHER_PBL
     return MAIL_NONE;
 }
 
-bool8 ItemIsMail(u16 itemId)
+u8 TakeMailFromMonAndSave(struct Pokemon *mon)
+{
+#if FREE_OTHER_PBL == FALSE
+    u32 heldItem;
+    u32 mailId, newMailId;
+
+    mailId = GetMonData(mon, MON_DATA_MAIL);
+    newMailId = SaveMailToPC(&gSaveBlock1Ptr->mail[mailId]);
+    if (newMailId != MAIL_NONE)
+    {
+        gSaveBlock1Ptr->mail[mailId].itemId = ITEM_NONE;
+        mailId = MAIL_NONE;
+        SetMonData(mon, MON_DATA_MAIL, &mailId);
+        heldItem = ITEM_NONE;
+        SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
+    }
+    return newMailId;
+#endif //FREE_OTHER_PBL
+    return 0;
+}
+
+bool8 ItemIsMail(enum Item itemId)
 {
     switch (itemId)
     {
