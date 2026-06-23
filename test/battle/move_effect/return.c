@@ -1,6 +1,7 @@
 #include "global.h"
 #include "test/battle.h"
 
+#if FREE_OTHER_PBL == FALSE
 ASSUMPTIONS
 {
     ASSUME(GetMoveEffect(MOVE_RETURN) == EFFECT_RETURN);
@@ -44,3 +45,4 @@ SINGLE_BATTLE_TEST("Return does 1 damage at min Friendship (Gen3+)")
         EXPECT_EQ(damage, 1);
     }
 }
+#endif

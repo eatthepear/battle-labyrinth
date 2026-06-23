@@ -52,48 +52,48 @@ SINGLE_BATTLE_TEST("Micle Berry raises the holder's accuracy by 1.2")
 {
     PASSES_RANDOMLY(24, 25, RNG_ACCURACY);
     GIVEN {
-        ASSUME(GetMoveAccuracy(MOVE_SUBMISSION) == 80);
+        ASSUME(GetMoveAccuracy(MOVE_STONE_EDGE) == 80);
         PLAYER(SPECIES_WOBBUFFET) { MaxHP(160); HP(80); Item(ITEM_MICLE_BERRY); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(opponent, MOVE_DRAGON_RAGE); MOVE(player, MOVE_SUBMISSION); }
+        TURN { MOVE(opponent, MOVE_DRAGON_RAGE); MOVE(player, MOVE_STONE_EDGE); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponent);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, player);
         MESSAGE("Wobbuffet boosted the accuracy of its next move using Micle Berry!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SUBMISSION, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_STONE_EDGE, player);
     }
 }
 
 SINGLE_BATTLE_TEST("Micle Berry increases the accuracy of the next used move across turns")
 {
     GIVEN {
-        ASSUME(GetMoveAccuracy(MOVE_ROCK_SLIDE) == 90);
+        ASSUME(GetMoveAccuracy(MOVE_DRAGON_RUSH) == 90);
         PASSES_RANDOMLY(100, 100, RNG_ACCURACY);
         PLAYER(SPECIES_WOBBUFFET) { MaxHP(100); HP(26); Item(ITEM_MICLE_BERRY); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_SCRATCH); }
-        TURN { MOVE(player, MOVE_ROCK_SLIDE); }
+        TURN { MOVE(player, MOVE_DRAGON_RUSH); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, opponent);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, player);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_ROCK_SLIDE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RUSH, player);
     }
 }
 
 SINGLE_BATTLE_TEST("Micle Berry increases the accuracy of the next used move the same turn the berry was triggered")
 {
     GIVEN {
-        ASSUME(GetMoveAccuracy(MOVE_ROCK_SLIDE) == 90);
+        ASSUME(GetMoveAccuracy(MOVE_DRAGON_RUSH) == 90);
         PASSES_RANDOMLY(100, 100, RNG_ACCURACY);
         PLAYER(SPECIES_WOBBUFFET) { MaxHP(100); HP(26); Item(ITEM_MICLE_BERRY); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(opponent, MOVE_SCRATCH); MOVE(player, MOVE_ROCK_SLIDE); }
+        TURN { MOVE(opponent, MOVE_SCRATCH); MOVE(player, MOVE_DRAGON_RUSH); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, opponent);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, player);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_ROCK_SLIDE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RUSH, player);
     }
 }

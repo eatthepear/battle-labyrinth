@@ -561,6 +561,7 @@ TEST("Type names fit on Pokedex Search Screen")
 }
 
 
+#if FREE_OTHER_PBL == FALSE
 TEST("Map names fit in popup")
 {
     ASSUME(OW_POPUP_GENERATION == GEN_3);
@@ -580,6 +581,7 @@ TEST("Map names fit in popup")
     }
     EXPECT_LE(GetStringWidth(fontId, GetPopUpMapName(mapName, Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum)), 0), widthPx);
 }
+#endif
 
 extern u16 sBattlerAbilities[MAX_BATTLERS_COUNT];
 //*

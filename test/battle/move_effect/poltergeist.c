@@ -82,12 +82,12 @@ SINGLE_BATTLE_TEST("Poltergeist doesn't reveal the target's item if it missed")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_POTION); }
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_BRIGHT_POWDER);}
     } WHEN {
         TURN { MOVE(player, MOVE_POLTERGEIST, hit: FALSE); }
     } SCENE {
         NONE_OF {
-            MESSAGE("The opposing Wobbuffet is about to be attacked by its Potion!");
+            MESSAGE("The opposing Wobbuffet is about to be attacked by its Bright Powder!");
             ANIMATION(ANIM_TYPE_MOVE, MOVE_POLTERGEIST, player);
             HP_BAR(opponent);
         };

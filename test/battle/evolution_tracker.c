@@ -1,6 +1,7 @@
 #include "global.h"
 #include "test/battle.h"
 
+#if FREE_OTHER_PBL == FALSE
 ASSUMPTIONS
 {
     ASSUME(gSpeciesInfo[SPECIES_BISHARP].evolutions[0].params->condition == IF_DEFEAT_X_WITH_ITEMS);
@@ -135,3 +136,4 @@ DOUBLE_BATTLE_TEST("Evolution Tracker: Bisharp KO-ing eligible battler with burs
         EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_EVOLUTION_TRACKER), 0);
     }
 }
+#endif

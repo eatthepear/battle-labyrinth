@@ -156,6 +156,7 @@ DOUBLE_BATTLE_TEST("Court Change used by the opponent swaps Mist, Safeguard, Aur
     }
 }
 
+#if FREE_OTHER_PBL == FALSE
 DOUBLE_BATTLE_TEST("Court Change used by the player swaps G-Max Steelsurge")
 {
     GIVEN {
@@ -176,7 +177,9 @@ DOUBLE_BATTLE_TEST("Court Change used by the player swaps G-Max Steelsurge")
         NOT MESSAGE("The sharp steel bit into the opposing Wynaut!");
     }
 }
+#endif
 
+#if FREE_OTHER_PBL == FALSE
 DOUBLE_BATTLE_TEST("Court Change used by the player swaps G-Max Vine Lash, G-Max Wildfire, G-Max Cannonade")
 {
     u32 species, move;
@@ -217,6 +220,7 @@ DOUBLE_BATTLE_TEST("Court Change used by the player swaps G-Max Vine Lash, G-Max
         }
     }
 }
+#endif
 
 AI_SINGLE_BATTLE_TEST("AI uses Court Change")
 {

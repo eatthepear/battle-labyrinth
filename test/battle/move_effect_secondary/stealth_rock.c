@@ -6,6 +6,7 @@ ASSUMPTIONS
     ASSUME(MoveHasAdditionalEffect(MOVE_G_MAX_STONESURGE, MOVE_EFFECT_STEALTH_ROCK));
 }
 
+#if FREE_OTHER_PBL == FALSE
 SINGLE_BATTLE_TEST("Steath Rock: Rock from G-Max Stonesurge are set up before any ability activation")
 {
     GIVEN {
@@ -19,3 +20,4 @@ SINGLE_BATTLE_TEST("Steath Rock: Rock from G-Max Stonesurge are set up before an
         ABILITY_POPUP(opponent, ABILITY_WEAK_ARMOR);
     }
 }
+#endif

@@ -96,7 +96,7 @@ SINGLE_BATTLE_TEST("Thunder Wave prints an avoided attack message when it misses
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_BRIGHT_POWDER);}
     } WHEN {
         TURN { MOVE(player, MOVE_THUNDER_WAVE, hit: FALSE); }
     } SCENE {

@@ -3030,8 +3030,8 @@ const struct ItemInfo gItemsInfo[] =
         .pluralName = ITEM_PLURAL_NAME("Honey"),
         .price = 80,
         .description = COMPOUND_STRING(
-            "When used, attracts\n"
-            "multiple Pokémon\n"
+            "Attracts multiple\n"
+            "wild Pokémon\n"
             "at the same time."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_STATUS_RECOVERY,
@@ -12193,9 +12193,9 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("TM03"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Uses a psychic wave\n"
-            "to deal physical\n"
-            "damage."),
+            "Uses a psychic\n"
+            "wave to deal\n"
+            "physical damage."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12644,8 +12644,8 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("TM34"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Swamps the foe with\n"
-            "a wave of sludge.\n"
+            "Swamps with a\n"
+            "wave of sludge.\n"
             "May also poison."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
@@ -12854,8 +12854,8 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("TM49"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Absorbs target's HP\n"
-            "and heals over half\n"
+            "Absorbs HP and\n"
+            "heals over half\n"
             "the damage done."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
@@ -12882,9 +12882,9 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("TM51"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Restores the user's\n"
-            "HP by half of its\n"
-            "max HP."),
+            "Restores the\n"
+            "user's HP by half\n"
+            "of its max HP."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13302,9 +13302,9 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("TM81"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Cross-slashes with\n"
-            "scythes, claws, etc.\n"
-            "High crit ratio."),
+            "Cross-slashes\n"
+            "with scythes,\n"
+            "claws, etc."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13372,8 +13372,8 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("TM86"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "A snare attack that\n"
-            "does more damage to\n"
+            "A snare that does\n"
+            "more damage to\n"
             "heavier foes."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
@@ -13568,8 +13568,8 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("TM100"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Hits with the user's\n"
-            "Tera-type if it is\n"
+            "Uses user's\n"
+            "Tera-type if it's'\n"
             "Terastallized."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,

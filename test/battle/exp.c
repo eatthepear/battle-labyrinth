@@ -27,6 +27,7 @@ WILD_BATTLE_TEST("Pokemon gain experience after catching a Pokemon (Gen6+)")
     }
 }
 
+#if FREE_OTHER_PBL == FALSE
 WILD_BATTLE_TEST("Higher leveled Pokemon give more exp", s32 exp)
 {
     u8 level = 0;
@@ -47,6 +48,7 @@ WILD_BATTLE_TEST("Higher leveled Pokemon give more exp", s32 exp)
         EXPECT_GT(results[1].exp, results[0].exp);
     }
 }
+#endif
 
 WILD_BATTLE_TEST("Lucky Egg boosts gained exp points by 50%", s32 exp)
 {
@@ -94,6 +96,7 @@ WILD_BATTLE_TEST("Exp is scaled to player and opponent's levels", s32 exp)
 
 #endif
 
+#if FREE_OTHER_PBL == FALSE
 WILD_BATTLE_TEST("Large exp gains are supported", s32 exp) // #1455
 {
     u8 level = 0;
@@ -119,6 +122,7 @@ WILD_BATTLE_TEST("Large exp gains are supported", s32 exp) // #1455
         EXPECT_GT(results[2].exp, results[1].exp);
     }
 }
+#endif
 
 #if I_EXP_SHARE_ITEM < GEN_6
 

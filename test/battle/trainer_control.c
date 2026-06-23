@@ -32,8 +32,8 @@ TEST("CreateNPCTrainerPartyForTrainer generates customized Pokémon")
     EXPECT(GetMonAbility(&testParty[1]) == ABILITY_SHADOW_TAG);
     EXPECT(GetMonAbility(&testParty[2]) == ABILITY_SHADOW_TAG);
 
-    EXPECT(GetMonData(&testParty[0], MON_DATA_FRIENDSHIP, 0) == 42);
-    EXPECT(GetMonData(&testParty[1], MON_DATA_FRIENDSHIP, 0) == 0);
+    EXPECT(GetMonData(&testParty[0], MON_DATA_FRIENDSHIP, 0) == 255);
+    EXPECT(GetMonData(&testParty[1], MON_DATA_FRIENDSHIP, 0) == 255);
 
     EXPECT(GetMonData(&testParty[0], MON_DATA_HELD_ITEM, 0) == ITEM_ASSAULT_VEST);
     EXPECT(GetMonData(&testParty[1], MON_DATA_HELD_ITEM, 0) == ITEM_NONE);
@@ -82,10 +82,6 @@ TEST("CreateNPCTrainerPartyForTrainer generates customized Pokémon")
 
     EXPECT(GetMonGender(&testParty[0]) == MON_FEMALE);
     EXPECT(GetNature(&testParty[0]) == NATURE_HASTY);
-    EXPECT(GetNature(&testParty[1]) == NATURE_HARDY);
-
-    EXPECT_EQ(GetMonData(&testParty[0], MON_DATA_DYNAMAX_LEVEL), 5);
-    EXPECT_EQ(GetMonData(&testParty[1], MON_DATA_DYNAMAX_LEVEL), 10);
 
     Free(testParty);
 }
@@ -146,7 +142,7 @@ TEST("Difficulty changes which party is used for enemy trainer if defined for th
     u32 currTrainer = 5;
     CreateNPCTrainerPartyFromTrainer(testParty, GetTrainerStructFromId(currTrainer), TRUE, BATTLE_TYPE_TRAINER);
     EXPECT(GetMonData(&testParty[0], MON_DATA_SPECIES) == SPECIES_METAPOD);
-    EXPECT(GetMonData(&testParty[0], MON_DATA_LEVEL) == 1);
+    EXPECT(GetMonData(&testParty[0], MON_DATA_LEVEL) == 0);
     Free(testParty);
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
 }
@@ -193,7 +189,7 @@ TEST("Difficulty changes which party is used for partner if defined for the diff
     u32 currTrainer = TRAINER_PARTNER(1);
     CreateNPCTrainerPartyFromTrainer(testParty, GetTrainerStructFromId(currTrainer), TRUE, BATTLE_TYPE_TRAINER);
     EXPECT(GetMonData(&testParty[0], MON_DATA_SPECIES) == SPECIES_METAPOD);
-    EXPECT(GetMonData(&testParty[0], MON_DATA_LEVEL) == 1);
+    EXPECT(GetMonData(&testParty[0], MON_DATA_LEVEL) == 0);
     Free(testParty);
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
 }

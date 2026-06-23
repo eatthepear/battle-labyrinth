@@ -1,6 +1,7 @@
 #include "global.h"
 #include "test/battle.h"
 
+#if FREE_OTHER_PBL == FALSE
 SINGLE_BATTLE_TEST("Dynamax Cannon causes double damage to Dynamaxed Pokemon", s16 damage)
 {
     u32 dynamax;
@@ -18,3 +19,4 @@ SINGLE_BATTLE_TEST("Dynamax Cannon causes double damage to Dynamaxed Pokemon", s
         EXPECT_MUL_EQ(results[0].damage, UQ_4_12(2.0), results[1].damage);
     }
 }
+#endif

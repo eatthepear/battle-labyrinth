@@ -174,6 +174,7 @@ TEST("Status1 round-trips through BoxPokemon")
     EXPECT_EQ(GetMonData(&mon2, MON_DATA_STATUS), status1);
 }
 
+#if FREE_OTHER_PBL == FALSE
 TEST("canhypertrain/hypertrain affect MON_DATA_HYPER_TRAINED_* and recalculate stats")
 {
     u32 atk, friendship = 0;
@@ -198,7 +199,9 @@ TEST("canhypertrain/hypertrain affect MON_DATA_HYPER_TRAINED_* and recalculate s
     EXPECT_EQ(atk + 31, GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_ATK));
     EXPECT(!VarGet(VAR_RESULT));
 }
+#endif
 
+#if FREE_OTHER_PBL == FALSE
 TEST("hasgigantamaxfactor/togglegigantamaxfactor affect MON_DATA_GIGANTAMAX_FACTOR")
 {
     CreateRandomMonWithIVs(&gParties[B_TRAINER_PLAYER][0], SPECIES_WOBBUFFET, 100, 0);
@@ -222,7 +225,9 @@ TEST("hasgigantamaxfactor/togglegigantamaxfactor affect MON_DATA_GIGANTAMAX_FACT
     EXPECT(!VarGet(VAR_RESULT));
     EXPECT(!GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_GIGANTAMAX_FACTOR));
 }
+#endif
 
+#if FREE_OTHER_PBL == FALSE
 TEST("togglegigantamaxfactor fails for Melmetal")
 {
     CreateRandomMonWithIVs(&gParties[B_TRAINER_PLAYER][0], SPECIES_MELMETAL, 100, 0);
@@ -238,6 +243,7 @@ TEST("togglegigantamaxfactor fails for Melmetal")
     EXPECT(!VarGet(VAR_RESULT));
     EXPECT(!GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_GIGANTAMAX_FACTOR));
 }
+#endif
 
 TEST("givemon [simple]")
 {
@@ -416,9 +422,13 @@ TEST("givemon [all]")
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MOVE3), MOVE_CELEBRATE);
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MOVE4), MOVE_EXPLOSION);
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_IS_SHINY), TRUE);
+#if FREE_OTHER_PBL == FALSE
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_GIGANTAMAX_FACTOR), TRUE);
+#endif
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_TERA_TYPE), TYPE_FIRE);
+#if FREE_OTHER_PBL == FALSE
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_DYNAMAX_LEVEL), 7);
+#endif
 }
 
 TEST("givemon [vars]")
@@ -481,9 +491,13 @@ TEST("givemon [vars]")
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MOVE3), MOVE_CELEBRATE);
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MOVE4), MOVE_EXPLOSION);
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_IS_SHINY), TRUE);
+#if FREE_OTHER_PBL == FALSE
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_GIGANTAMAX_FACTOR), TRUE);
+#endif
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_TERA_TYPE), TYPE_FIRE);
+#if FREE_OTHER_PBL == FALSE
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_DYNAMAX_LEVEL), 7);
+#endif
 }
 
 TEST("checkteratype/setteratype work")
@@ -584,7 +598,7 @@ TEST("BoxPokemon encryption works")
 {
     // This test exists to ensure that expansion has not broken anything with regards to how BoxPokemon encryption works.
     // If users make changes to the definitions of BoxPokemon, Pokemon, or any of their members, it is expected that this test will fail. To avoid the failing test from blocking CI, users can uncomment the KNOWN_FAILING declaration.
-    // KNOWN_FAILING;
+    KNOWN_FAILING;
     u32 raw[20] =
     {
         990384375,

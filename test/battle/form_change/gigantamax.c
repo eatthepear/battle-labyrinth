@@ -1,6 +1,7 @@
 #include "global.h"
 #include "test/battle.h"
 
+#if FREE_OTHER_PBL == FALSE
 SINGLE_BATTLE_TEST("Dynamax: Pokemon with Gigantamax forms change upon Dynamaxing")
 {
     u32 species;
@@ -62,3 +63,4 @@ SINGLE_BATTLE_TEST("Dynamax: Venusaur returns its base Form upon fainting end af
         EXPECT_EQ(player->species, SPECIES_VENUSAUR);
     }
 }
+#endif
