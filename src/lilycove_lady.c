@@ -201,7 +201,7 @@ bool8 HasAnotherPlayerGivenFavorLadyItem(void)
     return FALSE;
 }
 
-static void BufferItemName(u8 *dest, enum Item itemId)
+static UNUSED void BufferItemName(u8 *dest, enum Item itemId)
 {
     StringCopy(dest, GetItemName(itemId));
 }

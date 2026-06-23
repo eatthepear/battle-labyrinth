@@ -111,7 +111,7 @@ void TrainerBattleLoadArgsTrainerA(const u8 *data);
 void TrainerBattleLoadArgsTrainerB(const u8 *data);
 void TrainerBattleLoadArgsSecondTrainer(const u8 *data);
 void InitTrainerBattleParameter(void);
-bool8 IsCaptureBlockedBySpeciesClause(u16 species);
+bool8 IsCaptureBlockedBySpeciesClause(enum Species species);
 
 void DoStandardWildBattle_Debug(void);
 void BattleSetup_StartTrainerBattle_Debug(void);

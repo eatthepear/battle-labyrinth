@@ -7,6 +7,9 @@ enum DifficultyLevel
     DIFFICULTY_NORMAL, //If you rename this, the word "Normal" in fprint_trainers must be replaced with the new difficulty name.
     DIFFICULTY_HARD,
     DIFFICULTY_BRUTAL,
+#if TESTING
+    DIFFICULTY_TEST,
+#endif 
     DIFFICULTY_COUNT,
 };
 

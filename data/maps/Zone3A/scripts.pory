@@ -188,7 +188,6 @@ script Zone3A_EventScript_Trade {
 		end
 	}
 	special(ChoosePartyMon)
-	waitstate
 	copyvar(VAR_0x800A, VAR_0x8004)
 	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 		msgbox(Zone3A_Text_ComeBack)
@@ -214,7 +213,6 @@ script Zone3A_EventScript_Trade {
 	copyvar(VAR_0x8005, VAR_0x800A)
 	special(CreateInGameTradePokemon)
 	special(DoInGameTradeScene)
-	waitstate
 	msgbox(Zone3A_Text_BeGood)
 	setflag(FLAG_ZONE3A_TRADE)
 	release
@@ -335,7 +333,6 @@ script Zone3A_EventScript_Tutor {
 	buffermovename(0, VAR_TEMP_0)
 	msgbox("Which Pokémon should learn\n{STR_VAR_1}?")
 	special(ChooseMonForMoveTutor)
-	waitstate
 	lock
 	faceplayer
 	if (var(VAR_RESULT) == 0) {

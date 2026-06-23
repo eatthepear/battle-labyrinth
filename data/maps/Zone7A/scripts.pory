@@ -165,7 +165,6 @@ script Zone7A_EventScript_FangsTutor {
 	buffermovename(0, VAR_TEMP_0)
 	msgbox("Which Pokémon should learn\n{STR_VAR_1}?")
 	special(ChooseMonForMoveTutor)
-	waitstate
 	lock
 	faceplayer
 	if (var(VAR_RESULT) == 0) {

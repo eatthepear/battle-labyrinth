@@ -168,7 +168,6 @@ Zone0B_PokemonDayCare_EventScript_GiveMonToRaise:
 	msgbox Zone0B_PokemonDayCare_Text_WhichMonShouldWeRaise, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	special ChooseSendDaycareMon
-	waitstate
 	compare VAR_0x8004, 255
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_ComeAgain
 	specialvar VAR_RESULT, CountPartyAliveNonEggMons_IgnoreVar0x8004Slot
@@ -251,7 +250,6 @@ Zone0B_PokemonDayCare_EventScript_TryRetrieveMon:
 	compare VAR_RESULT, DAYCARE_ONE_MON
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_CostPrompt
 	special ShowDaycareLevelMenu
-	waitstate
 	copyvar VAR_0x8004, VAR_RESULT
 	compare VAR_RESULT, DAYCARE_EXITED_LEVEL_MENU
 	goto_if_eq Zone0B_PokemonDayCare_EventScript_ComeAgain

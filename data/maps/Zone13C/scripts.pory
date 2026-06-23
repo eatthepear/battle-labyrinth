@@ -216,7 +216,6 @@ script Zone13C_EventScript_Cook {
 	msgbox(format("I just love Pokémon that evolve via food items!\pShow me an Applin or a Milcery, and I'll give you the corresponding evolution items!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		special(ChoosePartyMon)
-		waitstate
 		if (var(VAR_RESULT) != 255) {
 			specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
 			switch(var(VAR_RESULT)) {

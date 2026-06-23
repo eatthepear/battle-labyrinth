@@ -560,12 +560,12 @@ const u16 gEvolutionLines[NUM_SPECIES][16] =
     [SPECIES_POLTCHAGEIST ... SPECIES_SINISTCHA]                  = {SPECIES_POLTCHAGEIST, SPECIES_SINISTCHA},
 };
 
-bool8 IsCaptureBlockedBySpeciesClause(u16 species)
+bool8 IsCaptureBlockedBySpeciesClause(enum Species species)
 {
     u8 i;
     if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
         return TRUE;
-    
+
     for (i = 0; i < 16; i++)
     {
         u16 mon = gEvolutionLines[species][i];

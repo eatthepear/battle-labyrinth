@@ -708,7 +708,6 @@ script Sanctuary_EventScript_GameIntro {
 		"On {COLOR RED}Nuzlocke{COLOR DARK_GRAY}, your choice is limited from the pool of possible starters to only three options.\p"
 		"Choose carefully as these Pokémon are very rare."))
 		special(ChooseStarter)
-		waitstate
 	} else {
 		setspeaker(SP_NAME_COLRESS)
 		msgbox(format("As a new challenger, you will receive a starter Pokémon.\p"
@@ -2694,7 +2693,6 @@ script EventScript_Shop_Marie_ElementalMonkeyEgg {
 		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
 		hidemoneybox
 		special(ChoosePartyMon)
-		waitstate
 		faceplayer
 		showmoneybox(0, 0, 0)
 		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
@@ -2751,7 +2749,6 @@ script EventScript_Shop_Marie_RegionalFormEgg {
 		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
 		hidemoneybox
 		special(ChoosePartyMon)
-		waitstate
 		faceplayer
 		showmoneybox(0, 0, 0)
 		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
@@ -2810,7 +2807,6 @@ script EventScript_Shop_Marie_BabyPokemon1Egg {
 		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
 		hidemoneybox
 		special(ChoosePartyMon)
-		waitstate
 		faceplayer
 		showmoneybox(0, 0, 0)
 		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
@@ -2867,7 +2863,6 @@ script EventScript_Shop_Marie_BabyPokemon2Egg {
 		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
 		hidemoneybox
 		special(ChoosePartyMon)
-		waitstate
 		faceplayer
 		showmoneybox(0, 0, 0)
 		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
@@ -2990,7 +2985,6 @@ script EventScript_Shop_Lelouch_Training {
 			msgbox(gText_Lelouch_Exp, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				// special(ChoosePartyMonForTraining) // TODO
-				waitstate
 				if (var(VAR_0x8004) == 1) {
 					msgbox(gText_Lelouch_ExpTrainingFinished, MSGBOX_DEFAULT)
 					msgbox(gText_Lelouch_PayItem, MSGBOX_DEFAULT)
@@ -3004,7 +2998,6 @@ script EventScript_Shop_Lelouch_Training {
 			msgbox(gText_Lelouch_EV, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				special(ChoosePartyMon)
-				waitstate
 				if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 					msgbox(gText_Lelouch_DidNotTrain, MSGBOX_DEFAULT)
 				} else {
@@ -3222,7 +3215,6 @@ script EventScript_Shop_Lelouch_MoveReminder {
 		setspeaker("Lelouch")
 		msgbox("Which Pokémon should\nrelearn a move?", MSGBOX_DEFAULT)
 		special(ChooseMonForMoveRelearner)
-		waitstate
 		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 			return
 		}
@@ -3240,7 +3232,6 @@ script EventScript_Shop_Lelouch_MoveReminder {
 		setspeaker("Lelouch")
 		msgbox("Which move should it\nrelearn?", MSGBOX_DEFAULT)
 		special(TeachMoveRelearnerMove)
-		waitstate
 		if (var(VAR_0x8004) == 0) {
 			continue
 		}
@@ -3544,7 +3535,6 @@ script EventScript_Shop_Lelouch_MoveTutor {
 		setspeaker("Lelouch")
 		msgbox("Which Pokémon should learn\n{STR_VAR_1}?")
 		special(ChooseMonForMoveTutor)
-		waitstate
 		lock
 		faceplayer
 		if (var(VAR_RESULT) == 0) {

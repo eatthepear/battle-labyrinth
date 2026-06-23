@@ -66,17 +66,17 @@ static void SpriteCB_SandPillar_BreakTop(struct Sprite *);
 static void SpriteCB_SandPillar_BreakBase(struct Sprite *);
 static void SpriteCB_SandPillar_End(struct Sprite *);
 
-static const u8 sSecretPowerCave_Gfx[] = INCBIN_U8("graphics/field_effects/pics/secret_power_cave.4bpp");
+static const u8 sSecretPowerCave_Gfx[] = INCGFX_U8("graphics/field_effects/pics/secret_power_cave.png", ".4bpp", "-mwidth 2 -mheight 2");
 static const u8 sFiller[32] = {0};
-static const u16 sSecretPowerCave_Pal[] = INCBIN_U16("graphics/field_effects/palettes/secret_power_cave.gbapal");
-static const u8 sSecretPowerShrub_Gfx[] = INCBIN_U8("graphics/field_effects/pics/secret_power_shrub.4bpp");
-static const u8 sSecretPowerTree_Gfx[] = INCBIN_U8("graphics/field_effects/pics/secret_power_tree.4bpp");
-static const u16 sSecretPowerPlant_Pal[] = INCBIN_U16("graphics/field_effects/palettes/secret_power_plant.gbapal");
+static const u16 sSecretPowerCave_Pal[] = INCGFX_U16("graphics/field_effects/palettes/secret_power_cave.pal", ".gbapal");
+static const u8 sSecretPowerShrub_Gfx[] = INCGFX_U8("graphics/field_effects/pics/secret_power_shrub.png", ".4bpp", "-mwidth 2 -mheight 2");
+static const u8 sSecretPowerTree_Gfx[] = INCGFX_U8("graphics/field_effects/pics/secret_power_tree.png", ".4bpp", "-mwidth 2 -mheight 2");
+static const u16 sSecretPowerPlant_Pal[] = INCGFX_U16("graphics/field_effects/palettes/secret_power_plant.pal", ".gbapal");
 
 // TODO: These should also be combined into a single image, not matching for some reason
-static const u8 sSandPillar0_Gfx[] = INCBIN_U8("graphics/field_effects/pics/sand_pillar/0.4bpp");
-static const u8 sSandPillar1_Gfx[] = INCBIN_U8("graphics/field_effects/pics/sand_pillar/1.4bpp");
-static const u8 sSandPillar2_Gfx[] = INCBIN_U8("graphics/field_effects/pics/sand_pillar/2.4bpp");
+static const u8 sSandPillar0_Gfx[] = INCGFX_U8("graphics/field_effects/pics/sand_pillar/0.png", ".4bpp");
+static const u8 sSandPillar1_Gfx[] = INCGFX_U8("graphics/field_effects/pics/sand_pillar/1.png", ".4bpp");
+static const u8 sSandPillar2_Gfx[] = INCGFX_U8("graphics/field_effects/pics/sand_pillar/2.png", ".4bpp");
 
 static const struct OamData sOam_SecretPower =
 {
@@ -273,8 +273,8 @@ static const struct SpriteTemplate sSpriteTemplate_SandPillar =
 
 const struct SpritePalette gSpritePalette_SandPillar = {gTilesetPalettes_SecretBase[5], FLDEFF_PAL_TAG_SAND_PILLAR};
 
-static const u8 sRecordMixLights_Gfx[] = INCBIN_U8("graphics/field_effects/pics/record_mix_lights.4bpp");
-static const u16 sRecordMixLights_Pal[] = INCBIN_U16("graphics/field_effects/palettes/record_mix_lights.gbapal");
+static const u8 sRecordMixLights_Gfx[] = INCGFX_U8("graphics/field_effects/pics/record_mix_lights.png", ".4bpp", "-mwidth 4 -mheight 1");
+static const u16 sRecordMixLights_Pal[] = INCGFX_U16("graphics/field_effects/palettes/record_mix_lights.pal", ".gbapal");
 
 static const struct SpriteFrameImage sPicTable_RecordMixLights[] =
 {
@@ -1362,7 +1362,7 @@ void DecrementMovePP(struct Pokemon *mon, u16 move)
 
 bool32 SetUpFieldMove_Refresh(void)
 {
-    struct Pokemon *mon = &gPlayerParty[GetCursorSelectionMonId()];
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][GetCursorSelectionMonId()];
 
     switch (GetMonAilment(mon))
     {
@@ -1378,12 +1378,12 @@ bool32 SetUpFieldMove_Refresh(void)
 
 bool32 SetUpFieldMove_PartyCureAllStatus(u16 move)
 {
-    struct Pokemon *mon = &gPlayerParty[GetCursorSelectionMonId()];
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][GetCursorSelectionMonId()];
     bool8 foundStatus = FALSE;
 
-    for (u8 i = 0; i < gPlayerPartyCount; i++)
+    for (u8 i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
     {
-        switch (GetMonAilment(&gPlayerParty[i]))
+        switch (GetMonAilment(&gParties[B_TRAINER_PLAYER][i]))
         {
             case AILMENT_NONE:
             case AILMENT_FNT:
@@ -1425,7 +1425,7 @@ void UseRefresh(u8 taskId)
 
 void Task_RefreshOnPartyMon(u8 taskId)
 {
-    struct Pokemon *mon = &gPlayerParty[GetCursorSelectionMonId()];
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][GetCursorSelectionMonId()];
     u8 userPartyId = gPartyMenu.slotId;
 
     DecrementMovePP(mon, MOVE_REFRESH);
@@ -1436,7 +1436,7 @@ void Task_RefreshOnPartyMon(u8 taskId)
 
 void Task_AromatherapyOnParty(u8 taskId)
 {
-    struct Pokemon *mon = &gPlayerParty[GetCursorSelectionMonId()];
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][GetCursorSelectionMonId()];
     DecrementMovePP(mon, MOVE_AROMATHERAPY);
 
     PlaySE(SE_USE_ITEM);
@@ -1445,7 +1445,7 @@ void Task_AromatherapyOnParty(u8 taskId)
 
 void Task_HealBellOnParty(u8 taskId)
 {
-    struct Pokemon *mon = &gPlayerParty[GetCursorSelectionMonId()];
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][GetCursorSelectionMonId()];
     DecrementMovePP(mon, MOVE_HEAL_BELL);
 
     PlaySE(SE_USE_ITEM);

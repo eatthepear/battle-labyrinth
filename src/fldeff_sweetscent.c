@@ -28,7 +28,7 @@ static void FailSweetScentEncounter(u8 taskId);
 
 bool32 SetUpFieldMove_SweetScent(void)
 {
-    struct Pokemon *mon = &gPlayerParty[GetCursorSelectionMonId()];
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][GetCursorSelectionMonId()];
 
     if (!MonHasMoveWithPP(mon, MOVE_SWEET_SCENT))
         return FALSE;
@@ -42,7 +42,7 @@ static void FieldCallback_SweetScent(void)
 {
     FieldEffectStart(FLDEFF_SWEET_SCENT);
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
-    struct Pokemon *mon = &gPlayerParty[GetCursorSelectionMonId()];
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][GetCursorSelectionMonId()];
     DecrementMovePP(mon, MOVE_SWEET_SCENT);
 }
 

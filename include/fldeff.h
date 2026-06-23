@@ -55,6 +55,8 @@ bool8 FldEff_UseRockSmash(void);
 bool32 SetUpFieldMove_Defog(void);
 bool8 FldEff_Defog(void);
 
+void Task_EnterCaveTransition2(u8 taskId);
+
 // refresh
 bool32 SetUpFieldMove_Refresh(void);
 void Task_RefreshOnPartyMon(u8 taskId);

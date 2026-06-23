@@ -186,8 +186,8 @@ static const struct WindowTemplate sStartMenuWindowTemplates[] =
 //
 
 // Main Background
-static const u32 sStartMenuTiles[] = INCBIN_U32("graphics/ui_startmenu_full/menu_tiles.4bpp.smol");
-static const u16 sStartMenuPalette[] = INCBIN_U16("graphics/ui_startmenu_full/menu.gbapal");
+static const u32 sStartMenuTiles[] = INCGFX_U32("graphics/ui_startmenu_full/menu_tiles.png", ".4bpp.smol");
+static const u16 sStartMenuPalette[] = INCGFX_U16("graphics/ui_startmenu_full/menu.pal", ".gbapal");
 
 //#if (FLAG_CLOCK_MODE != 0)
 //static const u32 sStartMenuTilemap[] = INCBIN_U32("graphics/ui_startmenu_full/menu_tilemap_alt.smolTM");
@@ -196,42 +196,42 @@ static const u32 sStartMenuTilemap[] = INCBIN_U32("graphics/ui_startmenu_full/me
 //#endif
 
 // Alternate Main Background for Female Player
-static const u32 sStartMenuTilesAlt[] = INCBIN_U32("graphics/ui_startmenu_full/menu_tiles_alt.4bpp.smol");
-static const u16 sStartMenuPaletteAlt[] = INCBIN_U16("graphics/ui_startmenu_full/menu_alt.gbapal");
+static const u32 sStartMenuTilesAlt[] = INCGFX_U32("graphics/ui_startmenu_full/menu_tiles_alt.png", ".4bpp.smol");
+static const u16 sStartMenuPaletteAlt[] = INCGFX_U16("graphics/ui_startmenu_full/menu_alt.pal", ".gbapal");
 
 // Scrolling Background
-static const u32 sScrollBgTiles[] = INCBIN_U32("graphics/ui_startmenu_full/scroll_tiles.4bpp.smol");
+static const u32 sScrollBgTiles[] = INCGFX_U32("graphics/ui_startmenu_full/scroll_tiles.png", ".4bpp.smol");
 static const u32 sScrollBgTilemap[] = INCBIN_U32("graphics/ui_startmenu_full/scroll_tilemap.bin.smolTM");
-static const u16 sScrollBgPalette[] = INCBIN_U16("graphics/ui_startmenu_full/scroll_tiles.gbapal");
+static const u16 sScrollBgPalette[] = INCGFX_U16("graphics/ui_startmenu_full/scroll_tiles.pal", ".gbapal");
 
 // Cursor and IconBox
-static const u16 sCursor_Pal[] = INCBIN_U16("graphics/ui_startmenu_full/cursor.gbapal");
-static const u32 sCursor_Gfx[] = INCBIN_U32("graphics/ui_startmenu_full/cursor.4bpp.smol");
-static const u16 sCursor_PalAlt[] = INCBIN_U16("graphics/ui_startmenu_full/cursor_alt.gbapal");
+static const u16 sCursor_Pal[] = INCGFX_U16("graphics/ui_startmenu_full/cursor.pal", ".gbapal");
+static const u32 sCursor_Gfx[] = INCGFX_U32("graphics/ui_startmenu_full/cursor.png", ".4bpp.smol");
+static const u16 sCursor_PalAlt[] = INCGFX_U16("graphics/ui_startmenu_full/cursor_alt.pal", ".gbapal");
 
-static const u16 sIconBox_Pal[] = INCBIN_U16("graphics/ui_startmenu_full/icon_box.gbapal");
-static const u32 sIconBox_Gfx[] = INCBIN_U32("graphics/ui_startmenu_full/icon_box.4bpp.smol");
+static const u16 sIconBox_Pal[] = INCGFX_U16("graphics/ui_startmenu_full/icon_box.pal", ".gbapal");
+static const u32 sIconBox_Gfx[] = INCGFX_U32("graphics/ui_startmenu_full/icon_box.png", ".4bpp.smol");
 
 //HP Bar
-static const u8 sHPBar_100_Percent_Gfx[]  = INCBIN_U8("graphics/ui_startmenu_full/sHPBar_100_Percent_Gfx.4bpp");
-static const u8 sHPBar_90_Percent_Gfx[]   = INCBIN_U8("graphics/ui_startmenu_full/sHPBar_90_Percent_Gfx.4bpp");
-static const u8 sHPBar_80_Percent_Gfx[]   = INCBIN_U8("graphics/ui_startmenu_full/sHPBar_80_Percent_Gfx.4bpp");
-static const u8 sHPBar_70_Percent_Gfx[]   = INCBIN_U8("graphics/ui_startmenu_full/sHPBar_70_Percent_Gfx.4bpp");
-static const u8 sHPBar_60_Percent_Gfx[]   = INCBIN_U8("graphics/ui_startmenu_full/sHPBar_60_Percent_Gfx.4bpp");
-static const u8 sHPBar_50_Percent_Gfx[]   = INCBIN_U8("graphics/ui_startmenu_full/sHPBar_50_Percent_Gfx.4bpp");
-static const u8 sHPBar_40_Percent_Gfx[]   = INCBIN_U8("graphics/ui_startmenu_full/sHPBar_40_Percent_Gfx.4bpp");
-static const u8 sHPBar_30_Percent_Gfx[]   = INCBIN_U8("graphics/ui_startmenu_full/sHPBar_30_Percent_Gfx.4bpp");
-static const u8 sHPBar_20_Percent_Gfx[]   = INCBIN_U8("graphics/ui_startmenu_full/sHPBar_20_Percent_Gfx.4bpp");
-static const u8 sHPBar_10_Percent_Gfx[]   = INCBIN_U8("graphics/ui_startmenu_full/sHPBar_10_Percent_Gfx.4bpp");
-static const u8 sHPBar_0_Percent_Gfx[]    = INCBIN_U8("graphics/ui_startmenu_full/sHPBar_0_Percent_Gfx.4bpp");
-static const u16 sHP_Pal[] = INCBIN_U16("graphics/ui_startmenu_full/hpbar_pal.gbapal");
-static const u16 sHP_PalAlt[] = INCBIN_U16("graphics/ui_startmenu_full/hpbar_pal_alt.gbapal");
+static const u8 sHPBar_100_Percent_Gfx[]  = INCGFX_U8("graphics/ui_startmenu_full/sHPBar_100_Percent_Gfx.png", ".4bpp");
+static const u8 sHPBar_90_Percent_Gfx[]   = INCGFX_U8("graphics/ui_startmenu_full/sHPBar_90_Percent_Gfx.png", ".4bpp");
+static const u8 sHPBar_80_Percent_Gfx[]   = INCGFX_U8("graphics/ui_startmenu_full/sHPBar_80_Percent_Gfx.png", ".4bpp");
+static const u8 sHPBar_70_Percent_Gfx[]   = INCGFX_U8("graphics/ui_startmenu_full/sHPBar_70_Percent_Gfx.png", ".4bpp");
+static const u8 sHPBar_60_Percent_Gfx[]   = INCGFX_U8("graphics/ui_startmenu_full/sHPBar_60_Percent_Gfx.png", ".4bpp");
+static const u8 sHPBar_50_Percent_Gfx[]   = INCGFX_U8("graphics/ui_startmenu_full/sHPBar_50_Percent_Gfx.png", ".4bpp");
+static const u8 sHPBar_40_Percent_Gfx[]   = INCGFX_U8("graphics/ui_startmenu_full/sHPBar_40_Percent_Gfx.png", ".4bpp");
+static const u8 sHPBar_30_Percent_Gfx[]   = INCGFX_U8("graphics/ui_startmenu_full/sHPBar_30_Percent_Gfx.png", ".4bpp");
+static const u8 sHPBar_20_Percent_Gfx[]   = INCGFX_U8("graphics/ui_startmenu_full/sHPBar_20_Percent_Gfx.png", ".4bpp");
+static const u8 sHPBar_10_Percent_Gfx[]   = INCGFX_U8("graphics/ui_startmenu_full/sHPBar_10_Percent_Gfx.png", ".4bpp");
+static const u8 sHPBar_0_Percent_Gfx[]    = INCGFX_U8("graphics/ui_startmenu_full/sHPBar_0_Percent_Gfx.png", ".4bpp");
+static const u16 sHP_Pal[] = INCGFX_U16("graphics/ui_startmenu_full/hpbar_pal.pal", ".gbapal");
+static const u16 sHP_PalAlt[] = INCGFX_U16("graphics/ui_startmenu_full/hpbar_pal_alt.pal", ".gbapal");
 
 // greyed buttons
-static const u32 sGreyMenuButtonMap_Gfx[] = INCBIN_U32("graphics/ui_startmenu_full/map_dark_sprite.4bpp.smol"); // DEXNAV
-static const u32 sGreyMenuButtonDex_Gfx[] = INCBIN_U32("graphics/ui_startmenu_full/dex_dark_sprite.4bpp.smol");
-static const u32 sGreyMenuButtonParty_Gfx[] = INCBIN_U32("graphics/ui_startmenu_full/party_dark_sprite.4bpp.smol"); // PC
-static const u16 sGreyMenuButton_Pal[] = INCBIN_U16("graphics/ui_startmenu_full/menu_dark.gbapal");
+static const u32 sGreyMenuButtonMap_Gfx[] = INCGFX_U32("graphics/ui_startmenu_full/map_dark_sprite.png", ".4bpp.smol"); // DEXNAV
+static const u32 sGreyMenuButtonDex_Gfx[] = INCGFX_U32("graphics/ui_startmenu_full/dex_dark_sprite.png", ".4bpp.smol");
+static const u32 sGreyMenuButtonParty_Gfx[] = INCGFX_U32("graphics/ui_startmenu_full/party_dark_sprite.png", ".4bpp.smol"); // PC
+static const u16 sGreyMenuButton_Pal[] = INCGFX_U16("graphics/ui_startmenu_full/menu_dark.pal", ".gbapal");
 
 
 //
@@ -629,7 +629,7 @@ static void CreatePartyMonIcons()
     s16 y = ICON_BOX_1_START_Y;
     // struct Pokemon *mon;
     LoadMonIconPalettes();
-    for(i = 0; i < gPlayerPartyCount; i++)
+    for(i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
     {   
         switch (i) // choose position for each icon
         {
@@ -660,9 +660,9 @@ static void CreatePartyMonIcons()
         }
 
 #ifdef POKEMON_EXPANSION
-            sStartMenuDataPtr->iconMonSpriteIds[i] = CreateMonIcon(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG), SpriteCB_MonIcon, x, y, 0, GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY));
+            sStartMenuDataPtr->iconMonSpriteIds[i] = CreateMonIcon(GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES_OR_EGG), SpriteCB_MonIcon, x, y, 0, GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_PERSONALITY));
 #else
-            sStartMenuDataPtr->iconMonSpriteIds[i] = CreateMonIcon(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG), SpriteCB_MonIcon, x, y, 0, GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY), TRUE);
+            sStartMenuDataPtr->iconMonSpriteIds[i] = CreateMonIcon(GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES_OR_EGG), SpriteCB_MonIcon, x, y, 0, GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_PERSONALITY), TRUE);
 #endif
 
         gSprites[sStartMenuDataPtr->iconMonSpriteIds[i]].oam.priority = 0;
@@ -718,12 +718,12 @@ static const u8 *GetBarGfx(u32 percent)
 
 static bool32 IsMonNotEmpty(u32 partyIndex)
 {
-    return (GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_NONE);
+    return (GetMonData(&gParties[B_TRAINER_PLAYER][partyIndex], MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_NONE);
 }
 
 static u32 GetHPEggCyclePercent(u32 partyIndex)
 {
-    struct Pokemon *mon = &gPlayerParty[partyIndex];
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][partyIndex];
     if (!GetMonData(mon, MON_DATA_IS_EGG))
         return ((GetMonData(mon, MON_DATA_HP)) * 100 / (GetMonData(mon,MON_DATA_MAX_HP)));
     else
@@ -846,7 +846,7 @@ static void CreatePartyMonStatuses()
     s16 y = ICON_STATUS_1_START_Y;
     u8 status;
 
-    for(i = 0; i < gPlayerPartyCount; i++)
+    for(i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
     {   
         switch (i)
         {
@@ -878,7 +878,7 @@ static void CreatePartyMonStatuses()
 
         sStartMenuDataPtr->iconStatusSpriteIds[i] = CreateSprite(&sSpriteTemplate_StatusIcons, x, y, 0);
 
-        status = GetMonAilment(&gPlayerParty[i]);
+        status = GetMonAilment(&gParties[B_TRAINER_PLAYER][i]);
         switch (status)
         {
             case AILMENT_NONE:
@@ -1209,7 +1209,7 @@ static void StartMenuFull_InitWindows(void)
 //  Confirm Save Dialogue Printer
 //
 static const u8 sText_ConfirmSave[] = _("Confirm Save and Return to Overworld?");
-static const u8 sA_ButtonGfx[]         = INCBIN_U8("graphics/ui_startmenu_full/a_button.4bpp");
+static const u8 sA_ButtonGfx[]         = INCGFX_U8("graphics/ui_startmenu_full/a_button.png", ".4bpp");
 static void PrintSaveConfirmToWindow()
 {
     const u8 *str = sText_ConfirmSave;

@@ -764,7 +764,6 @@ script Zone18B_EventScript_SetFireRoomDoorMetatiles {
 
 script Zone18B_EventScript_SlideOpenRoomDoors {
 	special(PetalburgGymSlideOpenRoomDoors)
-	waitstate
 	return
 }
 

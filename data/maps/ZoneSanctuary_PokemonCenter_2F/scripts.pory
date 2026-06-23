@@ -9,7 +9,6 @@ script ZoneSanctuary_PokemonCenter_2F_EventScript_NameRater {
     if (var(VAR_RESULT) == YES) {
         msgbox(ZoneSanctuary_PokemonCenter_2F_Text_CritiqueWhichMonNickname)
         special(ChoosePartyMon)
-        waitstate
         if (var(VAR_0x8004) != PARTY_NOTHING_CHOSEN) {
             specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
             if (var(VAR_RESULT) == SPECIES_EGG) {

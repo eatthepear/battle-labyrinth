@@ -50,7 +50,6 @@ script Zone9E_EventScript_GiveSquawkabilly {
 	if (var(VAR_TEMP_2) == PARTY_SIZE) {
 		msgbox(format("Your party is full. Choose a Pokémon to send to the PC."), MSGBOX_AUTOCLOSE)
 		special(ChoosePartyMon)
-		waitstate
 		faceplayer
 		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 			msgbox(Zone9E_Text_Squawkabilly_ComeBack)

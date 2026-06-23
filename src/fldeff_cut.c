@@ -137,13 +137,13 @@ static const struct SpriteTemplate sSpriteTemplate_CutGrass =
 // code
 bool32 SetUpFieldMove_Cut(void)
 {
+#if FREE_OTHER_PBL == FALSE
     s16 x, y;
     u8 i, j;
     u8 tileBehavior;
     enum Ability userAbility;
     bool8 cutTiles[CUT_NORMAL_AREA];
     bool8 ret;
-#if FREE_OTHER_PBL == FALSE
     sScheduleOpenDottedHole = FALSE;
     if (CutMoveRuinValleyCheck() == TRUE)
     {

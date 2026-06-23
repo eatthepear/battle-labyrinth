@@ -355,7 +355,6 @@ script EventScript_ChoosePartyMonToSend {
 	while {
 		msgbox(format("Choose a party Pokémon to send to the PC."))
 		special(ChoosePartyMon)
-		waitstate
 		faceplayer
 		if (var(VAR_0x8004) != PARTY_NOTHING_CHOSEN) {
 			specialvar(VAR_TEMP_3, ScriptGetPartyMonSpecies)
@@ -432,7 +431,6 @@ script EventScript_ShakeTree {
 	waitstate
 	waitse
 	special(HeadbuttWildEncounter)
-	waitstate
 	if (flag(FLAG_SETTINGS_NUZLOCKE)) {
 		call(EventScript_MultipleHoneyEncountersNuzlocke)
 	}
@@ -461,7 +459,6 @@ script EventScript_MultipleHoneyEncountersNuzlocke {
 		waitstate
 		waitse
 		special(HeadbuttWildEncounter)
-		waitstate
 	}
 }
 
@@ -2474,7 +2471,6 @@ script EventScript_TestingLegendBattle {
 	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 0, 1, 0, 0, 1)
 	special(BattleSetup_StartLegendaryBattle)
-	waitstate
 	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	specialvar(VAR_RESULT, GetBattleOutcome)
 	switch (var(VAR_RESULT)) {
@@ -2489,7 +2485,6 @@ script EventScript_TestingLegendBattle {
 	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 0, 1, 0, 0, 1)
 	special(BattleSetup_StartLegendaryBattle)
-	waitstate
 	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	specialvar(VAR_RESULT, GetBattleOutcome)
 	switch (var(VAR_RESULT)) {
@@ -2534,7 +2529,6 @@ script EventScript_TestingLegendBattle_Template {
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1)
 	setvar(VAR_BATTLE_STARTING_STATUS, STARTING_STATUS_TAILWIND_OPPONENT)
 	special(BattleSetup_StartLegendaryBattle)
-	waitstate
 	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	specialvar(VAR_RESULT, GetBattleOutcome)
 	switch (var(VAR_RESULT)) {
@@ -2878,7 +2872,6 @@ script EventScript_KimonoGirl_Items {
 			special(HealPlayerParty)
 		case ITEM_SERIOUS_MINT:
 			special(ChooseMonForIVChange)
-			waitstate
 			if (var(VAR_0x8004) == 255) {
 				return
 			}
@@ -2887,7 +2880,6 @@ script EventScript_KimonoGirl_Items {
 			special(SetIVOfSelectedPokemon)
 		case ITEM_ADAMANT_MINT:
 			special(ChooseMonForIVChange)
-			waitstate
 			if (var(VAR_0x8004) == 255) {
 				return
 			}
@@ -2896,7 +2888,6 @@ script EventScript_KimonoGirl_Items {
 			special(SetIVOfSelectedPokemon)
 		case ITEM_BOLD_MINT:
 			special(ChooseMonForIVChange)
-			waitstate
 			if (var(VAR_0x8004) == 255) {
 				return
 			}
@@ -2905,7 +2896,6 @@ script EventScript_KimonoGirl_Items {
 			special(SetIVOfSelectedPokemon)
 		case ITEM_MODEST_MINT:
 			special(ChooseMonForIVChange)
-			waitstate
 			if (var(VAR_0x8004) == 255) {
 				return
 			}
@@ -2914,7 +2904,6 @@ script EventScript_KimonoGirl_Items {
 			special(SetIVOfSelectedPokemon)
 		case ITEM_CALM_MINT:
 			special(ChooseMonForIVChange)
-			waitstate
 			if (var(VAR_0x8004) == 255) {
 				return
 			}
@@ -2923,7 +2912,6 @@ script EventScript_KimonoGirl_Items {
 			special(SetIVOfSelectedPokemon)
 		case ITEM_TIMID_MINT:
 			special(ChooseMonForIVChange)
-			waitstate
 			if (var(VAR_0x8004) == 255) {
 				return
 			}
