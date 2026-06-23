@@ -1443,7 +1443,7 @@ script EventScript_Fisherman {
 		msgbox(format("A Fisherman deigns to spread his love of fishing with others!"))
 		giveitem(ITEM_SUPER_ROD)
 	}
-	msgbox(format("A Fisherman always fishes if he can!\pAnd a Fisherman checks what Pokémon are available to fish using the {COLOR RED}DexNav{COLOR DARK_GRAY}!\pThough the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} doesn't have any Pokémon available to fish!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("A Fisherman always fishes if he can, and encourages others to fish as well!\pThough I've heard that when you use a Surfboard, the Pokémon you encounter are the same as when you fish!"), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_FISHERMAN, Common_Movement_FaceRight)
 	waitmovement(LOCALID_FISHERMAN)
 	release
@@ -1476,13 +1476,15 @@ script EventScript_Hiker {
 script ZoneSanctuary_EventScript_Scientist {
 	lock
 	faceplayer
-	if (checkitem(FLAG_SYS_DEXNAV_GET) == FALSE) {
+	if (flag(FLAG_SYS_DEXNAV_GET) == FALSE) {
 		msgbox(format("Want to see all available encounters in an area?\pOr encounter a specific species?\pThe DexNav is the right tool for you!"))
 		setflag(FLAG_SYS_DEXNAV_GET)
-		msgbox(format("Received the {COLOR RED}DexNav{COLOR DARK_GRAY}! It was added to the {START_BUTTON} menu."), MSGBOX_DEFAULT)
+		playfanfare(MUS_OBTAIN_ITEM)
+		message(format("Received the {COLOR RED}DexNav{COLOR DARK_GRAY}! It was added to the {START_BUTTON} menu."))
+		waitmessage
 		waitfanfare
 	}
-	msgbox(format("The {COLOR RED}DexNav{COLOR DARK_GRAY} displays all possible Pokémon in an area, including by Honey Trees, Rock Smash, etc."))
+	msgbox(format("The {COLOR RED}DexNav{COLOR DARK_GRAY} displays all possible Pokémon in an area, including those found from fishing, in Honey Trees, through breaking rocks, etc."))
 	release
 }
 
@@ -1502,6 +1504,7 @@ script EventScript_MusicMenu {
 	while {
 		fadedefaultbgm
 		message(format("Yo! Want me to change some tracks?"))
+		waitmessage
 		dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Sanctuary", "Wild Battle", "Trainer Battle", "Leviathan Battle", "Exit")
 		switch (var(VAR_RESULT)) {
 			case 0:
