@@ -153,6 +153,24 @@ static const u8 sPartyMenuSpriteCoords[PARTY_LAYOUT_COUNT][PARTY_SIZE][4 * 2] =
         { 24,  94,  38, 113, 105, 113,  24,  98},
         {136, 102, 150, 121, 217, 121, 136, 106},
     },
+    [PARTY_LAYOUT_ENEMY] =
+    {
+        { 24,  14,  38,  33, 105,  33,  24,  18},
+        {136,  22, 150,  41, 217,  41, 136,  26},
+        { 24,  54,  38,  73, 105,  73,  24,  58},
+        {136,  62, 150,  81, 217,  81, 136,  66},
+        { 24,  94,  38, 113, 105, 113,  24,  98},
+        {136, 102, 150, 121, 217, 121, 136, 106},
+    },
+    [PARTY_LAYOUT_ENEMY_2] =
+    {
+        { 24,  14,  38,  33, 105,  33,  24,  18},
+        {136,  22, 150,  41, 217,  41, 136,  26},
+        { 24,  54,  38,  73, 105,  73,  24,  58},
+        {136,  62, 150,  81, 217,  81, 136,  66},
+        { 24,  94,  38, 113, 105, 113,  24,  98},
+        {136, 102, 150, 121, 217, 121, 136, 106},
+    },
 };
 
 // Used only when both Cancel and Confirm are present
@@ -906,10 +924,11 @@ static const u8 *const sActionStringTable[] =
     [PARTY_MSG_CHOOSE_SECOND_FUSION]   = gText_NextFusionMon,
     [PARTY_MSG_NO_POKEMON]             = COMPOUND_STRING("You have no POKéMON."),
     [PARTY_MSG_CHOOSE_MON_FOR_BOX]     = gText_SendWhichMonToPC,
-    [PARTY_MSG_ENEMY_PREVIEW]          = COMPOUND_STRING("Revealed opponent Pokémon!"),
     [PARTY_MSG_MOVE_ITEM_WHERE]        = gText_MoveItemWhere,
     [PARTY_MSG_CANT_USE_RIGHT_NOW]     = COMPOUND_STRING("Can't use right now."),
     [PARTY_MSG_WHICH_STATUS]           = COMPOUND_STRING("Inflict which status?"), // hexorb Branch
+    [PARTY_MSG_SURVEIL]                = COMPOUND_STRING("Viewing opponent party!"),
+    [PARTY_MSG_VIEW_PARTIES]           = COMPOUND_STRING("{R_BUTTON} View parties"),
 };
 
 static const u8 *const sDescriptionStringTable[] =

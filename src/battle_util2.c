@@ -127,8 +127,6 @@ void AdjustFriendshipOnBattleFaint(enum BattlerId battler)
 
 void SwitchPartyOrderInGameMulti(enum BattlerId battler, u8 arg1)
 {
-    if (IsOnPlayerSide(battler))
-    {
         s32 i;
         u8 battlerPartyId = gBattlerPartyIndexes[battler];
         u8 switchInPartyId = arg1;
@@ -144,7 +142,7 @@ void SwitchPartyOrderInGameMulti(enum BattlerId battler, u8 arg1)
 
         for (enum BattlerId battlerId = 0; battlerId < gBattlersCount; battlerId++)
         {
-            if (!IsOnPlayerSide(battlerId))
+            if (!IsBattlerAlly(battlerId, battler))
                 continue;
 
             // Don't update battler's orders for party menu if the switching battler and updating battler
@@ -161,7 +159,6 @@ void SwitchPartyOrderInGameMulti(enum BattlerId battler, u8 arg1)
             for (i = 0; i < (int)ARRAY_COUNT(gBattlePartyCurrentOrder); i++)
                 gBattleStruct->battlerPartyOrders[battlerId][i] = gBattlePartyCurrentOrder[i];
         }
-    }
 }
 
 // Called when a Pokémon is unable to attack during a Battle Palace battle.

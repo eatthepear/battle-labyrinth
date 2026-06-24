@@ -45,18 +45,9 @@ void ReshowBattleScreenAfterMenu(void)
 
 static void CB2_ReshowBattleScreenAfterMenu(void)
 {
-    u8 i;
     switch (gBattleScripting.reshowMainState)
     {
     case 0:
-        if (enemyPartyPreview)
-        {
-            for (i = 0; i < PARTY_SIZE; i++)
-            {
-                gParties[B_TRAINER_PLAYER][i] = gPartySurveil[i];
-            }
-            CalculatePlayerPartyCount();
-        }
         ScanlineEffect_Clear();
         BattleInitBgsAndWindows();
         AllocateBattleGfxResources();

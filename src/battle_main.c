@@ -456,7 +456,7 @@ static void (*const sTurnActionsFuncsTable[])(void) =
     [B_ACTION_FINISHED]               = HandleAction_ActionFinished,
     [B_ACTION_NOTHING_FAINTED]        = HandleAction_NothingIsFainted,
     [B_ACTION_THROW_BALL]             = HandleAction_ThrowBall,
-    [B_ACTION_VIEW_ENEMY_PARTY]       = HandleAction_SurveilEnemyParty,
+    [B_ACTION_SURVEIL_ENEMY_PARTY]    = HandleAction_SurveilEnemyParty,
 };
 
 static void (*const sEndTurnFuncsTable[])(void) =
@@ -4087,7 +4087,8 @@ void SwitchPartyOrder(enum BattlerId battler)
         for (i = 0; i < (int)ARRAY_COUNT(gBattlePartyCurrentOrder); i++)
         {
             *(battler * 3 + i + (u8 *)(gBattleStruct->battlerPartyOrders)) = gBattlePartyCurrentOrder[i];
-            *(BATTLE_PARTNER(battler) * 3 + i + (u8 *)(gBattleStruct->battlerPartyOrders)) = gBattlePartyCurrentOrder[i];
+            if (BattlersShareParty(battler, BATTLE_PARTNER(battler))) // Custom. We need this to handle 1v2 battles, because those aren't treated as multi battles.
+                *(BATTLE_PARTNER(battler) * 3 + i + (u8 *)(gBattleStruct->battlerPartyOrders)) = gBattlePartyCurrentOrder[i];
         }
     }
     else
@@ -4272,10 +4273,10 @@ static void HandleTurnActionSelectionState(void)
                         MarkBattlerForControllerExec(battler);
                     }
                     break;
-                case B_ACTION_VIEW_ENEMY_PARTY:
-                    if (FlagGet(FLAG_DISABLE_PREVIEW)) {
+                case B_ACTION_SURVEIL_ENEMY_PARTY:
+                    if (FlagGet(FLAG_DISABLE_SURVEIL)) {
                         RecordedBattle_ClearBattlerAction(battler, 1);
-                        gSelectionBattleScripts[battler] = BattleScript_ActionSelectionPreviewCantBeUsed;
+                        gSelectionBattleScripts[battler] = BattleScript_ActionSelectionSurveilCantBeUsed;
                         gBattleCommunication[battler] = STATE_SELECTION_SCRIPT;
                         gBattleStruct->battlerState[battler].selectionScriptFinished = FALSE;
                         gBattleStruct->stateIdAfterSelScript[battler] = STATE_BEFORE_ACTION_CHOSEN;
@@ -4283,15 +4284,7 @@ static void HandleTurnActionSelectionState(void)
                     }
                     else
                     {
-                        for (i = 0; i < PARTY_SIZE; i++)
-                        {
-                            gPartySurveil[i] = gParties[B_TRAINER_PLAYER][i];
-                            gParties[B_TRAINER_PLAYER][i] = gParties[B_TRAINER_OPPONENT_A][i];
-                        }
-
-                        enemyPartyPreview = TRUE;
-
-                        BtlController_EmitChoosePokemon(battler, B_COMM_TO_CONTROLLER, PARTY_ACTION_CHOOSE_MON, PARTY_SIZE, ABILITY_NONE, 0, gBattleStruct->battlerPartyOrders[battler+1]);
+                        BtlController_EmitChoosePokemon(battler, B_COMM_TO_CONTROLLER, PARTY_ACTION_SURVEIL_ENEMY, PARTY_SIZE, ABILITY_NONE, 0, gBattleStruct->battlerPartyOrders[battler]);
                         MarkBattlerForControllerExec(battler);
                     }
                     break;
@@ -4511,8 +4504,7 @@ static void HandleTurnActionSelectionState(void)
                         gBattleCommunication[battler]++;
                     }
                     break;
-                case B_ACTION_VIEW_ENEMY_PARTY:
-                    enemyPartyPreview = FALSE;
+                case B_ACTION_SURVEIL_ENEMY_PARTY:
                     gBattleCommunication[battler] = STATE_BEFORE_ACTION_CHOSEN;
                     RecordedBattle_ClearBattlerAction(battler, 1);
                     break;

@@ -616,10 +616,6 @@ DEPRECATED("gEnemyPartyCount is deprecated and will be removed in 1.17.0. Use gP
 extern u8 (*const gEnemyPartyCountPtr);
 #define gEnemyPartyCount (*gEnemyPartyCountPtr)
 
-// Surveil
-extern struct Pokemon gPartySurveil[PARTY_SIZE];
-extern bool8 enemyPartyPreview;
-
 extern struct SpriteTemplate gMultiuseSpriteTemplate;
 extern u16 gFollowerSteps;
 extern bool32 consumeItem;

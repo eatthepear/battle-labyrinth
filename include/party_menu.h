@@ -14,6 +14,8 @@ enum PartyMenuLayout
     PARTY_LAYOUT_MULTI_FULL_PARTNER,
     PARTY_LAYOUT_MULTI_FULL_SHOWCASE,           // The layout used to present player team in full-teams multi battle
     PARTY_LAYOUT_MULTI_FULL_SHOWCASE_PARTNER,   // The layout used to present partner team in full-teams multi battle
+    PARTY_LAYOUT_ENEMY,
+    PARTY_LAYOUT_ENEMY_2,
     PARTY_LAYOUT_COUNT,
     KEEP_PARTY_LAYOUT
 };

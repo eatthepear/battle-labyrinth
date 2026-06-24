@@ -322,7 +322,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
         case 3: // Bottom right
             if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER) || (FlagGet(FLAG_FORCE_BATTLE_ANIM_ON)))
             {
-                BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_VIEW_ENEMY_PARTY, 0);
+                BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_SURVEIL_ENEMY_PARTY, 0);
             }
             else
             {

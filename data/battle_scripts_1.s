@@ -5414,8 +5414,8 @@ BattleScript_ActionSelectionItemsCantBeUsed::
 	printselectionstring STRINGID_ITEMSCANTBEUSEDNOW
 	endselectionscript
 
-BattleScript_ActionSelectionPreviewCantBeUsed::
-	printselectionstring STRINGID_PREVIEWCANTBEUSED
+BattleScript_ActionSelectionSurveilCantBeUsed::
+	printselectionstring STRINGID_SURVEILCANTBEUSED
 	endselectionscript
 
 BattleScript_FlushMessageBox::

@@ -889,7 +889,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_LIGHTSCREENWOREOFF]                   = COMPOUND_STRING("{B_DEF_TEAM1} team's Light Screen wore off!"),
     [STRINGID_AURORAVEILWOREOFF]                    = COMPOUND_STRING("{B_DEF_TEAM1} team's Aurora Veil wore off!"),
     [STRINGID_STICKYWEBDISAPPEAREDFROMYOU]          = COMPOUND_STRING("The sticky web has disappeared from the ground around you!"),
-    [STRINGID_PREVIEWCANTBEUSED]                    = COMPOUND_STRING("A mysterious force blocks Surveil!{PAUSE 64}"),
+    [STRINGID_SURVEILCANTBEUSED]                    = COMPOUND_STRING("A mysterious force blocks Surveil!{PAUSE 64}"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =
