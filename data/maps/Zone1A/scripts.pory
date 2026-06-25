@@ -305,6 +305,7 @@ script Zone1A_EventScript_LeviathanBattle {
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Corey")
 	msgbox(format("I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
+	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_FALSE_SWIPE)
 	setspeaker("Corey")
 	msgbox(format("Well, anyways, I've gotta run now.\pBye bye!"), MSGBOX_AUTOCLOSE)

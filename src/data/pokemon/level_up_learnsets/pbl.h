@@ -1022,9 +1022,9 @@ static const struct LevelUpMove sCrobatLevelUpLearnset[] = {
 static const struct LevelUpMove sOddishLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_LUCKY_CHANT),
     LEVEL_UP_MOVE( 1, MOVE_TICKLE),
+    LEVEL_UP_MOVE( 1, MOVE_CHARM),
     LEVEL_UP_MOVE( 1, MOVE_ABSORB),
-    LEVEL_UP_MOVE( 1, MOVE_ACID),
-    LEVEL_UP_MOVE( 3, MOVE_CHARM),
+    LEVEL_UP_MOVE( 3, MOVE_ACID),
     LEVEL_UP_MOVE( 5, MOVE_INGRAIN),
     LEVEL_UP_MOVE( 7, MOVE_POISON_POWDER),
     LEVEL_UP_MOVE( 9, MOVE_STUN_SPORE),
@@ -1050,9 +1050,9 @@ static const struct LevelUpMove sOddishLevelUpLearnset[] = {
 static const struct LevelUpMove sGloomLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_LUCKY_CHANT),
     LEVEL_UP_MOVE( 1, MOVE_TICKLE),
+    LEVEL_UP_MOVE( 1, MOVE_CHARM),
     LEVEL_UP_MOVE( 1, MOVE_ABSORB),
-    LEVEL_UP_MOVE( 1, MOVE_ACID),
-    LEVEL_UP_MOVE( 3, MOVE_CHARM),
+    LEVEL_UP_MOVE( 3, MOVE_ACID),
     LEVEL_UP_MOVE( 5, MOVE_INGRAIN),
     LEVEL_UP_MOVE( 7, MOVE_POISON_POWDER),
     LEVEL_UP_MOVE( 9, MOVE_STUN_SPORE),

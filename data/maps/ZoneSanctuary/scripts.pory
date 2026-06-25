@@ -434,18 +434,23 @@ script Sanctuary_EventScript_EnterSanctuary {
 	switch (var(VAR_ZONE)) {
 		case 1:
 			msgbox(format("The {COLOR RED}Dowsing Machine{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_DOWSING_MACHINE)
 		case 2:
 			msgbox(format("{COLOR RED}5 Revives{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_REVIVE, 5)
 		case 3:
 			msgbox(format("The {COLOR RED}Sledgehammer{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_SLEDGEHAMMER)
 		case 4:
 			msgbox(format("{COLOR RED}TM09 - Venoshock{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_TM_VENOSHOCK)
 		case 5:
 			msgbox(format("The {COLOR RED}Portable PC{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
 			setflag(FLAG_SYS_START_MENU_PC_GET)
 			playfanfare(MUS_OBTAIN_ITEM)
 			msgbox(format("{PLAYER} received the {COLOR RED}Portable PC{COLOR DARK_GRAY}! It was added to the {START_BUTTON} menu."))
@@ -454,27 +459,34 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("Note that if you are in a Zone, you can only use the Portable PC once before reaching the Sanctuary."))
 		case 6:
 			msgbox(format("The {COLOR RED}Machete{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_MACHETE)
 		case 7:
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} is…"))
 			msgbox(format("{COLOR RED}TM49 - Draining Kiss!{COLOR DARK_GRAY}"))
+			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_TM_DRAINING_KISS)
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY} is…"))
 			msgbox(format("{COLOR RED}5 Green Shards{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_GREEN_SHARD, 5)
 		case 9:
 			msgbox(format("{COLOR RED}TM48 - Bullet Seed{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_TM_BULLET_SEED)
 		case 10:
 			msgbox(format("The {COLOR RED}Tera Orb{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_TERA_ORB)
 			setflag(FLAG_USED_TERA)
 			msgbox(format("In battle, you can Terastilize your Pokémon now.\pPress {START_BUTTON} to Terastilize!\pAfter you use it, you'll have to go back to the Pokémon Center to recharge it."))
 		case 11:
 			msgbox(format("TM86 - Grass Knot!"))
+			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_TM_GRASS_KNOT)
 		case 12:
 			msgbox(format("Ultra Balls!"))
+			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_ULTRA_BALL, 10)
 	}
 	switch(var(VAR_ZONE)) {

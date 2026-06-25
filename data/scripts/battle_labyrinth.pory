@@ -1309,7 +1309,7 @@ script EventScript_Notebook_TrainerTips {
 }
 
 script EventScript_Sign_Notebook {
-	msgbox(format("Trainer Tips\pThe {COLOR RED}Notebook{COLOR DARK_GRAY} has a ton of information in it, including mechanics changes from vanilla Pokémon games, upcoming Zones and boss battles, and difficulty info.\pIn addition, any trainer tips sign you read will have its message transcribed in the Notebook."), MSGBOX_SIGN)
+	msgbox(format("Trainer Tips\pThe {COLOR RED}Notebook{COLOR DARK_GRAY} is filled with useful information, including mechanics changes from vanilla Pokémon games, upcoming Zones and boss battles, and difficulty info.\pAny Trainer Tips signs you read will have their messages transcribed in the Notebook."), MSGBOX_SIGN)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_1)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_1)

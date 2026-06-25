@@ -54,6 +54,7 @@ script Zone2A_EventScript_Max {
 	if (var(VAR_DIFFICULTY) < DIFFICULTY_BRUTAL) {
 		setspeaker("Max")
 		msgbox(format("Tell you what, for a first-time customer like you, I'll give you a TM for free!"))
+		setspeaker(SP_NAME_NONE)
 		giveitem(ITEM_TM_PROTECT)
 	}
 	call(EventScript_Shop_Max)
@@ -95,7 +96,8 @@ script Zone2A_EventScript_LeviathanBattle {
 	trainerbattle_no_intro(TRAINER_PBL_SHAUN_LEVIATHAN_2, format("Ack! I lost again!\pDoggone it!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Shaun")
-	msgbox(format("Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though! I enjoyed our battle so much, I want to give you these!"), MSGBOX_DEFAULT)
+	msgbox(format("Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though! I enjoyed our battle so much, I want to give you these!"))
+	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_ORAN_BERRY, 5)
 	setflag(FLAG_BEAT_LEVIATHAN_2)
 	setspeaker("Shaun")
