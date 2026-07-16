@@ -2029,6 +2029,350 @@ IVs: 31 HP / 31 Atk / 30 Def / 31 SpA / 30 SpD / 30 Spe
 - Hidden Power
 - Quiver Dance
 
+=== TRAINER_PBL_NEWTON_LEVIATHAN_13 ===
+Name: Newton
+Class: Scientist
+Pic: Scientist
+Music: Suspicious
+AI: AI_FLAG_LEVIATHAN
+Double Battle: Yes
+Mugshot: Green
+Difficulty: Normal
+
+Clefairy @ Eviolite
+Calm Nature
+Ability: Friend Guard
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Gravity
+- Draining Kiss
+- Sing
+
+Watchog @ Chople Berry
+Adamant Nature
+Ability: Analytic
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hypnosis
+- Super Fang
+- Crunch
+
+Stonjourner @ Passho Berry
+Careful Nature
+Ability: Power Spot
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Gravity
+- Rock Tomb
+- Mega Kick
+
+Flapple @ Sitrus Berry
+Jolly Nature
+Ability: Hustle
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Grav Apple
+- Dragon Claw
+- Acrobatics
+
+=== TRAINER_PBL_NEWTON_LEVIATHAN_13 ===
+Name: Newton
+Class: Scientist
+Pic: Scientist
+Music: Suspicious
+AI: AI_FLAG_LEVIATHAN
+Double Battle: Yes
+Mugshot: Green
+Difficulty: Brutal
+
+Clefairy @ Eviolite
+Calm Nature
+Ability: Friend Guard
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Gravity
+- Draining Kiss
+- Sing
+
+Watchog @ Chople Berry
+Adamant Nature
+Ability: Analytic
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hypnosis
+- Super Fang
+- Crunch
+
+Stonjourner @ Passho Berry
+Careful Nature
+Ability: Power Spot
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Gravity
+- Rock Tomb
+- Mega Kick
+
+Flapple @ Sitrus Berry
+Jolly Nature
+Ability: Hustle
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Grav Apple
+- Dragon Claw
+- Acrobatics
+
+Dugtrio @ Soft Sand
+Naughty Nature
+Ability: Arena Trap
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stomping Tantrum
+- Sucker Punch
+- Facade
+
+=== TRAINER_PBL_TABITHA_LEVIATHAN_14 ===
+Name: Tabitha
+Class: Magma Admin
+Pic: Magma Admin
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: AI_FLAG_LEVIATHAN
+Mugshot: Blue
+Difficulty: Normal
+
+Ninetales @ Heat Rock
+Modest Nature
+Ability: Drought
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Extrasensory
+- Solar Beam
+- Scorching Sands
+
+Donphan @ Rindo Berry
+Jolly Nature
+Ability: Sturdy
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stomping Tantrum
+- Fire Fang
+- Rock Slide
+- Ice Shard
+
+Tropius @ Sitrus Berry
+Timid Nature
+Ability: Harvest
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Air Slash
+- Leech Seed
+- Substitute
+
+Solrock @ Colbur Berry
+Adamant Nature
+Ability: Levitate
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Zen Headbutt
+- Flare Blitz
+- Morning Sun
+
+=== TRAINER_PBL_TABITHA_LEVIATHAN_14 ===
+Name: Tabitha
+Class: Magma Admin
+Pic: Magma Admin
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: AI_FLAG_LEVIATHAN
+Mugshot: Blue
+Difficulty: Brutal
+
+Ninetales @ Heat Rock
+Modest Nature
+Ability: Drought
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Extrasensory
+- Solar Beam
+- Scorching Sands
+
+Donphan @ Rindo Berry
+Jolly Nature
+Ability: Sturdy
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stomping Tantrum
+- Fire Fang
+- Rock Slide
+- Ice Shard
+
+Tropius @ Sitrus Berry
+Timid Nature
+Ability: Harvest
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Air Slash
+- Leech Seed
+- Substitute
+
+Solrock @ Colbur Berry
+Adamant Nature
+Ability: Levitate
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Zen Headbutt
+- Flare Blitz
+- Morning Sun
+
+Helioptile @ Wise Glasses
+Naive Nature
+Ability: Solar Power
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Switch
+- Hyper Voice
+- Weather Ball
+- Grass Knot
+
+=== TRAINER_PBL_LT_SURGE_LEVIATHAN_15 ===
+Name: Lt. Surge
+Class: Leader
+Pic: Leader Lt Surge Frlg
+Gender: Male
+Music: Male
+Double Battle: No
+AI: AI_FLAG_LEVIATHAN
+Mugshot: Purple
+Difficulty: Brutal
+
+Boltund @ Shuca Berry
+Jolly Nature
+Ability: Strong Jaw
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Fang
+- Fire Fang
+- Crunch
+- Play Rough
+
+Vikavolt @ Occa Berry
+Quiet Nature
+Ability: Levitate
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Switch
+- Bug Buzz
+- Energy Ball
+- Thunder Wave
+
+Electabuzz @ Eviolite
+Naive Nature
+Ability: Vital Spirit
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Switch
+- Low Kick
+- Ice Punch
+- Fire Punch
+
+Electrode-Hisui @ Wise Glasses
+Modest Nature
+Ability: Aftermath
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Switch
+- Energy Ball
+- Rising Voltage
+- Taunt
+
+Raichu @ Sitrus Berry
+Hasty Nature
+Ability: Static
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Punch
+- Surf
+- Grass Knot
+- Low Kick
+
+=== TRAINER_PBL_LT_SURGE_LEVIATHAN_15 ===
+Name: Lt. Surge
+Class: Leader
+Pic: Leader Lt Surge Frlg
+Gender: Male
+Music: Male
+Double Battle: No
+AI: AI_FLAG_LEVIATHAN
+Mugshot: Purple
+
+Boltund @ Shuca Berry
+Jolly Nature
+Ability: Strong Jaw
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Fang
+- Fire Fang
+- Crunch
+- Play Rough
+
+Vikavolt @ Occa Berry
+Quiet Nature
+Ability: Levitate
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Switch
+- Bug Buzz
+- Energy Ball
+- Thunder Wave
+
+Electabuzz @ Eviolite
+Naive Nature
+Ability: Vital Spirit
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Switch
+- Low Kick
+- Ice Punch
+- Fire Punch
+
+Electrode-Hisui @ Wise Glasses
+Modest Nature
+Ability: Aftermath
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Switch
+- Energy Ball
+- Rising Voltage
+- Taunt
+
+Raichu @ Raichunite X
+Hasty Nature
+Ability: Static
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Punch
+- Surf
+- Grass Knot
+- Low Kick
+
+Zebstrika @ Expert Belt
+Adamant Nature
+Ability: Sap Sipper
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Wild Charge
+- Flame Charge
+- High Horsepower
+- Low Kick
+
 === TRAINER_PBL_VIOLET ===
 Name: STEVEN
 Class: Rival
@@ -6010,7 +6354,307 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Bulbasaur
+Sableye
+
+Mawile
+
+Kirlia
+
+Delcatty
+
+Pawmo
+
+Dolliv
+
+Trumbeak
+
+Tranquill
+
+Loudred
+
+Whirlipede
+
+Luxio
+
+Nidorina
+
+Nidorino
+
+Flaaffy
+
+Corvisquire
+
+Herdier
+
+Floette
+
+Swadloon
+
+Fletchinder
+
+Kricketune
+
+Palpitoad
+
+Roselia
+
+Charjabug
+
+Steenee
+
+Skiploom
+
+Poliwhirl
+
+Dustox
+
+Weepinbell
+
+Ledian
+
+Ariados
+
+Butterfree
+
+Beedrill
+
+Gloom
+
+Beautifly
+
+Lombre
+
+Nuzleaf
+
+Staravia
+
+Pidgeotto
+
+Ivysaur
+
+Spidops
+
+Charmeleon
+
+Wartortle
+
+Parasect
+
+Bayleef
+
+Quilava
+
+Croconaw
+
+Murkrow
+
+Grovyle
+
+Combusken
+
+Marshtomp
+
+Plusle
+
+Minun
+
+Grotle
+
+Monferno
+
+Prinplup
+
+Pachirisu
+
+Quilladin
+
+Frogadier
+
+Braixen
+
+Ponyta
+
+Ponyta Galar
+
+Sudowoodo
+
+Corsola
+
+Corsola Galar
+
+Bibarel
+
+Pyukumuku
+
+Carkol
+
+Floragato
+
+Quaxwell
+
+Chatot
+
+Vivillon
+
+Crocalor
+
+Raticate
+
+Raticate Alola
+
+Servine
+
+Dewott
+
+Furret
+
+Dunsparce
+
+Squawkabilly
+
+Pignite
+
+Gumshoos
+
+Mightyena
+
+Linoone
+
+Linoone Galar
+
+Watchog
+
+Dartrix
+
+Torracat
+
+Brionne
+
+Thwackey
+
+Raboot
+
+Drizzile
+
+Wormadam
+
+Wormadam Sandy
+
+Wormadam Trash
+
+Diggersby
+
+Mothim
+
+Emolga
+
+Sunflora
+
+Volbeat
+
+Illumise
+
+Gligar
+
+Sneasel
+
+Sneasel Hisui
+
+Dedenne
+
+Tangela
+
+Misdreavus
+
+Pincurchin
+
+Morpeko
+
+Girafarig
+
+Fearow
+
+Audino
+
+Liepard
+
+Qwilfish
+
+Qwilfish Hisui
+
+Stantler
+
+Noctowl
+
+Swoobat
+
+Quagsire
+
+Clodsire
+
+Naclstack
+
+Graveler
+
+Graveler Alola
+
+Boldore
+
+Tinkatuff
+
+Togedemaru
+
+Pelipper
+
+Vigoroth
+
+Kecleon
+
+Kadabra
+
+Arbok
+
+Sandslash
+
+Sandslash Alola
+
+Chansey
+
+Seaking
+
+Granbull
+
+Cherrim
+
+Masquerain
+
+Carnivine
+
+Thievul
+
+Ninjask
+
+Castform
+
+Golbat
+
+Lunatone
+
+Solrock
+
+Tropius
+
+Lumineon
+
+Basculin
+
+Greedent
+
+Eldegoss
+
+Maractus
+
+Aromatisse
 
 === TRAINER_POOL_ZONE_13_AND_14_GRUNTS ===
 Name: Trainer Pool
