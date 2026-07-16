@@ -1634,11 +1634,11 @@ Sliggoo Hisui @ Eviolite
 Modest Nature
 Ability: Gooey
 Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 30 SpA / 30 SpD / 30 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shelter
 - Dragon Breath
 - Water Pulse
-- Hidden Power
+- Acid Spray
 
 Steelix @ Sitrus Berry
 Careful Nature
@@ -1684,11 +1684,11 @@ Sliggoo Hisui @ Eviolite
 Modest Nature
 Ability: Gooey
 Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 30 SpA / 30 SpD / 30 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shelter
 - Dragon Breath
 - Water Pulse
-- Hidden Power
+- Acid Spray
 
 Steelix @ Steelixite
 Careful Nature
@@ -1704,10 +1704,10 @@ Prinplup @ Eviolite
 Timid Nature
 Ability: Competitive
 Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 30 SpA / 30 SpD / 31 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bubble Beam
 - Icy Wind
-- Hidden Power
+- Grass Knot
 - Roost
 
 === TRAINER_PBL_JEANETTE ===
@@ -2026,7 +2026,7 @@ Ability: Own Tempo
 Level: 26
 IVs: 31 HP / 31 Atk / 30 Def / 31 SpA / 30 SpD / 30 Spe
 - Giga Drain
-- Hidden Power
+- Alluring Voice
 - Quiver Dance
 
 === TRAINER_PBL_NEWTON_LEVIATHAN_13 ===
