@@ -558,6 +558,9 @@ const u16 gTrainerPalette_Jasmine[] = INCGFX_U16("graphics/trainers/front_pics/j
 const u32 gTrainerFrontPic_Larry[] = INCGFX_U32("graphics/trainers/front_pics/larry.png", ".4bpp.smol");
 const u16 gTrainerPalette_Larry[] = INCGFX_U16("graphics/trainers/front_pics/larry.png", ".gbapal");
 
+const u32 gTrainerFrontPic_Grant[] = INCGFX_U32("graphics/trainers/front_pics/grant.png", ".4bpp.smol");
+const u16 gTrainerPalette_Grant[] = INCGFX_U16("graphics/trainers/front_pics/grant.png", ".gbapal");
+
 static const union AnimCmd sAnimCmd_Hoenn[] =
 {
     ANIMCMD_FRAME(0, 24),
@@ -1389,5 +1392,9 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     [TRAINER_PIC_LARRY] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Larry, gTrainerPalette_Larry),
+    },
+    [TRAINER_PIC_GRANT] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Grant, gTrainerPalette_Grant),
     },
 };

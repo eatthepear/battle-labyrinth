@@ -618,7 +618,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_PBL_GRANT_LEVIATHAN_3 ===
 Name: Grant
 Class: Leader
-Pic: Leader Brock Frlg
+Pic: Grant
 Music: Male
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
@@ -648,7 +648,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_PBL_GRANT_LEVIATHAN_3 ===
 Name: Grant
 Class: Leader
-Pic: Leader Brock Frlg
+Pic: Grant
 Music: Male
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
