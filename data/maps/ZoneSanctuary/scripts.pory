@@ -437,9 +437,11 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_DOWSING_MACHINE)
 		case 2:
-			msgbox(format("{COLOR RED}5 Revives{COLOR DARK_GRAY}!"))
+			msgbox(format("{COLOR RED}HM06 - Rock Smash{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_REVIVE, 5)
+			giveitem(ITEM_HM_ROCK_SMASH, 1)
+			setspeaker(SP_NAME_COLRESS)
+			msgbox(format("Note that you don't need to teach HMs to your party to use them, though they can be easily forgotten like other moves."))
 		case 3:
 			msgbox(format("The {COLOR RED}Sledgehammer{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
