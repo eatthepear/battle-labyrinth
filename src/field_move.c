@@ -3,10 +3,71 @@
 #include "field_move.h"
 #include "fldeff.h"
 #include "fldeff_misc.h"
+#include "item.h"
 #include "party_menu.h"
 #include "constants/field_move.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
+
+static bool32 IsFieldMoveUnlocked_Cut(void)
+{
+    return CheckBagHasItem(ITEM_HM_CUT, 1);
+}
+
+static bool32 IsFieldMoveUnlocked_Flash(void)
+{
+    return CheckBagHasItem(ITEM_HM_FLASH, 1);
+}
+
+static bool32 IsFieldMoveUnlocked_RockSmash(void)
+{
+    return CheckBagHasItem(ITEM_HM_ROCK_SMASH, 1);
+}
+
+static bool32 IsFieldMoveUnlocked_Strength(void)
+{
+    return CheckBagHasItem(ITEM_HM_STRENGTH, 1);
+}
+
+static bool32 IsFieldMoveUnlocked_Surf(void)
+{
+    return CheckBagHasItem(ITEM_HM_SURF, 1);
+}
+
+static bool32 IsFieldMoveUnlocked_Fly(void)
+{
+    return FALSE;
+}
+
+static bool32 IsFieldMoveUnlocked_Dive(void)
+{
+    return CheckBagHasItem(ITEM_HM_DIVE, 1);
+}
+
+static bool32 IsFieldMoveUnlocked_Waterfall(void)
+{
+    return CheckBagHasItem(ITEM_HM_WATERFALL, 1);
+}
+
+static bool32 IsFieldMoveUnlocked_RockClimb(void)
+{
+    return OW_ROCK_CLIMB_FIELD_MOVE && CheckBagHasItem(ITEM_HM_ROCK_CLIMB, 1);
+}
+
+static bool32 IsFieldMoveUnlocked_Teleport(void)
+{
+    return FALSE;
+}
+
+static bool32 IsFieldMoveUnlocked_Dig(void)
+{
+    return TRUE;
+}
+
+static bool32 IsFieldMoveUnlocked_SecretPower(void)
+{
+    return FALSE;
+}
 
 static bool32 IsFieldMoveUnlocked_MilkDrink(void)
 {
@@ -23,8 +84,101 @@ static bool32 IsFieldMoveUnlocked_SweetScent(void)
     return TRUE;
 }
 
+static bool32 IsFieldMoveUnlocked_Defog(void)
+{
+    return OW_DEFOG_FIELD_MOVE;
+}
+
 const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
 {
+    [FIELD_MOVE_CUT] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Cut,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Cut,
+        .moveID = MOVE_CUT,
+        .partyMsgID = PARTY_MSG_NOTHING_TO_CUT,
+    },
+
+    [FIELD_MOVE_FLASH] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Flash,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Flash,
+        .moveID = MOVE_FLASH,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+
+    [FIELD_MOVE_ROCK_SMASH] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_RockSmash,
+        .isUnlockedFunc = IsFieldMoveUnlocked_RockSmash,
+        .moveID = MOVE_ROCK_SMASH,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+
+    [FIELD_MOVE_STRENGTH] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Strength,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Strength,
+        .moveID = MOVE_STRENGTH,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+
+    [FIELD_MOVE_SURF] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Surf,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Surf,
+        .moveID = MOVE_SURF,
+        .partyMsgID = PARTY_MSG_CANT_SURF_HERE,
+    },
+
+    [FIELD_MOVE_FLY] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Fly,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Fly,
+        .moveID = MOVE_FLY,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+
+    [FIELD_MOVE_DIVE] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Dive,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Dive,
+        .moveID = MOVE_DIVE,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+
+    [FIELD_MOVE_WATERFALL] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Waterfall,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Waterfall,
+        .moveID = MOVE_WATERFALL,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+
+    [FIELD_MOVE_TELEPORT] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Teleport,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Teleport,
+        .moveID = MOVE_TELEPORT,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+
+    [FIELD_MOVE_DIG] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Dig,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Dig,
+        .moveID = MOVE_DIG,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+
+    [FIELD_MOVE_SECRET_POWER] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_SecretPower,
+        .isUnlockedFunc = IsFieldMoveUnlocked_SecretPower,
+        .moveID = MOVE_SECRET_POWER,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+
     [FIELD_MOVE_MILK_DRINK] =
     {
         .fieldMoveFunc = SetUpFieldMove_SoftBoiled,
@@ -46,9 +200,22 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .fieldMoveFunc = SetUpFieldMove_SweetScent,
         .isUnlockedFunc = IsFieldMoveUnlocked_SweetScent,
         .moveID = MOVE_SWEET_SCENT,
-        .partyMsgID = PARTY_MSG_CANT_USE_RIGHT_NOW,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
-
+    [FIELD_MOVE_ROCK_CLIMB] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_RockClimb,
+        .isUnlockedFunc = IsFieldMoveUnlocked_RockClimb,
+        .moveID = MOVE_ROCK_CLIMB,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+    [FIELD_MOVE_DEFOG] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Defog,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Defog,
+        .moveID = MOVE_DEFOG,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
     [FIELD_MOVE_REFRESH] =
     {
         .fieldMoveFunc = SetUpFieldMove_Refresh,

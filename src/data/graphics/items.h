@@ -1938,24 +1938,6 @@ const u16 gItemIconPalette_MagmaEmblem[] = INCGFX_U16("graphics/items/icon_palet
 const u32 gItemIcon_ContestPass[] = INCGFX_U32("graphics/items/icons/contest_pass.png", ".4bpp.smol");
 const u16 gItemIconPalette_ContestPass[] = INCGFX_U16("graphics/items/icon_palettes/contest_pass.pal", ".gbapal");
 
-const u32 gItemIcon_Surfboard[] = INCGFX_U32("graphics/items/icons/surfboard.png", ".4bpp.smol");
-const u16 gItemIconPalette_Surfboard[] = INCGFX_U16("graphics/items/icon_palettes/surfboard.pal", ".gbapal");
-
-const u32 gItemIcon_Machete[] = INCGFX_U32("graphics/items/icons/machete.png", ".4bpp.smol");
-const u16 gItemIconPalette_Machete[] = INCGFX_U16("graphics/items/icon_palettes/machete.pal", ".gbapal");
-
-const u32 gItemIcon_Sledgehammer[] = INCGFX_U32("graphics/items/icons/sledgehammer.png", ".4bpp.smol");
-const u16 gItemIconPalette_Sledgehammer[] = INCGFX_U16("graphics/items/icon_palettes/sledgehammer.pal", ".gbapal");
-
-const u32 gItemIcon_DivingSuit[] = INCGFX_U32("graphics/items/icons/diving_gear.png", ".4bpp.smol");
-const u16 gItemIconPalette_DivingSuit[] = INCGFX_U16("graphics/items/icon_palettes/diving_gear.pal", ".gbapal");
-
-const u32 gItemIcon_Flashlight[] = INCGFX_U32("graphics/items/icons/flashlight.png", ".4bpp.smol");
-const u16 gItemIconPalette_Flashlight[] = INCGFX_U16("graphics/items/icon_palettes/flashlight.pal", ".gbapal");
-
-const u32 gItemIcon_PowerGlove[] = INCGFX_U32("graphics/items/icons/gold_teeth.png", ".4bpp.smol");
-const u16 gItemIconPalette_PowerGlove[] = INCGFX_U16("graphics/items/icon_palettes/gold_teeth.pal", ".gbapal");
-
 const u32 gItemIcon_Parcel[] = INCGFX_U32("graphics/items/icons/parcel.png", ".4bpp.smol");
 const u16 gItemIconPalette_Parcel[] = INCGFX_U16("graphics/items/icon_palettes/parcel.pal", ".gbapal");
 

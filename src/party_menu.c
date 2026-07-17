@@ -377,6 +377,11 @@ static bool8 TrySwitchInPokemon(void);
 static void Task_SpinTradeYesNo(u8);
 static void Task_HandleSpinTradeYesNoInput(u8);
 static void Task_CancelAfterAorBPress(u8);
+static void DisplayFieldMoveExitAreaMessage(u8);
+static void DisplayCantUseFlashMessage(void);
+static void DisplayCantUseSurfMessage(void);
+static void Task_FieldMoveExitAreaYesNo(u8);
+static void Task_HandleFieldMoveExitAreaYesNoInput(u8);
 static void Task_FieldMoveWaitForFade(u8);
 static enum Species GetFieldMoveMonSpecies(void);
 static void UpdatePartyMonHPBar(u8, struct Pokemon *);
@@ -4219,6 +4224,7 @@ static void Task_HandleSpinTradeYesNoInput(u8 taskId)
 static void CursorCb_FieldMove(u8 taskId)
 {
     u8 fieldMove = sPartyMenuInternal->actions[Menu_GetCursorPos()] - MENU_FIELD_MOVES;
+    const struct MapHeader *mapHeader;
 
     PlaySE(SE_SELECT);
     if (gFieldMoveInfo[fieldMove].fieldMoveFunc == NULL)
@@ -4251,6 +4257,24 @@ static void CursorCb_FieldMove(u8 taskId)
             case FIELD_MOVE_SOFT_BOILED:
                 ChooseMonForSoftboiled(taskId);
                 break;
+            case FIELD_MOVE_TELEPORT:
+                mapHeader = Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->lastHealLocation.mapGroup, gSaveBlock1Ptr->lastHealLocation.mapNum);
+                GetMapNameGeneric(gStringVar1, mapHeader->regionMapSectionId);
+                StringExpandPlaceholders(gStringVar4, gText_ReturnToHealingSpot);
+                DisplayFieldMoveExitAreaMessage(taskId);
+                sPartyMenuInternal->data[0] = fieldMove;
+                break;
+            case FIELD_MOVE_DIG:
+                mapHeader = Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->escapeWarp.mapGroup, gSaveBlock1Ptr->escapeWarp.mapNum);
+                GetMapNameGeneric(gStringVar1, mapHeader->regionMapSectionId);
+                StringExpandPlaceholders(gStringVar4, gText_EscapeFromHere);
+                DisplayFieldMoveExitAreaMessage(taskId);
+                sPartyMenuInternal->data[0] = fieldMove;
+                break;
+            case FIELD_MOVE_FLY:
+                gPartyMenu.exitCallback = CB2_OpenFlyMap;
+                Task_ClosePartyMenu(taskId);
+                break;
             case FIELD_MOVE_REFRESH:
                 UseRefresh(taskId);
                 break;
@@ -4271,12 +4295,52 @@ static void CursorCb_FieldMove(u8 taskId)
         {
             switch (fieldMove)
             {
+            case FIELD_MOVE_SURF:
+                DisplayCantUseSurfMessage();
+                break;
+            case FIELD_MOVE_FLASH:
+                DisplayCantUseFlashMessage();
+                break;
             default:
                 DisplayPartyMenuStdMessage(FieldMove_GetPartyMsgID(fieldMove));
                 break;
             }
             gTasks[taskId].func = Task_CancelAfterAorBPress;
         }
+    }
+}
+
+static void DisplayFieldMoveExitAreaMessage(u8 taskId)
+{
+    DisplayPartyMenuMessage(gStringVar4, TRUE);
+    gTasks[taskId].func = Task_FieldMoveExitAreaYesNo;
+}
+
+static void Task_FieldMoveExitAreaYesNo(u8 taskId)
+{
+    if (IsPartyMenuTextPrinterActive() != TRUE)
+    {
+        PartyMenuDisplayYesNoMenu();
+        gTasks[taskId].func = Task_HandleFieldMoveExitAreaYesNoInput;
+    }
+}
+
+static void Task_HandleFieldMoveExitAreaYesNoInput(u8 taskId)
+{
+    switch (Menu_ProcessInputNoWrapClearOnChoose())
+    {
+    case 0:
+        gPartyMenu.exitCallback = CB2_ReturnToField;
+        Task_ClosePartyMenu(taskId);
+        break;
+    case MENU_B_PRESSED:
+        PlaySE(SE_SELECT);
+        // fallthrough
+    case 1:
+        gFieldCallback2 = NULL;
+        gPostMenuFieldCallback = NULL;
+        Task_ReturnToChooseMonAfterText(taskId);
+        break;
     }
 }
 
@@ -4355,10 +4419,26 @@ static void Task_CancelAfterAorBPress(u8 taskId)
         CursorCb_Cancel1(taskId);
 }
 
+static void DisplayCantUseFlashMessage(void)
+{
+    if (FlagGet(FLAG_SYS_USE_FLASH) == TRUE)
+        DisplayPartyMenuStdMessage(PARTY_MSG_ALREADY_IN_USE);
+    else
+        DisplayPartyMenuStdMessage(PARTY_MSG_CANT_USE_HERE);
+}
+
 static void FieldCallback_Surf(void)
 {
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
     FieldEffectStart(FLDEFF_USE_SURF);
+}
+
+static void DisplayCantUseSurfMessage(void)
+{
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+        DisplayPartyMenuStdMessage(PARTY_MSG_ALREADY_SURFING);
+    else
+        DisplayPartyMenuStdMessage(PARTY_MSG_CANT_SURF_HERE);
 }
 
 bool32 SetUpFieldMove_Surf(void)
@@ -4366,7 +4446,7 @@ bool32 SetUpFieldMove_Surf(void)
     if (!CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_SURF))
         return FALSE;
 
-    if (PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
+    if (IsPlayerFacingSurfableFishableWater() == TRUE)
     {
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
         gPostMenuFieldCallback = FieldCallback_Surf;

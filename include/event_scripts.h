@@ -408,10 +408,6 @@ extern const u8 EventScript_UseRockSmash[];
 extern const u8 EventScript_UseDig[];
 extern const u8 EventScript_UseCutGrass[];
 extern const u8 EventScript_UseDefog[];
-extern const u8 EventScript_UseStrength_PBL[];
-extern const u8 EventScript_UseFlash_PBL[];
-extern const u8 EventScript_UseCut_PBL[];
-extern const u8 EventScript_UseRockSmash_PBL[];
 
 //player pc
 extern const u8 EventScript_PalletTown_PlayersHouse_2F_ShutDownPC[];
@@ -581,13 +577,6 @@ extern const u8 EventScript_CannotUseWaterfall[];
 extern const u8 EventScript_UseDive[];
 extern const u8 EventScript_UseDiveUnderwater[];
 extern const u8 EventScript_UseRockClimb[];
-extern const u8 EventScript_UseSurf_PBL[];
-extern const u8 EventScript_UseWaterfall_PBL[];
-extern const u8 EventScript_CannotUseWaterfall_PBL[];
-extern const u8 EventScript_UseDive_PBL[];
-extern const u8 EventScript_UseDiveUnderwater_PBL[];
-extern const u8 EventScript_DiveSpot_PBL[];
-extern const u8 EventScript_DiveUnderwater_PBL[];
 extern const u8 EventScript_ShakeTree[];
 extern const u8 EventScript_FallDownHole[];
 extern const u8 EventScript_FieldPoison[];

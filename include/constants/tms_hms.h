@@ -2,7 +2,7 @@
 #define GUARD_CONSTANTS_TMS_HMS_H
 
 #define FOREACH_TM(F) \
-    F(WEATHER_BALL) \
+    F(WORK_UP) \
     F(DRAGON_CLAW) \
     F(PSYSHOCK) \
     F(CALM_MIND) \
@@ -88,23 +88,30 @@
     F(POISON_JAB) \
     F(HURRICANE) \
     F(GRASS_KNOT) \
-    F(DIVE) \
+    F(HELPING_HAND) \
     F(SLEEP_TALK) \
     F(U_TURN) \
     F(SUBSTITUTE) \
     F(FLASH_CANNON) \
     F(TRICK_ROOM) \
     F(WILD_CHARGE) \
-    F(SURF) \
+    F(PAY_DAY) \
     F(SNARL) \
-    F(POWER_UP_PUNCH) \
+    F(WEATHER_BALL) \
     F(DARK_PULSE) \
-    F(WATERFALL) \
+    F(POWER_UP_PUNCH) \
     F(DAZZLING_GLEAM) \
     F(TERA_BLAST)
 
 #define FOREACH_HM(F) \
-    F(NONE)
+    F(CUT) \
+    F(ROCK_CLIMB) \
+    F(SURF) \
+    F(STRENGTH) \
+    F(FLASH) \
+    F(ROCK_SMASH) \
+    F(WATERFALL) \
+    F(DIVE)
 
 #define FOREACH_TMHM(F) \
     FOREACH_TM(F) \

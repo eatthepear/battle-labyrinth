@@ -645,7 +645,7 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         SetMsgSignPostAndVarFacing(direction);
         return Common_EventScript_ShowPokemonCenterSign;
     }
-    if (MetatileBehavior_IsRockClimbable(metatileBehavior) == TRUE && !IsRockClimbActive())
+    if (IsFieldMoveUnlocked(FIELD_MOVE_ROCK_CLIMB) && MetatileBehavior_IsRockClimbable(metatileBehavior) == TRUE && !IsRockClimbActive())
         return EventScript_UseRockClimb;
 
     elevation = position->elevation;
@@ -688,19 +688,19 @@ static const u8 *GetInteractedWaterScript(struct MapPosition *unused1, u8 metati
 {
     if (MetatileBehavior_IsFastWater(metatileBehavior) == TRUE && !TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
         return EventScript_CurrentTooFast;
-    if (IsPlayerFacingSurfableFishableWater() == TRUE
+    if (IsFieldMoveUnlocked(FIELD_MOVE_SURF) && IsPlayerFacingSurfableFishableWater() == TRUE
      && CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_SURF)
      )
-        return EventScript_UseSurf_PBL;
+        return EventScript_UseSurf;
 
     if (MetatileBehavior_IsWaterfall(metatileBehavior) == TRUE
      && CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_WATERFALL)
      )
     {
-        if (FlagGet(FLAG_SYS_ENABLE_WATERFALL) == TRUE && IsPlayerSurfingNorth() == TRUE)
-            return EventScript_UseWaterfall_PBL;
+        if (IsFieldMoveUnlocked(FIELD_MOVE_WATERFALL) && IsPlayerSurfingNorth() == TRUE)
+            return EventScript_UseWaterfall;
         else
-            return EventScript_CannotUseWaterfall_PBL;
+            return EventScript_CannotUseWaterfall;
     }
     return NULL;
 }
@@ -710,9 +710,9 @@ static bool32 TrySetupDiveDownScript(void)
     if (!CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_DIVE))
         return FALSE;
 
-    if (TrySetDiveWarp() == 2)
+    if (IsFieldMoveUnlocked(FIELD_MOVE_DIVE) && TrySetDiveWarp() == 2)
     {
-        ScriptContext_SetupScript(EventScript_DiveSpot_PBL);
+        ScriptContext_SetupScript(EventScript_UseDive);
         return TRUE;
     }
     return FALSE;
@@ -723,9 +723,9 @@ static bool32 TrySetupDiveEmergeScript(void)
     if (!CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_DIVE))
         return FALSE;
 
-    if ( gMapHeader.mapType == MAP_TYPE_UNDERWATER && TrySetDiveWarp() == 1)
+    if (IsFieldMoveUnlocked(FIELD_MOVE_DIVE) && gMapHeader.mapType == MAP_TYPE_UNDERWATER && TrySetDiveWarp() == 1)
     {
-        ScriptContext_SetupScript(EventScript_UseDiveUnderwater_PBL);
+        ScriptContext_SetupScript(EventScript_UseDiveUnderwater);
         return TRUE;
     }
     return FALSE;

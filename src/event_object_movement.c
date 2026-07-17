@@ -6383,17 +6383,22 @@ void IsFollowerFieldMoveUser(struct ScriptContext *ctx)
     Script_RequestWriteVar(varId);
 
     u16 *var = GetVarPointer(varId);
+#if FREE_OTHER_PBL == FALSE
     u16 userIndex = gFieldEffectArguments[0]; // field move user index
     struct Pokemon *follower = GetFirstLiveMon();
     struct ObjectEvent *obj = GetFollowerObject();
+#endif //FREE_OTHER_PBL
     if (var == NULL)
         return;
     *var = FALSE;
+#if FREE_OTHER_PBL == FALSE
     if (follower && obj && !obj->invisible)
     {
         u16 followIndex = ((u32)follower - (u32)gParties[B_TRAINER_PLAYER]) / sizeof(struct Pokemon);
         *var = userIndex == followIndex;
     }
+#endif //FREE_OTHER_PBL
+    return;
 }
 
 void SetTrainerMovementType(struct ObjectEvent *objectEvent, u8 movementType)
