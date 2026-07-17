@@ -23,6 +23,66 @@ mapscripts Zone3A_MapScripts {
 	}
 }
 
+script Zone3A_EventScript_Grant {
+	lock
+	faceplayer
+	setspeaker("Grant")
+	msgbox(format("I'm Grant! Battle?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Scared?"), MSGBOX_AUTOCLOSE)
+		releaseall
+		end
+	}
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_GRANT_LEVIATHAN_3, format("Wah!!!"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Grant")
+	msgbox(format("You beat me!"))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_MASTER_BALL, 1)
+	setflag(FLAG_BEAT_LEVIATHAN_3)
+	setspeaker("Grant")
+	msgbox(format("You beat me!"))
+	// movement
+	release
+	end
+}
+
+script Zone3A_EventScript_Phillipa {
+	lock
+	faceplayer
+	setspeaker("Phillipa")
+	msgbox(format("Something snooty!"))
+	release
+	end
+}
+
+script Zone3A_EventScript_TriggerPhillipa {
+	lockall
+	// movement
+	setspeaker("Phillipa")
+	msgbox(format("This right here is my island! You gotta deal with it!\pSomething about the look in your eyes says you're gonna challenge me for it.\pIf you wanna battle, I'll go all out with {COLOR GREEN}Rollout!{COLOR DARK_GRAY}"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Scared?"), MSGBOX_AUTOCLOSE)
+		// movement
+		releaseall
+		end
+	}
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_PHILLIPA_LEVIATHAN_3, format("Wah!!!"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Phillipa")
+	msgbox(format("You beat me!"))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_MASTER_BALL, 1)
+	setvar(VAR_ZONE_3_STATE, 1)
+	setspeaker("Phillipa")
+	msgbox(format("You beat me!"))
+	// movement
+	releaseall
+	end
+}
+
 script Zone3A_EventScript_TriggerLeviathan {
 	lockall
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
