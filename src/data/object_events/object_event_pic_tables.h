@@ -1547,6 +1547,19 @@ static const struct SpriteFrameImage sPicTable_Larry[] = {
 static const struct SpriteFrameImage sPicTable_Grant[] = {
     overworld_ascending_frames(gObjectEventPic_Grant, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Archer[] = {
+    overworld_ascending_frames(gObjectEventPic_Archer, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Ariana[] = {
+    overworld_ascending_frames(gObjectEventPic_Ariana, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Proton[] = {
+    overworld_ascending_frames(gObjectEventPic_Proton, 2, 4),
+};
+
 #if IS_FRLG
 
 static const struct SpriteFrameImage sPicTable_RedNormal[] = {

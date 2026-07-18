@@ -559,6 +559,12 @@ const u32 gObjectEventPic_Larry[] = INCGFX_U32("graphics/object_events/pics/peop
 const u16 gObjectEventPal_Larry[] = INCGFX_U16("graphics/object_events/pics/people/larry.png", ".gbapal");
 const u32 gObjectEventPic_Grant[] = INCGFX_U32("graphics/object_events/pics/people/grant.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPal_Grant[] = INCGFX_U16("graphics/object_events/pics/people/grant.png", ".gbapal");
+const u32 gObjectEventPic_Archer[] = INCGFX_U32("graphics/object_events/pics/people/archer.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_Archer[] = INCGFX_U16("graphics/object_events/pics/people/archer.png", ".gbapal");
+const u32 gObjectEventPic_Ariana[] = INCGFX_U32("graphics/object_events/pics/people/ariana.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_Ariana[] = INCGFX_U16("graphics/object_events/pics/people/ariana.png", ".gbapal");
+const u32 gObjectEventPic_Proton[] = INCGFX_U32("graphics/object_events/pics/people/proton.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_Proton[] = INCGFX_U16("graphics/object_events/pics/people/proton.png", ".gbapal");
 
 const u32 gFieldEffectObjectPic_SnowFootprints[] = INCGFX_U32("graphics/field_effects/pics/snow_footprints.png", ".4bpp");
 #if IS_FRLG

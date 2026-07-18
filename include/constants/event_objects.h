@@ -460,6 +460,9 @@ enum
     OBJ_EVENT_GFX_JASMINE,
     OBJ_EVENT_GFX_LARRY,
     OBJ_EVENT_GFX_GRANT,
+    OBJ_EVENT_GFX_ARCHER,
+    OBJ_EVENT_GFX_ARIANA,
+    OBJ_EVENT_GFX_PROTON,
     NUM_OBJ_EVENT_GFX,
 };
 
@@ -706,6 +709,9 @@ enum
 #define OBJ_EVENT_PAL_TAG_JASMINE                 0x728B
 #define OBJ_EVENT_PAL_TAG_LARRY                   0x728C
 #define OBJ_EVENT_PAL_TAG_GRANT                   0x728D
+#define OBJ_EVENT_PAL_TAG_ARCHER                  0x728E
+#define OBJ_EVENT_PAL_TAG_ARIANA                  0x728F
+#define OBJ_EVENT_PAL_TAG_PROTON                  0x7290
 
 #define OBJ_EVENT_PAL_TAG_RUNNING_TRIATHLETE_F    0x7401
 #define OBJ_EVENT_PAL_TAG_SCHOOL_KID_M            0x7402

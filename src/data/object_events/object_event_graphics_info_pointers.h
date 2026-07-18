@@ -450,6 +450,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cyrus;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jasmine;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Larry;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Grant;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Archer;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ariana;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Proton;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -739,6 +742,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_JASMINE] =                  &gObjectEventGraphicsInfo_Jasmine,
     [OBJ_EVENT_GFX_LARRY] =                    &gObjectEventGraphicsInfo_Larry,
     [OBJ_EVENT_GFX_GRANT] =                    &gObjectEventGraphicsInfo_Grant,
+    [OBJ_EVENT_GFX_ARCHER] =                   &gObjectEventGraphicsInfo_Archer,
+    [OBJ_EVENT_GFX_ARIANA] =                   &gObjectEventGraphicsInfo_Ariana,
+    [OBJ_EVENT_GFX_PROTON] =                   &gObjectEventGraphicsInfo_Proton,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
