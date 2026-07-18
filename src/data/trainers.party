@@ -626,13 +626,23 @@ Mugshot: Purple
 Difficulty: Normal
 
 Tyrunt @ Cheri Berry
-Calm Nature
+Gentle Nature
 Ability: Strong Jaw
-Level: 10
+Level: 9
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Throw
 - Tackle
 - Tail Whip
+- Scary Face
+
+Shieldon @ Chesto Berry
+Careful Nature
+Ability: Sturdy
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Smack Down
+- Tackle
+- Taunt
 - Scary Face
 
 Amaura @ Oran Berry
@@ -656,13 +666,23 @@ Mugshot: Purple
 Difficulty: Brutal
 
 Tyrunt @ Cheri Berry
-Calm Nature
+Gentle Nature
 Ability: Strong Jaw
-Level: 10
+Level: 9
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Tomb
 - Bite
 - Tail Whip
+- Scary Face
+
+Shieldon @ Chesto Berry
+Careful Nature
+Ability: Sturdy
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Tomb
+- Rock Smash
+- Taunt
 - Scary Face
 
 Amaura @ Oran Berry
