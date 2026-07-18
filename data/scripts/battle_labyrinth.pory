@@ -654,11 +654,11 @@ script EventScript_Notebook_ZoneInfo {
 				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, they also have a Gulpin with Sticky Hold that uses Stuff Cheeks to set up its Belch."))
 			}
 		case 3:
-			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} ramps up the damage over time. Their Bidoof, Sandshrew, and ace Marill all use Defense Curl and Rollout."))
+			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} is a Rock Gym Leader. Their Tyrunt, Shieldon, and Amaura are not to be trifled with."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, they also have a Spheal that uses Defense Curl and Ice Ball."))
+				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, their team has improved move options."))
 			}
-			msgbox(format("There is also a Lady guarding a Rare Candy who uses Woobat, Luvdisc, and Delcatty."))
+			msgbox(format("There is also a School Kid guarding a Rare Candy who uses Bidoof, Sandshrew, and Marill. Their strategy utilizes Defense Curl and Rollout to ramp up damage over time."))
 		case 4:
 			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} battles in a Double Battle. Their Nickit, Shinx, and ace Ledian all use spread moves that lower your stats."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
