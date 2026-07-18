@@ -26,23 +26,37 @@ mapscripts Zone3A_MapScripts {
 script Zone3A_EventScript_Grant {
 	lock
 	faceplayer
+	if (flag(FLAG_BEAT_LEVIATHAN_3)) {
+		setspeaker("Grant")
+		msgbox(format("I see your potential. You can do anything you set your heart to!\pThere are other Gym Leaders, stronger than I am. Perhaps defeating them will prove a worthy challenge!"))
+		release
+		end
+	}
 	setspeaker("Grant")
-	msgbox(format("I'm Grant! Battle?"), MSGBOX_YESNO)
+	msgbox(format("I've been waiting in eager anticipation!\pWhat have I been waiting for?\pFor a worthy challenger to appear!\pAre you that worthy challenger?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Scared?"), MSGBOX_AUTOCLOSE)
+		msgbox(format("Don't keep me waiting any longer than needed!\pTake a deep breath, and prepare yourself for the climb!"), MSGBOX_AUTOCLOSE)
 		releaseall
 		end
 	}
+	msgbox(format("I have a feeling that our battle will turn out to be worth the wait!\pI hope you'll show me that your skill as a Trainer surpasses even mine."))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_GRANT_LEVIATHAN_3, format("Wah!!!"))
+	trainerbattle_no_intro(TRAINER_PBL_GRANT_LEVIATHAN_3, format("You have proven to be a wall that I am unable to surmount!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Grant")
-	msgbox(format("You beat me!"))
+	msgbox(format("There are some things that seem out of reach no matter how hard you try.\pHowever, it's important that you never give up - no matter the opponent or the odds.\pI could tell from our battle that you and your Pokémon understand that.\pTo commemorate such an impressive show of teamwork, please accept the Cliff Badge!"))
 	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_MASTER_BALL, 1)
-	setflag(FLAG_BEAT_LEVIATHAN_3)
+	playfanfare(MUS_OBTAIN_BADGE)
+	msgbox(format("{PLAYER} received the Cliff Badge from Grant!"))
+	waitfanfare
 	setspeaker("Grant")
-	msgbox(format("You beat me!"))
+	msgbox(format("With the Cliff Badge in your grasp, you should have no issues using the HM {COLOR GREEN}Rock Smash{COLOR DARK_GRAY} outside battle!\pYour Pokémon don't need to know the move to use it, just having the HM and the requisite Gym Badge is enough!\pAh, finally, I'd like you to take these as well."))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_TM_ROCK_TOMB, 1)
+	giveitem(ITEM_EVIOLITE, 1)
+	msgbox(format("With Rock Tomb, a Pokémon can hurl rocks at its target, not only inflicting damage but also lowering the target's Speed.\pAnd the Eviolite is a pretty nifty item for your Pokémon that can still evolve.\pWhich should be most of your Pokémon, yeah?\pHaha, just playing with you! You're just starting on your journey, so enjoy the ride and feel the breeze in your face!"))
+	setflag(FLAG_BEAT_LEVIATHAN_3)
+	setflag(FLAG_BADGE01_GET)
 	release
 	end
 }
@@ -63,7 +77,7 @@ script Zone3A_EventScript_Phillipa {
 	lock
 	faceplayer
 	setspeaker("Phillipa")
-	msgbox(format("Something snooty!"))
+	msgbox(format("I heard there's a move like {COLOR GREEN}Rollout{COLOR DARK_GRAY}, but Ice-type instead.\pThat sounds pretty neat!"))
 	release
 	end
 }
@@ -98,9 +112,9 @@ script Zone3A_EventScript_TriggerPhillipa {
 	applymovement(LOCALID_PHILLIPA, Common_Movement_WalkDown3)
 	waitmovement(0)
 	setspeaker("Phillipa")
-	msgbox(format("This right here is my island! You gotta deal with it!\pSomething about the look in your eyes says you're gonna challenge me for it.\pIf you wanna battle, I'll go all out with {COLOR GREEN}Rollout!{COLOR DARK_GRAY}"), MSGBOX_YESNO)
+	msgbox(format("This right here is my island! You gotta deal with it!\pSomething about the look in your eyes says you're gonna challenge me for it.\pIf you wanna battle, I'll go all out with {COLOR GREEN}Rollout{COLOR DARK_GRAY}!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Scared?"), MSGBOX_AUTOCLOSE)
+		msgbox(format("Aha! You're scared! Go away, scaredy cat!"), MSGBOX_AUTOCLOSE)
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
 		waitmovement(0)
 		applymovement(LOCALID_PHILLIPA, Common_Movement_WalkUp3)
@@ -108,15 +122,11 @@ script Zone3A_EventScript_TriggerPhillipa {
 		return
 	}
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_PHILLIPA_LEVIATHAN_3, format("Wah!!!"))
+	trainerbattle_no_intro(TRAINER_PBL_PHILLIPA_OPTIONAL_1, format("Wah!!!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Phillipa")
-	msgbox(format("You beat me!"))
-	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_MASTER_BALL, 1)
+	msgbox(format("You beat me! No fair! Argh…\pFine, you can explore this island too.\pHave that {COLOR GREEN}Rare Candy{COLOR DARK_GRAY} too while you're at it!"), MSGBOX_AUTOCLOSE)
 	setvar(VAR_ZONE_3_STATE, 1)
-	setspeaker("Phillipa")
-	msgbox(format("You beat me!"))
 	applymovement(LOCALID_PHILLIPA, Common_Movement_WalkUp3)
 	waitmovement(0)
 	releaseall
@@ -337,11 +347,5 @@ script Zone3A_EventScript_LunaAndNora {
 	trainerbattle_double(TRAINER_PBL_LUNA_AND_NORA, format("Up ahead is a strong lady!\pShe's guarding something special!"), format("We hear she's so strong, she's written about in the Notebook!"), gText_NotEnoughMons)
 	msgbox(format("You don't have to battle her if you don't want to!"), MSGBOX_DEFAULT)
 	release
-	end
-}
-
-script Zone3A_EventScript_Melinda {
-	trainerbattle_single(TRAINER_PBL_MELINDA_OPTIONAL_1, format("You want this Rare Candy? You won't get it!\pI'll defeat you with the power of the Pokémon my partner gave me!"), format("Fine… take the Rare Candy! It's really rare, so be careful how you use it!"))
-	msgbox(format("Rare Candies are typically guarded by an optional miniboss, but can be used to increase your Pokémon's level over the level cap."), MSGBOX_AUTOCLOSE)
 	end
 }

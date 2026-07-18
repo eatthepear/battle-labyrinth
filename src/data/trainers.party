@@ -507,112 +507,36 @@ Party Size: 2
 Pool Prune: Non Normal
 Copy Pool: TRAINER_POOL_ZONE_3
 
-=== TRAINER_PBL_MELINDA_OPTIONAL_1 ===
-Name: Melinda
-Class: Lady
-Pic: Lady
-Music: Female
+=== TRAINER_PBL_PHILLIPA_OPTIONAL_1 ===
+Name: Phillipa
+Class: School Kid
+Pic: School Kid F
+Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
-Woobat @ Cheri Berry
-Hasty Nature
+Bidoof @ Chesto Berry
+Brave Nature
 Ability: Unaware
-Level: 9
+Level: 8
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Confusion
-- Gust
+- Rollout
+- Defense Curl
 
-Luvdisc @ Wise Glasses
-Mild Nature
-Ability: Swift Swim
-Level: 9
+Sandshrew @ Pecha Berry
+Sassy Nature
+Ability: Sand Veil
+Level: 8
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Attract
+- Rollout
+- Defense Curl
 
-Delcatty @ Oran Berry
-Naive Nature
-Ability: Cute Charm
+Marill @ Oran Berry
+Careful Nature
+Ability: Huge Power
 Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fake Out
-- Fury Swipes
-
-=== TRAINER_PBL_PHILLIPA_LEVIATHAN_3 ===
-Name: Phillipa
-Class: School Kid
-Pic: School Kid F
-Music: Girl
-AI: AI_FLAG_LEVIATHAN
-Double Battle: No
-Mugshot: Green
-Difficulty: Normal
-
-Bidoof @ Chesto Berry
-Brave Nature
-Ability: Unaware
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rollout
-- Defense Curl
-
-Sandshrew @ Pecha Berry
-Sassy Nature
-Ability: Sand Veil
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
-- Defense Curl
-
-Marill @ Oran Berry
-Careful Nature
-Ability: Huge Power
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
-- Defense Curl
-
-=== TRAINER_PBL_PHILLIPA_LEVIATHAN_3 ===
-Name: Phillipa
-Class: School Kid
-Pic: School Kid F
-Music: Girl
-AI: AI_FLAG_LEVIATHAN
-Double Battle: No
-Mugshot: Green
-Difficulty: Brutal
-
-Bidoof @ Chesto Berry
-Brave Nature
-Ability: Unaware
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
-- Defense Curl
-
-Sandshrew @ Pecha Berry
-Sassy Nature
-Ability: Sand Veil
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
-- Defense Curl
-
-Marill @ Oran Berry
-Careful Nature
-Ability: Huge Power
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
-- Defense Curl
-
-Spheal @ Cheri Berry
-Adamant Nature
-Ability: Thick Fat
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Ice Ball
 - Defense Curl
 
 === TRAINER_PBL_GRANT_LEVIATHAN_3 ===

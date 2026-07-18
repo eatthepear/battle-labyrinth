@@ -11,27 +11,27 @@
 
 static bool32 IsFieldMoveUnlocked_Cut(void)
 {
-    return CheckBagHasItem(ITEM_HM_CUT, 1);
+    return CheckBagHasItem(ITEM_HM_CUT, 1) && FlagGet(FLAG_BADGE02_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_Flash(void)
 {
-    return CheckBagHasItem(ITEM_HM_FLASH, 1);
+    return CheckBagHasItem(ITEM_HM_FLASH, 1) && FlagGet(FLAG_BADGE03_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_RockSmash(void)
 {
-    return CheckBagHasItem(ITEM_HM_ROCK_SMASH, 1);
+    return CheckBagHasItem(ITEM_HM_ROCK_SMASH, 1) && FlagGet(FLAG_BADGE01_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_Strength(void)
 {
-    return CheckBagHasItem(ITEM_HM_STRENGTH, 1);
+    return CheckBagHasItem(ITEM_HM_STRENGTH, 1) && FlagGet(FLAG_BADGE06_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_Surf(void)
 {
-    return CheckBagHasItem(ITEM_HM_SURF, 1);
+    return CheckBagHasItem(ITEM_HM_SURF, 1) && FlagGet(FLAG_BADGE04_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_Fly(void)
@@ -41,17 +41,17 @@ static bool32 IsFieldMoveUnlocked_Fly(void)
 
 static bool32 IsFieldMoveUnlocked_Dive(void)
 {
-    return CheckBagHasItem(ITEM_HM_DIVE, 1);
+    return CheckBagHasItem(ITEM_HM_DIVE, 1) && FlagGet(FLAG_BADGE05_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_Waterfall(void)
 {
-    return CheckBagHasItem(ITEM_HM_WATERFALL, 1);
+    return CheckBagHasItem(ITEM_HM_WATERFALL, 1) && FlagGet(FLAG_BADGE08_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_RockClimb(void)
 {
-    return OW_ROCK_CLIMB_FIELD_MOVE && CheckBagHasItem(ITEM_HM_ROCK_CLIMB, 1);
+    return OW_ROCK_CLIMB_FIELD_MOVE && CheckBagHasItem(ITEM_HM_ROCK_CLIMB, 1) && FlagGet(FLAG_BADGE07_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_Teleport(void)
