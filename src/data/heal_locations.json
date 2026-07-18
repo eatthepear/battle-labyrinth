@@ -193,10 +193,10 @@
       "map": "MAP_PALLET_TOWN",
       "x": 6,
       "y": 8,
-      "respawn_x": 8,
-      "respawn_y": 5,
       "respawn_map": "MAP_PALLET_TOWN_PLAYERS_HOUSE_1F",
-      "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_MOM"
+      "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_MOM",
+      "respawn_x": 8,
+      "respawn_y": 5
     },
     {
       "id": "HEAL_LOCATION_VIRIDIAN_CITY",
@@ -355,10 +355,10 @@
       "map": "MAP_ZONE_SANCTUARY",
       "x": 0,
       "y": 0,
-      "respawn_x": 9,
-      "respawn_y": 4,
       "respawn_map": "MAP_ZONE_SANCTUARY_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_JOY"
+      "respawn_npc": "LOCALID_JOY",
+      "respawn_x": 9,
+      "respawn_y": 4
     }
   ]
 }
