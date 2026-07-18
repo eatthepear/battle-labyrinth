@@ -439,11 +439,11 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_HM_ROCK_SMASH, 1)
 			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("Note that you don't need to teach HMs to your party to use them, though they can be easily forgotten like other moves."))
+			msgbox(format("Note that you don't need to teach HMs to your party to use them, though they can be easily forgotten like other moves.\pThey still require a corresponding Gym Badge."))
 		case 3:
-			msgbox(format("The {COLOR RED}Sledgehammer{COLOR DARK_GRAY}!"))
+			msgbox(format("{COLOR RED}5 Revives{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_SLEDGEHAMMER)
+			giveitem(ITEM_REVIVE, 5)
 		case 4:
 			msgbox(format("{COLOR RED}TM09 - Venoshock{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)

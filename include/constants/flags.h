@@ -202,7 +202,7 @@
 // #define FLAG_HIDE_ZONE3A_REMI                             0x110
 // #define FLAG_HIDE_ZONE3A_PHILLIPA                         0x111
 #define FLAG_ZONE3A_MOVE_TUTOR_TAUGHT      0x112
-#define FLAG_ITEM_HEATED_CAVITY_TM_ROCK_TOMB                   0x113
+#define FLAG_ITEM_HEATED_CAVITY_HARD_STONE                0x113
 #define FLAG_ZONE3A_RECEIVED_SILVER_POWDER               0x114
 #define FLAG_ZONE3A_TRADE                      0x115
 #define FLAG_HIDE_ZONE4A_KIMONO_GIRL                      0x116
