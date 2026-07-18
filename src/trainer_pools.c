@@ -638,21 +638,25 @@ static bool32 DoTrainerPartyPoolHelper(const struct Trainer *trainer, u32 *monIn
 
 void DoTrainerPartyPool(const struct Trainer *trainer, u32 *monIndices, u8 monsCount, u32 battleTypeFlags)
 {
-        bool32 usingPool = FALSE;
-        struct Trainer tempTrainer;
-        if (trainer->poolSize == 0 && (trainer->aiFlags & AI_FLAG_RANDOMIZE_PARTY_INDICES))
-        {
-            tempTrainer = *trainer;
-            tempTrainer.poolSize = tempTrainer.partySize;
-            trainer = &tempTrainer;
-        }
+    bool32 usingPool = FALSE;
+    struct Trainer tempTrainer;
+    if (trainer->poolSize == 0 && (trainer->aiFlags & AI_FLAG_RANDOMIZE_PARTY_INDICES))
+    {
+        tempTrainer = *trainer;
+        tempTrainer.poolSize = tempTrainer.partySize;
+        trainer = &tempTrainer;
+    }
 
-        if (trainer->poolSize != 0)
-        {
-            usingPool = DoTrainerPartyPoolHelper(trainer, monIndices, monsCount, battleTypeFlags, 1);
-        }
+    if (trainer->poolSize != 0)
+    {
+        usingPool = DoTrainerPartyPoolHelper(trainer, monIndices, monsCount, battleTypeFlags, 1);
+    }
 
     if (!usingPool)
+    {
         for (u32 i = 0; i < monsCount; i++)
-            monIndices[i] = i;
+        {
+                monIndices[i] = i;
+        }
+    }
 }
