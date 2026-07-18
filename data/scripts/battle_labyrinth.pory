@@ -2944,3 +2944,12 @@ script EventScript_Steelix {
 	waitmoncry
 	release
 }
+
+script EventScript_Amaura {
+	lock
+	faceplayer
+	playmoncry(SPECIES_AMAURA, CRY_MODE_NORMAL)
+	msgbox(format("Maura!"))
+	waitmoncry
+	release
+}

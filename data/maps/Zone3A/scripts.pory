@@ -43,9 +43,20 @@ script Zone3A_EventScript_Grant {
 	setflag(FLAG_BEAT_LEVIATHAN_3)
 	setspeaker("Grant")
 	msgbox(format("You beat me!"))
-	// movement
 	release
 	end
+}
+
+script Zone3A_EventScript_GymGuide {
+    lock
+    faceplayer
+	if (flag(FLAG_BEAT_LEVIATHAN_3)) {
+		msgbox(format("Hey, congrats! You beat Grant! I knew you could do it!"))
+	} else {
+    	msgbox(format("Hey there!\pI'm Gym Leader Grant's personal Gym Guide, which means I help out would be challengers like you!\pYou'd do well to be prepared to battle some Rock-type Pokémon. I recommend using super-effective moves like {COLOR GREEN}Rock Smash{COLOR DARK_GRAY}!"))
+	}
+    release
+    end
 }
 
 script Zone3A_EventScript_Phillipa {
@@ -57,16 +68,44 @@ script Zone3A_EventScript_Phillipa {
 	end
 }
 
-script Zone3A_EventScript_TriggerPhillipa {
+script Zone3A_EventScript_TriggerPhillipaLeft {
 	lockall
-	// movement
+	applymovement(LOCALID_PHILLIPA, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(LOCALID_PHILLIPA, Common_Movement_WalkLeft)
+	waitmovement(0)
+	call(Zone3A_EventScript_TriggerPhillipa)
+	applymovement(LOCALID_PHILLIPA, Common_Movement_WalkRight)
+	waitmovement(0)
+	releaseall
+	end
+}
+
+script Zone3A_EventScript_TriggerPhillipaRight {
+	lockall
+	applymovement(LOCALID_PHILLIPA, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	call(Zone3A_EventScript_TriggerPhillipa)
+	releaseall
+	end
+}
+
+script Zone3A_EventScript_TriggerPhillipa {
+	applymovement(LOCALID_PHILLIPA, Common_Movement_WalkDown3)
+	waitmovement(0)
 	setspeaker("Phillipa")
 	msgbox(format("This right here is my island! You gotta deal with it!\pSomething about the look in your eyes says you're gonna challenge me for it.\pIf you wanna battle, I'll go all out with {COLOR GREEN}Rollout!{COLOR DARK_GRAY}"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		msgbox(format("Scared?"), MSGBOX_AUTOCLOSE)
-		// movement
-		releaseall
-		end
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
+		waitmovement(0)
+		applymovement(LOCALID_PHILLIPA, Common_Movement_WalkUp3)
+		waitmovement(0)
+		return
 	}
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_PHILLIPA_LEVIATHAN_3, format("Wah!!!"))
@@ -78,155 +117,10 @@ script Zone3A_EventScript_TriggerPhillipa {
 	setvar(VAR_ZONE_3_STATE, 1)
 	setspeaker("Phillipa")
 	msgbox(format("You beat me!"))
-	// movement
+	applymovement(LOCALID_PHILLIPA, Common_Movement_WalkUp3)
+	waitmovement(0)
 	releaseall
 	end
-}
-
-script Zone3A_EventScript_TriggerLeviathan {
-	lockall
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
-	waitmovement(0)
-	msgbox("This looks like someone's home!\nGo inside?", MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		closemessage
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
-		waitmovement(0)
-		releaseall
-		end
-	}
-	closemessage
-	hidefollower
-	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
-	waitmovement(0)
-	fadeoutbgm(1)
-	applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
-	playse(SE_PIN)
-	waitmovement(0)
-	waitse
-	applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
-	waitmovement(0)
-	addobject(LOCALID_PHILLIPA)
-	clearflag(FLAG_HIDE_ZONE3A_PHILLIPA)
-	applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
-	applymovement(LOCALID_PHILLIPA, Common_Movement_WalkDown)
-	waitmovement(0)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
-	waitmovement(0)
-	setspeaker("Phillipa")
-	msgbox(format("You! How dare you intrude on my home!\pI am Phillipa, the all powerful!"))
-	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_PHILLIPA_LEVIATHAN_3, format("Wah!!!"))
-	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	setspeaker("Phillipa")
-	msgbox(format("Wah!"), MSGBOX_AUTOCLOSE)
-	applymovement(LOCALID_PHILLIPA, Zone3A_Movement_Phillipa_RunAway)
-	waitmovement(0)
-	setspeaker("Remi")
-	msgbox(format("Phillipa? Are you ok?"), MSGBOX_AUTOCLOSE)
-	applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
-	playse(SE_PIN)
-	waitmovement(0)
-	waitse
-	addobject(LOCALID_REMI)
-	clearflag(FLAG_HIDE_ZONE3A_REMI)
-	applymovement(LOCALID_REMI, Common_Movement_WalkDown)
-	waitmovement(0)
-	setspeaker("Remi")
-	msgbox(format("Oh!"), MSGBOX_AUTOCLOSE)
-	applymovement(LOCALID_REMI, Common_Movement_FaceLeft)
-	waitmovement(0)
-	delay(32)
-	applymovement(LOCALID_REMI, Common_Movement_FaceDown)
-	waitmovement(0)
-	setspeaker("Remi")
-	msgbox(format("I see.\pYou must have defeated my daughter in battle.\pDon't worry, I'll go talk to her."), MSGBOX_AUTOCLOSE)
-	applymovement(LOCALID_REMI, Zone3A_Movement_Remi_WalkToPhillipa)
-	waitmovement(0)
-	setspeaker("Remi")
-	msgbox(format("Hey, kiddo."))
-	applymovement(LOCALID_PHILLIPA, Common_Movement_FaceDown)
-	waitmovement(0)
-	setspeaker("Phillipa")
-	msgbox(format("Wah! Daddy! I lost!"))
-	setspeaker("Remi")
-	msgbox(format("I know, love, but sometimes we lose, and that's life. We have to face our losses with honor, right?"), MSGBOX_AUTOCLOSE)
-	delay(32)
-	setspeaker("Phillipa")
-	msgbox(format("Sniff…\pOkay…"), MSGBOX_AUTOCLOSE)
-	applymovement(LOCALID_REMI, Zone3A_Movement_Remi_WalkBack)
-	applymovement(LOCALID_PHILLIPA, Zone3A_Movement_Phillipa_WalkBack)
-	waitmovement(0)
-	setspeaker("Remi")
-	msgbox(format("What do you say?"))
-	setspeaker("Phillipa")
-	msgbox(format("Sniff… Thank you very much for the battle!"))
-	setspeaker("Remi")
-	msgbox(format("I'm proud of you, kiddo."), MSGBOX_AUTOCLOSE)
-	applymovement(LOCALID_REMI, Zone3A_Movement_Remi_WalkToPlayer)
-	waitmovement(0)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
-	waitmovement(0)
-	setspeaker("Remi")
-	msgbox(format("Thanks for being a good sport.\pHere, I want you to have these."))
-	giveitem(ITEM_LURE_BALL, 5)
-	closemessage
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
-	waitmovement(0)
-	applymovement(LOCALID_REMI, Zone3A_Movement_Remi_WalkBackToPhillipa)
-	waitmovement(0)
-	setspeaker("Remi")
-	msgbox(format("Alright, that's enough excitement for one day.\pIt's dinner time."))
-	applymovement(LOCALID_PHILLIPA, Common_Movement_FaceRight)
-	waitmovement(0)
-	setspeaker("Phillipa")
-	msgbox(format("Food!"), MSGBOX_AUTOCLOSE)
-	applymovement(LOCALID_PHILLIPA, Common_Movement_WalkUp)
-	waitmovement(0)
-	setflag(FLAG_HIDE_ZONE3A_PHILLIPA)
-	removeobject(LOCALID_PHILLIPA)
-	applymovement(LOCALID_REMI, Common_Movement_WalkLeft)
-	waitmovement(0)
-	applymovement(LOCALID_REMI, Common_Movement_WalkUp)
-	waitmovement(0)
-	setflag(FLAG_HIDE_ZONE3A_REMI)
-	removeobject(LOCALID_REMI)
-	setflag(FLAG_BEAT_LEVIATHAN_3)
-	setvar(VAR_ZONE_3_STATE, 1)
-	releaseall
-	end
-}
-
-movement Zone3A_Movement_Phillipa_RunAway {
-	walk_fast_left * 3
-	walk_fast_up * 3
-}
-
-movement Zone3A_Movement_Remi_WalkToPhillipa {
-	walk_left * 3
-	walk_up * 2
-}
-
-movement Zone3A_Movement_Remi_WalkBack {
-	walk_down * 2
-	walk_right * 4
-	face_down
-}
-
-movement Zone3A_Movement_Phillipa_WalkBack {
-	walk_down * 3
-	walk_right * 3
-	face_down
-}
-
-movement Zone3A_Movement_Remi_WalkToPlayer {
-	walk_down
-	face_left
-}
-
-movement Zone3A_Movement_Remi_WalkBackToPhillipa {
-	walk_up
-	face_left
 }
 
 script Zone3A_EventScript_Trade {
