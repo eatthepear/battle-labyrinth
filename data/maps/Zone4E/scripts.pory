@@ -29,7 +29,7 @@ script Zone4E_EventScript_KimonoGirl_Exit {
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_SACRED_ASH)
 	setspeaker("Kimono Girl")
-	msgbox(format("Well, I shall be off.\pIt seems two await you up ahead."), MSGBOX_AUTOCLOSE)
+	msgbox(format("Well, I shall be off.\pIt seems someone awaits you up ahead."), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_PLAYER, Zone4E_Movement_Player_UnblockKimonoGirl)
 	applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Zone4E_Movement_KimonoGirl_Exit)
 	waitmovement(0)
@@ -63,58 +63,37 @@ movement Zone4E_Movement_KimonoGirl_Exit {
 
 script Zone4E_EventScript_LeviathanBattle {
 	lockall
-	applymovement(LOCALID_BELLA, Common_Movement_WalkDown2)
-	applymovement(LOCALID_ELLA, Common_Movement_WalkDown3)
+	playbgm(MUS_HG_ENCOUNTER_ROCKET, TRUE)
+	applymovement(LOCALID_PROTON, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
 	waitmovement(0)
-	applymovement(LOCALID_ELLA, Common_Movement_FaceRight)
+	waitse
+	delay(16)
+	applymovement(LOCALID_PROTON, Common_Movement_WalkDown3)
 	waitmovement(0)
-	fadeoutbgm(1)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+	applymovement(LOCALID_PROTON, Common_Movement_FaceRight)
 	waitmovement(0)
 	delay(16)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
-	waitmovement(0)
-	delay(16)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
-	waitmovement(0)
-	delay(16)
-	setspeaker("Ella")
-	msgbox(format("Watch out!"))
-	setspeaker("Bella")
-	msgbox(format("Don't fear!"))
-	setspeaker("Ella")
-	msgbox(format("The dynamic duo of Ella & Bella…"))
-	setspeaker("Bella")
-	msgbox(format("Will always persevere!"))
-	setspeaker("Ella & Bella")
-	msgbox(format("It's time to battle it out, victory is near!"))
+	setspeaker("Proton")
+	msgbox(format("Battle!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4, format("We lost!"))
+	trainerbattle_no_intro(TRAINER_PBL_PROTON_LEVIATHAN_4, format("We lost!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	setspeaker("Ella")
+	setspeaker("Proton")
 	msgbox(format("Wargh! Not only are we lost in the wood…"))
-	setspeaker("Bella")
-	msgbox(format("We could've won that battle, you misunderstood!"))
-	setspeaker("Ella")
-	msgbox(format("I guess our teamwork could be improved…"))
-	setspeaker("Bella")
-	msgbox(format("Yeah… Oh right, here's a thing for those approved!"))
+	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_SNARL)
-	setspeaker("Ella")
-	msgbox(format("This TM can help in Double Battles!"))
-	setspeaker("Bella")
-	msgbox(format("Shush, you're annoying them with your prattles!"))
-	setspeaker("Ella")
-	msgbox(format("That rhyme barely worked!"))
 	setspeaker("Bella")
 	msgbox(format("Oh, don't be irked!"))
 	closemessage
 	fadescreenswapbuffers(FADE_TO_BLACK)
-	removeobject(LOCALID_ELLA)
-	removeobject(LOCALID_BELLA)
+	removeobject(LOCALID_PROTON)
+	removeobject(LOCALID_GRUNT_1_4E)
+	removeobject(LOCALID_GRUNT_2_4E)
 	setflag(FLAG_BEAT_LEVIATHAN_4)
 	setvar(VAR_ZONE_4_STATE, 3)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
+	fadedefaultbgm
 	releaseall
 	end
 }
@@ -151,5 +130,17 @@ script Zone4E_EventScript_PoisonBarb {
 	addobject(VAR_LAST_TALKED)
 	finditem(ITEM_POISON_BARB, 1)
 	release
+	end
+}
+
+script Zone4E_EventScript_RocketGrunt_1 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_4E_1, format("Our Admin is up ahead doing important work! I can't let you stop him!"), format("You stopped me instead!"))
+	msgbox(format("I don't know what he's doing, but I'm sure it furthers Team Rainbow Rocket's goals!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone4E_EventScript_RocketGrunt_2 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_4E_2, format("We're Team Rainbow Rocket, not just ordinary Team Rocket!"), format("It's a major rebrand!"))
+	msgbox(format("Not sure when or why we rebranded, but it's working well for us!"), MSGBOX_AUTOCLOSE)
 	end
 }

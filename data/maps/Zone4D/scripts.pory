@@ -47,36 +47,14 @@ script Zone4D_EventScript_TMHiddenPower {
 	end
 }
 
-raw `
-
-Zone4D_EventScript_Lucia::
-	trainerbattle_single TRAINER_PBL_LUCIA, Zone4D_Text_LuciaIntro, Zone4D_Text_LuciaDefeat
-	msgbox Zone4D_Text_LuciaPostBattle, MSGBOX_AUTOCLOSE
+script Zone4D_EventScript_RocketGrunt_1 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_4D_1, format("We're Team Rainbow Rocket! You'd better stay out of our way!"), format("The R stands for both Rainbow and Rocket!"))
+	msgbox(format("I may just be a grunt, but there are more of me to stop your way!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone4D_Text_LuciaIntro:
-	.string "I think the exit is near here…$"
-
-Zone4D_Text_LuciaDefeat:
-	.string "Oh?$"
-
-Zone4D_Text_LuciaPostBattle:
-	.string "I think I see the exit!$"
-
-Zone4D_EventScript_Fred::
-	trainerbattle_single TRAINER_PBL_FRED, Zone4D_Text_FredIntro, Zone4D_Text_FredDefeat
-	msgbox Zone4D_Text_FredPostBattle, MSGBOX_AUTOCLOSE
+script Zone4D_EventScript_RocketGrunt_2 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_4D_2, format("Team Rainbow Rocket exists for the good of all! Now hand over all your Pokémon!"), format("A Rainbow Rocket Grunt engages in all sorts of crime!"))
+	msgbox(format("Crime is good, for the perpetrator! Haha!"), MSGBOX_AUTOCLOSE)
 	end
-
-Zone4D_Text_FredIntro:
-	.string "The most important character\n"
-	.string "trait someone can have is to\l"
-	.string "have perseverance.$"
-
-Zone4D_Text_FredDefeat:
-	.string "I can make it through anything!$"
-
-Zone4D_Text_FredPostBattle:
-	.string "Just keep swimming,\n"
-	.string "just keep swimming.$"
-`
+}

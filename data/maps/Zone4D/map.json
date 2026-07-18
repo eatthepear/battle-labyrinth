@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "graphics_id": "OBJ_EVENT_GFX_RAINBOW_ROCKET_MEMBER_M",
       "x": 16,
       "y": 6,
       "elevation": 3,
@@ -24,11 +24,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "Zone4D_EventScript_Fred",
-      "flag": "0"
+      "script": "Zone4D_EventScript_RocketGrunt_1",
+      "flag": "FLAG_BEAT_LEVIATHAN_4"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_FAIRY_TALE_GIRL",
+      "graphics_id": "OBJ_EVENT_GFX_RAINBOW_ROCKET_MEMBER_F",
       "x": 8,
       "y": 3,
       "elevation": 3,
@@ -37,8 +37,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Zone4D_EventScript_Lucia",
-      "flag": "0"
+      "script": "Zone4D_EventScript_RocketGrunt_2",
+      "flag": "FLAG_BEAT_LEVIATHAN_4"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",

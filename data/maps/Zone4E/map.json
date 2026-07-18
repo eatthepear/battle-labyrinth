@@ -41,25 +41,11 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_ELLA",
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "local_id": "LOCALID_PROTON",
+      "graphics_id": "OBJ_EVENT_GFX_PROTON",
       "x": 12,
       "y": 3,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_BEAT_LEVIATHAN_4"
-    },
-    {
-      "local_id": "LOCALID_BELLA",
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 13,
-      "y": 3,
-      "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -80,6 +66,34 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Zone4E_EventScript_PoisonBarb",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_GRUNT_2_4E",
+      "graphics_id": "OBJ_EVENT_GFX_RAINBOW_ROCKET_MEMBER_F",
+      "x": 6,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Zone4E_EventScript_RocketGrunt_2",
+      "flag": "FLAG_BEAT_LEVIATHAN_4"
+    },
+    {
+      "local_id": "LOCALID_GRUNT_1_4E",
+      "graphics_id": "OBJ_EVENT_GFX_RAINBOW_ROCKET_MEMBER_M",
+      "x": 11,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Zone4E_EventScript_RocketGrunt_1",
+      "flag": "FLAG_BEAT_LEVIATHAN_4"
     }
   ],
   "warp_events": [

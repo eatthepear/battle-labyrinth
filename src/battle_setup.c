@@ -1707,6 +1707,9 @@ void PlayTrainerEncounterMusic(void)
         case TRAINER_ENCOUNTER_MUSIC_GALACTIC:
             music = MUS_DP_ENCOUNTER_GALACTIC;
             break;
+        case TRAINER_ENCOUNTER_MUSIC_ROCKET:
+            music = MUS_HG_ENCOUNTER_ROCKET;
+            break;
         default:
             music = MUS_ENCOUNTER_SUSPICIOUS;
         }

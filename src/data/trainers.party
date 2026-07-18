@@ -17,7 +17,7 @@ Required fields for trainers:
 Optional (but still recommended) fields for trainers:
     - Class (if not specified, PkMn Trainer will be used)
     - Gender (Male/Female, affects random gender weights of party if not specified)
-    - Music (Male, Female, Girl, Suspicious, Intense, Cool, Aqua, Magma, Swimmer, Twins, Elite Four, Hiker, Interviewer, Rich, Galactic)
+    - Music (Male, Female, Girl, Suspicious, Intense, Cool, Aqua, Magma, Swimmer, Twins, Elite Four, Hiker, Interviewer, Rich, Rocket, Galactic)
     - Items (Some Item / Another Item / Third Item)
             (Can also be specified with ITEM_SOME_ITEM)
     - Battle Type (Singles / Doubles, defaults to Singles)
@@ -652,27 +652,45 @@ Party Size: 2
 Pool Prune: Non Normal
 Copy Pool: TRAINER_POOL_ZONE_4
 
-=== TRAINER_PBL_FRED ===
-Name: Fred
-Class: Camper
-Pic: Camper
-Music: Male
+=== TRAINER_PBL_ROCKET_GRUNT_4D_1 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt M
+Music: Rocket
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_4
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_4_GRUNTS
 
-=== TRAINER_PBL_LUCIA ===
-Name: Lucia
-Class: Fairy Tale Girl
-Pic: Fairy Tale Girl
-Music: Girl
+=== TRAINER_PBL_ROCKET_GRUNT_4D_2 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
+Music: Rocket
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
-Pool Prune: Non Fairy
-Copy Pool: TRAINER_POOL_ZONE_4
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_4_GRUNTS
+
+=== TRAINER_PBL_ROCKET_GRUNT_4E_1 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt M
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_4_GRUNTS
+
+=== TRAINER_PBL_ROCKET_GRUNT_4E_2 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_4_GRUNTS
 
 === TRAINER_PBL_ELLA_AND_BELLA_LEVIATHAN_4 ===
 Name: Ella & Bella
@@ -749,6 +767,79 @@ Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Breaking Swipe
 - Scratch
+
+=== TRAINER_PBL_PROTON_LEVIATHAN_4 ===
+Name: Proton
+Class: Rainbow Rocket
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_LEVIATHAN
+Double Battle: Yes
+Mugshot: Blue
+
+Salandit @ Cheri Berry
+Timid Nature
+Ability: Corrosion
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Gas
+- Ember
+- Venoshock
+
+Koffing @ Chesto Berry
+Naive Nature
+Ability: Levitate
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Gas
+- Assurance
+- Venoshock
+
+Ariados @ Sitrus Berry
+Hasty Nature
+Ability: Swarm
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic Thread
+- Twineedle
+- Venoshock
+
+=== TRAINER_PBL_PROTON_LEVIATHAN_4 ===
+Name: Proton
+Class: Rainbow Rocket
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_LEVIATHAN
+Double Battle: Yes
+Mugshot: Blue
+Difficulty: Brutal
+
+Salandit @ Cheri Berry
+Timid Nature
+Ability: Corrosion
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Gas
+- Ember
+- Venoshock
+
+Koffing @ Chesto Berry
+Naive Nature
+Ability: Levitate
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Gas
+- Assurance
+- Venoshock
+
+Ariados @ Sitrus Berry
+Hasty Nature
+Ability: Swarm
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic Thread
+- Twineedle
+- Venoshock
 
 === TRAINER_PBL_REBECCA ===
 Name: Rebecca
@@ -4983,6 +5074,56 @@ Wooloo
 Wooper
 
 Wooper Paldea
+
+=== TRAINER_POOL_ZONE_4_GRUNTS ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Poochyena
+
+Zigzagoon Galar
+
+Nickit
+
+Rattata
+
+Rattata Alola
+
+Yungoos
+
+Patrat
+
+Hoothoot
+
+Purrloin
+
+Nidoran M
+
+Nidoran F
+
+Venipede
+
+Wooper Paldea
+
+Ekans
+
+Sandshrew
+
+Gulpin
+
+Slowpoke Galar
+
+Oddish
+
+Drowzee
+
+Houndour
+
+Zubat
 
 === TRAINER_POOL_ZONE_5 ===
 Name: Trainer Pool
