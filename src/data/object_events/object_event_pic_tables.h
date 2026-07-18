@@ -1543,6 +1543,10 @@ static const struct SpriteFrameImage sPicTable_Jasmine[] = {
 static const struct SpriteFrameImage sPicTable_Larry[] = {
     overworld_ascending_frames(gObjectEventPic_Larry, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Grant[] = {
+    overworld_ascending_frames(gObjectEventPic_Grant, 2, 4),
+};
 #if IS_FRLG
 
 static const struct SpriteFrameImage sPicTable_RedNormal[] = {

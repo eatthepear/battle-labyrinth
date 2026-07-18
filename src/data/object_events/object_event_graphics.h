@@ -557,6 +557,8 @@ const u32 gObjectEventPic_Jasmine[] = INCGFX_U32("graphics/object_events/pics/pe
 const u16 gObjectEventPal_Jasmine[] = INCGFX_U16("graphics/object_events/pics/people/jasmine.png", ".gbapal");
 const u32 gObjectEventPic_Larry[] = INCGFX_U32("graphics/object_events/pics/people/larry.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPal_Larry[] = INCGFX_U16("graphics/object_events/pics/people/larry.png", ".gbapal");
+const u32 gObjectEventPic_Grant[] = INCGFX_U32("graphics/object_events/pics/people/grant.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_Grant[] = INCGFX_U16("graphics/object_events/pics/people/grant.png", ".gbapal");
 
 const u32 gFieldEffectObjectPic_SnowFootprints[] = INCGFX_U32("graphics/field_effects/pics/snow_footprints.png", ".4bpp");
 #if IS_FRLG

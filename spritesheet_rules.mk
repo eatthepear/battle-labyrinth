@@ -573,6 +573,9 @@ $(OBJEVENTGFXDIR)/people/jasmine.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/larry.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/grant.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/agatha.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

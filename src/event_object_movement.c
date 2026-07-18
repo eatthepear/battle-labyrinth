@@ -627,6 +627,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Cyrus,                 OBJ_EVENT_PAL_TAG_CYRUS},
     {gObjectEventPal_Jasmine,               OBJ_EVENT_PAL_TAG_JASMINE},
     {gObjectEventPal_Larry,                 OBJ_EVENT_PAL_TAG_LARRY},
+    {gObjectEventPal_Grant,                 OBJ_EVENT_PAL_TAG_GRANT},
     {gObjectEventPaletteNeonLight,          OBJ_EVENT_PAL_TAG_NEON_LIGHT},
 #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},

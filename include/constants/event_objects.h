@@ -459,6 +459,7 @@ enum
     OBJ_EVENT_GFX_CYRUS,
     OBJ_EVENT_GFX_JASMINE,
     OBJ_EVENT_GFX_LARRY,
+    OBJ_EVENT_GFX_GRANT,
     NUM_OBJ_EVENT_GFX,
 };
 
@@ -704,6 +705,7 @@ enum
 #define OBJ_EVENT_PAL_TAG_CYRUS                   0x728A
 #define OBJ_EVENT_PAL_TAG_JASMINE                 0x728B
 #define OBJ_EVENT_PAL_TAG_LARRY                   0x728C
+#define OBJ_EVENT_PAL_TAG_GRANT                   0x728D
 
 #define OBJ_EVENT_PAL_TAG_RUNNING_TRIATHLETE_F    0x7401
 #define OBJ_EVENT_PAL_TAG_SCHOOL_KID_M            0x7402
