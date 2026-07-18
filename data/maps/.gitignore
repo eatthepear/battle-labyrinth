@@ -69,6 +69,8 @@ ZoneSanctuary_QuietField/scripts.inc
 ZoneSanctuary_PeacefulGrove/scripts.inc
 ZoneSanctuary_BreezyMeadow/scripts.inc
 ZoneSanctuary_WhisperCave/scripts.inc
+HeatedCavity/scripts.inc
+BorealThicket/scripts.inc
 Zone5A_Old/scripts.inc
 Zone5B_Old/scripts.inc
 HiddenGrotto/scripts.inc
