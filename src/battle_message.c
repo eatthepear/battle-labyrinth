@@ -93,6 +93,8 @@ static const u8 sText_WildPkmnAppeared[] = _("You encountered a wild {B_OPPONENT
 static const u8 sText_LegendaryPkmnAppeared[] = _("{B_OPPONENT_MON1_NAME} appeared!\p");
 static const u8 sText_WildPkmnAppearedPause[] = _("You encountered a wild {B_OPPONENT_MON1_NAME}!{PAUSE 127}");
 static const u8 sText_TwoWildPkmnAppeared[] = _("Oh! A wild {B_OPPONENT_MON1_NAME} and {B_OPPONENT_MON2_NAME} appeared!\p");
+static const u8 sText_PkmnAndAllyAppeared[] = _("Oh! {B_OPPONENT_MON1_NAME} and its ally {B_OPPONENT_MON2_NAME} appeared!\p");
+static const u8 sText_PkmnAppearedMega[] = _("{B_OPPONENT_MON1_NAME} appeared! It seems to have undergone Mega Evolution!\p");
 static const u8 sText_GhostAppearedCantId[] = _("The GHOST appeared!\pDarn!\nThe GHOST can't be ID'd!\p");
 static const u8 sText_TheGhostAppeared[] = _("The GHOST appeared!\p");
 static const u8 sText_Trainer1WantsToBattle[] = _("You are challenged by {B_TRAINER1_NAME_WITH_CLASS}!\p");
@@ -687,7 +689,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_FETCHEDPOKEBALL]                      = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} found a {B_LAST_ITEM}!"),
     [STRINGID_ASANDSTORMKICKEDUP]                   = COMPOUND_STRING("A sandstorm kicked up!"),
     [STRINGID_PKMNSWILLPERISHIN3TURNS]              = COMPOUND_STRING("Both Pokémon will faint in three turns!"),
-    [STRINGID_AURAFLAREDTOLIFE]                     = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s aura flared to life!"),
+    [STRINGID_AURAFLAREDTOLIFE]                     = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s aura flared to life! Its stats rose!\p"),
     [STRINGID_ASONEENTERS]                          = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} has two Abilities!"),
     [STRINGID_CURIOUSMEDICINEENTERS]                = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX}'s stat changes were removed!"),
     [STRINGID_CANACTFASTERTHANKSTO]                 = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} can act faster than normal, thanks to its {B_BUFF1}!"),
@@ -2482,6 +2484,13 @@ void BufferStringBattle(enum StringID stringID, enum BattlerId battler)
                 stringPtr = sText_GhostAppearedCantId;
             else if (gBattleTypeFlags & BATTLE_TYPE_GHOST)
                 stringPtr = sText_TheGhostAppeared;
+            else if (FlagGet(FLAG_SYS_SMART_WILD_AI_ON))
+            {
+                if (IsDoubleBattle() && IsValidForBattle(GetBattlerMon(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT))))
+                    stringPtr = sText_PkmnAndAllyAppeared;
+                else
+                    stringPtr = sText_PkmnAppearedMega;
+            }
             else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
                 stringPtr = sText_LegendaryPkmnAppeared;
             else if (IsDoubleBattle() && IsValidForBattle(GetBattlerMon(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT))))
@@ -2852,6 +2861,8 @@ static void GetBattlerNick(enum BattlerId battler, u8 *dst)
             toCpy = sText_FoePkmnPrefix;                                \
         else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)              \
             toCpy = sText_EmptyString8;                                 \
+        else if (FlagGet(FLAG_SYS_SMART_WILD_AI_ON))                    \
+            toCpy = sText_EmptyString8;                                 \
         else                                                            \
             toCpy = sText_WildPkmnPrefix;                               \
         while (*toCpy != EOS)                                           \
@@ -2870,6 +2881,8 @@ static void GetBattlerNick(enum BattlerId battler, u8 *dst)
         if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)                     \
             toCpy = sText_FoePkmnPrefixLower;                           \
         else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)              \
+            toCpy = sText_EmptyString8;                                 \
+        else if (FlagGet(FLAG_SYS_SMART_WILD_AI_ON))                    \
             toCpy = sText_EmptyString8;                                 \
         else                                                            \
             toCpy = sText_WildPkmnPrefixLower;                          \
@@ -3356,6 +3369,8 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 {
                     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
                         toCpy = sText_FoePkmnPrefix;
+                    else if (FlagGet(FLAG_SYS_SMART_WILD_AI_ON))
+                        toCpy = sText_EmptyString8;
                     else
                         toCpy = sText_WildPkmnPrefix;
                     while (*toCpy != EOS)
@@ -3733,6 +3748,8 @@ void ExpandBattleTextBuffPlaceholders(const u8 *src, u8 *dst)
                 {
                     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
                         StringAppend(dst, sText_FoePkmnPrefixLower);
+                    else if (FlagGet(FLAG_SYS_SMART_WILD_AI_ON))
+                        StringAppend(dst, sText_EmptyString8);
                     else
                         StringAppend(dst, sText_WildPkmnPrefixLower);
                 }
@@ -3740,6 +3757,8 @@ void ExpandBattleTextBuffPlaceholders(const u8 *src, u8 *dst)
                 {
                     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
                         StringAppend(dst, sText_FoePkmnPrefix);
+                    else if (FlagGet(FLAG_SYS_SMART_WILD_AI_ON))
+                        StringAppend(dst, sText_EmptyString8);
                     else
                         StringAppend(dst, sText_WildPkmnPrefix);
                 }

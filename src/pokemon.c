@@ -5181,6 +5181,9 @@ u16 GetBattleBGM(void)
     }
     else
     {
+        if (FlagGet(FLAG_SYS_SMART_WILD_AI_ON))
+            return MUS_DP_VS_LEGEND;
+
         switch (VarGet(VAR_WILD_MUSIC))
         {
         case 2:

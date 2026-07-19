@@ -904,6 +904,9 @@ enum BattleTransition GetWildBattleTransition(void)
     u8 enemyLevel = GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_LEVEL);
     u8 playerLevel = GetSumOfPlayerPartyLevel(1);
 
+    if (FlagGet(FLAG_SYS_SMART_WILD_AI_ON))
+        return B_TRANSITION_BLUR;
+
     if (enemyLevel < playerLevel)
     {
         if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
