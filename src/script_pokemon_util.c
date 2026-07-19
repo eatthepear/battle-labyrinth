@@ -120,11 +120,12 @@ void CreateScriptedWildMon_PBL(enum Species species, u8 level, enum Item item, u
     u32 pp;
 
     ZeroEnemyPartyMons();
-    // TODO: this doesn't work right now.
-    // if (nature == NUM_NATURES)
-    //     CreateMonWithNature(&gParties[B_TRAINER_OPPONENT_A][0], species, level, iv, PickWildMonNature());
-    // else
-    //     CreateMonWithNature(&gParties[B_TRAINER_OPPONENT_A][0], species, level, iv, nature);
+    u32 personality = GetMonPersonality(species,
+        GetSynchronizedGender(STATIC_WILDMON_ORIGIN, species),
+        (nature == NUM_NATURES) ?  GetSynchronizedNature(STATIC_WILDMON_ORIGIN, species) : nature,
+        RANDOM_UNOWN_LETTER);
+    CreateMonWithIVs(&gParties[B_TRAINER_OPPONENT_A][0], species, level, personality, OTID_STRUCT_PLAYER_ID, iv);
+    GiveMonInitialMoveset(&gParties[B_TRAINER_OPPONENT_A][0]);
 
     if (item)
     {
@@ -166,11 +167,12 @@ void CreateScriptedDoubleWildMon_PBL(enum Species species1, u8 level1, enum Item
     u32 pp;
 
     ZeroEnemyPartyMons();
-    // TODO: this doesn't work right now.
-    // if (nature1 == NUM_NATURES)
-    //     CreateMonWithNature(&gParties[B_TRAINER_OPPONENT_A][0], species1, level1, iv1, PickWildMonNature());
-    // else
-    //     CreateMonWithNature(&gParties[B_TRAINER_OPPONENT_A][0], species1, level1, iv1, nature1);
+    u32 personality = GetMonPersonality(species1,
+        GetSynchronizedGender(STATIC_WILDMON_ORIGIN, species1),
+        (nature1 == NUM_NATURES) ?  GetSynchronizedNature(STATIC_WILDMON_ORIGIN, species1) : nature1,
+        RANDOM_UNOWN_LETTER);
+    CreateMonWithIVs(&gParties[B_TRAINER_OPPONENT_A][0], species1, level1, personality, OTID_STRUCT_PLAYER_ID, iv1);
+    GiveMonInitialMoveset(&gParties[B_TRAINER_OPPONENT_A][0]);
     if (item1)
     {
         heldItem1[0] = item1;
@@ -200,11 +202,12 @@ void CreateScriptedDoubleWildMon_PBL(enum Species species1, u8 level1, enum Item
     SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_PP4, &pp);
     }
 
-    // TODO: this doesn't work right now.
-    // if (nature2 == NUM_NATURES)
-    //     CreateMonWithNature(&gParties[B_TRAINER_OPPONENT_A][1], species2, level2, iv2, PickWildMonNature());
-    // else
-    //     CreateMonWithNature(&gParties[B_TRAINER_OPPONENT_A][1], species2, level2, iv2, nature2);
+    personality = GetMonPersonality(species2,
+        GetSynchronizedGender(STATIC_WILDMON_ORIGIN, species2),
+        (nature2 == NUM_NATURES) ?  GetSynchronizedNature(STATIC_WILDMON_ORIGIN, species2) : nature2,
+        RANDOM_UNOWN_LETTER);
+    CreateMonWithIVs(&gParties[B_TRAINER_OPPONENT_A][1], species2, level2, personality, OTID_STRUCT_PLAYER_ID, iv2);
+    GiveMonInitialMoveset(&gParties[B_TRAINER_OPPONENT_A][1]);
     if (item2)
     {
         heldItem2[0] = item2;
