@@ -2048,6 +2048,91 @@ IVs: 31 HP / 31 Atk / 30 Def / 31 SpA / 30 SpD / 30 Spe
 - Alluring Voice
 - Quiver Dance
 
+=== TRAINER_PBL_VIOLET ===
+Name: Abigail
+Class: Pokefan
+Pic: Pokefan F
+Music: Twins
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
+
+=== TRAINER_PBL_WANDA ===
+Name: Abigail
+Class: Pokefan
+Pic: Pokefan F
+Music: Twins
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
+
+=== TRAINER_PBL_AMBER_AND_KIM ===
+Name: Abigail
+Class: Pokefan
+Pic: Pokefan F
+Music: Twins
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
+
+=== TRAINER_PBL_JAN_AND_ERIN ===
+Name: Abigail
+Class: Pokefan
+Pic: Pokefan F
+Music: Twins
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
+
+=== TRAINER_PBL_STEVE ===
+Name: Abigail
+Class: Pokefan
+Pic: Pokefan F
+Music: Twins
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
+
+=== TRAINER_PBL_MAGMA_GRUNT_13A_1 ===
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
+
+=== TRAINER_PBL_MAGMA_GRUNT_13B_1 ===
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
+
+=== TRAINER_PBL_MAGMA_GRUNT_13B_2 ===
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
+
 === TRAINER_PBL_NEWTON_LEVIATHAN_13 ===
 Name: Newton
 Class: Scientist
@@ -2148,6 +2233,76 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Stomping Tantrum
 - Sucker Punch
 - Facade
+
+=== TRAINER_PBL_MAGMA_GRUNT_14A_1 ===
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
+
+=== TRAINER_PBL_MAGMA_GRUNT_14A_2 ===
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
+
+=== TRAINER_PBL_MAGMA_GRUNT_14A_3 ===
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
+
+=== TRAINER_PBL_MAGMA_GRUNT_14A_4 ===
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
+
+=== TRAINER_PBL_MAGMA_GRUNT_14B_1 ===
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
+
+=== TRAINER_PBL_MAGMA_GRUNT_14B_2 ===
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
+
+=== TRAINER_PBL_MAGMA_GRUNT_14B_3 ===
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 
 === TRAINER_PBL_TABITHA_LEVIATHAN_14 ===
 Name: Tabitha
@@ -2387,121 +2542,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Flame Charge
 - High Horsepower
 - Low Kick
-
-=== TRAINER_PBL_VIOLET ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Qwilfish
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Tangela
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Sneasel
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Gligar
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_WANDA ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Tranquill
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Poliwhirl
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Gloom
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Weepinbell
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_AMBER_AND_KIM ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Basculin
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Kirlia
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Audino
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Dolliv
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_JAN_AND_ERIN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Furfrou-Star
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Furfrou-Heart
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Furfrou-Dandy
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Furfrou-Debutante
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_PBL_STEVE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Mawile
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Sableye
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Nidorino
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Nidorina
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PBL_GOULD ===
 Name: STEVEN

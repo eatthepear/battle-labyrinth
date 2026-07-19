@@ -4619,27 +4619,19 @@ u16 GetNumTrainersRemaining(void)
         break;
     case 13:
     case 14:
-        count += !HasTrainerBeenFought(TRAINER_PBL_VIOLET);
-        count += !HasTrainerBeenFought(TRAINER_PBL_WANDA);
-        count += !HasTrainerBeenFought(TRAINER_PBL_AMBER_AND_KIM);
-        count += !HasTrainerBeenFought(TRAINER_PBL_JAN_AND_ERIN);
-        count += !HasTrainerBeenFought(TRAINER_PBL_STEVE);
-        count += !HasTrainerBeenFought(TRAINER_PBL_GOULD);
-        count += !HasTrainerBeenFought(TRAINER_PBL_MENDEL);
-        count += !HasTrainerBeenFought(TRAINER_PBL_DARWIN);
-        count += !FlagGet(FLAG_BEAT_LEVIATHAN_11);
-        count += !HasTrainerBeenFought(TRAINER_PBL_BART);
-        count += !HasTrainerBeenFought(TRAINER_PBL_NIGEL);
-        count += !HasTrainerBeenFought(TRAINER_PBL_LOLA);
-        count += !HasTrainerBeenFought(TRAINER_PBL_CHARLIE);
-        count += !HasTrainerBeenFought(TRAINER_PBL_RANDOLPH);
-        count += !HasTrainerBeenFought(TRAINER_PBL_TODD);
-        count += !HasTrainerBeenFought(TRAINER_PBL_RUSSELL);
-        count += !HasTrainerBeenFought(TRAINER_PBL_OTIS);
-        count += !FlagGet(FLAG_BEAT_LEVIATHAN_12);
+        for (trainer = TRAINER_PBL_VIOLET; trainer <= TRAINER_PBL_MAGMA_GRUNT_13B_2; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_13);
+        for (trainer = TRAINER_PBL_MAGMA_GRUNT_14A_1; trainer <= TRAINER_PBL_MAGMA_GRUNT_14B_3; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_14);
         break;
     case 15:
-        count += !FlagGet(FLAG_BEAT_LEVIATHAN_13);
+        count += !FlagGet(FLAG_BEAT_LEVIATHAN_15);
         break;
     case 16:
         count += !HasTrainerBeenFought(TRAINER_PBL_IONA);

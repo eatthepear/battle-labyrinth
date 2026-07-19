@@ -167,6 +167,8 @@ static const u32 sNumFoes[] =
     21, // zone 10
     16,
     23,
+    40,
+    40,
 };
 
 u32 GetExpValue(void)

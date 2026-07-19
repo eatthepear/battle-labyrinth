@@ -13,6 +13,30 @@ mapscripts Zone13A_MapScripts {
 	}
 }
 
+script Zone13A_EventScript_MagmaGrunt {
+	lock
+	faceplayer
+	msgbox(format("a"))
+	trainerbattle_no_intro(TRAINER_PBL_MAGMA_GRUNT_13A_1, format("We lost!"))
+	msgbox(format("Oh, don't be irked!"))
+	closemessage
+	applymovement(LOCALID_MAGMA_GRUNT_13A, Common_Movement_FaceUp)
+	waitmovement
+	opendoor(20, 18)
+	waitdooranim
+	applymovement(LOCALID_MAGMA_GRUNT_13A, Zone13A_Movement_MagmaGruntWalkUp)
+	waitmovement(0)
+	removeobject(LOCALID_MAGMA_GRUNT_13A)
+	setflag(FLAG_HIDE_ZONE13A_MAGMA_GRUNT)
+	release
+	end
+}
+
+movement Zone13A_Movement_MagmaGruntWalkUp {
+	walk_up
+	set_invisible
+}
+
 script Zone13A_EventScript_ParasolLady {
 	lock
 	faceplayer
