@@ -6740,3 +6740,180 @@ AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
 Bulbasaur
+
+=== TRAINER_POOL_ENDGAME ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Abomasnow @ Occa Berry
+Ability: Snow Warning
+Bashful Nature
+- Blizzard
+- Aurora Veil
+- Giga Drain
+- Earth Power
+
+Absol @ Scope Lens
+Ability: Super Luck
+- Night Slash
+- Psycho Cut
+- Close Combat
+- Play Rough
+
+Accelgor
+Ability: Unburden
+- Bug Buzz
+- Energy Ball
+- U-turn
+- Water Shuriken
+
+Aegislash
+Ability: Stance Change
+- King's Shield
+- Sacred Sword
+- Shadow Sneak
+- Shadow Ball
+
+Aerodactyl
+Ability: Unnerve
+- Dual Wingbeat
+- Earthquake
+- Rock Slide
+- Aqua Tail
+
+Aggron @ Chople Berry
+Ability: Sturdy
+- Rock Slide
+- Iron Head
+- Earthquake
+- Body Press
+
+Alakazam
+Ability: Magic Guard
+- Psychic
+- Dazzling Gleam
+- Shadow Ball
+- Focus Blast
+
+Alcremie
+Ability: Sweet Veil
+- Draining Kiss
+- Mystical Fire
+- Psychic
+- Decorate
+
+Alomomola
+Ability: Regenerator
+- Scald
+- Toxic
+- Wish
+- Protect
+
+Altaria @ Yache Berry
+Ability: Natural Cure
+- Draco Meteor
+- Brave Bird
+- Fire Blast
+- Roost
+
+Ambipom
+Ability: Skill Link
+- Fake Out
+- Tail Slap
+- Knock Off
+- U-turn
+
+Amoonguss
+Ability: Effect Spore
+- Giga Drain
+- Spore
+- Sludge Bomb
+- Synthesis
+
+Ampharos
+Ability: Static
+- Volt Switch
+- Thunderbolt
+- Focus Blast
+- Dazzling Gleam
+
+Appletun @ Sitrus Berry
+Ability: Ripen
+- Apple Acid
+- Dragon Pulse
+- Leech Seed
+- Recover
+
+Araquanid
+Ability: Water Bubble
+- Leech Life
+- Liquidation
+- Mirror Coat
+- Wide Guard
+
+Arbok
+Ability: Intimidate
+- Poison Jab
+- Crunch
+- Aqua Tail
+- Glare
+
+Arboliva
+Ability: Seed Sower
+- Giga Drain
+- Hyper Voice
+- Alluring Voice
+- Strength Sap
+
+Arcanine
+Ability: Intimidate
+- Flamethrower
+- Extreme Speed
+- Wild Charge
+- Play Rough
+
+Arcanine-Hisui
+Ability: Rock Head
+- Flare Blitz
+- Head Smash
+- Wild Charge
+- Extreme Speed
+
+Archaludon
+Ability: Stamina
+- Dragon Pulse
+- Aura Sphere
+- Flash Cannon
+- Electro Shot
+
+Archeops
+Ability: Defeatist
+- Dual Wingbeat
+- Rock Slide
+- Roost
+- Earthquake
+
+Arctovish
+Ability: Water Absorb
+- Fishious Rend
+- Icicle Crash
+- Rock Slide
+- Zen Headbutt
+
+Arctozolt
+Ability: Volt Absorb
+- Bolt Beak
+- Icicle Crash
+- Low Kick
+- Surf
+
+Ariados
+Ability: Swarm
+- Megahorn
+- Poison Jab
+- Shadow Sneak
+- Sticky Web
