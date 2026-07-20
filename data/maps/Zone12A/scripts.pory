@@ -28,6 +28,45 @@ mapscripts Zone12A_MapScripts {
 	}
 }
 
+script Zone12A_EventScript_TriggerSerena {
+	lockall
+	applymovement(LOCALID_SERENA_12A, Common_Movement_FaceRight)
+	waitmovement(0)
+	playbgm(MUS_BW_FRIEND, TRUE)
+	applymovement(LOCALID_SERENA_12A, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement(0)
+	delay(16)
+	applymovement(LOCALID_SERENA_12A, Common_Movement_WalkRight4)
+	waitmovement(0)
+	setspeaker("Serena")
+	msgbox(format("Hello!"))
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_SERENA_LEVIATHAN_12, format("Defeat!"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Serena")
+	msgbox(format("I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
+	setspeaker(SP_NAME_NONE)
+	// giveitem(ITEM_TM_FALSE_SWIPE)
+	setspeaker("Serena")
+	msgbox(format("Well, anyways, I've gotta run now.\pBye bye!"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_SERENA_12A, Common_Movement_WalkLeft4)
+	waitmovement(0)
+	applymovement(LOCALID_SERENA_12A, Common_Movement_WalkDown)
+	waitmovement(0)
+	applymovement(LOCALID_SERENA_12A, Common_Movement_WalkLeft3)
+	waitmovement(0)
+	removeobject(LOCALID_SERENA_12A)
+	setflag(FLAG_BEAT_LEVIATHAN_12)
+	setvar(VAR_ZONE_12_STATE, 1)
+	fadedefaultbgm
+	releaseall
+	end
+}
+
 script Zone12A_EventScript_TMBrickBreak {
 	lock
 	if (flag(FLAG_ITEM_ZONE12A_TM_BRICK_BREAK)) {
