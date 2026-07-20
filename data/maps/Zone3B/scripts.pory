@@ -1,8 +1,8 @@
 mapscripts Zone3B_MapScripts {}
 
-script Zone3B_EventScript_Phillipa {
+script Zone3B_EventScript_Phillip {
     lock
-	setspeaker("Phillipa")
+	setspeaker("Phillip")
 	msgbox(format("This food is so tasty!"))
     release
     end

@@ -4535,7 +4535,7 @@ u16 GetNumTrainersRemaining(void)
     switch (zone)
     {
     case 1:
-        for (trainer = TRAINER_PBL_NINA; trainer <= TRAINER_PBL_OSCAR; trainer++) {
+        for (trainer = TRAINER_PBL_NINO; trainer <= TRAINER_PBL_OSCAR; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
@@ -4549,7 +4549,7 @@ u16 GetNumTrainersRemaining(void)
         count += !FlagGet(FLAG_BEAT_LEVIATHAN_2);
         break;
     case 3:
-        for (trainer = TRAINER_PBL_JEMMA; trainer <= TRAINER_PBL_PHILLIPA_OPTIONAL_1; trainer++) {
+        for (trainer = TRAINER_PBL_JEMMA; trainer <= TRAINER_PBL_PHILLIP_OPTIONAL_1; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }

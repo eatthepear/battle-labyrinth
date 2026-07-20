@@ -73,61 +73,61 @@ script Zone3A_EventScript_GymGuide {
     end
 }
 
-script Zone3A_EventScript_Phillipa {
+script Zone3A_EventScript_Phillip {
 	lock
 	faceplayer
-	setspeaker("Phillipa")
+	setspeaker("Phillip")
 	msgbox(format("I heard there's a move like {COLOR GREEN}Rollout{COLOR DARK_GRAY}, but Ice-type instead.\pThat sounds pretty neat!"))
 	release
 	end
 }
 
-script Zone3A_EventScript_TriggerPhillipaLeft {
+script Zone3A_EventScript_TriggerPhillipLeft {
 	lockall
-	applymovement(LOCALID_PHILLIPA, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_PHILLIP, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	applymovement(LOCALID_PHILLIPA, Common_Movement_WalkLeft)
+	applymovement(LOCALID_PHILLIP, Common_Movement_WalkLeft)
 	waitmovement(0)
-	call(Zone3A_EventScript_TriggerPhillipa)
-	applymovement(LOCALID_PHILLIPA, Common_Movement_WalkRight)
+	call(Zone3A_EventScript_TriggerPhillip)
+	applymovement(LOCALID_PHILLIP, Common_Movement_WalkRight)
 	waitmovement(0)
 	releaseall
 	end
 }
 
-script Zone3A_EventScript_TriggerPhillipaRight {
+script Zone3A_EventScript_TriggerPhillipRight {
 	lockall
-	applymovement(LOCALID_PHILLIPA, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_PHILLIP, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	call(Zone3A_EventScript_TriggerPhillipa)
+	call(Zone3A_EventScript_TriggerPhillip)
 	releaseall
 	end
 }
 
-script Zone3A_EventScript_TriggerPhillipa {
-	applymovement(LOCALID_PHILLIPA, Common_Movement_WalkDown3)
+script Zone3A_EventScript_TriggerPhillip {
+	applymovement(LOCALID_PHILLIP, Common_Movement_WalkDown3)
 	waitmovement(0)
-	setspeaker("Phillipa")
+	setspeaker("Phillip")
 	msgbox(format("This right here is my island! You gotta deal with it!\pSomething about the look in your eyes says you're gonna challenge me for it.\pIf you wanna battle, I'll go all out with {COLOR GREEN}Rollout{COLOR DARK_GRAY}!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		msgbox(format("Aha! You're scared! Go away, scaredy cat!"), MSGBOX_AUTOCLOSE)
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
 		waitmovement(0)
-		applymovement(LOCALID_PHILLIPA, Common_Movement_WalkUp3)
+		applymovement(LOCALID_PHILLIP, Common_Movement_WalkUp3)
 		waitmovement(0)
 		return
 	}
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_PHILLIPA_OPTIONAL_1, format("Wah!!!"))
+	trainerbattle_no_intro(TRAINER_PBL_PHILLIP_OPTIONAL_1, format("Wah!!!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	setspeaker("Phillipa")
+	setspeaker("Phillip")
 	msgbox(format("You beat me! No fair! Argh…\pFine, you can explore this island too.\pHave that {COLOR GREEN}Rare Candy{COLOR DARK_GRAY} too while you're at it!"), MSGBOX_AUTOCLOSE)
 	setvar(VAR_ZONE_3_STATE, 1)
-	applymovement(LOCALID_PHILLIPA, Common_Movement_WalkUp3)
+	applymovement(LOCALID_PHILLIP, Common_Movement_WalkUp3)
 	waitmovement(0)
 	releaseall
 	end

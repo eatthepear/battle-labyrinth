@@ -210,11 +210,11 @@ text Zone1A_Text_FWG_ComeBack {
 	format("Come back another time!")
 }
 
-movement Zone1A_Corey_WalkLeft {
+movement Zone1A_Cori_WalkLeft {
 	walk_left * 4
 }
 
-movement Zone1A_Corey_WalkRight {
+movement Zone1A_Cori_WalkRight {
 	walk_right * 4
 }
 
@@ -222,20 +222,20 @@ script Zone1A_EventScript_TriggerLeviathanBottom {
 	lockall
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
-	applymovement(LOCALID_COREY, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_CORI, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	applymovement(LOCALID_COREY, Common_Movement_WalkDown)
+	applymovement(LOCALID_CORI, Common_Movement_WalkDown)
 	waitmovement(0)
-	applymovement(LOCALID_COREY, Zone1A_Corey_WalkLeft)
+	applymovement(LOCALID_CORI, Zone1A_Cori_WalkLeft)
 	waitmovement(0)
 	call(Zone1A_EventScript_LeviathanBattle)
-	applymovement(LOCALID_COREY, Common_Movement_WalkUp)
+	applymovement(LOCALID_CORI, Common_Movement_WalkUp)
 	waitmovement(0)
-	applymovement(LOCALID_COREY, Zone1A_Corey_WalkRight)
+	applymovement(LOCALID_CORI, Zone1A_Cori_WalkRight)
 	waitmovement(0)
-	applymovement(LOCALID_COREY, Common_Movement_FaceLeft)
+	applymovement(LOCALID_CORI, Common_Movement_FaceLeft)
 	waitmovement(0)
 	applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
 	waitmovement(0)
@@ -244,16 +244,16 @@ script Zone1A_EventScript_TriggerLeviathanBottom {
 
 script Zone1A_EventScript_TriggerLeviathanMiddle {
 	lockall
-	applymovement(LOCALID_COREY, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_CORI, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	applymovement(LOCALID_COREY, Zone1A_Corey_WalkLeft)
+	applymovement(LOCALID_CORI, Zone1A_Cori_WalkLeft)
 	waitmovement(0)
 	call(Zone1A_EventScript_LeviathanBattle)
-	applymovement(LOCALID_COREY, Zone1A_Corey_WalkRight)
+	applymovement(LOCALID_CORI, Zone1A_Cori_WalkRight)
 	waitmovement(0)
-	applymovement(LOCALID_COREY, Common_Movement_FaceLeft)
+	applymovement(LOCALID_CORI, Common_Movement_FaceLeft)
 	waitmovement(0)
 	applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
 	waitmovement(0)
@@ -262,20 +262,20 @@ script Zone1A_EventScript_TriggerLeviathanMiddle {
 
 script Zone1A_EventScript_TriggerLeviathanTop {
 	lockall
-	applymovement(LOCALID_COREY, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_CORI, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	applymovement(LOCALID_COREY, Common_Movement_WalkUp)
+	applymovement(LOCALID_CORI, Common_Movement_WalkUp)
 	waitmovement(0)
-	applymovement(LOCALID_COREY, Zone1A_Corey_WalkLeft)
+	applymovement(LOCALID_CORI, Zone1A_Cori_WalkLeft)
 	waitmovement(0)
 	call(Zone1A_EventScript_LeviathanBattle)
-	applymovement(LOCALID_COREY, Common_Movement_WalkDown)
+	applymovement(LOCALID_CORI, Common_Movement_WalkDown)
 	waitmovement(0)
-	applymovement(LOCALID_COREY, Zone1A_Corey_WalkRight)
+	applymovement(LOCALID_CORI, Zone1A_Cori_WalkRight)
 	waitmovement(0)
-	applymovement(LOCALID_COREY, Common_Movement_FaceLeft)
+	applymovement(LOCALID_CORI, Common_Movement_FaceLeft)
 	waitmovement(0)
 	applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
 	waitmovement(0)
@@ -283,34 +283,34 @@ script Zone1A_EventScript_TriggerLeviathanTop {
 }
 
 script Zone1A_EventScript_LeviathanBattle {
-	setspeaker("Corey")
+	setspeaker("Cori")
 	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		setspeaker("Corey")
+		setspeaker("Cori")
 		msgbox(Zone1A_Text_Leviathan1Wait, MSGBOX_AUTOCLOSE)
 		return
 	}
 	fadeoutbgm(1)
-	setspeaker("Corey")
+	setspeaker("Cori")
 	msgbox(Zone1A_Text_Leviathan1Intro2)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	switch (var(VAR_STARTER_MON)) {
 		case 0:
-			trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER, Zone1A_Text_Leviathan1Defeat)
+			trainerbattle_no_intro(TRAINER_PBL_CORI_LEVIATHAN_1_GRASS_STARTER, Zone1A_Text_Leviathan1Defeat)
 		case 1:
-			trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER, Zone1A_Text_Leviathan1Defeat)
+			trainerbattle_no_intro(TRAINER_PBL_CORI_LEVIATHAN_1_FIRE_STARTER, Zone1A_Text_Leviathan1Defeat)
 		case 2:
-			trainerbattle_no_intro(TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER, Zone1A_Text_Leviathan1Defeat)
+			trainerbattle_no_intro(TRAINER_PBL_CORI_LEVIATHAN_1_WATER_STARTER, Zone1A_Text_Leviathan1Defeat)
 	}
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	setspeaker("Corey")
+	setspeaker("Cori")
 	msgbox(format("I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_FALSE_SWIPE)
-	setspeaker("Corey")
+	setspeaker("Cori")
 	msgbox(format("Well, anyways, I've gotta run now.\pBye bye!"), MSGBOX_AUTOCLOSE)
 	fadescreenswapbuffers(FADE_TO_BLACK)
-	removeobject(LOCALID_COREY)
+	removeobject(LOCALID_CORI)
 	setflag(FLAG_BEAT_LEVIATHAN_1)
 	setvar(VAR_ZONE_1_STATE, 1)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
@@ -319,7 +319,7 @@ script Zone1A_EventScript_LeviathanBattle {
 }
 
 text Zone1A_Text_Leviathan1Intro {
-	format("Hi! My name's Corey.\n"
+	format("Hi! My name's Cori.\n"
 		   "I'm the resident Leviathan around here.\p"
 		   "If you want to go forward, you'll have to beat me!\p"
 		   "So, are you ready for our battle?")
@@ -374,18 +374,18 @@ script Zone1A_EventScript_QuickClaw {
 }
 
 raw `
-Zone1A_EventScript_Nina::
-	trainerbattle_single TRAINER_PBL_NINA, Zone1A_Text_NinaIntro, Zone1A_Text_NinaDefeat
-	msgbox Zone1A_Text_NinaPostBattle, MSGBOX_AUTOCLOSE
+Zone1A_EventScript_Nino::
+	trainerbattle_single TRAINER_PBL_NINO, Zone1A_Text_NinoIntro, Zone1A_Text_NinoDefeat
+	msgbox Zone1A_Text_NinoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Zone1A_Text_NinaIntro:
+Zone1A_Text_NinoIntro:
 	.string "Hey, you! Let's battle!$"
 
-Zone1A_Text_NinaDefeat:
+Zone1A_Text_NinoDefeat:
 	.string "Aww… Come on!$"
 
-Zone1A_Text_NinaPostBattle:
+Zone1A_Text_NinoPostBattle:
 	.string "I always lose…$"
 
 Zone1A_EventScript_Mariam::

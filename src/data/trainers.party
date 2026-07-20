@@ -95,8 +95,8 @@ IVs: 0 Atk / 0 Spe
 - Baton Pass
 - Acrobatics
 
-=== TRAINER_PBL_NINA ===
-Name: Nina
+=== TRAINER_PBL_NINO ===
+Name: Nino
 Class: School Kid
 Pic: School Kid F
 Music: Girl
@@ -128,10 +128,10 @@ Party Size: 3
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_1
 
-=== TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER ===
-Name: Corey
+=== TRAINER_PBL_CORI_LEVIATHAN_1_GRASS_STARTER ===
+Name: Cori
 Class: School Kid
-Pic: School Kid M
+Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
@@ -162,10 +162,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
 - Scratch
 
-=== TRAINER_PBL_COREY_LEVIATHAN_1_GRASS_STARTER ===
-Name: Corey
+=== TRAINER_PBL_CORI_LEVIATHAN_1_GRASS_STARTER ===
+Name: Cori
 Class: School Kid
-Pic: School Kid M
+Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
@@ -196,10 +196,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
 - Scratch
 
-=== TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER ===
-Name: Corey
+=== TRAINER_PBL_CORI_LEVIATHAN_1_FIRE_STARTER ===
+Name: Cori
 Class: School Kid
-Pic: School Kid M
+Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
@@ -230,10 +230,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
 
-=== TRAINER_PBL_COREY_LEVIATHAN_1_FIRE_STARTER ===
-Name: Corey
+=== TRAINER_PBL_CORI_LEVIATHAN_1_FIRE_STARTER ===
+Name: Cori
 Class: School Kid
-Pic: School Kid M
+Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
@@ -264,10 +264,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
 
-=== TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER ===
-Name: Corey
+=== TRAINER_PBL_CORI_LEVIATHAN_1_WATER_STARTER ===
+Name: Cori
 Class: School Kid
-Pic: School Kid M
+Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
@@ -298,10 +298,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leafage
 - Scratch
 
-=== TRAINER_PBL_COREY_LEVIATHAN_1_WATER_STARTER ===
-Name: Corey
+=== TRAINER_PBL_CORI_LEVIATHAN_1_WATER_STARTER ===
+Name: Cori
 Class: School Kid
-Pic: School Kid M
+Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
@@ -507,11 +507,11 @@ Party Size: 2
 Pool Prune: Non Normal
 Copy Pool: TRAINER_POOL_ZONE_3
 
-=== TRAINER_PBL_PHILLIPA_OPTIONAL_1 ===
-Name: Phillipa
-Class: School Kid
-Pic: School Kid F
-Music: Girl
+=== TRAINER_PBL_PHILLIP_OPTIONAL_1 ===
+Name: Phillip
+Class: Rich Boy
+Pic: Rich Boy
+Music: Rich
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
@@ -1022,7 +1022,7 @@ Pool Prune: Non Normal
 Copy Pool: TRAINER_POOL_ZONE_6
 
 === TRAINER_PBL_MINA ===
-Name: Nina
+Name: Mina
 Class: Tuber F
 Pic: Tuber F
 Music: Girl
