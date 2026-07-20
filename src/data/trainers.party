@@ -1947,106 +1947,104 @@ Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_COLLECTOR
 
-=== TRAINER_PBL_ESSENCE_LEVIATHAN_12 ===
-Name: Essence
-Class: Beauty
-Pic: Beauty
+=== TRAINER_PBL_SERENA_LEVIATHAN_12 ===
+Name: Serena
+Class: Rival
+Pic: Serena
 Music: Female
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
-Mugshot: Green
-Difficulty: Normal
+Mugshot: Pink
 
-Aromatisse @ Fairy Feather
-Quiet Nature
-Ability: Aroma Veil
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Draining Kiss
-- Psybeam
-- Wish
-
-Vespiquen @ Charti Berry
-Brave Nature
-Ability: Unnerve
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Attack Order
-- Defend Order
-- Heal Order
-
-Gorebyss @ Mystic Water
+Vivillon @ Silver Powder
 Timid Nature
-Ability: Swift Swim
-Level: 26
+Ability: Compound Eyes
+Level: 27
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Brine
-- Icy Wind
-- Signal Beam
+- Air Cutter
+- Struggle Bug
+- Draining Kiss
+- Sleep Powder
 
-Persian @ Sitrus Berry
+Braixen @ Wise Glasses
+Timid Nature
+Ability: Blaze
+Level: 27
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Incinerate
+- Psybeam
+- Scorching Sands
+- Will-O-Wisp
+
+Bewear @ Muscle Band
 Adamant Nature
-Ability: Technician
+Ability: Fluffy
+Level: 27
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Force Palm
+- Stomp
+- Brutal Swing
+- Bind
+
+Absol @ Sitrus Berry
+Jolly Nature
+Ability: Super Luck
 Level: 28
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fake Out
-- Covet
-- Thief
+- Assurance
+- Zen Headbutt
+- Taunt
+- Quick Attack
 
-=== TRAINER_PBL_ESSENCE_LEVIATHAN_12 ===
-Name: Essence
-Class: Beauty
-Pic: Beauty
+=== TRAINER_PBL_SERENA_LEVIATHAN_12 ===
+Name: Serena
+Class: Rival
+Pic: Serena
 Music: Female
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
-Mugshot: Green
+Mugshot: Pink
 Difficulty: Brutal
 
-Aromatisse @ Fairy Feather
-Quiet Nature
-Ability: Aroma Veil
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Draining Kiss
-- Psybeam
-- Wish
-
-Vespiquen @ Charti Berry
-Brave Nature
-Ability: Unnerve
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Attack Order
-- Defend Order
-- Heal Order
-
-Gorebyss @ Mystic Water
+Vivillon @ Silver Powder
 Timid Nature
-Ability: Swift Swim
-Level: 26
+Ability: Compound Eyes
+Level: 27
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Brine
-- Icy Wind
-- Signal Beam
+- Air Slash
+- Bug Buzz
+- Draining Kiss
+- Sleep Powder
 
-Persian @ Sitrus Berry
+Braixen @ Wise Glasses
+Timid Nature
+Ability: Blaze
+Level: 27
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Psyshock
+- Scorching Sands
+- Will-O-Wisp
+
+Bewear @ Muscle Band
 Adamant Nature
-Ability: Technician
+Ability: Fluffy
+Level: 27
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drain Punch
+- Return
+- Brutal Swing
+- Bind
+
+Absol @ Sitrus Berry
+Jolly Nature
+Ability: Super Luck
 Level: 28
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fake Out
-- Covet
-- Thief
-
-Lilligant @ Big Root
-Modest Nature
-Ability: Own Tempo
-Level: 26
-IVs: 31 HP / 31 Atk / 30 Def / 31 SpA / 30 SpD / 30 Spe
-- Giga Drain
-- Alluring Voice
-- Quiver Dance
+- Night Slash
+- Psycho Cut
+- Taunt
+- Quick Attack
 
 === TRAINER_PBL_VIOLET ===
 Name: Abigail
