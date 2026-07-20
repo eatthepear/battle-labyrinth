@@ -222,15 +222,7 @@ void BattleAI_SetupItems(void)
 
 static u64 GetWildAiFlags(void)
 {
-    u32 avgLevel = GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_LEVEL);
-    u64 flags = 0;
-
-    if (IsDoubleBattle())
-        avgLevel = (GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_LEVEL) + GetMonData(&gParties[B_TRAINER_OPPONENT_A][1], MON_DATA_LEVEL)) / 2;
-
-    flags |= AI_FLAG_LEVIATHAN;
-
-    return flags;
+    return AI_FLAG_LEVIATHAN;
 }
 
 static bool32 IsSmartBattle(void)
