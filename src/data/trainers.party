@@ -2302,115 +2302,115 @@ Double Battle: No
 Party Size: 2
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 
-=== TRAINER_PBL_TABITHA_LEVIATHAN_14 ===
-Name: Tabitha
+=== TRAINER_PBL_COURTNEY_LEVIATHAN_14 ===
+Name: Courtney
 Class: Magma Admin
-Pic: Magma Admin
+Pic: Magma Admin F
 Music: Magma
 Double Battle: No
 AI: AI_FLAG_LEVIATHAN
 Mugshot: Blue
 Difficulty: Normal
-
-Ninetales @ Heat Rock
-Modest Nature
-Ability: Drought
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Flamethrower
-- Extrasensory
-- Solar Beam
-- Scorching Sands
-
-Donphan @ Rindo Berry
-Jolly Nature
-Ability: Sturdy
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Stomping Tantrum
-- Fire Fang
-- Rock Slide
-- Ice Shard
-
-Tropius @ Sitrus Berry
+				
+Thievul @ Dark Gem
 Timid Nature
-Ability: Harvest
+Ability: Stakeout
 Level: 30
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
-- Air Slash
-- Leech Seed
-- Substitute
+- Dark Pulse
+- Burning Jealousy
+- U-Turn
+- Taunt
 
-Solrock @ Colbur Berry
-Adamant Nature
-Ability: Levitate
-Level: 32
+Nidoqueen @ Expert Belt
+Mild Nature
+Ability: Sheer Force
+Level: 30
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge Wave
+- Scorching Sands
+- Crunch
 - Rock Slide
-- Zen Headbutt
-- Flare Blitz
-- Morning Sun
 
-=== TRAINER_PBL_TABITHA_LEVIATHAN_14 ===
-Name: Tabitha
+Swoobat @ Sharp Beak
+Modest Nature
+Ability: Unaware
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Air Slash
+- Giga Drain
+- Roost
+
+Pyroar (M) @ Sitrus Berry
+Timid Nature
+Ability: Unnerve
+Level: 32
+IVs: 30 HP / 31 Atk / 31 Def / 30 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Hyper Voice
+- Hidden Power
+- Work Up
+
+=== TRAINER_PBL_COURTNEY_LEVIATHAN_14 ===
+Name: Courtney
 Class: Magma Admin
-Pic: Magma Admin
+Pic: Magma Admin F
 Music: Magma
 Double Battle: No
 AI: AI_FLAG_LEVIATHAN
 Mugshot: Blue
 Difficulty: Brutal
-
-Ninetales @ Heat Rock
-Modest Nature
-Ability: Drought
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Flamethrower
-- Extrasensory
-- Solar Beam
-- Scorching Sands
-
-Donphan @ Rindo Berry
-Jolly Nature
-Ability: Sturdy
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Stomping Tantrum
-- Fire Fang
-- Rock Slide
-- Ice Shard
-
-Tropius @ Sitrus Berry
+				
+Thievul @ Dark Gem
 Timid Nature
-Ability: Harvest
+Ability: Stakeout
 Level: 30
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
-- Air Slash
-- Leech Seed
-- Substitute
+- Dark Pulse
+- Burning Jealousy
+- U-Turn
+- Taunt
 
-Solrock @ Colbur Berry
-Adamant Nature
-Ability: Levitate
-Level: 32
+Nidoqueen @ Expert Belt
+Mild Nature
+Ability: Sheer Force
+Level: 30
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge Wave
+- Scorching Sands
+- Crunch
 - Rock Slide
-- Zen Headbutt
-- Flare Blitz
-- Morning Sun
 
-Helioptile @ Wise Glasses
-Naive Nature
-Ability: Solar Power
+Swoobat @ Sharp Beak
+Modest Nature
+Ability: Unaware
 Level: 30
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Volt Switch
+- Psychic
+- Air Slash
+- Giga Drain
+- Roost
+
+Tsareena @ Muscle Band
+Jolly Nature
+Ability: 
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Trop Kick
+- Knock Off
+- Low Sweep
+- U-turn
+
+Pyroar (M) @ Sitrus Berry
+Timid Nature
+Ability: Unnerve
+Level: 32
+IVs: 30 HP / 31 Atk / 31 Def / 30 SpA / 31 SpD / 31 Spe
+- Flamethrower
 - Hyper Voice
-- Weather Ball
-- Grass Knot
+- Hidden Power
+- Work Up
 
 === TRAINER_PBL_LT_SURGE_LEVIATHAN_15 ===
 Name: Lt. Surge

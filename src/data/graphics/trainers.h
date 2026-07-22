@@ -570,6 +570,9 @@ const u16 gTrainerPalette_Ariana[] = INCGFX_U16("graphics/trainers/front_pics/ar
 const u32 gTrainerFrontPic_Proton[] = INCGFX_U32("graphics/trainers/front_pics/proton.png", ".4bpp.smol");
 const u16 gTrainerPalette_Proton[] = INCGFX_U16("graphics/trainers/front_pics/proton.png", ".gbapal");
 
+const u32 gTrainerFrontPic_MagmaAdminF[] = INCGFX_U32("graphics/trainers/front_pics/magma_admin_f.png", ".4bpp.smol");
+const u16 gTrainerPalette_MagmaAdminF[] = INCGFX_U16("graphics/trainers/front_pics/magma_admin_f.png", ".gbapal");
+
 static const union AnimCmd sAnimCmd_Hoenn[] =
 {
     ANIMCMD_FRAME(0, 24),
@@ -1417,5 +1420,9 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     [TRAINER_PIC_PROTON] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Proton, gTrainerPalette_Proton),
+    },
+    [TRAINER_PIC_MAGMA_ADMIN_F] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_MagmaAdminF, gTrainerPalette_MagmaAdminF),
     },
 };
