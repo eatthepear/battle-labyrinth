@@ -1,4 +1,7 @@
 mapscripts Zone15A_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ZONE_15_STATE, 0: Zone15A_EventScript_SophoclesIntro
+	]
 	MAP_SCRIPT_ON_RESUME {
 		if (flag(FLAG_ITEM_ZONE15A_SNOWBALL_3)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
@@ -45,14 +48,18 @@ mapscripts Zone15A_MapScripts {
 
 script Zone15A_EventScript_SophoclesIntro {
 	lockall
-	applymovement(LOCALID_SOPHOCLES, Common_Movement_FaceUp)
+	applymovement(LOCALID_SOPHOCLES_1, Common_Movement_FaceUp)
 	waitmovement(0)
-	applymovement(LOCALID_SOPHOCLES, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_SOPHOCLES_1, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
 	setspeaker("Sophocles")
-	msgbox(format("Help! I was trying to train my Pokemon in this cave, but as soon as I let them out of their Poke Balls, they ran off in a frenzy! All my Plusle and Minun, and my Ampharos too! Could you help me find them? There should be 2 Plusle and 2 Minun to find, plus the Ampharos!"))
+	msgbox(format("Help! I was trying to train my Pokemon in this cave, but as soon as I let them out of their Poke Balls, they ran off in a frenzy! All my Plusle and Minun, and my Ampharos too! Could you help me find three Pokemon? I should have found the rest by then. I'll be by the southwest section of the cave."))
+	// movement
+	removeobject(LOCALID_SOPHOCLES_1)
+	setflag(FLAG_HIDE_ZONE15A_SOPHOCLES_1)
+	setvar(VAR_ZONE_15_STATE, 1)
 	releaseall
 	end
 }
@@ -66,7 +73,19 @@ script Zone15A_EventScript_Sophocles {
 	end
 }
 
-script Zone15A_EventScript_Plusle {
+script Zone15A_EventScript_Sophocles_BlockPassage {
+	lockall
+	applymovement(LOCALID_SOPHOCLES_2, Common_Movement_FaceLeft)
+	waitmovement(0)
+	setspeaker("Sophocles")
+	msgbox(format("I'll handle looking down this path! Once you find the others, come here and let me know!"))
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
+	waitmovement(0)
+	releaseall
+	end
+}
+
+script Zone15A_EventScript_Plusle_1 {
 	lock
 	faceplayer
 	waitse
@@ -78,12 +97,35 @@ script Zone15A_EventScript_Plusle {
 	delay(40)
 	waitmoncry
 	// movement
-	msgbox(format("Plusle took off! It seems to know the way back to Sophocles!"))
+	removeobject(LOCALID_PLUSLE_1)
+	setflag(FLAG_HIDE_ZONE15A_MON_1)
+	msgbox(format("Plusle took off! It seems to know the way to Sophocles!"))
+	call(Zone15A_EventScript_TimeToFindSophocles)
 	release
 	end
 }
 
-script Zone15A_EventScript_Minun_1 {
+script Zone15A_EventScript_Plusle_2 {
+	lock
+	faceplayer
+	waitse
+	playmoncry(SPECIES_PLUSLE, CRY_MODE_NORMAL)
+	delay(40)
+	waitmoncry
+	msgbox(format("Plusle looks confused and lost, but sniffs you. It seems to recognize the scent of Sophocles!"))
+	playmoncry(SPECIES_PLUSLE, CRY_MODE_NORMAL)
+	delay(40)
+	waitmoncry
+	// movement
+	removeobject(LOCALID_PLUSLE_2)
+	setflag(FLAG_HIDE_ZONE15A_MON_3)
+	msgbox(format("Plusle took off! It seems to know the way to Sophocles!"))
+	call(Zone15A_EventScript_TimeToFindSophocles)
+	release
+	end
+}
+
+script Zone15A_EventScript_Minun {
 	lock
 	faceplayer
 	waitse
@@ -95,26 +137,21 @@ script Zone15A_EventScript_Minun_1 {
 	delay(40)
 	waitmoncry
 	// movement
-	msgbox(format("Minun took off! It seems to know the way back to Sophocles!"))
+	removeobject(LOCALID_MINUN)
+	setflag(FLAG_HIDE_ZONE15A_MON_2)
+	msgbox(format("Minun took off! It seems to know the way to Sophocles!"))
+	call(Zone15A_EventScript_TimeToFindSophocles)
 	release
 	end
 }
 
-script Zone15A_EventScript_Minun_2 {
-	lock
-	faceplayer
-	waitse
-	playmoncry(SPECIES_MINUN, CRY_MODE_NORMAL)
-	delay(40)
-	waitmoncry
-	msgbox(format("Minun looks confused and lost, but sniffs you. It seems to recognize the scent of Sophocles!"))
-	playmoncry(SPECIES_MINUN, CRY_MODE_NORMAL)
-	delay(40)
-	waitmoncry
-	// movement
-	msgbox(format("Minun took off! It seems to know the way back to Sophocles!"))
-	release
-	end
+script Zone15A_EventScript_TimeToFindSophocles {
+	if (flag(FLAG_HIDE_ZONE15A_MON_1) && flag(FLAG_HIDE_ZONE15A_MON_2) && flag(FLAG_HIDE_ZONE15A_MON_3)) {
+		msgbox(format("You've found 3 Pokemon. Time to find Sophocles. He said he was in the southwest section of the cave."))
+		setvar(VAR_ZONE_15_STATE, 2)
+		setflag(FLAG_HIDE_ZONE15A_SOPHOCLES_1)
+	}
+	return
 }
 
 script Zone15A_EventScript_Ampharos {

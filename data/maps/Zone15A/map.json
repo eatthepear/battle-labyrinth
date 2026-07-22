@@ -68,8 +68,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_4",
-      "x": 76,
-      "y": 54,
+      "x": 72,
+      "y": 51,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -107,8 +107,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_7",
-      "x": 7,
-      "y": 47,
+      "x": 46,
+      "y": 40,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -158,49 +158,23 @@
       "flag": "FLAG_TEMP_3"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
-      "x": 16,
-      "y": 50,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_StrengthBoulder",
-      "flag": "FLAG_TEMP_12"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
-      "x": 15,
-      "y": 49,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_StrengthBoulder",
-      "flag": "FLAG_TEMP_11"
-    },
-    {
-      "local_id": "LOCALID_SOPHOCLES",
-      "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
+      "local_id": "LOCALID_SOPHOCLES_1",
+      "graphics_id": "OBJ_EVENT_GFX_SOPHOCLES",
       "x": 4,
       "y": 6,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_ZONE15A_SOPHOCLES_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(AMPHAROS)",
-      "x": 46,
-      "y": 41,
+      "x": 7,
+      "y": 48,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -208,7 +182,90 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Zone15A_EventScript_Ampharos",
-      "flag": "0"
+      "flag": "FLAG_BEAT_LEVIATHAN_15"
+    },
+    {
+      "local_id": "LOCALID_PLUSLE_1",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PLUSLE)",
+      "x": 76,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone15A_EventScript_Plusle_1",
+      "flag": "FLAG_HIDE_ZONE15A_MON_1"
+    },
+    {
+      "local_id": "LOCALID_MINUN",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MINUN)",
+      "x": 46,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone15A_EventScript_Minun",
+      "flag": "FLAG_HIDE_ZONE15A_MON_2"
+    },
+    {
+      "local_id": "LOCALID_PLUSLE_2",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PLUSLE)",
+      "x": 76,
+      "y": 54,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone15A_EventScript_Plusle_2",
+      "flag": "FLAG_HIDE_ZONE15A_MON_3"
+    },
+    {
+      "local_id": "LOCALID_SOPHOCLES_2",
+      "graphics_id": "OBJ_EVENT_GFX_SOPHOCLES",
+      "x": 18,
+      "y": 49,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone15A_EventScript_Sophocles",
+      "flag": "FLAG_HIDE_ZONE15A_SOPHOCLES_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MINUN)",
+      "x": 6,
+      "y": 48,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone15A_EventScript_Ampharos",
+      "flag": "FLAG_BEAT_LEVIATHAN_15"
+    },
+    {
+      "local_id": "LOCALID_SOPHOCLES_3",
+      "graphics_id": "OBJ_EVENT_GFX_SOPHOCLES",
+      "x": 7,
+      "y": 51,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone15A_EventScript_Sophocles",
+      "flag": "FLAG_BEAT_LEVIATHAN_15"
     }
   ],
   "warp_events": [
@@ -220,6 +277,16 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_ZONE_15_STATE",
+      "var_value": "1",
+      "script": "Zone15A_EventScript_Sophocles_BlockPassage"
+    }
+  ],
   "bg_events": []
 }
