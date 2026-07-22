@@ -172,8 +172,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
-      "x": 30,
-      "y": 39,
+      "x": 36,
+      "y": 40,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
       "movement_range_x": 0,
@@ -212,7 +212,7 @@
     {
       "local_id": "LOCALID_SERENA_12A",
       "graphics_id": "OBJ_EVENT_GFX_SERENA",
-      "x": 34,
+      "x": 35,
       "y": 38,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -281,7 +281,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 35,
+      "x": 36,
       "y": 37,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
