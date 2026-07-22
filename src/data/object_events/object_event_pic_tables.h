@@ -1560,6 +1560,10 @@ static const struct SpriteFrameImage sPicTable_Proton[] = {
     overworld_ascending_frames(gObjectEventPic_Proton, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Sophocles[] = {
+    overworld_ascending_frames(gObjectEventPic_Sophocles, 2, 4),
+};
+
 #if IS_FRLG
 
 static const struct SpriteFrameImage sPicTable_RedNormal[] = {

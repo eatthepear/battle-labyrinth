@@ -585,6 +585,9 @@ $(OBJEVENTGFXDIR)/people/ariana.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/proton.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/sophocles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/agatha.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

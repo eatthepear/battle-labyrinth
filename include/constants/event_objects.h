@@ -463,6 +463,7 @@ enum
     OBJ_EVENT_GFX_ARCHER,
     OBJ_EVENT_GFX_ARIANA,
     OBJ_EVENT_GFX_PROTON,
+    OBJ_EVENT_GFX_SOPHOCLES,
     NUM_OBJ_EVENT_GFX,
 };
 
@@ -712,6 +713,7 @@ enum
 #define OBJ_EVENT_PAL_TAG_ARCHER                  0x728E
 #define OBJ_EVENT_PAL_TAG_ARIANA                  0x728F
 #define OBJ_EVENT_PAL_TAG_PROTON                  0x7290
+#define OBJ_EVENT_PAL_TAG_SOPHOCLES               0x7291
 
 #define OBJ_EVENT_PAL_TAG_RUNNING_TRIATHLETE_F    0x7401
 #define OBJ_EVENT_PAL_TAG_SCHOOL_KID_M            0x7402

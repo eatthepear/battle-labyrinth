@@ -565,6 +565,8 @@ const u32 gObjectEventPic_Ariana[] = INCGFX_U32("graphics/object_events/pics/peo
 const u16 gObjectEventPal_Ariana[] = INCGFX_U16("graphics/object_events/pics/people/ariana.png", ".gbapal");
 const u32 gObjectEventPic_Proton[] = INCGFX_U32("graphics/object_events/pics/people/proton.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPal_Proton[] = INCGFX_U16("graphics/object_events/pics/people/proton.png", ".gbapal");
+const u32 gObjectEventPic_Sophocles[] = INCGFX_U32("graphics/object_events/pics/people/sophocles.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_Sophocles[] = INCGFX_U16("graphics/object_events/pics/people/sophocles.png", ".gbapal");
 
 const u32 gFieldEffectObjectPic_SnowFootprints[] = INCGFX_U32("graphics/field_effects/pics/snow_footprints.png", ".4bpp");
 #if IS_FRLG
