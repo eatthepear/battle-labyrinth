@@ -252,30 +252,6 @@ script Zone13C_EventScript_Cook {
 }
 
 raw `
-
-Zone13C_EventScript_Darwin::
-	trainerbattle_single TRAINER_PBL_DARWIN, Zone13C_Text_DarwinIntro, Zone13C_Text_DarwinDefeat
-	msgbox Zone13C_Text_DarwinPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone13C_Text_DarwinIntro:
-	.string "I've been doing research on\n"
-	.string "branched evolutions!$"
-
-Zone13C_Text_DarwinDefeat:
-	.string "Even some starters have branched\n"
-	.string "evolution!$"
-
-Zone13C_Text_DarwinPostBattle:
-	.string "According to my research:\p"
-	.string "Quilava evolves into Hisuian\n"
-	.string "Typhlosion with a Fire Stone,\p"
-	.string "Dewott evolves into Hisuian\n"
-	.string "Samurott with a Water Stone,\p"
-	.string "and Dartrix evolves into Hisuian\n"
-	.string "Decidueye when leveled up holding a\l"
-	.string "Ring Target.$"
-
 Zone13C_EventScript_Scientist1::
 	lock
 	msgbox Zone13C_Text_Scientist1, MSGBOX_SIGN

@@ -80,68 +80,20 @@ script Zone14B_EventScript_HyperPotion {
 	end
 }
 
-raw `
-Zone14B_EventScript_Randolph::
-	trainerbattle_single TRAINER_PBL_RANDOLPH, Zone14B_Text_RandolphIntro, Zone14B_Text_RandolphDefeat
-	msgbox Zone14B_Text_RandolphPostBattle, MSGBOX_AUTOCLOSE
+script Zone14B_EventScript_MagmaGrunt1 {
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14B_1, format("Magma!"), format("Magma!"))
+	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone14B_Text_RandolphIntro:
-	.string "You distracted me from my search!$"
-
-Zone14B_Text_RandolphDefeat:
-	.string "The search for cool Pokémon!$"
-
-Zone14B_Text_RandolphPostBattle:
-	.string "I guess you have some cool Pokémon.$"
-
-Zone14B_EventScript_Todd::
-	trainerbattle_single TRAINER_PBL_TODD, Zone14B_Text_ToddIntro, Zone14B_Text_ToddDefeat
-	msgbox Zone14B_Text_ToddPostBattle, MSGBOX_AUTOCLOSE
+script Zone14B_EventScript_MagmaGrunt2 {
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14B_2, format("Magma!"), format("Magma!"))
+	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone14B_Text_ToddIntro:
-	.string "Hohoho!\n"
-	.string "What a great place to work!$"
-
-Zone14B_Text_ToddDefeat:
-	.string "Hohoho!\n"
-	.string "What a terrible place to lose!$"
-
-Zone14B_Text_ToddPostBattle:
-	.string "Hohoho!$"
-
-Zone14B_EventScript_Russell::
-	trainerbattle_single TRAINER_PBL_RUSSELL, Zone14B_Text_RussellIntro, Zone14B_Text_RussellDefeat
-	msgbox Zone14B_Text_RussellPostBattle, MSGBOX_AUTOCLOSE
+script Zone14B_EventScript_MagmaGrunt3 {
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14B_3, format("Magma!"), format("Magma!"))
+	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
 	end
-
-Zone14B_Text_RussellIntro:
-	.string "In this old, abandoned mine,\n"
-	.string "training is the best thing I can do\l"
-	.string "for me and my Pokémon!$"
-
-Zone14B_Text_RussellDefeat:
-	.string "I'm sorry, my Pokémon!$"
-
-Zone14B_Text_RussellPostBattle:
-	.string "We'll just have to train harder for\n"
-	.string "next time!$"
-
-Zone14B_EventScript_Otis::
-	trainerbattle_single TRAINER_PBL_OTIS, Zone14B_Text_OtisIntro, Zone14B_Text_OtisDefeat
-	msgbox Zone14B_Text_OtisPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone14B_Text_OtisIntro:
-	.string "It takes extreme patience to raise\n"
-	.string "Dragons.$"
-
-Zone14B_Text_OtisDefeat:
-	.string "Do you have what it takes?$"
-
-Zone14B_Text_OtisPostBattle:
-	.string "These little ones are quite the\n"
-	.string "handful. Just wait until they\l"
-	.string "evolve!$"
-`
+}

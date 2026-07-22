@@ -12,10 +12,10 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_WORKER",
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 27,
       "y": 27,
       "elevation": 3,
@@ -24,11 +24,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Zone14B_EventScript_Todd",
+      "script": "Zone14B_EventScript_MagmaGrunt1",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
       "x": 30,
       "y": 14,
       "elevation": 3,
@@ -37,11 +37,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Zone14B_EventScript_Russell",
+      "script": "Zone14B_EventScript_MagmaGrunt2",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_DRAGON_TAMER",
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 22,
       "y": 3,
       "elevation": 3,
@@ -50,11 +50,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Zone14B_EventScript_Otis",
+      "script": "Zone14B_EventScript_MagmaGrunt3",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_RANGER_M",
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
       "x": 5,
       "y": 3,
       "elevation": 3,
@@ -64,7 +64,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Zone14B_EventScript_LeviathanBattle",
-      "flag": "FLAG_BEAT_LEVIATHAN_12"
+      "flag": "FLAG_BEAT_LEVIATHAN_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
@@ -77,19 +77,6 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Zone14B_EventScript_HyperPotion",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_COLLECTOR",
-      "x": 17,
-      "y": 25,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "2",
-      "script": "Zone14B_EventScript_Randolph",
       "flag": "0"
     }
   ],
@@ -109,9 +96,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "hidden_item",
