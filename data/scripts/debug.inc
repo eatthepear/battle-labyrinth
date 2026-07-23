@@ -201,6 +201,56 @@ Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
 Debug_EventScript_Script_1::
+	completesubquest QUEST_SIGNS, SUB_QUEST_1
+	completesubquest QUEST_SIGNS, SUB_QUEST_2
+	completesubquest QUEST_SIGNS, SUB_QUEST_3
+	completesubquest QUEST_SIGNS, SUB_QUEST_4
+	completesubquest QUEST_SIGNS, SUB_QUEST_5
+	completesubquest QUEST_SIGNS, SUB_QUEST_6
+	completesubquest QUEST_SIGNS, SUB_QUEST_7
+	completesubquest QUEST_SIGNS, SUB_QUEST_8
+	completesubquest QUEST_SIGNS, SUB_QUEST_9
+	completesubquest QUEST_SIGNS, SUB_QUEST_10
+	completesubquest QUEST_SIGNS, SUB_QUEST_11
+	completesubquest QUEST_SIGNS, SUB_QUEST_12
+	completesubquest QUEST_SIGNS, SUB_QUEST_13
+	completesubquest QUEST_SIGNS, SUB_QUEST_14
+	completesubquest QUEST_SIGNS, SUB_QUEST_15
+	completesubquest QUEST_SIGNS, SUB_QUEST_16
+	completesubquest QUEST_SIGNS, SUB_QUEST_17
+	completesubquest QUEST_SIGNS, SUB_QUEST_18
+	completesubquest QUEST_SIGNS, SUB_QUEST_19
+	completesubquest QUEST_SIGNS, SUB_QUEST_20
+	completesubquest QUEST_SIGNS, SUB_QUEST_21
+	completesubquest QUEST_SIGNS, SUB_QUEST_22
+	completesubquest QUEST_SIGNS, SUB_QUEST_23
+	completesubquest QUEST_SIGNS, SUB_QUEST_24
+	completesubquest QUEST_SIGNS, SUB_QUEST_25
+	completesubquest QUEST_SIGNS, SUB_QUEST_26
+	completesubquest QUEST_SIGNS, SUB_QUEST_27
+	completesubquest QUEST_SIGNS, SUB_QUEST_28
+	completesubquest QUEST_SIGNS, SUB_QUEST_29
+	completesubquest QUEST_SIGNS, SUB_QUEST_30
+	completesubquest QUEST_SIGNS, SUB_QUEST_31
+	completesubquest QUEST_SIGNS, SUB_QUEST_32
+	completesubquest QUEST_SIGNS, SUB_QUEST_33
+	completesubquest QUEST_SIGNS, SUB_QUEST_34
+	completesubquest QUEST_SIGNS, SUB_QUEST_35
+	completesubquest QUEST_SIGNS, SUB_QUEST_36
+	completesubquest QUEST_SIGNS, SUB_QUEST_37
+	completesubquest QUEST_SIGNS, SUB_QUEST_38
+	completesubquest QUEST_SIGNS, SUB_QUEST_39
+	completesubquest QUEST_SIGNS, SUB_QUEST_40
+	completesubquest QUEST_SIGNS, SUB_QUEST_41
+	completesubquest QUEST_SIGNS, SUB_QUEST_42
+	completesubquest QUEST_SIGNS, SUB_QUEST_43
+	completesubquest QUEST_SIGNS, SUB_QUEST_44
+	completesubquest QUEST_SIGNS, SUB_QUEST_45
+	completesubquest QUEST_SIGNS, SUB_QUEST_46
+	completesubquest QUEST_SIGNS, SUB_QUEST_47
+	completesubquest QUEST_SIGNS, SUB_QUEST_48
+	completesubquest QUEST_SIGNS, SUB_QUEST_49
+	completesubquest QUEST_SIGNS, SUB_QUEST_50
 	release
 	end
 

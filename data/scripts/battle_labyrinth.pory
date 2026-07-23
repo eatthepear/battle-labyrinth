@@ -1148,7 +1148,7 @@ script EventScript_Notebook_Items {
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
 		switch (var(VAR_RESULT)) {
 			case ITEM_RARE_CANDY:
-				msgbox(gText_InfiniteRareCandy)
+				msgbox(format("The {COLOR RED}Infinite Candy{COLOR DARK_GRAY} Key Item allows you to raise your Pokémon up to the level cap, or only the prior level cap if you are in a {COLOR GREEN}Zone{COLOR DARK_GRAY}."))
 			case ITEM_INFINITE_REPEL:
 				msgbox(format("The {COLOR RED}Infinite Repel{COLOR DARK_GRAY} Key Item allows you to avoid encountering any wild Pokémon, regardless of your level."))
 			case ITEM_TM_RETURN:
@@ -1176,10 +1176,6 @@ script EventScript_Notebook_Items {
 				return
 		}
 	}
-}
-
-text gText_InfiniteRareCandy {
-	format("The {COLOR RED}Infinite Candy{COLOR DARK_GRAY} Key Item allows you to raise your Pokémon up to the level cap, or only the prior level cap if you are in a {COLOR GREEN}Zone{COLOR DARK_GRAY}.")
 }
 
 script EventScript_Notebook_Other {
@@ -1224,6 +1220,7 @@ script EventScript_Notebook_Other {
 }
 
 script EventScript_Notebook_TrainerTips {
+	setvar(VAR_TEMP_0, 0)
 	while {
 		message(format("Trainer Tips open. Read more\nTrainer Tips signs to fill this!"))
 		waitmessage
@@ -1242,9 +1239,9 @@ script EventScript_Notebook_TrainerTips {
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_7)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("Honey & Sweet Scent", SUB_QUEST_7) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_8)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Hidden Items", SUB_QUEST_8) }
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Dowsing Machine", SUB_QUEST_8) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_9)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Register List", SUB_QUEST_9) }
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Hidden Machines", SUB_QUEST_9) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_10)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("Gym Leaders", SUB_QUEST_10) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_11)
@@ -1258,7 +1255,7 @@ script EventScript_Notebook_TrainerTips {
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_15)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("Pokédex Info", SUB_QUEST_15) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_16)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Sort Bag", SUB_QUEST_16) }
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Bag Tips", SUB_QUEST_16) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_17)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("Change Music", SUB_QUEST_17) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_18)
@@ -1278,68 +1275,112 @@ script EventScript_Notebook_TrainerTips {
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_25)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("Sell Price", SUB_QUEST_25) }
 		dynmultipush("Back", 51)
-		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+		dynmultistack(0, 0, FALSE, 6, FALSE, VAR_TEMP_0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
-			case SUB_QUEST_1:  call(EventScript_Sign_Notebook)
-			case SUB_QUEST_2:  call(EventScript_Sign_Porygon)
-			case SUB_QUEST_3:  call(EventScript_Sign_AutoRun)
-			case SUB_QUEST_4:  call(EventScript_Sign_ZoneInfo)
-			case SUB_QUEST_5:  call(EventScript_Sign_InfiniteCandy)
-			case SUB_QUEST_6:  call(EventScript_Sign_Surveil)
-			case SUB_QUEST_7:  call(EventScript_Sign_HoneySweetScent)
-			case SUB_QUEST_8:  call(EventScript_Sign_HiddenItems)
-			case SUB_QUEST_9:  call(EventScript_Sign_Register)
-			case SUB_QUEST_10: call(EventScript_Sign_Leader)
-			case SUB_QUEST_11: call(EventScript_Sign_OptionalBosses)
-			case SUB_QUEST_12: call(EventScript_Sign_FieldMoves)
-			case SUB_QUEST_13: call(EventScript_Sign_PokemonChanges)
-			case SUB_QUEST_14: call(EventScript_Sign_DifferentAreas)
-			case SUB_QUEST_15: call(EventScript_Sign_PokedexInfo)
-			case SUB_QUEST_16: call(EventScript_Sign_SortBag)
-			case SUB_QUEST_17: call(EventScript_Sign_ChangeMusic)
-			case SUB_QUEST_18: call(EventScript_Sign_StatsIVEV)
-			case SUB_QUEST_19: call(EventScript_Sign_LevelCap)
-			case SUB_QUEST_20: call(EventScript_Sign_BattleChanges)
-			case SUB_QUEST_21: call(EventScript_Sign_SelectSwitch)
-			case SUB_QUEST_22: call(EventScript_Sign_SanctuaryAreas)
-			case SUB_QUEST_23: call(EventScript_Sign_Gauntlet)
-			case SUB_QUEST_24: call(EventScript_Sign_RestoreHeldItems)
-			case SUB_QUEST_25: call(EventScript_Sign_SellPrice)
+			case SUB_QUEST_1:  
+				setvar(VAR_TEMP_0, SUB_QUEST_1)
+				call(EventScript_Sign_Notebook)
+			case SUB_QUEST_2:  
+				setvar(VAR_TEMP_0, SUB_QUEST_2)
+				call(EventScript_Sign_CompletingAZone)
+			case SUB_QUEST_3:  
+				setvar(VAR_TEMP_0, SUB_QUEST_3)
+				call(EventScript_Sign_RunningShoes)
+			case SUB_QUEST_4:  
+				setvar(VAR_TEMP_0, SUB_QUEST_4)
+				call(EventScript_Sign_ZoneInfo)
+			case SUB_QUEST_5:  
+				setvar(VAR_TEMP_0, SUB_QUEST_5)
+				call(EventScript_Sign_InfiniteCandy)
+			case SUB_QUEST_6:  
+				setvar(VAR_TEMP_0, SUB_QUEST_6)
+				call(EventScript_Sign_Surveil)
+			case SUB_QUEST_7:  
+				setvar(VAR_TEMP_0, SUB_QUEST_7)
+				call(EventScript_Sign_HoneySweetScent)
+			case SUB_QUEST_8:  
+				setvar(VAR_TEMP_0, SUB_QUEST_8)
+				call(EventScript_Sign_DowsingMachine)
+			case SUB_QUEST_9:  
+				setvar(VAR_TEMP_0, SUB_QUEST_9)
+				call(EventScript_Sign_HiddenMachines)
+			case SUB_QUEST_10: 
+				setvar(VAR_TEMP_0, SUB_QUEST_10)
+				call(EventScript_Sign_Leader)
+			case SUB_QUEST_11: 
+				setvar(VAR_TEMP_0, SUB_QUEST_11)
+				call(EventScript_Sign_OptionalBosses)
+			case SUB_QUEST_12: 
+				setvar(VAR_TEMP_0, SUB_QUEST_12)
+				call(EventScript_Sign_FieldMoves)
+			case SUB_QUEST_13: 
+				setvar(VAR_TEMP_0, SUB_QUEST_13)
+				call(EventScript_Sign_PokemonChanges)
+			case SUB_QUEST_14: 
+				setvar(VAR_TEMP_0, SUB_QUEST_14)
+				call(EventScript_Sign_DifferentAreas)
+			case SUB_QUEST_15: 
+				setvar(VAR_TEMP_0, SUB_QUEST_15)
+				call(EventScript_Sign_PokedexInfo)
+			case SUB_QUEST_16: 
+				setvar(VAR_TEMP_0, SUB_QUEST_16)
+				call(EventScript_Sign_BagTips)
+			case SUB_QUEST_17: 
+				setvar(VAR_TEMP_0, SUB_QUEST_17)
+				call(EventScript_Sign_ChangeMusic)
+			case SUB_QUEST_18: 
+				setvar(VAR_TEMP_0, SUB_QUEST_18)
+				call(EventScript_Sign_StatsIVEV)
+			case SUB_QUEST_19: 
+				setvar(VAR_TEMP_0, SUB_QUEST_19)
+				call(EventScript_Sign_LevelCap)
+			case SUB_QUEST_20: 
+				setvar(VAR_TEMP_0, SUB_QUEST_20)
+				call(EventScript_Sign_BattleChanges)
+			case SUB_QUEST_21: 
+				setvar(VAR_TEMP_0, SUB_QUEST_21)
+				call(EventScript_Sign_SelectSwitch)
+			case SUB_QUEST_22: 
+				setvar(VAR_TEMP_0, SUB_QUEST_22)
+				call(EventScript_Sign_SanctuaryAreas)
+			case SUB_QUEST_23: 
+				setvar(VAR_TEMP_0, SUB_QUEST_23)
+				call(EventScript_Sign_Gauntlet)
+			case SUB_QUEST_24: 
+				setvar(VAR_TEMP_0, SUB_QUEST_24)
+				call(EventScript_Sign_RestoreHeldItems)
+			case SUB_QUEST_25: 
+				setvar(VAR_TEMP_0, SUB_QUEST_25)
+				call(EventScript_Sign_SellPrice)
 			case 51:
 			case MULTI_B_PRESSED:
+				setvar(VAR_TEMP_0, 0)
 				return
 		}
 	}
 }
 
 script EventScript_Sign_Notebook {
-	msgbox(format("Trainer Tips\pThe {COLOR RED}Notebook{COLOR DARK_GRAY} is filled with useful information, including mechanics changes from vanilla Pokémon games, upcoming Zones and boss battles, and difficulty info.\pAny Trainer Tips signs you read will have their messages transcribed in the Notebook."), MSGBOX_SIGN)
+	closemessage
+	helpwindow(HELP_NOTEBOOK)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_1)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_1)
 	}
 }
 
-script EventScript_Sign_Porygon {
-	if (var(VAR_DIFFICULTY) >= DIFFICULTY_NORMAL) {
-		message(format("Trainer Tips\pTo complete a Zone, defeat all Leviathans and find {COLOR RED}Porygon{COLOR DARK_GRAY}."))
-	} else {
-		message(format("Trainer Tips\pTo complete a Zone, defeat all Leviathans and find {COLOR RED}Porygon{COLOR DARK_GRAY}.\pOn Easy difficulty, you can skip defeating some Leviathans."))
-	}
-	waitmessage
+script EventScript_Sign_CompletingAZone {
+	closemessage
+	helpwindow(HELP_COMPLETING_A_ZONE)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_2)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_2)
 	}
-	showmonpic(SPECIES_PORYGON, 10, 3)
-	setseenmon(SPECIES_PORYGON)
-	waitbuttonpress
-	hidemonpic
-	closemessage
 }
 
-script EventScript_Sign_AutoRun {
-	msgbox(format("Trainer Tips\pPress {L_BUTTON} to toggle Auto Run."), MSGBOX_SIGN)
+script EventScript_Sign_RunningShoes {
+	closemessage
+	helpwindow(HELP_RUNNING_SHOES)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_3)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_3)
@@ -1347,7 +1388,8 @@ script EventScript_Sign_AutoRun {
 }
 
 script EventScript_Sign_ZoneInfo {
-	msgbox(format("Trainer Tips\pYou can see a short preview of a Zone by consulting the {COLOR RED}Notebook{COLOR DARK_GRAY}, which includes a general description of the Zone, how many opponents remain in that Zone, and a summary of any bosses in that Zone."), MSGBOX_SIGN)
+	closemessage
+	helpwindow(HELP_ZONE_INFO)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_4)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_4)
@@ -1355,8 +1397,8 @@ script EventScript_Sign_ZoneInfo {
 }
 
 script EventScript_Sign_InfiniteCandy {
-	msgbox(format("Trainer Tips"), MSGBOX_SIGN)
-	msgbox(gText_InfiniteRareCandy)
+	closemessage
+	helpwindow(HELP_INFINITE_CANDY)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_5)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_5)
@@ -1364,107 +1406,104 @@ script EventScript_Sign_InfiniteCandy {
 }
 
 script EventScript_Sign_Surveil {
-	msgbox(format("Trainer Tips\pIn battle, you can use {COLOR RED}Surveil{COLOR DARK_GRAY} to see the opponent's team."), MSGBOX_SIGN)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_6)
+	closemessage
+	helpwindow(HELP_SURVEIL)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_6)
 	}
 }
 
 script EventScript_Sign_HoneySweetScent {
-	msgbox(format("Trainer Tips\pIn addition to attracting Pokémon on Honey Trees, Honey can be used to trigger a wild Double Battle if used from the Bag.\pThe field move {COLOR RED}Sweet Scent{COLOR DARK_GRAY} can also do this!"), MSGBOX_SIGN)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_7)
+	closemessage
+	helpwindow(HELP_HONEY_SWEET_SCENT)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_7)
 	}
 }
 
-script EventScript_Sign_HiddenItems {
-	msgbox(format("Trainer Tips\pYou may find hidden items by checking certain tiles with {A_BUTTON}.\pYou can use the {COLOR RED}Dowsing Machine{COLOR DARK_GRAY} to help you find such items."), MSGBOX_SIGN)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_8)
+script EventScript_Sign_DowsingMachine {
+	closemessage
+	helpwindow(HELP_DOWSING_MACHINE)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_8)
 	}
 }
 
-script EventScript_Sign_Register {
-	msgbox(format("Trainer Tips\pYou can register multiple Key Items at a time."), MSGBOX_SIGN)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_9)
+script EventScript_Sign_HiddenMachines {
+	closemessage
+	helpwindow(HELP_HIDDEN_MACHINES)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_9)
 	}
 }
 
 script EventScript_Sign_Leader {
-	msgbox(format("Trainer Tips\pSome Zones have a special Leviathan who specializes in a single type only, and will often be stronger than other Leviathans up to that point."), MSGBOX_SIGN)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_10)
+	closemessage
+	helpwindow(HELP_LEADER)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_10)
 	}
 }
 
 script EventScript_Sign_OptionalBosses {
-	msgbox(format("Trainer Tips\pSome Zones have an optional boss that gives a special reward for beating them."), MSGBOX_SIGN)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_11)
+	closemessage
+	helpwindow(HELP_OPTIONAL_BOSSES)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_11)
 	}
 }
 
 script EventScript_Sign_FieldMoves {
-	msgbox(format("Trainer Tips\pA few field moves are available for use, including Refresh and Aromatherapy.\pConsult the {COLOR RED}Notebook{COLOR DARK_GRAY} for more details."), MSGBOX_SIGN)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_12)
+	closemessage
+	helpwindow(HELP_FIELD_MOVES)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_12)
 	}
 }
 
 script EventScript_Sign_PokemonChanges {
-	msgbox(format("Trainer Tips\pMany Pokémon have had their evolution methods, abilities, or learnsets altered.\pConsult the Pokédex if you've already captured that Pokémon, or the {COLOR RED}Notebook{COLOR DARK_GRAY} for changes from vanilla."), MSGBOX_SIGN)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_13)
+	closemessage
+	helpwindow(HELP_POKEMON_CHANGES)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_13)
 	}
 }
 
 script EventScript_Sign_DifferentAreas {
-	msgbox(format("Trainer Tips\pThe encounterable Pokémon in different areas of the same Zone may vary significantly."), MSGBOX_SIGN)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_14)
+	closemessage
+	helpwindow(HELP_DIFFERENT_AREAS)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_14)
 	}
 }
 
 script EventScript_Sign_PokedexInfo {
-	msgbox(format("Trainer Tips\pYou can see detailed information about a Pokémon species in its Pokédex entry after capturing it, such as what moves it learns or how to evolve it.\pAny changes from vanilla can be found in the {COLOR RED}Notebook{COLOR DARK_GRAY}."), MSGBOX_SIGN)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_15)
+	closemessage
+	helpwindow(HELP_POKEDEX_INFO)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_15)
 	}
 }
 
-script EventScript_Sign_SortBag {
-	msgbox(format("Trainer Tips\pYou can sort items in the Bag using {START_BUTTON}."), MSGBOX_SIGN)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_16)
+script EventScript_Sign_BagTips {
+	closemessage
+	helpwindow(HELP_BAG_TIPS)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_16)
 	}
 }
 
 script EventScript_Sign_ChangeMusic {
-	msgbox(format("Trainer Tips\pYou can change some of the music you hear by speaking to the Guitarist in the Sanctuary."), MSGBOX_SIGN)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_17)
+	closemessage
+	helpwindow(HELP_CHANGE_MUSIC)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_17)
 	}
 }
 
 script EventScript_Sign_StatsIVEV {
-	if (var(VAR_DIFFICULTY) >= DIFFICULTY_HARD) {
-		msgbox(format("Trainer Tips\pWhile you are on the Pokémon stats screen, you can press {A_BUTTON} to switch between stats, IVs, and EVs."), MSGBOX_SIGN)
-	} else {
-		msgbox(format("Trainer Tips\pWhile you are on the Pokémon stats screen, you can press {A_BUTTON} to switch between stats and IVs."), MSGBOX_SIGN)
-	}
+	closemessage
+	helpwindow(HELP_STATS_IV_EV)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_18)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_18)
@@ -1472,7 +1511,8 @@ script EventScript_Sign_StatsIVEV {
 }
 
 script EventScript_Sign_LevelCap {
-	msgbox(format("Trainer Tips\pThe {COLOR RED}Notebook{COLOR DARK_GRAY} contains the level current level cap."), MSGBOX_SIGN)
+	closemessage
+	helpwindow(HELP_LEVEL_CAP)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_19)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_19)
@@ -1480,7 +1520,8 @@ script EventScript_Sign_LevelCap {
 }
 
 script EventScript_Sign_BattleChanges {
-	msgbox(format("Trainer Tips\pA few battle mechanics have been altered from vanilla, including increased accuracy for many moves, the Frostbite condition instead of Freeze, and experience gain.\pConsult the {COLOR RED}Notebook{COLOR DARK_GRAY} for more details."), MSGBOX_SIGN)
+	closemessage
+	helpwindow(HELP_BATTLE_CHANGES)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_20)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_20)
@@ -1488,7 +1529,8 @@ script EventScript_Sign_BattleChanges {
 }
 
 script EventScript_Sign_SelectSwitch {
-	msgbox(format("Trainer Tips\pIn the party menu, you can press {SELECT_BUTTON} to quickly shift a Pokémon to the front of your party."), MSGBOX_SIGN)
+	closemessage
+	helpwindow(HELP_SELECT_SWITCH)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_21)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_21)
@@ -1496,7 +1538,8 @@ script EventScript_Sign_SelectSwitch {
 }
 
 script EventScript_Sign_Gauntlet {
-	msgbox(format("Trainer Tips\pNot all Zones have a single Leviathan or boss.\pSome Zones have gauntlets, where you must win multiple battles in a row."), MSGBOX_SIGN)
+	closemessage
+	helpwindow(HELP_GAUNTLET)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_22)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_22)
@@ -1504,7 +1547,8 @@ script EventScript_Sign_Gauntlet {
 }
 
 script EventScript_Sign_SanctuaryAreas {
-	msgbox(format("Trainer Tips\pThe Sanctuary has a few connected areas that are unlocked over time with access to new items."), MSGBOX_SIGN)
+	closemessage
+	helpwindow(HELP_SANCTUARY_AREAS)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_23)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_23)
@@ -1512,7 +1556,8 @@ script EventScript_Sign_SanctuaryAreas {
 }
 
 script EventScript_Sign_RestoreHeldItems {
-	msgbox(format("Trainer Tips\pMatching Gen 9 mechanics, all held items (excluding Berries) are restored after battle."), MSGBOX_SIGN)
+	closemessage
+	helpwindow(HELP_RESTORE_HELD_ITEMS)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_24)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_24)
@@ -1520,7 +1565,8 @@ script EventScript_Sign_RestoreHeldItems {
 }
 
 script EventScript_Sign_SellPrice {
-	msgbox(format("Trainer Tips\pMatching Gen 9 mechanics, items can be sold at 1/4 of their original price."), MSGBOX_SIGN)
+	closemessage
+	helpwindow(HELP_SELL_PRICE)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_25)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_25)
