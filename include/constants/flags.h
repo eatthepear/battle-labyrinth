@@ -972,7 +972,7 @@
 #define FLAG_ITEM_ZONE9A_BIG_ROOT                  0x431
 #define FLAG_ITEM_ZONE9A_TM_PLUCK                  0x432
 #define FLAG_ITEM_ZONE9G_CHARCOAL                  0x433
-#define FLAG_ITEM_ZONE10A_TM_SCORCHING_SANDS       0x434
+#define FLAG_ITEM_ZONE10A_TM_BULLDOZE       0x434
 // #define FLAG_ITEM_ZONE10A_GEMS                     0x435
 #define FLAG_ITEM_ZONE10A_SOFT_SAND                0x436
 #define FLAG_ITEM_ZONE10A_RANDOM_1                 0x437

@@ -8,7 +8,7 @@
     F(CALM_MIND) \
     F(BUG_BITE) \
     F(TOXIC) \
-    F(HAIL) \
+    F(SNOWSCAPE) \
     F(BULK_UP) \
     F(VENOSHOCK) \
     F(HIDDEN_POWER) \
@@ -46,9 +46,9 @@
     F(FACADE) \
     F(FLAME_CHARGE) \
     F(REST) \
-    F(RETALIATE) \
+    F(WEATHER_BALL) \
     F(THIEF) \
-    F(STEEL_WING) \
+    F(AGILITY) \
     F(BULLET_SEED) \
     F(DRAINING_KISS) \
     F(OVERHEAT) \
@@ -57,9 +57,9 @@
     F(ENERGY_BALL) \
     F(FALSE_SWIPE) \
     F(SCALD) \
-    F(AGILITY) \
+    F(FLING) \
     F(CHARGE_BEAM) \
-    F(SCORCHING_SANDS) \
+    F(HELPING_HAND) \
     F(DRAGON_PULSE) \
     F(DRAIN_PUNCH) \
     F(WILL_O_WISP) \
@@ -69,7 +69,7 @@
     F(SHADOW_CLAW) \
     F(AURA_SPHERE) \
     F(SMART_STRIKE) \
-    F(TELEPORT) \
+    F(CLOSE_COMBAT) \
     F(ROCK_POLISH) \
     F(AURORA_VEIL) \
     F(STONE_EDGE) \
@@ -78,7 +78,7 @@
     F(GYRO_BALL) \
     F(SWORDS_DANCE) \
     F(FLY) \
-    F(SOLAR_BLADE) \
+    F(HEX) \
     F(BULLDOZE) \
     F(TRIPLE_AXEL) \
     F(ROCK_SLIDE) \
@@ -88,16 +88,16 @@
     F(POISON_JAB) \
     F(HURRICANE) \
     F(GRASS_KNOT) \
-    F(HELPING_HAND) \
+    F(SWAGGER) \
     F(SLEEP_TALK) \
     F(U_TURN) \
     F(SUBSTITUTE) \
     F(FLASH_CANNON) \
     F(TRICK_ROOM) \
     F(WILD_CHARGE) \
-    F(PAY_DAY) \
+    F(DEFOG) \
     F(SNARL) \
-    F(WEATHER_BALL) \
+    F(DRACO_METEOR) \
     F(DARK_PULSE) \
     F(POWER_UP_PUNCH) \
     F(DAZZLING_GLEAM) \
