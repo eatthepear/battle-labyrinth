@@ -48,13 +48,13 @@ script Zone4D_EventScript_TMHiddenPower {
 }
 
 script Zone4D_EventScript_RocketGrunt_1 {
-	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_4D_1, format("We're Team Rainbow Rocket! You'd better stay out of our way!"), format("The R stands for both Rainbow and Rocket!"))
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_4D_1, format("We're {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}! You'd better stay out of our way!"), format("The R stands for both Rainbow and Rocket!"))
 	msgbox(format("I may just be a grunt, but there are more of me to stop your way!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone4D_EventScript_RocketGrunt_2 {
-	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_4D_2, format("Team Rainbow Rocket exists for the good of all! Now hand over all your Pokémon!"), format("A Rainbow Rocket Grunt engages in all sorts of crime!"))
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_4D_2, format("{COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY} exists for the good of all! Now hand over all your Pokémon!"), format("A Rainbow Rocket Grunt engages in all sorts of crime!"))
 	msgbox(format("Crime is good, for the perpetrator! Haha!"), MSGBOX_AUTOCLOSE)
 	end
 }

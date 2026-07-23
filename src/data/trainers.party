@@ -709,6 +709,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Poison Gas
 - Ember
 - Venoshock
+- Fake Out
 
 Koffing @ Chesto Berry
 Naive Nature
@@ -716,17 +717,19 @@ Ability: Levitate
 Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Poison Gas
-- Assurance
+- Venom Drench
 - Venoshock
+- Thief
 
-Ariados @ Sitrus Berry
+Venipede @ Sitrus Berry
 Hasty Nature
-Ability: Swarm
+Ability: Speed Boost
 Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Toxic Thread
 - Twineedle
 - Venoshock
+- Bite
 
 === TRAINER_PBL_PROTON_LEVIATHAN_4 ===
 Name: Proton
@@ -746,6 +749,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Poison Gas
 - Ember
 - Venoshock
+- Fake Out
 
 Koffing @ Chesto Berry
 Naive Nature
@@ -755,15 +759,27 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Poison Gas
 - Venom Drench
 - Venoshock
+- Thief
 
-Ariados @ Sitrus Berry
+Venipede @ Sitrus Berry
 Hasty Nature
-Ability: Swarm
+Ability: Speed Boost
 Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Toxic Thread
 - Twineedle
 - Venoshock
+- Bite
+
+Frillish @ Pecha Berry
+Bold Nature
+Ability: Cursed Body
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brine
+- Hex
+- Recover
+- Sleep Talk
 
 === TRAINER_PBL_REBECCA ===
 Name: Rebecca

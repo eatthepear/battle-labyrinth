@@ -74,13 +74,15 @@ script Zone4E_EventScript_LeviathanBattle {
 	applymovement(LOCALID_PROTON, Common_Movement_FaceRight)
 	waitmovement(0)
 	delay(16)
+	setspeaker("???")
+	msgbox(format("So! The one who's been messing with my grunts comes walking around.\pYou must be wondering who I am.\pMy name is {COLOR BLUE}Proton{COLOR DARK_GRAY}, an {COLOR GREEN}Admin{COLOR DARK_GRAY} of {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}!"))
 	setspeaker("Proton")
-	msgbox(format("So! The one who's been messing with my grunts comes walking around.\pYou must be wondering who I am.\pMy name is {COLOR BLUE}Proton{COLOR DARK_GRAY}, an {COLOR GREEN}Admin{COLOR DARK_GRAY} of {COLOR GREEN}Team Rainbow Rocket!{COLOR DARK_GRAY}.\pWe've been gathering resources, supplies, and like-minded people to join us in our mission of multiversal conquest.\pSomething about the way you stand says you'll get in our way.\pSo be it! I, Proton, will teach you a lesson."))
+	msgbox(format("We've been gathering resources, supplies, and like-minded people to join us in our mission of multiversal conquest.\pSomething about the way you stand says you'll get in our way.\pSo be it! I, {COLOR BLUE}Proton{COLOR DARK_GRAY}, will teach you a lesson."))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_PROTON_LEVIATHAN_4, format("Defeated by a child!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Proton")
-	msgbox(format("Argh… A shameful defeat, but it won't hold me back.\pYou're going to regret standing in the way of {COLOR GREEN}Team Rainbow Rocket!{COLOR DARK_GRAY}, mark my words.\pOur organization has grown over the years, absorbing other villainous organizations into it as well.\pTake heart in knowing your victory will be short lived."), MSGBOX_AUTOCLOSE)
+	msgbox(format("Argh… A shameful defeat, but it won't hold me back.\pYou're going to regret standing in the way of {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}, mark my words.\pOur organization has grown over the years, {COLOR GREEN}absorbing other villainous organizations into it{COLOR DARK_GRAY} as well.\pTake heart in knowing your victory will be short lived."), MSGBOX_AUTOCLOSE)
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(LOCALID_PROTON)
 	removeobject(LOCALID_GRUNT_1_4E)
@@ -88,7 +90,7 @@ script Zone4E_EventScript_LeviathanBattle {
 	setflag(FLAG_BEAT_LEVIATHAN_4)
 	setvar(VAR_ZONE_4_STATE, 3)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
-	msgbox(format("Proton vanished into thin air without a trace!\pHow could he have done such a thing?\pThere's something on the ground where he was standing…"))
+	msgbox(format("{COLOR BLUE}Proton{COLOR DARK_GRAY} vanished into thin air without a trace!\pHow could he have done such a thing?\pThere's something on the ground where he was standing…"))
 	giveitem(ITEM_TM_VENOSHOCK)
 	closemessage
 	fadedefaultbgm
@@ -133,12 +135,12 @@ script Zone4E_EventScript_PoisonBarb {
 
 script Zone4E_EventScript_RocketGrunt_1 {
 	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_4E_1, format("Our Admin is up ahead doing important work! I can't let you stop him!"), format("You stopped me instead!"))
-	msgbox(format("I don't know what he's doing, but I'm sure it furthers Team Rainbow Rocket's goals!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("I don't know what he's doing, but I'm sure it furthers {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}'s goals!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone4E_EventScript_RocketGrunt_2 {
-	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_4E_2, format("We're Team Rainbow Rocket, not just ordinary Team Rocket!"), format("It's a major rebrand!"))
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_4E_2, format("We're {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}, not just ordinary Team Rocket!"), format("It's a major rebrand!"))
 	msgbox(format("Not sure when or why we rebranded, but it's working well for us!"), MSGBOX_AUTOCLOSE)
 	end
 }

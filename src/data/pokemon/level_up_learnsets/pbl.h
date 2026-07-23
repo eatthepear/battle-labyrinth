@@ -11943,9 +11943,9 @@ static const struct LevelUpMove sLopunnyLevelUpLearnset[] = {
 
 #if P_FAMILY_GLAMEOW
 static const struct LevelUpMove sGlameowLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
+    LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
     LEVEL_UP_MOVE( 1, MOVE_SAND_ATTACK),
     LEVEL_UP_MOVE( 3, MOVE_HYPNOSIS),
     LEVEL_UP_MOVE( 5, MOVE_CHARM),
@@ -11968,9 +11968,9 @@ static const struct LevelUpMove sGlameowLevelUpLearnset[] = {
 
 static const struct LevelUpMove sPuruglyLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_BODY_SLAM),
-    LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
+    LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
     LEVEL_UP_MOVE( 1, MOVE_SAND_ATTACK),
     LEVEL_UP_MOVE( 3, MOVE_HYPNOSIS),
     LEVEL_UP_MOVE( 5, MOVE_CHARM),
@@ -18175,7 +18175,6 @@ static const struct LevelUpMove sTrevenantLevelUpLearnset[] = {
 
 #if P_FAMILY_PUMPKABOO
 static const struct LevelUpMove sPumpkabooLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 0, MOVE_SHADOW_BALL),
     LEVEL_UP_MOVE( 1, MOVE_ASTONISH),
     LEVEL_UP_MOVE( 3, MOVE_SCARY_FACE),
     LEVEL_UP_MOVE( 5, MOVE_RAZOR_LEAF),

@@ -65,9 +65,9 @@ script Zone3A_EventScript_GymGuide {
     lock
     faceplayer
 	if (flag(FLAG_BEAT_LEVIATHAN_3)) {
-		msgbox(format("Hey, congrats! You beat Grant! I knew you could do it!"))
+		msgbox(format("Hey, congrats! You beat {COLOR BLUE}Grant{COLOR DARK_GRAY}! I knew you could do it!"))
 	} else {
-    	msgbox(format("Hey there!\pI'm Gym Leader Grant's personal Gym Guide, which means I help out would be challengers like you!\pYou'd do well to be prepared to battle some Rock-type Pokémon. I recommend using super-effective moves like {COLOR GREEN}Rock Smash{COLOR DARK_GRAY}!"))
+    	msgbox(format("Hey there!\pI'm Gym Leader {COLOR BLUE}Grant{COLOR DARK_GRAY}'s personal Gym Guide, which means I help out would be challengers like you!\pYou'd do well to be prepared to battle some Rock-type Pokémon. I recommend using super-effective moves like {COLOR GREEN}Rock Smash{COLOR DARK_GRAY}!"))
 	}
     release
     end
