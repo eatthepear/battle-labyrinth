@@ -2378,6 +2378,7 @@ script EventScript_TestingLegendBattle_Template {
 }
 
 script EventScript_AskSaveGame {
+	setspeaker(SP_NAME_NONE)
 	msgbox(format("Save your game?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		forcesave

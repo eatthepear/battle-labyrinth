@@ -319,8 +319,8 @@ script Zone1A_EventScript_LeviathanBattle {
 }
 
 text Zone1A_Text_Leviathan1Intro {
-	format("Hi! My name's Cori.\n"
-		   "I'm the resident Leviathan around here.\p"
+	format("Hi! My name's {COLOR BLUE}Cori{COLOR DARK_GRAY}.\n"
+		   "I'm the resident {COLOR GREEN}Leviathan{COLOR DARK_GRAY} around here.\p"
 		   "If you want to go forward, you'll have to beat me!\p"
 		   "So, are you ready for our battle?")
 }

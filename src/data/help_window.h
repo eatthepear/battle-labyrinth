@@ -178,11 +178,11 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_INFINITE_REPEL] =
     {
         .header = COMPOUND_STRING("Infinite Repel"),
-        .desc = COMPOUND_STRING("The {COLOR GREEN}Infinite Repel{COLOR DARK_GRAY} allows you to avoid\n"
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Infinite Repellent{COLOR DARK_GRAY} allows you to avoid\n"
                                 "encountering any wild Pokémon.\n"
                                 "It works regardless of your Pokémon's level.\n\n"
                                 "It is recommended to register the\n"
-                                "{COLOR GREEN}Infinite Repel{COLOR DARK_GRAY} for easy toggling on or off."),
+                                "{COLOR GREEN}Infinite Repellent{COLOR DARK_GRAY} for easy toggling."),
     },
 
     [HELP_SIGN_NOTEBOOK] =

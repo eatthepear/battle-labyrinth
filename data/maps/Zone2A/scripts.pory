@@ -446,7 +446,7 @@ script Zone2A_EventScript_TMBugBite {
 }
 
 script Zone2A_EventScript_Polly {
-	trainerbattle_single(TRAINER_PBL_POLLY, format("Our friend Shaun is our leader!\pYou'll have to defeat me to get to him!"), format("Defeated!"))
+	trainerbattle_single(TRAINER_PBL_POLLY, format("Our friend {COLOR BLUE}Shaun{COLOR DARK_GRAY} is our leader!\pYou'll have to defeat me to get to him!"), format("Defeated!"))
 	msgbox(format("Shaun likes to use Pokémon that enjoy Oran Berries."), MSGBOX_AUTOCLOSE)
 	end
 }

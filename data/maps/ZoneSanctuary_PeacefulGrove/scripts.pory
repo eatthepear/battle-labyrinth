@@ -3,6 +3,6 @@ mapscripts ZoneSanctuary_PeacefulGrove_MapScripts {}
 script ZoneSanctuary_PeacefulGrove_EventScript_Pokemaniac {
 	lock
 	faceplayer
-	msgbox(format("You're telling me I can't grind items or money? What's the point then?\pI guess I could switch to Easy difficulty…"))
+	msgbox(format("You're telling me I can't grind items or money? What's the point then?\pI guess I could switch to {COLOR GREEN}Easy{COLOR DARK_GRAY} difficulty…"))
 	release
 }

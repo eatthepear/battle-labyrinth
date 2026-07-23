@@ -98,7 +98,7 @@ IVs: 0 Atk / 0 Spe
 === TRAINER_PBL_NINO ===
 Name: Nino
 Class: School Kid
-Pic: School Kid F
+Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No

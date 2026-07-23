@@ -1195,8 +1195,8 @@ const u8 gText_OakThisIsListOfPokemon[] = _("This is a list of your POKéMON,\n{
 
 // Custom
 const u8 gText_Leviathan[] = _("Leviathan");
-const u8 gText_InfiniteRepelOn[] = _("The Infinite Repellent is now {COLOR GREEN}on{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
-const u8 gText_InfiniteRepelOff[] = _("The Infinite Repellent is now {COLOR GREEN}off{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
+const u8 gText_InfiniteRepelOn[] = _("The {COLOR GREEN}Infinite Repellent{COLOR DARK_GRAY} is now {COLOR GREEN}on{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
+const u8 gText_InfiniteRepelOff[] = _("The {COLOR GREEN}Infinite Repellent{COLOR DARK_GRAY} is now {COLOR GREEN}off{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
 const u8 gText_ConfirmSacredAsh[] = _("Use the Sacred Ash to fully\nrevive and heal your party?");
 const u8 gText_UsedSacredAsh[] = _("You used the Sacred Ash!\nYour party was completely healed!{PAUSE_UNTIL_PRESS}");
 const u8 gText_CandyNoEffectBecauseCap[] = _("It won't have any effect. Can't level up\npast Lv. {STR_VAR_2}, the prior level cap.{PAUSE_UNTIL_PRESS}");

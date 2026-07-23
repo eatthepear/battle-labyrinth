@@ -7,6 +7,6 @@ script EventScript_HexManiac {
 		msgbox(format("If you ever need to status your own Pokémon, take this."))
 		giveitem(ITEM_HEXORB)
 	}
-	msgbox(format("That {COLOR GREEN}Hexorb{COLOR DARK_GRAY} can be used to pre-status your Pokémon.\pIt might be useful for a Pokémon with Guts, for example."))
+	msgbox(format("That {COLOR GREEN}Hexorb{COLOR DARK_GRAY} can be used to pre-status your Pokémon.\pIt might be useful for a Pokémon with {COLOR GREEN}Guts{COLOR DARK_GRAY}, for example."))
 	release
 }
