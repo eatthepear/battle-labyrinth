@@ -3160,6 +3160,7 @@
 
 	@ Creates a help window.
 	.macro helpwindow id:req
+	closemessage @ removes text boxes before showhelpwindow
 	showhelpwindow \id
 	waitbuttonpress
 	hidehelpwindow

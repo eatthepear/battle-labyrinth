@@ -1310,7 +1310,6 @@ script EventScript_Notebook_TrainerTips {
 }
 
 script EventScript_Sign_Notebook {
-	closemessage
 	helpwindow(HELP_NOTEBOOK)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_1)
 	if (var(VAR_RESULT) == FALSE) {
@@ -1319,7 +1318,6 @@ script EventScript_Sign_Notebook {
 }
 
 script EventScript_Sign_CompletingAZone {
-	closemessage
 	helpwindow(HELP_COMPLETING_A_ZONE)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_2)
 	if (var(VAR_RESULT) == FALSE) {
@@ -1328,7 +1326,6 @@ script EventScript_Sign_CompletingAZone {
 }
 
 script EventScript_Sign_RunningShoes {
-	closemessage
 	helpwindow(HELP_RUNNING_SHOES)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_3)
 	if (var(VAR_RESULT) == FALSE) {
@@ -1337,7 +1334,6 @@ script EventScript_Sign_RunningShoes {
 }
 
 script EventScript_Sign_ZoneInfo {
-	closemessage
 	helpwindow(HELP_ZONE_INFO)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_4)
 	if (var(VAR_RESULT) == FALSE) {
@@ -1346,7 +1342,6 @@ script EventScript_Sign_ZoneInfo {
 }
 
 script EventScript_Sign_InfiniteCandy {
-	closemessage
 	helpwindow(HELP_INFINITE_CANDY)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_5)
 	if (var(VAR_RESULT) == FALSE) {
@@ -1355,7 +1350,6 @@ script EventScript_Sign_InfiniteCandy {
 }
 
 script EventScript_Sign_Surveil {
-	closemessage
 	helpwindow(HELP_SURVEIL)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_6)
@@ -1363,7 +1357,6 @@ script EventScript_Sign_Surveil {
 }
 
 script EventScript_Sign_HoneySweetScent {
-	closemessage
 	helpwindow(HELP_HONEY_SWEET_SCENT)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_7)
@@ -1371,7 +1364,6 @@ script EventScript_Sign_HoneySweetScent {
 }
 
 script EventScript_Sign_DowsingMachine {
-	closemessage
 	helpwindow(HELP_DOWSING_MACHINE)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_8)
@@ -1379,7 +1371,6 @@ script EventScript_Sign_DowsingMachine {
 }
 
 script EventScript_Sign_HiddenMachines {
-	closemessage
 	helpwindow(HELP_HIDDEN_MACHINES)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_9)
@@ -1387,7 +1378,6 @@ script EventScript_Sign_HiddenMachines {
 }
 
 script EventScript_Sign_Leader {
-	closemessage
 	helpwindow(HELP_LEADER)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_10)
@@ -1395,7 +1385,6 @@ script EventScript_Sign_Leader {
 }
 
 script EventScript_Sign_OptionalBosses {
-	closemessage
 	helpwindow(HELP_OPTIONAL_BOSSES)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_11)
@@ -1403,7 +1392,6 @@ script EventScript_Sign_OptionalBosses {
 }
 
 script EventScript_Sign_FieldMoves {
-	closemessage
 	helpwindow(HELP_FIELD_MOVES)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_12)
@@ -1411,7 +1399,6 @@ script EventScript_Sign_FieldMoves {
 }
 
 script EventScript_Sign_PokemonChanges {
-	closemessage
 	helpwindow(HELP_POKEMON_CHANGES)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_13)
@@ -1419,7 +1406,6 @@ script EventScript_Sign_PokemonChanges {
 }
 
 script EventScript_Sign_DifferentAreas {
-	closemessage
 	helpwindow(HELP_DIFFERENT_AREAS)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_14)
@@ -1427,7 +1413,6 @@ script EventScript_Sign_DifferentAreas {
 }
 
 script EventScript_Sign_PokedexInfo {
-	closemessage
 	helpwindow(HELP_POKEDEX_INFO)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_15)
@@ -1435,7 +1420,6 @@ script EventScript_Sign_PokedexInfo {
 }
 
 script EventScript_Sign_BagTips {
-	closemessage
 	helpwindow(HELP_BAG_TIPS)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_16)
@@ -1443,7 +1427,6 @@ script EventScript_Sign_BagTips {
 }
 
 script EventScript_Sign_ChangeMusic {
-	closemessage
 	helpwindow(HELP_CHANGE_MUSIC)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_17)
@@ -1451,7 +1434,6 @@ script EventScript_Sign_ChangeMusic {
 }
 
 script EventScript_Sign_StatsIVEV {
-	closemessage
 	helpwindow(HELP_STATS_IV_EV)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_18)
 	if (var(VAR_RESULT) == FALSE) {
@@ -1460,7 +1442,6 @@ script EventScript_Sign_StatsIVEV {
 }
 
 script EventScript_Sign_LevelCap {
-	closemessage
 	helpwindow(HELP_LEVEL_CAP)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_19)
 	if (var(VAR_RESULT) == FALSE) {
@@ -1469,7 +1450,6 @@ script EventScript_Sign_LevelCap {
 }
 
 script EventScript_Sign_BattleChanges {
-	closemessage
 	helpwindow(HELP_BATTLE_CHANGES)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_20)
 	if (var(VAR_RESULT) == FALSE) {
@@ -1478,7 +1458,6 @@ script EventScript_Sign_BattleChanges {
 }
 
 script EventScript_Sign_SelectSwitch {
-	closemessage
 	helpwindow(HELP_SELECT_SWITCH)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_21)
 	if (var(VAR_RESULT) == FALSE) {
@@ -1487,7 +1466,6 @@ script EventScript_Sign_SelectSwitch {
 }
 
 script EventScript_Sign_Gauntlet {
-	closemessage
 	helpwindow(HELP_GAUNTLET)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_22)
 	if (var(VAR_RESULT) == FALSE) {
@@ -1496,7 +1474,6 @@ script EventScript_Sign_Gauntlet {
 }
 
 script EventScript_Sign_SanctuaryAreas {
-	closemessage
 	helpwindow(HELP_SANCTUARY_AREAS)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_23)
 	if (var(VAR_RESULT) == FALSE) {
@@ -1505,7 +1482,6 @@ script EventScript_Sign_SanctuaryAreas {
 }
 
 script EventScript_Sign_RestoreHeldItems {
-	closemessage
 	helpwindow(HELP_RESTORE_HELD_ITEMS)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_24)
 	if (var(VAR_RESULT) == FALSE) {
@@ -1514,7 +1490,6 @@ script EventScript_Sign_RestoreHeldItems {
 }
 
 script EventScript_Sign_SellPrice {
-	closemessage
 	helpwindow(HELP_SELL_PRICE)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_25)
 	if (var(VAR_RESULT) == FALSE) {
