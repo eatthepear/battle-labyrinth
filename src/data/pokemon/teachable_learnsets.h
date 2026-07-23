@@ -220,14 +220,8 @@
 // - MOVE_ZEN_HEADBUTT                                       //
 // ********************************************************* //
 // Near-universal moves found in data/special_movesets.json: //
-// - MOVE_BIDE                                               //
-// - MOVE_FRUSTRATION                                        //
 // - MOVE_HIDDEN_POWER                                       //
-// - MOVE_MIMIC                                              //
-// - MOVE_NATURAL_GIFT                                       //
-// - MOVE_RAGE                                               //
 // - MOVE_RETURN                                             //
-// - MOVE_SECRET_POWER                                       //
 // - MOVE_SUBSTITUTE                                         //
 // - MOVE_TERA_BLAST                                         //
 // ********************************************************* //
