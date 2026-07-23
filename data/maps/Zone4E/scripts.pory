@@ -75,7 +75,7 @@ script Zone4E_EventScript_LeviathanBattle {
 	waitmovement(0)
 	delay(16)
 	setspeaker("Proton")
-	msgbox(format("So! The one who's been messing with my grunts comes walking around.\pYou must be wondering who I am.\pMy name is {COLOR GREEN}Proton{COLOR DARK_GRAY}, an {COLOR GREEN}Admin{COLOR DARK_GRAY} of {COLOR GREEN}Team Rainbow Rocket!{COLOR DARK_GRAY}.\pWe've been gathering resources, supplies, and like-minded people to join us in our mission of multiversal conquest.\pSomething about the way you stand says you'll get in our way.\pSo be it! I, Proton, will teach you a lesson."))
+	msgbox(format("So! The one who's been messing with my grunts comes walking around.\pYou must be wondering who I am.\pMy name is {COLOR BLUE}Proton{COLOR DARK_GRAY}, an {COLOR GREEN}Admin{COLOR DARK_GRAY} of {COLOR GREEN}Team Rainbow Rocket!{COLOR DARK_GRAY}.\pWe've been gathering resources, supplies, and like-minded people to join us in our mission of multiversal conquest.\pSomething about the way you stand says you'll get in our way.\pSo be it! I, Proton, will teach you a lesson."))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_PROTON_LEVIATHAN_4, format("Defeated by a child!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)

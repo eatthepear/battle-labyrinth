@@ -431,6 +431,18 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("Congratulations. You have completed\n{COLOR GREEN}Zone 7 and Zone 8{COLOR DARK_GRAY}."))
 			waitfanfare
+		case 13:
+			setspeaker(SP_NAME_COLRESS)
+			msgbox(format("Congratulations. You have completed\n{COLOR GREEN}Zone 13 and Zone 14{COLOR DARK_GRAY}."))
+			waitfanfare
+		case 18:
+			setspeaker(SP_NAME_COLRESS)
+			msgbox(format("Congratulations. You have completed\n{COLOR GREEN}Zone 18 and Zone 19{COLOR DARK_GRAY}."))
+			waitfanfare
+		case 24:
+			setspeaker(SP_NAME_COLRESS)
+			msgbox(format("Congratulations. You have completed\n{COLOR GREEN}Zone 24 and Zone 25{COLOR DARK_GRAY}."))
+			waitfanfare
 	}
 	switch (var(VAR_ZONE)) {
 		case 1:
