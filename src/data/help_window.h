@@ -73,6 +73,17 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Pokémon can't gain EVs."),
     },
 
+    [HELP_DIFFICULTY_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Difficulty: Brutal"),
+        .desc = COMPOUND_STRING("Suited for hardcore players.\n\n"
+                                "All changes from {COLOR RED}Hard{COLOR DARK_GRAY} are carried over.\n"
+                                "All boss battles are more difficult.\n"
+                                "The amount of money from trainers is halved.\n"
+                                "Some Pokémon, moves, abilities, NPCs, and\n"
+                                "services are more limited."),
+    },
+
     [HELP_CHANGES_ACCURACY] =
     {
         .header = COMPOUND_STRING("Battle Changes: Accuracy"),
@@ -117,18 +128,30 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "battles unless on {COLOR GREEN}Easy{COLOR DARK_GRAY} difficulty."),
     },
 
-    [HELP_DIFFICULTY_BRUTAL] =
+    [HELP_CHANGES_DEXNAV] =
     {
-        .header = COMPOUND_STRING("Difficulty: Brutal"),
-        .desc = COMPOUND_STRING("Suited for hardcore players.\n\n"
-                                "All changes from {COLOR RED}Hard{COLOR DARK_GRAY} are carried over.\n"
-                                "All boss battles are more difficult.\n"
-                                "The amount of money from trainers is halved.\n"
-                                "Some Pokémon, moves, abilities, NPCs, and\n"
-                                "services are more limited."),
+        .header = COMPOUND_STRING("Changes: DexNav"),
+        .desc = COMPOUND_STRING("The {COLOR RED}DexNav{COLOR DARK_GRAY} displays all wild Pokémon\n"
+                                "available in a Zone.\n"
+                                "Pokémon in the Hidden category are found\n"
+                                "in Honey trees, smashing rocks, etc., and\n"
+                                "cannot be found using the {COLOR RED}DexNav{COLOR DARK_GRAY}'s search.\n"
+                                "Pokémon do not flee from the {COLOR RED}DexNav{COLOR DARK_GRAY}'s search.\n"
+                                "The {COLOR RED}DexNav{COLOR DARK_GRAY} cannot chain Pokémon."),
     },
 
-    [HELP_NOTEBOOK] =
+    [HELP_CHANGES_HIDDEN_GROTTO] =
+    {
+        .header = COMPOUND_STRING("Changes: Hidden Grotto"),
+        .desc = COMPOUND_STRING("{COLOR GREEN}Hidden Grottoes{COLOR DARK_GRAY} contain one specific Pokémon\n"
+                                "species with its Hidden Ability, chosen\n"
+                                "randomly from a pool.\n\n"
+                                "Pokémon respawn upon exiting the\n"
+                                "{COLOR GREEN}Hidden Grotto{COLOR DARK_GRAY}, though it will always be\n"
+                                "the same species."),
+    },
+
+    [HELP_SIGN_NOTEBOOK] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Notebook"),
         .desc = COMPOUND_STRING("The {COLOR RED}Notebook{COLOR DARK_GRAY} is filled with useful\n"
@@ -139,7 +162,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "their messages transcribed in the Notebook."),
     },
 
-    [HELP_COMPLETING_A_ZONE] =
+    [HELP_SIGN_COMPLETING_A_ZONE] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Completing a Zone"),
         .desc = COMPOUND_STRING("To complete a Zone, find {COLOR RED}Porygon{COLOR DARK_GRAY}.\n\n"
@@ -147,7 +170,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "opponents to complete a Zone."),
     },
 
-    [HELP_RUNNING_SHOES] =
+    [HELP_SIGN_RUNNING_SHOES] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Running Shoes"),
         .desc = COMPOUND_STRING("Press the {L_BUTTON} to toggle the Running Shoes.\n\n"
@@ -155,7 +178,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "default, you can hold {B_BUTTON} to walk."),
     },
 
-    [HELP_ZONE_INFO] =
+    [HELP_SIGN_ZONE_INFO] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Zone Info"),
         .desc = COMPOUND_STRING("You can see a short preview of the next Zone\n"
@@ -166,7 +189,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "- a summary of any bosses in the Zone"),
     },
 
-    [HELP_INFINITE_CANDY] =
+    [HELP_SIGN_INFINITE_CANDY] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Infinite Candy"),
         .desc = COMPOUND_STRING("The {COLOR RED}Infinite Candy{COLOR DARK_GRAY} can be used to increase\n"
@@ -177,7 +200,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "the prior level cap."),
     },
 
-    [HELP_SURVEIL] =
+    [HELP_SIGN_SURVEIL] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Surveil"),
         .desc = COMPOUND_STRING("In battle, you can use {COLOR RED}Surveil{COLOR DARK_GRAY} to see the\n"
@@ -186,8 +209,8 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "to toggle between the oppposing teams."),
     },
 
-    [HELP_HONEY_SWEET_SCENT] =
-    { // todo
+    [HELP_SIGN_HONEY_SWEET_SCENT] =
+    {
         .header = COMPOUND_STRING("Trainer Tips: Honey & Sweet Scent"),
         .desc = COMPOUND_STRING("{COLOR RED}Honey{COLOR DARK_GRAY} can be slathered on a Honey Tree to\n"
                                 "encounter a Pokémon.\n"
@@ -197,7 +220,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "a wild Double Battle this way!"),
     },
 
-    [HELP_DOWSING_MACHINE] =
+    [HELP_SIGN_DOWSING_MACHINE] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Dowsing Machine"),
         .desc = COMPOUND_STRING("You can use the {COLOR RED}Dowsing Machine{COLOR DARK_GRAY} to help you\n"
@@ -208,7 +231,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "meaning an item is right in front of you!"),
     },
 
-    [HELP_HIDDEN_MACHINES] =
+    [HELP_SIGN_HIDDEN_MACHINES] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Hidden Machines"),
         .desc = COMPOUND_STRING("A Hidden Machine (HM for short) teaches a\n"
@@ -221,7 +244,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "well as the corresponding Gym Badge."),
     },
 
-    [HELP_LEADER] =
+    [HELP_SIGN_LEADER] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Gym Leader"),
         .desc = COMPOUND_STRING("Some Zones have {COLOR RED}Gym Leaders{COLOR DARK_GRAY}, a particularly\n"
@@ -233,14 +256,14 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "{COLOR RED}Hidden Machine{COLOR DARK_GRAY} outside battle."),
     },
 
-    [HELP_OPTIONAL_BOSSES] =
+    [HELP_SIGN_OPTIONAL_BOSSES] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Optional Bosses"),
         .desc = COMPOUND_STRING("Some Zones have an optional boss that\n"
                                 "gives a special reward for beating them."),
     },
 
-    [HELP_FIELD_MOVES] =
+    [HELP_SIGN_FIELD_MOVES] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Field Moves"),
         .desc = COMPOUND_STRING("In addition to HMs, a number of other moves\n"
@@ -252,7 +275,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Double Battle."),
     },
 
-    [HELP_POKEMON_CHANGES] =
+    [HELP_SIGN_POKEMON_CHANGES] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Pokémon Changes"),
         .desc = COMPOUND_STRING("Many Pokémon have minor adjustments to\n"
@@ -261,14 +284,14 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Consult the {COLOR RED}Notebook{COLOR DARK_GRAY} for these changes."),
     },
 
-    [HELP_DIFFERENT_AREAS] =
+    [HELP_SIGN_DIFFERENT_AREAS] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Different Areas"),
         .desc = COMPOUND_STRING("The encounterable Pokémon in different areas\n"
                                 "of the same Zone may vary significantly."),
     },
 
-    [HELP_POKEDEX_INFO] =
+    [HELP_SIGN_POKEDEX_INFO] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Pokedex Info"),
         .desc = COMPOUND_STRING("You can see detailed information about a\n"
@@ -278,7 +301,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "the {COLOR RED}Notebook{COLOR DARK_GRAY}."),
     },
 
-    [HELP_BAG_TIPS] =
+    [HELP_SIGN_BAG_TIPS] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Bag Tips"),
         .desc = COMPOUND_STRING("You can sort items in the Bag using {START_BUTTON}.\n\n"
@@ -288,14 +311,14 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "You can register multiple Key Items at a time."),
     },
 
-    [HELP_CHANGE_MUSIC] =
+    [HELP_SIGN_CHANGE_MUSIC] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Change Music"),
         .desc = COMPOUND_STRING("You can change some of the music you hear by\n"
                                 "speaking to the Guitarist in the Sanctuary."),
     },
 
-    [HELP_STATS_IV_EV] =
+    [HELP_SIGN_STATS_IV_EV] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Viewing IVs/EVs"),
         .desc = COMPOUND_STRING("While you are on the Pokémon stats screen,\n"
@@ -303,13 +326,13 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "stats, IVs, and EVs."),
     },
 
-    [HELP_LEVEL_CAP] =
+    [HELP_SIGN_LEVEL_CAP] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Level Cap"),
         .desc = COMPOUND_STRING("The {COLOR RED}Notebook{COLOR DARK_GRAY} contains the current level cap."),
     },
 
-    [HELP_BATTLE_CHANGES] =
+    [HELP_SIGN_BATTLE_CHANGES] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Battle Changes"),
         .desc = COMPOUND_STRING("Some battle mechanics have minor adjustments\n"
@@ -320,7 +343,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Consult the {COLOR RED}Notebook{COLOR DARK_GRAY} for more details."),
     },
 
-    [HELP_SELECT_SWITCH] =
+    [HELP_SIGN_SELECT_SWITCH] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Switch with Select"),
         .desc = COMPOUND_STRING("In the party menu, you can press {SELECT_BUTTON} to\n"
@@ -328,7 +351,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "party."),
     },
 
-    [HELP_GAUNTLET] =
+    [HELP_SIGN_GAUNTLET] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Gauntlets"),
         .desc = COMPOUND_STRING("Not all Zones have a single boss.\n\n"
@@ -336,27 +359,30 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "win multiple battles in a row."),
     },
 
-    [HELP_SANCTUARY_AREAS] =
+    [HELP_SIGN_SANCTUARY_AREAS] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Sanctuary Areas"),
         .desc = COMPOUND_STRING("The Sanctuary has a few connected areas\n"
                                 "that are unlocked with new HMs."),
     },
 
-    [HELP_RESTORE_HELD_ITEMS] =
+    [HELP_SIGN_RESTORE_HELD_ITEMS] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Held Items"),
         .desc = COMPOUND_STRING("All held items (except Berries) are\n"
-                                "restored after battle.\n\n"
-                                "This matches Gen 9 mechanics."),
+                                "restored after battle.\n\n"),
     },
 
-    [HELP_SELL_PRICE] =
+    [HELP_SIGN_ITEM_PRICE] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Sell Price"),
-        .desc = COMPOUND_STRING("Items can be sold at 1/4 of their original\n"
-                                "price.\n\n"
-                                "This matches Gen 9 mechanics."),
+        .header = COMPOUND_STRING("Trainer Tips: Item Price"),
+        .desc = COMPOUND_STRING("Items sell for 1/4 of their original price.\n"
+                                "Some items have had their prices changed\n"
+                                "from vanilla Pokémon games.\n\n"
+                                "{COLOR RED}Honey{COLOR DARK_GRAY}, Mints, & Exp. Candies cost ¥80.\n"
+                                "Shards cost ¥200.\n"
+                                "Tera Shards cost ¥200.\n"
+                                "Heart Scales cost ¥2400."),
     },
     // rest is todo
 };
