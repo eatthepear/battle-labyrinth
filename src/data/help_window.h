@@ -73,7 +73,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Pokémon can't gain EVs."),
     },
 
-    [HELP_ACCURACY] =
+    [HELP_CHANGES_ACCURACY] =
     {
         .header = COMPOUND_STRING("Battle Changes: Accuracy"),
         .desc = COMPOUND_STRING("All moves with 95%, 90%, 85%, 80%, and 75%\n"
@@ -82,7 +82,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "the next page."),
     },
 
-    [HELP_ACCURACY_EXCEPTIONS] =
+    [HELP_CHANGES_ACCURACY_EXCEPTIONS] =
     {
         .header = COMPOUND_STRING("Exceptions to Accuracy Changes"),
         .desc = COMPOUND_STRING("Jump Kick, Supercell Slam, Axe Kick,\n"
@@ -92,6 +92,29 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Hydro Pump, Stone Edge, Gunk Shot,\n"
                                 "Head Smash, Bleakwind Storm, Wildbolt Storm,\n"
                                 "Sandsear Storm, Sleep Powder, & Lovely Kiss"),
+    },
+
+    [HELP_CHANGES_EXPERIENCE] =
+    {
+        .header = COMPOUND_STRING("Battle Changes: Experience"),
+        .desc = COMPOUND_STRING("There are hard level caps built in, which\n"
+                                "typically increase by 2 every {COLOR GREEN}Zone{COLOR DARK_GRAY}.\n"
+                                "The amount of experience gained from a\n"
+                                "defeated Pokémon is a flat number based on\n"
+                                "the current {COLOR GREEN}Zone{COLOR DARK_GRAY} only.\n"
+                                "Pokémon don't gain experience through wild\n"
+                                "battles except on {COLOR GREEN}Easy{COLOR DARK_GRAY} difficulty."),
+    },
+
+    [HELP_CHANGES_ABILITIES] =
+    {
+        .header = COMPOUND_STRING("Battle Changes: Abilities"),
+        .desc = COMPOUND_STRING("{COLOR GREEN}Pickup{COLOR DARK_GRAY} does not activate after wild battles\n"
+                                "unless on {COLOR GREEN}Easy{COLOR DARK_GRAY} difficulty.\n\n"
+                                "{COLOR GREEN}Honey Gather{COLOR DARK_GRAY} does not activate after wild\n"
+                                "battles unless on {COLOR GREEN}Easy{COLOR DARK_GRAY} difficulty.\n\n"
+                                "{COLOR GREEN}Harvest{COLOR DARK_GRAY} does not activate during wild\n"
+                                "battles unless on {COLOR GREEN}Easy{COLOR DARK_GRAY} difficulty."),
     },
 
     [HELP_DIFFICULTY_BRUTAL] =
