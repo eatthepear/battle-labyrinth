@@ -445,9 +445,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_REVIVE, 5)
 		case 4:
-			msgbox(format("{COLOR RED}TM09 - Venoshock{COLOR DARK_GRAY}!"))
+			msgbox(format("{COLOR RED}TM46 - Thief{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_TM_VENOSHOCK)
+			giveitem(ITEM_TM_THIEF)
 		case 5:
 			msgbox(format("The {COLOR RED}Portable PC{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)

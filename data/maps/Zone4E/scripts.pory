@@ -29,7 +29,7 @@ script Zone4E_EventScript_KimonoGirl_Exit {
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_SACRED_ASH)
 	setspeaker("Kimono Girl")
-	msgbox(format("Well, I shall be off.\pIt seems someone awaits you up ahead."), MSGBOX_AUTOCLOSE)
+	msgbox(format("That Sacred Ash is quite rare. Use it for emergencies.\pWell, I shall be off. It seems someone awaits you up ahead. Be cautious, young trainer."), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_PLAYER, Zone4E_Movement_Player_UnblockKimonoGirl)
 	applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Zone4E_Movement_KimonoGirl_Exit)
 	waitmovement(0)
@@ -75,17 +75,12 @@ script Zone4E_EventScript_LeviathanBattle {
 	waitmovement(0)
 	delay(16)
 	setspeaker("Proton")
-	msgbox(format("Battle!"))
+	msgbox(format("So! The one who's been messing with my grunts comes walking around.\pYou must be wondering who I am.\pMy name is {COLOR RED}Proton{COLOR DARK_GRAY}, an {COLOR RED}Admin{COLOR DARK_GRAY} of {COLOR RED}Team Rainbow Rocket!{COLOR DARK_GRAY}.\pWe've been gathering resources, supplies, and like-minded people to join us in our mission of multiversal conquest.\pSomething about the way you stand says you'll get in our way.\pSo be it! I, Proton, will teach you a lesson."))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_PROTON_LEVIATHAN_4, format("We lost!"))
+	trainerbattle_no_intro(TRAINER_PBL_PROTON_LEVIATHAN_4, format("Defeated by a child!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Proton")
-	msgbox(format("Wargh! Not only are we lost in the wood…"))
-	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_TM_SNARL)
-	setspeaker("Bella")
-	msgbox(format("Oh, don't be irked!"))
-	closemessage
+	msgbox(format("Argh… A shameful defeat, but it won't hold me back.\pYou're going to regret standing in the way of {COLOR RED}Team Rainbow Rocket!{COLOR DARK_GRAY}, mark my words.\pOur organization has grown over the years, absorbing other villainous organizations into it as well.\pTake heart in knowing your victory will be short lived."), MSGBOX_AUTOCLOSE)
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(LOCALID_PROTON)
 	removeobject(LOCALID_GRUNT_1_4E)
@@ -93,6 +88,9 @@ script Zone4E_EventScript_LeviathanBattle {
 	setflag(FLAG_BEAT_LEVIATHAN_4)
 	setvar(VAR_ZONE_4_STATE, 3)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
+	msgbox(format("Proton vanished into thin air without a trace!\pHow could he have done such a thing?\pThere's something on the ground where he was standing…"))
+	giveitem(ITEM_TM_VENOSHOCK)
+	closemessage
 	fadedefaultbgm
 	releaseall
 	end
