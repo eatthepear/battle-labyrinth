@@ -159,7 +159,7 @@ text Zone3A_Text_ComeBack {
 }
 
 text Zone3A_Text_BeGood {
-	format("Please be good to my Farfetch'd!\pI wish I had a {COLOR RED}Notebook{COLOR DARK_GRAY} to see how to evolve a Galarian Farfetch'd…")
+	format("Please be good to my Farfetch'd!\pI wish I had a {COLOR GREEN}Notebook{COLOR DARK_GRAY} to see how to evolve a Galarian Farfetch'd…")
 }
 
 script Zone3A_EventScript_Random1 {

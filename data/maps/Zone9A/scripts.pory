@@ -116,7 +116,7 @@ script Zone9A_EventScript_Ari {
 		waitmovement(0)
 		if (var(VAR_DIFFICULTY) < DIFFICULTY_BRUTAL) {
 			setspeaker("Erica")
-			msgbox(format("You've defeated the rest of my family.\pAs an added challenge, would you feel up to facing me right now? If you win, I'll give you a {COLOR RED}Rare Candy{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			msgbox(format("You've defeated the rest of my family.\pAs an added challenge, would you feel up to facing me right now? If you win, I'll give you a {COLOR GREEN}Rare Candy{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				setspeaker("Erica")
 				msgbox(format("So be it. Good luck to us both."))
@@ -130,7 +130,7 @@ script Zone9A_EventScript_Ari {
 			}
 		} else {
 			setspeaker("Erica")
-			msgbox(format("You've defeated the rest of my family.\pNow, you must face your final challenge.\pIf you defeat me, I'll give you a {COLOR RED}Rare Candy{COLOR DARK_GRAY}!"))
+			msgbox(format("You've defeated the rest of my family.\pNow, you must face your final challenge.\pIf you defeat me, I'll give you a {COLOR GREEN}Rare Candy{COLOR DARK_GRAY}!"))
 			trainerbattle_no_intro(TRAINER_PBL_ERICA, format("Very impressive."))
 			setspeaker("Erica")
 			msgbox(format("As promised."), MSGBOX_AUTOCLOSE)

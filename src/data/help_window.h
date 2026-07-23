@@ -50,7 +50,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "You can grind experience and money.\n"
                                 "You gain double the amount of money from\n"
                                 "battles, and all trainers are one level\n"
-                                "lower than {COLOR RED}Normal{COLOR DARK_GRAY}."),
+                                "lower than {COLOR GREEN}Normal{COLOR DARK_GRAY}."),
     },
 
     [HELP_DIFFICULTY_NORMAL] =
@@ -77,7 +77,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Difficulty: Brutal"),
         .desc = COMPOUND_STRING("Suited for hardcore players.\n\n"
-                                "All changes from {COLOR RED}Hard{COLOR DARK_GRAY} are carried over.\n"
+                                "All changes from {COLOR GREEN}Hard{COLOR DARK_GRAY} are carried over.\n"
                                 "All boss battles are more difficult.\n"
                                 "The amount of money from trainers is halved.\n"
                                 "Some Pokémon, moves, abilities, NPCs, and\n"
@@ -87,7 +87,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_NUZLOCKE] =
     {
         .header = COMPOUND_STRING("Nuzlocke"),
-        .desc = COMPOUND_STRING("The {COLOR RED}Nuzlocke{COLOR DARK_GRAY} challenge is a set of rules\n"
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Nuzlocke{COLOR DARK_GRAY} challenge is a set of rules\n"
                                 "that create a higher level of difficulty.\n"
                                 "All standard Nuzlocke rules plus Species,\n"
                                 "Shiny, and Gift Clause are implemented.\n"
@@ -144,13 +144,13 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_CHANGES_DEXNAV] =
     {
         .header = COMPOUND_STRING("Changes: DexNav"),
-        .desc = COMPOUND_STRING("The {COLOR RED}DexNav{COLOR DARK_GRAY} displays all wild Pokémon\n"
+        .desc = COMPOUND_STRING("The {COLOR GREEN}DexNav{COLOR DARK_GRAY} displays all wild Pokémon\n"
                                 "available in a Zone.\n"
                                 "Pokémon in the Hidden category are found\n"
                                 "in Honey trees, smashing rocks, etc., and\n"
-                                "cannot be found using the {COLOR RED}DexNav{COLOR DARK_GRAY}'s search.\n"
-                                "Pokémon do not flee from the {COLOR RED}DexNav{COLOR DARK_GRAY}'s search.\n"
-                                "The {COLOR RED}DexNav{COLOR DARK_GRAY} cannot chain Pokémon."),
+                                "cannot be found using the {COLOR GREEN}DexNav{COLOR DARK_GRAY}'s search.\n"
+                                "Pokémon do not flee from the {COLOR GREEN}DexNav{COLOR DARK_GRAY}'s search.\n"
+                                "The {COLOR GREEN}DexNav{COLOR DARK_GRAY} cannot chain Pokémon."),
     },
 
     [HELP_CHANGES_HIDDEN_GROTTO] =
@@ -178,17 +178,17 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_INFINITE_REPEL] =
     {
         .header = COMPOUND_STRING("Infinite Repel"),
-        .desc = COMPOUND_STRING("The {COLOR RED}Infinite Repel{COLOR DARK_GRAY} allows you to avoid\n"
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Infinite Repel{COLOR DARK_GRAY} allows you to avoid\n"
                                 "encountering any wild Pokémon.\n"
                                 "It works regardless of your Pokémon's level.\n\n"
                                 "It is recommended to register the\n"
-                                "{COLOR RED}Infinite Repel{COLOR DARK_GRAY} for easy toggling on or off."),
+                                "{COLOR GREEN}Infinite Repel{COLOR DARK_GRAY} for easy toggling on or off."),
     },
 
     [HELP_SIGN_NOTEBOOK] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Notebook"),
-        .desc = COMPOUND_STRING("The {COLOR RED}Notebook{COLOR DARK_GRAY} is filled with useful\n"
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Notebook{COLOR DARK_GRAY} is filled with useful\n"
                                 "information, including mechanics changes\n"
                                 "from vanilla Pokémon games, upcoming Zones\n"
                                 "and boss battles, and difficulty info.\n\n"
@@ -199,7 +199,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_SIGN_COMPLETING_A_ZONE] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Completing a Zone"),
-        .desc = COMPOUND_STRING("To complete a Zone, find {COLOR RED}Porygon{COLOR DARK_GRAY}.\n\n"
+        .desc = COMPOUND_STRING("To complete a Zone, find {COLOR GREEN}Porygon{COLOR DARK_GRAY}.\n\n"
                                 "You don't necessarily need to defeat all\n"
                                 "opponents to complete a Zone."),
     },
@@ -216,7 +216,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Zone Info"),
         .desc = COMPOUND_STRING("You can see a short preview of the next Zone\n"
-                                "by consulting the {COLOR RED}Notebook{COLOR DARK_GRAY}.\n\n"
+                                "by consulting the {COLOR GREEN}Notebook{COLOR DARK_GRAY}.\n\n"
                                 "This includes:\n"
                                 "- a general description of the Zone\n"
                                 "- how many opponents remain in the Zone\n"
@@ -226,7 +226,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_SIGN_INFINITE_CANDY] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Infinite Candy"),
-        .desc = COMPOUND_STRING("The {COLOR RED}Infinite Candy{COLOR DARK_GRAY} can be used to increase\n"
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Infinite Candy{COLOR DARK_GRAY} can be used to increase\n"
                                 "your Pokémon's level.\n\n"
                                 "If you are in the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}, the maximum\n"
                                 "level is the current level cap.\n"
@@ -237,7 +237,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_SIGN_SURVEIL] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Surveil"),
-        .desc = COMPOUND_STRING("In battle, you can use {COLOR RED}Surveil{COLOR DARK_GRAY} to see the\n"
+        .desc = COMPOUND_STRING("In battle, you can use {COLOR GREEN}Surveil{COLOR DARK_GRAY} to see the\n"
                                 "opposing team(s).\n\n"
                                 "In a battle against two opponents, press {R_BUTTON}\n"
                                 "to toggle between the oppposing teams."),
@@ -246,18 +246,18 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_SIGN_HONEY_SWEET_SCENT] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Honey & Sweet Scent"),
-        .desc = COMPOUND_STRING("{COLOR RED}Honey{COLOR DARK_GRAY} can be slathered on a Honey Tree to\n"
+        .desc = COMPOUND_STRING("{COLOR GREEN}Honey{COLOR DARK_GRAY} can be slathered on a Honey Tree to\n"
                                 "encounter a Pokémon.\n"
-                                "{COLOR RED}Honey{COLOR DARK_GRAY} can also be used to start a wild\n"
+                                "{COLOR GREEN}Honey{COLOR DARK_GRAY} can also be used to start a wild\n"
                                 "Double Battle if used from the Bag.\n\n"
-                                "The field move {COLOR RED}Sweet Scent{COLOR DARK_GRAY} can also start\n"
+                                "The field move {COLOR GREEN}Sweet Scent{COLOR DARK_GRAY} can also start\n"
                                 "a wild Double Battle this way!"),
     },
 
     [HELP_SIGN_DOWSING_MACHINE] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Dowsing Machine"),
-        .desc = COMPOUND_STRING("You can use the {COLOR RED}Dowsing Machine{COLOR DARK_GRAY} to help you\n"
+        .desc = COMPOUND_STRING("You can use the {COLOR GREEN}Dowsing Machine{COLOR DARK_GRAY} to help you\n"
                                 "find such hidden items.\n\n"
                                 "As you get closer to a hidden item, the\n"
                                 "Dowsing Machine will make noises, change\n"
@@ -281,13 +281,13 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_SIGN_LEADER] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Gym Leader"),
-        .desc = COMPOUND_STRING("Some Zones have {COLOR RED}Gym Leaders{COLOR DARK_GRAY}, a particularly\n"
+        .desc = COMPOUND_STRING("Some Zones have {COLOR GREEN}Gym Leaders{COLOR DARK_GRAY}, a particularly\n"
                                 "challenging boss specializing in a single\n"
                                 "type of Pokémon.\n\n"
                                 "These Gym Leaders give multiple rewards\n"
                                 "for defeating them, including a Gym Badge.\n"
                                 "A Gym Badge lets you use a corresponding\n"
-                                "{COLOR RED}Hidden Machine{COLOR DARK_GRAY} outside battle."),
+                                "{COLOR GREEN}Hidden Machine{COLOR DARK_GRAY} outside battle."),
     },
 
     [HELP_SIGN_OPTIONAL_BOSSES] =
@@ -315,7 +315,7 @@ const struct HelpWindow gHelpWindowInfo[] =
         .desc = COMPOUND_STRING("Many Pokémon have minor adjustments to\n"
                                 "their evolution methods and abilities from\n"
                                 "vanilla Pokémon games.\n\n"
-                                "Consult the {COLOR RED}Notebook{COLOR DARK_GRAY} for these changes."),
+                                "Consult the {COLOR GREEN}Notebook{COLOR DARK_GRAY} for these changes."),
     },
 
     [HELP_SIGN_DIFFERENT_AREAS] =
@@ -332,7 +332,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Pokémon species in its Pokédex entry, such\n"
                                 "such as its moveset or how to evolve it.\n\n"
                                 "Any changes from vanilla can be found in\n"
-                                "the {COLOR RED}Notebook{COLOR DARK_GRAY}."),
+                                "the {COLOR GREEN}Notebook{COLOR DARK_GRAY}."),
     },
 
     [HELP_SIGN_BAG_TIPS] =
@@ -363,7 +363,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_SIGN_LEVEL_CAP] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Level Cap"),
-        .desc = COMPOUND_STRING("The {COLOR RED}Notebook{COLOR DARK_GRAY} contains the current level cap."),
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Notebook{COLOR DARK_GRAY} contains the current level cap."),
     },
 
     [HELP_SIGN_BATTLE_CHANGES] =
@@ -374,7 +374,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "- increased accuracy for many moves\n"
                                 "- the Frostbite condition instead of Freeze\n"
                                 "- experience gain\n\n"
-                                "Consult the {COLOR RED}Notebook{COLOR DARK_GRAY} for more details."),
+                                "Consult the {COLOR GREEN}Notebook{COLOR DARK_GRAY} for more details."),
     },
 
     [HELP_SIGN_SELECT_SWITCH] =
@@ -413,7 +413,7 @@ const struct HelpWindow gHelpWindowInfo[] =
         .desc = COMPOUND_STRING("Items sell for 1/4 of their original price.\n"
                                 "Some items have had their prices changed\n"
                                 "from vanilla Pokémon games.\n\n"
-                                "{COLOR RED}Honey{COLOR DARK_GRAY}, Mints, & Exp. Candies cost ¥80.\n"
+                                "{COLOR GREEN}Honey{COLOR DARK_GRAY}, Mints, & Exp. Candies cost ¥80.\n"
                                 "Shards cost ¥200.\n"
                                 "Tera Shards cost ¥200.\n"
                                 "Heart Scales cost ¥2400."),

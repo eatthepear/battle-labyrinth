@@ -8,9 +8,9 @@ script EventScript_OpponentsRemainingMessage {
 		case 0:
 			msgbox(format("There are no opponents remaining in the area."))
 		case 1:
-			msgbox(format("There is {COLOR RED}1{COLOR DARK_GRAY} opponent remaining in the area."))
+			msgbox(format("There is {COLOR GREEN}1{COLOR DARK_GRAY} opponent remaining in the area."))
 		default:
-			msgbox(format("There are {COLOR RED}{STR_VAR_1}{COLOR DARK_GRAY} opponents remaining in the area."))
+			msgbox(format("There are {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY} opponents remaining in the area."))
 	}
 }
 
@@ -321,7 +321,7 @@ text gText_ItemChestIsEmpty {
 // }
 
 text gText_Nuzlocke_GiftPossible {
-	format("On {COLOR RED}Nuzlocke{COLOR DARK_GRAY} mode, you will randomly receive one of the possible Pokémon. Would you like to see the list of possible Pokémon?")
+	format("On {COLOR GREEN}Nuzlocke{COLOR DARK_GRAY} mode, you will randomly receive one of the possible Pokémon. Would you like to see the list of possible Pokémon?")
 }
 
 text gText_Nuzlocke_ReadyReceive {
@@ -647,27 +647,27 @@ script EventScript_Notebook_ZoneInfo {
 	}
 	switch (var(VAR_ZONE)) {
 		case 1:
-			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} uses a trio of Elemental Monkeys, with their lead being weak against your starter, and their ace being strong against your starter."))
+			msgbox(format("The {COLOR GREEN}Leviathan{COLOR DARK_GRAY} uses a trio of Elemental Monkeys, with their lead being weak against your starter, and their ace being strong against your starter."))
 		case 2:
-			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} trains a Bunnelby, Smoliv, and ace Skwovet that use Oran Berries."))
+			msgbox(format("The {COLOR GREEN}Leviathan{COLOR DARK_GRAY} trains a Bunnelby, Smoliv, and ace Skwovet that use Oran Berries."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, they also have a Gulpin with Sticky Hold that uses Stuff Cheeks to set up its Belch."))
+				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, they also have a Gulpin with Sticky Hold that uses Stuff Cheeks to set up its Belch."))
 			}
 		case 3:
-			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} is a Rock Gym Leader. Their Tyrunt, Shieldon, and Amaura are not to be trifled with."))
+			msgbox(format("The {COLOR GREEN}Leviathan{COLOR DARK_GRAY} is a Rock Gym Leader. Their Tyrunt, Shieldon, and Amaura are not to be trifled with."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, their team has improved move options."))
+				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, their team has improved move options."))
 			}
 			msgbox(format("There is also a Rich Boy optional boss who uses Bidoof, Sandshrew, and Marill.\pHis strategy utilizes Defense Curl and Rollout to ramp up damage over time."))
 		case 4:
-			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} battles in a Double Battle. Their Nickit, Shinx, and ace Ledian all use spread moves that lower your stats."))
+			msgbox(format("The {COLOR GREEN}Leviathan{COLOR DARK_GRAY} battles in a Double Battle. Their Nickit, Shinx, and ace Ledian all use spread moves that lower your stats."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, they also have a Axew with Breaking Swipe."))
+				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, they also have a Axew with Breaking Swipe."))
 			}
 		case 5:
-			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} is a Psychic Gym Leader. Their Munna, Spoink, Natu, and Lunatone all can utilize Light Screen and Reflect to reduce damage."))
+			msgbox(format("The {COLOR GREEN}Leviathan{COLOR DARK_GRAY} is a Psychic Gym Leader. Their Munna, Spoink, Natu, and Lunatone all can utilize Light Screen and Reflect to reduce damage."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, their Gym has permanent Psychic Terrain, and their Lunatone has improved move options instead of the screens."))
+				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, their Gym has permanent Psychic Terrain, and their Lunatone has improved move options instead of the screens."))
 			}
 			msgbox(format("There is also a Rich Boy guarding a Rare Candy who uses Delibird, Farfetch'd, and Spinda."))
 		case 6:
@@ -677,24 +677,24 @@ script EventScript_Notebook_ZoneInfo {
 			}
 		case 7:
 		case 8:
-			msgbox(format("The first {COLOR RED}Leviathan{COLOR DARK_GRAY} has Pokémon that take advantage of held Sitrus Berries in different ways. Their Drifloon has Acrobatics and Unburden, their Dedenne has Cheek Pouch, and their Klawf can sometimes get multiple Anger Shell boosts because it has Sitrus Berry."))
+			msgbox(format("The first {COLOR GREEN}Leviathan{COLOR DARK_GRAY} has Pokémon that take advantage of held Sitrus Berries in different ways. Their Drifloon has Acrobatics and Unburden, their Dedenne has Cheek Pouch, and their Klawf can sometimes get multiple Anger Shell boosts because it has Sitrus Berry."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, they also have a Appletun that maximizes the effectiveness of the Sitrus Berry with its Ripen ability."))
+				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, they also have a Appletun that maximizes the effectiveness of the Sitrus Berry with its Ripen ability."))
 			}
-			msgbox(format("The second {COLOR RED}Leviathan{COLOR DARK_GRAY} is a villainous team admin. They use a Stunfisk, a Beautifly, and a Purugly."))
+			msgbox(format("The second {COLOR GREEN}Leviathan{COLOR DARK_GRAY} is a villainous team admin. They use a Stunfisk, a Beautifly, and a Purugly."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, they also have a Bruxish."))
+				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, they also have a Bruxish."))
 			}
 		case 9:
 			msgbox(format("There are four trainers you must defeat in a row.\pThe first uses a Squawkabilly.\pThe second uses a Carnivine.\pThe third uses a Seel and a Wailmer.\pThe fourth uses a Morpeko."))
 			msgbox(format("You can optionally battle a fifth trainer in a row to get a Rare Candy. This trainer uses a Sawk and a Throh."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, the fifth trainer is mandatory."))
+				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, the fifth trainer is mandatory."))
 			}
 		case 10:
-			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} is a Steel Gym Leader.\pTheir Tinkatuff can set up Stealth Rock, while their Togedemaru can chip away against its foes with Iron Barbs and Rocky Helmet.\pTheir Sliggoo-Hisui is also very tanky, and their ace Steelix has great coverage moves."))
+			msgbox(format("The {COLOR GREEN}Leviathan{COLOR DARK_GRAY} is a Steel Gym Leader.\pTheir Tinkatuff can set up Stealth Rock, while their Togedemaru can chip away against its foes with Iron Barbs and Rocky Helmet.\pTheir Sliggoo-Hisui is also very tanky, and their ace Steelix has great coverage moves."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, they also have a Prinplup, and their Steelix can Mega evolve."))
+				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, they also have a Prinplup, and their Steelix can Mega evolve."))
 			}
 		case 11:
 		case 12:
@@ -1091,15 +1091,15 @@ script EventScript_Notebook_Items {
 			case ITEM_HONEY:
 				helpwindow(HELP_SIGN_HONEY_SWEET_SCENT)
 			case ITEM_ABILITY_SNACK:
-				msgbox(format("The {COLOR RED}Ability Snack{COLOR DARK_GRAY} costs ¥80 and functions the same as an Ability Capsule."))
+				msgbox(format("The {COLOR GREEN}Ability Snack{COLOR DARK_GRAY} costs ¥80 and functions the same as an Ability Capsule."))
 			case ITEM_SACRED_ASH:
-				msgbox(format("The {COLOR RED}Sacred Ash{COLOR DARK_GRAY} now fully revives and heals your entire party."))
+				msgbox(format("The {COLOR GREEN}Sacred Ash{COLOR DARK_GRAY} now fully revives and heals your entire party."))
 			case ITEM_SERIOUS_MINT:
 				msgbox(format("Mints change natures permanently."))
 			case ITEM_AMULET_COIN:
 				helpwindow(HELP_SIGN_ITEM_PRICE)
 			case ITEM_HEXORB:
-				msgbox(format("The {COLOR RED}Hexorb{COLOR DARK_GRAY} Key Item lets you pre-status Pokémon."))
+				msgbox(format("The {COLOR GREEN}Hexorb{COLOR DARK_GRAY} Key Item lets you pre-status Pokémon."))
 			case 1:
 			case MULTI_B_PRESSED:
 				return
@@ -1501,25 +1501,25 @@ script EventScript_Difficulty_Info {
 		waitmessage
 		switch (var(VAR_DIFFICULTY)) {
 			case DIFFICULTY_EASY:
-				dynmultipush("{COLOR RED}Easy", 0)
+				dynmultipush("{COLOR GREEN}Easy", 0)
 				dynmultipush("Normal", 1)
 				dynmultipush("Hard", 2)
 				dynmultipush("Brutal", 3)
 			case DIFFICULTY_NORMAL:
 				dynmultipush("Easy", 0)
-				dynmultipush("{COLOR RED}Normal", 1)
+				dynmultipush("{COLOR GREEN}Normal", 1)
 				dynmultipush("Hard", 2)
 				dynmultipush("Brutal", 3)
 			case DIFFICULTY_HARD:
 				dynmultipush("Easy", 0)
 				dynmultipush("Normal", 1)
-				dynmultipush("{COLOR RED}Hard", 2)
+				dynmultipush("{COLOR GREEN}Hard", 2)
 				dynmultipush("Brutal", 3)
 			case DIFFICULTY_BRUTAL:
 				dynmultipush("Easy", 0)
 				dynmultipush("Normal", 1)
 				dynmultipush("Hard", 2)
-				dynmultipush("{COLOR RED}Brutal", 3)
+				dynmultipush("{COLOR GREEN}Brutal", 3)
 		}
 		dynmultipush("Back", 4)
 		dynmultistack(0, 0, FALSE, 5, FALSE, VAR_DIFFICULTY, DYN_MULTICHOICE_CB_NONE)
