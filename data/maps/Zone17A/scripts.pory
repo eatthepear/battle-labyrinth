@@ -8,81 +8,81 @@ script Zone17A_EventScript_Intro {
 	lockall
 	delay(48)
 	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
+	addobject(LOCALID_HEX_MANIAC)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
 	waitmovement(0)
-	removeobject(1)
+	removeobject(LOCALID_HEX_MANIAC)
 	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
 	delay(32)
 	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
+	addobject(LOCALID_HEX_MANIAC)
 	delay(16)
-	removeobject(1)
+	removeobject(LOCALID_HEX_MANIAC)
 	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
 	delay(16)
 	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
+	addobject(LOCALID_HEX_MANIAC)
 	delay(16)
-	removeobject(1)
+	removeobject(LOCALID_HEX_MANIAC)
 	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
 	delay(16)
 	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
+	addobject(LOCALID_HEX_MANIAC)
 	delay(16)
-	removeobject(1)
+	removeobject(LOCALID_HEX_MANIAC)
 	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
 	delay(16)
 	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
+	addobject(LOCALID_HEX_MANIAC)
 	delay(16)
-	removeobject(1)
+	removeobject(LOCALID_HEX_MANIAC)
 	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
 	delay(16)
 	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
+	addobject(LOCALID_HEX_MANIAC)
 	delay(48)
-	msgbox("Release us… Please…\pFourteen souls…\nTrapped here…\pInscripted in the stones…", MSGBOX_AUTOCLOSE)
+	msgbox("Release us… Please…\pTen souls…\nTrapped here…\pInscripted in the stones…", MSGBOX_AUTOCLOSE)
+	delay(16)
+	removeobject(LOCALID_HEX_MANIAC)
+	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
+	delay(16)
+	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
+	addobject(LOCALID_HEX_MANIAC)
+	delay(16)
+	removeobject(LOCALID_HEX_MANIAC)
+	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
+	delay(16)
+	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
+	addobject(LOCALID_HEX_MANIAC)
+	delay(16)
+	removeobject(LOCALID_HEX_MANIAC)
+	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
+	delay(16)
+	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
+	addobject(LOCALID_HEX_MANIAC)
+	delay(16)
+	removeobject(LOCALID_HEX_MANIAC)
+	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
+	delay(16)
+	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
+	addobject(LOCALID_HEX_MANIAC)
+	delay(8)
+	removeobject(LOCALID_HEX_MANIAC)
+	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
+	delay(8)
+	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
+	addobject(LOCALID_HEX_MANIAC)
+	delay(8)
+	removeobject(LOCALID_HEX_MANIAC)
+	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
+	delay(8)
+	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
+	addobject(LOCALID_HEX_MANIAC)
+	delay(8)
+	removeobject(LOCALID_HEX_MANIAC)
+	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
+	delay(8)
 	setvar(VAR_ZONE_17_STATE, 1)
-	delay(16)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	delay(16)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	delay(16)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	delay(16)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	delay(8)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(8)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	delay(8)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(8)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	delay(8)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(8)
 	releaseall
 	end
 }
@@ -105,7 +105,7 @@ script Zone17A_EventScript_RiddleSign {
 			goto(Zone17A_StartSpiritombBattle)
 		}
 	}
-	if (var(VAR_ZONE_17_STATE) == 29) {
+	if (var(VAR_ZONE_17_STATE) == 21) {
 		goto(Zone17A_EventScript_InitiateLeviathanBattle)
 	} else {
 		msgbox(Zone17A_Text_RiddleSign, MSGBOX_SIGN)
@@ -120,168 +120,58 @@ text Zone17A_Text_RiddleSign {
 	"With boundless splurge and wonder,\p"
 	"We celebrate the day of death\n"
 	"With rain, lightning, and thunder,\p"
-	"Bring peace to those who still\n"
-	"remember every cherished date,\p"
+	"Remember every cherished date,\n"
+	"And pay respects aplenty,\p"
 	"Another year of special days,\n"
-	"They number twenty-eight."
+	"The right order of twenty."
 }
 
 script Zone17A_EventScript_InitiateLeviathanBattle {
+	playse(SE_M_NIGHTMARE)
+	waitse
+	setspeaker("Leaf")
+	msgbox(format("Uh oh, I don't feel so good."))
+	playse(SE_M_NIGHTMARE)
+	waitse
+	msgbox(format("Something is wrong with Leaf! Her eyes look possessed."))
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_0) == 12) {
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
+		applymovement(LOCALID_17A_LEAF, Common_Movement_WalkDown)
 		waitmovement(0)
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
+		applymovement(LOCALID_17A_LEAF, Common_Movement_WalkLeft2)
 		waitmovement(0)
-	} elif (var(VAR_TEMP_0) == 14) {
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
+		applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
 		waitmovement(0)
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
+		applymovement(LOCALID_17A_LEAF, Common_Movement_WalkUp)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 9) {
+		applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
+		waitmovement(0)
+		applymovement(LOCALID_17A_LEAF, Common_Movement_WalkDown)
+		waitmovement(0)
+		applymovement(LOCALID_17A_LEAF, Common_Movement_FaceLeft)
 		waitmovement(0)
 	} elif (var(VAR_TEMP_1) == 7) {
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
+		applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 		waitmovement(0)
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
+		applymovement(LOCALID_17A_LEAF, Common_Movement_WalkUp)
 		waitmovement(0)
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
-		waitmovement(0)
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
+		applymovement(LOCALID_17A_LEAF, Common_Movement_FaceLeft)
 		waitmovement(0)
 	}
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
-	waitmovement(0)
-	delay(48)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	setobjectxy(1, 13, 6)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(32)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	setobjectxy(1, 13, 6)
-	delay(16)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	setobjectxy(1, 13, 6)
-	delay(16)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	setobjectxy(1, 13, 6)
-	delay(16)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	setobjectxy(1, 13, 6)
-	delay(16)
-	msgbox("Save us from the demon, please…")
-	delay(16)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(48)
-	fadeoutbgm(1)
-	clearflag(FLAG_BEAT_LEVIATHAN_15)
-	addobject(2)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
-	waitmovement(0)
-	applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
-	playse(SE_PIN)
-	waitmovement(0)
-	waitse
-	delay(48)
-	msgbox(format("{COLOR BLUE}Mia{COLOR DARK_GRAY}: There's no one left to play with anymore…"))
-	delay(48)
-	applymovement(2, Common_Movement_FaceRight)
-	waitmovement(0)
-	delay(48)
-	msgbox(format("{COLOR BLUE}Mia{COLOR DARK_GRAY}: Oh… another toy to play with?"))
-	delay(48)
-	applymovement(2, Zone17A_Movement_Mia)
-	waitmovement(0)
-	delay(48)
-	msgbox(format("{COLOR BLUE}Mia{COLOR DARK_GRAY}: You'll join my COLLECTION OF SOULS TO PLAY WITH, WON'T YOU?"))
+	setspeaker("Leaf?")
+	msgbox(format("Ah, this body will do well."))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	setflag(FLAG_DISABLE_SURVEIL)
-	// 	trainerbattle_no_intro(TRAINER_PBL_MIA_LEVIATHAN_15_CHALLENGE, Zone15B_Text_Leviathan13Defeat)
-	// 	clearflag(FLAG_DISABLE_SURVEIL)
-	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_MIA_LEVIATHAN_15, Zone15B_Text_Leviathan13Defeat)
-	// }
+	trainerbattle_no_intro(TRAINER_PBL_LEAF_LEVIATHAN_17, format("No!!!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Mia{COLOR DARK_GRAY}: AH!!!!!"))
-	setflag(FLAG_BEAT_LEVIATHAN_15)
-	removeobject(2)
-	delay(48)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
-	waitmovement(0)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	setobjectxy(1, 13, 6)
-	msgbox("Thank you…\nThe demon is vanquished…\lFinally, we may know peace…")
-	setvar(VAR_ZONE_17_STATE, 30)
-	delay(16)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	setobjectxy(1, 13, 6)
-	delay(16)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	setobjectxy(1, 13, 6)
-	delay(16)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	setobjectxy(1, 13, 6)
-	delay(16)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	setobjectxy(1, 13, 6)
-	delay(8)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(8)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	delay(8)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(8)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(1)
-	setobjectxy(1, 13, 6)
-	delay(8)
-	removeobject(1)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(8)
+	setflag(FLAG_BEAT_LEVIATHAN_17)
+	setspeaker("Leaf")
+	msgbox(format("Uh, where am I? Did you solve the riddle?"))
 	msgbox("There's something shimmering on the\nground by your feet!", MSGBOX_DEFAULT)
 	giveitem(ITEM_TM29)
 	clearflag(FLAG_HIDE_ZONE17A_PORYGON)
 	release
 	end
-}
-
-movement Zone17A_Movement_Mia {
-	slide_right * 2
 }
 
 script Zone17A_StartSpiritombBattle {
@@ -814,57 +704,4 @@ Zone17A_Text_Sign13:
 Zone17A_Text_Sign14:
 	.string "May 12, '62 - September 26, '17\n"
 	.string "The name has been eroded off…$"
-
-Zone17A_EventScript_Axle::
-	trainerbattle_single TRAINER_PBL_AXLE, Zone17A_Text_AxleIntro, Zone17A_Text_AxleDefeat
-	msgbox Zone17A_Text_AxlePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone17A_Text_AxleIntro:
-	.string "Leave me alone!$"
-
-Zone17A_Text_AxleDefeat:
-	.string "I… I…$"
-
-Zone17A_Text_AxlePostBattle:
-	.string "He was my friend.\p"
-	.string "I come here on the day it happened\n"
-	.string "every year.$"
-
-Zone17A_EventScript_Rafael::
-	trainerbattle_single TRAINER_PBL_RAFAEL, Zone17A_Text_RafaelIntro, Zone17A_Text_RafaelDefeat
-	msgbox Zone17A_Text_RafaelPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone17A_Text_RafaelIntro:
-	.string "Dear child, it can be hard to\n"
-	.string "handle grief sometimes.\p"
-	.string "May we have this battle to get my\n"
-	.string "mind off of things?$"
-
-Zone17A_Text_RafaelDefeat:
-	.string "Thank you, my friend.$"
-
-Zone17A_Text_RafaelPostBattle:
-	.string "I come here a few times a year,\n"
-	.string "to celebrate birthdays as well as\l"
-	.string "the day of passing.$"
-
-Zone17A_EventScript_Georgina::
-	trainerbattle_single TRAINER_PBL_GEORGINA, Zone17A_Text_GeorginaIntro, Zone17A_Text_GeorginaDefeat
-	msgbox Zone17A_Text_GeorginaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone17A_Text_GeorginaIntro:
-	.string "I can sense the souls of the passed…\n"
-	.string "But there's something else, lurking…$"
-
-Zone17A_Text_GeorginaDefeat:
-	.string "There's fourteen… no…\n"
-	.string "No… fifteen?$"
-
-Zone17A_Text_GeorginaPostBattle:
-	.string "The fourteen souls must be paid\n"
-	.string "respects…\p"
-	.string "The fifteenth soul must be calmed…$"
 `

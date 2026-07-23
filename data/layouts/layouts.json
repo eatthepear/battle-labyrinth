@@ -5317,8 +5317,8 @@
     {
       "id": "LAYOUT_ZONE17A",
       "name": "Zone17A_Layout",
-      "width": 32,
-      "height": 49,
+      "width": 29,
+      "height": 39,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/Zone17A/border.bin",
