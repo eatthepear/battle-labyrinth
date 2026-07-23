@@ -73,6 +73,27 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Pokémon can't gain EVs."),
     },
 
+    [HELP_ACCURACY] =
+    {
+        .header = COMPOUND_STRING("Battle Changes: Accuracy"),
+        .desc = COMPOUND_STRING("All moves with 95%, 90%, 85%, 80%, and 75%\n"
+                                "accuracy have increased to 100% accuracy.\n\n"
+                                "There are some exceptions to this listed on\n"
+                                "the next page."),
+    },
+
+    [HELP_ACCURACY_EXCEPTIONS] =
+    {
+        .header = COMPOUND_STRING("Exceptions to Accuracy Changes"),
+        .desc = COMPOUND_STRING("Jump Kick, Supercell Slam, Axe Kick,\n"
+                                "High Jump Kick, Population Bomb, Triple Axel,\n"
+                                "Heat Wave, Muddy Water, Fire Blast,\n"
+                                "Megahorn, Power Whip, Cross Chop,\n"
+                                "Hydro Pump, Stone Edge, Gunk Shot,\n"
+                                "Head Smash, Bleakwind Storm, Wildbolt Storm,\n"
+                                "Sandsear Storm, Sleep Powder, & Lovely Kiss"),
+    },
+
     [HELP_DIFFICULTY_BRUTAL] =
     {
         .header = COMPOUND_STRING("Difficulty: Brutal"),
