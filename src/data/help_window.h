@@ -164,6 +164,27 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "the same species."),
     },
 
+    [HELP_FARMERS_STAND] =
+    {
+        .header = COMPOUND_STRING("Farmer's Stand"),
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Farmer's Stand{COLOR DARK_GRAY} sells freshly grown or\n"
+                                "baked goods, and all items cost only ¥80.\n\n"
+                                "However, there is a per-customer limit on\n"
+                                "how many items you can buy.\n"
+                                "This limit resets after completing\n"
+                                "{COLOR GREEN}every 5th Zone{COLOR DARK_GRAY}."),
+    },
+
+    [HELP_INFINITE_REPEL] =
+    {
+        .header = COMPOUND_STRING("Infinite Repel"),
+        .desc = COMPOUND_STRING("The {COLOR RED}Infinite Repel{COLOR DARK_GRAY} allows you to avoid\n"
+                                "encountering any wild Pokémon.\n"
+                                "It works regardless of your Pokémon's level.\n\n"
+                                "It is recommended to register the\n"
+                                "{COLOR RED}Infinite Repel{COLOR DARK_GRAY} for easy toggling on or off."),
+    },
+
     [HELP_SIGN_NOTEBOOK] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Notebook"),

@@ -1083,7 +1083,7 @@ script EventScript_Notebook_Items {
 			case ITEM_RARE_CANDY:
 				helpwindow(HELP_SIGN_INFINITE_CANDY)
 			case ITEM_INFINITE_REPEL:
-				msgbox(format("The {COLOR RED}Infinite Repel{COLOR DARK_GRAY} Key Item allows you to avoid encountering any wild Pokémon, regardless of your level."))
+				helpwindow(HELP_INFINITE_REPEL)
 			case ITEM_TM_RETURN:
 				msgbox(format("TMs are infinite use, but do not restore PP if you are in a new {COLOR GREEN}Zone{COLOR DARK_GRAY}."))
 			case ITEM_HM_SURF:
