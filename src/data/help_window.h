@@ -84,6 +84,19 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "services are more limited."),
     },
 
+    [HELP_NUZLOCKE] =
+    {
+        .header = COMPOUND_STRING("Nuzlocke"),
+        .desc = COMPOUND_STRING("The {COLOR RED}Nuzlocke{COLOR DARK_GRAY} challenge is a set of rules\n"
+                                "that create a higher level of difficulty.\n"
+                                "All standard Nuzlocke rules plus Species,\n"
+                                "Shiny, and Gift Clause are implemented.\n"
+                                "Gift Pokémon are random among the options.\n"
+                                "DexNav encounters cannot be caught.\n"
+                                "Honey Trees always let you reroll when\n"
+                                "Species Clause triggers."),
+    },
+
     [HELP_CHANGES_ACCURACY] =
     {
         .header = COMPOUND_STRING("Battle Changes: Accuracy"),
