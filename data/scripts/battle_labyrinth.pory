@@ -1039,9 +1039,7 @@ script EventScript_Notebook_Battle {
 		waitmessage
 		dynmultipush("Accuracy", 0)
 		dynmultipush("Experience", 1)
-		dynmultipush("Frostbite", 2)
-		dynmultipush("Refresh", 3)
-		dynmultipush("Abilities", 4)
+		dynmultipush("Abilities", 3)
 		dynmultipush("Pay Day", 7)
 		dynmultipush("Back", 8)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
@@ -1054,10 +1052,6 @@ script EventScript_Notebook_Battle {
 				}
 			case 1:
 				helpwindow(HELP_CHANGES_EXPERIENCE)
-			case 2:
-				msgbox(format("Frostbite replaces Freeze, as in Legends: Arceus.\pThe move Refresh heals Frostbite."))
-			case 3:
-				msgbox(format("Refresh heals Frostbite in addition to its other effects."))
 			case 4:
 				helpwindow(HELP_CHANGES_ABILITIES)
 			case 7:
