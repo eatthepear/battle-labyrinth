@@ -2412,134 +2412,123 @@ IVs: 30 HP / 31 Atk / 31 Def / 30 SpA / 31 SpD / 31 Spe
 - Hidden Power
 - Work Up
 
-=== TRAINER_PBL_LT_SURGE_LEVIATHAN_15 ===
-Name: Lt. Surge
-Class: Leader
-Pic: Leader Lt Surge Frlg
-Music: Male
-Double Battle: No
+=== TRAINER_PBL_JUPITER_LEVIATHAN_16 ===
+Name: Jupiter
+Class: Galactic Commander
+Pic: Jupiter
+Music: Galactic
 AI: AI_FLAG_LEVIATHAN
-Mugshot: Purple
-Difficulty: Brutal
+Double Battle: No
+Mugshot: Blue
 
-Boltund @ Shuca Berry
-Jolly Nature
-Ability: Strong Jaw
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder Fang
-- Fire Fang
-- Crunch
-- Play Rough
-
-Vikavolt @ Occa Berry
-Quiet Nature
-Ability: Levitate
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Volt Switch
-- Bug Buzz
-- Energy Ball
-- Thunder Wave
-
-Electabuzz @ Eviolite
-Naive Nature
-Ability: Vital Spirit
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Volt Switch
-- Low Kick
-- Ice Punch
-- Fire Punch
-
-Electrode-Hisui @ Wise Glasses
-Modest Nature
+Garbodor @ Black Sludge
+Careful Nature
 Ability: Aftermath
 Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Volt Switch
-- Energy Ball
-- Rising Voltage
-- Taunt
+- Spikes
+- Gunk Shot
+- Body Slam
+- Stomping Tantrum
 
-Raichu @ Sitrus Berry
-Hasty Nature
-Ability: Static
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder Punch
-- Surf
-- Grass Knot
-- Low Kick
-
-=== TRAINER_PBL_LT_SURGE_LEVIATHAN_15 ===
-Name: Lt. Surge
-Class: Leader
-Pic: Leader Lt Surge Frlg
-Music: Male
-Double Battle: No
-AI: AI_FLAG_LEVIATHAN
-Mugshot: Purple
-
-Boltund @ Shuca Berry
+Oinkologne @ Chople Berry
 Jolly Nature
-Ability: Strong Jaw
+Ability: Lingering Aroma
 Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder Fang
-- Fire Fang
-- Crunch
+- Body Slam
+- Zen Headbutt
+- Bullet Seed
+- Stomping Tantrum
+
+Aromatisse @ Wise Glasses
+Modest Nature
+Ability: Aroma Veil
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Moonblast
+- Psychic
+- Charge Beam
+- Wish
+
+Victreebel @ Miracle Seed
+Hasty Nature
+Ability: Chlorophyll
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leaf Blade
+- Sludge Bomb
+- Knock Off
+- Sleep Powder
+
+Skuntank @ Sitrus Berry
+Naive Nature
+Ability: Aftermath
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 34
+- Night Slash
+- Poison Jab
+- Flamethrower
 - Play Rough
 
-Vikavolt @ Occa Berry
-Quiet Nature
-Ability: Levitate
+=== TRAINER_PBL_LEAF_LEVIATHAN_17 ===
+Name: Leaf
+Class: Rival
+Pic: Leaf
+Music: Female
+AI: AI_FLAG_LEVIATHAN
+Double Battle: No
+Mugshot: Pink
+
+Raichu-Alola @ Wise Glasses
+Timid Nature
+Ability: Surge Surfer
 Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Volt Switch
-- Bug Buzz
-- Energy Ball
-- Thunder Wave
-
-Electabuzz @ Eviolite
-Naive Nature
-Ability: Vital Spirit
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Volt Switch
-- Low Kick
-- Ice Punch
-- Fire Punch
-
-Electrode-Hisui @ Wise Glasses
-Modest Nature
-Ability: Aftermath
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Volt Switch
-- Energy Ball
-- Rising Voltage
-- Taunt
-
-Raichu @ Raichunite X
-Hasty Nature
-Ability: Static
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder Punch
+- Psychic
 - Surf
-- Grass Knot
-- Low Kick
+- Fake Out
 
-Zebstrika @ Expert Belt
-Adamant Nature
-Ability: Sap Sipper
+Tauros-Paldea-Aqua @ Muscle Band
+Jolly Nature
+Ability: Intimidate
 Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Raging Bull
+- Aqua Jet
+- Zen Headbutt
 - Wild Charge
-- Flame Charge
-- High Horsepower
+
+Rapidash-Galar @ Kasib Berry
+Jolly Nature
+Ability: Pastel Veil
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Zen Headbutt
+- Drill Run
 - Low Kick
+
+Snorlax @ Wiki Berry
+Brave Nature
+Ability: Gluttony
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Return
+- Stomping Tantrum
+- Crunch
+- Recycle
+
+Venusaur @ Sitrus Berry
+Timid Nature
+Ability: Overgrow
+Level: 34
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Sludge Bomb
+- Weather Ball
+- Earth Power
 
 === TRAINER_PBL_MIRAGE_LEVIATHAN_13 ===
 Name: STEVEN
