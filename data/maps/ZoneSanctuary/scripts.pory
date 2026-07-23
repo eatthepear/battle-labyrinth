@@ -500,9 +500,6 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 3:
 			completesubquest(QUEST_PBL, 2)
 			setvar(VAR_ZONE, 4)
-			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				setflag(FLAG_ITEM_ZONE3A_RARE_CANDY)
-			}
 		case 4:
 			completesubquest(QUEST_PBL, 3)
 			setvar(VAR_ZONE, 5)
@@ -1468,7 +1465,7 @@ script EventScript_ExpertM {
 		msgbox(format("I have studied the most effective training techniques for Pokémon, and developed these as the most optimal solution."))
 		giveitem(ITEM_INFINITE_CANDY)
 	}
-	msgbox(format("This {COLOR RED}Infinite Candy{COLOR DARK_GRAY} can increase your Pokémon's level up to the prior level cap.\pThough it's not as strong as a true {COLOR RED}Rare Candy{COLOR DARK_GRAY}, which would be able to increase your Pokémon's level past the current level cap."), MSGBOX_AUTOCLOSE)
+	msgbox(format("This {COLOR RED}Infinite Candy{COLOR DARK_GRAY} can increase your Pokémon's level up to the prior level cap, without limit!\pIt's excellent for training up new Pokémon."), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_EXPERT_M, Common_Movement_FaceLeft)
 	waitmovement(LOCALID_EXPERT_M)
 	release

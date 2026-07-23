@@ -76,60 +76,31 @@ script Zone3A_EventScript_GymGuide {
 script Zone3A_EventScript_Phillip {
 	lock
 	faceplayer
+	if (defeated(TRAINER_PBL_PHILLIP_OPTIONAL_1)) {
+		call(Zone3A_EventScript_Phillip_End)
+	}
+	setspeaker("Phillip")
+	msgbox(format("You look poor as dirt!\pTell you what, you look like you're in need of cash, and I need someone to test out my {COLOR GREEN}Rollout{COLOR DARK_GRAY} team on.\pIf you defeat me in a battle, I'll give you a {COLOR GREEN}Nugget{COLOR DARK_GRAY}!"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Fair enough, I wouldn't want to get crushed by me either.\pCome back if you change your mind."))
+		release
+		end
+	}
+	msgbox(format("Now that's what I'm talking about! Let's battle!"))
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_PHILLIP_OPTIONAL_1, format("That didn't go as well as I thought it would."))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Phillip")
+	msgbox(format("To the victor goes the spoils."))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_NUGGET)
+	call(Zone3A_EventScript_Phillip_End)
+}
+
+script Zone3A_EventScript_Phillip_End {
 	setspeaker("Phillip")
 	msgbox(format("I heard there's a move like {COLOR GREEN}Rollout{COLOR DARK_GRAY}, but Ice-type instead.\pThat sounds pretty neat!"))
 	release
-	end
-}
-
-script Zone3A_EventScript_TriggerPhillipLeft {
-	lockall
-	applymovement(LOCALID_PHILLIP, Common_Movement_ExclamationMark)
-	playse(SE_PIN)
-	waitmovement(0)
-	waitse
-	applymovement(LOCALID_PHILLIP, Common_Movement_WalkLeft)
-	waitmovement(0)
-	call(Zone3A_EventScript_TriggerPhillip)
-	applymovement(LOCALID_PHILLIP, Common_Movement_WalkRight)
-	waitmovement(0)
-	releaseall
-	end
-}
-
-script Zone3A_EventScript_TriggerPhillipRight {
-	lockall
-	applymovement(LOCALID_PHILLIP, Common_Movement_ExclamationMark)
-	playse(SE_PIN)
-	waitmovement(0)
-	waitse
-	call(Zone3A_EventScript_TriggerPhillip)
-	releaseall
-	end
-}
-
-script Zone3A_EventScript_TriggerPhillip {
-	applymovement(LOCALID_PHILLIP, Common_Movement_WalkDown3)
-	waitmovement(0)
-	setspeaker("Phillip")
-	msgbox(format("This right here is my island! You gotta deal with it!\pSomething about the look in your eyes says you're gonna challenge me for it.\pIf you wanna battle, I'll go all out with {COLOR GREEN}Rollout{COLOR DARK_GRAY}!"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Aha! You're scared! Go away, scaredy cat!"), MSGBOX_AUTOCLOSE)
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
-		waitmovement(0)
-		applymovement(LOCALID_PHILLIP, Common_Movement_WalkUp3)
-		waitmovement(0)
-		return
-	}
-	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_PHILLIP_OPTIONAL_1, format("Wah!!!"))
-	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	setspeaker("Phillip")
-	msgbox(format("You beat me! No fair! Argh…\pFine, you can explore this island too.\pHave that {COLOR GREEN}Rare Candy{COLOR DARK_GRAY} too while you're at it!"), MSGBOX_AUTOCLOSE)
-	setvar(VAR_ZONE_3_STATE, 1)
-	applymovement(LOCALID_PHILLIP, Common_Movement_WalkUp3)
-	waitmovement(0)
-	releaseall
 	end
 }
 

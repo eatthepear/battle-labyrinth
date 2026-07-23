@@ -925,7 +925,7 @@
 #define FLAG_ITEM_ZONE3A_RANDOM_1                  0x406
 #define FLAG_ITEM_ZONE3A_RANDOM_2                  0x407
 #define FLAG_ITEM_ZONE3A_RANDOM_3                  0x408
-#define FLAG_ITEM_ZONE3A_RARE_CANDY                0x422
+// #define FLAG_ITEM_ZONE3A_RARE_CANDY                0x422
 #define FLAG_ITEM_ZONE5A_RARE_CANDY                0x425
 #define FLAG_ITEM_ZONE3A_HYPER_POTION              0x409
 #define FLAG_ITEM_ZONE4A_SILVER_POWDER             0x40A

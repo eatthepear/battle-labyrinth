@@ -658,7 +658,7 @@ script EventScript_Notebook_ZoneInfo {
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				msgbox(format("On {COLOR RED}Brutal{COLOR DARK_GRAY} difficulty, their team has improved move options."))
 			}
-			msgbox(format("There is also a School Kid guarding a Rare Candy who uses Bidoof, Sandshrew, and Marill. Their strategy utilizes Defense Curl and Rollout to ramp up damage over time."))
+			msgbox(format("There is also a Rich Boy optional boss who uses Bidoof, Sandshrew, and Marill.\pHis strategy utilizes Defense Curl and Rollout to ramp up damage over time."))
 		case 4:
 			msgbox(format("The {COLOR RED}Leviathan{COLOR DARK_GRAY} battles in a Double Battle. Their Nickit, Shinx, and ace Ledian all use spread moves that lower your stats."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
@@ -1132,7 +1132,7 @@ script EventScript_Notebook_Items {
 	while {
 		message(format("Item Changes open.\nAnything not listed is vanilla."))
 		waitmessage
-		dynmultipush("Rare Candy", ITEM_RARE_CANDY)
+		dynmultipush("Infinite Rare Candy", ITEM_RARE_CANDY)
 		dynmultipush("Infinite Repel", ITEM_INFINITE_REPEL)
 		dynmultipush("TMs", ITEM_TM_RETURN)
 		dynmultipush("Honey", ITEM_HONEY)
@@ -1148,7 +1148,7 @@ script EventScript_Notebook_Items {
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
 		switch (var(VAR_RESULT)) {
 			case ITEM_RARE_CANDY:
-				msgbox(format("You can use normal {COLOR RED}Rare Candies{COLOR DARK_GRAY}, of which there only 15 in the game, to level up your Pokémon past the current level cap.\pThe {COLOR RED}Infinite Candy{COLOR DARK_GRAY} Key Item allows you to raise your Pokémon up to the level cap, or only the prior level cap if you are in a {COLOR GREEN}Zone{COLOR DARK_GRAY}."))
+				msgbox(gText_InfiniteRareCandy)
 			case ITEM_INFINITE_REPEL:
 				msgbox(format("The {COLOR RED}Infinite Repel{COLOR DARK_GRAY} Key Item allows you to avoid encountering any wild Pokémon, regardless of your level."))
 			case ITEM_TM_RETURN:
@@ -1176,6 +1176,10 @@ script EventScript_Notebook_Items {
 				return
 		}
 	}
+}
+
+text gText_InfiniteRareCandy {
+	format("The {COLOR RED}Infinite Candy{COLOR DARK_GRAY} Key Item allows you to raise your Pokémon up to the level cap, or only the prior level cap if you are in a {COLOR GREEN}Zone{COLOR DARK_GRAY}.")
 }
 
 script EventScript_Notebook_Other {
@@ -1242,9 +1246,9 @@ script EventScript_Notebook_TrainerTips {
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_9)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("Register List", SUB_QUEST_9) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_10)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Battle Changes", SUB_QUEST_10) }
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Gym Leaders", SUB_QUEST_10) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_11)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Rare Candy", SUB_QUEST_11) }
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Optional Bosses", SUB_QUEST_11) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_12)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("Field Moves", SUB_QUEST_12) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_13)
@@ -1262,7 +1266,7 @@ script EventScript_Notebook_TrainerTips {
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_19)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("Level Cap", SUB_QUEST_19) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_20)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Gym", SUB_QUEST_20) }
+		if (var(VAR_RESULT) == TRUE) { dynmultipush("Battle Changes", SUB_QUEST_20) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_21)
 		if (var(VAR_RESULT) == TRUE) { dynmultipush("Select Switch", SUB_QUEST_21) }
 		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_22)
@@ -1285,8 +1289,8 @@ script EventScript_Notebook_TrainerTips {
 			case SUB_QUEST_7:  call(EventScript_Sign_HoneySweetScent)
 			case SUB_QUEST_8:  call(EventScript_Sign_HiddenItems)
 			case SUB_QUEST_9:  call(EventScript_Sign_Register)
-			case SUB_QUEST_10: call(EventScript_Sign_BattleChanges)
-			case SUB_QUEST_11: call(EventScript_Sign_RareCandy)
+			case SUB_QUEST_10: call(EventScript_Sign_Leader)
+			case SUB_QUEST_11: call(EventScript_Sign_OptionalBosses)
 			case SUB_QUEST_12: call(EventScript_Sign_FieldMoves)
 			case SUB_QUEST_13: call(EventScript_Sign_PokemonChanges)
 			case SUB_QUEST_14: call(EventScript_Sign_DifferentAreas)
@@ -1295,7 +1299,7 @@ script EventScript_Notebook_TrainerTips {
 			case SUB_QUEST_17: call(EventScript_Sign_ChangeMusic)
 			case SUB_QUEST_18: call(EventScript_Sign_StatsIVEV)
 			case SUB_QUEST_19: call(EventScript_Sign_LevelCap)
-			case SUB_QUEST_20: call(EventScript_Sign_Leader)
+			case SUB_QUEST_20: call(EventScript_Sign_BattleChanges)
 			case SUB_QUEST_21: call(EventScript_Sign_SelectSwitch)
 			case SUB_QUEST_22: call(EventScript_Sign_SanctuaryAreas)
 			case SUB_QUEST_23: call(EventScript_Sign_Gauntlet)
@@ -1351,7 +1355,8 @@ script EventScript_Sign_ZoneInfo {
 }
 
 script EventScript_Sign_InfiniteCandy {
-	msgbox(format("Trainer Tips\pThe {COLOR RED}Infinite Candy{COLOR DARK_GRAY} can be used to increase your Pokémon's level up to the prior level cap.\pConsult the {COLOR RED}Notebook{COLOR DARK_GRAY} for more details."), MSGBOX_SIGN)
+	msgbox(format("Trainer Tips"), MSGBOX_SIGN)
+	msgbox(gText_InfiniteRareCandy)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_5)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_5)
@@ -1390,16 +1395,16 @@ script EventScript_Sign_Register {
 	}
 }
 
-script EventScript_Sign_BattleChanges {
-	msgbox(format("Trainer Tips\pA few battle mechanics have been altered from vanilla, including increased accuracy for many moves, the Frostbite condition instead of Freeze, and experience gain.\pConsult the {COLOR RED}Notebook{COLOR DARK_GRAY} for more details."), MSGBOX_SIGN)
+script EventScript_Sign_Leader {
+	msgbox(format("Trainer Tips\pSome Zones have a special Leviathan who specializes in a single type only, and will often be stronger than other Leviathans up to that point."), MSGBOX_SIGN)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_10)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_10)
 	}
 }
 
-script EventScript_Sign_RareCandy {
-	msgbox(format("Trainer Tips\p{COLOR RED}Rare Candies{COLOR DARK_GRAY} differ from the {COLOR RED}Infinite Candy{COLOR DARK_GRAY} because they can be used to level up past the level cap!\pOnly 15 {COLOR RED}Rare Candies{COLOR DARK_GRAY} can be found throughout the game, and each is guarded by an optional miniboss."), MSGBOX_SIGN)
+script EventScript_Sign_OptionalBosses {
+	msgbox(format("Trainer Tips\pSome Zones have an optional boss that gives a special reward for beating them."), MSGBOX_SIGN)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_11)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_11)
@@ -1474,8 +1479,8 @@ script EventScript_Sign_LevelCap {
 	}
 }
 
-script EventScript_Sign_Leader {
-	msgbox(format("Trainer Tips\pSome Zones have a special Leviathan who specializes in a single type only, and will often be stronger than other Leviathans up to that point."), MSGBOX_SIGN)
+script EventScript_Sign_BattleChanges {
+	msgbox(format("Trainer Tips\pA few battle mechanics have been altered from vanilla, including increased accuracy for many moves, the Frostbite condition instead of Freeze, and experience gain.\pConsult the {COLOR RED}Notebook{COLOR DARK_GRAY} for more details."), MSGBOX_SIGN)
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_20)
 	if (var(VAR_RESULT) == FALSE) {
 		completesubquest(QUEST_SIGNS, SUB_QUEST_20)
@@ -1580,7 +1585,7 @@ script EventScript_Difficulty_Info {
 				msgbox(format("{COLOR RED}Hard{COLOR DARK_GRAY} is suited for players looking for a serious challenge.\pYou can't use in-battle items during non-wild battles, you must play on SET mode, and your Pokémon can't gain EVs."))
 			case 3:
 				setspeaker("Colress")
-				msgbox(format("{COLOR RED}Brutal{COLOR DARK_GRAY} is suited for players experienced in challenging ROM hacks.\pAll changes from {COLOR RED}Hard{COLOR DARK_GRAY} are carried over, and {COLOR RED}Leviathan{COLOR DARK_GRAY} and other boss battles are more difficult.\pIn addition, the amount of money from trainers is halved, and the Pokémon, moves, abilities, NPCs, and services you have access to are more limited.\pAlso, any Rare Candies you don't pick up while you are in a Zone disappear upon leaving the Zone.\pFinally, the AI cannot be PP stalled without the Pressure ability."))
+				msgbox(format("{COLOR RED}Brutal{COLOR DARK_GRAY} is suited for players experienced in challenging ROM hacks.\pAll changes from {COLOR RED}Hard{COLOR DARK_GRAY} are carried over, and {COLOR RED}Leviathan{COLOR DARK_GRAY} and other boss battles are more difficult.\pIn addition, the amount of money from trainers is halved, and the Pokémon, moves, abilities, NPCs, and services you have access to are more limited.\pFinally, the AI cannot be PP stalled without the Pressure ability."))
 			case 4:
 			case MULTI_B_PRESSED:
 				return
