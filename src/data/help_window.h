@@ -42,6 +42,48 @@ const struct HelpWindow gHelpWindowInfo[] =
         .headerFont = FONT_NARROWER,
     },
 
+    [HELP_DIFFICULTY_EASY] =
+    {
+        .header = COMPOUND_STRING("Difficulty: Easy"),
+        .desc = COMPOUND_STRING("Suited for casual players.\n\n"
+                                "Similar to the hardest vanilla Pokémon games.\n"
+                                "You can grind experience and money.\n"
+                                "You gain double the amount of money from\n"
+                                "battles, and all trainers are one level\n"
+                                "lower than {COLOR RED}Normal{COLOR DARK_GRAY}."),
+    },
+
+    [HELP_DIFFICULTY_NORMAL] =
+    {
+        .header = COMPOUND_STRING("Difficulty: Normal"),
+        .desc = COMPOUND_STRING("Suited for the typical player.\n\n"
+                                "More challenging than the hardest vanilla\n"
+                                "Pokémon games.\n"
+                                "This is the developer intended experience.\n"
+                                "Recommended for first time playthroughs!"),
+    },
+
+    [HELP_DIFFICULTY_HARD] =
+    {
+        .header = COMPOUND_STRING("Difficulty: Hard"),
+        .desc = COMPOUND_STRING("Suited for players looking for a challenge.\n\n"
+                                "You can't use in-battle items during\n"
+                                "non-wild battles.\n"
+                                "You must play on SET mode.\n"
+                                "Pokémon can't gain EVs."),
+    },
+
+    [HELP_DIFFICULTY_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Difficulty: Brutal"),
+        .desc = COMPOUND_STRING("Suited for hardcore players.\n\n"
+                                "All changes from {COLOR RED}Hard{COLOR DARK_GRAY} are carried over.\n"
+                                "All boss battles are more difficult.\n"
+                                "The amount of money from trainers is halved.\n"
+                                "Some Pokémon, moves, abilities, NPCs, and\n"
+                                "services are more limited."),
+    },
+
     [HELP_NOTEBOOK] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Notebook"),
