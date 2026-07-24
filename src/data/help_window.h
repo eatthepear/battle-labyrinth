@@ -431,4 +431,14 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "- Affected Pokémon become immune to\n"
                                 "opponents' moves with increased priority."),
     },
+
+    [HELP_PORTABLE_PC] =
+    {
+        .header = COMPOUND_STRING("Portable PC"),
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Portable PC{COLOR DARK_GRAY} can be accessed from the\n"
+                                "{START_BUTTON} menu.\n\n"
+                                "It can only be used once per {COLOR GREEN}Zone{COLOR DARK_GRAY},\n"
+                                "but can be accessed at will from the\n"
+                                "{COLOR GREEN}Sanctuary{COLOR DARK_GRAY}."),
+    },
 };

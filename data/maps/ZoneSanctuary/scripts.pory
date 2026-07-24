@@ -459,18 +459,17 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_REVIVE, 5)
 		case 4:
-			msgbox(format("{COLOR GREEN}TM46 - Thief{COLOR DARK_GRAY}!"))
+			msgbox(format("{COLOR GREEN}HM01 - Cut{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_TM_THIEF)
+			giveitem(ITEM_HM_CUT)
 		case 5:
 			msgbox(format("The {COLOR GREEN}Portable PC{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
 			setflag(FLAG_SYS_START_MENU_PC_GET)
 			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(format("{PLAYER} received the {COLOR GREEN}Portable PC{COLOR DARK_GRAY}! It was added to the {START_BUTTON} menu."))
+			msgbox(format("{PLAYER} received the {COLOR GREEN}Portable PC{COLOR DARK_GRAY}!"))
 			waitfanfare
-			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("Note that if you are in a Zone, you can only use the Portable PC once before reaching the Sanctuary."))
+			helpwindow(HELP_PORTABLE_PC)
 		case 6:
 			msgbox(format("The {COLOR GREEN}Machete{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
