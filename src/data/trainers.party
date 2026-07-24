@@ -589,6 +589,16 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tail Whip
 - Scary Face
 
+Shieldon @ Chesto Berry
+Careful Nature
+Ability: Sturdy
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Tomb
+- Rock Smash
+- Taunt
+- Scary Face
+
 Amaura @ Oran Berry
 Relaxed Nature
 Ability: Refrigerate

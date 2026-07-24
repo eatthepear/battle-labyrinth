@@ -394,6 +394,7 @@ static const u16 bossSpecies[] = {
     SPECIES_MARILL,
 
     SPECIES_TYRUNT,
+    SPECIES_SHIELDON,
     SPECIES_AMAURA,
 
     SPECIES_SALANDIT,
