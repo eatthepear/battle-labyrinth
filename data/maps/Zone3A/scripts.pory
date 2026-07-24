@@ -47,7 +47,7 @@ script Zone3A_EventScript_Grant {
 	msgbox(format("There are some things that seem out of reach no matter how hard you try.\pHowever, it's important that you never give up - no matter the opponent or the odds.\pI could tell from our battle that you and your Pokémon understand that.\pTo commemorate such an impressive show of teamwork, please accept the Cliff Badge!"))
 	setspeaker(SP_NAME_NONE)
 	playfanfare(MUS_OBTAIN_BADGE)
-	msgbox(format("{PLAYER} received the Cliff Badge from Grant!"))
+	msgbox(format("{PLAYER} received the Cliff Badge from {COLOR BLUE}Grant{COLOR DARK_GRAY}!"))
 	waitfanfare
 	setspeaker("Grant")
 	msgbox(format("With the Cliff Badge in your grasp, you should have no issues using the HM {COLOR GREEN}Rock Smash{COLOR DARK_GRAY} outside battle!\pYour Pokémon don't need to know the move to use it, just having the HM and the requisite Gym Badge is enough!\pAh, finally, I'd like you to take these as well."))

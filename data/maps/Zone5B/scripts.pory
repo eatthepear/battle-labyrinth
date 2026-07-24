@@ -18,7 +18,13 @@ script Zone5B_EventScript_Liza {
 	trainerbattle_no_intro(TRAINER_PBL_LIZA_LEVIATHAN_5, format("What? I lost?"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Liza")
-	msgbox(format("It can't be helped. You've won…\pCongratulations. As a reward, take this!"))
+	msgbox(format("It can't be helped. You've won…\pCongratulations. Please take the Mind Badge!"))
+	setspeaker(SP_NAME_NONE)
+	playfanfare(MUS_OBTAIN_BADGE)
+	msgbox(format("{PLAYER} received the Mind Badge from {COLOR BLUE}Liza{COLOR DARK_GRAY}!"))
+	waitfanfare
+	setspeaker("Grant")
+	msgbox(format("Since you now have the Mind Badge, you can use the HM {COLOR GREEN}Cut{COLOR DARK_GRAY} outside battle.\pI'd also like you to take this TM."))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_LIGHT_SCREEN)
 	setspeaker("Liza")
@@ -26,8 +32,9 @@ script Zone5B_EventScript_Liza {
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_REFLECT)
 	setspeaker("Liza")
-	msgbox(format("You're doing great, challenger!\pKeep up the good work.\pLeft leads to the exit, while right returns you to the Gym entrance."), MSGBOX_AUTOCLOSE)
+	msgbox(format("You will become even stronger! I've battled you, so I know."))
     setflag(FLAG_BEAT_LEVIATHAN_5)
+	setflag(FLAG_BADGE02_GET)
 	release
 	end
 }
@@ -124,8 +131,14 @@ script Zone5B_EventScript_Theresa {
 	end
 }
 
+
+// script Zone5A_EventScript_Clinton {
+// 	trainerbattle_single(TRAINER_PBL_CLINTON, format("Perhaps if I bribed the Gym Leader, I would be able to get a badge!"), format("Unfortunately, I tried, and no dice!"))
+// 	msgbox(format("She requested a single battle instead.\pMaybe her brother isn't here or something?"), MSGBOX_AUTOCLOSE)
+// 	end
+// }
 script Zone5B_EventScript_Anthony {
-	trainerbattle_single(TRAINER_PBL_ANTHONY, format("Have you used a Rare Candy yet?\pYou might want to, if you want any hope of beating the Gym Leader!"), format("That's if you can figure out the puzzle first!"))
-	msgbox(format("Rare Candies are used best to evolve your Pokémon or learn a new move."), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_ANTHONY, format("Many have asked why the Gym Leader does not battle with her brother.\pI ask, why does it matter? She battles exceptionally well by herself!"), format("Our Gym Leader is the best!"))
+	msgbox(format("I have to admit though, she would be even more formidable with her brother alongside her."), MSGBOX_AUTOCLOSE)
 	end
 }

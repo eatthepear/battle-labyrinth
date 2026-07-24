@@ -375,12 +375,6 @@ script Zone5A_EventScript_Rebecca {
 	end
 }
 
-// script Zone5A_EventScript_Clinton {
-// 	trainerbattle_single(TRAINER_PBL_CLINTON, format("Perhaps if I bribed the Gym Leader, I would be able to get a badge!"), format("Unfortunately, I tried, and no dice!"))
-// 	msgbox(format("She requested a single battle instead.\pMaybe her brother isn't here or something?"), MSGBOX_AUTOCLOSE)
-// 	end
-// }
-
 script Zone5A_EventScript_Melinda {
 	lock
 	faceplayer
