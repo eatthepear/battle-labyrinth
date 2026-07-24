@@ -950,7 +950,7 @@
 #define FLAG_ITEM_ZONE5B_Old_RANDOM_2                  FLAG_ITEM_ZONE5A_TM_THIEF
 #define FLAG_ITEM_ZONE5B_Old_GEMS                      FLAG_ITEM_ZONE5A_TM_THIEF
 #define FLAG_ITEM_ZONE5B_Old_RANDOM_3                  FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE6A_TM_BULLDOZE          0x41C
+#define FLAG_ITEM_ZONE6A_TM_PLUCK          0x41C
 #define FLAG_ITEM_ZONE6A_NET_BALL                  0x41D
 #define FLAG_ITEM_ZONE6A_NEST_BALL                 0x41E
 #define FLAG_ITEM_ZONE6A_RANDOM_1                      0x41F
