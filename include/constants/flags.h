@@ -186,7 +186,7 @@
 #define FLAG_TRUE_BRUTAL                                  0x100 // keeps track if you actually started on Brutal difficulty and stayed there the whole time
 #define FLAG_TIM_INTRO                                    0x101
 #define FLAG_VARRICK_INTRO                                0x102
-#define FLAG_UNUSED_0x103                                  0x103
+#define FLAG_COWGIRL_INTRO                                0x103
 #define FLAG_LELOUCH_INTRO                                0x104
 #define FLAG_UNUSED_0x105                                  0x105
 #define FLAG_JOY_INTRO                                    0x106
@@ -271,7 +271,7 @@
 #define FLAG_ZONE_B1_PORYGON_5                            0x155
 #define FLAG_RECEIVED_PORYGON                             0x156
 #define FLAG_GUITARIST_INTRO                              0x157
-#define FLAG_COWGIRL_INTRO                                0x158
+#define FLAG_ZONE_SANCTUARY_HONEY_GIRL                    0x158
 #define FLAG_HIDE_ZONE10A_KIMONO_GIRL                                 0x159
 #define FLAG_TESTING_FLAG                                 0x15A
 #define FLAG_HIDE_SANCTUARY_BOULDER_1 0x15B
