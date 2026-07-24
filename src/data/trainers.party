@@ -559,16 +559,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tail Whip
 - Scary Face
 
-Shieldon @ Chesto Berry
-Careful Nature
-Ability: Sturdy
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Smack Down
-- Tackle
-- Taunt
-- Scary Face
-
 Amaura @ Oran Berry
 Relaxed Nature
 Ability: Refrigerate
@@ -597,16 +587,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Tomb
 - Bite
 - Tail Whip
-- Scary Face
-
-Shieldon @ Chesto Berry
-Careful Nature
-Ability: Sturdy
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rock Tomb
-- Rock Smash
-- Taunt
 - Scary Face
 
 Amaura @ Oran Berry
@@ -901,25 +881,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Light Screen
 - Reflect
 
-Natu @ Light Clay
-Naive Nature
-Ability: Magic Bounce
-Level: 14
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Air Cutter
-- Night Shade
-- Light Screen
-- Reflect
-
 Lunatone @ Sitrus Berry
-Naughty Nature
+Bold Nature
 Ability: Levitate
 Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rock Throw
+- Ancient Power
 - Confusion
-- Light Screen
-- Reflect
+- Hypnosis
+- Moonlight
 
 === TRAINER_PBL_LIZA_LEVIATHAN_5 ===
 Name: Liza
