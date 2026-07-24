@@ -473,7 +473,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 6:
 			msgbox(format("The {COLOR GREEN}Machete{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_MACHETE)
+			// giveitem(ITEM_MACHETE)
 		case 7:
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} is…"))
 			msgbox(format("{COLOR GREEN}TM49 - Draining Kiss!{COLOR DARK_GRAY}"))

@@ -21,7 +21,7 @@ script Zone13B_EventScript_GiveFlash {
 		end
 	}
 	msgbox("This leads to the old mine.\pYou'll need a flashlight to\nnavigate through.")
-	giveitem(ITEM_FLASHLIGHT)
+	// giveitem(ITEM_FLASHLIGHT)
 	setflag(FLAG_ZONE13B_RECEIVED_FLASHLIGHT)
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_0) == 18) {

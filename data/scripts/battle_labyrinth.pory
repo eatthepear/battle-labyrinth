@@ -482,7 +482,7 @@ script EventScript_MultipleHoneyEncountersNuzlocke {
 }
 
 script EventScript_HandleFlashlight {
-	if (checkitem(ITEM_FLASHLIGHT) == TRUE) {
+	if ((checkitem(ITEM_HM_FLASH) == TRUE) && flag(FLAG_BADGE03_GET)) {
 		setflashlevel(2)
 	} else {
 		setflashlevel(6)
