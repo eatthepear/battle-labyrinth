@@ -5824,7 +5824,7 @@
       "id": "LAYOUT_ZONE5A",
       "name": "Zone5A_Layout",
       "width": 48,
-      "height": 25,
+      "height": 35,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_GymsExterior",
       "border_filepath": "data/layouts/Zone5A/border.bin",

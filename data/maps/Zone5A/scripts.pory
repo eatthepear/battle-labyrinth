@@ -10,11 +10,6 @@ mapscripts Zone5A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE5A_TM_THIEF)) {
-			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_TM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_TM_CHEST)
-		}
 	}
 }
 
@@ -346,19 +341,21 @@ script Zone5A_EventScript_Random1 {
 	end
 }
 
-script Zone5A_EventScript_TMThief {
+script Zone5A_EventScript_Roughneck {
 	lock
 	if (flag(FLAG_ITEM_ZONE5A_TM_THIEF)) {
-		msgbox(gText_ItemChestIsEmpty)
+		msgbox(format("I'm totally not stealing this sign.\pJust… admiring it."))
 		release
 		end
 	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+	msgbox(format("I'm a kleptomaniac - that is, someone with the inability to resist the urge to steal items.\pThat's what the dictionary said, anyways.\pI'm… totally not thinking about stealing this sign."), MSGBOX_AUTOCLOSE)
+	faceplayer
+	msgbox(format("Your Pokémon can learn how to steal too. Take this TM."))
+	giveitem(ITEM_TM_THIEF)
+	msgbox(format("Now, run along. You didn't see me here, okay?"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_5A_ROUGHNECK, Common_Movement_FaceRight)
+	waitmovement(0)
 	setflag(FLAG_ITEM_ZONE5A_TM_THIEF)
-	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_TM_THIEF)
 	release
 	end
 }
