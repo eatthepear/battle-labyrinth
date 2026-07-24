@@ -527,9 +527,7 @@ const struct HelpWindow gHelpWindowInfo[] =
         .desc = COMPOUND_STRING("{COLOR GREEN}Psychic Terrain{COLOR DARK_GRAY} has the following effects on\n"
                                 "Pokémon that are on the ground:\n"
                                 "- Boosts the power of Psychic-type moves\n"
-                                "used by affected Pokémon by 30%\n"
-                                "(regardless of whether the target of the\n"
-                                "move is affected by {COLOR GREEN}Psychic Terrain{COLOR DARK_GRAY}).\n"
+                                "used by affected Pokémon by 30%.\n"
                                 "- Affected Pokémon become immune to\n"
                                 "opponents' moves with increased priority."),
     },
