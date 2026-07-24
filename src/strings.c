@@ -1199,7 +1199,6 @@ const u8 gText_InfiniteRepelOn[] = _("The {COLOR GREEN}Infinite Repellent{COLOR 
 const u8 gText_InfiniteRepelOff[] = _("The {COLOR GREEN}Infinite Repellent{COLOR DARK_GRAY} is now {COLOR GREEN}off{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
 const u8 gText_ConfirmSacredAsh[] = _("Use the Sacred Ash to fully\nrevive and heal your party?");
 const u8 gText_UsedSacredAsh[] = _("You used the Sacred Ash!\nYour party was completely healed!{PAUSE_UNTIL_PRESS}");
-const u8 gText_CandyNoEffectBecauseCap[] = _("It won't have any effect. Can't level up\npast Lv. {STR_VAR_2}, the prior level cap.{PAUSE_UNTIL_PRESS}");
 const u8 gText_YourPkmnBecameHealthy[] = _("Your Pokémon became healthy.{PAUSE_UNTIL_PRESS}");
 
 const u8 gText_SavingZone[] = _("Zones Completed");
@@ -1211,7 +1210,6 @@ const u8 gText_BrutalDifficulty[] =_("Brutal");
 
 const u8 gText_RestrictedMove[] = _("{COLOR LIGHT_GRAY}{STR_VAR_1}");
 
-const u8 gText_MapZone0[] = _("Zone 0 - Harvest Road");
 const u8 gText_MapZone1[] = _("Zone 1 - Leafway Trail");
 const u8 gText_MapZone2[] = _("Zone 2 - Golden Oak Ranch");
 const u8 gText_MapZone3[] = _("Zone 3 - Sunlit Pond");

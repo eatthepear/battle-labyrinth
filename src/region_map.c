@@ -1900,7 +1900,6 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 {
     switch (mapSecId)
     {
-    case MAPSEC_ZONE_0:  return StringCopy(dest, gText_MapZone0);
     case MAPSEC_ZONE_1:  return StringCopy(dest, gText_MapZone1);
     case MAPSEC_ZONE_2:  return StringCopy(dest, gText_MapZone2);
     case MAPSEC_ZONE_3:  return StringCopy(dest, gText_MapZone3);

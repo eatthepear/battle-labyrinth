@@ -6039,11 +6039,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         {
             gPartyMenuUseExitCallback = FALSE;
             ConvertIntToDecimalStringN(gStringVar2, infiniteCandyCap, STR_CONV_MODE_LEFT_ALIGN, 3);
-            StringExpandPlaceholders(gStringVar4, gText_CandyNoEffectBecauseCap);
-            if (isInfiniteCandy || isExpCandy)
-                DisplayPartyMenuMessage(gStringVar4, TRUE);
-            else
-                DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+            DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
             ScheduleBgCopyTilemapToVram(2);
             gTasks[taskId].func = task;
         }

@@ -2180,7 +2180,6 @@ extern const u8 gText_InfiniteRepelOn[];
 extern const u8 gText_InfiniteRepelOff[];
 extern const u8 gText_ConfirmSacredAsh[];
 extern const u8 gText_UsedSacredAsh[];
-extern const u8 gText_CandyNoEffectBecauseCap[];
 extern const u8 gText_YourPkmnBecameHealthy[];
 
 extern const u8 gText_SavingZone[];
@@ -2192,7 +2191,6 @@ extern const u8 gText_BrutalDifficulty[];
 
 extern const u8 gText_RestrictedMove[];
 
-extern const u8 gText_MapZone0[];
 extern const u8 gText_MapZone1[];
 extern const u8 gText_MapZone2[];
 extern const u8 gText_MapZone3[];
