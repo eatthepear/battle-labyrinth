@@ -5275,63 +5275,63 @@
             "encounter_rate": 10,
             "mons": [
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_SENTRET"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_BUNEARY"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_DEERLING_WINTER"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_MINCCINO"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_CUBCHOO"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_BERGMITE"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_SWINUB"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_SMOOCHUM"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_CETODDLE"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_VANILLITE"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_SANDSHREW_ALOLA"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_VULPIX_ALOLA"
               }
             ]
@@ -5340,28 +5340,28 @@
             "encounter_rate": 0,
             "mons": [
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_SNOVER"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_SNOM"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_TEDDIURSA"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_HOOTHOOT"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 11,
+                "max_level": 12,
                 "species": "SPECIES_RUFFLET"
               }
             ]
