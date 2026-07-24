@@ -1915,7 +1915,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             struct OriginalTrainerId otId = OTID_STRUCT_RANDOM_NO_SHINY;
             u32 abilityNum = 0;
             u8 nature;
-            u8 level = GetInfiniteCandyLevelCap() - 1;
+            u8 level = GetInfiniteCandyLevelCap() - 2;
             if (partyData[monIndex].lvl != 0)
                 level = partyData[monIndex].lvl;
             if (GetCurrentDifficultyLevel() == DIFFICULTY_EASY)
