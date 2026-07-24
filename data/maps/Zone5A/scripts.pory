@@ -1,7 +1,4 @@
 mapscripts Zone5A_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION {
-		callnative(ResetStartingStatuses)
-    }
 	MAP_SCRIPT_ON_RESUME {
 		if (flag(FLAG_ITEM_ZONE5A_MIRACLE_SEED)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)

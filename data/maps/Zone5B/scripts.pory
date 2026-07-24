@@ -1,7 +1,6 @@
 mapscripts Zone5B_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_TEMP_HIDE_FOLLOWER)
-		setstartingstatus(STARTING_STATUS_PSYCHIC_TERRAIN)
     }
 }
 

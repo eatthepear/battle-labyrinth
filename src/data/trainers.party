@@ -793,6 +793,7 @@ Double Battle: No
 Party Size: 4
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
+Starting Status: Psychic Terrain
 
 === TRAINER_PBL_THERESA ===
 Name: Theresa
@@ -804,6 +805,7 @@ Double Battle: No
 Party Size: 4
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
+Starting Status: Psychic Terrain
 
 === TRAINER_PBL_ANTHONY ===
 Name: Anthony
@@ -815,6 +817,7 @@ Double Battle: No
 Party Size: 4
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
+Starting Status: Psychic Terrain
 
 === TRAINER_PBL_MELINDA_OPTIONAL_2 ===
 Name: Melinda
@@ -850,7 +853,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dizzy Punch
 - Feint Attack
 - Fake Out
-- Hypnosis
 
 === TRAINER_PBL_LIZA_LEVIATHAN_5 ===
 Name: Liza
@@ -860,6 +862,7 @@ Music: Female
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
+Starting Status: Psychic Terrain
 
 Munna @ Light Clay
 Calm Nature
@@ -873,7 +876,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Spoink @ Light Clay
 Timid Nature
-Ability: Swarm
+Ability: Thick Fat
 Level: 14
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psybeam
@@ -900,6 +903,7 @@ AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 Mugshot: Purple
 Difficulty: Brutal
+Starting Status: Psychic Terrain
 
 Munna @ Light Clay
 Calm Nature
@@ -913,7 +917,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Spoink @ Light Clay
 Timid Nature
-Ability: Swarm
+Ability: Thick Fat
 Level: 14
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psybeam
