@@ -97,6 +97,108 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Species Clause triggers."),
     },
 
+    [HELP_NOTEBOOK_LEVIATHAN_1] =
+    {
+        .header = COMPOUND_STRING("Zone 1 Leviathan"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Cori{COLOR DARK_GRAY} the School Kid has:\n"
+                                "{COLOR GREEN}Pansage{COLOR DARK_GRAY}, {COLOR GREEN}Pansear{COLOR DARK_GRAY}, and {COLOR GREEN}Panpour{COLOR DARK_GRAY}.\n\n"
+                                "She leads with the one weak to your starter.\n"
+                                "Her ace is strong against your starter."),
+    },
+
+    [HELP_NOTEBOOK_LEVIATHAN_2] =
+    {
+        .header = COMPOUND_STRING("Zone 2 Leviathan"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Shaun{COLOR DARK_GRAY} the Youngster has:\n"
+                                "{COLOR GREEN}Bunnelby{COLOR DARK_GRAY}, {COLOR GREEN}Smoliv{COLOR DARK_GRAY}, and {COLOR GREEN}Skwovet{COLOR DARK_GRAY}.\n\n"
+                                "His Pokémon utilize {COLOR GREEN}Oran Berries{COLOR DARK_GRAY} well."),
+    },
+
+    [HELP_NOTEBOOK_LEVIATHAN_2_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Zone 2 Leviathan"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Shaun{COLOR DARK_GRAY} the Youngster has:\n"
+                                "{COLOR GREEN}Bunnelby{COLOR DARK_GRAY}, {COLOR GREEN}Smoliv{COLOR DARK_GRAY}, {COLOR GREEN}Gulpin{COLOR DARK_GRAY}, and {COLOR GREEN}Skwovet{COLOR DARK_GRAY}.\n\n"
+                                "His Pokémon utilize {COLOR GREEN}Oran Berries{COLOR DARK_GRAY} well."),
+    },
+
+    [HELP_NOTEBOOK_OPTIONAL_1] =
+    {
+        .header = COMPOUND_STRING("Zone 3 Optional"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Bill{COLOR DARK_GRAY} the Rich Boy has:\n"
+                                "{COLOR GREEN}Bidoof{COLOR DARK_GRAY}, {COLOR GREEN}Sandshrew{COLOR DARK_GRAY}, and {COLOR GREEN}Marill{COLOR DARK_GRAY}.\n\n"
+                                "His Pokémon use {COLOR GREEN}Defense Curl{COLOR DARK_GRAY} and {COLOR GREEN}Rollout{COLOR DARK_GRAY}."),
+    },
+
+    [HELP_NOTEBOOK_LEVIATHAN_3] =
+    {
+        .header = COMPOUND_STRING("Zone 3 Leviathan"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Grant{COLOR DARK_GRAY} the Gym Leader has:\n"
+                                "{COLOR GREEN}Tyrunt{COLOR DARK_GRAY} and {COLOR GREEN}Amaura{COLOR DARK_GRAY}.\n\n"
+                                "He is a Rock-type specialist.\n"
+                                "His Pokémon have high stats and strong\n"
+                                "typings to counter their weaknesses."),
+    },
+
+    [HELP_NOTEBOOK_LEVIATHAN_3_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Zone 3 Leviathan"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Grant{COLOR DARK_GRAY} the Gym Leader has:\n"
+                                "{COLOR GREEN}Tyrunt{COLOR DARK_GRAY}, {COLOR GREEN}Shieldon{COLOR DARK_GRAY}, and {COLOR GREEN}Amaura{COLOR DARK_GRAY}.\n\n"
+                                "He is a Rock-type specialist.\n"
+                                "His Pokémon have high stats and strong\n"
+                                "typings to counter their weaknesses."),
+    },
+
+    [HELP_NOTEBOOK_LEVIATHAN_4] =
+    {
+        .header = COMPOUND_STRING("Zone 4 Leviathan (Double Battle)"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Proton{COLOR DARK_GRAY} the Team Rainbow Rocket Admin has:\n"
+                                "{COLOR GREEN}Koffing{COLOR DARK_GRAY}, {COLOR GREEN}Salandit{COLOR DARK_GRAY}, and {COLOR GREEN}Venipede{COLOR DARK_GRAY}.\n\n"
+                                "His Pokémon use {COLOR GREEN}Poison Gas{COLOR DARK_GRAY} to inflict\n"
+                                "poison, which enables moves like {COLOR GREEN}Venoshock{COLOR DARK_GRAY}."),
+    },
+
+    [HELP_NOTEBOOK_LEVIATHAN_4_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Zone 4 Leviathan (Double Battle)"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Proton{COLOR DARK_GRAY} the Team Rainbow Rocket Admin has:\n"
+                                "{COLOR GREEN}Koffing{COLOR DARK_GRAY}, {COLOR GREEN}Salandit{COLOR DARK_GRAY}, {COLOR GREEN}Frillish{COLOR DARK_GRAY}, and {COLOR GREEN}Venipede{COLOR DARK_GRAY}.\n\n"
+                                "His Pokémon use {COLOR GREEN}Poison Gas{COLOR DARK_GRAY} to inflict\n"
+                                "poison, which enables moves like {COLOR GREEN}Venoshock{COLOR DARK_GRAY}."),
+    },
+
+    [HELP_NOTEBOOK_LEVIATHAN_5] =
+    {
+        .header = COMPOUND_STRING("Zone 5 Leviathan"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Liza{COLOR DARK_GRAY} the Gym Leader has:\n"
+                                "{COLOR GREEN}Munna{COLOR DARK_GRAY}, {COLOR GREEN}Spoink{COLOR DARK_GRAY}, and {COLOR GREEN}Lunatone{COLOR DARK_GRAY}.\n\n"
+                                "She is fought in permanent {COLOR GREEN}Psychic Terrain{COLOR DARK_GRAY}.\n"
+                                "She is a Psychic-type specialist.\n"
+                                "Her Pokémon like to set up {COLOR GREEN}Reflect{COLOR DARK_GRAY} and\n"
+                                "{COLOR GREEN}Light Screen{COLOR DARK_GRAY}."),
+    },
+
+    [HELP_NOTEBOOK_LEVIATHAN_5_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Zone 5 Leviathan"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Liza{COLOR DARK_GRAY} the Gym Leader has:\n"
+                                "{COLOR GREEN}Munna{COLOR DARK_GRAY}, {COLOR GREEN}Spoink{COLOR DARK_GRAY}, {COLOR GREEN}Natu{COLOR DARK_GRAY}, and {COLOR GREEN}Lunatone{COLOR DARK_GRAY}.\n\n"
+                                "She is fought in permanent {COLOR GREEN}Psychic Terrain{COLOR DARK_GRAY}.\n"
+                                "She is a Psychic-type specialist.\n"
+                                "Her Pokémon like to set up {COLOR GREEN}Reflect{COLOR DARK_GRAY} and\n"
+                                "{COLOR GREEN}Light Screen{COLOR DARK_GRAY}."),
+    },
+
+    [HELP_NOTEBOOK_OPTIONAL_2] =
+    {
+        .header = COMPOUND_STRING("Zone 5 Optional"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Melinda{COLOR DARK_GRAY} the Lady has:\n"
+                                "{COLOR GREEN}Luvdisc{COLOR DARK_GRAY}, {COLOR GREEN}Delibird{COLOR DARK_GRAY}, and {COLOR GREEN}Spinda{COLOR DARK_GRAY}.\n\n"
+                                "Her Pokémon may not seem strong, but they\n"
+                                "are fully evolved, which can be a threat."),
+    },
+
     [HELP_CHANGES_ACCURACY] =
     {
         .header = COMPOUND_STRING("Battle Changes: Accuracy"),

@@ -665,29 +665,39 @@ script EventScript_Notebook_ZoneInfo {
 	}
 	switch (var(VAR_ZONE)) {
 		case 1:
-			msgbox(format("The {COLOR GREEN}Leviathan{COLOR DARK_GRAY} uses a trio of Elemental Monkeys, with their lead being weak against your starter, and their ace being strong against your starter."))
+			helpwindow(HELP_NOTEBOOK_LEVIATHAN_1)
 		case 2:
-			msgbox(format("The {COLOR GREEN}Leviathan{COLOR DARK_GRAY} trains a Bunnelby, Smoliv, and ace Skwovet that use Oran Berries."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, they also have a Gulpin with Sticky Hold that uses Stuff Cheeks to set up its Belch."))
+				helpwindow(HELP_NOTEBOOK_LEVIATHAN_2_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_LEVIATHAN_2)
 			}
 		case 3:
-			msgbox(format("The {COLOR GREEN}Leviathan{COLOR DARK_GRAY} is a Rock Gym Leader. Their Tyrunt, Shieldon, and Amaura are not to be trifled with."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, their team has improved move options."))
+				helpwindow(HELP_NOTEBOOK_LEVIATHAN_3_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_LEVIATHAN_3)
 			}
-			msgbox(format("There is also a Rich Boy optional boss who uses Bidoof, Sandshrew, and Marill.\pHis strategy utilizes Defense Curl and Rollout to ramp up damage over time."))
+			msgbox(gText_Notebook_OptionalReadOn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				helpwindow(HELP_NOTEBOOK_OPTIONAL_1)
+			}
 		case 4:
-			msgbox(format("The {COLOR GREEN}Leviathan{COLOR DARK_GRAY} battles in a Double Battle. Their Nickit, Shinx, and ace Ledian all use spread moves that lower your stats."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, they also have a Axew with Breaking Swipe."))
+				helpwindow(HELP_NOTEBOOK_LEVIATHAN_4_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_LEVIATHAN_4)
 			}
 		case 5:
-			msgbox(format("The {COLOR GREEN}Leviathan{COLOR DARK_GRAY} is a Psychic Gym Leader. Their Munna, Spoink, Natu, and Lunatone all can utilize Light Screen and Reflect to reduce damage."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, their Gym has permanent Psychic Terrain, and their Lunatone has improved move options instead of the screens."))
+				helpwindow(HELP_NOTEBOOK_LEVIATHAN_5_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_LEVIATHAN_5)
 			}
-			msgbox(format("There is also a Rich Boy guarding a Rare Candy who uses Delibird, Farfetch'd, and Spinda."))
+			msgbox(gText_Notebook_OptionalReadOn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				helpwindow(HELP_NOTEBOOK_OPTIONAL_2)
+			}
 		case 6:
 			msgbox(format("There are three trainers you must defeat in a row.\pThe first uses a Finneon, a Barboach, and a Goldeen.\pThe second uses a Pyukumuku.\pThe third uses a Wiglett, a Mantyke, and a Corsola."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
@@ -758,6 +768,10 @@ script EventScript_Notebook_ZoneInfo {
 
 text gText_Notebook_ReadOn {
 	format("Read on?")
+}
+
+text gText_Notebook_OptionalReadOn {
+	format("There is another page about an optional challenge.\pRead on?")
 }
 
 script EventScript_Notebook_ChangesFromVanilla {
