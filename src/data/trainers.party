@@ -691,16 +691,6 @@ AI: AI_FLAG_LEVIATHAN
 Double Battle: Yes
 Mugshot: Blue
 
-Salandit @ Cheri Berry
-Timid Nature
-Ability: Corrosion
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Poison Gas
-- Ember
-- Venoshock
-- Fake Out
-
 Koffing @ Chesto Berry
 Naive Nature
 Ability: Levitate
@@ -710,6 +700,16 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Venom Drench
 - Venoshock
 - Thief
+
+Salandit @ Cheri Berry
+Timid Nature
+Ability: Corrosion
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Gas
+- Ember
+- Venoshock
+- Fake Out
 
 Venipede @ Sitrus Berry
 Hasty Nature
@@ -731,16 +731,6 @@ Double Battle: Yes
 Mugshot: Blue
 Difficulty: Brutal
 
-Salandit @ Cheri Berry
-Timid Nature
-Ability: Corrosion
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Poison Gas
-- Ember
-- Venoshock
-- Fake Out
-
 Koffing @ Chesto Berry
 Naive Nature
 Ability: Levitate
@@ -750,6 +740,16 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Venom Drench
 - Venoshock
 - Thief
+
+Salandit @ Cheri Berry
+Timid Nature
+Ability: Corrosion
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Gas
+- Ember
+- Venoshock
+- Fake Out
 
 Venipede @ Sitrus Berry
 Hasty Nature
