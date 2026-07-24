@@ -2530,6 +2530,135 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Weather Ball
 - Earth Power
 
+=== TRAINER_PBL_LARRY_LEVIATHAN_18 ===
+Name: Larry
+Class: Leader
+Pic: Larry
+Music: Male
+AI: AI_FLAG_LEVIATHAN
+Double Battle: No
+Mugshot: Purple
+
+Komala @ Chople Berry
+Adamant Nature
+Ability: Comatose
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Return
+- Knock Off
+- Play Rough
+- Brick Break
+
+Wigglytuff @ Expert Belt
+Modest Nature
+Ability: Competitive
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Moonblast
+- Flamethrower
+- Ice Beam
+- Thunderbolt
+
+Dudunsparce @ Leftovers
+Careful Nature
+Ability: Serene Grace
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Facade
+- Dragon Rush
+- Coil
+- Roost
+
+Noctowl @ Wide Lens
+Timid Nature
+Ability: Tinted Lens
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Heat Wave
+- Hypnosis
+- Roost
+
+Staraptor @ Staraptite
+Jolly Nature
+Ability: Intimidate
+Level: 37
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Facade
+- Dual Wingbeat
+- Close Combat
+- Roost
+
+=== TRAINER_PBL_LARRY_LEVIATHAN_18 ===
+Name: Larry
+Class: Leader
+Pic: Larry
+Music: Male
+AI: AI_FLAG_LEVIATHAN
+Double Battle: No
+Mugshot: Purple
+Difficulty: Brutal
+
+Komala @ Chople Berry
+Adamant Nature
+Ability: Comatose
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Return
+- Knock Off
+- Play Rough
+- Brick Break
+
+Wigglytuff @ Expert Belt
+Modest Nature
+Ability: Competitive
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Moonblast
+- Flamethrower
+- Ice Beam
+- Thunderbolt
+
+Dudunsparce @ Leftovers
+Careful Nature
+Ability: Serene Grace
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Facade
+- Dragon Rush
+- Coil
+- Roost
+
+Noctowl @ Wide Lens
+Timid Nature
+Ability: Tinted Lens
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Heat Wave
+- Hypnosis
+- Roost
+
+Swellow @ Toxic Orb
+Lonely Nature
+Ability: Guts
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Facade
+- Brave Bird
+- U-Turn
+- Protect
+
+Staraptor @ Staraptite
+Jolly Nature
+Ability: Intimidate
+Level: 37
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Facade
+- Dual Wingbeat
+- Close Combat
+- Roost
+
 === TRAINER_PBL_MIRAGE_LEVIATHAN_13 ===
 Name: STEVEN
 Class: Rival
