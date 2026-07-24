@@ -391,7 +391,7 @@ script EventScript_ChoosePartyMonToSend {
 script EventScript_PorygonExit {
     lock
 	faceplayer
-	setvar(VAR_BATTLE_STARTING_STATUS, 0)
+	callnative(ResetStartingStatuses)
 	if (flag(FLAG_IS_REVISITING_ZONE)) {
 		msgbox(format("Return to the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
@@ -2339,7 +2339,6 @@ script EventScript_TestingLegendBattle {
 	clearflag(FLAG_SYS_NO_CATCHING)
 	clearflag(FLAG_SYS_SMART_WILD_AI_ON)
 	setflag(FLAG_SYS_NO_RUNNING)
-	setvar(VAR_BATTLE_STARTING_STATUS, 0)
 	setflag(FLAG_TESTING_FLAG)
 	release
 	end
@@ -2367,7 +2366,6 @@ script EventScript_TestingLegendBattle_Template {
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1)
-	setvar(VAR_BATTLE_STARTING_STATUS, STARTING_STATUS_TAILWIND_OPPONENT)
 	special(BattleSetup_StartLegendaryBattle)
 	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	specialvar(VAR_RESULT, GetBattleOutcome)
@@ -2383,7 +2381,6 @@ script EventScript_TestingLegendBattle_Template {
 	clearflag(FLAG_SYS_NO_CATCHING)
 	clearflag(FLAG_SYS_SMART_WILD_AI_ON)
 	setflag(FLAG_SYS_NO_RUNNING)
-	setvar(VAR_BATTLE_STARTING_STATUS, 0)
 	setflag(FLAG_TESTING_FLAG)
 	release
 	end

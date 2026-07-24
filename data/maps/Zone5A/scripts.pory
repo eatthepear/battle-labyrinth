@@ -1,6 +1,6 @@
 mapscripts Zone5A_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-		setvar(VAR_BATTLE_STARTING_STATUS, 0)
+		callnative(ResetStartingStatuses)
     }
 	MAP_SCRIPT_ON_RESUME {
 		if (flag(FLAG_ITEM_ZONE5A_MIRACLE_SEED)) {
@@ -384,8 +384,33 @@ script Zone5A_EventScript_Rebecca {
 // 	end
 // }
 
-script Zone5A_EventScript_Bill {
-	trainerbattle_single(TRAINER_PBL_BILL_OPTIONAL_2, format("This Rare Candy here can be used to increase your Pokémon's level over the level cap.\pYou won't get it easily!"), format("Use the Rare Candy carefully! Maybe to evolve your starter or something…"))
-	msgbox(format("I wish I was better at battling. My girlfriend is always telling me how to improve, but it's hard when I don't have much patience…"), MSGBOX_AUTOCLOSE)
+script Zone5A_EventScript_Melinda {
+	lock
+	faceplayer
+	if (defeated(TRAINER_PBL_MELINDA_OPTIONAL_2)) {
+		call(Zone5A_EventScript_Melinda_End)
+	}
+	setspeaker("Melinda")
+	msgbox(format("My darling Pokémon are roaring for a battle!\pThey may not be strong, but they're fully evolved!\pIf you battle me, I'll give you a {COLOR GREEN}Nugget{COLOR DARK_GRAY}!"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("That's rather disappointing."))
+		release
+		end
+	}
+	msgbox(format("Excellent! Go, my darling Pokémon!"))
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_MELINDA_OPTIONAL_2, format("My darling Pokémon!"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Melinda")
+	msgbox(format("Oh, my darling Pokémon, rest up!\pAnd for you, dear trainer, your reward."))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_NUGGET)
+	call(Zone5A_EventScript_Melinda_End)
+}
+
+script Zone5A_EventScript_Melinda_End {
+	setspeaker("Melinda")
+	msgbox(format("My darling Pokémon are my favorites!"))
+	release
 	end
 }

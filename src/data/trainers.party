@@ -507,8 +507,8 @@ Party Size: 2
 Pool Prune: Non Normal
 Copy Pool: TRAINER_POOL_ZONE_3
 
-=== TRAINER_PBL_PHILLIP_OPTIONAL_1 ===
-Name: Phillip
+=== TRAINER_PBL_BILL_OPTIONAL_1 ===
+Name: Bill
 Class: Rich Boy
 Pic: Rich Boy
 Music: Rich
@@ -816,31 +816,31 @@ Party Size: 4
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
 
-=== TRAINER_PBL_BILL_OPTIONAL_2 ===
-Name: Bill
-Class: Rich Boy
-Pic: Rich Boy
-Music: Rich
+=== TRAINER_PBL_MELINDA_OPTIONAL_2 ===
+Name: Melinda
+Class: Lady
+Pic: Lady
+Music: Female
 AI: AI_FLAG_LEVIATHAN
 Double Battle: No
 
+Luvdisc @ Wise Glasses
+Timid Nature
+Ability: Swift Swim
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Draining Kiss
+- Sweet Kiss
+
 Delibird @ Wide Lens
-Naive Nature
+Jolly Nature
 Ability: Hustle
 Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Shard
-- Aurora Beam
+- Peck
 - Present
-
-Farfetch'd @ Leek
-Jolly Nature
-Ability: Inner Focus
-Level: 13
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aerial Ace
-- Quick Attack
-- Fury Cutter
 
 Spinda @ Sitrus Berry
 Hasty Nature
