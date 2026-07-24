@@ -27,20 +27,9 @@ script Zone5B_EventScript_Liza {
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_REFLECT)
 	setspeaker("Liza")
-	msgbox(format("{COLOR BLUE}Liza{COLOR DARK_GRAY}: You're doing great, challenger!\pKeep up the good work.\pLeft leads to the exit, while right returns you to the Gym entrance."), MSGBOX_AUTOCLOSE)
+	msgbox(format("You're doing great, challenger!\pKeep up the good work.\pLeft leads to the exit, while right returns you to the Gym entrance."), MSGBOX_AUTOCLOSE)
     setflag(FLAG_BEAT_LEVIATHAN_5)
 	release
-	end
-}
-
-script Zone5B_EventScript_RudeToLeave {
-	lockall
-	if (flag(FLAG_BEAT_LEVIATHAN_5) == FALSE) {
-		msgbox(format("It would be rude to leave without challenging Liza!"), MSGBOX_AUTOCLOSE)
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
-		waitmovement(0)
-	}
-	releaseall
 	end
 }
 
@@ -54,7 +43,7 @@ script Zone5B_EventScript_GymStatue {
 script Zone5B_EventScript_GymGuide {
     lock
     faceplayer
-    msgbox(format("Welcome to Liza's Pokémon Gym!\pYou'll find some challenging puzzles up ahead to test your mind.\pThe Gym Leader, {COLOR BLUE}Liza{COLOR DARK_GRAY}, is estranged from her brother currently, so be prepared for a single battle!"))
+    msgbox(format("Welcome to {COLOR BLUE}Liza{COLOR DARK_GRAY}'s Pokémon Gym!\pYou'll find some challenging puzzles up ahead to test your mind.\pThe Gym Leader, {COLOR BLUE}Liza{COLOR DARK_GRAY}, is estranged from her brother currently, so be prepared for a single battle!"))
 	msgbox(format("Also, beware! The Gym is under the effect of a permanent {COLOR GREEN}Psychic Terrain{COLOR DARK_GRAY}!"))
 	helpwindow(HELP_PSYCHIC_TERRAIN)
     release
