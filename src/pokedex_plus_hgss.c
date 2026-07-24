@@ -5178,9 +5178,6 @@ static void PrintStatsScreen_Moves_Top(u8 taskId)
         StringExpandPlaceholders(gStringVar4, gText_RestrictedMove);
         StringCopyPadded(gStringVar4, gStringVar4, CHAR_SPACE, 20);
         PrintStatsScreenTextSmall(WIN_STATS_MOVES_TOP, gStringVar4, moves_x, moves_y + 17);
-        //Draw move type icon
-        SetTypeIconPosAndPal(GetMoveType(move), moves_x + 146, moves_y + 17, 0);
-        SetSpriteInvisibility(1, TRUE);
     }
     else
     {
@@ -5188,6 +5185,9 @@ static void PrintStatsScreen_Moves_Top(u8 taskId)
         StringCopyPadded(gStringVar3, gStringVar3, CHAR_SPACE, 20);
         PrintStatsScreenTextSmall(WIN_STATS_MOVES_TOP, gStringVar3, moves_x, moves_y + 17);
     }
+    //Draw move type icon
+    SetTypeIconPosAndPal(GetMoveType(move), moves_x + 146, moves_y + 17, 0);
+    SetSpriteInvisibility(1, TRUE);
     //Egg/TM/Level/Tutor Item Icon
     gTasks[taskId].data[3] = AddItemIconSprite(ITEM_TAG, ITEM_TAG, item);
     gSprites[gTasks[taskId].data[3]].x2 = 203;
