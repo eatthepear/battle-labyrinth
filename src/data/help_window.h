@@ -249,8 +249,8 @@ const struct HelpWindow gHelpWindowInfo[] =
         .desc = COMPOUND_STRING("The {COLOR GREEN}DexNav{COLOR DARK_GRAY} displays all wild Pokémon\n"
                                 "available in a Zone.\n"
                                 "Pokémon in the Hidden category are found\n"
-                                "in Honey trees, smashing rocks, etc., and\n"
-                                "cannot be found using the {COLOR GREEN}DexNav{COLOR DARK_GRAY}'s search.\n"
+                                "while fishing, surfing, in Honey trees,\n"
+                                "smashing rocks, etc.\n"
                                 "Pokémon do not flee from the {COLOR GREEN}DexNav{COLOR DARK_GRAY}'s search.\n"
                                 "The {COLOR GREEN}DexNav{COLOR DARK_GRAY} cannot chain Pokémon."),
     },
