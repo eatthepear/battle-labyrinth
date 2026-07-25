@@ -154,7 +154,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Zone 4 Leviathan (Double Battle)"),
         .desc = COMPOUND_STRING("{COLOR BLUE}Proton{COLOR DARK_GRAY} the Team Rainbow Rocket Admin has:\n"
-                                "{COLOR GREEN}Koffing{COLOR DARK_GRAY}, {COLOR GREEN}Salandit{COLOR DARK_GRAY}, and {COLOR GREEN}Venipede{COLOR DARK_GRAY}.\n\n"
+                                "{COLOR GREEN}Koffing{COLOR DARK_GRAY}, {COLOR GREEN}Salandit{COLOR DARK_GRAY}, and {COLOR GREEN}Whirlipede{COLOR DARK_GRAY}.\n\n"
                                 "His Pokémon use {COLOR GREEN}Poison Gas{COLOR DARK_GRAY} to inflict\n"
                                 "poison, which enables moves like {COLOR GREEN}Venoshock{COLOR DARK_GRAY}."),
     },
@@ -163,7 +163,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Zone 4 Leviathan (Double Battle)"),
         .desc = COMPOUND_STRING("{COLOR BLUE}Proton{COLOR DARK_GRAY} the Team Rainbow Rocket Admin has:\n"
-                                "{COLOR GREEN}Koffing{COLOR DARK_GRAY}, {COLOR GREEN}Salandit{COLOR DARK_GRAY}, {COLOR GREEN}Frillish{COLOR DARK_GRAY}, and {COLOR GREEN}Venipede{COLOR DARK_GRAY}.\n\n"
+                                "{COLOR GREEN}Koffing{COLOR DARK_GRAY}, {COLOR GREEN}Salandit{COLOR DARK_GRAY}, {COLOR GREEN}Frillish{COLOR DARK_GRAY}, and {COLOR GREEN}Whirlipede{COLOR DARK_GRAY}.\n\n"
                                 "His Pokémon use {COLOR GREEN}Poison Gas{COLOR DARK_GRAY} to inflict\n"
                                 "poison, which enables moves like {COLOR GREEN}Venoshock{COLOR DARK_GRAY}."),
     },

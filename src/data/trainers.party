@@ -711,7 +711,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Venoshock
 - Fake Out
 
-Venipede @ Sitrus Berry
+Whirlipede @ Sitrus Berry
 Hasty Nature
 Ability: Speed Boost
 Level: 13
@@ -719,7 +719,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Toxic Thread
 - Twineedle
 - Venoshock
-- Bite
+- Mortal Spin
 
 === TRAINER_PBL_PROTON_LEVIATHAN_4 ===
 Name: Proton
@@ -751,16 +751,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Venoshock
 - Fake Out
 
-Venipede @ Sitrus Berry
-Hasty Nature
-Ability: Speed Boost
-Level: 13
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Toxic Thread
-- Twineedle
-- Venoshock
-- Bite
-
 Frillish @ Pecha Berry
 Bold Nature
 Ability: Cursed Body
@@ -770,6 +760,16 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hex
 - Recover
 - Sleep Talk
+
+Whirlipede @ Sitrus Berry
+Hasty Nature
+Ability: Speed Boost
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic Thread
+- Twineedle
+- Venoshock
+- Mortal Spin
 
 === TRAINER_PBL_REBECCA ===
 Name: Rebecca
