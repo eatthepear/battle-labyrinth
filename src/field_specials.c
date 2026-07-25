@@ -4556,7 +4556,7 @@ u16 GetNumTrainersRemaining(void)
         count += !FlagGet(FLAG_BEAT_LEVIATHAN_3);
         break;
     case 4:
-        for (trainer = TRAINER_PBL_HERMAN; trainer <= TRAINER_PBL_ROCKET_GRUNT_4E_2; trainer++) {
+        for (trainer = TRAINER_PBL_RALPH; trainer <= TRAINER_PBL_ROCKET_GRUNT_4E_2; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
@@ -4742,13 +4742,13 @@ u16 RandomItemChest(void)
 #define RANDOM_HIDDEN_BERRY_TABLE_COUNT ARRAY_COUNT(sRandomHiddenBerryTable)
 static const struct ItemChest sRandomHiddenBerryTable[] =
 {
-    {	ITEM_ORAN_BERRY   	, {	 50,	 50,	  0,	100,	100,	100,	100,	100,	100,	100,	100,	} },
-    {	ITEM_PECHA_BERRY	, {	 15,	 15,	 15,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_CHERI_BERRY	, {	 15,	 15,	 15,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_CHESTO_BERRY	, {	  8,	  8,	  8,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_RAWST_BERRY	, {	  8,	  8,	  8,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_ASPEAR_BERRY	, {	  2,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_PERSIM_BERRY	, {	  2,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_ORAN_BERRY   	, {	 20,	 20,	  0,	100,	100,	100,	100,	100,	100,	100,	100,	} },
+    {	ITEM_PECHA_BERRY	, {	 20,	 20,	 15,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_CHERI_BERRY	, {	 20,	 20,	 15,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_CHESTO_BERRY	, {	 20,	 20,	  8,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_RAWST_BERRY	, {	 12,	 12,	  8,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_ASPEAR_BERRY	, {	  4,	  4,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_PERSIM_BERRY	, {	  4,	  4,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
     {	ITEM_SITRUS_BERRY	, {	  0,	  0,	 50,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
 };
 

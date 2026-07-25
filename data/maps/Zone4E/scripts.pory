@@ -29,13 +29,14 @@ script Zone4E_EventScript_KimonoGirl_Exit {
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_SACRED_ASH)
 	setspeaker("Kimono Girl")
-	msgbox(format("That Sacred Ash is quite rare. Use it for emergencies.\pWell, I shall be off. It seems someone awaits you up ahead. Be cautious, young trainer."), MSGBOX_AUTOCLOSE)
+	msgbox(format("Well, I shall be off. I foresee a {COLOR GREEN}Double Battle{COLOR DARK_GRAY} in your future.\pBe cautious, young trainer."), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_PLAYER, Zone4E_Movement_Player_UnblockKimonoGirl)
 	applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Zone4E_Movement_KimonoGirl_Exit)
 	waitmovement(0)
 	destroyfollowernpc
 	setvar(VAR_ZONE_4_STATE, 2)
 	fadedefaultbgm
+	helpwindow(HELP_SACRED_ASH)
 	releaseall
 }
 

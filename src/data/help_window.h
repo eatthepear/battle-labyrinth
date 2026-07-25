@@ -521,6 +521,16 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Heart Scales cost ¥2400."),
     },
 
+    [HELP_SACRED_ASH] =
+    {
+        .header = COMPOUND_STRING("Sacred Ash"),
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Sacred Ash{COLOR DARK_GRAY} is a single use item that\n"
+                                "restores your entire party to full HP and\n"
+                                "cures any status condition, including\n"
+                                "reviving fainted Pokémon.\n"
+                                "It is exceedingly rare."),
+    },
+
     [HELP_PSYCHIC_TERRAIN] =
     {
         .header = COMPOUND_STRING("Psychic Terrain"),
