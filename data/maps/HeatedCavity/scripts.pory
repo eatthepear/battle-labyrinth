@@ -1,6 +1,6 @@
 mapscripts HeatedCavity_MapScripts {
 	MAP_SCRIPT_ON_RESUME {
-        if (flag(FLAG_ITEM_HEATED_CAVITY_HARD_STONE)) {
+        if (flag(FLAG_ITEM_HEATED_CAVITY_RED_SHARDS)) {
             setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
         } else {
             setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -8,9 +8,9 @@ mapscripts HeatedCavity_MapScripts {
     }
 }
 
-script HeatedCavity_EventScript_HardStone {
+script HeatedCavity_EventScript_RedShards {
 	lock
-	if (flag(FLAG_ITEM_HEATED_CAVITY_HARD_STONE)) {
+	if (flag(FLAG_ITEM_HEATED_CAVITY_RED_SHARDS)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -18,9 +18,9 @@ script HeatedCavity_EventScript_HardStone {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_HEATED_CAVITY_HARD_STONE)
+	setflag(FLAG_ITEM_HEATED_CAVITY_RED_SHARDS)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_HARD_STONE)
+	finditem(ITEM_RED_SHARD, 5)
 	release
 	end
 }

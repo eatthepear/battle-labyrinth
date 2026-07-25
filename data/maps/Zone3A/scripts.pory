@@ -53,8 +53,8 @@ script Zone3A_EventScript_Grant {
 	msgbox(format("With the Cliff Badge in your grasp, you should have no issues using the HM {COLOR GREEN}Rock Smash{COLOR DARK_GRAY} outside battle!\pYour Pokémon don't need to know the move to use it, just having the HM and the requisite Gym Badge is enough!\pAh, finally, I'd like you to take these as well."))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_ROCK_TOMB, 1)
-	giveitem(ITEM_EVIOLITE, 1)
-	msgbox(format("With Rock Tomb, a Pokémon can hurl rocks at its target, not only inflicting damage but also lowering the target's Speed.\pAnd the Eviolite is a pretty nifty item for your Pokémon that can still evolve.\pWhich should be most of your Pokémon, yeah?\pHaha, just playing with you! You're just starting on your journey, so enjoy the ride and feel the breeze in your face!"))
+	giveitem(ITEM_HARD_STONE, 1)
+	msgbox(format("With {COLOR GREEN}Rock Tomb{COLOR DARK_GRAY}, a Pokémon can hurl rocks at its target, not only inflicting damage but also lowering the target's Speed.\pAnd the {COLOR GREEN}Hard Stone{COLOR DARK_GRAY} increases the damage of your Pokémon's Rock-type moves by 20%. Forms a nifty combo, huh?\pYou're just starting on your journey, so enjoy the ride and feel the breeze in your face!"))
 	setflag(FLAG_BEAT_LEVIATHAN_3)
 	setflag(FLAG_BADGE01_GET)
 	release
