@@ -38,42 +38,36 @@ mapscripts Zone11A_MapScripts {
 	}
 }
 
-script Zone11A_EventScript_LeviathanBattle {
+script Zone11A_EventScript_Archer {
 	lock
 	faceplayer
-	setspeaker("Alice & Celia")
-	msgbox(format("My Pokémon love to eat, just like me!"))
-	if (!defeated(TRAINER_PBL_JEANETTE) || !defeated(TRAINER_PBL_JOEL) || !defeated(TRAINER_PBL_MARION) || !defeated(TRAINER_PBL_REGINA)) {
-		setspeaker("Alice & Celia")
-		msgbox(format("Tell you what, if you go and defeat all four of my friends around the farm, I'll show you just how much my Pokémon can eat!"))
-		release
-		end
-	}
-	setspeaker("Alice & Celia")
-	msgbox(format("My friends tell me you've defeated every last one of them!\pAre you interested in a battle? I'll show you just how much my Pokémon can eat!"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		setspeaker("Alice & Celia")
-		msgbox(format("Oh, all right…"))
-		release
-		end
-	}
-	closemessage
-	fadeoutbgm(1)
-	setspeaker("Alice & Celia")
-	msgbox(format("All right then, let's battle!"))
+	playbgm(MUS_HG_ENCOUNTER_ROCKET, TRUE)
+	applymovement(LOCALID_ARCHER_11A, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	delay(16)
+	setspeaker("???")
+	msgbox(format("Hm… You match the description of the one {COLOR BLUE}Proton{COLOR DARK_GRAY} encounterd. Interesting…\pI am {COLOR BLUE}Archer{COLOR DARK_GRAY}, an {COLOR GREEN}Admin{COLOR DARK_GRAY} of {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}!"))
+	setspeaker("Archer")
+	msgbox(format("You are merely a child, are you not? Why oppose {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}? Many have tried and failed, and been subsumed into our organization as a result.\p{COLOR GREEN}Team Galactic{COLOR DARK_GRAY}, {COLOR GREEN}Team Magma{COLOR DARK_GRAY}, {COLOR GREEN}Team Aqua{COLOR DARK_GRAY}, all of them fell before us like dominoes, and joined our cause.\pYou, too, shall fall like like the rest."))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_ALICE_AND_CELIA_LEVIATHAN_11, format("Ack! I lost again!\pDoggone it!"))
+	trainerbattle_no_intro(TRAINER_PBL_ARCHER_LEVIATHAN_11, format("A curious matter indeed…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	setspeaker("Alice & Celia")
-	msgbox(format("Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though! I enjoyed our battle so much, I want to give you these!"), MSGBOX_DEFAULT)
-	giveitem(ITEM_ORAN_BERRY, 5)
-	setspeaker("Alice & Celia")
-	msgbox(format("Bye!"), MSGBOX_AUTOCLOSE)
+	setspeaker("Archer")
+	msgbox(format("You may have beaten us back now, but {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY} always rises from the ashes.\pNever let your guard down, lest you be crushed."), MSGBOX_AUTOCLOSE)
 	fadescreenswapbuffers(FADE_TO_BLACK)
-	removeobject(LOCALID_ALICE)
-	removeobject(LOCALID_CELIA)
+	removeobject(LOCALID_ARCHER_11A)
+	removeobject(LOCALID_GRUNT_1_11A)
+	removeobject(LOCALID_GRUNT_2_11A)
+	settrainerflag(TRAINER_PBL_ROCKET_GRUNT_11A_1)
+	settrainerflag(TRAINER_PBL_ROCKET_GRUNT_11A_2)
 	setflag(FLAG_BEAT_LEVIATHAN_11)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
+	msgbox(format("{COLOR BLUE}Archer{COLOR DARK_GRAY} vanished into thin air without a trace!\pHow could he have done such a thing?\pThere's something on the ground where he was standing…"))
+	giveitem(ITEM_ROCKY_HELMET)
+	closemessage
+	fadedefaultbgm
 	release
 	end
 }
@@ -278,3 +272,15 @@ Zone11A_Text_ReginaPostBattle:
 	.string "but I'm sure the voices are from the\l"
 	.string "beyond.$"
 `
+
+script Zone11A_EventScript_RocketGrunt_1 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_11A_1, format("I'm hopelessly lost…\pWait a minute, you look weak! I'll beat you and take your money!"), format("It was you who beat me and took my money!"))
+	msgbox(format("Who's the real criminal here, {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}? Or you?"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone11A_EventScript_RocketGrunt_2 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_11A_2, format("Our Admin is working hard to make a better future for all of {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}!\pThat future doesn't include you!"), format("Well, if you wanted to join us, it could include you!"))
+	msgbox(format("Join {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}! We have cookies!"), MSGBOX_AUTOCLOSE)
+	end
+}

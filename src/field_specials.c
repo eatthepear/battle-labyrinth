@@ -4604,7 +4604,7 @@ u16 GetNumTrainersRemaining(void)
         count += !FlagGet(FLAG_BEAT_LEVIATHAN_10);
         break;
     case 11:
-        for (trainer = TRAINER_PBL_JEANETTE; trainer <= TRAINER_PBL_REGINA; trainer++) {
+        for (trainer = TRAINER_PBL_JEANETTE; trainer <= TRAINER_PBL_ROCKET_GRUNT_11A_2; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }

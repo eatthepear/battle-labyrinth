@@ -1773,102 +1773,25 @@ Party Size: 4
 Pool Prune: Non Fairy
 Copy Pool: TRAINER_POOL_ZONE_11
 
-=== TRAINER_PBL_ALICE_AND_CELIA_LEVIATHAN_11 ===
-Name: Alice&Celia
-Class: Twins
-Pic: Twins
-Music: Twins
-AI: AI_FLAG_LEVIATHAN
-Double Battle: Yes
-Mugshot: Green
-Difficulty: Normal
+=== TRAINER_PBL_ROCKET_GRUNT_11A_1 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt M
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_11_GRUNTS
 
-Carbink @ Fairy Gem
-Quiet Nature
-Ability: Sturdy
-Level: 24
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Misty Explosion
-
-Clodsire @ Shuca Berry
-Adamant Nature
-Ability: Water Absorb
-Level: 24
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Stomping Tantrum
-- Poison Tail
-- Rock Tomb
-
-Pachirisu @ Misty Seed
-Jolly Nature
-Ability: Pickup
-Level: 24
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder Punch
-- Super Fang
-- Swagger
-
-Whimsicott @ Sitrus Berry
-Modest Nature
-Ability: Prankster
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Nature Power
-- Energy Ball
-- Swagger
-
-=== TRAINER_PBL_ALICE_AND_CELIA_LEVIATHAN_11 ===
-Name: Alice&Celia
-Class: Twins
-Pic: Twins
-Music: Twins
-AI: AI_FLAG_LEVIATHAN
-Double Battle: Yes
-Mugshot: Green
-Difficulty: Brutal
-
-Carbink @ Fairy Gem
-Quiet Nature
-Ability: Sturdy
-Level: 24
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Misty Explosion
-
-Clodsire @ Shuca Berry
-Adamant Nature
-Ability: Water Absorb
-Level: 24
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Stomping Tantrum
-- Poison Tail
-- Rock Tomb
-
-Pachirisu @ Misty Seed
-Jolly Nature
-Ability: Pickup
-Level: 24
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder Punch
-- Super Fang
-- Swagger
-
-Whimsicott @ Sitrus Berry
-Modest Nature
-Ability: Prankster
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Nature Power
-- Energy Ball
-- Swagger
-
-Oinkologne-F @ White Herb
-Naughty Nature
-Ability: Aroma Veil
-Level: 24
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Return
-- Stomping Tantrum
-- Swagger
+=== TRAINER_PBL_ROCKET_GRUNT_11A_2 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_11_GRUNTS
 
 === TRAINER_PBL_ARCHER_LEVIATHAN_11 ===
 Name: Archer
@@ -4991,6 +4914,20 @@ Houndour
 
 Zubat
 
+Hatenna
+
+Impidimp
+
+Gothita
+
+Solosis
+
+Munna
+
+Meowth
+
+Meowth Alola
+
 === TRAINER_POOL_ZONE_5 ===
 Name: Trainer Pool
 Class: Champion
@@ -6116,6 +6053,78 @@ Elgyem
 Pumpkaboo
 
 Drifloon
+
+=== TRAINER_POOL_ZONE_11_GRUNTS ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Pineco
+
+Croagunk
+
+Venonat
+
+Mankey
+
+Machop
+
+Grimer
+
+Grimer Alola
+
+Skorupi
+
+Koffing
+
+Crabrawler
+
+Scraggy
+
+Pancham
+
+Mienfoo
+
+Rufflet
+
+Meowth Galar
+
+Shroodle
+
+Varoom
+
+Mareanie
+
+Gastly
+
+Skrelp
+
+Salandit
+
+Noibat
+
+Elgyem
+
+Pawniard
+
+Rhyhorn
+
+Drifloon
+
+Glimmet
+
+Lickitung
+
+Vullaby
+
+Yanma
+
+Spinda
+
+Farfetch'd
 
 === TRAINER_POOL_ZONE_12 ===
 Name: Trainer Pool
