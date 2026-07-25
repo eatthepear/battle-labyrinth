@@ -1870,6 +1870,115 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Stomping Tantrum
 - Swagger
 
+=== TRAINER_PBL_ARCHER_LEVIATHAN_11 ===
+Name: Archer
+Class: Rainbow Rocket
+Pic: Archer
+Music: Rocket
+AI: AI_FLAG_LEVIATHAN
+Double Battle: Yes
+Mugshot: Blue
+
+Drowzee @ Eviolite
+Impish Nature
+Ability: Inner Focus
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Zen Headbutt
+- Night Shade
+- Flatter
+- Swagger
+
+Dartrix @ Eviolite
+Adamant Nature
+Ability: Long Reach
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Leaf
+- Pluck
+- Shadow Sneak
+- Swagger
+
+Druddigon @ Rocky Helmet
+Careful Nature
+Ability: Rough Skin
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Rage
+- Fire Fang
+- Poison Tail
+- Metal Claw
+
+Houndoom @ Sitrus Berry
+Hasty Nature
+Ability: Unnerve
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Burning Jealousy
+- Thunder Fang
+- Scorching Sands
+
+=== TRAINER_PBL_ARCHER_LEVIATHAN_11 ===
+Name: Archer
+Class: Rainbow Rocket
+Pic: Archer
+Music: Rocket
+AI: AI_FLAG_LEVIATHAN
+Double Battle: Yes
+Mugshot: Blue
+Difficulty: Brutal
+
+Drowzee @ Eviolite
+Impish Nature
+Ability: Inner Focus
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Zen Headbutt
+- Night Shade
+- Flatter
+- Swagger
+
+Dartrix @ Eviolite
+Adamant Nature
+Ability: Long Reach
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Leaf
+- Pluck
+- Shadow Sneak
+- Swagger
+
+Druddigon @ Rocky Helmet
+Careful Nature
+Ability: Rough Skin
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Rage
+- Fire Fang
+- Poison Tail
+- Metal Claw
+
+Arbok @ Misty Seed
+Jolly Nature
+Ability: Intimidate
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Fang
+- Crunch
+- Ice Fang
+- Stomping Tantrum
+
+Houndoom @ Sitrus Berry
+Hasty Nature
+Ability: Unnerve
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Burning Jealousy
+- Thunder Fang
+- Scorching Sands
+
 === TRAINER_PBL_DOLORES ===
 Name: Dolores
 Class: Lady
