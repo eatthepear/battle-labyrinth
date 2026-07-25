@@ -309,11 +309,21 @@ script Zone1A_EventScript_LeviathanBattle {
 	giveitem(ITEM_TM_FALSE_SWIPE)
 	setspeaker("Cori")
 	msgbox(format("Well, anyways, I've gotta run now.\pBye bye!"), MSGBOX_AUTOCLOSE)
-	fadescreenswapbuffers(FADE_TO_BLACK)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 7) {
+		applymovement(LOCALID_CORI, Common_Movement_WalkUp)
+		waitmovement(0)
+	} else {
+		applymovement(LOCALID_CORI, Common_Movement_WalkDown)
+		waitmovement(0)
+	}
+	applymovement(LOCALID_CORI, Common_Movement_WalkLeft3)
+	waitmovement(0)
+	applymovement(LOCALID_CORI, Common_Movement_WalkDown6)
+	waitmovement(0)
 	removeobject(LOCALID_CORI)
 	setflag(FLAG_BEAT_LEVIATHAN_1)
 	setvar(VAR_ZONE_1_STATE, 1)
-	fadescreenswapbuffers(FADE_FROM_BLACK)
 	releaseall
 	end
 }
