@@ -54,9 +54,24 @@ script Zone15A_EventScript_SophoclesIntro {
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
+	applymovement(LOCALID_SOPHOCLES_1, Common_Movement_WalkUp2)
+	waitmovement(0)
+	setspeaker("???")
+	msgbox(format("Hello, I'm {COLOR BLUE}Sophocles{COLOR DARK_GRAY}. Would you be able to help me out?"))
 	setspeaker("Sophocles")
-	msgbox(format("Help! I was trying to train my Pokemon in this cave, but as soon as I let them out of their Poke Balls, they ran off in a frenzy! All my Plusle and Minun, and my Ampharos too! Could you help me find three Pokemon? I should have found the rest by then. I'll be by the southwest section of the cave."))
-	// movement
+	msgbox(format("I was trying to train my Pokémon in this cave, but as soon as I let them out of their Poké Balls, they ran off in a frenzy!\pSomething in this cave must be causing them to behave strangely.\pI'm missing two {COLOR GREEN}Plusle{COLOR DARK_GRAY}, two {COLOR GREEN}Minun{COLOR DARK_GRAY}, and my {COLOR GREEN}Ampharos{COLOR DARK_GRAY}.\pCould you help me find {COLOR GREEN}three Pokémon{COLOR DARK_GRAY}?\pI {COLOR GREEN}should find the rest by then{COLOR DARK_GRAY}."))
+	playse(MUS_DP_LETS_GO_TOGETHER)
+	setspeaker(SP_NAME_NONE)
+	msgbox(format("{PLAYER} agreed to help {COLOR BLUE}Sophocles{COLOR DARK_GRAY}!"))
+	waitse
+	setspeaker("Sophocles")
+	msgbox(format("I'll be {COLOR GREEN}by the southwest section of the cave{COLOR DARK_GRAY}."), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_SOPHOCLES_1, Common_Movement_WalkDown2)
+	waitmovement(0)
+	applymovement(LOCALID_SOPHOCLES_1, Common_Movement_WalkLeft2)
+	waitmovement(0)
+	applymovement(LOCALID_SOPHOCLES_1, Common_Movement_WalkDown3)
+	waitmovement(0)
 	removeobject(LOCALID_SOPHOCLES_1)
 	setflag(FLAG_HIDE_ZONE15A_SOPHOCLES_1)
 	setvar(VAR_ZONE_15_STATE, 1)
@@ -68,7 +83,7 @@ script Zone15A_EventScript_Sophocles {
 	lock
 	faceplayer
 	setspeaker("Sophocles")
-	msgbox(format("Help!"))
+	msgbox(format("Did you find the other Pokémon yet?\pIf you could find {COLOR GREEN}three Pokémon{COLOR DARK_GRAY} for me, I would be extremely grateful!"))
 	release
 	end
 }
@@ -92,14 +107,15 @@ script Zone15A_EventScript_Plusle_1 {
 	playmoncry(SPECIES_PLUSLE, CRY_MODE_NORMAL)
 	delay(40)
 	waitmoncry
-	msgbox(format("Plusle looks confused and lost, but sniffs you. It seems to recognize the scent of Sophocles!"))
+	msgbox(format("Plusle looks confused and lost, but sniffs you. It seems to recognize the scent of Sophocles!"), MSGBOX_AUTOCLOSE)
 	playmoncry(SPECIES_PLUSLE, CRY_MODE_NORMAL)
 	delay(40)
 	waitmoncry
-	// movement
+	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(LOCALID_PLUSLE_1)
 	setflag(FLAG_HIDE_ZONE15A_MON_1)
-	msgbox(format("Plusle took off! It seems to know the way to Sophocles!"))
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+	msgbox(format("Plusle ran off! It seems to know the way to Sophocles!"))
 	call(Zone15A_EventScript_TimeToFindSophocles)
 	release
 	end
@@ -112,14 +128,15 @@ script Zone15A_EventScript_Plusle_2 {
 	playmoncry(SPECIES_PLUSLE, CRY_MODE_NORMAL)
 	delay(40)
 	waitmoncry
-	msgbox(format("Plusle looks confused and lost, but sniffs you. It seems to recognize the scent of Sophocles!"))
+	msgbox(format("Plusle looks confused and lost, but sniffs you. It seems to recognize the scent of Sophocles!"), MSGBOX_AUTOCLOSE)
 	playmoncry(SPECIES_PLUSLE, CRY_MODE_NORMAL)
 	delay(40)
 	waitmoncry
-	// movement
+	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(LOCALID_PLUSLE_2)
 	setflag(FLAG_HIDE_ZONE15A_MON_3)
-	msgbox(format("Plusle took off! It seems to know the way to Sophocles!"))
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+	msgbox(format("Plusle ran off! It seems to know the way to Sophocles!"))
 	call(Zone15A_EventScript_TimeToFindSophocles)
 	release
 	end
@@ -132,13 +149,14 @@ script Zone15A_EventScript_Minun {
 	playmoncry(SPECIES_MINUN, CRY_MODE_NORMAL)
 	delay(40)
 	waitmoncry
-	msgbox(format("Minun looks confused and lost, but sniffs you. It seems to recognize the scent of Sophocles!"))
+	msgbox(format("Minun looks confused and lost, but sniffs you. It seems to recognize the scent of Sophocles!"), MSGBOX_AUTOCLOSE)
 	playmoncry(SPECIES_MINUN, CRY_MODE_NORMAL)
 	delay(40)
 	waitmoncry
-	// movement
-	removeobject(LOCALID_MINUN)
+	fadescreenswapbuffers(FADE_TO_BLACK)
+	removeobject(LOCALID_MINUN_1)
 	setflag(FLAG_HIDE_ZONE15A_MON_2)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
 	msgbox(format("Minun took off! It seems to know the way to Sophocles!"))
 	call(Zone15A_EventScript_TimeToFindSophocles)
 	release
@@ -149,51 +167,140 @@ script Zone15A_EventScript_TimeToFindSophocles {
 	if (flag(FLAG_HIDE_ZONE15A_MON_1) && flag(FLAG_HIDE_ZONE15A_MON_2) && flag(FLAG_HIDE_ZONE15A_MON_3)) {
 		msgbox(format("You've found 3 Pokemon. Time to find Sophocles. He said he was in the southwest section of the cave."))
 		setvar(VAR_ZONE_15_STATE, 2)
-		setflag(FLAG_HIDE_ZONE15A_SOPHOCLES_1)
+		setflag(FLAG_HIDE_ZONE15A_SOPHOCLES_2)
 	}
 	return
 }
 
-script Zone15A_EventScript_Ampharos {
+script Zone15A_EventScript_Sophocles_ExplainLeviathan {
+	lockall
+	applymovement(LOCALID_SOPHOCLES_3, Common_Movement_FaceRight)
+	waitmovement(0)
+	applymovement(LOCALID_SOPHOCLES_3, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	setspeaker("Sophocles")
+	msgbox(format("There you are!"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_SOPHOCLES_3, Common_Movement_WalkRight4)
+	waitmovement(0)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 49) {
+		applymovement(LOCALID_SOPHOCLES_3, Common_Movement_WalkUp2)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 50) {
+		applymovement(LOCALID_SOPHOCLES_3, Common_Movement_WalkUp)
+		waitmovement(0)
+	}
+	applymovement(LOCALID_SOPHOCLES_3, Common_Movement_FaceRight)
+	waitmovement(0)
+	setspeaker("Sophocles")
+	msgbox(format("Thank you for locating the two Plusle and one Minun, but now there's a bigger problem.\pIt seems that my Pokémon are behaving strangely due to the energy emanating from that stone.\pMy Ampharos in particular seems to be running quite rabid.\pI wasn't able to calm it down, it seems only want to battle!\pI hate to ask more of you, but could you defeat Ampharos for me?\pLet me know when you're ready."), MSGBOX_AUTOCLOSE)
+	if (var(VAR_TEMP_1) == 49) {
+		applymovement(LOCALID_SOPHOCLES_3, Common_Movement_WalkDown2)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 50) {
+		applymovement(LOCALID_SOPHOCLES_3, Common_Movement_WalkDown)
+		waitmovement(0)
+	}
+	applymovement(LOCALID_SOPHOCLES_3, Common_Movement_WalkLeft4)
+	waitmovement(0)
+	applymovement(LOCALID_SOPHOCLES_3, Common_Movement_FaceUp)
+	waitmovement(0)
+	releaseall
+}
+
+script Zone15A_EventScript_Sophocles_TriggerLeviathan {
 	lock
 	faceplayer
-	waitse
+	setspeaker("Sophocles")
+	msgbox(format("Are you sure you're ready to face Ampharos?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Please, I need your help!"), MSGBOX_AUTOCLOSE)
+		applymovement(LOCALID_SOPHOCLES_3, Common_Movement_FaceUp)
+		waitmovement(0)
+		release
+		end
+	}
+	setspeaker("Sophocles")
+	msgbox(format("I'll focus on countering the energy in that stone, while you keep Ampharos distracted!"), MSGBOX_AUTOCLOSE)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 6) {
+		applymovement(LOCALID_SOPHOCLES_3, Common_Movement_WalkRight)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
+		waitmovement(0)
+		applymovement(LOCALID_SOPHOCLES_3, Common_Movement_WalkLeft)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 7) {
+		applymovement(LOCALID_SOPHOCLES_3, Common_Movement_WalkLeft)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
+		waitmovement(0)
+		applymovement(LOCALID_SOPHOCLES_3, Common_Movement_WalkRight)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
+		waitmovement(0)
+	} else {
+		applymovement(LOCALID_SOPHOCLES_3, Common_Movement_WalkLeft)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+		applymovement(LOCALID_SOPHOCLES_3, Common_Movement_WalkRight)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
+		waitmovement(0)
+	}
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
+	applymovement(LOCALID_SOPHOCLES_3, Common_Movement_FaceUp)
+	waitmovement(0)
+	applymovement(LOCALID_AMPHAROS, Common_Movement_FaceDown)
+	waitmovement(0)
+	applymovement(LOCALID_MINUN_2, Common_Movement_FaceDown)
+	waitmovement(0)
+	playmoncry(SPECIES_AMPHAROS, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	msgbox(format("Ampharos looks like they're in a frenzied state!"), MSGBOX_AUTOCLOSE)
 	fadeoutbgm(1)
 	playmoncry(SPECIES_AMPHAROS, CRY_MODE_ENCOUNTER)
 	delay(40)
 	waitmoncry
+	playmoncry(SPECIES_MINUN, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	msgbox(format("Ampharos and Minun attacked!"), MSGBOX_AUTOCLOSE)
 	setwildbattle_pbl(SPECIES_AMPHAROS, 32, ITEM_MAGNET, NATURE_QUIET, 31, 2, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_MAGNETIC_FLUX, MOVE_REST, SPECIES_MINUN, 30, ITEM_SHUCA_BERRY, NATURE_CALM, 31, 0, MOVE_HELPING_HAND, MOVE_LIGHT_SCREEN, MOVE_SUPER_FANG, MOVE_NUZZLE)
 	setflag(FLAG_SYS_NO_RUNNING)
 	setflag(FLAG_SYS_NO_CATCHING)
 	setflag(FLAG_SYS_SMART_WILD_AI_ON)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	// setflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1)
 	dowildbattle
-	// clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
-	// specialvar(VAR_RESULT, GetBattleOutcome)
-	// switch (var(VAR_RESULT)) {
-	// 	case B_OUTCOME_WON:
-	// 	case B_OUTCOME_RAN:
-	// 	case B_OUTCOME_PLAYER_TELEPORTED:
-	// 		fadescreenswapbuffers(FADE_TO_BLACK)
-	// 		removeobject(VAR_LAST_TALKED)
-	// 		fadescreenswapbuffers(FADE_FROM_BLACK)
-	// }
-	msgbox(format("Angry Ampharos!"))
+	msgbox(format("Ampharos is reacting to the energy from the stone!\pWith renewed power, it attacked again!"))
+	playmoncry(SPECIES_AMPHAROS, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
 	setwildbattle_pbl(SPECIES_AMPHAROS_MEGA, 32, ITEM_MAGNET, NATURE_QUIET, 31, 1, MOVE_PARABOLIC_CHARGE, MOVE_DRAGON_PULSE, MOVE_GRASS_KNOT, MOVE_REST)
-	setflag(FLAG_SYS_NO_RUNNING)
-	setflag(FLAG_SYS_NO_CATCHING)
-	setflag(FLAG_SYS_SMART_WILD_AI_ON)
-	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	// setflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1)
 	dowildbattle
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	clearflag(FLAG_SYS_NO_CATCHING)
 	clearflag(FLAG_SYS_SMART_WILD_AI_ON)
 	clearflag(FLAG_SYS_NO_RUNNING)
-	// setflag(FLAG_TESTING_FLAG)
+	setspeaker("Sophocles")
+	msgbox(format("You did it! Thank you!"))
+	setspeaker(SP_NAME_NONE)
+	playfanfare(MUS_OBTAIN_BADGE)
+	msgbox(format("{PLAYER} received the Charge Badge from {COLOR BLUE}Sophocles{COLOR DARK_GRAY}!"))
+	waitfanfare
+	setflag(FLAG_BADGE03_GET)
+	giveitem(ITEM_MEGA_RING)
+	giveitem(ITEM_TM_VOLT_SWITCH)
+	setspeaker("Sophocles")
+	msgbox(format("We leave now! Thanks!"))
+	fadescreenswapbuffers(FADE_TO_BLACK)
+	removeobject(LOCALID_MINUN_2)
+	removeobject(LOCALID_AMPHAROS)
+	removeobject(LOCALID_SOPHOCLES_3)
+	setflag(FLAG_BEAT_LEVIATHAN_15)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
 	release
 	end
 }

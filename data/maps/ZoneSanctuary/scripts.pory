@@ -374,6 +374,8 @@ script EventScript_NextZone {
 				setflag(FLAG_HIDE_ZONE10A_MAX)
 			}
 			warp(MAP_ZONE10A, 255, 42, 51)
+		case 15:
+			warp(MAP_ZONE15A, 255, 4, 3)
 	}
 	waitstate
 	end

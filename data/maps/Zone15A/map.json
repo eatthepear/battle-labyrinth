@@ -172,16 +172,17 @@
       "flag": "FLAG_HIDE_ZONE15A_SOPHOCLES_1"
     },
     {
+      "local_id": "LOCALID_AMPHAROS",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(AMPHAROS)",
       "x": 7,
       "y": 48,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone15A_EventScript_Ampharos",
+      "script": "NULL",
       "flag": "FLAG_BEAT_LEVIATHAN_15"
     },
     {
@@ -199,7 +200,7 @@
       "flag": "FLAG_HIDE_ZONE15A_MON_1"
     },
     {
-      "local_id": "LOCALID_MINUN",
+      "local_id": "LOCALID_MINUN_1",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MINUN)",
       "x": 46,
       "y": 33,
@@ -241,16 +242,17 @@
       "flag": "FLAG_HIDE_ZONE15A_SOPHOCLES_2"
     },
     {
+      "local_id": "LOCALID_MINUN_2",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MINUN)",
       "x": 6,
       "y": 48,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone15A_EventScript_Ampharos",
+      "script": "NULL",
       "flag": "FLAG_BEAT_LEVIATHAN_15"
     },
     {
@@ -259,12 +261,12 @@
       "x": 7,
       "y": 51,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone15A_EventScript_Sophocles",
+      "script": "Zone15A_EventScript_Sophocles_TriggerLeviathan",
       "flag": "FLAG_BEAT_LEVIATHAN_15"
     }
   ],
@@ -286,6 +288,24 @@
       "var": "VAR_ZONE_15_STATE",
       "var_value": "1",
       "script": "Zone15A_EventScript_Sophocles_BlockPassage"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 49,
+      "elevation": 0,
+      "var": "VAR_ZONE_15_STATE",
+      "var_value": "2",
+      "script": "Zone15A_EventScript_Sophocles_ExplainLeviathan"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_ZONE_15_STATE",
+      "var_value": "2",
+      "script": "Zone15A_EventScript_Sophocles_ExplainLeviathan"
     }
   ],
   "bg_events": []
