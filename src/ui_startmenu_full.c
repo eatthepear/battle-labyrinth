@@ -793,14 +793,6 @@ static void CreateGreyedMenuBoxes()
         gSprites[sStartMenuDataPtr->greyMenuBoxIds[0]].invisible = FALSE;
         StartSpriteAnim(&gSprites[sStartMenuDataPtr->greyMenuBoxIds[0]], 0);
     }
-    
-    if(!FlagGet(FLAG_SYS_START_MENU_PC_GET) || (FlagGet(FLAG_ZONE_PC_USED) && FlagGet(FLAG_IN_NEW_ZONE))) // PC
-    {
-        if (sStartMenuDataPtr->greyMenuBoxIds[1] == SPRITE_NONE)
-            sStartMenuDataPtr->greyMenuBoxIds[1] = CreateSprite(&sSpriteTemplate_GreyMenuButtonParty, CURSOR_RIGHT_COL_X, CURSOR_BTM_ROW_Y, 1);
-        gSprites[sStartMenuDataPtr->greyMenuBoxIds[1]].invisible = FALSE;
-        StartSpriteAnim(&gSprites[sStartMenuDataPtr->greyMenuBoxIds[1]], 0);
-    }
 
     if(!FlagGet(FLAG_SYS_DEXNAV_GET)) // DEXNAV
     {
@@ -1224,21 +1216,6 @@ static void PrintSaveConfirmToWindow()
     CopyWindowToVram(WINDOW_BOTTOM_BAR, COPYWIN_FULL);
 }
 
-static const u8 sText_ConfirmUsePC[] = _("Use PC? Won't have access until later.");
-static void PrintPCUseConfirmToWindow()
-{
-    const u8 *str = sText_ConfirmUsePC;
-    u8 sConfirmTextColors[] = {TEXT_COLOR_TRANSPARENT, 2, 3};
-    u8 x = 24;
-    u8 y = 0;
-    
-    FillWindowPixelBuffer(WINDOW_BOTTOM_BAR, PIXEL_FILL(5));
-    BlitBitmapToWindow(WINDOW_BOTTOM_BAR, sA_ButtonGfx, 12, 5, 8, 8);
-    AddTextPrinterParameterized4(WINDOW_BOTTOM_BAR, 1, x, y, 0, 0, sConfirmTextColors, 0xFF, str);
-    PutWindowTilemap(WINDOW_BOTTOM_BAR);
-    CopyWindowToVram(WINDOW_BOTTOM_BAR, COPYWIN_FULL);
-}
-
 
 //
 //  Print Time, Location, Day of Week and Time Indicator
@@ -1420,8 +1397,11 @@ void Task_OpenTrainerCardFromStartMenu(u8 taskId)
         StartMenuFull_FreeResources();
         PlayRainStoppingSoundEffect();
         CleanupOverworldWindowsAndTilemaps();
-        SetMainCallback2(CB2_ReturnToField);
-        ScriptContext_SetupScript(EventScript_PC);
+
+        if (FlagGet(FLAG_SYS_FRONTIER_PASS))
+            ShowFrontierPass(CB2_ReturnToFullScreenStartMenu);
+        else
+            ShowPlayerTrainerCard(CB2_ReturnToFullScreenStartMenu);
     }
 }
 
@@ -1482,33 +1462,6 @@ void Task_HandleSaveConfirmation(u8 taskId)
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_ReturnToFieldOnSave;
         gFieldCallback = SaveStartCallback_FullStartMenu;
-        return;
-    }
-    if(JOY_NEW(B_BUTTON)) // back to normal Menu Control
-    {
-        PlaySE(SE_SELECT);
-        FillWindowPixelBuffer(WINDOW_BOTTOM_BAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
-        PutWindowTilemap(WINDOW_BOTTOM_BAR);
-        CopyWindowToVram(WINDOW_BOTTOM_BAR, COPYWIN_FULL);
-        gTasks[taskId].func = Task_StartMenuFullMain;
-        return;
-    }
-    if(gTasks[taskId].sFrameToSecondTimer >= 60) // every 60 frames update the time
-    {
-        PrintMapNameAndTime();
-        gTasks[taskId].sFrameToSecondTimer = 0;
-    }
-    gTasks[taskId].sFrameToSecondTimer++;
-}
-
-void Task_HandlePCUseConfirmation(u8 taskId)
-{
-    if(JOY_NEW(A_BUTTON)) //confirm and leave
-    {
-        FlagSet(FLAG_ZONE_PC_USED);
-        PlaySE(SE_SELECT);
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-        gTasks[taskId].func = Task_OpenTrainerCardFromStartMenu;
         return;
     }
     if(JOY_NEW(B_BUTTON)) // back to normal Menu Control
@@ -1611,25 +1564,9 @@ static void Task_StartMenuFullMain(u8 taskId)
                 gTasks[taskId].func = Task_OpenQuestMenuStartMenu;
                 break;
             case START_MENU_OPTIONS:
-                if(FlagGet(FLAG_SYS_START_MENU_PC_GET)) // PC
-                {
-                    if (FlagGet(FLAG_IN_NEW_ZONE)) {
-                        if (!FlagGet(FLAG_ZONE_PC_USED)) {
-                            PrintPCUseConfirmToWindow();
-                            gTasks[taskId].func = Task_HandlePCUseConfirmation;
-                        } else {
-                            PlaySE(SE_BOO);
-                        }
-                    } else {
-                        PlaySE(SE_SELECT);
-                        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-                        gTasks[taskId].func = Task_OpenTrainerCardFromStartMenu;
-                        break;
-                    }
-                }
-                else{
-                    PlaySE(SE_BOO);
-                }
+                PlaySE(SE_SELECT);
+                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+                gTasks[taskId].func = Task_OpenOptionsMenuStartMenu;
                 break;
         }
     }
