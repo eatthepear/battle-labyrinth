@@ -68,6 +68,7 @@ EventScript_AccessHallOfFame::
 	end
 
 EventScript_AccessPokemonBoxLink::
+	call EventScript_AccessPokemonBoxLink_PBL
 	playse SE_PC_LOGIN
 	msgbox gText_StorageSystemOpened, MSGBOX_DEFAULT
 	special ShowPokemonStorageSystemPC

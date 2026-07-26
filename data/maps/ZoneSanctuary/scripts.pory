@@ -465,13 +465,10 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_HM_CUT)
 		case 5:
-			msgbox(format("The {COLOR GREEN}Portable PC{COLOR DARK_GRAY}!"))
+			msgbox(format("The {COLOR GREEN}{PKMN} Box Link{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			setflag(FLAG_SYS_START_MENU_PC_GET)
-			playfanfare(MUS_OBTAIN_ITEM)
-			msgbox(format("{PLAYER} received the {COLOR GREEN}Portable PC{COLOR DARK_GRAY}!"))
-			waitfanfare
-			helpwindow(HELP_PORTABLE_PC)
+			giveitem(ITEM_POKEMON_BOX_LINK)
+			helpwindow(HELP_BOX_LINK)
 		case 6:
 			msgbox(format("The {COLOR GREEN}Machete{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)

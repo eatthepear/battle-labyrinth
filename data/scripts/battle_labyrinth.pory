@@ -489,6 +489,23 @@ script EventScript_HandleFlashlight {
 	return
 }
 
+script EventScript_AccessPokemonBoxLink_PBL {
+	if (flag(FLAG_IN_NEW_ZONE)) {
+		if (flag(FLAG_ZONE_PC_USED)) {
+			msgbox(format("The {COLOR GREEN}{PKMN} Box Link{COLOR DARK_GRAY} can't be used again until the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}."))
+			releaseall
+			end
+		}
+		msgbox(format("Use the {COLOR GREEN}{PKMN} Box Link{COLOR DARK_GRAY}? You won't have access again until the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			releaseall
+			end
+		}
+		setflag(FLAG_ZONE_PC_USED)
+	}
+	return
+}
+
 script EventScript_Collector {
 	lock
 	faceplayer

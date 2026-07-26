@@ -542,11 +542,11 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "opponents' moves with increased priority."),
     },
 
-    [HELP_PORTABLE_PC] =
+    [HELP_BOX_LINK] =
     {
-        .header = COMPOUND_STRING("Portable PC"),
-        .desc = COMPOUND_STRING("The {COLOR GREEN}Portable PC{COLOR DARK_GRAY} can be accessed from the\n"
-                                "{START_BUTTON} menu.\n\n"
+        .header = COMPOUND_STRING("{PKMN} Box Link"),
+        .desc = COMPOUND_STRING("The {COLOR GREEN}{PKMN} Box Link{COLOR DARK_GRAY} is used to access the\n"
+                                "{PKMN} Storage System from the field.\n\n"
                                 "It can only be used once per {COLOR GREEN}Zone{COLOR DARK_GRAY},\n"
                                 "but can be accessed at will from the\n"
                                 "{COLOR GREEN}Sanctuary{COLOR DARK_GRAY}."),
