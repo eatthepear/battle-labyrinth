@@ -26,6 +26,7 @@
 #define tButtonMode data[5]
 #define tWindowFrameType data[6]
 
+// Page 1
 enum
 {
     MENUITEM_TEXTSPEED,
@@ -38,12 +39,20 @@ enum
     MENUITEM_COUNT,
 };
 
+// Page 2
+enum
+{
+    MENUITEM_CANCEL_PG2,
+    MENUITEM_COUNT_PG2,
+};
+
 enum
 {
     WIN_HEADER,
     WIN_OPTIONS
 };
 
+// Page 1
 #define YPOS_TEXTSPEED    (MENUITEM_TEXTSPEED * 16)
 #define YPOS_BATTLESCENE  (MENUITEM_BATTLESCENE * 16)
 #define YPOS_BATTLESTYLE  (MENUITEM_BATTLESTYLE * 16)
@@ -51,8 +60,14 @@ enum
 #define YPOS_BUTTONMODE   (MENUITEM_BUTTONMODE * 16)
 #define YPOS_FRAMETYPE    (MENUITEM_FRAMETYPE * 16)
 
+// Page 2
+
+#define PAGE_COUNT 2
+
 static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
+static void Task_OptionMenuFadeIn_Pg2(u8 taskId);
+static void Task_OptionMenuProcessInput_Pg2(u8 taskId);
 static void Task_OptionMenuSave(u8 taskId);
 static void Task_OptionMenuFadeOut(u8 taskId);
 static void HighlightOptionMenuItem(u8 selection);
@@ -73,6 +88,7 @@ static void DrawOptionMenuTexts(void);
 static void DrawBgWindowFrames(void);
 
 EWRAM_DATA static bool8 sArrowPressed = FALSE;
+EWRAM_DATA static u8 sCurrPage = 0;
 
 static const u8 gText_Option[]             = _("OPTION");
 static const u8 gText_TextSpeedSlow[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SLOW");
@@ -103,6 +119,11 @@ static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
     [MENUITEM_BUTTONMODE]  = COMPOUND_STRING("BUTTON MODE"),
     [MENUITEM_FRAMETYPE]   = COMPOUND_STRING("FRAME"),
     [MENUITEM_CANCEL]      = COMPOUND_STRING("CANCEL"),
+};
+
+static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
+{
+    [MENUITEM_CANCEL_PG2]     = COMPOUND_STRING("CANCEL"),
 };
 
 static const struct WindowTemplate sOptionMenuWinTemplates[] =
@@ -165,6 +186,75 @@ static void VBlankCB(void)
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
+}
+
+
+static void ReadAllCurrentSettings(u8 taskId)
+{
+    gTasks[taskId].tMenuSelection = 0;
+    gTasks[taskId].tTextSpeed = gSaveBlock2Ptr->optionsTextSpeed;
+    gTasks[taskId].tBattleSceneOff = gSaveBlock2Ptr->optionsBattleSceneOff;
+    gTasks[taskId].tBattleStyle = gSaveBlock2Ptr->optionsBattleStyle;
+    gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
+    gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
+    gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
+}
+
+static void DrawOptionsPg1(u8 taskId)
+{  
+    ReadAllCurrentSettings(taskId);
+    TextSpeed_DrawChoices(gTasks[taskId].tTextSpeed);
+    BattleScene_DrawChoices(gTasks[taskId].tBattleSceneOff);
+    BattleStyle_DrawChoices(gTasks[taskId].tBattleStyle);
+    Sound_DrawChoices(gTasks[taskId].tSound);
+    ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
+    FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
+    HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
+    CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
+}
+
+static void DrawOptionsPg2(u8 taskId)
+{
+    ReadAllCurrentSettings(taskId);
+    HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
+    CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
+}
+
+static u8 Process_ChangePage(u8 CurrentPage)
+{
+    if (JOY_NEW(R_BUTTON))
+    {
+        if (CurrentPage < PAGE_COUNT - 1)
+            CurrentPage++;
+        else
+            CurrentPage = 0;
+    }
+    if (JOY_NEW(L_BUTTON))
+    {
+        if (CurrentPage != 0)
+            CurrentPage--;
+        else
+            CurrentPage = PAGE_COUNT - 1;
+    }
+    return CurrentPage;
+}
+
+static void Task_ChangePage(u8 taskId)
+{
+    DrawHeaderText();
+    PutWindowTilemap(1);
+    DrawOptionMenuTexts();
+    switch(sCurrPage)
+    {
+    case 0:
+        DrawOptionsPg1(taskId);
+        gTasks[taskId].func = Task_OptionMenuFadeIn;
+        break;
+    case 1:
+        DrawOptionsPg2(taskId);
+        gTasks[taskId].func = Task_OptionMenuFadeIn_Pg2;
+        break;
+    }
 }
 
 void CB2_InitOptionMenu(void)
@@ -243,25 +333,19 @@ void CB2_InitOptionMenu(void)
         break;
     case 10:
     {
-        u8 taskId = CreateTask(Task_OptionMenuFadeIn, 0);
+        u8 taskId;
 
-        gTasks[taskId].tMenuSelection = 0;
-        gTasks[taskId].tTextSpeed = gSaveBlock2Ptr->optionsTextSpeed;
-        gTasks[taskId].tBattleSceneOff = gSaveBlock2Ptr->optionsBattleSceneOff;
-        gTasks[taskId].tBattleStyle = gSaveBlock2Ptr->optionsBattleStyle;
-        gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
-        gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
-        gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
-
-        TextSpeed_DrawChoices(gTasks[taskId].tTextSpeed);
-        BattleScene_DrawChoices(gTasks[taskId].tBattleSceneOff);
-        BattleStyle_DrawChoices(gTasks[taskId].tBattleStyle);
-        Sound_DrawChoices(gTasks[taskId].tSound);
-        ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
-        FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
-        HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
-
-        CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
+        switch(sCurrPage)
+        {
+        case 0:
+            taskId = CreateTask(Task_OptionMenuFadeIn, 0);
+            DrawOptionsPg1(taskId);
+            break;
+        case 1:
+            taskId = CreateTask(Task_OptionMenuFadeIn_Pg2, 0);
+            DrawOptionsPg2(taskId);
+            break;            
+        }
         gMain.state++;
         break;
     }
@@ -289,6 +373,13 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     else if (JOY_NEW(B_BUTTON))
     {
         gTasks[taskId].func = Task_OptionMenuSave;
+    }
+    else if (JOY_NEW(L_BUTTON) || JOY_NEW(R_BUTTON))
+    {
+        FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
+        ClearStdWindowAndFrame(WIN_OPTIONS, FALSE);
+        sCurrPage = Process_ChangePage(sCurrPage);
+        gTasks[taskId].func = Task_ChangePage;
     }
     else if (JOY_NEW(DPAD_UP))
     {
@@ -358,6 +449,63 @@ static void Task_OptionMenuProcessInput(u8 taskId)
             return;
         }
 
+        if (sArrowPressed)
+        {
+            sArrowPressed = FALSE;
+            CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
+        }
+    }
+}
+
+static void Task_OptionMenuFadeIn_Pg2(u8 taskId)
+{
+    if (!gPaletteFade.active)
+        gTasks[taskId].func = Task_OptionMenuProcessInput_Pg2;
+}
+
+static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
+{
+    if (JOY_NEW(L_BUTTON) || JOY_NEW(R_BUTTON))
+    {
+        FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
+        ClearStdWindowAndFrame(WIN_OPTIONS, FALSE);
+        sCurrPage = Process_ChangePage(sCurrPage);
+        gTasks[taskId].func = Task_ChangePage;
+    }
+    else if (JOY_NEW(A_BUTTON))
+    {
+        if (gTasks[taskId].tMenuSelection == MENUITEM_CANCEL_PG2)
+            gTasks[taskId].func = Task_OptionMenuSave;
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        gTasks[taskId].func = Task_OptionMenuSave;
+    }
+    else if (JOY_NEW(DPAD_UP))
+    {
+        if (gTasks[taskId].tMenuSelection > 0)
+            gTasks[taskId].tMenuSelection--;
+        else
+            gTasks[taskId].tMenuSelection = MENUITEM_CANCEL_PG2;
+        HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
+    }
+    else if (JOY_NEW(DPAD_DOWN))
+    {
+        if (gTasks[taskId].tMenuSelection < MENUITEM_CANCEL_PG2)
+            gTasks[taskId].tMenuSelection++;
+        else
+            gTasks[taskId].tMenuSelection = 0;
+        HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
+    }
+    else
+    {
+        u8 previousOption;
+
+        switch (gTasks[taskId].tMenuSelection)
+        {
+        default:
+            return;
+        }
         if (sArrowPressed)
         {
             sArrowPressed = FALSE;
@@ -637,16 +785,29 @@ static void DrawHeaderText(void)
 {
     FillWindowPixelBuffer(WIN_HEADER, PIXEL_FILL(1));
     AddTextPrinterParameterized(WIN_HEADER, FONT_NORMAL, gText_Option, 8, 1, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_HEADER, FONT_NORMAL, COMPOUND_STRING("{L_BUTTON}{R_BUTTON} PAGE"), GetStringRightAlignXOffset(FONT_NORMAL, COMPOUND_STRING("{L_BUTTON}{R_BUTTON} PAGE"), 198), 1, TEXT_SKIP_DRAW, NULL);    
     CopyWindowToVram(WIN_HEADER, COPYWIN_FULL);
 }
 
 static void DrawOptionMenuTexts(void)
 {
     u8 i;
+    u8 items = 0;
+    const u8* const* menu = NULL;
 
+    switch (sCurrPage){
+    case 0:
+        items = MENUITEM_COUNT;
+        menu = sOptionMenuItemsNames;
+        break;
+    case 1:
+        items = MENUITEM_COUNT_PG2;
+        menu = sOptionMenuItemsNames_Pg2;
+        break;    
+    }   
     FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
-    for (i = 0; i < MENUITEM_COUNT; i++)
-        AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sOptionMenuItemsNames[i], 8, (i * 16) + 1, TEXT_SKIP_DRAW, NULL);
+    for (i = 0; i < items; i++)
+        AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, menu[i], 8, (i * 16) + 1, TEXT_SKIP_DRAW, NULL);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 
