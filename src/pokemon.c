@@ -5184,15 +5184,15 @@ u16 GetBattleBGM(void)
 
         switch (VarGet(VAR_WILD_MUSIC))
         {
-        case 2:
+        case 1:
             return MUS_RG_VS_WILD;
-        case 3:
+        case 2:
             return MUS_DP_VS_WILD;
-        case 4:
+        case 3:
             return MUS_HG_VS_WILD;
-        case 5:
+        case 4:
             return MUS_HG_VS_WILD_KANTO;
-        case 6:
+        case 5:
             return MUS_BW_VS_TRAINER;
         default:
             return MUS_VS_WILD;

@@ -25,6 +25,7 @@
 #define tSound data[4]
 #define tButtonMode data[5]
 #define tWindowFrameType data[6]
+#define tWildMusic data[7]
 
 // Page 1
 enum
@@ -42,6 +43,7 @@ enum
 // Page 2
 enum
 {
+    MENUITEM_WILDMUSIC,
     MENUITEM_CANCEL_PG2,
     MENUITEM_COUNT_PG2,
 };
@@ -61,6 +63,7 @@ enum
 #define YPOS_FRAMETYPE    (MENUITEM_FRAMETYPE * 16)
 
 // Page 2
+#define YPOS_WILDMUSIC    (MENUITEM_WILDMUSIC * 16)
 
 #define PAGE_COUNT 2
 
@@ -83,6 +86,8 @@ static u8 FrameType_ProcessInput(u8 selection);
 static void FrameType_DrawChoices(u8 selection);
 static u8 ButtonMode_ProcessInput(u8 selection);
 static void ButtonMode_DrawChoices(u8 selection);
+static u8 WildMusic_ProcessInput(u8 selection);
+static void WildMusic_DrawChoices(u8 selection);
 static void DrawHeaderText(void);
 static void DrawOptionMenuTexts(void);
 static void DrawBgWindowFrames(void);
@@ -105,6 +110,12 @@ static const u8 gText_FrameTypeNumber[]    = _("{COLOR GREEN}{SHADOW LIGHT_GREEN
 static const u8 gText_ButtonTypeNormal[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}NORMAL");
 static const u8 gText_ButtonTypeLR[]       = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}LR");
 static const u8 gText_ButtonTypeLEqualsA[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}L=A");
+static const u8 gText_RSE[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}RSE");
+static const u8 gText_FRLG[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}FRLG");
+static const u8 gText_DPPt[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}DPPt");
+static const u8 gText_HGSS1[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}HGSS1");
+static const u8 gText_HGSS2[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}HGSS2");
+static const u8 gText_BW[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}BW");
 
 static const u16 sOptionMenuText_Pal[] = INCGFX_U16("graphics/interface/option_menu_text.pal", ".gbapal");
 // note: this is only used in the Japanese release
@@ -123,6 +134,7 @@ static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
 
 static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
 {
+    [MENUITEM_WILDMUSIC]      = COMPOUND_STRING("Wild Music"),
     [MENUITEM_CANCEL_PG2]     = COMPOUND_STRING("CANCEL"),
 };
 
@@ -198,6 +210,7 @@ static void ReadAllCurrentSettings(u8 taskId)
     gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
     gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
     gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
+    gTasks[taskId].tWildMusic = VarGet(VAR_WILD_MUSIC);
 }
 
 static void DrawOptionsPg1(u8 taskId)
@@ -216,6 +229,7 @@ static void DrawOptionsPg1(u8 taskId)
 static void DrawOptionsPg2(u8 taskId)
 {
     ReadAllCurrentSettings(taskId);
+    WildMusic_DrawChoices(gTasks[taskId].tWildMusic);
     HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
@@ -503,6 +517,13 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
 
         switch (gTasks[taskId].tMenuSelection)
         {
+        case MENUITEM_WILDMUSIC:
+            previousOption = gTasks[taskId].tWildMusic;
+            gTasks[taskId].tWildMusic = WildMusic_ProcessInput(gTasks[taskId].tWildMusic);
+
+            if (previousOption != gTasks[taskId].tWildMusic)
+                WildMusic_DrawChoices(gTasks[taskId].tWildMusic);
+            break;
         default:
             return;
         }
@@ -522,6 +543,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsSound = gTasks[taskId].tSound;
     gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
+    VarSet(VAR_WILD_MUSIC, gTasks[taskId].tWildMusic);
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -779,6 +801,59 @@ static void ButtonMode_DrawChoices(u8 selection)
     DrawOptionMenuChoice(gText_ButtonTypeLR, xLR, YPOS_BUTTONMODE, styles[1]);
 
     DrawOptionMenuChoice(gText_ButtonTypeLEqualsA, GetStringRightAlignXOffset(FONT_NORMAL, gText_ButtonTypeLEqualsA, 198), YPOS_BUTTONMODE, styles[2]);
+}
+
+static u8 WildMusic_ProcessInput(u8 selection)
+{
+    if (JOY_NEW(DPAD_RIGHT))
+    {
+        if (selection <= 4)
+            selection++;
+        else
+            selection = 0;
+
+        sArrowPressed = TRUE;
+    }
+    if (JOY_NEW(DPAD_LEFT))
+    {
+        if (selection != 0)
+            selection--;
+        else
+            selection = 5;
+
+        sArrowPressed = TRUE;
+    }
+    return selection;
+}
+
+static void WildMusic_DrawChoices(u8 selection)
+{
+    u8 styles[6];
+    s32 widthRSE, widthFRLG, widthDPPt, widthHGSS1, widthHGSS2;
+    s32 spacingbetweenwords = 2;
+    s32 startingX = 60;
+
+    styles[0] = 0;
+    styles[1] = 0;
+    styles[2] = 0;
+    styles[3] = 0;
+    styles[4] = 0;
+    styles[5] = 0;
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(gText_RSE, startingX, YPOS_TEXTSPEED, styles[0]);
+
+    widthRSE = GetStringWidth(FONT_NORMAL, gText_RSE, 0);
+    widthFRLG = GetStringWidth(FONT_NORMAL, gText_FRLG, 0);
+    widthDPPt = GetStringWidth(FONT_NORMAL, gText_DPPt, 0);
+    widthHGSS1 = GetStringWidth(FONT_NORMAL, gText_HGSS1, 0);
+    widthHGSS2 = GetStringWidth(FONT_NORMAL, gText_HGSS2, 0);
+
+    DrawOptionMenuChoice(gText_FRLG, startingX + widthRSE + spacingbetweenwords, YPOS_TEXTSPEED, styles[1]);
+    DrawOptionMenuChoice(gText_DPPt, startingX + widthRSE + widthFRLG + spacingbetweenwords * 2, YPOS_TEXTSPEED, styles[2]);
+    DrawOptionMenuChoice(gText_HGSS1, startingX + widthRSE + widthFRLG + widthDPPt + spacingbetweenwords * 3, YPOS_TEXTSPEED, styles[3]);
+    DrawOptionMenuChoice(gText_HGSS2, startingX + widthRSE + widthFRLG + widthDPPt + widthHGSS1 + spacingbetweenwords * 4, YPOS_TEXTSPEED, styles[4]);
+    DrawOptionMenuChoice(gText_BW, startingX + widthRSE + widthFRLG + widthDPPt + widthHGSS1 + widthHGSS2 + spacingbetweenwords * 5, YPOS_TEXTSPEED, styles[5]);
 }
 
 static void DrawHeaderText(void)
