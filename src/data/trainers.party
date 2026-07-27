@@ -1010,15 +1010,15 @@ Party Size: 3
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_6
 
-=== TRAINER_PBL_VIC_AND_DELL ===
-Name: Vic&Dell
-Class: Twins
-Pic: Twins
-Music: Twins
+=== TRAINER_PBL_LUCIA ===
+Name: Lucia
+Class: Backpacker
+Pic: Backpacker F
+Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
-Double Battle: Yes
-Party Size: 2
-Pool Prune: Non Normal
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_6
 
 === TRAINER_PBL_MINA ===

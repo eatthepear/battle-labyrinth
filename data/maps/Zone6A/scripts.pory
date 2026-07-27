@@ -303,6 +303,12 @@ script Zone6A_EventScript_TMPluck {
 	end
 }
 
+script Zone6A_EventScript_Lucia {
+	trainerbattle_single(TRAINER_PBL_LUCIA, format("The ocean breeze, the salty smell in the air… I just love traveling!"), format("Traveling is no fun when you lose!"))
+	msgbox(format("Traveling is all about the journey, not the destination!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
 raw `
 
 Zone6A_EventScript_Gilbert::
@@ -384,22 +390,4 @@ Zone6A_Text_DaisyDefeat:
 Zone6A_Text_DaisyPostBattle:
 	.string "I guess these little ones need more\n"
 	.string "time to get stronger and evolve!$"
-
-Zone6A_EventScript_VicandDell::
-	trainerbattle_double TRAINER_PBL_VIC_AND_DELL, Zone6A_Text_VicandDellIntro, Zone6A_Text_VicandDellDefeat, gText_NotEnoughMons
-	msgbox Zone6A_Text_VicandDellPostBattle
-	release
-	end
-
-Zone6A_Text_VicandDellIntro:
-	.string "Vic: We're strong!\p"
-	.string "Dell: We work together!$"
-
-Zone6A_Text_VicandDellDefeat:
-	.string "Dell: Aww!\p"
-	.string "Vic: Aww!$"
-
-Zone6A_Text_VicandDellPostBattle:
-	.string "Vic: Losing has its pluses!\p"
-	.string "Dell: And its minuses!$"
 `
