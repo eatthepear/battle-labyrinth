@@ -55,7 +55,7 @@
 #define VAR_GENERIC                          0x4023
 #define VAR_WILD_MUSIC                       0x4024
 #define VAR_TRAINER_MUSIC                    0x4025
-#define VAR_LEVIATHAN_MUSIC                  0x4026
+#define VAR_BOSS_MUSIC                  0x4026
 #define VAR_SANCTUARY_MUSIC                  0x4027
 #define VAR_STARTER_MON                      0x4028 // 0=Grass, 1=Fire, 2=Water
 #define VAR_UNUSED_0x4029                    0x4029

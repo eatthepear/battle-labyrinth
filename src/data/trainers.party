@@ -128,12 +128,12 @@ Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_1
 
-=== TRAINER_PBL_CORI_LEVIATHAN_1_GRASS_STARTER ===
+=== TRAINER_PBL_CORI_BOSS_1_GRASS_STARTER ===
 Name: Cori
 Class: School Kid
 Pic: School Kid F
 Music: Girl
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Green
 Difficulty: Normal
@@ -162,12 +162,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
 - Scratch
 
-=== TRAINER_PBL_CORI_LEVIATHAN_1_GRASS_STARTER ===
+=== TRAINER_PBL_CORI_BOSS_1_GRASS_STARTER ===
 Name: Cori
 Class: School Kid
 Pic: School Kid F
 Music: Girl
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Green
 Difficulty: Brutal
@@ -196,12 +196,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
 - Scratch
 
-=== TRAINER_PBL_CORI_LEVIATHAN_1_FIRE_STARTER ===
+=== TRAINER_PBL_CORI_BOSS_1_FIRE_STARTER ===
 Name: Cori
 Class: School Kid
 Pic: School Kid F
 Music: Girl
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Green
 Difficulty: Normal
@@ -230,12 +230,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
 
-=== TRAINER_PBL_CORI_LEVIATHAN_1_FIRE_STARTER ===
+=== TRAINER_PBL_CORI_BOSS_1_FIRE_STARTER ===
 Name: Cori
 Class: School Kid
 Pic: School Kid F
 Music: Girl
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Green
 Difficulty: Brutal
@@ -264,12 +264,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
 
-=== TRAINER_PBL_CORI_LEVIATHAN_1_WATER_STARTER ===
+=== TRAINER_PBL_CORI_BOSS_1_WATER_STARTER ===
 Name: Cori
 Class: School Kid
 Pic: School Kid F
 Music: Girl
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Green
 Difficulty: Normal
@@ -298,12 +298,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leafage
 - Scratch
 
-=== TRAINER_PBL_CORI_LEVIATHAN_1_WATER_STARTER ===
+=== TRAINER_PBL_CORI_BOSS_1_WATER_STARTER ===
 Name: Cori
 Class: School Kid
 Pic: School Kid F
 Music: Girl
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Green
 Difficulty: Brutal
@@ -376,12 +376,12 @@ Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_2
 
-=== TRAINER_PBL_SHAUN_LEVIATHAN_2 ===
+=== TRAINER_PBL_SHAUN_BOSS_2 ===
 Name: Shaun
 Class: Youngster
 Pic: Youngster
 Music: Male
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Green
 Difficulty: Normal
@@ -410,12 +410,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 - Tail Whip
 
-=== TRAINER_PBL_SHAUN_LEVIATHAN_2 ===
+=== TRAINER_PBL_SHAUN_BOSS_2 ===
 Name: Shaun
 Class: Youngster
 Pic: Youngster
 Music: Male
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Green
 Difficulty: Brutal
@@ -512,7 +512,7 @@ Name: Bill
 Class: Rich Boy
 Pic: Rich Boy
 Music: Rich
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 
 Bidoof @ Chesto Berry
@@ -539,12 +539,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rollout
 - Defense Curl
 
-=== TRAINER_PBL_GRANT_LEVIATHAN_3 ===
+=== TRAINER_PBL_GRANT_BOSS_3 ===
 Name: Grant
 Class: Leader
 Pic: Grant
 Music: Male
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Purple
 Difficulty: Normal
@@ -569,12 +569,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Growl
 - Thunder Wave
 
-=== TRAINER_PBL_GRANT_LEVIATHAN_3 ===
+=== TRAINER_PBL_GRANT_BOSS_3 ===
 Name: Grant
 Class: Leader
 Pic: Grant
 Music: Male
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Purple
 Difficulty: Brutal
@@ -682,12 +682,12 @@ Double Battle: No
 Party Size: 2
 Copy Pool: TRAINER_POOL_ZONE_4_GRUNTS
 
-=== TRAINER_PBL_PROTON_LEVIATHAN_4 ===
+=== TRAINER_PBL_PROTON_BOSS_4 ===
 Name: Proton
 Class: Rainbow Rocket Executive
 Pic: Proton
 Music: Rocket
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: Yes
 Mugshot: Blue
 
@@ -721,12 +721,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Venoshock
 - Mortal Spin
 
-=== TRAINER_PBL_PROTON_LEVIATHAN_4 ===
+=== TRAINER_PBL_PROTON_BOSS_4 ===
 Name: Proton
 Class: Rainbow Rocket Executive
 Pic: Proton
 Music: Rocket
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: Yes
 Mugshot: Blue
 Difficulty: Brutal
@@ -834,7 +834,7 @@ Name: Melinda
 Class: Lady
 Pic: Lady
 Music: Female
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 
 Luvdisc @ Wise Glasses
@@ -864,12 +864,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Feint Attack
 - Fake Out
 
-=== TRAINER_PBL_LIZA_LEVIATHAN_5 ===
+=== TRAINER_PBL_LIZA_BOSS_5 ===
 Name: Liza
 Class: Leader
 Pic: Liza
 Music: Female
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Purple
 Starting Status: Psychic Terrain
@@ -904,12 +904,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
 - Moonlight
 
-=== TRAINER_PBL_LIZA_LEVIATHAN_5 ===
+=== TRAINER_PBL_LIZA_BOSS_5 ===
 Name: Liza
 Class: Leader
 Pic: Liza
 Music: Female
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Purple
 Difficulty: Brutal
@@ -1026,7 +1026,7 @@ Name: Mina
 Class: Tuber F
 Pic: Tuber F
 Music: Girl
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 
 Finneon @ Berry Juice
@@ -1061,7 +1061,7 @@ Name: Zack
 Class: Tuber M
 Pic: Tuber M
 Music: Girl
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 
 Pyukumuku @ Berry Juice
@@ -1078,7 +1078,7 @@ Name: Coby
 Class: Swimmer F
 Pic: Swimmer F
 Music: Swimmer
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 
 Wiglett @ Berry Juice
@@ -1185,12 +1185,12 @@ Party Size: 4
 Pool Prune: Non Ground Rock Steel
 Copy Pool: TRAINER_POOL_ZONE_7_AND_8
 
-=== TRAINER_PBL_BETTY_LEVIATHAN_7 ===
+=== TRAINER_PBL_BETTY_BOSS_7 ===
 Name: Betty
 Class: Socialite
 Pic: Socialite
 Music: Rich
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Green
 
@@ -1221,12 +1221,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bulldoze
 - Trailblaze
 
-=== TRAINER_PBL_BETTY_LEVIATHAN_7 ===
+=== TRAINER_PBL_BETTY_BOSS_7 ===
 Name: Betty
 Class: Socialite
 Pic: Socialite
 Music: Female
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Green
 Difficulty: Brutal
@@ -1307,12 +1307,12 @@ Double Battle: No
 Party Size: 2
 Copy Pool: TRAINER_POOL_ZONE_7_AND_8_GRUNTS
 
-=== TRAINER_PBL_MARS_LEVIATHAN_8 ===
+=== TRAINER_PBL_MARS_BOSS_8 ===
 Name: Mars
 Class: Galactic Commander
 Pic: Mars
 Music: Galactic
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Blue
 
@@ -1346,12 +1346,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thief
 - Slack Off
 
-=== TRAINER_PBL_MARS_LEVIATHAN_8 ===
+=== TRAINER_PBL_MARS_BOSS_8 ===
 Name: Mars
 Class: Galactic Commander
 Pic: Mars
 Music: Galactic
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Blue
 Difficulty: Brutal
@@ -1456,7 +1456,7 @@ Name: Ari
 Class: Winstrate
 Pic: Camper
 Music: Male
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 
 Squawkabilly-Green @ Sharp Beak
@@ -1473,7 +1473,7 @@ Name: Bertha
 Class: Winstrate
 Pic: Picnicker
 Music: Girl
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 
 Carnivine @ Sitrus Berry
@@ -1490,7 +1490,7 @@ Name: Cassandra
 Class: Winstrate
 Pic: Pokefan F
 Music: Twins
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 
 Seel @ Eviolite
@@ -1516,7 +1516,7 @@ Name: Dominic
 Class: Winstrate
 Pic: Pokefan M
 Music: Twins
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 
 Morpeko @ Sitrus Berry
@@ -1533,7 +1533,7 @@ Name: Erica
 Class: Winstrate
 Pic: Expert F
 Music: Intense
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 
 Sawk @ Sitrus Berry
@@ -1620,12 +1620,12 @@ Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_COLLECTOR
 
-=== TRAINER_PBL_JASMINE_LEVIATHAN_10 ===
+=== TRAINER_PBL_JASMINE_BOSS_10 ===
 Name: Jasmine
 Class: Leader
 Pic: Jasmine
 Music: Female
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Purple
 
@@ -1669,12 +1669,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Tomb
 - Thunder Fang
 
-=== TRAINER_PBL_JASMINE_LEVIATHAN_10 ===
+=== TRAINER_PBL_JASMINE_BOSS_10 ===
 Name: Jasmine
 Class: Leader
 Pic: Jasmine
 Music: Female
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Purple
 Difficulty: Brutal
@@ -1793,12 +1793,12 @@ Double Battle: No
 Party Size: 2
 Copy Pool: TRAINER_POOL_ZONE_11_GRUNTS
 
-=== TRAINER_PBL_ARCHER_LEVIATHAN_11 ===
+=== TRAINER_PBL_ARCHER_BOSS_11 ===
 Name: Archer
 Class: Rainbow Rocket
 Pic: Archer
 Music: Rocket
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: Yes
 Mugshot: Blue
 
@@ -1842,12 +1842,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder Fang
 - Scorching Sands
 
-=== TRAINER_PBL_ARCHER_LEVIATHAN_11 ===
+=== TRAINER_PBL_ARCHER_BOSS_11 ===
 Name: Archer
 Class: Rainbow Rocket
 Pic: Archer
 Music: Rocket
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: Yes
 Mugshot: Blue
 Difficulty: Brutal
@@ -1979,12 +1979,12 @@ Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_COLLECTOR
 
-=== TRAINER_PBL_SERENA_LEVIATHAN_12 ===
+=== TRAINER_PBL_SERENA_BOSS_12 ===
 Name: Serena
 Class: Rival
 Pic: Serena
 Music: Female
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
 
@@ -2028,12 +2028,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Taunt
 - Quick Attack
 
-=== TRAINER_PBL_SERENA_LEVIATHAN_12 ===
+=== TRAINER_PBL_SERENA_BOSS_12 ===
 Name: Serena
 Class: Rival
 Pic: Serena
 Music: Female
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
 Difficulty: Brutal
@@ -2163,12 +2163,12 @@ Double Battle: No
 Party Size: 2
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 
-=== TRAINER_PBL_NEWTON_LEVIATHAN_13 ===
+=== TRAINER_PBL_NEWTON_BOSS_13 ===
 Name: Newton
 Class: Scientist
 Pic: Scientist
 Music: Suspicious
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: Yes
 Mugshot: Green
 Difficulty: Normal
@@ -2209,12 +2209,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dragon Claw
 - Acrobatics
 
-=== TRAINER_PBL_NEWTON_LEVIATHAN_13 ===
+=== TRAINER_PBL_NEWTON_BOSS_13 ===
 Name: Newton
 Class: Scientist
 Pic: Scientist
 Music: Suspicious
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: Yes
 Mugshot: Green
 Difficulty: Brutal
@@ -2334,13 +2334,13 @@ Double Battle: No
 Party Size: 2
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 
-=== TRAINER_PBL_COURTNEY_LEVIATHAN_14 ===
+=== TRAINER_PBL_COURTNEY_BOSS_14 ===
 Name: Courtney
 Class: Magma Admin
 Pic: Magma Admin F
 Music: Magma
 Double Battle: No
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Mugshot: Blue
 Difficulty: Normal
 				
@@ -2384,13 +2384,13 @@ IVs: 30 HP / 31 Atk / 31 Def / 30 SpA / 31 SpD / 31 Spe
 - Hidden Power
 - Work Up
 
-=== TRAINER_PBL_COURTNEY_LEVIATHAN_14 ===
+=== TRAINER_PBL_COURTNEY_BOSS_14 ===
 Name: Courtney
 Class: Magma Admin
 Pic: Magma Admin F
 Music: Magma
 Double Battle: No
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Mugshot: Blue
 Difficulty: Brutal
 				
@@ -2444,12 +2444,12 @@ IVs: 30 HP / 31 Atk / 31 Def / 30 SpA / 31 SpD / 31 Spe
 - Hidden Power
 - Work Up
 
-=== TRAINER_PBL_LEAF_LEVIATHAN_17 ===
+=== TRAINER_PBL_LEAF_BOSS_17 ===
 Name: Leaf
 Class: Rival
 Pic: Leaf
 Music: Female
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
 
@@ -2503,12 +2503,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Weather Ball
 - Earth Power
 
-=== TRAINER_PBL_LARRY_LEVIATHAN_18 ===
+=== TRAINER_PBL_LARRY_BOSS_18 ===
 Name: Larry
 Class: Leader
 Pic: Larry
 Music: Male
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Purple
 
@@ -2562,12 +2562,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Close Combat
 - Roost
 
-=== TRAINER_PBL_LARRY_LEVIATHAN_18 ===
+=== TRAINER_PBL_LARRY_BOSS_18 ===
 Name: Larry
 Class: Leader
 Pic: Larry
 Music: Male
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Purple
 Difficulty: Brutal
@@ -2632,7 +2632,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Close Combat
 - Roost
 
-=== TRAINER_PBL_MIRAGE_LEVIATHAN_13 ===
+=== TRAINER_PBL_MIRAGE_BOSS_13 ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -2649,7 +2649,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_MIRAGE_LEVIATHAN_13_CHALLENGE ===
+=== TRAINER_PBL_MIRAGE_BOSS_13_CHALLENGE ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -2788,12 +2788,12 @@ Double Battle: No
 Party Size: 2
 Copy Pool: TRAINER_POOL_ZONE_16_GRUNTS
 
-=== TRAINER_PBL_JUPITER_LEVIATHAN_16 ===
+=== TRAINER_PBL_JUPITER_BOSS_16 ===
 Name: Jupiter
 Class: Galactic Commander
 Pic: Jupiter
 Music: Galactic
-AI: AI_FLAG_LEVIATHAN
+AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Blue
 
@@ -2847,7 +2847,7 @@ Level: 34
 - Flamethrower
 - Play Rough
 
-=== TRAINER_PBL_LILY_LEVIATHAN_14 ===
+=== TRAINER_PBL_LILY_BOSS_14 ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -2864,7 +2864,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_LILY_LEVIATHAN_14_CHALLENGE ===
+=== TRAINER_PBL_LILY_BOSS_14_CHALLENGE ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -2932,7 +2932,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_MIA_LEVIATHAN_15 ===
+=== TRAINER_PBL_MIA_BOSS_15 ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -2949,7 +2949,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_MIA_LEVIATHAN_15_CHALLENGE ===
+=== TRAINER_PBL_MIA_BOSS_15_CHALLENGE ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -3255,7 +3255,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16 ===
+=== TRAINER_PBL_ZOE_AND_ELI_BOSS_16 ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -3272,7 +3272,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16_CHALLENGE ===
+=== TRAINER_PBL_ZOE_AND_ELI_BOSS_16_CHALLENGE ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -3544,7 +3544,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_MIRAGE_LEVIATHAN_17 ===
+=== TRAINER_PBL_MIRAGE_BOSS_17 ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -3561,7 +3561,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_MIRAGE_LEVIATHAN_17_CHALLENGE ===
+=== TRAINER_PBL_MIRAGE_BOSS_17_CHALLENGE ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -3901,7 +3901,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_LEVIATHAN13 ===
+=== TRAINER_PBL_BOSS13 ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -4207,7 +4207,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_LEVIATHAN14 ===
+=== TRAINER_PBL_BOSS14 ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -4224,7 +4224,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_LEVIATHAN12_BRUTAL ===
+=== TRAINER_PBL_BOSS12_BRUTAL ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -4241,7 +4241,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_LEVIATHAN13_BRUTAL ===
+=== TRAINER_PBL_BOSS13_BRUTAL ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -4258,7 +4258,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_LEVIATHAN14_BRUTAL ===
+=== TRAINER_PBL_BOSS14_BRUTAL ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
@@ -4275,7 +4275,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_LEVIATHAN12 ===
+=== TRAINER_PBL_BOSS12 ===
 Name: STEVEN
 Class: Rival
 Pic: Steven

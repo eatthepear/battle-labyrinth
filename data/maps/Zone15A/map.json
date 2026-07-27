@@ -183,7 +183,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_BEAT_LEVIATHAN_15"
+      "flag": "FLAG_BEAT_BOSS_15"
     },
     {
       "local_id": "LOCALID_PLUSLE_1",
@@ -253,7 +253,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_BEAT_LEVIATHAN_15"
+      "flag": "FLAG_BEAT_BOSS_15"
     },
     {
       "local_id": "LOCALID_SOPHOCLES_3",
@@ -266,8 +266,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone15A_EventScript_Sophocles_TriggerLeviathan",
-      "flag": "FLAG_BEAT_LEVIATHAN_15"
+      "script": "Zone15A_EventScript_Sophocles_TriggerBoss",
+      "flag": "FLAG_BEAT_BOSS_15"
     }
   ],
   "warp_events": [
@@ -296,7 +296,7 @@
       "elevation": 0,
       "var": "VAR_ZONE_15_STATE",
       "var_value": "2",
-      "script": "Zone15A_EventScript_Sophocles_ExplainLeviathan"
+      "script": "Zone15A_EventScript_Sophocles_ExplainBoss"
     },
     {
       "type": "trigger",
@@ -305,7 +305,7 @@
       "elevation": 0,
       "var": "VAR_ZONE_15_STATE",
       "var_value": "2",
-      "script": "Zone15A_EventScript_Sophocles_ExplainLeviathan"
+      "script": "Zone15A_EventScript_Sophocles_ExplainBoss"
     }
   ],
   "bg_events": []

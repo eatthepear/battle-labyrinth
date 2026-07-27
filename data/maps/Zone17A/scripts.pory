@@ -106,7 +106,7 @@ script Zone17A_EventScript_RiddleSign {
 		}
 	}
 	if (var(VAR_ZONE_17_STATE) == 21) {
-		goto(Zone17A_EventScript_InitiateLeviathanBattle)
+		goto(Zone17A_EventScript_InitiateBossBattle)
 	} else {
 		msgbox(Zone17A_Text_RiddleSign, MSGBOX_SIGN)
 	}
@@ -126,7 +126,7 @@ text Zone17A_Text_RiddleSign {
 	"The right order of twenty."
 }
 
-script Zone17A_EventScript_InitiateLeviathanBattle {
+script Zone17A_EventScript_InitiateBossBattle {
 	playse(SE_M_NIGHTMARE)
 	waitse
 	setspeaker("Leaf")
@@ -162,9 +162,9 @@ script Zone17A_EventScript_InitiateLeviathanBattle {
 	setspeaker("Leaf?")
 	msgbox(format("Ah, this body will do well."))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_LEAF_LEVIATHAN_17, format("No!!!"))
+	trainerbattle_no_intro(TRAINER_PBL_LEAF_BOSS_17, format("No!!!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	setflag(FLAG_BEAT_LEVIATHAN_17)
+	setflag(FLAG_BEAT_BOSS_17)
 	setspeaker("Leaf")
 	msgbox(format("Uh, where am I? Did you solve the riddle?"))
 	msgbox("There's something shimmering on the\nground by your feet!", MSGBOX_DEFAULT)

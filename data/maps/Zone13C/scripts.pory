@@ -1,15 +1,15 @@
 mapscripts Zone13C_MapScripts {}
 
-script Zone13C_EventScript_LeviathanBattle {
+script Zone13C_EventScript_BossBattle {
 	lock
 	faceplayer
-	if (flag(FLAG_BEAT_LEVIATHAN_11) == true) {
+	if (flag(FLAG_BEAT_BOSS_11) == true) {
 		msgbox(Zone13C_Text_Jenny_PostBattle)
 		closemessage
 		release
 		end
 	}
-	msgbox(Zone13C_Text_Leviathan11WantBattle, MSGBOX_YESNO)
+	msgbox(Zone13C_Text_Boss11WantBattle, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		msgbox(format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: Nervous about facing me?"))
 		release
@@ -19,25 +19,25 @@ script Zone13C_EventScript_LeviathanBattle {
 	msgbox(format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: My battle style is quite ferocious, despite me having only one Pokémon!"), MSGBOX_DEFAULT)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	trainerbattle_no_intro(TRAINER_PBL_JENNY_LEVIATHAN_11_CHALLENGE, Zone13C_Text_Leviathan11Defeat)
+	// 	trainerbattle_no_intro(TRAINER_PBL_JENNY_BOSS_11_CHALLENGE, Zone13C_Text_Boss11Defeat)
 	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_JENNY_LEVIATHAN_11, Zone13C_Text_Leviathan11Defeat)
+	// 	trainerbattle_no_intro(TRAINER_PBL_JENNY_BOSS_11, Zone13C_Text_Boss11Defeat)
 	// }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: Here, I want you to have this item.\pIt'll stop your Pokémon's stats from being lowered, but it's only single use."), MSGBOX_DEFAULT)
 	giveitem(ITEM_WHITE_HERB)
 	msgbox(Zone13C_Text_Jenny_PostBattle)
 	closemessage
-	setflag(FLAG_BEAT_LEVIATHAN_11)
+	setflag(FLAG_BEAT_BOSS_11)
 	release
 	end
 }
 
-text Zone13C_Text_Leviathan11WantBattle {
+text Zone13C_Text_Boss11WantBattle {
 	format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: Ah, it's so nice to finally have a resting spot from all my traveling.\pWhat do you want?\pA battle?")
 }
 
-text Zone13C_Text_Leviathan11Defeat {
+text Zone13C_Text_Boss11Defeat {
 	"You did great, Gyarados!"
 }
 

@@ -63,8 +63,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone14B_EventScript_LeviathanBattle",
-      "flag": "FLAG_BEAT_LEVIATHAN_14"
+      "script": "Zone14B_EventScript_BossBattle",
+      "flag": "FLAG_BEAT_BOSS_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",

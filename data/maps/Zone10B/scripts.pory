@@ -40,26 +40,26 @@ script Zone10B_EventScript_Collector {
 // 		if (!defeated(TRAINER_PBL_NINA) ||
 // 			// !defeated(TRAINER_PBL_MARIAM) ||
 // 			// !defeated(TRAINER_PBL_OSCAR) ||
-// 			// !flag(FLAG_BEAT_LEVIATHAN_1) ||
+// 			// !flag(FLAG_BEAT_BOSS_1) ||
 // 			// !defeated(TRAINER_PBL_POLLY) ||
 // 			// !defeated(TRAINER_PBL_JEREMIAH) ||
 // 			// !defeated(TRAINER_PBL_JOSH) ||
 // 			// !defeated(TRAINER_PBL_HARPER) ||
 // 			// // !defeated(TRAINER_PBL_ARTHUR) ||
-// 			// !flag(FLAG_BEAT_LEVIATHAN_2) ||
+// 			// !flag(FLAG_BEAT_BOSS_2) ||
 // 			// !defeated(TRAINER_PBL_JEMMA) ||
 // 			// !defeated(TRAINER_PBL_PATRICK) ||
 // 			// // !defeated(TRAINER_PBL_ANNABELLE) ||
 // 			// !defeated(TRAINER_PBL_BORIS) ||
 // 			// !defeated(TRAINER_PBL_RICHARD) ||
-// 			// !flag(FLAG_BEAT_LEVIATHAN_3) ||
+// 			// !flag(FLAG_BEAT_BOSS_3) ||
 // 			// !defeated(TRAINER_PBL_HERMAN) ||
 // 			// !defeated(TRAINER_PBL_RALPH) ||
 // 			// !defeated(TRAINER_PBL_SANTIAGO) ||
 // 			// !defeated(TRAINER_PBL_CHLOE_AND_KAYA) ||
 // 			// !defeated(TRAINER_PBL_FRED) ||
 // 			// !defeated(TRAINER_PBL_LUCIA) ||
-// 			// !flag(FLAG_BEAT_LEVIATHAN_4) ||
+// 			// !flag(FLAG_BEAT_BOSS_4) ||
 // 			// !defeated(TRAINER_PBL_ANNE_AND_JUNE) ||
 // 			// !defeated(TRAINER_PBL_NOVA_AND_CORA) ||
 // 			// !defeated(TRAINER_PBL_CLINTON) ||
@@ -68,7 +68,7 @@ script Zone10B_EventScript_Collector {
 // 			// !defeated(TRAINER_PBL_CAITLYN) ||
 // 			// !defeated(TRAINER_PBL_KENNETH) ||
 // 			// !defeated(TRAINER_PBL_KEVIN) ||
-// 			// !flag(FLAG_BEAT_LEVIATHAN_5) ||
+// 			// !flag(FLAG_BEAT_BOSS_5) ||
 // 			// !defeated(TRAINER_PBL_GILBERT) ||
 // 			// !defeated(TRAINER_PBL_MELANIE) ||
 // 			// !defeated(TRAINER_PBL_CONSTANCE) ||
@@ -77,7 +77,7 @@ script Zone10B_EventScript_Collector {
 // 			// !defeated(TRAINER_PBL_DAISY) ||
 // 			// !defeated(TRAINER_PBL_VIC_AND_DELL) ||
 // 			// !defeated(TRAINER_PBL_MINA) ||
-// 			// !flag(FLAG_BEAT_LEVIATHAN_6) ||
+// 			// !flag(FLAG_BEAT_BOSS_6) ||
 // 			// !defeated(TRAINER_PBL_MILLIE) ||
 // 			// !defeated(TRAINER_PBL_JAMAL) ||
 // 			// !defeated(TRAINER_PBL_PAIGE) ||
@@ -85,7 +85,7 @@ script Zone10B_EventScript_Collector {
 // 			// !defeated(TRAINER_PBL_CONNIE) ||
 // 			// !defeated(TRAINER_PBL_PETER) ||
 // 			// !defeated(TRAINER_PBL_WHITAKER) ||
-// 			// !flag(FLAG_BEAT_LEVIATHAN_7) ||
+// 			// !flag(FLAG_BEAT_BOSS_7) ||
 // 			// !defeated(TRAINER_PBL_JIMMY) ||
 // 			// !defeated(TRAINER_PBL_EMILIANO) ||
 // 			// !defeated(TRAINER_PBL_BECKHAM) ||
@@ -93,7 +93,7 @@ script Zone10B_EventScript_Collector {
 // 			// !defeated(TRAINER_PBL_JAYDEN) ||
 // 			// !defeated(TRAINER_PBL_NEIL) ||
 // 			// !defeated(TRAINER_PBL_TAMARA) ||
-// 			!flag(FLAG_BEAT_LEVIATHAN_8) ||
+// 			!flag(FLAG_BEAT_BOSS_8) ||
 // 			// !defeated(TRAINER_PBL_COOPER) ||
 // 			// !defeated(TRAINER_PBL_CARMINE) ||
 // 			// !defeated(TRAINER_PBL_JONATHAN) ||

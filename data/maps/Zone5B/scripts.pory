@@ -6,7 +6,7 @@ mapscripts Zone5B_MapScripts {
 
 script Zone5B_EventScript_Liza {
     lock
-	if (flag(FLAG_BEAT_LEVIATHAN_5)) {
+	if (flag(FLAG_BEAT_BOSS_5)) {
 		setspeaker("Liza")
 		msgbox(format("You will become even stronger! I've battled you, so I know."))
 		release
@@ -15,7 +15,7 @@ script Zone5B_EventScript_Liza {
 	setspeaker("Liza")
 	msgbox(format("Hehehe… Were you surprised?\pThis is my own Pokémon Gym, my very own, without my brother anywhere near!\pWhile it would be nice to be around him sometimes…\pNever mind. You've brought yourself, and you're looking for a challenge.\pI hope to meet that expectation!\pBring it!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_LIZA_LEVIATHAN_5, format("What? I lost?"))
+	trainerbattle_no_intro(TRAINER_PBL_LIZA_BOSS_5, format("What? I lost?"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Liza")
 	msgbox(format("It can't be helped. You've won…\pCongratulations. Please take the Mind Badge!"))
@@ -33,7 +33,7 @@ script Zone5B_EventScript_Liza {
 	giveitem(ITEM_TM_REFLECT)
 	setspeaker("Liza")
 	msgbox(format("You will become even stronger! I've battled you, so I know."))
-    setflag(FLAG_BEAT_LEVIATHAN_5)
+    setflag(FLAG_BEAT_BOSS_5)
 	setflag(FLAG_BADGE02_GET)
 	release
 	end

@@ -26,7 +26,7 @@ mapscripts Zone3A_MapScripts {
 script Zone3A_EventScript_Grant {
 	lock
 	faceplayer
-	if (flag(FLAG_BEAT_LEVIATHAN_3)) {
+	if (flag(FLAG_BEAT_BOSS_3)) {
 		setspeaker("Grant")
 		msgbox(format("I see your potential. You can do anything you set your heart to!\pThere are other Gym Leaders, stronger than I am. Perhaps defeating them will prove a worthy challenge!"))
 		release
@@ -41,7 +41,7 @@ script Zone3A_EventScript_Grant {
 	}
 	msgbox(format("I have a feeling that our battle will turn out to be worth the wait!\pI hope you'll show me that your skill as a Trainer surpasses even mine."))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_GRANT_LEVIATHAN_3, format("You have proven to be a wall that I am unable to surmount!"))
+	trainerbattle_no_intro(TRAINER_PBL_GRANT_BOSS_3, format("You have proven to be a wall that I am unable to surmount!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Grant")
 	msgbox(format("There are some things that seem out of reach no matter how hard you try.\pHowever, it's important that you never give up - no matter the opponent or the odds.\pI could tell from our battle that you and your Pokémon understand that.\pTo commemorate such an impressive show of teamwork, please accept the Cliff Badge!"))
@@ -55,7 +55,7 @@ script Zone3A_EventScript_Grant {
 	giveitem(ITEM_TM_ROCK_TOMB, 1)
 	giveitem(ITEM_HARD_STONE, 1)
 	msgbox(format("With {COLOR GREEN}Rock Tomb{COLOR DARK_GRAY}, a Pokémon can hurl rocks at its target, not only inflicting damage but also lowering the target's Speed.\pAnd the {COLOR GREEN}Hard Stone{COLOR DARK_GRAY} increases the damage of your Pokémon's Rock-type moves by 20%. Forms a nifty combo, huh?\pYou're just starting on your journey, so enjoy the ride and feel the breeze in your face!"))
-	setflag(FLAG_BEAT_LEVIATHAN_3)
+	setflag(FLAG_BEAT_BOSS_3)
 	setflag(FLAG_BADGE01_GET)
 	release
 	end
@@ -64,7 +64,7 @@ script Zone3A_EventScript_Grant {
 script Zone3A_EventScript_GymGuide {
     lock
     faceplayer
-	if (flag(FLAG_BEAT_LEVIATHAN_3)) {
+	if (flag(FLAG_BEAT_BOSS_3)) {
 		msgbox(format("Hey, congrats! You beat {COLOR BLUE}Grant{COLOR DARK_GRAY}! I knew you could do it!"))
 	} else {
     	msgbox(format("Hey there!\pI'm Gym Leader {COLOR BLUE}Grant{COLOR DARK_GRAY}'s personal Gym Guide, which means I help out would be challengers like you!\pYou'd do well to be prepared to battle some Rock-type Pokémon. I recommend using super-effective moves like {COLOR GREEN}Rock Smash{COLOR DARK_GRAY}!"))

@@ -222,7 +222,7 @@ void BattleAI_SetupItems(void)
 
 static u64 GetWildAiFlags(void)
 {
-    return AI_FLAG_LEVIATHAN;
+    return AI_FLAG_BOSS;
 }
 
 static bool32 IsSmartBattle(void)

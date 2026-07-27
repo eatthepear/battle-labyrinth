@@ -5425,7 +5425,7 @@ static void HandleEndTurn_BattleWon(void)
             break;
         default:
             if (DoesTrainerHaveMugshot(TRAINER_BATTLE_PARAM.opponentA)) {
-                switch (VarGet(VAR_LEVIATHAN_MUSIC))
+                switch (VarGet(VAR_BOSS_MUSIC))
                 {
                 case 2:
                     PlayBGM(MUS_RG_VICTORY_GYM_LEADER);

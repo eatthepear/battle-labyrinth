@@ -23,7 +23,7 @@ mapscripts Zone6A_MapScripts {
 	}
 }
 
-script Zone6A_EventScript_LeviathanBattle {
+script Zone6A_EventScript_BossBattle {
 	lockall
 	applymovement(LOCALID_MINA, Common_Movement_FaceDown)
 	waitmovement(0)
@@ -124,7 +124,7 @@ script Zone6A_EventScript_LeviathanBattle {
 	msgbox(format("We're really sorry, again. We didn't mean to be so mean."))
 	setspeaker("Coby")
 	msgbox(format("Well, you live and you learn."), MSGBOX_AUTOCLOSE)
-	setflag(FLAG_BEAT_LEVIATHAN_6)
+	setflag(FLAG_BEAT_BOSS_6)
 	setvar(VAR_ZONE_6_STATE, 1)
 	applymovement(LOCALID_COBY, Zone6A_Movement_Coby_WalkDown)
 	applymovement(LOCALID_ZACK, Zone6A_Movement_Zack_WalkDown)

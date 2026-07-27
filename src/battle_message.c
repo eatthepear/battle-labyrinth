@@ -3052,8 +3052,6 @@ static const u8 *BattleStringGetOpponentClassByTrainerId(u16 trainerId)
         toCpy = gTrainerClasses[GetEreaderTrainerClassId()].name;
     else if (trainerId == TRAINER_LINK_OPPONENT)
         toCpy = gTrainerClasses[TRAINER_NONE].name;
-    else if (GetTrainerMugshotColorFromId(trainerId) == MUGSHOT_COLOR_GREEN)
-        toCpy = gText_Leviathan;
     else
         toCpy = gTrainerClasses[GetTrainerClassFromId(trainerId)].name;
 

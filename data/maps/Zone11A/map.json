@@ -221,7 +221,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Zone11A_EventScript_RocketGrunt_2",
-      "flag": "FLAG_BEAT_LEVIATHAN_11"
+      "flag": "FLAG_BEAT_BOSS_11"
     },
     {
       "local_id": "LOCALID_GRUNT_1_11A",
@@ -235,7 +235,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "Zone11A_EventScript_RocketGrunt_1",
-      "flag": "FLAG_BEAT_LEVIATHAN_11"
+      "flag": "FLAG_BEAT_BOSS_11"
     },
     {
       "local_id": "LOCALID_ARCHER_11A",
@@ -249,7 +249,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Zone11A_EventScript_Archer",
-      "flag": "FLAG_BEAT_LEVIATHAN_11"
+      "flag": "FLAG_BEAT_BOSS_11"
     }
   ],
   "warp_events": [],

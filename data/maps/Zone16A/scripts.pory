@@ -35,16 +35,16 @@ script Zone16A_EventScript_LilyRight {
 	fadeoutbgm(1)
 	applymovement(7, Zone16A_Movement_LilyWalkDown)
 	waitmovement(0)
-	msgbox(Zone16A_Text_Leviathan14Intro1, MSGBOX_DEFAULT)
+	msgbox(Zone16A_Text_Boss14Intro1, MSGBOX_DEFAULT)
 	setweather(WEATHER_RAIN)
 	doweather
 	msgbox("It suddenly began to rain!", MSGBOX_DEFAULT)
-	msgbox(Zone16A_Text_Leviathan14Intro2)
+	msgbox(Zone16A_Text_Boss14Intro2)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	trainerbattle_no_intro(TRAINER_PBL_LILY_LEVIATHAN_14_CHALLENGE, Zone16A_Text_Leviathan14Defeat)
+	// 	trainerbattle_no_intro(TRAINER_PBL_LILY_BOSS_14_CHALLENGE, Zone16A_Text_Boss14Defeat)
 	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_LILY_LEVIATHAN_14, Zone16A_Text_Leviathan14Defeat)
+	// 	trainerbattle_no_intro(TRAINER_PBL_LILY_BOSS_14, Zone16A_Text_Boss14Defeat)
 	// }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Lily{COLOR DARK_GRAY}: Well then. I suppose you'll be wanting your reward.\pHere you go."), MSGBOX_DEFAULT)
@@ -55,7 +55,7 @@ script Zone16A_EventScript_LilyRight {
 	closemessage
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(7)
-	setflag(FLAG_BEAT_LEVIATHAN_14)
+	setflag(FLAG_BEAT_BOSS_14)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	setvar(VAR_ZONE_16_STATE, 1)
 	release
@@ -66,15 +66,15 @@ movement Zone16A_Movement_LilyWalkDown {
 	walk_down * 5
 }
 
-text Zone16A_Text_Leviathan14Intro1 {
+text Zone16A_Text_Boss14Intro1 {
 	format("{COLOR BLUE}Lily{COLOR DARK_GRAY}: Did you know that you can smell plants better right before a storm?")
 }
 
-text Zone16A_Text_Leviathan14Intro2 {
+text Zone16A_Text_Boss14Intro2 {
 	format("{COLOR BLUE}Lily{COLOR DARK_GRAY}: Oh, would you look at that.\pNo wonder I could smell the flowers so well!\pDon't you know the rain just makes my flowers stronger?")
 }
 
-text Zone16A_Text_Leviathan14Defeat {
+text Zone16A_Text_Boss14Defeat {
 	format("Woe is me…")
 }
 

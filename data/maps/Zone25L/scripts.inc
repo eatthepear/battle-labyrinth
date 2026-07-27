@@ -31,7 +31,7 @@ Zone25L_EventScript_LeftMost::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	setvar VAR_ZONE_25_STATE, 1
-	goto Zone25L_EventScript_InitiateLeviathanBattle
+	goto Zone25L_EventScript_InitiateBossBattle
 	end
 
 Zone25L_EventScript_Left::
@@ -41,7 +41,7 @@ Zone25L_EventScript_Left::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	setvar VAR_ZONE_25_STATE, 1
-	goto Zone25L_EventScript_InitiateLeviathanBattle
+	goto Zone25L_EventScript_InitiateBossBattle
 	end
 
 Zone25L_EventScript_Middle::
@@ -49,7 +49,7 @@ Zone25L_EventScript_Middle::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	setvar VAR_ZONE_25_STATE, 1
-	goto Zone25L_EventScript_InitiateLeviathanBattle
+	goto Zone25L_EventScript_InitiateBossBattle
 	end
 
 Zone25L_EventScript_Right::
@@ -59,7 +59,7 @@ Zone25L_EventScript_Right::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	setvar VAR_ZONE_25_STATE, 1
-	goto Zone25L_EventScript_InitiateLeviathanBattle
+	goto Zone25L_EventScript_InitiateBossBattle
 	end
 
 Zone25L_EventScript_RightMost::
@@ -73,10 +73,10 @@ Zone25L_EventScript_RightMost::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	setvar VAR_ZONE_25_STATE, 1
-	goto Zone25L_EventScript_InitiateLeviathanBattle
+	goto Zone25L_EventScript_InitiateBossBattle
 	end
 
-Zone25L_EventScript_InitiateLeviathanBattle:
+Zone25L_EventScript_InitiateBossBattle:
 	msgbox Zone25L_Text_Mirage_1, MSGBOX_AUTOCLOSE
 	msgbox Zone25L_Text_Mirage_2, MSGBOX_AUTOCLOSE
 	msgbox Zone25L_Text_Mirage_3, MSGBOX_AUTOCLOSE
@@ -110,13 +110,13 @@ Zone25L_EventScript_InitiateLeviathanBattle:
 	msgbox Zone25L_Text_Mirage_7, MSGBOX_AUTOCLOSE
 	waitmovement 0
 	setflag FLAG_FORCE_BATTLE_ANIM_ON
-	trainerbattle_no_intro TRAINER_PBL_LEVIATHAN14, Zone25L_Text_Leviathan14Defeat
-	goto Zone25L_EventScript_Leviathan14Defeated
+	trainerbattle_no_intro TRAINER_PBL_BOSS14, Zone25L_Text_Boss14Defeat
+	goto Zone25L_EventScript_Boss14Defeated
 	end
 
 Zone25L_EventScript_MirageBrutal:
-	trainerbattle_no_intro TRAINER_PBL_LEVIATHAN14_BRUTAL, Zone25L_Text_Leviathan14Defeat
-	goto Zone25L_EventScript_Leviathan14Defeated
+	trainerbattle_no_intro TRAINER_PBL_BOSS14_BRUTAL, Zone25L_Text_Boss14Defeat
+	goto Zone25L_EventScript_Boss14Defeated
 	end
 
 Zone25L_Text_Mirage_1:
@@ -145,7 +145,7 @@ Zone25L_Text_Mirage_6:
 Zone25L_Text_Mirage_7:
 	.string "{COLOR BLUE}???{COLOR DARK_GRAY}: You won't get the best of us today!$"
 
-Zone25L_Text_Leviathan14Defeat:
+Zone25L_Text_Boss14Defeat:
 	.string "...$"
 
 Zone25L_EventScript_DontHaveEnoughMons:
@@ -174,7 +174,7 @@ Zone25L_Text_Mirage_NotEnoughMons:
 	.string "Oh. This one only has one Pokémon.\n"
 	.string "It's no threat.$"
 
-Zone25L_EventScript_Leviathan14Defeated:
+Zone25L_EventScript_Boss14Defeated:
 	applymovement 1, Common_Movement_FaceRight
 	applymovement 2, Common_Movement_FaceLeft
 	msgbox Zone25L_Text_Mirage_8, MSGBOX_AUTOCLOSE
@@ -193,7 +193,7 @@ Zone25L_EventScript_Leviathan14Defeated:
 	removeobject 2
 	removeobject 3
 	removeobject 4
-	setflag FLAG_BEAT_LEVIATHAN_14
+	setflag FLAG_BEAT_BOSS_14
 	clearflag FLAG_FORCE_BATTLE_ANIM_ON
 	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox Zone25L_Text_FoundBag, MSGBOX_AUTOCLOSE

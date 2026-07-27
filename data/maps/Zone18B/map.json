@@ -942,7 +942,7 @@
       "y": 27,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Zone18B_EventScript_LeftLeviathanRoomDoor"
+      "script": "Zone18B_EventScript_LeftBossRoomDoor"
     },
     {
       "type": "sign",
@@ -950,7 +950,7 @@
       "y": 14,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Zone18B_EventScript_RightLeviathanRoomDoor"
+      "script": "Zone18B_EventScript_RightBossRoomDoor"
     },
     {
       "type": "sign",

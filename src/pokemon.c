@@ -5143,7 +5143,7 @@ u16 GetBattleBGM(void)
             return MUS_DP_VS_GALACTIC_BOSS;
         default:
             if (DoesTrainerHaveMugshot(TRAINER_BATTLE_PARAM.opponentA)) {
-                switch (VarGet(VAR_LEVIATHAN_MUSIC))
+                switch (VarGet(VAR_BOSS_MUSIC))
                 {
                 case 2:
                     return MUS_RG_VS_GYM_LEADER;

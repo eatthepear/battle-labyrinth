@@ -62,7 +62,7 @@ movement Zone4E_Movement_KimonoGirl_Exit {
 	walk_up
 }
 
-script Zone4E_EventScript_LeviathanBattle {
+script Zone4E_EventScript_BossBattle {
 	lockall
 	playbgm(MUS_HG_ENCOUNTER_ROCKET, TRUE)
 	applymovement(LOCALID_PROTON_4E, Common_Movement_ExclamationMark)
@@ -80,7 +80,7 @@ script Zone4E_EventScript_LeviathanBattle {
 	setspeaker("Proton")
 	msgbox(format("We've been gathering resources, supplies, and like-minded people to join us in our mission of multiversal conquest.\pSomething about the way you stand says you'll get in our way.\pSo be it! I, {COLOR BLUE}Proton{COLOR DARK_GRAY}, will teach you a lesson."))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_PROTON_LEVIATHAN_4, format("Defeated by a child!"))
+	trainerbattle_no_intro(TRAINER_PBL_PROTON_BOSS_4, format("Defeated by a child!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Proton")
 	msgbox(format("Argh… A shameful defeat, but it won't hold me back.\pYou're going to regret standing in the way of {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}, mark my words.\pOur organization has grown over the years, {COLOR GREEN}absorbing other villainous organizations into it{COLOR DARK_GRAY} as well.\pTake heart in knowing your victory will be short lived."), MSGBOX_AUTOCLOSE)
@@ -90,7 +90,7 @@ script Zone4E_EventScript_LeviathanBattle {
 	removeobject(LOCALID_GRUNT_2_4E)
 	settrainerflag(TRAINER_PBL_ROCKET_GRUNT_4E_1)
 	settrainerflag(TRAINER_PBL_ROCKET_GRUNT_4E_2)
-	setflag(FLAG_BEAT_LEVIATHAN_4)
+	setflag(FLAG_BEAT_BOSS_4)
 	setvar(VAR_ZONE_4_STATE, 3)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	msgbox(format("{COLOR BLUE}Proton{COLOR DARK_GRAY} vanished into thin air without a trace!\pHow could he have done such a thing?\pThere's something on the ground where he was standing…"))

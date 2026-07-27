@@ -65,7 +65,7 @@ movement Zone20B_Movement_Leave {
 	walk_down * 4
 }
 
-// script Zone20B_EventScript_LeviathanBattle {
+// script Zone20B_EventScript_BossBattle {
 //     lockall
 // 	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 // 	waitmovement(0)
@@ -100,7 +100,7 @@ movement Zone20B_Movement_Leave {
 // 	waitmoncry
 // 	removeobject(1)
 // 	removeobject(2)
-// 	setflag(FLAG_BEAT_LEVIATHAN_17)
+// 	setflag(FLAG_BEAT_BOSS_17)
 // 	fadescreenswapbuffers(FADE_FROM_BLACK)
 // 	msgbox(format("There's something glittering on the ground!"), MSGBOX_DEFAULT)
 // 	giveitem(ITEM_GREEN_SHARD, 1)
@@ -109,6 +109,6 @@ movement Zone20B_Movement_Leave {
 // 	end
 // }
 
-// text Zone20B_Text_Leviathan17Defeat {
+// text Zone20B_Text_Boss17Defeat {
 // 	"…"
 // }

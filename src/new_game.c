@@ -110,7 +110,7 @@ static void SetDefaultOptions(void)
     VarSet(VAR_SANCTUARY_MUSIC, 1);
     VarSet(VAR_WILD_MUSIC, 6);
     VarSet(VAR_TRAINER_MUSIC, 6);
-    VarSet(VAR_LEVIATHAN_MUSIC, 6);
+    VarSet(VAR_BOSS_MUSIC, 6);
 }
 
 static void ClearPokedexFlags(void)
@@ -177,7 +177,7 @@ void NewGameInitData(void)
     u16 sanctuaryMusic = VarGet(VAR_SANCTUARY_MUSIC);
     u16 wildMusic = VarGet(VAR_WILD_MUSIC);
     u16 trainerMusic = VarGet(VAR_TRAINER_MUSIC);
-    u16 leviathanMusic = VarGet(VAR_LEVIATHAN_MUSIC);
+    u16 bossMusic = VarGet(VAR_BOSS_MUSIC);
 #if IS_FRLG
     StringCopy(rivalName, gSaveBlock1Ptr->rivalName);
 #endif
@@ -253,7 +253,7 @@ void NewGameInitData(void)
     VarSet(VAR_SANCTUARY_MUSIC, sanctuaryMusic);
     VarSet(VAR_WILD_MUSIC, wildMusic);
     VarSet(VAR_TRAINER_MUSIC, trainerMusic);
-    VarSet(VAR_LEVIATHAN_MUSIC, leviathanMusic);
+    VarSet(VAR_BOSS_MUSIC, bossMusic);
 }
 
 static void ResetMiniGamesRecords(void)

@@ -11,16 +11,16 @@ mapscripts Zone14B_MapScripts {
     }
 }
 
-script Zone14B_EventScript_LeviathanBattle {
+script Zone14B_EventScript_BossBattle {
 	lock
 	faceplayer
 	fadeoutbgm(1)
-	msgbox(Zone14B_Text_Leviathan12Intro)
+	msgbox(Zone14B_Text_Boss12Intro)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	trainerbattle_no_intro(TRAINER_PBL_MIGUEL_LEVIATHAN_12_CHALLENGE, Zone14B_Text_Leviathan12Defeat)
+	// 	trainerbattle_no_intro(TRAINER_PBL_MIGUEL_BOSS_12_CHALLENGE, Zone14B_Text_Boss12Defeat)
 	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_MIGUEL_LEVIATHAN_12, Zone14B_Text_Leviathan12Defeat)
+	// 	trainerbattle_no_intro(TRAINER_PBL_MIGUEL_BOSS_12, Zone14B_Text_Boss12Defeat)
 	// }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Miguel{COLOR DARK_GRAY}: Oh… You're not here to cause trouble?\pYou're just passing through?\pWell, I'm sorry about that! I get really riled up about protecting spaces for wild Pokémon.\pHere, as an apology, take these."))
@@ -49,17 +49,17 @@ script Zone14B_EventScript_LeviathanBattle {
 	closemessage
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(4)
-	setflag(FLAG_BEAT_LEVIATHAN_12)
+	setflag(FLAG_BEAT_BOSS_12)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	release
 	end
 }
 
-text Zone14B_Text_Leviathan12Intro {
+text Zone14B_Text_Boss12Intro {
 	format("{COLOR BLUE}Miguel{COLOR DARK_GRAY}: Hey you! You must be one of those delinquents causing trouble in this old mine!\pI've told you kids a hundred times, this area is off limits because it's a protected wild Pokémon habitat.\pAll right, here's a lesson that'll teach you to stay out of places you aren't supposed to be!")
 }
 
-text Zone14B_Text_Leviathan12Defeat {
+text Zone14B_Text_Boss12Defeat {
 	"Wait, you're not a delinquent?"
 }
 

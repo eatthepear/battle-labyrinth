@@ -5,7 +5,7 @@ Zone22A_EventScript_Exit::
 	lockall
 	compare VAR_ZONE, 22
 	goto_if_gt EventScript_WarpZone0
-	goto_if_unset FLAG_BEAT_LEVIATHAN_13, Zone22A_EventScript_LeviathanBattle
+	goto_if_unset FLAG_BEAT_BOSS_13, Zone22A_EventScript_BossBattle
 	warp MAP_ZONE_SANCTUARY, 255, 22, 7
 	releaseall
 	end
@@ -19,7 +19,7 @@ Zone22A_EventScript_CheckBrutal:
 	goto_if_not_defeated TRAINER_PBL_AUDREY, EventScript_BrutalExitNotSatisfied
 	return
 
-Zone22A_EventScript_LeviathanBattle:
+Zone22A_EventScript_BossBattle:
 	fadeoutbgm 1
 	msgbox Zone22A_Text_Pam_StopRightThere, MSGBOX_AUTOCLOSE
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
@@ -49,13 +49,13 @@ Zone22A_EventScript_LeviathanBattle:
 	msgbox Zone22A_Text_Cam_WhatDo, MSGBOX_AUTOCLOSE
 	msgbox Zone22A_Text_Pam_OurCombo, MSGBOX_AUTOCLOSE
 	setflag FLAG_FORCE_BATTLE_ANIM_ON
-	trainerbattle_no_intro TRAINER_PBL_LEVIATHAN13, Zone22A_Text_Leviathan13Defeat
-	goto Zone22A_EventScript_Leviathan13Defeated
+	trainerbattle_no_intro TRAINER_PBL_BOSS13, Zone22A_Text_Boss13Defeat
+	goto Zone22A_EventScript_Boss13Defeated
 	end
 
 Zone22A_EventScript_PamAndCamBrutal:
-	trainerbattle_no_intro TRAINER_PBL_LEVIATHAN13_BRUTAL, Zone22A_Text_Leviathan13Defeat
-	goto Zone22A_EventScript_Leviathan13Defeated
+	trainerbattle_no_intro TRAINER_PBL_BOSS13_BRUTAL, Zone22A_Text_Boss13Defeat
+	goto Zone22A_EventScript_Boss13Defeated
 	end
 
 Zone22A_EventScript_DontHaveEnoughMons:
@@ -71,8 +71,8 @@ Zone22A_EventScript_DontHaveEnoughMons:
 	releaseall
 	end
 
-Zone22A_EventScript_Leviathan13Defeated:
-	setflag FLAG_BEAT_LEVIATHAN_13
+Zone22A_EventScript_Boss13Defeated:
+	setflag FLAG_BEAT_BOSS_13
 	clearflag FLAG_FORCE_BATTLE_ANIM_ON
 	msgbox Zone22A_Text_Cam_Wah, MSGBOX_AUTOCLOSE
 	msgbox Zone22A_Text_Pam_Crushed, MSGBOX_AUTOCLOSE
@@ -150,9 +150,9 @@ Zone22A_Text_Cam_WhatDo:
 Zone22A_Text_Pam_OurCombo:
 	.string "{COLOR BLUE}Pam{COLOR DARK_GRAY}: The obvious thing, of course.\p"
 	.string "Prepare to face the combined combo\n"
-	.string "of {COLOR BLUE}Leviathan Pam and Cam{COLOR DARK_GRAY}!$"
+	.string "of {COLOR BLUE}Boss Pam and Cam{COLOR DARK_GRAY}!$"
 
-Zone22A_Text_Leviathan13Defeat:
+Zone22A_Text_Boss13Defeat:
 	.string "Pam: What? How did we lose?\p"
 	.string "Cam: Our combo, ruined!$"
 

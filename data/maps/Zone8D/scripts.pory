@@ -1,6 +1,6 @@
 mapscripts Zone8D_MapScripts {}
 
-script Zone8D_EventScript_LeviathanBattle {
+script Zone8D_EventScript_BossBattle {
 	lockall
 	applymovement(LOCALID_MARS, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
@@ -63,7 +63,7 @@ script Zone8D_EventScript_LeviathanBattle {
 	setspeaker("Mars")
 	msgbox(format("Prepare to be crushed by the might of Team Galactic!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_MARS_LEVIATHAN_8, format("Defeated by a child… This is embarrasing for me…"))
+	trainerbattle_no_intro(TRAINER_PBL_MARS_BOSS_8, format("Defeated by a child… This is embarrasing for me…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Mars")
 	msgbox(format("Ugh. I can't believe I lost that one.\pI guess I owe you a little something for winning."), MSGBOX_AUTOCLOSE)
@@ -82,7 +82,7 @@ script Zone8D_EventScript_LeviathanBattle {
 	removeobject(LOCALID_GRUNT_1_8D)
 	removeobject(LOCALID_GRUNT_2_8D)
 	setvar(VAR_ZONE_8_STATE, 2)
-	setflag(FLAG_BEAT_LEVIATHAN_8)
+	setflag(FLAG_BEAT_BOSS_8)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	release
 	end

@@ -45,7 +45,7 @@ script Zone12A_EventScript_TriggerSerena {
 	setspeaker("Serena")
 	msgbox(format("Hello!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_SERENA_LEVIATHAN_12, format("Defeat!"))
+	trainerbattle_no_intro(TRAINER_PBL_SERENA_BOSS_12, format("Defeat!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Serena")
 	msgbox(format("I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
@@ -70,7 +70,7 @@ script Zone12A_EventScript_TriggerSerena {
 	applymovement(LOCALID_SERENA_12A, Common_Movement_WalkUp6)
 	waitmovement(0)
 	removeobject(LOCALID_SERENA_12A)
-	setflag(FLAG_BEAT_LEVIATHAN_12)
+	setflag(FLAG_BEAT_BOSS_12)
 	setvar(VAR_ZONE_12_STATE, 1)
 	fadedefaultbgm
 	releaseall

@@ -172,7 +172,7 @@ script Zone15A_EventScript_TimeToFindSophocles {
 	return
 }
 
-script Zone15A_EventScript_Sophocles_ExplainLeviathan {
+script Zone15A_EventScript_Sophocles_ExplainBoss {
 	lockall
 	applymovement(LOCALID_SOPHOCLES_3, Common_Movement_FaceRight)
 	waitmovement(0)
@@ -210,7 +210,7 @@ script Zone15A_EventScript_Sophocles_ExplainLeviathan {
 	releaseall
 }
 
-script Zone15A_EventScript_Sophocles_TriggerLeviathan {
+script Zone15A_EventScript_Sophocles_TriggerBoss {
 	lock
 	faceplayer
 	setspeaker("Sophocles")
@@ -299,7 +299,7 @@ script Zone15A_EventScript_Sophocles_TriggerLeviathan {
 	removeobject(LOCALID_MINUN_2)
 	removeobject(LOCALID_AMPHAROS)
 	removeobject(LOCALID_SOPHOCLES_3)
-	setflag(FLAG_BEAT_LEVIATHAN_15)
+	setflag(FLAG_BEAT_BOSS_15)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	release
 	end

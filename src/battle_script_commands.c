@@ -5863,7 +5863,7 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
             lastMonLevel = party[GetTrainerPartySizeFromId(trainerId) - 1].lvl;
         trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 5;
 
-        if (GetTrainerMugshotColorFromId(trainerId) == MUGSHOT_COLOR_GREEN) // i.e. it's a Leviathan but not a Leader, Admin, or Rival
+        if (GetTrainerMugshotColorFromId(trainerId) == MUGSHOT_COLOR_GREEN) // i.e. it's a Boss but not a Leader, Admin, or Rival
             trainerMoney = 15;
 
         moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;

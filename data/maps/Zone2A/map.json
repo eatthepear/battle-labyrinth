@@ -90,7 +90,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone2A_EventScript_LeviathanBattle",
+      "script": "Zone2A_EventScript_BossBattle",
       "flag": "0"
     },
     {
@@ -182,7 +182,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_Skwovet",
-      "flag": "FLAG_BEAT_LEVIATHAN_2"
+      "flag": "FLAG_BEAT_BOSS_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKWOVET)",
@@ -195,7 +195,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_Skwovet",
-      "flag": "FLAG_BEAT_LEVIATHAN_2"
+      "flag": "FLAG_BEAT_BOSS_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKWOVET)",
@@ -208,7 +208,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_Skwovet",
-      "flag": "FLAG_BEAT_LEVIATHAN_2"
+      "flag": "FLAG_BEAT_BOSS_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKWOVET)",
@@ -221,7 +221,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_Skwovet",
-      "flag": "FLAG_BEAT_LEVIATHAN_2"
+      "flag": "FLAG_BEAT_BOSS_2"
     }
   ],
   "warp_events": [],

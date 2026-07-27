@@ -26,7 +26,7 @@ mapscripts Zone5B_Old_MapScripts {
 	// ]
 }
 
-script Zone5B_Old_EventScript_LeviathanBattle {
+script Zone5B_Old_EventScript_BossBattle {
 	lockall
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
@@ -50,12 +50,12 @@ script Zone5B_Old_EventScript_LeviathanBattle {
 	setvar(VAR_TEMP_0, 0)
 	setvar(VAR_TEMP_1, 0)
 	fadeoutbgm(1)
-	msgbox(Zone5B_Old_Text_Leviathan5Intro)
+	msgbox(Zone5B_Old_Text_Boss5Intro)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	trainerbattle_no_intro(TRAINER_PBL_MARIA_LEVIATHAN_5_CHALLENGE, Zone5B_Old_Text_Leviathan5Defeat)
+	// 	trainerbattle_no_intro(TRAINER_PBL_MARIA_BOSS_5_CHALLENGE, Zone5B_Old_Text_Boss5Defeat)
 	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_MARIA_LEVIATHAN_5, Zone5B_Old_Text_Leviathan5Defeat)
+	// 	trainerbattle_no_intro(TRAINER_PBL_MARIA_BOSS_5, Zone5B_Old_Text_Boss5Defeat)
 	// }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox(format("{COLOR BLUE}Maria{COLOR DARK_GRAY}: Argh, how did you manage to beat me?\pWell, I guess I'm supposed to give you a reward now."), MSGBOX_DEFAULT)
@@ -71,7 +71,7 @@ script Zone5B_Old_EventScript_LeviathanBattle {
 	applymovement(1, Zone5B_Old_Maria_Movement_WalkUp)
 	waitmovement(0)
 	removeobject(1)
-	setflag(FLAG_BEAT_LEVIATHAN_5)
+	setflag(FLAG_BEAT_BOSS_5)
 	setvar(VAR_ZONE_5_STATE, 1)
 	release
 	end
@@ -82,11 +82,11 @@ movement Zone5B_Old_Maria_Movement_WalkDown {
 	walk_left * 2
 }
 
-text Zone5B_Old_Text_Leviathan5Intro {
+text Zone5B_Old_Text_Boss5Intro {
 	format("{COLOR BLUE}Maria{COLOR DARK_GRAY}: Not so fast! I'm training my Pokémon around here!\pYou'll have to face our combined might to get past!\pThis is where your journey forward stops!")
 }
 
-text Zone5B_Old_Text_Leviathan5Defeat {
+text Zone5B_Old_Text_Boss5Defeat {
 	format("How!? My Pokémon was so bulky with its Eviolite!")
 }
 

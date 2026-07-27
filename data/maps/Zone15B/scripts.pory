@@ -1,10 +1,10 @@
 mapscripts Zone15B_MapScripts {
 	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_ZONE_15_STATE, 0: Zone15B_EventScript_LeviathanBattle
+		VAR_ZONE_15_STATE, 0: Zone15B_EventScript_BossBattle
 	]
 }
 
-script Zone15B_EventScript_LeviathanBattle {
+script Zone15B_EventScript_BossBattle {
     lockall
 	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 	waitmovement(0)
@@ -21,9 +21,9 @@ script Zone15B_EventScript_LeviathanBattle {
 	msgbox(format("{COLOR BLUE}???{COLOR DARK_GRAY}: Another AI!\pEven in a place as cold and empty as this?\pNo matter, my blood is boiling for a fight!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	trainerbattle_no_intro(TRAINER_PBL_MIRAGE_LEVIATHAN_13_CHALLENGE, Zone15B_Text_Leviathan13Defeat)
+	// 	trainerbattle_no_intro(TRAINER_PBL_MIRAGE_BOSS_13_CHALLENGE, Zone15B_Text_Boss13Defeat)
 	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_MIRAGE_LEVIATHAN_13, Zone15B_Text_Leviathan13Defeat)
+	// 	trainerbattle_no_intro(TRAINER_PBL_MIRAGE_BOSS_13, Zone15B_Text_Boss13Defeat)
 	// }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	msgbox("{COLOR BLUE}???{COLOR DARK_GRAY}: It seems I was mistaken.\nYou're no ordinary AI.")
@@ -38,7 +38,7 @@ script Zone15B_EventScript_LeviathanBattle {
 	waitmoncry
 	removeobject(1)
 	removeobject(2)
-	setflag(FLAG_BEAT_LEVIATHAN_13)
+	setflag(FLAG_BEAT_BOSS_13)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	msgbox("It looks like a bag was left behind!\pInside are… Shards?")
 	giveitem(ITEM_RED_SHARD, 20)
@@ -47,6 +47,6 @@ script Zone15B_EventScript_LeviathanBattle {
 	end
 }
 
-text Zone15B_Text_Leviathan13Defeat {
+text Zone15B_Text_Boss13Defeat {
 	"…"
 }

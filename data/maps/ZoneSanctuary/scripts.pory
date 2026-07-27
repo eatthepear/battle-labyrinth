@@ -715,7 +715,7 @@ script Sanctuary_EventScript_GameIntro {
 		setflag(FLAG_TEMP_1)
 		msgbox(format("Pokémon Battle Labyrinth is comprised of many {COLOR GREEN}Zones{COLOR DARK_GRAY} you must traverse.\p"
 		"In these {COLOR GREEN}Zones{COLOR DARK_GRAY}, you can encounter wild Pokémon, find great treasures, challenge fierce opponents, and more.\p"
-		"Each {COLOR GREEN}Zone{COLOR DARK_GRAY} typically contains a {COLOR GREEN}Leviathan{COLOR DARK_GRAY} or other difficult challenge that yields great rewards.\p"
+		"Each {COLOR GREEN}Zone{COLOR DARK_GRAY} typically contains a {COLOR GREEN}Boss{COLOR DARK_GRAY} or other difficult challenge that yields great rewards.\p"
 		"When you complete a {COLOR GREEN}Zone{COLOR DARK_GRAY}, you will return to this area, the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}, where you can heal your Pokémon, purchase supplies, and prepare for the next {COLOR GREEN}Zone{COLOR DARK_GRAY}.\p"
 		"Once you enter a new {COLOR GREEN}Zone{COLOR DARK_GRAY}, you will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} until you complete that {COLOR GREEN}Zone{COLOR DARK_GRAY}.\p"
 		"As you complete more {COLOR GREEN}Zones{COLOR DARK_GRAY}, more items, quests, and services are unlocked.\p"
@@ -1523,7 +1523,7 @@ script EventScript_MusicMenu {
 		fadedefaultbgm
 		message(format("Yo! Want me to change some tracks?"))
 		waitmessage
-		dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Sanctuary", "Wild Battle", "Trainer Battle", "Leviathan Battle", "Exit")
+		dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Sanctuary", "Wild Battle", "Trainer Battle", "Boss Battle", "Exit")
 		switch (var(VAR_RESULT)) {
 			case 0:
 				call(EventScript_MusicMenu_Sanctuary)
@@ -1532,7 +1532,7 @@ script EventScript_MusicMenu {
 			case 2:
 				call(EventScript_MusicMenu_Trainer)
 			case 3:
-				call(EventScript_MusicMenu_Leviathan)
+				call(EventScript_MusicMenu_Boss)
 			case 4:
 			case MULTI_B_PRESSED:
 				return
@@ -1666,42 +1666,42 @@ script EventScript_MusicMenu_Trainer {
 	}
 }
 
-script EventScript_MusicMenu_Leviathan {
+script EventScript_MusicMenu_Boss {
 	while {
-		switch (var(VAR_LEVIATHAN_MUSIC)) {
+		switch (var(VAR_BOSS_MUSIC)) {
 			case 1:
 				playbgm(MUS_VS_GYM_LEADER, FALSE)
-				message("The Leviathan music is\ncurrently set to RSE.")
+				message("The Boss music is\ncurrently set to RSE.")
 			case 2:
 				playbgm(MUS_RG_VS_GYM_LEADER, FALSE)
-				message("The Leviathan music is\ncurrently set to FRLG.")
+				message("The Boss music is\ncurrently set to FRLG.")
 			case 3:
 				playbgm(MUS_DP_VS_GYM_LEADER, FALSE)
-				message("The Leviathan music is\ncurrently set to DPPt.")
+				message("The Boss music is\ncurrently set to DPPt.")
 			case 4:
 				playbgm(MUS_HG_VS_GYM_LEADER, FALSE)
-				message("The Leviathan music is\ncurrently set to HGSS (Johto).")
+				message("The Boss music is\ncurrently set to HGSS (Johto).")
 			case 5:
 				playbgm(MUS_HG_VS_GYM_LEADER_KANTO, FALSE)
-				message("The Leviathan music is\ncurrently set to HGSS (Kanto).")
+				message("The Boss music is\ncurrently set to HGSS (Kanto).")
 			case 6:
 				playbgm(MUS_BW_VS_GYM_LEADER, FALSE)
-				message("The Leviathan music is\ncurrently set to BW.")
+				message("The Boss music is\ncurrently set to BW.")
 		}
 		dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "RSE", "FRLG", "DPPt", "HGSS (Johto)", "HGSS (Kanto)", "BW")
 		switch (var(VAR_RESULT)) {
 			case 0:
-				setvar(VAR_LEVIATHAN_MUSIC, 1)
+				setvar(VAR_BOSS_MUSIC, 1)
 			case 1:
-				setvar(VAR_LEVIATHAN_MUSIC, 2)
+				setvar(VAR_BOSS_MUSIC, 2)
 			case 2:
-				setvar(VAR_LEVIATHAN_MUSIC, 3)
+				setvar(VAR_BOSS_MUSIC, 3)
 			case 3:
-				setvar(VAR_LEVIATHAN_MUSIC, 4)
+				setvar(VAR_BOSS_MUSIC, 4)
 			case 4:
-				setvar(VAR_LEVIATHAN_MUSIC, 5)
+				setvar(VAR_BOSS_MUSIC, 5)
 			case 5:
-				setvar(VAR_LEVIATHAN_MUSIC, 6)
+				setvar(VAR_BOSS_MUSIC, 6)
 			case MULTI_B_PRESSED:
 				return
 		}

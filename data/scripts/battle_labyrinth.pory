@@ -122,7 +122,7 @@ text gText_ItemChestIsEmpty {
 // 			cleartrainerflag(TRAINER_PBL_NINA)
 // 			cleartrainerflag(TRAINER_PBL_MARIAM)
 // 			cleartrainerflag(TRAINER_PBL_OSCAR)
-// 			clearflag(FLAG_BEAT_LEVIATHAN_1)
+// 			clearflag(FLAG_BEAT_BOSS_1)
 // 			setvar(VAR_ZONE_1_STATE, 0)
 // 			warpteleport(MAP_ZONE_SANCTUARY, 255, 38, 11)
 // 			waitstate
@@ -131,7 +131,7 @@ text gText_ItemChestIsEmpty {
 // 			cleartrainerflag(TRAINER_PBL_JEREMIAH)
 // 			cleartrainerflag(TRAINER_PBL_HARPER)
 // 			cleartrainerflag(TRAINER_PBL_ARTHUR)
-// 			clearflag(FLAG_BEAT_LEVIATHAN_2)
+// 			clearflag(FLAG_BEAT_BOSS_2)
 // 			setvar(VAR_ZONE_2_STATE, 0)
 // 			warpteleport(MAP_ZONE1SANCTUARY, 255, 38, 11)
 // 			waitstate
@@ -141,7 +141,7 @@ text gText_ItemChestIsEmpty {
 // 			cleartrainerflag(TRAINER_PBL_BORIS)
 // 			cleartrainerflag(TRAINER_PBL_ANNABELLE)
 // 			cleartrainerflag(TRAINER_PBL_RICHARD)
-// 			clearflag(FLAG_BEAT_LEVIATHAN_3)
+// 			clearflag(FLAG_BEAT_BOSS_3)
 // 			setvar(VAR_ZONE_3_STATE, 0)
 // 			warpteleport(MAP_ZONE2SANCTUARY, 255, 38, 11)
 // 			waitstate
@@ -152,7 +152,7 @@ text gText_ItemChestIsEmpty {
 // 			cleartrainerflag(TRAINER_PBL_CHLOE_AND_KAYA)
 // 			cleartrainerflag(TRAINER_PBL_FRED)
 // 			cleartrainerflag(TRAINER_PBL_LUCIA)
-// 			clearflag(FLAG_BEAT_LEVIATHAN_4)
+// 			clearflag(FLAG_BEAT_BOSS_4)
 // 			setvar(VAR_ZONE_4_STATE, 0)
 // 			warpteleport(MAP_ZONE3SANCTUARY, 255, 38, 11)
 // 			waitstate
@@ -164,7 +164,7 @@ text gText_ItemChestIsEmpty {
 // 			cleartrainerflag(TRAINER_PBL_CAITLYN)
 // 			cleartrainerflag(TRAINER_PBL_KENNETH)
 // 			cleartrainerflag(TRAINER_PBL_CLINTON)
-// 			clearflag(FLAG_BEAT_LEVIATHAN_5)
+// 			clearflag(FLAG_BEAT_BOSS_5)
 // 			setvar(VAR_ZONE_5_STATE, 0)
 // 			warpteleport(MAP_ZONE4SANCTUARY, 255, 38, 11)
 // 			waitstate
@@ -175,7 +175,7 @@ text gText_ItemChestIsEmpty {
 // 			cleartrainerflag(TRAINER_PBL_FRANK)
 // 			cleartrainerflag(TRAINER_PBL_DUDLEY)
 // 			cleartrainerflag(TRAINER_PBL_DAISY)
-// 			clearflag(FLAG_BEAT_LEVIATHAN_6)
+// 			clearflag(FLAG_BEAT_BOSS_6)
 // 			setvar(VAR_ZONE_6_STATE, 0)
 // 			warpteleport(MAP_ZONE5SANCTUARY, 255, 38, 11)
 // 			waitstate
@@ -185,14 +185,14 @@ text gText_ItemChestIsEmpty {
 // 			cleartrainerflag(TRAINER_PBL_SETH)
 // 			cleartrainerflag(TRAINER_PBL_JAMAL)
 // 			cleartrainerflag(TRAINER_PBL_CONNIE)
-// 			clearflag(FLAG_BEAT_LEVIATHAN_7)
+// 			clearflag(FLAG_BEAT_BOSS_7)
 // 			cleartrainerflag(TRAINER_PBL_JIMMY)
 // 			cleartrainerflag(TRAINER_PBL_EMILIANO)
 // 			cleartrainerflag(TRAINER_PBL_KAREN)
 // 			cleartrainerflag(TRAINER_PBL_JAYDEN)
 // 			cleartrainerflag(TRAINER_PBL_NEIL)
 // 			cleartrainerflag(TRAINER_PBL_TAMARA)
-// 			clearflag(FLAG_BEAT_LEVIATHAN_8)
+// 			clearflag(FLAG_BEAT_BOSS_8)
 // 			clearflag(FLAG_HIDE_ZONE8D_WALLY)
 // 			setvar(VAR_ZONE_8_STATE, 0)
 // 			warpteleport(MAP_ZONE6SANCTUARY, 255, 38, 11)
@@ -212,7 +212,7 @@ text gText_ItemChestIsEmpty {
 // 			cleartrainerflag(TRAINER_PBL_ALANA)
 // 			cleartrainerflag(TRAINER_PBL_SUSAN)
 // 			cleartrainerflag(TRAINER_PBL_CONRAD)
-// 			clearflag(FLAG_BEAT_LEVIATHAN_9)
+// 			clearflag(FLAG_BEAT_BOSS_9)
 // 			warpteleport(MAP_ZONE9SANCTUARY, 255, 38, 11)
 // 			waitstate
 // 		case 11:
@@ -220,7 +220,7 @@ text gText_ItemChestIsEmpty {
 // 			cleartrainerflag(TRAINER_PBL_EMMA_AND_LEO)
 // 			cleartrainerflag(TRAINER_PBL_REGINA)
 // 			cleartrainerflag(TRAINER_PBL_JOEL)
-// 			clearflag(FLAG_BEAT_LEVIATHAN_10)
+// 			clearflag(FLAG_BEAT_BOSS_10)
 // 			setvar(VAR_ZONE_11_STATE, 0)
 // 			warpteleport(MAP_ZONE10SANCTUARY, 255, 38, 11)
 // 			waitstate
@@ -253,12 +253,12 @@ text gText_ItemChestIsEmpty {
 // 			cleartrainerflag(TRAINER_PBL_TODD)
 // 			cleartrainerflag(TRAINER_PBL_RUSSELL)
 // 			cleartrainerflag(TRAINER_PBL_OTIS)
-// 			clearflag(FLAG_BEAT_LEVIATHAN_11)
-// 			clearflag(FLAG_BEAT_LEVIATHAN_12)
+// 			clearflag(FLAG_BEAT_BOSS_11)
+// 			clearflag(FLAG_BEAT_BOSS_12)
 // 			warpteleport(MAP_ZONE12SANCTUARY, 255, 38, 11)
 // 			waitstate
 // 		case 15:
-// 			clearflag(FLAG_BEAT_LEVIATHAN_13)
+// 			clearflag(FLAG_BEAT_BOSS_13)
 // 			setvar(VAR_ZONE_15_STATE, 0)
 // 			warpteleport(MAP_ZONE14SANCTUARY, 255, 38, 11)
 // 			waitstate
@@ -269,7 +269,7 @@ text gText_ItemChestIsEmpty {
 //         	cleartrainerflag(TRAINER_PBL_ROBERT)
 //         	cleartrainerflag(TRAINER_PBL_CHRIS)
 //         	cleartrainerflag(TRAINER_PBL_ANGUS)
-//         	clearflag(FLAG_BEAT_LEVIATHAN_14)
+//         	clearflag(FLAG_BEAT_BOSS_14)
 // 			setvar(VAR_ZONE_16_STATE, 0)
 // 			warpteleport(MAP_ZONE15SANCTUARY, 255, 38, 11)
 // 			waitstate
@@ -277,7 +277,7 @@ text gText_ItemChestIsEmpty {
 //         	cleartrainerflag(TRAINER_PBL_AXLE)
 //         	cleartrainerflag(TRAINER_PBL_RAFAEL)
 //         	cleartrainerflag(TRAINER_PBL_GEORGINA)
-//         	clearflag(FLAG_BEAT_LEVIATHAN_15)
+//         	clearflag(FLAG_BEAT_BOSS_15)
 // 			setvar(VAR_ZONE_17_STATE, 0)
 // 			warpteleport(MAP_ZONE16SANCTUARY, 255, 38, 11)
 // 			waitstate
@@ -299,7 +299,7 @@ text gText_ItemChestIsEmpty {
 //         	cleartrainerflag(TRAINER_PBL_LEROY)
 //         	cleartrainerflag(TRAINER_PBL_ELTON)
 //         	cleartrainerflag(TRAINER_PBL_WILLIE)
-//         	clearflag(FLAG_BEAT_LEVIATHAN_16)
+//         	clearflag(FLAG_BEAT_BOSS_16)
 // 			setvar(VAR_ZONE_18_STATE, 0)
 // 			setvar(VAR_ZONE_19_STATE, 0)
 // 			clearflag(FLAG_HIDE_ZONE18A_ZOE)
@@ -315,7 +315,7 @@ text gText_ItemChestIsEmpty {
 //         	cleartrainerflag(TRAINER_PBL_DALTON)
 //         	cleartrainerflag(TRAINER_PBL_LEE)
 //         	cleartrainerflag(TRAINER_PBL_BLANCHE)
-//         	clearflag(FLAG_BEAT_LEVIATHAN_17)
+//         	clearflag(FLAG_BEAT_BOSS_17)
 // 			setvar(VAR_ZONE_20_STATE, 0)
 // 			warpteleport(MAP_ZONE20SANCTUARY, 255, 38, 11)
 // 			waitstate
@@ -684,18 +684,18 @@ script EventScript_Notebook_ZoneInfo {
 	}
 	switch (var(VAR_ZONE)) {
 		case 1:
-			helpwindow(HELP_NOTEBOOK_LEVIATHAN_1)
+			helpwindow(HELP_NOTEBOOK_BOSS_1)
 		case 2:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				helpwindow(HELP_NOTEBOOK_LEVIATHAN_2_BRUTAL)
+				helpwindow(HELP_NOTEBOOK_BOSS_2_BRUTAL)
 			} else {
-				helpwindow(HELP_NOTEBOOK_LEVIATHAN_2)
+				helpwindow(HELP_NOTEBOOK_BOSS_2)
 			}
 		case 3:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				helpwindow(HELP_NOTEBOOK_LEVIATHAN_3_BRUTAL)
+				helpwindow(HELP_NOTEBOOK_BOSS_3_BRUTAL)
 			} else {
-				helpwindow(HELP_NOTEBOOK_LEVIATHAN_3)
+				helpwindow(HELP_NOTEBOOK_BOSS_3)
 			}
 			msgbox(gText_Notebook_OptionalReadOn, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
@@ -703,15 +703,15 @@ script EventScript_Notebook_ZoneInfo {
 			}
 		case 4:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				helpwindow(HELP_NOTEBOOK_LEVIATHAN_4_BRUTAL)
+				helpwindow(HELP_NOTEBOOK_BOSS_4_BRUTAL)
 			} else {
-				helpwindow(HELP_NOTEBOOK_LEVIATHAN_4)
+				helpwindow(HELP_NOTEBOOK_BOSS_4)
 			}
 		case 5:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				helpwindow(HELP_NOTEBOOK_LEVIATHAN_5_BRUTAL)
+				helpwindow(HELP_NOTEBOOK_BOSS_5_BRUTAL)
 			} else {
-				helpwindow(HELP_NOTEBOOK_LEVIATHAN_5)
+				helpwindow(HELP_NOTEBOOK_BOSS_5)
 			}
 			msgbox(gText_Notebook_OptionalReadOn, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
@@ -724,11 +724,11 @@ script EventScript_Notebook_ZoneInfo {
 			}
 		case 7:
 		case 8:
-			msgbox(format("The first {COLOR GREEN}Leviathan{COLOR DARK_GRAY} has Pokémon that take advantage of held Sitrus Berries in different ways. Their Drifloon has Acrobatics and Unburden, their Dedenne has Cheek Pouch, and their Klawf can sometimes get multiple Anger Shell boosts because it has Sitrus Berry."))
+			msgbox(format("The first {COLOR GREEN}Boss{COLOR DARK_GRAY} has Pokémon that take advantage of held Sitrus Berries in different ways. Their Drifloon has Acrobatics and Unburden, their Dedenne has Cheek Pouch, and their Klawf can sometimes get multiple Anger Shell boosts because it has Sitrus Berry."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, they also have a Appletun that maximizes the effectiveness of the Sitrus Berry with its Ripen ability."))
 			}
-			msgbox(format("The second {COLOR GREEN}Leviathan{COLOR DARK_GRAY} is a villainous team admin. They use a Stunfisk, a Beautifly, and a Purugly."))
+			msgbox(format("The second {COLOR GREEN}Boss{COLOR DARK_GRAY} is a villainous team admin. They use a Stunfisk, a Beautifly, and a Purugly."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, they also have a Bruxish."))
 			}
@@ -739,7 +739,7 @@ script EventScript_Notebook_ZoneInfo {
 				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, the fifth trainer is mandatory."))
 			}
 		case 10:
-			msgbox(format("The {COLOR GREEN}Leviathan{COLOR DARK_GRAY} is a Steel Gym Leader.\pTheir Tinkatuff can set up Stealth Rock, while their Togedemaru can chip away against its foes with Iron Barbs and Rocky Helmet.\pTheir Sliggoo-Hisui is also very tanky, and their ace Steelix has great coverage moves."))
+			msgbox(format("The {COLOR GREEN}Boss{COLOR DARK_GRAY} is a Steel Gym Leader.\pTheir Tinkatuff can set up Stealth Rock, while their Togedemaru can chip away against its foes with Iron Barbs and Rocky Helmet.\pTheir Sliggoo-Hisui is also very tanky, and their ace Steelix has great coverage moves."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, they also have a Prinplup, and their Steelix can Mega evolve."))
 			}
@@ -778,7 +778,7 @@ script EventScript_Notebook_ZoneInfo {
 		case 43:
 		case 44:
 		case 45:
-			msgbox(format("{COLOR BLUE}{COLOR DARK_GRAY} the Leviathan "))
+			msgbox(format("{COLOR BLUE}{COLOR DARK_GRAY} the Boss "))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				msgbox(format("On Brutal difficulty, __ also has "))
 			}
@@ -1621,15 +1621,15 @@ script Debug_CheatStart_PBL {
 // 	random(5)
 // 	switch (var(VAR_RESULT)) {
 // 		case 0:
-// 			setvar(VAR_LEVIATHAN_MUSIC, 0)
+// 			setvar(VAR_BOSS_MUSIC, 0)
 // 		case 1:
-// 			setvar(VAR_LEVIATHAN_MUSIC, 1)
+// 			setvar(VAR_BOSS_MUSIC, 1)
 // 		case 2:
-// 			setvar(VAR_LEVIATHAN_MUSIC, 2)
+// 			setvar(VAR_BOSS_MUSIC, 2)
 // 		case 3:
-// 			setvar(VAR_LEVIATHAN_MUSIC, 3)
+// 			setvar(VAR_BOSS_MUSIC, 3)
 // 		case 4:
-// 			setvar(VAR_LEVIATHAN_MUSIC, 4)
+// 			setvar(VAR_BOSS_MUSIC, 4)
 // 	}
 // 	additem(ITEM_RARE_CANDY, 900)
 // 	removemoney(2500)
@@ -1751,7 +1751,7 @@ script Debug_CheatStart_PBL {
 // 	settrainerflag(TRAINER_PBL_NINA)
 // 	settrainerflag(TRAINER_PBL_MARIAM)
 // 	settrainerflag(TRAINER_PBL_OSCAR)
-// 	setflag(FLAG_BEAT_LEVIATHAN_1)
+// 	setflag(FLAG_BEAT_BOSS_1)
 // 	// zone 2
 // 	message(format("Zone 2 options"))
 // 	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass A", "Tunnel", "Grass B")
@@ -1818,7 +1818,7 @@ script Debug_CheatStart_PBL {
 // 	settrainerflag(TRAINER_PBL_JOSH)
 // 	settrainerflag(TRAINER_PBL_HARPER)
 // 	// settrainerflag(TRAINER_PBL_ARTHUR)
-// 	setflag(FLAG_BEAT_LEVIATHAN_2)
+// 	setflag(FLAG_BEAT_BOSS_2)
 // 	// zone 3
 // 	message(format("Zone 3 options"))
 // 	dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
@@ -1845,7 +1845,7 @@ script Debug_CheatStart_PBL {
 // 	settrainerflag(TRAINER_PBL_ANNABELLE)
 // 	settrainerflag(TRAINER_PBL_BORIS)
 // 	settrainerflag(TRAINER_PBL_RICHARD)
-// 	setflag(FLAG_BEAT_LEVIATHAN_3)
+// 	setflag(FLAG_BEAT_BOSS_3)
 // 	// zone 4
 // 	message(format("Zone 4 options"))
 // 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "A", "B", "C", "D", "E")
@@ -1911,7 +1911,7 @@ script Debug_CheatStart_PBL {
 // 	settrainerflag(TRAINER_PBL_CHLOE_AND_KAYA)
 // 	settrainerflag(TRAINER_PBL_FRED)
 // 	settrainerflag(TRAINER_PBL_LUCIA)
-// 	setflag(FLAG_BEAT_LEVIATHAN_4)
+// 	setflag(FLAG_BEAT_BOSS_4)
 // 	// zone 5
 // 	message(format("Zone 5 options"))
 // 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Forest", "Grassland")
@@ -1969,7 +1969,7 @@ script Debug_CheatStart_PBL {
 // 	settrainerflag(TRAINER_PBL_CAITLYN)
 // 	settrainerflag(TRAINER_PBL_KENNETH)
 // 	settrainerflag(TRAINER_PBL_KEVIN)
-// 	setflag(FLAG_BEAT_LEVIATHAN_5)
+// 	setflag(FLAG_BEAT_BOSS_5)
 // 	addmoney(1000)
 // 	// zone 6
 // 	message(format("Zone 6 options"))
@@ -2007,7 +2007,7 @@ script Debug_CheatStart_PBL {
 // 	settrainerflag(TRAINER_PBL_DAISY)
 // 	settrainerflag(TRAINER_PBL_VIC_AND_DELL)
 // 	settrainerflag(TRAINER_PBL_MINA)
-// 	setflag(FLAG_BEAT_LEVIATHAN_6)
+// 	setflag(FLAG_BEAT_BOSS_6)
 // 	addmoney(1000)
 // 	// zone 7
 // 	message(format("Zone 7 options"))
@@ -2077,8 +2077,8 @@ script Debug_CheatStart_PBL {
 // 	settrainerflag(TRAINER_PBL_JAYDEN)
 // 	settrainerflag(TRAINER_PBL_NEIL)
 // 	settrainerflag(TRAINER_PBL_TAMARA)
-// 	setflag(FLAG_BEAT_LEVIATHAN_7)
-// 	setflag(FLAG_BEAT_LEVIATHAN_8)
+// 	setflag(FLAG_BEAT_BOSS_7)
+// 	setflag(FLAG_BEAT_BOSS_8)
 // 	// zone 9
 // 	message(format("Zone 9 options"))
 // 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
@@ -2163,7 +2163,7 @@ script Debug_CheatStart_PBL {
 // 	settrainerflag(TRAINER_PBL_SUSAN)
 // 	settrainerflag(TRAINER_PBL_CONRAD)
 // 	settrainerflag(TRAINER_PBL_BRETT)
-// 	setflag(FLAG_BEAT_LEVIATHAN_9)
+// 	setflag(FLAG_BEAT_BOSS_9)
 // 	setflag(FLAG_ZONE10B_RECEIVED_TM_STEEL_WING)
 // 	// zone 11
 // 	message(format("Zone 11 options"))
@@ -2195,7 +2195,7 @@ script Debug_CheatStart_PBL {
 // 	settrainerflag(TRAINER_PBL_JOEL)
 // 	settrainerflag(TRAINER_PBL_MARION)
 // 	settrainerflag(TRAINER_PBL_REGINA)
-// 	setflag(FLAG_BEAT_LEVIATHAN_10)
+// 	setflag(FLAG_BEAT_BOSS_10)
 // 	// zone 12
 // 	message(format("Zone 12 options"))
 // 	dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Grass", "Water")
@@ -2232,7 +2232,7 @@ script Debug_CheatStart_PBL {
 // 	settrainerflag(TRAINER_PBL_RUFUS)
 // 	settrainerflag(TRAINER_PBL_KINLEY)
 // 	settrainerflag(TRAINER_PBL_REID)
-// 	setflag(FLAG_BEAT_LEVIATHAN_11)
+// 	setflag(FLAG_BEAT_BOSS_11)
 // 	// end
 // 	setvar(VAR_ZONE, 13)
 // 	setvar(VAR_LEVEL_CAP, 26)

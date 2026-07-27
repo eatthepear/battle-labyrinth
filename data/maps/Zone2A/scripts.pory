@@ -63,10 +63,10 @@ script Zone2A_EventScript_Max {
 	releaseall
 }
 
-script Zone2A_EventScript_LeviathanBattle {
+script Zone2A_EventScript_BossBattle {
 	lock
 	faceplayer
-	if (flag(FLAG_BEAT_LEVIATHAN_2) == true) {
+	if (flag(FLAG_BEAT_BOSS_2) == true) {
 		setspeaker("Shaun")
 		msgbox(Zone2A_Text_Shaun_Post)
 		release
@@ -93,13 +93,13 @@ script Zone2A_EventScript_LeviathanBattle {
 	setspeaker("Shaun")
 	msgbox(format("All right then, let's battle!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_SHAUN_LEVIATHAN_2, format("Ack! I lost again!\pDoggone it!"))
+	trainerbattle_no_intro(TRAINER_PBL_SHAUN_BOSS_2, format("Ack! I lost again!\pDoggone it!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Shaun")
 	msgbox(format("Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though! I enjoyed our battle so much, I want to give you these!"))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_ORAN_BERRY, 5)
-	setflag(FLAG_BEAT_LEVIATHAN_2)
+	setflag(FLAG_BEAT_BOSS_2)
 	setspeaker("Shaun")
 	msgbox(Zone2A_Text_Shaun_Post)
 	release

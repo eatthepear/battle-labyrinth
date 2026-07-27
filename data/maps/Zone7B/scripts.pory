@@ -1,11 +1,11 @@
 mapscripts Zone7B_MapScripts {}
 
-script Zone7B_EventScript_LeviathanBattle {
+script Zone7B_EventScript_BossBattle {
 	lock
 	faceplayer
-	if (flag(FLAG_BEAT_LEVIATHAN_7) == true) {
+	if (flag(FLAG_BEAT_BOSS_7) == true) {
 		setspeaker("Betty")
-		msgbox(Zone7B_Text_LeviathanPost)
+		msgbox(Zone7B_Text_BossPost)
 		release
 		end
 	}
@@ -21,20 +21,20 @@ script Zone7B_EventScript_LeviathanBattle {
 	setspeaker("Betty")
 	msgbox(format("I will show you how to behave in the prim and proper way!"), MSGBOX_DEFAULT)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_BETTY_LEVIATHAN_7, format("It seems I was the one who ended up being humbled…"))
+	trainerbattle_no_intro(TRAINER_PBL_BETTY_BOSS_7, format("It seems I was the one who ended up being humbled…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	faceplayer
 	setspeaker("Betty")
 	msgbox(format("Your battling skills are certainly up to par. Excellent form.\pI'd like to give you a few of these Berries.\pVery, very expensive, or so my butler tells me."), MSGBOX_AUTOCLOSE)
 	giveitem(ITEM_SITRUS_BERRY, 5)
-	setflag(FLAG_BEAT_LEVIATHAN_7)
+	setflag(FLAG_BEAT_BOSS_7)
 	setspeaker("Betty")
-	msgbox(Zone7B_Text_LeviathanPost)
+	msgbox(Zone7B_Text_BossPost)
 	release
 	end
 }
 
-text Zone7B_Text_LeviathanPost {
+text Zone7B_Text_BossPost {
 	format("I've been staying here at my friend's house while our new mansion gets renovated.\pIsn't that exciting?\pThough, I've been hearing that there's some people dressed in space suits messing around in the caves.\pSounds rather frightening, wouldn't you say?")
 }
 

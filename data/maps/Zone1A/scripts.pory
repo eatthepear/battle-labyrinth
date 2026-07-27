@@ -218,7 +218,7 @@ movement Zone1A_Cori_WalkRight {
 	walk_right * 4
 }
 
-script Zone1A_EventScript_TriggerLeviathanBottom {
+script Zone1A_EventScript_TriggerBossBottom {
 	lockall
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
@@ -230,7 +230,7 @@ script Zone1A_EventScript_TriggerLeviathanBottom {
 	waitmovement(0)
 	applymovement(LOCALID_CORI, Zone1A_Cori_WalkLeft)
 	waitmovement(0)
-	call(Zone1A_EventScript_LeviathanBattle)
+	call(Zone1A_EventScript_BossBattle)
 	applymovement(LOCALID_CORI, Common_Movement_WalkUp)
 	waitmovement(0)
 	applymovement(LOCALID_CORI, Zone1A_Cori_WalkRight)
@@ -242,7 +242,7 @@ script Zone1A_EventScript_TriggerLeviathanBottom {
 	releaseall
 }
 
-script Zone1A_EventScript_TriggerLeviathanMiddle {
+script Zone1A_EventScript_TriggerBossMiddle {
 	lockall
 	applymovement(LOCALID_CORI, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
@@ -250,7 +250,7 @@ script Zone1A_EventScript_TriggerLeviathanMiddle {
 	waitse
 	applymovement(LOCALID_CORI, Zone1A_Cori_WalkLeft)
 	waitmovement(0)
-	call(Zone1A_EventScript_LeviathanBattle)
+	call(Zone1A_EventScript_BossBattle)
 	applymovement(LOCALID_CORI, Zone1A_Cori_WalkRight)
 	waitmovement(0)
 	applymovement(LOCALID_CORI, Common_Movement_FaceLeft)
@@ -260,7 +260,7 @@ script Zone1A_EventScript_TriggerLeviathanMiddle {
 	releaseall
 }
 
-script Zone1A_EventScript_TriggerLeviathanTop {
+script Zone1A_EventScript_TriggerBossTop {
 	lockall
 	applymovement(LOCALID_CORI, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
@@ -270,7 +270,7 @@ script Zone1A_EventScript_TriggerLeviathanTop {
 	waitmovement(0)
 	applymovement(LOCALID_CORI, Zone1A_Cori_WalkLeft)
 	waitmovement(0)
-	call(Zone1A_EventScript_LeviathanBattle)
+	call(Zone1A_EventScript_BossBattle)
 	applymovement(LOCALID_CORI, Common_Movement_WalkDown)
 	waitmovement(0)
 	applymovement(LOCALID_CORI, Zone1A_Cori_WalkRight)
@@ -282,25 +282,25 @@ script Zone1A_EventScript_TriggerLeviathanTop {
 	releaseall
 }
 
-script Zone1A_EventScript_LeviathanBattle {
+script Zone1A_EventScript_BossBattle {
 	setspeaker("Cori")
-	msgbox(Zone1A_Text_Leviathan1Intro, MSGBOX_YESNO)
+	msgbox(Zone1A_Text_Boss1Intro, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		setspeaker("Cori")
-		msgbox(Zone1A_Text_Leviathan1Wait, MSGBOX_AUTOCLOSE)
+		msgbox(Zone1A_Text_Boss1Wait, MSGBOX_AUTOCLOSE)
 		return
 	}
 	fadeoutbgm(1)
 	setspeaker("Cori")
-	msgbox(Zone1A_Text_Leviathan1Intro2)
+	msgbox(Zone1A_Text_Boss1Intro2)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	switch (var(VAR_STARTER_MON)) {
 		case 0:
-			trainerbattle_no_intro(TRAINER_PBL_CORI_LEVIATHAN_1_GRASS_STARTER, Zone1A_Text_Leviathan1Defeat)
+			trainerbattle_no_intro(TRAINER_PBL_CORI_BOSS_1_GRASS_STARTER, Zone1A_Text_Boss1Defeat)
 		case 1:
-			trainerbattle_no_intro(TRAINER_PBL_CORI_LEVIATHAN_1_FIRE_STARTER, Zone1A_Text_Leviathan1Defeat)
+			trainerbattle_no_intro(TRAINER_PBL_CORI_BOSS_1_FIRE_STARTER, Zone1A_Text_Boss1Defeat)
 		case 2:
-			trainerbattle_no_intro(TRAINER_PBL_CORI_LEVIATHAN_1_WATER_STARTER, Zone1A_Text_Leviathan1Defeat)
+			trainerbattle_no_intro(TRAINER_PBL_CORI_BOSS_1_WATER_STARTER, Zone1A_Text_Boss1Defeat)
 	}
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Cori")
@@ -322,29 +322,29 @@ script Zone1A_EventScript_LeviathanBattle {
 	applymovement(LOCALID_CORI, Common_Movement_WalkDown6)
 	waitmovement(0)
 	removeobject(LOCALID_CORI)
-	setflag(FLAG_BEAT_LEVIATHAN_1)
+	setflag(FLAG_BEAT_BOSS_1)
 	setvar(VAR_ZONE_1_STATE, 1)
 	releaseall
 	end
 }
 
-text Zone1A_Text_Leviathan1Intro {
+text Zone1A_Text_Boss1Intro {
 	format("Hi! My name's {COLOR BLUE}Cori{COLOR DARK_GRAY}.\n"
-		   "I'm the resident {COLOR GREEN}Leviathan{COLOR DARK_GRAY} around here.\p"
+		   "I'm the resident {COLOR GREEN}Boss{COLOR DARK_GRAY} around here.\p"
 		   "If you want to go forward, you'll have to beat me!\p"
 		   "So, are you ready for our battle?")
 }
 
-text Zone1A_Text_Leviathan1Wait {
+text Zone1A_Text_Boss1Wait {
 	format("Okay. You just let me know when you're ready!")
 }
 
-text Zone1A_Text_Leviathan1Intro2 {
+text Zone1A_Text_Boss1Intro2 {
 	format("Aww, yeah!\n"
 		   "This battle is gonna be awesome!")
 }
 
-text Zone1A_Text_Leviathan1Defeat {
+text Zone1A_Text_Boss1Defeat {
 	format("Drats! My Fire-Water-Grass core wasn't enough!")
 }
 

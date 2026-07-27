@@ -333,10 +333,10 @@ script Zone18B_EventScript_RightFireRoomDoor {
 	end
 }
 
-script Zone18B_EventScript_LeftLeviathanRoomDoor {
+script Zone18B_EventScript_LeftBossRoomDoor {
 	lockall
 	goto_if_not_defeated(TRAINER_PBL_ELTON, Zone18B_EventScript_DoorLocked)
-	msgbox("“Leviathan's Room,”\p“See for yourself what Pokémon await\nyou!” the sign says.\pDo you want to go through?", MSGBOX_YESNO)
+	msgbox("“Boss's Room,”\p“See for yourself what Pokémon await\nyou!” the sign says.\pDo you want to go through?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		closemessage
 		delay(30)
@@ -350,10 +350,10 @@ script Zone18B_EventScript_LeftLeviathanRoomDoor {
 	end
 }
 
-script Zone18B_EventScript_RightLeviathanRoomDoor {
+script Zone18B_EventScript_RightBossRoomDoor {
 	lockall
 	goto_if_not_defeated(TRAINER_PBL_WILLIE, Zone18B_EventScript_DoorLocked)
-	msgbox("“Leviathan's Room,”\p“See for yourself what Pokémon await\nyou!” the sign says.\pDo you want to go through?", MSGBOX_YESNO)
+	msgbox("“Boss's Room,”\p“See for yourself what Pokémon await\nyou!” the sign says.\pDo you want to go through?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		closemessage
 		delay(30)
@@ -1050,7 +1050,7 @@ script Zone18B_EventScript_EliZoe {
 		waitmovement(0)
 	}
 	if (var(VAR_ZONE_18_STATE) < 3) {
-		goto(Zone18B_EventScript_LeviathanBattle)
+		goto(Zone18B_EventScript_BossBattle)
 	} elif (var(VAR_ZONE_18_STATE) == 5) {
 		msgbox(format("{COLOR BLUE}Eli{COLOR DARK_GRAY}: You really got it back for me?"), MSGBOX_DEFAULT)
 		msgbox(format("{PLAYER} returned the Azurill doll to {COLOR BLUE}Eli{COLOR DARK_GRAY}."), MSGBOX_DEFAULT)
@@ -1071,7 +1071,7 @@ script Zone18B_EventScript_EliZoe {
 	}
 }
 
-script Zone18B_EventScript_LeviathanBattle {
+script Zone18B_EventScript_BossBattle {
 	applymovement(2, Common_Movement_FaceLeft)
 	waitmovement(0)
 	msgbox(format("{COLOR BLUE}Zoe{COLOR DARK_GRAY}: Is this the challenger you were telling me about?"), MSGBOX_DEFAULT)
@@ -1089,11 +1089,11 @@ script Zone18B_EventScript_LeviathanBattle {
 	// 	setweather(WEATHER_RAIN)
 	// 	doweather
 	// 	msgbox("It suddenly began to rain!", MSGBOX_DEFAULT)
-	// 	trainerbattle_no_intro(TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16_CHALLENGE, Zone18B_Text_Leviathan16Defeat)
+	// 	trainerbattle_no_intro(TRAINER_PBL_ZOE_AND_ELI_BOSS_16_CHALLENGE, Zone18B_Text_Boss16Defeat)
 	// 	resetweather
 	// 	doweather
 	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_ZOE_AND_ELI_LEVIATHAN_16, Zone18B_Text_Leviathan16Defeat)
+	// 	trainerbattle_no_intro(TRAINER_PBL_ZOE_AND_ELI_BOSS_16, Zone18B_Text_Boss16Defeat)
 	// }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	applymovement(1, Common_Movement_FaceRight)
@@ -1115,7 +1115,7 @@ script Zone18B_EventScript_LeviathanBattle {
 	msgbox(format("{COLOR BLUE}Zoe{COLOR DARK_GRAY}: What? What is it?"), MSGBOX_DEFAULT)
 	msgbox(format("{COLOR BLUE}Eli{COLOR DARK_GRAY}: I left my Azurill doll at the beach!\pI gotta go get it!"), MSGBOX_DEFAULT)
 	msgbox(format("{COLOR BLUE}Zoe{COLOR DARK_GRAY}: Oh! I'll come with you, I guess."))
-	setflag(FLAG_BEAT_LEVIATHAN_16)
+	setflag(FLAG_BEAT_BOSS_16)
 	if (var(VAR_ZONE_18_STATE) == 1) {
 		applymovement(1, Zone18B_Movement_Eli_RunOutLeft)
 		applymovement(2, Zone18B_Movement_Zoe_RunOutLeft)
@@ -1139,7 +1139,7 @@ script Zone18B_EventScript_LeviathanBattle {
 	end
 }
 
-text Zone18B_Text_Leviathan16Defeat {
+text Zone18B_Text_Boss16Defeat {
 	format("Eli: Darn it!\pZoe: It seems you've defeated us.")
 }
 
