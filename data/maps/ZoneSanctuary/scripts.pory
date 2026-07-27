@@ -750,7 +750,7 @@ script Sanctuary_EventScript_GameIntro {
 		giveitem(ITEM_POKE_BALL, 15)
 		giveitem(ITEM_POTION, 10)
 		playfanfare(MUS_OBTAIN_ITEM)
-		msgbox(format("Received {COLOR GREEN}¥5000{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
+		msgbox(format("Received {COLOR GREEN}¥3000{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
 		waitfanfare
 		playfanfare(MUS_OBTAIN_ITEM)
 		msgbox(format("Received the {COLOR GREEN}Pokédex{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
