@@ -40,6 +40,7 @@ script Zone16A_EventScript_LilyRight {
 	doweather
 	msgbox("It suddenly began to rain!", MSGBOX_DEFAULT)
 	msgbox(Zone16A_Text_Boss14Intro2)
+	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
 	// 	trainerbattle_no_intro(TRAINER_PBL_LILY_BOSS_14_CHALLENGE, Zone16A_Text_Boss14Defeat)

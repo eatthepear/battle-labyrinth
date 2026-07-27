@@ -167,6 +167,7 @@ script Zone10A_EventScript_Jasmine {
 	playbgm(MUS_HG_GYM, FALSE)
 	setspeaker("Jasmine")
 	msgbox(format("Allow me to introduce myself.\pMy name is Jasmine.\pI use the… clang!\nSteel type!\pSteel Pokémon are very tough and really strong!\pAnd they're especially good in a sandstorm!\pUm… I'm not lying."))
+	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_JASMINE_BOSS_10, format("Well done…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)

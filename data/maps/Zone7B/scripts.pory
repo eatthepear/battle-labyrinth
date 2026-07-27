@@ -20,6 +20,7 @@ script Zone7B_EventScript_BossBattle {
 	fadeoutbgm(1)
 	setspeaker("Betty")
 	msgbox(format("I will show you how to behave in the prim and proper way!"), MSGBOX_DEFAULT)
+	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_BETTY_BOSS_7, format("It seems I was the one who ended up being humbled…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)

@@ -40,6 +40,7 @@ script Zone3A_EventScript_Grant {
 		end
 	}
 	msgbox(format("I have a feeling that our battle will turn out to be worth the wait!\pI hope you'll show me that your skill as a Trainer surpasses even mine."))
+	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_GRANT_BOSS_3, format("You have proven to be a wall that I am unable to surmount!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)

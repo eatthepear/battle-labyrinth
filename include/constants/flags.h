@@ -181,6 +181,7 @@
 #define FLAG_AUTORUN_TOGGLE                         0xE8
 #define FLAG_NEVER_SET                              0xE9
 #define FLAG_ALWAYS_SET                             0xEA
+#define FLAG_BOSS_PROMPT_HEAL                       0xEB // If on, player is asked if they want to be healed before boss fights. off by default, settable by options.
 
 // Custom Flags Scripts
 #define FLAG_TRUE_BRUTAL                                  0x100 // keeps track if you actually started on Brutal difficulty and stayed there the whole time

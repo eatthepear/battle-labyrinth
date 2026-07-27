@@ -51,6 +51,7 @@ script Zone11A_EventScript_Archer {
 	msgbox(format("Hm… You match the description of the one {COLOR BLUE}Proton{COLOR DARK_GRAY} encounterd. Interesting…\pI am {COLOR BLUE}Archer{COLOR DARK_GRAY}, an {COLOR GREEN}Admin{COLOR DARK_GRAY} of {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}!"))
 	setspeaker("Archer")
 	msgbox(format("You are merely a child, are you not? Why oppose {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}? Many have tried and failed, and been subsumed into our organization as a result.\p{COLOR GREEN}Team Galactic{COLOR DARK_GRAY}, {COLOR GREEN}Team Magma{COLOR DARK_GRAY}, {COLOR GREEN}Team Aqua{COLOR DARK_GRAY}, all of them fell before us like dominoes, and joined our cause.\pYou, too, shall fall like like the rest."))
+	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_ARCHER_BOSS_11, format("A curious matter indeed…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)

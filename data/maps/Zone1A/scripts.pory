@@ -284,15 +284,16 @@ script Zone1A_EventScript_TriggerBossTop {
 
 script Zone1A_EventScript_BossBattle {
 	setspeaker("Cori")
-	msgbox(Zone1A_Text_Boss1Intro, MSGBOX_YESNO)
+	msgbox(format("Hi! My name's {COLOR BLUE}Cori{COLOR DARK_GRAY}.\pIf you want to go forward, you'll have to beat me!\pSo, are you ready for our battle?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		setspeaker("Cori")
-		msgbox(Zone1A_Text_Boss1Wait, MSGBOX_AUTOCLOSE)
+		msgbox(format("Okay. You just let me know when you're ready!"), MSGBOX_AUTOCLOSE)
 		return
 	}
 	fadeoutbgm(1)
 	setspeaker("Cori")
-	msgbox(Zone1A_Text_Boss1Intro2)
+	msgbox(format("Aww, yeah!\nThis battle is gonna be awesome!"))
+	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	switch (var(VAR_STARTER_MON)) {
 		case 0:
@@ -326,22 +327,6 @@ script Zone1A_EventScript_BossBattle {
 	setvar(VAR_ZONE_1_STATE, 1)
 	releaseall
 	end
-}
-
-text Zone1A_Text_Boss1Intro {
-	format("Hi! My name's {COLOR BLUE}Cori{COLOR DARK_GRAY}.\n"
-		   "I'm the resident {COLOR GREEN}Boss{COLOR DARK_GRAY} around here.\p"
-		   "If you want to go forward, you'll have to beat me!\p"
-		   "So, are you ready for our battle?")
-}
-
-text Zone1A_Text_Boss1Wait {
-	format("Okay. You just let me know when you're ready!")
-}
-
-text Zone1A_Text_Boss1Intro2 {
-	format("Aww, yeah!\n"
-		   "This battle is gonna be awesome!")
 }
 
 text Zone1A_Text_Boss1Defeat {

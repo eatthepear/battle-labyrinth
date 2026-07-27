@@ -16,6 +16,7 @@ script Zone14B_EventScript_BossBattle {
 	faceplayer
 	fadeoutbgm(1)
 	msgbox(Zone14B_Text_Boss12Intro)
+	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
 	// 	trainerbattle_no_intro(TRAINER_PBL_MIGUEL_BOSS_12_CHALLENGE, Zone14B_Text_Boss12Defeat)

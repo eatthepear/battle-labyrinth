@@ -78,7 +78,7 @@ const struct HelpWindow gHelpWindowInfo[] =
         .header = COMPOUND_STRING("Difficulty: Brutal"),
         .desc = COMPOUND_STRING("Suited for hardcore players.\n\n"
                                 "All changes from {COLOR GREEN}Hard{COLOR DARK_GRAY} are carried over.\n"
-                                "All boss battles are more difficult.\n"
+                                "All bosses are harder and never heal you.\n"
                                 "The amount of money from trainers is halved.\n"
                                 "Some Pokémon, moves, abilities, NPCs, and\n"
                                 "services are more limited."),
@@ -300,9 +300,12 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_SIGN_COMPLETING_A_ZONE] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Completing a Zone"),
-        .desc = COMPOUND_STRING("To complete a Zone, find {COLOR GREEN}Porygon{COLOR DARK_GRAY}.\n\n"
-                                "You don't necessarily need to defeat all\n"
-                                "opponents to complete a Zone."),
+        .desc = COMPOUND_STRING("Defeat the {COLOR GREEN}Zone{COLOR DARK_GRAY}'s challenge (usually a boss)\n"
+                                "and find {COLOR GREEN}Porygon{COLOR DARK_GRAY} to complete a {COLOR GREEN}Zone{COLOR DARK_GRAY}.\n\n"
+                                "Your Pokémon are automatically healed before\n"
+                                "fighting mandatory bosses.\n"
+                                "This heal can be optional.\n"
+                                "(toggleable in the Options menu)"),
     },
 
     [HELP_SIGN_RUNNING_SHOES] =

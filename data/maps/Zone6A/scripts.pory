@@ -43,6 +43,7 @@ script Zone6A_EventScript_BossBattle {
 	fadeoutbgm(1)
 	setspeaker("Mina")
 	msgbox(format("Who do you think you are?"))
+	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 		setweather(WEATHER_RAIN)

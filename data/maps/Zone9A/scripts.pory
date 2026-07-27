@@ -55,6 +55,7 @@ script Zone9A_EventScript_Ari {
 	} else {
 		setspeaker("Ari")
 		msgbox(format("Alright, well, best of luck!"), MSGBOX_AUTOCLOSE)
+		call(EventScript_HealPreBoss)
 		setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 		trainerbattle_no_intro(TRAINER_PBL_ARI, format("What!? How!?\nYou're tougher than I thought!"))
 		applymovement(1, Common_Movement_WalkInPlaceFasterUp)

@@ -62,6 +62,7 @@ script Zone8D_EventScript_BossBattle {
 	setvar(VAR_ZONE_1_STATE, 1)
 	setspeaker("Mars")
 	msgbox(format("Prepare to be crushed by the might of Team Galactic!"))
+	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_MARS_BOSS_8, format("Defeated by a child… This is embarrasing for me…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
