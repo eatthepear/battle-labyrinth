@@ -158,7 +158,7 @@ u32 GetCurrentEVCap(void)
 
 static const u32 sNumFoes[] =
 {
-    9,
+    6,
     12,
     15,
     16,
@@ -193,7 +193,7 @@ u32 GetExpValue(void)
             levelCap = sLevelCapFlagMap[i];
             pastLevelCap = sLevelCapFlagMap[i-1];
             numFoes = sNumFoes[i-1];
-            return (levelCap * levelCap * levelCap - pastLevelCap * pastLevelCap * pastLevelCap) * 1000 / numFoes / 575;
+            return (levelCap * levelCap * levelCap - pastLevelCap * pastLevelCap * pastLevelCap) * 10 / numFoes;
         }
     }
 

@@ -102,7 +102,7 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_1
 
@@ -113,7 +113,7 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_1
 
@@ -124,7 +124,7 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_1
 
