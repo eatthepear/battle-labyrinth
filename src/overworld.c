@@ -1242,15 +1242,15 @@ u16 GetLocationMusic(struct WarpData *warp)
         {
             default:
                 return MUS_DP_AMITY_SQUARE;
-            case 2:
+            case 1:
                 return MUS_PL_B_HALL;
-            case 3:
+            case 2:
                 return MUS_BW_ACCUMULA;
-            case 4:
+            case 3:
                 return MUS_BW_SKYARROW_BRIDGE;
-            case 5:
+            case 4:
                 return MUS_BW_WHITE_FOREST;
-            case 6:
+            case 5:
                 return MUS_BW_ANVILLE_TOWN;
         }
     }

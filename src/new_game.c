@@ -108,9 +108,9 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
     VarSet(VAR_SANCTUARY_MUSIC, 1);
-    VarSet(VAR_WILD_MUSIC, 6);
-    VarSet(VAR_TRAINER_MUSIC, 6);
-    VarSet(VAR_BOSS_MUSIC, 6);
+    VarSet(VAR_WILD_MUSIC, 5);
+    VarSet(VAR_TRAINER_MUSIC, 5);
+    VarSet(VAR_BOSS_MUSIC, 5);
 }
 
 static void ClearPokedexFlags(void)

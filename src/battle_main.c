@@ -5416,7 +5416,22 @@ static void HandleEndTurn_BattleWon(void)
             PlayBGM(MUS_VICTORY_AQUA_MAGMA);
             break;
         case TRAINER_CLASS_LEADER:
-            PlayBGM(MUS_VICTORY_GYM_LEADER);
+        case TRAINER_CLASS_PKMN_TRAINER_1:
+            switch (VarGet(VAR_BOSS_MUSIC))
+            {
+            case 1:
+                PlayBGM(MUS_RG_VICTORY_GYM_LEADER);
+            case 2:
+                PlayBGM(MUS_DP_VICTORY_GYM_LEADER);
+            case 3:
+                PlayBGM(MUS_HG_VICTORY_GYM_LEADER);
+            case 4:
+                PlayBGM(MUS_HG_VICTORY_GYM_LEADER);
+            case 5:
+                PlayBGM(MUS_BW_VICTORY_GYM_LEADER);
+            default:
+                PlayBGM(MUS_VICTORY_GYM_LEADER);
+            }
             break;
         case TRAINER_CLASS_GALACTIC:
         case TRAINER_CLASS_GALACTIC_COMMANDER:
@@ -5424,38 +5439,20 @@ static void HandleEndTurn_BattleWon(void)
             PlayBGM(MUS_DP_VICTORY_GALACTIC);
             break;
         default:
-            if (DoesTrainerHaveMugshot(TRAINER_BATTLE_PARAM.opponentA)) {
-                switch (VarGet(VAR_BOSS_MUSIC))
-                {
-                case 2:
-                    PlayBGM(MUS_RG_VICTORY_GYM_LEADER);
-                case 3:
-                    PlayBGM(MUS_DP_VICTORY_GYM_LEADER);
-                case 4:
-                    PlayBGM(MUS_HG_VICTORY_GYM_LEADER);
-                case 5:
-                    PlayBGM(MUS_HG_VICTORY_GYM_LEADER);
-                case 6:
-                    PlayBGM(MUS_BW_VICTORY_GYM_LEADER);
-                default:
-                    PlayBGM(MUS_VICTORY_GYM_LEADER);
-                }
-            } else {
-                switch (VarGet(VAR_TRAINER_MUSIC))
-                {
-                case 2:
-                    PlayBGM(MUS_RG_VICTORY_TRAINER);
-                case 3:
-                    PlayBGM(MUS_DP_VICTORY_TRAINER);
-                case 4:
-                    PlayBGM(MUS_HG_VICTORY_TRAINER);
-                case 5:
-                    PlayBGM(MUS_HG_VICTORY_TRAINER);
-                case 6:
-                    PlayBGM(MUS_BW_VICTORY_TRAINER);
-                default:
-                    PlayBGM(MUS_VICTORY_TRAINER);
-                }
+            switch (VarGet(VAR_TRAINER_MUSIC))
+            {
+            case 1:
+                PlayBGM(MUS_RG_VICTORY_TRAINER);
+            case 2:
+                PlayBGM(MUS_DP_VICTORY_TRAINER);
+            case 3:
+                PlayBGM(MUS_HG_VICTORY_TRAINER);
+            case 4:
+                PlayBGM(MUS_HG_VICTORY_TRAINER);
+            case 5:
+                PlayBGM(MUS_BW_VICTORY_TRAINER);
+            default:
+                PlayBGM(MUS_VICTORY_TRAINER);
             }
             break;
         }

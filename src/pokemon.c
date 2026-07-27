@@ -5107,7 +5107,22 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_MAGMA_ADMIN:
             return MUS_VS_AQUA_MAGMA;
         case TRAINER_CLASS_LEADER:
-            return MUS_VS_GYM_LEADER;
+        case TRAINER_CLASS_PKMN_TRAINER_1:
+            switch (VarGet(VAR_BOSS_MUSIC))
+            {
+            case 1:
+                return MUS_RG_VS_GYM_LEADER;
+            case 2:
+                return MUS_DP_VS_GYM_LEADER;
+            case 3:
+                return MUS_HG_VS_GYM_LEADER;
+            case 4:
+                return MUS_HG_VS_GYM_LEADER_KANTO;
+            case 5:
+                return MUS_BW_VS_GYM_LEADER;
+            default:
+                return MUS_VS_GYM_LEADER;
+            }
         case TRAINER_CLASS_CHAMPION:
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
@@ -5142,38 +5157,20 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_GALACTIC_BOSS:
             return MUS_DP_VS_GALACTIC_BOSS;
         default:
-            if (DoesTrainerHaveMugshot(TRAINER_BATTLE_PARAM.opponentA)) {
-                switch (VarGet(VAR_BOSS_MUSIC))
-                {
-                case 2:
-                    return MUS_RG_VS_GYM_LEADER;
-                case 3:
-                    return MUS_DP_VS_GYM_LEADER;
-                case 4:
-                    return MUS_HG_VS_GYM_LEADER;
-                case 5:
-                    return MUS_HG_VS_GYM_LEADER_KANTO;
-                case 6:
-                    return MUS_BW_VS_GYM_LEADER;
-                default:
-                    return MUS_VS_GYM_LEADER;
-                }
-            } else {
-                switch (VarGet(VAR_TRAINER_MUSIC))
-                {
-                case 2:
-                    return MUS_RG_VS_TRAINER;
-                case 3:
-                    return MUS_DP_VS_TRAINER;
-                case 4:
-                    return MUS_HG_VS_TRAINER;
-                case 5:
-                    return MUS_HG_VS_TRAINER_KANTO;
-                case 6:
-                    return MUS_BW_VS_TRAINER;
-                default:
-                    return MUS_VS_TRAINER;
-                }
+            switch (VarGet(VAR_TRAINER_MUSIC))
+            {
+            case 1:
+                return MUS_RG_VS_TRAINER;
+            case 2:
+                return MUS_DP_VS_TRAINER;
+            case 3:
+                return MUS_HG_VS_TRAINER;
+            case 4:
+                return MUS_HG_VS_TRAINER_KANTO;
+            case 5:
+                return MUS_BW_VS_TRAINER;
+            default:
+                return MUS_VS_TRAINER;
             }
         }
     }
