@@ -339,7 +339,7 @@ Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_2
 
@@ -350,7 +350,7 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Bug
 Copy Pool: TRAINER_POOL_ZONE_2
 
@@ -361,7 +361,7 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_2
 
@@ -372,7 +372,7 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_2
 
@@ -459,7 +459,7 @@ Pic: Lass
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_3
 
@@ -470,7 +470,7 @@ Pic: School Kid M
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_3
 
@@ -481,7 +481,7 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_3
 
@@ -492,7 +492,7 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Bug
 Copy Pool: TRAINER_POOL_ZONE_3
 
@@ -616,7 +616,7 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_4
 
@@ -627,7 +627,7 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Bug
 Copy Pool: TRAINER_POOL_ZONE_4
 
@@ -968,8 +968,8 @@ Copy Pool: TRAINER_POOL_ZONE_6
 
 === TRAINER_PBL_MELANIE ===
 Name: Melanie
-Class: Lass
-Pic: Lass
+Class: Picnicker
+Pic: Picnicker
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
@@ -990,8 +990,8 @@ Copy Pool: TRAINER_POOL_ZONE_6
 
 === TRAINER_PBL_FRANK ===
 Name: Frank
-Class: Youngster
-Pic: Youngster
+Class: Camper
+Pic: Camper
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
@@ -1006,7 +1006,7 @@ Pic: Pokemon Breeder F
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_6
 
@@ -1425,7 +1425,7 @@ Pic: Pokemon Breeder M
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_9
 

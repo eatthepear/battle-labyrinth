@@ -159,11 +159,11 @@ u32 GetCurrentEVCap(void)
 static const u32 sNumFoes[] =
 {
     6,
-    12,
-    15,
-    16,
+    8,
+    11,
+    13,
     18, // zone 5
-    19,
+    18,
     34,
     34,
     19,
