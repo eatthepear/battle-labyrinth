@@ -449,6 +449,7 @@ script EventScript_ShakeTree {
 	waitstate
 	waitse
 	special(HeadbuttWildEncounter)
+	waitstate
 	if (flag(FLAG_SETTINGS_NUZLOCKE)) {
 		call(EventScript_MultipleHoneyEncountersNuzlocke)
 	}
@@ -477,6 +478,7 @@ script EventScript_MultipleHoneyEncountersNuzlocke {
 		waitstate
 		waitse
 		special(HeadbuttWildEncounter)
+		waitstate
 	}
 }
 

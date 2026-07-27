@@ -12478,10 +12478,9 @@ static const struct LevelUpMove sCarnivineLevelUpLearnset[] = {
 static const struct LevelUpMove sFinneonLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_POUND),
     LEVEL_UP_MOVE( 3, MOVE_AQUA_RING),
-    LEVEL_UP_MOVE( 3, MOVE_ATTRACT),
     LEVEL_UP_MOVE( 5, MOVE_WATER_GUN),
     LEVEL_UP_MOVE( 7, MOVE_GUST),
-    LEVEL_UP_MOVE( 9, MOVE_TICKLE),
+    LEVEL_UP_MOVE( 9, MOVE_ATTRACT),
     LEVEL_UP_MOVE(11, MOVE_WATER_PULSE),
     LEVEL_UP_MOVE(15, MOVE_TAILWIND),
     LEVEL_UP_MOVE(17, MOVE_SILVER_WIND),
@@ -12500,10 +12499,9 @@ static const struct LevelUpMove sFinneonLevelUpLearnset[] = {
 static const struct LevelUpMove sLumineonLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_POUND),
     LEVEL_UP_MOVE( 3, MOVE_AQUA_RING),
-    LEVEL_UP_MOVE( 3, MOVE_ATTRACT),
     LEVEL_UP_MOVE( 5, MOVE_WATER_GUN),
     LEVEL_UP_MOVE( 7, MOVE_GUST),
-    LEVEL_UP_MOVE( 9, MOVE_TICKLE),
+    LEVEL_UP_MOVE( 9, MOVE_ATTRACT),
     LEVEL_UP_MOVE(11, MOVE_WATER_PULSE),
     LEVEL_UP_MOVE(15, MOVE_TAILWIND),
     LEVEL_UP_MOVE(17, MOVE_SILVER_WIND),

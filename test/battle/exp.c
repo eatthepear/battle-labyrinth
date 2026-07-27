@@ -71,6 +71,7 @@ WILD_BATTLE_TEST("Lucky Egg boosts gained exp points by 50%", s32 exp)
     }
 }
 
+#if FREE_OTHER_PBL == FALSE
 #if (B_SCALED_EXP == GEN_5 || B_SCALED_EXP >= GEN_7)
 
 WILD_BATTLE_TEST("Exp is scaled to player and opponent's levels", s32 exp)
@@ -94,6 +95,7 @@ WILD_BATTLE_TEST("Exp is scaled to player and opponent's levels", s32 exp)
     }
 }
 
+#endif
 #endif
 
 #if FREE_OTHER_PBL == FALSE

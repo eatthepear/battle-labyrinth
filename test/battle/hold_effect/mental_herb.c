@@ -41,6 +41,7 @@ SINGLE_BATTLE_TEST("Mental Herb cures Torment volatile status (Gen 5+)")
     }
 }
 
+#if FREE_OTHER_PBL == FALSE
 SINGLE_BATTLE_TEST("Mental Herb clears the Torment timer set by G-Max Meltdown (Gen 5+)")
 {
     GIVEN {
@@ -59,6 +60,7 @@ SINGLE_BATTLE_TEST("Mental Herb clears the Torment timer set by G-Max Meltdown (
         EXPECT(player->volatiles.tormentTimer == 0);
     }
 }
+#endif
 
 SINGLE_BATTLE_TEST("Mental Herb cures Disable volatile status (Gen 5+)")
 {

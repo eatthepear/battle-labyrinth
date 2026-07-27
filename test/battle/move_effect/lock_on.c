@@ -26,15 +26,15 @@ SINGLE_BATTLE_TEST("Lock-On skips the accuracy check for 2 turns (Player uses Lo
 {
     PASSES_RANDOMLY(10, 10, RNG_ACCURACY);
     GIVEN {
-        ASSUME(GetMoveAccuracy(MOVE_DRAGON_RUSH) == 90);
+        ASSUME(GetMoveAccuracy(MOVE_SMOG) == 70);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_LOCK_ON); }
-        TURN { MOVE(player, MOVE_DRAGON_RUSH); }
+        TURN { MOVE(player, MOVE_SMOG); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_LOCK_ON, player);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RUSH, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SMOG, player);
     } THEN {
         u32 lockOn = gBattleMons[B_BATTLER_0].volatiles.lockOn;
         u32 battlerWithSureHit = gBattleMons[B_BATTLER_0].volatiles.battlerWithSureHit;
@@ -47,15 +47,15 @@ SINGLE_BATTLE_TEST("Lock-On skips the accuracy check for 2 turns (Opponent uses 
 {
     PASSES_RANDOMLY(10, 10, RNG_ACCURACY);
     GIVEN {
-        ASSUME(GetMoveAccuracy(MOVE_DRAGON_RUSH) == 90);
+        ASSUME(GetMoveAccuracy(MOVE_SMOG) == 70);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_LOCK_ON); }
-        TURN { MOVE(opponent, MOVE_DRAGON_RUSH); }
+        TURN { MOVE(opponent, MOVE_SMOG); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_LOCK_ON, opponent);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RUSH, opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SMOG, opponent);
     } THEN {
         u32 lockOn = gBattleMons[B_BATTLER_1].volatiles.lockOn;
         u32 battlerWithSureHit = gBattleMons[B_BATTLER_1].volatiles.battlerWithSureHit;

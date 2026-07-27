@@ -10,15 +10,15 @@ SINGLE_BATTLE_TEST("If Glaive Rush is successful moves targeted at the user do n
 {
     PASSES_RANDOMLY(100, 100, RNG_ACCURACY);
     GIVEN {
-        ASSUME(GetMoveAccuracy(MOVE_DRAGON_RUSH) == 90);
+        ASSUME(GetMoveAccuracy(MOVE_SMOG) == 70);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_GLAIVE_RUSH); MOVE(opponent, MOVE_DRAGON_RUSH); }
+        TURN { MOVE(player, MOVE_GLAIVE_RUSH); MOVE(opponent, MOVE_SMOG); }
     } SCENE {
         MESSAGE("Wobbuffet used Glaive Rush!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_GLAIVE_RUSH, player);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RUSH, opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SMOG, opponent);
     }
 }
 
