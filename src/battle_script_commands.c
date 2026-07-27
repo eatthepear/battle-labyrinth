@@ -5844,15 +5844,6 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     u32 lastMonLevel = 0;
     u32 moneyReward;
     u8 trainerMoney = 0;
-    u8 numMons = 0;
-    u32 scale;
-
-    if (GetCurrentDifficultyLevel() == DIFFICULTY_BRUTAL)
-        scale = 2;
-    else if (GetCurrentDifficultyLevel() == DIFFICULTY_EASY)
-        scale = 8;
-    else
-        scale = 4;
 
     if (trainerId == TRAINER_SECRET_BASE)
     {
@@ -5860,30 +5851,25 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     }
     else
     {
-        const struct TrainerMon *party;
-        u16 effectiveTrainerId = trainerId;
-
-        if (GetTrainerStructFromId(trainerId)->overrideTrainer)
-            effectiveTrainerId = GetTrainerStructFromId(trainerId)->overrideTrainer;
-        party = GetTrainerPartyFromId(effectiveTrainerId);
+        const struct TrainerMon *party = GetTrainerPartyFromId(trainerId);
         if (party == NULL)
-            return 20;
-        lastMonLevel = party[GetTrainerPartySizeFromId(effectiveTrainerId) - 1].lvl;
-        numMons = GetTrainerPartySizeFromId(trainerId);
-        trainerMoney = (gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 2) * numMons;
-        if (GetTrainerMugshotColorFromId(trainerId) == MUGSHOT_COLOR_GREEN)
-            trainerMoney = 5 * numMons;
-
-        if (lastMonLevel == 0)
-            lastMonLevel = (GetInfiniteCandyLevelCap() - 1);
+            lastMonLevel = GetInfiniteCandyLevelCap() - 2;
+        else
+            lastMonLevel = party[GetTrainerPartySizeFromId(trainerId) - 1].lvl;
+        trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 5;
 
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
-            moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
+            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
         else if (IsDoubleBattle())
-            moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * 2 * trainerMoney;
+            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * 2 * trainerMoney;
         else
-            moneyReward = scale * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
+            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
     }
+
+    if (GetCurrentDifficultyLevel() == DIFFICULTY_BRUTAL)
+        moneyReward /= 2;
+    else if (GetCurrentDifficultyLevel() == DIFFICULTY_EASY)
+        moneyReward *= 2;
 
     return moneyReward;
 }
