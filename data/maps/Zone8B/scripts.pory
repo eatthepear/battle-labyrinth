@@ -240,6 +240,7 @@ text Zone8B_Text_BackToTraining {
 script Zone8B_EventScript_GalacticGrunt {
 	lock
 	if (var(VAR_ZONE_8_STATE) != 0) {
+		faceplayer
 		msgbox(Zone8B_Text_GalacticGrunt)
 		release
 		end
