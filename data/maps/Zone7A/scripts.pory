@@ -91,7 +91,7 @@ script Zone7A_EventScript_Password {
 		applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
 		waitmovement(0)
 		msgbox(format("Oh, I didn't realize we had some undercover grunts as well.\pVery well then, pass on through."), MSGBOX_AUTOCLOSE)
-		setvar(VAR_ZONE_7_STATE, 1)
+		setvar(VAR_ZONE_7_STATE, 2)
 	}
 	if (var(VAR_TEMP_1) == 9) {
 		applymovement(LOCALID_GRUNT_1_7A, Common_Movement_WalkUp)
@@ -118,11 +118,55 @@ script Zone7A_EventScript_Grunt {
 	end
 }
 
-script Zone7A_EventScript_RichBoy {
-	lock
-	faceplayer
-	msgbox(format("Hey! This area isn't safe. There are strange people with space suits running amok.\pNow, I could let you through if you were to beat my aunt {COLOR BLUE}Betty{COLOR DARK_GRAY} in battle.\pShe's on vacation staying at the house at the base of these mountains."))
-	release
+script Zone7A_EventScript_Wally {
+	lockall
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 10) {
+		applymovement(LOCALID_WALLY_7A, Common_Movement_WalkDown)
+		waitmovement(0)
+	}
+	playbgm(MUS_BW_FRIEND, TRUE)
+	applymovement(LOCALID_WALLY_7A, Common_Movement_WalkRight2)
+	waitmovement(0)
+	applymovement(LOCALID_WALLY_7A, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(LOCALID_WALLY_7A, Common_Movement_WalkRight5)
+	waitmovement(0)
+	setspeaker("???")
+	msgbox(format("Um… Hi, I'm {COLOR BLUE}Wally{COLOR DARK_GRAY}."))
+	setspeaker("Wally")
+	msgbox(format("Are you a challenger of {COLOR GREEN}Pokémon Battle Labyrinth{COLOR DARK_GRAY} too?\pI still can't find Porygon…\pI tried to cross the bridge, but there are some people in space suits blocking the way.\pThey said something about needing a password.\pUm… since you're a challenger of {COLOR GREEN}Pokémon Battle Labyrinth{COLOR DARK_GRAY}, and I'm one too…\pDoes that mean we battle now?\pYeah, that's what trainers should do in situations like these. Let's battle!"))
+	call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_BETTY_BOSS_7, format("It seems I was the one who ended up being humbled…"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Wally")
+	msgbox(format("Wow! You're amazing!\pI'm still pretty new to this whole being a trainer thing, but you really showed your skills!\pHere, take this TM!"))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_TM_DRAINING_KISS)
+	setspeaker("Wally")
+	msgbox(format("I'll have to work hard on my skills if I want to get as good as you.\pUm… until next time, then!"), MSGBOX_AUTOCLOSE)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 10) {
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
+		waitmovement(0)
+	} else {
+		applymovement(LOCALID_WALLY_7A, Common_Movement_WalkDown)
+		waitmovement(0)
+	}
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement(0)
+	applymovement(LOCALID_WALLY_7A, Common_Movement_WalkRight6)
+	waitmovement(0)
+	applymovement(LOCALID_WALLY_7A, Common_Movement_WalkDown5)
+	waitmovement(0)
+	setvar(VAR_ZONE_7_STATE, 1)
+	setflag(FLAG_BEAT_BOSS_7)
+	removeobject(LOCALID_WALLY_7A)
+	fadedefaultbgm
+	releaseall
 	end
 }
 
