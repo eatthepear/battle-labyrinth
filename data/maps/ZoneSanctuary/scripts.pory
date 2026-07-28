@@ -360,6 +360,9 @@ script EventScript_NextZone {
 		case 5:
 			warp(MAP_ZONE5A, 255, 34, 30)
 		case 6:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				setflag(FLAG_HIDE_ZONE6A_MAX)
+			}
 			warp(MAP_ZONE6A, 255, 51, 22)
 		case 7:
 			warp(MAP_ZONE7A, 255, 10, 33)
@@ -470,9 +473,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 			giveitem(ITEM_POKEMON_BOX_LINK)
 			helpwindow(HELP_BOX_LINK)
 		case 6:
-			msgbox(format("The {COLOR GREEN}Machete{COLOR DARK_GRAY}!"))
+			msgbox(format("{COLOR GREEN}HM05 - Flash{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			// giveitem(ITEM_MACHETE)
+			giveitem(ITEM_HM_FLASH)
 		case 7:
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} is…"))
 			msgbox(format("{COLOR GREEN}TM49 - Draining Kiss!{COLOR DARK_GRAY}"))

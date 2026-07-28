@@ -48,6 +48,7 @@ script Zone6A_EventScript_BossBattle {
 	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 		setweather(WEATHER_RAIN)
 		doweather
+		setspeaker(SP_NAME_NONE)
 		msgbox("It suddenly began to rain!")
 	}
 	closemessage

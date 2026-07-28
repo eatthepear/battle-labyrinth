@@ -3096,10 +3096,29 @@ static const u16 RestrictedMoves[] =
     MOVE_SHIFT_GEAR,
     MOVE_SWORDS_DANCE,
     MOVE_TAIL_GLOW,
+    // field effects or team buffs
+    MOVE_STEALTH_ROCK,
+    MOVE_SPIKES,
+    MOVE_TOXIC_SPIKES,
+    MOVE_STICKY_WEB,
+    MOVE_COURT_CHANGE,
+    MOVE_TAILWIND,
+    MOVE_TRICK_ROOM,
+    MOVE_RAIN_DANCE,
+    MOVE_SANDSTORM,
+    MOVE_SUNNY_DAY,
+    MOVE_SNOWSCAPE,
+    MOVE_CHILLY_RECEPTION,
+    MOVE_GRASSY_TERRAIN,
+    MOVE_ELECTRIC_TERRAIN,
+    MOVE_PSYCHIC_TERRAIN,
+    MOVE_MISTY_TERRAIN,
     // other moves
     MOVE_PSYCH_UP,
     MOVE_PROTECT,
+    MOVE_WIDE_GUARD,
     MOVE_SUBSTITUTE,
+    MOVE_SHED_TAIL,
 };
 
 bool32 IsMoveRestricted(enum Move move, u16 level)
