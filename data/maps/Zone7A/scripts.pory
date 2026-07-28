@@ -140,7 +140,7 @@ script Zone7A_EventScript_Wally {
 	msgbox(format("Are you a challenger of {COLOR GREEN}Pokémon Battle Labyrinth{COLOR DARK_GRAY} too?\pI still can't find Porygon…\pI tried to cross the bridge, but there are some people in space suits blocking the way.\pThey said something about needing a password.\pUm… since you're a challenger of {COLOR GREEN}Pokémon Battle Labyrinth{COLOR DARK_GRAY}, and I'm one too…\pDoes that mean we battle now?\pYeah, that's what trainers should do in situations like these. Let's battle!"))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_BETTY_BOSS_7, format("It seems I was the one who ended up being humbled…"))
+	trainerbattle_no_intro(TRAINER_PBL_WALLY_BOSS_7, format("… I lost…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Wally")
 	msgbox(format("Wow! You're amazing!\pI'm still pretty new to this whole being a trainer thing, but you really showed your skills!\pHere, take this TM!"))

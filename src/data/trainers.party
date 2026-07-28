@@ -1185,6 +1185,95 @@ Party Size: 4
 Pool Prune: Non Ground Rock Steel
 Copy Pool: TRAINER_POOL_ZONE_7_AND_8
 
+=== TRAINER_PBL_WALLY_BOSS_7 ===
+Name: Wally
+Class: Rival
+Pic: Wally
+Music: Male
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Pink
+
+Roselia @ Chesto Berry
+Timid Nature
+Ability: Poison Point
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Magical Leaf
+- Venoshock
+- Swift
+- Synthesis
+
+Fletchinder @ Cheri Berry
+Naive Nature
+Ability: Flame Body
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aerial Ace
+- Ember
+- Steel Wing
+- Natural Gift
+
+Kirlia @ Sitrus Berry
+Hasty Nature
+Ability: Trace
+Level: 20
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Draining Kiss
+- Shock Wave
+- Icy Wind
+
+=== TRAINER_PBL_WALLY_BOSS_7 ===
+Name: Wally
+Class: Rival
+Pic: Wally
+Music: Male
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Pink
+Difficulty: Brutal
+
+Roselia @ Chesto Berry
+Timid Nature
+Ability: Poison Point
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Magical Leaf
+- Venoshock
+- Swift
+- Synthesis
+
+Fletchinder @ Cheri Berry
+Naive Nature
+Ability: Flame Body
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aerial Ace
+- Ember
+- Steel Wing
+- Natural Gift
+
+Azumarill @ Silk Scarf
+Brave Nature
+Ability: Huge Power
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Body Slam
+- Chilling Water
+- Rock Smash
+- Icy Wind
+
+Kirlia @ Sitrus Berry
+Hasty Nature
+Ability: Trace
+Level: 20
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Draining Kiss
+- Shock Wave
+- Icy Wind
+
 === TRAINER_PBL_BETTY_BOSS_7 ===
 Name: Betty
 Class: Socialite
@@ -1202,6 +1291,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Acrobatics
 - Hex
 - Will-O-Wisp
+- Tackle
 
 Dedenne @ Sitrus Berry
 Timid Nature
