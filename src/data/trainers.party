@@ -1408,7 +1408,7 @@ Mugshot: Blue
 
 Stunfisk @ Chesto Berry
 Modest Nature
-Ability: Unburden
+Ability: Static
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shock Wave
@@ -1416,18 +1416,18 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pulse
 - Yawn
 
-Beautifly @ Wise Glasses
-Timid Nature
-Ability: Swarm
+Crabrawler @ Muscle Band
+Adamant Nature
+Ability: Hyper Cutter
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Air Cutter
-- Silver Wind
-- Giga Drain
-- Electroweb
+- Brick Break
+- Dizzy Punch
+- Rock Tomb
+- Payback
 
 Purugly @ Sitrus Berry
-Adamant Nature
+Jolly Nature
 Ability: Thick Fat
 Level: 21
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -1448,7 +1448,7 @@ Difficulty: Brutal
 
 Stunfisk @ Chesto Berry
 Modest Nature
-Ability: Unburden
+Ability: Static
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shock Wave
@@ -1456,25 +1456,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pulse
 - Yawn
 
-Beautifly @ Wise Glasses
-Timid Nature
-Ability: Swarm
+Crabrawler @ Muscle Band
+Adamant Nature
+Ability: Hyper Cutter
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Air Cutter
-- Silver Wind
-- Giga Drain
-- Electroweb
-
-Purugly @ Sitrus Berry
-Adamant Nature
-Ability: Thick Fat
-Level: 21
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fake Out
-- Facade
-- Thief
-- Slack Off
+- Brick Break
+- Dizzy Punch
+- Rock Tomb
+- Payback
 
 Bruxish @ Colbur Berry
 Naive Nature
@@ -1485,6 +1475,16 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Fang
 - Confusion
 - Bite
+
+Purugly @ Sitrus Berry
+Jolly Nature
+Ability: Thick Fat
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Facade
+- Thief
+- Slack Off
 
 === TRAINER_PBL_COOPER ===
 Name: Cooper

@@ -478,13 +478,14 @@ script Sanctuary_EventScript_EnterSanctuary {
 			giveitem(ITEM_HM_FLASH)
 		case 7:
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} is…"))
-			msgbox(format("{COLOR GREEN}TM49 - Draining Kiss!{COLOR DARK_GRAY}"))
-			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_TM_DRAINING_KISS)
-			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY} is…"))
 			msgbox(format("{COLOR GREEN}5 Green Shards{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_GREEN_SHARD, 5)
+			setspeaker(SP_NAME_COLRESS)
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY} is…"))
+			msgbox(format("{COLOR GREEN}TM78 - Bulldoze!{COLOR DARK_GRAY}"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_TM_BULLDOZE)
 		case 9:
 			msgbox(format("{COLOR GREEN}TM48 - Bullet Seed{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
