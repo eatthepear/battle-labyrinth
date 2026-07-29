@@ -1592,6 +1592,24 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Icy Wind
 - Aqua Ring
 
+=== TRAINER_PBL_CASSANDRA ===
+Name: Cassandra
+Class: Winstrate
+Pic: Pokefan F
+Music: Twins
+AI: AI_FLAG_BOSS
+Double Battle: No
+Difficulty: Brutal
+
+Seel @ Eviolite
+Modest Nature
+Ability: Thick Fat
+Level: 22
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Chilling Water
+- Icy Wind
+- Aqua Ring
+
 Wailmer @ Eviolite
 Calm Nature
 Ability: Oblivious
@@ -1625,6 +1643,24 @@ Pic: Expert F
 Music: Intense
 AI: AI_FLAG_BOSS
 Double Battle: No
+
+Sawk @ Sitrus Berry
+Naive Nature
+Ability: Sturdy
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Low Sweep
+- Rock Tomb
+- Retaliate
+
+=== TRAINER_PBL_ERICA ===
+Name: Erica
+Class: Winstrate
+Pic: Expert F
+Music: Intense
+AI: AI_FLAG_BOSS
+Double Battle: No
+Difficulty: Brutal
 
 Sawk @ Sitrus Berry
 Naive Nature
