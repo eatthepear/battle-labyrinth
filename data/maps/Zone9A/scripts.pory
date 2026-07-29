@@ -46,7 +46,7 @@ script Zone9A_EventScript_Ari {
 	}
 	faceplayer
 	setspeaker("Ari")
-	msgbox(format("Howzit goin?\pOh, you're a traveler! You might be strong enough…\pI bet you can't defeat four members of my family in a row!\pWhat do you say to my little wager?"), MSGBOX_YESNO)
+	msgbox(format("Howzit goin?\pOh, you're a traveler! You might be strong enough…\pI bet you can't defeat five members of my family in a row!\pWhat do you say to my little wager?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		setspeaker("Ari")
 		msgbox(format("Ah, so you're a chicken. Well, if you change your mind, I'll be here."))
