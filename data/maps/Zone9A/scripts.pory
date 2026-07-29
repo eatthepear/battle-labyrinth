@@ -115,30 +115,11 @@ script Zone9A_EventScript_Ari {
 		addobject(5)
 		applymovement(5, Common_Movement_WalkDown)
 		waitmovement(0)
-		if (var(VAR_DIFFICULTY) < DIFFICULTY_BRUTAL) {
-			setspeaker("Erica")
-			msgbox(format("You've defeated the rest of my family.\pAs an added challenge, would you feel up to facing me right now? If you win, I'll give you a {COLOR GREEN}Rare Candy{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				setspeaker("Erica")
-				msgbox(format("So be it. Good luck to us both."))
-				trainerbattle_no_intro(TRAINER_PBL_ERICA, format("Very impressive."))
-				setspeaker("Erica")
-				msgbox(format("As promised."), MSGBOX_AUTOCLOSE)
-				giveitem(ITEM_RARE_CANDY)
-			} else {
-				setspeaker("Erica")
-				msgbox(format("Very well then."))
-			}
-		} else {
-			setspeaker("Erica")
-			msgbox(format("You've defeated the rest of my family.\pNow, you must face your final challenge.\pIf you defeat me, I'll give you a {COLOR GREEN}Rare Candy{COLOR DARK_GRAY}!"))
-			trainerbattle_no_intro(TRAINER_PBL_ERICA, format("Very impressive."))
-			setspeaker("Erica")
-			msgbox(format("As promised."), MSGBOX_AUTOCLOSE)
-			giveitem(ITEM_RARE_CANDY)
-		}
 		setspeaker("Erica")
-		msgbox(format("Finally, here is a little reward for completing my family's trial."), MSGBOX_AUTOCLOSE)
+		msgbox(format("Who dares disturb my slumber?"))
+		trainerbattle_no_intro(TRAINER_PBL_ERICA, format("Very impressive."))
+		setspeaker("Erica")
+		msgbox(format("Here is a little reward for completing my family's trial."), MSGBOX_AUTOCLOSE)
 		giveitem(ITEM_TM_RETURN)
 		closemessage
 		applymovement(5, Common_Movement_WalkInPlaceFasterUp)
