@@ -12975,14 +12975,14 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_HELPING_HAND] =
+    [ITEM_TM_BODY_PRESS] =
     {
         .name = ITEM_NAME("TM58"),
         .price = 5000,
         .description = COMPOUND_STRING(
-            "Throws scorching\n"
-            "sand at the target.\n"
-            "May leave a burn."),
+            "Does more damage\n"
+            "the higher the\n"
+            "user's Def."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13325,14 +13325,14 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_BODY_PRESS] =
+    [ITEM_TM_NATURAL_GIFT] =
     {
         .name = ITEM_NAME("TM83"),
-        .price = 3000,
+        .price = 1000,
         .description = COMPOUND_STRING(
-            "Does more damage\n"
-            "the higher the\n"
-            "user's Def."),
+            "The effectiveness\n"
+            "varies with the\n"
+            "held Berry."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

@@ -69,6 +69,7 @@ script EventScript_Shop_Max {
 
 mart Zone2A_Shop_TMShop {
 	ITEM_TM_HIDDEN_POWER
+	ITEM_TM_NATURAL_GIFT
 }
 
 mart Zone6A_Shop_TMShop {

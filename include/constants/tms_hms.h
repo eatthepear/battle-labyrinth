@@ -59,7 +59,7 @@
     F(SCALD) \
     F(FLING) \
     F(CHARGE_BEAM) \
-    F(HELPING_HAND) \
+    F(BODY_PRESS) \
     F(DRAGON_PULSE) \
     F(DRAIN_PUNCH) \
     F(WILL_O_WISP) \
@@ -84,7 +84,7 @@
     F(ROCK_SLIDE) \
     F(X_SCISSOR) \
     F(DRAGON_TAIL) \
-    F(BODY_PRESS) \
+    F(NATURAL_GIFT) \
     F(POISON_JAB) \
     F(HURRICANE) \
     F(GRASS_KNOT) \

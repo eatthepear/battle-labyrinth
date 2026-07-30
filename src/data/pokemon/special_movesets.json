@@ -2,6 +2,7 @@
   "universalMoves":
     [
       "MOVE_HIDDEN_POWER",
+      "MOVE_NATURAL_GIFT",
       "MOVE_RETURN",
       "MOVE_SUBSTITUTE",
       "MOVE_TERA_BLAST"
