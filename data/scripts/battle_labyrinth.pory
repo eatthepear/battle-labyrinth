@@ -1606,56 +1606,93 @@ script EventScript_Difficulty_Info {
 	}
 }
 
+script Debug_CheatStart_PBL_SelectZone {
+	message(format("Which Zone would you like to start in?"))
+	waitmessage
+	setvar(VAR_TEMP_0, 1)
+	while (var(VAR_TEMP_0) != 30) {
+		call(EventScript_BufferZoneNameShort)
+		dynmultipush("{STR_VAR_1}", VAR_TEMP_0)
+		addvar(VAR_TEMP_0, 1)
+	}
+	dynmultipush("Cancel", 0)
+	dynmultistack(0, 0, FALSE, 6, FALSE, 1, DYN_MULTICHOICE_CB_NONE)
+	switch (var(VAR_RESULT)) {
+		case 0:
+		case MULTI_B_PRESSED:
+			releaseall
+			end
+		default:
+			copyvar(VAR_ZONE, VAR_TEMP_0)
+	}
+}
+
+script Debug_CheatStart_PBL_GiveSetStuff {
+	if (var(VAR_ZONE) == 1) {
+		return
+	}
+	setvar(VAR_TEMP_0, 1) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	setvar(VAR_TEMP_1, 3) // level
+	callnative(DebugCheatStartGenerateMon)
+	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
+	additem(ITEM_QUICK_CLAW)
+	additem(ITEM_TM_FALSE_SWIPE)
+	additem(ITEM_DOWSING_MACHINE)
+	setflag(FLAG_ZONE1A_RECEIVED_FWG)
+	setflag(FLAG_BEAT_BOSS_1)
+
+	if (var(VAR_ZONE) == 2) {
+		return
+	}
+	setvar(VAR_TEMP_0, 2) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	setvar(VAR_TEMP_1, 5) // level
+	callnative(DebugCheatStartGenerateMon)
+	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
+	additem(ITEM_SILK_SCARF)
+	additem(ITEM_TM_BUG_BITE)
+	if (var(VAR_DIFFICULTY) < DIFFICULTY_BRUTAL) {
+		additem(ITEM_TM_PROTECT)
+	}
+	additem(ITEM_TM_HIDDEN_POWER)
+	additem(ITEM_TM_NATURAL_GIFT)
+	additem(ITEM_HM_ROCK_SMASH)
+	setflag(FLAG_BEAT_BOSS_2)
+
+	if (var(VAR_ZONE) == 3) {
+		return
+	}
+	setvar(VAR_TEMP_0, 3) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	setvar(VAR_TEMP_1, 7) // level
+	callnative(DebugCheatStartGenerateMon)
+	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
+	additem(ITEM_TM_ROCK_TOMB)
+	additem(ITEM_HARD_STONE)
+	setflag(FLAG_BADGE01_GET)
+	setflag(FLAG_BEAT_BOSS_3)
+
+	if (var(VAR_ZONE) == 4) {
+		return
+	}
+	setvar(VAR_TEMP_0, 0)
+	random(5)
+	addvar(VAR_TEMP_0, VAR_RESULT)
+	// setvar(VAR_TEMP_0, VAR_RESULT) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	setvar(VAR_TEMP_1, 9) // level
+	callnative(DebugCheatStartGenerateMon)
+	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
+	additem(ITEM_SILVER_POWDER)
+	additem(ITEM_TWISTED_SPOON)
+	additem(ITEM_MUSCLE_BAND)
+	additem(ITEM_WISE_GLASSES)
+	additem(ITEM_SACRED_ASH)
+	additem(ITEM_TM_VENOSHOCK)
+	additem(ITEM_HM_CUT)
+	setflag(FLAG_BEAT_BOSS_4)
+}
+
 script Debug_CheatStart_PBL {
-// 	// music
-// 	random(5)
-// 	switch (var(VAR_RESULT)) {
-// 		case 0:
-// 			setvar(VAR_TRAINER_MUSIC, 0)
-// 		case 1:
-// 			setvar(VAR_TRAINER_MUSIC, 1)
-// 		case 2:
-// 			setvar(VAR_TRAINER_MUSIC, 2)
-// 		case 3:
-// 			setvar(VAR_TRAINER_MUSIC, 3)
-// 		case 4:
-// 			setvar(VAR_TRAINER_MUSIC, 4)
-// 	}
-// 	random(5)
-// 	switch (var(VAR_RESULT)) {
-// 		case 0:
-// 			setvar(VAR_WILD_MUSIC, 0)
-// 		case 1:
-// 			setvar(VAR_WILD_MUSIC, 1)
-// 		case 2:
-// 			setvar(VAR_WILD_MUSIC, 2)
-// 		case 3:
-// 			setvar(VAR_WILD_MUSIC, 3)
-// 		case 4:
-// 			setvar(VAR_WILD_MUSIC, 4)
-// 	}
-// 	random(5)
-// 	switch (var(VAR_RESULT)) {
-// 		case 0:
-// 			setvar(VAR_BOSS_MUSIC, 0)
-// 		case 1:
-// 			setvar(VAR_BOSS_MUSIC, 1)
-// 		case 2:
-// 			setvar(VAR_BOSS_MUSIC, 2)
-// 		case 3:
-// 			setvar(VAR_BOSS_MUSIC, 3)
-// 		case 4:
-// 			setvar(VAR_BOSS_MUSIC, 4)
-// 	}
-// 	additem(ITEM_RARE_CANDY, 900)
-// 	removemoney(2500)
-// 	additem(ITEM_POTION, 6)
-// 	additem(ITEM_PARALYZE_HEAL, 2)
-// 	additem(ITEM_ANTIDOTE, 2)
-// 	// zone 0 items
-// 	additem(ITEM_WAILMER_PAIL)
-// 	additem(ITEM_EVERSTONE)
-// 	additem(ITEM_ORAN_BERRY, 2)
+	call(Debug_CheatStart_PBL_SelectZone)
+	call(Debug_CheatStart_PBL_GiveSetStuff)
 // 	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_SIGNS)
 // 	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_SAVES)
 // 	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_POKEDEX)
@@ -1668,7 +1705,7 @@ script Debug_CheatStart_PBL {
 // 	completesubquest(QUEST_SIGNS, 7)
 // 	completesubquest(QUEST_SIGNS, 8)
 // 	completesubquest(QUEST_SIGNS, 9)
-// 	setflag(FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES)
+
 // 	setvar(VAR_ZONE_0_STATE, 2)
 // 	// zone S1
 // 	setvar(VAR_TEMP_0, 51) // wild define gWildMonHeaders in src/data/wild_encounters.h
@@ -2254,17 +2291,6 @@ script Debug_CheatStart_PBL {
 // 	setvar(VAR_LEVEL_CAP, 26)
 	release
 	end
-}
-
-script Debug_CheatStart_PBL_GenerateMon {
-	callnative(DebugCheatStartGenerateMon)
-	call(Debug_CheatStart_PBL_GiveMon)
-}
-
-script Debug_CheatStart_PBL_GiveMon {
-	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
-	bufferspeciesname(0, VAR_TEMP_0)
-	msgbox(format("Obtained {STR_VAR_1}!"))
 }
 
 movement Common_Movement_WalkDown2 {

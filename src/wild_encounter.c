@@ -1282,17 +1282,14 @@ bool8 BerryTreeWildEncounter(void)
 
 void DebugCheatStartGenerateMon(void)
 {
-    // TODO
-    // u16 zone = VarGet(VAR_TEMP_0);
+    u16 headerId = VarGet(VAR_TEMP_0);
     // bool8 specialEncounter = FlagGet(FLAG_TEMP_1);
     // bool32 useWater = TRUE;
-    // u16 species;
-    // const struct WildPokemonInfo *landMonsInfo;
-    // const struct WildPokemonInfo *waterMonsInfo;
-    // const struct WildPokemonInfo *hiddenMonsInfo;
-    // landMonsInfo = gWildMonHeaders[zone].landMonsInfo;
-    // waterMonsInfo = gWildMonHeaders[zone].waterMonsInfo;
-    // hiddenMonsInfo = gWildMonHeaders[zone].hiddenMonsInfo;
+    u16 species;
+    enum TimeOfDay timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
+    const struct WildPokemonInfo *landMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
+    // const struct WildPokemonInfo *waterMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
+    // const struct WildPokemonInfo *hiddenMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo;
 
     // if (waterMonsInfo == NULL)
     //     useWater = FALSE;
@@ -1312,8 +1309,9 @@ void DebugCheatStartGenerateMon(void)
     //     // Special Pokémon
     //     species = hiddenMonsInfo->wildPokemon[ChooseWildMonIndex_Special()].species;
     // }
+    species = landMonsInfo->wildPokemon[(Random() % 12)].species;
 
-    // VarSet(VAR_TEMP_0, species);
+    VarSet(VAR_TEMP_0, species);
     // FlagClear(FLAG_TEMP_1);
 }
 

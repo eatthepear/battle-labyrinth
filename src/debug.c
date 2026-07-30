@@ -401,7 +401,7 @@ extern const u8 DebugScript_OneDaycareMons[];
 extern const u8 DebugScript_ZeroDaycareMons[];
 
 extern const u8 Debug_ShowFieldMessageStringVar4[];
-extern const u8 Debug_CheatStart[];
+extern const u8 Debug_CheatStart_PBL[];
 extern const u8 Debug_CheatStartFrlg[];
 extern const u8 Debug_HatchAnEgg[];
 extern const u8 PlayersHouse_2F_EventScript_SetWallClock[];
@@ -1785,7 +1785,7 @@ static void DebugAction_Util_CheatStart(u8 taskId)
     if (IS_FRLG)
         Debug_DestroyMenu_Full_Script(taskId, Debug_CheatStartFrlg);
     else
-        Debug_DestroyMenu_Full_Script(taskId, Debug_CheatStart);
+        Debug_DestroyMenu_Full_Script(taskId, Debug_CheatStart_PBL);
 }
 
 void BufferExpansionVersion(struct ScriptContext *ctx)
