@@ -1283,36 +1283,35 @@ bool8 BerryTreeWildEncounter(void)
 void DebugCheatStartGenerateMon(void)
 {
     u16 headerId = VarGet(VAR_TEMP_0);
-    // bool8 specialEncounter = FlagGet(FLAG_TEMP_1);
-    // bool32 useWater = TRUE;
+    bool8 nonLandEncounter = FlagGet(FLAG_TEMP_1);
+    bool32 useWater = TRUE;
     u16 species;
     enum TimeOfDay timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
     const struct WildPokemonInfo *landMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
-    // const struct WildPokemonInfo *waterMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
-    // const struct WildPokemonInfo *hiddenMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo;
+    const struct WildPokemonInfo *waterMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
+    const struct WildPokemonInfo *hiddenMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo;
 
-    // if (waterMonsInfo == NULL)
-    //     useWater = FALSE;
+    if (waterMonsInfo == NULL)
+        useWater = FALSE;
 
-    // if (!specialEncounter)
-    // {
-    //     // Land Pokémon
-    //     species = landMonsInfo->wildPokemon[ChooseWildMonIndex_Land()].species;
-    // }
-    // else if (useWater)
-    // {
-    //     // Water Pokémon
-    //     species = waterMonsInfo->wildPokemon[ChooseWildMonIndex_WaterRock()].species;
-    // }
-    // else
-    // {
-    //     // Special Pokémon
-    //     species = hiddenMonsInfo->wildPokemon[ChooseWildMonIndex_Special()].species;
-    // }
-    species = landMonsInfo->wildPokemon[(Random() % 12)].species;
+    if (!nonLandEncounter && landMonsInfo != NULL)
+    {
+        // Land Pokémon
+        species = landMonsInfo->wildPokemon[(Random() % 12)].species;
+    }
+    else if (useWater)
+    {
+        // Water Pokémon
+        species = waterMonsInfo->wildPokemon[(Random() % 5)].species;
+    }
+    else
+    {
+        // Special Pokémon
+        species = hiddenMonsInfo->wildPokemon[(Random() % 5)].species;
+    }
 
     VarSet(VAR_TEMP_0, species);
-    // FlagClear(FLAG_TEMP_1);
+    FlagClear(FLAG_TEMP_1);
 }
 
 u32 ChooseHiddenMonIndex(void)
