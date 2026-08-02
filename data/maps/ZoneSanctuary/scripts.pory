@@ -566,6 +566,11 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 15:
 			completesubquest(QUEST_PBL, 14)
 			setvar(VAR_ZONE, 16)
+			playfanfare(MUS_OBTAIN_ITEM)
+			setspeaker(SP_NAME_COLRESS)
+			msgbox(Sanctuary_Text_Colress_Upgraded)
+			waitfanfare
+			setvar(VAR_FARM_STOCK, 10)
 		case 16:
 			completesubquest(QUEST_PBL, 15)
 			setvar(VAR_ZONE, 17)
