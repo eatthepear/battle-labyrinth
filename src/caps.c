@@ -12,7 +12,7 @@ static const u32 sLevelCapFlagMap[] =
     9,
     11,
     13,
-    15, // zone 5 cap
+    16, // zone 5 cap
     17,
     21,
     21,
