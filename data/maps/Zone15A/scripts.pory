@@ -272,7 +272,9 @@ script Zone15A_EventScript_Sophocles_TriggerBoss {
 	setflag(FLAG_SYS_NO_CATCHING)
 	setflag(FLAG_SYS_SMART_WILD_AI_ON)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1)
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1)
+	}
 	dowildbattle
 	msgbox(format("Ampharos is reacting to the energy from the stone!\pWith renewed power, it attacked again!"))
 	playmoncry(SPECIES_AMPHAROS, CRY_MODE_ENCOUNTER)
