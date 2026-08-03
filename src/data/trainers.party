@@ -1029,7 +1029,7 @@ Music: Girl
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Finneon @ Berry Juice
+Finneon @ Cheri Berry
 Modest Nature
 Ability: Swift Swim
 Level: 15
@@ -1038,7 +1038,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Gust
 - Attract
 
-Barboach @ Berry Juice
+Barboach @ Wise Glasses
 Calm Nature
 Ability: Hydration
 Level: 15
@@ -1047,7 +1047,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Mud Bomb
 - Rest
 
-Goldeen @ Berry Juice
+Goldeen @ Silk Scarf
 Naughty Nature
 Ability: Swift Swim
 Level: 15
@@ -1064,7 +1064,7 @@ Music: Girl
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Pyukumuku @ Berry Juice
+Pyukumuku @ Pecha Berry
 Calm Nature
 Ability: Innards Out
 Level: 16
@@ -1081,7 +1081,7 @@ Music: Swimmer
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Wiglett @ Berry Juice
+Wiglett @ Muscle Band
 Naughty Nature
 Ability: Gooey
 Level: 17
@@ -1090,7 +1090,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Wrap
 - Mud Slap
 
-Mantyke @ Berry Juice
+Mantyke @ Chesto Berry
 Lonely Nature
 Ability: Swift Swim
 Level: 17
@@ -1099,7 +1099,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Wing Attack
 - Slam
 
-Corsola @ Berry Juice
+Corsola @ Sitrus Berry
 Modest Nature
 Ability: Regenerator
 Level: 17
