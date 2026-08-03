@@ -1759,7 +1759,7 @@ script Debug_CheatStart_PBL_GiveSetStuff {
 	additem(ITEM_MIRACLE_SEED)
 	additem(ITEM_TM_LIGHT_SCREEN)
 	additem(ITEM_TM_REFLECT)
-	additem(ITEM_POKEMON_BOX_LINK)
+	additem(ITEM_SITRUS_BERRY, 5)
 	setflag(FLAG_BADGE02_GET)
 	setflag(FLAG_BEAT_BOSS_5)
 	random(5)
@@ -1811,7 +1811,7 @@ script Debug_CheatStart_PBL_GiveSetStuff {
 	additem(ITEM_TM_DRAINING_KISS)
 	additem(ITEM_MAGNET)
 	additem(ITEM_RED_SHARD, 5)
-	additem(ITEM_SITRUS_BERRY, 5)
+	additem(ITEM_GREEN_SHARD, 5)
 	additem(ITEM_TM_BULLDOZE)
 	setflag(FLAG_BEAT_BOSS_7)
 	setflag(FLAG_BEAT_BOSS_8)
@@ -1832,6 +1832,7 @@ script Debug_CheatStart_PBL_GiveSetStuff {
 	additem(ITEM_MYSTIC_WATER)
 	additem(ITEM_CHARCOAL)
 	additem(ITEM_TM_RETURN)
+	// additem(ITEM_TM_RETURN) TODO whatever the zone reward is
 	setflag(FLAG_BEAT_BOSS_9)
 
 	if (var(VAR_ZONE) == 10) {
@@ -1852,6 +1853,7 @@ script Debug_CheatStart_PBL_GiveSetStuff {
 	additem(ITEM_BLUE_SHARD, 5)
 	additem(ITEM_TM_IRON_TAIL)
 	additem(ITEM_EVIOLITE)
+	additem(ITEM_POKEMON_BOX_LINK)
 	setflag(FLAG_BEAT_BOSS_10)
 	setflag(FLAG_BADGE03_GET)
 
