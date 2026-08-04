@@ -68,16 +68,16 @@ script EventScript_Difficulty_SetToMessage {
 	setspeaker(SP_NAME_COLRESS)
 	switch (var(VAR_DIFFICULTY)) {
 		case DIFFICULTY_EASY:
-			message(format("The difficulty is currently set to {COLOR GREEN}Easy{COLOR DARK_GRAY}."))
+			message(format("What difficulty setting would you like? The current difficulty is {COLOR GREEN}Easy{COLOR DARK_GRAY}."))
 			waitmessage
 		case DIFFICULTY_NORMAL:
-			message(format("The difficulty is currently set to {COLOR GREEN}Normal{COLOR DARK_GRAY}."))
+			message(format("What difficulty setting would you like? The current difficulty is {COLOR GREEN}Normal{COLOR DARK_GRAY}."))
 			waitmessage
 		case DIFFICULTY_HARD:
-			message(format("The difficulty is currently set to {COLOR GREEN}Hard{COLOR DARK_GRAY}."))
+			message(format("What difficulty setting would you like? The current difficulty is {COLOR GREEN}Hard{COLOR DARK_GRAY}."))
 			waitmessage
 		case DIFFICULTY_BRUTAL:
-			message(format("The difficulty is currently set to {COLOR GREEN}Brutal{COLOR DARK_GRAY}."))
+			message(format("What difficulty setting would you like? The current difficulty is {COLOR GREEN}Brutal{COLOR DARK_GRAY}."))
 			waitmessage
 	}
 }
@@ -823,8 +823,6 @@ script EventScript_GameIntro_SetStartingVariablesAndFlags {
 }
 
 script EventScript_GameIntro_Difficulty {
-	setspeaker(SP_NAME_COLRESS)
-	msgbox(format("{COLOR GREEN}Pokémon Battle Labyrinth{COLOR DARK_GRAY} has a few difficulty options. Please adjust the difficulty as you see fit."))
 	while {
 		call(EventScript_Difficulty_SetToMessage)
 		setspeaker(SP_NAME_COLRESS)
