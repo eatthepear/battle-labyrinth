@@ -967,17 +967,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
 - Moonlight
 
-=== TRAINER_PBL_GILBERT ===
-Name: Gilbert
-Class: Fisherman
-Pic: Fisherman
-Music: Hiker
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Party Size: 4
-Pool Prune: Non Water
-Copy Pool: TRAINER_POOL_ZONE_6
-
 === TRAINER_PBL_MELANIE ===
 Name: Melanie
 Class: Picnicker
@@ -989,10 +978,10 @@ Party Size: 3
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_6
 
-=== TRAINER_PBL_CONSTANCE ===
-Name: Constance
-Class: Lady
-Pic: Lady
+=== TRAINER_PBL_DAISY ===
+Name: Daisy
+Class: Pkmn Breeder
+Pic: Pokemon Breeder F
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
@@ -1011,26 +1000,15 @@ Party Size: 3
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_6
 
-=== TRAINER_PBL_DAISY ===
-Name: Daisy
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
-Music: Female
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Party Size: 3
-Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_6
-
-=== TRAINER_PBL_LUCIA ===
-Name: Lucia
-Class: Backpacker
-Pic: Backpacker F
+=== TRAINER_PBL_GILBERT ===
+Name: Gilbert
+Class: Fisherman
+Pic: Fisherman
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-Pool Rules: Unique Types
+Party Size: 4
+Pool Prune: Non Water
 Copy Pool: TRAINER_POOL_ZONE_6
 
 === TRAINER_PBL_MINA ===

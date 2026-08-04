@@ -303,12 +303,6 @@ script Zone6A_EventScript_TMPluck {
 	end
 }
 
-script Zone6A_EventScript_Lucia {
-	trainerbattle_single(TRAINER_PBL_LUCIA, format("The ocean breeze, the salty smell in the air… I just love traveling!"), format("Traveling is no fun when you lose!"))
-	msgbox(format("Traveling is all about the journey, not the destination!"), MSGBOX_AUTOCLOSE)
-	end
-}
-
 raw `
 
 Zone6A_EventScript_Gilbert::
@@ -345,21 +339,6 @@ Zone6A_Text_MelaniePostBattle:
 	.string "what even is a horse?\p"
 	.string "I mean, we call them horse Pokémon,\n"
 	.string "but like, what is a horse?$"
-
-Zone6A_EventScript_Constance::
-	trainerbattle_single TRAINER_PBL_CONSTANCE, Zone6A_Text_ConstanceIntro, Zone6A_Text_ConstanceDefeat
-	msgbox Zone6A_Text_ConstancePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone6A_Text_ConstanceIntro:
-	.string "Want to join my picnic?$"
-
-Zone6A_Text_ConstanceDefeat:
-	.string "Oops, I forgot to pack food!$"
-
-Zone6A_Text_ConstancePostBattle:
-	.string "I can look for some Berries or\n"
-	.string "something…$"
 
 Zone6A_EventScript_Frank::
 	trainerbattle_single TRAINER_PBL_FRANK, Zone6A_Text_FrankIntro, Zone6A_Text_FrankDefeat

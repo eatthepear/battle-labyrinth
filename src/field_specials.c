@@ -4570,7 +4570,7 @@ u16 GetNumTrainersRemaining(void)
         count += !FlagGet(FLAG_BEAT_BOSS_5);
         break;
     case 6:
-        for (trainer = TRAINER_PBL_GILBERT; trainer <= TRAINER_PBL_LUCIA; trainer++) {
+        for (trainer = TRAINER_PBL_MELANIE; trainer <= TRAINER_PBL_GILBERT; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
