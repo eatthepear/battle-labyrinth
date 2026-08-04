@@ -132,14 +132,14 @@ script Zone5B_EventScript_Theresa {
 	end
 }
 
-
-// script Zone5A_EventScript_Clinton {
-// 	trainerbattle_single(TRAINER_PBL_CLINTON, format("Perhaps if I bribed the Gym Leader, I would be able to get a badge!"), format("Unfortunately, I tried, and no dice!"))
-// 	msgbox(format("She requested a single battle instead.\pMaybe her brother isn't here or something?"), MSGBOX_AUTOCLOSE)
-// 	end
-// }
 script Zone5B_EventScript_Anthony {
-	trainerbattle_single(TRAINER_PBL_ANTHONY, format("Many have asked why the Gym Leader does not battle with her brother.\pI ask, why does it matter? She battles exceptionally well by herself!"), format("Our Gym Leader is the best!"))
+	trainerbattle_single(TRAINER_PBL_ANTHONY, format("Confused by the terrain?\pI'll explain it to you!"), format("Actually, I'm not quite sure how it works myself."))
+	msgbox(format("Maybe the Gym Guide at the entrance would be able to explain how Psychic Terrain works."), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone5B_EventScript_Fred {
+	trainerbattle_single(TRAINER_PBL_FRED, format("Many have asked why the Gym Leader does not battle with her brother.\pI ask, why does it matter? She battles exceptionally well by herself!"), format("Our Gym Leader is the best!"))
 	msgbox(format("I have to admit though, she would be even more formidable with her brother alongside her."), MSGBOX_AUTOCLOSE)
 	end
 }

@@ -800,19 +800,19 @@ Pic: Psychic F
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
 Starting Status: Psychic Terrain
 
 === TRAINER_PBL_THERESA ===
 Name: Theresa
-Class: Hex Maniac
-Pic: Hex Maniac
-Music: Suspicious
+Class: Psychic
+Pic: Psychic F
+Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
 Starting Status: Psychic Terrain
@@ -824,7 +824,19 @@ Pic: Psychic M
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
+Pool Prune: Non Psychic
+Copy Pool: TRAINER_POOL_ZONE_5
+Starting Status: Psychic Terrain
+
+=== TRAINER_PBL_FRED ===
+Name: Fred
+Class: Psychic
+Pic: Psychic M
+Music: Intense
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
 Starting Status: Psychic Terrain
@@ -840,7 +852,7 @@ Double Battle: No
 Luvdisc @ Wise Glasses
 Timid Nature
 Ability: Swift Swim
-Level: 13
+Level: 14
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pulse
 - Draining Kiss
@@ -849,7 +861,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Delibird @ Wide Lens
 Jolly Nature
 Ability: Hustle
-Level: 13
+Level: 14
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Shard
 - Peck
@@ -858,7 +870,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Spinda @ Sitrus Berry
 Hasty Nature
 Ability: Contrary
-Level: 14
+Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dizzy Punch
 - Feint Attack
