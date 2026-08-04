@@ -5126,7 +5126,6 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_MAGMA_ADMIN:
             return MUS_VS_AQUA_MAGMA;
         case TRAINER_CLASS_LEADER:
-        case TRAINER_CLASS_PKMN_TRAINER_1:
             switch (VarGet(VAR_BOSS_MUSIC))
             {
             case 1:

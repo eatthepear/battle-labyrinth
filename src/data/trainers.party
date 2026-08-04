@@ -164,7 +164,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_CORI_BOSS_1_GRASS_STARTER ===
 Name: Cori
-Class: Pkmn Trainer 1
+Class: Rising Star
 Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_BOSS
@@ -198,7 +198,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_CORI_BOSS_1_FIRE_STARTER ===
 Name: Cori
-Class: Pkmn Trainer 1
+Class: Rising Star
 Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_BOSS
@@ -232,7 +232,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_CORI_BOSS_1_FIRE_STARTER ===
 Name: Cori
-Class: Pkmn Trainer 1
+Class: Rising Star
 Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_BOSS
@@ -378,7 +378,7 @@ Copy Pool: TRAINER_POOL_ZONE_2
 
 === TRAINER_PBL_SHAUN_BOSS_2 ===
 Name: Shaun
-Class: Pkmn Trainer 1
+Class: Rising Star
 Pic: Youngster
 Music: Male
 AI: AI_FLAG_BOSS
@@ -412,7 +412,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_SHAUN_BOSS_2 ===
 Name: Shaun
-Class: Pkmn Trainer 1
+Class: Rising Star
 Pic: Youngster
 Music: Male
 AI: AI_FLAG_BOSS

@@ -438,6 +438,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_GALACTIC] = { _("Team Galactic"), 8, BALL_GREAT },
     [TRAINER_CLASS_GALACTIC_COMMANDER] = { _("Team Galactic Comander"), 15, BALL_ULTRA },
     [TRAINER_CLASS_GALACTIC_BOSS] = { _("Team Galactic Boss"), 25, BALL_MASTER },
+    [TRAINER_CLASS_RISING_STAR] = { _("Rising Star"), 8, BALL_GREAT },
 };
 
 static void (*const sTurnActionsFuncsTable[])(void) =
