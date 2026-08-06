@@ -51,7 +51,7 @@ script Zone12A_EventScript_TriggerSerena {
 	setspeaker("Serena")
 	msgbox(format("I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
 	setspeaker(SP_NAME_NONE)
-	// giveitem(ITEM_TM_FALSE_SWIPE)
+	giveitem(ITEM_SHALOUR_SABLE, 10)
 	setspeaker("Serena")
 	msgbox(format("Well, anyways, I've gotta run now.\pBye bye!"), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
