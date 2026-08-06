@@ -12,10 +12,10 @@
   "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_GYM",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_TUBER_M",
+      "graphics_id": "OBJ_EVENT_GFX_LARRY",
       "x": 4,
       "y": 2,
       "elevation": 3,
@@ -24,21 +24,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone18B_EventScript_EliZoe",
-      "flag": "FLAG_HIDE_ZONE18B_ELI"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_WALKING",
-      "x": 5,
-      "y": 2,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 2,
-      "movement_range_y": 2,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone18B_EventScript_EliZoe",
-      "flag": "FLAG_HIDE_ZONE18B_ZOE"
+      "script": "Zone18B_EventScript_Larry",
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KINDLER",
@@ -756,9 +743,7 @@
       "dest_warp_id": "69"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

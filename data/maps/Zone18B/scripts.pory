@@ -19,6 +19,42 @@ mapscripts Zone18B_MapScripts {
 	}
 }
 
+script Zone18B_EventScript_Larry {
+    lock
+	if (flag(FLAG_BEAT_BOSS_18)) {
+		setspeaker("Larry")
+		msgbox(format("You will become even stronger! I've battled you, so I know."))
+		release
+		end
+	}
+	setspeaker("Larry")
+	msgbox(format("Hehehe… Were you surprised?\pThis is my own Pokémon Gym, my very own, without my brother anywhere near!\pWhile it would be nice to be around him sometimes…\pNever mind. You've brought yourself, and you're looking for a challenge.\pI hope to meet that expectation!\pBring it!"))
+	call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_LARRY_BOSS_18, format("What? I lost?"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Larry")
+	msgbox(format("It can't be helped. You've won…\pCongratulations. Please take the Normal Badge!"))
+	setspeaker(SP_NAME_NONE)
+	playfanfare(MUS_OBTAIN_BADGE)
+	msgbox(format("{PLAYER} received the Normal Badge from {COLOR BLUE}Larry{COLOR DARK_GRAY}!"))
+	waitfanfare
+	setspeaker("Grant")
+	msgbox(format("Since you now have the Normal Badge, you can use the HM {COLOR GREEN}Cut{COLOR DARK_GRAY} outside battle.\pI'd also like you to take this TM."))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_TM_LIGHT_SCREEN)
+	setspeaker("Larry")
+	msgbox(format("That's it!\pFufufu…\pJust kidding, here's the other one as well. Us Gym Leaders give out multiple rewards!"))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_TM_REFLECT)
+	setspeaker("Larry")
+	msgbox(format("You will become even stronger! I've battled you, so I know."))
+    setflag(FLAG_BEAT_BOSS_18)
+	setflag(FLAG_BADGE06_GET)
+	release
+	end
+}
+
 script Zone18B_EventScript_DoorLocked {
 	msgbox("This door appears to be locked\nright now…", MSGBOX_DEFAULT)
 	releaseall
@@ -1032,140 +1068,3 @@ Zone18B_Text_WilliePostBattle:
 	.string "cooking something hot!$"
 
 `
-
-script Zone18B_EventScript_EliZoe {
-	lock
-	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
-	if (var(VAR_TEMP_0) == 3) {
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
-		waitmovement(0)
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
-		waitmovement(0)
-		applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
-		waitmovement(0)
-	} elif (var(VAR_TEMP_0) == 5) {
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
-		waitmovement(0)
-		applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
-		waitmovement(0)
-	}
-	if (var(VAR_ZONE_18_STATE) < 3) {
-		goto(Zone18B_EventScript_BossBattle)
-	} elif (var(VAR_ZONE_18_STATE) == 5) {
-		msgbox(format("{COLOR BLUE}Eli{COLOR DARK_GRAY}: You really got it back for me?"), MSGBOX_DEFAULT)
-		msgbox(format("{PLAYER} returned the Azurill doll to {COLOR BLUE}Eli{COLOR DARK_GRAY}."), MSGBOX_DEFAULT)
-		msgbox(format("{COLOR BLUE}Eli{COLOR DARK_GRAY}: Wow! Thank you so much!"), MSGBOX_DEFAULT)
-		msgbox(format("{COLOR BLUE}Zoe{COLOR DARK_GRAY}: Seriously, thank you so much.\pMy brother loves that doll, so we are sincerely in your debt."), MSGBOX_DEFAULT)
-		delay(40)
-		msgbox(format("{COLOR BLUE}Zoe{COLOR DARK_GRAY}: We don't have much in the way of a reward, but maybe you can just keep that Diving Gear we lent you. Thank you again for your help."), MSGBOX_DEFAULT)
-		msgbox(format("{COLOR BLUE}Eli{COLOR DARK_GRAY}: Yeah, thank you thank you thank you!"), MSGBOX_DEFAULT)
-		setvar(VAR_ZONE_18_STATE, 6)
-		clearflag(FLAG_HIDE_ZONE18A_PORYGON)
-		release
-		end
-	} else {
-		msgbox(format("{COLOR BLUE}Zoe{COLOR DARK_GRAY}: Thank you again for your help."), MSGBOX_DEFAULT)
-		msgbox(format("{COLOR BLUE}Eli{COLOR DARK_GRAY}: Yeah, thank you thank you thank you!"), MSGBOX_DEFAULT)
-		release
-		end
-	}
-}
-
-script Zone18B_EventScript_BossBattle {
-	applymovement(2, Common_Movement_FaceLeft)
-	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Zoe{COLOR DARK_GRAY}: Is this the challenger you were telling me about?"), MSGBOX_DEFAULT)
-	applymovement(1, Common_Movement_FaceRight)
-	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Eli{COLOR DARK_GRAY}: Yeah yeah! They've been beating all the other Trainers!"))
-	fadeoutbgm(1)
-	applymovement(1, Common_Movement_FaceDown)
-	applymovement(2, Common_Movement_FaceDown)
-	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Zoe{COLOR DARK_GRAY}: To truly clear the Trainer's Dojo, you must defeat the two of us in a Double Battle!"), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Eli{COLOR DARK_GRAY}: Taste our power!"), MSGBOX_DEFAULT)
-	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	setweather(WEATHER_RAIN)
-	// 	doweather
-	// 	msgbox("It suddenly began to rain!", MSGBOX_DEFAULT)
-	// 	trainerbattle_no_intro(TRAINER_PBL_ZOE_AND_ELI_BOSS_16_CHALLENGE, Zone18B_Text_Boss16Defeat)
-	// 	resetweather
-	// 	doweather
-	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_ZOE_AND_ELI_BOSS_16, Zone18B_Text_Boss16Defeat)
-	// }
-	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	applymovement(1, Common_Movement_FaceRight)
-	applymovement(2, Common_Movement_FaceLeft)
-	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Eli{COLOR DARK_GRAY}: Aww! We lost, sis!"), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Zoe{COLOR DARK_GRAY}: That's ok, Eli. We'll learn from this, yeah?"), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Eli{COLOR DARK_GRAY}: Yeah yeah! And we gotta give {PLAYER} the reward!"), MSGBOX_DEFAULT)
-	applymovement(1, Common_Movement_FaceDown)
-	applymovement(2, Common_Movement_FaceDown)
-	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Zoe{COLOR DARK_GRAY}: Right! Here's our little gift for clearing the Trainer's Dojo."), MSGBOX_DEFAULT)
-	giveitem(ITEM_TM35)
-	applymovement(1, Common_Movement_FaceRight)
-	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Eli{COLOR DARK_GRAY}: Ah! I just remembered!"), MSGBOX_DEFAULT)
-	applymovement(2, Common_Movement_FaceLeft)
-	waitmovement(0)
-	msgbox(format("{COLOR BLUE}Zoe{COLOR DARK_GRAY}: What? What is it?"), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Eli{COLOR DARK_GRAY}: I left my Azurill doll at the beach!\pI gotta go get it!"), MSGBOX_DEFAULT)
-	msgbox(format("{COLOR BLUE}Zoe{COLOR DARK_GRAY}: Oh! I'll come with you, I guess."))
-	setflag(FLAG_BEAT_BOSS_16)
-	if (var(VAR_ZONE_18_STATE) == 1) {
-		applymovement(1, Zone18B_Movement_Eli_RunOutLeft)
-		applymovement(2, Zone18B_Movement_Zoe_RunOutLeft)
-		waitmovement(0)
-	} elif (var(VAR_ZONE_18_STATE) == 2) {
-		applymovement(2, Zone18B_Movement_Zoe_RunOutRight)
-		applymovement(1, Zone18B_Movement_Eli_RunOutRight)
-		waitmovement(0)
-	}
-	playse(SE_DOOR)
-	delay(10)
-	removeobject(1)
-	removeobject(2)
-	setflag(FLAG_HIDE_ZONE18B_ELI)
-	setflag(FLAG_HIDE_ZONE18B_ZOE)
-	clearflag(FLAG_HIDE_ZONE18A_ELI)
-	clearflag(FLAG_HIDE_ZONE18A_ZOE)
-	clearflag(FLAG_HIDE_ZONE18A_BOAT)
-	setvar(VAR_ZONE_18_STATE, 3)
-	release
-	end
-}
-
-text Zone18B_Text_Boss16Defeat {
-	format("Eli: Darn it!\pZoe: It seems you've defeated us.")
-}
-
-movement Zone18B_Movement_Eli_RunOutLeft {
-	walk_left
-	walk_down * 3
-	walk_left * 2
-	walk_down * 2
-}
-
-movement Zone18B_Movement_Eli_RunOutRight {
-	walk_right
-	walk_down * 3
-	walk_right
-	walk_down * 2
-}
-
-movement Zone18B_Movement_Zoe_RunOutLeft {
-	walk_left * 2
-	walk_down * 3
-	walk_left
-	walk_down * 2
-}
-
-movement Zone18B_Movement_Zoe_RunOutRight {
-	walk_down * 3
-	walk_right * 2
-	walk_down * 2
-}
