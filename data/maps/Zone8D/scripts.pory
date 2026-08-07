@@ -68,7 +68,7 @@ script Zone8D_EventScript_BossBattle {
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Mars")
 	msgbox(format("Ugh. I can't believe I lost that one.\pI guess I owe you a little something for winning."), MSGBOX_AUTOCLOSE)
-	giveitem(ITEM_GREEN_SHARD, 5)
+	giveitem(ITEM_RED_SHARD, 5)
 	setspeaker("Mars")
 	msgbox(format("Our boss had us collecting these Shards in the caves.\pWe've collected enough for our mission, so I don't mind giving a few scraps to you."), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_MARS, Common_Movement_FaceLeft)

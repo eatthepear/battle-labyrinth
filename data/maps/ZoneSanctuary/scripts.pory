@@ -490,7 +490,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_TM_BULLDOZE)
 		case 9:
-			// TODO
+			msgbox(format("{COLOR GREEN}5 Green Shards{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_GREEN_SHARD, 5)
 		case 10:
 			msgbox(format("The {COLOR GREEN}{PKMN} Box Link{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)

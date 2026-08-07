@@ -941,19 +941,10 @@
 #define FLAG_ITEM_ZONE5A_TM_THIEF                  0x415
 #define FLAG_ITEM_BOREAL_THICKET_NEVER_MELT_ICE                  0x416
 #define FLAG_ITEM_BOREAL_THICKET_TM_ICY_WIND                  0x417
-#define FLAG_ITEM_ZONE5A_Old_MIRACLE_SEED              FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5A_Old_RANDOM_1                  FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5A_Old_QUICK_BALL                FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5A_Old_METRONOME                 FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5A_Old_RANDOM_2                  FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5B_Old_RANDOM_1                  FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5B_Old_RANDOM_2                  FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5B_Old_GEMS                      FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5B_Old_RANDOM_3                  FLAG_ITEM_ZONE5A_TM_THIEF
 #define FLAG_ITEM_ZONE6A_TM_PLUCK          0x41C
 #define FLAG_ITEM_ZONE6A_NET_BALL                  0x41D
-#define FLAG_ITEM_ZONE6A_NEST_BALL                 0x41E
-#define FLAG_ITEM_ZONE6A_RANDOM_1                      0x41F
+#define FLAG_ITEM_ZONE6A_RANDOM_1                 0x41E
+#define FLAG_ITEM_ZONE6A_RANDOM_2                      0x41F
 #define FLAG_ITEM_ZONE7A_SHARP_BEAK                0x420
 #define FLAG_ITEM_ZONE7A_RANDOM_1                  0x421
 // #define FLAG_ITEM_ZONE3A_RARE_CANDY                0x422
@@ -1052,6 +1043,15 @@
 #define FLAG_ITEM_ZONE25K_TM37                     0x47F
 #define FLAG_ITEM_ZONE26A_BANETTITE                0x480
 
+#define FLAG_ITEM_ZONE5A_Old_MIRACLE_SEED              FLAG_ITEM_ZONE5A_TM_THIEF
+#define FLAG_ITEM_ZONE5A_Old_RANDOM_1                  FLAG_ITEM_ZONE5A_TM_THIEF
+#define FLAG_ITEM_ZONE5A_Old_QUICK_BALL                FLAG_ITEM_ZONE5A_TM_THIEF
+#define FLAG_ITEM_ZONE5A_Old_METRONOME                 FLAG_ITEM_ZONE5A_TM_THIEF
+#define FLAG_ITEM_ZONE5A_Old_RANDOM_2                  FLAG_ITEM_ZONE5A_TM_THIEF
+#define FLAG_ITEM_ZONE5B_Old_RANDOM_1                  FLAG_ITEM_ZONE5A_TM_THIEF
+#define FLAG_ITEM_ZONE5B_Old_RANDOM_2                  FLAG_ITEM_ZONE5A_TM_THIEF
+#define FLAG_ITEM_ZONE5B_Old_GEMS                      FLAG_ITEM_ZONE5A_TM_THIEF
+#define FLAG_ITEM_ZONE5B_Old_RANDOM_3                  FLAG_ITEM_ZONE5A_TM_THIEF
 #define FLAG_UNUSED_0x020    0x4FA // Unused Flag
 #define FLAG_UNUSED_0x021    0x4FA // Unused Flag
 #define FLAG_UNUSED_0x022    0x4FA // Unused Flag
