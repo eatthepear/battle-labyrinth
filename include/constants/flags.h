@@ -971,10 +971,10 @@
 #define FLAG_ITEM_ZONE10A_RANDOM_1                 0x437
 #define FLAG_ITEM_ZONE10A_BLACK_GLASSES            0x438
 // #define FLAG_ITEM_ZONE10A_HEAVY_DUTY_BOOTS         0x439
-#define FLAG_ITEM_ZONE11A_TM_TAUNT                 0x43A
+#define FLAG_ITEM_ZONE11A_LEAF_STONE                 0x43A
 #define FLAG_ITEM_ZONE11A_MOON_STONE               0x43B
 #define FLAG_ITEM_ZONE11A_SPELL_TAG                0x43C
-#define FLAG_ITEM_ZONE11A_GEMS                     0x43D
+#define FLAG_ITEM_ZONE11A_BRIGHT_POWDER                     0x43D
 #define FLAG_ITEM_ZONE11A_FAIRY_FEATHER            0x43E
 #define FLAG_ITEM_ZONE11A_RANDOM_1                 0x43F
 #define FLAG_ITEM_ZONE11A_RANDOM_2                 0x440

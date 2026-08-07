@@ -1,9 +1,9 @@
 mapscripts Zone11A_MapScripts {
 	MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_ITEM_ZONE11A_TM_TAUNT)) {
-			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+		if (flag(FLAG_ITEM_ZONE11A_LEAF_STONE)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
-			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST)
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
 		if (flag(FLAG_ITEM_ZONE11A_MOON_STONE)) {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
@@ -15,7 +15,7 @@ mapscripts Zone11A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE11A_GEMS)) {
+		if (flag(FLAG_ITEM_ZONE11A_BRIGHT_POWDER)) {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -73,9 +73,9 @@ script Zone11A_EventScript_Archer {
 	end
 }
 
-script Zone11A_EventScript_TMTaunt {
+script Zone11A_EventScript_LeafStone {
 	lock
-	if (flag(FLAG_ITEM_ZONE11A_TM_TAUNT)) {
+	if (flag(FLAG_ITEM_ZONE11A_LEAF_STONE)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -83,9 +83,9 @@ script Zone11A_EventScript_TMTaunt {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE11A_TM_TAUNT)
+	setflag(FLAG_ITEM_ZONE11A_LEAF_STONE)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_TM_TAUNT, 1)
+	finditem(ITEM_LEAF_STONE, 1)
 	release
 	end
 }
@@ -124,9 +124,9 @@ script Zone11A_EventScript_SpellTag {
 	end
 }
 
-script Zone11A_EventScript_Gems {
+script Zone11A_EventScript_BrightPowder {
 	lock
-	if (flag(FLAG_ITEM_ZONE11A_GEMS)) {
+	if (flag(FLAG_ITEM_ZONE11A_BRIGHT_POWDER)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -134,11 +134,9 @@ script Zone11A_EventScript_Gems {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE11A_GEMS)
+	setflag(FLAG_ITEM_ZONE11A_BRIGHT_POWDER)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_FAIRY_GEM)
-	finditem(ITEM_GHOST_GEM)
-	finditem(ITEM_DRAGON_GEM)
+	finditem(ITEM_BRIGHT_POWDER)
 	release
 	end
 }

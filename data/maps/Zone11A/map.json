@@ -115,7 +115,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone11A_EventScript_TMTaunt",
+      "script": "Zone11A_EventScript_LeafStone",
       "flag": "0"
     },
     {
@@ -133,8 +133,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_2",
-      "x": 15,
-      "y": 6,
+      "x": 49,
+      "y": 36,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -154,13 +154,13 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone11A_EventScript_Gems",
+      "script": "Zone11A_EventScript_BrightPowder",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_4",
-      "x": 37,
-      "y": 4,
+      "x": 43,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -172,8 +172,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_5",
-      "x": 37,
-      "y": 29,
+      "x": 0,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -257,15 +257,15 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 43,
-      "y": 14,
+      "x": 32,
+      "y": 27,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE11_1"
     },
     {
       "type": "hidden_item",
-      "x": 0,
+      "x": 15,
       "y": 6,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
@@ -273,16 +273,16 @@
     },
     {
       "type": "hidden_item",
-      "x": 49,
-      "y": 36,
+      "x": 33,
+      "y": 15,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE11_3"
     },
     {
       "type": "hidden_item",
-      "x": 24,
-      "y": 34,
+      "x": 25,
+      "y": 40,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE11_4"
