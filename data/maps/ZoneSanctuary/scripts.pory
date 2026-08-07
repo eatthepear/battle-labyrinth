@@ -504,9 +504,12 @@ script Sanctuary_EventScript_EnterSanctuary {
 			// setflag(FLAG_USED_TERA)
 			// msgbox(format("In battle, you can Terastilize your Pokémon now.\pPress {START_BUTTON} to Terastilize!\pAfter you use it, you'll have to go back to the Pokémon Center to recharge it."))
 		case 11:
-			msgbox(format("TM86 - Grass Knot!"))
+			msgbox(format("TM94 - Defog!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_TM_GRASS_KNOT)
+			giveitem(ITEM_TM_DEFOG)
+			// msgbox(format("TM86 - Grass Knot!"))
+			// setspeaker(SP_NAME_NONE)
+			// giveitem(ITEM_TM_GRASS_KNOT)
 		case 12:
 			msgbox(format("Ultra Balls!"))
 			setspeaker(SP_NAME_NONE)
