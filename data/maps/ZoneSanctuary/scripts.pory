@@ -123,7 +123,7 @@ script EventScript_Difficulty_Switch {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_EASY)
 						setspeaker(SP_NAME_COLRESS)
 						msgbox(format("The difficulty has been changed to {COLOR GREEN}Easy{COLOR DARK_GRAY}."))
-						if ((flag(FLAG_TRUE_BRUTAL) == TRUE) && (var(VAR_ZONE_2_STATE) == 1)) {
+						if ((flag(FLAG_TRUE_BRUTAL) == TRUE) && (var(VAR_ZONE_2_STATE) <= 1)) {
 							additem(ITEM_TM_PROTECT)
 						}
 						clearflag(FLAG_TRUE_BRUTAL)
@@ -141,7 +141,7 @@ script EventScript_Difficulty_Switch {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_NORMAL)
 						setspeaker(SP_NAME_COLRESS)
 						msgbox(format("The difficulty has been changed to {COLOR GREEN}Normal{COLOR DARK_GRAY}."))
-						if ((flag(FLAG_TRUE_BRUTAL) == TRUE) && (var(VAR_ZONE_2_STATE) == 1)) {
+						if ((flag(FLAG_TRUE_BRUTAL) == TRUE) && (var(VAR_ZONE_2_STATE) <= 1)) {
 							additem(ITEM_TM_PROTECT)
 						}
 						clearflag(FLAG_TRUE_BRUTAL)
@@ -159,7 +159,7 @@ script EventScript_Difficulty_Switch {
 						setvar(VAR_DIFFICULTY, DIFFICULTY_HARD)
 						setspeaker(SP_NAME_COLRESS)
 						msgbox(format("The difficulty has been changed to {COLOR GREEN}Hard{COLOR DARK_GRAY}."))
-						if ((flag(FLAG_TRUE_BRUTAL) == TRUE) && (var(VAR_ZONE_2_STATE) == 1)) {
+						if ((flag(FLAG_TRUE_BRUTAL) == TRUE) && (var(VAR_ZONE_2_STATE) <= 1)) {
 							additem(ITEM_TM_PROTECT)
 						}
 						clearflag(FLAG_TRUE_BRUTAL)

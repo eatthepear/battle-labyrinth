@@ -376,6 +376,85 @@ Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_2
 
+=== TRAINER_PBL_LEAF_BOSS_2 ===
+Name: Leaf
+Class: Rival
+Pic: Leaf
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Pink
+
+Pikachu @ Oran Berry
+Naive Nature
+Ability: Static
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Thunder Shock
+- Nuzzle
+- Rock Smash
+
+Munchlax @ Oran Berry
+Impish Nature
+Ability: Thick Fat
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tackle
+- Recycle
+- Defense Curl
+- Rock Smash
+
+Bulbasaur @ Oran Berry
+Jolly Nature
+Ability: Overgrow
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vine Whip
+- Leech Seed
+- Poison Powder
+- Rock Smash
+
+=== TRAINER_PBL_LEAF_BOSS_2 ===
+Name: Leaf
+Class: Rival
+Pic: Leaf
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Pink
+Difficulty: Brutal
+
+Pikachu @ Oran Berry
+Naive Nature
+Ability: Static
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Thunder Shock
+- Nuzzle
+- Rock Smash
+
+Munchlax @ Oran Berry
+Impish Nature
+Ability: Thick Fat
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tackle
+- Recycle
+- Defense Curl
+- Rock Smash
+
+Bulbasaur @ Oran Berry
+Jolly Nature
+Ability: Overgrow
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vine Whip
+- Leech Seed
+- Poison Powder
+- Rock Smash
+
 === TRAINER_PBL_SHAUN_BOSS_2 ===
 Name: Shaun
 Class: Rising Star

@@ -63,6 +63,81 @@ script Zone2A_EventScript_Max {
 	releaseall
 }
 
+script Zone2A_EventScript_TriggerLeaf {
+	lockall
+	applymovement(LOCALID_LEAF_2A, Common_Movement_FaceLeft)
+	waitmovement(0)
+	playbgm(MUS_BW_FRIEND, TRUE)
+	applymovement(LOCALID_LEAF_2A, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	delay(16)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	switch(var(VAR_TEMP_1)) {
+		case 20:
+			applymovement(LOCALID_LEAF_2A, Common_Movement_WalkUp)
+			waitmovement(0)
+		case 22:
+			applymovement(LOCALID_LEAF_2A, Common_Movement_WalkDown)
+			waitmovement(0)
+		case 23:
+			applymovement(LOCALID_LEAF_2A, Common_Movement_WalkDown2)
+			waitmovement(0)
+	}
+	applymovement(LOCALID_LEAF_2A, Common_Movement_WalkLeft3)
+	waitmovement(0)
+	setspeaker("Leaf")
+	msgbox(format("Hi! My name's {COLOR BLUE}Leaf{COLOR DARK_GRAY}.\pIf you want to go forward, you'll have to beat me!\pSo, are you ready for our battle?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Okay. You just let me know when you're ready!"), MSGBOX_AUTOCLOSE)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+		applymovement(LOCALID_LEAF_2A, Common_Movement_WalkRight3)
+		waitmovement(0)
+		switch(var(VAR_TEMP_1)) {
+			case 20:
+				applymovement(LOCALID_LEAF_2A, Common_Movement_WalkDown)
+				waitmovement(0)
+			case 22:
+				applymovement(LOCALID_LEAF_2A, Common_Movement_WalkUp)
+				waitmovement(0)
+			case 23:
+				applymovement(LOCALID_LEAF_2A, Common_Movement_WalkUp2)
+				waitmovement(0)
+		}
+		fadedefaultbgm
+		releaseall
+		end
+	}
+	setspeaker("Leaf")
+	msgbox(format("Good luck!"))
+	call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_LEAF_BOSS_2, format("Defeat!"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Leaf")
+	msgbox(format("I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_HM_ROCK_SMASH)
+	setspeaker("Leaf")
+	msgbox(format("Good job! That was a great battle. I think I'll wait here for more challengers to pass through, you should go on ahead! I want to battle them all."), MSGBOX_AUTOCLOSE)
+	setflag(FLAG_BEAT_BOSS_2)
+	setvar(VAR_ZONE_1_STATE, 2)
+	fadedefaultbgm
+	releaseall
+	end
+}
+
+script Zone2A_EventScript_Leaf {
+	lock
+	faceplayer
+	setspeaker("Leaf")
+	msgbox(format("Hello!"))
+	release
+	end
+}
+
 script Zone2A_EventScript_BossBattle {
 	lock
 	faceplayer
