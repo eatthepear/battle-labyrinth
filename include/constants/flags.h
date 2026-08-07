@@ -204,7 +204,7 @@
 // #define FLAG_HIDE_ZONE3A_PHILLIP                         0x111
 #define FLAG_ZONE3A_MOVE_TUTOR_TAUGHT      0x112
 #define FLAG_ITEM_HEATED_CAVITY_LAVA_COOKIE                0x113
-#define FLAG_ZONE3A_RECEIVED_SILVER_POWDER               0x114
+// #define FLAG_ZONE3A_RECEIVED_SILVER_POWDER               0x114
 #define FLAG_ZONE3A_TRADE                      0x115
 #define FLAG_HIDE_ZONE4A_KIMONO_GIRL                      0x116
 #define FLAG_ZONE4A_MOVE_TUTOR_TAUGHT_STRUGGLE_BUG        0x117
@@ -924,10 +924,8 @@
 #define FLAG_ITEM_ZONE2A_TM_BUG_BITE               0x404
 #define FLAG_ITEM_ZONE2A_SILK_SCARF                0x405
 #define FLAG_ITEM_ZONE3A_RANDOM_1                  0x406
-#define FLAG_ITEM_ZONE3A_RANDOM_2                  0x407
-#define FLAG_ITEM_ZONE3A_RANDOM_3                  0x408
-// #define FLAG_ITEM_ZONE3A_RARE_CANDY                0x422
-#define FLAG_ITEM_ZONE5A_RARE_CANDY                0x425
+#define FLAG_ITEM_ZONE3A_MUSCLE_BAND                  0x407
+#define FLAG_ITEM_ZONE3A_WISE_GLASSES                  0x408
 #define FLAG_ITEM_ZONE3A_HYPER_POTION              0x409
 #define FLAG_ITEM_ZONE4A_SILVER_POWDER             0x40A
 #define FLAG_ITEM_ZONE4A_RANDOM_1                  0x40B
@@ -957,8 +955,10 @@
 #define FLAG_ITEM_ZONE6A_RANDOM_1                      0x41F
 #define FLAG_ITEM_ZONE7A_SHARP_BEAK                0x420
 #define FLAG_ITEM_ZONE7A_RANDOM_1                  0x421
+// #define FLAG_ITEM_ZONE3A_RARE_CANDY                0x422
 #define FLAG_ITEM_ZONE7A_BLACK_BELT                0x423
 #define FLAG_ITEM_ZONE7A_RANDOM_2                  0x424
+// #define FLAG_ITEM_ZONE5A_RARE_CANDY                0x425
 // #define FLAG_ITEM_ZONE7A_RANDOM_4                  0x426
 #define FLAG_ITEM_ZONE8A_MAGNET                    0x427
 #define FLAG_ITEM_ZONE8A_RANDOM_1                  0x428

@@ -527,9 +527,6 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 5:
 			completesubquest(QUEST_PBL, 4)
 			setvar(VAR_ZONE, 6)
-			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				setflag(FLAG_ITEM_ZONE5A_RARE_CANDY)
-			}
 			playfanfare(MUS_OBTAIN_ITEM)
 			setspeaker(SP_NAME_COLRESS)
 			msgbox(Sanctuary_Text_Colress_Upgraded)
