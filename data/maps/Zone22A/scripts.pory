@@ -1,5 +1,44 @@
 mapscripts Zone22A_MapScripts {}
 
+script Zone22A_EventScript_Maylene {
+	lock
+	faceplayer
+	if (flag(FLAG_BEAT_BOSS_22)) {
+		setspeaker("Maylene")
+		msgbox(format("I see your potential. You can do anything you set your heart to!\pThere are other Gym Leaders, stronger than I am. Perhaps defeating them will prove a worthy challenge!"))
+		release
+		end
+	}
+	setspeaker("Maylene")
+	msgbox(format("I've been waiting in eager anticipation!\pWhat have I been waiting for?\pFor a worthy challenger to appear!\pAre you that worthy challenger?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Don't keep me waiting any longer than needed!\pTake a deep breath, and prepare yourself for the climb!"), MSGBOX_AUTOCLOSE)
+		releaseall
+		end
+	}
+	msgbox(format("I have a feeling that our battle will turn out to be worth the wait!\pI hope you'll show me that your skill as a Trainer surpasses even mine."))
+	call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_MAYLENE_BOSS_22, format("You have proven to be a wall that I am unable to surmount!"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Maylene")
+	msgbox(format("There are some things that seem out of reach no matter how hard you try.\pHowever, it's important that you never give up - no matter the opponent or the odds.\pI could tell from our battle that you and your Pokémon understand that.\pTo commemorate such an impressive show of teamwork, please accept the Cliff Badge!"))
+	setspeaker(SP_NAME_NONE)
+	playfanfare(MUS_OBTAIN_BADGE)
+	msgbox(format("{PLAYER} received the Cliff Badge from {COLOR BLUE}Maylene{COLOR DARK_GRAY}!"))
+	waitfanfare
+	setspeaker("Maylene")
+	msgbox(format("With the Cliff Badge in your grasp, you should have no issues using the HM {COLOR GREEN}Rock Smash{COLOR DARK_GRAY} outside battle!\pYour Pokémon don't need to know the move to use it, just having the HM and the requisite Gym Badge is enough!\pAh, finally, I'd like you to take these as well."))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_TM_DRAIN_PUNCH)
+	// giveitem(ITEM_HARD_STONE, 1)
+	msgbox(format("With {COLOR GREEN}Rock Tomb{COLOR DARK_GRAY}, a Pokémon can hurl rocks at its target, not only inflicting damage but also lowering the target's Speed.\pAnd the {COLOR GREEN}Hard Stone{COLOR DARK_GRAY} increases the damage of your Pokémon's Rock-type moves by 20%. Forms a nifty combo, huh?\pYou're just starting on your journey, so enjoy the ride and feel the breeze in your face!"))
+	setflag(FLAG_BEAT_BOSS_22)
+	setflag(FLAG_BADGE07_GET)
+	release
+	end
+}
+
 raw `
 Zone22A_EventScript_Exit::
 	lockall

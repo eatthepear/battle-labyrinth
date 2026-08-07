@@ -2770,3 +2770,12 @@ script EventScript_Amaura {
 	waitmoncry
 	release
 }
+
+script EventScript_Medicham {
+	lock
+	faceplayer
+	playmoncry(SPECIES_MEDICHAM, CRY_MODE_NORMAL)
+	msgbox(format("Cham!"))
+	waitmoncry
+	release
+}
