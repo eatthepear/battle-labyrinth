@@ -258,6 +258,11 @@ script EventScript_NextZone {
 		msgbox(format("It seems you haven't explored the Sanctuary fully yet.\pPerhaps speak to the Fisherman south of here."))
 		return
 	}
+	if (checkitem(ITEM_DOWSING_MACHINE) == FALSE) {
+		setspeaker(SP_NAME_COLRESS)
+		msgbox(format("It seems you haven't explored the Sanctuary fully yet.\pPerhaps speak to the Backpacker near the southwestern shop."))
+		return
+	}
 	if (checkitem(ITEM_INFINITE_REPEL) == FALSE) {
 		setspeaker(SP_NAME_COLRESS)
 		msgbox(format("It seems you haven't explored the Sanctuary fully yet.\pPerhaps speak to the Hiker south of the shops."))
@@ -451,9 +456,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 	}
 	switch (var(VAR_ZONE)) {
 		case 1:
-			msgbox(format("The {COLOR GREEN}Dowsing Machine{COLOR DARK_GRAY}!"))
+			msgbox(format("{COLOR GREEN}5 Oran Berries{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_DOWSING_MACHINE)
+			giveitem(ITEM_ORAN_BERRY, 5)
 		case 2:
 			msgbox(format("{COLOR GREEN}5 Revives{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
@@ -787,6 +792,7 @@ script Sanctuary_EventScript_GameIntro {
 			setflag(FLAG_LELOUCH_INTRO)
 			setflag(FLAG_ZONE_SANCTUARY_HONEY_GIRL)
 			additem(ITEM_SUPER_ROD)
+			additem(ITEM_DOWSING_MACHINE)
 			additem(ITEM_INFINITE_REPEL)
 			additem(ITEM_INFINITE_CANDY)
 			additem(ITEM_HEXORB)
@@ -1482,6 +1488,17 @@ script EventScript_ExpertM {
 	msgbox(format("The {COLOR GREEN}Infinite Candy{COLOR DARK_GRAY} is excellent for training new Pokémon!"), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_EXPERT_M, Common_Movement_FaceLeft)
 	waitmovement(LOCALID_EXPERT_M)
+	release
+}
+
+script EventScript_Backpacker {
+	lock
+	faceplayer
+	if (checkitem(ITEM_DOWSING_MACHINE) == FALSE) {
+		msgbox(format("When you're on the road, you can find all sorts of items if you look in the right places.\pThat's made easier if you have this!"))
+		giveitem(ITEM_DOWSING_MACHINE)
+	}
+	msgbox(format("The {COLOR GREEN}Dowsing Machine{COLOR DARK_GRAY} lets you find hidden items in the field such as {COLOR GREEN}Berries{COLOR DARK_GRAY} and {COLOR GREEN}Shards{COLOR DARK_GRAY}!"), MSGBOX_AUTOCLOSE)
 	release
 }
 
