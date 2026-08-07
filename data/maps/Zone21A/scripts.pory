@@ -1,6 +1,6 @@
-Zone21A_MapScripts::
-	.byte 0
+mapscripts Zone21A_MapScripts {}
 
+raw `
 Zone21A_EventScript_Exit::
 	lockall
 	compare VAR_ZONE, 21
@@ -235,3 +235,4 @@ Zone21A_EventScript_Everstone::
 Zone21A_EventScript_TM28::
 	finditem ITEM_TM28
 	end
+`
