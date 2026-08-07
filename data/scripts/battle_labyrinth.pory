@@ -1762,6 +1762,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 2) {
 		return
 	}
+	additem(ITEM_SILK_SCARF)
 	additem(ITEM_TM_BUG_BITE)
 	additem(ITEM_TM_HIDDEN_POWER)
 	additem(ITEM_TM_NATURAL_GIFT)
