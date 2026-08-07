@@ -382,6 +382,12 @@ script EventScript_NextZone {
 				setflag(FLAG_HIDE_ZONE10A_MAX)
 			}
 			warp(MAP_ZONE10A, 255, 42, 51)
+		case 11:
+			warp(MAP_ZONE11A, 255, 46, 2)
+		case 12:
+			warp(MAP_ZONE12A, 255, 11, 14)
+		case 13:
+			warp(MAP_ZONE12A, 255, 30, 30)
 		case 15:
 			warp(MAP_ZONE15A, 255, 4, 3)
 	}
