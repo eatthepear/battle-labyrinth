@@ -499,28 +499,6 @@ Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_3
 
-=== TRAINER_PBL_PATRICK ===
-Name: Patrick
-Class: School Kid
-Pic: School Kid M
-Music: Girl
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Party Size: 2
-Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_3
-
-=== TRAINER_PBL_BORIS ===
-Name: Boris
-Class: Youngster
-Pic: Youngster
-Music: Male
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Party Size: 2
-Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_3
-
 === TRAINER_PBL_RICHARD ===
 Name: Richard
 Class: Bug Catcher
@@ -532,6 +510,17 @@ Party Size: 3
 Pool Prune: Non Bug
 Copy Pool: TRAINER_POOL_ZONE_3
 
+=== TRAINER_PBL_PATRICK ===
+Name: Patrick
+Class: School Kid
+Pic: School Kid M
+Music: Girl
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_3
+
 === TRAINER_PBL_LUNA_AND_NORA ===
 Name: Luna&Nora
 Class: Twins
@@ -541,6 +530,17 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: Yes
 Party Size: 2
 Pool Prune: Non Normal
+Copy Pool: TRAINER_POOL_ZONE_3
+
+=== TRAINER_PBL_BORIS ===
+Name: Boris
+Class: Youngster
+Pic: Youngster
+Music: Male
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_3
 
 === TRAINER_PBL_BILL_OPTIONAL_1 ===
