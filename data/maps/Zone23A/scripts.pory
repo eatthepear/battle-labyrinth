@@ -1,5 +1,36 @@
 mapscripts Zone23A_MapScripts {}
 
+script Zone23A_EventScript_Lacey {
+	lock
+	faceplayer
+	if (flag(FLAG_BEAT_BOSS_23)) {
+		setspeaker("Lacey")
+		msgbox(format("I see your potential. You can do anything you set your heart to!\pThere are other Gym Leaders, stronger than I am. Perhaps defeating them will prove a worthy challenge!"))
+		release
+		end
+	}
+	setspeaker("Lacey")
+	msgbox(format("I've been waiting in eager anticipation!\pWhat have I been waiting for?\pFor a worthy challenger to appear!\pAre you that worthy challenger?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Don't keep me waiting any longer than needed!\pTake a deep breath, and prepare yourself for the climb!"), MSGBOX_AUTOCLOSE)
+		releaseall
+		end
+	}
+	msgbox(format("I have a feeling that our battle will turn out to be worth the wait!\pI hope you'll show me that your skill as a Trainer surpasses even mine."))
+	call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_LACEY_BOSS_23, format("You have proven to be a wall that I am unable to surmount!"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Lacey")
+	msgbox(format("There are some things that seem out of reach no matter how hard you try.\pHowever, it's important that you never give up - no matter the opponent or the odds.\pI could tell from our battle that you and your Pokémon understand that.\pTo commemorate such an impressive show of teamwork, please accept the Cliff Badge!"))
+	setspeaker(SP_NAME_NONE)
+	// giveitem(ITEM_TM_DRAIN_PUNCH)
+	msgbox(format("With {COLOR GREEN}Rock Tomb{COLOR DARK_GRAY}, a Pokémon can hurl rocks at its target, not only inflicting damage but also lowering the target's Speed.\pAnd the {COLOR GREEN}Hard Stone{COLOR DARK_GRAY} increases the damage of your Pokémon's Rock-type moves by 20%. Forms a nifty combo, huh?\pYou're just starting on your journey, so enjoy the ride and feel the breeze in your face!"))
+	setflag(FLAG_BEAT_BOSS_23)
+	release
+	end
+}
+
 raw `
 Zone23A_EventScript_Exit::
 	lockall
