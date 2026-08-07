@@ -2,10 +2,16 @@
   "universalMoves":
     [
       "MOVE_HIDDEN_POWER",
+      "MOVE_FACADE",
       "MOVE_NATURAL_GIFT",
+      "MOVE_PROTECT",
+      "MOVE_REST",
       "MOVE_RETURN",
+      "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
-      "MOVE_TERA_BLAST"
+      "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
+      "MOVE_TOXIC"
     ],
   "signatureTeachables":
     [
