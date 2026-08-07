@@ -74,15 +74,15 @@ script Zone2A_EventScript_TriggerLeaf {
 	waitse
 	delay(16)
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
-	switch(var(VAR_TEMP_1)) {
-		case 20:
-			applymovement(LOCALID_LEAF_2A, Common_Movement_WalkUp)
+	switch(var(VAR_TEMP_0)) {
+		case 47:
+			applymovement(LOCALID_LEAF_2A, Common_Movement_WalkLeft)
 			waitmovement(0)
-		case 22:
-			applymovement(LOCALID_LEAF_2A, Common_Movement_WalkDown)
+		case 49:
+			applymovement(LOCALID_LEAF_2A, Common_Movement_WalkRight)
 			waitmovement(0)
-		case 23:
-			applymovement(LOCALID_LEAF_2A, Common_Movement_WalkDown2)
+		case 50:
+			applymovement(LOCALID_LEAF_2A, Common_Movement_WalkRight2)
 			waitmovement(0)
 	}
 	applymovement(LOCALID_LEAF_2A, Common_Movement_WalkLeft3)
@@ -91,19 +91,19 @@ script Zone2A_EventScript_TriggerLeaf {
 	msgbox(format("Hi! My name's {COLOR BLUE}Leaf{COLOR DARK_GRAY}.\pIf you want to go forward, you'll have to beat me!\pSo, are you ready for our battle?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		msgbox(format("Okay. You just let me know when you're ready!"), MSGBOX_AUTOCLOSE)
-		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 		waitmovement(0)
-		applymovement(LOCALID_LEAF_2A, Common_Movement_WalkRight3)
+		applymovement(LOCALID_LEAF_2A, Common_Movement_WalkDown3)
 		waitmovement(0)
-		switch(var(VAR_TEMP_1)) {
-			case 20:
-				applymovement(LOCALID_LEAF_2A, Common_Movement_WalkDown)
+		switch(var(VAR_TEMP_0)) {
+			case 47:
+				applymovement(LOCALID_LEAF_2A, Common_Movement_WalkRight)
 				waitmovement(0)
-			case 22:
-				applymovement(LOCALID_LEAF_2A, Common_Movement_WalkUp)
+			case 49:
+				applymovement(LOCALID_LEAF_2A, Common_Movement_WalkLeft)
 				waitmovement(0)
-			case 23:
-				applymovement(LOCALID_LEAF_2A, Common_Movement_WalkUp2)
+			case 50:
+				applymovement(LOCALID_LEAF_2A, Common_Movement_WalkLeft2)
 				waitmovement(0)
 		}
 		fadedefaultbgm
