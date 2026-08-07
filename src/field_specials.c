@@ -4668,7 +4668,7 @@ u16 GetNumTrainersRemaining(void)
         count += !HasTrainerBeenFought(TRAINER_PBL_ELTON);
         count += !HasTrainerBeenFought(TRAINER_PBL_WILLIE);
         count += !FlagGet(FLAG_BEAT_BOSS_16);
-        count += 4 * !HasTrainerBeenFought(TRAINER_PBL_PIRATE_4);
+        // count += 4 * !HasTrainerBeenFought(TRAINER_PBL_PIRATE_4);
         break;
     case 20:
         count += !HasTrainerBeenFought(TRAINER_PBL_SHAWN);
