@@ -1,6 +1,6 @@
-Zone22A_MapScripts::
-	.byte 0
+mapscripts Zone22A_MapScripts {}
 
+raw `
 Zone22A_EventScript_Exit::
 	lockall
 	compare VAR_ZONE, 22
@@ -362,3 +362,4 @@ Zone22A_EventScript_3000::
 
 Zone22A_Text_Found3000:
 	.string "Found ¥3000!$"
+`
