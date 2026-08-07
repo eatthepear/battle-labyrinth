@@ -1867,6 +1867,8 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 13) {
 		return
 	}
+	additem(ITEM_TM_REST)
+	additem(ITEM_TM_SLEEP_TALK)
 
 	if (var(VAR_ZONE) == 15) {
 		return

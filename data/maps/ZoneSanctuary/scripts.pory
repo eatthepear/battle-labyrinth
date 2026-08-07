@@ -573,6 +573,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setvar(VAR_ZONE, 13)
 			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
 		case 13:
+			setflag(FLAG_HIDE_ZONE13A_MAX)
 			completesubquest(QUEST_PBL, 12)
 			completesubquest(QUEST_PBL, 13)
 			setvar(VAR_ZONE, 15)

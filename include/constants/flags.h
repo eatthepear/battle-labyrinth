@@ -238,7 +238,7 @@
 #define FLAG_ZONE10B_RECEIVED_LUCKY_EGG                   0x132
 #define FLAG_ZONE11A_NUZLOCKE_BOUGHT_RUIN                 0x133
 #define FLAG_HIDE_ZONE12A_CAMPER_PICNICKER                0x134
-#define FLAG_HIDE_ZONE12A_NURSE                           0x135
+#define FLAG_HIDE_ZONE13A_MAX                           0x135
 #define FLAG_ZONE13A_RECEIVED_UTILITY_UMBRELLA            0x136
 #define FLAG_ZONE13B_RECEIVED_FLASHLIGHT                  0x137
 #define FLAG_ZONE13C_RECEIVED_ZOOM_LENS                   0x139
