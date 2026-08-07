@@ -980,9 +980,9 @@
 #define FLAG_ITEM_ZONE11A_RANDOM_2                 0x440
 #define FLAG_ITEM_ZONE12A_TM_BRICK_BREAK           0x441
 #define FLAG_ITEM_ZONE12A_THUNDER_STONE            0x442
-#define FLAG_ITEM_ZONE12A_FIRE_STONE               0x443
+#define FLAG_ITEM_ZONE12A_RANDOM_1               0x443
 #define FLAG_ITEM_ZONE12A_WATER_STONE              0x444
-#define FLAG_ITEM_ZONE12A_LEAF_STONE               0x445
+#define FLAG_ITEM_ZONE12A_TM_SMART_STRIKE               0x445
 #define FLAG_ITEM_ZONE13A_LEAF_STONE               0x446
 #define FLAG_ITEM_ZONE13A_SHINY_STONE              0x447
 #define FLAG_ITEM_ZONE14A_FULL_HEAL                0x448

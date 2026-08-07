@@ -10,7 +10,7 @@ mapscripts Zone12A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE12A_FIRE_STONE)) {
+		if (flag(FLAG_ITEM_ZONE12A_RANDOM_1)) {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -20,10 +20,10 @@ mapscripts Zone12A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE12A_LEAF_STONE)) {
-			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		if (flag(FLAG_ITEM_ZONE12A_TM_SMART_STRIKE)) {
+			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST_OPEN)
 		} else {
-			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST)
+			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST)
 		}
 	}
 }
@@ -112,9 +112,9 @@ script Zone12A_EventScript_ThunderStone {
 	end
 }
 
-script Zone12A_EventScript_FireStone {
+script Zone12A_EventScript_Random1 {
 	lock
-	if (flag(FLAG_ITEM_ZONE12A_FIRE_STONE)) {
+	if (flag(FLAG_ITEM_ZONE12A_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -122,9 +122,10 @@ script Zone12A_EventScript_FireStone {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE12A_FIRE_STONE)
+	setflag(FLAG_ITEM_ZONE12A_RANDOM_1)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_FIRE_STONE, 1)
+	specialvar(VAR_TEMP_1, RandomItemChest)
+	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
@@ -146,19 +147,19 @@ script Zone12A_EventScript_WaterStone {
 	end
 }
 
-script Zone12A_EventScript_LeafStone {
+script Zone12A_EventScript_TMSmartStrike {
 	lock
-	if (flag(FLAG_ITEM_ZONE12A_LEAF_STONE)) {
+	if (flag(FLAG_ITEM_ZONE12A_TM_SMART_STRIKE)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
 	}
 	waitse
 	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE12A_LEAF_STONE)
+	setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE12A_TM_SMART_STRIKE)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_LEAF_STONE, 1)
+	finditem(ITEM_TM_SMART_STRIKE)
 	release
 	end
 }
