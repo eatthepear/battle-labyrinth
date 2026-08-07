@@ -1,5 +1,57 @@
 mapscripts Zone21A_MapScripts {}
 
+script Zone21A_EventScript_TriggerWally {
+	lockall
+	applymovement(LOCALID_WALLY_21A, Common_Movement_WalkDown2)
+	waitmovement(0)
+	playbgm(MUS_BW_FRIEND, TRUE)
+	applymovement(LOCALID_WALLY_21A, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	delay(16)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	switch(var(VAR_TEMP_0)) {
+		case 22:
+			applymovement(LOCALID_WALLY_21A, Common_Movement_WalkLeft)
+			waitmovement(0)
+		case 24:
+			applymovement(LOCALID_WALLY_21A, Common_Movement_WalkRight)
+			waitmovement(0)
+	}
+	applymovement(LOCALID_WALLY_21A, Common_Movement_WalkDown2)
+	waitmovement(0)
+	setspeaker("Wally")
+	msgbox(format("Hello!"))
+	call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_WALLY_BOSS_21, format("Defeat!"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Wally")
+	msgbox(format("I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_HM_STRENGTH)
+	setspeaker("Wally")
+	msgbox(format("Well, anyways, I've gotta run now.\pBye bye!"), MSGBOX_AUTOCLOSE)
+	switch(var(VAR_TEMP_0)) {
+		case 22:
+			applymovement(LOCALID_WALLY_21A, Common_Movement_WalkRight)
+			waitmovement(0)
+		case 23:
+		case 24:
+			applymovement(LOCALID_WALLY_21A, Common_Movement_WalkLeft)
+			waitmovement(0)
+	}
+	applymovement(LOCALID_WALLY_21A, Common_Movement_WalkDown6)
+	waitmovement(0)
+	removeobject(LOCALID_WALLY_21A)
+	setflag(FLAG_BEAT_BOSS_21)
+	setvar(VAR_ZONE_21_STATE, 2)
+	fadedefaultbgm
+	releaseall
+	end
+}
+
 raw `
 Zone21A_EventScript_Exit::
 	lockall
