@@ -76,7 +76,6 @@ mart Zone2A_Shop_TMShop {
 
 mart Zone6A_Shop_TMShop {
 	ITEM_TM_WORK_UP
-	ITEM_TM_SWAGGER
 }
 
 mart Zone10A_Shop_TMShop {
@@ -115,7 +114,6 @@ mart Sanctuary_Shop_TMShop {
 	ITEM_TM_HIDDEN_POWER
 	ITEM_TM_NATURAL_GIFT
 	ITEM_TM_WORK_UP
-	ITEM_TM_SWAGGER
 	ITEM_TM_TRAILBLAZE
 	ITEM_TM_FLAME_CHARGE
 	ITEM_TM_CHARGE_BEAM
@@ -1806,7 +1804,6 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_NET_BALL)
 	additem(ITEM_TM_PLUCK)
 	additem(ITEM_TM_WORK_UP)
-	additem(ITEM_TM_SWAGGER)
 	additem(ITEM_DIVE_BALL, 5)
 	additem(ITEM_HM_FLASH)
 

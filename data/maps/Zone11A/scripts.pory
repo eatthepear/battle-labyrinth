@@ -66,7 +66,7 @@ script Zone11A_EventScript_Archer {
 	setflag(FLAG_BEAT_BOSS_11)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	msgbox(format("{COLOR BLUE}Archer{COLOR DARK_GRAY} vanished into thin air without a trace!\pHow could he have done such a thing?\pThere's something on the ground where he was standing…"))
-	giveitem(ITEM_ROCKY_HELMET)
+	giveitem(ITEM_TM_SWAGGER)
 	closemessage
 	fadedefaultbgm
 	release
