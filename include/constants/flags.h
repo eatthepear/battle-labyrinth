@@ -928,12 +928,12 @@
 #define FLAG_ITEM_ZONE3A_WISE_GLASSES                  0x408
 #define FLAG_ITEM_ZONE3A_HYPER_POTION              0x409
 #define FLAG_ITEM_ZONE4A_SILVER_POWDER             0x40A
-#define FLAG_ITEM_ZONE4A_RANDOM_1                  0x40B
+// #define FLAG_ITEM_ZONE4A_RANDOM_1                  0x40B
 #define FLAG_ITEM_ZONE4B_RANDOM_1                  0x40C
-#define FLAG_ITEM_ZONE4C_MUSCLE_BAND               0x40D
+#define FLAG_ITEM_ZONE4C_RANDOM_1               0x40D
 #define FLAG_ITEM_ZONE4C_TWISTED_SPOON             0x40E
-#define FLAG_ITEM_ZONE4D_WISE_GLASSES              0x40F
-#define FLAG_ITEM_ZONE4D_TM_HIDDEN_POWER           0x410
+#define FLAG_ITEM_ZONE4D_RANDOM_1              0x40F
+// #define FLAG_ITEM_ZONE4D_TM_HIDDEN_POWER           0x410
 #define FLAG_ITEM_ZONE4E_RANDOM_1                  0x411
 #define FLAG_ITEM_ZONE4E_POISON_BARB               0x412
 #define FLAG_ITEM_ZONE5A_MIRACLE_SEED              0x413
