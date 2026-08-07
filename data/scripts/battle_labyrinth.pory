@@ -1655,8 +1655,257 @@ script Debug_CheatStart_PBL_SelectZone {
 			copyvar(VAR_LEVEL_CAP, VAR_ZONE)
 	}
 }
+script Debug_CheatStart_PBL_SetFlags {
+	setflag(FLAG_ZONE1A_RECEIVED_FWG)
+	setflag(FLAG_BEAT_BOSS_1)
 
-script Debug_CheatStart_PBL_GiveSetStuff {
+	if (var(VAR_ZONE) == 2) {
+		return
+	}
+	setflag(FLAG_BEAT_BOSS_2)
+
+	if (var(VAR_ZONE) == 3) {
+		return
+	}
+	setflag(FLAG_BADGE01_GET)
+	setflag(FLAG_BEAT_BOSS_3)
+
+	if (var(VAR_ZONE) == 4) {
+		return
+	}
+	setflag(FLAG_BEAT_BOSS_4)
+
+	if (var(VAR_ZONE) == 5) {
+		return
+	}
+	setflag(FLAG_BADGE02_GET)
+	setflag(FLAG_BEAT_BOSS_5)
+
+	if (var(VAR_ZONE) == 6) {
+		return
+	}
+	setflag(FLAG_BEAT_BOSS_6)
+
+	if (var(VAR_ZONE) == 7) {
+		return
+	}
+	setflag(FLAG_BEAT_BOSS_7)
+	setflag(FLAG_BEAT_BOSS_8)
+
+	if (var(VAR_ZONE) == 9) {
+		return
+	}
+	setflag(FLAG_BEAT_BOSS_9)
+
+	if (var(VAR_ZONE) == 10) {
+		return
+	}
+	setflag(FLAG_BEAT_BOSS_10)
+	setflag(FLAG_BADGE03_GET)
+
+	if (var(VAR_ZONE) == 11) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 12) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 13) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 15) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 16) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 17) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 18) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 20) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 21) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 22) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 23) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 24) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 26) {
+		return
+	}
+}
+
+script Debug_CheatStart_PBL_GiveItems {
+	additem(ITEM_QUICK_CLAW)
+	additem(ITEM_TM_FALSE_SWIPE)
+	additem(ITEM_ORAN_BERRY, 5)
+
+	if (var(VAR_ZONE) == 2) {
+		return
+	}
+	additem(ITEM_TM_BUG_BITE)
+	additem(ITEM_TM_HIDDEN_POWER)
+	additem(ITEM_TM_NATURAL_GIFT)
+	additem(ITEM_HM_ROCK_SMASH)
+	additem(ITEM_REVIVE, 5)
+
+	if (var(VAR_ZONE) == 3) {
+		return
+	}
+	additem(ITEM_MUSCLE_BAND)
+	additem(ITEM_WISE_GLASSES)
+	additem(ITEM_TM_ROCK_TOMB)
+	additem(ITEM_HARD_STONE)
+	additem(ITEM_NEST_BALL, 5)
+	additem(ITEM_LAVA_COOKIE)
+
+	if (var(VAR_ZONE) == 4) {
+		return
+	}
+	additem(ITEM_SILVER_POWDER)
+	additem(ITEM_TWISTED_SPOON)
+	additem(ITEM_POISON_BARB)
+	additem(ITEM_TM_VENOSHOCK)
+	additem(ITEM_HM_CUT)
+
+	if (var(VAR_ZONE) == 5) {
+		return
+	}
+	additem(ITEM_MIRACLE_SEED)
+	additem(ITEM_TM_LIGHT_SCREEN)
+	additem(ITEM_TM_REFLECT)
+	additem(ITEM_SITRUS_BERRY, 5)
+	additem(ITEM_NEVER_MELT_ICE)
+	additem(ITEM_TM_ICY_WIND)
+
+	if (var(VAR_ZONE) == 6) {
+		return
+	}
+	additem(ITEM_NET_BALL)
+	additem(ITEM_TM_PLUCK)
+	additem(ITEM_TM_WORK_UP)
+	additem(ITEM_TM_SWAGGER)
+	additem(ITEM_DIVE_BALL, 5)
+	additem(ITEM_HM_FLASH)
+
+	if (var(VAR_ZONE) == 7) {
+		return
+	}
+	additem(ITEM_SHARP_BEAK)
+	additem(ITEM_BLACK_BELT)
+	additem(ITEM_TM_DRAINING_KISS)
+	additem(ITEM_MAGNET)
+	additem(ITEM_SMOKE_BALL)
+	additem(ITEM_RED_SHARD, 5)
+	additem(ITEM_TM_BULLDOZE)
+
+	if (var(VAR_ZONE) == 9) {
+		return
+	}
+	additem(ITEM_BIG_ROOT)
+	additem(ITEM_TM_PLUCK)
+	additem(ITEM_MYSTIC_WATER)
+	additem(ITEM_CHARCOAL)
+	additem(ITEM_TM_FLING)
+	additem(ITEM_TM_RETURN)
+	additem(ITEM_GREEN_SHARD, 5)
+
+	if (var(VAR_ZONE) == 10) {
+		return
+	}
+	additem(ITEM_BLUE_SHARD, 5)
+	additem(ITEM_TM_DIG)
+	additem(ITEM_SOFT_SAND)
+	additem(ITEM_BLACK_GLASSES)
+	additem(ITEM_SAFETY_GOGGLES)
+	additem(ITEM_TM_TRAILBLAZE)
+	additem(ITEM_TM_FLAME_CHARGE)
+	additem(ITEM_TM_CHARGE_BEAM)
+	additem(ITEM_TM_POWER_UP_PUNCH)
+	additem(ITEM_TM_IRON_TAIL)
+	additem(ITEM_EVIOLITE)
+	additem(ITEM_POKEMON_BOX_LINK)
+
+	if (var(VAR_ZONE) == 11) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 12) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 13) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 15) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 16) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 17) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 18) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 20) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 21) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 22) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 23) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 24) {
+		return
+	}
+
+	if (var(VAR_ZONE) == 26) {
+		return
+	}
+}
+
+script Debug_CheatStart_PBL_GiveMons {
+	msgbox(format("Give random encounters?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		return
+	}
+
 	random(5)
 	if (var(VAR_RESULT) == 1) {
 		setflag(FLAG_TEMP_1)
@@ -1701,11 +1950,6 @@ script Debug_CheatStart_PBL_GiveSetStuff {
 	setvar(VAR_TEMP_1, 3) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
-	additem(ITEM_QUICK_CLAW)
-	additem(ITEM_TM_FALSE_SWIPE)
-	additem(ITEM_ORAN_BERRY, 5)
-	setflag(FLAG_ZONE1A_RECEIVED_FWG)
-	setflag(FLAG_BEAT_BOSS_1)
 
 	if (var(VAR_ZONE) == 2) {
 		return
@@ -1718,16 +1962,6 @@ script Debug_CheatStart_PBL_GiveSetStuff {
 	setvar(VAR_TEMP_1, 5) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
-	additem(ITEM_SILK_SCARF)
-	additem(ITEM_TM_BUG_BITE)
-	if (var(VAR_DIFFICULTY) < DIFFICULTY_BRUTAL) {
-		additem(ITEM_TM_PROTECT)
-	}
-	additem(ITEM_TM_HIDDEN_POWER)
-	additem(ITEM_TM_NATURAL_GIFT)
-	additem(ITEM_HM_ROCK_SMASH)
-	additem(ITEM_REVIVE, 5)
-	setflag(FLAG_BEAT_BOSS_2)
 
 	if (var(VAR_ZONE) == 3) {
 		return
@@ -1740,11 +1974,6 @@ script Debug_CheatStart_PBL_GiveSetStuff {
 	setvar(VAR_TEMP_1, 7) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
-	additem(ITEM_TM_ROCK_TOMB)
-	additem(ITEM_HARD_STONE)
-	additem(ITEM_NEST_BALL, 5)
-	setflag(FLAG_BADGE01_GET)
-	setflag(FLAG_BEAT_BOSS_3)
 	random(5)
 	if (var(VAR_RESULT) == 1) {
 		setflag(FLAG_TEMP_1)
@@ -1765,14 +1994,6 @@ script Debug_CheatStart_PBL_GiveSetStuff {
 	setvar(VAR_TEMP_1, 9) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
-	additem(ITEM_SILVER_POWDER)
-	additem(ITEM_TWISTED_SPOON)
-	additem(ITEM_MUSCLE_BAND)
-	additem(ITEM_WISE_GLASSES)
-	additem(ITEM_SACRED_ASH)
-	additem(ITEM_TM_VENOSHOCK)
-	additem(ITEM_HM_CUT)
-	setflag(FLAG_BEAT_BOSS_4)
 
 	if (var(VAR_ZONE) == 5) {
 		return
@@ -1785,13 +2006,6 @@ script Debug_CheatStart_PBL_GiveSetStuff {
 	setvar(VAR_TEMP_1, 11) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
-	additem(ITEM_TM_THIEF)
-	additem(ITEM_MIRACLE_SEED)
-	additem(ITEM_TM_LIGHT_SCREEN)
-	additem(ITEM_TM_REFLECT)
-	additem(ITEM_SITRUS_BERRY, 5)
-	setflag(FLAG_BADGE02_GET)
-	setflag(FLAG_BEAT_BOSS_5)
 	random(5)
 	if (var(VAR_RESULT) == 1) {
 		setflag(FLAG_TEMP_1)
@@ -1812,10 +2026,6 @@ script Debug_CheatStart_PBL_GiveSetStuff {
 	setvar(VAR_TEMP_1, 13) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
-	additem(ITEM_TM_PLUCK)
-	additem(ITEM_RED_SHARD, 5)
-	additem(ITEM_HM_FLASH)
-	setflag(FLAG_BEAT_BOSS_6)
 
 	if (var(VAR_ZONE) == 7) {
 		return
@@ -1836,14 +2046,6 @@ script Debug_CheatStart_PBL_GiveSetStuff {
 	setvar(VAR_TEMP_1, 15) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
-	additem(ITEM_BLACK_BELT)
-	additem(ITEM_SHARP_BEAK)
-	additem(ITEM_TM_DRAINING_KISS)
-	additem(ITEM_MAGNET)
-	additem(ITEM_GREEN_SHARD, 5)
-	additem(ITEM_TM_BULLDOZE)
-	setflag(FLAG_BEAT_BOSS_7)
-	setflag(FLAG_BEAT_BOSS_8)
 
 	if (var(VAR_ZONE) == 9) {
 		return
@@ -1856,13 +2058,6 @@ script Debug_CheatStart_PBL_GiveSetStuff {
 	setvar(VAR_TEMP_1, 17) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
-	additem(ITEM_BIG_ROOT)
-	additem(ITEM_TM_FLING)
-	additem(ITEM_MYSTIC_WATER)
-	additem(ITEM_CHARCOAL)
-	additem(ITEM_TM_RETURN)
-	// additem(ITEM_TM_RETURN) TODO whatever the zone reward is
-	setflag(FLAG_BEAT_BOSS_9)
 
 	if (var(VAR_ZONE) == 10) {
 		return
@@ -1875,16 +2070,6 @@ script Debug_CheatStart_PBL_GiveSetStuff {
 	setvar(VAR_TEMP_1, 19) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
-	additem(ITEM_TM_DIG)
-	additem(ITEM_SOFT_SAND)
-	additem(ITEM_SAFETY_GOGGLES)
-	additem(ITEM_BLACK_GLASSES)
-	additem(ITEM_BLUE_SHARD, 5)
-	additem(ITEM_TM_IRON_TAIL)
-	additem(ITEM_EVIOLITE)
-	additem(ITEM_POKEMON_BOX_LINK)
-	setflag(FLAG_BEAT_BOSS_10)
-	setflag(FLAG_BADGE03_GET)
 
 	if (var(VAR_ZONE) == 11) {
 		return
@@ -2063,7 +2248,9 @@ script Debug_CheatStart_PBL_GiveSetStuff {
 
 script Debug_CheatStart_PBL {
 	call(Debug_CheatStart_PBL_SelectZone)
-	call(Debug_CheatStart_PBL_GiveSetStuff)
+	call(Debug_CheatStart_PBL_SetFlags)
+	call(Debug_CheatStart_PBL_GiveItems)
+	call(Debug_CheatStart_PBL_GiveMons)
 	release
 	end
 }
