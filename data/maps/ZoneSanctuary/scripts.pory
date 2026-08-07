@@ -455,14 +455,13 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_DOWSING_MACHINE)
 		case 2:
-			msgbox(format("{COLOR GREEN}HM06 - Rock Smash{COLOR DARK_GRAY}!"))
-			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_HM_ROCK_SMASH, 1)
-			helpwindow(HELP_SIGN_HIDDEN_MACHINES)
-		case 3:
 			msgbox(format("{COLOR GREEN}5 Revives{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_REVIVE, 5)
+		case 3:
+			msgbox(format("{COLOR GREEN}5 Nest Balls{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_NEST_BALL, 5)
 		case 4:
 			msgbox(format("{COLOR GREEN}HM01 - Cut{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
@@ -477,9 +476,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 			giveitem(ITEM_HM_FLASH)
 		case 7:
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} is…"))
-			msgbox(format("{COLOR GREEN}5 Green Shards{COLOR DARK_GRAY}!"))
-			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_GREEN_SHARD, 5)
+			// msgbox(format("{COLOR GREEN}5 Green Shards{COLOR DARK_GRAY}!"))
+			// setspeaker(SP_NAME_NONE)
+			// giveitem(ITEM_GREEN_SHARD, 5)
 			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY} is…"))
 			msgbox(format("{COLOR GREEN}TM78 - Bulldoze!{COLOR DARK_GRAY}"))
