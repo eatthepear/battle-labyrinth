@@ -12793,14 +12793,14 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_WEATHER_BALL] =
+    [ITEM_TM_ATTRACT] =
     {
         .name = ITEM_NAME("TM45"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "The move's type and\n"
-            "power change with\n"
-            "the weather."),
+            "Makes it tough to\n"
+            "attack a foe of the\n"
+            "opposite gender."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12835,14 +12835,14 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_BULLET_SEED] =
+    [ITEM_TM_WEATHER_BALL] =
     {
         .name = ITEM_NAME("TM48"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Shoots 2 to 5 seeds\n"
-            "in a row to strike\n"
-            "the foe."),
+            "The move's type and\n"
+            "power change with\n"
+            "the weather."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

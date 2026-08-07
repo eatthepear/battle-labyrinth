@@ -46,10 +46,10 @@
     F(FACADE) \
     F(FLAME_CHARGE) \
     F(REST) \
-    F(WEATHER_BALL) \
+    F(ATTRACT) \
     F(THIEF) \
     F(AGILITY) \
-    F(BULLET_SEED) \
+    F(WEATHER_BALL) \
     F(DRAINING_KISS) \
     F(OVERHEAT) \
     F(ROOST) \

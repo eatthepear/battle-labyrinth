@@ -2486,7 +2486,7 @@ AI: AI_FLAG_BOSS
 Mugshot: Blue
 Difficulty: Normal
 				
-Thievul @ Dark Gem
+Thievul (F) @ Dark Gem
 Timid Nature
 Ability: Stakeout
 Level: 30
@@ -2494,9 +2494,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dark Pulse
 - Burning Jealousy
 - U-Turn
-- Taunt
+- Attract
 
-Nidoqueen @ Expert Belt
+Nidoqueen (F) @ Expert Belt
 Mild Nature
 Ability: Sheer Force
 Level: 30
@@ -2504,9 +2504,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sludge Wave
 - Scorching Sands
 - Crunch
-- Rock Slide
+- Attract
 
-Swoobat @ Sharp Beak
+Swoobat (F) @ Sharp Beak
 Modest Nature
 Ability: Unaware
 Level: 30
@@ -2514,7 +2514,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psychic
 - Air Slash
 - Giga Drain
-- Roost
+- Attract
 
 Pyroar (M) @ Sitrus Berry
 Timid Nature
@@ -2536,7 +2536,7 @@ AI: AI_FLAG_BOSS
 Mugshot: Blue
 Difficulty: Brutal
 				
-Thievul @ Dark Gem
+Thievul (F) @ Dark Gem
 Timid Nature
 Ability: Stakeout
 Level: 30
@@ -2544,9 +2544,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dark Pulse
 - Burning Jealousy
 - U-Turn
-- Taunt
+- Attract
 
-Nidoqueen @ Expert Belt
+Nidoqueen (F) @ Expert Belt
 Mild Nature
 Ability: Sheer Force
 Level: 30
@@ -2554,9 +2554,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sludge Wave
 - Scorching Sands
 - Crunch
-- Rock Slide
+- Attract
 
-Swoobat @ Sharp Beak
+Swoobat (F) @ Sharp Beak
 Modest Nature
 Ability: Unaware
 Level: 30
@@ -2564,9 +2564,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psychic
 - Air Slash
 - Giga Drain
-- Roost
+- Attract
 
-Tsareena @ Muscle Band
+Tsareena (F) @ Muscle Band
 Jolly Nature
 Ability: 
 Level: 30
@@ -2574,7 +2574,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Trop Kick
 - Knock Off
 - Low Sweep
-- U-turn
+- Attract
 
 Pyroar (M) @ Sitrus Berry
 Timid Nature
