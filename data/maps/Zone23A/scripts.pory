@@ -1,6 +1,6 @@
-Zone23A_MapScripts::
-	.byte 0
+mapscripts Zone23A_MapScripts {}
 
+raw `
 Zone23A_EventScript_Exit::
 	lockall
 	compare VAR_ZONE, 23
@@ -195,3 +195,4 @@ Zone23A_EventScript_TimerBall::
 Zone23A_EventScript_DuskBall::
 	finditem ITEM_DUSK_BALL
 	end
+`
