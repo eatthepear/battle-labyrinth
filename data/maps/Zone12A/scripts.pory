@@ -46,7 +46,7 @@ script Zone12A_EventScript_TriggerSerena {
 	msgbox(format("Hello!"))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_SERENA_BOSS_12, format("Defeat!"))
+	// trainerbattle_no_intro(TRAINER_PBL_SERENA_BOSS_12, format("Defeat!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Serena")
 	msgbox(format("I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))

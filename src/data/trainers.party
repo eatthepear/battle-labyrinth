@@ -2095,105 +2095,6 @@ Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_COLLECTOR
 
-=== TRAINER_PBL_SERENA_BOSS_12 ===
-Name: Serena
-Class: Rival
-Pic: Serena
-Music: Female
-AI: AI_FLAG_BOSS
-Double Battle: No
-Mugshot: Pink
-
-Vivillon @ Silver Powder
-Timid Nature
-Ability: Compound Eyes
-Level: 27
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Air Cutter
-- Struggle Bug
-- Draining Kiss
-- Sleep Powder
-
-Braixen @ Wise Glasses
-Timid Nature
-Ability: Blaze
-Level: 27
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Incinerate
-- Psybeam
-- Scorching Sands
-- Will-O-Wisp
-
-Bewear @ Muscle Band
-Adamant Nature
-Ability: Fluffy
-Level: 27
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Force Palm
-- Stomp
-- Brutal Swing
-- Bind
-
-Absol @ Sitrus Berry
-Jolly Nature
-Ability: Super Luck
-Level: 28
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Assurance
-- Zen Headbutt
-- Taunt
-- Quick Attack
-
-=== TRAINER_PBL_SERENA_BOSS_12 ===
-Name: Serena
-Class: Rival
-Pic: Serena
-Music: Female
-AI: AI_FLAG_BOSS
-Double Battle: No
-Mugshot: Pink
-Difficulty: Brutal
-
-Vivillon @ Silver Powder
-Timid Nature
-Ability: Compound Eyes
-Level: 27
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Air Slash
-- Bug Buzz
-- Draining Kiss
-- Sleep Powder
-
-Braixen @ Wise Glasses
-Timid Nature
-Ability: Blaze
-Level: 27
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Flamethrower
-- Psyshock
-- Scorching Sands
-- Will-O-Wisp
-
-Bewear @ Muscle Band
-Adamant Nature
-Ability: Fluffy
-Level: 27
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Drain Punch
-- Return
-- Brutal Swing
-- Bind
-
-Absol @ Sitrus Berry
-Jolly Nature
-Ability: Super Luck
-Level: 28
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Night Slash
-- Psycho Cut
-- Taunt
-- Quick Attack
-
 === TRAINER_PBL_VIOLET ===
 Name: Abigail
 Class: Pokefan
@@ -2248,6 +2149,55 @@ Double Battle: No
 Party Size: 3
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_12
+
+=== TRAINER_PBL_SERENA_BOSS_13 ===
+Name: Serena
+Class: Rival
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Pink
+
+Vivillon @ Silver Powder
+Timid Nature
+Ability: Compound Eyes
+Level: 27
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Cutter
+- Struggle Bug
+- Draining Kiss
+- Sleep Powder
+
+Braixen @ Wise Glasses
+Timid Nature
+Ability: Blaze
+Level: 27
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Incinerate
+- Psybeam
+- Scorching Sands
+- Will-O-Wisp
+
+Bewear @ Muscle Band
+Adamant Nature
+Ability: Fluffy
+Level: 27
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Force Palm
+- Stomp
+- Brutal Swing
+- Bind
+
+Absol @ Sitrus Berry
+Jolly Nature
+Ability: Super Luck
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Assurance
+- Zen Headbutt
+- Taunt
+- Quick Attack
 
 === TRAINER_PBL_MAGMA_GRUNT_13A_1 ===
 Name: Grunt

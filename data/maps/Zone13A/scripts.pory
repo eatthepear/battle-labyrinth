@@ -13,26 +13,34 @@ mapscripts Zone13A_MapScripts {
 	}
 }
 
-script Zone13A_EventScript_MagmaGrunt {
+script Zone13A_EventScript_Serena {
 	lock
 	faceplayer
-	msgbox(format("a"))
-	trainerbattle_no_intro(TRAINER_PBL_MAGMA_GRUNT_13A_1, format("We lost!"))
-	msgbox(format("Oh, don't be irked!"))
-	closemessage
-	applymovement(LOCALID_MAGMA_GRUNT_13A, Common_Movement_FaceUp)
+	setspeaker("Serena")
+	msgbox(format("Hello! This is bad people hideout. R u strong? Let's battle!"))
+	call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_SERENA_BOSS_13, format("Defeat!"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Serena")
+	msgbox(format("U r too stronk. Here, take item."))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_SHALOUR_SABLE, 10)
+	setspeaker("Serena")
+	msgbox(format("These bad people are good, but I stronger, and I beat up bad people. See u later, we battle again!"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_SERENA_13A, Common_Movement_FaceUp)
 	waitmovement
 	opendoor(20, 18)
 	waitdooranim
-	applymovement(LOCALID_MAGMA_GRUNT_13A, Zone13A_Movement_MagmaGruntWalkUp)
+	applymovement(LOCALID_SERENA_13A, Zone13A_Movement_SerenaWalkUp)
 	waitmovement(0)
-	removeobject(LOCALID_MAGMA_GRUNT_13A)
-	setflag(FLAG_HIDE_ZONE13A_MAGMA_GRUNT)
+	removeobject(LOCALID_SERENA_13A)
+	setflag(FLAG_HIDE_ZONE13A_SERENA)
 	release
 	end
 }
 
-movement Zone13A_Movement_MagmaGruntWalkUp {
+movement Zone13A_Movement_SerenaWalkUp {
 	walk_up
 	set_invisible
 }
