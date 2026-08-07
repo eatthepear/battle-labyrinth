@@ -1848,6 +1848,13 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 11) {
 		return
 	}
+	additem(ITEM_SPELL_TAG)
+	additem(ITEM_FAIRY_FEATHER)
+	additem(ITEM_LEAF_STONE)
+	additem(ITEM_MOON_STONE)
+	additem(ITEM_BRIGHT_POWDER)
+	additem(ITEM_TM_SWAGGER)
+	additem(ITEM_TM_DEFOG)
 
 	if (var(VAR_ZONE) == 12) {
 		return
