@@ -1,6 +1,6 @@
 mapscripts Zone8B_MapScripts {
 	MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_ITEM_ZONE8B_HARD_STONE)) {
+		if (flag(FLAG_ITEM_ZONE8B_SMOKE_BALL)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -265,9 +265,9 @@ text Zone8B_Text_GalacticGrunt {
 	format("Now, I'm free! I can finally get rid of this silly uniform.\pIt's so uncomfortable!")
 }
 
-script Zone8B_EventScript_HardStone {
+script Zone8B_EventScript_SmokeBall {
 	lock
-	if (flag(FLAG_ITEM_ZONE8B_HARD_STONE)) {
+	if (flag(FLAG_ITEM_ZONE8B_SMOKE_BALL)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -275,9 +275,9 @@ script Zone8B_EventScript_HardStone {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE8B_HARD_STONE)
+	setflag(FLAG_ITEM_ZONE8B_SMOKE_BALL)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_HARD_STONE, 1)
+	finditem(ITEM_SMOKE_BALL, 1)
 	release
 	end
 }

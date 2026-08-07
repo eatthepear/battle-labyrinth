@@ -955,7 +955,7 @@
 #define FLAG_ITEM_ZONE8A_MAGNET                    0x427
 #define FLAG_ITEM_ZONE8A_RANDOM_1                  0x428
 #define FLAG_ITEM_ZONE8A_RANDOM_2                  0x429
-#define FLAG_ITEM_ZONE8B_HARD_STONE                0x42A
+#define FLAG_ITEM_ZONE8B_SMOKE_BALL                0x42A
 // #define FLAG_ITEM_ZONE8B_DUSK_BALL                 0x42B
 // #define FLAG_ITEM_ZONE8B_RANDOM_1                  0x42C
 // #define FLAG_ITEM_ZONE8C_RANDOM_2                  0x42D
