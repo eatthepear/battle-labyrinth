@@ -1785,6 +1785,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	}
 	additem(ITEM_SILVER_POWDER)
 	additem(ITEM_TWISTED_SPOON)
+	additem(ITEM_TM_SNARL)
 	additem(ITEM_POISON_BARB)
 	additem(ITEM_TM_VENOSHOCK)
 	additem(ITEM_HM_CUT)
