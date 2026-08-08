@@ -799,7 +799,7 @@ script Sanctuary_EventScript_GameIntro {
 			setflag(FLAG_COWGIRL_INTRO)
 			setflag(FLAG_VARRICK_INTRO)
 			setflag(FLAG_LELOUCH_INTRO)
-			setflag(FLAG_ZONE_SANCTUARY_HONEY_GIRL)
+			setflag(FLAG_ZONE_SANCTUARY_RECEIVED_HONEY)
 			additem(ITEM_SUPER_ROD)
 			additem(ITEM_DOWSING_MACHINE)
 			additem(ITEM_INFINITE_REPEL)
@@ -3384,10 +3384,10 @@ script ZoneSanctuary_EventScript_SchoolKidF {
 	lock
 	faceplayer
 	msgbox(format("Did you know? {COLOR GREEN}Honey{COLOR DARK_GRAY} can be slathered on {COLOR GREEN}Honey Trees{COLOR DARK_GRAY}, or used in the field to attract multiple wild Pokémon at the same time!\pYou can buy {COLOR GREEN}Honey{COLOR DARK_GRAY} at the {COLOR GREEN}Farmer's Stand{COLOR DARK_GRAY}, where my older sister works!"))
-	if (flag(FLAG_ZONE_SANCTUARY_HONEY_GIRL) == FALSE) {
+	if (flag(FLAG_ZONE_SANCTUARY_RECEIVED_HONEY) == FALSE) {
 		msgbox(format("Here, take some as a free sample!"))
 		giveitem(ITEM_HONEY, 3)
-		setflag(FLAG_ZONE_SANCTUARY_HONEY_GIRL)
+		setflag(FLAG_ZONE_SANCTUARY_RECEIVED_HONEY)
 	}
 	release
 }

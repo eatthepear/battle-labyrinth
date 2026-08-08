@@ -339,7 +339,7 @@ script Zone5A_EventScript_Random1 {
 
 script Zone5A_EventScript_Roughneck {
 	lock
-	if (flag(FLAG_ITEM_ZONE5A_TM_THIEF)) {
+	if (flag(FLAG_ZONE5A_RECEIVED_TM_THIEF)) {
 		msgbox(format("I'm totally not stealing this sign.\pJust… admiring it."))
 		release
 		end
@@ -351,7 +351,7 @@ script Zone5A_EventScript_Roughneck {
 	msgbox(format("Now, run along. You didn't see me here, okay?"), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_5A_ROUGHNECK, Common_Movement_FaceRight)
 	waitmovement(0)
-	setflag(FLAG_ITEM_ZONE5A_TM_THIEF)
+	setflag(FLAG_ZONE5A_RECEIVED_TM_THIEF)
 	release
 	end
 }

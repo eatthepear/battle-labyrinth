@@ -2420,7 +2420,6 @@ script EventScript_TestingLegendBattle {
 	clearflag(FLAG_SYS_NO_CATCHING)
 	clearflag(FLAG_SYS_SMART_WILD_AI_ON)
 	setflag(FLAG_SYS_NO_RUNNING)
-	setflag(FLAG_TESTING_FLAG)
 	release
 	end
 	// if you want to do double battle, do something like this instead:
@@ -2462,7 +2461,6 @@ script EventScript_TestingLegendBattle_Template {
 	clearflag(FLAG_SYS_NO_CATCHING)
 	clearflag(FLAG_SYS_SMART_WILD_AI_ON)
 	setflag(FLAG_SYS_NO_RUNNING)
-	setflag(FLAG_TESTING_FLAG)
 	release
 	end
 	// if you want to do double battle, do something like this instead:
