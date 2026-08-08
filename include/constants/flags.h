@@ -189,15 +189,15 @@
 #define FLAG_VARRICK_INTRO                                0x102
 #define FLAG_COWGIRL_INTRO                                0x103
 #define FLAG_LELOUCH_INTRO                                0x104
-#define FLAG_UNUSED_0x105                                  0x105
+// #define FLAG_UNUSED_0x105                                  0x105
 #define FLAG_JOY_INTRO                                    0x106
-#define FLAG_LELOUCH_SHARDS_INTRO                         0x107
-#define FLAG_MARIE_NUZLOCKE_RECEIVED                      0x108
-#define FLAG_ZONE0A_SAFARI_INTRO                          0x109
-#define FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES                 0x10A
-#define FLAG_ZONE0B_RECEIVED_EEVEE                        0x10B
+// #define FLAG_LELOUCH_SHARDS_INTRO                         0x107
+// #define FLAG_MARIE_NUZLOCKE_RECEIVED                      0x108
+// #define FLAG_ZONE0A_SAFARI_INTRO                          0x109
+// #define FLAG_ZONE0B_SHOWN_POKEDEX_ENTRIES                 0x10A
+// #define FLAG_ZONE0B_RECEIVED_EEVEE                        0x10B
 #define FLAG_ZONE1A_RECEIVED_FWG                          0x10C
-#define FLAG_UNUSED_0x10D                                 0x10D
+// #define FLAG_UNUSED_0x10D                                 0x10D
 #define FLAG_HIDE_ZONE2A_MAX                              0x10E
 #define FLAG_ZONE2A_NUZLOCKE_BOUGHT_BUG                   0x10F
 // #define FLAG_HIDE_ZONE3A_REMI                             0x110
