@@ -983,11 +983,11 @@
 #define FLAG_ITEM_ZONE12A_RANDOM_1               0x443
 #define FLAG_ITEM_ZONE12A_WATER_STONE              0x444
 #define FLAG_ITEM_ZONE12A_TM_SMART_STRIKE               0x445
-#define FLAG_ITEM_ZONE13A_LEAF_STONE               0x446
-#define FLAG_ITEM_ZONE13A_SHINY_STONE              0x447
-#define FLAG_ITEM_ZONE14A_FULL_HEAL                0x448
-#define FLAG_ITEM_ZONE14B_HYPER_POTION             0x449
-#define FLAG_ITEM_ZONE14C_DUSK_STONE               0x44A
+#define FLAG_ITEM_ZONE13A_SUN_STONE               0x446
+#define FLAG_ITEM_ZONE13A_RANDOM_1              0x447
+#define FLAG_ITEM_ZONE14A_DRAGON_FANG                0x448
+#define FLAG_ITEM_ZONE14B_FIRE_STONE             0x449
+#define FLAG_ITEM_ZONE14C_METAL_COAT               0x44A
 #define FLAG_ITEM_ZONE15A_SNOWBALL_3               0x44B
 #define FLAG_ITEM_ZONE15A_TIMER_BALL               0x44C
 #define FLAG_ITEM_ZONE15A_ICE_STONE                0x44D

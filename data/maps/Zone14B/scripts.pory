@@ -1,6 +1,6 @@
 mapscripts Zone14B_MapScripts {
 	MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_ITEM_ZONE14B_HYPER_POTION)) {
+		if (flag(FLAG_ITEM_ZONE14B_FIRE_STONE)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -64,9 +64,9 @@ text Zone14B_Text_Boss12Defeat {
 	"Wait, you're not a delinquent?"
 }
 
-script Zone14B_EventScript_HyperPotion {
+script Zone14B_EventScript_FireStone {
 	lock
-	if (flag(FLAG_ITEM_ZONE14B_HYPER_POTION)) {
+	if (flag(FLAG_ITEM_ZONE14B_FIRE_STONE)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -74,9 +74,9 @@ script Zone14B_EventScript_HyperPotion {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE14B_HYPER_POTION)
+	setflag(FLAG_ITEM_ZONE14B_FIRE_STONE)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_HYPER_POTION, 1)
+	finditem(ITEM_FIRE_STONE)
 	release
 	end
 }
