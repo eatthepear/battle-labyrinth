@@ -941,7 +941,7 @@
 #define FLAG_ITEM_ZONE5A_TM_THIEF                  0x415
 #define FLAG_ITEM_BOREAL_THICKET_NEVER_MELT_ICE                  0x416
 #define FLAG_ITEM_BOREAL_THICKET_TM_ICY_WIND                  0x417
-#define FLAG_ITEM_ZONE6A_TM_PLUCK          0x41C
+#define FLAG_ITEM_ZONE6A_TM_AERIAL_ACE          0x41C
 #define FLAG_ITEM_ZONE6A_NET_BALL                  0x41D
 #define FLAG_ITEM_ZONE6A_RANDOM_1                 0x41E
 #define FLAG_ITEM_ZONE6A_RANDOM_2                      0x41F
@@ -963,7 +963,7 @@
 #define FLAG_ITEM_ZONE8C_RANDOM_1                  0x42F
 #define FLAG_ITEM_ZONE9A_RANDOM_1                      0x430
 #define FLAG_ITEM_ZONE9A_BIG_ROOT                  0x431
-#define FLAG_ITEM_ZONE9A_TM_FLING                  0x432
+#define FLAG_ITEM_ZONE9A_TM_PLUCK                  0x432
 #define FLAG_ITEM_ZONE9G_CHARCOAL                  0x433
 #define FLAG_ITEM_ZONE10A_TM_DIG       0x434
 // #define FLAG_ITEM_ZONE10A_GEMS                     0x435

@@ -41,7 +41,7 @@
     F(SANDSTORM) \
     F(FIRE_BLAST) \
     F(ROCK_TOMB) \
-    F(PLUCK) \
+    F(AERIAL_ACE) \
     F(LEECH_LIFE) \
     F(FACADE) \
     F(FLAME_CHARGE) \
@@ -83,7 +83,7 @@
     F(TRIPLE_AXEL) \
     F(ROCK_SLIDE) \
     F(X_SCISSOR) \
-    F(DRAGON_TAIL) \
+    F(PLUCK) \
     F(NATURAL_GIFT) \
     F(POISON_JAB) \
     F(HURRICANE) \

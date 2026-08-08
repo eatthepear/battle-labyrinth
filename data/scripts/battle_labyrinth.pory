@@ -1803,7 +1803,7 @@ script Debug_CheatStart_PBL_GiveItems {
 		return
 	}
 	additem(ITEM_NET_BALL)
-	additem(ITEM_TM_PLUCK)
+	additem(ITEM_TM_AERIAL_ACE)
 	additem(ITEM_TM_WORK_UP)
 	additem(ITEM_DIVE_BALL, 5)
 	additem(ITEM_HM_FLASH)
@@ -1823,10 +1823,9 @@ script Debug_CheatStart_PBL_GiveItems {
 		return
 	}
 	additem(ITEM_BIG_ROOT)
-	additem(ITEM_TM_PLUCK)
 	additem(ITEM_MYSTIC_WATER)
 	additem(ITEM_CHARCOAL)
-	additem(ITEM_TM_FLING)
+	additem(ITEM_TM_PLUCK)
 	additem(ITEM_TM_RETURN)
 	additem(ITEM_GREEN_SHARD, 5)
 

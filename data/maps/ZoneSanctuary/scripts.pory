@@ -2983,7 +2983,7 @@ script EventScript_Shop_Lelouch_MoveTutor {
 		dynmultipush("Chilling Water - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_CHILLING_WATER)
 		dynmultipush("Struggle Bug - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_STRUGGLE_BUG)
 		dynmultipush("Pounce - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_POUNCE)
-		dynmultipush("Aerial Ace - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_AERIAL_ACE)
+		// dynmultipush("Aerial Ace - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_AERIAL_ACE)
 		dynmultipush("Magical Leaf - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_MAGICAL_LEAF)
 		dynmultipush("Shock Wave - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_SHOCK_WAVE)
 		dynmultipush("Swift - {COLOR RED}2 Red Shard{COLOR DARK_GRAY}", MOVE_SWIFT)
@@ -3114,7 +3114,7 @@ script EventScript_Shop_Lelouch_MoveTutor {
 			case MOVE_CHILLING_WATER:
 			case MOVE_STRUGGLE_BUG:
 			case MOVE_POUNCE:
-			case MOVE_AERIAL_ACE:
+			// case MOVE_AERIAL_ACE:
 			case MOVE_MAGICAL_LEAF:
 			case MOVE_SHOCK_WAVE:
 			case MOVE_SWIFT:

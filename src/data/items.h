@@ -12723,14 +12723,14 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_PLUCK] =
+    [ITEM_TM_AERIAL_ACE] =
     {
         .name = ITEM_NAME("TM40"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Pecks and eats the\n"
-            "foe's held Berry,\n"
-            "gaining its effect."),
+            "An extremely fast\n"
+            "attack that can't\n"
+            "be avoided."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13311,14 +13311,14 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_DRAGON_TAIL] =
+    [ITEM_TM_PLUCK] =
     {
-        .name = ITEM_NAME("TM82"),
+        .name = ITEM_NAME("TM40"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Knocks the target\n"
-            "away and drags out\n"
-            "another foe."),
+            "Pecks and eats the\n"
+            "foe's held Berry,\n"
+            "gaining its effect."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

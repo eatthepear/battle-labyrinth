@@ -249,7 +249,6 @@ script Zone5A_EventScript_NeverMissTutor {
 	message(format("What move should I teach?\nThey will cost you ¥400."))
 	waitmessage
 	dynmultipush("Swift", MOVE_SWIFT)
-	dynmultipush("Aerial Ace", MOVE_AERIAL_ACE)
 	dynmultipush("Magical Leaf", MOVE_MAGICAL_LEAF)
 	dynmultipush("Shock Wave", MOVE_SHOCK_WAVE)
 	dynmultipush("Exit", 1)
@@ -258,9 +257,6 @@ script Zone5A_EventScript_NeverMissTutor {
 		case MOVE_SWIFT:
 			setvar(VAR_TEMP_0, MOVE_SWIFT)
 			setvar(VAR_0x8005, MOVE_SWIFT)
-		case MOVE_AERIAL_ACE:
-			setvar(VAR_TEMP_0, MOVE_AERIAL_ACE)
-			setvar(VAR_0x8005, MOVE_AERIAL_ACE)
 		case MOVE_MAGICAL_LEAF:
 			setvar(VAR_TEMP_0, MOVE_MAGICAL_LEAF)
 			setvar(VAR_0x8005, MOVE_MAGICAL_LEAF)
