@@ -192,6 +192,7 @@ script Zone15A_EventScript_Sophocles_ExplainBoss {
 	waitmovement(0)
 	applymovement(LOCALID_SOPHOCLES_3, Common_Movement_FaceUp)
 	waitmovement(0)
+	setvar(VAR_ZONE_15_STATE, 3)
 	releaseall
 }
 
@@ -288,6 +289,7 @@ script Zone15A_EventScript_Sophocles_TriggerBoss {
 	removeobject(LOCALID_AMPHAROS)
 	removeobject(LOCALID_SOPHOCLES_3)
 	setflag(FLAG_BEAT_BOSS_15)
+	setvar(VAR_ZONE_15_STATE, 4)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	release
 	end

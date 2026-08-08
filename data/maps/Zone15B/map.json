@@ -12,38 +12,12 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BULBASAUR)",
-      "x": 7,
-      "y": 73,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_BEAT_BOSS_13"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES_SHINY(PORYGON)",
-      "x": 7,
-      "y": 72,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_BEAT_BOSS_13"
-    },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
       "x": 7,
-      "y": 67,
+      "y": 66,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -57,16 +31,40 @@
   "warp_events": [
     {
       "x": 7,
-      "y": 76,
+      "y": 75,
       "elevation": 0,
       "dest_map": "MAP_ZONE15A",
       "dest_warp_id": "0"
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 70,
+      "elevation": 0,
+      "var": "VAR_ZONE_15_STATE",
+      "var_value": "1",
+      "script": "Zone15B_EventScript_HelpSophocles"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 70,
+      "elevation": 0,
+      "var": "VAR_ZONE_15_STATE",
+      "var_value": "2",
+      "script": "Zone15B_EventScript_HelpSophocles"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 70,
+      "elevation": 0,
+      "var": "VAR_ZONE_15_STATE",
+      "var_value": "3",
+      "script": "Zone15B_EventScript_HelpSophocles"
+    }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }
