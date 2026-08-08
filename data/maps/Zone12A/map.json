@@ -69,7 +69,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_COLLECTOR",
       "x": 51,
-      "y": 33,
+      "y": 26,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -171,19 +171,6 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
-      "x": 36,
-      "y": 40,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_PorygonExit",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
       "x": 8,
       "y": 29,
@@ -211,9 +198,9 @@
     },
     {
       "local_id": "LOCALID_SERENA_12A",
-      "graphics_id": "OBJ_EVENT_GFX_SERENA",
-      "x": 35,
-      "y": 38,
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+      "x": 46,
+      "y": 35,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -221,6 +208,84 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
+      "flag": "FLAG_BEAT_BOSS_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
+      "x": 36,
+      "y": 40,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_PorygonExit",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PSYDUCK)",
+      "x": 43,
+      "y": 39,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Psyduck",
+      "flag": "FLAG_BEAT_BOSS_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PSYDUCK)",
+      "x": 42,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Psyduck",
+      "flag": "FLAG_BEAT_BOSS_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PSYDUCK)",
+      "x": 43,
+      "y": 37,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Psyduck",
+      "flag": "FLAG_BEAT_BOSS_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PSYDUCK)",
+      "x": 41,
+      "y": 37,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Psyduck",
+      "flag": "FLAG_BEAT_BOSS_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PSYDUCK)",
+      "x": 41,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Psyduck",
       "flag": "FLAG_BEAT_BOSS_12"
     }
   ],
@@ -243,15 +308,6 @@
       "var": "VAR_GENERIC",
       "var_value": "0",
       "script": "Zone12A_EventScript_Waterfall"
-    },
-    {
-      "type": "trigger",
-      "x": 39,
-      "y": 38,
-      "elevation": 0,
-      "var": "VAR_ZONE_12_STATE",
-      "var_value": "0",
-      "script": "Zone12A_EventScript_TriggerSerena"
     }
   ],
   "bg_events": [

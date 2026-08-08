@@ -2986,6 +2986,17 @@ script EventScript_Krabby {
 	end
 }
 
+script EventScript_Psyduck {
+	lock
+	faceplayer
+	setspeaker("Psyduck")
+	playmoncry(SPECIES_PSYDUCK, CRY_MODE_NORMAL)
+	msgbox(format("Psy! Psy!"))
+	waitmoncry
+	release
+	end
+}
+
 script EventScript_Steelix {
 	lock
 	faceplayer
