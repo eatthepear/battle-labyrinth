@@ -1819,6 +1819,9 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 15) {
 		return
 	}
+	additem(ITEM_SHELL_BELL)
+	additem(ITEM_ICE_STONE)
+	additem(ITEM_TM_AURORA_VEIL)
 
 	if (var(VAR_ZONE) == 16) {
 		return

@@ -3,12 +3,12 @@ mapscripts Zone15A_MapScripts {
 		VAR_ZONE_15_STATE, 0: Zone15A_EventScript_SophoclesIntro
 	]
 	MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_ITEM_ZONE15A_SNOWBALL_3)) {
+		if (flag(FLAG_ITEM_ZONE15A_RANDOM_1)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE15A_TIMER_BALL)) {
+		if (flag(FLAG_ITEM_ZONE15A_SHELL_BELL)) {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -18,30 +18,15 @@ mapscripts Zone15A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE15A_QUICK_BALL)) {
+		if (flag(FLAG_ITEM_ZONE15A_RANDOM_2)) {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE15A_REVIVE)) {
-			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		if (flag(FLAG_ITEM_ZONE15A_TM_AURORA_VEIL)) {
+			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST_OPEN)
 		} else {
-			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST)
-		}
-		if (flag(FLAG_ITEM_ZONE15A_DAWN_STONE)) {
-			setvar(VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_ITEM_CHEST)
-		}
-		if (flag(FLAG_ITEM_ZONE15A_TM26)) {
-			setvar(VAR_OBJ_GFX_ID_6, OBJ_EVENT_GFX_TM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_6, OBJ_EVENT_GFX_TM_CHEST)
-		}
-		if (flag(FLAG_ITEM_ZONE15A_GLALITITE)) {
-			setvar(VAR_OBJ_GFX_ID_7, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_7, OBJ_EVENT_GFX_ITEM_CHEST)
+			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST)
 		}
 	}
 }
@@ -308,9 +293,9 @@ script Zone15A_EventScript_Sophocles_TriggerBoss {
 	end
 }
 
-script Zone15A_EventScript_Snowball3 {
+script Zone15A_EventScript_Random1 {
 	lock
-	if (flag(FLAG_ITEM_ZONE15A_SNOWBALL_3)) {
+	if (flag(FLAG_ITEM_ZONE15A_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -318,16 +303,17 @@ script Zone15A_EventScript_Snowball3 {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE15A_SNOWBALL_3)
+	setflag(FLAG_ITEM_ZONE15A_RANDOM_1)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_SNOWBALL, 3)
+	specialvar(VAR_TEMP_1, RandomItemChest)
+	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
 
-script Zone15A_EventScript_TimerBall {
+script Zone15A_EventScript_ShellBell {
 	lock
-	if (flag(FLAG_ITEM_ZONE15A_TIMER_BALL)) {
+	if (flag(FLAG_ITEM_ZONE15A_SHELL_BELL)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -335,9 +321,9 @@ script Zone15A_EventScript_TimerBall {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE15A_TIMER_BALL)
+	setflag(FLAG_ITEM_ZONE15A_SHELL_BELL)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_TIMER_BALL, 1)
+	finditem(ITEM_SHELL_BELL)
 	release
 	end
 }
@@ -359,9 +345,9 @@ script Zone15A_EventScript_IceStone {
 	end
 }
 
-script Zone15A_EventScript_QuickBall {
+script Zone15A_EventScript_Random2 {
 	lock
-	if (flag(FLAG_ITEM_ZONE15A_QUICK_BALL)) {
+	if (flag(FLAG_ITEM_ZONE15A_RANDOM_2)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -369,77 +355,27 @@ script Zone15A_EventScript_QuickBall {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE15A_QUICK_BALL)
+	setflag(FLAG_ITEM_ZONE15A_RANDOM_2)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_QUICK_BALL, 1)
+	specialvar(VAR_TEMP_1, RandomItemChest)
+	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
 
-script Zone15A_EventScript_Revive {
+script Zone15A_EventScript_TMAuroraVeil {
 	lock
-	if (flag(FLAG_ITEM_ZONE15A_REVIVE)) {
+	if (flag(FLAG_ITEM_ZONE15A_TM_AURORA_VEIL)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
 	}
 	waitse
 	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE15A_REVIVE)
+	setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE15A_TM_AURORA_VEIL)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_REVIVE, 1)
-	release
-	end
-}
-
-script Zone15A_EventScript_DawnStone {
-	lock
-	if (flag(FLAG_ITEM_ZONE15A_DAWN_STONE)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE15A_DAWN_STONE)
-	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_DAWN_STONE, 1)
-	release
-	end
-}
-
-script Zone15A_EventScript_TM26 {
-	lock
-	if (flag(FLAG_ITEM_ZONE15A_TM26)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_6, OBJ_EVENT_GFX_TM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE15A_TM26)
-	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_TM26, 1)
-	release
-	end
-}
-
-script Zone15A_EventScript_Glalitite {
-	lock
-	if (flag(FLAG_ITEM_ZONE15A_GLALITITE)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_7, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE15A_GLALITITE)
-	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_GLALITITE, 1)
+	finditem(ITEM_TM_AURORA_VEIL)
 	release
 	end
 }
