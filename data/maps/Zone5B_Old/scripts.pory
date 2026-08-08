@@ -1,30 +1,4 @@
-mapscripts Zone5B_Old_MapScripts {
-	MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_ITEM_ZONE5B_Old_RANDOM_1)) {
-			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
-		}
-		if (flag(FLAG_ITEM_ZONE5B_Old_RANDOM_2)) {
-			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
-		}
-		if (flag(FLAG_ITEM_ZONE5B_Old_GEMS)) {
-			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
-		}
-		if (flag(FLAG_ITEM_ZONE5B_Old_RANDOM_3)) {
-			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
-		}
-	}
-	// MAP_SCRIPT_ON_FRAME_TABLE [
-	// 	VAR_ZONE_5_STATE, 1: Zone5B_Old_EventScript_Intro
-	// ]
-}
+mapscripts Zone5B_Old_MapScripts {}
 
 script Zone5B_Old_EventScript_BossBattle {
 	lockall
@@ -97,73 +71,24 @@ movement Zone5B_Old_Maria_Movement_WalkUp {
 
 script Zone5B_Old_EventScript_Random1 {
 	lock
-	if (flag(FLAG_ITEM_ZONE5B_Old_RANDOM_1)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5B_Old_RANDOM_1)
-	addobject(VAR_LAST_TALKED)
-	specialvar(VAR_TEMP_1, RandomItemChest)
-	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
 
 script Zone5B_Old_EventScript_Random2 {
 	lock
-	if (flag(FLAG_ITEM_ZONE5B_Old_RANDOM_2)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5B_Old_RANDOM_2)
-	addobject(VAR_LAST_TALKED)
-	specialvar(VAR_TEMP_1, RandomItemChest)
-	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
 
 script Zone5B_Old_EventScript_Gems {
 	lock
-	if (flag(FLAG_ITEM_ZONE5B_Old_GEMS)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5B_Old_GEMS)
-	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_NORMAL_GEM)
-	finditem(ITEM_BUG_GEM)
-	finditem(ITEM_GRASS_GEM)
 	release
 	end
 }
 
 script Zone5B_Old_EventScript_Random3 {
 	lock
-	if (flag(FLAG_ITEM_ZONE5B_Old_RANDOM_3)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5B_Old_RANDOM_3)
-	addobject(VAR_LAST_TALKED)
-	specialvar(VAR_TEMP_1, RandomItemChest)
-	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }

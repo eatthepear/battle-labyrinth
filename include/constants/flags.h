@@ -1045,64 +1045,6 @@ enum CustomItemFlags {
     FLAG_ITEM_ZONE26A_BANETTITE,
 };
 
-#define FLAG_ITEM_ZONE5A_Old_MIRACLE_SEED              FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5A_Old_RANDOM_1                  FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5A_Old_QUICK_BALL                FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5A_Old_METRONOME                 FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5A_Old_RANDOM_2                  FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5B_Old_RANDOM_1                  FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5B_Old_RANDOM_2                  FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5B_Old_GEMS                      FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_ITEM_ZONE5B_Old_RANDOM_3                  FLAG_ITEM_ZONE5A_TM_THIEF
-#define FLAG_UNUSED_0x020    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x021    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x022    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x023    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x024    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x025    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x026    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x027    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x028    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x029    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x02A    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x02B    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x02C    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x02D    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x02E    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x02F    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x030    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x031    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x032    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x033    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x034    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x035    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x036    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x037    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x038    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x039    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x03A    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x03B    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x03C    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x03D    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x03E    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x03F    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x040    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x041    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x042    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x043    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x044    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x045    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x046    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x047    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x048    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x049    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x04B    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4FA // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4FA // Unused Flag
-
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x4FA
 #define FLAG_SET_WALL_CLOCK                      0x4FA

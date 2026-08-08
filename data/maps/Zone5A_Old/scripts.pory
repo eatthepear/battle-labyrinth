@@ -1,116 +1,31 @@
-mapscripts Zone5A_Old_MapScripts {
-	MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_ITEM_ZONE5A_Old_QUICK_BALL)) {
-			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
-		}
-		if (flag(FLAG_ITEM_ZONE5A_Old_RANDOM_1)) {
-			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
-		}
-		if (flag(FLAG_ITEM_ZONE5A_Old_METRONOME)) {
-			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
-		}
-		if (flag(FLAG_ITEM_ZONE5A_Old_MIRACLE_SEED)) {
-			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
-		}
-		if (flag(FLAG_ITEM_ZONE5A_Old_RANDOM_2)) {
-			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST)
-		}
-	}
-}
+mapscripts Zone5A_Old_MapScripts {}
 
 script Zone5A_Old_EventScript_QuickBall {
 	lock
-	if (flag(FLAG_ITEM_ZONE5A_Old_QUICK_BALL)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5A_Old_QUICK_BALL)
-	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_QUICK_BALL, 1)
 	release
 	end
 }
 
 script Zone5A_Old_EventScript_Random1 {
 	lock
-	if (flag(FLAG_ITEM_ZONE5A_Old_RANDOM_1)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5A_Old_RANDOM_1)
-	addobject(VAR_LAST_TALKED)
-	specialvar(VAR_TEMP_1, RandomItemChest)
-	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
 
 script Zone5A_Old_EventScript_Metronome {
 	lock
-	if (flag(FLAG_ITEM_ZONE5A_Old_METRONOME)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5A_Old_METRONOME)
-	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_METRONOME)
 	release
 	end
 }
 
 script Zone5A_Old_EventScript_MiracleSeed {
 	lock
-	if (flag(FLAG_ITEM_ZONE5A_Old_MIRACLE_SEED)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5A_Old_MIRACLE_SEED)
-	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_MIRACLE_SEED)
 	release
 	end
 }
 
 script Zone5A_Old_EventScript_Random2 {
 	lock
-	if (flag(FLAG_ITEM_ZONE5A_Old_RANDOM_2)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE5A_Old_RANDOM_2)
-	addobject(VAR_LAST_TALKED)
-	specialvar(VAR_TEMP_1, RandomItemChest)
-	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
