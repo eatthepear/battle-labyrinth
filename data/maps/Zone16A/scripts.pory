@@ -186,8 +186,55 @@ script Zone16A_EventScript_TimerBall {
 	end
 }
 
-raw `
+script Zone16A_EventScript_Iona {
+	trainerbattle_single(TRAINER_PBL_IONA, format("The Water Pokémon are tickling my toes!"), format("Oh, that was just seaweed."))
+	msgbox(format("Don't you love that there is such a diversity of Water Pokémon?"), MSGBOX_AUTOCLOSE)
+	end
+}
 
+script Zone16A_EventScript_Berke {
+	trainerbattle_single(TRAINER_PBL_BERKE, format("Just keep swimming, just keep swimming!"), format("It's a good motto, right?"))
+	msgbox(format("Finding Nemo? Who's Nemo?"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone16A_EventScript_Tanisha {
+	trainerbattle_single(TRAINER_PBL_TANISHA, format("Training Pokémon is hard work!"), format("It seems I've succeeded in training your Pokémon!"))
+	msgbox(format("You're welcome, by the way!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone16A_EventScript_Robert {
+	trainerbattle_single(TRAINER_PBL_ROBERT, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone16A_EventScript_Christina {
+	trainerbattle_single(TRAINER_PBL_CHRISTINA, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone16A_EventScript_Angus {
+	trainerbattle_single(TRAINER_PBL_ANGUS, format("Fishing isn't just a hobby. It's a lifestyle!"), format("I've fished up defeat!"))
+	msgbox(format("Dive Balls can help capture Pokémon while fishing."), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone16A_EventScript_GalacticGrunt1 {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_16A_1, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone16A_EventScript_GalacticGrunt2 {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_16A_1, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+raw `
 Zone16A_EventScript_Sign::
 	msgbox Zone16A_Text_Sign, MSGBOX_SIGN
 	end
@@ -196,97 +243,4 @@ Zone16A_Text_Sign:
 	.string "Sand piles may contain Pokémon.\p"
 	.string "Be cautious!\n"
 	.string "They don't like being disturbed!$"
-
-Zone16A_EventScript_Iona::
-	trainerbattle_single TRAINER_PBL_IONA, Zone16A_Text_IonaIntro, Zone16A_Text_IonaDefeat
-	msgbox Zone16A_Text_IonaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone16A_Text_IonaIntro:
-	.string "The Water Pokémon are tickling\n"
-	.string "my toes!$"
-
-Zone16A_Text_IonaDefeat:
-	.string "Oh, that was just seaweed.$"
-
-Zone16A_Text_IonaPostBattle:
-	.string "Don't you love that there is such\n"
-	.string "a diversity of Water Pokémon?$"
-
-Zone16A_EventScript_Berke::
-	trainerbattle_single TRAINER_PBL_BERKE, Zone16A_Text_BerkeIntro, Zone16A_Text_BerkeDefeat
-	msgbox Zone16A_Text_BerkePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone16A_Text_BerkeIntro:
-	.string "Just keep swimming,\n"
-	.string "just keep swimming!$"
-
-Zone16A_Text_BerkeDefeat:
-	.string "It's a good motto, right?$"
-
-Zone16A_Text_BerkePostBattle:
-	.string "Who's Dory?$"
-
-Zone16A_EventScript_Tanisha::
-	trainerbattle_single TRAINER_PBL_TANISHA, Zone16A_Text_TanishaIntro, Zone16A_Text_TanishaDefeat
-	msgbox Zone16A_Text_TanishaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone16A_Text_TanishaIntro:
-	.string "Training Pokémon is hard work!$"
-
-Zone16A_Text_TanishaDefeat:
-	.string "It seems I've succeeded in training\n"
-	.string "your Pokémon!$"
-
-Zone16A_Text_TanishaPostBattle:
-	.string "You're welcome, by the way!$"
-
-Zone16A_EventScript_Robert::
-	trainerbattle_single TRAINER_PBL_ROBERT, Zone16A_Text_RobertIntro, Zone16A_Text_RobertDefeat
-	msgbox Zone16A_Text_RobertPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone16A_Text_RobertIntro:
-	.string "Hey there!\n"
-	.string "How do you do?$"
-
-Zone16A_Text_RobertDefeat:
-	.string "We're the rhyming Hiker pair!$"
-
-Zone16A_Text_RobertPostBattle:
-	.string "Rhyming is easy…$"
-
-Zone16A_EventScript_Chris::
-	trainerbattle_single TRAINER_PBL_CHRIS, Zone16A_Text_ChrisIntro, Zone16A_Text_ChrisDefeat
-	msgbox Zone16A_Text_ChrisPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone16A_Text_ChrisIntro:
-	.string "Hey there!\n"
-	.string "What's hip, hopping, and new?$"
-
-Zone16A_Text_ChrisDefeat:
-	.string "You beat us fair and square!$"
-
-Zone16A_Text_ChrisPostBattle:
-	.string "Battling makes me queasy…$"
-
-Zone16A_EventScript_Angus::
-	trainerbattle_single TRAINER_PBL_ANGUS, Zone16A_Text_AngusIntro, Zone16A_Text_AngusDefeat
-	msgbox Zone16A_Text_AngusPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone16A_Text_AngusIntro:
-	.string "Fishing isn't just a hobby.\n"
-	.string "It's a lifestyle!$"
-
-Zone16A_Text_AngusDefeat:
-	.string "I've fished up defeat!$"
-
-Zone16A_Text_AngusPostBattle:
-	.string "Dive Balls can help capture\n"
-	.string "Pokémon while fishing.$"
-
 `

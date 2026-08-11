@@ -2586,6 +2586,151 @@ IVs: 30 HP / 31 Atk / 31 Def / 30 SpA / 31 SpD / 31 Spe
 - Hidden Power
 - Work Up
 
+=== TRAINER_PBL_IONA ===
+Name: Iona
+Class: Swimmer F
+Pic: Swimmer F
+Music: Swimmer
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Water
+Copy Pool: TRAINER_POOL_ZONE_16
+
+=== TRAINER_PBL_BERKE ===
+Name: Berke
+Class: Swimmer M
+Pic: Swimmer M
+Music: Swimmer
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Water
+Copy Pool: TRAINER_POOL_ZONE_16
+
+=== TRAINER_PBL_TANISHA ===
+Name: Tanisha
+Class: Pkmn Breeder
+Pic: Pokemon Breeder F
+Music: Female
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_16
+
+=== TRAINER_PBL_ROBERT ===
+Name: Robert
+Class: Pkmn Breeder
+Pic: Pokemon Breeder M
+Music: Male
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_16
+
+=== TRAINER_PBL_CHRISTINA ===
+Name: Christina
+Class: Backpacker
+Pic: Backpacker F
+Music: Hiker
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_16
+
+=== TRAINER_PBL_ANGUS ===
+Name: Gilbert
+Class: Fisherman
+Pic: Fisherman
+Music: Hiker
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Water
+Copy Pool: TRAINER_POOL_ZONE_16
+
+=== TRAINER_PBL_GALACTIC_GRUNT_16A_1 ===
+Name: Grunt
+Class: Galactic
+Pic: Galactic Grunt M
+Music: Galactic
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_16_GRUNTS
+
+=== TRAINER_PBL_GALACTIC_GRUNT_16A_2 ===
+Name: Grunt
+Class: Galactic
+Pic: Galactic Grunt F
+Music: Galactic
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_16_GRUNTS
+
+=== TRAINER_PBL_JUPITER_BOSS_16 ===
+Name: Jupiter
+Class: Galactic Commander
+Pic: Jupiter
+Music: Galactic
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Garbodor @ Black Sludge
+Careful Nature
+Ability: Aftermath
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Spikes
+- Gunk Shot
+- Body Slam
+- Stomping Tantrum
+
+Oinkologne @ Chople Berry
+Jolly Nature
+Ability: Lingering Aroma
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Body Slam
+- Zen Headbutt
+- Bullet Seed
+- Stomping Tantrum
+
+Aromatisse @ Wise Glasses
+Modest Nature
+Ability: Aroma Veil
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Moonblast
+- Psychic
+- Charge Beam
+- Wish
+
+Victreebel @ Miracle Seed
+Hasty Nature
+Ability: Chlorophyll
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leaf Blade
+- Sludge Bomb
+- Knock Off
+- Sleep Powder
+
+Skuntank @ Sitrus Berry
+Naive Nature
+Ability: Aftermath
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 34
+- Night Slash
+- Poison Jab
+- Flamethrower
+- Play Rough
+
 === TRAINER_PBL_LEAF_BOSS_17 ===
 Name: Leaf
 Class: Rival
@@ -2807,187 +2952,6 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Psychic
 - Reflect
 - Metal Claw
-
-=== TRAINER_PBL_IONA ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_BERKE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_TANISHA ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_ROBERT ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_CHRIS ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_ANGUS ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_GALACTIC_GRUNT_16A_1 ===
-Name: Grunt
-Class: Galactic
-Pic: Galactic Grunt M
-Music: Galactic
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Party Size: 2
-Copy Pool: TRAINER_POOL_ZONE_16_GRUNTS
-
-=== TRAINER_PBL_GALACTIC_GRUNT_16A_2 ===
-Name: Grunt
-Class: Galactic
-Pic: Galactic Grunt F
-Music: Galactic
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Party Size: 2
-Copy Pool: TRAINER_POOL_ZONE_16_GRUNTS
-
-=== TRAINER_PBL_JUPITER_BOSS_16 ===
-Name: Jupiter
-Class: Galactic Commander
-Pic: Jupiter
-Music: Galactic
-AI: AI_FLAG_BOSS
-Double Battle: No
-Mugshot: Blue
-
-Garbodor @ Black Sludge
-Careful Nature
-Ability: Aftermath
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Spikes
-- Gunk Shot
-- Body Slam
-- Stomping Tantrum
-
-Oinkologne @ Chople Berry
-Jolly Nature
-Ability: Lingering Aroma
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Body Slam
-- Zen Headbutt
-- Bullet Seed
-- Stomping Tantrum
-
-Aromatisse @ Wise Glasses
-Modest Nature
-Ability: Aroma Veil
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Moonblast
-- Psychic
-- Charge Beam
-- Wish
-
-Victreebel @ Miracle Seed
-Hasty Nature
-Ability: Chlorophyll
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Leaf Blade
-- Sludge Bomb
-- Knock Off
-- Sleep Powder
-
-Skuntank @ Sitrus Berry
-Naive Nature
-Ability: Aftermath
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Level: 34
-- Night Slash
-- Poison Jab
-- Flamethrower
-- Play Rough
 
 === TRAINER_PBL_LILY_BOSS_14 ===
 Name: STEVEN

@@ -4634,13 +4634,11 @@ u16 GetNumTrainersRemaining(void)
         count += !FlagGet(FLAG_BEAT_BOSS_15);
         break;
     case 16:
-        count += !HasTrainerBeenFought(TRAINER_PBL_IONA);
-        count += !HasTrainerBeenFought(TRAINER_PBL_BERKE);
-        count += !HasTrainerBeenFought(TRAINER_PBL_TANISHA);
-        count += !HasTrainerBeenFought(TRAINER_PBL_ROBERT);
-        count += !HasTrainerBeenFought(TRAINER_PBL_CHRIS);
-        count += !HasTrainerBeenFought(TRAINER_PBL_ANGUS);
-        count += !FlagGet(FLAG_BEAT_BOSS_14);
+        for (trainer = TRAINER_PBL_IONA; trainer <= TRAINER_PBL_GALACTIC_GRUNT_16A_2; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_BOSS_16);
         break;
     case 17:
         count += !HasTrainerBeenFought(TRAINER_PBL_AXLE);
