@@ -2034,25 +2034,14 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder Fang
 - Scorching Sands
 
-=== TRAINER_PBL_DOLORES ===
-Name: Dolores
+=== TRAINER_PBL_HILDA ===
+Name: Hilda
 Class: Lady
 Pic: Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 3
-Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_12
-
-=== TRAINER_PBL_HILDA ===
-Name: Hilda
-Class: Socialite
-Pic: Socialite
-Music: Rich
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_12
 
@@ -2067,15 +2056,26 @@ Party Size: 3
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_12
 
-=== TRAINER_PBL_KINLEY ===
-Name: Kinley
-Class: Gentleman
-Pic: Gentleman
-Music: Rich
+=== TRAINER_PBL_ADAIR ===
+Name: Adair
+Class: Kindler
+Pic: Kindler
+Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
-Pool Rules: Unique Types
+Pool Prune: Non Fire
+Copy Pool: TRAINER_POOL_ZONE_12
+
+=== TRAINER_PBL_KINLEY ===
+Name: Kinley
+Class: Guitarist
+Pic: Guitarist
+Music: Intense
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Electric
 Copy Pool: TRAINER_POOL_ZONE_12
 
 === TRAINER_PBL_GENIE ===
@@ -2102,14 +2102,14 @@ Copy Pool: TRAINER_POOL_ZONE_12
 
 === TRAINER_PBL_RUFUS ===
 Name: Rufus
-Class: Collector
-Pic: Collector
-Music: Suspicious
+Class: Camper
+Pic: Camper
+Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_COLLECTOR
+Copy Pool: TRAINER_POOL_ZONE_12
 
 === TRAINER_PBL_VIOLET ===
 Name: Abigail

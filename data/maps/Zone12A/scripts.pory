@@ -164,15 +164,45 @@ script Zone12A_EventScript_TMSmartStrike {
 	end
 }
 
-script Zone12A_EventScript_Romulus {
-	trainerbattle_single(TRAINER_PBL_ROMULUS, format("But soft, what light through yonder window breaks?\pIt is the east, and Julie is the sun."), format("I defy you, stars!"))
-	msgbox(format("With love's light wings did I o'erperch these walls,\pFor stony limits cannot hold love out."), MSGBOX_AUTOCLOSE)
+script Zone12A_EventScript_Hilda {
+	trainerbattle_single(TRAINER_PBL_HILDA, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
-script Zone12A_EventScript_Julie {
-	trainerbattle_single(TRAINER_PBL_JULIE, format("O Romulus, Romulus! Wherefore art thou Romulus?"), format("My only love sprung from my only hate,\pToo early seen unknown, and known too late!"))
-	msgbox(format("My bounty is as boundless as the sea,\pMy love as deep; the more I give to thee,\pThe more I have, for both are infinite."), MSGBOX_AUTOCLOSE)
+script Zone12A_EventScript_Trevor {
+	trainerbattle_single(TRAINER_PBL_TREVOR, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone12A_EventScript_Adair {
+	trainerbattle_single(TRAINER_PBL_ADAIR, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone12A_EventScript_Kinley {
+	trainerbattle_single(TRAINER_PBL_KINLEY, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone12A_EventScript_Genie {
+	trainerbattle_single(TRAINER_PBL_GENIE, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone12A_EventScript_Abigail {
+	trainerbattle_single(TRAINER_PBL_ABIGAIL, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone12A_EventScript_Rufus {
+	trainerbattle_single(TRAINER_PBL_RUFUS, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -188,113 +218,4 @@ Zone12A_EventScript_Waterfall::
 Zone12A_Text_DontGoDown:
 	.string "You don't want to go down the\n"
 	.string "waterfall without a way back up!$"
-
-Zone12A_EventScript_Dolores::
-	trainerbattle_single TRAINER_PBL_DOLORES, Zone12A_Text_DoloresIntro, Zone12A_Text_DoloresDefeat
-	msgbox Zone12A_Text_DoloresPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone12A_Text_DoloresIntro:
-	.string "You have to be prepared for bad\n"
-	.string "weather at any moment!$"
-
-Zone12A_Text_DoloresDefeat:
-	.string "Wow! You blew me right off my feet!$"
-
-Zone12A_Text_DoloresPostBattle:
-	.string "Weather affects Pokémon battles\n"
-	.string "just as much as it affects our\l"
-	.string "lives, huh?$"
-
-Zone12A_EventScript_Genie::
-	trainerbattle_single TRAINER_PBL_GENIE, Zone12A_Text_GenieIntro, Zone12A_Text_GenieDefeat
-	msgbox Zone12A_Text_GeniePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone12A_Text_GenieIntro:
-	.string "Hi, I'm a fan!$"
-
-Zone12A_Text_GenieDefeat:
-	.string "A fan of sneaking up on people!$"
-
-Zone12A_Text_GeniePostBattle:
-	.string "Okay, I admit, it's a weird hobby.$"
-
-Zone12A_EventScript_Abigail::
-	trainerbattle_single TRAINER_PBL_ABIGAIL, Zone12A_Text_AbigailIntro, Zone12A_Text_AbigailDefeat
-	msgbox Zone12A_Text_AbigailPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone12A_Text_AbigailIntro:
-	.string "This puddle is not good for someone\n"
-	.string "without rain boots!$"
-
-Zone12A_Text_AbigailDefeat:
-	.string "But it's just too fun to splash\n"
-	.string "around!$"
-
-Zone12A_Text_AbigailPostBattle:
-	.string "Splashing around is fun!$"
-
-Zone12A_EventScript_Hilda::
-	trainerbattle_single TRAINER_PBL_HILDA, Zone12A_Text_HildaIntro, Zone12A_Text_HildaDefeat
-	msgbox Zone12A_Text_HildaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone12A_Text_HildaIntro:
-	.string "After a swim, a quick run is what\n"
-	.string "I need to dry off!$"
-
-Zone12A_Text_HildaDefeat:
-	.string "I'm suddenly very tired!$"
-
-Zone12A_Text_HildaPostBattle:
-	.string "Exercising without a break is\n"
-	.string "tough!$"
-
-Zone12A_EventScript_Trevor::
-	trainerbattle_single TRAINER_PBL_TREVOR, Zone12A_Text_TrevorIntro, Zone12A_Text_TrevorDefeat
-	msgbox Zone12A_Text_TrevorPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone12A_Text_TrevorIntro:
-	.string "Go, my Baby Pokémon, go!$"
-
-Zone12A_Text_TrevorDefeat:
-	.string "Maybe they're a little weak to\n"
-	.string "battle.$"
-
-Zone12A_Text_TrevorPostBattle:
-	.string "I'll work on raising them more!$"
-
-Zone12A_EventScript_Rufus::
-	trainerbattle_single TRAINER_PBL_RUFUS, Zone12A_Text_RufusIntro, Zone12A_Text_RufusDefeat
-	msgbox Zone12A_Text_RufusPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone12A_Text_RufusIntro:
-	.string "I'm looking for rare Pokémon!$"
-
-Zone12A_Text_RufusDefeat:
-	.string "But I can barely see through the\n"
-	.string "grass!$"
-
-Zone12A_Text_RufusPostBattle:
-	.string "I won't give up my search!$"
-
-Zone12A_EventScript_Kinley::
-	trainerbattle_single TRAINER_PBL_KINLEY, Zone12A_Text_KinleyIntro, Zone12A_Text_KinleyDefeat
-	msgbox Zone12A_Text_KinleyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone12A_Text_KinleyIntro:
-	.string "This grass is far too tall\n"
-	.string "for someone of my stature!$"
-
-Zone12A_Text_KinleyDefeat:
-	.string "I meant financial stature!\n"
-	.string "I'm not short!$"
-
-Zone12A_Text_KinleyPostBattle:
-	.string "Errr… Never mind.$"
 `
