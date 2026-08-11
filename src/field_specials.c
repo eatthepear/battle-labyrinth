@@ -4619,12 +4619,12 @@ u16 GetNumTrainersRemaining(void)
         break;
     case 13:
     case 14:
-        for (trainer = TRAINER_PBL_VIOLET; trainer <= TRAINER_PBL_MAGMA_GRUNT_13B_2; trainer++) {
+        for (trainer = TRAINER_PBL_VIOLET; trainer <= TRAINER_PBL_STEVE; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
         count += !FlagGet(FLAG_BEAT_BOSS_13);
-        for (trainer = TRAINER_PBL_MAGMA_GRUNT_14A_1; trainer <= TRAINER_PBL_MAGMA_GRUNT_14B_3; trainer++) {
+        for (trainer = TRAINER_PBL_MAGMA_GRUNT_13B_1; trainer <= TRAINER_PBL_MAGMA_GRUNT_14B_3; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }

@@ -2112,59 +2112,59 @@ Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_12
 
 === TRAINER_PBL_VIOLET ===
-Name: Abigail
-Class: Pokefan
-Pic: Pokefan F
-Music: Twins
+Name: Paige
+Class: Aroma Lady
+Pic: Aroma Lady
+Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_12
+Party Size: 4
+Pool Prune: Non Grass
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14
 
 === TRAINER_PBL_WANDA ===
-Name: Abigail
-Class: Pokefan
-Pic: Pokefan F
-Music: Twins
+Name: Wanda
+Class: Backpacker
+Pic: Backpacker F
+Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 3
 Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_12
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14
 
-=== TRAINER_PBL_AMBER_AND_KIM ===
-Name: Abigail
+=== TRAINER_PBL_BENJAMIN ===
+Name: Genie
 Class: Pokefan
-Pic: Pokefan F
+Pic: Pokefan M
 Music: Twins
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 3
 Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_12
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14
 
-=== TRAINER_PBL_JAN_AND_ERIN ===
-Name: Abigail
-Class: Pokefan
-Pic: Pokefan F
-Music: Twins
+=== TRAINER_PBL_GERALT ===
+Name: Geralt
+Class: Roughneck
+Pic: Roughneck
+Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_12
+Party Size: 4
+Pool Prune: Non Dark
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14
 
 === TRAINER_PBL_STEVE ===
-Name: Abigail
-Class: Pokefan
-Pic: Pokefan F
-Music: Twins
+Name: Steve
+Class: Bug Catcher
+Pic: Bug Catcher
+Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
-Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_12
+Party Size: 4
+Pool Prune: Non Bug
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14
 
 === TRAINER_PBL_SERENA_BOSS_13 ===
 Name: Serena
@@ -2275,16 +2275,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Scorching Sands
 - Will-O-Wisp
 
-=== TRAINER_PBL_MAGMA_GRUNT_13A_1 ===
-Name: Grunt
-Class: Team Magma
-Pic: Magma Grunt F
-Music: Magma
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Party Size: 2
-Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
-
 === TRAINER_PBL_MAGMA_GRUNT_13B_1 ===
 Name: Grunt
 Class: Team Magma
@@ -2296,6 +2286,16 @@ Party Size: 2
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_13B_2 ===
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
+
+=== TRAINER_PBL_MAGMA_GRUNT_13B_3 ===
 Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt F
