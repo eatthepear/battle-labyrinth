@@ -177,7 +177,22 @@ static const u32 sNumFoes[] =
     1,
     40,
     40,
-    100, // zone 20
+    27, // zone 20
+    28,
+    30,
+    32,
+    44,
+    44, // zone 25
+    1,
+    44,
+    44,
+    32,
+    32, // zone 30
+    36,
+    36,
+    36,
+    60,
+    1, // zone 35
 };
 
 u32 GetExpValue(void)
