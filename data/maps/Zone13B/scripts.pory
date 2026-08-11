@@ -1,43 +1,9 @@
-raw `
-Zone13B_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Zone13B_OnTransition
-	.byte 0
-
-Zone13B_OnTransition:
-	goto_if_set FLAG_ZONE13B_RECEIVED_FLASHLIGHT Zone13B_EventScript_MoveScientist
-	end
-
-Zone13B_EventScript_MoveScientist:
-	setobjectxyperm 1, 18, 2
-	end
-`
-
-script Zone13B_EventScript_GiveFlash {
-	lock
-	faceplayer
-	if (flag(FLAG_ZONE13B_RECEIVED_FLASHLIGHT) == true) {
-		msgbox("Be careful down there.")
-		release
-		end
+mapscripts Zone13B_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		if (defeated(TRAINER_PBL_MAGMA_GRUNT_13B_3)) {
+			setobjectxyperm(LOCALID_GRUNT_13B, 18, 2)
+		}
 	}
-	msgbox("This leads to the old mine.\pYou'll need a flashlight to\nnavigate through.")
-	// giveitem(ITEM_FLASHLIGHT)
-	setflag(FLAG_ZONE13B_RECEIVED_FLASHLIGHT)
-	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
-	if (var(VAR_TEMP_0) == 18) {
-		applymovement(1, Common_Movement_WalkRight)
-		waitmovement(0)
-		applymovement(1, Common_Movement_FaceDown)
-		waitmovement(0)
-		release
-		end
-	}
-	applymovement(1, Common_Movement_WalkLeft)
-	waitmovement(0)
-	applymovement(1, Common_Movement_FaceDown)
-	waitmovement(0)
-	release
-	end
 }
 
 script Zone13B_EventScript_MagmaGrunt1 {
@@ -49,6 +15,53 @@ script Zone13B_EventScript_MagmaGrunt1 {
 script Zone13B_EventScript_MagmaGrunt2 {
 	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_13B_2, format("Magma!"), format("Magma!"))
 	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone13B_EventScript_MagmaGrunt3 {
+	lock
+	faceplayer
+	msgbox(format("Don't think I'll move just because you beat me!"))
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_13B_3, format("Magma!"), format("Magma!"))
+	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 18) {
+		applymovement(LOCALID_GRUNT_13B, Common_Movement_WalkRight)
+		waitmovement(0)
+		applymovement(LOCALID_GRUNT_13B, Common_Movement_FaceDown)
+		waitmovement(0)
+		release
+		end
+	}
+	applymovement(LOCALID_GRUNT_13B, Common_Movement_WalkLeft)
+	waitmovement(0)
+	applymovement(LOCALID_GRUNT_13B, Common_Movement_FaceDown)
+	waitmovement(0)
+	release
+	end
+}
+
+script Zone13B_EventScript_DefeatedGrunt1 {
+	lock
+	faceplayer
+	msgbox(format("Defeated!"))
+	release
+	end
+}
+
+script Zone13B_EventScript_DefeatedGrunt2 {
+	lock
+	faceplayer
+	msgbox(format("Defeated!"))
+	release
+	end
+}
+
+script Zone13B_EventScript_DefeatedGrunt3 {
+	lock
+	faceplayer
+	msgbox(format("Defeated!"))
+	release
 	end
 }
 
