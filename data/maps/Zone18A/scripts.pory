@@ -189,6 +189,12 @@ script Zone18A_EventScript_SuperRepel {
 	end
 }
 
+script Zone18A_EventScript_John {
+	trainerbattle_single(TRAINER_PBL_JOHN, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
 raw `
 Zone18A_EventScript_Sign::
 	msgbox Zone18A_Text_Sign, MSGBOX_SIGN

@@ -4646,24 +4646,12 @@ u16 GetNumTrainersRemaining(void)
     case 18:
     case 19:
         count += !HasTrainerBeenFought(TRAINER_PBL_DORIS);
-        count += !HasTrainerBeenFought(TRAINER_PBL_HOMER);
-        count += !HasTrainerBeenFought(TRAINER_PBL_JOHN);
-        count += !HasTrainerBeenFought(TRAINER_PBL_GLENN);
-        count += !HasTrainerBeenFought(TRAINER_PBL_JAY);
-        count += !HasTrainerBeenFought(TRAINER_PBL_TYLER);
-        count += !HasTrainerBeenFought(TRAINER_PBL_TERRENCE);
-        count += !HasTrainerBeenFought(TRAINER_PBL_MARTY);
-        count += !HasTrainerBeenFought(TRAINER_PBL_KARI);
-        count += !HasTrainerBeenFought(TRAINER_PBL_ABRAHAM);
-        count += !HasTrainerBeenFought(TRAINER_PBL_MELINDA);
-        count += !HasTrainerBeenFought(TRAINER_PBL_EMILIO);
-        count += !HasTrainerBeenFought(TRAINER_PBL_REX);
-        count += !HasTrainerBeenFought(TRAINER_PBL_LOUIS);
-        count += !HasTrainerBeenFought(TRAINER_PBL_LEROY);
-        count += !HasTrainerBeenFought(TRAINER_PBL_ELTON);
-        count += !HasTrainerBeenFought(TRAINER_PBL_WILLIE);
-        count += !FlagGet(FLAG_BEAT_BOSS_16);
-        // count += 4 * !HasTrainerBeenFought(TRAINER_PBL_PIRATE_4);
+        for (trainer = TRAINER_PBL_DORIS; trainer <= TRAINER_PBL_WILLIE; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_BOSS_18);
+        count += 4 * !FlagGet(FLAG_BEAT_BOSS_19);
         break;
     case 20:
         count += !HasTrainerBeenFought(TRAINER_PBL_SHAWN);

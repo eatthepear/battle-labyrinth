@@ -1,7 +1,7 @@
 mapscripts Zone18B_MapScripts {
 	MAP_SCRIPT_ON_LOAD {
 		setvar(VAR_0x8005, 1)
-		call_if_defeated(TRAINER_PBL_JOHN, Zone18B_EventScript_OpenNormalRoomDoors)
+		call_if_defeated(TRAINER_PBL_RACHEL, Zone18B_EventScript_OpenNormalRoomDoors)
 		call_if_defeated(TRAINER_PBL_GLENN, Zone18B_EventScript_OpenRockRoomDoors)
 		call_if_defeated(TRAINER_PBL_JAY, Zone18B_EventScript_OpenIceRoomDoors)
 		call_if_defeated(TRAINER_PBL_TYLER, Zone18B_EventScript_OpenDarkRoomDoors)
@@ -63,7 +63,7 @@ script Zone18B_EventScript_DoorLocked {
 
 script Zone18B_EventScript_RockRoomDoor {
 	lockall
-	goto_if_not_defeated(TRAINER_PBL_JOHN, Zone18B_EventScript_DoorLocked)
+	goto_if_not_defeated(TRAINER_PBL_RACHEL, Zone18B_EventScript_DoorLocked)
 	msgbox("“Rock Room,” the sign says.\pDo you want to go through?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		closemessage
@@ -77,7 +77,7 @@ script Zone18B_EventScript_RockRoomDoor {
 
 script Zone18B_EventScript_IceRoomDoor {
 	lockall
-	goto_if_not_defeated(TRAINER_PBL_JOHN, Zone18B_EventScript_DoorLocked)
+	goto_if_not_defeated(TRAINER_PBL_RACHEL, Zone18B_EventScript_DoorLocked)
 	msgbox("“Ice Room,” the sign says.\pDo you want to go through?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		closemessage
@@ -372,7 +372,7 @@ script Zone18B_EventScript_RightFireRoomDoor {
 script Zone18B_EventScript_LeftBossRoomDoor {
 	lockall
 	goto_if_not_defeated(TRAINER_PBL_ELTON, Zone18B_EventScript_DoorLocked)
-	msgbox("“Boss's Room,”\p“See for yourself what Pokémon await\nyou!” the sign says.\pDo you want to go through?", MSGBOX_YESNO)
+	msgbox("“Gym Leader's Room,”\p“See for yourself what Pokémon await\nyou!” the sign says.\pDo you want to go through?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		closemessage
 		delay(30)
@@ -389,7 +389,7 @@ script Zone18B_EventScript_LeftBossRoomDoor {
 script Zone18B_EventScript_RightBossRoomDoor {
 	lockall
 	goto_if_not_defeated(TRAINER_PBL_WILLIE, Zone18B_EventScript_DoorLocked)
-	msgbox("“Boss's Room,”\p“See for yourself what Pokémon await\nyou!” the sign says.\pDo you want to go through?", MSGBOX_YESNO)
+	msgbox("“Gym Leader's Room,”\p“See for yourself what Pokémon await\nyou!” the sign says.\pDo you want to go through?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		closemessage
 		delay(30)
@@ -813,34 +813,13 @@ script Zone18B_EventScript_Statue {
 	end
 }
 
-raw `
-Zone18B_EventScript_John::
-	trainerbattle_single TRAINER_PBL_JOHN, Zone18B_Text_JohnIntro, Zone18B_Text_JohnDefeat, Zone18B_EventScript_SlideOpenNormalRoomDoors
-	msgbox Zone18B_Text_JohnPostBattle
+script Zone18B_EventScript_Rachel {
+	trainerbattle_single(TRAINER_PBL_RACHEL, format("Welcome to the Trainer's Dojo!\pUh… what else is in this script…\pOh! Each room has a particular type associated with it.\pYou can pick and choose which room to challenge.\pHmm… Looks like I'm supposed to battle you now.\pWell, good luck to you, facing my Grass-types in battle!"), format("You got me!"), Zone18B_EventScript_SlideOpenNormalRoomDoors)
+	msgbox(format("You can pick between the Rock room and the Ice room."), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone18B_Text_JohnIntro:
-	.string "Welcome to the Trainer's Dojo!\p"
-	.string "Uh… what else is in this script…\p"
-	.string "Oh! Each room has a particular type\n"
-	.string "associated with it.\p"
-	.string "You can pick and choose which room to\n"
-	.string "challenge.\p"
-	.string "Hmm… Looks like I'm supposed to\n"
-	.string "battle you now.\p"
-	.string "Well, good luck to you, facing my\n"
-	.string "Normal-types in battle!$"
-
-Zone18B_Text_JohnDefeat:
-	.string "You got me! How typical.$"
-
-Zone18B_Text_JohnPostBattle:
-	.string "You can pick between the Rock room\n"
-	.string "and the Ice room.\p"
-	.string "Oh, and in case it wasn't obvious,\n"
-	.string "everyone here battles in\l"
-	.string "Double Battles.$"
-
+raw `
 Zone18B_EventScript_Glenn::
 	trainerbattle_single TRAINER_PBL_GLENN, Zone18B_Text_GlennIntro, Zone18B_Text_GlennDefeat, Zone18B_EventScript_SlideOpenRockRoomDoors
 	msgbox Zone18B_Text_GlennPostBattle

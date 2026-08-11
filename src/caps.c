@@ -175,8 +175,8 @@ static const u32 sNumFoes[] =
     1, // zone 15
     25,
     1,
-    100,
-    100,
+    40,
+    40,
     100, // zone 20
 };
 
