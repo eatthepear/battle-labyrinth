@@ -99,7 +99,7 @@ IVs: 0 Atk / 0 Spe
 Name: Nino
 Class: School Kid
 Pic: School Kid M
-Music: Girl
+Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
@@ -358,7 +358,7 @@ Copy Pool: TRAINER_POOL_ZONE_2
 Name: Josh
 Class: School Kid
 Pic: School Kid M
-Music: Girl
+Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
@@ -514,7 +514,7 @@ Copy Pool: TRAINER_POOL_ZONE_3
 Name: Patrick
 Class: School Kid
 Pic: School Kid M
-Music: Girl
+Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
