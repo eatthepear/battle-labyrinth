@@ -126,6 +126,7 @@ WILD_BATTLE_TEST("Large exp gains are supported", s32 exp) // #1455
 }
 #endif
 
+#if FREE_OTHER_PBL == FALSE
 WILD_BATTLE_TEST("Transformed Pokemon gives the experience points of the copied species in Gen 3 and 4")
 {
     u32 speciesExp = 0;
@@ -159,6 +160,7 @@ WILD_BATTLE_TEST("Transformed Pokemon gives the experience points of the copied 
         EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_HP_EV), gSpeciesInfo[speciesExp].evYield_HP);
     }
 }
+#endif
 
 #if I_EXP_SHARE_ITEM < GEN_6
 

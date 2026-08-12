@@ -85,15 +85,15 @@ SINGLE_BATTLE_TEST("Micle Berry increases the accuracy of the next used move acr
 SINGLE_BATTLE_TEST("Micle Berry increases the accuracy of the next used move the same turn the berry was triggered")
 {
     GIVEN {
-        ASSUME(GetMoveAccuracy(MOVE_DRAGON_RUSH) == 90);
+        ASSUME(GetMoveAccuracy(MOVE_HEAT_WAVE) == 90);
         PASSES_RANDOMLY(100, 100, RNG_ACCURACY);
         PLAYER(SPECIES_WOBBUFFET) { MaxHP(100); HP(26); Item(ITEM_MICLE_BERRY); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(opponent, MOVE_SCRATCH); MOVE(player, MOVE_DRAGON_RUSH); }
+        TURN { MOVE(opponent, MOVE_SCRATCH); MOVE(player, MOVE_HEAT_WAVE); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, opponent);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, player);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RUSH, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_HEAT_WAVE, player);
     }
 }
