@@ -6663,6 +6663,86 @@ Party Size: 1
 
 Bulbasaur
 
+=== TRAINER_POOL_ZONE_20 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_21 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_22 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_23 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_24_AND_25 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_27_AND_28 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_29 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_31_AND_32_AND_33_GRUNTS ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
 === TRAINER_POOL_ENDGAME ===
 Name: Trainer Pool
 Class: Champion
