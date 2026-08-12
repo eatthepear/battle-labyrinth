@@ -175,7 +175,7 @@ script Zone10A_EventScript_Jasmine {
 	msgbox(format("You are a better Trainer than me, in both skill and kindness.\pI'd like you to have this."), MSGBOX_AUTOCLOSE)
 	giveitem(ITEM_TM_IRON_TAIL)
 	setspeaker("Jasmine")
-	msgbox(format("Iron Tail is a strong, powerful Steel-type move.\pYou'll find that its accuracy has improved over time, and is not too shabby either.\pI'd also like you to have this."), MSGBOX_AUTOCLOSE)
+	msgbox(format("Iron Tail is a strong, powerful Steel-type move.\pThough it is relatively inaccurate, so be mindful of the risk.\pI'd also like you to have this."), MSGBOX_AUTOCLOSE)
 	giveitem(ITEM_EVIOLITE)
 	setspeaker("Jasmine")
 	msgbox(format("The Eviolite can help keep your weaker, unevolved Pokémon safe."), MSGBOX_AUTOCLOSE)

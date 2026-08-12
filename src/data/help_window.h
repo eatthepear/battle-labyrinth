@@ -202,7 +202,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_CHANGES_ACCURACY] =
     {
         .header = COMPOUND_STRING("Battle Changes: Accuracy"),
-        .desc = COMPOUND_STRING("All moves with 95%, 90%, 85%, 80%, and 75%\n"
+        .desc = COMPOUND_STRING("All moves with 95%, 90%, 85%, and 80%\n"
                                 "accuracy have increased to 100% accuracy.\n\n"
                                 "There are some exceptions to this listed on\n"
                                 "the next page."),
@@ -216,8 +216,8 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Heat Wave, Muddy Water, Fire Blast,\n"
                                 "Megahorn, Power Whip, Cross Chop,\n"
                                 "Hydro Pump, Stone Edge, Gunk Shot,\n"
-                                "Head Smash, Bleakwind Storm, Wildbolt Storm,\n"
-                                "Sandsear Storm, Sleep Powder, & Lovely Kiss"),
+                                "Head Smash, Bleakwind Storm,\n"
+                                "Wildbolt Storm, & Sandsear Storm"),
     },
 
     [HELP_CHANGES_EXPERIENCE] =
