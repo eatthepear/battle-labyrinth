@@ -3458,40 +3458,6 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_MIRAGE_BOSS_17 ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_MIRAGE_BOSS_17_CHALLENGE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
 === TRAINER_PBL_BERNARD ===
 Name: Bernard
 Class: Triathlete
@@ -4073,23 +4039,6 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_BOSS12_BRUTAL ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
 === TRAINER_PBL_BOSS13_BRUTAL ===
 Name: STEVEN
 Class: Rival
@@ -4108,23 +4057,6 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Metal Claw
 
 === TRAINER_PBL_BOSS14_BRUTAL ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_BOSS12 ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
