@@ -3237,23 +3237,6 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_WALLY_BOSS_21 ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
 === TRAINER_PBL_MAYLENE_BOSS_22 ===
 Name: STEVEN
 Class: Rival
@@ -3509,160 +3492,95 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
+=== TRAINER_PBL_BERNARD ===
+Name: Bernard
+Class: Triathlete
+Pic: Cycling Triathlete M
+Music: Male
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: Yes
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_21
+
 === TRAINER_PBL_ANITA ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_DESIREE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Name: Anita
+Class: Triathlete
+Pic: Cycling Triathlete F
+Music: Female
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: Yes
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_21
 
 === TRAINER_PBL_HOWARD ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Howard
+Class: Triathlete
+Pic: Cycling Triathlete M
 Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: Yes
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_21
 
 === TRAINER_PBL_ELOISE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_ALLY_AND_EMMY ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Name: Eloise
+Class: Triathlete
+Pic: Cycling Triathlete F
+Music: Female
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: Yes
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_21
 
 === TRAINER_PBL_AMIR ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Amir
+Class: Black Belt
+Pic: Black Belt
+Music: Intense
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Fighting
+Copy Pool: TRAINER_POOL_ZONE_21
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_GETHIN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_BERNARD ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_ELLIE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+=== TRAINER_PBL_FELIX ===
+Name: Felix
+Class: Kindler
+Pic: Kindler
+Music: Hiker
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Fire
+Copy Pool: TRAINER_POOL_ZONE_21
 
 === TRAINER_PBL_RUSTY ===
+Name: Rusty
+Class: Pkmn Ranger
+Pic: Pokemon Ranger M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_21
+
+=== TRAINER_PBL_ALLY ===
+Name: Ally
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_21
+
+=== TRAINER_PBL_WALLY_BOSS_21 ===
 Name: STEVEN
 Class: Rival
 Pic: Steven

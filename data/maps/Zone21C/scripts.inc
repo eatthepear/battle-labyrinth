@@ -6,14 +6,6 @@ Zone21C_EventScript_Breeder::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_ZONE21C_HAPPINY, Zone21C_EventScript_SafeTravels
 	msgbox Zone21C_Text_Breeder_Intro, MSGBOX_AUTOCLOSE
-	goto_if_not_defeated TRAINER_PBL_HOWARD, Zone21C_EventScript_NoHappiny
-	goto_if_not_defeated TRAINER_PBL_ELOISE, Zone21C_EventScript_NoHappiny
-	goto_if_not_defeated TRAINER_PBL_ALLY_AND_EMMY, Zone21C_EventScript_NoHappiny
-	goto_if_not_defeated TRAINER_PBL_AMIR, Zone21C_EventScript_NoHappiny
-	goto_if_not_defeated TRAINER_PBL_GETHIN, Zone21C_EventScript_NoHappiny
-	goto_if_not_defeated TRAINER_PBL_BERNARD, Zone21C_EventScript_NoHappiny
-	goto_if_not_defeated TRAINER_PBL_ELLIE, Zone21C_EventScript_NoHappiny
-	goto_if_not_defeated TRAINER_PBL_RUSTY, Zone21C_EventScript_NoHappiny
 	msgbox Zone21C_Text_Breeder_Request, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq Zone21C_EventScript_NoHappiny

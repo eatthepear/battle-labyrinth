@@ -4663,6 +4663,13 @@ u16 GetNumTrainersRemaining(void)
         count += !HasTrainerBeenFought(TRAINER_PBL_BLANCHE);
         count += !FlagGet(FLAG_BEAT_BOSS_17);
         break;
+    case 21:
+        for (trainer = TRAINER_PBL_BERNARD; trainer <= TRAINER_PBL_ALLY; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_BOSS_21);
+        break;
     default:
         count = 0;
         break;
