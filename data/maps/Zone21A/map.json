@@ -18,7 +18,7 @@
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
       "x": 32,
       "y": 95,
-      "elevation": 3,
+      "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -31,7 +31,7 @@
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
       "x": 30,
       "y": 75,
-      "elevation": 3,
+      "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -44,7 +44,7 @@
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
       "x": 25,
       "y": 60,
-      "elevation": 3,
+      "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -57,7 +57,7 @@
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
       "x": 24,
       "y": 36,
-      "elevation": 3,
+      "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -175,7 +175,7 @@
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
       "x": 23,
       "y": 13,
-      "elevation": 0,
+      "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -263,82 +263,10 @@
       "type": "trigger",
       "x": 30,
       "y": 63,
-      "elevation": 0,
+      "elevation": 1,
       "var": "VAR_GENERIC",
       "var_value": "0",
       "script": "Zone21A_EventScript_SecretWarp"
-    },
-    {
-      "type": "trigger",
-      "x": 15,
-      "y": 17,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone21A_EventScript_SetState1"
-    },
-    {
-      "type": "trigger",
-      "x": 16,
-      "y": 17,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone21A_EventScript_SetState1"
-    },
-    {
-      "type": "trigger",
-      "x": 15,
-      "y": 18,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone21A_EventScript_SetState0"
-    },
-    {
-      "type": "trigger",
-      "x": 16,
-      "y": 18,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone21A_EventScript_SetState0"
-    },
-    {
-      "type": "trigger",
-      "x": 28,
-      "y": 97,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone21A_EventScript_SetState1"
-    },
-    {
-      "type": "trigger",
-      "x": 29,
-      "y": 97,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone21A_EventScript_SetState1"
-    },
-    {
-      "type": "trigger",
-      "x": 28,
-      "y": 98,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone21A_EventScript_SetState0"
-    },
-    {
-      "type": "trigger",
-      "x": 29,
-      "y": 98,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone21A_EventScript_SetState0"
     },
     {
       "type": "trigger",
@@ -346,7 +274,7 @@
       "y": 18,
       "elevation": 0,
       "var": "VAR_ZONE_21_STATE",
-      "var_value": "1",
+      "var_value": "0",
       "script": "Zone21A_EventScript_TriggerWally"
     },
     {
@@ -355,7 +283,7 @@
       "y": 18,
       "elevation": 0,
       "var": "VAR_ZONE_21_STATE",
-      "var_value": "1",
+      "var_value": "0",
       "script": "Zone21A_EventScript_TriggerWally"
     },
     {
@@ -364,7 +292,7 @@
       "y": 18,
       "elevation": 0,
       "var": "VAR_ZONE_21_STATE",
-      "var_value": "1",
+      "var_value": "0",
       "script": "Zone21A_EventScript_TriggerWally"
     }
   ],
