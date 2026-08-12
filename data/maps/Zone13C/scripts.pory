@@ -252,6 +252,22 @@ script Zone13C_EventScript_Cook {
 	end
 }
 
+script Zone13C_EventScript_Serena {
+	lock
+	setspeaker("Serena")
+	msgbox(format("SERENA!"))
+	release
+	end
+}
+
+script Zone13C_EventScript_Tabitha {
+	lock
+	setspeaker("Tabitha")
+	msgbox(format("TABITHA!"))
+	release
+	end
+}
+
 raw `
 Zone13C_EventScript_Scientist1::
 	lock

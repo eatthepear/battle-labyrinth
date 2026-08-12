@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Zone14B_EventScript_MagmaGrunt1",
-      "flag": "0"
+      "flag": "FLAG_BEAT_BOSS_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
@@ -38,7 +38,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Zone14B_EventScript_MagmaGrunt2",
-      "flag": "0"
+      "flag": "FLAG_BEAT_BOSS_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
@@ -51,7 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Zone14B_EventScript_MagmaGrunt3",
-      "flag": "0"
+      "flag": "FLAG_BEAT_BOSS_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
