@@ -1,21 +1,21 @@
 mapscripts Zone16A_MapScripts {
 	MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_ITEM_ZONE16A_TM27)) {
+		if (flag(FLAG_ITEM_ZONE16A_TM_FLY)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE16A_WATER_STONE)) {
+		if (flag(FLAG_ITEM_ZONE16A_RANDOM_1)) {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE16A_DIVE_BALL)) {
+		if (flag(FLAG_ITEM_ZONE16A_RANDOM_2)) {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE16A_TIMER_BALL)) {
+		if (flag(FLAG_ITEM_ZONE16A_RANDOM_3)) {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
@@ -118,9 +118,9 @@ script Zone16A_EventScript_SandPile {
 	end
 }
 
-script Zone16A_EventScript_TM27 {
+script Zone16A_EventScript_TMFly {
 	lock
-	if (flag(FLAG_ITEM_ZONE16A_TM27)) {
+	if (flag(FLAG_ITEM_ZONE16A_TM_FLY)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -128,16 +128,16 @@ script Zone16A_EventScript_TM27 {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE16A_TM27)
+	setflag(FLAG_ITEM_ZONE16A_TM_FLY)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_TM27, 1)
+	finditem(ITEM_TM_FLY, 1)
 	release
 	end
 }
 
-script Zone16A_EventScript_WaterStone {
+script Zone16A_EventScript_Random1 {
 	lock
-	if (flag(FLAG_ITEM_ZONE16A_WATER_STONE)) {
+	if (flag(FLAG_ITEM_ZONE16A_RANDOM_1)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -145,16 +145,17 @@ script Zone16A_EventScript_WaterStone {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE16A_WATER_STONE)
+	setflag(FLAG_ITEM_ZONE16A_RANDOM_1)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_WATER_STONE, 1)
+	specialvar(VAR_TEMP_1, RandomItemChest)
+	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
 
-script Zone16A_EventScript_DiveBall {
+script Zone16A_EventScript_Random2 {
 	lock
-	if (flag(FLAG_ITEM_ZONE16A_DIVE_BALL)) {
+	if (flag(FLAG_ITEM_ZONE16A_RANDOM_2)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -162,16 +163,17 @@ script Zone16A_EventScript_DiveBall {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE16A_DIVE_BALL)
+	setflag(FLAG_ITEM_ZONE16A_RANDOM_2)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_DIVE_BALL, 1)
+	specialvar(VAR_TEMP_1, RandomItemChest)
+	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
 
-script Zone16A_EventScript_TimerBall {
+script Zone16A_EventScript_Random3 {
 	lock
-	if (flag(FLAG_ITEM_ZONE16A_TIMER_BALL)) {
+	if (flag(FLAG_ITEM_ZONE16A_RANDOM_3)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -179,9 +181,10 @@ script Zone16A_EventScript_TimerBall {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE16A_TIMER_BALL)
+	setflag(FLAG_ITEM_ZONE16A_RANDOM_3)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_TIMER_BALL, 1)
+	specialvar(VAR_TEMP_1, RandomItemChest)
+	finditem(VAR_TEMP_1, VAR_TEMP_0)
 	release
 	end
 }
