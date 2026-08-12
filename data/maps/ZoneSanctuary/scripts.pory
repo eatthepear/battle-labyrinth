@@ -1078,6 +1078,7 @@ script Sanctuary_EventScript_HandleStarterSelectionDefault {
 			}
 			givemon(VAR_TEMP_3, 5, ITEM_NONE)
 			playfanfare(MUS_OBTAIN_ITEM)
+			setspeaker(SP_NAME_NONE)
 			message(format("{PLAYER} received the {STR_VAR_1}!"))
 			waitmessage
 			waitfanfare
