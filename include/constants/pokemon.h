@@ -153,6 +153,7 @@ enum __attribute__((packed)) Stat
 #define MAX_GIFT_RIBBON 64
 
 // PBL. These are placed here instead of region_map_sections.constants.json.txt so they can be referenced from scripts
+#define METLOC_ZONE6A_KIMONO_GIRL_EGG 0xF1
 #define METLOC_ZONE4A_GIFT         0xF2
 #define METLOC_ZONE8B_GIFT         0xF3
 #define METLOC_MARIE_EGG           0xF4
