@@ -4008,9 +4008,7 @@ static void BufferMonTrainerMemo(void)
 
         if (sum->metLevel == 0)
         {
-            if (sum->metLocation == METLOC_MARIE_EGG)
-                text = gText_XNatureHatchedFromMarieEggs;
-            else if (sum->metLocation == METLOC_ZONE6A_KIMONO_GIRL_EGG)
+            if (sum->metLocation == METLOC_ZONE6A_KIMONO_GIRL_EGG)
                 text = COMPOUND_STRING("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nhatched from an egg given by\na Kimono Girl.");
             else
                 text = (sum->metLocation >= MAPSEC_NONE) ? gText_XNatureHatchedSomewhereAt : gText_XNatureHatchedAtYZ;
@@ -4204,9 +4202,7 @@ static void PrintEggMemo(void)
         //     text = gText_PeculiarEggNicePlace;
         // else if (DidMonComeFromGBAGames() == FALSE || DoesMonOTMatchOwner() == FALSE)
         //     text = gText_PeculiarEggTrade;
-        if (sum->metLocation == METLOC_MARIE_EGG)
-            text = gText_PeculiarEggMarieEggs;
-        else if (sum->metLocation == METLOC_ZONE6A_KIMONO_GIRL_EGG)
+        if (sum->metLocation == METLOC_ZONE6A_KIMONO_GIRL_EGG)
             text = COMPOUND_STRING("A peculiar Pokémon egg\ngiven by a Kimono Girl.");
         else if (sum->metLocation == METLOC_SPECIAL_EGG)
             text = (DidMonComeFromRSE() == TRUE) ? gText_EggFromHotSprings : gText_EggFromTraveler;
