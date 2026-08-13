@@ -60,6 +60,8 @@ script EventScript_Shop_Max {
 			pokemart(Zone18A_Shop_TMShop)
 		case 22:
 			pokemart(Zone22A_Shop_TMShop)
+		case 24:
+			pokemart(Zone24A_Shop_TMShop)
 		case 29:
 			pokemart(Zone29A_Shop_TMShop)
 		case 35:
@@ -102,6 +104,15 @@ mart Zone22A_Shop_TMShop {
 	ITEM_TM_BULK_UP
 }
 
+mart Zone24A_Shop_TMShop {
+	ITEM_TM_BLIZZARD
+	ITEM_TM_THUNDER
+	ITEM_TM_FIRE_BLAST
+	ITEM_TM_SOLAR_BEAM
+	ITEM_TM_FOCUS_BLAST
+	ITEM_TM_HURRICANE
+}
+
 mart Zone29A_Shop_TMShop {
 	ITEM_TM_SUBSTITUTE
 	ITEM_TM_AGILITY
@@ -126,6 +137,12 @@ mart Sanctuary_Shop_TMShop {
 	ITEM_TM_SANDSTORM
 	ITEM_TM_CALM_MIND
 	ITEM_TM_BULK_UP
+	ITEM_TM_BLIZZARD
+	ITEM_TM_THUNDER
+	ITEM_TM_FIRE_BLAST
+	ITEM_TM_SOLAR_BEAM
+	ITEM_TM_FOCUS_BLAST
+	ITEM_TM_HURRICANE
 	ITEM_TM_SUBSTITUTE
 	ITEM_TM_AGILITY
 	ITEM_TM_NASTY_PLOT
@@ -1858,6 +1875,12 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 24) {
 		return
 	}
+	additem(ITEM_TM_BLIZZARD)
+	additem(ITEM_TM_THUNDER)
+	additem(ITEM_TM_FIRE_BLAST)
+	additem(ITEM_TM_SOLAR_BEAM)
+	additem(ITEM_TM_FOCUS_BLAST)
+	additem(ITEM_TM_HURRICANE)
 
 	if (var(VAR_ZONE) == 26) {
 		return
