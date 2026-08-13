@@ -24,7 +24,7 @@ script Zone23A_EventScript_Lacey {
 	setspeaker("Lacey")
 	msgbox(format("There are some things that seem out of reach no matter how hard you try.\pHowever, it's important that you never give up - no matter the opponent or the odds.\pI could tell from our battle that you and your Pokémon understand that.\pTo commemorate such an impressive show of teamwork, please accept the Cliff Badge!"))
 	setspeaker(SP_NAME_NONE)
-	// giveitem(ITEM_TM_DRAIN_PUNCH)
+	giveitem(ITEM_TM_DAZZLING_GLEAM)
 	msgbox(format("With {COLOR GREEN}Rock Tomb{COLOR DARK_GRAY}, a Pokémon can hurl rocks at its target, not only inflicting damage but also lowering the target's Speed.\pAnd the {COLOR GREEN}Hard Stone{COLOR DARK_GRAY} increases the damage of your Pokémon's Rock-type moves by 20%. Forms a nifty combo, huh?\pYou're just starting on your journey, so enjoy the ride and feel the breeze in your face!"))
 	setflag(FLAG_BEAT_BOSS_23)
 	release
