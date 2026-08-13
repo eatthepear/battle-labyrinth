@@ -186,6 +186,50 @@ script Zone6A_EventScript_Zack {
 	end
 }
 
+script Zone6A_EventScript_KimonoGirl {
+	lockall
+	clearflag(FLAG_HIDE_ZONE6A_KIMONO_GIRL)
+	addobject(LOCALID_KIMONO_GIRL_6A)
+	playbgm(MUS_HG_KIMONO_GIRL, 0)
+	applymovement(LOCALID_KIMONO_GIRL_6A, Common_Movement_WalkDown4)
+	waitmovement(0)
+	applymovement(LOCALID_KIMONO_GIRL_6A, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement(0)
+	applymovement(LOCALID_KIMONO_GIRL_6A, Common_Movement_WalkDown2)
+	waitmovement(0)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 19) {
+		applymovement(LOCALID_KIMONO_GIRL_6A, Common_Movement_WalkDown)
+		waitmovement(0)
+	}
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
+	waitmovement(0)
+	applymovement(LOCALID_KIMONO_GIRL_6A, Common_Movement_WalkLeft)
+	waitmovement(0)
+	setspeaker("Kimono Girl")
+	msgbox(format("HELLO! I SAW UR BATTLE, U BATTLE GOOD. TAKE THIS EGG!"), MSGBOX_AUTOCLOSE)
+	playfanfare(MUS_OBTAIN_ITEM)
+	giveegg(SPECIES_EEVEE)
+	setspeaker(SP_NAME_NONE)
+	msgbox(format("{PLAYER} received an Egg from the {COLOR BLUE}Kimono Girl{COLOR DARK_GRAY}!"))
+	waitfanfare
+	setspeaker("Kimono Girl")
+	msgbox(format("SEE YA!"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_KIMONO_GIRL_6A, Common_Movement_WalkRight6)
+	waitmovement(0)
+	applymovement(LOCALID_KIMONO_GIRL_6A, Common_Movement_WalkRight2)
+	waitmovement(0)
+	removeobject(LOCALID_KIMONO_GIRL_6A)
+	setflag(FLAG_HIDE_ZONE6A_KIMONO_GIRL)
+	setvar(VAR_ZONE_6_STATE, 2)
+	fadedefaultbgm
+	releaseall
+}
+
 script Zone6A_EventScript_TradeDelibird {
 	lock
 	if (flag(FLAG_ZONE6A_TRADED_DELIBIRD)) {

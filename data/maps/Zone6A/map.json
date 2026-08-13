@@ -149,8 +149,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_2",
-      "x": 25,
-      "y": 17,
+      "x": 15,
+      "y": 26,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -240,8 +240,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 38,
-      "y": 18,
+      "x": 39,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -266,8 +266,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
-      "x": 29,
-      "y": 16,
+      "x": 27,
+      "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -279,7 +279,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
-      "x": 31,
+      "x": 27,
       "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -293,7 +293,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
       "x": 28,
-      "y": 15,
+      "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -305,8 +305,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
-      "x": 29,
-      "y": 14,
+      "x": 26,
+      "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -315,6 +315,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_Krabby",
       "flag": "FLAG_BEAT_BOSS_6"
+    },
+    {
+      "local_id": "LOCALID_KIMONO_GIRL_6A",
+      "graphics_id": "OBJ_EVENT_GFX_KIMONO_GIRL",
+      "x": 36,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_ZONE6A_KIMONO_GIRL"
     }
   ],
   "warp_events": [],
@@ -336,6 +350,24 @@
       "var": "VAR_ZONE_6_STATE",
       "var_value": "0",
       "script": "Zone6A_EventScript_BossBattle"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_ZONE_6_STATE",
+      "var_value": "1",
+      "script": "Zone6A_EventScript_KimonoGirl"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_ZONE_6_STATE",
+      "var_value": "1",
+      "script": "Zone6A_EventScript_KimonoGirl"
     }
   ],
   "bg_events": [
@@ -373,8 +405,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 28,
-      "y": 16,
+      "x": 27,
+      "y": 21,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE6_3"

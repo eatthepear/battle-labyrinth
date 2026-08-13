@@ -368,6 +368,7 @@ script EventScript_NextZone {
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				setflag(FLAG_HIDE_ZONE6A_MAX)
 			}
+			setflag(FLAG_HIDE_ZONE6A_KIMONO_GIRL)
 			warp(MAP_ZONE6A, 255, 51, 22)
 		case 7:
 			warp(MAP_ZONE7A, 255, 10, 33)
