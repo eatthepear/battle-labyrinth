@@ -250,6 +250,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Zone11A_EventScript_Archer",
       "flag": "FLAG_BEAT_BOSS_11"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_VAR_7",
+      "x": 27,
+      "y": 58,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone11A_EventScript_TMShadowClaw",
+      "flag": "0"
     }
   ],
   "warp_events": [],
