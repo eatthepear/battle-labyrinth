@@ -30,7 +30,6 @@ script Zone4A_EventScript_KimonoGirl_Intro {
 	waitmovement(0)
 	setspeaker(SP_NAME_NONE)
 	msgbox(format("{PLAYER} agreed to help the {COLOR BLUE}Kimono Girl{COLOR DARK_GRAY}!"))
-	waitse
 	setspeaker("Kimono Girl")
 	msgbox(Zone4A_Text_KimonoGirl, MSGBOX_AUTOCLOSE)
 	setfollowernpc(LOCALID_KIMONO_GIRL_4A, FOLLOWER_NPC_FLAG_ALL)
