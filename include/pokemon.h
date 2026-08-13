@@ -182,7 +182,7 @@ struct BoxPokemon
     u8 spAttackEV;
     u8 spDefenseEV;
     u8 pokerus;
-    u8 metLocation;
+    metloc_u8_t metLocation;
 };
 
 struct Pokemon

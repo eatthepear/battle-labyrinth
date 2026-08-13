@@ -314,7 +314,7 @@ static void CreateHatchedMon(struct Pokemon *egg, struct Pokemon *temp)
     bool32 isShiny;
     enum Move moves[MAX_MON_MOVES];
     u32 ivs[NUM_STATS];
-    u32 metLocation = GetMonData(egg, MON_DATA_MET_LOCATION);
+    metloc_u8_t metLocation = GetMonData(egg, MON_DATA_MET_LOCATION);
 
     species = GetMonData(egg, MON_DATA_SPECIES);
 

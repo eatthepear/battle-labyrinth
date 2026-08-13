@@ -213,7 +213,7 @@ script Zone6A_EventScript_KimonoGirl {
 	setspeaker("Kimono Girl")
 	msgbox(format("HELLO! I SAW UR BATTLE, U BATTLE GOOD. TAKE THIS EGG!"), MSGBOX_AUTOCLOSE)
 	playfanfare(MUS_OBTAIN_ITEM)
-	giveegg(SPECIES_EEVEE)
+	giveegg(SPECIES_EEVEE, metLocation=METLOC_MARIE_EGG)
 	setspeaker(SP_NAME_NONE)
 	msgbox(format("{PLAYER} received an Egg from the {COLOR BLUE}Kimono Girl{COLOR DARK_GRAY}!"))
 	waitfanfare

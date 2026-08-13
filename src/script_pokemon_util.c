@@ -64,7 +64,7 @@ static void HealPlayerBoxes(void)
     }
 }
 
-u8 ScriptGiveEgg(enum Species species)
+u8 ScriptGiveEgg(enum Species species, metloc_u8_t metLocation)
 {
     struct Pokemon mon;
     u8 isEgg;
@@ -72,6 +72,8 @@ u8 ScriptGiveEgg(enum Species species)
     CreateEgg(&mon, species, TRUE);
     isEgg = TRUE;
     SetMonData(&mon, MON_DATA_IS_EGG, &isEgg);
+    if (metLocation != 0)
+        SetMonData(&mon, MON_DATA_MET_LOCATION, &metLocation);
 
     return GiveCapturedMonToPlayer(&mon);
 }
