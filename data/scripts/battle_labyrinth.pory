@@ -1836,6 +1836,8 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 18) {
 		return
 	}
+	additem(ITEM_LINKING_CORD)
+	additem(ITEM_TM_U_TURN)
 
 	if (var(VAR_ZONE) == 20) {
 		return
