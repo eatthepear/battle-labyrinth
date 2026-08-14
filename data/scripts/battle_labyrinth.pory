@@ -861,57 +861,23 @@ script EventScript_Notebook_Abilities {
 	while {
 		message(format("Which Pokémon's ability changes would you like to read?"))
 		waitmessage
-		dynmultipush("Diglett", SPECIES_DIGLETT)
-		dynmultipush("Dugtrio", SPECIES_DUGTRIO)
-		dynmultipush("Goldeen", SPECIES_GOLDEEN)
-		dynmultipush("Seaking", SPECIES_SEAKING)
-		dynmultipush("Yanma", SPECIES_YANMA)
-		dynmultipush("Yanmega", SPECIES_YANMEGA)
-		dynmultipush("Qwilfish", SPECIES_QWILFISH)
 		dynmultipush("Tyranitar", SPECIES_TYRANITAR)
 		dynmultipush("Wingull", SPECIES_WINGULL)
 		dynmultipush("Pelipper", SPECIES_PELIPPER)
 		dynmultipush("Torkoal", SPECIES_TORKOAL)
-		dynmultipush("Lileep", SPECIES_LILEEP)
-		dynmultipush("Cradily", SPECIES_CRADILY)
-		dynmultipush("Drifloon", SPECIES_DRIFLOON)
-		dynmultipush("Drifblim", SPECIES_DRIFBLIM)
 		dynmultipush("Hippopotas", SPECIES_HIPPOPOTAS)
 		dynmultipush("Hippowdon", SPECIES_HIPPOWDON)
 		dynmultipush("Snover", SPECIES_SNOVER)
 		dynmultipush("Abomasnow", SPECIES_ABOMASNOW)
 		dynmultipush("Audino", SPECIES_AUDINO)
-		dynmultipush("Scraggy", SPECIES_SCRAGGY)
-		dynmultipush("Scrafty", SPECIES_SCRAFTY)
 		dynmultipush("Vanillite", SPECIES_VANILLITE)
 		dynmultipush("Vanillish", SPECIES_VANILLISH)
 		dynmultipush("Vanilluxe", SPECIES_VANILLUXE)
-		dynmultipush("Litwick", SPECIES_LITWICK)
-		dynmultipush("Lampent", SPECIES_LAMPENT)
-		dynmultipush("Chandelure", SPECIES_CHANDELURE)
 		dynmultipush("Mienfoo", SPECIES_MIENFOO)
 		dynmultipush("Mienshao", SPECIES_MIENSHAO)
-		dynmultipush("Hawlucha", SPECIES_HAWLUCHA)
-		dynmultipush("Blipbug", SPECIES_BLIPBUG)
-		dynmultipush("Dottler", SPECIES_DOTTLER)
-		dynmultipush("Orbeetle", SPECIES_ORBEETLE)
-		dynmultipush("Gossifleur", SPECIES_GOSSIFLEUR)
-		dynmultipush("Eldegoss", SPECIES_ELDEGOSS)
-		dynmultipush("Bombirdier", SPECIES_BOMBIRDIER)
 		dynmultipush("Back", 0)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 1, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
-			case SPECIES_DIGLETT:
-			case SPECIES_DUGTRIO:
-				msgbox(format("Diglett and Dugtrio now get Sand Force as a regular ability instead of Arena Trap, which is now their Hidden Ability."))
-			case SPECIES_GOLDEEN:
-			case SPECIES_SEAKING:
-				msgbox(format("Goldeen and Seaking now get Lightning Rod as a regular ability instead of Water Veil, which is now their Hidden Ability."))
-			case SPECIES_YANMA:
-			case SPECIES_YANMEGA:
-				msgbox(format("Yanma and Yanmega now get Frisk as a regular ability instead of Speed Boost, which is now their Hidden Ability."))
-			case SPECIES_QWILFISH:
-				msgbox(format("Qwilfish now gets Intimidate as a regular ability instead of Poison Point, which is now its Hidden Ability."))
 			case SPECIES_TYRANITAR:
 				msgbox(format("Tyranitar now gets Unnerve as a regular ability instead of Sand Stream, which is now its Hidden Ability."))
 			case SPECIES_WINGULL:
@@ -920,43 +886,17 @@ script EventScript_Notebook_Abilities {
 				msgbox(format("Pelipper now gets Rain Dish as a regular ability instead of Drizzle, which is now its Hidden Ability."))
 			case SPECIES_TORKOAL:
 				msgbox(format("Torkoal now gets Shell Armor as a regular ability instead of Drought, which is now its Hidden Ability."))
-			case SPECIES_LILEEP:
-			case SPECIES_CRADILY:
-				msgbox(format("Lileep and Cradily now get Storm Drain as a regular ability instead of Suction Cups, which is now their Hidden Ability."))
-			case SPECIES_DRIFLOON:
-			case SPECIES_DRIFBLIM:
-				msgbox(format("Drifloon and Drifblim now get Flare Boost as a regular ability instead of Unburden, which is now their Hidden Ability."))
 			case SPECIES_HIPPOPOTAS:
 			case SPECIES_HIPPOWDON:
 				msgbox(format("Hippopotas and Hippowdon now get Sand Force as a regular ability instead of Sand Stream, which is now their Hidden Ability."))
 			case SPECIES_SNOVER:
 			case SPECIES_ABOMASNOW:
 				msgbox(format("Snover and Abomasnow now get Soundproof as a regular ability instead of Snow Warning, which is now their Hidden Ability."))
-			case SPECIES_AUDINO:
-				msgbox(format("Audino now gets Klutz as a regular ability instead of Regenerator, which is now its Hidden Ability."))
-			case SPECIES_SCRAGGY:
-			case SPECIES_SCRAFTY:
-				msgbox(format("Scraggy and Scrafty now get Intimidate as a regular ability instead of Moxie, which is now their Hidden Ability."))
 			case SPECIES_VANILLITE:
 			case SPECIES_VANILLISH:
 				msgbox(format("Vanillite and Vanillish now get Weak Armor as a regular ability instead of Snow Cloak, which is now their Hidden Ability."))
 			case SPECIES_VANILLUXE:
 				msgbox(format("Vanilluxe now gets Weak Armor as a regular ability instead of Snow Warning, which is now its Hidden Ability."))
-			case SPECIES_MIENFOO:
-			case SPECIES_MIENSHAO:
-				msgbox(format("Mienfoo and Mienshao now get Reckless as a regular ability instead of Regenerator, which is now their Hidden Ability."))
-			case SPECIES_HAWLUCHA:
-				msgbox(format("Hawlucha now gets Mold Breaker as a regular ability instead of Unburden, which is now its Hidden Ability."))
-			case SPECIES_BLIPBUG:
-			case SPECIES_DOTTLER:
-				msgbox(format("Blipbug and Dottler now get Telepathy as a regular ability instead of Compound Eyes, which is now their Hidden Ability."))
-			case SPECIES_ORBEETLE:
-				msgbox(format("Orbeetle now gets Telepathy as a regular ability instead of Frisk, which is now its Hidden Ability."))
-			case SPECIES_GOSSIFLEUR:
-			case SPECIES_ELDEGOSS:
-				msgbox(format("Gossifleur and Eldegoss now get Effect Spore as a regular ability instead of Regenerator, which is now their Hidden Ability."))
-			case SPECIES_BOMBIRDIER:
-				msgbox(format("Bombirdier now gets Rocky Payload as a regular ability instead of Keen Eye, which is now its Hidden Ability."))
 			case 0:
 			case MULTI_B_PRESSED:
 				return
