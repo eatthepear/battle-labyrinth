@@ -1126,15 +1126,13 @@ script EventScript_Shop_FarmersStand {
 		dynmultipush("Ability Snack", ITEM_ABILITY_SNACK)
 		dynmultipush("Honey", ITEM_HONEY)
 		dynmultipush("Serious Mint", ITEM_SERIOUS_MINT)
-		if (var(VAR_ZONE) > 10) {
+		if (var(VAR_ZONE) > 5) {
 			dynmultipush("Gentle Mint", ITEM_GENTLE_MINT)
 			dynmultipush("Lax Mint", ITEM_LAX_MINT)
-		}
-		if (var(VAR_ZONE) > 15) {
 			dynmultipush("Relaxed Mint", ITEM_RELAXED_MINT)
 			dynmultipush("Sassy Mint", ITEM_SASSY_MINT)
 		}
-		if (var(VAR_ZONE) > 20) {
+		if (var(VAR_ZONE) > 15) {
 			dynmultipush("Bold Mint", ITEM_BOLD_MINT)
 			dynmultipush("Impish Mint", ITEM_IMPISH_MINT)
 			dynmultipush("Calm Mint", ITEM_CALM_MINT)
@@ -1142,7 +1140,7 @@ script EventScript_Shop_FarmersStand {
 			dynmultipush("Quiet Mint", ITEM_QUIET_MINT)
 			dynmultipush("Brave Mint", ITEM_BRAVE_MINT)
 		}
-		if (var(VAR_ZONE) > 35) {
+		if (var(VAR_ZONE) > 25) {
 			dynmultipush("Lonely Mint", ITEM_LONELY_MINT)
 			dynmultipush("Adamant Mint", ITEM_ADAMANT_MINT)
 			dynmultipush("Naughty Mint", ITEM_NAUGHTY_MINT)
@@ -1155,16 +1153,16 @@ script EventScript_Shop_FarmersStand {
 			dynmultipush("Naive Mint", ITEM_NAIVE_MINT)
 		}
 		dynmultipush("Exp. Candy XS", ITEM_EXP_CANDY_XS)
-		if (var(VAR_ZONE) > 10) {
+		if (var(VAR_ZONE) > 5) {
 			dynmultipush("Exp. Candy S", ITEM_EXP_CANDY_XS)
 		}
-		if (var(VAR_ZONE) > 20) {
+		if (var(VAR_ZONE) > 15) {
 			dynmultipush("Exp. Candy M", ITEM_EXP_CANDY_M)
 		}
-		if (var(VAR_ZONE) > 35) {
+		if (var(VAR_ZONE) > 25) {
 			dynmultipush("Exp. Candy L", ITEM_EXP_CANDY_L)
 		}
-		if (var(VAR_ZONE) > 45) {
+		if (var(VAR_ZONE) > 30) {
 			dynmultipush("Exp. Candy XL", ITEM_EXP_CANDY_XL)
 		}
 		dynmultipush("Oran Berry", ITEM_ORAN_BERRY)
@@ -1177,7 +1175,7 @@ script EventScript_Shop_FarmersStand {
 		if (var(VAR_ZONE) > 5) {
 			dynmultipush("Sitrus Berry", ITEM_SITRUS_BERRY)
 		}
-		if (var(VAR_ZONE) > 30) {
+		if (var(VAR_ZONE) > 15) {
 			dynmultipush("Occa Berry", ITEM_OCCA_BERRY)
 			dynmultipush("Passho Berry", ITEM_PASSHO_BERRY)
 			dynmultipush("Wacan Berry", ITEM_WACAN_BERRY)
@@ -1197,10 +1195,10 @@ script EventScript_Shop_FarmersStand {
 			dynmultipush("Chilan Berry", ITEM_CHILAN_BERRY)
 			dynmultipush("Roseli Berry", ITEM_ROSELI_BERRY)
 		}
-		if (var(VAR_ZONE) > 25) {
+		if (var(VAR_ZONE) > 20) {
 			dynmultipush("Lum Berry", ITEM_LUM_BERRY)
 		}
-		if (var(VAR_ZONE) > 40) {
+		if (var(VAR_ZONE) > 35) {
 			dynmultipush("Figy Berry", ITEM_FIGY_BERRY)
 			dynmultipush("Wiki Berry", ITEM_WIKI_BERRY)
 			dynmultipush("Mago Berry", ITEM_MAGO_BERRY)
@@ -1472,7 +1470,7 @@ script EventScript_Shop_FarmersStand_BuyItem {
 }
 
 text Text_Shop_FarmersStand_YouCantPurchaseMore {
-	format("You've already reached the purchase limit, I'm afraid. Come back when we restock! (every 5th Zone)")
+	format("You've already reached the purchase limit, I'm afraid. Come back when we restock!")
 }
 
 script EventScript_Fisherman {
@@ -1783,7 +1781,6 @@ script EventScript_Shop_MartEmployee {
 		case 23:
 		case 24:
 		case 25:
-			pokemart(Shop_Mart_5)
 		case 26:
 		case 27:
 		case 28:
@@ -1794,19 +1791,8 @@ script EventScript_Shop_MartEmployee {
 		case 33:
 		case 34:
 		case 35:
-			pokemart(Shop_Mart_7)
-		case 36:
-		case 37:
-		case 38:
-		case 39:
-		case 40:
-			pokemart(Shop_Mart_8)
-		case 41:
-		case 42:
-		case 43:
-		case 44:
-		case 45:
-			pokemart(Shop_Mart_9)
+		default:
+			pokemart(Shop_Mart_5)
 	}
 	msgbox("Please come again!")
 	fadedefaultbgm
@@ -1849,6 +1835,7 @@ mart Shop_Mart_4 {
 	ITEM_AWAKENING
 	ITEM_BURN_HEAL
 	ITEM_ICE_HEAL
+	ITEM_FULL_HEAL
 }
 
 mart Shop_Mart_5 {
@@ -1858,60 +1845,8 @@ mart Shop_Mart_5 {
 	ITEM_POTION
 	ITEM_SUPER_POTION
 	ITEM_HYPER_POTION
-	ITEM_REVIVE
-	ITEM_ANTIDOTE
-	ITEM_PARALYZE_HEAL
-	ITEM_AWAKENING
-	ITEM_BURN_HEAL
-	ITEM_ICE_HEAL
-	ITEM_FULL_HEAL
-}
-
-mart Shop_Mart_7 {
-	ITEM_POKE_BALL
-	ITEM_GREAT_BALL
-	ITEM_ULTRA_BALL
-	ITEM_POTION
-	ITEM_SUPER_POTION
-	ITEM_HYPER_POTION
 	ITEM_MAX_POTION
 	ITEM_REVIVE
-	ITEM_ANTIDOTE
-	ITEM_PARALYZE_HEAL
-	ITEM_AWAKENING
-	ITEM_BURN_HEAL
-	ITEM_ICE_HEAL
-	ITEM_FULL_HEAL
-}
-
-mart Shop_Mart_8 {
-	ITEM_POKE_BALL
-	ITEM_GREAT_BALL
-	ITEM_ULTRA_BALL
-	ITEM_POTION
-	ITEM_SUPER_POTION
-	ITEM_HYPER_POTION
-	ITEM_MAX_POTION
-	ITEM_FULL_RESTORE
-	ITEM_REVIVE
-	ITEM_ANTIDOTE
-	ITEM_PARALYZE_HEAL
-	ITEM_AWAKENING
-	ITEM_BURN_HEAL
-	ITEM_ICE_HEAL
-	ITEM_FULL_HEAL
-}
-
-mart Shop_Mart_9 {
-	ITEM_POKE_BALL
-	ITEM_GREAT_BALL
-	ITEM_ULTRA_BALL
-	ITEM_POTION
-	ITEM_SUPER_POTION
-	ITEM_HYPER_POTION
-	ITEM_MAX_POTION
-	ITEM_FULL_RESTORE
-	ITEM_MAX_REVIVE
 	ITEM_ANTIDOTE
 	ITEM_PARALYZE_HEAL
 	ITEM_AWAKENING
@@ -1943,47 +1878,54 @@ script EventScript_Shop_Varrick {
 	setspeaker("Varrick")
 	message(format("Salutations! Welcome to {COLOR GREEN}Varrick's Extravagant Emporium{COLOR DARK_GRAY}!"))
 	waitmessage
+	call(Sanctuary_EventScript_MoveCameraUp)
 	call(EventScript_Shop_Varrick_Items)
+	setspeaker("Varrick")
 	msgbox("A big thank you from me!")
+	call(Sanctuary_EventScript_MoveCameraDown)
 	fadedefaultbgm
 	release
 }
 
 script EventScript_Shop_Varrick_Items {
 	while {
-		dynmultipush("Poké Balls", 0)
+		dynmultipush("Poké Balls", ITEM_POKE_BALL)
 		if (var(VAR_ZONE) > 5) {
-			dynmultipush("Evo Items", 1)
-			dynmultipush("Battle Items", 2)
-			dynmultipush("Treasures", 3)
+			dynmultipush("Evolution", ITEM_FIRE_STONE)
+			dynmultipush("Held Items", ITEM_SILK_SCARF)
+			dynmultipush("Treasures", ITEM_RED_SHARD)
+			dynmultipush("X Items", ITEM_X_ATTACK)
 		}
 		if (checkitem(ITEM_MEGA_RING) == TRUE) {
-			dynmultipush("Mega Stones", 6)
+			dynmultipush("Mega Stones", ITEM_VENUSAURITE)
 		}
 		if (var(VAR_ZONE) > 5) {
-			dynmultipush("Other", 4)
+			dynmultipush("Other", ITEM_LEEK)
 		}
-		dynmultipush("Exit", 7)
-		dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+		dynmultipush("Exit", 0)
+		dynmultistack(0, 0, FALSE, 5, FALSE, ITEM_POKE_BALL, DYN_MULTICHOICE_CB_SHOW_ITEM)
 		switch (var(VAR_RESULT)) {
-			case 0:
+			case ITEM_POKE_BALL:
 				call(EventScript_Shop_Varrick_Pokeballs)
-			case 1:
+			case ITEM_FIRE_STONE:
 				call(EventScript_Shop_Varrick_Evo)
-			case 2:
-				call(EventScript_Shop_Varrick_Battle)
-			case 3:
+			case ITEM_SILK_SCARF:
+				call(EventScript_Shop_Varrick_Held)
+			case ITEM_RED_SHARD:
 				call(EventScript_Shop_Varrick_Treasures)
-			case 4:
+			case ITEM_X_ATTACK:
+				call(EventScript_Shop_Varrick_XItems)
+			case ITEM_LEEK:
 				call(EventScript_Shop_Varrick_Other)
-			case 6:
+			case ITEM_VENUSAURITE:
 				call(EventScript_Shop_Varrick_MegaStones)
-			case 7:
+			case 0:
 			case MULTI_B_PRESSED:
 				return
 		}
 		setspeaker("Varrick")
-		msgbox(format("Want to have a look at anything else?"))
+		message(format("Want to have a look at anything else?"))
+		waitmessage
 	}
 }
 
@@ -2012,9 +1954,8 @@ script EventScript_Shop_Varrick_Pokeballs {
 		case 17:
 		case 18:
 		case 20:
-			pokemart(Shop_Pokeballs_4)
 		default:
-			pokemart(Shop_Pokeballs_5)
+			pokemart(Shop_Pokeballs_4)
 	}
 }
 
@@ -2024,19 +1965,13 @@ mart Shop_Pokeballs_1 {
 
 mart Shop_Pokeballs_2 {
 	ITEM_HEAL_BALL
-	ITEM_REPEAT_BALL
-	ITEM_NEST_BALL
-}
-
-mart Shop_Pokeballs_3 {
-	ITEM_HEAL_BALL
 	ITEM_DIVE_BALL
 	ITEM_NET_BALL
 	ITEM_REPEAT_BALL
 	ITEM_NEST_BALL
 }
 
-mart Shop_Pokeballs_4 {
+mart Shop_Pokeballs_3 {
 	ITEM_HEAL_BALL
 	ITEM_DIVE_BALL
 	ITEM_NET_BALL
@@ -2050,7 +1985,7 @@ mart Shop_Pokeballs_4 {
 	ITEM_MOON_BALL
 }
 
-mart Shop_Pokeballs_5 {
+mart Shop_Pokeballs_4 {
 	ITEM_QUICK_BALL
 	ITEM_DUSK_BALL
 	ITEM_TIMER_BALL
@@ -2087,8 +2022,13 @@ script EventScript_Shop_Varrick_Evo {
 		case 13:
 		case 15:
 			pokemart(Shop_EvoSpecies_3)
-		default:
+		case 16:
+		case 17:
+		case 18:
+		case 20:
 			pokemart(Shop_EvoSpecies_4)
+		default:
+			pokemart(Shop_EvoSpecies_5)
 	}
 }
 
@@ -2120,6 +2060,41 @@ mart Shop_EvoSpecies_3 {
 }
 
 mart Shop_EvoSpecies_4 {
+	ITEM_LINKING_CORD
+	ITEM_FIRE_STONE
+	ITEM_WATER_STONE
+	ITEM_THUNDER_STONE
+	ITEM_LEAF_STONE
+	ITEM_MOON_STONE
+	ITEM_SUN_STONE
+	ITEM_ICE_STONE
+	ITEM_SHINY_STONE
+	ITEM_AUSPICIOUS_ARMOR
+	ITEM_MALICIOUS_ARMOR
+	ITEM_BLACK_AUGURITE
+	ITEM_CHIPPED_POT
+	ITEM_MASTERPIECE_TEACUP
+	ITEM_GALARICA_CUFF
+	ITEM_GALARICA_WREATH
+	ITEM_SWEET_APPLE
+	ITEM_TART_APPLE
+	ITEM_SYRUPY_APPLE
+	ITEM_DRAGON_SCALE
+	ITEM_KINGS_ROCK
+	ITEM_METAL_COAT
+	ITEM_PRISM_SCALE
+	ITEM_RAZOR_CLAW
+	ITEM_RAZOR_FANG
+	ITEM_UPGRADE
+	ITEM_DEEP_SEA_SCALE
+	ITEM_DEEP_SEA_TOOTH
+	ITEM_OVAL_STONE
+	ITEM_WHIPPED_DREAM
+	ITEM_SACHET
+	ITEM_STRAWBERRY_SWEET
+}
+
+mart Shop_EvoSpecies_5 {
 	ITEM_LINKING_CORD
 	ITEM_FIRE_STONE
 	ITEM_WATER_STONE
@@ -2163,9 +2138,9 @@ mart Shop_EvoSpecies_4 {
 	ITEM_STRAWBERRY_SWEET
 }
 
-script EventScript_Shop_Varrick_Battle {
+script EventScript_Shop_Varrick_Held {
 	setspeaker("Varrick")
-	message(format("There are tons of Battle Items, and you can find all of them here!"))
+	message(format("I sell plenty of items your Pokémon can hold in battle!"))
 	waitmessage
 	switch (var(VAR_ZONE)) {
 		case 1:
@@ -2187,29 +2162,17 @@ script EventScript_Shop_Varrick_Battle {
 		case 17:
 		case 18:
 		case 20:
-			// pokemart(Shop_Battle_4)
+			pokemart(Shop_Battle_4)
 		case 21:
 		case 22:
 		case 23:
 		case 24:
 		case 25:
-			// pokemart(Shop_Battle_5)
-		case 26:
-			pokemart(Shop_Filler)
+			pokemart(Shop_Battle_4)
 	}
 }
 
 mart Shop_Battle_2 {
-	// X Items
-	ITEM_X_ATTACK
-	ITEM_X_DEFENSE
-	ITEM_X_SP_ATK
-	ITEM_X_SP_DEF
-	ITEM_X_SPEED
-	ITEM_X_ACCURACY
-	ITEM_DIRE_HIT
-	ITEM_GUARD_SPEC
-	ITEM_POKE_DOLL
 	// Type boosting items
 	ITEM_SILK_SCARF
 	ITEM_MIRACLE_SEED
@@ -2219,16 +2182,6 @@ mart Shop_Battle_2 {
 }
 
 mart Shop_Battle_3 {
-	// X Items
-	ITEM_X_ATTACK
-	ITEM_X_DEFENSE
-	ITEM_X_SP_ATK
-	ITEM_X_SP_DEF
-	ITEM_X_SPEED
-	ITEM_X_ACCURACY
-	ITEM_DIRE_HIT
-	ITEM_GUARD_SPEC
-	ITEM_POKE_DOLL
 	// Type boosting items
 	ITEM_SILK_SCARF
 	ITEM_CHARCOAL
@@ -2243,11 +2196,29 @@ mart Shop_Battle_3 {
 	ITEM_TWISTED_SPOON
 	ITEM_SILVER_POWDER
 	ITEM_HARD_STONE
-	// ITEM_SPELL_TAG
-	// ITEM_DRAGON_FANG
 	ITEM_BLACK_GLASSES
-	// ITEM_METAL_COAT
-	// ITEM_FAIRY_FEATHER
+}
+
+mart Shop_Battle_4 {
+	// Type boosting items
+	ITEM_SILK_SCARF
+	ITEM_CHARCOAL
+	ITEM_MYSTIC_WATER
+	ITEM_MAGNET
+	ITEM_MIRACLE_SEED
+	ITEM_NEVER_MELT_ICE
+	ITEM_BLACK_BELT
+	ITEM_POISON_BARB
+	ITEM_SOFT_SAND
+	ITEM_SHARP_BEAK
+	ITEM_TWISTED_SPOON
+	ITEM_SILVER_POWDER
+	ITEM_HARD_STONE
+	ITEM_SPELL_TAG
+	ITEM_DRAGON_FANG
+	ITEM_BLACK_GLASSES
+	ITEM_METAL_COAT
+	ITEM_FAIRY_FEATHER
 
 // #define ITEM_FLAME_PLATE
 // ITEM_SPLASH_PLATE
@@ -2419,6 +2390,7 @@ mart Shop_Treasures_3 {
 }
 
 mart Shop_Treasures_4 {
+	ITEM_HEART_SCALE
 	ITEM_RED_SHARD
 	ITEM_BLUE_SHARD
 	ITEM_YELLOW_SHARD
@@ -2431,7 +2403,6 @@ mart Shop_Treasures_5 {
 	ITEM_BLUE_SHARD
 	ITEM_YELLOW_SHARD
 	ITEM_GREEN_SHARD
-	ITEM_BOTTLE_CAP
 }
 
 mart Shop_Treasures_6 {
@@ -2441,7 +2412,25 @@ mart Shop_Treasures_6 {
 	ITEM_YELLOW_SHARD
 	ITEM_GREEN_SHARD
 	ITEM_BOTTLE_CAP
-	ITEM_GOLD_BOTTLE_CAP
+}
+
+script EventScript_Shop_Varrick_XItems {
+	setspeaker("Varrick")
+	message(format("X Items are used to boost your Pokémon in battle temporarily!"))
+	waitmessage
+	pokemart(Shop_XItems)
+}
+
+mart Shop_XItems {
+	ITEM_X_ATTACK
+	ITEM_X_DEFENSE
+	ITEM_X_SP_ATK
+	ITEM_X_SP_DEF
+	ITEM_X_SPEED
+	ITEM_X_ACCURACY
+	ITEM_DIRE_HIT
+	ITEM_GUARD_SPEC
+	ITEM_POKE_DOLL
 }
 
 script EventScript_Shop_Varrick_Other {
@@ -2462,25 +2451,22 @@ script EventScript_Shop_Varrick_Other {
 		case 12:
 		case 13:
 		case 15:
-			pokemart(Shop_Other_2)
-			// pokemart(Shop_Other_3)
 		case 16:
 		case 17:
 		case 18:
 		case 20:
-			// pokemart(Shop_Other_4)
 		case 21:
 		case 22:
 		case 23:
 		case 24:
 		case 25:
-			// pokemart(Shop_Other_5)
-		case 26:
-			pokemart(Shop_Filler)
+			pokemart(Shop_Other_5)
+		default:
+			pokemart(Shop_Other_6)
 	}
 }
 
-mart Shop_Other_2 {
+mart Shop_Other_5 {
 	ITEM_RED_NECTAR
 	ITEM_YELLOW_NECTAR
 	ITEM_PINK_NECTAR
@@ -2491,23 +2477,36 @@ mart Shop_Other_2 {
 	ITEM_LUCKY_PUNCH
 	ITEM_METAL_POWDER
 	ITEM_QUICK_POWDER
-#define ITEM_FIRE_MEMORY 271
-#define ITEM_WATER_MEMORY 272
-#define ITEM_ELECTRIC_MEMORY 273
-#define ITEM_GRASS_MEMORY 274
-#define ITEM_ICE_MEMORY 275
-#define ITEM_FIGHTING_MEMORY 276
-#define ITEM_POISON_MEMORY 277
-#define ITEM_GROUND_MEMORY 278
-#define ITEM_FLYING_MEMORY 279
-#define ITEM_PSYCHIC_MEMORY 280
-#define ITEM_BUG_MEMORY 281
-#define ITEM_ROCK_MEMORY 282
-#define ITEM_GHOST_MEMORY 283
-#define ITEM_DRAGON_MEMORY 284
-#define ITEM_DARK_MEMORY 285
-#define ITEM_STEEL_MEMORY 286
-#define ITEM_FAIRY_MEMORY 287
+}
+
+mart Shop_Other_6 {
+	ITEM_RED_NECTAR
+	ITEM_YELLOW_NECTAR
+	ITEM_PINK_NECTAR
+	ITEM_PURPLE_NECTAR
+	ITEM_LIGHT_BALL
+	ITEM_LEEK
+	ITEM_THICK_CLUB
+	ITEM_LUCKY_PUNCH
+	ITEM_METAL_POWDER
+	ITEM_QUICK_POWDER
+	ITEM_FIRE_MEMORY
+	ITEM_WATER_MEMORY
+	ITEM_ELECTRIC_MEMORY
+	ITEM_GRASS_MEMORY
+	ITEM_ICE_MEMORY
+	ITEM_FIGHTING_MEMORY
+	ITEM_POISON_MEMORY
+	ITEM_GROUND_MEMORY
+	ITEM_FLYING_MEMORY
+	ITEM_PSYCHIC_MEMORY
+	ITEM_BUG_MEMORY
+	ITEM_ROCK_MEMORY
+	ITEM_GHOST_MEMORY
+	ITEM_DRAGON_MEMORY
+	ITEM_DARK_MEMORY
+	ITEM_STEEL_MEMORY
+	ITEM_FAIRY_MEMORY
 }
 
 script EventScript_Shop_Varrick_MegaStones {
@@ -2594,6 +2593,55 @@ mart Shop_Mega_6 {
 #define ITEM_GALLADITE 336
 #define ITEM_AUDINITE 337
 #define ITEM_DIANCITE 338
+
+// // Legends Z-A Mega Stones
+// ITEM_CLEFABLITE = 829,
+// ITEM_VICTREEBELITE = 830,
+// ITEM_STARMINITE = 831,
+// ITEM_DRAGONINITE = 832,
+// ITEM_MEGANIUMITE = 833,
+// ITEM_FERALIGITE = 834,
+// ITEM_SKARMORITE = 835,
+// ITEM_FROSLASSITE = 836,
+// ITEM_EMBOARITE = 837,
+// ITEM_EXCADRITE = 838,
+// ITEM_SCOLIPITE = 839,
+// ITEM_SCRAFTINITE = 840,
+// ITEM_EELEKTROSSITE = 841,
+// ITEM_CHANDELURITE = 842,
+// ITEM_CHESNAUGHTITE = 843,
+// ITEM_DELPHOXITE = 844,
+// ITEM_GRENINJITE = 845,
+// ITEM_PYROARITE = 846,
+// ITEM_FLOETTITE = 847,
+// ITEM_MALAMARITE = 848,
+// ITEM_BARBARACITE = 849,
+// ITEM_DRAGALGITE = 850,
+// ITEM_HAWLUCHANITE = 851,
+// ITEM_ZYGARDITE = 852,
+// ITEM_DRAMPANITE = 853,
+// ITEM_FALINKSITE = 854,
+
+// // Legends Z-A: Mega Dimension DLC Mega Stones
+// ITEM_HEATRANITE = 855,
+// ITEM_DARKRANITE = 856,
+// ITEM_ZERAORITE = 857,
+// ITEM_RAICHUNITE_X = 858,
+// ITEM_RAICHUNITE_Y = 859,
+// ITEM_CHIMECHITE = 860,
+// ITEM_ABSOLITE_Z = 861,
+// ITEM_STARAPTITE = 862,
+// ITEM_GARCHOMPITE_Z = 863,
+// ITEM_LUCARIONITE_Z = 864,
+// ITEM_GOLURKITE = 865,
+// ITEM_MEOWSTICITE = 866,
+// ITEM_CRABOMINITE = 867,
+// ITEM_GOLISOPITE = 868,
+// ITEM_MAGEARNITE = 869,
+// ITEM_SCOVILLAINITE = 870,
+// ITEM_BAXCALIBRITE = 871,
+// ITEM_TATSUGIRINITE = 872,
+// ITEM_GLIMMORANITE = 873,
 }
 
 script EventScript_Shop_Lelouch {
