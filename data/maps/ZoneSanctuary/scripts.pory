@@ -2715,6 +2715,13 @@ script EventScript_Shop_Lelouch_IVTraining {
 			return
 		}
 	}
+	getitemquantity(ITEM_BOTTLE_CAP)
+	buffernumberstring(0, VAR_RESULT)
+	bufferitemnameplural(1, ITEM_BOTTLE_CAP, VAR_RESULT)
+	getitemquantity(ITEM_GOLD_BOTTLE_CAP)
+	buffernumberstring(2, VAR_RESULT)
+	setspeaker("Lelouch")
+	msgbox("You have {COLOR GREEN}{STR_VAR_1} {STR_VAR_2}{COLOR DARK_GRAY}\nand {COLOR GREEN}{STR_VAR_3} Gold Bottle Cap(s){COLOR DARK_GRAY}.")
 	setspeaker("Lelouch")
 	msgbox(format("First, choose a Pokémon for IV Training."))
 	special(ChoosePartyMon)
@@ -2740,12 +2747,14 @@ script EventScript_Shop_Lelouch_IVTraining {
 	setvar(VAR_TEMP_5, 0)
 	setvar(VAR_TEMP_6, 0)
 	setvar(VAR_TEMP_7, 0)
-	dynmultipush("HP", 0)
-	dynmultipush("Attack", 1)
-	dynmultipush("Defense", 2)
-	dynmultipush("Sp. Atk", 3)
-	dynmultipush("Sp. Def", 4)
-	dynmultipush("Speed", 5)
+	if (checkitem(ITEM_BOTTLE_CAP)) {
+		dynmultipush("HP", 0)
+		dynmultipush("Attack", 1)
+		dynmultipush("Defense", 2)
+		dynmultipush("Sp. Atk", 3)
+		dynmultipush("Sp. Def", 4)
+		dynmultipush("Speed", 5)
+	}
 	if (checkitem(ITEM_GOLD_BOTTLE_CAP)) {
 		dynmultipush("All", 6)
 	}
@@ -2805,6 +2814,7 @@ script EventScript_Shop_Lelouch_MoveReminder {
 	getitemquantity(ITEM_HEART_SCALE)
 	buffernumberstring(0, VAR_RESULT)
 	bufferitemnameplural(1, ITEM_HEART_SCALE, VAR_RESULT)
+	setspeaker("Lelouch")
 	msgbox("You have {COLOR GREEN}{STR_VAR_1} {STR_VAR_2}{COLOR DARK_GRAY}.")
 	msgbox(format("Would you like me to teach a forgotten move to your Pokémon?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
