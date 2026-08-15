@@ -2652,7 +2652,7 @@ script EventScript_Shop_Lelouch {
 		msgbox("You… What is your name?\pCurious…\nThat's a funny name…", MSGBOX_AUTOCLOSE)
 		delay(16)
 		setspeaker("???")
-		msgbox(format("You may call me Lelouch."))
+		msgbox(format("You may call me {COLOR BLUE}Lelouch{COLOR DARK_GRAY}."))
 		setspeaker("Lelouch")
 		msgbox(format("I provide a variety of services to improve one's Pokémon.\pBut I require special items in exchange for my services."))
 		setflag(FLAG_LELOUCH_INTRO)
@@ -2680,6 +2680,9 @@ script EventScript_Shop_Lelouch_Services {
 		if (var(VAR_ZONE) > 5) {
 			dynmultipush("Move Tutor", 1)
 		}
+		if (var(VAR_ZONE) > 20) {
+			dynmultipush("IV Training", 2)
+		}
 		dynmultipush("Exit", 3)
 		dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
@@ -2688,6 +2691,8 @@ script EventScript_Shop_Lelouch_Services {
 			case 1:
 				setvar(VAR_TEMP_0, 1)
 				call(EventScript_Shop_Lelouch_MoveTutor)
+			case 2:
+				call(EventScript_Shop_Lelouch_IVTraining)
 			case 3:
 			case MULTI_B_PRESSED:
 				return
@@ -2698,240 +2703,94 @@ script EventScript_Shop_Lelouch_Services {
 	}
 }
 
-text gText_Lelouch_NotEnoughColor {
-	"{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: You don't have any Shards\nof that color."
-}
-
-script EventScript_Shop_Lelouch_Training {
-	checkitem(ITEM_RED_SHARD, 1)
+script EventScript_Shop_Lelouch_IVTraining {
+	setspeaker("Lelouch")
+	msgbox(format("In exchange for a {COLOR GREEN}Bottle Cap{COLOR DARK_GRAY}, one of your Pokémon's IVs can be maximized.\pWith a {COLOR GREEN}Gold Bottle Cap{COLOR DARK_GRAY}, I can maximize all of them."))
+	checkitem(ITEM_BOTTLE_CAP, 1)
 	if (var(VAR_RESULT) == FALSE) {
-		msgbox(gText_Lelouch_NotEnoughColor)
+		checkitem(ITEM_GOLD_BOTTLE_CAP, 1)
+		if (var(VAR_RESULT) == FALSE) {
+			setspeaker("Lelouch")
+			msgbox(format("You do not have any {COLOR GREEN}Bottle Caps{COLOR DARK_GRAY} or {COLOR GREEN}Gold Bottle Caps{COLOR DARK_GRAY}."))
+			return
+		}
+	}
+	setspeaker("Lelouch")
+	msgbox(format("First, choose a Pokémon for IV Training."))
+	special(ChoosePartyMon)
+	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 		return
 	}
-	msgbox("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Choose which training\nregiment you would like.", MSGBOX_DEFAULT)
-	dynmultipush("Experience Training", 0)
-	if ((var(VAR_DIFFICULTY) >= DIFFICULTY_HARD) && var(VAR_ZONE) > 25) {
-		dynmultipush("EV Training", 1)
+	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+	if (var(VAR_RESULT) == SPECIES_EGG) {
+		setspeaker("Lelouch")
+		msgbox(format("I can't train an Egg!"), MSGBOX_DEFAULT)
+		return
 	}
-	dynmultipush("Exit", 2)
-	dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+	specialvar(VAR_TEMP_0, ScriptGetPartyMonSpecies)
+	bufferspeciesname(0, VAR_TEMP_0)
+	setspeaker("Lelouch")
+	message("For your {STR_VAR_1},\nwhich IV should be maximized?")
+	waitmessage
+	setvar(VAR_TEMP_F, ITEM_BOTTLE_CAP) // these are defaults
+	setvar(VAR_TEMP_1, 0)
+	setvar(VAR_TEMP_2, 0)
+	setvar(VAR_TEMP_3, 0)
+	setvar(VAR_TEMP_4, 0)
+	setvar(VAR_TEMP_5, 0)
+	setvar(VAR_TEMP_6, 0)
+	setvar(VAR_TEMP_7, 0)
+	dynmultipush("HP", 0)
+	dynmultipush("Attack", 1)
+	dynmultipush("Defense", 2)
+	dynmultipush("Sp. Atk", 3)
+	dynmultipush("Sp. Def", 4)
+	dynmultipush("Speed", 5)
+	if (checkitem(ITEM_GOLD_BOTTLE_CAP)) {
+		dynmultipush("All", 6)
+	}
+	dynmultipush("Cancel", 7)
+	dynmultistack(0, 0, FALSE, 5, 0, 0, DYN_MULTICHOICE_CB_NONE)
 	switch(var(VAR_RESULT)) {
 		case 0:
-			msgbox(gText_Lelouch_Exp, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				// special(ChoosePartyMonForTraining) // TODO
-				if (var(VAR_0x8004) == 1) {
-					msgbox(gText_Lelouch_ExpTrainingFinished, MSGBOX_DEFAULT)
-					msgbox(gText_Lelouch_PayItem, MSGBOX_DEFAULT)
-					removeitem(ITEM_RED_SHARD, 1)
-				} else {
-					msgbox(gText_Lelouch_DidNotTrain)
-				}
-				return
-			}
+			setvar(VAR_TEMP_1, 1)
 		case 1:
-			msgbox(gText_Lelouch_EV, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				special(ChoosePartyMon)
-				if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
-					msgbox(gText_Lelouch_DidNotTrain, MSGBOX_DEFAULT)
-				} else {
-					specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
-					if (var(VAR_RESULT) == SPECIES_EGG) {
-						msgbox("I can't train an Egg!", MSGBOX_DEFAULT)
-					} else {
-						setvar(VAR_TEMP_F, 0)
-						specialvar(VAR_TEMP_0, ScriptGetPartyMonSpecies)
-						bufferspeciesname(0, VAR_TEMP_0)
-						msgbox(gText_Lelouch_ChooseHPEV, MSGBOX_DEFAULT)
-						dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
-						switch(var(VAR_RESULT)) {
-							case 0:
-								setvar(VAR_TEMP_9, 252)
-								addvar(VAR_TEMP_F, 252)
-							case 1:
-								setvar(VAR_TEMP_9, 200)
-								addvar(VAR_TEMP_F, 200)
-							case 2:
-								setvar(VAR_TEMP_9, 100)
-								addvar(VAR_TEMP_F, 100)
-							case 3:
-								setvar(VAR_TEMP_9, 4)
-								addvar(VAR_TEMP_F, 4)
-							case 4:
-								setvar(VAR_TEMP_9, 0)
-							case 5:
-							case MULTI_B_PRESSED:
-								return
-						}
-						msgbox(gText_Lelouch_ChooseAttackEV, MSGBOX_DEFAULT)
-						dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
-						switch(var(VAR_RESULT)) {
-							case 0:
-								setvar(VAR_TEMP_A, 252)
-								addvar(VAR_TEMP_F, 252)
-							case 1:
-								setvar(VAR_TEMP_A, 200)
-								addvar(VAR_TEMP_F, 200)
-							case 2:
-								setvar(VAR_TEMP_A, 100)
-								addvar(VAR_TEMP_F, 100)
-							case 3:
-								setvar(VAR_TEMP_A, 4)
-								addvar(VAR_TEMP_F, 4)
-							case 4:
-								setvar(VAR_TEMP_A, 0)
-							case 5:
-							case MULTI_B_PRESSED:
-								return
-						}
-						msgbox(gText_Lelouch_ChooseDefenseEV, MSGBOX_DEFAULT)
-						dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
-						switch(var(VAR_RESULT)) {
-							case 0:
-								setvar(VAR_TEMP_B, 252)
-								addvar(VAR_TEMP_F, 252)
-							case 1:
-								setvar(VAR_TEMP_B, 200)
-								addvar(VAR_TEMP_F, 200)
-							case 2:
-								setvar(VAR_TEMP_B, 100)
-								addvar(VAR_TEMP_F, 100)
-							case 3:
-								setvar(VAR_TEMP_B, 4)
-								addvar(VAR_TEMP_F, 4)
-							case 4:
-								setvar(VAR_TEMP_B, 0)
-							case 5:
-							case MULTI_B_PRESSED:
-								return
-						}
-						msgbox(gText_Lelouch_ChooseSpecialAttackEV, MSGBOX_DEFAULT)
-						dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
-						switch(var(VAR_RESULT)) {
-							case 0:
-								setvar(VAR_TEMP_C, 252)
-								addvar(VAR_TEMP_F, 252)
-							case 1:
-								setvar(VAR_TEMP_C, 200)
-								addvar(VAR_TEMP_F, 200)
-							case 2:
-								setvar(VAR_TEMP_C, 100)
-								addvar(VAR_TEMP_F, 100)
-							case 3:
-								setvar(VAR_TEMP_C, 4)
-								addvar(VAR_TEMP_F, 4)
-							case 4:
-								setvar(VAR_TEMP_C, 0)
-							case 5:
-							case MULTI_B_PRESSED:
-								return
-						}
-						msgbox(gText_Lelouch_ChooseSpecialDefenseEV, MSGBOX_DEFAULT)
-						dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
-						switch(var(VAR_RESULT)) {
-							case 0:
-								setvar(VAR_TEMP_D, 252)
-								addvar(VAR_TEMP_F, 252)
-							case 1:
-								setvar(VAR_TEMP_D, 200)
-								addvar(VAR_TEMP_F, 200)
-							case 2:
-								setvar(VAR_TEMP_D, 100)
-								addvar(VAR_TEMP_F, 100)
-							case 3:
-								setvar(VAR_TEMP_D, 4)
-								addvar(VAR_TEMP_F, 4)
-							case 4:
-								setvar(VAR_TEMP_D, 0)
-							case 5:
-							case MULTI_B_PRESSED:
-								return
-						}
-						msgbox(gText_Lelouch_ChooseSpeedEV, MSGBOX_DEFAULT)
-						dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, "252", "200", "100", "4", "0", "Cancel")
-						switch(var(VAR_RESULT)) {
-							case 0:
-								setvar(VAR_TEMP_E, 252)
-								addvar(VAR_TEMP_F, 252)
-							case 1:
-								setvar(VAR_TEMP_E, 200)
-								addvar(VAR_TEMP_F, 200)
-							case 2:
-								setvar(VAR_TEMP_E, 100)
-								addvar(VAR_TEMP_F, 100)
-							case 3:
-								setvar(VAR_TEMP_E, 4)
-								addvar(VAR_TEMP_F, 4)
-							case 4:
-								setvar(VAR_TEMP_E, 0)
-							case 5:
-							case MULTI_B_PRESSED:
-								return
-						}
-						if (var(VAR_TEMP_F) > 510) {
-							msgbox(gText_Lelouch_TooManyEVs, MSGBOX_DEFAULT)
-							return
-						}
-						msgbox(gText_Lelouch_CheckEVs, MSGBOX_YESNO)
-						if (var(VAR_RESULT) == NO) {
-							return
-						}
-						special(CheckLeadMonCute) // Sets the EVs
-						playse(SE_EXP_MAX)
-						waitse
-						msgbox(gText_Lelouch_ChangedEVs, MSGBOX_DEFAULT)
-						msgbox(gText_Lelouch_PayItem, MSGBOX_DEFAULT)
-						removeitem(ITEM_RED_SHARD, 1)
-					}
-				}
-				return
-			}
+			setvar(VAR_TEMP_2, 1)
 		case 2:
+			setvar(VAR_TEMP_3, 1)
+		case 3:
+			setvar(VAR_TEMP_4, 1)
+		case 4:
+			setvar(VAR_TEMP_5, 1)
+		case 5:
+			setvar(VAR_TEMP_6, 1)
+		case 6:
+			setvar(VAR_TEMP_1, 1)
+			setvar(VAR_TEMP_2, 1)
+			setvar(VAR_TEMP_3, 1)
+			setvar(VAR_TEMP_4, 1)
+			setvar(VAR_TEMP_5, 1)
+			setvar(VAR_TEMP_6, 1)
+			setvar(VAR_TEMP_F, ITEM_GOLD_BOTTLE_CAP)
+		case 7:
 		case MULTI_B_PRESSED:
 			return
 	}
-	return
-}
 
-text gText_Lelouch_EV {
-	format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: With EV Training, you can set one Pokémon's EVs at the cost of one Red Shard.\pWould you like to start an EV Training session?")
-}
-
-text gText_Lelouch_ChooseHPEV {
-	format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: What would you like your {STR_VAR_1}'s HP EV to be?")
-}
-
-text gText_Lelouch_ChooseAttackEV {
-	format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: What would you like your {STR_VAR_1}'s Attack EV to be?")
-}
-
-text gText_Lelouch_ChooseDefenseEV {
-	format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: What would you like your {STR_VAR_1}'s Defense EV to be?")
-}
-
-text gText_Lelouch_ChooseSpecialAttackEV {
-	format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: What would you like your {STR_VAR_1}'s Sp. Atk EV to be?")
-}
-
-text gText_Lelouch_ChooseSpecialDefenseEV {
-	format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: What would you like your {STR_VAR_1}'s Sp. Def EV to be?")
-}
-
-text gText_Lelouch_ChooseSpeedEV {
-	format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: What would you like your {STR_VAR_1}'s Speed EV to be?")
-}
-
-text gText_Lelouch_TooManyEVs {
-	format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: You've selected a total of EVs greater than 510. Pokémon can have at maximum 510 EVs.")
-}
-
-text gText_Lelouch_CheckEVs {
-	format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Are you sure you wish to set {STR_VAR_1}'s EVs to these values?")
-}
-
-text gText_Lelouch_ChangedEVs {
-	format("{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: I've changed your {STR_VAR_1}'s EVs to your requested values.")
+	buffernumberstring(1, 1)
+	bufferitemnameplural(2, VAR_TEMP_F, 1)
+	setspeaker("Lelouch")
+	msgbox(format("You'd like to maximize your Pokémon's IVs in this way in exchange for {COLOR GREEN}{STR_VAR_2} {STR_VAR_3}{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		return
+	}
+	special(SetIVOfSelectedPokemon)
+	playse(SE_EXP_MAX)
+	waitse
+	setspeaker("Lelouch")
+	msgbox(format("Your Pokémon's IVs have been changed."))
+	msgbox(gText_Lelouch_PayItem)
+	removeitem(VAR_TEMP_F, 1)
 }
 
 script EventScript_Shop_Lelouch_MoveReminder {
@@ -2976,15 +2835,6 @@ script EventScript_Shop_Lelouch_MoveReminder {
 		break
 	}
 	return
-}
-
-script EventScript_Shop_Lelouch_Improvement {
-	checkitem(ITEM_YELLOW_SHARD, 1)
-	if (var(VAR_RESULT) == FALSE) {
-		msgbox(gText_Lelouch_NotEnoughColor)
-		return
-	}
-	msgbox("Filler text for EventScript_Shop_Lelouch_Improvement")
 }
 
 script EventScript_Shop_Lelouch_MoveTutor {
@@ -3284,7 +3134,7 @@ script EventScript_Shop_Lelouch_MoveTutor {
 }
 
 text gText_Lelouch_PayItem {
-	format("{PLAYER} handed over {STR_VAR_2} {STR_VAR_3}.")
+	format("{PLAYER} handed over {COLOR GREEN}{STR_VAR_2} {STR_VAR_3}{COLOR DARK_GRAY}.")
 }
 
 // Each added tutor move needs to be here, even though it's not actually a script. This is because of how make_teachables.py works!

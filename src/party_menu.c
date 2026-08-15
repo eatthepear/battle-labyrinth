@@ -8763,9 +8763,25 @@ void ChooseMonForIVChange(void)
 void SetIVOfSelectedPokemon(void)
 {
     u8 monId = GetCursorSelectionMonId();
-    u32 stat = VarGet(VAR_TEMP_A);
-    u32 iv = VarGet(VAR_TEMP_B);
-    SetMonData(&gParties[B_TRAINER_PLAYER][monId], stat, &iv);
+    u8 iv = 31;
+    if (VarGet(VAR_TEMP_1) == 1) {
+        SetMonData(&gParties[B_TRAINER_PLAYER][monId], MON_DATA_HP_IV, &iv);
+    }
+    if (VarGet(VAR_TEMP_2) == 1) {
+        SetMonData(&gParties[B_TRAINER_PLAYER][monId], MON_DATA_ATK_IV, &iv);
+    }
+    if (VarGet(VAR_TEMP_3) == 1) {
+        SetMonData(&gParties[B_TRAINER_PLAYER][monId], MON_DATA_DEF_IV, &iv);
+    }
+    if (VarGet(VAR_TEMP_4) == 1) {
+        SetMonData(&gParties[B_TRAINER_PLAYER][monId], MON_DATA_SPATK_IV, &iv);
+    }
+    if (VarGet(VAR_TEMP_5) == 1) {
+        SetMonData(&gParties[B_TRAINER_PLAYER][monId], MON_DATA_SPDEF_IV, &iv);
+    }
+    if (VarGet(VAR_TEMP_6) == 1) {
+        SetMonData(&gParties[B_TRAINER_PLAYER][monId], MON_DATA_SPEED_IV, &iv);
+    }
     CalculateMonStats(&gParties[B_TRAINER_PLAYER][monId]);
 }
 
