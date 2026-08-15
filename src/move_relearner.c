@@ -1029,6 +1029,8 @@ static bool32 HasRelearnerLevelUpMoves(struct BoxPokemon *boxMon)
         {
             if (learnset[i].level > level)
                 break;
+            if (IsMoveRestricted(learnset[i].move, learnset[i].level))
+                continue;
 
             if (!BoxMonKnowsMove(boxMon, learnset[i].move))
                 return TRUE;
