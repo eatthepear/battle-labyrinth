@@ -2795,14 +2795,19 @@ script EventScript_Shop_Lelouch_IVTraining {
 
 script EventScript_Shop_Lelouch_MoveReminder {
 	setspeaker("Lelouch")
-	msgbox(format("Move Reminder services cost one Heart Scale.\pWould you like me to teach a forgotten move to your Pokémon?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		return
-	}
+	msgbox(format("Move Reminder services cost one Heart Scale."))
 	checkitem(ITEM_HEART_SCALE, 1)
 	if (var(VAR_RESULT) == FALSE) {
 		setspeaker("Lelouch")
 		msgbox(format("You don't have any Heart Scales."))
+		return
+	}
+	getitemquantity(ITEM_HEART_SCALE)
+	buffernumberstring(0, VAR_RESULT)
+	bufferitemnameplural(1, ITEM_HEART_SCALE, VAR_RESULT)
+	msgbox("You have {COLOR GREEN}{STR_VAR_1} {STR_VAR_2}{COLOR DARK_GRAY}.")
+	msgbox(format("Would you like me to teach a forgotten move to your Pokémon?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
 		return
 	}
 	while {
