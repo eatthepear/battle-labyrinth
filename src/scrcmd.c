@@ -3538,6 +3538,16 @@ bool8 ScrCmd_checkspeciesclause(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_getitemquantity(struct ScriptContext *ctx)
+{
+    enum Item itemId = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1);
+
+    gSpecialVar_Result = CountTotalItemQuantityInBag(itemId);
+    return FALSE;
+}
+
 bool8 ScrCmd_setmoverelearnerstate(struct ScriptContext *ctx)
 {
     enum MoveRelearnerStates state = VarGet(ScriptReadHalfword(ctx));

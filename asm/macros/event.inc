@@ -3170,3 +3170,9 @@
 	hidehelpwindow
 	closemessage
 	.endm
+
+	@ Gets the quantity of an item that the player has in their bag. Sets VAR_RESULT.
+	.macro getitemquantity itemId:req
+	.byte SCR_OP_GETITEMQUANTITY
+	.2byte \itemId
+	.endm

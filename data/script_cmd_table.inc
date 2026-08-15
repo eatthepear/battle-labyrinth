@@ -258,6 +258,7 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_RETURNQUESTSTATE              ScrCmd_returnqueststate,            requests_effects=1  @ 0xe9
 	script_cmd_table_entry SCR_OP_SETWILDBATTLE_PBL             ScrCmd_setwildbattle_pbl,           requests_effects=1  @ 0xea
 	script_cmd_table_entry SCR_OP_CHECKSPECIESCLAUSE            ScrCmd_checkspeciesclause,          requests_effects=1  @ 0xeb
+	script_cmd_table_entry SCR_OP_GETITEMQUANTITY               ScrCmd_getitemquantity,             requests_effects=1  @ 0xec
 
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 gScriptCmdTableEnd::
