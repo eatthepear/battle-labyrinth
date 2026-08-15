@@ -2892,47 +2892,54 @@ script EventScript_Shop_Lelouch_MoveTutor_Red {
 		message("Which move should I teach?\nYou have {COLOR GREEN}{STR_VAR_1} {STR_VAR_2}{COLOR DARK_GRAY}.")
 		waitmessage
 		// --- Red Shard ---
-		dynmultipush("Water Pulse - 2", MOVE_WATER_PULSE)
-		dynmultipush("Chilling Water - 2", MOVE_CHILLING_WATER)
-		dynmultipush("Struggle Bug - 2", MOVE_STRUGGLE_BUG)
-		dynmultipush("Pounce - 2", MOVE_POUNCE)
-		// dynmultipush("Aerial Ace - 2", MOVE_AERIAL_ACE)
-		dynmultipush("Magical Leaf - 2", MOVE_MAGICAL_LEAF)
-		dynmultipush("Shock Wave - 2", MOVE_SHOCK_WAVE)
-		dynmultipush("Swift - 2", MOVE_SWIFT)
 
-		dynmultipush("Breaking Swipe - 4", MOVE_BREAKING_SWIPE)
-		dynmultipush("Grassy Glide - 4", MOVE_GRASSY_GLIDE)
-        dynmultipush("Low Sweep - 4", MOVE_LOW_SWEEP)
-        dynmultipush("Steel Wing - 4", MOVE_STEEL_WING)
-        dynmultipush("Electroweb - 4", MOVE_ELECTROWEB)
-
-		if (var(VAR_ZONE) > 8) {
-			dynmultipush("Thunder Fang - 4", MOVE_THUNDER_FANG)
-			dynmultipush("Fire Fang - 4", MOVE_FIRE_FANG)
-			dynmultipush("Ice Fang - 4", MOVE_ICE_FANG)
+		if (var(VAR_ZONE) > 3) {
+			dynmultipush("Water Pulse - 2", MOVE_WATER_PULSE)
+			dynmultipush("Chilling Water - 2", MOVE_CHILLING_WATER)
 		}
 
-		if (var(VAR_ZONE) > 50) {
-			dynmultipush("Fire Punch - 4", MOVE_FIRE_PUNCH)
-			dynmultipush("Ice Punch - 4", MOVE_ICE_PUNCH)
-			dynmultipush("Thunder Punch - 4", MOVE_THUNDER_PUNCH)
+		if (var(VAR_ZONE) > 4) {
+			dynmultipush("Struggle Bug - 2", MOVE_STRUGGLE_BUG)
+			dynmultipush("Pounce - 2", MOVE_POUNCE)
+		}
 
-			dynmultipush("Rock Blast - 4", MOVE_ROCK_BLAST)
-			dynmultipush("Pin Missile - 4", MOVE_PIN_MISSILE)
-			dynmultipush("Icicle Spear - 4", MOVE_ICICLE_SPEAR)
-			dynmultipush("Low Kick - 4", MOVE_LOW_KICK)
-			dynmultipush("Air Slash - 4", MOVE_AIR_SLASH)
-			dynmultipush("Burning Jealousy - 4", MOVE_BURNING_JEALOUSY)
-			dynmultipush("Sucker Punch - 4", MOVE_SUCKER_PUNCH)
-			dynmultipush("Rising Voltage - 4", MOVE_RISING_VOLTAGE)
-			dynmultipush("Skitter Smack - 4", MOVE_SKITTER_SMACK)
-			dynmultipush("Lash Out - 4", MOVE_LASH_OUT)
-			dynmultipush("Temper Flare - 4", MOVE_TEMPER_FLARE)
-			dynmultipush("Psychic Noise - 4", MOVE_PSYCHIC_NOISE)
-			dynmultipush("Stomping Tantrum - 4", MOVE_STOMPING_TANTRUM)
-			dynmultipush("Mystical Fire - 4", MOVE_MYSTICAL_FIRE)
-			dynmultipush("Scale Shot - 4", MOVE_SCALE_SHOT)
+		if (var(VAR_ZONE) > 5) {
+			dynmultipush("Shock Wave - 2", MOVE_SHOCK_WAVE)
+			dynmultipush("Swift - 2", MOVE_SWIFT)
+			dynmultipush("Magical Leaf - 2", MOVE_MAGICAL_LEAF)
+			dynmultipush("Acid Spray - 2", MOVE_ACID_SPRAY)
+			dynmultipush("Mud Shot - 2", MOVE_MUD_SHOT)
+			dynmultipush("Smack Down - 2", MOVE_SMACK_DOWN)
+			dynmultipush("Round - 2", MOVE_ROUND)
+			dynmultipush("Steel Wing - 2", MOVE_STEEL_WING)
+			dynmultipush("Low Sweep - 2", MOVE_LOW_SWEEP)
+			dynmultipush("Breaking Swipe - 4", MOVE_BREAKING_SWIPE)
+			dynmultipush("Electroweb - 4", MOVE_ELECTROWEB)
+		}
+
+		if (var(VAR_ZONE) > 10) {
+			dynmultipush("Fire Pledge - 4", MOVE_FIRE_PLEDGE)
+			dynmultipush("Water Pledge - 4", MOVE_WATER_PLEDGE)
+			dynmultipush("Grass Pledge - 4", MOVE_GRASS_PLEDGE)
+			dynmultipush("Vacuum Wave - 4", MOVE_VACUUM_WAVE)
+			dynmultipush("Grassy Glide - 4", MOVE_GRASSY_GLIDE)
+			dynmultipush("Skitter Smack - 6", MOVE_SKITTER_SMACK)
+			dynmultipush("Scorching Sands - 6", MOVE_SCORCHING_SANDS)
+			dynmultipush("Mystical Fire - 6", MOVE_MYSTICAL_FIRE)
+			dynmultipush("Burning Jealousy - 6", MOVE_BURNING_JEALOUSY)
+		}
+
+		if (var(VAR_ZONE) > 15) {
+			dynmultipush("Psychic Noise - 8", MOVE_PSYCHIC_NOISE)
+			dynmultipush("Ice Spinner - 8", MOVE_ICE_SPINNER)
+			dynmultipush("Dual Wingbeat - 8", MOVE_DUAL_WINGBEAT)
+			dynmultipush("Dual Chop - 8", MOVE_DUAL_CHOP)
+			dynmultipush("Psychic Fangs - 8", MOVE_PSYCHIC_FANGS)
+		}
+
+		if (var(VAR_ZONE) > 20) {
+			dynmultipush("Knock Off - 12", MOVE_KNOCK_OFF)
+			dynmultipush("Foul Play - 12", MOVE_FOUL_PLAY)
 		}
 
 		dynmultipush("Exit", 0)
@@ -2942,43 +2949,52 @@ script EventScript_Shop_Lelouch_MoveTutor_Red {
 			case MOVE_CHILLING_WATER:
 			case MOVE_STRUGGLE_BUG:
 			case MOVE_POUNCE:
-			// case MOVE_AERIAL_ACE:
-			case MOVE_MAGICAL_LEAF:
 			case MOVE_SHOCK_WAVE:
 			case MOVE_SWIFT:
+			case MOVE_MAGICAL_LEAF:
+			case MOVE_ACID_SPRAY:
+			case MOVE_MUD_SHOT:
+			case MOVE_SMACK_DOWN:
+			case MOVE_ROUND:
+			case MOVE_STEEL_WING:
+			case MOVE_LOW_SWEEP:
                 copyvar(VAR_TEMP_0, VAR_RESULT)
                 copyvar(VAR_0x8005, VAR_RESULT)
                 setvar(VAR_TEMP_1, 2)
                 setvar(VAR_TEMP_2, ITEM_RED_SHARD)
-			case MOVE_THUNDER_FANG:
-			case MOVE_FIRE_FANG:
-			case MOVE_ICE_FANG:
-			case MOVE_FIRE_PUNCH:
-			case MOVE_ICE_PUNCH:
-			case MOVE_THUNDER_PUNCH:
-            case MOVE_BREAKING_SWIPE:
-            case MOVE_GRASSY_GLIDE:
-            case MOVE_LOW_SWEEP:
-            case MOVE_STEEL_WING:
-            case MOVE_ELECTROWEB:
-            case MOVE_ROCK_BLAST:
-            case MOVE_PIN_MISSILE:
-            case MOVE_ICICLE_SPEAR:
-            case MOVE_LOW_KICK:
-            case MOVE_AIR_SLASH:
-            case MOVE_BURNING_JEALOUSY:
-            case MOVE_SUCKER_PUNCH:
-            case MOVE_RISING_VOLTAGE:
-            case MOVE_SKITTER_SMACK:
-            case MOVE_LASH_OUT:
-            case MOVE_TEMPER_FLARE:
-            case MOVE_PSYCHIC_NOISE:
-            case MOVE_STOMPING_TANTRUM:
-            case MOVE_MYSTICAL_FIRE:
-            case MOVE_SCALE_SHOT:
+			case MOVE_BREAKING_SWIPE:
+			case MOVE_ELECTROWEB:
+			case MOVE_FIRE_PLEDGE:
+			case MOVE_WATER_PLEDGE:
+			case MOVE_GRASS_PLEDGE:
+			case MOVE_VACUUM_WAVE:
+			case MOVE_GRASSY_GLIDE:
                 copyvar(VAR_TEMP_0, VAR_RESULT)
                 copyvar(VAR_0x8005, VAR_RESULT)
                 setvar(VAR_TEMP_1, 4)
+                setvar(VAR_TEMP_2, ITEM_RED_SHARD)
+			case MOVE_SKITTER_SMACK:
+			case MOVE_SCORCHING_SANDS:
+			case MOVE_MYSTICAL_FIRE:
+			case MOVE_BURNING_JEALOUSY:
+			case MOVE_PSYCHIC_NOISE:
+                copyvar(VAR_TEMP_0, VAR_RESULT)
+                copyvar(VAR_0x8005, VAR_RESULT)
+                setvar(VAR_TEMP_1, 6)
+                setvar(VAR_TEMP_2, ITEM_RED_SHARD)
+			case MOVE_ICE_SPINNER:
+			case MOVE_DUAL_WINGBEAT:
+			case MOVE_DUAL_CHOP:
+			case MOVE_PSYCHIC_FANGS:
+                copyvar(VAR_TEMP_0, VAR_RESULT)
+                copyvar(VAR_0x8005, VAR_RESULT)
+                setvar(VAR_TEMP_1, 8)
+                setvar(VAR_TEMP_2, ITEM_RED_SHARD)
+			case MOVE_KNOCK_OFF:
+			case MOVE_FOUL_PLAY:
+                copyvar(VAR_TEMP_0, VAR_RESULT)
+                copyvar(VAR_0x8005, VAR_RESULT)
+                setvar(VAR_TEMP_1, 12)
                 setvar(VAR_TEMP_2, ITEM_RED_SHARD)
 			case 0:
 			case MULTI_B_PRESSED:
@@ -2987,6 +3003,7 @@ script EventScript_Shop_Lelouch_MoveTutor_Red {
 		call(EventScript_Shop_Lelouch_MoveTutor_TeachMove)
 	}
 }
+
 script EventScript_Shop_Lelouch_MoveTutor_Blue {
 	while {
 		getitemquantity(ITEM_BLUE_SHARD)
@@ -2996,81 +3013,101 @@ script EventScript_Shop_Lelouch_MoveTutor_Blue {
 		message("Which move should I teach?\nYou have {COLOR GREEN}{STR_VAR_1} {STR_VAR_2}{COLOR DARK_GRAY}.")
 		waitmessage
 
-		if (var(VAR_ZONE) > 50) {
-			dynmultipush("Ice Spinner - 4", MOVE_ICE_SPINNER)
-			dynmultipush("Supercell Slam - 4", MOVE_SUPERCELL_SLAM)
-			dynmultipush("Hex - 4", MOVE_HEX)
-			dynmultipush("Knock Off - 4", MOVE_KNOCK_OFF)
+		if (var(VAR_ZONE) > 8) {
+			dynmultipush("Thunder Fang - 4", MOVE_THUNDER_FANG)
+			dynmultipush("Fire Fang - 4", MOVE_FIRE_FANG)
+			dynmultipush("Ice Fang - 4", MOVE_ICE_FANG)
+		}
+
+		if (var(VAR_ZONE) > 10) {
 			dynmultipush("Bounce - 4", MOVE_BOUNCE)
-			dynmultipush("Drill Run - 4", MOVE_DRILL_RUN)
-			dynmultipush("Lunge - 4", MOVE_LUNGE)
-			dynmultipush("Alluring Voice - 4", MOVE_ALLURING_VOICE)
-			dynmultipush("Throat Chop - 4", MOVE_THROAT_CHOP)
-			dynmultipush("Dual Wingbeat - 4", MOVE_DUAL_WINGBEAT)
-			dynmultipush("Seed Bomb - 4", MOVE_SEED_BOMB)
-			dynmultipush("Dual Chop - 4", MOVE_DUAL_CHOP)
-			dynmultipush("Iron Head - 4", MOVE_IRON_HEAD)
-			dynmultipush("Zen Headbutt - 4", MOVE_ZEN_HEADBUTT)
-			dynmultipush("Power Gem - 4", MOVE_POWER_GEM)
-			dynmultipush("Body Slam - 4", MOVE_BODY_SLAM)
-			dynmultipush("Expanding Force - 4", MOVE_EXPANDING_FORCE)
-			dynmultipush("Darkest Lariat - 4", MOVE_DARKEST_LARIAT)
-			dynmultipush("Liquidation - 4", MOVE_LIQUIDATION)
-			dynmultipush("Icicle Crash - 4", MOVE_ICICLE_CRASH)
-			dynmultipush("Psychic Fangs - 4", MOVE_PSYCHIC_FANGS)
-			dynmultipush("Blaze Kick - 4", MOVE_BLAZE_KICK)
-			dynmultipush("Play Rough - 4", MOVE_PLAY_ROUGH)
-			dynmultipush("Pollen Puff - 4", MOVE_POLLEN_PUFF)
-			dynmultipush("Phantom Force - 4", MOVE_PHANTOM_FORCE)
-			dynmultipush("Bug Buzz - 4", MOVE_BUG_BUZZ)
-			dynmultipush("Muddy Water - 4", MOVE_MUDDY_WATER)
-			dynmultipush("Earth Power - 4", MOVE_EARTH_POWER)
-			dynmultipush("Aqua Tail - 4", MOVE_AQUA_TAIL)
-			dynmultipush("Foul Play - 4", MOVE_FOUL_PLAY)
-			dynmultipush("Heat Wave - 4", MOVE_HEAT_WAVE)
-			dynmultipush("Heavy Slam - 4", MOVE_HEAVY_SLAM)
-			dynmultipush("Heat Crash - 4", MOVE_HEAT_CRASH)
+			dynmultipush("Seed Bomb - 6", MOVE_SEED_BOMB)
+			dynmultipush("Crunch - 6", MOVE_CRUNCH)
+			dynmultipush("Lunge - 6", MOVE_LUNGE)
+			dynmultipush("Air Slash - 6", MOVE_AIR_SLASH)
+			dynmultipush("Drill Run - 6", MOVE_DRILL_RUN)
+		}
+
+		if (var(VAR_ZONE) > 12) {
+			dynmultipush("Fire Punch - 6", MOVE_FIRE_PUNCH)
+			dynmultipush("Ice Punch - 6", MOVE_ICE_PUNCH)
+			dynmultipush("Thunder Punch - 6", MOVE_THUNDER_PUNCH)
+		}
+
+		if (var(VAR_ZONE) > 15) {
+			dynmultipush("Alluring Voice - 8", MOVE_ALLURING_VOICE)
+			dynmultipush("Throat Chop - 8", MOVE_THROAT_CHOP)
+			dynmultipush("Iron Head - 8", MOVE_IRON_HEAD)
+			dynmultipush("Zen Headbutt - 8", MOVE_ZEN_HEADBUTT)
+			dynmultipush("Power Gem - 8", MOVE_POWER_GEM)
+			dynmultipush("Body Slam - 8", MOVE_BODY_SLAM)
+		}
+
+		if (var(VAR_ZONE) > 20) {
+			dynmultipush("Darkest Lariat - 8", MOVE_DARKEST_LARIAT)
+			dynmultipush("Liquidation - 8", MOVE_LIQUIDATION)
+			dynmultipush("Icicle Crash - 8", MOVE_ICICLE_CRASH)
+			dynmultipush("Blaze Kick - 8", MOVE_BLAZE_KICK)
+			dynmultipush("Pollen Puff - 8", MOVE_POLLEN_PUFF)
+			dynmultipush("Phantom Force - 8", MOVE_PHANTOM_FORCE)
+			dynmultipush("Bug Buzz - 8", MOVE_BUG_BUZZ)
+			dynmultipush("Earth Power - 8", MOVE_EARTH_POWER)
+			dynmultipush("Aqua Tail - 8", MOVE_AQUA_TAIL)
+			dynmultipush("Play Rough - 12", MOVE_PLAY_ROUGH)
+			dynmultipush("Heat Wave - 12", MOVE_HEAT_WAVE)
+			dynmultipush("Muddy Water - 12", MOVE_MUDDY_WATER)
+			dynmultipush("High Horsepower - 12", MOVE_HIGH_HORSEPOWER)
 		}
 
 		dynmultipush("Exit", 0)
 		dynmultistack(0, 0, FALSE, 5, FALSE, VAR_TEMP_0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) { // VAR_TEMP_1 is the number of Shards, VAR_TEMP_2 is the type of Shard
-            case MOVE_ICE_SPINNER:
-            case MOVE_SUPERCELL_SLAM:
-            case MOVE_HEX:
-            case MOVE_KNOCK_OFF:
-            case MOVE_BOUNCE:
-            case MOVE_DRILL_RUN:
-            case MOVE_LUNGE:
-            case MOVE_ALLURING_VOICE:
-            case MOVE_THROAT_CHOP:
-            case MOVE_DUAL_WINGBEAT:
-            case MOVE_SEED_BOMB:
-            case MOVE_DUAL_CHOP:
-            case MOVE_IRON_HEAD:
-            case MOVE_ZEN_HEADBUTT:
-            case MOVE_POWER_GEM:
-            case MOVE_BODY_SLAM:
-            case MOVE_EXPANDING_FORCE:
-            case MOVE_DARKEST_LARIAT:
-            case MOVE_LIQUIDATION:
-            case MOVE_ICICLE_CRASH:
-            case MOVE_PSYCHIC_FANGS:
-            case MOVE_BLAZE_KICK:
-            case MOVE_PLAY_ROUGH:
-            case MOVE_POLLEN_PUFF:
-            case MOVE_PHANTOM_FORCE:
-            case MOVE_BUG_BUZZ:
-            case MOVE_MUDDY_WATER:
-            case MOVE_EARTH_POWER:
-            case MOVE_AQUA_TAIL:
-            case MOVE_FOUL_PLAY:
-            case MOVE_HEAT_WAVE:
-            case MOVE_HEAVY_SLAM:
-            case MOVE_HEAT_CRASH:
-                copyvar(VAR_TEMP_0, VAR_RESULT)
+			case MOVE_THUNDER_FANG:
+			case MOVE_FIRE_FANG:
+			case MOVE_ICE_FANG:
+			case MOVE_BOUNCE:
+				copyvar(VAR_TEMP_0, VAR_RESULT)
                 copyvar(VAR_0x8005, VAR_RESULT)
                 setvar(VAR_TEMP_1, 4)
+                setvar(VAR_TEMP_2, ITEM_BLUE_SHARD)
+			case MOVE_SEED_BOMB:
+			case MOVE_CRUNCH:
+			case MOVE_LUNGE:
+			case MOVE_AIR_SLASH:
+			case MOVE_DRILL_RUN:
+			case MOVE_FIRE_PUNCH:
+			case MOVE_ICE_PUNCH:
+			case MOVE_THUNDER_PUNCH:
+				copyvar(VAR_TEMP_0, VAR_RESULT)
+                copyvar(VAR_0x8005, VAR_RESULT)
+                setvar(VAR_TEMP_1, 6)
+                setvar(VAR_TEMP_2, ITEM_BLUE_SHARD)
+			case MOVE_ALLURING_VOICE:
+			case MOVE_THROAT_CHOP:
+			case MOVE_IRON_HEAD:
+			case MOVE_ZEN_HEADBUTT:
+			case MOVE_POWER_GEM:
+			case MOVE_BODY_SLAM:
+			case MOVE_DARKEST_LARIAT:
+			case MOVE_LIQUIDATION:
+			case MOVE_ICICLE_CRASH:
+			case MOVE_BLAZE_KICK:
+			case MOVE_POLLEN_PUFF:
+			case MOVE_PHANTOM_FORCE:
+			case MOVE_BUG_BUZZ:
+			case MOVE_EARTH_POWER:
+			case MOVE_AQUA_TAIL:
+				copyvar(VAR_TEMP_0, VAR_RESULT)
+                copyvar(VAR_0x8005, VAR_RESULT)
+                setvar(VAR_TEMP_1, 8)
+                setvar(VAR_TEMP_2, ITEM_BLUE_SHARD)
+			case MOVE_PLAY_ROUGH:
+			case MOVE_HEAT_WAVE:
+			case MOVE_MUDDY_WATER:
+			case MOVE_HIGH_HORSEPOWER:
+				copyvar(VAR_TEMP_0, VAR_RESULT)
+                copyvar(VAR_0x8005, VAR_RESULT)
+                setvar(VAR_TEMP_1, 12)
                 setvar(VAR_TEMP_2, ITEM_BLUE_SHARD)
 			case 0:
 			case MULTI_B_PRESSED:
@@ -3079,67 +3116,121 @@ script EventScript_Shop_Lelouch_MoveTutor_Blue {
 		call(EventScript_Shop_Lelouch_MoveTutor_TeachMove)
 	}
 }
+
 script EventScript_Shop_Lelouch_MoveTutor_Yellow {
 	while {
-		getitemquantity(ITEM_RED_SHARD)
+		getitemquantity(ITEM_YELLOW_SHARD)
 		buffernumberstring(0, VAR_RESULT)
-		bufferitemnameplural(1, ITEM_RED_SHARD, VAR_RESULT)
+		bufferitemnameplural(1, ITEM_YELLOW_SHARD, VAR_RESULT)
 		setspeaker("Lelouch")
 		message("Which move should I teach?\nYou have {COLOR GREEN}{STR_VAR_1} {STR_VAR_2}{COLOR DARK_GRAY}.")
 		waitmessage
+
+		if (var(VAR_ZONE) > 10) {
+			dynmultipush("Retaliate - 4", MOVE_RETALIATE)
+			dynmultipush("Lash Out - 4", MOVE_LASH_OUT)
+			dynmultipush("Expanding Force - 6", MOVE_EXPANDING_FORCE)
+			dynmultipush("Rising Voltage - 6", MOVE_RISING_VOLTAGE)
+			dynmultipush("Stomping Tantrum - 6", MOVE_STOMPING_TANTRUM)
+			dynmultipush("Temper Flare - 6", MOVE_TEMPER_FLARE)
+			dynmultipush("Bullet Seed - 8", MOVE_BULLET_SEED)
+			dynmultipush("Rock Blast - 8", MOVE_ROCK_BLAST)
+			dynmultipush("Pin Missile - 8", MOVE_PIN_MISSILE)
+			dynmultipush("Icicle Spear - 8", MOVE_ICICLE_SPEAR)
+		}
+
+		if (var(VAR_ZONE) > 20) {
+			dynmultipush("Scale Shot - 8", MOVE_SCALE_SHOT)
+		}
+
+		if (var(VAR_ZONE) > 15) {
+			dynmultipush("Reversal - 8", MOVE_REVERSAL)
+			dynmultipush("Self-Destruct - 8", MOVE_SELF_DESTRUCT)
+			dynmultipush("Low Kick - 8", MOVE_LOW_KICK)
+		}
 		
-        // --- Yellow Shard ---
-		if (var(VAR_ZONE) > 50) {
-			dynmultipush("High Horsepower - 4", MOVE_HIGH_HORSEPOWER)
-			dynmultipush("Future Sight - 4", MOVE_FUTURE_SIGHT)
-			dynmultipush("Solar Blade - 4", MOVE_SOLAR_BLADE)
-			dynmultipush("Misty Explosion - 4", MOVE_MISTY_EXPLOSION)
-			dynmultipush("Hydro Pump - 4", MOVE_HYDRO_PUMP)
-			dynmultipush("Poltergeist - 4", MOVE_POLTERGEIST)
-			dynmultipush("Brave Bird - 4", MOVE_BRAVE_BIRD)
-			dynmultipush("Flare Blitz - 4", MOVE_FLARE_BLITZ)
-			dynmultipush("Close Combat - 4", MOVE_CLOSE_COMBAT)
-			dynmultipush("Outrage - 4", MOVE_OUTRAGE)
-			dynmultipush("Megahorn - 4", MOVE_MEGAHORN)
-			dynmultipush("Gunk Shot - 4", MOVE_GUNK_SHOT)
-			dynmultipush("Power Whip - 4", MOVE_POWER_WHIP)
-			dynmultipush("Superpower - 4", MOVE_SUPERPOWER)
-			dynmultipush("Leaf Storm - 4", MOVE_LEAF_STORM)
-			dynmultipush("Draco Meteor - 4", MOVE_DRACO_METEOR)
-			dynmultipush("Steel Beam - 4", MOVE_STEEL_BEAM)
-			dynmultipush("Meteor Beam - 4", MOVE_METEOR_BEAM)
-			dynmultipush("Giga Impact - 4", MOVE_GIGA_IMPACT)
-			dynmultipush("Hyper Beam - 4", MOVE_HYPER_BEAM)
-			dynmultipush("Focus Punch - 4", MOVE_FOCUS_PUNCH)
+		if (var(VAR_ZONE) > 20) {
+			dynmultipush("Heavy Slam - 8", MOVE_HEAVY_SLAM)
+			dynmultipush("Heat Crash - 8", MOVE_HEAT_CRASH)
+			dynmultipush("Supercell Slam - 8", MOVE_SUPERCELL_SLAM)
+		}
+
+		if (var(VAR_ZONE) > 25) {
+			dynmultipush("Hydro Pump - 12", MOVE_HYDRO_PUMP)
+			dynmultipush("Poltergeist - 12", MOVE_POLTERGEIST)
+			dynmultipush("Brave Bird - 12", MOVE_BRAVE_BIRD)
+			dynmultipush("Flare Blitz - 12", MOVE_FLARE_BLITZ)
+			dynmultipush("Outrage - 12", MOVE_OUTRAGE)
+			dynmultipush("Megahorn - 12", MOVE_MEGAHORN)
+			dynmultipush("Gunk Shot - 12", MOVE_GUNK_SHOT)
+			dynmultipush("Power Whip - 12", MOVE_POWER_WHIP)
+			dynmultipush("Superpower - 12", MOVE_SUPERPOWER)
+			dynmultipush("Solar Blade - 12", MOVE_SOLAR_BLADE)
+			dynmultipush("Future Sight - 12", MOVE_FUTURE_SIGHT)
+			dynmultipush("Misty Explosion - 12", MOVE_MISTY_EXPLOSION)
+			dynmultipush("Leaf Storm - 12", MOVE_LEAF_STORM)
+			dynmultipush("Steel Beam - 12", MOVE_STEEL_BEAM)
+			dynmultipush("Meteor Beam - 12", MOVE_METEOR_BEAM)
+			dynmultipush("Focus Punch - 12", MOVE_FOCUS_PUNCH)
+			dynmultipush("Giga Impact - 12", MOVE_GIGA_IMPACT)
+			dynmultipush("Hyper Beam - 12", MOVE_HYPER_BEAM)
+			dynmultipush("Blast Burn - 12", MOVE_BLAST_BURN)
+			dynmultipush("Hydro Cannon - 12", MOVE_HYDRO_CANNON)
+			dynmultipush("Frenzy Plant - 12", MOVE_FRENZY_PLANT)
 		}
 
 		dynmultipush("Exit", 0)
 		dynmultistack(0, 0, FALSE, 5, FALSE, VAR_TEMP_0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) { // VAR_TEMP_1 is the number of Shards, VAR_TEMP_2 is the type of Shard
-            case MOVE_HIGH_HORSEPOWER:
-            case MOVE_FUTURE_SIGHT:
-            case MOVE_SOLAR_BLADE:
-            case MOVE_MISTY_EXPLOSION:
-            case MOVE_HYDRO_PUMP:
-            case MOVE_POLTERGEIST:
-            case MOVE_BRAVE_BIRD:
-            case MOVE_FLARE_BLITZ:
-            case MOVE_CLOSE_COMBAT:
-            case MOVE_OUTRAGE:
-            case MOVE_MEGAHORN:
-            case MOVE_GUNK_SHOT:
-            case MOVE_POWER_WHIP:
-            case MOVE_SUPERPOWER:
-            case MOVE_LEAF_STORM:
-            case MOVE_DRACO_METEOR:
-            case MOVE_STEEL_BEAM:
-            case MOVE_METEOR_BEAM:
-            case MOVE_GIGA_IMPACT:
-            case MOVE_HYPER_BEAM:
-            case MOVE_FOCUS_PUNCH:
+			case MOVE_RETALIATE:
+			case MOVE_LASH_OUT:
                 copyvar(VAR_TEMP_0, VAR_RESULT)
                 copyvar(VAR_0x8005, VAR_RESULT)
                 setvar(VAR_TEMP_1, 4)
+                setvar(VAR_TEMP_2, ITEM_YELLOW_SHARD)
+			case MOVE_EXPANDING_FORCE:
+			case MOVE_RISING_VOLTAGE:
+			case MOVE_STOMPING_TANTRUM:
+			case MOVE_TEMPER_FLARE:
+			case MOVE_BULLET_SEED:
+			case MOVE_ROCK_BLAST:
+			case MOVE_PIN_MISSILE:
+			case MOVE_ICICLE_SPEAR:
+			case MOVE_SCALE_SHOT:
+			case MOVE_REVERSAL:
+			case MOVE_SELF_DESTRUCT:
+			case MOVE_LOW_KICK:
+			case MOVE_HEAVY_SLAM:
+			case MOVE_HEAT_CRASH:
+			case MOVE_SUPERCELL_SLAM:
+                copyvar(VAR_TEMP_0, VAR_RESULT)
+                copyvar(VAR_0x8005, VAR_RESULT)
+                setvar(VAR_TEMP_1, 8)
+                setvar(VAR_TEMP_2, ITEM_YELLOW_SHARD)
+			case MOVE_HYDRO_PUMP:
+			case MOVE_POLTERGEIST:
+			case MOVE_BRAVE_BIRD:
+			case MOVE_FLARE_BLITZ:
+			case MOVE_OUTRAGE:
+			case MOVE_MEGAHORN:
+			case MOVE_GUNK_SHOT:
+			case MOVE_POWER_WHIP:
+			case MOVE_SUPERPOWER:
+			case MOVE_SOLAR_BLADE:
+			case MOVE_FUTURE_SIGHT:
+			case MOVE_MISTY_EXPLOSION:
+			case MOVE_LEAF_STORM:
+			case MOVE_STEEL_BEAM:
+			case MOVE_METEOR_BEAM:
+			case MOVE_FOCUS_PUNCH:
+			case MOVE_GIGA_IMPACT:
+			case MOVE_HYPER_BEAM:
+			case MOVE_BLAST_BURN:
+			case MOVE_HYDRO_CANNON:
+			case MOVE_FRENZY_PLANT:
+                copyvar(VAR_TEMP_0, VAR_RESULT)
+                copyvar(VAR_0x8005, VAR_RESULT)
+                setvar(VAR_TEMP_1, 12)
                 setvar(VAR_TEMP_2, ITEM_YELLOW_SHARD)
 			case 0:
 			case MULTI_B_PRESSED:
@@ -3157,52 +3248,105 @@ script EventScript_Shop_Lelouch_MoveTutor_Green {
 		message("Which move should I teach?\nYou have {COLOR GREEN}{STR_VAR_1} {STR_VAR_2}{COLOR DARK_GRAY}.")
 		waitmessage
 		// --- Green Shard ---
-        dynmultipush("Trick - 4", MOVE_TRICK)
-        dynmultipush("Heal Bell - 4", MOVE_HEAL_BELL)
-        dynmultipush("Helping Hand - 4", MOVE_HELPING_HAND)
-        dynmultipush("Synthesis - 4", MOVE_SYNTHESIS)
-        dynmultipush("Pain Split - 4", MOVE_PAIN_SPLIT)
+		if (var(VAR_ZONE) > 5) {
+			dynmultipush("Charm - 4", MOVE_CHARM)
+			dynmultipush("Fake Tears - 4", MOVE_FAKE_TEARS)
+			dynmultipush("Screech - 4", MOVE_SCREECH)
+			dynmultipush("Eerie Impulse - 4", MOVE_EERIE_IMPULSE)
+			dynmultipush("Scary Face - 4", MOVE_SCARY_FACE)
+			dynmultipush("Feather Dance - 4", MOVE_FEATHER_DANCE)
+			dynmultipush("Metal Sound - 4", MOVE_METAL_SOUND)
+			dynmultipush("Helping Hand - 4", MOVE_HELPING_HAND)
+			dynmultipush("Safeguard - 4", MOVE_SAFEGUARD)
+			dynmultipush("Endure - 4", MOVE_ENDURE)
+			dynmultipush("Roar - 4", MOVE_ROAR)
+			dynmultipush("Synthesis - 4", MOVE_SYNTHESIS)
+		}
 
-		if (var(VAR_ZONE) > 50) {
-			dynmultipush("Gravity - 4", MOVE_GRAVITY)
-			dynmultipush("Psych Up - 4", MOVE_PSYCH_UP)
-			dynmultipush("Coaching - 4", MOVE_COACHING)
-			dynmultipush("Curse - 4", MOVE_CURSE)
-			dynmultipush("Hone Claws - 4", MOVE_HONE_CLAWS)
-			dynmultipush("Shell Smash - 4", MOVE_SHELL_SMASH)
-			dynmultipush("Quiver Dance - 4", MOVE_QUIVER_DANCE)
-			dynmultipush("Dragon Dance - 4", MOVE_DRAGON_DANCE)
-			dynmultipush("Stealth Rock - 4", MOVE_STEALTH_ROCK)
-			dynmultipush("Tailwind - 4", MOVE_TAILWIND)
-			dynmultipush("Spikes - 4", MOVE_SPIKES)
-			dynmultipush("Toxic Spikes - 4", MOVE_TOXIC_SPIKES)
-			dynmultipush("Work Up - 4", MOVE_WORK_UP)
+		if (var(VAR_ZONE) > 10) {
+			dynmultipush("Trick - 4", MOVE_TRICK)
+			dynmultipush("Heal Bell - 6", MOVE_HEAL_BELL)
+			dynmultipush("Pain Split - 6", MOVE_PAIN_SPLIT)
+			dynmultipush("Encore - 6", MOVE_ENCORE)
+			dynmultipush("Imprison - 6", MOVE_IMPRISON)
+			dynmultipush("Haze - 6", MOVE_HAZE)
+			dynmultipush("Hone Claws - 6", MOVE_HONE_CLAWS)
+		}
+
+		if (var(VAR_ZONE) > 15) {
+			dynmultipush("Gravity - 8", MOVE_GRAVITY)
+			dynmultipush("Psych Up - 8", MOVE_PSYCH_UP)
+			dynmultipush("Coaching - 8", MOVE_COACHING)
+			dynmultipush("Curse - 8", MOVE_CURSE)
+		}
+
+		if (var(VAR_ZONE) > 20) {
+			dynmultipush("Tailwind - 8", MOVE_TAILWIND)
+			dynmultipush("Stealth Rock - 8", MOVE_STEALTH_ROCK)
+			dynmultipush("Spikes - 8", MOVE_SPIKES)
+			dynmultipush("Toxic Spikes - 8", MOVE_TOXIC_SPIKES)
+		}
+
+		if (var(VAR_ZONE) > 25) {
+			dynmultipush("Dragon Cheer - 12", MOVE_DRAGON_CHEER)
+			dynmultipush("Dragon Dance - 12", MOVE_DRAGON_DANCE)
+			dynmultipush("Misty Terrain - 12", MOVE_MISTY_TERRAIN)
+			dynmultipush("Electric Terrain - 12", MOVE_ELECTRIC_TERRAIN)
+			dynmultipush("Psychic Terrain - 12", MOVE_PSYCHIC_TERRAIN)
+			dynmultipush("Grassy Terrain - 12", MOVE_GRASSY_TERRAIN)
 		}
 
 		dynmultipush("Exit", 0)
 		dynmultistack(0, 0, FALSE, 5, FALSE, VAR_TEMP_0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) { // VAR_TEMP_1 is the number of Shards, VAR_TEMP_2 is the type of Shard
-            case MOVE_TRICK:
-            case MOVE_HEAL_BELL:
-            case MOVE_HELPING_HAND:
-            case MOVE_SYNTHESIS:
-            case MOVE_PAIN_SPLIT:
-            case MOVE_GRAVITY:
-            case MOVE_PSYCH_UP:
-            case MOVE_COACHING:
-            case MOVE_CURSE:
-            case MOVE_HONE_CLAWS:
-            case MOVE_SHELL_SMASH:
-            case MOVE_QUIVER_DANCE:
-            case MOVE_DRAGON_DANCE:
-            case MOVE_STEALTH_ROCK:
-            case MOVE_TAILWIND:
-            case MOVE_SPIKES:
-            case MOVE_TOXIC_SPIKES:
-            case MOVE_WORK_UP:
+			case MOVE_CHARM:
+			case MOVE_FAKE_TEARS:
+			case MOVE_SCREECH:
+			case MOVE_EERIE_IMPULSE:
+			case MOVE_SCARY_FACE:
+			case MOVE_FEATHER_DANCE:
+			case MOVE_METAL_SOUND:
+			case MOVE_HELPING_HAND:
+			case MOVE_SAFEGUARD:
+			case MOVE_ENDURE:
+			case MOVE_ROAR:
+			case MOVE_SYNTHESIS:
                 copyvar(VAR_TEMP_0, VAR_RESULT)
                 copyvar(VAR_0x8005, VAR_RESULT)
                 setvar(VAR_TEMP_1, 4)
+                setvar(VAR_TEMP_2, ITEM_GREEN_SHARD)
+			case MOVE_TRICK:
+			case MOVE_HEAL_BELL:
+			case MOVE_PAIN_SPLIT:
+			case MOVE_ENCORE:
+			case MOVE_IMPRISON:
+			case MOVE_HAZE:
+			case MOVE_HONE_CLAWS:
+                copyvar(VAR_TEMP_0, VAR_RESULT)
+                copyvar(VAR_0x8005, VAR_RESULT)
+                setvar(VAR_TEMP_1, 6)
+                setvar(VAR_TEMP_2, ITEM_GREEN_SHARD)
+			case MOVE_GRAVITY:
+			case MOVE_PSYCH_UP:
+			case MOVE_COACHING:
+			case MOVE_CURSE:
+			case MOVE_TAILWIND:
+			case MOVE_STEALTH_ROCK:
+			case MOVE_SPIKES:
+			case MOVE_TOXIC_SPIKES:
+                copyvar(VAR_TEMP_0, VAR_RESULT)
+                copyvar(VAR_0x8005, VAR_RESULT)
+                setvar(VAR_TEMP_1, 8)
+                setvar(VAR_TEMP_2, ITEM_GREEN_SHARD)
+			case MOVE_DRAGON_CHEER:
+			case MOVE_DRAGON_DANCE:
+			case MOVE_MISTY_TERRAIN:
+			case MOVE_ELECTRIC_TERRAIN:
+			case MOVE_PSYCHIC_TERRAIN:
+			case MOVE_GRASSY_TERRAIN:
+                copyvar(VAR_TEMP_0, VAR_RESULT)
+                copyvar(VAR_0x8005, VAR_RESULT)
+                setvar(VAR_TEMP_1, 12)
                 setvar(VAR_TEMP_2, ITEM_GREEN_SHARD)
 			case 0:
 			case MULTI_B_PRESSED:
@@ -3247,101 +3391,142 @@ text gText_Lelouch_PayItem {
 
 // Each added tutor move needs to be here, even though it's not actually a script. This is because of how make_teachables.py works!
 script TutorDummy {
-	setvar(VAR_0x8005, MOVE_BREAKING_SWIPE)
-	setvar(VAR_0x8005, MOVE_GRASSY_GLIDE)
-	setvar(VAR_0x8005, MOVE_LOW_SWEEP)
+	setvar(VAR_0x8005, MOVE_WATER_PULSE)
+	setvar(VAR_0x8005, MOVE_CHILLING_WATER)
+	setvar(VAR_0x8005, MOVE_STRUGGLE_BUG)
+	setvar(VAR_0x8005, MOVE_POUNCE)
+	setvar(VAR_0x8005, MOVE_SHOCK_WAVE)
+	setvar(VAR_0x8005, MOVE_SWIFT)
+	setvar(VAR_0x8005, MOVE_MAGICAL_LEAF)
+	setvar(VAR_0x8005, MOVE_ACID_SPRAY)
+	setvar(VAR_0x8005, MOVE_MUD_SHOT)
+	setvar(VAR_0x8005, MOVE_SMACK_DOWN)
+	setvar(VAR_0x8005, MOVE_ROUND)
 	setvar(VAR_0x8005, MOVE_STEEL_WING)
+	setvar(VAR_0x8005, MOVE_LOW_SWEEP)
+	setvar(VAR_0x8005, MOVE_BREAKING_SWIPE)
 	setvar(VAR_0x8005, MOVE_ELECTROWEB)
-	setvar(VAR_0x8005, MOVE_ROCK_BLAST)
-	setvar(VAR_0x8005, MOVE_PIN_MISSILE)
-	setvar(VAR_0x8005, MOVE_ICICLE_SPEAR)
-	setvar(VAR_0x8005, MOVE_LOW_KICK)
-	setvar(VAR_0x8005, MOVE_AIR_SLASH)
-	setvar(VAR_0x8005, MOVE_ICE_SPINNER)
-	setvar(VAR_0x8005, MOVE_SUPERCELL_SLAM)
-	setvar(VAR_0x8005, MOVE_HIGH_HORSEPOWER)
-	setvar(VAR_0x8005, MOVE_FUTURE_SIGHT)
-	setvar(VAR_0x8005, MOVE_SOLAR_BLADE)
-
-	setvar(VAR_0x8005, MOVE_HEX)
-	setvar(VAR_0x8005, MOVE_KNOCK_OFF)
-	setvar(VAR_0x8005, MOVE_BURNING_JEALOUSY)
-	setvar(VAR_0x8005, MOVE_BOUNCE)
-	setvar(VAR_0x8005, MOVE_SUCKER_PUNCH)
-	setvar(VAR_0x8005, MOVE_RISING_VOLTAGE)
+	setvar(VAR_0x8005, MOVE_FIRE_PLEDGE)
+	setvar(VAR_0x8005, MOVE_WATER_PLEDGE)
+	setvar(VAR_0x8005, MOVE_GRASS_PLEDGE)
+	setvar(VAR_0x8005, MOVE_VACUUM_WAVE)
+	setvar(VAR_0x8005, MOVE_GRASSY_GLIDE)
 	setvar(VAR_0x8005, MOVE_SKITTER_SMACK)
-	setvar(VAR_0x8005, MOVE_LASH_OUT)
-	setvar(VAR_0x8005, MOVE_TEMPER_FLARE)
-	setvar(VAR_0x8005, MOVE_PSYCHIC_NOISE)
-	setvar(VAR_0x8005, MOVE_STOMPING_TANTRUM)
+	setvar(VAR_0x8005, MOVE_SCORCHING_SANDS)
 	setvar(VAR_0x8005, MOVE_MYSTICAL_FIRE)
-	setvar(VAR_0x8005, MOVE_SCALE_SHOT)
-	setvar(VAR_0x8005, MOVE_DRILL_RUN)
+	setvar(VAR_0x8005, MOVE_BURNING_JEALOUSY)
+	setvar(VAR_0x8005, MOVE_PSYCHIC_NOISE)
+	setvar(VAR_0x8005, MOVE_ICE_SPINNER)
+	setvar(VAR_0x8005, MOVE_DUAL_WINGBEAT)
+	setvar(VAR_0x8005, MOVE_DUAL_CHOP)
+	setvar(VAR_0x8005, MOVE_PSYCHIC_FANGS)
+	setvar(VAR_0x8005, MOVE_KNOCK_OFF)
+	setvar(VAR_0x8005, MOVE_FOUL_PLAY)
+	
+	setvar(VAR_0x8005, MOVE_THUNDER_FANG)
+	setvar(VAR_0x8005, MOVE_FIRE_FANG)
+	setvar(VAR_0x8005, MOVE_ICE_FANG)
+	setvar(VAR_0x8005, MOVE_BOUNCE)
+	setvar(VAR_0x8005, MOVE_SEED_BOMB)
+	setvar(VAR_0x8005, MOVE_CRUNCH)
 	setvar(VAR_0x8005, MOVE_LUNGE)
+	setvar(VAR_0x8005, MOVE_AIR_SLASH)
+	setvar(VAR_0x8005, MOVE_DRILL_RUN)
+	setvar(VAR_0x8005, MOVE_FIRE_PUNCH)
+	setvar(VAR_0x8005, MOVE_ICE_PUNCH)
+	setvar(VAR_0x8005, MOVE_THUNDER_PUNCH)
 	setvar(VAR_0x8005, MOVE_ALLURING_VOICE)
 	setvar(VAR_0x8005, MOVE_THROAT_CHOP)
-	setvar(VAR_0x8005, MOVE_DUAL_WINGBEAT)
-	setvar(VAR_0x8005, MOVE_SEED_BOMB)
-	setvar(VAR_0x8005, MOVE_DUAL_CHOP)
 	setvar(VAR_0x8005, MOVE_IRON_HEAD)
 	setvar(VAR_0x8005, MOVE_ZEN_HEADBUTT)
 	setvar(VAR_0x8005, MOVE_POWER_GEM)
 	setvar(VAR_0x8005, MOVE_BODY_SLAM)
-	setvar(VAR_0x8005, MOVE_EXPANDING_FORCE)
 	setvar(VAR_0x8005, MOVE_DARKEST_LARIAT)
 	setvar(VAR_0x8005, MOVE_LIQUIDATION)
 	setvar(VAR_0x8005, MOVE_ICICLE_CRASH)
-	setvar(VAR_0x8005, MOVE_PSYCHIC_FANGS)
-
 	setvar(VAR_0x8005, MOVE_BLAZE_KICK)
-	setvar(VAR_0x8005, MOVE_PLAY_ROUGH)
 	setvar(VAR_0x8005, MOVE_POLLEN_PUFF)
 	setvar(VAR_0x8005, MOVE_PHANTOM_FORCE)
 	setvar(VAR_0x8005, MOVE_BUG_BUZZ)
-	setvar(VAR_0x8005, MOVE_MUDDY_WATER)
 	setvar(VAR_0x8005, MOVE_EARTH_POWER)
 	setvar(VAR_0x8005, MOVE_AQUA_TAIL)
-	setvar(VAR_0x8005, MOVE_FOUL_PLAY)
+	setvar(VAR_0x8005, MOVE_PLAY_ROUGH)
 	setvar(VAR_0x8005, MOVE_HEAT_WAVE)
-	setvar(VAR_0x8005, MOVE_MISTY_EXPLOSION)
+	setvar(VAR_0x8005, MOVE_MUDDY_WATER)
+	setvar(VAR_0x8005, MOVE_HIGH_HORSEPOWER)
+
+	setvar(VAR_0x8005, MOVE_RETALIATE)
+	setvar(VAR_0x8005, MOVE_LASH_OUT)
+	setvar(VAR_0x8005, MOVE_EXPANDING_FORCE)
+	setvar(VAR_0x8005, MOVE_RISING_VOLTAGE)
+	setvar(VAR_0x8005, MOVE_STOMPING_TANTRUM)
+	setvar(VAR_0x8005, MOVE_TEMPER_FLARE)
+	setvar(VAR_0x8005, MOVE_BULLET_SEED)
+	setvar(VAR_0x8005, MOVE_ROCK_BLAST)
+	setvar(VAR_0x8005, MOVE_PIN_MISSILE)
+	setvar(VAR_0x8005, MOVE_ICICLE_SPEAR)
+	setvar(VAR_0x8005, MOVE_SCALE_SHOT)
+	setvar(VAR_0x8005, MOVE_REVERSAL)
+	setvar(VAR_0x8005, MOVE_SELF_DESTRUCT)
+	setvar(VAR_0x8005, MOVE_LOW_KICK)
 	setvar(VAR_0x8005, MOVE_HEAVY_SLAM)
 	setvar(VAR_0x8005, MOVE_HEAT_CRASH)
+	setvar(VAR_0x8005, MOVE_SUPERCELL_SLAM)
 	setvar(VAR_0x8005, MOVE_HYDRO_PUMP)
 	setvar(VAR_0x8005, MOVE_POLTERGEIST)
 	setvar(VAR_0x8005, MOVE_BRAVE_BIRD)
 	setvar(VAR_0x8005, MOVE_FLARE_BLITZ)
-	setvar(VAR_0x8005, MOVE_CLOSE_COMBAT)
 	setvar(VAR_0x8005, MOVE_OUTRAGE)
 	setvar(VAR_0x8005, MOVE_MEGAHORN)
 	setvar(VAR_0x8005, MOVE_GUNK_SHOT)
 	setvar(VAR_0x8005, MOVE_POWER_WHIP)
 	setvar(VAR_0x8005, MOVE_SUPERPOWER)
+	setvar(VAR_0x8005, MOVE_SOLAR_BLADE)
+	setvar(VAR_0x8005, MOVE_FUTURE_SIGHT)
+	setvar(VAR_0x8005, MOVE_MISTY_EXPLOSION)
 	setvar(VAR_0x8005, MOVE_LEAF_STORM)
-	setvar(VAR_0x8005, MOVE_DRACO_METEOR)
 	setvar(VAR_0x8005, MOVE_STEEL_BEAM)
 	setvar(VAR_0x8005, MOVE_METEOR_BEAM)
+	setvar(VAR_0x8005, MOVE_FOCUS_PUNCH)
 	setvar(VAR_0x8005, MOVE_GIGA_IMPACT)
 	setvar(VAR_0x8005, MOVE_HYPER_BEAM)
-	setvar(VAR_0x8005, MOVE_FOCUS_PUNCH)
-
+	setvar(VAR_0x8005, MOVE_BLAST_BURN)
+	setvar(VAR_0x8005, MOVE_HYDRO_CANNON)
+	setvar(VAR_0x8005, MOVE_FRENZY_PLANT)
+	
+	setvar(VAR_0x8005, MOVE_CHARM)
+	setvar(VAR_0x8005, MOVE_FAKE_TEARS)
+	setvar(VAR_0x8005, MOVE_SCREECH)
+	setvar(VAR_0x8005, MOVE_EERIE_IMPULSE)
+	setvar(VAR_0x8005, MOVE_SCARY_FACE)
+	setvar(VAR_0x8005, MOVE_FEATHER_DANCE)
+	setvar(VAR_0x8005, MOVE_METAL_SOUND)
+	setvar(VAR_0x8005, MOVE_HELPING_HAND)
+	setvar(VAR_0x8005, MOVE_SAFEGUARD)
+	setvar(VAR_0x8005, MOVE_ENDURE)
+	setvar(VAR_0x8005, MOVE_ROAR)
+	setvar(VAR_0x8005, MOVE_SYNTHESIS)
 	setvar(VAR_0x8005, MOVE_TRICK)
 	setvar(VAR_0x8005, MOVE_HEAL_BELL)
-	setvar(VAR_0x8005, MOVE_HELPING_HAND)
-	setvar(VAR_0x8005, MOVE_SYNTHESIS)
 	setvar(VAR_0x8005, MOVE_PAIN_SPLIT)
+	setvar(VAR_0x8005, MOVE_ENCORE)
+	setvar(VAR_0x8005, MOVE_IMPRISON)
+	setvar(VAR_0x8005, MOVE_HAZE)
+	setvar(VAR_0x8005, MOVE_HONE_CLAWS)
 	setvar(VAR_0x8005, MOVE_GRAVITY)
 	setvar(VAR_0x8005, MOVE_PSYCH_UP)
 	setvar(VAR_0x8005, MOVE_COACHING)
 	setvar(VAR_0x8005, MOVE_CURSE)
-	setvar(VAR_0x8005, MOVE_HONE_CLAWS)
-	setvar(VAR_0x8005, MOVE_SHELL_SMASH)
-	setvar(VAR_0x8005, MOVE_QUIVER_DANCE)
-	setvar(VAR_0x8005, MOVE_DRAGON_DANCE)
-	setvar(VAR_0x8005, MOVE_STEALTH_ROCK)
 	setvar(VAR_0x8005, MOVE_TAILWIND)
+	setvar(VAR_0x8005, MOVE_STEALTH_ROCK)
 	setvar(VAR_0x8005, MOVE_SPIKES)
 	setvar(VAR_0x8005, MOVE_TOXIC_SPIKES)
-	setvar(VAR_0x8005, MOVE_WORK_UP)
+	setvar(VAR_0x8005, MOVE_DRAGON_CHEER)
+	setvar(VAR_0x8005, MOVE_DRAGON_DANCE)
+	setvar(VAR_0x8005, MOVE_MISTY_TERRAIN)
+	setvar(VAR_0x8005, MOVE_ELECTRIC_TERRAIN)
+	setvar(VAR_0x8005, MOVE_PSYCHIC_TERRAIN)
+	setvar(VAR_0x8005, MOVE_GRASSY_TERRAIN)
 }
 
 script EventScript_Twin {
