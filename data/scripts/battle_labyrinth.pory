@@ -73,7 +73,6 @@ script EventScript_Shop_Max {
 
 mart Zone2A_Shop_TMShop {
 	ITEM_TM_HIDDEN_POWER
-	ITEM_TM_NATURAL_GIFT
 }
 
 mart Zone6A_Shop_TMShop {
@@ -123,7 +122,6 @@ mart Zone29A_Shop_TMShop {
 
 mart Sanctuary_Shop_TMShop {
 	ITEM_TM_HIDDEN_POWER
-	ITEM_TM_NATURAL_GIFT
 	ITEM_TM_WORK_UP
 	ITEM_TM_TRAILBLAZE
 	ITEM_TM_FLAME_CHARGE

@@ -138,10 +138,10 @@ script Zone2A_EventScript_Leaf {
 	end
 }
 
-script Zone2A_EventScript_BossBattle {
+script Zone2A_EventScript_Shaun {
 	lock
 	faceplayer
-	if (flag(FLAG_BEAT_BOSS_2) == true) {
+	if (checkitem(ITEM_TM_NATURAL_GIFT) == TRUE) {
 		setspeaker("Shaun")
 		msgbox(Zone2A_Text_Shaun_Post)
 		release
@@ -172,10 +172,9 @@ script Zone2A_EventScript_BossBattle {
 	trainerbattle_no_intro(TRAINER_PBL_SHAUN_BOSS_2, format("Ack! I lost again!\pDoggone it!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Shaun")
-	msgbox(format("Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though! I enjoyed our battle so much, I want to give you these!"))
+	msgbox(format("Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though! I enjoyed our battle so much, I want to give you this!"))
 	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_ORAN_BERRY, 5)
-	setflag(FLAG_BEAT_BOSS_2)
+	giveitem(ITEM_TM_NATURAL_GIFT)
 	setspeaker("Shaun")
 	msgbox(Zone2A_Text_Shaun_Post)
 	release
@@ -183,7 +182,7 @@ script Zone2A_EventScript_BossBattle {
 }
 
 text Zone2A_Text_Shaun_Post {
-	format("Sometimes Skwovet come looking for Berries and block the road.\pJust wait a little bit, and they should move out of the way shortly!")
+	format("{COLOR GREEN}Natural Gift{COLOR DARK_GRAY} is a great TM to use with Berries!\pIt consumes a held Berry to deal damage, and changes type and power based on the type of berry!\pI know an Oran Berry deals Poison damage and a Cheri Berry deals Fire damage.\pCounterintuitive, right?")
 }
 
 script Zone2A_EventScript_BuyBug {
