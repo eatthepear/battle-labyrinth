@@ -49,15 +49,6 @@ Zone22A_EventScript_Exit::
 	releaseall
 	end
 
-Zone22A_EventScript_CheckBrutal:
-	goto_if_not_defeated TRAINER_PBL_CODY, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_LEWIS, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_INEZ_AND_EMMA, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_ALFREDO, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_IAN, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_AUDREY, EventScript_BrutalExitNotSatisfied
-	return
-
 Zone22A_EventScript_BossBattle:
 	fadeoutbgm 1
 	msgbox Zone22A_Text_Pam_StopRightThere, MSGBOX_AUTOCLOSE
@@ -274,25 +265,6 @@ Zone22A_Text_CorneliusPostBattle:
 	.string "Being a Pokémon Ranger is a really\n"
 	.string "rewarding career!\p"
 	.string "You should consider it!$"
-
-Zone22A_EventScript_InezandEmma::
-	trainerbattle_double TRAINER_PBL_INEZ_AND_EMMA, Zone22A_Text_InezandEmmaIntro, Zone22A_Text_InezandEmmaDefeat, gText_NotEnoughMons
-	msgbox Zone22A_Text_InezandEmmaPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Zone22A_Text_InezandEmmaIntro:
-	.string "Inez: Emma, look!\p"
-	.string "Emma: A snowflake!$"
-
-Zone22A_Text_InezandEmmaDefeat:
-	.string "Emma: Ah, not you!\p"
-	.string "Inez: Sorry!$"
-
-Zone22A_Text_InezandEmmaPostBattle:
-	.string "Inez: We didn't mean to call you a\n"
-	.string "snowflake!\p"
-	.string "Emma: Our bad!$"
 
 Zone22A_EventScript_Helen::
 	trainerbattle_single TRAINER_PBL_HELEN, Zone22A_Text_HelenIntro, Zone22A_Text_HelenDefeat

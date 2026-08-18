@@ -3237,23 +3237,6 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_MAYLENE_BOSS_22 ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
 === TRAINER_PBL_LACEY_BOSS_23 ===
 Name: STEVEN
 Class: Rival
@@ -3564,157 +3547,221 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Metal Claw
 
 === TRAINER_PBL_CODY ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Name: Cody
+Class: Worker
+Pic: Ice Worker
+Music: Hiker
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Ice
+Copy Pool: TRAINER_POOL_ZONE_22
 
 === TRAINER_PBL_LEWIS ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
+Name: Lewis
+Class: Triathlete
+Pic: Running Triathlete M
 Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_CORNELIUS ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_INEZ_AND_EMMA ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: Yes
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_22
 
 === TRAINER_PBL_HELEN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Name: Helen
+Class: Triathlete
+Pic: Running Triathlete F
+Music: Female
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: Yes
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_22
 
 === TRAINER_PBL_WESLEY ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Name: Wesley
+Class: Ninja Boy
+Pic: Ninja Boy
+Music: Suspicious
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Poison
+Copy Pool: TRAINER_POOL_ZONE_22
 
 === TRAINER_PBL_ALFREDO ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Name: Alfredo
+Class: Bird Keeper
+Pic: Bird Keeper
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Flying
+Copy Pool: TRAINER_POOL_ZONE_22
 
 === TRAINER_PBL_IAN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Ian
+Class: Hiker
+Pic: Hiker
+Music: Hiker
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Ground Rock Steel
+Copy Pool: TRAINER_POOL_ZONE_22
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+=== TRAINER_PBL_CORNELIUS ===
+Name: Cornelius
+Class: Pkmn Ranger
+Pic: Pokemon Ranger M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_22
 
 === TRAINER_PBL_AUDREY ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Audrey
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_22
 
-Metang
-Brave Nature
+=== TRAINER_PBL_MAYLENE_BOSS_22 ===
+Name: Maylene
+Class: Leader
+Pic: Liza
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Purple
+
+Mienshao @ Life Orb
+Jolly Nature
+Ability: Regenerator
 Level: 42
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Drain Punch
+- Knock Off
+- Ice Spinner
+- U-Turn
+
+Machamp @ Assault Vest
+Adamant Nature
+Ability: No Guard
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dynamic Punch
+- Stone Edge
+- Knock Off
+- Bullet Punch
+
+Toxicroak @ Payapa Berry
+Jolly Nature
+Ability: Dry Skin
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drain Punch
+- Gunk Shot
+- Sucker Punch
+- Bulk Up
+
+Infernape @ White Herb
+Naive Nature
+Ability: Iron Fist
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Overheat
+- Brick Break
+- Grass Knot
+- Thunder Punch
+
+Medicham @ Medichamite
+Jolly Nature
+Ability: Pure Power
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drain Punch
+- Zen Headbutt
+- Ice Punch
+- Bullet Punch
+
+=== TRAINER_PBL_MAYLENE_BOSS_22 ===
+Name: Maylene
+Class: Leader
+Pic: Liza
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Purple
+Difficulty: Brutal
+
+Mienshao @ Life Orb
+Jolly Nature
+Ability: Regenerator
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drain Punch
+- Knock Off
+- Ice Spinner
+- U-Turn
+
+Machamp @ Assault Vest
+Adamant Nature
+Ability: No Guard
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dynamic Punch
+- Stone Edge
+- Knock Off
+- Bullet Punch
+
+Toxicroak @ Payapa Berry
+Jolly Nature
+Ability: Dry Skin
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drain Punch
+- Gunk Shot
+- Sucker Punch
+- Bulk Up
+
+Infernape @ White Herb
+Naive Nature
+Ability: Iron Fist
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Overheat
+- Brick Break
+- Grass Knot
+- Thunder Punch
+
+Annihilape @ Lum Berry
+Careful Nature
+Ability: Defiant
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rage Fist
+- Drain Punch
+- Bulk Up
+- Taunt
+
+Medicham @ Medichamite
+Jolly Nature
+Ability: Pure Power
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drain Punch
+- Zen Headbutt
+- Ice Punch
+- Bullet Punch
 
 === TRAINER_PBL_BOSS13 ===
 Name: STEVEN
