@@ -1,117 +1,39 @@
-Zone24A_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, Zone24A_OnFrame
-	.byte 0
+mapscripts Zone24A_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_ZONE_24_STATE, 0: Zone24A_EventScript_Intro
+	]
+}
 
-Zone24A_OnFrame:
-	map_script_2 VAR_ZONE_24_STATE, 0, Zone24A_EventScript_Intro
-	.2byte 0
-
-Zone24A_EventScript_Intro:
+script Zone24A_EventScript_Intro {
 	lockall
-	setvar VAR_ZONE_24_STATE, 1
-	goto Zone24A_EventScript_LookDown
-	end
+	setvar(VAR_ZONE_24_STATE, 1)
+	goto(Zone24A_EventScript_LookDown)
+}
 
-Zone24A_EventScript_LookDown::
+script Zone24A_EventScript_LookDown {
 	lockall
-	special SpawnCameraObject
-	applymovement LOCALID_CAMERA, Zone24A_Movement_Camera_MoveCameraDown
-	waitmovement 0
-	delay 96
-	applymovement LOCALID_CAMERA, Zone24A_Movement_Camera_MoveCameraUp
-	waitmovement 0
-	special RemoveCameraObject
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
-	waitmovement 0
+	special(SpawnCameraObject)
+	applymovement(LOCALID_CAMERA, Zone24A_Movement_Camera_MoveCameraDown)
+	waitmovement(0)
+	delay(96)
+	applymovement(LOCALID_CAMERA, Zone24A_Movement_Camera_MoveCameraUp)
+	waitmovement(0)
+	special(RemoveCameraObject)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement(0)
 	releaseall
 	end
+}
 
-Zone24A_Movement_Camera_MoveCameraDown:
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	step_end
+movement Zone24A_Movement_Camera_MoveCameraDown {
+	walk_faster_down * 40
+}
 
-Zone24A_Movement_Camera_MoveCameraUp:
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	step_end
+movement Zone24A_Movement_Camera_MoveCameraUp {
+	walk_faster_up * 40
+}
 
+raw `
 Zone24A_EventScript_SellLemonade::
 	lock
 	faceplayer
@@ -334,3 +256,4 @@ Zone24A_EventScript_UltraBall::
 Zone24A_EventScript_HyperPotion::
 	finditem ITEM_HYPER_POTION
 	end
+`
