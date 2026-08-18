@@ -33,6 +33,13 @@ movement Zone24A_Movement_Camera_MoveCameraUp {
 	walk_faster_up * 40
 }
 
+script Zone24A_EventScript_TriggerRocketAmbush {
+	lockall
+	msgbox(format("This is the Rocket ambush!"))
+	setvar(VAR_ZONE_24_STATE, 2)
+	releaseall
+}
+
 raw `
 Zone24A_EventScript_SellLemonade::
 	lock
