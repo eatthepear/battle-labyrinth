@@ -211,7 +211,7 @@
     },
     {
       "local_id": "LOCALID_MAYLENE",
-      "graphics_id": "OBJ_EVENT_GFX_GRANT",
+      "graphics_id": "OBJ_EVENT_GFX_MAYLENE",
       "x": 39,
       "y": 6,
       "elevation": 3,

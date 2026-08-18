@@ -3637,7 +3637,7 @@ Copy Pool: TRAINER_POOL_ZONE_22
 === TRAINER_PBL_MAYLENE_BOSS_22 ===
 Name: Maylene
 Class: Leader
-Pic: Liza
+Pic: Maylene
 Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
@@ -3696,7 +3696,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_PBL_MAYLENE_BOSS_22 ===
 Name: Maylene
 Class: Leader
-Pic: Liza
+Pic: Maylene
 Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
