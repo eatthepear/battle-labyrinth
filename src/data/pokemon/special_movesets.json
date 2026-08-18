@@ -1,12 +1,17 @@
 {
   "universalMoves":
     [
-      "MOVE_HIDDEN_POWER",
+      "MOVE_ATTRACT",
+      "MOVE_CONFIDE",
+      "MOVE_CURSE",
+      "MOVE_ENDURE",
       "MOVE_FACADE",
+      "MOVE_HIDDEN_POWER",
       "MOVE_NATURAL_GIFT",
       "MOVE_PROTECT",
       "MOVE_REST",
       "MOVE_RETURN",
+      "MOVE_ROUND",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_SWAGGER",
