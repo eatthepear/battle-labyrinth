@@ -1711,6 +1711,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_MAGNET)
 	additem(ITEM_SMOKE_BALL)
 	additem(ITEM_RED_SHARD, 5)
+	additem(ITEM_FOCUS_BAND)
 	additem(ITEM_TM_BULLDOZE)
 
 	if (var(VAR_ZONE) == 9) {

@@ -187,24 +187,6 @@ script EventScript_Difficulty_Switch {
 	}
 }
 
-// Removed for now, as FLAG_SETTINGS_FULL_INFO has been removed.
-// script EventScript_FullInfo {
-// 	if (flag(FLAG_SETTINGS_FULL_INFO)) {
-// 		msgbox(format("You currently have the Full Info option on. Would you like to turn it off?"), MSGBOX_YESNO)
-// 		if (var(VAR_RESULT) == YES) {
-// 			clearflag(FLAG_SETTINGS_FULL_INFO)
-// 			msgbox(format("Full Info turned off."))
-// 		}
-// 	} else {
-// 		msgbox(format("You currently have the Full Info option off. Would you like to turn it on?"), MSGBOX_YESNO)
-// 		if (var(VAR_RESULT) == YES) {
-// 			setflag(FLAG_SETTINGS_FULL_INFO)
-// 			msgbox(format("Full Info turned on."))
-// 		}
-// 	}
-// 	return
-// }
-
 script EventScript_Version {
 	msgbox(format("This is the demo version of {COLOR GREEN}Pokémon Battle Labyrinth{COLOR DARK_GRAY}, released on 12/31/25 and playable up to Zone 10.\pMake sure you're playing the most up to date version!"))
 	return
@@ -238,14 +220,6 @@ script EventScript_Nuzlocke {
 		}
 	}
 }
-
-// script EventScript_RespinEncounters {
-// 	msgbox(format("Respin encounters?"), MSGBOX_YESNO)
-// 	if (var(VAR_RESULT) == YES) {
-// 		callnative(RegenerateWildEncounterSeed)
-// 	}
-// 	return
-// }
 
 script EventScript_NextZone {
 	if (flag(FLAG_SYS_DEXNAV_GET) == FALSE) {
@@ -488,9 +462,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 			giveitem(ITEM_HM_FLASH)
 		case 7:
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} is…"))
-			// msgbox(format("{COLOR GREEN}5 Green Shards{COLOR DARK_GRAY}!"))
-			// setspeaker(SP_NAME_NONE)
-			// giveitem(ITEM_GREEN_SHARD, 5)
+			msgbox(format("The {COLOR GREEN}Focus Band{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_FOCUS_BAND)
 			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY} is…"))
 			msgbox(format("{COLOR GREEN}TM78 - Bulldoze!{COLOR DARK_GRAY}"))
@@ -505,22 +479,14 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_POKEMON_BOX_LINK)
 			helpwindow(HELP_BOX_LINK)
-			// msgbox(format("The {COLOR GREEN}Tera Orb{COLOR DARK_GRAY}!"))
-			// setspeaker(SP_NAME_NONE)
-			// giveitem(ITEM_TERA_ORB)
-			// setflag(FLAG_USED_TERA)
-			// msgbox(format("In battle, you can Terastilize your Pokémon now.\pPress {START_BUTTON} to Terastilize!\pAfter you use it, you'll have to go back to the Pokémon Center to recharge it."))
 		case 11:
-			msgbox(format("TM94 - Defog!"))
+			msgbox(format("{COLOR GREEN}TM94 - Defog{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_TM_DEFOG)
-			// msgbox(format("TM86 - Grass Knot!"))
-			// setspeaker(SP_NAME_NONE)
-			// giveitem(ITEM_TM_GRASS_KNOT)
 		case 12:
 			msgbox(format("Ultra Balls!"))
-			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_ULTRA_BALL, 10)
+			// setspeaker(SP_NAME_NONE)
+			// giveitem(ITEM_ULTRA_BALL, 10)
 	}
 	switch(var(VAR_ZONE)) {
 		case 1:
