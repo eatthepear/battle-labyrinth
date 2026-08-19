@@ -576,6 +576,9 @@ const u16 gTrainerPalette_MagmaAdminF[] = INCGFX_U16("graphics/trainers/front_pi
 const u32 gTrainerFrontPic_Maylene[] = INCGFX_U32("graphics/trainers/front_pics/maylene.png", ".4bpp.smol");
 const u16 gTrainerPalette_Maylene[] = INCGFX_U16("graphics/trainers/front_pics/maylene.png", ".gbapal");
 
+const u32 gTrainerFrontPic_Raihan[] = INCGFX_U32("graphics/trainers/front_pics/raihan.png", ".4bpp.smol");
+const u16 gTrainerPalette_Raihan[] = INCGFX_U16("graphics/trainers/front_pics/raihan.png", ".gbapal");
+
 static const union AnimCmd sAnimCmd_Hoenn[] =
 {
     ANIMCMD_FRAME(0, 24),
@@ -1431,5 +1434,9 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     [TRAINER_PIC_MAYLENE] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Maylene, gTrainerPalette_Maylene),
+    },
+    [TRAINER_PIC_RAIHAN] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Raihan, gTrainerPalette_Raihan),
     },
 };
