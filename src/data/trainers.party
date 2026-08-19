@@ -3851,56 +3851,60 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_CHRISTI ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_SPENCER ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+=== TRAINER_PBL_DOUGLAS ===
+Name: Douglas
+Class: Guitarist
+Pic: Guitarist
+Music: Intense
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Electric
+Copy Pool: TRAINER_POOL_ZONE_24_AND_25
 
 === TRAINER_PBL_HAYWOOD ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Haywood
+Class: Ruin Maniac
+Pic: Ruin Maniac
+Music: Hiker
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Rock Steel
+Copy Pool: TRAINER_POOL_ZONE_24_AND_25
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+=== TRAINER_PBL_SPENCER ===
+Name: Spencer
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Music: Intense
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Dragon
+Copy Pool: TRAINER_POOL_ZONE_24_AND_25
+
+=== TRAINER_PBL_CHRISTI ===
+Name: Christi
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_24_AND_25
+
+=== TRAINER_PBL_DAVID ===
+Name: David
+Class: Pkmn Ranger
+Pic: Pokemon Ranger M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_24_AND_25
 
 === TRAINER_PBL_MONROE ===
 Name: STEVEN
@@ -3919,41 +3923,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_DAVID ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
 === TRAINER_PBL_DOMINIK ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_DOUGLAS ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
