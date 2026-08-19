@@ -3546,7 +3546,7 @@ Class: Triathlete
 Pic: Running Triathlete M
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
-Double Battle: Yes
+Double Battle: No
 Party Size: 3
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_22
@@ -3557,7 +3557,7 @@ Class: Triathlete
 Pic: Running Triathlete F
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
-Double Battle: Yes
+Double Battle: No
 Party Size: 3
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_22
