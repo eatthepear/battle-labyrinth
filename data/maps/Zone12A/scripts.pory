@@ -76,53 +76,122 @@ script Zone12A_EventScript_TriggerKimonoGirl {
 	end
 }
 
-script Zone12A_EventScript_TriggerSerena {
-	lockall
-	applymovement(LOCALID_SERENA_12A, Common_Movement_FaceRight)
-	waitmovement(0)
-	playbgm(MUS_BW_FRIEND, TRUE)
-	applymovement(LOCALID_SERENA_12A, Common_Movement_ExclamationMark)
-	playse(SE_PIN)
-	waitmovement(0)
-	waitse
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
-	waitmovement(0)
-	delay(16)
-	applymovement(LOCALID_SERENA_12A, Common_Movement_WalkRight3)
-	waitmovement(0)
-	setspeaker("Serena")
-	msgbox(format("Hello!"))
+script Zone12A_EventScript_Inver {
+	lock
+	faceplayer
+	if (flag(FLAG_BEAT_BOSS_12) == TRUE) {
+		setspeaker("Inver")
+		msgbox(Zone12A_Text_Inver_Post)
+		release
+		end
+	}
+	setspeaker("Inver")
+	msgbox(format("My Pokémon love to eat, just like me!"))
+	if (!defeated(TRAINER_PBL_GENIE) || !defeated(TRAINER_PBL_ABIGAIL) || !defeated(TRAINER_PBL_CELIA)) {
+		setspeaker("Inver")
+		msgbox(format("Tell you what, if you go and defeat all four of my friends around the farm, I'll show you just how much my Pokémon can eat!"))
+		release
+		end
+	}
+	setspeaker("Inver")
+	msgbox(format("My friends tell me you've defeated every last one of them!\pAre you interested in a battle? I'll show you just how much my Pokémon can eat!"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		setspeaker("Inver")
+		msgbox(format("Oh, all right…"))
+		release
+		end
+	}
+	closemessage
+	fadeoutbgm(1)
+	setspeaker("Inver")
+	msgbox(format("All right then, let's battle!"))
+	setflag(FLAG_SYS_INVERSE_BATTLE)
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	// trainerbattle_no_intro(TRAINER_PBL_SERENA_BOSS_12, format("Defeat!"))
+	trainerbattle_no_intro(TRAINER_PBL_INVER_BOSS_12, format("Ack! I lost again!\pDoggone it!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	setspeaker("Serena")
-	msgbox(format("I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
+	clearflag(FLAG_SYS_INVERSE_BATTLE)
+	setspeaker("Inver")
+	msgbox(format("Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though! I enjoyed our battle so much, I want to give you this!"))
 	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_SHALOUR_SABLE, 10)
-	setspeaker("Serena")
-	msgbox(format("Well, anyways, I've gotta run now.\pBye bye!"), MSGBOX_AUTOCLOSE)
-	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
-	waitmovement(0)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
-	waitmovement(0)
-	applymovement(LOCALID_SERENA_12A, Common_Movement_WalkRight)
-	waitmovement(0)
-	applymovement(LOCALID_SERENA_12A, Common_Movement_WalkDown2)
-	waitmovement(0)
-	applymovement(LOCALID_SERENA_12A, Common_Movement_WalkRight4)
-	waitmovement(0)
-	applymovement(LOCALID_SERENA_12A, Common_Movement_WalkUp2)
-	waitmovement(0)
-	applymovement(LOCALID_SERENA_12A, Common_Movement_WalkRight3)
-	waitmovement(0)
-	applymovement(LOCALID_SERENA_12A, Common_Movement_WalkUp6)
-	waitmovement(0)
-	removeobject(LOCALID_SERENA_12A)
+	giveitem(ITEM_TM_NATURAL_GIFT)
 	setflag(FLAG_BEAT_BOSS_12)
-	setvar(VAR_ZONE_12_STATE, 1)
-	fadedefaultbgm
-	releaseall
+	setspeaker("Inver")
+	msgbox(Zone12A_Text_Inver_Post)
+	release
+	end
+}
+
+text Zone12A_Text_Inver_Post {
+	format("POST")
+}
+
+script Zone12A_EventScript_Genie {
+	lock
+	faceplayer
+	if (defeated(TRAINER_PBL_GENIE)) {
+		msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+		release
+		end
+	}
+	msgbox(format("Battle?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Sad!"), MSGBOX_AUTOCLOSE)
+		release
+		end
+	}
+	msgbox(format("BATTLE!"))
+	setflag(FLAG_SYS_INVERSE_BATTLE)
+	trainerbattle_no_intro(TRAINER_PBL_GENIE, format("DEFEAT!"))
+	clearflag(FLAG_SYS_INVERSE_BATTLE)
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	release
+	end
+}
+
+script Zone12A_EventScript_Abigail {
+	lock
+	faceplayer
+	if (defeated(TRAINER_PBL_ABIGAIL)) {
+		msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+		release
+		end
+	}
+	msgbox(format("Battle?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Sad!"), MSGBOX_AUTOCLOSE)
+		release
+		end
+	}
+	msgbox(format("BATTLE!"))
+	setflag(FLAG_SYS_INVERSE_BATTLE)
+	trainerbattle_no_intro(TRAINER_PBL_ABIGAIL, format("DEFEAT!"))
+	clearflag(FLAG_SYS_INVERSE_BATTLE)
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	release
+	end
+}
+
+script Zone12A_EventScript_Celia {
+	lock
+	faceplayer
+	if (defeated(TRAINER_PBL_CELIA)) {
+		msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+		release
+		end
+	}
+	msgbox(format("Battle?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Sad!"), MSGBOX_AUTOCLOSE)
+		release
+		end
+	}
+	msgbox(format("BATTLE!"))
+	setflag(FLAG_SYS_INVERSE_BATTLE)
+	trainerbattle_no_intro(TRAINER_PBL_CELIA, format("DEFEAT!"))
+	clearflag(FLAG_SYS_INVERSE_BATTLE)
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	release
 	end
 }
 
@@ -232,18 +301,6 @@ script Zone12A_EventScript_Adair {
 
 script Zone12A_EventScript_Kinley {
 	trainerbattle_single(TRAINER_PBL_KINLEY, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
-	end
-}
-
-script Zone12A_EventScript_Genie {
-	trainerbattle_single(TRAINER_PBL_GENIE, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
-	end
-}
-
-script Zone12A_EventScript_Abigail {
-	trainerbattle_single(TRAINER_PBL_ABIGAIL, format("BATTLE!"), format("DEFEAT!"))
 	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
 	end
 }

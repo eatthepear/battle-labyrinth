@@ -4611,7 +4611,7 @@ u16 GetNumTrainersRemaining(void)
         count += !FlagGet(FLAG_BEAT_BOSS_11);
         break;
     case 12:
-        for (trainer = TRAINER_PBL_HILDA; trainer <= TRAINER_PBL_RUFUS; trainer++) {
+        for (trainer = TRAINER_PBL_HILDA; trainer <= TRAINER_PBL_CELIA; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }

@@ -2078,28 +2078,6 @@ Party Size: 4
 Pool Prune: Non Electric
 Copy Pool: TRAINER_POOL_ZONE_12
 
-=== TRAINER_PBL_GENIE ===
-Name: Genie
-Class: Pokefan
-Pic: Pokefan M
-Music: Twins
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Party Size: 3
-Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_12
-
-=== TRAINER_PBL_ABIGAIL ===
-Name: Abigail
-Class: Pokefan
-Pic: Pokefan F
-Music: Twins
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Party Size: 3
-Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_12
-
 === TRAINER_PBL_RUFUS ===
 Name: Rufus
 Class: Camper
@@ -2110,6 +2088,51 @@ Double Battle: No
 Party Size: 3
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_12
+
+=== TRAINER_PBL_GENIE ===
+Name: Genie
+Class: Youngster
+Pic: Youngster
+Music: Male
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
+
+=== TRAINER_PBL_ABIGAIL ===
+Name: Abigail
+Class: Lass
+Pic: Lass
+Music: Girl
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
+
+=== TRAINER_PBL_CELIA ===
+Name: Celia
+Class: School Kid
+Pic: School Kid F
+Music: Girl
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
+
+=== TRAINER_PBL_INVER_BOSS_12 ===
+Name: Inver
+Class: Psychic
+Pic: Psychic M
+Music: Intense
+AI: AI_FLAG_BOSS
+Double Battle: No
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
+Mugshot: Green
 
 === TRAINER_PBL_VIOLET ===
 Name: Paige
