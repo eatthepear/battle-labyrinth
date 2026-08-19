@@ -3237,23 +3237,6 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_LACEY_BOSS_23 ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
 === TRAINER_PBL_SHAWN ===
 Name: STEVEN
 Class: Rival
@@ -3764,108 +3747,94 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bullet Punch
 
 === TRAINER_PBL_EDGARDO ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Name: Edgardo
+Class: Bug Maniac
+Pic: Bug Maniac
+Music: Suspicious
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Bug
+Copy Pool: TRAINER_POOL_ZONE_23
 
 === TRAINER_PBL_JEAN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Name: Jean
+Class: Hex Maniac
+Pic: Hex Maniac
+Music: Suspicious
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Ghost
+Copy Pool: TRAINER_POOL_ZONE_23
 
 === TRAINER_PBL_ROSE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_JENNIFER ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Name: Rose
+Class: Fairy Tale Girl
+Pic: Fairy Tale Girl
+Music: Girl
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Fairy
+Copy Pool: TRAINER_POOL_ZONE_23
 
 === TRAINER_PBL_MATTHEW ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Name: Matthew
+Class: Roughneck
+Pic: Roughneck
+Music: Intense
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Dark
+Copy Pool: TRAINER_POOL_ZONE_23
 
 === TRAINER_PBL_KERRY ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Name: Kerry
+Class: Fisherman
+Pic: Fisherman
+Music: Hiker
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Water
+Copy Pool: TRAINER_POOL_ZONE_23
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+=== TRAINER_PBL_JENNIFER ===
+Name: Jennifer
+Class: Psychic
+Pic: Psychic F
+Music: Intense
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Psychic
+Copy Pool: TRAINER_POOL_ZONE_23
 
 === TRAINER_PBL_ANNIE ===
+Name: Annie
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_23
+
+=== TRAINER_PBL_CLARK ===
+Name: Clark
+Class: Pkmn Ranger
+Pic: Pokemon Ranger M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_23
+
+=== TRAINER_PBL_LACEY_BOSS_23 ===
 Name: STEVEN
 Class: Rival
 Pic: Steven
