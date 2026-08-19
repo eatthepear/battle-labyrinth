@@ -1759,6 +1759,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_TM_SMART_STRIKE)
 	additem(ITEM_WATER_STONE)
 	additem(ITEM_THUNDER_STONE)
+	additem(ITEM_MENTAL_HERB)
 
 	if (var(VAR_ZONE) == 13) {
 		return

@@ -28,6 +28,54 @@ mapscripts Zone12A_MapScripts {
 	}
 }
 
+script Zone12A_EventScript_KimonoGirl {
+	lock
+	msgbox(format("She doesn't even notice you.\pShe appears to be trembling."))
+	release
+	end
+}
+
+script Zone12A_EventScript_TriggerKimonoGirl {
+	lockall
+	playbgm(MUS_HG_KIMONO_GIRL, 0)
+	applymovement(LOCALID_KIMONO_GIRL_12A, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(LOCALID_KIMONO_GIRL_12A, Common_Movement_FaceUp)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement(0)
+	setspeaker("Kimono Girl")
+	msgbox(format("Uh… Uh… excuse me…\pWould you be able to help me across this bridge?"), MSGBOX_AUTOCLOSE)
+	setspeaker(SP_NAME_NONE)
+	msgbox(format("{PLAYER} agreed to help the Kimono Girl!"))
+	setspeaker("Kimono Girl")
+	msgbox(format("Thank you…\nLet's make our way across… slowly…"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_KIMONO_GIRL_12A, Common_Movement_WalkRight5)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkRight5)
+	waitmovement(0)
+	setspeaker("Kimono Girl")
+	msgbox(format("Phew… We made it…"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_KIMONO_GIRL_12A, Common_Movement_FaceUp)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement(0)
+	delay(32)
+	setspeaker("Kimono Girl")
+	msgbox(format("Thank you for your help.\pI'm scared of water and can get in a nervous state, but you just need a little help to snap out of it.\pHere, take this item. It can help your Pokémon resist uncommon effects."), MSGBOX_AUTOCLOSE)
+	giveitem(ITEM_MENTAL_HERB)
+	setspeaker("Kimono Girl")
+	msgbox(format("I will see you around…"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_KIMONO_GIRL_12A, Common_Movement_WalkRight2)
+	waitmovement(0)
+	applymovement(LOCALID_KIMONO_GIRL_12A, Common_Movement_WalkDown6)
+	waitmovement(0)
+	setflag(FLAG_HIDE_ZONE12A_KIMONO_GIRL)
+	removeobject(LOCALID_KIMONO_GIRL_12A)
+	setvar(VAR_ZONE_12_STATE, 1)
+	releaseall
+	end
+}
+
 script Zone12A_EventScript_TriggerSerena {
 	lockall
 	applymovement(LOCALID_SERENA_12A, Common_Movement_FaceRight)
