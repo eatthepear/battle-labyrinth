@@ -51,6 +51,7 @@ script Zone18B_EventScript_Larry {
 	msgbox(format("You will become even stronger! I've battled you, so I know."))
     setflag(FLAG_BEAT_BOSS_18)
 	setflag(FLAG_BADGE06_GET)
+	setvar(VAR_ZONE_18_STATE, 1)
 	release
 	end
 }
@@ -376,9 +377,6 @@ script Zone18B_EventScript_LeftBossRoomDoor {
 	if (var(VAR_RESULT) == YES) {
 		closemessage
 		delay(30)
-		if (var(VAR_ZONE_18_STATE) < 3) {
-			setvar(VAR_ZONE_18_STATE, 1)
-		}
 		warpdoor(MAP_ZONE18B, 71, 1, 7)
 		waitstate
 	}
@@ -393,9 +391,6 @@ script Zone18B_EventScript_RightBossRoomDoor {
 	if (var(VAR_RESULT) == YES) {
 		closemessage
 		delay(30)
-		if (var(VAR_ZONE_18_STATE) < 3) {
-			setvar(VAR_ZONE_18_STATE, 2)
-		}
 		warpdoor(MAP_ZONE18B, 72, 7, 7)
 		waitstate
 	}

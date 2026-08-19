@@ -110,7 +110,7 @@ script Zone19D_EventScript_InitiatePirateBattles {
 	setflag(FLAG_HIDE_ZONE19D_PIRATES)
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	fadedefaultbgm
-	setvar(VAR_ZONE_18_STATE, 5)
+	setvar(VAR_ZONE_18_STATE, 3)
 	setvar(VAR_ZONE_19_STATE, 1)
 	setflag(FLAG_HIDE_ZONE18A_ZOE)
 	setflag(FLAG_HIDE_ZONE18A_ELI)

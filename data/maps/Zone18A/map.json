@@ -22,10 +22,10 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_LADY",
-      "x": 24,
+      "x": 19,
       "y": 12,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -86,6 +86,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_AZURILL_DOLL",
       "graphics_id": "OBJ_EVENT_GFX_AZURILL_DOLL",
       "x": 28,
       "y": 16,
@@ -99,6 +100,7 @@
       "flag": "FLAG_HIDE_ZONE18A_DOLL"
     },
     {
+      "local_id": "LOCALID_GRUNT_1_18A",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
       "x": 34,
       "y": 15,
@@ -109,9 +111,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_ZONE18A_PIRATES"
+      "flag": "FLAG_HIDE_ZONE18A_GRUNTS"
     },
     {
+      "local_id": "LOCALID_GRUNT_1_18B",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 34,
       "y": 16,
@@ -122,14 +125,15 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_ZONE18A_PIRATES"
+      "flag": "FLAG_HIDE_ZONE18A_GRUNTS"
     },
     {
+      "local_id": "LOCALID_TUBER_18A",
       "graphics_id": "OBJ_EVENT_GFX_TUBER_M",
-      "x": 28,
-      "y": 12,
+      "x": 27,
+      "y": 16,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -138,19 +142,7 @@
       "flag": "FLAG_HIDE_ZONE18A_ELI"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_WALKING",
-      "x": 29,
-      "y": 12,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone18A_EventScript_Zoe",
-      "flag": "FLAG_HIDE_ZONE18A_ZOE"
-    },
-    {
+      "local_id": "LOCALID_BOAT_18A",
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
       "x": 36,
       "y": 16,
@@ -216,29 +208,29 @@
     {
       "type": "trigger",
       "x": 27,
-      "y": 10,
+      "y": 12,
       "elevation": 0,
       "var": "VAR_ZONE_18_STATE",
-      "var_value": "3",
-      "script": "Zone18A_EventScript_PirateEvent"
+      "var_value": "1",
+      "script": "Zone18A_EventScript_TriggerGrunts"
     },
     {
       "type": "trigger",
       "x": 28,
-      "y": 10,
+      "y": 12,
       "elevation": 0,
       "var": "VAR_ZONE_18_STATE",
-      "var_value": "3",
-      "script": "Zone18A_EventScript_PirateEvent"
+      "var_value": "1",
+      "script": "Zone18A_EventScript_TriggerGrunts"
     },
     {
       "type": "trigger",
       "x": 29,
-      "y": 10,
+      "y": 12,
       "elevation": 0,
       "var": "VAR_ZONE_18_STATE",
-      "var_value": "3",
-      "script": "Zone18A_EventScript_PirateEvent"
+      "var_value": "1",
+      "script": "Zone18A_EventScript_TriggerGrunts"
     }
   ],
   "bg_events": [
