@@ -1208,7 +1208,7 @@ Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
-Pool Prune: Non Ground Rock Steel
+Pool Prune: Non Ground Rock
 Copy Pool: TRAINER_POOL_ZONE_7_AND_8
 
 === TRAINER_PBL_WALLY_BOSS_7 ===
@@ -1758,7 +1758,7 @@ Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
-Pool Prune: Non Ground Rock Steel
+Pool Prune: Non Ground Rock
 Copy Pool: TRAINER_POOL_ZONE_10
 
 === TRAINER_PBL_KYLE ===
@@ -3592,7 +3592,7 @@ Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
-Pool Prune: Non Ground Rock Steel
+Pool Prune: Non Ground Rock
 Copy Pool: TRAINER_POOL_ZONE_22
 
 === TRAINER_PBL_CORNELIUS ===
