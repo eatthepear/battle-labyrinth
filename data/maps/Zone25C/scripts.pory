@@ -1,8 +1,24 @@
-raw `
-Zone25C_MapScripts::
-	.byte 0
+mapscripts Zone25C_MapScripts {}
 
-Zone25C_EventScript_TM36::
-	finditem ITEM_TM36
+script Zone25C_EventScript_KimonoGirl {
+	lock
+	if (checkitem(ITEM_OVAL_CHARM)) {
+		faceplayer
+		setspeaker("Kimono Girl")
+		msgbox(format("Oval Charm!"), MSGBOX_AUTOCLOSE)
+		release
+		end
+	}
+	playbgm(MUS_HG_KIMONO_GIRL, 0)
+	setspeaker("Kimono Girl")
+	msgbox(format("HMM!"), MSGBOX_AUTOCLOSE)
+	faceplayer
+	setspeaker("Kimono Girl")
+	msgbox(format("HERE FOR U!"))
+	giveitem(ITEM_OVAL_CHARM)
+	setspeaker("Kimono Girl")
+	msgbox(format("MORE TEXT!"), MSGBOX_AUTOCLOSE)
+	fadedefaultbgm
+	release
 	end
-`
+}
