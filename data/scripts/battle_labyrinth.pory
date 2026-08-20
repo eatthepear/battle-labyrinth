@@ -2841,3 +2841,12 @@ script EventScript_Medicham {
 	waitmoncry
 	release
 }
+
+script EventScript_Tangela {
+	lock
+	faceplayer
+	playmoncry(SPECIES_TANGELA, CRY_MODE_NORMAL)
+	msgbox(format("Tan!"))
+	waitmoncry
+	release
+}

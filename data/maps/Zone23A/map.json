@@ -198,7 +198,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
-      "x": 45,
+      "x": 59,
       "y": 66,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -208,29 +208,89 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Zone23A_EventScript_Lacey",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TANGELA)",
+      "x": 49,
+      "y": 66,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Tangela",
+      "flag": "FLAG_BEAT_BOSS_23"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TANGELA)",
+      "x": 49,
+      "y": 64,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Tangela",
+      "flag": "FLAG_BEAT_BOSS_23"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TANGELA)",
+      "x": 48,
+      "y": 65,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Tangela",
+      "flag": "FLAG_BEAT_BOSS_23"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TANGELA)",
+      "x": 47,
+      "y": 63,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Tangela",
+      "flag": "FLAG_BEAT_BOSS_23"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TANGELA)",
+      "x": 46,
+      "y": 65,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Tangela",
+      "flag": "FLAG_BEAT_BOSS_23"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
+      "x": 41,
+      "y": 65,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_PorygonExit",
+      "flag": "0"
     }
   ],
   "warp_events": [],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 40,
-      "y": 66,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone23A_EventScript_Exit"
-    }
-  ],
+  "coord_events": [],
   "bg_events": [
-    {
-      "type": "sign",
-      "x": 43,
-      "y": 66,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "EventScript_ExitSign"
-    },
     {
       "type": "hidden_item",
       "x": 11,
