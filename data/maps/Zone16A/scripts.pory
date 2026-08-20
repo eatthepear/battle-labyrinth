@@ -23,60 +23,61 @@ mapscripts Zone16A_MapScripts {
 	}
 }
 
-script Zone16A_EventScript_LilyLeft {
-	lockall
-	applymovement(7, Common_Movement_WalkLeft)
-	waitmovement(0)
-	goto(Zone16A_EventScript_LilyRight)
-}
-
-script Zone16A_EventScript_LilyRight {
+script Zone16A_EventScript_TriggerJupiter {
 	lockall
 	fadeoutbgm(1)
-	applymovement(7, Zone16A_Movement_LilyWalkDown)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 67) {
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
+		waitmovement(0)
+		applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+		waitmovement(0)
+	}
+	applymovement(LOCALID_JUPITER_16A, Common_Movement_WalkDown2)
 	waitmovement(0)
-	msgbox(Zone16A_Text_Boss14Intro1, MSGBOX_DEFAULT)
-	setweather(WEATHER_RAIN)
-	doweather
-	msgbox("It suddenly began to rain!", MSGBOX_DEFAULT)
-	msgbox(Zone16A_Text_Boss14Intro2)
+	setspeaker("Jupiter")
+	msgbox(format("BATTLE!"), MSGBOX_DEFAULT)
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	trainerbattle_no_intro(TRAINER_PBL_LILY_BOSS_14_CHALLENGE, Zone16A_Text_Boss14Defeat)
-	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_LILY_BOSS_14, Zone16A_Text_Boss14Defeat)
-	// }
+	trainerbattle_no_intro(TRAINER_PBL_JUPITER_BOSS_16, format("DEFEAT!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Lily{COLOR DARK_GRAY}: Well then. I suppose you'll be wanting your reward.\pHere you go."), MSGBOX_DEFAULT)
-	giveitem(ITEM_TM28)
-	resetweather
-	doweather
-	msgbox(format("{COLOR BLUE}Lily{COLOR DARK_GRAY}: It seems the rain has stopped.\pI'll be enjoying the rest of my day with a nice dip in the water.\lGoodbye."))
-	closemessage
+	setspeaker("Jupiter")
+	msgbox(format("Well then. I suppose you'll be wanting your reward.\pHere you go."), MSGBOX_DEFAULT)
+	// giveitem(ITEM_TM28)
+	setspeaker("Jupiter")
+	msgbox(format("RUN!"), MSGBOX_AUTOCLOSE)
 	fadescreenswapbuffers(FADE_TO_BLACK)
-	removeobject(7)
-	setflag(FLAG_BEAT_BOSS_14)
+	removeobject(LOCALID_GRUNT_1_16A)
+	removeobject(LOCALID_GRUNT_2_16A)
+	removeobject(LOCALID_JUPITER_16A)
+	setflag(FLAG_BEAT_BOSS_16)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
+	clearflag(FLAG_HIDE_ZONE16A_KIMONO_GIRL)
+	addobject(LOCALID_KIMONO_GIRL_16A)
+	playbgm(MUS_HG_KIMONO_GIRL, 0)
+	applymovement(LOCALID_KIMONO_GIRL_16A, Common_Movement_WalkUp2)
+	waitmovement(0)
+	applymovement(LOCALID_KIMONO_GIRL_16A, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement(0)
+	applymovement(LOCALID_KIMONO_GIRL_16A, Common_Movement_WalkUp3)
+	waitmovement(0)
+	setspeaker("Kimono Girl")
+	msgbox(format("HELLO! I SAW UR BATTLE, U BATTLE GOOD. TAKE THIS ITEM!"), MSGBOX_AUTOCLOSE)
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_BOTTLE_CAP)
+	setspeaker("Kimono Girl")
+	msgbox(format("SEE YA!"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_KIMONO_GIRL_16A, Common_Movement_WalkDown5)
+	waitmovement(0)
+	removeobject(LOCALID_KIMONO_GIRL_16A)
+	setflag(FLAG_HIDE_ZONE6A_KIMONO_GIRL)
 	setvar(VAR_ZONE_16_STATE, 1)
 	release
 	end
-}
-
-movement Zone16A_Movement_LilyWalkDown {
-	walk_down * 5
-}
-
-text Zone16A_Text_Boss14Intro1 {
-	format("{COLOR BLUE}Lily{COLOR DARK_GRAY}: Did you know that you can smell plants better right before a storm?")
-}
-
-text Zone16A_Text_Boss14Intro2 {
-	format("{COLOR BLUE}Lily{COLOR DARK_GRAY}: Oh, would you look at that.\pNo wonder I could smell the flowers so well!\pDon't you know the rain just makes my flowers stronger?")
-}
-
-text Zone16A_Text_Boss14Defeat {
-	format("Woe is me…")
 }
 
 script Zone16A_EventScript_SandPile {

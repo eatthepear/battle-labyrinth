@@ -1800,6 +1800,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 16) {
 		return
 	}
+	additem(ITEM_BOTTLE_CAP)
 
 	if (var(VAR_ZONE) == 17) {
 		return
