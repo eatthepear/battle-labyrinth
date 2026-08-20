@@ -1,4 +1,7 @@
 mapscripts Zone18A_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ZONE_18_STATE, 3: Zone18A_EventScript_ReturnAzurill
+	]
 	MAP_SCRIPT_ON_RESUME {
 		if (flag(FLAG_ITEM_ZONE18A_LINKING_CORD)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
@@ -11,6 +14,27 @@ mapscripts Zone18A_MapScripts {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
 	}
+}
+
+script Zone18A_EventScript_ReturnAzurill {
+	lockall
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement(0)
+	setspeaker("Tuber")
+	msgbox(format("Oh! You came back! Do you have my Azurill doll?"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
+	waitmovement(0)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement(0)
+	clearflag(FLAG_HIDE_ZONE18A_DOLL)
+	addobject(LOCALID_AZURILL_DOLL)
+	clearflag(FLAG_HIDE_ZONE18A_PORYGON)
+	setvar(VAR_ZONE_18_STATE, 4)
+	setspeaker("Tuber")
+	msgbox(format("Wow! Thank you so much!"))
+	msgbox(Zone18A_Text_Tuber_Replaced)
+	releaseall
+	end
 }
 
 script Zone18A_EventScript_TriggerGrunts {
@@ -61,7 +85,7 @@ script Zone18A_EventScript_TriggerGrunts {
 	msgbox(format("Wah!!!"), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_TUBER_18A, Common_Movement_FaceUp)
 	waitmovement(0)
-	msgbox(Zone18A_Text_Eli, MSGBOX_AUTOCLOSE)
+	msgbox(Zone18A_Text_Tuber_Help, MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_CAMERA, Common_Movement_WalkUp3)
 	waitmovement(0)
 	special(RemoveCameraObject)
@@ -71,14 +95,28 @@ script Zone18A_EventScript_TriggerGrunts {
 	end
 }
 
-text Zone18A_Text_Eli {
-	"Please! Help! My Azurill doll!"
+text Zone18A_Text_Tuber_Help {
+	format("Please! Help! My Azurill doll!")
+}
+
+text Zone18A_Text_Tuber_Replaced {
+	format("How I missed you, Azurill!\pThough I almost replaced you with that {COLOR GREEN}strange looking Pokemon I saw in the grass nearby{COLOR DARK_GRAY}!")
 }
 
 script Zone18A_EventScript_Eli {
 	lock
-	faceplayer
-	msgbox(Zone18A_Text_Eli)
+	setspeaker("Tuber")
+	switch (var(VAR_ZONE_18_STATE)) {
+		case 0:
+			msgbox(format("My Azurill doll is my favorite!"))
+		case 1:
+		case 2:
+		case 3:
+			faceplayer
+			msgbox(Zone18A_Text_Tuber_Help)
+		case 4:
+			msgbox(Zone18A_Text_Tuber_Replaced)
+	}
 	release
 	end
 }

@@ -117,6 +117,7 @@ script Zone19D_EventScript_InitiateAquaGauntlet {
 	setflag(FLAG_HIDE_ZONE19D_AQUA)
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	fadedefaultbgm
+	setvar(VAR_ZONE_18_STATE, 3)
 	setvar(VAR_ZONE_19_STATE, 1)
 	delay(100)
 	msgbox(format("It's time to go return the Azurill Doll."), MSGBOX_AUTOCLOSE)
