@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_BREEDER_M",
+      "graphics_id": "OBJ_EVENT_GFX_BUG_MANIAC",
       "x": 8,
       "y": 9,
       "elevation": 3,
@@ -28,7 +28,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BUG_MANIAC",
+      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
       "x": 20,
       "y": 17,
       "elevation": 3,
@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_FAIRY_TALE_GIRL",
       "x": 31,
       "y": 23,
       "elevation": 3,
@@ -54,33 +54,33 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
-      "x": 54,
-      "y": 33,
+      "graphics_id": "OBJ_EVENT_GFX_ROUGHNECK",
+      "x": 44,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Zone23A_EventScript_Jennifer",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_COLLECTOR",
-      "x": 42,
-      "y": 51,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
       "script": "Zone23A_EventScript_Matthew",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_RANGER_M",
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 42,
+      "y": 42,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone23A_EventScript_Kerry",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_F",
       "x": 11,
       "y": 49,
       "elevation": 3,
@@ -89,11 +89,24 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Zone23A_EventScript_Kerry",
+      "script": "Zone23A_EventScript_Jennifer",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RANGER_F",
+      "x": 54,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Zone23A_EventScript_Annie",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RANGER_M",
       "x": 71,
       "y": 58,
       "elevation": 3,
@@ -102,7 +115,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Zone23A_EventScript_Annie",
+      "script": "Zone23A_EventScript_Clark",
       "flag": "0"
     },
     {
