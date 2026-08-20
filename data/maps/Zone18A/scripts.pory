@@ -50,7 +50,6 @@ script Zone18A_EventScript_TriggerGrunts {
 	waitmovement(0)
 	removeobject(LOCALID_GRUNT_1_18A)
 	removeobject(LOCALID_GRUNT_1_18B)
-	setflag(FLAG_HIDE_ZONE19D_PIRATES)
 	setflag(FLAG_HIDE_ZONE18A_GRUNTS)
 	setspeaker("Tuber")
 	msgbox(format("My Azurill doll!"), MSGBOX_AUTOCLOSE)

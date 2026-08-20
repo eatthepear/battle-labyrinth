@@ -365,6 +365,10 @@ script EventScript_NextZone {
 			warp(MAP_ZONE12A, 255, 30, 30)
 		case 15:
 			warp(MAP_ZONE15A, 255, 4, 3)
+		case 18:
+			setflag(FLAG_HIDE_ZONE18A_GRUNTS)
+			setflag(FLAG_HIDE_ZONE18A_BOAT)
+			setflag(FLAG_HIDE_ZONE19D_AQUA)
 	}
 	waitstate
 	end

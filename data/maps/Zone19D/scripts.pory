@@ -4,13 +4,13 @@ script Zone19D_EventScript_Sign {
 	lock
 	msgbox(format("This is just a normal wall!\pNothing suspicious at all behind it!"), MSGBOX_SIGN)
 	if (var(VAR_ZONE_19_STATE) == 0) {
-		goto(Zone19D_EventScript_InitiatePirateBattles)
+		goto(Zone19D_EventScript_InitiateAquaGauntlet)
 	}
 	release
 	end
 }
 
-script Zone19D_EventScript_InitiatePirateBattles {
+script Zone19D_EventScript_InitiateAquaGauntlet {
 	fadeoutbgm(1)
 	delay(40)
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
@@ -27,16 +27,16 @@ script Zone19D_EventScript_InitiatePirateBattles {
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	playbgm(MUS_ENCOUNTER_AQUA, 0)
-	addobject(1)
-	addobject(2)
-	addobject(3)
-	addobject(4)
-	clearflag(FLAG_HIDE_ZONE19D_PIRATES)
-	applymovement(1, Zone19D_Movement_TopPirateWalkUp)
-	applymovement(2, Zone19D_Movement_LeftPirateWalkUp)
-	applymovement(3, Zone19D_Movement_BottomPirateWalkUp)
-	applymovement(4, Zone19D_Movement_RightPirateWalkUp)
+	playbgm(MUS_ENCOUNTER_AQUA, TRUE)
+	addobject(LOCALID_GRUNT_1_19D)
+	addobject(LOCALID_GRUNT_2_19D)
+	addobject(LOCALID_GRUNT_3_19D)
+	addobject(LOCALID_MATT_19D)
+	clearflag(FLAG_HIDE_ZONE19D_AQUA)
+	applymovement(LOCALID_GRUNT_1_19D, Zone19D_Movement_TopAquaWalkUp)
+	applymovement(LOCALID_GRUNT_2_19D, Zone19D_Movement_LeftAquaWalkUp)
+	applymovement(LOCALID_GRUNT_3_19D, Zone19D_Movement_RightAquaWalkUp)
+	applymovement(LOCALID_MATT_19D, Zone19D_Movement_BottomAquaWalkUp)
 	waitmovement(0)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement(0)
@@ -47,90 +47,91 @@ script Zone19D_EventScript_InitiatePirateBattles {
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
 	waitmovement(0)
 	delay(40)
-	applymovement(1, Common_Movement_WalkInPlaceFasterDown)
-	msgbox("Shiver me timbers!\nAhoy, maties! This here trainer\lfound us!")
+	applymovement(LOCALID_GRUNT_1_19D, Common_Movement_WalkInPlaceFasterDown)
+	setspeaker("Team Aqua Grunt")
+	msgbox(format("Shiver me timbers!\nAhoy, maties! This here trainer found us!"), MSGBOX_AUTOCLOSE)
 	waitmovement(0)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement(0)
-	applymovement(2, Common_Movement_WalkInPlaceFasterRight)
-	msgbox("We'll be feedin' the fish if the\nCap'n ever finds out someone found\lour hideout.")
-	waitmovement(0)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
-	waitmovement(0)
-	applymovement(3, Common_Movement_WalkInPlaceFasterUp)
-	msgbox("Well, dead men tell no tales.\pThe Cap'n will ne'er ‘ave to know,\nsavvy?")
+	applymovement(LOCALID_GRUNT_2_19D, Common_Movement_WalkInPlaceFasterRight)
+	setspeaker("Team Aqua Grunt")
+	msgbox(format("We'll be feedin' the fish if they get word out!"), MSGBOX_AUTOCLOSE)
 	waitmovement(0)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
-	applymovement(4, Common_Movement_WalkInPlaceFasterLeft)
-	msgbox("Ye lily-livered scallywags,\nlet's just get to the battles!")
+	applymovement(LOCALID_GRUNT_3_19D, Common_Movement_WalkInPlaceFasterLeft)
+	setspeaker("Team Aqua Grunt")
+	msgbox(format("Well, dead men tell no tales.\pRight, Admin Matt?"), MSGBOX_AUTOCLOSE)
+	waitmovement(0)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement(0)
+	applymovement(LOCALID_MATT_19D, Common_Movement_WalkInPlaceFasterUp)
+	setspeaker("Matt")
+	msgbox(format("Ye lily-livered scallywags, let's just give this one a proper thrashing!"))
+	waitmovement(0)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement(0)
+	applymovement(LOCALID_GRUNT_1_19D, Common_Movement_WalkInPlaceFasterDown)
+	setspeaker("Team Aqua Grunt")
+	msgbox(format("Right on! You won't get out without beating me, savvy?"), MSGBOX_AUTOCLOSE)
 	waitmovement(0)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_AQUA_GRUNT_19D_1, Zone19D_Text_PirateDefeat)
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_CHALLENGE) == false)) {
-	// 	special(HealPlayerParty)
-	// }
-	applymovement(3, Common_Movement_WalkInPlaceFasterUp)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
-	waitmovement(0)
-	msgbox("I be next. Fire in the hole!")
-	trainerbattle_no_intro(TRAINER_PBL_AQUA_GRUNT_19D_2, Zone19D_Text_PirateDefeat)
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_CHALLENGE) == false)) {
-	// 	special(HealPlayerParty)
-	// }
-	applymovement(2, Common_Movement_WalkInPlaceFasterRight)
+	trainerbattle_no_intro(TRAINER_PBL_AQUA_GRUNT_19D_1, Zone19D_Text_AquaDefeat)
+	applymovement(LOCALID_GRUNT_2_19D, Common_Movement_WalkInPlaceFasterRight)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement(0)
+	setspeaker("Team Aqua Grunt")
+	msgbox("I be next. Fire in the hole!")
+	trainerbattle_no_intro(TRAINER_PBL_AQUA_GRUNT_19D_2, Zone19D_Text_AquaDefeat)
+	applymovement(LOCALID_GRUNT_3_19D, Common_Movement_WalkInPlaceFasterLeft)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
+	waitmovement(0)
+	setspeaker("Team Aqua Grunt")
 	msgbox("We give no quarter!")
-	trainerbattle_no_intro(TRAINER_PBL_AQUA_GRUNT_19D_3, Zone19D_Text_PirateDefeat)
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_CHALLENGE) == false)) {
-	// 	special(HealPlayerParty)
-	// }
-	applymovement(1, Common_Movement_WalkInPlaceFasterDown)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+	trainerbattle_no_intro(TRAINER_PBL_AQUA_GRUNT_19D_3, Zone19D_Text_AquaDefeat)
+	applymovement(LOCALID_MATT_19D, Common_Movement_WalkUp)
 	waitmovement(0)
-	msgbox("Son o' a biscuit eater!\nFace the might o' us seadogs!")
-	trainerbattle_no_intro(TRAINER_PBL_MATT_BOSS_19, Zone19D_Text_PirateDefeat)
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == false) && (flag(FLAG_SETTINGS_CHALLENGE) == false)) {
-	// 	special(HealPlayerParty)
-	// }
-	msgbox("Sink me!\nThis trainer beat all four o' us!\l‘ere be your booty, take it!", MSGBOX_DEFAULT)
-	giveitem(ITEM_TM36)
-	msgbox("Me hearties, run!", MSGBOX_DEFAULT)
-	applymovement(1, Zone19D_Movement_Pirate1Run)
-	applymovement(2, Zone19D_Movement_Pirate2Run)
-	applymovement(3, Zone19D_Movement_Pirate3Run)
-	applymovement(4, Zone19D_Movement_Pirate4Run)
-	msgbox("Arrr!")
+	applymovement(LOCALID_MATT_19D, Common_Movement_WalkInPlaceFasterUp)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
 	waitmovement(0)
-	removeobject(1)
-	removeobject(2)
-	removeobject(3)
-	removeobject(4)
-	setflag(FLAG_HIDE_ZONE19D_PIRATES)
+	setspeaker("Matt")
+	msgbox(format("Son o' a biscuit eater!\nFace the might o' us seadogs!\pI, Admin Matt, be sinkin your ship!"))
+	trainerbattle_no_intro(TRAINER_PBL_MATT_BOSS_19, Zone19D_Text_AquaDefeat)
+	setspeaker("Matt")
+	msgbox(format("Sink me!\nThis trainer beat all four o' us!\l'ere be your booty, take it!"))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_TM_FLIP_TURN)
+	setspeaker("Matt")
+	msgbox("Me hearties, run!", MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_GRUNT_1_19D, Zone19D_Movement_Aqua1Run)
+	applymovement(LOCALID_GRUNT_2_19D, Zone19D_Movement_Aqua2Run)
+	applymovement(LOCALID_GRUNT_3_19D, Zone19D_Movement_Aqua3Run)
+	applymovement(LOCALID_MATT_19D, Zone19D_Movement_Aqua4Run)
+	setspeaker("Team Aqua Grunts")
+	msgbox("Arrr!", MSGBOX_AUTOCLOSE)
+	waitmovement(0)
+	removeobject(LOCALID_GRUNT_1_19D)
+	removeobject(LOCALID_GRUNT_2_19D)
+	removeobject(LOCALID_GRUNT_3_19D)
+	removeobject(LOCALID_MATT_19D)
+	setflag(FLAG_HIDE_ZONE19D_AQUA)
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	fadedefaultbgm
-	setvar(VAR_ZONE_18_STATE, 3)
 	setvar(VAR_ZONE_19_STATE, 1)
-	setflag(FLAG_HIDE_ZONE18A_ZOE)
-	setflag(FLAG_HIDE_ZONE18A_ELI)
-	clearflag(FLAG_HIDE_ZONE18B_ZOE)
-	clearflag(FLAG_HIDE_ZONE18B_ELI)
-	clearflag(FLAG_HIDE_ZONE18A_PORYGON)
 	delay(100)
-	msgbox(format("It's time to go back to the Trainer's Dojo."))
+	msgbox(format("It's time to go return the Azurill Doll."), MSGBOX_AUTOCLOSE)
 	delay(40)
-	warp(MAP_ZONE18B, 255, 4, 4)
+	warp(MAP_ZONE18A, 255, 28, 16)
 	waitstate
 	releaseall
 	end
 }
 
-text Zone19D_Text_PirateDefeat {
+text Zone19D_Text_AquaDefeat {
 	"Arrr!"
 }
 
-movement Zone19D_Movement_TopPirateWalkUp {
+movement Zone19D_Movement_TopAquaWalkUp {
 	walk_up * 5
 	walk_right
 	walk_up
@@ -138,37 +139,37 @@ movement Zone19D_Movement_TopPirateWalkUp {
 	face_down
 }
 
-movement Zone19D_Movement_LeftPirateWalkUp {
+movement Zone19D_Movement_LeftAquaWalkUp {
 	walk_up * 6
 	walk_right * 2
 }
 
-movement Zone19D_Movement_BottomPirateWalkUp {
-	walk_up * 5
-}
-
-movement Zone19D_Movement_RightPirateWalkUp {
+movement Zone19D_Movement_RightAquaWalkUp {
 	delay_16
 	walk_up * 5
 	walk_left
 }
 
-movement Zone19D_Movement_Pirate1Run {
+movement Zone19D_Movement_BottomAquaWalkUp {
+	walk_up * 4
+}
+
+movement Zone19D_Movement_Aqua1Run {
 	walk_faster_left
 	walk_faster_down * 7
 }
 
-movement Zone19D_Movement_Pirate2Run {
+movement Zone19D_Movement_Aqua2Run {
 	walk_faster_down
 	walk_faster_left
 	walk_faster_down * 5
 }
 
-movement Zone19D_Movement_Pirate3Run {
+movement Zone19D_Movement_Aqua3Run {
 	walk_faster_down * 7
 }
 
-movement Zone19D_Movement_Pirate4Run {
+movement Zone19D_Movement_Aqua4Run {
 	walk_faster_down * 2
 	walk_faster_right
 	walk_faster_down * 4
