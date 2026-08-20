@@ -10,14 +10,6 @@ Zone25L_EventScript_Exit::
 	end
 
 Zone25L_EventScript_CheckBrutal:
-	goto_if_not_defeated TRAINER_PBL_CHRISTI, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_SPENCER, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_HAYWOOD, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_MONROE, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_DAVID, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_DOMINIK, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_DOUGLAS, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_NADINE, EventScript_BrutalExitNotSatisfied
 	return
 
 Zone25L_EventScript_LeftMost::

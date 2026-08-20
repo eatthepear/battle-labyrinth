@@ -9,21 +9,6 @@ Zone25B_SetHoleWarp:
 	setholewarp MAP_ZONE25A
 	end
 
-Zone25B_EventScript_Sheldon::
-	trainerbattle_single TRAINER_PBL_SHELDON, Zone25B_Text_SheldonIntro, Zone25B_Text_SheldonDefeat
-	msgbox Zone25B_Text_SheldonPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Zone25B_Text_SheldonIntro:
-	.string "Hmm… if I had a Bike…$"
-
-Zone25B_Text_SheldonDefeat:
-	.string "I dunno.$"
-
-Zone25B_Text_SheldonPostBattle:
-	.string "My Psychic powers don't work too\n"
-	.string "well here.$"
-
 Zone25B_EventScript_DuskBall::
 	finditem ITEM_DUSK_BALL
 	end

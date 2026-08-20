@@ -12,21 +12,8 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_F",
-      "x": 4,
-      "y": 6,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "2",
-      "script": "Zone25A_EventScript_Sandy",
-      "flag": "0"
-    },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 12,
@@ -77,10 +64,6 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }
