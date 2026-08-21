@@ -1,1 +1,47 @@
 mapscripts Zone25L_MapScripts {}
+
+script Zone25L_EventScript_TriggerBoss {
+	lockall
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 5) {
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 7) {
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+	}
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement(0)
+	applymovement(LOCALID_ARIANA_25L, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(LOCALID_ARIANA_25L, Common_Movement_WalkDown2)
+	waitmovement(0)
+	fadeoutbgm(1)
+	setspeaker("Ariana")
+	msgbox(format("Prepare to be crushed by the might of Team Galactic!"))
+	call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_ARIANA_BOSS_25, format("Defeated by a child… This is embarrasing for me…"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Ariana")
+	msgbox(format("Ugh. I can't believe I lost that one.\pI guess I owe you a little something for winning."), MSGBOX_AUTOCLOSE)
+	giveitem(ITEM_RED_SHARD, 5)
+	setspeaker("Ariana")
+	msgbox(format("Our boss had us collecting these Shards in the caves.\pWe've collected enough for our mission, so I don't mind giving a few scraps to you."), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_ARIANA_25L, Common_Movement_FaceLeft)
+	waitmovement(0)
+	delay(32)
+	applymovement(LOCALID_ARIANA_25L, Common_Movement_FaceDown)
+	waitmovement(0)
+	setspeaker("Ariana")
+	msgbox(format("It's a tough world out there. Watch your step."), MSGBOX_AUTOCLOSE)
+	fadescreenswapbuffers(FADE_TO_BLACK)
+	removeobject(LOCALID_ARIANA_25L)
+	setvar(VAR_ZONE_25_STATE, 1)
+	setflag(FLAG_BEAT_BOSS_25)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+	release
+	end
+}

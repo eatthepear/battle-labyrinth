@@ -3929,29 +3929,14 @@ Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_24_AND_25
 
-=== TRAINER_PBL_BOSS14 ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_BOSS14_BRUTAL ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+=== TRAINER_PBL_ARIANA_BOSS_25 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
 
 Metang
 Brave Nature

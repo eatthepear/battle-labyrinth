@@ -59,7 +59,6 @@ script Zone8D_EventScript_BossBattle {
 	}
 	closemessage
 	fadeoutbgm(1)
-	setvar(VAR_ZONE_1_STATE, 1)
 	setspeaker("Mars")
 	msgbox(format("Prepare to be crushed by the might of Team Galactic!"))
 	call(EventScript_HealPreBoss)

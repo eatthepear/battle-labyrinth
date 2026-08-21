@@ -5614,8 +5614,8 @@
     {
       "id": "LAYOUT_ZONE25L",
       "name": "Zone25L_Layout",
-      "width": 15,
-      "height": 15,
+      "width": 13,
+      "height": 10,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_MirageTower",
       "border_filepath": "data/layouts/Zone25L/border.bin",
