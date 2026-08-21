@@ -12,38 +12,12 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BULBASAUR)",
-      "x": 6,
-      "y": 3,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_BEAT_BOSS_14"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BULBASAUR)",
-      "x": 8,
-      "y": 3,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_BEAT_BOSS_14"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(REGIDRAGO)",
-      "x": 6,
-      "y": 2,
+      "graphics_id": "OBJ_EVENT_GFX_ARIANA",
+      "x": 7,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -51,33 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_BEAT_BOSS_14"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(REGIELEKI)",
-      "x": 8,
-      "y": 2,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_BEAT_BOSS_14"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_COLRESS",
-      "x": 6,
-      "y": 5,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_ZONE25L_COLRESS"
+      "flag": "FLAG_BEAT_BOSS_25"
     }
   ],
   "warp_events": [
@@ -89,63 +37,6 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 7,
-      "y": 1,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone25L_EventScript_Exit"
-    },
-    {
-      "type": "trigger",
-      "x": 4,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_ZONE_25_STATE",
-      "var_value": "0",
-      "script": "Zone25L_EventScript_LeftMost"
-    },
-    {
-      "type": "trigger",
-      "x": 6,
-      "y": 5,
-      "elevation": 0,
-      "var": "VAR_ZONE_25_STATE",
-      "var_value": "0",
-      "script": "Zone25L_EventScript_Left"
-    },
-    {
-      "type": "trigger",
-      "x": 7,
-      "y": 5,
-      "elevation": 0,
-      "var": "VAR_ZONE_25_STATE",
-      "var_value": "0",
-      "script": "Zone25L_EventScript_Middle"
-    },
-    {
-      "type": "trigger",
-      "x": 8,
-      "y": 5,
-      "elevation": 0,
-      "var": "VAR_ZONE_25_STATE",
-      "var_value": "0",
-      "script": "Zone25L_EventScript_Right"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_ZONE_25_STATE",
-      "var_value": "0",
-      "script": "Zone25L_EventScript_RightMost"
-    }
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }
