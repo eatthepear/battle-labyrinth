@@ -3932,6 +3932,126 @@ Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_24_AND_25
 
+=== TRAINER_PBL_ROCKET_GRUNT_25D_1 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_25_GRUNTS
+
+=== TRAINER_PBL_ROCKET_GRUNT_25E_1 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt M
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_25_GRUNTS
+
+=== TRAINER_PBL_ROCKET_GRUNT_25F_1 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_25_GRUNTS
+
+=== TRAINER_PBL_ROCKET_GRUNT_25F_2 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt M
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_25_GRUNTS
+
+=== TRAINER_PBL_ROCKET_GRUNT_25G_1 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_25_GRUNTS
+
+=== TRAINER_PBL_ROCKET_GRUNT_25H_1 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt M
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_25_GRUNTS
+
+=== TRAINER_PBL_ROCKET_GRUNT_25H_2 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_25_GRUNTS
+
+=== TRAINER_PBL_ROCKET_GRUNT_25I_1 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt M
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_25_GRUNTS
+
+=== TRAINER_PBL_ROCKET_GRUNT_25J_1 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_25_GRUNTS
+
+=== TRAINER_PBL_ROCKET_GRUNT_25J_2 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt M
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_25_GRUNTS
+
+=== TRAINER_PBL_ROCKET_GRUNT_25K_1 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_25_GRUNTS
+
+=== TRAINER_PBL_ROCKET_GRUNT_25K_2 ===
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt M
+Music: Rocket
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_25_GRUNTS
+
 === TRAINER_PBL_ARIANA_BOSS_25 ===
 Name: Ariana
 Class: Rainbow Rocket Executive
@@ -6432,6 +6552,16 @@ Party Size: 1
 Bulbasaur
 
 === TRAINER_POOL_ZONE_24_AND_25 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_25_GRUNTS ===
 Name: Trainer Pool
 Class: Champion
 Pic: Champion Wallace

@@ -16,3 +16,9 @@ Zone25I_EventScript_DawnStone::
 	finditem ITEM_DAWN_STONE
 	end
 `
+
+script Zone25I_EventScript_RocketGrunt_1 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_25I_1, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}

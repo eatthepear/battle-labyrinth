@@ -16,3 +16,15 @@ Zone25J_EventScript_DuskStone::
 	finditem ITEM_DUSK_STONE
 	end
 `
+
+script Zone25J_EventScript_RocketGrunt_1 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_25J_1, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone25J_EventScript_RocketGrunt_2 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_25J_1, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
