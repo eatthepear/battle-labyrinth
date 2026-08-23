@@ -1,14 +1,17 @@
-Zone25G_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, CaveHole_CheckFallDownHole
-	map_script MAP_SCRIPT_ON_TRANSITION, CaveHole_FixCrackedGround
-	map_script MAP_SCRIPT_ON_RESUME, Zone25G_SetHoleWarp
-	.byte 0
+mapscripts Zone25G_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ICE_STEP_COUNT, 0: EventScript_FallDownHole
+	]
+    MAP_SCRIPT_ON_TRANSITION {
+		call(CaveHole_FixCrackedGround)
+    }
+	MAP_SCRIPT_ON_RESUME {
+        setstepcallback(STEP_CB_CRACKED_FLOOR)
+	    setholewarp(MAP_ZONE25H)
+	}
+}
 
-Zone25G_SetHoleWarp:
-	setstepcallback STEP_CB_CRACKED_FLOOR
-	setholewarp MAP_ZONE25H
-	end
-
+raw `
 Zone25G_EventScript_KingsRock::
 	finditem ITEM_KINGS_ROCK
 	end
@@ -29,3 +32,4 @@ Zone25G_EventScript_4000::
 
 Zone25G_Text_Found4000:
 	.string "Found ¥4000!$"
+`

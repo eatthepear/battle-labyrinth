@@ -1,0 +1,18 @@
+mapscripts Zone25I_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ICE_STEP_COUNT, 0: EventScript_FallDownHole
+	]
+    MAP_SCRIPT_ON_TRANSITION {
+		call(CaveHole_FixCrackedGround)
+    }
+	MAP_SCRIPT_ON_RESUME {
+        setstepcallback(STEP_CB_CRACKED_FLOOR)
+	    setholewarp(MAP_ZONE25J)
+	}
+}
+
+raw `
+Zone25I_EventScript_DawnStone::
+	finditem ITEM_DAWN_STONE
+	end
+`
