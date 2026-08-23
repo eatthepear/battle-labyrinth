@@ -1721,6 +1721,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_MYSTIC_WATER)
 	additem(ITEM_CHARCOAL)
 	additem(ITEM_TM_PLUCK)
+	additem(ITEM_PUNCHING_GLOVE)
 	additem(ITEM_TM_RETURN)
 	additem(ITEM_GREEN_SHARD, 5)
 

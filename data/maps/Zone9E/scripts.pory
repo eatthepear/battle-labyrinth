@@ -1,5 +1,18 @@
 mapscripts Zone9E_MapScripts {}
 
+script Zone9E_EventScript_BlackBelt {
+	lock
+	faceplayer
+	if (flag(FLAG_ZONE9E_RECEIVED_PUNCHING_GLOVE) == false) {
+		msgbox(format("PUNCH WITH ALL YOUR POWER!"), MSGBOX_DEFAULT)
+		giveitem(ITEM_PUNCHING_GLOVE)
+		setflag(FLAG_ZONE9E_RECEIVED_PUNCHING_GLOVE)
+	}
+	msgbox(format("PUNCH WITH ALL YOUR POWER!"))
+	release
+	end
+}
+
 script Zone9E_EventScript_GiveSquawkabilly {
 	lock
 	faceplayer
