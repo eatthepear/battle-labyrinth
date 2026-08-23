@@ -51,8 +51,6 @@ script Zone5B_EventScript_GymGuide {
     lock
     faceplayer
     msgbox(format("Welcome to {COLOR BLUE}Liza{COLOR DARK_GRAY}'s Pokémon Gym!\pYou'll find some challenging puzzles up ahead to test your mind.\pThe Gym Leader, {COLOR BLUE}Liza{COLOR DARK_GRAY}, is estranged from her brother currently, so be prepared for a single battle!"))
-	msgbox(format("Also, beware! The Gym is under the effect of a permanent {COLOR GREEN}Psychic Terrain{COLOR DARK_GRAY}!"))
-	helpwindow(HELP_PSYCHIC_TERRAIN)
     release
     end
 }
@@ -129,12 +127,6 @@ script Zone5B_EventScript_Sylvia {
 script Zone5B_EventScript_Theresa {
 	trainerbattle_single(TRAINER_PBL_THERESA, format("What a strange place to find myself in…"), format("I find myself feeling dizzy for some reaon!"))
 	msgbox(format("Surely the spinning isn't messing with my head, right?"), MSGBOX_AUTOCLOSE)
-	end
-}
-
-script Zone5B_EventScript_Anthony {
-	trainerbattle_single(TRAINER_PBL_ANTHONY, format("Confused by the terrain?\pI'll explain it to you!"), format("Actually, I'm not quite sure how it works myself."))
-	msgbox(format("Maybe the Gym Guide at the entrance would be able to explain how Psychic Terrain works."), MSGBOX_AUTOCLOSE)
 	end
 }
 

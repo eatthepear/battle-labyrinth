@@ -588,11 +588,21 @@ Difficulty: Normal
 Tyrunt @ Cheri Berry
 Gentle Nature
 Ability: Strong Jaw
-Level: 9
+Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Throw
 - Tackle
 - Tail Whip
+- Scary Face
+
+Shieldon @ Chesto Berry
+Careful Nature
+Ability: Sturdy
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Smack Down
+- Tackle
+- Taunt
 - Scary Face
 
 Amaura @ Oran Berry
@@ -618,7 +628,7 @@ Difficulty: Brutal
 Tyrunt @ Cheri Berry
 Gentle Nature
 Ability: Strong Jaw
-Level: 9
+Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Tomb
 - Bite
@@ -628,7 +638,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Shieldon @ Chesto Berry
 Careful Nature
 Ability: Sturdy
-Level: 9
+Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Tomb
 - Rock Smash
@@ -836,10 +846,9 @@ Pic: Psychic F
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 4
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
-Starting Status: Psychic Terrain
 
 === TRAINER_PBL_THERESA ===
 Name: Theresa
@@ -848,22 +857,9 @@ Pic: Psychic F
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 4
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
-Starting Status: Psychic Terrain
-
-=== TRAINER_PBL_ANTHONY ===
-Name: Anthony
-Class: Psychic
-Pic: Psychic M
-Music: Intense
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Party Size: 3
-Pool Prune: Non Psychic
-Copy Pool: TRAINER_POOL_ZONE_5
-Starting Status: Psychic Terrain
 
 === TRAINER_PBL_FRED ===
 Name: Fred
@@ -872,10 +868,9 @@ Pic: Psychic M
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 4
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
-Starting Status: Psychic Terrain
 
 === TRAINER_PBL_MELINDA_OPTIONAL_2 ===
 Name: Melinda
@@ -920,24 +915,33 @@ Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Purple
-Starting Status: Psychic Terrain
 
-Munna @ Light Clay
-Calm Nature
-Ability: Synchronize
-Level: 15
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psybeam
-- Hypnosis
-- Light Screen
-- Reflect
-
-Spoink @ Light Clay
+Spoink @ Wise Glasses
 Timid Nature
 Ability: Thick Fat
 Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psybeam
+- Confusion
+- Night Shade
+- Light Screen
+- Reflect
+
+Baltoy @ Twisted Spoon
+Sassy Nature
+Ability: Levitate
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Confusion
+- Bulldoze
+- Light Screen
+- Reflect
+
+Natu @ Sharp Beak
+Naive Nature
+Ability: Magic Bounce
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aerial Ace
 - Night Shade
 - Light Screen
 - Reflect
@@ -961,17 +965,6 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Purple
 Difficulty: Brutal
-Starting Status: Psychic Terrain
-
-Munna @ Light Clay
-Calm Nature
-Ability: Synchronize
-Level: 15
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psybeam
-- Hypnosis
-- Light Screen
-- Reflect
 
 Spoink @ Light Clay
 Timid Nature
@@ -980,6 +973,16 @@ Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psybeam
 - Night Shade
+- Light Screen
+- Reflect
+
+Baltoy @ Light Clay
+Sassy Nature
+Ability: Levitate
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Bulldoze
 - Light Screen
 - Reflect
 
@@ -998,7 +1001,7 @@ Relaxed Nature
 Ability: Levitate
 Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rock Tomb
+- Ancient Power
 - Confusion
 - Hypnosis
 - Moonlight
@@ -1784,7 +1787,7 @@ Mugshot: Purple
 Tinkatuff @ Eviolite
 Adamant Nature
 Ability: Own Tempo
-Level: 25
+Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Stealth Rock
 - Play Rough
@@ -1794,7 +1797,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Togedemaru @ Rocky Helmet
 Jolly Nature
 Ability: Iron Barbs
-Level: 25
+Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
 - U-Turn
@@ -1804,7 +1807,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Wormadam-Trash @ Occa Berry
 Modest Nature
 Ability: Overcoat
-Level: 25
+Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Mirror Shot
 - Struggle Bug
@@ -1834,7 +1837,7 @@ Difficulty: Brutal
 Tinkatuff @ Eviolite
 Adamant Nature
 Ability: Own Tempo
-Level: 25
+Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Stealth Rock
 - Play Rough
@@ -1844,7 +1847,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Togedemaru @ Rocky Helmet
 Jolly Nature
 Ability: Iron Barbs
-Level: 25
+Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
 - U-Turn
@@ -1854,12 +1857,22 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Wormadam-Trash @ Occa Berry
 Modest Nature
 Ability: Overcoat
-Level: 25
+Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Mirror Shot
 - Struggle Bug
 - Confusion
 - Metal Burst
+
+Prinplup @ Eviolite
+Timid Nature
+Ability: Competitive
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bubble Beam
+- Icy Wind
+- Grass Knot
+- Roost
 
 Steelix @ Steelixite
 Sassy Nature
@@ -1870,16 +1883,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bulldoze
 - Rock Tomb
 - Thunder Fang
-
-Prinplup @ Eviolite
-Timid Nature
-Ability: Competitive
-Level: 25
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bubble Beam
-- Icy Wind
-- Grass Knot
-- Roost
 
 === TRAINER_PBL_JEANETTE ===
 Name: Jeanette
