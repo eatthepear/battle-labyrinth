@@ -3237,3 +3237,22 @@ const u16 ALIGNED(4) gTilesetPalettes_General_Frlg[][16] =
 const u32 gTilesetTiles_General_Frlg[] = INCGFX_U32("data/tilesets/primary/general_frlg/tiles.png", ".4bpp.smol");
 
 #endif // IS_FRLG
+
+const u16 gTilesetPalettes_Restaurant[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/restaurant/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/restaurant/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/restaurant/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/restaurant/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/restaurant/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/restaurant/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/restaurant/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/restaurant/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/restaurant/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/restaurant/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/restaurant/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/restaurant/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/restaurant/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Restaurant[] = INCBIN_U32("data/tilesets/secondary/restaurant/tiles.4bpp.lz");
