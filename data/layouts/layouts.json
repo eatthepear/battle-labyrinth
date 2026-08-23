@@ -10411,6 +10411,16 @@
       "secondary_tileset": "gTileset_GymsExterior",
       "border_filepath": "data/layouts/Zone20A_New/border.bin",
       "blockdata_filepath": "data/layouts/Zone20A_New/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE20B_NEW",
+      "name": "Zone20B_New_Layout",
+      "width": 25,
+      "height": 25,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Restaurant",
+      "border_filepath": "data/layouts/Zone20B_New/border.bin",
+      "blockdata_filepath": "data/layouts/Zone20B_New/map.bin"
     }
   ]
 }
