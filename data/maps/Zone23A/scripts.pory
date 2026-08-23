@@ -1,4 +1,22 @@
-mapscripts Zone23A_MapScripts {}
+mapscripts Zone23A_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE23A_DUSK_STONE)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE23A_BLACK_SLUDGE)) {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE23A_TM_ENERGY_BALL)) {
+			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_TM_CHEST)
+		}
+	}
+}
 
 script Zone23A_EventScript_Lacey {
 	lock
@@ -36,6 +54,58 @@ script Zone23A_EventScript_Clark {
 	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
 	end
 }
+
+script Zone23A_EventScript_DuskStone {
+	lock
+	if (flag(FLAG_ITEM_ZONE23A_DUSK_STONE)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE23A_DUSK_STONE)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_DUSK_STONE)
+	release
+	end
+}
+
+script Zone23A_EventScript_BlackSludge {
+	lock
+	if (flag(FLAG_ITEM_ZONE23A_BLACK_SLUDGE)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE23A_BLACK_SLUDGE)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_BLACK_SLUDGE)
+	release
+	end
+}
+
+script Zone23A_EventScript_TMEnergyBall {
+	lock
+	if (flag(FLAG_ITEM_ZONE23A_TM_ENERGY_BALL)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE23A_TM_ENERGY_BALL)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_TM_ENERGY_BALL)
+	release
+	end
+}
+
 raw `
 Zone23A_EventScript_Exit::
 	lockall
@@ -207,28 +277,4 @@ Zone23A_Text_AnnieDefeat:
 Zone23A_Text_AnniePostBattle:
 	.string "Climate change is a real threat to\n"
 	.string "environments like these.$"
-
-Zone23A_EventScript_LeafStone::
-	finditem ITEM_LEAF_STONE
-	end
-
-Zone23A_EventScript_HyperPotion::
-	finditem ITEM_HYPER_POTION
-	end
-
-Zone23A_EventScript_SuperRepel::
-	finditem ITEM_SUPER_REPEL
-	end
-	
-Zone23A_EventScript_QuickBall::
-	finditem ITEM_QUICK_BALL
-	end
-
-Zone23A_EventScript_TimerBall::
-	finditem ITEM_TIMER_BALL
-	end
-
-Zone23A_EventScript_DuskBall::
-	finditem ITEM_DUSK_BALL
-	end
 `
