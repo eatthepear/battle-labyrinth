@@ -1,4 +1,12 @@
-mapscripts Zone22A_MapScripts {}
+mapscripts Zone22A_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE22A_LIGHT_CLAY)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+	}
+}
 
 script Zone22A_EventScript_Maylene {
 	lock
@@ -35,6 +43,23 @@ script Zone22A_EventScript_Maylene {
 	msgbox(format("With {COLOR GREEN}Rock Tomb{COLOR DARK_GRAY}, a Pokémon can hurl rocks at its target, not only inflicting damage but also lowering the target's Speed.\pAnd the {COLOR GREEN}Hard Stone{COLOR DARK_GRAY} increases the damage of your Pokémon's Rock-type moves by 20%. Forms a nifty combo, huh?\pYou're just starting on your journey, so enjoy the ride and feel the breeze in your face!"))
 	setflag(FLAG_BEAT_BOSS_22)
 	setflag(FLAG_BADGE07_GET)
+	release
+	end
+}
+
+script Zone22A_EventScript_LightClay {
+	lock
+	if (flag(FLAG_ITEM_ZONE22A_LIGHT_CLAY)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE22A_LIGHT_CLAY)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_LIGHT_CLAY)
 	release
 	end
 }
@@ -163,37 +188,4 @@ Zone22A_Text_AudreyDefeat:
 Zone22A_Text_AudreyPostBattle:
 	.string "Am I disappointed?\n"
 	.string "Maybe a little bit.$"
-
-Zone22A_EventScript_DestinyKnot::
-	finditem ITEM_DESTINY_KNOT
-	end
-
-Zone22A_EventScript_IcyRock::
-	finditem ITEM_ICY_ROCK
-	end
-
-Zone22A_EventScript_Ether::
-	finditem ITEM_ETHER
-	end
-
-Zone22A_EventScript_MetalCoat::
-	finditem ITEM_METAL_COAT
-	end
-
-Zone22A_EventScript_3000::
-	lock
-	showmoneybox 0, 0, 0
-	addmoney 3000, 0
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox Zone22A_Text_Found3000, MSGBOX_DEFAULT
-	updatemoneybox
-	waitfanfare
-	hidemoneybox
-	setflag FLAG_ITEM_ZONE22A_3000
-	removeobject 14
-	release
-	end
-
-Zone22A_Text_Found3000:
-	.string "Found ¥3000!$"
 `
