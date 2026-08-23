@@ -1,4 +1,17 @@
-mapscripts Zone21A_MapScripts {}
+mapscripts Zone21A_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE21A_ROCKY_HELMET)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+		if (flag(FLAG_ITEM_ZONE21A_DAWN_STONE)) {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
+		}
+	}
+}
 
 script Zone21A_EventScript_TriggerWally {
 	lockall
@@ -108,6 +121,40 @@ script Zone21A_EventScript_SecretWarp {
 	end
 }
 
+script Zone21A_EventScript_RockyHelmet {
+	lock
+	if (flag(FLAG_ITEM_ZONE21A_ROCKY_HELMET)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE21A_ROCKY_HELMET)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_ROCKY_HELMET)
+	release
+	end
+}
+
+script Zone21A_EventScript_DawnStone {
+	lock
+	if (flag(FLAG_ITEM_ZONE21A_DAWN_STONE)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE21A_DAWN_STONE)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_DAWN_STONE)
+	release
+	end
+}
+
 raw `
 Zone21A_EventScript_Exit::
 	lockall
@@ -158,28 +205,4 @@ Zone21A_EventScript_Sign::
 
 Zone21A_Text_Sign:
 	.string "Lakeside Cottage$"
-
-Zone21A_EventScript_QuickBall::
-	finditem ITEM_QUICK_BALL
-	end
-
-Zone21A_EventScript_UltraBall::
-	finditem ITEM_ULTRA_BALL
-	end
-
-Zone21A_EventScript_HeatRock::
-	finditem ITEM_HEAT_ROCK
-	end
-
-Zone21A_EventScript_SuperRepel::
-	finditem ITEM_SUPER_REPEL
-	end
-
-Zone21A_EventScript_Everstone::
-	finditem ITEM_EVERSTONE
-	end
-
-Zone21A_EventScript_TM28::
-	finditem ITEM_TM28
-	end
 `
