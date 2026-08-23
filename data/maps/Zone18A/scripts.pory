@@ -103,7 +103,7 @@ text Zone18A_Text_Tuber_Replaced {
 	format("How I missed you, Azurill!\pThough I almost replaced you with that {COLOR GREEN}strange looking Pokemon I saw in the grass nearby{COLOR DARK_GRAY}!")
 }
 
-script Zone18A_EventScript_Eli {
+script Zone18A_EventScript_Tuber {
 	lock
 	setspeaker("Tuber")
 	switch (var(VAR_ZONE_18_STATE)) {

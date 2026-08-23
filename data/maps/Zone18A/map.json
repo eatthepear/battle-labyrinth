@@ -138,8 +138,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone18A_EventScript_Eli",
-      "flag": "FLAG_HIDE_ZONE18A_ELI"
+      "script": "Zone18A_EventScript_Tuber",
+      "flag": "0"
     },
     {
       "local_id": "LOCALID_BOAT_18A",

@@ -287,28 +287,25 @@ script EventScript_NextZone {
 			if (var(VAR_RESULT) == NO) {
 				return
 			}
-		case 11:
-			setspeaker(SP_NAME_COLRESS)
-			msgbox(Sanctuary_Text_Colress_EndofDemo)
-			call(EventScript_AskSaveGame)
-			return
-		case 12:
-			msgbox(format("Are you sure you're ready? You will be entering {COLOR GREEN}Zone 12 - Twinstream Plains{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				call(Sanctuary_EventScript_EnterZone)
-				setvar(VAR_LEVEL_CAP, 12)
-				warp(MAP_ZONE12A, 255, 9, 16)
-				waitstate
-				end
-			}
 		case 13:
-			msgbox(format("Are you sure you're ready? You will be entering {COLOR GREEN}Zone 13 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Gemini Caves{COLOR DARK_GRAY}."), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				call(Sanctuary_EventScript_EnterZone)
-				setvar(VAR_LEVEL_CAP, 13)
-				warp(MAP_ZONE13A, 255, 18, 10)
-				waitstate
-				end
+			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 13 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Gemini Caves{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO) {
+				return
+			}
+		case 18:
+			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 18 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 19 - Gemini Caves{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO) {
+				return
+			}
+		case 24:
+			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 13 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Gemini Caves{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO) {
+				return
+			}
+		case 27:
+			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 13 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Gemini Caves{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO) {
+				return
 			}
 	}
 	call(EventScript_AskSaveGame)
@@ -362,13 +359,34 @@ script EventScript_NextZone {
 		case 12:
 			warp(MAP_ZONE12A, 255, 11, 14)
 		case 13:
-			warp(MAP_ZONE12A, 255, 30, 30)
+			warp(MAP_ZONE13A, 255, 30, 30)
 		case 15:
 			warp(MAP_ZONE15A, 255, 4, 3)
+		case 16:
+			setflag(FLAG_HIDE_ZONE16A_KIMONO_GIRL)
+			warp(MAP_ZONE16A, 255, 6, 5)
+		case 17:
+			setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
+			setflag(FLAG_HIDE_ZONE17A_PORYGON)
+			warp(MAP_ZONE17A, 255, 13, 30)
 		case 18:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				setflag(FLAG_HIDE_ZONE18A_MAX)
+			}
+			setflag(FLAG_HIDE_ZONE18A_PORYGON)
 			setflag(FLAG_HIDE_ZONE18A_GRUNTS)
 			setflag(FLAG_HIDE_ZONE18A_BOAT)
 			setflag(FLAG_HIDE_ZONE19D_AQUA)
+		// case 20:
+		// 	warp(MAP_ZONE20A, 255, 8, 2)
+		case 21:
+			warp(MAP_ZONE21A, 255, 16, 93)
+		// case 22:
+		// 	warp(MAP_ZONE22A, 255, 8, 2)
+		case 23:
+			warp(MAP_ZONE23A, 255, 8, 2)
+		case 24:
+			warp(MAP_ZONE24A, 255, 31, 23)
 	}
 	waitstate
 	end
@@ -491,6 +509,40 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("Ultra Balls!"))
 			// setspeaker(SP_NAME_NONE)
 			// giveitem(ITEM_ULTRA_BALL, 10)
+		case 13:
+			msgbox(format("Ultra Balls!"))
+		case 15:
+			msgbox(format("Ultra Balls!"))
+		case 16:
+			msgbox(format("Ultra Balls!"))
+		case 17:
+			msgbox(format("Ultra Balls!"))
+		case 18:
+			msgbox(format("Ultra Balls!"))
+		case 20:
+			msgbox(format("Ultra Balls!"))
+		case 21:
+			msgbox(format("Ultra Balls!"))
+		case 22:
+			msgbox(format("Ultra Balls!"))
+		case 23:
+			msgbox(format("Ultra Balls!"))
+		case 24:
+			msgbox(format("Ultra Balls!"))
+		case 26:
+			msgbox(format("Ultra Balls!"))
+		case 27:
+			msgbox(format("Ultra Balls!"))
+		case 29:
+			msgbox(format("Ultra Balls!"))
+		case 30:
+			msgbox(format("Ultra Balls!"))
+		case 31:
+			msgbox(format("Ultra Balls!"))
+		case 34:
+			msgbox(format("Ultra Balls!"))
+		case 35:
+			msgbox(format("Ultra Balls!"))
 	}
 	switch(var(VAR_ZONE)) {
 		case 1:
@@ -614,51 +666,6 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 35:
 			completesubquest(QUEST_PBL, 35)
 			setvar(VAR_ZONE, 36)
-		case 36:
-			completesubquest(QUEST_PBL, 36)
-			setvar(VAR_ZONE, 37)
-		case 37:
-			completesubquest(QUEST_PBL, 37)
-			setvar(VAR_ZONE, 38)
-		case 38:
-			completesubquest(QUEST_PBL, 38)
-			setvar(VAR_ZONE, 39)
-		case 39:
-			completesubquest(QUEST_PBL, 39)
-			setvar(VAR_ZONE, 40)
-		case 40:
-			completesubquest(QUEST_PBL, 40)
-			setvar(VAR_ZONE, 41)
-		case 41:
-			completesubquest(QUEST_PBL, 41)
-			setvar(VAR_ZONE, 42)
-		case 42:
-			completesubquest(QUEST_PBL, 42)
-			setvar(VAR_ZONE, 43)
-		case 43:
-			completesubquest(QUEST_PBL, 43)
-			setvar(VAR_ZONE, 44)
-		case 44:
-			completesubquest(QUEST_PBL, 44)
-			setvar(VAR_ZONE, 45)
-		case 45:
-			completesubquest(QUEST_PBL, 45)
-			setvar(VAR_ZONE, 46)
-		case 46:
-			completesubquest(QUEST_PBL, 46)
-			setvar(VAR_ZONE, 47)
-		case 47:
-			completesubquest(QUEST_PBL, 47)
-			setvar(VAR_ZONE, 48)
-		case 48:
-			completesubquest(QUEST_PBL, 48)
-			setvar(VAR_ZONE, 49)
-		case 49:
-			completesubquest(QUEST_PBL, 49)
-			setvar(VAR_ZONE, 50)
-		case 50:
-			completesubquest(QUEST_PBL, 50)
-			setvar(VAR_ZONE, 51)
 	}
 	call(EventScript_WhenUReadyDialogue)
 	applymovement(LOCALID_COLRESS, Common_Movement_Colress_WalkUp)
