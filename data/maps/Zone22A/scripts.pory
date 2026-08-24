@@ -64,6 +64,20 @@ script Zone22A_EventScript_LightClay {
 	end
 }
 
+script Zone22A_EventScript_KimonoGirl {
+	lock
+	faceplayer
+	setspeaker("Kimono Girl")
+	msgbox(format("HELLO! HERE ITEM!"))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_HM_WATERFALL)
+	setspeaker("Kimono Girl")
+	msgbox(format("GOOD! GOODBYE!"), MSGBOX_AUTOCLOSE)
+	// movement
+	release
+	end
+}
+
 raw `
 Zone22A_EventScript_Cody::
 	trainerbattle_single TRAINER_PBL_CODY, Zone22A_Text_CodyIntro, Zone22A_Text_CodyDefeat
