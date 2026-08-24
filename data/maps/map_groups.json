@@ -681,8 +681,8 @@
     "Zone19B",
     "Zone19C",
     "Zone19D",
-    "Zone20A",
-    "Zone20B",
+    "Zone20A_New",
+    "Zone20B_New",
     "Zone21A",
     "Zone21B",
     "Zone21C",
@@ -707,9 +707,7 @@
     "Zone26A",
     "Zone26B",
     "Zone27A",
-    "Zone28A",
-    "Zone20A_New",
-    "Zone20B_New"
+    "Zone28A"
   ],
   "gMapGroup_Sanctuary": [
     "ZoneSanctuary_PokemonCenter_1F",
@@ -731,7 +729,9 @@
     "ZoneS1B",
     "ZoneS2A",
     "Zone5A_Old",
-    "Zone5B_Old"
+    "Zone5B_Old",
+    "Zone20A",
+    "Zone20B"
   ],
   "gMapGroup_IndoorRoute109": [
     "Route109_SeashoreHouse"
