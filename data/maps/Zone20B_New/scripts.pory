@@ -1,1 +1,82 @@
 mapscripts Zone20B_New_MapScripts {}
+
+script Zone20B_EventScript_TriggerBossBattle {
+    lockall
+    msgbox(format("INTRO TEXT! EXPLAIN GIMMICK!"))
+    call(Zone20B_EventScript_SelectPartner)
+    msgbox(format("OK! YOU'VE DECIDED! BATTLE TIME!"))
+    call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+    switch (var(VAR_ZONE_20_STATE)) {
+        case 0:
+	        multi_2_vs_2(TRAINER_PBL_CHILI_BOSS_20, Zone20B_Text_Chili_Defeated, TRAINER_PBL_CRESS_BOSS_20, Zone20B_Text_Cress_Defeated, PARTNER_PBL_CILAN_BOSS_20)
+        case 1:
+	        multi_2_vs_2(TRAINER_PBL_CILAN_BOSS_20, Zone20B_Text_Cilan_Defeated, TRAINER_PBL_CRESS_BOSS_20, Zone20B_Text_Cress_Defeated, PARTNER_PBL_CHILI_BOSS_20)
+        case 2:
+	        multi_2_vs_2(TRAINER_PBL_CILAN_BOSS_20, Zone20B_Text_Cilan_Defeated, TRAINER_PBL_CHILI_BOSS_20, Zone20B_Text_Chili_Defeated, PARTNER_PBL_CRESS_BOSS_20)
+    }
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Liza")
+	msgbox(format("It can't be helped. You've won…\pCongratulations. Please take the Mind Badge!"))
+	setspeaker(SP_NAME_NONE)
+	playfanfare(MUS_OBTAIN_BADGE)
+	msgbox(format("{PLAYER} received the Mind Badge from {COLOR BLUE}Liza{COLOR DARK_GRAY}!"))
+	waitfanfare
+	setspeaker("Grant")
+	msgbox(format("Since you now have the Mind Badge, you can use the HM {COLOR GREEN}Cut{COLOR DARK_GRAY} outside battle.\pI'd also like you to take this TM."))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_TM_LIGHT_SCREEN)
+	setspeaker("Liza")
+	msgbox(format("That's it!\pFufufu…\pJust kidding, here's the other one as well. Us Gym Leaders give out multiple rewards!"))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_TM_REFLECT)
+	setspeaker("Liza")
+	msgbox(format("You will become even stronger! I've battled you, so I know."))
+    setflag(FLAG_BEAT_BOSS_20)
+	setflag(FLAG_BADGE06_GET)
+	releaseall
+	end
+}
+
+text Zone20B_Text_Cilan_Defeated {
+    format("CILAN DEFEATED!")
+}
+
+text Zone20B_Text_Chili_Defeated {
+    format("CHILI DEFEATED!")
+}
+
+text Zone20B_Text_Cress_Defeated {
+    format("CRESS DEFEATED!")
+}
+
+script Zone20B_EventScript_SelectPartner {
+    while {
+        message(format("Who do you want to be your partner against the other two?"))
+        waitmessage
+        dynmultipush("{COLOR GREEN}Cilan", 0)
+        dynmultipush("{COLOR RED}Chili", 1)
+        dynmultipush("{COLOR BLUE}Cress", 2)
+        dynmultistack(0, 0, TRUE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+        switch (var(VAR_RESULT)) {
+            case 0:
+                msgbox(format("YOU SURE?"), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    setvar(VAR_ZONE_20_STATE, 0)
+                    return
+                }
+            case 1:
+                msgbox(format("YOU SURE?"), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    setvar(VAR_ZONE_20_STATE, 1)
+                    return
+                }
+            case 2:
+                msgbox(format("YOU SURE?"), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    setvar(VAR_ZONE_20_STATE, 2)
+                    return
+                }
+        }
+    }
+}

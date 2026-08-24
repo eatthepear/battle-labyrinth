@@ -42,3 +42,57 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 - Protect
 - Solar Beam
 - Dragon Claw
+
+=== PARTNER_PBL_CILAN_BOSS_20 ===
+Name: Cilan
+Class: Rival
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+
+Staraptor @ Staraptite
+Jolly Nature
+Ability: Intimidate
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Facade
+- Dual Wingbeat
+- Close Combat
+- Roost
+
+=== PARTNER_PBL_CHILI_BOSS_20 ===
+Name: Chili
+Class: Rival
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+
+Staraptor @ Staraptite
+Jolly Nature
+Ability: Intimidate
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Facade
+- Dual Wingbeat
+- Close Combat
+- Roost
+
+=== PARTNER_PBL_CRESS_BOSS_20 ===
+Name: Cress
+Class: Rival
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+
+Staraptor @ Staraptite
+Jolly Nature
+Ability: Intimidate
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Facade
+- Dual Wingbeat
+- Close Combat
+- Roost

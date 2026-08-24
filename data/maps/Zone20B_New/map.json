@@ -15,6 +15,16 @@
   "connections": null,
   "object_events": [],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 0,
+      "elevation": 0,
+      "var": "VAR_ZONE_20_STATE",
+      "var_value": "0",
+      "script": "Zone20B_EventScript_TriggerBossBattle"
+    }
+  ],
   "bg_events": []
 }

@@ -3213,55 +3213,61 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Metal Claw
 
 === TRAINER_PBL_CILAN_BOSS_20 ===
-Name: STEVEN
+Name: Cilan
 Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Pink
 
-Metang
-Brave Nature
-Level: 42
+Staraptor @ Staraptite
+Jolly Nature
+Ability: Intimidate
+Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Facade
+- Dual Wingbeat
+- Close Combat
+- Roost
 
 === TRAINER_PBL_CHILI_BOSS_20 ===
-Name: STEVEN
+Name: Chili
 Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Pink
 
-Metang
-Brave Nature
-Level: 42
+Staraptor @ Staraptite
+Jolly Nature
+Ability: Intimidate
+Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Facade
+- Dual Wingbeat
+- Close Combat
+- Roost
 
 === TRAINER_PBL_CRESS_BOSS_20 ===
-Name: STEVEN
+Name: Cress
 Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Pink
 
-Metang
-Brave Nature
-Level: 42
+Staraptor @ Staraptite
+Jolly Nature
+Ability: Intimidate
+Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Facade
+- Dual Wingbeat
+- Close Combat
+- Roost
 
 === TRAINER_PBL_SHAWN ===
 Name: STEVEN
