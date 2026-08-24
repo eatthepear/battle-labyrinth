@@ -5451,7 +5451,7 @@
       "name": "Zone22A_Layout",
       "width": 67,
       "height": 62,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_Snowy",
       "border_filepath": "data/layouts/Zone22A/border.bin",
       "blockdata_filepath": "data/layouts/Zone22A/map.bin",
