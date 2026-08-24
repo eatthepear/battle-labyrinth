@@ -203,5 +203,6 @@ bool8 GetSetItemObtained(enum Item item, enum ItemObtainFlags caseId);
 
 void Overworld_CreditsMainCB(void);
 bool32 Overworld_DoScrollSceneForCredits(u8 *, const struct CreditsOverworldCmd *);
+u8 OverworldSpeedup_AdditionalIterations(u16 speed, bool32 overworld);
 
 #endif // GUARD_OVERWORLD_H

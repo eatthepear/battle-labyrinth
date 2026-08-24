@@ -58,7 +58,7 @@
 #define VAR_BOSS_MUSIC                  0x4026
 #define VAR_SANCTUARY_MUSIC                  0x4027
 #define VAR_STARTER_MON                      0x4028 // 0=Grass, 1=Fire, 2=Water
-#define VAR_UNUSED_0x4029                    0x4029
+#define VAR_OVERWORLD_SPEEDUP                    0x4029
 #define VAR_DEXNAV_SPECIES                   0x402A // Registered dexnav species
 #define VAR_DIFFICULTY                       0x402B
 #define VAR_FARM_STOCK                       0x402C

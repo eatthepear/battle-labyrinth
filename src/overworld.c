@@ -1903,9 +1903,17 @@ void CB2_OverworldBasic(void)
 void CB2_Overworld(void)
 {
     bool32 fading = (gPaletteFade.active != 0);
+    u8 loops;
     if (fading)
         SetVBlankCallback(NULL);
     OverworldBasic();
+
+    for (loops = 0; loops < OverworldSpeedup_AdditionalIterations(VarGet(VAR_OVERWORLD_SPEEDUP), TRUE); loops++)
+    {
+        AnimateSprites();
+        CameraUpdate();
+        UpdateCameraPanning();
+    }
     if (fading)
     {
         SetFieldVBlankCallback();
@@ -4094,5 +4102,36 @@ static void Task_OvwldCredits_WaitFade(u8 taskId)
         CleanupOverworldWindowsAndTilemaps();
         SetMainCallback2(CB2_LoadMap);
         DestroyTask(taskId);
+    }
+}
+
+#define OPTIONS_OVERWORLD_SPEED_1X                          0
+#define OPTIONS_OVERWORLD_SPEED_2X                          1
+#define OPTIONS_OVERWORLD_SPEED_4X                          2
+#define OPTIONS_OVERWORLD_SPEED_8X                          3
+#define OPTIONS_OVERWORLD_SPEED_1X_EXTRA_ITERATIONS         0
+#define OPTIONS_OVERWORLD_SPEED_2X_EXTRA_ITERATIONS         1
+#define OPTIONS_OVERWORLD_SPEED_4X_EXTRA_ITERATIONS         3
+#define OPTIONS_OVERWORLD_SPEED_8X_EXTRA_ITERATIONS         7
+
+u8 OverworldSpeedup_AdditionalIterations(u16 speed, bool32 overworld)
+{
+    if (overworld
+        && VAR_OVERWORLD_SPEEDUP != 0
+        && (JOY_HELD(R_BUTTON)
+        // || (FlagGet(FLAG_PREVENT_OVERWORLD_SPEEDUP) && FLAG_PREVENT_OVERWORLD_SPEEDUP != 0)
+        // // || FlagGet(FLAG_SYS_DEXNAV_SEARCH)        Other conditions when no speedup is wanted.
+        ))
+    {
+        return OPTIONS_OVERWORLD_SPEED_1X_EXTRA_ITERATIONS;
+    }
+
+    switch (speed)
+    {
+    case OPTIONS_OVERWORLD_SPEED_8X: return OPTIONS_OVERWORLD_SPEED_8X_EXTRA_ITERATIONS;
+    case OPTIONS_OVERWORLD_SPEED_4X: return OPTIONS_OVERWORLD_SPEED_4X_EXTRA_ITERATIONS;
+    case OPTIONS_OVERWORLD_SPEED_2X: return OPTIONS_OVERWORLD_SPEED_2X_EXTRA_ITERATIONS;
+    case OPTIONS_OVERWORLD_SPEED_1X: return OPTIONS_OVERWORLD_SPEED_1X_EXTRA_ITERATIONS;
+    default: return OPTIONS_OVERWORLD_SPEED_1X_EXTRA_ITERATIONS;
     }
 }
