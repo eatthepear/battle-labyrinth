@@ -533,5 +533,7 @@ void PrintOakText_OakNoRunningFromATrainer(enum BattlerId battler);
 void OakOldManHandleInputChooseMove(enum BattlerId battler);
 void BtlCtrl_DrawVoiceoverMessageFrame(void);
 void BtlCtrl_RemoveVoiceoverMessageFrame(void);
+// Battle Speed Up (Credit to Pokabbie)
+u32 GetBattleSpeedScale(bool32 forHealthbar);
 
 #endif // GUARD_BATTLE_CONTROLLERS_H
