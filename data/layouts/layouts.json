@@ -10405,8 +10405,8 @@
     {
       "id": "LAYOUT_ZONE20A_NEW",
       "name": "Zone20A_New_Layout",
-      "width": 49,
-      "height": 83,
+      "width": 46,
+      "height": 35,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_GymsExterior",
       "border_filepath": "data/layouts/Zone20A_New/border.bin",

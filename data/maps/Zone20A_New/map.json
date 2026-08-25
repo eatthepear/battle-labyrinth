@@ -16,8 +16,8 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 14,
-      "y": 10,
+      "x": 12,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ZONE20B_NEW",
       "dest_warp_id": "0"
