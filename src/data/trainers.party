@@ -3258,8 +3258,8 @@ Copy Pool: TRAINER_POOL_ZONE_20
 
 === TRAINER_PBL_WALKER ===
 Name: Walker
-Class: Waiter
-Pic: Waiter
+Class: Server
+Pic: Server M
 Music: Rich
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
@@ -3269,8 +3269,8 @@ Copy Pool: TRAINER_POOL_ZONE_20_FOOD
 
 === TRAINER_PBL_NATALIA ===
 Name: Natalia
-Class: Waitress
-Pic: Waitress
+Class: Server
+Pic: Server F
 Music: Rich
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
@@ -3280,8 +3280,8 @@ Copy Pool: TRAINER_POOL_ZONE_20_FOOD
 
 === TRAINER_PBL_DUNCAN ===
 Name: Duncan
-Class: Waiter
-Pic: Waiter
+Class: Server
+Pic: Server M
 Music: Rich
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
@@ -3291,8 +3291,8 @@ Copy Pool: TRAINER_POOL_ZONE_20_FOOD
 
 === TRAINER_PBL_EVALINE ===
 Name: Evaline
-Class: Waitress
-Pic: Waitress
+Class: Server
+Pic: Server F
 Music: Rich
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No

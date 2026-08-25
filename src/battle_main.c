@@ -424,8 +424,6 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PAINTER_FRLG] =         { _("Painter"), 8 },
 
     [TRAINER_CLASS_SCIENTIST] = { _("Scientist"), 8, BALL_REPEAT },
-    [TRAINER_CLASS_WAITER] = { _("Waiter"), 8, BALL_LUXURY },
-    [TRAINER_CLASS_WAITRESS] = { _("Waitress"), 8, BALL_LUXURY },
     [TRAINER_CLASS_FAIRY_TALE_GIRL] = { _("Fairy Tale Girl"), 8, BALL_FRIEND },
     [TRAINER_CLASS_SOCIALITE] = { _("Socialite"), 40, BALL_LUXURY },
     [TRAINER_CLASS_BACKPACKER] = { _("Backpacker"), 8, BALL_GREAT },
@@ -439,6 +437,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_GALACTIC_COMMANDER] = { _("Team Galactic Comander"), 15, BALL_ULTRA },
     [TRAINER_CLASS_GALACTIC_BOSS] = { _("Team Galactic Boss"), 25, BALL_MASTER },
     [TRAINER_CLASS_RISING_STAR] = { _("Rising Star"), 8, BALL_GREAT },
+    [TRAINER_CLASS_SERVER] = { _("Server"), 8, BALL_LUXURY },
 };
 
 static void (*const sTurnActionsFuncsTable[])(void) =
