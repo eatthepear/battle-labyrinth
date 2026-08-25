@@ -4631,7 +4631,7 @@ u16 GetNumTrainersRemaining(void)
         count += !FlagGet(FLAG_BEAT_BOSS_14);
         break;
     case 15:
-        count += !FlagGet(FLAG_BEAT_BOSS_15);
+        count += !FlagGet(FLAG_BEAT_BOSS_15) * 2;
         break;
     case 16:
         for (trainer = TRAINER_PBL_IONA; trainer <= TRAINER_PBL_GALACTIC_GRUNT_16A_2; trainer++) {
@@ -4645,7 +4645,6 @@ u16 GetNumTrainersRemaining(void)
         break;
     case 18:
     case 19:
-        count += !HasTrainerBeenFought(TRAINER_PBL_DORIS);
         for (trainer = TRAINER_PBL_DORIS; trainer <= TRAINER_PBL_WILLIE; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
@@ -4654,14 +4653,11 @@ u16 GetNumTrainersRemaining(void)
         count += 4 * !FlagGet(FLAG_BEAT_BOSS_19);
         break;
     case 20:
-        count += !HasTrainerBeenFought(TRAINER_PBL_SHAWN);
-        count += !HasTrainerBeenFought(TRAINER_PBL_FERNANDO);
-        count += !HasTrainerBeenFought(TRAINER_PBL_KANE);
-        count += !HasTrainerBeenFought(TRAINER_PBL_KIRK);
-        count += !HasTrainerBeenFought(TRAINER_PBL_DALTON);
-        count += !HasTrainerBeenFought(TRAINER_PBL_LEE);
-        count += !HasTrainerBeenFought(TRAINER_PBL_BLANCHE);
-        count += !FlagGet(FLAG_BEAT_BOSS_17);
+        for (trainer = TRAINER_PBL_WINSTON; trainer <= TRAINER_PBL_EVALINE; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_BOSS_20);
         break;
     case 21:
         for (trainer = TRAINER_PBL_BERNARD; trainer <= TRAINER_PBL_ALLY; trainer++) {
@@ -4669,6 +4665,29 @@ u16 GetNumTrainersRemaining(void)
                 count += 1;
         }
         count += !FlagGet(FLAG_BEAT_BOSS_21);
+        break;
+    case 22:
+        for (trainer = TRAINER_PBL_CODY; trainer <= TRAINER_PBL_AUDREY; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_BOSS_22);
+        break;
+    case 23:
+        for (trainer = TRAINER_PBL_EDGARDO; trainer <= TRAINER_PBL_CLARK; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_BOSS_23);
+        break;
+    case 24:
+    case 25:
+        for (trainer = TRAINER_PBL_DOUGLAS; trainer <= TRAINER_PBL_ROCKET_GRUNT_25K_2; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += 4 * !FlagGet(FLAG_BEAT_BOSS_24) ;
+        count += !FlagGet(FLAG_BEAT_BOSS_25);
         break;
     default:
         count = 0;
