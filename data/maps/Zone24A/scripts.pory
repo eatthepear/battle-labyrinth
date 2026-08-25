@@ -35,11 +35,133 @@ movement Zone24A_Movement_Camera_MoveCameraUp {
 
 script Zone24A_EventScript_TriggerRocketAmbush {
 	lockall
+	applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkDown2)
+	waitmovement(0)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement(0)
+	playbgm(MUS_HG_ENCOUNTER_ROCKET, TRUE)
+	clearflag(FLAG_HIDE_ZONE24A_ROCKET_GRUNTS)
+	addobject(LOCALID_GRUNT_1_24A)
+	applymovement(LOCALID_GRUNT_1_24A, Zone24A_Movement_Grunt1_RunToBottom)
+	addobject(LOCALID_GRUNT_2_24A)
+	applymovement(LOCALID_GRUNT_2_24A, Zone24A_Movement_Grunt2_RunToLeft)
+	addobject(LOCALID_GRUNT_3_24A)
+	applymovement(LOCALID_GRUNT_3_24A, Zone24A_Movement_Grunt3_RunToRight)
+	addobject(LOCALID_GRUNT_4_24A)
+	applymovement(LOCALID_GRUNT_4_24A, Zone24A_Movement_Grunt4_RunToTop)
+	waitmovement(0)
+	delay(16)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement(0)
+	delay(16)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
+	waitmovement(0)
+	delay(16)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement(0)
+	delay(16)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement(0)
+	delay(16)
+	setspeaker("Rocket Grunt")
 	msgbox(format("This is the Rocket ambush!"))
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
+	applymovement(LOCALID_GRUNT_1_24A, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	setspeaker("Rocket Grunt")
+	msgbox(format("BATTLE!"))
+	trainerbattle_no_intro(TRAINER_PBL_ROCKET_GRUNT_24A_1, format("DEFEAT!"))
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
+	applymovement(LOCALID_GRUNT_2_24A, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+	setspeaker("Rocket Grunt")
+	msgbox(format("BATTLE!"))
+	trainerbattle_no_intro(TRAINER_PBL_ROCKET_GRUNT_24A_2, format("DEFEAT!"))
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
+	applymovement(LOCALID_GRUNT_3_24A, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+	setspeaker("Rocket Grunt")
+	msgbox(format("BATTLE!"))
+	trainerbattle_no_intro(TRAINER_PBL_ROCKET_GRUNT_24A_3, format("DEFEAT!"))
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+	applymovement(LOCALID_GRUNT_4_24A, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	setspeaker("Rocket Grunt")
+	msgbox(format("BATTLE!"))
+	trainerbattle_no_intro(TRAINER_PBL_ROCKET_GRUNT_24A_4, format("DEFEAT!"))
+	setspeaker("Rocket Grunt")
+	msgbox(format("RUN AWAY!"))
+	applymovement(LOCALID_GRUNT_4_24A, Zone24A_Movement_Grunt4_RunToTower)
+	waitmovement(0)
+	removeobject(LOCALID_GRUNT_4_24A)
+	applymovement(LOCALID_GRUNT_2_24A, Zone24A_Movement_Grunt2_RunToTower)
+	waitmovement(0)
+	removeobject(LOCALID_GRUNT_2_24A)
+	applymovement(LOCALID_GRUNT_3_24A, Zone24A_Movement_Grunt3_RunToTower)
+	waitmovement(0)
+	removeobject(LOCALID_GRUNT_3_24A)
+	applymovement(LOCALID_GRUNT_1_24A, Zone24A_Movement_Grunt1_RunToTower)
+	waitmovement(0)
+	removeobject(LOCALID_GRUNT_1_24A)
+	setflag(FLAG_HIDE_ZONE24A_ROCKET_GRUNTS)
+	fadedefaultbgm
 	setvar(VAR_ZONE_24_STATE, 2)
+	setflag(FLAG_BEAT_BOSS_20)
 	releaseall
 }
 
+movement Zone24A_Movement_Grunt1_RunToBottom {
+	walk_fast_down
+	walk_fast_left
+	walk_fast_down * 2
+	walk_fast_right
+	face_up
+}
+
+movement Zone24A_Movement_Grunt2_RunToLeft {
+	walk_fast_down
+	walk_fast_left
+	walk_fast_down
+	face_right
+}
+
+movement Zone24A_Movement_Grunt3_RunToRight {
+	walk_fast_down
+	walk_fast_right
+	walk_fast_down
+	face_left
+}
+
+movement Zone24A_Movement_Grunt4_RunToTop {
+	walk_fast_down
+}
+
+movement Zone24A_Movement_Grunt1_RunToTower {
+	walk_fast_left
+	walk_fast_up * 2
+	walk_fast_right
+	walk_fast_up
+}
+
+movement Zone24A_Movement_Grunt2_RunToTower {
+	walk_fast_up
+	walk_fast_right
+	walk_fast_up
+}
+
+movement Zone24A_Movement_Grunt3_RunToTower {
+	walk_fast_up
+	walk_fast_left
+	walk_fast_up
+}
+
+movement Zone24A_Movement_Grunt4_RunToTower {
+	walk_fast_up
+}
 
 script Zone24A_EventScript_Douglas {
 	trainerbattle_single(TRAINER_PBL_DOUGLAS, format("BATTLE!"), format("DEFEAT!"))
