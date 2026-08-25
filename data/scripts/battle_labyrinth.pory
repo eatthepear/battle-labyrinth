@@ -1817,6 +1817,8 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 20) {
 		return
 	}
+	additem(ITEM_SHINY_STONE)
+	additem(ITEM_EXPERT_BELT)
 
 	if (var(VAR_ZONE) == 21) {
 		return
