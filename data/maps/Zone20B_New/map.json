@@ -14,12 +14,20 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 14,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE20A_NEW",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [
     {
       "type": "trigger",
-      "x": 0,
-      "y": 0,
+      "x": 14,
+      "y": 7,
       "elevation": 0,
       "var": "VAR_ZONE_20_STATE",
       "var_value": "0",

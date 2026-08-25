@@ -10415,8 +10415,8 @@
     {
       "id": "LAYOUT_ZONE20B_NEW",
       "name": "Zone20B_New_Layout",
-      "width": 25,
-      "height": 25,
+      "width": 40,
+      "height": 19,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_Restaurant",
       "border_filepath": "data/layouts/Zone20B_New/border.bin",
