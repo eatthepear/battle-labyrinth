@@ -1,41 +1,300 @@
-mapscripts Zone20B_New_MapScripts {}
+mapscripts Zone20B_New_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ZONE_20_STATE, 0: Zone20B_EventScript_TriggerCoriExplanation
+	]
+}
 
-script Zone20B_EventScript_TriggerBossBattle {
+script Zone20B_EventScript_TriggerCoriExplanation {
     lockall
-    msgbox(format("INTRO TEXT! EXPLAIN GIMMICK!"))
-    call(Zone20B_EventScript_SelectPartner)
+	applymovement(LOCALID_CORI_20B, Common_Movement_FaceDown)
+	waitmovement(0)
+	applymovement(LOCALID_CORI_20B, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(LOCALID_CORI_20B, Common_Movement_WalkDown2)
+	waitmovement(0)
+    setspeaker("Cori")
+    msgbox(format("EXPLANATION!"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_CORI_20B, Common_Movement_WalkUp2)
+	waitmovement(0)
+    setvar(VAR_ZONE_20_STATE, 1)
+    releaseall
+    end
+}
+
+script Zone20B_EventScript_Cori {
+    lock
+    faceplayer
+    msgbox(format("HI!"))
+    release
+    end
+}
+
+script Zone20B_EventScript_Cilan {
+    lock
+    faceplayer
+    if (flag(FLAG_BEAT_BOSS_20)) {
+        setspeaker("Cilan")
+        msgbox(format("YOU BEAT US!"))
+        release
+        end
+    }
+    if (defeated(TRAINER_PBL_WALKER) && defeated(TRAINER_PBL_NATALIA) && defeated(TRAINER_PBL_DUNCAN) && defeated(TRAINER_PBL_EVALINE)) {
+        setspeaker("Cilan")
+        msgbox(format("DEFEATED ALL! TIME TO BATTLE?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            msgbox(format("INTRO TEXT! EXPLAIN GIMMICK!"))
+            msgbox(format("YOU WANT TO BE PARTNERS WITH ME AGAINST MY BROTHERS, RIGHT?"), MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                msgbox(format("GREAT! LET'S GO BATTLE!"), MSGBOX_AUTOCLOSE)
+                fadescreenswapbuffers(FADE_TO_BLACK)
+                special(SpawnCameraObject)
+                applymovement(LOCALID_CAMERA, Common_Movement_WalkDown)
+                waitmovement(0)
+                special(RemoveCameraObject)
+                goto(Zone20B_EventScript_StartBossBattle)
+            } else {
+                msgbox(format("SO SAD! LET ME KNOW IF YOU CHANGE MIND!"))
+            }
+            release
+            end
+        }
+        setspeaker("Cilan")
+        msgbox(format("SAY WHEN READY TO BATTLE!"))
+        release
+        end
+    }
+    setspeaker("Cilan")
+    msgbox(format("NEED BEAT ALL STAFF!"))
+    release
+    end
+}
+
+script Zone20B_EventScript_Chili {
+    lock
+    faceplayer
+    if (flag(FLAG_BEAT_BOSS_20)) {
+        setspeaker("Chili")
+        msgbox(format("YOU BEAT US!"))
+        release
+        end
+    }
+    if (defeated(TRAINER_PBL_WALKER) && defeated(TRAINER_PBL_NATALIA) && defeated(TRAINER_PBL_DUNCAN) && defeated(TRAINER_PBL_EVALINE)) {
+        setspeaker("Chili")
+        msgbox(format("DEFEATED ALL! TIME TO BATTLE?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            msgbox(format("INTRO TEXT! EXPLAIN GIMMICK!"))
+            msgbox(format("YOU WANT TO BE PARTNERS WITH ME AGAINST MY BROTHERS, RIGHT?"), MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                msgbox(format("GREAT! LET'S GO BATTLE!"), MSGBOX_AUTOCLOSE)
+                fadescreenswapbuffers(FADE_TO_BLACK)
+                special(SpawnCameraObject)
+                applymovement(LOCALID_CAMERA, Common_Movement_WalkDown4)
+                waitmovement(0)
+                applymovement(LOCALID_CAMERA, Common_Movement_WalkRight5)
+                waitmovement(0)
+                special(RemoveCameraObject)
+                goto(Zone20B_EventScript_StartBossBattle)
+            } else {
+                msgbox(format("SO SAD! LET ME KNOW IF YOU CHANGE MIND!"))
+            }
+            release
+            end
+        }
+        setspeaker("Chili")
+        msgbox(format("SAY WHEN READY TO BATTLE!"))
+        release
+        end
+    }
+    setspeaker("Chili")
+    msgbox(format("NEED BEAT ALL STAFF!"))
+    release
+    end
+}
+
+script Zone20B_EventScript_Cress {
+    lock
+    faceplayer
+    if (flag(FLAG_BEAT_BOSS_20)) {
+        setspeaker("Cress")
+        msgbox(format("YOU BEAT US!"))
+        release
+        end
+    }
+    if (defeated(TRAINER_PBL_WALKER) && defeated(TRAINER_PBL_NATALIA) && defeated(TRAINER_PBL_DUNCAN) && defeated(TRAINER_PBL_EVALINE)) {
+        setspeaker("Cress")
+        msgbox(format("DEFEATED ALL! TIME TO BATTLE?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            msgbox(format("INTRO TEXT! EXPLAIN GIMMICK!"))
+            msgbox(format("YOU WANT TO BE PARTNERS WITH ME AGAINST MY BROTHERS, RIGHT?"), MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                msgbox(format("GREAT! LET'S GO BATTLE!"), MSGBOX_AUTOCLOSE)
+                fadescreenswapbuffers(FADE_TO_BLACK)
+                special(SpawnCameraObject)
+                applymovement(LOCALID_CAMERA, Common_Movement_WalkDown4)
+                waitmovement(0)
+                applymovement(LOCALID_CAMERA, Common_Movement_WalkLeft5)
+                waitmovement(0)
+                special(RemoveCameraObject)
+                goto(Zone20B_EventScript_StartBossBattle)
+            } else {
+                msgbox(format("SO SAD! LET ME KNOW IF YOU CHANGE MIND!"))
+            }
+            release
+            end
+        }
+        setspeaker("Cress")
+        msgbox(format("SAY WHEN READY TO BATTLE!"))
+        release
+        end
+    }
+    setspeaker("Cress")
+    msgbox(format("NEED BEAT ALL STAFF!"))
+    release
+    end
+}
+
+script Zone20B_EventScript_StartBossBattle {
+    lockall
+    hidefollower
+    setobjectxy(LOCALID_CORI_20B, 14, 7)
+    setobjectxy(LOCALID_PLAYER, 11, 8)
+    applymovement(LOCALID_CORI_20B, Common_Movement_FaceDown)
+    applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
+    switch (var(VAR_ZONE_20_STATE)) {
+        case 1:
+            setobjectxy(LOCALID_CILAN, 11, 9)
+            setobjectxy(LOCALID_CHILI, 17, 8)
+            setobjectxy(LOCALID_CRESS, 17, 9)
+            applymovement(LOCALID_CILAN, Common_Movement_FaceRight)
+            applymovement(LOCALID_CHILI, Common_Movement_FaceLeft)
+            applymovement(LOCALID_CRESS, Common_Movement_FaceLeft)
+            waitmovement(0)
+        case 2:
+            setobjectxy(LOCALID_CHILI, 11, 9)
+            setobjectxy(LOCALID_CILAN, 17, 8)
+            setobjectxy(LOCALID_CRESS, 17, 9)
+            applymovement(LOCALID_CHILI, Common_Movement_FaceRight)
+            applymovement(LOCALID_CILAN, Common_Movement_FaceLeft)
+            applymovement(LOCALID_CRESS, Common_Movement_FaceLeft)
+            waitmovement(0)
+        case 3:
+            setobjectxy(LOCALID_CRESS, 11, 9)
+            setobjectxy(LOCALID_CILAN, 17, 8)
+            setobjectxy(LOCALID_CHILI, 17, 9)
+            applymovement(LOCALID_CRESS, Common_Movement_FaceRight)
+            applymovement(LOCALID_CILAN, Common_Movement_FaceLeft)
+            applymovement(LOCALID_CHILI, Common_Movement_FaceLeft)
+            waitmovement(0)
+    }
+	fadescreenswapbuffers(FADE_FROM_BLACK)
     msgbox(format("OK! YOU'VE DECIDED! BATTLE TIME!"))
     call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+    special(SpawnCameraObject)
     switch (var(VAR_ZONE_20_STATE)) {
-        case 0:
-	        multi_2_vs_2(TRAINER_PBL_CHILI_BOSS_20, Zone20B_Text_Chili_Defeated, TRAINER_PBL_CRESS_BOSS_20, Zone20B_Text_Cress_Defeated, PARTNER_PBL_CILAN_BOSS_20)
         case 1:
-	        multi_2_vs_2(TRAINER_PBL_CILAN_BOSS_20, Zone20B_Text_Cilan_Defeated, TRAINER_PBL_CRESS_BOSS_20, Zone20B_Text_Cress_Defeated, PARTNER_PBL_CHILI_BOSS_20)
+            applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
+            applymovement(LOCALID_CILAN, Common_Movement_WalkRight)
+            applymovement(LOCALID_CHILI, Common_Movement_WalkLeft)
+            applymovement(LOCALID_CRESS, Common_Movement_WalkLeft)
+            waitmovement(0)
+            special(RemoveCameraObject)
+	        multi_2_vs_2(TRAINER_PBL_CHILI_BOSS_20, Zone20B_Text_Chili_Defeated, TRAINER_PBL_CRESS_BOSS_20, Zone20B_Text_Cress_Defeated, PARTNER_PBL_CILAN_BOSS_20)
         case 2:
+            applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
+            applymovement(LOCALID_CHILI, Common_Movement_WalkRight)
+            applymovement(LOCALID_CILAN, Common_Movement_WalkLeft)
+            applymovement(LOCALID_CRESS, Common_Movement_WalkLeft)
+            waitmovement(0)
+            special(RemoveCameraObject)
+	        multi_2_vs_2(TRAINER_PBL_CILAN_BOSS_20, Zone20B_Text_Cilan_Defeated, TRAINER_PBL_CRESS_BOSS_20, Zone20B_Text_Cress_Defeated, PARTNER_PBL_CHILI_BOSS_20)
+        case 3:
+            applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
+            applymovement(LOCALID_CRESS, Common_Movement_WalkRight)
+            applymovement(LOCALID_CILAN, Common_Movement_WalkLeft)
+            applymovement(LOCALID_CHILI, Common_Movement_WalkLeft)
+            waitmovement(0)
+            special(RemoveCameraObject)
 	        multi_2_vs_2(TRAINER_PBL_CILAN_BOSS_20, Zone20B_Text_Cilan_Defeated, TRAINER_PBL_CHILI_BOSS_20, Zone20B_Text_Chili_Defeated, PARTNER_PBL_CRESS_BOSS_20)
     }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	setspeaker("Liza")
+    setspeaker("Cori")
+    msgbox(format("OMG! SUCH GOOD BATTLE! LET'S GET CLEANED UP..."), MSGBOX_AUTOCLOSE)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    special(SpawnCameraObject)
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkUp3)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    setobjectxy(LOCALID_CORI_20B, 13, 7)
+    setobjectxy(LOCALID_PLAYER, 14, 7)
+    setobjectxy(LOCALID_CILAN, 14, 5)
+    setobjectxy(LOCALID_CHILI, 12, 4)
+    setobjectxy(LOCALID_CRESS, 16, 4)
+    applymovement(LOCALID_CORI_20B, Common_Movement_FaceUp)
+    applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+    applymovement(LOCALID_CILAN, Common_Movement_FaceDown)
+    applymovement(LOCALID_CHILI, Common_Movement_FaceDown)
+    applymovement(LOCALID_CRESS, Common_Movement_FaceDown)
+    waitmovement(0)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+	setspeaker("Cilan")
 	msgbox(format("It can't be helped. You've won…\pCongratulations. Please take the Mind Badge!"))
 	setspeaker(SP_NAME_NONE)
 	playfanfare(MUS_OBTAIN_BADGE)
 	msgbox(format("{PLAYER} received the Mind Badge from {COLOR BLUE}Liza{COLOR DARK_GRAY}!"))
 	waitfanfare
-	setspeaker("Grant")
-	msgbox(format("Since you now have the Mind Badge, you can use the HM {COLOR GREEN}Cut{COLOR DARK_GRAY} outside battle.\pI'd also like you to take this TM."))
+	setspeaker("Cilan")
+	msgbox(format("Since you now have the Mind Badge, you can use the HM {COLOR GREEN}Cut{COLOR DARK_GRAY} outside battle.\pALSO TAKE THIS!"))
 	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_TM_LIGHT_SCREEN)
-	setspeaker("Liza")
-	msgbox(format("That's it!\pFufufu…\pJust kidding, here's the other one as well. Us Gym Leaders give out multiple rewards!"))
+	giveitem(ITEM_TM_ENERGY_BALL)
+    closemessage
+    applymovement(LOCALID_CILAN, Zone20B_Movement_CenterToRight)
+    applymovement(LOCALID_CHILI, Zone20B_Movement_LeftToCenter)
+    applymovement(LOCALID_CRESS, Zone20B_Movement_RightToLeft)
+    waitmovement(0)
+	setspeaker("Chili")
+	msgbox(format("U GET THIS TM! HERE U GO!"))
 	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_TM_REFLECT)
-	setspeaker("Liza")
-	msgbox(format("You will become even stronger! I've battled you, so I know."))
+	giveitem(ITEM_TM_FLAMETHROWER)
+    closemessage
+    applymovement(LOCALID_CILAN, Zone20B_Movement_RightToLeft)
+    applymovement(LOCALID_CHILI, Zone20B_Movement_CenterToRight)
+    applymovement(LOCALID_CRESS, Zone20B_Movement_LeftToCenter)
+    waitmovement(0)
+	setspeaker("Cress")
+	msgbox(format("U GET THIS TM! HERE U GO!"))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_TM_SCALD)
+    closemessage
+    applymovement(LOCALID_CILAN, Zone20B_Movement_LeftToCenter)
+    applymovement(LOCALID_CHILI, Zone20B_Movement_RightToLeft)
+    applymovement(LOCALID_CRESS, Zone20B_Movement_CenterToRight)
+    waitmovement(0)
+	setspeaker("Cilan")
+	msgbox(format("GOOD WORK! WE GO BACK TO WORK NOW!"), MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_CHILI, Common_Movement_WalkLeft)
+    applymovement(LOCALID_CRESS, Common_Movement_WalkRight)
+    waitmovement(0)
+    special(SpawnCameraObject)
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkDown2)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    applymovement(LOCALID_CORI_20B, Common_Movement_FaceRight)
+    applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
+    waitmovement(0)
+    setspeaker("Cori")
+    msgbox(format("GOOD WORK AGAIN PLAYER!"), MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_CORI_20B, Common_Movement_WalkDown6)
+    waitmovement(0)
+    applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
+    waitmovement(0)
+    setobjectxy(LOCALID_CORI_20B, 14, 14)
     setflag(FLAG_BEAT_BOSS_20)
 	setflag(FLAG_BADGE06_GET)
-	releaseall
-	end
+    releaseall
+    end
 }
 
 text Zone20B_Text_Cilan_Defeated {
@@ -50,35 +309,21 @@ text Zone20B_Text_Cress_Defeated {
     format("CRESS DEFEATED!")
 }
 
-script Zone20B_EventScript_SelectPartner {
-    while {
-        message(format("Who do you want to be your partner against the other two?"))
-        waitmessage
-        dynmultipush("{COLOR GREEN}Cilan", 0)
-        dynmultipush("{COLOR RED}Chili", 1)
-        dynmultipush("{COLOR BLUE}Cress", 2)
-        dynmultistack(0, 0, TRUE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
-        switch (var(VAR_RESULT)) {
-            case 0:
-                msgbox(format("YOU SURE?"), MSGBOX_YESNO)
-                if (var(VAR_RESULT) == YES) {
-                    setvar(VAR_ZONE_20_STATE, 0)
-                    return
-                }
-            case 1:
-                msgbox(format("YOU SURE?"), MSGBOX_YESNO)
-                if (var(VAR_RESULT) == YES) {
-                    setvar(VAR_ZONE_20_STATE, 1)
-                    return
-                }
-            case 2:
-                msgbox(format("YOU SURE?"), MSGBOX_YESNO)
-                if (var(VAR_RESULT) == YES) {
-                    setvar(VAR_ZONE_20_STATE, 2)
-                    return
-                }
-        }
-    }
+movement Zone20B_Movement_LeftToCenter {
+    walk_down
+    walk_right * 2
+    face_down
+}
+
+movement Zone20B_Movement_CenterToRight {
+    walk_right * 2
+    walk_up
+    face_down
+}
+
+movement Zone20B_Movement_RightToLeft {
+    walk_left * 4
+    face_down
 }
 
 script Zone20B_EventScript_Walker {

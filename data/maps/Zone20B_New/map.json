@@ -65,6 +65,62 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Zone20B_EventScript_Evaline",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_CILAN",
+      "graphics_id": "OBJ_EVENT_GFX_ROXANNE",
+      "x": 14,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone20B_EventScript_Cilan",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_CHILI",
+      "graphics_id": "OBJ_EVENT_GFX_BRAWLY",
+      "x": 11,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone20B_EventScript_Chili",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_CRESS",
+      "graphics_id": "OBJ_EVENT_GFX_WATTSON",
+      "x": 17,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone20B_EventScript_Cress",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_CORI_20B",
+      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_F",
+      "x": 14,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone20B_EventScript_Cori",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -76,16 +132,6 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_ZONE_20_STATE",
-      "var_value": "0",
-      "script": "Zone20B_EventScript_TriggerBossBattle"
-    }
-  ],
+  "coord_events": [],
   "bg_events": []
 }
