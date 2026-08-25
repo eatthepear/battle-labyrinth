@@ -3212,6 +3212,94 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
+=== TRAINER_PBL_WINSTON ===
+Name: Winston
+Class: Rich Boy
+Pic: Rich Boy
+Music: Rich
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_20
+
+=== TRAINER_PBL_VIVIAN ===
+Name: Melinda
+Class: Lady
+Pic: Lady
+Music: Rich
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_20
+
+=== TRAINER_PBL_HAYES ===
+Name: Hayes
+Class: Gentleman
+Pic: Gentleman
+Music: Rich
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_20
+
+=== TRAINER_PBL_OPHELIA ===
+Name: Ophelia
+Class: Socialite
+Pic: Socialite
+Music: Rich
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_20
+
+=== TRAINER_PBL_WALKER ===
+Name: Walker
+Class: Waiter
+Pic: Waiter
+Music: Rich
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_20_FOOD
+
+=== TRAINER_PBL_NATALIA ===
+Name: Natalia
+Class: Waitress
+Pic: Waitress
+Music: Rich
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_20_FOOD
+
+=== TRAINER_PBL_DUNCAN ===
+Name: Duncan
+Class: Waiter
+Pic: Waiter
+Music: Rich
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_20_FOOD
+
+=== TRAINER_PBL_EVALINE ===
+Name: Evaline
+Class: Waitress
+Pic: Waitress
+Music: Rich
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_20_FOOD
+
 === TRAINER_PBL_CILAN_BOSS_20 ===
 Name: Cilan
 Class: Rival
@@ -6518,6 +6606,16 @@ Party Size: 1
 Bulbasaur
 
 === TRAINER_POOL_ZONE_20 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_20_FOOD ===
 Name: Trainer Pool
 Class: Champion
 Pic: Champion Wallace

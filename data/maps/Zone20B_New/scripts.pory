@@ -80,3 +80,27 @@ script Zone20B_EventScript_SelectPartner {
         }
     }
 }
+
+script Zone20B_EventScript_Walker {
+	trainerbattle_single(TRAINER_PBL_WALKER, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone20B_EventScript_Natalia {
+	trainerbattle_single(TRAINER_PBL_NATALIA, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone20B_EventScript_Duncan {
+	trainerbattle_single(TRAINER_PBL_DUNCAN, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone20B_EventScript_Evaline {
+	trainerbattle_single(TRAINER_PBL_EVALINE, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}

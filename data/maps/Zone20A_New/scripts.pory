@@ -1,1 +1,25 @@
 mapscripts Zone20A_New_MapScripts {}
+
+script Zone20A_EventScript_Winston {
+	trainerbattle_single(TRAINER_PBL_WINSTON, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone20A_EventScript_Vivian {
+	trainerbattle_single(TRAINER_PBL_VIVIAN, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone20A_EventScript_Hayes {
+	trainerbattle_single(TRAINER_PBL_HAYES, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone20A_EventScript_Ophelia {
+	trainerbattle_single(TRAINER_PBL_OPHELIA, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}

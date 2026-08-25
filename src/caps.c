@@ -177,7 +177,7 @@ static const u32 sNumFoes[] =
     1,
     40,
     40,
-    27, // zone 20
+    26, // zone 20
     28,
     30,
     32,
