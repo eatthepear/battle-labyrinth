@@ -2,7 +2,7 @@
   "id": "MAP_ZONE20A_NEW",
   "name": "Zone20A_New",
   "layout": "LAYOUT_ZONE20A_NEW",
-  "music": "MUS_DUMMY",
+  "music": "MUS_BW_STRIATON",
   "region_map_section": "MAPSEC_ZONE_20",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

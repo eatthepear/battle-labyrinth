@@ -2,7 +2,7 @@
   "id": "MAP_ZONE24B",
   "name": "Zone24B",
   "layout": "LAYOUT_ZONE24B",
-  "music": "MUS_FORTREE",
+  "music": "MUS_BW_ROUTE10",
   "region_map_section": "MAPSEC_ZONE_24",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
