@@ -107,24 +107,6 @@ script Zone23A_EventScript_TMEnergyBall {
 }
 
 raw `
-Zone23A_EventScript_Exit::
-	lockall
-	compare VAR_ZONE, 23
-	goto_if_gt EventScript_WarpZone0
-	warp MAP_ZONE_SANCTUARY, 255, 22, 7
-	releaseall
-	end
-
-Zone23A_EventScript_CheckBrutal:
-	goto_if_not_defeated TRAINER_PBL_EDGARDO, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_JEAN, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_ROSE, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_JENNIFER, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_MATTHEW, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_KERRY, EventScript_BrutalExitNotSatisfied
-	goto_if_not_defeated TRAINER_PBL_ANNIE, EventScript_BrutalExitNotSatisfied
-	return
-
 Zone23A_EventScript_XScissor::
 	lock
 	faceplayer

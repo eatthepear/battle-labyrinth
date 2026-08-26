@@ -191,24 +191,6 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 51,
-      "y": 16,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone21A_EventScript_Exit"
-    },
-    {
-      "type": "trigger",
-      "x": 51,
-      "y": 17,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone21A_EventScript_Exit"
-    },
-    {
-      "type": "trigger",
       "x": 30,
       "y": 63,
       "elevation": 1,
@@ -245,14 +227,6 @@
     }
   ],
   "bg_events": [
-    {
-      "type": "sign",
-      "x": 49,
-      "y": 15,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "EventScript_ExitSign"
-    },
     {
       "type": "sign",
       "x": 32,

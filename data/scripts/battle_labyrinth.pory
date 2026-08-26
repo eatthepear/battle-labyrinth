@@ -148,18 +148,6 @@ mart Sanctuary_Shop_TMShop {
 	ITEM_TM_SWORDS_DANCE
 }
 
-script EventScript_WarpZone0 {
-	closemessage
-	playmoncry(SPECIES_PORYGON, 0)
-	waitmoncry
-	clearflag(FLAG_IS_REVISITING_ZONE)
-	setvar(VAR_REVISITING_ZONE, 0)
-	warp(MAP_ZONE0A, 1, 255, 255)
-	waitstate
-	releaseall
-	end
-}
-
 text gText_ItemChestIsEmpty {
 	format("The item chest is empty.")
 }
@@ -478,12 +466,6 @@ script EventScript_PorygonExit {
     release
     end
 }
-
-raw `
-EventScript_ExitSign::
-	msgbox gText_ExitSign, MSGBOX_SIGN
-	end
-`
 
 script EventScript_ShakeTree {
 	lockall

@@ -293,6 +293,7 @@ script Zone20B_EventScript_StartBossBattle {
     setobjectxy(LOCALID_CORI_20B, 14, 14)
     setflag(FLAG_BEAT_BOSS_20)
 	setflag(FLAG_BADGE06_GET)
+    clearflag(FLAG_HIDE_ZONE20A_PORYGON)
     releaseall
     end
 }
