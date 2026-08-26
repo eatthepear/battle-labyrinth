@@ -573,7 +573,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setflag(FLAG_HIDE_ZONE6A_MAX)
 			completesubquest(QUEST_PBL, 5)
 			setvar(VAR_ZONE, 7)
-			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
+			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREENSanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 7:
 			setflag(FLAG_ZONE7B_HEAL_USED)
 			completesubquest(QUEST_PBL, 6)
@@ -597,7 +597,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 12:
 			completesubquest(QUEST_PBL, 11)
 			setvar(VAR_ZONE, 13)
-			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
+			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREENSanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 13:
 			setflag(FLAG_HIDE_ZONE13A_MAX)
 			completesubquest(QUEST_PBL, 12)
@@ -617,7 +617,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 17:
 			completesubquest(QUEST_PBL, 16)
 			setvar(VAR_ZONE, 18)
-			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
+			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREENSanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 18:
 			completesubquest(QUEST_PBL, 17)
 			completesubquest(QUEST_PBL, 18)
@@ -634,7 +634,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 23:
 			completesubquest(QUEST_PBL, 23)
 			setvar(VAR_ZONE, 24)
-			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access a Sanctuary in between the Zones."), MSGBOX_DEFAULT)
+			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREENSanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 24:
 			completesubquest(QUEST_PBL, 24)
 			completesubquest(QUEST_PBL, 25)
