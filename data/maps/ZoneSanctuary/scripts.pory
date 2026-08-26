@@ -377,12 +377,12 @@ script EventScript_NextZone {
 			setflag(FLAG_HIDE_ZONE18A_GRUNTS)
 			setflag(FLAG_HIDE_ZONE18A_BOAT)
 			setflag(FLAG_HIDE_ZONE19D_AQUA)
-		// case 20:
-		// 	warp(MAP_ZONE20A, 255, 8, 2)
+		case 20:
+			warp(MAP_ZONE20A_NEW, 255, 35, 13)
 		case 21:
 			warp(MAP_ZONE21A, 255, 16, 93)
-		// case 22:
-		// 	warp(MAP_ZONE22A, 255, 8, 2)
+		case 22:
+			warp(MAP_ZONE22A, 255, 9, 50)
 		case 23:
 			warp(MAP_ZONE23A, 255, 8, 2)
 		case 24:
