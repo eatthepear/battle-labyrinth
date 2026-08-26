@@ -65,7 +65,7 @@ script Zone2A_EventScript_Max {
 
 script Zone2A_EventScript_TriggerLeaf {
 	lockall
-	applymovement(LOCALID_LEAF_2A, Common_Movement_FaceLeft)
+	applymovement(LOCALID_LEAF_2A, Common_Movement_FaceUp)
 	waitmovement(0)
 	playbgm(MUS_BW_FRIEND, TRUE)
 	applymovement(LOCALID_LEAF_2A, Common_Movement_ExclamationMark)
@@ -85,7 +85,7 @@ script Zone2A_EventScript_TriggerLeaf {
 			applymovement(LOCALID_LEAF_2A, Common_Movement_WalkRight2)
 			waitmovement(0)
 	}
-	applymovement(LOCALID_LEAF_2A, Common_Movement_WalkLeft3)
+	applymovement(LOCALID_LEAF_2A, Common_Movement_WalkUp2)
 	waitmovement(0)
 	setspeaker("Leaf")
 	msgbox(format("Hi! My name's {COLOR BLUE}Leaf{COLOR DARK_GRAY}.\pIf you want to go forward, you'll have to beat me!\pSo, are you ready for our battle?"), MSGBOX_YESNO)
@@ -93,7 +93,7 @@ script Zone2A_EventScript_TriggerLeaf {
 		msgbox(format("Okay. You just let me know when you're ready!"), MSGBOX_AUTOCLOSE)
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 		waitmovement(0)
-		applymovement(LOCALID_LEAF_2A, Common_Movement_WalkDown3)
+		applymovement(LOCALID_LEAF_2A, Common_Movement_WalkDown2)
 		waitmovement(0)
 		switch(var(VAR_TEMP_0)) {
 			case 47:
@@ -123,7 +123,7 @@ script Zone2A_EventScript_TriggerLeaf {
 	setspeaker("Leaf")
 	msgbox(format("Good job! That was a great battle. I think I'll wait here for more challengers to pass through, you should go on ahead! I want to battle them all."), MSGBOX_AUTOCLOSE)
 	setflag(FLAG_BEAT_BOSS_2)
-	setvar(VAR_ZONE_1_STATE, 2)
+	setvar(VAR_ZONE_2_STATE, 2)
 	fadedefaultbgm
 	releaseall
 	end
