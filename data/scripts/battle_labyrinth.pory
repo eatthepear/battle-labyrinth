@@ -2855,3 +2855,12 @@ script EventScript_Tangela {
 	waitmoncry
 	release
 }
+
+script EventScript_Beartic {
+	lock
+	faceplayer
+	playmoncry(SPECIES_BEARTIC, CRY_MODE_NORMAL)
+	msgbox(format("Bear!"))
+	waitmoncry
+	release
+}
