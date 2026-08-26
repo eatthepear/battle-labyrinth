@@ -25,7 +25,7 @@ script Zone13A_EventScript_Serena {
 	setspeaker("Serena")
 	msgbox(format("U r too stronk. Here, take item."))
 	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_HM_SURF)
+	giveitem(ITEM_SHALOUR_SABLE, 5)
 	setspeaker("Serena")
 	msgbox(format("These bad people are good, but I stronger, and I beat up bad people. See u later, we battle again!"), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_SERENA_13A, Common_Movement_FaceUp)

@@ -1771,6 +1771,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_DRAGON_FANG)
 	additem(ITEM_FIRE_STONE)
 	additem(ITEM_METAL_COAT)
+	additem(ITEM_SHALOUR_SABLE, 5)
 	additem(ITEM_TM_ATTRACT)
 
 	if (var(VAR_ZONE) == 15) {
@@ -1779,6 +1780,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_SHELL_BELL)
 	additem(ITEM_ICE_STONE)
 	additem(ITEM_TM_AURORA_VEIL)
+	additem(ITEM_HM_SURF)
 
 	if (var(VAR_ZONE) == 16) {
 		return

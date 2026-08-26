@@ -513,7 +513,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 13:
 			msgbox(format("Ultra Balls!"))
 		case 15:
-			msgbox(format("Ultra Balls!"))
+			msgbox(format("{COLOR GREEN}HM03 - Surf{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_HM_SURF)
 		case 16:
 			msgbox(format("Ultra Balls!"))
 		case 17:
