@@ -77,11 +77,11 @@ script Zone3A_EventScript_GymGuide {
 script Zone3A_EventScript_Bill {
 	lock
 	faceplayer
-	if (defeated(TRAINER_PBL_BILL_OPTIONAL_1)) {
+	if (flag(FLAG_ZONE3A_DEFEATED_OPTIONAL)) {
 		call(Zone3A_EventScript_Bill_End)
 	}
 	setspeaker("Bill")
-	msgbox(format("You look poor as dirt!\pTell you what, you look like you're in need of cash, and I need someone to test out my {COLOR GREEN}Rollout{COLOR DARK_GRAY} team on.\pIf you defeat me in a battle, I'll give you a {COLOR GREEN}Nugget{COLOR DARK_GRAY}!"), MSGBOX_YESNO)
+	msgbox(format("You look poor as dirt!\pTell you what, you look like you're in need of cash, and I need someone to test out my {COLOR GREEN}Rollout{COLOR DARK_GRAY} team on.\pCare to battle?!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		msgbox(format("Fair enough, I wouldn't want to get crushed by me either.\pCome back if you change your mind."))
 		release
@@ -89,18 +89,19 @@ script Zone3A_EventScript_Bill {
 	}
 	msgbox(format("Now that's what I'm talking about! Let's battle!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_BILL_OPTIONAL_1, format("That didn't go as well as I thought it would."))
+	trainerbattle_no_intro(TRAINER_PBL_BILL_OPTIONAL_3, format("That didn't go as well as I thought it would."))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Bill")
 	msgbox(format("To the victor goes the spoils."))
 	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_NUGGET)
+	giveitem(ITEM_METRONOME)
+	setflag(FLAG_ZONE3A_DEFEATED_OPTIONAL)
 	call(Zone3A_EventScript_Bill_End)
 }
 
 script Zone3A_EventScript_Bill_End {
 	setspeaker("Bill")
-	msgbox(format("I heard there's a move like {COLOR GREEN}Rollout{COLOR DARK_GRAY}, but Ice-type instead.\pThat sounds pretty neat!"))
+	msgbox(format("A {COLOR GREEN}Metronome{COLOR DARK_GRAY} boosts the power of a move used consecutively in battle.\pWait, what do you mean it doesn't boost the power of Rollout?\pThese interactions are so confusing!"))
 	release
 	end
 }

@@ -4550,10 +4550,11 @@ u16 GetNumTrainersRemaining(void)
         count += !FlagGet(FLAG_BEAT_BOSS_2);
         break;
     case 3:
-        for (trainer = TRAINER_PBL_JEMMA; trainer <= TRAINER_PBL_BILL_OPTIONAL_1; trainer++) {
+        for (trainer = TRAINER_PBL_JEMMA; trainer <= TRAINER_PBL_BORIS; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
+        count += !FlagGet(FLAG_ZONE3A_DEFEATED_OPTIONAL);
         count += !FlagGet(FLAG_BEAT_BOSS_3);
         break;
     case 4:
@@ -4564,7 +4565,7 @@ u16 GetNumTrainersRemaining(void)
         count += !FlagGet(FLAG_BEAT_BOSS_4);
         break;
     case 5:
-        for (trainer = TRAINER_PBL_REBECCA; trainer <= TRAINER_PBL_MELINDA_OPTIONAL_2; trainer++) {
+        for (trainer = TRAINER_PBL_REBECCA; trainer <= TRAINER_PBL_FRED; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }

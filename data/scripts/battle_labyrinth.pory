@@ -1652,6 +1652,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_WISE_GLASSES)
 	additem(ITEM_TM_ROCK_TOMB)
 	additem(ITEM_HARD_STONE)
+	additem(ITEM_METRONOME)
 	additem(ITEM_NEST_BALL, 5)
 	additem(ITEM_LAVA_COOKIE)
 

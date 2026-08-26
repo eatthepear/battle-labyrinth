@@ -462,7 +462,6 @@ Pic: Youngster
 Music: Male
 AI: AI_FLAG_BOSS
 Double Battle: No
-Mugshot: Green
 
 Bunnelby @ Oran Berry
 Sassy Nature
@@ -535,7 +534,7 @@ Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_3
 
-=== TRAINER_PBL_BILL_OPTIONAL_1 ===
+=== TRAINER_PBL_BILL_OPTIONAL_3 ===
 Name: Bill
 Class: Rich Boy
 Pic: Rich Boy
