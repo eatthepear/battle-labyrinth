@@ -1295,25 +1295,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shock Wave
 - Icy Wind
 
-=== TRAINER_PBL_BETTY_BOSS_7 ===
+=== TRAINER_PBL_BETTY_OPTIONAL_7 ===
 Name: Betty
-Class: Socialite
-Pic: Socialite
+Class: Lady
+Pic: Lady
 Music: Rich
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Green
 
-Drifloon @ Sitrus Berry
-Naughty Nature
-Ability: Unburden
-Level: 18
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Acrobatics
-- Hex
-- Will-O-Wisp
-- Tackle
-
 Dedenne @ Sitrus Berry
 Timid Nature
 Ability: Cheek Pouch
@@ -1323,60 +1313,14 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Draining Kiss
 - Nuzzle
 
-Klawf @ Sitrus Berry
+Tropius @ Sitrus Berry
 Careful Nature
-Ability: Anger Shell
+Ability: Harvest
 Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rock Tomb
-- Bulldoze
-- Trailblaze
-
-=== TRAINER_PBL_BETTY_BOSS_7 ===
-Name: Betty
-Class: Socialite
-Pic: Socialite
-Music: Female
-AI: AI_FLAG_BOSS
-Double Battle: No
-Mugshot: Green
-Difficulty: Brutal
-
-Drifloon @ Sitrus Berry
-Naughty Nature
-Ability: Unburden
-Level: 18
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Acrobatics
-- Hex
-- Will-O-Wisp
-
-Dedenne @ Sitrus Berry
-Timid Nature
-Ability: Cheek Pouch
-Level: 18
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Parabolic Charge
-- Draining Kiss
-- Nuzzle
-
-Klawf @ Sitrus Berry
-Careful Nature
-Ability: Anger Shell
-Level: 20
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rock Tomb
-- Bulldoze
-- Trailblaze
-
-Appletun @ Sitrus Berry
-Quiet Nature
-Ability: Ripen
-Level: 18
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Magical Leaf
-- Stomp
-- Leech Seed
+- Razor Leaf
+- Aerial Ace
+- Natural Gift
 
 === TRAINER_PBL_GALACTIC_GRUNT_8C_1 ===
 Name: Grunt

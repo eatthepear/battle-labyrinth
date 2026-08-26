@@ -4583,6 +4583,7 @@ u16 GetNumTrainersRemaining(void)
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
+        count += !FlagGet(FLAG_ZONE7B_DEFEATED_OPTIONAL);
         count += !FlagGet(FLAG_BEAT_BOSS_7);
         for (trainer = TRAINER_PBL_GALACTIC_GRUNT_8C_1; trainer <= TRAINER_PBL_GALACTIC_GRUNT_8C_4; trainer++) {
             if (!HasTrainerBeenFought(trainer))

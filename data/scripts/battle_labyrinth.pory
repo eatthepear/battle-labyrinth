@@ -1691,6 +1691,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_SHARP_BEAK)
 	additem(ITEM_BLACK_BELT)
 	additem(ITEM_TM_DRAINING_KISS)
+	additem(ITEM_TM_NATURAL_GIFT)
 	additem(ITEM_MAGNET)
 	additem(ITEM_SMOKE_BALL)
 	additem(ITEM_RED_SHARD, 5)
