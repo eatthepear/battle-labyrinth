@@ -1049,7 +1049,7 @@ Music: Girl
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Finneon @ Cheri Berry
+Finneon
 Modest Nature
 Ability: Swift Swim
 Level: 15
@@ -1058,7 +1058,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Gust
 - Attract
 
-Barboach @ Wise Glasses
+Barboach
 Calm Nature
 Ability: Hydration
 Level: 15
@@ -1067,7 +1067,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Mud Bomb
 - Rest
 
-Goldeen @ Silk Scarf
+Goldeen
 Naughty Nature
 Ability: Swift Swim
 Level: 15
@@ -1084,7 +1084,7 @@ Music: Girl
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Pyukumuku @ Pecha Berry
+Pyukumuku
 Calm Nature
 Ability: Innards Out
 Level: 16
@@ -1101,7 +1101,7 @@ Music: Swimmer
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Wiglett @ Muscle Band
+Wiglett
 Naughty Nature
 Ability: Gooey
 Level: 17
@@ -1110,7 +1110,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Wrap
 - Mud Slap
 
-Mantyke @ Chesto Berry
+Mantyke
 Lonely Nature
 Ability: Swift Swim
 Level: 17
@@ -1119,7 +1119,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Wing Attack
 - Slam
 
-Corsola @ Sitrus Berry
+Corsola
 Modest Nature
 Ability: Regenerator
 Level: 17
@@ -1513,12 +1513,12 @@ Music: Male
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Trumbeak @ Sharp Beak
+Squawkabilly
 Hasty Nature
-Ability: Skill Link
+Ability: Intimidate
 Level: 21
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Pluck
+- Aerial Ace
 - Fury Attack
 - Roost
 
@@ -1530,7 +1530,7 @@ Music: Girl
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Carnivine @ Sitrus Berry
+Carnivine
 Relaxed Nature
 Ability: Levitate
 Level: 22
@@ -1547,7 +1547,7 @@ Music: Twins
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Seel @ Eviolite
+Seel
 Modest Nature
 Ability: Thick Fat
 Level: 22
@@ -1565,7 +1565,7 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Difficulty: Brutal
 
-Seel @ Eviolite
+Seel
 Modest Nature
 Ability: Thick Fat
 Level: 22
@@ -1574,14 +1574,14 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Icy Wind
 - Aqua Ring
 
-Wailmer @ Eviolite
-Calm Nature
+Ducklett
+Hasty Nature
 Ability: Oblivious
 Level: 22
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Whirlpool
-- Bounce
-- Protect
+- Bubble Beam
+- Air Cutter
+- Aqua Jet
 
 === TRAINER_PBL_DOMINIC ===
 Name: Dominic
@@ -1591,7 +1591,7 @@ Music: Twins
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Morpeko @ Sitrus Berry
+Morpeko
 Jolly Nature
 Ability: Hunger Switch
 Level: 22
