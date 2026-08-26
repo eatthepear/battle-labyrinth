@@ -1640,7 +1640,8 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_SILK_SCARF)
 	additem(ITEM_TM_BUG_BITE)
 	additem(ITEM_TM_HIDDEN_POWER)
-	additem(ITEM_TM_NATURAL_GIFT)
+	additem(ITEM_PECHA_BERRY, 3)
+	additem(ITEM_CHERI_BERRY, 3)
 	additem(ITEM_HM_ROCK_SMASH)
 	additem(ITEM_REVIVE, 5)
 

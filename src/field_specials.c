@@ -4546,6 +4546,7 @@ u16 GetNumTrainersRemaining(void)
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
+        count += !FlagGet(FLAG_ZONE2A_DEFEATED_OPTIONAL);
         count += !FlagGet(FLAG_BEAT_BOSS_2);
         break;
     case 3:

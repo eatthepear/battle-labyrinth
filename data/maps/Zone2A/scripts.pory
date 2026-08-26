@@ -141,7 +141,7 @@ script Zone2A_EventScript_Leaf {
 script Zone2A_EventScript_Shaun {
 	lock
 	faceplayer
-	if (checkitem(ITEM_TM_NATURAL_GIFT) == TRUE) {
+	if (flag(FLAG_ZONE2A_DEFEATED_OPTIONAL) == TRUE) {
 		setspeaker("Shaun")
 		msgbox(Zone2A_Text_Shaun_Post)
 		release
@@ -169,20 +169,22 @@ script Zone2A_EventScript_Shaun {
 	msgbox(format("All right then, let's battle!"))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_SHAUN_BOSS_2, format("Ack! I lost again!\pDoggone it!"))
+	trainerbattle_no_intro(TRAINER_PBL_SHAUN_OPTIONAL_2, format("Ack! I lost again!\pDoggone it!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Shaun")
-	msgbox(format("Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though! I enjoyed our battle so much, I want to give you this!"))
+	msgbox(format("Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though! I enjoyed our battle so much, I want to give you these!"))
 	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_TM_NATURAL_GIFT)
+	giveitem(ITEM_PECHA_BERRY, 3)
+	giveitem(ITEM_CHERI_BERRY, 3)
 	setspeaker("Shaun")
 	msgbox(Zone2A_Text_Shaun_Post)
+	setflag(FLAG_ZONE2A_DEFEATED_OPTIONAL)
 	release
 	end
 }
 
 text Zone2A_Text_Shaun_Post {
-	format("{COLOR GREEN}Natural Gift{COLOR DARK_GRAY} is a great TM to use with Berries!\pIt consumes a held Berry to deal damage, and changes type and power based on the type of berry!\pI know an Oran Berry deals Poison damage and a Cheri Berry deals Fire damage.\pCounterintuitive, right?")
+	format("Berries come in all sorts of shapes and sizes.\pIt's best to have a great variety of them!")
 }
 
 script Zone2A_EventScript_BuyBug {

@@ -455,7 +455,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Poison Powder
 - Rock Smash
 
-=== TRAINER_PBL_SHAUN_BOSS_2 ===
+=== TRAINER_PBL_SHAUN_OPTIONAL_2 ===
 Name: Shaun
 Class: Rising Star
 Pic: Youngster
@@ -471,14 +471,6 @@ Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 - Leer
-
-Smoliv @ Oran Berry
-Relaxed Nature
-Ability: Harvest
-Level: 7
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Tackle
-- Mega Drain
 
 Skwovet @ Oran Berry
 Adamant Nature
