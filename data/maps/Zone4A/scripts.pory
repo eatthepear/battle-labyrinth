@@ -119,7 +119,7 @@ script Zone4A_EventScript_SilverPowder {
 	}
 	waitse
 	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 	setflag(FLAG_ITEM_ZONE4A_SILVER_POWDER)
 	addobject(VAR_LAST_TALKED)
 	finditem(ITEM_SILVER_POWDER, 1)
