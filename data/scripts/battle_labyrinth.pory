@@ -1819,6 +1819,9 @@ script Debug_CheatStart_PBL_GiveItems {
 	}
 	additem(ITEM_SHINY_STONE)
 	additem(ITEM_EXPERT_BELT)
+	additem(ITEM_TM_GIGA_DRAIN)
+	additem(ITEM_TM_FLAMETHROWER)
+	additem(ITEM_TM_SCALD)
 
 	if (var(VAR_ZONE) == 21) {
 		return
@@ -1828,6 +1831,7 @@ script Debug_CheatStart_PBL_GiveItems {
 		return
 	}
 	additem(ITEM_HM_WATERFALL)
+	additem(ITEM_TM_DRAIN_PUNCH)
 
 	if (var(VAR_ZONE) == 23) {
 		return

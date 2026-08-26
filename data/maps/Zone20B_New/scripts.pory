@@ -248,7 +248,7 @@ script Zone20B_EventScript_StartBossBattle {
 	setspeaker("Cilan")
 	msgbox(format("Since you now have the Mind Badge, you can use the HM {COLOR GREEN}Cut{COLOR DARK_GRAY} outside battle.\pALSO TAKE THIS!"))
 	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_TM_ENERGY_BALL)
+	giveitem(ITEM_TM_GIGA_DRAIN)
     closemessage
     applymovement(LOCALID_CILAN, Zone20B_Movement_CenterToRight)
     applymovement(LOCALID_CHILI, Zone20B_Movement_LeftToCenter)
