@@ -836,21 +836,25 @@ script EventScript_GameIntro_Difficulty {
 					case DIFFICULTY_EASY:
 						msgbox(format("Are you sure you want to play on {COLOR GREEN}Easy{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 						if (var(VAR_RESULT) == YES) {
+							msgbox(format("Difficulty set to {COLOR GREEN}Easy{COLOR DARK_GRAY}."))
 							return
 						}
 					case DIFFICULTY_NORMAL:
 						msgbox(format("Are you sure you want to play on {COLOR GREEN}Normal{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 						if (var(VAR_RESULT) == YES) {
+							msgbox(format("Difficulty set to {COLOR GREEN}Normal{COLOR DARK_GRAY}."))
 							return
 						}
 					case DIFFICULTY_HARD:
 						msgbox(format("Are you sure you want to play on {COLOR GREEN}Hard{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 						if (var(VAR_RESULT) == YES) {
+							msgbox(format("Difficulty set to {COLOR GREEN}Hard{COLOR DARK_GRAY}."))
 							return
 						}
 					case DIFFICULTY_BRUTAL:
 						msgbox(format("Are you sure you want to play on {COLOR GREEN}Brutal{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 						if (var(VAR_RESULT) == YES) {
+							msgbox(format("Difficulty set to {COLOR GREEN}Brutal{COLOR DARK_GRAY}."))
 							setflag(FLAG_TRUE_BRUTAL)
 							return
 						}
