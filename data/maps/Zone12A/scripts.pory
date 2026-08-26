@@ -72,6 +72,7 @@ script Zone12A_EventScript_TriggerKimonoGirl {
 	setflag(FLAG_HIDE_ZONE12A_KIMONO_GIRL)
 	removeobject(LOCALID_KIMONO_GIRL_12A)
 	setvar(VAR_ZONE_12_STATE, 1)
+	fadedefaultbgm
 	releaseall
 	end
 }

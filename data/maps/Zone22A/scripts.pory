@@ -8,6 +8,67 @@ mapscripts Zone22A_MapScripts {
 	}
 }
 
+script Zone22A_EventScript_CallForHelp {
+	lockall
+	setspeaker("???")
+	msgbox(format("Help! Someone!"))
+	setspeaker(SP_NAME_NONE)
+	msgbox(format("It sounds like someone is calling for help to the south of here!"), MSGBOX_AUTOCLOSE)
+	setvar(VAR_ZONE_22_STATE, 1)
+	releaseall
+	end
+}
+
+script Zone22A_EventScript_DontLeave {
+	lockall
+	msgbox(format("You can't just leave that person to fend for help by themselves!"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
+	waitmovement(0)
+	releaseall
+	end
+}
+
+script Zone22A_EventScript_KimonoGirl {
+	lock
+	faceplayer
+	playbgm(MUS_HG_KIMONO_GIRL, 0)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 56) {
+		msgbox(format("{PLAYER} gave the {COLOR BLUE}Kimono Girl{COLOR DARK_GRAY} a gentle shove!"))
+		setspeaker("Kimono Girl")
+		msgbox(format("I THINK I'M GOOD! THANK U! HERE'S AN HM!"))
+		setspeaker(SP_NAME_NONE)
+		giveitem(ITEM_HM_WATERFALL)
+		setspeaker("Kimono Girl")
+		msgbox(format("BYE!"), MSGBOX_AUTOCLOSE)
+		applymovement(LOCALID_KIMONO_GIRL_22A, Zone22A_Movement_KimonoGirlExit)
+		waitmovement(0)
+		removeobject(LOCALID_KIMONO_GIRL_22A)
+		setflag(FLAG_HIDE_ZONE22A_KIMONO_GIRL)
+		setvar(VAR_ZONE_22_STATE, 2)
+		fadedefaultbgm
+		release
+		end
+	}
+	setspeaker("Kimono Girl")
+	msgbox(format("HELP! PUSH ME FROM THE RIGHT SIDE PLEASE!"))
+	if (var(VAR_ZONE_22_STATE) == 0) {
+		setvar(VAR_ZONE_22_STATE, 1)
+	}
+	fadedefaultbgm
+	release
+	end
+}
+
+movement Zone22A_Movement_KimonoGirlExit {
+	walk_left
+	slide_left * 4
+	walk_left
+	face_right
+	delay_16 * 5
+	walk_left
+}
+
 script Zone22A_EventScript_Maylene {
 	lock
 	faceplayer
@@ -60,20 +121,6 @@ script Zone22A_EventScript_LightClay {
 	setflag(FLAG_ITEM_ZONE22A_LIGHT_CLAY)
 	addobject(VAR_LAST_TALKED)
 	finditem(ITEM_LIGHT_CLAY)
-	release
-	end
-}
-
-script Zone22A_EventScript_KimonoGirl {
-	lock
-	faceplayer
-	setspeaker("Kimono Girl")
-	msgbox(format("HELLO! HERE ITEM!"))
-	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_HM_WATERFALL)
-	setspeaker("Kimono Girl")
-	msgbox(format("GOOD! GOODBYE!"), MSGBOX_AUTOCLOSE)
-	// movement
 	release
 	end
 }

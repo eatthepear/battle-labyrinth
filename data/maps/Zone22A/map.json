@@ -94,14 +94,14 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RANGER_M",
-      "x": 43,
-      "y": 17,
+      "x": 39,
+      "y": 25,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_sight_or_berry_tree_id": "5",
       "script": "Zone22A_EventScript_Cornelius",
       "flag": "0"
     },
@@ -159,6 +159,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_KIMONO_GIRL_22A",
       "graphics_id": "OBJ_EVENT_GFX_KIMONO_GIRL",
       "x": 55,
       "y": 24,
@@ -168,8 +169,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Zone22A_EventScript_KimonoGirl",
+      "flag": "FLAG_HIDE_ZONE22A_KIMONO_GIRL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
@@ -199,7 +200,35 @@
     }
   ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_ZONE_22_STATE",
+      "var_value": "0",
+      "script": "Zone22A_EventScript_CallForHelp"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_ZONE_22_STATE",
+      "var_value": "0",
+      "script": "Zone22A_EventScript_CallForHelp"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_ZONE_22_STATE",
+      "var_value": "1",
+      "script": "Zone22A_EventScript_DontLeave"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",
