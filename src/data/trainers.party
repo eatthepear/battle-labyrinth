@@ -3085,15 +3085,25 @@ Pic: Aqua Grunt F
 Music: Aqua
 AI: AI_FLAG_BOSS
 
-Metang
-Brave Nature
-Level: 42
+Octillery
+Quiet Nature
+Ability: Sniper
+Level: 34
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Octazooka
+- Bullet Seed
+- Rock Blast
+- Signal Beam
+
+Drednaw
+Brave Nature
+Ability: Strong Jaw
+Level: 34
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Jaw Lock
+- Liquidation
+- Rock Slide
+- Ice Fang
 
 === TRAINER_PBL_AQUA_GRUNT_19D_2 ===
 Name: Grunt
@@ -3102,15 +3112,25 @@ Pic: Aqua Grunt M
 Music: Aqua
 AI: AI_FLAG_BOSS
 
-Metang
-Brave Nature
-Level: 42
+Qwilfish
+Careful Nature
+Ability: Poison Point
+Level: 34
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- Aqua Tail
+- Barb Barrage
+- Toxic Spikes
+- Self-Destruct
+
+Kingler
+Adamant Nature
+Ability: Sheer Force
+Level: 34
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Shell
+- Rock Slide
+- Brick Break
+- Knock Off
 
 === TRAINER_PBL_AQUA_GRUNT_19D_3 ===
 Name: Grunt
@@ -3119,15 +3139,23 @@ Pic: Aqua Grunt F
 Music: Aqua
 AI: AI_FLAG_BOSS
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Grapploct
+Careful Nature
+Ability: Limber
+Level: 34
+- Octolock
+- Brick Break
+- Brutal Swing
+- Taunt
+
+Veluza
+Jolly Nature
+Ability: Sharpness
+Level: 34
+- Aqua Cutter
+- Psycho Cut
+- Night Slash
+- Fillet Away
 
 === TRAINER_PBL_MATT_BOSS_19 ===
 Name: Grunt
@@ -3137,15 +3165,32 @@ Music: Aqua
 AI: AI_FLAG_BOSS
 Mugshot: Blue
 
-Metang
+Kilowattrel
+Timid Nature
+Ability: Volt Absorb
+Level: 38
+- Thunderbolt
+- Volt Switch
+- Air Slash
+- Roost
+
+Perrserker
+Jolly Nature
+Ability: Steely Spirit
+Level: 38
+- Fake Out
+- Iron Head
+- Brick Break
+- Knock Off
+
+Dhelmise
 Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Ability: Steelworker
+Level: 38
+- Anchor Shot
+- Shadow Claw
+- Giga Drain
+- Surf
 
 === TRAINER_PBL_WINSTON ===
 Name: Winston
@@ -3244,15 +3289,41 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
 
-Staraptor @ Staraptite
-Jolly Nature
-Ability: Intimidate
+Simisage @ Occa Berry
+Ability: Overgrow
+Level: 40
+Naive Nature
+- Grass Pledge
+- Giga Drain
+- Low Kick
+- Rock Slide
+
+Serperior @ Light Clay
+Ability: Contrary
 Level: 38
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Facade
-- Dual Wingbeat
-- Close Combat
-- Roost
+Timid Nature
+- Grass Pledge
+- Giga Drain
+- Light Screen
+- Reflect
+
+Sceptile @ Expert Belt
+Ability: Overgrow
+Level: 38
+Hasty Nature
+- Grass Pledge
+- Giga Drain
+- Dragon Pulse
+- Rock Slide
+
+Torterra @ Miracle Seed
+Ability: Overgrow
+Level: 38
+Naive Nature
+- Grass Pledge
+- Wood Hammer
+- High Horsepower
+- Rock Slide
 
 === TRAINER_PBL_CHILI_BOSS_20 ===
 Name: Chili
@@ -3263,15 +3334,41 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
 
-Staraptor @ Staraptite
-Jolly Nature
-Ability: Intimidate
+Simisear @ Passho Berry
+Ability: Blaze
+Level: 40
+Hasty Nature
+- Fire Pledge
+- Flamethrower
+- Rock Slide
+- Grass Knot
+
+Typhlosion @ Expert Belt
+Ability: Blaze
 Level: 38
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Facade
-- Dual Wingbeat
+Timid Nature
+- Fire Pledge
+- Flamethrower
+- Scorching Sands
+- Extrasensory
+
+Skeledirge @ Sitrus Berry
+Ability: Unaware
+Level: 38
+Quiet Nature
+- Fire Pledge
+- Flamethrower
+- Shadow Ball
+- Will-O-Wisp
+
+Emboar @ Charcoal
+Ability: Reckless
+Level: 38
+Brave Nature
+- Fire Pledge
+- Flare Blitz
 - Close Combat
-- Roost
+- Wild Charge
 
 === TRAINER_PBL_CRESS_BOSS_20 ===
 Name: Cress
@@ -3282,15 +3379,41 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
 
-Staraptor @ Staraptite
-Jolly Nature
-Ability: Intimidate
+Simipour @ Rindo Berry
+Ability: Torrent
+Level: 40
+Timid Nature
+- Water Pledge
+- Scald
+- Ice Beam
+- Icy Wind
+
+Inteleon @ Scope Lens
+Ability: Sniper
 Level: 38
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Facade
-- Dual Wingbeat
+Timid Nature
+- Water Pledge
+- Snipe Shot
+- Ice Beam
+- Air Cutter
+
+Samurott @ Sitrus Berry
+Ability: Torrent
+Level: 38
+Naive Nature
+- Water Pledge
+- Scald
+- Ice Beam
+- Megahorn
+
+Quaquaval @ Flying Gem
+Ability: Moxie
+Level: 38
+Jolly Nature
+- Water Pledge
+- Aqua Step
 - Close Combat
-- Roost
+- Acrobatics
 
 === TRAINER_PBL_SHAWN ===
 Name: STEVEN
@@ -3568,21 +3691,58 @@ Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_21
 
 === TRAINER_PBL_WALLY_BOSS_21 ===
-Name: STEVEN
+Name: Wally
 Class: Rival
-Pic: Steven
-Gender: Male
+Pic: Wally
 Music: Male
+AI: AI_FLAG_BOSS
+Double Battle: Yes
+Mugshot: Pink
 
-Metang
-Brave Nature
+Talonflame @ Flying Gem
+Ability: Flame Body
+Level: 40
+Adamant Nature
+- Blaze Kick
+- Acrobatics
+- Will-O-Wisp
+- Tailwind
+
+Roserade @ Wise Glasses
+Ability: Poison Point
+Level: 40
+Timid Nature
+- Giga Drain
+- Sludge Bomb
+- Dazzling Gleam
+- Shadow Ball
+
+Azumarill @ Sitrus Berry
+Ability: Huge Power
+Level: 40
+Adamant Nature
+- Liquidation
+- Play Rough
+- Drain Punch
+- Aqua Jet
+
+Magneton @ Eviolite
+Ability: Sturdy
+Level: 40
+Timid Nature
+- Volt Switch
+- Flash Cannon
+- Thunderbolt
+- Thunder Wave
+
+Gallade @ Lum Berry
+Ability: Sharpness
 Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Jolly Nature
+- Sacred Sword
+- Psycho Cut
+- Leaf Blade
+- Aqua Cutter
 
 === TRAINER_PBL_CODY ===
 Name: Cody
@@ -3896,15 +4056,59 @@ Pic: Steven
 Gender: Male
 Music: Male
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Slurpuff @ Focus Sash
+Ability: Unburden
+Level: 44
+Hasty Nature
+- Sticky Web
+- Endeavor
+- Moonblast
+- Misty Explosion
+
+Primarina @ Leftovers
+Ability: Torrent
+Level: 44
+Bold Nature
+- Scald
+- Moonblast
+- Rest
+- Sleep Talk
+
+Whimsicott @ Sitrus Berry
+Ability: Prankster
+Level: 44
+Bold Nature
+- Stun Spore
+- U-Turn
+- Moonblast
+- Giga Drain
+
+Mimikyu @ Red Card
+Ability: Disguise
+Level: 44
+Adamant Nature
+- Shadow Claw
+- Shadow Sneak
+- Play Rough
+- Drain Punch
+
+Slowbro-Galar @ Quick Claw
+Ability: Quick Draw
+Level: 44
+Modest Nature
+- Shell Side Arm
+- Psyshock
+- Surf
+- Grass Knot
+
+Excadrill @ Life Orb
+Ability: Mold Breaker
+Level: 46
+Jolly Nature
+- Earthquake
+- Iron Head
+- Rock Slide
+- Swords Dance
 
 === TRAINER_PBL_DOUGLAS ===
 Name: Douglas
@@ -4162,15 +4366,59 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Blue
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+Araquanid @ Wacan Berry
+Ability: Water Bubble
+Level: 48
+Impish Nature
+- Liquidation
+- Leech Life
+- Sticky Web
+- Mirror Coat
+
+Arbok @ Assault Vest
+Ability: Intimidate
+Level: 48
+Adamant Nature
+- Poison Jab
+- Crunch
+- Earthquake
+- Aqua Tail
+
+Obstagoon @ Flame Orb
+Ability: Guts
+Level: 48
+Adamant Nature
+- Facade
+- Knock Off
+- Switcheroo
+- Obstruct
+
+Vileplume @ Leftovers
+Ability: Effect Spore
+Level: 48
+Calm Nature
+- Giga Drain
+- Sludge Bomb
+- Synthesis
+- Strength Sap
+
+Mamoswine @ Loaded Dice
+Ability: Thick Fat
+Level: 48
+Jolly Nature
+- Earthquake
+- Icicle Spear
+- Rock Blast
+- Ice Shard
+
+Mawile @ Mawilite
+Ability: Intimidate
+Level: 50
+Adamant Nature
+- Play Rough
+- Iron Head
+- Knock Off
+- Ice Punch
 
 === TRAINER_POOL_ZONE_1 ===
 Name: Trainer Pool

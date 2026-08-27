@@ -51,15 +51,41 @@ Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Staraptor @ Staraptite
-Jolly Nature
-Ability: Intimidate
+Simisage @ Occa Berry
+Ability: Overgrow
+Level: 40
+Naive Nature
+- Grass Pledge
+- Giga Drain
+- Low Kick
+- Rock Slide
+
+Serperior @ Light Clay
+Ability: Contrary
 Level: 38
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Facade
-- Dual Wingbeat
-- Close Combat
-- Roost
+Timid Nature
+- Grass Pledge
+- Giga Drain
+- Light Screen
+- Reflect
+
+Sceptile @ Expert Belt
+Ability: Overgrow
+Level: 38
+Hasty Nature
+- Grass Pledge
+- Giga Drain
+- Dragon Pulse
+- Rock Slide
+
+Torterra @ Miracle Seed
+Ability: Overgrow
+Level: 38
+Naive Nature
+- Grass Pledge
+- Wood Hammer
+- High Horsepower
+- Rock Slide
 
 === PARTNER_PBL_CHILI_BOSS_20 ===
 Name: Chili
@@ -69,15 +95,41 @@ Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Staraptor @ Staraptite
-Jolly Nature
-Ability: Intimidate
+Simisear @ Passho Berry
+Ability: Blaze
+Level: 40
+Hasty Nature
+- Fire Pledge
+- Flamethrower
+- Rock Slide
+- Grass Knot
+
+Typhlosion @ Expert Belt
+Ability: Blaze
 Level: 38
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Facade
-- Dual Wingbeat
+Timid Nature
+- Fire Pledge
+- Flamethrower
+- Scorching Sands
+- Extrasensory
+
+Skeledirge @ Sitrus Berry
+Ability: Unaware
+Level: 38
+Quiet Nature
+- Fire Pledge
+- Flamethrower
+- Shadow Ball
+- Will-O-Wisp
+
+Emboar @ Charcoal
+Ability: Reckless
+Level: 38
+Brave Nature
+- Fire Pledge
+- Flare Blitz
 - Close Combat
-- Roost
+- Wild Charge
 
 === PARTNER_PBL_CRESS_BOSS_20 ===
 Name: Cress
@@ -87,12 +139,38 @@ Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Staraptor @ Staraptite
-Jolly Nature
-Ability: Intimidate
+Simipour @ Rindo Berry
+Ability: Torrent
+Level: 40
+Timid Nature
+- Water Pledge
+- Scald
+- Ice Beam
+- Icy Wind
+
+Inteleon @ Scope Lens
+Ability: Sniper
 Level: 38
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Facade
-- Dual Wingbeat
+Timid Nature
+- Water Pledge
+- Snipe Shot
+- Ice Beam
+- Air Cutter
+
+Samurott @ Sitrus Berry
+Ability: Torrent
+Level: 38
+Naive Nature
+- Water Pledge
+- Scald
+- Ice Beam
+- Megahorn
+
+Quaquaval @ Flying Gem
+Ability: Moxie
+Level: 38
+Jolly Nature
+- Water Pledge
+- Aqua Step
 - Close Combat
-- Roost
+- Acrobatics
