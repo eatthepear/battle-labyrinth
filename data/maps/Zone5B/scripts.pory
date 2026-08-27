@@ -24,7 +24,7 @@ script Zone5B_EventScript_Liza {
 	playfanfare(MUS_OBTAIN_BADGE)
 	msgbox(format("{PLAYER} received the Mind Badge from {COLOR BLUE}Liza{COLOR DARK_GRAY}!"))
 	waitfanfare
-	setspeaker("Grant")
+	setspeaker("Liza")
 	msgbox(format("Since you now have the Mind Badge, you can use the HM {COLOR GREEN}Cut{COLOR DARK_GRAY} outside battle.\pI'd also like you to take this TM."))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_LIGHT_SCREEN)

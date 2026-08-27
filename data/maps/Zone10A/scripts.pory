@@ -215,6 +215,7 @@ script Zone10A_EventScript_Jasmine {
 	waitmovement(0)
 	applymovement(LOCALID_JASMINE, Common_Movement_FaceDown)
 	waitmovement(0)
+	setflag(FLAG_BADGE03_GET)
 	setflag(FLAG_BEAT_BOSS_10)
 	setvar(VAR_ZONE_10_STATE, 5)
 	release
