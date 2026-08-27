@@ -28,6 +28,21 @@ static const u32 sLevelCapFlagMap[] =
     38,
     38,
     40, // zone 20 cap
+    42,
+    44,
+    46,
+    50,
+    50, // zone 25 cap
+    50,
+    54,
+    54,
+    56,
+    58, // zone 30 cap
+    60,
+    60,
+    60,
+    65,
+    65, // zone 35 cap
 };
 
 u32 GetCurrentLevelCap(void)

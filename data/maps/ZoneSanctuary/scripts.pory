@@ -1145,19 +1145,6 @@ script EventScript_Shop_FarmersStand {
 			dynmultipush("Jolly Mint", ITEM_JOLLY_MINT)
 			dynmultipush("Naive Mint", ITEM_NAIVE_MINT)
 		}
-		dynmultipush("Exp. Candy XS", ITEM_EXP_CANDY_XS)
-		if (var(VAR_ZONE) > 5) {
-			dynmultipush("Exp. Candy S", ITEM_EXP_CANDY_XS)
-		}
-		if (var(VAR_ZONE) > 15) {
-			dynmultipush("Exp. Candy M", ITEM_EXP_CANDY_M)
-		}
-		if (var(VAR_ZONE) > 25) {
-			dynmultipush("Exp. Candy L", ITEM_EXP_CANDY_L)
-		}
-		if (var(VAR_ZONE) > 30) {
-			dynmultipush("Exp. Candy XL", ITEM_EXP_CANDY_XL)
-		}
 		dynmultipush("Oran Berry", ITEM_ORAN_BERRY)
 		dynmultipush("Cheri Berry", ITEM_CHERI_BERRY)
 		dynmultipush("Chesto Berry", ITEM_CHESTO_BERRY)
@@ -1211,6 +1198,19 @@ script EventScript_Shop_FarmersStand {
 			dynmultipush("Rowap Berry", ITEM_ROWAP_BERRY)
 			// dynmultipush("Kee Berry", ITEM_KEE_BERRY)
 			// dynmultipush("Maranga Berry", ITEM_MARANGA_BERRY)
+		}
+		dynmultipush("Exp. Candy XS", ITEM_EXP_CANDY_XS)
+		if (var(VAR_ZONE) > 5) {
+			dynmultipush("Exp. Candy S", ITEM_EXP_CANDY_S)
+		}
+		if (var(VAR_ZONE) > 15) {
+			dynmultipush("Exp. Candy M", ITEM_EXP_CANDY_M)
+		}
+		if (var(VAR_ZONE) > 25) {
+			dynmultipush("Exp. Candy L", ITEM_EXP_CANDY_L)
+		}
+		if (var(VAR_ZONE) > 30) {
+			dynmultipush("Exp. Candy XL", ITEM_EXP_CANDY_XL)
 		}
 		dynmultipush("Exit", 1000)
 		dynmultistack(0, 0, FALSE, 5, FALSE, VAR_TEMP_0, DYN_MULTICHOICE_CB_SHOW_ITEM)
@@ -1361,6 +1361,16 @@ script EventScript_Shop_FarmersStand {
 				setvar(VAR_TEMP_0, ITEM_KEE_BERRY)
 			case ITEM_MARANGA_BERRY:
 				setvar(VAR_TEMP_0, ITEM_MARANGA_BERRY)
+			case ITEM_EXP_CANDY_XS:
+				setvar(VAR_TEMP_0, ITEM_EXP_CANDY_XS)
+			case ITEM_EXP_CANDY_S:
+				setvar(VAR_TEMP_0, ITEM_EXP_CANDY_S)
+			case ITEM_EXP_CANDY_M:
+				setvar(VAR_TEMP_0, ITEM_EXP_CANDY_M)
+			case ITEM_EXP_CANDY_L:
+				setvar(VAR_TEMP_0, ITEM_EXP_CANDY_L)
+			case ITEM_EXP_CANDY_XL:
+				setvar(VAR_TEMP_0, ITEM_EXP_CANDY_XL)
 		}
 		call(EventScript_Shop_FarmersStand_BuyItem)
 	}
