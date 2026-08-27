@@ -464,13 +464,13 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_ORAN_BERRY, 5)
 		case 2:
-			msgbox(format("{COLOR GREEN}5 Revives{COLOR DARK_GRAY}!"))
+			msgbox(format("{COLOR GREEN}3 Revives{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_REVIVE, 5)
+			giveitem(ITEM_REVIVE, 3)
 		case 3:
-			msgbox(format("{COLOR GREEN}5 Nest Balls{COLOR DARK_GRAY}!"))
+			msgbox(format("{COLOR GREEN}3 Nest Balls{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_NEST_BALL, 5)
+			giveitem(ITEM_NEST_BALL, 3)
 		case 4:
 			msgbox(format("{COLOR GREEN}HM01 - Cut{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)

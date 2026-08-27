@@ -1643,7 +1643,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_PECHA_BERRY, 3)
 	additem(ITEM_CHERI_BERRY, 3)
 	additem(ITEM_HM_ROCK_SMASH)
-	additem(ITEM_REVIVE, 5)
+	additem(ITEM_REVIVE, 3)
 
 	if (var(VAR_ZONE) == 3) {
 		return
@@ -1653,7 +1653,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_TM_ROCK_TOMB)
 	additem(ITEM_HARD_STONE)
 	additem(ITEM_METRONOME)
-	additem(ITEM_NEST_BALL, 5)
+	additem(ITEM_NEST_BALL, 3)
 	additem(ITEM_LAVA_COOKIE)
 
 	if (var(VAR_ZONE) == 4) {
