@@ -233,7 +233,7 @@ script Zone16A_EventScript_GalacticGrunt1 {
 }
 
 script Zone16A_EventScript_GalacticGrunt2 {
-	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_16A_1, format("BATTLE!"), format("DEFEAT!"))
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_16A_2, format("BATTLE!"), format("DEFEAT!"))
 	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
 	end
 }
