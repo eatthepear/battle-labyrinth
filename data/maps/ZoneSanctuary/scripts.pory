@@ -388,6 +388,7 @@ script EventScript_NextZone {
 		case 23:
 			warp(MAP_ZONE23A, 255, 8, 2)
 		case 24:
+			setflag(FLAG_HIDE_ZONE24A_ROCKET_GRUNTS)
 			warp(MAP_ZONE24A, 255, 31, 23)
 	}
 	waitstate
