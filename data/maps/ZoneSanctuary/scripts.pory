@@ -507,11 +507,19 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_TM_DEFOG)
 		case 12:
-			msgbox(format("Ultra Balls!"))
-			// setspeaker(SP_NAME_NONE)
-			// giveitem(ITEM_ULTRA_BALL, 10)
+			msgbox(format("{COLOR GREEN}5 Ultra Balls{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_ULTRA_BALL, 5)
 		case 13:
-			msgbox(format("Ultra Balls!"))
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 13 - Gemini Heights{COLOR DARK_GRAY} is…"))
+			msgbox(format("The {COLOR GREEN}Bike{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_BICYCLE)
+			setspeaker(SP_NAME_COLRESS)
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 14 - Gemini Caves{COLOR DARK_GRAY} is…"))
+			// msgbox(format("{COLOR GREEN}TM78 - Bulldoze!{COLOR DARK_GRAY}"))
+			// setspeaker(SP_NAME_NONE)
+			// giveitem(ITEM_TM_BULLDOZE)
 		case 15:
 			msgbox(format("{COLOR GREEN}HM03 - Surf{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
