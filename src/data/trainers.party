@@ -2118,8 +2118,8 @@ Copy Pool: TRAINER_POOL_ZONE_13_AND_14
 
 === TRAINER_PBL_STEVE ===
 Name: Steve
-Class: Bug Catcher
-Pic: Bug Catcher
+Class: Bug Maniac
+Pic: Bug Maniac
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
