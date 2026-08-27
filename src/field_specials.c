@@ -4702,21 +4702,21 @@ u16 GetNumTrainersRemaining(void)
 #define RANDOM_ITEM_CHEST_TABLE_COUNT ARRAY_COUNT(sItemChestTable)
 static const struct ItemChest sItemChestTable[] =
 {
-    {	ITEM_POKE_BALL    	, {	 10,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_GREAT_BALL   	, {	  0,	 10,	 10,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_ULTRA_BALL   	, {	  0,	  0,	  0,	 10,	 10,	 10,	 10,	 10,	 10,	 10,	 10,	} },
-    {	ITEM_POTION       	, {	 60,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_SUPER_POTION 	, {	  0,	 60,	 60,	 30,	 30,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_HYPER_POTION 	, {	  0,	  0,	  0,	 30,	 30,	 60,	 40,	 30,	 20,	  0,	  0,	} },
-    {	ITEM_MAX_POTION   	, {	  0,	  0,	  0,	  0,	  0,	  0,	 20,	 20,	 20,	 30,	 30,	} },
-    {	ITEM_FULL_RESTORE 	, {	  0,	  0,	  0,	  0,	  0,	  0,	  0,	 10,	 20,	 30,	 30,	} },
-    {	ITEM_ANTIDOTE     	, {	 10,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_PARALYZE_HEAL	, {	 10,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_AWAKENING    	, {	  5,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_BURN_HEAL    	, {	  5,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_FULL_HEAL    	, {	  0,	  0,	  0,	  0,	 10,	 15,	 15,	 15,	 15,	 20,	 20,	} },
-    {	ITEM_REVIVE       	, {	  0,	 30,	 30,	 30,	 20,	 15,	 15,	 15,	  5,	  0,	  0,	} },
-    {	ITEM_MAX_REVIVE   	, {	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	 10,	 10,	 10,	} },
+    {	ITEM_POKE_BALL    	, {	 10,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_GREAT_BALL   	, {	  0,	 10,	 10,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_ULTRA_BALL   	, {	  0,	  0,	  0,	 10,	 10,	 10,	 10,	} },
+    {	ITEM_POTION       	, {	 60,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_SUPER_POTION 	, {	  0,	 60,	 60,	 30,	 30,	  0,	  0,	} },
+    {	ITEM_HYPER_POTION 	, {	  0,	  0,	  0,	 30,	 30,	 60,	 35,	} },
+    {	ITEM_MAX_POTION   	, {	  0,	  0,	  0,	  0,	  0,	  0,	 15,	} },
+    {	ITEM_FULL_RESTORE 	, {	  0,	  0,	  0,	  0,	  0,	  0,	 15,	} },
+    {	ITEM_ANTIDOTE     	, {	 10,	 10,	 10,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_PARALYZE_HEAL	, {	 10,	 10,	 10,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_AWAKENING    	, {	  5,	  5,	  5,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_BURN_HEAL    	, {	  5,	  5,	  5,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_FULL_HEAL    	, {	  0,	  0,	  0,	  5,	  5,	  5,	  0,	} },
+    {	ITEM_REVIVE       	, {	  0,	  0,	  0,	 25,	 25,	 25,	 25,	} },
+    {	ITEM_MAX_REVIVE   	, {	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
 };
 
 u16 RandomItemChest(void)
@@ -4726,10 +4726,34 @@ u16 RandomItemChest(void)
     u32 rand = Random() % 100;
     u32 percentTotal = 0;
     u16 item = ITEM_NONE; // arbitrary item
-    u32 totalPrice = zoneIndex * 200 + 100;
     u16 split = (zoneIndex) / 5;
+    u32 totalPrice;
     u16 amount = 0;
     u32 itemPrice;
+    switch (split) {
+        case 0:
+            totalPrice = 200;
+            break;
+        case 1:
+            totalPrice = 600;
+            break;
+        case 2:
+            totalPrice = 1200;
+            break;
+        case 3:
+            totalPrice = 1600;
+            break;
+        case 4:
+            totalPrice = 2000;
+            break;
+        case 5:
+            totalPrice = 2400;
+            break;
+        case 6:
+        default:
+            totalPrice = 3000;
+            break;
+    }
 
     for (i = 0; i < RANDOM_ITEM_CHEST_TABLE_COUNT; i++)
     {
