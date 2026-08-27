@@ -54,7 +54,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_RAINBOW_ROCKET_MEMBER_M",
+      "graphics_id": "OBJ_EVENT_GFX_RAINBOW_ROCKET_MEMBER_F",
       "x": 18,
       "y": 12,
       "elevation": 0,
@@ -67,7 +67,7 @@
       "flag": "FLAG_BEAT_BOSS_25"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_RAINBOW_ROCKET_MEMBER_F",
+      "graphics_id": "OBJ_EVENT_GFX_RAINBOW_ROCKET_MEMBER_M",
       "x": 15,
       "y": 5,
       "elevation": 0,
