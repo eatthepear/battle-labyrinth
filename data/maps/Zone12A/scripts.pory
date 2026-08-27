@@ -135,6 +135,11 @@ script Zone12A_EventScript_Inver {
     additem(ITEM_BABIRI_BERRY)
     additem(ITEM_ROSELI_BERRY)
 	setflag(FLAG_BEAT_BOSS_12)
+	removeobject(LOCALID_PSYDUCK_1)
+	removeobject(LOCALID_PSYDUCK_2)
+	removeobject(LOCALID_PSYDUCK_3)
+	removeobject(LOCALID_PSYDUCK_4)
+	removeobject(LOCALID_PSYDUCK_5)
 	setspeaker("Inver")
 	msgbox(Zone12A_Text_Inver_Post)
 	release

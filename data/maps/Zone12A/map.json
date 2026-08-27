@@ -198,6 +198,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_PSYDUCK_1",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PSYDUCK)",
       "x": 43,
       "y": 39,
@@ -211,6 +212,7 @@
       "flag": "FLAG_BEAT_BOSS_12"
     },
     {
+      "local_id": "LOCALID_PSYDUCK_2",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PSYDUCK)",
       "x": 42,
       "y": 38,
@@ -224,6 +226,7 @@
       "flag": "FLAG_BEAT_BOSS_12"
     },
     {
+      "local_id": "LOCALID_PSYDUCK_3",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PSYDUCK)",
       "x": 43,
       "y": 37,
@@ -237,6 +240,7 @@
       "flag": "FLAG_BEAT_BOSS_12"
     },
     {
+      "local_id": "LOCALID_PSYDUCK_4",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PSYDUCK)",
       "x": 41,
       "y": 37,
@@ -250,6 +254,7 @@
       "flag": "FLAG_BEAT_BOSS_12"
     },
     {
+      "local_id": "LOCALID_PSYDUCK_5",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PSYDUCK)",
       "x": 41,
       "y": 38,
