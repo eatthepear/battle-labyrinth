@@ -1,7 +1,7 @@
 mapscripts Zone18B_MapScripts {
 	MAP_SCRIPT_ON_LOAD {
 		setvar(VAR_0x8005, 1)
-		call_if_defeated(TRAINER_PBL_RACHEL, Zone18B_EventScript_OpenNormalRoomDoors)
+		call_if_defeated(TRAINER_PBL_RACHEL, Zone18B_EventScript_OpenGrassRoomDoors)
 		call_if_defeated(TRAINER_PBL_GLENN, Zone18B_EventScript_OpenRockRoomDoors)
 		call_if_defeated(TRAINER_PBL_JAY, Zone18B_EventScript_OpenIceRoomDoors)
 		call_if_defeated(TRAINER_PBL_TYLER, Zone18B_EventScript_OpenDarkRoomDoors)
@@ -398,9 +398,9 @@ script Zone18B_EventScript_RightBossRoomDoor {
 	end
 }
 
-script Zone18B_EventScript_SlideOpenNormalRoomDoors {
+script Zone18B_EventScript_SlideOpenGrassRoomDoors {
 	setvar(VAR_0x8005, 0)
-	call(Zone18B_EventScript_OpenNormalRoomDoors)
+	call(Zone18B_EventScript_OpenGrassRoomDoors)
 	special(DrawWholeMapView)
 	release
 	end
@@ -520,14 +520,14 @@ script Zone18B_EventScript_SlideOpenFireRoomDoors {
 
 // VAR_0x8004 below is the room number
 // VAR_0x8005 below is 0 when the door should be slid open and 1 when it should be unlocked immediately
-script Zone18B_EventScript_OpenNormalRoomDoors {
+script Zone18B_EventScript_OpenGrassRoomDoors {
 	setvar(VAR_0x8004, 1)
 	if (var(VAR_0x8005) == 0) {
 		call(Zone18B_EventScript_SlideOpenRoomDoors)
 	} elif (var(VAR_0x8005) == 1) {
 		call(Zone18B_EventScript_UnlockRoomDoors)
 	}
-	call(Zone18B_EventScript_SetNormalRoomDoorMetatiles)
+	call(Zone18B_EventScript_SetGrassRoomDoorMetatiles)
 	return
 }
 
@@ -685,7 +685,7 @@ script Zone18B_EventScript_OpenFireRoomDoors {
 	return
 }
 
-script Zone18B_EventScript_SetNormalRoomDoorMetatiles {
+script Zone18B_EventScript_SetGrassRoomDoorMetatiles {
 	setmetatile(6, 189, METATILE_PetalburgGym_RoomEntrance_Left, 0)
 	setmetatile(7, 189, METATILE_PetalburgGym_RoomEntrance_Right, 0)
 	setmetatile(1, 176, METATILE_PetalburgGym_RoomEntrance_Left, 0)
@@ -809,7 +809,7 @@ script Zone18B_EventScript_Statue {
 }
 
 script Zone18B_EventScript_Rachel {
-	trainerbattle_single(TRAINER_PBL_RACHEL, format("Welcome to the Trainer's Dojo!\pUh… what else is in this script…\pOh! Each room has a particular type associated with it.\pYou can pick and choose which room to challenge.\pHmm… Looks like I'm supposed to battle you now.\pWell, good luck to you, facing my Grass-types in battle!"), format("You got me!"), Zone18B_EventScript_SlideOpenNormalRoomDoors)
+	trainerbattle_single(TRAINER_PBL_RACHEL, format("Welcome to the Trainer's Dojo!\pUh… what else is in this script…\pOh! Each room has a particular type associated with it.\pYou can pick and choose which room to challenge.\pHmm… Looks like I'm supposed to battle you now.\pWell, good luck to you, facing my Grass-types in battle!"), format("You got me!"), Zone18B_EventScript_SlideOpenGrassRoomDoors)
 	msgbox(format("You can pick between the Rock room and the Ice room."), MSGBOX_AUTOCLOSE)
 	end
 }
