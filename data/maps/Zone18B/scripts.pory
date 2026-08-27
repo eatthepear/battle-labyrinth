@@ -814,231 +814,86 @@ script Zone18B_EventScript_Rachel {
 	end
 }
 
-raw `
-Zone18B_EventScript_Glenn::
-	trainerbattle_single TRAINER_PBL_GLENN, Zone18B_Text_GlennIntro, Zone18B_Text_GlennDefeat, Zone18B_EventScript_SlideOpenRockRoomDoors
-	msgbox Zone18B_Text_GlennPostBattle
+script Zone18B_EventScript_Glenn {
+	trainerbattle_single(TRAINER_PBL_GLENN, format("Rock 'em, sock em!"), format("You rocked!"), Zone18B_EventScript_SlideOpenRockRoomDoors)
+	msgbox(format("How many weaknesses do Rock-types have?\pI'll tell you: none, if you're careful about type matchups!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone18B_Text_GlennIntro:
-	.string "Rock 'em, sock em!$"
-
-Zone18B_Text_GlennDefeat:
-	.string "You rocked!$"
-
-Zone18B_Text_GlennPostBattle:
-	.string "How many weaknesses do Rock-types\n"
-	.string "have?\p"
-	.string "I'll tell you: none, if you're\n"
-	.string "careful about type matchups!$"
-
-Zone18B_EventScript_Jay::
-	trainerbattle_single TRAINER_PBL_JAY, Zone18B_Text_JayIntro, Zone18B_Text_JayDefeat, Zone18B_EventScript_SlideOpenIceRoomDoors
-	msgbox Zone18B_Text_JayPostBattle
+script Zone18B_EventScript_Jay {
+	trainerbattle_single(TRAINER_PBL_JAY, format("Welcome to the Cool Room. Speaking of cool, have you ever read the Great Gatsby?"), format("I'm not Gatsby!"), Zone18B_EventScript_SlideOpenIceRoomDoors)
+	msgbox(format("I just think he's a pretty chill  dude."), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone18B_Text_JayIntro:
-	.string "Welcome to the Cool Room.\n"
-	.string "Speaking of cool, have you\l"
-	.string "ever read the Great Gatsby?$"
-
-Zone18B_Text_JayDefeat:
-	.string "I'm not Gatsby!$"
-
-Zone18B_Text_JayPostBattle:
-	.string "I just think he's a pretty chill\n"
-	.string "dude.$"
-
-Zone18B_EventScript_Tyler::
-	trainerbattle_single TRAINER_PBL_TYLER, Zone18B_Text_TylerIntro, Zone18B_Text_TylerDefeat, Zone18B_EventScript_SlideOpenDarkRoomDoors
-	msgbox Zone18B_Text_TylerPostBattle
+script Zone18B_EventScript_Tyler {
+	trainerbattle_single(TRAINER_PBL_TYLER, format("You look tough, kid.\pCan you beat the toughest Dark-types around?"), format("I guess you can!"), Zone18B_EventScript_SlideOpenDarkRoomDoors)
+	msgbox(format("I know I'm tough because my momma said so!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone18B_Text_TylerIntro:
-	.string "You look tough, kid.\p"
-	.string "Can you beat the toughest\n"
-	.string "Dark-types around?$"
-
-Zone18B_Text_TylerDefeat:
-	.string "I guess you can!$"
-
-Zone18B_Text_TylerPostBattle:
-	.string "I know I'm tough because my momma\n"
-	.string "said so!$"
-
-Zone18B_EventScript_Terrence::
-	trainerbattle_single TRAINER_PBL_TERRENCE, Zone18B_Text_TerrenceIntro, Zone18B_Text_TerrenceDefeat, Zone18B_EventScript_SlideOpenFlyingRoomDoors
-	msgbox Zone18B_Text_TerrencePostBattle
+script Zone18B_EventScript_Terrence {
+	trainerbattle_single(TRAINER_PBL_TERRENCE, format("Take flight, my Pokémon, and defeat this Trainer!"), format("Our wings are clipped and our flight path broken!"), Zone18B_EventScript_SlideOpenFlyingRoomDoors)
+	msgbox(format("My favorite board game is Wingspan. You should try it sometime!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone18B_Text_TerrenceIntro:
-	.string "Take flight, my Pokémon,\n"
-	.string "and defeat this Trainer!$"
-
-Zone18B_Text_TerrenceDefeat:
-	.string "Our wings are clipped and our\n"
-	.string "flight path broken!$"
-
-Zone18B_Text_TerrencePostBattle:
-	.string "My favorite board game is Wingspan.\n"
-	.string "You should try it sometime!$"
-
-Zone18B_EventScript_Marty::
-	trainerbattle_single TRAINER_PBL_MARTY, Zone18B_Text_MartyIntro, Zone18B_Text_MartyDefeat, Zone18B_EventScript_SlideOpenPsychicRoomDoors
-	msgbox Zone18B_Text_MartyPostBattle
+script Zone18B_EventScript_Marty {
+	trainerbattle_single(TRAINER_PBL_MARTY, format("Through my powers, I see a great battle ahead of us…"), format("It wasn't a great battle because I lost!"), Zone18B_EventScript_SlideOpenPsychicRoomDoors)
+	msgbox(format("Why don't my visions ever show me winning?"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone18B_Text_MartyIntro:
-	.string "Through my powers, I see a\n"
-	.string "great battle ahead of us…$"
-
-Zone18B_Text_MartyDefeat:
-	.string "It wasn't a great battle because\n"
-	.string "I lost!$"
-
-Zone18B_Text_MartyPostBattle:
-	.string "Why don't my visions ever show me\n"
-	.string "winning?$"
-
-Zone18B_EventScript_Kari::
-	trainerbattle_single TRAINER_PBL_KARI, Zone18B_Text_KariIntro, Zone18B_Text_KariDefeat, Zone18B_EventScript_SlideOpenFightingRoomDoors
-	msgbox Zone18B_Text_KariPostBattle
+script Zone18B_EventScript_Kari {
+	trainerbattle_single(TRAINER_PBL_KARI, format("Fight me!"), format("The taste of defeat is bitter!"), Zone18B_EventScript_SlideOpenFightingRoomDoors)
+	msgbox(format("I'll have to train more for next time!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone18B_Text_KariIntro:
-	.string "Fight me!$"
-
-Zone18B_Text_KariDefeat:
-	.string "The taste of defeat is bitter!$"
-
-Zone18B_Text_KariPostBattle:
-	.string "I'll have to train more for next\n"
-	.string "time!$"
-
-Zone18B_EventScript_Abraham::
-	trainerbattle_single TRAINER_PBL_ABRAHAM, Zone18B_Text_AbrahamIntro, Zone18B_Text_AbrahamDefeat, Zone18B_EventScript_SlideOpenDragonRoomDoors
-	msgbox Zone18B_Text_AbrahamPostBattle
+script Zone18B_EventScript_Abraham {
+	trainerbattle_single(TRAINER_PBL_ABRAHAM, format("Dragons can inspire fear or reverence in different cultures.\pWhich one is it for you?"), format("Personally, I fear them. Well, when they evolve more."), Zone18B_EventScript_SlideOpenDragonRoomDoors)
+	msgbox(format("Evolution won't be for a while, though!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone18B_Text_AbrahamIntro:
-	.string "Dragons can inspire fear or\n"
-	.string "reverence in different cultures.\p"
-	.string "Which one is it for you?$"
-
-Zone18B_Text_AbrahamDefeat:
-	.string "Personally, I fear them.\n"
-	.string "Well, when they evolve more.$"
-
-Zone18B_Text_AbrahamPostBattle:
-	.string "Evolution won't be for a while,\n"
-	.string "though!$"
-
-Zone18B_EventScript_Melinda::
-	trainerbattle_single TRAINER_PBL_MELINDA, Zone18B_Text_MelindaIntro, Zone18B_Text_MelindaDefeat, Zone18B_EventScript_SlideOpenFairyRoomDoors
-	msgbox Zone18B_Text_MelindaPostBattle
+script Zone18B_EventScript_Melinda {
+	trainerbattle_single(TRAINER_PBL_MELINDA, format("Momma… where are you?"), format("She'll be with me soon…"), Zone18B_EventScript_SlideOpenFairyRoomDoors)
+	msgbox(format("We'll be together again, like we were meant to be…"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone18B_Text_MelindaIntro:
-	.string "Momma… where are you?$"
-
-Zone18B_Text_MelindaDefeat:
-	.string "She'll be with me soon…$"
-
-Zone18B_Text_MelindaPostBattle:
-	.string "We'll be together again,\n"
-	.string "like we were meant to be…$"
-
-Zone18B_EventScript_Emilio::
-	trainerbattle_single TRAINER_PBL_EMILIO, Zone18B_Text_EmilioIntro, Zone18B_Text_EmilioDefeat, Zone18B_EventScript_SlideOpenGroundRoomDoors
-	msgbox Zone18B_Text_EmilioPostBattle
+script Zone18B_EventScript_Emilio {
+	trainerbattle_single(TRAINER_PBL_EMILIO, format("Stone and sand! Stone and sand!"), format("Our boulders have been reduced to pebbles!"), Zone18B_EventScript_SlideOpenGroundRoomDoors)
+	msgbox(format("We gotta be more solid next time."), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone18B_Text_EmilioIntro:
-	.string "Rock 'em, sock 'em!$"
-
-Zone18B_Text_EmilioDefeat:
-	.string "Our boulders have been reduced to\n"
-	.string "pebbles!$"
-
-Zone18B_Text_EmilioPostBattle:
-	.string "We gotta be more solid next time.$"
-
-Zone18B_EventScript_Rex::
-	trainerbattle_single TRAINER_PBL_REX, Zone18B_Text_RexIntro, Zone18B_Text_RexDefeat, Zone18B_EventScript_SlideOpenBugRoomDoors
-	msgbox Zone18B_Text_RexPostBattle
+script Zone18B_EventScript_Rex {
+	trainerbattle_single(TRAINER_PBL_REX, format("Bugs, Bugs, I love Bugs. Don't you?"), format("Ah! My poor Bugs!"), Zone18B_EventScript_SlideOpenBugRoomDoors)
+	msgbox(format("My sweet, lovely, creepy-crawlies, I'll work harder for you next time!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone18B_Text_RexIntro:
-	.string "Bugs, Bugs, I love Bugs.\n"
-	.string "Don't you?$"
-
-Zone18B_Text_RexDefeat:
-	.string "Ah! My poor Bugs!$"
-
-Zone18B_Text_RexPostBattle:
-	.string "My sweet, lovely, creepy-crawlies,\n"
-	.string "I'll work harder for you next time!$"
-
-Zone18B_EventScript_Louis::
-	trainerbattle_single TRAINER_PBL_LOUIS, Zone18B_Text_LouisIntro, Zone18B_Text_LouisDefeat, Zone18B_EventScript_SlideOpenSteelRoomDoors
-	msgbox Zone18B_Text_LouisPostBattle
+script Zone18B_EventScript_Louis {
+	trainerbattle_single(TRAINER_PBL_LOUIS, format("I'm a researcher studying rare metal artifacts. Do you have any?"), format("Perhaps I should study Pokémon\nbattling as well."), Zone18B_EventScript_SlideOpenSteelRoomDoors)
+	msgbox(format("I've heard there is a great ruin in a dense jungle somewhere, and deep within lies a powerful item."), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone18B_Text_LouisIntro:
-	.string "I'm a researcher studying rare\n"
-	.string "metal artifacts. Do you have any?$"
-
-Zone18B_Text_LouisDefeat:
-	.string "Perhaps I should study Pokémon\n"
-	.string "battling as well.$"
-
-Zone18B_Text_LouisPostBattle:
-	.string "I've heard there is a great ruin\n"
-	.string "in a dense jungle somewhere, and\l"
-	.string "deep within lies a powerful item.$"
-
-Zone18B_EventScript_Leroy::
-	trainerbattle_single TRAINER_PBL_LEROY, Zone18B_Text_LeroyIntro, Zone18B_Text_LeroyDefeat, Zone18B_EventScript_SlideOpenPoisonRoomDoors
-	msgbox Zone18B_Text_LeroyPostBattle
+script Zone18B_EventScript_Leroy {
+	trainerbattle_single(TRAINER_PBL_LEROY, format("Sneak attack! Poison Powder!"), format("I forgot about the powder!"), Zone18B_EventScript_SlideOpenPoisonRoomDoors)
+	msgbox(format("I didn't really sneak up on you either, did I."), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone18B_Text_LeroyIntro:
-	.string "Sneak attack! Poison Powder!$"
-
-Zone18B_Text_LeroyDefeat:
-	.string "I forgot about the powder!$"
-
-Zone18B_Text_LeroyPostBattle:
-	.string "I didn't really sneak up on you\n"
-	.string "either, did I.$"
-
-Zone18B_EventScript_Elton::
-	trainerbattle_single TRAINER_PBL_ELTON, Zone18B_Text_EltonIntro, Zone18B_Text_EltonDefeat, Zone18B_EventScript_SlideOpenElectricRoomDoors
-	msgbox Zone18B_Text_EltonPostBattle
+script Zone18B_EventScript_Elton {
+	trainerbattle_single(TRAINER_PBL_ELTON, format("My music will shock you!"), format("You don't like Electric beats?"), Zone18B_EventScript_SlideOpenElectricRoomDoors)
+	msgbox(format("I just like the smooth current!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone18B_Text_EltonIntro:
-	.string "My music will shock you!$"
-
-Zone18B_Text_EltonDefeat:
-	.string "You don't like Electric beats?$"
-
-Zone18B_Text_EltonPostBattle:
-	.string "I just like the smooth current!$"
-
-Zone18B_EventScript_Willie::
-	trainerbattle_single TRAINER_PBL_WILLIE, Zone18B_Text_WillieIntro, Zone18B_Text_WillieDefeat, Zone18B_EventScript_SlideOpenFireRoomDoors
-	msgbox Zone18B_Text_WilliePostBattle
+script Zone18B_EventScript_Willie {
+	trainerbattle_single(TRAINER_PBL_WILLIE, format("Hot, hot hot hot!"), format("Sorry, I had a hot potato in my hands."), Zone18B_EventScript_SlideOpenFireRoomDoors)
+	msgbox(format("You should be careful while cooking something hot!"), MSGBOX_AUTOCLOSE)
 	end
-
-Zone18B_Text_WillieIntro:
-	.string "Hot, hot hot hot!$"
-
-Zone18B_Text_WillieDefeat:
-	.string "Sorry, I had a hot potato in my hands.$"
-
-Zone18B_Text_WilliePostBattle:
-	.string "You should be careful while\n"
-	.string "cooking something hot!$"
-
-`
+}
