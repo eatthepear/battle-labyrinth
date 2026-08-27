@@ -1,7 +1,4 @@
 mapscripts Zone14C_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION {
-		call(EventScript_HandleFlashlight)
-    }
 	MAP_SCRIPT_ON_RESUME {
 		if (flag(FLAG_ITEM_ZONE14C_METAL_COAT)) {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)

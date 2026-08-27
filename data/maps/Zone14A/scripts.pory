@@ -6,9 +6,6 @@ mapscripts Zone14A_MapScripts {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
 	}
-    MAP_SCRIPT_ON_TRANSITION {
-		setflashlevel(4)
-    }
 }
 
 script Zone14A_EventScript_DragonFang {
