@@ -1794,6 +1794,7 @@ script Debug_CheatStart_PBL_GiveItems {
 		return
 	}
 	additem(ITEM_TM_HEX)
+	additem(ITEM_HM_DIVE)
 
 	if (var(VAR_ZONE) == 18) {
 		return

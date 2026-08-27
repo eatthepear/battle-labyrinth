@@ -50,7 +50,7 @@ script Zone18B_EventScript_Larry {
 	setspeaker("Larry")
 	msgbox(format("You will become even stronger! I've battled you, so I know."))
     setflag(FLAG_BEAT_BOSS_18)
-	setflag(FLAG_BADGE06_GET)
+	setflag(FLAG_BADGE05_GET)
 	setvar(VAR_ZONE_18_STATE, 1)
 	release
 	end

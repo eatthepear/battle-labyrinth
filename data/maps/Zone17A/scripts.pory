@@ -176,7 +176,7 @@ script Zone17A_EventScript_InitiateBossBattle {
 	setspeaker("Leaf")
 	msgbox(format("Uh, where am I? Did you solve the riddle?"))
 	msgbox("There's something shimmering on the\nground by your feet!", MSGBOX_DEFAULT)
-	giveitem(ITEM_TM29)
+	giveitem(ITEM_HM_DIVE)
 	clearflag(FLAG_HIDE_ZONE17A_PORYGON)
 	setvar(VAR_ZONE_17_STATE, 22)
 	release
