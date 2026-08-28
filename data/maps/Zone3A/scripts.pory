@@ -212,7 +212,7 @@ script Zone3A_EventScript_WiseGlasses {
 	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
 	setflag(FLAG_ITEM_ZONE3A_WISE_GLASSES)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_MUSCLE_BAND)
+	finditem(ITEM_WISE_GLASSES)
 	release
 	end
 }
