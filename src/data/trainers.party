@@ -4428,69 +4428,71 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
+Magikarp
+
+Sunkern
+
 Azurill
-
-Bidoof
-
-Bunnelby
-
-Fletchling
-
-Hoothoot
 
 Igglybuff
 
-Lechonk
-
-Lillipup
-
-Lotad
-
-Nickit
-
-Patrat
-
-Pidgey
-
-Pidove
-
-Pikipek
+Sentret
 
 Poochyena
 
-Purrloin
+Lotad
+
+Seedot
+
+Bunnelby
+
+Zigzagoon
+
+Zigzagoon Galar
+
+Whismur
+
+Starly
+
+Rookidee
+
+Nickit
+
+Bidoof
+
+Pidgey
 
 Rattata
 
 Rattata Alola
 
-Rookidee
+Yungoos
 
-Seedot
+Lechonk
 
-Sentret
-
-Shinx
+Patrat
 
 Skitty
 
-Skwovet
-
 Smoliv
 
-Starly
+Hoothoot
 
-Sunkern
+Shinx
+
+Pidove
+
+Pikipek
 
 Taillow
 
-Whismur
+Lillipup
 
-Yungoos
+Skwovet
 
-Zigzagoon
+Fletchling
 
-Zigzagoon Galar
+Purrloin
 
 === TRAINER_POOL_ZONE_2 ===
 Name: Trainer Pool
@@ -4500,123 +4502,127 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Bidoof
+Magikarp
 
-Blipbug
+Sunkern
 
-Bounsweet
-
-Budew
-
-Bunnelby
-
-Burmy
-
-Caterpie
-
-Cherubi
-
-Cleffa
-
-Combee
-
-Fletchling
-
-Fomantis
-
-Gossifleur
-
-Hoothoot
-
-Hoppip
+Azurill
 
 Igglybuff
 
-Kricketot
-
-Lechonk
-
-Ledyba
-
-Lillipup
-
-Lotad
-
-Mareep
-
-Nickit
-
-Nidoran F
-
-Nidoran M
-
-Paras
-
-Patrat
-
-Pawmi
-
-Pichu
-
-Pidgey
-
-Pidove
-
-Pikipek
+Sentret
 
 Poochyena
 
-Purrloin
+Lotad
+
+Seedot
+
+Bunnelby
+
+Zigzagoon
+
+Zigzagoon Galar
+
+Whismur
+
+Starly
+
+Rookidee
+
+Nickit
+
+Bidoof
+
+Pidgey
 
 Rattata
 
 Rattata Alola
 
-Rookidee
+Yungoos
 
-Scatterbug
+Lechonk
 
-Seedot
-
-Sentret
-
-Shinx
+Patrat
 
 Skitty
 
-Skwovet
-
-Slakoth
-
 Smoliv
 
-Spinarak
+Hoothoot
 
-Starly
+Shinx
 
-Sunkern
+Pidove
 
-Tadbulb
+Pikipek
 
 Taillow
 
-Tarountula
+Lillipup
+
+Skwovet
+
+Fletchling
+
+Purrloin
+
+Blipbug
+
+Burmy
+
+Kricketot
+
+Caterpie
 
 Weedle
 
-Whismur
+Wurmple
+
+Scatterbug
+
+Tarountula
+
+Combee
+
+Pichu
+
+Mareep
+
+Bounsweet
+
+Cleffa
+
+Fomantis
+
+Gossifleur
+
+Pawmi
+
+Ledyba
+
+Spinarak
 
 Wingull
 
-Wurmple
+Hoppip
 
 Yamper
 
-Yungoos
+Slakoth
 
-Zigzagoon
+Tadbulb
 
-Zigzagoon Galar
+Nidoran M
+
+Nidoran F
+
+Cherubi
+
+Budew
+
+Paras
 
 === TRAINER_POOL_ZONE_3 ===
 Name: Trainer Pool
@@ -4626,219 +4632,221 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
+Magikarp
+
+Sunkern
+
 Azurill
-
-Barboach
-
-Bellsprout
-
-Bidoof
-
-Blitzle
-
-Bounsweet
-
-Budew
-
-Buizel
-
-Buneary
-
-Bunnelby
-
-Cascoon
-
-Cherubi
-
-Chewtle
-
-Chingling
-
-Cleffa
-
-Cubone
-
-Deerling
-
-Diglett
-
-Diglett Alola
-
-Ducklett
-
-Ekans
-
-Electrike
-
-Fidough
-
-Finneon
-
-Flabébé
-
-Fletchling
-
-Fomantis
-
-Foongus
-
-Goldeen
-
-Gossifleur
-
-Grubbin
-
-Gulpin
-
-Hoothoot
-
-Hoppip
 
 Igglybuff
 
-Jigglypuff
-
-Kakuna
-
-Lechonk
-
-Ledyba
-
-Lillipup
-
-Lotad
-
-Mareep
-
-Marill
-
-Metapod
-
-Milcery
-
-Mime Jr.
-
-Nickit
-
-Nidoran F
-
-Nidoran M
-
-Oddish
-
-Panpour
-
-Pansage
-
-Pansear
-
-Paras
-
-Patrat
-
-Pawmi
-
-Phanpy
-
-Pichu
-
-Pidgey
-
-Pidove
-
-Pikachu
-
-Pikipek
-
-Poliwag
+Sentret
 
 Poochyena
 
-Psyduck
+Lotad
 
-Purrloin
+Seedot
+
+Bunnelby
+
+Zigzagoon
+
+Zigzagoon Galar
+
+Whismur
+
+Starly
+
+Rookidee
+
+Nickit
+
+Bidoof
+
+Pidgey
 
 Rattata
 
 Rattata Alola
 
-Remoraid
+Yungoos
 
-Rookidee
+Lechonk
 
-Sandshrew
-
-Seedot
-
-Sentret
-
-Sewaddle
-
-Shinx
-
-Shroomish
-
-Silcoon
-
-Skiddo
+Patrat
 
 Skitty
 
-Skwovet
-
-Slakoth
-
-Slowpoke
-
-Slowpoke Galar
-
-Slugma
-
 Smoliv
 
-Snubbull
+Hoothoot
 
-Spearow
+Shinx
 
-Spinarak
+Pidove
 
-Starly
-
-Sunkern
-
-Surskit
-
-Tadbulb
+Pikipek
 
 Taillow
 
-Tympole
+Lillipup
 
-Venipede
+Skwovet
 
-Vulpix
+Fletchling
 
-Whismur
+Purrloin
 
-Wiglett
+Pichu
+
+Mareep
+
+Bounsweet
+
+Cleffa
+
+Fomantis
+
+Gossifleur
+
+Pawmi
+
+Ledyba
+
+Spinarak
 
 Wingull
 
-Woobat
+Hoppip
 
-Wooloo
+Yamper
+
+Slakoth
+
+Tadbulb
+
+Nidoran M
+
+Nidoran F
+
+Cherubi
+
+Budew
+
+Paras
+
+Metapod
+
+Kakuna
+
+Silcoon
+
+Cascoon
+
+Chingling
+
+Venipede
 
 Wooper
 
 Wooper Paldea
 
-Yamper
+Wiglett
 
-Yungoos
+Diglett
 
-Zigzagoon
+Diglett Alola
 
-Zigzagoon Galar
+Slugma
+
+Surskit
+
+Milcery
+
+Grubbin
+
+Sewaddle
+
+Fidough
+
+Woobat
+
+Pansage
+
+Pansear
+
+Panpour
+
+Spearow
+
+Wooloo
+
+Chewtle
+
+Ekans
+
+Barboach
+
+Tympole
+
+Foongus
+
+Shroomish
+
+Electrike
+
+Blitzle
+
+Vulpix
+
+Sandshrew
+
+Poliwag
+
+Bellsprout
+
+Snubbull
+
+Remoraid
+
+Gulpin
+
+Flabébé
+
+Ducklett
+
+Marill
+
+Jigglypuff
+
+Pikachu
+
+Mime Jr.
+
+Slowpoke
+
+Slowpoke Galar
+
+Oddish
+
+Psyduck
+
+Cubone
+
+Goldeen
+
+Phanpy
+
+Buizel
+
+Finneon
+
+Deerling
+
+Buneary
+
+Skiddo
 
 === TRAINER_POOL_ZONE_4 ===
 Name: Trainer Pool
@@ -4848,169 +4856,163 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Barboach
-
-Bellsprout
-
-Blitzle
-
-Bonsly
-
-Buizel
-
-Buneary
-
-Capsakid
-
-Chewtle
-
 Chingling
 
-Cottonee
+Venipede
 
-Cubone
+Wooper
 
-Cutiefly
+Wooper Paldea
 
-Deerling
+Wiglett
 
 Diglett
 
 Diglett Alola
 
-Drowzee
+Slugma
 
-Ducklett
-
-Ekans
-
-Electrike
-
-Espurr
-
-Exeggcute
-
-Fidough
-
-Finneon
-
-Flabébé
-
-Flittle
-
-Foongus
-
-Goldeen
-
-Gothita
-
-Grubbin
-
-Gulpin
-
-Hatenna
-
-Impidimp
-
-Jigglypuff
-
-Joltik
-
-Karrablast
-
-Makuhita
-
-Marill
-
-Maschiff
-
-Meowth
-
-Meowth Alola
+Surskit
 
 Milcery
 
-Mime Jr.
+Grubbin
 
-Minccino
+Sewaddle
 
-Morelull
+Fidough
 
-Munna
-
-Oddish
-
-Panpour
+Woobat
 
 Pansage
 
 Pansear
 
-Petilil
+Panpour
 
-Phanpy
+Spearow
 
-Pikachu
+Wooloo
 
-Poliwag
+Chewtle
 
-Psyduck
+Ekans
 
-Remoraid
+Barboach
 
-Sandshrew
+Tympole
 
-Sewaddle
-
-Shelmet
+Foongus
 
 Shroomish
 
-Skiddo
+Electrike
+
+Blitzle
+
+Vulpix
+
+Sandshrew
+
+Poliwag
+
+Bellsprout
+
+Snubbull
+
+Remoraid
+
+Gulpin
+
+Flabébé
+
+Ducklett
+
+Marill
+
+Jigglypuff
+
+Pikachu
+
+Mime Jr.
 
 Slowpoke
 
 Slowpoke Galar
 
-Slugma
+Oddish
 
-Snubbull
+Psyduck
 
-Solosis
+Cubone
 
-Spearow
+Goldeen
+
+Phanpy
+
+Buizel
+
+Finneon
+
+Deerling
+
+Buneary
+
+Skiddo
 
 Spewpa
 
-Spoink
+Joltik
 
-Spritzee
+Shelmet
 
-Surskit
+Karrablast
 
-Swirlix
+Exeggcute
+
+Drowzee
 
 Trubbish
 
-Tympole
+Spoink
 
-Tyrogue
+Maschiff
 
-Venipede
+Spritzee
 
-Vulpix
+Swirlix
+
+Espurr
+
+Cottonee
+
+Petilil
+
+Flittle
+
+Hatenna
+
+Impidimp
+
+Bonsly
+
+Gothita
+
+Solosis
+
+Munna
 
 Wattrel
 
-Wiglett
+Morelull
 
-Woobat
+Makuhita
 
-Wooloo
+Minccino
 
-Wooper
+Cutiefly
 
-Wooper Paldea
+Capsakid
 
 === TRAINER_POOL_ZONE_4_GRUNTS ===
 Name: Trainer Pool
@@ -5084,215 +5086,207 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Applin
+Spearow
 
-Arrokuda
-
-Barboach
-
-Bellsprout
-
-Binacle
-
-Blitzle
-
-Bonsly
-
-Buizel
-
-Buneary
-
-Capsakid
-
-Carvanha
+Wooloo
 
 Chewtle
 
-Clauncher
-
-Clobbopus
-
-Corphish
-
-Cottonee
-
-Crabrawler
-
-Cubone
-
-Cutiefly
-
-Deerling
-
-Dottler
-
-Drilbur
-
-Drowzee
-
-Ducklett
-
 Ekans
 
-Electrike
+Barboach
 
-Espurr
-
-Exeggcute
-
-Finneon
-
-Flabébé
-
-Flittle
+Tympole
 
 Foongus
 
-Geodude
+Shroomish
 
-Geodude Alola
+Electrike
 
-Goldeen
+Blitzle
 
-Gothita
-
-Grimer
-
-Grimer Alola
-
-Growlithe
-
-Growlithe Hisui
-
-Gulpin
-
-Hatenna
-
-Helioptile
-
-Impidimp
-
-Jigglypuff
-
-Joltik
-
-Karrablast
-
-Koffing
-
-Krabby
-
-Luvdisc
-
-Machop
-
-Makuhita
-
-Mankey
-
-Marill
-
-Maschiff
-
-Meditite
-
-Meowth
-
-Meowth Alola
-
-Mime Jr.
-
-Minccino
-
-Morelull
-
-Munna
-
-Nacli
-
-Natu
-
-Numel
-
-Oddish
-
-Pancham
-
-Petilil
-
-Phanpy
-
-Pikachu
-
-Poliwag
-
-Psyduck
-
-Remoraid
-
-Rockruff
-
-Roggenrola
-
-Rolycoly
+Vulpix
 
 Sandshrew
 
-Sandshrew Alola
+Poliwag
 
-Shellos
+Bellsprout
 
-Shelmet
+Snubbull
 
-Shroomish
+Remoraid
 
-Sizzlipede
+Gulpin
 
-Skiddo
+Flabébé
+
+Ducklett
+
+Marill
+
+Jigglypuff
+
+Pikachu
+
+Mime Jr.
 
 Slowpoke
 
 Slowpoke Galar
 
-Snubbull
+Oddish
 
-Solosis
+Psyduck
 
-Spearow
+Cubone
 
-Spoink
+Goldeen
 
-Spritzee
+Phanpy
 
-Swablu
+Buizel
 
-Swinub
+Finneon
 
-Swirlix
+Deerling
 
-Tandemaus
+Buneary
 
-Teddiursa
+Skiddo
 
-Tentacool
+Joltik
 
-Timburr
+Shelmet
+
+Karrablast
+
+Exeggcute
+
+Drowzee
 
 Trubbish
 
-Tympole
+Spoink
 
-Tyrogue
+Maschiff
 
-Voltorb Hisui
+Spritzee
 
-Vulpix
+Swirlix
 
-Vulpix Alola
+Espurr
+
+Cottonee
+
+Petilil
+
+Flittle
+
+Hatenna
+
+Impidimp
+
+Bonsly
+
+Gothita
+
+Solosis
+
+Munna
 
 Wattrel
 
-Wooloo
+Morelull
+
+Makuhita
+
+Minccino
+
+Cutiefly
+
+Capsakid
+
+Helioptile
+
+Applin
+
+Rolycoly
+
+Vulpix Alola
+
+Sandshrew Alola
+
+Swinub
+
+Arrokuda
+
+Roggenrola
+
+Rockruff
+
+Nacli
+
+Geodude
+
+Geodude Alola
+
+Mankey
+
+Machop
+
+Carvanha
+
+Numel
+
+Timburr
+
+Sizzlipede
+
+Tandemaus
+
+Binacle
+
+Corphish
+
+Swablu
+
+Clobbopus
+
+Natu
+
+Grimer
+
+Grimer Alola
+
+Krabby
+
+Shellos
+
+Drilbur
+
+Voltorb Hisui
+
+Teddiursa
+
+Luvdisc
+
+Clauncher
+
+Tentacool
+
+Koffing
+
+Crabrawler
+
+Meditite
+
+Pancham
+
+Growlithe
+
+Growlithe Hisui
 
 === TRAINER_POOL_ZONE_6 ===
 Name: Trainer Pool
@@ -5600,8 +5594,6 @@ Doduo
 
 Salandit
 
-Sandygast
-
 Magnemite
 
 Dwebble
@@ -5663,6 +5655,8 @@ Espurr
 Rellor
 
 Zubat
+
+Hatenna
 
 Impidimp
 
@@ -5770,31 +5764,17 @@ Meowth Galar
 
 Shroodle
 
-Shuppet
-
-Duskull
-
 Tinkatink
-
-Golett
 
 Ferroseed
 
 Mareanie
-
-Sinistea
-
-Poltchageist
-
-Phantump
 
 Doduo
 
 Gastly
 
 Magnemite
-
-Honedge
 
 Noibat
 
@@ -5805,8 +5785,6 @@ Zorua Hisui
 Cufant
 
 Elgyem
-
-Pumpkaboo
 
 Toedscool
 
@@ -5868,6 +5846,8 @@ Capsakid
 
 Helioptile
 
+Rockruff
+
 Natu
 
 Drilbur
@@ -5892,10 +5872,6 @@ Greavard
 
 Sandile
 
-Shuppet
-
-Duskull
-
 Tinkatink
 
 Baltoy
@@ -5906,8 +5882,6 @@ Klink
 
 Varoom
 
-Gimmighoul
-
 Yamask
 
 Yamask Galar
@@ -5915,10 +5889,6 @@ Yamask Galar
 Golett
 
 Ferroseed
-
-Sinistea
-
-Poltchageist
 
 Doduo
 
@@ -5935,8 +5905,6 @@ Sandygast
 Magnemite
 
 Dwebble
-
-Honedge
 
 Aron
 
@@ -6022,48 +5990,6 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Magikarp
-
-Ralts
-
-Happiny
-
-Togepi
-
-Eevee
-
-Larvesta
-
-Riolu
-
-Dreepy
-
-Gible
-
-Deino
-
-Goomy
-
-Jangmo-o
-
-Larvitar
-
-Frigibax
-
-Beldum
-
-Dratini
-
-Bagon
-
-Charcadet
-
-Snom
-
-Toxel
-
-Tynamo
-
 Bulbasaur
 
 Chikorita
@@ -6117,6 +6043,46 @@ Popplio
 Sobble
 
 Quaxly
+
+Ralts
+
+Happiny
+
+Togepi
+
+Eevee
+
+Larvesta
+
+Riolu
+
+Dreepy
+
+Gible
+
+Deino
+
+Goomy
+
+Jangmo-o
+
+Larvitar
+
+Frigibax
+
+Beldum
+
+Dratini
+
+Bagon
+
+Charcadet
+
+Snom
+
+Toxel
+
+Tynamo
 
 === TRAINER_POOL_ZONE_11 ===
 Name: Trainer Pool
@@ -6254,6 +6220,8 @@ Salandit
 
 Noibat
 
+Frillish
+
 Elgyem
 
 Pawniard
@@ -6281,6 +6249,14 @@ Pic: Champion Wallace
 Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
+
+Farfetch'd
+
+Farfetch'd Galar
+
+Sableye
+
+Mawile
 
 Kirlia
 
@@ -6316,8 +6292,6 @@ Swadloon
 
 Fletchinder
 
-Kricketune
-
 Palpitoad
 
 Roselia
@@ -6330,9 +6304,11 @@ Skiploom
 
 Poliwhirl
 
-Dustox
+Kricketune
 
 Weepinbell
+
+Dustox
 
 Ledian
 
@@ -6354,15 +6330,33 @@ Staravia
 
 Pidgeotto
 
-Ivysaur
-
 Spidops
+
+Ponyta
+
+Ponyta Galar
+
+Murkrow
+
+Corsola
+
+Corsola Galar
+
+Carkol
+
+Emolga
+
+Plusle
+
+Minun
+
+Pachirisu
+
+Ivysaur
 
 Charmeleon
 
 Wartortle
-
-Parasect
 
 Bayleef
 
@@ -6370,17 +6364,11 @@ Quilava
 
 Croconaw
 
-Murkrow
-
 Grovyle
 
 Combusken
 
 Marshtomp
-
-Plusle
-
-Minun
 
 Grotle
 
@@ -6388,65 +6376,23 @@ Monferno
 
 Prinplup
 
-Pachirisu
-
 Quilladin
 
 Frogadier
 
 Braixen
 
-Ponyta
-
-Ponyta Galar
-
-Sudowoodo
-
-Corsola
-
-Corsola Galar
-
-Bibarel
-
-Pyukumuku
-
-Carkol
-
 Floragato
 
 Quaxwell
 
-Chatot
-
-Vivillon
-
 Crocalor
-
-Raticate
-
-Raticate Alola
 
 Servine
 
 Dewott
 
-Furret
-
-Dunsparce
-
-Squawkabilly
-
 Pignite
-
-Gumshoos
-
-Mightyena
-
-Linoone
-
-Linoone Galar
-
-Watchog
 
 Dartrix
 
@@ -6460,17 +6406,33 @@ Raboot
 
 Drizzile
 
+Pyukumuku
+
+Chatot
+
+Squawkabilly
+
+Dunsparce
+
+Furret
+
+Mightyena
+
+Linoone
+
+Linoone Galar
+
+Diggersby
+
 Wormadam
 
 Wormadam Sandy
 
 Wormadam Trash
 
-Diggersby
-
 Mothim
 
-Emolga
+Vivillon
 
 Sunflora
 
@@ -6496,19 +6458,13 @@ Morpeko
 
 Girafarig
 
-Fearow
-
 Audino
-
-Liepard
 
 Qwilfish
 
 Qwilfish Hisui
 
 Stantler
-
-Noctowl
 
 === TRAINER_POOL_ZONE_13_AND_14 ===
 Name: Trainer Pool
@@ -6556,8 +6512,6 @@ Swadloon
 
 Fletchinder
 
-Kricketune
-
 Palpitoad
 
 Roselia
@@ -6570,9 +6524,11 @@ Skiploom
 
 Poliwhirl
 
-Dustox
+Kricketune
 
 Weepinbell
+
+Dustox
 
 Ledian
 
@@ -6594,15 +6550,33 @@ Staravia
 
 Pidgeotto
 
-Ivysaur
-
 Spidops
+
+Ponyta
+
+Ponyta Galar
+
+Murkrow
+
+Corsola
+
+Corsola Galar
+
+Carkol
+
+Emolga
+
+Plusle
+
+Minun
+
+Pachirisu
+
+Ivysaur
 
 Charmeleon
 
 Wartortle
-
-Parasect
 
 Bayleef
 
@@ -6610,17 +6584,11 @@ Quilava
 
 Croconaw
 
-Murkrow
-
 Grovyle
 
 Combusken
 
 Marshtomp
-
-Plusle
-
-Minun
 
 Grotle
 
@@ -6628,65 +6596,23 @@ Monferno
 
 Prinplup
 
-Pachirisu
-
 Quilladin
 
 Frogadier
 
 Braixen
 
-Ponyta
-
-Ponyta Galar
-
-Sudowoodo
-
-Corsola
-
-Corsola Galar
-
-Bibarel
-
-Pyukumuku
-
-Carkol
-
 Floragato
 
 Quaxwell
 
-Chatot
-
-Vivillon
-
 Crocalor
-
-Raticate
-
-Raticate Alola
 
 Servine
 
 Dewott
 
-Furret
-
-Dunsparce
-
-Squawkabilly
-
 Pignite
-
-Gumshoos
-
-Mightyena
-
-Linoone
-
-Linoone Galar
-
-Watchog
 
 Dartrix
 
@@ -6700,17 +6626,391 @@ Raboot
 
 Drizzile
 
+Pyukumuku
+
+Chatot
+
+Squawkabilly
+
+Dunsparce
+
+Furret
+
+Mightyena
+
+Linoone
+
+Linoone Galar
+
+Diggersby
+
 Wormadam
 
 Wormadam Sandy
 
 Wormadam Trash
 
+Mothim
+
+Vivillon
+
+Sunflora
+
+Volbeat
+
+Illumise
+
+Gligar
+
+Sneasel
+
+Sneasel Hisui
+
+Dedenne
+
+Tangela
+
+Misdreavus
+
+Pincurchin
+
+Morpeko
+
+Girafarig
+
+Audino
+
+Qwilfish
+
+Qwilfish Hisui
+
+Stantler
+
+Naclstack
+
+Graveler
+
+Graveler Alola
+
+Boldore
+
+Tinkatuff
+
+Vigoroth
+
+Kecleon
+
+Kadabra
+
+Chansey
+
+Seaking
+
+Cherrim
+
+Castform
+
+Golbat
+
+Lunatone
+
+Solrock
+
+Tropius
+
+Basculin
+
+=== TRAINER_POOL_ZONE_13_AND_14_GRUNTS ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Rhyhorn
+
+Glimmet
+
+Cranidos
+
+Shieldon
+
+Omanyte
+
+Kabuto
+
+Lileep
+
+Anorith
+
+Tirtouga
+
+Tyrunt
+
+Amaura
+
+Archen
+
+Magby
+
+Nosepass
+
+Onix
+
+Mudbray
+
+Sableye
+
+Mawile
+
+Trumbeak
+
+Loudred
+
+Nidorina
+
+Nidorino
+
+Fletchinder
+
+Dustox
+
+Ariados
+
+Gloom
+
+Ponyta
+
+Carkol
+
+Sudowoodo
+
+Dunsparce
+
+Raticate
+
+Raticate Alola
+
+Gumshoos
+
+Mightyena
+
+Watchog
+
 Diggersby
+
+Wormadam Sandy
+
+Wormadam Trash
+
+Sunflora
+
+Gligar
+
+Tangela
+
+Fearow
+
+Liepard
+
+Naclstack
+
+Graveler
+
+Graveler Alola
+
+Boldore
+
+Sandslash
+
+Cherrim
+
+Thievul
+
+Castform
+
+Golbat
+
+Lunatone
+
+Solrock
+
+Tropius
+
+=== TRAINER_POOL_ZONE_16 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Sableye
+
+Mawile
+
+Delcatty
+
+Dolliv
+
+Loudred
+
+Nidorina
+
+Nidorino
+
+Corvisquire
+
+Herdier
+
+Floette
+
+Fletchinder
+
+Palpitoad
+
+Roselia
+
+Charjabug
+
+Poliwhirl
+
+Kricketune
+
+Weepinbell
+
+Dustox
+
+Ledian
+
+Ariados
+
+Butterfree
+
+Beedrill
+
+Gloom
+
+Beautifly
+
+Lombre
+
+Nuzleaf
+
+Staravia
+
+Pidgeotto
+
+Spidops
+
+Parasect
+
+Ponyta
+
+Ponyta Galar
+
+Murkrow
+
+Corsola
+
+Corsola Galar
+
+Carkol
+
+Emolga
+
+Plusle
+
+Minun
+
+Pachirisu
+
+Charmeleon
+
+Wartortle
+
+Quilava
+
+Grovyle
+
+Combusken
+
+Marshtomp
+
+Monferno
+
+Prinplup
+
+Quilladin
+
+Frogadier
+
+Braixen
+
+Floragato
+
+Quaxwell
+
+Crocalor
+
+Servine
+
+Dewott
+
+Pignite
+
+Dartrix
+
+Torracat
+
+Brionne
+
+Thwackey
+
+Raboot
+
+Drizzile
+
+Sudowoodo
+
+Pyukumuku
+
+Chatot
+
+Squawkabilly
+
+Dunsparce
+
+Bibarel
+
+Raticate
+
+Raticate Alola
+
+Furret
+
+Gumshoos
+
+Mightyena
+
+Linoone
+
+Linoone Galar
+
+Watchog
+
+Diggersby
+
+Wormadam
+
+Wormadam Sandy
+
+Wormadam Trash
 
 Mothim
 
-Emolga
+Vivillon
 
 Sunflora
 
@@ -6818,27 +7118,33 @@ Eldegoss
 
 Maractus
 
-Aromatisse
+Togetic
 
-=== TRAINER_POOL_ZONE_13_AND_14_GRUNTS ===
-Name: Trainer Pool
-Class: Champion
-Pic: Champion Wallace
-Music: Elite Four
-AI: AI_FLAG_BASIC_TRAINER
-Party Size: 1
+Magcargo
 
-Bulbasaur
+Seadra
 
-=== TRAINER_POOL_ZONE_16 ===
-Name: Trainer Pool
-Class: Champion
-Pic: Champion Wallace
-Music: Elite Four
-AI: AI_FLAG_BASIC_TRAINER
-Party Size: 1
+Krokorok
 
-Bulbasaur
+Lampent
+
+Klang
+
+Vanillish
+
+Gothorita
+
+Duosion
+
+Hattrem
+
+Morgrem
+
+Wigglytuff
+
+Klawf
+
+Purugly
 
 === TRAINER_POOL_ZONE_16_GRUNTS ===
 Name: Trainer Pool
@@ -6848,7 +7154,41 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Bulbasaur
+Elgyem
+
+Staryu
+
+Drifloon
+
+Glimmet
+
+Nosepass
+
+Masquerain
+
+Carnivine
+
+Thievul
+
+Ninjask
+
+Castform
+
+Golbat
+
+Lunatone
+
+Solrock
+
+Klang
+
+Gothorita
+
+Duosion
+
+Hattrem
+
+Morgrem
 
 === TRAINER_POOL_ZONE_18_AND_19 ===
 Name: Trainer Pool
@@ -6858,7 +7198,231 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Bulbasaur
+Sableye
+
+Mawile
+
+Delcatty
+
+Loudred
+
+Kricketune
+
+Ledian
+
+Ariados
+
+Butterfree
+
+Beedrill
+
+Beautifly
+
+Spidops
+
+Parasect
+
+Emolga
+
+Sudowoodo
+
+Pyukumuku
+
+Chatot
+
+Squawkabilly
+
+Dunsparce
+
+Bibarel
+
+Raticate
+
+Raticate Alola
+
+Furret
+
+Gumshoos
+
+Mightyena
+
+Linoone
+
+Watchog
+
+Diggersby
+
+Wormadam
+
+Wormadam Sandy
+
+Wormadam Trash
+
+Mothim
+
+Vivillon
+
+Sunflora
+
+Volbeat
+
+Illumise
+
+Dedenne
+
+Pincurchin
+
+Morpeko
+
+Fearow
+
+Audino
+
+Liepard
+
+Qwilfish
+
+Noctowl
+
+Swoobat
+
+Quagsire
+
+Clodsire
+
+Togedemaru
+
+Pelipper
+
+Kecleon
+
+Arbok
+
+Sandslash
+
+Sandslash Alola
+
+Chansey
+
+Seaking
+
+Granbull
+
+Cherrim
+
+Masquerain
+
+Carnivine
+
+Thievul
+
+Ninjask
+
+Castform
+
+Lunatone
+
+Solrock
+
+Tropius
+
+Lumineon
+
+Basculin
+
+Greedent
+
+Eldegoss
+
+Maractus
+
+Togetic
+
+Magcargo
+
+Seadra
+
+Krokorok
+
+Lampent
+
+Klang
+
+Vanillish
+
+Gothorita
+
+Duosion
+
+Hattrem
+
+Morgrem
+
+Wigglytuff
+
+Klawf
+
+Purugly
+
+Aromatisse
+
+Wugtrio
+
+Dugtrio
+
+Dugtrio Alola
+
+Marowak
+
+Vibrava
+
+Drakloak
+
+Machoke
+
+Haunter
+
+Gurdurr
+
+Eelektrik
+
+Marowak Alola
+
+Shelgon
+
+Metang
+
+Dragonair
+
+Zweilous
+
+Hakamo-o
+
+Shiinotic
+
+Pupitar
+
+Sealeo
+
+Gabite
+
+Fraxure
+
+Arctibax
+
+Lairon
+
+Venomoth
+
+Piloswine
+
+Sliggoo
+
+Sliggoo Hisui
+
+Persian
+
+Persian Alola
 
 === TRAINER_POOL_ZONE_20 ===
 Name: Trainer Pool
@@ -6868,7 +7432,139 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Bulbasaur
+Togedemaru
+
+Pelipper
+
+Kecleon
+
+Arbok
+
+Sandslash
+
+Sandslash Alola
+
+Chansey
+
+Seaking
+
+Granbull
+
+Cherrim
+
+Masquerain
+
+Carnivine
+
+Thievul
+
+Ninjask
+
+Castform
+
+Lunatone
+
+Solrock
+
+Tropius
+
+Lumineon
+
+Basculin
+
+Greedent
+
+Eldegoss
+
+Maractus
+
+Togetic
+
+Magcargo
+
+Seadra
+
+Krokorok
+
+Lampent
+
+Klang
+
+Vanillish
+
+Gothorita
+
+Duosion
+
+Hattrem
+
+Morgrem
+
+Wigglytuff
+
+Klawf
+
+Purugly
+
+Aromatisse
+
+Wugtrio
+
+Dugtrio
+
+Dugtrio Alola
+
+Marowak
+
+Vibrava
+
+Drakloak
+
+Machoke
+
+Haunter
+
+Gurdurr
+
+Eelektrik
+
+Marowak Alola
+
+Shelgon
+
+Metang
+
+Dragonair
+
+Zweilous
+
+Hakamo-o
+
+Shiinotic
+
+Pupitar
+
+Sealeo
+
+Gabite
+
+Fraxure
+
+Arctibax
+
+Lairon
+
+Venomoth
+
+Piloswine
+
+Sliggoo
+
+Sliggoo Hisui
+
+Persian
+
+Persian Alola
 
 === TRAINER_POOL_ZONE_20_FOOD ===
 Name: Trainer Pool
@@ -6878,7 +7574,105 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Bulbasaur
+Morpeko
+
+Chansey
+
+Cherrim
+
+Tropius
+
+Klawf
+
+Shiinotic
+
+Breloom
+
+Amoonguss
+
+Swalot
+
+Grumpig
+
+Vespiquen
+
+Kingler
+
+Cramorant
+
+Tatsugiri
+
+Dachsbun
+
+Crabominable
+
+Veluza
+
+Octillery
+
+Slurpuff
+
+Flapple
+
+Appletun
+
+Scovillain
+
+Oinkologne
+
+Slowbro
+
+Slowbro Galar
+
+Tauros
+
+Tauros Paldea Combat
+
+Tauros Paldea Blaze
+
+Tauros Paldea Aqua
+
+Slowking
+
+Slowking Galar
+
+Miltank
+
+Gourgeist
+
+Alcremie
+
+Clawitzer
+
+Garganacl
+
+Shuckle
+
+Sirfetch'd
+
+Polteageist
+
+Sinistcha
+
+Tsareena
+
+Arboliva
+
+Toedscruel
+
+Cloyster
+
+Exeggutor
+
+Exeggutor Alola
+
+Dondozo
+
+Vanilluxe
+
+Blissey
+
+Hydrapple
 
 === TRAINER_POOL_ZONE_21 ===
 Name: Trainer Pool
@@ -6888,7 +7682,395 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Bulbasaur
+Doublade
+
+Perrserker
+
+Lokix
+
+Araquanid
+
+Primeape
+
+Hitmonlee
+
+Hitmonchan
+
+Jynx
+
+Hitmontop
+
+Swellow
+
+Banette
+
+Dusclops
+
+Chimecho
+
+Seviper
+
+Mr. Mime
+
+Mr. Mime Galar
+
+Lanturn
+
+Jumpluff
+
+Breloom
+
+Sharpedo
+
+Camerupt
+
+Amoonguss
+
+Ribombee
+
+Magneton
+
+Forretress
+
+Azumarill
+
+Zangoose
+
+Skarmory
+
+Absol
+
+Throh
+
+Sawk
+
+Meowstic
+
+Swalot
+
+Whiscash
+
+Crawdaunt
+
+Dodrio
+
+Xatu
+
+Torkoal
+
+Grumpig
+
+Cinccino
+
+Alomomola
+
+Klefki
+
+Falinks
+
+Stonjourner
+
+Eiscue
+
+Maushold
+
+Rabsca
+
+Furfrou
+
+Stunfisk
+
+Stunfisk Galar
+
+Galvantula
+
+Swanna
+
+Hariyama
+
+Vespiquen
+
+Garbodor
+
+Trevenant
+
+Dewgong
+
+Kingler
+
+Manectric
+
+Cacturne
+
+Gastrodon
+
+Sawsbuck
+
+Bruxish
+
+Cramorant
+
+Frosmoth
+
+Indeedee
+
+Tatsugiri
+
+Oricorio
+
+Mimikyu
+
+Dachsbun
+
+Crabominable
+
+Veluza
+
+Pidgeot
+
+Skuntank
+
+Octillery
+
+Ludicolo
+
+Shiftry
+
+Glalie
+
+Lopunny
+
+Froslass
+
+Whimsicott
+
+Lilligant
+
+Lilligant Hisui
+
+Jellicent
+
+Slurpuff
+
+Lurantis
+
+Salazzle
+
+Palossand
+
+Komala
+
+Grapploct
+
+Brambleghast
+
+Orthworm
+
+Heliolisk
+
+Espathra
+
+Ambipom
+
+Malamar
+
+Clefable
+
+Hypno
+
+Cofagrigus
+
+Golurk
+
+Runerigus
+
+Heatmor
+
+Durant
+
+Raichu
+
+Raichu Alola
+
+Rhydon
+
+Mantine
+
+Huntail
+
+Gorebyss
+
+Relicanth
+
+Staraptor
+
+Spiritomb
+
+Scolipede
+
+Crustle
+
+Beheeyem
+
+Druddigon
+
+Toucannon
+
+Comfey
+
+Turtonator
+
+Drampa
+
+Drednaw
+
+Flapple
+
+Appletun
+
+Grafaiai
+
+Bombirdier
+
+Dipplin
+
+Scovillain
+
+Musharna
+
+Lycanroc Midday
+
+Lycanroc Midnight
+
+Lycanroc Dusk
+
+Unfezant
+
+Scrafty
+
+Houndstone
+
+Ferrothorn
+
+Oinkologne
+
+Vileplume
+
+Victreebel
+
+Slowbro
+
+Slowbro Galar
+
+Electrode
+
+Electrode Hisui
+
+Weezing
+
+Weezing Galar
+
+Kangaskhan
+
+Electabuzz
+
+Tauros
+
+Tauros Paldea Combat
+
+Tauros Paldea Blaze
+
+Tauros Paldea Aqua
+
+Bellossom
+
+Slowking
+
+Slowking Galar
+
+Miltank
+
+Exploud
+
+Altaria
+
+Toxicroak
+
+Sigilyph
+
+Gothitelle
+
+Reuniclus
+
+Bisharp
+
+Bouffalant
+
+Oranguru
+
+Passimian
+
+Dubwool
+
+Boltund
+
+Pawmot
+
+Kilowattrel
+
+Abomasnow
+
+Dragalge
+
+Gourgeist
+
+Golem
+
+Golem Alola
+
+Magmar
+
+Omastar
+
+Kabutops
+
+Cradily
+
+Armaldo
+
+Rampardos
+
+Bastiodon
+
+Floatzel
+
+Mismagius
+
+Carracosta
+
+Escavalier
+
+Accelgor
+
+Pangoro
+
+Alcremie
+
+Bellibolt
+
+Zebstrika
+
+Drifblim
+
+Simisage
+
+Simisear
+
+Simipour
+
+Leavanny
+
+Carbink
 
 === TRAINER_POOL_ZONE_22 ===
 Name: Trainer Pool
@@ -6898,7 +8080,395 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Bulbasaur
+Doublade
+
+Perrserker
+
+Lokix
+
+Araquanid
+
+Primeape
+
+Hitmonlee
+
+Hitmonchan
+
+Jynx
+
+Hitmontop
+
+Swellow
+
+Banette
+
+Dusclops
+
+Chimecho
+
+Seviper
+
+Mr. Mime
+
+Mr. Mime Galar
+
+Lanturn
+
+Jumpluff
+
+Breloom
+
+Sharpedo
+
+Camerupt
+
+Amoonguss
+
+Ribombee
+
+Magneton
+
+Forretress
+
+Azumarill
+
+Zangoose
+
+Skarmory
+
+Absol
+
+Throh
+
+Sawk
+
+Meowstic
+
+Swalot
+
+Whiscash
+
+Crawdaunt
+
+Dodrio
+
+Xatu
+
+Torkoal
+
+Grumpig
+
+Cinccino
+
+Alomomola
+
+Klefki
+
+Falinks
+
+Stonjourner
+
+Eiscue
+
+Maushold
+
+Rabsca
+
+Furfrou
+
+Stunfisk
+
+Stunfisk Galar
+
+Galvantula
+
+Swanna
+
+Hariyama
+
+Vespiquen
+
+Garbodor
+
+Trevenant
+
+Dewgong
+
+Kingler
+
+Manectric
+
+Cacturne
+
+Gastrodon
+
+Sawsbuck
+
+Bruxish
+
+Cramorant
+
+Frosmoth
+
+Indeedee
+
+Tatsugiri
+
+Oricorio
+
+Mimikyu
+
+Dachsbun
+
+Crabominable
+
+Veluza
+
+Pidgeot
+
+Skuntank
+
+Octillery
+
+Ludicolo
+
+Shiftry
+
+Glalie
+
+Lopunny
+
+Froslass
+
+Whimsicott
+
+Lilligant
+
+Lilligant Hisui
+
+Jellicent
+
+Slurpuff
+
+Lurantis
+
+Salazzle
+
+Palossand
+
+Komala
+
+Grapploct
+
+Brambleghast
+
+Orthworm
+
+Heliolisk
+
+Espathra
+
+Ambipom
+
+Malamar
+
+Clefable
+
+Hypno
+
+Cofagrigus
+
+Golurk
+
+Runerigus
+
+Heatmor
+
+Durant
+
+Raichu
+
+Raichu Alola
+
+Rhydon
+
+Mantine
+
+Huntail
+
+Gorebyss
+
+Relicanth
+
+Staraptor
+
+Spiritomb
+
+Scolipede
+
+Crustle
+
+Beheeyem
+
+Druddigon
+
+Toucannon
+
+Comfey
+
+Turtonator
+
+Drampa
+
+Drednaw
+
+Flapple
+
+Appletun
+
+Grafaiai
+
+Bombirdier
+
+Dipplin
+
+Scovillain
+
+Musharna
+
+Lycanroc Midday
+
+Lycanroc Midnight
+
+Lycanroc Dusk
+
+Unfezant
+
+Scrafty
+
+Houndstone
+
+Ferrothorn
+
+Oinkologne
+
+Vileplume
+
+Victreebel
+
+Slowbro
+
+Slowbro Galar
+
+Electrode
+
+Electrode Hisui
+
+Weezing
+
+Weezing Galar
+
+Kangaskhan
+
+Electabuzz
+
+Tauros
+
+Tauros Paldea Combat
+
+Tauros Paldea Blaze
+
+Tauros Paldea Aqua
+
+Bellossom
+
+Slowking
+
+Slowking Galar
+
+Miltank
+
+Exploud
+
+Altaria
+
+Toxicroak
+
+Sigilyph
+
+Gothitelle
+
+Reuniclus
+
+Bisharp
+
+Bouffalant
+
+Oranguru
+
+Passimian
+
+Dubwool
+
+Boltund
+
+Pawmot
+
+Kilowattrel
+
+Abomasnow
+
+Dragalge
+
+Gourgeist
+
+Golem
+
+Golem Alola
+
+Magmar
+
+Omastar
+
+Kabutops
+
+Cradily
+
+Armaldo
+
+Rampardos
+
+Bastiodon
+
+Floatzel
+
+Mismagius
+
+Carracosta
+
+Escavalier
+
+Accelgor
+
+Pangoro
+
+Alcremie
+
+Bellibolt
+
+Zebstrika
+
+Drifblim
+
+Simisage
+
+Simisear
+
+Simipour
+
+Leavanny
+
+Carbink
 
 === TRAINER_POOL_ZONE_23 ===
 Name: Trainer Pool
@@ -6908,7 +8478,395 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Bulbasaur
+Doublade
+
+Perrserker
+
+Lokix
+
+Araquanid
+
+Primeape
+
+Hitmonlee
+
+Hitmonchan
+
+Jynx
+
+Hitmontop
+
+Swellow
+
+Banette
+
+Dusclops
+
+Chimecho
+
+Seviper
+
+Mr. Mime
+
+Mr. Mime Galar
+
+Lanturn
+
+Jumpluff
+
+Breloom
+
+Sharpedo
+
+Camerupt
+
+Amoonguss
+
+Ribombee
+
+Magneton
+
+Forretress
+
+Azumarill
+
+Zangoose
+
+Skarmory
+
+Absol
+
+Throh
+
+Sawk
+
+Meowstic
+
+Swalot
+
+Whiscash
+
+Crawdaunt
+
+Dodrio
+
+Xatu
+
+Torkoal
+
+Grumpig
+
+Cinccino
+
+Alomomola
+
+Klefki
+
+Falinks
+
+Stonjourner
+
+Eiscue
+
+Maushold
+
+Rabsca
+
+Furfrou
+
+Stunfisk
+
+Stunfisk Galar
+
+Galvantula
+
+Swanna
+
+Hariyama
+
+Vespiquen
+
+Garbodor
+
+Trevenant
+
+Dewgong
+
+Kingler
+
+Manectric
+
+Cacturne
+
+Gastrodon
+
+Sawsbuck
+
+Bruxish
+
+Cramorant
+
+Frosmoth
+
+Indeedee
+
+Tatsugiri
+
+Oricorio
+
+Mimikyu
+
+Dachsbun
+
+Crabominable
+
+Veluza
+
+Pidgeot
+
+Skuntank
+
+Octillery
+
+Ludicolo
+
+Shiftry
+
+Glalie
+
+Lopunny
+
+Froslass
+
+Whimsicott
+
+Lilligant
+
+Lilligant Hisui
+
+Jellicent
+
+Slurpuff
+
+Lurantis
+
+Salazzle
+
+Palossand
+
+Komala
+
+Grapploct
+
+Brambleghast
+
+Orthworm
+
+Heliolisk
+
+Espathra
+
+Ambipom
+
+Malamar
+
+Clefable
+
+Hypno
+
+Cofagrigus
+
+Golurk
+
+Runerigus
+
+Heatmor
+
+Durant
+
+Raichu
+
+Raichu Alola
+
+Rhydon
+
+Mantine
+
+Huntail
+
+Gorebyss
+
+Relicanth
+
+Staraptor
+
+Spiritomb
+
+Scolipede
+
+Crustle
+
+Beheeyem
+
+Druddigon
+
+Toucannon
+
+Comfey
+
+Turtonator
+
+Drampa
+
+Drednaw
+
+Flapple
+
+Appletun
+
+Grafaiai
+
+Bombirdier
+
+Dipplin
+
+Scovillain
+
+Musharna
+
+Lycanroc Midday
+
+Lycanroc Midnight
+
+Lycanroc Dusk
+
+Unfezant
+
+Scrafty
+
+Houndstone
+
+Ferrothorn
+
+Oinkologne
+
+Vileplume
+
+Victreebel
+
+Slowbro
+
+Slowbro Galar
+
+Electrode
+
+Electrode Hisui
+
+Weezing
+
+Weezing Galar
+
+Kangaskhan
+
+Electabuzz
+
+Tauros
+
+Tauros Paldea Combat
+
+Tauros Paldea Blaze
+
+Tauros Paldea Aqua
+
+Bellossom
+
+Slowking
+
+Slowking Galar
+
+Miltank
+
+Exploud
+
+Altaria
+
+Toxicroak
+
+Sigilyph
+
+Gothitelle
+
+Reuniclus
+
+Bisharp
+
+Bouffalant
+
+Oranguru
+
+Passimian
+
+Dubwool
+
+Boltund
+
+Pawmot
+
+Kilowattrel
+
+Abomasnow
+
+Dragalge
+
+Gourgeist
+
+Golem
+
+Golem Alola
+
+Magmar
+
+Omastar
+
+Kabutops
+
+Cradily
+
+Armaldo
+
+Rampardos
+
+Bastiodon
+
+Floatzel
+
+Mismagius
+
+Carracosta
+
+Escavalier
+
+Accelgor
+
+Pangoro
+
+Alcremie
+
+Bellibolt
+
+Zebstrika
+
+Drifblim
+
+Simisage
+
+Simisear
+
+Simipour
+
+Leavanny
+
+Carbink
 
 === TRAINER_POOL_ZONE_24_AND_25 ===
 Name: Trainer Pool
@@ -6918,7 +8876,395 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Bulbasaur
+Doublade
+
+Perrserker
+
+Lokix
+
+Araquanid
+
+Primeape
+
+Hitmonlee
+
+Hitmonchan
+
+Jynx
+
+Hitmontop
+
+Swellow
+
+Banette
+
+Dusclops
+
+Chimecho
+
+Seviper
+
+Mr. Mime
+
+Mr. Mime Galar
+
+Lanturn
+
+Jumpluff
+
+Breloom
+
+Sharpedo
+
+Camerupt
+
+Amoonguss
+
+Ribombee
+
+Magneton
+
+Forretress
+
+Azumarill
+
+Zangoose
+
+Skarmory
+
+Absol
+
+Throh
+
+Sawk
+
+Meowstic
+
+Swalot
+
+Whiscash
+
+Crawdaunt
+
+Dodrio
+
+Xatu
+
+Torkoal
+
+Grumpig
+
+Cinccino
+
+Alomomola
+
+Klefki
+
+Falinks
+
+Stonjourner
+
+Eiscue
+
+Maushold
+
+Rabsca
+
+Furfrou
+
+Stunfisk
+
+Stunfisk Galar
+
+Galvantula
+
+Swanna
+
+Hariyama
+
+Vespiquen
+
+Garbodor
+
+Trevenant
+
+Dewgong
+
+Kingler
+
+Manectric
+
+Cacturne
+
+Gastrodon
+
+Sawsbuck
+
+Bruxish
+
+Cramorant
+
+Frosmoth
+
+Indeedee
+
+Tatsugiri
+
+Oricorio
+
+Mimikyu
+
+Dachsbun
+
+Crabominable
+
+Veluza
+
+Pidgeot
+
+Skuntank
+
+Octillery
+
+Ludicolo
+
+Shiftry
+
+Glalie
+
+Lopunny
+
+Froslass
+
+Whimsicott
+
+Lilligant
+
+Lilligant Hisui
+
+Jellicent
+
+Slurpuff
+
+Lurantis
+
+Salazzle
+
+Palossand
+
+Komala
+
+Grapploct
+
+Brambleghast
+
+Orthworm
+
+Heliolisk
+
+Espathra
+
+Ambipom
+
+Malamar
+
+Clefable
+
+Hypno
+
+Cofagrigus
+
+Golurk
+
+Runerigus
+
+Heatmor
+
+Durant
+
+Raichu
+
+Raichu Alola
+
+Rhydon
+
+Mantine
+
+Huntail
+
+Gorebyss
+
+Relicanth
+
+Staraptor
+
+Spiritomb
+
+Scolipede
+
+Crustle
+
+Beheeyem
+
+Druddigon
+
+Toucannon
+
+Comfey
+
+Turtonator
+
+Drampa
+
+Drednaw
+
+Flapple
+
+Appletun
+
+Grafaiai
+
+Bombirdier
+
+Dipplin
+
+Scovillain
+
+Musharna
+
+Lycanroc Midday
+
+Lycanroc Midnight
+
+Lycanroc Dusk
+
+Unfezant
+
+Scrafty
+
+Houndstone
+
+Ferrothorn
+
+Oinkologne
+
+Vileplume
+
+Victreebel
+
+Slowbro
+
+Slowbro Galar
+
+Electrode
+
+Electrode Hisui
+
+Weezing
+
+Weezing Galar
+
+Kangaskhan
+
+Electabuzz
+
+Tauros
+
+Tauros Paldea Combat
+
+Tauros Paldea Blaze
+
+Tauros Paldea Aqua
+
+Bellossom
+
+Slowking
+
+Slowking Galar
+
+Miltank
+
+Exploud
+
+Altaria
+
+Toxicroak
+
+Sigilyph
+
+Gothitelle
+
+Reuniclus
+
+Bisharp
+
+Bouffalant
+
+Oranguru
+
+Passimian
+
+Dubwool
+
+Boltund
+
+Pawmot
+
+Kilowattrel
+
+Abomasnow
+
+Dragalge
+
+Gourgeist
+
+Golem
+
+Golem Alola
+
+Magmar
+
+Omastar
+
+Kabutops
+
+Cradily
+
+Armaldo
+
+Rampardos
+
+Bastiodon
+
+Floatzel
+
+Mismagius
+
+Carracosta
+
+Escavalier
+
+Accelgor
+
+Pangoro
+
+Alcremie
+
+Bellibolt
+
+Zebstrika
+
+Drifblim
+
+Simisage
+
+Simisear
+
+Simipour
+
+Leavanny
+
+Carbink
 
 === TRAINER_POOL_ZONE_25_GRUNTS ===
 Name: Trainer Pool
@@ -6928,7 +9274,29 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Bulbasaur
+Doublade
+
+Perrserker
+
+Lokix
+
+Primeape
+
+Jynx
+
+Banette
+
+Dusclops
+
+Seviper
+
+Zangoose
+
+Throh
+
+Sawk
+
+Swalot
 
 === TRAINER_POOL_ZONE_27_AND_28 ===
 Name: Trainer Pool
