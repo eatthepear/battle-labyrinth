@@ -1764,6 +1764,7 @@ script Debug_CheatStart_PBL_GiveItems {
     additem(ITEM_COLBUR_BERRY)
     additem(ITEM_BABIRI_BERRY)
     additem(ITEM_ROSELI_BERRY)
+	additem(ITEM_HEART_SCALE, 3)
 
 	if (var(VAR_ZONE) == 13) {
 		return
@@ -1776,6 +1777,8 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_METAL_COAT)
 	additem(ITEM_SHALOUR_SABLE, 5)
 	additem(ITEM_TM_ATTRACT)
+	additem(ITEM_ULTRA_BALL, 5)
+	additem(ITEM_BICYCLE)
 
 	if (var(VAR_ZONE) == 15) {
 		return
@@ -1789,6 +1792,7 @@ script Debug_CheatStart_PBL_GiveItems {
 		return
 	}
 	additem(ITEM_BOTTLE_CAP)
+	additem(ITEM_YELLOW_SHARD, 5)
 
 	if (var(VAR_ZONE) == 17) {
 		return
