@@ -1058,15 +1058,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Gust
 - Attract
 
-Barboach
-Calm Nature
-Ability: Hydration
-Level: 15
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Mud Bomb
-- Rest
-
 Goldeen
 Naughty Nature
 Ability: Swift Swim
@@ -1110,14 +1101,14 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Wrap
 - Mud Slap
 
-Mantyke
-Lonely Nature
-Ability: Swift Swim
+Barboach
+Calm Nature
+Ability: Hydration
 Level: 17
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bubble Beam
-- Wing Attack
-- Slam
+- Water Pulse
+- Mud Bomb
+- Rest
 
 Corsola
 Modest Nature
