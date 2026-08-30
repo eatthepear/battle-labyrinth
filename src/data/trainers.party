@@ -729,7 +729,7 @@ Double Battle: Yes
 Mugshot: Blue
 
 Koffing @ Chesto Berry
-Naive Nature
+Sassy Nature
 Ability: Levitate
 Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -738,15 +738,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Venoshock
 - Thief
 
-Salandit @ Cheri Berry
-Timid Nature
-Ability: Corrosion
+Drowzee @ Cheri Berry
+Quiet Nature
+Ability: Insomnia
 Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Poison Gas
-- Ember
-- Venoshock
-- Fake Out
+- Confusion
+- Headbutt
+- Thief
 
 Whirlipede @ Sitrus Berry
 Hasty Nature
@@ -769,7 +769,7 @@ Mugshot: Blue
 Difficulty: Brutal
 
 Koffing @ Chesto Berry
-Naive Nature
+Sassy Nature
 Ability: Levitate
 Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -778,15 +778,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Venoshock
 - Thief
 
-Salandit @ Cheri Berry
-Timid Nature
-Ability: Corrosion
+Drowzee @ Cheri Berry
+Quiet Nature
+Ability: Insomnia
 Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Poison Gas
-- Ember
-- Venoshock
-- Fake Out
+- Confusion
+- Headbutt
+- Thief
 
 Frillish @ Pecha Berry
 Bold Nature
@@ -1892,14 +1892,14 @@ AI: AI_FLAG_BOSS
 Double Battle: Yes
 Mugshot: Blue
 
-Drowzee @ Eviolite
-Impish Nature
-Ability: Inner Focus
+Sandile @ Eviolite
+Careful Nature
+Ability: Intimidate
 Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Zen Headbutt
-- Night Shade
-- Flatter
+- Stomping Tantrum
+- Bite
+- Rock Tomb
 - Swagger
 
 Dartrix @ Eviolite
@@ -1932,14 +1932,14 @@ Double Battle: Yes
 Mugshot: Blue
 Difficulty: Brutal
 
-Drowzee @ Eviolite
-Impish Nature
-Ability: Inner Focus
+Sandile @ Eviolite
+Careful Nature
+Ability: Intimidate
 Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Zen Headbutt
-- Night Shade
-- Flatter
+- Stomping Tantrum
+- Bite
+- Rock Tomb
 - Swagger
 
 Dartrix @ Eviolite
@@ -2968,23 +2968,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Play Rough
 - Brick Break
 
-Wigglytuff @ Expert Belt
-Modest Nature
-Ability: Competitive
-Level: 36
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Moonblast
-- Flamethrower
-- Ice Beam
-- Thunderbolt
-
 Dudunsparce @ Leftovers
 Careful Nature
 Ability: Serene Grace
 Level: 36
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Facade
-- Dragon Rush
+- Body Slam
+- Throat Chop
 - Coil
 - Roost
 
@@ -2997,6 +2987,16 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Heat Wave
 - Hypnosis
 - Roost
+
+Lickilicky @ Zoom Lens
+Quiet Nature
+Ability: Oblivious
+Level: 36
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Facade
+- Muddy Water
+- Power Whip
+- Fire Blast
 
 Staraptor @ Staraptite
 Jolly Nature
@@ -3028,23 +3028,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Play Rough
 - Brick Break
 
-Wigglytuff @ Expert Belt
-Modest Nature
-Ability: Competitive
-Level: 36
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Moonblast
-- Flamethrower
-- Ice Beam
-- Thunderbolt
-
 Dudunsparce @ Leftovers
 Careful Nature
 Ability: Serene Grace
 Level: 36
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Facade
-- Dragon Rush
+- Body Slam
+- Throat Chop
 - Coil
 - Roost
 
@@ -3058,15 +3048,25 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
 - Roost
 
-Swellow @ Toxic Orb
-Lonely Nature
-Ability: Guts
+Lickilicky @ Zoom Lens
+Quiet Nature
+Ability: Oblivious
 Level: 36
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Facade
-- Brave Bird
+- Muddy Water
+- Power Whip
+- Fire Blast
+
+Flamigo @ Muscle Band
+Hasty Nature
+Ability: Scrappy
+Level: 36
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dual Wingbeat
+- Low Sweep
+- Facade
 - U-Turn
-- Protect
 
 Staraptor @ Staraptite
 Jolly Nature
