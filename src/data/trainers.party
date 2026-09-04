@@ -542,9 +542,9 @@ Music: Rich
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Bidoof @ Chesto Berry
-Brave Nature
-Ability: Unaware
+Voltorb @ Chesto Berry
+Naive Nature
+Ability: Aftermath
 Level: 8
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rollout
@@ -558,9 +558,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rollout
 - Defense Curl
 
-Wailmer @ Oran Berry
-Sassy Nature
-Ability: Oblivious
+Bidoof @ Oran Berry
+Careful Nature
+Ability: Simple
 Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rollout
