@@ -478,7 +478,7 @@ static void Task_WaitForFadeShowStartMenu(u8 taskId)
     if (WaitForWeatherFadeIn() == TRUE)
     {
         DestroyTask(taskId);
-        if (GetSafariZoneFlag() || InBattlePyramid_() || InBattlePike() || InUnionRoom() || InMultiPartnerRoom())
+        if (GetSafariZoneFlag() || InBattlePyramid() || InBattlePike() || InUnionRoom() || InMultiPartnerRoom())
             CreateTask(Task_ShowStartMenu, 80);
         else
             CreateTask(Task_OpenStartMenuFullScreen, 80);

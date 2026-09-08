@@ -284,17 +284,17 @@ script Zone10B_EventScript_WaterMerchant {
 		release
 		end
 	}
-	showmoneybox(0, 0, 0)
+	showmoneybox(0, 0)
 	message(format("In the desert, it's supply and demand. And the demand is water.\p¥200 for Fresh Water.\nRestores 30 HP each."))
 	waitmessage
 	dynmultichoice(0, 12, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "1x Fresh Water - ¥200", "10x Fresh Water - ¥2000", "Exit")
 	switch(var(VAR_RESULT)) {
 	case 0:
-		checkmoney(200, 0)
+		checkmoney(200)
 		if (var(VAR_RESULT) == FALSE) {
 			goto(Zone10B_EventScript_WaterNotEnough)
 		} else {
-			removemoney(200, 0)
+			removemoney(200)
 			updatemoneybox
 			msgbox("Here you go.")
 			giveitem(ITEM_FRESH_WATER, 1)
@@ -303,11 +303,11 @@ script Zone10B_EventScript_WaterMerchant {
 			end
 		}
 	case 1:
-		checkmoney(2000, 0)
+		checkmoney(2000)
 		if (var(VAR_RESULT) == FALSE) {
 			goto(Zone10B_EventScript_WaterNotEnough)
 		} else {
-			removemoney(2000, 0)
+			removemoney(2000)
 			updatemoneybox
 			msgbox("Here you go.")
 			giveitem(ITEM_FRESH_WATER, 10)

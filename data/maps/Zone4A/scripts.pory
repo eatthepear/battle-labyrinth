@@ -56,7 +56,7 @@ script Zone4A_EventScript_KimonoGirl {
 script Zone4A_EventScript_StruggleBugTutor {
 	lock
 	faceplayer
-	showmoneybox(0, 0, 0)
+	showmoneybox(0, 0)
 	msgbox(format("You found my secret hideout…\pI bet it was a struggle getting here, right?\pI can teach your Pokémon to Struggle Bug, or to Pounce!"))
 	message(format("What move should I teach?\nThey will cost you ¥400."))
 	waitmessage
@@ -78,7 +78,7 @@ script Zone4A_EventScript_StruggleBugTutor {
 			release
 			end
 	}
-	checkmoney(400, 0)
+	checkmoney(400)
 	if (var(VAR_RESULT) == FALSE) {
 		msgbox(gText_YouDontHaveEnoughMoney)
 		hidemoneybox
@@ -95,7 +95,7 @@ script Zone4A_EventScript_StruggleBugTutor {
 		release
 		end
 	}
-	showmoneybox(0, 0, 0)
+	showmoneybox(0, 0)
 	msgbox(format("There! It's done. Use that move well!"))
 	removemoney(400)
 	updatemoneybox

@@ -113,7 +113,7 @@ text Zone9E_Text_Squawkabilly_ComeBack {
 // 		release
 // 		end
 // 	} else {
-// 		showmoneybox(0, 0, 0)
+// 		showmoneybox(0, 0)
 // 		msgbox(format("Howdy! There ain't many farms 'round these parts, so I have an offer for you.\pI'll give you a Miltank, Tauros, or Indeedee, for only ¥5000!"), MSGBOX_YESNO)
 // 		if (var(VAR_RESULT) == NO) {
 // 			closemessage

@@ -18,8 +18,8 @@ Zone25G_EventScript_KingsRock::
 
 Zone25G_EventScript_4000::
 	lock
-	showmoneybox 0, 0, 0
-	addmoney 4000, 0
+	showmoneybox 0, 0
+	addmoney 4000
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox Zone25G_Text_Found4000, MSGBOX_DEFAULT
 	updatemoneybox

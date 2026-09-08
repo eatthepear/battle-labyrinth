@@ -19,6 +19,7 @@ enum {
     ITEMMENULOCATION_WALLY,
     ITEMMENULOCATION_PCBOX,
     ITEMMENULOCATION_BERRY_TREE_MULCH,
+    ITEMMENULOCATION_RAIDEND,
     ITEMMENULOCATION_CHOOSE_ITEM,
     ITEMMENULOCATION_LAST,
 };
@@ -95,7 +96,7 @@ struct BagMenu
 };
 
 extern struct BagMenu *gBagMenu;
-extern u16 gSpecialVar_ItemId;
+extern enum Item gSpecialVar_ItemId;
 
 void CB2_GoToItemDepositMenu(void);
 void FavorLadyOpenBagMenu(void);
@@ -121,7 +122,7 @@ void UpdatePocketItemList(enum Pocket pocketId);
 void DisplayItemMessage(u8 taskId, u8 fontId, const u8 *str, TaskFunc callback);
 void DisplayItemMessageOnField(u8 taskId, const u8 *string, TaskFunc callback);
 void CloseItemMessage(u8 taskId);
-void ItemMenu_RotomCatalog(u8 taskId);
+void CB2_ChooseBall(void);
 void SortItemsInBag(struct BagPocket *pocket, enum BagSortOptions type);
 void ShowRegisteredItemsMenu(void);
 

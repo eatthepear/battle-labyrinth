@@ -18,6 +18,7 @@
 #include "constants/apricorn_tree.h"
 #include "constants/berry.h"
 #include "constants/maps.h"
+#include "constants/mass_outbreak.h"
 #include "constants/pokemon.h"
 #include "constants/easy_chat.h"
 #include "constants/trainer_hill.h"
@@ -1185,6 +1186,7 @@ struct SaveBlock1
     /*0x27CC*/ TVShow tvShows[TV_SHOWS_COUNT];
     /*0x27CA*/ //u8 padding4[2];
     /*0x2B50*/ PokeNews pokeNews[POKE_NEWS_COUNT];
+#endif //FREE_OTHER_PBL
     /*0x2B90*/ enum Species outbreakPokemonSpecies;
     /*0x2B92*/ u8 outbreakLocationMapNum;
     /*0x2B93*/ u8 outbreakLocationMapGroup;
@@ -1195,6 +1197,7 @@ struct SaveBlock1
     /*0x2BA0*/ u8 outbreakUnused3;
     /*0x2BA1*/ u8 outbreakPokemonProbability;
     /*0x2BA2*/ u16 outbreakDaysLeft;
+#if FREE_OTHER_PBL == FALSE
     /*0x2BA4*/ struct GabbyAndTyData gabbyAndTyData;
     /*0x2BB0*/ u16 easyChatProfile[EASY_CHAT_BATTLE_WORDS_COUNT];
     /*0x2BBC*/ u16 easyChatBattleStart[EASY_CHAT_BATTLE_WORDS_COUNT];

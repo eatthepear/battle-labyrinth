@@ -237,7 +237,7 @@ script Zone3A_EventScript_HyperPotion {
 script Zone3A_EventScript_Tutor {
 	lock
 	faceplayer
-	showmoneybox(0, 0, 0)
+	showmoneybox(0, 0)
 	msgbox(format("Ahoy there, trainer!\pI can teach your Pokémon some watery techniques, at the low price of ¥400!"))
 	message(format("What move should I teach?\nThey will cost you ¥400."))
 	waitmessage
@@ -259,7 +259,7 @@ script Zone3A_EventScript_Tutor {
 			release
 			end
 	}
-	checkmoney(400, 0)
+	checkmoney(400)
 	if (var(VAR_RESULT) == FALSE) {
 		msgbox(gText_YouDontHaveEnoughMoney)
 		hidemoneybox
@@ -276,7 +276,7 @@ script Zone3A_EventScript_Tutor {
 		release
 		end
 	}
-	showmoneybox(0, 0, 0)
+	showmoneybox(0, 0)
 	msgbox(format("There! It's done. Use that move well!"))
 	removemoney(400)
 	updatemoneybox

@@ -4578,7 +4578,7 @@ static void PrintMoveNameAndPP(u8 moveIndex)
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, gStringVar2);
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sMovesPPLayout);
         text = gStringVar4;
-        ppState = GetCurrentPpToMaxPpState(summary->pp[moveIndex], pp) + 9;
+        ppState = GetCurrentPPToMaxPPState(summary->pp[moveIndex], pp) + 9;
     }
     else
     {

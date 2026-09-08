@@ -17,7 +17,7 @@ script Zone8B_EventScript_BuyTyrogue {
 		release
 		end
 	}
-	showmoneybox(18, 0, 0)
+	showmoneybox(18, 0)
 	msgbox(format("I'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pI'M TRAINING!\pErr… Oh!\pYou look like a capable Trainer!\pAre you interested in raising a Fighting-type Pokémon?\pI won't part with one without ¥1000!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		hidemoneybox
@@ -25,7 +25,7 @@ script Zone8B_EventScript_BuyTyrogue {
 		release
 		end
 	}
-	checkmoney(1000, 0)
+	checkmoney(1000)
 	if (var(VAR_RESULT) == FALSE) {
 		msgbox(gText_YouDontHaveEnoughMoney)
 		hidemoneybox

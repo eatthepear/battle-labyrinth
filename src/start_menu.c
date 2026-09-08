@@ -281,13 +281,6 @@ static void RemoveSaveInfoWindow(void);
 static void HideStartMenuWindow(void);
 static void HideStartMenuDebug(void);
 
-void SetDexPokemonPokenavFlags(void) // unused
-{
-    FlagSet(FLAG_SYS_POKEDEX_GET);
-    FlagSet(FLAG_SYS_POKEMON_GET);
-    FlagSet(FLAG_SYS_POKENAV_GET);
-}
-
 static void BuildStartMenuActions(void)
 {
     sNumStartMenuActions = 0;
@@ -634,7 +627,7 @@ void ShowStartMenu(void)
         LockPlayerFieldControls();
         return;
     }
-    if (GetSafariZoneFlag() || InBattlePyramid_() || InBattlePike() || InUnionRoom() || InMultiPartnerRoom())
+    if (GetSafariZoneFlag() || InBattlePyramid() || InBattlePike() || InUnionRoom() || InMultiPartnerRoom())
     {
         CreateStartMenuTask(Task_ShowStartMenu);
         LockPlayerFieldControls();
@@ -1334,7 +1327,7 @@ static bool32 InitSaveWindowAfterLinkBattle(u8 *state)
         SetVBlankCallback(NULL);
         ScanlineEffect_Stop();
         DmaClear16(3, PLTT, PLTT_SIZE);
-        DmaFillLarge16(3, 0, (void *)VRAM, VRAM_SIZE, 0x1000);
+        DmaClearLarge16(3, (void *)VRAM, VRAM_SIZE, 0x1000);
         break;
     case 1:
         ResetSpriteData();

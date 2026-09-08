@@ -195,7 +195,7 @@ script Zone2A_EventScript_BuyBug {
 		release
 		end
 	}
-	showmoneybox(18, 0, 0)
+	showmoneybox(18, 0)
 	msgbox(format("Would you care to buy a Bug-type Pokémon?\pI've got quite the great selection for only ¥200!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		hidemoneybox
@@ -203,7 +203,7 @@ script Zone2A_EventScript_BuyBug {
 		release
 		end
 	}
-	checkmoney(200, 0)
+	checkmoney(200)
 	if (var(VAR_RESULT) == FALSE) {
 		msgbox(gText_YouDontHaveEnoughMoney)
 		hidemoneybox

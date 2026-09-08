@@ -154,7 +154,7 @@ text gText_ItemChestIsEmpty {
 
 // script Zone_EventScript_RetirePrompt {
 // 	lockall
-// 	showmoneybox(0, 0, 0)
+// 	showmoneybox(0, 0)
 // 	msgbox(format("Would you like to retire your attempt at this Zone?\pYou will lose all your progress so far and any money you received from trainers, as well as half of your remaining money.\pAre you sure you want to return to the Sanctuary?"), MSGBOX_YESNO)
 // 	if (var(VAR_RESULT) == NO) {
 // 		closemessage

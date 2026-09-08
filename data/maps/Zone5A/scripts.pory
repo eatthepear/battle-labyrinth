@@ -21,7 +21,7 @@ script Zone5A_EventScript_BuyPikaClone {
 		release
 		end
 	}
-	showmoneybox(18, 0, 0)
+	showmoneybox(18, 0)
 	msgbox(format("You seem like the type that would like Pikachu!\pI have Pikachu and plenty of similar Pokémon available, each for only ¥500!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		hidemoneybox
@@ -29,7 +29,7 @@ script Zone5A_EventScript_BuyPikaClone {
 		release
 		end
 	}
-	checkmoney(500, 0)
+	checkmoney(500)
 	if (var(VAR_RESULT) == FALSE) {
 		msgbox(gText_YouDontHaveEnoughMoney)
 		hidemoneybox
@@ -244,7 +244,7 @@ text gText_BuyPikaClone_ComeBack {
 script Zone5A_EventScript_NeverMissTutor {
 	lock
 	faceplayer
-	showmoneybox(0, 0, 0)
+	showmoneybox(0, 0)
 	msgbox(format("Hey there! Ever been stuck because the opposing Pokémon is too hard to hit? Well, I specialize in teaching certain moves that always hit, no matter how evasive the foe is!"))
 	message(format("What move should I teach?\nThey will cost you ¥400."))
 	waitmessage
@@ -270,7 +270,7 @@ script Zone5A_EventScript_NeverMissTutor {
 			release
 			end
 	}
-	checkmoney(400, 0)
+	checkmoney(400)
 	if (var(VAR_RESULT) == FALSE) {
 		msgbox(gText_YouDontHaveEnoughMoney)
 		hidemoneybox
@@ -287,7 +287,7 @@ script Zone5A_EventScript_NeverMissTutor {
 		release
 		end
 	}
-	showmoneybox(0, 0, 0)
+	showmoneybox(0, 0)
 	msgbox(format("There! It's done. Use that move well!"))
 	removemoney(400)
 	updatemoneybox

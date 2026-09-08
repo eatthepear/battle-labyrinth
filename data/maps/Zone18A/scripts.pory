@@ -134,16 +134,16 @@ script Zone18A_EventScript_SellSodaPop {
 	// 	release
 	// 	end
 	// }
-	showmoneybox(0, 0, 0)
+	showmoneybox(0, 0)
 	msgbox("Want to buy some Soda Pop?\n¥300 for 50 HP a pop!", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
-		checkmoney(300, 0)
+		checkmoney(300)
 		if (var(VAR_RESULT) == FALSE) {
 			msgbox("You don't have enough money!")
 			hidemoneybox
 		} else {
 			msgbox("Here you go!")
-			removemoney(300, 0)
+			removemoney(300)
 			updatemoneybox
 			giveitem(ITEM_SODA_POP)
 			hidemoneybox

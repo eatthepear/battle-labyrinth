@@ -135,8 +135,8 @@
 // #define VAR_REPEL_STEP_COUNT                             VARS_END
 #define VAR_ICE_STEP_COUNT                               VARS_END
 // #define VAR_STARTER_MON                                  VARS_END // 0=Treecko, 1=Torchic, 2=Mudkip
-#define VAR_MIRAGE_RND_H                                 VARS_END
-#define VAR_MIRAGE_RND_L                                 VARS_END
+#define VAR_MIRAGE_RND_H                                 VARS_END // Unused if OW_USE_DAILY_SEED_FOR_VANILLA_VARIABLES is TRUE
+#define VAR_MIRAGE_RND_L                                 VARS_END // Unused if OW_USE_DAILY_SEED_FOR_VANILLA_VARIABLES is TRUE
 #define VAR_SECRET_BASE_MAP                              VARS_END
 #define VAR_CYCLING_ROAD_RECORD_COLLISIONS               VARS_END
 #define VAR_CYCLING_ROAD_RECORD_TIME_L                   VARS_END

@@ -197,7 +197,7 @@ raw `
 Zone24A_EventScript_SellLemonade::
 	lock
 	faceplayer
-	showmoneybox 0, 0, 0
+	showmoneybox 0, 0
 	msgbox Zone24A_Text_WantToBuyLemonade, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Zone24A_EventScript_BuyLemonade
@@ -222,11 +222,11 @@ Zone24A_Text_DidntLike:
 	.string "Maybe next time!$"
 
 Zone24A_EventScript_BuyLemonade:
-	checkmoney 400, 0
+	checkmoney 400
 	compare VAR_RESULT, FALSE
 	goto_if_eq Zone24A_Text_NotEnoughMoney
 	msgbox Zone24A_Text_HereYouGo, MSGBOX_AUTOCLOSE
-	removemoney 400, 0
+	removemoney 400
 	updatemoneybox
 	giveitem ITEM_LEMONADE
 	hidemoneybox
