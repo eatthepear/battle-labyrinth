@@ -7,9 +7,11 @@ SINGLE_BATTLE_TEST("No Guard makes opposing status moves hit")
 {
     PASSES_RANDOMLY(100, 100, RNG_ACCURACY);
     GIVEN {
+#if FREE_OTHER_PBL == FALSE
         ASSUME(GetMoveAccuracy(MOVE_SCREECH) < 100);
+#endif
         ASSUME_STAT_CHANGE(MOVE_SCREECH, defense: -2);
-        PLAYER(SPECIES_MACHAMP) { Ability(ABILITY_NO_GUARD); }
+        PLAYER(SPECIES_MACHAMP) { Ability(ABILITY_NO_GUARD); Item(ITEM_BRIGHT_POWDER); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_SCREECH); }

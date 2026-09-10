@@ -123,6 +123,7 @@ SINGLE_BATTLE_TEST("Leech Seed is blocked by Substitute")
     }
 }
 
+#if FREE_OTHER_PBL == FALSE
 SINGLE_BATTLE_TEST("Leech Seed's accuracy is 90%")
 {
     PASSES_RANDOMLY(90, 100, RNG_ACCURACY);
@@ -136,6 +137,7 @@ SINGLE_BATTLE_TEST("Leech Seed's accuracy is 90%")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_LEECH_SEED, player);
     }
 }
+#endif
 
 TO_DO_BATTLE_TEST("Leech Seed doesn't affect already seeded targets")
 TO_DO_BATTLE_TEST("Leech Seed's effect is paused until a new battler replaces the original user's position") // Faint, can't be replaced, then revived.

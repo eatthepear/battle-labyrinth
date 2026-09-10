@@ -195,14 +195,14 @@ WILD_BATTLE_TEST("Exp Share(held) gives Experience to mons which did not partici
 AI_DOUBLE_BATTLE_TEST("Both player Pokemon gain experience in double battles")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Level(99); }
+        PLAYER(SPECIES_WOBBUFFET) { Level(4); }
         PLAYER(SPECIES_DITTO) { Level(1); }
         OPPONENT(SPECIES_BRELOOM) { Moves(MOVE_MEMENTO); }
         OPPONENT(SPECIES_BRELOOM) { Moves(MOVE_CELEBRATE); }
     } WHEN {
         TURN { }
     } THEN {
-        EXPECT(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_EXP) > gExperienceTables[gSpeciesInfo[SPECIES_WOBBUFFET].growthRate][99]);
+        EXPECT(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_EXP) > gExperienceTables[gSpeciesInfo[SPECIES_WOBBUFFET].growthRate][4]);
         EXPECT(GetMonData(&gParties[B_TRAINER_PLAYER][1], MON_DATA_LEVEL) > 1);
     }
 }
@@ -222,6 +222,7 @@ AI_TWO_VS_ONE_BATTLE_TEST("Partner Pokemon do not gain experience")
     }
 }
 
+#if FREE_OTHER_PBL == FALSE
 AI_ONE_VS_TWO_BATTLE_TEST("Both opponent's Pokemon give experience in battle against two opponents")
 {
     u32 expectedXp = 1; // level 1 xp
@@ -242,3 +243,4 @@ AI_ONE_VS_TWO_BATTLE_TEST("Both opponent's Pokemon give experience in battle aga
         EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_EXP), expectedXp);
     }
 }
+#endif

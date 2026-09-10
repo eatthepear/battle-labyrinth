@@ -563,8 +563,8 @@ DOUBLE_BATTLE_TEST("Spread Moves: A missed multi-target stat move names the miss
         ASSUME(GetMoveTarget(MOVE_STRING_SHOT) == TARGET_BOTH);
         PLAYER(SPECIES_CATERPIE);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_BELDUM) { Ability(ABILITY_CLEAR_BODY); }
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_BRIGHTPOWDER); }
+        OPPONENT(SPECIES_BELDUM) { Ability(ABILITY_CLEAR_BODY); Item(ITEM_BRIGHTPOWDER); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_STRING_SHOT, hit: FALSE); }
     } SCENE {

@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(GetMoveAccuracy(MOVE_ZEN_HEADBUTT) == 90);
+    ASSUME(GetMoveAccuracy(MOVE_HIGH_JUMP_KICK) == 90);
 }
 
 SINGLE_BATTLE_TEST("Victory Star raises the accuracy of the user")
@@ -13,9 +13,9 @@ SINGLE_BATTLE_TEST("Victory Star raises the accuracy of the user")
         PLAYER(SPECIES_VICTINI) { Ability(ABILITY_VICTORY_STAR); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_ZEN_HEADBUTT); }
+        TURN { MOVE(player, MOVE_HIGH_JUMP_KICK); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_ZEN_HEADBUTT, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_HIGH_JUMP_KICK, player);
         HP_BAR(opponent);
     }
 }
@@ -29,9 +29,9 @@ DOUBLE_BATTLE_TEST("Victory Star raises the accuracy of an ally")
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(playerLeft, MOVE_ZEN_HEADBUTT, target: opponentLeft); }
+        TURN { MOVE(playerLeft, MOVE_HIGH_JUMP_KICK, target: opponentLeft); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_ZEN_HEADBUTT, playerLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_HIGH_JUMP_KICK, playerLeft);
         HP_BAR(opponentLeft);
     }
 }
@@ -45,9 +45,9 @@ DOUBLE_BATTLE_TEST("Victory Start is not Mold Breaker ignored by ally")
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(playerLeft, MOVE_ZEN_HEADBUTT, target: opponentLeft); }
+        TURN { MOVE(playerLeft, MOVE_HIGH_JUMP_KICK, target: opponentLeft); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_ZEN_HEADBUTT, playerLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_HIGH_JUMP_KICK, playerLeft);
         HP_BAR(opponentLeft);
     }
 }

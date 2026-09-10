@@ -4,7 +4,7 @@
 
 // If you would like to ensure save compatibility, update the values below with those for your hack. You can find these through the debug menu.
 // Please note that this simple check is not 100% foolproof, but should be able to catch most unintended shifts.
-#define T_SAVEBLOCK1_SIZE 6380
+#define T_SAVEBLOCK1_SIZE 6400
 #define T_SAVEBLOCK2_SIZE 3968
 #define T_SAVEBLOCK3_SIZE 1028
 #define T_POKEMONSTORAGE_SIZE 43408

@@ -247,7 +247,7 @@ TEST("(Daycare) Only Pokémon with the same base species can share egg moves (Ge
 
     gSpecialVar_0x8000 = teacherSpecies;
     RUN_OVERWORLD_SCRIPT(
-        givemon SPECIES_VIVILLON_POLAR, 100, move4=MOVE_NONE;
+        givemon SPECIES_VIVILLON_POLAR, 100, move1=MOVE_TACKLE, move4=MOVE_STUN_SPORE, move4=MOVE_POISON_POWDER, move4=MOVE_NONE;
         givemon VAR_0x8000, 100, move1=MOVE_RAGE_POWDER;
     );
 
