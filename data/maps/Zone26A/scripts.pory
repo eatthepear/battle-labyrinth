@@ -1,3 +1,4 @@
+raw `
 Zone26A_MapScripts::
 	.byte 0
 
@@ -22,3 +23,4 @@ Zone26A_EventScript_Exit::
 Zone26A_EventScript_Banettite::
 	finditem ITEM_BANETTITE
 	end
+`

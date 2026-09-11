@@ -1,3 +1,4 @@
+raw `
 Zone26B_MapScripts::
 	.byte 0
 
@@ -198,3 +199,4 @@ Zone26B_EventScript_RestartRotomBattles:
 
 Zone26B_Text_Rotom:
 	.string "Rotom somehow seems angrier!$"
+`
