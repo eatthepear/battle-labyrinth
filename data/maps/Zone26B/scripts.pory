@@ -1,50 +1,23 @@
-raw `
-Zone26B_MapScripts::
-	.byte 0
+mapscripts Zone26B_MapScripts {}
 
-Zone26B_EventScript_InteractComputer::
+script Zone26B_EventScript_InteractComputer {
 	lockall
-	goto_if_eq VAR_ZONE_26_STATE, 1, Zone26B_EventScript_SingleRotomFight
-	goto_if_eq VAR_ZONE_26_STATE, 2, Zone26B_EventScript_NoRotom
-	msgbox Zone26B_Text_Flickering, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Zone26B_EventScript_StartRotomBattles
+    if (flag(FLAG_BEAT_BOSS_26)) {
+        msgbox(format("The computer is off."))
+        releaseall
+        end
+    }
+	msgbox(format("The computer screen is flickering…\pWould you like to try turning it on?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        releaseall
+        end
+    }
+	call(Zone26B_EventScript_StartRotomBattles)
 	releaseall
 	end
+}
 
-Zone26B_EventScript_NoRotom:
-	msgbox Zone26B_Text_ComputerOff, MSGBOX_AUTOCLOSE
-	releaseall
-	end
-
-Zone26B_Text_ComputerOff:
-	.string "The computer is off.$"
-
-Zone26B_EventScript_SingleRotomFight:
-	msgbox Zone26B_Text_Flickering, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Zone26B_EventScript_StartRotomSingleBattle
-	releaseall
-	end
-
-Zone26B_EventScript_StartRotomSingleBattle:
-	closemessage
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-	playse SE_PIN
-	waitmovement 0
-	waitse
-	setwildbattle SPECIES_ROTOM, 45
-	playmoncry SPECIES_ROTOM, 2
-	delay 40
-	waitmoncry
-	delay 40
-	dowildbattle
-	setvar VAR_ZONE_26_STATE, 2
-	releaseall
-	end
-
-Zone26B_Text_Flickering:
-	.string "The computer screen is flickering…\p"
-	.string "Would you like to try turning it on?$"
-
+raw `
 Zone26B_EventScript_StartRotomBattles:
 	setflag FLAG_SYS_NO_CATCHING
 	setflag FLAG_SYS_SMART_WILD_AI_ON
@@ -173,18 +146,6 @@ Zone26B_EventScript_SetTotemBoost:
 Zone26B_Text_RotomCalmedDown:
 	.string "Rotom seemed to calm down.\n"
 	.string "It retreated back into the computer…$"
-
-Zone26B_EventScript_RemoveSmartWildAI:
-	clearflag FLAG_SYS_SMART_WILD_AI_ON
-	return
-
-Zone26B_EventScript_DisableBag:
-	setflag FLAG_SYS_NO_BAG_USE_IN_BATTLE
-	return
-
-Zone26B_EventScript_EnableBag:
-	clearflag FLAG_SYS_NO_BAG_USE_IN_BATTLE
-	return
 
 Zone26B_Text_RotomBoxes:
 	.string "Rotom flew out of the computer and\n"
