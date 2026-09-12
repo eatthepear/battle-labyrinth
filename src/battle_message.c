@@ -2516,10 +2516,12 @@ void BufferStringBattle(enum StringID stringID, enum BattlerId battler)
                 stringPtr = sText_TheGhostAppeared;
             else if (FlagGet(FLAG_SYS_SMART_WILD_AI_ON))
             {
-                if (IsDoubleBattle() && IsValidForBattle(GetBattlerMon(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT))))
+                if (IsDoubleBattle() && IsValidForBattle(GetBattlerMon(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)))) // zone 15 ampharos + minun fight
                     stringPtr = sText_PkmnAndAllyAppeared;
-                else
+                else if (GetBattlerMon(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT))->box.species == SPECIES_AMPHAROS_MEGA) // zone 15 ampharos fight
                     stringPtr = sText_PkmnAppearedMega;
+                else // zone 26 rotom fights
+                    stringPtr = sText_LegendaryPkmnAppeared;
             }
             else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
                 stringPtr = sText_LegendaryPkmnAppeared;

@@ -1,6 +1,13 @@
 mapscripts Zone26B_MapScripts {}
 
-script Zone26B_EventScript_InteractComputer {
+script Zone26B_EventScript_InteractComputerRight {
+    lockall
+	msgbox(format("The computer screen is flickering…\pThe power button is on the left."))
+    releaseall
+    end
+}
+
+script Zone26B_EventScript_InteractComputerLeft {
 	lockall
     if (flag(FLAG_BEAT_BOSS_26)) {
         msgbox(format("The computer is off."))
@@ -12,9 +19,90 @@ script Zone26B_EventScript_InteractComputer {
         releaseall
         end
     }
-	call(Zone26B_EventScript_StartRotomBattles)
+    msgbox(format("{PLAYER} turned on the computer.\pThe screen's flickering intensified!"), MSGBOX_AUTOCLOSE)
+    fadeoutbgm(1)
+	setflag(FLAG_SYS_NO_RUNNING)
+	setflag(FLAG_SYS_NO_CATCHING)
+	setflag(FLAG_SYS_SMART_WILD_AI_ON)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+
+    playmoncry(SPECIES_ROTOM, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	setwildbattle_pbl(SPECIES_ROTOM, 50, ITEM_NONE, NATURE_TIMID, 31, 0, MOVE_DISCHARGE, MOVE_SHADOW_BALL, MOVE_PAIN_SPLIT, MOVE_WILL_O_WISP)
+    if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+	    settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1)
+    }
+	special(BattleSetup_StartLegendaryBattle)
+
+    msgbox(format("Rotom flew out of the computer and into the boxes!"), MSGBOX_AUTOCLOSE)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    playse(SE_TRUCK_STOP)
+    waitse
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+
+    msgbox(Zone26B_Text_RotomAngrier, MSGBOX_AUTOCLOSE)
+    playmoncry(SPECIES_ROTOM, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	setwildbattle_pbl(SPECIES_ROTOM_MOW, 50, ITEM_NONE, NATURE_TIMID, 31, 0, MOVE_DISCHARGE, MOVE_LEAF_STORM, MOVE_NIGHT_SHADE, MOVE_THUNDER_WAVE)
+    if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+	    settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1)
+    }
+	special(BattleSetup_StartLegendaryBattle)
+
+    msgbox(Zone26B_Text_RotomAngrier, MSGBOX_AUTOCLOSE)
+    playmoncry(SPECIES_ROTOM, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	setwildbattle_pbl(SPECIES_ROTOM_FAN, 50, ITEM_NONE, NATURE_TIMID, 31, 0, MOVE_DISCHARGE, MOVE_AIR_SLASH, MOVE_HEX, MOVE_WILL_O_WISP)
+    if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+	    settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1)
+    }
+	special(BattleSetup_StartLegendaryBattle)
+
+    msgbox(Zone26B_Text_RotomAngrier, MSGBOX_AUTOCLOSE)
+    playmoncry(SPECIES_ROTOM, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	setwildbattle_pbl(SPECIES_ROTOM_FROST, 50, ITEM_NONE, NATURE_TIMID, 31, 0, MOVE_DISCHARGE, MOVE_BLIZZARD, MOVE_PAIN_SPLIT, MOVE_WILL_O_WISP)
+    if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+	    settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1)
+    }
+	special(BattleSetup_StartLegendaryBattle)
+
+    msgbox(Zone26B_Text_RotomAngrier, MSGBOX_AUTOCLOSE)
+    playmoncry(SPECIES_ROTOM, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	setwildbattle_pbl(SPECIES_ROTOM_WASH, 50, ITEM_NONE, NATURE_TIMID, 31, 0, MOVE_DISCHARGE, MOVE_HYDRO_PUMP, MOVE_RAIN_DANCE, MOVE_PAIN_SPLIT)
+    if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+	    settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1)
+    }
+	special(BattleSetup_StartLegendaryBattle)
+
+    msgbox(Zone26B_Text_RotomAngrier, MSGBOX_AUTOCLOSE)
+    playmoncry(SPECIES_ROTOM, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	setwildbattle_pbl(SPECIES_ROTOM_HEAT, 50, ITEM_NONE, NATURE_TIMID, 31, 0, MOVE_DISCHARGE, MOVE_OVERHEAT, MOVE_NIGHT_SHADE, MOVE_PAIN_SPLIT)
+    if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+	    settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1)
+    }
+	special(BattleSetup_StartLegendaryBattle)
+
+    msgbox(format("Rotom calmed down."), MSGBOX_AUTOCLOSE)
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	clearflag(FLAG_SYS_NO_CATCHING)
+	clearflag(FLAG_SYS_SMART_WILD_AI_ON)
+	setflag(FLAG_SYS_NO_RUNNING)
+    setflag(FLAG_BEAT_BOSS_26)
 	releaseall
 	end
+}
+
+text Zone26B_Text_RotomAngrier {
+    format("Rotom somehow seems angrier!")
 }
 
 raw `
