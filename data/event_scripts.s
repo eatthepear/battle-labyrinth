@@ -1937,3 +1937,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Zone20A_New/scripts.inc"
 
 	.include "data/maps/Zone20B_New/scripts.inc"
+
+	.include "data/maps/Zone29A/scripts.inc"

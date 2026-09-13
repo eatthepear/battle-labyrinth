@@ -3246,3 +3246,22 @@ const u16 gTilesetPalettes_Restaurant[][16] =
 };
 
 const u32 gTilesetTiles_Restaurant[] = INCBIN_U32("data/tilesets/secondary/restaurant/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Theater[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/theater/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/theater/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/theater/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/theater/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/theater/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/theater/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/theater/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/theater/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/theater/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/theater/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/theater/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/theater/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/theater/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Theater[] = INCBIN_U32("data/tilesets/secondary/theater/tiles.4bpp.lz");

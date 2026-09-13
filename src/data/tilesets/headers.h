@@ -1661,3 +1661,14 @@ const struct Tileset gTileset_Restaurant =
     .metatileAttributes = gMetatileAttributes_Restaurant,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Theater =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Theater,
+    .palettes = gTilesetPalettes_Theater,
+    .metatiles = gMetatiles_Theater,
+    .metatileAttributes = gMetatileAttributes_Theater,
+    .callback = NULL,
+};

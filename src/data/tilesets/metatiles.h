@@ -440,3 +440,6 @@ const u16 gMetatileAttributes_HallOfFame[] = INCBIN_U16("data/tilesets/secondary
 
 const u16 gMetatiles_Restaurant[] = INCBIN_U16("data/tilesets/secondary/restaurant/metatiles.bin");
 const u16 gMetatileAttributes_Restaurant[] = INCBIN_U16("data/tilesets/secondary/restaurant/metatile_attributes.bin");
+
+const u16 gMetatiles_Theater[] = INCBIN_U16("data/tilesets/secondary/theater/metatiles.bin");
+const u16 gMetatileAttributes_Theater[] = INCBIN_U16("data/tilesets/secondary/theater/metatile_attributes.bin");

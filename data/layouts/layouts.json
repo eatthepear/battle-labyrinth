@@ -10421,6 +10421,16 @@
       "secondary_tileset": "gTileset_Restaurant",
       "border_filepath": "data/layouts/Zone20B_New/border.bin",
       "blockdata_filepath": "data/layouts/Zone20B_New/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE29A",
+      "name": "Zone29A_Layout",
+      "width": 21,
+      "height": 19,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Theater",
+      "border_filepath": "data/layouts/Zone29A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone29A/map.bin"
     }
   ]
 }
