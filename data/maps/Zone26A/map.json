@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -26,6 +26,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Zone26A_EventScript_Banettite",
       "flag": "FLAG_ITEM_ZONE26A_BANETTITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
+      "x": 1,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_PorygonExit",
+      "flag": "FLAG_HIDE_ZONE26A_PORYGON"
     }
   ],
   "warp_events": [
@@ -37,63 +50,6 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 0,
-      "y": 30,
-      "elevation": 0,
-      "var": "VAR_ZONE_26_STATE",
-      "var_value": "0",
-      "script": "Zone26A_EventScript_StopLeave"
-    },
-    {
-      "type": "trigger",
-      "x": 1,
-      "y": 30,
-      "elevation": 0,
-      "var": "VAR_ZONE_26_STATE",
-      "var_value": "0",
-      "script": "Zone26A_EventScript_StopLeave"
-    },
-    {
-      "type": "trigger",
-      "x": 2,
-      "y": 30,
-      "elevation": 0,
-      "var": "VAR_ZONE_26_STATE",
-      "var_value": "0",
-      "script": "Zone26A_EventScript_StopLeave"
-    },
-    {
-      "type": "trigger",
-      "x": 3,
-      "y": 30,
-      "elevation": 0,
-      "var": "VAR_ZONE_26_STATE",
-      "var_value": "0",
-      "script": "Zone26A_EventScript_StopLeave"
-    },
-    {
-      "type": "trigger",
-      "x": 1,
-      "y": 32,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone26A_EventScript_Exit"
-    },
-    {
-      "type": "trigger",
-      "x": 2,
-      "y": 32,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone26A_EventScript_Exit"
-    }
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }
