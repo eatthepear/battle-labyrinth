@@ -478,9 +478,10 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_HM_CUT)
 		case 5:
-			msgbox(format("{COLOR GREEN}5 Sitrus Berries{COLOR DARK_GRAY}!"))
+			msgbox(format("The {COLOR GREEN}{PKMN} Box Link{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_SITRUS_BERRY, 5)
+			giveitem(ITEM_POKEMON_BOX_LINK)
+			helpwindow(HELP_BOX_LINK)
 		case 6:
 			msgbox(format("{COLOR GREEN}HM05 - Flash{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
@@ -500,10 +501,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_GREEN_SHARD, 5)
 		case 10:
-			msgbox(format("The {COLOR GREEN}{PKMN} Box Link{COLOR DARK_GRAY}!"))
+			msgbox(format("{COLOR GREEN}10 Sitrus Berries{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_POKEMON_BOX_LINK)
-			helpwindow(HELP_BOX_LINK)
+			giveitem(ITEM_SITRUS_BERRY, 10)
 		case 11:
 			msgbox(format("{COLOR GREEN}TM94 - Defog{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)

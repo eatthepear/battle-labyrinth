@@ -1673,7 +1673,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_MIRACLE_SEED)
 	additem(ITEM_TM_LIGHT_SCREEN)
 	additem(ITEM_TM_REFLECT)
-	additem(ITEM_SITRUS_BERRY, 5)
+	additem(ITEM_POKEMON_BOX_LINK)
 	additem(ITEM_NEVER_MELT_ICE)
 	additem(ITEM_TM_ICY_WIND)
 
@@ -1724,7 +1724,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_TM_POWER_UP_PUNCH)
 	additem(ITEM_TM_IRON_TAIL)
 	additem(ITEM_EVIOLITE)
-	additem(ITEM_POKEMON_BOX_LINK)
+	additem(ITEM_SITRUS_BERRY, 10)
 
 	if (var(VAR_ZONE) == 11) {
 		return
