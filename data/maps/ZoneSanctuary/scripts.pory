@@ -535,7 +535,10 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 18:
 			msgbox(format("Ultra Balls!"))
 		case 20:
-			msgbox(format("Ultra Balls!"))
+			msgbox(format("The {COLOR GREEN}{PKMN} Mega Ring{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_MEGA_RING)
+			helpwindow(HELP_MEGA_EVOLUTION)
 		case 21:
 			msgbox(format("Ultra Balls!"))
 		case 22:

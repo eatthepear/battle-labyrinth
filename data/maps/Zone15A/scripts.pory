@@ -280,8 +280,8 @@ script Zone15A_EventScript_Sophocles_TriggerBoss {
 	msgbox(format("{PLAYER} received the Charge Badge from {COLOR BLUE}Sophocles{COLOR DARK_GRAY}!"))
 	waitfanfare
 	setflag(FLAG_BADGE04_GET)
-	giveitem(ITEM_MEGA_RING)
 	giveitem(ITEM_TM_VOLT_SWITCH)
+	giveitem(ITEM_TM_THUNDER_WAVE)
 	setspeaker("Sophocles")
 	msgbox(format("We leave now! Thanks!"))
 	fadescreenswapbuffers(FADE_TO_BLACK)
