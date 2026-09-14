@@ -95,7 +95,10 @@ script Zone26B_EventScript_InteractComputerLeft {
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	clearflag(FLAG_SYS_NO_CATCHING)
 	clearflag(FLAG_SYS_SMART_WILD_AI_ON)
-	setflag(FLAG_SYS_NO_RUNNING)
+	clearflag(FLAG_SYS_NO_RUNNING)
+
+	msgbox(format("There was an item on the ground!"))
+	giveitem(ITEM_ROTOM_CATALOG)
     setflag(FLAG_BEAT_BOSS_26)
 	clearflag(FLAG_HIDE_ZONE26A_PORYGON)
 	releaseall

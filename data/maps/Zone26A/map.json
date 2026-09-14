@@ -15,19 +15,6 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 26,
-      "y": 32,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone26A_EventScript_Banettite",
-      "flag": "FLAG_ITEM_ZONE26A_BANETTITE"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
       "x": 1,
       "y": 31,
@@ -39,6 +26,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_PorygonExit",
       "flag": "FLAG_HIDE_ZONE26A_PORYGON"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "x": 26,
+      "y": 32,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone26A_EventScript_TMWillOWisp",
+      "flag": "0"
     }
   ],
   "warp_events": [

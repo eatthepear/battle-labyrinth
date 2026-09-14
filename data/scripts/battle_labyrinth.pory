@@ -1847,6 +1847,8 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 26) {
 		return
 	}
+	additem(ITEM_TM_WILL_O_WISP)
+	additem(ITEM_ROTOM_CATALOG)
 }
 
 script Debug_CheatStart_PBL_GiveMons {

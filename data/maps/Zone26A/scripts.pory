@@ -1,7 +1,26 @@
-mapscripts Zone26A_MapScripts {}
+mapscripts Zone26A_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_ZONE26A_TM_WILL_O_WISP)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST)
+		}
+	}
+}
 
-raw `
-Zone26A_EventScript_Banettite::
-	finditem ITEM_BANETTITE
+script Zone26A_EventScript_TMWillOWisp {
+	lock
+	if (flag(FLAG_ITEM_ZONE26A_TM_WILL_O_WISP)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE26A_TM_WILL_O_WISP)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_TM_WILL_O_WISP)
+	release
 	end
-`
+}
