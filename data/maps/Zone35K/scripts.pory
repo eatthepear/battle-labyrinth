@@ -1,1 +1,52 @@
-mapscripts Zone35K_MapScripts {}
+mapscripts Zone35K_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_ZONE_35_STATE, 4 {
+            lockall
+            setvar(VAR_ZONE_35_STATE, 5)
+            call(Zone35K_EventScript_EnterRoom)
+            releaseall
+        }
+    ]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_TEMP_1, 0 {
+            turnobject(LOCALID_PLAYER, DIR_NORTH)
+        }
+    ]
+}
+
+script Zone35K_EventScript_EnterRoom {
+	lockall
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp5)
+	waitmovement(0)
+    playbgm(MUS_DP_ENCOUNTER_CHAMPION, FALSE)
+	delay(40)
+	msgbox(format("INTRO!"))
+	trainerbattle_no_intro(TRAINER_PBL_CYNTHIA_BOSS_35, format("DEFEAT!"))
+	playse(SE_DOOR)
+	setmetatile(6, 1, METATILE_EliteFour_OpenDoorChampion_Frame, FALSE)
+	setmetatile(6, 2, METATILE_EliteFour_OpenDoorChampion_Opening, FALSE)
+	special(DrawWholeMapView)
+	msgbox(format("DEFEATED!"))
+	closemessage
+	applymovement(LOCALID_CYNTHIA_35K, Zone35K_Movement_CynthiaExit)
+	applymovement(LOCALID_PLAYER, Zone35K_Movement_PlayerExit)
+	waitmovement(0)
+	warp(MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 16)
+	waitstate
+    releaseall
+    end
+}
+
+movement Zone35K_Movement_CynthiaExit {
+	walk_up * 3
+	delay_8
+	set_invisible
+}
+
+movement Zone35K_Movement_PlayerExit {
+	walk_up * 4
+    delay_16
+	walk_up
+	delay_8
+	set_invisible
+}

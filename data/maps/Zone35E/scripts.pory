@@ -1,1 +1,36 @@
-mapscripts Zone35E_MapScripts {}
+mapscripts Zone35E_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        if (var(VAR_ZONE_35_STATE) == 2) {
+            call(PokemonLeague_EliteFour_EventScript_CloseDoor)
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_ZONE_35_STATE, 1 {
+            lockall
+            call(PokemonLeague_EliteFour_EventScript_WalkInCloseDoor)
+            setvar(VAR_ZONE_35_STATE, 2)
+            releaseall
+        }
+    ]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_TEMP_1, 0 {
+            turnobject(LOCALID_PLAYER, DIR_NORTH)
+        }
+    ]
+}
+
+script Zone35E_EventScript_Glacia {
+	lock
+	faceplayer
+	playbgm(MUS_DP_ENCOUNTER_ELITE_FOUR, FALSE)
+    if (flag(FLAG_BEAT_BOSS_35_GLACIA) == FALSE) {
+        setspeaker("NAME")
+        msgbox(format("LET'S BATTLE!"))
+	    trainerbattle_no_intro(TRAINER_PBL_GLACIA_BOSS_35, format("DEFEAT!"))
+        setflag(FLAG_BEAT_BOSS_35_GLACIA)
+        call(PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles)
+    }
+	msgbox(format("DEFEATED!"))
+	release
+	end
+}
