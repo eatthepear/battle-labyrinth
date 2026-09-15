@@ -10481,6 +10481,106 @@
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/Zone35A/border.bin",
       "blockdata_filepath": "data/layouts/Zone35A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE35B",
+      "name": "Zone35B_Layout",
+      "width": 11,
+      "height": 13,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/Zone35B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone35B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE35C",
+      "name": "Zone35C_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/Zone35C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone35C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE35E",
+      "name": "Zone35E_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/Zone35E/border.bin",
+      "blockdata_filepath": "data/layouts/Zone35E/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE35D",
+      "name": "Zone35D_Layout",
+      "width": 11,
+      "height": 13,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/Zone35D/border.bin",
+      "blockdata_filepath": "data/layouts/Zone35D/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE35F",
+      "name": "Zone35F_Layout",
+      "width": 11,
+      "height": 13,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/Zone35F/border.bin",
+      "blockdata_filepath": "data/layouts/Zone35F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE35G",
+      "name": "Zone35G_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/Zone35G/border.bin",
+      "blockdata_filepath": "data/layouts/Zone35G/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE35H",
+      "name": "Zone35H_Layout",
+      "width": 11,
+      "height": 13,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/Zone35H/border.bin",
+      "blockdata_filepath": "data/layouts/Zone35H/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE35K",
+      "name": "Zone35K_Layout",
+      "width": 13,
+      "height": 13,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/Zone35K/border.bin",
+      "blockdata_filepath": "data/layouts/Zone35K/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE35I",
+      "name": "Zone35I_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/Zone35I/border.bin",
+      "blockdata_filepath": "data/layouts/Zone35I/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE35J",
+      "name": "Zone35J_Layout",
+      "width": 11,
+      "height": 34,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/Zone35J/border.bin",
+      "blockdata_filepath": "data/layouts/Zone35J/map.bin"
     }
   ]
 }

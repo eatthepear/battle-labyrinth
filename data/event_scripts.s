@@ -1950,3 +1950,23 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Zone34A/scripts.inc"
 
 	.include "data/maps/Zone35A/scripts.inc"
+
+	.include "data/maps/Zone35B/scripts.inc"
+
+	.include "data/maps/Zone35C/scripts.inc"
+
+	.include "data/maps/Zone35E/scripts.inc"
+
+	.include "data/maps/Zone35D/scripts.inc"
+
+	.include "data/maps/Zone35F/scripts.inc"
+
+	.include "data/maps/Zone35G/scripts.inc"
+
+	.include "data/maps/Zone35H/scripts.inc"
+
+	.include "data/maps/Zone35K/scripts.inc"
+
+	.include "data/maps/Zone35I/scripts.inc"
+
+	.include "data/maps/Zone35J/scripts.inc"
