@@ -134,14 +134,14 @@ script Zone29A_EventScript_ZukiBattle {
     } elif (var(VAR_TEMP_0) == 9) {
         applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
         waitmovement(0)
-        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
         waitmovement(0)
         turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
         turnobject(LOCALID_ZUKI, DIR_SOUTH)
     } elif (var(VAR_TEMP_0) == 11) {
         applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
         waitmovement(0)
-        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
         waitmovement(0)
         turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
         turnobject(LOCALID_ZUKI, DIR_SOUTH)
@@ -226,7 +226,7 @@ script Zone29A_EventScript_ZukiBattle {
 	setvar(VAR_0x8007, 6)  // shake delay
 	special(ShakeCamera)
 	waitstate
-	applymovement(LOCALID_SISTER, Zone29A_Movement_Sister)
+	applymovement(LOCALID_SISTER, Zone29A_Movement_SisterRunUp)
 	waitmovement(0)
 	turnobject(LOCALID_ZUKI, DIR_WEST)
 	msgbox(format("LITTLE SISTER SAY THERES LEGENDARIES!"), MSGBOX_DEFAULT)
@@ -238,18 +238,26 @@ script Zone29A_EventScript_ZukiBattle {
 	turnobject(LOCALID_ZUKI, DIR_SOUTH)
 	msgbox(format("THE LEGENDARY POKEMON RETURNS!"))
 	closemessage
-    // move the sister back down
+	applymovement(LOCALID_SISTER, Zone29A_Movement_SisterRunDown)
+	waitmovement(0)
     setflag(FLAG_BEAT_BOSS_29)
     clearflag(FLAG_HIDE_ZONE29A_PORYGON)
 	release
 	end
 }
 
-movement Zone29A_Movement_Sister {
+movement Zone29A_Movement_SisterRunUp {
 	walk_fast_up * 7
 	walk_fast_right * 3
 	walk_fast_up
 	walk_fast_right
+}
+
+movement Zone29A_Movement_SisterRunDown {
+	walk_fast_left
+	walk_fast_down
+	walk_fast_left * 3
+	walk_fast_down * 7
 }
 
 movement Zone29A_Movement_ZukiWalkUp {

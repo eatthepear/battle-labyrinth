@@ -4408,6 +4408,14 @@ Double Battle: No
 Mugshot: Green
 
 Sylveon
+Ability: Pixilate
+Level: 55
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Relaxed Nature
+- Hyper Voice
+- Psyshock
+- Draining Kiss
+- Quick Attack
 
 === TRAINER_PBL_ARITA_BOSS_29 ===
 Name: Arita
@@ -4419,6 +4427,14 @@ Double Battle: No
 Mugshot: Green
 
 Glaceon
+Ability: Snow Cloak
+Level: 55
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Calm Nature
+- Ice Beam
+- Freeze-Dry
+- Alluring Voice
+- Mirror Coat
 
 === TRAINER_PBL_SAITO_BOSS_29 ===
 Name: Saito
@@ -4430,6 +4446,14 @@ Double Battle: No
 Mugshot: Green
 
 Leafeon
+Ability: Chlorophyll
+Level: 55
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Jolly Nature
+- Leaf Blade
+- Knock Off
+- Aerial Ace
+- Swords Dance
 
 === TRAINER_PBL_EMIKO_BOSS_29 ===
 Name: Emiko
@@ -4441,6 +4465,14 @@ Double Battle: No
 Mugshot: Green
 
 Umbreon
+Ability: Synchronize
+Level: 55
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Bold Nature
+- Dark Pulse
+- Alluring Voice
+- Moonlight
+- Calm Mind
 
 === TRAINER_PBL_NAOKO_BOSS_29 ===
 Name: Naoko
@@ -4452,6 +4484,14 @@ Double Battle: No
 Mugshot: Green
 
 Espeon
+Ability: Magic Bounce
+Level: 55
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Psychic
+- Dazzling Gleam
+- Shadow Ball
+- Grass Knot
 
 === TRAINER_PBL_MIKI_BOSS_29 ===
 Name: Miki
@@ -4463,6 +4503,14 @@ Double Battle: No
 Mugshot: Green
 
 Flareon
+Ability: Guts
+Level: 55
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Adamant Nature
+- Flare Blitz
+- Facade
+- Quick Attack
+- Endeavor
 
 === TRAINER_PBL_SAYO_BOSS_29 ===
 Name: Sayo
@@ -4474,6 +4522,14 @@ Double Battle: No
 Mugshot: Green
 
 Jolteon
+Ability: Volt Absorb
+Level: 55
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Modest Nature
+- Thunderbolt
+- Alluring Voice
+- Shadow Ball
+- Substitute
 
 === TRAINER_PBL_KUNI_BOSS_29 ===
 Name: Kuni
@@ -4485,6 +4541,14 @@ Double Battle: No
 Mugshot: Green
 
 Vaporeon
+Ability: Water Absorb
+Level: 55
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Sassy Nature
+- Scald
+- Ice Beam
+- Wish
+- Yawn
 
 === TRAINER_PBL_PROTON_BOSS_30 ===
 Name: Ariana
