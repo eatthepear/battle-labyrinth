@@ -1,1 +1,323 @@
 mapscripts Zone29A_MapScripts {}
+
+script Zone29A_EventScript_KimonoGirl {
+	lock
+	faceplayer
+    if (flag(FLAG_BEAT_BOSS_29)) {
+	    msgbox(format("For KIMONO GIRLS like me, dancing is everything.\pI have never gone a day without a dance practice.\pPOKéMON are the same.\nThey grow with you little by little each day."), MSGBOX_AUTOCLOSE)
+    } else {
+	    msgbox(format("Talk to Zuki in the middle when you are ready."), MSGBOX_AUTOCLOSE)
+    }
+	release
+	end
+}
+
+script Zone29A_EventScript_Zuki {
+	lock
+	faceplayer
+    if (flag(FLAG_BEAT_BOSS_29)) {
+	    msgbox(format("For KIMONO GIRLS like me, dancing is everything.\pI have never gone a day without a dance practice.\pPOKéMON are the same.\nThey grow with you little by little each day."), MSGBOX_AUTOCLOSE)
+    } else {
+	    goto(Zone29A_EventScript_ZukiBattle)
+    }
+	release
+	end
+}
+
+movement Zone29A_Movement_PlayerWalkToZukiLeft {
+	walk_up
+    walk_right * 4
+	face_up
+}
+
+movement Zone29A_Movement_MonWalkToZukiLeft {
+	walk_left
+	walk_up * 10
+	walk_left * 3
+	walk_up * 3
+	walk_right * 3
+}
+
+movement Zone29A_Movement_PlayerWalkToZukiRight {
+	walk_up
+    walk_left * 4
+	face_up
+}
+
+movement Zone29A_Movement_MonWalkToZukiRight {
+	walk_right * 2
+	walk_right
+	walk_up * 10
+	walk_right * 3
+	walk_up * 3
+	walk_left * 4
+}
+
+movement Zone29A_Movement_KimonoSpin {
+	face_right
+	delay_8
+	face_up
+	delay_8
+	face_left
+	delay_8
+	face_down
+	delay_8
+	face_right
+	delay_8
+	face_up
+	delay_8
+	face_left
+	delay_8
+	face_down
+}
+
+script Zone29A_Trigger_PreBattleCutscene {
+	lock
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    switch (var(VAR_TEMP_0)) {
+        case 4:
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight2)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Zone29A_Movement_PlayerWalkToZukiLeft)
+            waitmovement(0)
+        case 5:
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Zone29A_Movement_PlayerWalkToZukiLeft)
+            waitmovement(0)
+        case 6:
+            applymovement(OBJ_EVENT_ID_PLAYER, Zone29A_Movement_PlayerWalkToZukiLeft)
+            waitmovement(0)
+        case 14:
+            applymovement(OBJ_EVENT_ID_PLAYER, Zone29A_Movement_PlayerWalkToZukiRight)
+            waitmovement(0)
+        case 15:
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Zone29A_Movement_PlayerWalkToZukiRight)
+            waitmovement(0)
+        case 16:
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft2)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Zone29A_Movement_PlayerWalkToZukiRight)
+            waitmovement(0)
+    }
+	delay(10)
+	msgbox(format("Welcome. My name is ZUKI.\nI met you previously in VIOLET CITY.\pTo bring back {STR_VAR_1}, we\nneeded someone with the right bond\lwith POKéMON.\pWe asked MR. POKéMON to give this\nMYSTERY EGG to\lwhoever showed potential.\pThe EGG went from MR. POKéMON\nto PROF.ELM, then to you.\pBut being pure alone is not enough\nto face the power of this POKéMON."), MSGBOX_AUTOCLOSE)
+	delay(20)
+	playse(SE_M_PETAL_DANCE)
+	applymovement(LOCALID_ZUKI, Zone29A_Movement_KimonoSpin)
+	waitmovement(0)
+	setvar(VAR_ZONE_29_STATE, 1)
+    goto(Zone29A_EventScript_ZukiBattle)
+}
+
+script Zone29A_EventScript_ZukiBattle {
+    msgbox(format("I will test you to see if you are a good Trainer.\p Are you ready, {PLAYER}?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        msgbox(format("That is fine…\nI will wait for you to get ready."))
+        release
+        end
+    }
+    switch (var(VAR_FACING)) {
+        case DIR_SOUTH:
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+            waitmovement(0)
+            turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+            turnobject(LOCALID_ZUKI, DIR_SOUTH)
+        case DIR_WEST:
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+            waitmovement(0)
+            turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+            turnobject(LOCALID_ZUKI, DIR_SOUTH)
+        case DIR_EAST:
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+            waitmovement(0)
+            turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+            turnobject(LOCALID_ZUKI, DIR_SOUTH)
+    }
+
+	trainerbattle_no_intro(TRAINER_PBL_KIMONO_GIRL_1_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
+	applymovement(LOCALID_ZUKI, Zone29A_Movement_ZukiWalkUp)
+	waitmovement(0)
+	playse(SE_M_PETAL_DANCE)
+	applymovement(LOCALID_NAOKO, Zone29A_Movement_KimonoSpin)
+	waitmovement(0)
+	applymovement(LOCALID_NAOKO, Zone29A_Movement_NaokoWalkToPlayer)
+	waitmovement(0)
+	msgbox(format("You are quite strong. You helped me in the ILEX FOREST.\pI'm NAOKO--not so good with directions.\pI saw you defeat Team Rocket when KURT was in trouble at the SLOWPOKE WELL.\pLet me challenge you and your POKéMON!"))
+	trainerbattle_no_intro(TRAINER_PBL_KIMONO_GIRL_2_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
+	applymovement(LOCALID_NAOKO, Zone29A_Movement_NaokoWalkBack)
+	waitmovement(0)
+	playse(SE_M_PETAL_DANCE)
+	applymovement(LOCALID_MIKI, Zone29A_Movement_KimonoSpin)
+	waitmovement(0)
+	applymovement(LOCALID_MIKI, Zone29A_Movement_MikiWalkToPlayer)
+	waitmovement(0)
+	msgbox(format("You're quite the Trainer. I\nremember you chased off that\lRocket Grunt from right here.\pThank you for that.\pThough, I'm a Trainer too.\nShe who knows the most speaks\lthe least!\pI am MIKI--the KIMONO GIRL!\pLet me challenge you and your\nPOKéMON!"))
+	trainerbattle_no_intro(TRAINER_PBL_KIMONO_GIRL_3_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
+	applymovement(LOCALID_MIKI, Zone29A_Movement_MikiWalkBack)
+	waitmovement(0)
+	playse(SE_M_PETAL_DANCE)
+	applymovement(LOCALID_SAYO, Zone29A_Movement_KimonoSpin)
+	waitmovement(0)
+	applymovement(LOCALID_SAYO, Zone29A_Movement_SayoWalkToPlayer)
+	waitmovement(0)
+	msgbox(format("Excellent spirit! You got me off the ice by pushing me.\pI skate in sandals.\nI am SAYO--the KIMONO GIRL!\pI listened in the DRAGON'S DEN when you passed the Elder's test.\pLet me challenge you and your POKéMON!"))
+	trainerbattle_no_intro(TRAINER_PBL_KIMONO_GIRL_4_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
+	applymovement(LOCALID_SAYO, Zone29A_Movement_SayoWalkBack)
+	waitmovement(0)
+	playse(SE_M_PETAL_DANCE)
+	applymovement(LOCALID_KUNI, Zone29A_Movement_KimonoSpin)
+	waitmovement(0)
+	applymovement(LOCALID_KUNI, Zone29A_Movement_KuniWalkToPlayer)
+	waitmovement(0)
+	msgbox(format("I'm the last one.\pYou were dependable at the GOLDENROD TUNNEL.\pI'm the one who twirls even underground--KUNI!\pI saw you thwart Rocket's plan to take the Radio Tower.\pNow show me your strength!\nLet me challenge you and your POKéMON!"))
+	trainerbattle_no_intro(TRAINER_PBL_KIMONO_GIRL_5_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
+	applymovement(LOCALID_KUNI, Zone29A_Movement_KuniWalkBack)
+	waitmovement(0)
+	applymovement(LOCALID_ZUKI, Common_Movement_WalkDown)
+	waitmovement(0)
+	msgbox(format("We were not wrong about you.\nYou are indeed worthy of this...\pPlease take it."))
+	// giveitem ITEM_TIDAL_BELL
+	// closemessage
+	playse(SE_M_RAZOR_WIND)
+	setvar(VAR_0x8004, 1)  // vertical pan
+	setvar(VAR_0x8005, 1)  // horizontal pan
+	setvar(VAR_0x8006, 20)  // num shakes
+	setvar(VAR_0x8007, 6)  // shake delay
+	special(ShakeCamera)
+	waitstate
+	applymovement(LOCALID_SISTER, Zone29A_Movement_Sister)
+	waitmovement(0)
+	turnobject(LOCALID_ZUKI, DIR_WEST)
+	msgbox(format("LITTLE SISTER SAY THERES LEGENDARIES!"), MSGBOX_DEFAULT)
+	closemessage
+	playse(SE_PIN)
+	applymovement(LOCALID_ZUKI, Common_Movement_ExclamationMark)
+	delay(55)
+	waitmovement(LOCALID_ZUKI)
+	turnobject(LOCALID_ZUKI, DIR_SOUTH)
+	msgbox(format("THE LEGENDARY POKEMON RETURNS!"))
+	closemessage
+    // move the sister back down
+	release
+	end
+}
+
+movement Zone29A_Movement_Sister {
+	walk_fast_up * 7
+	walk_fast_right * 3
+	walk_fast_up
+	walk_fast_right
+}
+
+movement Zone29A_Movement_ZukiWalkUp {
+	lock_facing_direction
+	walk_up
+	unlock_facing_direction
+}
+
+movement Zone29A_Movement_NaokoWalkToPlayer {
+	walk_right * 5
+	face_down
+}
+
+movement Zone29A_Movement_NaokoWalkBack {
+	walk_left * 5
+	face_down
+}
+
+movement Zone29A_Movement_MikiWalkToPlayer {
+	walk_left * 5
+	face_down
+}
+movement Zone29A_Movement_MikiWalkBack {
+	walk_right * 5
+	face_down
+}
+
+movement Zone29A_Movement_SayoWalkToPlayer {
+	walk_down
+	walk_right * 3
+	face_down
+}
+
+movement Zone29A_Movement_SayoWalkBack {
+	walk_left * 3
+	walk_up
+	face_down
+}
+
+movement Zone29A_Movement_KuniWalkToPlayer {
+	walk_down
+	walk_left * 3
+	face_down
+}
+
+movement Zone29A_Movement_KuniWalkBack {
+	walk_right * 3
+	walk_up
+	face_down
+}
+
+text Zone29A_Text_KimonoGirlBeaten {
+	format("…")
+}
+
+script Zone29A_EventScript_Boy {
+	lock
+	faceplayer
+	msgbox(format("I was supposed to be the hero...!\nSo much for getting close to a KIMONO GIRL!"))
+	release
+	end
+}
+
+script Zone29A_EventScript_Gentleman {
+	lock
+	faceplayer
+	msgbox(format("That man's always with his PSYDUCK.\pSays he wants a POKéMON that can SURF and dance.\pIs he trying to make a POKéMON that stars in synchronized swimming?"))
+	release
+	end
+}
+
+script Zone29A_EventScript_Granny {
+	lock
+	faceplayer
+	msgbox(format("That man's always with his PSYDUCK.\pSays he wants a POKéMON that can SURF and dance.\pIs he trying to make a POKéMON that stars in synchronized swimming?"))
+	release
+	end
+}
+
+script Zone29A_EventScript_Gramps {
+	lock
+	faceplayer
+	msgbox(format("The KIMONO GIRLS are so beautiful...\pBut they have to go through rigorous training.\pAnd they have to learn to follow customs before appearing in public.\pBut if you love something, anything is possible."))
+	release
+	end
+}
+
+script Zone29A_EventScript_Girl {
+	lock
+	faceplayer
+	msgbox(format("The KIMONO GIRLS are my bigsisters! I'll be like them one day!"))
+	release
+	end
+}
+
+script Zone29A_EventScript_FancyPanel {
+	lock
+	msgbox(format("It's a fancy panel that's\ndecorated with flowers."))
+	release
+	end
+}
