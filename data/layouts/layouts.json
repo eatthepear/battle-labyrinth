@@ -10461,6 +10461,26 @@
       "secondary_tileset": "gTileset_Cavern",
       "border_filepath": "data/layouts/Zone32A/border.bin",
       "blockdata_filepath": "data/layouts/Zone32A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE34A",
+      "name": "Zone34A_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_RocketCastle",
+      "border_filepath": "data/layouts/Zone34A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone34A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE35A",
+      "name": "Zone35A_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/Zone35A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone35A/map.bin"
     }
   ]
 }

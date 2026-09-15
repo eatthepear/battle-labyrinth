@@ -711,7 +711,9 @@
     "Zone29A",
     "Zone31A",
     "Zone32A",
-    "Zone33A"
+    "Zone33A",
+    "Zone34A",
+    "Zone35A"
   ],
   "gMapGroup_Sanctuary": [
     "ZoneSanctuary_PokemonCenter_1F",
