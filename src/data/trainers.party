@@ -4398,104 +4398,93 @@ Mugshot: Blue
 
 Bulbasaur
 
-=== TRAINER_PBL_KIMONO_GIRL_1_BOSS_29 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+=== TRAINER_PBL_ZUKI_BOSS_29 ===
+Name: Zuki
+Class: Kimono Girl
+Pic: Kimono Girl
+Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
-Mugshot: Blue
+Mugshot: Green
 
-Bulbasaur
+Sylveon
 
-=== TRAINER_PBL_KIMONO_GIRL_2_BOSS_29 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+=== TRAINER_PBL_ARITA_BOSS_29 ===
+Name: Arita
+Class: Kimono Girl
+Pic: Kimono Girl
+Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
-Mugshot: Blue
+Mugshot: Green
 
-Bulbasaur
+Glaceon
 
-=== TRAINER_PBL_KIMONO_GIRL_3_BOSS_29 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+=== TRAINER_PBL_SAITO_BOSS_29 ===
+Name: Saito
+Class: Kimono Girl
+Pic: Kimono Girl
+Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
-Mugshot: Blue
+Mugshot: Green
 
-Bulbasaur
+Leafeon
 
-=== TRAINER_PBL_KIMONO_GIRL_4_BOSS_29 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+=== TRAINER_PBL_EMIKO_BOSS_29 ===
+Name: Emiko
+Class: Kimono Girl
+Pic: Kimono Girl
+Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
-Mugshot: Blue
+Mugshot: Green
 
-Bulbasaur
+Umbreon
 
-=== TRAINER_PBL_KIMONO_GIRL_5_BOSS_29 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+=== TRAINER_PBL_NAOKO_BOSS_29 ===
+Name: Naoko
+Class: Kimono Girl
+Pic: Kimono Girl
+Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
-Mugshot: Blue
+Mugshot: Green
 
-Bulbasaur
+Espeon
 
-=== TRAINER_PBL_KIMONO_GIRL_6_BOSS_29 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+=== TRAINER_PBL_MIKI_BOSS_29 ===
+Name: Miki
+Class: Kimono Girl
+Pic: Kimono Girl
+Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
-Mugshot: Blue
+Mugshot: Green
 
-Bulbasaur
+Flareon
 
-=== TRAINER_PBL_KIMONO_GIRL_7_BOSS_29 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+=== TRAINER_PBL_SAYO_BOSS_29 ===
+Name: Sayo
+Class: Kimono Girl
+Pic: Kimono Girl
+Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
-Mugshot: Blue
+Mugshot: Green
 
-Bulbasaur
+Jolteon
 
-=== TRAINER_PBL_KIMONO_GIRL_8_BOSS_29 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+=== TRAINER_PBL_KUNI_BOSS_29 ===
+Name: Kuni
+Class: Kimono Girl
+Pic: Kimono Girl
+Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
-Mugshot: Blue
+Mugshot: Green
 
-Bulbasaur
-
-=== TRAINER_PBL_KIMONO_GIRL_9_BOSS_29 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
-Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Vaporeon
 
 === TRAINER_PBL_PROTON_BOSS_30 ===
 Name: Ariana

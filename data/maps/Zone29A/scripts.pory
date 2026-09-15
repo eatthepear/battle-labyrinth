@@ -119,36 +119,63 @@ script Zone29A_EventScript_ZukiBattle {
         release
         end
     }
-    switch (var(VAR_FACING)) {
-        case DIR_SOUTH:
-            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
-            waitmovement(0)
-            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
-            waitmovement(0)
-            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
-            waitmovement(0)
-            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
-            waitmovement(0)
-            turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
-            turnobject(LOCALID_ZUKI, DIR_SOUTH)
-        case DIR_WEST:
-            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
-            waitmovement(0)
-            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
-            waitmovement(0)
-            turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
-            turnobject(LOCALID_ZUKI, DIR_SOUTH)
-        case DIR_EAST:
-            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
-            waitmovement(0)
-            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
-            waitmovement(0)
-            turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
-            turnobject(LOCALID_ZUKI, DIR_SOUTH)
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if (var(VAR_TEMP_1) == 2) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+        waitmovement(0)
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+        turnobject(LOCALID_ZUKI, DIR_SOUTH)
+    } elif (var(VAR_TEMP_0) == 9) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+        waitmovement(0)
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+        turnobject(LOCALID_ZUKI, DIR_SOUTH)
+    } elif (var(VAR_TEMP_0) == 11) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+        waitmovement(0)
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+        turnobject(LOCALID_ZUKI, DIR_SOUTH)
     }
 
-	trainerbattle_no_intro(TRAINER_PBL_KIMONO_GIRL_1_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
+	trainerbattle_no_intro(TRAINER_PBL_ZUKI_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
 	applymovement(LOCALID_ZUKI, Zone29A_Movement_ZukiWalkUp)
+	waitmovement(0)
+	playse(SE_M_PETAL_DANCE)
+	applymovement(LOCALID_ARITA, Zone29A_Movement_KimonoSpin)
+	waitmovement(0)
+	applymovement(LOCALID_ARITA, Zone29A_Movement_AritaWalkToPlayer)
+	waitmovement(0)
+	msgbox(format("You are quite strong. You helped me in the ILEX FOREST.\pI'm Arita--not so good with directions.\pI saw you defeat Team Rocket when KURT was in trouble at the SLOWPOKE WELL.\pLet me challenge you and your POKéMON!"))
+	trainerbattle_no_intro(TRAINER_PBL_ARITA_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
+	applymovement(LOCALID_ARITA, Zone29A_Movement_AritaWalkBack)
+	waitmovement(0)
+	playse(SE_M_PETAL_DANCE)
+	applymovement(LOCALID_SAITO, Zone29A_Movement_KimonoSpin)
+	waitmovement(0)
+	applymovement(LOCALID_SAITO, Zone29A_Movement_SaitoWalkToPlayer)
+	waitmovement(0)
+	msgbox(format("You are quite strong. You helped me in the ILEX FOREST.\pI'm Saito--not so good with directions.\pI saw you defeat Team Rocket when KURT was in trouble at the SLOWPOKE WELL.\pLet me challenge you and your POKéMON!"))
+	trainerbattle_no_intro(TRAINER_PBL_SAITO_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
+	applymovement(LOCALID_SAITO, Zone29A_Movement_SaitoWalkBack)
+	waitmovement(0)
+	playse(SE_M_PETAL_DANCE)
+	applymovement(LOCALID_EMIKO, Zone29A_Movement_KimonoSpin)
+	waitmovement(0)
+	applymovement(LOCALID_EMIKO, Zone29A_Movement_EmikoWalkToPlayer)
+	waitmovement(0)
+	msgbox(format("You are quite strong. You helped me in the ILEX FOREST.\pI'm Emiko--not so good with directions.\pI saw you defeat Team Rocket when KURT was in trouble at the SLOWPOKE WELL.\pLet me challenge you and your POKéMON!"))
+	trainerbattle_no_intro(TRAINER_PBL_EMIKO_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
+	applymovement(LOCALID_EMIKO, Zone29A_Movement_EmikoWalkBack)
 	waitmovement(0)
 	playse(SE_M_PETAL_DANCE)
 	applymovement(LOCALID_NAOKO, Zone29A_Movement_KimonoSpin)
@@ -156,7 +183,7 @@ script Zone29A_EventScript_ZukiBattle {
 	applymovement(LOCALID_NAOKO, Zone29A_Movement_NaokoWalkToPlayer)
 	waitmovement(0)
 	msgbox(format("You are quite strong. You helped me in the ILEX FOREST.\pI'm NAOKO--not so good with directions.\pI saw you defeat Team Rocket when KURT was in trouble at the SLOWPOKE WELL.\pLet me challenge you and your POKéMON!"))
-	trainerbattle_no_intro(TRAINER_PBL_KIMONO_GIRL_2_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
+	trainerbattle_no_intro(TRAINER_PBL_NAOKO_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
 	applymovement(LOCALID_NAOKO, Zone29A_Movement_NaokoWalkBack)
 	waitmovement(0)
 	playse(SE_M_PETAL_DANCE)
@@ -165,7 +192,7 @@ script Zone29A_EventScript_ZukiBattle {
 	applymovement(LOCALID_MIKI, Zone29A_Movement_MikiWalkToPlayer)
 	waitmovement(0)
 	msgbox(format("You're quite the Trainer. I\nremember you chased off that\lRocket Grunt from right here.\pThank you for that.\pThough, I'm a Trainer too.\nShe who knows the most speaks\lthe least!\pI am MIKI--the KIMONO GIRL!\pLet me challenge you and your\nPOKéMON!"))
-	trainerbattle_no_intro(TRAINER_PBL_KIMONO_GIRL_3_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
+	trainerbattle_no_intro(TRAINER_PBL_MIKI_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
 	applymovement(LOCALID_MIKI, Zone29A_Movement_MikiWalkBack)
 	waitmovement(0)
 	playse(SE_M_PETAL_DANCE)
@@ -174,7 +201,7 @@ script Zone29A_EventScript_ZukiBattle {
 	applymovement(LOCALID_SAYO, Zone29A_Movement_SayoWalkToPlayer)
 	waitmovement(0)
 	msgbox(format("Excellent spirit! You got me off the ice by pushing me.\pI skate in sandals.\nI am SAYO--the KIMONO GIRL!\pI listened in the DRAGON'S DEN when you passed the Elder's test.\pLet me challenge you and your POKéMON!"))
-	trainerbattle_no_intro(TRAINER_PBL_KIMONO_GIRL_4_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
+	trainerbattle_no_intro(TRAINER_PBL_SAYO_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
 	applymovement(LOCALID_SAYO, Zone29A_Movement_SayoWalkBack)
 	waitmovement(0)
 	playse(SE_M_PETAL_DANCE)
@@ -183,10 +210,11 @@ script Zone29A_EventScript_ZukiBattle {
 	applymovement(LOCALID_KUNI, Zone29A_Movement_KuniWalkToPlayer)
 	waitmovement(0)
 	msgbox(format("I'm the last one.\pYou were dependable at the GOLDENROD TUNNEL.\pI'm the one who twirls even underground--KUNI!\pI saw you thwart Rocket's plan to take the Radio Tower.\pNow show me your strength!\nLet me challenge you and your POKéMON!"))
-	trainerbattle_no_intro(TRAINER_PBL_KIMONO_GIRL_5_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
+	trainerbattle_no_intro(TRAINER_PBL_KUNI_BOSS_29, Zone29A_Text_KimonoGirlBeaten)
 	applymovement(LOCALID_KUNI, Zone29A_Movement_KuniWalkBack)
 	waitmovement(0)
-	applymovement(LOCALID_ZUKI, Common_Movement_WalkDown)
+	applymovement(LOCALID_ZUKI, Zone29A_Movement_ZukiWalkToPlayer)
+	applymovement(LOCALID_ARITA, Zone29A_Movement_AritaWalkBackInPlace)
 	waitmovement(0)
 	msgbox(format("We were not wrong about you.\nYou are indeed worthy of this...\pPlease take it."))
 	// giveitem ITEM_TIDAL_BELL
@@ -211,6 +239,8 @@ script Zone29A_EventScript_ZukiBattle {
 	msgbox(format("THE LEGENDARY POKEMON RETURNS!"))
 	closemessage
     // move the sister back down
+    setflag(FLAG_BEAT_BOSS_29)
+    clearflag(FLAG_HIDE_ZONE29A_PORYGON)
 	release
 	end
 }
@@ -223,9 +253,48 @@ movement Zone29A_Movement_Sister {
 }
 
 movement Zone29A_Movement_ZukiWalkUp {
-	lock_facing_direction
-	walk_up
-	unlock_facing_direction
+    walk_left
+	walk_up * 2
+    face_down
+}
+
+movement Zone29A_Movement_AritaWalkToPlayer {
+    walk_down * 2
+    face_down
+}
+
+movement Zone29A_Movement_AritaWalkBack {
+	walk_right
+    walk_up * 2
+	face_down
+}
+
+movement Zone29A_Movement_SaitoWalkToPlayer {
+    walk_right * 3
+    walk_down * 2
+    walk_right * 2
+    face_down
+}
+
+movement Zone29A_Movement_SaitoWalkBack {
+    walk_left * 2
+    walk_up * 2
+    walk_left * 3
+    face_down
+}
+
+movement Zone29A_Movement_EmikoWalkToPlayer {
+    walk_left * 3
+    walk_down * 2
+    walk_left * 2
+    face_down
+}
+
+movement Zone29A_Movement_EmikoWalkBack {
+    walk_right * 2
+    walk_up * 2
+    walk_right * 3
+    face_down
 }
 
 movement Zone29A_Movement_NaokoWalkToPlayer {
@@ -269,6 +338,17 @@ movement Zone29A_Movement_KuniWalkBack {
 	walk_right * 3
 	walk_up
 	face_down
+}
+
+movement Zone29A_Movement_ZukiWalkToPlayer {
+    walk_down * 2
+    walk_right
+    face_down
+}
+
+movement Zone29A_Movement_AritaWalkBackInPlace {
+    walk_left
+    face_down
 }
 
 text Zone29A_Text_KimonoGirlBeaten {
