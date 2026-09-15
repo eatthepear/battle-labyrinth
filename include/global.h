@@ -1123,6 +1123,14 @@ struct Bag
     struct ItemSlot medicine[BAG_MEDICINE_COUNT];
 };
 
+//Start Pokevial Branch
+struct Pokevial
+{
+    u8 Size : 4;
+    u8 Dose : 4;
+};
+//End Pokevial Branch
+
 struct SaveBlock1
 {
     /*0x00*/ struct Coords16 pos;
@@ -1253,6 +1261,7 @@ struct SaveBlock1
                 u8 registeredItemLastSelected:4; //max 16 items
                 u8 registeredItemListCount:4;
                 struct RegisteredItemSlot registeredItems[REGISTERED_ITEMS_MAX];
+    /*      */ struct Pokevial pokevial; //Pokevial Branch
 #if FREE_TRAINER_TOWER == FALSE && IS_FRLG
     u32 towerChallengeId;
     struct TrainerTower trainerTower[NUM_TOWER_CHALLENGE_TYPES];

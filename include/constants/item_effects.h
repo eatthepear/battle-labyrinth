@@ -6,6 +6,7 @@
 #define ITEM0_DIRE_HIT          0x30 // Works the same way as the move Focus Energy.
 #define ITEM0_SACRED_ASH        0x40
 #define ITEM0_INFATUATION       0x80
+#define ITEM0_POKEVIAL          0xC0 //Pokevial Branch
 
 // new field 1 masks
 #define ITEM1_X_ATTACK          STAT_ATK
@@ -94,8 +95,9 @@ enum ItemEffectType
     ITEM_EFFECT_PP_UP,
     ITEM_EFFECT_PP_MAX,
     ITEM_EFFECT_HEAL_PP,
-    ITEM_EFFECT_NONE,
     ITEM_EFFECT_HEXORB, //hexorb Branch
+    ITEM_EFFECT_POKEVIAL, //Pokevial Branch,
+    ITEM_EFFECT_NONE,
 };
 
 #define ITEM_FRIENDSHIP_MAPSEC_BONUS  1   // The amount of bonus friendship gained when an item is used on a Pokémon whose met location matches the current map section.

@@ -8,6 +8,7 @@
 #include "move.h"
 #include "sprite.h"
 #include "constants/items.h"
+#include "pokevial.h" // Pokevial Branch
 
 // EWRAM vars
 EWRAM_DATA u8 *gItemIconDecompressionBuffer = NULL;
@@ -166,6 +167,11 @@ const void *GetItemIconPic(enum Item itemId)
             return gItemIcon_HM;
         return gItemIcon_TM;
     }
+
+    // Start Pokevial Branch
+    if (itemId == ITEM_POKEVIAL)
+        return PokevialGetDoseIcon();
+    // End Pokevial Branch
 
     return gItemsInfo[itemId].iconPic;
 }

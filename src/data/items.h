@@ -14957,21 +14957,22 @@ const struct ItemInfo gItemsInfo[] =
     },
 // End hexorb Branch
 
-    [ITEM_RUBY] =
+    [ITEM_POKEVIAL] =
     {
-        .name = ITEM_NAME("Ruby"),
-        .pluralName = ITEM_PLURAL_NAME("Rubies"),
+        .name = ITEM_NAME("Pokévial"),
+        .pluralName = ITEM_PLURAL_NAME("Pokévials"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "An exquisite, red-\n"
-            "glowing gem that\n"
-            "symbolizes passion."),
+            "Restores all\n"
+            "party Pokémon\n"
+            "to full health."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_Gem,
-        .iconPalette = gItemIconPalette_Ruby,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Pokevial,
+        .effect = gItemEffect_Pokevial,
+        .iconPic = gItemIcon_Pokevial,
+        .iconPalette = gItemIconPalette_Pokevial,
     },
 
     [ITEM_SAPPHIRE] =

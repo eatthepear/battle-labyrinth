@@ -30,6 +30,7 @@
 #include "constants/abilities.h"
 #include "constants/items.h"
 #include "constants/battle_frontier.h"
+#include "pokevial.h"
 
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleFrontierParty(void);
@@ -46,6 +47,8 @@ void HealPlayerParty(void)
     // Recharge Tera Orb, if possible.
     if (!IsTeraOrbCharged() && CheckBagHasItem(ITEM_TERA_ORB, 1))
         FlagSet(B_FLAG_TERA_ORB_CHARGED);
+
+    PokevialRefill(); //Pokevial Branch
 }
 
 static void HealPlayerBoxes(void)

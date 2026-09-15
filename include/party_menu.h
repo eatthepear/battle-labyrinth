@@ -156,6 +156,8 @@ bool32 SetUpFieldMove_RockClimb(void);
 void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task);
 void InitPartyMenuForHexorbFromField(u8 taskId);
 // End hexorb Branch
+void ItemUseCB_UsePokevial(u8 taskId, TaskFunc task); //Pokevial Branch
+void InitPartyMenuForPokevialFromField(u8 taskId); //Pokevial Branch
 
 void ChooseMonForIVChange(void);
 void SetIVOfSelectedPokemon(void);

@@ -68,6 +68,7 @@
 #include "constants/event_objects.h"
 #include "constants/map_types.h"
 #include "constants/party_menu.h"
+#include "pokevial.h" //Pokevial Branch
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(struct ScriptContext *ctx);
@@ -3314,6 +3315,55 @@ bool8 ScrCmd_setwildbattle_pbl(struct ScriptContext *ctx)
 
     return FALSE;
 }
+
+//Start Pokevial Branch
+bool8 ScrCmd_pokevial(struct ScriptContext *ctx)
+{
+    u8 mode = ScriptReadByte(ctx);
+    u8 parameter = ScriptReadByte(ctx);
+    u8 amount = ScriptReadByte(ctx);
+
+    switch (mode) {
+        case VIAL_GET:
+            switch (parameter) {
+                case VIAL_SIZE:
+                    PokevialGetSize();
+                    break;
+                case VIAL_DOSE:
+                    PokevialGetDose();
+                    break;
+            }
+            break;
+
+        case VIAL_UP:
+            switch (parameter) {
+                case VIAL_SIZE:
+                    PokevialSizeUp(amount);
+                    break;
+                case VIAL_DOSE:
+                    PokevialDoseUp(amount);
+                    break;
+            }
+            break;
+
+        case VIAL_DOWN:
+            switch (parameter) {
+                case VIAL_SIZE:
+                    PokevialSizeDown(amount);
+                    break;
+                case VIAL_DOSE:
+                    PokevialDoseDown(amount);
+                    break;
+            }
+            break;
+
+        case VIAL_REFILL:
+            PokevialRefill();
+            break;
+    }
+    return TRUE;
+}
+//End Pokevial Branch
 
 bool8 ScrCmd_hidefollower(struct ScriptContext *ctx)
 {
