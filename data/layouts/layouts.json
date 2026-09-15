@@ -10581,6 +10581,16 @@
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/Zone35J/border.bin",
       "blockdata_filepath": "data/layouts/Zone35J/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE35L",
+      "name": "Zone35L_Layout",
+      "width": 15,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CableClub",
+      "border_filepath": "data/layouts/Zone35L/border.bin",
+      "blockdata_filepath": "data/layouts/Zone35L/map.bin"
     }
   ]
 }
