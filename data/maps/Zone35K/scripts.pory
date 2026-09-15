@@ -31,7 +31,7 @@ script Zone35K_EventScript_EnterRoom {
 	applymovement(LOCALID_CYNTHIA_35K, Zone35K_Movement_CynthiaExit)
 	applymovement(LOCALID_PLAYER, Zone35K_Movement_PlayerExit)
 	waitmovement(0)
-	warp(MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 16)
+	warp(MAP_ZONE35L, 7, 16)
 	waitstate
     releaseall
     end

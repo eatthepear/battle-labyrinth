@@ -1,1 +1,50 @@
-mapscripts Zone35L_MapScripts {}
+mapscripts Zone35L_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 0 {
+            lockall
+            call(Zone35L_EventScript_EnterHallOfFame)
+            releaseall
+        }
+    ]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_TEMP_1, 0 {
+            turnobject(LOCALID_PLAYER, DIR_NORTH)
+        }
+    ]
+}
+
+script Zone35L_EventScript_EnterHallOfFame {
+	lockall
+	applymovement(LOCALID_CYNTHIA_35L, Common_Movement_WalkUp6)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp6)
+	waitmovement(0)
+	applymovement(LOCALID_CYNTHIA_35L, Common_Movement_WalkInPlaceFasterRight)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft)
+	waitmovement(0)
+	msgbox(format("MESSAGE!"))
+	closemessage
+	applymovement(LOCALID_CYNTHIA_35L, Common_Movement_WalkUp5)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp5)
+	waitmovement(0)
+	delay(20)
+	applymovement(LOCALID_CYNTHIA_35L, Common_Movement_WalkInPlaceFasterRight)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft)
+	waitmovement(0)
+	msgbox(format("MESSAGE AGAIN!"))
+	closemessage
+	applymovement(LOCALID_CYNTHIA_35L, Common_Movement_WalkInPlaceFasterUp)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp)
+	waitmovement(0)
+	delay(20)
+	dofieldeffect(FLDEFF_HALL_OF_FAME_RECORD)
+	waitfieldeffect(FLDEFF_HALL_OF_FAME_RECORD)
+	delay(40)
+	setvar(VAR_TEMP_1, 1)
+	special(SetChampionSaveWarp)
+	call(EventScript_ResetEliteFour_PBL)
+	setrespawn(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F)
+	fadescreenspeed(FADE_TO_BLACK, 24)
+	special(GameClear)
+	releaseall
+	end
+}

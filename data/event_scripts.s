@@ -1062,6 +1062,7 @@ gStdScripts_End::
 	.include "data/scripts/debug.inc"
 
 EventScript_WhiteOut::
+	call EventScript_ResetEliteFour_PBL
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour
 	goto EventScript_ResetMrBriney
 	end

@@ -2874,3 +2874,11 @@ script EventScript_Beartic {
 	waitmoncry
 	release
 }
+
+script EventScript_ResetEliteFour_PBL {
+	clearflag(FLAG_BEAT_BOSS_35_LACEY)
+	clearflag(FLAG_BEAT_BOSS_35_GLACIA)
+	clearflag(FLAG_BEAT_BOSS_35_KOGA)
+	clearflag(FLAG_BEAT_BOSS_35_SHAUNTAL)
+	setvar(VAR_ZONE_35_STATE, 0)
+}
