@@ -1496,7 +1496,7 @@ Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_COLLECTOR
 
-=== TRAINER_PBL_ARI ===
+=== TRAINER_PBL_ARI_BOSS_9 ===
 Name: Ari
 Class: Winstrate
 Pic: Camper
@@ -1513,7 +1513,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fury Attack
 - Roost
 
-=== TRAINER_PBL_BERTHA ===
+=== TRAINER_PBL_BERTHA_BOSS_9 ===
 Name: Bertha
 Class: Winstrate
 Pic: Picnicker
@@ -1530,7 +1530,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bite
 - Sleep Powder
 
-=== TRAINER_PBL_CASSANDRA ===
+=== TRAINER_PBL_CASSANDRA_BOSS_9 ===
 Name: Cassandra
 Class: Winstrate
 Pic: Pokefan F
@@ -1547,7 +1547,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Icy Wind
 - Aqua Ring
 
-=== TRAINER_PBL_CASSANDRA ===
+=== TRAINER_PBL_CASSANDRA_BOSS_9 ===
 Name: Cassandra
 Class: Winstrate
 Pic: Pokefan F
@@ -1574,7 +1574,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Air Cutter
 - Aqua Jet
 
-=== TRAINER_PBL_DOMINIC ===
+=== TRAINER_PBL_DOMINIC_BOSS_9 ===
 Name: Dominic
 Class: Winstrate
 Pic: Pokefan M
@@ -1590,41 +1590,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Spark
 - Bite
 - Fake Out
-
-=== TRAINER_PBL_ERICA ===
-Name: Erica
-Class: Winstrate
-Pic: Expert F
-Music: Intense
-AI: AI_FLAG_BOSS
-Double Battle: No
-
-Throh @ Sitrus Berry
-Brave Nature
-Ability: Guts
-Level: 23
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Circle Throw
-- Payback
-- Retaliate
-
-=== TRAINER_PBL_ERICA ===
-Name: Erica
-Class: Winstrate
-Pic: Expert F
-Music: Intense
-AI: AI_FLAG_BOSS
-Double Battle: No
-Difficulty: Brutal
-
-Throh @ Sitrus Berry
-Brave Nature
-Ability: Guts
-Level: 23
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Circle Throw
-- Payback
-- Retaliate
 
 Sawk @ Sitrus Berry
 Naive Nature
@@ -3069,7 +3034,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Close Combat
 - Roost
 
-=== TRAINER_PBL_AQUA_GRUNT_19D_1 ===
+=== TRAINER_PBL_AQUA_GRUNT_19D_1_BOSS_19 ===
 Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt F
@@ -3096,7 +3061,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 - Ice Fang
 
-=== TRAINER_PBL_AQUA_GRUNT_19D_2 ===
+=== TRAINER_PBL_AQUA_GRUNT_19D_2_BOSS_19 ===
 Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -3123,7 +3088,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Brick Break
 - Knock Off
 
-=== TRAINER_PBL_AQUA_GRUNT_19D_3 ===
+=== TRAINER_PBL_AQUA_GRUNT_19D_3_BOSS_19 ===
 Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt F
@@ -4156,7 +4121,7 @@ Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_24_AND_25
 
-=== TRAINER_PBL_ROCKET_GRUNT_24A_1 ===
+=== TRAINER_PBL_ROCKET_GRUNT_24A_1_BOSS_24 ===
 Name: Grunt
 Class: Rainbow Rocket
 Pic: Rainbow Rocket Grunt M
@@ -4174,7 +4139,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_ROCKET_GRUNT_24A_2 ===
+=== TRAINER_PBL_ROCKET_GRUNT_24A_2_BOSS_24 ===
 Name: Grunt
 Class: Rainbow Rocket
 Pic: Rainbow Rocket Grunt F
@@ -4192,7 +4157,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_ROCKET_GRUNT_24A_3 ===
+=== TRAINER_PBL_ROCKET_GRUNT_24A_3_BOSS_24 ===
 Name: Grunt
 Class: Rainbow Rocket
 Pic: Rainbow Rocket Grunt M
@@ -4210,7 +4175,7 @@ EVs: 252 Atk / 252 Def / 6 SpA
 - Reflect
 - Metal Claw
 
-=== TRAINER_PBL_ROCKET_GRUNT_24A_4 ===
+=== TRAINER_PBL_ROCKET_GRUNT_24A_4_BOSS_24 ===
 Name: Grunt
 Class: Rainbow Rocket
 Pic: Rainbow Rocket Grunt F
@@ -4410,6 +4375,392 @@ Adamant Nature
 - Iron Head
 - Knock Off
 - Ice Punch
+
+=== TRAINER_PBL_SERENA_BOSS_27 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_RAIHAN_BOSS_28 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_KIMONO_GIRL_1_BOSS_29 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_KIMONO_GIRL_2_BOSS_29 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_KIMONO_GIRL_3_BOSS_29 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_KIMONO_GIRL_4_BOSS_29 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_KIMONO_GIRL_5_BOSS_29 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_KIMONO_GIRL_6_BOSS_29 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_KIMONO_GIRL_7_BOSS_29 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_KIMONO_GIRL_8_BOSS_29 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_KIMONO_GIRL_9_BOSS_29 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_PROTON_BOSS_30 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_LEAF_PARTNER_30 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_WALLY_PARTNER_30 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_SERENA_PARTNER_30 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_MARS_BOSS_30 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_JUPITER_BOSS_30 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_COURTNEY_BOSS_30 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_TABITHA_BOSS_30 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_MATT_BOSS_30 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_SHELLY_BOSS_30 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ARCHER_BOSS_30 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ARIANA_BOSS_30 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_LEAF_BOSS_31 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_WALLY_BOSS_32 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_SERENA_BOSS_32 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_MAXIE_BOSS_34 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ARCHIE_BOSS_34 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_CYRUS_BOSS_34 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_GIOVANNI_BOSS_34 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_LACEY_BOSS_35 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_GLACIA_BOSS_35 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_KOGA_BOSS_35 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_SHAUNTAL_BOSS_35 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_CYNTHIA_BOSS_35 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
 
 === TRAINER_POOL_ZONE_1 ===
 Name: Trainer Pool
