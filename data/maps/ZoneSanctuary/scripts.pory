@@ -390,6 +390,9 @@ script EventScript_NextZone {
 		case 24:
 			setflag(FLAG_HIDE_ZONE24A_ROCKET_GRUNTS)
 			warp(MAP_ZONE24A, 255, 31, 23)
+		case 29:
+			setflag(FLAG_HIDE_ZONE29A_PORYGON)
+			warp(MAP_ZONE29A, 255, 11, 17)
 	}
 	waitstate
 	end
@@ -664,6 +667,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			completesubquest(QUEST_PBL, 28)
 			setvar(VAR_ZONE, 29)
 		case 29:
+			setflag(FLAG_HIDE_ZONE29A_MAX)
 			completesubquest(QUEST_PBL, 29)
 			setvar(VAR_ZONE, 30)
 		case 30:
