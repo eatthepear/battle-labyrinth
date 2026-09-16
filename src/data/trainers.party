@@ -3099,6 +3099,7 @@ Grapploct
 Careful Nature
 Ability: Limber
 Level: 34
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Octolock
 - Brick Break
 - Brutal Swing
@@ -3108,6 +3109,7 @@ Veluza
 Jolly Nature
 Ability: Sharpness
 Level: 34
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Aqua Cutter
 - Psycho Cut
 - Night Slash
@@ -3125,6 +3127,7 @@ Kilowattrel
 Timid Nature
 Ability: Volt Absorb
 Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunderbolt
 - Volt Switch
 - Air Slash
@@ -3134,6 +3137,7 @@ Perrserker
 Jolly Nature
 Ability: Steely Spirit
 Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
 - Iron Head
 - Brick Break
@@ -3143,6 +3147,7 @@ Dhelmise
 Brave Nature
 Ability: Steelworker
 Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Anchor Shot
 - Shadow Claw
 - Giga Drain
@@ -3249,6 +3254,7 @@ Simisage @ Occa Berry
 Ability: Overgrow
 Level: 40
 Naive Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Grass Pledge
 - Giga Drain
 - Low Kick
@@ -3258,6 +3264,7 @@ Serperior @ Light Clay
 Ability: Contrary
 Level: 38
 Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Grass Pledge
 - Giga Drain
 - Light Screen
@@ -3267,6 +3274,7 @@ Sceptile @ Expert Belt
 Ability: Overgrow
 Level: 38
 Hasty Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Grass Pledge
 - Giga Drain
 - Dragon Pulse
@@ -3276,6 +3284,7 @@ Torterra @ Miracle Seed
 Ability: Overgrow
 Level: 38
 Naive Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Grass Pledge
 - Wood Hammer
 - High Horsepower
@@ -3294,6 +3303,7 @@ Simisear @ Passho Berry
 Ability: Blaze
 Level: 40
 Hasty Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Pledge
 - Flamethrower
 - Rock Slide
@@ -3303,6 +3313,7 @@ Typhlosion @ Expert Belt
 Ability: Blaze
 Level: 38
 Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Pledge
 - Flamethrower
 - Scorching Sands
@@ -3312,6 +3323,7 @@ Skeledirge @ Sitrus Berry
 Ability: Unaware
 Level: 38
 Quiet Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Pledge
 - Flamethrower
 - Shadow Ball
@@ -3321,6 +3333,7 @@ Emboar @ Charcoal
 Ability: Reckless
 Level: 38
 Brave Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Pledge
 - Flare Blitz
 - Close Combat
@@ -3339,6 +3352,7 @@ Simipour @ Rindo Berry
 Ability: Torrent
 Level: 40
 Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pledge
 - Scald
 - Ice Beam
@@ -3348,6 +3362,7 @@ Inteleon @ Scope Lens
 Ability: Sniper
 Level: 38
 Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pledge
 - Snipe Shot
 - Ice Beam
@@ -3357,6 +3372,7 @@ Samurott @ Sitrus Berry
 Ability: Torrent
 Level: 38
 Naive Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pledge
 - Scald
 - Ice Beam
@@ -3366,6 +3382,7 @@ Quaquaval @ Flying Gem
 Ability: Moxie
 Level: 38
 Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pledge
 - Aqua Step
 - Close Combat
@@ -3659,6 +3676,7 @@ Talonflame @ Flying Gem
 Ability: Flame Body
 Level: 40
 Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Blaze Kick
 - Acrobatics
 - Will-O-Wisp
@@ -3668,6 +3686,7 @@ Roserade @ Wise Glasses
 Ability: Poison Point
 Level: 40
 Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Giga Drain
 - Sludge Bomb
 - Dazzling Gleam
@@ -3677,6 +3696,7 @@ Azumarill @ Sitrus Berry
 Ability: Huge Power
 Level: 40
 Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Liquidation
 - Play Rough
 - Drain Punch
@@ -3686,6 +3706,7 @@ Magneton @ Eviolite
 Ability: Sturdy
 Level: 40
 Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Volt Switch
 - Flash Cannon
 - Thunderbolt
@@ -3695,6 +3716,7 @@ Gallade @ Lum Berry
 Ability: Sharpness
 Level: 42
 Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sacred Sword
 - Psycho Cut
 - Leaf Blade
@@ -4016,6 +4038,7 @@ Slurpuff @ Focus Sash
 Ability: Unburden
 Level: 44
 Hasty Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sticky Web
 - Endeavor
 - Moonblast
@@ -4025,6 +4048,7 @@ Primarina @ Leftovers
 Ability: Torrent
 Level: 44
 Bold Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Scald
 - Moonblast
 - Rest
@@ -4034,6 +4058,7 @@ Whimsicott @ Sitrus Berry
 Ability: Prankster
 Level: 44
 Bold Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Stun Spore
 - U-Turn
 - Moonblast
@@ -4043,6 +4068,7 @@ Mimikyu @ Red Card
 Ability: Disguise
 Level: 44
 Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shadow Claw
 - Shadow Sneak
 - Play Rough
@@ -4052,6 +4078,7 @@ Slowbro-Galar @ Quick Claw
 Ability: Quick Draw
 Level: 44
 Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shell Side Arm
 - Psyshock
 - Surf
@@ -4061,6 +4088,7 @@ Excadrill @ Life Orb
 Ability: Mold Breaker
 Level: 46
 Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 - Iron Head
 - Rock Slide
@@ -4326,6 +4354,7 @@ Araquanid @ Wacan Berry
 Ability: Water Bubble
 Level: 48
 Impish Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Liquidation
 - Leech Life
 - Sticky Web
@@ -4335,6 +4364,7 @@ Arbok @ Assault Vest
 Ability: Intimidate
 Level: 48
 Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Poison Jab
 - Crunch
 - Earthquake
@@ -4344,6 +4374,7 @@ Obstagoon @ Flame Orb
 Ability: Guts
 Level: 48
 Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Facade
 - Knock Off
 - Switcheroo
@@ -4353,6 +4384,7 @@ Vileplume @ Leftovers
 Ability: Effect Spore
 Level: 48
 Calm Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Giga Drain
 - Sludge Bomb
 - Synthesis
@@ -4362,6 +4394,7 @@ Mamoswine @ Loaded Dice
 Ability: Thick Fat
 Level: 48
 Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 - Icicle Spear
 - Rock Blast
@@ -4371,6 +4404,7 @@ Mawile @ Mawilite
 Ability: Intimidate
 Level: 50
 Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Play Rough
 - Iron Head
 - Knock Off
@@ -4760,60 +4794,349 @@ Mugshot: Blue
 Bulbasaur
 
 === TRAINER_PBL_LACEY_BOSS_35 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
+Name: Lacey
+Class: Elite Four
 Pic: Ariana
-Music: Rocket
+Music: Elite Four
 AI: AI_FLAG_BOSS
-Double Battle: No
+Double Battle: Yes
 Mugshot: Blue
 
-Bulbasaur
+Whimsicott @ Focus Sash
+Ability: Prankster
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Bold Nature
+- Tailwind
+- Encore
+- Giga Drain
+- Moonblast
+
+Primarina @ Throat Spray
+Ability: Liquid Voice
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Bold Nature
+- Hyper Voice
+- Dazzling Gleam
+- Icy Wind
+- Psychic
+
+Slurpuff @ Sitrus Berry
+Ability: Unburden
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Jolly Nature
+- Belly Drum
+- Play Rough
+- Drain Punch
+- Facade
+
+Mimikyu @ Red Card
+Ability: Disguise
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Jolly Nature
+- Swords Dance
+- Shadow Claw
+- Play Rough
+- Drain Punch
+
+Scream Tail @ Booster Energy
+Ability: Protosynthesis
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Modest Nature
+- Calm Mind
+- Boomburst
+- Flamethrower
+- Psyshock
+
+Excadrill @ Excadrite
+Ability: Sand Force
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Jolly Nature
+- Earthquake
+- Iron Head
+- Rock Slide
+- Swords Dance
 
 === TRAINER_PBL_GLACIA_BOSS_35 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Glacia
+Class: Elite Four
+Pic: Elite Four Glacia
+Music: Elite Four
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Blue
 
-Bulbasaur
+Darmanitan-Galar @ Choice Scarf
+Ability: Gorilla Tactics
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Jolly Nature
+- Icicle Crash
+- Flare Blitz
+- Earthquake
+- U-Turn
+
+Ninetales-Alola @ Light Clay
+Ability: Snow Warning
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Aurora Veil
+- Blizzard
+- Moonblast
+- Psyshock
+
+Slowking-Galar @ Leftovers
+Ability: Regenerator
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Bold Nature
+- Chilly Reception
+- Sludge Bomb
+- Future Sight
+- Flamethrower
+
+Arctozolt @ Lum Berry
+Ability: Slush Rush
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Naive Nature
+- Bolt Beak
+- Blizzard
+- Freeze-Dry
+- Low Kick
+
+Iron Bundle @ Booster Energy
+Ability: Quark Drive
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Freeze-Dry
+- Hydro Pump
+- Blizzard
+- Flip Turn
+
+Froslass @ Froslassite
+Ability: Snow Cloak
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Blizzard
+- Shadow Ball
+- Thunderbolt
+- Will-O-Wisp
 
 === TRAINER_PBL_KOGA_BOSS_35 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Koga
+Class: Elite Four
+Pic: Elite Four Glacia
+Music: Elite Four
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Blue
 
-Bulbasaur
+Glimmora @ Focus Sash
+Ability: Toxic Debris
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Modest Nature
+- Stealth Rock
+- Mortal Spin
+- Power Gem
+- Earth Power
+
+Crobat @ Black Sludge
+Ability: Inner Focus
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Jolly Nature
+- Brave Bird
+- U-Turn
+- Roost
+- Taunt
+
+Sneasler @ Protective Pads
+Ability: Poison Touch
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Jolly Nature
+- Dire Claw
+- Close Combat
+- Throat Chop
+- Fake Out
+
+Muk-Alola @ Assault Vest
+Ability: Poison Touch
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Adamant Nature
+- Gunk Shot
+- Knock Off
+- Pursuit
+- Fire Punch
+
+Iron Moth @ Booster Energy
+Ability: Quark Drive
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Fiery Dance
+- Sludge Wave
+- Dazzling Gleam
+- Energy Ball
+
+Greninja @ Greninjite
+Ability: Protean
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Surf
+- Dark Pulse
+- Sludge Wave
+- U-Turn
 
 === TRAINER_PBL_SHAUNTAL_BOSS_35 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Shauntal
+Class: Elite Four
+Pic: Elite Four Glacia
+Music: Elite Four
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Blue
 
-Bulbasaur
+Meowscarada @ Choice Band
+Ability: Protean
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Jolly Nature
+- Knock Off
+- Flower Trick
+- Triple Axel
+- U-Turn
+
+Aegislash @ Weakness Policy
+Ability: Stance Change
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Quiet Nature
+- King's Shield
+- Shadow Ball
+- Shadow Sneak
+- Close Combat
+
+Basculegion @ Colbur Berry
+Ability: Adaptability
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Jolly Nature
+- Last Respects
+- Wave Crash
+- Flip Turn
+- Aqua Jet
+
+Dragapult @ Life Orb
+Ability: Clear Body
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Hasty Nature
+- Dragon Darts
+- Shadow Ball
+- Flamethrower
+- U-Turn
+
+Flutter Mane @ Booster Energy
+Ability: Protosynthesis
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Shadow Ball
+- Moonblast
+- Psyshock
+- Mystical Fire
+
+Chandelure @ Chandelurite
+Ability: Infiltrator
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Shadow Ball
+- Flamethrower
+- Energy Ball
+- Psychic
 
 === TRAINER_PBL_CYNTHIA_BOSS_35 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Cynthia
+Class: Champion
+Pic: Elite Four Glacia
+Music: Elite Four
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Blue
 
-Bulbasaur
+Spiritomb @ Leftovers
+Ability: Pressure
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Bold Nature
+- Foul Play
+- Hex
+- Pain Split
+- Will-O-Wisp
 
+Milotic @ Leftovers
+Ability: Marvel Scale
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Bold Nature
+- Scald
+- Ice Beam
+- Recover
+- Toxic
+
+Togekiss @ Leftovers
+Ability: Serene Grace
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Air Slash
+- Dazzling Gleam
+- Aura Sphere
+- Thunder Wave
+
+Lucario @ Focus Sash
+Ability: Inner Focus
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Jolly Nature
+- Close Combat
+- Meteor Mash
+- Extreme Speed
+- Swords Dance
+
+Garchomp @ Garchompite
+Ability: Rough Skin
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Hasty Nature
+- Dragon Claw
+- Earthquake
+- Poison Jab
+- Flamethrower
+
+Arceus @ Silk Scarf
+Ability: Multitype
+Level: 77
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Adamant Nature
+- Extreme Speed
+- Shadow Claw
+- Earthquake
+- Swords Dance
 
 === TRAINER_POOL_ZONE_1 ===
 Name: Trainer Pool

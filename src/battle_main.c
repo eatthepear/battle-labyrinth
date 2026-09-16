@@ -5192,8 +5192,10 @@ static void HandleEndTurn_BattleWon(void)
         switch (GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA))
         {
         case TRAINER_CLASS_ELITE_FOUR:
-        case TRAINER_CLASS_CHAMPION:
             PlayBGM(MUS_VICTORY_LEAGUE);
+            break;
+        case TRAINER_CLASS_CHAMPION:
+            PlayBGM(MUS_DP_VICTORY_CHAMPION);
             break;
         case TRAINER_CLASS_TEAM_AQUA:
         case TRAINER_CLASS_TEAM_MAGMA:
