@@ -77,8 +77,8 @@ bool32 ShouldTrainerBattlerUseGimmick(enum BattlerId battler, enum Gimmick gimmi
     struct Pokemon *mon = GetBattlerMon(battler);
     if (gimmick == GIMMICK_TERA && GetMonData(mon, MON_DATA_TERA_TYPE) != TYPE_MYSTERY)
         return TRUE;
-    if (gimmick == GIMMICK_DYNAMAX && GetMonData(mon, MON_DATA_DYNAMAX_LEVEL) != BLOCK_AI_DYNAMAX)
-        return TRUE;
+    if (gimmick == GIMMICK_DYNAMAX)
+        return FALSE;
     #endif
 
     return FALSE;
