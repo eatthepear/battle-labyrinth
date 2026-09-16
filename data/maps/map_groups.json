@@ -703,11 +703,8 @@
     "Zone25J",
     "Zone25K",
     "Zone25L",
-    "ZoneB1",
     "Zone26A",
     "Zone26B",
-    "Zone27A",
-    "Zone28A",
     "Zone29A",
     "Zone31A",
     "Zone32A",
@@ -739,6 +736,7 @@
     "HeatedCavity"
   ],
   "gMapGroup_Unused": [
+    "ZoneB1",
     "Zone0A",
     "Zone0B",
     "Zone0C",
@@ -748,7 +746,9 @@
     "Zone5A_Old",
     "Zone5B_Old",
     "Zone20A",
-    "Zone20B"
+    "Zone20B",
+    "Zone27A",
+    "Zone28A"
   ],
   "gMapGroup_IndoorRoute109": [
     "Route109_SeashoreHouse"
