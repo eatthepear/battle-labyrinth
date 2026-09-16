@@ -1,1 +1,5 @@
-mapscripts Zone27A_MapScripts {}
+mapscripts Zone27A_MapScripts {
+    MAP_SCRIPT_ON_RESUME {
+        setstepcallback(STEP_CB_ASH)
+    }
+}
