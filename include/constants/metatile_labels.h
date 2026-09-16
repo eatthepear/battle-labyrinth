@@ -10,20 +10,20 @@
 #define METATILE_BattleDome_Door_PreBattleRoom  0x80A
 
 // gTileset_BattleFrontier
-#define METATILE_BattleFrontier_CorridorOpenDoor_Bottom  0x20F
-#define METATILE_BattleFrontier_CorridorOpenDoor_Top     0x207
-#define METATILE_BattleFrontier_Door_Elevator            0x20E
-#define METATILE_BattleFrontier_Door_MultiCorridor_Left  0x2AD
-#define METATILE_BattleFrontier_Door_MultiCorridor_Right 0x2AE
-#define METATILE_BattleFrontier_Elevator_Bottom0         0x339
-#define METATILE_BattleFrontier_Elevator_Bottom1         0x33A
-#define METATILE_BattleFrontier_Elevator_Bottom2         0x33B
-#define METATILE_BattleFrontier_Elevator_Mid0            0x331
-#define METATILE_BattleFrontier_Elevator_Mid1            0x332
-#define METATILE_BattleFrontier_Elevator_Mid2            0x333
-#define METATILE_BattleFrontier_Elevator_Top0            0x329
-#define METATILE_BattleFrontier_Elevator_Top1            0x32A
-#define METATILE_BattleFrontier_Elevator_Top2            0x32B
+#define METATILE_BattleFrontier_CorridorOpenDoor_Bottom   0x20F
+#define METATILE_BattleFrontier_CorridorOpenDoor_Top      0x207
+#define METATILE_BattleFrontier_Door_Elevator             0x20E
+#define METATILE_BattleFrontier_Door_MultiCorridor_Left   0x2AD
+#define METATILE_BattleFrontier_Door_MultiCorridor_Right  0x2AE
+#define METATILE_BattleFrontier_Elevator_Bottom0          0x339
+#define METATILE_BattleFrontier_Elevator_Bottom1          0x33A
+#define METATILE_BattleFrontier_Elevator_Bottom2          0x33B
+#define METATILE_BattleFrontier_Elevator_Mid0             0x331
+#define METATILE_BattleFrontier_Elevator_Mid1             0x332
+#define METATILE_BattleFrontier_Elevator_Mid2             0x333
+#define METATILE_BattleFrontier_Elevator_Top0             0x329
+#define METATILE_BattleFrontier_Elevator_Top1             0x32A
+#define METATILE_BattleFrontier_Elevator_Top2             0x32B
 
 // gTileset_BattleFrontierOutsideEast
 #define METATILE_BattleFrontierOutsideEast_Door              0x9FC
@@ -587,15 +587,15 @@
 #define METATILE_Rustboro_Door_Gray  0x81F
 #define METATILE_Rustboro_Door_Tan   0x82F
 
-// gTileset_Sanctuary
-#define METATILE_Sanctuary_Door  0x962
-
 // gTileset_SSAnne
 #define METATILE_SSAnne_Door  0x281
 
 // gTileset_SaffronCity
 #define METATILE_SaffronCity_Door         0x284
 #define METATILE_SaffronCity_SilphCoDoor  0x2BC
+
+// gTileset_Sanctuary
+#define METATILE_Sanctuary_Door  0x962
 
 // gTileset_SeaCottage
 #define METATILE_SeaCottage_Teleporter_CableBall_Bottom  0x2BA
