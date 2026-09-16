@@ -42,7 +42,7 @@ static const u32 sLevelCapFlagMap[] =
     65,
     70,
     70,
-    70, // zone 35 cap
+    75, // zone 35 cap
 };
 
 u32 GetCurrentLevelCap(void)
@@ -207,7 +207,7 @@ static const u32 sNumFoes[] =
     56,
     48,
     48,
-    1, // zone 35
+    20, // zone 35
 };
 
 u32 GetExpValue(void)
