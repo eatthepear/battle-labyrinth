@@ -36,7 +36,7 @@ static const u32 sLevelCapFlagMap[] =
     50,
     55,
     55,
-    57,
+    55,
     60, // zone 30 cap
     65,
     65,
@@ -199,14 +199,14 @@ static const u32 sNumFoes[] =
     44,
     44, // zone 25
     1,
-    44,
-    44,
-    32,
-    32, // zone 30
-    36,
-    36,
-    36,
-    60,
+    48,
+    48,
+    1,
+    48, // zone 30
+    56,
+    56,
+    48,
+    48,
     1, // zone 35
 };
 
