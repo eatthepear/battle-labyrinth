@@ -10591,6 +10591,26 @@
       "secondary_tileset": "gTileset_CableClub",
       "border_filepath": "data/layouts/Zone35L/border.bin",
       "blockdata_filepath": "data/layouts/Zone35L/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE27A",
+      "name": "Zone27A_Layout",
+      "width": 90,
+      "height": 80,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/Zone27A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone27A/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE28A",
+      "name": "Zone28A_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/Zone28A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone28A/map.bin"
     }
   ]
 }
