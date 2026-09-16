@@ -10621,6 +10621,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/Zone28B/border.bin",
       "blockdata_filepath": "data/layouts/Zone28B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE27B",
+      "name": "Zone27B_Layout",
+      "width": 45,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/Zone27B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone27B/map.bin"
     }
   ]
 }
