@@ -1683,3 +1683,14 @@ const struct Tileset gTileset_RocketCastle =
     .metatileAttributes = gMetatileAttributes_RocketCastle,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Virtual =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Virtual,
+    .palettes = gTilesetPalettes_Virtual,
+    .metatiles = gMetatiles_Virtual,
+    .metatileAttributes = gMetatileAttributes_Virtual,
+    .callback = NULL,
+};

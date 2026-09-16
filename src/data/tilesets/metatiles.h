@@ -446,3 +446,6 @@ const u16 gMetatileAttributes_Theater[] = INCBIN_U16("data/tilesets/secondary/th
 
 const u16 gMetatiles_RocketCastle[] = INCBIN_U16("data/tilesets/secondary/rocket_castle/metatiles.bin");
 const u16 gMetatileAttributes_RocketCastle[] = INCBIN_U16("data/tilesets/secondary/rocket_castle/metatile_attributes.bin");
+
+const u16 gMetatiles_Virtual[] = INCBIN_U16("data/tilesets/secondary/virtual/metatiles.bin");
+const u16 gMetatileAttributes_Virtual[] = INCBIN_U16("data/tilesets/secondary/virtual/metatile_attributes.bin");

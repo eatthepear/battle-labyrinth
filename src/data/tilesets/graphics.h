@@ -3284,3 +3284,22 @@ const u16 gTilesetPalettes_RocketCastle[][16] =
 };
 
 const u32 gTilesetTiles_RocketCastle[] = INCBIN_U32("data/tilesets/secondary/rocket_castle/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Virtual[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/virtual/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/virtual/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/virtual/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/virtual/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/virtual/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/virtual/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/virtual/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/virtual/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/virtual/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/virtual/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/virtual/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/virtual/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/virtual/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Virtual[] = INCBIN_U32("data/tilesets/secondary/virtual/tiles.4bpp.lz");

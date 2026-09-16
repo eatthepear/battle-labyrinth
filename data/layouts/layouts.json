@@ -10435,10 +10435,10 @@
     {
       "id": "LAYOUT_ZONE33A",
       "name": "Zone33A_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 60,
+      "height": 30,
       "primary_tileset": "gTileset_Common",
-      "secondary_tileset": "gTileset_RocketCastle",
+      "secondary_tileset": "gTileset_Virtual",
       "border_filepath": "data/layouts/Zone33A/border.bin",
       "blockdata_filepath": "data/layouts/Zone33A/map.bin"
     },
