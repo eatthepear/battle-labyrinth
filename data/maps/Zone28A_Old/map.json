@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ZONE28A",
-  "name": "Zone28A",
-  "layout": "LAYOUT_ZONE28A",
+  "id": "MAP_ZONE28A_Old",
+  "name": "Zone28A_Old",
+  "layout": "LAYOUT_ZONE28A_Old",
   "music": "MUS_ABANDONED_SHIP",
   "region_map_section": "MAPSEC_ZONE_28",
   "requires_flash": false,

@@ -5656,25 +5656,25 @@
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_ZONE27A",
-      "name": "Zone27A_Layout",
+      "id": "LAYOUT_ZONE27A_Old",
+      "name": "Zone27A_Old_Layout",
       "width": 98,
       "height": 56,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Jungle",
-      "border_filepath": "data/layouts/Zone27A/border.bin",
-      "blockdata_filepath": "data/layouts/Zone27A/map.bin",
+      "border_filepath": "data/layouts/Zone27A_Old/border.bin",
+      "blockdata_filepath": "data/layouts/Zone27A_Old/map.bin",
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_ZONE28A",
-      "name": "Zone28A_Layout",
+      "id": "LAYOUT_ZONE28A_Old",
+      "name": "Zone28A_Layout_Old",
       "width": 50,
       "height": 50,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_JungleTemple",
-      "border_filepath": "data/layouts/Zone28A/border.bin",
-      "blockdata_filepath": "data/layouts/Zone28A/map.bin",
+      "border_filepath": "data/layouts/Zone28A_Old/border.bin",
+      "blockdata_filepath": "data/layouts/Zone28A_Old/map.bin",
       "layout_version": "emerald"
     },
     {

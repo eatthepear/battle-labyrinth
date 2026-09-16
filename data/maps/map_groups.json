@@ -747,8 +747,8 @@
     "Zone5B_Old",
     "Zone20A",
     "Zone20B",
-    "Zone27A",
-    "Zone28A"
+    "Zone27A_Old",
+    "Zone28A_Old"
   ],
   "gMapGroup_IndoorRoute109": [
     "Route109_SeashoreHouse"

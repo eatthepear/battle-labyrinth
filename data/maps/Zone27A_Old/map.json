@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ZONE27A",
-  "name": "Zone27A",
-  "layout": "LAYOUT_ZONE27A",
+  "id": "MAP_ZONE27A_Old",
+  "name": "Zone27A_Old",
+  "layout": "LAYOUT_ZONE27A_Old",
   "music": "MUS_FORTREE",
   "region_map_section": "MAPSEC_ZONE_27",
   "requires_flash": false,
