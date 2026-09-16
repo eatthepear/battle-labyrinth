@@ -4585,9 +4585,9 @@ Sassy Nature
 - Yawn
 
 === TRAINER_PBL_PROTON_BOSS_30 ===
-Name: Ariana
+Name: Proton
 Class: Rainbow Rocket Executive
-Pic: Ariana
+Pic: Proton
 Music: Rocket
 AI: AI_FLAG_BOSS
 Double Battle: No
@@ -4596,13 +4596,11 @@ Mugshot: Blue
 Bulbasaur
 
 === TRAINER_PBL_LEAF_PARTNER_30 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Leaf
+Class: Rival
+Pic: Leaf
+Music: Female
 AI: AI_FLAG_BOSS
-Double Battle: No
-Mugshot: Blue
 
 Bulbasaur
 

@@ -1242,6 +1242,9 @@ u16 GetLocationMusic(struct WarpData *warp)
     else if (warp->mapGroup == MAP_GROUP(MAP_ZONE_SANCTUARY)
      && warp->mapNum == MAP_NUM(MAP_ZONE_SANCTUARY))
     {
+        if (VarGet(VAR_SANCTUARY_STATE) != 0) {
+            return MUS_HG_ROCKET_TAKEOVER;
+        }
         switch (VarGet(VAR_SANCTUARY_MUSIC))
         {
             default:

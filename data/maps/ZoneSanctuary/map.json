@@ -42,7 +42,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ZoneSanctuary_EventScript_Colress",
-      "flag": "0"
+      "flag": "FLAG_HIDE_SANCTUARY_COLRESS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
@@ -202,6 +202,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_MAGNEMITE_2",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAGNEMITE)",
       "x": 49,
       "y": 9,
@@ -212,9 +213,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_Magnemite",
-      "flag": "0"
+      "flag": "FLAG_HIDE_SANCTUARY_MAGNEMITES"
     },
     {
+      "local_id": "LOCALID_MAGNEMITE_1",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAGNEMITE)",
       "x": 47,
       "y": 9,
@@ -225,7 +227,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_Magnemite",
-      "flag": "0"
+      "flag": "FLAG_HIDE_SANCTUARY_MAGNEMITES"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_F",
@@ -331,6 +333,48 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_Backpacker",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_PROTON_SANCTUARY",
+      "graphics_id": "OBJ_EVENT_GFX_PROTON",
+      "x": 48,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_SANCTUARY_PROTON"
+    },
+    {
+      "local_id": "LOCALID_PROTON_GRUNT_1_SANCTUARY",
+      "graphics_id": "OBJ_EVENT_GFX_RAINBOW_ROCKET_MEMBER_M",
+      "x": 47,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_SANCTUARY_PROTON_GRUNTS"
+    },
+    {
+      "local_id": "LOCALID_PROTON_GRUNT_2_SANCTUARY",
+      "graphics_id": "OBJ_EVENT_GFX_RAINBOW_ROCKET_MEMBER_M",
+      "x": 49,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_SANCTUARY_PROTON_GRUNTS"
     }
   ],
   "warp_events": [

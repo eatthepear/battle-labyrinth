@@ -313,6 +313,9 @@ script EventScript_NextZone {
 	special(BufferCurrentLevelCap)
 	setspeaker(SP_NAME_NONE)
 	msgbox(format("Level Cap increased to {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."))
+	if (var(VAR_ZONE) == 30) {
+		call(ZoneSanctuary_EventScript_Zone30AEventStart)
+	}
 	setflag(FLAG_IN_NEW_ZONE)
 	setspeaker(SP_NAME_COLRESS)
 	msgbox(format("Bring out the strength of you and your Pokémon!"), MSGBOX_AUTOCLOSE)
@@ -3821,4 +3824,131 @@ script EventScript_RangerF {
 	}
 	msgbox(format("Come on back if you change your mind!"))
 	release
+}
+
+script ZoneSanctuary_EventScript_Zone30AEventStart {
+	closemessage
+	fadeoutbgm(1)
+	setspeaker(SP_NAME_COLRESS)
+	msgbox(format("Wait a moment."), MSGBOX_AUTOCLOSE)
+	delay(40)
+	setspeaker(SP_NAME_COLRESS)
+	msgbox(format("Zone 30… {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}?\pThat makes no sense, unless…"), MSGBOX_AUTOCLOSE)
+	playbgm(MUS_HG_ROCKET_TAKEOVER, TRUE)
+	hidefollower
+	clearflag(FLAG_HIDE_SANCTUARY_PROTON)
+	clearflag(FLAG_HIDE_SANCTUARY_PROTON_GRUNTS)
+	addobject(LOCALID_PROTON_SANCTUARY)
+	addobject(LOCALID_PROTON_GRUNT_1_SANCTUARY)
+	addobject(LOCALID_PROTON_GRUNT_2_SANCTUARY)
+	applymovement(LOCALID_COLRESS, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(LOCALID_PROTON_GRUNT_1_SANCTUARY, ZoneSanctuary_Movement_Proton_RunUp)
+	applymovement(LOCALID_PROTON_GRUNT_2_SANCTUARY, ZoneSanctuary_Movement_Proton_RunUp)
+	waitmovement(0)
+	setspeaker(SP_NAME_COLRESS)
+	msgbox(format("{COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}! They're here!"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_PROTON_SANCTUARY, ZoneSanctuary_Movement_Proton_RunUp)
+	waitmovement(0)
+	setspeaker("Proton")
+	msgbox(format("Wahaha! Surprised to see me again? I'm one of three Rainbow Rocket Executives leading this takeover! Now, boys, take him!"))
+	setspeaker(SP_NAME_COLRESS)
+	msgbox(format("This shouldn't be possible! You aren't programmed to do this!"))
+	setspeaker("Proton")
+	msgbox(format("Shut your yapping!"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_PROTON_GRUNT_1_SANCTUARY, Common_Movement_WalkUp2)
+	applymovement(LOCALID_PROTON_GRUNT_2_SANCTUARY, Common_Movement_WalkUp2)
+	waitmovement(0)
+	playmoncry(SPECIES_MAGNEMITE, CRY_MODE_NORMAL)
+	msgbox(format("Bzzt…"), MSGBOX_AUTOCLOSE)
+	waitmoncry
+	setflag(FLAG_HIDE_SANCTUARY_MAGNEMITES)
+	removeobject(LOCALID_MAGNEMITE_1)
+	removeobject(LOCALID_MAGNEMITE_2)
+	applymovement(LOCALID_PROTON_GRUNT_1_SANCTUARY, Common_Movement_WalkUp)
+	applymovement(LOCALID_PROTON_GRUNT_2_SANCTUARY, Common_Movement_WalkUp)
+	waitmovement(0)
+	applymovement(LOCALID_PROTON_GRUNT_1_SANCTUARY, Common_Movement_FaceRight)
+	applymovement(LOCALID_PROTON_GRUNT_2_SANCTUARY, Common_Movement_FaceLeft)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+	applymovement(LOCALID_COLRESS, Common_Movement_FaceLeft)
+	waitmovement(0)
+	delay(40)
+	applymovement(LOCALID_COLRESS, Common_Movement_FaceRight)
+	waitmovement(0)
+	setspeaker(SP_NAME_COLRESS)
+	msgbox(format("Unhand me!"))
+	setspeaker("Proton")
+	msgbox(format("Take him away while I keep this punk distracted!"))
+	setspeaker("Grunts")
+	msgbox(format("Yes, sir!"))
+	applymovement(LOCALID_COLRESS, Common_Movement_FaceDown)
+	waitmovement(0)
+	setspeaker(SP_NAME_COLRESS)
+	msgbox(format("This isn't right! You have to stop them, {PLAYER}!"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_PROTON_GRUNT_1_SANCTUARY, ZoneSanctuary_Movement_ProtonGrunt1_DragAway)
+	applymovement(LOCALID_PROTON_GRUNT_2_SANCTUARY, ZoneSanctuary_Movement_ProtonGrunt2_DragAway)
+	applymovement(LOCALID_PROTON_SANCTUARY, Common_Movement_FaceLeft)
+	applymovement(LOCALID_COLRESS, ZoneSanctuary_Movement_Colress_DragAway)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement(LOCALID_PROTON_GRUNT_2_SANCTUARY)
+	setflag(FLAG_HIDE_SANCTUARY_PROTON_GRUNTS)
+	setflag(FLAG_HIDE_SANCTUARY_COLRESS)
+	removeobject(LOCALID_PROTON_GRUNT_1_SANCTUARY)
+	removeobject(LOCALID_PROTON_GRUNT_2_SANCTUARY)
+	removeobject(LOCALID_COLRESS)
+	applymovement(LOCALID_PROTON_SANCTUARY, Common_Movement_FaceUp)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement(0)
+	setspeaker("Proton")
+	msgbox(format("Now, time to deal with you!\pI've had plenty of time to think on my last defeat!"))
+	trainerbattle_no_intro(TRAINER_PBL_PROTON_BOSS_30, format("DEFEATED!"))
+	setspeaker("Proton")
+	msgbox(format("My defeat here means nothing!\pAll the other admins are here as well!\pThe Sanctuary, and Pokemon Battle Labyrinth, will be ours!"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
+	applymovement(LOCALID_PROTON_SANCTUARY, ZoneSanctuary_Movement_Proton_RunAway)
+	waitmovement(0)
+	setflag(FLAG_HIDE_SANCTUARY_PROTON)
+	removeobject(LOCALID_PROTON_SANCTUARY)
+	setvar(VAR_SANCTUARY_STATE, 1)
+	release
+	end
+}
+
+movement ZoneSanctuary_Movement_Proton_RunUp {
+	walk_fast_up * 5
+}
+
+movement ZoneSanctuary_Movement_ProtonGrunt1_DragAway {
+	walk_down * 3
+	// walk_left * 7
+	walk_left
+	walk_diag_southwest * 4
+	walk_left * 2
+}
+
+movement ZoneSanctuary_Movement_ProtonGrunt2_DragAway {
+	walk_left * 2
+	walk_down * 3
+	walk_left
+	walk_diag_southwest * 4
+	walk_left * 2
+}
+
+movement ZoneSanctuary_Movement_Colress_DragAway {
+	walk_left
+	walk_down * 3
+	walk_left
+	walk_diag_southwest * 4
+	walk_left * 2
+}
+
+movement ZoneSanctuary_Movement_Proton_RunAway {
+	walk_fast_down
+	walk_fast_left * 2
+	walk_diag_southwest * 4
+	walk_left * 2
 }
