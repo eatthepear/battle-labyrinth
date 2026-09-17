@@ -837,7 +837,7 @@ Pic: Psychic F
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
 
@@ -848,7 +848,7 @@ Pic: Psychic F
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
 
@@ -859,7 +859,18 @@ Pic: Psychic M
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
+Pool Prune: Non Psychic
+Copy Pool: TRAINER_POOL_ZONE_5
+
+=== TRAINER_PBL_ANTHONY ===
+Name: Anthony
+Class: Psychic
+Pic: Psychic M
+Music: Intense
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
 

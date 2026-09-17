@@ -135,3 +135,9 @@ script Zone5B_EventScript_Fred {
 	msgbox(format("I have to admit though, she would be even more formidable with her brother alongside her."), MSGBOX_AUTOCLOSE)
 	end
 }
+
+script Zone5B_EventScript_Anthony {
+	trainerbattle_single(TRAINER_PBL_ANTHONY, format("Confused by the terrain?\pI'll explain it to you!"), format("Actually, I'm not quite sure how it works myself."))
+	msgbox(format("Maybe the Gym Guide at the entrance would be able to explain how Psychic Terrain works."), MSGBOX_AUTOCLOSE)
+	end
+}

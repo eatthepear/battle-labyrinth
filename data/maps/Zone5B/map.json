@@ -158,6 +158,19 @@
       "flag": "0"
     },
     {
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+      "x": 2,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "Zone5B_EventScript_Fred",
+      "flag": "0"
+    },
+    {
       "graphics_id": "OBJ_EVENT_GFX_TRICK_HOUSE_STATUE",
       "x": 11,
       "y": 25,
@@ -362,7 +375,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "Zone5B_EventScript_Fred",
+      "script": "Zone5B_EventScript_Anthony",
       "flag": "0"
     }
   ],
