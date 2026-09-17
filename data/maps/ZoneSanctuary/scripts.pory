@@ -3924,7 +3924,6 @@ movement ZoneSanctuary_Movement_Proton_RunUp {
 
 movement ZoneSanctuary_Movement_ProtonGrunt1_DragAway {
 	walk_down * 3
-	// walk_left * 7
 	walk_left
 	walk_diag_southwest * 4
 	walk_left * 2
