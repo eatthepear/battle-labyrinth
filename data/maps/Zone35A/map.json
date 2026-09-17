@@ -2,7 +2,7 @@
   "id": "MAP_ZONE35A",
   "name": "Zone35A",
   "layout": "LAYOUT_ZONE35A",
-  "music": "MUS_DUMMY",
+  "music": "MUS_DP_POKEMON_LEAGUE_NIGHT",
   "region_map_section": "MAPSEC_ZONE_35",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

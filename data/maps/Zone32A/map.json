@@ -2,7 +2,7 @@
   "id": "MAP_ZONE32A",
   "name": "Zone32A",
   "layout": "LAYOUT_ZONE32A",
-  "music": "MUS_DUMMY",
+  "music": "MUS_BW_VICTORY_ROAD",
   "region_map_section": "MAPSEC_ZONE_32",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

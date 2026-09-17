@@ -2,7 +2,7 @@
   "id": "MAP_ZONE31A",
   "name": "Zone31A",
   "layout": "LAYOUT_ZONE31A",
-  "music": "MUS_DUMMY",
+  "music": "MUS_BW_VICTORY_ROAD",
   "region_map_section": "MAPSEC_ZONE_31",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

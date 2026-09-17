@@ -2,7 +2,7 @@
   "id": "MAP_ZONE34A",
   "name": "Zone34A",
   "layout": "LAYOUT_ZONE34A",
-  "music": "MUS_HG_RADIO_ROCKET",
+  "music": "MUS_HG_TEAM_ROCKET_HQ",
   "region_map_section": "MAPSEC_ZONE_34",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

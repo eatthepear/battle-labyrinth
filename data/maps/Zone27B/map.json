@@ -2,7 +2,7 @@
   "id": "MAP_ZONE27B",
   "name": "Zone27B",
   "layout": "LAYOUT_ZONE27B",
-  "music": "MUS_DUMMY",
+  "music": "MUS_DP_STARK_MOUNTAIN",
   "region_map_section": "MAPSEC_ZONE_27",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
