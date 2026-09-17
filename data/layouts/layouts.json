@@ -10595,8 +10595,8 @@
     {
       "id": "LAYOUT_ZONE27A",
       "name": "Zone27A_Layout",
-      "width": 90,
-      "height": 80,
+      "width": 50,
+      "height": 67,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/Zone27A/border.bin",
