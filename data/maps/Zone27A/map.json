@@ -13,7 +13,50 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_LEAF_27A",
+      "graphics_id": "OBJ_EVENT_GFX_LEAF",
+      "x": 26,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone20B_EventScript_Chili",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_WALLY_27A",
+      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+      "x": 25,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone20B_EventScript_Chili",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SERENA_27A",
+      "graphics_id": "OBJ_EVENT_GFX_SERENA",
+      "x": 28,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone20B_EventScript_Chili",
+      "flag": "0"
+    }
+  ],
   "warp_events": [
     {
       "x": 14,
@@ -23,6 +66,16 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_ZONE_27_STATE",
+      "var_value": "0",
+      "script": "Zone27A_EventScript_TriggerTagBattle"
+    }
+  ],
   "bg_events": []
 }

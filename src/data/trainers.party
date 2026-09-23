@@ -4421,16 +4421,59 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Knock Off
 - Ice Punch
 
-=== TRAINER_PBL_SERENA_BOSS_27 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+=== TRAINER_PBL_LEAF_BOSS_27 ===
+Name: Leaf
+Class: Rival
+Pic: Leaf
+Music: Female
 AI: AI_FLAG_BOSS
-Double Battle: No
-Mugshot: Blue
+Mugshot: Pink
 
-Bulbasaur
+Raichu-Alola @ Wise Glasses
+Timid Nature
+Ability: Surge Surfer
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Switch
+- Psychic
+- Surf
+- Fake Out
+
+=== TRAINER_PBL_WALLY_BOSS_27 ===
+Name: Wally
+Class: Rival
+Pic: Wally
+Music: Male
+AI: AI_FLAG_BOSS
+Mugshot: Pink
+
+Talonflame @ Flying Gem
+Ability: Flame Body
+Level: 40
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Blaze Kick
+- Acrobatics
+- Will-O-Wisp
+- Tailwind
+
+=== TRAINER_PBL_SERENA_BOSS_27 ===
+Name: Serena
+Class: Rival
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+Mugshot: Pink
+
+Vivillon @ Silver Powder
+Timid Nature
+Ability: Compound Eyes
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Bug Buzz
+- Draining Kiss
+- Sleep Powder
 
 === TRAINER_PBL_RAIHAN_BOSS_28 ===
 Name: Ariana

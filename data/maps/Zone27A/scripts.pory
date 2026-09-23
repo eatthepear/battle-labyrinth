@@ -3,3 +3,194 @@ mapscripts Zone27A_MapScripts {
         setstepcallback(STEP_CB_ASH)
     }
 }
+
+script Zone27A_EventScript_TriggerTagBattle {
+    lockall
+	playbgm(MUS_BW_FRIEND, TRUE)
+    applymovement(LOCALID_LEAF_27A, Common_Movement_FaceDown)
+    applymovement(LOCALID_WALLY_27A, Common_Movement_FaceDown)
+    applymovement(LOCALID_SERENA_27A, Common_Movement_FaceDown)
+    waitmovement(0)
+    
+    applymovement(LOCALID_LEAF_27A, Common_Movement_ExclamationMark)
+    applymovement(LOCALID_WALLY_27A, Common_Movement_ExclamationMark)
+    applymovement(LOCALID_SERENA_27A, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+    msgbox(format("Hey player!"))
+    closemessage
+    applymovement(LOCALID_LEAF_27A, Zone27A_Movement_Leaf_WalkDown)
+    applymovement(LOCALID_WALLY_27A, Zone27A_Movement_Wally_WalkDown)
+    applymovement(LOCALID_SERENA_27A, Zone27A_Movement_Serena_WalkDown)
+    waitmovement(0)
+    msgbox(format("Let's do a tag battle with the four of us!"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        goto(Zone27A_EventScript_DenyTagBattle)
+    }
+    message(format("Choose your partner."))
+    waitmessage
+    dynmultipush("Leaf", 1)
+    dynmultipush("Wally", 2)
+    dynmultipush("Serena", 3)
+    dynmultistack(0, 0, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+    switch (var(VAR_RESULT)) {
+        case 1:
+            setvar(VAR_ZONE_27_STATE, 1)
+        case 2:
+            setvar(VAR_ZONE_27_STATE, 2)
+        case 3:
+            setvar(VAR_ZONE_27_STATE, 3)
+        case MULTI_B_PRESSED:
+            goto(Zone27A_EventScript_DenyTagBattle)
+    }
+    msgbox(format("GREAT! LET'S GO BATTLE!"), MSGBOX_AUTOCLOSE)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    special(SpawnCameraObject)
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkLeft2)
+    waitmovement(0)
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkUp3)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    hidefollower
+    setobjectxy(LOCALID_PLAYER, 23, 20)
+    applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
+    switch (var(VAR_ZONE_27_STATE)) {
+        case 1:
+            setobjectxy(LOCALID_LEAF_27A, 23, 21)
+            setobjectxy(LOCALID_WALLY_27A, 27, 20)
+            setobjectxy(LOCALID_SERENA_27A, 27, 21)
+            applymovement(LOCALID_LEAF_27A, Common_Movement_FaceRight)
+            applymovement(LOCALID_WALLY_27A, Common_Movement_FaceLeft)
+            applymovement(LOCALID_SERENA_27A, Common_Movement_FaceLeft)
+            waitmovement(0)
+        case 2:
+            setobjectxy(LOCALID_WALLY_27A, 23, 21)
+            setobjectxy(LOCALID_LEAF_27A, 27, 20)
+            setobjectxy(LOCALID_SERENA_27A, 27, 21)
+            applymovement(LOCALID_WALLY_27A, Common_Movement_FaceRight)
+            applymovement(LOCALID_LEAF_27A, Common_Movement_FaceLeft)
+            applymovement(LOCALID_SERENA_27A, Common_Movement_FaceLeft)
+            waitmovement(0)
+        case 3:
+            setobjectxy(LOCALID_SERENA_27A, 23, 21)
+            setobjectxy(LOCALID_LEAF_27A, 27, 20)
+            setobjectxy(LOCALID_WALLY_27A, 27, 21)
+            applymovement(LOCALID_SERENA_27A, Common_Movement_FaceRight)
+            applymovement(LOCALID_LEAF_27A, Common_Movement_FaceLeft)
+            applymovement(LOCALID_WALLY_27A, Common_Movement_FaceLeft)
+            waitmovement(0)
+    }
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+    msgbox(format("OK! YOU'VE DECIDED! BATTLE TIME!"))
+    closemessage
+    call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+    special(SpawnCameraObject)
+    switch (var(VAR_ZONE_27_STATE)) {
+        case 1:
+            applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
+            applymovement(LOCALID_LEAF_27A, Common_Movement_WalkRight)
+            applymovement(LOCALID_WALLY_27A, Common_Movement_WalkLeft)
+            applymovement(LOCALID_SERENA_27A, Common_Movement_WalkLeft)
+            waitmovement(0)
+            special(RemoveCameraObject)
+	        multi_2_vs_2(TRAINER_PBL_WALLY_BOSS_27, Zone27A_Text_Wally_Defeated, TRAINER_PBL_SERENA_BOSS_27, Zone27A_Text_Serena_Defeated, PARTNER_PBL_LEAF_BOSS_27)
+        case 2:
+            applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
+            applymovement(LOCALID_WALLY_27A, Common_Movement_WalkRight)
+            applymovement(LOCALID_LEAF_27A, Common_Movement_WalkLeft)
+            applymovement(LOCALID_SERENA_27A, Common_Movement_WalkLeft)
+            waitmovement(0)
+            special(RemoveCameraObject)
+	        multi_2_vs_2(TRAINER_PBL_LEAF_BOSS_27, Zone27A_Text_Leaf_Defeated, TRAINER_PBL_SERENA_BOSS_27, Zone27A_Text_Serena_Defeated, PARTNER_PBL_WALLY_BOSS_27)
+        case 3:
+            applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
+            applymovement(LOCALID_SERENA_27A, Common_Movement_WalkRight)
+            applymovement(LOCALID_LEAF_27A, Common_Movement_WalkLeft)
+            applymovement(LOCALID_WALLY_27A, Common_Movement_WalkLeft)
+            waitmovement(0)
+            special(RemoveCameraObject)
+	        multi_2_vs_2(TRAINER_PBL_LEAF_BOSS_27, Zone27A_Text_Leaf_Defeated, TRAINER_PBL_WALLY_BOSS_27, Zone27A_Text_Wally_Defeated, PARTNER_PBL_SERENA_BOSS_27)
+    }
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+    setspeaker("Cori")
+    msgbox(format("OMG! SUCH GOOD BATTLE! LET'S GET CLEANED UP..."), MSGBOX_AUTOCLOSE)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    special(SpawnCameraObject)
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkRight)
+    waitmovement(0)
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkUp)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    setobjectxy(LOCALID_PLAYER, 26, 19)
+    setobjectxy(LOCALID_LEAF_27A, 25, 18)
+    setobjectxy(LOCALID_WALLY_27A, 26, 18)
+    setobjectxy(LOCALID_SERENA_27A, 27, 18)
+    applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+    applymovement(LOCALID_LEAF_27A, Common_Movement_FaceDown)
+    applymovement(LOCALID_WALLY_27A, Common_Movement_FaceDown)
+    applymovement(LOCALID_SERENA_27A, Common_Movement_FaceDown)
+    waitmovement(0)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+
+	setflag(FLAG_BEAT_BOSS_27)
+	setvar(VAR_ZONE_27_STATE, 4)
+	fadedefaultbgm
+	releaseall
+	end
+}
+
+script Zone27A_EventScript_DenyTagBattle {
+    msgbox(format("Take your time!"), MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
+    waitmovement(0)
+    applymovement(LOCALID_WALLY_27A, Zone27A_Movement_Wally_WalkUp)
+    applymovement(LOCALID_SERENA_27A, Zone27A_Movement_Serena_WalkUp)
+    applymovement(LOCALID_LEAF_27A, Zone27A_Movement_Leaf_WalkUp)
+    waitmovement(0)
+    fadedefaultbgm
+    releaseall
+    end
+}
+
+movement Zone27A_Movement_Leaf_WalkDown {
+    walk_right
+    walk_down * 3
+}
+
+movement Zone27A_Movement_Wally_WalkDown {
+    walk_down * 2
+    walk_right
+}
+
+movement Zone27A_Movement_Serena_WalkDown {
+    walk_down * 3
+    face_left
+}
+
+movement Zone27A_Movement_Leaf_WalkUp {
+    walk_up * 3
+    walk_left
+}
+
+movement Zone27A_Movement_Wally_WalkUp {
+    walk_left
+    walk_up * 2
+}
+
+movement Zone27A_Movement_Serena_WalkUp {
+    walk_up * 3
+}
+
+text Zone27A_Text_Leaf_Defeated {
+    format("LEAF DEFEATED!")
+}
+
+text Zone27A_Text_Wally_Defeated {
+    format("Wally DEFEATED!")
+}
+
+text Zone27A_Text_Serena_Defeated {
+    format("Serena DEFEATED!")
+}

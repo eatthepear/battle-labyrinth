@@ -49,7 +49,6 @@ Class: Rival
 Pic: Serena
 Music: Female
 AI: AI_FLAG_BOSS
-Double Battle: No
 
 Simisage @ Occa Berry
 Ability: Overgrow
@@ -93,7 +92,6 @@ Class: Rival
 Pic: Serena
 Music: Female
 AI: AI_FLAG_BOSS
-Double Battle: No
 
 Simisear @ Passho Berry
 Ability: Blaze
@@ -137,7 +135,6 @@ Class: Rival
 Pic: Serena
 Music: Female
 AI: AI_FLAG_BOSS
-Double Battle: No
 
 Simipour @ Rindo Berry
 Ability: Torrent
@@ -174,3 +171,54 @@ Jolly Nature
 - Aqua Step
 - Close Combat
 - Acrobatics
+
+=== PARTNER_PBL_LEAF_BOSS_27 ===
+Name: Leaf
+Class: Rival
+Pic: Leaf
+Music: Female
+AI: AI_FLAG_BOSS
+
+Raichu-Alola @ Wise Glasses
+Timid Nature
+Ability: Surge Surfer
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Switch
+- Psychic
+- Surf
+- Fake Out
+
+=== PARTNER_PBL_WALLY_BOSS_27 ===
+Name: Wally
+Class: Rival
+Pic: Wally
+Music: Female
+AI: AI_FLAG_BOSS
+
+Talonflame @ Flying Gem
+Ability: Flame Body
+Level: 40
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Blaze Kick
+- Acrobatics
+- Will-O-Wisp
+- Tailwind
+
+=== PARTNER_PBL_SERENA_BOSS_27 ===
+Name: Serena
+Class: Rival
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+
+Vivillon @ Silver Powder
+Timid Nature
+Ability: Compound Eyes
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Bug Buzz
+- Draining Kiss
+- Sleep Powder
