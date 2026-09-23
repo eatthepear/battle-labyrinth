@@ -134,7 +134,24 @@ script Zone27A_EventScript_TriggerTagBattle {
     waitmovement(0)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 
+    msgbox(format("Here's the LOOT!"))
+    giveitem(ITEM_MASTER_BALL)
+    msgbox(format("GOODBYE!"))
+    closemessage
+    applymovement(LOCALID_LEAF_27A, Zone27A_Movement_Leaf_Leave)
+    waitmovement(0)
+    msgbox(format("GOODBYE!"))
+    closemessage
+    applymovement(LOCALID_SERENA_27A, Zone27A_Movement_Serena_Leave)
+    waitmovement(0)
+    msgbox(format("GOODBYE!"))
+    closemessage
+    applymovement(LOCALID_WALLY_27A, Zone27A_Movement_Wally_Leave)
+    waitmovement(0)
 	setflag(FLAG_BEAT_BOSS_27)
+    removeobject(LOCALID_LEAF_27A)
+    removeobject(LOCALID_WALLY_27A)
+    removeobject(LOCALID_SERENA_27A)
 	setvar(VAR_ZONE_27_STATE, 4)
 	fadedefaultbgm
 	releaseall
@@ -193,4 +210,22 @@ text Zone27A_Text_Wally_Defeated {
 
 text Zone27A_Text_Serena_Defeated {
     format("Serena DEFEATED!")
+}
+
+movement Zone27A_Movement_Leaf_Leave {
+    walk_up * 4
+    walk_right * 5
+    walk_up * 2
+}
+
+movement Zone27A_Movement_Wally_Leave {
+    walk_up * 3
+    walk_right * 3
+    walk_up * 3
+}
+
+movement Zone27A_Movement_Serena_Leave {
+    walk_up * 4
+    walk_right
+    walk_up * 2
 }
