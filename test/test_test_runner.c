@@ -9,6 +9,7 @@ TEST("Tests initialize a terminated player name")
     EXPECT(memchr(gSaveBlock2Ptr->playerName, EOS, sizeof(gSaveBlock2Ptr->playerName)) != NULL);
 }
 
+#if FREE_OTHER_PBL == FALSE
 WILD_BATTLE_TEST("Shiny wild battle tests preserve adjacent TV shows")
 {
     GIVEN {
@@ -25,6 +26,7 @@ WILD_BATTLE_TEST("Shiny wild battle tests preserve adjacent TV shows")
         EXPECT_EQ(gSaveBlock1Ptr->tvShows[NUM_NORMAL_TVSHOW_SLOTS + 1].common.active, TRUE);
     }
 }
+#endif //FREE_OTHER_PBL
 
 TEST("Tests resume after CRASH")
 {

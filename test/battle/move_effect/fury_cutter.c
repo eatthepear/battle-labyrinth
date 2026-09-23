@@ -88,7 +88,7 @@ SINGLE_BATTLE_TEST("Fury Cutter's power is reset if the user misses")
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_BRIGHT_POWDER); };
     } WHEN {
         TURN { MOVE(player, MOVE_FURY_CUTTER); }
         TURN { MOVE(player, MOVE_FURY_CUTTER, hit: FALSE); }

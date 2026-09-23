@@ -6,6 +6,7 @@ ASSUMPTIONS
     ASSUME(GetMoveEffect(MOVE_FRUSTRATION) == EFFECT_FRUSTRATION);
 }
 
+#if FREE_OTHER_PBL == FALSE
 SINGLE_BATTLE_TEST("Frustration's power increases the lower the user's friendship is", s16 damage)
 {
     u32 friendship;
@@ -26,6 +27,7 @@ SINGLE_BATTLE_TEST("Frustration's power increases the lower the user's friendshi
             EXPECT_GT(results[i].damage, results[i - 1].damage);
     }
 }
+#endif //FREE_OTHER_PBL
 
 SINGLE_BATTLE_TEST("Frustration does 0 damage at max Friendship (Gen 2)")
 {
