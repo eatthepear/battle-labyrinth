@@ -1,5 +1,7 @@
 mapscripts ZoneSanctuary_PokemonCenter_1F_MapScripts {
-
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_SANCTUARY_STATE, 1: ZoneSanctuary_PokemonCenter_1F_EventScript_TriggerAlliesGathering
+	]
 }
 
 script EventScript_Joy {
@@ -218,4 +220,13 @@ script EventScript_OldMan_MoveOutOfWay {
 		waitmovement(0)
 	}
 	return
+}
+
+script ZoneSanctuary_PokemonCenter_1F_EventScript_TriggerAlliesGathering {
+	lockall
+	setflag(FLAG_HIDE_SANCTUARY_SERENA)
+	msgbox(format("TESTING!"))
+	setvar(VAR_SANCTUARY_STATE, 2)
+	releaseall
+	end
 }
