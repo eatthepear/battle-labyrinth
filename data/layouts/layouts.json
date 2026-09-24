@@ -10631,6 +10631,36 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/Zone27B/border.bin",
       "blockdata_filepath": "data/layouts/Zone27B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE28C",
+      "name": "Zone28C_Layout",
+      "width": 45,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/Zone28C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone28C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE28D",
+      "name": "Zone28D_Layout",
+      "width": 17,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/Zone28D/border.bin",
+      "blockdata_filepath": "data/layouts/Zone28D/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE28E",
+      "name": "Zone28E_Layout",
+      "width": 24,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/Zone28E/border.bin",
+      "blockdata_filepath": "data/layouts/Zone28E/map.bin"
     }
   ]
 }

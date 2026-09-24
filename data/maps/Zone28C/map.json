@@ -1,13 +1,13 @@
 {
-  "id": "MAP_ZONE28B",
-  "name": "Zone28B",
-  "layout": "LAYOUT_ZONE28B",
+  "id": "MAP_ZONE28C",
+  "name": "Zone28C",
+  "layout": "LAYOUT_ZONE28C",
   "music": "MUS_DP_STARK_MOUNTAIN",
   "region_map_section": "MAPSEC_ZONE_28",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
-  "allow_cycling": false,
+  "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": true,
@@ -16,18 +16,25 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 30,
-      "y": 77,
+      "x": 27,
+      "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_ZONE28A",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ZONE28E",
+      "dest_warp_id": "1"
     },
     {
-      "x": 18,
-      "y": 5,
+      "x": 19,
+      "y": 45,
       "elevation": 0,
-      "dest_map": "MAP_ZONE28C",
+      "dest_map": "MAP_ZONE28B",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 23,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE28D",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
