@@ -1694,3 +1694,14 @@ const struct Tileset gTileset_Virtual =
     .metatileAttributes = gMetatileAttributes_Virtual,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_FallRuins =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_FallRuins,
+    .palettes = gTilesetPalettes_FallRuins,
+    .metatiles = gMetatiles_FallRuins,
+    .metatileAttributes = gMetatileAttributes_FallRuins,
+    .callback = NULL,
+};

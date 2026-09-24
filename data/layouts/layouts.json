@@ -10448,7 +10448,7 @@
       "width": 40,
       "height": 20,
       "primary_tileset": "gTileset_Common",
-      "secondary_tileset": "gTileset_Sanctuary",
+      "secondary_tileset": "gTileset_FallRuins",
       "border_filepath": "data/layouts/Zone31A/border.bin",
       "blockdata_filepath": "data/layouts/Zone31A/map.bin"
     },
