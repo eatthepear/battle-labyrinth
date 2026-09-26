@@ -732,14 +732,14 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setvar(VAR_ZONE, 36)
 	}
 	call(EventScript_WhenUReadyDialogue)
-	applymovement(LOCALID_COLRESS, Common_Movement_Colress_WalkUp)
+	applymovement(LOCALID_COLRESS, Sanctuary_Movement_Colress_WalkUp)
 	waitmovement(0)
 	call(EventScript_AskSaveGame)
 	releaseall
 	end
 }
 
-movement Common_Movement_Colress_WalkUp {
+movement Sanctuary_Movement_Colress_WalkUp {
 	walk_up * 2
 	face_down
 }
@@ -852,7 +852,7 @@ script Sanctuary_EventScript_GameIntro {
 		}
 	}
 	call(EventScript_WhenUReadyDialogue)
-	applymovement(LOCALID_COLRESS, Common_Movement_Colress_WalkUp)
+	applymovement(LOCALID_COLRESS, Sanctuary_Movement_Colress_WalkUp)
 	waitmovement(LOCALID_COLRESS)
 	startquest(QUEST_PBL)
 	call(EventScript_AskSaveGame)
