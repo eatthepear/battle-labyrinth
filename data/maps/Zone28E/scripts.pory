@@ -1,1 +1,42 @@
 mapscripts Zone28E_MapScripts {}
+
+script Zone28E_EventScript_KimonoGirl {
+	lockall
+	playbgm(MUS_HG_KIMONO_GIRL, 0)
+	applymovement(LOCALID_KIMONO_GIRL_28E, Common_Movement_WalkUp2)
+	waitmovement(0)
+	applymovement(LOCALID_KIMONO_GIRL_28E, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	applymovement(LOCALID_KIMONO_GIRL_28E, Common_Movement_WalkUp3)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    switch (var(VAR_TEMP_0)) {
+        case 2:
+            applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
+        case 4:
+            applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
+        case 5:
+            applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft2)
+    }
+	waitmovement(LOCALID_PLAYER)
+    applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement(LOCALID_KIMONO_GIRL_28E)
+	waitmovement(LOCALID_PLAYER)
+	setspeaker("Kimono Girl")
+	msgbox(format("HELLO! I SAW UR BATTLE, U BATTLE GOOD. TAKE THIS ITEM!"))
+    setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_CATCHING_CHARM)
+	setspeaker("Kimono Girl")
+	msgbox(format("SEE YA!"))
+    closemessage
+	applymovement(LOCALID_KIMONO_GIRL_28E, Common_Movement_WalkRight)
+	waitmovement(0)
+	applymovement(LOCALID_KIMONO_GIRL_28E, Common_Movement_WalkUp6)
+	waitmovement(0)
+	removeobject(LOCALID_KIMONO_GIRL_28E)
+	setflag(FLAG_HIDE_ZONE28E_KIMONO_GIRL)
+	setvar(VAR_ZONE_28_STATE, 1)
+	fadedefaultbgm
+	releaseall
+}

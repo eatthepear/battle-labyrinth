@@ -1854,6 +1854,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 27) {
 		return
 	}
+	additem(ITEM_CATCHING_CHARM)
 	additem(ITEM_TM_DRAGON_PULSE)
 	additem(ITEM_TM_WEATHER_BALL)
 
