@@ -359,7 +359,7 @@ static void Task_HideEffectTilemap(u8);
 static void HideInactivePageDots(void);
 static void HideContestPageDots(void);
 static void RestoreSummaryPageDisplay(void);
-static void ShowCategoryIcon(u16);
+static void ShowCategoryIcon(enum DamageCategory);
 static void DestroyCategoryIcon(void);
 static void ShowGradeIcons(u8);
 static void DestroyGradeIcons(void);
@@ -784,13 +784,6 @@ static void (*const sTextPrinterTasks[])(u8 taskId) =
 #define TAG_MON_SHADOW 30010
 #define TAG_RELEARN_PROMPT 30011
 
-enum BWCategoryIcon
-{
-    CATEGORY_ICON_PHYSICAL,
-    CATEGORY_ICON_SPECIAL,
-    CATEGORY_ICON_STATUS,
-};
-
 static const struct OamData sOamData_CategoryIcons =
 {
     .size = SPRITE_SIZE(32x16),
@@ -831,9 +824,10 @@ static const union AnimCmd sSpriteAnim_CategoryStatus[] =
 
 static const union AnimCmd *const sSpriteAnimTable_CategoryIcons[] =
 {
-    [CATEGORY_ICON_PHYSICAL] = sSpriteAnim_CategoryPhysical,
-    [CATEGORY_ICON_SPECIAL] = sSpriteAnim_CategorySpecial,
-    [CATEGORY_ICON_STATUS] = sSpriteAnim_CategoryStatus,
+    NULL,
+    sSpriteAnim_CategoryPhysical,
+    sSpriteAnim_CategorySpecial,
+    sSpriteAnim_CategoryStatus,
 };
 
 static const struct SpriteTemplate sSpriteTemplate_CategoryIcons =
@@ -1899,7 +1893,7 @@ static bool8 LoadGraphics(void)
         ResetSpriteIds();
         CreateMoveTypeIcons();
         if (sMonSummaryScreen->mode == SUMMARY_MODE_SELECT_MOVE && BW_SUMMARY_CATEGORY_ICONS)
-            ShowCategoryIcon(sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex]);
+            ShowCategoryIcon(GetBattleMoveCategory(sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex]));
         sMonSummaryScreen->switchCounter = 0;
         gMain.state++;
         break;
@@ -4706,7 +4700,7 @@ static void PrintMoveDetails(u16 move)
         if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
         {
             if (BW_SUMMARY_CATEGORY_ICONS)
-                ShowCategoryIcon(move);
+                ShowCategoryIcon(GetBattleMoveCategory(move));;
 
             PrintMovePowerAndAccuracy(move);
 
@@ -4809,14 +4803,14 @@ static void PrintHMMovesCantBeForgotten(void)
     PrintTextOnWindow_BW_Font(windowId, gText_HMMovesCantBeForgotten2, 2, 0, 0, 0);
 }
 
-static void ShowCategoryIcon(u16 move)
+static void ShowCategoryIcon(enum DamageCategory category)
 {
     if (sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_CATEGORY] == SPRITE_NONE)
         sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_CATEGORY] = CreateSprite(&sSpriteTemplate_CategoryIcons, 223, 96, 0);
     
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_CATEGORY]].invisible = FALSE;
 
-    StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_CATEGORY]], GetBattleMoveCategory(move));
+    StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_CATEGORY]], category);
 }
 
 static void DestroyCategoryIcon(void)
