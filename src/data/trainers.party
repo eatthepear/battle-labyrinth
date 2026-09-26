@@ -3399,193 +3399,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Close Combat
 - Acrobatics
 
-=== TRAINER_PBL_SHAWN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_FERNANDO ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_KANE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_KIRK ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_DALTON ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_LEE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_BLANCHE ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_TROY ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_ABED ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_TROY_BRUTAL ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_ABED_BRUTAL ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
 === TRAINER_PBL_BERNARD ===
 Name: Bernard
 Class: Triathlete
@@ -4421,6 +4234,138 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Knock Off
 - Ice Punch
 
+=== TRAINER_PBL_SHAWN ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_SYDNEY ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_FERNANDO ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_EUNICE ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_NICOLE ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_LEE ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_WILBUR ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_OPAL ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_MICHAEL ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_GRETA ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_LUCA ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_IZZY ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
 === TRAINER_PBL_LEAF_BOSS_27 ===
 Name: Leaf
 Class: Rival
@@ -4768,6 +4713,160 @@ Mugshot: Blue
 
 Bulbasaur
 
+=== TRAINER_PBL_GABRIEL ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_OLIVIA ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_JACOB ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROSANNE ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_REED ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_MARGO ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ISAIAH ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_HALEY ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_TRENT ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_FABIOLA ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_HIDEO ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_MADELINE ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_JARED ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_LILA ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
 === TRAINER_PBL_LEAF_BOSS_31 ===
 Name: Ariana
 Class: Rainbow Rocket Executive
@@ -4791,6 +4890,270 @@ Mugshot: Blue
 Bulbasaur
 
 === TRAINER_PBL_SERENA_BOSS_32 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_1 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_2 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_3 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_4 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_5 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_6 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_7 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_8 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_9 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_10 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_11 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_12 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_13 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_14 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_15 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_16 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_17 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_18 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_19 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_20 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_21 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_22 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_23 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_24 ===
 Name: Ariana
 Class: Rainbow Rocket Executive
 Pic: Ariana
@@ -10088,7 +10451,7 @@ Party Size: 1
 
 Bulbasaur
 
-=== TRAINER_POOL_ZONE_31_AND_32_AND_33_GRUNTS ===
+=== TRAINER_POOL_ZONE_34_GRUNTS ===
 Name: Trainer Pool
 Class: Champion
 Pic: Champion Wallace
