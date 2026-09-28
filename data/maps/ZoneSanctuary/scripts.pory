@@ -3342,7 +3342,6 @@ script EventScript_Shop_Lelouch_MoveTutor_Blue {
 			dynmultipush("Play Rough - 12", MOVE_PLAY_ROUGH)
 			dynmultipush("Heat Wave - 12", MOVE_HEAT_WAVE)
 			dynmultipush("Muddy Water - 12", MOVE_MUDDY_WATER)
-			dynmultipush("High Horsepower - 12", MOVE_HIGH_HORSEPOWER)
 		}
 
 		dynmultipush("Exit", 0)
@@ -3390,7 +3389,6 @@ script EventScript_Shop_Lelouch_MoveTutor_Blue {
 			case MOVE_PLAY_ROUGH:
 			case MOVE_HEAT_WAVE:
 			case MOVE_MUDDY_WATER:
-			case MOVE_HIGH_HORSEPOWER:
 				copyvar(VAR_TEMP_0, VAR_RESULT)
                 copyvar(VAR_0x8005, VAR_RESULT)
                 setvar(VAR_TEMP_1, 12)
@@ -3739,7 +3737,6 @@ script TutorDummy {
 	setvar(VAR_0x8005, MOVE_PLAY_ROUGH)
 	setvar(VAR_0x8005, MOVE_HEAT_WAVE)
 	setvar(VAR_0x8005, MOVE_MUDDY_WATER)
-	setvar(VAR_0x8005, MOVE_HIGH_HORSEPOWER)
 
 	setvar(VAR_0x8005, MOVE_RETALIATE)
 	setvar(VAR_0x8005, MOVE_LASH_OUT)

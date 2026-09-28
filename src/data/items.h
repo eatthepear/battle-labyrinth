@@ -13668,14 +13668,14 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_DRACO_METEOR] =
+    [ITEM_TM_HIGH_HORSEPOWER] =
     {
-        .name = ITEM_NAME("TM01"),
+        .name = ITEM_NAME("TM96"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Casts comets onto\n"
-            "the foe. Harshly\n"
-            "lowers the Sp. Atk."),
+            "Slams hard into\n"
+            "the foe with\n"
+            "its entire body."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13724,14 +13724,14 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_TERA_BLAST] =
+    [ITEM_TM_DRACO_METEOR] =
     {
         .name = ITEM_NAME("TM100"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Uses user's\n"
-            "Tera-type if it's'\n"
-            "Terastallized."),
+            "Casts comets onto\n"
+            "the foe. Harshly\n"
+            "lowers the Sp. Atk."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

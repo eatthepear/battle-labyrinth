@@ -97,11 +97,11 @@
     F(WILD_CHARGE) \
     F(DEFOG) \
     F(SNARL) \
-    F(DRACO_METEOR) \
+    F(HIGH_HORSEPOWER) \
     F(DARK_PULSE) \
     F(POWER_UP_PUNCH) \
     F(DAZZLING_GLEAM) \
-    F(TERA_BLAST)
+    F(DRACO_METEOR)
 
 #define FOREACH_HM(F) \
     F(CUT) \
