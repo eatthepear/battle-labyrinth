@@ -10445,8 +10445,8 @@
     {
       "id": "LAYOUT_ZONE31A",
       "name": "Zone31A_Layout",
-      "width": 75,
-      "height": 90,
+      "width": 21,
+      "height": 65,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_FallRuins",
       "border_filepath": "data/layouts/Zone31A/border.bin",
@@ -10661,6 +10661,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/Zone28E/border.bin",
       "blockdata_filepath": "data/layouts/Zone28E/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE31B",
+      "name": "Zone31B_Layout",
+      "width": 90,
+      "height": 80,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_FallRuins",
+      "border_filepath": "data/layouts/Zone31B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone31B/map.bin"
     }
   ]
 }

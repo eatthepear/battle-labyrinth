@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ZONE31A",
-  "name": "Zone31A",
-  "layout": "LAYOUT_ZONE31A",
+  "id": "MAP_ZONE31B",
+  "name": "Zone31B",
+  "layout": "LAYOUT_ZONE31B",
   "music": "MUS_BW_VICTORY_ROAD",
   "region_map_section": "MAPSEC_ZONE_31",
   "requires_flash": false,
@@ -10,13 +10,13 @@
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
-  "show_map_name": true,
+  "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ZONE31B",
-      "offset": -42,
-      "direction": "up"
+      "map": "MAP_ZONE31A",
+      "offset": 42,
+      "direction": "down"
     }
   ],
   "object_events": [],
