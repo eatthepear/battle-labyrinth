@@ -19,7 +19,14 @@
       "x": 18,
       "y": 22,
       "elevation": 0,
-      "dest_map": "MAP_ZONE31B",
+      "dest_map": "MAP_ZONE32C",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 33,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE32E",
       "dest_warp_id": "0"
     }
   ],

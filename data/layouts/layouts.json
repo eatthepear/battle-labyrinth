@@ -10701,6 +10701,36 @@
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/Zone32D/border.bin",
       "blockdata_filepath": "data/layouts/Zone32D/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE32E",
+      "name": "Zone32E_Layout",
+      "width": 100,
+      "height": 75,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/Zone32E/border.bin",
+      "blockdata_filepath": "data/layouts/Zone32E/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE32F",
+      "name": "Zone32F_Layout",
+      "width": 100,
+      "height": 75,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/Zone32F/border.bin",
+      "blockdata_filepath": "data/layouts/Zone32F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE32G",
+      "name": "Zone32G_Layout",
+      "width": 100,
+      "height": 75,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/Zone32G/border.bin",
+      "blockdata_filepath": "data/layouts/Zone32G/map.bin"
     }
   ]
 }

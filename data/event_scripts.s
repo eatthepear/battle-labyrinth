@@ -1995,3 +1995,9 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Zone32C/scripts.inc"
 
 	.include "data/maps/Zone32D/scripts.inc"
+
+	.include "data/maps/Zone32E/scripts.inc"
+
+	.include "data/maps/Zone32F/scripts.inc"
+
+	.include "data/maps/Zone32G/scripts.inc"

@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ZONE32C",
-  "name": "Zone32C",
-  "layout": "LAYOUT_ZONE32C",
+  "id": "MAP_ZONE32E",
+  "name": "Zone32E",
+  "layout": "LAYOUT_ZONE32E",
   "music": "MUS_BW_VICTORY_ROAD",
   "region_map_section": "MAPSEC_ZONE_32",
   "requires_flash": false,
@@ -16,18 +16,18 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 18,
-      "y": 22,
-      "elevation": 0,
-      "dest_map": "MAP_ZONE31B",
-      "dest_warp_id": "2"
-    },
-    {
-      "x": 16,
-      "y": 5,
+      "x": 7,
+      "y": 18,
       "elevation": 0,
       "dest_map": "MAP_ZONE32D",
-      "dest_warp_id": "2"
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 8,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE32F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
