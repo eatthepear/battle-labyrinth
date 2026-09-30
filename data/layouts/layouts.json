@@ -10671,6 +10671,36 @@
       "secondary_tileset": "gTileset_FallRuins",
       "border_filepath": "data/layouts/Zone31B/border.bin",
       "blockdata_filepath": "data/layouts/Zone31B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE32B",
+      "name": "Zone32B_Layout",
+      "width": 100,
+      "height": 75,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/Zone32B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone32B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE32C",
+      "name": "Zone32C_Layout",
+      "width": 100,
+      "height": 75,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/Zone32C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone32C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE32D",
+      "name": "Zone32D_Layout",
+      "width": 100,
+      "height": 75,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/Zone32D/border.bin",
+      "blockdata_filepath": "data/layouts/Zone32D/map.bin"
     }
   ]
 }

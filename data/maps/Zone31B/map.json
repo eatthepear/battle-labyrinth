@@ -20,7 +20,29 @@
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 63,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE32A",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 59,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE32B",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 42,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE32C",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }
