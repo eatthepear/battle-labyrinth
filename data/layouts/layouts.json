@@ -10731,6 +10731,17 @@
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/Zone32G/border.bin",
       "blockdata_filepath": "data/layouts/Zone32G/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE30A",
+      "name": "Zone30A_Layout",
+      "width": 77,
+      "height": 41,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Sanctuary",
+      "border_filepath": "data/layouts/Zone30A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone30A/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
