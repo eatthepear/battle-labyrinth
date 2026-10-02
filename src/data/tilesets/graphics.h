@@ -3322,3 +3322,22 @@ const u16 gTilesetPalettes_FallRuins[][16] =
 };
 
 const u32 gTilesetTiles_FallRuins[] = INCBIN_U32("data/tilesets/secondary/fall_ruins/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_RocketCo[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/rocket_co/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rocket_co/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rocket_co/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rocket_co/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rocket_co/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rocket_co/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rocket_co/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rocket_co/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rocket_co/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rocket_co/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rocket_co/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rocket_co/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rocket_co/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_RocketCo[] = INCBIN_U32("data/tilesets/secondary/rocket_co/tiles.4bpp.lz");

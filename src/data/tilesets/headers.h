@@ -1705,3 +1705,14 @@ const struct Tileset gTileset_FallRuins =
     .metatileAttributes = gMetatileAttributes_FallRuins,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_RocketCo =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RocketCo,
+    .palettes = gTilesetPalettes_RocketCo,
+    .metatiles = gMetatiles_RocketCo,
+    .metatileAttributes = gMetatileAttributes_RocketCo,
+    .callback = NULL,
+};
