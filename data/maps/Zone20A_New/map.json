@@ -55,8 +55,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SOCIALITE",
-      "x": 11,
-      "y": 11,
+      "x": 12,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -104,6 +104,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_PorygonExit",
       "flag": "FLAG_HIDE_ZONE20A_PORYGON"
+    },
+    {
+      "local_id": "LOCALID_LACEY_20A",
+      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+      "x": 12,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_ZONE20A_LACEY"
     }
   ],
   "warp_events": [

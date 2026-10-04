@@ -3399,6 +3399,73 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Close Combat
 - Acrobatics
 
+=== TRAINER_PBL_LACEY_BOSS_20 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+
+Slurpuff @ Focus Sash
+Ability: Unburden
+Level: 44
+Hasty Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sticky Web
+- Endeavor
+- Moonblast
+- Misty Explosion
+
+Primarina @ Leftovers
+Ability: Torrent
+Level: 44
+Bold Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Scald
+- Moonblast
+- Rest
+- Sleep Talk
+
+Whimsicott @ Sitrus Berry
+Ability: Prankster
+Level: 44
+Bold Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stun Spore
+- U-Turn
+- Moonblast
+- Giga Drain
+
+Mimikyu @ Red Card
+Ability: Disguise
+Level: 44
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Claw
+- Shadow Sneak
+- Play Rough
+- Drain Punch
+
+Slowbro-Galar @ Quick Claw
+Ability: Quick Draw
+Level: 44
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shell Side Arm
+- Psyshock
+- Surf
+- Grass Knot
+
+Excadrill @ Life Orb
+Ability: Mold Breaker
+Level: 46
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Iron Head
+- Rock Slide
+- Swords Dance
+
 === TRAINER_PBL_BERNARD ===
 Name: Bernard
 Class: Triathlete
