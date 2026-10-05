@@ -1938,12 +1938,21 @@ void SetDeptStoreFloor(void)
     case MAP_NUM(MAP_ZONE30C):
         zone30Floor = ZONE30_FLOORNUM_3F;
         break;
-    // case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_4F):
-    //     zone30Floor = ZONE30_FLOORNUM_4F;
-    //     break;
-    // case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_5F):
-    //     zone30Floor = ZONE30_FLOORNUM_5F;
-    //     break;
+    case MAP_NUM(MAP_ZONE30D):
+        zone30Floor = ZONE30_FLOORNUM_4F;
+        break;
+    case MAP_NUM(MAP_ZONE30E):
+        zone30Floor = ZONE30_FLOORNUM_5F;
+        break;
+    case MAP_NUM(MAP_ZONE30F):
+        zone30Floor = ZONE30_FLOORNUM_6F;
+        break;
+    case MAP_NUM(MAP_ZONE30G):
+        zone30Floor = ZONE30_FLOORNUM_7F;
+        break;
+    case MAP_NUM(MAP_ZONE30H):
+        zone30Floor = ZONE30_FLOORNUM_8F;
+        break;
     default:
         zone30Floor = ZONE30_FLOORNUM_1F;
         break;

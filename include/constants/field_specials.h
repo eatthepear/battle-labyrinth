@@ -92,9 +92,6 @@ enum Zone30FloorNumber
     ZONE30_FLOORNUM_6F,
     ZONE30_FLOORNUM_7F,
     ZONE30_FLOORNUM_8F,
-    ZONE30_FLOORNUM_9F,
-    ZONE30_FLOORNUM_10F,
-    ZONE30_FLOORNUM_11F,
 };
 
 // Lilycove Pokémon Trainer Fan Club

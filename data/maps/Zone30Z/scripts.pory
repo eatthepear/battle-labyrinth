@@ -46,35 +46,35 @@ script Zone30Z_EventScript_Attendant {
 			setvar(VAR_0x8006, ZONE30_FLOORNUM_4F)
 			setdynamicwarp(MAP_ZONE30D, 0)
 			if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_4F) {
-				call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
+				call(Zone30Z_EventScript_MoveElevator)
 				setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_4F)
 			}
 		case 5:
 			setvar(VAR_0x8006, ZONE30_FLOORNUM_5F)
 			setdynamicwarp(MAP_ZONE30E, 0)
 			if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_5F) {
-				call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
+				call(Zone30Z_EventScript_MoveElevator)
 				setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_5F)
 			}
 		case 6:
 			setvar(VAR_0x8006, ZONE30_FLOORNUM_6F)
 			setdynamicwarp(MAP_ZONE30F, 0)
 			if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_6F) {
-				call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
+				call(Zone30Z_EventScript_MoveElevator)
 				setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_6F)
 			}
 		case 7:
 			setvar(VAR_0x8006, ZONE30_FLOORNUM_7F)
 			setdynamicwarp(MAP_ZONE30G, 0)
 			if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_7F) {
-				call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
+				call(Zone30Z_EventScript_MoveElevator)
 				setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_7F)
 			}
 		case 8:
 			setvar(VAR_0x8006, ZONE30_FLOORNUM_8F)
 			setdynamicwarp(MAP_ZONE30H, 0)
 			if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_8F) {
-				call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
+				call(Zone30Z_EventScript_MoveElevator)
 				setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_8F)
 			}
 	}
