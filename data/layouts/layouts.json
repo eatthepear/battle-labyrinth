@@ -10742,6 +10742,17 @@
       "border_filepath": "data/layouts/Zone30A/border.bin",
       "blockdata_filepath": "data/layouts/Zone30A/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ZONE30Z",
+      "name": "Zone30Z_Layout",
+      "width": 5,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleFrontier",
+      "border_filepath": "data/layouts/Zone30Z/border.bin",
+      "blockdata_filepath": "data/layouts/Zone30Z/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
