@@ -1,8 +1,4 @@
-mapscripts ZoneSanctuary_PokemonCenter_1F_MapScripts {
-	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_SANCTUARY_STATE, 1: ZoneSanctuary_PokemonCenter_1F_EventScript_TriggerAlliesGathering
-	]
-}
+mapscripts ZoneSanctuary_PokemonCenter_1F_MapScripts {}
 
 script EventScript_Joy {
 	lock
@@ -220,40 +216,4 @@ script EventScript_OldMan_MoveOutOfWay {
 		waitmovement(0)
 	}
 	return
-}
-
-script ZoneSanctuary_PokemonCenter_1F_EventScript_TriggerAlliesGathering {
-	lockall
-	setflag(FLAG_HIDE_SANCTUARY_SERENA)
-	applymovement(LOCALID_SERENA_SANCTUARY_POKEMON_CENTER, Common_Movement_FaceLeft)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
-	waitmovement(0)
-	msgbox(format("We made it, phew.\pIt seems Team Rainbow Rocket and the rest of the villainous teams haven't made it here yet.\pBut who knows what sort of havoc they're causing!"))
-	closemessage
-	applymovement(LOCALID_SERENA_SANCTUARY_POKEMON_CENTER, Common_Movement_WalkUp6)
-	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp6)
-	waitmovement(0)
-	msgbox(format("Oh, the whole gang is here omg."))
-	msgbox(format("We should take down the separate teams first. I bet they're split up around the Sanctuary. We should split up our response too."))
-	msgbox(format("I will go after Team Aqua, Wally can handle Team Magma. Serena, you could handle Team Galactic. Once we've handled these teams, we can all go and confront Team Rainbow Rocket!"))
-	msgbox(format("{PLAYER}, go to wherever you think we'll need the most help. There are a lot of Admins around, so you could be the key factor to victory."))
-	msgbox(format("Ok, good luck everyone!"))
-	closemessage
-	applymovement(LOCALID_LEAF_SANCTUARY_POKEMON_CENTER, ZoneSanctuary_PokemonCenter_1F_Movement_Leaf_Leave)
-	applymovement(LOCALID_WALLY_SANCTUARY_POKEMON_CENTER, ZoneSanctuary_PokemonCenter_1F_Movement_Wally_Leave)
-	applymovement(LOCALID_SERENA_SANCTUARY_POKEMON_CENTER, Common_Movement_WalkDown6)
-	waitmovement(0)
-
-	setvar(VAR_SANCTUARY_STATE, 2)
-	releaseall
-	end
-}
-
-movement ZoneSanctuary_PokemonCenter_1F_Movement_Leaf_Leave {
-	walk_left
-	walk_down * 7
-}
-
-movement ZoneSanctuary_PokemonCenter_1F_Movement_Wally_Leave {
-	walk_down * 7
 }

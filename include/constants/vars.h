@@ -103,7 +103,7 @@
 #define VAR_ZONE_27_STATE                    0x406B
 #define VAR_ZONE_28_STATE                    0x406C
 #define VAR_ZONE_29_STATE                    0x406D
-#define VAR_SANCTUARY_STATE                    0x406E
+#define VAR_ZONE_30_STATE                    0x406E
 #define VAR_ZONE_31_STATE                    0x406F
 #define VAR_ZONE_32_STATE                    0x4070
 #define VAR_ZONE_33_STATE                    0x4071
