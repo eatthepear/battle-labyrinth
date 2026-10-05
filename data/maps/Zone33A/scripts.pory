@@ -1,1 +1,9 @@
-mapscripts Zone33A_MapScripts {}
+mapscripts Zone33A_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_TEMP_HIDE_FOLLOWER)
+        setflag(FLAG_SYS_NO_RUNNING)
+        setflag(FLAG_SYS_NO_CATCHING)
+        setflag(FLAG_SYS_SMART_WILD_AI_ON)
+        setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+    }
+}

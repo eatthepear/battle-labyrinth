@@ -75,8 +75,8 @@ bool32 ShouldTrainerBattlerUseGimmick(enum BattlerId battler, enum Gimmick gimmi
 
     // When reading trainer party data, we load invalid values in struct Pokemon to indicate the gimmick should not be used
     struct Pokemon *mon = GetBattlerMon(battler);
-    if (gimmick == GIMMICK_TERA && GetMonData(mon, MON_DATA_TERA_TYPE) != TYPE_MYSTERY)
-        return TRUE;
+    if (gimmick == GIMMICK_TERA)
+        return FALSE;
     if (gimmick == GIMMICK_DYNAMAX)
         return FALSE;
     #endif

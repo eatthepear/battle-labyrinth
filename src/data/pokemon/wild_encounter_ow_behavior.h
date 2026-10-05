@@ -68,6 +68,17 @@ const struct BehaviorOWE gOWESpeciesBehavior[OWE_SPECIES_BEHAVIOR_COUNT] =
         .activeDistance = 5,
         .idleSpeed = OWE_SPEED_NORMAL,
         .returnToIdle = PLAYER_OUTSIDE_ACTIVE_RANGE,
+    },
+
+    [OWE_CHASE_PLAYER_FAST] =
+    {
+        .movementType = MOVEMENT_TYPE_CHASE_PLAYER_OWE,
+        .viewDistance = 4,
+        .viewWidth = 3,
+        .activeDistance = 5,
+        .idleSpeed = OWE_SPEED_NORMAL,
+        .activeSpeed = OWE_SPEED_NORMAL,
+        .returnToIdle = PLAYER_OUTSIDE_ACTIVE_RANGE,
     }
 };
 

@@ -368,6 +368,7 @@ void StartWildBattleWithOWE(struct ScriptContext *ctx)
     u32 headerId = GetCurrentMapWildMonHeaderId();
     struct ObjectEvent *owe = &gObjectEvents[objEventId];
     enum CategoryOWE category = GetOWECategory(owe);
+    bool32 isZone33PorygonZ = gMapHeader.mapLayoutId == LAYOUT_ZONE33A;
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
@@ -393,9 +394,71 @@ void StartWildBattleWithOWE(struct ScriptContext *ctx)
     }
 
     ZeroEnemyPartyMons();
-    personality = GetMonPersonality(speciesId, gender, NATURE_RANDOM, RANDOM_UNOWN_LETTER);
-    CreateMonWithIVs(&gParties[B_TRAINER_OPPONENT_A][0], speciesId, level, personality, OTID_STRUCT_PLAYER_ID, USE_RANDOM_IVS);
+    personality = GetMonPersonality(speciesId, gender, isZone33PorygonZ ? NATURE_SERIOUS : NATURE_RANDOM, RANDOM_UNOWN_LETTER);
+    CreateMonWithIVs(&gParties[B_TRAINER_OPPONENT_A][0], speciesId, level, personality, OTID_STRUCT_PLAYER_ID, isZone33PorygonZ ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
     GiveMonInitialMoveset(&gParties[B_TRAINER_OPPONENT_A][0]);
+    if (isZone33PorygonZ)
+    {
+        u8 abilityNum = Random32() % 3;
+        SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_ABILITY_NUM, &abilityNum);
+        enum Move electricMove = Random32() % 2 ? MOVE_DISCHARGE : MOVE_ZAP_CANNON;
+        enum Move iceMove = Random32() % 2 ? MOVE_ICE_BEAM : MOVE_BLIZZARD;
+        enum Move psychicMove = Random32() % 2 ? MOVE_PSYSHOCK : MOVE_PSYCHIC;
+        enum Move darkMove = Random32() % 2 ? MOVE_DARK_PULSE : MOVE_SHADOW_BALL;
+        enum Item item;
+        switch (Random32() % 2)
+        {
+            case 0:
+                SetMonMoveSlot(&gParties[B_TRAINER_OPPONENT_A][0], MOVE_HYPER_BEAM, 0);
+                break;
+            case 1:
+                SetMonMoveSlot(&gParties[B_TRAINER_OPPONENT_A][0], MOVE_TRI_ATTACK, 0);
+                break;
+        }
+
+        switch (Random32() % 4)
+        {
+            case 0:
+                SetMonMoveSlot(&gParties[B_TRAINER_OPPONENT_A][0], electricMove, 1);
+                SetMonMoveSlot(&gParties[B_TRAINER_OPPONENT_A][0], iceMove, 2);
+                SetMonMoveSlot(&gParties[B_TRAINER_OPPONENT_A][0], psychicMove, 3);
+                break;
+            case 1:
+                SetMonMoveSlot(&gParties[B_TRAINER_OPPONENT_A][0], darkMove, 1);
+                SetMonMoveSlot(&gParties[B_TRAINER_OPPONENT_A][0], iceMove, 2);
+                SetMonMoveSlot(&gParties[B_TRAINER_OPPONENT_A][0], psychicMove, 3);
+                break;
+            case 2:
+                SetMonMoveSlot(&gParties[B_TRAINER_OPPONENT_A][0], electricMove, 1);
+                SetMonMoveSlot(&gParties[B_TRAINER_OPPONENT_A][0], darkMove, 2);
+                SetMonMoveSlot(&gParties[B_TRAINER_OPPONENT_A][0], psychicMove, 3);
+                break;
+            case 3:
+                SetMonMoveSlot(&gParties[B_TRAINER_OPPONENT_A][0], electricMove, 1);
+                SetMonMoveSlot(&gParties[B_TRAINER_OPPONENT_A][0], iceMove, 2);
+                SetMonMoveSlot(&gParties[B_TRAINER_OPPONENT_A][0], darkMove, 3);
+                break;
+        }
+
+        if (GetCurrentDifficultyLevel() == DIFFICULTY_BRUTAL)
+        {
+            switch (Random32() % 4) {
+                case 1:
+                    item = ITEM_CHOICE_SCARF;
+                    break;
+                case 2:
+                    item = ITEM_FOCUS_SASH;
+                    break;
+                case 3:
+                    item = ITEM_LIFE_ORB;
+                    break;
+                case 4:
+                    item = ITEM_CHOPLE_BERRY;
+                    break;
+            }
+            SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_HELD_ITEM, &item);
+        }
+    }
     SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_IS_SHINY, &shiny);
     
     if (StartWildBattleWithOWE_CheckBattleFrontier(headerId))

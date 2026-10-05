@@ -19130,6 +19130,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sPorygonZLevelUpLearnset,
         .teachableLearnset = sPorygonZTeachableLearnset,
+        .overworldEncounterBehavior = OWE_CHASE_PLAYER_FAST,
     },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_GEN_2_CROSS_EVOS
