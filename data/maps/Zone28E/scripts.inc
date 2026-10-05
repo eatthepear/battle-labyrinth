@@ -90,6 +90,22 @@ Zone28E_EventScript_KimonoGirl_5:
 	goto Zone28E_EventScript_KimonoGirl_1
 
 
+Zone28E_EventScript_Luca::
+# 45 "data/maps/Zone28E/scripts.pory"
+	trainerbattle_single TRAINER_PBL_LUCA, Zone28E_EventScript_Luca_Text_0, Zone28E_EventScript_Luca_Text_1
+# 46 "data/maps/Zone28E/scripts.pory"
+	msgbox Zone28E_EventScript_Luca_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
+Zone28E_EventScript_Izzy::
+# 51 "data/maps/Zone28E/scripts.pory"
+	trainerbattle_single TRAINER_PBL_IZZY, Zone28E_EventScript_Luca_Text_0, Zone28E_EventScript_Luca_Text_1
+# 52 "data/maps/Zone28E/scripts.pory"
+	msgbox Zone28E_EventScript_Luca_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
 Zone28E_EventScript_KimonoGirl_Text_0:
 # 26 "data/maps/Zone28E/scripts.pory"
 	.string "Kimono Girl$"
@@ -102,3 +118,15 @@ Zone28E_EventScript_KimonoGirl_Text_1:
 Zone28E_EventScript_KimonoGirl_Text_2:
 # 31 "data/maps/Zone28E/scripts.pory"
 	.string "SEE YA!$"
+
+Zone28E_EventScript_Luca_Text_0:
+# 45 "data/maps/Zone28E/scripts.pory"
+	.string "BATTLE!$"
+
+Zone28E_EventScript_Luca_Text_1:
+# 45 "data/maps/Zone28E/scripts.pory"
+	.string "DEFEAT!$"
+
+Zone28E_EventScript_Luca_Text_2:
+# 46 "data/maps/Zone28E/scripts.pory"
+	.string "DEFEATED!$"

@@ -1,1 +1,13 @@
 mapscripts Zone28C_MapScripts {}
+
+script Zone28C_EventScript_Michael {
+	trainerbattle_single(TRAINER_PBL_MICHAEL, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone28C_EventScript_Greta {
+	trainerbattle_single(TRAINER_PBL_GRETA, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}

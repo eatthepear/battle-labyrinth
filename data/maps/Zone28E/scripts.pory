@@ -40,3 +40,15 @@ script Zone28E_EventScript_KimonoGirl {
 	fadedefaultbgm
 	releaseall
 }
+
+script Zone28E_EventScript_Luca {
+	trainerbattle_single(TRAINER_PBL_LUCA, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone28E_EventScript_Izzy {
+	trainerbattle_single(TRAINER_PBL_IZZY, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}

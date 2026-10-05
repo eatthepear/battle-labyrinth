@@ -1,1 +1,43 @@
 mapscripts Zone28B_MapScripts {}
+
+script Zone28B_EventScript_Fernando {
+	trainerbattle_single(TRAINER_PBL_FERNANDO, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone28B_EventScript_Eunice {
+	trainerbattle_single(TRAINER_PBL_EUNICE, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone28B_EventScript_Nicole {
+	trainerbattle_single(TRAINER_PBL_NICOLE, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone28B_EventScript_Lee {
+	trainerbattle_single(TRAINER_PBL_LEE, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone28B_EventScript_Riley {
+	trainerbattle_single(TRAINER_PBL_RILEY, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone28B_EventScript_Wilbur {
+	trainerbattle_single(TRAINER_PBL_WILBUR, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone28B_EventScript_Opal {
+	trainerbattle_single(TRAINER_PBL_OPAL, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
