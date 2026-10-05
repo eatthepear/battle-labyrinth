@@ -10435,8 +10435,8 @@
     {
       "id": "LAYOUT_ZONE33A",
       "name": "Zone33A_Layout",
-      "width": 60,
-      "height": 30,
+      "width": 35,
+      "height": 18,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_Virtual",
       "border_filepath": "data/layouts/Zone33A/border.bin",
@@ -10830,6 +10830,36 @@
       "border_filepath": "data/layouts/Zone30H/border.bin",
       "blockdata_filepath": "data/layouts/Zone30H/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ZONE33D",
+      "name": "Zone33D_Layout",
+      "width": 71,
+      "height": 36,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Virtual",
+      "border_filepath": "data/layouts/Zone33D/border.bin",
+      "blockdata_filepath": "data/layouts/Zone33D/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE33B",
+      "name": "Zone33B_Layout",
+      "width": 37,
+      "height": 33,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Virtual",
+      "border_filepath": "data/layouts/Zone33B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone33B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE33C",
+      "name": "Zone33C_Layout",
+      "width": 55,
+      "height": 21,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Virtual",
+      "border_filepath": "data/layouts/Zone33C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone33C/map.bin"
     }
   ]
 }

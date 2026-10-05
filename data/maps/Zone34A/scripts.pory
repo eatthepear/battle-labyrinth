@@ -1,1 +1,8 @@
-mapscripts Zone34A_MapScripts {}
+mapscripts Zone34A_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        clearflag(FLAG_SYS_NO_RUNNING)
+        clearflag(FLAG_SYS_NO_CATCHING)
+        clearflag(FLAG_SYS_SMART_WILD_AI_ON)
+        clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+    }
+}

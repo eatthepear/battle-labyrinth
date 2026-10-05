@@ -1,4 +1,4 @@
-mapscripts Zone33A_MapScripts {
+mapscripts Zone33B_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
         VAR_TEMP_1, 0 {
             turnobject(LOCALID_PLAYER, DIR_EAST)

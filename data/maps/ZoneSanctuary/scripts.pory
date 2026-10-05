@@ -420,7 +420,7 @@ script EventScript_NextZone {
 		// case 31:
 			// warp(MAP_ZONE31A, 255, 11, 17)
 		case 33:
-			warp(MAP_ZONE33A, 255, 5, 10)
+			warp(MAP_ZONE33A, 255, 0, 8)
 		// case 35:
 			// warp(MAP_ZONE35A, 255, 11, 17)
 	}
