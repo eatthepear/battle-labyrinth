@@ -123,6 +123,7 @@ enum BeatBossFlags {
 #define FLAG_SYS_DEXNAV_SEARCH                      0xE3
 #define FLAG_ZONE_PC_USED                           0xE5
 #define FLAG_USED_TERA                              0xE6
+#define FLAG_SYS_SKY_BATTLE                         0xE7
 #define FLAG_AUTORUN_TOGGLE                         0xE8
 #define FLAG_NEVER_SET                              0xE9
 #define FLAG_ALWAYS_SET                             0xEA

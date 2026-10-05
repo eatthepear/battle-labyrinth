@@ -71,6 +71,7 @@
 #define VAR_MON_TO_PC                        0x4041
 #define VAR_ZONE_30_FLOOR                    0x4042
 #define VAR_NEVER_SET                        0x4043
+#define VAR_SKY_BATTLE_POSITION              0x4044
 
 // Zone State vars
 #define VAR_ZONE_0_STATE                     0x4050

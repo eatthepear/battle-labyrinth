@@ -3703,6 +3703,16 @@ Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_22
 
+=== TRAINER_PBL_AMELIA_OPTIONAL_22 ===
+Name: Amelia
+Class: Cooltrainer
+Pic: Ace Trainer M
+Music: Cool
+AI: AI_FLAG_BOSS
+Double Battle: No
+
+Drifblim
+
 === TRAINER_PBL_MAYLENE_BOSS_22 ===
 Name: Maylene
 Class: Leader

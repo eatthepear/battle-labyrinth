@@ -108,6 +108,50 @@ script Zone22A_EventScript_Maylene {
 	end
 }
 
+script Zone22A_EventScript_SkyTrainer {
+	lockall
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement(0)
+	special(SpawnCameraObject)
+	applymovement(LOCALID_CAMERA, Common_Movement_WalkUp2)
+	waitmovement(0)
+	special(RemoveCameraObject)
+	if (!defeated(TRAINER_PBL_AMELIA_OPTIONAL_22)) {
+		setspeaker("Amelia")
+		msgbox(format("HELLO! I AM SKY TRAINER!\pIN SKY BATTLES, THE ONLY POKEMON ALLOWED ARE FLYING POKEMON OR POKEMON WITH LEVITATE.\pSOME FLYING POKEMON AREN'T EVENT ELIGIBLE.\pWANT TO SKY BATTLE WITH ME?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			special(TrySkyBattle)
+			if (var(VAR_RESULT) == NO) {
+				setspeaker("Amelia")
+				msgbox(format("YOU HAVE NO POKEMON ELIGIBLE FOR SKY BATTLE! BAH!"))
+			} else {
+				setspeaker("Amelia")
+				msgbox(format("GREAT! LET'S BATTLE!"))
+				trainerbattle_no_intro(TRAINER_PBL_AMELIA_OPTIONAL_22, "DEFEAT!")
+				setspeaker("Amelia")
+				msgbox(format("YOU'RE SO GOOD!"))
+				setspeaker(SP_NAME_NONE)
+				giveitem(ITEM_AIR_BALLOON)
+				setspeaker("Amelia")
+				msgbox(format("I WAS DEFEATED!"))
+			}
+		} else {
+			setspeaker("Amelia")
+			msgbox(format("LAME!"))
+		}
+	} else {
+		setspeaker("Amelia")
+		msgbox(format("I WAS DEFEATED!"))
+	}
+	closemessage
+	special(SpawnCameraObject)
+	applymovement(LOCALID_CAMERA, Common_Movement_WalkDown2)
+	waitmovement(0)
+	special(RemoveCameraObject)
+	releaseall
+	end
+}
+
 script Zone22A_EventScript_LightClay {
 	lock
 	if (flag(FLAG_ITEM_ZONE22A_LIGHT_CLAY)) {
