@@ -4009,14 +4009,14 @@ Copy Pool: TRAINER_POOL_ZONE_24_AND_25
 
 === TRAINER_PBL_SPENCER ===
 Name: Spencer
-Class: Dragon Tamer
-Pic: Dragon Tamer
+Class: Black Belt
+Pic: Black Belt
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
-Pool Prune: Non Dragon
-Copy Pool: TRAINER_POOL_ZONE_24_AND_25
+Pool Prune: Non Fighting
+Copy Pool: TRAINER_POOL_ZONE_21
 
 === TRAINER_PBL_CHRISTI ===
 Name: Christi
@@ -4301,6 +4301,28 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Knock Off
 - Ice Punch
 
+=== TRAINER_PBL_LEONIDAS ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_GUSTAVO ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
 === TRAINER_PBL_SHAWN ===
 Name: Ariana
 Class: Rainbow Rocket Executive
@@ -4366,6 +4388,17 @@ Double Battle: No
 Mugshot: Blue
 
 Bulbasaur
+
+=== TRAINER_PBL_RILEY ===
+Name: Riley
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Music: Intense
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 4
+Pool Prune: Non Dragon
+Copy Pool: TRAINER_POOL_ZONE_24_AND_25
 
 === TRAINER_PBL_WILBUR ===
 Name: Ariana
@@ -4650,6 +4683,359 @@ Sassy Nature
 - Wish
 - Yawn
 
+=== TRAINER_PBL_AQUA_GRUNT_30_1 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_AQUA_GRUNT_30_2 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_AQUA_GRUNT_30_3 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_AQUA_GRUNT_30_4 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_AQUA_GRUNT_30_5 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_AQUA_GRUNT_30_6 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_AQUA_GRUNT_30_7 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_AQUA_GRUNT_30_8 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_MAGMA_GRUNT_30_1 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_MAGMA_GRUNT_30_2 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_MAGMA_GRUNT_30_3 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_MAGMA_GRUNT_30_4 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_MAGMA_GRUNT_30_5 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_MAGMA_GRUNT_30_6 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_MAGMA_GRUNT_30_7 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_MAGMA_GRUNT_30_8 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_GALACTIC_GRUNT_30_1 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_GALACTIC_GRUNT_30_2 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_GALACTIC_GRUNT_30_3 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_GALACTIC_GRUNT_30_4 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_GALACTIC_GRUNT_30_5 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_GALACTIC_GRUNT_30_6 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_GALACTIC_GRUNT_30_7 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_GALACTIC_GRUNT_30_8 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_30_1 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_30_2 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_30_3 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_30_4 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_30_5 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_30_6 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_30_7 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_30_8 ===
+Name: Proton
+Class: Rainbow Rocket Executive
+Pic: Proton
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+
 === TRAINER_PBL_PROTON_BOSS_30 ===
 Name: Proton
 Class: Rainbow Rocket Executive
@@ -4924,6 +5310,28 @@ Mugshot: Blue
 Bulbasaur
 
 === TRAINER_PBL_LILA ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_HECTOR ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ANDROMEDA ===
 Name: Ariana
 Class: Rainbow Rocket Executive
 Pic: Ariana
@@ -5221,6 +5629,72 @@ Mugshot: Blue
 Bulbasaur
 
 === TRAINER_PBL_ROCKET_GRUNT_34_24 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_25 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_26 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_27 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_28 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_29 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Bulbasaur
+
+=== TRAINER_PBL_ROCKET_GRUNT_34_30 ===
 Name: Ariana
 Class: Rainbow Rocket Executive
 Pic: Ariana
