@@ -1852,7 +1852,7 @@ Copy Pool: TRAINER_POOL_ZONE_11_GRUNTS
 
 === TRAINER_PBL_ARCHER_BOSS_11 ===
 Name: Archer
-Class: Rainbow Rocket
+Class: Rainbow Rocket Executive
 Pic: Archer
 Music: Rocket
 AI: AI_FLAG_BOSS
@@ -1891,7 +1891,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_ARCHER_BOSS_11 ===
 Name: Archer
-Class: Rainbow Rocket
+Class: Rainbow Rocket Executive
 Pic: Archer
 Music: Rocket
 AI: AI_FLAG_BOSS
@@ -4304,92 +4304,92 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Punch
 
 === TRAINER_PBL_LEONIDAS ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Leonidas
+Class: Bird Keeper
+Pic: Bird Keeper
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Prune: Non Flying
+Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_GUSTAVO ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Gustavo
+Class: Hiker
+Pic: Hiker
+Music: Hiker
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Prune: Non Ground Rock
+Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_SHAWN ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Rusty
+Class: Pkmn Ranger
+Pic: Pokemon Ranger M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_SYDNEY ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Sydney
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_FERNANDO ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Fernando
+Class: Kindler
+Pic: Kindler
+Music: Hiker
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Prune: Non Fire
+Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_EUNICE ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Eunice
+Class: Battle Girl
+Pic: Battle Girl
+Music: Intense
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Prune: Non Fighting
+Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_NICOLE ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Nicole
+Class: Aroma Lady
+Pic: Aroma Lady
+Music: Female
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Prune: Non Grass
+Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_LEE ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Lee
+Class: Ruin Maniac
+Pic: Ruin Maniac
+Music: Hiker
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Prune: Non Steel
+Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_RILEY ===
 Name: Riley
@@ -4400,73 +4400,73 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 4
 Pool Prune: Non Dragon
-Copy Pool: TRAINER_POOL_ZONE_24_AND_25
+Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_WILBUR ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Wilbur
+Class: Cooltrainer
+Pic: Ace Trainer M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_OPAL ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Opal
+Class: Cooltrainer
+Pic: Ace Trainer F
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_MICHAEL ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Michael
+Class: Pkmn Ranger
+Pic: Pokemon Ranger M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_GRETA ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Greta
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_LUCA ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Luca
+Class: Cooltrainer
+Pic: Ace Trainer M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_IZZY ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Izzy
+Class: Cooltrainer
+Pic: Ace Trainer F
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_LEAF_BOSS_27 ===
 Name: Leaf
@@ -4686,357 +4686,324 @@ Sassy Nature
 - Yawn
 
 === TRAINER_PBL_AQUA_GRUNT_30_1 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Aqua
+Pic: Aqua Grunt F
+Music: Aqua
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_AQUA_GRUNTS
 
 === TRAINER_PBL_AQUA_GRUNT_30_2 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Aqua
+Pic: Aqua Grunt F
+Music: Aqua
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_AQUA_GRUNTS
 
 === TRAINER_PBL_AQUA_GRUNT_30_3 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Aqua
+Pic: Aqua Grunt F
+Music: Aqua
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_AQUA_GRUNTS
 
 === TRAINER_PBL_AQUA_GRUNT_30_4 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Aqua
+Pic: Aqua Grunt F
+Music: Aqua
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_AQUA_GRUNTS
 
 === TRAINER_PBL_AQUA_GRUNT_30_5 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Aqua
+Pic: Aqua Grunt F
+Music: Aqua
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_AQUA_GRUNTS
 
 === TRAINER_PBL_AQUA_GRUNT_30_6 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Aqua
+Pic: Aqua Grunt F
+Music: Aqua
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_AQUA_GRUNTS
 
 === TRAINER_PBL_AQUA_GRUNT_30_7 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Aqua
+Pic: Aqua Grunt F
+Music: Aqua
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_AQUA_GRUNTS
 
 === TRAINER_PBL_AQUA_GRUNT_30_8 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Aqua
+Pic: Aqua Grunt F
+Music: Aqua
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_AQUA_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_30_1 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_MAGMA_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_30_2 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_MAGMA_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_30_3 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_MAGMA_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_30_4 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_MAGMA_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_30_5 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_MAGMA_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_30_6 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_MAGMA_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_30_7 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_MAGMA_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_30_8 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Team Magma
+Pic: Magma Grunt F
+Music: Magma
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_MAGMA_GRUNTS
 
 === TRAINER_PBL_GALACTIC_GRUNT_30_1 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Galactic
+Pic: Galactic Grunt F
+Music: Galactic
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_GALACTIC_GRUNTS
 
 === TRAINER_PBL_GALACTIC_GRUNT_30_2 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Galactic
+Pic: Galactic Grunt F
+Music: Galactic
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_GALACTIC_GRUNTS
 
 === TRAINER_PBL_GALACTIC_GRUNT_30_3 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Galactic
+Pic: Galactic Grunt F
+Music: Galactic
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_GALACTIC_GRUNTS
 
 === TRAINER_PBL_GALACTIC_GRUNT_30_4 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Galactic
+Pic: Galactic Grunt F
+Music: Galactic
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_GALACTIC_GRUNTS
 
 === TRAINER_PBL_GALACTIC_GRUNT_30_5 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Galactic
+Pic: Galactic Grunt F
+Music: Galactic
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_GALACTIC_GRUNTS
 
 === TRAINER_PBL_GALACTIC_GRUNT_30_6 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Galactic
+Pic: Galactic Grunt F
+Music: Galactic
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_GALACTIC_GRUNTS
 
 === TRAINER_PBL_GALACTIC_GRUNT_30_7 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Galactic
+Pic: Galactic Grunt F
+Music: Galactic
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_GALACTIC_GRUNTS
 
 === TRAINER_PBL_GALACTIC_GRUNT_30_8 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Grunt
+Class: Galactic
+Pic: Galactic Grunt F
+Music: Galactic
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_GALACTIC_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_30_1 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_ROCKET_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_30_2 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_ROCKET_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_30_3 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_ROCKET_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_30_4 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_ROCKET_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_30_5 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_ROCKET_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_30_6 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_ROCKET_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_30_7 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_ROCKET_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_30_8 ===
-Name: Proton
-Class: Rainbow Rocket Executive
-Pic: Proton
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
-
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_30_ROCKET_GRUNTS
 
 === TRAINER_PBL_PROTON_BOSS_30 ===
 Name: Proton
@@ -5049,110 +5016,72 @@ Mugshot: Blue
 
 Bulbasaur
 
-=== TRAINER_PBL_LEAF_PARTNER_30 ===
-Name: Leaf
-Class: Rival
-Pic: Leaf
-Music: Female
-AI: AI_FLAG_BOSS
-
-Bulbasaur
-
-=== TRAINER_PBL_WALLY_PARTNER_30 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
-Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
-
-=== TRAINER_PBL_SERENA_PARTNER_30 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
-Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
-
 === TRAINER_PBL_MARS_BOSS_30 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Mars
+Class: Galactic Commander
+Pic: Mars
+Music: Galactic
 AI: AI_FLAG_BOSS
-Double Battle: No
 Mugshot: Blue
 
 Bulbasaur
 
 === TRAINER_PBL_JUPITER_BOSS_30 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Jupiter
+Class: Galactic Commander
+Pic: Jupiter
+Music: Galactic
 AI: AI_FLAG_BOSS
-Double Battle: No
 Mugshot: Blue
 
 Bulbasaur
 
 === TRAINER_PBL_COURTNEY_BOSS_30 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Courtney
+Class: Magma Admin
+Pic: Magma Admin F
+Music: Magma
 AI: AI_FLAG_BOSS
-Double Battle: No
 Mugshot: Blue
 
 Bulbasaur
 
 === TRAINER_PBL_TABITHA_BOSS_30 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Tabitha
+Class: Magma Admin
+Pic: Magma Admin
+Music: Magma
 AI: AI_FLAG_BOSS
-Double Battle: No
 Mugshot: Blue
 
 Bulbasaur
 
 === TRAINER_PBL_MATT_BOSS_30 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Matt
+Class: Aqua Admin
+Pic: Aqua Admin M
+Music: Aqua
 AI: AI_FLAG_BOSS
-Double Battle: No
 Mugshot: Blue
 
 Bulbasaur
 
 === TRAINER_PBL_SHELLY_BOSS_30 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Shelly
+Class: Aqua Admin
+Pic: Aqua Admin M
+Music: Aqua
 AI: AI_FLAG_BOSS
-Double Battle: No
 Mugshot: Blue
 
 Bulbasaur
 
 === TRAINER_PBL_ARCHER_BOSS_30 ===
-Name: Ariana
+Name: Archer
 Class: Rainbow Rocket Executive
-Pic: Ariana
+Pic: Archer
 Music: Rocket
 AI: AI_FLAG_BOSS
-Double Battle: No
 Mugshot: Blue
 
 Bulbasaur
@@ -5163,555 +5092,524 @@ Class: Rainbow Rocket Executive
 Pic: Ariana
 Music: Rocket
 AI: AI_FLAG_BOSS
-Double Battle: No
 Mugshot: Blue
 
 Bulbasaur
 
 === TRAINER_PBL_GABRIEL ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Gabriel
+Class: Cooltrainer
+Pic: Ace Trainer M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_OLIVIA ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Olivia
+Class: Cooltrainer
+Pic: Ace Trainer F
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_JACOB ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Jacob
+Class: Cooltrainer
+Pic: Ace Trainer M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_ROSANNE ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Rosanne
+Class: Cooltrainer
+Pic: Ace Trainer F
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_REED ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Reed
+Class: Cooltrainer
+Pic: Ace Trainer M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_MARGO ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Margo
+Class: Cooltrainer
+Pic: Ace Trainer F
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_ISAIAH ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Isaiah
+Class: Cooltrainer
+Pic: Ace Trainer M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_HALEY ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Haley
+Class: Cooltrainer
+Pic: Ace Trainer F
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_TRENT ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Trent
+Class: Cooltrainer
+Pic: Ace Trainer M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_FABIOLA ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Fabiola
+Class: Cooltrainer
+Pic: Ace Trainer F
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_HIDEO ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Hideo
+Class: Cooltrainer
+Pic: Ace Trainer M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_MADELINE ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Madeline
+Class: Cooltrainer
+Pic: Ace Trainer M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_JARED ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Gabriel
+Class: Cooltrainer
+Pic: Ace Trainer M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_LILA ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Gabriel
+Class: Cooltrainer
+Pic: Ace Trainer M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_HECTOR ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Gabriel
+Class: Cooltrainer
+Pic: Ace Trainer M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_ANDROMEDA ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
-AI: AI_FLAG_BOSS
+Name: Gabriel
+Class: Cooltrainer
+Pic: Ace Trainer M
+Music: Cool
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 4
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_LEAF_BOSS_31 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Leaf
+Class: Rival
+Pic: Leaf
+Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
-Mugshot: Blue
+Mugshot: Pink
 
 Bulbasaur
 
 === TRAINER_PBL_WALLY_BOSS_32 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Wally
+Class: Rival
+Pic: Wally
+Music: Male
 AI: AI_FLAG_BOSS
 Double Battle: No
-Mugshot: Blue
+Mugshot: Pink
 
 Bulbasaur
 
 === TRAINER_PBL_SERENA_BOSS_32 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Serena
+Class: Rival
+Pic: Serena
+Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
-Mugshot: Blue
+Mugshot: Pink
 
 Bulbasaur
 
 === TRAINER_PBL_ROCKET_GRUNT_34_1 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_2 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_3 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_4 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_5 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_6 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_7 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_8 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_9 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_10 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_11 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_12 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_13 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_14 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_15 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_16 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_17 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_18 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_19 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_20 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_21 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_22 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_23 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_24 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_25 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_26 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_27 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_28 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_29 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_ROCKET_GRUNT_34_30 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Grunt
+Class: Rainbow Rocket
+Pic: Rainbow Rocket Grunt F
 Music: Rocket
-AI: AI_FLAG_BOSS
+AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Mugshot: Blue
-
-Bulbasaur
+Party Size: 2
+Copy Pool: TRAINER_POOL_ZONE_34_GRUNTS
 
 === TRAINER_PBL_MAXIE_BOSS_34 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Maxie
+Class: Magma Leader
+Pic: Magma Leader Maxie
+Music: Magma
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Blue
@@ -5719,10 +5617,10 @@ Mugshot: Blue
 Bulbasaur
 
 === TRAINER_PBL_ARCHIE_BOSS_34 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Archie
+Class: Aqua Leader
+Pic: Aqua Leader Archie
+Music: Aqua
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Blue
@@ -5730,20 +5628,20 @@ Mugshot: Blue
 Bulbasaur
 
 === TRAINER_PBL_CYRUS_BOSS_34 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Cyrus
+Class: Galactic Boss
+Pic: Cyrus
+Music: Galactic
 AI: AI_FLAG_BOSS
-Double Battle: No
+Double Battle: Yes
 Mugshot: Blue
 
 Bulbasaur
 
 === TRAINER_PBL_GIOVANNI_BOSS_34 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
+Name: Giovanni
+Class: Rainbow Rocket Boss
+Pic: Rainbow Rocket Giovanni
 Music: Rocket
 AI: AI_FLAG_BOSS
 Double Battle: No
@@ -10985,6 +10883,56 @@ Party Size: 1
 Bulbasaur
 
 === TRAINER_POOL_ZONE_29 ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_30_AQUA_GRUNTS ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_30_MAGMA_GRUNTS ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_30_GALACTIC_GRUNTS ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_30_ROCKET_GRUNTS ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Bulbasaur
+
+=== TRAINER_POOL_ZONE_31_AND_32 ===
 Name: Trainer Pool
 Class: Champion
 Pic: Champion Wallace
