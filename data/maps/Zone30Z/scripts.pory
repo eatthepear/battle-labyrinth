@@ -8,13 +8,16 @@ script Zone30Z_EventScript_Attendant {
 		special(SetDeptStoreFloor)
 	}
 	setvar(VAR_0x8004, 0)
-	message(format("Welcome to LILYCOVE DEPARTMENT STORE.\pWhich floor would you like?"))
+	message(format("Welcome to {COLOR GREEN}Rainbow Rocket Co.{COLOR DARK_GRAY}\pWhich floor would you like?"))
 	waitmessage
-	dynmultipush("5F", 5)
-	dynmultipush("4F", 4)
-	dynmultipush("3F", 3)
-	dynmultipush("2F", 2)
-	dynmultipush("1F", 1)
+	dynmultipush("8F - RR", 8)
+	dynmultipush("7F - Galactic", 7)
+	dynmultipush("6F - Galactic", 6)
+	dynmultipush("5F - Magma", 5)
+	dynmultipush("4F - Magma", 4)
+	dynmultipush("3F - Aqua", 3)
+	dynmultipush("2F - Aqua", 2)
+	dynmultipush("1F - Lobby", 1)
 	dynmultipush("Exit", 0)
 	dynmultistack(0, 0, FALSE, 6, FALSE, VAR_ZONE_30_FLOOR, DYN_MULTICHOICE_CB_NONE)
 	switch(var(VAR_RESULT)) {
@@ -39,20 +42,41 @@ script Zone30Z_EventScript_Attendant {
 				call(Zone30Z_EventScript_MoveElevator)
 				setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_3F)
 			}
-		// case 4:
-		// 	setvar(VAR_0x8006, ZONE30_FLOORNUM_4F)
-		// 	setdynamicwarp(MAP_ZONE30D, 2, 1)
-		// 	if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_4F) {
-		// 		call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
-		// 		setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_4F)
-		// 	}
-		// case 5:
-		// 	setvar(VAR_0x8006, ZONE30_FLOORNUM_5F)
-		// 	setdynamicwarp(MAP_ZONE30E, 2, 1)
-		// 	if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_5F) {
-		// 		call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
-		// 		setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_5F)
-		// 	}
+		case 4:
+			setvar(VAR_0x8006, ZONE30_FLOORNUM_4F)
+			setdynamicwarp(MAP_ZONE30D, 0)
+			if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_4F) {
+				call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
+				setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_4F)
+			}
+		case 5:
+			setvar(VAR_0x8006, ZONE30_FLOORNUM_5F)
+			setdynamicwarp(MAP_ZONE30E, 0)
+			if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_5F) {
+				call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
+				setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_5F)
+			}
+		case 6:
+			setvar(VAR_0x8006, ZONE30_FLOORNUM_6F)
+			setdynamicwarp(MAP_ZONE30F, 0)
+			if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_6F) {
+				call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
+				setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_6F)
+			}
+		case 7:
+			setvar(VAR_0x8006, ZONE30_FLOORNUM_7F)
+			setdynamicwarp(MAP_ZONE30G, 0)
+			if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_7F) {
+				call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
+				setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_7F)
+			}
+		case 8:
+			setvar(VAR_0x8006, ZONE30_FLOORNUM_8F)
+			setdynamicwarp(MAP_ZONE30H, 0)
+			if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_8F) {
+				call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
+				setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_8F)
+			}
 	}
 	release
 	end
