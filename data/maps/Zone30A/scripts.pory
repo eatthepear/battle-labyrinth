@@ -1,1 +1,98 @@
 mapscripts Zone30A_MapScripts {}
+
+// template door script
+script Zone30_EventScript_Door1 {
+	lockall
+	setvar(VAR_TEMP_1, 1) // 1 = magma, 2 = aqua, 3 = galactic, 4 = rocket
+	// setvar VAR_0x8004, FLAG_SILPH_4F_DOOR_1
+    // if (flag(FLAG_SILPH_4F_DOOR_1)) {
+    //     goto(Zone30_EventScript_DoorUnlocked)
+    // }
+    call(Zone30_EventScript_CheckCanOpenDoor)
+	// call(EventScript_Open2FDoor1)
+	waitse
+	playse(SE_UNLOCK)
+	special(DrawWholeMapView)
+	waitse
+	// special(SetHiddenItemFlag)
+	releaseall
+	end
+}
+
+script Zone30_EventScript_CheckCanOpenDoor {
+    if (!checkitem(ITEM_CARD_KEY)) {
+        msgbox(format("No!\nIt needs a CARD KEY!"))
+        releaseall
+        end
+    }
+    switch (var(VAR_TEMP_1)) {
+        case 1:
+            if (var(VAR_ZONE_30_STATE) < 1) {
+                msgbox(format("Your Card Key isn't registered for this floor!"))
+                releaseall
+                end
+            }
+        case 2:
+            if (var(VAR_ZONE_30_STATE) < 1) {
+                msgbox(format("Your Card Key isn't registered for this floor!"))
+                releaseall
+                end
+            }
+        case 3:
+            if (var(VAR_ZONE_30_STATE) < 1) {
+                msgbox(format("Your Card Key isn't registered for this floor!"))
+                releaseall
+                end
+            }
+        case 4:
+            if (var(VAR_ZONE_30_STATE) < 1) {
+                msgbox(format("Your Card Key isn't registered for this floor!"))
+                releaseall
+                end
+            }
+    }
+	playfanfare(MUS_LEVEL_UP)
+	msgbox(format("Bingo!\nThe CARD KEY opened the door!"))
+	waitfanfare
+    return
+}
+
+script Zone30_EventScript_DoorUnlocked {
+	msgbox(format("The door is open…"))
+	releaseall
+	end
+}
+
+// EventScript_Close2FDoor1::
+// 	setmetatile 5, 8, METATILE_SilphCo_HorizontalBarrier_TopLeft, 1
+// 	setmetatile 6, 8, METATILE_SilphCo_HorizontalBarrier_TopRight, 1
+// 	setmetatile 5, 9, METATILE_SilphCo_HorizontalBarrier_BottomLeft, 1
+// 	setmetatile 6, 9, METATILE_SilphCo_HorizontalBarrier_BottomRight, 1
+// 	setmetatile 6, 10, METATILE_SilphCo_Floor_ShadeFull, 0
+// 	return
+
+// EventScript_Open2FDoor1::
+// 	setmetatile 5, 8, METATILE_SilphCo_Floor_ShadeFull, 0
+// 	setmetatile 6, 8, METATILE_SilphCo_Floor, 0
+// 	setmetatile 5, 9, METATILE_SilphCo_Floor_ShadeFull, 0
+// 	setmetatile 6, 9, METATILE_SilphCo_Floor, 0
+// 	setmetatile 6, 10, METATILE_SilphCo_Floor, 0
+// 	return
+
+// EventScript_Close3FDoor1::
+// 	setmetatile 9, 11, METATILE_SilphCo_VerticalBarrier_TopLeft, 1
+// 	setmetatile 10, 11, METATILE_SilphCo_VerticalBarrier_TopRight, 1
+// 	setmetatile 9, 12, METATILE_SilphCo_VerticalBarrier_MidLeft, 1
+// 	setmetatile 10, 12, METATILE_SilphCo_VerticalBarrier_MidRight, 1
+// 	setmetatile 9, 13, METATILE_SilphCo_VerticalBarrier_BottomLeft, 1
+// 	setmetatile 10, 13, METATILE_SilphCo_VerticalBarrier_BottomRight, 1
+// 	return
+
+// EventScript_Open3FDoor1::
+// 	setmetatile 9, 11, METATILE_SilphCo_Wall_LeftEdge, 1
+// 	setmetatile 10, 11, METATILE_SilphCo_Wall_RightEdge, 1
+// 	setmetatile 9, 12, METATILE_SilphCo_Floor_ShadeFull, 0
+// 	setmetatile 10, 12, METATILE_SilphCo_Floor_ShadeFull, 0
+// 	setmetatile 9, 13, METATILE_SilphCo_Floor_WallLeftCorner, 0
+// 	setmetatile 10, 13, METATILE_SilphCo_Floor_WallRightCorner, 0
+// 	return
