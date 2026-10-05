@@ -1584,6 +1584,10 @@ static const struct SpriteFrameImage sPicTable_AceTrainerF[] = {
     overworld_ascending_frames(gObjectEventPic_AceTrainerF, 4, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Lacey[] = {
+    overworld_ascending_frames(gObjectEventPic_Lacey, 2, 4),
+};
+
 #if IS_FRLG
 
 static const struct SpriteFrameImage sPicTable_RedNormal[] = {

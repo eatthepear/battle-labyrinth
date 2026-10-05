@@ -460,6 +460,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ServerM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ServerF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AceTrainerM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AceTrainerF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lacey;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -759,6 +760,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SERVER_F] =                 &gObjectEventGraphicsInfo_ServerF,
     [OBJ_EVENT_GFX_ACE_TRAINER_M] =            &gObjectEventGraphicsInfo_AceTrainerM,
     [OBJ_EVENT_GFX_ACE_TRAINER_F] =            &gObjectEventGraphicsInfo_AceTrainerF,
+    [OBJ_EVENT_GFX_LACEY] =                    &gObjectEventGraphicsInfo_Lacey,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
