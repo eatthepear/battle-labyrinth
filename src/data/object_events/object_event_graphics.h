@@ -575,6 +575,10 @@ const u32 gObjectEventPic_ServerM[] = INCGFX_U32("graphics/object_events/pics/pe
 const u16 gObjectEventPal_ServerM[] = INCGFX_U16("graphics/object_events/pics/people/server_m.png", ".gbapal");
 const u32 gObjectEventPic_ServerF[] = INCGFX_U32("graphics/object_events/pics/people/server_f.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPal_ServerF[] = INCGFX_U16("graphics/object_events/pics/people/server_f.png", ".gbapal");
+const u32 gObjectEventPic_AceTrainerM[] = INCGFX_U32("graphics/object_events/pics/people/ace_trainer_m.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_AceTrainerM[] = INCGFX_U16("graphics/object_events/pics/people/ace_trainer_m.png", ".gbapal");
+const u32 gObjectEventPic_AceTrainerF[] = INCGFX_U32("graphics/object_events/pics/people/ace_trainer_f.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_AceTrainerF[] = INCGFX_U16("graphics/object_events/pics/people/ace_trainer_f.png", ".gbapal");
 
 const u32 gFieldEffectObjectPic_SnowFootprints[] = INCGFX_U32("graphics/field_effects/pics/snow_footprints.png", ".4bpp");
 #if IS_FRLG
