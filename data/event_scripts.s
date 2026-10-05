@@ -1838,7 +1838,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/Zone19D/scripts.inc"
 
-	.include "data/maps/Zone20A/scripts.inc"
+	.include "data/maps/Zone20A_Old/scripts.inc"
 
 	.include "data/maps/Zone21A/scripts.inc"
 
@@ -1894,7 +1894,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/Zone9H/scripts.inc"
 
-	.include "data/maps/Zone20B/scripts.inc"
+	.include "data/maps/Zone20B_Old/scripts.inc"
 
 	.include "data/maps/Zone10C/scripts.inc"
 
@@ -1936,9 +1936,9 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/Zone15C/scripts.inc"
 
-	.include "data/maps/Zone20A_New/scripts.inc"
+	.include "data/maps/Zone20A/scripts.inc"
 
-	.include "data/maps/Zone20B_New/scripts.inc"
+	.include "data/maps/Zone20B/scripts.inc"
 
 	.include "data/maps/Zone29A/scripts.inc"
 

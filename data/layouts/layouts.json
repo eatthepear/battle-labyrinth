@@ -5392,14 +5392,14 @@
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_ZONE20A",
-      "name": "Zone20A_Layout",
+      "id": "LAYOUT_ZONE20A_Old",
+      "name": "Zone20A_Old_Layout",
       "width": 49,
       "height": 83,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
-      "border_filepath": "data/layouts/Zone20A/border.bin",
-      "blockdata_filepath": "data/layouts/Zone20A/map.bin",
+      "border_filepath": "data/layouts/Zone20A_Old/border.bin",
+      "blockdata_filepath": "data/layouts/Zone20A_Old/map.bin",
       "layout_version": "emerald"
     },
     {
@@ -5700,14 +5700,14 @@
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_ZONE20B",
-      "name": "Zone20B_Layout",
+      "id": "LAYOUT_ZONE20B_Old",
+      "name": "Zone20B_Old_Layout",
       "width": 25,
       "height": 25,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
-      "border_filepath": "data/layouts/Zone20B/border.bin",
-      "blockdata_filepath": "data/layouts/Zone20B/map.bin",
+      "border_filepath": "data/layouts/Zone20B_Old/border.bin",
+      "blockdata_filepath": "data/layouts/Zone20B_Old/map.bin",
       "layout_version": "emerald"
     },
     {
@@ -10403,24 +10403,24 @@
       "layout_version": "frlg"
     },
     {
-      "id": "LAYOUT_ZONE20A_NEW",
-      "name": "Zone20A_New_Layout",
+      "id": "LAYOUT_ZONE20A",
+      "name": "Zone20A_Layout",
       "width": 46,
       "height": 35,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_GymsExterior",
-      "border_filepath": "data/layouts/Zone20A_New/border.bin",
-      "blockdata_filepath": "data/layouts/Zone20A_New/map.bin"
+      "border_filepath": "data/layouts/Zone20A/border.bin",
+      "blockdata_filepath": "data/layouts/Zone20A/map.bin"
     },
     {
-      "id": "LAYOUT_ZONE20B_NEW",
-      "name": "Zone20B_New_Layout",
+      "id": "LAYOUT_ZONE20B",
+      "name": "Zone20B_Layout",
       "width": 40,
       "height": 19,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_Restaurant",
-      "border_filepath": "data/layouts/Zone20B_New/border.bin",
-      "blockdata_filepath": "data/layouts/Zone20B_New/map.bin"
+      "border_filepath": "data/layouts/Zone20B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone20B/map.bin"
     },
     {
       "id": "LAYOUT_ZONE29A",
