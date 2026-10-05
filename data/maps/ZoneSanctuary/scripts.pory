@@ -417,11 +417,10 @@ script EventScript_NextZone {
 			warp(MAP_ZONE29A, 255, 11, 17)
 		case 30:
 			warp(MAP_ZONE30A, 255, 48, 12)
-			waitstate
 		// case 31:
 			// warp(MAP_ZONE31A, 255, 11, 17)
-		// case 33:
-			// warp(MAP_ZONE33A, 255, 11, 17)
+		case 33:
+			warp(MAP_ZONE33A, 255, 5, 10)
 		// case 35:
 			// warp(MAP_ZONE35A, 255, 11, 17)
 	}

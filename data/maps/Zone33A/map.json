@@ -2,7 +2,7 @@
   "id": "MAP_ZONE33A",
   "name": "Zone33A",
   "layout": "LAYOUT_ZONE33A",
-  "music": "MUS_DUMMY",
+  "music": "MUS_DP_GALACTIC_HQ_BASEMENT",
   "region_map_section": "MAPSEC_ZONE_33",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -13,7 +13,34 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "SPECIES_PORYGON_Z",
+      "x": 15,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_CHASE_PLAYER_OWE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_OW_WILD_ENCOUNTER",
+      "trainer_sight_or_berry_tree_id": "65",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_2"
+    },
+    {
+      "graphics_id": "SPECIES_PORYGON_Z",
+      "x": 31,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_CHASE_PLAYER_OWE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_OW_WILD_ENCOUNTER",
+      "trainer_sight_or_berry_tree_id": "65",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_1"
+    }
+  ],
   "warp_events": [],
   "coord_events": [],
   "bg_events": []
