@@ -7,10 +7,9 @@ script Zone30Z_EventScript_Attendant {
 	if (!flag(FLAG_TEMP_2)) {
 		special(SetDeptStoreFloor)
 	}
-	copyvar(VAR_0x8005, VAR_ZONE_30_FLOOR)
+	setvar(VAR_0x8004, 0)
 	message(format("Welcome to LILYCOVE DEPARTMENT STORE.\pWhich floor would you like?"))
 	waitmessage
-	setvar(VAR_0x8004, 0)
 	dynmultipush("5F", 5)
 	dynmultipush("4F", 4)
 	dynmultipush("3F", 3)
@@ -23,23 +22,23 @@ script Zone30Z_EventScript_Attendant {
 			setvar(VAR_0x8006, ZONE30_FLOORNUM_1F)
 			setdynamicwarp(MAP_ZONE30A, 0)
 			if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_1F) {
-				call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
+				call(Zone30Z_EventScript_MoveElevator)
 				setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_1F)
 			}
-		// case 2:
-		// 	setvar(VAR_0x8006, ZONE30_FLOORNUM_2F)
-		// 	setdynamicwarp(MAP_ZONE30B, 2, 1)
-		// 	if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_2F) {
-		// 		call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
-		// 		setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_2F)
-		// 	}
-		// case 3:
-		// 	setvar(VAR_0x8006, ZONE30_FLOORNUM_3F)
-		// 	setdynamicwarp(MAP_ZONE30C, 2, 1)
-		// 	if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_3F) {
-		// 		call(LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator)
-		// 		setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_3F)
-		// 	}
+		case 2:
+			setvar(VAR_0x8006, ZONE30_FLOORNUM_2F)
+			setdynamicwarp(MAP_ZONE30B, 0)
+			if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_2F) {
+				call(Zone30Z_EventScript_MoveElevator)
+				setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_2F)
+			}
+		case 3:
+			setvar(VAR_0x8006, ZONE30_FLOORNUM_3F)
+			setdynamicwarp(MAP_ZONE30C, 0)
+			if (var(VAR_ZONE_30_FLOOR) != ZONE30_FLOORNUM_3F) {
+				call(Zone30Z_EventScript_MoveElevator)
+				setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_3F)
+			}
 		// case 4:
 		// 	setvar(VAR_0x8006, ZONE30_FLOORNUM_4F)
 		// 	setdynamicwarp(MAP_ZONE30D, 2, 1)
@@ -57,4 +56,14 @@ script Zone30Z_EventScript_Attendant {
 	}
 	release
 	end
+}
+
+script Zone30Z_EventScript_MoveElevator {
+	closemessage
+	applymovement(VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown)
+	waitmovement(0)
+	waitse
+	special(MoveElevator)
+	setflag(FLAG_TEMP_2)
+	return
 }

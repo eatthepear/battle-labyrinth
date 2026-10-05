@@ -2005,3 +2005,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Zone30A/scripts.inc"
 
 	.include "data/maps/Zone30Z/scripts.inc"
+
+	.include "data/maps/Zone30B/scripts.inc"
+
+	.include "data/maps/Zone30C/scripts.inc"

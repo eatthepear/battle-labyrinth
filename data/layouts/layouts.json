@@ -10753,6 +10753,28 @@
       "border_filepath": "data/layouts/Zone30Z/border.bin",
       "blockdata_filepath": "data/layouts/Zone30Z/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ZONE30B",
+      "name": "Zone30B_Layout",
+      "width": 50,
+      "height": 40,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_RocketCo",
+      "border_filepath": "data/layouts/Zone30B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone30B/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ZONE30C",
+      "name": "Zone30C_Layout",
+      "width": 50,
+      "height": 40,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_RocketCo",
+      "border_filepath": "data/layouts/Zone30C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone30C/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
