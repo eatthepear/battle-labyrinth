@@ -14858,8 +14858,8 @@ const struct ItemInfo gItemsInfo[] =
         .price = 0,
         .description = COMPOUND_STRING(
             "A card-type door\n"
-            "key used in Silph\n"
-            "Co's office."),
+            "key used in Rocket\n"
+            "Co."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
