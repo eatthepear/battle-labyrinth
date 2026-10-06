@@ -1159,6 +1159,8 @@ static void Task_OptionMenuProcessInput(u8 taskId)
 static void Task_OptionMenuSave(u8 taskId)
 {
     SetCurrentDifficultyLevel(sOptions->sel_general[MENUITEM_GENERAL_DIFFICULTY]);
+    if (GetCurrentDifficultyLevel() != DIFFICULTY_BRUTAL)
+        FlagClear(FLAG_TRUE_BRUTAL);
     gSaveBlock2Ptr->optionsTextSpeed        = sOptions->sel_general[MENUITEM_GENERAL_TEXTSPEED];
     gSaveBlock2Ptr->optionsBattleSceneOff   = sOptions->sel_general[MENUITEM_GENERAL_BATTLESCENE];
     gSaveBlock2Ptr->optionsBattleStyle      = sOptions->sel_general[MENUITEM_GENERAL_BATTLESTYLE];
