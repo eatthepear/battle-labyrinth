@@ -583,6 +583,8 @@ const u32 gObjectEventPic_Lacey[] = INCGFX_U32("graphics/object_events/pics/peop
 const u16 gObjectEventPal_Lacey[] = INCGFX_U16("graphics/object_events/pics/people/lacey.png", ".gbapal");
 const u16 gObjectEventPic_Koga[] = INCGFX_U16("graphics/object_events/pics/people/koga.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPal_Koga[] = INCGFX_U16("graphics/object_events/pics/people/koga.png", ".gbapal");
+const u32 gObjectEventPic_Shauntal[] = INCGFX_U32("graphics/object_events/pics/people/shauntal.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_Shauntal[] = INCGFX_U16("graphics/object_events/pics/people/shauntal.png", ".gbapal");
 
 const u32 gFieldEffectObjectPic_SnowFootprints[] = INCGFX_U32("graphics/field_effects/pics/snow_footprints.png", ".4bpp");
 #if IS_FRLG

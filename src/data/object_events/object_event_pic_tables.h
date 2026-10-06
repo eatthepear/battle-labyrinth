@@ -1600,6 +1600,10 @@ static const struct SpriteFrameImage sPicTable_Koga[] = {
     overworld_frame(gObjectEventPic_Koga, 2, 4, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_Shauntal[] = {
+    overworld_ascending_frames(gObjectEventPic_Shauntal, 2, 4),
+};
+
 #if IS_FRLG
 
 static const struct SpriteFrameImage sPicTable_RedNormal[] = {

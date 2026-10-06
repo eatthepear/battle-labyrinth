@@ -594,6 +594,9 @@ const u16 gTrainerPalette_AceTrainerF[] = INCGFX_U16("graphics/trainers/front_pi
 const u32 gTrainerFrontPic_Lacey[] = INCGFX_U32("graphics/trainers/front_pics/lacey.png", ".4bpp.smol");
 const u16 gTrainerPalette_Lacey[] = INCGFX_U16("graphics/trainers/front_pics/lacey.png", ".gbapal");
 
+const u32 gTrainerFrontPic_Shauntal[] = INCGFX_U32("graphics/trainers/front_pics/shauntal.png", ".4bpp.smol");
+const u16 gTrainerPalette_Shauntal[] = INCGFX_U16("graphics/trainers/front_pics/shauntal.png", ".gbapal");
+
 static const union AnimCmd sAnimCmd_Hoenn[] =
 {
     ANIMCMD_FRAME(0, 24),
@@ -1473,5 +1476,9 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     [TRAINER_PIC_LACEY] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Lacey, gTrainerPalette_Lacey),
+    },
+    [TRAINER_PIC_SHAUNTAL] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Shauntal, gTrainerPalette_Shauntal),
     },
 };
