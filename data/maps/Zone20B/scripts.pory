@@ -201,7 +201,7 @@ script Zone20B_EventScript_StartBossBattle {
             applymovement(LOCALID_CRESS, Common_Movement_WalkLeft)
             waitmovement(0)
             special(RemoveCameraObject)
-	        multi_2_vs_2(TRAINER_PBL_CHILI_BOSS_20, Zone20B_Text_Chili_Defeated, TRAINER_PBL_CRESS_BOSS_20, Zone20B_Text_Cress_Defeated, PARTNER_PBL_CILAN_BOSS_20)
+	        multi_2_vs_2(TRAINER_PBL_CHILI_BOSS_20, Zone20B_Text_Chili_Defeated, TRAINER_PBL_CRESS_BOSS_20, Zone20B_Text_Cress_Defeated, PARTNER_PBL_CILAN_20)
         case 2:
             applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
             applymovement(LOCALID_CHILI, Common_Movement_WalkRight)
@@ -209,7 +209,7 @@ script Zone20B_EventScript_StartBossBattle {
             applymovement(LOCALID_CRESS, Common_Movement_WalkLeft)
             waitmovement(0)
             special(RemoveCameraObject)
-	        multi_2_vs_2(TRAINER_PBL_CILAN_BOSS_20, Zone20B_Text_Cilan_Defeated, TRAINER_PBL_CRESS_BOSS_20, Zone20B_Text_Cress_Defeated, PARTNER_PBL_CHILI_BOSS_20)
+	        multi_2_vs_2(TRAINER_PBL_CILAN_BOSS_20, Zone20B_Text_Cilan_Defeated, TRAINER_PBL_CRESS_BOSS_20, Zone20B_Text_Cress_Defeated, PARTNER_PBL_CHILI_20)
         case 3:
             applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
             applymovement(LOCALID_CRESS, Common_Movement_WalkRight)
@@ -217,7 +217,7 @@ script Zone20B_EventScript_StartBossBattle {
             applymovement(LOCALID_CHILI, Common_Movement_WalkLeft)
             waitmovement(0)
             special(RemoveCameraObject)
-	        multi_2_vs_2(TRAINER_PBL_CILAN_BOSS_20, Zone20B_Text_Cilan_Defeated, TRAINER_PBL_CHILI_BOSS_20, Zone20B_Text_Chili_Defeated, PARTNER_PBL_CRESS_BOSS_20)
+	        multi_2_vs_2(TRAINER_PBL_CILAN_BOSS_20, Zone20B_Text_Cilan_Defeated, TRAINER_PBL_CHILI_BOSS_20, Zone20B_Text_Chili_Defeated, PARTNER_PBL_CRESS_20)
     }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
     setspeaker("Cori")

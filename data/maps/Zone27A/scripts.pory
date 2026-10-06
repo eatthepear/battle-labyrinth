@@ -95,7 +95,7 @@ script Zone27A_EventScript_TriggerTagBattle {
             applymovement(LOCALID_SERENA_27A, Common_Movement_WalkLeft)
             waitmovement(0)
             special(RemoveCameraObject)
-	        multi_2_vs_2(TRAINER_PBL_WALLY_BOSS_27, Zone27A_Text_Wally_Defeated, TRAINER_PBL_SERENA_BOSS_27, Zone27A_Text_Serena_Defeated, PARTNER_PBL_LEAF_BOSS_27)
+	        multi_2_vs_2(TRAINER_PBL_WALLY_BOSS_27, Zone27A_Text_Wally_Defeated, TRAINER_PBL_SERENA_BOSS_27, Zone27A_Text_Serena_Defeated, PARTNER_PBL_LEAF_27)
         case 2:
             applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
             applymovement(LOCALID_WALLY_27A, Common_Movement_WalkRight)
@@ -103,7 +103,7 @@ script Zone27A_EventScript_TriggerTagBattle {
             applymovement(LOCALID_SERENA_27A, Common_Movement_WalkLeft)
             waitmovement(0)
             special(RemoveCameraObject)
-	        multi_2_vs_2(TRAINER_PBL_LEAF_BOSS_27, Zone27A_Text_Leaf_Defeated, TRAINER_PBL_SERENA_BOSS_27, Zone27A_Text_Serena_Defeated, PARTNER_PBL_WALLY_BOSS_27)
+	        multi_2_vs_2(TRAINER_PBL_LEAF_BOSS_27, Zone27A_Text_Leaf_Defeated, TRAINER_PBL_SERENA_BOSS_27, Zone27A_Text_Serena_Defeated, PARTNER_PBL_WALLY_27)
         case 3:
             applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
             applymovement(LOCALID_SERENA_27A, Common_Movement_WalkRight)
@@ -111,7 +111,7 @@ script Zone27A_EventScript_TriggerTagBattle {
             applymovement(LOCALID_WALLY_27A, Common_Movement_WalkLeft)
             waitmovement(0)
             special(RemoveCameraObject)
-	        multi_2_vs_2(TRAINER_PBL_LEAF_BOSS_27, Zone27A_Text_Leaf_Defeated, TRAINER_PBL_WALLY_BOSS_27, Zone27A_Text_Wally_Defeated, PARTNER_PBL_SERENA_BOSS_27)
+	        multi_2_vs_2(TRAINER_PBL_LEAF_BOSS_27, Zone27A_Text_Leaf_Defeated, TRAINER_PBL_WALLY_BOSS_27, Zone27A_Text_Wally_Defeated, PARTNER_PBL_SERENA_27)
     }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
     setspeaker("Cori")
