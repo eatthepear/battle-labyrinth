@@ -35,6 +35,7 @@ enum
     MENUITEM_GENERAL_DIFFICULTY,
     MENUITEM_GENERAL_TEXTSPEED,
     MENUITEM_GENERAL_BATTLESCENE,
+    MENUITEM_GENERAL_BATTLESTYLE,
     MENUITEM_GENERAL_BUTTONMODE,
     MENUITEM_GENERAL_FRAMETYPE,
     MENUITEM_GENERAL_CANCEL,
@@ -45,7 +46,6 @@ enum
 enum
 {
     MENUITEM_QOL_SAVEPROMPTS,
-    MENUITEM_QOL_BATTLESTYLE,
     MENUITEM_QOL_CANCEL,
     MENUITEM_QOL_COUNT,
 };
@@ -237,6 +237,7 @@ struct // MENU_GENERAL
 {
     [MENUITEM_GENERAL_DIFFICULTY]   = {DrawChoices_Difficulty,  ProcessInput_Options_Four},
     [MENUITEM_GENERAL_TEXTSPEED]    = {DrawChoices_TextSpeed,   ProcessInput_Options_Four},
+    [MENUITEM_GENERAL_BATTLESTYLE]  = {DrawChoices_BattleStyle, ProcessInput_Options_Two},
     [MENUITEM_GENERAL_BATTLESCENE]  = {DrawChoices_BattleScene, ProcessInput_Options_Two},
     [MENUITEM_GENERAL_BUTTONMODE]   = {DrawChoices_ButtonMode,  ProcessInput_Options_Three},
     // [MENUITEM_GENERAL_UNIT_SYSTEM]  = {DrawChoices_UnitSystem,  ProcessInput_Options_Two},
@@ -251,7 +252,6 @@ struct // MENU_QOL
 } static const sItemFunctionsQOL[MENUITEM_QOL_COUNT] =
 {
     [MENUITEM_QOL_SAVEPROMPTS]  = {DrawChoices_SavePrompts, ProcessInput_Options_Two},
-    [MENUITEM_QOL_BATTLESTYLE]  = {DrawChoices_BattleStyle, ProcessInput_Options_Two},
     // [MENUITEM_QOL_HP_BAR]       = {DrawChoices_BarSpeed,    ProcessInput_Options_Eleven},
     // [MENUITEM_QOL_EXP_BAR]      = {DrawChoices_BarSpeed,    ProcessInput_Options_Eleven},
     // [MENUITEM_QOL_FONT]         = {DrawChoices_Font,        ProcessInput_Options_Two}, 
@@ -275,6 +275,7 @@ static const u8 *const sOptionMenuItemsNamesGeneral[MENUITEM_GENERAL_COUNT] =
     [MENUITEM_GENERAL_DIFFICULTY]  = COMPOUND_STRING("Difficulty"),
     [MENUITEM_GENERAL_TEXTSPEED]   = COMPOUND_STRING("Speed"),
     [MENUITEM_GENERAL_BATTLESCENE] = COMPOUND_STRING("Battle Scene"),
+    [MENUITEM_GENERAL_BATTLESTYLE] = COMPOUND_STRING("Battle Style"),
     [MENUITEM_GENERAL_BUTTONMODE]  = COMPOUND_STRING("Button Mode"),
     // [MENUITEM_GENERAL_UNIT_SYSTEM] = sText_UnitSystem,
     [MENUITEM_GENERAL_FRAMETYPE]   = COMPOUND_STRING("Frame"),
@@ -284,7 +285,6 @@ static const u8 *const sOptionMenuItemsNamesGeneral[MENUITEM_GENERAL_COUNT] =
 static const u8 *const sOptionMenuItemsNamesQOL[MENUITEM_QOL_COUNT] =
 {
     [MENUITEM_QOL_SAVEPROMPTS] = COMPOUND_STRING("Save Prompts"),
-    [MENUITEM_QOL_BATTLESTYLE] = COMPOUND_STRING("Battle Style"),
     // [MENUITEM_QOL_EXP_BAR]     = sText_ExpBar,
     // [MENUITEM_QOL_FONT]        = gText_Font,
     // [MENUITEM_QOL_MATCHCALL]   = gText_OptionMatchCalls,
@@ -327,6 +327,10 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_GENERAL_DIFFICULTY:      return TRUE;
         case MENUITEM_GENERAL_TEXTSPEED:       return TRUE;
         case MENUITEM_GENERAL_BATTLESCENE:     return TRUE;
+        case MENUITEM_GENERAL_BATTLESTYLE:
+            if (sOptions->sel_general[MENUITEM_GENERAL_DIFFICULTY] >= DIFFICULTY_HARD)
+                return FALSE;
+            return TRUE;
         case MENUITEM_GENERAL_BUTTONMODE:      return TRUE;
         // case MENUITEM_GENERAL_UNIT_SYSTEM:     return TRUE;
         case MENUITEM_GENERAL_FRAMETYPE:       return TRUE;
@@ -338,7 +342,6 @@ static bool8 CheckConditions(int selection)
         {
         default:                            return FALSE;
         case MENUITEM_QOL_SAVEPROMPTS:     return TRUE;
-        case MENUITEM_QOL_BATTLESTYLE:     return TRUE;
         // case MENUITEM_QOL_HP_BAR:          return TRUE;
         // case MENUITEM_QOL_EXP_BAR:         return TRUE;
         // case MENUITEM_QOL_FONT:            return TRUE;
@@ -382,6 +385,7 @@ static const u8 *const sOptionMenuItemDescriptionsGeneral[MENUITEM_GENERAL_COUNT
     [MENUITEM_GENERAL_DIFFICULTY]  = {sText_Desc_DifficultyEasy,       sText_Desc_DifficultyNormal,  sText_Desc_DifficultyHard, sText_Desc_DifficultyBrutal},
     [MENUITEM_GENERAL_TEXTSPEED]   = {sText_Desc_TextSpeed,            sText_Empty,                sText_Empty, sText_Empty},
     [MENUITEM_GENERAL_BATTLESCENE] = {sText_Desc_BattleScene_On,       sText_Desc_BattleScene_Off, sText_Empty, sText_Empty},
+    [MENUITEM_GENERAL_BATTLESTYLE] = {sText_Desc_BattleStyle_Shift,    sText_Desc_BattleStyle_Set, sText_Empty, sText_Empty},
     [MENUITEM_GENERAL_BUTTONMODE]  = {sText_Desc_ButtonMode,           sText_Desc_ButtonMode_LR,   sText_Desc_ButtonMode_LA, sText_Empty},
     // [MENUITEM_GENERAL_UNIT_SYSTEM] = {sText_Desc_UnitSystemImperial,   sText_Desc_UnitSystemMetric,sText_Empty},
     [MENUITEM_GENERAL_FRAMETYPE]   = {sText_Desc_FrameType,            sText_Empty,                sText_Empty, sText_Empty},
@@ -403,7 +407,6 @@ static const u8 sText_Desc_SavePromptsOff[]     = _("You will not be prompted to
 static const u8 *const sOptionMenuItemDescriptionsQOL[MENUITEM_QOL_COUNT][2] =
 {
     [MENUITEM_QOL_SAVEPROMPTS] = {sText_Desc_SavePromptsOff,        sText_Desc_SavePromptsOn},
-    [MENUITEM_QOL_BATTLESTYLE] = {sText_Desc_BattleStyle_Shift,    sText_Desc_BattleStyle_Set},
     // [MENUITEM_QOL_HP_BAR]      = {sText_Desc_BattleHPBar,        sText_Empty},
     // [MENUITEM_QOL_EXP_BAR]     = {sText_Desc_BattleExpBar,       sText_Empty},
     // [MENUITEM_QOL_FONT]        = {sText_Desc_FontType,           sText_Desc_FontType},
@@ -428,6 +431,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledGeneral[MENUITEM_GENER
     [MENUITEM_GENERAL_DIFFICULTY]  = sText_Empty,
     [MENUITEM_GENERAL_TEXTSPEED]   = sText_Desc_Disabled_Textspeed,
     [MENUITEM_GENERAL_BATTLESCENE] = sText_Empty,
+    [MENUITEM_GENERAL_BATTLESTYLE] = COMPOUND_STRING("This option is ignored because the\ndifficulty is set to Hard or Brutal."),
     [MENUITEM_GENERAL_BUTTONMODE]  = sText_Empty,
     // [MENUITEM_GENERAL_UNIT_SYSTEM] = sText_Empty,
     [MENUITEM_GENERAL_FRAMETYPE]   = sText_Empty,
@@ -439,7 +443,6 @@ static const u8 sText_Desc_Disabled_BattleHPBar[]   = _("Only active if xyz.");
 static const u8 *const sOptionMenuItemDescriptionsDisabledQOL[MENUITEM_QOL_COUNT] =
 {
     [MENUITEM_QOL_SAVEPROMPTS] = sText_Empty,
-    [MENUITEM_QOL_BATTLESTYLE] = sText_Empty,
     // [MENUITEM_QOL_HP_BAR]      = sText_Desc_Disabled_BattleHPBar,
     // [MENUITEM_QOL_EXP_BAR]     = sText_Empty,
     // [MENUITEM_QOL_FONT]        = sText_Empty,
@@ -776,12 +779,12 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_general[MENUITEM_GENERAL_DIFFICULTY]  = GetCurrentDifficultyLevel();
         sOptions->sel_general[MENUITEM_GENERAL_TEXTSPEED]   = gSaveBlock2Ptr->optionsTextSpeed;
         sOptions->sel_general[MENUITEM_GENERAL_BATTLESCENE] = gSaveBlock2Ptr->optionsBattleSceneOff;
+        sOptions->sel_general[MENUITEM_GENERAL_BATTLESTYLE] = gSaveBlock2Ptr->optionsBattleStyle;
         sOptions->sel_general[MENUITEM_GENERAL_BUTTONMODE]  = gSaveBlock2Ptr->optionsButtonMode;
         // sOptions->sel_general[MENUITEM_GENERAL_UNIT_SYSTEM] = gSaveBlock2Ptr->optionsUnitSystem;
         sOptions->sel_general[MENUITEM_GENERAL_FRAMETYPE]   = gSaveBlock2Ptr->optionsWindowFrameType;
         
         sOptions->sel_qol[MENUITEM_QOL_SAVEPROMPTS] = FlagGet(FLAG_SAVE_PROMPT);
-        sOptions->sel_qol[MENUITEM_QOL_BATTLESTYLE] = gSaveBlock2Ptr->optionsBattleStyle;
         // sOptions->sel_qol[MENUITEM_QOL_HP_BAR]      = gSaveBlock2Ptr->optionsHpBarSpeed;
         // sOptions->sel_qol[MENUITEM_QOL_EXP_BAR]     = gSaveBlock2Ptr->optionsExpBarSpeed;
         // sOptions->sel_qol[MENUITEM_QOL_FONT]        = gSaveBlock2Ptr->optionsCurrentFont;
@@ -1005,6 +1008,7 @@ static void Task_OptionMenuSave(u8 taskId)
     SetCurrentDifficultyLevel(sOptions->sel_general[MENUITEM_GENERAL_DIFFICULTY]);
     gSaveBlock2Ptr->optionsTextSpeed        = sOptions->sel_general[MENUITEM_GENERAL_TEXTSPEED];
     gSaveBlock2Ptr->optionsBattleSceneOff   = sOptions->sel_general[MENUITEM_GENERAL_BATTLESCENE];
+    gSaveBlock2Ptr->optionsBattleStyle      = sOptions->sel_general[MENUITEM_GENERAL_BATTLESTYLE];
     gSaveBlock2Ptr->optionsButtonMode       = sOptions->sel_general[MENUITEM_GENERAL_BUTTONMODE];
     // gSaveBlock2Ptr->optionsUnitSystem       = sOptions->sel_general[MENUITEM_GENERAL_UNIT_SYSTEM];
     gSaveBlock2Ptr->optionsWindowFrameType  = sOptions->sel_general[MENUITEM_GENERAL_FRAMETYPE];
@@ -1013,7 +1017,6 @@ static void Task_OptionMenuSave(u8 taskId)
         FlagSet(FLAG_SAVE_PROMPT);
     else
         FlagClear(FLAG_SAVE_PROMPT);
-    gSaveBlock2Ptr->optionsBattleStyle      = sOptions->sel_qol[MENUITEM_QOL_BATTLESTYLE];
     // gSaveBlock2Ptr->optionsHpBarSpeed       = sOptions->sel_qol[MENUITEM_QOL_HP_BAR];
     // gSaveBlock2Ptr->optionsExpBarSpeed      = sOptions->sel_qol[MENUITEM_QOL_EXP_BAR];
     // gSaveBlock2Ptr->optionsCurrentFont      = sOptions->sel_qol[MENUITEM_QOL_FONT];
@@ -1298,7 +1301,7 @@ static void DrawChoices_SavePrompts(int selection, int y)
 
 static void DrawChoices_BattleStyle(int selection, int y)
 {
-    bool8 active = CheckConditions(MENUITEM_QOL_BATTLESTYLE);
+    bool8 active = CheckConditions(MENUITEM_GENERAL_BATTLESTYLE);
     u8 styles[2] = {0};
     styles[selection] = 1;
 
