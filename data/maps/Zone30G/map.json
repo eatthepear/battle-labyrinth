@@ -16,11 +16,74 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 21,
-      "y": 16,
+      "x": 20,
+      "y": 15,
       "elevation": 0,
       "dest_map": "MAP_ZONE30Z",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 15,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE30F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 16,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE30H",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 36,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE30F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 36,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE30F",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 30,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE30F",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE30F",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 30,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE30F",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 3,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE30F",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 20,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE30F",
+      "dest_warp_id": "11"
     }
   ],
   "coord_events": [],
