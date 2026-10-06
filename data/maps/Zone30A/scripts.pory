@@ -301,19 +301,19 @@ script Zone30_EventScript_CheckCanOpenDoor {
                 end
             }
         case 2:
-            if (var(VAR_ZONE_30_STATE) < 1) {
+            if (var(VAR_ZONE_30_STATE) < 3) {
                 msgbox(format("Your Card Key isn't registered for this floor!"))
                 releaseall
                 end
             }
         case 3:
-            if (var(VAR_ZONE_30_STATE) < 1) {
+            if (var(VAR_ZONE_30_STATE) < 5) {
                 msgbox(format("Your Card Key isn't registered for this floor!"))
                 releaseall
                 end
             }
         case 4:
-            if (var(VAR_ZONE_30_STATE) < 1) {
+            if (var(VAR_ZONE_30_STATE) < 7) {
                 msgbox(format("Your Card Key isn't registered for this floor!"))
                 releaseall
                 end
