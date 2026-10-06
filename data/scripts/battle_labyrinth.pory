@@ -2491,10 +2491,12 @@ script EventScript_TestingLegendBattle_Template {
 }
 
 script EventScript_AskSaveGame {
-	closemessage
-	msgbox(format("Save your game?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		forcesave
+	if (flag(FLAG_SAVE_PROMPT)) {
+		closemessage
+		msgbox(format("Save your game?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			forcesave
+		}
 	}
 	return
 }

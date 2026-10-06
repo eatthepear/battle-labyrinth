@@ -19,6 +19,7 @@
 #include "menu_helpers.h"
 #include "decompress.h"
 #include "difficulty.h"
+#include "event_data.h"
 
 enum
 {
@@ -43,6 +44,7 @@ enum
 // QOL
 enum
 {
+    MENUITEM_QOL_SAVEPROMPTS,
     MENUITEM_QOL_BATTLESTYLE,
     MENUITEM_QOL_CANCEL,
     MENUITEM_QOL_COUNT,
@@ -191,6 +193,7 @@ static void DrawChoices_Font(int selection, int y);
 static void DrawChoices_FrameType(int selection, int y);
 static void DrawChoices_MatchCall(int selection, int y);
 static void DrawBgWindowFrames(void);
+static void DrawChoices_SavePrompts(int selection, int y);
 
 // EWRAM vars
 EWRAM_DATA static struct OptionMenu *sOptions = NULL;
@@ -247,6 +250,7 @@ struct // MENU_QOL
     int (*processInput)(int selection);
 } static const sItemFunctionsQOL[MENUITEM_QOL_COUNT] =
 {
+    [MENUITEM_QOL_SAVEPROMPTS]  = {DrawChoices_SavePrompts, ProcessInput_Options_Two},
     [MENUITEM_QOL_BATTLESTYLE]  = {DrawChoices_BattleStyle, ProcessInput_Options_Two},
     // [MENUITEM_QOL_HP_BAR]       = {DrawChoices_BarSpeed,    ProcessInput_Options_Eleven},
     // [MENUITEM_QOL_EXP_BAR]      = {DrawChoices_BarSpeed,    ProcessInput_Options_Eleven},
@@ -279,6 +283,7 @@ static const u8 *const sOptionMenuItemsNamesGeneral[MENUITEM_GENERAL_COUNT] =
 
 static const u8 *const sOptionMenuItemsNamesQOL[MENUITEM_QOL_COUNT] =
 {
+    [MENUITEM_QOL_SAVEPROMPTS] = COMPOUND_STRING("Save Prompts"),
     [MENUITEM_QOL_BATTLESTYLE] = COMPOUND_STRING("Battle Style"),
     // [MENUITEM_QOL_EXP_BAR]     = sText_ExpBar,
     // [MENUITEM_QOL_FONT]        = gText_Font,
@@ -332,6 +337,7 @@ static bool8 CheckConditions(int selection)
         switch(selection)
         {
         default:                            return FALSE;
+        case MENUITEM_QOL_SAVEPROMPTS:     return TRUE;
         case MENUITEM_QOL_BATTLESTYLE:     return TRUE;
         // case MENUITEM_QOL_HP_BAR:          return TRUE;
         // case MENUITEM_QOL_EXP_BAR:         return TRUE;
@@ -392,8 +398,11 @@ static const u8 sText_Desc_BikeOn[]             = _("Enables the BIKE theme when
 static const u8 sText_Desc_FontType[]           = _("Choose the font design.");
 static const u8 sText_Desc_OverworldCallsOn[]   = _("TRAINERs will be able to call you,\noffering rematches and info.");
 static const u8 sText_Desc_OverworldCallsOff[]  = _("You will not receive calls.\nSpecial events will still occur.");
+static const u8 sText_Desc_SavePromptsOn[]      = _("You will be prompted to save\nyour game.");
+static const u8 sText_Desc_SavePromptsOff[]     = _("You will not be prompted to save\nyour game.");
 static const u8 *const sOptionMenuItemDescriptionsQOL[MENUITEM_QOL_COUNT][2] =
 {
+    [MENUITEM_QOL_SAVEPROMPTS] = {sText_Desc_SavePromptsOff,        sText_Desc_SavePromptsOn},
     [MENUITEM_QOL_BATTLESTYLE] = {sText_Desc_BattleStyle_Shift,    sText_Desc_BattleStyle_Set},
     // [MENUITEM_QOL_HP_BAR]      = {sText_Desc_BattleHPBar,        sText_Empty},
     // [MENUITEM_QOL_EXP_BAR]     = {sText_Desc_BattleExpBar,       sText_Empty},
@@ -429,6 +438,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledGeneral[MENUITEM_GENER
 static const u8 sText_Desc_Disabled_BattleHPBar[]   = _("Only active if xyz.");
 static const u8 *const sOptionMenuItemDescriptionsDisabledQOL[MENUITEM_QOL_COUNT] =
 {
+    [MENUITEM_QOL_SAVEPROMPTS] = sText_Empty,
     [MENUITEM_QOL_BATTLESTYLE] = sText_Empty,
     // [MENUITEM_QOL_HP_BAR]      = sText_Desc_Disabled_BattleHPBar,
     // [MENUITEM_QOL_EXP_BAR]     = sText_Empty,
@@ -770,6 +780,7 @@ void CB2_InitOptionPlusMenu(void)
         // sOptions->sel_general[MENUITEM_GENERAL_UNIT_SYSTEM] = gSaveBlock2Ptr->optionsUnitSystem;
         sOptions->sel_general[MENUITEM_GENERAL_FRAMETYPE]   = gSaveBlock2Ptr->optionsWindowFrameType;
         
+        sOptions->sel_qol[MENUITEM_QOL_SAVEPROMPTS] = FlagGet(FLAG_SAVE_PROMPT);
         sOptions->sel_qol[MENUITEM_QOL_BATTLESTYLE] = gSaveBlock2Ptr->optionsBattleStyle;
         // sOptions->sel_qol[MENUITEM_QOL_HP_BAR]      = gSaveBlock2Ptr->optionsHpBarSpeed;
         // sOptions->sel_qol[MENUITEM_QOL_EXP_BAR]     = gSaveBlock2Ptr->optionsExpBarSpeed;
@@ -998,6 +1009,10 @@ static void Task_OptionMenuSave(u8 taskId)
     // gSaveBlock2Ptr->optionsUnitSystem       = sOptions->sel_general[MENUITEM_GENERAL_UNIT_SYSTEM];
     gSaveBlock2Ptr->optionsWindowFrameType  = sOptions->sel_general[MENUITEM_GENERAL_FRAMETYPE];
 
+    if (sOptions->sel_qol[MENUITEM_QOL_SAVEPROMPTS])
+        FlagSet(FLAG_SAVE_PROMPT);
+    else
+        FlagClear(FLAG_SAVE_PROMPT);
     gSaveBlock2Ptr->optionsBattleStyle      = sOptions->sel_qol[MENUITEM_QOL_BATTLESTYLE];
     // gSaveBlock2Ptr->optionsHpBarSpeed       = sOptions->sel_qol[MENUITEM_QOL_HP_BAR];
     // gSaveBlock2Ptr->optionsExpBarSpeed      = sOptions->sel_qol[MENUITEM_QOL_EXP_BAR];
@@ -1269,6 +1284,16 @@ static void DrawChoices_BattleScene(int selection, int y)
 
     DrawOptionMenuChoice(COMPOUND_STRING("On"), 104, y, styles[0], active);
     DrawOptionMenuChoice(COMPOUND_STRING("Off"), GetStringRightAlignXOffset(FONT_NORMAL, COMPOUND_STRING("Off"), 198), y, styles[1], active);
+}
+
+static void DrawChoices_SavePrompts(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_QOL_SAVEPROMPTS);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(COMPOUND_STRING("Off"), 104, y, styles[0], active);
+    DrawOptionMenuChoice(COMPOUND_STRING("On"), GetStringRightAlignXOffset(FONT_NORMAL, COMPOUND_STRING("Off"), 198), y, styles[1], active);
 }
 
 static void DrawChoices_BattleStyle(int selection, int y)

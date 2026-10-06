@@ -128,6 +128,7 @@ enum BeatBossFlags {
 #define FLAG_NEVER_SET                              0xE9
 #define FLAG_ALWAYS_SET                             0xEA
 #define FLAG_BOSS_PROMPT_HEAL                       0xEB // If on, player is asked if they want to be healed before boss fights. off by default, settable by options.
+#define FLAG_SAVE_PROMPT                            0xEC // If on, player is asked if they want to save their game reguarly. on by default, settable by options.
 
 enum CustomScriptsFlags {
     FLAG_TRUE_BRUTAL = 256,
