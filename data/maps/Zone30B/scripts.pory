@@ -1,1 +1,34 @@
 mapscripts Zone30B_MapScripts {}
+
+script Zone30B_EventScript_Wally_Intro {
+	lockall
+	playbgm(MUS_BW_FRIEND, 0)
+	applymovement(LOCALID_WALLY_ZONE30B, Common_Movement_FaceLeft)
+	waitmovement(0)
+	applymovement(LOCALID_WALLY_ZONE30B, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	setspeaker("Wally")
+	msgbox(format("Oh, poor Wally, all alone in these woods.\pWon't you help show me the way out?"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_WALLY_ZONE30B, Common_Movement_WalkRight3)
+	waitmovement(0)
+	setspeaker(SP_NAME_NONE)
+	msgbox(format("{PLAYER} agreed to help {COLOR BLUE}Wally{COLOR DARK_GRAY}!"))
+	setspeaker("Wally")
+	msgbox(format("LETS GO!"), MSGBOX_AUTOCLOSE)
+	setfollowernpc(LOCALID_WALLY_ZONE30B, FOLLOWER_NPC_FLAG_ALL, 0, PARTNER_PBL_WALLY_30)
+	facefollowernpc
+	setvar(VAR_ZONE_30_STATE, 2)
+	fadedefaultbgm
+	releaseall
+}
+
+script Zone30B_EventScript_Wally {
+	lock
+	faceplayer
+	setspeaker("Wally")
+	msgbox(format("DIALOGUE!"), MSGBOX_AUTOCLOSE)
+	release
+	end
+}
