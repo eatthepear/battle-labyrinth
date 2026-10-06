@@ -481,8 +481,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_JEMMA ===
 Name: Jemma
-Class: Lass
-Pic: Lass
+Class: School Kid
+Pic: School Kid F
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
@@ -534,21 +534,13 @@ Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_3
 
-=== TRAINER_PBL_BILL_OPTIONAL_3 ===
-Name: Bill
-Class: Rich Boy
-Pic: Rich Boy
-Music: Rich
+=== TRAINER_PBL_FERN_OPTIONAL_3 ===
+Name: Fern
+Class: Lass
+Pic: Lass
+Music: Girl
 AI: AI_FLAG_BOSS
 Double Battle: No
-
-Voltorb @ Chesto Berry
-Naive Nature
-Ability: Aftermath
-Level: 8
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
-- Defense Curl
 
 Sandshrew @ Pecha Berry
 Sassy Nature

@@ -75,33 +75,33 @@ script Zone3A_EventScript_GymGuide {
     end
 }
 
-script Zone3A_EventScript_Bill {
+script Zone3A_EventScript_Fern {
 	lock
 	faceplayer
 	if (flag(FLAG_ZONE3A_DEFEATED_OPTIONAL)) {
-		call(Zone3A_EventScript_Bill_End)
+		call(Zone3A_EventScript_Fern_End)
 	}
-	setspeaker("Bill")
-	msgbox(format("You look poor as dirt!\pTell you what, you look like you're in need of cash, and I need someone to test out my {COLOR GREEN}Rollout{COLOR DARK_GRAY} team on.\pCare to battle?!"), MSGBOX_YESNO)
+	setspeaker("Fern")
+	msgbox(format("My Pokémon know one trick, and do it well: {COLOR GREEN}Rollout{COLOR DARK_GRAY}!\pWant me to show you how it works?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Fair enough, I wouldn't want to get crushed by me either.\pCome back if you change your mind."))
+		msgbox(format("All I need is {COLOR GREEN}Rollout{COLOR DARK_GRAY} to win!\pCome back if you change your mind."))
 		release
 		end
 	}
-	msgbox(format("Now that's what I'm talking about! Let's battle!"))
+	msgbox(format("All I need is {COLOR GREEN}Rollout{COLOR DARK_GRAY} to win!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_BILL_OPTIONAL_3, format("That didn't go as well as I thought it would."))
+	trainerbattle_no_intro(TRAINER_PBL_FERN_OPTIONAL_3, format("That didn't go as well as I thought it would."))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	setspeaker("Bill")
-	msgbox(format("To the victor goes the spoils."))
+	setspeaker("Fern")
+	msgbox(format("I guess just having one strategy maybe isn't the best after all.\pHere, I want you to take this!"))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_METRONOME)
 	setflag(FLAG_ZONE3A_DEFEATED_OPTIONAL)
-	call(Zone3A_EventScript_Bill_End)
+	call(Zone3A_EventScript_Fern_End)
 }
 
-script Zone3A_EventScript_Bill_End {
-	setspeaker("Bill")
+script Zone3A_EventScript_Fern_End {
+	setspeaker("Fern")
 	msgbox(format("A {COLOR GREEN}Metronome{COLOR DARK_GRAY} boosts the power of a move used consecutively in battle.\pWait, what do you mean it doesn't boost the power of Rollout?\pThese interactions are so confusing!"))
 	release
 	end
