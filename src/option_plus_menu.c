@@ -20,6 +20,8 @@
 #include "decompress.h"
 #include "difficulty.h"
 #include "event_data.h"
+#include "sound.h"
+#include "constants/songs.h"
 
 enum
 {
@@ -55,6 +57,10 @@ enum
 enum
 {
     MENUITEM_SOUND_SOUND,
+    MENUITEM_SOUND_SANCTUARY,
+    MENUITEM_SOUND_WILD,
+    MENUITEM_SOUND_TRAINER,
+    MENUITEM_SOUND_LEADER,
     MENUITEM_SOUND_CANCEL,
     MENUITEM_SOUND_COUNT,
 };
@@ -171,6 +177,7 @@ static int XOptions_ProcessInput(int x, int selection);
 static int ProcessInput_Options_Two(int selection);
 static int ProcessInput_Options_Three(int selection);
 static int ProcessInput_Options_Four(int selection);
+static int ProcessInput_Options_Six(int selection);
 static int ProcessInput_Options_Eleven(int selection);
 static int ProcessInput_Sound(int selection);
 static int ProcessInput_FrameType(int selection);
@@ -181,6 +188,7 @@ static u8 MenuItemCancel(void);
 static void DrawDescriptionText(void);
 static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style, bool8 active);
 static void DrawChoices_Options_Four(const u8 *const *const strings, int selection, int y, bool8 active);
+static void DrawChoices_Options_Six(const u8 *const *const strings, int selection, int y, bool8 active);
 static void ReDrawAll(void);
 static void DrawChoices_Difficulty(int selection, int y);
 static void DrawChoices_TextSpeed(int selection, int y);
@@ -196,6 +204,10 @@ static void DrawChoices_MatchCall(int selection, int y);
 static void DrawBgWindowFrames(void);
 static void DrawChoices_SavePrompts(int selection, int y);
 static void DrawChoices_BossHealPrompts(int selection, int y);
+static void DrawChoices_Sanctuary(int selection, int y);
+static void DrawChoices_Wild(int selection, int y);
+static void DrawChoices_Trainer(int selection, int y);
+static void DrawChoices_Leader(int selection, int y);
 
 // EWRAM vars
 EWRAM_DATA static struct OptionMenu *sOptions = NULL;
@@ -269,6 +281,10 @@ struct // MENU_SOUND
 } static const sItemFunctionsSound[MENUITEM_SOUND_COUNT] =
 {
     [MENUITEM_SOUND_SOUND]        = {DrawChoices_Sound,       ProcessInput_Options_Two},
+    [MENUITEM_SOUND_SANCTUARY]        = {DrawChoices_Sanctuary,       ProcessInput_Options_Six},
+    [MENUITEM_SOUND_WILD]        = {DrawChoices_Wild,       ProcessInput_Options_Six},
+    [MENUITEM_SOUND_TRAINER]        = {DrawChoices_Trainer,       ProcessInput_Options_Six},
+    [MENUITEM_SOUND_LEADER]        = {DrawChoices_Leader,       ProcessInput_Options_Six},
     [MENUITEM_SOUND_CANCEL]       = {NULL, NULL},
 };
 
@@ -298,6 +314,10 @@ static const u8 *const sOptionMenuItemsNamesQOL[MENUITEM_QOL_COUNT] =
 static const u8 *const sOptionMenuItemsNamesSound[MENUITEM_SOUND_COUNT] =
 {
     [MENUITEM_SOUND_SOUND]       = COMPOUND_STRING("Sound"),
+    [MENUITEM_SOUND_SANCTUARY]        = COMPOUND_STRING("Sanctuary Music"),
+    [MENUITEM_SOUND_WILD]        = COMPOUND_STRING("Wild Music"),
+    [MENUITEM_SOUND_TRAINER]        = COMPOUND_STRING("Trainer Music"),
+    [MENUITEM_SOUND_LEADER]        = COMPOUND_STRING("Gym Leader Music"),
     // [MENUITEM_SOUND_EXP_BAR]     = sText_ExpBar,
     // [MENUITEM_SOUND_FONT]        = gText_Font,
     // [MENUITEM_SOUND_MATCHCALL]   = gText_OptionMatchCalls,
@@ -362,6 +382,10 @@ static bool8 CheckConditions(int selection)
         {
         default:                            return FALSE;
         case MENUITEM_SOUND_SOUND:           return TRUE;
+        case MENUITEM_SOUND_SANCTUARY:           return TRUE;
+        case MENUITEM_SOUND_WILD:           return TRUE;
+        case MENUITEM_SOUND_TRAINER:           return TRUE;
+        case MENUITEM_SOUND_LEADER:           return TRUE;
         case MENUITEM_SOUND_CANCEL:          return TRUE;
         case MENUITEM_SOUND_COUNT:           return TRUE;
         }
@@ -425,9 +449,14 @@ static const u8 *const sOptionMenuItemDescriptionsQOL[MENUITEM_QOL_COUNT][2] =
     [MENUITEM_QOL_CANCEL]      = {sText_Desc_Save,               sText_Empty},
 };
 
+static const u8 sText_Desc_Music[]          = _("Choose what type of music plays.\nToggle to hear the options!");
 static const u8 *const sOptionMenuItemDescriptionsSound[MENUITEM_SOUND_COUNT][2] =
 {
     [MENUITEM_SOUND_SOUND]       = {sText_Desc_SoundMono,            sText_Desc_SoundStereo},
+    [MENUITEM_SOUND_SANCTUARY]   = {sText_Desc_Music,            sText_Empty},
+    [MENUITEM_SOUND_WILD]   = {sText_Desc_Music,            sText_Empty},
+    [MENUITEM_SOUND_TRAINER]   = {sText_Desc_Music,            sText_Empty},
+    [MENUITEM_SOUND_LEADER]   = {sText_Desc_Music,            sText_Empty},
     // [MENUITEM_SOUND_HP_BAR]      = {sText_Desc_BattleHPBar,        sText_Empty},
     // [MENUITEM_SOUND_EXP_BAR]     = {sText_Desc_BattleExpBar,       sText_Empty},
     // [MENUITEM_SOUND_FONT]        = {sText_Desc_FontType,           sText_Desc_FontType},
@@ -466,6 +495,10 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledQOL[MENUITEM_QOL_COUNT
 static const u8 *const sOptionMenuItemDescriptionsDisabledSound[MENUITEM_SOUND_COUNT] =
 {
     [MENUITEM_SOUND_SOUND]       = sText_Empty,
+    [MENUITEM_SOUND_SANCTUARY]       = sText_Empty,
+    [MENUITEM_SOUND_WILD]       = sText_Empty,
+    [MENUITEM_SOUND_TRAINER]       = sText_Empty,
+    [MENUITEM_SOUND_LEADER]       = sText_Empty,
     // [MENUITEM_SOUND_HP_BAR]      = sText_Desc_Disabled_BattleHPBar,
     // [MENUITEM_SOUND_EXP_BAR]     = sText_Empty,
     // [MENUITEM_SOUND_FONT]        = sText_Empty,
@@ -499,8 +532,8 @@ static const u8 *const OptionTextDescription(void)
         if (menuItem >= MENUITEM_SOUND_COUNT || !CheckConditions(menuItem))
             return sOptionMenuItemDescriptionsDisabledSound[menuItem];
         selection = sOptions->sel_sound[menuItem];
-        // if (menuItem == MENUITEM_SOUND_HP_BAR || menuItem == MENUITEM_SOUND_EXP_BAR)
-        //     selection = 0;
+        if (menuItem == MENUITEM_SOUND_SANCTUARY || menuItem == MENUITEM_SOUND_WILD || menuItem == MENUITEM_SOUND_TRAINER || menuItem == MENUITEM_SOUND_LEADER)
+            selection = 0;
         return sOptionMenuItemDescriptionsSound[menuItem][selection];
     }
 }
@@ -804,6 +837,10 @@ void CB2_InitOptionPlusMenu(void)
         // sOptions->sel_qol[MENUITEM_QOL_MATCHCALL]   = gSaveBlock2Ptr->optionsDisableMatchCall;
 
         sOptions->sel_sound[MENUITEM_SOUND_SOUND]       = gSaveBlock2Ptr->optionsSound;
+        sOptions->sel_sound[MENUITEM_SOUND_SANCTUARY]       = VarGet(VAR_SANCTUARY_MUSIC);
+        sOptions->sel_sound[MENUITEM_SOUND_WILD]       = VarGet(VAR_WILD_MUSIC);
+        sOptions->sel_sound[MENUITEM_SOUND_TRAINER]       = VarGet(VAR_TRAINER_MUSIC);
+        sOptions->sel_sound[MENUITEM_SOUND_LEADER]       = VarGet(VAR_BOSS_MUSIC);
 
         sOptions->submenu = MENU_GENERAL;
 
@@ -990,7 +1027,106 @@ static void Task_OptionMenuProcessInput(u8 taskId)
                 }
 
                 if (previousOption != sOptions->sel_sound[cursor])
+                {
                     DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
+                    switch (cursor) { // which sound option r u in
+                        case MENUITEM_SOUND_SANCTUARY:
+                            switch (sOptions->sel_sound[cursor]) {
+                                case 0:
+                                default:
+                                    PlayBGM(MUS_DP_AMITY_SQUARE);
+                                    break;
+                                case 1:
+                                    PlayBGM(MUS_PL_B_HALL);
+                                    break;
+                                case 2:
+                                    PlayBGM(MUS_BW_ACCUMULA);
+                                    break;
+                                case 3:
+                                    PlayBGM(MUS_BW_SKYARROW_BRIDGE);
+                                    break;
+                                case 4:
+                                    PlayBGM(MUS_BW_WHITE_FOREST);
+                                    break;
+                                case 5:
+                                    PlayBGM(MUS_BW_ANVILLE_TOWN);
+                                    break;
+                            }
+                            break;
+                        case MENUITEM_SOUND_WILD:
+                            switch (sOptions->sel_sound[cursor]) {
+                                case 0:
+                                default:
+                                    PlayBGM(MUS_VS_WILD);
+                                    break;
+                                case 1:
+                                    PlayBGM(MUS_RG_VS_WILD);
+                                    break;
+                                case 2:
+                                    PlayBGM(MUS_DP_VS_WILD);
+                                    break;
+                                case 3:
+                                    PlayBGM(MUS_HG_VS_WILD);
+                                    break;
+                                case 4:
+                                    PlayBGM(MUS_HG_VS_WILD_KANTO);
+                                    break;
+                                case 5:
+                                    PlayBGM(MUS_BW_VS_WILD);
+                                    break;
+                            }
+                            break;
+                        case MENUITEM_SOUND_TRAINER:
+                            switch (sOptions->sel_sound[cursor]) {
+                                case 0:
+                                default:
+                                    PlayBGM(MUS_VS_TRAINER);
+                                    break;
+                                case 1:
+                                    PlayBGM(MUS_RG_VS_TRAINER);
+                                    break;
+                                case 2:
+                                    PlayBGM(MUS_DP_VS_TRAINER);
+                                    break;
+                                case 3:
+                                    PlayBGM(MUS_HG_VS_TRAINER);
+                                    break;
+                                case 4:
+                                    PlayBGM(MUS_HG_VS_TRAINER_KANTO);
+                                    break;
+                                case 5:
+                                    PlayBGM(MUS_BW_VS_TRAINER);
+                                    break;
+                            }
+                            break;
+                        case MENUITEM_SOUND_LEADER:
+                            switch (sOptions->sel_sound[cursor]) {
+                                case 0:
+                                default:
+                                    PlayBGM(MUS_VS_GYM_LEADER);
+                                    break;
+                                case 1:
+                                    PlayBGM(MUS_RG_VS_GYM_LEADER);
+                                    break;
+                                case 2:
+                                    PlayBGM(MUS_DP_VS_GYM_LEADER);
+                                    break;
+                                case 3:
+                                    PlayBGM(MUS_HG_VS_GYM_LEADER);
+                                    break;
+                                case 4:
+                                    PlayBGM(MUS_HG_VS_GYM_LEADER_KANTO);
+                                    break;
+                                case 5:
+                                    PlayBGM(MUS_BW_VS_GYM_LEADER);
+                                    break;
+                            }
+                            break;
+                        case MENUITEM_SOUND_SOUND:
+                        default:
+                            break;
+                    }
+                }
             }
         }
     }
@@ -1043,6 +1179,10 @@ static void Task_OptionMenuSave(u8 taskId)
     // gSaveBlock2Ptr->optionsCurrentFont      = sOptions->sel_qol[MENUITEM_QOL_FONT];
     // gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->sel_qol[MENUITEM_QOL_MATCHCALL];
     gSaveBlock2Ptr->optionsSound            = sOptions->sel_sound[MENUITEM_SOUND_SOUND];
+    VarSet(VAR_SANCTUARY_MUSIC, sOptions->sel_sound[MENUITEM_SOUND_SANCTUARY]);
+    VarSet(VAR_WILD_MUSIC, sOptions->sel_sound[MENUITEM_SOUND_WILD]);
+    VarSet(VAR_TRAINER_MUSIC, sOptions->sel_sound[MENUITEM_SOUND_TRAINER]);
+    VarSet(VAR_BOSS_MUSIC, sOptions->sel_sound[MENUITEM_SOUND_LEADER]);
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -1180,6 +1320,11 @@ static int ProcessInput_Options_Four(int selection)
     return XOptions_ProcessInput(4, selection);
 }
 
+static int ProcessInput_Options_Six(int selection)
+{
+    return XOptions_ProcessInput(6, selection);
+}
+
 static int ProcessInput_Options_Eleven(int selection)
 {
     return XOptions_ProcessInput(11, selection);
@@ -1242,6 +1387,29 @@ static void DrawChoices_Options_Four(const u8 *const *const strings, int selecti
         {1, 2, 3},
     };
     u8 styles[4] = {0};
+    int xMid;
+    const u8 *order = choiceOrders[selection];
+
+    styles[selection] = 1;
+    xMid = GetMiddleX(strings[order[0]], strings[order[1]], strings[order[2]]);
+
+    DrawOptionMenuChoice(strings[order[0]], 104, y, styles[order[0]], active);
+    DrawOptionMenuChoice(strings[order[1]], xMid, y, styles[order[1]], active);
+    DrawOptionMenuChoice(strings[order[2]], GetStringRightAlignXOffset(1, strings[order[2]], 198), y, styles[order[2]], active);
+}
+
+static void DrawChoices_Options_Six(const u8 *const *const strings, int selection, int y, bool8 active)
+{
+    static const u8 choiceOrders[][3] =
+    {
+        {0, 1, 2},
+        {0, 1, 2},
+        {1, 2, 3},
+        {2, 3, 4},
+        {3, 4, 5},
+        {3, 4, 5},
+    };
+    u8 styles[6] = {0};
     int xMid;
     const u8 *order = choiceOrders[selection];
 
@@ -1348,6 +1516,32 @@ static void DrawChoices_Sound(int selection, int y)
 
     DrawOptionMenuChoice(COMPOUND_STRING("Mono"), 104, y, styles[0], active);
     DrawOptionMenuChoice(COMPOUND_STRING("Stereo"), GetStringRightAlignXOffset(FONT_NORMAL, COMPOUND_STRING("Stereo"), 198), y, styles[1], active);
+}
+
+static const u8 *const sSanctuaryMusicStrings[] = {COMPOUND_STRING("1"), COMPOUND_STRING("2"), COMPOUND_STRING("3"),  COMPOUND_STRING("4"), COMPOUND_STRING("5"), COMPOUND_STRING("6")};
+static void DrawChoices_Sanctuary(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_SOUND_SANCTUARY);
+    DrawChoices_Options_Six(sSanctuaryMusicStrings, selection, y, active);
+}
+
+static const u8 *const sMusicStrings[] = {COMPOUND_STRING("RSE"), COMPOUND_STRING("FRLG"), COMPOUND_STRING("DPPt"),  COMPOUND_STRING("HGSS 1"), COMPOUND_STRING("HGSS 2"), COMPOUND_STRING("BW")};
+static void DrawChoices_Wild(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_SOUND_WILD);
+    DrawChoices_Options_Six(sMusicStrings, selection, y, active);
+}
+
+static void DrawChoices_Trainer(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_SOUND_TRAINER);
+    DrawChoices_Options_Six(sMusicStrings, selection, y, active);
+}
+
+static void DrawChoices_Leader(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_SOUND_LEADER);
+    DrawChoices_Options_Six(sMusicStrings, selection, y, active);
 }
 
 static void DrawChoices_ButtonMode(int selection, int y)
