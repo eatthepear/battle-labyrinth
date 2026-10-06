@@ -1,5 +1,79 @@
 mapscripts Zone30A_MapScripts {}
 
+script Zone30A_EventScript_Proton {
+	lockall
+	playbgm(MUS_HG_ENCOUNTER_ROCKET, TRUE)
+    clearflag(FLAG_HIDE_ZONE30A_PROTON)
+    addobject(LOCALID_PROTON_30A)
+	applymovement(LOCALID_PROTON_30A, Zone30A_Movement_Proton_WalkDownFromStairs)
+	waitmovement(0)
+	applymovement(LOCALID_PROTON_30A, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 5) {
+		applymovement(LOCALID_PROTON_30A, Common_Movement_WalkDown)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 6) {
+		applymovement(LOCALID_PROTON_30A, Common_Movement_WalkRight)
+		waitmovement(0)
+		applymovement(LOCALID_PROTON_30A, Common_Movement_WalkDown)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 7) {
+		applymovement(LOCALID_PROTON_30A, Common_Movement_WalkRight2)
+		waitmovement(0)
+		applymovement(LOCALID_PROTON_30A, Common_Movement_WalkDown)
+		waitmovement(0)
+	}
+	setspeaker("Proton")
+	msgbox(format("BATTLE!"))
+	call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_PROTON_BOSS_30, format("DEFEAT!"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Proton")
+	msgbox(format("ARGH!"))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_CARD_KEY)
+	setspeaker("Proton")
+	msgbox(format("RUN AWAY!"))
+    closemessage
+	if (var(VAR_TEMP_0) == 5) {
+		applymovement(LOCALID_PROTON_30A, Common_Movement_WalkUp)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 6) {
+		applymovement(LOCALID_PROTON_30A, Common_Movement_WalkLeft)
+		waitmovement(0)
+		applymovement(LOCALID_PROTON_30A, Common_Movement_WalkUp)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 7) {
+		applymovement(LOCALID_PROTON_30A, Common_Movement_WalkLeft2)
+		waitmovement(0)
+		applymovement(LOCALID_PROTON_30A, Common_Movement_WalkUp)
+		waitmovement(0)
+	}
+	applymovement(LOCALID_PROTON_30A, Zone30A_Movement_Proton_WalkUpToStairs)
+	waitmovement(0)
+	setvar(VAR_ZONE_30_STATE, 1)
+	removeobject(LOCALID_PROTON_30A)
+    setflag(FLAG_HIDE_ZONE30A_PROTON)
+	fadedefaultbgm
+	releaseall
+	end
+}
+
+movement Zone30A_Movement_Proton_WalkDownFromStairs {
+    walk_diag_southeast
+    walk_right
+    face_down
+}
+
+movement Zone30A_Movement_Proton_WalkUpToStairs {
+    walk_left
+    walk_diag_northwest
+}
+
 // template door script
 script Zone30_EventScript_Door1 {
 	lockall
