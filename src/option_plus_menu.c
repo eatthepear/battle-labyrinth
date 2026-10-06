@@ -18,6 +18,7 @@
 #include "constants/rgb.h"
 #include "menu_helpers.h"
 #include "decompress.h"
+#include "difficulty.h"
 
 enum
 {
@@ -30,6 +31,7 @@ enum
 // General
 enum
 {
+    MENUITEM_GENERAL_DIFFICULTY,
     MENUITEM_GENERAL_TEXTSPEED,
     MENUITEM_GENERAL_BATTLESCENE,
     MENUITEM_GENERAL_BUTTONMODE,
@@ -177,6 +179,7 @@ static void DrawDescriptionText(void);
 static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style, bool8 active);
 static void DrawChoices_Options_Four(const u8 *const *const strings, int selection, int y, bool8 active);
 static void ReDrawAll(void);
+static void DrawChoices_Difficulty(int selection, int y);
 static void DrawChoices_TextSpeed(int selection, int y);
 static void DrawChoices_BattleScene(int selection, int y);
 static void DrawChoices_BattleStyle(int selection, int y);
@@ -229,6 +232,7 @@ struct // MENU_GENERAL
     int (*processInput)(int selection);
 } static const sItemFunctionsGeneral[MENUITEM_GENERAL_COUNT] =
 {
+    [MENUITEM_GENERAL_DIFFICULTY]   = {DrawChoices_Difficulty,  ProcessInput_Options_Four},
     [MENUITEM_GENERAL_TEXTSPEED]    = {DrawChoices_TextSpeed,   ProcessInput_Options_Four},
     [MENUITEM_GENERAL_BATTLESCENE]  = {DrawChoices_BattleScene, ProcessInput_Options_Two},
     [MENUITEM_GENERAL_BUTTONMODE]   = {DrawChoices_ButtonMode,  ProcessInput_Options_Three},
@@ -264,6 +268,7 @@ struct // MENU_SOUND
 // Menu left side option names text
 static const u8 *const sOptionMenuItemsNamesGeneral[MENUITEM_GENERAL_COUNT] =
 {
+    [MENUITEM_GENERAL_DIFFICULTY]  = COMPOUND_STRING("Difficulty"),
     [MENUITEM_GENERAL_TEXTSPEED]   = COMPOUND_STRING("Speed"),
     [MENUITEM_GENERAL_BATTLESCENE] = COMPOUND_STRING("Battle Scene"),
     [MENUITEM_GENERAL_BUTTONMODE]  = COMPOUND_STRING("Button Mode"),
@@ -314,6 +319,7 @@ static bool8 CheckConditions(int selection)
         switch(selection)
         {
         default:                            return FALSE;
+        case MENUITEM_GENERAL_DIFFICULTY:      return TRUE;
         case MENUITEM_GENERAL_TEXTSPEED:       return TRUE;
         case MENUITEM_GENERAL_BATTLESCENE:     return TRUE;
         case MENUITEM_GENERAL_BUTTONMODE:      return TRUE;
@@ -348,6 +354,10 @@ static bool8 CheckConditions(int selection)
 // General
 static const u8 sText_Empty[]                   = _("");
 static const u8 sText_Desc_Save[]               = _("Save your settings.");
+static const u8 sText_Desc_DifficultyEasy[]     = _("Suited for casual players.\nCheck the Notebook for more info.");
+static const u8 sText_Desc_DifficultyNormal[]   = _("Suited for first playthroughs.\nCheck the Notebook for more info.");
+static const u8 sText_Desc_DifficultyHard[]     = _("Suited for experienced players.\nCheck the Notebook for more info.");
+static const u8 sText_Desc_DifficultyBrutal[]   = _("Suited for hardcore players.\nCheck the Notebook for more info.");
 static const u8 sText_Desc_TextSpeed[]          = _("Choose one of the four text-display\nspeeds.");
 static const u8 sText_Desc_BattleScene_On[]     = _("Show the POKéMON battle animations.");
 static const u8 sText_Desc_BattleScene_Off[]    = _("Skip the POKéMON battle animations.");
@@ -361,14 +371,15 @@ static const u8 sText_Desc_ButtonMode_LA[]      = _("The L button acts as anothe
 static const u8 sText_Desc_UnitSystemImperial[] = _("Display BERRY and POKéMON weight\nand size in pounds and inches.");
 static const u8 sText_Desc_UnitSystemMetric[]   = _("Display BERRY and POKéMON weight\nand size in kilograms and meters.");
 static const u8 sText_Desc_FrameType[]          = _("Choose the frame surrounding the\nwindows.");
-static const u8 *const sOptionMenuItemDescriptionsGeneral[MENUITEM_GENERAL_COUNT][3] =
+static const u8 *const sOptionMenuItemDescriptionsGeneral[MENUITEM_GENERAL_COUNT][4] =
 {
-    [MENUITEM_GENERAL_TEXTSPEED]   = {sText_Desc_TextSpeed,            sText_Empty,                sText_Empty},
-    [MENUITEM_GENERAL_BATTLESCENE] = {sText_Desc_BattleScene_On,       sText_Desc_BattleScene_Off, sText_Empty},
-    [MENUITEM_GENERAL_BUTTONMODE]  = {sText_Desc_ButtonMode,           sText_Desc_ButtonMode_LR,   sText_Desc_ButtonMode_LA},
+    [MENUITEM_GENERAL_DIFFICULTY]  = {sText_Desc_DifficultyEasy,       sText_Desc_DifficultyNormal,  sText_Desc_DifficultyHard, sText_Desc_DifficultyBrutal},
+    [MENUITEM_GENERAL_TEXTSPEED]   = {sText_Desc_TextSpeed,            sText_Empty,                sText_Empty, sText_Empty},
+    [MENUITEM_GENERAL_BATTLESCENE] = {sText_Desc_BattleScene_On,       sText_Desc_BattleScene_Off, sText_Empty, sText_Empty},
+    [MENUITEM_GENERAL_BUTTONMODE]  = {sText_Desc_ButtonMode,           sText_Desc_ButtonMode_LR,   sText_Desc_ButtonMode_LA, sText_Empty},
     // [MENUITEM_GENERAL_UNIT_SYSTEM] = {sText_Desc_UnitSystemImperial,   sText_Desc_UnitSystemMetric,sText_Empty},
-    [MENUITEM_GENERAL_FRAMETYPE]   = {sText_Desc_FrameType,            sText_Empty,                sText_Empty},
-    [MENUITEM_GENERAL_CANCEL]      = {sText_Desc_Save,                 sText_Empty,                sText_Empty},
+    [MENUITEM_GENERAL_FRAMETYPE]   = {sText_Desc_FrameType,            sText_Empty,                sText_Empty, sText_Empty},
+    [MENUITEM_GENERAL_CANCEL]      = {sText_Desc_Save,                 sText_Empty,                sText_Empty, sText_Empty},
 };
 
 // QOL
@@ -405,6 +416,7 @@ static const u8 *const sOptionMenuItemDescriptionsSound[MENUITEM_SOUND_COUNT][2]
 static const u8 sText_Desc_Disabled_Textspeed[]     = _("Only active if xyz.");
 static const u8 *const sOptionMenuItemDescriptionsDisabledGeneral[MENUITEM_GENERAL_COUNT] =
 {
+    [MENUITEM_GENERAL_DIFFICULTY]  = sText_Empty,
     [MENUITEM_GENERAL_TEXTSPEED]   = sText_Desc_Disabled_Textspeed,
     [MENUITEM_GENERAL_BATTLESCENE] = sText_Empty,
     [MENUITEM_GENERAL_BUTTONMODE]  = sText_Empty,
@@ -751,6 +763,7 @@ void CB2_InitOptionPlusMenu(void)
         gMain.state++;
         break;
     case 6:
+        sOptions->sel_general[MENUITEM_GENERAL_DIFFICULTY]  = GetCurrentDifficultyLevel();
         sOptions->sel_general[MENUITEM_GENERAL_TEXTSPEED]   = gSaveBlock2Ptr->optionsTextSpeed;
         sOptions->sel_general[MENUITEM_GENERAL_BATTLESCENE] = gSaveBlock2Ptr->optionsBattleSceneOff;
         sOptions->sel_general[MENUITEM_GENERAL_BUTTONMODE]  = gSaveBlock2Ptr->optionsButtonMode;
@@ -763,7 +776,7 @@ void CB2_InitOptionPlusMenu(void)
         // sOptions->sel_qol[MENUITEM_QOL_FONT]        = gSaveBlock2Ptr->optionsCurrentFont;
         // sOptions->sel_qol[MENUITEM_QOL_MATCHCALL]   = gSaveBlock2Ptr->optionsDisableMatchCall;
 
-        sOptions->sel_general[MENUITEM_SOUND_SOUND]       = gSaveBlock2Ptr->optionsSound;
+        sOptions->sel_sound[MENUITEM_SOUND_SOUND]       = gSaveBlock2Ptr->optionsSound;
 
         sOptions->submenu = MENU_GENERAL;
 
@@ -978,6 +991,7 @@ static void Task_OptionMenuProcessInput(u8 taskId)
 
 static void Task_OptionMenuSave(u8 taskId)
 {
+    SetCurrentDifficultyLevel(sOptions->sel_general[MENUITEM_GENERAL_DIFFICULTY]);
     gSaveBlock2Ptr->optionsTextSpeed        = sOptions->sel_general[MENUITEM_GENERAL_TEXTSPEED];
     gSaveBlock2Ptr->optionsBattleSceneOff   = sOptions->sel_general[MENUITEM_GENERAL_BATTLESCENE];
     gSaveBlock2Ptr->optionsButtonMode       = sOptions->sel_general[MENUITEM_GENERAL_BUTTONMODE];
@@ -1231,6 +1245,13 @@ static void ReDrawAll(void)
 }
 
 // Process Input functions ****SPECIFIC****
+static const u8 *const sDifficultyStrings[] = {COMPOUND_STRING("Easy"), COMPOUND_STRING("Normal"), COMPOUND_STRING("Hard"), COMPOUND_STRING("Brutal")};
+static void DrawChoices_Difficulty(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_GENERAL_DIFFICULTY);
+    DrawChoices_Options_Four(sDifficultyStrings, selection, y, active);
+}
+
 static const u8 sText_Faster[] = _("FASTER");
 static const u8 sText_Instant[] = _("INSTANT");
 static const u8 *const sTextSpeedStrings[] = {COMPOUND_STRING("Slow"), COMPOUND_STRING("Medium"), COMPOUND_STRING("Fast"), sText_Faster};
