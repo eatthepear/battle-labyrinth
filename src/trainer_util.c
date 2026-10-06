@@ -126,7 +126,16 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
     u32 data;
     u32 personality = (LocalRandom32(&trainer->localRngState) & 0xFFFFDF00) + 0x1000;
     u32 genderValue = 0;
-    u8 level = trainerMon->lvl ? trainerMon->lvl : ((GetCurrentDifficultyLevel() == DIFFICULTY_EASY) ? GetInfiniteCandyLevelCap() - 2 : GetInfiniteCandyLevelCap() - 3);
+    u8 level = GetInfiniteCandyLevelCap() - 2;
+    if (GetCurrentDifficultyLevel() == DIFFICULTY_EASY)
+        level -= 1;
+    if (trainerMon->lvl)
+    {
+        if (trainerMon->lvl >= 5)
+            level = trainerMon->lvl; // normal case
+        else
+            level += trainerMon->lvl; // if trainerMon->lvl < 5, then it's used as a modifier on top of the level cap - 2, for level scaling
+    }
     u8 nature = trainerMon->nature ? trainerMon->nature : (LocalRandom32(&trainer->localRngState) % 5) * 6; // all the neutral natures are multiples of 6
     if (trainerMon->gender == TRAINER_MON_RANDOM_GENDER)
         genderValue = LocalRandom32(&trainer->localRngState) & 0x000000FF;

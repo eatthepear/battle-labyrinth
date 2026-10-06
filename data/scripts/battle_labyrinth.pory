@@ -1789,6 +1789,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_TM_VOLT_SWITCH)
 	additem(ITEM_TM_THUNDER_WAVE)
 	additem(ITEM_HM_SURF)
+	additem(ITEM_TM_X_SCISSOR)
 
 	if (var(VAR_ZONE) == 16) {
 		return
@@ -2897,6 +2898,15 @@ script EventScript_Archaludon {
 	faceplayer
 	playmoncry(SPECIES_ARCHALUDON, CRY_MODE_NORMAL)
 	msgbox(format("Cha!"))
+	waitmoncry
+	release
+}
+
+script EventScript_Kleavor {
+	lock
+	faceplayer
+	playmoncry(SPECIES_KLEAVOR, CRY_MODE_NORMAL)
+	msgbox(format("Klea!"))
 	waitmoncry
 	release
 }

@@ -2506,6 +2506,54 @@ IVs: 30 HP / 31 Atk / 31 Def / 30 SpA / 31 SpD / 31 Spe
 - Hidden Power
 - Work Up
 
+=== TRAINER_PBL_DECLAN_OPTIONAL_6 ===
+Name: Declan
+Class: Aspiring Leader
+Pic: Bug Maniac
+Music: Suspicious
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+
+Kricketune @ Focus Sash
+Lonely Nature
+Ability: Swarm
+Level: 1
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- X-Scissor
+- Brick Break
+- Endeavor
+- Sticky Web
+
+Masquerain @ Charti Berry
+Timid Nature
+Ability: Intimidate
+Level: 1
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Buzz
+- Air Slash
+- Surf
+- Ice Beam
+
+Leavanny @ Occa Berry
+Jolly Nature
+Ability: Swarm
+Level: 1
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- X-Scissor
+- Leaf Blade
+- Knock Off
+- Triple Axel
+
+Kleavor @ Lum Berry
+Adamant Nature
+Ability: Sharpness
+Level: 2
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- X-Scissor
+- Stone Axe
+- Close Combat
+- U-Turn
+
 === TRAINER_PBL_IONA ===
 Name: Iona
 Class: Swimmer F
