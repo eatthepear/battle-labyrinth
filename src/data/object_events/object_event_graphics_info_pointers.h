@@ -761,6 +761,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ACE_TRAINER_M] =            &gObjectEventGraphicsInfo_AceTrainerM,
     [OBJ_EVENT_GFX_ACE_TRAINER_F] =            &gObjectEventGraphicsInfo_AceTrainerF,
     [OBJ_EVENT_GFX_LACEY] =                    &gObjectEventGraphicsInfo_Lacey,
+    [OBJ_EVENT_GFX_KOGA]                     = &gObjectEventGraphicsInfo_Koga,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,

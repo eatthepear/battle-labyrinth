@@ -728,6 +728,7 @@ enum
 #define OBJ_EVENT_PAL_TAG_ACE_TRAINER_M           0x7296
 #define OBJ_EVENT_PAL_TAG_ACE_TRAINER_F           0x7297
 #define OBJ_EVENT_PAL_TAG_LACEY                   0x7298
+#define OBJ_EVENT_PAL_TAG_KOGA                    0x7299
 
 #define OBJ_EVENT_PAL_TAG_RUNNING_TRIATHLETE_F    0x7401
 #define OBJ_EVENT_PAL_TAG_SCHOOL_KID_M            0x7402
