@@ -516,7 +516,7 @@ const u16 gTrainerPalette_Roughneck[] = INCGFX_U16("graphics/trainers/front_pics
 
 const u32 gTrainerFrontPic_Serena[] = INCGFX_U32("graphics/trainers/front_pics/serena.png", ".4bpp.smol");
 const u16 gTrainerPalette_Serena[] = INCGFX_U16("graphics/trainers/front_pics/serena.png", ".gbapal");
-const u8 gTrainerBackPic_Serena[] = INCGFX_U8("graphics/trainers/back_pics/serena.png", ".4bpp.smol");
+const u8 gTrainerBackPic_Serena[] = INCGFX_U8("graphics/trainers/back_pics/serena.png", ".4bpp");
 const u16 gTrainerBackPicPalette_Serena[] = INCGFX_U16("graphics/trainers/back_pics/serena.png", ".gbapal");
 
 const u32 gTrainerFrontPic_KimonoGirl[] = INCGFX_U32("graphics/trainers/front_pics/kimono_girl.png", ".4bpp.smol");
