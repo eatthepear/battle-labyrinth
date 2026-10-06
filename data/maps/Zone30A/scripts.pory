@@ -95,6 +95,198 @@ script Zone30_EventScript_Door1 {
 	end
 }
 
+script Zone30_EventScript_RocketGrunt_1 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_30_1, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_RocketGrunt_2 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_30_2, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_RocketGrunt_3 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_30_3, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_RocketGrunt_4 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_30_4, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_RocketGrunt_5 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_30_5, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_RocketGrunt_6 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_30_6, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_RocketGrunt_7 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_30_7, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_RocketGrunt_8 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_30_8, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_MagmaGrunt_1 {
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_30_1, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_MagmaGrunt_2 {
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_30_2, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_MagmaGrunt_3 {
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_30_3, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_MagmaGrunt_4 {
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_30_4, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_MagmaGrunt_5 {
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_30_5, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_MagmaGrunt_6 {
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_30_6, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_MagmaGrunt_7 {
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_30_7, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_MagmaGrunt_8 {
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_30_8, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_AquaGrunt_1 {
+	trainerbattle_single(TRAINER_PBL_AQUA_GRUNT_30_1, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_AquaGrunt_2 {
+	trainerbattle_single(TRAINER_PBL_AQUA_GRUNT_30_2, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_AquaGrunt_3 {
+	trainerbattle_single(TRAINER_PBL_AQUA_GRUNT_30_3, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_AquaGrunt_4 {
+	trainerbattle_single(TRAINER_PBL_AQUA_GRUNT_30_4, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_AquaGrunt_5 {
+	trainerbattle_single(TRAINER_PBL_AQUA_GRUNT_30_5, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_AquaGrunt_6 {
+	trainerbattle_single(TRAINER_PBL_AQUA_GRUNT_30_6, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_AquaGrunt_7 {
+	trainerbattle_single(TRAINER_PBL_AQUA_GRUNT_30_7, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_AquaGrunt_8 {
+	trainerbattle_single(TRAINER_PBL_AQUA_GRUNT_30_8, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_GalacticGrunt_1 {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_30_1, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_GalacticGrunt_2 {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_30_2, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_GalacticGrunt_3 {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_30_3, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_GalacticGrunt_4 {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_30_4, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_GalacticGrunt_5 {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_30_5, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_GalacticGrunt_6 {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_30_6, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_GalacticGrunt_7 {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_30_7, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone30_EventScript_GalacticGrunt_8 {
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_30_8, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
 script Zone30_EventScript_CheckCanOpenDoor {
     if (!checkitem(ITEM_CARD_KEY)) {
         msgbox(format("No!\nIt needs a CARD KEY!"))
