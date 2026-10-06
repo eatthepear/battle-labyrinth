@@ -583,6 +583,24 @@
 #define METATILE_PokemonMansion_Wall_EndPost_Bottom                      0x8AD
 #define METATILE_PokemonMansion_Wall_EndPost_Mid                         0x8A5
 
+// gTileset_RocketCo
+#define METATILE_RocketCo_Floor                          0x800
+#define METATILE_RocketCo_Floor_ShadeFull                0x801
+#define METATILE_RocketCo_HorizontalBarrier_BottomLeft   0x822
+#define METATILE_RocketCo_HorizontalBarrier_BottomRight  0x823
+#define METATILE_RocketCo_HorizontalBarrier_TopLeft      0x81A
+#define METATILE_RocketCo_HorizontalBarrier_TopRight     0x81B
+#define METATILE_RocketCo_VerticalBarrier_BottomLeft     0x828
+#define METATILE_RocketCo_VerticalBarrier_BottomRight    0x829
+#define METATILE_RocketCo_VerticalBarrier_MidLeft        0x820
+#define METATILE_RocketCo_VerticalBarrier_MidRight       0x821
+#define METATILE_RocketCo_VerticalBarrier_TopLeft        0x818
+#define METATILE_RocketCo_VerticalBarrier_TopRight       0x819
+#define METATILE_RocketCo_WallLeftCorner                 0x826
+#define METATILE_RocketCo_WallRightCorner                0x827
+#define METATILE_RocketCo_Wall_LeftEdge                  0x810
+#define METATILE_RocketCo_Wall_RightEdge                 0x812
+
 // gTileset_Rustboro
 #define METATILE_Rustboro_Door_Gray  0x81F
 #define METATILE_Rustboro_Door_Tan   0x82F

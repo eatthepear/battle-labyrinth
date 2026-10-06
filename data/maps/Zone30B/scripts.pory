@@ -1,4 +1,36 @@
-mapscripts Zone30B_MapScripts {}
+mapscripts Zone30B_MapScripts {
+	MAP_SCRIPT_ON_LOAD {
+		if (flag(FLAG_ZONE_30B_DOOR_1) == FALSE) {
+			setmetatile(32, 18, METATILE_RocketCo_HorizontalBarrier_TopLeft, 1)
+			setmetatile(33, 18, METATILE_RocketCo_HorizontalBarrier_TopRight, 1)
+			setmetatile(32, 19, METATILE_RocketCo_HorizontalBarrier_BottomLeft, 1)
+			setmetatile(33, 19, METATILE_RocketCo_HorizontalBarrier_BottomRight, 1)
+			setmetatile(33, 20, METATILE_RocketCo_Floor_ShadeFull, 0)
+		}
+	}
+}
+
+script Zone30B_EventScript_Door1 {
+	lockall
+	setvar(VAR_TEMP_1, 2) // 1 = lobby, 2 = magma, 3 = aqua, 4 = galactic, 5 = rocket top floor
+	setvar(VAR_0x8004, FLAG_ZONE_30B_DOOR_1)
+    if (flag(FLAG_ZONE_30B_DOOR_1)) {
+        goto(Zone30_EventScript_DoorUnlocked)
+    }
+    call(Zone30_EventScript_CheckCanOpenDoor)
+	setmetatile(32, 18, METATILE_RocketCo_Floor_ShadeFull, 0)
+	setmetatile(33, 18, METATILE_RocketCo_Floor, 0)
+	setmetatile(32, 19, METATILE_RocketCo_Floor_ShadeFull, 0)
+	setmetatile(33, 19, METATILE_RocketCo_Floor, 0)
+	setmetatile(33, 20, METATILE_RocketCo_Floor, 0)
+	waitse
+	playse(SE_UNLOCK)
+	special(DrawWholeMapView)
+	waitse
+	special(SetHiddenItemFlag)
+	releaseall
+	end
+}
 
 script Zone30B_EventScript_Wally_Intro {
 	lockall

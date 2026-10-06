@@ -104,17 +104,18 @@
 #define VAR_ZONE_27_STATE                    0x406B
 #define VAR_ZONE_28_STATE                    0x406C
 #define VAR_ZONE_29_STATE                    0x406D
-#define VAR_ZONE_30_STATE                    0x406E
-#define VAR_ZONE_31_STATE                    0x406F
-#define VAR_ZONE_32_STATE                    0x4070
-#define VAR_ZONE_33_STATE                    0x4071
-#define VAR_ZONE_34_STATE                    0x4072
-#define VAR_ZONE_35_STATE                    0x4073
-#define VAR_ZONE_B1_STATE                    0x4083
-#define VAR_ZONE_B2_STATE                    0x4084
-#define VAR_ZONE_B3_STATE                    0x4085
-#define VAR_ZONE_B4_STATE                    0x4086
-#define VAR_ZONE_B5_STATE                    0x4087
+// skip 0x406E until vars_frlg is not included in this file, because otherwise it conflicts
+#define VAR_ZONE_30_STATE                    0x406F
+#define VAR_ZONE_31_STATE                    0x4070
+#define VAR_ZONE_32_STATE                    0x4071
+#define VAR_ZONE_33_STATE                    0x4072
+#define VAR_ZONE_34_STATE                    0x4073
+#define VAR_ZONE_35_STATE                    0x4083
+#define VAR_ZONE_B1_STATE                    0x4084
+#define VAR_ZONE_B2_STATE                    0x4085
+#define VAR_ZONE_B3_STATE                    0x4086
+#define VAR_ZONE_B4_STATE                    0x4087
+#define VAR_ZONE_B5_STATE                    0x4088
 
 // general purpose vars
 #define VAR_RECYCLE_GOODS                                VARS_END
