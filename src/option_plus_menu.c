@@ -557,7 +557,7 @@ static void DrawTopBarText(void)
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 190, 1, color, 0, COMPOUND_STRING("{R_BUTTON} SOUND"));
             break;
         case MENU_SOUND:
-            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 105, 1, color, 0, COMPOUND_STRING("QOL"));
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 105, 1, color, 0, COMPOUND_STRING("SOUND"));
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 2, 1, color, 0, COMPOUND_STRING("{L_BUTTON} QOL"));
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 190, 1, color, 0, COMPOUND_STRING("{R_BUTTON} GENERAL"));
             break;
@@ -985,6 +985,8 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     {
         if (sOptions->submenu != MENU_SOUND)
             sOptions->submenu++;
+        else
+            sOptions->submenu = 0;
 
         DrawTopBarText();
         ReDrawAll();
@@ -995,6 +997,8 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     {
         if (sOptions->submenu != 0)
             sOptions->submenu--;
+        else
+            sOptions->submenu = MENU_SOUND;
         
         DrawTopBarText();
         ReDrawAll();
