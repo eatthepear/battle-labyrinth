@@ -6,6 +6,7 @@
 #include "international_string_util.h"
 #include "main.h"
 #include "menu.h"
+#include "option_plus_menu.h"
 #include "palette.h"
 #include "scanline_effect.h"
 #include "sprite.h"
@@ -271,8 +272,16 @@ static void Task_ChangePage(u8 taskId)
     }
 }
 
+#define useOptionPlusMenu TRUE
+
 void CB2_InitOptionMenu(void)
 {
+    if (useOptionPlusMenu)
+    {
+        CB2_InitOptionPlusMenu();
+        return;
+    }
+
     switch (gMain.state)
     {
     default:
