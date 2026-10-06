@@ -8,15 +8,41 @@ script Zone30Z_EventScript_Attendant {
 		special(SetDeptStoreFloor)
 	}
 	setvar(VAR_0x8004, 0)
-	message(format("Welcome to {COLOR GREEN}Rainbow Rocket Co.{COLOR DARK_GRAY}\pWhich floor would you like?"))
+	if (checkitem(ITEM_CARD_KEY) == FALSE) {
+		msgbox(format("Welcome to {COLOR GREEN}Rainbow Rocket Co.{COLOR DARK_GRAY}\pCan I see your {COLOR GREEN}Card Key{COLOR DARK_GRAY}?"))
+		msgbox(format("I'm sorry, you can only use the elevator if you have a {COLOR GREEN}Card Key{COLOR DARK_GRAY}, and only floors you have access to."), MSGBOX_AUTOCLOSE)
+		release
+		end
+	}
+	message(format("Welcome to {COLOR GREEN}Rainbow Rocket Co.{COLOR DARK_GRAY}\pYou can access floors based on your {COLOR GREEN}Card Key{COLOR DARK_GRAY}.\pWhich floor would you like?"))
 	waitmessage
-	dynmultipush("8F - RR", 8)
-	dynmultipush("7F - Galactic", 7)
-	dynmultipush("6F - Galactic", 6)
-	dynmultipush("5F - Magma", 5)
-	dynmultipush("4F - Magma", 4)
-	dynmultipush("3F - Aqua", 3)
-	dynmultipush("2F - Aqua", 2)
+	
+	if (var(VAR_ZONE_30_STATE) < 9) {
+		dynmultipush("{COLOR RED}8F - RR", 80)
+	} else {
+		dynmultipush("8F - RR", 8)
+	}
+	if (var(VAR_ZONE_30_STATE) < 7) {
+		dynmultipush("{COLOR RED}7F - Galactic", 70)
+		dynmultipush("{COLOR RED}6F - Galactic", 60)
+	} else {
+		dynmultipush("7F - Galactic", 7)
+		dynmultipush("6F - Galactic", 6)
+	}
+	if (var(VAR_ZONE_30_STATE) < 5) {
+		dynmultipush("{COLOR RED}5F - Magma", 50)
+		dynmultipush("{COLOR RED}4F - Magma", 40)
+	} else {
+		dynmultipush("5F - Magma", 5)
+		dynmultipush("4F - Magma", 4)
+	}
+	if (var(VAR_ZONE_30_STATE) < 3) {
+		dynmultipush("{COLOR RED}3F - Aqua", 30)
+		dynmultipush("{COLOR RED}2F - Aqua", 20)
+	} else {
+		dynmultipush("3F - Aqua", 3)
+		dynmultipush("2F - Aqua", 2)
+	}
 	dynmultipush("1F - Lobby", 1)
 	dynmultipush("Exit", 0)
 	dynmultistack(0, 0, FALSE, 6, FALSE, VAR_ZONE_30_FLOOR, DYN_MULTICHOICE_CB_NONE)
@@ -77,6 +103,8 @@ script Zone30Z_EventScript_Attendant {
 				call(Zone30Z_EventScript_MoveElevator)
 				setvar(VAR_ZONE_30_FLOOR, ZONE30_FLOORNUM_8F)
 			}
+		default:
+			msgbox(format("I'm sorry, based on your {COLOR GREEN}Card Key{COLOR DARK_GRAY}, you don't have access to that floor."))
 	}
 	release
 	end
