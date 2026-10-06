@@ -7,6 +7,8 @@ script Zone30A_EventScript_Proton {
     addobject(LOCALID_PROTON_30A)
 	applymovement(LOCALID_PROTON_30A, Zone30A_Movement_Proton_WalkDownFromStairs)
 	waitmovement(0)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement(0)
 	applymovement(LOCALID_PROTON_30A, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
