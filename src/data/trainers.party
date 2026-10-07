@@ -3088,7 +3088,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_PBL_AQUA_GRUNT_19D_1_BOSS_19 ===
 Name: Grunt
 Class: Team Aqua
-Pic: Aqua Grunt F
+Pic: Aqua Grunt M
 Music: Aqua
 AI: AI_FLAG_BOSS
 
@@ -3115,7 +3115,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_PBL_AQUA_GRUNT_19D_2_BOSS_19 ===
 Name: Grunt
 Class: Team Aqua
-Pic: Aqua Grunt M
+Pic: Aqua Grunt F
 Music: Aqua
 AI: AI_FLAG_BOSS
 
@@ -3139,35 +3139,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Brick Break
 - Knock Off
 
-=== TRAINER_PBL_AQUA_GRUNT_19D_3_BOSS_19 ===
-Name: Grunt
-Class: Team Aqua
-Pic: Aqua Grunt F
-Music: Aqua
-AI: AI_FLAG_BOSS
-
-Grapploct
-Careful Nature
-Ability: Limber
-Level: 34
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Octolock
-- Brick Break
-- Brutal Swing
-- Taunt
-
-Veluza
-Jolly Nature
-Ability: Sharpness
-Level: 34
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aqua Cutter
-- Psycho Cut
-- Night Slash
-- Fillet Away
-
 === TRAINER_PBL_MATT_BOSS_19 ===
-Name: Grunt
+Name: Matt
 Class: Aqua Admin
 Pic: Aqua Admin M
 Music: Aqua

@@ -30,12 +30,10 @@ script Zone19D_EventScript_InitiateAquaGauntlet {
 	playbgm(MUS_ENCOUNTER_AQUA, TRUE)
 	addobject(LOCALID_GRUNT_1_19D)
 	addobject(LOCALID_GRUNT_2_19D)
-	addobject(LOCALID_GRUNT_3_19D)
 	addobject(LOCALID_MATT_19D)
 	clearflag(FLAG_HIDE_ZONE19D_AQUA)
-	applymovement(LOCALID_GRUNT_1_19D, Zone19D_Movement_TopAquaWalkUp)
-	applymovement(LOCALID_GRUNT_2_19D, Zone19D_Movement_LeftAquaWalkUp)
-	applymovement(LOCALID_GRUNT_3_19D, Zone19D_Movement_RightAquaWalkUp)
+	applymovement(LOCALID_GRUNT_1_19D, Zone19D_Movement_LeftAquaWalkUp)
+	applymovement(LOCALID_GRUNT_2_19D, Zone19D_Movement_RightAquaWalkUp)
 	applymovement(LOCALID_MATT_19D, Zone19D_Movement_BottomAquaWalkUp)
 	waitmovement(0)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
@@ -44,23 +42,17 @@ script Zone19D_EventScript_InitiateAquaGauntlet {
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
 	delay(16)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
-	waitmovement(0)
-	delay(40)
-	applymovement(LOCALID_GRUNT_1_19D, Common_Movement_WalkInPlaceFasterDown)
-	setspeaker("Team Aqua Grunt")
-	msgbox(format("Shiver me timbers!\nAhoy, maties! This here trainer found us!"), MSGBOX_AUTOCLOSE)
-	waitmovement(0)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement(0)
-	applymovement(LOCALID_GRUNT_2_19D, Common_Movement_WalkInPlaceFasterRight)
-	setspeaker("Team Aqua Grunt")
-	msgbox(format("We'll be feedin' the fish if they get word out!"), MSGBOX_AUTOCLOSE)
+	delay(40)
+	applymovement(LOCALID_GRUNT_1_19D, Common_Movement_WalkInPlaceFasterRight)
+	setspeaker("Grunt")
+	msgbox(format("Shiver me timbers!\nAhoy, maties! This here trainer found us!"), MSGBOX_AUTOCLOSE)
 	waitmovement(0)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
-	applymovement(LOCALID_GRUNT_3_19D, Common_Movement_WalkInPlaceFasterLeft)
-	setspeaker("Team Aqua Grunt")
+	applymovement(LOCALID_GRUNT_2_19D, Common_Movement_WalkInPlaceFasterLeft)
+	setspeaker("Grunt")
 	msgbox(format("Well, dead men tell no tales.\pRight, Admin Matt?"), MSGBOX_AUTOCLOSE)
 	waitmovement(0)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
@@ -69,26 +61,20 @@ script Zone19D_EventScript_InitiateAquaGauntlet {
 	setspeaker("Matt")
 	msgbox(format("Ye lily-livered scallywags, let's just give this one a proper thrashing!"))
 	waitmovement(0)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement(0)
-	applymovement(LOCALID_GRUNT_1_19D, Common_Movement_WalkInPlaceFasterDown)
-	setspeaker("Team Aqua Grunt")
+	applymovement(LOCALID_GRUNT_1_19D, Common_Movement_WalkInPlaceFasterRight)
+	setspeaker("Grunt")
 	msgbox(format("Right on! You won't get out without beating me, savvy?"), MSGBOX_AUTOCLOSE)
 	waitmovement(0)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_AQUA_GRUNT_19D_1_BOSS_19, Zone19D_Text_AquaDefeat)
-	applymovement(LOCALID_GRUNT_2_19D, Common_Movement_WalkInPlaceFasterRight)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
-	waitmovement(0)
-	setspeaker("Team Aqua Grunt")
-	msgbox("I be next. Fire in the hole!")
-	trainerbattle_no_intro(TRAINER_PBL_AQUA_GRUNT_19D_2_BOSS_19, Zone19D_Text_AquaDefeat)
-	applymovement(LOCALID_GRUNT_3_19D, Common_Movement_WalkInPlaceFasterLeft)
+	applymovement(LOCALID_GRUNT_2_19D, Common_Movement_WalkInPlaceFasterLeft)
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
-	setspeaker("Team Aqua Grunt")
-	msgbox("We give no quarter!")
-	trainerbattle_no_intro(TRAINER_PBL_AQUA_GRUNT_19D_3_BOSS_19, Zone19D_Text_AquaDefeat)
+	setspeaker("Grunt")
+	msgbox("I be next. Fire in the hole!")
+	trainerbattle_no_intro(TRAINER_PBL_AQUA_GRUNT_19D_2_BOSS_19, Zone19D_Text_AquaDefeat)
 	applymovement(LOCALID_MATT_19D, Common_Movement_WalkUp)
 	waitmovement(0)
 	applymovement(LOCALID_MATT_19D, Common_Movement_WalkInPlaceFasterUp)
@@ -98,21 +84,19 @@ script Zone19D_EventScript_InitiateAquaGauntlet {
 	msgbox(format("Son o' a biscuit eater!\nFace the might o' us seadogs!\pI, Admin Matt, be sinkin your ship!"))
 	trainerbattle_no_intro(TRAINER_PBL_MATT_BOSS_19, Zone19D_Text_AquaDefeat)
 	setspeaker("Matt")
-	msgbox(format("Sink me!\nThis trainer beat all four o' us!\l'ere be your booty, take it!"))
+	msgbox(format("Sink me!\nThis trainer beat all three o' us!\l'ere be your booty, take it!"))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_FLIP_TURN)
 	setspeaker("Matt")
 	msgbox("Me hearties, run!", MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_GRUNT_1_19D, Zone19D_Movement_Aqua1Run)
 	applymovement(LOCALID_GRUNT_2_19D, Zone19D_Movement_Aqua2Run)
-	applymovement(LOCALID_GRUNT_3_19D, Zone19D_Movement_Aqua3Run)
-	applymovement(LOCALID_MATT_19D, Zone19D_Movement_Aqua4Run)
-	setspeaker("Team Aqua Grunts")
+	applymovement(LOCALID_MATT_19D, Zone19D_Movement_MattRun)
+	setspeaker("Grunts")
 	msgbox("Arrr!", MSGBOX_AUTOCLOSE)
 	waitmovement(0)
 	removeobject(LOCALID_GRUNT_1_19D)
 	removeobject(LOCALID_GRUNT_2_19D)
-	removeobject(LOCALID_GRUNT_3_19D)
 	removeobject(LOCALID_MATT_19D)
 	setflag(FLAG_HIDE_ZONE19D_AQUA)
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
@@ -132,17 +116,9 @@ text Zone19D_Text_AquaDefeat {
 	"Arrr!"
 }
 
-movement Zone19D_Movement_TopAquaWalkUp {
+movement Zone19D_Movement_LeftAquaWalkUp {
 	walk_up * 5
 	walk_right
-	walk_up
-	walk_right
-	face_down
-}
-
-movement Zone19D_Movement_LeftAquaWalkUp {
-	walk_up * 6
-	walk_right * 2
 }
 
 movement Zone19D_Movement_RightAquaWalkUp {
@@ -161,16 +137,10 @@ movement Zone19D_Movement_Aqua1Run {
 }
 
 movement Zone19D_Movement_Aqua2Run {
-	walk_faster_down
-	walk_faster_left
-	walk_faster_down * 5
-}
-
-movement Zone19D_Movement_Aqua3Run {
 	walk_faster_down * 7
 }
 
-movement Zone19D_Movement_Aqua4Run {
+movement Zone19D_Movement_MattRun {
 	walk_faster_down * 2
 	walk_faster_right
 	walk_faster_down * 4
