@@ -1,1 +1,19 @@
 mapscripts Zone30H_MapScripts {}
+
+script Zone30H_EventScript_TagBattle {
+    lockall
+    setspeaker("Archer")
+    msgbox(format("DIALOGUE!"))
+    setspeaker("???")
+    msgbox(format("DIALOGUE!"))
+    setspeaker("Ariana")
+    msgbox(format("DIALOGUE!"))
+    call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+    multi_2_vs_2(TRAINER_PBL_ARCHER_BOSS_30, format("DEFEATED 1!"), TRAINER_PBL_ARIANA_BOSS_30, format("DEFEATED 2!"), PARTNER_PBL_LEAF_30)
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+    destroyfollowernpc
+    setvar(VAR_ZONE_30_STATE, 9)
+    releaseall
+    end
+}

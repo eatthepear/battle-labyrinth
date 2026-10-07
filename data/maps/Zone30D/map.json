@@ -65,6 +65,20 @@
       "trainer_sight_or_berry_tree_id": "5",
       "script": "Zone30_EventScript_AquaGrunt_4",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_LEAF_ZONE30D",
+      "graphics_id": "OBJ_EVENT_GFX_LEAF",
+      "x": 12,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone30D_EventScript_Leaf",
+      "flag": "FLAG_HIDE_ZONE30D_LEAF"
     }
   ],
   "warp_events": [
@@ -104,6 +118,16 @@
       "dest_warp_id": "3"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_ZONE_30_STATE",
+      "var_value": "3",
+      "script": "Zone30D_EventScript_Leaf_Intro"
+    }
+  ],
   "bg_events": []
 }

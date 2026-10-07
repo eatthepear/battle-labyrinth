@@ -1,1 +1,68 @@
 mapscripts Zone30G_MapScripts {}
+
+script Zone30G_EventScript_Serena_Intro {
+	lockall
+	playbgm(MUS_BW_FRIEND, 0)
+	applymovement(LOCALID_SERENA_ZONE30G, Common_Movement_FaceLeft)
+	waitmovement(0)
+	applymovement(LOCALID_SERENA_ZONE30G, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	setspeaker("Serena")
+	msgbox(format("Oh, poor Serena, all alone in these woods.\pWon't you help show me the way out?"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_SERENA_ZONE30G, Common_Movement_WalkRight3)
+	waitmovement(0)
+	setspeaker(SP_NAME_NONE)
+	msgbox(format("{PLAYER} agreed to help {COLOR BLUE}Serena{COLOR DARK_GRAY}!"))
+	setspeaker("Serena")
+	msgbox(format("LETS GO!"), MSGBOX_AUTOCLOSE)
+	setfollowernpc(LOCALID_SERENA_ZONE30G, FOLLOWER_NPC_FLAG_ALL, 0, PARTNER_PBL_SERENA_30)
+	facefollowernpc
+	setvar(VAR_ZONE_30_STATE, 6)
+	fadedefaultbgm
+	releaseall
+}
+
+script Zone30G_EventScript_Serena {
+	lock
+	faceplayer
+	setspeaker("Serena")
+	msgbox(format("DIALOGUE!"), MSGBOX_AUTOCLOSE)
+	release
+	end
+}
+
+script Zone30G_EventScript_Jupiter {
+    lock
+    faceplayer
+    msgbox(format("DIALOGUE!"))
+    release
+    end
+}
+
+script Zone30G_EventScript_Mars {
+    lock
+    faceplayer
+    msgbox(format("DIALOGUE!"))
+    release
+    end
+}
+
+script Zone30G_EventScript_TagBattle {
+    lockall
+    setspeaker("Jupiter")
+    msgbox(format("DIALOGUE!"))
+    setspeaker("Serena")
+    msgbox(format("DIALOGUE!"))
+    setspeaker("Mars")
+    msgbox(format("DIALOGUE!"))
+    call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+    multi_2_vs_2(TRAINER_PBL_JUPITER_BOSS_30, format("DEFEATED 1!"), TRAINER_PBL_MARS_BOSS_30, format("DEFEATED 2!"), PARTNER_PBL_SERENA_30)
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+    destroyfollowernpc
+    setvar(VAR_ZONE_30_STATE, 7)
+    releaseall
+    end
+}

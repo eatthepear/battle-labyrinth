@@ -65,6 +65,46 @@
       "trainer_sight_or_berry_tree_id": "4",
       "script": "Zone30_EventScript_GalacticGrunt_6",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_JUPITER",
+      "x": 19,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone30G_EventScript_Jupiter",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MARS",
+      "x": 21,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone30G_EventScript_Mars",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SERENA_ZONE30G",
+      "graphics_id": "OBJ_EVENT_GFX_SERENA",
+      "x": 22,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone30G_EventScript_Serena",
+      "flag": "FLAG_HIDE_ZONE30G_SERENA"
     }
   ],
   "warp_events": [
@@ -139,6 +179,25 @@
       "dest_warp_id": "11"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_ZONE_30_STATE",
+      "var_value": "6",
+      "script": "Zone30G_EventScript_TagBattle"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_ZONE_30_STATE",
+      "var_value": "5",
+      "script": "Zone30G_EventScript_Serena_Intro"
+    }
+  ],
   "bg_events": []
 }

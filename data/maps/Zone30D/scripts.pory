@@ -1,1 +1,34 @@
 mapscripts Zone30D_MapScripts {}
+
+script Zone30D_EventScript_Leaf_Intro {
+	lockall
+	playbgm(MUS_BW_FRIEND, 0)
+	applymovement(LOCALID_LEAF_ZONE30D, Common_Movement_FaceLeft)
+	waitmovement(0)
+	applymovement(LOCALID_LEAF_ZONE30D, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	setspeaker("Leaf")
+	msgbox(format("Oh, poor Leaf, all alone in these woods.\pWon't you help show me the way out?"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_LEAF_ZONE30D, Common_Movement_WalkRight3)
+	waitmovement(0)
+	setspeaker(SP_NAME_NONE)
+	msgbox(format("{PLAYER} agreed to help {COLOR BLUE}Leaf{COLOR DARK_GRAY}!"))
+	setspeaker("Leaf")
+	msgbox(format("LETS GO!"), MSGBOX_AUTOCLOSE)
+	setfollowernpc(LOCALID_LEAF_ZONE30D, FOLLOWER_NPC_FLAG_ALL, 0, PARTNER_PBL_LEAF_30)
+	facefollowernpc
+	setvar(VAR_ZONE_30_STATE, 4)
+	fadedefaultbgm
+	releaseall
+}
+
+script Zone30D_EventScript_Leaf {
+	lock
+	faceplayer
+	setspeaker("Leaf")
+	msgbox(format("DIALOGUE!"), MSGBOX_AUTOCLOSE)
+	release
+	end
+}
