@@ -1796,6 +1796,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	}
 	additem(ITEM_BOTTLE_CAP)
 	additem(ITEM_YELLOW_SHARD, 5)
+	additem(ITEM_LUM_BERRY, 5)
 
 	if (var(VAR_ZONE) == 17) {
 		return
@@ -1806,6 +1807,10 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 18) {
 		return
 	}
+	additem(ITEM_TM_SNOWSCAPE)
+	additem(ITEM_TM_SUNNY_DAY)
+	additem(ITEM_TM_RAIN_DANCE)
+	additem(ITEM_TM_SANDSTORM)
 	additem(ITEM_LINKING_CORD)
 	additem(ITEM_TM_U_TURN)
 

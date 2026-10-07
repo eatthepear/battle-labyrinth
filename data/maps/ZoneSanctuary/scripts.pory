@@ -572,9 +572,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_HM_SURF)
 		case 16:
-			msgbox(format("{COLOR GREEN}5 Heart Scales{COLOR DARK_GRAY}!"))
+			msgbox(format("{COLOR GREEN}5 Lum Berries{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_HEART_SCALE, 5)
+			giveitem(ITEM_LUM_BERRY, 5)
 		case 17:
 			msgbox(format("Ultra Balls!"))
 		case 18:
