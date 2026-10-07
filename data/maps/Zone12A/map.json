@@ -283,8 +283,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_F",
-      "x": 63,
-      "y": 18,
+      "x": 59,
+      "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
