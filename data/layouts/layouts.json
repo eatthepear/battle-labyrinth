@@ -10405,7 +10405,7 @@
     {
       "id": "LAYOUT_ZONE20A",
       "name": "Zone20A_Layout",
-      "width": 46,
+      "width": 34,
       "height": 35,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_GymsExterior",
