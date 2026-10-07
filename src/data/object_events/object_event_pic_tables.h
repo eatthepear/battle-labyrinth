@@ -1604,6 +1604,22 @@ static const struct SpriteFrameImage sPicTable_Shauntal[] = {
     overworld_ascending_frames(gObjectEventPic_Shauntal, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Matt[] = {
+    overworld_ascending_frames(gObjectEventPic_Matt, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Shelly[] = {
+    overworld_ascending_frames(gObjectEventPic_Shelly, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Courtney[] = {
+    overworld_ascending_frames(gObjectEventPic_Courtney, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Tabitha[] = {
+    overworld_ascending_frames(gObjectEventPic_Tabitha, 2, 4),
+};
+
 #if IS_FRLG
 
 static const struct SpriteFrameImage sPicTable_RedNormal[] = {

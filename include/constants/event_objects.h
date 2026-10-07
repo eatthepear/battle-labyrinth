@@ -472,6 +472,10 @@ enum
     OBJ_EVENT_GFX_ACE_TRAINER_F,
     OBJ_EVENT_GFX_LACEY,
     OBJ_EVENT_GFX_SHAUNTAL,
+    OBJ_EVENT_GFX_MATT,
+    OBJ_EVENT_GFX_COURTNEY,
+    OBJ_EVENT_GFX_SHELLY,
+    OBJ_EVENT_GFX_TABITHA,
     NUM_OBJ_EVENT_GFX,
 };
 
@@ -731,6 +735,10 @@ enum
 #define OBJ_EVENT_PAL_TAG_LACEY                   0x7298
 #define OBJ_EVENT_PAL_TAG_KOGA                    0x7299
 #define OBJ_EVENT_PAL_TAG_SHAUNTAL                0x729A
+#define OBJ_EVENT_PAL_TAG_MATT                    0x729B
+#define OBJ_EVENT_PAL_TAG_COURTNEY                0x729C
+#define OBJ_EVENT_PAL_TAG_SHELLY                  0x729D
+#define OBJ_EVENT_PAL_TAG_TABITHA                 0x729E
 
 #define OBJ_EVENT_PAL_TAG_RUNNING_TRIATHLETE_F    0x7401
 #define OBJ_EVENT_PAL_TAG_SCHOOL_KID_M            0x7402

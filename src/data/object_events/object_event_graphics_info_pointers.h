@@ -462,6 +462,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AceTrainerM
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AceTrainerF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lacey;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shauntal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Matt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Courtney;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shelly;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tabitha;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -764,6 +768,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LACEY] =                    &gObjectEventGraphicsInfo_Lacey,
     [OBJ_EVENT_GFX_KOGA]                     = &gObjectEventGraphicsInfo_Koga,
     [OBJ_EVENT_GFX_SHAUNTAL] =                 &gObjectEventGraphicsInfo_Shauntal,
+    [OBJ_EVENT_GFX_MATT] =                     &gObjectEventGraphicsInfo_Matt,
+    [OBJ_EVENT_GFX_COURTNEY] =                 &gObjectEventGraphicsInfo_Courtney,
+    [OBJ_EVENT_GFX_SHELLY] =                   &gObjectEventGraphicsInfo_Shelly,
+    [OBJ_EVENT_GFX_TABITHA] =                  &gObjectEventGraphicsInfo_Tabitha,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
