@@ -586,6 +586,8 @@
 // gTileset_RocketCo
 #define METATILE_RocketCo_Floor                          0x800
 #define METATILE_RocketCo_Floor_ShadeFull                0x801
+#define METATILE_RocketCo_Floor_WallLeftCorner           0x826
+#define METATILE_RocketCo_Floor_WallRightCorner          0x827
 #define METATILE_RocketCo_HorizontalBarrier_BottomLeft   0x822
 #define METATILE_RocketCo_HorizontalBarrier_BottomRight  0x823
 #define METATILE_RocketCo_HorizontalBarrier_TopLeft      0x81A
@@ -596,8 +598,6 @@
 #define METATILE_RocketCo_VerticalBarrier_MidRight       0x821
 #define METATILE_RocketCo_VerticalBarrier_TopLeft        0x818
 #define METATILE_RocketCo_VerticalBarrier_TopRight       0x819
-#define METATILE_RocketCo_WallLeftCorner                 0x826
-#define METATILE_RocketCo_WallRightCorner                0x827
 #define METATILE_RocketCo_Wall_LeftEdge                  0x810
 #define METATILE_RocketCo_Wall_RightEdge                 0x812
 
