@@ -49,6 +49,8 @@ enum
 {
     MENUITEM_QOL_SAVEPROMPTS,
     MENUITEM_QOL_BOSSHEALPROMPTS,
+    MENUITEM_QOL_OVERWORLDSPEEDUP,
+    MENUITEM_QOL_BATTLESPEEDUP,
     MENUITEM_QOL_CANCEL,
     MENUITEM_QOL_COUNT,
 };
@@ -204,6 +206,8 @@ static void DrawChoices_MatchCall(int selection, int y);
 static void DrawBgWindowFrames(void);
 static void DrawChoices_SavePrompts(int selection, int y);
 static void DrawChoices_BossHealPrompts(int selection, int y);
+static void DrawChoices_OverworldSpeedup(int selection, int y);
+static void DrawChoices_BattleSpeedup(int selection, int y);
 static void DrawChoices_Sanctuary(int selection, int y);
 static void DrawChoices_Wild(int selection, int y);
 static void DrawChoices_Trainer(int selection, int y);
@@ -267,6 +271,8 @@ struct // MENU_QOL
 {
     [MENUITEM_QOL_SAVEPROMPTS]  = {DrawChoices_SavePrompts, ProcessInput_Options_Two},
     [MENUITEM_QOL_BOSSHEALPROMPTS]  = {DrawChoices_BossHealPrompts, ProcessInput_Options_Two},
+    [MENUITEM_QOL_OVERWORLDSPEEDUP]  = {DrawChoices_OverworldSpeedup, ProcessInput_Options_Three},
+    [MENUITEM_QOL_BATTLESPEEDUP]  = {DrawChoices_BattleSpeedup, ProcessInput_Options_Three},
     // [MENUITEM_QOL_HP_BAR]       = {DrawChoices_BarSpeed,    ProcessInput_Options_Eleven},
     // [MENUITEM_QOL_EXP_BAR]      = {DrawChoices_BarSpeed,    ProcessInput_Options_Eleven},
     // [MENUITEM_QOL_FONT]         = {DrawChoices_Font,        ProcessInput_Options_Two}, 
@@ -305,6 +311,8 @@ static const u8 *const sOptionMenuItemsNamesQOL[MENUITEM_QOL_COUNT] =
 {
     [MENUITEM_QOL_SAVEPROMPTS] = COMPOUND_STRING("Save Prompts"),
     [MENUITEM_QOL_BOSSHEALPROMPTS] = COMPOUND_STRING("Boss Heal Prompts"),
+    [MENUITEM_QOL_OVERWORLDSPEEDUP] = COMPOUND_STRING("Overworld Speedup"),
+    [MENUITEM_QOL_BATTLESPEEDUP] = COMPOUND_STRING("Battle Speedup"),
     // [MENUITEM_QOL_EXP_BAR]     = sText_ExpBar,
     // [MENUITEM_QOL_FONT]        = gText_Font,
     // [MENUITEM_QOL_MATCHCALL]   = gText_OptionMatchCalls,
@@ -370,6 +378,8 @@ static bool8 CheckConditions(int selection)
             if (sOptions->sel_general[MENUITEM_GENERAL_DIFFICULTY] == DIFFICULTY_BRUTAL)
                 return FALSE;
             return TRUE;
+        case MENUITEM_QOL_OVERWORLDSPEEDUP:     return TRUE;
+        case MENUITEM_QOL_BATTLESPEEDUP:     return TRUE;
         // case MENUITEM_QOL_HP_BAR:          return TRUE;
         // case MENUITEM_QOL_EXP_BAR:         return TRUE;
         // case MENUITEM_QOL_FONT:            return TRUE;
@@ -438,10 +448,14 @@ static const u8 sText_Desc_SavePromptsOn[]      = _("You will be prompted to sav
 static const u8 sText_Desc_SavePromptsOff[]     = _("You will not be prompted to save\nyour game.");
 static const u8 sText_Desc_BossHealPromptsOn[]      = _("You will be prompted if you want to\nfully heal before fighting bosses.");
 static const u8 sText_Desc_BossHealPromptsOff[]     = _("You will be automatically fully healed\nbefore fighting bosses.");
+static const u8 sText_Desc_OverworldSpeedup[]     = _("This speeds up the overworld.\nUse with caution, not fully tested.");
+static const u8 sText_Desc_BattleSpeedup[]     = _("This speeds up battles.\nUse with caution, not fully tested.");
 static const u8 *const sOptionMenuItemDescriptionsQOL[MENUITEM_QOL_COUNT][2] =
 {
     [MENUITEM_QOL_SAVEPROMPTS] = {sText_Desc_SavePromptsOff,        sText_Desc_SavePromptsOn},
     [MENUITEM_QOL_BOSSHEALPROMPTS] = {sText_Desc_BossHealPromptsOff,        sText_Desc_BossHealPromptsOn},
+    [MENUITEM_QOL_OVERWORLDSPEEDUP] = {sText_Desc_OverworldSpeedup,        sText_Empty},
+    [MENUITEM_QOL_BATTLESPEEDUP] = {sText_Desc_BattleSpeedup,        sText_Empty},
     // [MENUITEM_QOL_HP_BAR]      = {sText_Desc_BattleHPBar,        sText_Empty},
     // [MENUITEM_QOL_EXP_BAR]     = {sText_Desc_BattleExpBar,       sText_Empty},
     // [MENUITEM_QOL_FONT]        = {sText_Desc_FontType,           sText_Desc_FontType},
@@ -484,6 +498,8 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledQOL[MENUITEM_QOL_COUNT
 {
     [MENUITEM_QOL_SAVEPROMPTS] = sText_Empty,
     [MENUITEM_QOL_BOSSHEALPROMPTS] = COMPOUND_STRING("This option is ignored because the\ndifficulty is set to Brutal."),
+    [MENUITEM_QOL_OVERWORLDSPEEDUP] = sText_Empty,
+    [MENUITEM_QOL_BATTLESPEEDUP] = sText_Empty,
     // [MENUITEM_QOL_HP_BAR]      = sText_Desc_Disabled_BattleHPBar,
     // [MENUITEM_QOL_EXP_BAR]     = sText_Empty,
     // [MENUITEM_QOL_FONT]        = sText_Empty,
@@ -525,8 +541,8 @@ static const u8 *const OptionTextDescription(void)
         if (menuItem >= MENUITEM_QOL_COUNT || !CheckConditions(menuItem))
             return sOptionMenuItemDescriptionsDisabledQOL[menuItem];
         selection = sOptions->sel_qol[menuItem];
-        // if (menuItem == MENUITEM_QOL_HP_BAR || menuItem == MENUITEM_QOL_EXP_BAR)
-        //     selection = 0;
+        if (menuItem == MENUITEM_QOL_OVERWORLDSPEEDUP || menuItem == MENUITEM_QOL_BATTLESPEEDUP)
+            selection = 0;
         return sOptionMenuItemDescriptionsQOL[menuItem][selection];
     case MENU_SOUND:
         if (menuItem >= MENUITEM_SOUND_COUNT || !CheckConditions(menuItem))
@@ -831,6 +847,8 @@ void CB2_InitOptionPlusMenu(void)
         
         sOptions->sel_qol[MENUITEM_QOL_SAVEPROMPTS] = FlagGet(FLAG_SAVE_PROMPT);
         sOptions->sel_qol[MENUITEM_QOL_BOSSHEALPROMPTS] = FlagGet(FLAG_BOSS_PROMPT_HEAL);
+        sOptions->sel_qol[MENUITEM_QOL_OVERWORLDSPEEDUP] = VarGet(VAR_OVERWORLD_SPEEDUP);
+        sOptions->sel_qol[MENUITEM_QOL_BATTLESPEEDUP] = VarGet(VAR_BATTLE_SPEEDUP);
         // sOptions->sel_qol[MENUITEM_QOL_HP_BAR]      = gSaveBlock2Ptr->optionsHpBarSpeed;
         // sOptions->sel_qol[MENUITEM_QOL_EXP_BAR]     = gSaveBlock2Ptr->optionsExpBarSpeed;
         // sOptions->sel_qol[MENUITEM_QOL_FONT]        = gSaveBlock2Ptr->optionsCurrentFont;
@@ -1176,6 +1194,8 @@ static void Task_OptionMenuSave(u8 taskId)
         FlagSet(FLAG_BOSS_PROMPT_HEAL);
     else
         FlagClear(FLAG_BOSS_PROMPT_HEAL);
+    VarSet(VAR_OVERWORLD_SPEEDUP, sOptions->sel_qol[MENUITEM_QOL_OVERWORLDSPEEDUP]);
+    VarSet(VAR_BATTLE_SPEEDUP, sOptions->sel_qol[MENUITEM_QOL_BATTLESPEEDUP]);
     // gSaveBlock2Ptr->optionsHpBarSpeed       = sOptions->sel_qol[MENUITEM_QOL_HP_BAR];
     // gSaveBlock2Ptr->optionsExpBarSpeed      = sOptions->sel_qol[MENUITEM_QOL_EXP_BAR];
     // gSaveBlock2Ptr->optionsCurrentFont      = sOptions->sel_qol[MENUITEM_QOL_FONT];
@@ -1498,6 +1518,30 @@ static void DrawChoices_BossHealPrompts(int selection, int y)
 
     DrawOptionMenuChoice(COMPOUND_STRING("Off"), 104, y, styles[0], active);
     DrawOptionMenuChoice(COMPOUND_STRING("On"), GetStringRightAlignXOffset(FONT_NORMAL, COMPOUND_STRING("Off"), 198), y, styles[1], active);
+}
+
+static void DrawChoices_OverworldSpeedup(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_QOL_OVERWORLDSPEEDUP);
+    u8 styles[3] = {0};
+    int xMid = GetMiddleX(COMPOUND_STRING("1x"), COMPOUND_STRING("2x"), COMPOUND_STRING("4x"));
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(COMPOUND_STRING("1x"), 104, y, styles[0], active);
+    DrawOptionMenuChoice(COMPOUND_STRING("2x"), xMid, y, styles[1], active);
+    DrawOptionMenuChoice(COMPOUND_STRING("4x"), GetStringRightAlignXOffset(1, COMPOUND_STRING("4x"), 198), y, styles[2], active);
+}
+
+static void DrawChoices_BattleSpeedup(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_QOL_BATTLESPEEDUP);
+    u8 styles[3] = {0};
+    int xMid = GetMiddleX(COMPOUND_STRING("1x"), COMPOUND_STRING("2x"), COMPOUND_STRING("3x"));
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(COMPOUND_STRING("1x"), 104, y, styles[0], active);
+    DrawOptionMenuChoice(COMPOUND_STRING("2x"), xMid, y, styles[1], active);
+    DrawOptionMenuChoice(COMPOUND_STRING("3x"), GetStringRightAlignXOffset(1, COMPOUND_STRING("3x"), 198), y, styles[2], active);
 }
 
 static void DrawChoices_BattleStyle(int selection, int y)
