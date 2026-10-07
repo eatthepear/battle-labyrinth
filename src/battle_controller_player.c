@@ -2446,8 +2446,8 @@ static void MoveSelectionDisplayMoveEffectiveness(u32 foeEffectiveness, enum Bat
 {
     static const u8 noIcon[] =  _("");
     static const u8 effectiveIcon[] =  _("{CIRCLE_HOLLOW}{COLOR LIGHT_GREEN}1x");
-    static const u8 extremeleyEffectiveIcon[] =  _("{STAR}{COLOR GREEN}2x");
-    static const u8 superEffectiveIcon[] =  _("{CIRCLE_DOT}{COLOR GREEN}4x");
+    static const u8 extremeleyEffectiveIcon[] =  _("{STAR}{COLOR GREEN}4x");
+    static const u8 superEffectiveIcon[] =  _("{CIRCLE_DOT}{COLOR GREEN}2x");
     static const u8 notVeryEffectiveIcon[] =  _("{TRIANGLE}{COLOR RED}.5x");
     static const u8 mostlyIneffectiveIcon[] =  _("{TRIANGLE_UPSIDE_DOWN}{COLOR RED}.25x");
     static const u8 immuneIcon[] =  _("{BIG_MULT_X}{COLOR LIGHT_GRAY}0x");
