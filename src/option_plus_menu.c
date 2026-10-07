@@ -1205,6 +1205,7 @@ static void Task_OptionMenuSave(u8 taskId)
     VarSet(VAR_WILD_MUSIC, sOptions->sel_sound[MENUITEM_SOUND_WILD]);
     VarSet(VAR_TRAINER_MUSIC, sOptions->sel_sound[MENUITEM_SOUND_TRAINER]);
     VarSet(VAR_BOSS_MUSIC, sOptions->sel_sound[MENUITEM_SOUND_LEADER]);
+    FadeOutBGM(4);
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -1220,6 +1221,7 @@ static void Task_OptionMenuFadeOut(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
+        ResetMapMusic();
         DestroyTask(taskId);
         FreeAllWindowBuffers();
         FREE_AND_SET_NULL(sOptions);
