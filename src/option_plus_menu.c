@@ -1629,36 +1629,38 @@ static void DrawChoices_UnitSystem(int selection, int y)
     // DrawOptionMenuChoice(gText_UnitSystemMetric, GetStringRightAlignXOffset(1, gText_UnitSystemMetric, 198), y, styles[1], active);
 }
 
+static const u8 gText_FrameTypeNumber[]    = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}");
+
 static void DrawChoices_FrameType(int selection, int y)
 {
-    // bool8 active = CheckConditions(MENUITEM_GENERAL_FRAMETYPE);
-    // u8 text[16];
-    // u8 n = selection + 1;
-    // u16 i;
+    bool8 active = CheckConditions(MENUITEM_GENERAL_FRAMETYPE);
+    u8 text[16];
+    u8 n = selection + 1;
+    u16 i;
 
-    // for (i = 0; gText_FrameTypeNumber[i] != EOS && i <= 5; i++)
-    //     text[i] = gText_FrameTypeNumber[i];
+    for (i = 0; gText_FrameTypeNumber[i] != EOS && i <= 5; i++)
+        text[i] = gText_FrameTypeNumber[i];
 
-    // // Convert a number to decimal string
-    // if (n / 10 != 0)
-    // {
-    //     text[i] = n / 10 + CHAR_0;
-    //     i++;
-    //     text[i] = n % 10 + CHAR_0;
-    //     i++;
-    // }
-    // else
-    // {
-    //     text[i] = n % 10 + CHAR_0;
-    //     i++;
-    //     text[i] = 0x77;
-    //     i++;
-    // }
+    // Convert a number to decimal string
+    if (n / 10 != 0)
+    {
+        text[i] = n / 10 + CHAR_0;
+        i++;
+        text[i] = n % 10 + CHAR_0;
+        i++;
+    }
+    else
+    {
+        text[i] = n % 10 + CHAR_0;
+        i++;
+        text[i] = 0x77;
+        i++;
+    }
 
-    // text[i] = EOS;
+    text[i] = EOS;
 
-    // DrawOptionMenuChoice(COMPOUND_STRING("TYPE"), 104, y, 0, active);
-    // DrawOptionMenuChoice(text, 128, y, 1, active);
+    DrawOptionMenuChoice(COMPOUND_STRING("TYPE"), 104, y, 0, active);
+    DrawOptionMenuChoice(text, 128, y, 1, active);
 }
 
 static void DrawChoices_Font(int selection, int y)
