@@ -6,3 +6,183 @@ mapscripts Zone34A_MapScripts {
         clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
     }
 }
+
+script Zone34_EventScript_RocketGrunt_1 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_1, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_2 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_2, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_3 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_3, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_4 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_4, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_5 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_5, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_6 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_6, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_7 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_7, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_8 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_8, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_9 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_9, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_10 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_10, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_11 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_11, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_12 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_12, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_13 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_13, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_14 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_14, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_15 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_15, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_16 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_16, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_17 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_17, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_18 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_18, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_19 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_19, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_20 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_20, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_21 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_21, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_22 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_22, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_23 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_23, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_24 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_24, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_25 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_25, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_26 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_26, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_27 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_27, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_28 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_28, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_29 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_29, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Zone34_EventScript_RocketGrunt_30 {
+	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_30, format("BATTLE!"), format("DEFEAT!"))
+	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	end
+}
