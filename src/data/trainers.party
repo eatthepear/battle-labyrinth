@@ -5672,6 +5672,28 @@ Mugshot: Blue
 
 Bulbasaur
 
+=== TRAINER_PBL_GIOVANNI_BOSS_34_MEWTWO_Y ===
+Name: Giovanni
+Class: Rainbow Rocket Boss
+Pic: Rainbow Rocket Giovanni
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Mewtwo @ Mewtwonite Y
+
+=== TRAINER_PBL_GIOVANNI_BOSS_34_MEWTWO_X ===
+Name: Giovanni
+Class: Rainbow Rocket Boss
+Pic: Rainbow Rocket Giovanni
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Mewtwo @ Mewtwonite X
+
 === TRAINER_PBL_LACEY_BOSS_35 ===
 Name: Lacey
 Class: Elite Four
