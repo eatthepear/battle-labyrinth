@@ -23,7 +23,8 @@ script EventScript_HealPreBoss {
 				closemessage
 				return
 			}
-			msgbox(format("Your party has been healed!"), MSGBOX_AUTOCLOSE)
+			msgbox(format("Your party has been healed!"))
+			closemessage
 		}
 		special(HealPlayerParty)
 	}
@@ -68,7 +69,8 @@ script EventScript_Shop_Max {
 			pokemart(Sanctuary_Shop_TMShop)
 	}
 	setspeaker("Max")
-	msgbox(format("Goodbye!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("Goodbye!"))
+	closemessage
 }
 
 mart Zone2A_Shop_TMShop {
