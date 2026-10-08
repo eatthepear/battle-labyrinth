@@ -249,7 +249,6 @@ void NewGameInitData(void)
     QuestMenu_ResetMenuSaveData();
     ResetDexNav();
     ClearFollowerNPCData();
-    gSaveBlock1Ptr->wildEncounterSeed = Random32();
     VarSet(VAR_SANCTUARY_MUSIC, sanctuaryMusic);
     VarSet(VAR_WILD_MUSIC, wildMusic);
     VarSet(VAR_TRAINER_MUSIC, trainerMusic);

@@ -82,7 +82,4 @@ u8 GetWaterEncounterSlotForMatchCall(void);
 bool8 BerryTreeWildEncounter(void);
 void DebugCheatStartGenerateMon(void);
 
-const struct WildPokemon *GetSelectedWildPokemonTable(const struct WildPokemonInfo *wildMonInfo, enum WildPokemonArea area);
-void RegenerateWildEncounterSeed(void);
-
 #endif // GUARD_WILD_ENCOUNTER_H

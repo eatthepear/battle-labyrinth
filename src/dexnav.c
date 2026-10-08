@@ -1947,42 +1947,33 @@ static void DexNavLoadEncounterData(void)
     // land mons
     if (landMonsInfo != NULL && landMonsInfo->encounterRate != 0)
     {
-        const struct WildPokemon *table = GetSelectedWildPokemonTable(landMonsInfo, WILD_AREA_LAND);
         for (i = 0; i < NUM_LAND_MONS_ENCOUNTER_SLOTS; i++)
         {
-            species = table[i].species;
-            if (!FlagGet(FLAG_SYS_ALL_WILD_MONS) && (i >= SELECTED_LAND_WILD_COUNT))
-                species = SPECIES_NONE;
+            species = landMonsInfo->wildPokemon[i].species;
             if (species != SPECIES_NONE && !SpeciesInArray(species, 0))
-                sDexNavUiDataPtr->landSpecies[grassIndex++] = table[i].species;
+                sDexNavUiDataPtr->landSpecies[grassIndex++] = landMonsInfo->wildPokemon[i].species;
         }
     }
 
     // water mons
     if (waterMonsInfo != NULL && waterMonsInfo->encounterRate != 0)
     {
-        const struct WildPokemon *table = GetSelectedWildPokemonTable(waterMonsInfo, WILD_AREA_WATER);
         for (i = 0; i < NUM_WATER_MONS_ENCOUNTER_SLOTS; i++)
         {
-            species = table[i].species;
-            if (!FlagGet(FLAG_SYS_ALL_WILD_MONS) && (i >= SELECTED_WATER_WILD_COUNT))
-                species = SPECIES_NONE;
+            species = waterMonsInfo->wildPokemon[i].species;
             if (species != SPECIES_NONE && !SpeciesInArray(species, 1))
-                sDexNavUiDataPtr->waterSpecies[waterIndex++] = table[i].species;
+                sDexNavUiDataPtr->waterSpecies[waterIndex++] = waterMonsInfo->wildPokemon[i].species;
         }
     }
 
     // hidden mons
     if (hiddenMonsInfo != NULL) // no encounter rate check since 0 means land, 1 means water encounters
     {
-        const struct WildPokemon *table = GetSelectedWildPokemonTable(hiddenMonsInfo, WILD_AREA_HIDDEN);
         for (i = 0; i < NUM_HIDDEN_MONS_ENCOUNTER_SLOTS; i++)
         {
-            species = table[i].species;
-            if (!FlagGet(FLAG_SYS_ALL_WILD_MONS) && (i >= SELECTED_HIDDEN_WILD_COUNT))
-                species = SPECIES_NONE;
+            species = hiddenMonsInfo->wildPokemon[i].species;
             if (species != SPECIES_NONE && !SpeciesInArray(species, 2))
-                sDexNavUiDataPtr->hiddenSpecies[hiddenIndex++] = table[i].species;
+                sDexNavUiDataPtr->hiddenSpecies[hiddenIndex++] = hiddenMonsInfo->wildPokemon[i].species;
         }
     }
 }
