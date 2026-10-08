@@ -3293,8 +3293,29 @@ u8 FldEff_UseSurf(void)
 {
     u8 taskId = CreateTask(Task_SurfFieldEffect, 0xff);
     gTasks[taskId].tMonId = gFieldEffectArguments[0];
+    u16 newMusic = MUS_SURF;
+    switch (VarGet(VAR_SURF_MUSIC)) {
+        case 0:
+        default:
+            return FALSE;
+        case 1:
+            newMusic = MUS_SURF;
+            break;
+        case 2:
+            newMusic = MUS_RG_SURF;
+            break;
+        case 3:
+            newMusic = MUS_DP_SURF;
+            break;
+        case 4:
+            newMusic = MUS_HG_SURF;
+            break;
+        case 5:
+            newMusic = MUS_BW_SURF;
+            break;
+    }
     Overworld_ClearSavedMusic();
-    Overworld_ChangeMusicTo(IS_FRLG ? MUS_RG_SURF : MUS_SURF);
+    Overworld_ChangeMusicTo(newMusic);
     return FALSE;
 }
 

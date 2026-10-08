@@ -11,6 +11,7 @@
 #include "wild_encounter.h"
 #include "wild_encounter_ow.h"
 #include "constants/songs.h"
+#include "event_data.h"
 
 // this file's functions
 static void MovePlayerOnMachBike(enum Direction, u16, u16);
@@ -1289,8 +1290,30 @@ void GetOnOffBike(u8 transitionFlags)
     {
         EndORASDowsing();
         SetPlayerAvatarTransitionFlags(transitionFlags);
-        Overworld_SetSavedMusic(IS_FRLG ? MUS_RG_CYCLING : MUS_CYCLING);
-        Overworld_ChangeMusicTo(IS_FRLG ? MUS_RG_CYCLING : MUS_CYCLING);
+        u16 newMusic = MUS_CYCLING;
+        switch (VarGet(VAR_BIKE_MUSIC))
+        {
+            case 0:
+            default:
+                return;
+            case 1:
+                newMusic = MUS_CYCLING;
+                break;
+            case 2:
+                newMusic = MUS_RG_CYCLING;
+                break;
+            case 3:
+                newMusic = MUS_DP_CYCLING;
+                break;
+            case 4:
+                newMusic = MUS_HG_CYCLING;
+                break;
+            case 5:
+                newMusic = MUS_BW_CYCLING;
+                break;
+        }
+        Overworld_SetSavedMusic(newMusic);
+        Overworld_ChangeMusicTo(newMusic);
     }
 }
 

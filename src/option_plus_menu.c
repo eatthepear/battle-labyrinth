@@ -59,6 +59,8 @@ enum
 enum
 {
     MENUITEM_SOUND_SOUND,
+    MENUITEM_SOUND_SURF,
+    MENUITEM_SOUND_BIKE,
     MENUITEM_SOUND_SANCTUARY,
     MENUITEM_SOUND_WILD,
     MENUITEM_SOUND_TRAINER,
@@ -208,6 +210,8 @@ static void DrawChoices_SavePrompts(int selection, int y);
 static void DrawChoices_BossHealPrompts(int selection, int y);
 static void DrawChoices_OverworldSpeedup(int selection, int y);
 static void DrawChoices_BattleSpeedup(int selection, int y);
+static void DrawChoices_Surf(int selection, int y);
+static void DrawChoices_Bike(int selection, int y);
 static void DrawChoices_Sanctuary(int selection, int y);
 static void DrawChoices_Wild(int selection, int y);
 static void DrawChoices_Trainer(int selection, int y);
@@ -287,6 +291,8 @@ struct // MENU_SOUND
 } static const sItemFunctionsSound[MENUITEM_SOUND_COUNT] =
 {
     [MENUITEM_SOUND_SOUND]        = {DrawChoices_Sound,       ProcessInput_Options_Two},
+    [MENUITEM_SOUND_SURF]        = {DrawChoices_Surf,       ProcessInput_Options_Six},
+    [MENUITEM_SOUND_BIKE]        = {DrawChoices_Bike,       ProcessInput_Options_Six},
     [MENUITEM_SOUND_SANCTUARY]        = {DrawChoices_Sanctuary,       ProcessInput_Options_Six},
     [MENUITEM_SOUND_WILD]        = {DrawChoices_Wild,       ProcessInput_Options_Six},
     [MENUITEM_SOUND_TRAINER]        = {DrawChoices_Trainer,       ProcessInput_Options_Six},
@@ -322,6 +328,8 @@ static const u8 *const sOptionMenuItemsNamesQOL[MENUITEM_QOL_COUNT] =
 static const u8 *const sOptionMenuItemsNamesSound[MENUITEM_SOUND_COUNT] =
 {
     [MENUITEM_SOUND_SOUND]       = COMPOUND_STRING("Sound"),
+    [MENUITEM_SOUND_SURF]        = COMPOUND_STRING("Surf Music"),
+    [MENUITEM_SOUND_BIKE]        = COMPOUND_STRING("Bike Music"),
     [MENUITEM_SOUND_SANCTUARY]        = COMPOUND_STRING("Sanctuary Music"),
     [MENUITEM_SOUND_WILD]        = COMPOUND_STRING("Wild Music"),
     [MENUITEM_SOUND_TRAINER]        = COMPOUND_STRING("Trainer Music"),
@@ -392,6 +400,8 @@ static bool8 CheckConditions(int selection)
         {
         default:                            return FALSE;
         case MENUITEM_SOUND_SOUND:           return TRUE;
+        case MENUITEM_SOUND_SURF:           return TRUE;
+        case MENUITEM_SOUND_BIKE:           return TRUE;
         case MENUITEM_SOUND_SANCTUARY:           return TRUE;
         case MENUITEM_SOUND_WILD:           return TRUE;
         case MENUITEM_SOUND_TRAINER:           return TRUE;
@@ -464,18 +474,20 @@ static const u8 *const sOptionMenuItemDescriptionsQOL[MENUITEM_QOL_COUNT][2] =
 };
 
 static const u8 sText_Desc_Music[]          = _("Choose what type of music plays.\nToggle to hear the options!");
-static const u8 *const sOptionMenuItemDescriptionsSound[MENUITEM_SOUND_COUNT][2] =
+static const u8 *const sOptionMenuItemDescriptionsSound[MENUITEM_SOUND_COUNT][6] =
 {
-    [MENUITEM_SOUND_SOUND]       = {sText_Desc_SoundMono,            sText_Desc_SoundStereo},
-    [MENUITEM_SOUND_SANCTUARY]   = {sText_Desc_Music,            sText_Empty},
-    [MENUITEM_SOUND_WILD]   = {sText_Desc_Music,            sText_Empty},
-    [MENUITEM_SOUND_TRAINER]   = {sText_Desc_Music,            sText_Empty},
-    [MENUITEM_SOUND_LEADER]   = {sText_Desc_Music,            sText_Empty},
+    [MENUITEM_SOUND_SOUND]       = {sText_Desc_SoundMono,            sText_Desc_SoundStereo, sText_Empty, sText_Empty, sText_Empty, sText_Empty},
+    [MENUITEM_SOUND_SURF]   = {COMPOUND_STRING("No special music will play while\nSurfing."),            sText_Desc_Music, sText_Desc_Music, sText_Desc_Music, sText_Desc_Music, sText_Desc_Music},
+    [MENUITEM_SOUND_BIKE]   = {COMPOUND_STRING("No special music will play while\non a Bike."),            sText_Desc_Music, sText_Desc_Music, sText_Desc_Music, sText_Desc_Music, sText_Desc_Music},
+    [MENUITEM_SOUND_SANCTUARY]   = {sText_Desc_Music,            sText_Empty, sText_Empty, sText_Empty, sText_Empty, sText_Empty},
+    [MENUITEM_SOUND_WILD]   = {sText_Desc_Music,            sText_Empty, sText_Empty, sText_Empty, sText_Empty, sText_Empty},
+    [MENUITEM_SOUND_TRAINER]   = {sText_Desc_Music,            sText_Empty, sText_Empty, sText_Empty, sText_Empty, sText_Empty},
+    [MENUITEM_SOUND_LEADER]   = {sText_Desc_Music,            sText_Empty, sText_Empty, sText_Empty, sText_Empty, sText_Empty},
     // [MENUITEM_SOUND_HP_BAR]      = {sText_Desc_BattleHPBar,        sText_Empty},
     // [MENUITEM_SOUND_EXP_BAR]     = {sText_Desc_BattleExpBar,       sText_Empty},
     // [MENUITEM_SOUND_FONT]        = {sText_Desc_FontType,           sText_Desc_FontType},
     // [MENUITEM_SOUND_MATCHCALL]   = {sText_Desc_OverworldCallsOn,   sText_Desc_OverworldCallsOff},
-    [MENUITEM_SOUND_CANCEL]      = {sText_Desc_Save,               sText_Empty},
+    [MENUITEM_SOUND_CANCEL]      = {sText_Desc_Save,               sText_Empty, sText_Empty, sText_Empty, sText_Empty, sText_Empty},
 };
 
 // Disabled Descriptions
@@ -511,6 +523,8 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledQOL[MENUITEM_QOL_COUNT
 static const u8 *const sOptionMenuItemDescriptionsDisabledSound[MENUITEM_SOUND_COUNT] =
 {
     [MENUITEM_SOUND_SOUND]       = sText_Empty,
+    [MENUITEM_SOUND_SURF]       = sText_Empty,
+    [MENUITEM_SOUND_BIKE]       = sText_Empty,
     [MENUITEM_SOUND_SANCTUARY]       = sText_Empty,
     [MENUITEM_SOUND_WILD]       = sText_Empty,
     [MENUITEM_SOUND_TRAINER]       = sText_Empty,
@@ -855,6 +869,8 @@ void CB2_InitOptionPlusMenu(void)
         // sOptions->sel_qol[MENUITEM_QOL_MATCHCALL]   = gSaveBlock2Ptr->optionsDisableMatchCall;
 
         sOptions->sel_sound[MENUITEM_SOUND_SOUND]       = gSaveBlock2Ptr->optionsSound;
+        sOptions->sel_sound[MENUITEM_SOUND_SURF]       = VarGet(VAR_SURF_MUSIC);
+        sOptions->sel_sound[MENUITEM_SOUND_BIKE]       = VarGet(VAR_BIKE_MUSIC);
         sOptions->sel_sound[MENUITEM_SOUND_SANCTUARY]       = VarGet(VAR_SANCTUARY_MUSIC);
         sOptions->sel_sound[MENUITEM_SOUND_WILD]       = VarGet(VAR_WILD_MUSIC);
         sOptions->sel_sound[MENUITEM_SOUND_TRAINER]       = VarGet(VAR_TRAINER_MUSIC);
@@ -1048,6 +1064,50 @@ static void Task_OptionMenuProcessInput(u8 taskId)
                 {
                     DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
                     switch (cursor) { // which sound option r u in
+                        case MENUITEM_SOUND_SURF:
+                            switch (sOptions->sel_sound[cursor]) {
+                                case 0:
+                                default:
+                                    break;
+                                case 1:
+                                    PlayBGM(MUS_SURF);
+                                    break;
+                                case 2:
+                                    PlayBGM(MUS_RG_SURF);
+                                    break;
+                                case 3:
+                                    PlayBGM(MUS_DP_SURF);
+                                    break;
+                                case 4:
+                                    PlayBGM(MUS_HG_SURF);
+                                    break;
+                                case 5:
+                                    PlayBGM(MUS_BW_SURF);
+                                    break;
+                            }
+                            break;
+                        case MENUITEM_SOUND_BIKE:
+                            switch (sOptions->sel_sound[cursor]) {
+                                case 0:
+                                default:
+                                    break;
+                                case 1:
+                                    PlayBGM(MUS_CYCLING);
+                                    break;
+                                case 2:
+                                    PlayBGM(MUS_RG_CYCLING);
+                                    break;
+                                case 3:
+                                    PlayBGM(MUS_DP_CYCLING);
+                                    break;
+                                case 4:
+                                    PlayBGM(MUS_HG_CYCLING);
+                                    break;
+                                case 5:
+                                    PlayBGM(MUS_BW_CYCLING);
+                                    break;
+                            }
+                            break;
                         case MENUITEM_SOUND_SANCTUARY:
                             switch (sOptions->sel_sound[cursor]) {
                                 case 0:
@@ -1201,6 +1261,8 @@ static void Task_OptionMenuSave(u8 taskId)
     // gSaveBlock2Ptr->optionsCurrentFont      = sOptions->sel_qol[MENUITEM_QOL_FONT];
     // gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->sel_qol[MENUITEM_QOL_MATCHCALL];
     gSaveBlock2Ptr->optionsSound            = sOptions->sel_sound[MENUITEM_SOUND_SOUND];
+    VarSet(VAR_SURF_MUSIC, sOptions->sel_sound[MENUITEM_SOUND_SURF]);
+    VarSet(VAR_BIKE_MUSIC, sOptions->sel_sound[MENUITEM_SOUND_BIKE]);
     VarSet(VAR_SANCTUARY_MUSIC, sOptions->sel_sound[MENUITEM_SOUND_SANCTUARY]);
     VarSet(VAR_WILD_MUSIC, sOptions->sel_sound[MENUITEM_SOUND_WILD]);
     VarSet(VAR_TRAINER_MUSIC, sOptions->sel_sound[MENUITEM_SOUND_TRAINER]);
@@ -1564,6 +1626,19 @@ static void DrawChoices_Sound(int selection, int y)
 
     DrawOptionMenuChoice(COMPOUND_STRING("Mono"), 104, y, styles[0], active);
     DrawOptionMenuChoice(COMPOUND_STRING("Stereo"), GetStringRightAlignXOffset(FONT_NORMAL, COMPOUND_STRING("Stereo"), 198), y, styles[1], active);
+}
+
+static const u8 *const sSurfBikeMusicStrings[] = {COMPOUND_STRING("Off"), COMPOUND_STRING("RSE"), COMPOUND_STRING("FRLG"), COMPOUND_STRING("DPPt"),  COMPOUND_STRING("HGSS"), COMPOUND_STRING("BW")};
+static void DrawChoices_Surf(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_SOUND_SURF);
+    DrawChoices_Options_Six(sSurfBikeMusicStrings, selection, y, active);
+}
+
+static void DrawChoices_Bike(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_SOUND_BIKE);
+    DrawChoices_Options_Six(sSurfBikeMusicStrings, selection, y, active);
 }
 
 static const u8 *const sSanctuaryMusicStrings[] = {COMPOUND_STRING("1"), COMPOUND_STRING("2"), COMPOUND_STRING("3"),  COMPOUND_STRING("4"), COMPOUND_STRING("5"), COMPOUND_STRING("6")};

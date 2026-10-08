@@ -65,6 +65,8 @@
 #define VAR_REVISITING_ZONE                  0x402D // functionally unused
 #define VAR_GROTTO_NUMBER                    0x402E
 #define VAR_GROTTO_SPECIES                   0x402F
+#define VAR_SURF_MUSIC 0x4030
+#define VAR_BIKE_MUSIC 0x4031
 
 // Tracker Vars (Don't manually set)
 #define VAR_REPEL_STEP_COUNT                 0x4040
