@@ -331,7 +331,8 @@ script EventScript_NextZone {
 	msgbox(format("Level Cap increased to {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."))
 	setflag(FLAG_IN_NEW_ZONE)
 	setspeaker(SP_NAME_COLRESS)
-	msgbox(format("Bring out the strength of you and your Pokémon!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("Bring out the strength of you and your Pokémon!"))
+	closemessage
 	applymovement(LOCALID_COLRESS, Common_Movement_WalkUp)
 	waitmovement(0)
 	applymovement(LOCALID_COLRESS, Common_Movement_WalkLeft)
@@ -426,20 +427,6 @@ script EventScript_NextZone {
 	}
 	waitstate
 	end
-}
-
-script Sanctuary_EventScript_EnterZone {
-	setflag(FLAG_IN_NEW_ZONE)
-	msgbox(format("Bring out the strength of you and your Pokémon!"), MSGBOX_AUTOCLOSE)
-	applymovement(LOCALID_COLRESS, Common_Movement_WalkUp)
-	waitmovement(0)
-	applymovement(LOCALID_COLRESS, Common_Movement_WalkLeft)
-	waitmovement(0)
-	applymovement(LOCALID_COLRESS, Common_Movement_FaceRight)
-	waitmovement(0)
-	applymovement(LOCALID_PLAYER, Movement_Player_EnterZone)
-	waitmovement(0)
-	return
 }
 
 movement Movement_Player_EnterZone {
@@ -633,6 +620,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setflag(FLAG_HIDE_ZONE6A_MAX)
 			completesubquest(QUEST_PBL, 5)
 			setvar(VAR_ZONE, 7)
+			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 7:
 			setflag(FLAG_ZONE7B_HEAL_USED)
@@ -657,6 +645,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 12:
 			completesubquest(QUEST_PBL, 11)
 			setvar(VAR_ZONE, 13)
+			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 13:
 			setflag(FLAG_HIDE_ZONE13A_MAX)
@@ -677,6 +666,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 17:
 			completesubquest(QUEST_PBL, 16)
 			setvar(VAR_ZONE, 18)
+			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 18:
 			completesubquest(QUEST_PBL, 17)
@@ -694,6 +684,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 23:
 			completesubquest(QUEST_PBL, 23)
 			setvar(VAR_ZONE, 24)
+			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 24:
 			completesubquest(QUEST_PBL, 24)
@@ -770,7 +761,8 @@ script Sanctuary_EventScript_GameIntro {
 	waitse
 	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
 	setspeaker(SP_NAME_COLRESS)
-	msgbox(format("Ah. You've arrived."), MSGBOX_AUTOCLOSE)
+	msgbox(format("Ah. You've arrived."))
+	closemessage
 	applymovement(LOCALID_COLRESS, Common_Movement_WalkDown2)
 	call(Sanctuary_EventScript_MoveCameraDown)
 	waitmovement(0)
@@ -1137,7 +1129,8 @@ script Sanctuary_EventScript_HandleStarterSelectionDefault {
 script EventScript_WhenUReadyDialogue {
 	call(EventScript_BufferCurrentZoneName)
 	setspeaker("Colress")
-	msgbox(format("When you are prepared to enter {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}, speak to me."), MSGBOX_AUTOCLOSE)
+	msgbox(format("When you are prepared to enter {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}, speak to me."))
+	closemessage
 }
 
 script EventScript_Shop_Cowgirl {
@@ -1155,7 +1148,8 @@ script EventScript_Shop_Cowgirl {
 	call(EventScript_Shop_FarmersStand)
 	hidemoneybox
 	setspeaker("Cowgirl")
-	msgbox(format("So long, partner!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("So long, partner!"))
+	closemessage
 	call(Sanctuary_EventScript_MoveCameraDown)
 	release
 	end
@@ -1535,7 +1529,8 @@ script EventScript_Fisherman {
 		msgbox(format("A Fisherman deigns to spread his love of fishing with others!"))
 		giveitem(ITEM_SUPER_ROD)
 	}
-	msgbox(format("A Fisherman always fishes if he can, and encourages others to fish as well!\pWhen you use the Hidden Machine {COLOR GREEN}Surf{COLOR DARK_GRAY} outside battle to cross water, you'll find the same Pokémon as fishing!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("A Fisherman always fishes if he can, and encourages others to fish as well!\pWhen you use the Hidden Machine {COLOR GREEN}Surf{COLOR DARK_GRAY} outside battle to cross water, you'll find the same Pokémon as fishing!"))
+	closemessage
 	applymovement(LOCALID_FISHERMAN, Common_Movement_FaceRight)
 	waitmovement(LOCALID_FISHERMAN)
 	release
@@ -1549,7 +1544,8 @@ script EventScript_ExpertM {
 		giveitem(ITEM_INFINITE_CANDY)
 		helpwindow(HELP_SIGN_INFINITE_CANDY)
 	}
-	msgbox(format("The {COLOR GREEN}Infinite Candy{COLOR DARK_GRAY} is excellent for training new Pokémon!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("The {COLOR GREEN}Infinite Candy{COLOR DARK_GRAY} is excellent for training new Pokémon!"))
+	closemessage
 	applymovement(LOCALID_EXPERT_M, Common_Movement_FaceLeft)
 	waitmovement(LOCALID_EXPERT_M)
 	release
@@ -2935,7 +2931,8 @@ script EventScript_Shop_Lelouch {
 	faceplayer
 	if (flag(FLAG_LELOUCH_INTRO) == false) {
 		setspeaker("???")
-		msgbox("You… What is your name?\pCurious…\nThat's a funny name…", MSGBOX_AUTOCLOSE)
+		msgbox("You… What is your name?\pCurious…\nThat's a funny name…")
+		closemessage
 		delay(16)
 		setspeaker("???")
 		msgbox(format("You may call me {COLOR BLUE}Lelouch{COLOR DARK_GRAY}."))
