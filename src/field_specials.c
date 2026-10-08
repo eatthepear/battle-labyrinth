@@ -5068,7 +5068,7 @@ static const u16 sGrottoEncounters[][3] =
 u16 GetHiddenGrottoSpecies(void)
 {
     u32 grottoId = VarGet(VAR_GROTTO_NUMBER);
-    rng_value_t rng = LocalRandomSeed(1);
+    rng_value_t rng = LocalRandomSeed(gSaveBlock1Ptr->pblSeed);
     u32 rand1 = LocalRandom32(&rng) % 10;
     u32 rand2;
 

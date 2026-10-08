@@ -389,7 +389,7 @@ static const struct SpriteTemplate sSpriteTemplate_StarterCircle =
 // .text
 u16 GetStarterPokemon(u16 chosenStarterId)
 {
-    rng_value_t rng = LocalRandomSeed(1);
+    rng_value_t rng = LocalRandomSeed(gSaveBlock1Ptr->pblSeed);
     u16 grassIndex = LocalRandom32(&rng) % 9;
     u16 fireIndex = LocalRandom32(&rng) % 9;
     u16 waterIndex = LocalRandom32(&rng) % 9;

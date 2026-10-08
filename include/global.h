@@ -1165,6 +1165,7 @@ struct SaveBlock1
     /*0x9BC*/ u16 berryBlenderRecords[3];
     /*0x9C2*/ u8 unused_9C2[2];
 #endif //FREE_OTHER_PBL
+              u32 pblSeed;
               u32 dailySeed;
 #if FREE_MATCH_CALL == FALSE
     /*0x9C8*/ u16 trainerRematchStepCounter;
