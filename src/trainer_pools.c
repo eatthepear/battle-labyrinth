@@ -9,6 +9,7 @@
 #include "constants/battle.h"
 #include "constants/battle_ai.h"
 #include "constants/items.h"
+#include "event_data.h"
 
 #include "data/battle_pool_rules.h"
 
@@ -379,116 +380,109 @@ static void PruneBattled(const struct Trainer *trainer, u8 *poolIndexArray, cons
             poolIndexArray[i] = POOL_SLOT_DISABLED;
 }
 
-static const u16 bossSpecies[] = {
-    SPECIES_PANSEAR,
-    SPECIES_PANPOUR,
-    SPECIES_PANSAGE,
-
-    SPECIES_BUNNELBY,
-    SPECIES_SMOLIV,
-    SPECIES_SKWOVET,
-    SPECIES_GULPIN,
-
-    SPECIES_BIDOOF,
-    SPECIES_SANDSHREW,
-    SPECIES_MARILL,
-
-    SPECIES_TYRUNT,
-    SPECIES_SHIELDON,
-    SPECIES_AMAURA,
-
-    SPECIES_SALANDIT,
-    SPECIES_KOFFING,
-    SPECIES_WHIRLIPEDE,
-    SPECIES_FRILLISH,
-
-    SPECIES_LUVDISC,
-    SPECIES_DELIBIRD,
-    SPECIES_SPINDA,
-
-    SPECIES_MUNNA,
-    SPECIES_SPOINK,
-    SPECIES_NATU,
-    SPECIES_LUNATONE,
-
-    SPECIES_FINNEON,
-    SPECIES_BARBOACH,
-    SPECIES_GOLDEEN,
-    SPECIES_PYUKUMUKU,
-    SPECIES_WIGLETT,
-    SPECIES_MANTYKE,
-    SPECIES_CORSOLA,
-
-    SPECIES_DRIFLOON,
-    SPECIES_DEDENNE,
-    SPECIES_KLAWF,
-    SPECIES_APPLETUN,
-
-    SPECIES_STUNFISK,
-    SPECIES_CRABRAWLER,
-    SPECIES_PURUGLY,
-    SPECIES_BRUXISH,
-
-    SPECIES_SQUAWKABILLY,
-    SPECIES_CARNIVINE,
-    SPECIES_SEEL,
-    SPECIES_WAILMER,
-    SPECIES_MORPEKO,
-    SPECIES_SAWK,
-    SPECIES_THROH,
-
-    SPECIES_TINKATUFF,
-    SPECIES_TOGEDEMARU,
-    SPECIES_WORMADAM_TRASH,
-    SPECIES_STEELIX,
-    SPECIES_PRINPLUP,
-
-    SPECIES_CARBINK,
-    SPECIES_CLODSIRE,
-    SPECIES_PACHIRISU,
-    SPECIES_WHIMSICOTT,
-    SPECIES_OINKOLOGNE,
-
-    SPECIES_AROMATISSE,
-    SPECIES_VESPIQUEN,
-    SPECIES_GOREBYSS,
-    SPECIES_PERSIAN,
-    SPECIES_LILLIGANT,
-
-    SPECIES_CLEFAIRY,
-    SPECIES_WATCHOG,
-    SPECIES_STONJOURNER,
-    SPECIES_FLAPPLE,
-    SPECIES_DUGTRIO,
-
-    SPECIES_NINETALES,
-    SPECIES_DUGTRIO,
-    SPECIES_TROPIUS,
-    SPECIES_SOLROCK,
-    SPECIES_HELIOLISK,
-
-    SPECIES_BOLTUND,
-    SPECIES_VIKAVOLT,
-    SPECIES_ELECTABUZZ,
-    SPECIES_ELECTRODE_HISUI,
-    SPECIES_RAICHU,
-    SPECIES_ZEBSTRIKA,
-
+// The second value in this array is which zone the boss is in.
+static const u16 bossTrainers[][2] = {
+    {TRAINER_PBL_CORI_BOSS_1_GRASS_STARTER, 1},
+    {TRAINER_PBL_SHAUN_OPTIONAL_2, 2},
+    {TRAINER_PBL_LEAF_BOSS_2, 2},
+    {TRAINER_PBL_FERN_OPTIONAL_3, 3},
+    {TRAINER_PBL_GRANT_BOSS_3, 3},
+    {TRAINER_PBL_PROTON_BOSS_4, 4},
+    {TRAINER_PBL_BILL_OPTIONAL_5, 5},
+    {TRAINER_PBL_LIZA_BOSS_5, 5},
+    {TRAINER_PBL_MINA, 6},
+    {TRAINER_PBL_ZACK, 6},
+    {TRAINER_PBL_COBY, 6},
+    {TRAINER_PBL_MELINDA_OPTIONAL_7, 7},
+    {TRAINER_PBL_WALLY_BOSS_7, 7},
+    {TRAINER_PBL_MARS_BOSS_8, 7},
+    {TRAINER_PBL_ARI_BOSS_9, 9},
+    {TRAINER_PBL_BERTHA_BOSS_9, 9},
+    {TRAINER_PBL_CASSANDRA_BOSS_9, 9},
+    {TRAINER_PBL_DOMINIC_BOSS_9, 9},
+    {TRAINER_PBL_JASMINE_BOSS_10, 10},
+    {TRAINER_PBL_ARCHER_BOSS_11, 11},
+    {TRAINER_PBL_SERENA_BOSS_13, 13},
+    {TRAINER_PBL_COURTNEY_BOSS_14, 13},
+    {TRAINER_PBL_JUPITER_BOSS_16, 16},
+    {TRAINER_PBL_LEAF_BOSS_17, 17},
+    {TRAINER_PBL_LARRY_BOSS_18, 18},
+    {TRAINER_PBL_AQUA_GRUNT_19D_1_BOSS_19, 18},
+    {TRAINER_PBL_AQUA_GRUNT_19D_2_BOSS_19, 18},
+    {TRAINER_PBL_MATT_BOSS_19, 18},
+    {TRAINER_PBL_CILAN_BOSS_20, 20},
+    {TRAINER_PBL_CHILI_BOSS_20, 20},
+    {TRAINER_PBL_CRESS_BOSS_20, 20},
+    {TRAINER_PBL_LACEY_BOSS_20, 20},
+    {TRAINER_PBL_WALLY_BOSS_21, 21},
+    {TRAINER_PBL_AMELIA_OPTIONAL_22, 22},
+    {TRAINER_PBL_MAYLENE_BOSS_22, 22},
+    {TRAINER_PBL_LACEY_BOSS_23, 23},
+    {TRAINER_PBL_ROCKET_GRUNT_24A_1_BOSS_24, 24},
+    {TRAINER_PBL_ROCKET_GRUNT_24A_2_BOSS_24, 24},
+    {TRAINER_PBL_ROCKET_GRUNT_24A_3_BOSS_24, 24},
+    {TRAINER_PBL_ROCKET_GRUNT_24A_4_BOSS_24, 24},
+    {TRAINER_PBL_ARIANA_BOSS_25, 24},
+    {TRAINER_PBL_LEAF_BOSS_27, 27},
+    {TRAINER_PBL_WALLY_BOSS_27, 27},
+    {TRAINER_PBL_SERENA_BOSS_27, 27},
+    {TRAINER_PBL_RAIHAN_BOSS_28, 27},
+    {TRAINER_PBL_KUNI_BOSS_29, 29},
+    {TRAINER_PBL_MIKI_BOSS_29, 29},
+    {TRAINER_PBL_SAYO_BOSS_29, 29},
+    {TRAINER_PBL_ZUKI_BOSS_29, 29},
+    {TRAINER_PBL_ARITA_BOSS_29, 29},
+    {TRAINER_PBL_EMIKO_BOSS_29, 29},
+    {TRAINER_PBL_NAOKO_BOSS_29, 29},
+    {TRAINER_PBL_SAITO_BOSS_29, 29},
+    {TRAINER_PBL_PROTON_BOSS_30, 30},
+    {TRAINER_PBL_TABITHA_BOSS_30, 30},
+    {TRAINER_PBL_COURTNEY_BOSS_30, 30},
+    {TRAINER_PBL_SHELLY_BOSS_30, 30},
+    {TRAINER_PBL_MATT_BOSS_30, 30},
+    {TRAINER_PBL_MARS_BOSS_30, 30},
+    {TRAINER_PBL_JUPITER_BOSS_30, 30},
+    {TRAINER_PBL_ARCHER_BOSS_30, 30},
+    {TRAINER_PBL_ARIANA_BOSS_30, 30},
+    {TRAINER_PBL_LEAF_BOSS_31, 31},
+    {TRAINER_PBL_SERENA_BOSS_31, 31},
+    {TRAINER_PBL_WALLY_BOSS_32, 31},
+    {TRAINER_PBL_MAXIE_BOSS_34, 34},
+    {TRAINER_PBL_ARCHIE_BOSS_34, 34},
+    {TRAINER_PBL_CYRUS_BOSS_34, 34},
+    {TRAINER_PBL_GIOVANNI_BOSS_34, 34},
+    {TRAINER_PBL_LACEY_BOSS_35, 35},
+    {TRAINER_PBL_GLACIA_BOSS_35, 35},
+    {TRAINER_PBL_KOGA_BOSS_35, 35},
+    {TRAINER_PBL_SHAUNTAL_BOSS_35, 35},
+    {TRAINER_PBL_CYNTHIA_BOSS_35, 35},
 };
 
+// Only prune boss mons for that corresponding zone. For example, in Zone 5, you shouldn't be able to roll a Natu because it's on Liza's team.
 static void PruneBossMons(const struct Trainer *trainer, u8 *poolIndexArray, const struct PoolRules *rules)
 {
+    u16 currentZone = VarGet(VAR_ZONE);
     for (u32 i = 0; i < trainer->poolSize; i++)
     {
         if (poolIndexArray[i] == POOL_SLOT_DISABLED)
             continue;
         u16 currentSpecies = trainer->party[poolIndexArray[i]].species;
-        for (u32 j = 0; j < ARRAY_COUNT(bossSpecies); j++)
+        for (u32 j = 0; j < ARRAY_COUNT(bossTrainers); j++)
         {
-            if (currentSpecies == bossSpecies[j])
+            if (currentZone == bossTrainers[j][1])
             {
-                poolIndexArray[i] = POOL_SLOT_DISABLED;
-                break;
+                u16 trainerID = bossTrainers[j][0];
+                u32 count = GetTrainerPartySizeFromId(trainerID);
+                const struct TrainerMon *party = GetTrainerPartyFromId(trainerID);
+                for (u32 k = 0; k < count; k++)
+                {
+                    if (currentSpecies == party[k].species)
+                    {
+                        poolIndexArray[i] = POOL_SLOT_DISABLED;
+                        break;
+                    }
+                }
+
             }
         }
     }
@@ -596,54 +590,12 @@ static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const s
     default:
         break;
     }
-    PruneBossMons(trainer, poolIndexArray, rules);
-}
-
-static bool32 DoTrainerPartyPoolHelper(const struct Trainer *trainer, u32 *monIndices, u8 monsCount, u32 battleTypeFlags, u32 poolAttempt)
-{
-    bool32 usingPool = FALSE;
-    struct PoolRules rules = defaultPoolRules;
-
-    if (poolAttempt > 3)
-        return FALSE;
-
-    usingPool = TRUE;
-    rules = gPoolRulesetsList[trainer->poolRuleIndex];
-    u8 *poolIndexArray = Alloc(trainer->poolSize);
-    RandomizePoolIndices(trainer, poolIndexArray);
-
-    struct PickFunctions pickFunctions = GetPickFunctions(trainer);
-
-    PrunePool(trainer, poolIndexArray, &rules);
-    if (poolAttempt == 1)
-    {
-        PruneBattled(trainer, poolIndexArray, &rules);
-    }
-
-    for (u32 i = 0; i < monsCount; i++)
-    {
-        monIndices[i] = PickMonFromPool(trainer, poolIndexArray, i, monsCount, battleTypeFlags, &rules, pickFunctions);
-        //  If the slot doesn't have a proper value, the pool creation failed, fall back to normal mon pick process
-        if (monIndices[i] == POOL_SLOT_DISABLED)
-        {
-            usingPool = FALSE;
-            DebugPrintf("Pool creation failed on pool attempt %d!", poolAttempt+1);
-            break;
-        }
-    }
-    Free(poolIndexArray);
-
-    if (!usingPool)
-    {
-        return DoTrainerPartyPoolHelper(trainer, monIndices, monsCount, battleTypeFlags, poolAttempt + 1);
-    }
-
-    return TRUE;
 }
 
 void DoTrainerPartyPool(const struct Trainer *trainer, u32 *monIndices, u8 monsCount, u32 battleTypeFlags)
 {
     bool32 usingPool = FALSE;
+    struct PoolRules rules = defaultPoolRules;
     struct Trainer tempTrainer;
     if (trainer->poolSize == 0 && (trainer->aiFlags & AI_FLAG_RANDOMIZE_PARTY_INDICES))
     {
@@ -654,7 +606,28 @@ void DoTrainerPartyPool(const struct Trainer *trainer, u32 *monIndices, u8 monsC
 
     if (trainer->poolSize != 0)
     {
-        usingPool = DoTrainerPartyPoolHelper(trainer, monIndices, monsCount, battleTypeFlags, 1);
+        usingPool = TRUE;
+        rules = gPoolRulesetsList[trainer->poolRuleIndex];
+        u8 *poolIndexArray = Alloc(trainer->poolSize);
+        RandomizePoolIndices(trainer, poolIndexArray);
+
+        struct PickFunctions pickFunctions = GetPickFunctions(trainer);
+
+        PrunePool(trainer, poolIndexArray, &rules);
+        PruneBossMons(trainer, poolIndexArray, &rules);
+        PruneBattled(trainer, poolIndexArray, &rules);
+
+        for (u32 i = 0; i < monsCount; i++)
+        {
+            monIndices[i] = PickMonFromPool(trainer, poolIndexArray, i, monsCount, battleTypeFlags, &rules, pickFunctions);
+            //  If the slot doesn't have a proper value, the pool creation failed, fall back to normal mon pick process
+            if (monIndices[i] == POOL_SLOT_DISABLED)
+            {
+                usingPool = FALSE;
+                break;
+            }
+        }
+        Free(poolIndexArray);
     }
 
     if (!usingPool)

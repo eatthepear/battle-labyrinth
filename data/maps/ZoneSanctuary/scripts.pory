@@ -330,6 +330,7 @@ script EventScript_NextZone {
 	setspeaker(SP_NAME_NONE)
 	msgbox(format("Level Cap increased to {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."))
 	setflag(FLAG_IN_NEW_ZONE)
+	callnative(ResetBattledFlags)
 	setspeaker(SP_NAME_COLRESS)
 	msgbox(format("Bring out the strength of you and your Pokémon!"))
 	closemessage

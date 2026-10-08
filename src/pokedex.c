@@ -1376,6 +1376,7 @@ void ResetPokedex(void)
     {
         gSaveBlock1Ptr->dexCaught[i] = 0;
         gSaveBlock1Ptr->dexSeen[i] = 0;
+        gSaveBlock1Ptr->dexBattled[i] = 0;
     }
 }
 
@@ -4516,6 +4517,15 @@ s8 GetSetPokedexFlag(enum NationalDexOrder nationalDexNo, u8 caseID)
     }
 
     return retVal;
+}
+
+void ResetBattledFlags(void)
+{
+    u16 i;
+    for (i = 0; i < NUM_DEX_FLAG_BYTES; i++)
+    {
+        gSaveBlock1Ptr->dexBattled[i] = 0;
+    }
 }
 
 s8 GetSetBattledFlag(enum Species species, u8 caseID)
