@@ -68,6 +68,7 @@ Zone30H/scripts.inc
 Zone30Z/scripts.inc
 Zone31A/scripts.inc
 Zone31B/scripts.inc
+Zone31C/scripts.inc
 Zone32A/scripts.inc
 Zone32B/scripts.inc
 Zone32C/scripts.inc
@@ -75,6 +76,8 @@ Zone32D/scripts.inc
 Zone32E/scripts.inc
 Zone32F/scripts.inc
 Zone32G/scripts.inc
+Zone32H/scripts.inc
+Zone32I/scripts.inc
 Zone33A/scripts.inc
 Zone33B/scripts.inc
 Zone33C/scripts.inc

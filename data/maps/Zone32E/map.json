@@ -26,6 +26,13 @@
       "x": 8,
       "y": 7,
       "elevation": 0,
+      "dest_map": "MAP_ZONE32H",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 33,
+      "y": 9,
+      "elevation": 0,
       "dest_map": "MAP_ZONE32F",
       "dest_warp_id": "0"
     }
