@@ -90,7 +90,8 @@ script Zone2A_EventScript_TriggerLeaf {
 	setspeaker("Leaf")
 	msgbox(format("Hi! My name's {COLOR BLUE}Leaf{COLOR DARK_GRAY}.\pIf you want to go forward, you'll have to beat me!\pSo, are you ready for our battle?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Okay. You just let me know when you're ready!"), MSGBOX_AUTOCLOSE)
+		msgbox(format("Okay. You just let me know when you're ready!"))
+		closemessage
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 		waitmovement(0)
 		applymovement(LOCALID_LEAF_2A, Common_Movement_WalkDown2)
@@ -121,7 +122,8 @@ script Zone2A_EventScript_TriggerLeaf {
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_HM_ROCK_SMASH)
 	setspeaker("Leaf")
-	msgbox(format("Good job! That was a great battle. I think I'll wait here for more challengers to pass through, you should go on ahead! I want to battle them all."), MSGBOX_AUTOCLOSE)
+	msgbox(format("Good job! That was a great battle. I think I'll wait here for more challengers to pass through, you should go on ahead! I want to battle them all."))
+	closemessage
 	setflag(FLAG_BEAT_BOSS_2)
 	setvar(VAR_ZONE_2_STATE, 2)
 	fadedefaultbgm
@@ -190,7 +192,7 @@ text Zone2A_Text_Shaun_Post {
 script Zone2A_EventScript_BuyBug {
 	lock
 	faceplayer
-	if (flag(FLAG_SETTINGS_NUZLOCKE) == true && flag(FLAG_ZONE2A_NUZLOCKE_BOUGHT_BUG) == true) {
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == TRUE && flag(FLAG_ZONE2A_NUZLOCKE_BOUGHT_BUG) == TRUE) {
 		msgbox(format("Scram! I'm out of bugs for you to buy right now.\pCome back later."))
 		release
 		end
@@ -225,7 +227,7 @@ script Zone2A_EventScript_BuyBug {
 	setvar(VAR_TEMP_D, SPECIES_SURSKIT)
 	setvar(VAR_TEMP_E, SPECIES_RELLOR)
 	setvar(VAR_TEMP_F, SPECIES_NINCADA)
-	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == TRUE) {
 		// Not going to bother checking for species clause, as there's like 15 Pokemon and there's no way you have all 15
 		msgbox(gText_Nuzlocke_GiftPossible, MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
@@ -321,6 +323,7 @@ script Zone2A_EventScript_BuyBug {
 		}
 	} else {
 		message(format("Choose which Bug you would like."))
+		waitmessage
 		bufferspeciesname(0, VAR_TEMP_1)
 		dynmultipush("{STR_VAR_1}", 0)
 		bufferspeciesname(0, VAR_TEMP_2)
@@ -393,7 +396,7 @@ script Zone2A_EventScript_BuyBug {
 				end
 		}
 	}
-	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
+	if (flag(FLAG_SETTINGS_NUZLOCKE) == TRUE) {
 		msgbox(format("Just to confirm…\pYou're sure you want to buy a Bug for ¥200?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			hidemoneybox
@@ -421,8 +424,8 @@ script Zone2A_EventScript_BuyBug {
 	message(format("{PLAYER} received the {STR_VAR_1}!"))
 	waitmessage
 	waitfanfare
-	specialvar(VAR_TEMP_2, CalculatePlayerPartyCount)
-	if (var(VAR_TEMP_2) == PARTY_SIZE) {
+	specialvar(VAR_RESULT, CalculatePlayerPartyCount)
+	if (var(VAR_RESULT) == PARTY_SIZE) {
 		msgbox(format("Your party is full. Would you like to send a party Pokémon to the PC and add {STR_VAR_1} to your party?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
 			call(EventScript_ChoosePartyMonToSend)
@@ -445,7 +448,6 @@ script Zone2A_EventScript_BuyBug {
 		}
 		call(Common_EventScript_TransferredToPC)
 	}
-	faceplayer
 	setflag(FLAG_ZONE2A_NUZLOCKE_BOUGHT_BUG)
 	msgbox(format("Pleasure doing business with you."))
 	release

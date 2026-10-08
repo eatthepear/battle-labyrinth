@@ -580,7 +580,7 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     }
     monTemplate.dmaxLevel    = PARSE_FLAG(24, 0);
     monTemplate.isEgg        = PARSE_FLAG(25, FALSE);
-    monTemplate.metLocation  = PARSE_FLAG(26, 0);
+    monTemplate.metLocation  = PARSE_FLAG(27, 0);
     if (side == B_SIDE_PLAYER)
     {
         Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
