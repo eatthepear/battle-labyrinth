@@ -7,6 +7,7 @@
 #include "string_util.h"
 #include "trainer_util.h"
 #include "text.h"
+#include "pokedex.h"
 
 #include "constants/battle_ai.h"
 #include "constants/pokeball.h"
@@ -236,4 +237,5 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
     SetMonData(mon, MON_DATA_OT_NAME, trainer->name);
     data = trainer->gender;
     SetMonData(mon, MON_DATA_OT_GENDER, &data);
+    GetSetBattledFlag(mon->box.species, FLAG_SET_BATTLED);
 }
