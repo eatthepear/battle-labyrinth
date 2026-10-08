@@ -469,7 +469,7 @@ Text_WantToRockClimb:
 	.string "Would you like to use Rock Climb?$"
 
 Text_MonUsedRockClimb:
-	.string "{STR_VAR_1} used Rock Climb!$"
+	.string "Your Pokémon used Rock Climb!$"
 
 Text_CantRockClimb:
 	.string "The cliff is steep.\n"

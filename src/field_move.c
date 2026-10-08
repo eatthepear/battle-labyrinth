@@ -182,7 +182,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .moveID = MOVE_ROCK_CLIMB,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
         .hideIfLocked = TRUE,
-        .arg = FLAG_TO_BADGE(FLAG_BADGE08_GET),
+        .arg = FLAG_TO_BADGE(FLAG_BADGE07_GET),
     },
     [FIELD_MOVE_DEFOG] =
     {
