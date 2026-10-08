@@ -4,38 +4,38 @@ script Zone7B_EventScript_BossBattle {
 	lock
 	faceplayer
 	if (flag(FLAG_ZONE7B_DEFEATED_OPTIONAL) == true) {
-		setspeaker("Betty")
-		msgbox(Zone7B_Text_BettyPost)
+		setspeaker("Melinda")
+		msgbox(Zone7B_Text_MelindaPost)
 		release
 		end
 	}
-	setspeaker("Betty")
+	setspeaker("Melinda")
 	msgbox(format("Ah, another traveler. I grow tired of sitting around nibbling on Berries.\pCare to entertain a lady like me with a battle?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		setspeaker("Betty")
+		setspeaker("Melinda")
 		msgbox(format("Well, I will be here, if you change your mind."))
 		release
 		end
 	}
 	fadeoutbgm(1)
-	setspeaker("Betty")
+	setspeaker("Melinda")
 	msgbox(format("I will show you how to behave in the prim and proper way!"), MSGBOX_DEFAULT)
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_BETTY_OPTIONAL_7, format("It seems I was the one who ended up being humbled…"))
+	trainerbattle_no_intro(TRAINER_PBL_MELINDA_OPTIONAL_7, format("It seems I was the one who ended up being humbled…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	faceplayer
-	setspeaker("Betty")
+	setspeaker("Melinda")
 	msgbox(format("Your battling skills are certainly up to par. Excellent form.\pI'd like to give you this TM.\pVery, very expensive, or so my butler tells me."), MSGBOX_AUTOCLOSE)
 	giveitem(ITEM_TM_NATURAL_GIFT)
 	setflag(FLAG_ZONE7B_DEFEATED_OPTIONAL)
-	setspeaker("Betty")
-	msgbox(Zone7B_Text_BettyPost)
+	setspeaker("Melinda")
+	msgbox(Zone7B_Text_MelindaPost)
 	release
 	end
 }
 
-text Zone7B_Text_BettyPost {
+text Zone7B_Text_MelindaPost {
 	format("{COLOR GREEN}Natural Gift{COLOR DARK_GRAY} is a great TM to use with Berries!\pIt consumes a held Berry to deal damage, and changes type and power based on the type of berry!\pI know a Pecha Berry deals Electric damage and a Cheri Berry deals Fire damage.\pCounterintuitive, right?")
 }
 

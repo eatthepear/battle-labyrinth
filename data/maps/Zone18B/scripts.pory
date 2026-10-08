@@ -9,7 +9,7 @@ mapscripts Zone18B_MapScripts {
 		call_if_defeated(TRAINER_PBL_MARTY, Zone18B_EventScript_OpenPsychicRoomDoors)
 		call_if_defeated(TRAINER_PBL_KARI, Zone18B_EventScript_OpenFightingRoomDoors)
 		call_if_defeated(TRAINER_PBL_ABRAHAM, Zone18B_EventScript_OpenDragonRoomDoors)
-		call_if_defeated(TRAINER_PBL_MELINDA, Zone18B_EventScript_OpenFairyRoomDoors)
+		call_if_defeated(TRAINER_PBL_AMANDA, Zone18B_EventScript_OpenFairyRoomDoors)
 		call_if_defeated(TRAINER_PBL_EMILIO, Zone18B_EventScript_OpenGroundRoomDoors)
 		call_if_defeated(TRAINER_PBL_REX, Zone18B_EventScript_OpenBugRoomDoors)
 		call_if_defeated(TRAINER_PBL_LOUIS, Zone18B_EventScript_OpenSteelRoomDoors)
@@ -274,7 +274,7 @@ script Zone18B_EventScript_LeftSteelRoomDoor {
 
 script Zone18B_EventScript_RightSteelRoomDoor {
 	lockall
-	goto_if_not_defeated(TRAINER_PBL_MELINDA, Zone18B_EventScript_DoorLocked)
+	goto_if_not_defeated(TRAINER_PBL_AMANDA, Zone18B_EventScript_DoorLocked)
 	msgbox("“Steel Room,” the sign says.\pDo you want to go through?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		closemessage
@@ -288,7 +288,7 @@ script Zone18B_EventScript_RightSteelRoomDoor {
 
 script Zone18B_EventScript_LeftPoisonRoomDoor {
 	lockall
-	goto_if_not_defeated(TRAINER_PBL_MELINDA, Zone18B_EventScript_DoorLocked)
+	goto_if_not_defeated(TRAINER_PBL_AMANDA, Zone18B_EventScript_DoorLocked)
 	msgbox("“Poison Room,” the sign says.\pDo you want to go through?", MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		closemessage
@@ -856,8 +856,8 @@ script Zone18B_EventScript_Abraham {
 	end
 }
 
-script Zone18B_EventScript_Melinda {
-	trainerbattle_single(TRAINER_PBL_MELINDA, format("Momma… where are you?"), format("She'll be with me soon…"), Zone18B_EventScript_SlideOpenFairyRoomDoors)
+script Zone18B_EventScript_Amanda {
+	trainerbattle_single(TRAINER_PBL_AMANDA, format("Momma… where are you?"), format("She'll be with me soon…"), Zone18B_EventScript_SlideOpenFairyRoomDoors)
 	msgbox(format("We'll be together again, like we were meant to be…"), MSGBOX_AUTOCLOSE)
 	end
 }

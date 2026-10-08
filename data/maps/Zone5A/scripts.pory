@@ -368,14 +368,14 @@ script Zone5A_EventScript_Rebecca {
 	end
 }
 
-script Zone5A_EventScript_Melinda {
+script Zone5A_EventScript_Bill {
 	lock
 	faceplayer
-	if (defeated(TRAINER_PBL_MELINDA_OPTIONAL_2)) {
-		call(Zone5A_EventScript_Melinda_End)
+	if (defeated(TRAINER_PBL_BILL_OPTIONAL_5)) {
+		call(Zone5A_EventScript_Bill_End)
 	}
-	setspeaker("Melinda")
-	msgbox(format("My darling Pokémon are roaring for a battle!\pThey may not be strong, but they're fully evolved!\pIf you battle me, I'll give you a {COLOR GREEN}Nugget{COLOR DARK_GRAY}!"), MSGBOX_YESNO)
+	setspeaker("Bill")
+	msgbox(format("My darling Pokémon are roaring for a battle!\pThey may not be strong, but they're fully evolved!\pIf you battle me, I'll give you a {COLOR GREEN}Scope Lens{COLOR DARK_GRAY}!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		msgbox(format("That's rather disappointing."))
 		release
@@ -383,17 +383,17 @@ script Zone5A_EventScript_Melinda {
 	}
 	msgbox(format("Excellent! Go, my darling Pokémon!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_MELINDA_OPTIONAL_2, format("My darling Pokémon!"))
+	trainerbattle_no_intro(TRAINER_PBL_BILL_OPTIONAL_5, format("My darling Pokémon!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	setspeaker("Melinda")
+	setspeaker("Bill")
 	msgbox(format("Oh, my darling Pokémon, rest up!\pAnd for you, dear trainer, your reward."))
 	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_NUGGET)
-	call(Zone5A_EventScript_Melinda_End)
+	giveitem(ITEM_SCOPE_LENS)
+	call(Zone5A_EventScript_Bill_End)
 }
 
-script Zone5A_EventScript_Melinda_End {
-	setspeaker("Melinda")
+script Zone5A_EventScript_Bill_End {
+	setspeaker("Bill")
 	msgbox(format("My darling Pokémon are my favorites!"))
 	release
 	end
