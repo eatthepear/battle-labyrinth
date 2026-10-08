@@ -8,6 +8,43 @@ mapscripts Zone14C_MapScripts {
 	}
 }
 
+
+script Zone14C_EventScript_Courtney {
+	lock
+	faceplayer
+	playbgm(MUS_ENCOUNTER_MAGMA, TRUE)
+	setspeaker("Courtney")
+	msgbox(format("Hi! My name's {COLOR BLUE}Courtney{COLOR DARK_GRAY}.\pIf you want to go forward, you'll have to beat me!\pSo, are you ready for our battle?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+	    setspeaker("Courtney")
+		msgbox(format("Okay. You just let me know when you're ready!"))
+		closemessage
+		fadedefaultbgm
+		release
+		end
+	}
+    setspeaker("Courtney")
+	msgbox(format("Good luck!"))
+	call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_COURTNEY_BOSS_14, format("Defeat!"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Courtney")
+	msgbox(format("I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_TM_ATTRACT)
+	setspeaker("Courtney")
+	msgbox(format("Good job! That was a great battle. I think I'll wait here for more challengers to pass through, you should go on ahead! I want to battle them all."))
+	closemessage
+	fadescreenswapbuffers(FADE_TO_BLACK)
+	removeobject(LOCALID_COURTNEY_14C)
+	setflag(FLAG_BEAT_BOSS_14)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+	fadedefaultbgm
+	releaseall
+	end
+}
+
 script Zone14C_EventScript_MetalCoat {
 	lock
 	if (flag(FLAG_ITEM_ZONE14C_METAL_COAT)) {
