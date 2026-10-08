@@ -1,1 +1,46 @@
 mapscripts Zone31C_MapScripts {}
+
+script Zone31C_EventScript_Serena {
+	lock
+	faceplayer
+	playbgm(MUS_BW_FRIEND, TRUE)
+	setspeaker("Serena")
+	msgbox(format("Hi! My name's {COLOR BLUE}Serena{COLOR DARK_GRAY}.\pIf you want to go forward, you'll have to beat me!\pSo, are you ready for our battle?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+	    setspeaker("Serena")
+		msgbox(format("Okay. You just let me know when you're ready!"))
+		closemessage
+		fadedefaultbgm
+		release
+		end
+	}
+    setspeaker("Serena")
+	msgbox(format("Good luck!"))
+	call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		setweather(WEATHER_SNOW)
+		doweather
+		setspeaker(SP_NAME_NONE)
+		msgbox("It suddenly began to snow!")
+        closemessage
+	}
+	trainerbattle_no_intro(TRAINER_PBL_SERENA_BOSS_31, format("Defeat!"))
+	resetweather
+	doweather
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Serena")
+	msgbox(format("I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_HM_ROCK_SMASH)
+	setspeaker("Serena")
+	msgbox(format("Good job! That was a great battle. I think I'll wait here for more challengers to pass through, you should go on ahead! I want to battle them all."))
+	closemessage
+	fadescreenswapbuffers(FADE_TO_BLACK)
+	removeobject(LOCALID_SERENA_31C)
+	setflag(FLAG_HIDE_ZONE31C_SERENA)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+	fadedefaultbgm
+	releaseall
+	end
+}

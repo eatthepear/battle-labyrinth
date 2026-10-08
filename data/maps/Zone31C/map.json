@@ -13,7 +13,35 @@
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
+      "x": 16,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_PorygonExit",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SERENA_31C",
+      "graphics_id": "OBJ_EVENT_GFX_SERENA",
+      "x": 10,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone31C_EventScript_Serena",
+      "flag": "FLAG_HIDE_ZONE31C_SERENA"
+    }
+  ],
   "warp_events": [
     {
       "x": 3,
