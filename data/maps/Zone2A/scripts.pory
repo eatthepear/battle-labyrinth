@@ -143,7 +143,7 @@ script Zone2A_EventScript_Leaf {
 script Zone2A_EventScript_Shaun {
 	lock
 	faceplayer
-	if (flag(FLAG_ZONE2A_DEFEATED_OPTIONAL) == TRUE) {
+	if (defeated(TRAINER_PBL_SHAUN_OPTIONAL_2)) {
 		setspeaker("Shaun")
 		msgbox(Zone2A_Text_Shaun_Post)
 		release
@@ -180,7 +180,6 @@ script Zone2A_EventScript_Shaun {
 	giveitem(ITEM_CHERI_BERRY, 3)
 	setspeaker("Shaun")
 	msgbox(Zone2A_Text_Shaun_Post)
-	setflag(FLAG_ZONE2A_DEFEATED_OPTIONAL)
 	release
 	end
 }

@@ -3,7 +3,7 @@ mapscripts Zone7B_MapScripts {}
 script Zone7B_EventScript_BossBattle {
 	lock
 	faceplayer
-	if (flag(FLAG_ZONE7B_DEFEATED_OPTIONAL) == true) {
+	if (defeated(TRAINER_PBL_MELINDA_OPTIONAL_7)) {
 		setspeaker("Melinda")
 		msgbox(Zone7B_Text_MelindaPost)
 		release
@@ -28,7 +28,6 @@ script Zone7B_EventScript_BossBattle {
 	setspeaker("Melinda")
 	msgbox(format("Your battling skills are certainly up to par. Excellent form.\pI'd like to give you this TM.\pVery, very expensive, or so my butler tells me."), MSGBOX_AUTOCLOSE)
 	giveitem(ITEM_TM_NATURAL_GIFT)
-	setflag(FLAG_ZONE7B_DEFEATED_OPTIONAL)
 	setspeaker("Melinda")
 	msgbox(Zone7B_Text_MelindaPost)
 	release

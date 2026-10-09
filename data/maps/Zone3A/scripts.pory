@@ -78,7 +78,7 @@ script Zone3A_EventScript_GymGuide {
 script Zone3A_EventScript_Fern {
 	lock
 	faceplayer
-	if (flag(FLAG_ZONE3A_DEFEATED_OPTIONAL)) {
+	if (defeated(TRAINER_PBL_FERN_OPTIONAL_3)) {
 		call(Zone3A_EventScript_Fern_End)
 	}
 	setspeaker("Fern")
@@ -96,7 +96,6 @@ script Zone3A_EventScript_Fern {
 	msgbox(format("I guess just having one strategy maybe isn't the best after all.\pHere, I want you to take this!"))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_METRONOME)
-	setflag(FLAG_ZONE3A_DEFEATED_OPTIONAL)
 	call(Zone3A_EventScript_Fern_End)
 }
 

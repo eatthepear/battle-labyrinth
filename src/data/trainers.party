@@ -376,6 +376,30 @@ Party Size: 2
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_2
 
+=== TRAINER_PBL_SHAUN_OPTIONAL_2 ===
+Name: Shaun
+Class: Rising Star
+Pic: Youngster
+Music: Male
+AI: AI_FLAG_BOSS
+Double Battle: No
+
+Bunnelby @ Oran Berry
+Sassy Nature
+Ability: Cheek Pouch
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tackle
+- Leer
+
+Skwovet @ Oran Berry
+Adamant Nature
+Ability: Cheek Pouch
+Level: 9
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tackle
+- Tail Whip
+
 === TRAINER_PBL_LEAF_BOSS_2 ===
 Name: Leaf
 Class: Rival
@@ -454,30 +478,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leech Seed
 - Poison Powder
 - Rock Smash
-
-=== TRAINER_PBL_SHAUN_OPTIONAL_2 ===
-Name: Shaun
-Class: Rising Star
-Pic: Youngster
-Music: Male
-AI: AI_FLAG_BOSS
-Double Battle: No
-
-Bunnelby @ Oran Berry
-Sassy Nature
-Ability: Cheek Pouch
-Level: 7
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Tackle
-- Leer
-
-Skwovet @ Oran Berry
-Adamant Nature
-Ability: Cheek Pouch
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Tackle
-- Tail Whip
 
 === TRAINER_PBL_JEMMA ===
 Name: Jemma
@@ -1199,6 +1199,33 @@ Party Size: 4
 Pool Prune: Non Ground Rock
 Copy Pool: TRAINER_POOL_ZONE_7_AND_8
 
+=== TRAINER_PBL_MELINDA_OPTIONAL_7 ===
+Name: Betty
+Class: Lady
+Pic: Lady
+Music: Rich
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Green
+
+Dedenne @ Sitrus Berry
+Timid Nature
+Ability: Cheek Pouch
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Parabolic Charge
+- Draining Kiss
+- Nuzzle
+
+Tropius @ Sitrus Berry
+Careful Nature
+Ability: Harvest
+Level: 20
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Leaf
+- Aerial Ace
+- Natural Gift
+
 === TRAINER_PBL_WALLY_BOSS_7 ===
 Name: Wally
 Class: Rival
@@ -1287,33 +1314,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Draining Kiss
 - Shock Wave
 - Icy Wind
-
-=== TRAINER_PBL_MELINDA_OPTIONAL_7 ===
-Name: Betty
-Class: Lady
-Pic: Lady
-Music: Rich
-AI: AI_FLAG_BOSS
-Double Battle: No
-Mugshot: Green
-
-Dedenne @ Sitrus Berry
-Timid Nature
-Ability: Cheek Pouch
-Level: 18
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Parabolic Charge
-- Draining Kiss
-- Nuzzle
-
-Tropius @ Sitrus Berry
-Careful Nature
-Ability: Harvest
-Level: 20
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Razor Leaf
-- Aerial Ace
-- Natural Gift
 
 === TRAINER_PBL_GALACTIC_GRUNT_8C_1 ===
 Name: Grunt
