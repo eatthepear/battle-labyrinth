@@ -1,7 +1,7 @@
 mapscripts Zone34B_MapScripts {
 	MAP_SCRIPT_ON_LOAD {
 		if (flag(FLAG_ZONE34B_PUZZLE_COMPLETED) == TRUE) {
-            setmetatile(13, 8, METATILE_RocketCastle_Warp, 0)
+            setmetatile(13, 6, METATILE_RocketCastle_Warp, 0)
 		}
     }
 }
@@ -14,48 +14,48 @@ script Zone34B_EventScript_ShowSequence {
     }
     setvar(VAR_TEMP_5, 0)
     delay(10)
-    setmetatile(10, 6, METATILE_RocketCastle_Red, 0)
+    setmetatile(10, 4, METATILE_RocketCastle_Red, 0)
     playse(SE_NOTE_C)
 	special(DrawWholeMapView)
 	waitse
     delay(10)
-    setmetatile(10, 6, METATILE_RocketCastle_Grey, 0)
+    setmetatile(10, 4, METATILE_RocketCastle_Grey, 0)
 	special(DrawWholeMapView)
     delay(10)
 
-    setmetatile(10, 10, METATILE_RocketCastle_Yellow, 0)
+    setmetatile(10, 8, METATILE_RocketCastle_Yellow, 0)
     playse(SE_NOTE_E)
 	special(DrawWholeMapView)
 	waitse
     delay(10)
-    setmetatile(10, 10, METATILE_RocketCastle_Grey, 0)
+    setmetatile(10, 8, METATILE_RocketCastle_Grey, 0)
 	special(DrawWholeMapView)
     delay(10)
 
-    setmetatile(4, 10, METATILE_RocketCastle_Blue, 0)
+    setmetatile(4, 8, METATILE_RocketCastle_Blue, 0)
     playse(SE_NOTE_G)
 	special(DrawWholeMapView)
 	waitse
     delay(10)
-    setmetatile(4, 10, METATILE_RocketCastle_Grey, 0)
+    setmetatile(4, 8, METATILE_RocketCastle_Grey, 0)
 	special(DrawWholeMapView)
     delay(10)
 
-    setmetatile(10, 10, METATILE_RocketCastle_Yellow, 0)
+    setmetatile(10, 8, METATILE_RocketCastle_Yellow, 0)
     playse(SE_NOTE_E)
 	special(DrawWholeMapView)
 	waitse
     delay(10)
-    setmetatile(10, 10, METATILE_RocketCastle_Grey, 0)
+    setmetatile(10, 8, METATILE_RocketCastle_Grey, 0)
 	special(DrawWholeMapView)
     delay(10)
 
-    setmetatile(10, 6, METATILE_RocketCastle_Red, 0)
+    setmetatile(10, 4, METATILE_RocketCastle_Red, 0)
     playse(SE_NOTE_C)
 	special(DrawWholeMapView)
 	waitse
     delay(10)
-    setmetatile(10, 6, METATILE_RocketCastle_Grey, 0)
+    setmetatile(10, 4, METATILE_RocketCastle_Grey, 0)
 	special(DrawWholeMapView)
     delay(10)
 
@@ -69,12 +69,12 @@ script Zone34B_EventScript_Tile_TopRight {
         releaseall
         end
     }
-    setmetatile(10, 6, METATILE_RocketCastle_Red, 0)
+    setmetatile(10, 4, METATILE_RocketCastle_Red, 0)
     playse(SE_NOTE_C)
 	special(DrawWholeMapView)
 	waitse
     delay(10)
-    setmetatile(10, 6, METATILE_RocketCastle_Grey, 0)
+    setmetatile(10, 4, METATILE_RocketCastle_Grey, 0)
 	special(DrawWholeMapView)
     if (var(VAR_TEMP_5) == 0) {
         setvar(VAR_TEMP_5, 1)
@@ -83,7 +83,7 @@ script Zone34B_EventScript_Tile_TopRight {
         special(SpawnCameraObject)
         applymovement(LOCALID_CAMERA, Zone34B_Movement_CameraMoveDown)
         waitmovement(0)
-        setmetatile(13, 8, METATILE_RocketCastle_Warp, 0)
+        setmetatile(13, 6, METATILE_RocketCastle_Warp, 0)
         playse(SE_EXP_MAX)
         special(DrawWholeMapView)
         waitse
@@ -119,12 +119,12 @@ script Zone34B_EventScript_Tile_BottomRight {
         releaseall
         end
     }
-    setmetatile(10, 10, METATILE_RocketCastle_Yellow, 0)
+    setmetatile(10, 8, METATILE_RocketCastle_Yellow, 0)
     playse(SE_NOTE_E)
 	special(DrawWholeMapView)
 	waitse
     delay(10)
-    setmetatile(10, 10, METATILE_RocketCastle_Grey, 0)
+    setmetatile(10, 8, METATILE_RocketCastle_Grey, 0)
 	special(DrawWholeMapView)
     if (var(VAR_TEMP_5) == 1) {
         setvar(VAR_TEMP_5, 2)
@@ -147,12 +147,12 @@ script Zone34B_EventScript_Tile_BottomLeft {
         releaseall
         end
     }
-    setmetatile(4, 10, METATILE_RocketCastle_Blue, 0)
+    setmetatile(4, 8, METATILE_RocketCastle_Blue, 0)
     playse(SE_NOTE_G)
 	special(DrawWholeMapView)
 	waitse
     delay(10)
-    setmetatile(4, 10, METATILE_RocketCastle_Grey, 0)
+    setmetatile(4, 8, METATILE_RocketCastle_Grey, 0)
 	special(DrawWholeMapView)
     if (var(VAR_TEMP_5) == 2) {
         setvar(VAR_TEMP_5, 3)
@@ -173,12 +173,12 @@ script Zone34B_EventScript_Tile_TopLeft {
         releaseall
         end
     }
-    setmetatile(4, 6, METATILE_RocketCastle_Orange, 0)
+    setmetatile(4, 4, METATILE_RocketCastle_Orange, 0)
     playse(SE_NOTE_D)
 	special(DrawWholeMapView)
 	waitse
     delay(10)
-    setmetatile(4, 6, METATILE_RocketCastle_Grey, 0)
+    setmetatile(4, 4, METATILE_RocketCastle_Grey, 0)
 	special(DrawWholeMapView)
     if (var(VAR_TEMP_5) < 5) {
         setvar(VAR_TEMP_5, 0)

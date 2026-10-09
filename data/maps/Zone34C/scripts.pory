@@ -1,1 +1,192 @@
-mapscripts Zone34C_MapScripts {}
+mapscripts Zone34C_MapScripts {
+	MAP_SCRIPT_ON_LOAD {
+		if (flag(FLAG_ZONE34C_PUZZLE_COMPLETED) == TRUE) {
+            setmetatile(13, 6, METATILE_RocketCastle_Warp, 0)
+		}
+    }
+}
+
+script Zone34C_EventScript_ShowSequence {
+    lockall
+    if (flag(FLAG_ZONE34C_PUZZLE_COMPLETED)) {
+        releaseall
+        end
+    }
+    setvar(VAR_TEMP_5, 0)
+    delay(10)
+    setmetatile(10, 4, METATILE_RocketCastle_Red, 0)
+    playse(SE_NOTE_C)
+	special(DrawWholeMapView)
+	waitse
+    delay(10)
+    setmetatile(10, 4, METATILE_RocketCastle_Grey, 0)
+	special(DrawWholeMapView)
+    delay(10)
+
+    setmetatile(10, 8, METATILE_RocketCastle_Yellow, 0)
+    playse(SE_NOTE_E)
+	special(DrawWholeMapView)
+	waitse
+    delay(10)
+    setmetatile(10, 8, METATILE_RocketCastle_Grey, 0)
+	special(DrawWholeMapView)
+    delay(10)
+
+    setmetatile(4, 8, METATILE_RocketCastle_Blue, 0)
+    playse(SE_NOTE_G)
+	special(DrawWholeMapView)
+	waitse
+    delay(10)
+    setmetatile(4, 8, METATILE_RocketCastle_Grey, 0)
+	special(DrawWholeMapView)
+    delay(10)
+
+    setmetatile(10, 8, METATILE_RocketCastle_Yellow, 0)
+    playse(SE_NOTE_E)
+	special(DrawWholeMapView)
+	waitse
+    delay(10)
+    setmetatile(10, 8, METATILE_RocketCastle_Grey, 0)
+	special(DrawWholeMapView)
+    delay(10)
+
+    setmetatile(10, 4, METATILE_RocketCastle_Red, 0)
+    playse(SE_NOTE_C)
+	special(DrawWholeMapView)
+	waitse
+    delay(10)
+    setmetatile(10, 4, METATILE_RocketCastle_Grey, 0)
+	special(DrawWholeMapView)
+    delay(10)
+
+    releaseall
+    end
+}
+
+script Zone34C_EventScript_Tile_TopRight {
+    lockall
+    if (flag(FLAG_ZONE34C_PUZZLE_COMPLETED)) {
+        releaseall
+        end
+    }
+    setmetatile(10, 4, METATILE_RocketCastle_Red, 0)
+    playse(SE_NOTE_C)
+	special(DrawWholeMapView)
+	waitse
+    delay(10)
+    setmetatile(10, 4, METATILE_RocketCastle_Grey, 0)
+	special(DrawWholeMapView)
+    if (var(VAR_TEMP_5) == 0) {
+        setvar(VAR_TEMP_5, 1)
+    } elif (var(VAR_TEMP_5) == 4) {
+        setvar(VAR_TEMP_5, 5)
+        special(SpawnCameraObject)
+        applymovement(LOCALID_CAMERA, Zone34C_Movement_CameraMoveDown)
+        waitmovement(0)
+        setmetatile(13, 6, METATILE_RocketCastle_Warp, 0)
+        playse(SE_EXP_MAX)
+        special(DrawWholeMapView)
+        waitse
+        delay(10)
+        applymovement(LOCALID_CAMERA, Zone34C_Movement_CameraMoveUp)
+        waitmovement(0)
+        special(RemoveCameraObject)
+        setflag(FLAG_ZONE34C_PUZZLE_COMPLETED)
+    } elif (var(VAR_TEMP_5) < 5) {
+        setvar(VAR_TEMP_5, 0)
+        delay(10)
+        playse(SE_FAILURE)
+        waitse
+        delay(10)
+    }
+    releaseall
+    end
+}
+
+movement Zone34C_Movement_CameraMoveDown {
+    walk_right * 3
+    walk_down * 2
+}
+
+movement Zone34C_Movement_CameraMoveUp {
+    walk_up * 2
+    walk_left * 3
+}
+
+script Zone34C_EventScript_Tile_BottomRight {
+    lockall
+    if (flag(FLAG_ZONE34C_PUZZLE_COMPLETED)) {
+        releaseall
+        end
+    }
+    setmetatile(10, 8, METATILE_RocketCastle_Yellow, 0)
+    playse(SE_NOTE_E)
+	special(DrawWholeMapView)
+	waitse
+    delay(10)
+    setmetatile(10, 8, METATILE_RocketCastle_Grey, 0)
+	special(DrawWholeMapView)
+    if (var(VAR_TEMP_5) == 1) {
+        setvar(VAR_TEMP_5, 2)
+    } elif (var(VAR_TEMP_5) == 3) {
+        setvar(VAR_TEMP_5, 4)
+    } elif (var(VAR_TEMP_5) < 5) {
+        setvar(VAR_TEMP_5, 0)
+        delay(10)
+        playse(SE_FAILURE)
+        waitse
+        delay(10)
+    }
+    releaseall
+    end
+}
+
+script Zone34C_EventScript_Tile_BottomLeft {
+    lockall
+    if (flag(FLAG_ZONE34C_PUZZLE_COMPLETED)) {
+        releaseall
+        end
+    }
+    setmetatile(4, 8, METATILE_RocketCastle_Blue, 0)
+    playse(SE_NOTE_G)
+	special(DrawWholeMapView)
+	waitse
+    delay(10)
+    setmetatile(4, 8, METATILE_RocketCastle_Grey, 0)
+	special(DrawWholeMapView)
+    if (var(VAR_TEMP_5) == 2) {
+        setvar(VAR_TEMP_5, 3)
+    } elif (var(VAR_TEMP_5) < 5) {
+        setvar(VAR_TEMP_5, 0)
+        delay(10)
+        playse(SE_FAILURE)
+        waitse
+        delay(10)
+    }
+    releaseall
+    end
+}
+
+script Zone34C_EventScript_Tile_TopLeft {
+    lockall
+    if (flag(FLAG_ZONE34C_PUZZLE_COMPLETED)) {
+        releaseall
+        end
+    }
+    setmetatile(4, 4, METATILE_RocketCastle_Orange, 0)
+    playse(SE_NOTE_D)
+	special(DrawWholeMapView)
+	waitse
+    delay(10)
+    setmetatile(4, 4, METATILE_RocketCastle_Grey, 0)
+	special(DrawWholeMapView)
+    if (var(VAR_TEMP_5) < 5) {
+        setvar(VAR_TEMP_5, 0)
+        delay(10)
+        playse(SE_FAILURE)
+        waitse
+        delay(10)
+    }
+    releaseall
+    end
+}

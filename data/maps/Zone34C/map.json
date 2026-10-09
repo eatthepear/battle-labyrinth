@@ -17,12 +17,65 @@
   "warp_events": [
     {
       "x": 1,
-      "y": 8,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ZONE34B",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 13,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE34D",
+      "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_GENERIC",
+      "var_value": "0",
+      "script": "Zone34C_EventScript_Tile_TopLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_GENERIC",
+      "var_value": "0",
+      "script": "Zone34C_EventScript_Tile_BottomLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_GENERIC",
+      "var_value": "0",
+      "script": "Zone34C_EventScript_Tile_TopRight"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_GENERIC",
+      "var_value": "0",
+      "script": "Zone34C_EventScript_Tile_BottomRight"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone34C_EventScript_ShowSequence"
+    }
+  ]
 }

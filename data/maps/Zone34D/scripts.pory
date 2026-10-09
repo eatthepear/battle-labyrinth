@@ -1,1 +1,15 @@
 mapscripts Zone34D_MapScripts {}
+
+script Zone34D_EventScript_Door {
+    lockall
+    msgbox(format("There's an amazing heat coming from the other side of the door…\pGo through it anyways?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        releaseall
+        end
+    }
+    closemessage
+    warp(MAP_ZONE34E, 0, 0)
+    waitstate
+    releaseall
+    end
+}
