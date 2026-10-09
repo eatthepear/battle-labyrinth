@@ -1499,6 +1499,16 @@ Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_COLLECTOR
 
+=== TRAINER_PBL_JACKIE_OPTIONAL_9 ===
+Name: Jackie
+Class: Battle Girl
+Pic: Battle Girl
+Music: Intense
+AI: AI_FLAG_BOSS
+Double Battle: No
+
+Tyrogue
+
 === TRAINER_PBL_ARI_BOSS_9 ===
 Name: Ari
 Class: Winstrate

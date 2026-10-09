@@ -4041,8 +4041,8 @@ static void BufferMonTrainerMemo(void)
             case METLOC_GIVE_FWG:
                 text = gText_XNatureFWG;
                 break;
-            case METLOC_ZONE8B_GIFT:
-                text = gText_XNatureBlackBelt;
+            case METLOC_ZONE9E_GIFT:
+                text = COMPOUND_STRING("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nreceived from a Battle Girl\nat {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
                 break;
             case METLOC_ZONE4A_GIFT:
                 text = gText_XNatureScientist;
