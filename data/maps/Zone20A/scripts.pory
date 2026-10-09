@@ -27,7 +27,7 @@ script Zone20A_EventScript_TriggerLacey {
 	if (var(VAR_RESULT) == YES) {
 		setspeaker("Lacey")
 		msgbox(format("GREAT!! BATTLE!!"))
-		trainerbattle_no_intro(TRAINER_PBL_LACEY_BOSS_20, "DEFEAT!")
+		trainerbattle_no_intro(TRAINER_PBL_LACEY_OPTIONAL_20, "DEFEAT!")
 		setspeaker("Lacey")
 		msgbox(format("DEFEATED!!"))
 		setspeaker(SP_NAME_NONE)
