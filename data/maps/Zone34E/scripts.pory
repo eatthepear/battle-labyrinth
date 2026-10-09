@@ -1,6 +1,6 @@
 mapscripts Zone34E_MapScripts {
 	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_ZONE_34_STATE_MAXIE, 0: Zone34E_EventScript_MaxieBattle
+		VAR_ZONE_34_STATE_MAXIE, 1: Zone34E_EventScript_MaxieBattle
 	]
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
         VAR_TEMP_1, 0 {
@@ -26,6 +26,9 @@ script Zone34E_EventScript_MaxieBattle {
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_MAXIE_BOSS_34, format("DEFEAT!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-    setvar(VAR_ZONE_34_STATE_MAXIE, 1)
+    setspeaker("Maxie")
+    msgbox(format("DEFEAT!"))
+    // move camera over to warp
+    setvar(VAR_ZONE_34_STATE_MAXIE, 2)
     releaseall
 }

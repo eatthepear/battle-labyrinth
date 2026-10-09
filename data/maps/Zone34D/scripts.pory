@@ -1,5 +1,23 @@
 mapscripts Zone34D_MapScripts {}
 
+script Zone34D_EventScript_GruntsBattle {
+    lockall
+    playbgm(MUS_HG_ENCOUNTER_ROCKET, FALSE)
+    applymovement(LOCALID_GRUNT_30D_1, Common_Movement_FaceRight)
+    applymovement(LOCALID_GRUNT_30D_2, Common_Movement_FaceLeft)
+    waitmovement
+    setspeaker("Grunt")
+    msgbox(format("BATTLE!"))
+    trainerbattle_two_trainers(TRAINER_PBL_ROCKET_GRUNT_34_7, format("DEFEAT!"), TRAINER_PBL_ROCKET_GRUNT_34_8, format("DEFEAT!"))
+    setspeaker("Grunt")
+    msgbox(format("DEFEATED!"))
+    applymovement(LOCALID_GRUNT_30D_1, Common_Movement_FaceDown)
+    applymovement(LOCALID_GRUNT_30D_2, Common_Movement_FaceDown)
+    waitmovement
+    setvar(VAR_ZONE_34_STATE_MAXIE, 1)
+    releaseall
+}
+
 script Zone34D_EventScript_Door {
     lockall
     msgbox(format("There's an amazing heat coming from the other side of the door…\pGo through it anyways?"), MSGBOX_YESNO)
