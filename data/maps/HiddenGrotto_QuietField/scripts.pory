@@ -1,8 +1,8 @@
 mapscripts HiddenGrotto_QuietField_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_GROTTO_1_SPECIES) == 0) {
-	        specialvar(VAR_GROTTO_1_SPECIES, GetHiddenGrottoSpecies)
-            if (var(VAR_GROTTO_1_SPECIES) == 0) {
+        if (var(VAR_GROTTO_QUIET_FIELD_SPECIES) == 0) {
+	        specialvar(VAR_GROTTO_QUIET_FIELD_SPECIES, GetHiddenGrottoSpecies)
+            if (var(VAR_GROTTO_QUIET_FIELD_SPECIES) == 0) {
                 setflag(FLAG_TEMP_2)
             }
         }
@@ -14,7 +14,7 @@ mapscripts HiddenGrotto_QuietField_MapScripts {
         }
     ]
 	MAP_SCRIPT_ON_RESUME {
-        copyvar(VAR_OBJ_GFX_ID_0, VAR_GROTTO_1_SPECIES)
+        copyvar(VAR_OBJ_GFX_ID_0, VAR_GROTTO_QUIET_FIELD_SPECIES)
         addvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_MON)
 	}
 }
@@ -23,14 +23,14 @@ script HiddenGrotto_QuietField_EventScript_GrottoPokemon {
 	lock
 	faceplayer
 	waitse
-	playmoncry(VAR_GROTTO_1_SPECIES, CRY_MODE_ENCOUNTER)
+	playmoncry(VAR_GROTTO_QUIET_FIELD_SPECIES, CRY_MODE_ENCOUNTER)
 	delay(40)
 	waitmoncry
-	setwildbattle_pbl(VAR_GROTTO_1_SPECIES, 5, ITEM_NONE, NUM_NATURES, 32, 2)
+	setwildbattle_pbl(VAR_GROTTO_QUIET_FIELD_SPECIES, 5, ITEM_NONE, NUM_NATURES, 32, 2)
 	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	dowildbattle
 	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
 	setflag(FLAG_TEMP_2)
-    setvar(VAR_GROTTO_1_SPECIES, 0)
+    setvar(VAR_GROTTO_QUIET_FIELD_SPECIES, 0)
 	goto(Common_EventScript_RemoveStaticPokemon)
 }

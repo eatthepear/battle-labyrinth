@@ -66,8 +66,8 @@
 #define VAR_SURF_MUSIC                       0x402E
 #define VAR_BIKE_MUSIC                       0x402F
 
-#define VAR_GROTTO_1_SPECIES                 0x4031
-#define VAR_GROTTO_2_SPECIES                 0x4032
+#define VAR_GROTTO_QUIET_FIELD_SPECIES       0x4031
+#define VAR_GROTTO_ZONE3A_SPECIES            0x4032
 
 // Tracker Vars (Don't manually set)
 #define VAR_REPEL_STEP_COUNT                 0x4040

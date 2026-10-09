@@ -5854,6 +5854,17 @@
       "layout_version": "emerald"
     },
     {
+      "id": "LAYOUT_HIDDEN_GROTTO_CAVE",
+      "name": "HiddenGrottoCave_Layout",
+      "width": 14,
+      "height": 15,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Grotto",
+      "border_filepath": "data/layouts/HiddenGrottoCave/border.bin",
+      "blockdata_filepath": "data/layouts/HiddenGrottoCave/map.bin",
+      "layout_version": "emerald"
+    },
+    {
       "id": "LAYOUT_BOREAL_THICKET",
       "name": "BorealThicket_Layout",
       "width": 50,

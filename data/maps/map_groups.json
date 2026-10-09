@@ -757,7 +757,8 @@
     "ZoneSanctuary_WhisperCave",
     "BorealThicket",
     "HeatedCavity",
-    "HiddenGrotto_QuietField"
+    "HiddenGrotto_QuietField",
+    "HiddenGrotto_Zone3A"
   ],
   "gMapGroup_Unused": [
     "ZoneB1",

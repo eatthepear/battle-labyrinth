@@ -1,0 +1,36 @@
+mapscripts HiddenGrotto_Zone3A_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_GROTTO_ZONE3A_SPECIES) == 0) {
+	        specialvar(VAR_GROTTO_ZONE3A_SPECIES, GetHiddenGrottoSpecies)
+            if (var(VAR_GROTTO_ZONE3A_SPECIES) == 0) {
+                setflag(FLAG_TEMP_2)
+            }
+        }
+    }
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_TEMP_1, 0 {
+            setvar(VAR_TEMP_1, 1)
+            turnobject(LOCALID_PLAYER, DIR_NORTH)
+        }
+    ]
+	MAP_SCRIPT_ON_RESUME {
+        copyvar(VAR_OBJ_GFX_ID_0, VAR_GROTTO_ZONE3A_SPECIES)
+        addvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_MON)
+	}
+}
+
+script HiddenGrotto_Zone3A_EventScript_GrottoPokemon {
+	lock
+	faceplayer
+	waitse
+	playmoncry(VAR_GROTTO_ZONE3A_SPECIES, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	setwildbattle_pbl(VAR_GROTTO_ZONE3A_SPECIES, 8, ITEM_NONE, NUM_NATURES, 32, 2)
+	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	dowildbattle
+	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	setflag(FLAG_TEMP_2)
+    setvar(VAR_GROTTO_ZONE3A_SPECIES, 0)
+	goto(Common_EventScript_RemoveStaticPokemon)
+}
