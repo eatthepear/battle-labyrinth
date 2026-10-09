@@ -64,18 +64,6 @@ script EventScript_Chansey {
 	end
 }
 
-script EventScript_SignsQuestGirl {
-	lock
-	faceplayer
-	if (var(VAR_RESULT) == FALSE) {
-		msgbox(format("Hiya! I'm improving on my reading skills!\pYou should work on your reading skills too!\pIf you read all the signs in {COLOR GREEN}Pokémon Battle Labyrinth{COLOR DARK_GRAY}, I'll give you a nice reward!"))
-		msgbox(format("You can see the signs you've already read in the Quest Menu."))
-	}
-	msgbox(format("Signs have lots of useful info about unique mechanics to {COLOR GREEN}Pokémon Battle Labyrinth{COLOR DARK_GRAY}!\pAll signs get their messages transcribed to the {COLOR GREEN}Notebook{COLOR DARK_GRAY} after you read them. Isn't that amazing?"))
-	release
-	end
-}
-
 script EventScript_SavesQuestBoy {
 	lock
 	faceplayer
@@ -98,9 +86,7 @@ script EventScript_SavesQuestBoy {
 script EventScript_PokedexQuestScientist {
 	lock
 	faceplayer
-	if (var(VAR_RESULT) == FALSE) {
-		msgbox(format("Kids these days are always neglecting filling their Pokédex!\pIf you can show me a Pokédex that's seen all the Pokémon in existence, I'll reward you!"))
-	}
+	msgbox(format("Kids these days are always neglecting filling their Pokédex!\pIf you can show me a Pokédex that's seen all the Pokémon in existence, I'll reward you!"))
 	msgbox(format("Seeing all the Pokémon is tough enough.\pImagine capturing them all!"))
 	release
 	end
