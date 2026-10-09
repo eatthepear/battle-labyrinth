@@ -15,3 +15,12 @@ script ZoneSanctuary_QuietField_EventScript_Lass {
 	waitmovement(0)
 	release
 }
+
+script ZoneSanctuary_QuietField_EventScript_Grotto {
+	lock
+	call(EventScript_FoundGrotto)
+	warp(MAP_HIDDEN_GROTTO_QUIET_FIELD, 0)
+	waitstate
+	release
+	end
+}

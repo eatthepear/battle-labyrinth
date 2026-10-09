@@ -1920,10 +1920,6 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/Zone5B/scripts.inc"
 
-	.include "data/maps/HiddenGrotto/scripts.inc"
-
-	.include "data/maps/HiddenGrottoCave/scripts.inc"
-
 	.include "data/maps/BorealThicket/scripts.inc"
 
 	.include "data/maps/HeatedCavity/scripts.inc"

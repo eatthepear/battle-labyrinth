@@ -320,3 +320,12 @@ script Zone3A_EventScript_Boris {
 	msgbox(format("I'm a hypocrite, I know."), MSGBOX_AUTOCLOSE)
 	end
 }
+
+script Zone3A_EventScript_Grotto {
+	lock
+	call(EventScript_FoundGrotto)
+	// warp(MAP_HIDDEN_GROTTO_QUIET_FIELD, 0)
+	waitstate
+	release
+	end
+}
