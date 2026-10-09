@@ -1116,341 +1116,249 @@ script EventScript_Notebook_Other {
 }
 
 script EventScript_Notebook_TrainerTips {
-	setvar(VAR_TEMP_0, 0)
-	while {
-		message(format("Trainer Tips open. Read more\nTrainer Tips signs to fill this!"))
-		waitmessage
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_1)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Notebook", SUB_QUEST_1) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_2)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Completing a Zone", SUB_QUEST_2) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_3)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Auto Run", SUB_QUEST_3) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_4)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Zone Info", SUB_QUEST_4) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_5)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Infinite Candy", SUB_QUEST_5) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_6)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Surveil", SUB_QUEST_6) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_7)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Honey & Sweet Scent", SUB_QUEST_7) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_8)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Dowsing Machine", SUB_QUEST_8) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_9)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Hidden Machines", SUB_QUEST_9) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_10)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Gym Leaders", SUB_QUEST_10) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_11)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Optional Bosses", SUB_QUEST_11) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_12)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Field Moves", SUB_QUEST_12) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_13)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Pokémon Changes", SUB_QUEST_13) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_14)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Different Areas", SUB_QUEST_14) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_15)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Pokédex Info", SUB_QUEST_15) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_16)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Bag Tips", SUB_QUEST_16) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_17)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Change Music", SUB_QUEST_17) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_18)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("View IVs & EVs", SUB_QUEST_18) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_19)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Level Cap", SUB_QUEST_19) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_20)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Battle Changes", SUB_QUEST_20) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_21)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Select Switch", SUB_QUEST_21) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_22)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Gauntlet", SUB_QUEST_22) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_23)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Sanctuary Areas", SUB_QUEST_23) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_24)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Restore Held", SUB_QUEST_24) }
-		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_25)
-		if (var(VAR_RESULT) == TRUE) { dynmultipush("Item Price", SUB_QUEST_25) }
-		dynmultipush("Back", 51)
-		dynmultistack(0, 0, FALSE, 6, FALSE, VAR_TEMP_0, DYN_MULTICHOICE_CB_NONE)
-		switch (var(VAR_RESULT)) {
-			case SUB_QUEST_1:  
-				setvar(VAR_TEMP_0, SUB_QUEST_1)
-				call(EventScript_Sign_Notebook)
-			case SUB_QUEST_2:  
-				setvar(VAR_TEMP_0, SUB_QUEST_2)
-				call(EventScript_Sign_CompletingAZone)
-			case SUB_QUEST_3:  
-				setvar(VAR_TEMP_0, SUB_QUEST_3)
-				call(EventScript_Sign_RunningShoes)
-			case SUB_QUEST_4:  
-				setvar(VAR_TEMP_0, SUB_QUEST_4)
-				call(EventScript_Sign_ZoneInfo)
-			case SUB_QUEST_5:  
-				setvar(VAR_TEMP_0, SUB_QUEST_5)
-				call(EventScript_Sign_InfiniteCandy)
-			case SUB_QUEST_6:  
-				setvar(VAR_TEMP_0, SUB_QUEST_6)
-				call(EventScript_Sign_Surveil)
-			case SUB_QUEST_7:  
-				setvar(VAR_TEMP_0, SUB_QUEST_7)
-				call(EventScript_Sign_HoneySweetScent)
-			case SUB_QUEST_8:  
-				setvar(VAR_TEMP_0, SUB_QUEST_8)
-				call(EventScript_Sign_DowsingMachine)
-			case SUB_QUEST_9:  
-				setvar(VAR_TEMP_0, SUB_QUEST_9)
-				call(EventScript_Sign_HiddenMachines)
-			case SUB_QUEST_10: 
-				setvar(VAR_TEMP_0, SUB_QUEST_10)
-				call(EventScript_Sign_Leader)
-			case SUB_QUEST_11: 
-				setvar(VAR_TEMP_0, SUB_QUEST_11)
-				call(EventScript_Sign_OptionalBosses)
-			case SUB_QUEST_12: 
-				setvar(VAR_TEMP_0, SUB_QUEST_12)
-				call(EventScript_Sign_FieldMoves)
-			case SUB_QUEST_13: 
-				setvar(VAR_TEMP_0, SUB_QUEST_13)
-				call(EventScript_Sign_PokemonChanges)
-			case SUB_QUEST_14: 
-				setvar(VAR_TEMP_0, SUB_QUEST_14)
-				call(EventScript_Sign_DifferentAreas)
-			case SUB_QUEST_15: 
-				setvar(VAR_TEMP_0, SUB_QUEST_15)
-				call(EventScript_Sign_PokedexInfo)
-			case SUB_QUEST_16: 
-				setvar(VAR_TEMP_0, SUB_QUEST_16)
-				call(EventScript_Sign_BagTips)
-			case SUB_QUEST_17: 
-				setvar(VAR_TEMP_0, SUB_QUEST_17)
-				call(EventScript_Sign_ChangeMusic)
-			case SUB_QUEST_18: 
-				setvar(VAR_TEMP_0, SUB_QUEST_18)
-				call(EventScript_Sign_StatsIVEV)
-			case SUB_QUEST_19: 
-				setvar(VAR_TEMP_0, SUB_QUEST_19)
-				call(EventScript_Sign_LevelCap)
-			case SUB_QUEST_20: 
-				setvar(VAR_TEMP_0, SUB_QUEST_20)
-				call(EventScript_Sign_BattleChanges)
-			case SUB_QUEST_21: 
-				setvar(VAR_TEMP_0, SUB_QUEST_21)
-				call(EventScript_Sign_SelectSwitch)
-			case SUB_QUEST_22: 
-				setvar(VAR_TEMP_0, SUB_QUEST_22)
-				call(EventScript_Sign_SanctuaryAreas)
-			case SUB_QUEST_23: 
-				setvar(VAR_TEMP_0, SUB_QUEST_23)
-				call(EventScript_Sign_Gauntlet)
-			case SUB_QUEST_24: 
-				setvar(VAR_TEMP_0, SUB_QUEST_24)
-				call(EventScript_Sign_RestoreHeldItems)
-			case SUB_QUEST_25: 
-				setvar(VAR_TEMP_0, SUB_QUEST_25)
-				call(EventScript_Sign_ItemPrice)
-			case 51:
-			case MULTI_B_PRESSED:
-				setvar(VAR_TEMP_0, 0)
-				return
-		}
-	}
+	// setvar(VAR_TEMP_0, 0)
+	// while {
+	// 	message(format("Trainer Tips open. Read more\nTrainer Tips signs to fill this!"))
+	// 	waitmessage
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_1)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Notebook", SUB_QUEST_1) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_2)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Completing a Zone", SUB_QUEST_2) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_3)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Auto Run", SUB_QUEST_3) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_4)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Zone Info", SUB_QUEST_4) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_5)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Infinite Candy", SUB_QUEST_5) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_6)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Surveil", SUB_QUEST_6) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_7)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Honey & Sweet Scent", SUB_QUEST_7) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_8)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Dowsing Machine", SUB_QUEST_8) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_9)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Hidden Machines", SUB_QUEST_9) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_10)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Gym Leaders", SUB_QUEST_10) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_11)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Optional Bosses", SUB_QUEST_11) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_12)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Field Moves", SUB_QUEST_12) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_13)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Pokémon Changes", SUB_QUEST_13) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_14)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Different Areas", SUB_QUEST_14) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_15)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Pokédex Info", SUB_QUEST_15) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_16)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Bag Tips", SUB_QUEST_16) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_17)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Change Music", SUB_QUEST_17) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_18)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("View IVs & EVs", SUB_QUEST_18) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_19)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Level Cap", SUB_QUEST_19) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_20)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Battle Changes", SUB_QUEST_20) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_21)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Select Switch", SUB_QUEST_21) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_22)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Gauntlet", SUB_QUEST_22) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_23)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Sanctuary Areas", SUB_QUEST_23) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_24)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Restore Held", SUB_QUEST_24) }
+	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_25)
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Item Price", SUB_QUEST_25) }
+	// 	dynmultipush("Back", 51)
+	// 	dynmultistack(0, 0, FALSE, 6, FALSE, VAR_TEMP_0, DYN_MULTICHOICE_CB_NONE)
+	// 	switch (var(VAR_RESULT)) {
+	// 		case SUB_QUEST_1:  
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_1)
+	// 			call(EventScript_Sign_Notebook)
+	// 		case SUB_QUEST_2:  
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_2)
+	// 			call(EventScript_Sign_CompletingAZone)
+	// 		case SUB_QUEST_3:  
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_3)
+	// 			call(EventScript_Sign_RunningShoes)
+	// 		case SUB_QUEST_4:  
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_4)
+	// 			call(EventScript_Sign_ZoneInfo)
+	// 		case SUB_QUEST_5:  
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_5)
+	// 			call(EventScript_Sign_InfiniteCandy)
+	// 		case SUB_QUEST_6:  
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_6)
+	// 			call(EventScript_Sign_Surveil)
+	// 		case SUB_QUEST_7:  
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_7)
+	// 			call(EventScript_Sign_HoneySweetScent)
+	// 		case SUB_QUEST_8:  
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_8)
+	// 			call(EventScript_Sign_DowsingMachine)
+	// 		case SUB_QUEST_9:  
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_9)
+	// 			call(EventScript_Sign_HiddenMachines)
+	// 		case SUB_QUEST_10: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_10)
+	// 			call(EventScript_Sign_Leader)
+	// 		case SUB_QUEST_11: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_11)
+	// 			call(EventScript_Sign_OptionalBosses)
+	// 		case SUB_QUEST_12: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_12)
+	// 			call(EventScript_Sign_FieldMoves)
+	// 		case SUB_QUEST_13: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_13)
+	// 			call(EventScript_Sign_PokemonChanges)
+	// 		case SUB_QUEST_14: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_14)
+	// 			call(EventScript_Sign_DifferentAreas)
+	// 		case SUB_QUEST_15: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_15)
+	// 			call(EventScript_Sign_PokedexInfo)
+	// 		case SUB_QUEST_16: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_16)
+	// 			call(EventScript_Sign_BagTips)
+	// 		case SUB_QUEST_17: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_17)
+	// 			call(EventScript_Sign_ChangeMusic)
+	// 		case SUB_QUEST_18: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_18)
+	// 			call(EventScript_Sign_StatsIVEV)
+	// 		case SUB_QUEST_19: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_19)
+	// 			call(EventScript_Sign_LevelCap)
+	// 		case SUB_QUEST_20: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_20)
+	// 			call(EventScript_Sign_BattleChanges)
+	// 		case SUB_QUEST_21: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_21)
+	// 			call(EventScript_Sign_SelectSwitch)
+	// 		case SUB_QUEST_22: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_22)
+	// 			call(EventScript_Sign_SanctuaryAreas)
+	// 		case SUB_QUEST_23: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_23)
+	// 			call(EventScript_Sign_Gauntlet)
+	// 		case SUB_QUEST_24: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_24)
+	// 			call(EventScript_Sign_RestoreHeldItems)
+	// 		case SUB_QUEST_25: 
+	// 			setvar(VAR_TEMP_0, SUB_QUEST_25)
+	// 			call(EventScript_Sign_ItemPrice)
+	// 		case 51:
+	// 		case MULTI_B_PRESSED:
+	// 			setvar(VAR_TEMP_0, 0)
+	// 			return
+	// 	}
+	// }
 }
 
 script EventScript_Sign_Notebook {
 	helpwindow(HELP_SIGN_NOTEBOOK)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_1)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_1)
-	}
 }
 
 script EventScript_Sign_CompletingAZone {
 	helpwindow(HELP_SIGN_COMPLETING_A_ZONE)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_2)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_2)
-	}
 }
 
 script EventScript_Sign_RunningShoes {
 	helpwindow(HELP_SIGN_RUNNING_SHOES)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_3)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_3)
-	}
 }
 
 script EventScript_Sign_ZoneInfo {
 	helpwindow(HELP_SIGN_ZONE_INFO)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_4)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_4)
-	}
 }
 
 script EventScript_Sign_InfiniteCandy {
 	helpwindow(HELP_SIGN_INFINITE_CANDY)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_5)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_5)
-	}
 }
 
 script EventScript_Sign_Surveil {
 	helpwindow(HELP_SIGN_SURVEIL)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_6)
-	}
 }
 
 script EventScript_Sign_HoneySweetScent {
 	helpwindow(HELP_SIGN_HONEY_SWEET_SCENT)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_7)
-	}
 }
 
 script EventScript_Sign_DowsingMachine {
 	helpwindow(HELP_SIGN_DOWSING_MACHINE)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_8)
-	}
 }
 
 script EventScript_Sign_HiddenMachines {
 	helpwindow(HELP_SIGN_HIDDEN_MACHINES)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_9)
-	}
 }
 
 script EventScript_Sign_Leader {
 	helpwindow(HELP_SIGN_LEADER)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_10)
-	}
 }
 
 script EventScript_Sign_OptionalBosses {
 	helpwindow(HELP_SIGN_OPTIONAL_BOSSES)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_11)
-	}
 }
 
 script EventScript_Sign_FieldMoves {
 	helpwindow(HELP_SIGN_FIELD_MOVES)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_12)
-	}
 }
 
 script EventScript_Sign_PokemonChanges {
 	helpwindow(HELP_SIGN_POKEMON_CHANGES)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_13)
-	}
 }
 
 script EventScript_Sign_DifferentAreas {
 	helpwindow(HELP_SIGN_DIFFERENT_AREAS)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_14)
-	}
 }
 
 script EventScript_Sign_PokedexInfo {
 	helpwindow(HELP_SIGN_POKEDEX_INFO)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_15)
-	}
 }
 
 script EventScript_Sign_BagTips {
 	helpwindow(HELP_SIGN_BAG_TIPS)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_16)
-	}
 }
 
 script EventScript_Sign_ChangeMusic {
 	helpwindow(HELP_SIGN_CHANGE_MUSIC)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_17)
-	}
 }
 
 script EventScript_Sign_StatsIVEV {
 	helpwindow(HELP_SIGN_STATS_IV_EV)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_18)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_18)
-	}
 }
 
 script EventScript_Sign_LevelCap {
 	helpwindow(HELP_SIGN_LEVEL_CAP)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_19)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_19)
-	}
 }
 
 script EventScript_Sign_BattleChanges {
 	helpwindow(HELP_SIGN_BATTLE_CHANGES)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_20)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_20)
-	}
 }
 
 script EventScript_Sign_SelectSwitch {
 	helpwindow(HELP_SIGN_SELECT_SWITCH)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_21)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_21)
-	}
 }
 
 script EventScript_Sign_Gauntlet {
 	helpwindow(HELP_SIGN_GAUNTLET)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_22)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_22)
-	}
 }
 
 script EventScript_Sign_SanctuaryAreas {
 	helpwindow(HELP_SIGN_SANCTUARY_AREAS)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_23)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_23)
-	}
 }
 
 script EventScript_Sign_RestoreHeldItems {
 	helpwindow(HELP_SIGN_RESTORE_HELD_ITEMS)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_24)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_24)
-	}
 }
 
 script EventScript_Sign_ItemPrice {
 	helpwindow(HELP_SIGN_ITEM_PRICE)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_25)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_25)
-	}
 }
 
 // everything below here is to assign (haha get it)
 script EventScript_Sign_Backtracking {
 	msgbox(format("Trainer Tips\pSome Zones require backtracking in order to obtain all their items and rewards.\pYou can speak to the man in the Pokémon Center to access a past Zone for ¥1000."), MSGBOX_SIGN)
-	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_19)
-	if (var(VAR_RESULT) == FALSE) {
-		completesubquest(QUEST_SIGNS, SUB_QUEST_19)
-	}
 }
 
 script Zone7A_EventScript_HealSign {

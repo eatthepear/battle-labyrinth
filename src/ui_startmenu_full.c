@@ -51,7 +51,6 @@
 #include "start_menu.h"
 #include "money.h"
 #include "dexnav.h"
-#include "quests.h"
 #include "constants/songs.h"
 #include "caps.h"
 
@@ -1439,17 +1438,6 @@ void Task_ReturnToFieldOnSave(u8 taskId)
     }
 }
 
-void Task_OpenQuestMenuStartMenu(u8 taskId)
-{
-    if (!gPaletteFade.active)
-    {
-        StartMenuFull_FreeResources();
-        PlayRainStoppingSoundEffect();
-        CleanupOverworldWindowsAndTilemaps();
-        CreateTask(Task_QuestMenu_OpenFromStartMenu, 0);
-    }
-}
-
 //
 //  Handle save Confirmation and then Leave to Overworld for Saving 
 //
@@ -1561,7 +1549,7 @@ static void Task_StartMenuFullMain(u8 taskId)
             case START_MENU_CARD:
                 PlaySE(SE_SELECT);
                 BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-                gTasks[taskId].func = Task_OpenQuestMenuStartMenu;
+                gTasks[taskId].func = Task_OpenOptionsMenuStartMenu;
                 break;
             case START_MENU_OPTIONS:
                 PlaySE(SE_SELECT);

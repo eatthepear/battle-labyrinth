@@ -49,7 +49,6 @@
 #include "mystery_gift.h"
 #include "tx_registered_items_menu.h"
 #include "union_room_chat.h"
-#include "quests.h"
 #include "constants/map_groups.h"
 #include "constants/items.h"
 #include "difficulty.h"
@@ -246,7 +245,6 @@ void NewGameInitData(void)
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
     ResetItemFlags();
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
-    QuestMenu_ResetMenuSaveData();
     ResetDexNav();
     ClearFollowerNPCData();
     VarSet(VAR_SANCTUARY_MUSIC, sanctuaryMusic);

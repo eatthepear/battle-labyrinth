@@ -601,20 +601,15 @@ script Sanctuary_EventScript_EnterSanctuary {
 	}
 	switch(var(VAR_ZONE)) {
 		case 1:
-			completesubquest(QUEST_PBL, 0)
 			setvar(VAR_ZONE, 2)
 		case 2:
 			setflag(FLAG_HIDE_ZONE2A_MAX)
-			completesubquest(QUEST_PBL, 1)
 			setvar(VAR_ZONE, 3)
 		case 3:
-			completesubquest(QUEST_PBL, 2)
 			setvar(VAR_ZONE, 4)
 		case 4:
-			completesubquest(QUEST_PBL, 3)
 			setvar(VAR_ZONE, 5)
 		case 5:
-			completesubquest(QUEST_PBL, 4)
 			setvar(VAR_ZONE, 6)
 			playfanfare(MUS_OBTAIN_ITEM)
 			setspeaker(SP_NAME_COLRESS)
@@ -623,21 +618,16 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setvar(VAR_FARM_STOCK, 10)
 		case 6:
 			setflag(FLAG_HIDE_ZONE6A_MAX)
-			completesubquest(QUEST_PBL, 5)
 			setvar(VAR_ZONE, 7)
 			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 7:
 			setflag(FLAG_ZONE7B_HEAL_USED)
-			completesubquest(QUEST_PBL, 6)
-			completesubquest(QUEST_PBL, 7)
 			setvar(VAR_ZONE, 9)
 		case 9:
-			completesubquest(QUEST_PBL, 8)
 			setvar(VAR_ZONE, 10)
 		case 10:
 			setflag(FLAG_HIDE_ZONE10A_MAX)
-			completesubquest(QUEST_PBL, 9)
 			setvar(VAR_ZONE, 11)
 			playfanfare(MUS_OBTAIN_ITEM)
 			setspeaker(SP_NAME_COLRESS)
@@ -645,20 +635,15 @@ script Sanctuary_EventScript_EnterSanctuary {
 			waitfanfare
 			setvar(VAR_FARM_STOCK, 10)
 		case 11:
-			completesubquest(QUEST_PBL, 10)
 			setvar(VAR_ZONE, 12)
 		case 12:
-			completesubquest(QUEST_PBL, 11)
 			setvar(VAR_ZONE, 13)
 			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 13:
 			setflag(FLAG_HIDE_ZONE13A_MAX)
-			completesubquest(QUEST_PBL, 12)
-			completesubquest(QUEST_PBL, 13)
 			setvar(VAR_ZONE, 15)
 		case 15:
-			completesubquest(QUEST_PBL, 14)
 			setvar(VAR_ZONE, 16)
 			playfanfare(MUS_OBTAIN_ITEM)
 			setspeaker(SP_NAME_COLRESS)
@@ -666,65 +651,45 @@ script Sanctuary_EventScript_EnterSanctuary {
 			waitfanfare
 			setvar(VAR_FARM_STOCK, 10)
 		case 16:
-			completesubquest(QUEST_PBL, 15)
 			setvar(VAR_ZONE, 17)
 		case 17:
-			completesubquest(QUEST_PBL, 16)
 			setvar(VAR_ZONE, 18)
 			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 18:
-			completesubquest(QUEST_PBL, 17)
-			completesubquest(QUEST_PBL, 18)
 			setvar(VAR_ZONE, 20)
 		case 20:
-			completesubquest(QUEST_PBL, 19)
 			setvar(VAR_ZONE, 21)
 		case 21:
-			completesubquest(QUEST_PBL, 21)
 			setvar(VAR_ZONE, 22)
 		case 22:
-			completesubquest(QUEST_PBL, 22)
 			setvar(VAR_ZONE, 23)
 		case 23:
-			completesubquest(QUEST_PBL, 23)
 			setvar(VAR_ZONE, 24)
 			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Gemini Heights{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Gemini Caves{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 24:
-			completesubquest(QUEST_PBL, 24)
-			completesubquest(QUEST_PBL, 25)
 			setvar(VAR_ZONE, 26)
 		case 26:
-			completesubquest(QUEST_PBL, 26)
 			setvar(VAR_ZONE, 27)
 		case 27:
-			completesubquest(QUEST_PBL, 27)
 			setvar(VAR_ZONE, 28)
 		case 28:
-			completesubquest(QUEST_PBL, 28)
 			setvar(VAR_ZONE, 29)
 		case 29:
 			setflag(FLAG_HIDE_ZONE29A_MAX)
-			completesubquest(QUEST_PBL, 29)
 			setvar(VAR_ZONE, 30)
 		case 30:
-			completesubquest(QUEST_PBL, 30)
 			setvar(VAR_ZONE, 31)
 		case 31:
-			completesubquest(QUEST_PBL, 31)
 			setvar(VAR_ZONE, 32)
 		case 32:
-			completesubquest(QUEST_PBL, 32)
 			setvar(VAR_ZONE, 33)
 		case 33:
-			completesubquest(QUEST_PBL, 33)
 			setvar(VAR_ZONE, 34)
 		case 34:
-			completesubquest(QUEST_PBL, 34)
 			setvar(VAR_ZONE, 35)
 		case 35:
-			completesubquest(QUEST_PBL, 35)
 			setvar(VAR_ZONE, 36)
 	}
 	call(EventScript_WhenUReadyDialogue)
@@ -780,7 +745,7 @@ script Sanctuary_EventScript_GameIntro {
 		"Each {COLOR GREEN}Zone{COLOR DARK_GRAY} typically contains a {COLOR GREEN}Boss{COLOR DARK_GRAY} or other difficult challenge that yields great rewards.\p"
 		"When you complete a {COLOR GREEN}Zone{COLOR DARK_GRAY}, you will return to this area, the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}, where you can heal your Pokémon, purchase supplies, and prepare for the next {COLOR GREEN}Zone{COLOR DARK_GRAY}.\p"
 		"Once you enter a new {COLOR GREEN}Zone{COLOR DARK_GRAY}, you will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} until you complete that {COLOR GREEN}Zone{COLOR DARK_GRAY}.\p"
-		"As you complete more {COLOR GREEN}Zones{COLOR DARK_GRAY}, more items, quests, and services are unlocked.\p"
+		"As you complete more {COLOR GREEN}Zones{COLOR DARK_GRAY}, more items and services are unlocked.\p"
 		"In order to win, you must progress through all {COLOR GREEN}Zones{COLOR DARK_GRAY}, overcoming all challenges you face along the way."))
 	}
 	call(EventScript_GameIntro_Difficulty)
@@ -851,7 +816,6 @@ script Sanctuary_EventScript_GameIntro {
 	call(EventScript_WhenUReadyDialogue)
 	applymovement(LOCALID_COLRESS, Sanctuary_Movement_Colress_WalkUp)
 	waitmovement(LOCALID_COLRESS)
-	startquest(QUEST_PBL)
 	call(EventScript_AskSaveGame)
 	releaseall
 	end

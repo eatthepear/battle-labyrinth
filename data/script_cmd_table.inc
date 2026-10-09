@@ -253,13 +253,10 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_DYNMULTIPUSH                  ScrCmd_dynmultipush,                requests_effects=1  @ 0xe4
 	script_cmd_table_entry SCR_OP_HIDEFOLLOWER                  ScrCmd_hidefollower,                requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_GETBRAILLESTRINGWIDTH         ScrCmd_getbraillestringwidth,       requests_effects=1  @ 0xe6
-	script_cmd_table_entry SCR_OP_QUESTMENU                     ScrCmd_questmenu,                   requests_effects=1  @ 0xe7
-	script_cmd_table_entry SCR_OP_SUBQUESTMENU                  ScrCmd_subquestmenu,                requests_effects=1  @ 0xe8
-	script_cmd_table_entry SCR_OP_RETURNQUESTSTATE              ScrCmd_returnqueststate,            requests_effects=1  @ 0xe9
-	script_cmd_table_entry SCR_OP_SETWILDBATTLE_PBL             ScrCmd_setwildbattle_pbl,           requests_effects=1  @ 0xea
-	script_cmd_table_entry SCR_OP_CHECKSPECIESCLAUSE            ScrCmd_checkspeciesclause,          requests_effects=1  @ 0xeb
-	script_cmd_table_entry SCR_OP_GETITEMQUANTITY               ScrCmd_getitemquantity,             requests_effects=1  @ 0xec
-	script_cmd_table_entry SCR_OP_POKEVIAL                      ScrCmd_pokevial,                    requests_effects=1  @ 0xed //Pokevial Branch
+	script_cmd_table_entry SCR_OP_SETWILDBATTLE_PBL             ScrCmd_setwildbattle_pbl,           requests_effects=1  @ 0xe7
+	script_cmd_table_entry SCR_OP_CHECKSPECIESCLAUSE            ScrCmd_checkspeciesclause,          requests_effects=1  @ 0xe8
+	script_cmd_table_entry SCR_OP_GETITEMQUANTITY               ScrCmd_getitemquantity,             requests_effects=1  @ 0xe9
+	script_cmd_table_entry SCR_OP_POKEVIAL                      ScrCmd_pokevial,                    requests_effects=1  @ 0xea //Pokevial Branch
 
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 gScriptCmdTableEnd::
