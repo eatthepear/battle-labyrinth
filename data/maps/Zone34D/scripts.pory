@@ -8,7 +8,7 @@ script Zone34D_EventScript_Door {
         end
     }
     closemessage
-    warp(MAP_ZONE34E, 0, 0)
+    warp(MAP_ZONE34E, 1)
     waitstate
     releaseall
     end
