@@ -4558,13 +4558,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sleep Powder
 
 === TRAINER_PBL_RAIHAN_BOSS_28 ===
-Name: Ariana
-Class: Rainbow Rocket Executive
-Pic: Ariana
-Music: Rocket
+Name: Raihan
+Class: Leader
+Pic: Raihan
+Music: Male
 AI: AI_FLAG_BOSS
 Double Battle: No
-Mugshot: Blue
+Mugshot: Purple
 
 Bulbasaur
 
@@ -5104,7 +5104,7 @@ Bulbasaur
 === TRAINER_PBL_SHELLY_BOSS_30 ===
 Name: Shelly
 Class: Aqua Admin
-Pic: Aqua Admin M
+Pic: Aqua Admin F
 Music: Aqua
 AI: AI_FLAG_BOSS
 Mugshot: Blue
