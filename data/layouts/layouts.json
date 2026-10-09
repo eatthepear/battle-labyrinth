@@ -10465,8 +10465,8 @@
     {
       "id": "LAYOUT_ZONE34A",
       "name": "Zone34A_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 19,
+      "height": 12,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_RocketCastle",
       "border_filepath": "data/layouts/Zone34A/border.bin",
