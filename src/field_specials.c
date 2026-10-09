@@ -4590,15 +4590,7 @@ bool8 SendChosenMonToPC(void)
 
 u16 GetCaughtSpeciesCount(void)
 {
-    u16 count = 0;
-    u16 i;
-
-    for (i = 0; i < NATIONAL_DEX_COUNT; i++)
-    {
-        if (GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
-            count++;
-    }
-    return count;
+    return GetNationalPokedexCount(FLAG_GET_CAUGHT);
 }
 
 u16 GetNumTrainersRemaining(void)
@@ -4936,6 +4928,11 @@ u16 RandomHiddenShard(void)
 bool8 IsPokemonFainted(void)
 {
     return GetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_HP) == 0;
+}
+
+u16 GetGameStatSavedGame(void)
+{
+    return GetGameStat(GAME_STAT_SAVED_GAME);
 }
 
 static void UIAskConfirmation(void)

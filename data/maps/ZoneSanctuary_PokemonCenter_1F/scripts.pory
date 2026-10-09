@@ -79,16 +79,18 @@ script EventScript_SignsQuestGirl {
 script EventScript_SavesQuestBoy {
 	lock
 	faceplayer
-	if (var(VAR_RESULT) == FALSE) {
-		msgbox(format("Saving your progress is important while playing games.\pI learned that the hard way!\pDon't be like me!\pI'll give you something if you can save the game 50 times!"))
-	}
-	if (var(VAR_RESULT) == FALSE) {
-		if (flag(FLAG_TEMP_6) == TRUE) {
-			msgbox(format("Wow!\pYou really went and saved 50 times?\pThat's crazy.\pHere, as a reward, I can give you this nifty Exp. Share!\pIt lets you toggle the Exp. Share on or off.\pI would only use it if I don't want my Pokémon to grow at the rate it's supposed to!"))
+	specialvar(VAR_TEMP_0, GetGameStatSavedGame)
+	buffernumberstring(0, VAR_TEMP_0)
+	if (checkitem(ITEM_EXP_SHARE) == FALSE) {
+		msgbox(format("Saving your progress is important while playing games.\pI learned that the hard way!\pDon't be like me!\pI'll give you something if you can save your game 50 times!"))
+		if (var(VAR_TEMP_0) >= 50) {
+			msgbox(format("Wow!\pYou've saved your game a total of {STR_VAR_1} times!\pThat's amazing!\pHere, as a reward, take this nifty {COLOR GREEN}Exp. Share{COLOR DARK_GRAY}!\pIt lets you toggle the Exp. All setting on or off."))
 			giveitem(ITEM_EXP_SHARE)
+			release
+			end
 		}
 	}
-	msgbox(format("Don't forget to save your game!"))
+	msgbox(format("You've saved your game {STR_VAR_1} times so far!\pDon't forget to save your game!"))
 	release
 	end
 }
