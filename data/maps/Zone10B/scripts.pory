@@ -76,7 +76,7 @@ script Zone10B_EventScript_Collector {
 // 			// !defeated(TRAINER_PBL_DUDLEY) ||
 // 			// !defeated(TRAINER_PBL_DAISY) ||
 // 			// !defeated(TRAINER_PBL_VIC_AND_DELL) ||
-// 			// !defeated(TRAINER_PBL_MINA) ||
+// 			// !defeated(TRAINER_PBL_MINA_BOSS_6) ||
 // 			// !flag(FLAG_BEAT_BOSS_6) ||
 // 			// !defeated(TRAINER_PBL_MILLIE) ||
 // 			// !defeated(TRAINER_PBL_JAMAL) ||

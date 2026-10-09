@@ -220,7 +220,7 @@ text gText_ItemChestIsEmpty {
 // 			warpteleport(MAP_ZONE4SANCTUARY, 255, 38, 11)
 // 			waitstate
 // 		case 6:
-// 			cleartrainerflag(TRAINER_PBL_ZACK)
+// 			cleartrainerflag(TRAINER_PBL_ZACK_BOSS_6)
 // 			cleartrainerflag(TRAINER_PBL_MELANIE)
 // 			cleartrainerflag(TRAINER_PBL_CONSTANCE)
 // 			cleartrainerflag(TRAINER_PBL_FRANK)

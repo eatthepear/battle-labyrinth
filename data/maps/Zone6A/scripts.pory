@@ -83,7 +83,7 @@ script Zone6A_EventScript_BossBattle {
 		msgbox("It suddenly began to rain!")
 	}
 	closemessage
-	trainerbattle_no_intro(TRAINER_PBL_MINA, "Rain, rain, go away…")
+	trainerbattle_no_intro(TRAINER_PBL_MINA_BOSS_6, "Rain, rain, go away…")
 	setspeaker("Mina")
 	msgbox(format("Uh, sorry I was so angry at you.\pI didn't mean to… You're just passing by. Sorry!"), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_COBY, Common_Movement_ExclamationMark)
@@ -101,12 +101,12 @@ script Zone6A_EventScript_BossBattle {
 	msgbox(format("Hey! No one messes with our family! Take this! {COLOR GREEN}Pyukumuku{COLOR DARK_GRAY}, attack!"))
 	setspeaker("Mina")
 	msgbox(format("Wait! It isn't their fault!"))
-	trainerbattle_no_intro(TRAINER_PBL_ZACK, format("Pyukumuku… Can't you just attack normally?"))
+	trainerbattle_no_intro(TRAINER_PBL_ZACK_BOSS_6, format("Pyukumuku… Can't you just attack normally?"))
 	setspeaker("Coby")
 	msgbox(format("Hey! You're messing with my little brother and sister!\pI'll teach you a lesson!"))
 	setspeaker("Mina")
 	msgbox(format("No! Stop it!"))
-	trainerbattle_no_intro(TRAINER_PBL_COBY, format("Our family loses together!"))
+	trainerbattle_no_intro(TRAINER_PBL_COBY_BOSS_6, format("Our family loses together!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	resetweather
 	doweather
