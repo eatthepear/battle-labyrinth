@@ -4844,14 +4844,15 @@ u16 RandomItemChest(void)
 #define RANDOM_HIDDEN_BERRY_TABLE_COUNT ARRAY_COUNT(sRandomHiddenBerryTable)
 static const struct ItemChest sRandomHiddenBerryTable[] =
 {
-    {	ITEM_ORAN_BERRY   	, {	 20,	 20,	  0,	100,	100,	100,	100,	100,	100,	100,	100,	} },
-    {	ITEM_PECHA_BERRY	, {	 20,	 20,	 15,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_CHERI_BERRY	, {	 20,	 20,	 15,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_CHESTO_BERRY	, {	 20,	 20,	  8,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_RAWST_BERRY	, {	 12,	 12,	  8,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_ASPEAR_BERRY	, {	  4,	  4,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_PERSIM_BERRY	, {	  4,	  4,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_SITRUS_BERRY	, {	  0,	  0,	 50,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_ORAN_BERRY   	, {	 20,	 20,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_PECHA_BERRY	, {	 20,	 20,	 15,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_CHERI_BERRY	, {	 20,	 20,	 15,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_CHESTO_BERRY	, {	 20,	 20,	  8,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_RAWST_BERRY	, {	 12,	 12,	  8,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_ASPEAR_BERRY	, {	  4,	  4,	  2,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_PERSIM_BERRY	, {	  4,	  4,	  2,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_SITRUS_BERRY	, {	  0,	  0,	 50,	 80,	 80,	 80,	 80,	} },
+    {	ITEM_LUM_BERRY   	, {	  0,	  0,	  0,	 20,	 20,	 20,	 20,	} },
 };
 
 u16 RandomHiddenBerry(void)
@@ -4879,28 +4880,10 @@ u16 RandomHiddenBerry(void)
 #define RANDOM_HIDDEN_SHARD_TABLE_COUNT ARRAY_COUNT(sRandomHiddenShardTable)
 static const struct ItemChest sRandomHiddenShardTable[] =
 {
-    {	ITEM_RED_SHARD          	, {	 50,	 50,	 16,	 16,	100,	100,	100,	100,	100,	100,	100,	} },
-    {	ITEM_GREEN_SHARD        	, {	 50,	 50,	 16,	 16,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_BLUE_SHARD          	, {	  0,	  0,	 16,	 16,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_YELLOW_SHARD       	, {	  0,	  0,	 16,	 16,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_BUG_TERA_SHARD       	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_DARK_TERA_SHARD     	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_DRAGON_TERA_SHARD   	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_ELECTRIC_TERA_SHARD	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_FAIRY_TERA_SHARD   	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_FIGHTING_TERA_SHARD	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_FIRE_TERA_SHARD    	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_FLYING_TERA_SHARD    	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_GHOST_TERA_SHARD    	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_GRASS_TERA_SHARD    	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_GROUND_TERA_SHARD   	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_ICE_TERA_SHARD      	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_NORMAL_TERA_SHARD    	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_POISON_TERA_SHARD    	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_PSYCHIC_TERA_SHARD   	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_ROCK_TERA_SHARD    	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_STEEL_TERA_SHARD    	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
-    {	ITEM_WATER_TERA_SHARD    	, {	  0,	  0,	  2,	  2,	  0,	  0,	  0,	  0,	  0,	  0,	  0,	} },
+    {	ITEM_RED_SHARD          	, {	 50,	 50,	 40,	 25,	 25,	 25,	 25,	} },
+    {	ITEM_GREEN_SHARD        	, {	 50,	 50,	 30,	 25,	 25,	 25,	 25,	} },
+    {	ITEM_BLUE_SHARD          	, {	  0,	  0,	 30,	 25,	 25,	 25,	 25,	} },
+    {	ITEM_YELLOW_SHARD       	, {	  0,	  0,	  0,	 25,	 25,	 25,	 25,	} },
 };
 
 u16 RandomHiddenShard(void)
