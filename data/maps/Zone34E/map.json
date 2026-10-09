@@ -2,7 +2,7 @@
   "id": "MAP_ZONE34E",
   "name": "Zone34E",
   "layout": "LAYOUT_ZONE34E",
-  "music": "MUS_HG_TEAM_ROCKET_HQ",
+  "music": "MUS_DP_GALACTIC_HQ_BASEMENT",
   "region_map_section": "MAPSEC_ZONE_34",
   "requires_flash": false,
   "weather": "WEATHER_DROUGHT",

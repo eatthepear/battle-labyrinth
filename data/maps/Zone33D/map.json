@@ -2,7 +2,7 @@
   "id": "MAP_ZONE33D",
   "name": "Zone33D",
   "layout": "LAYOUT_ZONE33D",
-  "music": "MUS_DP_GALACTIC_HQ_BASEMENT",
+  "music": "MUS_HG_LIGHTHOUSE",
   "region_map_section": "MAPSEC_ZONE_33",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
