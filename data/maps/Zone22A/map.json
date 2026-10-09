@@ -122,7 +122,7 @@
       "local_id": "LOCALID_MAYLENE",
       "graphics_id": "OBJ_EVENT_GFX_MAYLENE",
       "x": 37,
-      "y": 3,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -135,7 +135,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEDICHAM)",
       "x": 38,
-      "y": 3,
+      "y": 5,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
       "movement_range_x": 0,

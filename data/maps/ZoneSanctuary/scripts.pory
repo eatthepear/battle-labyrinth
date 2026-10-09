@@ -395,7 +395,7 @@ script EventScript_NextZone {
 		case 20:
 			setflag(FLAG_HIDE_ZONE20A_PORYGON)
 			setflag(FLAG_HIDE_ZONE20A_LACEY)
-			warp(MAP_ZONE20A, 255, 35, 13)
+			warp(MAP_ZONE20A, 255, 28, 10)
 		case 21:
 			warp(MAP_ZONE21A, 255, 16, 93)
 		case 22:

@@ -27,7 +27,7 @@ script Zone13B_EventScript_MagmaGrunt3 {
 		end
 	}
 	msgbox(format("Don't think I'll move just because you beat me!"))
-	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_13B_3, format("Magma!"), format("Magma!"))
+	trainerbattle_no_intro(TRAINER_PBL_MAGMA_GRUNT_13B_3, format("Magma!"))
 	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_0) == 18) {
