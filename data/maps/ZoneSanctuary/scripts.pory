@@ -419,12 +419,12 @@ script EventScript_NextZone {
 			warp(MAP_ZONE29A, 255, 11, 17)
 		case 30:
 			warp(MAP_ZONE30A, 255, 20, 28)
-		// case 31:
-			// warp(MAP_ZONE31A, 255, 11, 17)
+		case 31:
+			warp(MAP_ZONE31A, 255, 10, 55)
 		case 33:
 			warp(MAP_ZONE33A, 255, 0, 8)
-		// case 35:
-			// warp(MAP_ZONE35A, 255, 11, 17)
+		case 35:
+			warp(MAP_ZONE35B, 1)
 	}
 	waitstate
 	end
@@ -580,6 +580,10 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("Ultra Balls!"))
 		case 24:
 			msgbox(format("Ultra Balls!"))
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 25 - Gemini Heights{COLOR DARK_GRAY} is…"))
+			msgbox(format("{COLOR GREEN}HM02 - Rock Climb{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_HM_ROCK_CLIMB)
 		case 26:
 			msgbox(format("Ultra Balls!"))
 		case 27:
