@@ -596,7 +596,7 @@ extern const u8 EventScript_CannotUseWaterfall[];
 extern const u8 EventScript_UseDive[];
 extern const u8 EventScript_UseDiveUnderwater[];
 extern const u8 EventScript_UseRockClimb[];
-extern const u8 EventScript_ShakeTree[];
+extern const u8 EventScript_HoneyTree[];
 extern const u8 EventScript_FallDownHole[];
 extern const u8 EventScript_FieldPoison[];
 extern const u8 EventScript_EggHatch[];

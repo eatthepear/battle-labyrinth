@@ -1164,7 +1164,7 @@ bool8 TryDoDoubleWildBattle(void)
     return FALSE;
 }
 
-void HeadbuttWildEncounter(void)
+void HoneyWildEncounter(void)
 {
     u16 headerId = GetCurrentMapWildMonHeaderId();
 

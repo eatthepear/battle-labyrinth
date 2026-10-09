@@ -570,7 +570,7 @@ gSpecials::
 	def_special ObjectEventInteractionPickApricornTree
 	def_special ChooseItemFromBag
 	def_special SendChosenMonToPC
-	def_special HeadbuttWildEncounter
+	def_special HoneyWildEncounter
 	def_special GetCaughtSpeciesCount
 	def_special GetNumTrainersRemaining
 	def_special RandomItemChest
@@ -656,3 +656,4 @@ gSpecials::
     //End Pokevial Branch
 	def_special GetGameStatSavedGame
 	def_special GetGameStatFoundHiddenItem
+	def_special EncounterObtainedInCurrentArea

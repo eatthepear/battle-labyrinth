@@ -580,22 +580,7 @@ bool8 IsCaptureBlockedBySpeciesClause(enum Species species)
     return FALSE;
 }
 
-// Use as a callnative in .pory files, i.e.
-// setvar(VAR_TEMP_0, SPECIES_CHERUBI)
-// callnative(CheckSpeciesClause)
-// if (flag(FLAG_TEMP_1) == TRUE) {
-void CheckSpeciesClause(void)
+bool8 EncounterObtainedInCurrentArea(void)
 {
-	if (IsCaptureBlockedBySpeciesClause(VarGet(VAR_TEMP_0))) {
-		FlagSet(FLAG_TEMP_1);
-	}
-}
-
-// Use as a callnative in .pory files, i.e.
-// callnative(CheckSpeciesClause)
-// if (flag(FLAG_TEMP_1) == TRUE) {
-void GotEncounterFromCurrentArea(void)
-{
-    if (NuzlockeFlagGet(GetCurrentRegionMapSectionId()) != 0)
-        FlagSet(FLAG_TEMP_1);
+    return (NuzlockeFlagGet(GetCurrentRegionMapSectionId()) != 0);
 }

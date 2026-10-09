@@ -30,11 +30,6 @@ script EventScript_HealPreBoss {
 	}
 }
 
-// Legacy
-script EventScript_BrutalExitNotSatisfied {
-	releaseall
-}
-
 script EventScript_Max {
 	lock
 	faceplayer
@@ -398,31 +393,9 @@ text gText_Nuzlocke_ReadyReceive {
 	format("Are you ready to receive a Pokémon?")
 }
 
-script EventScript_NuzlockeVerifyBuy {
-	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
-		msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon.\pIs this ok?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			hidemoneybox
-			release
-			end
-		}
-	}
-	return
-}
-
-script EventScript_NuzlockeVerifyGift {
-	if (flag(FLAG_SETTINGS_NUZLOCKE) == true) {
-		msgbox(format("On Nuzlocke mode, you will randomly receive one of the possible Pokémon.\pIs this ok?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			release
-			end
-		}
-	}
-	return
-}
-
 script EventScript_ChoosePartyMonToSend {
 	while {
+		setspeaker(SP_NAME_NONE)
 		msgbox(format("Choose a party Pokémon to send to the PC."))
 		special(ChoosePartyMon)
 		faceplayer
@@ -469,7 +442,7 @@ script EventScript_PorygonExit {
     end
 }
 
-script EventScript_ShakeTree {
+script EventScript_HoneyTree {
 	lockall
 	if (checkitem(ITEM_HONEY) == FALSE) {
 		msgbox(format("There is a sweet scent in the air…"))
@@ -493,7 +466,7 @@ script EventScript_ShakeTree {
 	playse(SE_M_BIND)
 	waitstate
 	waitse
-	special(HeadbuttWildEncounter)
+	special(HoneyWildEncounter)
 	waitstate
 	if (flag(FLAG_SETTINGS_NUZLOCKE)) {
 		call(EventScript_MultipleHoneyEncountersNuzlocke)
@@ -504,8 +477,8 @@ script EventScript_ShakeTree {
 
 script EventScript_MultipleHoneyEncountersNuzlocke {
 	while {
-		callnative(GotEncounterFromCurrentArea)
-		if (flag(FLAG_TEMP_1)) {
+		specialvar(VAR_RESULT, EncounterObtainedInCurrentArea)
+		if (var(VAR_RESULT) == YES) {
 			return
 		}
 		msgbox(format("It looks like there's still some Honey on the tree.\pWait for another Pokémon?"), MSGBOX_YESNO)
@@ -522,18 +495,9 @@ script EventScript_MultipleHoneyEncountersNuzlocke {
 		playse(SE_M_BIND)
 		waitstate
 		waitse
-		special(HeadbuttWildEncounter)
+		special(HoneyWildEncounter)
 		waitstate
 	}
-}
-
-script EventScript_HandleFlashlight {
-	if ((checkitem(ITEM_HM_FLASH) == TRUE) && flag(FLAG_BADGE03_GET)) {
-		setflashlevel(2)
-	} else {
-		setflashlevel(6)
-	}
-	return
 }
 
 script EventScript_AccessPokemonBoxLink_PBL {
@@ -551,12 +515,6 @@ script EventScript_AccessPokemonBoxLink_PBL {
 		setflag(FLAG_ZONE_PC_USED)
 	}
 	return
-}
-
-script EventScript_Collector {
-	lock
-	release
-	end
 }
 
 script EventScript_Notebook {
@@ -1435,6 +1393,7 @@ script Debug_CheatStart_PBL_SelectZone {
 			copyvar(VAR_LEVEL_CAP, VAR_ZONE)
 	}
 }
+
 script Debug_CheatStart_PBL_SetFlags {
 	setflag(FLAG_ZONE1A_RECEIVED_FWG)
 	setflag(FLAG_BEAT_BOSS_1)
@@ -2304,10 +2263,6 @@ text gText_NotEnoughMons {
 	format("You need at least two Pokémon to initiate a Double Battle.")
 }
 
-text gText_PleasePick3Mons {
-	format("Please select three Pokémon to participate in the tag battle.")
-}
-
 script EventScript_TestingLegendBattle {
 	lock
 	faceplayer
@@ -2548,59 +2503,6 @@ script EventScript_FoundGrotto {
 	}
 	return
 }
-
-script EventScript_RareCandy {
-	lock
-    faceplayer
-    waitse
-	removeobject(VAR_LAST_TALKED)
-	finditem(ITEM_RARE_CANDY)
-	release
-	end
-}
-
-raw `
-gText_Lelouch_ExpTrainingFinished:
-	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: The training session has\n"
-	.string "finished.\p"
-	.string "Your Pokémon has grown stronger.$"
-
-gText_Lelouch_DidNotTrain:
-	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: If you do want to\n"
-	.string "train your Pokémon, I'll be here.$"
-
-gText_Lelouch_Exp:
-	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: With Experience Training,\n"
-	.string "you can train one Pokémon to any\l"
-	.string "level up to the level cap,\l"
-	.string "at the cost of one Red Shard.\p"
-	.string "Would you like to start an\n"
-	.string "Experience Training session?$"
-
-gText_Lelouch_ChooseTraining:
-	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Choose which training\n"
-	.string "regiment you would like.$"
-
-gText_Lelouch_CostsBlueShards:
-	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Move Reminder services\n"
-	.string "cost one Blue Shard.\p"
-	.string "Would you like me to teach a\n"
-	.string "forgotten move to your Pokémon?$"
-
-gText_Lelouch_CostsYellowShards:
-	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: Move Tutor services cost\n"
-	.string "Yellow Shards. Which move would you\l"
-	.string "like to tutor?$"
-
-gText_Lelouch_CostsGreenShards:
-	.string "{COLOR BLUE}Lelouch{COLOR DARK_GRAY}: I can craft special items\n"
-	.string "as well as upgrade your items\l"
-	.string "in exchange for Green Shards.\l"
-	.string "What would you like?$"
-
-gText_ExitSign:
-	.string "This is the exit!$"
-`
 
 script EventScript_Furret {
 	lock
