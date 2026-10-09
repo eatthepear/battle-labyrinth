@@ -84,7 +84,7 @@ script EventScript_SavesQuestBoy {
 	if (checkitem(ITEM_EXP_SHARE) == FALSE) {
 		msgbox(format("Saving your progress is important while playing games.\pI learned that the hard way!\pDon't be like me!\pI'll give you something if you can save your game 50 times!"))
 		if (var(VAR_TEMP_0) >= 50) {
-			msgbox(format("Wow!\pYou've saved your game a total of {STR_VAR_1} times!\pThat's amazing!\pHere, as a reward, take this nifty {COLOR GREEN}Exp. Share{COLOR DARK_GRAY}!\pIt lets you toggle the Exp. All setting on or off."))
+			msgbox(format("Wow!\pYou've saved your game {STR_VAR_1} times!\pThat's amazing!\pHere, as a reward, take this nifty {COLOR GREEN}Exp. Share{COLOR DARK_GRAY}!\pIt lets you toggle the Exp. All setting on or off."))
 			giveitem(ITEM_EXP_SHARE)
 			release
 			end
@@ -109,10 +109,18 @@ script EventScript_PokedexQuestScientist {
 script EventScript_FindHiddenQuestRuinManiac {
 	lock
 	faceplayer
-	if (var(VAR_RESULT) == FALSE) {
+	specialvar(VAR_TEMP_0, GetGameStatFoundHiddenItem)
+	buffernumberstring(0, VAR_TEMP_0)
+	if (checkitem(ITEM_METEORITE) == FALSE) {
 		msgbox(format("A Ruin Maniac's best friend is a {COLOR GREEN}Dowsing Machine{COLOR DARK_GRAY}!\pIf you can show me you've found 100 hidden items, I'll give you a sweet reward."))
+		if (var(VAR_TEMP_0) >= 100) {
+			msgbox(format("Wow!\pYou've found a total of {STR_VAR_1} hidden items!\pThat's amazing!\pHere, as a reward, take this nifty {COLOR GREEN}Exp. Share{COLOR DARK_GRAY}!\pIt lets you toggle the Exp. All setting on or off."))
+			// giveitem(ITEM_METEORITE)
+			release
+			end
+		}
 	}
-	msgbox(format("The {COLOR GREEN}Dowsing Machine{COLOR DARK_GRAY} is your best friend when it comes to finding hidden items!\pYou can also look for empty patches of grass or check small rocks."))
+	msgbox(format("You've found a total of {STR_VAR_1} hidden items so far!"))
 	release
 	end
 }

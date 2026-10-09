@@ -655,3 +655,4 @@ gSpecials::
     def_special PokevialRefill
     //End Pokevial Branch
 	def_special GetGameStatSavedGame
+	def_special GetGameStatFoundHiddenItem

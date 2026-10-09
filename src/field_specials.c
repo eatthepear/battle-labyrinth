@@ -4935,6 +4935,11 @@ u16 GetGameStatSavedGame(void)
     return GetGameStat(GAME_STAT_SAVED_GAME);
 }
 
+u16 GetGameStatFoundHiddenItem(void)
+{
+    return GetGameStat(GAME_STAT_FOUND_HIDDEN_ITEM);
+}
+
 static void UIAskConfirmation(void)
 {
     DisplayYesNoMenuDefaultYes();
