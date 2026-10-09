@@ -1,3 +1,19 @@
+script EventScript_GameIntro_SetStartingVariablesAndFlags {
+	setflag(FLAG_SYS_B_DASH)
+	setflag(FLAG_SYS_POKEMON_GET)
+	setflag(FLAG_SYS_PC_LANETTE)
+	setflag(FLAG_AUTORUN_TOGGLE)
+	setvar(VAR_FARM_STOCK, 10)
+	setflag(FLAG_SYS_POKEDEX_GET)
+	setflag(FLAG_SYS_EXP_SHARE)
+	special(SetUnlockedPokedexFlags)
+	setflag(FLAG_SYS_NATIONAL_DEX)
+	special(EnableNationalPokedex)
+	initclock(10, 0)
+	callnative(InitTimeBasedEvents)
+	setrespawn(HEAL_LOCATION_PBL)
+}
+
 text gText_YouDontHaveEnoughMoney {
 	format("You don't have enough money.")
 }

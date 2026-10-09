@@ -56,6 +56,7 @@
 
 extern const u8 EventScript_ResetAllMapFlags[];
 extern const u8 EventScript_ResetAllMapFlagsFrlg[];
+extern const u8 EventScript_GameIntro_SetStartingVariablesAndFlags[];
 
 static void ClearFrontierRecord(void);
 static void WarpToTruck(void);
@@ -251,6 +252,7 @@ void NewGameInitData(void)
     VarSet(VAR_WILD_MUSIC, wildMusic);
     VarSet(VAR_TRAINER_MUSIC, trainerMusic);
     VarSet(VAR_BOSS_MUSIC, bossMusic);
+    RunScriptImmediately(EventScript_GameIntro_SetStartingVariablesAndFlags);
 }
 
 static void ResetMiniGamesRecords(void)

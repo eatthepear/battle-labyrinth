@@ -725,7 +725,6 @@ script Sanctuary_EventScript_MoveCameraDown {
 
 script Sanctuary_EventScript_GameIntro {
     lockall
-	call(EventScript_GameIntro_SetStartingVariablesAndFlags)
 	call(Sanctuary_EventScript_MoveCameraUp)
 	applymovement(LOCALID_COLRESS, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
@@ -819,26 +818,9 @@ script Sanctuary_EventScript_GameIntro {
 	applymovement(LOCALID_COLRESS, Sanctuary_Movement_Colress_WalkUp)
 	waitmovement(LOCALID_COLRESS)
 	call(EventScript_AskSaveGame)
+	setvar(VAR_ZONE, 1)
 	releaseall
 	end
-}
-
-script EventScript_GameIntro_SetStartingVariablesAndFlags {
-	setflag(FLAG_SYS_B_DASH)
-	setflag(FLAG_SYS_POKEMON_GET)
-	setflag(FLAG_SYS_PC_LANETTE)
-	setflag(FLAG_AUTORUN_TOGGLE)
-	setvar(VAR_FARM_STOCK, 10)
-	setflag(FLAG_SYS_POKEDEX_GET)
-	setflag(FLAG_SYS_EXP_SHARE)
-	special(SetUnlockedPokedexFlags)
-	setflag(FLAG_SYS_NATIONAL_DEX)
-	special(EnableNationalPokedex)
-	initclock(1, 1)
-	callnative(InitTimeBasedEvents)
-	setvar(VAR_ZONE, 1)
-	setvar(VAR_LEVEL_CAP, 0)
-	setrespawn(HEAL_LOCATION_PBL)
 }
 
 script EventScript_GameIntro_Difficulty {
