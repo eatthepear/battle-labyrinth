@@ -3943,12 +3943,14 @@ Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_23
 
-=== TRAINER_PBL_LACEY_BOSS_23 ===
-Name: STEVEN
+=== TRAINER_PBL_SERENA_BOSS_23 ===
+Name: Serena
 Class: Rival
-Pic: Steven
-Gender: Male
-Music: Male
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: Yes
+Mugshot: Pink
 
 Slurpuff @ Focus Sash
 Ability: Unburden
