@@ -1728,6 +1728,19 @@ void ItemUseOutOfBattle_Notebook(u8 taskId)
     SetUpItemUseOnFieldCallback(taskId);
 }
 
+static void ItemUseOnFieldCB_TimeCrystal(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_TimeCrystal);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_TimeCrystal(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_TimeCrystal;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+
 // Start hexorb Branch
 void ItemUseOutOfBattle_Hexorb(u8 taskId)
 {

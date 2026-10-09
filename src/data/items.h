@@ -14975,20 +14975,20 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_Pokevial,
     },
 
-    [ITEM_SAPPHIRE] =
+    [ITEM_TIME_CRYSTAL] =
     {
-        .name = ITEM_NAME("Sapphire"),
+        .name = ITEM_NAME("Time Crystal"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A brilliant blue gem\n"
-            "that symbolizes\n"
-            "honesty."),
+            "Contains all sorts\n"
+            "of useful info for\n"
+            "challengers."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_Gem,
-        .iconPalette = gItemIconPalette_Sapphire,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_TimeCrystal,
+        .iconPic = gItemIcon_AdamantCrystal,
+        .iconPalette = gItemIconPalette_AdamantCrystal,
     },
 
 // Gen 9 Items

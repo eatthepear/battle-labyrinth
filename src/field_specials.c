@@ -86,6 +86,7 @@
 #include "constants/abilities.h"
 #include "naming_screen.h"
 #include "chooseboxmon.h"
+#include "fake_rtc.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -4963,6 +4964,30 @@ u16 GetGameStatSavedGame(void)
 u16 GetGameStatFoundHiddenItem(void)
 {
     return GetGameStat(GAME_STAT_FOUND_HIDDEN_ITEM);
+}
+
+void SetTimeToMorning(void)
+{
+    FakeRtc_ForwardTimeTo(MORNING_HOUR_BEGIN, 0, 0);
+    SetMainCallback2(CB2_LoadMap);
+}
+
+void SetTimeToDay(void)
+{
+    FakeRtc_ForwardTimeTo(DAY_HOUR_BEGIN, 0, 0);
+    SetMainCallback2(CB2_LoadMap);
+}
+
+void SetTimeToEvening(void)
+{
+    FakeRtc_ForwardTimeTo(EVENING_HOUR_BEGIN, 0, 0);
+    SetMainCallback2(CB2_LoadMap);
+}
+
+void SetTimeToNight(void)
+{
+    FakeRtc_ForwardTimeTo(NIGHT_HOUR_BEGIN, 0, 0);
+    SetMainCallback2(CB2_LoadMap);
 }
 
 static void UIAskConfirmation(void)
