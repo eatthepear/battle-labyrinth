@@ -108,10 +108,6 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
-    VarSet(VAR_SANCTUARY_MUSIC, 1);
-    VarSet(VAR_WILD_MUSIC, 5);
-    VarSet(VAR_TRAINER_MUSIC, 5);
-    VarSet(VAR_BOSS_MUSIC, 5);
 }
 
 static void ClearPokedexFlags(void)
@@ -173,11 +169,6 @@ void NewGameInitData(void)
 #endif
     if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_CORRUPT)
         RtcReset();
-
-    u16 sanctuaryMusic = VarGet(VAR_SANCTUARY_MUSIC);
-    u16 wildMusic = VarGet(VAR_WILD_MUSIC);
-    u16 trainerMusic = VarGet(VAR_TRAINER_MUSIC);
-    u16 bossMusic = VarGet(VAR_BOSS_MUSIC);
 #if IS_FRLG
     StringCopy(rivalName, gSaveBlock1Ptr->rivalName);
 #endif
@@ -248,10 +239,6 @@ void NewGameInitData(void)
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
     ResetDexNav();
     ClearFollowerNPCData();
-    VarSet(VAR_SANCTUARY_MUSIC, sanctuaryMusic);
-    VarSet(VAR_WILD_MUSIC, wildMusic);
-    VarSet(VAR_TRAINER_MUSIC, trainerMusic);
-    VarSet(VAR_BOSS_MUSIC, bossMusic);
     RunScriptImmediately(EventScript_GameIntro_SetStartingVariablesAndFlags);
 }
 
