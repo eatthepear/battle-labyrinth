@@ -14,7 +14,68 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [],
-  "coord_events": [],
-  "bg_events": []
+  "warp_events": [
+    {
+      "x": 1,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE34A",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 13,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE34C",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_GENERIC",
+      "var_value": "0",
+      "script": "Zone34B_EventScript_Tile_TopRight"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_GENERIC",
+      "var_value": "0",
+      "script": "Zone34B_EventScript_Tile_BottomRight"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_GENERIC",
+      "var_value": "0",
+      "script": "Zone34B_EventScript_Tile_BottomLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_GENERIC",
+      "var_value": "0",
+      "script": "Zone34B_EventScript_Tile_TopLeft"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone34B_EventScript_ShowSequence"
+    }
+  ]
 }

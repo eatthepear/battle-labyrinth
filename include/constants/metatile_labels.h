@@ -583,6 +583,17 @@
 #define METATILE_PokemonMansion_Wall_EndPost_Bottom                      0x8AD
 #define METATILE_PokemonMansion_Wall_EndPost_Mid                         0x8A5
 
+// gTileset_RocketCastle
+#define METATILE_RocketCastle_Blue    0x849
+#define METATILE_RocketCastle_Green   0x848
+#define METATILE_RocketCastle_Grey    0x840
+#define METATILE_RocketCastle_Indigo  0x84A
+#define METATILE_RocketCastle_Orange  0x842
+#define METATILE_RocketCastle_Red     0x841
+#define METATILE_RocketCastle_Violet  0x84B
+#define METATILE_RocketCastle_Warp    0x820
+#define METATILE_RocketCastle_Yellow  0x843
+
 // gTileset_RocketCo
 #define METATILE_RocketCo_Floor                          0x800
 #define METATILE_RocketCo_Floor_ShadeFull                0x801

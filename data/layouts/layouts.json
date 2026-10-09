@@ -10894,7 +10894,7 @@
     {
       "id": "LAYOUT_ZONE34B",
       "name": "Zone34B_Layout",
-      "width": 19,
+      "width": 15,
       "height": 12,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_RocketCastle",
@@ -10904,7 +10904,7 @@
     {
       "id": "LAYOUT_ZONE34C",
       "name": "Zone34C_Layout",
-      "width": 19,
+      "width": 15,
       "height": 12,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_RocketCastle",
