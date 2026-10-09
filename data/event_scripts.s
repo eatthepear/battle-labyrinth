@@ -2031,3 +2031,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Zone32I/scripts.inc"
 
 	.include "data/maps/Zone32H/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_QuietField/scripts.inc"

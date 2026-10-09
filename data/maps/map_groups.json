@@ -758,7 +758,8 @@
     "HiddenGrotto",
     "HiddenGrottoCave",
     "BorealThicket",
-    "HeatedCavity"
+    "HeatedCavity",
+    "HiddenGrotto_QuietField"
   ],
   "gMapGroup_Unused": [
     "ZoneB1",
