@@ -3829,33 +3829,3 @@ script ZoneSanctuary_EventScript_SchoolKidF {
 	}
 	release
 }
-
-script EventScript_RangerF {
-	lock
-	faceplayer
-	message(format("Hey there, challenger! Would you like to enable {COLOR GREEN}Encounter Overcrowding{COLOR DARK_GRAY}?"))
-	waitmessage
-	dynmultichoice(20, 6, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Info", "Yes", "No", "Exit")
-	switch (var(VAR_RESULT)) {
-		case 0:
-			msgbox(format("By default, for a given save file, the possible wild encounters are randomly chosen from a limited pool.\pFor example, on a map with grass encounters, there are typically 6 species you can actually encounter, chosen randomly when you start your save file out of 12 total species.\pEncounter Overcrowding makes it so all 12 species are encounterable in the wild.\pThis typically causes routes to feel overcrowded, hence it is disabled by default.\pIf you'd like to use a specific Pokémon species, it is recommended to enable {COLOR GREEN}Encounter Overcrowding{COLOR DARK_GRAY}."))
-		case 1:
-			msgbox(format("Are you sure you want to enable {COLOR GREEN}Encounter Overcrowding{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				setflag(FLAG_SYS_ALL_WILD_MONS)
-				msgbox(format("{COLOR GREEN}Encounter Overcrowding{COLOR DARK_GRAY} enabled."))
-				release
-				end
-			}
-		case 2:
-			msgbox(format("Are you sure you want to disable {COLOR GREEN}Encounter Overcrowding{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				clearflag(FLAG_SYS_ALL_WILD_MONS)
-				msgbox(format("{COLOR GREEN}Encounter Overcrowding{COLOR DARK_GRAY} disabled."))
-				release
-				end
-			}
-	}
-	msgbox(format("Come on back if you change your mind!"))
-	release
-}

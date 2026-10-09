@@ -57,6 +57,7 @@
 #include "tilesets.h"
 #include "tv.h"
 #include "wallclock.h"
+#include "wild_encounter.h"
 #include "window.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_pyramid.h"
@@ -5058,34 +5059,20 @@ void SetHiddenNature(void)
     CalculateMonStats(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004]);
 }
 
-static const u16 sGrottoEncounters[][3] =
-{
-    { SPECIES_LECHONK, SPECIES_WHISMUR, SPECIES_KRICKETOT },
-    { SPECIES_TYMPOLE, SPECIES_PAWMI, SPECIES_WOOBAT },
-};
-
-// Returns the SPECIES_ VAR_GROTTO_SPECIES should be set to, based on VAR_GROTTO_NUMBER and the saveblock seed.
+// Returns the species that is newly generated
 u16 GetHiddenGrottoSpecies(void)
 {
-    u32 grottoId = VarGet(VAR_GROTTO_NUMBER);
-    rng_value_t rng = LocalRandomSeed(gSaveBlock1Ptr->pblSeed);
-    u32 rand1 = LocalRandom32(&rng) % 10;
-    u32 rand2;
+    u32 headerId = GetCurrentMapWildMonHeaderId();
+    enum TimeOfDay timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_HIDDEN);
+    enum Species species = gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo->wildPokemon[ChooseWildMonIndex_Water()].species;
 
-    if (FlagGet(FLAG_SYS_ALL_WILD_MONS))
-        rand2 = Random() % 3;
-    else
-        rand2 = LocalRandom32(&rng) % 3;
-
-    // The first Grotto always contains something, even on Brutal
-    if (grottoId != 0) {
-        if (GetCurrentDifficultyLevel() >= DIFFICULTY_BRUTAL) {
-            if (rand1) {
-                return SPECIES_NONE;
-            }
-        }
+    if (GetCurrentDifficultyLevel() == DIFFICULTY_BRUTAL)
+    {
+        rng_value_t rng = LocalRandomSeed(gSaveBlock1Ptr->pblSeed);
+        if ((LocalRandom32(&rng) % 5) != 1)
+            return SPECIES_NONE;
     }
-    return sGrottoEncounters[grottoId][rand2];
+    return species;
 }
 
 void SetAbility(void)
