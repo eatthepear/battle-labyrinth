@@ -10890,6 +10890,106 @@
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/Zone32H/border.bin",
       "blockdata_filepath": "data/layouts/Zone32H/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE34B",
+      "name": "Zone34B_Layout",
+      "width": 19,
+      "height": 12,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_RocketCastle",
+      "border_filepath": "data/layouts/Zone34B/border.bin",
+      "blockdata_filepath": "data/layouts/Zone34B/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE34C",
+      "name": "Zone34C_Layout",
+      "width": 19,
+      "height": 12,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_RocketCastle",
+      "border_filepath": "data/layouts/Zone34C/border.bin",
+      "blockdata_filepath": "data/layouts/Zone34C/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE34D",
+      "name": "Zone34D_Layout",
+      "width": 19,
+      "height": 12,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_RocketCastle",
+      "border_filepath": "data/layouts/Zone34D/border.bin",
+      "blockdata_filepath": "data/layouts/Zone34D/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE34E",
+      "name": "Zone34E_Layout",
+      "width": 19,
+      "height": 12,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_RocketCastle",
+      "border_filepath": "data/layouts/Zone34E/border.bin",
+      "blockdata_filepath": "data/layouts/Zone34E/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE34F",
+      "name": "Zone34F_Layout",
+      "width": 19,
+      "height": 12,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_RocketCastle",
+      "border_filepath": "data/layouts/Zone34F/border.bin",
+      "blockdata_filepath": "data/layouts/Zone34F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE34G",
+      "name": "Zone34G_Layout",
+      "width": 19,
+      "height": 12,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_RocketCastle",
+      "border_filepath": "data/layouts/Zone34G/border.bin",
+      "blockdata_filepath": "data/layouts/Zone34G/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE34H",
+      "name": "Zone34H_Layout",
+      "width": 19,
+      "height": 12,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_RocketCastle",
+      "border_filepath": "data/layouts/Zone34H/border.bin",
+      "blockdata_filepath": "data/layouts/Zone34H/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE34I",
+      "name": "Zone34I_Layout",
+      "width": 19,
+      "height": 12,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_RocketCastle",
+      "border_filepath": "data/layouts/Zone34I/border.bin",
+      "blockdata_filepath": "data/layouts/Zone34I/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE34J",
+      "name": "Zone34J_Layout",
+      "width": 19,
+      "height": 12,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_RocketCastle",
+      "border_filepath": "data/layouts/Zone34J/border.bin",
+      "blockdata_filepath": "data/layouts/Zone34J/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZONE34K",
+      "name": "Zone34K_Layout",
+      "width": 19,
+      "height": 12,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_RocketCastle",
+      "border_filepath": "data/layouts/Zone34K/border.bin",
+      "blockdata_filepath": "data/layouts/Zone34K/map.bin"
     }
   ]
 }
