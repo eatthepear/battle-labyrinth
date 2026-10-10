@@ -4978,12 +4978,6 @@ void SetTimeToDay(void)
     SetMainCallback2(CB2_LoadMap);
 }
 
-void SetTimeToEvening(void)
-{
-    FakeRtc_ForwardTimeTo(EVENING_HOUR_BEGIN, 0, 0);
-    SetMainCallback2(CB2_LoadMap);
-}
-
 void SetTimeToNight(void)
 {
     FakeRtc_ForwardTimeTo(NIGHT_HOUR_BEGIN, 0, 0);

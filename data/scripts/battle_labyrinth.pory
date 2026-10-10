@@ -1399,9 +1399,8 @@ script EventScript_TimeCrystal {
 	waitmessage
 	dynmultipush("Morning", 0)
 	dynmultipush("Day", 1)
-	dynmultipush("Evening", 2)
-	dynmultipush("Night", 3)
-	dynmultipush("Exit", 4)
+	dynmultipush("Night", 2)
+	dynmultipush("Exit", 3)
 	dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -1409,8 +1408,6 @@ script EventScript_TimeCrystal {
 		case 1:
 			special(SetTimeToDay)
 		case 2:
-			special(SetTimeToEvening)
-		case 3:
 			special(SetTimeToNight)
 	}
 	releaseall
