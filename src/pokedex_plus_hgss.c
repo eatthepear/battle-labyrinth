@@ -217,6 +217,7 @@ static void LoadTilesetTilemapHGSS(u8 page);
 static void Task_HandleStatsScreenInput(u8 taskId);
 static void Task_LoadStatsScreen(u8 taskId);
 static void Task_SwitchScreensFromStatsScreen(u8 taskId);
+static void Task_SwitchScreensFromInfoScreen_HGSS(u8 taskId);
 static void Task_ExitStatsScreen(u8 taskId);
 static bool8 CalculateMoves(void);
 static void PrintStatsScreen_NameGender(u8 taskId, u32 num, u32 value);
@@ -1411,7 +1412,7 @@ bool32 TryHandleInfoScreenInput_HGSS(u8 taskId)
         sPokedexView->selectedScreen = AREA_SCREEN;
         BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 0x10, RGB_BLACK);
         sPokedexView->screenSwitchState = 1;
-        gTasks[taskId].func = Task_SwitchScreensFromInfoScreen;
+        gTasks[taskId].func = Task_SwitchScreensFromInfoScreen_HGSS;
         PlaySE(SE_PIN);
     }
 
@@ -2918,6 +2919,27 @@ static void Task_SwitchScreensFromStatsScreen(u8 taskId)
             break;
         default:
             gTasks[taskId].func = Task_LoadInfoScreen;
+            break;
+        }
+    }
+}
+
+static void Task_SwitchScreensFromInfoScreen_HGSS(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        FreeAndDestroyMonPicSprite(gTasks[taskId].tMonSpriteId);
+        switch (sPokedexView->screenSwitchState)
+        {
+        case 1:
+        default:
+            gTasks[taskId].func = Task_LoadStatsScreen;
+            break;
+        case 2:
+            gTasks[taskId].func = Task_LoadCryScreen;
+            break;
+        case 3:
+            gTasks[taskId].func = Task_LoadSizeScreen;
             break;
         }
     }

@@ -3434,7 +3434,7 @@ void Task_SwitchScreensFromInfoScreen(u8 taskId)
         {
         case 1:
         default:
-            gTasks[taskId].func = Task_LoadAreaScreen;
+            gTasks[taskId].func = Task_LoadInfoScreen;
             break;
         case 2:
             gTasks[taskId].func = Task_LoadCryScreen;
