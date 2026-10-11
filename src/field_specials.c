@@ -4966,12 +4966,6 @@ u16 GetGameStatFoundHiddenItem(void)
     return GetGameStat(GAME_STAT_FOUND_HIDDEN_ITEM);
 }
 
-void SetTimeToMorning(void)
-{
-    FakeRtc_ForwardTimeTo(MORNING_HOUR_BEGIN, 0, 0);
-    SetMainCallback2(CB2_LoadMap);
-}
-
 void SetTimeToDay(void)
 {
     FakeRtc_ForwardTimeTo(DAY_HOUR_BEGIN, 0, 0);

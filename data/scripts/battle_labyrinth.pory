@@ -1397,17 +1397,14 @@ script EventScript_Difficulty_Info {
 script EventScript_TimeCrystal {
 	message(format("What time of day would you like to change to?"))
 	waitmessage
-	dynmultipush("Morning", 0)
-	dynmultipush("Day", 1)
-	dynmultipush("Night", 2)
-	dynmultipush("Exit", 3)
+	dynmultipush("Day", 0)
+	dynmultipush("Night", 1)
+	dynmultipush("Exit", 2)
 	dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 	switch (var(VAR_RESULT)) {
 		case 0:
-			special(SetTimeToMorning)
-		case 1:
 			special(SetTimeToDay)
-		case 2:
+		case 1:
 			special(SetTimeToNight)
 	}
 	releaseall

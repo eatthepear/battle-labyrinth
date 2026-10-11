@@ -657,6 +657,5 @@ gSpecials::
 	def_special GetGameStatSavedGame
 	def_special GetGameStatFoundHiddenItem
 	def_special EncounterObtainedInCurrentArea
-	def_special SetTimeToMorning
 	def_special SetTimeToDay
 	def_special SetTimeToNight
