@@ -2915,9 +2915,12 @@ script EventScript_Shop_Lelouch_Services {
 			dynmultipush("Move Tutor", 1)
 		}
 		if (var(VAR_ZONE) > 20) {
-			dynmultipush("IV Training", 2)
+			dynmultipush("Egg Move Tutor", 2)
 		}
-		dynmultipush("Exit", 3)
+		if (var(VAR_ZONE) > 25) {
+			dynmultipush("IV Training", 3)
+		}
+		dynmultipush("Exit", 4)
 		dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 0:
@@ -2926,8 +2929,10 @@ script EventScript_Shop_Lelouch_Services {
 				setvar(VAR_TEMP_0, 1)
 				call(EventScript_Shop_Lelouch_MoveTutor)
 			case 2:
-				call(EventScript_Shop_Lelouch_IVTraining)
+				call(EventScript_Shop_Lelouch_EggMoveTutor)
 			case 3:
+				call(EventScript_Shop_Lelouch_IVTraining)
+			case 4:
 			case MULTI_B_PRESSED:
 				return
 		}
@@ -3037,12 +3042,13 @@ script EventScript_Shop_Lelouch_IVTraining {
 }
 
 script EventScript_Shop_Lelouch_MoveReminder {
+	setmoverelearnerstate(MOVE_RELEARNER_LEVEL_UP_MOVES)
 	setspeaker("Lelouch")
-	msgbox(format("Move Reminder services cost one Heart Scale."))
+	msgbox(format("Move Reminder services cost one {COLOR GREEN}Heart Scale{COLOR DARK_GRAY}."))
 	checkitem(ITEM_HEART_SCALE, 1)
 	if (var(VAR_RESULT) == FALSE) {
 		setspeaker("Lelouch")
-		msgbox(format("You don't have any Heart Scales."))
+		msgbox(format("You don't have any {COLOR GREEN}Heart Scales{COLOR DARK_GRAY}."))
 		return
 	}
 	getitemquantity(ITEM_HEART_SCALE)
@@ -3057,7 +3063,8 @@ script EventScript_Shop_Lelouch_MoveReminder {
 	while {
 		setspeaker("Lelouch")
 		msgbox("Which Pokémon should\nrelearn a move?", MSGBOX_DEFAULT)
-		special(ChooseMonForMoveRelearner)
+		chooseboxmon(SELECT_PC_MON_MOVE_RELEARNER)
+		waitstate
 		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 			return
 		}
@@ -3067,7 +3074,8 @@ script EventScript_Shop_Lelouch_MoveReminder {
 			msgbox("That is an Egg.", MSGBOX_DEFAULT)
 			continue
 		}
-		if (var(VAR_0x8005) == 0) {
+		special(Special_HasMoveToRelearn)
+		if (var(VAR_RESULT) == FALSE) {
 			setspeaker("Lelouch")
 			msgbox("That Pokémon cannot\nrelearn any moves.", MSGBOX_DEFAULT)
 			continue
@@ -3075,9 +3083,64 @@ script EventScript_Shop_Lelouch_MoveReminder {
 		setspeaker("Lelouch")
 		msgbox("Which move should it\nrelearn?", MSGBOX_DEFAULT)
 		special(TeachMoveRelearnerMove)
-		if (var(VAR_0x8004) == 0) {
+		if (var(VAR_RESULT) == FALSE) {
 			continue
 		}
+		buffernumberstring(1, 1)
+		bufferitemnameplural(2, ITEM_HEART_SCALE, 1)
+		msgbox(gText_Lelouch_PayItem)
+		removeitem(ITEM_HEART_SCALE)
+		break
+	}
+	return
+}
+
+script EventScript_Shop_Lelouch_EggMoveTutor {
+	setmoverelearnerstate(MOVE_RELEARNER_EGG_MOVES)
+	setspeaker("Lelouch")
+	msgbox(format("I can teach {COLOR GREEN}Egg Moves{COLOR DARK_GRAY}, which are normally only obtainable through breeding.\pEgg Move services cost one {COLOR GREEN}Heart Scale{COLOR DARK_GRAY}."))
+	checkitem(ITEM_HEART_SCALE, 1)
+	if (var(VAR_RESULT) == FALSE) {
+		setspeaker("Lelouch")
+		msgbox(format("You don't have any {COLOR GREEN}Heart Scales{COLOR DARK_GRAY}."))
+		return
+	}
+	getitemquantity(ITEM_HEART_SCALE)
+	buffernumberstring(0, VAR_RESULT)
+	bufferitemnameplural(1, ITEM_HEART_SCALE, VAR_RESULT)
+	setspeaker("Lelouch")
+	msgbox("You have {COLOR GREEN}{STR_VAR_1} {STR_VAR_2}{COLOR DARK_GRAY}.")
+	msgbox(format("Would you like me to teach an Egg Move to your Pokémon?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		return
+	}
+	while {
+		setspeaker("Lelouch")
+		msgbox("Which Pokémon should\nlearn an Egg Move?", MSGBOX_DEFAULT)
+		chooseboxmon(SELECT_PC_MON_MOVE_RELEARNER)
+		waitstate
+		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+			return
+		}
+		special(IsSelectedMonEgg)
+		if (var(VAR_RESULT) == TRUE) {
+			setspeaker("Lelouch")
+			msgbox("That is an Egg.", MSGBOX_DEFAULT)
+			continue
+		}
+		special(Special_HasMoveToRelearn)
+		if (var(VAR_RESULT) == FALSE) {
+			setspeaker("Lelouch")
+			msgbox("That Pokémon cannot\nlearn any Egg Moves.", MSGBOX_DEFAULT)
+			continue
+		}
+		setspeaker("Lelouch")
+		msgbox(format("Which Egg Move should it\nlearn?"), MSGBOX_DEFAULT)
+		special(TeachMoveRelearnerMove)
+		if (var(VAR_RESULT) == FALSE) {
+			continue
+		}
+		buffernumberstring(1, 1)
 		bufferitemnameplural(2, ITEM_HEART_SCALE, 1)
 		msgbox(gText_Lelouch_PayItem)
 		removeitem(ITEM_HEART_SCALE)
