@@ -409,25 +409,15 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
 
-Pikachu @ Oran Berry
-Naive Nature
-Ability: Static
+Cleffa @ Oran Berry
+Calm Nature
+Ability: Magic Guard
 Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fake Out
-- Thunder Shock
-- Nuzzle
-- Rock Smash
-
-Munchlax @ Oran Berry
-Impish Nature
-Ability: Thick Fat
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Tackle
-- Recycle
-- Defense Curl
-- Rock Smash
+- Disarming Voice
+- Sing
+- Pound
+- Sweet Kiss
 
 Bulbasaur @ Oran Berry
 Jolly Nature
@@ -449,6 +439,16 @@ Double Battle: No
 Mugshot: Pink
 Difficulty: Brutal
 
+Cleffa @ Oran Berry
+Calm Nature
+Ability: Magic Guard
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Disarming Voice
+- Sing
+- Pound
+- Sweet Kiss
+
 Pikachu @ Oran Berry
 Naive Nature
 Ability: Static
@@ -457,16 +457,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
 - Thunder Shock
 - Nuzzle
-- Rock Smash
-
-Munchlax @ Oran Berry
-Impish Nature
-Ability: Thick Fat
-Level: 9
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Tackle
-- Recycle
-- Defense Curl
 - Rock Smash
 
 Bulbasaur @ Oran Berry
@@ -578,16 +568,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tail Whip
 - Scary Face
 
-Shieldon @ Chesto Berry
-Careful Nature
-Ability: Sturdy
-Level: 10
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Smack Down
-- Tackle
-- Taunt
-- Scary Face
-
 Amaura @ Oran Berry
 Relaxed Nature
 Ability: Refrigerate
@@ -618,7 +598,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tail Whip
 - Scary Face
 
-Shieldon @ Chesto Berry
+Shieldon @ Hard Stone
 Careful Nature
 Ability: Sturdy
 Level: 10
@@ -630,7 +610,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Amaura @ Oran Berry
 Relaxed Nature
-Ability: Refrigerate
+Ability: Snow Warning
 Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Tomb
