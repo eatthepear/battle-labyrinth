@@ -1066,7 +1066,6 @@ script EventScript_Notebook_Items {
 		dynmultipush("HMs", ITEM_HM_SURF)
 		dynmultipush("Honey", ITEM_HONEY)
 		dynmultipush("Ability Snack", ITEM_ABILITY_SNACK)
-		dynmultipush("Sacred Ash", ITEM_SACRED_ASH)
 		dynmultipush("Mints", ITEM_SERIOUS_MINT)
 		dynmultipush("Item Prices", ITEM_AMULET_COIN)
 		dynmultipush("Back", 1)
@@ -1084,8 +1083,6 @@ script EventScript_Notebook_Items {
 				helpwindow(HELP_SIGN_HONEY_SWEET_SCENT)
 			case ITEM_ABILITY_SNACK:
 				msgbox(format("The {COLOR GREEN}Ability Snack{COLOR DARK_GRAY} costs ¥80 and functions the same as an Ability Capsule."))
-			case ITEM_SACRED_ASH:
-				msgbox(format("The {COLOR GREEN}Sacred Ash{COLOR DARK_GRAY} now fully revives and heals your entire party."))
 			case ITEM_SERIOUS_MINT:
 				msgbox(format("Mints change natures permanently."))
 			case ITEM_AMULET_COIN:

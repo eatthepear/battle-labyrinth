@@ -41,7 +41,6 @@
 #include "pokemon.h"
 #include "region_map.h"
 #include "script.h"
-#include "script_pokemon_util.h"
 #include "sound.h"
 #include "strings.h"
 #include "string_util.h"
@@ -81,8 +80,6 @@ static void BootUpSoundTMHM(u8);
 static void Task_ShowTMHMContainedMessage(u8);
 static void UseTMHMYesNo(u8);
 static void UseTMHM(u8);
-static void Task_SacredAshYesNo(u8);
-static void Task_UseSacredAsh(u8);
 static void Task_StartUseRepel(u8);
 static void Task_StartUseLure(u8 taskId);
 static void Task_UseRepel(u8);
@@ -143,12 +140,6 @@ static const u8 sClockwiseDirections[] = {DIR_NORTH, DIR_EAST, DIR_SOUTH, DIR_WE
 static const struct YesNoFuncTable sUseTMHMYesNoFuncTable =
 {
     .yesFunc = UseTMHM,
-    .noFunc = CloseItemMessage,
-};
-
-static const struct YesNoFuncTable sUseSacredAshYesNoFuncTable =
-{
-    .yesFunc = Task_UseSacredAsh,
     .noFunc = CloseItemMessage,
 };
 
@@ -917,20 +908,8 @@ void ItemUseOutOfBattle_ReduceEV(u8 taskId)
 
 void ItemUseOutOfBattle_SacredAsh(u8 taskId)
 {
-    DisplayItemMessage(taskId, FONT_NORMAL, gText_ConfirmSacredAsh, Task_SacredAshYesNo);
-}
-
-static void Task_SacredAshYesNo(u8 taskId)
-{
-    BagMenu_YesNo(taskId, ITEMWIN_YESNO_HIGH, &sUseSacredAshYesNoFuncTable);
-}
-
-static void Task_UseSacredAsh(u8 taskId)
-{
-    PlaySE(SE_M_MORNING_SUN);
-    RemoveBagItem(gSpecialVar_ItemId, 1);
-    HealPlayerParty();
-    DisplayItemMessage(taskId, FONT_NORMAL, gText_UsedSacredAsh, CloseItemMessage);
+    gItemUseCB = ItemUseCB_SacredAsh;
+    SetUpItemUseCallback(taskId);
 }
 
 void ItemUseOutOfBattle_PPRecovery(u8 taskId)

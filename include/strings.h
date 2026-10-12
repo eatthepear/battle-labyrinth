@@ -2115,8 +2115,6 @@ extern const u8 gText_Girl[];
 
 extern const u8 gText_EndlessRepelOn[];
 extern const u8 gText_EndlessRepelOff[];
-extern const u8 gText_ConfirmSacredAsh[];
-extern const u8 gText_UsedSacredAsh[];
 extern const u8 gText_YourPkmnBecameHealthy[];
 
 extern const u8 gText_SavingZone[];
