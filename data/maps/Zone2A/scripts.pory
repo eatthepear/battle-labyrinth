@@ -179,8 +179,7 @@ script Zone2A_EventScript_Shaun {
 	setspeaker("Shaun")
 	msgbox(format("Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though! I enjoyed our battle so much, I want to give you these!"))
 	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_PECHA_BERRY, 3)
-	giveitem(ITEM_CHERI_BERRY, 3)
+	giveitem(ITEM_ORAN_BERRY, 5)
 	setspeaker("Shaun")
 	msgbox(Zone2A_Text_Shaun_Post)
 	release

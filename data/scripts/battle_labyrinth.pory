@@ -1579,7 +1579,7 @@ script Debug_CheatStart_PBL_SetFlags {
 script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_QUICK_CLAW)
 	additem(ITEM_TM_FALSE_SWIPE)
-	additem(ITEM_ORAN_BERRY, 5)
+	additem(ITEM_INFINITE_CANDY)
 
 	if (var(VAR_ZONE) == 2) {
 		return
@@ -1593,7 +1593,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_PECHA_BERRY, 3)
 	additem(ITEM_CHERI_BERRY, 3)
 	additem(ITEM_HM_ROCK_SMASH)
-	additem(ITEM_REVIVE, 3)
+	additem(ITEM_INFINITE_REPEL)
 
 	if (var(VAR_ZONE) == 3) {
 		return
@@ -1603,7 +1603,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_TM_ROCK_TOMB)
 	additem(ITEM_HARD_STONE)
 	additem(ITEM_METRONOME)
-	additem(ITEM_NEST_BALL, 3)
+	additem(ITEM_DOWSING_MACHINE)
 	additem(ITEM_LAVA_COOKIE)
 
 	if (var(VAR_ZONE) == 4) {
@@ -1613,9 +1613,9 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_TWISTED_SPOON)
 	additem(ITEM_TM_SNARL)
 	additem(ITEM_POISON_BARB)
-	additem(ITEM_SACRED_ASH)
-	additem(ITEM_TM_VENOSHOCK)
 	additem(ITEM_HM_CUT)
+	additem(ITEM_TM_VENOSHOCK)
+	additem(ITEM_HEXORB)
 
 	if (var(VAR_ZONE) == 5) {
 		return

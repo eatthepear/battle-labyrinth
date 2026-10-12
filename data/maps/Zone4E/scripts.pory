@@ -27,7 +27,7 @@ script Zone4E_EventScript_KimonoGirl_Exit {
 	setspeaker("Kimono Girl")
 	msgbox(format("Oh, look! The exit!\pThe poor Kimono Girl has been led to the exit by a kind trainer!\pPlease take this as thanks."))
 	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_SACRED_ASH)
+	giveitem(ITEM_HM_CUT)
 	setspeaker("Kimono Girl")
 	msgbox(format("Well, I shall be off. I foresee a {COLOR GREEN}Double Battle{COLOR DARK_GRAY} in your future.\pBe cautious, young trainer."), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_PLAYER, Zone4E_Movement_Player_UnblockKimonoGirl)
@@ -36,7 +36,6 @@ script Zone4E_EventScript_KimonoGirl_Exit {
 	destroyfollowernpc
 	setvar(VAR_ZONE_4_STATE, 2)
 	fadedefaultbgm
-	helpwindow(HELP_SACRED_ASH)
 	releaseall
 }
 
