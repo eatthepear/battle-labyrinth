@@ -301,6 +301,7 @@ script EventScript_NextZone {
 			}
 	}
 	call(EventScript_AskSaveGame)
+	special(HealPlayerParty)
 	copyvar(VAR_LEVEL_CAP, VAR_ZONE)
 	special(BufferCurrentLevelCap)
 	setspeaker(SP_NAME_NONE)
