@@ -1129,8 +1129,8 @@ const u8 gText_OakImportantToGetToKnowPokemonThroughly[] = _("OAK: It's importan
 const u8 gText_OakThisIsListOfPokemon[] = _("This is a list of your POKéMON,\n{PLAYER}.\pOpen this to check the skills\nand moves of your POKéMON.\pYou also choose POKéMON here if\nyou want to use an item on one.{PAUSE_UNTIL_PRESS}");
 
 // Custom
-const u8 gText_InfiniteRepelOn[] = _("The {COLOR GREEN}Infinite Repellent{COLOR DARK_GRAY} is now {COLOR GREEN}on{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
-const u8 gText_InfiniteRepelOff[] = _("The {COLOR GREEN}Infinite Repellent{COLOR DARK_GRAY} is now {COLOR GREEN}off{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
+const u8 gText_EndlessRepelOn[] = _("The {COLOR GREEN}Endless Repellent{COLOR DARK_GRAY} is now {COLOR GREEN}on{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
+const u8 gText_EndlessRepelOff[] = _("The {COLOR GREEN}Endless Repellent{COLOR DARK_GRAY} is now {COLOR GREEN}off{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS}");
 const u8 gText_ConfirmSacredAsh[] = _("Use the Sacred Ash to fully\nrevive and heal your party?");
 const u8 gText_UsedSacredAsh[] = _("You used the Sacred Ash!\nYour party was completely healed!{PAUSE_UNTIL_PRESS}");
 const u8 gText_YourPkmnBecameHealthy[] = _("Your Pokémon became healthy.{PAUSE_UNTIL_PRESS}");

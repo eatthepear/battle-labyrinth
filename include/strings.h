@@ -2113,8 +2113,8 @@ extern const u8 gText_OakThisIsListOfPokemon[];
 extern const u8 gText_Boy[];
 extern const u8 gText_Girl[];
 
-extern const u8 gText_InfiniteRepelOn[];
-extern const u8 gText_InfiniteRepelOff[];
+extern const u8 gText_EndlessRepelOn[];
+extern const u8 gText_EndlessRepelOff[];
 extern const u8 gText_ConfirmSacredAsh[];
 extern const u8 gText_UsedSacredAsh[];
 extern const u8 gText_YourPkmnBecameHealthy[];

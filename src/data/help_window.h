@@ -276,14 +276,14 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "{COLOR GREEN}every 5th Zone{COLOR DARK_GRAY}."),
     },
 
-    [HELP_INFINITE_REPEL] =
+    [HELP_ENDLESS_REPEL] =
     {
-        .header = COMPOUND_STRING("Infinite Repel"),
-        .desc = COMPOUND_STRING("The {COLOR GREEN}Infinite Repellent{COLOR DARK_GRAY} allows you to avoid\n"
+        .header = COMPOUND_STRING("Endless Repel"),
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Endless Repellent{COLOR DARK_GRAY} allows you to avoid\n"
                                 "encountering any wild Pokémon.\n"
                                 "It works regardless of your Pokémon's level.\n\n"
                                 "It is recommended to register the\n"
-                                "{COLOR GREEN}Infinite Repellent{COLOR DARK_GRAY} for easy toggling."),
+                                "{COLOR GREEN}Endless Repellent{COLOR DARK_GRAY} for easy toggling."),
     },
 
     [HELP_SIGN_NOTEBOOK] =
@@ -327,10 +327,10 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "- a summary of any bosses in the Zone"),
     },
 
-    [HELP_SIGN_INFINITE_CANDY] =
+    [HELP_SIGN_ENDLESS_CANDY] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Infinite Candy"),
-        .desc = COMPOUND_STRING("The {COLOR GREEN}Infinite Candy{COLOR DARK_GRAY} can be used to increase\n"
+        .header = COMPOUND_STRING("Trainer Tips: Endless Candy"),
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Endless Candy{COLOR DARK_GRAY} can be used to increase\n"
                                 "your Pokémon's level.\n\n"
                                 "If you are in the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}, the maximum\n"
                                 "level is the current level cap.\n"

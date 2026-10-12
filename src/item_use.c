@@ -1688,18 +1688,18 @@ void ItemUseOutOfBattle_TownMap(u8 taskId)
     }
 }
 
-void ItemUseOutOfBattle_InfiniteRepel(u8 taskId)
+void ItemUseOutOfBattle_EndlessRepel(u8 taskId)
 {
-    bool8 infiniteRepelOn = FlagGet(WE_FLAG_NO_ENCOUNTER);
-    if (!infiniteRepelOn)
+    bool8 endlessRepelOn = FlagGet(WE_FLAG_NO_ENCOUNTER);
+    if (!endlessRepelOn)
     {
         FlagToggle(WE_FLAG_NO_ENCOUNTER);
         PlaySE(SE_REPEL);
         if(gTasks[taskId].tUsingRegisteredKeyItem){
-            DisplayItemMessageOnField(taskId, gText_InfiniteRepelOn, Task_CloseCantUseKeyItemMessage);
+            DisplayItemMessageOnField(taskId, gText_EndlessRepelOn, Task_CloseCantUseKeyItemMessage);
         }
         else{
-            DisplayItemMessage(taskId, 1, gText_InfiniteRepelOn, CloseItemMessage);
+            DisplayItemMessage(taskId, 1, gText_EndlessRepelOn, CloseItemMessage);
         }
     }
     else
@@ -1707,10 +1707,10 @@ void ItemUseOutOfBattle_InfiniteRepel(u8 taskId)
         FlagToggle(WE_FLAG_NO_ENCOUNTER);
         PlaySE(SE_PC_OFF);
         if (gTasks[taskId].tUsingRegisteredKeyItem){
-            DisplayItemMessageOnField(taskId, gText_InfiniteRepelOff, Task_CloseCantUseKeyItemMessage);
+            DisplayItemMessageOnField(taskId, gText_EndlessRepelOff, Task_CloseCantUseKeyItemMessage);
         }
         else{
-            DisplayItemMessage(taskId, 1, gText_InfiniteRepelOff, CloseItemMessage);
+            DisplayItemMessage(taskId, 1, gText_EndlessRepelOff, CloseItemMessage);
         }
     }
 }

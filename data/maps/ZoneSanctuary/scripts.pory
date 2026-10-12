@@ -475,15 +475,15 @@ script Sanctuary_EventScript_EnterSanctuary {
 	}
 	switch (var(VAR_ZONE)) {
 		case 1:
-			msgbox(format("The {COLOR GREEN}Infinite Candy{COLOR DARK_GRAY}!"))
+			msgbox(format("The {COLOR GREEN}Endless Candy{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_INFINITE_CANDY)
-			helpwindow(HELP_SIGN_INFINITE_CANDY)
+			giveitem(ITEM_ENDLESS_CANDY)
+			helpwindow(HELP_SIGN_ENDLESS_CANDY)
 		case 2:
-			msgbox(format("The {COLOR GREEN}Infinite Repellent{COLOR DARK_GRAY}!"))
+			msgbox(format("The {COLOR GREEN}Endless Repellent{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_INFINITE_REPEL)
-			helpwindow(HELP_INFINITE_REPEL)
+			giveitem(ITEM_ENDLESS_REPEL)
+			helpwindow(HELP_ENDLESS_REPEL)
 		case 3:
 			msgbox(format("The {COLOR GREEN}Dowsing Machine{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)

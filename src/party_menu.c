@@ -6003,8 +6003,8 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     bool8 cannotUseEffect;
     u8 holdEffectParam = GetItemHoldEffectParam(*itemPtr);
     u8 levelCap = GetCurrentLevelCap();
-    u8 infiniteCandyCap = GetInfiniteCandyLevelCap();
-    bool8 isInfiniteCandy = (GetItemPocket(gSpecialVar_ItemId) == POCKET_KEY_ITEMS);
+    u8 endlessCandyCap = GetEndlessCandyLevelCap();
+    bool8 isEndlessCandy = (GetItemPocket(gSpecialVar_ItemId) == POCKET_KEY_ITEMS);
     bool8 isExpCandy = (gSpecialVar_ItemId == ITEM_EXP_CANDY_XS) 
                         || (gSpecialVar_ItemId == ITEM_EXP_CANDY_S) 
                         || (gSpecialVar_ItemId == ITEM_EXP_CANDY_M) 
@@ -6012,7 +6012,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
                         || (gSpecialVar_ItemId == ITEM_EXP_CANDY_XL);
 
     sInitialLevel = GetMonData(mon, MON_DATA_LEVEL);
-    if (!((isInfiniteCandy && sInitialLevel >= infiniteCandyCap) || (isExpCandy && sInitialLevel >= levelCap) ))
+    if (!((isEndlessCandy && sInitialLevel >= endlessCandyCap) || (isExpCandy && sInitialLevel >= levelCap) ))
     {
         BufferMonStatsToTaskData(mon, arrayPtr);
         cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);
@@ -6040,7 +6040,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         if (targetSpecies != SPECIES_NONE)
         {
             GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, DO_EVO);
-            if (!isInfiniteCandy)
+            if (!isEndlessCandy)
                 RemoveBagItem(gSpecialVar_ItemId, 1);
             FreePartyPointers();
             gCB2_AfterEvolution = gPartyMenu.exitCallback;
@@ -6050,7 +6050,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         else
         {
             gPartyMenuUseExitCallback = FALSE;
-            ConvertIntToDecimalStringN(gStringVar2, infiniteCandyCap, STR_CONV_MODE_LEFT_ALIGN, 3);
+            ConvertIntToDecimalStringN(gStringVar2, endlessCandyCap, STR_CONV_MODE_LEFT_ALIGN, 3);
             DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
             ScheduleBgCopyTilemapToVram(2);
             if (gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
@@ -6064,7 +6064,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         sFinalLevel = GetMonData(mon, MON_DATA_LEVEL);
         gPartyMenuUseExitCallback = TRUE;
         UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
-        if (!isInfiniteCandy)
+        if (!isEndlessCandy)
             RemoveBagItem(gSpecialVar_ItemId, 1);
         GetMonNickname(mon, gStringVar1);
         if (sFinalLevel > sInitialLevel)

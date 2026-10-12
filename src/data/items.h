@@ -14884,9 +14884,9 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_Key,
     },
 
-    [ITEM_INFINITE_REPEL] =
+    [ITEM_ENDLESS_REPEL] =
     {
-        .name = ITEM_NAME("Infinite Repellent"),
+        .name = ITEM_NAME("Endless Repellent"),
         .price = 0,
         .description = COMPOUND_STRING(
             "While active,\n"
@@ -14895,7 +14895,7 @@ const struct ItemInfo gItemsInfo[] =
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_InfiniteRepel,
+        .fieldUseFunc = ItemUseOutOfBattle_EndlessRepel,
         .iconPic = gItemIcon_Repel,
         .iconPalette = gItemIconPalette_MaxRepel,
     },
@@ -14916,10 +14916,10 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_Notebook,
     },
 
-    [ITEM_INFINITE_CANDY] =
+    [ITEM_ENDLESS_CANDY] =
     {
-        .name = ITEM_NAME("Infinite Candy"),
-        .pluralName = ITEM_PLURAL_NAME("Infinite Candy"),
+        .name = ITEM_NAME("Endless Candy"),
+        .pluralName = ITEM_PLURAL_NAME("Endless Candy"),
         .price = 0,
         .importance = 1,
         .description = COMPOUND_STRING(
@@ -14933,7 +14933,7 @@ const struct ItemInfo gItemsInfo[] =
         .effect = gItemEffect_RareCandy,
         .flingPower = 30,
         .iconPic = gItemIcon_RareCandy,
-        .iconPalette = gItemIconPalette_InfiniteCandy,
+        .iconPalette = gItemIconPalette_EndlessCandy,
     },
 
 // Start hexorb branch

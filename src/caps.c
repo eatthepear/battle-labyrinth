@@ -66,7 +66,7 @@ u32 GetCurrentLevelCap(void)
 }
 
 // If the player is in a New Zone, they are only allowed to Rare Candy up to the prior level cap.
-u32 GetInfiniteCandyLevelCap(void)
+u32 GetEndlessCandyLevelCap(void)
 {
     u32 i;
 

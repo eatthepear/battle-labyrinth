@@ -1059,8 +1059,8 @@ script EventScript_Notebook_Items {
 	while {
 		message(format("Item Changes open.\nAnything not listed is vanilla."))
 		waitmessage
-		dynmultipush("Infinite Rare Candy", ITEM_RARE_CANDY)
-		dynmultipush("Infinite Repel", ITEM_INFINITE_REPEL)
+		dynmultipush("Endless Rare Candy", ITEM_RARE_CANDY)
+		dynmultipush("Endless Repel", ITEM_ENDLESS_REPEL)
 		dynmultipush("Hex Orb", ITEM_HEXORB)
 		dynmultipush("TMs", ITEM_TM_RETURN)
 		dynmultipush("HMs", ITEM_HM_SURF)
@@ -1073,9 +1073,9 @@ script EventScript_Notebook_Items {
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
 		switch (var(VAR_RESULT)) {
 			case ITEM_RARE_CANDY:
-				helpwindow(HELP_SIGN_INFINITE_CANDY)
-			case ITEM_INFINITE_REPEL:
-				helpwindow(HELP_INFINITE_REPEL)
+				helpwindow(HELP_SIGN_ENDLESS_CANDY)
+			case ITEM_ENDLESS_REPEL:
+				helpwindow(HELP_ENDLESS_REPEL)
 			case ITEM_TM_RETURN:
 				msgbox(format("TMs are infinite use, but do not restore PP if you are in a new {COLOR GREEN}Zone{COLOR DARK_GRAY}."))
 			case ITEM_HM_SURF:
@@ -1151,7 +1151,7 @@ script EventScript_Notebook_TrainerTips {
 	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_4)
 	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Zone Info", SUB_QUEST_4) }
 	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_5)
-	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Infinite Candy", SUB_QUEST_5) }
+	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Endless Candy", SUB_QUEST_5) }
 	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_6)
 	// 	if (var(VAR_RESULT) == TRUE) { dynmultipush("Surveil", SUB_QUEST_6) }
 	// 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_SIGNS, SUB_QUEST_7)
@@ -1209,7 +1209,7 @@ script EventScript_Notebook_TrainerTips {
 	// 			call(EventScript_Sign_ZoneInfo)
 	// 		case SUB_QUEST_5:  
 	// 			setvar(VAR_TEMP_0, SUB_QUEST_5)
-	// 			call(EventScript_Sign_InfiniteCandy)
+	// 			call(EventScript_Sign_EndlessCandy)
 	// 		case SUB_QUEST_6:  
 	// 			setvar(VAR_TEMP_0, SUB_QUEST_6)
 	// 			call(EventScript_Sign_Surveil)
@@ -1294,8 +1294,8 @@ script EventScript_Sign_ZoneInfo {
 	helpwindow(HELP_SIGN_ZONE_INFO)
 }
 
-script EventScript_Sign_InfiniteCandy {
-	helpwindow(HELP_SIGN_INFINITE_CANDY)
+script EventScript_Sign_EndlessCandy {
+	helpwindow(HELP_SIGN_ENDLESS_CANDY)
 }
 
 script EventScript_Sign_Surveil {
@@ -1579,7 +1579,7 @@ script Debug_CheatStart_PBL_SetFlags {
 script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_QUICK_CLAW)
 	additem(ITEM_TM_FALSE_SWIPE)
-	additem(ITEM_INFINITE_CANDY)
+	additem(ITEM_ENDLESS_CANDY)
 
 	if (var(VAR_ZONE) == 2) {
 		return
@@ -1593,7 +1593,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_PECHA_BERRY, 3)
 	additem(ITEM_CHERI_BERRY, 3)
 	additem(ITEM_HM_ROCK_SMASH)
-	additem(ITEM_INFINITE_REPEL)
+	additem(ITEM_ENDLESS_REPEL)
 
 	if (var(VAR_ZONE) == 3) {
 		return

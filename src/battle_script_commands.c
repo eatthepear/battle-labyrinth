@@ -4054,7 +4054,7 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     {
         const struct TrainerMon *party = GetTrainerPartyFromId(trainerId);
         if (party == NULL)
-            lastMonLevel = GetInfiniteCandyLevelCap() - 2;
+            lastMonLevel = GetEndlessCandyLevelCap() - 2;
         else
             lastMonLevel = party[GetTrainerPartySizeFromId(trainerId) - 1].lvl;
         trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 5;
