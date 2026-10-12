@@ -87,10 +87,10 @@ script Zone2A_EventScript_TriggerLeaf {
 	}
 	applymovement(LOCALID_LEAF_2A, Common_Movement_WalkUp2)
 	waitmovement(0)
-	setspeaker("Leaf")
-	msgbox(format("Hi! My name's {COLOR BLUE}Leaf{COLOR DARK_GRAY}.\pIf you want to go forward, you'll have to beat me!\pSo, are you ready for our battle?"), MSGBOX_YESNO)
+	setspeaker("???")
+	msgbox(format("Hello, traveler!\pAre you a Pokémon trainer? If so, do you want to have a friendly match?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Okay. You just let me know when you're ready!"))
+		msgbox(format("It's okay if you're not ready!\pCome back when you are!"))
 		closemessage
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 		waitmovement(0)
@@ -111,18 +111,23 @@ script Zone2A_EventScript_TriggerLeaf {
 		releaseall
 		end
 	}
+	setspeaker("???")
+	msgbox(format("Great! Oh, before we battle, I should introduce myself.\pI'm {COLOR BLUE}Leaf{COLOR DARK_GRAY}! And you are?"))
+	closemessage
+	delay(40)
 	setspeaker("Leaf")
-	msgbox(format("Good luck!"))
+	msgbox(format("Nice to meet you, {COLOR BLUE}{PLAYER}{COLOR DARK_GRAY}! Now, let's battle!"))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_LEAF_BOSS_2, format("Defeat!"))
+	trainerbattle_no_intro(TRAINER_PBL_LEAF_BOSS_2, format("Darn!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Leaf")
-	msgbox(format("I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
+	msgbox(format("Wow, you got me!\pIt's disappointing to lose, but you seem to be a good trainer, so that takes away the sting a bit!\pHere, take this HM. It can break small boulders, though you'll need the {COLOR GREEN}Cliff Badge{COLOR DARK_GRAY} to use it outside of battle."))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_HM_ROCK_SMASH)
+	helpwindow(HELP_SIGN_HIDDEN_MACHINES)
 	setspeaker("Leaf")
-	msgbox(format("Good job! That was a great battle. I think I'll wait here for more challengers to pass through, you should go on ahead! I want to battle them all."))
+	msgbox(Zone2A_Text_Leaf_HoneSkills)
 	closemessage
 	setflag(FLAG_BEAT_BOSS_2)
 	setvar(VAR_ZONE_2_STATE, 2)
@@ -135,9 +140,13 @@ script Zone2A_EventScript_Leaf {
 	lock
 	faceplayer
 	setspeaker("Leaf")
-	msgbox(format("Hello!"))
+	msgbox(Zone2A_Text_Leaf_HoneSkills)
 	release
 	end
+}
+
+text Zone2A_Text_Leaf_HoneSkills {
+	format("I think I'll wait here for more trainers to pass through so I can hone my skills.\pThe next time we battle, I'm sure I'll beat you then!")
 }
 
 script Zone2A_EventScript_Shaun {
