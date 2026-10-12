@@ -1144,10 +1144,10 @@ const u8 gText_BrutalDifficulty[] =_("Brutal");
 
 const u8 gText_RestrictedMove[] = _("{COLOR LIGHT_GRAY}{STR_VAR_1}");
 
-const u8 gText_MapZone1[] = _("Zone 1 - Novice Path");
+const u8 gText_MapZone1[] = _("Zone 1 - Novice Way");
 const u8 gText_MapZone2[] = _("Zone 2 - Golden Oak Ranch");
-const u8 gText_MapZone3[] = _("Zone 3 - ");
-const u8 gText_MapZone4[] = _("Zone 4 - ");
+const u8 gText_MapZone3[] = _("Zone 3 - Bright Pond");
+const u8 gText_MapZone4[] = _("Zone 4 - Mystic Glade");
 const u8 gText_MapZone5[] = _("Zone 5 - Mossdeep Path");
 const u8 gText_MapZone6[] = _("Zone 6 - ");
 const u8 gText_MapZone7[] = _("Zone 7 - ");
