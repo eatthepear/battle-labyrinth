@@ -67,7 +67,11 @@ script EventScript_Shop_Max {
 	waitmessage
 	switch(var(VAR_ZONE)) {
 		case 2:
-			pokemart(Zone2A_Shop_TMShop)
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				pokemart(Zone2A_Shop_TMShop_Brutal)
+			} else {
+				pokemart(Zone2A_Shop_TMShop)
+			}
 		case 6:
 			pokemart(Zone6A_Shop_TMShop)
 		case 10:
@@ -83,14 +87,23 @@ script EventScript_Shop_Max {
 		case 29:
 			pokemart(Zone29A_Shop_TMShop)
 		case 35:
-			pokemart(Sanctuary_Shop_TMShop)
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				pokemart(Sanctuary_Shop_TMShop_Brutal)
+			} else {
+				pokemart(Sanctuary_Shop_TMShop)
+			}
 	}
 	setspeaker("Max")
 	msgbox(format("Goodbye!"))
 	closemessage
 }
 
+mart Zone2A_Shop_TMShop_Brutal {
+	ITEM_TM_HIDDEN_POWER
+}
+
 mart Zone2A_Shop_TMShop {
+	ITEM_TM_PROTECT
 	ITEM_TM_HIDDEN_POWER
 }
 
@@ -132,6 +145,35 @@ mart Zone24A_Shop_TMShop {
 }
 
 mart Zone29A_Shop_TMShop {
+	ITEM_TM_SUBSTITUTE
+	ITEM_TM_AGILITY
+	ITEM_TM_NASTY_PLOT
+	ITEM_TM_ROCK_POLISH
+	ITEM_TM_SWORDS_DANCE
+}
+
+mart Sanctuary_Shop_TMShop_Brutal {
+	ITEM_TM_PROTECT
+	ITEM_TM_HIDDEN_POWER
+	ITEM_TM_WORK_UP
+	ITEM_TM_TRAILBLAZE
+	ITEM_TM_FLAME_CHARGE
+	ITEM_TM_CHARGE_BEAM
+	ITEM_TM_POWER_UP_PUNCH
+	ITEM_TM_REST
+	ITEM_TM_SLEEP_TALK
+	ITEM_TM_SNOWSCAPE
+	ITEM_TM_SUNNY_DAY
+	ITEM_TM_RAIN_DANCE
+	ITEM_TM_SANDSTORM
+	ITEM_TM_CALM_MIND
+	ITEM_TM_BULK_UP
+	ITEM_TM_BLIZZARD
+	ITEM_TM_THUNDER
+	ITEM_TM_FIRE_BLAST
+	ITEM_TM_SOLAR_BEAM
+	ITEM_TM_FOCUS_BLAST
+	ITEM_TM_HURRICANE
 	ITEM_TM_SUBSTITUTE
 	ITEM_TM_AGILITY
 	ITEM_TM_NASTY_PLOT
@@ -1543,6 +1585,9 @@ script Debug_CheatStart_PBL_GiveItems {
 		return
 	}
 	additem(ITEM_SILK_SCARF)
+	if (var(VAR_DIFFICULTY) < DIFFICULTY_BRUTAL) {
+		additem(ITEM_TM_PROTECT)
+	}
 	additem(ITEM_TM_BUG_BITE)
 	additem(ITEM_TM_HIDDEN_POWER)
 	additem(ITEM_PECHA_BERRY, 3)

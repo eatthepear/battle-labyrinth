@@ -12565,7 +12565,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_TM_PROTECT] =
     {
         .name = ITEM_NAME("TM17"),
-        .price = 2000,
+        .price = 1000,
         .description = COMPOUND_STRING(
             "Negates all damage,\n"
             "but may fail if used\n"
