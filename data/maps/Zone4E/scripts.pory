@@ -83,7 +83,7 @@ script Zone4E_EventScript_BossBattle {
 	trainerbattle_no_intro(TRAINER_PBL_PROTON_BOSS_4, format("Defeated by a child!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Proton")
-	msgbox(format("Argh… A shameful defeat, but it won't hold me back.\pYou're going to regret standing in the way of {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}, mark my words.\pOur organization has grown over the years, {COLOR GREEN}absorbing other villainous organizations into it{COLOR DARK_GRAY} as well.\pTake heart in knowing your victory will be short lived."), MSGBOX_AUTOCLOSE)
+	msgbox(format("Argh… A shameful defeat, but it won't hold me back.\pYou're going to regret standing in the way of {COLOR GREEN}Team Rainbow Rocket{COLOR DARK_GRAY}, mark my words.\pOur organization has grown over the years, {COLOR GREEN}absorbing other organizations into it{COLOR DARK_GRAY} as well.\pTake heart in knowing your victory will be short lived."), MSGBOX_AUTOCLOSE)
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(LOCALID_PROTON_4E)
 	removeobject(LOCALID_GRUNT_1_4E)
@@ -93,7 +93,7 @@ script Zone4E_EventScript_BossBattle {
 	setflag(FLAG_BEAT_BOSS_4)
 	setvar(VAR_ZONE_4_STATE, 3)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
-	msgbox(format("{COLOR BLUE}Proton{COLOR DARK_GRAY} vanished into thin air without a trace!\pHow could he have done such a thing?\pThere's something on the ground where he was standing…"))
+	msgbox(format("There's something on the ground where he was standing…"))
 	giveitem(ITEM_TM_VENOSHOCK)
 	closemessage
 	fadedefaultbgm
