@@ -720,15 +720,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Headbutt
 - Thief
 
-Whirlipede @ Sitrus Berry
+Beedrill @ Sitrus Berry
 Hasty Nature
-Ability: Speed Boost
+Ability: Swarm
 Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Toxic Thread
 - Twineedle
 - Venoshock
-- Mortal Spin
+- Fury Attack
+- Thief
 
 === TRAINER_PBL_PROTON_BOSS_4 ===
 Name: Proton
@@ -770,15 +770,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Recover
 - Sleep Talk
 
-Whirlipede @ Sitrus Berry
+Beedrill @ Sitrus Berry
 Hasty Nature
-Ability: Speed Boost
+Ability: Swarm
 Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Toxic Thread
 - Twineedle
 - Venoshock
-- Mortal Spin
+- Fury Attack
+- Thief
 
 === TRAINER_PBL_REBECCA ===
 Name: Rebecca
