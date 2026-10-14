@@ -1671,7 +1671,6 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_TM_POWER_UP_PUNCH)
 	additem(ITEM_TM_IRON_TAIL)
 	additem(ITEM_EVIOLITE)
-	additem(ITEM_SITRUS_BERRY, 10)
 
 	if (var(VAR_ZONE) == 11) {
 		return
@@ -1724,8 +1723,8 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_METAL_COAT)
 	additem(ITEM_SHALOUR_SABLE, 5)
 	additem(ITEM_TM_ATTRACT)
-	additem(ITEM_ULTRA_BALL, 5)
-	additem(ITEM_BICYCLE)
+	additem(ITEM_SITRUS_BERRY, 10)
+	additem(ITEM_TM_GYRO_BALL)
 
 	if (var(VAR_ZONE) == 15) {
 		return
@@ -1743,13 +1742,14 @@ script Debug_CheatStart_PBL_GiveItems {
 	}
 	additem(ITEM_BOTTLE_CAP)
 	additem(ITEM_YELLOW_SHARD, 5)
-	additem(ITEM_LUM_BERRY, 5)
+	additem(ITEM_BICYCLE)
 
 	if (var(VAR_ZONE) == 17) {
 		return
 	}
 	additem(ITEM_TM_HEX)
 	additem(ITEM_HM_DIVE)
+	additem(ITEM_LUM_BERRY, 5)
 
 	if (var(VAR_ZONE) == 18) {
 		return
@@ -1760,6 +1760,8 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_TM_SANDSTORM)
 	additem(ITEM_LINKING_CORD)
 	additem(ITEM_TM_U_TURN)
+	additem(ITEM_TM_FACADE)
+	additem(ITEM_TM_HYPER_VOICE)
 
 	if (var(VAR_ZONE) == 20) {
 		return
@@ -1786,6 +1788,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 23) {
 		return
 	}
+	additem(ITEM_TM_POISON_JAB)
 	additem(ITEM_TM_PSYSHOCK)
 
 	if (var(VAR_ZONE) == 24) {
@@ -1804,7 +1807,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 26) {
 		return
 	}
-	additem(ITEM_TM_WILL_O_WISP)
+	additem(ITEM_TM_SHADOW_BALL)
 	additem(ITEM_ROTOM_CATALOG)
 
 	if (var(VAR_ZONE) == 27) {

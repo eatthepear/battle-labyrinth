@@ -10,7 +10,7 @@ mapscripts Zone23A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE23A_TM_ENERGY_BALL)) {
+		if (flag(FLAG_ITEM_ZONE23A_TM_POISON_JAB)) {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_TM_CHEST_OPEN)
 		} else {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_TM_CHEST)
@@ -89,9 +89,9 @@ script Zone23A_EventScript_BlackSludge {
 	end
 }
 
-script Zone23A_EventScript_TMEnergyBall {
+script Zone23A_EventScript_TMPoisonJab {
 	lock
-	if (flag(FLAG_ITEM_ZONE23A_TM_ENERGY_BALL)) {
+	if (flag(FLAG_ITEM_ZONE23A_TM_POISON_JAB)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
@@ -99,9 +99,9 @@ script Zone23A_EventScript_TMEnergyBall {
 	waitse
 	removeobject(VAR_LAST_TALKED)
 	setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_TM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE23A_TM_ENERGY_BALL)
+	setflag(FLAG_ITEM_ZONE23A_TM_POISON_JAB)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_TM_ENERGY_BALL)
+	finditem(ITEM_TM_POISON_JAB)
 	release
 	end
 }

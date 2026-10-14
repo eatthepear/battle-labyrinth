@@ -517,9 +517,8 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_GREEN_SHARD, 5)
 		case 10:
-			msgbox(format("{COLOR GREEN}10 Sitrus Berries{COLOR DARK_GRAY}!"))
-			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_SITRUS_BERRY, 10)
+			msgbox(format("Another {COLOR GREEN}starter Pokémon{COLOR DARK_GRAY}!"))
+			// give starter pokemon here
 		case 11:
 			msgbox(format("{COLOR GREEN}TM94 - Defog{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
@@ -530,24 +529,26 @@ script Sanctuary_EventScript_EnterSanctuary {
 			giveitem(ITEM_HEART_SCALE, 3)
 		case 13:
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 13 - Gemini Heights{COLOR DARK_GRAY} is…"))
-			msgbox(format("{COLOR GREEN}5 Ultra Balls{COLOR DARK_GRAY}!"))
+			msgbox(format("{COLOR GREEN}10 Sitrus Berries{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_ULTRA_BALL, 5)
+			giveitem(ITEM_SITRUS_BERRY, 10)
 			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 14 - Gemini Caves{COLOR DARK_GRAY} is…"))
-			msgbox(format("The {COLOR GREEN}Bike{COLOR DARK_GRAY}!"))
+			msgbox(format("{COLOR GREEN}TM74 - Gyro Ball{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_BICYCLE)
+			giveitem(ITEM_TM_GYRO_BALL)
 		case 15:
 			msgbox(format("{COLOR GREEN}HM03 - Surf{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_HM_SURF)
 		case 16:
+			msgbox(format("The {COLOR GREEN}Bike{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_BICYCLE)
+		case 17:
 			msgbox(format("{COLOR GREEN}5 Lum Berries{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_LUM_BERRY, 5)
-		case 17:
-			msgbox(format("Ultra Balls!"))
 		case 18:
 			msgbox(format("Ultra Balls!"))
 		case 20:
