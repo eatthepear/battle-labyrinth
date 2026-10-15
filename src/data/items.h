@@ -12322,9 +12322,9 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("TM01"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "The move's type and\n"
-            "power change with\n"
-            "the weather."),
+            "The user is roused.\n"
+            "Ups Attack and\n"
+            "Sp. Atk."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
