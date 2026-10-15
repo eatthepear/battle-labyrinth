@@ -1031,15 +1031,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Gust
 - Attract
 
-Goldeen
-Naughty Nature
-Ability: Swift Swim
-Level: 15
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Horn Attack
-- Peck
-
 === TRAINER_PBL_ZACK_BOSS_6 ===
 Name: Zack
 Class: Tuber M
@@ -1065,19 +1056,19 @@ Music: Swimmer
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Wiglett
+Goldeen
 Naughty Nature
-Ability: Gooey
-Level: 17
+Ability: Swift Swim
+Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aqua Jet
-- Wrap
-- Mud Slap
+- Water Pulse
+- Horn Attack
+- Peck
 
 Barboach
 Calm Nature
 Ability: Hydration
-Level: 17
+Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pulse
 - Mud Bomb
@@ -1178,23 +1169,32 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Green
 
+Dolliv @ Sitrus Berry
+Bold Nature
+Ability: Harvest
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Magical Leaf
+- Swift
+- Leech Seed
+
+Gulpin @ Sitrus Berry
+Sassy Nature
+Ability: Sticky Hold
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Belch
+- Natural Gift
+- Stuff Cheeks
+
 Dedenne @ Sitrus Berry
 Timid Nature
 Ability: Cheek Pouch
-Level: 18
+Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Parabolic Charge
 - Draining Kiss
 - Nuzzle
-
-Tropius @ Sitrus Berry
-Careful Nature
-Ability: Harvest
-Level: 20
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Razor Leaf
-- Aerial Ace
-- Natural Gift
 
 === TRAINER_PBL_WALLY_BOSS_7 ===
 Name: Wally
@@ -1477,7 +1477,41 @@ Music: Intense
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Tyrogue
+Tyrogue @ Sitrus Berry
+Brave Nature
+Ability: Guts
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tackle
+- Focus Energy
+- Fake Out
+
+Hitmonlee @ Chesto Berry
+Hasty Nature
+Ability: Limber
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Low Sweep
+- Rock Tomb
+- Fake Out
+
+Hitmonchan @ Pecha Berry
+Naive Nature
+Ability: Iron Fist
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drain Punch
+- Bullet Punch
+- Fake Out
+
+Hitmontop @ Cheri Berry
+Jolly Nature
+Ability: Technician
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Triple Kick
+- Thief
+- Fake Out
 
 === TRAINER_PBL_ARI_BOSS_9 ===
 Name: Ari
