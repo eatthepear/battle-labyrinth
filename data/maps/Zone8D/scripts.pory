@@ -25,10 +25,11 @@ script Zone8D_EventScript_BossBattle {
 	applymovement(LOCALID_GRUNT_2_8D, Common_Movement_WalkDown2)
 	waitmovement(0)
 	setspeaker("Mars")
-	msgbox(format("Well, well, well. I was wondering what sort of pest had wandered in.\pBut it turns out to be just a child.\pListen well, child. If you win, we, Team Galactic, will leave. If I win, all your Pokémon are mine. How does that sound?"), MSGBOX_YESNO)
+	msgbox(format("Well, well, well. I was wondering what sort of pest had wandered in.\pBut it turns out to be just a child.\pListen well, child. If you win, we, {COLOR GREEN}Team Galactic{COLOR DARK_GRAY}, will leave. If I win, all your Pokémon are mine. How does that sound?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		setspeaker("Mars")
-		msgbox(format("Well, if you're not ready, that works out for both of us."), MSGBOX_AUTOCLOSE)
+		msgbox(format("Run along, little mouse."))
+		closemessage
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
 		waitmovement(0)
 		if (var(VAR_TEMP_0) == 3) {
@@ -60,23 +61,23 @@ script Zone8D_EventScript_BossBattle {
 	closemessage
 	fadeoutbgm(1)
 	setspeaker("Mars")
-	msgbox(format("Prepare to be crushed by the might of Team Galactic!"))
+	msgbox(format("Prepare to be crushed by the might of {COLOR GREEN}Team Galactic{COLOR DARK_GRAY}!"))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_MARS_BOSS_8, format("Defeated by a child… This is embarrasing for me…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Mars")
-	msgbox(format("Ugh. I can't believe I lost that one.\pI guess I owe you a little something for winning."), MSGBOX_AUTOCLOSE)
+	msgbox(format("We were here collecting Shards in the caves on behalf of {COLOR GREEN}our new parent organization{COLOR DARK_GRAY}.\pWe've collected enough for our mission, so I can leave a few scraps to you."))
 	giveitem(ITEM_RED_SHARD, 5)
-	setspeaker("Mars")
-	msgbox(format("Our boss had us collecting these Shards in the caves.\pWe've collected enough for our mission, so I don't mind giving a few scraps to you."), MSGBOX_AUTOCLOSE)
+	closemessage
 	applymovement(LOCALID_MARS, Common_Movement_FaceLeft)
 	waitmovement(0)
 	delay(32)
 	applymovement(LOCALID_MARS, Common_Movement_FaceDown)
 	waitmovement(0)
 	setspeaker("Mars")
-	msgbox(format("It's a tough world out there. Watch your step."), MSGBOX_AUTOCLOSE)
+	msgbox(format("Since our mission is complete, {COLOR GREEN}Team Galactic{COLOR DARK_GRAY} will retreat.\pIf I ever cross you again, I won't hold back."))
+	closemessage
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(LOCALID_MARS)
 	removeobject(LOCALID_GRUNT_1_8D)

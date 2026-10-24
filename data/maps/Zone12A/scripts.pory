@@ -87,35 +87,36 @@ script Zone12A_EventScript_Inver {
 		end
 	}
 	setspeaker("Inver")
-	msgbox(format("My Pokémon love to eat, just like me!"))
+	msgbox(format("Greetings! I am {COLOR GREEN}Proprietor Inver{COLOR DARK_GRAY}.\pHave you ever tried an {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY}?\pIn an {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY}, all type matchups are completely reversed.\pA Fire-type move, for example, will be not very effective on a Grass type Pokémon, and super effective on a Water type Pokémon."))
 	if (!defeated(TRAINER_PBL_GENIE) || !defeated(TRAINER_PBL_ABIGAIL) || !defeated(TRAINER_PBL_CELIA)) {
 		setspeaker("Inver")
-		msgbox(format("Tell you what, if you go and defeat all four of my friends around the farm, I'll show you just how much my Pokémon can eat!"))
+		msgbox(format("If you find and defeat my three students scattered throughout this area, I could show you the joys of {COLOR GREEN}Inverse Battles{COLOR DARK_GRAY}!"))
 		release
 		end
 	}
 	setspeaker("Inver")
-	msgbox(format("My friends tell me you've defeated every last one of them!\pAre you interested in a battle? I'll show you just how much my Pokémon can eat!"), MSGBOX_YESNO)
+	msgbox(format("My students tell me they have all been defeated!\pSo you are ready for a showcase of how thrilling {COLOR GREEN}Inverse Battles{COLOR DARK_GRAY} can be"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		setspeaker("Inver")
-		msgbox(format("Oh, all right…"))
+		msgbox(format("This is most regrettable…"))
 		release
 		end
 	}
 	closemessage
-	fadeoutbgm(1)
 	setspeaker("Inver")
-	msgbox(format("All right then, let's battle!"))
+	msgbox(format("Excellent! Let's get started!"))
 	setflag(FLAG_SYS_INVERSE_BATTLE)
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_INVER_BOSS_12, format("Ack! I lost again!\pDoggone it!"))
+	trainerbattle_no_intro(TRAINER_PBL_INVER_BOSS_12, format("My expectations were inverted!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	clearflag(FLAG_SYS_INVERSE_BATTLE)
 	setspeaker("Inver")
-	msgbox(format("Even after all those Berries, it wasn't enough to get across the finish line.\pThat's all right though! I enjoyed our battle so much, I want to give you this!"))
+	msgbox(format("That was an excellent battle!\pYou've clearly proved your mastery over {COLOR GREEN}Inverse Battles{COLOR DARK_GRAY}!\pFor your prize, I'd like to give you some special berries!"))
 	setspeaker(SP_NAME_NONE)
-	msgbox(format("Obtained resist berries!"))
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox(format("Obtained type-resisting berries!"))
+	waitfanfare
 	additem(ITEM_CHILAN_BERRY)
     additem(ITEM_OCCA_BERRY)
     additem(ITEM_PASSHO_BERRY)
@@ -147,76 +148,88 @@ script Zone12A_EventScript_Inver {
 }
 
 text Zone12A_Text_Inver_Post {
-	format("POST")
+	format("Perhaps we will meet again in the future!\pI would love for you to show me your {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY} skills again!")
 }
 
 script Zone12A_EventScript_Genie {
 	lock
 	faceplayer
 	if (defeated(TRAINER_PBL_GENIE)) {
-		msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+		msgbox(Zone12A_Text_Genie_Post)
 		release
 		end
 	}
-	msgbox(format("Battle?"), MSGBOX_YESNO)
+	msgbox(format("Yo! I'm one of Master {COLOR GREEN}Inver{COLOR DARK_GRAY}'s students.\pWhat does he teach? {COLOR GREEN}Inverse Battles{COLOR DARK_GRAY}, of course!\pIn an {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY}, all type matchups are completely reversed.\pSay, do you want to try it out?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Sad!"), MSGBOX_AUTOCLOSE)
+		msgbox(format("Yo! Not cool!\pCome back to battle soon!"), MSGBOX_AUTOCLOSE)
 		release
 		end
 	}
-	msgbox(format("BATTLE!"))
+	msgbox(format("Master {COLOR GREEN}Inver{COLOR DARK_GRAY}, I'll show you what I've learned!"))
 	setflag(FLAG_SYS_INVERSE_BATTLE)
-	trainerbattle_no_intro(TRAINER_PBL_GENIE, format("DEFEAT!"))
+	trainerbattle_no_intro(TRAINER_PBL_GENIE, format("Well, that's a bummer!"))
 	clearflag(FLAG_SYS_INVERSE_BATTLE)
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	msgbox(Zone12A_Text_Genie_Post)
 	release
 	end
+}
+
+text Zone12A_Text_Genie_Post {
+	format("Did you know?\p{COLOR GREEN}Inverse Battles{COLOR DARK_GRAY} don't perfectly invert the type chart.\pUnlike a normal battle, there's no immunities in an Inverse Battle, so types like Normal, Electric, or Ground might be especially powerful!")
 }
 
 script Zone12A_EventScript_Abigail {
 	lock
 	faceplayer
 	if (defeated(TRAINER_PBL_ABIGAIL)) {
-		msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+		msgbox(Zone12A_Text_Abigail_Post)
 		release
 		end
 	}
-	msgbox(format("Battle?"), MSGBOX_YESNO)
+	msgbox(format("Hey! I study under Master {COLOR GREEN}Inver{COLOR DARK_GRAY}, to learn about {COLOR GREEN}Inverse Battles{COLOR DARK_GRAY}!\pIn an {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY}, all type matchups are completely reversed.\pWould you be interested in trying it out?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Sad!"), MSGBOX_AUTOCLOSE)
+		msgbox(format("That's somewhat disappointing, but okay!"), MSGBOX_AUTOCLOSE)
 		release
 		end
 	}
-	msgbox(format("BATTLE!"))
+	msgbox(format("Master {COLOR GREEN}Inver{COLOR DARK_GRAY} has taught me a lot!"))
 	setflag(FLAG_SYS_INVERSE_BATTLE)
-	trainerbattle_no_intro(TRAINER_PBL_ABIGAIL, format("DEFEAT!"))
+	trainerbattle_no_intro(TRAINER_PBL_ABIGAIL, format("Knowledge isn't everything!"))
 	clearflag(FLAG_SYS_INVERSE_BATTLE)
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	msgbox(Zone12A_Text_Abigail_Post)
 	release
 	end
+}
+
+text Zone12A_Text_Abigail_Post {
+	format("Just because I know the type matchups of an {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY}, doesn't mean I can win every single battle!")
 }
 
 script Zone12A_EventScript_Celia {
 	lock
 	faceplayer
 	if (defeated(TRAINER_PBL_CELIA)) {
-		msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+		msgbox(Zone12A_Text_Celia_Post)
 		release
 		end
 	}
-	msgbox(format("Battle?"), MSGBOX_YESNO)
+	msgbox(format("Hi! Mr. {COLOR GREEN}Inver{COLOR DARK_GRAY} has been teaching me lots about {COLOR GREEN}Inverse Battles{COLOR DARK_GRAY}!\pIn an {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY}, all type matchups are completely reversed.\pDo you maybe wanna try it out?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Sad!"), MSGBOX_AUTOCLOSE)
+		msgbox(format("Aw! You're no fun!"), MSGBOX_AUTOCLOSE)
 		release
 		end
 	}
-	msgbox(format("BATTLE!"))
+	msgbox(format("I'll make Mr. {COLOR GREEN}Inver{COLOR DARK_GRAY} proud!"))
 	setflag(FLAG_SYS_INVERSE_BATTLE)
-	trainerbattle_no_intro(TRAINER_PBL_CELIA, format("DEFEAT!"))
+	trainerbattle_no_intro(TRAINER_PBL_CELIA, format("The type matchups are so confusing!"))
 	clearflag(FLAG_SYS_INVERSE_BATTLE)
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	msgbox(Zone12A_Text_Celia_Post)
 	release
 	end
+}
+
+text Zone12A_Text_Celia_Post {
+	format("So Normal-type attacks aren't resisted by anything, because Normal-type attacks aren't super effective normally… right?")
 }
 
 script Zone12A_EventScript_TMBrickBreak {
@@ -306,8 +319,8 @@ script Zone12A_EventScript_TMSmartStrike {
 }
 
 script Zone12A_EventScript_Hilda {
-	trainerbattle_single(TRAINER_PBL_HILDA, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_HILDA, format("How would you say if someone is rich or not?\pIs it by the amount of money one has in their bank account? In assets?"), format("People will label anyone as rich these days!"))
+	msgbox(format("My family's business owns 61 hotels in the Kalos region.\pI'm not rich though, of course!\pI only own one of those hotels personally."), MSGBOX_AUTOCLOSE)
 	end
 }
 
