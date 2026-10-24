@@ -2035,11 +2035,24 @@ Copy Pool: TRAINER_POOL_ZONE_12
 
 === TRAINER_PBL_INVER_BOSS_12 ===
 Name: Inver
-Class: Psychic
+Class: Proprietor
 Pic: Psychic M
 Music: Intense
 AI: AI_FLAG_BOSS
 Double Battle: No
+Party Size: 3
+Pool Rules: Unique Types
+Copy Pool: TRAINER_POOL_ZONE_12
+Mugshot: Green
+
+=== TRAINER_PBL_INVER_BOSS_12 ===
+Name: Inver
+Class: Proprietor
+Pic: Psychic M
+Music: Intense
+AI: AI_FLAG_BOSS
+Double Battle: No
+Difficulty: Brutal
 Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_12
