@@ -62,22 +62,7 @@ script Zone1A_EventScript_GiveFWG {
 			end
 	}
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == TRUE) {
-		msgbox(gText_Nuzlocke_GiftPossible, MSGBOX_YESNO)
-		if (var(VAR_RESULT) == YES) {
-			if (var(VAR_TEMP_A) == SPECIES_PANSAGE) {
-				msgbox(format("Pansage, Gossifleur, Sunkern, Cherubi, or Fomantis."))
-			} elif (var(VAR_TEMP_A) == SPECIES_PANSEAR) {
-				msgbox(format("Pansear, Vulpix, Slugma, Sizzlipede, or Ponyta."))
-			} elif (var(VAR_TEMP_A) == SPECIES_PANPOUR) {
-				msgbox(format("Panpour, Psyduck, Goldeen, Finneon, or Krabby."))
-			}
-		}
-		msgbox(gText_Nuzlocke_ReadyReceive, MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			msgbox(Zone1A_Text_FWG_ComeBack)
-			release
-			end
-		}
+		call(Zone1A_EventScript_GiveFWG_NuzlockeChoice)
 		setvar(VAR_TEMP_3, 0)
 		if (checkspeciesclause(VAR_TEMP_A) == TRUE) {
 			addvar(VAR_TEMP_3, 1)
@@ -204,6 +189,34 @@ script Zone1A_EventScript_GiveFWG {
 	msgbox(format("Take care of your new Pokémon!"))
 	release
 	end
+}
+
+script Zone1A_EventScript_GiveFWG_NuzlockeChoice {
+	while {
+		dynmultipush("Yes", 0)
+		dynmultipush("No", 1)
+		dynmultipush("Show possibilities", 2)
+		message(gText_Nuzlocke_ReadyReceive)
+		waitmessage
+		dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
+		switch (var(VAR_RESULT)) {
+			case 0:
+				return
+			case 1:
+			case MULTI_B_PRESSED:
+				msgbox(Zone1A_Text_FWG_ComeBack)
+				release
+				end
+			case 2:
+				if (var(VAR_TEMP_A) == SPECIES_PANSAGE) {
+					msgbox(format("Pansage, Gossifleur, Sunkern, Cherubi, or Fomantis."))
+				} elif (var(VAR_TEMP_A) == SPECIES_PANSEAR) {
+					msgbox(format("Pansear, Vulpix, Slugma, Sizzlipede, or Ponyta."))
+				} elif (var(VAR_TEMP_A) == SPECIES_PANPOUR) {
+					msgbox(format("Panpour, Psyduck, Goldeen, Finneon, or Krabby."))
+				}
+		}
+	}
 }
 
 text Zone1A_Text_FWG_ComeBack {

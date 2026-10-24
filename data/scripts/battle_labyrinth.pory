@@ -449,12 +449,8 @@ text gText_ItemChestIsEmpty {
 // 	end
 // }
 
-text gText_Nuzlocke_GiftPossible {
-	format("On {COLOR GREEN}Nuzlocke{COLOR DARK_GRAY} mode, you will randomly receive one of the possible Pokémon. Would you like to see the list of possible Pokémon?")
-}
-
 text gText_Nuzlocke_ReadyReceive {
-	format("Are you ready to receive a Pokémon?")
+	format("On {COLOR GREEN}Nuzlocke{COLOR DARK_GRAY} mode, you will randomly receive one of the possible Pokémon.\pAre you ready to receive a Pokémon?")
 }
 
 script EventScript_ChoosePartyMonToSend {

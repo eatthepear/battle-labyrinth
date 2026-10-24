@@ -230,17 +230,7 @@ script Zone2A_EventScript_BuyBug {
 	setvar(VAR_TEMP_F, SPECIES_NINCADA)
 	if (flag(FLAG_SETTINGS_NUZLOCKE) == TRUE) {
 		// Not going to bother checking for species clause, as there's like 15 Pokemon and there's no way you have all 15
-		msgbox(gText_Nuzlocke_GiftPossible, MSGBOX_YESNO)
-		if (var(VAR_RESULT) == YES) {
-			msgbox(format("Wurmple, Sewaddle, Spinarak, Ledyba, Kricketot, Tarountula, Burmy, Blipbug, Combee, Paras, Karrablast, Shelmet, Surskit, Rellor, or Nincada."))
-		}
-		msgbox(gText_Nuzlocke_ReadyReceive, MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			hidemoneybox
-			msgbox(format("Alrighty, well, you just come on back if you change your mind."))
-			release
-			end
-		}
+		call(Zone2A_EventScript_BuyBug_NuzlockeChoice)
 		setvar(VAR_TEMP_0, 0)
 		while (var(VAR_TEMP_0) == 0) {
 			random(15)
@@ -453,6 +443,29 @@ script Zone2A_EventScript_BuyBug {
 	msgbox(format("Pleasure doing business with you."))
 	release
 	end
+}
+
+script Zone2A_EventScript_BuyBug_NuzlockeChoice {
+	while {
+		dynmultipush("Yes", 0)
+		dynmultipush("No", 1)
+		dynmultipush("Show possibilities", 2)
+		message(gText_Nuzlocke_ReadyReceive)
+		waitmessage
+		dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
+		switch (var(VAR_RESULT)) {
+			case 0:
+				return
+			case 1:
+			case MULTI_B_PRESSED:
+				hidemoneybox
+				msgbox(format("You don't want any? Fine. More for me."))
+				release
+				end
+			case 2:
+				msgbox(format("Wurmple, Sewaddle, Spinarak, Ledyba, Kricketot, Tarountula, Burmy, Blipbug, Combee, Paras, Karrablast, Shelmet, Surskit, Rellor, or Nincada."))
+		}
+	}
 }
 
 script Zone2A_EventScript_Random1 {
