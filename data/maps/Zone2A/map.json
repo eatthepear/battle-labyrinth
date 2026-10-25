@@ -160,8 +160,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_3",
-      "x": 30,
-      "y": 6,
+      "x": 37,
+      "y": 37,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -289,8 +289,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 37,
-      "y": 37,
+      "x": 30,
+      "y": 6,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE2_3"
