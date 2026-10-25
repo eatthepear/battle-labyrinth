@@ -14,7 +14,7 @@ script Zone34H_EventScript_GruntsBattle {
     applymovement(LOCALID_GRUNT_30H_1, Common_Movement_FaceDown)
     applymovement(LOCALID_GRUNT_30H_2, Common_Movement_FaceDown)
     waitmovement
-    setvar(VAR_ZONE_34_STATE_MAXIE, 1)
+    setvar(VAR_ZONE_34_STATE_ARCHIE, 1)
     releaseall
 }
 
