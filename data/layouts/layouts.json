@@ -10954,8 +10954,8 @@
     {
       "id": "LAYOUT_ZONE34H",
       "name": "Zone34H_Layout",
-      "width": 19,
-      "height": 12,
+      "width": 7,
+      "height": 10,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_RocketCastle",
       "border_filepath": "data/layouts/Zone34H/border.bin",
@@ -10964,8 +10964,8 @@
     {
       "id": "LAYOUT_ZONE34I",
       "name": "Zone34I_Layout",
-      "width": 19,
-      "height": 12,
+      "width": 15,
+      "height": 15,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_RocketCastle",
       "border_filepath": "data/layouts/Zone34I/border.bin",
