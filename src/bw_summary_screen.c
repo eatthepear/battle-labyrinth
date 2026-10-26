@@ -4017,6 +4017,9 @@ static void BufferMonTrainerMemo(void)
             case METLOC_FATEFUL_ENCOUNTER:
                 text = gText_XNatureMetSomewhereAt;
                 break;
+            case METLOC_COLRESS_STARTER:
+                text = COMPOUND_STRING("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\ngiven by Colress as a\nStarter Pokémon at {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
+                break;
             case METLOC_BOUGHT_BUG:
                 text = COMPOUND_STRING("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nbought from a Bug Catcher\nat {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
                 break;

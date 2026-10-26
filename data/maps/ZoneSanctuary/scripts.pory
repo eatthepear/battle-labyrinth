@@ -517,8 +517,20 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_GREEN_SHARD, 5)
 		case 10:
-			msgbox(format("Another {COLOR GREEN}starter Pokémon{COLOR DARK_GRAY}!"))
-			// give starter pokemon here
+			msgbox(format("Another {COLOR GREEN}Starter Pokémon{COLOR DARK_GRAY}!"))
+			if (flag(FLAG_SETTINGS_NUZLOCKE)) {
+				setflag(FLAG_IS_RECEIVING_STARTER_ZONE_10)
+				special(ChooseStarter)
+				clearflag(FLAG_IS_RECEIVING_STARTER_ZONE_10)
+			} else {
+				call(Sanctuary_EventScript_HandleStarterSelectionDefault)
+				givemon(VAR_TEMP_3, 5, metLocation=MAPSEC_SANCTUARY)
+				playfanfare(MUS_OBTAIN_ITEM)
+				setspeaker(SP_NAME_NONE)
+				message(format("{PLAYER} received the {STR_VAR_1}!"))
+				waitmessage
+				waitfanfare
+			}
 		case 11:
 			msgbox(format("{COLOR GREEN}TM94 - Defog{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
@@ -732,16 +744,54 @@ script Sanctuary_EventScript_GameIntro {
 	call(EventScript_GameIntro_Nuzlocke)
 	if (flag(FLAG_SETTINGS_NUZLOCKE)) {
 		setspeaker(SP_NAME_COLRESS)
-		msgbox(format("As a new challenger, you will receive a starter Pokémon.\p"
-		"On {COLOR GREEN}Nuzlocke{COLOR DARK_GRAY}, your choice is limited from the pool of possible starters to only three options.\p"
+		msgbox(format("As a new challenger, you will receive a Starter Pokémon.\p"
+		"On {COLOR GREEN}Nuzlocke{COLOR DARK_GRAY}, your choice is limited from the pool of possible Starter Pokémon to only three options.\p"
 		"Choose carefully as these Pokémon are very rare."))
 		special(ChooseStarter)
 	} else {
 		setspeaker(SP_NAME_COLRESS)
-		msgbox(format("As a new challenger, you will receive a starter Pokémon.\p"
-		"You may have your choice of any of the generation 1-9 starter Pokémon.\p"
+		msgbox(format("As a new challenger, you will receive a Starter Pokémon.\p"
+		"You may have your choice of any of the generation 1-9 Starter Pokémon.\p"
 		"Choose carefully as these Pokémon are very rare."))
 		call(Sanctuary_EventScript_HandleStarterSelectionDefault)
+		switch(var(VAR_TEMP_3)) {
+			case SPECIES_BULBASAUR:
+			case SPECIES_CHIKORITA:
+			case SPECIES_TREECKO:
+			case SPECIES_TURTWIG:
+			case SPECIES_SNIVY:
+			case SPECIES_CHESPIN:
+			case SPECIES_ROWLET:
+			case SPECIES_GROOKEY:
+			case SPECIES_SPRIGATITO:
+				setvar(VAR_STARTER_MON, 0)
+			case SPECIES_CHARMANDER:
+			case SPECIES_CYNDAQUIL:
+			case SPECIES_TORCHIC:
+			case SPECIES_CHIMCHAR:
+			case SPECIES_TEPIG:
+			case SPECIES_FENNEKIN:
+			case SPECIES_LITTEN:
+			case SPECIES_SCORBUNNY:
+			case SPECIES_FUECOCO:
+				setvar(VAR_STARTER_MON, 1)
+			case SPECIES_SQUIRTLE:
+			case SPECIES_TOTODILE:
+			case SPECIES_MUDKIP:
+			case SPECIES_PIPLUP:
+			case SPECIES_OSHAWOTT:
+			case SPECIES_FROAKIE:
+			case SPECIES_POPPLIO:
+			case SPECIES_SOBBLE:
+			case SPECIES_QUAXLY:
+				setvar(VAR_STARTER_MON, 2)
+		}
+		givemon(VAR_TEMP_3, 5, ITEM_NONE)
+		playfanfare(MUS_OBTAIN_ITEM)
+		setspeaker(SP_NAME_NONE)
+		message(format("{PLAYER} received the {STR_VAR_1}!"))
+		waitmessage
+		waitfanfare
 	}
 	bufferleadmonspeciesname(0)
 	setspeaker(SP_NAME_COLRESS)
@@ -769,7 +819,7 @@ script Sanctuary_EventScript_GameIntro {
 		additem(ITEM_POKE_BALL, 15)
 		additem(ITEM_NOTEBOOK)
 	}
-	setmonmetlocation(0, 255)
+	setmonmetlocation(0, METLOC_COLRESS_STARTER)
 	callnative(UpdateFollowingPokemon)
 	if (flag(FLAG_TEMP_1)) {
 		setspeaker(SP_NAME_COLRESS)
@@ -875,7 +925,7 @@ script EventScript_GameIntro_Nuzlocke {
 script Sanctuary_EventScript_HandleStarterSelectionDefault {
 	while {
 		setspeaker(SP_NAME_COLRESS)
-		message(format("Choose a starter Pokémon.\nPress {B_BUTTON} to randomize."))
+		message(format("Choose a Starter Pokémon.\nPress {B_BUTTON} to randomize."))
 		waitmessage
 		dynmultichoice(0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Bulbasaur", "Charmander", "Squirtle", "Chikorita", "Cyndaquil", "Totodile", "Treecko", "Torchic", "Mudkip", "Turtwig", "Chimchar", "Piplup", "Snivy", "Tepig", "Oshawott", "Chespin", "Fennekin", "Froakie", "Rowlet", "Litten", "Popplio", "Grookey", "Scorbunny", "Sobble", "Sprigatito", "Fuecoco", "Quaxly", "Random")
 		switch (var(VAR_RESULT)) {
@@ -1007,47 +1057,9 @@ script Sanctuary_EventScript_HandleStarterSelectionDefault {
 		playmoncry(VAR_TEMP_3, 0)
 		waitmoncry
 		setspeaker(SP_NAME_COLRESS)
-		msgbox(format("You want {STR_VAR_1} as your starter?"), MSGBOX_YESNO)
+		msgbox(format("You want {STR_VAR_1} as your Starter Pokémon?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
 			hidemonpic
-			switch(var(VAR_TEMP_3)) {
-				case SPECIES_BULBASAUR:
-				case SPECIES_CHIKORITA:
-				case SPECIES_TREECKO:
-				case SPECIES_TURTWIG:
-				case SPECIES_SNIVY:
-				case SPECIES_CHESPIN:
-				case SPECIES_ROWLET:
-				case SPECIES_GROOKEY:
-				case SPECIES_SPRIGATITO:
-					setvar(VAR_STARTER_MON, 0)
-				case SPECIES_CHARMANDER:
-				case SPECIES_CYNDAQUIL:
-				case SPECIES_TORCHIC:
-				case SPECIES_CHIMCHAR:
-				case SPECIES_TEPIG:
-				case SPECIES_FENNEKIN:
-				case SPECIES_LITTEN:
-				case SPECIES_SCORBUNNY:
-				case SPECIES_FUECOCO:
-					setvar(VAR_STARTER_MON, 1)
-				case SPECIES_SQUIRTLE:
-				case SPECIES_TOTODILE:
-				case SPECIES_MUDKIP:
-				case SPECIES_PIPLUP:
-				case SPECIES_OSHAWOTT:
-				case SPECIES_FROAKIE:
-				case SPECIES_POPPLIO:
-				case SPECIES_SOBBLE:
-				case SPECIES_QUAXLY:
-					setvar(VAR_STARTER_MON, 2)
-			}
-			givemon(VAR_TEMP_3, 5, ITEM_NONE)
-			playfanfare(MUS_OBTAIN_ITEM)
-			setspeaker(SP_NAME_NONE)
-			message(format("{PLAYER} received the {STR_VAR_1}!"))
-			waitmessage
-			waitfanfare
 			return
 		}
 		hidemonpic
