@@ -116,12 +116,7 @@
 #define VAR_ZONE_34_STATE_MAXIE                    0x4074
 #define VAR_ZONE_34_STATE_ARCHIE                    0x4075
 #define VAR_ZONE_34_STATE_CYRUS                    0x4076
-#define VAR_ZONE_35_STATE                    0x4087
-#define VAR_ZONE_B1_STATE                    0x4084
-#define VAR_ZONE_B2_STATE                    0x4085
-#define VAR_ZONE_B3_STATE                    0x4086
-#define VAR_ZONE_B4_STATE                    0x4087
-#define VAR_ZONE_B5_STATE                    0x4088
+#define VAR_ZONE_35_STATE                    0x4077
 
 // general purpose vars
 #define VAR_RECYCLE_GOODS                                VARS_END
