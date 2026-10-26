@@ -4831,7 +4831,7 @@ static const struct ItemChest sItemChestTable[] =
 u16 RandomItemChest(void)
 {
     u32 i;
-    u16 zoneIndex = gMapHeader.regionMapSectionId - MAPSEC_ZONE_0 - 1; // zone - 1
+    u16 zoneIndex = gMapHeader.regionMapSectionId - MAPSEC_SANCTUARY - 1; // zone - 1
     u32 rand = Random() % 100;
     u32 percentTotal = 0;
     u16 item = ITEM_NONE; // arbitrary item
@@ -4901,7 +4901,7 @@ static const struct ItemChest sRandomHiddenBerryTable[] =
 u16 RandomHiddenBerry(void)
 {
     u32 i;
-    u16 zoneIndex = gMapHeader.regionMapSectionId - MAPSEC_ZONE_0 - 1; // zone - 1
+    u16 zoneIndex = gMapHeader.regionMapSectionId - MAPSEC_SANCTUARY - 1; // zone - 1
     u32 rand = Random() % 100;
     u32 percentTotal = 0;
     u16 item = ITEM_NONE; // arbitrary item
@@ -4932,7 +4932,7 @@ static const struct ItemChest sRandomHiddenShardTable[] =
 u16 RandomHiddenShard(void)
 {
     u32 i;
-    u16 zoneIndex = gMapHeader.regionMapSectionId - MAPSEC_ZONE_0 - 1; // zone - 1
+    u16 zoneIndex = gMapHeader.regionMapSectionId - MAPSEC_SANCTUARY - 1; // zone - 1
     u32 rand = Random() % 100;
     u32 percentTotal = 0;
     u16 item = ITEM_NONE; // arbitrary item

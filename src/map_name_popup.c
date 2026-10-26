@@ -689,7 +689,7 @@ static void LoadMapNamePopUpWindowBg(void)
 
     if (OW_POPUP_GENERATION == GEN_5)
     {
-        popUpThemeId = sRegionMapSectionId_To_PopUpThemeIdMapping_BW[regionMapSectionId];
+        popUpThemeId = MAPPOPUP_THEME_BW_DEFAULT;
         switch (popUpThemeId)
         {
         // add additional gen 5-style pop-up themes as cases here

@@ -3,7 +3,7 @@
   "name": "ZoneS1B",
   "layout": "LAYOUT_ZONE_S1B",
   "music": "MUS_FORTREE",
-  "region_map_section": "MAPSEC_ZONE_S1",
+  "region_map_section": "MAPSEC_SANCTUARY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

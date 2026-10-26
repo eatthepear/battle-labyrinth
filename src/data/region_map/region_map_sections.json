@@ -782,6 +782,7 @@
     {
       "id": "MAPSEC_ROUTE_4_POKECENTER",
       "name": "ROUTE 4",
+      "name_clone": true,
       "x": 8,
       "y": 3,
       "width": 1,
@@ -790,6 +791,7 @@
     {
       "id": "MAPSEC_ROUTE_10_POKECENTER",
       "name": "ROUTE 10",
+      "name_clone": true,
       "x": 18,
       "y": 3,
       "width": 1,
@@ -1030,6 +1032,7 @@
     {
       "id": "MAPSEC_UNDERGROUND_PATH_2",
       "name": "UNDERGROUND PATH",
+      "name_clone": true,
       "x": 12,
       "y": 6,
       "width": 1,
@@ -1131,21 +1134,10 @@
       "width": 1,
       "height": 1
     },
+    
     {
-      "id": "MAPSEC_NAVEL_ROCK",
-      "name": "NAVEL ROCK"
-    },
-    {
-      "id": "MAPSEC_TRAINER_HILL",
-      "name": "TRAINER HILL",
-      "x": 8,
-      "y": 4,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_ZONE_0",
-      "name": "Zone 0"
+      "id": "MAPSEC_SANCTUARY",
+      "name": "Sanctuary"
     },
     {
       "id": "MAPSEC_ZONE_1",
@@ -1288,78 +1280,6 @@
       "name": "Zone 35"
     },
     {
-      "id": "MAPSEC_ZONE_36",
-      "name": "Zone 36"
-    },
-    {
-      "id": "MAPSEC_ZONE_37",
-      "name": "Zone 37"
-    },
-    {
-      "id": "MAPSEC_ZONE_38",
-      "name": "Zone 38"
-    },
-    {
-      "id": "MAPSEC_ZONE_39",
-      "name": "Zone 39"
-    },
-    {
-      "id": "MAPSEC_ZONE_40",
-      "name": "Zone 40"
-    },
-    {
-      "id": "MAPSEC_ZONE_41",
-      "name": "Zone 41"
-    },
-    {
-      "id": "MAPSEC_ZONE_42",
-      "name": "Zone 42"
-    },
-    {
-      "id": "MAPSEC_ZONE_43",
-      "name": "Zone 43"
-    },
-    {
-      "id": "MAPSEC_ZONE_44",
-      "name": "Zone 44"
-    },
-    {
-      "id": "MAPSEC_ZONE_45",
-      "name": "Zone 45"
-    },
-    {
-      "id": "MAPSEC_ZONE_46",
-      "name": "Zone 46"
-    },
-    {
-      "id": "MAPSEC_ZONE_47",
-      "name": "Zone 47"
-    },
-    {
-      "id": "MAPSEC_ZONE_48",
-      "name": "Zone 48"
-    },
-    {
-      "id": "MAPSEC_ZONE_49",
-      "name": "Zone 49"
-    },
-    {
-      "id": "MAPSEC_ZONE_50",
-      "name": "Zone 50"
-    },
-    {
-      "id": "MAPSEC_SANCTUARY",
-      "name": "Sanctuary"
-    },
-    {
-      "id": "MAPSEC_ZONE_S1",
-      "name": "Zone S1"
-    },
-    {
-      "id": "MAPSEC_ZONE_B1",
-      "name": "Zone B1"
-    },
-    {
       "id": "MAPSEC_QUIET_FIELD",
       "name": "Quiet Field"
     },
@@ -1386,6 +1306,114 @@
     {
       "id": "MAPSEC_HEATED_CAVITY",
       "name": "Heated Cavity"
+    },
+    {
+      "id": "MAPSEC_WEEPTH_CHAMBER",
+      "name": "WEEPTH CHAMBER",
+      "x": 9,
+      "y": 12,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_DILFORD_CHAMBER",
+      "name": "DILFORD CHAMBER",
+      "x": 9,
+      "y": 12,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SCUFIB_CHAMBER",
+      "name": "SCUFIB CHAMBER",
+      "x": 9,
+      "y": 12,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_RIXY_CHAMBER",
+      "name": "RIXY CHAMBER",
+      "x": 9,
+      "y": 12,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_VIAPOIS_CHAMBER",
+      "name": "VIAPOIS CHAMBER",
+      "x": 9,
+      "y": 12,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_EMBER_SPA",
+      "name": "EMBER SPA"
+    },
+    {
+      "id": "MAPSEC_SPECIAL_AREA",
+      "name": "SPECIAL AREA"
+    },
+    {
+      "id": "MAPSEC_AQUA_HIDEOUT",
+      "name": "AQUA HIDEOUT",
+      "x": 19,
+      "y": 3,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_MAGMA_HIDEOUT",
+      "name": "MAGMA HIDEOUT",
+      "x": 6,
+      "y": 3,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_MIRAGE_TOWER",
+      "name": "MIRAGE TOWER",
+      "x": 8,
+      "y": 2,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_BIRTH_ISLAND",
+      "name": "BIRTH ISLAND"
+    },
+    {
+      "id": "MAPSEC_FARAWAY_ISLAND",
+      "name": "FARAWAY ISLAND"
+    },
+    {
+      "id": "MAPSEC_ARTISAN_CAVE",
+      "name": "ARTISAN CAVE",
+      "x": 22,
+      "y": 12,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_MARINE_CAVE",
+      "name": "MARINE CAVE"
+    },
+    {
+      "id": "MAPSEC_UNDERWATER_MARINE_CAVE",
+      "name": "UNDERWATER"
+    },
+    {
+      "id": "MAPSEC_TERRA_CAVE",
+      "name": "TERRA CAVE"
+    },
+    {
+      "id": "MAPSEC_UNDERWATER_105",
+      "name": "UNDERWATER",
+      "x": 0,
+      "y": 10,
+      "width": 1,
+      "height": 3
     },
     {
       "id": "MAPSEC_UNDERWATER_125",
@@ -1416,6 +1444,18 @@
       "name": "ALTERING CAVE",
       "x": 6,
       "y": 8,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_NAVEL_ROCK",
+      "name": "NAVEL ROCK"
+    },
+    {
+      "id": "MAPSEC_TRAINER_HILL",
+      "name": "TRAINER HILL",
+      "x": 8,
+      "y": 4,
       "width": 1,
       "height": 1
     }
