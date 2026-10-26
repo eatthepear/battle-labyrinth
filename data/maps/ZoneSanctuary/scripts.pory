@@ -376,6 +376,9 @@ script EventScript_NextZone {
 		case 21:
 			warp(MAP_ZONE21A, 255, 16, 93)
 		case 22:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				setflag(FLAG_HIDE_ZONE22A_MAX)
+			}
 			warp(MAP_ZONE22A, 255, 9, 50)
 		case 23:
 			warp(MAP_ZONE23A, 255, 8, 2)
@@ -653,19 +656,32 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Mt. Virtus{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Virtus Cave{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 18:
+			setflag(FLAG_HIDE_ZONE18A_MAX)
 			setvar(VAR_ZONE, 20)
 		case 20:
 			setvar(VAR_ZONE, 21)
+			playfanfare(MUS_OBTAIN_ITEM)
+			setspeaker(SP_NAME_COLRESS)
+			msgbox(Sanctuary_Text_Colress_Upgraded)
+			waitfanfare
+			setvar(VAR_FARM_STOCK, 10)
 		case 21:
 			setvar(VAR_ZONE, 22)
 		case 22:
+			setflag(FLAG_HIDE_ZONE22A_MAX)
 			setvar(VAR_ZONE, 23)
 		case 23:
 			setvar(VAR_ZONE, 24)
 			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Mt. Virtus{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Virtus Cave{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 24:
+			setflag(FLAG_HIDE_ZONE24A_MAX)
 			setvar(VAR_ZONE, 26)
+			playfanfare(MUS_OBTAIN_ITEM)
+			setspeaker(SP_NAME_COLRESS)
+			msgbox(Sanctuary_Text_Colress_Upgraded)
+			waitfanfare
+			setvar(VAR_FARM_STOCK, 10)
 		case 26:
 			setvar(VAR_ZONE, 27)
 		case 27:
@@ -676,6 +692,11 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setvar(VAR_ZONE, 30)
 		case 30:
 			setvar(VAR_ZONE, 31)
+			playfanfare(MUS_OBTAIN_ITEM)
+			setspeaker(SP_NAME_COLRESS)
+			msgbox(Sanctuary_Text_Colress_Upgraded)
+			waitfanfare
+			setvar(VAR_FARM_STOCK, 10)
 		case 31:
 		case 32:
 			setvar(VAR_ZONE, 33)
