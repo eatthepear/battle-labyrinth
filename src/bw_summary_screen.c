@@ -4017,35 +4017,20 @@ static void BufferMonTrainerMemo(void)
             case METLOC_FATEFUL_ENCOUNTER:
                 text = gText_XNatureMetSomewhereAt;
                 break;
-            case METLOC_DAYCARE_GIVEAWAY:
-                text = gText_XNatureGivenAt;
-                break;
             case METLOC_BOUGHT_BUG:
-                text = gText_XNatureBoughtBug;
+                text = COMPOUND_STRING("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nbought from a Bug Catcher\nat {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
                 break;
             case METLOC_BOUGHT_PIKA_CLONE:
-                text = gText_XNatureBoughtPikaClone;
-                break;
-            case METLOC_BOUGHT_FARM:
-                text = gText_XNatureBoughtFarm;
-                break;
-            case METLOC_ZONE10B_GIFT:
-                text = gText_XNatureDragonTamer;
+                text = COMPOUND_STRING("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nbought from a man\nat {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
                 break;
             case METLOC_REVIVED_FOSSIL:
-                text = gText_XNatureRevived;
-                break;
-            case METLOC_BOUGHT_RUIN:
-                text = gText_XNatureBoughtRuin;
+                text = COMPOUND_STRING("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nrevived from a fossil\nat {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
                 break;
             case METLOC_GIVE_FWG:
-                text = gText_XNatureFWG;
+                text = COMPOUND_STRING("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\ngiven by a boy\nat {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
                 break;
             case METLOC_ZONE9E_GIFT:
                 text = COMPOUND_STRING("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nreceived from a Battle Girl\nat {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
-                break;
-            case METLOC_ZONE4A_GIFT:
-                text = gText_XNatureScientist;
                 break;
             default:
                 text = gText_XNatureMetAtYZ;

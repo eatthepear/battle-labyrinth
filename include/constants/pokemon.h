@@ -157,17 +157,17 @@ enum __attribute__((packed)) Stat
 
 // PBL. These are placed here instead of region_map_sections.constants.json.txt so they can be referenced from scripts
 #define METLOC_ZONE6A_KIMONO_GIRL_EGG 0xF1
-#define METLOC_ZONE4A_GIFT         0xF2
+// #define METLOC_ZONE4A_GIFT         0xF2
 #define METLOC_ZONE9E_GIFT         0xF3
 // #define METLOC_MARIE_EGG           0xF4
 #define METLOC_GIVE_FWG            0xF5
-#define METLOC_BOUGHT_RUIN         0xF6
+// #define METLOC_BOUGHT_RUIN         0xF6
 #define METLOC_REVIVED_FOSSIL      0xF7
-#define METLOC_ZONE10B_GIFT        0xF8
-#define METLOC_BOUGHT_FARM         0xF9
+// #define METLOC_ZONE10B_GIFT        0xF8
+// #define METLOC_BOUGHT_FARM         0xF9
 #define METLOC_BOUGHT_PIKA_CLONE   0xFA
 #define METLOC_BOUGHT_BUG          0xFB
-#define METLOC_DAYCARE_GIVEAWAY    0xFC
+// #define METLOC_DAYCARE_GIVEAWAY    0xFC
 
 #define MIN_LEVEL 1
 #define MAX_LEVEL 100
