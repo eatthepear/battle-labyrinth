@@ -15,6 +15,14 @@ script Zone30_EventScript_RocketGrunt_Guard {
 	end
 }
 
+script Zone30_EventScript_RocketGrunt_Block {
+    lock
+	setspeaker("Grunt")
+	msgbox(format("BLOCK!"))
+	release
+	end
+}
+
 script Zone34_EventScript_RocketGrunt_1 {
 	trainerbattle_single(TRAINER_PBL_ROCKET_GRUNT_34_1, format("BATTLE!"), format("DEFEAT!"))
 	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)

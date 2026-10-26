@@ -49,6 +49,13 @@
       "elevation": 0,
       "dest_map": "MAP_ZONE34F",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE34J",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
