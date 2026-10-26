@@ -9,7 +9,18 @@ mapscripts Zone34N_MapScripts {
 
 script Zone34N_EventScript_Door {
     lockall
-    msgbox(format("You feel a foreboding evil beyond this door.\pGo through the door?"), MSGBOX_YESNO)
+    if (var(VAR_ZONE_34_STATE_CYRUS) < 2) {
+		msgbox(format("The door is locked.\pThere's a slot for some sort of key card…"))
+        releaseall
+        end
+	}
+    if (checkitem(ITEM_SECRET_KEY) == TRUE) {
+        msgbox(format("{PLAYER} used the Rainbow Rocket Key.\pThe door unlocked!"))
+        removeitem(ITEM_SECRET_KEY)
+        releaseall
+        end
+    }
+    msgbox(format("You feel a powerful psychic presence beyond this door.\pGo through the door?"), MSGBOX_YESNO)
     if (var(VAR_RESULT) == NO) {
         releaseall
         end

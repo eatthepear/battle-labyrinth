@@ -9,6 +9,19 @@ mapscripts Zone34A_MapScripts {
 
 script Zone34A_EventScript_Door {
     lockall
+	if ((var(VAR_ZONE_34_STATE_MAXIE) < 2) && (var(VAR_ZONE_34_STATE_ARCHIE) < 2)) {
+		msgbox(format("The door is locked.\pThere are two blinking icons on the door.\pOne is blue, and one is red."))
+        releaseall
+        end
+	} elif (var(VAR_ZONE_34_STATE_MAXIE) < 2) {
+		msgbox(format("The door is locked.\pThere is one blinking icon on the door, it is red."))
+        releaseall
+        end
+	} elif (var(VAR_ZONE_34_STATE_ARCHIE) < 2) {
+		msgbox(format("The door is locked.\pThere is one blinking icon on the door, it is blue."))
+        releaseall
+        end
+	}
     msgbox(format("The door is unlocked.\pGo through the door?"), MSGBOX_YESNO)
     if (var(VAR_RESULT) == NO) {
         releaseall
