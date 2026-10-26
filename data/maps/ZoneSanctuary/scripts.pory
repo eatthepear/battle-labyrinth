@@ -699,6 +699,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setvar(VAR_FARM_STOCK, 10)
 		case 31:
 		case 32:
+			setflag(FLAG_HIDE_ZONE31B_MAX)
 			setvar(VAR_ZONE, 33)
 		case 33:
 		case 34:
