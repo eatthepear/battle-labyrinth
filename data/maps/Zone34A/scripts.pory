@@ -7,6 +7,20 @@ mapscripts Zone34A_MapScripts {
     }
 }
 
+script Zone34A_EventScript_Door {
+    lockall
+    msgbox(format("The door is unlocked.\pGo through the door?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        releaseall
+        end
+    }
+    closemessage
+    warp(MAP_ZONE34N, 1)
+    waitstate
+    releaseall
+    end
+}
+
 script Zone30_EventScript_RocketGrunt_Guard {
     lock
 	setspeaker("Grunt")

@@ -56,8 +56,24 @@
       "elevation": 0,
       "dest_map": "MAP_ZONE34J",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE34A",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone34A_EventScript_Door"
+    }
+  ]
 }
