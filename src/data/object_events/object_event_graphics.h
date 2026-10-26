@@ -593,6 +593,8 @@ const u32 gObjectEventPic_Shelly[] = INCGFX_U32("graphics/object_events/pics/peo
 const u16 gObjectEventPal_Shelly[] = INCGFX_U16("graphics/object_events/pics/people/shelly.png", ".gbapal");
 const u32 gObjectEventPic_Tabitha[] = INCGFX_U32("graphics/object_events/pics/people/tabitha.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPal_Tabitha[] = INCGFX_U16("graphics/object_events/pics/people/tabitha.png", ".gbapal");
+const u32 gObjectEventPic_Cynthia[] = INCGFX_U32("graphics/object_events/pics/people/cynthia.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_Cynthia[] = INCGFX_U16("graphics/object_events/pics/people/cynthia.png", ".gbapal");
 
 const u32 gFieldEffectObjectPic_SnowFootprints[] = INCGFX_U32("graphics/field_effects/pics/snow_footprints.png", ".4bpp");
 #if IS_FRLG
