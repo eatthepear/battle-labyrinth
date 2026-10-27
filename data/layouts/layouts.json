@@ -5814,8 +5814,8 @@
       "name": "ZoneSanctuary_WhisperCave_Layout",
       "width": 24,
       "height": 24,
-      "primary_tileset": "gTileset_Common",
-      "secondary_tileset": "gTileset_Cavern",
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/ZoneSanctuary_WhisperCave/border.bin",
       "blockdata_filepath": "data/layouts/ZoneSanctuary_WhisperCave/map.bin",
       "layout_version": "emerald"
