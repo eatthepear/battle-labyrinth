@@ -5790,7 +5790,7 @@
     {
       "id": "LAYOUT_ZONE_SANCTUARY_PEACEFUL_GROVE",
       "name": "ZoneSanctuary_PeacefulGrove_Layout",
-      "width": 30,
+      "width": 39,
       "height": 28,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_Sanctuary",

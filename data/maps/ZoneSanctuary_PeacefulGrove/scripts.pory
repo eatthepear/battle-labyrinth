@@ -6,3 +6,38 @@ script ZoneSanctuary_PeacefulGrove_EventScript_Pokemaniac {
 	msgbox(format("You're telling me I can't grind items or money? What's the point then?\pI guess I could switch to {COLOR GREEN}Easy{COLOR DARK_GRAY} difficulty…"))
 	release
 }
+
+script ZoneSanctuary_PeacefulGrove_EventScript_Cyclist {
+	lock
+	faceplayer
+	msgbox(format("The cycling life is for everyone, forever! Don't you dare get off your bike!"))
+	release
+	end
+}
+
+script ZoneSanctuary_PeacefulGrove_EventScript_BikeCheck {
+	lockall
+	specialvar(VAR_RESULT, GetPlayerAvatarBike)
+	if (var(VAR_RESULT) == 0) {
+		applymovement(LOCALID_CYCLIST, Common_Movement_FaceLeft)
+		waitmovement(0)
+		msgbox(format("Hey, you're not on a Bike!\pOnly those who have a bike are cool enough to pass!"))
+		closemessage
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement(0)
+		releaseall
+		end
+	}
+	setflag(FLAG_SYS_CYCLING_ROAD)
+	setvar(VAR_TEMP_1, 1)
+	releaseall
+	end
+}
+
+script ZoneSanctuary_PeacefulGrove_EventScript_ClearCyclingFlag {
+	lockall
+	clearflag(FLAG_SYS_CYCLING_ROAD)
+	setvar(VAR_TEMP_1, 0)
+	releaseall
+	end
+}
