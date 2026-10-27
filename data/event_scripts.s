@@ -2058,3 +2058,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Zone34M/scripts.inc"
 
 	.include "data/maps/Zone34O/scripts.inc"
+
+	.include "data/maps/PartnerGrove/scripts.inc"

@@ -11030,6 +11030,16 @@
       "secondary_tileset": "gTileset_RocketCastle",
       "border_filepath": "data/layouts/Zone34O/border.bin",
       "blockdata_filepath": "data/layouts/Zone34O/map.bin"
+    },
+    {
+      "id": "LAYOUT_PARTNER_GROVE",
+      "name": "PartnerGrove_Layout",
+      "width": 24,
+      "height": 21,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Sanctuary",
+      "border_filepath": "data/layouts/PartnerGrove/border.bin",
+      "blockdata_filepath": "data/layouts/PartnerGrove/map.bin"
     }
   ]
 }

@@ -127,7 +127,8 @@
     "BorealThicket",
     "HeatedCavity",
     "HiddenGrotto_QuietField",
-    "HiddenGrotto_Zone3A"
+    "HiddenGrotto_Zone3A",
+    "PartnerGrove"
   ],
   "gMapGroup_ZonesMinor": [
     "Zone4B",
