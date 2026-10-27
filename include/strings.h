@@ -2153,11 +2153,6 @@ extern const u8 gText_MapZone33[];
 extern const u8 gText_MapZone34[];
 extern const u8 gText_MapZone35[];
 
-extern const u8 gText_MapZone2Short[];
-extern const u8 gText_MapZone5Short[];
-extern const u8 gText_MapZone6Short[];
-extern const u8 gText_MapZone7Short[];
-
 // Switch Caught Mon into Party
 extern const u8 gText_CannotSendMonToBoxHM[];
 extern const u8 gText_CannotSendMonToBoxActive[];

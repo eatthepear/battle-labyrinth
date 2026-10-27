@@ -119,12 +119,11 @@ script EventScript_OldMan_PriorZone {
 		release
 		end
 	}
-	showmoneybox(18, 0)
 	message(format("Looking to access a prior Zone?\nIt will cost you ¥1000."))
 	waitmessage
 	setvar(VAR_TEMP_0, 1)
 	while (var(VAR_TEMP_0) != VAR_ZONE) {
-		call(EventScript_BufferZoneNameShort)
+		call(EventScript_BufferZoneName)
 		dynmultipush("{STR_VAR_1}", VAR_TEMP_0)
 		addvar(VAR_TEMP_0, 1)
 	}
@@ -133,12 +132,12 @@ script EventScript_OldMan_PriorZone {
 	switch (var(VAR_RESULT)) {
 		case 0:
 		case MULTI_B_PRESSED:
-			hidemoneybox
 			release
 			end
 		default:
 			copyvar(VAR_TEMP_0, VAR_RESULT)
 	}
+	showmoneybox(18, 0)
 	call(EventScript_BufferZoneName)
 	msgbox(format("Are you sure you want to go to {STR_VAR_1}?\lIt will cost you ¥1000."), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {

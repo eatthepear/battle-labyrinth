@@ -1449,7 +1449,7 @@ script Debug_CheatStart_PBL_SelectZone {
 	waitmessage
 	setvar(VAR_TEMP_0, 1)
 	while (var(VAR_TEMP_0) != 36) {
-		call(EventScript_BufferZoneNameShort)
+		call(EventScript_BufferZoneName)
 		dynmultipush("{STR_VAR_1}", VAR_TEMP_0)
 		addvar(VAR_TEMP_0, 1)
 	}
@@ -2537,21 +2537,6 @@ script EventScript_BufferZoneName {
 			bufferstring(0, gText_MapZone34)
 		case 35:
 			bufferstring(0, gText_MapZone35)
-	}
-}
-
-script EventScript_BufferZoneNameShort {
-	switch (var(VAR_TEMP_0)) {
-		// case 2:
-		// 	bufferstring(0, gText_MapZone2Short)
-		// case 5:
-		// 	bufferstring(0, gText_MapZone5Short)
-		// case 6:
-		// 	bufferstring(0, gText_MapZone6Short)
-		// case 7:
-		// 	bufferstring(0, gText_MapZone7Short)
-		default:
-			call(EventScript_BufferZoneName)
 	}
 }
 

@@ -1168,7 +1168,3 @@ const u8 gText_MapZone32[] = _("Zone 32: Victory Cavern");
 const u8 gText_MapZone33[] = _("Zone 33: Virtual Space");
 const u8 gText_MapZone34[] = _("Zone 34: Rainbow Rocket Castle");
 const u8 gText_MapZone35[] = _("Zone 35: Pokémon League");
-const u8 gText_MapZone2Short[] = _("Zone 2 GoldenOakRanch");
-const u8 gText_MapZone5Short[] = _("Zone 5 MossdeepPath");
-const u8 gText_MapZone6Short[] = _("Zone 6 SeabreezIsland");
-const u8 gText_MapZone7Short[] = _("Zone 7 GeminiHeights");
