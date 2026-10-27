@@ -49,6 +49,9 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_HIDDEN_GROTTO] = 0x28,
     [MAPSEC_HEATED_CAVITY] = 0x29,
     [MAPSEC_BOREAL_THICKET] = 0x2A,
+    [MAPSEC_PARTNER_GROVE] = 0x2B,
+    [MAPSEC_PARTNER_ISLAND] = 0x2C,
+    [MAPSEC_PARTNER_CANYON] = 0x2D,
 };
 
 u8 NuzlockeFlagSet(u16 mapsec)
