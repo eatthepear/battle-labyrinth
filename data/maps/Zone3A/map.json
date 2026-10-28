@@ -30,8 +30,8 @@
     {
       "local_id": "LOCALID_GRANT",
       "graphics_id": "OBJ_EVENT_GFX_GRANT",
-      "x": 29,
-      "y": 2,
+      "x": 30,
+      "y": 1,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -95,8 +95,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_2",
-      "x": 12,
-      "y": 12,
+      "x": 3,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -186,8 +186,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 26,
-      "y": 3,
+      "x": 13,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -199,8 +199,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 25,
-      "y": 4,
+      "x": 14,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -212,8 +212,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
-      "x": 24,
-      "y": 2,
+      "x": 15,
+      "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -225,7 +225,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_2",
-      "x": 28,
+      "x": 29,
       "y": 5,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -238,8 +238,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(AMAURA)",
-      "x": 30,
-      "y": 2,
+      "x": 31,
+      "y": 1,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -264,7 +264,7 @@
     {
       "type": "hidden_item",
       "x": 32,
-      "y": 4,
+      "y": 7,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ZONE3_2"
