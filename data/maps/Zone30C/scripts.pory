@@ -1,4 +1,22 @@
-mapscripts Zone30C_MapScripts {}
+mapscripts Zone30C_MapScripts {
+	MAP_SCRIPT_ON_LOAD {
+		if (flag(FLAG_ZONE_30C_DOOR_1) == FALSE) {
+			setmetatile(5, 8, METATILE_RocketCo_HorizontalBarrier_TopLeft, 1)
+			setmetatile(6, 8, METATILE_RocketCo_HorizontalBarrier_TopRight, 1)
+			setmetatile(5, 9, METATILE_RocketCo_HorizontalBarrier_BottomLeft, 1)
+			setmetatile(6, 9, METATILE_RocketCo_HorizontalBarrier_BottomRight, 1)
+			setmetatile(6, 10, METATILE_RocketCo_Floor_ShadeFull, 0)
+		}
+		if (flag(FLAG_ZONE_30C_DOOR_2) == FALSE) {
+			setmetatile(28, 4, METATILE_RocketCo_VerticalBarrier_TopLeft, 1)
+			setmetatile(29, 4, METATILE_RocketCo_VerticalBarrier_TopRight, 1)
+			setmetatile(28, 5, METATILE_RocketCo_VerticalBarrier_MidLeft, 1)
+			setmetatile(29, 5, METATILE_RocketCo_VerticalBarrier_MidRight, 1)
+			setmetatile(28, 6, METATILE_RocketCo_VerticalBarrier_BottomLeft, 1)
+			setmetatile(29, 6, METATILE_RocketCo_VerticalBarrier_BottomRight, 1)
+		}
+	}
+}
 
 script Zone30C_EventScript_Tabitha {
     lock
@@ -32,4 +50,49 @@ script Zone30C_EventScript_TagBattle {
     setvar(VAR_ZONE_30_STATE, 3)
     releaseall
     end
+}
+
+script Zone30C_EventScript_Door1 {
+	lockall
+	setvar(VAR_TEMP_1, 1) // 1 = lobby, 2 = magma, 3 = aqua, 4 = galactic, 5 = rocket top floor
+	setvar(VAR_0x8004, FLAG_ZONE_30C_DOOR_1)
+    if (flag(FLAG_ZONE_30C_DOOR_1)) {
+        goto(Zone30_EventScript_DoorUnlocked)
+    }
+    call(Zone30_EventScript_CheckCanOpenDoor)
+	setmetatile(5, 8, METATILE_RocketCo_Floor_ShadeFull, 0)
+	setmetatile(6, 8, METATILE_RocketCo_Floor, 0)
+	setmetatile(5, 9, METATILE_RocketCo_Floor_ShadeFull, 0)
+	setmetatile(6, 9, METATILE_RocketCo_Floor, 0)
+	setmetatile(6, 10, METATILE_RocketCo_Floor, 0)
+	waitse
+	playse(SE_UNLOCK)
+	special(DrawWholeMapView)
+	waitse
+	special(SetHiddenItemFlag)
+	releaseall
+	end
+}
+
+script Zone30C_EventScript_Door2 {
+	lockall
+	setvar(VAR_TEMP_1, 1) // 1 = lobby, 2 = magma, 3 = aqua, 4 = galactic, 5 = rocket top floor
+	setvar(VAR_0x8004, FLAG_ZONE_30C_DOOR_2)
+    if (flag(FLAG_ZONE_30C_DOOR_2)) {
+        goto(Zone30_EventScript_DoorUnlocked)
+    }
+    call(Zone30_EventScript_CheckCanOpenDoor)
+	setmetatile(28, 4, METATILE_RocketCo_Wall_LeftEdge, 1)
+	setmetatile(29, 4, METATILE_RocketCo_Wall_RightEdge, 1)
+	setmetatile(28, 5, METATILE_RocketCo_Floor_ShadeFull, 0)
+	setmetatile(29, 5, METATILE_RocketCo_Floor_ShadeFull, 0)
+	setmetatile(28, 6, METATILE_RocketCo_Floor_WallLeftCorner, 0)
+	setmetatile(29, 6, METATILE_RocketCo_Floor_WallRightCorner, 0)
+	waitse
+	playse(SE_UNLOCK)
+	special(DrawWholeMapView)
+	waitse
+	special(SetHiddenItemFlag)
+	releaseall
+	end
 }

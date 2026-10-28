@@ -68,10 +68,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_COURTNEY",
-      "x": 7,
-      "y": 12,
+      "x": 6,
+      "y": 13,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -82,9 +82,9 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TABITHA",
       "x": 5,
-      "y": 12,
+      "y": 13,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -116,7 +116,7 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 37,
+      "x": 39,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_ZONE30B",
@@ -126,13 +126,105 @@
   "coord_events": [
     {
       "type": "trigger",
+      "x": 4,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_ZONE_30_STATE",
+      "var_value": "2",
+      "script": "Zone30C_EventScript_TagBattle"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_ZONE_30_STATE",
+      "var_value": "2",
+      "script": "Zone30C_EventScript_TagBattle"
+    },
+    {
+      "type": "trigger",
       "x": 6,
-      "y": 14,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_ZONE_30_STATE",
+      "var_value": "2",
+      "script": "Zone30C_EventScript_TagBattle"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 16,
       "elevation": 0,
       "var": "VAR_ZONE_30_STATE",
       "var_value": "2",
       "script": "Zone30C_EventScript_TagBattle"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone30C_EventScript_Door1"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone30C_EventScript_Door1"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone30C_EventScript_Door1"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone30C_EventScript_Door1"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone30C_EventScript_Door2"
+    },
+    {
+      "type": "sign",
+      "x": 29,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone30C_EventScript_Door2"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone30C_EventScript_Door2"
+    },
+    {
+      "type": "sign",
+      "x": 29,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone30C_EventScript_Door2"
+    }
+  ]
 }
