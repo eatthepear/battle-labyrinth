@@ -10475,10 +10475,10 @@
     {
       "id": "LAYOUT_ZONE35A",
       "name": "Zone35A_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_EliteFour",
+      "width": 19,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/Zone35A/border.bin",
       "blockdata_filepath": "data/layouts/Zone35A/map.bin"
     },
