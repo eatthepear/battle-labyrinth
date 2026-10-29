@@ -550,16 +550,39 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 27:
 			msgbox(format("Ultra Balls!"))
 		case 29:
-			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 29 - Kimono Theater{COLOR DARK_GRAY} is…"))
 			msgbox(format("The {COLOR GREEN}Amulet Coin{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_AMULET_COIN)
 		case 30:
-			msgbox(format("Ultra Balls!"))
+			msgbox(format("The {COLOR GREEN}Pokévial{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_POKEVIAL)
+			// TODO: helpwindow
 		case 31:
-			msgbox(format("Ultra Balls!"))
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 31 - Victory Road{COLOR DARK_GRAY} is…"))
+			msgbox(format("{COLOR GREEN}5 Max Revives{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_MAX_REVIVE, 5)
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 32 - Victory Cavern{COLOR DARK_GRAY} is…"))
+			msgbox(format("The {COLOR GREEN}Leftovers{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_LEFTOVERS)
 		case 33:
-			msgbox(format("Ultra Balls!"))
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 33 - Virtual Space{COLOR DARK_GRAY} is…"))
+			msgbox(format("A {COLOR GREEN}Gold Bottle Cap{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_GOLD_BOTTLE_CAP)
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 34 - Rainbow Rocket Co.{COLOR DARK_GRAY} is…"))
+			msgbox(format("An upgraded {COLOR GREEN}Pokévial{COLOR DARK_GRAY}!"))
+			playfanfare(MUS_OBTAIN_ITEM)
+			setspeaker(SP_NAME_NONE)
+			message(format("{PLAYER}'s {COLOR GREEN}Pokévial{COLOR DARK_GRAY} was upgraded to hold 5 doses!"))
+			waitmessage
+			waitfanfare
+			pokevialincreasesize
+			pokevialincreasesize
+			pokevialincreasesize
+			pokevialincreasesize
 		case 35:
 			msgbox(format("Ultra Balls!"))
 	}
