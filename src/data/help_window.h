@@ -404,9 +404,8 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_SIGN_FIELD_MOVES] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Field Moves"),
-        .desc = COMPOUND_STRING("In addition to HMs, a number of other moves\n"
-                                "have been made into field moves.\n"
-                                "These custom field moves cost PP.\n\n"
+        .desc = COMPOUND_STRING("A number of moves have been made\n"
+                                "into field moves, and cost PP.\n\n"
                                 "Aromatherapy, Heal Bell, and Refresh\n"
                                 "cure status.\n"
                                 "Sweet Scent is used to start a wild\n"

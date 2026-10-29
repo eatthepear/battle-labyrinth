@@ -942,7 +942,7 @@ script EventScript_Notebook_Pokemon {
 					call(EventScript_Notebook_Abilities)
 				}
 			case 2:
-				msgbox(format("Many Pokémon have evolution methods that are another option from their default or directly replace the default.\pThis includes Day/Night evolutions, Friendship evolutions, gender based evolutions, weak Pokémon evolutions, and hard to achieve evolutions.\pYou can see how to evolve a Pokémon in the Pokédex."))
+				msgbox(format("Many Pokémon have evolution methods that are another option from their default or directly replace the default.\pThis includes Friendship evolutions, gender based evolutions, weak Pokémon evolutions, and hard to achieve evolutions.\pYou can see how to evolve a Pokémon in the Pokédex."))
 				msgbox(format("The next page notes Pokémon with major evolution changes. Would you like to read it?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == YES) {
 					call(EventScript_Notebook_Evolutions)
@@ -1168,7 +1168,7 @@ script EventScript_Notebook_Battle {
 				if (var(VAR_RESULT) == YES) {
 					helpwindow(HELP_CHANGES_ACCURACY_EXCEPTIONS)
 				}
-			case 4:
+			case 3:
 				helpwindow(HELP_CHANGES_ABILITIES)
 			case 7:
 				msgbox(format("Pay Day does not earn money during wild battles, except on Easy difficulty."))
@@ -1183,7 +1183,7 @@ script EventScript_Notebook_Items {
 	while {
 		message(format("Item Changes open.\nAnything not listed is vanilla."))
 		waitmessage
-		dynmultipush("Endless Rare Candy", ITEM_RARE_CANDY)
+		dynmultipush("Endless Rare Candy", ITEM_ENDLESS_CANDY)
 		dynmultipush("Endless Repel", ITEM_ENDLESS_REPEL)
 		dynmultipush("Hex Orb", ITEM_HEXORB)
 		dynmultipush("TMs", ITEM_TM_RETURN)
