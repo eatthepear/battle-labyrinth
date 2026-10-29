@@ -1346,7 +1346,12 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsWindowFrameType  = sOptions->sel_general[MENUITEM_GENERAL_FRAMETYPE];
 
     SetCurrentDifficultyLevel(sOptions->sel_difficulty[MENUITEM_DIFFICULTY_DIFFICULTY]);
-    if (!(sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NUZLOCKE])) // can't enable Nuzlocke from here, must have set at beginning of game
+    if (sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NUZLOCKE])
+    {
+        if (DISABLED_ON_RELEASE) // can only enable Nuzlocke from here when it's non-release version, otherwise you must have set at beginning of game
+            FlagSet(FLAG_SETTINGS_NUZLOCKE);
+    }
+    else
         FlagClear(FLAG_SETTINGS_NUZLOCKE);
     VarSet(VAR_PUZZLE_DIFFICULTY, sOptions->sel_difficulty[MENUITEM_DIFFICULTY_PUZZLES]);
 

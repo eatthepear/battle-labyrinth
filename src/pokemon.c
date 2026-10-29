@@ -3486,7 +3486,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                             itemEffectParam++;
                             break;
                         }
-                        if (FlagGet(FLAG_SETTINGS_NUZLOCKE) && (ENABLED_ON_RELEASE || item == ITEM_MAX_REVIVE))
+                        if (FlagGet(FLAG_SETTINGS_NUZLOCKE) && (ENABLED_ON_RELEASE))
                         {
                             itemEffectParam++;
                             break;
