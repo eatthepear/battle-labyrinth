@@ -238,10 +238,6 @@ script EventScript_NextZone {
 			case 20:
 			case 25:
 			case 30:
-			case 35:
-			case 40:
-			case 45:
-			case 50:
 				setspeaker(SP_NAME_COLRESS)
 				msgbox(format("You still have items to purchase at the Farmer's Stand, which is about to restock. Proceed anyways?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == NO) {
@@ -401,7 +397,7 @@ script EventScript_NextZone {
 		case 33:
 			warp(MAP_ZONE33A, 255, 0, 8)
 		case 35:
-			warp(MAP_ZONE35B, 1)
+			warp(MAP_ZONE35A, 255, 10, 10)
 	}
 	waitstate
 	end
@@ -1732,7 +1728,9 @@ mart Shop_Filler {
 script EventScript_Shop_MartEmployee {
 	lock
 	faceplayer
-	playbgm(MUS_POKE_MART, FALSE)
+	if (var(VAR_ZONE) != 35) {
+		playbgm(MUS_POKE_MART, FALSE)
+	}
 	if (flag(FLAG_TIM_INTRO) == false) {
 		msgbox(format("Hey there! Welcome to the {COLOR GREEN}Poké Mart Stand{COLOR DARK_GRAY}.\pWe carry items that are typically sold in Poké Marts."), MSGBOX_DEFAULT)
 		setflag(FLAG_TIM_INTRO)
@@ -1842,7 +1840,9 @@ mart Shop_Mart_5 {
 script EventScript_Shop_Varrick {
 	lock
 	faceplayer
-	playbgm(MUS_DP_POKE_MART, FALSE)
+	if (var(VAR_ZONE) != 35) {
+		playbgm(MUS_DP_POKE_MART, FALSE)
+	}
 	if (flag(FLAG_VARRICK_INTRO) == false) {
 		setspeaker("???")
 		msgbox(format("Wowza! Yeetastic! Blamo!\p"

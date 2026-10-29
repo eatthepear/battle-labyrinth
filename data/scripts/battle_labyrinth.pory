@@ -55,7 +55,9 @@ script EventScript_HealPreBoss {
 script EventScript_Max {
 	lock
 	faceplayer
-	playbgm(MUS_DP_POKE_MART, FALSE)
+	if (var(VAR_ZONE) != 35) {
+		playbgm(MUS_DP_POKE_MART, FALSE)
+	}
 	call(EventScript_Shop_Max)
 	fadedefaultbgm
 	release

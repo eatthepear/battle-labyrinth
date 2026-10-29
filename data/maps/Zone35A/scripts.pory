@@ -1,1 +1,10 @@
 mapscripts Zone35A_MapScripts {}
+
+script Zone35A_EventScript_Colress {
+    lock
+    faceplayer
+    setspeaker(SP_NAME_COLRESS)
+    msgbox(format("HELLO!"))
+    release
+    end
+}
