@@ -26,6 +26,7 @@
 enum
 {
     MENU_GENERAL,
+    MENU_DIFFICULTY,
     MENU_QOL,
     MENU_SOUND,
     MENU_COUNT,
@@ -34,7 +35,6 @@ enum
 // General
 enum
 {
-    MENUITEM_GENERAL_DIFFICULTY,
     MENUITEM_GENERAL_TEXTSPEED,
     MENUITEM_GENERAL_BATTLESCENE,
     MENUITEM_GENERAL_BATTLESTYLE,
@@ -42,6 +42,16 @@ enum
     MENUITEM_GENERAL_FRAMETYPE,
     MENUITEM_GENERAL_CANCEL,
     MENUITEM_GENERAL_COUNT,
+};
+
+// Difficulty
+enum
+{
+    MENUITEM_DIFFICULTY_DIFFICULTY,
+    MENUITEM_DIFFICULTY_NUZLOCKE,
+    MENUITEM_DIFFICULTY_PUZZLES,
+    MENUITEM_DIFFICULTY_CANCEL,
+    MENUITEM_DIFFICULTY_COUNT,
 };
 
 // QOL
@@ -149,6 +159,7 @@ struct OptionMenu
 {
     u8 submenu;
     u8 sel_general[MENUITEM_GENERAL_COUNT];
+    u8 sel_difficulty[MENUITEM_DIFFICULTY_COUNT];
     u8 sel_qol[MENUITEM_QOL_COUNT];
     u8 sel_sound[MENUITEM_SOUND_COUNT];
     int menuCursor[MENU_COUNT];
@@ -194,7 +205,6 @@ static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style, bool8 act
 static void DrawChoices_Options_Four(const u8 *const *const strings, int selection, int y, bool8 active);
 static void DrawChoices_Options_Six(const u8 *const *const strings, int selection, int y, bool8 active);
 static void ReDrawAll(void);
-static void DrawChoices_Difficulty(int selection, int y);
 static void DrawChoices_TextSpeed(int selection, int y);
 static void DrawChoices_BattleScene(int selection, int y);
 static void DrawChoices_BattleStyle(int selection, int y);
@@ -206,6 +216,9 @@ static void DrawChoices_Font(int selection, int y);
 static void DrawChoices_FrameType(int selection, int y);
 static void DrawChoices_MatchCall(int selection, int y);
 static void DrawBgWindowFrames(void);
+static void DrawChoices_Difficulty(int selection, int y);
+static void DrawChoices_Nuzlocke(int selection, int y);
+static void DrawChoices_Puzzles(int selection, int y);
 static void DrawChoices_SavePrompts(int selection, int y);
 static void DrawChoices_BossHealPrompts(int selection, int y);
 static void DrawChoices_OverworldSpeedup(int selection, int y);
@@ -257,7 +270,6 @@ struct // MENU_GENERAL
     int (*processInput)(int selection);
 } static const sItemFunctionsGeneral[MENUITEM_GENERAL_COUNT] =
 {
-    [MENUITEM_GENERAL_DIFFICULTY]   = {DrawChoices_Difficulty,  ProcessInput_Options_Four},
     [MENUITEM_GENERAL_TEXTSPEED]    = {DrawChoices_TextSpeed,   ProcessInput_Options_Four},
     [MENUITEM_GENERAL_BATTLESTYLE]  = {DrawChoices_BattleStyle, ProcessInput_Options_Two},
     [MENUITEM_GENERAL_BATTLESCENE]  = {DrawChoices_BattleScene, ProcessInput_Options_Two},
@@ -265,6 +277,18 @@ struct // MENU_GENERAL
     // [MENUITEM_GENERAL_UNIT_SYSTEM]  = {DrawChoices_UnitSystem,  ProcessInput_Options_Two},
     [MENUITEM_GENERAL_FRAMETYPE]    = {DrawChoices_FrameType,   ProcessInput_FrameType},
     [MENUITEM_GENERAL_CANCEL]       = {NULL, NULL},
+};
+
+struct // MENU_DIFFICULTY
+{
+    void (*drawChoices)(int selection, int y);
+    int (*processInput)(int selection);
+} static const sItemFunctionsDifficulty[MENUITEM_DIFFICULTY_COUNT] =
+{
+    [MENUITEM_DIFFICULTY_DIFFICULTY]   = {DrawChoices_Difficulty,  ProcessInput_Options_Four},
+    [MENUITEM_DIFFICULTY_NUZLOCKE]     = {DrawChoices_Nuzlocke,  ProcessInput_Options_Two},
+    [MENUITEM_DIFFICULTY_PUZZLES]      = {DrawChoices_Puzzles,  ProcessInput_Options_Three},
+    [MENUITEM_DIFFICULTY_CANCEL]       = {NULL, NULL},
 };
 
 struct // MENU_QOL
@@ -303,7 +327,6 @@ struct // MENU_SOUND
 // Menu left side option names text
 static const u8 *const sOptionMenuItemsNamesGeneral[MENUITEM_GENERAL_COUNT] =
 {
-    [MENUITEM_GENERAL_DIFFICULTY]  = COMPOUND_STRING("Difficulty"),
     [MENUITEM_GENERAL_TEXTSPEED]   = COMPOUND_STRING("Speed"),
     [MENUITEM_GENERAL_BATTLESCENE] = COMPOUND_STRING("Battle Scene"),
     [MENUITEM_GENERAL_BATTLESTYLE] = COMPOUND_STRING("Battle Style"),
@@ -311,6 +334,14 @@ static const u8 *const sOptionMenuItemsNamesGeneral[MENUITEM_GENERAL_COUNT] =
     // [MENUITEM_GENERAL_UNIT_SYSTEM] = sText_UnitSystem,
     [MENUITEM_GENERAL_FRAMETYPE]   = COMPOUND_STRING("Frame"),
     [MENUITEM_GENERAL_CANCEL]      = COMPOUND_STRING("Save"),
+};
+
+static const u8 *const sOptionMenuItemsNamesDifficulty[MENUITEM_DIFFICULTY_COUNT] =
+{
+    [MENUITEM_DIFFICULTY_DIFFICULTY]  = COMPOUND_STRING("Difficulty"),
+    [MENUITEM_DIFFICULTY_NUZLOCKE]    = COMPOUND_STRING("Nuzlocke"),
+    [MENUITEM_DIFFICULTY_PUZZLES]     = COMPOUND_STRING("Puzzles"),
+    [MENUITEM_DIFFICULTY_CANCEL]      = COMPOUND_STRING("Save"),
 };
 
 static const u8 *const sOptionMenuItemsNamesQOL[MENUITEM_QOL_COUNT] =
@@ -347,6 +378,8 @@ static const u8 *const OptionTextRight(u8 menuItem)
     case MENU_GENERAL:
     default:
         return sOptionMenuItemsNamesGeneral[menuItem];
+    case MENU_DIFFICULTY:
+        return sOptionMenuItemsNamesDifficulty[menuItem];
     case MENU_QOL:
         return sOptionMenuItemsNamesQOL[menuItem];
     case MENU_SOUND:
@@ -364,11 +397,10 @@ static bool8 CheckConditions(int selection)
         switch(selection)
         {
         default:                            return FALSE;
-        case MENUITEM_GENERAL_DIFFICULTY:      return TRUE;
         case MENUITEM_GENERAL_TEXTSPEED:       return TRUE;
         case MENUITEM_GENERAL_BATTLESCENE:     return TRUE;
         case MENUITEM_GENERAL_BATTLESTYLE:
-            if (sOptions->sel_general[MENUITEM_GENERAL_DIFFICULTY] >= DIFFICULTY_HARD)
+            if (sOptions->sel_difficulty[MENUITEM_DIFFICULTY_DIFFICULTY] >= DIFFICULTY_HARD)
                 return FALSE;
             return TRUE;
         case MENUITEM_GENERAL_BUTTONMODE:      return TRUE;
@@ -377,13 +409,23 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_GENERAL_CANCEL:          return TRUE;
         case MENUITEM_GENERAL_COUNT:           return TRUE;
         }
+    case MENU_DIFFICULTY:
+        switch(selection)
+        {
+        default:                            return FALSE;
+        case MENUITEM_DIFFICULTY_DIFFICULTY:      return TRUE;
+        case MENUITEM_DIFFICULTY_NUZLOCKE:       return TRUE;
+        case MENUITEM_DIFFICULTY_PUZZLES:      return TRUE;
+        case MENUITEM_DIFFICULTY_CANCEL:          return TRUE;
+        case MENUITEM_DIFFICULTY_COUNT:           return TRUE;
+        }
     case MENU_QOL:
         switch(selection)
         {
         default:                            return FALSE;
         case MENUITEM_QOL_SAVEPROMPTS:     return TRUE;
         case MENUITEM_QOL_BOSSHEALPROMPTS:
-            if (sOptions->sel_general[MENUITEM_GENERAL_DIFFICULTY] == DIFFICULTY_BRUTAL)
+            if (sOptions->sel_difficulty[MENUITEM_DIFFICULTY_DIFFICULTY] == DIFFICULTY_BRUTAL)
                 return FALSE;
             return TRUE;
         case MENUITEM_QOL_OVERWORLDSPEEDUP:     return TRUE;
@@ -415,33 +457,45 @@ static bool8 CheckConditions(int selection)
 // General
 static const u8 sText_Empty[]                   = _("");
 static const u8 sText_Desc_Save[]               = _("Save your settings.");
-static const u8 sText_Desc_DifficultyEasy[]     = _("Suited for casual players.\nCheck the Notebook for more info.");
-static const u8 sText_Desc_DifficultyNormal[]   = _("Suited for first playthroughs.\nCheck the Notebook for more info.");
-static const u8 sText_Desc_DifficultyHard[]     = _("Suited for experienced players.\nCheck the Notebook for more info.");
-static const u8 sText_Desc_DifficultyBrutal[]   = _("Suited for hardcore players.\nCheck the Notebook for more info.");
 static const u8 sText_Desc_TextSpeed[]          = _("Choose one of the four text-display\nspeeds.");
 static const u8 sText_Desc_BattleScene_On[]     = _("Show the Pokémon battle animations.");
 static const u8 sText_Desc_BattleScene_Off[]    = _("Skip the Pokémon battle animations.");
 static const u8 sText_Desc_BattleStyle_Shift[]  = _("Get the option to switch your\nPokémon after the enemies faints.");
 static const u8 sText_Desc_BattleStyle_Set[]    = _("No free switch after fainting the\nenemies Pokémon.");
 static const u8 sText_Desc_SoundMono[]          = _("Sound is the same in all speakers.\nRecommended for original hardware.");
-static const u8 sText_Desc_SoundStereo[]        = _("Play the left and right audio channel\nseperatly. Great with headphones.");
+static const u8 sText_Desc_SoundStereo[]        = _("Play the left and right audio channel\nseparately. Great with headphones.");
 static const u8 sText_Desc_ButtonMode[]         = _("All buttons work as normal.");
 static const u8 sText_Desc_ButtonMode_LR[]      = _("On some screens the L and R buttons\nact as left and right.");
 static const u8 sText_Desc_ButtonMode_LA[]      = _("The L button acts as another A\nbutton for one-handed play.");
 static const u8 sText_Desc_UnitSystemImperial[] = _("Display BERRY and Pokémon weight\nand size in pounds and inches.");
 static const u8 sText_Desc_UnitSystemMetric[]   = _("Display BERRY and Pokémon weight\nand size in kilograms and meters.");
 static const u8 sText_Desc_FrameType[]          = _("Choose the frame surrounding the\nwindows.");
-static const u8 *const sOptionMenuItemDescriptionsGeneral[MENUITEM_GENERAL_COUNT][4] =
+static const u8 *const sOptionMenuItemDescriptionsGeneral[MENUITEM_GENERAL_COUNT][3] =
 {
-    [MENUITEM_GENERAL_DIFFICULTY]  = {sText_Desc_DifficultyEasy,       sText_Desc_DifficultyNormal,  sText_Desc_DifficultyHard, sText_Desc_DifficultyBrutal},
-    [MENUITEM_GENERAL_TEXTSPEED]   = {sText_Desc_TextSpeed,            sText_Empty,                sText_Empty, sText_Empty},
-    [MENUITEM_GENERAL_BATTLESCENE] = {sText_Desc_BattleScene_On,       sText_Desc_BattleScene_Off, sText_Empty, sText_Empty},
-    [MENUITEM_GENERAL_BATTLESTYLE] = {sText_Desc_BattleStyle_Shift,    sText_Desc_BattleStyle_Set, sText_Empty, sText_Empty},
-    [MENUITEM_GENERAL_BUTTONMODE]  = {sText_Desc_ButtonMode,           sText_Desc_ButtonMode_LR,   sText_Desc_ButtonMode_LA, sText_Empty},
+    [MENUITEM_GENERAL_TEXTSPEED]   = {sText_Desc_TextSpeed,            sText_Empty,                sText_Empty},
+    [MENUITEM_GENERAL_BATTLESCENE] = {sText_Desc_BattleScene_On,       sText_Desc_BattleScene_Off, sText_Empty},
+    [MENUITEM_GENERAL_BATTLESTYLE] = {sText_Desc_BattleStyle_Shift,    sText_Desc_BattleStyle_Set, sText_Empty},
+    [MENUITEM_GENERAL_BUTTONMODE]  = {sText_Desc_ButtonMode,           sText_Desc_ButtonMode_LR,   sText_Desc_ButtonMode_LA},
     // [MENUITEM_GENERAL_UNIT_SYSTEM] = {sText_Desc_UnitSystemImperial,   sText_Desc_UnitSystemMetric,sText_Empty},
-    [MENUITEM_GENERAL_FRAMETYPE]   = {sText_Desc_FrameType,            sText_Empty,                sText_Empty, sText_Empty},
-    [MENUITEM_GENERAL_CANCEL]      = {sText_Desc_Save,                 sText_Empty,                sText_Empty, sText_Empty},
+    [MENUITEM_GENERAL_FRAMETYPE]   = {sText_Desc_FrameType,            sText_Empty,                sText_Empty},
+    [MENUITEM_GENERAL_CANCEL]      = {sText_Desc_Save,                 sText_Empty,                sText_Empty},
+};
+
+static const u8 sText_Desc_DifficultyEasy[]     = _("Suited for casual players.\nCheck the Notebook for more info.");
+static const u8 sText_Desc_DifficultyNormal[]   = _("Suited for first playthroughs.\nCheck the Notebook for more info.");
+static const u8 sText_Desc_DifficultyHard[]     = _("Suited for experienced players.\nCheck the Notebook for more info.");
+static const u8 sText_Desc_DifficultyBrutal[]   = _("Suited for hardcore players.\nCheck the Notebook for more info.");
+static const u8 sText_Desc_NuzlockeOn[]     = _("Nuzlocke mode.\nCheck the Notebook for more info.");
+static const u8 sText_Desc_NuzlockeOff[]     = _("Nuzlocke mode. Can only be enabled\nat the start of the game.");
+static const u8 sText_Desc_PuzzlesEnabled[]     = _("Puzzles enabled.\nNo hints!");
+static const u8 sText_Desc_PuzzlesHint[]     = _("Puzzles enabled.\nTalk to your follower for a hint!");
+static const u8 sText_Desc_PuzzlesDisabled[]     = _("Puzzles skippable.\nTalk to your follower to skip them!");
+static const u8 *const sOptionMenuItemDescriptionsDifficulty[MENUITEM_DIFFICULTY_COUNT][4] =
+{
+    [MENUITEM_DIFFICULTY_DIFFICULTY]  = {sText_Desc_DifficultyEasy,       sText_Desc_DifficultyNormal,  sText_Desc_DifficultyHard, sText_Desc_DifficultyBrutal},
+    [MENUITEM_DIFFICULTY_NUZLOCKE]  = {sText_Desc_NuzlockeOff,       sText_Desc_NuzlockeOn,  sText_Empty, sText_Empty},
+    [MENUITEM_DIFFICULTY_PUZZLES]  = {sText_Desc_PuzzlesEnabled,       sText_Desc_PuzzlesHint,  sText_Desc_PuzzlesDisabled, sText_Empty},
+    [MENUITEM_DIFFICULTY_CANCEL]      = {sText_Desc_Save,                 sText_Empty,                sText_Empty, sText_Empty},
 };
 
 // QOL
@@ -494,7 +548,6 @@ static const u8 *const sOptionMenuItemDescriptionsSound[MENUITEM_SOUND_COUNT][6]
 static const u8 sText_Desc_Disabled_Textspeed[]     = _("Only active if xyz.");
 static const u8 *const sOptionMenuItemDescriptionsDisabledGeneral[MENUITEM_GENERAL_COUNT] =
 {
-    [MENUITEM_GENERAL_DIFFICULTY]  = sText_Empty,
     [MENUITEM_GENERAL_TEXTSPEED]   = sText_Desc_Disabled_Textspeed,
     [MENUITEM_GENERAL_BATTLESCENE] = sText_Empty,
     [MENUITEM_GENERAL_BATTLESTYLE] = COMPOUND_STRING("This option is ignored because the\ndifficulty is set to Hard or Brutal."),
@@ -502,6 +555,15 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledGeneral[MENUITEM_GENER
     // [MENUITEM_GENERAL_UNIT_SYSTEM] = sText_Empty,
     [MENUITEM_GENERAL_FRAMETYPE]   = sText_Empty,
     [MENUITEM_GENERAL_CANCEL]      = sText_Empty,
+};
+
+// Disabled Difficulty
+static const u8 *const sOptionMenuItemDescriptionsDisabledDifficulty[MENUITEM_DIFFICULTY_COUNT] =
+{
+    [MENUITEM_DIFFICULTY_DIFFICULTY]  = sText_Empty,
+    [MENUITEM_DIFFICULTY_NUZLOCKE] = sText_Empty,
+    [MENUITEM_DIFFICULTY_PUZZLES]  = sText_Empty,
+    [MENUITEM_DIFFICULTY_CANCEL]      = sText_Empty,
 };
 
 // Disabled QOL
@@ -551,6 +613,11 @@ static const u8 *const OptionTextDescription(void)
         if (menuItem == MENUITEM_GENERAL_TEXTSPEED || menuItem == MENUITEM_GENERAL_FRAMETYPE)
             selection = 0;
         return sOptionMenuItemDescriptionsGeneral[menuItem][selection];
+    case MENU_DIFFICULTY:
+        if (menuItem >= MENUITEM_DIFFICULTY_COUNT || !CheckConditions(menuItem))
+            return sOptionMenuItemDescriptionsDisabledDifficulty[menuItem];
+        selection = sOptions->sel_difficulty[menuItem];
+        return sOptionMenuItemDescriptionsDifficulty[menuItem][selection];
     case MENU_QOL:
         if (menuItem >= MENUITEM_QOL_COUNT || !CheckConditions(menuItem))
             return sOptionMenuItemDescriptionsDisabledQOL[menuItem];
@@ -575,6 +642,8 @@ static u8 MenuItemCount(void)
     case MENU_GENERAL:
     default:
         return MENUITEM_GENERAL_COUNT;
+    case MENU_DIFFICULTY:
+        return MENUITEM_DIFFICULTY_COUNT;
     case MENU_QOL:
         return MENUITEM_QOL_COUNT;
     case MENU_SOUND:
@@ -589,6 +658,8 @@ static u8 MenuItemCancel(void)
     case MENU_GENERAL:
     default:
         return MENUITEM_GENERAL_CANCEL;
+    case MENU_DIFFICULTY:
+        return MENUITEM_DIFFICULTY_CANCEL;
     case MENU_QOL:
         return MENUITEM_QOL_CANCEL;
     case MENU_SOUND:
@@ -623,18 +694,23 @@ static void DrawTopBarText(void)
     {
         case MENU_GENERAL:
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 105, 1, color, 0, COMPOUND_STRING("GENERAL"));
-            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 190, 1, color, 0, COMPOUND_STRING("{R_BUTTON} QOL"));
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 175, 1, color, 0, COMPOUND_STRING("{R_BUTTON} DIFFICULTY"));
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 2, 1, color, 0, COMPOUND_STRING("{L_BUTTON} SOUND"));
+            break;
+        case MENU_DIFFICULTY:
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 105, 1, color, 0, COMPOUND_STRING("DIFFICULTY"));
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 190, 1, color, 0, COMPOUND_STRING("{R_BUTTON} QOL"));
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 2, 1, color, 0, COMPOUND_STRING("{L_BUTTON} GENERAL"));
             break;
         case MENU_QOL:
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 105, 1, color, 0, COMPOUND_STRING("QOL"));
-            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 2, 1, color, 0, COMPOUND_STRING("{L_BUTTON} GENERAL"));
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 2, 1, color, 0, COMPOUND_STRING("{L_BUTTON} DIFFICULTY"));
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 190, 1, color, 0, COMPOUND_STRING("{R_BUTTON} SOUND"));
             break;
         case MENU_SOUND:
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 105, 1, color, 0, COMPOUND_STRING("SOUND"));
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 2, 1, color, 0, COMPOUND_STRING("{L_BUTTON} QOL"));
-            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 190, 1, color, 0, COMPOUND_STRING("{R_BUTTON} GENERAL"));
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 185, 1, color, 0, COMPOUND_STRING("{R_BUTTON} GENERAL"));
             break;
     }
     PutWindowTilemap(WIN_TOPBAR);
@@ -719,6 +795,10 @@ static void DrawChoices(u32 id, int y) //right side draw function
         case MENU_GENERAL:
             if (sItemFunctionsGeneral[id].drawChoices != NULL)
                 sItemFunctionsGeneral[id].drawChoices(sOptions->sel_general[id], y);
+            break;
+        case MENU_DIFFICULTY:
+            if (sItemFunctionsDifficulty[id].drawChoices != NULL)
+                sItemFunctionsDifficulty[id].drawChoices(sOptions->sel_difficulty[id], y);
             break;
         case MENU_QOL:
             if (sItemFunctionsQOL[id].drawChoices != NULL)
@@ -851,7 +931,6 @@ void CB2_InitOptionPlusMenu(void)
         gMain.state++;
         break;
     case 6:
-        sOptions->sel_general[MENUITEM_GENERAL_DIFFICULTY]  = GetCurrentDifficultyLevel();
         sOptions->sel_general[MENUITEM_GENERAL_TEXTSPEED]   = gSaveBlock2Ptr->optionsTextSpeed;
         sOptions->sel_general[MENUITEM_GENERAL_BATTLESCENE] = gSaveBlock2Ptr->optionsBattleSceneOff;
         sOptions->sel_general[MENUITEM_GENERAL_BATTLESTYLE] = gSaveBlock2Ptr->optionsBattleStyle;
@@ -859,6 +938,10 @@ void CB2_InitOptionPlusMenu(void)
         // sOptions->sel_general[MENUITEM_GENERAL_UNIT_SYSTEM] = gSaveBlock2Ptr->optionsUnitSystem;
         sOptions->sel_general[MENUITEM_GENERAL_FRAMETYPE]   = gSaveBlock2Ptr->optionsWindowFrameType;
         
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_DIFFICULTY]  = GetCurrentDifficultyLevel();
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NUZLOCKE]  = FlagGet(FLAG_SETTINGS_NUZLOCKE);
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_PUZZLES]  = VarGet(VAR_PUZZLE_DIFFICULTY);
+
         sOptions->sel_qol[MENUITEM_QOL_SAVEPROMPTS] = FlagGet(FLAG_SAVE_PROMPT);
         sOptions->sel_qol[MENUITEM_QOL_BOSSHEALPROMPTS] = FlagGet(FLAG_BOSS_PROMPT_HEAL);
         sOptions->sel_qol[MENUITEM_QOL_OVERWORLDSPEEDUP] = VarGet(VAR_OVERWORLD_SPEEDUP);
@@ -1027,6 +1110,23 @@ static void Task_OptionMenuProcessInput(u8 taskId)
                 }
 
                 if (previousOption != sOptions->sel_general[cursor])
+                    DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
+            }
+        }
+        else if (sOptions->submenu == MENU_DIFFICULTY)
+        {
+            int cursor = sOptions->menuCursor[sOptions->submenu];
+            u8 previousOption = sOptions->sel_difficulty[cursor];
+            if (CheckConditions(cursor))
+            {
+                if (sItemFunctionsDifficulty[cursor].processInput != NULL)
+                {
+                    sOptions->sel_difficulty[cursor] = sItemFunctionsDifficulty[cursor].processInput(previousOption);
+                    ReDrawAll();
+                    DrawDescriptionText();
+                }
+
+                if (previousOption != sOptions->sel_difficulty[cursor])
                     DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
             }
         }
@@ -1236,7 +1336,6 @@ static void Task_OptionMenuProcessInput(u8 taskId)
 
 static void Task_OptionMenuSave(u8 taskId)
 {
-    SetCurrentDifficultyLevel(sOptions->sel_general[MENUITEM_GENERAL_DIFFICULTY]);
     if (GetCurrentDifficultyLevel() != DIFFICULTY_BRUTAL)
         FlagClear(FLAG_TRUE_BRUTAL);
     gSaveBlock2Ptr->optionsTextSpeed        = sOptions->sel_general[MENUITEM_GENERAL_TEXTSPEED];
@@ -1245,6 +1344,11 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsButtonMode       = sOptions->sel_general[MENUITEM_GENERAL_BUTTONMODE];
     // gSaveBlock2Ptr->optionsUnitSystem       = sOptions->sel_general[MENUITEM_GENERAL_UNIT_SYSTEM];
     gSaveBlock2Ptr->optionsWindowFrameType  = sOptions->sel_general[MENUITEM_GENERAL_FRAMETYPE];
+
+    SetCurrentDifficultyLevel(sOptions->sel_difficulty[MENUITEM_DIFFICULTY_DIFFICULTY]);
+    if (!(sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NUZLOCKE])) // can't enable Nuzlocke from here, must have set at beginning of game
+        FlagClear(FLAG_SETTINGS_NUZLOCKE);
+    VarSet(VAR_PUZZLE_DIFFICULTY, sOptions->sel_difficulty[MENUITEM_DIFFICULTY_PUZZLES]);
 
     if (sOptions->sel_qol[MENUITEM_QOL_SAVEPROMPTS])
         FlagSet(FLAG_SAVE_PROMPT);
@@ -1538,13 +1642,6 @@ static void ReDrawAll(void)
 }
 
 // Process Input functions ****SPECIFIC****
-static const u8 *const sDifficultyStrings[] = {COMPOUND_STRING("Easy"), COMPOUND_STRING("Normal"), COMPOUND_STRING("Hard"), COMPOUND_STRING("Brutal")};
-static void DrawChoices_Difficulty(int selection, int y)
-{
-    bool8 active = CheckConditions(MENUITEM_GENERAL_DIFFICULTY);
-    DrawChoices_Options_Four(sDifficultyStrings, selection, y, active);
-}
-
 static const u8 sText_Faster[] = _("FASTER");
 static const u8 sText_Instant[] = _("INSTANT");
 static const u8 *const sTextSpeedStrings[] = {COMPOUND_STRING("Slow"), COMPOUND_STRING("Medium"), COMPOUND_STRING("Fast"), sText_Faster};
@@ -1562,6 +1659,35 @@ static void DrawChoices_BattleScene(int selection, int y)
 
     DrawOptionMenuChoice(COMPOUND_STRING("On"), 104, y, styles[0], active);
     DrawOptionMenuChoice(COMPOUND_STRING("Off"), GetStringRightAlignXOffset(FONT_NORMAL, COMPOUND_STRING("Off"), 198), y, styles[1], active);
+}
+
+static const u8 *const sDifficultyStrings[] = {COMPOUND_STRING("Easy"), COMPOUND_STRING("Normal"), COMPOUND_STRING("Hard"), COMPOUND_STRING("Brutal")};
+static void DrawChoices_Difficulty(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_DIFFICULTY_DIFFICULTY);
+    DrawChoices_Options_Four(sDifficultyStrings, selection, y, active);
+}
+
+static void DrawChoices_Nuzlocke(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_DIFFICULTY_NUZLOCKE);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(COMPOUND_STRING("Off"), 104, y, styles[0], active);
+    DrawOptionMenuChoice(COMPOUND_STRING("On"), GetStringRightAlignXOffset(FONT_NORMAL, COMPOUND_STRING("Off"), 198), y, styles[1], active);
+}
+
+static void DrawChoices_Puzzles(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_DIFFICULTY_PUZZLES);
+    u8 styles[3] = {0};
+    int xMid = GetMiddleX(COMPOUND_STRING("On"), COMPOUND_STRING("Hint"), COMPOUND_STRING("Skip"));
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(COMPOUND_STRING("On"), 104, y, styles[0], active);
+    DrawOptionMenuChoice(COMPOUND_STRING("Hint"), xMid, y, styles[1], active);
+    DrawOptionMenuChoice(COMPOUND_STRING("Skip"), GetStringRightAlignXOffset(1, COMPOUND_STRING("Skip"), 198), y, styles[2], active);
 }
 
 static void DrawChoices_SavePrompts(int selection, int y)

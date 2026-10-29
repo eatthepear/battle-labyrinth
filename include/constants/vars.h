@@ -65,6 +65,7 @@
 #define VAR_REVISITING_ZONE                  0x402D // functionally unused
 #define VAR_SURF_MUSIC                       0x402E
 #define VAR_BIKE_MUSIC                       0x402F
+#define VAR_PUZZLE_DIFFICULTY                0x4030
 
 #define VAR_GROTTO_QUIET_FIELD_SPECIES       0x4031
 #define VAR_GROTTO_ZONE3A_SPECIES            0x4032
