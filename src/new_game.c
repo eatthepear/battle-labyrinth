@@ -237,6 +237,7 @@ void NewGameInitData(void)
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
     ResetItemFlags();
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
+    gSaveBlock1Ptr->pblSeed = Random32();
     ResetDexNav();
     ClearFollowerNPCData();
     RunScriptImmediately(EventScript_GameIntro_SetStartingVariablesAndFlags);
