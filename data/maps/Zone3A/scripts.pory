@@ -323,7 +323,7 @@ script Zone3A_EventScript_Boris {
 script Zone3A_EventScript_Grotto {
 	lock
 	call(EventScript_FoundGrotto)
-	// warp(MAP_HIDDEN_GROTTO_QUIET_FIELD, 0)
+	warp(MAP_HIDDEN_GROTTO_ZONE3A, 0)
 	waitstate
 	release
 	end

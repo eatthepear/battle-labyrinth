@@ -23,6 +23,14 @@ mapscripts Zone7A_MapScripts {
 	}
 }
 
+script Zone7A_EventScript_Grotto {
+	lock
+	call(EventScript_FoundGrotto)
+	warp(MAP_HIDDEN_GROTTO_ZONE7A, 0)
+	waitstate
+	release
+	end
+}
 
 // script Zone7A_EventScript_Beauty {
 // 	lock
