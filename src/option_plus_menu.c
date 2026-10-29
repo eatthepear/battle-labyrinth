@@ -481,11 +481,11 @@ static const u8 *const sOptionMenuItemDescriptionsGeneral[MENUITEM_GENERAL_COUNT
     [MENUITEM_GENERAL_CANCEL]      = {sText_Desc_Save,                 sText_Empty,                sText_Empty},
 };
 
-static const u8 sText_Desc_DifficultyEasy[]     = _("Suited for casual players.\nCheck the Notebook for more info.");
-static const u8 sText_Desc_DifficultyNormal[]   = _("Suited for first playthroughs.\nCheck the Notebook for more info.");
-static const u8 sText_Desc_DifficultyHard[]     = _("Suited for experienced players.\nCheck the Notebook for more info.");
-static const u8 sText_Desc_DifficultyBrutal[]   = _("Suited for hardcore players.\nCheck the Notebook for more info.");
-static const u8 sText_Desc_NuzlockeOn[]     = _("Nuzlocke mode.\nCheck the Notebook for more info.");
+static const u8 sText_Desc_DifficultyEasy[]     = _("Suited for casual players.\nSee Notes for more info.");
+static const u8 sText_Desc_DifficultyNormal[]   = _("Suited for first playthroughs.\nSee Notes for more info.");
+static const u8 sText_Desc_DifficultyHard[]     = _("Suited for experienced players.\nSee Notes for more info.");
+static const u8 sText_Desc_DifficultyBrutal[]   = _("Suited for hardcore players.\nSee Notes for more info.");
+static const u8 sText_Desc_NuzlockeOn[]     = _("Nuzlocke mode.\nSee Notes for more info.");
 static const u8 sText_Desc_NuzlockeOff[]     = _("Nuzlocke mode. Can only be enabled\nat the start of the game.");
 static const u8 sText_Desc_PuzzlesEnabled[]     = _("Puzzles enabled.\nNo hints!");
 static const u8 sText_Desc_PuzzlesHint[]     = _("Puzzles enabled.\nTalk to your follower for a hint!");

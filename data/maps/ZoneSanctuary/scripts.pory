@@ -839,12 +839,9 @@ script Sanctuary_EventScript_GameIntro {
 		playfanfare(MUS_OBTAIN_ITEM)
 		msgbox(format("Received the {COLOR GREEN}Pokédex{COLOR DARK_GRAY}!"), MSGBOX_DEFAULT)
 		waitfanfare
-		giveitem(ITEM_NOTEBOOK)
-		helpwindow(HELP_SIGN_NOTEBOOK)
 	} else {
 		additem(ITEM_POTION, 10)
 		additem(ITEM_POKE_BALL, 15)
-		additem(ITEM_NOTEBOOK)
 	}
 	setmonmetlocation(0, METLOC_COLRESS_STARTER)
 	callnative(UpdateFollowingPokemon)

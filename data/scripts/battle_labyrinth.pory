@@ -683,16 +683,19 @@ script EventScript_AccessPokemonBoxLink_PBL {
 script EventScript_Notebook {
 	playbgm(MUS_HG_FOLLOW_ME_1, FALSE)
 	while {
-		special(BufferCurrentLevelCap)
-		message("Notebook open. Level Cap: {STR_VAR_1}\nWhat would you like to read?")
+		message("Notes open.\nWhat would you like to read?")
 		waitmessage
+		dynmultipush("Current Level Cap", 5)
 		dynmultipush("Current Zone", 0)
 		dynmultipush("Changes from Vanilla", 1)
 		dynmultipush("Difficulty Info", 2)
 		dynmultipush("Trainer Tips", 3)
-		dynmultipush("Close Notebook", 4)
+		dynmultipush("Exit", 4)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
+			case 5:
+				special(BufferCurrentLevelCap)
+				msgbox(format("The current level cap is {STR_VAR_1}."))
 			case 0:
 				call(EventScript_Notebook_ZoneInfo)
 			case 1:
@@ -738,8 +741,6 @@ script EventScript_Notebook_ZoneInfo {
 		case 10:
 			msgbox(format("{COLOR GREEN}Zone 10{COLOR DARK_GRAY} is a desert valley."))
 		case 11:
-			msgbox(Sanctuary_Text_Colress_EndofDemo)
-			return
 		case 12:
 		case 13:
 		case 14:

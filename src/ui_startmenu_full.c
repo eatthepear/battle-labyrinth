@@ -1404,7 +1404,7 @@ void Task_OpenTrainerCardFromStartMenu(u8 taskId)
     }
 }
 
-void Task_OpenDocsFromStartMenu(u8 taskId)
+void Task_OpenNotesFromStartMenu(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
@@ -1561,7 +1561,7 @@ static void Task_StartMenuFullMain(u8 taskId)
             case START_MENU_CARD:
                 PlaySE(SE_SELECT);
                 BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-                gTasks[taskId].func = Task_OpenDocsFromStartMenu;
+                gTasks[taskId].func = Task_OpenNotesFromStartMenu;
                 break;
             case START_MENU_OPTIONS:
                 PlaySE(SE_SELECT);
