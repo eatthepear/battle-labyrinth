@@ -1536,6 +1536,9 @@ script EventScript_Difficulty_Info {
 				dynmultipush("Hard", 2)
 				dynmultipush("{COLOR GREEN}Brutal", 3)
 		}
+		if (flag(FLAG_SETTINGS_NUZLOCKE)) {
+			dynmultipush("Nuzlocke", 5)
+		}
 		dynmultipush("Back", 4)
 		dynmultistack(0, 0, FALSE, 5, FALSE, VAR_DIFFICULTY, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
@@ -1547,8 +1550,12 @@ script EventScript_Difficulty_Info {
 				helpwindow(HELP_DIFFICULTY_HARD)
 			case 3:
 				helpwindow(HELP_DIFFICULTY_BRUTAL)
+			case 5:
+				helpwindow(HELP_NUZLOCKE)
 			case 4:
 			case MULTI_B_PRESSED:
+				setspeaker(SP_NAME_NONE)
+				msgbox(format("You can change any difficulty settings in the Options menu."))
 				return
 		}
 	}

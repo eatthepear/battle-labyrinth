@@ -20,9 +20,6 @@ script EventScript_Colress_Menu {
 	while {
 		dynmultipush("Next Zone", 0)
 		dynmultipush("Difficulty", 5)
-		if (flag(FLAG_SETTINGS_NUZLOCKE)) {
-			dynmultipush("Nuzlocke", 2)
-		}
 		dynmultipush("Game Version", 1)
 		dynmultipush("Exit", 4)
 		dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
@@ -33,8 +30,6 @@ script EventScript_Colress_Menu {
 				call(EventScript_Difficulty)
 			case 1:
 				call(EventScript_Version)
-			case 2:
-				call(EventScript_Nuzlocke)
 			case 4:
 			case MULTI_B_PRESSED:
 				return
@@ -181,35 +176,6 @@ script EventScript_Difficulty_Switch {
 script EventScript_Version {
 	msgbox(format("This is the demo version of {COLOR GREEN}Pokémon Battle Labyrinth{COLOR DARK_GRAY}, released on 12/31/25 and playable up to Zone 10.\pMake sure you're playing the most up to date version!"))
 	return
-}
-
-script EventScript_Nuzlocke {
-	while {
-		setspeaker(SP_NAME_COLRESS)
-		message(format("You are playing on {COLOR GREEN}Nuzlocke{COLOR DARK_GRAY} mode. Would you like to disable it?"))
-		waitmessage
-		dynmultichoice(20, 6, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Info", "Yes", "Back")
-		switch (var(VAR_RESULT)) {
-			case 0:
-				helpwindow(HELP_NUZLOCKE)
-			case 1:
-				setspeaker(SP_NAME_COLRESS)
-				msgbox(format("Would you like to turn off {COLOR GREEN}Nuzlocke{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-				if (var(VAR_RESULT) == YES) {
-					msgbox(format("Are you sure you would like to turn off {COLOR GREEN}Nuzlocke{COLOR DARK_GRAY} mode?"), MSGBOX_YESNO)
-					if (var(VAR_RESULT) == YES) {
-						playse(SE_PC_OFF)
-						msgbox("{COLOR GREEN}Nuzlocke{COLOR DARK_GRAY} mode turned off.")
-						waitse
-						clearflag(FLAG_SETTINGS_NUZLOCKE)
-						return
-					}
-				}
-			case 2:
-			case MULTI_B_PRESSED:
-				return
-		}
-	}
 }
 
 script EventScript_NextZone {
