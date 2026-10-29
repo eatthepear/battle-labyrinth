@@ -310,6 +310,286 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .tilesptr = sMoneanChamberMapPreviewTiles,
         .tilemapptr = sMoneanChamberMapPreviewTilemap,
         .palptr = sMoneanChamberMapPreviewPalette
+    },
+    [MPS_ZONE1] = {
+        .mapsec = MAPSEC_ZONE_1,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_1,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE2] = {
+        .mapsec = MAPSEC_ZONE_2,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_2,
+        .tilesptr = sBerryForestMapPreviewTiles,
+        .tilemapptr = sBerryForestMapPreviewTilemap,
+        .palptr = sBerryForestMapPreviewPalette
+    },
+    [MPS_ZONE3] = {
+        .mapsec = MAPSEC_ZONE_3,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_3,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE4] = {
+        .mapsec = MAPSEC_ZONE_4,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_4,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE5] = {
+        .mapsec = MAPSEC_ZONE_5,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_5,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE6] = {
+        .mapsec = MAPSEC_ZONE_6,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_6,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE7] = {
+        .mapsec = MAPSEC_ZONE_7,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_7,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE8] = {
+        .mapsec = MAPSEC_ZONE_8,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_8,
+        .tilesptr = sMoneanChamberMapPreviewTiles,
+        .tilemapptr = sMoneanChamberMapPreviewTilemap,
+        .palptr = sMoneanChamberMapPreviewPalette
+    },
+    [MPS_ZONE9] = {
+        .mapsec = MAPSEC_ZONE_9,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_9,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE10] = {
+        .mapsec = MAPSEC_ZONE_10,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_10,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE11] = {
+        .mapsec = MAPSEC_ZONE_11,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_11,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE12] = {
+        .mapsec = MAPSEC_ZONE_12,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_12,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE13] = {
+        .mapsec = MAPSEC_ZONE_13,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_13,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE14] = {
+        .mapsec = MAPSEC_ZONE_14,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_14,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE15] = {
+        .mapsec = MAPSEC_ZONE_15,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_15,
+        .tilesptr = sSeafoamIslandsMapPreviewTiles,
+        .tilemapptr = sSeafoamIslandsMapPreviewTilemap,
+        .palptr = sSeafoamIslandsMapPreviewPalette
+    },
+    [MPS_ZONE16] = {
+        .mapsec = MAPSEC_ZONE_16,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_16,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE17] = {
+        .mapsec = MAPSEC_ZONE_17,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_17,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE18] = {
+        .mapsec = MAPSEC_ZONE_18,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_18,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE19] = {
+        .mapsec = MAPSEC_ZONE_19,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_19,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE20] = {
+        .mapsec = MAPSEC_ZONE_20,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_20,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE21] = {
+        .mapsec = MAPSEC_ZONE_21,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_21,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE22] = {
+        .mapsec = MAPSEC_ZONE_22,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_22,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE23] = {
+        .mapsec = MAPSEC_ZONE_23,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_23,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE24] = {
+        .mapsec = MAPSEC_ZONE_24,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_24,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE25] = {
+        .mapsec = MAPSEC_ZONE_25,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_25,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE26] = {
+        .mapsec = MAPSEC_ZONE_26,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_26,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE27] = {
+        .mapsec = MAPSEC_ZONE_27,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_27,
+        .tilesptr = sMtEmberMapPreviewTiles,
+        .tilemapptr = sMtEmberMapPreviewTilemap,
+        .palptr = sMtEmberMapPreviewPalette
+    },
+    [MPS_ZONE28] = {
+        .mapsec = MAPSEC_ZONE_28,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_28,
+        .tilesptr = sMtEmberMapPreviewTiles,
+        .tilemapptr = sMtEmberMapPreviewTilemap,
+        .palptr = sMtEmberMapPreviewPalette
+    },
+    [MPS_ZONE29] = {
+        .mapsec = MAPSEC_ZONE_29,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_29,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE30] = {
+        .mapsec = MAPSEC_ZONE_30,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_30,
+        .tilesptr = sSilphCoMapPreviewTiles,
+        .tilemapptr = sSilphCoMapPreviewTilemap,
+        .palptr = sSilphCoMapPreviewPalette
+    },
+    [MPS_ZONE31] = {
+        .mapsec = MAPSEC_ZONE_31,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_31,
+        .tilesptr = sVictoryRoadMapPreviewTiles,
+        .tilemapptr = sVictoryRoadMapPreviewTilemap,
+        .palptr = sVictoryRoadMapPreviewPalette
+    },
+    [MPS_ZONE32] = {
+        .mapsec = MAPSEC_ZONE_32,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_32,
+        .tilesptr = sVictoryRoadMapPreviewTiles,
+        .tilemapptr = sVictoryRoadMapPreviewTilemap,
+        .palptr = sVictoryRoadMapPreviewPalette
+    },
+    [MPS_ZONE33] = {
+        .mapsec = MAPSEC_ZONE_33,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_33,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE34] = {
+        .mapsec = MAPSEC_ZONE_34,
+        .type = MPS_FLAG_NULL,
+        .flagId = FLAG_BEAT_BOSS_34,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_ZONE35] = {
+        .mapsec = MAPSEC_ZONE_35,
+        .type = MPS_FLAG_NULL,
+        .flagId = MPS_FLAG_NULL,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
     }
 };
 
