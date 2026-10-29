@@ -1404,6 +1404,18 @@ void Task_OpenTrainerCardFromStartMenu(u8 taskId)
     }
 }
 
+void Task_OpenDocsFromStartMenu(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        SetMainCallback2(sStartMenuDataPtr->savedCallback);
+        StartMenuFull_FreeResources();
+        LockPlayerFieldControls();
+        ScriptContext_SetupScript(EventScript_Notebook);
+        DestroyTask(taskId);
+    }
+}
+
 void Task_OpenPokenavStartMenu(u8 taskId)
 {
     if (!gPaletteFade.active)
@@ -1549,7 +1561,7 @@ static void Task_StartMenuFullMain(u8 taskId)
             case START_MENU_CARD:
                 PlaySE(SE_SELECT);
                 BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-                gTasks[taskId].func = Task_OpenOptionsMenuStartMenu;
+                gTasks[taskId].func = Task_OpenDocsFromStartMenu;
                 break;
             case START_MENU_OPTIONS:
                 PlaySE(SE_SELECT);
