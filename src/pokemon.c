@@ -4968,7 +4968,21 @@ u16 GetBattleBGM(void)
                 return MUS_VS_RIVAL;
             return MUS_BW_VS_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
-            return MUS_VS_ELITE_FOUR;
+            switch (VarGet(VAR_BOSS_MUSIC))
+            {
+            case 1:
+                return MUS_RG_VS_GYM_LEADER;
+            case 2:
+                return MUS_DP_VS_ELITE_FOUR;
+            case 3:
+                return MUS_HG_VS_GYM_LEADER;
+            case 4:
+                return MUS_HG_VS_GYM_LEADER_KANTO;
+            case 5:
+                return MUS_BW_VS_ELITE_FOUR;
+            default:
+                return MUS_VS_ELITE_FOUR;
+            }
         case TRAINER_CLASS_CHAMPION_FRLG:
             return MUS_RG_VS_CHAMPION;
         case TRAINER_CLASS_LEADER_FRLG:
