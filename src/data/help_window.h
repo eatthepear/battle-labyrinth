@@ -288,13 +288,13 @@ const struct HelpWindow gHelpWindowInfo[] =
 
     [HELP_SIGN_NOTEBOOK] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Notebook"),
-        .desc = COMPOUND_STRING("The {COLOR GREEN}Notebook{COLOR DARK_GRAY} is filled with useful\n"
+        .header = COMPOUND_STRING("Trainer Tips: Notes"),
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Notes{COLOR DARK_GRAY} is filled with useful\n"
                                 "information, including mechanics changes\n"
                                 "from vanilla Pokémon games, upcoming Zones\n"
                                 "and boss battles, and difficulty info.\n\n"
                                 "Any Trainer Tips signs you read will have\n"
-                                "their messages transcribed in the Notebook."),
+                                "their messages transcribed in the Notes."),
     },
 
     [HELP_SIGN_COMPLETING_A_ZONE] =
@@ -320,7 +320,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Zone Info"),
         .desc = COMPOUND_STRING("You can see a short preview of the next Zone\n"
-                                "by consulting the {COLOR GREEN}Notebook{COLOR DARK_GRAY}.\n\n"
+                                "by consulting the {COLOR GREEN}Notes{COLOR DARK_GRAY}.\n\n"
                                 "This includes:\n"
                                 "- a general description of the Zone\n"
                                 "- how many opponents remain in the Zone\n"
@@ -419,7 +419,7 @@ const struct HelpWindow gHelpWindowInfo[] =
         .desc = COMPOUND_STRING("Many Pokémon have minor adjustments to\n"
                                 "their evolution methods and abilities from\n"
                                 "vanilla Pokémon games.\n\n"
-                                "Consult the {COLOR GREEN}Notebook{COLOR DARK_GRAY} for these changes."),
+                                "Consult the {COLOR GREEN}Notes{COLOR DARK_GRAY} for these changes."),
     },
 
     [HELP_SIGN_DIFFERENT_AREAS] =
@@ -436,7 +436,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Pokémon species in its Pokédex entry, such\n"
                                 "such as its moveset or how to evolve it.\n\n"
                                 "Any changes from vanilla can be found in\n"
-                                "the {COLOR GREEN}Notebook{COLOR DARK_GRAY}."),
+                                "the {COLOR GREEN}Notes{COLOR DARK_GRAY}."),
     },
 
     [HELP_SIGN_BAG_TIPS] =
@@ -467,7 +467,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_SIGN_LEVEL_CAP] =
     {
         .header = COMPOUND_STRING("Trainer Tips: Level Cap"),
-        .desc = COMPOUND_STRING("The {COLOR GREEN}Notebook{COLOR DARK_GRAY} contains the current level cap."),
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Notes{COLOR DARK_GRAY} contains the current level cap."),
     },
 
     [HELP_SIGN_BATTLE_CHANGES] =
@@ -478,7 +478,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "- increased accuracy for many moves\n"
                                 "- the Frostbite condition instead of Freeze\n"
                                 "- experience gain\n\n"
-                                "Consult the {COLOR GREEN}Notebook{COLOR DARK_GRAY} for more details."),
+                                "Consult the {COLOR GREEN}Notes{COLOR DARK_GRAY} for more details."),
     },
 
     [HELP_SIGN_SELECT_SWITCH] =

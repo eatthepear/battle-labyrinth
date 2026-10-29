@@ -683,9 +683,9 @@ script EventScript_AccessPokemonBoxLink_PBL {
 script EventScript_Notebook {
 	playbgm(MUS_HG_FOLLOW_ME_1, FALSE)
 	while {
-		message("Notes open.\nWhat would you like to read?")
+		special(BufferCurrentLevelCap)
+		message("Notes open. Level Cap: {STR_VAR_1}\nWhat would you like to read?")
 		waitmessage
-		dynmultipush("Current Level Cap", 5)
 		dynmultipush("Current Zone", 0)
 		dynmultipush("Changes from Vanilla", 1)
 		dynmultipush("Difficulty Info", 2)
@@ -693,9 +693,6 @@ script EventScript_Notebook {
 		dynmultipush("Exit", 4)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
-			case 5:
-				special(BufferCurrentLevelCap)
-				msgbox(format("The current level cap is {STR_VAR_1}."))
 			case 0:
 				call(EventScript_Notebook_ZoneInfo)
 			case 1:
