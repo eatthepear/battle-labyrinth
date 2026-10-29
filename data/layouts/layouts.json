@@ -10445,8 +10445,8 @@
     {
       "id": "LAYOUT_ZONE31A",
       "name": "Zone31A_Layout",
-      "width": 21,
-      "height": 64,
+      "width": 26,
+      "height": 77,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_FallRuins",
       "border_filepath": "data/layouts/Zone31A/border.bin",
