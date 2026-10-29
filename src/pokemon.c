@@ -1549,10 +1549,7 @@ void GiveBoxMonInitialMoveset(struct BoxPokemon *boxMon) //Credit: AsparagusEdua
         if (learnset[i].level == 0)
             continue;
         if (IsMoveRestricted(learnset[i].move, learnset[i].level))
-        {
-            alreadyKnown = TRUE;
             continue;
-        }
 
         for (j = 0; j < addedMoves; j++)
         {
