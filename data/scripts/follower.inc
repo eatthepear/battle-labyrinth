@@ -12,6 +12,8 @@ gText_WantsToFly::
 
 EventScript_Follower::
 	lock
+	call_if_eq VAR_PUZZLE_DIFFICULTY, 1, EventScript_PuzzleHint
+	call_if_eq VAR_PUZZLE_DIFFICULTY, 2, EventScript_PuzzleSkip
 	bufferlivemonnickname STR_VAR_1
 	playfirstmoncry
 	getfolloweraction

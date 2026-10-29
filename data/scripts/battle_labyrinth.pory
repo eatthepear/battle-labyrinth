@@ -52,6 +52,109 @@ script EventScript_HealPreBoss {
 	}
 }
 
+script EventScript_PuzzleHint {
+	specialvar(VAR_TEMP_1, CheckWhichPuzzle)
+	if (var(VAR_TEMP_1) == PBL_PUZZLE_COUNT) {
+		return
+	}
+	switch (var(VAR_TEMP_1)) {
+		case PBL_PUZZLE_ZONE_4:
+			msgbox(format("Get a hint for Zone 4?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("The hint is: U, L, U, L, U"))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_5_GYM:
+			msgbox(format("Get a hint for Zone 5 Gym?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("The hint is: make sure your path to the next rooms are unblocked first, then move the statues to unblock yourself from where you are."))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_10_FIND_ITEMS:
+			msgbox(format("Get a hint for Zone 10 finding shards?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("The hint is: all five shards are in corners of the map.\pUse the Dowsing Machine to help!"))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_15:
+			msgbox(format("Get a hint for Zone 15?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("The hint is: a Plusle is in the top right ice puzzle, and the other two are in the bottom right big ice puzzle.\pAnother hint is: even though an ice puzzle might seem really complicated, it might be actually not many choices in the end. Sometimes when you slide, you will only have one direction to go (other than the direction you came from)."))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_17:
+			msgbox(format("Get a hint for Zone 17?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("The hint is: the stone at the top of the mountain suggests celebrating days of births and deaths.\pSo for the current year, there's a particular order of these dates."))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_22:
+			msgbox(format("Get a hint for Zone 22?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("The hint is: you need to push the Kimono Girl from the right side.\pYou can look at the puzzle and work your way backwards!"))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_25:
+			msgbox(format("Get a hint for Zone 25?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("The hint is: to skip over the broken ground, you need to use the bike and turn quickly.\pRegister the bike for faster tries!"))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_30:
+			msgbox(format("Get a hint for Zone 30?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("The hint is: the overall route through Rainbow Rocket Co. is linear, with some side paths.\pYou will deal with Team Magma first, then Team Aqua, then Team Galactic, then finally Team Rainbow Rocket."))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_34:
+			msgbox(format("Get a hint for Zone 34?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				message("Which puzzle do you want a hint on?")
+				waitmessage
+				dynmultipush("Color puzzle", 0)
+				dynmultipush("Spin puzzle", 1)
+				dynmultipush("Warp puzzle", 2)
+				dynmultipush("Exit", 3)
+				dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+				switch (var(VAR_RESULT)) {
+					case 0:
+						msgbox(format("The hint is: R Y B Y R, TODO"))
+					case 1:
+						msgbox(format("The hint is: 1st room go left first, then up. 2nd room go right first, then up."))
+					case 2:
+						msgbox(format("The hint is: TODO"))
+				}
+			} else {
+				closemessage
+				return
+			}
+	}
+	release
+	end
+}
+
+script EventScript_PuzzleSkip {
+	msgbox(format("Puzzle skip!"))
+	release
+	end
+}
+
 script EventScript_Max {
 	lock
 	faceplayer

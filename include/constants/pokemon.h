@@ -168,6 +168,20 @@ enum __attribute__((packed)) Stat
 #define METLOC_BOUGHT_BUG          0xFB
 // #define METLOC_DAYCARE_GIVEAWAY    0xFC
 
+enum PBLPuzzle
+{
+    PBL_PUZZLE_ZONE_4,
+    PBL_PUZZLE_ZONE_5_GYM,
+    PBL_PUZZLE_ZONE_10_FIND_ITEMS,
+    PBL_PUZZLE_ZONE_15,
+    PBL_PUZZLE_ZONE_17,
+    PBL_PUZZLE_ZONE_22,
+    PBL_PUZZLE_ZONE_25,
+    PBL_PUZZLE_ZONE_30,
+    PBL_PUZZLE_ZONE_34,
+    PBL_PUZZLE_COUNT
+};
+
 #define MIN_LEVEL 1
 #define MAX_LEVEL 100
 

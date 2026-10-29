@@ -59,6 +59,8 @@ script Zone30B_EventScript_Wally_Intro {
 script Zone30B_EventScript_Wally {
 	lock
 	faceplayer
+	call_if_eq(VAR_PUZZLE_DIFFICULTY, 1, EventScript_PuzzleHint)
+	call_if_eq(VAR_PUZZLE_DIFFICULTY, 2, EventScript_PuzzleSkip)
 	setspeaker("Wally")
 	msgbox(format("DIALOGUE!"), MSGBOX_AUTOCLOSE)
 	release

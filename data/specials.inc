@@ -659,3 +659,4 @@ gSpecials::
 	def_special EncounterObtainedInCurrentArea
 	def_special SetTimeToDay
 	def_special SetTimeToNight
+	def_special CheckWhichPuzzle

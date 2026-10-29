@@ -27,6 +27,8 @@ script Zone30D_EventScript_Leaf_Intro {
 script Zone30D_EventScript_Leaf {
 	lock
 	faceplayer
+	call_if_eq(VAR_PUZZLE_DIFFICULTY, 1, EventScript_PuzzleHint)
+	call_if_eq(VAR_PUZZLE_DIFFICULTY, 2, EventScript_PuzzleSkip)
 	setspeaker("Leaf")
 	msgbox(format("DIALOGUE!"), MSGBOX_AUTOCLOSE)
 	release

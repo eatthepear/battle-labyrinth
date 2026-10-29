@@ -66,6 +66,8 @@ text Zone10A_Text_KimonoGirl {
 script Zone10A_EventScript_KimonoGirl {
 	lock
 	faceplayer
+	call_if_eq(VAR_PUZZLE_DIFFICULTY, 1, EventScript_PuzzleHint)
+	call_if_eq(VAR_PUZZLE_DIFFICULTY, 2, EventScript_PuzzleSkip)
 	setspeaker("Kimono Girl")
 	msgbox(Zone10A_Text_KimonoGirl, MSGBOX_AUTOCLOSE)
 	release

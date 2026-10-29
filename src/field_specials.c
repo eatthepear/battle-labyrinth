@@ -4978,6 +4978,45 @@ void SetTimeToNight(void)
     SetMainCallback2(CB2_LoadMap);
 }
 
+u16 CheckWhichPuzzle(void)
+{
+    if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_4) {
+        return PBL_PUZZLE_ZONE_4;
+    }
+    if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_5) {
+        return PBL_PUZZLE_ZONE_5_GYM;
+    }
+    if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_10) {
+        if ((FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_1) == FALSE) ||
+		(FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_2) == FALSE) ||
+		(FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_3) == FALSE) ||
+		(FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_4) == FALSE) ||
+		(FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_5) == FALSE))
+            return PBL_PUZZLE_ZONE_10_FIND_ITEMS;
+    }
+    if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_15) {
+        return PBL_PUZZLE_ZONE_15;
+    }
+    if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_17) {
+        if (VarGet(VAR_ZONE_17_STATE) <= 20)
+            return PBL_PUZZLE_ZONE_17;
+    }
+    if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_22) {
+        if (VarGet(VAR_ZONE_22_STATE) == 1)
+            return PBL_PUZZLE_ZONE_22;
+    }
+    if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_25) {
+        return PBL_PUZZLE_ZONE_25;
+    }
+    if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_30) {
+        return PBL_PUZZLE_ZONE_30;
+    }
+    if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_34) {
+        return PBL_PUZZLE_ZONE_34;
+    }
+    return PBL_PUZZLE_COUNT;
+}
+
 static void UIAskConfirmation(void)
 {
     DisplayYesNoMenuDefaultYes();
