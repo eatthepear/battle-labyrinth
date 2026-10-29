@@ -798,19 +798,7 @@ static void Task_SaveFromStartMenuFull(u8 taskId)
                 break;
             case 2:
                 if (SaveCallback())
-                    *state = 3;
-                break;
-            case 3:
-                if (SaveCallback())
-                    *state = 4;
-                break;
-            case 4:
-                DestroyTask(taskId);
-                ClearDialogWindowAndFrameToTransparent(0, TRUE);
-                HideSaveMessageWindow();
-                ScriptUnfreezeObjectEvents();
-                UnlockPlayerFieldControls();
-                SoftResetInBattlePyramid();
+                    DestroyTask(taskId);
                 break;
         }
     }
