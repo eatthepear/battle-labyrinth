@@ -210,7 +210,7 @@ static const u32 sNumFoes[] =
     20, // zone 35
 };
 
-u32 GetExpValue(void)
+UNUSED u32 GetExpValue(void)
 {
     u32 i;
     u32 levelCap;

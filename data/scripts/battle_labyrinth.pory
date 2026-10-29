@@ -833,7 +833,7 @@ script EventScript_Notebook_Pokemon {
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			case 1:
-				msgbox(format("Many Pokémon have their Hidden Ability swapped with a regular ability. All Pokémon still only have abilities that they do in vanilla."))
+				msgbox(format("Some Pokémon have their Hidden Ability swapped with a regular ability. All Pokémon still only have abilities that they do in vanilla."))
 				msgbox(format("The next page notes Pokémon with ability changes. Would you like to read it?"), MSGBOX_YESNO)
 				if (var(VAR_RESULT) == YES) {
 					call(EventScript_Notebook_Abilities)
@@ -867,6 +867,9 @@ script EventScript_Notebook_Abilities {
 		dynmultipush("Hippowdon", SPECIES_HIPPOWDON)
 		dynmultipush("Snover", SPECIES_SNOVER)
 		dynmultipush("Abomasnow", SPECIES_ABOMASNOW)
+		dynmultipush("Roggenrola", SPECIES_ROGGENROLA)
+		dynmultipush("Boldore", SPECIES_BOLDORE)
+		dynmultipush("Gigalith", SPECIES_GIGALITH)
 		dynmultipush("Vanillite", SPECIES_VANILLITE)
 		dynmultipush("Vanillish", SPECIES_VANILLISH)
 		dynmultipush("Vanilluxe", SPECIES_VANILLUXE)
@@ -887,6 +890,11 @@ script EventScript_Notebook_Abilities {
 			case SPECIES_SNOVER:
 			case SPECIES_ABOMASNOW:
 				msgbox(format("Snover and Abomasnow now get Soundproof as a regular ability instead of Snow Warning, which is now their Hidden Ability."))
+			case SPECIES_ROGGENROLA:
+			case SPECIES_BOLDORE:
+				msgbox(format("Roggenrola and Vanillish now get Sand Force as a regular ability instead of Weak Armor, which is now their Hidden Ability."))
+			case SPECIES_GIGALITH:
+				msgbox(format("Gigalith now gets Sand Force as a regular ability instead of Sand Stream, which is now its Hidden Ability."))
 			case SPECIES_VANILLITE:
 			case SPECIES_VANILLISH:
 				msgbox(format("Vanillite and Vanillish now get Weak Armor as a regular ability instead of Snow Cloak, which is now their Hidden Ability."))
@@ -903,7 +911,6 @@ script EventScript_Notebook_Evolutions {
 	while {
 		message(format("Which Pokémon's evolution change would you like to read?"))
 		waitmessage
-		dynmultipush("Rockruff - Lv. 25, random", SPECIES_ROCKRUFF)
 		dynmultipush("Eevee - Evo Stone", SPECIES_EEVEE)
 		dynmultipush("Gimmighoul - Evo Stone", SPECIES_GIMMIGHOUL)
 		dynmultipush("Milcery - Evo Stone", SPECIES_MILCERY)
@@ -915,11 +922,12 @@ script EventScript_Notebook_Evolutions {
 		dynmultipush("Cleffa - Lv. 10", SPECIES_CLEFFA)
 		dynmultipush("Azurill - Lv. 10", SPECIES_AZURILL)
 		dynmultipush("Sunkern - Lv. 10", SPECIES_SUNKERN)
+		dynmultipush("Skitty - Lv. 10", SPECIES_SKITTY)
 		dynmultipush("Pichu - Lv. 10", SPECIES_PICHU)
-		dynmultipush("Chingling - Lv. 15", SPECIES_CHINGLING)
-		dynmultipush("Budew - Lv. 15", SPECIES_BUDEW)
-		dynmultipush("Buneary - Lv. 15", SPECIES_BUNEARY)
-		dynmultipush("Woobat - Lv. 15", SPECIES_WOOBAT)
+		dynmultipush("Budew - Lv. 16", SPECIES_BUDEW)
+		dynmultipush("Chingling - Lv. 16", SPECIES_CHINGLING)
+		dynmultipush("Buneary - Lv. 16", SPECIES_BUNEARY)
+		dynmultipush("Woobat - Lv. 16", SPECIES_WOOBAT)
 		dynmultipush("Cyndaquil - Lv. 16", SPECIES_CYNDAQUIL)
 		dynmultipush("Totodile - Lv. 16", SPECIES_TOTODILE)
 		dynmultipush("Turtwig - Lv. 16", SPECIES_TURTWIG)
@@ -955,9 +963,8 @@ script EventScript_Notebook_Evolutions {
 		dynmultipush("Nickit - Lv. 16", SPECIES_NICKIT)
 		dynmultipush("Lechonk - Lv. 16", SPECIES_LECHONK)
         dynmultipush("Smoliv - Lv. 16", SPECIES_SMOLIV)
-		dynmultipush("Machop - Lv. 25", SPECIES_MACHOP)
+        dynmultipush("Pawmi - Lv. 16", SPECIES_PAWMI)
 		dynmultipush("Mantyke - Lv. 28", SPECIES_MANTYKE)
-		dynmultipush("Golbat - Lv. 28", SPECIES_GOLBAT)
 		dynmultipush("Meowth Alola - Lv. 28", SPECIES_MEOWTH_ALOLA)
 		dynmultipush("Swadloon - Lv. 28", SPECIES_SWADLOON)
 		dynmultipush("Stantler - Lv. 28", SPECIES_STANTLER)
@@ -969,15 +976,14 @@ script EventScript_Notebook_Evolutions {
 		dynmultipush("Munchlax - Lv. 30", SPECIES_MUNCHLAX)
 		dynmultipush("Togepi - Lv. 30", SPECIES_TOGEPI)
 		dynmultipush("Chansey - Lv. 30", SPECIES_CHANSEY)
-		dynmultipush("Basculin Hisui - Lv. 30", SPECIES_BASCULIN_WHITE_STRIPED)
+		dynmultipush("Basculin White - Lv. 30", SPECIES_BASCULIN_WHITE_STRIPED)
 		dynmultipush("Karrablast - Lv. 30", SPECIES_KARRABLAST)
 		dynmultipush("Shelmet - Lv. 30", SPECIES_SHELMET)
+		dynmultipush("Golbat - Lv. 30", SPECIES_GOLBAT)
 		dynmultipush("Type: Null - Lv. 30", SPECIES_TYPE_NULL)
 		dynmultipush("Yamask Galar - Lv. 34", SPECIES_YAMASK_GALAR)
 		dynmultipush("Farfetch'd Galar - Lv. 34", SPECIES_FARFETCHD_GALAR)
 		dynmultipush("Primeape - Lv. 45", SPECIES_PRIMEAPE)
-		dynmultipush("Bisharp - Lv. 64", SPECIES_BISHARP)
-		dynmultipush("Skitty - Lv. 10", SPECIES_SKITTY)
 		dynmultipush("Ledyba - Lv. 12", SPECIES_LEDYBA)
 		dynmultipush("Spinarak - Lv. 12", SPECIES_SPINARAK)
 		dynmultipush("Glameow - Lv. 28", SPECIES_GLAMEOW)
@@ -990,14 +996,21 @@ script EventScript_Notebook_Evolutions {
 		dynmultipush("Vullaby - Lv. 34", SPECIES_VULLABY)
 		dynmultipush("Mienfoo - Lv. 40", SPECIES_MIENFOO)
 		dynmultipush("Pawniard - Lv. 42", SPECIES_PAWNIARD)
+		dynmultipush("Bisharp - Lv. 54", SPECIES_BISHARP)
+		dynmultipush("Pikachu - Map", SPECIES_PIKACHU)
+		dynmultipush("Exeggcute - Map", SPECIES_EXEGGCUTE)
+		dynmultipush("Cubone - Map", SPECIES_CUBONE)
+		dynmultipush("Koffing - Map", SPECIES_KOFFING)
+		dynmultipush("Mime Jr. - Map", SPECIES_MIME_JR)
+		dynmultipush("Dewott - Map", SPECIES_DEWOTT)
+		dynmultipush("Petilil - Map", SPECIES_PETILIL)
+		dynmultipush("Goomy - Map", SPECIES_GOOMY)
 		dynmultipush("Back", 0)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 1, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
 			default:
 				bufferspeciesname(0, VAR_RESULT)
 				msgbox(format("{STR_VAR_1} now evolves using a level up evolution at a new level."))
-			case SPECIES_ROCKRUFF:
-				msgbox(format("Rockruff evolves at level 25 randomly into Lycanroc Midday or Lycanroc Midnight."))
 			case SPECIES_EEVEE:
 				msgbox(format("Eevee evolves into Espeon using a Sun Stone, Umbreon using a Moon Stone, and Sylveon using a Shiny Stone."))
 			case SPECIES_GIMMIGHOUL:
@@ -1012,6 +1025,23 @@ script EventScript_Notebook_Evolutions {
 				msgbox(format("Snorunt now evolves into Froslass regardless of gender."))
 			case SPECIES_SALANDIT:
 				msgbox(format("Salandit now evolves into Salazzle regardless of gender."))
+			case SPECIES_RUFFLET:
+				bufferspeciesname(0, VAR_RESULT)
+				msgbox(format("{STR_VAR_1} now evolves using a level up evolution at a new level, and can evolve into its regional variant in Quiet Field."))
+			case SPECIES_PIKACHU:
+			case SPECIES_EXEGGCUTE:
+			case SPECIES_CUBONE:
+				bufferspeciesname(0, VAR_RESULT)
+				msgbox(format("{STR_VAR_1} and can evolve into its regional variant in Breezy Meadow."))
+			case SPECIES_KOFFING:
+			case SPECIES_MIME_JR:
+				bufferspeciesname(0, VAR_RESULT)
+				msgbox(format("{STR_VAR_1} and can evolve into its regional variant in Sanctuary."))
+			case SPECIES_DEWOTT:
+			case SPECIES_PETILIL:
+			case SPECIES_GOOMY:
+				bufferspeciesname(0, VAR_RESULT)
+				msgbox(format("{STR_VAR_1} and can evolve into its regional variant in Quiet Field."))
 			case 0:
 			case MULTI_B_PRESSED:
 				return
@@ -1024,7 +1054,6 @@ script EventScript_Notebook_Battle {
 		message(format("Battle Changes open.\nAnything not listed is vanilla."))
 		waitmessage
 		dynmultipush("Accuracy", 0)
-		dynmultipush("Experience", 1)
 		dynmultipush("Abilities", 3)
 		dynmultipush("Pay Day", 7)
 		dynmultipush("Back", 8)
@@ -1036,8 +1065,6 @@ script EventScript_Notebook_Battle {
 				if (var(VAR_RESULT) == YES) {
 					helpwindow(HELP_CHANGES_ACCURACY_EXCEPTIONS)
 				}
-			case 1:
-				helpwindow(HELP_CHANGES_EXPERIENCE)
 			case 4:
 				helpwindow(HELP_CHANGES_ABILITIES)
 			case 7:
@@ -1101,7 +1128,6 @@ script EventScript_Notebook_Other {
 		dynmultipush("Hidden Grotto", 4)
 		dynmultipush("Field Moves", 5)
 		dynmultipush("Move Tutors", 6)
-		dynmultipush("Day/Night", 7)
 		dynmultipush("Back", 8)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
@@ -1119,8 +1145,6 @@ script EventScript_Notebook_Other {
 				helpwindow(HELP_SIGN_FIELD_MOVES)
 			case 6:
 				msgbox(format("Move Tutors can be found scattered in a few Zones.\pOnce encountered, {COLOR GREEN}Lelouch's Services Stand{COLOR DARK_GRAY} can handle teaching your Pokémon those moves."))
-			case 7:
-				msgbox(format("There is no day/night cycle."))
 			case 8:
 			case MULTI_B_PRESSED:
 				return
