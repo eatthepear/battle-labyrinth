@@ -299,24 +299,6 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 20,
-      "y": 44,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone12A_EventScript_Waterfall"
-    },
-    {
-      "type": "trigger",
-      "x": 21,
-      "y": 44,
-      "elevation": 0,
-      "var": "VAR_GENERIC",
-      "var_value": "0",
-      "script": "Zone12A_EventScript_Waterfall"
-    },
-    {
-      "type": "trigger",
       "x": 39,
       "y": 17,
       "elevation": 0,
