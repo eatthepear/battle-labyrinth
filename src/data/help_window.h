@@ -552,4 +552,15 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "but can be accessed at will from the\n"
                                 "{COLOR GREEN}Sanctuary{COLOR DARK_GRAY}."),
     },
+
+    [HELP_BICYCLE] =
+    {
+        .header = COMPOUND_STRING("Bike"),
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Bike{COLOR DARK_GRAY} has two modes,\n"
+                                "Mach and Acro. Toggle with {L_BUTTON}.\n\n"
+                                "Mach is fast and can dodge holes.\n"
+                                "Hold {B_BUTTON} to hop in place with Acro.\n"
+                                "Press {B_BUTTON} and a direction to jump\n"
+                                "in the direction with Acro."),
+    },
 };

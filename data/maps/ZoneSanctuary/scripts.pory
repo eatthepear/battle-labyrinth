@@ -386,6 +386,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("The {COLOR GREEN}Bike{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_BICYCLE)
+			helpwindow(HELP_BICYCLE)
 		case 17:
 			msgbox(format("{COLOR GREEN}5 Lum Berries{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
