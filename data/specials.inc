@@ -660,3 +660,4 @@ gSpecials::
 	def_special SetTimeToDay
 	def_special SetTimeToNight
 	def_special CheckWhichPuzzle
+	def_special GetLegendCaveSpecies

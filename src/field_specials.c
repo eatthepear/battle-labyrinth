@@ -5154,6 +5154,60 @@ u16 GetHiddenGrottoSpecies(void)
     return species;
 }
 
+u16 GetLegendCaveSpecies(void)
+{
+    enum Species species = SPECIES_NONE;
+    rng_value_t rng = LocalRandomSeed(gSaveBlock1Ptr->pblSeed);
+    rng_value_t dailyrng = LocalRandomSeed(gSaveBlock1Ptr->dailySeed);
+    switch ((LocalRandom32(&rng) + LocalRandom32(&dailyrng)) % 21)
+    {
+        case 0:
+            return SPECIES_ARTICUNO;
+        case 1:
+            return SPECIES_ZAPDOS;
+        case 2:
+            return SPECIES_MOLTRES;
+        case 3:
+            return SPECIES_ARTICUNO_GALAR;
+        case 4:
+            return SPECIES_ZAPDOS_GALAR;
+        case 5:
+            return SPECIES_MOLTRES_GALAR;
+        case 6:
+            return SPECIES_RAIKOU;
+        case 7:
+            return SPECIES_ENTEI;
+        case 8:
+            return SPECIES_SUICUNE;
+        case 9:
+            return SPECIES_LATIAS;
+        case 10:
+            return SPECIES_LATIOS;
+        case 11:
+            return SPECIES_UXIE;
+        case 12:
+            return SPECIES_MESPRIT;
+        case 13:
+            return SPECIES_AZELF;
+        case 14:
+            return SPECIES_CRESSELIA;
+        case 15:
+            return SPECIES_COBALION;
+        case 16:
+            return SPECIES_TERRAKION;
+        case 17:
+            return SPECIES_VIRIZION;
+        case 18:
+            return SPECIES_TORNADUS;
+        case 19:
+            return SPECIES_THUNDURUS;
+        case 20:
+            return SPECIES_LANDORUS;
+        default:
+            return SPECIES_RAYQUAZA;
+    }
+}
+
 void SetAbility(void)
 {
     enum Ability ability = gSpecialVar_Result;

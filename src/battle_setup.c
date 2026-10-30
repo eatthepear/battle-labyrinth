@@ -633,6 +633,31 @@ void BattleSetup_StartLegendaryBattle(void)
     default:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_CRESSELIA:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_DP_VS_LEGEND);
+        break;
+    case SPECIES_RAIKOU:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_HG_VS_RAIKOU);
+        break;
+    case SPECIES_ENTEI:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_HG_VS_ENTEI);
+        break;
+    case SPECIES_SUICUNE:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_HG_VS_SUICUNE);
+        break;
+    case SPECIES_UXIE:
+    case SPECIES_MESPRIT:
+    case SPECIES_AZELF:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_DP_VS_UXIE_MESPRIT_AZELF);
+        break;
+    case SPECIES_COBALION:
+    case SPECIES_TERRAKION:
+    case SPECIES_VIRIZION:
+    case SPECIES_TORNADUS:
+    case SPECIES_THUNDURUS:
+    case SPECIES_LANDORUS:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_BW_VS_LEGEND);
+        break;
     case SPECIES_MEW:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
         break;

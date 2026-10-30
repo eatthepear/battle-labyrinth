@@ -1,1 +1,34 @@
-mapscripts LegendCave_MapScripts {}
+mapscripts LegendCave_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_LEGEND_CAVE_SPECIES) == 0) {
+            if (flag(FLAG_DAILY_LEGENDARY_SPAWNED) == FALSE) {
+	            specialvar(VAR_LEGEND_CAVE_SPECIES, GetLegendCaveSpecies)
+                if (var(VAR_LEGEND_CAVE_SPECIES) != 0) {
+                    setflag(FLAG_DAILY_LEGENDARY_SPAWNED)
+                }
+            } else {
+                setflag(FLAG_TEMP_2)
+            }
+        }
+    }
+	MAP_SCRIPT_ON_RESUME {
+        copyvar(VAR_OBJ_GFX_ID_0, VAR_LEGEND_CAVE_SPECIES)
+        addvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_MON)
+	}
+}
+
+script LegendCave_EventScript_LegendaryPokemon {
+	lock
+	faceplayer
+	waitse
+	playmoncry(VAR_LEGEND_CAVE_SPECIES, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	setwildbattle_pbl(VAR_LEGEND_CAVE_SPECIES, 50)
+	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	special(BattleSetup_StartLegendaryBattle)
+	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	setflag(FLAG_TEMP_2)
+    setvar(VAR_LEGEND_CAVE_SPECIES, 0)
+	goto(Common_EventScript_RemoveStaticPokemon)
+}
