@@ -134,7 +134,8 @@
     "UnderwaterCave",
     "UnderwaterCave2",
     "PartnerIsland",
-    "LegendCaveOutside"
+    "LegendCaveOutside",
+    "LegendCave"
   ],
   "gMapGroup_ZonesMinor": [
     "Zone4B",

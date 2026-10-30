@@ -2072,3 +2072,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/PartnerIsland/scripts.inc"
 
 	.include "data/maps/LegendCaveOutside/scripts.inc"
+
+	.include "data/maps/LegendCave/scripts.inc"

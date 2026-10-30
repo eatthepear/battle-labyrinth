@@ -11092,6 +11092,16 @@
       "secondary_tileset": "gTileset_Sanctuary",
       "border_filepath": "data/layouts/LegendCaveOutside/border.bin",
       "blockdata_filepath": "data/layouts/LegendCaveOutside/map.bin"
+    },
+    {
+      "id": "LAYOUT_LEGEND_CAVE",
+      "name": "LegendCave_Layout",
+      "width": 19,
+      "height": 19,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/LegendCave/border.bin",
+      "blockdata_filepath": "data/layouts/LegendCave/map.bin"
     }
   ]
 }

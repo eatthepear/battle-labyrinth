@@ -1,0 +1,28 @@
+{
+  "id": "MAP_LEGEND_CAVE",
+  "name": "LegendCave",
+  "layout": "LAYOUT_LEGEND_CAVE",
+  "music": "MUS_DP_LAKE_CAVERNS",
+  "region_map_section": "MAPSEC_LEGEND_CAVE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 9,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_LEGEND_CAVE_OUTSIDE",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}
