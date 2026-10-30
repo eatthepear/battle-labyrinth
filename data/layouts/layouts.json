@@ -11050,6 +11050,38 @@
       "secondary_tileset": "gTileset_Sanctuary",
       "border_filepath": "data/layouts/PartnerCanyon/border.bin",
       "blockdata_filepath": "data/layouts/PartnerCanyon/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNDERWATER_CAVE",
+      "name": "UnderwaterCave_Layout",
+      "width": 24,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/UnderwaterCave/border.bin",
+      "blockdata_filepath": "data/layouts/UnderwaterCave/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_UNDERWATER_CAVE2",
+      "name": "UnderwaterCave2_Layout",
+      "width": 13,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/UnderwaterCave2/border.bin",
+      "blockdata_filepath": "data/layouts/UnderwaterCave2/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PARTNER_ISLAND",
+      "name": "PartnerIsland_Layout",
+      "width": 13,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/PartnerIsland/border.bin",
+      "blockdata_filepath": "data/layouts/PartnerIsland/map.bin"
     }
   ]
 }

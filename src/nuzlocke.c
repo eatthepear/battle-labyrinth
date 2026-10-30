@@ -52,6 +52,7 @@ const u8 NuzlockeLUT[] =
     [MAPSEC_PARTNER_GROVE] = 0x2B,
     [MAPSEC_PARTNER_ISLAND] = 0x2C,
     [MAPSEC_PARTNER_CANYON] = 0x2D,
+    [MAPSEC_UNDERWATER_CAVE] = 0x2E,
 };
 
 u8 NuzlockeFlagSet(u16 mapsec)

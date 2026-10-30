@@ -2064,3 +2064,9 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/HiddenGrotto_Zone7A/scripts.inc"
 
 	.include "data/maps/PartnerCanyon/scripts.inc"
+
+	.include "data/maps/UnderwaterCave/scripts.inc"
+
+	.include "data/maps/UnderwaterCave2/scripts.inc"
+
+	.include "data/maps/PartnerIsland/scripts.inc"

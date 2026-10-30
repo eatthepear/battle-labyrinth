@@ -1316,12 +1316,8 @@
       "name": "Partner Canyon"
     },
     {
-      "id": "MAPSEC_RIXY_CHAMBER",
-      "name": "RIXY CHAMBER",
-      "x": 9,
-      "y": 12,
-      "width": 1,
-      "height": 1
+      "id": "MAPSEC_UNDERWATER_CAVE",
+      "name": "Underwater Cave"
     },
     {
       "id": "MAPSEC_VIAPOIS_CHAMBER",

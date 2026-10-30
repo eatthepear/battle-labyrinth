@@ -130,7 +130,10 @@
     "HiddenGrotto_Zone3A",
     "HiddenGrotto_Zone7A",
     "PartnerGrove",
-    "PartnerCanyon"
+    "PartnerCanyon",
+    "UnderwaterCave",
+    "UnderwaterCave2",
+    "PartnerIsland"
   ],
   "gMapGroup_ZonesMinor": [
     "Zone4B",
