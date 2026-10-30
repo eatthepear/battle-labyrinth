@@ -27,6 +27,11 @@
       "map": "MAP_ZONE_SANCTUARY_BREEZY_MEADOW",
       "offset": 60,
       "direction": "down"
+    },
+    {
+      "map": "MAP_LEGEND_CAVE_OUTSIDE",
+      "offset": 32,
+      "direction": "up"
     }
   ],
   "object_events": [

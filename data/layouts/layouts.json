@@ -11082,6 +11082,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/PartnerIsland/border.bin",
       "blockdata_filepath": "data/layouts/PartnerIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_LEGEND_CAVE_OUTSIDE",
+      "name": "LegendCaveOutside_Layout",
+      "width": 33,
+      "height": 21,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Sanctuary",
+      "border_filepath": "data/layouts/LegendCaveOutside/border.bin",
+      "blockdata_filepath": "data/layouts/LegendCaveOutside/map.bin"
     }
   ]
 }
