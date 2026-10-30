@@ -1782,6 +1782,7 @@ script Debug_CheatStart_PBL_GiveItems {
 		return
 	}
 	additem(ITEM_MIRACLE_SEED)
+	additem(ITEM_TM_THIEF)
 	additem(ITEM_TM_LIGHT_SCREEN)
 	additem(ITEM_TM_REFLECT)
 	additem(ITEM_POKEMON_BOX_LINK)
@@ -1904,6 +1905,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 16) {
 		return
 	}
+	additem(ITEM_TM_FLY)
 	additem(ITEM_BOTTLE_CAP)
 	additem(ITEM_YELLOW_SHARD, 5)
 	additem(ITEM_BICYCLE)
@@ -1926,6 +1928,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_TM_U_TURN)
 	additem(ITEM_TM_FACADE)
 	additem(ITEM_TM_HYPER_VOICE)
+	additem(ITEM_TM_FLIP_TURN)
 
 	if (var(VAR_ZONE) == 20) {
 		return
@@ -1940,10 +1943,13 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 21) {
 		return
 	}
+	additem(ITEM_HM_STRENGTH)
 
 	if (var(VAR_ZONE) == 22) {
 		return
 	}
+	additem(ITEM_TM_CALM_MIND)
+	additem(ITEM_TM_BULK_UP)
 	additem(ITEM_HM_WATERFALL)
 	additem(ITEM_AIR_BALLOON)
 	additem(ITEM_TM_DRAIN_PUNCH)
