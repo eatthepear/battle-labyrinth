@@ -166,7 +166,7 @@ TEST("Difficulty changes which party is used for enemy trainer if defined for th
     u32 currTrainer = 5;
     CreateNPCTrainerPartyFromTrainer(testParty, GetTrainerStructFromId(currTrainer));
     EXPECT(GetMonData(&testParty[0], MON_DATA_SPECIES) == SPECIES_METAPOD);
-    EXPECT(GetMonData(&testParty[0], MON_DATA_LEVEL) == 1);
+    EXPECT(GetMonData(&testParty[0], MON_DATA_LEVEL) == 5);
     Free(testParty);
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
 }
@@ -213,7 +213,7 @@ TEST("Difficulty changes which party is used for partner if defined for the diff
     u32 currTrainer = TRAINER_PARTNER(1);
     CreateNPCTrainerPartyFromTrainer(testParty, GetTrainerStructFromId(currTrainer));
     EXPECT(GetMonData(&testParty[0], MON_DATA_SPECIES) == SPECIES_METAPOD);
-    EXPECT(GetMonData(&testParty[0], MON_DATA_LEVEL) == 1);
+    EXPECT(GetMonData(&testParty[0], MON_DATA_LEVEL) == 5);
     Free(testParty);
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
 }
