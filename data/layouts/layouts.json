@@ -5779,8 +5779,8 @@
     {
       "id": "LAYOUT_ZONE_SANCTUARY_QUIET_FIELD",
       "name": "ZoneSanctuary_QuietField_Layout",
-      "width": 24,
-      "height": 21,
+      "width": 27,
+      "height": 25,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_Sanctuary",
       "border_filepath": "data/layouts/ZoneSanctuary_QuietField/border.bin",
@@ -11040,6 +11040,16 @@
       "secondary_tileset": "gTileset_Sanctuary",
       "border_filepath": "data/layouts/PartnerGrove/border.bin",
       "blockdata_filepath": "data/layouts/PartnerGrove/map.bin"
+    },
+    {
+      "id": "LAYOUT_PARTNER_CANYON",
+      "name": "PartnerCanyon_Layout",
+      "width": 22,
+      "height": 17,
+      "primary_tileset": "gTileset_Common",
+      "secondary_tileset": "gTileset_Sanctuary",
+      "border_filepath": "data/layouts/PartnerCanyon/border.bin",
+      "blockdata_filepath": "data/layouts/PartnerCanyon/map.bin"
     }
   ]
 }

@@ -2062,3 +2062,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/PartnerGrove/scripts.inc"
 
 	.include "data/maps/HiddenGrotto_Zone7A/scripts.inc"
+
+	.include "data/maps/PartnerCanyon/scripts.inc"

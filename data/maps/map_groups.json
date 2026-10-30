@@ -129,7 +129,8 @@
     "HiddenGrotto_QuietField",
     "HiddenGrotto_Zone3A",
     "HiddenGrotto_Zone7A",
-    "PartnerGrove"
+    "PartnerGrove",
+    "PartnerCanyon"
   ],
   "gMapGroup_ZonesMinor": [
     "Zone4B",
