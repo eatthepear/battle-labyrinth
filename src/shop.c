@@ -1036,6 +1036,8 @@ static void Task_BuyMenu(u8 taskId)
                     if (GetItemImportance(itemId))
                     {
                         ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
+                        if (GetItemPocket(itemId) == POCKET_TM_HM)
+                            StringCopy(gStringVar1, GetMoveName(ItemIdToBattleMoveId(itemId)));
                         StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2);
                         tItemCount = 1;
                         sShopData->totalCost = (GetItemPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
