@@ -25,7 +25,7 @@
     },
     {
       "map": "MAP_PARTNER_GROVE",
-      "offset": 0,
+      "offset": 5,
       "direction": "right"
     }
   ],
@@ -42,78 +42,9 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ZoneSanctuary_PeacefulGrove_EventScript_Pokemaniac",
       "flag": "0"
-    },
-    {
-      "local_id": "LOCALID_CYCLIST",
-      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
-      "x": 28,
-      "y": 6,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "ZoneSanctuary_PeacefulGrove_EventScript_Cyclist",
-      "flag": "0"
     }
   ],
   "warp_events": [],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 24,
-      "y": 5,
-      "elevation": 3,
-      "var": "VAR_TEMP_1",
-      "var_value": "1",
-      "script": "ZoneSanctuary_PeacefulGrove_EventScript_ClearCyclingFlag"
-    },
-    {
-      "type": "trigger",
-      "x": 24,
-      "y": 6,
-      "elevation": 3,
-      "var": "VAR_TEMP_1",
-      "var_value": "1",
-      "script": "ZoneSanctuary_PeacefulGrove_EventScript_ClearCyclingFlag"
-    },
-    {
-      "type": "trigger",
-      "x": 24,
-      "y": 7,
-      "elevation": 3,
-      "var": "VAR_TEMP_1",
-      "var_value": "1",
-      "script": "ZoneSanctuary_PeacefulGrove_EventScript_ClearCyclingFlag"
-    },
-    {
-      "type": "trigger",
-      "x": 26,
-      "y": 5,
-      "elevation": 0,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "ZoneSanctuary_PeacefulGrove_EventScript_BikeCheck"
-    },
-    {
-      "type": "trigger",
-      "x": 26,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "ZoneSanctuary_PeacefulGrove_EventScript_BikeCheck"
-    },
-    {
-      "type": "trigger",
-      "x": 26,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "ZoneSanctuary_PeacefulGrove_EventScript_BikeCheck"
-    }
-  ],
+  "coord_events": [],
   "bg_events": []
 }

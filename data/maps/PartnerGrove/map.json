@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ZONE_SANCTUARY_PEACEFUL_GROVE",
-      "offset": 0,
+      "offset": -5,
       "direction": "left"
     }
   ],
