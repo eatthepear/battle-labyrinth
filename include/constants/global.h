@@ -112,8 +112,8 @@ enum Language
 // Bag constants
 #define BAG_ITEMS_COUNT 100
 #define BAG_KEYITEMS_COUNT 30
-#define BAG_POKEBALLS_COUNT 16
-#define BAG_TMHM_COUNT 64
+#define BAG_POKEBALLS_COUNT 30
+#define BAG_TMHM_COUNT 108
 #define BAG_BERRIES_COUNT 46
 #define BAG_MEDICINE_COUNT 50
 
