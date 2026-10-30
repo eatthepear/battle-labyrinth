@@ -2538,7 +2538,7 @@ Name: Declan
 Class: Aspiring Leader
 Pic: Bug Maniac
 Music: Suspicious
-AI: AI_FLAG_BASIC_TRAINER
+AI: AI_FLAG_BOSS
 Double Battle: No
 
 Kricketune @ Focus Sash
@@ -2725,6 +2725,54 @@ Level: 34
 - Poison Jab
 - Flamethrower
 - Play Rough
+
+=== TRAINER_PBL_CHARLES_OPTIONAL_12 ===
+Name: Charles
+Class: Aspiring Leader
+Pic: Bird Keeper
+Music: Cool
+AI: AI_FLAG_BOSS
+Double Battle: No
+
+Fearow @ Scope Lens
+Naive Nature
+Ability: Sniper
+Level: 1
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drill Peck
+- Drill Run
+- Return
+- Focus Energy
+
+Bombirdier @ Rock Gem
+Jolly Nature
+Ability: Rocky Payload
+Level: 1
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Knock Off
+- Rock Slide
+- Roost
+
+Swanna @ Wacan Berry
+Timid Nature
+Ability: Hydration
+Level: 1
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Hurricane
+- Roost
+- Rain Dance
+
+Hawlucha @ Flying Gem
+Adamant Nature
+Ability: Unburden
+Level: 2
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Close Combat
+- Iron Head
+- Throat Chop
 
 === TRAINER_PBL_LEAF_BOSS_17 ===
 Name: Leaf

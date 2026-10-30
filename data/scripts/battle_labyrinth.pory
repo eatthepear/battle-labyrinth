@@ -1944,6 +1944,7 @@ script Debug_CheatStart_PBL_GiveItems {
 		return
 	}
 	additem(ITEM_HM_STRENGTH)
+	additem(ITEM_TM_ACROBATICS)
 
 	if (var(VAR_ZONE) == 22) {
 		return
@@ -2904,6 +2905,15 @@ script EventScript_Kleavor {
 	faceplayer
 	playmoncry(SPECIES_KLEAVOR, CRY_MODE_NORMAL)
 	msgbox(format("Klea!"))
+	waitmoncry
+	release
+}
+
+script EventScript_Hawlucha {
+	lock
+	faceplayer
+	playmoncry(SPECIES_HAWLUCHA, CRY_MODE_NORMAL)
+	msgbox(format("Chaa!"))
 	waitmoncry
 	release
 }
