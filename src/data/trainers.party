@@ -4403,6 +4403,54 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Knock Off
 - Ice Punch
 
+=== TRAINER_PBL_HENRY_OPTIONAL_10 ===
+Name: Henry
+Class: Aspiring Leader
+Pic: Worker
+Music: Hiker
+AI: AI_FLAG_BOSS
+Double Battle: Yes
+
+Hippowdon @ Smooth Rock
+Sassy Nature
+Ability: Sand Stream
+Level: 1
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- High Horsepower
+- Body Press
+- Slack Off
+- Facade
+
+Gastrodon @ Rindo Berry
+Modest Nature
+Ability: Storm Drain
+Level: 1
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Muddy Water
+- Earth Power
+- Ice Beam
+- Weather Ball
+
+Sandslash @ Muscle Band
+Adamant Nature
+Ability: Sand Rush
+Level: 1
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- High Horsepower
+- Rock Slide
+- Leech Life
+- Facade
+
+Nidoking @ Life Orb
+Timid Nature
+Ability: Sheer Force
+Level: 2
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge Wave
+- Earth Power
+- Flamethrower
+- Ice Beam
+
 === TRAINER_PBL_LEONIDAS ===
 Name: Leonidas
 Class: Bird Keeper
