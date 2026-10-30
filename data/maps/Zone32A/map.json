@@ -16,15 +16,15 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 18,
-      "y": 22,
+      "x": 14,
+      "y": 23,
       "elevation": 0,
       "dest_map": "MAP_ZONE31B",
       "dest_warp_id": "0"
     },
     {
-      "x": 33,
-      "y": 9,
+      "x": 28,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ZONE32B",
       "dest_warp_id": "1"
