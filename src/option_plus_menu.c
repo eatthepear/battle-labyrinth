@@ -1865,7 +1865,7 @@ static void DrawChoices_FrameType(int selection, int y)
 
     text[i] = EOS;
 
-    DrawOptionMenuChoice(COMPOUND_STRING("TYPE"), 104, y, 0, active);
+    DrawOptionMenuChoice(COMPOUND_STRING("Type"), 104, y, 0, active);
     DrawOptionMenuChoice(text, 128, y, 1, active);
 }
 
