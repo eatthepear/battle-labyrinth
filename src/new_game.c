@@ -108,6 +108,12 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
+    VarSet(VAR_WILD_MUSIC, 5);
+    VarSet(VAR_TRAINER_MUSIC, 5);
+    VarSet(VAR_BOSS_MUSIC, 5);
+    VarSet(VAR_SURF_MUSIC, 1);
+    VarSet(VAR_BIKE_MUSIC, 1);
+    FlagSet(FLAG_SAVE_PROMPT);
 }
 
 static void ClearPokedexFlags(void)

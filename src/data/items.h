@@ -12452,7 +12452,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_TM_HIDDEN_POWER] =
     {
         .name = ITEM_NAME("TM10"),
-        .price = 1000,
+        .price = 500,
         .description = COMPOUND_STRING(
             "The type\n"
             "varies among\n"
@@ -12566,7 +12566,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_TM_PROTECT] =
     {
         .name = ITEM_NAME("TM17"),
-        .price = 1000,
+        .price = 500,
         .description = COMPOUND_STRING(
             "Negates all damage,\n"
             "but may fail if used\n"
