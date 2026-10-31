@@ -699,6 +699,8 @@ script EventScript_Notebook {
 				call(EventScript_Notebook_ChangesFromVanilla)
 			case 2:
 				call(EventScript_Difficulty_Info)
+				setspeaker(SP_NAME_NONE)
+				msgbox(format("You can change any difficulty settings in the Options menu."))
 			case 3:
 				call(EventScript_Notebook_TrainerTips)
 			case 4:
@@ -1557,8 +1559,6 @@ script EventScript_Difficulty_Info {
 				helpwindow(HELP_NUZLOCKE)
 			case 4:
 			case MULTI_B_PRESSED:
-				setspeaker(SP_NAME_NONE)
-				msgbox(format("You can change any difficulty settings in the Options menu."))
 				return
 		}
 	}

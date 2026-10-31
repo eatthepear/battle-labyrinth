@@ -91,37 +91,37 @@ script EventScript_NextZone {
 			}
 		case 13:
 			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 13 - Mt. Virtus{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Virtus Cave{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 13 - Radiant Meadow{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Iron Mine{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == NO) {
 				return
 			}
 		case 18:
 			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 18 - Mt. Virtus{COLOR DARK_GRAY} and {COLOR GREEN}Zone 19 - Virtus Cave{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 18 - Beach Resort{COLOR DARK_GRAY} and {COLOR GREEN}Zone 19 - Aqua Trench{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == NO) {
 				return
 			}
 		case 24:
 			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 13 - Mt. Virtus{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Virtus Cave{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 24 - Sheer Canyon{COLOR DARK_GRAY} and {COLOR GREEN}Zone 25 - Ancient Tower{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == NO) {
 				return
 			}
 		case 27:
 			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 13 - Mt. Virtus{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Virtus Cave{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 27 - Cinder Hike{COLOR DARK_GRAY} and {COLOR GREEN}Zone 28 - Mt. Cinder{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == NO) {
 				return
 			}
 		case 31:
 			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 13 - Mt. Virtus{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Virtus Cave{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 31 - Victory Road{COLOR DARK_GRAY} and {COLOR GREEN}Zone 32 - Victory Cavern{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == NO) {
 				return
 			}
 		case 33:
 			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 13 - Mt. Virtus{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Virtus Cave{COLOR DARK_GRAY}."), MSGBOX_YESNO)
+			msgbox(format("Are you prepared? You will be entering {COLOR GREEN}Zone 33 - Virtual Space{COLOR DARK_GRAY} and {COLOR GREEN}Zone 34 - Rainbow Rocket Castle{COLOR DARK_GRAY}."), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == NO) {
 				return
 			}
@@ -369,12 +369,12 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_HEART_SCALE, 3)
 		case 13:
-			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 13 - Mt. Virtus{COLOR DARK_GRAY} is…"))
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 13 - Radiant Meadow{COLOR DARK_GRAY} is…"))
 			msgbox(format("{COLOR GREEN}10 Sitrus Berries{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_SITRUS_BERRY, 10)
 			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 14 - Virtus Cave{COLOR DARK_GRAY} is…"))
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 14 - Iron Mine{COLOR DARK_GRAY} is…"))
 			msgbox(format("{COLOR GREEN}TM74 - Gyro Ball{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_TM_GYRO_BALL)
@@ -392,7 +392,15 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_LUM_BERRY, 5)
 		case 18:
-			msgbox(format("Ultra Balls!"))
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 18 - Beach Resort{COLOR DARK_GRAY} is…"))
+			msgbox(format("{COLOR GREEN}10 Sitrus Berries{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			// giveitem(ITEM_SITRUS_BERRY, 10)
+			setspeaker(SP_NAME_COLRESS)
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 19 - Aqua Trench{COLOR DARK_GRAY} is…"))
+			msgbox(format("{COLOR GREEN}TM74 - Gyro Ball{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			// giveitem(ITEM_TM_GYRO_BALL)
 		case 20:
 			msgbox(format("The {COLOR GREEN}{PKMN} Mega Ring{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
@@ -405,15 +413,25 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 23:
 			msgbox(format("Ultra Balls!"))
 		case 24:
-			msgbox(format("Ultra Balls!"))
-			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 25 - Mt. Virtus{COLOR DARK_GRAY} is…"))
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 24 - Sheer Canyon{COLOR DARK_GRAY} is…"))
+			// msgbox(format("{COLOR GREEN}HM02 - Rock Climb{COLOR DARK_GRAY}!"))
+			// setspeaker(SP_NAME_NONE)
+			// giveitem(ITEM_HM_ROCK_CLIMB)
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 25 - Ancient Tower{COLOR DARK_GRAY} is…"))
 			msgbox(format("{COLOR GREEN}HM02 - Rock Climb{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_HM_ROCK_CLIMB)
 		case 26:
 			msgbox(format("Ultra Balls!"))
 		case 27:
-			msgbox(format("Ultra Balls!"))
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 27 - Cinder Hike{COLOR DARK_GRAY} is…"))
+			// msgbox(format("{COLOR GREEN}HM02 - Rock Climb{COLOR DARK_GRAY}!"))
+			// setspeaker(SP_NAME_NONE)
+			// giveitem(ITEM_HM_ROCK_CLIMB)
+			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 28 - Mt. Cinder{COLOR DARK_GRAY} is…"))
+			// msgbox(format("{COLOR GREEN}HM02 - Rock Climb{COLOR DARK_GRAY}!"))
+			// setspeaker(SP_NAME_NONE)
+			// giveitem(ITEM_HM_ROCK_CLIMB)
 		case 29:
 			msgbox(format("The {COLOR GREEN}Amulet Coin{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
@@ -491,7 +509,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 12:
 			setvar(VAR_ZONE, 13)
 			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Mt. Virtus{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Virtus Cave{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
+			msgbox(format("The next two zones, {COLOR GREEN}Zone 13 - Radiant Meadow{COLOR DARK_GRAY} and {COLOR GREEN}Zone 14 - Iron Mine{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 13:
 			setflag(FLAG_HIDE_ZONE13A_MAX)
 			setvar(VAR_ZONE, 15)
@@ -507,7 +525,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 17:
 			setvar(VAR_ZONE, 18)
 			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Mt. Virtus{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Virtus Cave{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
+			msgbox(format("The next two zones, {COLOR GREEN}Zone 18 - Beach Resort{COLOR DARK_GRAY} and {COLOR GREEN}Zone 19 - Aqua Trench{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 18:
 			setflag(FLAG_HIDE_ZONE18A_MAX)
 			setvar(VAR_ZONE, 20)
@@ -526,7 +544,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 23:
 			setvar(VAR_ZONE, 24)
 			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Mt. Virtus{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Virtus Cave{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
+			msgbox(format("The next two zones, {COLOR GREEN}Zone 24 - Sheer Canyon{COLOR DARK_GRAY} and {COLOR GREEN}Zone 25 - Ancient Tower{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 24:
 			setflag(FLAG_HIDE_ZONE24A_MAX)
 			setvar(VAR_ZONE, 26)
@@ -538,7 +556,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 		case 26:
 			setvar(VAR_ZONE, 27)
 			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Mt. Virtus{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Virtus Cave{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
+			msgbox(format("The next two zones, {COLOR GREEN}Zone 27 - Cinder Hike{COLOR DARK_GRAY} and {COLOR GREEN}Zone 28 - Mt. Cinder{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 27:
 		case 28:
 			setvar(VAR_ZONE, 29)
@@ -553,13 +571,13 @@ script Sanctuary_EventScript_EnterSanctuary {
 			waitfanfare
 			setvar(VAR_FARM_STOCK, 10)
 			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Mt. Virtus{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Virtus Cave{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
+			msgbox(format("The next two zones, {COLOR GREEN}Zone 31 - Victory Road{COLOR DARK_GRAY} and {COLOR GREEN}Zone 32 - Victory Cavern{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 31:
 		case 32:
 			setflag(FLAG_HIDE_ZONE31B_MAX)
 			setvar(VAR_ZONE, 33)
 			setspeaker(SP_NAME_COLRESS)
-			msgbox(format("The next two zones, {COLOR GREEN}Zone 7 - Mt. Virtus{COLOR DARK_GRAY} and {COLOR GREEN}Zone 8 - Virtus Cave{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
+			msgbox(format("The next two zones, {COLOR GREEN}Zone 33 - Virtual Space{COLOR DARK_GRAY} and {COLOR GREEN}Zone 34 - Rainbow Rocket Castle{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 33:
 		case 34:
 			setvar(VAR_ZONE, 35)
@@ -1680,10 +1698,6 @@ script EventScript_MusicMenu_Boss {
 				return
 		}
 	}
-}
-
-mart Shop_Filler {
-	ITEM_POKE_BALL
 }
 
 script EventScript_Shop_MartEmployee {
