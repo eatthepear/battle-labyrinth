@@ -1154,6 +1154,7 @@ script EventScript_Notebook_Battle {
 		message(format("Battle Changes open.\nAnything not listed is vanilla."))
 		waitmessage
 		dynmultipush("Accuracy", 0)
+		dynmultipush("Experience", 1)
 		dynmultipush("Abilities", 3)
 		dynmultipush("Pay Day", 7)
 		dynmultipush("Back", 8)
@@ -1165,6 +1166,8 @@ script EventScript_Notebook_Battle {
 				if (var(VAR_RESULT) == YES) {
 					helpwindow(HELP_CHANGES_ACCURACY_EXCEPTIONS)
 				}
+			case 1:
+				helpwindow(HELP_CHANGES_EXPERIENCE)
 			case 3:
 				helpwindow(HELP_CHANGES_ABILITIES)
 			case 7:

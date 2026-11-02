@@ -224,11 +224,9 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Battle Changes: Experience"),
         .desc = COMPOUND_STRING("There are hard level caps built in, which\n"
-                                "typically increase by 2 every {COLOR GREEN}Zone{COLOR DARK_GRAY}.\n"
-                                "The experience yield of a defeated Pokémon\n"
-                                "is based on the current level cap.\n\n"
-                                "Pokémon don't gain experience through wild\n"
-                                "battles except on {COLOR GREEN}Easy{COLOR DARK_GRAY} difficulty."),
+                                "typically increase by 2 every {COLOR GREEN}Zone{COLOR DARK_GRAY}.\n\n"
+                                "Defeated wild Pokémon don't give experience\n"
+                                "except on {COLOR GREEN}Easy{COLOR DARK_GRAY} difficulty."),
     },
 
     [HELP_CHANGES_ABILITIES] =
