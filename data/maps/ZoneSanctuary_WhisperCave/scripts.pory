@@ -1,1 +1,15 @@
 mapscripts ZoneSanctuary_WhisperCave_MapScripts {}
+
+script ZoneSanctuary_WhisperCave_RuinManiac {
+	lock
+	faceplayer
+	if (checkitem(ITEM_TIME_CRYSTAL) == FALSE) {
+		msgbox(format("Greetings! I've found here a strange crystal, and wondering if you know what to do with it?"))
+		giveitem(ITEM_TIME_CRYSTAL)
+	}
+	msgbox(format("That crystal seems to be something to do with time, so I've named it the Time Crystal!\pMaybe it could help you find Pokémon that are found only during the day or only during the night!"))
+	closemessage
+	applymovement(LOCALID_RUIN_MANIAC_WHISPER_CAVE, Common_Movement_FaceRight)
+	waitmovement(LOCALID_RUIN_MANIAC_WHISPER_CAVE)
+	release
+}

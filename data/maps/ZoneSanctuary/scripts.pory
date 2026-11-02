@@ -717,6 +717,7 @@ script Sanctuary_EventScript_GameIntro {
 			setflag(FLAG_VARRICK_INTRO)
 			setflag(FLAG_LELOUCH_INTRO)
 			additem(ITEM_SUPER_ROD)
+			additem(ITEM_TIME_CRYSTAL)
 		}
 	}
 	setvar(VAR_ZONE, 1)
