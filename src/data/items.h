@@ -14981,9 +14981,9 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("Time Crystal"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Contains all sorts\n"
-            "of useful info for\n"
-            "challengers."),
+            "A mysterious crystal\n"
+            "that can alter the\n"
+            "time of day."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
