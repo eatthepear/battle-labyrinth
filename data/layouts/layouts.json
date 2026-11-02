@@ -11102,6 +11102,17 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/LegendCave/border.bin",
       "blockdata_filepath": "data/layouts/LegendCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_RAINY_BOG",
+      "name": "RainyBog_Layout",
+      "width": 25,
+      "height": 36,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Marsh",
+      "border_filepath": "data/layouts/RainyBog/border.bin",
+      "blockdata_filepath": "data/layouts/RainyBog/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

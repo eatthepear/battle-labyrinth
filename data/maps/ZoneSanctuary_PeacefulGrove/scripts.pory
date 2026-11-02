@@ -11,11 +11,11 @@ script ZoneSanctuary_EventScript_PeacefulGrove_BirdKeeperFlyingTaxi {
     lock
     faceplayer
 	if ((checkitem(ITEM_HM_FLASH) == FALSE) || (flag(FLAG_BADGE03_GET) == FALSE)) {
-		msgbox(format("Flying Taxi at your service! Express flight to Rainy Swamp!\pThough you need {COLOR GREEN}HM05 - Flash{COLOR DARK_GRAY} and the corresponding Gym Badge to be allowed to ride this one.\pIt looks like you're missing one of those, so please come back!"))
+		msgbox(format("Flying Taxi at your service! Express flight to Rainy Bog!\pThough you need {COLOR GREEN}HM05 - Flash{COLOR DARK_GRAY} and the corresponding Gym Badge to be allowed to ride this one.\pIt looks like you're missing one of those, so please come back!"))
 		release
 		end
 	}
-    msgbox(format("Flying Taxi at your service! Express flight to Rainy Swamp! All aboard?"), MSGBOX_YESNO)
+    msgbox(format("Flying Taxi at your service! Express flight to Rainy Bog! All aboard?"), MSGBOX_YESNO)
     if (var(VAR_RESULT) == NO) {
         msgbox(format("Alrighty, we'll be here, awaiting our next passenger!"))
         release
@@ -27,8 +27,8 @@ script ZoneSanctuary_EventScript_PeacefulGrove_BirdKeeperFlyingTaxi {
 	setspeaker("Rufflet")
 	playmoncry(SPECIES_DELIBIRD, CRY_MODE_NORMAL)
 	msgbox(format("Flet!"))
-    // warp(MAP_BOREAL_THICKET, 255, 2, 9)
-    // waitstate
+    warp(MAP_RAINY_BOG, 255, 10, 32)
+    waitstate
     end
 }
 

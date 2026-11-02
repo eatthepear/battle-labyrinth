@@ -2074,3 +2074,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/LegendCaveOutside/scripts.inc"
 
 	.include "data/maps/LegendCave/scripts.inc"
+
+	.include "data/maps/RainyBog/scripts.inc"
