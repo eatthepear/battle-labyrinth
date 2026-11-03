@@ -11106,8 +11106,8 @@
     {
       "id": "LAYOUT_RAINY_BOG",
       "name": "RainyBog_Layout",
-      "width": 25,
-      "height": 36,
+      "width": 30,
+      "height": 38,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Marsh",
       "border_filepath": "data/layouts/RainyBog/border.bin",

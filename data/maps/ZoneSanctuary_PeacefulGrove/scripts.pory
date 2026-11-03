@@ -25,9 +25,9 @@ script ZoneSanctuary_EventScript_PeacefulGrove_BirdKeeperFlyingTaxi {
     waitmovement(0)
     msgbox(format("Rufflet! Use Fly!"))
 	setspeaker("Rufflet")
-	playmoncry(SPECIES_DELIBIRD, CRY_MODE_NORMAL)
+	playmoncry(SPECIES_RUFFLET, CRY_MODE_NORMAL)
 	msgbox(format("Flet!"))
-    warp(MAP_RAINY_BOG, 255, 10, 32)
+    warp(MAP_RAINY_BOG, 255, 10, 33)
     waitstate
     end
 }
