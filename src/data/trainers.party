@@ -1334,6 +1334,16 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Blue
 
+Impidimp @ Cheri Berry
+Sassy Nature
+Ability: Prankster
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Draining Kiss
+- Fake Out
+- Parting Shot
+
 Stunfisk @ Chesto Berry
 Modest Nature
 Ability: Static
@@ -1343,16 +1353,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Mud Bomb
 - Water Pulse
 - Yawn
-
-Crabrawler @ Muscle Band
-Adamant Nature
-Ability: Hyper Cutter
-Level: 19
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Brick Break
-- Dizzy Punch
-- Rock Tomb
-- Payback
 
 Purugly @ Sitrus Berry
 Jolly Nature
@@ -1374,6 +1374,16 @@ Double Battle: No
 Mugshot: Blue
 Difficulty: Brutal
 
+Impidimp @ Cheri Berry
+Sassy Nature
+Ability: Prankster
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Draining Kiss
+- Fake Out
+- Parting Shot
+
 Stunfisk @ Chesto Berry
 Modest Nature
 Ability: Static
@@ -1383,16 +1393,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Mud Bomb
 - Water Pulse
 - Yawn
-
-Crabrawler @ Muscle Band
-Adamant Nature
-Ability: Hyper Cutter
-Level: 19
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Brick Break
-- Dizzy Punch
-- Rock Tomb
-- Payback
 
 Bruxish @ Colbur Berry
 Naive Nature
@@ -2122,6 +2122,16 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
 
+Braixen @ Eviolite
+Timid Nature
+Ability: Blaze
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Burning Jealousy
+- Psyshock
+- Scorching Sands
+- Will-O-Wisp
+
 Vivillon @ Silver Powder
 Timid Nature
 Ability: Compound Eyes
@@ -2132,35 +2142,25 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Draining Kiss
 - Sleep Powder
 
-Sliggoo-Hisui @ Eviolite
-Modest Nature
+Piloswine @ Eviolite
+Brave Nature
+Ability: Thick Fat
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Bulldoze
+- Ice Shard
+- Rock Tomb
+
+Gogoat @ Lum Berry
+Jolly Nature
 Ability: Sap Sipper
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Pulse
-- Magnet Bomb
-- Water Pulse
-- Shelter
-
-Comfey @ Big Root
-Bold Nature
-Ability: Triage
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Draining Kiss
-- Leech Seed
-- Giga Drain
-- Synthesis
-
-Braixen @ Eviolite
-Timid Nature
-Ability: Blaze
 Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Burning Jealousy
-- Psyshock
-- Scorching Sands
-- Will-O-Wisp
+- Horn Leech
+- Rock Slide
+- Stomping Tantrum
+- Bulk Up
 
 === TRAINER_PBL_SERENA_BOSS_13 ===
 Name: Serena
@@ -2172,6 +2172,16 @@ Double Battle: No
 Mugshot: Pink
 Difficulty: Brutal
 
+Braixen @ Eviolite
+Timid Nature
+Ability: Blaze
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Burning Jealousy
+- Psyshock
+- Scorching Sands
+- Will-O-Wisp
+
 Vivillon @ Silver Powder
 Timid Nature
 Ability: Compound Eyes
@@ -2182,27 +2192,27 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Draining Kiss
 - Sleep Powder
 
-Sliggoo-Hisui @ Eviolite
-Modest Nature
-Ability: Sap Sipper
+Piloswine @ Eviolite
+Brave Nature
+Ability: Thick Fat
 Level: 30
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Pulse
-- Magnet Bomb
+- Ice Fang
+- Bulldoze
+- Ice Shard
+- Rock Tomb
+
+Clawitzer @ Wacan Berry
+Quiet Nature
+Ability: Mega Launcher
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pulse
-- Shelter
+- Icy Wind
+- Mud Shot
+- Aqua Jet
 
-Comfey @ Big Root
-Bold Nature
-Ability: Triage
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Draining Kiss
-- Leech Seed
-- Giga Drain
-- Synthesis
-
-Gogoat @ Sitrus Berry
+Gogoat @ Lum Berry
 Jolly Nature
 Ability: Sap Sipper
 Level: 32
@@ -2211,16 +2221,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 - Stomping Tantrum
 - Bulk Up
-
-Braixen @ Eviolite
-Timid Nature
-Ability: Blaze
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Burning Jealousy
-- Psyshock
-- Scorching Sands
-- Will-O-Wisp
 
 === TRAINER_PBL_MAGMA_GRUNT_13B_1 ===
 Name: Grunt
@@ -2676,15 +2676,55 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Blue
 
-Garbodor @ Black Sludge
-Careful Nature
-Ability: Aftermath
+Oinkologne @ Chople Berry
+Jolly Nature
+Ability: Lingering Aroma
 Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Spikes
-- Gunk Shot
 - Body Slam
+- Zen Headbutt
+- Bullet Seed
 - Stomping Tantrum
+
+Aromatisse @ Wise Glasses
+Modest Nature
+Ability: Aroma Veil
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Moonblast
+- Psychic
+- Charge Beam
+- Wish
+
+Victreebel @ Occa Berry
+Hasty Nature
+Ability: Chlorophyll
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Seed Bomb
+- Poison Jab
+- Weather Ball
+- Sunny Day
+
+Skuntank @ Sitrus Berry
+Naive Nature
+Ability: Aftermath
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 34
+- Night Slash
+- Poison Jab
+- Flamethrower
+- Play Rough
+
+=== TRAINER_PBL_JUPITER_BOSS_16 ===
+Name: Jupiter
+Class: Galactic Commander
+Pic: Jupiter
+Music: Galactic
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+Difficulty: Brutal
 
 Oinkologne @ Chople Berry
 Jolly Nature
@@ -2706,15 +2746,25 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Charge Beam
 - Wish
 
-Victreebel @ Miracle Seed
+Victreebel @ Occa Berry
 Hasty Nature
 Ability: Chlorophyll
 Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Leaf Blade
+- Seed Bomb
+- Poison Jab
+- Weather Ball
+- Sunny Day
+
+Garbodor @ Shuca Berry
+Careful Nature
+Ability: Aftermath
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic Spikes
+- Body Slam
 - Sludge Bomb
-- Knock Off
-- Sleep Powder
+- Stomping Tantrum
 
 Skuntank @ Sitrus Berry
 Naive Nature
@@ -2793,35 +2843,25 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 - Fake Out
 
-Tauros-Paldea-Aqua @ Muscle Band
-Jolly Nature
-Ability: Intimidate
+Clefable @ Big Root
+Modest Nature
+Ability: Magic Guard
 Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Raging Bull
-- Aqua Jet
-- Zen Headbutt
-- Wild Charge
+- Draining Kiss
+- Life Dew
+- Icy Wind
+- Cosmic Power
 
-Rapidash-Galar @ Kasib Berry
-Jolly Nature
-Ability: Pastel Veil
+Lapras @ Wacan Berry
+Quiet Nature
+Ability: Water Absorb
 Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Play Rough
+- Surf
+- Freeze-Dry
 - Zen Headbutt
-- Drill Run
-- Low Kick
-
-Snorlax @ Wiki Berry
-Brave Nature
-Ability: Gluttony
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Return
-- Stomping Tantrum
-- Crunch
-- Recycle
+- Ice Shard
 
 Venusaur @ Sitrus Berry
 Timid Nature
@@ -2831,7 +2871,67 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Giga Drain
 - Sludge Bomb
 - Weather Ball
-- Earth Power
+- Terrain Pulse
+
+=== TRAINER_PBL_LEAF_BOSS_17 ===
+Name: Leaf
+Class: Rival
+Pic: Leaf
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Pink
+Difficulty: Brutal
+
+Raichu-Alola @ Wise Glasses
+Timid Nature
+Ability: Surge Surfer
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Switch
+- Psychic
+- Surf
+- Fake Out
+
+Clefable @ Big Root
+Modest Nature
+Ability: Magic Guard
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draining Kiss
+- Life Dew
+- Icy Wind
+- Cosmic Power
+
+Lapras @ Wacan Berry
+Quiet Nature
+Ability: Water Absorb
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Freeze-Dry
+- Zen Headbutt
+- Ice Shard
+
+Snorlax @ Chople Berry
+Brave Nature
+Ability: Gluttony
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Body Slam
+- Crunch
+- Stomping Tantrum
+- Thunder Punch
+
+Venusaur @ Sitrus Berry
+Timid Nature
+Ability: Overgrow
+Level: 34
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Sludge Bomb
+- Weather Ball
+- Terrain Pulse
 
 === TRAINER_PBL_DORIS ===
 Name: Doris
@@ -3066,19 +3166,9 @@ Ability: Tinted Lens
 Level: 36
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Air Slash
-- Heat Wave
+- Hyper Voice
 - Hypnosis
 - Roost
-
-Lickilicky @ Zoom Lens
-Quiet Nature
-Ability: Oblivious
-Level: 36
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Facade
-- Muddy Water
-- Power Whip
-- Fire Blast
 
 Staraptor @ Staraptite
 Jolly Nature
@@ -3126,7 +3216,7 @@ Ability: Tinted Lens
 Level: 36
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Air Slash
-- Heat Wave
+- Hyper Voice
 - Hypnosis
 - Roost
 
@@ -3139,16 +3229,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Muddy Water
 - Power Whip
 - Fire Blast
-
-Flamigo @ Muscle Band
-Hasty Nature
-Ability: Scrappy
-Level: 36
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dual Wingbeat
-- Low Sweep
-- Facade
-- U-Turn
 
 Staraptor @ Staraptite
 Jolly Nature
