@@ -2,6 +2,13 @@ mapscripts RainyBog_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflashlevel(1)
     }
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_ITEM_RAINY_BOG_TM_GRASS_KNOT)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST)
+		}
+    }
 }
 
 script RainyBog_EventScript_Grotto {
@@ -31,4 +38,21 @@ script RainyBog_EventScript_BirdKeeperFlyingTaxi {
     warp(MAP_ZONE_SANCTUARY_PEACEFUL_GROVE, 255, 19, 6)
     waitstate
     end
+}
+
+script RainyBog_EventScript_TMGrassKnot {
+	lock
+	if (flag(FLAG_ITEM_RAINY_BOG_TM_GRASS_KNOT)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+	setflag(FLAG_ITEM_RAINY_BOG_TM_GRASS_KNOT)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_TM_GRASS_KNOT, 1)
+	release
+	end
 }
