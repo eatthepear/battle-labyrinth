@@ -77,7 +77,7 @@
     },
     {
       "x": 4,
-      "y": 11,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_ZONE30E",
       "dest_warp_id": "2"
