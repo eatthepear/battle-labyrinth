@@ -116,6 +116,13 @@
       "elevation": 0,
       "dest_map": "MAP_ZONE28A",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 34,
+      "y": 55,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE27A",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -129,5 +136,22 @@
       "script": "Zone27A_EventScript_TriggerTagBattle"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 34,
+      "y": 54,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone27A_EventScript_Grotto"
+    },
+    {
+      "type": "sign",
+      "x": 35,
+      "y": 54,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone27A_EventScript_Grotto"
+    }
+  ]
 }

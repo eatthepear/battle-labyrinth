@@ -13,6 +13,15 @@ mapscripts Zone21A_MapScripts {
 	}
 }
 
+script Zone21A_EventScript_Grotto {
+	lock
+	call(EventScript_FoundGrotto)
+	warp(MAP_HIDDEN_GROTTO_ZONE21A, 0)
+	waitstate
+	release
+	end
+}
+
 script Zone21A_EventScript_TriggerWally {
 	lockall
 	applymovement(LOCALID_WALLY_21A, Common_Movement_WalkDown2)

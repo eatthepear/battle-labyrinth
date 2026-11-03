@@ -76,8 +76,32 @@
       "elevation": 0,
       "dest_map": "MAP_ZONE32I",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 32,
+      "y": 68,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE31B",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 67,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone31B_EventScript_Grotto"
+    },
+    {
+      "type": "sign",
+      "x": 33,
+      "y": 67,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Zone31B_EventScript_Grotto"
+    }
+  ]
 }

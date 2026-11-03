@@ -2076,3 +2076,15 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/LegendCave/scripts.inc"
 
 	.include "data/maps/RainyBog/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Zone12A/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_RainyBog/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Zone20A/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Zone21A/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Zone27A/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Zone31B/scripts.inc"

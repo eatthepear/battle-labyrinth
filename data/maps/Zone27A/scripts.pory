@@ -4,6 +4,15 @@ mapscripts Zone27A_MapScripts {
     }
 }
 
+script Zone27A_EventScript_Grotto {
+	lock
+	call(EventScript_FoundGrotto)
+	warp(MAP_HIDDEN_GROTTO_ZONE27A, 0)
+	waitstate
+	release
+	end
+}
+
 script Zone27A_EventScript_TriggerTagBattle {
     lockall
 	playbgm(MUS_BW_FRIEND, TRUE)

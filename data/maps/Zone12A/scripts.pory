@@ -28,6 +28,15 @@ mapscripts Zone12A_MapScripts {
 	}
 }
 
+script Zone12A_EventScript_Grotto {
+	lock
+	call(EventScript_FoundGrotto)
+	warp(MAP_HIDDEN_GROTTO_ZONE12A, 0)
+	waitstate
+	release
+	end
+}
+
 script Zone12A_EventScript_KimonoGirl {
 	lock
 	msgbox(format("She doesn't even notice you.\pShe appears to be trembling."))

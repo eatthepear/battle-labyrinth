@@ -4,6 +4,15 @@ mapscripts RainyBog_MapScripts {
     }
 }
 
+script RainyBog_EventScript_Grotto {
+	lock
+	call(EventScript_FoundGrotto)
+	warp(MAP_HIDDEN_GROTTO_RAINY_BOG, 0)
+	waitstate
+	release
+	end
+}
+
 script RainyBog_EventScript_BirdKeeperFlyingTaxi {
     lock
     faceplayer

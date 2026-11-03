@@ -1,5 +1,14 @@
 mapscripts Zone31B_MapScripts {}
 
+script Zone31B_EventScript_Grotto {
+	lock
+	call(EventScript_FoundGrotto)
+	warp(MAP_HIDDEN_GROTTO_ZONE31B, 0)
+	waitstate
+	release
+	end
+}
+
 script Zone31B_EventScript_Leaf {
 	lock
 	faceplayer

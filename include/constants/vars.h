@@ -70,6 +70,12 @@
 #define VAR_GROTTO_QUIET_FIELD_SPECIES       0x4031
 #define VAR_GROTTO_ZONE3A_SPECIES            0x4032
 #define VAR_GROTTO_ZONE7A_SPECIES            0x4033
+#define VAR_GROTTO_ZONE12A_SPECIES           0x4034
+#define VAR_GROTTO_RAINY_BOG_SPECIES         0x4035
+#define VAR_GROTTO_ZONE20A_SPECIES           0x4036
+#define VAR_GROTTO_ZONE21A_SPECIES           0x4037
+#define VAR_GROTTO_ZONE27A_SPECIES           0x4038
+#define VAR_GROTTO_ZONE31B_SPECIES           0x4039
 #define VAR_LEGEND_CAVE_SPECIES              0x403F
 
 // Tracker Vars (Don't manually set)

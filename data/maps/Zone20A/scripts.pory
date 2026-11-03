@@ -16,6 +16,15 @@ mapscripts Zone20A_MapScripts {
 	}
 }
 
+script Zone20A_EventScript_Grotto {
+	lock
+	call(EventScript_FoundGrotto)
+	warp(MAP_HIDDEN_GROTTO_ZONE20A, 0)
+	waitstate
+	release
+	end
+}
+
 script Zone20A_EventScript_TriggerLacey {
     lockall
 	applymovement(LOCALID_LACEY_20A, Common_Movement_ExclamationMark)
