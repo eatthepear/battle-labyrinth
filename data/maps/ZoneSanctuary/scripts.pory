@@ -168,6 +168,9 @@ script EventScript_NextZone {
 		case 13:
 			warp(MAP_ZONE13A, 255, 30, 30)
 		case 15:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				setflag(FLAG_HIDE_ZONE15A_MAX)
+			}
 			warp(MAP_ZONE15A, 255, 4, 3)
 		case 16:
 			setflag(FLAG_HIDE_ZONE16A_KIMONO_GIRL)
@@ -504,6 +507,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setflag(FLAG_HIDE_ZONE13A_MAX)
 			setvar(VAR_ZONE, 15)
 		case 15:
+			setflag(FLAG_HIDE_ZONE15A_MAX)
 			setvar(VAR_ZONE, 16)
 			playfanfare(MUS_OBTAIN_ITEM)
 			setspeaker(SP_NAME_COLRESS)

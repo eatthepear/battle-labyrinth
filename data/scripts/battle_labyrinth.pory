@@ -178,6 +178,8 @@ script EventScript_Shop_Max {
 			pokemart(Zone10A_Shop_TMShop)
 		case 13:
 			pokemart(Zone13A_Shop_TMShop)
+		case 15:
+			pokemart(Zone15A_Shop_TMShop)
 		case 18:
 			pokemart(Zone18A_Shop_TMShop)
 		case 22:
@@ -225,6 +227,10 @@ mart Zone13A_Shop_TMShop {
 	ITEM_TM_SLEEP_TALK
 }
 
+mart Zone15A_Shop_TMShop {
+	ITEM_TM_AURORA_VEIL
+}
+
 mart Zone18A_Shop_TMShop {
 	ITEM_TM_SNOWSCAPE
 	ITEM_TM_SUNNY_DAY
@@ -270,6 +276,7 @@ mart Sanctuary_Shop_TMShop {
 	ITEM_TM_POWER_UP_PUNCH
 	ITEM_TM_REST
 	ITEM_TM_SLEEP_TALK
+	ITEM_TM_AURORA_VEIL
 	ITEM_TM_SNOWSCAPE
 	ITEM_TM_SUNNY_DAY
 	ITEM_TM_RAIN_DANCE
