@@ -4035,6 +4035,9 @@ static void BufferMonTrainerMemo(void)
             case METLOC_ZONE9E_GIFT:
                 text = COMPOUND_STRING("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nreceived from a Battle Girl\nat {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
                 break;
+            case METLOC_RECEIVED_UNOWN:
+                text = COMPOUND_STRING("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nreceived from a Ruin Maniac\nat {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
+                break;
             default:
                 text = gText_XNatureMetAtYZ;
                 break;

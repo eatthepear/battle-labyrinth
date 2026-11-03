@@ -92,13 +92,13 @@ script EventScript_PokedexQuestScientist {
 	end
 }
 
-script EventScript_FindHiddenQuestRuinManiac {
+script EventScript_FindHiddenQuest {
 	lock
 	faceplayer
 	specialvar(VAR_TEMP_0, GetGameStatFoundHiddenItem)
 	buffernumberstring(0, VAR_TEMP_0)
 	if (checkitem(ITEM_METEORITE) == FALSE) {
-		msgbox(format("A Ruin Maniac's best friend is a {COLOR GREEN}Dowsing Machine{COLOR DARK_GRAY}!\pIf you can show me you've found 100 hidden items, I'll give you a sweet reward."))
+		msgbox(format("A Hiker's best friend is a {COLOR GREEN}Dowsing Machine{COLOR DARK_GRAY}!\pIf you can show me you've found 100 hidden items, I'll give you a sweet reward."))
 		if (var(VAR_TEMP_0) >= 100) {
 			msgbox(format("Wow!\pYou've found a total of {STR_VAR_1} hidden items!\pThat's amazing!\pHere, as a reward, take this nifty {COLOR GREEN}Exp. Share{COLOR DARK_GRAY}!\pIt lets you toggle the Exp. All setting on or off."))
 			// giveitem(ITEM_METEORITE)

@@ -21,8 +21,7 @@
   ],
   "object_events": [
     {
-      "local_id": "LOCALID_RUIN_MANIAC_WHISPER_CAVE",
-      "graphics_id": "OBJ_EVENT_GFX_RUIN_MANIAC",
+      "graphics_id": "OBJ_EVENT_GFX_WORKER",
       "x": 16,
       "y": 18,
       "elevation": 0,
@@ -31,7 +30,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ZoneSanctuary_WhisperCave_RuinManiac",
+      "script": "ZoneSanctuary_WhisperCave_Worker",
       "flag": "0"
     }
   ],

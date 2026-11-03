@@ -5,3 +5,30 @@ script Zone10C_EventScript_Kyle {
 	msgbox(format("I'll be a winner some day, just you wait!"), MSGBOX_AUTOCLOSE)
 	end
 }
+
+script Zone10C_EventScript_RuinManiac {
+	lock
+	faceplayer
+	if (flag(FLAG_SETTINGS_NUZLOCKE) && flag(FLAG_ZONE10C_NUZLOCKE_RECEIVED_UNOWN)) {
+		msgbox(format("NUZLOCKE, CANT GIVE MORE THAN ONE!"))
+		release
+		end
+	}
+	if (flag(FLAG_DAILY_UNOWN_RECEIVED)) {
+		msgbox(format("COME BACK TOMORROW!"))
+		release
+		end
+	}
+	msgbox(format("I GIVE YOU UNOWN, YOU WANT YES?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("SAD!"))
+		release
+		end
+	}
+	givemon(SPECIES_UNOWN, 20, metLocation=METLOC_RECEIVED_UNOWN)
+	setflag(FLAG_ZONE10C_NUZLOCKE_RECEIVED_UNOWN)
+	setflag(FLAG_DAILY_UNOWN_RECEIVED)
+	msgbox(format("HAVE FUN!"))
+	release
+	end
+}

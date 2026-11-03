@@ -160,7 +160,7 @@ enum __attribute__((packed)) Stat
 #define METLOC_ZONE6A_KIMONO_GIRL_EGG 0xF2
 #define METLOC_ZONE9E_GIFT         0xF3
 #define METLOC_GIVE_FWG            0xF5
-// #define METLOC_BOUGHT_RUIN         0xF6
+#define METLOC_RECEIVED_UNOWN      0xF6
 #define METLOC_REVIVED_FOSSIL      0xF7
 // #define METLOC_ZONE10B_GIFT        0xF8
 // #define METLOC_BOUGHT_FARM         0xF9
