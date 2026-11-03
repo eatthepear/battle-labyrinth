@@ -15,10 +15,10 @@ mapscripts Zone3A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE3A_HYPER_POTION)) {
-			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
+		if (flag(FLAG_ITEM_ZONE3A_TM_DRAGON_CLAW)) {
+			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_TM_CHEST_OPEN)
 		} else {
-			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST)
+			setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_TM_CHEST)
 		}
 	}
 }
@@ -216,19 +216,19 @@ script Zone3A_EventScript_WiseGlasses {
 	end
 }
 
-script Zone3A_EventScript_HyperPotion {
+script Zone3A_EventScript_TMDragonClaw {
 	lock
-	if (flag(FLAG_ITEM_ZONE3A_HYPER_POTION)) {
+	if (flag(FLAG_ITEM_ZONE3A_TM_DRAGON_CLAW)) {
 		msgbox(gText_ItemChestIsEmpty)
 		release
 		end
 	}
 	waitse
 	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_ITEM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE3A_HYPER_POTION)
+	setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+	setflag(FLAG_ITEM_ZONE3A_TM_DRAGON_CLAW)
 	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_HYPER_POTION, 1)
+	finditem(ITEM_TM_DRAGON_CLAW)
 	release
 	end
 }

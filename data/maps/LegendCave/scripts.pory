@@ -14,6 +14,11 @@ mapscripts LegendCave_MapScripts {
 	MAP_SCRIPT_ON_RESUME {
         copyvar(VAR_OBJ_GFX_ID_0, VAR_LEGEND_CAVE_SPECIES)
         addvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_MON)
+		if (flag(FLAG_ITEM_LEGEND_CAVE_TM_ICE_BEAM)) {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+		} else {
+			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST)
+		}
 	}
 }
 
@@ -31,4 +36,21 @@ script LegendCave_EventScript_LegendaryPokemon {
 	setflag(FLAG_TEMP_2)
     setvar(VAR_LEGEND_CAVE_SPECIES, 0)
 	goto(Common_EventScript_RemoveStaticPokemon)
+}
+
+script LegendCave_EventScript_TMIceBeam {
+	lock
+	if (flag(FLAG_ITEM_LEGEND_CAVE_TM_ICE_BEAM)) {
+		msgbox(gText_ItemChestIsEmpty)
+		release
+		end
+	}
+	waitse
+	removeobject(VAR_LAST_TALKED)
+	setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST_OPEN)
+	setflag(FLAG_ITEM_LEGEND_CAVE_TM_ICE_BEAM)
+	addobject(VAR_LAST_TALKED)
+	finditem(ITEM_TM_ICE_BEAM, 1)
+	release
+	end
 }
