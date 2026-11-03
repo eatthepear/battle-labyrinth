@@ -2396,62 +2396,63 @@ script Debug_CheatStart_PBL_GiveMons {
 	setvar(VAR_TEMP_1, 22) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
+	givemon(SPECIES_UNOWN, 20, metLocation=METLOC_RECEIVED_UNOWN)
 	random(27)
 	switch (var(VAR_RESULT)) {
 		case 0:
-			givemon(SPECIES_BULBASAUR, 5)
+			givemon(SPECIES_BULBASAUR, 5, metLocation=MAPSEC_SANCTUARY)
 		case 1:
-			givemon(SPECIES_CHARMANDER, 5)
+			givemon(SPECIES_CHARMANDER, 5, metLocation=MAPSEC_SANCTUARY)
 		case 2:
-			givemon(SPECIES_SQUIRTLE, 5)
+			givemon(SPECIES_SQUIRTLE, 5, metLocation=MAPSEC_SANCTUARY)
 		case 3:
-			givemon(SPECIES_CHIKORITA, 5)
+			givemon(SPECIES_CHIKORITA, 5, metLocation=MAPSEC_SANCTUARY)
 		case 4:
-			givemon(SPECIES_CYNDAQUIL, 5)
+			givemon(SPECIES_CYNDAQUIL, 5, metLocation=MAPSEC_SANCTUARY)
 		case 5:
-			givemon(SPECIES_TOTODILE, 5)
+			givemon(SPECIES_TOTODILE, 5, metLocation=MAPSEC_SANCTUARY)
 		case 6:
-			givemon(SPECIES_TREECKO, 5)
+			givemon(SPECIES_TREECKO, 5, metLocation=MAPSEC_SANCTUARY)
 		case 7:
-			givemon(SPECIES_TORCHIC, 5)
+			givemon(SPECIES_TORCHIC, 5, metLocation=MAPSEC_SANCTUARY)
 		case 8:
-			givemon(SPECIES_MUDKIP, 5)
+			givemon(SPECIES_MUDKIP, 5, metLocation=MAPSEC_SANCTUARY)
 		case 9:
-			givemon(SPECIES_TURTWIG, 5)
+			givemon(SPECIES_TURTWIG, 5, metLocation=MAPSEC_SANCTUARY)
 		case 10:
-			givemon(SPECIES_CHIMCHAR, 5)
+			givemon(SPECIES_CHIMCHAR, 5, metLocation=MAPSEC_SANCTUARY)
 		case 11:
-			givemon(SPECIES_PIPLUP, 5)
+			givemon(SPECIES_PIPLUP, 5, metLocation=MAPSEC_SANCTUARY)
 		case 12:
-			givemon(SPECIES_SNIVY, 5)
+			givemon(SPECIES_SNIVY, 5, metLocation=MAPSEC_SANCTUARY)
 		case 13:
-			givemon(SPECIES_TEPIG, 5)
+			givemon(SPECIES_TEPIG, 5, metLocation=MAPSEC_SANCTUARY)
 		case 14:
-			givemon(SPECIES_OSHAWOTT, 5)
+			givemon(SPECIES_OSHAWOTT, 5, metLocation=MAPSEC_SANCTUARY)
 		case 15:
-			givemon(SPECIES_CHESPIN, 5)
+			givemon(SPECIES_CHESPIN, 5, metLocation=MAPSEC_SANCTUARY)
 		case 16:
-			givemon(SPECIES_FENNEKIN, 5)
+			givemon(SPECIES_FENNEKIN, 5, metLocation=MAPSEC_SANCTUARY)
 		case 17:
-			givemon(SPECIES_FROAKIE, 5)
+			givemon(SPECIES_FROAKIE, 5, metLocation=MAPSEC_SANCTUARY)
 		case 18:
-			givemon(SPECIES_ROWLET, 5)
+			givemon(SPECIES_ROWLET, 5, metLocation=MAPSEC_SANCTUARY)
 		case 19:
-			givemon(SPECIES_LITTEN, 5)
+			givemon(SPECIES_LITTEN, 5, metLocation=MAPSEC_SANCTUARY)
 		case 20:
-			givemon(SPECIES_POPPLIO, 5)
+			givemon(SPECIES_POPPLIO, 5, metLocation=MAPSEC_SANCTUARY)
 		case 21:
-			givemon(SPECIES_GROOKEY, 5)
+			givemon(SPECIES_GROOKEY, 5, metLocation=MAPSEC_SANCTUARY)
 		case 22:
-			givemon(SPECIES_SCORBUNNY, 5)
+			givemon(SPECIES_SCORBUNNY, 5, metLocation=MAPSEC_SANCTUARY)
 		case 23:
-			givemon(SPECIES_SOBBLE, 5)
+			givemon(SPECIES_SOBBLE, 5, metLocation=MAPSEC_SANCTUARY)
 		case 24:
-			givemon(SPECIES_SPRIGATITO, 5)
+			givemon(SPECIES_SPRIGATITO, 5, metLocation=MAPSEC_SANCTUARY)
 		case 25:
-			givemon(SPECIES_FUECOCO, 5)
+			givemon(SPECIES_FUECOCO, 5, metLocation=MAPSEC_SANCTUARY)
 		case 26:
-			givemon(SPECIES_QUAXLY, 5)
+			givemon(SPECIES_QUAXLY, 5, metLocation=MAPSEC_SANCTUARY)
 	}
 
 	if (var(VAR_ZONE) == 11) {
