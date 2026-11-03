@@ -1202,9 +1202,10 @@ void DebugCheatStartGenerateMon(void)
 {
     u16 headerId = VarGet(VAR_TEMP_0);
     bool8 nonLandEncounter = FlagGet(FLAG_TEMP_1);
+    bool8 nightEncounter = FlagGet(FLAG_TEMP_2);
     bool32 useWater = TRUE;
-    u16 species;
-    enum TimeOfDay timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
+    u16 species = SPECIES_NONE;
+    enum TimeOfDay timeOfDay = (nightEncounter && !nonLandEncounter) ? TIME_NIGHT : GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
     const struct WildPokemonInfo *landMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
     const struct WildPokemonInfo *waterMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
     const struct WildPokemonInfo *hiddenMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo;
@@ -1214,22 +1215,23 @@ void DebugCheatStartGenerateMon(void)
 
     if (!nonLandEncounter && landMonsInfo != NULL)
     {
-        // Land Pokémon
-        species = landMonsInfo->wildPokemon[(Random() % 12)].species;
+        while (species == SPECIES_NONE)
+            species = landMonsInfo->wildPokemon[(Random() % 12)].species;
     }
     else if (useWater)
     {
-        // Water Pokémon
-        species = waterMonsInfo->wildPokemon[(Random() % 5)].species;
+        while (species == SPECIES_NONE)
+            species = waterMonsInfo->wildPokemon[(Random() % 5)].species;
     }
     else
     {
-        // Special Pokémon
-        species = hiddenMonsInfo->wildPokemon[(Random() % 5)].species;
+        while (species == SPECIES_NONE)
+            species = hiddenMonsInfo->wildPokemon[(Random() % 5)].species;
     }
 
     VarSet(VAR_TEMP_0, species);
     FlagClear(FLAG_TEMP_1);
+    FlagClear(FLAG_TEMP_2);
 }
 
 u32 ChooseHiddenMonIndex(void)
