@@ -12294,7 +12294,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sDeinoLevelUpLearnset,
         .teachableLearnset = sDeinoTeachableLearnset,
         .eggMoveLearnset = sDeinoEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 50, SPECIES_ZWEILOUS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_ZWEILOUS}),
     },
 
     [SPECIES_ZWEILOUS] =
@@ -12361,7 +12361,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sZweilousLevelUpLearnset,
         .teachableLearnset = sZweilousTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 64, SPECIES_HYDREIGON}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 54, SPECIES_HYDREIGON}),
     },
 
     [SPECIES_HYDREIGON] =
