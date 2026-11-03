@@ -3302,35 +3302,84 @@ Music: Aqua
 AI: AI_FLAG_BOSS
 Mugshot: Blue
 
-Kilowattrel
+Pelipper
 Timid Nature
-Ability: Volt Absorb
-Level: 38
+Ability: Drizzle
+Level: 36
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunderbolt
-- Volt Switch
+- Scald
 - Air Slash
-- Roost
+- U-Turn
+- Sleep Talk
 
 Perrserker
 Jolly Nature
 Ability: Steely Spirit
-Level: 38
+Level: 36
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
 - Iron Head
 - Brick Break
 - Knock Off
 
-Dhelmise
-Brave Nature
-Ability: Steelworker
+Eelektross
+Naive Nature
+Ability: Levitate
 Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Anchor Shot
-- Shadow Claw
-- Giga Drain
-- Surf
+- Wild Charge
+- Grass Knot
+- Liquidation
+- Acrobatics
+
+=== TRAINER_PBL_MATT_BOSS_19 ===
+Name: Matt
+Class: Aqua Admin
+Pic: Aqua Admin M
+Music: Aqua
+AI: AI_FLAG_BOSS
+Mugshot: Blue
+Difficulty: Brutal
+
+Pelipper
+Timid Nature
+Ability: Drizzle
+Level: 36
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Scald
+- Air Slash
+- U-Turn
+- Sleep Talk
+
+Perrserker
+Jolly Nature
+Ability: Steely Spirit
+Level: 36
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Iron Head
+- Brick Break
+- Knock Off
+
+Floatzel
+Adamant Nature
+Ability: Swift Swim
+Level: 36
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Aqua Jet
+- Ice Punch
+- Low Kick
+
+Eelektross
+Naive Nature
+Ability: Levitate
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Wild Charge
+- Grass Knot
+- Liquidation
+- Acrobatics
 
 === TRAINER_PBL_WINSTON ===
 Name: Winston
