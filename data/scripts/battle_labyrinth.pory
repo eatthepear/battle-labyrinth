@@ -2126,6 +2126,39 @@ script Debug_CheatStart_PBL_GiveMons {
 	setvar(VAR_TEMP_1, 4) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
+	random(15)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			givemon(SPECIES_PANSAGE, 5, metLocation=METLOC_GIVE_FWG)
+		case 1:
+			givemon(SPECIES_GOSSIFLEUR, 5, metLocation=METLOC_GIVE_FWG)
+		case 2:
+			givemon(SPECIES_SUNKERN, 5, metLocation=METLOC_GIVE_FWG)
+		case 3:
+			givemon(SPECIES_CHERUBI, 5, metLocation=METLOC_GIVE_FWG)
+		case 4:
+			givemon(SPECIES_FOMANTIS, 5, metLocation=METLOC_GIVE_FWG)
+		case 5:
+			givemon(SPECIES_PANSEAR, 5, metLocation=METLOC_GIVE_FWG)
+		case 6:
+			givemon(SPECIES_VULPIX, 5, metLocation=METLOC_GIVE_FWG)
+		case 7:
+			givemon(SPECIES_SLUGMA, 5, metLocation=METLOC_GIVE_FWG)
+		case 8:
+			givemon(SPECIES_SIZZLIPEDE, 5, metLocation=METLOC_GIVE_FWG)
+		case 9:
+			givemon(SPECIES_PONYTA, 5, metLocation=METLOC_GIVE_FWG)
+		case 10:
+			givemon(SPECIES_PANPOUR, 5, metLocation=METLOC_GIVE_FWG)
+		case 11:
+			givemon(SPECIES_PSYDUCK, 5, metLocation=METLOC_GIVE_FWG)
+		case 12:
+			givemon(SPECIES_GOLDEEN, 5, metLocation=METLOC_GIVE_FWG)
+		case 13:
+			givemon(SPECIES_FINNEON, 5, metLocation=METLOC_GIVE_FWG)
+		case 14:
+			givemon(SPECIES_KRABBY, 5, metLocation=METLOC_GIVE_FWG)
+	}
 
 	if (var(VAR_ZONE) == 2) {
 		return
@@ -2143,6 +2176,39 @@ script Debug_CheatStart_PBL_GiveMons {
 	setvar(VAR_TEMP_1, 6) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
+	random(15)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			givemon(SPECIES_WURMPLE, 6, metLocation=METLOC_BOUGHT_BUG)
+		case 1:
+			givemon(SPECIES_SEWADDLE, 6, metLocation=METLOC_BOUGHT_BUG)
+		case 2:
+			givemon(SPECIES_SPINARAK, 6, metLocation=METLOC_BOUGHT_BUG)
+		case 3:
+			givemon(SPECIES_LEDYBA, 6, metLocation=METLOC_BOUGHT_BUG)
+		case 4:
+			givemon(SPECIES_KRICKETOT, 6, metLocation=METLOC_BOUGHT_BUG)
+		case 5:
+			givemon(SPECIES_TAROUNTULA, 6, metLocation=METLOC_BOUGHT_BUG)
+		case 6:
+			givemon(SPECIES_BURMY, 6, metLocation=METLOC_BOUGHT_BUG)
+		case 7:
+			givemon(SPECIES_BLIPBUG, 6, metLocation=METLOC_BOUGHT_BUG)
+		case 8:
+			givemon(SPECIES_COMBEE, 6, metLocation=METLOC_BOUGHT_BUG)
+		case 9:
+			givemon(SPECIES_PARAS, 6, metLocation=METLOC_BOUGHT_BUG)
+		case 10:
+			givemon(SPECIES_KARRABLAST, 6, metLocation=METLOC_BOUGHT_BUG)
+		case 11:
+			givemon(SPECIES_SHELMET, 6, metLocation=METLOC_BOUGHT_BUG)
+		case 12:
+			givemon(SPECIES_SURSKIT, 6, metLocation=METLOC_BOUGHT_BUG)
+		case 13:
+			givemon(SPECIES_RELLOR, 6, metLocation=METLOC_BOUGHT_BUG)
+		case 14:
+			givemon(SPECIES_NINCADA, 6, metLocation=METLOC_BOUGHT_BUG)
+	}
 
 	if (var(VAR_ZONE) == 3) {
 		return
@@ -2189,6 +2255,25 @@ script Debug_CheatStart_PBL_GiveMons {
 	if (var(VAR_ZONE) == 5) {
 		return
 	}
+	random(8)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			givemon(SPECIES_PACHIRISU, 10, metLocation=METLOC_BOUGHT_PIKA_CLONE)
+		case 1:
+			givemon(SPECIES_DEDENNE, 10, metLocation=METLOC_BOUGHT_PIKA_CLONE)
+		case 2:
+			givemon(SPECIES_MORPEKO, 10, metLocation=METLOC_BOUGHT_PIKA_CLONE)
+		case 3:
+			givemon(SPECIES_EMOLGA, 10, metLocation=METLOC_BOUGHT_PIKA_CLONE)
+		case 4:
+			givemon(SPECIES_PLUSLE, 10, metLocation=METLOC_BOUGHT_PIKA_CLONE)
+		case 5:
+			givemon(SPECIES_MINUN, 10, metLocation=METLOC_BOUGHT_PIKA_CLONE)
+		case 6:
+			givemon(SPECIES_PIKACHU, 10, metLocation=METLOC_BOUGHT_PIKA_CLONE)
+		case 7:
+			givemon(SPECIES_PAWMI, 10, metLocation=METLOC_BOUGHT_PIKA_CLONE)
+	}
 	random(5)
 	if (var(VAR_RESULT) == 1) {
 		setflag(FLAG_TEMP_1)
@@ -2232,6 +2317,7 @@ script Debug_CheatStart_PBL_GiveMons {
 	setvar(VAR_TEMP_1, 14) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
+	giveegg(SPECIES_EEVEE, metLocation=METLOC_ZONE6A_KIMONO_GIRL_EGG)
 
 	if (var(VAR_ZONE) == 7) {
 		return
@@ -2279,6 +2365,7 @@ script Debug_CheatStart_PBL_GiveMons {
 	setvar(VAR_TEMP_1, 20) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
+	givemon(SPECIES_TYROGUE, 15, metLocation=METLOC_ZONE9E_GIFT)
 
 	if (var(VAR_ZONE) == 10) {
 		return
@@ -2309,6 +2396,63 @@ script Debug_CheatStart_PBL_GiveMons {
 	setvar(VAR_TEMP_1, 22) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
+	random(27)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			givemon(SPECIES_BULBASAUR, 5)
+		case 1:
+			givemon(SPECIES_CHARMANDER, 5)
+		case 2:
+			givemon(SPECIES_SQUIRTLE, 5)
+		case 3:
+			givemon(SPECIES_CHIKORITA, 5)
+		case 4:
+			givemon(SPECIES_CYNDAQUIL, 5)
+		case 5:
+			givemon(SPECIES_TOTODILE, 5)
+		case 6:
+			givemon(SPECIES_TREECKO, 5)
+		case 7:
+			givemon(SPECIES_TORCHIC, 5)
+		case 8:
+			givemon(SPECIES_MUDKIP, 5)
+		case 9:
+			givemon(SPECIES_TURTWIG, 5)
+		case 10:
+			givemon(SPECIES_CHIMCHAR, 5)
+		case 11:
+			givemon(SPECIES_PIPLUP, 5)
+		case 12:
+			givemon(SPECIES_SNIVY, 5)
+		case 13:
+			givemon(SPECIES_TEPIG, 5)
+		case 14:
+			givemon(SPECIES_OSHAWOTT, 5)
+		case 15:
+			givemon(SPECIES_CHESPIN, 5)
+		case 16:
+			givemon(SPECIES_FENNEKIN, 5)
+		case 17:
+			givemon(SPECIES_FROAKIE, 5)
+		case 18:
+			givemon(SPECIES_ROWLET, 5)
+		case 19:
+			givemon(SPECIES_LITTEN, 5)
+		case 20:
+			givemon(SPECIES_POPPLIO, 5)
+		case 21:
+			givemon(SPECIES_GROOKEY, 5)
+		case 22:
+			givemon(SPECIES_SCORBUNNY, 5)
+		case 23:
+			givemon(SPECIES_SOBBLE, 5)
+		case 24:
+			givemon(SPECIES_SPRIGATITO, 5)
+		case 25:
+			givemon(SPECIES_FUECOCO, 5)
+		case 26:
+			givemon(SPECIES_QUAXLY, 5)
+	}
 
 	if (var(VAR_ZONE) == 11) {
 		return

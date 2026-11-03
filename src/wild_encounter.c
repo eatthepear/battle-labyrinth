@@ -12,6 +12,7 @@
 #include "link.h"
 #include "mass_outbreak.h"
 #include "metatile_behavior.h"
+#include "nuzlocke.h"
 #include "overworld.h"
 #include "ow_abilities.h"
 #include "pokeblock.h"
@@ -1212,22 +1213,23 @@ void DebugCheatStartGenerateMon(void)
     if (landMonsInfo != NULL && !secondaryEncounter)
     {
         while (species == SPECIES_NONE) {
-            if (landMonsInfo->wildPokemon[(Random() % 12)].species != SPECIES_NONE)
-                species = landMonsInfo->wildPokemon[(Random() % 12)].species;
+            species = landMonsInfo->wildPokemon[(Random() % 12)].species;
         }
     }
     else if (waterMonsInfo != NULL && secondaryEncounter)
     {
         while (species == SPECIES_NONE) {
-            if (waterMonsInfo->wildPokemon[(Random() % 5)].species != SPECIES_NONE)
-                species = waterMonsInfo->wildPokemon[(Random() % 5)].species;
+            species = waterMonsInfo->wildPokemon[(Random() % 5)].species;
+            if (FlagGet(FLAG_SETTINGS_NUZLOCKE) && IsCaptureBlockedBySpeciesClause(species))
+                species = SPECIES_NONE;
         }
     }
     else
     {
         while (species == SPECIES_NONE) {
-            if (hiddenMonsInfo->wildPokemon[(Random() % 5)].species != SPECIES_NONE)
-                species = hiddenMonsInfo->wildPokemon[(Random() % 5)].species;
+            species = hiddenMonsInfo->wildPokemon[(Random() % 5)].species;
+            if (FlagGet(FLAG_SETTINGS_NUZLOCKE) && IsCaptureBlockedBySpeciesClause(species))
+                species = SPECIES_NONE;
         }
     }
 
