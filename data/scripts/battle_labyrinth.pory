@@ -2460,20 +2460,29 @@ script Debug_CheatStart_PBL_GiveMons {
 	random(5)
 	if (var(VAR_RESULT) == 1) {
 		setflag(FLAG_TEMP_1)
+	} else {
+		random(2)
+		if (var(VAR_RESULT) == 1) {
+			setflag(FLAG_TEMP_2)
+		}
 	}
-	setvar(VAR_TEMP_0, 33) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	setvar(VAR_TEMP_0, 38) // wild define gWildMonHeaders in src/data/wild_encounters.h
 	setvar(VAR_TEMP_1, 33) // level
+	callnative(DebugCheatStartGenerateMon)
+	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
+	setvar(VAR_TEMP_0, 39) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	setvar(VAR_TEMP_1, 5) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
 
 	if (var(VAR_ZONE) == 22) {
 		return
 	}
-	random(5)
+	random(2)
 	if (var(VAR_RESULT) == 1) {
-		setflag(FLAG_TEMP_1)
+		setflag(FLAG_TEMP_2)
 	}
-	setvar(VAR_TEMP_0, 34) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	setvar(VAR_TEMP_0, 40) // wild define gWildMonHeaders in src/data/wild_encounters.h
 	setvar(VAR_TEMP_1, 35) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
@@ -2484,8 +2493,13 @@ script Debug_CheatStart_PBL_GiveMons {
 	random(5)
 	if (var(VAR_RESULT) == 1) {
 		setflag(FLAG_TEMP_1)
+	} else {
+		random(2)
+		if (var(VAR_RESULT) == 1) {
+			setflag(FLAG_TEMP_2)
+		}
 	}
-	setvar(VAR_TEMP_0, 35) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	setvar(VAR_TEMP_0, 41) // wild define gWildMonHeaders in src/data/wild_encounters.h
 	setvar(VAR_TEMP_1, 37) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
@@ -2493,19 +2507,15 @@ script Debug_CheatStart_PBL_GiveMons {
 	if (var(VAR_ZONE) == 24) {
 		return
 	}
-	random(5)
+	random(2)
 	if (var(VAR_RESULT) == 1) {
-		setflag(FLAG_TEMP_1)
+		setflag(FLAG_TEMP_2)
 	}
-	setvar(VAR_TEMP_0, 36) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	setvar(VAR_TEMP_0, 42) // wild define gWildMonHeaders in src/data/wild_encounters.h
 	setvar(VAR_TEMP_1, 39) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
-	// random(5)
-	// if (var(VAR_RESULT) == 1) {
-	// 	setflag(FLAG_TEMP_1)
-	// }
-	setvar(VAR_TEMP_0, 37) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	setvar(VAR_TEMP_0, 43) // wild define gWildMonHeaders in src/data/wild_encounters.h
 	setvar(VAR_TEMP_1, 39) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
@@ -2513,11 +2523,11 @@ script Debug_CheatStart_PBL_GiveMons {
 	if (var(VAR_ZONE) == 26) {
 		return
 	}
-	random(5)
+	random(2)
 	if (var(VAR_RESULT) == 1) {
-		setflag(FLAG_TEMP_1)
+		setflag(FLAG_TEMP_2)
 	}
-	setvar(VAR_TEMP_0, 49) // wild define gWildMonHeaders in src/data/wild_encounters.h
+	setvar(VAR_TEMP_0, 54) // wild define gWildMonHeaders in src/data/wild_encounters.h
 	setvar(VAR_TEMP_1, 41) // level
 	callnative(DebugCheatStartGenerateMon)
 	givemon(VAR_TEMP_0, VAR_TEMP_1, ITEM_NONE)
