@@ -407,9 +407,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("Ultra Balls!"))
 		case 24:
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 24 - Sheer Canyon{COLOR DARK_GRAY} is…"))
-			// msgbox(format("{COLOR GREEN}HM02 - Rock Climb{COLOR DARK_GRAY}!"))
-			// setspeaker(SP_NAME_NONE)
-			// giveitem(ITEM_HM_ROCK_CLIMB)
+			msgbox(format("The {COLOR GREEN}White Herb{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_WHITE_HERB)
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 25 - Ancient Tower{COLOR DARK_GRAY} is…"))
 			msgbox(format("{COLOR GREEN}HM02 - Rock Climb{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
