@@ -1201,32 +1201,34 @@ bool8 BerryTreeWildEncounter(void)
 void DebugCheatStartGenerateMon(void)
 {
     u16 headerId = VarGet(VAR_TEMP_0);
-    bool8 nonLandEncounter = FlagGet(FLAG_TEMP_1);
+    bool8 secondaryEncounter = FlagGet(FLAG_TEMP_1);
     bool8 nightEncounter = FlagGet(FLAG_TEMP_2);
-    bool32 useWater = TRUE;
     u16 species = SPECIES_NONE;
-    enum TimeOfDay timeOfDay = (nightEncounter && !nonLandEncounter) ? TIME_NIGHT : GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
+    enum TimeOfDay timeOfDay = (nightEncounter && !secondaryEncounter) ? TIME_NIGHT : GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
     const struct WildPokemonInfo *landMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
     const struct WildPokemonInfo *waterMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
     const struct WildPokemonInfo *hiddenMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo;
 
-    if (waterMonsInfo == NULL)
-        useWater = FALSE;
-
-    if (!nonLandEncounter && landMonsInfo != NULL)
+    if (landMonsInfo != NULL && !secondaryEncounter)
     {
-        while (species == SPECIES_NONE)
-            species = landMonsInfo->wildPokemon[(Random() % 12)].species;
+        while (species == SPECIES_NONE) {
+            if (landMonsInfo->wildPokemon[(Random() % 12)].species != SPECIES_NONE)
+                species = landMonsInfo->wildPokemon[(Random() % 12)].species;
+        }
     }
-    else if (useWater)
+    else if (waterMonsInfo != NULL && secondaryEncounter)
     {
-        while (species == SPECIES_NONE)
-            species = waterMonsInfo->wildPokemon[(Random() % 5)].species;
+        while (species == SPECIES_NONE) {
+            if (waterMonsInfo->wildPokemon[(Random() % 5)].species != SPECIES_NONE)
+                species = waterMonsInfo->wildPokemon[(Random() % 5)].species;
+        }
     }
     else
     {
-        while (species == SPECIES_NONE)
-            species = hiddenMonsInfo->wildPokemon[(Random() % 5)].species;
+        while (species == SPECIES_NONE) {
+            if (hiddenMonsInfo->wildPokemon[(Random() % 5)].species != SPECIES_NONE)
+                species = hiddenMonsInfo->wildPokemon[(Random() % 5)].species;
+        }
     }
 
     VarSet(VAR_TEMP_0, species);
