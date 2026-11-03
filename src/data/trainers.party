@@ -4761,6 +4761,55 @@ Mugshot: Purple
 
 Bulbasaur
 
+=== TRAINER_PBL_THADDEUS_OPTIONAL_21 ===
+Name: Thaddeus
+Class: Aspiring Leader
+Pic: Roughneck
+Music: Intense
+AI: AI_FLAG_BOSS
+Double Battle: No
+
+Liepard @ Dark Gem
+Rash Nature
+Ability: Unburden
+Level: 1
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dark Pulse
+- Play Rough
+- Burning Jealousy
+- Fake Out
+
+Lokix @ Black Glasses
+Naive Nature
+Ability: Tinted Lens
+Level: 1
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- U-Turn
+- Knock Off
+- First Impression
+- Sucker Punch
+
+Drapion @ Scope Lens
+Jolly Nature
+Ability: Sniper
+Level: 1
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Night Slash
+- Cross Poison
+- Aqua Tail
+- Earthquake
+
+Hydreigon @ Life Orb
+Timid Nature
+Ability: Levitate
+Level: 2
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Pulse
+- Dark Pulse
+- Flash Cannon
+- Flamethrower
+
+
 === TRAINER_PBL_ZUKI_BOSS_29 ===
 Name: Zuki
 Class: Kimono Girl
