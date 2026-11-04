@@ -53,7 +53,8 @@ AI: AI_FLAG_BOSS
 Simisage @ Occa Berry
 Ability: Overgrow
 Level: 40
-Naive Nature
+Hasty Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Grass Pledge
 - Giga Drain
 - Low Kick
@@ -63,27 +64,30 @@ Serperior @ Light Clay
 Ability: Contrary
 Level: 38
 Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Grass Pledge
 - Giga Drain
 - Light Screen
 - Reflect
 
-Sceptile @ Expert Belt
-Ability: Overgrow
-Level: 38
-Hasty Nature
-- Grass Pledge
-- Giga Drain
-- Dragon Pulse
-- Rock Slide
-
 Torterra @ Miracle Seed
 Ability: Overgrow
 Level: 38
 Naive Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Grass Pledge
 - Wood Hammer
 - High Horsepower
+- Rock Slide
+
+Chesnaught @ Coba Berry
+Ability: Bulletproof
+Level: 38
+Sassy Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Grass Pledge
+- Wood Hammer
+- Hammer Arm
 - Rock Slide
 
 === PARTNER_PBL_CHILI_20 ===
@@ -97,6 +101,7 @@ Simisear @ Passho Berry
 Ability: Blaze
 Level: 40
 Hasty Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Pledge
 - Flamethrower
 - Rock Slide
@@ -106,6 +111,7 @@ Typhlosion @ Expert Belt
 Ability: Blaze
 Level: 38
 Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Pledge
 - Flamethrower
 - Scorching Sands
@@ -115,6 +121,7 @@ Skeledirge @ Sitrus Berry
 Ability: Unaware
 Level: 38
 Quiet Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Pledge
 - Flamethrower
 - Shadow Ball
@@ -124,6 +131,7 @@ Emboar @ Charcoal
 Ability: Reckless
 Level: 38
 Brave Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Pledge
 - Flare Blitz
 - Close Combat
@@ -140,24 +148,27 @@ Simipour @ Rindo Berry
 Ability: Torrent
 Level: 40
 Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pledge
 - Scald
 - Ice Beam
 - Icy Wind
 
-Inteleon @ Scope Lens
-Ability: Sniper
+Blastoise @ Mystic Water
+Ability: Torrent
 Level: 38
-Timid Nature
+Relaxed Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pledge
-- Snipe Shot
+- Scald
 - Ice Beam
-- Air Cutter
+- Dark Pulse
 
 Samurott @ Sitrus Berry
 Ability: Torrent
 Level: 38
 Naive Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pledge
 - Scald
 - Ice Beam
@@ -167,6 +178,7 @@ Quaquaval @ Flying Gem
 Ability: Moxie
 Level: 38
 Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pledge
 - Aqua Step
 - Close Combat

@@ -3481,7 +3481,7 @@ Mugshot: Pink
 Simisage @ Occa Berry
 Ability: Overgrow
 Level: 40
-Naive Nature
+Hasty Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Grass Pledge
 - Giga Drain
@@ -3498,15 +3498,55 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Light Screen
 - Reflect
 
-Sceptile @ Expert Belt
+Torterra @ Miracle Seed
 Ability: Overgrow
 Level: 38
+Naive Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Grass Pledge
+- Wood Hammer
+- High Horsepower
+- Rock Slide
+
+Chesnaught @ Coba Berry
+Ability: Bulletproof
+Level: 38
+Sassy Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Grass Pledge
+- Wood Hammer
+- Hammer Arm
+- Rock Slide
+
+=== TRAINER_PBL_CILAN_BOSS_20 ===
+Name: Cilan
+Class: Rival
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Pink
+Difficulty: Brutal
+
+Simisage @ Occa Berry
+Ability: Overgrow
+Level: 40
 Hasty Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Grass Pledge
 - Giga Drain
-- Dragon Pulse
+- Low Kick
 - Rock Slide
+
+Serperior @ Light Clay
+Ability: Contrary
+Level: 38
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Grass Pledge
+- Giga Drain
+- Light Screen
+- Reflect
 
 Torterra @ Miracle Seed
 Ability: Overgrow
@@ -3517,6 +3557,26 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Wood Hammer
 - High Horsepower
 - Rock Slide
+
+Chesnaught @ Coba Berry
+Ability: Bulletproof
+Level: 38
+Sassy Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Grass Pledge
+- Wood Hammer
+- Hammer Arm
+- Rock Slide
+
+Sceptile @ Sceptilite
+Ability: Overgrow
+Level: 40
+Naive Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Grass Pledge
+- Giga Drain
+- Dragon Pulse
+- Focus Blast
 
 === TRAINER_PBL_CHILI_BOSS_20 ===
 Name: Chili
@@ -3567,6 +3627,66 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Close Combat
 - Wild Charge
 
+=== TRAINER_PBL_CHILI_BOSS_20 ===
+Name: Chili
+Class: Rival
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Pink
+Difficulty: Brutal
+
+Simisear @ Passho Berry
+Ability: Blaze
+Level: 40
+Hasty Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Pledge
+- Flamethrower
+- Rock Slide
+- Grass Knot
+
+Typhlosion @ Expert Belt
+Ability: Blaze
+Level: 38
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Pledge
+- Flamethrower
+- Scorching Sands
+- Extrasensory
+
+Skeledirge @ Sitrus Berry
+Ability: Unaware
+Level: 38
+Quiet Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Pledge
+- Flamethrower
+- Shadow Ball
+- Will-O-Wisp
+
+Emboar @ Charcoal
+Ability: Reckless
+Level: 38
+Brave Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Pledge
+- Flare Blitz
+- Close Combat
+- Wild Charge
+
+Charizard @ Charizardite-X
+Ability: Blaze
+Level: 40
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Pledge
+- Flare Blitz
+- Dragon Claw
+- Thunder Punch
+
 === TRAINER_PBL_CRESS_BOSS_20 ===
 Name: Cress
 Class: Rival
@@ -3586,15 +3706,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Beam
 - Icy Wind
 
-Inteleon @ Scope Lens
-Ability: Sniper
+Blastoise @ Mystic Water
+Ability: Torrent
 Level: 38
-Timid Nature
+Relaxed Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pledge
-- Snipe Shot
+- Scald
 - Ice Beam
-- Air Cutter
+- Dark Pulse
 
 Samurott @ Sitrus Berry
 Ability: Torrent
@@ -3616,6 +3736,66 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Close Combat
 - Acrobatics
 
+=== TRAINER_PBL_CRESS_BOSS_20 ===
+Name: Cress
+Class: Rival
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Pink
+Difficulty: Brutal
+
+Simipour @ Rindo Berry
+Ability: Torrent
+Level: 40
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pledge
+- Scald
+- Ice Beam
+- Icy Wind
+
+Blastoise @ Mystic Water
+Ability: Torrent
+Level: 38
+Relaxed Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pledge
+- Scald
+- Ice Beam
+- Dark Pulse
+
+Samurott @ Sitrus Berry
+Ability: Torrent
+Level: 38
+Naive Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pledge
+- Scald
+- Ice Beam
+- Megahorn
+
+Quaquaval @ Flying Gem
+Ability: Moxie
+Level: 38
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pledge
+- Aqua Step
+- Close Combat
+- Acrobatics
+
+Feraligatr @ Feraligite
+Ability: Torrent
+Level: 40
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pledge
+- Aqua Tail
+- Body Slam
+- Aqua Jet
+
 === TRAINER_PBL_LACEY_OPTIONAL_20 ===
 Name: Lacey
 Class: Elite Four
@@ -3627,7 +3807,7 @@ Mugshot: Blue
 
 Slurpuff @ Focus Sash
 Ability: Unburden
-Level: 44
+Level: 40
 Hasty Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sticky Web
@@ -3637,27 +3817,27 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Primarina @ Leftovers
 Ability: Torrent
-Level: 44
+Level: 40
 Bold Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Scald
-- Moonblast
+- Dazzling Gleam
 - Rest
 - Sleep Talk
 
 Whimsicott @ Sitrus Berry
 Ability: Prankster
-Level: 44
+Level: 40
 Bold Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Stun Spore
+- Encore
 - U-Turn
-- Moonblast
+- Dazzling Gleam
 - Giga Drain
 
 Mimikyu @ Red Card
 Ability: Disguise
-Level: 44
+Level: 40
 Adamant Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shadow Claw
@@ -3665,19 +3845,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Play Rough
 - Drain Punch
 
-Slowbro-Galar @ Quick Claw
-Ability: Quick Draw
-Level: 44
-Modest Nature
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shell Side Arm
-- Psyshock
-- Surf
-- Grass Knot
-
 Excadrill @ Life Orb
 Ability: Mold Breaker
-Level: 46
+Level: 40
 Jolly Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
