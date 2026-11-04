@@ -214,6 +214,7 @@ enum __attribute__((packed)) TrainerPicID
     TRAINER_PIC_LACEY,
     TRAINER_PIC_SHAUNTAL,
     TRAINER_PIC_CYNTHIA,
+    TRAINER_PIC_KRIS,
     TRAINER_PIC_COUNT,
 };
 

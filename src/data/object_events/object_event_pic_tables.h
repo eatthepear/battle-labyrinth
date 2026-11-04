@@ -1632,6 +1632,53 @@ static const struct SpriteFrameImage sPicTable_Cynthia[] = {
     overworld_frame(gObjectEventPic_Cynthia, 2, 4, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_KrisNormal[] = {
+    overworld_ascending_frames(gObjectEventPic_KrisNormalRunning, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_KrisMachBike[] = {
+    overworld_ascending_frames(gObjectEventPic_KrisMachBike, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_KrisAcroBike[] = {
+    overworld_ascending_frames(gObjectEventPic_KrisAcroBike, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_KrisSurfing[] = {
+    overworld_frame(gObjectEventPic_KrisSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KrisSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KrisSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_KrisSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KrisSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KrisSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KrisSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KrisSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_KrisSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_KrisSurfing, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KrisSurfing, 4, 4, 3),
+    overworld_frame(gObjectEventPic_KrisSurfing, 4, 4, 5),
+};
+
+static const struct SpriteFrameImage sPicTable_KrisUnderwater[] = {
+    overworld_frame(gObjectEventPic_KrisUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KrisUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KrisUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KrisUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KrisUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KrisUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KrisUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KrisUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KrisUnderwater, 4, 4, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_KrisFieldMove[] = {
+    overworld_ascending_frames(gObjectEventPic_KrisFieldMove, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_KrisFishing[] = {
+    overworld_ascending_frames(gObjectEventPic_KrisFishing, 4, 4),
+};
+
 #if IS_FRLG
 
 static const struct SpriteFrameImage sPicTable_RedNormal[] = {

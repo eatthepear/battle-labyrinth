@@ -646,6 +646,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Shelly,                OBJ_EVENT_PAL_TAG_SHELLY},
     {gObjectEventPal_Tabitha,               OBJ_EVENT_PAL_TAG_TABITHA},
     {gObjectEventPal_Cynthia,               OBJ_EVENT_PAL_TAG_CYNTHIA},
+    {gObjectEventPal_Kris,                  OBJ_EVENT_PAL_TAG_KRIS},
     {gObjectEventPaletteNeonLight,          OBJ_EVENT_PAL_TAG_NEON_LIGHT},
 #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
@@ -3337,10 +3338,22 @@ u8 LoadPlayerObjectEventPalette(enum Gender gender)
     {
     default:
     case MALE:
-        paletteTag = OBJ_EVENT_PAL_TAG_BRENDAN;
+        switch (gSaveBlock2Ptr->currOutfitId) {
+            case OUTFIT_USUAL_GREEN:
+            default:
+                paletteTag = OBJ_EVENT_PAL_TAG_BRENDAN;
+                break;
+        }
         break;
     case FEMALE:
-        paletteTag = OBJ_EVENT_PAL_TAG_MAY;
+        switch (gSaveBlock2Ptr->currOutfitId) {
+            case OUTFIT_JOHTO:
+                paletteTag = OBJ_EVENT_PAL_TAG_KRIS;
+            case OUTFIT_USUAL_GREEN:
+            default:
+                paletteTag = OBJ_EVENT_PAL_TAG_MAY;
+                break;
+        }
         break;
     }
     return LoadObjectEventPalette(paletteTag);

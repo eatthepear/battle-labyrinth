@@ -595,6 +595,14 @@ const u32 gObjectEventPic_Tabitha[] = INCGFX_U32("graphics/object_events/pics/pe
 const u16 gObjectEventPal_Tabitha[] = INCGFX_U16("graphics/object_events/pics/people/tabitha.png", ".gbapal");
 const u32 gObjectEventPic_Cynthia[] = INCGFX_U32("graphics/object_events/pics/people/cynthia.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPal_Cynthia[] = INCGFX_U16("graphics/object_events/pics/people/cynthia.png", ".gbapal");
+const u32 gObjectEventPic_KrisNormalRunning[] = INCBIN_U32("graphics/object_events/pics/people/kris/walking.4bpp", "graphics/object_events/pics/people/kris/running.4bpp");
+const u16 gObjectEventPal_Kris[] = INCGFX_U16("graphics/object_events/pics/people/kris/walking.png", ".gbapal");
+const u32 gObjectEventPic_KrisMachBike[] = INCGFX_U32("graphics/object_events/pics/people/kris/mach_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KrisAcroBike[] = INCGFX_U32("graphics/object_events/pics/people/kris/acro_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KrisSurfing[] = INCGFX_U32("graphics/object_events/pics/people/kris/surfing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KrisFieldMove[] = INCGFX_U32("graphics/object_events/pics/people/kris/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KrisUnderwater[] = INCGFX_U32("graphics/object_events/pics/people/kris/underwater.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KrisFishing[] = INCGFX_U32("graphics/object_events/pics/people/kris/fishing.png", ".4bpp", "-mwidth 4 -mheight 4");
 
 const u32 gFieldEffectObjectPic_SnowFootprints[] = INCGFX_U32("graphics/field_effects/pics/snow_footprints.png", ".4bpp");
 #if IS_FRLG

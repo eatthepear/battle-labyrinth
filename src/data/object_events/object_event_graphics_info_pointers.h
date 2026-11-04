@@ -467,6 +467,13 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Courtney;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shelly;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tabitha;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cynthia;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisAcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisUnderwater;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisFishing;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -774,6 +781,13 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SHELLY] =                   &gObjectEventGraphicsInfo_Shelly,
     [OBJ_EVENT_GFX_TABITHA] =                  &gObjectEventGraphicsInfo_Tabitha,
     [OBJ_EVENT_GFX_CYNTHIA] =                  &gObjectEventGraphicsInfo_Cynthia,
+    [OBJ_EVENT_GFX_KRIS_NORMAL] =              &gObjectEventGraphicsInfo_KrisNormal,
+    [OBJ_EVENT_GFX_KRIS_MACH_BIKE] =           &gObjectEventGraphicsInfo_KrisMachBike,
+    [OBJ_EVENT_GFX_KRIS_ACRO_BIKE] =           &gObjectEventGraphicsInfo_KrisAcroBike,
+    [OBJ_EVENT_GFX_KRIS_SURFING] =             &gObjectEventGraphicsInfo_KrisSurfing,
+    [OBJ_EVENT_GFX_KRIS_FIELD_MOVE] =          &gObjectEventGraphicsInfo_KrisFieldMove,
+    [OBJ_EVENT_GFX_KRIS_UNDERWATER] =          &gObjectEventGraphicsInfo_KrisUnderwater,
+    [OBJ_EVENT_GFX_KRIS_FISHING] =             &gObjectEventGraphicsInfo_KrisFishing,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
