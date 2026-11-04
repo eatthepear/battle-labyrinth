@@ -603,6 +603,14 @@ const u32 gObjectEventPic_KrisSurfing[] = INCGFX_U32("graphics/object_events/pic
 const u32 gObjectEventPic_KrisFieldMove[] = INCGFX_U32("graphics/object_events/pics/people/kris/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_KrisUnderwater[] = INCGFX_U32("graphics/object_events/pics/people/kris/underwater.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_KrisFishing[] = INCGFX_U32("graphics/object_events/pics/people/kris/fishing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_EthanNormalRunning[] = INCBIN_U32("graphics/object_events/pics/people/ethan/walking.4bpp", "graphics/object_events/pics/people/ethan/running.4bpp");
+const u16 gObjectEventPal_Ethan[] = INCGFX_U16("graphics/object_events/pics/people/ethan/walking.png", ".gbapal");
+const u32 gObjectEventPic_EthanMachBike[] = INCGFX_U32("graphics/object_events/pics/people/ethan/mach_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_EthanAcroBike[] = INCGFX_U32("graphics/object_events/pics/people/ethan/acro_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_EthanSurfing[] = INCGFX_U32("graphics/object_events/pics/people/ethan/surfing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_EthanFieldMove[] = INCGFX_U32("graphics/object_events/pics/people/ethan/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_EthanUnderwater[] = INCGFX_U32("graphics/object_events/pics/people/ethan/underwater.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_EthanFishing[] = INCGFX_U32("graphics/object_events/pics/people/ethan/fishing.png", ".4bpp", "-mwidth 4 -mheight 4");
 
 const u32 gFieldEffectObjectPic_SnowFootprints[] = INCGFX_U32("graphics/field_effects/pics/snow_footprints.png", ".4bpp");
 #if IS_FRLG

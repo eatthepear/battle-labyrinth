@@ -474,6 +474,13 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisSurfing
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisFieldMove;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisUnderwater;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanAcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanUnderwater;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanFishing;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -788,6 +795,13 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_KRIS_FIELD_MOVE] =          &gObjectEventGraphicsInfo_KrisFieldMove,
     [OBJ_EVENT_GFX_KRIS_UNDERWATER] =          &gObjectEventGraphicsInfo_KrisUnderwater,
     [OBJ_EVENT_GFX_KRIS_FISHING] =             &gObjectEventGraphicsInfo_KrisFishing,
+    [OBJ_EVENT_GFX_ETHAN_NORMAL] =             &gObjectEventGraphicsInfo_EthanNormal,
+    [OBJ_EVENT_GFX_ETHAN_MACH_BIKE] =          &gObjectEventGraphicsInfo_EthanMachBike,
+    [OBJ_EVENT_GFX_ETHAN_ACRO_BIKE] =          &gObjectEventGraphicsInfo_EthanAcroBike,
+    [OBJ_EVENT_GFX_ETHAN_SURFING] =            &gObjectEventGraphicsInfo_EthanSurfing,
+    [OBJ_EVENT_GFX_ETHAN_FIELD_MOVE] =         &gObjectEventGraphicsInfo_EthanFieldMove,
+    [OBJ_EVENT_GFX_ETHAN_UNDERWATER] =         &gObjectEventGraphicsInfo_EthanUnderwater,
+    [OBJ_EVENT_GFX_ETHAN_FISHING] =            &gObjectEventGraphicsInfo_EthanFishing,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,

@@ -1679,6 +1679,53 @@ static const struct SpriteFrameImage sPicTable_KrisFishing[] = {
     overworld_ascending_frames(gObjectEventPic_KrisFishing, 4, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_EthanNormal[] = {
+    overworld_ascending_frames(gObjectEventPic_EthanNormalRunning, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_EthanMachBike[] = {
+    overworld_ascending_frames(gObjectEventPic_EthanMachBike, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_EthanAcroBike[] = {
+    overworld_ascending_frames(gObjectEventPic_EthanAcroBike, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_EthanSurfing[] = {
+    overworld_frame(gObjectEventPic_EthanSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_EthanSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_EthanSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_EthanSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_EthanSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_EthanSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_EthanSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_EthanSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_EthanSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_EthanSurfing, 4, 4, 1),
+    overworld_frame(gObjectEventPic_EthanSurfing, 4, 4, 3),
+    overworld_frame(gObjectEventPic_EthanSurfing, 4, 4, 5),
+};
+
+static const struct SpriteFrameImage sPicTable_EthanUnderwater[] = {
+    overworld_frame(gObjectEventPic_EthanUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_EthanUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_EthanUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_EthanUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_EthanUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_EthanUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_EthanUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_EthanUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_EthanUnderwater, 4, 4, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_EthanFieldMove[] = {
+    overworld_ascending_frames(gObjectEventPic_EthanFieldMove, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_EthanFishing[] = {
+    overworld_ascending_frames(gObjectEventPic_EthanFishing, 4, 4),
+};
+
 #if IS_FRLG
 
 static const struct SpriteFrameImage sPicTable_RedNormal[] = {
