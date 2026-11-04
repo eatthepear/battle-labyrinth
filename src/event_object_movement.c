@@ -3343,7 +3343,7 @@ u8 LoadPlayerObjectEventPalette(enum Gender gender)
             case OUTFIT_JOHTO:
                 paletteTag = OBJ_EVENT_PAL_TAG_ETHAN;
                 break;
-            case OUTFIT_USUAL_GREEN:
+            case OUTFIT_HOENN:
             default:
                 paletteTag = OBJ_EVENT_PAL_TAG_BRENDAN;
                 break;
@@ -3354,7 +3354,7 @@ u8 LoadPlayerObjectEventPalette(enum Gender gender)
             case OUTFIT_JOHTO:
                 paletteTag = OBJ_EVENT_PAL_TAG_KRIS;
                 break;
-            case OUTFIT_USUAL_GREEN:
+            case OUTFIT_HOENN:
             default:
                 paletteTag = OBJ_EVENT_PAL_TAG_MAY;
                 break;

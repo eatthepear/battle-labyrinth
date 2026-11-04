@@ -6,16 +6,16 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
     [OUTFIT_NONE] = {
         .isHidden = TRUE
     },
-    [OUTFIT_USUAL_GREEN] = {
+    [OUTFIT_HOENN] = {
         //! DESC: if sets to TRUE, it will not be shown in the OUTFIT menu if it's locked.
         .isHidden = FALSE,
 
         //! agbcc doesnt like COMPOUND_STRING on my end
         //! DESC: outfit's name
-        .name = COMPOUND_STRING("USUAL GREEN"),
+        .name = COMPOUND_STRING("Hoenn"),
 
         //! DESC: outfit's description
-        .desc = COMPOUND_STRING("The usual, but basic OUTFIT."),
+        .desc = COMPOUND_STRING("Avatars from the Hoenn games,\nwith a purple twist!"),
 
         //! DESC: trainer front & back pic index
         //! (see include/constants/trainers.h)
