@@ -94,36 +94,36 @@ script Zone30D_EventScript_Door3 {
 	end
 }
 
-script Zone30D_EventScript_Leaf_Intro {
+script Zone30D_EventScript_Blue_Intro {
 	lockall
 	playbgm(MUS_BW_FRIEND, 0)
-	applymovement(LOCALID_LEAF_ZONE30D, Common_Movement_FaceLeft)
+	applymovement(LOCALID_BLUE_ZONE30D, Common_Movement_FaceLeft)
 	waitmovement(0)
-	applymovement(LOCALID_LEAF_ZONE30D, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_BLUE_ZONE30D, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
-	setspeaker("Leaf")
-	msgbox(format("Oh, poor Leaf, all alone in these woods.\pWon't you help show me the way out?"), MSGBOX_AUTOCLOSE)
-	applymovement(LOCALID_LEAF_ZONE30D, Common_Movement_WalkRight3)
+	setspeaker("Blue")
+	msgbox(format("Oh, poor Blue, all alone in these woods.\pWon't you help show me the way out?"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_BLUE_ZONE30D, Common_Movement_WalkRight3)
 	waitmovement(0)
 	setspeaker(SP_NAME_NONE)
-	msgbox(format("{PLAYER} agreed to help {COLOR BLUE}Leaf{COLOR DARK_GRAY}!"))
-	setspeaker("Leaf")
+	msgbox(format("{PLAYER} agreed to help {COLOR BLUE}Blue{COLOR DARK_GRAY}!"))
+	setspeaker("Blue")
 	msgbox(format("LETS GO!"), MSGBOX_AUTOCLOSE)
-	setfollowernpc(LOCALID_LEAF_ZONE30D, FOLLOWER_NPC_FLAG_ALL, 0, PARTNER_PBL_LEAF_30)
+	setfollowernpc(LOCALID_BLUE_ZONE30D, FOLLOWER_NPC_FLAG_ALL, 0, PARTNER_PBL_BLUE_30)
 	facefollowernpc
 	setvar(VAR_ZONE_30_STATE, 4)
 	fadedefaultbgm
 	releaseall
 }
 
-script Zone30D_EventScript_Leaf {
+script Zone30D_EventScript_Blue {
 	lock
 	faceplayer
 	call_if_eq(VAR_PUZZLE_DIFFICULTY, 1, EventScript_PuzzleHint)
 	call_if_eq(VAR_PUZZLE_DIFFICULTY, 2, EventScript_PuzzleSkip)
-	setspeaker("Leaf")
+	setspeaker("Blue")
 	msgbox(format("DIALOGUE!"), MSGBOX_AUTOCLOSE)
 	release
 	end

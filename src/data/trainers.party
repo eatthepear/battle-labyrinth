@@ -400,7 +400,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 - Tail Whip
 
-=== TRAINER_PBL_LEAF_BOSS_2 ===
+=== TRAINER_PBL_BLUE_BOSS_2 ===
 Name: Leaf
 Class: Rival
 Pic: Leaf
@@ -429,7 +429,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Poison Powder
 - Rock Smash
 
-=== TRAINER_PBL_LEAF_BOSS_2 ===
+=== TRAINER_PBL_BLUE_BOSS_2 ===
 Name: Leaf
 Class: Rival
 Pic: Leaf
@@ -2824,114 +2824,64 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Iron Head
 - Throat Chop
 
-=== TRAINER_PBL_LEAF_BOSS_17 ===
-Name: Leaf
-Class: Rival
-Pic: Leaf
-Music: Female
+=== TRAINER_PBL_LACEY_BOSS_17 ===
+Name: Lacey
+Class: Elite Four
+Pic: Lacey
+Music: Elite Four
 AI: AI_FLAG_BOSS
 Double Battle: No
-Mugshot: Pink
+Mugshot: Blue
 
-Raichu-Alola @ Wise Glasses
-Timid Nature
-Ability: Surge Surfer
-Level: 32
+Slurpuff @ Focus Sash
+Ability: Unburden
+Level: 40
+Hasty Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Volt Switch
-- Psychic
-- Surf
-- Fake Out
+- Sticky Web
+- Endeavor
+- Moonblast
+- Misty Explosion
 
-Clefable @ Big Root
-Modest Nature
-Ability: Magic Guard
-Level: 32
+Primarina @ Leftovers
+Ability: Torrent
+Level: 40
+Bold Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Draining Kiss
-- Life Dew
-- Icy Wind
-- Cosmic Power
+- Scald
+- Dazzling Gleam
+- Rest
+- Sleep Talk
 
-Lapras @ Wacan Berry
-Quiet Nature
-Ability: Water Absorb
-Level: 32
+Whimsicott @ Sitrus Berry
+Ability: Prankster
+Level: 40
+Bold Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Freeze-Dry
-- Zen Headbutt
-- Ice Shard
-
-Venusaur @ Sitrus Berry
-Timid Nature
-Ability: Overgrow
-Level: 34
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Encore
+- U-Turn
+- Dazzling Gleam
 - Giga Drain
-- Sludge Bomb
-- Weather Ball
-- Terrain Pulse
 
-=== TRAINER_PBL_LEAF_BOSS_17 ===
-Name: Leaf
-Class: Rival
-Pic: Leaf
-Music: Female
-AI: AI_FLAG_BOSS
-Double Battle: No
-Mugshot: Pink
-Difficulty: Brutal
-
-Raichu-Alola @ Wise Glasses
-Timid Nature
-Ability: Surge Surfer
-Level: 32
+Mimikyu @ Red Card
+Ability: Disguise
+Level: 40
+Adamant Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Volt Switch
-- Psychic
-- Surf
-- Fake Out
+- Shadow Claw
+- Shadow Sneak
+- Play Rough
+- Drain Punch
 
-Clefable @ Big Root
-Modest Nature
-Ability: Magic Guard
-Level: 32
+Excadrill @ Life Orb
+Ability: Mold Breaker
+Level: 40
+Jolly Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Draining Kiss
-- Life Dew
-- Icy Wind
-- Cosmic Power
-
-Lapras @ Wacan Berry
-Quiet Nature
-Ability: Water Absorb
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Freeze-Dry
-- Zen Headbutt
-- Ice Shard
-
-Snorlax @ Chople Berry
-Brave Nature
-Ability: Gluttony
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Body Slam
-- Crunch
-- Stomping Tantrum
-- Thunder Punch
-
-Venusaur @ Sitrus Berry
-Timid Nature
-Ability: Overgrow
-Level: 34
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
-- Sludge Bomb
-- Weather Ball
-- Terrain Pulse
+- Earthquake
+- Iron Head
+- Rock Slide
+- Swords Dance
 
 === TRAINER_PBL_DORIS ===
 Name: Doris
@@ -3796,65 +3746,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Body Slam
 - Aqua Jet
 
-=== TRAINER_PBL_LACEY_OPTIONAL_20 ===
-Name: Lacey
-Class: Elite Four
-Pic: Lacey
-Music: Elite Four
-AI: AI_FLAG_BOSS
-Double Battle: No
-Mugshot: Blue
-
-Slurpuff @ Focus Sash
-Ability: Unburden
-Level: 40
-Hasty Nature
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sticky Web
-- Endeavor
-- Moonblast
-- Misty Explosion
-
-Primarina @ Leftovers
-Ability: Torrent
-Level: 40
-Bold Nature
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Scald
-- Dazzling Gleam
-- Rest
-- Sleep Talk
-
-Whimsicott @ Sitrus Berry
-Ability: Prankster
-Level: 40
-Bold Nature
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Encore
-- U-Turn
-- Dazzling Gleam
-- Giga Drain
-
-Mimikyu @ Red Card
-Ability: Disguise
-Level: 40
-Adamant Nature
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shadow Claw
-- Shadow Sneak
-- Play Rough
-- Drain Punch
-
-Excadrill @ Life Orb
-Ability: Mold Breaker
-Level: 40
-Jolly Nature
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Iron Head
-- Rock Slide
-- Swords Dance
-
 === TRAINER_PBL_BERNARD ===
 Name: Bernard
 Class: Triathlete
@@ -4441,64 +4332,10 @@ Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_24_AND_25
 
-=== TRAINER_PBL_ROCKET_GRUNT_24A_1_BOSS_24 ===
+=== TRAINER_PBL_BLUE_BOSS_24 ===
 Name: Grunt
 Class: Rainbow Rocket
 Pic: Rainbow Rocket Grunt M
-Music: Rocket
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_ROCKET_GRUNT_24A_2_BOSS_24 ===
-Name: Grunt
-Class: Rainbow Rocket
-Pic: Rainbow Rocket Grunt F
-Music: Rocket
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_ROCKET_GRUNT_24A_3_BOSS_24 ===
-Name: Grunt
-Class: Rainbow Rocket
-Pic: Rainbow Rocket Grunt M
-Music: Rocket
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-=== TRAINER_PBL_ROCKET_GRUNT_24A_4_BOSS_24 ===
-Name: Grunt
-Class: Rainbow Rocket
-Pic: Rainbow Rocket Grunt F
 Music: Rocket
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
@@ -4915,7 +4752,7 @@ Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
-=== TRAINER_PBL_LEAF_BOSS_27 ===
+=== TRAINER_PBL_BLUE_BOSS_27 ===
 Name: Leaf
 Class: Rival
 Pic: Leaf
@@ -5768,7 +5605,7 @@ Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
-=== TRAINER_PBL_LEAF_BOSS_31 ===
+=== TRAINER_PBL_BLUE_BOSS_31 ===
 Name: Leaf
 Class: Rival
 Pic: Leaf

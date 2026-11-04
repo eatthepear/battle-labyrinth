@@ -16,12 +16,12 @@ script Zone27A_EventScript_Grotto {
 script Zone27A_EventScript_TriggerTagBattle {
     lockall
 	playbgm(MUS_BW_FRIEND, TRUE)
-    applymovement(LOCALID_LEAF_27A, Common_Movement_FaceDown)
+    applymovement(LOCALID_BLUE_27A, Common_Movement_FaceDown)
     applymovement(LOCALID_WALLY_27A, Common_Movement_FaceDown)
     applymovement(LOCALID_SERENA_27A, Common_Movement_FaceDown)
     waitmovement(0)
     
-    applymovement(LOCALID_LEAF_27A, Common_Movement_ExclamationMark)
+    applymovement(LOCALID_BLUE_27A, Common_Movement_ExclamationMark)
     applymovement(LOCALID_WALLY_27A, Common_Movement_ExclamationMark)
     applymovement(LOCALID_SERENA_27A, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
@@ -29,7 +29,7 @@ script Zone27A_EventScript_TriggerTagBattle {
 	waitse
     msgbox(format("Hey player!"))
     closemessage
-    applymovement(LOCALID_LEAF_27A, Zone27A_Movement_Leaf_WalkDown)
+    applymovement(LOCALID_BLUE_27A, Zone27A_Movement_Blue_WalkDown)
     applymovement(LOCALID_WALLY_27A, Zone27A_Movement_Wally_WalkDown)
     applymovement(LOCALID_SERENA_27A, Zone27A_Movement_Serena_WalkDown)
     waitmovement(0)
@@ -39,7 +39,7 @@ script Zone27A_EventScript_TriggerTagBattle {
     }
     message(format("Choose your partner."))
     waitmessage
-    dynmultipush("Leaf", 1)
+    dynmultipush("Blue", 1)
     dynmultipush("Wally", 2)
     dynmultipush("Serena", 3)
     dynmultistack(0, 0, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
@@ -66,27 +66,27 @@ script Zone27A_EventScript_TriggerTagBattle {
     applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
     switch (var(VAR_ZONE_27_STATE)) {
         case 1:
-            setobjectxy(LOCALID_LEAF_27A, 23, 21)
+            setobjectxy(LOCALID_BLUE_27A, 23, 21)
             setobjectxy(LOCALID_WALLY_27A, 27, 20)
             setobjectxy(LOCALID_SERENA_27A, 27, 21)
-            applymovement(LOCALID_LEAF_27A, Common_Movement_FaceRight)
+            applymovement(LOCALID_BLUE_27A, Common_Movement_FaceRight)
             applymovement(LOCALID_WALLY_27A, Common_Movement_FaceLeft)
             applymovement(LOCALID_SERENA_27A, Common_Movement_FaceLeft)
             waitmovement(0)
         case 2:
             setobjectxy(LOCALID_WALLY_27A, 23, 21)
-            setobjectxy(LOCALID_LEAF_27A, 27, 20)
+            setobjectxy(LOCALID_BLUE_27A, 27, 20)
             setobjectxy(LOCALID_SERENA_27A, 27, 21)
             applymovement(LOCALID_WALLY_27A, Common_Movement_FaceRight)
-            applymovement(LOCALID_LEAF_27A, Common_Movement_FaceLeft)
+            applymovement(LOCALID_BLUE_27A, Common_Movement_FaceLeft)
             applymovement(LOCALID_SERENA_27A, Common_Movement_FaceLeft)
             waitmovement(0)
         case 3:
             setobjectxy(LOCALID_SERENA_27A, 23, 21)
-            setobjectxy(LOCALID_LEAF_27A, 27, 20)
+            setobjectxy(LOCALID_BLUE_27A, 27, 20)
             setobjectxy(LOCALID_WALLY_27A, 27, 21)
             applymovement(LOCALID_SERENA_27A, Common_Movement_FaceRight)
-            applymovement(LOCALID_LEAF_27A, Common_Movement_FaceLeft)
+            applymovement(LOCALID_BLUE_27A, Common_Movement_FaceLeft)
             applymovement(LOCALID_WALLY_27A, Common_Movement_FaceLeft)
             waitmovement(0)
     }
@@ -99,28 +99,28 @@ script Zone27A_EventScript_TriggerTagBattle {
     switch (var(VAR_ZONE_27_STATE)) {
         case 1:
             applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
-            applymovement(LOCALID_LEAF_27A, Common_Movement_WalkRight)
+            applymovement(LOCALID_BLUE_27A, Common_Movement_WalkRight)
             applymovement(LOCALID_WALLY_27A, Common_Movement_WalkLeft)
             applymovement(LOCALID_SERENA_27A, Common_Movement_WalkLeft)
             waitmovement(0)
             special(RemoveCameraObject)
-	        multi_2_vs_2(TRAINER_PBL_WALLY_BOSS_27, Zone27A_Text_Wally_Defeated, TRAINER_PBL_SERENA_BOSS_27, Zone27A_Text_Serena_Defeated, PARTNER_PBL_LEAF_27)
+	        multi_2_vs_2(TRAINER_PBL_WALLY_BOSS_27, Zone27A_Text_Wally_Defeated, TRAINER_PBL_SERENA_BOSS_27, Zone27A_Text_Serena_Defeated, PARTNER_PBL_BLUE_27)
         case 2:
             applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
             applymovement(LOCALID_WALLY_27A, Common_Movement_WalkRight)
-            applymovement(LOCALID_LEAF_27A, Common_Movement_WalkLeft)
+            applymovement(LOCALID_BLUE_27A, Common_Movement_WalkLeft)
             applymovement(LOCALID_SERENA_27A, Common_Movement_WalkLeft)
             waitmovement(0)
             special(RemoveCameraObject)
-	        multi_2_vs_2(TRAINER_PBL_LEAF_BOSS_27, Zone27A_Text_Leaf_Defeated, TRAINER_PBL_SERENA_BOSS_27, Zone27A_Text_Serena_Defeated, PARTNER_PBL_WALLY_27)
+	        multi_2_vs_2(TRAINER_PBL_BLUE_BOSS_27, Zone27A_Text_Blue_Defeated, TRAINER_PBL_SERENA_BOSS_27, Zone27A_Text_Serena_Defeated, PARTNER_PBL_WALLY_27)
         case 3:
             applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
             applymovement(LOCALID_SERENA_27A, Common_Movement_WalkRight)
-            applymovement(LOCALID_LEAF_27A, Common_Movement_WalkLeft)
+            applymovement(LOCALID_BLUE_27A, Common_Movement_WalkLeft)
             applymovement(LOCALID_WALLY_27A, Common_Movement_WalkLeft)
             waitmovement(0)
             special(RemoveCameraObject)
-	        multi_2_vs_2(TRAINER_PBL_LEAF_BOSS_27, Zone27A_Text_Leaf_Defeated, TRAINER_PBL_WALLY_BOSS_27, Zone27A_Text_Wally_Defeated, PARTNER_PBL_SERENA_27)
+	        multi_2_vs_2(TRAINER_PBL_BLUE_BOSS_27, Zone27A_Text_Blue_Defeated, TRAINER_PBL_WALLY_BOSS_27, Zone27A_Text_Wally_Defeated, PARTNER_PBL_SERENA_27)
     }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
     setspeaker("Cori")
@@ -133,11 +133,11 @@ script Zone27A_EventScript_TriggerTagBattle {
     waitmovement(0)
     special(RemoveCameraObject)
     setobjectxy(LOCALID_PLAYER, 26, 19)
-    setobjectxy(LOCALID_LEAF_27A, 25, 18)
+    setobjectxy(LOCALID_BLUE_27A, 25, 18)
     setobjectxy(LOCALID_WALLY_27A, 26, 18)
     setobjectxy(LOCALID_SERENA_27A, 27, 18)
     applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
-    applymovement(LOCALID_LEAF_27A, Common_Movement_FaceDown)
+    applymovement(LOCALID_BLUE_27A, Common_Movement_FaceDown)
     applymovement(LOCALID_WALLY_27A, Common_Movement_FaceDown)
     applymovement(LOCALID_SERENA_27A, Common_Movement_FaceDown)
     waitmovement(0)
@@ -147,7 +147,7 @@ script Zone27A_EventScript_TriggerTagBattle {
     giveitem(ITEM_MASTER_BALL)
     msgbox(format("GOODBYE!"))
     closemessage
-    applymovement(LOCALID_LEAF_27A, Zone27A_Movement_Leaf_Leave)
+    applymovement(LOCALID_BLUE_27A, Zone27A_Movement_Blue_Leave)
     waitmovement(0)
     msgbox(format("GOODBYE!"))
     closemessage
@@ -158,7 +158,7 @@ script Zone27A_EventScript_TriggerTagBattle {
     applymovement(LOCALID_WALLY_27A, Zone27A_Movement_Wally_Leave)
     waitmovement(0)
 	setflag(FLAG_BEAT_BOSS_27)
-    removeobject(LOCALID_LEAF_27A)
+    removeobject(LOCALID_BLUE_27A)
     removeobject(LOCALID_WALLY_27A)
     removeobject(LOCALID_SERENA_27A)
 	setvar(VAR_ZONE_27_STATE, 4)
@@ -173,14 +173,14 @@ script Zone27A_EventScript_DenyTagBattle {
     waitmovement(0)
     applymovement(LOCALID_WALLY_27A, Zone27A_Movement_Wally_WalkUp)
     applymovement(LOCALID_SERENA_27A, Zone27A_Movement_Serena_WalkUp)
-    applymovement(LOCALID_LEAF_27A, Zone27A_Movement_Leaf_WalkUp)
+    applymovement(LOCALID_BLUE_27A, Zone27A_Movement_Blue_WalkUp)
     waitmovement(0)
     fadedefaultbgm
     releaseall
     end
 }
 
-movement Zone27A_Movement_Leaf_WalkDown {
+movement Zone27A_Movement_Blue_WalkDown {
     walk_right
     walk_down * 3
 }
@@ -195,7 +195,7 @@ movement Zone27A_Movement_Serena_WalkDown {
     face_left
 }
 
-movement Zone27A_Movement_Leaf_WalkUp {
+movement Zone27A_Movement_Blue_WalkUp {
     walk_up * 3
     walk_left
 }
@@ -209,8 +209,8 @@ movement Zone27A_Movement_Serena_WalkUp {
     walk_up * 3
 }
 
-text Zone27A_Text_Leaf_Defeated {
-    format("LEAF DEFEATED!")
+text Zone27A_Text_Blue_Defeated {
+    format("Blue DEFEATED!")
 }
 
 text Zone27A_Text_Wally_Defeated {
@@ -221,7 +221,7 @@ text Zone27A_Text_Serena_Defeated {
     format("Serena DEFEATED!")
 }
 
-movement Zone27A_Movement_Leaf_Leave {
+movement Zone27A_Movement_Blue_Leave {
     walk_up * 4
     walk_right * 5
     walk_up * 2

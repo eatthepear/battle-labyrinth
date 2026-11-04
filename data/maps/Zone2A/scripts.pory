@@ -57,12 +57,12 @@ script Zone2A_EventScript_Max {
 	releaseall
 }
 
-script Zone2A_EventScript_TriggerLeaf {
+script Zone2A_EventScript_TriggerBlue {
 	lockall
-	applymovement(LOCALID_LEAF_2A, Common_Movement_FaceUp)
+	applymovement(LOCALID_BLUE_2A, Common_Movement_FaceUp)
 	waitmovement(0)
 	playbgm(MUS_BW_FRIEND, TRUE)
-	applymovement(LOCALID_LEAF_2A, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_BLUE_2A, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)
 	waitse
@@ -70,16 +70,16 @@ script Zone2A_EventScript_TriggerLeaf {
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	switch(var(VAR_TEMP_0)) {
 		case 47:
-			applymovement(LOCALID_LEAF_2A, Common_Movement_WalkLeft)
+			applymovement(LOCALID_BLUE_2A, Common_Movement_WalkLeft)
 			waitmovement(0)
 		case 49:
-			applymovement(LOCALID_LEAF_2A, Common_Movement_WalkRight)
+			applymovement(LOCALID_BLUE_2A, Common_Movement_WalkRight)
 			waitmovement(0)
 		case 50:
-			applymovement(LOCALID_LEAF_2A, Common_Movement_WalkRight2)
+			applymovement(LOCALID_BLUE_2A, Common_Movement_WalkRight2)
 			waitmovement(0)
 	}
-	applymovement(LOCALID_LEAF_2A, Common_Movement_WalkUp2)
+	applymovement(LOCALID_BLUE_2A, Common_Movement_WalkUp2)
 	waitmovement(0)
 	setspeaker("???")
 	msgbox(format("Hello, traveler!\pAre you a Pokémon trainer? If so, do you want to have a friendly match?"), MSGBOX_YESNO)
@@ -88,17 +88,17 @@ script Zone2A_EventScript_TriggerLeaf {
 		closemessage
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 		waitmovement(0)
-		applymovement(LOCALID_LEAF_2A, Common_Movement_WalkDown2)
+		applymovement(LOCALID_BLUE_2A, Common_Movement_WalkDown2)
 		waitmovement(0)
 		switch(var(VAR_TEMP_0)) {
 			case 47:
-				applymovement(LOCALID_LEAF_2A, Common_Movement_WalkRight)
+				applymovement(LOCALID_BLUE_2A, Common_Movement_WalkRight)
 				waitmovement(0)
 			case 49:
-				applymovement(LOCALID_LEAF_2A, Common_Movement_WalkLeft)
+				applymovement(LOCALID_BLUE_2A, Common_Movement_WalkLeft)
 				waitmovement(0)
 			case 50:
-				applymovement(LOCALID_LEAF_2A, Common_Movement_WalkLeft2)
+				applymovement(LOCALID_BLUE_2A, Common_Movement_WalkLeft2)
 				waitmovement(0)
 		}
 		fadedefaultbgm
@@ -106,22 +106,22 @@ script Zone2A_EventScript_TriggerLeaf {
 		end
 	}
 	setspeaker("???")
-	msgbox(format("Great! Oh, before we battle, I should introduce myself.\pI'm {COLOR BLUE}Leaf{COLOR DARK_GRAY}! And you are?"))
+	msgbox(format("Great! Oh, before we battle, I should introduce myself.\pI'm {COLOR BLUE}Blue{COLOR DARK_GRAY}! And you are?"))
 	closemessage
 	delay(40)
-	setspeaker("Leaf")
+	setspeaker("Blue")
 	msgbox(format("Nice to meet you, {COLOR BLUE}{PLAYER}{COLOR DARK_GRAY}! Now, let's battle!"))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_LEAF_BOSS_2, format("Darn!"))
+	trainerbattle_no_intro(TRAINER_PBL_BLUE_BOSS_2, format("Darn!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	setspeaker("Leaf")
+	setspeaker("Blue")
 	msgbox(format("Wow, you got me!\pIt's disappointing to lose, but you seem to be a good trainer, so that takes away the sting a bit!\pHere, take this HM. It can break small boulders, though you'll need the {COLOR GREEN}Cliff Badge{COLOR DARK_GRAY} to use it outside of battle."))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_HM_ROCK_SMASH)
 	helpwindow(HELP_SIGN_HIDDEN_MACHINES)
-	setspeaker("Leaf")
-	msgbox(Zone2A_Text_Leaf_HoneSkills)
+	setspeaker("Blue")
+	msgbox(Zone2A_Text_Blue_HoneSkills)
 	closemessage
 	setflag(FLAG_BEAT_BOSS_2)
 	setvar(VAR_ZONE_2_STATE, 2)
@@ -130,16 +130,16 @@ script Zone2A_EventScript_TriggerLeaf {
 	end
 }
 
-script Zone2A_EventScript_Leaf {
+script Zone2A_EventScript_Blue {
 	lock
 	faceplayer
-	setspeaker("Leaf")
-	msgbox(Zone2A_Text_Leaf_HoneSkills)
+	setspeaker("Blue")
+	msgbox(Zone2A_Text_Blue_HoneSkills)
 	release
 	end
 }
 
-text Zone2A_Text_Leaf_HoneSkills {
+text Zone2A_Text_Blue_HoneSkills {
 	format("I think I'll wait here for more trainers to pass through so I can hone my skills.\pThe next time we battle, I'm sure I'll beat you then!")
 }
 

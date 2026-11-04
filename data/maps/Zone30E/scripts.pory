@@ -122,7 +122,7 @@ script Zone30E_EventScript_TagBattle {
     msgbox(format("DIALOGUE!"))
     call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-    multi_2_vs_2(TRAINER_PBL_SHELLY_BOSS_30, format("DEFEATED 1!"), TRAINER_PBL_MATT_BOSS_30, format("DEFEATED 2!"), PARTNER_PBL_LEAF_30)
+    multi_2_vs_2(TRAINER_PBL_SHELLY_BOSS_30, format("DEFEATED 1!"), TRAINER_PBL_MATT_BOSS_30, format("DEFEATED 2!"), PARTNER_PBL_BLUE_30)
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
     destroyfollowernpc
     setvar(VAR_ZONE_30_STATE, 5)

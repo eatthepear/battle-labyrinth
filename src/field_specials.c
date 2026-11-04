@@ -4729,7 +4729,6 @@ u16 GetNumTrainersRemaining(void)
                 count += 1;
         }
         count += !FlagGet(FLAG_BEAT_BOSS_20);
-        count += !HasTrainerBeenFought(TRAINER_PBL_LACEY_OPTIONAL_20);
         break;
     case 21:
         for (trainer = TRAINER_PBL_BERNARD; trainer <= TRAINER_PBL_ALLY; trainer++) {
