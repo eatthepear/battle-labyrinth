@@ -3132,3 +3132,67 @@
     .endm
 
     @ End Pokevial Branch
+
+	@! Unlocks a locked outfit
+	.macro toggleoutfit outfitId:req, type:req
+	.byte 0xeb
+	.2byte \outfitId
+	.byte \type
+	.endm
+
+	@! Gets the current status of the specified outfit where:
+	@! OUTFIT_CHECK_FLAG is for checking if it's either unlocked/locked
+	@! OUTFIT_CHECK_USED is for checking if it's currently used
+	.macro getoutfitstatus outfitId:req, data:req
+	.byte 0xec
+	.2byte \outfitId
+	.byte \data
+	.endm
+
+	.macro setoutfitgfxintovar var:req, state=0 @ PLAYER_AVATAR_STATE_NORMAL
+	callnative SetCurrentOutfitGfxIntoVar
+	.2byte \var
+	.2byte \state
+	.endm
+
+	@! neat shortcuts for outfits
+
+	.macro checkoutfitflag outfitId:req
+	getoutfitstatus \outfitId, OUTFIT_CHECK_FLAG
+	.endm
+
+	.macro iswearingoutfit outfitId:req
+	getoutfitstatus \outfitId, OUTFIT_CHECK_USED
+	.endm
+
+	.macro unlockoutfit outfitId:req
+	toggleoutfit \outfitId, OUTFIT_TOGGLE_UNLOCK
+	.endm
+
+	.macro lockoutfit outfitId:req
+	toggleoutfit \outfitId, OUTFIT_TOGGLE_LOCK
+	.endm
+
+	@! Jumps to \dest if the specified outfit is unlocked
+	.macro call_if_outfitunlocked outfit:req, dest:req
+	checkoutfitflag \outfit
+	call_if FALSE, \dest
+	.endm
+
+	@! Jumps to \dest if the specified outfit is locked
+	.macro call_if_outfitlocked outfit:req, dest:req
+	checkoutfitflag \outfit
+	call_if TRUE, \dest
+	.endm
+
+	@! Jumps to \dest if the specified outfit is currently wear
+	.macro call_if_wearoutfit outfit:req, dest:req
+	iswearingoutfit \outfit
+	call_if TRUE, \dest
+	.endm
+
+	@! Jumps to \dest if the specified outfit is not currently wear
+	.macro call_if_notwearoutfit outfit:req, dest:req
+	iswearingoutfit \outfit
+	call_if FALSE, \dest
+	.endm

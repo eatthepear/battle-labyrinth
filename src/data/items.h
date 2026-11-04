@@ -14901,20 +14901,20 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_MaxRepel,
     },
 
-    [ITEM_NOTEBOOK] =
+    [ITEM_OUTFIT_BOX] =
     {
-        .name = ITEM_NAME("Notebook"),
+        .name = ITEM_NAME("Outfit Box"),
         .price = 0,
-        .description = COMPOUND_STRING(
-            "Contains all sorts\n"
-            "of useful info for\n"
-            "challengers."),
         .importance = 1,
+        .description = COMPOUND_STRING(
+             "A box for storing\n"
+             "your collections of\n"
+             "Outfits safely."),
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_FIELD,
-        .fieldUseFunc = ItemUseOutOfBattle_Notebook,
-        .iconPic = gItemIcon_Notebook,
-        .iconPalette = gItemIconPalette_Notebook,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_OutfitBox,
+        .iconPic = gItemIcon_OutfitBox,
+        .iconPalette = gItemIconPalette_OutfitBox,
     },
 
     [ITEM_ENDLESS_CANDY] =

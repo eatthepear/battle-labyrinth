@@ -33,6 +33,7 @@
 #include "util.h"
 #include "window.h"
 #include "line_break.h"
+#include "outfit_menu.h"
 #include "constants/battle_anim.h"
 #include "constants/battle_move_effects.h"
 #include "constants/battle_partner.h"
@@ -1890,7 +1891,7 @@ static enum TrainerPicID PlayerGetTrainerBackPicId(void)
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
         trainerPicId = LinkPlayerGetTrainerPicId(GetMultiplayerId());
     else
-        trainerPicId = GetPlayerTrainerPic(gSaveBlock2Ptr->playerGender, GAME_VERSION);
+        trainerPicId = GetPlayerTrainerPicIdByOutfitGender(gSaveBlock2Ptr->currOutfitId, gSaveBlock2Ptr->playerGender);
 
     return trainerPicId;
 }
@@ -1944,7 +1945,7 @@ static void PlayerHandleDrawTrainerPic(enum BattlerId battler)
     // Use front pic table for any tag battles unless your partner is Steven or a custom partner.
     if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && gPartnerTrainerId < TRAINER_PARTNER(PARTNER_NONE))
     {
-        trainerPicId = PlayerGenderToFrontTrainerPicId(gSaveBlock2Ptr->playerGender);
+        trainerPicId = GetPlayerTrainerPicIdByOutfitGender(gSaveBlock2Ptr->currOutfitId, gSaveBlock2Ptr->playerGender);
         isFrontPic = TRUE;
     }
     else // Use back pic in all the other usual circumstances.

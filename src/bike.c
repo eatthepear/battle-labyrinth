@@ -12,6 +12,7 @@
 #include "wild_encounter_ow.h"
 #include "constants/songs.h"
 #include "event_data.h"
+#include "constants/items.h"
 
 // this file's functions
 static void MovePlayerOnMachBike(enum Direction, u16, u16);
@@ -161,9 +162,7 @@ static const struct BikeHistoryInputInfo sAcroBikeTricksList[] =
 // code
 void MovePlayerOnBike(enum Direction direction, u16 newKeys, u16 heldKeys)
 {
-    if ((gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_MACH_BIKE) && (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE))
-        MovePlayerOnStandardBike(direction, newKeys, heldKeys);
-    else if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_MACH_BIKE)
+    if (gSaveBlock2Ptr->playerBike == MACH_BIKE)
         MovePlayerOnMachBike(direction, newKeys, heldKeys);
     else
         MovePlayerOnAcroBike(direction, newKeys, heldKeys);
@@ -1059,7 +1058,7 @@ static void AcroBikeTransition_WheelieLoweringMoving(enum Direction direction)
 
 void Bike_TryAcroBikeHistoryUpdate(u16 newKeys, u16 heldKeys)
 {
-    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE)
+    if (gSaveBlock2Ptr->playerBike != MACH_BIKE)
         AcroBike_TryHistoryUpdate(newKeys, heldKeys);
 }
 
@@ -1271,7 +1270,7 @@ bool8 IsBikingDisallowedByPlayer(void)
 
 bool8 IsPlayerNotUsingAcroBikeOnBumpySlope(void)
 {
-    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE)
+    if (gSaveBlock2Ptr->playerBike != MACH_BIKE
         && MetatileBehavior_IsBumpySlope(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
         return FALSE;
     else
@@ -1280,7 +1279,7 @@ bool8 IsPlayerNotUsingAcroBikeOnBumpySlope(void)
 
 void GetOnOffBike(u8 transitionFlags)
 {
-    if (gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
+    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_BIKE)
     {
         SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT);
         Overworld_ClearSavedMusic();
@@ -1289,7 +1288,12 @@ void GetOnOffBike(u8 transitionFlags)
     else
     {
         EndORASDowsing();
-        SetPlayerAvatarTransitionFlags(transitionFlags);
+        SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_BIKE);
+        if (transitionFlags == MACH_BIKE) {
+            gSaveBlock2Ptr->playerBike = MACH_BIKE;
+        } else {
+            gSaveBlock2Ptr->playerBike = ACRO_BIKE;
+        }
         u16 newMusic = MUS_CYCLING;
         switch (VarGet(VAR_BIKE_MUSIC))
         {
@@ -1355,9 +1359,9 @@ enum PlayerSpeed GetPlayerSpeed(void)
 
     memcpy(machSpeeds, sMachBikeSpeeds, sizeof(machSpeeds));
 
-    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_MACH_BIKE)
+    if (gSaveBlock2Ptr->playerBike == MACH_BIKE)
         return machSpeeds[gPlayerAvatar.bikeFrameCounter];
-    else if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE)
+    else if (gSaveBlock2Ptr->playerBike == ACRO_BIKE)
         return PLAYER_SPEED_FASTER;
     else if (gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_DASH))
         return PLAYER_SPEED_FAST;
@@ -1370,7 +1374,7 @@ void Bike_HandleBumpySlopeJump(void)
     s16 x, y;
     u8 tileBehavior;
 
-    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE)
+    if (gSaveBlock2Ptr->playerBike != MACH_BIKE)
     {
         PlayerGetDestCoords(&x, &y);
         tileBehavior = MapGridGetMetatileBehaviorAt(x, y);

@@ -225,10 +225,13 @@ void Special_BeginCyclingRoadChallenge(void)
 
 u16 GetPlayerAvatarBike(void)
 {
-    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE))
-        return 1;
-    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE))
-        return 2;
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
+    {
+        if (gSaveBlock2Ptr->playerBike != MACH_BIKE)
+            return 1;
+        else
+            return 2;
+    }
     return 0;
 }
 
@@ -6020,7 +6023,7 @@ static void Task_AnimateElevatorWindowView(u8 taskId)
 void ForcePlayerOntoBike(void)
 {
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
-        SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE);
+        gSaveBlock2Ptr->playerBike = MACH_BIKE;
     u16 newMusic = MUS_CYCLING;
     switch (VarGet(VAR_BIKE_MUSIC))
     {

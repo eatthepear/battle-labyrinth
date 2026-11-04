@@ -257,6 +257,8 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_CHECKSPECIESCLAUSE            ScrCmd_checkspeciesclause,          requests_effects=1  @ 0xe8
 	script_cmd_table_entry SCR_OP_GETITEMQUANTITY               ScrCmd_getitemquantity,             requests_effects=1  @ 0xe9
 	script_cmd_table_entry SCR_OP_POKEVIAL                      ScrCmd_pokevial,                    requests_effects=1  @ 0xea //Pokevial Branch
+	script_cmd_table_entry SCR_OP_TOGGLEOUTFIT                  ScrCmd_toggleoutfit                 requests_effects=1  @ 0xeb
+	script_cmd_table_entry SCR_OP_GETOUTFITSTATUS               ScrCmd_getoutfitstatus              requests_effects=1  @ 0xec
 
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 gScriptCmdTableEnd::

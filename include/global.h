@@ -23,6 +23,7 @@
 #include "constants/easy_chat.h"
 #include "constants/trainer_hill.h"
 #include "constants/trainer_tower.h"
+#include "constants/outfits.h"
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "config/save.h"
@@ -149,6 +150,7 @@
 #define NUM_SPECIES_FLAG_BYTES ROUND_BITS_TO_BYTES(NUM_SPECIES) // used for battled tracker
 
 #define NUM_APRICORN_TREE_BYTES ROUND_BITS_TO_BYTES(APRICORN_TREE_COUNT)
+#define NUM_OUTFIT_OWNED_BYTES ROUND_BITS_TO_BYTES(OUTFIT_COUNT)
 
 // This produces an error at compile-time if expr is zero.
 // It looks like file.c:line: size of array `id' is negative
@@ -636,6 +638,9 @@ struct SaveBlock2
 #if FREE_OTHER_PBL == FALSE
     /*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
 #endif //FREE_OTHER_PBL
+             u16 playerBike:1;
+             u16 currOutfitId:4;
+             u16 outfits[NUM_OUTFIT_OWNED_BYTES];
               u8 customFiller[1448];
     /*0x64C*/ struct BattleFrontier frontier;
 }; // sizeof=0xF2C

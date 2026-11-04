@@ -5,7 +5,6 @@ void PlayerStep(enum Direction direction, u16 newKeys, u16 heldKeys);
 bool8 TryDoMetatileBehaviorForcedMovement();
 void ClearPlayerAvatarInfo(void);
 void SetPlayerAvatarExtraStateTransition(u16 graphicsId, u8 transitionFlag);
-enum Gender GetPlayerAvatarGenderByGraphicsId(u16 gfxId);
 u8 TestPlayerAvatarFlags(u8 flag);
 u8 GetPlayerAvatarSpriteId(void);
 void PlayerGetDestCoords(s16 *x, s16 *y);
@@ -34,12 +33,14 @@ enum Collision CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16
 u8 PlayerGetElevation(void);
 void SetPlayerAvatarTransitionFlags(u16 transitionFlags);
 void CancelPlayerForcedMovement(void);
-void InitPlayerAvatar(s16 x, s16 y, enum Direction direction, enum Gender gender);
+void InitPlayerAvatar(s16 x, s16 y, enum Direction direction);
 void PlayerFreeze(void);
 void StopPlayerAvatar(void);
 void SetSpinStartFacingDir(enum Direction direction);
 void GetXYCoordsOneStepInFrontOfPlayer(s16 *xPtr, s16 *yPtr);
 u16 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, enum Gender gender);
+u16 GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(u8 outfit, u8 state, enum Gender gender);
+u16 GetPlayerAnimGraphicsIdByOutfitStateIdAndGender(u8 outfit, u8 state, enum Gender gender);
 u16 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state, enum Gender gender);
 void SetPlayerAvatarFieldMove(void);
 u16 GetPlayerAvatarGraphicsIdByCurrentState(void);
@@ -72,5 +73,8 @@ enum Direction GetLeftSideStairsDirection(enum Direction direction);
 void UpdateSpinData(void);
 void ResetSpinTimer(void);
 bool32 CanTriggerSpinEvolution();
+
+void SetPlayerAvatarAnimation(u32 playerAnimId, u32 animNum);
+void SetPlayerAvatarVsSeeker(void);
 
 #endif // GUARD_FIELD_PLAYER_AVATAR_H

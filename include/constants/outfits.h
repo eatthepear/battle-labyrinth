@@ -1,0 +1,24 @@
+#ifndef GUARD_CONSTANTS_OUTFITS_H
+#define GUARD_CONSTANTS_OUTFITS_H
+
+//! macro modes
+
+// ScrCmd_getoutfitstatus
+#define OUTFIT_CHECK_FLAG 0
+#define OUTFIT_CHECK_USED 1
+// ScrCmd_toggleoutfit
+#define OUTFIT_TOGGLE_UNLOCK 0
+#define OUTFIT_TOGGLE_LOCK 1
+
+//! outfits
+enum OutfitID {
+    OUTFIT_NONE,
+    OUTFIT_USUAL_GREEN,
+    OUTFIT_BEGIN = OUTFIT_USUAL_GREEN,
+    DEFAULT_OUTFIT = OUTFIT_USUAL_GREEN,
+    OUTFIT_UNUSUAL_RED,
+    OUTFIT_END = OUTFIT_UNUSUAL_RED,
+    OUTFIT_COUNT
+};
+
+#endif //! GUARD_CONSTANTS_OUTFITS_H

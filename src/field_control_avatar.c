@@ -19,6 +19,7 @@
 #include "field_poison.h"
 #include "field_screen_effect.h"
 #include "field_specials.h"
+#include "field_weather.h"
 #include "fldeff_misc.h"
 #include "follower_npc.h"
 #include "item_menu.h"
@@ -256,18 +257,14 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     {
         if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE)) {
             ObjectEventClearHeldMovementIfActive(&gObjectEvents[gPlayerAvatar.objectEventId]);
-            if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_MACH_BIKE)
+            if (gSaveBlock2Ptr->playerBike == MACH_BIKE)
             {
-                gPlayerAvatar.flags -= PLAYER_AVATAR_FLAG_MACH_BIKE;
-                gPlayerAvatar.flags += PLAYER_AVATAR_FLAG_ACRO_BIKE;
-                SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE);
+                gSaveBlock2Ptr->playerBike = ACRO_BIKE;
                 PlaySE(SE_BIKE_HOP);
             }
             else
             {
-                gPlayerAvatar.flags -= PLAYER_AVATAR_FLAG_ACRO_BIKE;
-                gPlayerAvatar.flags += PLAYER_AVATAR_FLAG_MACH_BIKE;
-                SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_MACH_BIKE);
+                gSaveBlock2Ptr->playerBike = MACH_BIKE;
                 PlaySE(SE_BIKE_BELL);
             }
         }
