@@ -802,6 +802,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ETHAN_FIELD_MOVE] =         &gObjectEventGraphicsInfo_EthanFieldMove,
     [OBJ_EVENT_GFX_ETHAN_UNDERWATER] =         &gObjectEventGraphicsInfo_EthanUnderwater,
     [OBJ_EVENT_GFX_ETHAN_FISHING] =            &gObjectEventGraphicsInfo_EthanFishing,
+    [OBJ_EVENT_GFX_BLUE]                     = &gObjectEventGraphicsInfo_Blue,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,

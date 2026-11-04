@@ -611,6 +611,8 @@ const u32 gObjectEventPic_EthanSurfing[] = INCGFX_U32("graphics/object_events/pi
 const u32 gObjectEventPic_EthanFieldMove[] = INCGFX_U32("graphics/object_events/pics/people/ethan/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_EthanUnderwater[] = INCGFX_U32("graphics/object_events/pics/people/ethan/underwater.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_EthanFishing[] = INCGFX_U32("graphics/object_events/pics/people/ethan/fishing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPic_Blue[] = INCGFX_U16("graphics/object_events/pics/people/blue.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_NpcGreen[] = INCGFX_U16("graphics/object_events/palettes/npc_green.pal", ".gbapal");
 
 const u32 gFieldEffectObjectPic_SnowFootprints[] = INCGFX_U32("graphics/field_effects/pics/snow_footprints.png", ".4bpp");
 #if IS_FRLG
