@@ -8,7 +8,6 @@ mapscripts ZoneSanctuary_MapScripts {
 script ZoneSanctuary_EventScript_Colress {
 	lock
 	faceplayer
-	unlockoutfit(OUTFIT_JOHTO)
 	setspeaker(SP_NAME_COLRESS)
 	message(format("Greetings, {PLAYER}.\pWhat can I help you with?"))
 	waitmessage
