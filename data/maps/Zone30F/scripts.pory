@@ -1,1 +1,35 @@
-mapscripts Zone30F_MapScripts {}
+mapscripts Zone30F_MapScripts {
+	MAP_SCRIPT_ON_LOAD {
+		if (flag(FLAG_ZONE_30F_DOOR_1) == FALSE) {
+			setmetatile(23, 17, METATILE_RocketCo_VerticalBarrier_TopLeft, 1)
+			setmetatile(24, 17, METATILE_RocketCo_VerticalBarrier_TopRight, 1)
+			setmetatile(23, 18, METATILE_RocketCo_VerticalBarrier_MidLeft, 1)
+			setmetatile(24, 18, METATILE_RocketCo_VerticalBarrier_MidRight, 1)
+			setmetatile(23, 19, METATILE_RocketCo_VerticalBarrier_BottomLeft, 1)
+			setmetatile(24, 19, METATILE_RocketCo_VerticalBarrier_BottomRight, 1)
+		}
+	}
+}
+
+script Zone30F_EventScript_Door1 {
+	lockall
+	setvar(VAR_TEMP_1, 4) // 1 = lobby, 2 = magma, 3 = aqua, 4 = galactic, 5 = rocket top floor
+	setvar(VAR_0x8004, FLAG_ZONE_30F_DOOR_1)
+    if (flag(FLAG_ZONE_30F_DOOR_1)) {
+        goto(Zone30_EventScript_DoorUnlocked)
+    }
+    call(Zone30_EventScript_CheckCanOpenDoor)
+	setmetatile(23, 17, METATILE_RocketCo_Wall_LeftEdge, 1)
+	setmetatile(24, 17, METATILE_RocketCo_Wall_RightEdge, 1)
+	setmetatile(23, 18, METATILE_RocketCo_Floor_ShadeFull, 0)
+	setmetatile(24, 18, METATILE_RocketCo_Floor_ShadeFull, 0)
+	setmetatile(23, 19, METATILE_RocketCo_Floor_WallLeftCorner, 0)
+	setmetatile(24, 19, METATILE_RocketCo_Floor_WallRightCorner, 0)
+	waitse
+	playse(SE_UNLOCK)
+	special(DrawWholeMapView)
+	waitse
+	special(SetHiddenItemFlag)
+	releaseall
+	end
+}

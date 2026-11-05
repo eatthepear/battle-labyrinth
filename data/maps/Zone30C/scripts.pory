@@ -54,7 +54,7 @@ script Zone30C_EventScript_TagBattle {
 
 script Zone30C_EventScript_Door1 {
 	lockall
-	setvar(VAR_TEMP_1, 1) // 1 = lobby, 2 = magma, 3 = aqua, 4 = galactic, 5 = rocket top floor
+	setvar(VAR_TEMP_1, 2) // 1 = lobby, 2 = magma, 3 = aqua, 4 = galactic, 5 = rocket top floor
 	setvar(VAR_0x8004, FLAG_ZONE_30C_DOOR_1)
     if (flag(FLAG_ZONE_30C_DOOR_1)) {
         goto(Zone30_EventScript_DoorUnlocked)
@@ -76,7 +76,7 @@ script Zone30C_EventScript_Door1 {
 
 script Zone30C_EventScript_Door2 {
 	lockall
-	setvar(VAR_TEMP_1, 1) // 1 = lobby, 2 = magma, 3 = aqua, 4 = galactic, 5 = rocket top floor
+	setvar(VAR_TEMP_1, 2) // 1 = lobby, 2 = magma, 3 = aqua, 4 = galactic, 5 = rocket top floor
 	setvar(VAR_0x8004, FLAG_ZONE_30C_DOOR_2)
     if (flag(FLAG_ZONE_30C_DOOR_2)) {
         goto(Zone30_EventScript_DoorUnlocked)
