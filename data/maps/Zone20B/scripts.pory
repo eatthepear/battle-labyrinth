@@ -53,6 +53,7 @@ script Zone20B_EventScript_Cilan {
                 applymovement(LOCALID_CAMERA, Common_Movement_WalkDown)
                 waitmovement(0)
                 special(RemoveCameraObject)
+                setvar(VAR_ZONE_20_STATE, 1)
                 goto(Zone20B_EventScript_StartBossBattle)
             } else {
                 msgbox(format("SO SAD! LET ME KNOW IF YOU CHANGE MIND!"))
@@ -95,6 +96,7 @@ script Zone20B_EventScript_Chili {
                 applymovement(LOCALID_CAMERA, Common_Movement_WalkRight5)
                 waitmovement(0)
                 special(RemoveCameraObject)
+                setvar(VAR_ZONE_20_STATE, 2)
                 goto(Zone20B_EventScript_StartBossBattle)
             } else {
                 msgbox(format("SO SAD! LET ME KNOW IF YOU CHANGE MIND!"))
@@ -137,6 +139,7 @@ script Zone20B_EventScript_Cress {
                 applymovement(LOCALID_CAMERA, Common_Movement_WalkLeft5)
                 waitmovement(0)
                 special(RemoveCameraObject)
+                setvar(VAR_ZONE_20_STATE, 3)
                 goto(Zone20B_EventScript_StartBossBattle)
             } else {
                 msgbox(format("SO SAD! LET ME KNOW IF YOU CHANGE MIND!"))

@@ -45,9 +45,9 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 
 === PARTNER_PBL_CILAN_20 ===
 Name: Cilan
-Class: Rival
-Pic: Serena
-Music: Female
+Class: Leader
+Pic: Cilan
+Music: Male
 AI: AI_FLAG_BOSS
 
 Simisage @ Occa Berry
@@ -92,9 +92,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === PARTNER_PBL_CHILI_20 ===
 Name: Chili
-Class: Rival
-Pic: Serena
-Music: Female
+Class: Leader
+Pic: Chili
+Music: Male
 AI: AI_FLAG_BOSS
 
 Simisear @ Passho Berry
@@ -139,9 +139,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === PARTNER_PBL_CRESS_20 ===
 Name: Cress
-Class: Rival
-Pic: Serena
-Music: Female
+Class: Leader
+Pic: Cress
+Music: Male
 AI: AI_FLAG_BOSS
 
 Simipour @ Rindo Berry

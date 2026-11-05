@@ -3421,9 +3421,9 @@ Copy Pool: TRAINER_POOL_ZONE_20_FOOD
 
 === TRAINER_PBL_CILAN_BOSS_20 ===
 Name: Cilan
-Class: Rival
-Pic: Serena
-Music: Female
+Class: Leader
+Pic: Cilan
+Music: Male
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
@@ -3470,9 +3470,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_CILAN_BOSS_20 ===
 Name: Cilan
-Class: Rival
-Pic: Serena
-Music: Female
+Class: Leader
+Pic: Cilan
+Music: Male
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
@@ -3530,9 +3530,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_CHILI_BOSS_20 ===
 Name: Chili
-Class: Rival
-Pic: Serena
-Music: Female
+Class: Leader
+Pic: Chili
+Music: Male
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
@@ -3579,9 +3579,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_CHILI_BOSS_20 ===
 Name: Chili
-Class: Rival
-Pic: Serena
-Music: Female
+Class: Leader
+Pic: Chili
+Music: Male
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
@@ -3639,9 +3639,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_CRESS_BOSS_20 ===
 Name: Cress
-Class: Rival
-Pic: Serena
-Music: Female
+Class: Leader
+Pic: Cress
+Music: Male
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
@@ -3688,9 +3688,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_CRESS_BOSS_20 ===
 Name: Cress
-Class: Rival
-Pic: Serena
-Music: Female
+Class: Leader
+Pic: Cress
+Music: Male
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
