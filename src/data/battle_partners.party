@@ -185,10 +185,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Acrobatics
 
 === PARTNER_PBL_BLUE_27 ===
-Name: Leaf
+Name: Blue
 Class: Rival
-Pic: Leaf
-Music: Female
+Pic: Rival Late Frlg
+Music: Male
 AI: AI_FLAG_BOSS
 
 Raichu-Alola @ Wise Glasses
@@ -236,10 +236,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sleep Powder
 
 === PARTNER_PBL_BLUE_30 ===
-Name: Leaf
+Name: Blue
 Class: Rival
-Pic: Leaf
-Music: Female
+Pic: Rival Late Frlg
+Music: Male
 AI: AI_FLAG_BOSS
 
 Raichu-Alola @ Wise Glasses

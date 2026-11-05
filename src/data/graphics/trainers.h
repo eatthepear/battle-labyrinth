@@ -619,6 +619,9 @@ const u16 gTrainerPalette_Cress[] = INCGFX_U16("graphics/trainers/front_pics/cre
 const u32 gTrainerFrontPic_Chili[] = INCGFX_U32("graphics/trainers/front_pics/chili.png", ".4bpp.smol");
 const u16 gTrainerPalette_Chili[] = INCGFX_U16("graphics/trainers/front_pics/chili.png", ".gbapal");
 
+const u8 gTrainerBackPic_Blue[] = INCGFX_U8("graphics/trainers/back_pics/blue.png", ".4bpp");
+const u16 gTrainerBackPicPalette_Blue[] = INCGFX_U16("graphics/trainers/back_pics/blue.png", ".gbapal");
+
 static const union AnimCmd sAnimCmd_Hoenn[] =
 {
     ANIMCMD_FRAME(0, 24),
@@ -1281,6 +1284,7 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     [TRAINER_PIC_RIVAL_LATE_FRLG] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_RivalLateFrlg, gTrainerPalette_RivalLateFrlg),
+        .backPic = TRAINER_BACK_PIC(5, gTrainerBackPic_Blue, gTrainerBackPicPalette_Blue, sBackAnims_Kanto),
     },
     [TRAINER_PIC_CHAMPION_RIVAL_FRLG] =
     {

@@ -401,10 +401,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tail Whip
 
 === TRAINER_PBL_BLUE_BOSS_2 ===
-Name: Leaf
+Name: Blue
 Class: Rival
-Pic: Leaf
-Music: Female
+Pic: Rival Early Frlg
+Music: Male
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
@@ -430,10 +430,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 
 === TRAINER_PBL_BLUE_BOSS_2 ===
-Name: Leaf
+Name: Blue
 Class: Rival
-Pic: Leaf
-Music: Female
+Pic: Rival Early Frlg
+Music: Male
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
@@ -4333,10 +4333,10 @@ Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_24_AND_25
 
 === TRAINER_PBL_BLUE_BOSS_24 ===
-Name: Grunt
-Class: Rainbow Rocket
-Pic: Rainbow Rocket Grunt M
-Music: Rocket
+Name: Blue
+Class: Rival
+Pic: Rival Late Frlg
+Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 
@@ -4753,10 +4753,10 @@ Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_BLUE_BOSS_27 ===
-Name: Leaf
+Name: Blue
 Class: Rival
-Pic: Leaf
-Music: Female
+Pic: Rival Late Frlg
+Music: Male
 AI: AI_FLAG_BOSS
 Mugshot: Pink
 
@@ -5606,10 +5606,10 @@ Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_31_AND_32
 
 === TRAINER_PBL_BLUE_BOSS_31 ===
-Name: Leaf
+Name: Blue
 Class: Rival
-Pic: Leaf
-Music: Female
+Pic: Rival Late Frlg
+Music: Male
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
@@ -6357,71 +6357,81 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Magikarp
-
 Sunkern
+
+Blipbug
 
 Azurill
 
+Caterpie
+
+Weedle
+
+Kricketot
+
+Magikarp
+
+Scatterbug
+
+Pichu
+
 Igglybuff
+
+Wooper
+
+Wooper Paldea
+
+Bounsweet
+
+Tarountula
+
+Nymble
 
 Sentret
 
-Poochyena
+Cleffa
 
 Lotad
 
 Seedot
 
+Burmy
+
+Makuhita
+
 Bunnelby
-
-Zigzagoon
-
-Zigzagoon Galar
 
 Whismur
 
+Pawmi
+
 Starly
+
+Combee
 
 Rookidee
 
 Nickit
 
-Bidoof
-
 Pidgey
+
+Spinarak
+
+Hoppip
+
+Bidoof
 
 Rattata
 
 Rattata Alola
 
+Patrat
+
 Yungoos
 
 Lechonk
 
-Patrat
-
 Skitty
-
-Smoliv
-
-Hoothoot
-
-Shinx
-
-Pidove
-
-Pikipek
-
-Taillow
-
-Lillipup
-
-Skwovet
-
-Fletchling
-
-Purrloin
 
 === TRAINER_POOL_ZONE_2 ===
 Name: Trainer Pool
@@ -6431,55 +6441,81 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Magikarp
-
-Sunkern
-
-Azurill
-
 Igglybuff
+
+Wooper
+
+Wooper Paldea
+
+Bounsweet
+
+Tarountula
+
+Nymble
 
 Sentret
 
-Poochyena
+Cleffa
 
 Lotad
 
 Seedot
 
+Burmy
+
+Makuhita
+
 Bunnelby
-
-Zigzagoon
-
-Zigzagoon Galar
 
 Whismur
 
+Pawmi
+
 Starly
+
+Combee
 
 Rookidee
 
 Nickit
 
-Bidoof
+Wiglett
 
 Pidgey
+
+Spinarak
+
+Hoppip
+
+Slugma
+
+Bidoof
+
+Fomantis
+
+Gossifleur
 
 Rattata
 
 Rattata Alola
 
+Patrat
+
 Yungoos
 
 Lechonk
 
-Patrat
+Spearow
+
+Hoothoot
 
 Skitty
 
 Smoliv
 
-Hoothoot
+Ledyba
+
+Nincada
 
 Shinx
 
@@ -6489,69 +6525,41 @@ Pikipek
 
 Taillow
 
+Wingull
+
+Surskit
+
+Yamper
+
+Tadbulb
+
+Nidoran F
+
+Nidoran M
+
+Cherubi
+
 Lillipup
 
 Skwovet
 
-Fletchling
+Mareep
 
-Purrloin
+Poochyena
 
-Blipbug
+Zigzagoon
 
-Burmy
-
-Kricketot
-
-Caterpie
-
-Weedle
+Zigzagoon Galar
 
 Wurmple
 
-Scatterbug
-
-Tarountula
-
-Combee
-
-Pichu
-
-Mareep
-
-Bounsweet
-
-Cleffa
-
-Fomantis
-
-Gossifleur
-
-Pawmi
-
-Ledyba
-
-Spinarak
-
-Wingull
-
-Hoppip
-
-Yamper
-
 Slakoth
-
-Tadbulb
-
-Nidoran M
-
-Nidoran F
-
-Cherubi
 
 Budew
 
-Paras
+Purrloin
+
+Fletchling
 
 === TRAINER_POOL_ZONE_3 ===
 Name: Trainer Pool
