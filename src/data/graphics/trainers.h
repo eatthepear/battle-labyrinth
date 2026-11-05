@@ -610,6 +610,15 @@ const u16 gTrainerPalette_Ethan[] = INCGFX_U16("graphics/trainers/front_pics/eth
 const u8 gTrainerBackPic_Ethan[] = INCGFX_U8("graphics/trainers/back_pics/ethan.png", ".4bpp");
 const u16 gTrainerBackPicPalette_Ethan[] = INCGFX_U16("graphics/trainers/back_pics/ethan.png", ".gbapal");
 
+const u32 gTrainerFrontPic_Cilan[] = INCGFX_U32("graphics/trainers/front_pics/cilan.png", ".4bpp.smol");
+const u16 gTrainerPalette_Cilan[] = INCGFX_U16("graphics/trainers/front_pics/cilan.png", ".gbapal");
+
+const u32 gTrainerFrontPic_Cress[] = INCGFX_U32("graphics/trainers/front_pics/cress.png", ".4bpp.smol");
+const u16 gTrainerPalette_Cress[] = INCGFX_U16("graphics/trainers/front_pics/cress.png", ".gbapal");
+
+const u32 gTrainerFrontPic_Chili[] = INCGFX_U32("graphics/trainers/front_pics/chili.png", ".4bpp.smol");
+const u16 gTrainerPalette_Chili[] = INCGFX_U16("graphics/trainers/front_pics/chili.png", ".gbapal");
+
 static const union AnimCmd sAnimCmd_Hoenn[] =
 {
     ANIMCMD_FRAME(0, 24),
@@ -1506,6 +1515,21 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     [TRAINER_PIC_ETHAN] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Ethan, gTrainerPalette_Ethan),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_Ethan, gTrainerBackPicPalette_Ethan, sBackAnims_Hoenn),
+    },
+    [TRAINER_PIC_CILAN] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Cilan, gTrainerPalette_Cilan),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_Ethan, gTrainerBackPicPalette_Ethan, sBackAnims_Hoenn),
+    },
+    [TRAINER_PIC_CRESS] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Cress, gTrainerPalette_Cress),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_Ethan, gTrainerBackPicPalette_Ethan, sBackAnims_Hoenn),
+    },
+    [TRAINER_PIC_CHILI] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Chili, gTrainerPalette_Chili),
         .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_Ethan, gTrainerBackPicPalette_Ethan, sBackAnims_Hoenn),
     },
 };

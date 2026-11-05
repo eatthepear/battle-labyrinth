@@ -1730,6 +1730,18 @@ static const struct SpriteFrameImage sPicTable_Blue[] = {
     overworld_ascending_frames(gObjectEventPic_Blue, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Cilan[] = {
+    overworld_ascending_frames(gObjectEventPic_Cilan, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Cress[] = {
+    overworld_ascending_frames(gObjectEventPic_Cress, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Chili[] = {
+    overworld_ascending_frames(gObjectEventPic_Chili, 2, 4),
+};
+
 #if IS_FRLG
 
 static const struct SpriteFrameImage sPicTable_RedNormal[] = {

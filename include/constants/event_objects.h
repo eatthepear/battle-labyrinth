@@ -491,6 +491,9 @@ enum
     OBJ_EVENT_GFX_ETHAN_FIELD_MOVE,
     OBJ_EVENT_GFX_ETHAN_UNDERWATER,
     OBJ_EVENT_GFX_ETHAN_FISHING,
+    OBJ_EVENT_GFX_CILAN,
+    OBJ_EVENT_GFX_CRESS,
+    OBJ_EVENT_GFX_CHILI,
     NUM_OBJ_EVENT_GFX,
 };
 
@@ -757,6 +760,9 @@ enum
 #define OBJ_EVENT_PAL_TAG_CYNTHIA                 0x729F
 #define OBJ_EVENT_PAL_TAG_KRIS                    0x72A0
 #define OBJ_EVENT_PAL_TAG_ETHAN                   0x72A1
+#define OBJ_EVENT_PAL_TAG_CILAN                   0x72A2
+#define OBJ_EVENT_PAL_TAG_CRESS                   0x72A3
+#define OBJ_EVENT_PAL_TAG_CHILI                   0x72A4
 
 #define OBJ_EVENT_PAL_TAG_RUNNING_TRIATHLETE_F    0x7401
 #define OBJ_EVENT_PAL_TAG_SCHOOL_KID_M            0x7402

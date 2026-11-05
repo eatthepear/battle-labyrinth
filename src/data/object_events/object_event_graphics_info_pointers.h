@@ -481,6 +481,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanSurfin
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanFieldMove;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanUnderwater;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cilan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cress;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Chili;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -803,6 +806,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ETHAN_UNDERWATER] =         &gObjectEventGraphicsInfo_EthanUnderwater,
     [OBJ_EVENT_GFX_ETHAN_FISHING] =            &gObjectEventGraphicsInfo_EthanFishing,
     [OBJ_EVENT_GFX_BLUE]                     = &gObjectEventGraphicsInfo_Blue,
+    [OBJ_EVENT_GFX_CILAN] =                    &gObjectEventGraphicsInfo_Cilan,
+    [OBJ_EVENT_GFX_CRESS] =                    &gObjectEventGraphicsInfo_Cress,
+    [OBJ_EVENT_GFX_CHILI] =                    &gObjectEventGraphicsInfo_Chili,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
