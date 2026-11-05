@@ -213,7 +213,7 @@ script EventScript_NextZone {
 			warp(MAP_ZONE29A, 255, 11, 17)
 		case 30:
 			setflag(FLAG_HIDE_ZONE30A_PROTON)
-			warp(MAP_ZONE30A, 255, 20, 28)
+			warp(MAP_ZONE30A, 255, 2, 28)
 		case 31:
 			warp(MAP_ZONE31A, 255, 10, 65)
 		case 33:

@@ -96,7 +96,7 @@
   "warp_events": [
     {
       "x": 20,
-      "y": 15,
+      "y": 14,
       "elevation": 0,
       "dest_map": "MAP_ZONE30Z",
       "dest_warp_id": "0"

@@ -30,18 +30,18 @@ script Zone30Z_EventScript_Attendant {
 		dynmultipush("6F - Galactic", 6)
 	}
 	if (var(VAR_ZONE_30_STATE) < 5) {
-		dynmultipush("{COLOR RED}5F - Magma", 50)
-		dynmultipush("{COLOR RED}4F - Magma", 40)
+		dynmultipush("{COLOR RED}5F - Aqua", 50)
+		dynmultipush("{COLOR RED}4F - Aqua", 40)
 	} else {
-		dynmultipush("5F - Magma", 5)
-		dynmultipush("4F - Magma", 4)
+		dynmultipush("5F - Aqua", 5)
+		dynmultipush("4F - Aqua", 4)
 	}
 	if (var(VAR_ZONE_30_STATE) < 3) {
-		dynmultipush("{COLOR RED}3F - Aqua", 30)
-		dynmultipush("{COLOR RED}2F - Aqua", 20)
+		dynmultipush("{COLOR RED}3F - Magma", 30)
+		dynmultipush("{COLOR RED}2F - Magma", 20)
 	} else {
-		dynmultipush("3F - Aqua", 3)
-		dynmultipush("2F - Aqua", 2)
+		dynmultipush("3F - Magma", 3)
+		dynmultipush("2F - Magma", 2)
 	}
 	dynmultipush("1F - Lobby", 1)
 	dynmultipush("Exit", 0)
