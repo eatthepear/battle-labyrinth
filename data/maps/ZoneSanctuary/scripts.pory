@@ -425,9 +425,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 			// setspeaker(SP_NAME_NONE)
 			// giveitem(ITEM_HM_ROCK_CLIMB)
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 28 - Mt. Cinder{COLOR DARK_GRAY} is…"))
-			// msgbox(format("{COLOR GREEN}HM02 - Rock Climb{COLOR DARK_GRAY}!"))
-			// setspeaker(SP_NAME_NONE)
-			// giveitem(ITEM_HM_ROCK_CLIMB)
+			msgbox(format("{COLOR GREEN}TM80 - Rock Slide{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_TM_ROCK_SLIDE)
 		case 29:
 			msgbox(format("The {COLOR GREEN}Amulet Coin{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
