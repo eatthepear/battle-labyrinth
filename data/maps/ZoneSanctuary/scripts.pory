@@ -218,6 +218,9 @@ script EventScript_NextZone {
 		case 31:
 			warp(MAP_ZONE31A, 255, 10, 65)
 		case 33:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				setflag(FLAG_HIDE_ZONE33D_MAX)
+			}
 			warp(MAP_ZONE33A, 255, 0, 8)
 		case 35:
 			warp(MAP_ZONE35A, 255, 10, 10)
@@ -574,6 +577,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("The next two zones, {COLOR GREEN}Zone 33 - Virtual Space{COLOR DARK_GRAY} and {COLOR GREEN}Zone 34 - Rainbow Rocket Castle{COLOR DARK_GRAY}, are combined.\pYou will not be able to access the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY} in between the Zones."), MSGBOX_DEFAULT)
 		case 33:
 		case 34:
+			setflag(FLAG_HIDE_ZONE33D_MAX)
 			setvar(VAR_ZONE, 35)
 		case 35:
 			setvar(VAR_ZONE, 36)
