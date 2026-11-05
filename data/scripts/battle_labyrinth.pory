@@ -1966,6 +1966,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	}
 	additem(ITEM_HM_STRENGTH)
 	additem(ITEM_TM_ACROBATICS)
+	additem(ITEM_EXPERT_BELT)
 
 	if (var(VAR_ZONE) == 22) {
 		return
@@ -1975,7 +1976,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_HM_WATERFALL)
 	additem(ITEM_AIR_BALLOON)
 	additem(ITEM_TM_DRAIN_PUNCH)
-	additem(ITEM_EXPERT_BELT)
+	additem(ITEM_FOCUS_SASH)
 	additem(ITEM_TM_WILL_O_WISP)
 
 	if (var(VAR_ZONE) == 23) {
@@ -1983,6 +1984,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	}
 	additem(ITEM_TM_POISON_JAB)
 	additem(ITEM_TM_PSYSHOCK)
+	additem(ITEM_TM_LEECH_LIFE)
 
 	if (var(VAR_ZONE) == 24) {
 		return
@@ -1995,7 +1997,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_TM_HURRICANE)
 	additem(ITEM_OVAL_CHARM)
 	additem(ITEM_TM_TAUNT)
-	additem(ITEM_WHITE_HERB)
+	additem(ITEM_TM_FLASH_CANNON)
 	additem(ITEM_HM_ROCK_CLIMB)
 	additem(ITEM_TM_HIGH_HORSEPOWER)
 
@@ -2008,6 +2010,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 27) {
 		return
 	}
+	additem(ITEM_WHITE_HERB)
 	additem(ITEM_CATCHING_CHARM)
 	additem(ITEM_TM_DRAGON_PULSE)
 	additem(ITEM_TM_WEATHER_BALL)

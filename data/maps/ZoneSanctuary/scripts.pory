@@ -403,16 +403,20 @@ script Sanctuary_EventScript_EnterSanctuary {
 			giveitem(ITEM_MEGA_RING)
 			helpwindow(HELP_MEGA_EVOLUTION)
 		case 21:
-			msgbox(format("Ultra Balls!"))
+			msgbox(format("The {COLOR GREEN}{PKMN} Expert Belt{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_EXPERT_BELT)
 		case 22:
 			msgbox(format("Ultra Balls!"))
 		case 23:
-			msgbox(format("Ultra Balls!"))
+			msgbox(format("{COLOR GREEN}TM41 - Leech Life{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_TM_LEECH_LIFE)
 		case 24:
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 24 - Sheer Canyon{COLOR DARK_GRAY} is…"))
-			msgbox(format("The {COLOR GREEN}White Herb{COLOR DARK_GRAY}!"))
+			msgbox(format("{COLOR GREEN}TM91 - Flash Cannon{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_WHITE_HERB)
+			giveitem(ITEM_TM_FLASH_CANNON)
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 25 - Ancient Tower{COLOR DARK_GRAY} is…"))
 			msgbox(format("{COLOR GREEN}HM02 - Rock Climb{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)

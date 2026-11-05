@@ -144,7 +144,7 @@ script Zone27A_EventScript_TriggerTagBattle {
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 
     msgbox(format("Here's the LOOT!"))
-    giveitem(ITEM_MASTER_BALL)
+    giveitem(ITEM_WHITE_HERB, 1)
     msgbox(format("GOODBYE!"))
     closemessage
     applymovement(LOCALID_BLUE_27A, Zone27A_Movement_Blue_Leave)
