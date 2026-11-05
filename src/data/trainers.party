@@ -409,25 +409,25 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
 
-Cleffa @ Oran Berry
-Calm Nature
-Ability: Magic Guard
+Pidgey @ Oran Berry
+Naive Nature
+Ability: Keen Eye
 Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Disarming Voice
-- Sing
-- Pound
-- Sweet Kiss
+- Gust
+- Quick Attack
+- Tackle
+- Sand Attack
 
-Bulbasaur @ Oran Berry
-Jolly Nature
-Ability: Overgrow
+Squirtle @ Oran Berry
+Quiet Nature
+Ability: Torrent
 Level: 9
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Vine Whip
-- Leech Seed
-- Poison Powder
+- Water Gun
 - Rock Smash
+- Withdraw
+- Tackle
 
 === TRAINER_PBL_BLUE_BOSS_2 ===
 Name: Leaf
@@ -439,35 +439,35 @@ Double Battle: No
 Mugshot: Pink
 Difficulty: Brutal
 
-Cleffa @ Oran Berry
-Calm Nature
-Ability: Magic Guard
-Level: 7
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Disarming Voice
-- Sing
-- Pound
-- Sweet Kiss
-
-Pikachu @ Oran Berry
+Pidgey @ Oran Berry
 Naive Nature
-Ability: Static
+Ability: Keen Eye
 Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fake Out
-- Thunder Shock
-- Nuzzle
-- Rock Smash
+- Gust
+- Quick Attack
+- Tackle
+- Sand Attack
 
-Bulbasaur @ Oran Berry
-Jolly Nature
-Ability: Overgrow
+Exeggcute @ Oran Berry
+Bold Nature
+Ability: Harvest
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leech Seed
+- Absorb
+- Hypnosis
+- Barrage
+
+Squirtle @ Oran Berry
+Quiet Nature
+Ability: Torrent
 Level: 9
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Vine Whip
-- Leech Seed
-- Poison Powder
+- Water Gun
 - Rock Smash
+- Withdraw
+- Tackle
 
 === TRAINER_PBL_JEMMA ===
 Name: Jemma
@@ -3656,15 +3656,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Beam
 - Icy Wind
 
-Blastoise @ Mystic Water
+Swampert @ Mystic Water
 Ability: Torrent
 Level: 38
-Relaxed Nature
+Brave Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pledge
-- Scald
-- Ice Beam
-- Dark Pulse
+- Liquidation
+- High Horsepower
+- Ice Punch
 
 Samurott @ Sitrus Berry
 Ability: Torrent
@@ -3706,15 +3706,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Beam
 - Icy Wind
 
-Blastoise @ Mystic Water
+Swampert @ Mystic Water
 Ability: Torrent
 Level: 38
-Relaxed Nature
+Brave Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pledge
-- Scald
-- Ice Beam
-- Dark Pulse
+- Liquidation
+- High Horsepower
+- Ice Punch
 
 Samurott @ Sitrus Berry
 Ability: Torrent
@@ -4010,15 +4010,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Spinner
 - U-Turn
 
-Machamp @ Assault Vest
-Adamant Nature
-Ability: No Guard
+Pawmot @ Punching Glove
+Jolly Nature
+Ability: Iron Fist
 Level: 42
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dynamic Punch
-- Stone Edge
-- Knock Off
-- Bullet Punch
+- Double Shock
+- Drain Punch
+- Ice Punch
+- Mach Punch
 
 Toxicroak @ Payapa Berry
 Jolly Nature
@@ -4070,15 +4070,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Spinner
 - U-Turn
 
-Machamp @ Assault Vest
-Adamant Nature
-Ability: No Guard
+Pawmot @ Punching Glove
+Jolly Nature
+Ability: Iron Fist
 Level: 42
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dynamic Punch
-- Stone Edge
-- Knock Off
-- Bullet Punch
+- Double Shock
+- Drain Punch
+- Ice Punch
+- Mach Punch
 
 Toxicroak @ Payapa Berry
 Jolly Nature
