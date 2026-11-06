@@ -29,7 +29,7 @@ script Zone4E_EventScript_KimonoGirl_Exit {
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_HM_CUT)
 	setspeaker("Kimono Girl")
-	msgbox(format("I foresee a {COLOR GREEN}Double Battle{COLOR DARK_GRAY} in your future.\pBe cautious, young trainer."), MSGBOX_AUTOCLOSE)
+	msgbox(format("Be cautious of the path you walk, young trainer."), MSGBOX_AUTOCLOSE)
 	applymovement(LOCALID_PLAYER, Zone4E_Movement_Player_UnblockKimonoGirl)
 	applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Zone4E_Movement_KimonoGirl_Exit)
 	waitmovement(0)
