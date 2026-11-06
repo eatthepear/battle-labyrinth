@@ -146,14 +146,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
 
-Pansage
-Jolly Nature
-Ability: Gluttony
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Leafage
-- Scratch
-
 Pansear
 Naive Nature
 Ability: Gluttony
@@ -172,25 +164,25 @@ Double Battle: No
 Mugshot: Green
 Difficulty: Brutal
 
-Panpour @ Oran Berry
+Panpour
 Hasty Nature
-Ability: Torrent
+Ability: Gluttony
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
 
-Pansage @ Oran Berry
+Pansage
 Jolly Nature
-Ability: Overgrow
+Ability: Gluttony
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leafage
 - Scratch
 
-Pansear @ Oran Berry
+Pansear
 Naive Nature
-Ability: Blaze
+Ability: Gluttony
 Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
@@ -205,6 +197,32 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Green
 Difficulty: Normal
+
+Pansage
+Jolly Nature
+Ability: Gluttony
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leafage
+- Scratch
+
+Panpour
+Hasty Nature
+Ability: Gluttony
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Gun
+- Scratch
+
+=== TRAINER_PBL_CORI_BOSS_1_FIRE_STARTER ===
+Name: Cori
+Class: Rising Star
+Pic: School Kid F
+Music: Girl
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Green
+Difficulty: Brutal
 
 Pansage
 Jolly Nature
@@ -230,40 +248,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
 
-=== TRAINER_PBL_CORI_BOSS_1_FIRE_STARTER ===
-Name: Cori
-Class: Rising Star
-Pic: School Kid F
-Music: Girl
-AI: AI_FLAG_BOSS
-Double Battle: No
-Mugshot: Green
-Difficulty: Brutal
-
-Pansage @ Oran Berry
-Jolly Nature
-Ability: Overgrow
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Leafage
-- Scratch
-
-Pansear @ Oran Berry
-Naive Nature
-Ability: Blaze
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Ember
-- Scratch
-
-Panpour @ Oran Berry
-Hasty Nature
-Ability: Torrent
-Level: 7
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Gun
-- Scratch
-
 === TRAINER_PBL_CORI_BOSS_1_WATER_STARTER ===
 Name: Cori
 Class: Rising Star
@@ -280,14 +264,6 @@ Ability: Gluttony
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
-- Scratch
-
-Panpour
-Hasty Nature
-Ability: Gluttony
-Level: 5
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Gun
 - Scratch
 
 Pansage
@@ -308,25 +284,25 @@ Double Battle: No
 Mugshot: Green
 Difficulty: Brutal
 
-Pansear @ Oran Berry
+Pansear
 Naive Nature
-Ability: Blaze
+Ability: Gluttony
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ember
 - Scratch
 
-Panpour @ Oran Berry
+Panpour
 Hasty Nature
-Ability: Torrent
+Ability: Gluttony
 Level: 5
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Gun
 - Scratch
 
-Pansage @ Oran Berry
+Pansage
 Jolly Nature
-Ability: Overgrow
+Ability: Gluttony
 Level: 7
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leafage
@@ -697,7 +673,7 @@ Class: Rainbow Rocket Executive
 Pic: Proton
 Music: Rocket
 AI: AI_FLAG_BOSS
-Double Battle: Yes
+Double Battle: No
 Mugshot: Blue
 
 Koffing @ Chesto Berry
@@ -759,16 +735,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Confusion
 - Headbutt
 - Thief
-
-Frillish @ Pecha Berry
-Bold Nature
-Ability: Cursed Body
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Hex
-- Recover
-- Sleep Talk
 
 Beedrill @ Sitrus Berry
 Hasty Nature
