@@ -227,7 +227,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "typically increase by 2 every {COLOR GREEN}Zone{COLOR DARK_GRAY}.\n\n"
                                 "Defeated wild Pokémon don't give experience\n"
                                 "except on {COLOR GREEN}Easy{COLOR DARK_GRAY} difficulty."
-                                "A few Pokémon have their experience yields fixed."),
+                                "A few Pokémon have their experience yields tweaked."),
     },
 
     [HELP_CHANGES_ABILITIES] =
