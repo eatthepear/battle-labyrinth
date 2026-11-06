@@ -133,7 +133,84 @@ script EventScript_PuzzleHint {
 }
 
 script EventScript_PuzzleSkip {
-	msgbox(format("Puzzle skip!"))
+	specialvar(VAR_TEMP_1, CheckWhichPuzzle)
+	if (var(VAR_TEMP_1) == PBL_PUZZLE_COUNT) {
+		return
+	}
+	switch (var(VAR_TEMP_1)) {
+		case PBL_PUZZLE_ZONE_4:
+			msgbox(format("Skip the puzzle in Zone 4?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("TODO SKIP"))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_5_GYM:
+			msgbox(format("Get a hint for Zone 5 Gym?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("TODO SKIP"))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_10_FIND_ITEMS:
+			msgbox(format("Get a hint for Zone 10 finding shards?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("TODO SKIP"))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_15:
+			msgbox(format("Get a hint for Zone 15?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("TODO SKIP"))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_17:
+			msgbox(format("Get a hint for Zone 17?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("TODO SKIP"))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_22:
+			msgbox(format("Get a hint for Zone 22?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("TODO SKIP"))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_25:
+			msgbox(format("Get a hint for Zone 25?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("TODO SKIP"))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_30:
+			msgbox(format("Get a hint for Zone 30?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("TODO SKIP"))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_34:
+			msgbox(format("Get a hint for Zone 34?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("TODO SKIP"))
+			} else {
+				closemessage
+				return
+			}
+	}
 	release
 	end
 }
