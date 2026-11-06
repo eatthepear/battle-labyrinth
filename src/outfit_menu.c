@@ -339,12 +339,6 @@ void OpenOutfitMenu(MainCallback retCB)
         //! Alloc failed, exit
         SetMainCallback2(retCB);
     }
-    // measures for existing saves
-    if (gSaveBlock2Ptr->currOutfitId == OUTFIT_NONE)
-    {
-        UnlockOutfit(DEFAULT_OUTFIT);
-        gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
-    }
     sOutfitMenu->retCB = retCB;
     SetMainCallback2(CB2_SetupOutfitMenu);
 }
@@ -906,7 +900,7 @@ static void Task_CloseOutfitMenu(u8 taskId)
 
 u32 GetPlayerTrainerPicIdByOutfit(u32 outfitId)
 {
-    if (outfitId > OUTFIT_NONE && outfitId < OUTFIT_COUNT)
+    if (outfitId < OUTFIT_COUNT)
         return gOutfits[outfitId].trainerPics;
     else
         return gOutfits[0].trainerPics;

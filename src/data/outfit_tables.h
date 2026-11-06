@@ -3,9 +3,6 @@
 
 const struct Outfit gOutfits[OUTFIT_COUNT] =
 {
-    [OUTFIT_NONE] = {
-        .isHidden = TRUE
-    },
     [OUTFIT_BRENDAN] = {
         //! DESC: if sets to TRUE, it will not be shown in the OUTFIT menu if it's locked.
         .isHidden = FALSE,

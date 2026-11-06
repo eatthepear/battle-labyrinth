@@ -174,8 +174,10 @@ void ResetMenuAndMonGlobals(void)
 static void ResetOutfitData(void)
 {
     memset(gSaveBlock2Ptr->outfits, 0, sizeof(gSaveBlock2Ptr->outfits));
-    UnlockOutfit(DEFAULT_OUTFIT);
-    gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
+    UnlockOutfit(OUTFIT_BRENDAN);
+    UnlockOutfit(OUTFIT_MAY);
+    UnlockOutfit(OUTFIT_ETHAN);
+    UnlockOutfit(OUTFIT_KRIS);
 }
 
 void NewGameInitData(void)
