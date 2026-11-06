@@ -4991,11 +4991,7 @@ u16 CheckWhichPuzzle(void)
         return PBL_PUZZLE_ZONE_5_GYM;
     }
     if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_10) {
-        if ((FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_1) == FALSE) ||
-		(FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_2) == FALSE) ||
-		(FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_3) == FALSE) ||
-		(FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_4) == FALSE) ||
-		(FlagGet(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_5) == FALSE))
+        if (VarGet(VAR_ZONE_10_STATE) == 3)
             return PBL_PUZZLE_ZONE_10_FIND_ITEMS;
     }
     if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_15) {

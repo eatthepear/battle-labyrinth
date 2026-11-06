@@ -160,9 +160,31 @@ script EventScript_PuzzleSkip {
 				return
 			}
 		case PBL_PUZZLE_ZONE_10_FIND_ITEMS:
-			msgbox(format("Get a hint for Zone 10 finding shards?"), MSGBOX_YESNO)
+			msgbox(format("Skip finding the shards in Zone 10?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				msgbox(format("TODO SKIP"))
+				fadescreenswapbuffers(FADE_TO_BLACK)
+				if (flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_1) == FALSE) {
+					additem(ITEM_BLUE_SHARD)
+					setflag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_1)
+				}
+				if (flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_2) == FALSE) {
+					additem(ITEM_BLUE_SHARD)
+					setflag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_2)
+				}
+				if (flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_3) == FALSE) {
+					additem(ITEM_BLUE_SHARD)
+					setflag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_3)
+				}
+				if (flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_4) == FALSE) {
+					additem(ITEM_BLUE_SHARD)
+					setflag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_4)
+				}
+				if (flag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_5) == FALSE) {
+					additem(ITEM_BLUE_SHARD)
+					setflag(FLAG_HIDDEN_ITEM_ZONE10A_BLUE_SHARD_5)
+				}
+				fadescreenswapbuffers(FADE_FROM_BLACK)
+				msgbox(format("After searching for a while, {PLAYER} found all the shards!"))
 			} else {
 				closemessage
 				return
