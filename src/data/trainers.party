@@ -1521,14 +1521,14 @@ Music: Twins
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Seel
-Modest Nature
-Ability: Thick Fat
+Wailmer
+Relaxed Nature
+Ability: Oblivious
 Level: 22
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Chilling Water
-- Icy Wind
-- Aqua Ring
+- Water Pulse
+- Bounce
+- Protect
 
 === TRAINER_PBL_CASSANDRA_BOSS_9 ===
 Name: Cassandra
@@ -1539,6 +1539,15 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Difficulty: Brutal
 
+Wailmer
+Relaxed Nature
+Ability: Oblivious
+Level: 22
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Bounce
+- Protect
+
 Seel
 Modest Nature
 Ability: Thick Fat
@@ -1547,15 +1556,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Chilling Water
 - Icy Wind
 - Aqua Ring
-
-Ducklett
-Hasty Nature
-Ability: Big Pecks
-Level: 22
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bubble Beam
-- Air Cutter
-- Aqua Jet
 
 === TRAINER_PBL_DOMINIC_BOSS_9 ===
 Name: Dominic
