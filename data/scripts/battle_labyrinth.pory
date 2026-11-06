@@ -105,24 +105,29 @@ script EventScript_PuzzleHint {
 				closemessage
 				return
 			}
-		case PBL_PUZZLE_ZONE_34:
+		case PBL_PUZZLE_ZONE_34B:
+		case PBL_PUZZLE_ZONE_34C:
 			msgbox(format("Get a hint for Zone 34?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				message("Which puzzle do you want a hint on?")
-				waitmessage
-				dynmultipush("Color puzzle", 0)
-				dynmultipush("Spin puzzle", 1)
-				dynmultipush("Warp puzzle", 2)
-				dynmultipush("Exit", 3)
-				dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
-				switch (var(VAR_RESULT)) {
-					case 0:
-						msgbox(format("The hint is: R Y B Y R, TODO"))
-					case 1:
-						msgbox(format("The hint is: 1st room go left first, then up. 2nd room go right first, then up."))
-					case 2:
-						msgbox(format("The hint is: TODO"))
-				}
+				msgbox(format("The hint is: R Y B Y R, TODO"))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_34F:
+		case PBL_PUZZLE_ZONE_34G:
+			msgbox(format("Get a hint for Zone 34?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("The hint is: 1st room go left first, then up. 2nd room go right first, then up."))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_34J:
+		case PBL_PUZZLE_ZONE_34K:
+			msgbox(format("Get a hint for Zone 34?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("The hint is: TODO"))
 			} else {
 				closemessage
 				return
@@ -202,7 +207,12 @@ script EventScript_PuzzleSkip {
 				closemessage
 				return
 			}
-		case PBL_PUZZLE_ZONE_34:
+		case PBL_PUZZLE_ZONE_34B:
+		case PBL_PUZZLE_ZONE_34C:
+		case PBL_PUZZLE_ZONE_34F:
+		case PBL_PUZZLE_ZONE_34G:
+		case PBL_PUZZLE_ZONE_34J:
+		case PBL_PUZZLE_ZONE_34K:
 			msgbox(format("Get a hint for Zone 34?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				msgbox(format("TODO SKIP"))

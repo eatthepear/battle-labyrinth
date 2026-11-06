@@ -5015,8 +5015,23 @@ u16 CheckWhichPuzzle(void)
     if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_30) {
         return PBL_PUZZLE_ZONE_30;
     }
-    if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_34) {
-        return PBL_PUZZLE_ZONE_34;
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE34B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE34B)) {
+        return PBL_PUZZLE_ZONE_34B;
+    }
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE34C) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE34C)) {
+        return PBL_PUZZLE_ZONE_34C;
+    }
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE34F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE34F)) {
+        return PBL_PUZZLE_ZONE_34F;
+    }
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE34G) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE34G)) {
+        return PBL_PUZZLE_ZONE_34G;
+    }
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE34J) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE34J)) {
+        return PBL_PUZZLE_ZONE_34J;
+    }
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE34K) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE34K)) {
+        return PBL_PUZZLE_ZONE_34K;
     }
     return PBL_PUZZLE_COUNT;
 }
