@@ -710,6 +710,8 @@ script EventScript_Notebook {
 }
 
 script EventScript_Notebook_ZoneInfo {
+	message(format("Choose which Zone you would like to read about."))
+	waitmessage
 	dynmultipush("Current Zone", 0)
 	setvar(VAR_TEMP_0, 1)
 	while (var(VAR_TEMP_0) != 35) {
@@ -729,8 +731,7 @@ script EventScript_Notebook_ZoneInfo {
 			copyvar(VAR_TEMP_0, VAR_RESULT)
 	}
 	call(EventScript_BufferZoneName)
-	msgbox(format("{PLAYER} flipped to the page about {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}…"))
-	msgbox(gText_Notebook_ReadOn, MSGBOX_YESNO)
+	msgbox(format("{PLAYER} flipped to the page about {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}… Read on?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		return
 	}
@@ -789,10 +790,9 @@ script EventScript_Notebook_ZoneInfo {
 		case 43:
 		case 44:
 		case 45:
-			msgbox(format("{COLOR GREEN}Zone {COLOR DARK_GRAY} is "))
+			msgbox(format("ZONE DESCRIPTION FILLER"))
 	}
-	msgbox(format("The next page shows the number of opponents in {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."))
-	msgbox(gText_Notebook_ReadOn, MSGBOX_YESNO)
+	msgbox(format("The next page shows the number of opponents in {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}.\lRead on?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		return
 	}
@@ -807,17 +807,31 @@ script EventScript_Notebook_ZoneInfo {
 			msgbox(format("There are {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY} opponents remaining in the area."))
 	}
 	call(EventScript_BufferZoneName)
-	msgbox(format("The next page talks about a great challenge in {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."))
-	msgbox(gText_Notebook_ReadOn, MSGBOX_YESNO)
+	msgbox(format("The next page talks about a great challenge in {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}.\lRead on?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		return
 	}
 	switch (var(VAR_TEMP_0)) {
 		case 1:
-			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				helpwindow(HELP_NOTEBOOK_BOSS_1_BRUTAL)
-			} else {
-				helpwindow(HELP_NOTEBOOK_BOSS_1)
+			switch (var(VAR_STARTER_MON)) {
+				case 0:
+					if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+						helpwindow(HELP_NOTEBOOK_BOSS_1_GRASS_STARTER_BRUTAL)
+					} else {
+						helpwindow(HELP_NOTEBOOK_BOSS_1_GRASS_STARTER)
+					}
+				case 1:
+					if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+						helpwindow(HELP_NOTEBOOK_BOSS_1_FIRE_STARTER_BRUTAL)
+					} else {
+						helpwindow(HELP_NOTEBOOK_BOSS_1_FIRE_STARTER)
+					}
+				case 2:
+					if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+						helpwindow(HELP_NOTEBOOK_BOSS_1_WATER_STARTER_BRUTAL)
+					} else {
+						helpwindow(HELP_NOTEBOOK_BOSS_1_WATER_STARTER)
+					}
 			}
 		case 2:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
@@ -872,7 +886,7 @@ script EventScript_Notebook_ZoneInfo {
 			} else {
 				helpwindow(HELP_NOTEBOOK_BOSS_7)
 			}
-			msgbox(gText_Notebook_ReadOn, MSGBOX_YESNO)
+			msgbox(gText_Notebook_NextBossReadOn, MSGBOX_YESNO)
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				helpwindow(HELP_NOTEBOOK_BOSS_8_BRUTAL)
 			} else {
@@ -941,12 +955,12 @@ script EventScript_Notebook_ZoneInfo {
 	}
 }
 
-text gText_Notebook_ReadOn {
-	format("Read on?")
+text gText_Notebook_NextBossReadOn {
+	format("The next page talks about another great challenge. Read on?")
 }
 
 text gText_Notebook_OptionalReadOn {
-	format("There is another page about an optional challenge.\pRead on?")
+	format("The next page talks about an optional challenge. Read on?")
 }
 
 script EventScript_Notebook_ChangesFromVanilla {
