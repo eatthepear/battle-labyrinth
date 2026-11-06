@@ -2897,6 +2897,16 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
             gStartingStatuses.weatherFog = gStartingStatuses.weatherFogTemporary = FALSE;
             return effect;
         }
+        else if (gStartingStatuses.gravity)
+        {
+            effect = SetStartingFieldStatus(
+                        STATUS_FIELD_GRAVITY,
+                        B_MSG_SET_GRAVITY,
+                        B_ANIM_GRAVITY,
+                        &gFieldTimers.trickRoomTimer, gStartingStatuses.gravity ? 0 : 5);
+            gStartingStatuses.gravity = FALSE;
+            return effect;
+        }
         break;
     case FIELD_EFFECT_OVERWORLD_TERRAIN:   // terrain starting from overworld weather
         if (B_THUNDERSTORM_TERRAIN == TRUE
