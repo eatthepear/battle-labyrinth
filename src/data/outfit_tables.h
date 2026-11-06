@@ -9,10 +9,10 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
 
         //! agbcc doesnt like COMPOUND_STRING on my end
         //! DESC: outfit's name
-        .name = COMPOUND_STRING("Hoenn"),
+        .name = COMPOUND_STRING("Brendan"),
 
         //! DESC: outfit's description
-        .desc = COMPOUND_STRING("Avatars from the Hoenn games,\nwith a purple twist!"),
+        .desc = COMPOUND_STRING("Avatar from the Hoenn games,\nwith a purple twist!"),
 
         //! DESC: trainer front & back pic index
         //! (see include/constants/trainers.h)
@@ -43,10 +43,10 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
 
         //! agbcc doesnt like COMPOUND_STRING on my end
         //! DESC: outfit's name
-        .name = COMPOUND_STRING("Hoenn"),
+        .name = COMPOUND_STRING("May"),
 
         //! DESC: outfit's description
-        .desc = COMPOUND_STRING("Avatars from the Hoenn games,\nwith a purple twist!"),
+        .desc = COMPOUND_STRING("Avatar from the Hoenn games,\nwith a purple twist!"),
 
         //! DESC: trainer front & back pic index
         //! (see include/constants/trainers.h)
@@ -73,7 +73,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
     },
     [OUTFIT_KRIS] = {
         .isHidden = FALSE,
-        .name = COMPOUND_STRING("Johto"),
+        .name = COMPOUND_STRING("Kris"),
         .desc = COMPOUND_STRING("Avatars from the Johto games."),
         .trainerPics = TRAINER_PIC_KRIS,
         .avatarGfxIds = {
@@ -92,7 +92,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
     },
     [OUTFIT_ETHAN] = {
         .isHidden = FALSE,
-        .name = COMPOUND_STRING("Johto"),
+        .name = COMPOUND_STRING("Ethan"),
         .desc = COMPOUND_STRING("Avatars from the Johto games."),
         .trainerPics = TRAINER_PIC_ETHAN,
         .avatarGfxIds = {
