@@ -37,6 +37,9 @@ script Zone23A_EventScript_Serena {
 	msgbox(format("I have a feeling that our battle will turn out to be worth the wait!\pI hope you'll show me that your skill as a Trainer surpasses even mine."))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		setstartingstatus(STARTING_STATUS_GRASSY_TERRAIN)
+	}
 	trainerbattle_no_intro(TRAINER_PBL_SERENA_BOSS_23, format("You have proven to be a wall that I am unable to surmount!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Serena")

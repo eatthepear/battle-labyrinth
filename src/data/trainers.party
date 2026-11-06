@@ -3839,6 +3839,56 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Drain Punch
 - Aqua Jet
 
+Gallade @ Lum Berry
+Ability: Sharpness
+Level: 42
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Sword
+- Psycho Cut
+- Leaf Blade
+- Aqua Cutter
+
+=== TRAINER_PBL_WALLY_BOSS_21 ===
+Name: Wally
+Class: Rival
+Pic: Wally
+Music: Male
+AI: AI_FLAG_BOSS
+Double Battle: Yes
+Mugshot: Pink
+Difficulty: Brutal
+
+Talonflame @ Flying Gem
+Ability: Flame Body
+Level: 40
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Blaze Kick
+- Acrobatics
+- Will-O-Wisp
+- Tailwind
+
+Roserade @ Wise Glasses
+Ability: Poison Point
+Level: 40
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Sludge Bomb
+- Dazzling Gleam
+- Shadow Ball
+
+Azumarill @ Sitrus Berry
+Ability: Huge Power
+Level: 40
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Play Rough
+- Drain Punch
+- Aqua Jet
+
 Magneton @ Eviolite
 Ability: Sturdy
 Level: 40
@@ -4183,65 +4233,55 @@ AI: AI_FLAG_BOSS
 Double Battle: Yes
 Mugshot: Pink
 
-Slurpuff @ Focus Sash
-Ability: Unburden
+Vivillon @ Focus Sash
+Ability: Compound Eyes
 Level: 44
-Hasty Nature
+Timid Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sticky Web
-- Endeavor
-- Moonblast
-- Misty Explosion
+- Sleep Powder
+- Rage Powder
+- Hurricane
+- Tailwind
 
-Primarina @ Leftovers
-Ability: Torrent
-Level: 44
-Bold Nature
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Scald
-- Moonblast
-- Rest
-- Sleep Talk
-
-Whimsicott @ Sitrus Berry
-Ability: Prankster
-Level: 44
-Bold Nature
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Stun Spore
-- U-Turn
-- Moonblast
-- Giga Drain
-
-Mimikyu @ Red Card
-Ability: Disguise
-Level: 44
-Adamant Nature
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shadow Claw
-- Shadow Sneak
-- Play Rough
-- Drain Punch
-
-Slowbro-Galar @ Quick Claw
-Ability: Quick Draw
+Clawitzer @ Wacan Berry
+Ability: Mega Launcher
 Level: 44
 Modest Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shell Side Arm
-- Psyshock
-- Surf
-- Grass Knot
+- Water Pulse
+- Terrain Pulse
+- Dark Pulse
+- Heal Pulse
 
-Excadrill @ Life Orb
-Ability: Mold Breaker
-Level: 46
+Gogoat @ Lum Berry
+Ability: Grass Pelt
+Level: 44
 Jolly Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Iron Head
+- Horn Leech
+- High Horsepower
 - Rock Slide
-- Swords Dance
+- Bulk Up
+
+Mamoswine @ Never-Melt Ice
+Ability: Thick Fat
+Level: 44
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- High Horsepower
+- Ice Shard
+- Icicle Crash
+- Rock Slide
+
+Delphox @ Fire Gem
+Ability: Magician
+Level: 44
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Heat Wave
+- Psyshock
+- Shadow Ball
+- Grass Knot
 
 === TRAINER_PBL_DOUGLAS ===
 Name: Douglas
@@ -4303,18 +4343,129 @@ Name: Blue
 Class: Rival
 Pic: Rival Late Frlg
 Music: Male
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
+AI: AI_FLAG_BOSS
+Double Battle: Yes
+Mugshot: Pink
 
-Metang
-Brave Nature
-Level: 42
+Pidgeot @ White Herb
+Ability: Keen Eye
+Level: 48
+Jolly Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
+- Brave Bird
+- Return
+- Tailwind
+- U-Turn
+
+Arcanine @ Sitrus Berry
+Ability: Intimidate
+Level: 48
+Naive Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Extreme Speed
+- Play Rough
+- Snarl
+
+Exeggutor @ Zoom Lens
+Ability: Chlorophyll
+Level: 48
+Quiet Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
 - Psychic
-- Reflect
-- Metal Claw
+- Sleep Powder
+- Low Kick
+
+Machamp @ Roseli Berry
+Ability: No Guard
+Level: 48
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dynamic Punch
+- Throat Chop
+- Poison Jab
+- Wide Guard
+
+Blastoise @ Mystic Water
+Ability: Torrent
+Level: 50
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Muddy Water
+- Icy Wind
+- Flash Cannon
+- Fake Out
+
+=== TRAINER_PBL_BLUE_BOSS_24 ===
+Name: Blue
+Class: Rival
+Pic: Rival Late Frlg
+Music: Male
+AI: AI_FLAG_BOSS
+Double Battle: Yes
+Mugshot: Pink
+Difficulty: Brutal
+
+Pidgeot @ White Herb
+Ability: Keen Eye
+Level: 48
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brave Bird
+- Return
+- Tailwind
+- U-Turn
+
+Arcanine @ Sitrus Berry
+Ability: Intimidate
+Level: 48
+Naive Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Extreme Speed
+- Play Rough
+- Snarl
+
+Exeggutor @ Zoom Lens
+Ability: Chlorophyll
+Level: 48
+Quiet Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Psychic
+- Sleep Powder
+- Low Kick
+
+Machamp @ Roseli Berry
+Ability: No Guard
+Level: 48
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dynamic Punch
+- Throat Chop
+- Poison Jab
+- Wide Guard
+
+Alakazam @ Focus Sash
+Ability: Magic Guard
+Level: 48
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psyshock
+- Shadow Ball
+- Energy Ball
+- Dazzling Gleam
+
+Blastoise @ Mystic Water
+Ability: Torrent
+Level: 50
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Muddy Water
+- Icy Wind
+- Flash Cannon
+- Fake Out
 
 === TRAINER_PBL_ROCKET_GRUNT_25D_1 ===
 Name: Grunt
