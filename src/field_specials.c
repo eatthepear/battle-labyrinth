@@ -4601,7 +4601,7 @@ u16 GetNumTrainersRemaining(void)
 {
     u16 count = 0;
     u16 trainer = 0;
-    u16 zone = VarGet(VAR_ZONE);
+    u16 zone = VarGet(VAR_TEMP_0);
     switch (zone)
     {
     case 1:
@@ -4665,7 +4665,7 @@ u16 GetNumTrainersRemaining(void)
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
-        count += 5 * !FlagGet(FLAG_BEAT_BOSS_9);
+        count += 4 * !FlagGet(FLAG_BEAT_BOSS_9);
         break;
     case 10:
         for (trainer = TRAINER_PBL_ALANA; trainer <= TRAINER_PBL_KYLE; trainer++) {
@@ -4673,6 +4673,7 @@ u16 GetNumTrainersRemaining(void)
                 count += 1;
         }
         count += !FlagGet(FLAG_BEAT_BOSS_10);
+        count += !HasTrainerBeenFought(TRAINER_PBL_HENRY_OPTIONAL_10);
         break;
     case 11:
         for (trainer = TRAINER_PBL_JEANETTE; trainer <= TRAINER_PBL_ROCKET_GRUNT_11A_2; trainer++) {

@@ -19,18 +19,6 @@ text gText_YouDontHaveEnoughMoney {
 	format("You don't have enough money.")
 }
 
-script EventScript_OpponentsRemainingMessage {
-	buffernumberstring(0, VAR_TEMP_0)
-	switch(var(VAR_TEMP_0)) {
-		case 0:
-			msgbox(format("There are no opponents remaining in the area."))
-		case 1:
-			msgbox(format("There is {COLOR GREEN}1{COLOR DARK_GRAY} opponent remaining in the area."))
-		default:
-			msgbox(format("There are {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY} opponents remaining in the area."))
-	}
-}
-
 script EventScript_HealPreBoss {
 	if (var(VAR_DIFFICULTY) != DIFFICULTY_BRUTAL) {
 		if (flag(FLAG_BOSS_PROMPT_HEAL)) {
@@ -695,7 +683,7 @@ script EventScript_Notebook {
 		special(BufferCurrentLevelCap)
 		message("Notes open. Level Cap: {STR_VAR_1}\nWhat would you like to read?")
 		waitmessage
-		dynmultipush("Current Zone", 0)
+		dynmultipush("Zone Info", 0)
 		dynmultipush("Changes from Vanilla", 1)
 		dynmultipush("Difficulty Info", 2)
 		dynmultipush("Trainer Tips", 3)
@@ -722,13 +710,31 @@ script EventScript_Notebook {
 }
 
 script EventScript_Notebook_ZoneInfo {
-	call(EventScript_BufferCurrentZoneName)
+	dynmultipush("Current Zone", 0)
+	setvar(VAR_TEMP_0, 1)
+	while (var(VAR_TEMP_0) != 35) {
+		call(EventScript_BufferZoneName)
+		dynmultipush("{STR_VAR_1}", VAR_TEMP_0)
+		addvar(VAR_TEMP_0, 1)
+	}
+	dynmultipush("Cancel", 36)
+	dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			copyvar(VAR_TEMP_0, VAR_ZONE)
+		case 36:
+		case MULTI_B_PRESSED:
+			return
+		default:
+			copyvar(VAR_TEMP_0, VAR_RESULT)
+	}
+	call(EventScript_BufferZoneName)
 	msgbox(format("{PLAYER} flipped to the page about {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}…"))
 	msgbox(gText_Notebook_ReadOn, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		return
 	}
-	switch (var(VAR_ZONE)) {
+	switch (var(VAR_TEMP_0)) {
 		case 1:
 			msgbox(format("{COLOR GREEN}Zone 1{COLOR DARK_GRAY} is a simple route through a forested area."))
 		case 2:
@@ -790,15 +796,23 @@ script EventScript_Notebook_ZoneInfo {
 	if (var(VAR_RESULT) == NO) {
 		return
 	}
-	specialvar(VAR_TEMP_0, GetNumTrainersRemaining)
-	call(EventScript_OpponentsRemainingMessage)
-	call(EventScript_BufferCurrentZoneName)
+	specialvar(VAR_TEMP_1, GetNumTrainersRemaining)
+	buffernumberstring(0, VAR_TEMP_1)
+	switch(var(VAR_TEMP_1)) {
+		case 0:
+			msgbox(format("There are no opponents remaining in the area."))
+		case 1:
+			msgbox(format("There is {COLOR GREEN}1{COLOR DARK_GRAY} opponent remaining in the area."))
+		default:
+			msgbox(format("There are {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY} opponents remaining in the area."))
+	}
+	call(EventScript_BufferZoneName)
 	msgbox(format("The next page talks about a great challenge in {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}."))
 	msgbox(gText_Notebook_ReadOn, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		return
 	}
-	switch (var(VAR_ZONE)) {
+	switch (var(VAR_TEMP_0)) {
 		case 1:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				helpwindow(HELP_NOTEBOOK_BOSS_1_BRUTAL)
@@ -923,10 +937,7 @@ script EventScript_Notebook_ZoneInfo {
 		case 43:
 		case 44:
 		case 45:
-			msgbox(format("{COLOR BLUE}{COLOR DARK_GRAY} the Boss "))
-			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, __ also has "))
-			}
+			msgbox(format("This text hasn't been finished yet!"))
 	}
 }
 
