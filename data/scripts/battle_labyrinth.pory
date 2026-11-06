@@ -800,12 +800,20 @@ script EventScript_Notebook_ZoneInfo {
 	}
 	switch (var(VAR_ZONE)) {
 		case 1:
-			helpwindow(HELP_NOTEBOOK_BOSS_1)
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_1_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_1)
+			}
 		case 2:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				helpwindow(HELP_NOTEBOOK_BOSS_2_BRUTAL)
 			} else {
 				helpwindow(HELP_NOTEBOOK_BOSS_2)
+			}
+			msgbox(gText_Notebook_OptionalReadOn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				helpwindow(HELP_NOTEBOOK_OPTIONAL_2)
 			}
 		case 3:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
@@ -815,7 +823,7 @@ script EventScript_Notebook_ZoneInfo {
 			}
 			msgbox(gText_Notebook_OptionalReadOn, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				helpwindow(HELP_NOTEBOOK_OPTIONAL_1)
+				helpwindow(HELP_NOTEBOOK_OPTIONAL_3)
 			}
 		case 4:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
@@ -831,33 +839,54 @@ script EventScript_Notebook_ZoneInfo {
 			}
 			msgbox(gText_Notebook_OptionalReadOn, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				helpwindow(HELP_NOTEBOOK_OPTIONAL_2)
+				helpwindow(HELP_NOTEBOOK_OPTIONAL_5)
 			}
 		case 6:
-			msgbox(format("There are three trainers you must defeat in a row.\pThe first uses a Finneon, a Barboach, and a Goldeen.\pThe second uses a Pyukumuku.\pThe third uses a Wiglett, a Mantyke, and a Corsola."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On Brutal difficulty, all three fights take place in permanent rain."))
+				helpwindow(HELP_NOTEBOOK_BOSS_6_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_6)
+			}
+			msgbox(gText_Notebook_OptionalReadOn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				helpwindow(HELP_NOTEBOOK_OPTIONAL_6)
 			}
 		case 7:
 		case 8:
-			msgbox(format("The first {COLOR GREEN}Boss{COLOR DARK_GRAY} has Pokémon that take advantage of held Sitrus Berries in different ways. Their Drifloon has Acrobatics and Unburden, their Dedenne has Cheek Pouch, and their Klawf can sometimes get multiple Anger Shell boosts because it has Sitrus Berry."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, they also have a Appletun that maximizes the effectiveness of the Sitrus Berry with its Ripen ability."))
+				helpwindow(HELP_NOTEBOOK_BOSS_7_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_7)
 			}
-			msgbox(format("The second {COLOR GREEN}Boss{COLOR DARK_GRAY} is a villainous team admin. They use a Stunfisk, a Beautifly, and a Purugly."))
+			msgbox(gText_Notebook_ReadOn, MSGBOX_YESNO)
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, they also have a Bruxish."))
+				helpwindow(HELP_NOTEBOOK_BOSS_8_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_8)
+			}
+			msgbox(gText_Notebook_OptionalReadOn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				helpwindow(HELP_NOTEBOOK_OPTIONAL_7)
 			}
 		case 9:
-			msgbox(format("There are four trainers you must defeat in a row.\pThe first uses a Squawkabilly.\pThe second uses a Carnivine.\pThe third uses a Seel and a Wailmer.\pThe fourth uses a Morpeko."))
-			msgbox(format("You can optionally battle a fifth trainer in a row to get a Rare Candy. This trainer uses a Sawk and a Throh."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, the fifth trainer is mandatory."))
+				helpwindow(HELP_NOTEBOOK_BOSS_9_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_9)
+			}
+			msgbox(gText_Notebook_OptionalReadOn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				helpwindow(HELP_NOTEBOOK_OPTIONAL_9)
 			}
 		case 10:
-			msgbox(format("The {COLOR GREEN}Boss{COLOR DARK_GRAY} is a Steel Gym Leader.\pTheir Tinkatuff can set up Stealth Rock, while their Togedemaru can chip away against its foes with Iron Barbs and Rocky Helmet.\pTheir Sliggoo-Hisui is also very tanky, and their ace Steelix has great coverage moves."))
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
-				msgbox(format("On {COLOR GREEN}Brutal{COLOR DARK_GRAY} difficulty, they also have a Prinplup, and their Steelix can Mega evolve."))
+				helpwindow(HELP_NOTEBOOK_BOSS_10_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_10)
+			}
+			msgbox(gText_Notebook_OptionalReadOn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				helpwindow(HELP_NOTEBOOK_OPTIONAL_10)
 			}
 		case 11:
 		case 12:
