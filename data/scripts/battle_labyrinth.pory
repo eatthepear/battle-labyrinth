@@ -917,15 +917,67 @@ script EventScript_Notebook_ZoneInfo {
 				helpwindow(HELP_NOTEBOOK_OPTIONAL_10)
 			}
 		case 11:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_11_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_11)
+			}
 		case 12:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_12_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_12)
+			}
 		case 13:
 		case 14:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_13_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_13)
+			}
+			msgbox(gText_Notebook_NextBossReadOn, MSGBOX_YESNO)
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_14_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_14)
+			}
 		case 15:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_15_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_15)
+			}
 		case 16:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_16_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_16)
+			}
 		case 17:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_17_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_17)
+			}
 		case 18:
 		case 19:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_18_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_18)
+			}
+			msgbox(gText_Notebook_NextBossReadOn, MSGBOX_YESNO)
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_19_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_19)
+			}
 		case 20:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_20_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_20)
+			}
 		case 21:
 		case 22:
 		case 23:

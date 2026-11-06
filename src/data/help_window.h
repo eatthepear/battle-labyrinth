@@ -196,7 +196,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_NOTEBOOK_BOSS_4] =
     {
         .header = COMPOUND_STRING("Zone 4 Boss"),
-        .desc = COMPOUND_STRING("Team Rainbow Rocket Admin {COLOR BLUE}Proton{COLOR DARK_GRAY}\n"
+        .desc = COMPOUND_STRING("Rainbow Rocket Executive {COLOR BLUE}Proton{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Koffing{COLOR DARK_GRAY}, {COLOR GREEN}Drowzee{COLOR DARK_GRAY}, {COLOR GREEN}Beedrill{COLOR DARK_GRAY}\n\n"
                                 "Theme: {COLOR GREEN}Poison Gas{COLOR DARK_GRAY} + {COLOR GREEN}Venoshock{COLOR DARK_GRAY}"),
     },
@@ -204,7 +204,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_NOTEBOOK_BOSS_4_BRUTAL] =
     {
         .header = COMPOUND_STRING("Zone 4 Boss"),
-        .desc = COMPOUND_STRING("Team Rainbow Rocket Admin {COLOR BLUE}Proton{COLOR DARK_GRAY}\n"
+        .desc = COMPOUND_STRING("Rainbow Rocket Executive {COLOR BLUE}Proton{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Koffing{COLOR DARK_GRAY}, {COLOR GREEN}Drowzee{COLOR DARK_GRAY}, {COLOR GREEN}Beedrill{COLOR DARK_GRAY}\n"
                                 "Condition: {COLOR GREEN}Double Battle{COLOR DARK_GRAY}.\n\n"
                                 "Theme: {COLOR GREEN}Poison Gas{COLOR DARK_GRAY} + {COLOR GREEN}Venoshock{COLOR DARK_GRAY}"),
@@ -334,7 +334,7 @@ const struct HelpWindow gHelpWindowInfo[] =
         .header = COMPOUND_STRING("Zone 10 Boss"),
         .desc = COMPOUND_STRING("Gym Leader {COLOR BLUE}Jasmine{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Tinkatuff{COLOR DARK_GRAY}, {COLOR GREEN}Togedemaru{COLOR DARK_GRAY}, {COLOR GREEN}Steelix{COLOR DARK_GRAY}\n"
-                                "Condition: {COLOR GREEN}Permanent Sand{COLOR DARK_GRAY}.\n\n"
+                                "Condition: {COLOR GREEN}Permanent Sandstorm{COLOR DARK_GRAY}\n\n"
                                 "Theme: {COLOR GREEN}Steel{COLOR DARK_GRAY}-type specialist"),
     },
 
@@ -344,7 +344,7 @@ const struct HelpWindow gHelpWindowInfo[] =
         .desc = COMPOUND_STRING("Gym Leader {COLOR BLUE}Jasmine{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Tinkatuff{COLOR DARK_GRAY}, {COLOR GREEN}Togedemaru{COLOR DARK_GRAY}, {COLOR GREEN}Prinplup{COLOR DARK_GRAY},\n"
                                 "{COLOR GREEN}Steelix-Mega{COLOR DARK_GRAY}\n"
-                                "Condition: {COLOR GREEN}Permanent Sand{COLOR DARK_GRAY}.\n\n"
+                                "Condition: {COLOR GREEN}Permanent Sandstorm{COLOR DARK_GRAY}\n\n"
                                 "Theme: {COLOR GREEN}Steel{COLOR DARK_GRAY}-type specialist"),
     },
 
@@ -355,6 +355,203 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "{COLOR GREEN}Hippowdon{COLOR DARK_GRAY}, {COLOR GREEN}Gastrodon{COLOR DARK_GRAY}, {COLOR GREEN}Sandslash{COLOR DARK_GRAY}, {COLOR GREEN}Nidoking{COLOR DARK_GRAY}\n"
                                 "Conditions: {COLOR GREEN}Double Battle{COLOR DARK_GRAY}, {COLOR GREEN}Permanent Sand{COLOR DARK_GRAY}\n\n"
                                 "Theme: {COLOR GREEN}Ground{COLOR DARK_GRAY}-type specialist"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_11] =
+    {
+        .header = COMPOUND_STRING("Zone 11 Boss"),
+        .desc = COMPOUND_STRING("Rainbow Rocket Executive {COLOR BLUE}Archer{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Sandile{COLOR DARK_GRAY}, {COLOR GREEN}Dartrix{COLOR DARK_GRAY}, {COLOR GREEN}Houndoom{COLOR DARK_GRAY}\n"
+                                "Conditions: {COLOR GREEN}Double Battle{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Permanent Misty Terrain{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Swagger{COLOR DARK_GRAY}"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_11_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Zone 11 Boss"),
+        .desc = COMPOUND_STRING("Rainbow Rocket Executive {COLOR BLUE}Archer{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Sandile{COLOR DARK_GRAY}, {COLOR GREEN}Dartrix{COLOR DARK_GRAY}, {COLOR GREEN}Druddigon{COLOR DARK_GRAY}, {COLOR GREEN}Houndoom{COLOR DARK_GRAY}\n"
+                                "Conditions: {COLOR GREEN}Double Battle{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Permanent Misty Terrain{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Swagger{COLOR DARK_GRAY}"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_12] =
+    {
+        .header = COMPOUND_STRING("Zone 12 Boss"),
+        .desc = COMPOUND_STRING("Proprietor {COLOR BLUE}Inver{COLOR DARK_GRAY}\n"
+                                "Semi-randomized team of 3 Pokémon\n"
+                                "Condition: {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY}"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_12_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Zone 12 Boss"),
+        .desc = COMPOUND_STRING("Proprietor {COLOR BLUE}Inver{COLOR DARK_GRAY}\n"
+                                "Semi-randomized team of 4 Pokémon\n"
+                                "Condition: {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY}"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_13] =
+    {
+        .header = COMPOUND_STRING("Zone 13 Boss"),
+        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Serena{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Braixen{COLOR DARK_GRAY}, {COLOR GREEN}Vivillon{COLOR DARK_GRAY}, {COLOR GREEN}Piloswine{COLOR DARK_GRAY}, {COLOR GREEN}Gogoat{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR BLUE}Serena{COLOR DARK_GRAY}"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_13_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Zone 13 Boss"),
+        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Serena{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Braixen{COLOR DARK_GRAY}, {COLOR GREEN}Vivillon{COLOR DARK_GRAY}, {COLOR GREEN}Piloswine{COLOR DARK_GRAY}, {COLOR GREEN}Gogoat{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Clawitzer{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR BLUE}Serena{COLOR DARK_GRAY}"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_14] =
+    {
+        .header = COMPOUND_STRING("Zone 14 Boss"),
+        .desc = COMPOUND_STRING("Magma Admin {COLOR BLUE}Courtney{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Thievul{COLOR DARK_GRAY}, {COLOR GREEN}Nidoqueen{COLOR DARK_GRAY}, {COLOR GREEN}Swoobat{COLOR DARK_GRAY}, {COLOR GREEN}Pyroar{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Attract{COLOR DARK_GRAY}"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_14_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Zone 14 Boss"),
+        .desc = COMPOUND_STRING("Magma Admin {COLOR BLUE}Courtney{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Thievul{COLOR DARK_GRAY}, {COLOR GREEN}Nidoqueen{COLOR DARK_GRAY}, {COLOR GREEN}Swoobat{COLOR DARK_GRAY}, {COLOR GREEN}Tsareena{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Pyroar{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Attract{COLOR DARK_GRAY}"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_15] =
+    {
+        .header = COMPOUND_STRING("Zone 15 Gauntlet"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Sophocles' Pokémon{COLOR DARK_GRAY}\n\n"
+                                "Battle 1 (Double Battle): {COLOR GREEN}Minun{COLOR DARK_GRAY}, {COLOR GREEN}Ampharos{COLOR DARK_GRAY}\n"
+                                "Condition: {COLOR GREEN}Double Battle{COLOR DARK_GRAY}\n\n"
+                                "Battle 2 (Single Battle): {COLOR GREEN}Ampharos-Mega{COLOR DARK_GRAY}\n"
+                                "Condition: {COLOR GREEN}Single Battle{COLOR DARK_GRAY}\n\n"
+                                "Theme: Loose Pokémon"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_15_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Zone 15 Gauntlet"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Sophocles' Pokémon{COLOR DARK_GRAY}\n\n"
+                                "Battle 1: {COLOR GREEN}Minun{COLOR DARK_GRAY}, {COLOR GREEN}Ampharos{COLOR DARK_GRAY} (+1 all stats)\n"
+                                "Condition: {COLOR GREEN}Double Battle{COLOR DARK_GRAY}\n\n"
+                                "Battle 2: {COLOR GREEN}Ampharos-Mega{COLOR DARK_GRAY} (+1 all stats)\n"
+                                "Condition: {COLOR GREEN}Single Battle{COLOR DARK_GRAY}\n\n"
+                                "Theme: Loose Pokémon"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_16] =
+    {
+        .header = COMPOUND_STRING("Zone 16 Boss"),
+        .desc = COMPOUND_STRING("Galactic Commander {COLOR BLUE}Jupiter{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Oinkologne{COLOR DARK_GRAY}, {COLOR GREEN}Aromatisse{COLOR DARK_GRAY}, {COLOR GREEN}Victreebel{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Skuntank{COLOR DARK_GRAY}\n\n"
+                                "Theme: Smelly Pokémon"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_16_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Zone 16 Boss"),
+        .desc = COMPOUND_STRING("Galactic Commander {COLOR BLUE}Jupiter{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Oinkologne{COLOR DARK_GRAY}, {COLOR GREEN}Aromatisse{COLOR DARK_GRAY}, {COLOR GREEN}Victreebel{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Garbodor{COLOR DARK_GRAY}, {COLOR GREEN}Skuntank{COLOR DARK_GRAY}\n\n"
+                                "Theme: Smelly Pokémon"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_17] =
+    {
+        .header = COMPOUND_STRING("Zone 17 Boss"),
+        .desc = COMPOUND_STRING("Elite Four {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Slurpuff{COLOR DARK_GRAY}, {COLOR GREEN}Whimsicott{COLOR DARK_GRAY}, {COLOR GREEN}Wigglytuff{COLOR DARK_GRAY}, {COLOR GREEN}Mimikyu{COLOR DARK_GRAY}\n"
+                                "Condition: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Permanent Electric Terrain{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Fairy{COLOR DARK_GRAY}-type specialist"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_17_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Zone 17 Boss"),
+        .desc = COMPOUND_STRING("Elite Four {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Slurpuff{COLOR DARK_GRAY}, {COLOR GREEN}Whimsicott{COLOR DARK_GRAY}, {COLOR GREEN}Wigglytuff{COLOR DARK_GRAY}, {COLOR GREEN}Mimikyu{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Excadrill{COLOR DARK_GRAY}\n"
+                                "Condition: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Permanent Electric Terrain{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Fairy{COLOR DARK_GRAY}-type specialist"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_18] =
+    {
+        .header = COMPOUND_STRING("Zone 18 Boss"),
+        .desc = COMPOUND_STRING("Gym Leader {COLOR BLUE}Larry{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Komala{COLOR DARK_GRAY}, {COLOR GREEN}Dudunsparce{COLOR DARK_GRAY}, {COLOR GREEN}Noctowl{COLOR DARK_GRAY}, {COLOR GREEN}Staraptor{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Normal{COLOR DARK_GRAY}-type specialist"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_18_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Zone 18 Boss"),
+        .desc = COMPOUND_STRING("Gym Leader {COLOR BLUE}Larry{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Komala{COLOR DARK_GRAY}, {COLOR GREEN}Dudunsparce{COLOR DARK_GRAY}, {COLOR GREEN}Noctowl{COLOR DARK_GRAY}, {COLOR GREEN}Lickilicky{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Staraptor-Mega{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Normal{COLOR DARK_GRAY}-type specialist"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_19] =
+    {
+        .header = COMPOUND_STRING("Zone 19 Gauntlet"),
+        .desc = COMPOUND_STRING("2x Aqua Grunt, Aqua Admin {COLOR BLUE}Matt{COLOR DARK_GRAY}\n"
+                                "Grunt 1: {COLOR GREEN}Qwilfish{COLOR DARK_GRAY}, {COLOR GREEN}Drednaw{COLOR DARK_GRAY}\n"
+                                "Grunt 2: {COLOR GREEN}Chatot{COLOR DARK_GRAY}, {COLOR GREEN}Kingler{COLOR DARK_GRAY}\n"
+                                "{COLOR BLUE}Matt{COLOR DARK_GRAY}: {COLOR GREEN}Pelipper{COLOR DARK_GRAY}, {COLOR GREEN}Perrserker{COLOR DARK_GRAY}, {COLOR GREEN}Eelektross{COLOR DARK_GRAY}\n\n"
+                                "Theme: Aqua Gauntlet"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_19_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Zone 19 Gauntlet"),
+        .desc = COMPOUND_STRING("2x Aqua Grunt, Aqua Admin {COLOR BLUE}Matt{COLOR DARK_GRAY}\n"
+                                "Grunt 1: {COLOR GREEN}Qwilfish{COLOR DARK_GRAY}, {COLOR GREEN}Drednaw{COLOR DARK_GRAY}\n"
+                                "Grunt 2: {COLOR GREEN}Chatot{COLOR DARK_GRAY}, {COLOR GREEN}Kingler{COLOR DARK_GRAY}\n"
+                                "{COLOR BLUE}Matt{COLOR DARK_GRAY}: {COLOR GREEN}Pelipper{COLOR DARK_GRAY}, {COLOR GREEN}Perrserker{COLOR DARK_GRAY}, {COLOR GREEN}Floatzel{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Eelektross{COLOR DARK_GRAY}\n\n"
+                                "Theme: Aqua Gauntlet"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_20] =
+    {
+        .header = COMPOUND_STRING("Zone 20 Boss"),
+        .desc = COMPOUND_STRING("Gym Leader {COLOR BLUE}Cilan{COLOR DARK_GRAY}: {COLOR GREEN}Simisage{COLOR DARK_GRAY}, {COLOR GREEN}Serperior{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Torterra{COLOR DARK_GRAY}, {COLOR GREEN}Chesnaught{COLOR DARK_GRAY}\n"
+                                "Gym Leader {COLOR BLUE}Chili{COLOR DARK_GRAY}: {COLOR GREEN}Simisear{COLOR DARK_GRAY}, {COLOR GREEN}Typhlosion{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Skeledirge{COLOR DARK_GRAY}, {COLOR GREEN}Emboar{COLOR DARK_GRAY}\n"
+                                "Gym Leader {COLOR BLUE}Cress{COLOR DARK_GRAY}: {COLOR GREEN}Simipour{COLOR DARK_GRAY}, {COLOR GREEN}Swampert{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Samurott{COLOR DARK_GRAY}, {COLOR GREEN}Quaquaval{COLOR DARK_GRAY}\n"
+                                "Condition: {COLOR GREEN}Tag Battle{COLOR DARK_GRAY} (partner with one)\n"
+                                "Theme: {COLOR GREEN}Grass{COLOR DARK_GRAY}/{COLOR GREEN}Fire{COLOR DARK_GRAY}/{COLOR GREEN}Water{COLOR DARK_GRAY}-type specialists"),
+    },
+
+    [HELP_NOTEBOOK_BOSS_20_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Zone 20 Boss"),
+        .desc = COMPOUND_STRING("Gym Leader {COLOR BLUE}Cilan{COLOR DARK_GRAY}: {COLOR GREEN}Simisage{COLOR DARK_GRAY}, {COLOR GREEN}Serperior{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Torterra{COLOR DARK_GRAY}, {COLOR GREEN}Chesnaught{COLOR DARK_GRAY}, {COLOR GREEN}Sceptile-Mega{COLOR DARK_GRAY}\n"
+                                "Gym Leader {COLOR BLUE}Chili{COLOR DARK_GRAY}: {COLOR GREEN}Simisear{COLOR DARK_GRAY}, {COLOR GREEN}Typhlosion{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Skeledirge{COLOR DARK_GRAY}, {COLOR GREEN}Emboar{COLOR DARK_GRAY}, {COLOR GREEN}Charizard-Mega X{COLOR DARK_GRAY}\n"
+                                "Gym Leader {COLOR BLUE}Cress{COLOR DARK_GRAY}: {COLOR GREEN}Simipour{COLOR DARK_GRAY}, {COLOR GREEN}Swampert{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Samurott{COLOR DARK_GRAY}, {COLOR GREEN}Quaquaval{COLOR DARK_GRAY}, {COLOR GREEN}Feraligatr-Mega{COLOR DARK_GRAY}\n"
+                                "Condition: {COLOR GREEN}Tag Battle{COLOR DARK_GRAY} (partner with one)\n"
+                                "Theme: {COLOR GREEN}Grass{COLOR DARK_GRAY}/{COLOR GREEN}Fire{COLOR DARK_GRAY}/{COLOR GREEN}Water{COLOR DARK_GRAY}-type specialists"),
     },
 
     [HELP_CHANGES_ACCURACY] =
