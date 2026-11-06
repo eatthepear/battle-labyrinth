@@ -18,7 +18,8 @@ script Zone4A_EventScript_KimonoGirl_Intro {
 	waitmovement(0)
 	waitse
 	setspeaker("Kimono Girl")
-	msgbox(format("Oh, poor Kimono Girl, all alone in these woods.\pWon't you help show me the way out?"), MSGBOX_AUTOCLOSE)
+	msgbox(format("Oh, poor {COLOR BLUE}Kimono Girl{COLOR DARK_GRAY}, all alone in these woods.\pWon't you help show me the way out?"))
+	closemessage
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 3) {
 		applymovement(LOCALID_KIMONO_GIRL_4A, Common_Movement_WalkUp)
@@ -31,7 +32,8 @@ script Zone4A_EventScript_KimonoGirl_Intro {
 	setspeaker(SP_NAME_NONE)
 	msgbox(format("{PLAYER} agreed to help the {COLOR BLUE}Kimono Girl{COLOR DARK_GRAY}!"))
 	setspeaker("Kimono Girl")
-	msgbox(Zone4A_Text_KimonoGirl, MSGBOX_AUTOCLOSE)
+	msgbox(Zone4A_Text_KimonoGirl)
+	closemessage
 	setfollowernpc(LOCALID_KIMONO_GIRL_4A, FOLLOWER_NPC_FLAG_ALL)
 	applymovement(LOCALID_KIMONO_GIRL_4A, Common_Movement_FaceLeft)
 	waitmovement(0)
@@ -50,7 +52,7 @@ script Zone4A_EventScript_KimonoGirl {
 	call_if_eq(VAR_PUZZLE_DIFFICULTY, 1, EventScript_PuzzleHint)
 	call_if_eq(VAR_PUZZLE_DIFFICULTY, 2, EventScript_PuzzleSkip)
 	setspeaker("Kimono Girl")
-	msgbox(Zone4A_Text_KimonoGirl, MSGBOX_AUTOCLOSE)
+	msgbox(Zone4A_Text_KimonoGirl)
 	release
 	end
 }
