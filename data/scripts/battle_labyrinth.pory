@@ -743,7 +743,7 @@ script EventScript_Notebook_ZoneInfo {
 		case 3:
 			msgbox(format("{COLOR GREEN}Zone 3{COLOR DARK_GRAY} is a set of small forested islands with clear water."))
 		case 4:
-			msgbox(format("{COLOR GREEN}Zone 4{COLOR DARK_GRAY} is a tightly nestled woodland."))
+			msgbox(format("{COLOR GREEN}Zone 4{COLOR DARK_GRAY} is a tightly nestled woodland with a strange enchantment over it."))
 		case 5:
 			msgbox(format("{COLOR GREEN}Zone 5{COLOR DARK_GRAY} is a temperate forest with a Psychic Gym."))
 		case 6:
@@ -754,12 +754,16 @@ script EventScript_Notebook_ZoneInfo {
 		case 9:
 			msgbox(format("{COLOR GREEN}Zone 9{COLOR DARK_GRAY} is a dense jungle village."))
 		case 10:
-			msgbox(format("{COLOR GREEN}Zone 10{COLOR DARK_GRAY} is a desert valley."))
+			msgbox(format("{COLOR GREEN}Zone 10{COLOR DARK_GRAY} is a desert valley plagued by an endless {COLOR GREEN}Sandstorm{COLOR DARK_GRAY}."))
 		case 11:
+			msgbox(format("{COLOR GREEN}Zone 11{COLOR DARK_GRAY} is a forest maze filled with fog that causes {COLOR GREEN}Misty Terrain{COLOR DARK_GRAY}."))
 		case 12:
+			msgbox(format("{COLOR GREEN}Zone 12{COLOR DARK_GRAY} is a grassland split by a river."))
 		case 13:
 		case 14:
+			msgbox(format("{COLOR GREEN}Zone 13{COLOR DARK_GRAY} is the exterior fields and building above {COLOR GREEN}Zone 14{COLOR DARK_GRAY}'s underground mine."))
 		case 15:
+			msgbox(format("{COLOR GREEN}Zone 15{COLOR DARK_GRAY} is a cave covered in ice."))
 		case 16:
 		case 17:
 		case 18:
