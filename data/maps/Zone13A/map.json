@@ -163,7 +163,7 @@
       "y": 9,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE13_1"
+      "flag": "FLAG_HIDDEN_BERRY_ZONE13_1"
     },
     {
       "type": "sign",

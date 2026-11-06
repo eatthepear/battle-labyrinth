@@ -106,45 +106,5 @@
 
   ],
   "bg_events": [
-    {
-      "type": "hidden_item",
-      "x": 17,
-      "y": 68,
-      "elevation": 3,
-      "item": "ITEM_RED_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE20A_RED_SHARD1"
-    },
-    {
-      "type": "hidden_item",
-      "x": 38,
-      "y": 55,
-      "elevation": 0,
-      "item": "ITEM_RED_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE20A_RED_SHARD2"
-    },
-    {
-      "type": "hidden_item",
-      "x": 13,
-      "y": 50,
-      "elevation": 0,
-      "item": "ITEM_BLUE_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE20A_BLUE_SHARD"
-    },
-    {
-      "type": "hidden_item",
-      "x": 16,
-      "y": 25,
-      "elevation": 0,
-      "item": "ITEM_YELLOW_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE20A_YELLOW_SHARD"
-    },
-    {
-      "type": "hidden_item",
-      "x": 44,
-      "y": 18,
-      "elevation": 0,
-      "item": "ITEM_RED_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE20A_RED_SHARD3"
-    }
   ]
 }

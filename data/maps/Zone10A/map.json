@@ -269,7 +269,7 @@
       "y": 24,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE10_6"
+      "flag": "FLAG_HIDDEN_SHARD_ZONE10_1"
     },
     {
       "type": "hidden_item",
@@ -301,7 +301,7 @@
       "y": 26,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE10_7"
+      "flag": "FLAG_HIDDEN_SHARD_ZONE10_2"
     },
     {
       "type": "hidden_item",
@@ -309,7 +309,7 @@
       "y": 18,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE10_8"
+      "flag": "FLAG_HIDDEN_SHARD_ZONE10_3"
     },
     {
       "type": "hidden_item",
@@ -317,7 +317,7 @@
       "y": 44,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE10_9"
+      "flag": "FLAG_HIDDEN_SHARD_ZONE10_4"
     },
     {
       "type": "hidden_item",
@@ -325,7 +325,7 @@
       "y": 49,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE10_10"
+      "flag": "FLAG_HIDDEN_SHARD_ZONE10_5"
     }
   ]
 }

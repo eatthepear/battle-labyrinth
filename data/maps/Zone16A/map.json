@@ -249,8 +249,8 @@
       "x": 8,
       "y": 12,
       "elevation": 3,
-      "item": "ITEM_RED_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE16A_RED_SHARD"
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE16_1"
     },
     {
       "type": "sign",

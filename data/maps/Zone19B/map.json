@@ -143,56 +143,56 @@
       "x": 11,
       "y": 9,
       "elevation": 3,
-      "item": "ITEM_BLUE_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE19B_BLUE_SHARD"
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE19_1"
     },
     {
       "type": "hidden_item",
       "x": 23,
       "y": 11,
       "elevation": 3,
-      "item": "ITEM_STARDUST",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE19B_STARDUST"
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE19_2"
     },
     {
       "type": "hidden_item",
       "x": 30,
       "y": 7,
       "elevation": 3,
-      "item": "ITEM_PEARL",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE19B_PEARL"
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE19_3"
     },
     {
       "type": "hidden_item",
       "x": 34,
       "y": 6,
       "elevation": 3,
-      "item": "ITEM_YELLOW_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE19B_YELLOW_SHARD"
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE19_4"
     },
     {
       "type": "hidden_item",
       "x": 41,
       "y": 4,
       "elevation": 3,
-      "item": "ITEM_BIG_PEARL",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE19B_BIG_PEARL"
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE19_5"
     },
     {
       "type": "hidden_item",
       "x": 45,
       "y": 8,
       "elevation": 3,
-      "item": "ITEM_RED_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE19B_RED_SHARD"
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE19_6"
     },
     {
       "type": "hidden_item",
       "x": 39,
       "y": 15,
       "elevation": 3,
-      "item": "ITEM_STAR_PIECE",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE19B_STAR_PIECE"
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE19_7"
     }
   ]
 }

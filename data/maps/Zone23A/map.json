@@ -257,48 +257,48 @@
       "x": 11,
       "y": 4,
       "elevation": 3,
-      "item": "ITEM_ASPEAR_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE23A_ASPEAR_BERRY"
+      "item": "ITEM_ORAN_BERRY",
+      "flag": "FLAG_HIDDEN_BERRY_ZONE23_BERRY_1"
     },
     {
       "type": "hidden_item",
       "x": 24,
       "y": 19,
       "elevation": 3,
-      "item": "ITEM_SITRUS_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE23A_SITRUS_BERRY"
+      "item": "ITEM_ORAN_BERRY",
+      "flag": "FLAG_HIDDEN_BERRY_ZONE23_BERRY_2"
     },
     {
       "type": "hidden_item",
       "x": 48,
       "y": 19,
       "elevation": 3,
-      "item": "ITEM_CHERI_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE23A_CHERI_BERRY"
+      "item": "ITEM_ORAN_BERRY",
+      "flag": "FLAG_HIDDEN_BERRY_ZONE23_BERRY_3"
     },
     {
       "type": "hidden_item",
       "x": 15,
       "y": 47,
       "elevation": 3,
-      "item": "ITEM_CHESTO_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE23A_CHESTO_BERRY"
+      "item": "ITEM_ORAN_BERRY",
+      "flag": "FLAG_HIDDEN_BERRY_ZONE23_BERRY_4"
     },
     {
       "type": "hidden_item",
       "x": 43,
       "y": 53,
       "elevation": 3,
-      "item": "ITEM_PERSIM_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE23A_PERSIM_BERRY"
+      "item": "ITEM_ORAN_BERRY",
+      "flag": "FLAG_HIDDEN_BERRY_ZONE23_BERRY_5"
     },
     {
       "type": "hidden_item",
       "x": 72,
       "y": 41,
       "elevation": 3,
-      "item": "ITEM_LUM_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE23A_LUM_BERRY"
+      "item": "ITEM_ORAN_BERRY",
+      "flag": "FLAG_HIDDEN_BERRY_ZONE23_BERRY_6"
     }
   ]
 }

@@ -361,7 +361,7 @@
       "y": 19,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE12_1"
+      "flag": "FLAG_HIDDEN_BERRY_ZONE12_1"
     },
     {
       "type": "hidden_item",
@@ -369,7 +369,7 @@
       "y": 26,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE12_2"
+      "flag": "FLAG_HIDDEN_BERRY_ZONE12_2"
     },
     {
       "type": "hidden_item",
@@ -377,7 +377,7 @@
       "y": 16,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE12_6"
+      "flag": "FLAG_HIDDEN_SHARD_ZONE12_1"
     },
     {
       "type": "hidden_item",
@@ -385,7 +385,7 @@
       "y": 37,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE12_7"
+      "flag": "FLAG_HIDDEN_SHARD_ZONE12_2"
     },
     {
       "type": "sign",

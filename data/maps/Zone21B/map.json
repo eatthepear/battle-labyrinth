@@ -59,13 +59,5 @@
   ],
   "coord_events": [],
   "bg_events": [
-    {
-      "type": "hidden_item",
-      "x": 8,
-      "y": 10,
-      "elevation": 3,
-      "item": "ITEM_RED_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE21B_RED_SHARD"
-    }
   ]
 }

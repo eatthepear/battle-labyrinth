@@ -290,7 +290,7 @@
       "y": 23,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE7_1"
+      "flag": "FLAG_HIDDEN_BERRY_ZONE7_1"
     },
     {
       "type": "hidden_item",
@@ -298,7 +298,7 @@
       "y": 37,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE7_2"
+      "flag": "FLAG_HIDDEN_BERRY_ZONE7_2"
     },
     {
       "type": "hidden_item",
@@ -306,7 +306,7 @@
       "y": 28,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE7_3"
+      "flag": "FLAG_HIDDEN_BERRY_ZONE7_3"
     },
     {
       "type": "hidden_item",
@@ -314,7 +314,7 @@
       "y": 32,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE7_4"
+      "flag": "FLAG_HIDDEN_BERRY_ZONE7_4"
     },
     {
       "type": "sign",

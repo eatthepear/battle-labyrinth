@@ -91,7 +91,7 @@
       "y": 4,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE14_7"
+      "flag": "FLAG_HIDDEN_SHARD_ZONE14_2"
     },
     {
       "type": "hidden_item",
@@ -99,7 +99,7 @@
       "y": 27,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_ZONE14_8"
+      "flag": "FLAG_HIDDEN_SHARD_ZONE14_3"
     }
   ]
 }
