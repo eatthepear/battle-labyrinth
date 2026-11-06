@@ -222,6 +222,10 @@ static const u16 sBrendanMugshot_Pal[] = INCGFX_U16("graphics/ui_main_menu/brend
 static const u32 sBrendanMugshot_Gfx[] = INCGFX_U32("graphics/ui_main_menu/brendan_mugshot.png", ".4bpp.smol");
 static const u16 sMayMugshot_Pal[] = INCGFX_U16("graphics/ui_main_menu/may_mugshot.png", ".gbapal");
 static const u32 sMayMugshot_Gfx[] = INCGFX_U32("graphics/ui_main_menu/may_mugshot.png", ".4bpp.smol");
+static const u16 sEthanMugshot_Pal[] = INCGFX_U16("graphics/ui_main_menu/ethan_mugshot.png", ".gbapal");
+static const u32 sEthanMugshot_Gfx[] = INCGFX_U32("graphics/ui_main_menu/ethan_mugshot.png", ".4bpp.smol");
+static const u16 sKrisMugshot_Pal[] = INCGFX_U16("graphics/ui_main_menu/kris_mugshot.png", ".gbapal");
+static const u32 sKrisMugshot_Gfx[] = INCGFX_U32("graphics/ui_main_menu/kris_mugshot.png", ".4bpp.smol");
 
 
 //
@@ -259,6 +263,32 @@ static const struct CompressedSpriteSheet sSpriteSheet_MayMugshot =
 static const struct SpritePalette sSpritePal_MayMugshot =
 {
     .data = sMayMugshot_Pal,
+    .tag = TAG_MUGSHOT
+};
+
+static const struct CompressedSpriteSheet sSpriteSheet_EthanMugshot =
+{
+    .data = sEthanMugshot_Gfx,
+    .size = 64*64*1/2,
+    .tag = TAG_MUGSHOT,
+};
+
+static const struct SpritePalette sSpritePal_EthanMugshot =
+{
+    .data = sEthanMugshot_Pal,
+    .tag = TAG_MUGSHOT
+};
+
+static const struct CompressedSpriteSheet sSpriteSheet_KrisMugshot =
+{
+    .data = sKrisMugshot_Gfx,
+    .size = 64*64*1/2,
+    .tag = TAG_MUGSHOT,
+};
+
+static const struct SpritePalette sSpritePal_KrisMugshot =
+{
+    .data = sKrisMugshot_Pal,
     .tag = TAG_MUGSHOT
 };
 
@@ -608,7 +638,7 @@ static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spr
     {
     case 0:
         ResetTempTileDataBuffers();
-        if (gSaveBlock2Ptr->playerGender == MALE)
+        if (gSaveBlock2Ptr->currOutfitId == OUTFIT_BRENDAN || gSaveBlock2Ptr->currOutfitId == OUTFIT_ETHAN)
         {
             DecompressAndCopyTileDataToVram(1, sMainBgTiles, 0, 0, 0);
         }
@@ -621,7 +651,7 @@ static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spr
     case 1:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            if (gSaveBlock2Ptr->playerGender == MALE)
+            if (gSaveBlock2Ptr->currOutfitId == OUTFIT_BRENDAN || gSaveBlock2Ptr->currOutfitId == OUTFIT_ETHAN)
             {
                 DecompressDataWithHeaderWram(sMainBgTilemap, sBg1TilemapBuffer);
             }
@@ -646,21 +676,36 @@ static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spr
         break;
     case 4:
     {
-        if(gSaveBlock2Ptr->playerGender == MALE)
-        {
-            LoadCompressedSpriteSheet(&sSpriteSheet_IconBox);
-            LoadSpritePalette(&sSpritePal_IconBox);
-            LoadCompressedSpriteSheet(&sSpriteSheet_BrendanMugshot);
-            LoadSpritePalette(&sSpritePal_BrendanMugshot);
-            LoadPalette(sMainBgPalette, 0, 32);
-        }
-        else
-        {
-            LoadCompressedSpriteSheet(&sSpriteSheet_IconBoxFem);
-            LoadSpritePalette(&sSpritePal_IconBoxFem);
-            LoadCompressedSpriteSheet(&sSpriteSheet_MayMugshot);
-            LoadSpritePalette(&sSpritePal_MayMugshot);
-            LoadPalette(sMainBgPaletteFem, 0, 32);
+        switch (gSaveBlock2Ptr->currOutfitId) {
+            case OUTFIT_BRENDAN:
+            default:
+                LoadCompressedSpriteSheet(&sSpriteSheet_IconBox);
+                LoadSpritePalette(&sSpritePal_IconBox);
+                LoadCompressedSpriteSheet(&sSpriteSheet_BrendanMugshot);
+                LoadSpritePalette(&sSpritePal_BrendanMugshot);
+                LoadPalette(sMainBgPalette, 0, 32);
+                break;
+            case OUTFIT_MAY:
+                LoadCompressedSpriteSheet(&sSpriteSheet_IconBoxFem);
+                LoadSpritePalette(&sSpritePal_IconBoxFem);
+                LoadCompressedSpriteSheet(&sSpriteSheet_MayMugshot);
+                LoadSpritePalette(&sSpritePal_MayMugshot);
+                LoadPalette(sMainBgPaletteFem, 0, 32);
+                break;
+            case OUTFIT_ETHAN:
+                LoadCompressedSpriteSheet(&sSpriteSheet_IconBox);
+                LoadSpritePalette(&sSpritePal_IconBox);
+                LoadCompressedSpriteSheet(&sSpriteSheet_EthanMugshot);
+                LoadSpritePalette(&sSpritePal_EthanMugshot);
+                LoadPalette(sMainBgPalette, 0, 32);
+                break;
+            case OUTFIT_KRIS:
+                LoadCompressedSpriteSheet(&sSpriteSheet_IconBoxFem);
+                LoadSpritePalette(&sSpritePal_IconBoxFem);
+                LoadCompressedSpriteSheet(&sSpriteSheet_KrisMugshot);
+                LoadSpritePalette(&sSpritePal_KrisMugshot);
+                LoadPalette(sMainBgPaletteFem, 0, 32);
+                break;
         }
         LoadPalette(sScrollBgPalette, 16, 32);
     }

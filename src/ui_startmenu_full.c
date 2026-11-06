@@ -1118,7 +1118,7 @@ static bool8 StartMenuFull_LoadGraphics(void) // Load the Tilesets, Tilemaps, Sp
     {
     case 0:
         ResetTempTileDataBuffers();
-        if (gSaveBlock2Ptr->playerGender == FEMALE)
+        if (gSaveBlock2Ptr->currOutfitId == OUTFIT_MAY || gSaveBlock2Ptr->currOutfitId == OUTFIT_KRIS)
         {
             DecompressAndCopyTileDataToVram(1, sStartMenuTilesAlt, 0, 0, 0);
         }
@@ -1140,7 +1140,7 @@ static bool8 StartMenuFull_LoadGraphics(void) // Load the Tilesets, Tilemaps, Sp
     case 2:
     {
         struct SpritePalette cursorPal = {sSpritePal_Cursor.data, sSpritePal_Cursor.tag};
-        if (gSaveBlock2Ptr->playerGender == FEMALE)
+        if (gSaveBlock2Ptr->currOutfitId == OUTFIT_MAY || gSaveBlock2Ptr->currOutfitId == OUTFIT_KRIS)
         {
             LoadPalette(sStartMenuPaletteAlt, 0, 16);
             LoadPalette(sHP_PalAlt, 32, 16);
