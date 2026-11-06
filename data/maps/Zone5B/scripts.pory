@@ -36,6 +36,7 @@ script Zone5B_EventScript_Liza {
 	msgbox(format("You will become even stronger! I've battled you, so I know."))
     setflag(FLAG_BEAT_BOSS_5)
 	setflag(FLAG_BADGE02_GET)
+	setvar(VAR_ZONE_5_STATE, 1)
 	release
 	end
 }
@@ -95,7 +96,6 @@ script Zone5B_EventScript_FloorSwitch {
 
 script Zone5B_EventScript_WarpToEntrance {
 	lockall
-	setvar(VAR_ZONE_5_STATE, 1)
 	warpmossdeepgym(MAP_ZONE5B, 0, 31)
 	waitstate
 	releaseall

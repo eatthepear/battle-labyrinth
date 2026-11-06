@@ -159,9 +159,11 @@ script EventScript_PuzzleSkip {
 				return
 			}
 		case PBL_PUZZLE_ZONE_5_GYM:
-			msgbox(format("Get a hint for Zone 5 Gym?"), MSGBOX_YESNO)
+			msgbox(format("Skip the puzzle in Zone 5 Gym?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				msgbox(format("TODO SKIP"))
+				msgbox(format("After some looking around, {PLAYER} found a super secret and mysterious hallway!"))
+				warp(MAP_ZONE5B, 11)
+				waitstate
 			} else {
 				closemessage
 				return
