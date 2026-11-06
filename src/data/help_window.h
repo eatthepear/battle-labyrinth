@@ -226,7 +226,8 @@ const struct HelpWindow gHelpWindowInfo[] =
         .desc = COMPOUND_STRING("There are hard level caps built in, which\n"
                                 "typically increase by 2 every {COLOR GREEN}Zone{COLOR DARK_GRAY}.\n\n"
                                 "Defeated wild Pokémon don't give experience\n"
-                                "except on {COLOR GREEN}Easy{COLOR DARK_GRAY} difficulty."),
+                                "except on {COLOR GREEN}Easy{COLOR DARK_GRAY} difficulty."
+                                "A few Pokémon have their experience yields fixed."),
     },
 
     [HELP_CHANGES_ABILITIES] =
