@@ -780,16 +780,6 @@ script EventScript_Notebook_ZoneInfo {
 		case 33:
 		case 34:
 		case 35:
-		case 36:
-		case 37:
-		case 38:
-		case 39:
-		case 40:
-		case 41:
-		case 42:
-		case 43:
-		case 44:
-		case 45:
 			msgbox(format("ZONE DESCRIPTION FILLER"))
 	}
 	msgbox(format("The next page shows the number of opponents in {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}.\lRead on?"), MSGBOX_YESNO)
@@ -997,16 +987,6 @@ script EventScript_Notebook_ZoneInfo {
 		case 33:
 		case 34:
 		case 35:
-		case 36:
-		case 37:
-		case 38:
-		case 39:
-		case 40:
-		case 41:
-		case 42:
-		case 43:
-		case 44:
-		case 45:
 			msgbox(format("This text hasn't been finished yet!"))
 	}
 }
