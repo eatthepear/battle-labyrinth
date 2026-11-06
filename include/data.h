@@ -433,9 +433,9 @@ struct Outfit
     u8 isHidden:1; //! Will not shows up in the menu if locked.
     const u8 *name;
     const u8 *desc;
-    enum TrainerPicID trainerPics[GENDER_COUNT];
-    u16 avatarGfxIds[GENDER_COUNT][PLAYER_AVATAR_STATE_COUNT];
-    u16 animGfxIds[GENDER_COUNT][PLAYER_AVATAR_GFX_COUNT];
+    enum TrainerPicID trainerPics;
+    u16 avatarGfxIds[PLAYER_AVATAR_STATE_COUNT];
+    u16 animGfxIds[PLAYER_AVATAR_GFX_COUNT];
 };
 
 extern const struct Outfit gOutfits[OUTFIT_COUNT];

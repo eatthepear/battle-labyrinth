@@ -3339,31 +3339,20 @@ u8 LoadObjectEventPaletteCopy(u16 originalTag, u16 copyTag)
 u8 LoadPlayerObjectEventPalette(enum Gender gender)
 {
     u16 paletteTag;
-    switch (gender)
-    {
-    default:
-    case MALE:
-        switch (gSaveBlock2Ptr->currOutfitId) {
-            case OUTFIT_JOHTO:
-                paletteTag = OBJ_EVENT_PAL_TAG_ETHAN;
-                break;
-            case OUTFIT_HOENN:
-            default:
-                paletteTag = OBJ_EVENT_PAL_TAG_BRENDAN;
-                break;
-        }
-        break;
-    case FEMALE:
-        switch (gSaveBlock2Ptr->currOutfitId) {
-            case OUTFIT_JOHTO:
-                paletteTag = OBJ_EVENT_PAL_TAG_KRIS;
-                break;
-            case OUTFIT_HOENN:
-            default:
-                paletteTag = OBJ_EVENT_PAL_TAG_MAY;
-                break;
-        }
-        break;
+    switch (gSaveBlock2Ptr->currOutfitId) {
+        case OUTFIT_BRENDAN:
+        default:
+            paletteTag = OBJ_EVENT_PAL_TAG_BRENDAN;
+            break;
+        case OUTFIT_MAY:
+            paletteTag = OBJ_EVENT_PAL_TAG_MAY;
+            break;
+        case OUTFIT_KRIS:
+            paletteTag = OBJ_EVENT_PAL_TAG_KRIS;
+            break;
+        case OUTFIT_ETHAN:
+            paletteTag = OBJ_EVENT_PAL_TAG_ETHAN;
+            break;
     }
     return LoadObjectEventPalette(paletteTag);
 }

@@ -507,7 +507,7 @@ static void SetupOutfitMenu_PrintStr(void)
 
 static inline void SetupOutfitMenu_Sprites_DrawTrainerSprite(bool32 update, bool32 unlocked)
 {
-    u32 trainerPicID = GetPlayerTrainerPicIdByOutfitGender(sOutfitMenu->idx, gSaveBlock2Ptr->playerGender);
+    u32 trainerPicID = GetPlayerTrainerPicIdByOutfit(sOutfitMenu->idx);
     u32 frontPalSlot = sOutfitMenu->slotId ? 9 : 10;
     u32 backPalSlot = sOutfitMenu->slotId ? 12 : 13;
     if (update)
@@ -647,7 +647,7 @@ static void ForEachCB_PopulateOutfitOverworlds(u32 idx, u32 col, u32 row)
     if (i >= OUTFIT_COUNT || idx >= sOutfitMenu->listCount)
         return;
 
-    gfx = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(i, PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender);
+    gfx = GetPlayerAvatarGraphicsIdByOutfitStateId(i, PLAYER_AVATAR_STATE_NORMAL);
     x = ((col % GRID_COLS) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0];
     y = ((row % GRID_ROWS) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0];
 
@@ -904,12 +904,12 @@ static void Task_CloseOutfitMenu(u8 taskId)
 
 //! misc funcs
 
-u32 GetPlayerTrainerPicIdByOutfitGender(u32 outfitId, u32 gender)
+u32 GetPlayerTrainerPicIdByOutfit(u32 outfitId)
 {
     if (outfitId > OUTFIT_NONE && outfitId < OUTFIT_COUNT)
-        return gOutfits[outfitId].trainerPics[gender];
+        return gOutfits[outfitId].trainerPics;
     else
-        return gOutfits[0].trainerPics[gender];
+        return gOutfits[0].trainerPics;
 }
 
 u16 *GetOutfitPointer(u16 id)
@@ -972,8 +972,7 @@ void SetCurrentOutfitGfxIntoVar(struct ScriptContext *ctx)
 {
     u32 varId = ScriptReadHalfword(ctx);
     u32 state = ScriptReadHalfword(ctx);
-    u32 gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(
-        gSaveBlock2Ptr->currOutfitId, state, gSaveBlock2Ptr->playerGender);
+    u32 gfxId = GetPlayerAvatarGraphicsIdByOutfitStateId(gSaveBlock2Ptr->currOutfitId, state);
 
     VarSet(varId, gfxId);
 }

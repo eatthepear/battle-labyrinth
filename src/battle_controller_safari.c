@@ -277,7 +277,7 @@ void SafariBufferExecCompleted(enum BattlerId battler)
 
 static void SafariHandleDrawTrainerPic(enum BattlerId battler)
 {
-    enum TrainerPicID trainerPicId = GetPlayerTrainerPicIdByOutfitGender(gSaveBlock2Ptr->currOutfitId, gSaveBlock2Ptr->playerGender);
+    enum TrainerPicID trainerPicId = GetPlayerTrainerPicIdByOutfit(gSaveBlock2Ptr->currOutfitId);
 
     BtlController_HandleDrawTrainerPic(battler, trainerPicId, FALSE,
                                        80, 80 + 4 * (8 - GetTrainerBackPicCoords(trainerPicId)->size),

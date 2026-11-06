@@ -5,7 +5,7 @@ void OpenOutfitMenu(MainCallback retCB);
 void Task_OpenOutfitMenu(u8 taskId);
 
 //! misc funcs
-u32 GetPlayerTrainerPicIdByOutfitGender(u32 outfitId, u32 gender);
+u32 GetPlayerTrainerPicIdByOutfit(u32 outfitId);
 u16 *GetOutfitPointer(u16 id);
 u16 UnlockOutfit(u16 id);
 u16 ToggleOutfit(u16 id);
