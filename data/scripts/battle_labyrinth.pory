@@ -106,10 +106,17 @@ script EventScript_PuzzleHint {
 				return
 			}
 		case PBL_PUZZLE_ZONE_34B:
+			msgbox(format("Get a hint for Zone 34?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("The hint is: R Y B Y R"))
+			} else {
+				closemessage
+				return
+			}
 		case PBL_PUZZLE_ZONE_34C:
 			msgbox(format("Get a hint for Zone 34?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				msgbox(format("The hint is: R Y B Y R, TODO"))
+				msgbox(format("The hint is: O Y R B O B R"))
 			} else {
 				closemessage
 				return
@@ -230,7 +237,33 @@ script EventScript_PuzzleSkip {
 				return
 			}
 		case PBL_PUZZLE_ZONE_34B:
+			msgbox(format("Skip this room's puzzle?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				fadescreenswapbuffers(FADE_TO_BLACK)
+				setvar(VAR_TEMP_5, 0)
+				delay(10)
+				fadescreenswapbuffers(FADE_FROM_BLACK)
+				setmetatile(13, 6, METATILE_RocketCastle_Warp, 0)
+				playse(SE_EXP_MAX)
+				special(DrawWholeMapView)
+				waitse
+				msgbox(format("After some trial and error, {PLAYER} figured out the puzzle!"))
+				setflag(FLAG_ZONE34B_PUZZLE_COMPLETED)
+			}
 		case PBL_PUZZLE_ZONE_34C:
+			msgbox(format("Skip this room's puzzle?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				fadescreenswapbuffers(FADE_TO_BLACK)
+				setvar(VAR_TEMP_5, 0)
+				delay(10)
+				fadescreenswapbuffers(FADE_FROM_BLACK)
+				setmetatile(13, 6, METATILE_RocketCastle_Warp, 0)
+				playse(SE_EXP_MAX)
+				special(DrawWholeMapView)
+				waitse
+				msgbox(format("After some trial and error, {PLAYER} figured out the puzzle!"))
+				setflag(FLAG_ZONE34C_PUZZLE_COMPLETED)
+			}
 		case PBL_PUZZLE_ZONE_34F:
 		case PBL_PUZZLE_ZONE_34G:
 		case PBL_PUZZLE_ZONE_34J:

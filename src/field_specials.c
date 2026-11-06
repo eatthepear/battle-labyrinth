@@ -5012,10 +5012,12 @@ u16 CheckWhichPuzzle(void)
         return PBL_PUZZLE_ZONE_30;
     }
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE34B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE34B)) {
-        return PBL_PUZZLE_ZONE_34B;
+        if (FlagGet(FLAG_ZONE34B_PUZZLE_COMPLETED) == FALSE)
+            return PBL_PUZZLE_ZONE_34B;
     }
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE34C) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE34C)) {
-        return PBL_PUZZLE_ZONE_34C;
+        if (FlagGet(FLAG_ZONE34C_PUZZLE_COMPLETED) == FALSE)
+            return PBL_PUZZLE_ZONE_34C;
     }
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE34F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE34F)) {
         return PBL_PUZZLE_ZONE_34F;
