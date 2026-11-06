@@ -699,7 +699,7 @@ static void InputCB_Fail(void)
 // the return value here is the count
 static u32 BuildOutfitLists(void)
 {
-    u32 i = 0, j = 1;
+    u32 i = 0, j = 0;
     sOutfitMenu->list = AllocZeroed(CountAndFilterTotalOutfit() * sizeof(u8));
     while (j < OUTFIT_COUNT)
     {
