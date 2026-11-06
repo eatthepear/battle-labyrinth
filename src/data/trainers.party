@@ -387,7 +387,7 @@ Double Battle: No
 Bunnelby @ Oran Berry
 Sassy Nature
 Ability: Cheek Pouch
-Level: 7
+Level: 6
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 - Leer
@@ -395,7 +395,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Skwovet @ Oran Berry
 Adamant Nature
 Ability: Cheek Pouch
-Level: 9
+Level: 8
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tackle
 - Tail Whip
@@ -4610,7 +4610,7 @@ Pool Prune: Non Ground Rock
 Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
 === TRAINER_PBL_SHAWN ===
-Name: Rusty
+Name: Shawn
 Class: Pkmn Ranger
 Pic: Pokemon Ranger M
 Music: Cool
@@ -6569,55 +6569,71 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Magikarp
-
-Sunkern
-
-Azurill
-
-Igglybuff
-
-Sentret
-
-Poochyena
-
-Lotad
-
-Seedot
+Makuhita
 
 Bunnelby
 
-Zigzagoon
-
-Zigzagoon Galar
-
 Whismur
 
+Rolycoly
+
+Pawmi
+
+Zubat
+
+Togepi
+
 Starly
+
+Combee
 
 Rookidee
 
 Nickit
 
-Bidoof
+Wiglett
 
 Pidgey
+
+Spinarak
+
+Hoppip
+
+Slugma
+
+Bidoof
+
+Fomantis
+
+Gossifleur
 
 Rattata
 
 Rattata Alola
 
+Patrat
+
 Yungoos
 
 Lechonk
 
-Patrat
+Flittle
+
+Spearow
+
+Hoothoot
 
 Skitty
 
+Venipede
+
 Smoliv
 
-Hoothoot
+Diglett
+
+Ledyba
+
+Nincada
 
 Shinx
 
@@ -6627,107 +6643,75 @@ Pikipek
 
 Taillow
 
+Wingull
+
+Surskit
+
+Yamper
+
+Tadbulb
+
+Rellor
+
+Nidoran F
+
+Nidoran M
+
+Cherubi
+
 Lillipup
 
 Skwovet
 
-Fletchling
-
-Purrloin
-
-Pichu
-
 Mareep
 
-Bounsweet
+Poochyena
 
-Cleffa
+Zigzagoon
 
-Fomantis
+Zigzagoon Galar
 
-Gossifleur
-
-Pawmi
-
-Ledyba
-
-Spinarak
-
-Wingull
-
-Hoppip
-
-Yamper
+Wurmple
 
 Slakoth
 
-Tadbulb
-
-Nidoran M
-
-Nidoran F
-
-Cherubi
+Meditite
 
 Budew
 
+Purrloin
+
+Roggenrola
+
+Cottonee
+
+Petilil
+
+Fletchling
+
+Rockruff
+
+Arrokuda
+
+Nacli
+
+Wattrel
+
 Paras
-
-Metapod
-
-Kakuna
-
-Silcoon
-
-Cascoon
 
 Chingling
 
-Venipede
-
-Wooper
-
-Wooper Paldea
-
-Wiglett
-
-Diglett
-
-Diglett Alola
-
-Slugma
-
-Surskit
-
-Milcery
-
-Grubbin
-
-Sewaddle
-
-Fidough
-
-Woobat
-
-Pansage
-
-Pansear
-
-Panpour
-
-Spearow
-
-Wooloo
+Morelull
 
 Chewtle
 
 Ekans
 
+Meowth
+
+Meowth Alola
+
 Barboach
-
-Tympole
-
-Foongus
 
 Shroomish
 
@@ -6735,55 +6719,23 @@ Electrike
 
 Blitzle
 
-Vulpix
+Tympole
 
 Sandshrew
 
-Poliwag
+Vulpix
 
-Bellsprout
+Geodude
+
+Geodude Alola
 
 Snubbull
 
 Remoraid
 
-Gulpin
-
-Flabébé
+Minccino
 
 Ducklett
-
-Marill
-
-Jigglypuff
-
-Pikachu
-
-Mime Jr.
-
-Slowpoke
-
-Slowpoke Galar
-
-Oddish
-
-Psyduck
-
-Cubone
-
-Goldeen
-
-Phanpy
-
-Buizel
-
-Finneon
-
-Deerling
-
-Buneary
-
-Skiddo
 
 === TRAINER_POOL_ZONE_4 ===
 Name: Trainer Pool
@@ -6793,53 +6745,87 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Chingling
+Spearow
+
+Hoothoot
 
 Venipede
-
-Wooper
-
-Wooper Paldea
-
-Wiglett
 
 Diglett
 
 Diglett Alola
 
-Slugma
+Ledyba
+
+Nincada
+
+Shinx
+
+Pidove
+
+Pikipek
+
+Hatenna
+
+Impidimp
+
+Taillow
 
 Surskit
 
-Milcery
+Yamper
 
-Grubbin
+Nidoran F
 
-Sewaddle
+Nidoran M
 
-Fidough
+Cherubi
 
-Woobat
+Lillipup
 
-Pansage
+Skwovet
 
-Pansear
+Mareep
 
-Panpour
+Slakoth
 
-Spearow
+Budew
 
-Wooloo
+Purrloin
+
+Cottonee
+
+Petilil
+
+Fletchling
+
+Rockruff
+
+Paras
+
+Chingling
+
+Morelull
 
 Chewtle
 
 Ekans
 
-Barboach
+Meowth
 
-Tympole
+Meowth Alola
 
-Foongus
+Pineco
+
+Bonsly
+
+Munna
+
+Gothita
+
+Solosis
+
+Inkay
 
 Shroomish
 
@@ -6847,109 +6833,61 @@ Electrike
 
 Blitzle
 
-Vulpix
+Tympole
 
 Sandshrew
 
-Poliwag
-
-Bellsprout
+Vulpix
 
 Snubbull
 
-Remoraid
+Minccino
 
-Gulpin
+Grubbin
 
-Flabébé
+Mankey
+
+Numel
+
+Timburr
 
 Ducklett
 
-Marill
-
-Jigglypuff
-
-Pikachu
-
-Mime Jr.
-
-Slowpoke
-
-Slowpoke Galar
-
-Oddish
-
-Psyduck
-
-Cubone
-
-Goldeen
-
-Phanpy
-
-Buizel
-
-Finneon
-
-Deerling
-
-Buneary
-
-Skiddo
-
-Spewpa
-
-Joltik
-
-Shelmet
-
-Karrablast
-
-Exeggcute
-
-Drowzee
-
-Trubbish
-
-Spoink
-
-Maschiff
-
-Spritzee
-
-Swirlix
-
-Espurr
-
-Cottonee
-
-Petilil
-
-Flittle
-
-Hatenna
-
-Impidimp
-
-Bonsly
-
-Gothita
-
-Solosis
-
-Munna
-
-Wattrel
-
-Morelull
-
-Makuhita
-
-Minccino
+Flabébé
 
 Cutiefly
 
-Capsakid
+Sizzlipede
+
+Tandemaus
+
+Abra
+
+Swablu
+
+Sewaddle
+
+Fidough
+
+Slowpoke
+
+Pansage
+
+Pansear
+
+Panpour
+
+Goldeen
+
+Woobat
+
+Teddiursa
+
+Phanpy
+
+Spoink
+
+Deerling
 
 === TRAINER_POOL_ZONE_4_GRUNTS ===
 Name: Trainer Pool
@@ -6959,61 +6897,77 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
+Venipede
+
+Impidimp
+
+Dewpider
+
+Nidoran F
+
+Nidoran M
+
 Poochyena
 
 Zigzagoon Galar
 
-Nickit
-
-Rattata
-
-Rattata Alola
-
-Yungoos
-
-Patrat
-
-Hoothoot
-
-Purrloin
-
-Nidoran M
-
-Nidoran F
-
-Venipede
-
-Wooper Paldea
+Paras
 
 Ekans
 
-Sandshrew
+Meowth
+
+Meowth Alola
+
+Inkay
+
+Shroodle
+
+Foongus
+
+Bellsprout
 
 Gulpin
+
+Croagunk
+
+Venonat
+
+Glameow
+
+Mime Jr.
 
 Slowpoke Galar
 
 Oddish
 
+Psyduck
+
+Cubone
+
+Joltik
+
+Grimer
+
+Grimer Alola
+
+Exeggcute
+
 Drowzee
+
+Voltorb
+
+Voltorb Hisui
 
 Houndour
 
-Zubat
+Stunky
 
-Hatenna
+Skorupi
 
-Impidimp
+Trubbish
 
-Gothita
-
-Solosis
-
-Munna
-
-Meowth
-
-Meowth Alola
+Cacnea
 
 === TRAINER_POOL_ZONE_5 ===
 Name: Trainer Pool
