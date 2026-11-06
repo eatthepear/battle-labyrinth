@@ -1408,10 +1408,10 @@ void Task_OpenNotesFromStartMenu(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
-        SetMainCallback2(sStartMenuDataPtr->savedCallback);
         StartMenuFull_FreeResources();
-        LockPlayerFieldControls();
         ScriptContext_SetupScript(EventScript_Notebook);
+        ScriptContext_Stop();
+        SetMainCallback2(CB2_ReturnToFieldContinueScript);
         DestroyTask(taskId);
     }
 }
