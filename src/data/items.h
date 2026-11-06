@@ -14981,7 +14981,7 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("Time Crystal"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A mysterious crystal\n"
+            "A strange crystal\n"
             "that can alter the\n"
             "time of day."),
         .importance = 1,
