@@ -395,6 +395,14 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Theme: {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY}"),
     },
 
+    [HELP_NOTEBOOK_OPTIONAL_12] =
+    {
+        .header = COMPOUND_STRING("Zone 12 Optional (requires Strength)"),
+        .desc = COMPOUND_STRING("Aspiring Leader {COLOR BLUE}Charles{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Fearow{COLOR DARK_GRAY}, {COLOR GREEN}Bombirdier{COLOR DARK_GRAY}, {COLOR GREEN}Swanna{COLOR DARK_GRAY}, {COLOR GREEN}Hawlucha{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Flying{COLOR DARK_GRAY}-type specialist"),
+    },
+
     [HELP_NOTEBOOK_BOSS_13] =
     {
         .header = COMPOUND_STRING("Zone 13 Boss"),

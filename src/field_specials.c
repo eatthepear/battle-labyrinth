@@ -4688,6 +4688,7 @@ u16 GetNumTrainersRemaining(void)
                 count += 1;
         }
         count += !FlagGet(FLAG_BEAT_BOSS_12);
+        count += !HasTrainerBeenFought(TRAINER_PBL_CHARLES_OPTIONAL_12);
         break;
     case 13:
     case 14:
