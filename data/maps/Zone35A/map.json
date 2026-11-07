@@ -123,6 +123,25 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_ZONE_35_STATE",
+      "var_value": "0",
+      "script": "Zone35A_EventScript_Colress_LastCheck"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_ZONE_35_STATE",
+      "var_value": "0",
+      "script": "Zone35A_EventScript_Colress_LastCheck"
+    }
+  ],
   "bg_events": []
 }

@@ -1,14 +1,14 @@
 mapscripts Zone35E_MapScripts {
     MAP_SCRIPT_ON_LOAD {
-        if (var(VAR_ZONE_35_STATE) == 2) {
+        if (var(VAR_ZONE_35_STATE) == 3) {
             call(PokemonLeague_EliteFour_EventScript_CloseDoor)
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_ZONE_35_STATE, 1 {
+        VAR_ZONE_35_STATE, 2 {
             lockall
             call(PokemonLeague_EliteFour_EventScript_WalkInCloseDoor)
-            setvar(VAR_ZONE_35_STATE, 2)
+            setvar(VAR_ZONE_35_STATE, 3)
             releaseall
         }
     ]

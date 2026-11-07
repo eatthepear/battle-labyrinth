@@ -1,8 +1,8 @@
 mapscripts Zone35K_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_ZONE_35_STATE, 4 {
+        VAR_ZONE_35_STATE, 5 {
             lockall
-            setvar(VAR_ZONE_35_STATE, 5)
+            setvar(VAR_ZONE_35_STATE, 6)
             call(Zone35K_EventScript_EnterRoom)
             releaseall
         }

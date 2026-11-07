@@ -8,3 +8,30 @@ script Zone35A_EventScript_Colress {
     release
     end
 }
+
+script Zone35A_EventScript_Colress_LastCheck {
+    lockall
+    applymovement(LOCALID_COLRESS_35A, Common_Movement_FaceRight)
+    applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
+    waitmovement
+    setspeaker(SP_NAME_COLRESS)
+    msgbox(format("Dear {PLAYER}, you are about to enter the Elite Four.\pOnce you enter, you won't be able to leave until you defeat all foes, or are defeated.\pAre you SURE you've finished all the necessary preparations?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        setspeaker(SP_NAME_COLRESS)
+        msgbox(format("That seems wise."))
+        closemessage
+        applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
+        applymovement(LOCALID_COLRESS_35A, Common_Movement_FaceDown)
+        waitmovement
+        releaseall
+        end
+    }
+    setspeaker(SP_NAME_COLRESS)
+    msgbox(format("Very well then.\pShow me what you and your Pokémon are capable of!"))
+    closemessage
+    applymovement(LOCALID_COLRESS_35A, Common_Movement_FaceDown)
+    waitmovement
+    setvar(VAR_ZONE_35_STATE, 1)
+    releaseall
+    end
+}
