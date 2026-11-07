@@ -531,8 +531,8 @@ static const u8 sText_Desc_Music[]          = _("Choose what type of music plays
 static const u8 *const sOptionMenuItemDescriptionsSound[MENUITEM_SOUND_COUNT][6] =
 {
     [MENUITEM_SOUND_SOUND]       = {sText_Desc_SoundMono,            sText_Desc_SoundStereo, sText_Empty, sText_Empty, sText_Empty, sText_Empty},
-    [MENUITEM_SOUND_SURF]   = {COMPOUND_STRING("No special music will play while\nSurfing."),            sText_Desc_Music, sText_Desc_Music, sText_Desc_Music, sText_Desc_Music, sText_Desc_Music},
-    [MENUITEM_SOUND_BIKE]   = {COMPOUND_STRING("No special music will play while\non a Bike."),            sText_Desc_Music, sText_Desc_Music, sText_Desc_Music, sText_Desc_Music, sText_Desc_Music},
+    [MENUITEM_SOUND_SURF]   = {sText_Desc_Music, sText_Desc_Music, sText_Desc_Music, sText_Desc_Music, sText_Desc_Music, COMPOUND_STRING("No special music will play while\nSurfing."),},
+    [MENUITEM_SOUND_BIKE]   = {sText_Desc_Music, sText_Desc_Music, sText_Desc_Music, sText_Desc_Music, sText_Desc_Music, COMPOUND_STRING("No special music will play while\non a Bike."),},
     [MENUITEM_SOUND_SANCTUARY]   = {sText_Desc_Music,            sText_Empty, sText_Empty, sText_Empty, sText_Empty, sText_Empty},
     [MENUITEM_SOUND_WILD]   = {sText_Desc_Music,            sText_Empty, sText_Empty, sText_Empty, sText_Empty, sText_Empty},
     [MENUITEM_SOUND_TRAINER]   = {sText_Desc_Music,            sText_Empty, sText_Empty, sText_Empty, sText_Empty, sText_Empty},
@@ -1166,45 +1166,45 @@ static void Task_OptionMenuProcessInput(u8 taskId)
                     switch (cursor) { // which sound option r u in
                         case MENUITEM_SOUND_SURF:
                             switch (sOptions->sel_sound[cursor]) {
-                                case 0:
                                 default:
-                                    break;
-                                case 1:
+                                case 0:
                                     PlayBGM(MUS_SURF);
                                     break;
-                                case 2:
+                                case 1:
                                     PlayBGM(MUS_RG_SURF);
                                     break;
-                                case 3:
+                                case 2:
                                     PlayBGM(MUS_DP_SURF);
                                     break;
-                                case 4:
+                                case 3:
                                     PlayBGM(MUS_HG_SURF);
                                     break;
-                                case 5:
+                                case 4:
                                     PlayBGM(MUS_BW_SURF);
+                                    break;
+                                case 5:
                                     break;
                             }
                             break;
                         case MENUITEM_SOUND_BIKE:
                             switch (sOptions->sel_sound[cursor]) {
-                                case 0:
                                 default:
-                                    break;
-                                case 1:
+                                case 0:
                                     PlayBGM(MUS_CYCLING);
                                     break;
-                                case 2:
+                                case 1:
                                     PlayBGM(MUS_RG_CYCLING);
                                     break;
-                                case 3:
+                                case 2:
                                     PlayBGM(MUS_DP_CYCLING);
                                     break;
-                                case 4:
+                                case 3:
                                     PlayBGM(MUS_HG_CYCLING);
                                     break;
-                                case 5:
+                                case 4:
                                     PlayBGM(MUS_BW_CYCLING);
+                                    break;
+                                case 5:
                                     break;
                             }
                             break;
@@ -1757,7 +1757,7 @@ static void DrawChoices_Sound(int selection, int y)
     DrawOptionMenuChoice(COMPOUND_STRING("Stereo"), GetStringRightAlignXOffset(FONT_NORMAL, COMPOUND_STRING("Stereo"), 198), y, styles[1], active);
 }
 
-static const u8 *const sSurfBikeMusicStrings[] = {COMPOUND_STRING("Off"), COMPOUND_STRING("RSE"), COMPOUND_STRING("FRLG"), COMPOUND_STRING("DPPt"),  COMPOUND_STRING("HGSS"), COMPOUND_STRING("BW")};
+static const u8 *const sSurfBikeMusicStrings[] = {COMPOUND_STRING("RSE"), COMPOUND_STRING("FRLG"), COMPOUND_STRING("DPPt"),  COMPOUND_STRING("HGSS"), COMPOUND_STRING("BW"), COMPOUND_STRING("Off")};
 static void DrawChoices_Surf(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_SOUND_SURF);

@@ -3297,22 +3297,22 @@ u8 FldEff_UseSurf(void)
     switch (VarGet(VAR_SURF_MUSIC)) {
         case 0:
         default:
-            return FALSE;
-        case 1:
             newMusic = MUS_SURF;
             break;
-        case 2:
+        case 1:
             newMusic = MUS_RG_SURF;
             break;
-        case 3:
+        case 2:
             newMusic = MUS_DP_SURF;
             break;
-        case 4:
+        case 3:
             newMusic = MUS_HG_SURF;
             break;
-        case 5:
+        case 4:
             newMusic = MUS_BW_SURF;
             break;
+        case 5:
+            return FALSE;
     }
     Overworld_ClearSavedMusic();
     Overworld_ChangeMusicTo(newMusic);

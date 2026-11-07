@@ -1326,24 +1326,24 @@ void Overworld_PlaySpecialMapMusic(void)
             music = gSaveBlock1Ptr->savedMusic;
         else if (GetCurrentMapType() == MAP_TYPE_UNDERWATER)
             music = MUS_UNDERWATER;
-        else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && VarGet(VAR_SURF_MUSIC) != 0)
+        else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && VarGet(VAR_SURF_MUSIC) != 5)
         {
             switch (VarGet(VAR_SURF_MUSIC))
             {
                 default:
-                case 1:
+                case 0:
                     music = MUS_SURF;
                     break;
-                case 2:
+                case 1:
                     music = MUS_RG_SURF;
                     break;
-                case 3:
+                case 2:
                     music = MUS_DP_SURF;
                     break;
-                case 4:
+                case 3:
                     music = MUS_HG_SURF;
                     break;
-                case 5:
+                case 4:
                     music = MUS_BW_SURF;
                     break;
             }
@@ -1384,24 +1384,24 @@ static void TransitionMapMusic(void)
         {
             if (currentMusic == MUS_UNDERWATER || currentMusic == MUS_SURF || currentMusic == MUS_RG_SURF || currentMusic == MUS_DP_SURF || currentMusic == MUS_HG_SURF || currentMusic == MUS_BW_SURF)
                 return;
-            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && VarGet(VAR_SURF_MUSIC) != 0)
+            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && VarGet(VAR_SURF_MUSIC) != 5)
             {
                 switch (VarGet(VAR_SURF_MUSIC))
                 {
                     default:
-                    case 1:
+                    case 0:
                         newMusic = MUS_SURF;
                         break;
-                    case 2:
+                    case 1:
                         newMusic = MUS_RG_SURF;
                         break;
-                    case 3:
+                    case 2:
                         newMusic = MUS_DP_SURF;
                         break;
-                    case 4:
+                    case 3:
                         newMusic = MUS_HG_SURF;
                         break;
-                    case 5:
+                    case 4:
                         newMusic = MUS_BW_SURF;
                         break;
                 }

@@ -6047,24 +6047,24 @@ void ForcePlayerOntoBike(void)
     u16 newMusic = MUS_CYCLING;
     switch (VarGet(VAR_BIKE_MUSIC))
     {
-        case 0:
         default:
-            return;
-        case 1:
+        case 0:
             newMusic = MUS_CYCLING;
             break;
-        case 2:
+        case 1:
             newMusic = MUS_RG_CYCLING;
             break;
-        case 3:
+        case 2:
             newMusic = MUS_DP_CYCLING;
             break;
-        case 4:
+        case 3:
             newMusic = MUS_HG_CYCLING;
             break;
-        case 5:
+        case 4:
             newMusic = MUS_BW_CYCLING;
             break;
+        case 5:
+            return;
     }
     Overworld_SetSavedMusic(newMusic);
     Overworld_ChangeMusicTo(newMusic);
