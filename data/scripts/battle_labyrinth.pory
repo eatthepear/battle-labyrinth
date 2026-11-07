@@ -805,7 +805,7 @@ script EventScript_MultipleHoneyEncountersNuzlocke {
 }
 
 script EventScript_AccessPokemonBoxLink_PBL {
-	if (flag(FLAG_IN_NEW_ZONE)) {
+	if (flag(FLAG_IN_NEW_ZONE) && (flag(FLAG_UNLIMITED_BOX_LINK) == FALSE)) {
 		if (flag(FLAG_ZONE_PC_USED)) {
 			msgbox(format("The {COLOR GREEN}{PKMN} Box Link{COLOR DARK_GRAY} can't be used again until the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}."))
 			releaseall
@@ -1982,10 +1982,15 @@ script Debug_CheatStart_PBL_SetFlags {
 	if (var(VAR_ZONE) == 31) {
 		return
 	}
+	setflag(FLAG_UNLIMITED_BOX_LINK)
 
 	if (var(VAR_ZONE) == 33) {
 		return
 	}
+	pokevialincreasesize
+	pokevialincreasesize
+	pokevialincreasesize
+	pokevialincreasesize
 
 	if (var(VAR_ZONE) == 35) {
 		return
@@ -2281,7 +2286,6 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_TM_CLOSE_COMBAT)
 	additem(ITEM_TM_OVERHEAT)
 	additem(ITEM_TM_DRACO_METEOR)
-	additem(ITEM_MAX_REVIVE, 5)
 	additem(ITEM_LEFTOVERS)
 
 	if (var(VAR_ZONE) == 33) {
@@ -2289,10 +2293,6 @@ script Debug_CheatStart_PBL_GiveItems {
 	}
 	additem(ITEM_TM_TRICK_ROOM)
 	additem(ITEM_GOLD_BOTTLE_CAP)
-	pokevialincreasesize
-	pokevialincreasesize
-	pokevialincreasesize
-	pokevialincreasesize
 
 	if (var(VAR_ZONE) == 35) {
 		return

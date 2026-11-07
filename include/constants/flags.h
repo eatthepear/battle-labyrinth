@@ -111,6 +111,7 @@ enum BeatBossFlags {
 #define FLAG_SYS_DEXNAV_GET                         0xC2
 #define FLAG_SYS_INVERSE_BATTLE                     0xC5
 #define FLAG_DISABLE_SURVEIL                        0xC6
+#define FLAG_UNLIMITED_BOX_LINK                     0xC8
 // #define FLAG_SYS_ENABLE_WATERFALL                   0xC8
 #define FLAG_SYS_FOLLOWER_HEAL                      0xC9
 #define FLAG_SYS_FOLLOWER_WILD                      0xCA
