@@ -1998,6 +1998,10 @@ script Debug_CheatStart_PBL_SetFlags {
 }
 
 script Debug_CheatStart_PBL_GiveItems {
+	additem(ITEM_SUPER_ROD)
+	additem(ITEM_TIME_CRYSTAL)
+	additem(ITEM_OUTFIT_BOX)
+
 	if (var(VAR_ZONE) == 1) {
 		return
 	}
