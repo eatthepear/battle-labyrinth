@@ -65,6 +65,27 @@ u32 GetCurrentLevelCap(void)
     return MAX_LEVEL;
 }
 
+// same as above, but takes in which cap to do, instead of the current level cap
+u32 GetLevelCap(u16 capIndex)
+{
+    u32 i;
+
+    if (B_LEVEL_CAP_TYPE == LEVEL_CAP_FLAG_LIST)
+    {
+        for (i = 0; i < ARRAY_COUNT(sLevelCapFlagMap); i++)
+        {
+            if (capIndex == i)
+                return sLevelCapFlagMap[i];
+        }
+    }
+    else if (B_LEVEL_CAP_TYPE == LEVEL_CAP_VARIABLE)
+    {
+        return VarGet(B_LEVEL_CAP_VARIABLE);
+    }
+
+    return MAX_LEVEL;
+}
+
 // If the player is in a New Zone, they are only allowed to Rare Candy up to the prior level cap.
 u32 GetEndlessCandyLevelCap(void)
 {

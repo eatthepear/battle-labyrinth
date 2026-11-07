@@ -5243,6 +5243,11 @@ void BufferCurrentLevelCap(void)
     ConvertIntToDecimalStringN(gStringVar1, GetCurrentLevelCap(), STR_CONV_MODE_LEFT_ALIGN, 3);
 }
 
+void BufferLevelCap(void)
+{
+    ConvertIntToDecimalStringN(gStringVar2, GetLevelCap(VarGet(VAR_TEMP_0)), STR_CONV_MODE_LEFT_ALIGN, 3);
+}
+
 void DaisyMassageServices(void)
 {
     AdjustFriendship(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], FRIENDSHIP_EVENT_MASSAGE);

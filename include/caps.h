@@ -20,6 +20,7 @@
 
 u32 GetCurrentLevelCap(void);
 u32 GetEndlessCandyLevelCap(void);
+u32 GetLevelCap(u16 capIndex);
 u32 GetSoftLevelCapExpValue(u32 level, u32 expValue);
 u32 GetCurrentEVCap(void);
 u32 GetExpValue(void);

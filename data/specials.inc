@@ -577,6 +577,7 @@ gSpecials::
 	def_special IsPokemonFainted
 	def_special GetHiddenGrottoSpecies
 	def_special BufferCurrentLevelCap
+	def_special BufferLevelCap
 	def_special ChooseMonForIVChange
 	def_special SetIVOfSelectedPokemon
 	def_special GetFrlgPokedexCount

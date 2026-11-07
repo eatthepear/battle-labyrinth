@@ -825,7 +825,7 @@ script EventScript_Notebook {
 	playbgm(MUS_HG_FOLLOW_ME_1, FALSE)
 	while {
 		special(BufferCurrentLevelCap)
-		message("Notes open. Level Cap: {STR_VAR_1}\nWhat would you like to read?")
+		message("Notes open. Current evel Cap: {STR_VAR_1}\nWhat would you like to read?")
 		waitmessage
 		dynmultipush("Zone Info", 0)
 		dynmultipush("Changes from Vanilla", 1)
@@ -930,6 +930,12 @@ script EventScript_Notebook_ZoneInfo {
 		case 35:
 			msgbox(format("ZONE DESCRIPTION FILLER"))
 	}
+	msgbox(format("The next page shows the level cap in {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}.\lRead on?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		return
+	}
+	special(BufferLevelCap)
+	msgbox("{COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}\nLevel Cap: {COLOR GREEN}{STR_VAR_2}{COLOR DARK_GRAY}")
 	msgbox(format("The next page shows the number of opponents in {COLOR GREEN}{STR_VAR_1}{COLOR DARK_GRAY}.\lRead on?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		return
