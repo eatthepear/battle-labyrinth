@@ -321,7 +321,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("The {COLOR GREEN}{PKMN} Box Link{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_POKEMON_BOX_LINK)
-			helpwindow(HELP_BOX_LINK)
+			helpwindow(HELP_CHANGES_BOX_LINK)
 		case 6:
 			msgbox(format("{COLOR GREEN}HM05 - Flash{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)

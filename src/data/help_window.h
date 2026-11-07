@@ -890,7 +890,7 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "opponents' moves with increased priority."),
     },
 
-    [HELP_BOX_LINK] =
+    [HELP_CHANGES_BOX_LINK] =
     {
         .header = COMPOUND_STRING("{PKMN} Box Link"),
         .desc = COMPOUND_STRING("The {COLOR GREEN}{PKMN} Box Link{COLOR DARK_GRAY} is used to access the\n"

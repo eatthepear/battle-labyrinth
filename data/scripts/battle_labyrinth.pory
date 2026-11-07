@@ -1447,6 +1447,9 @@ script EventScript_Notebook_Items {
 		dynmultipush("Mints", ITEM_SERIOUS_MINT)
 		dynmultipush("Bike", ITEM_BICYCLE)
 		dynmultipush("Item Prices", ITEM_AMULET_COIN)
+		if (flag(FLAG_UNLIMITED_BOX_LINK) == FALSE) {
+			dynmultipush("{PKMN} Box Link", ITEM_POKEMON_BOX_LINK)
+		}
 		dynmultipush("Back", 1)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
 		switch (var(VAR_RESULT)) {
@@ -1470,6 +1473,8 @@ script EventScript_Notebook_Items {
 				msgbox(format("The {COLOR GREEN}Hexorb{COLOR DARK_GRAY} Key Item lets you pre-status Pokémon."))
 			case ITEM_BICYCLE:
 				helpwindow(HELP_BICYCLE)
+			case ITEM_POKEMON_BOX_LINK:
+				helpwindow(HELP_CHANGES_BOX_LINK)
 			case 1:
 			case MULTI_B_PRESSED:
 				return
