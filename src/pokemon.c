@@ -1548,7 +1548,7 @@ void GiveBoxMonInitialMoveset(struct BoxPokemon *boxMon) //Credit: AsparagusEdua
             break;
         if (learnset[i].level == 0)
             continue;
-        if (IsMoveRestricted(learnset[i].move, learnset[i].level))
+        if (IsMoveRestricted(learnset[i].move))
             continue;
 
         for (j = 0; j < addedMoves; j++)
@@ -1669,7 +1669,7 @@ enum Move MonTryLearningNewMoveAtLevel(struct Pokemon *mon, bool32 firstMove, u3
     {
         gMoveToLearn = learnset[sLearningMoveTableID].move;
         sLearningMoveTableID++;
-        if ((GetCurrentDifficultyLevel() == DIFFICULTY_BRUTAL) && IsMoveRestricted(gMoveToLearn, level))
+        if (IsMoveRestricted(gMoveToLearn))
             return MOVE_NONE;
         retVal = GiveMoveToMon(mon, gMoveToLearn);
     }
@@ -3076,15 +3076,15 @@ static const u16 RestrictedMoves[] =
     MOVE_SHED_TAIL,
 };
 
-bool32 IsMoveRestricted(enum Move move, u16 level)
+bool32 IsMoveRestricted(enum Move move)
 {
+    if (GetCurrentDifficultyLevel() != DIFFICULTY_BRUTAL)
+        return FALSE;
+
     for (u32 i = 0; i < ARRAY_COUNT(RestrictedMoves); i++)
     {
         if (move == RestrictedMoves[i])
-        {
-            if ((level % 5) != 0) // you can learn it if it's at a level that's divisible by 5
-                return TRUE;
-        }
+            return TRUE;
     }
 
     return FALSE;
@@ -4865,6 +4865,10 @@ bool32 CanLearnTeachableMove(enum Species species, enum Move move)
     const u16 *teachableLearnset = GetSpeciesTeachableLearnset(species);
     if (species == SPECIES_EGG)
         return FALSE;
+
+    if (IsMoveRestricted(move))
+        return FALSE;
+
     for (u32 i = 0; teachableLearnset[i] != MOVE_UNAVAILABLE; i++)
     {
         if (teachableLearnset[i] == move)

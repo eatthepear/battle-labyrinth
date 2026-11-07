@@ -3502,30 +3502,38 @@ script EventScript_Shop_Lelouch_MoveTutor_Green {
 			dynmultipush("Encore - 6", MOVE_ENCORE)
 			dynmultipush("Imprison - 6", MOVE_IMPRISON)
 			dynmultipush("Haze - 6", MOVE_HAZE)
-			dynmultipush("Hone Claws - 6", MOVE_HONE_CLAWS)
+			if (var(VAR_DIFFICULTY) != DIFFICULTY_BRUTAL) {
+				dynmultipush("Hone Claws - 6", MOVE_HONE_CLAWS)
+			}
 		}
 
 		if (var(VAR_ZONE) > 15) {
 			dynmultipush("Gravity - 8", MOVE_GRAVITY)
-			dynmultipush("Psych Up - 8", MOVE_PSYCH_UP)
-			dynmultipush("Coaching - 8", MOVE_COACHING)
-			dynmultipush("Curse - 8", MOVE_CURSE)
+			if (var(VAR_DIFFICULTY) != DIFFICULTY_BRUTAL) {
+				dynmultipush("Psych Up - 8", MOVE_PSYCH_UP)
+				dynmultipush("Coaching - 8", MOVE_COACHING)
+				dynmultipush("Curse - 8", MOVE_CURSE)
+			}
 		}
 
 		if (var(VAR_ZONE) > 20) {
-			dynmultipush("Tailwind - 8", MOVE_TAILWIND)
-			dynmultipush("Stealth Rock - 8", MOVE_STEALTH_ROCK)
-			dynmultipush("Spikes - 8", MOVE_SPIKES)
-			dynmultipush("Toxic Spikes - 8", MOVE_TOXIC_SPIKES)
+			if (var(VAR_DIFFICULTY) != DIFFICULTY_BRUTAL) {
+				dynmultipush("Tailwind - 8", MOVE_TAILWIND)
+				dynmultipush("Stealth Rock - 8", MOVE_STEALTH_ROCK)
+				dynmultipush("Spikes - 8", MOVE_SPIKES)
+				dynmultipush("Toxic Spikes - 8", MOVE_TOXIC_SPIKES)
+			}
 		}
 
 		if (var(VAR_ZONE) > 25) {
 			dynmultipush("Dragon Cheer - 12", MOVE_DRAGON_CHEER)
-			dynmultipush("Dragon Dance - 12", MOVE_DRAGON_DANCE)
-			dynmultipush("Misty Terrain - 12", MOVE_MISTY_TERRAIN)
-			dynmultipush("Electric Terrain - 12", MOVE_ELECTRIC_TERRAIN)
-			dynmultipush("Psychic Terrain - 12", MOVE_PSYCHIC_TERRAIN)
-			dynmultipush("Grassy Terrain - 12", MOVE_GRASSY_TERRAIN)
+			if (var(VAR_DIFFICULTY) != DIFFICULTY_BRUTAL) {
+				dynmultipush("Dragon Dance - 12", MOVE_DRAGON_DANCE)
+				dynmultipush("Misty Terrain - 12", MOVE_MISTY_TERRAIN)
+				dynmultipush("Electric Terrain - 12", MOVE_ELECTRIC_TERRAIN)
+				dynmultipush("Psychic Terrain - 12", MOVE_PSYCHIC_TERRAIN)
+				dynmultipush("Grassy Terrain - 12", MOVE_GRASSY_TERRAIN)
+			}
 		}
 
 		dynmultipush("Exit", 0)

@@ -2242,7 +2242,6 @@ static enum Move GetSelectedMove(enum Species species, u32 selected)
 
 static void PrintStatsScreen_Moves_Top(u8 taskId)
 {
-    u8 level = 99; // initialize to non-multiple of 5 so it views as restricted if it's not a level up move
     u8 moves_x = 5;
     u8 moves_y = 3;
 
@@ -2296,7 +2295,7 @@ static void PrintStatsScreen_Moves_Top(u8 taskId)
     }
 
     //Move name
-    if ((GetCurrentDifficultyLevel() == DIFFICULTY_BRUTAL) && IsMoveRestricted(move, level))
+    if (IsMoveRestricted(move))
     {
         StringCopy(gStringVar1, GetMoveName(move));
         StringExpandPlaceholders(gStringVar4, gText_RestrictedMove);

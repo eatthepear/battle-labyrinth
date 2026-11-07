@@ -765,7 +765,7 @@ u32 GetSpeciesBaseSpDefense(enum Species species);
 u32 GetSpeciesBaseSpeed(enum Species species);
 u32 GetSpeciesBaseStat(enum Species species, u32 statIndex);
 u32 GetSpeciesBaseStatTotal(enum Species species);
-bool32 IsMoveRestricted(enum Move move, u16 level);
+bool32 IsMoveRestricted(enum Move move);
 const struct LevelUpMove *GetSpeciesLevelUpLearnset(enum Species species);
 const u16 *GetSpeciesTeachableLearnset(enum Species species);
 const u16 *GetSpeciesEggMoves(enum Species species);
