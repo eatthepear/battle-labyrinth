@@ -4989,7 +4989,8 @@ u16 CheckWhichPuzzle(void)
         return PBL_PUZZLE_ZONE_4;
     }
     if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_5) {
-        return PBL_PUZZLE_ZONE_5_GYM;
+        if (HasTrainerBeenFought(TRAINER_PBL_REBECCA) && HasTrainerBeenFought(TRAINER_PBL_CAITLYN))
+            return PBL_PUZZLE_ZONE_5_GYM;
     }
     if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_10) {
         if (VarGet(VAR_ZONE_10_STATE) == 3)
