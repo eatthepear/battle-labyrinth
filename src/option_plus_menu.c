@@ -942,7 +942,7 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NUZLOCKE]  = FlagGet(FLAG_SETTINGS_NUZLOCKE);
         sOptions->sel_difficulty[MENUITEM_DIFFICULTY_PUZZLES]  = VarGet(VAR_PUZZLE_DIFFICULTY);
 
-        sOptions->sel_qol[MENUITEM_QOL_SAVEPROMPTS] = FlagGet(FLAG_SAVE_PROMPT);
+        sOptions->sel_qol[MENUITEM_QOL_SAVEPROMPTS] = FlagGet(FLAG_SAVE_PROMPT_OFF);
         sOptions->sel_qol[MENUITEM_QOL_BOSSHEALPROMPTS] = FlagGet(FLAG_BOSS_PROMPT_HEAL);
         sOptions->sel_qol[MENUITEM_QOL_OVERWORLDSPEEDUP] = VarGet(VAR_OVERWORLD_SPEEDUP);
         sOptions->sel_qol[MENUITEM_QOL_BATTLESPEEDUP] = VarGet(VAR_BATTLE_SPEEDUP);
@@ -1356,9 +1356,9 @@ static void Task_OptionMenuSave(u8 taskId)
     VarSet(VAR_PUZZLE_DIFFICULTY, sOptions->sel_difficulty[MENUITEM_DIFFICULTY_PUZZLES]);
 
     if (sOptions->sel_qol[MENUITEM_QOL_SAVEPROMPTS])
-        FlagSet(FLAG_SAVE_PROMPT);
+        FlagSet(FLAG_SAVE_PROMPT_OFF);
     else
-        FlagClear(FLAG_SAVE_PROMPT);
+        FlagClear(FLAG_SAVE_PROMPT_OFF);
     if (sOptions->sel_qol[MENUITEM_QOL_BOSSHEALPROMPTS])
         FlagSet(FLAG_BOSS_PROMPT_HEAL);
     else
@@ -1678,7 +1678,7 @@ static void DrawChoices_Nuzlocke(int selection, int y)
     styles[selection] = 1;
 
     DrawOptionMenuChoice(COMPOUND_STRING("Off"), 104, y, styles[0], active);
-    DrawOptionMenuChoice(COMPOUND_STRING("On"), GetStringRightAlignXOffset(FONT_NORMAL, COMPOUND_STRING("Off"), 198), y, styles[1], active);
+    DrawOptionMenuChoice(COMPOUND_STRING("On"), GetStringRightAlignXOffset(FONT_NORMAL, COMPOUND_STRING("On"), 198), y, styles[1], active);
 }
 
 static void DrawChoices_Puzzles(int selection, int y)
@@ -1699,8 +1699,8 @@ static void DrawChoices_SavePrompts(int selection, int y)
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-    DrawOptionMenuChoice(COMPOUND_STRING("Off"), 104, y, styles[0], active);
-    DrawOptionMenuChoice(COMPOUND_STRING("On"), GetStringRightAlignXOffset(FONT_NORMAL, COMPOUND_STRING("Off"), 198), y, styles[1], active);
+    DrawOptionMenuChoice(COMPOUND_STRING("On"), 104, y, styles[0], active);
+    DrawOptionMenuChoice(COMPOUND_STRING("Off"), GetStringRightAlignXOffset(FONT_NORMAL, COMPOUND_STRING("Off"), 198), y, styles[1], active);
 }
 
 static void DrawChoices_BossHealPrompts(int selection, int y)
@@ -1710,7 +1710,7 @@ static void DrawChoices_BossHealPrompts(int selection, int y)
     styles[selection] = 1;
 
     DrawOptionMenuChoice(COMPOUND_STRING("Off"), 104, y, styles[0], active);
-    DrawOptionMenuChoice(COMPOUND_STRING("On"), GetStringRightAlignXOffset(FONT_NORMAL, COMPOUND_STRING("Off"), 198), y, styles[1], active);
+    DrawOptionMenuChoice(COMPOUND_STRING("On"), GetStringRightAlignXOffset(FONT_NORMAL, COMPOUND_STRING("On"), 198), y, styles[1], active);
 }
 
 static void DrawChoices_OverworldSpeedup(int selection, int y)

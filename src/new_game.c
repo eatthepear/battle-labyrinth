@@ -115,7 +115,6 @@ static void SetDefaultOptions(void)
     VarSet(VAR_BOSS_MUSIC, 5);
     VarSet(VAR_SURF_MUSIC, 1);
     VarSet(VAR_BIKE_MUSIC, 1);
-    FlagSet(FLAG_SAVE_PROMPT);
 }
 
 static void ClearPokedexFlags(void)
