@@ -409,12 +409,12 @@
           "base_label": "gZone5A",
           "land_mons": {
             "encounter_rate": 10,
-            "mons": [{ "min_level": 2, "max_level": 3, "species": "SPECIES_SKWOVET" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_PIDGEY" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_CRABRAWLER" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_NICKIT" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_PAWMI" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_PIDOVE" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_GLAMEOW" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_DEERLING" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_PICHU" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_PANSAGE" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_PANSEAR" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_PANPOUR" }
+            "mons": [{ "min_level": 11, "max_level": 12, "species": "SPECIES_LICKITUNG" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_TANDEMAUS" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_DROWZEE" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_VOLTORB_HISUI" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_STUNKY" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_ESPURR" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_DEDENNE" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_NONE" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_COTTONEE" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_PETILIL" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_FURFROU" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_KECLEON" }
             ]
           },
           "hidden_mons": {
             "encounter_rate": 0,
-            "mons": [{ "min_level": 2, "max_level": 3, "species": "SPECIES_SHROOMISH" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_CHERUBI" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_SEEDOT" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_FOMANTIS" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_BOUNSWEET" }
+            "mons": [{ "min_level": 11, "max_level": 12, "species": "SPECIES_AIPOM" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_SLAKOTH" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_TEDDIURSA" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_NONE" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_KOMALA" }
             ]
           }
         },
@@ -423,7 +423,7 @@
           "base_label": "gZone5A_Night",
           "land_mons": {
             "encounter_rate": 10,
-            "mons": [{ "min_level": 2, "max_level": 3, "species": "SPECIES_SKWOVET" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_PIDGEY" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_CRABRAWLER" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_NICKIT" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_PAWMI" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_HOOTHOOT" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_SKITTY" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_POOCHYENA" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_PICHU" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_PANSAGE" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_PANSEAR" },{ "min_level": 2, "max_level": 3, "species": "SPECIES_PANPOUR" }
+            "mons": [{ "min_level": 11, "max_level": 12, "species": "SPECIES_LICKITUNG" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_TANDEMAUS" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_DROWZEE" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_VOLTORB_HISUI" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_STUNKY" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_TRUBBISH" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_MORPEKO" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_NONE" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_COTTONEE" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_PETILIL" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_FURFROU" },{ "min_level": 11, "max_level": 12, "species": "SPECIES_KECLEON" }
             ]
           }
         },
