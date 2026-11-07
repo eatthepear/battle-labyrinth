@@ -1534,16 +1534,12 @@ script EventScript_Notebook_Tips {
 				call(EventScript_Sign_Surveil)
 			case HELP_SIGN_DOWSING_MACHINE:
 				call(EventScript_Sign_DowsingMachine)
-			case HELP_CHANGES_HIDDEN_MACHINES:
-				call(EventScript_Sign_HiddenMachines)
 			case HELP_SIGN_LEADER:
 				call(EventScript_Sign_Leader)
 			case HELP_SIGN_OPTIONAL_BOSSES:
 				call(EventScript_Sign_OptionalBosses)
 			case HELP_SIGN_POKEMON_CHANGES:
 				call(EventScript_Sign_PokemonChanges)
-			case HELP_SIGN_DIFFERENT_AREAS:
-				call(EventScript_Sign_DifferentAreas)
 			case HELP_SIGN_POKEDEX_INFO:
 				call(EventScript_Sign_PokedexInfo)
 			case HELP_SIGN_BAG_TIPS:
@@ -1602,10 +1598,6 @@ script EventScript_Sign_DowsingMachine {
 	helpwindow(HELP_SIGN_DOWSING_MACHINE)
 }
 
-script EventScript_Sign_HiddenMachines {
-	helpwindow(HELP_CHANGES_HIDDEN_MACHINES)
-}
-
 script EventScript_Sign_Leader {
 	helpwindow(HELP_SIGN_LEADER)
 }
@@ -1616,10 +1608,6 @@ script EventScript_Sign_OptionalBosses {
 
 script EventScript_Sign_PokemonChanges {
 	helpwindow(HELP_SIGN_POKEMON_CHANGES)
-}
-
-script EventScript_Sign_DifferentAreas {
-	helpwindow(HELP_SIGN_DIFFERENT_AREAS)
 }
 
 script EventScript_Sign_PokedexInfo {

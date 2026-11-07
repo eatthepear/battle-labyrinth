@@ -279,14 +279,6 @@
     },
     {
       "type": "sign",
-      "x": 29,
-      "y": 27,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "EventScript_Sign_HiddenMachines"
-    },
-    {
-      "type": "sign",
       "x": 37,
       "y": 5,
       "elevation": 0,
@@ -303,11 +295,11 @@
     },
     {
       "type": "sign",
-      "x": 6,
-      "y": 18,
+      "x": 29,
+      "y": 27,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "EventScript_Sign_OptionalBosses"
+      "script": "EventScript_Sign_ChangeMusic"
     },
     {
       "type": "sign",
@@ -316,14 +308,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "EventScript_Sign_Leader"
-    },
-    {
-      "type": "sign",
-      "x": 5,
-      "y": 9,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "EventScript_Sign_Filler"
     },
     {
       "type": "hidden_item",

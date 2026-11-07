@@ -301,7 +301,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "EventScript_Sign_ZoneInfo"
+      "script": "EventScript_Sign_RunningShoes"
     },
     {
       "type": "sign",
@@ -309,7 +309,7 @@
       "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "EventScript_Sign_Filler"
+      "script": "EventScript_Sign_ZoneInfo"
     },
     {
       "type": "sign",
@@ -321,19 +321,11 @@
     },
     {
       "type": "sign",
-      "x": 24,
-      "y": 31,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "EventScript_Sign_Filler"
-    },
-    {
-      "type": "sign",
       "x": 40,
       "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "EventScript_Sign_DowsingMachine"
+      "script": "EventScript_Sign_OptionalBosses"
     },
     {
       "type": "hidden_item",

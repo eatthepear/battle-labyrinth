@@ -720,6 +720,12 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "fighting mandatory bosses."),
     },
 
+    [HELP_SIGN_LEVEL_CAP] =
+    {
+        .header = COMPOUND_STRING("Level Cap"),
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Notes{COLOR DARK_GRAY} contains the current level cap."),
+    },
+
     [HELP_SIGN_RUNNING_SHOES] =
     {
         .header = COMPOUND_STRING("Running Shoes"),
@@ -739,15 +745,18 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "- a summary of any bosses in the Zone"),
     },
 
-    [HELP_SIGN_DOWSING_MACHINE] =
+    [HELP_SIGN_OPTIONAL_BOSSES] =
     {
-        .header = COMPOUND_STRING("Dowsing Machine"),
-        .desc = COMPOUND_STRING("You can use the {COLOR GREEN}Dowsing Machine{COLOR DARK_GRAY} to help you\n"
-                                "find such hidden items.\n\n"
-                                "As you get closer to a hidden item, the\n"
-                                "Dowsing Machine will make noises, change\n"
-                                "color, and shake until it shakes red,\n"
-                                "meaning an item is right in front of you!"),
+        .header = COMPOUND_STRING("Optional Bosses"),
+        .desc = COMPOUND_STRING("Some Zones have an optional boss that\n"
+                                "gives a special reward for beating them."),
+    },
+
+    [HELP_SIGN_CHANGE_MUSIC] =
+    {
+        .header = COMPOUND_STRING("Change Music"),
+        .desc = COMPOUND_STRING("You can change some of the music you hear by\n"
+                                "changing your selections in the Options menu."),
     },
 
     [HELP_SIGN_LEADER] =
@@ -762,11 +771,15 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "{COLOR GREEN}Hidden Machine{COLOR DARK_GRAY} outside battle."),
     },
 
-    [HELP_SIGN_OPTIONAL_BOSSES] =
+    [HELP_SIGN_DOWSING_MACHINE] =
     {
-        .header = COMPOUND_STRING("Optional Bosses"),
-        .desc = COMPOUND_STRING("Some Zones have an optional boss that\n"
-                                "gives a special reward for beating them."),
+        .header = COMPOUND_STRING("Dowsing Machine"),
+        .desc = COMPOUND_STRING("You can use the {COLOR GREEN}Dowsing Machine{COLOR DARK_GRAY} to help you\n"
+                                "find such hidden items.\n\n"
+                                "As you get closer to a hidden item, the\n"
+                                "Dowsing Machine will make noises, change\n"
+                                "color, and shake until it shakes red,\n"
+                                "meaning an item is right in front of you!"),
     },
 
     [HELP_SIGN_POKEMON_CHANGES] =
@@ -776,13 +789,6 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "their evolution methods and abilities from\n"
                                 "vanilla Pokémon games.\n\n"
                                 "Consult the {COLOR GREEN}Notes{COLOR DARK_GRAY} for these changes."),
-    },
-
-    [HELP_SIGN_DIFFERENT_AREAS] =
-    {
-        .header = COMPOUND_STRING("Different Areas"),
-        .desc = COMPOUND_STRING("The encounterable Pokémon in different areas\n"
-                                "of the same Zone may vary."),
     },
 
     [HELP_SIGN_POKEDEX_INFO] =
@@ -795,6 +801,14 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "the {COLOR GREEN}Notes{COLOR DARK_GRAY}."),
     },
 
+    [HELP_SIGN_STATS_IV_EV] =
+    {
+        .header = COMPOUND_STRING("Viewing IVs/EVs"),
+        .desc = COMPOUND_STRING("While you are on the Pokémon stats screen,\n"
+                                "you can press {A_BUTTON} to switch between\n"
+                                "stats, IVs, and EVs."),
+    },
+
     [HELP_SIGN_BAG_TIPS] =
     {
         .header = COMPOUND_STRING("Bag Tips"),
@@ -805,34 +819,12 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "You can register multiple Key Items at a time."),
     },
 
-    [HELP_SIGN_CHANGE_MUSIC] =
-    {
-        .header = COMPOUND_STRING("Change Music"),
-        .desc = COMPOUND_STRING("You can change some of the music you hear by\n"
-                                "changing your selections in the Options menu."),
-    },
-
-    [HELP_SIGN_STATS_IV_EV] =
-    {
-        .header = COMPOUND_STRING("Viewing IVs/EVs"),
-        .desc = COMPOUND_STRING("While you are on the Pokémon stats screen,\n"
-                                "you can press {A_BUTTON} to switch between\n"
-                                "stats, IVs, and EVs."),
-    },
-
-    [HELP_SIGN_LEVEL_CAP] =
-    {
-        .header = COMPOUND_STRING("Level Cap"),
-        .desc = COMPOUND_STRING("The {COLOR GREEN}Notes{COLOR DARK_GRAY} contains the current level cap."),
-    },
-
     [HELP_SIGN_BATTLE_CHANGES] =
     {
         .header = COMPOUND_STRING("Battle Changes"),
         .desc = COMPOUND_STRING("Some battle mechanics have minor adjustments\n"
                                 "from vanilla, such as:\n"
                                 "- increased accuracy for many moves\n"
-                                "- Pokémon's available abilities\n"
                                 "- Pokémon's experience yields\n\n"
                                 "Consult the {COLOR GREEN}Notes{COLOR DARK_GRAY} for more details."),
     },
