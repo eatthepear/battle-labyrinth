@@ -733,6 +733,7 @@ script Sanctuary_EventScript_GameIntro {
 			setflag(FLAG_LELOUCH_INTRO)
 			additem(ITEM_SUPER_ROD)
 			additem(ITEM_TIME_CRYSTAL)
+			additem(ITEM_OUTFIT_BOX)
 		}
 	}
 	setvar(VAR_ZONE, 1)
@@ -1682,6 +1683,19 @@ script EventScript_MusicMenu_Boss {
 				return
 		}
 	}
+}
+
+script EventScript_Beauty {
+	lock
+	faceplayer
+	if (checkitem(ITEM_OUTFIT_BOX) == FALSE) {
+		msgbox(format("You can look like whatever you want, you know?\pThere's no shame in wanting to change your appearance.\pOur appearances are expressions of ourselves, in a deep way.\pHere, this box has a few outfits that you can change into, if you ever wanted to make a change."))
+		giveitem(ITEM_OUTFIT_BOX)
+		release
+		end
+	}
+	msgbox(format("You can look like whatever you want, you know?\pThere's no shame in wanting to change your appearance.\pOur appearances are expressions of ourselves, in a deep way."))
+	release
 }
 
 script EventScript_Shop_MartEmployee {
