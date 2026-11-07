@@ -3541,11 +3541,11 @@ script EventScript_Nidoking {
 	release
 }
 
-script EventScript_Hydreigon {
+script EventScript_Honchkrow {
 	lock
 	faceplayer
-	playmoncry(SPECIES_HYDREIGON, CRY_MODE_NORMAL)
-	msgbox(format("Drei!"))
+	playmoncry(SPECIES_HONCHKROW, CRY_MODE_NORMAL)
+	msgbox(format("Krow!"))
 	waitmoncry
 	release
 }
