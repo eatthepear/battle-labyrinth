@@ -1566,7 +1566,7 @@ script EventScript_Notebook_Tips {
 				call(EventScript_Sign_RestoreHeldItems)
 			case HELP_SIGN_TAG_SURVEIL:
 				call(EventScript_Sign_TagSurveil)
-			case 51:
+			case 0:
 			case MULTI_B_PRESSED:
 				setvar(VAR_TEMP_0, 0)
 				return

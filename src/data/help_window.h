@@ -782,7 +782,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Different Areas"),
         .desc = COMPOUND_STRING("The encounterable Pokémon in different areas\n"
-                                "of the same Zone may vary significantly."),
+                                "of the same Zone may vary."),
     },
 
     [HELP_SIGN_POKEDEX_INFO] =
@@ -809,7 +809,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Change Music"),
         .desc = COMPOUND_STRING("You can change some of the music you hear by\n"
-                                "speaking to the Guitarist in the Sanctuary."),
+                                "changing your selections in the Options menu."),
     },
 
     [HELP_SIGN_STATS_IV_EV] =
@@ -830,16 +830,16 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Battle Changes"),
         .desc = COMPOUND_STRING("Some battle mechanics have minor adjustments\n"
-                                "from vanilla, including:\n"
+                                "from vanilla, such as:\n"
                                 "- increased accuracy for many moves\n"
-                                "- the Frostbite condition instead of Freeze\n"
-                                "- experience gain\n\n"
+                                "- Pokémon's available abilities\n"
+                                "- Pokémon's experience yields\n\n"
                                 "Consult the {COLOR GREEN}Notes{COLOR DARK_GRAY} for more details."),
     },
 
     [HELP_SIGN_SELECT_SWITCH] =
     {
-        .header = COMPOUND_STRING("Switch with Select"),
+        .header = COMPOUND_STRING("{SELECT_BUTTON} Switch"),
         .desc = COMPOUND_STRING("In the party menu, you can press {SELECT_BUTTON} to\n"
                                 "quickly shift a Pokémon to the front of your\n"
                                 "party."),
@@ -870,9 +870,12 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_SIGN_TAG_SURVEIL] =
     {
         .header = COMPOUND_STRING("Tag Battles"),
-        .desc = COMPOUND_STRING("In a Tag Battle, you partner with another trainer against your opponent(s).\n"
-                                "In battle, you can toggle between viewing your Pokémon and your partner's Pokémon with {R_BUTTON} in the party menu.\n"
-                                "You can also do this while using {COLOR GREEN}Surveil{COLOR DARK_GRAY} to toggle between the opposing teams."),
+        .desc = COMPOUND_STRING("In a Tag Battle, you partner with another\n"
+                                "trainer against your opponent(s).\n"
+                                "Toggle between viewing your party and\n"
+                                "your partner's party with {R_BUTTON}.\n"
+                                "Similary, press {R_BUTTON} while using {COLOR GREEN}Surveil{COLOR DARK_GRAY}\n"
+                                "to toggle between the opposing teams."),
     },
 
     // end regular signs here
@@ -882,16 +885,6 @@ const struct HelpWindow gHelpWindowInfo[] =
         .header = COMPOUND_STRING("Completing a Zone"),
         .desc = COMPOUND_STRING("Defeat the {COLOR GREEN}Zone{COLOR DARK_GRAY}'s challenge (usually a boss)\n"
                                 "and find {COLOR GREEN}Porygon{COLOR DARK_GRAY} to complete a {COLOR GREEN}Zone{COLOR DARK_GRAY}."),
-    },
-
-    [HELP_SACRED_ASH] =
-    {
-        .header = COMPOUND_STRING("Sacred Ash"),
-        .desc = COMPOUND_STRING("The {COLOR GREEN}Sacred Ash{COLOR DARK_GRAY} is a single use item that\n"
-                                "restores your entire party to full HP and\n"
-                                "cures any status condition, including\n"
-                                "reviving fainted Pokémon.\n"
-                                "It is exceedingly rare."),
     },
 
     [HELP_PSYCHIC_TERRAIN] =
