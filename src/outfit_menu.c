@@ -726,7 +726,7 @@ static void SetupOutfitMenu_Grids(void)
     LoadSpritePalette(&sIndicator_SpritePalette);
 
     GridMenu_EnableVerticalWrapAround(sOutfitMenu->grid);
-    GridMenu_SetIndex(sOutfitMenu->grid, gSaveBlock2Ptr->currOutfitId - 1);
+    GridMenu_SetIndex(sOutfitMenu->grid, gSaveBlock2Ptr->currOutfitId);
     sOutfitMenu->idx = sOutfitMenu->list[GridMenu_SelectedIndex(sOutfitMenu->grid)];
 
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_Move, DIRECTION_UP, TYPE_MOVE);
