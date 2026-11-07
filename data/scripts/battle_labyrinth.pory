@@ -1486,7 +1486,6 @@ script EventScript_Notebook_Other {
 		dynmultipush("DexNav", 2)
 		dynmultipush("Honey Tree", 3)
 		dynmultipush("Hidden Grotto", 4)
-		dynmultipush("Field Moves", 5)
 		dynmultipush("Move Tutors", 6)
 		dynmultipush("Back", 8)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
@@ -1501,8 +1500,6 @@ script EventScript_Notebook_Other {
 				helpwindow(HELP_CHANGES_HONEY_SWEET_SCENT)
 			case 4:
 				helpwindow(HELP_CHANGES_HIDDEN_GROTTO)
-			case 5:
-				helpwindow(HELP_SIGN_FIELD_MOVES)
 			case 6:
 				msgbox(format("Move Tutors can be found scattered in a few Zones.\pOnce encountered, {COLOR GREEN}Lelouch's Services Stand{COLOR DARK_GRAY} can handle teaching your Pokémon those moves."))
 			case 8:
@@ -1543,8 +1540,6 @@ script EventScript_Notebook_Tips {
 				call(EventScript_Sign_Leader)
 			case HELP_SIGN_OPTIONAL_BOSSES:
 				call(EventScript_Sign_OptionalBosses)
-			case HELP_SIGN_FIELD_MOVES:
-				call(EventScript_Sign_FieldMoves)
 			case HELP_SIGN_POKEMON_CHANGES:
 				call(EventScript_Sign_PokemonChanges)
 			case HELP_SIGN_DIFFERENT_AREAS:
@@ -1617,10 +1612,6 @@ script EventScript_Sign_Leader {
 
 script EventScript_Sign_OptionalBosses {
 	helpwindow(HELP_SIGN_OPTIONAL_BOSSES)
-}
-
-script EventScript_Sign_FieldMoves {
-	helpwindow(HELP_SIGN_FIELD_MOVES)
 }
 
 script EventScript_Sign_PokemonChanges {

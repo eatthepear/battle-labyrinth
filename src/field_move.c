@@ -196,27 +196,4 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
         .hideIfLocked = TRUE,
     },
-    [FIELD_MOVE_REFRESH] =
-    {
-        .fieldMoveFunc = SetUpFieldMove_Refresh,
-        .unlockType = ALWAYS_UNLOCKED,
-        .moveID = MOVE_REFRESH,
-        .partyMsgID = PARTY_MSG_CANT_USE_RIGHT_NOW,
-    },
-
-    [FIELD_MOVE_AROMATHERAPY] =
-    {
-        .fieldMoveFunc = SetUpFieldMove_Aromatherapy,
-        .unlockType = ALWAYS_UNLOCKED,
-        .moveID = MOVE_AROMATHERAPY,
-        .partyMsgID = PARTY_MSG_CANT_USE_RIGHT_NOW,
-    },
-
-    [FIELD_MOVE_HEAL_BELL] =
-    {
-        .fieldMoveFunc = SetUpFieldMove_HealBell,
-        .unlockType = ALWAYS_UNLOCKED,
-        .moveID = MOVE_HEAL_BELL,
-        .partyMsgID = PARTY_MSG_CANT_USE_RIGHT_NOW,
-    },
 };

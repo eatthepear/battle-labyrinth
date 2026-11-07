@@ -57,23 +57,4 @@ bool8 FldEff_Defog(void);
 
 void Task_EnterCaveTransition2(u8 taskId);
 
-// refresh
-bool32 SetUpFieldMove_Refresh(void);
-void Task_RefreshOnPartyMon(u8 taskId);
-void UseRefresh(u8 taskId);
-
-// aromatherapy
-bool32 SetUpFieldMove_Aromatherapy(void);
-void Task_AromatherapyOnParty(u8 taskId);
-void UseAromatherapy(u8 taskId);
-
-// heal bell
-bool32 SetUpFieldMove_HealBell(void);
-void Task_HealBellOnParty(u8 taskId);
-void UseHealBell(u8 taskId);
-
-// pp checkers/setters
-bool8 MonHasMoveWithPP(struct Pokemon *mon, u16 move);
-void DecrementMovePP(struct Pokemon *mon, u16 move);
-
 #endif // GUARD_FLDEFF_H

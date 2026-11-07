@@ -4277,15 +4277,6 @@ static void CursorCb_FieldMove(u8 taskId)
             gPartyMenu.exitCallback = CB2_OpenFlyMap;
             Task_ClosePartyMenu(taskId);
             break;
-        case FIELD_MOVE_REFRESH:
-            UseRefresh(taskId);
-            break;
-        case FIELD_MOVE_AROMATHERAPY:
-            UseAromatherapy(taskId);
-            break;
-        case FIELD_MOVE_HEAL_BELL:
-            UseHealBell(taskId);
-            break;
         default:
             gPartyMenu.exitCallback = CB2_ReturnToField;
             Task_ClosePartyMenu(taskId);

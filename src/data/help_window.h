@@ -769,17 +769,6 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "gives a special reward for beating them."),
     },
 
-    [HELP_SIGN_FIELD_MOVES] =
-    {
-        .header = COMPOUND_STRING("Field Moves"),
-        .desc = COMPOUND_STRING("A number of moves have been made\n"
-                                "into field moves, and cost PP.\n\n"
-                                "Aromatherapy, Heal Bell, and Refresh\n"
-                                "cure status.\n"
-                                "Sweet Scent is used to start a wild\n"
-                                "Double Battle."),
-    },
-
     [HELP_SIGN_POKEMON_CHANGES] =
     {
         .header = COMPOUND_STRING("Pokémon Changes"),

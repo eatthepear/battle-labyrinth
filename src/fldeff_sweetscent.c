@@ -18,7 +18,6 @@
 #include "wild_encounter.h"
 #include "util.h"
 #include "constants/field_effects.h"
-#include "constants/moves.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
@@ -28,11 +27,6 @@ static void FailSweetScentEncounter(u8 taskId);
 
 bool32 SetUpFieldMove_SweetScent(void)
 {
-    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][GetCursorSelectionMonId()];
-
-    if (!MonHasMoveWithPP(mon, MOVE_SWEET_SCENT))
-        return FALSE;
-
     gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
     gPostMenuFieldCallback = FieldCallback_SweetScent;
     return TRUE;
@@ -42,8 +36,6 @@ static void FieldCallback_SweetScent(void)
 {
     FieldEffectStart(FLDEFF_SWEET_SCENT);
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
-    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][GetCursorSelectionMonId()];
-    DecrementMovePP(mon, MOVE_SWEET_SCENT);
 }
 
 bool8 FldEff_SweetScent(void)
