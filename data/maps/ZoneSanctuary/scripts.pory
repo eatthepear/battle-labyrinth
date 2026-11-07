@@ -302,7 +302,7 @@ script Sanctuary_EventScript_EnterSanctuary {
 			msgbox(format("The {COLOR GREEN}Endless Candy{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_ENDLESS_CANDY)
-			helpwindow(HELP_SIGN_ENDLESS_CANDY)
+			helpwindow(HELP_ENDLESS_CANDY)
 		case 2:
 			msgbox(format("The {COLOR GREEN}Endless Repellent{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)

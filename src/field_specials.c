@@ -21,6 +21,7 @@
 #include "field_specials.h"
 #include "field_weather.h"
 #include "graphics.h"
+#include "help_window.h"
 #include "international_string_util.h"
 #include "item.h"
 #include "item_icon.h"
@@ -5223,6 +5224,11 @@ u16 GetLegendCaveSpecies(void)
         default:
             return SPECIES_RAYQUAZA;
     }
+}
+
+void BufferHelpWindowName(void)
+{
+    StringCopy(gStringVar1, gHelpWindowInfo[VarGet(VAR_TEMP_0)].header);
 }
 
 void SetAbility(void)

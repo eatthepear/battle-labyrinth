@@ -648,50 +648,9 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "{COLOR GREEN}Endless Repellent{COLOR DARK_GRAY} for easy toggling."),
     },
 
-    [HELP_SIGN_NOTEBOOK] =
+    [HELP_ENDLESS_CANDY] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Notes"),
-        .desc = COMPOUND_STRING("The {COLOR GREEN}Notes{COLOR DARK_GRAY} is filled with useful\n"
-                                "information, including mechanics changes\n"
-                                "from vanilla Pokémon games, upcoming Zones\n"
-                                "and boss battles, and difficulty info.\n\n"
-                                "Any Trainer Tips signs you read will have\n"
-                                "their messages transcribed in the Notes."),
-    },
-
-    [HELP_SIGN_COMPLETING_A_ZONE] =
-    {
-        .header = COMPOUND_STRING("Trainer Tips: Completing a Zone"),
-        .desc = COMPOUND_STRING("Defeat the {COLOR GREEN}Zone{COLOR DARK_GRAY}'s challenge (usually a boss)\n"
-                                "and find {COLOR GREEN}Porygon{COLOR DARK_GRAY} to complete a {COLOR GREEN}Zone{COLOR DARK_GRAY}.\n\n"
-                                "Your Pokémon are automatically healed before\n"
-                                "fighting mandatory bosses.\n"
-                                "This heal can be optional.\n"
-                                "(toggleable in the Options menu)"),
-    },
-
-    [HELP_SIGN_RUNNING_SHOES] =
-    {
-        .header = COMPOUND_STRING("Trainer Tips: Running Shoes"),
-        .desc = COMPOUND_STRING("Press the {L_BUTTON} to toggle the Running Shoes.\n\n"
-                                "While the Running Shoes are toggled on by\n"
-                                "default, you can hold {B_BUTTON} to walk."),
-    },
-
-    [HELP_SIGN_ZONE_INFO] =
-    {
-        .header = COMPOUND_STRING("Trainer Tips: Zone Info"),
-        .desc = COMPOUND_STRING("You can see a short preview of the next Zone\n"
-                                "by consulting the {COLOR GREEN}Notes{COLOR DARK_GRAY}.\n\n"
-                                "This includes:\n"
-                                "- a general description of the Zone\n"
-                                "- how many opponents remain in the Zone\n"
-                                "- a summary of any bosses in the Zone"),
-    },
-
-    [HELP_SIGN_ENDLESS_CANDY] =
-    {
-        .header = COMPOUND_STRING("Trainer Tips: Endless Candy"),
+        .header = COMPOUND_STRING("Endless Candy"),
         .desc = COMPOUND_STRING("The {COLOR GREEN}Endless Candy{COLOR DARK_GRAY} can be used to increase\n"
                                 "your Pokémon's level.\n\n"
                                 "If you are in the {COLOR GREEN}Sanctuary{COLOR DARK_GRAY}, the maximum\n"
@@ -700,18 +659,53 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "the prior level cap."),
     },
 
+    [HELP_SIGN_NOTEBOOK] =
+    {
+        .header = COMPOUND_STRING("Notes"),
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Notes{COLOR DARK_GRAY} are filled with useful\n"
+                                "information, including mechanics changes\n"
+                                "from vanilla Pokémon games, upcoming Zones\n"
+                                "and boss battles, and difficulty info."),
+    },
+
+    [HELP_SIGN_COMPLETING_A_ZONE] =
+    {
+        .header = COMPOUND_STRING("Completing a Zone"),
+        .desc = COMPOUND_STRING("Defeat the {COLOR GREEN}Zone{COLOR DARK_GRAY}'s challenge (usually a boss)\n"
+                                "and find {COLOR GREEN}Porygon{COLOR DARK_GRAY} to complete a {COLOR GREEN}Zone{COLOR DARK_GRAY}.\n\n"
+                                "Your Pokémon are automatically healed before\n"
+                                "fighting mandatory bosses."),
+    },
+
+    [HELP_SIGN_RUNNING_SHOES] =
+    {
+        .header = COMPOUND_STRING("Running Shoes"),
+        .desc = COMPOUND_STRING("Press the {L_BUTTON} to toggle the Running Shoes.\n\n"
+                                "While the Running Shoes are toggled on by\n"
+                                "default, you can hold {B_BUTTON} to walk."),
+    },
+
+    [HELP_SIGN_ZONE_INFO] =
+    {
+        .header = COMPOUND_STRING("Zone Info"),
+        .desc = COMPOUND_STRING("You can see a short preview of the next Zone\n"
+                                "by consulting the {COLOR GREEN}Notes{COLOR DARK_GRAY}.\n\n"
+                                "This includes:\n"
+                                "- a general description of the Zone\n"
+                                "- how many opponents remain in the Zone\n"
+                                "- a summary of any bosses in the Zone"),
+    },
+
     [HELP_SIGN_SURVEIL] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Surveil"),
+        .header = COMPOUND_STRING("Surveil"),
         .desc = COMPOUND_STRING("In battle, you can use {COLOR GREEN}Surveil{COLOR DARK_GRAY} to see the\n"
-                                "opposing team(s).\n\n"
-                                "In a battle against two opponents, press {R_BUTTON}\n"
-                                "to toggle between the oppposing teams."),
+                                "opposing Pokémon."),
     },
 
     [HELP_SIGN_HONEY_SWEET_SCENT] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Honey & Sweet Scent"),
+        .header = COMPOUND_STRING("Honey & Sweet Scent"),
         .desc = COMPOUND_STRING("{COLOR GREEN}Honey{COLOR DARK_GRAY} can be slathered on a Honey Tree to\n"
                                 "encounter a Pokémon.\n"
                                 "{COLOR GREEN}Honey{COLOR DARK_GRAY} can also be used to start a wild\n"
@@ -722,7 +716,7 @@ const struct HelpWindow gHelpWindowInfo[] =
 
     [HELP_SIGN_DOWSING_MACHINE] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Dowsing Machine"),
+        .header = COMPOUND_STRING("Dowsing Machine"),
         .desc = COMPOUND_STRING("You can use the {COLOR GREEN}Dowsing Machine{COLOR DARK_GRAY} to help you\n"
                                 "find such hidden items.\n\n"
                                 "As you get closer to a hidden item, the\n"
@@ -733,7 +727,7 @@ const struct HelpWindow gHelpWindowInfo[] =
 
     [HELP_SIGN_HIDDEN_MACHINES] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Hidden Machines"),
+        .header = COMPOUND_STRING("Hidden Machines"),
         .desc = COMPOUND_STRING("A Hidden Machine (HM for short) teaches a\n"
                                 "a move that can be used in the field!\n"
                                 "Unlike vanilla Pokémon games, HMs can be\n"
@@ -746,7 +740,7 @@ const struct HelpWindow gHelpWindowInfo[] =
 
     [HELP_SIGN_LEADER] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Gym Leader"),
+        .header = COMPOUND_STRING("Gym Leader"),
         .desc = COMPOUND_STRING("Some Zones have {COLOR GREEN}Gym Leaders{COLOR DARK_GRAY}, a particularly\n"
                                 "challenging boss specializing in a single\n"
                                 "type of Pokémon.\n\n"
@@ -758,14 +752,14 @@ const struct HelpWindow gHelpWindowInfo[] =
 
     [HELP_SIGN_OPTIONAL_BOSSES] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Optional Bosses"),
+        .header = COMPOUND_STRING("Optional Bosses"),
         .desc = COMPOUND_STRING("Some Zones have an optional boss that\n"
                                 "gives a special reward for beating them."),
     },
 
     [HELP_SIGN_FIELD_MOVES] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Field Moves"),
+        .header = COMPOUND_STRING("Field Moves"),
         .desc = COMPOUND_STRING("A number of moves have been made\n"
                                 "into field moves, and cost PP.\n\n"
                                 "Aromatherapy, Heal Bell, and Refresh\n"
@@ -776,7 +770,7 @@ const struct HelpWindow gHelpWindowInfo[] =
 
     [HELP_SIGN_POKEMON_CHANGES] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Pokémon Changes"),
+        .header = COMPOUND_STRING("Pokémon Changes"),
         .desc = COMPOUND_STRING("Many Pokémon have minor adjustments to\n"
                                 "their evolution methods and abilities from\n"
                                 "vanilla Pokémon games.\n\n"
@@ -785,14 +779,14 @@ const struct HelpWindow gHelpWindowInfo[] =
 
     [HELP_SIGN_DIFFERENT_AREAS] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Different Areas"),
+        .header = COMPOUND_STRING("Different Areas"),
         .desc = COMPOUND_STRING("The encounterable Pokémon in different areas\n"
                                 "of the same Zone may vary significantly."),
     },
 
     [HELP_SIGN_POKEDEX_INFO] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Pokedex Info"),
+        .header = COMPOUND_STRING("Pokedex Info"),
         .desc = COMPOUND_STRING("You can see detailed information about a\n"
                                 "Pokémon species in its Pokédex entry, such\n"
                                 "such as its moveset or how to evolve it.\n\n"
@@ -802,7 +796,7 @@ const struct HelpWindow gHelpWindowInfo[] =
 
     [HELP_SIGN_BAG_TIPS] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Bag Tips"),
+        .header = COMPOUND_STRING("Bag Tips"),
         .desc = COMPOUND_STRING("You can sort items in the Bag using {START_BUTTON}.\n\n"
                                 "You can register Key Items from the Bag for\n"
                                 "easy use. Once an item is registered,\n"
@@ -812,14 +806,14 @@ const struct HelpWindow gHelpWindowInfo[] =
 
     [HELP_SIGN_CHANGE_MUSIC] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Change Music"),
+        .header = COMPOUND_STRING("Change Music"),
         .desc = COMPOUND_STRING("You can change some of the music you hear by\n"
                                 "speaking to the Guitarist in the Sanctuary."),
     },
 
     [HELP_SIGN_STATS_IV_EV] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Viewing IVs/EVs"),
+        .header = COMPOUND_STRING("Viewing IVs/EVs"),
         .desc = COMPOUND_STRING("While you are on the Pokémon stats screen,\n"
                                 "you can press {A_BUTTON} to switch between\n"
                                 "stats, IVs, and EVs."),
@@ -827,13 +821,13 @@ const struct HelpWindow gHelpWindowInfo[] =
 
     [HELP_SIGN_LEVEL_CAP] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Level Cap"),
+        .header = COMPOUND_STRING("Level Cap"),
         .desc = COMPOUND_STRING("The {COLOR GREEN}Notes{COLOR DARK_GRAY} contains the current level cap."),
     },
 
     [HELP_SIGN_BATTLE_CHANGES] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Battle Changes"),
+        .header = COMPOUND_STRING("Battle Changes"),
         .desc = COMPOUND_STRING("Some battle mechanics have minor adjustments\n"
                                 "from vanilla, including:\n"
                                 "- increased accuracy for many moves\n"
@@ -844,7 +838,7 @@ const struct HelpWindow gHelpWindowInfo[] =
 
     [HELP_SIGN_SELECT_SWITCH] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Switch with Select"),
+        .header = COMPOUND_STRING("Switch with Select"),
         .desc = COMPOUND_STRING("In the party menu, you can press {SELECT_BUTTON} to\n"
                                 "quickly shift a Pokémon to the front of your\n"
                                 "party."),
@@ -852,7 +846,7 @@ const struct HelpWindow gHelpWindowInfo[] =
 
     [HELP_SIGN_GAUNTLET] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Gauntlets"),
+        .header = COMPOUND_STRING("Gauntlets"),
         .desc = COMPOUND_STRING("Not all Zones have a single boss.\n\n"
                                 "Some Zones have gauntlets, where you must\n"
                                 "win multiple battles in a row."),
@@ -860,21 +854,21 @@ const struct HelpWindow gHelpWindowInfo[] =
 
     [HELP_SIGN_SANCTUARY_AREAS] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Sanctuary Areas"),
+        .header = COMPOUND_STRING("Sanctuary Areas"),
         .desc = COMPOUND_STRING("The Sanctuary has a few connected areas\n"
                                 "that are unlocked with new HMs."),
     },
 
     [HELP_SIGN_RESTORE_HELD_ITEMS] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Held Items"),
+        .header = COMPOUND_STRING("Held Items"),
         .desc = COMPOUND_STRING("All held items (except Berries) are\n"
                                 "restored after battle.\n\n"),
     },
 
-    [HELP_SIGN_ITEM_PRICE] =
+    [HELP_CHANGES_ITEM_PRICE] =
     {
-        .header = COMPOUND_STRING("Trainer Tips: Item Price"),
+        .header = COMPOUND_STRING("Item Price"),
         .desc = COMPOUND_STRING("Items sell for 1/4 of their original price.\n"
                                 "Some items have had their prices changed\n"
                                 "from vanilla Pokémon games.\n\n"
@@ -882,6 +876,14 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Shards cost ¥200.\n"
                                 "Tera Shards cost ¥200.\n"
                                 "Heart Scales cost ¥2400."),
+    },
+
+    [HELP_SIGN_TAG_SURVEIL] =
+    {
+        .header = COMPOUND_STRING("Tag Battles"),
+        .desc = COMPOUND_STRING("In a Tag Battle, you partner with another trainer against your opponent(s).\n"
+                                "In battle, you can toggle between viewing your Pokémon and your partner's Pokémon with {R_BUTTON} in the party menu.\n"
+                                "You can also do this while using {COLOR GREEN}Surveil{COLOR DARK_GRAY} to toggle between the opposing teams."),
     },
 
     [HELP_SACRED_ASH] =

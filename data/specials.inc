@@ -661,3 +661,4 @@ gSpecials::
 	def_special SetTimeToNight
 	def_special CheckWhichPuzzle
 	def_special GetLegendCaveSpecies
+	def_special BufferHelpWindowName
