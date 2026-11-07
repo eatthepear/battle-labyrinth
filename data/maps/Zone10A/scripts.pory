@@ -84,9 +84,7 @@ script Zone10A_EventScript_KimonoGirl_Exit {
 	playbgm(MUS_HG_KIMONO_GIRL, 0)
 	facefollowernpc
 	setspeaker("Kimono Girl")
-	msgbox(format("Oh, look! The stairs to a shelter!\pThe poor Kimono Girl has been led to a shelter by a kind trainer!\pAs thanks, I have here a number of evolution stones.\pChoose which one you'd like."))
-	setspeaker(SP_NAME_NONE)
-	message(format("Choose which evolution stone you would like."))
+	message(format("Oh, look! The stairs to a shelter!\pThe poor Kimono Girl has been led to a shelter by a kind trainer!\pAs thanks, I have here a number of evolution stones.\pChoose which one you'd like."))
 	waitmessage
 	dynmultipush("Fire Stone", ITEM_FIRE_STONE)
 	dynmultipush("Water Stone", ITEM_WATER_STONE)
@@ -96,9 +94,11 @@ script Zone10A_EventScript_KimonoGirl_Exit {
 	dynmultipush("Leaf Stone", ITEM_LEAF_STONE)
 	dynmultipush("Ice Stone", ITEM_ICE_STONE)
 	dynmultistack(0, 0, TRUE, 5, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
+	setspeaker(SP_NAME_NONE)
 	giveitem(VAR_RESULT, 1)
 	setspeaker("Kimono Girl")
-	msgbox(format("Goodbye."), MSGBOX_AUTOCLOSE)
+	msgbox(format("Goodbye."))
+	closemessage
 	getobjectcurrentxy(OBJ_EVENT_ID_NPC_FOLLOWER, destX=VAR_TEMP_0, destY=VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 33) {
 		applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Zone10A_Movement_KimonoGirl_Exit_Top)
@@ -113,9 +113,7 @@ script Zone10A_EventScript_KimonoGirl_Exit {
 		applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, Zone10A_Movement_KimonoGirl_Exit_Bottom)
 		waitmovement(0)
 	}
-	fadescreenswapbuffers(FADE_TO_BLACK)
 	destroyfollowernpc
-	fadescreenswapbuffers(FADE_FROM_BLACK)
 	setvar(VAR_ZONE_10_STATE, 2)
 	fadedefaultbgm
 	releaseall
@@ -125,22 +123,34 @@ movement Zone10A_Movement_KimonoGirl_Exit_Top {
 	walk_left
 	walk_down * 2
 	walk_right
+    walk_diag_northeast * 2
+	walk_right
+	walk_up * 5
 }
 
 movement Zone10A_Movement_KimonoGirl_Exit_TopMiddle {
 	walk_down
 	walk_right
+    walk_diag_northeast * 2
+	walk_right
+	walk_up * 5
 }
 
 movement Zone10A_Movement_KimonoGirl_Exit_BottomMiddle {
 	walk_up
 	walk_right * 2
+    walk_diag_northeast * 2
+	walk_right
+	walk_up * 5
 }
 
 movement Zone10A_Movement_KimonoGirl_Exit_Bottom {
 	walk_left
 	walk_up * 2
 	walk_right
+    walk_diag_northeast * 2
+	walk_right
+	walk_up * 5
 }
 
 script Zone10A_EventScript_Jasmine {
