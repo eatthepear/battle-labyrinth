@@ -82,9 +82,9 @@ script Zone2A_EventScript_TriggerBlue {
 	applymovement(LOCALID_BLUE_2A, Common_Movement_WalkUp2)
 	waitmovement(0)
 	setspeaker("???")
-	msgbox(format("Hello, traveler!\pAre you a Pokémon trainer? If so, do you want to have a friendly match?"), MSGBOX_YESNO)
+	msgbox(format("Hey, Pokémon trainer! I've been challenging everyone that passes through, which now includes you!\pSo what do you say to a battle?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("It's okay if you're not ready!\pCome back when you are!"))
+		msgbox(format("Well, then, you're not passing through here!"))
 		closemessage
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 		waitmovement(0)
@@ -106,17 +106,17 @@ script Zone2A_EventScript_TriggerBlue {
 		end
 	}
 	setspeaker("???")
-	msgbox(format("Great! Oh, before we battle, I should introduce myself.\pI'm {COLOR BLUE}Blue{COLOR DARK_GRAY}! And you are?"))
+	msgbox(format("Haha! I should introduce myself.\pI'm {COLOR BLUE}Blue{COLOR DARK_GRAY}! And you are?"))
 	closemessage
 	delay(40)
 	setspeaker("Blue")
-	msgbox(format("Nice to meet you, {COLOR BLUE}{PLAYER}{COLOR DARK_GRAY}! Now, let's battle!"))
+	msgbox(format("So you're {COLOR BLUE}{PLAYER}{COLOR DARK_GRAY}!\pYou probably don't have any Badges, so this should be an easy victory!"))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_BLUE_BOSS_2, format("Darn!"))
+	trainerbattle_no_intro(TRAINER_PBL_BLUE_BOSS_2, format("Awww! You just lucked out!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Blue")
-	msgbox(format("Wow, you got me!\pIt's disappointing to lose, but you seem to be a good trainer, so that takes away the sting a bit!\pHere, take this HM. It can break small boulders, though you'll need the {COLOR GREEN}Cliff Badge{COLOR DARK_GRAY} to use it outside of battle."))
+	msgbox(format("So that's what defeat tastes like…\pWell, I'm never losing to anyone again!\pEspecially not you, {COLOR BLUE}{PLAYER}{COLOR DARK_GRAY}!\pLook, you look like you need a bit of help, so take this HM.\pIt can break small boulders, though you'll need the {COLOR GREEN}Cliff Badge{COLOR DARK_GRAY} to use it outside of battle."))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_HM_ROCK_SMASH)
 	helpwindow(HELP_SIGN_HIDDEN_MACHINES)
@@ -140,7 +140,7 @@ script Zone2A_EventScript_Blue {
 }
 
 text Zone2A_Text_Blue_HoneSkills {
-	format("I think I'll wait here for more trainers to pass through so I can hone my skills.\pThe next time we battle, I'm sure I'll beat you then!")
+	format("I'm gonna hone my skills so I can take on a Gym Leader.\pThe next time we battle, I'm sure I'll beat you then!\pSmell ya later!")
 }
 
 script Zone2A_EventScript_Shaun {
