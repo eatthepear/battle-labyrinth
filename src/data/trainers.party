@@ -4606,25 +4606,25 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sticky Web
 - Mirror Coat
 
-Arbok @ Assault Vest
-Ability: Intimidate
+Gothitelle @ Expert Belt
+Ability: Shadow Tag
 Level: 48
-Adamant Nature
+Timid Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Poison Jab
-- Crunch
-- Earthquake
-- Aqua Tail
+- Psychic
+- Shadow Ball
+- Thunderbolt
+- Grass Knot
 
-Obstagoon @ Flame Orb
-Ability: Guts
+Gliscor @ Toxic Orb
+Ability: Poison Heal
 Level: 48
-Adamant Nature
+Careful Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
 - Facade
-- Knock Off
-- Switcheroo
-- Obstruct
+- Acrobatics
+- Fling
 
 Vileplume @ Leftovers
 Ability: Effect Spore
@@ -4636,15 +4636,75 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Synthesis
 - Strength Sap
 
-Mamoswine @ Loaded Dice
-Ability: Thick Fat
+Mawile @ Mawilite
+Ability: Intimidate
+Level: 50
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Iron Head
+- Knock Off
+- Ice Punch
+
+=== TRAINER_PBL_ARIANA_BOSS_25 ===
+Name: Ariana
+Class: Rainbow Rocket Executive
+Pic: Ariana
+Music: Rocket
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+Difficulty: Brutal
+
+Araquanid @ Wacan Berry
+Ability: Water Bubble
 Level: 48
-Jolly Nature
+Impish Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Leech Life
+- Sticky Web
+- Mirror Coat
+
+Gothitelle @ Expert Belt
+Ability: Shadow Tag
+Level: 48
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Shadow Ball
+- Thunderbolt
+- Grass Knot
+
+Gliscor @ Toxic Orb
+Ability: Poison Heal
+Level: 48
+Careful Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
-- Icicle Spear
-- Rock Blast
-- Ice Shard
+- Facade
+- Acrobatics
+- Fling
+
+Vileplume @ Leftovers
+Ability: Effect Spore
+Level: 48
+Calm Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Sludge Bomb
+- Synthesis
+- Strength Sap
+
+Hydreigon @ Life Orb
+Ability: Levitate
+Level: 50
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dark Pulse
+- Dragon Pulse
+- Flash Cannon
+- Flamethrower
 
 Mawile @ Mawilite
 Ability: Intimidate
@@ -4972,16 +5032,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Aqua Tail
 - Earthquake
 
-Hydreigon @ Life Orb
-Timid Nature
-Ability: Levitate
+Honchkrow @ Life Orb
+Naive Nature
+Ability: Moxie
 Level: 2
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Pulse
+- Brave Bird
 - Dark Pulse
-- Flash Cannon
-- Flamethrower
-
+- Superpower
+- Sucker Punch
 
 === TRAINER_PBL_ZUKI_BOSS_29 ===
 Name: Zuki
