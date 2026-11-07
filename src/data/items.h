@@ -14885,9 +14885,9 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_Key,
     },
 
-    [ITEM_ENDLESS_REPEL] =
+    [ITEM_INFINITE_REPEL] =
     {
-        .name = ITEM_NAME("Endless Repellent"),
+        .name = ITEM_NAME("Infinite Repel"),
         .price = 0,
         .description = COMPOUND_STRING(
             "While active,\n"

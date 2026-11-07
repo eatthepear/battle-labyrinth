@@ -1438,7 +1438,7 @@ script EventScript_Notebook_Items {
 		message(format("Item Changes open.\nAnything not listed is vanilla."))
 		waitmessage
 		dynmultipush("Endless Rare Candy", ITEM_ENDLESS_CANDY)
-		dynmultipush("Endless Repel", ITEM_ENDLESS_REPEL)
+		dynmultipush("Infinite Repel", ITEM_INFINITE_REPEL)
 		dynmultipush("Hex Orb", ITEM_HEXORB)
 		dynmultipush("TMs", ITEM_TM_RETURN)
 		dynmultipush("HMs", ITEM_HM_SURF)
@@ -1455,8 +1455,8 @@ script EventScript_Notebook_Items {
 		switch (var(VAR_RESULT)) {
 			case ITEM_RARE_CANDY:
 				helpwindow(HELP_ENDLESS_CANDY)
-			case ITEM_ENDLESS_REPEL:
-				helpwindow(HELP_ENDLESS_REPEL)
+			case ITEM_INFINITE_REPEL:
+				helpwindow(HELP_INFINITE_REPEL)
 			case ITEM_TM_RETURN:
 				msgbox(format("TMs are infinite use, but do not restore PP if you are in a new {COLOR GREEN}Zone{COLOR DARK_GRAY}."))
 			case ITEM_HM_SURF:
@@ -1490,7 +1490,6 @@ script EventScript_Notebook_Other {
 		dynmultipush("Trainers", 1)
 		dynmultipush("DexNav", 2)
 		dynmultipush("Honey Tree", 3)
-		dynmultipush("Hidden Grotto", 4)
 		dynmultipush("Move Tutors", 6)
 		dynmultipush("Back", 8)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
@@ -1503,8 +1502,6 @@ script EventScript_Notebook_Other {
 				helpwindow(HELP_CHANGES_DEXNAV)
 			case 3:
 				helpwindow(HELP_CHANGES_HONEY_SWEET_SCENT)
-			case 4:
-				helpwindow(HELP_CHANGES_HIDDEN_GROTTO)
 			case 6:
 				msgbox(format("Move Tutors can be found scattered in a few Zones.\pOnce encountered, {COLOR GREEN}Lelouch's Services Stand{COLOR DARK_GRAY} can handle teaching your Pokémon those moves."))
 			case 8:
@@ -1931,7 +1928,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_PECHA_BERRY, 3)
 	additem(ITEM_CHERI_BERRY, 3)
 	additem(ITEM_HM_ROCK_SMASH)
-	additem(ITEM_ENDLESS_REPEL)
+	additem(ITEM_INFINITE_REPEL)
 
 	if (var(VAR_ZONE) == 3) {
 		return

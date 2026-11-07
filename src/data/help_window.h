@@ -610,21 +610,9 @@ const struct HelpWindow gHelpWindowInfo[] =
         .desc = COMPOUND_STRING("The {COLOR GREEN}DexNav{COLOR DARK_GRAY} displays all wild Pokémon\n"
                                 "available in a Zone.\n"
                                 "Pokémon in the Hidden category are found\n"
-                                "while fishing, surfing, in Honey trees,\n"
-                                "smashing rocks, etc.\n"
+                                "in Honey trees, smashing rocks, etc.\n"
                                 "Pokémon do not flee from the {COLOR GREEN}DexNav{COLOR DARK_GRAY}'s search.\n"
                                 "The {COLOR GREEN}DexNav{COLOR DARK_GRAY} cannot chain Pokémon."),
-    },
-
-    [HELP_CHANGES_HIDDEN_GROTTO] =
-    {
-        .header = COMPOUND_STRING("Changes: Hidden Grotto"),
-        .desc = COMPOUND_STRING("{COLOR GREEN}Hidden Grottoes{COLOR DARK_GRAY} contain one specific Pokémon\n"
-                                "species with its Hidden Ability, chosen\n"
-                                "randomly from a pool.\n\n"
-                                "Pokémon respawn upon exiting the\n"
-                                "{COLOR GREEN}Hidden Grotto{COLOR DARK_GRAY}, though it will always be\n"
-                                "the same species."),
     },
 
     [HELP_CHANGES_HONEY_SWEET_SCENT] =
@@ -644,10 +632,9 @@ const struct HelpWindow gHelpWindowInfo[] =
         .desc = COMPOUND_STRING("Items sell for 1/4 of their original price.\n"
                                 "Some items have had their prices changed\n"
                                 "from vanilla Pokémon games.\n\n"
-                                "{COLOR GREEN}Honey{COLOR DARK_GRAY}, Mints, & Exp. Candies cost ¥80.\n"
-                                "Shards cost ¥200.\n"
-                                "Tera Shards cost ¥200.\n"
-                                "Heart Scales cost ¥2400."),
+                                "{COLOR GREEN}Honey{COLOR DARK_GRAY}, {COLOR GREEN}Mints{COLOR DARK_GRAY}, & {COLOR GREEN}Exp. Candies{COLOR DARK_GRAY} cost ¥80.\n"
+                                "{COLOR GREEN}Shards{COLOR DARK_GRAY} cost ¥200.\n"
+                                "{COLOR GREEN}Heart Scales{COLOR DARK_GRAY} cost ¥2400."),
     },
 
     [HELP_FARMERS_STAND] =
@@ -661,14 +648,14 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "{COLOR GREEN}every 5th Zone{COLOR DARK_GRAY}."),
     },
 
-    [HELP_ENDLESS_REPEL] =
+    [HELP_INFINITE_REPEL] =
     {
-        .header = COMPOUND_STRING("Endless Repel"),
-        .desc = COMPOUND_STRING("The {COLOR GREEN}Endless Repellent{COLOR DARK_GRAY} allows you to avoid\n"
+        .header = COMPOUND_STRING("Infinite Repel"),
+        .desc = COMPOUND_STRING("The {COLOR GREEN}Infinite Repel{COLOR DARK_GRAY} allows you to avoid\n"
                                 "encountering any wild Pokémon.\n"
                                 "It works regardless of your Pokémon's level.\n\n"
                                 "It is recommended to register the\n"
-                                "{COLOR GREEN}Endless Repellent{COLOR DARK_GRAY} for easy toggling."),
+                                "{COLOR GREEN}Infinite Repel{COLOR DARK_GRAY} for easy toggling."),
     },
 
     [HELP_ENDLESS_CANDY] =
