@@ -1457,9 +1457,9 @@ script EventScript_Notebook_Items {
 			case ITEM_TM_RETURN:
 				msgbox(format("TMs are infinite use, but do not restore PP if you are in a new {COLOR GREEN}Zone{COLOR DARK_GRAY}."))
 			case ITEM_HM_SURF:
-				helpwindow(HELP_SIGN_HIDDEN_MACHINES)
+				helpwindow(HELP_CHANGES_HIDDEN_MACHINES)
 			case ITEM_HONEY:
-				helpwindow(HELP_SIGN_HONEY_SWEET_SCENT)
+				helpwindow(HELP_CHANGES_HONEY_SWEET_SCENT)
 			case ITEM_ABILITY_SNACK:
 				msgbox(format("The {COLOR GREEN}Ability Snack{COLOR DARK_GRAY} costs ¥80 and functions the same as an Ability Capsule."))
 			case ITEM_SERIOUS_MINT:
@@ -1498,7 +1498,7 @@ script EventScript_Notebook_Other {
 			case 2:
 				helpwindow(HELP_CHANGES_DEXNAV)
 			case 3:
-				helpwindow(HELP_SIGN_HONEY_SWEET_SCENT)
+				helpwindow(HELP_CHANGES_HONEY_SWEET_SCENT)
 			case 4:
 				helpwindow(HELP_CHANGES_HIDDEN_GROTTO)
 			case 5:
@@ -1525,21 +1525,19 @@ script EventScript_Notebook_Tips {
 		waitmessage
 		dynmultistack(0, 0, FALSE, 6, FALSE, HELP_SIGNS_START, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
-			case HELP_SIGN_NOTEBOOK:
-				call(EventScript_Sign_Notebook)
+			case HELP_SIGN_NOTES:
+				call(EventScript_Sign_Notes)
 			case HELP_SIGN_COMPLETING_A_ZONE:
 				call(EventScript_Sign_CompletingAZone)
 			case HELP_SIGN_RUNNING_SHOES:
 				call(EventScript_Sign_RunningShoes)
 			case HELP_SIGN_ZONE_INFO:
 				call(EventScript_Sign_ZoneInfo)
-			case HELP_SIGN_SURVEIL:
+			case HELP_CHANGES_SURVEIL:
 				call(EventScript_Sign_Surveil)
-			case HELP_SIGN_HONEY_SWEET_SCENT:
-				call(EventScript_Sign_HoneySweetScent)
 			case HELP_SIGN_DOWSING_MACHINE:
 				call(EventScript_Sign_DowsingMachine)
-			case HELP_SIGN_HIDDEN_MACHINES:
+			case HELP_CHANGES_HIDDEN_MACHINES:
 				call(EventScript_Sign_HiddenMachines)
 			case HELP_SIGN_LEADER:
 				call(EventScript_Sign_Leader)
@@ -1581,12 +1579,16 @@ script EventScript_Notebook_Tips {
 	}
 }
 
-script EventScript_Sign_Notebook {
-	helpwindow(HELP_SIGN_NOTEBOOK)
+script EventScript_Sign_Notes {
+	helpwindow(HELP_SIGN_NOTES)
 }
 
 script EventScript_Sign_CompletingAZone {
-	helpwindow(HELP_SIGN_COMPLETING_A_ZONE)
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		helpwindow(HELP_SIGN_COMPLETING_A_ZONE_BRUTAL)
+	} else {
+		helpwindow(HELP_SIGN_COMPLETING_A_ZONE)
+	}
 }
 
 script EventScript_Sign_RunningShoes {
@@ -1598,11 +1600,7 @@ script EventScript_Sign_ZoneInfo {
 }
 
 script EventScript_Sign_Surveil {
-	helpwindow(HELP_SIGN_SURVEIL)
-}
-
-script EventScript_Sign_HoneySweetScent {
-	helpwindow(HELP_SIGN_HONEY_SWEET_SCENT)
+	helpwindow(HELP_CHANGES_SURVEIL)
 }
 
 script EventScript_Sign_DowsingMachine {
@@ -1610,7 +1608,7 @@ script EventScript_Sign_DowsingMachine {
 }
 
 script EventScript_Sign_HiddenMachines {
-	helpwindow(HELP_SIGN_HIDDEN_MACHINES)
+	helpwindow(HELP_CHANGES_HIDDEN_MACHINES)
 }
 
 script EventScript_Sign_Leader {

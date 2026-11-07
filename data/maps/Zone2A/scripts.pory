@@ -119,7 +119,7 @@ script Zone2A_EventScript_TriggerBlue {
 	msgbox(format("So that's what defeat tastes like…\pWell, I'm never losing to anyone again!\pEspecially not you, {COLOR BLUE}{PLAYER}{COLOR DARK_GRAY}!\pLook, you look like you need a bit of help, so take this HM.\pIt can break small boulders, though you'll need the {COLOR GREEN}Cliff Badge{COLOR DARK_GRAY} to use it outside of battle."))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_HM_ROCK_SMASH)
-	helpwindow(HELP_SIGN_HIDDEN_MACHINES)
+	helpwindow(HELP_CHANGES_HIDDEN_MACHINES)
 	setspeaker("Blue")
 	msgbox(Zone2A_Text_Blue_HoneSkills)
 	closemessage

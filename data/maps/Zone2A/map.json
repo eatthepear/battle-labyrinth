@@ -325,7 +325,7 @@
       "y": 31,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "EventScript_Sign_HoneySweetScent"
+      "script": "EventScript_Sign_Filler"
     },
     {
       "type": "sign",

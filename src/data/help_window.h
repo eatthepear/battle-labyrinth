@@ -627,6 +627,29 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "the same species."),
     },
 
+    [HELP_CHANGES_HONEY_SWEET_SCENT] =
+    {
+        .header = COMPOUND_STRING("Honey & Sweet Scent"),
+        .desc = COMPOUND_STRING("{COLOR GREEN}Honey{COLOR DARK_GRAY} can be slathered on a Honey Tree to\n"
+                                "encounter a Pokémon.\n"
+                                "{COLOR GREEN}Honey{COLOR DARK_GRAY} can also be used to start a wild\n"
+                                "Double Battle if used from the Bag.\n\n"
+                                "The field move {COLOR GREEN}Sweet Scent{COLOR DARK_GRAY} can also start\n"
+                                "a wild Double Battle this way!"),
+    },
+
+    [HELP_CHANGES_ITEM_PRICE] =
+    {
+        .header = COMPOUND_STRING("Item Price"),
+        .desc = COMPOUND_STRING("Items sell for 1/4 of their original price.\n"
+                                "Some items have had their prices changed\n"
+                                "from vanilla Pokémon games.\n\n"
+                                "{COLOR GREEN}Honey{COLOR DARK_GRAY}, Mints, & Exp. Candies cost ¥80.\n"
+                                "Shards cost ¥200.\n"
+                                "Tera Shards cost ¥200.\n"
+                                "Heart Scales cost ¥2400."),
+    },
+
     [HELP_FARMERS_STAND] =
     {
         .header = COMPOUND_STRING("Farmer's Stand"),
@@ -659,7 +682,27 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "the prior level cap."),
     },
 
-    [HELP_SIGN_NOTEBOOK] =
+    [HELP_CHANGES_SURVEIL] =
+    {
+        .header = COMPOUND_STRING("Surveil"),
+        .desc = COMPOUND_STRING("In battle, you can use {COLOR GREEN}Surveil{COLOR DARK_GRAY} to see the\n"
+                                "opposing Pokémon."),
+    },
+
+    [HELP_CHANGES_HIDDEN_MACHINES] =
+    {
+        .header = COMPOUND_STRING("Hidden Machines"),
+        .desc = COMPOUND_STRING("A Hidden Machine (HM for short) teaches a\n"
+                                "a move that can be used in the field!\n"
+                                "Unlike vanilla Pokémon games, HMs can be\n"
+                                "easily forgotten.\n"
+                                "In addition, HMs can be used even without\n"
+                                "any Pokémon in your party knowing the move.\n"
+                                "You just need to have the HM on hand, as\n"
+                                "well as the corresponding Gym Badge."),
+    },
+
+    [HELP_SIGN_NOTES] =
     {
         .header = COMPOUND_STRING("Notes"),
         .desc = COMPOUND_STRING("The {COLOR GREEN}Notes{COLOR DARK_GRAY} are filled with useful\n"
@@ -696,24 +739,6 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "- a summary of any bosses in the Zone"),
     },
 
-    [HELP_SIGN_SURVEIL] =
-    {
-        .header = COMPOUND_STRING("Surveil"),
-        .desc = COMPOUND_STRING("In battle, you can use {COLOR GREEN}Surveil{COLOR DARK_GRAY} to see the\n"
-                                "opposing Pokémon."),
-    },
-
-    [HELP_SIGN_HONEY_SWEET_SCENT] =
-    {
-        .header = COMPOUND_STRING("Honey & Sweet Scent"),
-        .desc = COMPOUND_STRING("{COLOR GREEN}Honey{COLOR DARK_GRAY} can be slathered on a Honey Tree to\n"
-                                "encounter a Pokémon.\n"
-                                "{COLOR GREEN}Honey{COLOR DARK_GRAY} can also be used to start a wild\n"
-                                "Double Battle if used from the Bag.\n\n"
-                                "The field move {COLOR GREEN}Sweet Scent{COLOR DARK_GRAY} can also start\n"
-                                "a wild Double Battle this way!"),
-    },
-
     [HELP_SIGN_DOWSING_MACHINE] =
     {
         .header = COMPOUND_STRING("Dowsing Machine"),
@@ -723,19 +748,6 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Dowsing Machine will make noises, change\n"
                                 "color, and shake until it shakes red,\n"
                                 "meaning an item is right in front of you!"),
-    },
-
-    [HELP_SIGN_HIDDEN_MACHINES] =
-    {
-        .header = COMPOUND_STRING("Hidden Machines"),
-        .desc = COMPOUND_STRING("A Hidden Machine (HM for short) teaches a\n"
-                                "a move that can be used in the field!\n"
-                                "Unlike vanilla Pokémon games, HMs can be\n"
-                                "easily forgotten.\n"
-                                "In addition, HMs can be used even without\n"
-                                "any Pokémon in your party knowing the move.\n"
-                                "You just need to have the HM on hand, as\n"
-                                "well as the corresponding Gym Badge."),
     },
 
     [HELP_SIGN_LEADER] =
@@ -866,24 +878,21 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "restored after battle.\n\n"),
     },
 
-    [HELP_CHANGES_ITEM_PRICE] =
-    {
-        .header = COMPOUND_STRING("Item Price"),
-        .desc = COMPOUND_STRING("Items sell for 1/4 of their original price.\n"
-                                "Some items have had their prices changed\n"
-                                "from vanilla Pokémon games.\n\n"
-                                "{COLOR GREEN}Honey{COLOR DARK_GRAY}, Mints, & Exp. Candies cost ¥80.\n"
-                                "Shards cost ¥200.\n"
-                                "Tera Shards cost ¥200.\n"
-                                "Heart Scales cost ¥2400."),
-    },
-
     [HELP_SIGN_TAG_SURVEIL] =
     {
         .header = COMPOUND_STRING("Tag Battles"),
         .desc = COMPOUND_STRING("In a Tag Battle, you partner with another trainer against your opponent(s).\n"
                                 "In battle, you can toggle between viewing your Pokémon and your partner's Pokémon with {R_BUTTON} in the party menu.\n"
                                 "You can also do this while using {COLOR GREEN}Surveil{COLOR DARK_GRAY} to toggle between the opposing teams."),
+    },
+
+    // end regular signs here
+
+    [HELP_SIGN_COMPLETING_A_ZONE_BRUTAL] =
+    {
+        .header = COMPOUND_STRING("Completing a Zone"),
+        .desc = COMPOUND_STRING("Defeat the {COLOR GREEN}Zone{COLOR DARK_GRAY}'s challenge (usually a boss)\n"
+                                "and find {COLOR GREEN}Porygon{COLOR DARK_GRAY} to complete a {COLOR GREEN}Zone{COLOR DARK_GRAY}."),
     },
 
     [HELP_SACRED_ASH] =
