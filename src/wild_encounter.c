@@ -1171,7 +1171,7 @@ void HoneyWildEncounter(void)
 
     if (headerId != HEADER_NONE)
     {
-        enum TimeOfDay timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
+        enum TimeOfDay timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_HIDDEN);
 
         if (TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo, WILD_AREA_HIDDEN, 0) == TRUE)
         {
