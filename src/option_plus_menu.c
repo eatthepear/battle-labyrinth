@@ -516,7 +516,7 @@ static const u8 sText_Desc_OverworldSpeedup[]     = _("This speeds up the overwo
 static const u8 sText_Desc_BattleSpeedup[]     = _("This speeds up battles.\nUse with caution, not fully tested.");
 static const u8 *const sOptionMenuItemDescriptionsQOL[MENUITEM_QOL_COUNT][2] =
 {
-    [MENUITEM_QOL_SAVEPROMPTS] = {sText_Desc_SavePromptsOff,        sText_Desc_SavePromptsOn},
+    [MENUITEM_QOL_SAVEPROMPTS] = {sText_Desc_SavePromptsOn,        sText_Desc_SavePromptsOff},
     [MENUITEM_QOL_BOSSHEALPROMPTS] = {sText_Desc_BossHealPromptsOff,        sText_Desc_BossHealPromptsOn},
     [MENUITEM_QOL_OVERWORLDSPEEDUP] = {sText_Desc_OverworldSpeedup,        sText_Empty},
     [MENUITEM_QOL_BATTLESPEEDUP] = {sText_Desc_BattleSpeedup,        sText_Empty},
