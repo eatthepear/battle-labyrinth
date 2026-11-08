@@ -133,7 +133,7 @@ script Zone7A_EventScript_Wally {
 		applymovement(LOCALID_WALLY_7A, Common_Movement_WalkDown)
 		waitmovement(0)
 	}
-	playbgm(MUS_BW_FRIEND, TRUE)
+	playbgm(MUS_BW_FRIEND, FALSE)
 	applymovement(LOCALID_WALLY_7A, Common_Movement_WalkRight2)
 	waitmovement(0)
 	applymovement(LOCALID_WALLY_7A, Common_Movement_ExclamationMark)

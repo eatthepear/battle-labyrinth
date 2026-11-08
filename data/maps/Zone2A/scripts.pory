@@ -61,7 +61,7 @@ script Zone2A_EventScript_TriggerBlue {
 	lockall
 	applymovement(LOCALID_BLUE_2A, Common_Movement_FaceUp)
 	waitmovement(0)
-	playbgm(MUS_BW_FRIEND, TRUE)
+	playbgm(MUS_BW_FRIEND, FALSE)
 	applymovement(LOCALID_BLUE_2A, Common_Movement_ExclamationMark)
 	playse(SE_PIN)
 	waitmovement(0)

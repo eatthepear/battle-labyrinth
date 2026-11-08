@@ -68,6 +68,7 @@ script Zone8D_EventScript_BossBattle {
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Mars")
 	msgbox(format("We were here collecting Shards in the caves on behalf of {COLOR GREEN}our new parent organization{COLOR DARK_GRAY}.\pWe've collected enough for our mission, so I can leave a few scraps to you."))
+	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_RED_SHARD, 5)
 	closemessage
 	applymovement(LOCALID_MARS, Common_Movement_FaceLeft)
