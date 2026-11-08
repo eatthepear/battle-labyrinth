@@ -6,6 +6,7 @@
 
 extern void (*gPokedexVBlankCB)(void);
 
+void CB2_Pokedex(void);
 void ResetPokedex(void);
 u16 GetNationalPokedexCount(u8 caseID);
 u32 GetRegionalPokedexCount(u8 caseID);
@@ -26,5 +27,6 @@ void PrintMonMeasurements(enum Species species, u32 owned);
 u8* ConvertMonHeightToString(u32 height);
 u8* ConvertMonWeightToString(u32 weight);
 bool32 ShouldSkipPokedexListEntry(enum NationalDexOrder dexNum);
+void Task_ClosePokedexToSummaryScreen(u8 taskId);
 
 #endif // GUARD_POKEDEX_H

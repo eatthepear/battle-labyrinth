@@ -75,5 +75,6 @@ void ShowPokemonSummaryScreenHandleDeoxys_BW(u8 mode, struct BoxPokemon *mons, u
 u8 GetMoveSlotToReplace_BW(void);
 void SummaryScreen_SetAnimDelayTaskId_BW(u8 taskId);
 void SummaryScreen_SetShadowAnimDelayTaskId_BW(u8 taskId);
+void CB2_ReturnToSummaryFromPokedex(void);
 
 #endif // GUARD_BW_SUMMARY_SCREEN_H

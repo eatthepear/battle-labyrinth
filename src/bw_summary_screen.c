@@ -30,6 +30,7 @@
 #include "party_menu.h"
 #include "palette.h"
 #include "pokeball.h"
+#include "pokedex_plus_hgss.h"
 #include "pokemon.h"
 #include "pokemon_sprite_visualizer.h"
 #include "pokemon_storage_system.h"
@@ -373,7 +374,8 @@ static bool32 ShouldShowMoveRelearner(void);
 static void ShowMoveRelearner(void);
 static void HideMoveRelearner(void);
 static bool32 ShouldShowRename(void);
-static void ShowCancelOrRenamePrompt(void);
+static bool32 ShouldShowPokedex(void);
+static void ShowCancelOrRenameOrPokedexPrompt(void);
 static void CB2_ReturnToSummaryScreenFromNamingScreen(void);
 static void CB2_PssChangePokemonNickname(void);
 
@@ -498,6 +500,11 @@ static const struct BgTemplate sBgTemplates[] =
         .baseTile = 0,
     },
 };
+
+void CB2_ReturnToSummaryFromPokedex(void)
+{
+    ShowPokemonSummaryScreen_BW(SUMMARY_MODE_NORMAL, gParties[B_TRAINER_PLAYER], gPartyMenu.slotId, gPartiesCount[B_TRAINER_PLAYER] - 1, CB2_ReturnToPartyMenuFromSummaryScreen);
+}
 
 static const s8 sMultiBattleOrder[] = {0, 2, 3, 1, 4, 5};
 static const struct WindowTemplate sSummaryTemplate[] =
@@ -2416,6 +2423,9 @@ static void Task_HandleInput(u8 taskId)
                     {
                         sMonSummaryScreen->callback = CB2_PssChangePokemonNickname;
                         gSpecialVar_0x8004 = sMonSummaryScreen->curMonIndex;
+                    } else if (ShouldShowPokedex()) {
+                        sMonSummaryScreen->callback = CB2_OpenPokedexPlusHGSSToMon;
+                        gSpecialVar_0x8004 = sMonSummaryScreen->summary.species;
                     }
 
                     StopPokemonAnimations();
@@ -2614,7 +2624,7 @@ static void Task_ChangeSummaryMon(u8 taskId)
             if (P_SUMMARY_SCREEN_RENAME)
             {
                 FillWindowPixelBuffer(PSS_LABEL_WINDOW_PROMPT_CANCEL, PIXEL_FILL(0));
-                ShowCancelOrRenamePrompt();
+                ShowCancelOrRenameOrPokedexPrompt();
                 PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_CANCEL);  
             }
         } 
@@ -3621,7 +3631,7 @@ static void PrintPageNamesAndStats(void)
     PrintTextOnWindow(PSS_LABEL_WINDOW_BATTLE_MOVES_TITLE, sText_BattleMoves, 2, 1, 0, 1);
     PrintTextOnWindow(PSS_LABEL_WINDOW_CONTEST_MOVES_TITLE, sText_ContestMoves, 2, 1, 0, 1);
 
-    ShowCancelOrRenamePrompt();
+    ShowCancelOrRenameOrPokedexPrompt();
 
     stringXPos = GetStringRightAlignXOffset(FONT_NORMAL, sText_Info, 62);
     iconXPos = stringXPos - 16;
@@ -5540,10 +5550,20 @@ static inline bool32 ShouldShowRename(void)
          && GetPlayerIDAsU32() == sMonSummaryScreen->summary.OTID);
 }
 
-static void ShowCancelOrRenamePrompt(void)
+static inline bool32 ShouldShowPokedex(void)
+{
+    return (!sMonSummaryScreen->lockMovesFlag
+         && !sMonSummaryScreen->summary.isEgg
+         && sMonSummaryScreen->mode == SUMMARY_MODE_NORMAL
+         && !InBattleFactory() 
+         && !InSlateportBattleTent()
+         && GetPlayerIDAsU32() == sMonSummaryScreen->summary.OTID);
+}
+
+static void ShowCancelOrRenameOrPokedexPrompt(void)
 {
     const u8* gText_Rename = COMPOUND_STRING("RENAME");
-    const u8 *promptText = ShouldShowRename() ? gText_Rename : gText_Cancel2;
+    const u8 *promptText = ShouldShowPokedex() ? COMPOUND_STRING("Pokédex") : (ShouldShowRename() ? gText_Rename : gText_Cancel2);
 
     int stringXPos = GetStringRightAlignXOffset(FONT_NORMAL, promptText, 62);
     int iconXPos = stringXPos - 16;
