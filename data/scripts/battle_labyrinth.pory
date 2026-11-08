@@ -825,7 +825,7 @@ script EventScript_Notebook {
 	playbgm(MUS_HG_FOLLOW_ME_1, FALSE)
 	while {
 		special(BufferCurrentLevelCap)
-		message("Notes open. Current evel Cap: {STR_VAR_1}\nWhat would you like to read?")
+		message("Notes open. Current Level Cap: {STR_VAR_1}\nWhat would you like to read?")
 		waitmessage
 		dynmultipush("Zone Info", 0)
 		dynmultipush("Changes from Vanilla", 1)
