@@ -12320,7 +12320,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_TM_WORK_UP] =
     {
         .name = ITEM_NAME("TM01"),
-        .price = 3000,
+        .price = 1000,
         .description = COMPOUND_STRING(
             "The user is roused.\n"
             "Ups Attack and\n"
