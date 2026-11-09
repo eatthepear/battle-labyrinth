@@ -1123,7 +1123,7 @@ static inline u32 GetEggCycleLength(void)
     }
 }
 
-static u32 GetEggCyclesToSubtract(void)
+static UNUSED u32 GetEggCyclesToSubtract(void)
 {
     u32 result = 1;
     if (DoesPartyHaveIncubatorMon())
@@ -1138,31 +1138,14 @@ static bool32 TryToHatchEgg(struct DayCare *daycare)
         return FALSE;
     daycare->stepCounter = 0;
 
-    u32 eggCycles;
-    u8 toSub = GetEggCyclesToSubtract();
-
     for (u32 i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
     {
         if (!GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_EGG))
             continue;
         if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SANITY_IS_BAD_EGG))
             continue;
-
-        eggCycles = GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_FRIENDSHIP);
-        if (eggCycles != 0)
-        {
-            if (eggCycles >= toSub)
-                eggCycles -= toSub;
-            else
-                eggCycles -= 1;
-
-            SetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_FRIENDSHIP, &eggCycles);
-        }
-        else
-        {
-            gSpecialVar_0x8004 = i;
-            return TRUE;
-        }
+        gSpecialVar_0x8004 = i;
+        return TRUE;
     }
     return FALSE;
 }
