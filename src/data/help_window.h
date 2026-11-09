@@ -325,7 +325,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Zone 9 Optional"),
         .desc = COMPOUND_STRING("Battle Girl {COLOR BLUE}Jackie{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Tyrogue{COLOR DARK_GRAY}, {COLOR GREEN}Hitmonlee{COLOR DARK_GRAY}, {COLOR GREEN}Hitmonchan{COLOR DARK_GRAY}, {COLOR GREEN}Hitmontop{COLOR DARK_GRAY}\n\n"
+                                "{COLOR GREEN}Hitmonlee{COLOR DARK_GRAY}, {COLOR GREEN}Hitmonchan{COLOR DARK_GRAY}, {COLOR GREEN}Hitmontop{COLOR DARK_GRAY}\n\n"
                                 "Theme: Hitmons"),
     },
 

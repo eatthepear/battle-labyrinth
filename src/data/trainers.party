@@ -1443,37 +1443,28 @@ Music: Intense
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Tyrogue @ Sitrus Berry
-Brave Nature
-Ability: Guts
-Level: 19
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Tackle
-- Focus Energy
-- Fake Out
-
 Hitmonlee @ Chesto Berry
 Hasty Nature
 Ability: Limber
-Level: 21
+Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Low Sweep
 - Rock Tomb
 - Fake Out
 
 Hitmonchan @ Pecha Berry
-Naive Nature
+Naughty Nature
 Ability: Iron Fist
-Level: 21
+Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Drain Punch
+- Mach Punch
 - Bullet Punch
 - Fake Out
 
 Hitmontop @ Cheri Berry
 Jolly Nature
 Ability: Technician
-Level: 21
+Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Triple Kick
 - Thief
