@@ -247,6 +247,13 @@ script Zone17A_StartSpiritombBattle {
 // 8 - Nov 21
 // 3 - Dec 13
 
+script Zone17A_EventScript_SolvedPuzzle {
+	closemessage
+	playse(SE_M_PERISH_SONG)
+	waitmessage
+	msgbox(format("There was a strange song that played for a moment.\pBetter check the inscription at the top of the mountain again."))
+}
+
 script Zone17A_EventScript_Sign1 {
 	lock
 	msgbox(format("July 27, '40 - September 14, '02\nThe name has been eroded off…"), MSGBOX_SIGN)
@@ -299,8 +306,9 @@ script Zone17A_EventScript_Sign3 {
 	} elif (var(VAR_ZONE_17_STATE) == 20) {
 		msgbox(Zone17A_Text_PayRespects, MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
-			msgbox(Zone17A_Text_PaidRespects, MSGBOX_AUTOCLOSE)
+			msgbox(Zone17A_Text_PaidRespects)
 			setvar(VAR_ZONE_17_STATE, 21)
+			call(Zone17A_EventScript_SolvedPuzzle)
 		}
 	}
 	release

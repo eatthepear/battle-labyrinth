@@ -207,9 +207,11 @@ script EventScript_PuzzleSkip {
 				return
 			}
 		case PBL_PUZZLE_ZONE_17:
-			msgbox(format("Get a hint for Zone 17?"), MSGBOX_YESNO)
+			msgbox(format("Skip the puzzle in Zone 17?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				msgbox(format("TODO SKIP"))
+				setvar(VAR_ZONE_17_STATE, 21)
+				msgbox(format("{PLAYER} paid respects to all the graves."))
+				call(Zone17A_EventScript_SolvedPuzzle)
 			} else {
 				closemessage
 				return
