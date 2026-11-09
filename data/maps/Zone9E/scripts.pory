@@ -7,21 +7,20 @@ script Zone9E_EventScript_Jackie {
 		call(Zone9E_EventScript_Jackie_End)
 	}
 	setspeaker("Jackie")
-	msgbox(format("My darling Pokémon are roaring for a battle!\pThey may not be strong, but they're fully evolved!\pIf you battle me, I'll give you a {COLOR GREEN}Scope Lens{COLOR DARK_GRAY}!"), MSGBOX_YESNO)
+	msgbox(format("I'M TRAINING!\nI'M TRAINING!\lI'M TRAINING!\lI'M TRAINING!\lI'M TRAINING!\lLET'S BATTLE SO I CAN TRAIN MORE!"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("That's rather disappointing."))
+		msgbox(format("OK! YOU STAND THERE AND DON'T TRAIN. I WILL BE TRAINING!"))
 		release
 		end
 	}
-	msgbox(format("Excellent! Go, my darling Pokémon!"))
+	msgbox(format("THIS WILL BE EXCELLENT TRAINING!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_JACKIE_OPTIONAL_9, format("My darling Pokémon!"))
+	trainerbattle_no_intro(TRAINER_PBL_JACKIE_OPTIONAL_9, format("THIS WAS EXCELLENT TRAINING!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Jackie")
-	msgbox(format("Oh, my darling Pokémon, rest up!\pAnd for you, dear trainer, your reward."))
+	msgbox(format("YOU SHOWED YOUR COMMITMENT TO TRAINING!\pTHIS POKéMON WOULD BE PERFECT FOR A GREAT TRAINER LIKE YOU!"))
 	setspeaker("Jackie")
 	bufferspeciesname(0, SPECIES_TYROGUE)
-	msgbox("Here's your {STR_VAR_1}.")
 	setspeaker(SP_NAME_NONE)
 	playfanfare(MUS_OBTAIN_ITEM)
 	message(format("{PLAYER} received the {STR_VAR_1}!"))
@@ -56,20 +55,7 @@ script Zone9E_EventScript_Jackie {
 
 script Zone9E_EventScript_Jackie_End {
 	setspeaker("Jackie")
-	msgbox(format("My darling Pokémon are my favorites!"))
-	release
-	end
-}
-
-script Zone9E_EventScript_BlackBelt {
-	lock
-	faceplayer
-	if (flag(FLAG_ZONE9E_RECEIVED_PUNCHING_GLOVE) == false) {
-		msgbox(format("PUNCH WITH ALL YOUR POWER!"), MSGBOX_DEFAULT)
-		giveitem(ITEM_PUNCHING_GLOVE)
-		setflag(FLAG_ZONE9E_RECEIVED_PUNCHING_GLOVE)
-	}
-	msgbox(format("PUNCH WITH ALL YOUR POWER!"))
+	msgbox(format("YOU GOTTA COMMIT TO TRAINING EVERY DAY TO MAKE IT WORTH IT!"))
 	release
 	end
 }
