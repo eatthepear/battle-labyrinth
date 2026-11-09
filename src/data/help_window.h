@@ -361,7 +361,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Zone 11 Boss"),
         .desc = COMPOUND_STRING("Rainbow Rocket Executive {COLOR BLUE}Archer{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Sandile{COLOR DARK_GRAY}, {COLOR GREEN}Dartrix{COLOR DARK_GRAY}, {COLOR GREEN}Houndoom{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Scraggy{COLOR DARK_GRAY}, {COLOR GREEN}Dartrix{COLOR DARK_GRAY}, {COLOR GREEN}Houndoom{COLOR DARK_GRAY}\n"
                                 "Conditions: {COLOR GREEN}Double Battle{COLOR DARK_GRAY},\n"
                                 "{COLOR GREEN}Permanent Misty Terrain{COLOR DARK_GRAY}\n\n"
                                 "Theme: {COLOR GREEN}Swagger{COLOR DARK_GRAY}"),
@@ -371,7 +371,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Zone 11 Boss"),
         .desc = COMPOUND_STRING("Rainbow Rocket Executive {COLOR BLUE}Archer{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Sandile{COLOR DARK_GRAY}, {COLOR GREEN}Dartrix{COLOR DARK_GRAY}, {COLOR GREEN}Druddigon{COLOR DARK_GRAY}, {COLOR GREEN}Houndoom{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Scraggy{COLOR DARK_GRAY}, {COLOR GREEN}Dartrix{COLOR DARK_GRAY}, {COLOR GREEN}Drizzile{COLOR DARK_GRAY}, {COLOR GREEN}Houndoom{COLOR DARK_GRAY}\n"
                                 "Conditions: {COLOR GREEN}Double Battle{COLOR DARK_GRAY},\n"
                                 "{COLOR GREEN}Permanent Misty Terrain{COLOR DARK_GRAY}\n\n"
                                 "Theme: {COLOR GREEN}Swagger{COLOR DARK_GRAY}"),

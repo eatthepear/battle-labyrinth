@@ -1793,14 +1793,14 @@ AI: AI_FLAG_BOSS
 Double Battle: Yes
 Mugshot: Blue
 
-Sandile @ Eviolite
+Scraggy @ Eviolite
 Careful Nature
 Ability: Intimidate
 Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Stomping Tantrum
-- Bite
-- Rock Tomb
+- Drain Punch
+- Feint Attack
+- Fake Out
 - Swagger
 
 Dartrix @ Eviolite
@@ -1853,15 +1853,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shadow Sneak
 - Swagger
 
-Druddigon @ Misty Seed
-Careful Nature
-Ability: Rough Skin
+Drizzile @ Eviolite
+Adamant Nature
+Ability: Sniper
 Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Rage
-- Fire Fang
-- Poison Tail
-- Metal Claw
+- Liquidation
+- Ice Shard
+- Aqua Jet
+- Swagger
 
 Houndoom @ Sitrus Berry
 Hasty Nature
