@@ -284,7 +284,10 @@ script Zone10B_EventScript_WaterMerchant {
 	showmoneybox(0, 0)
 	message(format("In the desert, it's supply and demand. And the demand is water.\p¥200 for Fresh Water.\nRestores 30 HP each."))
 	waitmessage
-	dynmultichoice(0, 12, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "1x Fresh Water - ¥200", "10x Fresh Water - ¥2000", "Exit")
+	dynmultipush("1x Fresh Water - ¥200", 0)
+	dynmultipush("10x Fresh Water - ¥2000", 1)
+	dynmultipush("Exit", 2)
+	dynmultichoice(0, 12, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE)
 	switch(var(VAR_RESULT)) {
 	case 0:
 		checkmoney(200)
