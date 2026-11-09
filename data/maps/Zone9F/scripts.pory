@@ -13,7 +13,7 @@ script Zone9F_EventScript_Bertha {
 	lock
 	faceplayer
 	setspeaker("Bertha")
-	msgbox(format("Why did Mom buy this house? It's so small for the five of us…"))
+	msgbox(format("Why did Mom buy this house? It's so small for the four of us…"))
 	release
 	end
 }
@@ -32,15 +32,6 @@ script Zone9F_EventScript_Dominic {
 	faceplayer
 	setspeaker("Dominic")
 	msgbox(format("I wonder what's for dinner…"))
-	release
-	end
-}
-
-script Zone9F_EventScript_Erica {
-	lock
-	faceplayer
-	setspeaker("Erica")
-	msgbox(format("May your travels be safe."))
 	release
 	end
 }
