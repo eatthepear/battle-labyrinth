@@ -1574,15 +1574,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bite
 - Fake Out
 
-Sawk @ Sitrus Berry
-Naive Nature
-Ability: Sturdy
-Level: 23
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Low Sweep
-- Rock Tomb
-- Retaliate
-
 === TRAINER_PBL_ALANA ===
 Name: Alana
 Class: Picnicker
@@ -7693,6 +7684,12 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
+Phantump
+
+Sinistea
+
+Poltchageist
+
 Drowzee
 
 Voltorb Hisui
@@ -7784,6 +7781,8 @@ Ponyta Galar
 Gligar
 
 Tangela
+
+Misdreavus
 
 Marill
 
