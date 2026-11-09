@@ -355,7 +355,7 @@ Zone7A_EventScript_Paige::
 	end
 
 Zone7A_Text_PaigeIntro:
-	.string "My son ran up the steps so fast!$"
+	.string "My Pokémon are just raring to go!$"
 
 Zone7A_Text_PaigeDefeat:
 	.string "I just can't keep up!$"
