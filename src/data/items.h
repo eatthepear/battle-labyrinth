@@ -13128,9 +13128,9 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("TM57"),
         .price = 5000,
         .description = COMPOUND_STRING(
-            "Attacks with an\n"
-            "electric charge,\n"
-            "raising Sp. Attack."),
+            "Fires an electric\n"
+            "beam. May raise\n"
+            "Sp. Attack."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
