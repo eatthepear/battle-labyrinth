@@ -333,12 +333,10 @@ script Zone10B_EventScript_BirdKeeper {
 	lock
 	faceplayer
 	if (checkitem(ITEM_TM_ROOST) == FALSE) {
-		msgbox(format("Bird Pokémon sometimes can need some coverage moves! This TM will help remedy that!"))
+		msgbox(format("Bird Pokémon sometimes need to rest! This TM will help remedy that!"))
 		giveitem(ITEM_TM_ROOST)
 	}
-	msgbox(format("The move Steel Wing can help Flying Pokémon cover for their Rock weakness, by giving Steel coverage to them!"))
-	applymovement(8, Common_Movement_FaceRight)
-	waitmovement(0)
+	msgbox(format("The move {COLOR GREEN}Roost{COLOR DARK_GRAY} can help a Pokémon heal up, but it also causes it to lose its Flying-typing if it has one, until the end of the turn."))
 	release
 	end
 }
