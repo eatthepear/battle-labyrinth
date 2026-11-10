@@ -2483,7 +2483,7 @@ static const union TextColor sBattlerTextColor =
 static const union TextColor sAbilityTextColor =
 {
     .background = 0,
-    .foreground = 9,
+    .foreground = 7,
     .shadow = 1,
     .accent = 0,
 };
