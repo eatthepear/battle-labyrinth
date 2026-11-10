@@ -142,7 +142,6 @@ enum {
     ACTIONS_ROTOM_CATALOG,
     ACTIONS_ZYGARDE_CUBE,
     ACTIONS_HEXORB, // hexorb Branch
-    ACTIONS_CANCEL_ONLY,
 };
 
 enum {

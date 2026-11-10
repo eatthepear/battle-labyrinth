@@ -1021,7 +1021,6 @@ static const u8 sPartyMenuAction_TakeItemTossCancel[] = {MENU_TAKE_ITEM, MENU_TO
 static const u8 sPartyMenuAction_RotomCatalog[] = {MENU_CATALOG_BULB, MENU_CATALOG_OVEN, MENU_CATALOG_WASHING, MENU_CATALOG_FRIDGE, MENU_CATALOG_FAN, MENU_CATALOG_MOWER, MENU_CANCEL1};
 static const u8 sPartyMenuAction_ZygardeCube[] = {MENU_CHANGE_FORM, MENU_CHANGE_ABILITY, MENU_CANCEL1};
 static const u8 sPartyMenuAction_Hexorb[] = {MENU_INFLICT_SLEEP, MENU_INFLICT_POISON, MENU_INFLICT_BURN, MENU_INFLICT_FREEZE_FROSTBITE, MENU_INFLICT_PARALYSIS, MENU_CANCEL1}; // hexorb Branch
-static const u8 sPartyMenuAction_Cancel[] = {MENU_CANCEL1};
 
 
 
@@ -1044,7 +1043,6 @@ static const u8 *const sPartyMenuActions[] =
     [ACTIONS_ROTOM_CATALOG] = sPartyMenuAction_RotomCatalog,
     [ACTIONS_ZYGARDE_CUBE]  = sPartyMenuAction_ZygardeCube,
     [ACTIONS_HEXORB] = sPartyMenuAction_Hexorb, // hexorb Branch
-    [ACTIONS_CANCEL_ONLY]   = sPartyMenuAction_Cancel,
 };
 
 static const u8 sPartyMenuActionCounts[] =
@@ -1066,7 +1064,6 @@ static const u8 sPartyMenuActionCounts[] =
     [ACTIONS_ROTOM_CATALOG] = ARRAY_COUNT(sPartyMenuAction_RotomCatalog),
     [ACTIONS_ZYGARDE_CUBE]  = ARRAY_COUNT(sPartyMenuAction_ZygardeCube),
     [ACTIONS_HEXORB]        = ARRAY_COUNT(sPartyMenuAction_Hexorb), // hexorb Branch
-    [ACTIONS_CANCEL_ONLY]   = ARRAY_COUNT(sPartyMenuAction_Cancel),
 };
 
 static const u8 *const sUnionRoomTradeMessages[] =
