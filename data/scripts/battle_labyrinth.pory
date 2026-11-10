@@ -1276,7 +1276,7 @@ script EventScript_Notebook_Evolutions {
 		dynmultipush("Milcery - Evo Stone", SPECIES_MILCERY)
         dynmultipush("Combee - Lv. 16", SPECIES_COMBEE)
         dynmultipush("Kirlia - Evo Stone", SPECIES_KIRLIA)
-        dynmultipush("Snorunt - Evo Stone", SPECIES_KIRLIA)
+        dynmultipush("Snorunt - Evo Stone", SPECIES_SNORUNT)
         dynmultipush("Salandit - Lv. 33", SPECIES_SALANDIT)
 		dynmultipush("Igglybuff - Lv. 10", SPECIES_IGGLYBUFF)
 		dynmultipush("Cleffa - Lv. 10", SPECIES_CLEFFA)
