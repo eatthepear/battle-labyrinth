@@ -345,7 +345,7 @@ script Zone1A_EventScript_BossBattle {
 }
 
 text Zone1A_Text_Boss1Defeat {
-	format("Drats! My Fire-Water-Grass core wasn't enough!")
+	format("Drats! Having the type advantage wasn't enough!")
 }
 
 script Zone1A_EventScript_Random1 {

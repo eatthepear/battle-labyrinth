@@ -1491,7 +1491,7 @@ script EventScript_Guitarist {
 		setflag(FLAG_GUITARIST_INTRO)
 	}
 	call(EventScript_MusicMenu)
-	msgbox(format("Rock on!"))
+	msgbox(format("You can also change the music from the Options menu!\pRock on!"))
 	release
 }
 
