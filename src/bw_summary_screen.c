@@ -5302,7 +5302,7 @@ static void SetPokerusCuredSprite(void)
         sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_POKERUS_CURED] = CreateSprite(&sSpriteTemplate_PokerusCuredIcon, 40, 102, 0);
 
     mon = &sMonSummaryScreen->currentMon;
-    gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_POKERUS_CURED]].invisible = ShouldPokemonShowCuredPokerus(mon);
+    gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_POKERUS_CURED]].invisible = !ShouldPokemonShowCuredPokerus(mon);
 }
 
 static void SetFriendshipSprite(void)
