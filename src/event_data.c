@@ -90,7 +90,6 @@ void EnableNationalPokedex(void)
     *nationalDexVar = 0x302;
     FlagSet(FLAG_SYS_NATIONAL_DEX);
     gSaveBlock2Ptr->pokedex.mode = DEX_MODE_NATIONAL;
-    gSaveBlock2Ptr->pokedex.order = 4;
     ResetPokedexScrollPositions();
 }
 
