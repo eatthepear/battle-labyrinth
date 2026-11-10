@@ -143,8 +143,6 @@ void BufferMoveDeleterNicknameAndMove(void);
 void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
 void ChooseSendMonToPC(void);
-void PartyMenuCureStatus(u8 taskId, u8 slot, TaskFunc task);
-void PartyMenuCureWholePartyStatus(u8 taskId, TaskFunc task);
 
 bool32 SetUpFieldMove_Surf(void);
 bool32 SetUpFieldMove_Fly(void);

@@ -8635,31 +8635,6 @@ static void CB2_ChooseSendMonToPC(void)
     SetMainCallback2(BattleMainCB2);
 }
 
-static void CureMonStatus(u8 slot)
-{
-    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][slot];
-    u32 status = 0;
-
-    SetMonData(mon, MON_DATA_STATUS, &status);
-
-    SetPartyMonAilmentGfx(mon, &sPartyMenuBoxes[slot]);
-}
-
-void PartyMenuCureStatus(u8 taskId, u8 slot, TaskFunc task)
-{
-    CureMonStatus(slot);
-    gTasks[taskId].func = task;
-}
-
-void PartyMenuCureWholePartyStatus(u8 taskId, TaskFunc task)
-{
-    for (u8 i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
-    {
-        CureMonStatus(i);
-    }
-    gTasks[taskId].func = task;
-}
-
 static void FieldCallback_RockClimb(void)
 {
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
