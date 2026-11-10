@@ -17,7 +17,7 @@ static bool32 IsAlwaysFalse(enum FieldMove fieldMove)
 
 static bool32 IsAlwaysTrue(enum FieldMove fieldMove)
 {
-    return FALSE;
+    return TRUE;
 }
 
 static bool32 HasBadgeForFieldMove(enum FieldMove fieldMove)
