@@ -1970,7 +1970,7 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Party Size: 3
 Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_13_AND_14
+Copy Pool: TRAINER_POOL_INVER
 Mugshot: Green
 
 === TRAINER_PBL_INVER_BOSS_12 ===
@@ -1983,7 +1983,7 @@ Double Battle: No
 Difficulty: Brutal
 Party Size: 4
 Pool Rules: Unique Types
-Copy Pool: TRAINER_POOL_ZONE_13_AND_14
+Copy Pool: TRAINER_POOL_INVER
 Mugshot: Green
 
 === TRAINER_PBL_VIOLET ===
@@ -8238,6 +8238,118 @@ Weepinbell
 Ledian
 
 Gloom
+
+=== TRAINER_POOL_INVER ===
+Name: Trainer Pool
+Class: Champion
+Pic: Champion Wallace
+Music: Elite Four
+AI: AI_FLAG_BASIC_TRAINER
+Party Size: 1
+
+Pidgeotto
+
+Pawmo
+
+Trumbeak
+
+Naclstack
+
+Tranquill
+
+Loudred
+
+Spinda
+
+Whirlipede
+
+Luxio
+
+Herdier
+
+Floette
+
+Farfetch'd
+
+Farfetch'd Galar
+
+Swadloon
+
+Kricketune
+
+Palpitoad
+
+Poliwhirl
+
+Graveler
+
+Ledian
+
+Boldore
+
+Ariados
+
+Delcatty
+
+Roselia
+
+Charjabug
+
+Spidops
+
+Parasect
+
+Plusle
+
+Minun
+
+Pachirisu
+
+Shiinotic
+
+Sudowoodo
+
+Corsola Galar
+
+Bibarel
+
+Chatot
+
+Carkol
+
+Raticate
+
+Raticate Alola
+
+Furret
+
+Dunsparce
+
+Gumshoos
+
+Squawkabilly
+
+Mightyena
+
+Linoone
+
+Linoone Galar
+
+Watchog
+
+Wormadam
+
+Wormadam Sandy
+
+Wormadam Trash
+
+Mothim
+
+Sunflora
+
+Emolga
+
+Quagsire
 
 === TRAINER_POOL_ZONE_13_AND_14 ===
 Name: Trainer Pool
