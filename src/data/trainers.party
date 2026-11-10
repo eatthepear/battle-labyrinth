@@ -976,7 +976,7 @@ Pic: Fisherman
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Water
 Copy Pool: TRAINER_POOL_ZONE_6
 
@@ -1067,7 +1067,7 @@ Pic: Battle Girl
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Fighting
 Copy Pool: TRAINER_POOL_ZONE_7_AND_8
 
@@ -1078,7 +1078,7 @@ Pic: Aroma Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Grass
 Copy Pool: TRAINER_POOL_ZONE_7_AND_8
 
@@ -1089,7 +1089,7 @@ Pic: Bird Keeper
 Music: Cool
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Flying
 Copy Pool: TRAINER_POOL_ZONE_7_AND_8
 
@@ -1111,7 +1111,7 @@ Pic: Collector
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_COLLECTOR
 
@@ -1122,7 +1122,7 @@ Pic: Hiker
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Ground Rock
 Copy Pool: TRAINER_POOL_ZONE_7_AND_8
 
@@ -1387,7 +1387,7 @@ Pic: Ninja Boy
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Poison
 Copy Pool: TRAINER_POOL_ZONE_9
 
@@ -1420,7 +1420,7 @@ Pic: Hex Maniac
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Ghost
 Copy Pool: TRAINER_POOL_ZONE_9
 
@@ -1431,7 +1431,7 @@ Pic: Collector
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_COLLECTOR
 
@@ -1594,7 +1594,7 @@ Pic: Dragon Tamer
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Dragon
 Copy Pool: TRAINER_POOL_COLLECTOR
 
@@ -1616,7 +1616,7 @@ Pic: Hiker
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Ground Rock
 Copy Pool: TRAINER_POOL_ZONE_10
 
@@ -1627,7 +1627,7 @@ Pic: Collector
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_COLLECTOR
 
@@ -1727,7 +1727,7 @@ Pic: Hex Maniac
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Ghost
 Copy Pool: TRAINER_POOL_ZONE_11
 
@@ -1738,7 +1738,7 @@ Pic: Psychic M
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_11
 
@@ -1749,7 +1749,7 @@ Pic: Psychic F
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_11
 
@@ -1760,7 +1760,7 @@ Pic: Fairy Tale Girl
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Fairy
 Copy Pool: TRAINER_POOL_ZONE_11
 
@@ -1902,7 +1902,7 @@ Pic: Kindler
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Fire
 Copy Pool: TRAINER_POOL_ZONE_12
 
@@ -1913,7 +1913,7 @@ Pic: Guitarist
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Electric
 Copy Pool: TRAINER_POOL_ZONE_12
 
@@ -1993,7 +1993,7 @@ Pic: Aroma Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Grass
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14
 
@@ -2026,7 +2026,7 @@ Pic: Roughneck
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Dark
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14
 
@@ -2037,7 +2037,7 @@ Pic: Bug Maniac
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Bug
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14
 
@@ -2516,7 +2516,7 @@ Pic: Swimmer F
 Music: Swimmer
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Water
 Copy Pool: TRAINER_POOL_ZONE_16
 
@@ -2527,7 +2527,7 @@ Pic: Swimmer M
 Music: Swimmer
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Water
 Copy Pool: TRAINER_POOL_ZONE_16
 
@@ -2571,7 +2571,7 @@ Pic: Fisherman
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Water
 Copy Pool: TRAINER_POOL_ZONE_16
 
@@ -2840,7 +2840,7 @@ Pic: Fisherman
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Water
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -2851,7 +2851,7 @@ Pic: Aroma Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Grass
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -2862,7 +2862,7 @@ Pic: Worker
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Rock
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -2873,7 +2873,7 @@ Pic: Ice Worker
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Ice
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -2884,7 +2884,7 @@ Pic: Roughneck
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Dark
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -2895,7 +2895,7 @@ Pic: Bird Keeper
 Music: Cool
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Flying
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -2906,7 +2906,7 @@ Pic: Psychic M
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -2917,7 +2917,7 @@ Pic: Battle Girl
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Fighting
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -2928,7 +2928,7 @@ Pic: Dragon Tamer
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Dragon
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -2939,7 +2939,7 @@ Pic: Fairy Tale Girl
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Fairy
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -2950,7 +2950,7 @@ Pic: Hiker
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Ground
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -2961,7 +2961,7 @@ Pic: Bug Maniac
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Bug
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -2972,7 +2972,7 @@ Pic: Ruin Maniac
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Steel
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -2983,7 +2983,7 @@ Pic: Ninja Boy
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Poison
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -2994,7 +2994,7 @@ Pic: Guitarist
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Electric
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -3005,7 +3005,7 @@ Pic: Kindler
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Fire
 Copy Pool: TRAINER_POOL_ZONE_18_AND_19
 
@@ -3725,7 +3725,7 @@ Pic: Black Belt
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Fighting
 Copy Pool: TRAINER_POOL_ZONE_21
 
@@ -3736,7 +3736,7 @@ Pic: Kindler
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Fire
 Copy Pool: TRAINER_POOL_ZONE_21
 
@@ -3878,7 +3878,7 @@ Pic: Ice Worker
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Ice
 Copy Pool: TRAINER_POOL_ZONE_22
 
@@ -3911,7 +3911,7 @@ Pic: Ninja Boy
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Poison
 Copy Pool: TRAINER_POOL_ZONE_22
 
@@ -3922,7 +3922,7 @@ Pic: Bird Keeper
 Music: Cool
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Flying
 Copy Pool: TRAINER_POOL_ZONE_22
 
@@ -3933,7 +3933,7 @@ Pic: Hiker
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Ground Rock
 Copy Pool: TRAINER_POOL_ZONE_22
 
@@ -4105,7 +4105,7 @@ Pic: Bug Maniac
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Bug
 Copy Pool: TRAINER_POOL_ZONE_23
 
@@ -4116,7 +4116,7 @@ Pic: Hex Maniac
 Music: Suspicious
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Ghost
 Copy Pool: TRAINER_POOL_ZONE_23
 
@@ -4127,7 +4127,7 @@ Pic: Fairy Tale Girl
 Music: Girl
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Fairy
 Copy Pool: TRAINER_POOL_ZONE_23
 
@@ -4138,7 +4138,7 @@ Pic: Roughneck
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Dark
 Copy Pool: TRAINER_POOL_ZONE_23
 
@@ -4149,7 +4149,7 @@ Pic: Fisherman
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Water
 Copy Pool: TRAINER_POOL_ZONE_23
 
@@ -4160,7 +4160,7 @@ Pic: Psychic F
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_23
 
@@ -4252,7 +4252,7 @@ Pic: Guitarist
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Electric
 Copy Pool: TRAINER_POOL_ZONE_24_AND_25
 
@@ -4263,7 +4263,7 @@ Pic: Ruin Maniac
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Rock Steel
 Copy Pool: TRAINER_POOL_ZONE_24_AND_25
 
@@ -4274,7 +4274,7 @@ Pic: Black Belt
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Fighting
 Copy Pool: TRAINER_POOL_ZONE_21
 
@@ -4733,7 +4733,7 @@ Pic: Bird Keeper
 Music: Cool
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Flying
 Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
@@ -4744,7 +4744,7 @@ Pic: Hiker
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Ground Rock
 Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
@@ -4777,7 +4777,7 @@ Pic: Kindler
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Fire
 Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
@@ -4788,7 +4788,7 @@ Pic: Battle Girl
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Fighting
 Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
@@ -4799,7 +4799,7 @@ Pic: Aroma Lady
 Music: Female
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Grass
 Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
@@ -4810,7 +4810,7 @@ Pic: Ruin Maniac
 Music: Hiker
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Steel
 Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
@@ -4821,7 +4821,7 @@ Pic: Dragon Tamer
 Music: Intense
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 4
+Party Size: 3
 Pool Prune: Non Dragon
 Copy Pool: TRAINER_POOL_ZONE_27_AND_28
 
