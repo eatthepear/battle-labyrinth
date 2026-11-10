@@ -1968,10 +1968,9 @@ Pic: Psychic M
 Music: Intense
 AI: AI_FLAG_BOSS
 Double Battle: No
-Party Size: 3
+Party Size: 4
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_INVER
-Mugshot: Green
 
 === TRAINER_PBL_INVER_BOSS_12 ===
 Name: Inver
@@ -1981,10 +1980,9 @@ Music: Intense
 AI: AI_FLAG_BOSS
 Double Battle: No
 Difficulty: Brutal
-Party Size: 4
+Party Size: 5
 Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_INVER
-Mugshot: Green
 
 === TRAINER_PBL_VIOLET ===
 Name: Paige

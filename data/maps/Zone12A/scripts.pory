@@ -104,7 +104,7 @@ script Zone12A_EventScript_Inver {
 		end
 	}
 	setspeaker("Inver")
-	msgbox(format("My students tell me they have all been defeated!\pSo you are ready for a showcase of how thrilling {COLOR GREEN}Inverse Battles{COLOR DARK_GRAY} can be"), MSGBOX_YESNO)
+	msgbox(format("My students tell me they have all been defeated!\pSo are you ready for a showcase of how thrilling {COLOR GREEN}Inverse Battles{COLOR DARK_GRAY} can be?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		setspeaker("Inver")
 		msgbox(format("This is most regrettable…"))
