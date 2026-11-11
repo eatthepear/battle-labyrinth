@@ -490,11 +490,11 @@ const u16 gTrainerBackPicPalette_OldMan[] = INCGFX_U16("graphics/trainers/back_p
 const u32 gTrainerFrontPic_Scientist[] = INCGFX_U32("graphics/trainers/front_pics/Scientist_front_pic.png", ".4bpp.smol");
 const u16 gTrainerPalette_Scientist[] = INCGFX_U16("graphics/trainers/front_pics/Scientist_front_pic.png", ".gbapal");
 
-const u32 gTrainerFrontPic_Waiter[] = INCGFX_U32("graphics/trainers/front_pics/Waiter_front_pic.png", ".4bpp.smol");
-const u16 gTrainerPalette_Waiter[] = INCGFX_U16("graphics/trainers/front_pics/Waiter_front_pic.png", ".gbapal");
+const u32 gTrainerFrontPic_Waiter[] = INCGFX_U32("graphics/trainers/front_pics/server_m.png", ".4bpp.smol");
+const u16 gTrainerPalette_Waiter[] = INCGFX_U16("graphics/trainers/front_pics/server_m.png", ".gbapal");
 
-const u32 gTrainerFrontPic_Waitress[] = INCGFX_U32("graphics/trainers/front_pics/Waitress_front_pic.png", ".4bpp.smol");
-const u16 gTrainerPalette_Waitress[] = INCGFX_U16("graphics/trainers/front_pics/Waitress_front_pic.png", ".gbapal");
+const u32 gTrainerFrontPic_Waitress[] = INCGFX_U32("graphics/trainers/front_pics/server_f.png", ".4bpp.smol");
+const u16 gTrainerPalette_Waitress[] = INCGFX_U16("graphics/trainers/front_pics/server_f.png", ".gbapal");
 
 const u32 gTrainerFrontPic_FairyTaleGirl[] = INCGFX_U32("graphics/trainers/front_pics/fairy_tale_girl_front_pic.png", ".4bpp.smol");
 const u16 gTrainerPalette_FairyTaleGirl[] = INCGFX_U16("graphics/trainers/front_pics/fairy_tale_girl_front_pic.png", ".gbapal");
