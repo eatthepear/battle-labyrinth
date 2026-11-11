@@ -205,6 +205,7 @@ script Zone15A_EventScript_Sophocles_TriggerBoss {
 	}
 	setspeaker("Sophocles")
 	msgbox(format("I'll focus on countering the energy in that stone, while you keep Ampharos distracted!"), MSGBOX_AUTOCLOSE)
+	hidefollower
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_0) == 6) {
 		applymovement(LOCALID_SOPHOCLES_3, Common_Movement_WalkRight)
@@ -262,7 +263,9 @@ script Zone15A_EventScript_Sophocles_TriggerBoss {
 	delay(40)
 	waitmoncry
 	setwildbattle_pbl(SPECIES_AMPHAROS_MEGA, 32, ITEM_MAGNET, NATURE_QUIET, 31, 1, MOVE_PARABOLIC_CHARGE, MOVE_DRAGON_PULSE, MOVE_GRASS_KNOT, MOVE_REST)
-	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1)
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1)
+	}
 	dowildbattle
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	clearflag(FLAG_SYS_NO_CATCHING)
