@@ -2156,6 +2156,7 @@ Music: Magma
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_13B_2 ===
@@ -2166,6 +2167,7 @@ Music: Magma
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_13B_3 ===
@@ -2176,6 +2178,7 @@ Music: Magma
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_14A_1 ===
@@ -2186,6 +2189,7 @@ Music: Magma
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_14A_2 ===
@@ -2196,6 +2200,7 @@ Music: Magma
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_14A_3 ===
@@ -2206,6 +2211,7 @@ Music: Magma
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_14A_4 ===
@@ -2216,6 +2222,7 @@ Music: Magma
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_14B_1 ===
@@ -2226,6 +2233,7 @@ Music: Magma
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_14B_2 ===
@@ -2236,6 +2244,7 @@ Music: Magma
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 2
+Pool Rules: Unique Types
 Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 
 === TRAINER_PBL_MAGMA_GRUNT_14B_3 ===
