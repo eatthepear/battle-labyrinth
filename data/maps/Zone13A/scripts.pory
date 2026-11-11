@@ -17,7 +17,13 @@ script Zone13A_EventScript_Serena {
 	lock
 	faceplayer
 	setspeaker("Serena")
-	msgbox(format("Hello! This is bad people hideout. R u strong? Let's battle!"))
+	msgbox(format("Hello! This is bad people hideout. R u strong? Let's battle!"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		setspeaker("Serena")
+		msgbox(format("Sad!"))
+		release
+		end
+	}
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_SERENA_BOSS_13, format("Defeat!"))
@@ -27,7 +33,8 @@ script Zone13A_EventScript_Serena {
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_SHALOUR_SABLE, 5)
 	setspeaker("Serena")
-	msgbox(format("These bad people are good, but I stronger, and I beat up bad people. See u later, we battle again!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("These bad people are good, but I stronger, and I beat up bad people. See u later, we battle again!"))
+	closemessage
 	applymovement(LOCALID_SERENA_13A, Common_Movement_FaceUp)
 	waitmovement
 	opendoor(20, 18)
@@ -35,7 +42,9 @@ script Zone13A_EventScript_Serena {
 	applymovement(LOCALID_SERENA_13A, Zone13A_Movement_SerenaWalkUp)
 	waitmovement(0)
 	removeobject(LOCALID_SERENA_13A)
-	setflag(FLAG_HIDE_ZONE13A_SERENA)
+	setflag(FLAG_BEAT_BOSS_13)
+	closedoor(20, 18)
+	waitdooranim
 	release
 	end
 }
