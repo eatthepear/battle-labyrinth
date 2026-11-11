@@ -1640,15 +1640,25 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Purple
 
+Cufant @ Air Balloon
+Careful Nature
+Ability: Sheer Force
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stealth Rock
+- Iron Head
+- Rock Tomb
+- Bulldoze
+
 Tinkatuff @ Eviolite
 Adamant Nature
 Ability: Own Tempo
 Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Stealth Rock
 - Play Rough
 - Metal Claw
 - Rock Tomb
+- Thunder Wave
 
 Togedemaru @ Rocky Helmet
 Jolly Nature
@@ -1680,15 +1690,25 @@ Double Battle: No
 Mugshot: Purple
 Difficulty: Brutal
 
+Cufant @ Air Balloon
+Careful Nature
+Ability: Sheer Force
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stealth Rock
+- Iron Head
+- Rock Tomb
+- Bulldoze
+
 Tinkatuff @ Eviolite
 Adamant Nature
 Ability: Own Tempo
 Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Stealth Rock
 - Play Rough
 - Metal Claw
 - Rock Tomb
+- Thunder Wave
 
 Togedemaru @ Rocky Helmet
 Jolly Nature
