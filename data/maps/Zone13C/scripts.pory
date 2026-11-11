@@ -197,7 +197,7 @@ script Zone13C_EventScript_Scientist_ZoomLens {
 	lock
 	faceplayer
 	if (flag(FLAG_ZONE13C_RECEIVED_ZOOM_LENS) == false) {
-		msgbox(format("Don't listen to that guy sitting across from me. The best way to boost the accuracy of moves is the Wide Lens!"))
+		msgbox(format("Don't listen to that guy sitting across from me. The best way to boost the accuracy of moves is the Zoom Lens!"))
 		giveitem(ITEM_ZOOM_LENS)
 		setflag(FLAG_ZONE13C_RECEIVED_ZOOM_LENS)
 	}
