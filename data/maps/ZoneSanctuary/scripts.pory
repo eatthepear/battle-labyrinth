@@ -3110,10 +3110,10 @@ script EventScript_Shop_Lelouch_MoveTutor {
 		message(format("Which types of moves should I teach?"))
 		waitmessage
 		dynmultipush("Red Moves", 0)
-		if (var(VAR_ZONE) > 15) {
+		if (var(VAR_ZONE) > 7) {
 			dynmultipush("Blue Moves", 1)
 		}
-		if (var(VAR_ZONE) > 20) {
+		if (var(VAR_ZONE) > 10) {
 			dynmultipush("Yellow Moves", 2)
 		}
 		dynmultipush("Green Moves", 3)
