@@ -326,7 +326,7 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 2
 Pool Prune: Non Bug
 Copy Pool: TRAINER_POOL_ZONE_2
 
@@ -463,7 +463,7 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 2
 Pool Prune: Non Bug
 Copy Pool: TRAINER_POOL_ZONE_3
 
@@ -612,7 +612,7 @@ Pic: Bug Catcher
 Music: Male
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
-Party Size: 3
+Party Size: 2
 Pool Prune: Non Bug
 Copy Pool: TRAINER_POOL_ZONE_4
 
