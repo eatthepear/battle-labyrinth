@@ -2317,7 +2317,6 @@ script EventScript_Shop_Varrick_Treasures {
 		case 12:
 		case 13:
 		case 15:
-			pokemart(Shop_Treasures_3)
 		case 16:
 		case 17:
 		case 18:
@@ -2336,13 +2335,6 @@ script EventScript_Shop_Varrick_Treasures {
 
 mart Shop_Treasures_2 {
 	ITEM_RED_SHARD
-	ITEM_GREEN_SHARD
-}
-
-mart Shop_Treasures_3 {
-	ITEM_HEART_SCALE
-	ITEM_RED_SHARD
-	ITEM_BLUE_SHARD
 	ITEM_GREEN_SHARD
 }
 
