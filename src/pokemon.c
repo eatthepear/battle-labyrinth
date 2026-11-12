@@ -4987,6 +4987,7 @@ u16 GetBattleBGM(void)
                 return MUS_VS_RIVAL;
             return MUS_BW_VS_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
+        case TRAINER_CLASS_PKMN_TRAINER_2: // this class is used for the Lacey fight in Zone 17 only
             switch (VarGet(VAR_BOSS_MUSIC))
             {
             case 1:
