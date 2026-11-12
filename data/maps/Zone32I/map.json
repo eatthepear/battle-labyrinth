@@ -17,14 +17,14 @@
   "warp_events": [
     {
       "x": 5,
-      "y": 9,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ZONE32H",
       "dest_warp_id": "1"
     },
     {
       "x": 5,
-      "y": 14,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_ZONE31B",
       "dest_warp_id": "3"
