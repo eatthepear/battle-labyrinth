@@ -998,20 +998,20 @@
           "water_mons": {
             "encounter_rate": 2,
             "mons": [
-              { "min_level": 30, "max_level": 31, "species": "SPECIES_SHELLDER" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_STARYU" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_TENTACOOL" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_HORSEA" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_CARVANHA" }
+{ "min_level": 30, "max_level": 31, "species": "SPECIES_MAREANIE" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_STARYU" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_TENTACOOL" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_HORSEA" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_FINIZEN" }
             ]
           },
           "rock_smash_mons": {
             "encounter_rate": 50,
             "mons": [
-              { "min_level": 30, "max_level": 31, "species": "SPECIES_PINCURCHIN" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_PYUKUMUKU" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_WIMPOD" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_NONE" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_SANDYGAST" }
+{ "min_level": 30, "max_level": 31, "species": "SPECIES_PINCURCHIN" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_PYUKUMUKU" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_WIMPOD" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_BINACLE" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_SANDYGAST" }
             ]
           },
           "fishing_mons": {
             "encounter_rate": 30,
             "mons": [
-              { "min_level": 30, "max_level": 31, "species": "SPECIES_SHELLDER" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_STARYU" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_TENTACOOL" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_HORSEA" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_CARVANHA" },
-              {
+{ "min_level": 30, "max_level": 31, "species": "SPECIES_MAREANIE" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_STARYU" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_TENTACOOL" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_HORSEA" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_FINIZEN" }
+            ,{
                 "min_level": 1,
                 "max_level": 1,
                 "species": "SPECIES_NONE"
@@ -1026,7 +1026,7 @@
           "hidden_mons": {
             "encounter_rate": 0,
             "mons": [
-              { "min_level": 30, "max_level": 31, "species": "SPECIES_PINCURCHIN" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_PYUKUMUKU" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_WIMPOD" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_NONE" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_SANDYGAST" }
+{ "min_level": 30, "max_level": 31, "species": "SPECIES_PINCURCHIN" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_PYUKUMUKU" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_WIMPOD" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_BINACLE" },{ "min_level": 30, "max_level": 31, "species": "SPECIES_SANDYGAST" }
             ]
           }
         },

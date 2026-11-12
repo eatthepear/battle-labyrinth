@@ -79,32 +79,37 @@ script Zone16A_EventScript_TriggerJupiter {
 
 script Zone16A_EventScript_SandPile {
 	lockall
-	random(5)
+	random(2)
 	if (var(VAR_RESULT) == 0) {
 		applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
 		msgbox(format("There was a Pokémon in the sand pile!"), MSGBOX_DEFAULT)
 		waitmovement(0)
 		closemessage
-		random(4)
+		random(5)
 		switch (var(VAR_RESULT)) {
 			case 0:
-				setwildbattle(SPECIES_PINCURCHIN, 28, ITEM_NONE)
-				playmoncry(SPECIES_PINCURCHIN, 2)
+				setwildbattle(SPECIES_PINCURCHIN, 30, ITEM_NONE)
+				playmoncry(SPECIES_PINCURCHIN, CRY_MODE_ENCOUNTER)
 				delay(40)
 				waitmoncry
 			case 1:
-				setwildbattle(SPECIES_PYUKUMUKU, 28, ITEM_NONE)
-				playmoncry(SPECIES_PYUKUMUKU, 2)
+				setwildbattle(SPECIES_PYUKUMUKU, 30, ITEM_NONE)
+				playmoncry(SPECIES_PYUKUMUKU, CRY_MODE_ENCOUNTER)
 				delay(40)
 				waitmoncry
 			case 2:
-				setwildbattle(SPECIES_SANDYGAST, 28, ITEM_NONE)
-				playmoncry(SPECIES_SANDYGAST, 2)
+				setwildbattle(SPECIES_WIMPOD, 30, ITEM_NONE)
+				playmoncry(SPECIES_WIMPOD, CRY_MODE_ENCOUNTER)
 				delay(40)
 				waitmoncry
 			case 3:
-				setwildbattle(SPECIES_WIMPOD, 28, ITEM_NONE)
-				playmoncry(SPECIES_WIMPOD, 2)
+				setwildbattle(SPECIES_BINACLE, 30, ITEM_NONE)
+				playmoncry(SPECIES_BINACLE, CRY_MODE_ENCOUNTER)
+				delay(40)
+				waitmoncry
+			case 4:
+				setwildbattle(SPECIES_SANDYGAST, 30, ITEM_NONE)
+				playmoncry(SPECIES_SANDYGAST, CRY_MODE_ENCOUNTER)
 				delay(40)
 				waitmoncry
 		}
