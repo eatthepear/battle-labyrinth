@@ -2680,46 +2680,46 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PBL_LACEY_BOSS_17 ===
 Name: Lacey
-Class: Elite Four
+Class: Rival
 Pic: Lacey
-Music: Elite Four
+Music: Female
 AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Blue
 
-Slurpuff @ Focus Sash
+Slurpuff @ Sitrus Berry
 Ability: Unburden
-Level: 40
+Level: 32
 Hasty Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sticky Web
 - Endeavor
-- Moonblast
+- Dazzling Gleam
 - Misty Explosion
 
-Primarina @ Leftovers
-Ability: Torrent
-Level: 40
-Bold Nature
+Whimsicott @ Wise Glasses
+Ability: Infiltrator
+Level: 32
+Modest Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Scald
-- Dazzling Gleam
-- Rest
-- Sleep Talk
-
-Whimsicott @ Sitrus Berry
-Ability: Prankster
-Level: 40
-Bold Nature
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Encore
+- Hurricane
 - U-Turn
-- Dazzling Gleam
+- Moonblast
 - Giga Drain
+
+Wigglytuff @ Life Orb
+Ability: Competitive
+Level: 32
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dazzling Gleam
+- Hyper Voice
+- Thunder
+- Water Pulse
 
 Mimikyu @ Red Card
 Ability: Disguise
-Level: 40
+Level: 34
 Adamant Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shadow Claw
@@ -2727,9 +2727,59 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Play Rough
 - Drain Punch
 
-Excadrill @ Life Orb
+=== TRAINER_PBL_LACEY_BOSS_17 ===
+Name: Lacey
+Class: Rival
+Pic: Lacey
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+Difficulty: Brutal
+
+Slurpuff @ Sitrus Berry
+Ability: Unburden
+Level: 32
+Hasty Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sticky Web
+- Endeavor
+- Dazzling Gleam
+- Misty Explosion
+
+Whimsicott @ Wise Glasses
+Ability: Infiltrator
+Level: 32
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hurricane
+- U-Turn
+- Moonblast
+- Giga Drain
+
+Wigglytuff @ Life Orb
+Ability: Competitive
+Level: 32
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dazzling Gleam
+- Hyper Voice
+- Thunder
+- Water Pulse
+
+Mimikyu @ Red Card
+Ability: Disguise
+Level: 34
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Claw
+- Shadow Sneak
+- Play Rough
+- Drain Punch
+
+Excadrill @ Focus Sash
 Ability: Mold Breaker
-Level: 40
+Level: 34
 Jolly Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
