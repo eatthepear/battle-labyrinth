@@ -22,14 +22,14 @@ script Zone17A_EventScript_Intro {
 	closemessage
 	delay(40)
 	setspeaker("???")
-	msgbox(format("Ah, so you're {PLAYER}.\pI'd love to meet you properly, but I don't really want to stay here any longer than necessary.\pMy name is Lacey. I'm a Pokémon trainer, just like you."))
+	msgbox(format("Ah, so you're {PLAYER}.\pMy name is Lacey. I'm a Pokémon trainer, just like you."))
 	closemessage
 	setspeaker("Lacey")
 	call(Sanctuary_EventScript_MoveCameraUp)
 	applymovement(LOCALID_17A_LACEY, Common_Movement_FaceUp)
 	waitmovement(0)
 	setspeaker("Lacey")
-	msgbox(format("I had heard rumors that Mt. Grief was being haunted by a malevolent spirit that possessed people.\pI came here in hopes of calming the spirit, and bringing peace to this mountain top.\pBut I'm not sure how to calm the spirit down…\pThere's some sort of… poem? Inscribed in the rock at the top.\pPerhaps that holds the key?"))
+	msgbox(format("I had heard rumors that Mt. Grief was being haunted by a malevolent spirit that possessed people.\pI came here in hopes of calming the spirit, and bringing peace to this mountain top.\pBut I'm not sure how to even find the spirit…\pI sense its presence, but I have no way of stopping what I can't confront face to face.\pThere's some sort of… poem? Inscribed in the rock at the top.\pPerhaps that holds the key?"))
 	applymovement(LOCALID_17A_LACEY, Common_Movement_FaceDown)
 	waitmovement(0)
 	setspeaker("Lacey")
@@ -140,14 +140,22 @@ script Zone17A_EventScript_InitiateBossBattle {
 	waitse
 	setspeaker("Lacey")
 	msgbox(format("Uh oh, I don't feel so good."))
+	closemessage
 	playse(SE_M_NIGHTMARE)
 	waitse
 	call(Sanctuary_EventScript_MoveCameraDown)
 	call(Zone17A_EventScript_WalkToPlayer)
 	setspeaker(SP_NAME_NONE)
 	msgbox(format("Something is wrong with Lacey! Her eyes look possessed."))
+	closemessage
+	delay(40)
+	playse(SE_M_NIGHTMARE)
+	waitse
 	setspeaker("Lacey?")
 	msgbox(format("Ah, this body will do well."))
+	setspeaker(SP_NAME_NONE)
+	msgbox(format("Uh oh! The malevolent spirit has possessed Lacey!"))
+	closemessage
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_LACEY_BOSS_17, format("No!!!"))
