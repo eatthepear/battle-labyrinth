@@ -897,4 +897,17 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Press {B_BUTTON} and a direction to jump\n"
                                 "in the direction with Acro."),
     },
+
+    [HELP_INSCRIPTION_ZONE17A] =
+    {
+        .header = COMPOUND_STRING("Inscription"),
+        .desc = COMPOUND_STRING("We celebrate the day of life\n"
+                                "With boundless splurge and wonder,\n"
+                                "We celebrate the day of death\n"
+                                "With rain, lightning, and thunder,\n"
+                                "Remember every cherished date,\n"
+                                "And pay respects aplenty,\n"
+                                "Another year of special days,\n"
+                                "The right order of twenty."),
+    },
 };

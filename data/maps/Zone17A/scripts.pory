@@ -125,20 +125,9 @@ script Zone17A_EventScript_RiddleSign {
 			goto(Zone17A_StartSpiritombBattle)
 		}
 	}
-	msgbox(Zone17A_Text_RiddleSign, MSGBOX_SIGN)
+	helpwindow(HELP_INSCRIPTION_ZONE17A)
 	release
 	end
-}
-
-text Zone17A_Text_RiddleSign {
-	"We celebrate the day of life\n"
-	"With boundless splurge and wonder,\p"
-	"We celebrate the day of death\n"
-	"With rain, lightning, and thunder,\p"
-	"Remember every cherished date,\n"
-	"And pay respects aplenty,\p"
-	"Another year of special days,\n"
-	"The right order of twenty."
 }
 
 script Zone17A_EventScript_InitiateBossBattle {
