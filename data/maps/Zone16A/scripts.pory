@@ -71,8 +71,9 @@ script Zone16A_EventScript_TriggerJupiter {
 	applymovement(LOCALID_KIMONO_GIRL_16A, Common_Movement_WalkDown5)
 	waitmovement(0)
 	removeobject(LOCALID_KIMONO_GIRL_16A)
-	setflag(FLAG_HIDE_ZONE6A_KIMONO_GIRL)
+	setflag(FLAG_HIDE_ZONE16A_KIMONO_GIRL)
 	setvar(VAR_ZONE_16_STATE, 1)
+	fadedefaultbgm
 	release
 	end
 }
