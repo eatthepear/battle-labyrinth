@@ -15,20 +15,6 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_HEX_MANIAC",
-      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
-      "x": 13,
-      "y": 26,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_ZONE17A_HEX_MANIAC"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
       "x": 13,
       "y": 30,
@@ -52,8 +38,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Zone17A_EventScript_Lacey",
+      "flag": "FLAG_BEAT_BOSS_17"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
@@ -97,6 +83,60 @@
       "var": "VAR_GENERIC",
       "var_value": "0",
       "script": "Zone17A_EventScript_StopLeave"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_ZONE_17_STATE",
+      "var_value": "0",
+      "script": "Zone17A_EventScript_Intro"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_ZONE_17_STATE",
+      "var_value": "0",
+      "script": "Zone17A_EventScript_Intro"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_ZONE_17_STATE",
+      "var_value": "0",
+      "script": "Zone17A_EventScript_Intro"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_ZONE_17_STATE",
+      "var_value": "21",
+      "script": "Zone17A_EventScript_InitiateBossBattle"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_ZONE_17_STATE",
+      "var_value": "21",
+      "script": "Zone17A_EventScript_InitiateBossBattle"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_ZONE_17_STATE",
+      "var_value": "21",
+      "script": "Zone17A_EventScript_InitiateBossBattle"
     }
   ],
   "bg_events": [

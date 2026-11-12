@@ -6,91 +6,104 @@ mapscripts Zone17A_MapScripts {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_TM_CHEST)
 		}
 	}
-	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_ZONE_17_STATE, 0: Zone17A_EventScript_Intro
-	]
 }
 
 script Zone17A_EventScript_Intro {
 	lockall
-	delay(48)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(LOCALID_HEX_MANIAC)
-	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+	applymovement(LOCALID_17A_LACEY, Common_Movement_FaceDown)
 	waitmovement(0)
-	removeobject(LOCALID_HEX_MANIAC)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(32)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(LOCALID_HEX_MANIAC)
-	delay(16)
-	removeobject(LOCALID_HEX_MANIAC)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(LOCALID_HEX_MANIAC)
-	delay(16)
-	removeobject(LOCALID_HEX_MANIAC)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(LOCALID_HEX_MANIAC)
-	delay(16)
-	removeobject(LOCALID_HEX_MANIAC)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(LOCALID_HEX_MANIAC)
-	delay(16)
-	removeobject(LOCALID_HEX_MANIAC)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(LOCALID_HEX_MANIAC)
-	delay(48)
-	msgbox("Release us… Please…\pTen souls…\nTrapped here…\pInscripted in the stones…", MSGBOX_AUTOCLOSE)
-	delay(16)
-	removeobject(LOCALID_HEX_MANIAC)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(LOCALID_HEX_MANIAC)
-	delay(16)
-	removeobject(LOCALID_HEX_MANIAC)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(LOCALID_HEX_MANIAC)
-	delay(16)
-	removeobject(LOCALID_HEX_MANIAC)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(LOCALID_HEX_MANIAC)
-	delay(16)
-	removeobject(LOCALID_HEX_MANIAC)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(16)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(LOCALID_HEX_MANIAC)
-	delay(8)
-	removeobject(LOCALID_HEX_MANIAC)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(8)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(LOCALID_HEX_MANIAC)
-	delay(8)
-	removeobject(LOCALID_HEX_MANIAC)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(8)
-	clearflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	addobject(LOCALID_HEX_MANIAC)
-	delay(8)
-	removeobject(LOCALID_HEX_MANIAC)
-	setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
-	delay(8)
+	applymovement(LOCALID_17A_LACEY, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	call(Zone17A_EventScript_WalkToPlayer)
+	setspeaker("???")
+	msgbox(format("Ah! You scared me!\pI thought you were a ghost.\pUm… Who are you, and what are you doing in as dangerous a place as Mt. Grief?"))
+	closemessage
+	delay(40)
+	setspeaker("???")
+	msgbox(format("Ah, so you're {PLAYER}.\pI'd love to meet you properly, but I don't really want to stay here any longer than necessary.\pMy name is Lacey. I'm a Pokémon trainer, just like you."))
+	closemessage
+	setspeaker("Lacey")
+	call(Sanctuary_EventScript_MoveCameraUp)
+	applymovement(LOCALID_17A_LACEY, Common_Movement_FaceUp)
+	waitmovement(0)
+	setspeaker("Lacey")
+	msgbox(format("I had heard rumors that Mt. Grief was being haunted by a malevolent spirit that possessed people.\pI came here in hopes of calming the spirit, and bringing peace to this mountain top.\pBut I'm not sure how to calm the spirit down…\pThere's some sort of… poem? Inscribed in the rock at the top.\pPerhaps that holds the key?"))
+	applymovement(LOCALID_17A_LACEY, Common_Movement_FaceDown)
+	waitmovement(0)
+	setspeaker("Lacey")
+	msgbox(format("Please, help me out!"))
+	closemessage
+	switch (var(VAR_TEMP_0)) {
+		case 12:
+			applymovement(LOCALID_17A_LACEY, Zone17A_Movement_Lacey_WalkBackFromLeft)
+			waitmovement(0)
+		case 13:
+			applymovement(LOCALID_17A_LACEY, Zone17A_Movement_Lacey_WalkBackFromMiddle)
+			waitmovement(0)
+		case 14:
+			applymovement(LOCALID_17A_LACEY, Zone17A_Movement_Lacey_WalkBackFromRight)
+			waitmovement(0)
+	}
+	call(Sanctuary_EventScript_MoveCameraDown)
 	setvar(VAR_ZONE_17_STATE, 1)
 	releaseall
+	end
+}
+
+script Zone17A_EventScript_WalkToPlayer {
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	switch (var(VAR_TEMP_0)) {
+		case 12:
+			applymovement(LOCALID_17A_LACEY, Zone17A_Movement_Lacey_WalkToLeft)
+			waitmovement(0)
+		case 13:
+			applymovement(LOCALID_17A_LACEY, Zone17A_Movement_Lacey_WalkToMiddle)
+			waitmovement(0)
+		case 14:
+			applymovement(LOCALID_17A_LACEY, Common_Movement_WalkDown2)
+			waitmovement(0)
+	}
+}
+
+movement Zone17A_Movement_Lacey_WalkToLeft {
+	walk_down * 2
+	walk_left * 2
+	face_down
+}
+
+movement Zone17A_Movement_Lacey_WalkToMiddle {
+	walk_down * 2
+	walk_left
+	face_down
+}
+
+movement Zone17A_Movement_Lacey_WalkBackFromLeft {
+	walk_right * 2
+	walk_up * 2
+	face_left
+}
+
+movement Zone17A_Movement_Lacey_WalkBackFromMiddle {
+	walk_right
+	walk_up * 2
+	face_left
+}
+
+movement Zone17A_Movement_Lacey_WalkBackFromRight {
+	walk_up * 2
+	face_left
+}
+
+script Zone17A_EventScript_Lacey {
+	lock
+	faceplayer
+	setspeaker("Lacey")
+	msgbox(format("I used to come here with my father to see my grandmother's grave every year.\pTo see it like this…\pI need to find that malevolent spirit, and calm it down as fast as possible.\pPlease help me!"))
+	applymovement(LOCALID_17A_LACEY, Common_Movement_FaceLeft)
+	waitmovement(0)
+	release
 	end
 }
 
@@ -112,14 +125,9 @@ script Zone17A_EventScript_RiddleSign {
 			goto(Zone17A_StartSpiritombBattle)
 		}
 	}
-	if (var(VAR_ZONE_17_STATE) == 21) {
-		goto(Zone17A_EventScript_InitiateBossBattle)
-	} else {
-		msgbox(Zone17A_Text_RiddleSign, MSGBOX_SIGN)
-	}
+	msgbox(Zone17A_Text_RiddleSign, MSGBOX_SIGN)
 	release
 	end
-
 }
 
 text Zone17A_Text_RiddleSign {
@@ -134,53 +142,63 @@ text Zone17A_Text_RiddleSign {
 }
 
 script Zone17A_EventScript_InitiateBossBattle {
+	lockall
+	fadeoutbgm(1)
+	applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement(0)
+	call(Sanctuary_EventScript_MoveCameraUp)
 	playse(SE_M_NIGHTMARE)
 	waitse
 	setspeaker("Lacey")
 	msgbox(format("Uh oh, I don't feel so good."))
 	playse(SE_M_NIGHTMARE)
 	waitse
+	call(Sanctuary_EventScript_MoveCameraDown)
+	call(Zone17A_EventScript_WalkToPlayer)
+	setspeaker(SP_NAME_NONE)
 	msgbox(format("Something is wrong with Lacey! Her eyes look possessed."))
-	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
-	if (var(VAR_TEMP_0) == 12) {
-		applymovement(LOCALID_17A_LACEY, Common_Movement_WalkDown)
-		waitmovement(0)
-		applymovement(LOCALID_17A_LACEY, Common_Movement_WalkLeft2)
-		waitmovement(0)
-		applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
-		waitmovement(0)
-		applymovement(LOCALID_17A_LACEY, Common_Movement_WalkUp)
-		waitmovement(0)
-	} elif (var(VAR_TEMP_1) == 9) {
-		applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
-		waitmovement(0)
-		applymovement(LOCALID_17A_LACEY, Common_Movement_WalkDown)
-		waitmovement(0)
-		applymovement(LOCALID_17A_LACEY, Common_Movement_FaceLeft)
-		waitmovement(0)
-	} elif (var(VAR_TEMP_1) == 7) {
-		applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
-		waitmovement(0)
-		applymovement(LOCALID_17A_LACEY, Common_Movement_WalkUp)
-		waitmovement(0)
-		applymovement(LOCALID_17A_LACEY, Common_Movement_FaceLeft)
-		waitmovement(0)
-	}
 	setspeaker("Lacey?")
 	msgbox(format("Ah, this body will do well."))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_LACEY_BOSS_17, format("No!!!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	setflag(FLAG_BEAT_BOSS_17)
 	setspeaker("Lacey")
-	msgbox(format("Uh, where am I? Did you solve the riddle?"))
-	msgbox("There's something shimmering on the\nground by your feet!", MSGBOX_DEFAULT)
+	msgbox(format("Uh, where am I? Did you find the spirit?"))
+	closemessage
+	delay(40)
+	setspeaker("Lacey")
+	msgbox(format("Wait, it possessed me!? And you beat me in battle!?\pWell, I don't sense the presence of the spirit anymore, so…\pGreat job, {PLAYER}! Amazing work.\pHere, I want you to take this."))
+	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_HM_DIVE)
+	setspeaker("Lacey")
+	msgbox(format("It looks like our job is done here.\pSay, I do want to battle you again some day, for real this time. And preferably without getting possessed.\pI'm looking forward to that day!\pSee you later, {PLAYER}!"))
+	closemessage
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 12) {
+		applymovement(LOCALID_17A_LACEY, Zone17A_Movement_Lacey_WalkAwayLeft)
+		waitmovement(0)
+	} else {
+		applymovement(LOCALID_17A_LACEY, Zone17A_Movement_Lacey_WalkAway)
+		waitmovement(0)
+	}
 	clearflag(FLAG_HIDE_ZONE17A_PORYGON)
+	removeobject(LOCALID_17A_LACEY)
+	setflag(FLAG_BEAT_BOSS_17)
 	setvar(VAR_ZONE_17_STATE, 22)
+	fadedefaultbgm
 	release
 	end
+}
+
+movement Zone17A_Movement_Lacey_WalkAwayLeft {
+	walk_right
+	walk_down * 6
+}
+
+movement Zone17A_Movement_Lacey_WalkAway {
+	walk_left
+	walk_down * 6
 }
 
 script Zone17A_StartSpiritombBattle {
