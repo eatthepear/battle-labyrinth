@@ -15,7 +15,7 @@ script Zone35A_EventScript_Colress_LastCheck {
     applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
     waitmovement
     setspeaker(SP_NAME_COLRESS)
-    msgbox(format("Dear {PLAYER}, you are about to enter the Elite Four.\pOnce you enter, you won't be able to leave until you defeat all foes, or are defeated.\pAre you SURE you've finished all the necessary preparations?"), MSGBOX_YESNO)
+    msgbox(format("Dear {PLAYER}, you are about to enter the Elite Four.\pOnce you enter, you won't be able to leave until you defeat all foes, or are defeated.\pYou also won't be able to use the {COLOR GREEN}{PKMN} Box Link{COLOR DARK_GRAY} or {COLOR GREEN}Hexorb{COLOR DARK_GRAY}.\pAre you SURE you've finished all the necessary preparations?"), MSGBOX_YESNO)
     if (var(VAR_RESULT) == NO) {
         setspeaker(SP_NAME_COLRESS)
         msgbox(format("That seems wise."))

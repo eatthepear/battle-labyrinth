@@ -1714,7 +1714,11 @@ void ItemUseOutOfBattle_Hexorb(u8 taskId)
 {
     gItemUseCB = ItemUseCB_UseHexorb;
 
-    if (gTasks[taskId].tUsingRegisteredKeyItem != TRUE)
+    if (FlagGet(FLAG_CHALLENGING_ELITE_FOUR))
+    {
+        DisplayCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem, COMPOUND_STRING("You can't use the Hexorb while\nin the Elite Four.{PAUSE_UNTIL_PRESS}"));
+    }
+    else if (gTasks[taskId].tUsingRegisteredKeyItem != TRUE)
     {
         SetUpItemUseCallback(taskId);
     }
