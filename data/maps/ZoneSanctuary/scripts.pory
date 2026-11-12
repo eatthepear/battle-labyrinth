@@ -365,9 +365,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 			giveitem(ITEM_HEART_SCALE, 3)
 		case 13:
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 13 - Radiant Meadow{COLOR DARK_GRAY} is…"))
-			msgbox(format("{COLOR GREEN}10 Sitrus Berries{COLOR DARK_GRAY}!"))
+			msgbox(format("{COLOR GREEN}5 Yellow Shards{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			giveitem(ITEM_SITRUS_BERRY, 10)
+			giveitem(ITEM_YELLOW_SHARD, 5)
 			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 14 - Iron Mine{COLOR DARK_GRAY} is…"))
 			msgbox(format("{COLOR GREEN}TM74 - Gyro Ball{COLOR DARK_GRAY}!"))
