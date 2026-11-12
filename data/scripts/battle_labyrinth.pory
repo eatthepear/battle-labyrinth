@@ -3471,6 +3471,22 @@ script EventScript_Honchkrow {
 	release
 }
 
+script EventScript_Scovillain {
+	lock
+	playmoncry(SPECIES_SCOVILLAIN, CRY_MODE_NORMAL)
+	msgbox(format("Sco!"))
+	waitmoncry
+	release
+}
+
+script EventScript_Braixen {
+	lock
+	playmoncry(SPECIES_BRAIXEN, CRY_MODE_NORMAL)
+	msgbox(format("Brai!"))
+	waitmoncry
+	release
+}
+
 script EventScript_ResetEliteFour_PBL {
 	clearflag(FLAG_BEAT_BOSS_35_LACEY)
 	clearflag(FLAG_BEAT_BOSS_35_GLACIA)
