@@ -13,18 +13,32 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 17,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_B"
+    }
+  ],
   "warp_events": [
     {
-      "x": 18,
-      "y": 22,
+      "x": 2,
+      "y": 18,
       "elevation": 0,
       "dest_map": "MAP_ZONE32C",
       "dest_warp_id": "1"
     },
     {
-      "x": 33,
-      "y": 9,
+      "x": 17,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ZONE32E",
       "dest_warp_id": "0"
