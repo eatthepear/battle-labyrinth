@@ -480,7 +480,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_NOTEBOOK_BOSS_17] =
     {
         .header = COMPOUND_STRING("Zone 17 Boss"),
-        .desc = COMPOUND_STRING("Elite Four {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
+        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Slurpuff{COLOR DARK_GRAY}, {COLOR GREEN}Whimsicott{COLOR DARK_GRAY}, {COLOR GREEN}Wigglytuff{COLOR DARK_GRAY}, {COLOR GREEN}Mimikyu{COLOR DARK_GRAY}\n"
                                 "Condition: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY},\n"
                                 "{COLOR GREEN}Permanent Electric Terrain{COLOR DARK_GRAY}\n\n"
@@ -490,7 +490,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_NOTEBOOK_BOSS_17_BRUTAL] =
     {
         .header = COMPOUND_STRING("Zone 17 Boss"),
-        .desc = COMPOUND_STRING("Elite Four {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
+        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Slurpuff{COLOR DARK_GRAY}, {COLOR GREEN}Whimsicott{COLOR DARK_GRAY}, {COLOR GREEN}Wigglytuff{COLOR DARK_GRAY}, {COLOR GREEN}Mimikyu{COLOR DARK_GRAY},\n"
                                 "{COLOR GREEN}Excadrill{COLOR DARK_GRAY}\n"
                                 "Condition: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY},\n"
