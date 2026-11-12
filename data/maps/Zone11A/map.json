@@ -265,7 +265,16 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "warp_id": "WARP_ZONE_11",
+      "x": 46,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE_SANCTUARY",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": [
     {

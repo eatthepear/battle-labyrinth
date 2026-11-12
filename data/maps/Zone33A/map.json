@@ -42,6 +42,14 @@
       "elevation": 0,
       "dest_map": "MAP_ZONE33B",
       "dest_warp_id": "3"
+    },
+    {
+      "warp_id": "WARP_ZONE_33",
+      "x": 0,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE_SANCTUARY",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

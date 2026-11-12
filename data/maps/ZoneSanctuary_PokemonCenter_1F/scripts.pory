@@ -154,39 +154,15 @@ script EventScript_OldMan_PriorZone {
 	removemoney(1000)
 	updatemoneybox
 	msgbox(format("Thank you very much…"), MSGBOX_DEFAULT)
-	setflag(FLAG_IS_REVISITING_ZONE)
-	switch (var(VAR_TEMP_0)) {
-		case 1:
-			call(EventScript_OldMan_MoveOutOfWay)
-			warpdoor(MAP_ZONE1A, 255, 16, 28)
-			waitstate
-		case 2:
-			call(EventScript_OldMan_MoveOutOfWay)
-			warpdoor(MAP_ZONE2A, 255, 10, 8)
-			waitstate
-		case 3:
-			call(EventScript_OldMan_MoveOutOfWay)
-			warpdoor(MAP_ZONE3A, 255, 38, 25)
-			waitstate
-		case 4:
-			call(EventScript_OldMan_MoveOutOfWay)
-			warpdoor(MAP_ZONE4A, 255, 3, 4)
-			waitstate
-	}
-	release
-	end
-}
-
-script EventScript_OldMan_MoveOutOfWay {
 	closemessage
-	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
-	if (var(VAR_TEMP_0) == 15) {
+	getplayerxy(VAR_TEMP_2, VAR_TEMP_1)
+	if (var(VAR_TEMP_2) == 15) {
 		applymovement(LOCALID_OLD_MAN, Common_Movement_WalkDown)
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
 		waitmovement(0)
 		applymovement(LOCALID_OLD_MAN, Common_Movement_FaceUp)
 		waitmovement(0)
-	} elif (var(VAR_TEMP_0) == 16) {
+	} elif (var(VAR_TEMP_2) == 16) {
 		applymovement(LOCALID_OLD_MAN, Common_Movement_WalkLeft)
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 		waitmovement(0)
@@ -199,5 +175,80 @@ script EventScript_OldMan_MoveOutOfWay {
 		applymovement(LOCALID_OLD_MAN, Common_Movement_FaceUp)
 		waitmovement(0)
 	}
-	return
+	setflag(FLAG_IS_REVISITING_ZONE)
+	switch (var(VAR_TEMP_0)) {
+		case 1:
+			warpdoor(MAP_ZONE1A, WARP_ZONE_1)
+		case 2:
+			warpdoor(MAP_ZONE2A, WARP_ZONE_2)
+		case 3:
+			warpdoor(MAP_ZONE3A, WARP_ZONE_3)
+		case 4:
+			warpdoor(MAP_ZONE4A, WARP_ZONE_4)
+		case 5:
+			warpdoor(MAP_ZONE5A, WARP_ZONE_5)
+		case 6:
+			warpdoor(MAP_ZONE6A, WARP_ZONE_6)
+		case 7:
+			warpdoor(MAP_ZONE7A, WARP_ZONE_7)
+		case 8:
+			warpdoor(MAP_ZONE8A, WARP_ZONE_8)
+		case 9:
+			warpdoor(MAP_ZONE9A, WARP_ZONE_9)
+		case 10:
+			warpdoor(MAP_ZONE10A, WARP_ZONE_10)
+		case 11:
+			warpdoor(MAP_ZONE11A, WARP_ZONE_11)
+		case 12:
+			warpdoor(MAP_ZONE12A, WARP_ZONE_12)
+		case 13:
+			warpdoor(MAP_ZONE13A, WARP_ZONE_13)
+		case 14:
+			warpdoor(MAP_ZONE14A, WARP_ZONE_14)
+		case 15:
+			warpdoor(MAP_ZONE15A, WARP_ZONE_15)
+		case 16:
+			warpdoor(MAP_ZONE16A, WARP_ZONE_16)
+		case 17:
+			warpdoor(MAP_ZONE17A, WARP_ZONE_17)
+		case 18:
+			warpdoor(MAP_ZONE18A, WARP_ZONE_18)
+		case 19:
+			warpdoor(MAP_ZONE19A, WARP_ZONE_19)
+		case 20:
+			warpdoor(MAP_ZONE20A, WARP_ZONE_20)
+		case 21:
+			warpdoor(MAP_ZONE21A, WARP_ZONE_21)
+		case 22:
+			warpdoor(MAP_ZONE22A, WARP_ZONE_22)
+		case 23:
+			warpdoor(MAP_ZONE23A, WARP_ZONE_23)
+		case 24:
+			warpdoor(MAP_ZONE24A, WARP_ZONE_24)
+		case 25:
+			warpdoor(MAP_ZONE25A, WARP_ZONE_25)
+		case 26:
+			warpdoor(MAP_ZONE26A, WARP_ZONE_26)
+		case 27:
+			warpdoor(MAP_ZONE27A, WARP_ZONE_27)
+		case 28:
+			warpdoor(MAP_ZONE28A, WARP_ZONE_28)
+		case 29:
+			warpdoor(MAP_ZONE29A, WARP_ZONE_29)
+		case 30:
+			warpdoor(MAP_ZONE30A, WARP_ZONE_30)
+		case 31:
+			warpdoor(MAP_ZONE31A, WARP_ZONE_31)
+		case 32:
+			warpdoor(MAP_ZONE32A, WARP_ZONE_32)
+		case 33:
+			warpdoor(MAP_ZONE33A, WARP_ZONE_33)
+		case 34:
+			warpdoor(MAP_ZONE34A, WARP_ZONE_34)
+		case 35:
+			warpdoor(MAP_ZONE35A, WARP_ZONE_35)
+	}
+	waitstate
+	release
+	end
 }

@@ -214,7 +214,16 @@
       "flag": "FLAG_HIDE_ZONE16A_KIMONO_GIRL"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "warp_id": "WARP_ZONE_16",
+      "x": 6,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE_SANCTUARY",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [
     {
       "type": "trigger",

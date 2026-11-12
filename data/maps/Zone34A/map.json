@@ -30,6 +30,7 @@
   ],
   "warp_events": [
     {
+      "warp_id": "WARP_ZONE_34",
       "x": 7,
       "y": 4,
       "elevation": 0,

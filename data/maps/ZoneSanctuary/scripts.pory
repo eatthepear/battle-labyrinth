@@ -133,52 +133,52 @@ script EventScript_NextZone {
 	waitmovement(0)
 	switch (var(VAR_ZONE)) {
 		case 1:
-			warp(MAP_ZONE1A, 255, 16, 28)
+			warp(MAP_ZONE1A, WARP_ZONE_1)
 		case 2:
-			warp(MAP_ZONE2A, 255, 10, 8)
+			warp(MAP_ZONE2A, WARP_ZONE_2)
 		case 3:
-			warp(MAP_ZONE3A, 255, 38, 25)
+			warp(MAP_ZONE3A, WARP_ZONE_3)
 		case 4:
-			warp(MAP_ZONE4A, 255, 3, 4)
+			warp(MAP_ZONE4A, WARP_ZONE_4)
 		case 5:
-			warp(MAP_ZONE5A, 255, 34, 30)
+			warp(MAP_ZONE5A, WARP_ZONE_5)
 		case 6:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				setflag(FLAG_HIDE_ZONE6A_MAX)
 			}
 			setflag(FLAG_HIDE_ZONE6A_KIMONO_GIRL)
-			warp(MAP_ZONE6A, 255, 51, 22)
+			warp(MAP_ZONE6A, WARP_ZONE_6)
 		case 7:
-			warp(MAP_ZONE7A, 255, 10, 33)
+			warp(MAP_ZONE7A, WARP_ZONE_7)
 		case 9:
 			setflag(FLAG_HIDE_ZONE9A_BERTHA_WINSTRATE)
 			setflag(FLAG_HIDE_ZONE9A_CASSANDRA_WINSTRATE)
 			setflag(FLAG_HIDE_ZONE9A_DOMINIC_WINSTRATE)
 			setflag(FLAG_HIDE_ZONE9A_ERICA_WINSTRATE)
-			warp(MAP_ZONE9A, 255, 41, 22)
+			warp(MAP_ZONE9A, WARP_ZONE_9)
 		case 10:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				setflag(FLAG_HIDE_ZONE10A_MAX)
 			}
-			warp(MAP_ZONE10A, 255, 42, 51)
+			warp(MAP_ZONE10A, WARP_ZONE_10)
 		case 11:
-			warp(MAP_ZONE11A, 255, 46, 2)
+			warp(MAP_ZONE11A, WARP_ZONE_11)
 		case 12:
-			warp(MAP_ZONE12A, 255, 11, 14)
+			warp(MAP_ZONE12A, WARP_ZONE_12)
 		case 13:
-			warp(MAP_ZONE13A, 255, 30, 30)
+			warp(MAP_ZONE13A, WARP_ZONE_13)
 		case 15:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				setflag(FLAG_HIDE_ZONE15A_MAX)
 			}
-			warp(MAP_ZONE15A, 255, 4, 3)
+			warp(MAP_ZONE15A, WARP_ZONE_15)
 		case 16:
 			setflag(FLAG_HIDE_ZONE16A_KIMONO_GIRL)
-			warp(MAP_ZONE16A, 255, 6, 5)
+			warp(MAP_ZONE16A, WARP_ZONE_16)
 		case 17:
 			setflag(FLAG_HIDE_ZONE17A_HEX_MANIAC)
 			setflag(FLAG_HIDE_ZONE17A_PORYGON)
-			warp(MAP_ZONE17A, 255, 13, 30)
+			warp(MAP_ZONE17A, WARP_ZONE_17)
 		case 18:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				setflag(FLAG_HIDE_ZONE18A_MAX)
@@ -187,42 +187,42 @@ script EventScript_NextZone {
 			setflag(FLAG_HIDE_ZONE18A_GRUNTS)
 			setflag(FLAG_HIDE_ZONE18A_BOAT)
 			setflag(FLAG_HIDE_ZONE19D_AQUA)
-			warp(MAP_ZONE18A, 255, 30, 17)
+			warp(MAP_ZONE18A, WARP_ZONE_18)
 		case 20:
 			setflag(FLAG_HIDE_ZONE20A_PORYGON)
-			warp(MAP_ZONE20A, 255, 28, 10)
+			warp(MAP_ZONE20A, WARP_ZONE_20)
 		case 21:
-			warp(MAP_ZONE21A, 255, 16, 93)
+			warp(MAP_ZONE21A, WARP_ZONE_21)
 		case 22:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				setflag(FLAG_HIDE_ZONE22A_MAX)
 			}
-			warp(MAP_ZONE22A, 255, 9, 50)
+			warp(MAP_ZONE22A, WARP_ZONE_22)
 		case 23:
-			warp(MAP_ZONE23A, 255, 8, 2)
+			warp(MAP_ZONE23A, WARP_ZONE_23)
 		case 24:
 			setflag(FLAG_HIDE_ZONE24A_ROCKET_GRUNTS)
-			warp(MAP_ZONE24A, 255, 31, 23)
+			warp(MAP_ZONE24A, WARP_ZONE_24)
 		case 26:
 			setflag(FLAG_HIDE_ZONE26A_PORYGON)
-			warp(MAP_ZONE26A, 255, 13, 16)
+			warp(MAP_ZONE26A, WARP_ZONE_26)
 		case 27:
-			warp(MAP_ZONE27A, 255, 23, 59)
+			warp(MAP_ZONE27A, WARP_ZONE_27)
 		case 29:
 			setflag(FLAG_HIDE_ZONE29A_PORYGON)
-			warp(MAP_ZONE29A, 255, 11, 17)
+			warp(MAP_ZONE29A, WARP_ZONE_29)
 		case 30:
 			setflag(FLAG_HIDE_ZONE30A_PROTON)
-			warp(MAP_ZONE30A, 255, 2, 28)
+			warp(MAP_ZONE30A, WARP_ZONE_30)
 		case 31:
-			warp(MAP_ZONE31A, 255, 10, 65)
+			warp(MAP_ZONE31A, WARP_ZONE_31)
 		case 33:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				setflag(FLAG_HIDE_ZONE33D_MAX)
 			}
-			warp(MAP_ZONE33A, 255, 0, 8)
+			warp(MAP_ZONE33A, WARP_ZONE_33)
 		case 35:
-			warp(MAP_ZONE35A, 255, 10, 10)
+			warp(MAP_ZONE35A, WARP_ZONE_35)
 	}
 	waitstate
 	end

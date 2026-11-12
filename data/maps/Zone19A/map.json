@@ -29,16 +29,17 @@
       "direction": "emerge"
     }
   ],
-  "object_events": [
-
-  ],
+  "object_events": [],
   "warp_events": [
-
+    {
+      "warp_id": "WARP_ZONE_19",
+      "x": 44,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE_SANCTUARY",
+      "dest_warp_id": "0"
+    }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

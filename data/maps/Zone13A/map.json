@@ -153,6 +153,14 @@
       "elevation": 0,
       "dest_map": "MAP_ZONE13B",
       "dest_warp_id": "0"
+    },
+    {
+      "warp_id": "WARP_ZONE_13",
+      "x": 30,
+      "y": 30,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE_SANCTUARY",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
