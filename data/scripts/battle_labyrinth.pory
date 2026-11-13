@@ -1190,19 +1190,12 @@ script EventScript_Notebook_Pokemon {
 	while {
 		message(format("Pokémon Changes open.\nAnything not listed is vanilla."))
 		waitmessage
-		dynmultipush("Abilities", 1)
 		dynmultipush("Evolutions", 2)
 		dynmultipush("Learnsets", 3)
 		dynmultipush("Friendship", 4)
 		dynmultipush("Back", 5)
 		dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 		switch (var(VAR_RESULT)) {
-			case 1:
-				msgbox(format("Some Pokémon have their Hidden Ability swapped with a regular ability. All Pokémon still only have abilities that they do in vanilla."))
-				msgbox(format("The next page notes Pokémon with ability changes. Would you like to read it?"), MSGBOX_YESNO)
-				if (var(VAR_RESULT) == YES) {
-					call(EventScript_Notebook_Abilities)
-				}
 			case 2:
 				msgbox(format("Many Pokémon have evolution methods that are another option from their default or directly replace the default.\pThis includes Friendship evolutions, gender based evolutions, weak Pokémon evolutions, and hard to achieve evolutions.\pYou can see how to evolve a Pokémon in the Pokédex."))
 				msgbox(format("The next page notes Pokémon with major evolution changes. Would you like to read it?"), MSGBOX_YESNO)
@@ -1214,58 +1207,6 @@ script EventScript_Notebook_Pokemon {
 			case 4:
 				msgbox(format("Friendship is always considered maxed out.\pAll friendship evolutions have been changed to level up, so in practice this only affects moves like Return."))
 			case 5:
-			case MULTI_B_PRESSED:
-				return
-		}
-	}
-}
-
-script EventScript_Notebook_Abilities {
-	while {
-		message(format("Which Pokémon's ability changes would you like to read?"))
-		waitmessage
-		dynmultipush("Tyranitar", SPECIES_TYRANITAR)
-		dynmultipush("Wingull", SPECIES_WINGULL)
-		dynmultipush("Pelipper", SPECIES_PELIPPER)
-		dynmultipush("Torkoal", SPECIES_TORKOAL)
-		dynmultipush("Hippopotas", SPECIES_HIPPOPOTAS)
-		dynmultipush("Hippowdon", SPECIES_HIPPOWDON)
-		dynmultipush("Snover", SPECIES_SNOVER)
-		dynmultipush("Abomasnow", SPECIES_ABOMASNOW)
-		dynmultipush("Roggenrola", SPECIES_ROGGENROLA)
-		dynmultipush("Boldore", SPECIES_BOLDORE)
-		dynmultipush("Gigalith", SPECIES_GIGALITH)
-		dynmultipush("Vanillite", SPECIES_VANILLITE)
-		dynmultipush("Vanillish", SPECIES_VANILLISH)
-		dynmultipush("Vanilluxe", SPECIES_VANILLUXE)
-		dynmultipush("Back", 0)
-		dynmultistack(0, 0, FALSE, 6, FALSE, 1, DYN_MULTICHOICE_CB_NONE)
-		switch (var(VAR_RESULT)) {
-			case SPECIES_TYRANITAR:
-				msgbox(format("Tyranitar now gets Unnerve as a regular ability instead of Sand Stream, which is now its Hidden Ability."))
-			case SPECIES_WINGULL:
-				msgbox(format("Wingull now gets Rain Dish as a regular ability instead of Hydration, which is now its Hidden Ability."))
-			case SPECIES_PELIPPER:
-				msgbox(format("Pelipper now gets Rain Dish as a regular ability instead of Drizzle, which is now its Hidden Ability."))
-			case SPECIES_TORKOAL:
-				msgbox(format("Torkoal now gets Shell Armor as a regular ability instead of Drought, which is now its Hidden Ability."))
-			case SPECIES_HIPPOPOTAS:
-			case SPECIES_HIPPOWDON:
-				msgbox(format("Hippopotas and Hippowdon now get Sand Force as a regular ability instead of Sand Stream, which is now their Hidden Ability."))
-			case SPECIES_SNOVER:
-			case SPECIES_ABOMASNOW:
-				msgbox(format("Snover and Abomasnow now get Soundproof as a regular ability instead of Snow Warning, which is now their Hidden Ability."))
-			case SPECIES_ROGGENROLA:
-			case SPECIES_BOLDORE:
-				msgbox(format("Roggenrola and Vanillish now get Sand Force as a regular ability instead of Weak Armor, which is now their Hidden Ability."))
-			case SPECIES_GIGALITH:
-				msgbox(format("Gigalith now gets Sand Force as a regular ability instead of Sand Stream, which is now its Hidden Ability."))
-			case SPECIES_VANILLITE:
-			case SPECIES_VANILLISH:
-				msgbox(format("Vanillite and Vanillish now get Weak Armor as a regular ability instead of Snow Cloak, which is now their Hidden Ability."))
-			case SPECIES_VANILLUXE:
-				msgbox(format("Vanilluxe now gets Weak Armor as a regular ability instead of Snow Warning, which is now its Hidden Ability."))
-			case 0:
 			case MULTI_B_PRESSED:
 				return
 		}
