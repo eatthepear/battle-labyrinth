@@ -90,6 +90,64 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Rock Slide
 
+=== PARTNER_PBL_CILAN_20 ===
+Name: Cilan
+Class: Leader
+Pic: Cilan
+Music: Male
+AI: AI_FLAG_BOSS
+Difficulty: Brutal
+
+Simisage @ Occa Berry
+Ability: Overgrow
+Level: 40
+Hasty Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Grass Pledge
+- Giga Drain
+- Low Kick
+- Rock Slide
+
+Serperior @ Light Clay
+Ability: Contrary
+Level: 39
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Grass Pledge
+- Giga Drain
+- Light Screen
+- Reflect
+
+Torterra @ Miracle Seed
+Ability: Overgrow
+Level: 39
+Naive Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Grass Pledge
+- Wood Hammer
+- High Horsepower
+- Rock Slide
+
+Chesnaught @ Coba Berry
+Ability: Bulletproof
+Level: 39
+Sassy Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Grass Pledge
+- Wood Hammer
+- Hammer Arm
+- Rock Slide
+
+Sceptile @ Sceptilite
+Ability: Overgrow
+Level: 40
+Naive Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Grass Pledge
+- Giga Drain
+- Dragon Pulse
+- Focus Blast
+
 === PARTNER_PBL_CHILI_20 ===
 Name: Chili
 Class: Leader
@@ -137,6 +195,64 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Close Combat
 - Wild Charge
 
+=== PARTNER_PBL_CHILI_20 ===
+Name: Chili
+Class: Leader
+Pic: Chili
+Music: Male
+AI: AI_FLAG_BOSS
+Difficulty: Brutal
+
+Simisear @ Passho Berry
+Ability: Blaze
+Level: 40
+Hasty Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Pledge
+- Flamethrower
+- Rock Slide
+- Grass Knot
+
+Typhlosion @ Expert Belt
+Ability: Blaze
+Level: 39
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Pledge
+- Flamethrower
+- Scorching Sands
+- Extrasensory
+
+Skeledirge @ Sitrus Berry
+Ability: Unaware
+Level: 39
+Quiet Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Pledge
+- Flamethrower
+- Shadow Ball
+- Will-O-Wisp
+
+Emboar @ Charcoal
+Ability: Reckless
+Level: 39
+Brave Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Pledge
+- Flare Blitz
+- Close Combat
+- Wild Charge
+
+Charizard @ Charizardite-X
+Ability: Blaze
+Level: 40
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Pledge
+- Flare Blitz
+- Dragon Claw
+- Thunder Punch
+
 === PARTNER_PBL_CRESS_20 ===
 Name: Cress
 Class: Leader
@@ -183,6 +299,64 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Aqua Step
 - Close Combat
 - Acrobatics
+
+=== PARTNER_PBL_CRESS_20 ===
+Name: Cress
+Class: Leader
+Pic: Cress
+Music: Male
+AI: AI_FLAG_BOSS
+Difficulty: Brutal
+
+Simipour @ Rindo Berry
+Ability: Torrent
+Level: 40
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pledge
+- Scald
+- Ice Beam
+- Icy Wind
+
+Swampert @ Mystic Water
+Ability: Torrent
+Level: 39
+Brave Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pledge
+- Liquidation
+- High Horsepower
+- Ice Punch
+
+Samurott @ Sitrus Berry
+Ability: Torrent
+Level: 39
+Naive Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pledge
+- Scald
+- Ice Beam
+- Megahorn
+
+Quaquaval @ Flying Gem
+Ability: Moxie
+Level: 39
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pledge
+- Aqua Step
+- Close Combat
+- Acrobatics
+
+Feraligatr @ Feraligite
+Ability: Torrent
+Level: 40
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pledge
+- Aqua Tail
+- Body Slam
+- Aqua Jet
 
 === PARTNER_PBL_BLUE_27 ===
 Name: Blue
