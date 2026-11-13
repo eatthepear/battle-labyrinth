@@ -12406,15 +12406,9 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("TM07"),
         .price = 3000,
         .description = COMPOUND_STRING(
-        #if B_PREFERRED_ICE_WEATHER == B_ICE_WEATHER_SNOW
             "Boosts the\n"
             "Defense of Ice-\n"
             "types for 5 turns."),
-        #else
-            "Damages all\n"
-            "types except Ice\n"
-            "for 5 turns."),
-        #endif
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
