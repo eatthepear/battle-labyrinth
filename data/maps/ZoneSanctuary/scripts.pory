@@ -388,14 +388,14 @@ script Sanctuary_EventScript_EnterSanctuary {
 			giveitem(ITEM_LUM_BERRY, 5)
 		case 18:
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 18 - Beach Resort{COLOR DARK_GRAY} is…"))
-			msgbox(format("{COLOR GREEN}10 Sitrus Berries{COLOR DARK_GRAY}!"))
+			msgbox(format("The {COLOR GREEN}King's Rock{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			// giveitem(ITEM_SITRUS_BERRY, 10)
+			giveitem(ITEM_KINGS_ROCK)
 			setspeaker(SP_NAME_COLRESS)
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 19 - Aqua Trench{COLOR DARK_GRAY} is…"))
-			msgbox(format("{COLOR GREEN}TM74 - Gyro Ball{COLOR DARK_GRAY}!"))
+			msgbox(format("{COLOR GREEN}TM89 - U-Turn{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)
-			// giveitem(ITEM_TM_GYRO_BALL)
+			giveitem(ITEM_TM_U_TURN)
 		case 20:
 			msgbox(format("The {COLOR GREEN}{PKMN} Mega Ring{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)

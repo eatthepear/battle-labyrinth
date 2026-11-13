@@ -8,11 +8,6 @@ mapscripts Zone18A_MapScripts {
 		} else {
 			setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_CHEST)
 		}
-		if (flag(FLAG_ITEM_ZONE18A_TM_U_TURN)) {
-			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TM_CHEST_OPEN)
-		} else {
-			setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TM_CHEST)
-		}
 	}
 }
 
@@ -169,23 +164,6 @@ script Zone18A_EventScript_LinkingCord {
 	setflag(FLAG_ITEM_ZONE18A_LINKING_CORD)
 	addobject(VAR_LAST_TALKED)
 	finditem(ITEM_LINKING_CORD)
-	release
-	end
-}
-
-script Zone18A_EventScript_TMUTurn {
-	lock
-	if (flag(FLAG_ITEM_ZONE18A_TM_U_TURN)) {
-		msgbox(gText_ItemChestIsEmpty)
-		release
-		end
-	}
-	waitse
-	removeobject(VAR_LAST_TALKED)
-	setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TM_CHEST_OPEN)
-	setflag(FLAG_ITEM_ZONE18A_TM_U_TURN)
-	addobject(VAR_LAST_TALKED)
-	finditem(ITEM_TM_U_TURN)
 	release
 	end
 }
