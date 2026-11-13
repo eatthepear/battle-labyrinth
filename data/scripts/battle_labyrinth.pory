@@ -727,6 +727,7 @@ script EventScript_PorygonExit {
 			release
 			end
 		}
+		clearflag(FLAG_IS_REVISITING_ZONE)
 		closemessage
 		playmoncry(SPECIES_PORYGON, 0)
 		waitmoncry
