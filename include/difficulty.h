@@ -13,5 +13,6 @@ void Script_IncreaseDifficulty(void);
 void Script_DecreaseDifficulty(void);
 void Script_GetDifficulty(void);
 void Script_SetDifficulty(struct ScriptContext *);
+bool32 AllowedAbilitySlotByDifficulty(enum Species, u8);
 
 #endif // GUARD_DIFFICULTY_H

@@ -103,3 +103,59 @@ void Script_SetDifficulty(struct ScriptContext *ctx)
 
     SetCurrentDifficultyLevel(desiredDifficulty);
 }
+
+bool32 AllowedAbilitySlotByDifficulty(enum Species species, u8 abilitySlot)
+{
+    if (GetCurrentDifficultyLevel() < DIFFICULTY_BRUTAL)
+        return TRUE;
+
+    switch (species)
+    {
+        case SPECIES_LARVITAR:
+        case SPECIES_PUPITAR:
+        case SPECIES_TYRANITAR:
+            if (abilitySlot == 2)
+                return TRUE;
+            else
+                return FALSE;
+        case SPECIES_WINGULL:
+        case SPECIES_PELIPPER:
+            if (abilitySlot != 1)
+                return TRUE;
+            else
+                return FALSE;
+        case SPECIES_TORKOAL:
+            if (abilitySlot != 1)
+                return TRUE;
+            else
+                return FALSE;
+        case SPECIES_HIPPOPOTAS:
+        case SPECIES_HIPPOWDON:
+            if (abilitySlot == 2)
+                return TRUE;
+            else
+                return FALSE;
+        case SPECIES_SNOVER:
+        case SPECIES_ABOMASNOW:
+            if (abilitySlot == 2)
+                return TRUE;
+            else
+                return FALSE;
+        case SPECIES_ROGGENROLA:
+        case SPECIES_BOLDORE:
+        case SPECIES_GIGALITH:
+            if (abilitySlot != 1)
+                return TRUE;
+            else
+                return FALSE;
+        case SPECIES_VANILLITE:
+        case SPECIES_VANILLISH:
+        case SPECIES_VANILLUXE:
+            if (abilitySlot != 1)
+                return TRUE;
+            else
+                return FALSE;
+        default:
+            return TRUE;
+    }
+}

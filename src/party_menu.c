@@ -13,6 +13,7 @@
 #include "contest.h"
 #include "data.h"
 #include "decompress.h"
+#include "difficulty.h"
 #include "easy_chat.h"
 #include "event_data.h"
 #include "event_object_movement.h"
@@ -5109,6 +5110,8 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
 #define tMonId      data[3]
 #define tOldFunc    4
 
+static const u8 sText_cantChangeAbilityBrutal[] = _("You can't change {STR_VAR_1}'s ability\nto {STR_VAR_2} on Brutal difficulty.{PAUSE_UNTIL_PRESS}");
+
 void Task_AbilityCapsule(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
@@ -5125,6 +5128,18 @@ void Task_AbilityCapsule(u8 taskId)
             gPartyMenuUseExitCallback = FALSE;
             PlaySE(SE_SELECT);
             DisplayPartyMenuMessage(gText_WontHaveEffect, 1);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+            return;
+        }
+        if (!AllowedAbilitySlotByDifficulty(tSpecies, tAbilityNum))
+        {
+            gPartyMenuUseExitCallback = FALSE;
+            PlaySE(SE_SELECT);
+            GetMonNickname(&gParties[B_TRAINER_PLAYER][tMonId], gStringVar1);
+            StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(tSpecies, tAbilityNum)].name);
+            StringExpandPlaceholders(gStringVar4, sText_cantChangeAbilityBrutal);
+            DisplayPartyMenuMessage(gStringVar4, 1);
             ScheduleBgCopyTilemapToVram(2);
             gTasks[taskId].func = Task_ClosePartyMenuAfterText;
             return;
