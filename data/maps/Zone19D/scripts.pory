@@ -67,6 +67,7 @@ script Zone19D_EventScript_InitiateAquaGauntlet {
 	setspeaker("Grunt")
 	msgbox(format("Right on! You won't get out without beating me, savvy?"), MSGBOX_AUTOCLOSE)
 	waitmovement(0)
+	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_AQUA_GRUNT_19D_1_BOSS_19, Zone19D_Text_AquaDefeat)
 	applymovement(LOCALID_GRUNT_2_19D, Common_Movement_WalkInPlaceFasterLeft)

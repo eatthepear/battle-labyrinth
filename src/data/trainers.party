@@ -3101,15 +3101,15 @@ Pic: Aqua Grunt M
 Music: Aqua
 AI: AI_FLAG_BOSS
 
-Octillery
-Quiet Nature
-Ability: Sniper
+Qwilfish
+Careful Nature
+Ability: Poison Point
 Level: 34
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Octazooka
-- Bullet Seed
-- Rock Blast
-- Signal Beam
+- Aqua Tail
+- Barb Barrage
+- Toxic Spikes
+- Self-Destruct
 
 Drednaw
 Brave Nature
@@ -3128,15 +3128,15 @@ Pic: Aqua Grunt F
 Music: Aqua
 AI: AI_FLAG_BOSS
 
-Qwilfish
-Careful Nature
-Ability: Poison Point
+Chatot
+Timid Nature
+Ability: Big Pecks
 Level: 34
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aqua Tail
-- Barb Barrage
-- Toxic Spikes
-- Self-Destruct
+- Chatter
+- Uproar
+- Roost
+- Sing
 
 Kingler
 Adamant Nature
@@ -3156,7 +3156,7 @@ Music: Aqua
 AI: AI_FLAG_BOSS
 Mugshot: Blue
 
-Pelipper
+Pelipper @ Damp Rock
 Timid Nature
 Ability: Drizzle
 Level: 36
@@ -3166,7 +3166,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - U-Turn
 - Sleep Talk
 
-Perrserker
+Perrserker @ Metal Coat
 Jolly Nature
 Ability: Steely Spirit
 Level: 36
@@ -3176,12 +3176,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Brick Break
 - Knock Off
 
-Eelektross
+Eelektross @ Sitrus Berry
 Naive Nature
 Ability: Levitate
 Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Wild Charge
+- Thunder
 - Grass Knot
 - Liquidation
 - Acrobatics
@@ -3195,7 +3195,7 @@ AI: AI_FLAG_BOSS
 Mugshot: Blue
 Difficulty: Brutal
 
-Pelipper
+Pelipper @ Damp Rock
 Timid Nature
 Ability: Drizzle
 Level: 36
@@ -3205,7 +3205,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - U-Turn
 - Sleep Talk
 
-Perrserker
+Perrserker @ Metal Coat
 Jolly Nature
 Ability: Steely Spirit
 Level: 36
@@ -3215,7 +3215,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Brick Break
 - Knock Off
 
-Floatzel
+Floatzel @ Mystic Water
 Adamant Nature
 Ability: Swift Swim
 Level: 36
@@ -3225,12 +3225,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Punch
 - Low Kick
 
-Eelektross
+Eelektross @ Sitrus Berry
 Naive Nature
 Ability: Levitate
 Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Wild Charge
+- Thunder
 - Grass Knot
 - Liquidation
 - Acrobatics
