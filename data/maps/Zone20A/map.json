@@ -42,7 +42,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 12,
+      "x": 10,
       "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -55,14 +55,14 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SOCIALITE",
-      "x": 4,
-      "y": 18,
+      "x": 6,
+      "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "Zone20A_EventScript_Ophelia",
       "flag": "0"
     },
@@ -81,8 +81,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_1",
-      "x": 5,
-      "y": 21,
+      "x": 13,
+      "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -94,8 +94,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
-      "x": 7,
-      "y": 14,
+      "x": 5,
+      "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -124,7 +124,7 @@
     {
       "warp_id": "WARP_ZONE_20",
       "x": 27,
-      "y": 11,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_ZONE_SANCTUARY",
       "dest_warp_id": "0"
