@@ -15,7 +15,12 @@ script Zone20B_EventScript_TriggerCoriExplanation {
 	applymovement(LOCALID_CORI_20B, Common_Movement_WalkDown2)
 	waitmovement(0)
     setspeaker("Cori")
-    msgbox(format("EXPLANATION!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Hello, {PLAYER}! It's nice to see you again!\pYou don't remember me?{PAUSE_UNTIL_PRESS} I'm {COLOR BLUE}Cori{COLOR DARK_GRAY}!{PAUSE_UNTIL_PRESS} We battled a long time ago, when you were still at the beginning of your journey.\pNow look at you! You've really come a long way! You've made it all the way to my brothers' restaurant!\pThat's right, I have three older brothers: {COLOR BLUE}Cilan{COLOR DARK_GRAY}, {COLOR BLUE}Cress{COLOR DARK_GRAY}, and {COLOR BLUE}Chili{COLOR DARK_GRAY}!"))
+    closemessage
+    delay(40)
+    setspeaker("Cori")
+    msgbox(format("Say, are you here to earn a Gym Badge, per chance? If so, could you do us a favor first?\pThe servers here at the restaurant are feeling a bit unmotivated.\pIt would greatly help if you were to battle them, just to let them get their energy out!\pOnce you've done that, let me know, and I can get my brothers ready for a Gym Battle!"))
+    closemessage
 	applymovement(LOCALID_CORI_20B, Common_Movement_WalkUp2)
 	waitmovement(0)
     setvar(VAR_ZONE_20_STATE, 1)
@@ -26,7 +31,17 @@ script Zone20B_EventScript_TriggerCoriExplanation {
 script Zone20B_EventScript_Cori {
     lock
     faceplayer
-    msgbox(format("HI!"))
+    setspeaker("Cori")
+    msgbox(format("So, did you defeat all the servers?"))
+    if (defeated(TRAINER_PBL_WALKER) && defeated(TRAINER_PBL_NATALIA) && defeated(TRAINER_PBL_DUNCAN) && defeated(TRAINER_PBL_EVALINE)) {
+        setspeaker("Cori")
+        msgbox(format("Oh, great, you did!\pI let my brothers know that you're interested in a challenge for the Gym Badge.\pHow it works is… you pick one of them, and then they are your Tag Partner against the other two in a Tag Battle!\pJust go up and speak to whoever you want to partner with, when you're ready!"))
+        closemessage
+        setvar(VAR_ZONE_20_STATE, 2)
+    } else {
+        setspeaker("Cori")
+        msgbox(format("Oh, the servers could really use a break from their duties.\pIf you battle them all, and help to get their energy out, I can go tell my brothers you're interested in a Gym Badge!"))
+    }
     release
     end
 }
@@ -40,7 +55,7 @@ script Zone20B_EventScript_Cilan {
         release
         end
     }
-    if (defeated(TRAINER_PBL_WALKER) && defeated(TRAINER_PBL_NATALIA) && defeated(TRAINER_PBL_DUNCAN) && defeated(TRAINER_PBL_EVALINE)) {
+    if (var(VAR_ZONE_20_STATE) == 2) {
         setspeaker("Cilan")
         msgbox(format("DEFEATED ALL! TIME TO BATTLE?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == YES) {
@@ -81,7 +96,7 @@ script Zone20B_EventScript_Chili {
         release
         end
     }
-    if (defeated(TRAINER_PBL_WALKER) && defeated(TRAINER_PBL_NATALIA) && defeated(TRAINER_PBL_DUNCAN) && defeated(TRAINER_PBL_EVALINE)) {
+    if (var(VAR_ZONE_20_STATE) == 2) {
         setspeaker("Chili")
         msgbox(format("DEFEATED ALL! TIME TO BATTLE?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == YES) {
@@ -124,7 +139,7 @@ script Zone20B_EventScript_Cress {
         release
         end
     }
-    if (defeated(TRAINER_PBL_WALKER) && defeated(TRAINER_PBL_NATALIA) && defeated(TRAINER_PBL_DUNCAN) && defeated(TRAINER_PBL_EVALINE)) {
+    if (var(VAR_ZONE_20_STATE) == 2) {
         setspeaker("Cress")
         msgbox(format("DEFEATED ALL! TIME TO BATTLE?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == YES) {
