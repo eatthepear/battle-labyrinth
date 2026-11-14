@@ -619,6 +619,8 @@ const u32 gObjectEventPic_Cress[] = INCGFX_U32("graphics/object_events/pics/peop
 const u16 gObjectEventPal_Cress[] = INCGFX_U16("graphics/object_events/pics/people/cress.png", ".gbapal");
 const u32 gObjectEventPic_Chili[] = INCGFX_U32("graphics/object_events/pics/people/chili.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPal_Chili[] = INCGFX_U16("graphics/object_events/pics/people/chili.png", ".gbapal");
+const u32 gObjectEventPic_MegaStone[] = INCGFX_U32("graphics/object_events/pics/misc/mega_stone.png", ".4bpp");
+const u16 gObjectEventPal_MegaStone[] = INCGFX_U16("graphics/object_events/pics/misc/mega_stone.png", ".gbapal");
 
 const u32 gFieldEffectObjectPic_SnowFootprints[] = INCGFX_U32("graphics/field_effects/pics/snow_footprints.png", ".4bpp");
 #if IS_FRLG

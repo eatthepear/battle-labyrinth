@@ -484,6 +484,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanFishin
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cilan;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cress;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Chili;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MegaStone;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -809,6 +810,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_CILAN] =                    &gObjectEventGraphicsInfo_Cilan,
     [OBJ_EVENT_GFX_CRESS] =                    &gObjectEventGraphicsInfo_Cress,
     [OBJ_EVENT_GFX_CHILI] =                    &gObjectEventGraphicsInfo_Chili,
+    [OBJ_EVENT_GFX_MEGA_STONE] =               &gObjectEventGraphicsInfo_MegaStone,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,

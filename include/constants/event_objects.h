@@ -494,6 +494,7 @@ enum
     OBJ_EVENT_GFX_CILAN,
     OBJ_EVENT_GFX_CRESS,
     OBJ_EVENT_GFX_CHILI,
+    OBJ_EVENT_GFX_MEGA_STONE,
     NUM_OBJ_EVENT_GFX,
 };
 
@@ -763,6 +764,7 @@ enum
 #define OBJ_EVENT_PAL_TAG_CILAN                   0x72A2
 #define OBJ_EVENT_PAL_TAG_CRESS                   0x72A3
 #define OBJ_EVENT_PAL_TAG_CHILI                   0x72A4
+#define OBJ_EVENT_PAL_TAG_MEGA_STONE              0x72A5
 
 #define OBJ_EVENT_PAL_TAG_RUNNING_TRIATHLETE_F    0x7401
 #define OBJ_EVENT_PAL_TAG_SCHOOL_KID_M            0x7402
