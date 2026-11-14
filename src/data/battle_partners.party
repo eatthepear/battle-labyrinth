@@ -158,7 +158,7 @@ AI: AI_FLAG_BOSS
 Simisear @ Passho Berry
 Ability: Blaze
 Level: 40
-Hasty Nature
+Mild Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Pledge
 - Flamethrower
@@ -206,7 +206,7 @@ Difficulty: Brutal
 Simisear @ Passho Berry
 Ability: Blaze
 Level: 40
-Hasty Nature
+Mild Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Pledge
 - Flamethrower
@@ -263,7 +263,7 @@ AI: AI_FLAG_BOSS
 Simipour @ Rindo Berry
 Ability: Torrent
 Level: 40
-Timid Nature
+Quiet Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pledge
 - Scald
@@ -311,7 +311,7 @@ Difficulty: Brutal
 Simipour @ Rindo Berry
 Ability: Torrent
 Level: 40
-Timid Nature
+Quiet Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pledge
 - Scald
