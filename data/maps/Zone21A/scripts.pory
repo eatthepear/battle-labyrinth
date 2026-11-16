@@ -24,7 +24,7 @@ script Zone21A_EventScript_Grotto {
 
 script Zone21A_EventScript_TriggerWally {
 	lockall
-	applymovement(LOCALID_WALLY_21A, Common_Movement_WalkDown2)
+	applymovement(LOCALID_WALLY_21A, Common_Movement_FaceDown)
 	waitmovement(0)
 	playbgm(MUS_BW_FRIEND, TRUE)
 	applymovement(LOCALID_WALLY_21A, Common_Movement_ExclamationMark)

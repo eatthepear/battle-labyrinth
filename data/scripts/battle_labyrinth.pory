@@ -3435,6 +3435,24 @@ script EventScript_Braixen {
 	release
 }
 
+script EventScript_TaurosPaldeaBlaze {
+	lock
+	playmoncry(SPECIES_TAUROS_PALDEA_BLAZE, CRY_MODE_NORMAL)
+	msgbox(format("Tau!"))
+	waitmoncry
+	msgbox(format("It seems the Tauros have locked horns and are fighting! No way past them here."))
+	release
+}
+
+script EventScript_TaurosPaldeaAqua {
+	lock
+	playmoncry(SPECIES_TAUROS_PALDEA_AQUA, CRY_MODE_NORMAL)
+	msgbox(format("Tau!"))
+	waitmoncry
+	msgbox(format("It seems the Tauros have locked horns and are fighting! No way past them here."))
+	release
+}
+
 script EventScript_ResetEliteFour_PBL {
 	clearflag(FLAG_BEAT_BOSS_35_LACEY)
 	clearflag(FLAG_BEAT_BOSS_35_GLACIA)
