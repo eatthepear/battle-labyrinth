@@ -37,7 +37,3 @@ gText_NoMoreRoomForPokemon::
 gText_NicknameThisPokemon::
 	.string "Do you want to give a nickname to\n"
 	.string "this {STR_VAR_1}?$"
-
-gText_WouldLikeSendToPC::
-	.string "{COLOR WHITE}Add {STR_VAR_1} to your party and\n"
-	.string "send a party member to the PC?$"
