@@ -75,50 +75,50 @@ script Zone21A_EventScript_TriggerWally {
 }
 
 script Zone21A_EventScript_Bernard {
-	trainerbattle_single(TRAINER_PBL_BERNARD, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_BERNARD, format("Welcome to Double Battle Road, where we only battle in Double Battles!"), format("I definitely didn't expect to lose!"))
+	msgbox(format("All battles on Double Battle Road are Double Battles!\pBut contrary to popular belief, you don't actually need a Bike to go on Double Battle road."), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone21A_EventScript_Anita {
-	trainerbattle_single(TRAINER_PBL_ANITA, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_ANITA, format("Double Battles are double the fun!"), format("They're also double the pain of losing, too…"))
+	msgbox(format("Next time, my strategy will be: all out victory!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone21A_EventScript_Howard {
-	trainerbattle_single(TRAINER_PBL_HOWARD, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_HOWARD, format("I've heard there's a secret cave underneath Double Battle Road!"), format("I heard you need to Surf to get to the secret cave!"))
+	msgbox(format("I would go, but I like biking too much!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone21A_EventScript_Eloise {
-	trainerbattle_single(TRAINER_PBL_ELOISE, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_ELOISE, format("This is quite the long stretch of road!\pAre you up for the challenge?"), format("You're prepared for anything!"))
+	msgbox(format("Keep up your stamina, keep going, and keep pushing through, no matter what!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone21A_EventScript_Amir {
-	trainerbattle_single(TRAINER_PBL_AMIR, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_AMIR, format("TRAIN!\pTRAIN TO FIND THE HIDDEN CAVE!"), format("LOSE! LOSE AND NEVER FIND THE HIDDEN CAVE!"))
+	msgbox(format("SEARCH! SEARCH, AND FIND THE HIDDEN CAVE!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone21A_EventScript_Felix {
-	trainerbattle_single(TRAINER_PBL_FELIX, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_FELIX, format("Want to join my cookout?\pOn the menu: swift victory!"), format("A swift defeat was served instead!"))
+	msgbox(format("You've got me all fired up, thinking of new things to cook!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone21A_EventScript_Rusty {
-	trainerbattle_single(TRAINER_PBL_RUSTY, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_RUSTY, format("To protect the natural world, Rangers will go to any length!\pPrepare yourself!"), format("This was just a taste of my resolve!"))
+	msgbox(format("Isn't it great to breathe in the air from the great outdoors?"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone21A_EventScript_Ally {
-	trainerbattle_single(TRAINER_PBL_ALLY, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_ALLY, format("I've heard there's a hidden cave somewhere in the lake.\pHave you found it?"), format("I heard the cave needs true Strength to navigate!"))
+	msgbox(format("I've been searching for this cave for days, and no luck!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
