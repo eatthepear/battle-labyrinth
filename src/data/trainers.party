@@ -3943,7 +3943,45 @@ Music: Cool
 AI: AI_FLAG_BOSS
 Double Battle: No
 
-Drifblim
+Emolga @ Magnet
+Ability: Motor Drive
+Level: 41
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Switch
+- Air Slash
+- Energy Ball
+- Discharge
+
+Skarmory @ Rocky Helmet
+Ability: Sturdy
+Level: 41
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drill Peck
+- Iron Head
+- Body Press
+- Roost
+
+Cryogonal @ Light Clay
+Ability: Levitate
+Level: 41
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aurora Veil
+- Freeze-Dry
+- Blizzard
+- Flash Cannon
+
+Minior @ White Herb
+Ability: Shields Down
+Level: 43
+Rash Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shell Smash
+- Acrobatics
+- Power Gem
+- Earth Power
 
 === TRAINER_PBL_MAYLENE_BOSS_22 ===
 Name: Maylene
