@@ -2711,6 +2711,13 @@ u8 CopyMonToPC(struct Pokemon *mon)
             if (GetBoxMonData(checkingMon, MON_DATA_SPECIES) == SPECIES_NONE)
             {
                 MonRestorePP(mon);
+                enum Item item = GetMonData(mon, MON_DATA_HELD_ITEM);
+                if (item != ITEM_NONE)
+                {
+                    AddBagItem(item, 1);
+                    item = ITEM_NONE;
+                    SetMonData(mon, MON_DATA_HELD_ITEM, &item);
+                }
                 CopyMon(checkingMon, &mon->box, sizeof(mon->box));
                 gSpecialVar_MonBoxId = boxNo;
                 gSpecialVar_MonBoxPos = boxPos;
