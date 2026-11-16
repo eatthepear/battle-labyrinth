@@ -714,6 +714,8 @@ script EventScript_ChoosePartyMonToSend {
 				special(SendChosenMonToPC)
 				return
 			}
+		} else {
+			return
 		}
 	}
 }
