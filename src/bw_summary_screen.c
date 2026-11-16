@@ -2424,6 +2424,7 @@ static void Task_HandleInput(u8 taskId)
                         sMonSummaryScreen->callback = CB2_PssChangePokemonNickname;
                         gSpecialVar_0x8004 = sMonSummaryScreen->curMonIndex;
                     } else if (ShouldShowPokedex()) {
+                        gPartyMenu.slotId = sMonSummaryScreen->curMonIndex;
                         sMonSummaryScreen->callback = CB2_OpenPokedexPlusHGSSToMon;
                         gSpecialVar_0x8004 = sMonSummaryScreen->summary.species;
                     }
