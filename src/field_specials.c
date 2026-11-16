@@ -5003,6 +5003,14 @@ u16 CheckWhichPuzzle(void)
         if (VarGet(VAR_ZONE_17_STATE) <= 20)
             return PBL_PUZZLE_ZONE_17;
     }
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE21A) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE21A)) {
+        if (CheckBagHasItem(ITEM_HM_STRENGTH, 1))
+            return PBL_PUZZLE_ZONE_21_FIND_CAVE;
+    }
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE21D) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE21D)) {
+        if (CheckBagHasItem(ITEM_HM_STRENGTH, 1))
+            return PBL_PUZZLE_ZONE_21_STRENGTH;
+    }
     if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_22) {
         if (VarGet(VAR_ZONE_22_STATE) == 1)
             return PBL_PUZZLE_ZONE_22;

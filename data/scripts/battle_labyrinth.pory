@@ -89,6 +89,22 @@ script EventScript_PuzzleHint {
 				closemessage
 				return
 			}
+		case PBL_PUZZLE_ZONE_21_FIND_CAVE:
+			msgbox(format("Get a hint for Zone 21?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("The hint is: the cave is in the middle of the lake, underneath the Double Battle Road.\pTry finding where you can't move, despite there being no visible obstacles."))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_21_STRENGTH:
+			msgbox(format("Get a hint for Zone 21?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("The hint is: always pay attention to the final destination, and plan ahead.\pIf you get stuck, you can leave the cave and come back to reset the boulders."))
+			} else {
+				closemessage
+				return
+			}
 		case PBL_PUZZLE_ZONE_25:
 			msgbox(format("Get a hint for Zone 25?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
@@ -212,6 +228,26 @@ script EventScript_PuzzleSkip {
 				setvar(VAR_ZONE_17_STATE, 21)
 				msgbox(format("{PLAYER} paid respects to all the graves."))
 				call(Zone17A_EventScript_SolvedPuzzle)
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_21_FIND_CAVE:
+			msgbox(format("Skip finding the cave in Zone 21?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("{PLAYER} searched for a while and found the cave under the Double Battle Road!"))
+				warp(MAP_ZONE21D, 2, 28)
+				waitstate
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_21_STRENGTH:
+			msgbox(format("Get a hint for Zone 21?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("{PLAYER} spent a while moving the boulders to the side to clear the way!"))
+				warp(MAP_ZONE21B, 1)
+				waitstate
 			} else {
 				closemessage
 				return
