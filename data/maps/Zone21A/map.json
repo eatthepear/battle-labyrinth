@@ -230,7 +230,7 @@
       "type": "trigger",
       "x": 22,
       "y": 18,
-      "elevation": 0,
+      "elevation": 4,
       "var": "VAR_ZONE_21_STATE",
       "var_value": "0",
       "script": "Zone21A_EventScript_TriggerWally"
@@ -239,7 +239,7 @@
       "type": "trigger",
       "x": 23,
       "y": 18,
-      "elevation": 0,
+      "elevation": 4,
       "var": "VAR_ZONE_21_STATE",
       "var_value": "0",
       "script": "Zone21A_EventScript_TriggerWally"
@@ -248,7 +248,7 @@
       "type": "trigger",
       "x": 24,
       "y": 18,
-      "elevation": 0,
+      "elevation": 4,
       "var": "VAR_ZONE_21_STATE",
       "var_value": "0",
       "script": "Zone21A_EventScript_TriggerWally"
