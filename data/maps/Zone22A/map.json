@@ -223,6 +223,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_Max",
       "flag": "FLAG_HIDE_ZONE22A_MAX"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_VAR_1",
+      "x": 27,
+      "y": 52,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone22A_EventScript_Random1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_VAR_2",
+      "x": 36,
+      "y": 29,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone22A_EventScript_Random2",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -324,8 +350,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 31,
-      "y": 27,
+      "x": 28,
+      "y": 40,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
       "flag": "FLAG_HIDDEN_SHARD_ZONE22_3"
@@ -341,7 +367,7 @@
     {
       "type": "hidden_item",
       "x": 25,
-      "y": 20,
+      "y": 25,
       "elevation": 3,
       "item": "ITEM_NORMAL_TERA_SHARD",
       "flag": "FLAG_HIDDEN_SHARD_ZONE22_5"
