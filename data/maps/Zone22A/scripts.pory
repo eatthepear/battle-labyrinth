@@ -229,12 +229,6 @@ script Zone22A_EventScript_Ian {
 }
 
 script Zone22A_EventScript_Lewis {
-	trainerbattle_single(TRAINER_PBL_LEWIS, format("Imagine! Hiking a vast, snowy mountain! Oh, the challenge!"), format("Oh, disappointment!"))
-	msgbox(format("I think I'll stick to hiking."), MSGBOX_AUTOCLOSE)
-	end
-}
-
-script Zone22A_EventScript_Lewis {
 	trainerbattle_single(TRAINER_PBL_LEWIS, format("You ever just decide that today is the day you're going to run in a snowy forest?"), format("Okay, I know, I'm weird."))
 	msgbox(format("In my defense, this place certainly has its charm."), MSGBOX_AUTOCLOSE)
 	end
