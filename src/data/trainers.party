@@ -3858,6 +3858,17 @@ Party Size: 3
 Pool Prune: Non Ice
 Copy Pool: TRAINER_POOL_ZONE_22
 
+=== TRAINER_PBL_IAN ===
+Name: Ian
+Class: Hiker
+Pic: Hiker
+Music: Hiker
+AI: AI_FLAG_BASIC_TRAINER
+Double Battle: No
+Party Size: 3
+Pool Prune: Non Ground Rock
+Copy Pool: TRAINER_POOL_ZONE_22
+
 === TRAINER_PBL_LEWIS ===
 Name: Lewis
 Class: Triathlete
@@ -3900,17 +3911,6 @@ AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
 Party Size: 3
 Pool Prune: Non Flying
-Copy Pool: TRAINER_POOL_ZONE_22
-
-=== TRAINER_PBL_IAN ===
-Name: Ian
-Class: Hiker
-Pic: Hiker
-Music: Hiker
-AI: AI_FLAG_BASIC_TRAINER
-Double Battle: No
-Party Size: 3
-Pool Prune: Non Ground Rock
 Copy Pool: TRAINER_POOL_ZONE_22
 
 === TRAINER_PBL_CORNELIUS ===
