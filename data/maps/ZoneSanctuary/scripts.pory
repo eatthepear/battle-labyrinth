@@ -406,7 +406,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_EXPERT_BELT)
 		case 22:
-			msgbox(format("Ultra Balls!"))
+			msgbox(format("The {COLOR GREEN}Clear Amulet{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_CLEAR_AMULET)
 		case 23:
 			msgbox(format("{COLOR GREEN}TM41 - Leech Life{COLOR DARK_GRAY}!"))
 			setspeaker(SP_NAME_NONE)

@@ -2129,6 +2129,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_AIR_BALLOON)
 	additem(ITEM_TM_DRAIN_PUNCH)
 	additem(ITEM_FOCUS_SASH)
+	additem(ITEM_CLEAR_AMULET)
 	additem(ITEM_TM_WILL_O_WISP)
 
 	if (var(VAR_ZONE) == 23) {
