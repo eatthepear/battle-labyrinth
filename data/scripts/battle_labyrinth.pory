@@ -253,9 +253,11 @@ script EventScript_PuzzleSkip {
 				return
 			}
 		case PBL_PUZZLE_ZONE_22:
-			msgbox(format("Get a hint for Zone 22?"), MSGBOX_YESNO)
+			msgbox(format("Skip the ice puzzle to help the Kimono Girl?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				msgbox(format("TODO SKIP"))
+				msgbox(format("{PLAYER} spent some time sliding around on the ice, finally arriving at the spot they wanted to be."))
+				warp(MAP_ZONE22A, 56, 24)
+				waitstate
 			} else {
 				closemessage
 				return
