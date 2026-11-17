@@ -586,7 +586,7 @@ const struct HelpWindow gHelpWindowInfo[] =
         .header = COMPOUND_STRING("Zone 22 Boss"),
         .desc = COMPOUND_STRING("Gym Leader {COLOR BLUE}Maylene{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Mienshao{COLOR DARK_GRAY}, {COLOR GREEN}Pawmot{COLOR DARK_GRAY}, {COLOR GREEN}Toxicroak{COLOR DARK_GRAY}, {COLOR GREEN}Infernape{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Medicham-Mega{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Medicham{COLOR DARK_GRAY}\n"
                                 "Condition: {COLOR GREEN}Permanent Snow{COLOR DARK_GRAY}\n\n"
                                 "Theme: {COLOR GREEN}Fighting{COLOR DARK_GRAY}-type specialist"),
     },

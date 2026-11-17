@@ -3992,7 +3992,7 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Purple
 
-Mienshao @ Life Orb
+Mienshao @ Expert Belt
 Jolly Nature
 Ability: Regenerator
 Level: 43
@@ -4032,13 +4032,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Grass Knot
 - Thunder Punch
 
-Medicham @ Medichamite
+Medicham @ Muscle Band
 Jolly Nature
 Ability: Pure Power
 Level: 44
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Drain Punch
-- Zen Headbutt
+- Psycho Cut
 - Ice Punch
 - Bullet Punch
 
@@ -4052,7 +4052,7 @@ Double Battle: No
 Mugshot: Purple
 Difficulty: Brutal
 
-Mienshao @ Life Orb
+Mienshao @ Expert Belt
 Jolly Nature
 Ability: Regenerator
 Level: 43
@@ -4108,7 +4108,7 @@ Ability: Pure Power
 Level: 44
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Drain Punch
-- Zen Headbutt
+- Psycho Cut
 - Ice Punch
 - Bullet Punch
 
