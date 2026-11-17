@@ -314,7 +314,7 @@ struct // MENU_SOUND
     int (*processInput)(int selection);
 } static const sItemFunctionsSound[MENUITEM_SOUND_COUNT] =
 {
-    [MENUITEM_SOUND_SOUND]        = {DrawChoices_Sound,       ProcessInput_Options_Two},
+    [MENUITEM_SOUND_SOUND]        = {DrawChoices_Sound,       ProcessInput_Sound},
     [MENUITEM_SOUND_SURF]        = {DrawChoices_Surf,       ProcessInput_Options_Six},
     [MENUITEM_SOUND_BIKE]        = {DrawChoices_Bike,       ProcessInput_Options_Six},
     [MENUITEM_SOUND_SANCTUARY]        = {DrawChoices_Sanctuary,       ProcessInput_Options_Six},
