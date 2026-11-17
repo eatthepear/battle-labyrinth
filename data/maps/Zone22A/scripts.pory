@@ -23,7 +23,7 @@ script Zone22A_EventScript_CallForHelp {
 	setspeaker("???")
 	msgbox(format("Help! Someone!"))
 	setspeaker(SP_NAME_NONE)
-	msgbox(format("It sounds like someone is calling for help to the south of here!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("It sounds like someone is calling for help to the southeast of here!"))
 	setvar(VAR_ZONE_22_STATE, 1)
 	releaseall
 	end
@@ -31,7 +31,8 @@ script Zone22A_EventScript_CallForHelp {
 
 script Zone22A_EventScript_DontLeave {
 	lockall
-	msgbox(format("You can't just leave that person to fend for help by themselves!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("You can't just leave that person to fend for help by themselves!"))
+	closemessage
 	applymovement(LOCALID_PLAYER, Common_Movement_WalkDown)
 	waitmovement(0)
 	releaseall

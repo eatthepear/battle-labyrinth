@@ -264,8 +264,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 46,
-      "y": 19,
+      "x": 42,
+      "y": 23,
       "elevation": 0,
       "var": "VAR_ZONE_22_STATE",
       "var_value": "0",
@@ -273,8 +273,8 @@
     },
     {
       "type": "trigger",
-      "x": 46,
-      "y": 18,
+      "x": 42,
+      "y": 22,
       "elevation": 0,
       "var": "VAR_ZONE_22_STATE",
       "var_value": "0",
@@ -297,6 +297,15 @@
       "var": "VAR_GENERIC",
       "var_value": "0",
       "script": "Zone22A_EventScript_SkyTrainer"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_ZONE_22_STATE",
+      "var_value": "0",
+      "script": "Zone22A_EventScript_CallForHelp"
     }
   ],
   "bg_events": [
