@@ -1173,9 +1173,31 @@ script EventScript_Notebook_ZoneInfo {
 				helpwindow(HELP_NOTEBOOK_BOSS_20)
 			}
 		case 21:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_21_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_21)
+			}
 		case 22:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_22_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_22)
+			}
 		case 23:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_23_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_23)
+			}
 		case 24:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_24_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_24)
+			}
+			msgbox(gText_Notebook_NextBossReadOn, MSGBOX_YESNO)
+			msgbox(format("This text hasn't been finished yet!"))
 		case 25:
 		case 26:
 		case 27:
