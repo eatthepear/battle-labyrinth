@@ -2142,6 +2142,7 @@ script Debug_CheatStart_PBL_GiveItems {
 	if (var(VAR_ZONE) == 24) {
 		return
 	}
+	additem(ITEM_TM_FLASH_CANNON)
 	additem(ITEM_TM_BLIZZARD)
 	additem(ITEM_TM_THUNDER)
 	additem(ITEM_TM_FIRE_BLAST)
@@ -2149,8 +2150,9 @@ script Debug_CheatStart_PBL_GiveItems {
 	additem(ITEM_TM_FOCUS_BLAST)
 	additem(ITEM_TM_HURRICANE)
 	additem(ITEM_OVAL_CHARM)
+	additem(ITEM_TM_AURA_SPHERE)
 	additem(ITEM_TM_TAUNT)
-	additem(ITEM_TM_FLASH_CANNON)
+	additem(ITEM_COVERT_CLOAK)
 	additem(ITEM_HM_ROCK_CLIMB)
 	additem(ITEM_TM_HIGH_HORSEPOWER)
 
