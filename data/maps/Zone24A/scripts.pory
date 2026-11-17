@@ -39,6 +39,11 @@ script Zone24A_EventScript_Intro {
 
 script Zone24A_EventScript_LookDown {
 	lockall
+	setvar(VAR_TEMP_0, 0)
+	if (flag(FLAG_BEAT_BOSS_20) == FALSE) {
+		setflag(FLAG_BEAT_BOSS_20)
+		setvar(VAR_TEMP_0, 1)
+	}
 	special(SpawnCameraObject)
 	applymovement(LOCALID_CAMERA, Zone24A_Movement_Camera_MoveCameraDown)
 	waitmovement(0)
@@ -46,6 +51,9 @@ script Zone24A_EventScript_LookDown {
 	applymovement(LOCALID_CAMERA, Zone24A_Movement_Camera_MoveCameraUp)
 	waitmovement(0)
 	special(RemoveCameraObject)
+	if (var(VAR_TEMP_0) == 1) {
+		clearflag(FLAG_BEAT_BOSS_20)
+	}
 	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 	waitmovement(0)
 	releaseall
@@ -58,6 +66,42 @@ movement Zone24A_Movement_Camera_MoveCameraDown {
 
 movement Zone24A_Movement_Camera_MoveCameraUp {
 	walk_faster_up * 40
+}
+
+script Zone24A_EventScript_Blue {
+	lock
+	faceplayer
+	setspeaker("Blue")
+	msgbox(format("Hello! This is bad people hideout. R u strong? Let's battle!"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		setspeaker("Blue")
+		msgbox(format("Sad!"))
+		release
+		end
+	}
+	call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_BLUE_BOSS_24, format("Defeat!"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Blue")
+	msgbox(format("U r too stronk. Here, take item."))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_COVERT_CLOAK)
+	setspeaker("Blue")
+	msgbox(format("These bad people are good, but I stronger, and I beat up bad people. See u later, we battle again!"))
+	closemessage
+	applymovement(LOCALID_BLUE_24A, Zone24A_Movement_BlueWalkUp)
+	waitmovement(0)
+	removeobject(LOCALID_BLUE_24A)
+	setflag(FLAG_BEAT_BOSS_24)
+	release
+	end
+}
+
+movement Zone24A_Movement_BlueWalkUp {
+	face_up
+	walk_up
+	set_invisible
 }
 
 script Zone24A_EventScript_Douglas {
