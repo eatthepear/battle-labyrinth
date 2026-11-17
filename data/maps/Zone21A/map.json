@@ -159,6 +159,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_TAUROS_1",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAUROS_PALDEA_BLAZE)",
       "x": 13,
       "y": 21,
@@ -172,6 +173,7 @@
       "flag": "FLAG_BEAT_BOSS_21"
     },
     {
+      "local_id": "LOCALID_TAUROS_2",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAUROS_PALDEA_AQUA)",
       "x": 14,
       "y": 21,

@@ -77,6 +77,8 @@ script Zone21A_EventScript_TriggerWally {
 	applymovement(LOCALID_WALLY_21A, Common_Movement_WalkDown6)
 	waitmovement(0)
 	removeobject(LOCALID_WALLY_21A)
+	removeobject(LOCALID_TAUROS_1)
+	removeobject(LOCALID_TAUROS_2)
 	setflag(FLAG_BEAT_BOSS_21)
 	setvar(VAR_ZONE_21_STATE, 1)
 	fadedefaultbgm
