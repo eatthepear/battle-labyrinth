@@ -4739,6 +4739,7 @@ u16 GetNumTrainersRemaining(void)
                 count += 1;
         }
         count += !FlagGet(FLAG_BEAT_BOSS_21);
+        count += !HasTrainerBeenFought(TRAINER_PBL_THADDEUS_OPTIONAL_21);
         break;
     case 22:
         for (trainer = TRAINER_PBL_CODY; trainer <= TRAINER_PBL_AMELIA_OPTIONAL_22; trainer++) {
