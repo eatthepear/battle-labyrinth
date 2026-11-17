@@ -243,7 +243,7 @@ script EventScript_PuzzleSkip {
 				return
 			}
 		case PBL_PUZZLE_ZONE_21_STRENGTH:
-			msgbox(format("Get a hint for Zone 21?"), MSGBOX_YESNO)
+			msgbox(format("Skip the Strength puzzle?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				msgbox(format("{PLAYER} spent a while moving the boulders to the side to clear the way!"))
 				warp(MAP_ZONE21B, 1)
