@@ -7,7 +7,7 @@
 #define B_PARALYSIS_SPEED           GEN_LATEST // In Gen7+, paralysis decreases Speed by 50% instead of 75%.
 #define B_CONFUSION_SELF_DMG_CHANCE GEN_LATEST // In Gen7+, a Pokémon will hurt itself in confusion 1/3 of the time instead of half.
 #define B_MULTI_HIT_CHANCE          GEN_LATEST // In Gen5+, multistrike moves have different chances for the number of times they hit. See SetRandomMultiHitCounter for values.
-#define B_WHITEOUT_MONEY            GEN_3 // In Gen4+, the amount of money dropped after losing a battle is determined by the number of Badges obtained. Previously, half of the player's money would be dropped. (While this change was also in FRLG, for the sake of simplicity, setting this to GEN_3 will result in RSE behavior.)
+#define B_WHITEOUT_MONEY            GEN_LATEST // In Gen4+, the amount of money dropped after losing a battle is determined by the number of Badges obtained. Previously, half of the player's money would be dropped. (While this change was also in FRLG, for the sake of simplicity, setting this to GEN_3 will result in RSE behavior.)
 #define B_LIGHT_BALL_ATTACK_BOOST   GEN_LATEST // In Gen4+, Light Ball doubles Attack in addition to Sp. Atk.
 #define B_PARALYSIS_CHANCE          GEN_LATEST // In Champions, paralysis has a 12.5% chance of not moving, instead of 25%.
 
