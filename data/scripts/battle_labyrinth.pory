@@ -169,7 +169,7 @@ script EventScript_PuzzleSkip {
 		case PBL_PUZZLE_ZONE_4:
 			msgbox(format("Skip the puzzle in Zone 4?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				msgbox(format("TODO SKIP"))
+				msgbox(format("From the starting map, go up, left, up, left, up. The starting map is where you met the Kimono Girl and is shaped kind of like a question mark."))
 			} else {
 				closemessage
 				return
