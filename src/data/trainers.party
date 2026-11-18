@@ -4259,6 +4259,67 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shadow Ball
 - Grass Knot
 
+=== TRAINER_PBL_SERENA_BOSS_23 ===
+Name: Serena
+Class: Rival
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: Yes
+Mugshot: Pink
+Starting Status: Grassy Terrain
+Difficulty: Brutal
+
+Vivillon @ Focus Sash
+Ability: Compound Eyes
+Level: 44
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sleep Powder
+- Rage Powder
+- Hurricane
+- Tailwind
+
+Clawitzer @ Wacan Berry
+Ability: Mega Launcher
+Level: 44
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Terrain Pulse
+- Dark Pulse
+- Heal Pulse
+
+Gogoat @ Lum Berry
+Ability: Grass Pelt
+Level: 44
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Horn Leech
+- High Horsepower
+- Rock Slide
+- Bulk Up
+
+Mamoswine @ Never-Melt Ice
+Ability: Thick Fat
+Level: 44
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- High Horsepower
+- Ice Shard
+- Icicle Crash
+- Rock Slide
+
+Delphox @ Fire Gem
+Ability: Magician
+Level: 44
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Heat Wave
+- Psyshock
+- Shadow Ball
+- Grass Knot
+
 === TRAINER_PBL_DOUGLAS ===
 Name: Douglas
 Class: Guitarist
