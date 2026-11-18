@@ -455,6 +455,7 @@ static const u16 bossTrainers[][2] = {
     {TRAINER_PBL_KOGA_BOSS_35, 35},
     {TRAINER_PBL_SHAUNTAL_BOSS_35, 35},
     {TRAINER_PBL_CYNTHIA_BOSS_35, 35},
+    {TRAINER_PBL_COLRESS_BOSS_35, 35},
 };
 
 // Only prune boss mons for that corresponding zone. For example, in Zone 5, you shouldn't be able to roll a Natu because it's on Liza's team.

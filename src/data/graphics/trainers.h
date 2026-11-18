@@ -628,6 +628,9 @@ const u16 gTrainerBackPicPalette_Chili[] = INCGFX_U16("graphics/trainers/back_pi
 const u8 gTrainerBackPic_Blue[] = INCGFX_U8("graphics/trainers/back_pics/blue.png", ".4bpp");
 const u16 gTrainerBackPicPalette_Blue[] = INCGFX_U16("graphics/trainers/back_pics/blue.png", ".gbapal");
 
+const u32 gTrainerFrontPic_Colress[] = INCGFX_U32("graphics/birch_speech/birch.png", ".4bpp.smol");
+const u16 gTrainerPalette_Colress[] = INCGFX_U16("graphics/birch_speech/birch.png", ".gbapal");
+
 static const union AnimCmd sAnimCmd_Hoenn[] =
 {
     ANIMCMD_FRAME(0, 24),
@@ -1541,5 +1544,9 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Chili, gTrainerPalette_Chili),
         .backPic = TRAINER_BACK_PIC(5, gTrainerBackPic_Chili, gTrainerBackPicPalette_Chili, sBackAnims_Kanto),
+    },
+    [TRAINER_PIC_COLRESS] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Colress, gTrainerPalette_Colress),
     },
 };

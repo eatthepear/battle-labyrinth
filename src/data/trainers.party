@@ -6501,6 +6501,18 @@ Adamant Nature
 - Earthquake
 - Swords Dance
 
+=== TRAINER_PBL_COLRESS_BOSS_35 ===
+Name: Colress
+Class: Colress
+Pic: Colress
+Music: Elite Four
+AI: AI_FLAG_BOSS
+Double Battle: No
+Mugshot: Blue
+
+Metagross
+Level: 80
+
 === TRAINER_POOL_ZONE_1 ===
 Name: Trainer Pool
 Class: Champion

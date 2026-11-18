@@ -5036,6 +5036,8 @@ u16 GetBattleBGM(void)
             return MUS_DP_VS_GALACTIC_COMMANDER;
         case TRAINER_CLASS_GALACTIC_BOSS:
             return MUS_DP_VS_GALACTIC_BOSS;
+        case TRAINER_CLASS_COLRESS:
+            return MUS_VS_COLRESS;
         default:
             switch (VarGet(VAR_TRAINER_MUSIC))
             {

@@ -37,15 +37,33 @@ script Zone35L_EventScript_EnterHallOfFame {
 	waitmovement(0)
 	delay(20)
 	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		clearflag(FLAG_HIDE_ZONE35L_COLRESS)
+		addobject(LOCALID_COLRESS_35L)
 		fadeoutbgm(1)
 		setspeaker("???")
 		msgbox(format("Just a moment, please."))
 		closemessage
-		applymovement(LOCALID_COLRESS, Common_Movement_ExclamationMark)
-		applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+		applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
+		applymovement(LOCALID_CYNTHIA_35L, Common_Movement_FaceDown)
+		waitmovement(0)
+		applymovement(LOCALID_CYNTHIA_35L, Common_Movement_ExclamationMark)
+		applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
 		playse(SE_PIN)
 		waitmovement(0)
 		waitse
+		playbgm(MUS_ENCOUNTER_COLRESS, FALSE)
+		delay(40)
+		applymovement(LOCALID_COLRESS_35L, Common_Movement_WalkUp4)
+		waitmovement
+		setspeaker("Colress")
+		msgbox(format("You've done an excellent job, {PLAYER}.\pYou've overcome every single obstacle in your way, and shown how you bring out your Pokémon's fullest potential.\pAll this data has been… extremely fruitful for my studies.\pYet despite it all, I desire more. I must challenge you one more time, to finalize my results…\pWell then… Please show me you and your Pokémon's strength one last time!"))
+		trainerbattle_no_intro(TRAINER_PBL_COLRESS_BOSS_35, format("So this is what it means to draw forth the power hidden in your Pokémon!!"))
+		setspeaker("Colress")
+		msgbox(format("n Pokémon battles where you can't afford to make a mistake, the true nature of the Trainer's personality becomes clear.\pI see! If Trainers believe in their Pokémon to the fullest extreme, as you do, their Pokémon partners will also give everything they have!\pSo that must be the answer I've been looking for.\pThank you for this, {PLAYER}, and congratulations on completing Pokémon Battle Labyrinth!"))
+		closemessage
+		applymovement(LOCALID_CYNTHIA_35L, Common_Movement_WalkInPlaceFasterUp)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp)
+		waitmovement(0)
 	}
 	dofieldeffect(FLDEFF_HALL_OF_FAME_RECORD)
 	waitfieldeffect(FLDEFF_HALL_OF_FAME_RECORD)

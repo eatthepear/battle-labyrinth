@@ -435,6 +435,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_SERVER] = { _("Server"), 8, BALL_LUXURY },
     [TRAINER_CLASS_ASPIRING_LEADER] = { _("Aspiring Leader"), 12, BALL_ULTRA },
     [TRAINER_CLASS_PROPRIETOR] = { _("Proprietor"), 12, BALL_GREAT },
+    [TRAINER_CLASS_COLRESS] = { _("{PKMN} Trainer"), 50, BALL_MASTER },
 };
 
 static void (*const sTurnActionsFuncsTable[])(void) =
@@ -5246,6 +5247,9 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_GALACTIC_COMMANDER:
         case TRAINER_CLASS_GALACTIC_BOSS:
             PlayBGM(MUS_DP_VICTORY_GALACTIC);
+            break;
+        case TRAINER_CLASS_COLRESS:
+            PlayBGM(MUS_PL_VICTORY_FRONTIER_BRAIN);
             break;
         default:
             switch (VarGet(VAR_TRAINER_MUSIC))

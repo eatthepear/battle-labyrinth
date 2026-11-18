@@ -29,6 +29,7 @@ script Zone35A_EventScript_Colress_LastCheck {
     setspeaker(SP_NAME_COLRESS)
     msgbox(format("Very well then.\pShow me what you and your Pokémon are capable of!"))
     closemessage
+    setflag(FLAG_HIDE_ZONE35L_COLRESS)
     applymovement(LOCALID_COLRESS_35A, Common_Movement_FaceDown)
     waitmovement
     setvar(VAR_ZONE_35_STATE, 1)

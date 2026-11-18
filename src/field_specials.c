@@ -4806,6 +4806,9 @@ u16 GetNumTrainersRemaining(void)
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
+        if (GetCurrentDifficultyLevel() == DIFFICULTY_BRUTAL) {
+            count += !HasTrainerBeenFought(TRAINER_PBL_COLRESS_BOSS_35);
+        }
         break;
     default:
         count = 0;

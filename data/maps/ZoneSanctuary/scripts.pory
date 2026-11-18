@@ -222,7 +222,6 @@ script EventScript_NextZone {
 			}
 			warp(MAP_ZONE33A, WARP_ZONE_33)
 		case 35:
-			setflag(FLAG_HIDE_ZONE35L_COLRESS)
 			warp(MAP_ZONE35A, WARP_ZONE_35)
 	}
 	waitstate
