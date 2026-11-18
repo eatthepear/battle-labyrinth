@@ -612,12 +612,18 @@ const u16 gTrainerBackPicPalette_Ethan[] = INCGFX_U16("graphics/trainers/back_pi
 
 const u32 gTrainerFrontPic_Cilan[] = INCGFX_U32("graphics/trainers/front_pics/cilan.png", ".4bpp.smol");
 const u16 gTrainerPalette_Cilan[] = INCGFX_U16("graphics/trainers/front_pics/cilan.png", ".gbapal");
+const u8 gTrainerBackPic_Cilan[] = INCGFX_U8("graphics/trainers/back_pics/cilan.png", ".4bpp");
+const u16 gTrainerBackPicPalette_Cilan[] = INCGFX_U16("graphics/trainers/back_pics/cilan.png", ".gbapal");
 
 const u32 gTrainerFrontPic_Cress[] = INCGFX_U32("graphics/trainers/front_pics/cress.png", ".4bpp.smol");
 const u16 gTrainerPalette_Cress[] = INCGFX_U16("graphics/trainers/front_pics/cress.png", ".gbapal");
+const u8 gTrainerBackPic_Cress[] = INCGFX_U8("graphics/trainers/back_pics/cress.png", ".4bpp");
+const u16 gTrainerBackPicPalette_Cress[] = INCGFX_U16("graphics/trainers/back_pics/cress.png", ".gbapal");
 
 const u32 gTrainerFrontPic_Chili[] = INCGFX_U32("graphics/trainers/front_pics/chili.png", ".4bpp.smol");
 const u16 gTrainerPalette_Chili[] = INCGFX_U16("graphics/trainers/front_pics/chili.png", ".gbapal");
+const u8 gTrainerBackPic_Chili[] = INCGFX_U8("graphics/trainers/back_pics/chili.png", ".4bpp");
+const u16 gTrainerBackPicPalette_Chili[] = INCGFX_U16("graphics/trainers/back_pics/chili.png", ".gbapal");
 
 const u8 gTrainerBackPic_Blue[] = INCGFX_U8("graphics/trainers/back_pics/blue.png", ".4bpp");
 const u16 gTrainerBackPicPalette_Blue[] = INCGFX_U16("graphics/trainers/back_pics/blue.png", ".gbapal");
@@ -1524,16 +1530,16 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     [TRAINER_PIC_CILAN] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Cilan, gTrainerPalette_Cilan),
-        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_Ethan, gTrainerBackPicPalette_Ethan, sBackAnims_Hoenn),
+        .backPic = TRAINER_BACK_PIC(5, gTrainerBackPic_Cilan, gTrainerBackPicPalette_Cilan, sBackAnims_Kanto),
     },
     [TRAINER_PIC_CRESS] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Cress, gTrainerPalette_Cress),
-        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_Ethan, gTrainerBackPicPalette_Ethan, sBackAnims_Hoenn),
+        .backPic = TRAINER_BACK_PIC(5, gTrainerBackPic_Cress, gTrainerBackPicPalette_Cress, sBackAnims_Kanto),
     },
     [TRAINER_PIC_CHILI] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Chili, gTrainerPalette_Chili),
-        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_Ethan, gTrainerBackPicPalette_Ethan, sBackAnims_Hoenn),
+        .backPic = TRAINER_BACK_PIC(5, gTrainerBackPic_Chili, gTrainerBackPicPalette_Chili, sBackAnims_Kanto),
     },
 };
