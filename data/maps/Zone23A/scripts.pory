@@ -33,23 +33,26 @@ mapscripts Zone23A_MapScripts {
 	}
 }
 
-script Zone23A_EventScript_Serena {
+script Zone23A_EventScript_SerenaBattle {
 	lock
 	faceplayer
-	if (flag(FLAG_BEAT_BOSS_23)) {
-		setspeaker("Serena")
-		msgbox(format("I see your potential. You can do anything you set your heart to!\pThere are other Gym Leaders, stronger than I am. Perhaps defeating them will prove a worthy challenge!"))
-		release
-		end
+	applymovement(LOCALID_SERENA_23A, Common_Movement_FaceRight)
+	waitmovement(0)
+	applymovement(LOCALID_SERENA_23A, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 66) {
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
+		waitmovement(0)
+		applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
+		waitmovement(0)
 	}
+	applymovement(LOCALID_SERENA_23A, Zone23A_Movement_Serena_WalkRight)
+	waitmovement(0)
 	setspeaker("Serena")
-	msgbox(format("I've been waiting in eager anticipation!\pWhat have I been waiting for?\pFor a worthy challenger to appear!\pAre you that worthy challenger?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Don't keep me waiting any longer than needed!\pTake a deep breath, and prepare yourself for the climb!"), MSGBOX_AUTOCLOSE)
-		releaseall
-		end
-	}
-	msgbox(format("I have a feeling that our battle will turn out to be worth the wait!\pI hope you'll show me that your skill as a Trainer surpasses even mine."))
+	msgbox(format("I've been waiting FOR YOU! LET'S BATTLE!"))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_SERENA_BOSS_23, format("You have proven to be a wall that I am unable to surmount!"))
@@ -59,9 +62,25 @@ script Zone23A_EventScript_Serena {
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_PSYSHOCK)
 	msgbox(format("With {COLOR GREEN}Rock Tomb{COLOR DARK_GRAY}, a Pokémon can hurl rocks at its target, not only inflicting damage but also lowering the target's Speed.\pAnd the {COLOR GREEN}Hard Stone{COLOR DARK_GRAY} increases the damage of your Pokémon's Rock-type moves by 20%. Forms a nifty combo, huh?\pYou're just starting on your journey, so enjoy the ride and feel the breeze in your face!"))
+	applymovement(LOCALID_SERENA_23A, Zone23A_Movement_Serena_WalkLeft)
+	waitmovement(0)
+	setvar(VAR_ZONE_23_STATE, 1)
 	setflag(FLAG_BEAT_BOSS_23)
+	removeobject(LOCALID_SERENA_23A)
 	release
 	end
+}
+
+movement Zone23A_Movement_Serena_WalkRight {
+	walk_right * 3
+	walk_down
+	walk_right
+}
+
+movement Zone23A_Movement_Serena_WalkLeft {
+	walk_left
+	walk_up
+	walk_left * 6
 }
 
 script Zone23A_EventScript_DuskStone {
