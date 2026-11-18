@@ -4209,7 +4209,7 @@ AI: AI_FLAG_BOSS
 Double Battle: Yes
 Mugshot: Pink
 
-Vivillon @ Focus Sash
+Vivillon @ Charti Berry
 Ability: Compound Eyes
 Level: 44
 Timid Nature
@@ -4239,7 +4239,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 - Bulk Up
 
-Mamoswine @ Never-Melt Ice
+Mamoswine @ Passho Berry
 Ability: Thick Fat
 Level: 44
 Adamant Nature
@@ -4249,9 +4249,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Icicle Crash
 - Rock Slide
 
-Delphox @ Fire Gem
-Ability: Magician
-Level: 44
+Delphox @ Focus Sash
+Ability: Blaze
+Level: 46
 Timid Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Heat Wave
@@ -4270,7 +4270,7 @@ Mugshot: Pink
 Starting Status: Grassy Terrain
 Difficulty: Brutal
 
-Vivillon @ Focus Sash
+Vivillon @ Charti Berry
 Ability: Compound Eyes
 Level: 44
 Timid Nature
@@ -4300,7 +4300,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 - Bulk Up
 
-Mamoswine @ Never-Melt Ice
+Mamoswine @ Passho Berry
 Ability: Thick Fat
 Level: 44
 Adamant Nature
@@ -4310,9 +4310,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Icicle Crash
 - Rock Slide
 
-Delphox @ Fire Gem
-Ability: Magician
-Level: 44
+Delphox @ Focus Sash
+Ability: Blaze
+Level: 46
 Timid Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Heat Wave
