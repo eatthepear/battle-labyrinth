@@ -2242,6 +2242,7 @@ static void Task_PartyMenuModifyHP(u8 taskId)
 
     SetMonData(&party[partySlot], MON_DATA_HP, &tHP);
     DisplayPartyPokemonHPCheck(&party[partySlot], &sPartyMenuBoxes[partySlot], 1);
+    DisplayPartyPokemonMaxHPCheck(&party[partySlot], &sPartyMenuBoxes[partySlot], 1);
     DisplayPartyPokemonHPBarCheck(&party[partySlot], &sPartyMenuBoxes[partySlot]);
     if (tHPToAdd == 0 || tHP == 0 || tHP == tMaxHP)
     {
