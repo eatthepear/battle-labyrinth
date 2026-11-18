@@ -4716,7 +4716,9 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_BW_HALL_OF_FAME) \
     X(MUS_BW_RELIC_SONG) \
     X(MUS_BW_VS_WCS_CHAMPION) \
-    X(MUS_BW_OBTAIN_BERRY)
+    X(MUS_BW_OBTAIN_BERRY) \
+    X(MUS_VS_COLRESS) \
+    X(MUS_ENCOUNTER_COLRESS)
 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \
