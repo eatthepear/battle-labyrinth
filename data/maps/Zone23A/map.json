@@ -55,14 +55,14 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROUGHNECK",
-      "x": 44,
-      "y": 18,
+      "x": 48,
+      "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_sight_or_berry_tree_id": "4",
       "script": "Zone23A_EventScript_Matthew",
       "flag": "0"
     },
@@ -276,8 +276,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_5",
-      "x": 39,
-      "y": 56,
+      "x": 63,
+      "y": 45,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -318,8 +318,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 48,
-      "y": 19,
+      "x": 65,
+      "y": 37,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
       "flag": "FLAG_HIDDEN_BERRY_ZONE23_BERRY_3"

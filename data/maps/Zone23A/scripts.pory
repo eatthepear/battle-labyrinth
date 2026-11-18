@@ -64,12 +64,6 @@ script Zone23A_EventScript_Serena {
 	end
 }
 
-script Zone23A_EventScript_Clark {
-	trainerbattle_single(TRAINER_PBL_CLARK, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
-	end
-}
-
 script Zone23A_EventScript_DuskStone {
 	lock
 	if (flag(FLAG_ITEM_ZONE23A_DUSK_STONE)) {
@@ -175,110 +169,50 @@ script Zone23A_EventScript_Random3 {
 	end
 }
 
-raw `
-Zone23A_EventScript_Edgardo::
-	trainerbattle_single TRAINER_PBL_EDGARDO, Zone23A_Text_EdgardoIntro, Zone23A_Text_EdgardoDefeat
-	msgbox Zone23A_Text_EdgardoPostBattle, MSGBOX_AUTOCLOSE
+script Zone23A_EventScript_Edgardo {
+	trainerbattle_single(TRAINER_PBL_EDGARDO, format("Attack, my swarm of Bugs!"), format("Retreat! Full retreat!"))
+	msgbox(format("I just need a few more Bugs to fill out my party!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone23A_Text_EdgardoIntro:
-	.string "Yuck, I've got mud on my boots!$"
-
-Zone23A_Text_EdgardoDefeat:
-	.string "Oh, that's not mud…$"
-
-Zone23A_Text_EdgardoPostBattle:
-	.string "Raising these little ones is\n"
-	.string "hard work!$"
-
-Zone23A_EventScript_Jean::
-	trainerbattle_single TRAINER_PBL_JEAN, Zone23A_Text_JeanIntro, Zone23A_Text_JeanDefeat
-	msgbox Zone23A_Text_JeanPostBattle, MSGBOX_AUTOCLOSE
+script Zone23A_EventScript_Jean {
+	trainerbattle_single(TRAINER_PBL_JEAN, format("Oh, traveler, what brings you to my swamp?"), format("A dark, brooding swamp… Just the perfect place for me!"))
+	msgbox(format("I like to dress up as a witch.\pCosplay is fun!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone23A_Text_JeanIntro:
-	.string "Attack, my swarm of Bugs!$"
-
-Zone23A_Text_JeanDefeat:
-	.string "Retreat! Full retreat!$"
-
-Zone23A_Text_JeanPostBattle:
-	.string "I just need one more Bug to fill\n"
-	.string "out my party!$"
-
-Zone23A_EventScript_Rose::
-	trainerbattle_single TRAINER_PBL_ROSE, Zone23A_Text_RoseIntro, Zone23A_Text_RoseDefeat
-	msgbox Zone23A_Text_RosePostBattle, MSGBOX_AUTOCLOSE
+script Zone23A_EventScript_Rose {
+	trainerbattle_single(TRAINER_PBL_ROSE, format("Won't you stay with me forever?"), format("I never can hold on to anything…"))
+	msgbox(format("We could be friends, forever…"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone23A_Text_RoseIntro:
-	.string "I just love the rain!$"
-
-Zone23A_Text_RoseDefeat:
-	.string "Water you doing?$"
-
-Zone23A_Text_RosePostBattle:
-	.string "Fine, I just love bad puns.\n"
-	.string "Happy now?$"
-
-Zone23A_EventScript_Jennifer::
-	trainerbattle_single TRAINER_PBL_JENNIFER, Zone23A_Text_JenniferIntro, Zone23A_Text_JenniferDefeat
-	msgbox Zone23A_Text_JenniferPostBattle, MSGBOX_AUTOCLOSE
+script Zone23A_EventScript_Jennifer {
+	trainerbattle_single(TRAINER_PBL_JENNIFER, format("Something about you is peculiar…"), format("I can't read your mind, it's too resilient…"))
+	msgbox(format("Your mental fortitude must be incredible, having made it this far!"), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone23A_Text_JenniferIntro:
-	.string "A dark, brooding swamp…$"
-
-Zone23A_Text_JenniferDefeat:
-	.string "Just the perfect place for me!$"
-
-Zone23A_Text_JenniferPostBattle:
-	.string "I like to dress up as a witch.$"
-
-Zone23A_EventScript_Matthew::
-	trainerbattle_single TRAINER_PBL_MATTHEW, Zone23A_Text_MatthewIntro, Zone23A_Text_MatthewDefeat
-	msgbox Zone23A_Text_MatthewPostBattle, MSGBOX_AUTOCLOSE
+script Zone23A_EventScript_Matthew {
+	trainerbattle_single(TRAINER_PBL_MATTHEW, format("Adversity is the best teacher!"), format("I lose! I haven't learned anything!"))
+	msgbox(format("Hardship is my teacher, but I don't think I'm learning that much, all things considered."), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone23A_Text_MatthewIntro:
-	.string "I journey to exotic biomes to\n"
-	.string "gather the rarest of Pokémon!$"
-
-Zone23A_Text_MatthewDefeat:
-	.string "Argh!$"
-
-Zone23A_Text_MatthewPostBattle:
-	.string "Rare Pokémon don't always battle\n"
-	.string "too well.$"
-
-Zone23A_EventScript_Kerry::
-	trainerbattle_single TRAINER_PBL_KERRY, Zone23A_Text_KerryIntro, Zone23A_Text_KerryDefeat
-	msgbox Zone23A_Text_KerryPostBattle, MSGBOX_AUTOCLOSE
+script Zone23A_EventScript_Kerry {
+	trainerbattle_single(TRAINER_PBL_KERRY, format("What's your favorite seafood?"), format("I personally love scallops!"))
+	msgbox(format("Some folks have dietary restrictions that prevent them from consuming seafood.\pThat's all right! I still like to eat with them."), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone23A_Text_KerryIntro:
-	.string "What's your favorite food?$"
-
-Zone23A_Text_KerryDefeat:
-	.string "I personally love teriyaki!$"
-
-Zone23A_Text_KerryPostBattle:
-	.string "Sometimes, it's nice to just chat\n"
-	.string "instead of battling.\l"
-	.string "Don't you think so?$"
-
-Zone23A_EventScript_Annie::
-	trainerbattle_single TRAINER_PBL_ANNIE, Zone23A_Text_AnnieIntro, Zone23A_Text_AnnieDefeat
-	msgbox Zone23A_Text_AnniePostBattle, MSGBOX_AUTOCLOSE
+script Zone23A_EventScript_Annie {
+	trainerbattle_single(TRAINER_PBL_ANNIE, format("For the environment!"), format("That's a downer!"))
+	msgbox(format("Climate change is a real threat to habitats like these."), MSGBOX_AUTOCLOSE)
 	end
+}
 
-Zone23A_Text_AnnieIntro:
-	.string "For the environment!$"
-
-Zone23A_Text_AnnieDefeat:
-	.string "That's a downer!$"
-
-Zone23A_Text_AnniePostBattle:
-	.string "Climate change is a real threat to\n"
-	.string "environments like these.$"
-`
+script Zone23A_EventScript_Clark {
+	trainerbattle_single(TRAINER_PBL_CLARK, format("I do love nature, but I hate mud in my boots!"), format("Now there's mud everywhere!"))
+	msgbox(format("The rain makes everything muddy!"), MSGBOX_AUTOCLOSE)
+	end
+}
