@@ -65,10 +65,18 @@ script EventScript_PuzzleHint {
 				closemessage
 				return
 			}
-		case PBL_PUZZLE_ZONE_15:
-			msgbox(format("Get a hint for Zone 15?"), MSGBOX_YESNO)
+		case PBL_PUZZLE_ZONE_15_FIND_POKEMON:
+			msgbox(format("Get a hint for Zone 15 finding the Sophocles' Pokémon?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				msgbox(format("The hint is: a Plusle is in the top right ice puzzle, and the other two are in the bottom right big ice puzzle.\pAnother hint is: even though an ice puzzle might seem really complicated, it might be actually not many choices in the end. Sometimes when you slide, you will only have one direction to go (other than the direction you came from)."))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_15_EXIT:
+			msgbox(format("Get a hint for Zone 15 getting to the exit?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("The hint is: for the big ice puzzle, starting from the top left area, start on the second highest space, and go right.\pAnother hint is: even though an ice puzzle might seem really complicated, it might be actually not many choices in the end. Sometimes when you slide, you will only have one direction to go (other than the direction you came from)."))
 			} else {
 				closemessage
 				return
@@ -214,10 +222,27 @@ script EventScript_PuzzleSkip {
 				closemessage
 				return
 			}
-		case PBL_PUZZLE_ZONE_15:
-			msgbox(format("Get a hint for Zone 15?"), MSGBOX_YESNO)
+		case PBL_PUZZLE_ZONE_15_FIND_POKEMON:
+			msgbox(format("Skip finding Sophocles' Pokémon in Zone 15?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				msgbox(format("TODO SKIP"))
+				msgbox(format("{PLAYER} spent some time looking for the Pokemon and found all three, then went to the southwest section of the cave."))
+				setvar(VAR_ZONE_15_STATE, 2)
+				setflag(FLAG_HIDE_ZONE15A_MON_1)
+				setflag(FLAG_HIDE_ZONE15A_MON_2)
+				setflag(FLAG_HIDE_ZONE15A_MON_3)
+				setflag(FLAG_HIDE_ZONE15A_SOPHOCLES_2)
+				warp(MAP_ZONE15A, 19, 49)
+				waitstate
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_15_EXIT:
+			msgbox(format("Skip finding the exit in Zone 15?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("{PLAYER} spent some time for the exit, and found a stairwell."))
+				warp(MAP_ZONE15B, 0)
+				waitstate
 			} else {
 				closemessage
 				return

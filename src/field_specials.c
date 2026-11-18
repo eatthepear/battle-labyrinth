@@ -4998,7 +4998,10 @@ u16 CheckWhichPuzzle(void)
             return PBL_PUZZLE_ZONE_10_FIND_ITEMS;
     }
     if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_15) {
-        return PBL_PUZZLE_ZONE_15;
+        if (VarGet(VAR_ZONE_15_STATE) <= 2)
+            return PBL_PUZZLE_ZONE_15_FIND_POKEMON;
+        else
+            return PBL_PUZZLE_ZONE_15_EXIT;
     }
     if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_17) {
         if (VarGet(VAR_ZONE_17_STATE) <= 20)
