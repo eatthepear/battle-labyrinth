@@ -36,6 +36,17 @@ script Zone35L_EventScript_EnterHallOfFame {
 	applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp)
 	waitmovement(0)
 	delay(20)
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		fadeoutbgm(1)
+		setspeaker("???")
+		msgbox(format("Just a moment, please."))
+		closemessage
+		applymovement(LOCALID_COLRESS, Common_Movement_ExclamationMark)
+		applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+		playse(SE_PIN)
+		waitmovement(0)
+		waitse
+	}
 	dofieldeffect(FLDEFF_HALL_OF_FAME_RECORD)
 	waitfieldeffect(FLDEFF_HALL_OF_FAME_RECORD)
 	delay(40)
