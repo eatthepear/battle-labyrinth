@@ -423,7 +423,9 @@ script Sanctuary_EventScript_EnterSanctuary {
 			setspeaker(SP_NAME_NONE)
 			giveitem(ITEM_HM_ROCK_CLIMB)
 		case 26:
-			msgbox(format("Ultra Balls!"))
+			msgbox(format("{COLOR GREEN}TM34 - Sludge Wave{COLOR DARK_GRAY}!"))
+			setspeaker(SP_NAME_NONE)
+			giveitem(ITEM_TM_SLUDGE_WAVE)
 		case 27:
 			msgbox(format("Your reward for clearing {COLOR GREEN}Zone 27 - Cinder Hike{COLOR DARK_GRAY} is…"))
 			// msgbox(format("{COLOR GREEN}HM02 - Rock Climb{COLOR DARK_GRAY}!"))
