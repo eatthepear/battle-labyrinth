@@ -5462,7 +5462,7 @@ static void HandleEndTurn_FinishBattle(void)
                                   | BATTLE_TYPE_TOWER_LINK_MULTI
                                   | BATTLE_TYPE_RECORDED_LINK)))
         {
-            if (FlagGet(FLAG_SETTINGS_NUZLOCKE) && ShouldSkipEncounterNuzlocke == FALSE)
+            if (FlagGet(FLAG_SETTINGS_NUZLOCKE) && ShouldSkipEncounterNuzlocke == FALSE && !FlagGet(FLAG_SYS_NO_CATCHING))
             {
                 if (NuzlockeFlagGet(GetCurrentRegionMapSectionId()) == 0)
                     NuzlockeFlagSet(GetCurrentRegionMapSectionId());
