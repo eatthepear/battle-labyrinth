@@ -14,27 +14,26 @@ script Zone14C_EventScript_Courtney {
 	faceplayer
 	playbgm(MUS_ENCOUNTER_MAGMA, TRUE)
 	setspeaker("Courtney")
-	msgbox(format("Hi! My name's {COLOR BLUE}Courtney{COLOR DARK_GRAY}.\pIf you want to go forward, you'll have to beat me!\pSo, are you ready for our battle?"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
+	msgbox(format("So! You're the one who's been defeating all of my grunts.\pYou look kinda cute. Ever thought about joining Team Magma?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
 	    setspeaker("Courtney")
-		msgbox(format("Okay. You just let me know when you're ready!"))
-		closemessage
-		fadedefaultbgm
-		release
-		end
+		msgbox(format("Hm… but you did defeat a bunch of my grunts, so… even though you're a cutie…\pNo can do!"))
+	} else {
+	    setspeaker("Courtney")
+		msgbox(format("Didn't think so! You've got the looks, but none of the brains, it seems!"))
 	}
     setspeaker("Courtney")
-	msgbox(format("Good luck!"))
+	msgbox(format("Either way, you can't stop us here.\pMy fellow Admin Tabitha and I have already siphoned the necessary energy from this place.\pNow, I'm going to defeat you in battle, just to teach you a lesson!"))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_COURTNEY_BOSS_14, format("Defeat!"))
+	trainerbattle_no_intro(TRAINER_PBL_COURTNEY_BOSS_14, format("You're… really good at battling, I guess."))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Courtney")
-	msgbox(format("I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
+	msgbox(format("Whew! That was… a great battle.\pHere, you can have this for entertaining me so well."))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_ATTRACT)
 	setspeaker("Courtney")
-	msgbox(format("Good job! That was a great battle. I think I'll wait here for more challengers to pass through, you should go on ahead! I want to battle them all."))
+	msgbox(format("I guess it's time go.\pToo bad, I wanted to get to know you more.\pIf we ever meet again, I'll have to save some time to chat!"))
 	closemessage
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	removeobject(LOCALID_COURTNEY_14C)
