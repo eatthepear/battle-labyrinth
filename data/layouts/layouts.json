@@ -11113,6 +11113,17 @@
       "border_filepath": "data/layouts/RainyBog/border.bin",
       "blockdata_filepath": "data/layouts/RainyBog/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ZONE25M",
+      "name": "Zone25M_Layout",
+      "width": 30,
+      "height": 7,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/Zone25M/border.bin",
+      "blockdata_filepath": "data/layouts/Zone25M/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

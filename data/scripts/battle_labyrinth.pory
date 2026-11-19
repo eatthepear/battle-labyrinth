@@ -288,9 +288,11 @@ script EventScript_PuzzleSkip {
 				return
 			}
 		case PBL_PUZZLE_ZONE_25:
-			msgbox(format("Get a hint for Zone 25?"), MSGBOX_YESNO)
+			msgbox(format("Skip the puzzles in Zone 25?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				msgbox(format("TODO SKIP"))
+				msgbox(format("{PLAYER} found a secret path that led to the bottom floor!"))
+				warp(MAP_ZONE25M, 1)
+				waitstate
 			} else {
 				closemessage
 				return
