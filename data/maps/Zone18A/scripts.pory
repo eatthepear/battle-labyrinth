@@ -169,8 +169,8 @@ script Zone18A_EventScript_LinkingCord {
 }
 
 script Zone18A_EventScript_John {
-	trainerbattle_single(TRAINER_PBL_JOHN, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_JOHN, format("Even while on vacation, I'm working on my fishing skills!"), format("My battling skills are out of practice!"))
+	msgbox(format("It's nice to just sit back, relax, and try to fish up a Pokémon!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
