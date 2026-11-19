@@ -55,6 +55,29 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
+// For saving summary screen before showing Pokedex
+struct SummaryScreenState
+{
+    u8 mode;
+    u8 monIndex;
+    u8 maxIndex;
+    struct Pokemon *mons;
+    void (*callback)(void);
+};
+
+static struct SummaryScreenState sSummaryState;
+
+void CB2_ReturnToSummaryFromPokedex(void)
+{
+    ShowPokemonSummaryScreen_BW(
+        sSummaryState.mode,
+        sSummaryState.mons,
+        sSummaryState.monIndex,
+        sSummaryState.maxIndex,
+        sSummaryState.callback
+    );
+}
+
 #if BW_SUMMARY_SCREEN == TRUE
 enum BWPSSEffect
 {
@@ -500,11 +523,6 @@ static const struct BgTemplate sBgTemplates[] =
         .baseTile = 0,
     },
 };
-
-void CB2_ReturnToSummaryFromPokedex(void)
-{
-    ShowPokemonSummaryScreen_BW(SUMMARY_MODE_NORMAL, gParties[B_TRAINER_PLAYER], gPartyMenu.slotId, gPartiesCount[B_TRAINER_PLAYER] - 1, CB2_ReturnToPartyMenuFromSummaryScreen);
-}
 
 static const s8 sMultiBattleOrder[] = {0, 2, 3, 1, 4, 5};
 static const struct WindowTemplate sSummaryTemplate[] =
@@ -2424,7 +2442,12 @@ static void Task_HandleInput(u8 taskId)
                         sMonSummaryScreen->callback = CB2_PssChangePokemonNickname;
                         gSpecialVar_0x8004 = sMonSummaryScreen->curMonIndex;
                     } else if (ShouldShowPokedex()) {
-                        gPartyMenu.slotId = sMonSummaryScreen->curMonIndex;
+                        sSummaryState.mode = sMonSummaryScreen->mode;
+                        sSummaryState.monIndex = sMonSummaryScreen->curMonIndex;
+                        sSummaryState.maxIndex = sMonSummaryScreen->maxMonIndex;
+                        sSummaryState.mons = sMonSummaryScreen->monList.mons;
+                        sSummaryState.callback = sMonSummaryScreen->callback;
+
                         sMonSummaryScreen->callback = CB2_OpenPokedexPlusHGSSToMon;
                         gSpecialVar_0x8004 = sMonSummaryScreen->summary.species;
                     }
@@ -5555,7 +5578,7 @@ static inline bool32 ShouldShowPokedex(void)
 {
     return (!sMonSummaryScreen->lockMovesFlag
          && !sMonSummaryScreen->summary.isEgg
-         && sMonSummaryScreen->mode == SUMMARY_MODE_NORMAL
+         && ((sMonSummaryScreen->mode == SUMMARY_MODE_NORMAL) || (sMonSummaryScreen->mode == SUMMARY_MODE_BOX) || (sMonSummaryScreen->mode == SUMMARY_MODE_BOX_CURSOR))
          && !InBattleFactory() 
          && !InSlateportBattleTent()
          && GetPlayerIDAsU32() == sMonSummaryScreen->summary.OTID);
