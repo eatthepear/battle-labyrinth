@@ -10725,8 +10725,8 @@
     {
       "id": "LAYOUT_ZONE32G",
       "name": "Zone32G_Layout",
-      "width": 100,
-      "height": 75,
+      "width": 19,
+      "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/Zone32G/border.bin",
