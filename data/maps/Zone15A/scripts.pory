@@ -204,7 +204,7 @@ script Zone15A_EventScript_Sophocles_TriggerBoss {
 		end
 	}
 	setspeaker("Sophocles")
-	msgbox(format("I'll focus on countering the energy in that stone, while you keep Ampharos distracted!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("I'll focus on using my machines to disable the energy in that stone, while you keep Ampharos distracted!"), MSGBOX_AUTOCLOSE)
 	hidefollower
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_0) == 6) {
@@ -271,20 +271,34 @@ script Zone15A_EventScript_Sophocles_TriggerBoss {
 	clearflag(FLAG_SYS_NO_CATCHING)
 	clearflag(FLAG_SYS_SMART_WILD_AI_ON)
 	clearflag(FLAG_SYS_NO_RUNNING)
+	playmoncry(SPECIES_AMPHAROS, CRY_MODE_NORMAL)
+	delay(40)
+	waitmoncry
+	playmoncry(SPECIES_MINUN, CRY_MODE_NORMAL)
+	delay(40)
+	waitmoncry
+	msgbox(format("The Pokémon seemed to be calmed down!"))
 	setspeaker("Sophocles")
-	msgbox(format("You did it! Thank you!"))
+	msgbox(format("You did it! By distracting them, I was able to disable the energy in the stone safely.\pCome back, Ampharos and Minun!"))
+	fadescreenswapbuffers(FADE_TO_BLACK)
+	removeobject(LOCALID_MINUN_2)
+	removeobject(LOCALID_AMPHAROS)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+	setspeaker("Sophocles")
+	msgbox(format("Look, this sort of thing deserves a badge of some sort. Here, take this!"))
 	setspeaker(SP_NAME_NONE)
 	playfanfare(MUS_OBTAIN_BADGE)
 	msgbox(format("{PLAYER} received the Charge Badge from {COLOR BLUE}Sophocles{COLOR DARK_GRAY}!"))
 	waitfanfare
 	setflag(FLAG_BADGE04_GET)
+	setspeaker("Sophocles")
+	msgbox(format("And I have two TMs for you, as thanks for saving my Pokémon!"))
+	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_VOLT_SWITCH)
 	giveitem(ITEM_TM_THUNDER_WAVE)
 	setspeaker("Sophocles")
-	msgbox(format("We leave now! Thanks!"))
+	msgbox(format("Thanks again for the help!\pI'm going to take my leave now, it's cold here!"))
 	fadescreenswapbuffers(FADE_TO_BLACK)
-	removeobject(LOCALID_MINUN_2)
-	removeobject(LOCALID_AMPHAROS)
 	removeobject(LOCALID_SOPHOCLES_3)
 	setflag(FLAG_BEAT_BOSS_15)
 	setvar(VAR_ZONE_15_STATE, 4)
