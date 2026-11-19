@@ -365,25 +365,25 @@ script Zone12A_EventScript_Hilda {
 }
 
 script Zone12A_EventScript_Trevor {
-	trainerbattle_single(TRAINER_PBL_TREVOR, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_TREVOR, format("My mom says she's upper-middle class.\pDo you think there exists such a thing?"), format("I just like to say, we're comfortable!"))
+	msgbox(format("Well, of course there is an upper-middle class!\pAfter all, I'm clearly not rich, but I'm more well off than the middle class!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone12A_EventScript_Adair {
-	trainerbattle_single(TRAINER_PBL_ADAIR, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_ADAIR, format("If you've never gone out and cooked while in the wilderness, I highly recommend it!"), format("You cooked me!"))
+	msgbox(format("I'm so cooked now, but I haven't even started making dinner yet…"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone12A_EventScript_Kinley {
-	trainerbattle_single(TRAINER_PBL_KINLEY, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_KINLEY, format("I'm working on a tune! I'll make you listen to the melodies!"), format("Rah! It still needs work, but I like it!"))
+	msgbox(format("You inspire me! I'm gonna write a song about you!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone12A_EventScript_Rufus {
-	trainerbattle_single(TRAINER_PBL_RUFUS, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_RUFUS, format("I like looking at the reflection of myself in the water.\pMakes my features stand out, right?"), format("I can care about my appearance!"))
+	msgbox(format("Don't I look great in this outfit?"), MSGBOX_AUTOCLOSE)
 	end
 }
