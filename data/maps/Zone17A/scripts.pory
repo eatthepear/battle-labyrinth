@@ -169,7 +169,23 @@ script Zone17A_EventScript_InitiateBossBattle {
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_HM_DIVE)
 	setspeaker("Lacey")
-	msgbox(format("It looks like our job is done here.\pSay, I do want to battle you again some day, for real this time. And preferably without getting possessed.\pI'm looking forward to that day!\pSee you later, {PLAYER}!"))
+	msgbox(format("That Hidden Machine, Dive, lets you travel underwater when the water is deep enough.\pThough you'll need the Normal Badge to use it outside of battle!"))
+	closemessage
+	applymovement(LOCALID_17A_LACEY, Common_Movement_FaceRight)
+	waitmovement(0)
+	delay(40)
+	applymovement(LOCALID_17A_LACEY, Common_Movement_FaceDown)
+	waitmovement(0)
+	setspeaker("Lacey")
+	msgbox(format("Seriously, I can't thank you enough for your help. Getting possessed is quite scary.\pTake this as well."))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_TM_DAZZLING_GLEAM)
+	setspeaker("Lacey")
+	msgbox(format("Dazzling Gleam is one of my favorite moves.\pIt hits both opponents in a Double Battle!"))
+	closemessage
+	delay(40)
+	setspeaker("Lacey")
+	msgbox(format("Anyways, it looks like our job is done here.\pSay, I do want to battle you again some day, for real this time. And preferably without getting possessed.\pI'm looking forward to that day!\pSee you later, {PLAYER}!"))
 	closemessage
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_0) == 12) {
