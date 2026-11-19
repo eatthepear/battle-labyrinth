@@ -585,8 +585,8 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Zone 22 Boss"),
         .desc = COMPOUND_STRING("Gym Leader {COLOR BLUE}Maylene{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Mienshao{COLOR DARK_GRAY}, {COLOR GREEN}Pawmot{COLOR DARK_GRAY}, {COLOR GREEN}Lilligant-Hisui{COLOR DARK_GRAY}, {COLOR GREEN}Infernape{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Medicham{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Mienshao{COLOR DARK_GRAY}, {COLOR GREEN}Pawmot{COLOR DARK_GRAY}, {COLOR GREEN}Lilligant-Hisui{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Infernape{COLOR DARK_GRAY}, {COLOR GREEN}Medicham{COLOR DARK_GRAY}\n"
                                 "Condition: {COLOR GREEN}Permanent Snow{COLOR DARK_GRAY}\n\n"
                                 "Theme: {COLOR GREEN}Fighting{COLOR DARK_GRAY}-type specialist"),
     },
@@ -595,8 +595,8 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Zone 22 Boss"),
         .desc = COMPOUND_STRING("Gym Leader {COLOR BLUE}Maylene{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Mienshao{COLOR DARK_GRAY}, {COLOR GREEN}Pawmot{COLOR DARK_GRAY}, {COLOR GREEN}Lilligant-Hisui{COLOR DARK_GRAY}, {COLOR GREEN}Infernape{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Annihilape{COLOR DARK_GRAY}, {COLOR GREEN}Medicham-Mega{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Mienshao{COLOR DARK_GRAY}, {COLOR GREEN}Pawmot{COLOR DARK_GRAY}, {COLOR GREEN}Lilligant-Hisui{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Infernape{COLOR DARK_GRAY}, {COLOR GREEN}Annihilape{COLOR DARK_GRAY}, {COLOR GREEN}Medicham-Mega{COLOR DARK_GRAY}\n"
                                 "Condition: {COLOR GREEN}Permanent Snow{COLOR DARK_GRAY}\n\n"
                                 "Theme: {COLOR GREEN}Fighting{COLOR DARK_GRAY}-type specialist"),
     },
@@ -645,22 +645,19 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_NOTEBOOK_BOSS_25] =
     {
         .header = COMPOUND_STRING("Zone 25 Boss"),
-        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Slurpuff{COLOR DARK_GRAY}, {COLOR GREEN}Whimsicott{COLOR DARK_GRAY}, {COLOR GREEN}Wigglytuff{COLOR DARK_GRAY}, {COLOR GREEN}Mimikyu{COLOR DARK_GRAY}\n"
-                                "Condition: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Permanent Electric Terrain{COLOR DARK_GRAY}\n\n"
-                                "Theme: {COLOR GREEN}Fairy{COLOR DARK_GRAY}-type specialist"),
+        .desc = COMPOUND_STRING("Rainbow Rocket Executive {COLOR BLUE}Ariana{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Arbok{COLOR DARK_GRAY}, {COLOR GREEN}Samurott-Hisui{COLOR DARK_GRAY}, {COLOR GREEN}Gliscor{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Vileplume{COLOR DARK_GRAY}, {COLOR GREEN}Mawile-Mega{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Ariana{COLOR DARK_GRAY}"),
     },
 
     [HELP_NOTEBOOK_BOSS_25_BRUTAL] =
     {
         .header = COMPOUND_STRING("Zone 25 Boss"),
-        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Slurpuff{COLOR DARK_GRAY}, {COLOR GREEN}Whimsicott{COLOR DARK_GRAY}, {COLOR GREEN}Wigglytuff{COLOR DARK_GRAY}, {COLOR GREEN}Mimikyu{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Excadrill{COLOR DARK_GRAY}\n"
-                                "Condition: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Permanent Electric Terrain{COLOR DARK_GRAY}\n\n"
-                                "Theme: {COLOR GREEN}Fairy{COLOR DARK_GRAY}-type specialist"),
+        .desc = COMPOUND_STRING("Rainbow Rocket Executive {COLOR BLUE}Ariana{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Arbok{COLOR DARK_GRAY}, {COLOR GREEN}Samurott-Hisui{COLOR DARK_GRAY}, {COLOR GREEN}Gliscor{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Vileplume{COLOR DARK_GRAY}, {COLOR GREEN}Gothitelle{COLOR DARK_GRAY}, {COLOR GREEN}Mawile-Mega{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Ariana{COLOR DARK_GRAY}"),
     },
 
     [HELP_NOTEBOOK_BOSS_26] =
