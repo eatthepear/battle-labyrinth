@@ -1377,7 +1377,7 @@ script EventScript_Notebook_Evolutions {
 		dynmultipush("Type: Null - Lv. 30", SPECIES_TYPE_NULL)
 		dynmultipush("Yamask Galar - Lv. 34", SPECIES_YAMASK_GALAR)
 		dynmultipush("Farfetch'd Galar - Lv. 34", SPECIES_FARFETCHD_GALAR)
-		dynmultipush("Primeape - Lv. 45", SPECIES_PRIMEAPE)
+		dynmultipush("Primeape - Lv. 48", SPECIES_PRIMEAPE)
 		dynmultipush("Ledyba - Lv. 12", SPECIES_LEDYBA)
 		dynmultipush("Spinarak - Lv. 12", SPECIES_SPINARAK)
 		dynmultipush("Glameow - Lv. 28", SPECIES_GLAMEOW)
