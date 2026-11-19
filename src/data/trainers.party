@@ -5026,10 +5026,138 @@ Class: Leader
 Pic: Raihan
 Music: Male
 AI: AI_FLAG_BOSS
-Double Battle: No
+Double Battle: Yes
 Mugshot: Purple
 
-Bulbasaur
+Politoed @ Damp Rock
+Ability: Drizzle
+Level: 54
+Sassy Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Weather Ball
+- Ice Beam
+- Earth Power
+- Rain Dance
+
+Goodra @ Leftovers
+Ability: Hydration
+Level: 54
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Pulse
+- Thunder
+- Sludge Bomb
+- Rest
+
+Heliolisk @ Life Orb
+Ability: Dry Skin
+Level: 54
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder
+- Hyper Voice
+- Grass Knot
+- Rain Dance
+
+Tatsugiri @ Roseli Berry
+Ability: Storm Drain
+Level: 54
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Dragon Pulse
+- Mirror Coat
+- Rain Dance
+
+Archaludon @ Assault Vest
+Ability: Stamina
+Level: 55
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Electro Shot
+- Dragon Pulse
+- Flash Cannon
+- Body Press
+
+Dragonite @ Wise Glasses
+Ability: Multiscale
+Level: 55
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hurricane
+- Dragon Pulse
+- Surf
+- Thunder
+
+=== TRAINER_PBL_RAIHAN_BOSS_28 ===
+Name: Raihan
+Class: Leader
+Pic: Raihan
+Music: Male
+AI: AI_FLAG_BOSS
+Double Battle: Yes
+Mugshot: Purple
+Difficulty: Brutal
+
+Politoed @ Damp Rock
+Ability: Drizzle
+Level: 54
+Sassy Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Weather Ball
+- Ice Beam
+- Earth Power
+- Rain Dance
+
+Goodra @ Leftovers
+Ability: Hydration
+Level: 54
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Pulse
+- Thunder
+- Sludge Bomb
+- Rest
+
+Heliolisk @ Life Orb
+Ability: Dry Skin
+Level: 54
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder
+- Hyper Voice
+- Grass Knot
+- Rain Dance
+
+Kingdra @ Roseli Berry
+Ability: Swift Swim
+Level: 54
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Dragon Pulse
+- Hurricane
+- Rain Dance
+
+Archaludon @ Assault Vest
+Ability: Stamina
+Level: 55
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Electro Shot
+- Dragon Pulse
+- Flash Cannon
+- Body Press
+
+Dragonite @ Dragoninite
+Ability: Multiscale
+Level: 55
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hurricane
+- Dragon Pulse
+- Surf
+- Thunder
 
 === TRAINER_PBL_THADDEUS_OPTIONAL_21 ===
 Name: Thaddeus
