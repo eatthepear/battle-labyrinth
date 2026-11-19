@@ -40,8 +40,9 @@ script Zone24A_EventScript_Intro {
 script Zone24A_EventScript_LookDown {
 	lockall
 	setvar(VAR_TEMP_0, 0)
-	if (flag(FLAG_BEAT_BOSS_20) == FALSE) {
-		setflag(FLAG_BEAT_BOSS_20)
+	if (flag(FLAG_BEAT_BOSS_24) == FALSE) {
+		removeobject(LOCALID_BLUE_24A)
+		setflag(FLAG_BEAT_BOSS_24)
 		setvar(VAR_TEMP_0, 1)
 	}
 	special(SpawnCameraObject)
@@ -52,7 +53,7 @@ script Zone24A_EventScript_LookDown {
 	waitmovement(0)
 	special(RemoveCameraObject)
 	if (var(VAR_TEMP_0) == 1) {
-		clearflag(FLAG_BEAT_BOSS_20)
+		clearflag(FLAG_BEAT_BOSS_24)
 	}
 	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 	waitmovement(0)
