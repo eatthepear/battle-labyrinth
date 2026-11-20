@@ -5,6 +5,83 @@ mapscripts Zone34A_MapScripts {
         clearflag(FLAG_SYS_SMART_WILD_AI_ON)
         clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
     }
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ZONE_34_STATE, 0: Zone34A_EventScript_RocketCastle1
+	]
+}
+
+script Zone34A_EventScript_RocketCastle1 {
+	lockall
+    playbgm(MUS_HG_ENCOUNTER_ROCKET, TRUE)
+    applymovement(LOCALID_GRUNT_34A_1, Common_Movement_FaceUp)
+    applymovement(LOCALID_GRUNT_34A_2, Common_Movement_FaceUp)
+	waitmovement(0)
+    applymovement(LOCALID_GRUNT_34A_1, Common_Movement_ExclamationMark)
+    applymovement(LOCALID_GRUNT_34A_2, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	delay(40)
+    applymovement(LOCALID_GRUNT_34A_1, Zone34A_Movement_Grunt1_RunToPlayer)
+    applymovement(LOCALID_GRUNT_34A_2, Zone34A_Movement_Grunt2_RunToPlayer)
+    waitmovement(0)
+    applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
+    applymovement(LOCALID_GRUNT_34A_1, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    setspeaker("Grunt")
+    msgbox(format("An intruder!\pTake this!"))
+	trainerbattle_no_intro(TRAINER_PBL_ROCKET_GRUNT_34_1, format("Ow ow ow!"))
+    applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
+    applymovement(LOCALID_GRUNT_34A_2, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    setspeaker("Grunt")
+    msgbox(format("You're breaking into Rainbow Rocket Castle!\pNo one leaves unscathed!"))
+	trainerbattle_no_intro(TRAINER_PBL_ROCKET_GRUNT_34_2, format("Rats!"))
+    applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
+    applymovement(LOCALID_GRUNT_34A_1, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    setspeaker("Grunt")
+    msgbox(format("Shoot, this intruder is strong!\pWe need to warn the others!"))
+	closemessage
+    applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
+    applymovement(LOCALID_GRUNT_34A_2, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    setspeaker("Grunt")
+    msgbox(format("Right! Let's split up!"))
+	closemessage
+    applymovement(LOCALID_GRUNT_34A_1, Zone34A_Movement_Grunt1_RunAway)
+    applymovement(LOCALID_GRUNT_34A_2, Zone34A_Movement_Grunt2_RunAway)
+    waitmovement
+	playse(SE_WARP_IN)
+	setflag(FLAG_HIDE_ZONE34A_GRUNTS_12)
+	removeobject(LOCALID_GRUNT_34A_1)
+	removeobject(LOCALID_GRUNT_34A_2)
+	waitse
+    setvar(VAR_ZONE_34_STATE, 1)
+	fadedefaultbgm
+    releaseall
+}
+
+movement Zone34A_Movement_Grunt1_RunToPlayer {
+	walk_up * 2
+	walk_right
+}
+
+movement Zone34A_Movement_Grunt2_RunToPlayer {
+	walk_up * 2
+	walk_left
+}
+
+movement Zone34A_Movement_Grunt1_RunAway {
+	walk_faster_left
+	walk_faster_down * 3
+	walk_faster_left * 3
+}
+
+movement Zone34A_Movement_Grunt2_RunAway {
+	walk_faster_right
+	walk_faster_down * 3
+	walk_faster_right * 3
 }
 
 script Zone34A_EventScript_Door {
