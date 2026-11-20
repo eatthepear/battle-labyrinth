@@ -17,8 +17,8 @@
     {
       "local_id": "LOCALID_CYRUS",
       "graphics_id": "OBJ_EVENT_GFX_CYRUS",
-      "x": 7,
-      "y": 9,
+      "x": 5,
+      "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -31,25 +31,32 @@
   ],
   "warp_events": [
     {
+      "x": 4,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE34L",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 5,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_ZONE34L",
+      "dest_warp_id": "1"
+    },
+    {
       "x": 6,
-      "y": 14,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_ZONE34L",
       "dest_warp_id": "1"
     },
     {
-      "x": 7,
-      "y": 14,
+      "x": 9,
+      "y": 3,
       "elevation": 0,
-      "dest_map": "MAP_ZONE34L",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 8,
-      "y": 14,
-      "elevation": 0,
-      "dest_map": "MAP_ZONE34L",
-      "dest_warp_id": "1"
+      "dest_map": "MAP_ZONE34M",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

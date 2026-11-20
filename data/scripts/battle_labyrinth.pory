@@ -1981,6 +1981,7 @@ script Debug_CheatStart_PBL_SetFlags {
 	if (var(VAR_ZONE) == 33) {
 		return
 	}
+	setflag(FLAG_BEAT_BOSS_34)
 	pokevialincreasesize
 	pokevialincreasesize
 	pokevialincreasesize

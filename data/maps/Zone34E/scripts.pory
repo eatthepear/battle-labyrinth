@@ -1,4 +1,9 @@
 mapscripts Zone34E_MapScripts {
+	MAP_SCRIPT_ON_LOAD {
+		if (defeated(TRAINER_PBL_MAXIE_BOSS_34)) {
+			setmetatile(9, 3, METATILE_RocketCastle_Warp, 0)
+		}
+    }
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_ZONE_34_STATE_MAXIE, 1: Zone34E_EventScript_MaxieBattle
 	]
@@ -20,15 +25,31 @@ script Zone34E_EventScript_MaxieBattle {
     setspeaker("???")
     msgbox(format("MAXIE!"))
     closemessage
-    applymovement(LOCALID_MAXIE, Common_Movement_WalkDown)
-    waitmovement(0)
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_MAXIE_BOSS_34, format("DEFEAT!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
     setspeaker("Maxie")
     msgbox(format("DEFEAT!"))
-    // move camera over to warp
+    special(SpawnCameraObject)
+    applymovement(LOCALID_CAMERA, Zone34E_Camera_MoveRightUp)
+    waitmovement(0)
+    setmetatile(9, 3, METATILE_RocketCastle_Warp, 0)
+    playse(SE_EXP_MAX)
+    special(DrawWholeMapView)
+    waitse
+    delay(10)
+    applymovement(LOCALID_CAMERA, Zone34E_Camera_MoveLeftDown)
+    waitmovement(0)
+    special(RemoveCameraObject)
     setvar(VAR_ZONE_34_STATE_MAXIE, 2)
     releaseall
+}
+
+movement Zone34E_Camera_MoveRightUp {
+    walk_diag_northeast * 2
+}
+
+movement Zone34E_Camera_MoveLeftDown {
+    walk_diag_southwest * 2
 }

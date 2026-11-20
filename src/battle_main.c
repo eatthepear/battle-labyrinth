@@ -5248,6 +5248,7 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_GALACTIC_BOSS:
             PlayBGM(MUS_DP_VICTORY_GALACTIC);
             break;
+        case TRAINER_CLASS_RAINBOW_ROCKET_BOSS:
         case TRAINER_CLASS_COLRESS:
             PlayBGM(MUS_PL_VICTORY_FRONTIER_BRAIN);
             break;

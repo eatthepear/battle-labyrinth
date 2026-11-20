@@ -5028,8 +5028,9 @@ u16 GetBattleBGM(void)
             return MUS_HG_VS_HO_OH;
         case TRAINER_CLASS_RAINBOW_ROCKET:
         case TRAINER_CLASS_RAINBOW_ROCKET_EXECUTIVE:
-        case TRAINER_CLASS_RAINBOW_ROCKET_BOSS:
             return MUS_HG_VS_ROCKET;
+        case TRAINER_CLASS_RAINBOW_ROCKET_BOSS:
+            return MUS_BW_VS_WCS_CHAMPION;
         case TRAINER_CLASS_GALACTIC:
             return MUS_DP_VS_GALACTIC;
         case TRAINER_CLASS_GALACTIC_COMMANDER:

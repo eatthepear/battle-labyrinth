@@ -1,4 +1,9 @@
 mapscripts Zone34I_MapScripts {
+	MAP_SCRIPT_ON_LOAD {
+		if (defeated(TRAINER_PBL_ARCHIE_BOSS_34)) {
+			setmetatile(1, 3, METATILE_RocketCastle_Warp, 0)
+		}
+    }
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_ZONE_34_STATE_ARCHIE, 1: Zone34I_EventScript_ArchieBattle
 	]
@@ -20,15 +25,31 @@ script Zone34I_EventScript_ArchieBattle {
     setspeaker("???")
     msgbox(format("ARCHIE!"))
     closemessage
-    applymovement(LOCALID_ARCHIE, Common_Movement_WalkDown)
-    waitmovement(0)
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	trainerbattle_no_intro(TRAINER_PBL_ARCHIE_BOSS_34, format("DEFEAT!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
     setspeaker("Archie")
     msgbox(format("DEFEAT!"))
-    // move camera over to warp
+    special(SpawnCameraObject)
+    applymovement(LOCALID_CAMERA, Zone34I_Camera_MoveLeftUp)
+    waitmovement(0)
+    setmetatile(1, 3, METATILE_RocketCastle_Warp, 0)
+    playse(SE_EXP_MAX)
+    special(DrawWholeMapView)
+    waitse
+    delay(10)
+    applymovement(LOCALID_CAMERA, Zone34I_Camera_MoveRightDown)
+    waitmovement(0)
+    special(RemoveCameraObject)
     setvar(VAR_ZONE_34_STATE_ARCHIE, 2)
     releaseall
+}
+
+movement Zone34I_Camera_MoveLeftUp {
+    walk_diag_northwest * 2
+}
+
+movement Zone34I_Camera_MoveRightDown {
+    walk_diag_southeast * 2
 }

@@ -1,1 +1,84 @@
-mapscripts Zone34O_MapScripts {}
+mapscripts Zone34O_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ZONE_34_STATE, 7: Zone34O_EventScript_GiovanniBattle
+	]
+}
+
+script Zone34O_EventScript_GiovanniBattle {
+    lockall
+    applymovement(LOCALID_PLAYER, Common_Movement_WalkUp6)
+    waitmovement(0)
+    setspeaker("???")
+    msgbox(format("Well, well…\pI had been informed of an intruder, but not that they were a kid like you!\pI had allowed the other bosses and organizations to do as they wished, hoping they would be of use…\pBut it seems you have defeated all of them. I am impressed you got here."))
+    closemessage
+    delay(10)
+    applymovement(LOCALID_GIOVANNI, Zone34O_Movement_Giovanni_WalkSlowLeft)
+    waitmovement(0)
+    setspeaker("???")
+    msgbox(format("Indeed! Team Rocket's goal was to use all the Pokémon and control the world.\pBut now, I have a bigger, better organization.\pTeam Rainbow Rocket!"))
+    applymovement(LOCALID_GIOVANNI, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    setspeaker("???")
+    msgbox(format("And I, Giovanni, am its leader!"))
+    closemessage
+    delay(10)
+    applymovement(LOCALID_GIOVANNI, Zone34O_Movement_Giovanni_WalkSlowRight2)
+    waitmovement(0)
+    setspeaker("Giovanni")
+    msgbox(format("Team Rainbow Rocket will conquer all worlds!\pWe will establish dominion over every universe!"))
+    closemessage
+    applymovement(LOCALID_GIOVANNI, Zone34O_Movement_Giovanni_WalkBackMiddle)
+    waitmovement(0)
+    setspeaker("Giovanni")
+    msgbox(format("But in order for this precious dream to be realized, I needed resources - the resources of other worlds!\pI will drain each feeble, crumbling world of its wealth, its knowledge, its spirit, until there are none left to resist me."))
+    closemessage
+    delay(10)
+    setspeaker("Giovanni")
+    msgbox(format("Having a kid stand in front of me like this…\pSuch a thing should never happen.\pBut for some reason, it also makes me feel nostalgic."))
+    closemessage
+    delay(10)
+    applymovement(LOCALID_GIOVANNI, Common_Movement_WalkDown)
+    waitmovement(0)
+    setspeaker("Giovanni")
+    msgbox(format("If you insist on disrupting my plans, I will make you feel a world of pain!"))
+	call(EventScript_HealPreBoss)
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_GIOVANNI_BOSS_34, format("You… Insolent child!"))
+    setspeaker("Giovanni")
+    msgbox(format("No. It's not over.\pI won't be defeated by a child!\pI will unleash my ultimate weapon - Mewtwo! Show yourself, and let us blast this child to pieces!"))
+	playmoncry(SPECIES_MEWTWO, CRY_MODE_NORMAL)
+	waitmoncry
+    if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+	    trainerbattle_no_intro(TRAINER_PBL_GIOVANNI_BOSS_34_MEWTWO_Y, format("No! I refuse to lose!"))
+        setspeaker("Giovanni")
+        msgbox(format("NO! You will be crushed!\pTeam Rainbow Rocket will never be defeated!\pMewtwo, attack again!"))
+        playmoncry(SPECIES_MEWTWO, CRY_MODE_NORMAL)
+        waitmoncry
+	    trainerbattle_no_intro(TRAINER_PBL_GIOVANNI_BOSS_34_MEWTWO_X, format("Impossible…!"))
+    } else {
+	    trainerbattle_no_intro(TRAINER_PBL_GIOVANNI_BOSS_34_MEWTWO_Y, format("Impossible…!"))
+    }
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+    setspeaker("Giovanni")
+    msgbox(format("…I see you have truly brought out the strength of your Pokémon.\pEven defeating Mewtwo…\pIt would be foolish to stand in your way.\pI shall step aside this time! I hope we meet again…"))
+    setvar(VAR_ZONE_34_STATE, 8)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    setflag(FLAG_BEAT_BOSS_34)
+    removeobject(LOCALID_GIOVANNI)
+    delay(10)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    releaseall
+}
+
+movement Zone34O_Movement_Giovanni_WalkSlowLeft {
+    walk_slow_left
+}
+
+movement Zone34O_Movement_Giovanni_WalkSlowRight2 {
+    walk_slow_right * 2
+}
+
+movement Zone34O_Movement_Giovanni_WalkBackMiddle {
+    walk_slow_left
+    face_down
+}
