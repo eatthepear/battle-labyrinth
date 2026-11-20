@@ -10864,8 +10864,8 @@
     {
       "id": "LAYOUT_ZONE31C",
       "name": "Zone31C_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 27,
+      "height": 33,
       "primary_tileset": "gTileset_Common",
       "secondary_tileset": "gTileset_Snowy",
       "border_filepath": "data/layouts/Zone31C/border.bin",
