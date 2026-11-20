@@ -298,7 +298,7 @@ script EventScript_PuzzleSkip {
 				return
 			}
 		case PBL_PUZZLE_ZONE_30:
-			msgbox(format("Get a hint for Zone 30?"), MSGBOX_YESNO)
+			msgbox(format("Skip the puzzles in Zone 30?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				msgbox(format("TODO SKIP"))
 			} else {
@@ -337,7 +337,7 @@ script EventScript_PuzzleSkip {
 		case PBL_PUZZLE_ZONE_34G:
 		case PBL_PUZZLE_ZONE_34J:
 		case PBL_PUZZLE_ZONE_34K:
-			msgbox(format("Get a hint for Zone 34?"), MSGBOX_YESNO)
+			msgbox(format("Skip the puzzles in Zone 34?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				msgbox(format("TODO SKIP"))
 			} else {
