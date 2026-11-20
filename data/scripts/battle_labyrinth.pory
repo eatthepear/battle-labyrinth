@@ -130,7 +130,7 @@ script EventScript_PuzzleHint {
 				return
 			}
 		case PBL_PUZZLE_ZONE_34B:
-			msgbox(format("Get a hint for Zone 34?"), MSGBOX_YESNO)
+			msgbox(format("Get a hint for this room in Zone 34?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				msgbox(format("The hint is: R Y B Y R"))
 			} else {
@@ -138,7 +138,7 @@ script EventScript_PuzzleHint {
 				return
 			}
 		case PBL_PUZZLE_ZONE_34C:
-			msgbox(format("Get a hint for Zone 34?"), MSGBOX_YESNO)
+			msgbox(format("Get a hint for this room in Zone 34?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				msgbox(format("The hint is: O Y R B O B R"))
 			} else {
@@ -146,19 +146,26 @@ script EventScript_PuzzleHint {
 				return
 			}
 		case PBL_PUZZLE_ZONE_34F:
-		case PBL_PUZZLE_ZONE_34G:
-			msgbox(format("Get a hint for Zone 34?"), MSGBOX_YESNO)
+			msgbox(format("Get a hint for this room in Zone 34?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				msgbox(format("The hint is: 1st room go left first, then up. 2nd room go right first, then up."))
+				msgbox(format("The hint is: go left first, then up."))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_34G:
+			msgbox(format("Get a hint for this room in Zone 34?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("The hint is: go right first, then up."))
 			} else {
 				closemessage
 				return
 			}
 		case PBL_PUZZLE_ZONE_34J:
 		case PBL_PUZZLE_ZONE_34K:
-			msgbox(format("Get a hint for Zone 34?"), MSGBOX_YESNO)
+			msgbox(format("Get a hint for this room in Zone 34?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				msgbox(format("The hint is: TODO"))
+				msgbox(format("The hint is: watch how the Grunts are arranged to keep track of which room you are in.\pThe Grunts that are trainers always block your path."))
 			} else {
 				closemessage
 				return
@@ -335,11 +342,43 @@ script EventScript_PuzzleSkip {
 			}
 		case PBL_PUZZLE_ZONE_34F:
 		case PBL_PUZZLE_ZONE_34G:
-		case PBL_PUZZLE_ZONE_34J:
-		case PBL_PUZZLE_ZONE_34K:
-			msgbox(format("Skip the puzzles in Zone 34?"), MSGBOX_YESNO)
+			msgbox(format("Skip this room's puzzle?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				msgbox(format("TODO SKIP"))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_34J:
+			msgbox(format("Skip this room's puzzle?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				setmetatile(1, 18, METATILE_RocketCastle_DisabledWarp, 0)
+				setmetatile(5, 14, METATILE_RocketCastle_DisabledWarp, 0)
+				setmetatile(5, 18, METATILE_RocketCastle_DisabledWarp, 0)
+				setmetatile(12, 18, METATILE_RocketCastle_DisabledWarp, 0)
+				setmetatile(12, 14, METATILE_RocketCastle_DisabledWarp, 0)
+				setmetatile(8, 18, METATILE_RocketCastle_DisabledWarp, 0)
+				playse(SE_EXP_MAX)
+				special(DrawWholeMapView)
+				waitse
+				msgbox(format("Suddenly, some of the warps turned off! It might only be temporary…"))
+			} else {
+				closemessage
+				return
+			}
+		case PBL_PUZZLE_ZONE_34K:
+			msgbox(format("Skip this room's puzzle?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				setmetatile(8, 4, METATILE_RocketCastle_DisabledWarp, 0)
+				setmetatile(8, 8, METATILE_RocketCastle_DisabledWarp, 0)
+				setmetatile(12, 8, METATILE_RocketCastle_DisabledWarp, 0)
+				setmetatile(1, 4, METATILE_RocketCastle_DisabledWarp, 0)
+				setmetatile(1, 8, METATILE_RocketCastle_DisabledWarp, 0)
+				setmetatile(5, 8, METATILE_RocketCastle_DisabledWarp, 0)
+				playse(SE_EXP_MAX)
+				special(DrawWholeMapView)
+				waitse
+				msgbox(format("Suddenly, some of the warps turned off! It might only be temporary…"))
 			} else {
 				closemessage
 				return
