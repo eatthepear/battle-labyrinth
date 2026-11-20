@@ -22,15 +22,19 @@ mapscripts Zone35C_MapScripts {
 script Zone35C_EventScript_Lacey {
 	lock
 	faceplayer
-	playbgm(MUS_DP_ENCOUNTER_ELITE_FOUR, FALSE)
     if (flag(FLAG_BEAT_BOSS_35_LACEY) == FALSE) {
-        setspeaker("NAME")
-        msgbox(format("LET'S BATTLE!"))
+	    playbgm(MUS_DP_ENCOUNTER_ELITE_FOUR, FALSE)
+        setspeaker("Lacey")
+        msgbox(format("Oh, if it isn't {PLAYER}! Thank you again for helping me at Mt. Grief.\pLet me properly introduce myself for this.\pI am Lacey of the Elite Four. I like to use Fairy-type Pokémon.\pI'm somehow not surprised that I'd get a challenge from you, {PLAYER}.\pWhen I met you, I just knew you were a special Pokémon Trainer.\pNow, for this battle, we're going to be battling as a Double Battle!\pI'm not going to hold anything back.\pI want to be sure you walk away with a proper understanding, after all.\pYou're about to learn that cuteness is real strength!"))
 	    trainerbattle_no_intro(TRAINER_PBL_LACEY_BOSS_35, format("DEFEAT!"))
         setflag(FLAG_BEAT_BOSS_35_LACEY)
+        setspeaker("Lacey")
+        msgbox(format("{PLAYER}! {PLAYER}! Did you see? Did you see our Pokémon battling it out?!\pOooh, it's almost too much! They were just too cute, even for me!"))
+        closemessage
         call(PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles)
     }
-	msgbox(format("DEFEATED!"))
+    setspeaker("Lacey")
+	msgbox(format("You really are very strong when you get serious in battle, {PLAYER}.\pI wonder how far you'll be able to get, facing off against the Elite Four."))
 	release
 	end
 }
