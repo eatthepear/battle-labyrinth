@@ -7,14 +7,14 @@ mapscripts Zone13B_MapScripts {
 }
 
 script Zone13B_EventScript_MagmaGrunt1 {
-	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_13B_1, format("Magma!"), format("Magma!"))
-	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_13B_1, format("Hey! You're not a scientist, nor a member of Team Magma.\pThat must mean you're a threat to be eliminated!"), format("I couldn't win!"))
+	msgbox(format("I won't be the one to stop you, but my comrades will!\pFor Team Magma!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone13B_EventScript_MagmaGrunt2 {
-	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_13B_2, format("Magma!"), format("Magma!"))
-	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_13B_2, format("Team Magma seeks to expand the world's land mass, increasing the amount of space for people and Pokémon to live!\pDon't get in our way!"), format("No! We need more land!"))
+	msgbox(format("More land means more resources, more resources means less conflict!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -22,13 +22,14 @@ script Zone13B_EventScript_MagmaGrunt3 {
 	lock
 	faceplayer
 	if (defeated(TRAINER_PBL_MAGMA_GRUNT_13B_3)) {
-		msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
+		msgbox(format("Our comrades have gone ahead, and the tunnels are full of Magma Grunts!\pYou won't get very far!"), MSGBOX_AUTOCLOSE)
 		release
 		end
 	}
-	msgbox(format("Don't think I'll move just because you beat me!"))
-	trainerbattle_no_intro(TRAINER_PBL_MAGMA_GRUNT_13B_3, format("Magma!"))
-	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("Don't think I'll move over just because you beat me!"))
+	trainerbattle_no_intro(TRAINER_PBL_MAGMA_GRUNT_13B_3, format("Argh!"))
+	msgbox(format("Ouch!\pOk, I'll move over!"))
+	closemessage
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_0) == 18) {
 		applymovement(LOCALID_GRUNT_13B, Common_Movement_WalkRight)
@@ -46,7 +47,7 @@ script Zone13B_EventScript_MagmaGrunt3 {
 script Zone13B_EventScript_DefeatedGrunt1 {
 	lock
 	faceplayer
-	msgbox(format("Defeated!"))
+	msgbox(format("That girl swept me…"))
 	release
 	end
 }
@@ -54,7 +55,7 @@ script Zone13B_EventScript_DefeatedGrunt1 {
 script Zone13B_EventScript_DefeatedGrunt2 {
 	lock
 	faceplayer
-	msgbox(format("Defeated!"))
+	msgbox(format("I can't believe I got beaten by a child…"))
 	release
 	end
 }
@@ -62,7 +63,7 @@ script Zone13B_EventScript_DefeatedGrunt2 {
 script Zone13B_EventScript_DefeatedGrunt3 {
 	lock
 	faceplayer
-	msgbox(format("Defeated!"))
+	msgbox(format("Admin Tabitha is not going to be happy when he learns I lost to some kid…"))
 	release
 	end
 }

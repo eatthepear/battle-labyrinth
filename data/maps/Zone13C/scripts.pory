@@ -1,51 +1,5 @@
 mapscripts Zone13C_MapScripts {}
 
-script Zone13C_EventScript_BossBattle {
-	lock
-	faceplayer
-	if (flag(FLAG_BEAT_BOSS_11) == true) {
-		msgbox(Zone13C_Text_Jenny_PostBattle)
-		closemessage
-		release
-		end
-	}
-	msgbox(Zone13C_Text_Boss11WantBattle, MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		msgbox(format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: Nervous about facing me?"))
-		release
-		end
-	}
-	fadeoutbgm(1)
-	msgbox(format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: My battle style is quite ferocious, despite me having only one Pokémon!"), MSGBOX_DEFAULT)
-	call(EventScript_HealPreBoss)
-	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_CHALLENGE) == true)) {
-	// 	trainerbattle_no_intro(TRAINER_PBL_JENNY_BOSS_11_CHALLENGE, Zone13C_Text_Boss11Defeat)
-	// } else {
-	// 	trainerbattle_no_intro(TRAINER_PBL_JENNY_BOSS_11, Zone13C_Text_Boss11Defeat)
-	// }
-	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	msgbox(format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: Here, I want you to have this item.\pIt'll stop your Pokémon's stats from being lowered, but it's only single use."), MSGBOX_DEFAULT)
-	giveitem(ITEM_WHITE_HERB)
-	msgbox(Zone13C_Text_Jenny_PostBattle)
-	closemessage
-	setflag(FLAG_BEAT_BOSS_11)
-	release
-	end
-}
-
-text Zone13C_Text_Boss11WantBattle {
-	format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: Ah, it's so nice to finally have a resting spot from all my traveling.\pWhat do you want?\pA battle?")
-}
-
-text Zone13C_Text_Boss11Defeat {
-	"You did great, Gyarados!"
-}
-
-text Zone13C_Text_Jenny_PostBattle {
-	format("{COLOR BLUE}Jenny{COLOR DARK_GRAY}: I guess traveling lightly comes with downsides, too.\pI sometimes wish I could bring more Pokémon on my travels with me.")
-}
-
 script Zone13C_EventScript_Fossil_Scientist {
 	lock
 	faceplayer
@@ -222,7 +176,7 @@ script Zone13C_EventScript_Scientist_WideLens {
 script Zone13C_EventScript_Serena {
 	lock
 	setspeaker("Serena")
-	msgbox(format("SERENA!"))
+	msgbox(format("This is an Admin, {PLAYER}!\pThere's another one somewhere, if you can find them!\pI'll handle this guy here!"))
 	release
 	end
 }
@@ -230,7 +184,7 @@ script Zone13C_EventScript_Serena {
 script Zone13C_EventScript_Tabitha {
 	lock
 	setspeaker("Tabitha")
-	msgbox(format("TABITHA!"))
+	msgbox(format("Foolish child!\pWe merely seek increased land in the world!\pStay out of our way!"))
 	release
 	end
 }
