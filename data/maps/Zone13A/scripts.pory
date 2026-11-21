@@ -113,20 +113,20 @@ script Zone13A_EventScript_Violet {
 }
 
 script Zone13A_EventScript_Wanda {
-	trainerbattle_single(TRAINER_PBL_WANDA, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_WANDA, format("I've traveled long and far, for you to be my final opponent!"), format("My journey, at an end now…"))
+	msgbox(format("It's time to go home…"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone13A_EventScript_Benjamin {
-	trainerbattle_single(TRAINER_PBL_BENJAMIN, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_BENJAMIN, format("I'm so lost right now…"), format("I do not know the way…"))
+	msgbox(format("To be clear, I know where I am physically.\pI just have a lot on my mind right now."), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone13A_EventScript_Geralt {
-	trainerbattle_single(TRAINER_PBL_GERALT, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_GERALT, format("You ever stop to smell the roses, like a real man?"), format("There's nothing wrong with appreciating nature. That's what a real man would do."))
+	msgbox(format("Take a moment to enjoy life, like a real man."), MSGBOX_AUTOCLOSE)
 	end
 }
 
