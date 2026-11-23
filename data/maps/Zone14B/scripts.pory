@@ -26,19 +26,19 @@ script Zone14B_EventScript_FireStone {
 }
 
 script Zone14B_EventScript_MagmaGrunt1 {
-	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14B_1, format("Magma!"), format("Magma!"))
-	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14B_1, format("When Team Magma has roll call, we get important guarding assignments in the order that we line up.\pThat's why I'm stuck in this tunnel. I'm always late to roll call!"), format("I'm always late for training sessions, too! I hate to say it, but I'm wimpy…"))
+	msgbox(format("Okay, I'll try to put a little more effort into things from now on…"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone14B_EventScript_MagmaGrunt2 {
-	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14B_2, format("Magma!"), format("Magma!"))
-	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14B_2, format("You're not finished yet! You're not getting by me easily!"), format("Was I that easy to knock down?"))
+	msgbox(format("C-come on, one more match…"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone14B_EventScript_MagmaGrunt3 {
-	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14B_3, format("Magma!"), format("Magma!"))
-	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14B_3, format("Fuhahaha! Soon! Very soon! Our grand objective will be achieved!"), format("Grr…I've come so far, but now this?"))
+	msgbox(format("Tabitha, ma'am! An intruder is headed your way!"), MSGBOX_AUTOCLOSE)
 	end
 }

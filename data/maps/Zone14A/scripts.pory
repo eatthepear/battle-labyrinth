@@ -26,25 +26,25 @@ script Zone14A_EventScript_DragonFang {
 }
 
 script Zone14A_EventScript_MagmaGrunt1 {
-	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14A_1, format("Magma!"), format("Magma!"))
-	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14A_1, format("Huh? What's a kid doing here?"), format("Huh? I lost?!"))
+	msgbox(format("Oh, no…\pI'll catch an earful for losing to a kid…"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone14A_EventScript_MagmaGrunt2 {
-	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14A_2, format("Magma!"), format("Magma!"))
-	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14A_2, format("Hold it right there!\pYou don't really expect me to keep my trap shut and let you waltz by me?"), format("Ooh wow! I concede!"))
+	msgbox(format("Maybe it would've been better if I did just let you go unchallenged…"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone14A_EventScript_MagmaGrunt3 {
-	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14A_3, format("Magma!"), format("Magma!"))
-	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14A_3, format("Oh, oh! An intruder!"), format("Mutter…"))
+	msgbox(format("Actually, I'm no expert at battling…"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone14A_EventScript_MagmaGrunt4 {
-	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14A_4, format("Magma!"), format("Magma!"))
-	msgbox(format("Magma!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14A_4, format("We joined so we can help our leader achieve his fantastic vision.\pI don't care if you're with Team Aqua or if you're just some kid passing by.\pNo one interferes with us and gets away with it!"), format("Oh, no! You're not to be trusted at all!"))
+	msgbox(format("Listen to me. Team Magma is right!\pDon't listen to Team Aqua. Don't believe their lies!"), MSGBOX_AUTOCLOSE)
 	end
 }
