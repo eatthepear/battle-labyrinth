@@ -751,7 +751,7 @@ script EventScript_Notebook_ZoneInfo {
 		case 4:
 			msgbox(format("{COLOR GREEN}Zone 4{COLOR DARK_GRAY} is a tightly nestled woodland with a strange enchantment over it."))
 		case 5:
-			msgbox(format("{COLOR GREEN}Zone 5{COLOR DARK_GRAY} is a temperate forest with a Psychic Gym."))
+			msgbox(format("{COLOR GREEN}Zone 5{COLOR DARK_GRAY} is a temperate forest with a Pokémon Gym."))
 		case 6:
 			msgbox(format("{COLOR GREEN}Zone 6{COLOR DARK_GRAY} is an island surrounded by ocean."))
 		case 7:
@@ -771,15 +771,23 @@ script EventScript_Notebook_ZoneInfo {
 		case 15:
 			msgbox(format("{COLOR GREEN}Zone 15{COLOR DARK_GRAY} is a cave covered in ice."))
 		case 16:
+			msgbox(format("{COLOR GREEN}Zone 16{COLOR DARK_GRAY} is an archipelago in the ocean with sandy beaches."))
 		case 17:
+			msgbox(format("{COLOR GREEN}Zone 17{COLOR DARK_GRAY} is a cemetery at the top of a mountain."))
 		case 18:
 		case 19:
+			msgbox(format("{COLOR GREEN}Zone 18{COLOR DARK_GRAY} is a beach resort with a Pokémon Gym, while {COLOR GREEN}Zone 19{COLOR DARK_GRAY} is an underwater trench."))
 		case 20:
+			msgbox(format("{COLOR GREEN}Zone 20{COLOR DARK_GRAY} is a forest river with a Pokémon Gym that doubles as a restaurant."))
 		case 21:
+			msgbox(format("{COLOR GREEN}Zone 21{COLOR DARK_GRAY} is a large lake that also has a long road on it."))
 		case 22:
+			msgbox(format("{COLOR GREEN}Zone 22{COLOR DARK_GRAY} is a path through a boreal forest, where the rivers freeze over and it often snows."))
 		case 23:
+			msgbox(format("{COLOR GREEN}Zone 23{COLOR DARK_GRAY} is a dense swamp that constantly rains."))
 		case 24:
 		case 25:
+			msgbox(format("{COLOR GREEN}Zone 24{COLOR DARK_GRAY} is a valley of badlands and its surrounding cliffs, while {COLOR GREEN}Zone 25{COLOR DARK_GRAY} is a tower from ancient times."))
 		case 26:
 		case 27:
 		case 28:
