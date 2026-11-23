@@ -180,7 +180,7 @@ Zone18A_EventScript_Sign::
 	end
 
 Zone18A_Text_Sign:
-	.string "Trainer's Dojo!\n"
+	.string "Pokémon Gym!\n"
 	.string "All challengers welcome!$"
 
 Zone18A_EventScript_Doris::

@@ -23,32 +23,32 @@ script Zone18B_EventScript_Larry {
     lock
 	if (flag(FLAG_BEAT_BOSS_18)) {
 		setspeaker("Larry")
-		msgbox(format("You will become even stronger! I've battled you, so I know."))
+		msgbox(format("Now, I'd better get back to work. If you'll excuse me.\pThere are other challengers that might come through, and I get overtime pay for this.\pI hope you can still enjoy the island. I certainly would if I could."))
 		release
 		end
 	}
 	setspeaker("Larry")
-	msgbox(format("Hehehe… Were you surprised?\pThis is my own Pokémon Gym, my very own, without my brother anywhere near!\pWhile it would be nice to be around him sometimes…\pNever mind. You've brought yourself, and you're looking for a challenge.\pI hope to meet that expectation!\pBring it!"))
+	msgbox(format("Hello.\pI'm Larry. I'm supposed to be on vacation here, but the normal Gym Leader is away, so they cancelled my time off.\pGood job on making your way through the Gym.\pAnyway, my boss will dock my pay if I spend too much time chitchatting.\pLet's get this battle over with."))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_LARRY_BOSS_18, format("What? I lost?"))
+	trainerbattle_no_intro(TRAINER_PBL_LARRY_BOSS_18, format("You certainly threw me for a loop."))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Larry")
-	msgbox(format("It can't be helped. You've won…\pCongratulations. Please take the Normal Badge!"))
+	msgbox(format("You're rather strong, aren't you? Enough to bring out my poker face, even.\pI lost, so that means I have to give you a badge.\pEven during my vacation."))
 	setspeaker(SP_NAME_NONE)
 	playfanfare(MUS_OBTAIN_BADGE)
 	msgbox(format("{PLAYER} received the Normal Badge from {COLOR BLUE}Larry{COLOR DARK_GRAY}!"))
 	waitfanfare
-	setspeaker("Grant")
-	msgbox(format("Since you now have the Normal Badge, you can use the HM {COLOR GREEN}Cut{COLOR DARK_GRAY} outside battle.\pI'd also like you to take this TM."))
+	setspeaker("Larry")
+	msgbox(format("Having the Normal Badge lets you use the HM {COLOR GREEN}Dive{COLOR DARK_GRAY} outside battle.\pThis is for you. Though hopefully a child like you has no need to put on its namesake…"))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_FACADE)
 	setspeaker("Larry")
-	msgbox(format("That's it!\pFufufu…\pJust kidding, here's the other one as well. Us Gym Leaders give out multiple rewards!"))
+	msgbox(format("Actually, perhaps this one would serve better for a kid like you."))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_HYPER_VOICE)
 	setspeaker("Larry")
-	msgbox(format("You will become even stronger! I've battled you, so I know."))
+	msgbox(format("Now, I'd better get back to work. If you'll excuse me.\pThere are other challengers that might come through, and I get overtime pay for this.\pI hope you can still enjoy the island. I certainly would if I could."))
     setflag(FLAG_BEAT_BOSS_18)
 	setflag(FLAG_BADGE05_GET)
 	setvar(VAR_ZONE_18_STATE, 1)
@@ -804,12 +804,12 @@ script Zone18B_EventScript_UnlockRoomDoors {
 }
 
 script Zone18B_EventScript_Statue {
-	msgbox("Trainer's Dojo\nEstablished 2021", MSGBOX_SIGN)
+	msgbox("Pokémon Gym\nEstablished 2021", MSGBOX_SIGN)
 	end
 }
 
 script Zone18B_EventScript_Rachel {
-	trainerbattle_single(TRAINER_PBL_RACHEL, format("Welcome to the Trainer's Dojo!\pUh… what else is in this script…\pOh! Each room has a particular type associated with it.\pYou can pick and choose which room to challenge.\pHmm… Looks like I'm supposed to battle you now.\pWell, good luck to you, facing my Grass-types in battle!"), format("You got me!"), Zone18B_EventScript_SlideOpenGrassRoomDoors)
+	trainerbattle_single(TRAINER_PBL_RACHEL, format("Welcome to this Pokémon Gym!\pUh… what else is in this script…\pOh! Each room has a particular type associated with it.\pYou can pick and choose which room to challenge.\pHmm… Looks like I'm supposed to battle you now.\pWell, good luck to you, facing my Grass-types in battle!"), format("You got me!"), Zone18B_EventScript_SlideOpenGrassRoomDoors)
 	msgbox(format("You can pick between the Rock room and the Ice room."), MSGBOX_AUTOCLOSE)
 	end
 }
