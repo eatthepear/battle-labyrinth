@@ -121,14 +121,6 @@ script EventScript_PuzzleHint {
 				closemessage
 				return
 			}
-		case PBL_PUZZLE_ZONE_30:
-			msgbox(format("Get a hint for Zone 30?"), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				msgbox(format("The hint is: the overall route through Rainbow Rocket Co. is linear, with some side paths.\pYou will deal with Team Magma first, then Team Aqua, then Team Galactic, then finally Team Rainbow Rocket."))
-			} else {
-				closemessage
-				return
-			}
 		case PBL_PUZZLE_ZONE_34B:
 			msgbox(format("Get a hint for this room in Zone 34?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
@@ -300,14 +292,6 @@ script EventScript_PuzzleSkip {
 				msgbox(format("{PLAYER} found a secret path that led to the bottom floor!"))
 				warp(MAP_ZONE25M, 1)
 				waitstate
-			} else {
-				closemessage
-				return
-			}
-		case PBL_PUZZLE_ZONE_30:
-			msgbox(format("Skip the puzzles in Zone 30?"), MSGBOX_YESNO)
-			if (var(VAR_RESULT) == YES) {
-				msgbox(format("TODO SKIP"))
 			} else {
 				closemessage
 				return

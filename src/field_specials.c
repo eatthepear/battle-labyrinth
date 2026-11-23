@@ -5025,9 +5025,6 @@ u16 CheckWhichPuzzle(void)
     if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_25) {
         return PBL_PUZZLE_ZONE_25;
     }
-    if (gMapHeader.regionMapSectionId == MAPSEC_ZONE_30) {
-        return PBL_PUZZLE_ZONE_30;
-    }
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ZONE34B) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ZONE34B)) {
         if (FlagGet(FLAG_ZONE34B_PUZZLE_COMPLETED) == FALSE)
             return PBL_PUZZLE_ZONE_34B;
