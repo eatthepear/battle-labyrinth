@@ -373,5 +373,22 @@
       "script": "Zone21D_EventScript_SecretWarp"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 7,
+      "y": 26,
+      "elevation": 3,
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE21_7"
+    },
+    {
+      "type": "hidden_item",
+      "x": 6,
+      "y": 28,
+      "elevation": 3,
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE21_8"
+    }
+  ]
 }

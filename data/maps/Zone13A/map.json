@@ -180,6 +180,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Zone13A_EventScript_Sign"
+    },
+    {
+      "type": "hidden_item",
+      "x": 26,
+      "y": 15,
+      "elevation": 3,
+      "item": "ITEM_ORAN_BERRY",
+      "flag": "FLAG_HIDDEN_BERRY_ZONE13_2"
     }
   ]
 }

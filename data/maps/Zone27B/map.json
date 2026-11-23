@@ -65,5 +65,22 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 13,
+      "y": 23,
+      "elevation": 3,
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE27_27"
+    },
+    {
+      "type": "hidden_item",
+      "x": 32,
+      "y": 23,
+      "elevation": 3,
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE27_28"
+    }
+  ]
 }

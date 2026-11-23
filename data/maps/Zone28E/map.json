@@ -109,5 +109,38 @@
       "script": "Zone28E_EventScript_KimonoGirl"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 14,
+      "y": 17,
+      "elevation": 3,
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE27_23"
+    },
+    {
+      "type": "hidden_item",
+      "x": 7,
+      "y": 2,
+      "elevation": 3,
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE27_24"
+    },
+    {
+      "type": "hidden_item",
+      "x": 4,
+      "y": 16,
+      "elevation": 3,
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE27_25"
+    },
+    {
+      "type": "hidden_item",
+      "x": 5,
+      "y": 36,
+      "elevation": 3,
+      "item": "ITEM_NORMAL_TERA_SHARD",
+      "flag": "FLAG_HIDDEN_SHARD_ZONE27_26"
+    }
+  ]
 }

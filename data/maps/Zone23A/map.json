@@ -261,7 +261,7 @@
       "y": 4,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_BERRY_ZONE23_BERRY_1"
+      "flag": "FLAG_HIDDEN_BERRY_ZONE23_1"
     },
     {
       "type": "hidden_item",
@@ -269,7 +269,7 @@
       "y": 19,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_BERRY_ZONE23_BERRY_2"
+      "flag": "FLAG_HIDDEN_BERRY_ZONE23_2"
     },
     {
       "type": "hidden_item",
@@ -277,7 +277,7 @@
       "y": 37,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_BERRY_ZONE23_BERRY_3"
+      "flag": "FLAG_HIDDEN_BERRY_ZONE23_3"
     },
     {
       "type": "hidden_item",
@@ -285,7 +285,7 @@
       "y": 47,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_BERRY_ZONE23_BERRY_4"
+      "flag": "FLAG_HIDDEN_BERRY_ZONE23_4"
     },
     {
       "type": "hidden_item",
@@ -293,7 +293,7 @@
       "y": 53,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_BERRY_ZONE23_BERRY_5"
+      "flag": "FLAG_HIDDEN_BERRY_ZONE23_5"
     },
     {
       "type": "hidden_item",
@@ -301,7 +301,7 @@
       "y": 41,
       "elevation": 3,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_BERRY_ZONE23_BERRY_6"
+      "flag": "FLAG_HIDDEN_BERRY_ZONE23_6"
     }
   ]
 }
