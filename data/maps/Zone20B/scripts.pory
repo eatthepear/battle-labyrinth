@@ -66,12 +66,12 @@ script Zone20B_EventScript_Cilan {
     }
     if (var(VAR_ZONE_20_STATE) == 2) {
         setspeaker("Cilan")
-        msgbox(format("DEFEATED ALL! TIME TO BATTLE?"), MSGBOX_YESNO)
+        msgbox(format("Um. My name is Cilan. I like Grass-type Pokémon.\pI heard from my little sister that you're looking to earn a Gym Badge?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == YES) {
-            msgbox(format("INTRO TEXT! EXPLAIN GIMMICK!"))
-            msgbox(format("YOU WANT TO BE PARTNERS WITH ME AGAINST MY BROTHERS, RIGHT?"), MSGBOX_YESNO)
+            msgbox(format("To earn a Gym Badge here, you have to pick one of myself, Chili, and Cress to be your partner, and then defeat the other two in a Tag Battle!"))
+            msgbox(format("How about it? Would you team up with me and take part in a Double Battle against Chili and Cress?"), MSGBOX_YESNO)
             if (var(VAR_RESULT) == YES) {
-                msgbox(format("GREAT! LET'S GO BATTLE!"), MSGBOX_AUTOCLOSE)
+                msgbox(format("OK. If you're fine with me, I will put everything I have into being your partner in battle!"))
                 fadescreenswapbuffers(FADE_TO_BLACK)
                 special(SpawnCameraObject)
                 applymovement(LOCALID_CAMERA, Common_Movement_WalkDown)
@@ -80,18 +80,18 @@ script Zone20B_EventScript_Cilan {
                 setvar(VAR_TEMP_0, 1)
                 goto(Zone20B_EventScript_StartBossBattle)
             } else {
-                msgbox(format("SO SAD! LET ME KNOW IF YOU CHANGE MIND!"))
+                msgbox(format("…Ah, hmm. I must've timed… my invitation poorly… True enough, I did want to… to have a Pokémon battle with you."))
             }
             release
             end
         }
         setspeaker("Cilan")
-        msgbox(format("SAY WHEN READY TO BATTLE!"))
+        msgbox(format("Ah, you must not be ready yet.\pLet me know when you are."))
         release
         end
     }
     setspeaker("Cilan")
-    msgbox(format("NEED BEAT ALL STAFF!"))
+    msgbox(format("Um. Hello. My name is Cilan. I am one of three Gym Leaders here.\pWe're not taking challengers at the moment.\pSee my younger sister, Cori, if you'd like a Gym Badge."))
     release
     end
 }
@@ -107,12 +107,13 @@ script Zone20B_EventScript_Chili {
     }
     if (var(VAR_ZONE_20_STATE) == 2) {
         setspeaker("Chili")
-        msgbox(format("DEFEATED ALL! TIME TO BATTLE?"), MSGBOX_YESNO)
+        msgbox(format("I'm Chili! My Fire-type Pokémon and I are too hot to handle!\pI heard from my little sister that you're looking to earn a Gym Badge?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == YES) {
-            msgbox(format("INTRO TEXT! EXPLAIN GIMMICK!"))
-            msgbox(format("YOU WANT TO BE PARTNERS WITH ME AGAINST MY BROTHERS, RIGHT?"), MSGBOX_YESNO)
+            msgbox(format("To earn a Gym Badge here, you have to pick one of myself, Cilan, and Cress to be your partner, and then defeat the other two in a Tag Battle!"))
+            msgbox(format("What it boils down to is, I want you to be my partner!\pWhat do you say about teaming up with me against Cilan and Cress?"), MSGBOX_YESNO)
             if (var(VAR_RESULT) == YES) {
-                msgbox(format("GREAT! LET'S GO BATTLE!"), MSGBOX_AUTOCLOSE)
+                msgbox(format("Yeeeeooow! I'm the strongest of us brothers, and I'll make sure you win!"))
+                closemessage
                 fadescreenswapbuffers(FADE_TO_BLACK)
                 special(SpawnCameraObject)
                 applymovement(LOCALID_CAMERA, Common_Movement_WalkDown4)
@@ -123,18 +124,18 @@ script Zone20B_EventScript_Chili {
                 setvar(VAR_TEMP_0, 2)
                 goto(Zone20B_EventScript_StartBossBattle)
             } else {
-                msgbox(format("SO SAD! LET ME KNOW IF YOU CHANGE MIND!"))
+                msgbox(format("Aww, man! I was all fired up, too!"))
             }
             release
             end
         }
         setspeaker("Chili")
-        msgbox(format("SAY WHEN READY TO BATTLE!"))
+        msgbox(format("Whoa! Alrighty then!\pYou're not ready, just hit me up when you are!"))
         release
         end
     }
     setspeaker("Chili")
-    msgbox(format("NEED BEAT ALL STAFF!"))
+    msgbox(format("Hey there! I'm Chili! A Gym Leader along with my brothers!\pWe're not taking challengers at the moment!\pSee my younger sister if you want to earn a Gym Badge!"))
     release
     end
 }
@@ -150,12 +151,13 @@ script Zone20B_EventScript_Cress {
     }
     if (var(VAR_ZONE_20_STATE) == 2) {
         setspeaker("Cress")
-        msgbox(format("DEFEATED ALL! TIME TO BATTLE?"), MSGBOX_YESNO)
+        msgbox(format("I'm a Water-type specialist, and my name is Cress. Pleased to make your acquaintance.\pI heard from my little sister that you're looking to earn a Gym Badge?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == YES) {
-            msgbox(format("INTRO TEXT! EXPLAIN GIMMICK!"))
-            msgbox(format("YOU WANT TO BE PARTNERS WITH ME AGAINST MY BROTHERS, RIGHT?"), MSGBOX_YESNO)
+            msgbox(format("To earn a Gym Badge here, you have to pick one of myself, Cilan, and Chili to be your partner, and then defeat the other two in a Tag Battle!"))
+            msgbox(format("Would you be so kind as to be my partner in a battle against Cilan and Chili?"), MSGBOX_YESNO)
             if (var(VAR_RESULT) == YES) {
-                msgbox(format("GREAT! LET'S GO BATTLE!"), MSGBOX_AUTOCLOSE)
+                msgbox(format("That's wonderful. With me, Cress, as your partner, victory is assured."))
+                closemessage
                 fadescreenswapbuffers(FADE_TO_BLACK)
                 special(SpawnCameraObject)
                 applymovement(LOCALID_CAMERA, Common_Movement_WalkDown4)
@@ -166,18 +168,18 @@ script Zone20B_EventScript_Cress {
                 setvar(VAR_TEMP_0, 3)
                 goto(Zone20B_EventScript_StartBossBattle)
             } else {
-                msgbox(format("SO SAD! LET ME KNOW IF YOU CHANGE MIND!"))
+                msgbox(format("Oh, what's this? I'm amazed you turned me, Cress, down."))
             }
             release
             end
         }
         setspeaker("Cress")
-        msgbox(format("SAY WHEN READY TO BATTLE!"))
+        msgbox(format("I see, you must need a little more time.\pLet me know when you are fully prepared."))
         release
         end
     }
     setspeaker("Cress")
-    msgbox(format("NEED BEAT ALL STAFF!"))
+    msgbox(format("Hello, my name is Cress, and I am a Gym Leader, one of three.\pWe're not taking challengers at the moment.\pPlease see my younger sister at the front if you'd like to earn a Gym Badge."))
     release
     end
 }
@@ -216,7 +218,37 @@ script Zone20B_EventScript_StartBossBattle {
             waitmovement(0)
     }
 	fadescreenswapbuffers(FADE_FROM_BLACK)
-    msgbox(format("OK! YOU'VE DECIDED! BATTLE TIME!"))
+    setspeaker("Cori")
+    msgbox(format("Ok! {PLAYER} is trying to get their Gym Badge!"))
+    switch (var(VAR_TEMP_0)) {
+        case 1:
+            msgbox(format("They've selected Cilan as their partner!\pSo it will be {PLAYER} and Cilan, versus Chili and Cress!"))
+            applymovement(LOCALID_CILAN, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            setspeaker("Cilan")
+            msgbox(format("OK… So, um, I'm Cilan, I like Grass-type Pokémon, and this is my partner here!"))
+            closemessage
+            call(Zone20B_EventScript_ChiliPreBattle)
+            call(Zone20B_EventScript_CressPreBattle)
+        case 2:
+            msgbox(format("They've selected Chili as their partner!\pSo it will be {PLAYER} and Chili, versus Cilan and Cress!"))
+            applymovement(LOCALID_CHILI, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            setspeaker("Chili")
+            msgbox(format("That's that, then!\pI'm going to show you what me and my blazing Fire types can do!"))
+            closemessage
+            call(Zone20B_EventScript_CilanPreBattle)
+            call(Zone20B_EventScript_CressPreBattle)
+        case 3:
+            msgbox(format("They've selected Cress as their partner!\pSo it will be {PLAYER} and Cress, versus Cilan and Chili!"))
+            applymovement(LOCALID_CRESS, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            setspeaker("Cress")
+            msgbox(format("It shall be I and my esteemed Water types that you must face in battle! Let us begin, then!\pIn garde, user of Grass-type Pokémon, Cilan, and of Fire-type Pokémon, Chili!"))
+            closemessage
+            call(Zone20B_EventScript_CilanPreBattle)
+            call(Zone20B_EventScript_ChiliPreBattle)
+    }
     call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
     special(SpawnCameraObject)
@@ -248,7 +280,8 @@ script Zone20B_EventScript_StartBossBattle {
     }
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
     setspeaker("Cori")
-    msgbox(format("OMG! SUCH GOOD BATTLE! LET'S GET CLEANED UP..."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Wow! What an incredible battle!\pLet's get all cleaned up…"))
+    closemessage
     fadescreenswapbuffers(FADE_TO_BLACK)
     special(SpawnCameraObject)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkUp3)
@@ -266,41 +299,53 @@ script Zone20B_EventScript_StartBossBattle {
     applymovement(LOCALID_CRESS, Common_Movement_FaceDown)
     waitmovement(0)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
-	setspeaker("Cilan")
-	msgbox(format("It can't be helped. You've won…\pCongratulations. Please take the Mind Badge!"))
+	setspeaker("Cori")
+	msgbox(format("Gym Badges are a proof of a Trainer's abilities.\pSince you completed our challenge and won your Tag Battle, please take the Trio Badge!"))
 	setspeaker(SP_NAME_NONE)
 	playfanfare(MUS_OBTAIN_BADGE)
-	msgbox(format("{PLAYER} received the Mind Badge from {COLOR BLUE}Liza{COLOR DARK_GRAY}!"))
+	msgbox(format("{PLAYER} received the Trio Badge from {COLOR BLUE}Cori{COLOR DARK_GRAY}, {COLOR BLUE}Cilan{COLOR DARK_GRAY}, {COLOR BLUE}Chili{COLOR DARK_GRAY}, and {COLOR BLUE}Cress{COLOR DARK_GRAY}!"))
 	waitfanfare
+	setspeaker("Cori")
+	msgbox(format("That badge lets you use {COLOR GREEN}Strength{COLOR DARK_GRAY} outside battle!\pAlso, my brothers have some things for you as well!"))
 	setspeaker("Cilan")
-	msgbox(format("Since you now have the Mind Badge, you can use the HM {COLOR GREEN}Cut{COLOR DARK_GRAY} outside battle.\pALSO TAKE THIS!"))
+	msgbox(format("Um… Yes… Please take this from me."))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_GIGA_DRAIN)
+    closemessage
+	setspeaker("Cilan")
+	msgbox(format("Giga Drain is one of my favorite moves."))
     closemessage
     applymovement(LOCALID_CILAN, Zone20B_Movement_CenterToRight)
     applymovement(LOCALID_CHILI, Zone20B_Movement_LeftToCenter)
     applymovement(LOCALID_CRESS, Zone20B_Movement_RightToLeft)
     waitmovement(0)
 	setspeaker("Chili")
-	msgbox(format("U GET THIS TM! HERE U GO!"))
+	msgbox(format("And take this from me!\pFlaming hot!"))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_FLAMETHROWER)
+    closemessage
+	setspeaker("Chili")
+	msgbox(format("Yeah! That's one barbecue right there!"))
     closemessage
     applymovement(LOCALID_CILAN, Zone20B_Movement_RightToLeft)
     applymovement(LOCALID_CHILI, Zone20B_Movement_CenterToRight)
     applymovement(LOCALID_CRESS, Zone20B_Movement_LeftToCenter)
     waitmovement(0)
 	setspeaker("Cress")
-	msgbox(format("U GET THIS TM! HERE U GO!"))
+	msgbox(format("And finally from me, please take this."))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_SCALD)
+    closemessage
+	setspeaker("Cress")
+	msgbox(format("I hope it will prove useful to you."))
     closemessage
     applymovement(LOCALID_CILAN, Zone20B_Movement_LeftToCenter)
     applymovement(LOCALID_CHILI, Zone20B_Movement_RightToLeft)
     applymovement(LOCALID_CRESS, Zone20B_Movement_CenterToRight)
     waitmovement(0)
 	setspeaker("Cilan")
-	msgbox(format("GOOD WORK! WE GO BACK TO WORK NOW!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("Um… back to work for now, I suppose."))
+    closemessage
     applymovement(LOCALID_CHILI, Common_Movement_WalkLeft)
     applymovement(LOCALID_CRESS, Common_Movement_WalkRight)
     waitmovement(0)
@@ -312,7 +357,8 @@ script Zone20B_EventScript_StartBossBattle {
     applymovement(LOCALID_PLAYER, Common_Movement_FaceLeft)
     waitmovement(0)
     setspeaker("Cori")
-    msgbox(format("GOOD WORK AGAIN PLAYER!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Congratulations again, {PLAYER}!\pI think you made everyone in the restaurant a little happier today."))
+    closemessage
     applymovement(LOCALID_CORI_20B, Common_Movement_WalkDown6)
     waitmovement(0)
     applymovement(LOCALID_PLAYER, Common_Movement_FaceDown)
@@ -327,15 +373,15 @@ script Zone20B_EventScript_StartBossBattle {
 }
 
 text Zone20B_Text_Cilan_Defeated {
-    format("CILAN DEFEATED!")
+    format("Er… Is it over now?")
 }
 
 text Zone20B_Text_Chili_Defeated {
-    format("CHILI DEFEATED!")
+    format("You got me. I am… burned… out…")
 }
 
 text Zone20B_Text_Cress_Defeated {
-    format("CRESS DEFEATED!")
+    format("Lose? Me? I don't believe this.")
 }
 
 movement Zone20B_Movement_LeftToCenter {
@@ -353,6 +399,30 @@ movement Zone20B_Movement_CenterToRight {
 movement Zone20B_Movement_RightToLeft {
     walk_left * 4
     face_down
+}
+
+script Zone20B_EventScript_CilanPreBattle {
+    applymovement(LOCALID_CILAN, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    setspeaker("Cilan")
+    msgbox(format("Nothing personal… No hard feelings…\pMe and my Grass-type Pokémon will… um…\pWe're gonna battle come what may."))
+    closemessage
+}
+
+script Zone20B_EventScript_ChiliPreBattle {
+    applymovement(LOCALID_CHILI, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    setspeaker("Chili")
+    msgbox(format("That's that, then!\pI'm going to show you what me and my blazing Fire types can do!"))
+    closemessage
+}
+
+script Zone20B_EventScript_CressPreBattle {
+    applymovement(LOCALID_CRESS, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    setspeaker("Cress")
+    msgbox(format("What incredible luck for you! You get to battle the best among the three of us."))
+    closemessage
 }
 
 script Zone20B_EventScript_Walker {
