@@ -220,14 +220,14 @@ script Zone16A_EventScript_Tanisha {
 }
 
 script Zone16A_EventScript_Robert {
-	trainerbattle_single(TRAINER_PBL_ROBERT, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_ROBERT, format("Did you know, Pokémon have different Egg Groups, and that determines which Pokémon can be bred together?"), format("You can find Egg Group information in the Pokédex!"))
+	msgbox(format("There are some Pokémon that can't produce Eggs at all, because they are in the No Eggs Discovered Egg Group!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone16A_EventScript_Christina {
-	trainerbattle_single(TRAINER_PBL_CHRISTINA, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_CHRISTINA, format("I'm on a quest of self discovery!\pI shall discover more about myself through battle!"), format("I've discovered I don't like losing!"))
+	msgbox(format("Traveling makes one better at Pokémon battles!\pI know this is true because you seem like you've traveled a lot!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -238,14 +238,14 @@ script Zone16A_EventScript_Angus {
 }
 
 script Zone16A_EventScript_GalacticGrunt1 {
-	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_16A_1, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_16A_1, format("Ugh! This uniform's boots aren't waterproof!\pI'll take out my frustration on you!"), format("My boots! My socks!"))
+	msgbox(format("Even the mighty Team Galactic cannot deal with wet socks.\pThey are beyond uncomfortable!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone16A_EventScript_GalacticGrunt2 {
-	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_16A_2, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_GALACTIC_GRUNT_16A_2, format("I won't let you get to the Commander\pShe's part of my OTP!"), format("Ah… Did I say that out loud?"))
+	msgbox(format("The Commander just… gets along so… swimmingly… with Commander Mars."), MSGBOX_AUTOCLOSE)
 	end
 }
 
