@@ -31,13 +31,22 @@ script Zone20B_EventScript_TriggerCoriExplanation {
 script Zone20B_EventScript_Cori {
     lock
     faceplayer
+    if (flag(FLAG_BEAT_BOSS_20)) {
+        setspeaker("Cori")
+        msgbox(format("Please enjoy my family's restaurant!"))
+        release
+        end
+    }
     setspeaker("Cori")
     msgbox(format("So, did you defeat all the servers?"))
     if (defeated(TRAINER_PBL_WALKER) && defeated(TRAINER_PBL_NATALIA) && defeated(TRAINER_PBL_DUNCAN) && defeated(TRAINER_PBL_EVALINE)) {
+        if (var(VAR_ZONE_20_STATE) == 1) {
+            setspeaker("Cori")
+            msgbox(format("Oh, great, you defeated them all! Great work, {PLAYER}!"))
+            setvar(VAR_ZONE_20_STATE, 2)
+        }
         setspeaker("Cori")
-        msgbox(format("Oh, great, you did!\pI let my brothers know that you're interested in a challenge for the Gym Badge.\pHow it works is… you pick one of them, and then they are your Tag Partner against the other two in a Tag Battle!\pJust go up and speak to whoever you want to partner with, when you're ready!"))
-        closemessage
-        setvar(VAR_ZONE_20_STATE, 2)
+        msgbox(format("I let my brothers know that you're interested in a challenge for the Gym Badge.\pHow it works is… you pick one of them, and then they are your Tag Partner against the other two in a Tag Battle!\pJust go up and speak to whoever you want to partner with, when you're ready!"))
     } else {
         setspeaker("Cori")
         msgbox(format("Oh, the servers could really use a break from their duties.\pIf you battle them all, and help to get their energy out, I can go tell my brothers you're interested in a Gym Badge!"))
@@ -68,7 +77,7 @@ script Zone20B_EventScript_Cilan {
                 applymovement(LOCALID_CAMERA, Common_Movement_WalkDown)
                 waitmovement(0)
                 special(RemoveCameraObject)
-                setvar(VAR_ZONE_20_STATE, 1)
+                setvar(VAR_TEMP_0, 1)
                 goto(Zone20B_EventScript_StartBossBattle)
             } else {
                 msgbox(format("SO SAD! LET ME KNOW IF YOU CHANGE MIND!"))
@@ -111,7 +120,7 @@ script Zone20B_EventScript_Chili {
                 applymovement(LOCALID_CAMERA, Common_Movement_WalkRight5)
                 waitmovement(0)
                 special(RemoveCameraObject)
-                setvar(VAR_ZONE_20_STATE, 2)
+                setvar(VAR_TEMP_0, 2)
                 goto(Zone20B_EventScript_StartBossBattle)
             } else {
                 msgbox(format("SO SAD! LET ME KNOW IF YOU CHANGE MIND!"))
@@ -154,7 +163,7 @@ script Zone20B_EventScript_Cress {
                 applymovement(LOCALID_CAMERA, Common_Movement_WalkLeft5)
                 waitmovement(0)
                 special(RemoveCameraObject)
-                setvar(VAR_ZONE_20_STATE, 3)
+                setvar(VAR_TEMP_0, 3)
                 goto(Zone20B_EventScript_StartBossBattle)
             } else {
                 msgbox(format("SO SAD! LET ME KNOW IF YOU CHANGE MIND!"))
@@ -180,7 +189,7 @@ script Zone20B_EventScript_StartBossBattle {
     setobjectxy(LOCALID_PLAYER, 11, 8)
     applymovement(LOCALID_CORI_20B, Common_Movement_FaceDown)
     applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
-    switch (var(VAR_ZONE_20_STATE)) {
+    switch (var(VAR_TEMP_0)) {
         case 1:
             setobjectxy(LOCALID_CILAN, 11, 9)
             setobjectxy(LOCALID_CHILI, 17, 8)
@@ -211,7 +220,7 @@ script Zone20B_EventScript_StartBossBattle {
     call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
     special(SpawnCameraObject)
-    switch (var(VAR_ZONE_20_STATE)) {
+    switch (var(VAR_TEMP_0)) {
         case 1:
             applymovement(LOCALID_PLAYER, Common_Movement_WalkRight)
             applymovement(LOCALID_CILAN, Common_Movement_WalkRight)
@@ -312,7 +321,7 @@ script Zone20B_EventScript_StartBossBattle {
     setflag(FLAG_BEAT_BOSS_20)
 	setflag(FLAG_BADGE06_GET)
     clearflag(FLAG_HIDE_ZONE20A_PORYGON)
-    setvar(VAR_ZONE_20_STATE, 4)
+    setvar(VAR_ZONE_20_STATE, 3)
     releaseall
     end
 }
