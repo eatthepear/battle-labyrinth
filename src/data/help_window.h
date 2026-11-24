@@ -601,6 +601,16 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Theme: {COLOR GREEN}Fighting{COLOR DARK_GRAY}-type specialist"),
     },
 
+    [HELP_NOTEBOOK_OPTIONAL_22] =
+    {
+        .header = COMPOUND_STRING("Zone 22 Optional"),
+        .desc = COMPOUND_STRING("Ace Trainer {COLOR BLUE}Amelia{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Emolga{COLOR DARK_GRAY}, {COLOR GREEN}Skarmory{COLOR DARK_GRAY}, {COLOR GREEN}Cryogonal{COLOR DARK_GRAY}, {COLOR GREEN}Minior{COLOR DARK_GRAY}\n\n"
+                                "Conditions: {COLOR GREEN}Sky Battle{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Permanent Snow{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR BLUE}Sky Battle{COLOR DARK_GRAY}"),
+    },
+
     [HELP_NOTEBOOK_BOSS_23] =
     {
         .header = COMPOUND_STRING("Zone 23 Boss"),

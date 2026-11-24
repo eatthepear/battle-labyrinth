@@ -1008,6 +1008,10 @@ script EventScript_Notebook_ZoneInfo {
 			} else {
 				helpwindow(HELP_NOTEBOOK_BOSS_22)
 			}
+			msgbox(gText_Notebook_OptionalReadOn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				helpwindow(HELP_NOTEBOOK_OPTIONAL_22)
+			}
 		case 23:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				helpwindow(HELP_NOTEBOOK_BOSS_23_BRUTAL)
