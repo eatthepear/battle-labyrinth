@@ -4631,10 +4631,11 @@ u16 GetNumTrainersRemaining(void)
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
+        count += !HasTrainerBeenFought(TRAINER_PBL_BILL_OPTIONAL_4);
         count += !FlagGet(FLAG_BEAT_BOSS_4);
         break;
     case 5:
-        for (trainer = TRAINER_PBL_REBECCA; trainer <= TRAINER_PBL_BILL_OPTIONAL_5; trainer++) {
+        for (trainer = TRAINER_PBL_REBECCA; trainer <= TRAINER_PBL_ANTHONY; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }

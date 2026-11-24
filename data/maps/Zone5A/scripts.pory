@@ -380,34 +380,3 @@ script Zone5A_EventScript_Rebecca {
 	msgbox(format("Now I'm nervous for a Gym challenge I don't even plan to do!"), MSGBOX_AUTOCLOSE)
 	end
 }
-
-script Zone5A_EventScript_Bill {
-	lock
-	faceplayer
-	if (defeated(TRAINER_PBL_BILL_OPTIONAL_5)) {
-		call(Zone5A_EventScript_Bill_End)
-	}
-	setspeaker("Bill")
-	msgbox(format("Do you want to know the way to be rich?\pI'll show it to you in battle, if you're willing!"), MSGBOX_YESNO)
-	if (var(VAR_RESULT) == NO) {
-		msgbox(format("That's rather disappointing."))
-		release
-		end
-	}
-	msgbox(format("Be rich with this one quick trick!"))
-	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_BILL_OPTIONAL_5, format("My luck in battle isn't quite the same as in life…"))
-	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	setspeaker("Bill")
-	msgbox(format("It turns out, the best way to be rich is to be lucky.\pStill, I do have something for you."))
-	setspeaker(SP_NAME_NONE)
-	giveitem(ITEM_SCOPE_LENS)
-	call(Zone5A_EventScript_Bill_End)
-}
-
-script Zone5A_EventScript_Bill_End {
-	setspeaker("Bill")
-	msgbox(format("Wealth is propagated from generation to generation, so the easiest way to become rich is to be lucky and be born into a rich family.\pIsn't capitalism great?"))
-	release
-	end
-}

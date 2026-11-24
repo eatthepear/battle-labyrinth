@@ -210,6 +210,14 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Theme: {COLOR GREEN}Poison Gas{COLOR DARK_GRAY} + {COLOR GREEN}Venoshock{COLOR DARK_GRAY}"),
     },
 
+    [HELP_NOTEBOOK_OPTIONAL_4] =
+    {
+        .header = COMPOUND_STRING("Zone 4 Optional"),
+        .desc = COMPOUND_STRING("Rich Boy {COLOR BLUE}Bill{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Pidove{COLOR DARK_GRAY}, {COLOR GREEN}Remoraid{COLOR DARK_GRAY}, {COLOR GREEN}Farfetch'd-Galar{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Critical Hit{COLOR DARK_GRAY}"),
+    },
+
     [HELP_NOTEBOOK_BOSS_5] =
     {
         .header = COMPOUND_STRING("Zone 5 Boss"),
@@ -224,14 +232,6 @@ const struct HelpWindow gHelpWindowInfo[] =
         .desc = COMPOUND_STRING("Gym Leader {COLOR BLUE}Liza{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Spoink{COLOR DARK_GRAY}, {COLOR GREEN}Baltoy{COLOR DARK_GRAY}, {COLOR GREEN}Natu{COLOR DARK_GRAY}, {COLOR GREEN}Lunatone{COLOR DARK_GRAY}\n\n"
                                 "Theme: {COLOR GREEN}Psychic{COLOR DARK_GRAY}-type specialist"),
-    },
-
-    [HELP_NOTEBOOK_OPTIONAL_5] =
-    {
-        .header = COMPOUND_STRING("Zone 5 Optional"),
-        .desc = COMPOUND_STRING("Rich Boy {COLOR BLUE}Bill{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Pidove{COLOR DARK_GRAY}, {COLOR GREEN}Remoraid{COLOR DARK_GRAY}, {COLOR GREEN}Farfetch'd-Galar{COLOR DARK_GRAY}\n\n"
-                                "Theme: {COLOR GREEN}Critical Hit{COLOR DARK_GRAY}"),
     },
 
     [HELP_NOTEBOOK_BOSS_6] =

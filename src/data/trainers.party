@@ -667,6 +667,41 @@ Double Battle: No
 Party Size: 2
 Copy Pool: TRAINER_POOL_ZONE_4_GRUNTS
 
+=== TRAINER_PBL_BILL_OPTIONAL_4 ===
+Name: Bill
+Class: Rich Boy
+Pic: Rich Boy
+Music: Rich
+AI: AI_FLAG_BOSS
+Double Battle: No
+
+Pidove @ Scope Lens
+Rash Nature
+Ability: Super Luck
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Cutter
+- Swift
+- Quick Attack
+
+Remoraid @ Scope Lens
+Timid Nature
+Ability: Sniper
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Mud Shot
+- Focus Energy
+
+Farfetch'd-Galar @ Leek
+Careful Nature
+Ability: Scrappy
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Smash
+- Brutal Swing
+- Peck
+
 === TRAINER_PBL_PROTON_BOSS_4 ===
 Name: Proton
 Class: Rainbow Rocket Executive
@@ -811,41 +846,6 @@ Double Battle: No
 Party Size: 3
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
-
-=== TRAINER_PBL_BILL_OPTIONAL_5 ===
-Name: Bill
-Class: Rich Boy
-Pic: Rich Boy
-Music: Rich
-AI: AI_FLAG_BOSS
-Double Battle: No
-
-Pidove @ Scope Lens
-Rash Nature
-Ability: Super Luck
-Level: 14
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Air Cutter
-- Swift
-- Quick Attack
-
-Remoraid @ Scope Lens
-Timid Nature
-Ability: Sniper
-Level: 14
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Mud Shot
-- Focus Energy
-
-Farfetch'd-Galar @ Leek
-Careful Nature
-Ability: Scrappy
-Level: 15
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rock Smash
-- Brutal Swing
-- Peck
 
 === TRAINER_PBL_LIZA_BOSS_5 ===
 Name: Liza
