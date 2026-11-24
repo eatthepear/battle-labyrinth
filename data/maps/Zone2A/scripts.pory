@@ -121,26 +121,16 @@ script Zone2A_EventScript_TriggerBlue {
 	giveitem(ITEM_HM_ROCK_SMASH)
 	helpwindow(HELP_CHANGES_HIDDEN_MACHINES)
 	setspeaker("Blue")
-	msgbox(Zone2A_Text_Blue_HoneSkills)
+	msgbox(format("I'm gonna hone my skills so I can take on a Gym Leader.\pThe next time we battle, I'm sure I'll beat you then!\pSmell ya later!"))
 	closemessage
+	applymovement(LOCALID_BLUE_2A, Common_Movement_WalkDown5)
+	waitmovement(0)
 	setflag(FLAG_BEAT_BOSS_2)
+	removeobject(LOCALID_BLUE_2A)
 	setvar(VAR_ZONE_2_STATE, 2)
 	fadedefaultbgm
 	releaseall
 	end
-}
-
-script Zone2A_EventScript_Blue {
-	lock
-	faceplayer
-	setspeaker("Blue")
-	msgbox(Zone2A_Text_Blue_HoneSkills)
-	release
-	end
-}
-
-text Zone2A_Text_Blue_HoneSkills {
-	format("I'm gonna hone my skills so I can take on a Gym Leader.\pThe next time we battle, I'm sure I'll beat you then!\pSmell ya later!")
 }
 
 script Zone2A_EventScript_Shaun {
