@@ -4613,17 +4613,19 @@ u16 GetNumTrainersRemaining(void)
         count += !FlagGet(FLAG_BEAT_BOSS_1);
         break;
     case 2:
-        for (trainer = TRAINER_PBL_POLLY; trainer <= TRAINER_PBL_SHAUN_OPTIONAL_2; trainer++) {
+        for (trainer = TRAINER_PBL_POLLY; trainer <= TRAINER_PBL_HARPER; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
+        count += !HasTrainerBeenFought(TRAINER_PBL_SHAUN_OPTIONAL_2);
         count += !FlagGet(FLAG_BEAT_BOSS_2);
         break;
     case 3:
-        for (trainer = TRAINER_PBL_JEMMA; trainer <= TRAINER_PBL_FERN_OPTIONAL_3; trainer++) {
+        for (trainer = TRAINER_PBL_JEMMA; trainer <= TRAINER_PBL_BORIS; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
+        count += !HasTrainerBeenFought(TRAINER_PBL_FERN_OPTIONAL_3);
         count += !FlagGet(FLAG_BEAT_BOSS_3);
         break;
     case 4:
@@ -4652,10 +4654,11 @@ u16 GetNumTrainersRemaining(void)
         break;
     case 7:
     case 8:
-        for (trainer = TRAINER_PBL_MILLIE; trainer <= TRAINER_PBL_MELINDA_OPTIONAL_7; trainer++) {
+        for (trainer = TRAINER_PBL_MILLIE; trainer <= TRAINER_PBL_EMILIANO; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
+        count += !HasTrainerBeenFought(TRAINER_PBL_MELINDA_OPTIONAL_7);
         count += !FlagGet(FLAG_BEAT_BOSS_7);
         for (trainer = TRAINER_PBL_GALACTIC_GRUNT_8C_1; trainer <= TRAINER_PBL_GALACTIC_GRUNT_8C_4; trainer++) {
             if (!HasTrainerBeenFought(trainer))
@@ -4664,10 +4667,11 @@ u16 GetNumTrainersRemaining(void)
         count += !FlagGet(FLAG_BEAT_BOSS_8);
         break;
     case 9:
-        for (trainer = TRAINER_PBL_COOPER; trainer <= TRAINER_PBL_JACKIE_OPTIONAL_9; trainer++) {
+        for (trainer = TRAINER_PBL_COOPER; trainer <= TRAINER_PBL_CALVIN; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
+        count += !HasTrainerBeenFought(TRAINER_PBL_JACKIE_OPTIONAL_9);
         count += 4 * !FlagGet(FLAG_BEAT_BOSS_9);
         break;
     case 10:
@@ -4744,10 +4748,11 @@ u16 GetNumTrainersRemaining(void)
         count += !HasTrainerBeenFought(TRAINER_PBL_THADDEUS_OPTIONAL_21);
         break;
     case 22:
-        for (trainer = TRAINER_PBL_CODY; trainer <= TRAINER_PBL_AMELIA_OPTIONAL_22; trainer++) {
+        for (trainer = TRAINER_PBL_CODY; trainer <= TRAINER_PBL_AUDREY; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
+        count += !HasTrainerBeenFought(TRAINER_PBL_AMELIA_OPTIONAL_22);
         count += !FlagGet(FLAG_BEAT_BOSS_22);
         break;
     case 23:
@@ -4759,7 +4764,12 @@ u16 GetNumTrainersRemaining(void)
         break;
     case 24:
     case 25:
-        for (trainer = TRAINER_PBL_DOUGLAS; trainer <= TRAINER_PBL_ROCKET_GRUNT_25K_2; trainer++) {
+        for (trainer = TRAINER_PBL_DOUGLAS; trainer <= TRAINER_PBL_DAVID; trainer++) {
+            if (!HasTrainerBeenFought(trainer))
+                count += 1;
+        }
+        count += !FlagGet(FLAG_BEAT_BOSS_24);
+        for (trainer = TRAINER_PBL_ROCKET_GRUNT_25D_1; trainer <= TRAINER_PBL_ROCKET_GRUNT_25K_2; trainer++) {
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
