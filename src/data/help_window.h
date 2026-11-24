@@ -197,7 +197,8 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Zone 4 Boss"),
         .desc = COMPOUND_STRING("Rainbow Rocket Executive {COLOR BLUE}Proton{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Koffing{COLOR DARK_GRAY}, {COLOR GREEN}Drowzee{COLOR DARK_GRAY}, {COLOR GREEN}Beedrill{COLOR DARK_GRAY}\n\n"
+                                "{COLOR GREEN}Koffing{COLOR DARK_GRAY}, {COLOR GREEN}Drowzee{COLOR DARK_GRAY}\n"
+                                "Condition: {COLOR GREEN}Double Battle{COLOR DARK_GRAY}.\n\n"
                                 "Theme: {COLOR GREEN}Poison Gas{COLOR DARK_GRAY} + {COLOR GREEN}Venoshock{COLOR DARK_GRAY}"),
     },
 

@@ -699,8 +699,8 @@ Ability: Scrappy
 Level: 12
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Smash
-- Brutal Swing
 - Peck
+- Leer
 
 === TRAINER_PBL_PROTON_BOSS_4 ===
 Name: Proton
@@ -708,13 +708,13 @@ Class: Rainbow Rocket Executive
 Pic: Proton
 Music: Rocket
 AI: AI_FLAG_BOSS
-Double Battle: No
+Double Battle: Yes
 Mugshot: Blue
 
-Koffing @ Chesto Berry
+Koffing @ Oran Berry
 Sassy Nature
 Ability: Levitate
-Level: 11
+Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Poison Gas
 - Venom Drench
@@ -729,16 +729,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Poison Gas
 - Confusion
 - Headbutt
-- Thief
-
-Beedrill @ Sitrus Berry
-Hasty Nature
-Ability: Swarm
-Level: 13
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Twineedle
-- Venoshock
-- Fury Attack
 - Thief
 
 === TRAINER_PBL_PROTON_BOSS_4 ===
@@ -751,10 +741,10 @@ Double Battle: Yes
 Mugshot: Blue
 Difficulty: Brutal
 
-Koffing @ Chesto Berry
+Koffing @ Oran Berry
 Sassy Nature
 Ability: Levitate
-Level: 11
+Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Poison Gas
 - Venom Drench
@@ -771,10 +761,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Headbutt
 - Thief
 
-Beedrill @ Sitrus Berry
+Beedrill @ Chesto Berry
 Hasty Nature
 Ability: Swarm
-Level: 13
+Level: 11
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Twineedle
 - Venoshock
