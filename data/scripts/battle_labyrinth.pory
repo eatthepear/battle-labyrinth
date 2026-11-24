@@ -1499,15 +1499,6 @@ script EventScript_Sign_TagSurveil {
 	helpwindow(HELP_SIGN_TAG_SURVEIL)
 }
 
-script EventScript_Sign_Filler {
-	msgbox(format("SIGN TODO"))
-}
-
-// everything below here is to assign (haha get it)
-script EventScript_Sign_Backtracking {
-	msgbox(format("Trainer Tips\pSome Zones require backtracking in order to obtain all their items and rewards.\pYou can speak to the man in the Pokémon Center to access a past Zone for ¥1000."), MSGBOX_SIGN)
-}
-
 script Zone7A_EventScript_HealSign {
 	msgbox(format("A stop for weary travelers."), MSGBOX_SIGN)
 }
