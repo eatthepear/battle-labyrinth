@@ -426,25 +426,25 @@ script Zone20B_EventScript_CressPreBattle {
 }
 
 script Zone20B_EventScript_Walker {
-	trainerbattle_single(TRAINER_PBL_WALKER, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_WALKER, format("Good day, young trainer. Anything I can help you with?\pA battle, you say? I cannot turn that down!"), format("An excellent break, thank you, young trainer!"))
+	msgbox(format("Young trainer, you have inspired me to work as hard as you have trained your Pokémon!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone20B_EventScript_Natalia {
-	trainerbattle_single(TRAINER_PBL_NATALIA, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_NATALIA, format("Oh honey, what can I help with you?\pA battle? Well, that sure would be a great break for me. Let's see what you've got!"), format("I've been served a dish of defeat!"))
+	msgbox(format("You seem like a spectacular trainer, honey!\pReal inspiring to me. I'll be sure to keep working hard every day like you!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone20B_EventScript_Duncan {
-	trainerbattle_single(TRAINER_PBL_DUNCAN, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_DUNCAN, format("Err… hello. I am your server for today. What would you like?\pA battle? Oh, but… well…\pOk, just a little battling on the job can't hurt!"), format("Ow ow ow! It stings to be defeated!"))
+	msgbox(format("Yes… I shouldn't be battling while on the job…\pYou've taught me a valuable lesson…"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone20B_EventScript_Evaline {
-	trainerbattle_single(TRAINER_PBL_EVALINE, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_EVALINE, format("Hi, can I take your order?\pYou want me to battle you?\pWell then, I'm happy to serve you!"), format("It seems I'm having trouble balancing battling and holding these plates."))
+	msgbox(format("I probably shouldn't multitask too much like this.\pYes, back to work I suppose!"), MSGBOX_AUTOCLOSE)
 	end
 }
