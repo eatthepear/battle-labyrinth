@@ -3343,6 +3343,33 @@ script EventScript_TaurosPaldeaAqua {
 	release
 }
 
+script EventScript_Simisage {
+	lock
+	faceplayer
+	playmoncry(SPECIES_SIMISAGE, CRY_MODE_NORMAL)
+	msgbox(format("Simi!"))
+	waitmoncry
+	release
+}
+
+script EventScript_Simisear {
+	lock
+	faceplayer
+	playmoncry(SPECIES_SIMISEAR, CRY_MODE_NORMAL)
+	msgbox(format("Simi!"))
+	waitmoncry
+	release
+}
+
+script EventScript_Simipour {
+	lock
+	faceplayer
+	playmoncry(SPECIES_SIMIPOUR, CRY_MODE_NORMAL)
+	msgbox(format("Simi!"))
+	waitmoncry
+	release
+}
+
 script EventScript_ResetEliteFour_PBL {
 	clearflag(FLAG_BEAT_BOSS_35_LACEY)
 	clearflag(FLAG_BEAT_BOSS_35_GLACIA)

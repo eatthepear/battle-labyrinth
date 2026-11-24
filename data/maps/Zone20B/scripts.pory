@@ -187,6 +187,10 @@ script Zone20B_EventScript_Cress {
 script Zone20B_EventScript_StartBossBattle {
     lockall
     hidefollower
+    setflag(FLAG_HIDE_ZONE20B_SIMI)
+    removeobject(LOCALID_SIMISAGE)
+    removeobject(LOCALID_SIMISEAR)
+    removeobject(LOCALID_SIMIPOUR)
     setobjectxy(LOCALID_CORI_20B, 14, 7)
     setobjectxy(LOCALID_PLAYER, 11, 8)
     applymovement(LOCALID_CORI_20B, Common_Movement_FaceDown)
@@ -298,6 +302,10 @@ script Zone20B_EventScript_StartBossBattle {
     applymovement(LOCALID_CHILI, Common_Movement_FaceDown)
     applymovement(LOCALID_CRESS, Common_Movement_FaceDown)
     waitmovement(0)
+    clearflag(FLAG_HIDE_ZONE20B_SIMI)
+    addobject(LOCALID_SIMISAGE)
+    addobject(LOCALID_SIMISEAR)
+    addobject(LOCALID_SIMIPOUR)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	setspeaker("Cori")
 	msgbox(format("Gym Badges are a proof of a Trainer's abilities.\pSince you completed our challenge and won your Tag Battle, please take the Trio Badge!"))
