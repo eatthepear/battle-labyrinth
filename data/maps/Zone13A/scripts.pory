@@ -17,7 +17,7 @@ script Zone13A_EventScript_Serena {
 	lock
 	faceplayer
 	setspeaker("Serena")
-	msgbox(format("Hello! My name's Serena. Some people in red suits calling themselves Team Magma have taken over this building, so I'm going to head in to stop them.\pI need help though. You look like a Pokémon Trainer.\pWould you be able to help? I'll need to test you to see if you're up to the challenge."), MSGBOX_YESNO)
+	msgbox(format("Oh {PLAYER}! Great timing. Some people in red suits calling themselves Team Magma have taken over this building, so I'm going to head in to stop them.\pI need help though. Would you be able to help? I'll need to test you to see if you're up to the challenge."), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		setspeaker("Serena")
 		msgbox(format("That's ok! I'm not asking to partner up or anything, just looking for someone to help out against these villains.\pIf you change your mind, I'll be here."))
@@ -29,15 +29,11 @@ script Zone13A_EventScript_Serena {
 	trainerbattle_no_intro(TRAINER_PBL_SERENA_BOSS_13, format("Incredible! You're great!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Serena")
-	msgbox(format("Wow! You're quite the trainer. What was your name?"))
-	closemessage
-	delay(40)
-	setspeaker("Serena")
-	msgbox(format("{PLAYER}! Nice to meet you again, {PLAYER}!\pBefore we go in, take these! They're from the Kalos region, where I'm from."))
+	msgbox(format("Wow! You're quite the trainer as usual, {PLAYER}!\pBefore we go in, take these! They're from the Kalos region, where I'm from."))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_SHALOUR_SABLE, 5)
 	setspeaker("Serena")
-	msgbox(format("Team Magma won't get away with whatever they're planning, thanks to your help!\pNow look, I'm going to charge in and try to battle Team Magma.\pIf I don't see you, it was great to meet you!"))
+	msgbox(format("Team Magma won't get away with whatever they're planning!\pNow look, I'm going to charge in and try to battle Team Magma.\pIf I don't run into you inside, it was great to see you again!\pThanks again for your help!"))
 	closemessage
 	applymovement(LOCALID_SERENA_13A, Common_Movement_FaceUp)
 	waitmovement

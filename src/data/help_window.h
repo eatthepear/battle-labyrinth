@@ -234,6 +234,15 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "Theme: {COLOR GREEN}Psychic{COLOR DARK_GRAY}-type specialist"),
     },
 
+    [HELP_NOTEBOOK_OPTIONAL_5] =
+    {
+        .header = COMPOUND_STRING("Zone 5 Optional"),
+        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Serena{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Fennekin{COLOR DARK_GRAY}, {COLOR GREEN}Skiddo{COLOR DARK_GRAY}, {COLOR GREEN}Vivillon{COLOR DARK_GRAY}\n"
+                                "Condition: {COLOR GREEN}Double Battle{COLOR DARK_GRAY}.\n\n"
+                                "Theme: {COLOR BLUE}Serena{COLOR DARK_GRAY}"),
+    },
+
     [HELP_NOTEBOOK_BOSS_6] =
     {
         .header = COMPOUND_STRING("Zone 6 Gauntlet"),

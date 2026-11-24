@@ -145,17 +145,17 @@
       "flag": "FLAG_TEMP_2"
     },
     {
-      "local_id": "LOCALID_5A_ROUGHNECK",
-      "graphics_id": "OBJ_EVENT_GFX_ROUGHNECK",
-      "x": 38,
-      "y": 16,
+      "local_id": "LOCALID_SERENA_5A",
+      "graphics_id": "OBJ_EVENT_GFX_SERENA",
+      "x": 12,
+      "y": 9,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Zone5A_EventScript_Roughneck",
+      "script": "Zone5A_EventScript_Serena",
       "flag": "0"
     }
   ],
@@ -176,7 +176,44 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ZONE_5_STATE",
+      "var_value": "0",
+      "script": "Zone5A_EventScript_TriggerSerena"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ZONE_5_STATE",
+      "var_value": "0",
+      "script": "Zone5A_EventScript_TriggerSerena"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ZONE_5_STATE",
+      "var_value": "0",
+      "script": "Zone5A_EventScript_TriggerSerena"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ZONE_5_STATE",
+      "var_value": "0",
+      "script": "Zone5A_EventScript_TriggerSerena"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

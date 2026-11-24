@@ -39,6 +39,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Zone4B_EventScript_Random1",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_4B_ROUGHNECK",
+      "graphics_id": "OBJ_EVENT_GFX_ROUGHNECK",
+      "x": 6,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Zone4B_EventScript_Roughneck",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -103,8 +117,8 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 4,
-      "y": 4,
+      "x": 7,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "EventScript_Sign_PokemonChanges"

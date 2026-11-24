@@ -8,6 +8,25 @@ mapscripts Zone4B_MapScripts {
 	}
 }
 
+script Zone4B_EventScript_Roughneck {
+	lock
+	if (flag(FLAG_ZONE4B_RECEIVED_TM_THIEF)) {
+		msgbox(format("I'm totally not stealing this sign.\pJust… admiring it."))
+		release
+		end
+	}
+	msgbox(format("I'm a kleptomaniac - that is, someone with the inability to resist the urge to steal items.\pThat's what the dictionary said, anyways.\pI'm… totally not thinking about stealing this sign."), MSGBOX_AUTOCLOSE)
+	faceplayer
+	msgbox(format("Your Pokémon can learn how to steal too. Take this TM."))
+	giveitem(ITEM_TM_THIEF)
+	msgbox(format("Now, run along. You didn't see me here, okay?"), MSGBOX_AUTOCLOSE)
+	applymovement(LOCALID_4B_ROUGHNECK, Common_Movement_FaceRight)
+	waitmovement(0)
+	setflag(FLAG_ZONE4B_RECEIVED_TM_THIEF)
+	release
+	end
+}
+
 script Zone4B_EventScript_Random1 {
 	lock
 	if (flag(FLAG_ITEM_ZONE4B_RANDOM_1)) {

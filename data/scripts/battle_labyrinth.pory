@@ -883,6 +883,10 @@ script EventScript_Notebook_ZoneInfo {
 			} else {
 				helpwindow(HELP_NOTEBOOK_BOSS_5)
 			}
+			msgbox(gText_Notebook_OptionalReadOn, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				helpwindow(HELP_NOTEBOOK_OPTIONAL_5)
+			}
 		case 6:
 			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
 				helpwindow(HELP_NOTEBOOK_BOSS_6_BRUTAL)
@@ -1785,7 +1789,8 @@ script Debug_CheatStart_PBL_GiveItems {
 	}
 	additem(ITEM_SILVER_POWDER)
 	additem(ITEM_TWISTED_SPOON)
-	additem(ITEM_TM_SNARL)
+	additem(ITEM_TM_THIEF)
+	additem(ITEM_SCOPE_LENS)
 	additem(ITEM_POISON_BARB)
 	additem(ITEM_HM_CUT)
 	additem(ITEM_TM_VENOSHOCK)
@@ -1795,7 +1800,7 @@ script Debug_CheatStart_PBL_GiveItems {
 		return
 	}
 	additem(ITEM_MIRACLE_SEED)
-	additem(ITEM_TM_THIEF)
+	additem(ITEM_TM_SNARL)
 	additem(ITEM_TM_LIGHT_SCREEN)
 	additem(ITEM_TM_REFLECT)
 	additem(ITEM_POKEMON_BOX_LINK)

@@ -4639,6 +4639,7 @@ u16 GetNumTrainersRemaining(void)
             if (!HasTrainerBeenFought(trainer))
                 count += 1;
         }
+        count += !HasTrainerBeenFought(TRAINER_PBL_SERENA_OPTIONAL_5);
         count += !FlagGet(FLAG_BEAT_BOSS_5);
         break;
     case 6:

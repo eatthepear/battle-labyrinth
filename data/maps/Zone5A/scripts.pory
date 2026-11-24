@@ -13,6 +13,76 @@ mapscripts Zone5A_MapScripts {
 	}
 }
 
+script Zone5A_EventScript_TriggerSerena {
+	lockall
+	applymovement(LOCALID_SERENA_5A, Common_Movement_FaceDown)
+	waitmovement(0)
+	playbgm(MUS_BW_FRIEND, FALSE)
+	applymovement(LOCALID_SERENA_5A, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	delay(16)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	switch(var(VAR_TEMP_0)) {
+		case 11:
+			applymovement(LOCALID_SERENA_5A, Common_Movement_WalkLeft)
+			waitmovement(0)
+		case 13:
+			applymovement(LOCALID_SERENA_5A, Common_Movement_WalkRight)
+			waitmovement(0)
+		case 14:
+			applymovement(LOCALID_SERENA_5A, Common_Movement_WalkRight2)
+			waitmovement(0)
+	}
+	applymovement(LOCALID_SERENA_5A, Common_Movement_WalkDown2)
+	waitmovement(0)
+	setspeaker("???")
+	msgbox(format("Oh, hello!\pYou look like a Pokémon trainer looking to challenge the Gym!\pMy name is Serena, I'm in the same boat as you! What's your name?"))
+	closemessage
+	delay(40)
+	setspeaker("Serena")
+	msgbox(format("{COLOR BLUE}{PLAYER}{COLOR DARK_GRAY}! That's a great name.\pSo, I don't know if you've heard, but this Pokémon Gym is known to be run by a Psychic-type Gym Leader, Liza.\pApparently, she used to battle in a Double Battle with her brother for the Gym Battle, but this gym is her own, and she battles challengers in a Single Battle.\pA little unfortunate for me, because I spent some time preparing for a Double Battle. What can you do, right?\pSay, if you wanted to have a friendly Double Battle match, let me know!"))
+	closemessage
+	applymovement(LOCALID_SERENA_5A, Common_Movement_WalkUp2)
+	waitmovement(0)
+	setvar(VAR_ZONE_5_STATE, 1)
+	fadedefaultbgm
+	releaseall
+	end
+}
+
+script Zone5A_EventScript_Serena {
+	lock
+	faceplayer
+	if (defeated(TRAINER_PBL_SERENA_OPTIONAL_5)) {
+		call(Zone5A_EventScript_Serena_End)
+	}
+	setspeaker("Serena")
+	msgbox(format("Hey! Did you want to try out a Double Battle? I'm a pretty good trainer, if I do say so myself!\p"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Aww. It looks like my preparation will go to waste! No pressure though."))
+		release
+		end
+	}
+	msgbox(format("Great! En garde!"))
+	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	trainerbattle_no_intro(TRAINER_PBL_SERENA_OPTIONAL_5, format("Now I'm doubly disappointed…"))
+	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
+	setspeaker("Serena")
+	msgbox(format("Hey, you're a really great trainer!\pYour Pokémon clearly want to work their hardest for you.\pHere, I have something for you."))
+	setspeaker(SP_NAME_NONE)
+	giveitem(ITEM_TM_SNARL)
+	call(Zone5A_EventScript_Serena_End)
+}
+
+script Zone5A_EventScript_Serena_End {
+	setspeaker("Serena")
+	msgbox(format("I thought Snarl could help in Double Battles, especially against the Gym Leader, but it turns out none of my Pokémon can even learn the move!\pToday is just not my day, I guess.\pWell, I hope you have better luck than me against the Gym Leader!\pDon't get confused like me. Gym Leader Liza battles in a Single Battle!"))
+	release
+	end
+}
+
 script Zone5A_EventScript_BuyPikaClone {
 	lock
 	faceplayer
@@ -346,25 +416,6 @@ script Zone5A_EventScript_Random1 {
 	addobject(VAR_LAST_TALKED)
 	specialvar(VAR_TEMP_1, RandomItemChest)
 	finditem(VAR_TEMP_1, VAR_TEMP_0)
-	release
-	end
-}
-
-script Zone5A_EventScript_Roughneck {
-	lock
-	if (flag(FLAG_ZONE5A_RECEIVED_TM_THIEF)) {
-		msgbox(format("I'm totally not stealing this sign.\pJust… admiring it."))
-		release
-		end
-	}
-	msgbox(format("I'm a kleptomaniac - that is, someone with the inability to resist the urge to steal items.\pThat's what the dictionary said, anyways.\pI'm… totally not thinking about stealing this sign."), MSGBOX_AUTOCLOSE)
-	faceplayer
-	msgbox(format("Your Pokémon can learn how to steal too. Take this TM."))
-	giveitem(ITEM_TM_THIEF)
-	msgbox(format("Now, run along. You didn't see me here, okay?"), MSGBOX_AUTOCLOSE)
-	applymovement(LOCALID_5A_ROUGHNECK, Common_Movement_FaceRight)
-	waitmovement(0)
-	setflag(FLAG_ZONE5A_RECEIVED_TM_THIEF)
 	release
 	end
 }

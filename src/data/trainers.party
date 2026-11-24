@@ -847,6 +847,45 @@ Party Size: 3
 Pool Prune: Non Psychic
 Copy Pool: TRAINER_POOL_ZONE_5
 
+=== TRAINER_PBL_SERENA_OPTIONAL_5 ===
+Name: Serena
+Class: Rival
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+Double Battle: Yes
+Mugshot: Pink
+
+Fennekin @ Wise Glasses
+Modest Nature
+Ability: Blaze
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Incinerate
+- Swift
+- Helping Hand
+- Howl
+
+Skiddo @ Muscle Band
+Adamant Nature
+Ability: Sap Sipper
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Leaf
+- Bulldoze
+- Helping Hand
+- Tail Whip
+
+Vivillon @ Oran Berry
+Timid Nature
+Ability: Shield Dust
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Struggle Bug
+- Gust
+- Swift
+- String Shot
+
 === TRAINER_PBL_LIZA_BOSS_5 ===
 Name: Liza
 Class: Leader
