@@ -617,7 +617,7 @@ const struct HelpWindow gHelpWindowInfo[] =
         .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Serena{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Vivillon{COLOR DARK_GRAY}, {COLOR GREEN}Clawitzer{COLOR DARK_GRAY}, {COLOR GREEN}Gogoat{COLOR DARK_GRAY}, {COLOR GREEN}Mamoswine{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Delphox{COLOR DARK_GRAY}\n\n"
-                                "Condition: {COLOR GREEN}Double Battle{COLOR DARK_GRAY}.\n\n"
+                                "Condition: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY}.\n\n"
                                 "Theme: {COLOR BLUE}Serena{COLOR DARK_GRAY}"),
     },
 
@@ -627,7 +627,7 @@ const struct HelpWindow gHelpWindowInfo[] =
         .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Serena{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Vivillon{COLOR DARK_GRAY}, {COLOR GREEN}Clawitzer{COLOR DARK_GRAY}, {COLOR GREEN}Gogoat{COLOR DARK_GRAY}, {COLOR GREEN}Mamoswine{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Delphox{COLOR DARK_GRAY}\n\n"
-                                "Conditions: {COLOR GREEN}Double Battle{COLOR DARK_GRAY},\n"
+                                "Conditions: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY},\n"
                                 "{COLOR GREEN}Permanent Grassy Terrain{COLOR DARK_GRAY}\n\n"
                                 "Theme: {COLOR BLUE}Serena{COLOR DARK_GRAY}"),
     },
@@ -638,7 +638,6 @@ const struct HelpWindow gHelpWindowInfo[] =
         .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Blue{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Pidgeot{COLOR DARK_GRAY}, {COLOR GREEN}Arcanine{COLOR DARK_GRAY}, {COLOR GREEN}Exeggutor{COLOR DARK_GRAY}, {COLOR GREEN}Machamp{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Blastoise{COLOR DARK_GRAY}\n\n"
-                                "Condition: {COLOR GREEN}Double Battle{COLOR DARK_GRAY}.\n\n"
                                 "Theme: {COLOR BLUE}Blue{COLOR DARK_GRAY}"),
     },
 
@@ -648,7 +647,6 @@ const struct HelpWindow gHelpWindowInfo[] =
         .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Blue{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Pidgeot{COLOR DARK_GRAY}, {COLOR GREEN}Arcanine{COLOR DARK_GRAY}, {COLOR GREEN}Exeggutor{COLOR DARK_GRAY}, {COLOR GREEN}Machamp{COLOR DARK_GRAY}\n"
                                 "{COLOR GREEN}Alakazam{COLOR DARK_GRAY}, {COLOR GREEN}Blastoise{COLOR DARK_GRAY}\n\n"
-                                "Condition: {COLOR GREEN}Double Battle{COLOR DARK_GRAY}.\n\n"
                                 "Theme: {COLOR BLUE}Blue{COLOR DARK_GRAY}"),
     },
 

@@ -4206,7 +4206,7 @@ Class: Rival
 Pic: Serena
 Music: Female
 AI: AI_FLAG_BOSS
-Double Battle: Yes
+Double Battle: No
 Mugshot: Pink
 
 Vivillon @ Charti Berry
@@ -4265,7 +4265,7 @@ Class: Rival
 Pic: Serena
 Music: Female
 AI: AI_FLAG_BOSS
-Double Battle: Yes
+Double Battle: No
 Mugshot: Pink
 Starting Status: Grassy Terrain
 Difficulty: Brutal
@@ -4381,7 +4381,7 @@ Class: Rival
 Pic: Rival Late Frlg
 Music: Male
 AI: AI_FLAG_BOSS
-Double Battle: Yes
+Double Battle: No
 Mugshot: Pink
 
 Pidgeot @ Clear Amulet
@@ -4440,7 +4440,7 @@ Class: Rival
 Pic: Rival Late Frlg
 Music: Male
 AI: AI_FLAG_BOSS
-Double Battle: Yes
+Double Battle: No
 Mugshot: Pink
 Difficulty: Brutal
 
