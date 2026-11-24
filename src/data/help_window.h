@@ -181,7 +181,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Zone 3 Boss"),
         .desc = COMPOUND_STRING("Gym Leader {COLOR BLUE}Grant{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Tyrunt{COLOR DARK_GRAY}, {COLOR GREEN}Shieldon{COLOR DARK_GRAY}, {COLOR GREEN}Amaura{COLOR DARK_GRAY}\n\n"
+                                "{COLOR GREEN}Tyrunt{COLOR DARK_GRAY}, {COLOR GREEN}Tirtouga{COLOR DARK_GRAY}, {COLOR GREEN}Amaura{COLOR DARK_GRAY}\n\n"
                                 "Theme: {COLOR GREEN}Rock{COLOR DARK_GRAY}-type specialist"),
     },
 
