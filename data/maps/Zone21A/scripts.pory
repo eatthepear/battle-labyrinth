@@ -54,17 +54,18 @@ script Zone21A_EventScript_TriggerWally {
 	applymovement(LOCALID_WALLY_21A, Common_Movement_WalkDown2)
 	waitmovement(0)
 	setspeaker("Wally")
-	msgbox(format("Hello!"))
+	msgbox(format("Um, hello, {PLAYER}.\pI wasn't really expecting to see you here, but it works out that you're here.\pI wanted to challenge you to another battle, now that I've trained my Pokémon better.\pSay, this is Double Battle Road, isn't it? Let's follow suit and try a Double Battle.\pReady or not, here I come!"))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_WALLY_BOSS_21, format("Defeat!"))
+	trainerbattle_no_intro(TRAINER_PBL_WALLY_BOSS_21, format("Wow, you are an amazing trainer, {PLAYER}!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Wally")
-	msgbox(format("I thought if I had a variety of types, I would be able to win.\pI guess there's more to battling than just having different Pokémon!\pAs a reward for beating me, take this TM!\pIt's useful for catching new Pokémon."))
+	msgbox(format("It feels like you're always one step ahead of me, {PLAYER}.\pStill, I feel proud of myself for having come this far!\pI'm going to keep improving my skills and increasing my strength, little by little!\pSpeaking of which, I found this HM, which I think might be useful for you?"))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_HM_STRENGTH)
 	setspeaker("Wally")
-	msgbox(format("Well, anyways, I've gotta run now.\pBye bye!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("Thanks again for the battle, {PLAYER}.\pI'm sure I'll improve even more by then! We'll see if I can at least give you more of a challenge then."))
+	closemessage
 	switch(var(VAR_TEMP_0)) {
 		case 22:
 			applymovement(LOCALID_WALLY_21A, Common_Movement_WalkRight)
