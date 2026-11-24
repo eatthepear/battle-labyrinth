@@ -23,26 +23,26 @@ script Zone20A_EventScript_Grotto {
 }
 
 script Zone20A_EventScript_Winston {
-	trainerbattle_single(TRAINER_PBL_WINSTON, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_WINSTON, format("Oh dear, a young trainer, off to eat in the restaurant with that outfit?\pI really don't think you'll fit in well."), format("Oh! I suppose if you're going for the Gym Badge, then it's ok!"))
+	msgbox(format("The restaurant is fancy for the diners, but it's actually more famous for the Gym Leaders who run it!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone20A_EventScript_Vivian {
-	trainerbattle_single(TRAINER_PBL_VIVIAN, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_VIVIAN, format("Lovely weather, isn't it?\pI do enjoy the outdoors, where I can eat a picnic with my servants!"), format("My servants help me win!"))
+	msgbox(format("My mother is always jabbering on about how I'm too dependent on my servants.\pI say, they're working, aren't they? Let them be useful!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone20A_EventScript_Hayes {
-	trainerbattle_single(TRAINER_PBL_HAYES, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_HAYES, format("Young trainer!\pA battle would greatly please this old spirit!"), format("Thank you, young trainer!"))
+	msgbox(format("I've spent much of my life accumulating wealth, and only now have I realized the joy of Pokémon battles!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone20A_EventScript_Ophelia {
-	trainerbattle_single(TRAINER_PBL_OPHELIA, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_OPHELIA, format("I intend to go to the restaurant every day this year.\pIt may be expensive, but the taste is simply divine!"), format("Unfortunately, defeat leaves a sour taste in my mouth…"))
+	msgbox(format("Not just anyone can afford eating at the restaurant!\pThough if you intend to challenge the Gym Leaders who run it, perhaps you can be allowed to enter."), MSGBOX_AUTOCLOSE)
 	end
 }
 
