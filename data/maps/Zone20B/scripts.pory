@@ -425,6 +425,38 @@ script Zone20B_EventScript_CressPreBattle {
     closemessage
 }
 
+script Zone20B_EventScript_RichBoy {
+    lock
+    faceplayer
+    msgbox(format("I can't wait to dig in to my food!"))
+    release
+    end
+}
+
+script Zone20B_EventScript_Lady {
+    lock
+    faceplayer
+    msgbox(format("When I come to this restaurant, I always like to people watch!"))
+    release
+    end
+}
+
+script Zone20B_EventScript_Socialite {
+    lock
+    faceplayer
+    msgbox(format("This restaurant always brings back the most cherished memories!"))
+    release
+    end
+}
+
+script Zone20B_EventScript_Gentleman {
+    lock
+    faceplayer
+    msgbox(format("It's always a pleasure to eat here, with all of these lovely people!"))
+    release
+    end
+}
+
 script Zone20B_EventScript_Walker {
 	trainerbattle_single(TRAINER_PBL_WALKER, format("Good day, young trainer. Anything I can help you with?\pA battle, you say? I cannot turn that down!"), format("An excellent break, thank you, young trainer!"))
 	msgbox(format("Young trainer, you have inspired me to work as hard as you have trained your Pokémon!"), MSGBOX_AUTOCLOSE)
