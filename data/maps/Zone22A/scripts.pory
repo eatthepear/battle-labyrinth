@@ -45,13 +45,15 @@ script Zone22A_EventScript_KimonoGirl {
 	playbgm(MUS_HG_KIMONO_GIRL, 0)
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_0) == 56) {
-		msgbox(format("{PLAYER} gave the {COLOR BLUE}Kimono Girl{COLOR DARK_GRAY} a gentle shove!"))
 		setspeaker("Kimono Girl")
-		msgbox(format("I THINK I'M GOOD! THANK U! HERE'S AN HM!"))
+		msgbox(format("Ah, excellent! You've navigated the ice keenly.\pPerhaps this will be of good use to you?"))
 		setspeaker(SP_NAME_NONE)
 		giveitem(ITEM_HM_WATERFALL)
 		setspeaker("Kimono Girl")
-		msgbox(format("BYE!"), MSGBOX_AUTOCLOSE)
+		msgbox(format("Now, if you wouldn't mind?"))
+		setspeaker(SP_NAME_NONE)
+		msgbox(format("{PLAYER} gave the {COLOR BLUE}Kimono Girl{COLOR DARK_GRAY} a gentle shove!"))
+		closemessage
 		applymovement(LOCALID_KIMONO_GIRL_22A, Zone22A_Movement_KimonoGirlExit)
 		waitmovement(0)
 		removeobject(LOCALID_KIMONO_GIRL_22A)
@@ -62,7 +64,7 @@ script Zone22A_EventScript_KimonoGirl {
 		end
 	}
 	setspeaker("Kimono Girl")
-	msgbox(format("HELP! PUSH ME FROM THE RIGHT SIDE PLEASE!"))
+	msgbox(format("Ah, my sandals have been frozen to the ice.\pWould you possibly be able to give me a push from the {COLOR GREEN}right side{COLOR DARK_GRAY}?"))
 	if (var(VAR_ZONE_22_STATE) == 0) {
 		setvar(VAR_ZONE_22_STATE, 1)
 	}
@@ -85,34 +87,37 @@ script Zone22A_EventScript_Maylene {
 	faceplayer
 	if (flag(FLAG_BEAT_BOSS_22)) {
 		setspeaker("Maylene")
-		msgbox(format("I see your potential. You can do anything you set your heart to!\pThere are other Gym Leaders, stronger than I am. Perhaps defeating them will prove a worthy challenge!"))
+		msgbox(format("I have no problem with this snow.\pI'm used to the cold because I go barefoot and lightly dressed.\p…Achoo! Oh, that was nothing. Really, I'm not cold at all."))
 		release
 		end
 	}
 	setspeaker("Maylene")
-	msgbox(format("I've been waiting in eager anticipation!\pWhat have I been waiting for?\pFor a worthy challenger to appear!\pAre you that worthy challenger?"), MSGBOX_YESNO)
+	msgbox(format("Brrr…\pOh, hello. I'm pleased to meet you.\pI'm Maylene, and I'm a Gym Leader… Achoo!\pI don't really know what it means to be strong, or how I got to be Gym Leader.\pBut I will do the best I can as the Gym Leader.\pI take battling very seriously.\pAre you ready for our battle?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Don't keep me waiting any longer than needed!\pTake a deep breath, and prepare yourself for the climb!"), MSGBOX_AUTOCLOSE)
+		msgbox(format("Sigh… I braced myself for a battle. This is a little deflating…"), MSGBOX_AUTOCLOSE)
 		releaseall
 		end
 	}
-	msgbox(format("I have a feeling that our battle will turn out to be worth the wait!\pI hope you'll show me that your skill as a Trainer surpasses even mine."))
+	msgbox(format("OK! Rei! Oh, that's my bow before a match.\pI'm throwing everything I have at you!"))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_MAYLENE_BOSS_22, format("You have proven to be a wall that I am unable to surmount!"))
+	trainerbattle_no_intro(TRAINER_PBL_MAYLENE_BOSS_22, format("I shall admit defeat… You are much too strong."))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Maylene")
-	msgbox(format("There are some things that seem out of reach no matter how hard you try.\pHowever, it's important that you never give up - no matter the opponent or the odds.\pI could tell from our battle that you and your Pokémon understand that.\pTo commemorate such an impressive show of teamwork, please accept the Cliff Badge!"))
+	msgbox(format("…OK. You win. That was a tough loss. I learned a lot from it.\pPlease, accept this Gym Badge."))
 	setspeaker(SP_NAME_NONE)
 	playfanfare(MUS_OBTAIN_BADGE)
-	msgbox(format("{PLAYER} received the Cliff Badge from {COLOR BLUE}Maylene{COLOR DARK_GRAY}!"))
+	msgbox(format("{PLAYER} received the Cobble Badge from {COLOR BLUE}Maylene{COLOR DARK_GRAY}!"))
 	waitfanfare
 	setspeaker("Maylene")
-	msgbox(format("With the Cliff Badge in your grasp, you should have no issues using the HM {COLOR GREEN}Rock Smash{COLOR DARK_GRAY} outside battle!\pYour Pokémon don't need to know the move to use it, just having the HM and the requisite Gym Badge is enough!\pAh, finally, I'd like you to take these as well."))
+	msgbox(format("Um… I should explain about that Badge.\pIf you have that Badge, you can use the HM Rock Climb outside of battle, which lets you scale rocky cliff faces.\pOh, and please take this as well."))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_DRAIN_PUNCH)
+	setspeaker("Maylene")
+	msgbox(format("That TM60 contains the move Drain Punch.\pUm… That move inflicts damage, and it robs the target's HP.\pFinally, I want you to also have this."))
+	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_FOCUS_SASH, 1)
-	msgbox(format("With {COLOR GREEN}Rock Tomb{COLOR DARK_GRAY}, a Pokémon can hurl rocks at its target, not only inflicting damage but also lowering the target's Speed.\pAnd the {COLOR GREEN}Hard Stone{COLOR DARK_GRAY} increases the damage of your Pokémon's Rock-type moves by 20%. Forms a nifty combo, huh?\pYou're just starting on your journey, so enjoy the ride and feel the breeze in your face!"))
+	msgbox(format("The {COLOR GREEN}Focus Sash{COLOR DARK_GRAY} lets your Pokémon endure an attack on 1 HP, as long as they are at full health.\pNow, only one Gym Badge remains to be earned on your journey.\pYou're almost there!"))
 	setflag(FLAG_BEAT_BOSS_22)
 	setflag(FLAG_BADGE07_GET)
 	release
@@ -129,30 +134,30 @@ script Zone22A_EventScript_SkyTrainer {
 	special(RemoveCameraObject)
 	if (!defeated(TRAINER_PBL_AMELIA_OPTIONAL_22)) {
 		setspeaker("Amelia")
-		msgbox(format("HELLO! I AM SKY TRAINER!\pIN SKY BATTLES, THE ONLY POKEMON ALLOWED ARE FLYING POKEMON OR POKEMON WITH LEVITATE.\pSOME FLYING POKEMON AREN'T EVENT ELIGIBLE.\pWANT TO SKY BATTLE WITH ME?"), MSGBOX_YESNO)
+		msgbox(format("Hello down there! Are you interested in a {COLOR GREEN}Sky Battle{COLOR DARK_GRAY}?\pIn {COLOR GREEN}Sky Battles{COLOR DARK_GRAY}, the only Pokémon allowed are Flying-type Pokémon, as well as Pokémon with the Levitate ability.\pEven some moves aren't eligible to be used because we'd be battling in the sky.\pDo you want to have a Sky Battle with me?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
 			special(TrySkyBattle)
 			if (var(VAR_RESULT) == NO) {
 				setspeaker("Amelia")
-				msgbox(format("YOU HAVE NO POKEMON ELIGIBLE FOR SKY BATTLE! BAH!"))
+				msgbox(format("It looks like you have no eligible Pokémon for a Sky Battle!"))
 			} else {
 				setspeaker("Amelia")
-				msgbox(format("GREAT! LET'S BATTLE!"))
-				trainerbattle_no_intro(TRAINER_PBL_AMELIA_OPTIONAL_22, "DEFEAT!")
+				msgbox(format("Excellent! Show how your Pokémon soar free!"))
+				trainerbattle_no_intro(TRAINER_PBL_AMELIA_OPTIONAL_22, "Crash landing!")
 				setspeaker("Amelia")
-				msgbox(format("YOU'RE SO GOOD!"))
+				msgbox(format("You've proven yourself an expert on {COLOR GREEN}Sky Battles{COLOR DARK_GRAY}!\pHere, take this as a reward!"))
 				setspeaker(SP_NAME_NONE)
 				giveitem(ITEM_AIR_BALLOON)
 				setspeaker("Amelia")
-				msgbox(format("I WAS DEFEATED!"))
+				msgbox(format("That {COLOR GREEN}Air Balloon{COLOR DARK_GRAY} can help Pokémon with avoiding Ground-type attacks, just like in a {COLOR GREEN}Sky Battle{COLOR DARK_GRAY}!"))
 			}
 		} else {
 			setspeaker("Amelia")
-			msgbox(format("LAME!"))
+			msgbox(format("Don't be disappointed, my Pokémon!\pI'm sure someone will want to have a {COLOR GREEN}Sky Battle{COLOR DARK_GRAY} with us!"))
 		}
 	} else {
 		setspeaker("Amelia")
-		msgbox(format("I WAS DEFEATED!"))
+		msgbox(format("You've proven yourself an expert on {COLOR GREEN}Sky Battles{COLOR DARK_GRAY}!"))
 	}
 	closemessage
 	special(SpawnCameraObject)
