@@ -65,52 +65,16 @@ script Zone10B_EventScript_WaterMerchant {
 		release
 		end
 	}
-	showmoneybox(0, 0)
-	message(format("In the desert, it's supply and demand. And the demand is water.\p¥200 for Fresh Water.\nRestores 30 HP each."))
+	message(format("In the desert, it's supply and demand. And the demand is water. Would you like to buy some?"))
 	waitmessage
-	dynmultipush("1x Fresh Water - ¥200", 0)
-	dynmultipush("10x Fresh Water - ¥2000", 1)
-	dynmultipush("Exit", 2)
-	dynmultichoice(0, 12, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE)
-	switch(var(VAR_RESULT)) {
-	case 0:
-		checkmoney(200)
-		if (var(VAR_RESULT) == FALSE) {
-			goto(Zone10B_EventScript_WaterNotEnough)
-		} else {
-			removemoney(200)
-			updatemoneybox
-			msgbox("Here you go.")
-			giveitem(ITEM_FRESH_WATER, 1)
-			hidemoneybox
-			release
-			end
-		}
-	case 1:
-		checkmoney(2000)
-		if (var(VAR_RESULT) == FALSE) {
-			goto(Zone10B_EventScript_WaterNotEnough)
-		} else {
-			removemoney(2000)
-			updatemoneybox
-			msgbox("Here you go.")
-			giveitem(ITEM_FRESH_WATER, 10)
-			hidemoneybox
-			release
-			end
-		}
-	}
-	closemessage
-	hidemoneybox
-	msgbox("Ah, fine.")
-	release
-}
-
-script Zone10B_EventScript_WaterNotEnough {
-	msgbox(gText_YouDontHaveEnoughMoney)
-	hidemoneybox
+	pokemart(Zone10B_Shop_FreshWater)
+	msgbox(format("You know what they say, hydrate or die-drate."))
 	release
 	end
+}
+
+mart Zone10B_Shop_FreshWater {
+	ITEM_FRESH_WATER
 }
 
 script Zone10B_EventScript_BirdKeeper {

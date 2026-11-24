@@ -124,31 +124,21 @@ script Zone18A_EventScript_AzurillDoll {
 script Zone18A_EventScript_SellSodaPop {
 	lock
 	faceplayer
-	// if ((flag(FLAG_SETTINGS_BRUTAL) == true) || (flag(FLAG_SETTINGS_INDEPENDENT) == true)) {
-	// 	msgbox(format("Soda Pop! I usually sell it, but today I'm out of stock!"))
-	// 	release
-	// 	end
-	// }
-	showmoneybox(0, 0)
-	msgbox("Want to buy some Soda Pop?\n¥300 for 50 HP a pop!", MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES) {
-		checkmoney(300)
-		if (var(VAR_RESULT) == FALSE) {
-			msgbox("You don't have enough money!")
-			hidemoneybox
-		} else {
-			msgbox("Here you go!")
-			removemoney(300)
-			updatemoneybox
-			giveitem(ITEM_SODA_POP)
-			hidemoneybox
-		}
-	} else {
-		hidemoneybox
-		msgbox("Aww, did you not like my pun?")
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		msgbox(format("Soda Pop! I usually sell it, but today I'm out of stock!"))
+		release
+		end
 	}
+	message(format("Soda Pop!\pHeals your Pokémon, very fresh!\pI'm selling some, want some?"))
+	waitmessage
+	pokemart(Zone18A_Shop_SodaPop)
+	msgbox(format("Soda Pop!\pExtra fizzy, for your Pokémon!"))
 	release
 	end
+}
+
+mart Zone18A_Shop_SodaPop {
+	ITEM_SODA_POP
 }
 
 script Zone18A_EventScript_LinkingCord {

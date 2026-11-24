@@ -135,58 +135,25 @@ script Zone24A_EventScript_David {
 	end
 }
 
-raw `
-Zone24A_EventScript_SellLemonade::
+script Zone24A_EventScript_SellLemonade {
 	lock
 	faceplayer
-	showmoneybox 0, 0
-	msgbox Zone24A_Text_WantToBuyLemonade, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq Zone24A_EventScript_BuyLemonade
-	hidemoneybox
-	msgbox Zone24A_Text_DidntLike, MSGBOX_AUTOCLOSE
+	if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+		msgbox(format("Lemonade can quench the thirst, but today I'm out of stock, sorry!"))
+		release
+		end
+	}
+	message(format("Lemonade can quench the thirst, and is good for healing your Pokémon. Would you like some?"))
+	waitmessage
+	pokemart(Zone24A_Shop_Lemonade)
+	msgbox(format("Lemonade is extra sweet. It'll top you right off!"))
 	release
 	end
+}
 
-Zone24A_EventScript_DontSell:
-	msgbox Zone24A_Text_DontSell, MSGBOX_AUTOCLOSE
-	releaseall
-	end
-
-Zone24A_Text_DontSell:
-	.string "Sorry, I'm out of stock.$"
-
-Zone24A_Text_WantToBuyLemonade:
-	.string "Lemonade, Lemonade!\n"
-	.string "70 HP, for the low price of ¥400!$"
-
-Zone24A_Text_DidntLike:
-	.string "Maybe next time!$"
-
-Zone24A_EventScript_BuyLemonade:
-	checkmoney 400
-	compare VAR_RESULT, FALSE
-	goto_if_eq Zone24A_Text_NotEnoughMoney
-	msgbox Zone24A_Text_HereYouGo, MSGBOX_AUTOCLOSE
-	removemoney 400
-	updatemoneybox
-	giveitem ITEM_LEMONADE
-	hidemoneybox
-	release
-	end
-
-Zone24A_Text_HereYouGo:
-	.string "Here you go!$"
-
-Zone24A_Text_NotEnoughMoney:
-	msgbox Zone24A_Text_NotEnough, MSGBOX_AUTOCLOSE
-	hidemoneybox
-	release
-	end
-
-Zone24A_Text_NotEnough:
-	.string "You don't have enough money!$"
-`
+mart Zone24A_Shop_Lemonade {
+	ITEM_LEMONADE
+}
 
 script Zone24A_EventScript_Random1 {
 	lock
