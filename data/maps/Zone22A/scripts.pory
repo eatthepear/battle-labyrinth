@@ -134,7 +134,7 @@ script Zone22A_EventScript_SkyTrainer {
 	special(RemoveCameraObject)
 	if (!defeated(TRAINER_PBL_AMELIA_OPTIONAL_22)) {
 		setspeaker("Amelia")
-		msgbox(format("Hello down there! Are you interested in a {COLOR GREEN}Sky Battle{COLOR DARK_GRAY}?\pIn {COLOR GREEN}Sky Battles{COLOR DARK_GRAY}, the only Pokémon allowed are Flying-type Pokémon, as well as Pokémon with the Levitate ability.\pEven some moves aren't eligible to be used because we'd be battling in the sky.\pDo you want to have a Sky Battle with me?"), MSGBOX_YESNO)
+		msgbox(format("Hello down there! Are you interested in a {COLOR GREEN}Sky Battle{COLOR DARK_GRAY}?\pIn {COLOR GREEN}Sky Battles{COLOR DARK_GRAY}, the only Pokémon allowed are most Flying-type Pokémon, as well as Pokémon with the Levitate ability.\pEven some moves aren't eligible to be used because we'd be battling in the sky.\pDo you want to have a Sky Battle with me?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
 			special(TrySkyBattle)
 			if (var(VAR_RESULT) == NO) {
