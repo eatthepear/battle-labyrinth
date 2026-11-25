@@ -107,32 +107,32 @@ movement Zone24A_Movement_BlueWalkUp {
 }
 
 script Zone24A_EventScript_Douglas {
-	trainerbattle_single(TRAINER_PBL_DOUGLAS, format("BATTLE INTRO TEXT TODO!"), format("DEFEAT TEXT  TODO!"))
-	msgbox(format("DEFEATED TEXT TODO!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_DOUGLAS, format("You can hear my music echo throughout this canyon!\pEcho! Echo! Echo!"), format("You can hear this sad song of defeat echo!"))
+	msgbox(format("This song of mine, reverberating for all to hear… What a tragic story!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone24A_EventScript_Haywood {
-	trainerbattle_single(TRAINER_PBL_HAYWOOD, format("BATTLE INTRO TEXT TODO!"), format("DEFEAT TEXT  TODO!"))
-	msgbox(format("DEFEATED TEXT TODO!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_HAYWOOD, format("There's a tower somewhere in this valley, and I'm determined to find it!"), format("You must be an ancient spirit from that tower!"))
+	msgbox(format("I've heard the tower is beyond ancient, and thus is inhabitated by some fossil Pokémon!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone24A_EventScript_Spencer {
-	trainerbattle_single(TRAINER_PBL_SPENCER, format("BATTLE INTRO TEXT TODO!"), format("DEFEAT TEXT  TODO!"))
-	msgbox(format("DEFEATED TEXT TODO!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_SPENCER, format("I will strike a blow for my brethren in the name of love!\pHiyaaa, love!"), format("Love will never be defeated! …Err, I'm out of Pokémon."))
+	msgbox(format("In the dojo, we say that respect and love for yourself is key to success!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone24A_EventScript_Christi {
-	trainerbattle_single(TRAINER_PBL_CHRISTI, format("BATTLE INTRO TEXT TODO!"), format("DEFEAT TEXT  TODO!"))
-	msgbox(format("DEFEATED TEXT TODO!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_CHRISTI, format("Pokémon Trainer! Heed my call! Protect Pokémon and natural spaces!"), format("Your skill as a trainer is great!"))
+	msgbox(format("We need more people like you to help protect Pokémon and natural spaces!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone24A_EventScript_David {
-	trainerbattle_single(TRAINER_PBL_DAVID, format("BATTLE INTRO TEXT TODO!"), format("DEFEAT TEXT  TODO!"))
-	msgbox(format("DEFEATED TEXT TODO!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_DAVID, format("These badlands are home to some unique Pokémon species.\pHave you see any interesting ones?"), format("All Pokémon are interesting, and all Pokémon deserve to be protected!"))
+	msgbox(format("Protect Pokémon! Biodiversity is important!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
