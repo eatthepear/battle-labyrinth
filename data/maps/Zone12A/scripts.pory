@@ -165,28 +165,27 @@ script Zone12A_EventScript_Charles {
 	faceplayer
 	if (defeated(TRAINER_PBL_CHARLES_OPTIONAL_12)) {
 		setspeaker("Charles")
-		msgbox(format("I see your potential. You can do anything you set your heart to!\pThere are other Gym Leaders, stronger than I am. Perhaps defeating them will prove a worthy challenge!"))
+		msgbox(format("There are three other Aspiring Leaders like me out there, all tucked away and hidden.\pGood luck on finding all of us!"))
 		release
 		end
 	}
 	setspeaker("Charles")
-	msgbox(format("I've been waiting in eager anticipation!\pWhat have I been waiting for?\pFor a worthy challenger to appear!\pAre you that worthy challenger?"), MSGBOX_YESNO)
+	msgbox(format("Hello! My name is {COLOR BLUE}Charles{COLOR DARK_GRAY}, and I am one of the four {COLOR BLUE}Aspiring Leaders{COLOR DARK_GRAY}.\pWe are skilled trainers who specialize in a particular type just like a Gym Leader, and indeed, we hope to be Gym Leaders one day.\pWould you want to battle with me?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Don't keep me waiting any longer than needed!\pTake a deep breath, and prepare yourself for the climb!"), MSGBOX_AUTOCLOSE)
+		msgbox(format("Don't fly away for too long!\pA battle will increase my skill, so I can become an even better Gym Leader one day!"), MSGBOX_AUTOCLOSE)
 		releaseall
 		end
 	}
-	msgbox(format("I have a feeling that our battle will turn out to be worth the wait!\pI hope you'll show me that your skill as a Trainer surpasses even mine."))
-	call(EventScript_HealPreBoss)
+	msgbox(format("Let my Flying-type Pokémon take flight!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_CHARLES_OPTIONAL_12, format("You have proven to be a wall that I am unable to surmount!"))
+	trainerbattle_no_intro(TRAINER_PBL_CHARLES_OPTIONAL_12, format("Crash landing!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Charles")
-	msgbox(format("With the Cliff Badge in your grasp, you should have no issues using the HM {COLOR GREEN}Rock Smash{COLOR DARK_GRAY} outside battle!\pYour Pokémon don't need to know the move to use it, just having the HM and the requisite Gym Badge is enough!\pAh, finally, I'd like you to take these as well."))
+	msgbox(format("You are quite skilled!\pI, {COLOR BLUE}Charles{COLOR DARK_GRAY} the Aspiring Leader, admit defeat to you.\pI'd like you to have this, for showing such nimble moves!"))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_ACROBATICS, 1)
 	setspeaker("Charles")
-	msgbox(format("With {COLOR GREEN}Rock Tomb{COLOR DARK_GRAY}, a Pokémon can hurl rocks at its target, not only inflicting damage but also lowering the target's Speed.\pAnd the {COLOR GREEN}Hard Stone{COLOR DARK_GRAY} increases the damage of your Pokémon's Rock-type moves by 20%. Forms a nifty combo, huh?\pYou're just starting on your journey, so enjoy the ride and feel the breeze in your face!"))
+	msgbox(format("{COLOR GREEN}Acrobatics{COLOR DARK_GRAY} deals double damage if your Pokémon isn't holding an item.\pUsually, an item is worth it, but if your Pokémon holds an item like a Flying Gem or another consumable item, you can unlock the power of {COLOR GREEN}Acrobatics{COLOR DARK_GRAY}!"))
 	release
 	end
 }

@@ -28,27 +28,27 @@ script Zone6A_EventScript_Declan {
 	faceplayer
 	if (defeated(TRAINER_PBL_DECLAN_OPTIONAL_6)) {
 		setspeaker("Declan")
-		msgbox(format("I see your potential. You can do anything you set your heart to!\pThere are other Gym Leaders, stronger than I am. Perhaps defeating them will prove a worthy challenge!"))
+		msgbox(format("There are three other Aspiring Leaders like me out there, though we're all kind of hidden away.\pGood luck on finding all of us!"))
 		release
 		end
 	}
 	setspeaker("Declan")
-	msgbox(format("I've been waiting in eager anticipation!\pWhat have I been waiting for?\pFor a worthy challenger to appear!\pAre you that worthy challenger?"), MSGBOX_YESNO)
+	msgbox(format("Greetings! My name is {COLOR BLUE}Declan{COLOR DARK_GRAY}, and I am one of the four {COLOR BLUE}Aspiring Leaders{COLOR DARK_GRAY}.\pWe are skilled trainers who specialize in a particular type just like a Gym Leader, and indeed, we hope to be Gym Leaders one day.\pWould you be interested in a battle with me?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Don't keep me waiting any longer than needed!\pTake a deep breath, and prepare yourself for the climb!"), MSGBOX_AUTOCLOSE)
+		msgbox(format("I aspire to greatness!\pYou too, should aspire to greatness through battling me!"), MSGBOX_AUTOCLOSE)
 		releaseall
 		end
 	}
-	msgbox(format("I have a feeling that our battle will turn out to be worth the wait!\pI hope you'll show me that your skill as a Trainer surpasses even mine."))
+	msgbox(format("I use Bug-type Pokémon!\pThough that perhaps should be obvious already.\pLet's do this!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_DECLAN_OPTIONAL_6, format("You have proven to be a wall that I am unable to surmount!"))
+	trainerbattle_no_intro(TRAINER_PBL_DECLAN_OPTIONAL_6, format("My precious Bug-type Pokémon, defeated!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Declan")
-	msgbox(format("With the Cliff Badge in your grasp, you should have no issues using the HM {COLOR GREEN}Rock Smash{COLOR DARK_GRAY} outside battle!\pYour Pokémon don't need to know the move to use it, just having the HM and the requisite Gym Badge is enough!\pAh, finally, I'd like you to take these as well."))
+	msgbox(format("Your battling skills are excellent!\pI, {COLOR BLUE}Declan{COLOR DARK_GRAY} the Aspiring Leader, submit defeat.\pHere, for you, my favorite TM!"))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_X_SCISSOR, 1)
 	setspeaker("Declan")
-	msgbox(format("With {COLOR GREEN}Rock Tomb{COLOR DARK_GRAY}, a Pokémon can hurl rocks at its target, not only inflicting damage but also lowering the target's Speed.\pAnd the {COLOR GREEN}Hard Stone{COLOR DARK_GRAY} increases the damage of your Pokémon's Rock-type moves by 20%. Forms a nifty combo, huh?\pYou're just starting on your journey, so enjoy the ride and feel the breeze in your face!"))
+	msgbox(format("{COLOR GREEN}X-Scissor{COLOR DARK_GRAY} is a pretty straightforward move for a pretty straightforward guy like me!\pIt only deals damage, though if your Pokémon has say, the Sharpness ability, its power will be boosted by 50%!"))
 	release
 	end
 }

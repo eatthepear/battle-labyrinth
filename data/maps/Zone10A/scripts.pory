@@ -224,28 +224,27 @@ script Zone10A_EventScript_Henry {
 	faceplayer
 	if (defeated(TRAINER_PBL_HENRY_OPTIONAL_10)) {
 		setspeaker("Henry")
-		msgbox(format("I see your potential. You can do anything you set your heart to!\pThere are other Gym Leaders, stronger than I am. Perhaps defeating them will prove a worthy challenge!"))
+		msgbox(format("There are three other Aspiring Leaders like me out there, almost never out in the open.\pYou can find everyone if you look hard enough!"))
 		release
 		end
 	}
 	setspeaker("Henry")
-	msgbox(format("I've been waiting in eager anticipation!\pWhat have I been waiting for?\pFor a worthy challenger to appear!\pAre you that worthy challenger?"), MSGBOX_YESNO)
+	msgbox(format("Howdy! My name is {COLOR BLUE}Henry{COLOR DARK_GRAY}, and I am one of the four {COLOR BLUE}Aspiring Leaders{COLOR DARK_GRAY}.\pWe are skilled trainers who specialize in a particular type just like a Gym Leader, and indeed, we hope to be Gym Leaders one day.\pI like Double Battles, do you wanna battle against me?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("Don't keep me waiting any longer than needed!\pTake a deep breath, and prepare yourself for the climb!"), MSGBOX_AUTOCLOSE)
+		msgbox(format("Oh, it's all good, just take your time!"), MSGBOX_AUTOCLOSE)
 		releaseall
 		end
 	}
-	msgbox(format("I have a feeling that our battle will turn out to be worth the wait!\pI hope you'll show me that your skill as a Trainer surpasses even mine."))
-	call(EventScript_HealPreBoss)
+	msgbox(format("My Pokémon! It's time to work hard!"))
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_HENRY_OPTIONAL_10, format("You have proven to be a wall that I am unable to surmount!"))
+	trainerbattle_no_intro(TRAINER_PBL_HENRY_OPTIONAL_10, format("Whew, my Pokémon got all tired out!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Henry")
-	msgbox(format("With the Cliff Badge in your grasp, you should have no issues using the HM {COLOR GREEN}Rock Smash{COLOR DARK_GRAY} outside battle!\pYour Pokémon don't need to know the move to use it, just having the HM and the requisite Gym Badge is enough!\pAh, finally, I'd like you to take these as well."))
+	msgbox(format("Hey! You beat me! Congratulations!\pI, {COLOR BLUE}Henry{COLOR DARK_GRAY} the Aspiring Leader, concede to you.\pHere, take this!"))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_TM_HIGH_HORSEPOWER, 1)
 	setspeaker("Henry")
-	msgbox(format("With {COLOR GREEN}Rock Tomb{COLOR DARK_GRAY}, a Pokémon can hurl rocks at its target, not only inflicting damage but also lowering the target's Speed.\pAnd the {COLOR GREEN}Hard Stone{COLOR DARK_GRAY} increases the damage of your Pokémon's Rock-type moves by 20%. Forms a nifty combo, huh?\pYou're just starting on your journey, so enjoy the ride and feel the breeze in your face!"))
+	msgbox(format("{COLOR GREEN}High Horsepower{COLOR DARK_GRAY} is pretty easy to understand! Your Pokémon use high power to attack an opponent, just like a worker works hard or uses a machine to do something difficult!"))
 	release
 	end
 }
