@@ -10,25 +10,25 @@ script Zone10C_EventScript_RuinManiac {
 	lock
 	faceplayer
 	if (flag(FLAG_SETTINGS_NUZLOCKE) && flag(FLAG_ZONE10C_NUZLOCKE_RECEIVED_UNOWN)) {
-		msgbox(format("NUZLOCKE, CANT GIVE MORE THAN ONE!"))
+		msgbox(format("I cannot give you any more Unown. Apologies."))
 		release
 		end
 	}
 	if (flag(FLAG_DAILY_UNOWN_RECEIVED)) {
-		msgbox(format("COME BACK TOMORROW!"))
+		msgbox(format("If you want a new Unown, come back tomorrow!"))
 		release
 		end
 	}
-	msgbox(format("I GIVE YOU UNOWN, YOU WANT YES?"), MSGBOX_YESNO)
+	msgbox(format("I am a collector of a peculiar Pokémon species.\pThese Pokémon are shaped like strange glyphs.\pIf you'd like, I can give you one, just for you to see what it's like. Are you interested?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
-		msgbox(format("SAD!"))
+		msgbox(format("It is alright, not all appreciate this strange Pokémon as I do."))
 		release
 		end
 	}
 	givemon(SPECIES_UNOWN, 20, metLocation=METLOC_RECEIVED_UNOWN)
 	setflag(FLAG_ZONE10C_NUZLOCKE_RECEIVED_UNOWN)
 	setflag(FLAG_DAILY_UNOWN_RECEIVED)
-	msgbox(format("HAVE FUN!"))
+	msgbox(format("Here, an Unown for you. Treat it well."))
 	release
 	end
 }
