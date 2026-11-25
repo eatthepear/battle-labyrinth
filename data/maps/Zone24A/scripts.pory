@@ -107,32 +107,32 @@ movement Zone24A_Movement_BlueWalkUp {
 }
 
 script Zone24A_EventScript_Douglas {
-	trainerbattle_single(TRAINER_PBL_DOUGLAS, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_DOUGLAS, format("BATTLE INTRO TEXT TODO!"), format("DEFEAT TEXT  TODO!"))
+	msgbox(format("DEFEATED TEXT TODO!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone24A_EventScript_Haywood {
-	trainerbattle_single(TRAINER_PBL_HAYWOOD, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_HAYWOOD, format("BATTLE INTRO TEXT TODO!"), format("DEFEAT TEXT  TODO!"))
+	msgbox(format("DEFEATED TEXT TODO!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone24A_EventScript_Spencer {
-	trainerbattle_single(TRAINER_PBL_SPENCER, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_SPENCER, format("BATTLE INTRO TEXT TODO!"), format("DEFEAT TEXT  TODO!"))
+	msgbox(format("DEFEATED TEXT TODO!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone24A_EventScript_Christi {
-	trainerbattle_single(TRAINER_PBL_CHRISTI, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_CHRISTI, format("BATTLE INTRO TEXT TODO!"), format("DEFEAT TEXT  TODO!"))
+	msgbox(format("DEFEATED TEXT TODO!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone24A_EventScript_David {
-	trainerbattle_single(TRAINER_PBL_DAVID, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_DAVID, format("BATTLE INTRO TEXT TODO!"), format("DEFEAT TEXT  TODO!"))
+	msgbox(format("DEFEATED TEXT TODO!"), MSGBOX_AUTOCLOSE)
 	end
 }
 

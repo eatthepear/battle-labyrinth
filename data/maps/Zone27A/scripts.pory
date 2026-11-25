@@ -241,25 +241,25 @@ movement Zone27A_Movement_Serena_Leave {
 }
 
 script Zone27A_EventScript_Leonidas {
-	trainerbattle_single(TRAINER_PBL_LEONIDAS, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_LEONIDAS, format("BATTLE INTRO TEXT TODO!"), format("DEFEAT TEXT  TODO!"))
+	msgbox(format("DEFEATED TEXT TODO!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone27A_EventScript_Gustavo {
-	trainerbattle_single(TRAINER_PBL_GUSTAVO, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_GUSTAVO, format("BATTLE INTRO TEXT TODO!"), format("DEFEAT TEXT  TODO!"))
+	msgbox(format("DEFEATED TEXT TODO!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone27A_EventScript_Shawn {
-	trainerbattle_single(TRAINER_PBL_SHAWN, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_SHAWN, format("BATTLE INTRO TEXT TODO!"), format("DEFEAT TEXT  TODO!"))
+	msgbox(format("DEFEATED TEXT TODO!"), MSGBOX_AUTOCLOSE)
 	end
 }
 
 script Zone27A_EventScript_Sydney {
-	trainerbattle_single(TRAINER_PBL_SYDNEY, format("BATTLE!"), format("DEFEAT!"))
-	msgbox(format("DEFEATED!"), MSGBOX_AUTOCLOSE)
+	trainerbattle_single(TRAINER_PBL_SYDNEY, format("BATTLE INTRO TEXT TODO!"), format("DEFEAT TEXT  TODO!"))
+	msgbox(format("DEFEATED TEXT TODO!"), MSGBOX_AUTOCLOSE)
 	end
 }
