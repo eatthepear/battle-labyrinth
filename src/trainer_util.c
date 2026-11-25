@@ -2,6 +2,7 @@
 #include "main.h"
 #include "caps.h"
 #include "data.h"
+#include "event_data.h"
 #include "move.h"
 #include "random.h"
 #include "string_util.h"
@@ -127,16 +128,21 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
     u32 data;
     u32 personality = (LocalRandom32(&trainer->localRngState) & 0xFFFFDF00) + 0x1000;
     u32 genderValue = LocalRandom32(&trainer->localRngState);
-    u8 level = GetEndlessCandyLevelCap() - 2;
-    if (GetCurrentDifficultyLevel() == DIFFICULTY_EASY)
-        level -= 1;
-    if (trainerMon->lvl)
+    u8 level;
+    if (trainerMon->lvl || (FlagGet(FLAG_FORCE_BATTLE_ANIM_ON))) // checking if it's a boss battle
     {
         if (trainerMon->lvl >= 5)
             level = trainerMon->lvl; // normal case
         else
-            level += trainerMon->lvl; // if trainerMon->lvl < 5, then it's used as a modifier on top of the level cap - 2, for level scaling
+            level = GetCurrentLevelCap() - trainerMon->lvl; // if trainerMon->lvl < 5 but nonzero, then it's used as a modifier of the level cap, for level scaling
     }
+    else
+    {
+        level = GetEndlessCandyLevelCap() - 2;
+    }
+    if (GetCurrentDifficultyLevel() == DIFFICULTY_EASY)
+        level -= 1;
+
     u8 nature = trainerMon->nature ? trainerMon->nature : (LocalRandom32(&trainer->localRngState) % 5) * 6; // all the neutral natures are multiples of 6
     if (trainerMon->gender == TRAINER_MON_RANDOM_GENDER)
         genderValue = genderValue & 0x000000FF;

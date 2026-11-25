@@ -2457,7 +2457,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Kleavor @ Lum Berry
 Adamant Nature
 Ability: Sharpness
-Level: 2
+Level: 0
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - X-Scissor
 - Stone Axe
@@ -2700,7 +2700,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Hawlucha @ Flying Gem
 Adamant Nature
 Ability: Unburden
-Level: 2
+Level: 0
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Acrobatics
 - Close Combat
@@ -4823,7 +4823,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nidoking @ Life Orb
 Timid Nature
 Ability: Sheer Force
-Level: 2
+Level: 0
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sludge Wave
 - Earth Power
@@ -5229,7 +5229,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Honchkrow @ Life Orb
 Naive Nature
 Ability: Moxie
-Level: 2
+Level: 0
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Brave Bird
 - Dark Pulse
