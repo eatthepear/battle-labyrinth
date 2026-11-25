@@ -6915,6 +6915,8 @@ Yamper
 
 Tadbulb
 
+Wooloo
+
 Nidoran F
 
 Nidoran M
@@ -7035,6 +7037,8 @@ Tadbulb
 
 Rellor
 
+Wooloo
+
 Nidoran F
 
 Nidoran M
@@ -7053,11 +7057,7 @@ Zigzagoon
 
 Zigzagoon Galar
 
-Wurmple
-
 Slakoth
-
-Meditite
 
 Budew
 
@@ -7106,6 +7106,8 @@ Tympole
 Sandshrew
 
 Vulpix
+
+Poliwag
 
 Geodude
 
@@ -7156,6 +7158,8 @@ Taillow
 Surskit
 
 Yamper
+
+Milcery
 
 Nidoran F
 
@@ -7220,6 +7224,8 @@ Tympole
 Sandshrew
 
 Vulpix
+
+Poliwag
 
 Snubbull
 
@@ -7399,6 +7405,8 @@ Foongus
 
 Vulpix
 
+Poliwag
+
 Snubbull
 
 Baltoy
@@ -7421,6 +7429,8 @@ Numel
 
 Timburr
 
+Ducklett
+
 Shelmet
 
 Flabébé
@@ -7428,6 +7438,8 @@ Flabébé
 Sizzlipede
 
 Tandemaus
+
+Capsakid
 
 Abra
 
@@ -7557,6 +7569,8 @@ Skrelp
 
 Sandygast
 
+Seel
+
 Krabby
 
 Exeggcute
@@ -7653,11 +7667,19 @@ Numel
 
 Timburr
 
+Ducklett
+
 Golett
 
 Fennekin
 
+Flabébé
+
 Cutiefly
+
+Sizzlipede
+
+Capsakid
 
 Charmander
 
@@ -7699,11 +7721,15 @@ Totodile
 
 Piplup
 
+Darumaka
+
 Chespin
 
 Froakie
 
 Bulbasaur
+
+Cubone
 
 Chikorita
 
@@ -7810,6 +7836,8 @@ Sizzlipede
 Glameow
 
 Mime Jr.
+
+Darumaka Galar
 
 Karrablast
 
@@ -8001,8 +8029,6 @@ Misdreavus
 
 Marill
 
-Smeargle
-
 === TRAINER_POOL_ZONE_10 ===
 Name: Trainer Pool
 Class: Champion
@@ -8010,6 +8036,8 @@ Pic: Champion Wallace
 Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
+
+Silicobra
 
 Houndour
 
@@ -8032,6 +8060,8 @@ Cufant
 Cacnea
 
 Elgyem
+
+Pumpkaboo
 
 Toedscool
 
@@ -8113,9 +8143,9 @@ Gligar
 
 Tangela
 
-Marill
+Misdreavus
 
-Smeargle
+Marill
 
 === TRAINER_POOL_COLLECTOR ===
 Name: Trainer Pool
@@ -8398,8 +8428,6 @@ Marill
 Qwilfish
 
 Qwilfish Hisui
-
-Smeargle
 
 Jigglypuff
 
@@ -9211,10 +9239,6 @@ Swellow
 
 Masquerain
 
-Banette
-
-Dusclops
-
 Chimecho
 
 Carnivine
@@ -9318,6 +9342,8 @@ Girafarig
 Chimecho
 
 Carnivine
+
+Araquanid
 
 Thievul
 
@@ -9586,10 +9612,6 @@ Hitmontop
 Swellow
 
 Masquerain
-
-Banette
-
-Dusclops
 
 Chimecho
 
@@ -9941,19 +9963,19 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
-Morpeko
-
-Chansey
-
-Cherrim
-
-Tropius
-
-Klawf
+Vanillish
 
 Shiinotic
 
+Morpeko
+
+Cherrim
+
+Klawf
+
 Breloom
+
+Tropius
 
 Amoonguss
 
@@ -9961,17 +9983,17 @@ Swalot
 
 Grumpig
 
-Vespiquen
-
 Kingler
+
+Vespiquen
 
 Cramorant
 
 Tatsugiri
 
-Dachsbun
-
 Crabominable
+
+Dachsbun
 
 Veluza
 
@@ -9979,11 +10001,15 @@ Octillery
 
 Slurpuff
 
+Heatmor
+
 Flapple
 
 Appletun
 
 Scovillain
+
+Dipplin
 
 Oinkologne
 
@@ -10005,13 +10031,23 @@ Slowking Galar
 
 Miltank
 
+Dubwool
+
+Barraskewda
+
 Gourgeist
 
 Alcremie
 
-Clawitzer
+Simisage
 
-Garganacl
+Simisear
+
+Simipour
+
+Golduck
+
+Clawitzer
 
 Shuckle
 
@@ -10021,9 +10057,7 @@ Polteageist
 
 Sinistcha
 
-Tsareena
-
-Arboliva
+Tentacruel
 
 Toedscruel
 
@@ -10033,14 +10067,6 @@ Exeggutor
 
 Exeggutor Alola
 
-Dondozo
-
-Vanilluxe
-
-Blissey
-
-Hydrapple
-
 === TRAINER_POOL_ZONE_21 ===
 Name: Trainer Pool
 Class: Champion
@@ -10048,6 +10074,196 @@ Pic: Champion Wallace
 Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
+
+Mr. Mime
+
+Mr. Mime Galar
+
+Lanturn
+
+Breloom
+
+Sharpedo
+
+Camerupt
+
+Lunatone
+
+Solrock
+
+Tropius
+
+Lumineon
+
+Basculin
+
+Basculin Blue Striped
+
+Basculin White Striped
+
+Maractus
+
+Greedent
+
+Eldegoss
+
+Amoonguss
+
+Aromatisse
+
+Ribombee
+
+Magneton
+
+Forretress
+
+Skarmory
+
+Stantler
+
+Swalot
+
+Absol
+
+Throh
+
+Sawk
+
+Meowstic
+
+Whiscash
+
+Crawdaunt
+
+Dodrio
+
+Xatu
+
+Torkoal
+
+Grumpig
+
+Cinccino
+
+Alomomola
+
+Galvantula
+
+Stunfisk
+
+Furfrou
+
+Klefki
+
+Falinks
+
+Stonjourner
+
+Eiscue
+
+Maushold
+
+Rabsca
+
+Dewgong
+
+Kingler
+
+Hariyama
+
+Manectric
+
+Cacturne
+
+Vespiquen
+
+Gastrodon
+
+Garbodor
+
+Swanna
+
+Sawsbuck
+
+Trevenant
+
+Bruxish
+
+Cramorant
+
+Frosmoth
+
+Indeedee
+
+Indeedee F
+
+Tatsugiri
+
+Crabominable
+
+Oricorio
+
+Mimikyu
+
+Dachsbun
+
+Veluza
+
+Octillery
+
+Glalie
+
+Lopunny
+
+Skuntank
+
+Froslass
+
+Whimsicott
+
+Lilligant
+
+Lilligant Hisui
+
+Darmanitan
+
+Darmanitan Galar
+
+Jellicent
+
+Slurpuff
+
+Heliolisk
+
+Lurantis
+
+Salazzle
+
+Palossand
+
+Komala
+
+Grapploct
+
+Brambleghast
+
+Espathra
+
+Hypno
+
+Ambipom
+
+Cofagrigus
+
+Golurk
+
+Heatmor
+
+Durant
+
+Malamar
+
+Runerigus
 
 Rhydon
 
@@ -10058,8 +10274,6 @@ Huntail
 Gorebyss
 
 Relicanth
-
-Spiritomb
 
 Musharna
 
@@ -10089,10 +10303,6 @@ Scovillain
 
 Dipplin
 
-Scrafty
-
-Ferrothorn
-
 Oinkologne
 
 Houndstone
@@ -10100,14 +10310,6 @@ Houndstone
 Slowbro
 
 Slowbro Galar
-
-Electrode
-
-Electrode Hisui
-
-Weezing
-
-Weezing Galar
 
 Kangaskhan
 
@@ -10133,8 +10335,6 @@ Toxicroak
 
 Sigilyph
 
-Bisharp
-
 Bouffalant
 
 Oranguru
@@ -10147,27 +10347,13 @@ Boltund
 
 Barraskewda
 
-Kilowattrel
-
 Magmar
-
-Omastar
-
-Kabutops
-
-Cradily
-
-Armaldo
 
 Rampardos
 
 Bastiodon
 
 Floatzel
-
-Mismagius
-
-Abomasnow
 
 Carracosta
 
@@ -10177,13 +10363,7 @@ Accelgor
 
 Pangoro
 
-Dragalge
-
 Gourgeist
-
-Toxapex
-
-Alcremie
 
 Bellibolt
 
@@ -10203,13 +10383,7 @@ Rapidash
 
 Rapidash Galar
 
-Muk
-
-Muk Alola
-
 Pinsir
-
-Scizor
 
 Heracross
 
@@ -10219,29 +10393,13 @@ Houndoom
 
 Donphan
 
-Wailord
-
 Claydol
 
 Bronzong
 
-Drapion
-
-Talonflame
-
-Barbaracle
-
-Hawlucha
-
 Mudsdale
 
 Bewear
-
-Copperajah
-
-Kleavor
-
-Revavroom
 
 Cyclizar
 
@@ -10251,69 +10409,17 @@ Scyther
 
 Clawitzer
 
-Toxtricity
-
 Ninetales
 
 Ninetales Alola
 
 Shuckle
 
-Honchkrow
-
-Archeops
-
-Beartic
-
 Pyroar
 
 Sirfetch'd
 
-Dracozolt
-
-Arctozolt
-
-Dracovish
-
-Arctovish
-
 Mabosstiff
-
-Excadrill
-
-Polteageist
-
-Sinistcha
-
-Steelix
-
-Weavile
-
-Gliscor
-
-Zoroark
-
-Zoroark Hisui
-
-Mienshao
-
-Braviary
-
-Braviary Hisui
-
-Mandibuzz
-
-Sandaconda
-
-Cursola
-
-Overqwil
-
-Sneasler
-
-Tentacruel
-
-Aerodactyl
 
 Porygon2
 
@@ -10323,57 +10429,17 @@ Yanmega
 
 Cryogonal
 
-Avalugg
-
-Avalugg Hisui
-
 Toedscruel
 
 Dhelmise
 
-Starmie
-
-Tyrantrum
-
 Mr. Rime
-
-Cetitan
 
 Dudunsparce
 
-Aurorus
-
-Cloyster
-
-Vaporeon
-
-Jolteon
-
-Flareon
-
-Espeon
-
 Umbreon
 
-Lucario
-
-Hippowdon
-
-Leafeon
-
-Glaceon
-
 Probopass
-
-Sylveon
-
-Centiskorch
-
-Glimmora
-
-Exeggutor
-
-Exeggutor Alola
 
 Gogoat
 
@@ -10381,25 +10447,9 @@ Golisopod
 
 Lapras
 
-Tangrowth
-
-Noivern
-
-Duraludon
-
 Type: Null
 
-Gyarados
-
-Snorlax
-
-Milotic
-
 Dustox
-
-Arcanine
-
-Arcanine Hisui
 
 Butterfree
 
@@ -10423,6 +10473,196 @@ Music: Elite Four
 AI: AI_FLAG_BASIC_TRAINER
 Party Size: 1
 
+Mr. Mime
+
+Mr. Mime Galar
+
+Lanturn
+
+Breloom
+
+Sharpedo
+
+Camerupt
+
+Lunatone
+
+Solrock
+
+Tropius
+
+Lumineon
+
+Basculin
+
+Basculin Blue Striped
+
+Basculin White Striped
+
+Maractus
+
+Greedent
+
+Eldegoss
+
+Amoonguss
+
+Aromatisse
+
+Ribombee
+
+Magneton
+
+Forretress
+
+Skarmory
+
+Stantler
+
+Swalot
+
+Absol
+
+Throh
+
+Sawk
+
+Meowstic
+
+Whiscash
+
+Crawdaunt
+
+Dodrio
+
+Xatu
+
+Torkoal
+
+Grumpig
+
+Cinccino
+
+Alomomola
+
+Galvantula
+
+Stunfisk
+
+Furfrou
+
+Klefki
+
+Falinks
+
+Stonjourner
+
+Eiscue
+
+Maushold
+
+Rabsca
+
+Dewgong
+
+Kingler
+
+Hariyama
+
+Manectric
+
+Cacturne
+
+Vespiquen
+
+Gastrodon
+
+Garbodor
+
+Swanna
+
+Sawsbuck
+
+Trevenant
+
+Bruxish
+
+Cramorant
+
+Frosmoth
+
+Indeedee
+
+Indeedee F
+
+Tatsugiri
+
+Crabominable
+
+Oricorio
+
+Mimikyu
+
+Dachsbun
+
+Veluza
+
+Octillery
+
+Glalie
+
+Lopunny
+
+Skuntank
+
+Froslass
+
+Whimsicott
+
+Lilligant
+
+Lilligant Hisui
+
+Darmanitan
+
+Darmanitan Galar
+
+Jellicent
+
+Slurpuff
+
+Heliolisk
+
+Lurantis
+
+Salazzle
+
+Palossand
+
+Komala
+
+Grapploct
+
+Brambleghast
+
+Espathra
+
+Hypno
+
+Ambipom
+
+Cofagrigus
+
+Golurk
+
+Heatmor
+
+Durant
+
+Malamar
+
+Runerigus
+
 Rhydon
 
 Mantine
@@ -10432,8 +10672,6 @@ Huntail
 Gorebyss
 
 Relicanth
-
-Spiritomb
 
 Musharna
 
@@ -10463,10 +10701,6 @@ Scovillain
 
 Dipplin
 
-Scrafty
-
-Ferrothorn
-
 Oinkologne
 
 Houndstone
@@ -10474,14 +10708,6 @@ Houndstone
 Slowbro
 
 Slowbro Galar
-
-Electrode
-
-Electrode Hisui
-
-Weezing
-
-Weezing Galar
 
 Kangaskhan
 
@@ -10507,8 +10733,6 @@ Toxicroak
 
 Sigilyph
 
-Bisharp
-
 Bouffalant
 
 Oranguru
@@ -10521,27 +10745,13 @@ Boltund
 
 Barraskewda
 
-Kilowattrel
-
 Magmar
-
-Omastar
-
-Kabutops
-
-Cradily
-
-Armaldo
 
 Rampardos
 
 Bastiodon
 
 Floatzel
-
-Mismagius
-
-Abomasnow
 
 Carracosta
 
@@ -10551,13 +10761,7 @@ Accelgor
 
 Pangoro
 
-Dragalge
-
 Gourgeist
-
-Toxapex
-
-Alcremie
 
 Bellibolt
 
@@ -10577,13 +10781,7 @@ Rapidash
 
 Rapidash Galar
 
-Muk
-
-Muk Alola
-
 Pinsir
-
-Scizor
 
 Heracross
 
@@ -10593,29 +10791,13 @@ Houndoom
 
 Donphan
 
-Wailord
-
 Claydol
 
 Bronzong
 
-Drapion
-
-Talonflame
-
-Barbaracle
-
-Hawlucha
-
 Mudsdale
 
 Bewear
-
-Copperajah
-
-Kleavor
-
-Revavroom
 
 Cyclizar
 
@@ -10625,69 +10807,17 @@ Scyther
 
 Clawitzer
 
-Toxtricity
-
 Ninetales
 
 Ninetales Alola
 
 Shuckle
 
-Honchkrow
-
-Archeops
-
-Beartic
-
 Pyroar
 
 Sirfetch'd
 
-Dracozolt
-
-Arctozolt
-
-Dracovish
-
-Arctovish
-
 Mabosstiff
-
-Excadrill
-
-Polteageist
-
-Sinistcha
-
-Steelix
-
-Weavile
-
-Gliscor
-
-Zoroark
-
-Zoroark Hisui
-
-Mienshao
-
-Braviary
-
-Braviary Hisui
-
-Mandibuzz
-
-Sandaconda
-
-Cursola
-
-Overqwil
-
-Sneasler
-
-Tentacruel
-
-Aerodactyl
 
 Porygon2
 
@@ -10697,57 +10827,17 @@ Yanmega
 
 Cryogonal
 
-Avalugg
-
-Avalugg Hisui
-
 Toedscruel
 
 Dhelmise
 
-Starmie
-
-Tyrantrum
-
 Mr. Rime
-
-Cetitan
 
 Dudunsparce
 
-Aurorus
-
-Cloyster
-
-Vaporeon
-
-Jolteon
-
-Flareon
-
-Espeon
-
 Umbreon
 
-Lucario
-
-Hippowdon
-
-Leafeon
-
-Glaceon
-
 Probopass
-
-Sylveon
-
-Centiskorch
-
-Glimmora
-
-Exeggutor
-
-Exeggutor Alola
 
 Gogoat
 
@@ -10755,25 +10845,9 @@ Golisopod
 
 Lapras
 
-Tangrowth
-
-Noivern
-
-Duraludon
-
 Type: Null
 
-Gyarados
-
-Snorlax
-
-Milotic
-
 Dustox
-
-Arcanine
-
-Arcanine Hisui
 
 Butterfree
 
@@ -11555,6 +11629,12 @@ Grafaiai
 
 Scrafty
 
+Houndstone
+
+Slowbro
+
+Slowbro Galar
+
 Electrode
 
 Electrode Hisui
@@ -11599,9 +11679,13 @@ Houndoom
 
 Drapion
 
+Copperajah
+
 Revavroom
 
 Honchkrow
+
+Sirfetch'd
 
 Zoroark
 
@@ -12804,6 +12888,96 @@ Butterfree
 Beedrill
 
 Beautifly
+
+Orthworm
+
+Scolipede
+
+Bombirdier
+
+Vileplume
+
+Victreebel
+
+Exploud
+
+Gothitelle
+
+Reuniclus
+
+Golem
+
+Golem Alola
+
+Alakazam
+
+Gengar
+
+Aegislash
+
+Vikavolt
+
+Garganacl
+
+Nidoqueen
+
+Nidoking
+
+Machamp
+
+Conkeldurr
+
+Orbeetle
+
+Poliwrath
+
+Seismitoad
+
+Hatterene
+
+Grimmsnarl
+
+Eelektross
+
+Krookodile
+
+Klinklang
+
+Chandelure
+
+Obstagoon
+
+Dusknoir
+
+Armarouge
+
+Ceruledge
+
+Aggron
+
+Mamoswine
+
+Basculegion
+
+Dondozo
+
+Crobat
+
+Magnezone
+
+Rhyperior
+
+Annihilape
+
+Electivire
+
+Magmortar
+
+Ursaluna
+
+Kingambit
+
+Gholdengo
 
 === TRAINER_POOL_ENDGAME ===
 Name: Trainer Pool
