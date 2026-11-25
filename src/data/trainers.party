@@ -4244,9 +4244,9 @@ Level: 44
 Timid Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sleep Powder
-- Rage Powder
+- Bug Buzz
 - Hurricane
-- Tailwind
+- U-Turn
 
 Clawitzer @ Wacan Berry
 Ability: Mega Launcher
@@ -4254,9 +4254,9 @@ Level: 44
 Modest Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pulse
-- Terrain Pulse
+- Aura Sphere
 - Dark Pulse
-- Heal Pulse
+- Terrain Pulse
 
 Gogoat @ Lum Berry
 Ability: Grass Pelt
@@ -4273,7 +4273,7 @@ Ability: Thick Fat
 Level: 44
 Adamant Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- High Horsepower
+- Earthquake
 - Ice Shard
 - Icicle Crash
 - Rock Slide
@@ -4283,7 +4283,7 @@ Ability: Blaze
 Level: 46
 Timid Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Heat Wave
+- Flamethrower
 - Psyshock
 - Shadow Ball
 - Grass Knot
@@ -4305,9 +4305,9 @@ Level: 44
 Timid Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sleep Powder
-- Rage Powder
+- Bug Buzz
 - Hurricane
-- Tailwind
+- U-Turn
 
 Clawitzer @ Wacan Berry
 Ability: Mega Launcher
@@ -4315,9 +4315,9 @@ Level: 44
 Modest Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Water Pulse
-- Terrain Pulse
+- Aura Sphere
 - Dark Pulse
-- Heal Pulse
+- Terrain Pulse
 
 Gogoat @ Lum Berry
 Ability: Grass Pelt
@@ -4334,7 +4334,7 @@ Ability: Thick Fat
 Level: 44
 Adamant Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- High Horsepower
+- Earthquake
 - Ice Shard
 - Icicle Crash
 - Rock Slide
@@ -4344,7 +4344,7 @@ Ability: Blaze
 Level: 46
 Timid Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Heat Wave
+- Flamethrower
 - Psyshock
 - Shadow Ball
 - Grass Knot
@@ -4413,15 +4413,15 @@ AI: AI_FLAG_BOSS
 Double Battle: No
 Mugshot: Pink
 
-Pidgeot @ Clear Amulet
+Pidgeot @ Covert Cloak
 Ability: Tangled Feet
 Level: 46
 Jolly Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Brave Bird
 - Return
-- Tailwind
 - U-Turn
+- Roost
 
 Arcanine @ Sitrus Berry
 Ability: Intimidate
@@ -4431,7 +4431,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Flamethrower
 - Extreme Speed
 - Play Rough
-- Snarl
+- Crunch
 
 Exeggutor @ Zoom Lens
 Ability: Chlorophyll
@@ -4451,17 +4451,17 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dynamic Punch
 - Throat Chop
 - Poison Jab
-- Wide Guard
+- Dual Chop
 
 Blastoise @ Mystic Water
 Ability: Torrent
 Level: 48
 Timid Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Muddy Water
-- Icy Wind
+- Surf
+- Blizzard
 - Flash Cannon
-- Fake Out
+- Iron Defense
 
 === TRAINER_PBL_BLUE_BOSS_24 ===
 Name: Blue
@@ -4473,15 +4473,15 @@ Double Battle: No
 Mugshot: Pink
 Difficulty: Brutal
 
-Pidgeot @ Clear Amulet
+Pidgeot @ Covert Cloak
 Ability: Tangled Feet
 Level: 46
 Jolly Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Brave Bird
 - Return
-- Tailwind
 - U-Turn
+- Roost
 
 Arcanine @ Sitrus Berry
 Ability: Intimidate
@@ -4491,7 +4491,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Flamethrower
 - Extreme Speed
 - Play Rough
-- Snarl
+- Crunch
 
 Exeggutor @ Zoom Lens
 Ability: Chlorophyll
@@ -4511,7 +4511,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dynamic Punch
 - Throat Chop
 - Poison Jab
-- Wide Guard
+- Dual Chop
 
 Alakazam @ Focus Sash
 Ability: Magic Guard
@@ -4528,10 +4528,10 @@ Ability: Torrent
 Level: 48
 Timid Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Muddy Water
-- Icy Wind
+- Surf
+- Blizzard
 - Flash Cannon
-- Fake Out
+- Iron Defense
 
 === TRAINER_PBL_ROCKET_GRUNT_25D_1 ===
 Name: Grunt
