@@ -391,7 +391,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Zone 12 Boss"),
         .desc = COMPOUND_STRING("Proprietor {COLOR BLUE}Inver{COLOR DARK_GRAY}\n"
-                                "Semi-randomized team of 3 Pokémon\n"
+                                "Semi-randomized team of 4 Pokémon\n"
                                 "Condition: {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY}\n\n"
                                 "Theme: {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY}"),
     },
@@ -400,7 +400,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING("Zone 12 Boss"),
         .desc = COMPOUND_STRING("Proprietor {COLOR BLUE}Inver{COLOR DARK_GRAY}\n"
-                                "Semi-randomized team of 4 Pokémon\n"
+                                "Semi-randomized team of 5 Pokémon\n"
                                 "Condition: {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY}\n\n"
                                 "Theme: {COLOR GREEN}Inverse Battle{COLOR DARK_GRAY}"),
     },

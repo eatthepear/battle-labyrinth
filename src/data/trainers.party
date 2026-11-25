@@ -2347,13 +2347,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Attract
 
 Pyroar (M) @ Sitrus Berry
-Timid Nature
+Naive Nature
 Ability: Unnerve
 Level: 32
-IVs: 30 HP / 31 Atk / 31 Def / 30 SpA / 31 SpD / 31 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Flamethrower
 - Hyper Voice
-- Hidden Power
+- Thunder Fang
 - Work Up
 
 === TRAINER_PBL_COURTNEY_BOSS_14 ===
@@ -2407,13 +2407,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Attract
 
 Pyroar (M) @ Sitrus Berry
-Timid Nature
+Naive Nature
 Ability: Unnerve
 Level: 32
-IVs: 30 HP / 31 Atk / 31 Def / 30 SpA / 31 SpD / 31 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Flamethrower
 - Hyper Voice
-- Hidden Power
+- Thunder Fang
 - Work Up
 
 === TRAINER_PBL_DECLAN_OPTIONAL_6 ===
