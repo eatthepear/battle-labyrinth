@@ -73,23 +73,24 @@ script Zone24A_EventScript_Blue {
 	lock
 	faceplayer
 	setspeaker("Blue")
-	msgbox(format("Hello! This is bad people hideout. R u strong? Let's battle!"), MSGBOX_YESNO)
+	msgbox(format("Bonjour! What kept you, {PLAYER}?\pHahaha! I thought you'd turn up if I waited here!\pHey, how about a battle to determine who's the stronger between us?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		setspeaker("Blue")
-		msgbox(format("Sad!"))
+		msgbox(format("Are you scared? Hahaha!"))
 		release
 		end
 	}
+	msgbox(format("Let's see if you got any better since our last battle!"))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_BLUE_BOSS_24, format("Defeat!"))
+	trainerbattle_no_intro(TRAINER_PBL_BLUE_BOSS_24, format("What!? I was just careless!"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Blue")
-	msgbox(format("U r too stronk. Here, take item."))
+	msgbox(format("That loosened me up. I'm ready to tackle this tower!\p{PLAYER}, you need more practice! But hey, you know that!\pHere, this will help you out!"))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_COVERT_CLOAK)
 	setspeaker("Blue")
-	msgbox(format("These bad people are good, but I stronger, and I beat up bad people. See u later, we battle again!"))
+	msgbox(format("Well, {PLAYER}! I'm moving on up and ahead!\pBy checking my Pokédex, I'm starting to see what's strong and how they evolve! Am I a genius or what?\pAnyways, I'm out of here. Smell ya!"))
 	closemessage
 	applymovement(LOCALID_BLUE_24A, Zone24A_Movement_BlueWalkUp)
 	waitmovement(0)
