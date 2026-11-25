@@ -39,6 +39,6 @@ script Zone14B_EventScript_MagmaGrunt2 {
 
 script Zone14B_EventScript_MagmaGrunt3 {
 	trainerbattle_single(TRAINER_PBL_MAGMA_GRUNT_14B_3, format("Fuhahaha! Soon! Very soon! Our grand objective will be achieved!"), format("Grr…I've come so far, but now this?"))
-	msgbox(format("Tabitha, ma'am! An intruder is headed your way!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("Courtney, ma'am! An intruder is headed your way!"), MSGBOX_AUTOCLOSE)
 	end
 }

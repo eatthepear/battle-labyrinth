@@ -2211,7 +2211,7 @@ Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 === TRAINER_PBL_MAGMA_GRUNT_13B_2 ===
 Name: Grunt
 Class: Team Magma
-Pic: Magma Grunt F
+Pic: Magma Grunt M
 Music: Magma
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
@@ -2233,7 +2233,7 @@ Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 === TRAINER_PBL_MAGMA_GRUNT_14A_1 ===
 Name: Grunt
 Class: Team Magma
-Pic: Magma Grunt F
+Pic: Magma Grunt M
 Music: Magma
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
@@ -2255,7 +2255,7 @@ Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 === TRAINER_PBL_MAGMA_GRUNT_14A_3 ===
 Name: Grunt
 Class: Team Magma
-Pic: Magma Grunt F
+Pic: Magma Grunt M
 Music: Magma
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
@@ -2277,7 +2277,7 @@ Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 === TRAINER_PBL_MAGMA_GRUNT_14B_1 ===
 Name: Grunt
 Class: Team Magma
-Pic: Magma Grunt F
+Pic: Magma Grunt M
 Music: Magma
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
@@ -2299,7 +2299,7 @@ Copy Pool: TRAINER_POOL_ZONE_13_AND_14_GRUNTS
 === TRAINER_PBL_MAGMA_GRUNT_14B_3 ===
 Name: Grunt
 Class: Team Magma
-Pic: Magma Grunt F
+Pic: Magma Grunt M
 Music: Magma
 AI: AI_FLAG_BASIC_TRAINER
 Double Battle: No
