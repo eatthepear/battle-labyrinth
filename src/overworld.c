@@ -449,6 +449,11 @@ void Overworld_ResetBattleFlagsAndVars(void)
         VarSet(B_VAR_NO_BAG_USE, 0);
     #endif
 
+    // If you wipe in a Zone, we reset the level cap to what it was before you enterd the Zone
+    u16 currentCap = VarGet(VAR_LEVEL_CAP);
+    if (FlagGet(FLAG_IN_NEW_ZONE) && currentCap == VarGet(VAR_ZONE) && currentCap != 0)
+        VarSet(VAR_LEVEL_CAP, currentCap - 1);
+
     FlagClear(B_FLAG_INVERSE_BATTLE);
     FlagClear(WE_FLAG_FORCE_DOUBLE_WILD);
     FlagClear(WE_SMART_WILD_AI_FLAG);
