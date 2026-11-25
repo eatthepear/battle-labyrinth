@@ -162,6 +162,7 @@ script Zone27A_EventScript_TriggerTagBattle {
     removeobject(LOCALID_WALLY_27A)
     removeobject(LOCALID_SERENA_27A)
 	setvar(VAR_ZONE_27_STATE, 4)
+	savebgm(MUS_DUMMY)
 	fadedefaultbgm
 	releaseall
 	end

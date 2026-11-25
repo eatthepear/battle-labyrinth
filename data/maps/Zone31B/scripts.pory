@@ -48,6 +48,7 @@ script Zone31B_EventScript_Blue {
 	removeobject(LOCALID_BLUE_31B)
 	setflag(FLAG_BEAT_BOSS_31)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
+	savebgm(MUS_DUMMY)
 	fadedefaultbgm
 	releaseall
 	end

@@ -40,6 +40,7 @@ script Zone31C_EventScript_Serena {
 	removeobject(LOCALID_SERENA_31C)
 	setflag(FLAG_HIDE_ZONE31C_SERENA)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
+	savebgm(MUS_DUMMY)
 	fadedefaultbgm
 	releaseall
 	end

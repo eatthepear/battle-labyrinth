@@ -154,6 +154,7 @@ script Zone30A_EventScript_Proton {
 	setvar(VAR_ZONE_30_STATE, 1)
 	removeobject(LOCALID_PROTON_30A)
     setflag(FLAG_HIDE_ZONE30A_PROTON)
+	savebgm(MUS_DUMMY)
 	fadedefaultbgm
 	releaseall
 	end

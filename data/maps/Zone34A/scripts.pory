@@ -58,6 +58,7 @@ script Zone34A_EventScript_RocketCastle1 {
 	removeobject(LOCALID_GRUNT_34A_2)
 	waitse
     setvar(VAR_ZONE_34_STATE, 1)
+	savebgm(MUS_DUMMY)
 	fadedefaultbgm
     releaseall
 }

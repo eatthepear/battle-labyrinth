@@ -73,6 +73,7 @@ script Zone11A_EventScript_Archer {
 	msgbox(format("There's something on the ground where he was standing…"))
 	giveitem(ITEM_TM_SWAGGER)
 	closemessage
+	savebgm(MUS_DUMMY)
 	fadedefaultbgm
 	release
 	end

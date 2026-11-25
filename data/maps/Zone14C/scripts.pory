@@ -39,6 +39,7 @@ script Zone14C_EventScript_Courtney {
 	removeobject(LOCALID_COURTNEY_14C)
 	setflag(FLAG_BEAT_BOSS_14)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
+	savebgm(MUS_DUMMY)
 	fadedefaultbgm
 	releaseall
 	end

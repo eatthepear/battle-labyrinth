@@ -82,6 +82,7 @@ script Zone21A_EventScript_TriggerWally {
 	removeobject(LOCALID_TAUROS_2)
 	setflag(FLAG_BEAT_BOSS_21)
 	setvar(VAR_ZONE_21_STATE, 1)
+	savebgm(MUS_DUMMY)
 	fadedefaultbgm
 	releaseall
 	end

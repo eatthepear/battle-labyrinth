@@ -31,6 +31,7 @@ script Zone32F_EventScript_Wally {
 	removeobject(LOCALID_WALLY_32F)
 	setflag(FLAG_BEAT_BOSS_31)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
+	savebgm(MUS_DUMMY)
 	fadedefaultbgm
 	releaseall
 	end

@@ -96,6 +96,7 @@ script Zone4E_EventScript_BossBattle {
 	msgbox(format("There's something on the ground where he was standing…"))
 	giveitem(ITEM_TM_VENOSHOCK)
 	closemessage
+	savebgm(MUS_DUMMY)
 	fadedefaultbgm
 	releaseall
 	end
