@@ -3361,13 +3361,13 @@ void Task_HandleInfoScreenInput(u8 taskId)
     if (JOY_NEW(B_BUTTON))
     {
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-        if(gSpecialVar_0x8004 != SPECIES_NONE)
+        if (VarGet(VAR_POKEDEX_SPECIES_FROM_SUMMARY) != SPECIES_NONE)
         {
+            VarSet(VAR_POKEDEX_SPECIES_FROM_SUMMARY, SPECIES_NONE);
             FreeAndDestroyMonPicSprite(gTasks[taskId].tMonSpriteId);
             gTasks[taskId].func = Task_ClosePokedexToSummaryScreen;
-            gSpecialVar_0x8004 = SPECIES_NONE;
         }
-        else 
+        else
         {
             gTasks[taskId].func = Task_ExitInfoScreen;
         }

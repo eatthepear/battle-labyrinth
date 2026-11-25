@@ -2449,7 +2449,7 @@ static void Task_HandleInput(u8 taskId)
                         sSummaryState.callback = sMonSummaryScreen->callback;
 
                         sMonSummaryScreen->callback = CB2_OpenPokedexPlusHGSSToMon;
-                        gSpecialVar_0x8004 = sMonSummaryScreen->summary.species;
+                        VarSet(VAR_POKEDEX_SPECIES_FROM_SUMMARY, sMonSummaryScreen->summary.species);
                     }
 
                     StopPokemonAnimations();

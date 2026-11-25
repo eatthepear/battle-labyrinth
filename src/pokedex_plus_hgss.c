@@ -2103,11 +2103,11 @@ static void Task_HandleStatsScreenInput(u8 taskId)
     if (JOY_NEW(B_BUTTON))
     {
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
-        if (gSpecialVar_0x8004 != SPECIES_NONE)
+        if (VarGet(VAR_POKEDEX_SPECIES_FROM_SUMMARY) != SPECIES_NONE)
         {
+            VarSet(VAR_POKEDEX_SPECIES_FROM_SUMMARY, SPECIES_NONE);
             FreeAndDestroyMonPicSprite(gTasks[taskId].tMonSpriteId);
             gTasks[taskId].func = Task_ClosePokedexToSummaryScreen;
-            gSpecialVar_0x8004 = SPECIES_NONE;
         }
         else 
         {
@@ -3234,11 +3234,11 @@ static void Task_HandleEvolutionScreenInput(u8 taskId)
     if (JOY_NEW(B_BUTTON))
     {
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
-        if (gSpecialVar_0x8004 != SPECIES_NONE)
+        if (VarGet(VAR_POKEDEX_SPECIES_FROM_SUMMARY) != SPECIES_NONE)
         {
+            VarSet(VAR_POKEDEX_SPECIES_FROM_SUMMARY, SPECIES_NONE);
             FreeAndDestroyMonPicSprite(gTasks[taskId].tMonSpriteId);
             gTasks[taskId].func = Task_ClosePokedexToSummaryScreen;
-            gSpecialVar_0x8004 = SPECIES_NONE;
         }
         else 
         {
@@ -4107,11 +4107,11 @@ static void Task_HandleFormsScreenInput(u8 taskId)
         if (JOY_NEW(B_BUTTON))
         {
             BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
-            if (gSpecialVar_0x8004 != SPECIES_NONE)
-            {
+        if (VarGet(VAR_POKEDEX_SPECIES_FROM_SUMMARY) != SPECIES_NONE)
+        {
+            VarSet(VAR_POKEDEX_SPECIES_FROM_SUMMARY, SPECIES_NONE);
                 FreeAndDestroyMonPicSprite(gTasks[taskId].tMonSpriteId);
                 gTasks[taskId].func = Task_ClosePokedexToSummaryScreen;
-                gSpecialVar_0x8004 = SPECIES_NONE;
             }
             else 
             {
@@ -4641,7 +4641,7 @@ void CB2_OpenPokedexPlusHGSSToMon(void)
         gMain.state++;
         break;
     case 2:
-        u16 species = gSpecialVar_0x8004;
+        u16 species = VarGet(VAR_POKEDEX_SPECIES_FROM_SUMMARY);
         sPokedexView = AllocZeroed(sizeof(struct PokedexView));
         ResetPokedexView(sPokedexView);
         u16 dexNum = SpeciesToNationalPokedexNum(species);
@@ -4651,8 +4651,8 @@ void CB2_OpenPokedexPlusHGSSToMon(void)
         sPokedexView->dexMode = gSaveBlock2Ptr->pokedex.mode;
         if (!IsNationalPokedexEnabled())
             sPokedexView->dexMode = DEX_MODE_HOENN;
-        if (GetSpeciesFormTable(gSpecialVar_0x8004) != NULL)
-            sPokedexView->formSpecies = gSpecialVar_0x8004;
+        if (GetSpeciesFormTable(species) != NULL)
+            sPokedexView->formSpecies = species;
         else
             sPokedexView->formSpecies = 0;
         sPokedexView->pokemonListCount = 1;

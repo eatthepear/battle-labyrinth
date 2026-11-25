@@ -84,6 +84,7 @@
 #define VAR_ZONE_30_FLOOR                    0x4042
 #define VAR_NEVER_SET                        0x4043
 #define VAR_SKY_BATTLE_POSITION              0x4044
+#define VAR_POKEDEX_SPECIES_FROM_SUMMARY     0x4045
 
 // Zone State vars
 #define VAR_ZONE_0_STATE                     0x4050
