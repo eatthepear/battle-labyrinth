@@ -20,20 +20,22 @@ script Zone13A_EventScript_Serena {
 	msgbox(format("Oh {PLAYER}! Great timing. Some people in red suits calling themselves Team Magma have taken over this building, so I'm going to head in to stop them.\pI need help though. Would you be able to help? I'll need to test you to see if you're up to the challenge."), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		setspeaker("Serena")
-		msgbox(format("That's ok! I'm not asking to partner up or anything, just looking for someone to help out against these villains.\pIf you change your mind, I'll be here."))
+		msgbox(format("Oh, I get it. You don't just charge right into battle blindly, do you?"))
 		release
 		end
 	}
+	setspeaker("Serena")
+	msgbox(format("Great! I'll give this battle my all!"))
 	call(EventScript_HealPreBoss)
 	setflag(FLAG_FORCE_BATTLE_ANIM_ON)
-	trainerbattle_no_intro(TRAINER_PBL_SERENA_BOSS_13, format("Incredible! You're great!"))
+	trainerbattle_no_intro(TRAINER_PBL_SERENA_BOSS_13, format("So, I lost, then…"))
 	clearflag(FLAG_FORCE_BATTLE_ANIM_ON)
 	setspeaker("Serena")
-	msgbox(format("Wow! You're quite the trainer as usual, {PLAYER}!\pBefore we go in, take these! They're from the Kalos region, where I'm from."))
+	msgbox(format("You're quite the trainer, {PLAYER}!\pLosing is frustrating, but… It's great to know I have a trainer like you on my side!\pBefore we go in, take these! They're from the Kalos region, where I'm from."))
 	setspeaker(SP_NAME_NONE)
 	giveitem(ITEM_SHALOUR_SABLE, 5)
 	setspeaker("Serena")
-	msgbox(format("Team Magma won't get away with whatever they're planning!\pNow look, I'm going to charge in and try to battle Team Magma.\pIf I don't run into you inside, it was great to see you again!\pThanks again for your help!"))
+	msgbox(format("Team Magma won't get away with whatever they're planning!\pNow look, I'm going to run in and try to battle Team Magma.\pIf I don't bump into you inside, it was great to see you again!\pThanks again for your help!"))
 	closemessage
 	applymovement(LOCALID_SERENA_13A, Common_Movement_FaceUp)
 	waitmovement
