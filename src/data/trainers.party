@@ -4269,7 +4269,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bulk Up
 
 Mamoswine @ Passho Berry
-Ability: Thick Fat
+Ability: Oblivious
 Level: 44
 Adamant Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -5003,14 +5003,123 @@ Music: Male
 AI: AI_FLAG_BOSS
 Mugshot: Pink
 
-Raichu-Alola @ Wise Glasses
-Timid Nature
-Ability: Surge Surfer
-Level: 32
+Pidgeot @ Clear Amulet
+Ability: Tangled Feet
+Level: 50
+Jolly Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Volt Switch
+- Brave Bird
+- Return
+- Tailwind
+- U-Turn
+
+Arcanine @ Sitrus Berry
+Ability: Intimidate
+Level: 50
+Naive Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Extreme Speed
+- Play Rough
+- Snarl
+
+Exeggutor @ Zoom Lens
+Ability: Chlorophyll
+Level: 50
+Quiet Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
 - Psychic
-- Surf
+- Sleep Powder
+- Low Kick
+
+Machamp @ Roseli Berry
+Ability: No Guard
+Level: 50
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dynamic Punch
+- Throat Chop
+- Poison Jab
+- Wide Guard
+
+Blastoise @ Mystic Water
+Ability: Torrent
+Level: 52
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Muddy Water
+- Icy Wind
+- Flash Cannon
+- Fake Out
+
+=== TRAINER_PBL_BLUE_BOSS_27 ===
+Name: Blue
+Class: Rival
+Pic: Rival Late Frlg
+Music: Male
+AI: AI_FLAG_BOSS
+Mugshot: Pink
+Difficulty: Brutal
+
+Pidgeot @ Clear Amulet
+Ability: Tangled Feet
+Level: 50
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brave Bird
+- Return
+- Tailwind
+- U-Turn
+
+Arcanine @ Sitrus Berry
+Ability: Intimidate
+Level: 50
+Naive Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Extreme Speed
+- Play Rough
+- Snarl
+
+Exeggutor @ Zoom Lens
+Ability: Chlorophyll
+Level: 50
+Quiet Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Psychic
+- Sleep Powder
+- Low Kick
+
+Machamp @ Roseli Berry
+Ability: No Guard
+Level: 50
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dynamic Punch
+- Throat Chop
+- Poison Jab
+- Wide Guard
+
+Alakazam @ Focus Sash
+Ability: Magic Guard
+Level: 50
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psyshock
+- Shadow Ball
+- Energy Ball
+- Dazzling Gleam
+
+Blastoise @ Mystic Water
+Ability: Torrent
+Level: 52
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Muddy Water
+- Icy Wind
+- Flash Cannon
 - Fake Out
 
 === TRAINER_PBL_WALLY_BOSS_27 ===
@@ -5023,13 +5132,122 @@ Mugshot: Pink
 
 Talonflame @ Flying Gem
 Ability: Flame Body
-Level: 40
+Level: 50
 Adamant Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Blaze Kick
 - Acrobatics
 - Will-O-Wisp
 - Tailwind
+
+Roserade @ Focus Sash
+Ability: Poison Point
+Level: 50
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Sludge Bomb
+- Dazzling Gleam
+- Shadow Ball
+
+Azumarill @ Sitrus Berry
+Ability: Huge Power
+Level: 50
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Play Rough
+- Ice Punch
+- Aqua Jet
+
+Magnezone @ Magnet
+Ability: Sturdy
+Level: 50
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Switch
+- Flash Cannon
+- Thunderbolt
+- Thunder Wave
+
+Gallade @ Clear Amulet
+Ability: Sharpness
+Level: 52
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Sword
+- Psycho Cut
+- Night Slash
+- Aqua Cutter
+
+=== TRAINER_PBL_WALLY_BOSS_27 ===
+Name: Wally
+Class: Rival
+Pic: Wally
+Music: Male
+AI: AI_FLAG_BOSS
+Mugshot: Pink
+Difficulty: Brutal
+
+Talonflame @ Flying Gem
+Ability: Flame Body
+Level: 50
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Blaze Kick
+- Acrobatics
+- Will-O-Wisp
+- Tailwind
+
+Roserade @ Focus Sash
+Ability: Poison Point
+Level: 50
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Sludge Bomb
+- Dazzling Gleam
+- Shadow Ball
+
+Azumarill @ Sitrus Berry
+Ability: Huge Power
+Level: 50
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Play Rough
+- Ice Punch
+- Aqua Jet
+
+Magnezone @ Magnet
+Ability: Sturdy
+Level: 50
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Switch
+- Flash Cannon
+- Thunderbolt
+- Thunder Wave
+
+Flygon @ Dragon Fang
+Ability: Levitate
+Level: 50
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Earthquake
+- Rock Slide
+- Fire Punch
+
+Gallade @ Clear Amulet
+Ability: Sharpness
+Level: 52
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Sword
+- Psycho Cut
+- Night Slash
+- Aqua Cutter
 
 === TRAINER_PBL_SERENA_BOSS_27 ===
 Name: Serena
@@ -5039,15 +5257,124 @@ Music: Female
 AI: AI_FLAG_BOSS
 Mugshot: Pink
 
-Vivillon @ Silver Powder
-Timid Nature
+Vivillon @ Charti Berry
 Ability: Compound Eyes
-Level: 30
+Level: 50
+Timid Nature
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Air Slash
-- Bug Buzz
-- Draining Kiss
 - Sleep Powder
+- Rage Powder
+- Hurricane
+- Tailwind
+
+Clawitzer @ Wacan Berry
+Ability: Mega Launcher
+Level: 50
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Aura Sphere
+- Dark Pulse
+- Heal Pulse
+
+Gogoat @ Clear Amulet
+Ability: Sap Sipper
+Level: 50
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Horn Leech
+- High Horsepower
+- Rock Slide
+- Bulk Up
+
+Mamoswine @ Sitrus Berry
+Ability: Oblivious
+Level: 50
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- High Horsepower
+- Icicle Crash
+- Ice Shard
+- Rock Slide
+
+Delphox @ Focus Sash
+Ability: Blaze
+Level: 52
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Heat Wave
+- Psyshock
+- Shadow Ball
+- Grass Knot
+
+=== TRAINER_PBL_SERENA_BOSS_27 ===
+Name: Serena
+Class: Rival
+Pic: Serena
+Music: Female
+AI: AI_FLAG_BOSS
+Mugshot: Pink
+Difficulty: Brutal
+
+Vivillon @ Charti Berry
+Ability: Compound Eyes
+Level: 50
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sleep Powder
+- Rage Powder
+- Hurricane
+- Tailwind
+
+Clawitzer @ Wacan Berry
+Ability: Mega Launcher
+Level: 50
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Aura Sphere
+- Dark Pulse
+- Heal Pulse
+
+Gogoat @ Clear Amulet
+Ability: Sap Sipper
+Level: 50
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Horn Leech
+- High Horsepower
+- Rock Slide
+- Bulk Up
+
+Mamoswine @ Sitrus Berry
+Ability: Oblivious
+Level: 50
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- High Horsepower
+- Icicle Crash
+- Ice Shard
+- Rock Slide
+
+Goodra-Hisui @ Assault Vest
+Ability: Gooey
+Level: 50
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flash Cannon
+- Dragon Pulse
+- Thunderbolt
+- Flamethrower
+
+Delphox @ Focus Sash
+Ability: Blaze
+Level: 52
+Timid Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Heat Wave
+- Psyshock
+- Shadow Ball
+- Grass Knot
 
 === TRAINER_PBL_RAIHAN_BOSS_28 ===
 Name: Raihan

@@ -680,86 +680,92 @@ const struct HelpWindow gHelpWindowInfo[] =
 
     [HELP_NOTEBOOK_BOSS_26] =
     {
-        .header = COMPOUND_STRING("Zone 26 Boss"),
-        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Slurpuff{COLOR DARK_GRAY}, {COLOR GREEN}Whimsicott{COLOR DARK_GRAY}, {COLOR GREEN}Wigglytuff{COLOR DARK_GRAY}, {COLOR GREEN}Mimikyu{COLOR DARK_GRAY}\n"
-                                "Condition: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Permanent Electric Terrain{COLOR DARK_GRAY}\n\n"
-                                "Theme: {COLOR GREEN}Fairy{COLOR DARK_GRAY}-type specialist"),
+        .header = COMPOUND_STRING("Zone 26 Gauntlet"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Rampant Rotoms{COLOR DARK_GRAY}\n\n"
+                                "Battle the Rotom forms in a row:\n"
+                                "{COLOR GREEN}Rotom{COLOR DARK_GRAY}, {COLOR GREEN}Rotom-Mow{COLOR DARK_GRAY}, {COLOR GREEN}Rotom-Fan{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Rotom-Frost{COLOR DARK_GRAY}, {COLOR GREEN}Rotom-Wash{COLOR DARK_GRAY}, {COLOR GREEN}Rotom-Heat{COLOR DARK_GRAY}\n"
+                                "Theme: Rotom"),
     },
 
     [HELP_NOTEBOOK_BOSS_26_BRUTAL] =
     {
-        .header = COMPOUND_STRING("Zone 26 Boss"),
-        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Slurpuff{COLOR DARK_GRAY}, {COLOR GREEN}Whimsicott{COLOR DARK_GRAY}, {COLOR GREEN}Wigglytuff{COLOR DARK_GRAY}, {COLOR GREEN}Mimikyu{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Excadrill{COLOR DARK_GRAY}\n"
-                                "Condition: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Permanent Electric Terrain{COLOR DARK_GRAY}\n\n"
-                                "Theme: {COLOR GREEN}Fairy{COLOR DARK_GRAY}-type specialist"),
+        .header = COMPOUND_STRING("Zone 26 Gauntlet"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Rampant Rotoms{COLOR DARK_GRAY}\n\n"
+                                "Battle the Rotom forms in a row:\n"
+                                "{COLOR GREEN}Rotom{COLOR DARK_GRAY}, {COLOR GREEN}Rotom-Mow{COLOR DARK_GRAY}, {COLOR GREEN}Rotom-Fan{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Rotom-Frost{COLOR DARK_GRAY}, {COLOR GREEN}Rotom-Wash{COLOR DARK_GRAY}, {COLOR GREEN}Rotom-Heat{COLOR DARK_GRAY}\n"
+                                "Each Rotom starts with +1 to all stats\n"
+                                "Theme: Rotom"),
     },
 
     [HELP_NOTEBOOK_BOSS_27] =
     {
         .header = COMPOUND_STRING("Zone 27 Boss"),
-        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Slurpuff{COLOR DARK_GRAY}, {COLOR GREEN}Whimsicott{COLOR DARK_GRAY}, {COLOR GREEN}Wigglytuff{COLOR DARK_GRAY}, {COLOR GREEN}Mimikyu{COLOR DARK_GRAY}\n"
-                                "Condition: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Permanent Electric Terrain{COLOR DARK_GRAY}\n\n"
-                                "Theme: {COLOR GREEN}Fairy{COLOR DARK_GRAY}-type specialist"),
+        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Blue{COLOR DARK_GRAY}: {COLOR GREEN}Pidgeot{COLOR DARK_GRAY}, {COLOR GREEN}Arcanine{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Exeggutor{COLOR DARK_GRAY}, {COLOR GREEN}Machamp{COLOR DARK_GRAY},  {COLOR GREEN}Blastoise{COLOR DARK_GRAY}\n"
+                                "{PKMN} Trainer {COLOR BLUE}Wally{COLOR DARK_GRAY}: {COLOR GREEN}Talonflame{COLOR DARK_GRAY}, {COLOR GREEN}Roserade{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Azumarill{COLOR DARK_GRAY}, {COLOR GREEN}Magnezone{COLOR DARK_GRAY}, {COLOR GREEN}Gallade{COLOR DARK_GRAY}\n"
+                                "{PKMN} Trainer {COLOR BLUE}Serena{COLOR DARK_GRAY}: {COLOR GREEN}Vivillon{COLOR DARK_GRAY}, {COLOR GREEN}Clawitzer{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Gogoat{COLOR DARK_GRAY}, {COLOR GREEN}Mamoswine{COLOR DARK_GRAY}, {COLOR GREEN}Delphox{COLOR DARK_GRAY}\n"
+                                "Condition: {COLOR GREEN}Tag Battle{COLOR DARK_GRAY} (partner with one)\n"
+                                "Theme: {COLOR GREEN}Blue{COLOR DARK_GRAY}/{COLOR GREEN}Wally{COLOR DARK_GRAY}/{COLOR GREEN}Serena{COLOR DARK_GRAY}"),
     },
 
     [HELP_NOTEBOOK_BOSS_27_BRUTAL] =
     {
         .header = COMPOUND_STRING("Zone 27 Boss"),
-        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Slurpuff{COLOR DARK_GRAY}, {COLOR GREEN}Whimsicott{COLOR DARK_GRAY}, {COLOR GREEN}Wigglytuff{COLOR DARK_GRAY}, {COLOR GREEN}Mimikyu{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Excadrill{COLOR DARK_GRAY}\n"
-                                "Condition: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Permanent Electric Terrain{COLOR DARK_GRAY}\n\n"
-                                "Theme: {COLOR GREEN}Fairy{COLOR DARK_GRAY}-type specialist"),
+        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Blue{COLOR DARK_GRAY}: {COLOR GREEN}Pidgeot{COLOR DARK_GRAY}, {COLOR GREEN}Arcanine{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Exeggutor{COLOR DARK_GRAY}, {COLOR GREEN}Machamp{COLOR DARK_GRAY},  {COLOR GREEN}Alakazam{COLOR DARK_GRAY}, {COLOR GREEN}Blastoise{COLOR DARK_GRAY}\n"
+                                "{PKMN} Trainer {COLOR BLUE}Wally{COLOR DARK_GRAY}: {COLOR GREEN}Talonflame{COLOR DARK_GRAY}, {COLOR GREEN}Roserade{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Azumarill{COLOR DARK_GRAY}, {COLOR GREEN}Magnezone{COLOR DARK_GRAY}, {COLOR GREEN}Flygon{COLOR DARK_GRAY}, {COLOR GREEN}Gallade{COLOR DARK_GRAY}\n"
+                                "{PKMN} Trainer {COLOR BLUE}Serena{COLOR DARK_GRAY}: {COLOR GREEN}Vivillon{COLOR DARK_GRAY}, {COLOR GREEN}Clawitzer{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Gogoat{COLOR DARK_GRAY}, {COLOR GREEN}Mamoswine{COLOR DARK_GRAY}, {COLOR GREEN}Goodra-Hisui{COLOR DARK_GRAY}, {COLOR GREEN}Delphox{COLOR DARK_GRAY}\n"
+                                "Condition: {COLOR GREEN}Tag Battle{COLOR DARK_GRAY} (partner with one)\n"
+                                "Theme: {COLOR GREEN}Blue{COLOR DARK_GRAY}/{COLOR GREEN}Wally{COLOR DARK_GRAY}/{COLOR GREEN}Serena{COLOR DARK_GRAY}"),
     },
 
     [HELP_NOTEBOOK_BOSS_28] =
     {
         .header = COMPOUND_STRING("Zone 28 Boss"),
-        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Slurpuff{COLOR DARK_GRAY}, {COLOR GREEN}Whimsicott{COLOR DARK_GRAY}, {COLOR GREEN}Wigglytuff{COLOR DARK_GRAY}, {COLOR GREEN}Mimikyu{COLOR DARK_GRAY}\n"
-                                "Condition: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Permanent Electric Terrain{COLOR DARK_GRAY}\n\n"
-                                "Theme: {COLOR GREEN}Fairy{COLOR DARK_GRAY}-type specialist"),
+        .desc = COMPOUND_STRING("Gym Leader {COLOR BLUE}Raihan{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Politoed{COLOR DARK_GRAY}, {COLOR GREEN}Goodra{COLOR DARK_GRAY}, {COLOR GREEN}Heliolisk{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Tatsugiri{COLOR DARK_GRAY}, {COLOR GREEN}Archaludon{COLOR DARK_GRAY}, {COLOR GREEN}Dragonite{COLOR DARK_GRAY}\n"
+                                "Condition: {COLOR GREEN}Double Battle{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Dragon{COLOR DARK_GRAY}-type and Weather specialist"),
     },
 
     [HELP_NOTEBOOK_BOSS_28_BRUTAL] =
     {
         .header = COMPOUND_STRING("Zone 28 Boss"),
-        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Slurpuff{COLOR DARK_GRAY}, {COLOR GREEN}Whimsicott{COLOR DARK_GRAY}, {COLOR GREEN}Wigglytuff{COLOR DARK_GRAY}, {COLOR GREEN}Mimikyu{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Excadrill{COLOR DARK_GRAY}\n"
-                                "Condition: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Permanent Electric Terrain{COLOR DARK_GRAY}\n\n"
-                                "Theme: {COLOR GREEN}Fairy{COLOR DARK_GRAY}-type specialist"),
+        .desc = COMPOUND_STRING("Gym Leader {COLOR BLUE}Raihan{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Politoed{COLOR DARK_GRAY}, {COLOR GREEN}Goodra{COLOR DARK_GRAY}, {COLOR GREEN}Heliolisk{COLOR DARK_GRAY},\n"
+                                "{COLOR GREEN}Kingdra{COLOR DARK_GRAY}, {COLOR GREEN}Archaludon{COLOR DARK_GRAY}, {COLOR GREEN}Dragonite-Mega{COLOR DARK_GRAY}\n"
+                                "Condition: {COLOR GREEN}Double Battle{COLOR DARK_GRAY}\n\n"
+                                "Theme: {COLOR GREEN}Dragon{COLOR DARK_GRAY}-type and Weather specialist"),
     },
 
     [HELP_NOTEBOOK_BOSS_29] =
     {
-        .header = COMPOUND_STRING("Zone 29 Boss"),
-        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Slurpuff{COLOR DARK_GRAY}, {COLOR GREEN}Whimsicott{COLOR DARK_GRAY}, {COLOR GREEN}Wigglytuff{COLOR DARK_GRAY}, {COLOR GREEN}Mimikyu{COLOR DARK_GRAY}\n"
-                                "Condition: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Permanent Electric Terrain{COLOR DARK_GRAY}\n\n"
-                                "Theme: {COLOR GREEN}Fairy{COLOR DARK_GRAY}-type specialist"),
+        .header = COMPOUND_STRING("Zone 29 Gauntlet"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Kimono Girl Gauntlet{COLOR DARK_GRAY}\n\n"
+                                "Kimono Girls {COLOR BLUE}Zuki{COLOR DARK_GRAY}, {COLOR BLUE}Arito{COLOR DARK_GRAY}, {COLOR BLUE}Saito{COLOR DARK_GRAY}, {COLOR BLUE}Emiko{COLOR DARK_GRAY}\n"
+                                "{COLOR BLUE}Naoko{COLOR DARK_GRAY}, {COLOR BLUE}Miki{COLOR DARK_GRAY}, {COLOR BLUE}Sayo{COLOR DARK_GRAY}, {COLOR BLUE}Kuni{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Sylveon{COLOR DARK_GRAY}, {COLOR GREEN}Glaceon{COLOR DARK_GRAY}, {COLOR GREEN}Leafeon{COLOR DARK_GRAY}, {COLOR GREEN}Umbreon{COLOR DARK_GRAY}, {COLOR GREEN}Espeon{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Flareon{COLOR DARK_GRAY}, {COLOR GREEN}Jolteon{COLOR DARK_GRAY}, {COLOR GREEN}Vaporeon{COLOR DARK_GRAY} respectively\n"
+                                "Theme: Kimono Girl"),
     },
 
     [HELP_NOTEBOOK_BOSS_29_BRUTAL] =
     {
-        .header = COMPOUND_STRING("Zone 29 Boss"),
-        .desc = COMPOUND_STRING("{PKMN} Trainer {COLOR BLUE}Lacey{COLOR DARK_GRAY}\n"
-                                "{COLOR GREEN}Slurpuff{COLOR DARK_GRAY}, {COLOR GREEN}Whimsicott{COLOR DARK_GRAY}, {COLOR GREEN}Wigglytuff{COLOR DARK_GRAY}, {COLOR GREEN}Mimikyu{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Excadrill{COLOR DARK_GRAY}\n"
-                                "Condition: {COLOR GREEN}Permanent Rain{COLOR DARK_GRAY},\n"
-                                "{COLOR GREEN}Permanent Electric Terrain{COLOR DARK_GRAY}\n\n"
-                                "Theme: {COLOR GREEN}Fairy{COLOR DARK_GRAY}-type specialist"),
+        .header = COMPOUND_STRING("Zone 29 Gauntlet"),
+        .desc = COMPOUND_STRING("{COLOR BLUE}Kimono Girl Gauntlet{COLOR DARK_GRAY}\n\n"
+                                "Kimono Girls {COLOR BLUE}Zuki{COLOR DARK_GRAY}, {COLOR BLUE}Arito{COLOR DARK_GRAY}, {COLOR BLUE}Saito{COLOR DARK_GRAY}, {COLOR BLUE}Emiko{COLOR DARK_GRAY}\n"
+                                "{COLOR BLUE}Naoko{COLOR DARK_GRAY}, {COLOR BLUE}Miki{COLOR DARK_GRAY}, {COLOR BLUE}Sayo{COLOR DARK_GRAY}, {COLOR BLUE}Kuni{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Sylveon{COLOR DARK_GRAY}, {COLOR GREEN}Glaceon{COLOR DARK_GRAY}, {COLOR GREEN}Leafeon{COLOR DARK_GRAY}, {COLOR GREEN}Umbreon{COLOR DARK_GRAY}, {COLOR GREEN}Espeon{COLOR DARK_GRAY}\n"
+                                "{COLOR GREEN}Flareon{COLOR DARK_GRAY}, {COLOR GREEN}Jolteon{COLOR DARK_GRAY}, {COLOR GREEN}Vaporeon{COLOR DARK_GRAY} respectively\n"
+                                "Each Eeveelution starts with +1 to all stats\n"
+                                "Theme: Kimono Girl"),
     },
 
     [HELP_CHANGES_ACCURACY] =

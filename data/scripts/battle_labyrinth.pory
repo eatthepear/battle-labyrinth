@@ -1050,9 +1050,30 @@ script EventScript_Notebook_ZoneInfo {
 				helpwindow(HELP_NOTEBOOK_BOSS_25)
 			}
 		case 26:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_26_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_26)
+			}
 		case 27:
 		case 28:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_27_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_27)
+			}
+			msgbox(gText_Notebook_NextBossReadOn, MSGBOX_YESNO)
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_28_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_28)
+			}
 		case 29:
+			if (var(VAR_DIFFICULTY) == DIFFICULTY_BRUTAL) {
+				helpwindow(HELP_NOTEBOOK_BOSS_29_BRUTAL)
+			} else {
+				helpwindow(HELP_NOTEBOOK_BOSS_29)
+			}
 		case 30:
 		case 31:
 		case 32:

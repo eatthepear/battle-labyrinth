@@ -4776,7 +4776,7 @@ u16 GetNumTrainersRemaining(void)
         count += !FlagGet(FLAG_BEAT_BOSS_25);
         break;
     case 26:
-        count += !FlagGet(FLAG_BEAT_BOSS_26);
+        count += 6 * !FlagGet(FLAG_BEAT_BOSS_26);
         break;
     case 27:
     case 28:
