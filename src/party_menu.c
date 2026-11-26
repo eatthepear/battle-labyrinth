@@ -6126,11 +6126,12 @@ static void UpdateMonDisplayInfoAfterRareCandy(u8 slot, struct Pokemon *mon)
 static void Task_DisplayLevelUpStatsPg1(u8 taskId)
 {
     // if (WaitFanfare(FALSE) && IsPartyMenuTextPrinterActive() != TRUE && ((JOY_NEW(A_BUTTON)) || (JOY_NEW(B_BUTTON))))
-    // {
+    if (WaitFanfare(FALSE))
+    {
     //     PlaySE(SE_SELECT);
     //     DisplayLevelUpStatsPg1(taskId);
         gTasks[taskId].func = Task_DisplayLevelUpStatsPg2;
-    // }
+    }
 }
 
 static void Task_DisplayLevelUpStatsPg2(u8 taskId)
