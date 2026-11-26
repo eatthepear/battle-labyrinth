@@ -2,23 +2,28 @@ mapscripts Zone25C_MapScripts {}
 
 script Zone25C_EventScript_KimonoGirl {
 	lock
-	if (checkitem(ITEM_OVAL_CHARM)) {
+	if (checkitem(ITEM_SHINY_CHARM)) {
 		faceplayer
 		setspeaker("Kimono Girl")
-		msgbox(format("Oval Charm!"), MSGBOX_AUTOCLOSE)
+		msgbox(Zone25C_Text_KimonoGirl_ShinyCharm)
 		release
 		end
 	}
 	playbgm(MUS_HG_KIMONO_GIRL, 0)
 	setspeaker("Kimono Girl")
-	msgbox(format("HMM!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("To witness such an ancient sight like this!\pIt makes a Kimono Girl like me feel very fortunate."))
+	closemessage
 	faceplayer
 	setspeaker("Kimono Girl")
-	msgbox(format("HERE FOR U!"))
-	giveitem(ITEM_OVAL_CHARM)
+	msgbox(format("And to meet a trainer who is as strong as you, who has made it this far!\pIt makes a Kimono Girl like me feel very fortunate as well.\pI wish to share this charm with you."))
+	giveitem(ITEM_SHINY_CHARM)
 	setspeaker("Kimono Girl")
-	msgbox(format("MORE TEXT!"), MSGBOX_AUTOCLOSE)
+	msgbox(Zone25C_Text_KimonoGirl_ShinyCharm)
 	fadedefaultbgm
 	release
 	end
+}
+
+text Zone25C_Text_KimonoGirl_ShinyCharm {
+	format("This charm is said to make one luckier somehow.")
 }
