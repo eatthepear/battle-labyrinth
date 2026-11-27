@@ -79,7 +79,7 @@ script Zone2A_EventScript_TriggerBlue {
 			applymovement(LOCALID_BLUE_2A, Common_Movement_WalkRight2)
 			waitmovement(0)
 	}
-	applymovement(LOCALID_BLUE_2A, Common_Movement_WalkUp2)
+	applymovement(LOCALID_BLUE_2A, Common_Movement_WalkUp3)
 	waitmovement(0)
 	setspeaker("???")
 	msgbox(format("Hey, Pokémon trainer! I've been challenging everyone that passes through, which now includes you!\pSo what do you say to a battle?"), MSGBOX_YESNO)
@@ -88,7 +88,7 @@ script Zone2A_EventScript_TriggerBlue {
 		closemessage
 		applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
 		waitmovement(0)
-		applymovement(LOCALID_BLUE_2A, Common_Movement_WalkDown2)
+		applymovement(LOCALID_BLUE_2A, Common_Movement_WalkDown3)
 		waitmovement(0)
 		switch(var(VAR_TEMP_0)) {
 			case 47:
